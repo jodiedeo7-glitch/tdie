@@ -1,0 +1,203 @@
+---
+// ============================================================
+// THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
+// Every article page wraps its content in this layout.
+// To publish a new article: create a new file in
+// src/pages/learn/ using this same layout, keep the frontmatter
+// fields, and write the article body as the page content.
+// Nothing here needs to change per-article.
+// ============================================================
+import "../styles/global.css";
+
+export interface Props {
+  title: string;            // SEO title tag
+  description: string;      // meta description
+  slug: string;              // e.g. "how-to-build-a-faceless-digital-business"
+  category: string;          // e.g. "Business Systems"
+  issueNumber: string;       // e.g. "017"
+  readTime: string;          // e.g. "20 Min Read"
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  slug,
+  category,
+  issueNumber,
+  readTime,
+  ogImage = "/og/default.jpg",
+} = Astro.props;
+
+const canonical = `https://thedigitalincomeedit.com/learn/${slug}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | The Digital Income Edit™</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="no-js">
+  <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>
+
+  <div class="progress" id="progress"></div>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
+      <div class="nav-links">
+        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
+        <a class="nav-join" href="/membership">Join</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <button class="close" id="close" aria-label="Close">✕</button>
+    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
+  </div>
+
+  <div class="masthead reveal">
+    <span class="line"></span>
+    <span class="issue">The Library &nbsp;·&nbsp; Issue No. <b>{issueNumber}</b> &nbsp;·&nbsp; {category}</span>
+    <span class="line r"></span>
+  </div>
+
+  <slot name="hero" />
+
+  <div class="shell">
+    <aside class="rail-left">
+      <slot name="toc" />
+    </aside>
+
+    <article class="article">
+      <slot />
+    </article>
+
+    <aside class="rail-right">
+      <div class="rail-card">
+        <div class="eye">The Membership</div>
+        <h5>Build it with women one step ahead</h5>
+        <p>Daily prompts, start-here trainings, and the room that turns reading into building.</p>
+        <a class="btn" href="/membership" style="padding:13px 22px;font-size:11px">Explore <span class="a">→</span></a>
+      </div>
+    </aside>
+  </div>
+
+  <slot name="journey" />
+
+  <section class="news">
+    <div class="news-in reveal">
+      <div class="k">The Weekly Edit</div>
+      <h3>Continue learning every week</h3>
+      <p>Practical tutorials, AI workflows, Pinterest strategies, and digital product ideas — one beautiful, useful email at a time.</p>
+      <form onsubmit="return false">
+        <input type="email" placeholder="Your email address" aria-label="Email address" />
+        <button class="btn" type="submit">Subscribe <span class="a">→</span></button>
+      </form>
+      <div class="fine">Join thousands of women building on their own terms. Unsubscribe anytime.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
+      </div>
+      <div class="foot-col">
+        <h5>Learn</h5>
+        <a href="/learn">The Library</a>
+        <a href="/learn/pinterest">Pinterest</a>
+        <a href="/learn/ai">AI</a>
+        <a href="/learn/digital-products">Digital Products</a>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="/shop">Shop</a>
+        <a href="/resources">Free Resources</a>
+        <a href="/membership">Membership</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="foot-col">
+        <h5>Connect</h5>
+        <a href="/community">Community</a>
+        <a href="/newsletter">Newsletter</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Digital Income Edit™</span>
+      <span>Curated with intention.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.remove('no-js');
+    const bar = document.getElementById('progress');
+    addEventListener('scroll', () => {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+    }, { passive: true });
+
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const mio = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); mio.unobserve(e.target); } });
+    }, { threshold: .2 });
+    document.querySelectorAll('.mask').forEach(el => mio.observe(el));
+
+    const rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if (!rm) {
+      const px = [...document.querySelectorAll('.silence .img,.plate-photo .img,.chapter-cover .photo,.photo-quote .photo')];
+      px.forEach(el => { el.style.transform = 'scale(1.08)'; el.style.transition = 'transform .1s linear'; });
+      let ticking = false;
+      const move = () => {
+        px.forEach(el => {
+          const host = el.classList.contains('photo') ? el.parentElement : el;
+          const r = host.getBoundingClientRect();
+          if (r.bottom > 0 && r.top < innerHeight) {
+            const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+            el.style.transform = `scale(1.08) translateY(${(-p * 3).toFixed(2)}%)`;
+          }
+        });
+        ticking = false;
+      };
+      addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(move); ticking = true; } }, { passive: true });
+      move();
+    }
+
+    const links = [...document.querySelectorAll('#toc a')];
+    const ids = links.map(a => document.querySelector(a.getAttribute('href')));
+    const spy = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { const id = '#' + e.target.id; links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id)); } });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    ids.forEach(s => s && spy.observe(s));
+
+    const drawer = document.getElementById('drawer');
+    document.getElementById('burger').onclick = () => drawer.classList.add('open');
+    document.getElementById('close').onclick = () => drawer.classList.remove('open');
+    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
+  </script>
+</body>
+</html>
