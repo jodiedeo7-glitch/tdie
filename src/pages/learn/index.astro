@@ -1,15 +1,18 @@
 ---
 import "../../styles/global.css";
 
-// Every published article gets one line added here.
-// (Claude will add this line automatically for future articles.)
 const articles = [
-  {
-    title: "How to Build a Faceless Digital Business",
-    slug: "how-to-build-a-faceless-digital-business",
-    category: "Business Systems",
-    readTime: "20 Min Read",
-  },
+  { title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", category: "Business Systems", readTime: "20 Min Read" },
+  { title: "How to Choose Your Niche in a Weekend", slug: "choosing-a-niche", category: "Business Systems", readTime: "12 Min Read" },
+  { title: "How to Create Your First Offer in a Week", slug: "creating-your-first-offer", category: "Digital Products", readTime: "13 Min Read" },
+  { title: "How to Sell Digital Products Without an Audience", slug: "digital-products-for-beginners", category: "Digital Products", readTime: "12 Min Read" },
+  { title: "How to Get Your First 1,000 Pinterest Visitors", slug: "pinterest-marketing-guide", category: "Pinterest", readTime: "14 Min Read" },
+  { title: "How Pinterest SEO Actually Works", slug: "pinterest-seo", category: "Pinterest", readTime: "11 Min Read" },
+  { title: "How to Write Blog Posts That Still Get Read in a Year", slug: "blogging-guide", category: "Blogging", readTime: "13 Min Read" },
+  { title: "How to Write Your First 5 Emails", slug: "email-marketing-for-beginners", category: "Email Marketing", readTime: "12 Min Read" },
+  { title: "How to Earn Your First Affiliate Sale", slug: "affiliate-marketing-for-beginners", category: "Affiliate Marketing", readTime: "11 Min Read" },
+  { title: "How to Use AI Without Sounding Like a Robot", slug: "ai-for-online-business", category: "AI & Automation", readTime: "12 Min Read" },
+  { title: "How to Build a Business That Runs Without You", slug: "business-that-runs-without-you", category: "Automation", readTime: "13 Min Read" },
 ];
 ---
 <!DOCTYPE html>
@@ -18,24 +21,41 @@ const articles = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Library | The Digital Income Edit™</title>
-  <meta name="description" content="The complete article library from The Digital Income Edit™." />
+  <meta name="description" content="The complete article library from The Digital Income Edit™ — practical guides on Pinterest, digital products, AI, email, and building a business that runs without you." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body{margin:0;background:var(--cream);font-family:"Inter",sans-serif;color:var(--choc);padding:80px 24px}
-    .wrap{max-width:760px;margin:0 auto}
-    h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,5vw,54px);margin:0 0 50px}
-    a.row{display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit}
-    a.row .t{font-family:"Fraunces",serif;font-size:22px}
-    a.row .c{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)}
-    a.home{display:inline-block;margin-bottom:40px;font-size:13px;letter-spacing:1px;color:var(--taupe-deep);text-decoration:none}
+    body{margin:0;background:var(--cream);font-family:"Inter",sans-serif;color:var(--choc)}
+    .lib-hero{position:relative;min-height:44vh;display:flex;align-items:flex-end;overflow:hidden}
+    .lib-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-03.jpg);background-size:cover;background-position:center}
+    .lib-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.4),var(--cream) 96%)}
+    .lib-hero .in{position:relative;max-width:760px;margin:0 auto;padding:0 24px 44px;width:100%}
+    .lib-hero .k{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink);font-weight:600;margin-bottom:14px}
+    .lib-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,5.5vw,58px);margin:0 0 12px;letter-spacing:-.5px}
+    .lib-hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--choc-soft);margin:0;max-width:34ch}
+    .wrap{max-width:760px;margin:0 auto;padding:60px 24px 110px}
+    a.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit;transition:padding-left .4s cubic-bezier(.24,.65,.3,1)}
+    a.row:first-of-type{border-top:1px solid var(--gray)}
+    a.row:hover{padding-left:10px}
+    a.row .t{font-family:"Fraunces",serif;font-size:clamp(18px,2.4vw,22px);line-height:1.25}
+    a.row .c{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep);white-space:nowrap}
+    @media(max-width:600px){a.row{flex-direction:column;gap:6px}}
+    a.home{display:inline-block;margin-bottom:30px;font-size:13px;letter-spacing:1px;color:var(--taupe-deep);text-decoration:none}
+    a.home:hover{color:var(--pink)}
   </style>
 </head>
 <body>
+  <section class="lib-hero">
+    <div class="bg"></div><div class="veil"></div>
+    <div class="in">
+      <div class="k">The Digital Income Edit™</div>
+      <h1>The Library</h1>
+      <p>Every guide, in the order that actually makes sense.</p>
+    </div>
+  </section>
   <div class="wrap">
     <a class="home" href="/">← Home</a>
-    <h1>The Library</h1>
     {articles.map((a) => (
       <a class="row" href={`/learn/${a.slug}`}>
         <span class="t">{a.title}</span>
