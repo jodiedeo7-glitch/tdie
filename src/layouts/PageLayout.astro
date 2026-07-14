@@ -1,0 +1,99 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | The Digital Income Edit™</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .page-wrap{max-width:640px;margin:0 auto;padding:90px 40px 120px}
+    .page-eyebrow{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:24px}
+    .page-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:24px}
+    .page-wrap .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--taupe-deep);margin-bottom:40px}
+    .page-wrap p{font-size:17px;line-height:1.8;margin-bottom:24px}
+    .page-wrap ul{margin:0 0 32px;padding-left:20px}
+    .page-wrap li{margin-bottom:12px;line-height:1.6}
+  </style>
+</head>
+<body class="no-js">
+  <style>.no-js .reveal{opacity:1;transform:none}</style>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
+      <div class="nav-links">
+        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
+        <a class="nav-join" href="/membership">Join</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <button class="close" id="close" aria-label="Close">✕</button>
+    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
+  </div>
+
+  <main class="page-wrap">
+    <slot />
+  </main>
+
+  <footer>
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
+      </div>
+      <div class="foot-col">
+        <h5>Learn</h5>
+        <a href="/learn">The Library</a>
+        <a href="/learn">Pinterest</a>
+        <a href="/learn">AI</a>
+        <a href="/learn">Digital Products</a>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="/shop">Shop</a>
+        <a href="/resources">Free Resources</a>
+        <a href="/membership">Membership</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="foot-col">
+        <h5>Connect</h5>
+        <a href="/community">Community</a>
+        <a href="/newsletter">Newsletter</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Digital Income Edit™</span>
+      <span>Curated with intention.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.remove('no-js');
+    const drawer = document.getElementById('drawer');
+    document.getElementById('burger').onclick = () => drawer.classList.add('open');
+    document.getElementById('close').onclick = () => drawer.classList.remove('open');
+    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
+  </script>
+</body>
+</html>

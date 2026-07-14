@@ -1,0 +1,21 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+<PageLayout
+  title="The Weekly Edit — Newsletter"
+  description="Practical tutorials, AI workflows, Pinterest strategies, and digital product ideas — one useful email at a time."
+>
+  <div class="page-eyebrow">The Weekly Edit</div>
+  <h1>Continue Learning Every Week</h1>
+  <p class="lede">Practical tutorials, AI workflows, Pinterest strategies, and digital product ideas — one beautiful, useful email at a time.</p>
+
+  <form style="display:flex;gap:12px;max-width:420px;flex-wrap:wrap;margin:40px 0" onsubmit="return false">
+    <input type="email" placeholder="Your email address" aria-label="Email address"
+      style="flex:1;min-width:220px;padding:16px 22px;border:1px solid var(--taupe);border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;background:var(--white);color:var(--choc)" />
+    <button class="btn" type="submit">Subscribe <span class="a">→</span></button>
+  </form>
+
+  <p style="font-size:13px;color:var(--taupe)">Join thousands of women building online businesses on their own terms. Unsubscribe anytime.</p>
+
+  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+</PageLayout>
