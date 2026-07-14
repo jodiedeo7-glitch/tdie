@@ -164,8 +164,19 @@ const canonical = `https://learn.thedigitalincomeedit.com/learn/${slug}`;
 
     const mio = new IntersectionObserver((es) => {
       es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); mio.unobserve(e.target); } });
-    }, { threshold: .2 });
+    }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
     document.querySelectorAll('.mask').forEach(el => mio.observe(el));
+
+    // Safety net: if any mask hasn't revealed shortly after load, reveal it.
+    // Prevents tall images from staying hidden and leaving blank space.
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.mask:not(.in)').forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight * 1.5) el.classList.add('in');
+        });
+      }, 600);
+    });
 
     const rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
     if (!rm) {

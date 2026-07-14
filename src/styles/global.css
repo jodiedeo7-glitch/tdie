@@ -11,13 +11,16 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--cream);color:var(--choc);font-size:18px;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
-/* layered paper warmth behind everything */
+/* layered warmth behind everything — real pink presence, not a whisper */
 body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(55% 45% at 88% -8%,rgba(246,233,231,.55) 0%,transparent 60%),
-    radial-gradient(45% 40% at 6% 10%,rgba(243,236,228,.7) 0%,transparent 55%),
-    radial-gradient(50% 40% at 96% 62%,rgba(200,169,106,.07) 0%,transparent 60%),
-    var(--cream);}
+    radial-gradient(60% 50% at 92% -6%,rgba(255,138,194,.30) 0%,transparent 62%),
+    radial-gradient(52% 44% at 4% 8%,rgba(248,216,228,.55) 0%,transparent 58%),
+    radial-gradient(46% 38% at 98% 40%,rgba(214,46,115,.09) 0%,transparent 60%),
+    radial-gradient(50% 42% at 0% 58%,rgba(255,138,194,.16) 0%,transparent 58%),
+    radial-gradient(58% 46% at 84% 88%,rgba(248,216,228,.50) 0%,transparent 62%),
+    radial-gradient(40% 34% at 12% 96%,rgba(200,169,106,.10) 0%,transparent 58%),
+    linear-gradient(180deg,#FFF6FA 0%,var(--cream) 38%,#FDF4F7 72%,var(--cream) 100%);}
 /* extremely subtle film grain */
 body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");}
@@ -26,9 +29,12 @@ a{color:inherit;text-decoration:none}
 /* floating decorative glyphs */
 .float{position:absolute;font-family:var(--display);font-style:italic;color:var(--gold);opacity:.10;pointer-events:none;z-index:0;user-select:none}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--pink),var(--mauve));z-index:100;transition:width .1s linear}
-.reveal{opacity:0;transform:translateY(8px);transition:opacity .35s ease-out,transform .35s ease-out}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}}
+/* Fade-up reveal. Fails VISIBLE: a delayed CSS animation restores opacity even
+   if the IntersectionObserver never fires, so content is never permanently hidden. */
+.reveal{opacity:0;transform:translateY(8px);transition:opacity .35s ease-out,transform .35s ease-out;animation:reveal-failsafe 0s linear 2.5s forwards}
+.reveal.in{opacity:1;transform:none;animation:none}
+@keyframes reveal-failsafe{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;animation:none}*{scroll-behavior:auto!important}}
 
 .nav{position:sticky;top:0;z-index:60;background:rgba(251,248,245,.86);backdrop-filter:blur(10px)}
 .nav-in{max-width:var(--wide);margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
@@ -55,7 +61,7 @@ a{color:inherit;text-decoration:none}
 .hero-figure figcaption{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);margin-top:16px;text-align:center}
 
 .shell{max-width:var(--wide);margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr minmax(0,var(--read)) 1fr}
-.rail-left{grid-column:1}.article{grid-column:2}.rail-right{grid-column:3}
+.rail-left{grid-column:1}.article{grid-column:2;position:relative;z-index:0}.rail-right{grid-column:3}
 @media(max-width:1080px){.shell{grid-template-columns:1fr;padding:56px 26px}.article{grid-column:1}.rail-left,.rail-right{display:none}}
 
 .toc{position:sticky;top:110px;padding:30px 30px 30px 0;max-width:270px;margin-left:auto}
@@ -84,6 +90,13 @@ a{color:inherit;text-decoration:none}
 .answer{font-size:21px;line-height:1.7;color:var(--choc);font-weight:500;padding-left:22px;border-left:2px solid var(--pink);margin:0 0 34px}
 
 .chapter{margin:130px 0 46px;text-align:center}
+/* Alternating tinted bands so the page has rhythm on a long scroll instead of
+   one flat wash. Each band bleeds full-width behind the reading column. */
+.article > .chapter::before{content:"";position:absolute;left:50%;transform:translateX(-50%);
+  width:100vw;top:-90px;bottom:-90px;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(255,138,194,.10) 22%,rgba(255,138,194,.10) 78%,transparent);}
+.article > .chapter.left::before{
+  background:linear-gradient(180deg,transparent,rgba(248,216,228,.42) 22%,rgba(248,216,228,.42) 78%,transparent);}
 .chapter .num{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:3px;color:var(--pink);text-transform:uppercase;margin-bottom:18px}
 .chapter .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px}
 .chapter .orn::before,.chapter .orn::after{content:"";width:26px;height:1px;background:var(--mauve)}
@@ -231,7 +244,7 @@ footer{background:var(--cream-deep);color:var(--choc-soft);padding:80px 40px 40p
 @media(max-width:600px){.masthead{padding-top:34px}.masthead .issue{font-size:12px;letter-spacing:2px}}
 
 /* oversized chapter numerals — typography as design */
-.chapter{position:relative}
+.chapter{position:relative;z-index:1}
 .chapter .bignum{position:absolute;top:-70px;left:50%;transform:translateX(-50%);font-family:var(--display);font-style:italic;font-weight:300;font-size:210px;line-height:1;color:var(--mauve);opacity:.3;z-index:0;pointer-events:none}
 .chapter .num,.chapter .orn,.chapter h2{position:relative;z-index:1}
 @media(max-width:600px){.chapter .bignum{font-size:120px;top:-40px}}
@@ -322,14 +335,16 @@ footer{background:var(--cream-deep);color:var(--choc-soft);padding:80px 40px 40p
    Every article arranges a different subset so none feel templated.
    ===================================================================== */
 
-/* photographic tone shared by all image plates (replaces flat gradients) */
+/* photographic tone shared by all image plates (fallback tone behind real photos) */
 .photo{background:
    linear-gradient(135deg,rgba(255,255,255,.14),transparent 40%),
    linear-gradient(150deg,#e9ddd6,#d6c6bb 55%,#c5b1a6);
+   background-size:cover;background-position:center;
    position:relative;overflow:hidden}
-.photo::after{content:attr(data-cap);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:var(--serif);font-style:italic;font-size:14px;color:#8a7168}
-.photo.dark{background:linear-gradient(135deg,#5c4046,#3a2a2e 60%,#2b161b)}
-.photo.dark::after{color:rgba(255,255,255,.55)}
+/* placeholder caption — only shows when a data-cap is present (i.e. no real photo yet) */
+.photo[data-cap]::after{content:attr(data-cap);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:var(--serif);font-style:italic;font-size:14px;color:#8a7168}
+.photo.dark:not([style*="background-image"]){background:linear-gradient(135deg,#5c4046,#3a2a2e 60%,#2b161b)}
+.photo.dark[data-cap]::after{color:rgba(255,255,255,.55)}
 
 /* 1 — MOMENT OF SILENCE: one photo, one sentence, oceans of space */
 .silence{margin:130px 0;text-align:center}
@@ -400,8 +415,12 @@ footer{background:var(--cream-deep);color:var(--choc-soft);padding:80px 40px 40p
 
 /* invisible-luxury: parallax hooks + image mask reveal */
 [data-parallax]{will-change:transform}
-.mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease)}
-.mask.in{clip-path:inset(0 0 0 0)}
+/* Mask reveal. Fails VISIBLE: if JS never adds .in, a CSS animation reveals it
+   anyway after a short delay, so an image can never be permanently hidden. */
+.mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease);animation:mask-failsafe 0s linear 2.5s forwards}
+.mask.in{clip-path:inset(0 0 0 0);animation:none}
+@keyframes mask-failsafe{to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.mask{clip-path:none;animation:none}}
 /* letter-spacing settle on headings */
 .chapter h2,.hero h1{transition:letter-spacing 1.2s var(--ease),opacity 1.2s var(--ease)}
 
