@@ -54,11 +54,16 @@
 // AFFILIATE MECHANICS — Standing Rule 18:
 // link + rel="sponsored" + disclosure travel as a set or not
 // at all. Canva (Pillar 3) is the ONLY affiliate with confirmed
-// terms and is the ONLY one that ships as a link. Make (Pillars
-// 6, 9) and Beacons (Pillar 7) are honest recommendations with
-// no confirmed relationship — they ship as UNLINKED TEXT. That
-// is a PASS, not a gap. Do not add hrefs to them without a
-// recorded decision.
+// terms and is the ONLY one that ships as a link — it carries
+// all three. Make (Pillars 6, 9) and Beacons (Pillar 7) are
+// honest recommendations with no confirmed relationship — they
+// ship as UNLINKED TEXT with no sponsored rel and no affiliate
+// disclosure, because there is no affiliate relationship to
+// disclose. They DO carry a plain "not an affiliate link" note:
+// that is not an affiliate mechanic, it is the honesty the
+// unlinked recommendation exists for. Rule 18 governs the set
+// of three; it does not forbid the note. Do not add hrefs to
+// Make or Beacons without a recorded decision.
 //
 // CATEGORY LABELS — Standing Rule 24: the pillar defines the
 // label. Keys below are canon. Two live articles pass non-canon
@@ -416,6 +421,11 @@ const free = "free" in pillar ? pillar.free : null;
 const paid = "paid" in pillar ? pillar.paid : null;
 const affiliate = "affiliate" in pillar ? pillar.affiliate : null;
 
+// Narrowed once here rather than inline, so the template branches on a
+// boolean instead of an `in` check inside JSX.
+const affiliateHref =
+  affiliate && "href" in affiliate ? affiliate.href : null;
+
 const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 ---
 
@@ -525,11 +535,11 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
               <div class="journey-kind">The tool I'd use</div>
               <h4>{affiliate.name}</h4>
               <p>{affiliate.blurb}</p>
-              {"href" in affiliate && affiliate.href ? (
-                <>
+              {affiliateHref ? (
+                <Fragment>
                   
                     class="btn"
-                    href={affiliate.href}
+                    href={affiliateHref}
                     rel="sponsored nofollow noopener"
                     target="_blank"
                   >Take a look <span class="a">→</span></a>
@@ -537,13 +547,8 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
                     This is an affiliate link. If you sign up through it, I may earn a
                     commission at no cost to you. I recommend it because I use it.
                   </div>
-                </>
+                </Fragment>
               ) : (
-                /*
-                  Unlinked by design — Standing Rule 18. No affiliate
-                  relationship exists, so no link, no rel="sponsored", and no
-                  disclosure. Naming the tool honestly is the whole point.
-                */
                 <div class="fine">Not an affiliate link — just what I use.</div>
               )}
             </div>
