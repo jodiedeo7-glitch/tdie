@@ -51,6 +51,9 @@ one continuous brand photoshoot no matter which article they appear in.
 - `detail-flatlay-ribbon-flowers.jpg` — ribbon, papers, rings, blush flowers
 - `detail-flatlay-book-flowers.jpg` — book + flowers detail
 
+## PRODUCT COVERS
+- `product-starter-map-cover.png` — The $10/Day Traffic Machine — Starter Map, cover art (1728x2304 portrait, PNG). Added 15 July 2026 for Issue 028. Per reuse rule 3, use only on pages delivering the Starter Map.
+
 ---
 
 ## Reuse rules for future articles
