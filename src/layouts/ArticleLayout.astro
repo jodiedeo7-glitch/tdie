@@ -25,6 +25,22 @@
 // structured data that isn't present in the rendered page.
 //
 // ============================================================
+// NOTE ON MULTI-ELEMENT CONDITIONAL BRANCHES
+// ============================================================
+// Do NOT use `<>...</>` shorthand — Astro does not support it.
+// Do NOT use `<Fragment>` without importing it from 'astro/jsx-runtime'
+// — an unimported capitalized tag is parsed as raw markup, the
+// enclosing block's structure breaks, and the compiler reports an
+// orphaned closing tag SOMEWHERE DOWNSTREAM of the real cause.
+// Both mistakes were made in this file and both produced the same
+// misleading "Closing tag '</a>' has no matching opening tag" error
+// pointing at the newsletter section, which was never broken.
+//
+// Where a conditional branch needs to render more than one element,
+// wrap it in a real element (see the affiliate block below). Simpler,
+// no import, nothing to forget.
+//
+// ============================================================
 // PER-PILLAR ROUTING — Resource Map v2.0, Part 2
 // ============================================================
 // The journey block below is NO LONGER HARDCODED. It reads
@@ -536,7 +552,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
               <h4>{affiliate.name}</h4>
               <p>{affiliate.blurb}</p>
               {affiliateHref ? (
-                <Fragment>
+                <div class="journey-tool-action">
                   
                     class="btn"
                     href={affiliateHref}
@@ -547,7 +563,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
                     This is an affiliate link. If you sign up through it, I may earn a
                     commission at no cost to you. I recommend it because I use it.
                   </div>
-                </Fragment>
+                </div>
               ) : (
                 <div class="fine">Not an affiliate link — just what I use.</div>
               )}
