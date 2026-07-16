@@ -1,3 +1,18 @@
+One correction before the file: **Article schema is not valid without `datePublished` for Google's article rich results.** `datePublished` is a required property in Google's Article structured data spec. Schema.org itself doesn't require it, so the JSON-LD won't throw — but Search Console will flag every page missing it, and article rich-result eligibility drops. The build passing isn't the same as the schema working.
+
+That said, your instruction is correct in shape: **a build that fails is worse than schema that's incomplete.** Optional-with-omission is the right call. I've written it that way.
+
+But the twelve dates are also not a by-hand job. This gets them in one paste:
+
+```bash
+for f in src/pages/learn/*.astro; do
+  printf '%s  %s\n' "$(git log --diff-filter=A --follow --format=%aI -1 -- "$f" | cut -c1-10)" "$f"
+done
+```
+
+Twelve lines of output, thirty seconds. Paste it back and I'll write the twelve `datePublished` lines for you. Worth doing after this ships — the layout below will accept them without further change.
+
+```astro
 ---
 // ============================================================
 // THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
@@ -6,17 +21,37 @@
 // src/pages/learn/ using this same layout, keep the frontmatter
 // fields, and write the article body as the page content.
 // Nothing here needs to change per-article.
+//
+// STRUCTURED DATA
+// Article schema emits on every page, generated from props.
+//
+// ⚠️ datePublished is OPTIONAL here so that pages which don't
+// pass it still build. It is omitted from the schema when
+// absent rather than emitted empty or faked. This is a
+// deliberate, temporary state: Google's Article spec lists
+// datePublished as REQUIRED, and pages without it will be
+// flagged in Search Console and lose article rich-result
+// eligibility. Backfill the twelve dates and pass them here.
+// No layout change is needed when you do.
+//
+// FAQPage schema emits only when the optional `faqs` prop is
+// passed. Answers passed to `faqs` MUST match the visible FAQ
+// text in the article body verbatim — Google penalises
+// structured data that isn't present in the rendered page.
 // ============================================================
 import "../styles/global.css";
 
 export interface Props {
-  title: string;            // SEO title tag
-  description: string;      // meta description
+  title: string;             // SEO title tag
+  description: string;       // meta description
   slug: string;              // e.g. "how-to-build-a-faceless-digital-business"
   category: string;          // e.g. "Business Systems"
   issueNumber: string;       // e.g. "017"
   readTime: string;          // e.g. "20 Min Read"
   ogImage?: string;
+  datePublished?: string;    // ISO 8601, e.g. "2026-07-16". Omitted from schema if absent.
+  dateModified?: string;     // ISO 8601. Defaults to datePublished when that exists.
+  faqs?: { question: string; answer: string }[];  // Omit for Article schema only.
 }
 
 const {
@@ -27,9 +62,64 @@ const {
   issueNumber,
   readTime,
   ogImage = "/og/default.jpg",
+  datePublished,
+  dateModified,
+  faqs,
 } = Astro.props;
 
-const canonical = `https://learn.thedigitalincomeedit.com/learn/${slug}`;
+const SITE = "https://learn.thedigitalincomeedit.com";
+const canonical = `${SITE}/learn/${slug}`;
+
+// Absolute URL for schema and OG — ogImage may be passed as a relative path.
+const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
+
+// Dates are spread in only when present. An absent date emits no key at all —
+// never an empty string, never a build-time guess.
+const articleDates = {
+  ...(datePublished && { datePublished }),
+  ...((dateModified ?? datePublished) && { dateModified: dateModified ?? datePublished }),
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${canonical}#article`,
+  headline: title,
+  description: description,
+  image: ogImageAbsolute,
+  url: canonical,
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  articleSection: category,
+  issueNumber: issueNumber,
+  ...articleDates,
+  inLanguage: "en",
+  isAccessibleForFree: true,
+  author: {
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: "The Digital Income Edit™",
+    url: SITE,
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: "The Digital Income Edit™",
+    url: SITE,
+  },
+};
+
+const faqSchema = faqs?.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${canonical}#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    }
+  : null;
 ---
 
 <!DOCTYPE html>
@@ -44,7 +134,11 @@ const canonical = `https://learn.thedigitalincomeedit.com/learn/${slug}`;
   <meta property="og:type" content="article" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
+  <meta property="og:image" content={ogImageAbsolute} />
+  <meta property="og:url" content={canonical} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -213,3 +307,4 @@ const canonical = `https://learn.thedigitalincomeedit.com/learn/${slug}`;
   </script>
 </body>
 </html>
+```
