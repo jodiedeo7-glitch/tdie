@@ -1,0 +1,496 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const faqs = [
+  {
+    question: "Do I need a blog to do Pinterest marketing?",
+    answer: "You need somewhere for the click to land that you control — a blog is the strongest version of that. Pins linking to your own articles build an asset; pins linking nowhere build Pinterest's asset. If your site isn't built yet, start with one cornerstone article and grow from there."
+  },
+  {
+    question: "How long does Pinterest marketing take to work?",
+    answer: "Pinterest compounds on a scale of months, not weeks. Plan for a quarter of consistent publishing before you judge results, with growth accelerating as pins accumulate rankings. Anyone promising Pinterest results in a week is describing a different platform."
+  },
+  {
+    question: "How many times a day should I pin?",
+    answer: "A few quality, keyword-targeted fresh pins per day is plenty. Consistency over volume — an account that pins modestly every day outperforms an account that pins in unsustainable bursts."
+  },
+  {
+    question: "Do I have to show my face on Pinterest?",
+    answer: "No — and Pinterest is the channel where that costs you the least, because searchers come for ideas, not personalities. Your brand's imagery, palette, and point of view do the recognition work a face does elsewhere."
+  },
+  {
+    question: "Is Pinterest still worth it for business?",
+    answer: "Pinterest remains one of the highest-intent, longest-shelf-life traffic sources available to a small content business. Its users search with purchase and project intent, and its content keeps distributing long after publication — the opposite of feed-based platforms."
+  },
+  {
+    question: "What's the difference between fresh pins and repins?",
+    answer: "A fresh pin is a new image, even if it links to existing content. A repin recirculates an existing image. Pinterest's distribution favors fresh pins — so one article with five pin designs is stronger than five articles with one each."
+  },
+  {
+    question: "Do I need Tailwind or a paid scheduler?",
+    answer: "No. Pinterest's native scheduler is free with a business account and queues up to two weeks out, which covers the publishing rhythm this guide teaches. Paid schedulers solve bulk-scheduling and multi-board problems you don't have yet."
+  }
+];
+
+const related = [
+  { href: "/learn/pinterest-seo", title: "Pinterest SEO: How Pinterest Actually Decides What to Show" },
+  { href: "/learn/pinterest-marketing-guide", title: "The Pinterest Marketing Guide for Beginners" },
+  { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" }
+];
+---
+
+<ArticleLayout
+  title="The Complete Pinterest Marketing Guide"
+  description="Pinterest marketing is publishing keyword-optimized visual content that ranks in Pinterest search and drives traffic to your site, list, or products. The complete system — account, keywords, pins, publishing rhythm, and the funnel that turns a pin into a subscriber."
+  slug="complete-pinterest-marketing-guide"
+  category="Pinterest"
+  issueNumber="029"
+  readTime="14 Min Read"
+  ogImage="/images/library/hero-office-wide-04.jpg"
+  datePublished="2026-07-22"
+  dateModified="2026-07-22"
+  faqs={faqs}
+  related={related}
+>
+
+  <section slot="hero">
+    <div class="hero">
+      <span class="kicker">Pinterest</span>
+      <h1>The Complete Pinterest Marketing Guide</h1>
+      <p class="sub">Pinterest is a search engine wearing a mood board's clothing. Everything follows from that.</p>
+      <div class="hero-meta">
+        <span>Issue No. 029</span>
+        <span class="b"></span>
+        <span>14 Min Read</span>
+        <span class="b"></span>
+        <span>The Digital Income Edit™</span>
+      </div>
+    </div>
+    <figure class="hero-figure reveal">
+      <div class="img mask photo" style="background-image:url('/images/library/hero-office-wide-04.jpg')"></div>
+      <figcaption>The channel that keeps working after you close the laptop</figcaption>
+    </figure>
+  </section>
+
+  <nav slot="toc" class="toc" id="toc">
+    <div class="plate">
+      <div class="run">Issue No. 029</div>
+      <div class="lbl">In This Guide</div>
+      <ol>
+        <li><a href="#what-is">What Pinterest Marketing Is</a></li>
+        <li><a href="#search-engine">A Search Engine, Not Social Media</a></li>
+        <li><a href="#setup">An Account That Can Rank</a></li>
+        <li><a href="#keywords">The Keyword System</a></li>
+        <li><a href="#pins">Pins That Earn the Click</a></li>
+        <li><a href="#rhythm">The Publishing Rhythm</a></li>
+        <li><a href="#funnel">Pin to Click to Subscriber</a></li>
+        <li><a href="#analytics">Reading Your Analytics</a></li>
+        <li><a href="#foundations">When It's Time for More</a></li>
+        <li><a href="#action-plan">Your Action Plan</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ol>
+      <div class="foot">The Digital Income Edit™</div>
+    </div>
+  </nav>
+
+  <p class="lede first">Somewhere around 2019, everyone decided Pinterest was social media. It got lumped into the same content calendar as Instagram, given the same hashtag treatment, and then abandoned six weeks later when it didn't behave like Instagram.</p>
+
+  <p>It doesn't behave like Instagram because it isn't Instagram. It was never supposed to be.</p>
+
+  <p>Pinterest is a search engine wearing a mood board's clothing. And that one misunderstanding — treating a search engine like a social feed — is the reason most women's Pinterest accounts are flat, and the reason yours doesn't have to be.</p>
+
+  <p>Here's what makes this worth your attention: Pinterest is the single most faceless-friendly traffic channel that exists. No trending audio. No talking to a camera. No algorithm punishing you for taking a week off. A pin you publish today can still be sending you traffic long after an Instagram post has been dead for months.</p>
+
+  <p>This guide is the complete system — account, keywords, pins, publishing rhythm, and the funnel that turns a pin into a subscriber. Where a topic deserves its own deep dive, I'll point you to it rather than cramming it in here. Read this one first. It's the map.</p>
+
+  <div class="rule"><span class="d"></span></div>
+
+  <div class="chapter reveal">
+    <div class="bignum">01</div>
+    <div class="num">Chapter One</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="what-is">What Is Pinterest Marketing?</h2>
+  </div>
+
+  <p class="answer">Pinterest marketing is publishing keyword-optimized visual content — pins — that ranks in Pinterest search and drives traffic to your website, email list, or products. It runs on search intent, not engagement. That difference is why a pin keeps earning clicks for months while a social post dies in a day, and why follower count barely matters here.</p>
+
+  <p>Read that last part again, because it's the entire economic argument. A social post is a firework: bright, brief, gone. A pin is an asset. It gets indexed, it ranks for search terms, and it keeps working while you're doing something else — which, if you've read <a href="/learn/how-to-build-a-faceless-digital-business">Issue №017 on building a faceless digital business</a>, you'll recognize as the whole point of this business model.</p>
+
+  <p>You are not here to feed a content treadmill. You're here to build things once that pay you repeatedly.</p>
+
+  <div class="framework reveal">
+    <div class="tag"><span>◆</span> The three jobs</div>
+    <div class="flow">
+      <div class="node">
+        <div class="h">Discovery</div>
+        <div class="t">Putting your content in front of women actively searching for what you teach or sell.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="h">Traffic</div>
+        <div class="t">Moving her from the pin to your site, where you control the experience.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="h">Conversion</div>
+        <div class="t">Turning that visit into a subscriber or a sale.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>Every section of this guide serves one of those three jobs. If a tactic doesn't serve one of them, it's decoration.</p>
+
+  <div class="chapter left reveal">
+    <div class="bignum">02</div>
+    <div class="num">Chapter Two</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="search-engine">Why Pinterest Is a Search Engine, Not Social Media</h2>
+  </div>
+
+  <p class="answer">Pinterest is a visual search engine, not a social network. Search intent drives Pinterest distribution, which means a new account can outrank an established one on a specific search term. Pinterest content keeps distributing for months after publication. Pinterest is also slow to produce results, and that is a structural feature rather than a fixable problem.</p>
+
+  <p class="opener">People don't open Pinterest to see what their friends are doing. They open it to look for <b>something</b> — a recipe, a launch checklist, a way to make money that doesn't require their face on camera.</p>
+
+  <p>That single behavioral difference changes everything about how you should operate there.</p>
+
+  <h3>Search intent beats follower count</h3>
+  <p>On Instagram, reach is rented from your audience size. On Pinterest, Pinterest serves whatever best answers the search, regardless of who published it. Your follower number is close to irrelevant. Your keyword coverage is everything.</p>
+
+  <h3>Content has a shelf life measured in months, not hours</h3>
+  <p>A feed-based platform buries your post within a day. Pinterest keeps surfacing a pin for as long as it keeps satisfying searches. This is why Pinterest rewards patience and punishes nobody for consistency at a humane pace.</p>
+
+  <h3>Nobody expects to see you</h3>
+  <p>Pinterest is built around ideas, not identities. The searcher wants the checklist, the tutorial, the template — not your morning routine. For a faceless brand, this isn't a workaround. It's home-field advantage. Your brand's face is its aesthetic, its imagery, its point of view — and on Pinterest, that's all a face was ever going to be anyway.</p>
+
+  <div class="box mistake">
+    <div class="tag"><span class="g">✕</span> Where this stops being true</div>
+    <p>Pinterest is slow. Anyone selling a 30-day Pinterest transformation is selling a different platform. If you need revenue inside eight weeks, Pinterest is not the lever — email to an existing list is.</p>
+    <p>Pinterest is what you build <em>while</em> something faster pays the bills. That's not a caveat buried in the fine print; it's the honest condition of the whole strategy.</p>
+  </div>
+
+  <p>The practical consequence: you will do keyword research before you design a single pin, you will write pin copy the way you'd write for Google, and you will judge your results in quarters, not weekends. Everything downstream of here assumes you've made that mental switch.</p>
+
+  <div class="photo-quote">
+    <div class="img photo dark" style="background-image:url('/images/library/detail-phone-pinterest-grid-02.jpg');position:absolute;inset:0"></div>
+    <div class="veil"></div>
+    <div class="inner">
+      <p>A pin is an asset. A post is a firework.</p>
+    </div>
+  </div>
+
+  <div class="chapter reveal">
+    <div class="bignum">03</div>
+    <div class="num">Chapter Three</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="setup">Setting Up an Account That Can Actually Rank</h2>
+  </div>
+
+  <p class="answer">A Pinterest account that ranks requires three things: a business account, a claimed website, and boards named after search terms. A Pinterest business account is free and unlocks Pinterest Analytics and rich pins. Claiming a website attributes every pin saved from that site back to the owner's profile. Most accounts fail this setup before publishing a single pin.</p>
+
+  <h3>Start with a business account</h3>
+  <p>Not because the badge matters, but because Pinterest Analytics and rich pins live behind it. If you're currently on a personal account, convert it in <strong>Settings → Account management → Convert to a business account</strong> — you keep your boards, your pins, and your followers.</p>
+
+  <h3>Claim your website</h3>
+  <p>This lives in <strong>Settings → Claimed accounts</strong>, and Pinterest gives you two routes: paste an HTML meta tag into your site's head, or add a DNS TXT record at your domain registrar. On an Astro site, the meta tag route is the easier one — it goes in your base layout's head block and deploys with your next push.</p>
+
+  <p>Skip claiming and every pin of your content builds authority for nobody at all.</p>
+
+  <h3>Build boards like category pages, not scrapbooks</h3>
+  <p>Pinterest boards are ranking surfaces, not storage. Each one should target a search theme your audience actually types — "Pinterest marketing tips," "digital product ideas," "faceless business ideas" — not "Inspo ✨" or "Things I Love."</p>
+
+  <p>A board named after a search term, with a keyword-rich description and twenty-plus relevant pins, is a page Pinterest can understand and rank. A vibes board is invisible.</p>
+
+  <div class="box tip">
+    <div class="tag"><span class="g">✦</span> On the years of personal pinning</div>
+    <p>You don't have to delete your history. Make the off-topic boards secret and let the business boards define the account. Ten boards doing real keyword work will outperform forty boards of accumulated clutter.</p>
+  </div>
+
+  <p>One more surface most people miss: your profile is a search result too. Display name and bio both take keywords. "The Digital Income Edit™ | Faceless Digital Business &amp; Pinterest Marketing" tells the algorithm and the searcher the same thing at the same time. That's the standard for every line of text you write on this platform — legible to a woman, legible to a machine, in that order.</p>
+
+  <div class="chapter left reveal">
+    <div class="bignum">04</div>
+    <div class="num">Chapter Four</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="keywords">The Keyword System</h2>
+  </div>
+
+  <p class="answer">Pinterest keyword research starts in Pinterest's own search bar. Autocomplete suggestions are real searches, which makes them the verification test: a phrase that appears in autocomplete has search volume, and a phrase that doesn't isn't a keyword. Specific long-tail phrases outperform broad head terms on Pinterest. The same target keyword belongs in five places: pin title, pin description, board title, board description, and the linked page.</p>
+
+  <p class="opener">Pins don't go viral on Pinterest — <b>they rank</b>. And they rank because the words on them, under them, and around them match what someone searched.</p>
+
+  <div class="spread left reveal">
+    <div class="frame mask photo" style="background-image:url('/images/library/flatlay-pinterest-analytics.jpg')"></div>
+    <div class="txt">
+      <div class="cap">Mine the search bar</div>
+      <h3>Autocomplete is the whole tool</h3>
+      <p>Type your topic into Pinterest search and let autocomplete finish your sentence. Those suggestions are ordered by what Pinterest believes matters most. Then run the search and look at the guided-search tiles across the top — each one is a subtopic Pinterest is telling you people want.</p>
+      <p>If nothing comes up for a phrase, it isn't a keyword, however clever it sounds.</p>
+      <span class="anno">no volume, no keyword</span>
+    </div>
+  </div>
+
+  <h3>Build a keyword bank, not a keyword pile</h3>
+  <p>For every content pillar in your business, you want a head term, a cluster of mid-tail phrases, and a long tail of specific searches. This is exactly what the <a href="/resources/pinterest-keyword-planner">Pinterest Keyword Planner</a> exists to do — it's the worksheet system from inside Pinterest Foundations™, and the standalone version is your free download at the end of this guide.</p>
+
+  <p>It walks you from seed words to a bank of 30–50 verified keywords, grouped into the topics that become your boards. Fill it once per pillar and you'll never stare at a blank pin description again.</p>
+
+  <h3>Favor specific over broad</h3>
+  <p>"Pinterest" is not a keyword you can win. "Pinterest marketing for bloggers" is. Longer phrases have less competition and dramatically better intent — the woman searching a five-word phrase knows exactly what she wants, and if you have it, she clicks.</p>
+
+  <h3>Deploy keywords in layers</h3>
+  <p>Pinterest reads all five layers to decide what your pin is about. Alignment across layers is what ranking actually is — the same phrase, naturally placed, in all five.</p>
+
+  <div class="box check">
+    <div class="tag"><span class="g">✦</span> The five layers</div>
+    <ul>
+      <li>Pin title</li>
+      <li>Pin description</li>
+      <li>Board title</li>
+      <li>Board description</li>
+      <li>The page the pin links to</li>
+    </ul>
+  </div>
+
+  <div class="deeper">
+    <span>Going deeper —</span>
+    <a href="/learn/pinterest-seo">Pinterest SEO covers search behavior, description structure, and how distribution actually decides what to show →</a>
+  </div>
+
+  <p style="margin-top:34px">For now, the rule is simple: no pin gets designed until its keyword is chosen. Design serves search, never the reverse.</p>
+
+  <div class="chapter reveal">
+    <div class="bignum">05</div>
+    <div class="num">Chapter Five</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="pins">Pins That Earn the Click</h2>
+  </div>
+
+  <p class="answer">The optimal Pinterest pin size is 1000×1500 pixels, a 2:3 vertical ratio. Pin text overlay works as a headline and should stay under eight words. Every pin is judged at thumbnail size on a phone, so overlay text that fails at 25% zoom fails entirely. Pinterest distribution favors fresh pins — new images — over repins of existing ones.</p>
+
+  <p class="opener">A pin has one job: <b>stop the scroll and earn the click</b>. Not express your creativity. Not win a design award. Interrupt a woman mid-search and make the click feel inevitable.</p>
+
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="n">1000<em>×</em>1500</div>
+      <div class="l">Pixels · 2:3 vertical</div>
+      <div class="d"></div>
+    </div>
+    <div class="stat">
+      <div class="n"><em>6</em></div>
+      <div class="l">Templates on rotation</div>
+      <div class="d"></div>
+    </div>
+    <div class="stat">
+      <div class="n"><em>5</em></div>
+      <div class="l">Keyword layers per pin</div>
+      <div class="d"></div>
+    </div>
+  </div>
+
+  <h3>Vertical, always</h3>
+  <p>1000×1500px is the format Pinterest built its feed around, and it's the Canva preset to save as your template size. Square and horizontal pins surrender screen space for no reason. Taller than 2:3 and Pinterest truncates you in the feed.</p>
+
+  <h3>Text overlay that makes a promise</h3>
+  <p>The image gets attention; the words get the click. Specific beats clever, outcome beats topic. "Pinterest Marketing" is a label. "The Pinterest System That Runs Without You" is a reason to click. A paragraph on a pin is unreadable at the size it will actually be seen.</p>
+
+  <h3>Readable at thumbnail size</h3>
+  <p>Your pin will be judged at roughly the size of a playing card on a phone. Before you publish a new template, zoom your Canva preview down to about 25% — if you can't read the overlay, neither can she. Big type, high contrast, generous margins.</p>
+
+  <div class="detail reveal">
+    <div class="img mask photo" style="background-image:url('/images/library/detail-phone-pinterest-grid-01.jpg')"></div>
+    <div class="say">
+      <div class="k">Six templates, not sixty</div>
+      <p>I rotate six. That's it. The saved time was real, but the bigger win was the end of analysis paralysis — too many options was always the actual problem, not too few.</p>
+    </div>
+  </div>
+
+  <h3>On-brand, warm, and unmistakably yours</h3>
+  <p>Visual consistency is what makes a faceless brand recognizable on Pinterest. Your pins should be identifiable in the feed before anyone reads your name — same fonts, same palette, same photographic warmth. It's the recognition work a face does elsewhere.</p>
+
+  <h3>Fresh pins over re-pins</h3>
+  <p>That does not mean new articles daily — it means one article can wear many outfits. Five different pins, five different headline angles, all pointing at this same guide, all counting as fresh content. This is how a small content library sustains a large Pinterest presence, and it's the exact repurposing logic this brand runs on: <a href="/learn/pinterest-marketing-guide">make your content work more than once</a>.</p>
+
+  <p>Design happens in Canva, in batches, against saved templates — never one-at-a-time on the day you need them. Batching is what makes the next chapter possible.</p>
+
+  <div class="chapter left reveal">
+    <div class="bignum">06</div>
+    <div class="num">Chapter Six</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="rhythm">The Publishing Rhythm</h2>
+  </div>
+
+  <p class="answer">A few keyword-targeted fresh pins per day builds a strong Pinterest account. Pinterest's native scheduler is free with a business account and queues pins up to two weeks ahead. The native scheduler has two limits: it schedules one pin at a time, and it won't queue to multiple boards at once. Consistency at a modest pace outperforms intensity in bursts on Pinterest.</p>
+
+  <p>Pinterest rewards accounts that show up steadily, and it is remarkably forgiving about what "steadily" means. A sustainable rhythm you can hold for a year will outperform a heroic month followed by silence.</p>
+
+  <h3>Pin daily-ish, at low volume</h3>
+  <p>There is no prize for volume; there is a real cost to burnout. If daily feels like too much right now, every-other-day with total consistency still builds.</p>
+
+  <h3>Schedule with Pinterest's native scheduler</h3>
+  <p>One sitting per week — batch your pins, write your keyword-layered descriptions, queue fourteen days. Done.</p>
+
+  <p>You may have heard of Tailwind, which solves both of the native scheduler's limits. This curriculum doesn't use it and doesn't teach it. A paid scheduler is a reasonable choice for someone running many accounts, and an unnecessary monthly bill for someone publishing a handful of pins a day. If you outgrow the native tool, you'll know. Until then, you're not missing anything you're paying for.</p>
+
+  <h3>Publish when your reader is browsing, not when you're working</h3>
+  <p>Evenings and weekends are typically when your audience is on Pinterest dreaming about the business she's going to build. The scheduler exists precisely so your publishing time and your working time never have to meet.</p>
+
+  <div class="mag-aside">
+    <div class="lbl">The operating standard</div>
+    <div class="q">One session. One week queued. Your Pinterest queue is one lane of a highway that's supposed to run without you.</div>
+  </div>
+
+  <div class="chapter reveal">
+    <div class="bignum">07</div>
+    <div class="num">Chapter Seven</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="funnel">From Pin to Click to Subscriber</h2>
+  </div>
+
+  <p class="answer">The Pinterest funnel runs in four stages: pin, article, lead magnet, email list. Pinterest traffic that doesn't convert to an email subscriber is a vanity metric. The email list is the only asset in the funnel the business actually owns — Pinterest can change its algorithm, and a list cannot be taken away. Every stage of this funnel runs on assets built once rather than daily presence.</p>
+
+  <div class="framework reveal">
+    <div class="tag"><span>◆</span> The four stages</div>
+    <div class="flow">
+      <div class="node">
+        <div class="h">Pin</div>
+        <div class="t">Keyword-targeted, linking to content that delivers on its promise.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="h">Article</div>
+        <div class="t">On your own site, where no algorithm stands between you and your reader.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="h">Lead magnet</div>
+        <div class="t">A relevant next step offered where she's already convinced.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="h">Email list</div>
+        <div class="t">The asset. Every stage upstream exists to feed it.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>Pinterest and blogging are the tightest pair in the business: Pinterest is where the blog gets its traffic, and the blog is where Pinterest traffic becomes something you own. If your content engine isn't built yet, <a href="/learn/pinterest-marketing-guide">the Pinterest marketing starter guide</a> covers the traffic-to-content relationship at the beginner level.</p>
+
+  <p>Once she's on your list, she hears from you weekly — and when she's ready to buy, the offer is one email away instead of one lucky scroll away.</p>
+
+  <div class="pull">
+    <span class="mark">"</span>
+    <p>Notice what's absent from that funnel: your face, your daily presence, your availability.</p>
+  </div>
+
+  <p>Pins, articles, PDFs, email sequences — built once, working continuously. Digital products slot into the end of this funnel as the thing being sold; if you haven't built yours yet, that's its own pillar of this library, and the funnel you're building here is the distribution system it will eventually plug into.</p>
+
+  <div class="chapter left reveal">
+    <div class="bignum">08</div>
+    <div class="num">Chapter Eight</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="analytics">Reading Your Analytics Without Drowning in Them</h2>
+  </div>
+
+  <p class="answer">Four Pinterest metrics matter: impressions, saves, outbound clicks, and post-click conversions. Outbound clicks are the metric that pays, because outbound clicks are traffic actually leaving Pinterest for your site. Rising impressions with flat clicks indicates a pin problem, and flat impressions indicate a keyword problem. Pinterest analytics should be reviewed monthly, not daily.</p>
+
+  <p>Everything else on the dashboard is noise.</p>
+
+  <div class="marginal">
+    <p><strong>Impressions</strong> tell you whether your keywords are working. Rising impressions mean Pinterest understands your content and is testing it in searches. Flat impressions mean a keyword problem, not a design problem — go back to the Planner.</p>
+    <span class="note">flat impressions = keywords, not design</span>
+  </div>
+
+  <p><strong>Saves</strong> tell you whether the content resonates. A save is a woman saying "I want this later." High saves with low clicks means your pin promises well but the click doesn't feel necessary — sharpen the curiosity gap in your overlay text.</p>
+
+  <p><strong>Outbound clicks</strong> you'll find in Pinterest Analytics under <strong>Overview → Outbound clicks</strong>, filterable by date range and by individual pin. When you evaluate a month, this number outranks every other number on the dashboard.</p>
+
+  <p><strong>After the click</strong> lives in your own analytics, not Pinterest's: which pins produce subscribers, not just visitors. Google Analytics and Google Search Console both segment Pinterest referral traffic for free. A pin driving 100 clicks and 12 downloads of your lead magnet is worth more than a pin driving 500 clicks and 3.</p>
+
+  <div class="box tip">
+    <div class="tag"><span class="g">✦</span> Monthly, not daily</div>
+    <p>Pinterest moves slowly, and daily checking teaches you exactly the wrong lessons from statistical static. Once a month, one question: which three pins drove the most outbound clicks, and what do they have in common?</p>
+    <p>Make more of that. That's the entire practice.</p>
+  </div>
+
+  <div class="chapter reveal">
+    <div class="bignum">09</div>
+    <div class="num">Chapter Nine</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="foundations">When It's Time for Pinterest Foundations™</h2>
+  </div>
+
+  <p class="answer">Pinterest Foundations™ is the full Pinterest course from The Digital Income Edit™, covering account architecture, keyword systems, boards, and pin production in sequence. Pinterest Foundations™ is $27 as a standalone purchase. Premium membership is $9/mo and includes Pinterest Foundations™ alongside the rest of the education library. The Pinterest Keyword Planner is Lesson 3 of that course, extracted and given away free.</p>
+
+  <p>A map stops being the thing you need at some point, and what you want is the turn-by-turn: watch-me-do-it lessons, the templates already built, the worksheets already structured, and the order of operations decided for you.</p>
+
+  <p>Two doors in, depending on the question you're asking.</p>
+
+  <h3>"I want the Pinterest course"</h3>
+  <p>Pinterest Foundations™ is $27, standalone, yours permanently. You're buying this one system because Pinterest is your chosen channel and you want it handled. <a href="https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca?md=63eb80fb5d114f77870c962337a58a1b" rel="noopener">Start here</a>.</p>
+
+  <h3>"I want the whole curriculum"</h3>
+  <p>Premium membership is $9/mo and includes Pinterest Foundations™ alongside the rest of the education library.</p>
+
+  <div class="box tip">
+    <div class="tag"><span class="g">✦</span> On those two numbers</div>
+    <p>Yes — you read them correctly, and no, that's not a pricing mistake. The standalone is for the woman who wants to own one course outright with no ongoing anything. Premium is for the woman building the whole business who wants every course as long as she's a member.</p>
+    <p>Different questions, different doors. Pick the one that matches yours.</p>
+  </div>
+
+  <div class="chapter left reveal">
+    <div class="num">The Work</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="action-plan">Your Pinterest Action Plan</h2>
+  </div>
+
+  <p>Seven steps, in order. Do not reorder them — the sequence is the strategy.</p>
+
+  <ol class="list">
+    <li><strong>Convert to a business account and claim your website.</strong> Today. Settings → Account management, then Settings → Claimed accounts. Fifteen minutes.</li>
+    <li><strong>Download the Pinterest Keyword Planner</strong> and fill it for your first content pillar. Target 30–50 verified keywords. Keywords before everything.</li>
+    <li><strong>Build or rename your boards</strong> to match your keyword bank — board title and description both carry the target phrase. Secret the clutter.</li>
+    <li><strong>Create your pin templates</strong> in Canva at 1000×1500px. Five or six, not sixty. Make them unmistakably yours at thumbnail size.</li>
+    <li><strong>Batch your first two weeks of pins</strong> — multiple fresh pins per article, keyword-layered titles and descriptions.</li>
+    <li><strong>Queue them in the native scheduler.</strong> One sitting. Fourteen days. Done.</li>
+    <li><strong>Set a monthly analytics date.</strong> One question: what drove outbound clicks? More of that.</li>
+  </ol>
+
+  <p>Then repeat steps 5–7 weekly and monthly, forever, at a pace you can actually hold. That's the machine.</p>
+
+  <div class="rule"><span class="d"></span></div>
+
+  <div class="chapter reveal">
+    <div class="num">Answers</div>
+    <div class="orn"><span class="d"></span></div>
+    <h2 id="faq">Questions Women Ask Before They Start</h2>
+  </div>
+
+  <h3>Do I need a blog to do Pinterest marketing?</h3>
+  <p>You need somewhere for the click to land that you control — a blog is the strongest version of that. Pins linking to your own articles build an asset; pins linking nowhere build Pinterest's asset. If your site isn't built yet, start with one cornerstone article and grow from there.</p>
+
+  <h3>How long does Pinterest marketing take to work?</h3>
+  <p>Pinterest compounds on a scale of months, not weeks. Plan for a quarter of consistent publishing before you judge results, with growth accelerating as pins accumulate rankings. Anyone promising Pinterest results in a week is describing a different platform.</p>
+
+  <h3>How many times a day should I pin?</h3>
+  <p>A few quality, keyword-targeted fresh pins per day is plenty. Consistency over volume — an account that pins modestly every day outperforms an account that pins in unsustainable bursts.</p>
+
+  <h3>Do I have to show my face on Pinterest?</h3>
+  <p>No — and Pinterest is the channel where that costs you the least, because searchers come for ideas, not personalities. Your brand's imagery, palette, and point of view do the recognition work a face does elsewhere.</p>
+
+  <h3>Is Pinterest still worth it for business?</h3>
+  <p>Pinterest remains one of the highest-intent, longest-shelf-life traffic sources available to a small content business. Its users search with purchase and project intent, and its content keeps distributing long after publication — the opposite of feed-based platforms.</p>
+
+  <h3>What's the difference between fresh pins and repins?</h3>
+  <p>A fresh pin is a new image, even if it links to existing content. A repin recirculates an existing image. Pinterest's distribution favors fresh pins — so one article with five pin designs is stronger than five articles with one each.</p>
+
+  <h3>Do I need Tailwind or a paid scheduler?</h3>
+  <p>No. Pinterest's native scheduler is free with a business account and queues up to two weeks out, which covers the publishing rhythm this guide teaches. Paid schedulers solve bulk-scheduling and multi-board problems you don't have yet.</p>
+
+  <div class="box action">
+    <div class="tag"><span class="g">✦</span> Start here</div>
+    <h4>The Pinterest Keyword Planner</h4>
+    <p>Seed words to a bank of 30–50 verified keywords, grouped into the topics that become your boards. Free.</p>
+    <a class="btn" href="/resources/pinterest-keyword-planner">Download the Planner <span class="a">→</span></a>
+  </div>
+
+</ArticleLayout>
