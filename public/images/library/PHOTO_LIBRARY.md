@@ -77,3 +77,8 @@ Persona seed-image generations (nano banana). She appears in every frame with he
 | path-affiliate.jpg | Learning path — Affiliate Marketing | Landscape 1200×799 | Cross-legged on sofa unboxing pink package, lavender sprig, tumbler on sofa arm, product page on laptop |
 
 Deploy path: /public/images/library/
+
+
+## AVATAR SEED IMAGE — GENERATION INFRASTRUCTURE (added 22 July 2026)
+
+`avatar-seed-omni-reference.png` — the canonical seed image for the brand's AI persona (omni reference sheet: 8 angles + eye/skin/hair/lip details). **Never used on the site.** Attach this file to EVERY nano banana generation that includes her; prompts reference her only as "this exact woman" per Prompt Library v1.7. If this file is lost, the persona cannot be regenerated consistently — do not delete.
