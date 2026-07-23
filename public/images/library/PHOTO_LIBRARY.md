@@ -61,3 +61,19 @@ one continuous brand photoshoot no matter which article they appear in.
 2. **Portraits and documentary details can repeat more freely** — they're candid enough that seeing the same hands or the same desk angle twice doesn't feel templated, the way a repeated hero image would.
 3. **Product mockups only get used on pages actually selling or delivering that product** — don't decorate an unrelated article with the Blueprint mockup.
 4. **If a caption needs to reference something specific in the photo** (a book title, a dashboard number), double-check the text in that image is actually legible first — several of these have soft, intentionally blurred or slightly garbled screen/cover text, which is fine as background texture but not as a readable focal point.
+## HOMEPAGE — AVATAR SET (added 22 July 2026)
+
+Persona seed-image generations (nano banana). She appears in every frame with her glitter-flecked pink iced coffee tumbler + lavender straw. Style: pink-dominant, lavender support, lived-in modern farmhouse — Record: Pink Cottage Millionaire.
+
+| File | Slot | Orientation | Scene |
+|---|---|---|---|
+| homepage-hero.jpg | Homepage hero (right column) | Portrait 1200×2149 | At cream desk by open window, garden view, pink knit, sipping tumbler, Pinterest dashboard, sticky notes, pastry, polaroids |
+| homepage-featured-article.jpg | Featured article card | Portrait 1200×2149 | Window seat, cream tee + pink sweatpants, laptop on knees, lavender jar, book stack, tumbler on sill |
+| path-ai.jpg | Learning path — AI | Portrait 1200×1788 | Over-shoulder in armchair, pink hoodie + fuzzy socks, AI chat interface, tumbler on side table |
+| path-pinterest.jpg | Learning path — Pinterest | Portrait 1200×1489 | Porch table, phone with rising analytics, shimmer nails, tumbler ring on wood, to-do list, chocolate |
+| path-digital-products.jpg | Learning path — Digital Products | Landscape 1200×799 | Farmhouse kitchen table, wrapping boxes with pink/lavender ribbon, tissue chaos, tumbler standing guard |
+| path-blogging.jpg | Learning path — Blogging | Landscape 1200×805 | Typing at cream desk, sticky notes on bezel, handwritten notebook, candle, sweet peas, tumbler |
+| path-automation.jpg | Learning path — Automation | Landscape 1200×805 | Just-left desk with scheduled queue on screen, tumbler half-finished, her in garden light through screen door with watering can |
+| path-affiliate.jpg | Learning path — Affiliate Marketing | Landscape 1200×799 | Cross-legged on sofa unboxing pink package, lavender sprig, tumbler on sofa arm, product page on laptop |
+
+Deploy path: /public/images/library/
