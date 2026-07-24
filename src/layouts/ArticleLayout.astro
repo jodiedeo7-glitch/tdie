@@ -293,10 +293,26 @@ paid: {
   // --- 5. Affiliate Marketing ---------------------------------
   // free:  Lead²Engine Faceless Blueprint™ — /resources/lead-2-engine-blueprint — DOES NOT EXIST. Omitted.
   // paid:  Leni Loves Collage Edit™ — /shop/leni-loves-collage-edit — DOES NOT EXIST. Omitted.
-  // affiliate: UNDECIDED — requires approval gate (Part 5, item 4).
-  //            Amazon Associates is a teaching subject, not a recommendation.
-  //            Treat as None and pass. Do not fill without a recorded decision.
+  // free:  Lead²Engine Faceless Blueprint™ — /resources/lead-2-engine-blueprint — DOES NOT EXIST.
+  //        Fallback to the live Faceless Income Blueprint™ (session decision 24 Jul),
+  //        same pattern as the AI pillar.
+  // paid:  Leni Loves Collage Edit™ — $27, 70% resell — LIVE on Beacons (session decision).
+  //        Named alone; VIP ($27) is NOT placed beside it — double-$27 rule.
+  // affiliate: None — PASS. Amazon Associates is a teaching subject, taught in-body,
+  //            not a recommendation. Naming a real affiliate remains a future gate.
   "Affiliate Marketing": {
+    free: {
+      label: "Faceless Income Blueprint™",
+      blurb:
+        "The whole shape of a faceless business on paper — including where honest affiliate income fits before you have an audience.",
+      href: "/resources/faceless-income-blueprint",
+    },
+    paid: {
+      label: "Leni Loves Collage Edit™",
+      blurb:
+        "A product you resell as your own — $27, with 70% resell rights kept by you. Earn the whole sale, not a referral slice.",
+      href: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1",
+    },
     newsletter:
       "Recommending things you don't own is the fastest money in this business — and the easiest to do badly. Weekly, how to do it well.",
     community:
