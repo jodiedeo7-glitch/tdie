@@ -192,10 +192,20 @@ const faqSchema = faqs?.length
 
 const PILLARS = {
   // --- 1. AI --------------------------------------------------
-  // free:  AI CEO Planner™ excerpt — /resources/ai-ceo-planner — DOES NOT EXIST. Omitted.
-  // paid:  AI CEO Planner™ — /shop/ai-ceo-planner — DOES NOT EXIST. Omitted.
+  // free:  Faceless Income Blueprint™ — /resources/faceless-income-blueprint — LIVE.
+  //        Reassigned (session decision): AI CEO Planner™ excerpt page was never
+  //        built; the Planner is module-delivered inside VIP (Scaling & Systems),
+  //        not a standalone /resources or /shop page. Blueprint carries the free slot.
+  // paid:  8 Claude Prompts ($5, Value Vault) — session decision to keep this as the
+  //        paid rung rather than surface the VIP Planner here. Planner lives inside VIP.
   // affiliate: None — no public programs. Empty is a PASS.
   "AI": {
+    free: {
+      label: "Faceless Income Blueprint™",
+      blurb:
+        "The whole shape of a faceless business, on paper, before you spend a dollar building one. The first task to hand your AI is inside it.",
+      href: "/resources/faceless-income-blueprint",
+    },
 paid: {
       label: "8 Claude Prompts",
       blurb:
