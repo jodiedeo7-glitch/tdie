@@ -6,4 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://learn.thedigitalincomeedit.com',
   integrations: [sitemap()],
+  redirects: {
+    '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault/',
+  },
 });
