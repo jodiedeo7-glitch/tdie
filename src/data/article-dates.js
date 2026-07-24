@@ -11,6 +11,7 @@ export const ARTICLE_DATES = {
   "automating-your-online-business": "2026-07-08",
   "ultimate-guide-to-ai": "2026-07-24",
   "digital-products-guide": "2026-07-24",
+  "affiliate-marketing-101": "2026-07-24",
 
   // Supporting + cluster articles already live. Dates are ordered by issue
   // number where known; adjust any you want to reflect true publish dates.
