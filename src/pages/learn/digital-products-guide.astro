@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What counts as a digital product?",
+    answer: "Anything useful you can sell as a file or access rather than a physical object — templates, guides, prompt packs, mini-courses, presets, printables. What actually sells is a specific solution to a specific problem, not a big vague bundle of everything you know."
+  },
+  {
+    question: "Do I need an audience before I sell a product?",
+    answer: "No. The first product's job is to exist, not to make you famous. You can sell it before anyone knows you by putting it in front of the right small pockets of people who already have the problem it solves — the product doesn't need a crowd, it needs the right few."
+  },
+  {
+    question: "Should I build the product or the offer first?",
+    answer: "The offer comes first. The offer is the promise — who it's for and what changes for them; the product is just how you deliver that promise. Nail the offer and a simple product sells; get it backwards and a beautiful product sits unsold."
+  },
+  {
+    question: "What kind of product should I start with?",
+    answer: "One of the four types the guide names as beginner-friendly because they're fast to make and easy to buy — small, specific, and finishable this week. Ambition is the enemy of a first launch; you want the thing you can ship, not the magnum opus you keep polishing."
+  },
+  {
+    question: "How does one product become repeatable income?",
+    answer: "By turning a one-time sale into a system: consistent traffic pointing at it, an email sequence that sells it while you sleep, and versions or bundles that raise its value over time. One product plus distribution beats ten products with none."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Digital Products"
   issueNumber="032"
   readTime="17 Min Read"
-  ogImage="/images/library/flatlay-digital-workbook.jpg"
+    datePublished="2026-07-24"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/flatlay-digital-workbook.jpg"
   related={[
     { href: "/learn/creating-your-first-offer", title: "How to Create Your First Offer in a Week" },
     { href: "/learn/digital-products-for-beginners", title: "How to Sell Digital Products Without an Audience" },
