@@ -386,13 +386,26 @@ paid: {
   },
 
   // --- 8. Branding --------------------------------------------
-  // 🔴 PILLAR BLOCKED — BAMI unreleased (Decision 15 / action 15.13).
-  // free:  Brand Bible Memory Chain — /resources/brand-bible-memory-chain — DOES NOT EXIST. Omitted.
-  // paid:  BLOCKED. Standing Rule 23 — unreleased rows are retained and
-  //        NEVER routed to. This row is deliberately empty. Do not fill it
-  //        with Membership to satisfy a checklist.
+  // UNBLOCKED (Decision 62, 24 Jul): BAMI stays retained-and-unrouted per
+  //    Standing Rule 23. The pillar's entry product is now the LIVE Brand
+  //    Building & Brand Identity module on Skool Premium ($9/mo) — a different
+  //    product, dual-door checkout (Decision 60). BAMI is NOT this CTA.
+  // free:  Brand Bible Memory Chain — no live page. Fallback: Faceless Income
+  //        Blueprint™ (live), consistent with prior pillars.
   // affiliate: None — branding is taught, not tooled. Empty is a PASS.
   "Branding": {
+    free: {
+      label: "Faceless Income Blueprint™",
+      blurb:
+        "The whole shape of a faceless business on paper — the promise your brand exists to keep, before any colours.",
+      href: "/resources/faceless-income-blueprint",
+    },
+    paid: {
+      label: "Brand Building & Brand Identity — Membership Premium",
+      blurb:
+        "The module that takes you from a one-sentence promise to a finished, written brand identity, step by step. $9/month.",
+      href: "https://www.skool.com/thedigitalincomeedit/classroom/81c6bb56?md=c19864e06b4d41db945a01ce66f806b2",
+    },
     newsletter:
       "A brand isn't a colour palette. Yours is probably three fonts and a feeling. Weekly, what it should be instead.",
     community:
