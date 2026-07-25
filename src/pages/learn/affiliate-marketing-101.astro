@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What is affiliate marketing, really?",
+    answer: "You recommend a product you believe in, and you earn a commission when someone buys through your link — at no extra cost to them. It's being paid for a recommendation you'd happily make anyway. What it isn't: spamming links at people and hoping."
+  },
+  {
+    question: "Can I do affiliate marketing without an audience?",
+    answer: "Yes, if you put recommendations where people are already searching for them — helpful articles, Pinterest, and content that answers a buying question. The click doesn't need a big following behind it; it needs to reach someone at the moment they're deciding what to buy."
+  },
+  {
+    question: "How do affiliate links actually work?",
+    answer: "The link carries a tag that credits you when a purchase happens within a tracking window. You don't handle payment, delivery, or support — the merchant does. Your job ends at the honest recommendation and the click; theirs begins after."
+  },
+  {
+    question: "What should I promote as a beginner?",
+    answer: "Things you actually use and would recommend for free, in a niche you're already building content around. Trust is the whole asset in affiliate marketing — one recommendation that burns it costs more than any single commission is worth."
+  },
+  {
+    question: "How do I turn a recommendation into income that repeats?",
+    answer: "Attach it to evergreen content that keeps getting found — an article or pin that answers a buying question long after you publish it. A recommendation inside a piece that ranks earns quietly for years; a recommendation in a feed post is gone by tomorrow."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Affiliate Marketing"
   issueNumber="033"
   readTime="16 Min Read"
-  ogImage="/images/library/hero-office-wide-04.jpg"
+    datePublished="2026-07-24"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/hero-office-wide-04.jpg"
   related={[
     { href: "/learn/affiliate-marketing-for-beginners", title: "How to Earn Your First Affiliate Sale (Without an Audience)" },
     { href: "/learn/digital-products-guide", title: "Digital Products for Beginners" },
