@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Is blogging dead in 2026?",
+    answer: "No — it changed jobs. Blogging is no longer about daily diary posts; it's about publishing evergreen articles that rank in search and keep pulling in the right readers for years. As an asset that compounds and that you fully own, it's more valuable now, not less."
+  },
+  {
+    question: "What does a blog actually do for a faceless business?",
+    answer: "It's the piece of the internet you own outright — a home for traffic that isn't rented from an algorithm. A blog turns one-time attention into a searchable, linkable asset that feeds your list, your products, and your affiliate income long after you hit publish."
+  },
+  {
+    question: "How do I write for search and for people at the same time?",
+    answer: "Answer a real question a real person is typing, then write the genuinely best answer to it. Search rewards the content that satisfies the searcher — so writing well for the person and writing well for Google have converged into the same job."
+  },
+  {
+    question: "What makes an article evergreen?",
+    answer: "It answers a question that keeps getting asked, without being tied to a date or a trend. An evergreen article is written once and stays true — the kind of piece that quietly ranks and earns for years while dated posts expire the week they're published."
+  },
+  {
+    question: "How does a blog make money?",
+    answer: "Three ways, usually stacked: it sells your own digital products, it earns affiliate commissions from honest recommendations, and it grows the email list that does both on repeat. The blog is rarely paid directly — it's the engine that feeds everything that is."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Blogging"
   issueNumber="038"
   readTime="17 Min Read"
-  ogImage="/images/library/hero-office-wide-01.jpg"
+    datePublished="2026-07-25"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/hero-office-wide-01.jpg"
   related={[
     { href: "/learn/complete-pinterest-marketing-guide", title: "The Complete Pinterest Marketing Guide" },
     { href: "/learn/ultimate-guide-to-ai", title: "The Ultimate Beginner's Guide to AI" },
