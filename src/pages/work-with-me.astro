@@ -1,0 +1,278 @@
+---
+import "../styles/global.css";
+
+const EMAIL = "Jodie.deo7@gmail.com";
+const mailto = (subject: string) =>
+  `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
+
+const services = [
+  {
+    glyph: "📌",
+    name: "Pinterest Strategy",
+    copy: "A done-with-you Pinterest system that turns pins into predictable traffic — keyword research, boards, and a pinning rhythm built to grow on autopilot.",
+    subject: "Application: Pinterest Strategy",
+  },
+  {
+    glyph: "🤖",
+    name: "AI Business Systems",
+    copy: "Custom AI workflows that automate your content, admin, and customer journey — so your business runs smoothly with less time at the desk.",
+    subject: "Application: AI Business Systems",
+  },
+  {
+    glyph: "✍️",
+    name: "SEO Blog Strategy",
+    copy: "A search-first content plan that gets your blog found on Google — keyword mapping, post outlines, and an editorial calendar you can actually keep.",
+    subject: "Application: SEO Blog Strategy",
+  },
+  {
+    glyph: "🛍️",
+    name: "Digital Product Strategy",
+    copy: "From idea to irresistible offer — we position, price, and structure a digital product your audience is ready to buy, then map the launch.",
+    subject: "Application: Digital Product Strategy",
+  },
+  {
+    glyph: "✨",
+    name: "Custom Projects",
+    copy: "Something bigger in mind? Tell me your vision and we'll design a bespoke engagement around your goals, timeline, and brand.",
+    subject: "Application: Custom Project",
+  },
+];
+
+const process = [
+  { n: "01", t: "Apply", c: "Email me your goals so I can understand your business and where you want to take it." },
+  { n: "02", t: "Discovery call", c: "If we're a fit, we get on a call and align on vision, scope, and the results you're after." },
+  { n: "03", t: "Strategy & build", c: "I craft the strategy and build the systems, content, or offers we agreed on — keeping you in the loop throughout." },
+  { n: "04", t: "Launch & support", c: "We launch, refine, and set you up to keep the momentum going long after the work ends." },
+];
+
+const faqs = [
+  { q: "Are your services really application-based?", a: "Yes. Every engagement starts with an email so I can make sure we're the right fit before we begin. No pressure, no hard sell." },
+  { q: "How soon can we start?", a: "Once we've had our discovery call, most projects begin within one to two weeks depending on availability." },
+  { q: "Do you offer payment plans?", a: "Yes — flexible payment options are available for most services. We'll cover the details on your call." },
+  { q: "What if I'm just starting out?", a: "Many of my clients begin from scratch. If a service isn't the right fit yet, I'll point you to the best next step — often something free in the library." },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
+  <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Me | The Digital Income Edit™</title>
+  <meta name="description" content="Application-based Pinterest strategy, AI business systems, SEO blog strategy and digital product strategy from the founder of The Digital Income Edit™." />
+  <link rel="canonical" href="https://learn.thedigitalincomeedit.com/work-with-me" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Work With Me | The Digital Income Edit™" />
+  <meta property="og:description" content="Premium, application-based services for women ready to invest in their next chapter." />
+  <meta property="og:url" content="https://learn.thedigitalincomeedit.com/work-with-me" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .w-hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;overflow:hidden}
+    .w-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-05.jpg);background-size:cover;background-position:center}
+    .w-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.35),rgba(251,248,245,.68) 55%,var(--cream) 97%)}
+    .w-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 62px;text-align:center}
+    .w-hero .k{font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+    .w-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,6vw,74px);line-height:1.03;letter-spacing:-1.2px;max-width:16ch;margin:0 auto 22px}
+    .w-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,24px);line-height:1.55;color:var(--choc-soft);max-width:58ch;margin:0 auto 34px}
+    @media(max-width:600px){.w-hero .in{padding:0 22px 46px}}
+
+    .sec{max-width:var(--wide);margin:0 auto;padding:100px 40px}
+    .sec-head{text-align:center;max-width:46ch;margin:0 auto 54px}
+    .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.6px;margin-bottom:16px}
+    .sec-head p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.55;color:var(--taupe-deep)}
+    @media(max-width:600px){.sec{padding:68px 22px}}
+
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1060px;margin:0 auto}
+    .why .img{aspect-ratio:4/5;border-radius:var(--r);background-image:url(/images/library/portrait-woman-side-desk.jpg);background-size:cover;background-position:center}
+    .why h2{font-family:var(--display);font-weight:300;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.6px;margin-bottom:22px}
+    .why p{font-size:17px;line-height:1.85;color:var(--choc-soft);margin-bottom:20px}
+    @media(max-width:820px){.why{grid-template-columns:1fr;gap:34px}.why .img{aspect-ratio:3/2}}
+
+    .svc-band{background:var(--blush)}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+    .svc{background:var(--white);border:1px solid rgba(183,159,150,.28);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column}
+    .svc .g{font-size:26px;margin-bottom:16px}
+    .svc h3{font-family:var(--display);font-weight:400;font-size:23px;line-height:1.2;margin-bottom:12px}
+    .svc p{font-size:15px;line-height:1.65;color:var(--choc-soft);margin-bottom:24px;flex:1}
+    .svc .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;max-width:1080px;margin:0 auto}
+    @media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.steps{grid-template-columns:1fr}}
+    .step{border-top:2px solid var(--pink);padding-top:22px}
+    .step .n{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:2px;color:var(--pink);margin-bottom:10px}
+    .step h4{font-family:var(--display);font-weight:400;font-size:23px;margin-bottom:10px}
+    .step p{font-size:15px;line-height:1.68;color:var(--taupe-deep)}
+
+    .faq{max-width:720px;margin:0 auto}
+    .faq details{border-bottom:1px solid var(--gray);padding:22px 0}
+    .faq details:first-of-type{border-top:1px solid var(--gray)}
+    .faq summary{font-family:var(--display);font-size:20px;line-height:1.3;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--pink);font-family:var(--serif);font-size:24px;line-height:1}
+    .faq details[open] summary::after{content:"–"}
+    .faq details p{font-size:16px;line-height:1.8;color:var(--choc-soft);margin-top:14px;max-width:62ch}
+
+    .close-band{background:var(--choc);color:var(--cream);padding:104px 40px;text-align:center}
+    .close-band .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--mauve);margin-bottom:18px}
+    .close-band h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,4.6vw,54px);line-height:1.06;max-width:18ch;margin:0 auto 20px;color:var(--cream)}
+    .close-band p{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--rose);max-width:48ch;margin:0 auto 34px}
+    .close-band .fine{font-size:13px;color:var(--taupe);margin-top:22px;letter-spacing:.4px}
+  </style>
+</head>
+<body class="no-js">
+  <style>.no-js .reveal{opacity:1;transform:none}</style>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
+      <div class="nav-links">
+        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
+        <a class="nav-join" href="/community">Community</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <button class="close" id="close" aria-label="Close">✕</button>
+    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
+  </div>
+
+  <section class="w-hero">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="in">
+      <div class="k">Work With Me</div>
+      <h1>Let's build something incredible together.</h1>
+      <p class="sub">Pinterest strategy, AI systems, SEO blogging, or a profitable digital business built properly. These are premium, application-based engagements for women ready to invest in their next chapter.</p>
+      <a class="btn" href={mailto("Application: Work With Me")}>Apply to work together <span class="a">→</span></a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="why">
+      <div class="img" role="img" aria-label="The Digital Income Edit workspace"></div>
+      <div>
+        <h2>Why work with me</h2>
+        <p>I'm the founder of The Digital Income Edit™, and I help women turn scattered ideas into elegant, profitable online businesses.</p>
+        <p>My approach blends Pinterest-first traffic, AI-powered systems, and beautifully positioned digital offers — so your business feels effortless and looks premium.</p>
+        <p>When we work together you get calm strategy instead of hustle, clear next steps instead of overwhelm, and systems built to keep paying you long after our work is done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-band">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="k">Signature Services</div>
+        <h2>A curated menu, not a price list</h2>
+        <p>Every engagement is application-based, so we can make sure it's the right fit before we begin.</p>
+      </div>
+      <div class="svc-grid">
+        {services.map((s) => (
+          <div class="svc">
+            <div class="g">{s.glyph}</div>
+            <h3>{s.name}</h3>
+            <p>{s.copy}</p>
+            <div><a class="go" href={mailto(s.subject)}>Apply to work together →</a></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <div class="k">The Process</div>
+      <h2>How this actually goes</h2>
+      <p>Four steps, in order, so you always know what happens next.</p>
+    </div>
+    <div class="steps">
+      {process.map((p) => (
+        <div class="step">
+          <div class="n">{p.n}</div>
+          <h4>{p.t}</h4>
+          <p>{p.c}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="sec-head">
+      <div class="k">Questions</div>
+      <h2>Before you email</h2>
+    </div>
+    <div class="faq">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS
+       Deliberately absent. Real client words only — nothing goes here until
+       genuine, attributable testimonials exist. Do not fill with examples. -->
+
+  <section class="close-band">
+    <div class="k">Applications are open</div>
+    <h2>Ready to build something incredible?</h2>
+    <p>Tell me about your goals and let's design your next chapter together.</p>
+    <a class="btn" href={mailto("Application: Work With Me")}>Email me <span class="a">→</span></a>
+    <div class="fine">I read every email personally and reply within one to two business days.</div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
+      </div>
+      <div class="foot-col">
+        <h5>Learn</h5>
+        <a href="/learn">The Library</a>
+        <a href="/learn/complete-pinterest-marketing-guide">Pinterest</a>
+        <a href="/learn/ultimate-guide-to-ai">AI</a>
+        <a href="/learn/digital-products-guide">Digital Products</a>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="/shop">Shop</a>
+        <a href="/resources">Free Resources</a>
+        <a href="/membership">Membership</a>
+        <a href="/work-with-me">Work With Me</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="foot-col">
+        <h5>Connect</h5>
+        <a href="/community">Community</a>
+        <a href="/newsletter">Newsletter</a>
+        <a href="https://pinterest.com/Nursemadedigital">Pinterest</a>
+        <a href="https://instagram.com/Nursemadedigital">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Digital Income Edit™</span>
+      <span>Curated with intention.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.remove('no-js');
+    const drawer = document.getElementById('drawer');
+    document.getElementById('burger').onclick = () => drawer.classList.add('open');
+    document.getElementById('close').onclick = () => drawer.classList.remove('open');
+    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
+  </script>
+</body>
+</html>
