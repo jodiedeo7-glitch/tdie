@@ -1,8 +1,24 @@
 ---
 import "../../styles/global.css";
 
+// The twelve pillar guides. Slugs of record: Corrections & Decisions Record v2.1, Decision 66.
+const pillars = [
+  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", category: "Business Systems", readTime: "20 Min Read" },
+  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", category: "Mindset", readTime: "15 Min Read" },
+  { n: "03", title: "The Branding Guide", slug: "branding-guide", category: "Branding", readTime: "16 Min Read" },
+  { n: "04", title: "The Beginner's Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", category: "Content Creation", readTime: "13 Min Read" },
+  { n: "05", title: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", category: "AI", readTime: "18 Min Read" },
+  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", category: "Pinterest", readTime: "14 Min Read" },
+  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", category: "Blogging", readTime: "17 Min Read" },
+  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", category: "Email Marketing", readTime: "16 Min Read" },
+  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", category: "Digital Products", readTime: "17 Min Read" },
+  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", category: "Affiliate Marketing", readTime: "16 Min Read" },
+  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", category: "Automation & Paid Traffic", readTime: "15 Min Read" },
+  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", category: "Passive Income", readTime: "16 Min Read" },
+];
+
+// Supporting articles — the cluster pieces that sit under a pillar.
 const articles = [
-  { title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", category: "Business Systems", readTime: "20 Min Read" },
   { title: "How to Choose Your Niche in a Weekend", slug: "choosing-a-niche", category: "Business Systems", readTime: "12 Min Read" },
   { title: "How to Create Your First Offer in a Week", slug: "creating-your-first-offer", category: "Digital Products", readTime: "13 Min Read" },
   { title: "How to Sell Digital Products Without an Audience", slug: "digital-products-for-beginners", category: "Digital Products", readTime: "12 Min Read" },
@@ -11,8 +27,8 @@ const articles = [
   { title: "How to Write Blog Posts That Still Get Read in a Year", slug: "blogging-guide", category: "Blogging", readTime: "13 Min Read" },
   { title: "How to Write Your First 5 Emails", slug: "email-marketing-for-beginners", category: "Email Marketing", readTime: "12 Min Read" },
   { title: "How to Earn Your First Affiliate Sale", slug: "affiliate-marketing-for-beginners", category: "Affiliate Marketing", readTime: "11 Min Read" },
-  { title: "How to Use AI Without Sounding Like a Robot", slug: "ai-for-online-business", category: "AI & Automation", readTime: "12 Min Read" },
-  { title: "How to Build a Business That Runs Without You", slug: "business-that-runs-without-you", category: "Automation", readTime: "13 Min Read" },
+  { title: "How to Use AI Without Sounding Like a Robot", slug: "ai-for-online-business", category: "AI", readTime: "12 Min Read" },
+  { title: "How to Build a Business That Runs Without You", slug: "business-that-runs-without-you", category: "Automation & Paid Traffic", readTime: "13 Min Read" },
 ];
 ---
 <!DOCTYPE html>
@@ -20,9 +36,10 @@ const articles = [
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
+  <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Library | The Digital Income Edit™</title>
-  <meta name="description" content="The complete article library from The Digital Income Edit™ — practical guides on Pinterest, digital products, AI, email, and building a business that runs without you." />
+  <meta name="description" content="Every guide from The Digital Income Edit™ — twelve complete pillar guides on Pinterest, AI, digital products, email, blogging and automation, plus the supporting articles underneath them." />
   <link rel="canonical" href="https://learn.thedigitalincomeedit.com/learn" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Library | The Digital Income Edit™" />
@@ -36,19 +53,27 @@ const articles = [
     .lib-hero{position:relative;min-height:44vh;display:flex;align-items:flex-end;overflow:hidden}
     .lib-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-03.jpg);background-size:cover;background-position:center}
     .lib-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.4),var(--cream) 96%)}
-    .lib-hero .in{position:relative;max-width:760px;margin:0 auto;padding:0 24px 44px;width:100%}
+    .lib-hero .in{position:relative;max-width:820px;margin:0 auto;padding:0 24px 44px;width:100%}
     .lib-hero .k{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink);font-weight:600;margin-bottom:14px}
     .lib-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,5.5vw,58px);margin:0 0 12px;letter-spacing:-.5px}
-    .lib-hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--choc-soft);margin:0;max-width:34ch}
-    .wrap{max-width:760px;margin:0 auto;padding:60px 24px 110px}
-    a.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit;transition:padding-left .4s cubic-bezier(.24,.65,.3,1)}
+    .lib-hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--choc-soft);margin:0;max-width:38ch}
+    .wrap{max-width:820px;margin:0 auto;padding:54px 24px 110px}
+    a.home{display:inline-block;margin-bottom:34px;font-size:13px;letter-spacing:1px;color:var(--taupe-deep);text-decoration:none}
+    a.home:hover{color:var(--pink)}
+
+    .grp{margin-bottom:78px}
+    .grp .lbl{font-size:11px;font-weight:600;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+    .grp h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.6vw,36px);letter-spacing:-.4px;margin:0 0 8px}
+    .grp .note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--taupe-deep);margin:0 0 26px;max-width:46ch}
+
+    a.row{display:grid;grid-template-columns:46px 1fr auto;align-items:baseline;gap:18px;padding:24px 6px;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit;transition:padding-left .4s cubic-bezier(.24,.65,.3,1),background .4s cubic-bezier(.24,.65,.3,1)}
     a.row:first-of-type{border-top:1px solid var(--gray)}
-    a.row:hover{padding-left:10px}
+    a.row:hover{padding-left:16px;background:rgba(255,138,194,.06)}
+    a.row .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:var(--mauve)}
     a.row .t{font-family:"Fraunces",serif;font-size:clamp(18px,2.4vw,22px);line-height:1.25}
     a.row .c{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep);white-space:nowrap}
-    @media(max-width:600px){a.row{flex-direction:column;gap:6px}}
-    a.home{display:inline-block;margin-bottom:30px;font-size:13px;letter-spacing:1px;color:var(--taupe-deep);text-decoration:none}
-    a.home:hover{color:var(--pink)}
+    a.row.plain{grid-template-columns:1fr auto}
+    @media(max-width:640px){a.row{grid-template-columns:34px 1fr;gap:12px}a.row.plain{grid-template-columns:1fr}a.row .c{display:none}}
   </style>
 </head>
 <body>
@@ -62,12 +87,31 @@ const articles = [
   </section>
   <div class="wrap">
     <a class="home" href="/">← Home</a>
-    {articles.map((a) => (
-      <a class="row" href={`/learn/${a.slug}`}>
-        <span class="t">{a.title}</span>
-        <span class="c">{a.category} · {a.readTime}</span>
-      </a>
-    ))}
+
+    <div class="grp">
+      <div class="lbl">The Twelve</div>
+      <h2>The pillar guides</h2>
+      <p class="note">Each one is complete on its own. Read from the top and they build into a business.</p>
+      {pillars.map((p) => (
+        <a class="row" href={`/learn/${p.slug}`}>
+          <span class="no">{p.n}</span>
+          <span class="t">{p.title}</span>
+          <span class="c">{p.category} · {p.readTime}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="grp">
+      <div class="lbl">Going Deeper</div>
+      <h2>Supporting articles</h2>
+      <p class="note">Single problems, answered properly. Each one sits underneath a pillar above.</p>
+      {articles.map((a) => (
+        <a class="row plain" href={`/learn/${a.slug}`}>
+          <span class="t">{a.title}</span>
+          <span class="c">{a.category} · {a.readTime}</span>
+        </a>
+      ))}
+    </div>
   </div>
 </body>
 </html>
