@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What can AI actually do for a one-woman business?",
+    answer: "It removes the blank-page tax on the repetitive work — drafting, outlining, repurposing, summarising, and first-pass admin. Used well, it's a tireless junior hire that handles volume so you can spend your hours on judgement and taste, which are the parts it can't do."
+  },
+  {
+    question: "What is the vending machine problem?",
+    answer: "It's expecting AI to hand you a finished result from a vague request, like a vending machine. Bad in, bad out. AI produces generic work when you brief it generically; it produces useful work when you brief it like you'd brief a capable new hire — with context, examples, and a clear standard."
+  },
+  {
+    question: "What should I hand over to AI first?",
+    answer: "The four jobs where volume matters more than voice: drafting, repurposing one asset into many, summarising and researching, and structuring rough ideas. Keep the final voice, the strategic calls, and anything a reader would feel as 'you' on your side of the line."
+  },
+  {
+    question: "How do I stop AI content sounding generic?",
+    answer: "Brief it properly and edit it always. Give it your angle, your examples, and a sample of your voice, then treat its output as a first draft you finish — never as the final word. The tool sets the table; you're still the one who cooks."
+  },
+  {
+    question: "Where does AI stop and I start?",
+    answer: "AI stops at judgement, taste, and genuine point of view — the things a reader trusts you for. It's an accelerant for the work, not a replacement for the person. The businesses that win with AI use it to do more of their own thinking, not to skip it."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="AI"
   issueNumber="031"
   readTime="18 Min Read"
-  related={[
+    datePublished="2026-07-24"
+  dateModified="2026-07-25"
+  faqs={faqs}
+related={[
     { href: "/learn/content-creation-guide", title: "The Content Creation Guide" },
     { href: "/learn/complete-automation-guide", title: "The Complete Guide to Automating Your Online Business" },
     { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" },
