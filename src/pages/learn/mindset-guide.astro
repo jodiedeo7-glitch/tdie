@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Is mindset really the reason my business isn't built?",
+    answer: "Usually, yes — but not in the vague way the word suggests. What stalls most faceless businesses isn't laziness or missing tactics; it's an identity that hasn't caught up to the work. When some quiet part of you doesn't yet believe you're the kind of person who does this, behaviour that contradicts that self-image loses every time. Fix the identity and the discipline stops being a fight."
+  },
+  {
+    question: "What is the Creator to CEO shift?",
+    answer: "It's the move from doing every task yourself to deciding which tasks should exist at all. A creator asks what to post today; a CEO builds a system that answers that question without them. The shift is less about hours worked and more about which decisions you stop making manually."
+  },
+  {
+    question: "How do I stop waiting to feel ready?",
+    answer: "You accept that readiness is a result of starting, not a prerequisite for it. The confidence you're waiting for is manufactured by doing the thing badly a few times, not by thinking about it longer. Waiting to feel ready is the most common way a business stays permanently unbuilt."
+  },
+  {
+    question: "Do I need motivation to keep going?",
+    answer: "No — motivation is the least reliable fuel you have. What keeps a business moving after the excitement fades is identity plus a system small enough to run on a bad day. Decide who you are, shrink the daily action until it's almost embarrassingly easy, and let consistency do what willpower can't."
+  },
+  {
+    question: "Why does declaring it publicly matter?",
+    answer: "Naming what you're building out loud turns a private wish into a commitment your self-image has to defend. It's not about accountability partners policing you — it's that a stated identity quietly reorganises your own behaviour to match it."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Mindset"
   issueNumber="037"
   readTime="15 Min Read"
-  ogImage="/images/library/portrait-woman-golden-hour.jpg"
+    datePublished="2026-07-25"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/portrait-woman-golden-hour.jpg"
   related={[
     { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" },
     { href: "/learn/branding-guide", title: "The Branding Guide" },
