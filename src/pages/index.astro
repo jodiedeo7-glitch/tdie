@@ -1,5 +1,32 @@
 ---
 import "../styles/global.css";
+
+// Pillar guides — titles, slugs and categories read from the live pages, 24 July 2026.
+const pillars = [
+  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min" },
+  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", cat: "Mindset", read: "15 Min" },
+  { n: "03", title: "The Branding Guide", slug: "branding-guide", cat: "Branding", read: "16 Min" },
+  { n: "04", title: "The Beginner's Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", cat: "Content Creation", read: "13 Min" },
+  { n: "05", title: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", cat: "AI", read: "18 Min" },
+  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", cat: "Pinterest", read: "14 Min" },
+  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", cat: "Blogging", read: "17 Min" },
+  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", cat: "Email Marketing", read: "16 Min" },
+  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", cat: "Digital Products", read: "17 Min" },
+  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", cat: "Affiliate Marketing", read: "16 Min" },
+  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", cat: "Automation & Paid Traffic", read: "15 Min" },
+  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", cat: "Passive Income", read: "16 Min" },
+];
+
+// Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
+const shop = [
+  { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", copy: "Build the lead magnet and the paid offer behind it in a single afternoon.", url: "https://links.thedigitalincomeedit.com/shop/68a7c033-a060-4c23-9d8b-de7a367ff33c", aff: false },
+  { name: "Pretty & Paid PLR Vault™", price: "$11", note: "per month", copy: "Rebrandable products and AI transformation workflows, refreshed monthly. Not a membership tier — its own subscription.", url: "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839", aff: false },
+  { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "https://links.thedigitalincomeedit.com/shop/4d0e0341-af50-4957-b915-def1246a2001", aff: false },
+  { name: "The One and Done Money Stream", price: "$27", note: "one-time", copy: "Set up one reliable digital income stream. Create it once, let it earn on repeat.", url: "https://links.thedigitalincomeedit.com/shop/93657cd0-5971-4f14-9670-94809a91eb00", aff: false },
+  { name: "Leni Loves", price: "$37", note: "one-time", copy: "A collection of aesthetic templates and resources for your brand and content.", url: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1", aff: true },
+  { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "https://links.thedigitalincomeedit.com/shop/4fb73a6d-56a7-4c3f-b17c-ee28624bc4ac", aff: true },
+  { name: "Create Faceless Wealth", price: "$487", note: "one-time", copy: "A complete system for building a faceless digital income brand — strategy, content, monetisation.", url: "https://links.thedigitalincomeedit.com/shop/7d7d1473-4099-4e9a-b991-8de80a248d00", aff: true },
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -8,33 +35,305 @@ import "../styles/global.css";
   <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
   <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Digital Income Edit™</title>
-  <meta name="description" content="The Digital Income Edit™ — a premium educational library for women building online businesses through AI, Pinterest, digital products, and automation." />
+  <title>The Digital Income Edit™ — Build a Faceless Digital Business</title>
+  <meta name="description" content="The Digital Income Edit™ is an editorial library for women building faceless digital income — twelve complete guides on Pinterest, AI, digital products, email, blogging and automation." />
   <link rel="canonical" href="https://learn.thedigitalincomeedit.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Digital Income Edit™" />
   <meta property="og:description" content="Build a business you're obsessed with — online, on your terms." />
   <meta property="og:url" content="https://learn.thedigitalincomeedit.com/" />
+  <meta property="og:image" content="https://learn.thedigitalincomeedit.com/images/library/homepage-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body{margin:0;min-height:100vh;position:relative;font-family:"Inter",sans-serif;text-align:center}
-    .bg{position:fixed;inset:0;z-index:-2;background-image:url(/images/library/hero-office-wide-04.jpg);background-size:cover;background-position:center}
-    .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(251,248,245,.55) 0%,rgba(251,248,245,.85) 55%,var(--cream) 100%)}
-    .inner{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:40px 40px 90px}
-    h1{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(38px,6vw,64px);color:var(--choc);margin:0 0 18px;text-shadow:0 2px 30px rgba(251,248,245,.9)}
-    p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--choc-soft);max-width:520px;margin:0 0 34px}
-    a.btn{display:inline-block;background:var(--pink);color:#fff;padding:16px 34px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;box-shadow:0 10px 26px -10px rgba(214,46,115,.55)}
+    /* ---------- HERO ---------- */
+    .h-hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden}
+    .h-hero .bg{position:absolute;inset:0;background-image:url(/images/library/homepage-hero.jpg);background-size:cover;background-position:center}
+    .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.34) 0%,rgba(251,248,245,.62) 52%,var(--cream) 97%)}
+    .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 70px;text-align:center}
+    .h-hero .k{display:inline-block;font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
+    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.4px;max-width:15ch;margin:0 auto 24px}
+    .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
+    .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid var(--taupe);box-shadow:none}
+    .btn.quiet:hover{border-color:var(--pink);color:var(--pink)!important}
+    @media(max-width:600px){.h-hero{min-height:76vh}.h-hero .in{padding:0 22px 52px}}
+
+    /* ---------- SHARED SECTION FURNITURE ---------- */
+    .sec{max-width:var(--wide);margin:0 auto;padding:104px 40px}
+    .sec-head{text-align:center;max-width:44ch;margin:0 auto 56px}
+    .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px}
+    .sec-head p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--taupe-deep)}
+    @media(max-width:600px){.sec{padding:70px 22px}}
+
+    /* ---------- START HERE ---------- */
+    .free-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:940px;margin:0 auto}
+    .free-card{background:var(--white);border:1px solid var(--gray);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+    .free-card .ph{aspect-ratio:16/10;background-size:cover;background-position:center}
+    .free-card .bd{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
+    .free-card .tag{font-size:10px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+    .free-card h3{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.15;margin-bottom:12px}
+    .free-card p{font-size:15.5px;line-height:1.65;color:var(--taupe-deep);margin-bottom:22px;flex:1}
+    @media(max-width:760px){.free-grid{grid-template-columns:1fr}}
+
+    /* ---------- THE LIBRARY (contents) ---------- */
+    .contents{border-top:1px solid var(--gray);max-width:900px;margin:0 auto}
+    a.entry{display:grid;grid-template-columns:52px 1fr auto;align-items:baseline;gap:20px;padding:24px 6px;border-bottom:1px solid var(--gray);transition:padding-left .4s var(--ease),background .4s var(--ease)}
+    a.entry:hover{padding-left:18px;background:rgba(255,138,194,.06)}
+    a.entry .no{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mauve)}
+    a.entry .ttl{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.3vw,24px);line-height:1.22}
+    a.entry .ttl span{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-top:8px}
+    a.entry .rd{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
+    @media(max-width:640px){a.entry{grid-template-columns:38px 1fr;gap:14px}a.entry .rd{display:none}}
+    .sec-foot{text-align:center;margin-top:46px}
+
+    /* ---------- SHOP ---------- */
+    .shop-band{background:var(--blush)}
+    .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    @media(max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.shop-grid{grid-template-columns:1fr}}
+    .sh{background:var(--white);border-radius:16px;padding:30px 28px 30px;display:flex;flex-direction:column;border:1px solid rgba(183,159,150,.28)}
+    .sh h3{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:6px}
+    .sh .price{font-family:var(--serif);font-size:26px;color:var(--pink);margin-bottom:2px}
+    .sh .note{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:16px}
+    .sh p{font-size:15px;line-height:1.62;color:var(--choc-soft);margin-bottom:22px;flex:1}
+    .sh .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+    .sh .aff{display:inline-block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);border:1px solid var(--gold);border-radius:100px;padding:3px 10px;margin-bottom:14px}
+    .disclose{max-width:60ch;margin:38px auto 0;text-align:center;font-size:13.5px;line-height:1.7;color:var(--taupe-deep)}
+
+    /* ---------- MEMBERSHIP ---------- */
+    .mem{background:var(--choc);color:var(--cream)}
+    .mem .sec-head h2,.mem .sec-head p{color:var(--cream)}
+    .mem .sec-head .k{color:var(--mauve)}
+    .mem .sec-head p{color:var(--rose)}
+    .tiers{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:860px;margin:0 auto}
+    @media(max-width:760px){.tiers{grid-template-columns:1fr}}
+    .tier{border-top:1px solid rgba(255,255,255,.2);padding-top:28px}
+    .tier .nm{font-family:var(--display);font-size:27px;font-weight:400;margin-bottom:8px}
+    .tier .pr{font-family:var(--serif);font-size:30px;color:var(--mauve);margin-bottom:16px}
+    .tier ul{list-style:none;margin:0 0 26px}
+    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15.5px;line-height:1.6;color:var(--rose)}
+    .tier li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;background:var(--mauve);transform:rotate(45deg)}
+    .mem-note{max-width:56ch;margin:44px auto 0;text-align:center;font-size:14px;line-height:1.75;color:var(--taupe)}
+
+    /* ---------- NEWSLETTER ---------- */
+    .news .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   </style>
 </head>
-<body>
-  <div class="bg"></div>
-  <div class="veil"></div>
-  <div class="inner">
-    <h1>The Digital Income Edit™</h1>
-    <p>Build a business you're obsessed with — online, on your terms.</p>
-    <a class="btn" href="/learn">Enter The Library →</a>
+<body class="no-js">
+  <style>.no-js .reveal{opacity:1;transform:none}</style>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
+      <div class="nav-links">
+        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
+        <a class="nav-join" href="/community">Community</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <button class="close" id="close" aria-label="Close">✕</button>
+    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
   </div>
+
+  <!-- HERO -->
+  <section class="h-hero">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="in">
+      <div class="k">The Digital Income Edit™</div>
+      <h1>Build a business you're obsessed with.</h1>
+      <p class="sub">Faceless doesn't mean nobody's there. It means your face was never the thing you were selling.</p>
+      <div class="h-cta">
+        <a class="btn" href="/learn">Read the Library <span class="a">→</span></a>
+        <a class="btn quiet" href="/resources/faceless-income-blueprint">Get the Blueprint free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- START HERE -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="k">Start Here</div>
+      <h2>Two free places to begin</h2>
+      <p>Both are free, both are finished, and neither asks you to decide anything yet.</p>
+    </div>
+    <div class="free-grid">
+      <div class="free-card">
+        <div class="ph" style="background-image:url(/images/library/product-faceless-blueprint-mockup.jpg)"></div>
+        <div class="bd">
+          <div class="tag">Free Guide</div>
+          <h3>The Faceless Income Blueprint™</h3>
+          <p>How to choose a niche you won't abandon, build a first product worth paying for, and turn on traffic that keeps arriving after you stop working.</p>
+          <div><a class="btn" href="/resources/faceless-income-blueprint">Download free <span class="a">→</span></a></div>
+        </div>
+      </div>
+      <div class="free-card">
+        <div class="ph" style="background-image:url(/images/library/product-starter-map-cover.png)"></div>
+        <div class="bd">
+          <div class="tag">Free Guide</div>
+          <h3>The $10/Day Traffic Machine — Starter Map</h3>
+          <p>Ten pages on buying traffic without gambling: what to spend, what to watch, and the point at which a small daily budget stops being an experiment.</p>
+          <div><a class="btn" href="/resources/starter-map">Download free <span class="a">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LIBRARY -->
+  <section class="sec" style="padding-top:20px">
+    <div class="sec-head">
+      <div class="k">The Library</div>
+      <h2>Twelve guides, in the order they matter</h2>
+      <p>Not a blog. A curriculum you can read from the top, or open anywhere.</p>
+    </div>
+    <div class="contents">
+      {pillars.map((p) => (
+        <a class="entry" href={`/learn/${p.slug}`}>
+          <div class="no">{p.n}</div>
+          <div class="ttl">{p.title}<span>{p.cat}</span></div>
+          <div class="rd">{p.read}</div>
+        </a>
+      ))}
+    </div>
+    <div class="sec-foot">
+      <a class="btn quiet" href="/learn">Every article in the library <span class="a">→</span></a>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop-band">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="k">Shop the Edit</div>
+        <h2>The things worth buying</h2>
+        <p>Short, specific, and built to be used the same week you buy them.</p>
+      </div>
+      <div class="shop-grid">
+        {shop.map((s) => (
+          <div class="sh">
+            {s.aff && <div class="aff">Affiliate</div>}
+            <h3>{s.name}</h3>
+            <div class="price">{s.price}</div>
+            <div class="note">{s.note}</div>
+            <p>{s.copy}</p>
+            <div>
+              {s.aff
+                ? <a class="go" href={s.url} rel="sponsored nofollow" target="_blank">Shop now →</a>
+                : <a class="go" href={s.url}>Shop now →</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="disclose">
+        Products marked <strong>Affiliate</strong> aren't mine. I recommend them because I use them, and I earn a commission if you buy — at no extra cost to you. Prices on those are set by their owners and can change without notice.
+      </p>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="mem">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="k">The Membership</div>
+        <h2>Where the work actually gets done</h2>
+        <p>The library teaches. The membership is where you build it with other women doing the same thing.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <div class="nm">Premium</div>
+          <div class="pr">$9 <span style="font-size:15px;font-family:var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe)">per month</span></div>
+          <ul>
+            <li>The Content Edit, The Offer Edit, The Funnel Edit and The Email Edit</li>
+            <li>Brand Building &amp; Brand Identity</li>
+            <li>Pinterest Foundations™</li>
+            <li>Prompt libraries and templates</li>
+          </ul>
+          <a class="btn" href="https://www.skool.com/thedigitalincomeedit/plans">See what's inside <span class="a">→</span></a>
+        </div>
+        <div class="tier">
+          <div class="nm">VIP</div>
+          <div class="pr">$27 <span style="font-size:15px;font-family:var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe)">per month</span></div>
+          <ul>
+            <li>Everything in Premium</li>
+            <li>The Ads Edit™ — paid traffic, run on a small budget</li>
+            <li>Done-for-you assets and monthly content planning</li>
+          </ul>
+          <a class="btn ghost" href="https://www.skool.com/thedigitalincomeedit/plans">See what's inside <span class="a">→</span></a>
+        </div>
+      </div>
+      <p class="mem-note">
+        Both memberships bill monthly. Everything in the shop above is a one-time purchase except the Pretty &amp; Paid PLR Vault™, which is its own separate subscription at $11 a month — it hands you products to sell, and it isn't part of the membership.
+      </p>
+      <div style="text-align:center;margin-top:34px">
+        <a class="btn ghost" href="https://www.skool.com/thedigitalincomeedit/about">Join the free community <span class="a">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS
+       Deliberately absent. Real member results only — nothing goes here until
+       genuine, attributable testimonials exist. Do not fill with examples. -->
+
+  <!-- NEWSLETTER -->
+  <section class="news">
+    <div class="news-in">
+      <div class="k">Every Sunday</div>
+      <h3>One idea you can act on before Monday.</h3>
+      <p>Pinterest, AI, digital products and the systems underneath them — written for women building quietly, without a personal brand to maintain.</p>
+      <div class="btnrow">
+        <a class="btn" href="https://links.thedigitalincomeedit.com/page2">Subscribe free <span class="a">→</span></a>
+      </div>
+      <div class="fine">No spam. Leave whenever you like.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
+      </div>
+      <div class="foot-col">
+        <h5>Learn</h5>
+        <a href="/learn">The Library</a>
+        <a href="/learn/complete-pinterest-marketing-guide">Pinterest</a>
+        <a href="/learn/ultimate-guide-to-ai">AI</a>
+        <a href="/learn/digital-products-guide">Digital Products</a>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="/shop">Shop</a>
+        <a href="/resources">Free Resources</a>
+        <a href="/membership">Membership</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="foot-col">
+        <h5>Connect</h5>
+        <a href="/community">Community</a>
+        <a href="/newsletter">Newsletter</a>
+        <a href="https://pinterest.com/Nursemadedigital">Pinterest</a>
+        <a href="https://instagram.com/Nursemadedigital">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Digital Income Edit™</span>
+      <span>Curated with intention.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.remove('no-js');
+    const drawer = document.getElementById('drawer');
+    document.getElementById('burger').onclick = () => drawer.classList.add('open');
+    document.getElementById('close').onclick = () => drawer.classList.remove('open');
+    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
+  </script>
 </body>
 </html>
