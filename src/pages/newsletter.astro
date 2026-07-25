@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import FreebieForm from "../components/FreebieForm.astro";
 ---
 <PageLayout
   title="The Weekly Edit — Newsletter"
@@ -9,7 +10,9 @@ import PageLayout from "../layouts/PageLayout.astro";
   <h1>Continue Learning Every Week</h1>
   <p class="lede">Practical tutorials, AI workflows, Pinterest strategies, and digital product ideas — one beautiful, useful email at a time.</p>
   <p>No daily noise, no recycled advice. One email a week with something you can actually use — a workflow, a strategy, or the thinking behind a decision I made in my own business.</p>
-  <a class="btn" href="https://links.thedigitalincomeedit.com/page2" rel="noopener" style="margin-top:32px">Subscribe <span class="a">→</span></a>
-  <p style="font-size:13px;color:var(--taupe);margin-top:20px">Join thousands of women building online businesses on their own terms. Unsubscribe anytime.</p>
+
+  <FreebieForm heading="Get The Weekly Edit" button="Subscribe" />
+
+  <p style="font-size:13px;color:var(--taupe);margin-top:20px">Join women building online businesses on their own terms. Unsubscribe anytime.</p>
   <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
 </PageLayout>
