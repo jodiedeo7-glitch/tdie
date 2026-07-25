@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What should I automate first?",
+    answer: "The welcome sequence — the emails that greet every new subscriber. It's the highest-leverage automation because it runs on every single lead, forever, and does the introducing and selling you'd otherwise repeat by hand. Automate the thing that touches the most people with the least maintenance."
+  },
+  {
+    question: "What are the five systems worth automating?",
+    answer: "The pillar names them as the systems a one-woman business can hand off without losing its voice: lead capture, the welcome sequence, content distribution, customer delivery, and the numbers that tell you it's working. You automate these in order of how often they repeat, not how exciting they are."
+  },
+  {
+    question: "Make or Zapier — which should I use?",
+    answer: "Either works; the mistake is overbuying. Zapier is simpler for straightforward one-step connections; Make is more flexible and cheaper at volume once your flows branch. Start with whichever solves the automation in front of you and upgrade only when a real limit forces it — not before."
+  },
+  {
+    question: "Why is paid traffic part of the automation pillar?",
+    answer: "Because paid traffic is the one traffic source that runs without you once it's dialled in. Organic reach needs constant feeding; a working ad quietly buys attention on a schedule. That makes it an automation, not a marketing afterthought — which is why it lives here."
+  },
+  {
+    question: "What numbers do I actually need to watch?",
+    answer: "Four: what a lead costs you, what a customer is worth, how many leads become customers, and how much you keep. Everything else is a vanity metric until those four are healthy. Automations are only worth building once these numbers tell you the underlying business works."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Automation & Paid Traffic"
   issueNumber="028"
   readTime="15 Min Read"
-  ogImage="/images/library/flatlay-automation-systems.jpg"
+    datePublished="2026-07-16"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/flatlay-automation-systems.jpg"
   related={[
     { href: "/learn/business-that-runs-without-you", title: "How to Build a Business That Runs Without You" },
     { href: "/learn/ai-for-online-business", title: "How to Use AI Without Sounding Like a Robot" },
