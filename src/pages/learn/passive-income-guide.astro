@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Is passive income actually passive?",
+    answer: "Not at the start. Every passive stream is front-loaded work that pays out later — you build the asset actively, then it earns with far less ongoing effort. Anyone selling truly effortless income is selling a fantasy; the honest version is 'build once, earn repeatedly.'"
+  },
+  {
+    question: "What actually counts as a passive stream?",
+    answer: "Something that keeps earning after the work is done — a digital product that sells on autopilot, affiliate content that ranks, a course that delivers itself. The test is whether income continues on a day you don't touch it, not whether it required zero effort to create."
+  },
+  {
+    question: "What passive stream should I build first?",
+    answer: "The one closest to what you're already making — usually a single digital product or an evergreen piece of affiliate content, pointed at traffic you can create consistently. The first stream's job is to prove the model works, not to replace your income overnight."
+  },
+  {
+    question: "What do I front-load, and in what order?",
+    answer: "The asset, then the traffic, then the automation that connects them — in that sequence. Build the thing worth selling, create the channel that keeps finding buyers, then wire up the email and systems that sell it without you. Skipping straight to automation just automates something nobody's buying yet."
+  },
+  {
+    question: "How long until passive income actually pays?",
+    answer: "Longer than the hype promises — think months of building and compounding before a stream carries real weight. Passive income rewards patience specifically because the work and the payoff are separated in time; the people who quit early never reach the part where it pays."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Passive Income"
   issueNumber="036"
   readTime="16 Min Read"
-  ogImage="/images/library/hero-office-wide-04.jpg"
+    datePublished="2026-07-25"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/hero-office-wide-04.jpg"
   related={[
     { href: "/learn/digital-products-guide", title: "Digital Products for Beginners" },
     { href: "/learn/affiliate-marketing-101", title: "Affiliate Marketing 101" },
