@@ -1,0 +1,80 @@
+---
+// src/components/FreebieForm.astro
+// MailerLite embedded capture form, styled to the brand.
+// One form (account 2532349, form 193994333796435364) → all freebies capture
+// into one list for now (Option 1). To segment per-pillar later, swap the
+// action URL for a pillar-specific form ID — one line per page.
+//
+// Props:
+//   heading  - the capture headline (e.g. "Get the AI Starter Kit")
+//   button   - submit button label (e.g. "Send Me the Kit")
+const { heading = "Get the free guide", button = "Send It to Me" } = Astro.props;
+const ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
+---
+
+<div class="freebie-capture">
+  <form class="fc-form" action={ACTION} method="post" target="_blank">
+    <h3 class="fc-h">{heading}</h3>
+    <p class="fc-sub">Drop your email — it lands in your inbox in a minute. No spam, unsubscribe anytime.</p>
+    <div class="fc-row">
+      <input
+        type="email"
+        name="fields[email]"
+        placeholder="your@email.com"
+        aria-label="Email"
+        required
+        autocomplete="email"
+      />
+      <button type="submit">{button}</button>
+    </div>
+    <input type="hidden" name="ml-submit" value="1" />
+    <input type="hidden" name="anticsrf" value="true" />
+  </form>
+</div>
+
+<style>
+  .freebie-capture {
+    background: linear-gradient(135deg, var(--blush, #FDF0F3) 0%, var(--cream, #FBF6EF) 100%);
+    border: 1px solid var(--pink-soft, #F3D9E0);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 40px 0;
+    box-shadow: 0 4px 24px rgba(203, 154, 168, 0.12);
+  }
+  .fc-h {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    margin: 0 0 6px 0;
+    color: var(--ink, #2B2B2B);
+  }
+  .fc-sub {
+    font-size: 14px;
+    color: var(--taupe-deep, #7A6A63);
+    margin: 0 0 18px 0;
+  }
+  .fc-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .fc-row input {
+    flex: 1 1 240px;
+    padding: 13px 16px;
+    border: 1px solid var(--pink-soft, #F3D9E0);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fff;
+  }
+  .fc-row input:focus { outline: 2px solid var(--pink, #E5A0B5); outline-offset: 1px; }
+  .fc-row button {
+    padding: 13px 26px;
+    background: var(--pink, #E5A0B5);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .fc-row button:hover { background: var(--pink-deep, #D6889F); }
+</style>
