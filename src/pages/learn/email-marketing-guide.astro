@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Why is an email list so important?",
+    answer: "It's the only audience you truly own. Social followers and search rankings are rented — an algorithm change can erase them overnight. A list is a direct line to people who chose to hear from you, and it's the single most durable asset a faceless business can build."
+  },
+  {
+    question: "Do I need a big list before it's worth it?",
+    answer: "No. Start before you feel ready — a small, engaged list outperforms a large indifferent one. Every established list started at zero subscribers; the cost of waiting is every subscriber you didn't capture while you hesitated."
+  },
+  {
+    question: "What makes a good lead magnet?",
+    answer: "It solves one specific problem quickly and completely, and it's something the right person would happily trade their email for. A good lead magnet isn't a giant ebook nobody finishes — it's a small, sharp win that proves you're worth listening to."
+  },
+  {
+    question: "What is a welcome sequence and why does it matter?",
+    answer: "It's the automated series of emails every new subscriber receives — the introduction, the story, and the first invitation to buy. It matters because it runs on everyone forever, doing the warming and selling once instead of every time, which makes it the highest-leverage email you'll write."
+  },
+  {
+    question: "What do I send when I have nothing to sell?",
+    answer: "Useful, on-brand emails that keep the relationship warm — a helpful idea, a short story, a link to something worth their time. The rhythm of showing up when you're not selling is exactly what earns the right to sell when you are."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Email Marketing"
   issueNumber="034"
   readTime="16 Min Read"
-  ogImage="/images/library/hero-office-wide-01.jpg"
+    datePublished="2026-07-25"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/hero-office-wide-01.jpg"
   related={[
     { href: "/learn/email-marketing-for-beginners", title: "How to Write Your First 5 Emails" },
     { href: "/learn/affiliate-marketing-101", title: "Affiliate Marketing 101" },
