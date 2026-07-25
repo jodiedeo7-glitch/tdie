@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What does 'faceless' actually mean?",
+    answer: "Faceless means your real face is never required to run the business — not that no person appears anywhere. The brand can still have a face; it just isn't yours by obligation. You're selling a system, a point of view, and a set of assets, not your personality or your presence on camera."
+  },
+  {
+    question: "Do I need to show my face to build trust?",
+    answer: "No. Trust comes from usefulness, consistency, and a recognisable point of view — none of which require a camera. A faceless brand earns trust through the quality of what it publishes and the clarity of what it promises, which is why branding matters more for a faceless business, not less."
+  },
+  {
+    question: "What are the two engines every business runs on?",
+    answer: "An offer engine and a traffic engine. The offer engine is what you sell and how it's structured; the traffic engine is how strangers keep arriving. A business fails when one is missing — a great offer nobody sees, or a flood of traffic with nothing to buy."
+  },
+  {
+    question: "How do I choose a niche I won't abandon?",
+    answer: "Pick something at the overlap of what you can talk about for a year without resenting it and what people actively pay to solve. A niche you can own is narrow enough to be known for and durable enough that you're still interested after the novelty wears off."
+  },
+  {
+    question: "Should I build the product or the audience first?",
+    answer: "Design the offer before you build the full product, and turn on traffic early rather than perfecting in private. The order that works is: decide who it's for, shape the offer, prove people want it, then build. Owning the audience you're currently renting — moving them to an email list — is what makes the whole thing durable."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Business Systems"
   issueNumber="017"
   readTime="20 Min Read"
-  related={[
+    datePublished="2026-07-14"
+  dateModified="2026-07-25"
+  faqs={faqs}
+related={[
     { href: "/learn/choosing-a-niche", title: "How to Choose Your Niche in a Weekend" },
     { href: "/learn/creating-your-first-offer", title: "How to Create Your First Offer in a Week" },
     { href: "/learn/pinterest-marketing-guide", title: "How to Get Your First 1,000 Pinterest Visitors" },
