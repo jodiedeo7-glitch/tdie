@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Analytics from '@vercel/analytics/astro';
 export interface Props {
   title: string;
   description: string;
@@ -102,5 +103,6 @@ const canonical = new URL(Astro.url.pathname, "https://learn.thedigitalincomeedi
     document.getElementById('close').onclick = () => drawer.classList.remove('open');
     drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
+  <Analytics />
 </body>
 </html>

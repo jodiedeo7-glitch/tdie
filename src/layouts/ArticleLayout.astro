@@ -87,6 +87,7 @@
 // ============================================================
 import "../styles/global.css";
 
+import Analytics from '@vercel/analytics/astro';
 export interface Props {
   title: string;             // SEO title tag
   description: string;       // meta description
@@ -803,5 +804,6 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     document.getElementById('close').onclick = () => drawer.classList.remove('open');
     drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
+  <Analytics />
 </body>
 </html>

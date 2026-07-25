@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import Analytics from '@vercel/analytics/astro';
 ---
 
 <!DOCTYPE html>
@@ -205,5 +206,6 @@ import "../../styles/global.css";
     var dlinks = drawer.querySelectorAll('a');
     for (var d = 0; d < dlinks.length; d++) dlinks[d].onclick = function () { drawer.classList.remove('open'); };
   </script>
+  <Analytics />
 </body>
 </html>

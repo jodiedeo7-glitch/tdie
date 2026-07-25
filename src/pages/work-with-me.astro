@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Analytics from '@vercel/analytics/astro';
 const EMAIL = "Jodie.deo7@gmail.com";
 const mailto = (subject: string) =>
   `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
@@ -274,5 +275,6 @@ const faqs = [
     document.getElementById('close').onclick = () => drawer.classList.remove('open');
     drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
+  <Analytics />
 </body>
 </html>

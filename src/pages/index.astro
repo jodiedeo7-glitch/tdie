@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Analytics from '@vercel/analytics/astro';
 // Pillar guides — titles, slugs and categories read from the live pages, 24 July 2026.
 const pillars = [
   { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min" },
@@ -337,5 +338,6 @@ const shop = [
     document.getElementById('close').onclick = () => drawer.classList.remove('open');
     drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
+  <Analytics />
 </body>
 </html>
