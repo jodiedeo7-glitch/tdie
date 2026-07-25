@@ -1,5 +1,28 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Isn't branding just colours and fonts?",
+    answer: "Those are the surface. A brand is the promise people associate with your name and the feeling they get before they've read a word — the point of view, the voice, the standard. Colours and fonts only matter because they make that promise instantly recognisable."
+  },
+  {
+    question: "Why does a faceless brand need branding more, not less?",
+    answer: "Because it can't lean on a founder's face for recognition, everything else has to carry it — the voice, the palette, the point of view. A personal brand can be inconsistent and survive on charisma; a faceless brand lives or dies on how repeatable and recognisable its identity is."
+  },
+  {
+    question: "How do I find my brand voice?",
+    answer: "Decide what you believe, who you're for, and how you'd say it to one real person — then write that way every time. Voice isn't a clever tagline; it's the consistent point of view underneath everything you publish, the thing that makes two articles feel like the same brand wrote them."
+  },
+  {
+    question: "How do I keep my brand consistent?",
+    answer: "Write it down. A short, plain document naming your voice, your colours, your do's and don'ts turns taste into something repeatable — by you on a tired day, or by AI and anyone you delegate to. Consistency isn't memory; it's a written standard you can point at."
+  },
+  {
+    question: "When does the brand become the business?",
+    answer: "When the promise is strong enough that people choose you before comparing options — when the name itself carries trust. At that point the brand isn't decoration around the offer; it's the reason the offer sells."
+  },
+];
 ---
 
 <ArticleLayout
@@ -9,7 +32,10 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
   category="Branding"
   issueNumber="035"
   readTime="16 Min Read"
-  ogImage="/images/library/detail-shelf-styling-02.jpg"
+    datePublished="2026-07-25"
+  dateModified="2026-07-25"
+  faqs={faqs}
+ogImage="/images/library/detail-shelf-styling-02.jpg"
   related={[
     { href: "/learn/content-creation-guide", title: "The Beginner's Guide to Content Creation for Faceless Brands" },
     { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" },
