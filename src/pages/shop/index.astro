@@ -1,38 +1,283 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+
+// ─────────────────────────────────────────────────────────────
+// Every name, price and URL below is a Product Register v3.1 row.
+// Nothing here is inferred. Ownership flags drive the affiliate
+// badge and rel="sponsored" (Standing Rule 18 — link, rel and
+// disclosure ship as a set).
+// ─────────────────────────────────────────────────────────────
+
+const B = "https://links.thedigitalincomeedit.com/shop/";
+
+// TOP BLOCK — The Value Vault. Ledger-confirmed items only.
+const vault = [
+  { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", url: "/vault/freebie-in-an-afternoon",
+    copy: "The lead magnet and the paid offer behind it, both finished before dinner." },
+  { name: "8 Claude Prompts That Save Me 12 Hours a Week", price: "$5", note: "one-time", url: B + "02d1799d-a588-438f-a9a5-7313e39bb8a0",
+    copy: "Eight prompts I actually run every week. Paste, edit two lines, done." },
+  { name: "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", price: "$9", note: "one-time", url: B + "8e31e02b-cc67-4217-ba21-139fb88584aa",
+    copy: "A month of pins queued in a single sitting. The exact order I work in." },
+];
+
+const groups = [
+  {
+    id: "free",
+    label: "Start Here",
+    title: "Free downloads",
+    note: "Finished guides, not teasers. No card, no trial.",
+    items: [
+      { name: "The Faceless Income Blueprint\u2122", price: "$0", note: "free", url: "/resources/faceless-income-blueprint", aff: false,
+        copy: "Niche, first product, first traffic source \u2014 the whole shape of the business in one document." },
+      { name: "The $10/Day Traffic Machine \u2014 Starter Map", price: "$0", note: "free", url: "/resources/starter-map", aff: false,
+        copy: "Ten pages on buying traffic without gambling: what to spend, what to watch, when to stop." },
+      { name: "FREE GUIDE \u2014 One & Done Money Stream", price: "$0", note: "free", url: B + "d03bc54d-50e6-4725-b401-f91cb3ea251a", aff: false,
+        copy: "The short version of the one-product, one-system approach." },
+    ],
+  },
+  {
+    id: "recurring",
+    label: "Billed Monthly",
+    title: "Memberships & subscriptions",
+    note: "Four separate doors. Only two of them are rungs on the same ladder.",
+    items: [
+      { name: "Free Community", price: "$0", note: "per month \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/about", aff: false,
+        copy: "The Essentials Edit, AI Foundations for Creators, the Canva Crash Course and Daily Prompts." },
+      { name: "Membership Premium", price: "$9", note: "per month \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/plans", aff: false,
+        copy: "The monetisation half of the curriculum \u2014 offer, content, email, Pinterest, and your AI twin." },
+      { name: "Membership VIP", price: "$27", note: "per month \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/plans", aff: false,
+        copy: "Everything in Premium, plus The Ads Edit\u2122, the monthly done-for-you content calendar, and Scaling & Systems." },
+      { name: "Pretty & Paid PLR Vault\u2122", price: "$11", note: "per month \u00b7 not a tier", url: B + "e7555c8f-7348-4ab4-99ce-0569d6dd0839", aff: false,
+        copy: "Rebrandable products you resell as your own, refreshed monthly. Its own subscription \u2014 not part of the membership." },
+      { name: "#TDIE FB GROUP PROMO", price: "$10", note: "per month \u00b7 promotion slot", url: B + "8b706bf8-79cb-4e65-8b8f-01b17cb6fddb", aff: false,
+        copy: "A recurring promotion placement inside the Facebook group." },
+    ],
+  },
+  {
+    id: "courses",
+    label: "Courses",
+    title: "Delivered inside Skool",
+    note: "Bought once, opened inside the classroom.",
+    items: [
+      { name: "Pinterest Foundations\u2122", price: "$27", note: "one-time \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca?md=63eb80fb5d114f77870c962337a58a1b", aff: false,
+        copy: "The full Pinterest system as a course. Also included with Membership Premium \u2014 buying it outright is for people who only want this one thing." },
+    ],
+  },
+  {
+    id: "products",
+    label: "One-Time",
+    title: "Products & guides",
+    note: "Buy it, use it that week, never think about it again.",
+    items: [
+      { name: "550+ BRILLIANT chatGPT prompts for your business", price: "$2", note: "one-time", url: B + "edd98817-25bf-4916-b605-6ee6d179e3e4", aff: false,
+        copy: "A wide prompt library to raid when you are staring at a blank box." },
+      { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", url: B + "4d0e0341-af50-4957-b915-def1246a2001", aff: false,
+        copy: "Brands actively paying creators, with the contact route. Skip the research, start pitching." },
+      { name: "The Tommy Kate Edit", price: "$17", note: "one-time \u00b7 lifetime access", url: B + "33f23d28-8b7b-466c-9717-12952c813326", aff: false,
+        copy: "The AI prompt bank behind a consistent faceless persona. Lifetime updates. Also included with Premium." },
+      { name: "The One and Done Money Stream", price: "$27", note: "one-time", url: B + "93657cd0-5971-4f14-9670-94809a91eb00", aff: false,
+        copy: "One digital income stream, built once, set to earn on repeat. Includes resell rights." },
+      { name: "BONUS BUNDLE WITH RESELL RIGHTS", price: "$27", note: "one-time", url: B + "15dadd2b-20d7-4523-aa29-177644c1dd7a", aff: false,
+        copy: "A bundle of ready-made products you can rebrand and sell as your own." },
+      { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time", url: B + "1ac018a9-859e-40fb-a75a-2490957c387c", aff: false,
+        copy: "A hundred done-for-you hooks and captions for Reels that sell nothing you have not earned yet \u2014 no screenshots, no income claims, nothing that gets an account flagged. Written for the stage before you have social proof." },
+    ],
+  },
+  {
+    id: "ai-influencer",
+    label: "The AI Influencer Suite",
+    title: "Build the persona, then feed her",
+    note: "Four steps of the same build, sold separately.",
+    items: [
+      { name: "AI Influencer Flash Sale", price: "$50", note: "one-time", url: B + "375d5c04-ffec-4ce4-bae9-c4d9756b4897", aff: false,
+        copy: "The entry point into the AI influencer build." },
+      { name: "AI Influencer Starter Twin", price: "$97", note: "one-time", url: B + "fdfdf1a4-ce57-4bdb-8a41-df57e5d13c2f", aff: false,
+        copy: "Your persona, generated to stay the same face every time." },
+      { name: "AI Influencer Brand Bundle", price: "$147", note: "one-time", url: B + "adcbb901-c623-4597-b023-549593ba7c56", aff: false,
+        copy: "The persona plus the brand assets that surround her." },
+      { name: "AI Influencer Content Drop", price: "$297", note: "one-time", url: B + "8e01b637-5b02-4d2d-9d67-2b418a47ea20", aff: false,
+        copy: "A delivered content library for a persona already built." },
+    ],
+  },
+  {
+    id: "dfy",
+    label: "Done For You",
+    title: "Services",
+    note: "I do the work and hand it back finished.",
+    items: [
+      { name: "DFY Instagram Audit + Growth Optimization", price: "$197", note: "one-time", url: B + "cb231219-a29c-4394-8de4-31ee912ea70e", aff: false,
+        copy: "A full read of the account and the specific changes that move it." },
+      { name: "DFY Instagram Audit + Custom Viral Content Calendar", price: "$350", note: "one-time", url: B + "cf2c6276-395f-4ba0-ac92-3f35a86ae656", aff: false,
+        copy: "The audit, plus a content calendar built for your account rather than a template." },
+    ],
+  },
+  {
+    id: "affiliate",
+    label: "Not Mine",
+    title: "Recommended, not made here",
+    note: "Products I use and rate, built by other people. Prices are theirs and can change without notice.",
+    items: [
+      { name: "\ud83c\udfac YouTube Shorts Side Hustle Mini Guide (14 Pages + Bonus) | 80% Resell Rights", price: "$15", note: "one-time", url: B + "39e976fa-519e-4333-9251-4c2010d5bddc", aff: true,
+        copy: "A short guide to the Shorts side hustle, with resell rights." },
+      { name: "Leni Loves", price: "$37", note: "one-time", url: B + "759b7d47-a917-40b3-b448-ed1f2ae541c1", aff: true,
+        copy: "Aesthetic templates and brand resources." },
+      { name: "The Conversion Architect", price: "$47", note: "one-time", url: B + "8e67a0e1-5174-4345-a023-73eb3ef0a7b4", aff: true,
+        copy: "Conversion structure for offers and pages." },
+      { name: "Claude Studio Kit", price: "$57", note: "one-time", url: B + "936479ee-b21a-4c8e-80bb-a92b66cf7626", aff: true,
+        copy: "A working setup for running Claude as a studio rather than a chat box." },
+      { name: "The Faceless Launch Formula by @thebossdigitalwealth | Stan", price: "$77", note: "one-time", url: B + "0454a1a0-ec6d-43c5-a90d-0ceb38b4d8c9", aff: true,
+        copy: "A launch framework built for faceless brands." },
+      { name: "Earn With Skool (SCC)", price: "$97", note: "one-time", url: B + "74512b39-f6d6-48ae-8aca-36e35631da7e", aff: true,
+        copy: "Building and earning from a Skool community." },
+      { name: "The AI Subs Method", price: "$147", note: "one-time", url: B + "4fb73a6d-56a7-4c3f-b17c-ee28624bc4ac", aff: true,
+        copy: "Growing and monetising a faceless AI subscription channel." },
+      { name: "NAVIA AI STUDIO", price: "$197", note: "one-time", url: B + "b8281e5f-10ba-4c7a-b07b-f07a2bac4874", aff: true,
+        copy: "An AI production studio setup." },
+      { name: "CREATE FACELESS WEALTH", price: "$487", note: "one-time", url: B + "7d7d1473-4099-4e9a-b991-8de80a248d00", aff: true,
+        copy: "A full faceless brand system at the top of the range." },
+    ],
+  },
+];
 ---
 <PageLayout
+  wide={true}
   title="Shop"
-  description="Digital products, templates, and tools from The Digital Income Edit™."
+  description="Every live product from The Digital Income Edit™ — the Value Vault, memberships, one-time guides, the AI Influencer suite, done-for-you services, and recommended tools."
 >
   <div class="page-eyebrow">Shop</div>
-  <h1>The Shop</h1>
-  <p class="lede">Digital products built to remove your next bottleneck — not add another course to your pile.</p>
+  <h1>Everything, in one place</h1>
+  <p class="lede">Nothing here is a course you will not finish. Short, specific, and built to remove the next bottleneck rather than add to your pile.</p>
 
-  <div style="border-top:1px solid var(--gray);margin-top:40px">
-    <a href="/shop/pretty-and-paid-plr-vault/" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">Pretty &amp; Paid PLR Vault™</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">$11/month · Membership</span>
-    </a>
+  <!-- ── THE VALUE VAULT ─────────────────────────────────── -->
+  <section class="vault">
+    <div class="vault-head">
+      <div class="vault-k">The Value Vault</div>
+      <div class="vault-script">Value Vault</div>
+      <p class="vault-sub">Single-problem guides, priced like a coffee. Buy the one you need this week.</p>
+    </div>
+    <div class="vault-grid">
+      {vault.map((v) => (
+        <a class="vcard" href={v.url}>
+          <div class="vprice">{v.price}</div>
+          <div class="vnote">{v.note}</div>
+          <h3>{v.name}</h3>
+          <p>{v.copy}</p>
+          <span class="vgo">Get the guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── READING THE PRICES ──────────────────────────────── -->
+  <div class="prices-note">
+    <strong>Two numbers repeat on this page, so here is what each one buys.</strong>
+    <span><b>$9</b> is either Membership Premium, which bills every month, or the Pinterest batching guide, which is a one-time download. <b>$27</b> is either Membership VIP, which bills every month, or one of three one-time purchases — Pinterest Foundations™, The One and Done Money Stream, or the Bonus Bundle. Recurring items are labelled <em>per month</em>. Everything else is paid once.</span>
   </div>
 
-  <h2 style="font-family:'Fraunces',serif;font-size:26px;margin-top:64px;margin-bottom:8px">The Value Vault</h2>
-  <p style="margin-bottom:0">Short, single-problem guides. Buy one when you need it, or unlock every guide — plus every future drop — inside VIP at $27/month.</p>
+  <!-- ── CATEGORIES ──────────────────────────────────────── -->
+  {groups.map((g) => (
+    <section class="grp" id={g.id}>
+      <div class="grp-head">
+        <div class="grp-k">{g.label}</div>
+        <h2>{g.title}</h2>
+        <p class="grp-note">{g.note}</p>
+      </div>
+      <div class="rows">
+        {g.items.map((it) => (
+          <a class="row" href={it.url} rel={it.aff ? "sponsored nofollow" : null} target={it.aff ? "_blank" : null}>
+            <span class="r-main">
+              <span class="r-name">{it.name}{it.aff && <span class="r-aff">Affiliate</span>}</span>
+              <span class="r-copy">{it.copy}</span>
+            </span>
+            <span class="r-price">{it.price}<em>{it.note}</em></span>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
 
-  <div style="border-top:1px solid var(--gray);margin-top:32px">
-    <a href="/vault/freebie-in-an-afternoon" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">Build Your First Freebie in One Afternoon</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">$7 one-time</span>
-    </a>
-    <a href="https://links.thedigitalincomeedit.com/shop/02d1799d-a588-438f-a9a5-7313e39bb8a0" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">8 Claude Prompts That Save Me 12 Hours a Week</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">$5 one-time</span>
-    </a>
-    <a href="https://links.thedigitalincomeedit.com/shop/8e31e02b-cc67-4217-ba21-139fb88584aa" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">How I Batch &amp; Schedule a Month of Pinterest in One 3-Hour Block</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">$9 one-time</span>
-    </a>
-  </div>
+  <p class="disclose">
+    Products marked <strong>Affiliate</strong> are not mine. I recommend them because I use them, and I earn a commission if you buy — at no extra cost to you. Their owners set those prices and can change them without telling me.
+  </p>
 
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+  <p class="back"><a href="/learn">← Back to The Library</a></p>
 </PageLayout>
+
+<style>
+  /* ---------- VALUE VAULT (top, pink) ---------- */
+  .vault{
+    margin:56px 0 0;padding:54px 44px 50px;border-radius:26px;
+    background:linear-gradient(165deg,#FFEAF3 0%,var(--rose) 46%,#F9DCE8 100%);
+    border:1px solid rgba(214,46,115,.16);
+    box-shadow:0 40px 80px -60px rgba(214,46,115,.55);
+  }
+  .vault-head{text-align:center;max-width:52ch;margin:0 auto 40px}
+  .vault-k{font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+  .vault-script{
+    font-family:var(--display);font-style:italic;font-weight:300;
+    font-size:clamp(46px,7vw,76px);line-height:1;letter-spacing:-1.5px;
+    color:var(--pink);margin-bottom:6px;
+  }
+  .vault-sub{
+    font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;
+    color:var(--choc-soft);margin:0;
+  }
+  .vault-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.vault-grid{grid-template-columns:1fr}.vault{padding:40px 24px 36px}}
+  .vcard{
+    display:flex;flex-direction:column;background:var(--white);border-radius:16px;
+    padding:26px 24px 24px;border:1px solid rgba(214,46,115,.12);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .vcard:hover{transform:translateY(-3px);box-shadow:0 24px 44px -26px rgba(214,46,115,.5)}
+  .vprice{font-family:var(--serif);font-size:30px;line-height:1;color:var(--pink)}
+  .vnote{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin:6px 0 14px}
+  .vcard h3{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.22;margin:0 0 10px}
+  .vcard p{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 18px;flex:1}
+  .vgo{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+
+  /* ---------- PRICE NOTE ---------- */
+  .prices-note{
+    margin:44px 0 0;padding:22px 26px;border-left:2px solid var(--gold);
+    background:rgba(200,169,106,.07);border-radius:0 12px 12px 0;
+  }
+  .prices-note strong{display:block;font-size:14px;margin-bottom:8px}
+  .prices-note span{display:block;font-size:14px;line-height:1.75;color:var(--choc-soft)}
+
+  /* ---------- CATEGORY GROUPS ---------- */
+  .grp{margin-top:78px}
+  .grp-head{margin-bottom:24px}
+  .grp-k{font-size:11px;font-weight:600;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+  .grp-head h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);letter-spacing:-.4px;margin:0 0 8px}
+  .grp-note{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--taupe-deep);margin:0;max-width:56ch}
+
+  .rows{border-top:1px solid var(--gray)}
+  a.row{
+    display:grid;grid-template-columns:1fr auto;gap:26px;align-items:start;
+    padding:24px 8px;border-bottom:1px solid var(--gray);
+    transition:padding-left .4s var(--ease),background .4s var(--ease);
+  }
+  a.row:hover{padding-left:16px;background:rgba(255,138,194,.07)}
+  .r-name{display:block;font-family:var(--display);font-size:21px;line-height:1.25}
+  .r-copy{display:block;font-size:14.5px;line-height:1.6;color:var(--taupe-deep);margin-top:6px;max-width:62ch}
+  .r-aff{
+    display:inline-block;margin-left:10px;vertical-align:middle;font-family:var(--sans);
+    font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);
+    border:1px solid var(--gold);border-radius:100px;padding:2px 9px;
+  }
+  .r-price{
+    text-align:right;white-space:nowrap;font-family:var(--serif);font-size:25px;color:var(--pink);line-height:1.1;
+  }
+  .r-price em{
+    display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--taupe-deep);margin-top:5px;
+  }
+  @media(max-width:620px){
+    a.row{grid-template-columns:1fr;gap:12px}
+    .r-price{text-align:left}
+  }
+
+  .disclose{margin-top:56px;font-size:14px;line-height:1.75;color:var(--taupe-deep)}
+  .back{margin-top:44px}
+  .back a{color:var(--pink);font-weight:500}
+</style>

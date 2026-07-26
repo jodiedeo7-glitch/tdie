@@ -25,9 +25,70 @@ const shop = [
   { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "https://links.thedigitalincomeedit.com/shop/4d0e0341-af50-4957-b915-def1246a2001", aff: false },
   { name: "The Tommy Kate Edit", price: "$17", note: "one-time \u00b7 lifetime access", copy: "A prompt pack for faceless lifestyle creators \u2014 ready-to-use AI prompts so you never start a caption from a blank screen. Lifetime updates included.", url: "https://links.thedigitalincomeedit.com/shop/33f23d28-8b7b-466c-9717-12952c813326", aff: false },
   { name: "The One and Done Money Stream", price: "$27", note: "one-time", copy: "Set up one reliable digital income stream. Create it once, let it earn on repeat.", url: "https://links.thedigitalincomeedit.com/shop/93657cd0-5971-4f14-9670-94809a91eb00", aff: false },
-  { name: "Leni Loves", price: "$37", note: "one-time", copy: "A collection of aesthetic templates and resources for your brand and content.", url: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1", aff: true },
+  { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time \u00b7 mine", copy: "A hundred done-for-you hooks and captions for the stage before you have proof \u2014 nothing to screenshot, no income claims, nothing that gets an account flagged.", url: "https://links.thedigitalincomeedit.com/shop/1ac018a9-859e-40fb-a75a-2490957c387c", aff: false },
+  { name: "Leni Loves", price: "$37", note: "one-time \u00b7 theirs", copy: "A collection of aesthetic templates and resources for your brand and content.", url: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1", aff: true },
   { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "https://links.thedigitalincomeedit.com/shop/4fb73a6d-56a7-4c3f-b17c-ee28624bc4ac", aff: true },
   { name: "Create Faceless Wealth", price: "$487", note: "one-time", copy: "A complete system for building a faceless digital income brand — strategy, content, monetisation.", url: "https://links.thedigitalincomeedit.com/shop/7d7d1473-4099-4e9a-b991-8de80a248d00", aff: true },
+];
+
+// Membership tiers. Inclusion lists read from the live Skool plans screen,
+// 26 July 2026. Skool forces the free tier label to "Standard"; the canonical
+// name is Free Community (Product Register v3.1, Part 1) and that is what ships.
+const tiers = [
+  {
+    name: "Free Community",
+    price: "$0",
+    per: "forever",
+    line: "Enough to build the thing. Not enough to sell it yet.",
+    feature: false,
+    cta: "Join free",
+    ghost: true,
+    href: "https://www.skool.com/thedigitalincomeedit/about",
+    items: [
+      "The Essentials Edit",
+      "AI Foundations for Creators",
+      "Canva Crash Course",
+      "Daily Prompts",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "$9",
+    per: "per month",
+    line: "The half where it starts making money.",
+    feature: true,
+    cta: "Join Premium",
+    ghost: false,
+    href: "https://www.skool.com/thedigitalincomeedit/plans",
+    items: [
+      "Everything in the free community",
+      "AI Twin / Influencer Creation",
+      "The Monetization Edit",
+      "Brand Building \u00b7 The Content Edit",
+      "The Email Edit \u00b7 The Pinterest Edit",
+      "The Tommy Kate Edit \u2014 included, not $17 here",
+      "Pinterest Foundations\u2122",
+      "Vacation & Luxe Babe Vault bonuses",
+    ],
+  },
+  {
+    name: "VIP",
+    price: "$27",
+    per: "per month",
+    line: "Premium is what you build by hand. VIP buys the hours back.",
+    feature: false,
+    cta: "Join VIP",
+    ghost: true,
+    href: "https://www.skool.com/thedigitalincomeedit/plans",
+    items: [
+      "Everything in Premium",
+      "Monthly DFY Content Calendar",
+      "The Ads Edit\u2122",
+      "The Offer Edit",
+      "The Funnel Edit",
+      "Scaling & Systems",
+    ],
+  },
 ];
 ---
 <!DOCTYPE html>
@@ -55,7 +116,7 @@ const shop = [
     .h-hero .bg{position:absolute;inset:0;background-image:url(/images/library/homepage-hero.jpg);background-size:cover;background-position:center}
     .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.34) 0%,rgba(251,248,245,.62) 52%,var(--cream) 97%)}
     .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 70px;text-align:center}
-    .h-hero .k{display:inline-block;font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
+    .h-hero .k{display:inline-block;transition:opacity .3s;font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
     .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.4px;max-width:15ch;margin:0 auto 24px}
     .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
     .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -74,7 +135,8 @@ const shop = [
     /* ---------- START HERE ---------- */
     .free-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:940px;margin:0 auto}
     .free-card{background:var(--white);border:1px solid var(--gray);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-    .free-card .ph{aspect-ratio:16/10;background-size:cover;background-position:center}
+    .free-card .ph{aspect-ratio:4/5;background-color:var(--blush);background-size:cover;background-position:center top;border-bottom:1px solid var(--gray)}
+    @media(max-width:760px){.free-card .ph{aspect-ratio:3/4}}
     .free-card .bd{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
     .free-card .tag{font-size:10px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
     .free-card h3{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.15;margin-bottom:12px}
@@ -111,15 +173,26 @@ const shop = [
     .mem .sec-head h2,.mem .sec-head p{color:var(--cream)}
     .mem .sec-head .k{color:var(--mauve)}
     .mem .sec-head p{color:var(--rose)}
-    .tiers{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:860px;margin:0 auto}
-    @media(max-width:760px){.tiers{grid-template-columns:1fr}}
-    .tier{border-top:1px solid rgba(255,255,255,.2);padding-top:28px}
-    .tier .nm{font-family:var(--display);font-size:27px;font-weight:400;margin-bottom:8px}
-    .tier .pr{font-family:var(--serif);font-size:30px;color:var(--mauve);margin-bottom:16px}
-    .tier ul{list-style:none;margin:0 0 26px}
-    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15.5px;line-height:1.6;color:var(--rose)}
-    .tier li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;background:var(--mauve);transform:rotate(45deg)}
-    .mem-note{max-width:56ch;margin:44px auto 0;text-align:center;font-size:14px;line-height:1.75;color:var(--taupe)}
+    .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto;align-items:stretch}
+    @media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:460px}}
+    .tier{position:relative;display:flex;flex-direction:column;padding:34px 30px 32px;border-radius:20px;
+      background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13)}
+    .tier.feat{background:rgba(255,138,194,.10);border-color:rgba(255,138,194,.42);
+      box-shadow:0 40px 80px -50px rgba(255,138,194,.6)}
+    .tier .flag{position:absolute;top:-11px;left:30px;background:var(--pink);color:var(--white);
+      font-size:9.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;padding:5px 13px;border-radius:100px}
+    .tier .nm{font-family:var(--display);font-size:26px;font-weight:400;margin-bottom:10px}
+    .tier .pr{font-family:var(--serif);font-size:44px;line-height:1;color:var(--mauve);margin-bottom:12px}
+    .tier .pr em{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:500;
+      letter-spacing:2px;text-transform:uppercase;color:var(--taupe);margin-top:8px}
+    .tier .ln{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;color:var(--rose);
+      margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14)}
+    .tier ul{list-style:none;margin:0 0 28px;flex:1}
+    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.55;color:var(--rose)}
+    .tier li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;background:var(--mauve);transform:rotate(45deg)}
+    .tier .btn{width:100%;justify-content:center}
+    .mem-note{max-width:64ch;margin:48px auto 0;text-align:center;font-size:14px;line-height:1.8;color:var(--taupe)}
+    .mem-note strong{color:var(--rose)}
 
     /* ---------- NEWSLETTER ---------- */
     .news .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -149,7 +222,7 @@ const shop = [
     <div class="bg"></div>
     <div class="veil"></div>
     <div class="in">
-      <div class="k">The Digital Income Edit™</div>
+      <a class="k" href="/">The Digital Income Edit™</a>
       <h1>Build a business you're obsessed with.</h1>
       <p class="sub">Faceless doesn't mean nobody's there. It means your face was never the thing you were selling.</p>
       <div class="h-cta">
@@ -245,37 +318,27 @@ const shop = [
       <div class="sec-head">
         <div class="k">The Membership</div>
         <h2>Where the work actually gets done</h2>
-        <p>The library teaches. The membership is where you build it with other women doing the same thing.</p>
+        <p>The library teaches you the thinking. This is the room where you build it — with the templates, the prompts, the classroom, and other women shipping the same week you are.</p>
       </div>
+
       <div class="tiers">
-        <div class="tier">
-          <div class="nm">Premium</div>
-          <div class="pr">$9 <span style="font-size:15px;font-family:var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe)">per month</span></div>
-          <ul>
-            <li>The Content Edit, The Offer Edit, The Funnel Edit and The Email Edit</li>
-            <li>Brand Building &amp; Brand Identity</li>
-            <li>Pinterest Foundations™</li>
-            <li>Prompt libraries and templates</li>
-          </ul>
-          <a class="btn" href="https://www.skool.com/thedigitalincomeedit/plans">See what's inside <span class="a">→</span></a>
-        </div>
-        <div class="tier">
-          <div class="nm">VIP</div>
-          <div class="pr">$27 <span style="font-size:15px;font-family:var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe)">per month</span></div>
-          <ul>
-            <li>Everything in Premium</li>
-            <li>The Ads Edit™ — paid traffic, run on a small budget</li>
-            <li>Done-for-you assets and monthly content planning</li>
-          </ul>
-          <a class="btn ghost" href="https://www.skool.com/thedigitalincomeedit/plans">See what's inside <span class="a">→</span></a>
-        </div>
+        {tiers.map((t) => (
+          <div class={t.feature ? "tier feat" : "tier"}>
+            {t.feature && <div class="flag">Most join here</div>}
+            <div class="nm">{t.name}</div>
+            <div class="pr">{t.price}<em>{t.per}</em></div>
+            <div class="ln">{t.line}</div>
+            <ul>
+              {t.items.map((i) => <li>{i}</li>)}
+            </ul>
+            <a class={t.ghost ? "btn ghost" : "btn"} href={t.href}>{t.cta} <span class="a">→</span></a>
+          </div>
+        ))}
       </div>
+
       <p class="mem-note">
-        Both memberships bill monthly. Everything in the shop above is a one-time purchase except the Pretty &amp; Paid PLR Vault™, which is its own separate subscription at $11 a month — it hands you products to sell, and it isn't part of the membership.
+        Both paid tiers bill every month and you can leave from inside the app. <strong>$27 here is a subscription</strong> — it is not the same $27 as The One and Done Money Stream in the shop above, which you pay once. And the Pretty &amp; Paid PLR Vault™ at $11 a month is its own separate door: it hands you products to resell, and it is not part of either membership.
       </p>
-      <div style="text-align:center;margin-top:34px">
-        <a class="btn ghost" href="https://www.skool.com/thedigitalincomeedit/about">Join the free community <span class="a">→</span></a>
-      </div>
     </div>
   </section>
 
@@ -299,7 +362,7 @@ const shop = [
   <footer>
     <div class="foot-in">
       <div>
-        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <a class="foot-brand" href="/">The Digital Income <em>Edit™</em></a>
         <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
       </div>
       <div class="foot-col">

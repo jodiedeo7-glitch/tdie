@@ -5,8 +5,9 @@ import Analytics from '@vercel/analytics/astro';
 export interface Props {
   title: string;
   description: string;
+  wide?: boolean;
 }
-const { title, description } = Astro.props;
+const { title, description, wide = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://learn.thedigitalincomeedit.com").href;
 ---
 
@@ -32,7 +33,11 @@ const canonical = new URL(Astro.url.pathname, "https://learn.thedigitalincomeedi
   />
   <style>
     .page-wrap{max-width:640px;margin:0 auto;padding:90px 40px 120px}
-    .page-eyebrow{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:24px}
+    .page-wrap.wide{max-width:1100px}
+    @media(max-width:640px){.page-wrap{padding:64px 22px 90px}}
+    .page-eyebrow{display:block;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:24px}
+    a.page-eyebrow{transition:color .3s}
+    a.page-eyebrow:hover{color:var(--pink)}
     .page-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:24px}
     .page-wrap .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--taupe-deep);margin-bottom:40px}
     .page-wrap p{font-size:17px;line-height:1.8;margin-bottom:24px}
@@ -59,14 +64,14 @@ const canonical = new URL(Astro.url.pathname, "https://learn.thedigitalincomeedi
     <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
   </div>
 
-  <main class="page-wrap">
+  <main class={wide ? "page-wrap wide" : "page-wrap"}>
     <slot />
   </main>
 
   <footer>
     <div class="foot-in">
       <div>
-        <div class="foot-brand">The Digital Income <em>Edit™</em></div>
+        <a class="foot-brand" href="/">The Digital Income <em>Edit™</em></a>
         <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
       </div>
       <div class="foot-col">
