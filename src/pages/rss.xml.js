@@ -7,7 +7,7 @@
 import rss from "@astrojs/rss";
 import { ARTICLE_DATES, FALLBACK_DATE } from "../data/article-dates.js";
 
-const SITE = "https://learn.thedigitalincomeedit.com";
+const SITE = "https://www.thedigitalincomeedit.com";
 
 // Pull the value of a prop written as name="..." from the article source.
 function prop(source, name) {
