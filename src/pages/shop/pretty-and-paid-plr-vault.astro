@@ -1,6 +1,5 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import FreebieForm from "../../components/FreebieForm.astro";
 
 const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839";
 
@@ -32,6 +31,24 @@ const steps = [
   { n: "03", t: "List",     p: "Glow Studio writes the title, description, tags, mockups." },
   { n: "04", t: "Sell",     p: "Post from the content packs. Keep what you earn." },
 ];
+
+const timeline = [
+  { w: "Week One",   t: "You pick a lane and open the files.",
+    p: "Nine vaults, ninety-two products. Pick the three that fit your niche, swap the colors and fonts and logo, and they're finished and sitting on your desktop." },
+  { w: "Week Two",   t: "Your shop exists.",
+    p: "Etsy, Stan, or Beacons — the training walks you through opening it. Your first listings go up with real products behind them, not placeholders." },
+  { w: "Week Three", t: "You stop scrambling for content.",
+    p: "A month of faceless reels and templates queued up, so posting takes twenty minutes on a Sunday instead of your whole week." },
+  { w: "Week Four",  t: "The next drop lands.",
+    p: "Twenty brand-new products, a fresh theme, waiting for you. Your shelf refills before it ever looks empty." },
+];
+
+const dayThirty = [
+  "A storefront with real, finished products in it",
+  "A content bank deep enough to post from for months",
+  "Ninety-two rebrandable products no one can take back",
+  "A system that restocks itself on the first of every month",
+];
 ---
 <PageLayout
   wide
@@ -47,10 +64,15 @@ const steps = [
       <a class="btn" href={CHECKOUT}>Open the Vault — $11/month <span class="a">→</span></a>
       <a class="v-link" href="#preview">See inside first →</a>
     </div>
+    <div class="v-stats">
+      <div><span class="v-stat">150+</span><span class="v-statlab">Downloads inside</span></div>
+      <div><span class="v-stat">20+</span><span class="v-statlab">New every month</span></div>
+      <div><span class="v-stat">$11</span><span class="v-statlab">A month</span></div>
+    </div>
     <ul class="v-trust">
       <li>Full resell license</li>
       <li>Yours after you cancel</li>
-      <li>20 new products monthly</li>
+      <li>Nine vaults · 92 products</li>
     </ul>
   </section>
 
@@ -140,7 +162,24 @@ const steps = [
         <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
       ))}
     </div>
-    <FreebieForm heading="Send me the free look inside the Vault" button="Send the Preview" />
+  </section>
+
+  <!-- THIRTY DAYS -->
+  <section class="v-sec">
+    <div class="v-kicker">Thirty Days From Now</div>
+    <h2>What you'd actually have.</h2>
+    <div class="v-timeline">
+      {timeline.map(r => (
+        <div class="v-tl-row">
+          <div class="v-tl-week">{r.w}</div>
+          <div class="v-tl-body"><h3>{r.t}</h3><p>{r.p}</p></div>
+        </div>
+      ))}
+    </div>
+    <div class="v-daythirty">
+      <div class="v-kicker">By day thirty, on your own hard drive</div>
+      <ul>{dayThirty.map(d => (<li>{d}</li>))}</ul>
+    </div>
   </section>
 
   <!-- FIT -->
@@ -182,7 +221,12 @@ const steps = [
         <li>Full PLR license — permanently</li>
       </ul>
       <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ <span class="a">→</span></a>
-      <p class="v-fine">Cancel anytime. Your downloads and license stay yours.</p>
+      <p class="v-fine">All ninety-two products, every training inside, and twenty brand-new ones each month.</p>
+    </div>
+
+    <div class="v-nothing">
+      <div class="v-kicker">Nothing to lose, by design</div>
+      <p>Join for one month. Download every last file. Cancel the next morning if you want to — <em>and all of it is still yours.</em> Permanently, fully licensed to edit, rebrand, and sell for as long as you like. Cancelling closes the door to what comes next; it never reaches back for what you've already saved. You are paying for the doorway and the new work that arrives each month — never renting the work already sitting on your desktop. Stay because it keeps handing you more. Not because leaving would cost you something.</p>
     </div>
   </section>
 
@@ -202,7 +246,7 @@ const steps = [
   <section class="v-final">
     <h2>Stock the shop today, or spend another month deciding what to sell.</h2>
     <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ — $11/month <span class="a">→</span></a>
-    <p class="v-fine"><a href="#preview">Still deciding? Take the free look inside →</a></p>
+    <p class="v-fine"><a href="#preview">Still deciding? Look through the previews →</a></p>
   </section>
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
@@ -291,6 +335,28 @@ const steps = [
   .v-price-list li::before{content:"—";position:absolute;left:0;color:var(--gold)}
   .v-fine{font-size:13px;color:var(--taupe);margin:16px 0 0}
 
+  .v-stats{display:flex;gap:0;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray);margin:26px 0 22px}
+  .v-stats div{flex:1;padding:20px 8px;text-align:center;border-right:1px solid var(--gray)}
+  .v-stats div:last-child{border-right:none}
+  .v-stat{display:block;font-family:var(--display);font-weight:300;font-size:32px;line-height:1;color:var(--choc)}
+  .v-statlab{display:block;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-top:8px}
+
+  .v-timeline{border-top:1px solid var(--gray)}
+  .v-tl-row{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--gray)}
+  .v-tl-week{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);padding-top:5px}
+  .v-tl-body h3{margin:0 0 7px}
+  .v-tl-body p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-soft)}
+
+  .v-daythirty{background:var(--blush);border-radius:var(--r);padding:30px 34px;margin-top:32px}
+  .v-daythirty ul{list-style:none;padding:0;margin:0}
+  .v-daythirty li{font-size:15.5px;line-height:1.6;margin-bottom:12px;padding-left:24px;position:relative;color:var(--choc-soft)}
+  .v-daythirty li:last-child{margin-bottom:0}
+  .v-daythirty li::before{content:"—";position:absolute;left:0;color:var(--pink)}
+
+  .v-nothing{background:var(--choc);color:var(--cream);border-radius:var(--r);padding:32px 36px;margin-top:24px}
+  .v-nothing .v-kicker{color:var(--rose)}
+  .v-nothing p{font-size:15.5px;line-height:1.75;margin:0;color:rgba(255,255,255,.9)}
+
   .v-final{max-width:720px;margin:76px auto 0;text-align:center;padding-top:64px;border-top:1px solid var(--gray)}
   .v-final h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);line-height:1.15;margin:0 auto 28px;max-width:24ch}
   .v-final .v-fine a{color:var(--pink)}
@@ -303,6 +369,7 @@ const steps = [
   }
   @media(max-width:600px){
     .v-strip{grid-template-columns:1fr 1fr}
+    .v-tl-row{grid-template-columns:1fr;gap:8px}
     .v-grid-2,.v-two-callouts{grid-template-columns:1fr}
     .v-price-box{padding:32px 22px}
   }
