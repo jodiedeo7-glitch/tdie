@@ -278,6 +278,7 @@ const dayThirty = [
   .v-sec h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);line-height:1.15;
     letter-spacing:-.4px;margin:0 0 30px;max-width:22ch}
   .v-sec h3{font-family:var(--display);font-weight:400;font-size:20px;margin:0 0 9px;line-height:1.25}
+  .v-gate h3,.v-card h3,.v-callout h3,.v-step h3,.v-daythirty h3{color:var(--pink)}
   .v-close{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--choc-soft);margin-top:30px}
   .v-note{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--taupe-deep);margin-top:-14px}
 
@@ -293,7 +294,9 @@ const dayThirty = [
   .v-card p:last-child{margin-bottom:0}
   .v-card ul{margin:10px 0 0;padding-left:18px}
   .v-card li{font-size:15px;line-height:1.55;margin-bottom:7px}
-  .v-card-feature{border-color:var(--pink);background:var(--rose)}
+  .v-card-feature{border-color:var(--pink);background:var(--pink);color:var(--white)}
+  .v-card-feature h3{color:var(--white)}
+  .v-card-feature p,.v-card-feature li{color:rgba(255,255,255,.92)}
   .v-fine-dark{font-size:14px!important;color:var(--taupe-deep)}
 
   .v-chips{list-style:none;padding:0!important;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
@@ -308,7 +311,6 @@ const dayThirty = [
   .v-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   .v-step{background:var(--rose);border:none;border-radius:var(--r);padding:26px 22px}
   .v-step .v-num{color:var(--pink)}
-  .v-step h3{color:var(--choc)}
   .v-step p{font-size:14.5px;line-height:1.6;margin:0;color:var(--choc-soft)}
 
   .v-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 12px}
