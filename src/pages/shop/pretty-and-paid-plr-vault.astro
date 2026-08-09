@@ -223,7 +223,13 @@ const steps = [
     color:var(--taupe-deep);margin-top:9px}
 
   .v-sec{max-width:1000px;margin:0 auto;padding:72px 0;border-top:1px solid var(--gray)}
-  .v-sec.v-tint{background:var(--cream-deep);border-radius:var(--r);padding:60px 44px;margin:72px auto;border-top:none}
+  .v-sec.v-tint{background:var(--pink);border-radius:var(--r);padding:60px 44px;margin:72px auto;border-top:none;color:var(--white)}
+  .v-sec.v-tint .v-kicker{color:var(--rose)}
+  .v-sec.v-tint h2{color:var(--white)}
+  .v-sec.v-tint .v-faq{border-bottom-color:rgba(255,255,255,.28)}
+  .v-sec.v-tint .v-faq summary{color:var(--white)}
+  .v-sec.v-tint .v-faq summary::after{color:var(--rose)}
+  .v-sec.v-tint .v-faq p{color:rgba(255,255,255,.9)}
   .v-kicker{font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
   .v-sec h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);line-height:1.15;
     letter-spacing:-.4px;margin:0 0 30px;max-width:22ch}
@@ -256,8 +262,9 @@ const steps = [
   .v-callout-gold{border-left-color:var(--gold);background:var(--cream)}
 
   .v-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .v-step{background:var(--rose);border:1px solid var(--pink-soft);border-radius:var(--r);padding:26px 22px}
+  .v-step{background:var(--white);border:none;border-radius:var(--r);padding:26px 22px}
   .v-step .v-num{color:var(--pink)}
+  .v-step h3{color:var(--choc)}
   .v-step p{font-size:14.5px;line-height:1.6;margin:0;color:var(--choc-soft)}
 
   .v-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 12px}
