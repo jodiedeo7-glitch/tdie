@@ -1,23 +1,18 @@
-<h2>Read this part twice</h2>
-<p>This module is why the website matters at all, and it's the piece almost nobody building a Skool group has.</p>
-<h2>The problem</h2>
-<p>You want to recommend things — an affiliate product, a tool you use, a partner offer. The instinct is to put the affiliate link straight in the pin, the bio, the post.</p>
+<section class="wb wb-warn"><span class="wb-tag wb-tag-warn">Read this part twice</span><p>This module is why the website matters at all, and it's the piece almost nobody building a Skool group has.</p></section>
+<section class="wb wb-lead"><p>You want to recommend things — an affiliate product, a tool you use, a partner offer. The instinct is to put the affiliate link straight in the pin, the bio, the post.</p>
 <p>Three things go wrong.</p>
 <p><strong>Platforms distrust raw affiliate links.</strong> Pinterest in particular. Enough outbound affiliate links from one account and your links get flagged, suppressed, or your account restricted. The damage is rarely announced — your reach just quietly drops.</p>
 <p><strong>You learn nothing.</strong> A raw link tells you a click happened. Not which pin, not which article, not what the person read first.</p>
-<p><strong>You own nothing.</strong> If the affiliate program closes or the product is retired, every link you ever posted is dead, everywhere, permanently, with no way to update them.</p>
-<h2>The fix</h2>
-<p><strong>Everything outbound routes through a page on your site.</strong></p>
+<p><strong>You own nothing.</strong> If the affiliate program closes or the product is retired, every link you ever posted is dead, everywhere, permanently, with no way to update them.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">The fix</h2><p><strong>Everything outbound routes through a page on your site.</strong></p>
 <p>Instead of <code>pin → affiliate link</code>, it's <code>pin → your page → affiliate link</code>.</p>
-<p>That page is a bridge page. It's yours. It lives at a URL you control, it has real content on it, and it sends people onward from there.</p>
-<h2>Why this changes what your website is for</h2>
-<p>The bridge page is the mechanic that turns a website from a brochure into infrastructure.</p>
+<p>That page is a bridge page. It's yours. It lives at a URL you control, it has real content on it, and it sends people onward from there.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">Why this changes what your website is for</h2><p>The bridge page is the mechanic that turns a website from a brochure into infrastructure.</p>
 <p><strong>Platform trust.</strong> Traffic goes to your own domain, which you've been building a reputation for with real content. It doesn't look like link-dumping because it isn't.</p>
 <p><strong>Analytics.</strong> You see which pin drove the page view and how many went onward. You can tell a winning pin from a losing one.</p>
 <p><strong>Permanence.</strong> Product retired? Edit one page. Every pin, post, and email you ever published now points at the replacement. Nothing else has to change. This alone justifies the site.</p>
-<p><strong>Capture.</strong> A bridge page can offer your free resource on the way past. A raw affiliate link cannot. You get value from clicks that don't convert.</p>
-<h2>Do this — build one</h2>
-<pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
+<p><strong>Capture.</strong> A bridge page can offer your free resource on the way past. A raw affiliate link cannot. You get value from clicks that don't convert.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Build one</h2></div><div class="wb-do-body"><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
 
 Purpose: someone arrives from a pin about [topic] and I'm
 recommending [product/tool].
@@ -37,30 +32,26 @@ Rules:
 - Real recommendation, honestly framed. Include the downside.
 
 Complete file, ready to paste.
-</code></pre>
-<h2>Do this — the disclosure</h2>
-<p>Above the button, not in the footer, not in small text:</p>
+</code></pre></div></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">The disclosure</h2></div><div class="wb-do-body"><p>Above the button, not in the footer, not in small text:</p>
 <blockquote>
 <p>Affiliate link — I earn a commission if you buy through it, at no cost to you. I only recommend things I use.</p>
 </blockquote>
-<p>This is legally required in most jurisdictions and it converts better than hiding it. A visible disclosure signals you're not trying to be sneaky, which is exactly the doubt a reader has at that moment.</p>
-<h2>Do this — three rules for what you link</h2>
-<p><strong>Never quote a sale price.</strong> You don't control the seller's pricing. Publish list price only, or no price. A quoted sale price that's expired makes you look careless.</p>
+<p>This is legally required in most jurisdictions and it converts better than hiding it. A visible disclosure signals you're not trying to be sneaky, which is exactly the doubt a reader has at that moment.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Three rules for what you link</h2></div><div class="wb-do-body"><p><strong>Never quote a sale price.</strong> You don't control the seller's pricing. Publish list price only, or no price. A quoted sale price that's expired makes you look careless.</p>
 <p><strong>Verify quarterly that it still exists.</strong> Affiliate products get retired, repriced, and pulled without notice. Fifteen minutes every three months.</p>
-<p><strong>Ship the link, the disclosure, and the <code>rel="sponsored"</code> as a set.</strong> Never one without the others.</p>
-<h2>Do this — beyond affiliates</h2>
-<p>Bridge pages work for anything outbound, and the reasons are the same:</p>
+<p><strong>Ship the link, the disclosure, and the <code>rel="sponsored"</code> as a set.</strong> Never one without the others.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">04</span><h2 class="wb-h wb-h-do">Beyond affiliates</h2></div><div class="wb-do-body"><p>Bridge pages work for anything outbound, and the reasons are the same:</p>
 <ul>
 <li>Your own product on an external checkout</li>
 <li>Your Skool group</li>
 <li>A partner's offer</li>
 <li>Any link you might ever need to change</li>
 </ul>
-<p><strong>Rule of thumb: if you'd ever need to change where a link points, it should go through a page you own.</strong></p>
-<h2>Roadblock — <em>"Won't the extra step lose people?"</em></h2>
-<p>Some, yes. What you get back is more than the loss: platform safety, analytics, permanence, and captured emails from people who weren't going to buy anyway. On any timeline past a month, the bridge page wins clearly.</p>
-<h2>Roadblock — <em>"My links already got flagged"</em></h2>
-<p>Stop the raw links first. Build bridge pages, repoint what you can, wait out the platform's re-crawl window — usually a week or two — before appealing. Appealing while the flagged pattern is still live gets you denied and burns the appeal.</p>
-<h2>Deliverable</h2>
-<p>One bridge page live, with disclosure and <code>rel="sponsored"</code>, and every outbound link you control routed through your own domain.</p>
-<hr />
+<p><strong>Rule of thumb: if you'd ever need to change where a link points, it should go through a page you own.</strong></p></div></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>Won't the extra step lose people?</summary><div class="wb-road-body"><p>Some, yes. What you get back is more than the loss: platform safety, analytics, permanence, and captured emails from people who weren't going to buy anyway. On any timeline past a month, the bridge page wins clearly.</p></div></details>
+<details class="wb-road"><summary>My links already got flagged</summary><div class="wb-road-body"><p>Stop the raw links first. Build bridge pages, repoint what you can, wait out the platform's re-crawl window — usually a week or two — before appealing. Appealing while the flagged pattern is still live gets you denied and burns the appeal.</p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>One bridge page live, with disclosure and <code>rel="sponsored"</code>, and every outbound link you control routed through your own domain.</p>
+<hr /></section>

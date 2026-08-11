@@ -15,7 +15,7 @@
 <h1>A — SETUP</h1>
 <h2>A0 · Chrome content inventory</h2>
 <p><em>Module 1 — run in Claude in Chrome or any browser agent</em></p>
-<pre><code>Log into [Skool / your platform] and open [your group or workspace].
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Skool / your platform] and open [your group or workspace].
 
 Work through EVERY item in these areas, oldest to newest. Do not skip any:
 1. The classroom — every module, every lesson
@@ -39,10 +39,10 @@ Rules:
   and give me the complete table at the end.
 - If you approach the response limit, stop at a clean row and end
   with &quot;PAUSED AT [row number]&quot;. I will say continue.
-</code></pre>
+</code></pre></div>
 <p>Re-run pointed at your email platform's sent broadcasts, and anywhere else your writing lives. Save the result as <code>content-inventory.md</code> and upload it to your Claude Project's knowledge.</p>
 <h2>A1 · Canon File template</h2>
-<pre><code>CANON FILE — [YOUR BRAND]
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>CANON FILE — [YOUR BRAND]
 
 PRODUCTS — exact names, exact prices, exact URLs
 | Product | Price | Platform | URL |
@@ -71,28 +71,28 @@ URLs: /[pattern]/[slug]
 Stack: [your stack]
 Colors: [hex codes]
 Fonts: [names]
-</code></pre>
+</code></pre></div>
 <h2>A2 · Standing instruction</h2>
 <p>Save in project instructions.</p>
-<pre><code>When my instructions conflict with the canon, or two documents
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>When my instructions conflict with the canon, or two documents
 disagree, STOP and flag it. Do not resolve it silently.
 
 End at the deliverable. Do not explain what you built, summarize
 your work, or suggest next steps.
-</code></pre>
+</code></pre></div>
 <h2>A3 · Live-facts block</h2>
 <p>Paste at the top of any request where your Canon File may be stale.</p>
-<pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
 Project knowledge is stale on these points:
 - [fact]
 - [fact]
 - [fact]
 Where the Canon File and this block conflict, this block wins.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>B — BUILDING THE SITE</h1>
 <h2>B1 · Scaffold</h2>
-<pre><code>Build the scaffold for my Astro site. Use my Canon File in project
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build the scaffold for my Astro site. Use my Canon File in project
 knowledge as the source of truth for everything.
 
 LIVE FACTS — these override anything that disagrees:
@@ -116,9 +116,9 @@ Rules:
 - Placeholder text is fine where real copy comes later — mark it
   clearly as PLACEHOLDER.
 - Give me each file complete, with its exact file path. No fragments.
-</code></pre>
+</code></pre></div>
 <h2>B2 · ArticleLayout</h2>
-<pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
 article on the site. Use my Canon File for brand specifics.
 
 It takes these props:
@@ -141,9 +141,9 @@ Rules:
   generate a fake date.
 - If `related` is empty, render nothing rather than a broken block.
 - Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <h2>B3 · Journey block</h2>
-<pre><code>Add a journey block to ArticleLayout.astro that renders after the
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add a journey block to ArticleLayout.astro that renders after the
 article body. It takes props:
 
 - related: array of {title, url}
@@ -158,9 +158,9 @@ Rendering rules — these matter more than the styling:
 - If all three are missing, render nothing at all.
 
 Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <h2>B4 · Resource landing page</h2>
-<pre><code>Build src/pages/resources/[slug].astro using PageLayout.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/pages/resources/[slug].astro using PageLayout.
 
 Contents:
 - Headline naming the specific outcome
@@ -170,9 +170,9 @@ Contents:
 - Nothing else. No nav distractions, no other offers.
 
 Use my Canon File for brand. Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <h2>B5 · Bridge page</h2>
-<pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
 
 Purpose: someone arrives from a pin about [topic] and I'm
 recommending [product/tool].
@@ -192,9 +192,9 @@ Rules:
 - Real recommendation, honestly framed. Include the downside.
 
 Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <h2>B7 · Homepage copy</h2>
-<pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
 File and pillar map in project knowledge.
 
 Four sections only:
@@ -208,18 +208,18 @@ Rules:
 - No invented products, prices, testimonials, or credentials
 - No &quot;welcome to my blog&quot;
 - Complete file, ready to paste
-</code></pre>
+</code></pre></div>
 <h2>B6 · Analytics</h2>
-<pre><code>Add Vercel Web Analytics to my site. Add the package to
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add Vercel Web Analytics to my site. Add the package to
 package.json and include the Analytics component in every layout
 that renders its own &lt;html&gt; tag — check all of them, not just
 the main one. Give me each changed file complete.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>C — WRITING</h1>
 <h2>C1 · Pillar article</h2>
 <p>Paste your source material first, then:</p>
-<pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
 above is my actual method — it's the spine of the article. Use my
 Canon File in project knowledge for products, prices, links, and voice.
 
@@ -249,15 +249,15 @@ Rules:
 - No hype vocabulary. Follow the banned list in my Canon File.
 - Return the complete article in markdown. Do not summarize what
   you wrote or suggest next steps.
-</code></pre>
+</code></pre></div>
 <h2>C2 · Convert to page</h2>
-<pre><code>Convert that article into a complete .astro file at
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Convert that article into a complete .astro file at
 src/pages/learn/[slug].astro, using ArticleLayout with all props
 filled — title, description, category, publishDate, related.
 Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <h2>C3 · Supporting article</h2>
-<pre><code>Write the supporting article &quot;[TITLE]&quot; for the [PILLAR] cluster.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the supporting article &quot;[TITLE]&quot; for the [PILLAR] cluster.
 Source material above. Canon File for products, prices, voice.
 
 LIVE FACTS:
@@ -276,9 +276,9 @@ Requirements:
 
 Same rules as the pillar: no invented products, no padding,
 no hype vocabulary. Complete article in markdown.
-</code></pre>
+</code></pre></div>
 <h2>C4 · Cluster topics</h2>
-<pre><code>Here is my pillar article on [TOPIC]. Give me 12 supporting
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Here is my pillar article on [TOPIC]. Give me 12 supporting
 article topics that would form a cluster around it.
 
 For each: the working title, the specific search question it
@@ -289,9 +289,9 @@ Rules:
   fully resolve
 - No two may target the same search intent
 - None may be broad enough to compete with the pillar itself
-</code></pre>
+</code></pre></div>
 <h2>C5 · Lead magnet</h2>
-<pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
 
 Format: [checklist / template / worksheet / swipe file]
 Audience: someone who just read my article on [topic] and wants
@@ -306,12 +306,12 @@ Rules:
 - No product pitching inside it. One line at the end pointing to
   [product] is enough.
 - Return it as clean markdown I can convert to PDF.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>D — THE FOUR SEO PASSES</h1>
 <p>Run in order, one at a time, on a finished article.</p>
 <h2>D1 · Google</h2>
-<pre><code>Run a Google SEO pass on this article. Do not rewrite the whole
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run a Google SEO pass on this article. Do not rewrite the whole
 thing — return only what changes, with the exact replacement text.
 
 Check:
@@ -322,9 +322,9 @@ Check:
    the click rather than describing the page?
 4. Are there internal links to my related articles, in context?
 5. Is any section thin enough to be a ranking liability?
-</code></pre>
+</code></pre></div>
 <h2>D2 · Pinterest</h2>
-<pre><code>Run a Pinterest SEO pass. Pinterest is a search engine, not a
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run a Pinterest SEO pass. Pinterest is a search engine, not a
 social feed — treat it that way.
 
 Give me:
@@ -334,9 +334,9 @@ Give me:
    no hashtag stuffing
 3. The three board topics these belong on
 4. Alt text for the featured image
-</code></pre>
+</code></pre></div>
 <h2>D3 · AI search</h2>
-<pre><code>Run an AI-search pass. People are asking chatbots this question
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run an AI-search pass. People are asking chatbots this question
 now, and the article should be the source that gets cited.
 
 Check:
@@ -348,10 +348,10 @@ Check:
    sentences?
 
 Return only what needs to change.
-</code></pre>
+</code></pre></div>
 <h2>D4 · Human</h2>
 <p>Run last, every time. This is the pass that changes the most.</p>
-<pre><code>Read this as a skeptical reader who found it from a search result
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Read this as a skeptical reader who found it from a search result
 and has no idea who I am.
 
 1. Where would they stop reading? Be specific about the paragraph.
@@ -360,12 +360,12 @@ and has no idea who I am.
 4. What question does the article raise and fail to answer?
 
 Do not be polite. Then fix each one.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>E — DISTRIBUTION</h1>
 <h2>E1 · Repurposing pack</h2>
 <p>Paste your published article, then:</p>
-<pre><code>Build the repurposing pack for this article.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build the repurposing pack for this article.
 
 LIVE FACTS:
 - Article URL: [url]
@@ -408,12 +408,12 @@ Rules:
 - Image prompts complete and inline — never &quot;use the prompt above.&quot;
 - No invented products, prices, or links.
 - No hype vocabulary.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>F — IMAGES</h1>
 <h2>F1 · The nine-part anatomy</h2>
 <p>Every image prompt should contain all nine. Missing parts are where randomness enters.</p>
-<pre><code>1. Subject — what's in frame
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>1. Subject — what's in frame
 2. Setting — where
 3. Lighting — &quot;soft natural window light&quot; / &quot;golden hour&quot;
 4. Camera — &quot;Canon R5, 85mm f/1.4, shallow depth of field&quot;
@@ -422,10 +422,10 @@ Rules:
 7. Composition — where the subject sits, where text goes
 8. Realism — &quot;a real photograph, not a 3D render, not CGI&quot;
 9. Format — &quot;vertical 2:3&quot; for pins
-</code></pre>
+</code></pre></div>
 <h2>F2 · The locked shell</h2>
 <p>For any set of images that must look like one brand. Change only the swap fields.</p>
-<pre><code>LOCKED SHELL — change ONLY the swap fields. Every other word
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>LOCKED SHELL — change ONLY the swap fields. Every other word
 stays identical across every cover.
 
 A real photograph, not a 3D render, not CGI, of [SUBJECT],
@@ -452,32 +452,32 @@ Vertical format.
 
 SWAP FIELDS: [SUBJECT] [POSE] [HEADLINE] [SUBTITLE] [BADGE]
 [BADGE HEX]
-</code></pre>
+</code></pre></div>
 <h2>F3 · Pin prompt patterns</h2>
 <p>Three structures that work. Vary between them so your pins don't all look alike.</p>
 <p><strong>Lifestyle photo with overlaid headline:</strong></p>
-<pre><code>&quot;[HEADLINE IN CAPS]&quot; — a real photograph, not CGI, of [subject]
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE IN CAPS]&quot; — a real photograph, not CGI, of [subject]
 [doing something] in [setting], soft natural window light,
 [camera spec], [palette hex codes], bold headline overlaid at
 the top with clear separation from the image, subtle film grain,
 vertical 2:3 format.
-</code></pre>
+</code></pre></div>
 <p><strong>Collage:</strong></p>
-<pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, collage of three
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, collage of three
 lifestyle images ([image 1], [image 2], [image 3]), [palette
 hex codes], bold centered headline, soft paper accents, depth
 without clutter, vertical 2:3 format.
-</code></pre>
+</code></pre></div>
 <p><strong>Text-dominant flatlay:</strong></p>
-<pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, clean flatlay of
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, clean flatlay of
 [objects] on [surface], soft daylight, [palette hex codes],
 elegant serif headline centered with generous whitespace,
 minimal and calm, vertical 2:3 format.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>G — PUBLISHING</h1>
 <h2>G1 · Commit to GitHub</h2>
-<pre><code>Commit these files to my repo using the GitHub API.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Commit these files to my repo using the GitHub API.
 
 Repo: [username]/[repo]
 Branch: main
@@ -494,49 +494,49 @@ set, create the commit, then update the ref. All files in one
 tree so it's a single commit.
 
 Tell me what you're about to commit before you commit it.
-</code></pre>
+</code></pre></div>
 <h2>G2 · Binary files</h2>
 <p>Append to G1:</p>
-<pre><code>These are binary — base64 encode them and set encoding to base64
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>These are binary — base64 encode them and set encoding to base64
 in the blob payload.
-</code></pre>
+</code></pre></div>
 <hr />
 <h1>H — FIXES</h1>
 <p>Short prompts for the eight most common problems.</p>
 <p><strong>H1 · Fragment instead of full file</strong></p>
-<pre><code>Give me the complete file, top to bottom, ready to paste. No
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Give me the complete file, top to bottom, ready to paste. No
 omissions, no &quot;rest of file unchanged.&quot;
-</code></pre>
+</code></pre></div>
 <p><strong>H2 · Article under the word floor</strong></p>
-<pre><code>This is under the 3,000 floor. Expand by adding depth, not padding —
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>This is under the 3,000 floor. Expand by adding depth, not padding —
 more specific examples, more of the actual how, more edge cases.
 Don't restate what's already there.
-</code></pre>
+</code></pre></div>
 <p><strong>H3 · Rewrote the whole thing during an SEO pass</strong></p>
-<pre><code>Return only the changes with exact replacement text and where it
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Return only the changes with exact replacement text and where it
 goes. Do not reproduce the full article.
-</code></pre>
+</code></pre></div>
 <p><strong>H4 · Invented a product</strong></p>
-<pre><code>That product doesn't exist. Remove it. Then tell me what fact you
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>That product doesn't exist. Remove it. Then tell me what fact you
 were missing so I can add it to my Canon File.
-</code></pre>
+</code></pre></div>
 <p><strong>H5 · Pins all look alike</strong></p>
-<pre><code>Each pin must use a genuinely different layout structure — vary
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Each pin must use a genuinely different layout structure — vary
 text placement, image count, whether there's a photo at all, and
 headline treatment. List the structure name for each before its
 prompt.
-</code></pre>
+</code></pre></div>
 <p><strong>H6 · Images look like CGI</strong></p>
-<pre><code>Add: a real photograph, not a 3D render, not CGI. Include real
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add: a real photograph, not a 3D render, not CGI. Include real
 camera specs — [Canon R5, 85mm f/1.4, shallow depth of field].
-</code></pre>
+</code></pre></div>
 <p><strong>H7 · Pages with their own header instead of using the layout</strong></p>
-<pre><code>Refactor these pages to use PageLayout instead of their own HTML
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Refactor these pages to use PageLayout instead of their own HTML
 head and nav. Give me each file complete.
-</code></pre>
+</code></pre></div>
 <p><strong>H8 · Stopped on something you don't need</strong></p>
-<pre><code>Omit that slot entirely and continue.
-</code></pre>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Omit that slot entirely and continue.
+</code></pre></div>
 <hr />
 <h1>THE ANTI-PROMPT</h1>
 <p>Included so you recognize it. Do not run anything shaped like this:</p>

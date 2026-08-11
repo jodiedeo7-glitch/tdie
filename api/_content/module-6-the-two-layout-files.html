@@ -1,17 +1,14 @@
-<h2>Read this part twice</h2>
-<p>This is the module that separates a website from a website <em>system</em>, and it's worth more than any individual page you'll ever build.</p>
+<section class="wb wb-warn"><span class="wb-tag wb-tag-warn">Read this part twice</span><p>This is the module that separates a website from a website <em>system</em>, and it's worth more than any individual page you'll ever build.</p>
 <p>Two files control your entire site:</p>
 <p><strong>PageLayout.astro</strong> — standalone pages. Homepage, about, resources.</p>
 <p><strong>ArticleLayout.astro</strong> — every blog article. All of them.</p>
 <p>Every article page runs through ArticleLayout. Its header, footer, fonts, colors, email capture, related-article block, and search-engine markup all live in that one file.</p>
 <p>Which means: <strong>change one file, change every article at once.</strong> Forty articles, one edit.</p>
-<p>Without this, adding an email signup to your blog is forty edits and you'll miss three. With it, it's one edit, and it's on every article you publish from then on — including the ones you haven't written yet.</p>
-<h2>The rule that follows from it</h2>
-<p><strong>If something appears on more than one page, it belongs in the layout, not the page.</strong></p>
-<p>Violate this once and you get the failure that costs the most time in the whole build: a change that has to be made in forty places, discovered six months in, when the pages have drifted apart enough that they're not even consistent to begin with.</p>
-<h2>Do this — the ArticleLayout prompt</h2>
-<p>New conversation, same project:</p>
-<pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
+<p>Without this, adding an email signup to your blog is forty edits and you'll miss three. With it, it's one edit, and it's on every article you publish from then on — including the ones you haven't written yet.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">The rule that follows from it</h2><p><strong>If something appears on more than one page, it belongs in the layout, not the page.</strong></p>
+<p>Violate this once and you get the failure that costs the most time in the whole build: a change that has to be made in forty places, discovered six months in, when the pages have drifted apart enough that they're not even consistent to begin with.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">The ArticleLayout prompt</h2></div><div class="wb-do-body"><p>New conversation, same project:</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
 article on the site. Use my Canon File for brand specifics.
 
 It takes these props:
@@ -38,9 +35,8 @@ Rules:
   generate a fake date.
 - If `related` is empty, render nothing rather than a broken block.
 - Complete file, ready to paste.
-</code></pre>
-<h2>Why the email block is a link, not a form</h2>
-<p>This is a hard-won one.</p>
+</code></pre></div></div></section>
+<section class="wb wb-sect"><h2 class="wb-h">Why the email block is a link, not a form</h2><p>This is a hard-won one.</p>
 <p>A form on your page needs somewhere to send the data. Wire it wrong and it looks perfect — styled, on-brand, submit button and all — and captures nothing. No error, no warning. It just quietly does nothing on every page of your site, for however long it takes you to notice.</p>
 <p>The way people usually notice is by testing their own signup months later and finding an empty list.</p>
 <p>Linking to your email platform's hosted opt-in page removes the failure entirely. Their page, their form, their infrastructure. Slightly less elegant, permanently reliable.</p>
@@ -48,17 +44,15 @@ Rules:
 <p>Put that URL in <strong>one constant at the top of the layout</strong>:</p>
 <pre><code class="language-astro">const NEWSLETTER_URL = &quot;https://your-opt-in-page-url&quot;;
 </code></pre>
-<p>Change platforms later and you edit one line, once.</p>
-<h2>Do this — the two dates rule</h2>
-<p>Google needs a publish date to show your article as a rich result in search. Two rules:</p>
+<p>Change platforms later and you edit one line, once.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">The two dates rule</h2></div><div class="wb-do-body"><p>Google needs a publish date to show your article as a rich result in search. Two rules:</p>
 <ol>
 <li>Pass a real <code>publishDate</code> on every article.</li>
 <li>Never invent one. If you don't know it, leave it out — the schema omits it and you lose a rich result. Faking it means Google can catch the mismatch, and that costs more than the rich result was worth.</li>
-</ol>
-<h2>Roadblock — <em>"Do I need both layouts?"</em></h2>
-<p>Yes, and they should share a nav and footer. If you find yourself editing nav links in two places, ask Claude to extract the nav into a shared component. Same principle, one level up.</p>
-<h2>Roadblock — <em>"My four standalone pages each have their own header"</em></h2>
-<p>Common when pages get built individually before the layout exists. Every one is a separate edit for every future change. Fix it now: <code>Refactor these pages to use PageLayout instead of their own HTML head and nav. Give me each file complete.</code></p>
-<h2>Deliverable</h2>
-<p>ArticleLayout.astro and PageLayout.astro committed, sharing a nav and footer, with the newsletter URL in a single constant.</p>
-<hr />
+</ol></div></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>Do I need both layouts?</summary><div class="wb-road-body"><p>Yes, and they should share a nav and footer. If you find yourself editing nav links in two places, ask Claude to extract the nav into a shared component. Same principle, one level up.</p></div></details>
+<details class="wb-road"><summary>My four standalone pages each have their own header</summary><div class="wb-road-body"><p>Common when pages get built individually before the layout exists. Every one is a separate edit for every future change. Fix it now: <code>Refactor these pages to use PageLayout instead of their own HTML head and nav. Give me each file complete.</code></p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>ArticleLayout.astro and PageLayout.astro committed, sharing a nav and footer, with the newsletter URL in a single constant.</p>
+<hr /></section>

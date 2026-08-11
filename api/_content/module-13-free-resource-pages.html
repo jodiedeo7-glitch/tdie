@@ -1,14 +1,11 @@
-<h2>The idea</h2>
-<p>A link to a signup form converts poorly. A link to something specific someone wants converts well.</p>
+<section class="wb wb-lead"><p>A link to a signup form converts poorly. A link to something specific someone wants converts well.</p>
 <p>That's the whole difference between "join my newsletter" and "get the 30-day launch checklist." Same email address, same list, wildly different conversion — because one asks for a favor and the other makes a trade.</p>
-<p>Each pillar gets one. It should solve one specific problem for the exact reader of that pillar. Not a general lead magnet for your whole brand — a targeted one for that topic.</p>
-<h2>What makes a good one</h2>
-<p><strong>Specific over comprehensive.</strong> A checklist beats an ebook. People download ebooks and never open them; they use checklists the same day.</p>
+<p>Each pillar gets one. It should solve one specific problem for the exact reader of that pillar. Not a general lead magnet for your whole brand — a targeted one for that topic.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">What makes a good one</h2><p><strong>Specific over comprehensive.</strong> A checklist beats an ebook. People download ebooks and never open them; they use checklists the same day.</p>
 <p><strong>Fast.</strong> Something usable in under an hour.</p>
 <p><strong>Made of what you already have.</strong> Your inventory has these in it — a framework from a lesson, a process from a call, the list you sent one person in a DM.</p>
-<p><strong>Genuinely free.</strong> No membership required, no trial, no partial version of a paid product. This is the rule from Module 11 and it's worth repeating because it's the one most often broken by accident.</p>
-<h2>Do this — build the resource</h2>
-<pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
+<p><strong>Genuinely free.</strong> No membership required, no trial, no partial version of a paid product. This is the rule from Module 11 and it's worth repeating because it's the one most often broken by accident.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Build the resource</h2></div><div class="wb-do-body"><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
 
 Format: [checklist / template / worksheet / swipe file]
 Audience: someone who just read my article on [topic] and wants
@@ -23,12 +20,10 @@ Rules:
 - No product pitching inside it. One line at the end pointing to
   [product] is enough.
 - Return it as clean markdown I can convert to PDF.
-</code></pre>
-<h2>Do this — turn it into a PDF</h2>
-<p>Simplest reliable route: paste the markdown into Canva or Google Docs, apply your brand colors and fonts, export as PDF.</p>
-<p>If you want it fully automated, ask Claude to generate it as styled HTML and convert that to PDF — but do that once you're producing these regularly. Tonight, use the tool you already know.</p>
-<h2>Do this — build the landing page</h2>
-<pre><code>Build src/pages/resources/[slug].astro using PageLayout.
+</code></pre></div></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">Turn it into a PDF</h2></div><div class="wb-do-body"><p>Simplest reliable route: paste the markdown into Canva or Google Docs, apply your brand colors and fonts, export as PDF.</p>
+<p>If you want it fully automated, ask Claude to generate it as styled HTML and convert that to PDF — but do that once you're producing these regularly. Tonight, use the tool you already know.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Build the landing page</h2></div><div class="wb-do-body"><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/pages/resources/[slug].astro using PageLayout.
 
 Contents:
 - Headline naming the specific outcome
@@ -38,17 +33,14 @@ Contents:
 - Nothing else. No nav distractions, no other offers.
 
 Use my Canon File for brand. Complete file, ready to paste.
-</code></pre>
-<h2>Do this — set up delivery</h2>
-<p>In your email platform: create a form specifically for this resource, set an automation that sends the file immediately on signup, and tag the subscriber with the pillar topic.</p>
+</code></pre></div></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">04</span><h2 class="wb-h wb-h-do">Set up delivery</h2></div><div class="wb-do-body"><p>In your email platform: create a form specifically for this resource, set an automation that sends the file immediately on signup, and tag the subscriber with the pillar topic.</p>
 <p>The tag matters more than it looks. Six months from now you'll know which topic each subscriber came in through — which tells you what to build next and who to send it to.</p>
-<p>Then get the hosted URL for that specific form and put it in the pillar's <code>freeResource</code> prop.</p>
-<h2>Roadblock — <em>"Where do I host the actual PDF file?"</em></h2>
-<p>Your email platform delivers it as an attachment or hosted link in the automation. Don't put the file on your website — a URL that reachable gets shared and bypasses the signup entirely.</p>
-<h2>Roadblock — <em>"Someone found my gated PDF without signing up"</em></h2>
-<p>Then it's reachable at a public URL. Anything in your site's public folder is public — no login, no gate, no exception. Move the file to your email platform's delivery and remove it from the site.</p>
-<h2>Roadblock — <em>"I don't have time to build one per pillar"</em></h2>
-<p>Build one for your strongest pillar tonight. Leave the rest empty using the omit rule from Module 11. One real resource beats five rushed ones and an empty slot beats a broken link.</p>
-<h2>Deliverable</h2>
-<p>One free resource, one landing page, delivery tested by signing up yourself.</p>
-<hr />
+<p>Then get the hosted URL for that specific form and put it in the pillar's <code>freeResource</code> prop.</p></div></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>Where do I host the actual PDF file?</summary><div class="wb-road-body"><p>Your email platform delivers it as an attachment or hosted link in the automation. Don't put the file on your website — a URL that reachable gets shared and bypasses the signup entirely.</p></div></details>
+<details class="wb-road"><summary>Someone found my gated PDF without signing up</summary><div class="wb-road-body"><p>Then it's reachable at a public URL. Anything in your site's public folder is public — no login, no gate, no exception. Move the file to your email platform's delivery and remove it from the site.</p></div></details>
+<details class="wb-road"><summary>I don't have time to build one per pillar</summary><div class="wb-road-body"><p>Build one for your strongest pillar tonight. Leave the rest empty using the omit rule from Module 11. One real resource beats five rushed ones and an empty slot beats a broken link.</p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>One free resource, one landing page, delivery tested by signing up yourself.</p>
+<hr /></section>

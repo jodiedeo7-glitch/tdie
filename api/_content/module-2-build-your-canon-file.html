@@ -1,16 +1,13 @@
-<h2>Read this part twice</h2>
-<p>Most important module in the course, and the one people skip. Skip it and everything downstream breaks quietly.</p>
+<section class="wb wb-warn"><span class="wb-tag wb-tag-warn">Read this part twice</span><p>Most important module in the course, and the one people skip. Skip it and everything downstream breaks quietly.</p>
 <p>Here's what happens without a Canon File. You ask Claude to write about your membership. It writes a beautiful article mentioning your "Starter Tier at $19/month." You don't have one. You've never had one. It sounded plausible, so it appeared. You publish because it reads well. Three weeks later someone emails asking to buy it.</p>
 <p>That's not Claude broken. That's Claude filling a gap to complete a pattern. <strong>The fix is to leave no gaps.</strong></p>
-<p>A Canon File states what exists, what it costs, where it lives, how you talk, and what's forbidden. Load it into your project and Claude stops inventing, because it no longer has to guess.</p>
-<h2>What goes in it</h2>
-<p><strong>Products — exact.</strong> Every product, exact price, exact full name, exact live URL. No URL yet? Write <code>PENDING — do not invent</code>.</p>
+<p>A Canon File states what exists, what it costs, where it lives, how you talk, and what's forbidden. Load it into your project and Claude stops inventing, because it no longer has to guess.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">What goes in it</h2><p><strong>Products — exact.</strong> Every product, exact price, exact full name, exact live URL. No URL yet? Write <code>PENDING — do not invent</code>.</p>
 <p><strong>Hard rules.</strong> What must never happen. Blunt and specific.</p>
 <p><strong>Voice.</strong> Three descriptors and a banned word list. The banned list does more work than any description — "never say hack, secret, explode, crush it, game-changer" changes output more than a paragraph about your vibe.</p>
 <p><strong>Structural facts.</strong> URL pattern, stack, colors, fonts.</p>
-<p><strong>What does NOT exist.</strong> The line most people leave out, and the one that prevents the most damage.</p>
-<h2>Do this — copy and fill</h2>
-<pre><code>CANON FILE — [YOUR BRAND]
+<p><strong>What does NOT exist.</strong> The line most people leave out, and the one that prevents the most damage.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Copy and fill</h2></div><div class="wb-do-body"><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>CANON FILE — [YOUR BRAND]
 
 PRODUCTS — exact names, exact prices, exact URLs
 | Product | Price | Platform | URL |
@@ -39,31 +36,28 @@ URLs: /[pattern]/[slug]
 Stack: [your stack]
 Colors: [hex codes]
 Fonts: [names]
-</code></pre>
-<h2>The second half of Module 2</h2>
-<p><strong>A wrong Canon File is worse than none</strong>, because Claude trusts it completely.</p>
+</code></pre></div></div></section>
+<section class="wb wb-sect"><h2 class="wb-h">The second half of Module 2</h2><p><strong>A wrong Canon File is worse than none</strong>, because Claude trusts it completely.</p>
 <p><strong>The filename lies.</strong> You save <code>resource-map.md</code>. Six weeks later you paste it in and it's actually an old decisions log you renamed. Claude builds on it. Everything downstream is wrong and looks fine.</p>
 <p><em>Fix:</em> start every canon file with a title and version line — <code># RESOURCE MAP v2.1 — updated Aug 3</code> — and read the first three lines before using it. Four seconds, saves a rebuild.</p>
 <p><strong>The document goes stale.</strong> Your file says 3 articles are live. There are 11. Claude plans around 3 and builds a linking structure that ignores 8 pages.</p>
 <p><em>Fix — the live-facts block.</em> Don't rewrite the file. Paste an override at the top of your request:</p>
-<pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
 Project knowledge is stale on these points:
 - [fact]
 - [fact]
 - [fact]
 Where the Canon File and this block conflict, this block wins.
-</code></pre>
-<p>That's what keeps one Canon File useful for months instead of decaying in a week.</p>
-<h2>The rule that makes this work</h2>
-<p>Save this as a standing instruction:</p>
+</code></pre></div>
+<p>That's what keeps one Canon File useful for months instead of decaying in a week.</p></section>
+<section class="wb wb-sect"><h2 class="wb-h">The rule that makes this work</h2><p>Save this as a standing instruction:</p>
 <blockquote>
 <p><strong>When my instructions conflict with the canon, or two documents disagree, STOP and flag it. Do not resolve it silently.</strong></p>
 </blockquote>
-<p>Silent resolution is the expensive failure — you get a finished, confident, wrong deliverable and no signal anything happened. A stop costs thirty seconds.</p>
-<h2>Roadblock — <em>"Claude keeps forgetting my Canon File"</em></h2>
-<p>Don't paste it per-message. Put it in a Claude Project as project knowledge or project instructions, and it loads on every conversation automatically. This course assumes you're working inside one project.</p>
-<h2>Roadblock — <em>"I updated the file but Claude uses the old version"</em></h2>
-<p>Uploaded files don't sync from your computer. Delete the old one and re-upload. Same filename ≠ same file.</p>
-<h2>Deliverable</h2>
-<p>A Canon File in your project knowledge, plus the conflict-flag instruction in your project instructions.</p>
-<hr />
+<p>Silent resolution is the expensive failure — you get a finished, confident, wrong deliverable and no signal anything happened. A stop costs thirty seconds.</p></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>Claude keeps forgetting my Canon File</summary><div class="wb-road-body"><p>Don't paste it per-message. Put it in a Claude Project as project knowledge or project instructions, and it loads on every conversation automatically. This course assumes you're working inside one project.</p></div></details>
+<details class="wb-road"><summary>I updated the file but Claude uses the old version</summary><div class="wb-road-body"><p>Uploaded files don't sync from your computer. Delete the old one and re-upload. Same filename ≠ same file.</p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>A Canon File in your project knowledge, plus the conflict-flag instruction in your project instructions.</p>
+<hr /></section>

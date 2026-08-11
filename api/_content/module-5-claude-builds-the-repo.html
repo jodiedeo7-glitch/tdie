@@ -1,11 +1,9 @@
-<h2>The idea</h2>
-<p>You're about to ask Claude to generate an entire website's worth of files. This works — reliably — but only with the right setup, because a vague request produces a generic site with invented content, and a specific request produced from your Canon File produces <em>your</em> site.</p>
+<section class="wb wb-lead"><p>You're about to ask Claude to generate an entire website's worth of files. This works — reliably — but only with the right setup, because a vague request produces a generic site with invented content, and a specific request produced from your Canon File produces <em>your</em> site.</p>
 <p>Two rules for this module:</p>
 <p><strong>Work inside a Claude Project.</strong> Your Canon File and pillar map live in project knowledge. Every conversation in that project loads them automatically. Building outside the project means re-explaining your business every time and getting drift every time.</p>
-<p><strong>One task per conversation.</strong> Not one conversation for the whole build. Long conversations lose the thread — earlier instructions get outweighed by later ones, and you'll get a second version of a page you already have. Scaffold in one chat, layouts in another, articles one per chat.</p>
-<h2>Do this — the scaffold prompt</h2>
-<p>New conversation in your project. Paste this, filled in:</p>
-<pre><code>Build the scaffold for my Astro site. Use my Canon File in project
+<p><strong>One task per conversation.</strong> Not one conversation for the whole build. Long conversations lose the thread — earlier instructions get outweighed by later ones, and you'll get a second version of a page you already have. Scaffold in one chat, layouts in another, articles one per chat.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">The scaffold prompt</h2></div><div class="wb-do-body"><p>New conversation in your project. Paste this, filled in:</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build the scaffold for my Astro site. Use my Canon File in project
 knowledge as the source of truth for everything.
 
 LIVE FACTS — these override anything that disagrees:
@@ -32,12 +30,11 @@ Rules:
 - Placeholder text is fine where real copy comes later — mark it
   clearly as PLACEHOLDER.
 - Give me each file complete, with its exact file path. No fragments.
-</code></pre>
-<p>Claude returns a set of complete files. Read them for invented products — that's the one thing to check. If a price or product appears that isn't in your Canon File, say <code>That product doesn't exist. Remove it.</code> and it will.</p>
-<h2>Do this — the homepage</h2>
-<p>The scaffold gives you a homepage with PLACEHOLDER text. Fill it now, or you'll finish the weekend with a live site whose front page says PLACEHOLDER.</p>
+</code></pre></div>
+<p>Claude returns a set of complete files. Read them for invented products — that's the one thing to check. If a price or product appears that isn't in your Canon File, say <code>That product doesn't exist. Remove it.</code> and it will.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">The homepage</h2></div><div class="wb-do-body"><p>The scaffold gives you a homepage with PLACEHOLDER text. Fill it now, or you'll finish the weekend with a live site whose front page says PLACEHOLDER.</p>
 <p>It needs four things and nothing else:</p>
-<pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
 File and pillar map in project knowledge.
 
 Four sections only:
@@ -52,20 +49,17 @@ Rules:
 - No invented products, prices, testimonials, or credentials
 - No &quot;welcome to my blog&quot;
 - Complete file, ready to paste
-</code></pre>
-<p>Nothing else belongs on a homepage on day one. You can add to it once you have traffic telling you what people want.</p>
-<h2>Do this — getting files into GitHub</h2>
-<p>Two routes. Pick one and stay with it.</p>
+</code></pre></div>
+<p>Nothing else belongs on a homepage on day one. You can add to it once you have traffic telling you what people want.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Getting files into GitHub</h2></div><div class="wb-do-body"><p>Two routes. Pick one and stay with it.</p>
 <p><strong>Route A — the web interface.</strong> Slower, zero setup, works on any computer. In your repo: <strong>Add file → Create new file</strong>. Type the full path in the filename box (<code>src/layouts/PageLayout.astro</code> — the slashes create the folders automatically). Paste the contents. Scroll down, <strong>Commit new file</strong>. Repeat per file.</p>
 <p>Roughly 8 files for the scaffold. Fifteen minutes.</p>
 <p><strong>Route B — Claude commits for you.</strong> Faster, more setup. You create a GitHub personal access token and Claude pushes files directly through GitHub's API. Covered fully in Module 19, along with the security practices that make it safe.</p>
-<p>Do Route A this morning. It gets you live today with nothing to configure. Switch to Route B once you're publishing weekly and the clicking gets old.</p>
-<h2>Roadblock — <em>"Claude gave me a fragment, not the whole file"</em></h2>
-<p>Say: <code>Give me the complete file, top to bottom, ready to paste. No omissions, no "rest of file unchanged."</code> Partial files are the single most common cause of a broken build, because you paste it, something's missing, and the error message points somewhere unrelated.</p>
-<h2>Roadblock — <em>"I don't know if this file is right"</em></h2>
-<p>You don't need to. If it's wrong, the deploy fails with an error message. Paste the error back to Claude and it fixes it. That loop — deploy, error, paste, fix — is a normal part of the build, not a sign you're doing it wrong.</p>
-<h2>Roadblock — <em>"Claude wrote copy about my business that's wrong"</em></h2>
-<p>Your Canon File has a gap. Add the correct fact to the Canon File, re-upload it to project knowledge, and regenerate. Fixing the output alone means the same error comes back next time.</p>
-<h2>Deliverable</h2>
-<p>Scaffold files committed to your repo.</p>
-<hr />
+<p>Do Route A this morning. It gets you live today with nothing to configure. Switch to Route B once you're publishing weekly and the clicking gets old.</p></div></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>Claude gave me a fragment, not the whole file</summary><div class="wb-road-body"><p>Say: <code>Give me the complete file, top to bottom, ready to paste. No omissions, no "rest of file unchanged."</code> Partial files are the single most common cause of a broken build, because you paste it, something's missing, and the error message points somewhere unrelated.</p></div></details>
+<details class="wb-road"><summary>I don't know if this file is right</summary><div class="wb-road-body"><p>You don't need to. If it's wrong, the deploy fails with an error message. Paste the error back to Claude and it fixes it. That loop — deploy, error, paste, fix — is a normal part of the build, not a sign you're doing it wrong.</p></div></details>
+<details class="wb-road"><summary>Claude wrote copy about my business that's wrong</summary><div class="wb-road-body"><p>Your Canon File has a gap. Add the correct fact to the Canon File, re-upload it to project knowledge, and regenerate. Fixing the output alone means the same error comes back next time.</p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>Scaffold files committed to your repo.</p>
+<hr /></section>

@@ -4,8 +4,9 @@ import Analytics from '@vercel/analytics/astro';
 export interface Props {
   title: string;
   eyebrow?: string;
+  progress?: number;
 }
-const { title, eyebrow } = Astro.props;
+const { title, eyebrow, progress = 0 } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,46 +19,128 @@ const { title, eyebrow } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   />
-  <style>
+  <style is:global>
     :root{
-      --we-pink:#D62E73; --we-cream:#FBF8F5; --we-choc:#2B161B;
-      --we-gold:#C8A96A; --we-bubble:#FF8AC2; --we-lav:#CBB7F7;
+      --wp:#D62E73; --wc:#FBF8F5; --wd:#2B161B;
+      --wg:#C8A96A; --wb:#FF8AC2; --wl:#CBB7F7;
+      --wink:#3B2228; --wpaper:#FFFDFB;
     }
-    body{background:var(--we-cream);color:var(--we-choc);margin:0;font-family:"Inter",sans-serif}
-    .we-nav{border-bottom:1px solid rgba(43,22,27,.1);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-    .we-nav a.brand{font-family:"Fraunces",serif;font-weight:400;font-size:17px;color:var(--we-choc);text-decoration:none;letter-spacing:-.2px}
-    .we-nav a.brand em{color:var(--we-pink);font-style:italic}
-    .we-nav .navlinks a{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:var(--we-choc);text-decoration:none;margin-left:22px;opacity:.7}
-    .we-nav .navlinks a:hover{opacity:1;color:var(--we-pink)}
-    .we-wrap{max-width:720px;margin:0 auto;padding:70px 40px 130px}
-    .we-eyebrow{display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--we-gold);margin-bottom:20px}
-    .we-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(32px,5.5vw,50px);line-height:1.06;letter-spacing:-.5px;margin:0 0 32px}
-    @media(max-width:640px){.we-wrap{padding:50px 22px 90px}.we-nav{padding:18px 22px}}
-    #we-body h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,40px);line-height:1.1;margin:56px 0 22px}
-    #we-body h2{font-family:"Fraunces",serif;font-weight:400;font-size:25px;margin:48px 0 16px;line-height:1.25}
-    #we-body h3{font-family:"Inter",sans-serif;font-weight:600;font-size:17px;margin:34px 0 12px;letter-spacing:.2px}
-    #we-body p{font-size:17px;line-height:1.82;margin:0 0 22px}
-    #we-body ul,#we-body ol{margin:0 0 26px;padding-left:22px}
-    #we-body li{margin-bottom:11px;line-height:1.72;font-size:17px}
-    #we-body strong{font-weight:600;color:var(--we-pink)}
+    html{scroll-behavior:smooth}
+    body{background:var(--wc);color:var(--wd);margin:0;font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+
+    /* ── progress ── */
+    .we-prog{position:fixed;top:0;left:0;height:2px;background:var(--wp);z-index:60;transition:width .4s ease}
+
+    /* ── chrome ── */
+    .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27,.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .we-nav a.brand{font-family:"Fraunces",serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
+    .we-nav a.brand em{color:var(--wp);font-style:italic}
+    .we-nav .navlinks a{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wd);text-decoration:none;margin-left:22px;opacity:.55;transition:opacity .2s,color .2s}
+    .we-nav .navlinks a:hover{opacity:1;color:var(--wp)}
+
+    .we-wrap{max-width:768px;margin:0 auto;padding:78px 40px 140px}
+    .we-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--wg);margin-bottom:22px}
+    .we-wrap>h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
+
+    /* ── the document ── */
+    #we-body{font-size:17px;line-height:1.78}
+    #we-body p{margin:0 0 20px}
+    #we-body strong{font-weight:600}
     #we-body em{font-style:italic}
-    #we-body hr{border:none;border-top:1px solid rgba(43,22,27,.13);margin:56px 0}
-    #we-body blockquote{border-left:3px solid var(--we-bubble);margin:0 0 26px;padding:4px 0 4px 22px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.6}
-    #we-body pre{background:var(--we-choc);color:#F5EDE9;padding:22px 24px;border-radius:8px;overflow-x:auto;margin:0 0 26px;font-size:13.5px;line-height:1.65;position:relative}
-    #we-body pre code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
-    #we-body :not(pre)>code{background:rgba(214,46,115,.09);color:var(--we-pink);padding:2px 6px;border-radius:4px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    #we-body table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:15px}
-    #we-body th{text-align:left;font-weight:600;border-bottom:2px solid var(--we-choc);padding:10px 12px 10px 0}
-    #we-body td{border-bottom:1px solid rgba(43,22,27,.12);padding:11px 12px 11px 0;vertical-align:top;line-height:1.6}
-    .copy-btn{position:absolute;top:10px;right:10px;background:var(--we-pink);color:#fff;border:none;border-radius:5px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:6px 11px;cursor:pointer;font-family:"Inter",sans-serif;opacity:.85}
-    .copy-btn:hover{opacity:1}
-    .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:34px 40px;font-size:12.5px;letter-spacing:.4px;color:rgba(43,22,27,.55);text-align:center}
+    #we-body a{color:var(--wp)}
+    #we-body ul,#we-body ol{margin:0 0 22px;padding-left:20px}
+    #we-body li{margin-bottom:9px;line-height:1.7}
+    #we-body li::marker{color:var(--wp)}
+    #we-body h3{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.1px;margin:28px 0 10px}
+    #we-body hr{display:none}
+    #we-body>*:last-child{margin-bottom:0}
+
+    .wb{margin:0 0 40px}
+    .wb-h{font-family:"Fraunces",serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
+    .wb-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+
+    /* lead — the opening idea, set apart by type not by box */
+    .wb-lead p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.62;margin-bottom:18px}
+    .wb-lead{margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(43,22,27,.13)}
+
+    .wb-sect{margin-bottom:46px}
+
+    /* warn */
+    .wb-warn{background:linear-gradient(180deg,rgba(203,183,247,.22),rgba(203,183,247,.06));border-radius:3px;padding:30px 32px;margin-bottom:46px}
+    .wb-tag-warn{color:#6B4FA8}
+
+    /* DO — the spine of every module */
+    .wb-do{position:relative;padding:0 0 0 62px;margin-bottom:52px}
+    .wb-do:before{content:"";position:absolute;left:19px;top:34px;bottom:-52px;width:1px;background:rgba(214,46,115,.22)}
+    .wb-do:last-of-type:before{display:none}
+    .wb-do-head{display:flex;align-items:flex-start;gap:0;margin-bottom:18px}
+    .wb-step{position:absolute;left:0;top:0;width:39px;height:39px;border-radius:50%;background:var(--wp);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.5px;z-index:1}
+    .wb-h-do{margin:6px 0 0}
+    .wb-do-body>*:last-child{margin-bottom:0}
+
+    /* roadblocks — collapsed by default so the page reads clean */
+    .wb-roads{background:var(--wpaper);border:1px solid rgba(43,22,27,.13);border-radius:4px;padding:26px 30px 14px;margin-bottom:44px}
+    .wb-tag-road{color:var(--wg);display:block}
+    .wb-road{border-top:1px solid rgba(43,22,27,.09);padding:2px 0}
+    .wb-road:first-of-type{border-top:none}
+    .wb-road summary{cursor:pointer;list-style:none;padding:14px 0;font-size:16px;font-weight:500;display:flex;gap:12px;align-items:baseline}
+    .wb-road summary::-webkit-details-marker{display:none}
+    .wb-road summary:before{content:"+";color:var(--wp);font-weight:400;font-size:17px;line-height:1}
+    .wb-road[open] summary:before{content:"–"}
+    .wb-road-body{padding:0 0 16px 24px;font-size:16px}
+    .wb-road-body>*:last-child{margin-bottom:0}
+
+    /* deliverable — the end cap */
+    .wb-deliv{background:var(--wd);color:#F6ECE9;border-radius:4px;padding:32px 34px;margin-bottom:0}
+    .wb-deliv p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55}
+    .wb-deliv strong{color:var(--wb)}
+    .wb-tag-deliv{color:var(--wg)}
+
+    /* prompts */
+    .wb-prompt{margin:0 0 26px;border-radius:5px;overflow:hidden;background:var(--wink);box-shadow:0 1px 3px rgba(43,22,27,.12)}
+    .wb-prompt-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:rgba(0,0,0,.22)}
+    .wb-prompt-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .wb-prompt pre{margin:0;padding:20px 22px;overflow-x:auto;background:none}
+    .wb-prompt pre code{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.72;color:#EFE3DF;white-space:pre;background:none;padding:0}
+    .copy-btn{background:none;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.75);border-radius:3px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;cursor:pointer;transition:all .2s}
+    .copy-btn:hover{background:var(--wp);border-color:var(--wp);color:#fff}
+    .copy-btn.done{background:var(--wp);border-color:var(--wp);color:#fff}
+
+    /* inline code */
+    #we-body :not(pre)>code{background:rgba(214,46,115,.08);color:var(--wp);padding:2px 6px;border-radius:3px;font-family:"JetBrains Mono",monospace;font-size:13.5px}
+
+    /* tables */
+    #we-body table{width:100%;border-collapse:collapse;margin:0 0 26px;font-size:15px}
+    #we-body th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wg);border-bottom:1px solid var(--wd);padding:0 14px 9px 0}
+    #we-body td{border-bottom:1px solid rgba(43,22,27,.1);padding:12px 14px 12px 0;vertical-align:top;line-height:1.6}
+
+    /* blockquote */
+    #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.6}
+    #we-body blockquote p{margin:0}
+
+    .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:32px 40px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27,.4);text-align:center}
+
+    @media(max-width:720px){
+      .we-wrap{padding:52px 22px 100px}
+      .we-nav{padding:14px 20px}
+      .we-nav .navlinks a{margin-left:16px}
+      .wb-do{padding-left:0}
+      .wb-do:before{display:none}
+      .wb-step{position:static;margin-bottom:12px}
+      .wb-do-head{flex-direction:column;align-items:flex-start}
+      .wb-warn,.wb-roads,.wb-deliv{padding:24px 20px}
+      .wb-prompt pre{padding:16px 14px}
+      .wb-prompt pre code{font-size:12px}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
   </style>
 </head>
 <body>
+  <div class="we-prog" style={`width:${progress}%`}></div>
+
   <nav class="we-nav">
     <a class="brand" href="/weekend-ecosystem">The Weekend <em>Ecosystem™</em></a>
     <div class="navlinks">
@@ -73,7 +156,7 @@ const { title, eyebrow } = Astro.props;
   </main>
 
   <footer class="we-foot">
-    The Weekend Ecosystem™ · The Digital Income Edit™ · For your use only — please don't share access.
+    The Weekend Ecosystem™ · The Digital Income Edit™ · For your use only
   </footer>
   <Analytics />
 </body>

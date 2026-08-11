@@ -1,15 +1,12 @@
-<h2>The idea</h2>
-<p>A pillar article is the deep, definitive piece on one of your topics. It's long — 3,000 words is the floor, not the target — and it exists to be the best thing on the internet about that specific question.</p>
+<section class="wb wb-lead"><p>A pillar article is the deep, definitive piece on one of your topics. It's long — 3,000 words is the floor, not the target — and it exists to be the best thing on the internet about that specific question.</p>
 <p>Long-form works here for a reason people misstate. It isn't that Google counts words. It's that a genuinely complete answer takes 3,000 words, and a reader who finds a complete answer stops going back to the search results. That behavior is what gets measured. Padding a thin article to 3,000 words does nothing, because the reader still leaves.</p>
 <p>Your Skool lesson is the spine. It's already the real method. What it lacks is context a stranger needs — the lesson was written for someone who already joined, already trusts you, and already read the three lessons before it. A stranger arriving from Google has none of that.</p>
-<p>Claude fills that gap. You supply the method.</p>
-<h2>Do this — pull your source material</h2>
-<p><strong>Skool lessons:</strong> open the lesson, select all, copy. Include your own comments underneath — you often clarified something there that belongs in the article.</p>
+<p>Claude fills that gap. You supply the method.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Pull your source material</h2></div><div class="wb-do-body"><p><strong>Skool lessons:</strong> open the lesson, select all, copy. Include your own comments underneath — you often clarified something there that belongs in the article.</p>
 <p><strong>Call recordings:</strong> get a transcript. Most recording tools generate one; if not, upload the audio to Claude and ask for a transcript. Raw transcripts are messy and that's fine — you're using it as source, not text.</p>
-<p><strong>Community posts:</strong> copy the post and the replies. The replies tell you what confused people, which tells you what the article must address.</p>
-<h2>Do this — the pillar article prompt</h2>
-<p>New conversation in your project. Paste your source material first, then this:</p>
-<pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
+<p><strong>Community posts:</strong> copy the post and the replies. The replies tell you what confused people, which tells you what the article must address.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">The pillar article prompt</h2></div><div class="wb-do-body"><p>New conversation in your project. Paste your source material first, then this:</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
 above is my actual method — it's the spine of the article. Use my
 Canon File in project knowledge for products, prices, links, and voice.
 
@@ -39,14 +36,12 @@ Rules:
 - No hype vocabulary. Follow the banned list in my Canon File.
 - Return the complete article in markdown. Do not summarize what
   you wrote or suggest next steps.
-</code></pre>
-<h2>Why "answer first" matters</h2>
-<p>Open every chapter with the answer, then explain.</p>
+</code></pre></div></div></section>
+<section class="wb wb-sect"><h2 class="wb-h">Why "answer first" matters</h2><p>Open every chapter with the answer, then explain.</p>
 <p>Two things read your article: a person deciding within seconds whether this page has what they need, and a search engine looking for a clean, extractable answer to a question. Both want the answer at the top of the section. Both punish a paragraph that warms up for four sentences before saying anything.</p>
-<p>This one structural habit does more for readability and search performance than any other single change.</p>
-<h2>Do this — convert to a page</h2>
-<p>Ask in the same conversation:</p>
-<pre><code>Convert that article into a complete .astro file at
+<p>This one structural habit does more for readability and search performance than any other single change.</p></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Convert to a page</h2></div><div class="wb-do-body"><p>Ask in the same conversation:</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Convert that article into a complete .astro file at
 src/pages/learn/[slug].astro, using ArticleLayout with all props
 filled — title, description, category, publishDate, related.
 
@@ -54,17 +49,14 @@ Export the same title, description and category from the file's
 frontmatter as well, so the /learn index picks it up automatically.
 
 Complete file, ready to paste.
-</code></pre>
+</code></pre></div>
 <p>Commit it to <code>src/pages/learn/</code>. Vercel deploys it in about ninety seconds. It's live.</p>
-<p><strong>On images:</strong> leave <code>featuredImage</code> off for now. Module 18 covers making them and where the files go. An article without one still ranks; an article pointing at an image that doesn't exist shows a broken box.</p>
-<h2>Roadblock — <em>"It came out at 1,800 words"</em></h2>
-<p>Say: <code>This is under the 3,000 floor. Expand by adding depth, not padding — more specific examples, more of the actual how, more edge cases. Don't restate what's already there.</code> Naming what you don't want matters; asking only for "longer" gets you restatement.</p>
-<h2>Roadblock — <em>"It doesn't sound like me"</em></h2>
-<p>Your Canon File voice section is too vague. The banned word list fixes this faster than any description. Add ten words you'd never say, re-upload, regenerate.</p>
-<h2>Roadblock — <em>"It mentioned a product I don't sell"</em></h2>
-<p>A Canon File gap. Add it to the DOES NOT EXIST list, re-upload, regenerate. Fixing only the output means it recurs.</p>
-<h2>Roadblock — <em>"Claude won't build it — it's asking me questions"</em></h2>
-<p>That's correct behavior and Module 22 covers it in full. Something you specified is missing or contradictory. Answer the question; don't override the stop.</p>
-<h2>Deliverable</h2>
-<p>One pillar article, live on your site.</p>
-<hr />
+<p><strong>On images:</strong> leave <code>featuredImage</code> off for now. Module 18 covers making them and where the files go. An article without one still ranks; an article pointing at an image that doesn't exist shows a broken box.</p></div></section>
+<div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
+<details class="wb-road"><summary>It came out at 1,800 words</summary><div class="wb-road-body"><p>Say: <code>This is under the 3,000 floor. Expand by adding depth, not padding — more specific examples, more of the actual how, more edge cases. Don't restate what's already there.</code> Naming what you don't want matters; asking only for "longer" gets you restatement.</p></div></details>
+<details class="wb-road"><summary>It doesn't sound like me</summary><div class="wb-road-body"><p>Your Canon File voice section is too vague. The banned word list fixes this faster than any description. Add ten words you'd never say, re-upload, regenerate.</p></div></details>
+<details class="wb-road"><summary>It mentioned a product I don't sell</summary><div class="wb-road-body"><p>A Canon File gap. Add it to the DOES NOT EXIST list, re-upload, regenerate. Fixing only the output means it recurs.</p></div></details>
+<details class="wb-road"><summary>Claude won't build it — it's asking me questions</summary><div class="wb-road-body"><p>That's correct behavior and Module 22 covers it in full. Something you specified is missing or contradictory. Answer the question; don't override the stop.</p></div></details>
+</div>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>One pillar article, live on your site.</p>
+<hr /></section>
