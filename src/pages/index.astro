@@ -20,6 +20,7 @@ const pillars = [
 
 // Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
 const shop = [
+  { name: "The Weekend Ecosystem\u2122", price: "$97", note: "one-time \u00b7 waitlist open", copy: "Your website + blog, built from what you already have. 22 modules, 36 prompts, three reference vaults \u2014 and Claude does the building. Waitlist gets in three days early at the lowest price it will ever be.", url: "/weekend-ecosystem-waitlist", aff: false },
   { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", copy: "Build the lead magnet and the paid offer behind it in a single afternoon.", url: "https://links.thedigitalincomeedit.com/shop/68a7c033-a060-4c23-9d8b-de7a367ff33c", aff: false },
   { name: "Pretty & Paid PLR Vault™", price: "$11", note: "per month", copy: "Done-for-you digital products you rebrand and sell as your own, plus the content and training to launch them. 20 new products every month. Not a membership tier — its own subscription.", url: "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839", aff: false },
   { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "https://links.thedigitalincomeedit.com/shop/4d0e0341-af50-4957-b915-def1246a2001", aff: false },
@@ -113,6 +114,26 @@ const tiers = [
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
+    /* ── Weekend Ecosystem band ── */
+    .we-band{padding:0 0 8px}
+    .we-band-in{display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;text-decoration:none;color:inherit;
+                border:1px solid rgba(214,46,115,.24);border-radius:8px;overflow:hidden;
+                background:linear-gradient(120deg,rgba(203,183,247,.20),rgba(255,138,194,.16) 60%,rgba(214,46,115,.10));
+                transition:border-color .2s,box-shadow .2s,transform .2s}
+    .we-band-in:hover{border-color:#D62E73;box-shadow:0 10px 32px rgba(214,46,115,.16);transform:translateY(-2px)}
+    .we-band-img{overflow:hidden}
+    .we-band-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .we-band-txt{padding:30px 34px}
+    .we-band-k{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#D62E73;margin-bottom:12px}
+    .we-band-txt h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-.8px;margin:0 0 12px}
+    .we-band-txt p{font-size:16px;line-height:1.7;margin:0 0 18px;max-width:60ch}
+    .we-band-go{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;font-weight:500}
+    @media(max-width:780px){
+      .we-band-in{grid-template-columns:1fr}
+      .we-band-img{max-height:260px}
+      .we-band-txt{padding:24px 22px}
+    }
+
     /* ---------- HERO ---------- */
     .h-hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden}
     .h-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-02.jpg);background-size:cover;background-position:center}
@@ -235,6 +256,21 @@ const tiers = [
   </section>
 
   <!-- START HERE -->
+  <!-- WEEKEND ECOSYSTEM — WAITLIST -->
+  <section class="we-band">
+    <a class="we-band-in" href="/weekend-ecosystem-waitlist">
+      <div class="we-band-img">
+        <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem — your website and blog, built from what you already have." loading="lazy" width="1200" height="1490" />
+      </div>
+      <div class="we-band-txt">
+        <div class="we-band-k">New \u00b7 Waitlist open</div>
+        <h2>The Weekend Ecosystem\u2122</h2>
+        <p>You already wrote the blog posts \u2014 they're sitting in your Skool group. Over one weekend you turn everything you've already made into a real website and blog on a domain you own, with Claude doing the building. The waitlist gets in three days early, at the lowest price it will ever be.</p>
+        <span class="we-band-go">Join the waitlist <span class="a">\u2192</span></span>
+      </div>
+    </a>
+  </section>
+
   <section class="sec">
     <div class="sec-head">
       <div class="k">Start Here</div>
