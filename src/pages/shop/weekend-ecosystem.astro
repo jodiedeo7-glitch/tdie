@@ -42,6 +42,36 @@ const included = [
   { t: "Progress tracking + certificate", p: "Tick off each module, watch the ring fill, and unlock a completion certificate at twenty-two." },
 ];
 
+const claudeDoes = [
+  "Writes every file your website needs — config, layouts, pages, the homepage",
+  "Turns a Skool lesson into a 3,000-word article written for a stranger",
+  "Runs four separate SEO passes over it — Google, Pinterest, AI search, readability",
+  "Generates the supporting article cluster around each pillar",
+  "Builds your email capture, resource pages and bridge pages",
+  "Writes your lead magnets from your own material",
+  "Turns one article into ten pins, a carousel, two reels, three posts and an email",
+  "Generates every image, on brand, without your face",
+  "Commits the finished files straight to your site",
+];
+
+const youDo = [
+  "Paste the prompt",
+  "Read what came back",
+  "Say yes, or say what to change",
+];
+
+const neverDo = [
+  "Write code",
+  "Design a page",
+  "Hire a developer",
+  "Learn WordPress",
+  "Write a blog post from a blank page",
+  "Film yourself",
+  "Think of content ideas",
+  "Post daily to stay visible",
+  "Pay monthly for a site builder",
+];
+
 const bySunday = [
   "A website on a domain you own, deploying automatically",
   "A pillar article and the start of a cluster around it",
@@ -70,7 +100,8 @@ const notForYou = [
 ];
 
 const faqs = [
-  { q: "Do I need to know how to code?", a: "No. You paste prompts and click buttons — Claude writes every file. If something is wrong the deploy fails and tells you, and you paste the error back. The course assumes you've never opened a code editor." },
+  { q: "Do I need to know how to code?", a: "No, and you won't write a line of it. Claude generates every file; you paste it and click commit. If something is wrong the deploy fails and tells you in plain English, and you paste that back. The course assumes you have never opened a code editor." },
+  { q: "How much is actually automated?", a: "The building and the writing. Claude produces the site files, the articles, the SEO passes, the lead magnets, the images and the thirty repurposed assets per article. What stays yours is approval — reading what came back and saying yes or saying what to change. That's deliberate. Anything published under your name should be read by you first." },
   { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain is $10–15 a year." },
   { q: "Do I need a paid Claude plan?", a: "It makes the longer builds smoother, but no module requires a specific plan or any tool subscription beyond your domain." },
   { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it: two hours Friday, eight Saturday, five Sunday. Filling the site out afterwards is ongoing, which is what the operating cadence in Module 21 is for." },
@@ -158,6 +189,31 @@ const faqs = [
           </ul>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- HANDS OFF -->
+  <section class="we-block">
+    <h2>Who does what</h2>
+    <p class="we-sublead">This is the part people don't believe until they see the split. You are not building a website this weekend. You are approving one.</p>
+
+    <div class="we-who">
+      <div class="we-who-col we-who-ai">
+        <span class="we-who-tag">Claude does</span>
+        <ul>{claudeDoes.map((x) => <li>{x}</li>)}</ul>
+      </div>
+      <div class="we-who-col we-who-you">
+        <span class="we-who-tag">You do</span>
+        <ul>{youDo.map((x) => <li>{x}</li>)}</ul>
+        <p class="we-who-note">That's the whole job. Three moves, twenty-two times.</p>
+      </div>
+    </div>
+
+    <div class="we-never">
+      <span class="we-never-tag">You never have to</span>
+      <div class="we-never-grid">
+        {neverDo.map((x) => <span class="we-never-chip">{x}</span>)}
+      </div>
     </div>
   </section>
 
@@ -273,6 +329,31 @@ const faqs = [
     .we-phase-mods li{font-size:15.5px;line-height:1.45;padding:7px 0;color:#2B161B}
     .we-pm-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1px;color:color-mix(in srgb,var(--ac) 78%,#2B161B);margin-right:10px}
 
+    /* ── who does what ── */
+    .we-who{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-bottom:26px}
+    .we-who-col{border-radius:6px;padding:26px 28px 24px}
+    .we-who-ai{background:linear-gradient(165deg,rgba(203,183,247,.26),rgba(203,183,247,.07));border:1px solid rgba(185,162,232,.5)}
+    .we-who-you{background:linear-gradient(165deg,rgba(214,46,115,.16),rgba(214,46,115,.04));border:1px solid rgba(214,46,115,.34)}
+    .we-who-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;margin-bottom:18px}
+    .we-who-ai .we-who-tag{color:#6B4FA8}
+    .we-who-you .we-who-tag{color:var(--pink)}
+    .we-who-col ul{list-style:none;padding:0;margin:0}
+    .we-who-col li{position:relative;padding:10px 0 10px 26px;font-size:15.5px;line-height:1.55;color:#2B161B;border-top:1px solid rgba(43,22,27,.09)}
+    .we-who-col li:first-child{border-top:none;padding-top:0}
+    .we-who-col li:before{position:absolute;left:0;top:10px;font-family:"JetBrains Mono",monospace;font-size:13px}
+    .we-who-col li:first-child:before{top:0}
+    .we-who-ai li:before{content:"\2726";color:#8B6FC4}
+    .we-who-you li{font-size:17.5px;font-family:"Fraunces",serif;padding-top:13px;padding-bottom:13px}
+    .we-who-you li:first-child{padding-top:0}
+    .we-who-you li:before{content:"\2192";color:var(--pink)}
+    .we-who-note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--pink);margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(214,46,115,.28)}
+
+    .we-never{border:1px solid rgba(43,22,27,.14);border-radius:6px;padding:24px 26px;background:#FFFDFB}
+    .we-never-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
+    .we-never-grid{display:flex;flex-wrap:wrap;gap:9px}
+    .we-never-chip{position:relative;font-size:15px;line-height:1.4;padding:9px 15px 9px 15px;border-radius:5px;
+                   background:rgba(43,22,27,.045);color:#7A5C63;text-decoration:line-through;text-decoration-color:rgba(214,46,115,.55);text-decoration-thickness:1.5px}
+
     /* ── ticked outcomes ── */
     .we-checks{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:2px 30px}
     .we-checks li{position:relative;padding:14px 0 14px 32px;border-top:1px solid rgba(43,22,27,.1);font-size:16.5px;line-height:1.55;color:#2B161B}
@@ -309,7 +390,7 @@ const faqs = [
 
     @media(max-width:820px){
       .we-stats{grid-template-columns:1fr 1fr}
-      .we-grid,.we-phases,.we-checks,.we-split{grid-template-columns:1fr}
+      .we-grid,.we-phases,.we-checks,.we-split,.we-who{grid-template-columns:1fr}
       .we-split{gap:34px}
       .we-block{padding:56px 0}
       .we-close{padding:60px 24px 54px;margin-top:60px}
