@@ -1,0 +1,431 @@
+<h2 class="qs-group">Friday night — prep</h2>
+<div class="qs-item" id="p1"><div class="qs-head"><span class="qs-n">01</span><div><h3 class="qs-t">Chrome content inventory</h3><p class="qs-b">Point a browser agent at your Skool group. It reads every lesson, post and file and hands you one table of everything you own.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Skool / your platform] and open [your group or workspace].
+
+Work through EVERY item in these areas, oldest to newest. Do not skip any:
+1. The classroom — every module, every lesson
+2. My own community posts — filter to posts by me
+3. Any call recordings or replays listed
+4. Any files, PDFs, or downloads attached anywhere
+
+For each item, append a row to a running table with these columns:
+Source | Title | Topic | Format | Approx length | Key points covered
+
+&quot;Key points covered&quot; should be 2-3 short bullets on what the item
+actually teaches — enough that I can tell later whether it&#x27;s worth
+building an article from.
+
+Rules:
+- Read-only. Do not edit, delete, publish, or send anything.
+- Do not skip short items. A four-sentence post is a row.
+- If something is too long to fully load, note it as PARTIAL rather
+  than guessing at the contents.
+- Do not stop between items to ask questions. Run straight through
+  and give me the complete table at the end.
+- If you approach the response limit, stop at a clean row and end
+  with &quot;PAUSED AT [row number]&quot;. I will say continue.</code></pre></div></div>
+<div class="qs-item" id="p2"><div class="qs-head"><span class="qs-n">02</span><div><h3 class="qs-t">Canon File</h3><p class="qs-b">The document that stops Claude inventing products you don't sell. Fill it once, upload it to your project, and every prompt after this reads it.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>CANON FILE — [YOUR BRAND]
+
+PRODUCTS — exact names, exact prices, exact URLs
+| Product | Price | Platform | URL |
+|---|---|---|---|
+| [Full™ Name] | $X | [platform] | [url or PENDING] |
+
+DOES NOT EXIST — never reference these
+- No free trial
+- No annual plan
+- No 1:1 coaching
+- [every plausible thing you don&#x27;t offer]
+
+HARD RULES
+1. Never invent a product, price, link, or CTA. Not in the table above = does not exist.
+2. If something is missing, stop and ask. Do not fill the gap.
+3. Full trademark name on first reference.
+4. When two sources conflict, stop and flag it. Never resolve it silently.
+
+VOICE
+Sounds like: [three descriptors]
+Never say: hack, secret, explode, crush it, game-changer, [your additions]
+Register: [e.g. warm and direct in community, editorial on the blog]
+
+STRUCTURE
+URLs: /[pattern]/[slug]
+Stack: [your stack]
+Colors: [hex codes]
+Fonts: [names]</code></pre></div></div>
+<div class="qs-item" id="p3"><div class="qs-head"><span class="qs-n">03</span><div><h3 class="qs-t">Standing instruction</h3><p class="qs-b">Paste into your project instructions. Makes Claude stop and flag conflicts instead of quietly guessing.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>When my instructions conflict with the canon, or two documents
+disagree, STOP and flag it. Do not resolve it silently.
+
+End at the deliverable. Do not explain what you built, summarize
+your work, or suggest next steps.</code></pre></div></div>
+<div class="qs-item" id="p4"><div class="qs-head"><span class="qs-n">04</span><div><h3 class="qs-t">Live-facts block</h3><p class="qs-b">Paste at the top of any request when your Canon File has gone stale. Overrides it for that one build.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
+Project knowledge is stale on these points:
+- [fact]
+- [fact]
+- [fact]
+Where the Canon File and this block conflict, this block wins.</code></pre></div></div>
+<h2 class="qs-group">Saturday morning — the website</h2>
+<div class="qs-item" id="p5"><div class="qs-head"><span class="qs-n">05</span><div><h3 class="qs-t">Site scaffold</h3><p class="qs-b">Generates every file your site needs — config, layouts, homepage, article index. Run once.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build the scaffold for my Astro site. Use my Canon File in project
+knowledge as the source of truth for everything.
+
+LIVE FACTS — these override anything that disagrees:
+- Domain: [yourdomain.com]
+- URL pattern: /learn/[slug] — flat, no category folders
+- Deploying to Vercel from GitHub
+- Colors and fonts: as specified in the Canon File
+
+What I need:
+1. package.json with Astro and the Vercel adapter
+2. astro.config.mjs configured for Vercel, with my site URL set
+3. A base layout at src/layouts/PageLayout.astro — nav, footer,
+   fonts loaded, brand colors as CSS variables
+4. A homepage at src/pages/index.astro
+5. A /learn index page listing articles
+6. tsconfig.json, .gitignore, robots.txt
+
+Rules:
+- Do not invent products, prices, links, or copy. If you need a fact
+  that isn&#x27;t in my Canon File, stop and ask.
+- Placeholder text is fine where real copy comes later — mark it
+  clearly as PLACEHOLDER.
+- Give me each file complete, with its exact file path. No fragments.</code></pre></div></div>
+<div class="qs-item" id="p6"><div class="qs-head"><span class="qs-n">06</span><div><h3 class="qs-t">Homepage copy</h3><p class="qs-b">Fills the placeholder homepage. Four sections, no fluff, built from your pillar map.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
+File and pillar map in project knowledge.
+
+Four sections only:
+1. A headline saying who I help and what they get — no tagline
+   fluff, a plain sentence a stranger understands
+2. A short paragraph on what this site is for
+3. The pillar topics as links to /learn — use my actual pillars
+4. One email signup link to [your opt-in URL]
+
+Rules:
+- No invented products, prices, testimonials, or credentials
+- No &quot;welcome to my blog&quot;
+- Complete file, ready to paste</code></pre></div></div>
+<div class="qs-item" id="p7"><div class="qs-head"><span class="qs-n">07</span><div><h3 class="qs-t">ArticleLayout</h3><p class="qs-b">The one file that controls every article on your site. Header, footer, schema, email block, related links.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
+article on the site. Use my Canon File for brand specifics.
+
+It takes these props:
+- title, description, category, publishDate
+- featuredImage (optional)
+- related (an array of {title, url} — passed in per article,
+  never hardcoded in the layout)
+
+It must include:
+1. &lt;head&gt;: title, meta description, canonical URL, Open Graph tags
+2. Article schema markup (JSON-LD), generated from the props
+3. Nav and footer matching PageLayout
+4. Article body slot with brand typography
+5. An email capture block — as a LINK to [your opt-in URL],
+   not an inline form
+6. A related-articles block rendered from the `related` prop
+
+Rules:
+- If publishDate is missing, omit it from the schema. Never
+  generate a fake date.
+- If `related` is empty, render nothing rather than a broken block.
+- Complete file, ready to paste.</code></pre></div></div>
+<div class="qs-item" id="p8"><div class="qs-head"><span class="qs-n">08</span><div><h3 class="qs-t">Analytics</h3><p class="qs-b">Adds Vercel Analytics to every layout that needs it — including the ones easy to miss.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add Vercel Web Analytics to my site. Add the package to
+package.json and include the Analytics component in every layout
+that renders its own &lt;html&gt; tag — check all of them, not just
+the main one. Give me each changed file complete.</code></pre></div></div>
+<h2 class="qs-group">Saturday afternoon — the blog</h2>
+<div class="qs-item" id="p9"><div class="qs-head"><span class="qs-n">09</span><div><h3 class="qs-t">Pillar article</h3><p class="qs-b">Turns a Skool lesson into a 3,000-word article written for a stranger arriving from Google.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
+above is my actual method — it&#x27;s the spine of the article. Use my
+Canon File in project knowledge for products, prices, links, and voice.
+
+LIVE FACTS — override anything that disagrees:
+- URL this publishes to: /learn/[slug]
+- Category: [category]
+- Free resource for this pillar: [name] at [url] — or NONE
+- Paid product for this pillar: [exact name], [exact price],
+  at [url] — or GAP, omit the slot entirely
+- Related articles: [three, with URLs] — or NONE YET
+
+Requirements:
+- 3,000 words minimum. This is a floor.
+- Chapter structure with descriptive subheads
+- Every chapter opens with a paragraph that directly answers the
+  question in its subhead — answer first, elaboration after
+- Written for someone who has never heard of me and arrived from
+  a search result
+- Include an FAQ section at the end, 5-7 real questions
+- Concrete and specific. Numbers, examples, actual steps.
+
+Rules:
+- Never invent a product, price, or link. If a slot above says GAP
+  or NONE, omit that slot rather than substituting something.
+- Do not pad. If a section is thin, the fix is more specificity,
+  not more sentences.
+- No hype vocabulary. Follow the banned list in my Canon File.
+- Return the complete article in markdown. Do not summarize what
+  you wrote or suggest next steps.</code></pre></div></div>
+<div class="qs-item" id="p10"><div class="qs-head"><span class="qs-n">10</span><div><h3 class="qs-t">Convert to page</h3><p class="qs-b">Wraps a finished article into a page file, with the frontmatter your index needs to list it.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Convert that article into a complete .astro file at
+src/pages/learn/[slug].astro, using ArticleLayout with all props
+filled — title, description, category, publishDate, related.
+Complete file, ready to paste.</code></pre></div></div>
+<div class="qs-item" id="p11"><div class="qs-head"><span class="qs-n">11</span><div><h3 class="qs-t">SEO pass — Google</h3><p class="qs-b">Keywords, subheads, meta description, internal links. Returns changes only.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run a Google SEO pass on this article. Do not rewrite the whole
+thing — return only what changes, with the exact replacement text.
+
+Check:
+1. Is the primary keyword in the title, first paragraph, and at
+   least two subheads — naturally, not stuffed?
+2. Do subheads match how people actually phrase the search?
+3. Is there a meta description under 155 characters that earns
+   the click rather than describing the page?
+4. Are there internal links to my related articles, in context?
+5. Is any section thin enough to be a ranking liability?</code></pre></div></div>
+<div class="qs-item" id="p12"><div class="qs-head"><span class="qs-n">12</span><div><h3 class="qs-t">SEO pass — Pinterest</h3><p class="qs-b">Five pin titles, five descriptions, board picks, alt text.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run a Pinterest SEO pass. Pinterest is a search engine, not a
+social feed — treat it that way.
+
+Give me:
+1. Five pin titles, each targeting a different search phrase
+   someone would actually type
+2. Five pin descriptions, keyword-rich, 100-200 characters,
+   no hashtag stuffing
+3. The three board topics these belong on
+4. Alt text for the featured image</code></pre></div></div>
+<div class="qs-item" id="p13"><div class="qs-head"><span class="qs-n">13</span><div><h3 class="qs-t">SEO pass — AI search</h3><p class="qs-b">Makes each section quotable so chatbots cite you as the source.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Run an AI-search pass. People are asking chatbots this question
+now, and the article should be the source that gets cited.
+
+Check:
+1. Does each section open with a directly quotable answer?
+2. Are claims specific enough to be worth citing — numbers,
+   named steps, concrete examples rather than generalities?
+3. Is there a clear definition of the core concept near the top?
+4. Does the FAQ answer the questions people actually type in full
+   sentences?
+
+Return only what needs to change.</code></pre></div></div>
+<div class="qs-item" id="p14"><div class="qs-head"><span class="qs-n">14</span><div><h3 class="qs-t">SEO pass — the human</h3><p class="qs-b">A skeptical reader tells you where they'd stop reading. Run this last, every time.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Read this as a skeptical reader who found it from a search result
+and has no idea who I am.
+
+1. Where would they stop reading? Be specific about the paragraph.
+2. What claim would they not believe without proof?
+3. Which parts sound AI-written?
+4. What question does the article raise and fail to answer?
+
+Do not be polite. Then fix each one.</code></pre></div></div>
+<div class="qs-item" id="p15"><div class="qs-head"><span class="qs-n">15</span><div><h3 class="qs-t">Cluster topics</h3><p class="qs-b">Twelve supporting article ideas around one pillar, none competing with each other.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Here is my pillar article on [TOPIC]. Give me 12 supporting
+article topics that would form a cluster around it.
+
+For each: the working title, the specific search question it
+answers, and roughly how long it needs to be.
+
+Rules:
+- Each must answer one question the pillar raises but doesn&#x27;t
+  fully resolve
+- No two may target the same search intent
+- None may be broad enough to compete with the pillar itself</code></pre></div></div>
+<div class="qs-item" id="p16"><div class="qs-head"><span class="qs-n">16</span><div><h3 class="qs-t">Supporting article</h3><p class="qs-b">A focused 800–1,500 word article answering one question and linking up to its pillar.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Write the supporting article &quot;[TITLE]&quot; for the [PILLAR] cluster.
+Source material above. Canon File for products, prices, voice.
+
+LIVE FACTS:
+- Publishes to: /learn/[slug]
+- Parent pillar: [title] at [url]
+- Category: [category]
+- Free resource: [name] at [url] — or NONE
+- Paid product: [exact name and price] — or GAP, omit
+
+Requirements:
+- 800-1,500 words. Focused, not comprehensive.
+- Answers exactly one question. Resist scope creep.
+- Links to the parent pillar in context, naturally, in the first
+  third — not a bare &quot;read more&quot; at the bottom
+- Answer-first paragraphs under every subhead
+
+Same rules as the pillar: no invented products, no padding,
+no hype vocabulary. Complete article in markdown.</code></pre></div></div>
+<div class="qs-item" id="p17"><div class="qs-head"><span class="qs-n">17</span><div><h3 class="qs-t">Journey block</h3><p class="qs-b">Replaces the related-links block with free resource + paid product routing on every article at once.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add a journey block to ArticleLayout.astro that renders after the
+article body. It takes props:
+
+- related: array of {title, url}
+- freeResource: {name, url} — optional
+- paidProduct: {name, price, url} — optional
+
+Rendering rules — these matter more than the styling:
+- If a prop is missing or empty, omit that slot entirely. Never
+  render an empty section, a placeholder, or a link to a page
+  that doesn&#x27;t exist.
+- Never generate a URL. Only render what&#x27;s passed in.
+- If all three are missing, render nothing at all.
+
+Complete file, ready to paste.</code></pre></div></div>
+<h2 class="qs-group">Saturday night — capture</h2>
+<div class="qs-item" id="p18"><div class="qs-head"><span class="qs-n">18</span><div><h3 class="qs-t">Lead magnet</h3><p class="qs-b">A 2–4 page checklist or template built from your own material, usable in under an hour.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
+
+Format: [checklist / template / worksheet / swipe file]
+Audience: someone who just read my article on [topic] and wants
+to act on it today
+Length: 2-4 pages. Usable in under an hour.
+
+Use my Canon File for voice and brand.
+
+Rules:
+- One specific problem, solved completely
+- Actionable steps, not explanation
+- No product pitching inside it. One line at the end pointing to
+  [product] is enough.
+- Return it as clean markdown I can convert to PDF.</code></pre></div></div>
+<div class="qs-item" id="p19"><div class="qs-head"><span class="qs-n">19</span><div><h3 class="qs-t">Resource landing page</h3><p class="qs-b">One page, one ask. Nothing on it competes with the signup.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build src/pages/resources/[slug].astro using PageLayout.
+
+Contents:
+- Headline naming the specific outcome
+- 3-4 bullets on what&#x27;s inside
+- An image or mockup of the resource
+- A signup that links to [YOUR HOSTED FORM URL] for this resource
+- Nothing else. No nav distractions, no other offers.
+
+Use my Canon File for brand. Complete file, ready to paste.</code></pre></div></div>
+<div class="qs-item" id="p20"><div class="qs-head"><span class="qs-n">20</span><div><h3 class="qs-t">Bridge page</h3><p class="qs-b">Route every outbound link through a page you own — so you can change the destination later without touching a single pin.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
+
+Purpose: someone arrives from a pin about [topic] and I&#x27;m
+recommending [product/tool].
+
+Contents:
+- Headline naming what this is and who it&#x27;s for
+- 200-400 words of real content on why I recommend it and what
+  it&#x27;s actually good for — including what it&#x27;s NOT good for
+- Clear outbound button to [destination URL]
+- Affiliate disclosure above the button, plainly worded
+- One link to my related article on [topic]
+- The free resource offer for that pillar
+
+Rules:
+- rel=&quot;sponsored&quot; on any affiliate link
+- No fake urgency, no fake scarcity
+- Real recommendation, honestly framed. Include the downside.
+
+Complete file, ready to paste.</code></pre></div></div>
+<h2 class="qs-group">Sunday morning — traffic</h2>
+<div class="qs-item" id="p21"><div class="qs-head"><span class="qs-n">21</span><div><h3 class="qs-t">Repurposing pack</h3><p class="qs-b">One published article becomes ten pins, a carousel, two reels, three posts, an email and a community post.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Build the repurposing pack for this article.
+
+LIVE FACTS:
+- Article URL: [url]
+- Free resource: [name] at [url] — or NONE
+- Paid product: [exact name and price] at [url] — or GAP, omit
+- Brand voice and banned words: see Canon File
+
+Routing:
+- Pins link to the ARTICLE
+- Email and link-in-bio link to the RESOURCE PAGE
+
+Produce:
+
+1. TEN PINS. Each a distinct structure — no two alike. For each:
+   - Title, written as a phrase someone would search
+   - Description, 100-200 characters, keyword-rich, no hashtag spam
+   - A complete image generation prompt, fully self-contained
+   - Which board it goes on
+
+2. INSTAGRAM CARDS — 8 slides, hook slide first, plus a caption
+   and five hashtags that are all real search terms, no brand tags
+
+3. TWO SHORT-VIDEO CONCEPTS — one 6-second loop, one action clip.
+   Include a still cover image prompt for each.
+
+4. THREADS / X — three posts, each standing alone
+
+5. FACEBOOK — one post in a warmer, more personal register
+
+6. EMAIL — subject line, preview text, body, one CTA to the
+   resource page
+
+7. COMMUNITY POST — warm and informal, not editorial voice
+
+8. HEADLINES &amp; SUBHEADS — a plain list of every headline used
+   above, for reuse
+
+Rules:
+- Every asset self-contained. I will not assemble pieces.
+- Image prompts complete and inline — never &quot;use the prompt above.&quot;
+- No invented products, prices, or links.
+- No hype vocabulary.</code></pre></div></div>
+<div class="qs-item" id="p22"><div class="qs-head"><span class="qs-n">22</span><div><h3 class="qs-t">Image prompt anatomy</h3><p class="qs-b">The nine parts every image prompt needs. Leave one out and results go random.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>1. Subject — what&#x27;s in frame
+2. Setting — where
+3. Lighting — &quot;soft natural window light&quot; / &quot;golden hour&quot;
+4. Camera — &quot;Canon R5, 85mm f/1.4, shallow depth of field&quot;
+5. Palette — exact hex codes, every time
+6. Text — exact words in quotes, with placement
+7. Composition — where the subject sits, where text goes
+8. Realism — &quot;a real photograph, not a 3D render, not CGI&quot;
+9. Format — &quot;vertical 2:3&quot; for pins</code></pre></div></div>
+<div class="qs-item" id="p23"><div class="qs-head"><span class="qs-n">23</span><div><h3 class="qs-t">Locked shell</h3><p class="qs-b">One prompt with fixed wording and a few swap fields, so a set of covers looks like one brand instead of three.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>LOCKED SHELL — change ONLY the swap fields. Every other word
+stays identical across every cover.
+
+A real photograph, not a 3D render, not CGI, of [SUBJECT],
+[POSE], in [FIXED SETTING] with soft natural window light.
+Canon R5, 85mm f/1.4, shallow depth of field.
+
+Subject in the right third of frame. Text occupies the left
+two-thirds, using that space generously — no empty dead area,
+no floating text island.
+
+Headline &quot;[HEADLINE]&quot; in [HEX], large enough to dominate the
+left panel. Subtitle &quot;[SUBTITLE]&quot; beneath in [HEX].
+
+A solid strip runs the full bottom edge, substantial in height,
+fully opaque. Strip color: [BADGE HEX]. Label &quot;[BADGE]&quot; on it.
+
+Where the text panel meets the photograph, a soft gradient
+blend — no hard vertical seam.
+
+Colors rendered rich and true-to-tone, not desaturated.
+
+Palette: [your hex codes]. PHOTOREALISM — enforce hard.
+Vertical format.
+
+SWAP FIELDS: [SUBJECT] [POSE] [HEADLINE] [SUBTITLE] [BADGE]
+[BADGE HEX]</code></pre></div></div>
+<div class="qs-item" id="p24"><div class="qs-head"><span class="qs-n">24</span><div><h3 class="qs-t">Pin — lifestyle photo</h3><p class="qs-b">A photo with the headline overlaid. The workhorse layout.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE IN CAPS]&quot; — a real photograph, not CGI, of [subject]
+[doing something] in [setting], soft natural window light,
+[camera spec], [palette hex codes], bold headline overlaid at
+the top with clear separation from the image, subtle film grain,
+vertical 2:3 format.</code></pre></div></div>
+<div class="qs-item" id="p25"><div class="qs-head"><span class="qs-n">25</span><div><h3 class="qs-t">Pin — collage</h3><p class="qs-b">Three images in one pin. Use sparingly so your feed doesn't get busy.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, collage of three
+lifestyle images ([image 1], [image 2], [image 3]), [palette
+hex codes], bold centered headline, soft paper accents, depth
+without clutter, vertical 2:3 format.</code></pre></div></div>
+<div class="qs-item" id="p26"><div class="qs-head"><span class="qs-n">26</span><div><h3 class="qs-t">Pin — text flatlay</h3><p class="qs-b">Objects on a surface, headline centered. Calm and high-contrast in a busy feed.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, clean flatlay of
+[objects] on [surface], soft daylight, [palette hex codes],
+elegant serif headline centered with generous whitespace,
+minimal and calm, vertical 2:3 format.</code></pre></div></div>
+<h2 class="qs-group">Sunday afternoon — publishing</h2>
+<div class="qs-item" id="p27"><div class="qs-head"><span class="qs-n">27</span><div><h3 class="qs-t">Commit to GitHub</h3><p class="qs-b">Claude pushes files straight to your repo instead of you pasting them one at a time.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Commit these files to my repo using the GitHub API.
+
+Repo: [username]/[repo]
+Branch: main
+
+Files:
+- [path]: [contents]
+- [path]: [contents]
+
+Commit message: [message]
+
+Use the standard sequence: get the HEAD ref, get that commit&#x27;s
+tree, create blobs for each file, build a new tree with base_tree
+set, create the commit, then update the ref. All files in one
+tree so it&#x27;s a single commit.
+
+Tell me what you&#x27;re about to commit before you commit it.</code></pre></div></div>
+<div class="qs-item" id="p28"><div class="qs-head"><span class="qs-n">28</span><div><h3 class="qs-t">Binary files</h3><p class="qs-b">Add this line when you're committing images or PDFs.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Omit that slot entirely and continue.</code></pre></div></div>
+<h2 class="qs-group">When something goes wrong</h2>
+<div class="qs-item" id="p29"><div class="qs-head"><span class="qs-n">29</span><div><h3 class="qs-t">Got a fragment, not a file</h3><p class="qs-b">Claude left parts out. This gets the complete file.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>These are binary — base64 encode them and set encoding to base64
+in the blob payload.</code></pre></div></div>
+<div class="qs-item" id="p30"><div class="qs-head"><span class="qs-n">30</span><div><h3 class="qs-t">Article came in short</h3><p class="qs-b">Adds depth rather than padding.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Give me the complete file, top to bottom, ready to paste. No
+omissions, no &quot;rest of file unchanged.&quot;</code></pre></div></div>
+<div class="qs-item" id="p31"><div class="qs-head"><span class="qs-n">31</span><div><h3 class="qs-t">It rewrote the whole article</h3><p class="qs-b">Forces changes-only output during an SEO pass.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>This is under the 3,000 floor. Expand by adding depth, not padding —
+more specific examples, more of the actual how, more edge cases.
+Don&#x27;t restate what&#x27;s already there.</code></pre></div></div>
+<div class="qs-item" id="p32"><div class="qs-head"><span class="qs-n">32</span><div><h3 class="qs-t">It invented a product</h3><p class="qs-b">Removes it and tells you which Canon File gap caused it.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Return only the changes with exact replacement text and where it
+goes. Do not reproduce the full article.</code></pre></div></div>
+<div class="qs-item" id="p33"><div class="qs-head"><span class="qs-n">33</span><div><h3 class="qs-t">All the pins look alike</h3><p class="qs-b">Forces a genuinely different layout per pin.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>That product doesn&#x27;t exist. Remove it. Then tell me what fact you
+were missing so I can add it to my Canon File.</code></pre></div></div>
+<div class="qs-item" id="p34"><div class="qs-head"><span class="qs-n">34</span><div><h3 class="qs-t">Images look like CGI</h3><p class="qs-b">Adds the realism and camera language that fixes it.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Each pin must use a genuinely different layout structure — vary
+text placement, image count, whether there&#x27;s a photo at all, and
+headline treatment. List the structure name for each before its
+prompt.</code></pre></div></div>
+<div class="qs-item" id="p35"><div class="qs-head"><span class="qs-n">35</span><div><h3 class="qs-t">Pages built without the layout</h3><p class="qs-b">Refactors them so one edit reaches all of them again.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add: a real photograph, not a 3D render, not CGI. Include real
+camera specs — [Canon R5, 85mm f/1.4, shallow depth of field].</code></pre></div></div>
+<div class="qs-item" id="p36"><div class="qs-head"><span class="qs-n">36</span><div><h3 class="qs-t">It stopped on something you don't need</h3><p class="qs-b">Tells it to omit that slot and carry on.</p></div></div><div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Refactor these pages to use PageLayout instead of their own HTML
+head and nav. Give me each file complete.</code></pre></div></div>

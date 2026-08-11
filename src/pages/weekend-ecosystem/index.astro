@@ -34,6 +34,15 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
       find what you already wrote.
     </p>
 
+    <a href="/weekend-ecosystem/quick-sheet" class="qs-card">
+      <div>
+        <span class="qs-card-tag">Start here if you've done this before</span>
+        <span class="qs-card-t">The Quick Sheet</span>
+        <span class="qs-card-b">All 36 prompts in one page, in the order you run them, one line each on what they do.</span>
+      </div>
+      <span class="qs-card-arrow">→</span>
+    </a>
+
     {phases.map((phase) => {
       const inPhase = MODULES.filter((m) => m.phase === phase);
       return (
@@ -68,6 +77,14 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
       ))}
     </div>
   </div>
+  <style>
+    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 28px;margin:0 0 52px;background:#2B161B;border-radius:4px;text-decoration:none;transition:transform .2s}
+    .qs-card:hover{transform:translateY(-2px)}
+    .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:10px}
+    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:#FBF8F5;margin-bottom:8px}
+    .qs-card-b{display:block;font-size:15px;line-height:1.6;color:rgba(251,248,245,.62);max-width:44ch}
+    .qs-card-arrow{font-size:22px;color:#FF8AC2;flex-shrink:0}
+  </style>
 </CourseLayout>
 
 <script>

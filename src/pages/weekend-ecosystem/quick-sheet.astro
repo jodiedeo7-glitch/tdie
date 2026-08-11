@@ -1,0 +1,115 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+---
+
+<CourseLayout title="The Quick Sheet" eyebrow="Every prompt, in the order you run them" progress={100}>
+  <div id="locked" style="display:none">
+    <p style="font-size:17px;line-height:1.8">
+      This is part of The Weekend Ecosystem™.
+      <a href="/weekend-ecosystem" style="color:#D62E73">Enter your purchase email</a> to unlock it.
+    </p>
+  </div>
+
+  <div id="loading" style="font-size:15px;color:rgba(43,22,27,.5)">Loading…</div>
+
+  <div id="intro" style="display:none">
+    <p class="qs-lede">Thirty-six prompts, sequenced the way you'll actually use them across the weekend. Each one says what it does in a line. Copy, replace the bracketed fields, run.</p>
+    <p class="qs-note">All of these assume your Canon File is in a Claude Project and you're running one task per conversation. Without that, they'll underperform.</p>
+  </div>
+
+  <div id="we-body"></div>
+
+  <div id="nav-foot" style="display:none">
+    <div class="we-jump">
+      <a href="/weekend-ecosystem" class="we-jump-card">
+        <span class="we-jump-dir">← Back</span>
+        <span class="we-jump-t">All modules</span>
+      </a>
+      <a href="/weekend-ecosystem/prompt-vault" class="we-jump-card we-jump-next">
+        <span class="we-jump-dir">Full detail →</span>
+        <span class="we-jump-t">The Prompt Vault</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .qs-lede{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;margin:0 0 16px}
+    .qs-note{font-size:15px;line-height:1.7;color:rgba(43,22,27,.6);margin:0 0 10px;padding-bottom:38px;border-bottom:1px solid rgba(43,22,27,.13)}
+    .qs-group{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin:56px 0 26px;padding-bottom:10px;border-bottom:1px solid rgba(200,169,106,.35)}
+    #we-body .qs-group:first-child{margin-top:38px}
+    .qs-item{margin-bottom:34px}
+    .qs-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+    .qs-n{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1px;color:#D62E73;padding-top:5px;flex-shrink:0}
+    .qs-t{font-family:"Fraunces",serif;font-weight:400;font-size:20px;line-height:1.25;margin:0 0 6px}
+    #we-body .qs-b{font-size:15.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
+    .qs-item .wb-prompt{margin-left:27px}
+    @media(max-width:640px){.qs-item .wb-prompt{margin-left:0}}
+    .we-jump{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:70px;padding-top:38px;border-top:1px solid rgba(43,22,27,.13)}
+    .we-jump-card{display:flex;flex-direction:column;gap:8px;padding:20px 22px;border:1px solid rgba(43,22,27,.14);border-radius:4px;text-decoration:none;color:#2B161B;transition:border-color .2s,background .2s}
+    .we-jump-card:hover{border-color:#D62E73;background:rgba(214,46,115,.03)}
+    .we-jump-next{text-align:right;align-items:flex-end}
+    .we-jump-dir{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#C8A96A}
+    .we-jump-t{font-family:"Fraunces",serif;font-size:17px;line-height:1.3}
+    @media(max-width:640px){.we-jump{grid-template-columns:1fr}.we-jump-next{text-align:left;align-items:flex-start}}
+  </style>
+</CourseLayout>
+
+<script>
+  const KEY = "we_token";
+  const token = localStorage.getItem(KEY);
+  const body = document.getElementById("we-body");
+  const loading = document.getElementById("loading");
+  const locked = document.getElementById("locked");
+  const intro = document.getElementById("intro");
+  const navFoot = document.getElementById("nav-foot");
+
+  function addCopyButtons() {
+    document.querySelectorAll("#we-body pre").forEach((pre) => {
+      const b = document.createElement("button");
+      b.className = "copy-btn";
+      b.textContent = "Copy";
+      b.addEventListener("click", () => {
+        navigator.clipboard.writeText(pre.innerText);
+        b.textContent = "Copied";
+        b.classList.add("done");
+        setTimeout(() => {
+          b.textContent = "Copy";
+          b.classList.remove("done");
+        }, 1600);
+      });
+      const bar = pre.closest(".wb-prompt")?.querySelector(".wb-prompt-bar");
+      (bar || pre).appendChild(b);
+    });
+  }
+
+  async function load() {
+    if (!token) {
+      loading.style.display = "none";
+      locked.style.display = "block";
+      return;
+    }
+    try {
+      const r = await fetch("/api/module", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, slug: "quick-sheet" }),
+      });
+      if (r.status === 401) {
+        localStorage.removeItem(KEY);
+        loading.style.display = "none";
+        locked.style.display = "block";
+        return;
+      }
+      const d = await r.json();
+      body.innerHTML = d.html;
+      loading.style.display = "none";
+      intro.style.display = "block";
+      navFoot.style.display = "block";
+      addCopyButtons();
+    } catch {
+      loading.textContent = "Couldn't load the quick sheet. Refresh to try again.";
+    }
+  }
+
+  load();
+</script>
