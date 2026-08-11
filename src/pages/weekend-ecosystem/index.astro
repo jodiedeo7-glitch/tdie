@@ -24,33 +24,46 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   </div>
 
   <div id="contents" style="display:none">
-    <p style="font-size:17px;line-height:1.82;margin-bottom:14px">
-      Twenty-two modules across one weekend, plus three vaults you'll keep coming back to.
-      Work through them in order the first time.
+    <p style="font-size:17px;line-height:1.82;margin-bottom:16px">
+      Six phases across one weekend. Each one builds a working piece of the business, and each
+      piece feeds the next — the website holds the blog, the blog fills the list, the list buys
+      the product.
     </p>
-    <p style="font-size:17px;line-height:1.82;margin-bottom:44px">
-      Start with Phase 0 tonight. You won't write anything — you'll find what you already wrote.
+    <p style="font-size:17px;line-height:1.82;margin-bottom:46px">
+      Go in order the first time. Start tonight with Phase 0 — you won't write anything, you'll
+      find what you already wrote.
     </p>
 
-    {phases.map((phase) => (
-      <div style="margin-bottom:44px">
-        <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#C8A96A;margin-bottom:18px">{phase}</span>
-        {MODULES.filter((m) => m.phase === phase).map((m) => (
-          <a href={`/weekend-ecosystem/${m.slug}`}
-            style="display:block;padding:15px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
-            <span style="font-size:12.5px;letter-spacing:1.4px;color:rgba(43,22,27,.45);margin-right:12px">{String(m.num).padStart(2, "0")}</span>
-            <span style="font-family:Fraunces,serif;font-size:19px;font-weight:400">{m.title}</span>
-          </a>
-        ))}
-      </div>
-    ))}
+    {phases.map((phase) => {
+      const inPhase = MODULES.filter((m) => m.phase === phase);
+      return (
+        <div style="margin-bottom:52px">
+          <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#C8A96A;margin-bottom:6px">{inPhase[0].phaseLabel}</span>
+          <span style="display:block;font-family:Fraunces,serif;font-size:21px;font-weight:400;margin-bottom:22px">{inPhase[0].phaseSub}</span>
+          {inPhase.map((m) => (
+            <a href={`/weekend-ecosystem/${m.slug}`}
+              style="display:block;padding:18px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
+              <div style="display:flex;gap:14px;align-items:baseline">
+                <span style="font-size:12.5px;letter-spacing:1.4px;color:rgba(43,22,27,.4);flex-shrink:0">{String(m.num).padStart(2, "0")}</span>
+                <div>
+                  <span style="display:block;font-family:Fraunces,serif;font-size:19px;font-weight:400;line-height:1.3;margin-bottom:5px">{m.title}</span>
+                  <span style="display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.62)">{m.blurb}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      );
+    })}
 
     <div style="margin-bottom:44px">
-      <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73;margin-bottom:18px">The Vaults</span>
+      <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73;margin-bottom:6px">The Vaults</span>
+      <span style="display:block;font-family:Fraunces,serif;font-size:21px;font-weight:400;margin-bottom:22px">Reference you'll come back to for years</span>
       {VAULTS.map((v) => (
         <a href={`/weekend-ecosystem/${v.slug}`}
-          style="display:block;padding:15px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
-          <span style="font-family:Fraunces,serif;font-size:19px;font-weight:400">{v.title}</span>
+          style="display:block;padding:18px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
+          <span style="display:block;font-family:Fraunces,serif;font-size:19px;font-weight:400;line-height:1.3;margin-bottom:5px">{v.title}</span>
+          <span style="display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.62)">{v.blurb}</span>
         </a>
       ))}
     </div>

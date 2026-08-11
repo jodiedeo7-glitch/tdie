@@ -2,24 +2,53 @@
 <p>A blog isn't a writing project. It's a <strong>retrieval system for work you've already done.</strong></p>
 <p>Every question you answered in your community is a paragraph. Every classroom lesson is a section. Every call is three posts. It's written — it's just trapped somewhere nobody can search, on a platform you don't own.</p>
 <p>That's the real cost of keeping everything in Skool. Not that Skool is bad; it's excellent at what it does. But nothing inside it ranks, nothing works while you sleep, and a member has to already know you exist to reach any of it.</p>
-<h2>Do this</h2>
-<p>Open a blank spreadsheet. Five columns: <strong>Source · Title · Topic · Format · Length</strong>.</p>
-<p>Log everything. Don't judge, don't edit, don't skip things that aren't good enough — quality decisions happen in Module 3.</p>
-<p><strong>Where to look:</strong></p>
-<p><strong>Your Skool classroom.</strong> Every lesson is a row. A lesson is usually a supporting article; a module is usually a pillar.</p>
-<p><strong>Your community posts.</strong> Filter to your own, sort by most-liked. High engagement means a real problem got solved — pre-validated by the exact audience you want.</p>
-<p><strong>Your call recordings.</strong> Log the call, not the topics. You'll mine them later.</p>
-<p><strong>Your PDFs and freebies.</strong> Including the dead ones. Especially those — a freebie nobody downloaded is usually good content behind a bad landing page.</p>
-<p><strong>Your emails.</strong> Any broadcast you put real thought into.</p>
-<p><strong>Your DMs and comment replies.</strong> The one people skip, and often the best material you have. Explaining something to one stuck person produces clearer writing than "content mode" ever does. Search your DMs for your own long replies.</p>
-<p><strong>Anything you abandoned.</strong> Half-finished courses, drafted modules, the outline in your Notes app.</p>
+<h2>Do this — let Chrome do the collecting</h2>
+<p>You could open every lesson and copy it by hand. Don't. A browser agent reads the whole thing while you make coffee.</p>
+<p>Use Claude in Chrome, or any browser agent you have. Paste this, filled in:</p>
+<pre><code>Log into [Skool / your platform] and open [your group or workspace].
+
+Work through EVERY item in these areas, oldest to newest. Do not skip any:
+1. The classroom — every module, every lesson
+2. My own community posts — filter to posts by me
+3. Any call recordings or replays listed
+4. Any files, PDFs, or downloads attached anywhere
+
+For each item, append a row to a running table with these columns:
+Source | Title | Topic | Format | Approx length | Key points covered
+
+&quot;Key points covered&quot; should be 2-3 short bullets on what the item
+actually teaches — enough that I can tell later whether it's worth
+building an article from.
+
+Rules:
+- Read-only. Do not edit, delete, publish, or send anything.
+- Do not skip short items. A four-sentence post is a row.
+- If something is too long to fully load, note it as PARTIAL rather
+  than guessing at the contents.
+- Do not stop between items to ask questions. Run straight through
+  and give me the complete table at the end.
+- If you approach the response limit, stop at a clean row and end
+  with &quot;PAUSED AT [row number]&quot;. I will say continue.
+</code></pre>
+<p>Run the same prompt again pointed at your email platform's sent broadcasts, and once more at any other place your writing lives.</p>
+<h2>Do this — the parts Chrome can't reach</h2>
+<p><strong>Your DMs.</strong> No agent should be reading your inbox. Search your own long replies manually — this is often the best material you have, because explaining something to one stuck person produces clearer writing than "content mode" ever does. Ten minutes.</p>
+<p><strong>Call recordings.</strong> Log the recording as a row. Phase 2 covers pulling transcripts; you don't need them tonight.</p>
+<p><strong>Anything abandoned.</strong> Half-finished courses, drafted modules, the outline in your Notes app.</p>
+<h2>Do this — put it where Claude can use it</h2>
+<p>The table is useless sitting in a browser tab.</p>
+<p><strong>1. Save it as a file.</strong> <code>content-inventory.md</code>, or a spreadsheet — either works.</p>
+<p><strong>2. Create a Claude Project.</strong> In Claude, click Projects, then Create project. Name it after your brand. Everything you build this weekend happens inside this one project.</p>
+<p><strong>3. Upload the inventory to project knowledge.</strong> Open the project, find project knowledge, upload the file.</p>
+<p>That's the step that makes the rest of the weekend fast. Every conversation in that project can now see your entire content library without you pasting anything. Your Canon File joins it in Module 2.</p>
+<p><strong>Uploads don't sync.</strong> If you update the inventory later, delete the old file from project knowledge and upload the new one. Same filename does not mean same file.</p>
 <h2>What normal looks like</h2>
 <p>Most people find 40–80 pieces and are startled. Six months of an active Skool group makes 40 a low number.</p>
 <p>Under 15 means you're being too strict, not that you're short on content. A four-sentence comment reply is a row.</p>
 <h2>Roadblock — <em>"It's disorganized and not good enough to publish"</em></h2>
 <p>It isn't supposed to be. It's raw material. Claude does the structuring and polishing in Phase 2 — that's the point of the build. What Claude can't invent is your actual method and the specific way you explain the thing you're good at. Log it messy.</p>
-<h2>Roadblock — <em>"I have recordings but no transcripts"</em></h2>
-<p>Log the recording. Phase 2 covers transcripts.</p>
+<h2>Roadblock — <em>"Chrome only got through half of it"</em></h2>
+<p>Say <code>continue</code>. Browser agents hit response length limits, not reading limits — it read everything and ran out of room writing it out. If it restarts from the top instead, tell it to resume at a specific row and not repeat earlier ones.</p>
 <h2>Deliverable</h2>
 <p>A spreadsheet of everything you own. One row each.</p>
 <hr />
