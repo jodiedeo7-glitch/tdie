@@ -27,6 +27,10 @@ const teasers = [
       <p class="wl-note">The waitlist opens first, at the lowest price this will ever be. Everyone else waits three days and pays more.</p>
     </div>
 
+    <figure class="wl-fig">
+      <img src="/images/we/cover-kitchen.jpg" alt="The Weekend Ecosystem — one weekend, a real website and blog, built with Claude." loading="eager" width="1200" height="1490" />
+    </figure>
+
     <div class="wl-stats">
       {teasers.map((t) => (
         <div class="wl-stat">
@@ -41,6 +45,12 @@ const teasers = [
     <h2>You already wrote it</h2>
     <p class="wl-lead">Every lesson in your classroom. Every post you've written. The call you recorded in March. The DM where you explained your whole method to one person, for free, at midnight.</p>
     <p class="wl-lead">It's all sitting somewhere nobody can search, on a platform you don't own. This weekend you don't write anything new — you build the place it lives, works, and compounds.</p>
+  </section>
+
+  <section class="wl-block">
+    <figure class="wl-fig wl-fig-wide">
+      <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="lazy" width="1200" height="1490" />
+    </figure>
   </section>
 
   <section class="wl-block">
@@ -90,6 +100,9 @@ const teasers = [
     .wl-stat{background:#FBF8F5;padding:24px 16px}
     .wl-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(32px,4.4vw,46px);font-weight:300;line-height:1;color:var(--pink);letter-spacing:-1.5px}
     .wl-stat-l{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:9px}
+    .wl-fig{margin:0 auto 44px;max-width:520px;padding:0}
+    .wl-fig img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 14px 44px rgba(43,22,27,.14)}
+    .wl-fig-wide{max-width:560px;margin:0 auto}
     .wl-block{padding:64px 0;border-top:1px solid rgba(43,22,27,.1)}
     .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#2B161B}
     .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
