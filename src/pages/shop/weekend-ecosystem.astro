@@ -5,16 +5,27 @@ import { MODULES } from "../../we-manifest.js";
 const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
 
 // ── LAUNCH STAGE — change this one value at each stage ──
-// "waitlist" | "public47" | "public67" | "full"
-const STAGE = "waitlist";
+// "prelaunch" | "public47" | "public67" | "full"
+const STAGE = "prelaunch";
+
+const WAITLIST = "/weekend-ecosystem-waitlist";
 
 const STAGES = {
-  waitlist:  { price: "$47", note: "Launch price. Goes to $67 in one week.",  eyebrow: "Launch week · $47" },
-  public47:  { price: "$47", note: "Launch price. Goes to $67 in one week.",  eyebrow: "Launch week · $47" },
-  public67:  { price: "$67", note: "Launch price. Goes to $97 in two weeks.", eyebrow: "Launch price · $67" },
-  full:      { price: "$97", note: "One-time payment.",                        eyebrow: "Standalone Course · $97 one-time" },
+  prelaunch: { cta: "Join the waitlist", href: WAITLIST, eyebrow: "Opening soon · Waitlist",
+               note: "The waitlist opens first, three days early, at the lowest price this will ever be.",
+               access: "No payment now. You'll get one email when the doors open." },
+  public47:  { cta: "Get the course — $47", href: "CHECKOUT", eyebrow: "Launch week · $47",
+               note: "Launch price. Goes to $67 in one week.",
+               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
+  public67:  { cta: "Get the course — $67", href: "CHECKOUT", eyebrow: "Launch price · $67",
+               note: "Goes to $97 in two weeks.",
+               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
+  full:      { cta: "Get the course — $97", href: "CHECKOUT", eyebrow: "Standalone Course · $97 one-time",
+               note: "One-time payment, $97.",
+               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
 };
 const S = STAGES[STAGE];
+const HREF = S.href === "CHECKOUT" ? CHECKOUT : S.href;
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -139,11 +150,9 @@ const faqs = [
     <h1>The Weekend <em>Ecosystem™</em></h1>
     <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
     <div class="we-cta-row">
-      {CHECKOUT
-        ? <a class="btn" href={CHECKOUT}>Get the course — {S.price} <span class="a">→</span></a>
-        : <span class="we-soon">Enrollment opens shortly</span>}
+      <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
     </div>
-    <p class="we-access">Access is tied to the email you buy with — use one you check. Access is opened within a few hours of purchase.</p>
+    <p class="we-access">{S.access}</p>
     <div class="we-hero-strip">
       {phases.map((p, i) => (
         <span class="we-chip" style={`--ac:${p.accent}`}>
@@ -334,11 +343,9 @@ const faqs = [
     <h2>You were a digital product seller.</h2>
     <p class="lede">Now you own the infrastructure.</p>
     <div class="we-cta-row">
-      {CHECKOUT
-        ? <a class="btn" href={CHECKOUT}>Get the course — {S.price} <span class="a">→</span></a>
-        : <span class="we-soon">Enrollment opens shortly</span>}
+      <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
     </div>
-    <p class="we-close-note">{S.note} Access is tied to the email you buy with — use one you check.</p>
+    <p class="we-close-note">{S.note}</p>
     <p class="we-close-anchor">A developer quotes four figures for this build. A site builder charges more than this every year, forever. You pay once and own the thing.</p>
   </section>
 
