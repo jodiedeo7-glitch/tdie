@@ -1,0 +1,503 @@
+<h1>PROMPT VAULT</h1>
+<p>Every prompt in the course, in one place. Copy, replace the bracketed fields, run.</p>
+<p><strong>How to use this:</strong> everything here assumes you're working inside a Claude Project with your Canon File in project knowledge, and running one task per conversation. Both from Module 2. If you skipped that module, these will underperform and you'll blame the prompts.</p>
+<hr />
+<h2>CONTENTS</h2>
+<p><strong>A — Setup</strong> · A1 Canon File · A2 Standing instruction · A3 Live-facts block
+<strong>B — Building the site</strong> · B1 Scaffold · B2 ArticleLayout · B3 Journey block · B4 Resource landing page · B5 Bridge page · B6 Analytics
+<strong>C — Writing</strong> · C1 Pillar article · C2 Convert to page · C3 Supporting article · C4 Cluster topics · C5 Lead magnet
+<strong>D — SEO</strong> · D1 Google · D2 Pinterest · D3 AI search · D4 Human
+<strong>E — Distribution</strong> · E1 Repurposing pack
+<strong>F — Images</strong> · F1 Nine-part anatomy · F2 Locked shell · F3 Pin prompt patterns
+<strong>G — Publishing</strong> · G1 Commit to GitHub · G2 Binary files
+<strong>H — Fixes</strong> · H1–H8 correction prompts</p>
+<hr />
+<h1>A — SETUP</h1>
+<h2>A1 · Canon File template</h2>
+<pre><code>CANON FILE — [YOUR BRAND]
+
+PRODUCTS — exact names, exact prices, exact URLs
+| Product | Price | Platform | URL |
+|---|---|---|---|
+| [Full™ Name] | $X | [platform] | [url or PENDING] |
+
+DOES NOT EXIST — never reference these
+- No free trial
+- No annual plan
+- No 1:1 coaching
+- [every plausible thing you don't offer]
+
+HARD RULES
+1. Never invent a product, price, link, or CTA. Not in the table above = does not exist.
+2. If something is missing, stop and ask. Do not fill the gap.
+3. Full trademark name on first reference.
+4. When two sources conflict, stop and flag it. Never resolve it silently.
+
+VOICE
+Sounds like: [three descriptors]
+Never say: hack, secret, explode, crush it, game-changer, [your additions]
+Register: [e.g. warm and direct in community, editorial on the blog]
+
+STRUCTURE
+URLs: /[pattern]/[slug]
+Stack: [your stack]
+Colors: [hex codes]
+Fonts: [names]
+</code></pre>
+<h2>A2 · Standing instruction</h2>
+<p>Save in project instructions.</p>
+<pre><code>When my instructions conflict with the canon, or two documents
+disagree, STOP and flag it. Do not resolve it silently.
+
+End at the deliverable. Do not explain what you built, summarize
+your work, or suggest next steps.
+</code></pre>
+<h2>A3 · Live-facts block</h2>
+<p>Paste at the top of any request where your Canon File may be stale.</p>
+<pre><code>LIVE FACTS — these override anything in the Canon File that disagrees.
+Project knowledge is stale on these points:
+- [fact]
+- [fact]
+- [fact]
+Where the Canon File and this block conflict, this block wins.
+</code></pre>
+<hr />
+<h1>B — BUILDING THE SITE</h1>
+<h2>B1 · Scaffold</h2>
+<pre><code>Build the scaffold for my Astro site. Use my Canon File in project
+knowledge as the source of truth for everything.
+
+LIVE FACTS — these override anything that disagrees:
+- Domain: [yourdomain.com]
+- URL pattern: /learn/[slug] — flat, no category folders
+- Deploying to Vercel from GitHub
+- Colors and fonts: as specified in the Canon File
+
+What I need:
+1. package.json with Astro and the Vercel adapter
+2. astro.config.mjs configured for Vercel, with my site URL set
+3. A base layout at src/layouts/PageLayout.astro — nav, footer,
+   fonts loaded, brand colors as CSS variables
+4. A homepage at src/pages/index.astro
+5. A /learn index page listing articles
+6. tsconfig.json, .gitignore, robots.txt
+
+Rules:
+- Do not invent products, prices, links, or copy. If you need a fact
+  that isn't in my Canon File, stop and ask.
+- Placeholder text is fine where real copy comes later — mark it
+  clearly as PLACEHOLDER.
+- Give me each file complete, with its exact file path. No fragments.
+</code></pre>
+<h2>B2 · ArticleLayout</h2>
+<pre><code>Build src/layouts/ArticleLayout.astro. This layout handles every
+article on the site. Use my Canon File for brand specifics.
+
+It takes these props:
+- title, description, category, publishDate
+- featuredImage (optional)
+- related (an array of {title, url} — passed in per article,
+  never hardcoded in the layout)
+
+It must include:
+1. &lt;head&gt;: title, meta description, canonical URL, Open Graph tags
+2. Article schema markup (JSON-LD), generated from the props
+3. Nav and footer matching PageLayout
+4. Article body slot with brand typography
+5. An email capture block — as a LINK to [your opt-in URL],
+   not an inline form
+6. A related-articles block rendered from the `related` prop
+
+Rules:
+- If publishDate is missing, omit it from the schema. Never
+  generate a fake date.
+- If `related` is empty, render nothing rather than a broken block.
+- Complete file, ready to paste.
+</code></pre>
+<h2>B3 · Journey block</h2>
+<pre><code>Add a journey block to ArticleLayout.astro that renders after the
+article body. It takes props:
+
+- related: array of {title, url}
+- freeResource: {name, url} — optional
+- paidProduct: {name, price, url} — optional
+
+Rendering rules — these matter more than the styling:
+- If a prop is missing or empty, omit that slot entirely. Never
+  render an empty section, a placeholder, or a link to a page
+  that doesn't exist.
+- Never generate a URL. Only render what's passed in.
+- If all three are missing, render nothing at all.
+
+Complete file, ready to paste.
+</code></pre>
+<h2>B4 · Resource landing page</h2>
+<pre><code>Build src/pages/resources/[slug].astro using PageLayout.
+
+Contents:
+- Headline naming the specific outcome
+- 3-4 bullets on what's inside
+- An image or mockup of the resource
+- A signup that links to [YOUR HOSTED FORM URL] for this resource
+- Nothing else. No nav distractions, no other offers.
+
+Use my Canon File for brand. Complete file, ready to paste.
+</code></pre>
+<h2>B5 · Bridge page</h2>
+<pre><code>Build a bridge page at src/pages/go/[slug].astro using PageLayout.
+
+Purpose: someone arrives from a pin about [topic] and I'm
+recommending [product/tool].
+
+Contents:
+- Headline naming what this is and who it's for
+- 200-400 words of real content on why I recommend it and what
+  it's actually good for — including what it's NOT good for
+- Clear outbound button to [destination URL]
+- Affiliate disclosure above the button, plainly worded
+- One link to my related article on [topic]
+- The free resource offer for that pillar
+
+Rules:
+- rel=&quot;sponsored&quot; on any affiliate link
+- No fake urgency, no fake scarcity
+- Real recommendation, honestly framed. Include the downside.
+
+Complete file, ready to paste.
+</code></pre>
+<h2>B6 · Analytics</h2>
+<pre><code>Add Vercel Web Analytics to my site. Add the package to
+package.json and include the Analytics component in every layout
+that renders its own &lt;html&gt; tag — check all of them, not just
+the main one. Give me each changed file complete.
+</code></pre>
+<hr />
+<h1>C — WRITING</h1>
+<h2>C1 · Pillar article</h2>
+<p>Paste your source material first, then:</p>
+<pre><code>Write the pillar article for [PILLAR TOPIC]. The source material
+above is my actual method — it's the spine of the article. Use my
+Canon File in project knowledge for products, prices, links, and voice.
+
+LIVE FACTS — override anything that disagrees:
+- URL this publishes to: /learn/[slug]
+- Category: [category]
+- Free resource for this pillar: [name] at [url] — or NONE
+- Paid product for this pillar: [exact name], [exact price],
+  at [url] — or GAP, omit the slot entirely
+- Related articles: [three, with URLs] — or NONE YET
+
+Requirements:
+- 3,000 words minimum. This is a floor.
+- Chapter structure with descriptive subheads
+- Every chapter opens with a paragraph that directly answers the
+  question in its subhead — answer first, elaboration after
+- Written for someone who has never heard of me and arrived from
+  a search result
+- Include an FAQ section at the end, 5-7 real questions
+- Concrete and specific. Numbers, examples, actual steps.
+
+Rules:
+- Never invent a product, price, or link. If a slot above says GAP
+  or NONE, omit that slot rather than substituting something.
+- Do not pad. If a section is thin, the fix is more specificity,
+  not more sentences.
+- No hype vocabulary. Follow the banned list in my Canon File.
+- Return the complete article in markdown. Do not summarize what
+  you wrote or suggest next steps.
+</code></pre>
+<h2>C2 · Convert to page</h2>
+<pre><code>Convert that article into a complete .astro file at
+src/pages/learn/[slug].astro, using ArticleLayout with all props
+filled — title, description, category, publishDate, related.
+Complete file, ready to paste.
+</code></pre>
+<h2>C3 · Supporting article</h2>
+<pre><code>Write the supporting article &quot;[TITLE]&quot; for the [PILLAR] cluster.
+Source material above. Canon File for products, prices, voice.
+
+LIVE FACTS:
+- Publishes to: /learn/[slug]
+- Parent pillar: [title] at [url]
+- Category: [category]
+- Free resource: [name] at [url] — or NONE
+- Paid product: [exact name and price] — or GAP, omit
+
+Requirements:
+- 800-1,500 words. Focused, not comprehensive.
+- Answers exactly one question. Resist scope creep.
+- Links to the parent pillar in context, naturally, in the first
+  third — not a bare &quot;read more&quot; at the bottom
+- Answer-first paragraphs under every subhead
+
+Same rules as the pillar: no invented products, no padding,
+no hype vocabulary. Complete article in markdown.
+</code></pre>
+<h2>C4 · Cluster topics</h2>
+<pre><code>Here is my pillar article on [TOPIC]. Give me 12 supporting
+article topics that would form a cluster around it.
+
+For each: the working title, the specific search question it
+answers, and roughly how long it needs to be.
+
+Rules:
+- Each must answer one question the pillar raises but doesn't
+  fully resolve
+- No two may target the same search intent
+- None may be broad enough to compete with the pillar itself
+</code></pre>
+<h2>C5 · Lead magnet</h2>
+<pre><code>Build a lead magnet for the [PILLAR] pillar. Source material above.
+
+Format: [checklist / template / worksheet / swipe file]
+Audience: someone who just read my article on [topic] and wants
+to act on it today
+Length: 2-4 pages. Usable in under an hour.
+
+Use my Canon File for voice and brand.
+
+Rules:
+- One specific problem, solved completely
+- Actionable steps, not explanation
+- No product pitching inside it. One line at the end pointing to
+  [product] is enough.
+- Return it as clean markdown I can convert to PDF.
+</code></pre>
+<hr />
+<h1>D — THE FOUR SEO PASSES</h1>
+<p>Run in order, one at a time, on a finished article.</p>
+<h2>D1 · Google</h2>
+<pre><code>Run a Google SEO pass on this article. Do not rewrite the whole
+thing — return only what changes, with the exact replacement text.
+
+Check:
+1. Is the primary keyword in the title, first paragraph, and at
+   least two subheads — naturally, not stuffed?
+2. Do subheads match how people actually phrase the search?
+3. Is there a meta description under 155 characters that earns
+   the click rather than describing the page?
+4. Are there internal links to my related articles, in context?
+5. Is any section thin enough to be a ranking liability?
+</code></pre>
+<h2>D2 · Pinterest</h2>
+<pre><code>Run a Pinterest SEO pass. Pinterest is a search engine, not a
+social feed — treat it that way.
+
+Give me:
+1. Five pin titles, each targeting a different search phrase
+   someone would actually type
+2. Five pin descriptions, keyword-rich, 100-200 characters,
+   no hashtag stuffing
+3. The three board topics these belong on
+4. Alt text for the featured image
+</code></pre>
+<h2>D3 · AI search</h2>
+<pre><code>Run an AI-search pass. People are asking chatbots this question
+now, and the article should be the source that gets cited.
+
+Check:
+1. Does each section open with a directly quotable answer?
+2. Are claims specific enough to be worth citing — numbers,
+   named steps, concrete examples rather than generalities?
+3. Is there a clear definition of the core concept near the top?
+4. Does the FAQ answer the questions people actually type in full
+   sentences?
+
+Return only what needs to change.
+</code></pre>
+<h2>D4 · Human</h2>
+<p>Run last, every time. This is the pass that changes the most.</p>
+<pre><code>Read this as a skeptical reader who found it from a search result
+and has no idea who I am.
+
+1. Where would they stop reading? Be specific about the paragraph.
+2. What claim would they not believe without proof?
+3. Which parts sound AI-written?
+4. What question does the article raise and fail to answer?
+
+Do not be polite. Then fix each one.
+</code></pre>
+<hr />
+<h1>E — DISTRIBUTION</h1>
+<h2>E1 · Repurposing pack</h2>
+<p>Paste your published article, then:</p>
+<pre><code>Build the repurposing pack for this article.
+
+LIVE FACTS:
+- Article URL: [url]
+- Free resource: [name] at [url] — or NONE
+- Paid product: [exact name and price] at [url] — or GAP, omit
+- Brand voice and banned words: see Canon File
+
+Routing:
+- Pins link to the ARTICLE
+- Email and link-in-bio link to the RESOURCE PAGE
+
+Produce:
+
+1. TEN PINS. Each a distinct structure — no two alike. For each:
+   - Title, written as a phrase someone would search
+   - Description, 100-200 characters, keyword-rich, no hashtag spam
+   - A complete image generation prompt, fully self-contained
+   - Which board it goes on
+
+2. INSTAGRAM CARDS — 8 slides, hook slide first, plus a caption
+   and five hashtags that are all real search terms, no brand tags
+
+3. TWO SHORT-VIDEO CONCEPTS — one 6-second loop, one action clip.
+   Include a still cover image prompt for each.
+
+4. THREADS / X — three posts, each standing alone
+
+5. FACEBOOK — one post in a warmer, more personal register
+
+6. EMAIL — subject line, preview text, body, one CTA to the
+   resource page
+
+7. COMMUNITY POST — warm and informal, not editorial voice
+
+8. HEADLINES &amp; SUBHEADS — a plain list of every headline used
+   above, for reuse
+
+Rules:
+- Every asset self-contained. I will not assemble pieces.
+- Image prompts complete and inline — never &quot;use the prompt above.&quot;
+- No invented products, prices, or links.
+- No hype vocabulary.
+</code></pre>
+<hr />
+<h1>F — IMAGES</h1>
+<h2>F1 · The nine-part anatomy</h2>
+<p>Every image prompt should contain all nine. Missing parts are where randomness enters.</p>
+<pre><code>1. Subject — what's in frame
+2. Setting — where
+3. Lighting — &quot;soft natural window light&quot; / &quot;golden hour&quot;
+4. Camera — &quot;Canon R5, 85mm f/1.4, shallow depth of field&quot;
+5. Palette — exact hex codes, every time
+6. Text — exact words in quotes, with placement
+7. Composition — where the subject sits, where text goes
+8. Realism — &quot;a real photograph, not a 3D render, not CGI&quot;
+9. Format — &quot;vertical 2:3&quot; for pins
+</code></pre>
+<h2>F2 · The locked shell</h2>
+<p>For any set of images that must look like one brand. Change only the swap fields.</p>
+<pre><code>LOCKED SHELL — change ONLY the swap fields. Every other word
+stays identical across every cover.
+
+A real photograph, not a 3D render, not CGI, of [SUBJECT],
+[POSE], in [FIXED SETTING] with soft natural window light.
+Canon R5, 85mm f/1.4, shallow depth of field.
+
+Subject in the right third of frame. Text occupies the left
+two-thirds, using that space generously — no empty dead area,
+no floating text island.
+
+Headline &quot;[HEADLINE]&quot; in [HEX], large enough to dominate the
+left panel. Subtitle &quot;[SUBTITLE]&quot; beneath in [HEX].
+
+A solid strip runs the full bottom edge, substantial in height,
+fully opaque. Strip color: [BADGE HEX]. Label &quot;[BADGE]&quot; on it.
+
+Where the text panel meets the photograph, a soft gradient
+blend — no hard vertical seam.
+
+Colors rendered rich and true-to-tone, not desaturated.
+
+Palette: [your hex codes]. PHOTOREALISM — enforce hard.
+Vertical format.
+
+SWAP FIELDS: [SUBJECT] [POSE] [HEADLINE] [SUBTITLE] [BADGE]
+[BADGE HEX]
+</code></pre>
+<h2>F3 · Pin prompt patterns</h2>
+<p>Three structures that work. Vary between them so your pins don't all look alike.</p>
+<p><strong>Lifestyle photo with overlaid headline:</strong></p>
+<pre><code>&quot;[HEADLINE IN CAPS]&quot; — a real photograph, not CGI, of [subject]
+[doing something] in [setting], soft natural window light,
+[camera spec], [palette hex codes], bold headline overlaid at
+the top with clear separation from the image, subtle film grain,
+vertical 2:3 format.
+</code></pre>
+<p><strong>Collage:</strong></p>
+<pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, collage of three
+lifestyle images ([image 1], [image 2], [image 3]), [palette
+hex codes], bold centered headline, soft paper accents, depth
+without clutter, vertical 2:3 format.
+</code></pre>
+<p><strong>Text-dominant flatlay:</strong></p>
+<pre><code>&quot;[HEADLINE]&quot; — a real photograph, not CGI, clean flatlay of
+[objects] on [surface], soft daylight, [palette hex codes],
+elegant serif headline centered with generous whitespace,
+minimal and calm, vertical 2:3 format.
+</code></pre>
+<hr />
+<h1>G — PUBLISHING</h1>
+<h2>G1 · Commit to GitHub</h2>
+<pre><code>Commit these files to my repo using the GitHub API.
+
+Repo: [username]/[repo]
+Branch: main
+
+Files:
+- [path]: [contents]
+- [path]: [contents]
+
+Commit message: [message]
+
+Use the standard sequence: get the HEAD ref, get that commit's
+tree, create blobs for each file, build a new tree with base_tree
+set, create the commit, then update the ref. All files in one
+tree so it's a single commit.
+
+Tell me what you're about to commit before you commit it.
+</code></pre>
+<h2>G2 · Binary files</h2>
+<p>Append to G1:</p>
+<pre><code>These are binary — base64 encode them and set encoding to base64
+in the blob payload.
+</code></pre>
+<hr />
+<h1>H — FIXES</h1>
+<p>Short prompts for the eight most common problems.</p>
+<p><strong>H1 · Fragment instead of full file</strong></p>
+<pre><code>Give me the complete file, top to bottom, ready to paste. No
+omissions, no &quot;rest of file unchanged.&quot;
+</code></pre>
+<p><strong>H2 · Article under the word floor</strong></p>
+<pre><code>This is under the 3,000 floor. Expand by adding depth, not padding —
+more specific examples, more of the actual how, more edge cases.
+Don't restate what's already there.
+</code></pre>
+<p><strong>H3 · Rewrote the whole thing during an SEO pass</strong></p>
+<pre><code>Return only the changes with exact replacement text and where it
+goes. Do not reproduce the full article.
+</code></pre>
+<p><strong>H4 · Invented a product</strong></p>
+<pre><code>That product doesn't exist. Remove it. Then tell me what fact you
+were missing so I can add it to my Canon File.
+</code></pre>
+<p><strong>H5 · Pins all look alike</strong></p>
+<pre><code>Each pin must use a genuinely different layout structure — vary
+text placement, image count, whether there's a photo at all, and
+headline treatment. List the structure name for each before its
+prompt.
+</code></pre>
+<p><strong>H6 · Images look like CGI</strong></p>
+<pre><code>Add: a real photograph, not a 3D render, not CGI. Include real
+camera specs — [Canon R5, 85mm f/1.4, shallow depth of field].
+</code></pre>
+<p><strong>H7 · Pages with their own header instead of using the layout</strong></p>
+<pre><code>Refactor these pages to use PageLayout instead of their own HTML
+head and nav. Give me each file complete.
+</code></pre>
+<p><strong>H8 · Stopped on something you don't need</strong></p>
+<pre><code>Omit that slot entirely and continue.
+</code></pre>
+<hr />
+<h1>THE ANTI-PROMPT</h1>
+<p>Included so you recognize it. Do not run anything shaped like this:</p>
+<blockquote>
+<p><em>"Act as my Chief Systems Architect, CMO, SEO Strategist, Pinterest Strategist, AI Automation Engineer, Content Director, UX Designer, and Business Operations Consultant, and build my entire content system, website, product ladder, and 90-day launch plan…"</em></p>
+</blockquote>
+<p>Three hundred lines, every role, every task at once. It fails three ways: the roles pull against each other and the output splits the difference; context collapses so late instructions outweigh early ones; and overlapping requests produce duplicate structures with no way to tell which is authoritative.</p>
+<p>Role and context go in project instructions, once. Then one task per conversation, with a short specific prompt. Every prompt in this vault is built that way on purpose.</p>

@@ -1,0 +1,80 @@
+---
+import "../styles/global.css";
+import Analytics from '@vercel/analytics/astro';
+export interface Props {
+  title: string;
+  eyebrow?: string;
+}
+const { title, eyebrow } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{title} | The Weekend Ecosystem™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root{
+      --we-pink:#D62E73; --we-cream:#FBF8F5; --we-choc:#2B161B;
+      --we-gold:#C8A96A; --we-bubble:#FF8AC2; --we-lav:#CBB7F7;
+    }
+    body{background:var(--we-cream);color:var(--we-choc);margin:0;font-family:"Inter",sans-serif}
+    .we-nav{border-bottom:1px solid rgba(43,22,27,.1);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .we-nav a.brand{font-family:"Fraunces",serif;font-weight:400;font-size:17px;color:var(--we-choc);text-decoration:none;letter-spacing:-.2px}
+    .we-nav a.brand em{color:var(--we-pink);font-style:italic}
+    .we-nav .navlinks a{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:var(--we-choc);text-decoration:none;margin-left:22px;opacity:.7}
+    .we-nav .navlinks a:hover{opacity:1;color:var(--we-pink)}
+    .we-wrap{max-width:720px;margin:0 auto;padding:70px 40px 130px}
+    .we-eyebrow{display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--we-gold);margin-bottom:20px}
+    .we-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(32px,5.5vw,50px);line-height:1.06;letter-spacing:-.5px;margin:0 0 32px}
+    @media(max-width:640px){.we-wrap{padding:50px 22px 90px}.we-nav{padding:18px 22px}}
+    #we-body h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,40px);line-height:1.1;margin:56px 0 22px}
+    #we-body h2{font-family:"Fraunces",serif;font-weight:400;font-size:25px;margin:48px 0 16px;line-height:1.25}
+    #we-body h3{font-family:"Inter",sans-serif;font-weight:600;font-size:17px;margin:34px 0 12px;letter-spacing:.2px}
+    #we-body p{font-size:17px;line-height:1.82;margin:0 0 22px}
+    #we-body ul,#we-body ol{margin:0 0 26px;padding-left:22px}
+    #we-body li{margin-bottom:11px;line-height:1.72;font-size:17px}
+    #we-body strong{font-weight:600;color:var(--we-pink)}
+    #we-body em{font-style:italic}
+    #we-body hr{border:none;border-top:1px solid rgba(43,22,27,.13);margin:56px 0}
+    #we-body blockquote{border-left:3px solid var(--we-bubble);margin:0 0 26px;padding:4px 0 4px 22px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.6}
+    #we-body pre{background:var(--we-choc);color:#F5EDE9;padding:22px 24px;border-radius:8px;overflow-x:auto;margin:0 0 26px;font-size:13.5px;line-height:1.65;position:relative}
+    #we-body pre code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+    #we-body :not(pre)>code{background:rgba(214,46,115,.09);color:var(--we-pink);padding:2px 6px;border-radius:4px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    #we-body table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:15px}
+    #we-body th{text-align:left;font-weight:600;border-bottom:2px solid var(--we-choc);padding:10px 12px 10px 0}
+    #we-body td{border-bottom:1px solid rgba(43,22,27,.12);padding:11px 12px 11px 0;vertical-align:top;line-height:1.6}
+    .copy-btn{position:absolute;top:10px;right:10px;background:var(--we-pink);color:#fff;border:none;border-radius:5px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:6px 11px;cursor:pointer;font-family:"Inter",sans-serif;opacity:.85}
+    .copy-btn:hover{opacity:1}
+    .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:34px 40px;font-size:12.5px;letter-spacing:.4px;color:rgba(43,22,27,.55);text-align:center}
+  </style>
+</head>
+<body>
+  <nav class="we-nav">
+    <a class="brand" href="/weekend-ecosystem">The Weekend <em>Ecosystem™</em></a>
+    <div class="navlinks">
+      <a href="/weekend-ecosystem">All modules</a>
+      <a href="/">Main site</a>
+    </div>
+  </nav>
+
+  <main class="we-wrap">
+    {eyebrow && <span class="we-eyebrow">{eyebrow}</span>}
+    <h1>{title}</h1>
+    <slot />
+  </main>
+
+  <footer class="we-foot">
+    The Weekend Ecosystem™ · The Digital Income Edit™ · For your use only — please don't share access.
+  </footer>
+  <Analytics />
+</body>
+</html>

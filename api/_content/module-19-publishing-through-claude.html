@@ -1,0 +1,54 @@
+<h2>The idea</h2>
+<p>You've been pasting files into GitHub's web interface. It works and it's fine. Once you're publishing weekly it gets old — a single article with images can be six or seven separate paste-and-commit cycles.</p>
+<p>The upgrade: Claude commits directly to your repo. You approve, it pushes, Vercel deploys. One step.</p>
+<p>This module is optional. Skip it if the clicking doesn't bother you.</p>
+<h2>Do this — create a token</h2>
+<p>A personal access token is a password that grants access to your repositories.</p>
+<p>GitHub → Settings → Developer settings → Personal access tokens → <strong>Fine-grained tokens</strong> → Generate new token.</p>
+<ul>
+<li><strong>Repository access:</strong> only the one repo. Never "all repositories."</li>
+<li><strong>Permissions:</strong> Contents → Read and write. That's all it needs.</li>
+<li><strong>Expiration:</strong> 30 days. Shorter is better.</li>
+</ul>
+<p>Copy it. GitHub shows it exactly once.</p>
+<h2>Read this before you use it</h2>
+<p><strong>A token is a password. Treat it like one.</strong></p>
+<ul>
+<li><strong>Never commit it into your repo.</strong> A token in a file, even a private repo, is a token you should assume is compromised.</li>
+<li><strong>Never post it publicly.</strong> Not in a screenshot, not in a forum, not in a support request.</li>
+<li><strong>Revoke it the moment you're done with a session.</strong> Same screen you created it on. Creating a new one takes thirty seconds.</li>
+<li><strong>If you think it leaked, revoke first and ask questions after.</strong> Revoking costs you nothing.</li>
+</ul>
+<p><strong>One more:</strong> if you paste a token into a chat and the assistant refuses to use it and tells you to revoke it — that's the correct response, not a malfunction. Revoke it and issue a fresh one when you're ready.</p>
+<h2>Do this — the commit prompt</h2>
+<pre><code>Commit these files to my repo using the GitHub API.
+
+Repo: [username]/[repo]
+Branch: main
+
+Files:
+- [path]: [contents]
+- [path]: [contents]
+
+Commit message: [message]
+
+Use the standard sequence: get the HEAD ref, get that commit's
+tree, create blobs for each file, build a new tree with base_tree
+set, create the commit, then update the ref. All files in one
+tree so it's a single commit.
+
+Tell me what you're about to commit before you commit it.
+</code></pre>
+<p>For images or PDFs, add: <code>These are binary — base64 encode them and set encoding to base64 in the blob payload.</code></p>
+<h2>Do this — after every session</h2>
+<p>Revoke the token. Then, if you were working in a terminal, clear your shell history.</p>
+<p>Make this reflexive. A token you forgot about is the one that causes the problem.</p>
+<h2>Roadblock — <em>"It says 404 or not found"</em></h2>
+<p>Almost always the token lacking access to that specific repo, not a wrong path. Check the token's repository access.</p>
+<h2>Roadblock — <em>"It committed but the site didn't update"</em></h2>
+<p>Check Vercel's deployment log. A build error means the site keeps serving the last working version — which is the system protecting you. Paste the error to Claude.</p>
+<h2>Roadblock — <em>"I want to undo a commit"</em></h2>
+<p>Don't reverse it — commit a fix forward. Reverting is where people accidentally erase work. Your old versions are all still in the repo either way.</p>
+<h2>Deliverable</h2>
+<p>Either a working commit flow with proper token hygiene, or a decision to keep using the web interface. Both are correct.</p>
+<hr />

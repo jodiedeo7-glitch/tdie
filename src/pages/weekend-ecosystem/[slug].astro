@@ -1,0 +1,100 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import { MODULES, VAULTS } from "../../we-manifest.js";
+
+export function getStaticPaths() {
+  const all = [
+    ...MODULES.map((m, i) => ({
+      ...m,
+      prev: MODULES[i - 1] || null,
+      next: MODULES[i + 1] || VAULTS[0] || null,
+    })),
+    ...VAULTS.map((v, i) => ({
+      ...v,
+      num: null,
+      phase: "The Vaults",
+      prev: i === 0 ? MODULES[MODULES.length - 1] : VAULTS[i - 1],
+      next: VAULTS[i + 1] || null,
+    })),
+  ];
+  return all.map((p) => ({ params: { slug: p.slug }, props: p }));
+}
+
+const { slug, num, title, phase, prev, next } = Astro.props;
+const eyebrow = num ? `${phase} · Module ${num}` : phase;
+---
+
+<CourseLayout title={title} eyebrow={eyebrow}>
+  <div id="locked" style="display:none">
+    <p style="font-size:17px;line-height:1.8">
+      This module is part of The Weekend Ecosystem™.
+      <a href="/weekend-ecosystem" style="color:#D62E73">Enter your purchase email</a> to unlock it.
+    </p>
+  </div>
+
+  <div id="loading" style="font-size:15px;color:rgba(43,22,27,.5)">Loading…</div>
+
+  <div id="we-body"></div>
+
+  <div id="nav-foot" style="display:none;margin-top:70px;padding-top:30px;border-top:1px solid rgba(43,22,27,.13);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    {prev ? (
+      <a href={`/weekend-ecosystem/${prev.slug}`} style="font-size:14px;color:#D62E73;text-decoration:none">← {prev.title}</a>
+    ) : <span />}
+    {next ? (
+      <a href={`/weekend-ecosystem/${next.slug}`} style="font-size:14px;color:#D62E73;text-decoration:none;text-align:right">{next.title} →</a>
+    ) : <span />}
+  </div>
+</CourseLayout>
+
+<script define:vars={{ slug }}>
+  const KEY = "we_token";
+  const token = localStorage.getItem(KEY);
+  const body = document.getElementById("we-body");
+  const loading = document.getElementById("loading");
+  const locked = document.getElementById("locked");
+  const navFoot = document.getElementById("nav-foot");
+
+  function addCopyButtons() {
+    document.querySelectorAll("#we-body pre").forEach((pre) => {
+      const b = document.createElement("button");
+      b.className = "copy-btn";
+      b.textContent = "Copy";
+      b.addEventListener("click", () => {
+        navigator.clipboard.writeText(pre.innerText);
+        b.textContent = "Copied";
+        setTimeout(() => (b.textContent = "Copy"), 1600);
+      });
+      pre.appendChild(b);
+    });
+  }
+
+  async function load() {
+    if (!token) {
+      loading.style.display = "none";
+      locked.style.display = "block";
+      return;
+    }
+    try {
+      const r = await fetch("/api/module", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, slug }),
+      });
+      if (r.status === 401) {
+        localStorage.removeItem(KEY);
+        loading.style.display = "none";
+        locked.style.display = "block";
+        return;
+      }
+      const d = await r.json();
+      body.innerHTML = d.html;
+      loading.style.display = "none";
+      navFoot.style.display = "flex";
+      addCopyButtons();
+    } catch {
+      loading.textContent = "Couldn't load this module. Refresh to try again.";
+    }
+  }
+
+  load();
+</script>

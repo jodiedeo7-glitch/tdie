@@ -1,0 +1,48 @@
+<h2>The idea</h2>
+<p>You're about to ask Claude to generate an entire website's worth of files. This works — reliably — but only with the right setup, because a vague request produces a generic site with invented content, and a specific request produced from your Canon File produces <em>your</em> site.</p>
+<p>Two rules for this module:</p>
+<p><strong>Work inside a Claude Project.</strong> Your Canon File and pillar map live in project knowledge. Every conversation in that project loads them automatically. Building outside the project means re-explaining your business every time and getting drift every time.</p>
+<p><strong>One task per conversation.</strong> Not one conversation for the whole build. Long conversations lose the thread — earlier instructions get outweighed by later ones, and you'll get a second version of a page you already have. Scaffold in one chat, layouts in another, articles one per chat.</p>
+<h2>Do this — the scaffold prompt</h2>
+<p>New conversation in your project. Paste this, filled in:</p>
+<pre><code>Build the scaffold for my Astro site. Use my Canon File in project
+knowledge as the source of truth for everything.
+
+LIVE FACTS — these override anything that disagrees:
+- Domain: [yourdomain.com or learn.yourdomain.com]
+- URL pattern: /learn/[slug] — flat, no category folders
+- Deploying to Vercel from GitHub
+- Colors and fonts: as specified in the Canon File
+
+What I need:
+1. package.json with Astro and the Vercel adapter
+2. astro.config.mjs configured for Vercel, with my site URL set
+3. A base layout at src/layouts/PageLayout.astro — nav, footer,
+   fonts loaded, brand colors as CSS variables
+4. A homepage at src/pages/index.astro
+5. A /learn index page listing articles
+6. tsconfig.json, .gitignore, robots.txt
+
+Rules:
+- Do not invent products, prices, links, or copy. If you need a fact
+  that isn't in my Canon File, stop and ask.
+- Placeholder text is fine where real copy comes later — mark it
+  clearly as PLACEHOLDER.
+- Give me each file complete, with its exact file path. No fragments.
+</code></pre>
+<p>Claude returns a set of complete files. Read them for invented products — that's the one thing to check. If a price or product appears that isn't in your Canon File, say <code>That product doesn't exist. Remove it.</code> and it will.</p>
+<h2>Do this — getting files into GitHub</h2>
+<p>Two routes. Pick one and stay with it.</p>
+<p><strong>Route A — the web interface.</strong> Slower, zero setup, works on any computer. In your repo: <strong>Add file → Create new file</strong>. Type the full path in the filename box (<code>src/layouts/PageLayout.astro</code> — the slashes create the folders automatically). Paste the contents. Scroll down, <strong>Commit new file</strong>. Repeat per file.</p>
+<p>Roughly 8 files for the scaffold. Fifteen minutes.</p>
+<p><strong>Route B — Claude commits for you.</strong> Faster, more setup. You create a GitHub personal access token and Claude pushes files directly through GitHub's API. Covered fully in Module 19, along with the security practices that make it safe.</p>
+<p>Do Route A this morning. It gets you live today with nothing to configure. Switch to Route B once you're publishing weekly and the clicking gets old.</p>
+<h2>Roadblock — <em>"Claude gave me a fragment, not the whole file"</em></h2>
+<p>Say: <code>Give me the complete file, top to bottom, ready to paste. No omissions, no "rest of file unchanged."</code> Partial files are the single most common cause of a broken build, because you paste it, something's missing, and the error message points somewhere unrelated.</p>
+<h2>Roadblock — <em>"I don't know if this file is right"</em></h2>
+<p>You don't need to. If it's wrong, the deploy fails with an error message. Paste the error back to Claude and it fixes it. That loop — deploy, error, paste, fix — is a normal part of the build, not a sign you're doing it wrong.</p>
+<h2>Roadblock — <em>"Claude wrote copy about my business that's wrong"</em></h2>
+<p>Your Canon File has a gap. Add the correct fact to the Canon File, re-upload it to project knowledge, and regenerate. Fixing the output alone means the same error comes back next time.</p>
+<h2>Deliverable</h2>
+<p>Scaffold files committed to your repo.</p>
+<hr />

@@ -1,0 +1,31 @@
+<h2>The idea</h2>
+<p>Two tools, different jobs. You need both and neither takes long.</p>
+<p><strong>Search Console</strong> tells you what happened in Google — what people searched, what you appeared for, what got clicked. It's the only place this data exists.</p>
+<p><strong>Site analytics</strong> tells you what happened on your site — which pages people read, where they came from, where they left.</p>
+<h2>Do this — analytics</h2>
+<p>If you're on Vercel, use Vercel Analytics. It's built in, it's free at your level, and it needs no cookie banner because it doesn't track individuals.</p>
+<pre><code>Add Vercel Web Analytics to my site. Add the package to
+package.json and include the Analytics component in every layout
+that renders its own &lt;html&gt; tag — check all of them, not just
+the main one. Give me each changed file complete.
+</code></pre>
+<p><strong>The trap:</strong> if any page has its own <code>&lt;html&gt;</code> instead of using a layout, analytics won't load there and that page reports zero traffic forever. Ask for every file, not the obvious one.</p>
+<p>Then enable it in the Vercel dashboard — Project → Analytics → Enable. Code alone isn't enough.</p>
+<h2>Do this — Search Console</h2>
+<p>Set up in Module 7. Now use it. Two reports:</p>
+<p><strong>Performance</strong> — every search that showed your site, with impressions, clicks, and position. This is where your next articles come from.</p>
+<p><strong>Pages</strong> — what's indexed and what isn't, with reasons.</p>
+<h2>What actually matters in month one</h2>
+<p><strong>Impressions.</strong> Not clicks — impressions. Impressions mean Google is showing you. Clicks follow, but impressions move first and they're the early signal that anything is working.</p>
+<p><strong>Which queries you appear for.</strong> Frequently not the ones you targeted. This is genuinely useful information: a query you're at position 15 for, that you never wrote about deliberately, is an article you should write on purpose.</p>
+<p><strong>Which pages get indexed.</strong> New pages take days to weeks. If something isn't indexed after a month, check it for a <code>noindex</code> tag or an orphaned URL with no internal links.</p>
+<h2>What does not matter in month one</h2>
+<p>Traffic totals, bounce rate, time on page, and every number a course sells you a dashboard for. Your sample size is too small for any of it to mean anything, and watching them daily is how people talk themselves into quitting a system that's working normally.</p>
+<p>Check monthly. Not daily.</p>
+<h2>Roadblock — <em>"Analytics shows zero"</em></h2>
+<p>Enabled in the dashboard? Snippet in every layout? Ad blocker on your own browser? Check in that order.</p>
+<h2>Roadblock — <em>"Search Console shows nothing after two weeks"</em></h2>
+<p>Normal. New sites take weeks to accumulate enough data to display. Nothing to fix.</p>
+<h2>Deliverable</h2>
+<p>Analytics on every layout and enabled in the dashboard, Search Console verified with a submitted sitemap.</p>
+<hr />

@@ -1,0 +1,38 @@
+<h2>The idea</h2>
+<p>Three connections in a specific order: GitHub → Vercel, then domain → Vercel, then everything → one canonical address.</p>
+<p>The last one is the one people skip, and it's the one that quietly suppresses your rankings.</p>
+<h2>Do this — connect Vercel to GitHub</h2>
+<p>In Vercel: <strong>Add New → Project</strong>. Your repo appears in the list. Import it.</p>
+<p>Vercel detects Astro automatically. Don't change the build settings. Click <strong>Deploy</strong>.</p>
+<p>Ninety seconds later you have a live site at something like <code>yourbrand-site.vercel.app</code>. Open it. It's real, it's on the internet, and it's yours.</p>
+<p>From now on, <strong>every commit to GitHub deploys automatically.</strong> You will never manually upload a file again. That's the whole publishing pipeline.</p>
+<h2>Do this — connect your domain</h2>
+<p>In Vercel: <strong>Project → Settings → Domains</strong>. Add your domain. Vercel gives you DNS records.</p>
+<p>At your registrar, find DNS settings and add exactly what Vercel gave you:</p>
+<ul>
+<li><strong>Root domain</strong> (<code>yourdomain.com</code>) → usually an A record</li>
+<li><strong>Subdomain</strong> (<code>learn.yourdomain.com</code>) → usually a CNAME</li>
+</ul>
+<p>Add them, save, and wait. DNS propagation takes anywhere from ten minutes to a few hours. Vercel's dashboard shows a checkmark when it's working.</p>
+<h2>Do this — pick one canonical address, then enforce it</h2>
+<p>Your site can be reached several ways: with <code>www</code> and without, at the root and at a subdomain, over the <code>.vercel.app</code> address. To a search engine these are <strong>different websites with identical content.</strong></p>
+<p>Search engines respond by splitting your ranking signal across the copies, or picking one arbitrarily and ignoring your links to the others. Either way you rank worse than you should, and nothing looks broken.</p>
+<p>Fix it in two steps:</p>
+<p><strong>1. Pick one.</strong> Write it in your Canon File as canonical. Use it in every link, every pin, every email, forever.</p>
+<p><strong>2. Redirect the rest to it — a 301 permanent redirect.</strong> In Vercel's Domains panel, add the other versions and set each to redirect to your canonical one. Vercel handles this in the interface; you don't need to write anything.</p>
+<p>301 specifically — a permanent redirect passes your ranking signal to the destination. A temporary one doesn't.</p>
+<h2>Do this — verify with Google</h2>
+<p><strong>Google Search Console</strong> → Add property → <strong>URL prefix</strong> → paste your exact canonical address including <code>https://</code>.</p>
+<p>Verify by DNS TXT record — same place you added the other DNS records at your registrar.</p>
+<p>Then submit your sitemap: <code>https://yourcanonicaldomain.com/sitemap.xml</code></p>
+<h2>Roadblock — <em>"Search Console says my sitemap couldn't be fetched"</em></h2>
+<p>Almost always the URL format. It needs the full address with <code>https://</code>, not just the path, and it must match your canonical domain exactly — including whether you use <code>www</code>. A Domain-type property and a URL-prefix property behave differently here; use URL prefix.</p>
+<h2>Roadblock — <em>"It says 'Discovered pages: 0'"</em></h2>
+<p>Normal on day one. Google needs days to weeks to crawl a new site. Nothing is broken and there's nothing to fix. Publish and wait.</p>
+<h2>Roadblock — <em>"My domain shows a certificate warning"</em></h2>
+<p>Almost always DNS still propagating. Vercel issues SSL certificates automatically once DNS resolves. Wait a few hours before touching anything — the most common cause of a real, lasting break here is someone "fixing" a warning that was about to clear on its own.</p>
+<h2>Roadblock — <em>"Vercel says the domain is already in use"</em></h2>
+<p>It's pointed at another service, or attached to a different Vercel project. Remove it from the other project first, or use a subdomain instead.</p>
+<h2>Deliverable</h2>
+<p>A live site at your own domain, one canonical address with the rest redirecting to it, verified in Google Search Console, deploying automatically on every commit.</p>
+<hr />

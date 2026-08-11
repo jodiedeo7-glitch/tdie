@@ -1,0 +1,70 @@
+<h2>The idea</h2>
+<p>You need images constantly — pin graphics, article headers, resource covers, module covers. You don't need to be in any of them, and you don't need a photographer.</p>
+<p>Two tools, two jobs:</p>
+<p><strong>AI image generation</strong> — photographic scenes, lifestyle images, anything with a person in it.</p>
+<p><strong>Canva</strong> — text-heavy graphics, and as a correction layer over AI images when the rendered text comes out misspelled.</p>
+<h2>Do this — the anatomy of a prompt that works</h2>
+<p>Nine parts. Include all nine and the results stop being random:</p>
+<ol>
+<li><strong>Subject</strong> — what's in frame</li>
+<li><strong>Setting</strong> — where</li>
+<li><strong>Lighting</strong> — "soft natural window light," "golden hour"</li>
+<li><strong>Camera</strong> — "Canon R5, 85mm f/1.4, shallow depth of field." This does real work; it's the difference between a photograph and an illustration.</li>
+<li><strong>Palette</strong> — your exact hex codes, every time</li>
+<li><strong>Text</strong> — the exact words, in quotes, with placement</li>
+<li><strong>Composition</strong> — where the subject sits, where text goes</li>
+<li><strong>Realism enforcement</strong> — "a real photograph, not a 3D render, not CGI"</li>
+<li><strong>Format</strong> — "vertical 2:3" for pins</li>
+</ol>
+<h2>Do this — the consistency problem</h2>
+<p>Generate three covers separately and you get three different brands. Slightly different lighting, different color temperature, different mood. Individually fine. Side by side in a classroom, obviously unrelated.</p>
+<p><strong>The fix is a locked shell.</strong> Write one prompt where everything is fixed except a few named swap fields. Change only those.</p>
+<pre><code>LOCKED SHELL — change ONLY the swap fields. Every other word
+stays identical across every cover.
+
+A real photograph, not a 3D render, not CGI, of [SUBJECT],
+[POSE], in [FIXED SETTING] with soft natural window light.
+Canon R5, 85mm f/1.4, shallow depth of field.
+
+Subject in the right third of frame. Text occupies the left
+two-thirds, using that space generously — no empty dead area,
+no floating text island.
+
+Headline &quot;[HEADLINE]&quot; in [HEX], large enough to dominate the
+left panel. Subtitle &quot;[SUBTITLE]&quot; beneath in [HEX].
+
+A solid strip runs the full bottom edge, substantial in height,
+fully opaque. Strip color: [BADGE HEX]. Label &quot;[BADGE]&quot; on it.
+
+Where the text panel meets the photograph, a soft gradient
+blend — no hard vertical seam.
+
+Colors rendered rich and true-to-tone, not desaturated.
+
+Palette: [your hex codes]. PHOTOREALISM — enforce hard.
+Vertical format.
+
+SWAP FIELDS: [SUBJECT] [POSE] [HEADLINE] [SUBTITLE] [BADGE]
+[BADGE HEX]
+</code></pre>
+<p>Every specific instruction in that shell exists because its absence produced a specific failure: washed-out color, a hard panel seam, dead space, a pale undersized headline, a translucent strip, a CGI look.</p>
+<h2>Do this — a consistent person without a real person</h2>
+<p>If you want a recognizable face across your brand that isn't yours, generate one and then <strong>never describe it in words again.</strong></p>
+<p>Word descriptions drift. "A woman in her thirties with long brown hair" produces a different woman every time.</p>
+<p>Instead: generate one image you're happy with, save it as your reference, and <strong>attach it to every future generation</strong>, referring to it as "this exact person." Describe only what changes — the setting, the clothes, the pose.</p>
+<p>Lock the wardrobe too. A short list of things she wears keeps the brand coherent. A recurring prop helps more than it sounds like it should.</p>
+<h2>Do this — text in images</h2>
+<p>AI image tools render text well now, but not perfectly. Occasionally you get a misspelling in a headline.</p>
+<p><strong>Always check the text before publishing.</strong> When it's wrong, don't regenerate and hope — open the image in Canva and lay correct text over it. Faster and certain.</p>
+<h2>The hard ban</h2>
+<p><strong>No trademarked characters, brands, logos, or IP in any generated image.</strong></p>
+<p>Not as a background element, not as a joke, not "in the style of" a known franchise. This has cost people their accounts on platforms that don't offer appeals. There is no version of this that's worth it.</p>
+<h2>Roadblock — <em>"My images look like 3D renders"</em></h2>
+<p>Add "a real photograph, not a 3D render, not CGI" and add real camera specs. Both, not one.</p>
+<h2>Roadblock — <em>"Colors don't match my brand"</em></h2>
+<p>Hex codes in every prompt, every time. Color names aren't precise enough — "pink" spans a hundred colors and you'll get a different one each generation.</p>
+<h2>Roadblock — <em>"Text is unreadable over the photo"</em></h2>
+<p>Ask for text in a distinct panel or over a solid area, not floating over the photograph. Then blend the panel edge into the image so it doesn't read as two pasted rectangles.</p>
+<h2>Deliverable</h2>
+<p>A locked shell prompt for your brand, a reference image if you're using a consistent person, and your first batch of pin graphics.</p>
+<hr />

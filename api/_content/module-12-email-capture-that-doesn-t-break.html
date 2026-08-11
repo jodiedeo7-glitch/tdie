@@ -1,0 +1,27 @@
+<h2>Read this part twice</h2>
+<p>The most expensive failure in this entire build is a signup form that looks perfect and captures nothing.</p>
+<p>It happens like this. A form gets built into the layout. It's styled, on-brand, has a submit button that responds when clicked. The wiring to the email platform is wrong or absent. Nobody notices, because nothing visibly fails — the button clicks, the page does something, the visitor moves on.</p>
+<p>Because it's in the layout, it's on every page at once. Every article you publish inherits it. Every pin you post drives traffic to it. And you find out three months later when you check your list and it has nine people on it, all of whom you added manually.</p>
+<p>Nothing else in this build fails this quietly or this expensively.</p>
+<h2>The fix</h2>
+<p><strong>Don't build a form. Link to your email platform's hosted page.</strong></p>
+<p>Every email platform gives you a hosted landing page for any signup form — a real URL you can send people to. Their page, their form, their infrastructure, their delivery. It cannot silently stop working, because it isn't your code.</p>
+<p>Marginally less elegant. Permanently reliable. Take the trade.</p>
+<h2>Do this</h2>
+<p><strong>1. Get the URL.</strong> In your email platform, create a form or landing page and copy its public URL. In MailerLite it's under Forms → Landing pages. Similar in ConvertKit, Flodesk, Beehiiv, or anything else.</p>
+<p><strong>2. Put it in one constant.</strong> At the top of your layout:</p>
+<pre><code class="language-astro">const NEWSLETTER_URL = &quot;https://your-hosted-signup-page&quot;;
+</code></pre>
+<p>One place. Change platforms in two years, edit one line.</p>
+<p><strong>3. Test it yourself, end to end.</strong> Click the link from a live article. Sign up with a real email you can check. Confirm the email arrives and the subscriber appears in your platform.</p>
+<p>Do this now, and repeat it once a month. It takes ninety seconds and it's the only way you'd ever catch a silent break.</p>
+<h2>If you want an inline form anyway</h2>
+<p>Some platforms provide an embed snippet that genuinely works. If yours does, use it — but the test above is not optional, and repeat it after any layout change.</p>
+<p>Never accept a form built from scratch without wiring. If Claude generates a form with <code>onsubmit="return false"</code> or an empty action, that form is decorative. It does nothing. Ask for the link version instead.</p>
+<h2>Roadblock — <em>"I don't have an email platform yet"</em></h2>
+<p>Pick one tonight and use the free tier. MailerLite, ConvertKit, and Beehiiv all have real free tiers well past your first thousand subscribers. Which one matters far less than starting to collect now — the list you don't build this month is the one you don't have next year.</p>
+<h2>Roadblock — <em>"My form was live and broken for months"</em></h2>
+<p>Two things. Fix the layout, which fixes every page at once. Then don't try to recover the lost signups — they're gone, and the list you build from here forward is the one that matters.</p>
+<h2>Deliverable</h2>
+<p>A working signup path from every article, tested by you personally, with the URL in a single constant.</p>
+<hr />

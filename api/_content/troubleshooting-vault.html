@@ -1,0 +1,174 @@
+<h1>TROUBLESHOOTING VAULT</h1>
+<p>Every problem hit during a real build of this system, paired with the fix that actually worked.</p>
+<p><strong>How to use this:</strong> find your symptom, apply the fix. Nothing here is theoretical — each one cost someone real time.</p>
+<hr />
+<h2>CONTENTS</h2>
+<p><strong>1</strong> — Setup &amp; deploy · <strong>2</strong> — Files &amp; layouts · <strong>3</strong> — Writing with Claude · <strong>4</strong> — Links &amp; routing · <strong>5</strong> — Email capture · <strong>6</strong> — SEO &amp; indexing · <strong>7</strong> — Pinterest · <strong>8</strong> — Images · <strong>9</strong> — Publishing &amp; GitHub · <strong>10</strong> — Keeping it running</p>
+<hr />
+<h1>1 · SETUP &amp; DEPLOY</h1>
+<p><strong>"It's asking me to choose a plan."</strong>
+Free tier, on GitHub and Vercel both. Paid tiers are for teams and commercial usage.</p>
+<p><strong>"Public or private repo?"</strong>
+Private. Your published site is public regardless; the repo holds drafts and config.</p>
+<p><strong>"I already own a domain and it's in use."</strong>
+Use a subdomain — <code>learn.yourdomain.com</code>. Don't move your existing site.</p>
+<p><strong>"Vercel says the domain is already in use."</strong>
+It's attached to another service or another Vercel project. Remove it there first, or use a subdomain.</p>
+<p><strong>"My domain shows a certificate warning."</strong>
+Almost always DNS still propagating. Vercel issues SSL automatically once DNS resolves. <strong>Wait a few hours before touching anything</strong> — the most common cause of a real break here is someone "fixing" a warning that was about to clear.</p>
+<p><strong>"The deploy failed."</strong>
+Normal. Open Vercel's build log, copy the error, paste it to Claude. Deploy → error → paste → fix is a standard part of the build, not a sign you're doing it wrong.</p>
+<p><strong>"It deployed but the site didn't change."</strong>
+Check the deployment log. A build error means Vercel keeps serving the last working version — the system protecting you. Fix the error and it redeploys.</p>
+<hr />
+<h1>2 · FILES &amp; LAYOUTS</h1>
+<p><strong>"Claude gave me a fragment, not the whole file."</strong>
+Ask for the complete file explicitly. Partial files are the single most common cause of a broken build — you paste it, something's missing, and the error points somewhere unrelated.</p>
+<p><strong>"I don't know if this file is correct."</strong>
+You don't need to. If it's wrong, the deploy fails and tells you. Paste the error back.</p>
+<p><strong>"My four standalone pages each have their own header."</strong>
+Common when pages get built before the layout exists. Every one is a separate edit for every future change. Refactor them onto the layout now — the longer you wait, the more they drift apart.</p>
+<p><strong>"I have to change the same thing in forty files."</strong>
+That thing belonged in a layout. Move it there, then delete it from the individual pages. Rule: if it appears on more than one page, it lives in the layout.</p>
+<p><strong>"A file named one thing turned out to contain something else."</strong>
+This one costs whole rebuilds. You paste in <code>resource-map.md</code> and it's actually an old decisions log you renamed. Claude trusts it completely and everything downstream is wrong while looking fine.
+<strong>Fix:</strong> every canon document starts with a title and version line — <code># RESOURCE MAP v2.1 — updated Aug 3</code>. Read the first three lines before using any file. Four seconds.</p>
+<p><strong>"A page has its own <code>&lt;html&gt;</code> tag and analytics doesn't load there."</strong>
+Any page bypassing the layout misses everything the layout provides. Ask Claude to check <em>every</em> file that renders its own <code>&lt;html&gt;</code>, not just the obvious one.</p>
+<hr />
+<h1>3 · WRITING WITH CLAUDE</h1>
+<p><strong>"It mentioned a product I don't sell."</strong>
+Your Canon File has a gap. Add it to the DOES NOT EXIST list, re-upload, regenerate. Fixing only the output means it recurs.</p>
+<p><strong>"It came out at 1,800 words instead of 3,000."</strong>
+Ask for depth, not length. Naming what you don't want — padding, restatement — matters. Asking only for "longer" gets you restatement.</p>
+<p><strong>"It doesn't sound like me."</strong>
+Your voice section is too vague. The banned word list changes output more than any description. Add ten words you'd never say.</p>
+<p><strong>"It rewrote my whole article during an SEO pass."</strong>
+Ask for changes only, with exact replacement text. Full rewrites lose good material you didn't ask it to touch.</p>
+<p><strong>"Claude keeps forgetting my Canon File."</strong>
+Don't paste it per-message. Put it in a Claude Project as project knowledge and it loads on every conversation automatically.</p>
+<p><strong>"I updated a file but Claude uses the old version."</strong>
+Uploaded files don't sync from your computer. Delete the old one, upload the new one. Same filename ≠ same file.</p>
+<p><strong>"It keeps asking questions I already answered."</strong>
+The answer is in the conversation but not in project knowledge, so it doesn't survive to the next chat. Anything you answer twice belongs in your Canon File.</p>
+<p><strong>"Claude won't build it — it's asking questions instead."</strong>
+That's the system working. A stop means it found something that would have made the output wrong. Answer the question, then fix the cause so it doesn't recur. Don't tell it to guess — you'll get a confident wrong deliverable you can't audit.</p>
+<p><strong>"It stopped on something I don't care about."</strong>
+Tell it explicitly to omit that slot and continue. Directing an omission is completely different from telling it to guess.</p>
+<p><strong>"I ran one huge prompt and got a mess."</strong>
+Roles cancel each other, context collapses, and overlapping requests produce duplicate structures. Role and context in project instructions once; one task per conversation after that.</p>
+<hr />
+<h1>4 · LINKS &amp; ROUTING</h1>
+<p><strong>"My related links point to articles I haven't written."</strong>
+Remove them. A link to a page you plan to write is a broken link today.</p>
+<p><strong>"I have forty articles with hardcoded links."</strong>
+Convert as you touch them, not all at once. Next time you edit an article, move its links into props. Done within a month, no dedicated project.</p>
+<p><strong>"My canon says one URL and the live site uses another."</strong>
+The live site wins, always. Then fix the document so the conflict doesn't recur.</p>
+<p><strong>"Someone clicked my free resource and hit a paywall."</strong>
+Anything in the free slot must be genuinely $0. Not free-with-membership, not a trial. This doesn't just lose the click — it costs you the trust you spent 3,000 words earning.</p>
+<p><strong>"A pillar has no matching paid product."</strong>
+Leave it empty. Substituting the nearest product teaches readers your recommendations aren't about them. The gap is also your product roadmap.</p>
+<p><strong>"An empty slot rendered as a broken link."</strong>
+Your layout is filling slots rather than omitting them. The rule: if a prop is missing, render nothing. An omitted slot costs one opportunity; a broken link costs trust at the exact moment someone was interested.</p>
+<hr />
+<h1>5 · EMAIL CAPTURE</h1>
+<p><strong>"My form was live and broken for months."</strong>
+The most expensive failure in this build. It looks perfect, the button clicks, nothing is captured, and because it's in the layout it's on every page at once.
+<strong>Fix:</strong> don't build a form. Link to your email platform's hosted signup page. Their infrastructure, cannot silently break.
+<strong>Then:</strong> test it yourself monthly. Sign up with a real email. Ninety seconds.</p>
+<p><strong>"Claude generated a form with <code>onsubmit='return false'</code>."</strong>
+That form is decorative. It does nothing. Ask for the link version.</p>
+<p><strong>"I don't have an email platform."</strong>
+Pick one tonight, use the free tier. Which one matters far less than starting to collect — the list you don't build this month is the one you don't have next year.</p>
+<p><strong>"Someone found my gated PDF without signing up."</strong>
+It's at a public URL. Anything in your site's public folder is public — no exceptions. Move the file to your email platform's delivery and remove it from the site.</p>
+<hr />
+<h1>6 · SEO &amp; INDEXING</h1>
+<p><strong>"Search Console says my sitemap couldn't be fetched."</strong>
+Almost always the URL format. Full address with <code>https://</code>, matching your canonical domain exactly including whether you use <code>www</code>. Use a URL-prefix property, not a Domain property — they behave differently here.</p>
+<p><strong>"Discovered pages: 0."</strong>
+Normal on day one. Google takes days to weeks on a new site. Nothing is broken.</p>
+<p><strong>"Search Console shows nothing after two weeks."</strong>
+Also normal. New sites need weeks to accumulate displayable data.</p>
+<p><strong>"My site is reachable at four different addresses."</strong>
+To a search engine those are four sites with identical content. It splits your ranking signal or picks one arbitrarily. Pick one canonical address, 301-redirect the rest to it. Permanent, not temporary — only a 301 passes ranking signal.</p>
+<p><strong>"A page isn't getting indexed after a month."</strong>
+Check for a <code>noindex</code> tag, and check that something on your site links to it. An orphaned page with no internal links is hard for Google to find.</p>
+<p><strong>"Google needs a publish date and my pages don't have one."</strong>
+Pass a real date on every article. Never invent one — if it's missing, omit it from the schema. You lose a rich result; faking it costs more if caught.</p>
+<p><strong>"Analytics shows zero."</strong>
+In order: enabled in the dashboard? Snippet in every layout? Ad blocker on your own browser?</p>
+<hr />
+<h1>7 · PINTEREST</h1>
+<p><strong>"My links got flagged as spam."</strong>
+Four causes, fix all of them:
+1. Raw affiliate links in pins → route through bridge pages
+2. Link-in-bio platform domains → these carry everyone else's reputation
+3. Money-shouting page titles → reads as spam to an automated system
+4. Multiple domains serving identical content → fix with 301s</p>
+<p><strong>Then wait for a re-crawl — one to two weeks — before appealing.</strong> Appealing while the flagged pattern is still live gets you denied and burns the appeal.</p>
+<p><strong>"I got a certificate warning while diagnosing a Pinterest problem."</strong>
+Frequently a false alarm from DNS mid-propagation, unrelated to the flag. Confirm it's real before acting on it.</p>
+<p><strong>"My pins get impressions but no clicks."</strong>
+The title isn't promising a specific enough outcome, or the image doesn't match the promise. Test titles first — faster variable.</p>
+<p><strong>"Nothing is happening at all."</strong>
+Pinterest takes 60–90 days to start reading a new account. The most common reason people quit right before it works.</p>
+<p><strong>"I have 18 boards and most are empty."</strong>
+Empty boards dilute the account. Merge down to 8–12, fill the ones you keep before creating more.</p>
+<p><strong>"Two of my boards target the same terms."</strong>
+Merge them. Two half-boards split your own signal.</p>
+<hr />
+<h1>8 · IMAGES</h1>
+<p><strong>"My images look like 3D renders."</strong>
+Add "a real photograph, not a 3D render, not CGI" <em>and</em> real camera specs. Both, not one.</p>
+<p><strong>"Three covers look like three different brands."</strong>
+Generated separately, so they drifted. Use a locked shell — one prompt with everything fixed except named swap fields.</p>
+<p><strong>"Colors don't match my brand."</strong>
+Hex codes in every prompt, every time. Color names aren't precise enough — "pink" spans a hundred colors.</p>
+<p><strong>"My headline color came out pale and too small."</strong>
+Specify saturation and dominance explicitly: "bold saturated [hex] — deep and vivid, not pale — large enough to dominate the panel."</p>
+<p><strong>"There's a hard visible seam where the text panel meets the photo."</strong>
+Ask for a soft gradient blend at the transition. Without it you get two pasted rectangles.</p>
+<p><strong>"The text panel has a big empty area."</strong>
+Specify that text uses the space generously — no dead area, no floating text island.</p>
+<p><strong>"My subject's clothes came out washed out."</strong>
+Add: colors rendered rich and true-to-tone, not desaturated by the light.</p>
+<p><strong>"The bottom strip is thin and see-through."</strong>
+Specify substantial height and fully opaque. "Strip" alone gets you a translucent band.</p>
+<p><strong>"The headline is misspelled in the generated image."</strong>
+Don't regenerate and hope. Open it in Canva and lay correct text over it. Faster and certain. Always check text before publishing.</p>
+<p><strong>"My generated person looks different every time."</strong>
+Stop describing her in words — word descriptions drift. Generate one image, save it as a reference, attach it to every future generation as "this exact person," and describe only what changes.</p>
+<p><strong>"My account got restricted over an image."</strong>
+Trademarked characters, brands, or logos in generated images. Hard ban, no exceptions, some platforms don't offer appeals.</p>
+<hr />
+<h1>9 · PUBLISHING &amp; GITHUB</h1>
+<p><strong>"It says 404 or not found."</strong>
+Almost always the token lacking access to that specific repo, not a wrong path.</p>
+<p><strong>"I pasted my token in chat and it refused to use it."</strong>
+That's the correct response, not a malfunction. Revoke that token and issue a fresh one when you're ready.</p>
+<p><strong>"I want to undo a commit."</strong>
+Commit a fix forward instead of reverting. Reverting is where people accidentally erase work, and your old versions are all still in the repo either way.</p>
+<p><strong>"I have a lot of files to commit."</strong>
+One commit with all files in a single tree, not one commit per file.</p>
+<p><strong>"Committing images fails."</strong>
+Binary files need base64 encoding with the encoding flag set in the blob payload.</p>
+<p><strong>"I forgot to revoke a token."</strong>
+Revoke it now. Make it reflexive at the end of every session — a token you forgot about is the one that causes the problem.</p>
+<hr />
+<h1>10 · KEEPING IT RUNNING</h1>
+<p><strong>"I fell off for a month."</strong>
+Nothing was lost. Articles kept ranking, pins kept circulating — that's the whole point of assets over feeds. Restart at one article a week. Don't try to catch up; catching up is how people quit twice.</p>
+<p><strong>"I can't do 2 hours a day."</strong>
+One hour, three days a week, slower pace. Consistency at a low rate beats bursts, because only one of the two survives a busy month.</p>
+<p><strong>"I have twelve pillars and can't keep up."</strong>
+You don't need twelve. Five deep clusters outperform twelve thin ones. Cut the ones you don't want to write about.</p>
+<p><strong>"A pillar has three supporting articles a year in."</strong>
+Cut it. That's not a backlog, it's a topic you don't actually want to write about. Put the effort into a pillar that's pulling.</p>
+<p><strong>"My affiliate link goes to a dead product."</strong>
+Verify quarterly — products get retired, repriced, and pulled without notice. If everything routes through bridge pages, fixing it is one page edit instead of hunting every pin you ever posted.</p>
+<p><strong>"I check my analytics constantly and get discouraged."</strong>
+Monthly, not daily. Your sample size is too small for daily numbers to mean anything, and watching them is how people talk themselves into quitting a system that's working normally.</p>
+<p><strong>"Which numbers actually matter early?"</strong>
+Impressions, which queries you appear for, and which pages get indexed. Not traffic totals, bounce rate, or time on page — not yet.</p>

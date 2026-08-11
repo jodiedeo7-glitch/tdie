@@ -1,0 +1,103 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import { MODULES, VAULTS } from "../../we-manifest.js";
+
+const phases = [...new Set(MODULES.map((m) => m.phase))];
+---
+
+<CourseLayout title="The Weekend Ecosystem™" eyebrow="Your website + blog, built from what you already have">
+  <div id="gate">
+    <p style="font-size:17px;line-height:1.8;margin-bottom:26px">
+      Enter the email address you purchased with to unlock the course.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;max-width:460px">
+      <input id="email" type="email" placeholder="you@example.com" autocomplete="email"
+        style="flex:1;min-width:220px;padding:14px 16px;border:1px solid rgba(43,22,27,.25);border-radius:6px;font-size:16px;font-family:Inter,sans-serif;background:#fff" />
+      <button id="go"
+        style="padding:14px 26px;background:#D62E73;color:#fff;border:none;border-radius:6px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;cursor:pointer;font-family:Inter,sans-serif">Unlock</button>
+    </div>
+    <p id="err" style="color:#D62E73;font-size:15px;margin-top:16px;display:none"></p>
+    <p style="font-size:14px;line-height:1.7;margin-top:30px;color:rgba(43,22,27,.6)">
+      Access lasts 30 days per device, then you'll re-enter your email. Bought it and can't get in?
+      Email <a href="mailto:hello@thedigitalincomeedit.com" style="color:#D62E73">hello@thedigitalincomeedit.com</a>.
+    </p>
+  </div>
+
+  <div id="contents" style="display:none">
+    <p style="font-size:17px;line-height:1.82;margin-bottom:14px">
+      Twenty-two modules across one weekend, plus three vaults you'll keep coming back to.
+      Work through them in order the first time.
+    </p>
+    <p style="font-size:17px;line-height:1.82;margin-bottom:44px">
+      Start with Phase 0 tonight. You won't write anything — you'll find what you already wrote.
+    </p>
+
+    {phases.map((phase) => (
+      <div style="margin-bottom:44px">
+        <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#C8A96A;margin-bottom:18px">{phase}</span>
+        {MODULES.filter((m) => m.phase === phase).map((m) => (
+          <a href={`/weekend-ecosystem/${m.slug}`}
+            style="display:block;padding:15px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
+            <span style="font-size:12.5px;letter-spacing:1.4px;color:rgba(43,22,27,.45);margin-right:12px">{String(m.num).padStart(2, "0")}</span>
+            <span style="font-family:Fraunces,serif;font-size:19px;font-weight:400">{m.title}</span>
+          </a>
+        ))}
+      </div>
+    ))}
+
+    <div style="margin-bottom:44px">
+      <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73;margin-bottom:18px">The Vaults</span>
+      {VAULTS.map((v) => (
+        <a href={`/weekend-ecosystem/${v.slug}`}
+          style="display:block;padding:15px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
+          <span style="font-family:Fraunces,serif;font-size:19px;font-weight:400">{v.title}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</CourseLayout>
+
+<script>
+  const KEY = "we_token";
+  const gate = document.getElementById("gate");
+  const contents = document.getElementById("contents");
+  const err = document.getElementById("err");
+  const btn = document.getElementById("go");
+  const input = document.getElementById("email");
+
+  function show() {
+    gate.style.display = "none";
+    contents.style.display = "block";
+  }
+
+  if (localStorage.getItem(KEY)) show();
+
+  async function unlock() {
+    const email = input.value.trim();
+    err.style.display = "none";
+    btn.textContent = "Checking…";
+    btn.disabled = true;
+    try {
+      const r = await fetch("/api/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || "Something went wrong.");
+      localStorage.setItem(KEY, d.token);
+      show();
+    } catch (e) {
+      err.textContent = e.message;
+      err.style.display = "block";
+    } finally {
+      btn.textContent = "Unlock";
+      btn.disabled = false;
+    }
+  }
+
+  btn.addEventListener("click", unlock);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") unlock();
+  });
+</script>

@@ -1,0 +1,49 @@
+<h2>Read this part twice</h2>
+<p>At some point Claude will refuse to build what you asked for and come back with questions instead of a deliverable.</p>
+<p>This reads as failure. It is not. It's the most valuable thing in the system, and beginners abandon builds here more than anywhere else.</p>
+<p><strong>A stop means Claude found something that would have made the output wrong, and told you instead of guessing.</strong></p>
+<p>The alternative isn't a good deliverable. The alternative is a confident, complete, wrong deliverable that looks perfect and that you publish.</p>
+<h2>The four legitimate stops</h2>
+<p><strong>1. A fact it can't verify.</strong></p>
+<blockquote>
+<p><em>"I don't have the URL for the free resource on this pillar."</em></p>
+</blockquote>
+<p>Give it the fact, or tell it to omit the slot. Never tell it to guess.</p>
+<p><strong>2. A product that doesn't exist.</strong></p>
+<blockquote>
+<p><em>"You've referenced a Starter Tier. It's not in your Canon File."</em></p>
+</blockquote>
+<p>Either it's real and your Canon File is out of date — add it and re-upload — or it isn't real and the stop just prevented you publishing a phantom product.</p>
+<p><strong>3. Two sources disagreeing.</strong></p>
+<blockquote>
+<p><em>"Your Canon File says $27. Your instruction says $37."</em></p>
+</blockquote>
+<p>Answer with which is correct, then fix the losing source so it doesn't recur.</p>
+<p><strong>4. Missing source material.</strong></p>
+<blockquote>
+<p><em>"You asked for a repurposing pack for an article you haven't pasted."</em></p>
+</blockquote>
+<p>Paste it. Claude building from a draft it hasn't seen would be inventing the article.</p>
+<h2>How to unblock each</h2>
+<p><strong>Answer the question.</strong> Directly, specifically, in the same conversation.</p>
+<p><strong>Then fix the cause.</strong> If it was a stale Canon File, update it. Otherwise the same stop recurs on every future build, and you'll start treating stops as noise — which is when they stop protecting you.</p>
+<h2>What not to do</h2>
+<p><strong>Don't override it.</strong> "Just make something up" or "use your best guess" gets you exactly that. It will be plausible, complete, and wrong, and you will not be able to tell which parts.</p>
+<p><strong>Don't start a new conversation to escape it.</strong> The stop follows, because the cause is in your setup, not the conversation.</p>
+<p><strong>Don't remove the stop rule.</strong> The <code>stop and flag it, don't resolve silently</code> instruction from Module 2 is the thing generating these. Removing it doesn't remove the problems — it removes your notification that they exist.</p>
+<h2>The anti-prompt</h2>
+<p>Here's the mistake that produces the most broken output, and it isn't a stop — it's the opposite.</p>
+<p>Someone writes one enormous prompt: <em>"Act as my Chief Systems Architect, CMO, SEO Strategist, Pinterest Strategist, AI Automation Engineer, Content Director, UX Designer, and Business Operations Consultant, and build my entire content system, website, product ladder, and 90-day launch plan."</em></p>
+<p>Three hundred lines. Every role, every task, all at once.</p>
+<p>It fails in three specific ways:</p>
+<p><strong>Roles cancel each other.</strong> The SEO instruction and the copywriting instruction pull in different directions and the output splits the difference into something neither good nor optimized.</p>
+<p><strong>Context collapses.</strong> By the time it's answering point 40, points 1 through 10 have less weight. You get inconsistency across a single output.</p>
+<p><strong>You get duplicates.</strong> Ask for a content system and a blog plan in one request and you get two overlapping structures with different names for the same thing, and no way to tell which is authoritative.</p>
+<p><strong>Do the opposite.</strong> Put your role and context in project instructions once. Then run one task per conversation with a short specific prompt. Every prompt in this course is built that way deliberately.</p>
+<h2>Roadblock — <em>"It keeps asking questions I already answered"</em></h2>
+<p>The answer is in the conversation but not in project knowledge, so it doesn't survive to the next chat. Anything you answer twice belongs in your Canon File.</p>
+<h2>Roadblock — <em>"It stopped on something I don't care about"</em></h2>
+<p>Tell it explicitly: <code>Omit that slot entirely and continue.</code> A directed instruction to omit is completely different from telling it to guess.</p>
+<h2>Deliverable</h2>
+<p>Understanding that a stop is the system working. No file for this one.</p>
+<hr />

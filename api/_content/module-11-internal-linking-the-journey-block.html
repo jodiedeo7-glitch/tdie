@@ -1,0 +1,45 @@
+<h2>Read this part twice</h2>
+<p>Every article needs the same three destinations: related articles, a free resource, a paid product.</p>
+<p>There are two ways to build that, and one of them costs you weeks.</p>
+<p><strong>The wrong way:</strong> write the three links into each article's body. Forty articles, forty sets of links, each one edited by hand. Change a product URL and you're hunting through forty files. Miss three and those pages send traffic to a dead page indefinitely.</p>
+<p><strong>The right way:</strong> the layout renders the block. Each article passes its own values as props. Change the structure once in the layout; change one article's destinations by editing one line in that article.</p>
+<p>This is Module 6's principle applied to the highest-value part of your site — the part that turns readers into subscribers and buyers.</p>
+<h2>Do this — the journey block prompt</h2>
+<pre><code>Add a journey block to ArticleLayout.astro that renders after the
+article body. It takes props:
+
+- related: array of {title, url}
+- freeResource: {name, url} — optional
+- paidProduct: {name, price, url} — optional
+
+Rendering rules — these matter more than the styling:
+- If a prop is missing or empty, omit that slot entirely. Never
+  render an empty section, a placeholder, or a link to a page
+  that doesn't exist.
+- Never generate a URL. Only render what's passed in.
+- If all three are missing, render nothing at all.
+
+Complete file, ready to paste.
+</code></pre>
+<h2>Why "omit, never 404"</h2>
+<p>That rule prevents the most common broken thing on a self-built site.</p>
+<p>The instinct is to always fill the slot — every article should have a free resource, so point it somewhere. But if that page doesn't exist yet, you've built a link that sends every reader of that article to an error page. And it looks fine from the editor. You only find out when someone tells you, or when you check your analytics months later and see the exit rate.</p>
+<p>An omitted slot costs one missed opportunity. A broken link costs the reader's trust at exactly the moment they were interested enough to click.</p>
+<h2>Do this — the free slot rule</h2>
+<p><strong>Anything in the free slot must be genuinely $0.</strong></p>
+<p>Not free with a membership. Not a free trial. Not a sample of a paid product.</p>
+<p>Someone who clicks "free resource" and lands on a paywall doesn't just leave — they stop believing the rest of your page. You spent 3,000 words earning trust and it goes at the click.</p>
+<p>If a pillar has no genuinely free resource, leave the slot empty and build one. Module 13 covers building them.</p>
+<h2>Do this — linking inside the article body</h2>
+<p>Layout links handle the journey. Body links handle authority.</p>
+<p>Three rules:</p>
+<p><strong>Link where the reader is actually curious</strong>, not at the bottom. If you mention a concept you've covered elsewhere, that's the link.</p>
+<p><strong>Descriptive anchor text.</strong> Link the phrase that describes the destination, not "click here" or "this article." Search engines read anchor text as a description of what's on the other end.</p>
+<p><strong>Supporting articles link up to the pillar. The pillar links down to several supporting articles.</strong> That's the shape that reads as a cluster.</p>
+<h2>Roadblock — <em>"I have 40 articles with hardcoded links"</em></h2>
+<p>Convert as you touch them, not all at once. Next time you edit an article, move its links into props. Do this and it's done in a month with no dedicated project.</p>
+<h2>Roadblock — <em>"My related links point at articles I haven't written"</em></h2>
+<p>Remove them. A link to a page you plan to write is a broken link today. Add it when the page exists.</p>
+<h2>Deliverable</h2>
+<p>A journey block in your layout, rendering from props, omitting empty slots, live on every article.</p>
+<hr />
