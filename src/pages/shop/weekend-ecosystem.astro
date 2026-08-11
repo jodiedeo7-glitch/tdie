@@ -4,6 +4,18 @@ import { MODULES } from "../../we-manifest.js";
 
 const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
 
+// ── LAUNCH STAGE — change this one value at each stage ──
+// "waitlist" | "public47" | "public67" | "full"
+const STAGE = "waitlist";
+
+const STAGES = {
+  waitlist:  { price: "$47", note: "Launch price. Goes to $67 in one week.",  eyebrow: "Launch week · $47" },
+  public47:  { price: "$47", note: "Launch price. Goes to $67 in one week.",  eyebrow: "Launch week · $47" },
+  public67:  { price: "$67", note: "Launch price. Goes to $97 in two weeks.", eyebrow: "Launch price · $67" },
+  full:      { price: "$97", note: "One-time payment.",                        eyebrow: "Standalone Course · $97 one-time" },
+};
+const S = STAGES[STAGE];
+
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
   const [when, what] = [inPhase[0].phaseLabel, inPhase[0].phaseSub];
@@ -123,12 +135,12 @@ const faqs = [
 >
   <!-- HERO -->
   <section class="we-hero">
-    <div class="page-eyebrow">Standalone Course · $97 one-time</div>
+    <div class="page-eyebrow">{S.eyebrow}</div>
     <h1>The Weekend <em>Ecosystem™</em></h1>
     <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
     <div class="we-cta-row">
       {CHECKOUT
-        ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
+        ? <a class="btn" href={CHECKOUT}>Get the course — {S.price} <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
     <p class="we-access">Access is tied to the email you buy with — use one you check. Access is opened within a few hours of purchase.</p>
@@ -323,10 +335,10 @@ const faqs = [
     <p class="lede">Now you own the infrastructure.</p>
     <div class="we-cta-row">
       {CHECKOUT
-        ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
+        ? <a class="btn" href={CHECKOUT}>Get the course — {S.price} <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
-    <p class="we-close-note">One-time payment, $97. Access is tied to the email you buy with — use one you check.</p>
+    <p class="we-close-note">{S.note} Access is tied to the email you buy with — use one you check.</p>
     <p class="we-close-anchor">A developer quotes four figures for this build. A site builder charges more than this every year, forever. You pay once and own the thing.</p>
   </section>
 

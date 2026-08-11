@@ -1,0 +1,92 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+// MailerLite hosted form for the waitlist group
+const WAITLIST_FORM = "PENDING";
+
+const teasers = [
+  { n: "22", l: "Modules" },
+  { n: "36", l: "Prompts, verbatim" },
+  { n: "3", l: "Reference vaults" },
+  { n: "1", l: "Weekend" },
+];
+---
+<PageLayout
+  title="The Weekend Ecosystem™ — Waitlist"
+  description="Your website + blog, built from what you already have. One weekend with Claude. Join the waitlist for first access and the lowest price it will ever be."
+>
+  <section class="wl-hero">
+    <div class="page-eyebrow">Opening soon · Waitlist</div>
+    <h1>The Weekend <em>Ecosystem™</em></h1>
+    <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
+
+    <div class="wl-form">
+      {WAITLIST_FORM === "PENDING"
+        ? <span class="wl-soon">Waitlist opens shortly</span>
+        : <a class="btn" href={WAITLIST_FORM}>Join the waitlist <span class="a">→</span></a>}
+      <p class="wl-note">The waitlist opens first, at the lowest price this will ever be. Everyone else waits three days and pays more.</p>
+    </div>
+
+    <div class="wl-stats">
+      {teasers.map((t) => (
+        <div class="wl-stat">
+          <span class="wl-stat-n">{t.n}</span>
+          <span class="wl-stat-l">{t.l}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="wl-block">
+    <h2>You already wrote it</h2>
+    <p class="wl-lead">Every lesson in your classroom. Every post you've written. The call you recorded in March. The DM where you explained your whole method to one person, for free, at midnight.</p>
+    <p class="wl-lead">It's all sitting somewhere nobody can search, on a platform you don't own. This weekend you don't write anything new — you build the place it lives, works, and compounds.</p>
+  </section>
+
+  <section class="wl-block">
+    <h2>What the waitlist gets</h2>
+    <ul class="wl-list">
+      <li><strong>First access.</strong> Three full days before anyone else.</li>
+      <li><strong>The lowest price it will ever be.</strong> It rises the moment the doors open publicly, and again after that.</li>
+      <li><strong>No launch noise.</strong> A handful of emails, then the door opens.</li>
+    </ul>
+  </section>
+
+  <section class="wl-close">
+    <h2>You were a digital product seller.</h2>
+    <p class="lede">Now you own the infrastructure.</p>
+    {WAITLIST_FORM === "PENDING"
+      ? <span class="wl-soon wl-soon-light">Waitlist opens shortly</span>
+      : <a class="btn" href={WAITLIST_FORM}>Join the waitlist <span class="a">→</span></a>}
+  </section>
+
+  <style>
+    .wl-hero{text-align:center;padding:10px 0 60px}
+    .wl-hero .page-eyebrow{color:var(--pink)!important}
+    .wl-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,8vw,80px);line-height:.98;letter-spacing:-2px;margin:0 0 24px;color:#2B161B}
+    .wl-hero h1 em{font-style:italic;color:var(--pink)}
+    .wl-hero .lede{max-width:600px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;line-height:1.55;color:#5A4048}
+    .wl-form{margin-bottom:48px}
+    .wl-soon{display:inline-block;padding:16px 36px;border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
+             background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink)}
+    .wl-soon-light{background:rgba(251,248,245,.14);border-color:rgba(251,248,245,.45);color:#FBEEF4}
+    .wl-note{font-size:14.5px;line-height:1.65;color:#7A5C63;max-width:44ch;margin:20px auto 0}
+    .wl-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(43,22,27,.12);border:1px solid rgba(43,22,27,.12);border-radius:6px;overflow:hidden}
+    .wl-stat{background:#FBF8F5;padding:24px 16px}
+    .wl-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(32px,4.4vw,46px);font-weight:300;line-height:1;color:var(--pink);letter-spacing:-1.5px}
+    .wl-stat-l{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:9px}
+    .wl-block{padding:64px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#2B161B}
+    .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
+    .wl-list{list-style:none;padding:0;margin:0;max-width:620px}
+    .wl-list li{padding:16px 0 16px 28px;border-bottom:1px solid rgba(43,22,27,.1);font-size:16.5px;line-height:1.65;position:relative;color:#2B161B}
+    .wl-list li:before{content:"—";position:absolute;left:0;color:var(--pink)}
+    .wl-list strong{color:var(--pink);font-weight:600}
+    .wl-close{text-align:center;margin:70px 0 0;padding:72px 40px 68px;border-radius:8px;
+              background:linear-gradient(145deg,#B9A2E8 0%,#C79AD2 34%,#C87BA6 64%,#A8446B 100%)}
+    .wl-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,5vw,48px);margin:0 0 12px;letter-spacing:-1px;color:#fff}
+    .wl-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:#FBEEF4;margin:0 0 32px}
+    .wl-close .btn{background:#FBF8F5;color:#8E2F53;border-color:#FBF8F5}
+    @media(max-width:720px){.wl-stats{grid-template-columns:1fr 1fr}.wl-close{padding:54px 22px 50px}}
+  </style>
+</PageLayout>
