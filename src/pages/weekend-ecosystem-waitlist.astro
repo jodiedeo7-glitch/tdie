@@ -1,9 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 
-// MailerLite hosted form for the waitlist group
-const WAITLIST_FORM = "PENDING";
-
 const teasers = [
   { n: "22", l: "Modules" },
   { n: "36", l: "Prompts, verbatim" },
@@ -21,9 +18,12 @@ const teasers = [
     <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
 
     <div class="wl-form">
-      {WAITLIST_FORM === "PENDING"
-        ? <span class="wl-soon">Waitlist opens shortly</span>
-        : <a class="btn" href={WAITLIST_FORM}>Join the waitlist <span class="a">→</span></a>}
+      <div class="wl-row" id="wl-row">
+        <input id="wl-email" type="email" placeholder="you@example.com" autocomplete="email" />
+        <button id="wl-go" class="wl-btn">Join the waitlist</button>
+      </div>
+      <p id="wl-done" class="wl-done">You're on the list. Watch your inbox — one email when the doors open.</p>
+      <p id="wl-err" class="wl-err"></p>
       <p class="wl-note">The waitlist opens first, at the lowest price this will ever be. Everyone else waits three days and pays more.</p>
     </div>
 
@@ -55,9 +55,12 @@ const teasers = [
   <section class="wl-close">
     <h2>You were a digital product seller.</h2>
     <p class="lede">Now you own the infrastructure.</p>
-    {WAITLIST_FORM === "PENDING"
-      ? <span class="wl-soon wl-soon-light">Waitlist opens shortly</span>
-      : <a class="btn" href={WAITLIST_FORM}>Join the waitlist <span class="a">→</span></a>}
+    <div class="wl-row wl-row-light" id="wl-row2">
+      <input id="wl-email2" type="email" placeholder="you@example.com" autocomplete="email" />
+      <button id="wl-go2" class="wl-btn wl-btn-light">Join the waitlist</button>
+    </div>
+    <p id="wl-done2" class="wl-done wl-done-light">You're on the list. Watch your inbox.</p>
+    <p id="wl-err2" class="wl-err wl-err-light"></p>
   </section>
 
   <style>
@@ -67,9 +70,21 @@ const teasers = [
     .wl-hero h1 em{font-style:italic;color:var(--pink)}
     .wl-hero .lede{max-width:600px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;line-height:1.55;color:#5A4048}
     .wl-form{margin-bottom:48px}
-    .wl-soon{display:inline-block;padding:16px 36px;border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
-             background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink)}
-    .wl-soon-light{background:rgba(251,248,245,.14);border-color:rgba(251,248,245,.45);color:#FBEEF4}
+    .wl-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
+    .wl-row input{flex:1;min-width:230px;padding:16px 18px;border:1px solid rgba(43,22,27,.22);border-radius:5px;
+                  font-size:16px;font-family:"Inter",sans-serif;background:#fff;color:#2B161B}
+    .wl-row input:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(214,46,115,.12)}
+    .wl-btn{padding:16px 30px;background:var(--pink);color:#fff;border:none;border-radius:5px;cursor:pointer;
+            font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:"Inter",sans-serif;
+            transition:transform .2s,box-shadow .2s;white-space:nowrap}
+    .wl-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(214,46,115,.32)}
+    .wl-btn:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none}
+    .wl-row-light input{border-color:rgba(251,248,245,.5);background:rgba(255,255,255,.94)}
+    .wl-btn-light{background:#FBF8F5;color:#8E2F53}
+    .wl-done{display:none;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--pink);margin:20px auto 0;max-width:44ch}
+    .wl-done-light{color:#FBEEF4}
+    .wl-err{display:none;font-size:15px;color:var(--pink);margin:14px 0 0}
+    .wl-err-light{color:#FFE4EE}
     .wl-note{font-size:14.5px;line-height:1.65;color:#7A5C63;max-width:44ch;margin:20px auto 0}
     .wl-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(43,22,27,.12);border:1px solid rgba(43,22,27,.12);border-radius:6px;overflow:hidden}
     .wl-stat{background:#FBF8F5;padding:24px 16px}
@@ -90,3 +105,42 @@ const teasers = [
     @media(max-width:720px){.wl-stats{grid-template-columns:1fr 1fr}.wl-close{padding:54px 22px 50px}}
   </style>
 </PageLayout>
+
+<script>
+  function wire(inputId, btnId, rowId, doneId, errId) {
+    const input = document.getElementById(inputId);
+    const btn = document.getElementById(btnId);
+    const row = document.getElementById(rowId);
+    const done = document.getElementById(doneId);
+    const err = document.getElementById(errId);
+
+    async function join() {
+      const email = input.value.trim();
+      err.style.display = "none";
+      btn.disabled = true;
+      btn.textContent = "Adding…";
+      try {
+        const r = await fetch("/api/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || "Something went wrong.");
+        row.style.display = "none";
+        done.style.display = "block";
+      } catch (e) {
+        err.textContent = e.message;
+        err.style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "Join the waitlist";
+      }
+    }
+
+    btn.addEventListener("click", join);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") join(); });
+  }
+
+  wire("wl-email", "wl-go", "wl-row", "wl-done", "wl-err");
+  wire("wl-email2", "wl-go2", "wl-row2", "wl-done2", "wl-err2");
+</script>
