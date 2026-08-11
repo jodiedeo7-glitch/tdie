@@ -24,65 +24,110 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   </div>
 
   <div id="contents" style="display:none">
-    <p style="font-size:17px;line-height:1.82;margin-bottom:16px">
-      Six phases across one weekend. Each one builds a working piece of the business, and each
-      piece feeds the next — the website holds the blog, the blog fills the list, the list buys
-      the product.
-    </p>
-    <p style="font-size:17px;line-height:1.82;margin-bottom:46px">
-      Go in order the first time. Start tonight with Phase 0 — you won't write anything, you'll
-      find what you already wrote.
+    <p class="ci-lede">
+      Six phases across one weekend. Each builds a working piece of the business, and each piece
+      feeds the next — the website holds the blog, the blog fills the list, the list buys the product.
     </p>
 
-    <a href="/weekend-ecosystem/quick-sheet" class="qs-card">
-      <div>
-        <span class="qs-card-tag">Start here if you've done this before</span>
-        <span class="qs-card-t">The Quick Sheet</span>
-        <span class="qs-card-b">All 36 prompts in one page, in the order you run them, one line each on what they do.</span>
-      </div>
-      <span class="qs-card-arrow">→</span>
-    </a>
-
-    {phases.map((phase) => {
-      const inPhase = MODULES.filter((m) => m.phase === phase);
-      return (
-        <div style="margin-bottom:52px">
-          <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#C8A96A;margin-bottom:6px">{inPhase[0].phaseLabel}</span>
-          <span style="display:block;font-family:Fraunces,serif;font-size:21px;font-weight:400;margin-bottom:22px">{inPhase[0].phaseSub}</span>
-          {inPhase.map((m) => (
-            <a href={`/weekend-ecosystem/${m.slug}`}
-              style="display:block;padding:18px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
-              <div style="display:flex;gap:14px;align-items:baseline">
-                <span style="font-size:12.5px;letter-spacing:1.4px;color:rgba(43,22,27,.4);flex-shrink:0">{String(m.num).padStart(2, "0")}</span>
-                <div>
-                  <span style="display:block;font-family:Fraunces,serif;font-size:19px;font-weight:400;line-height:1.3;margin-bottom:5px">{m.title}</span>
-                  <span style="display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.62)">{m.blurb}</span>
-                </div>
-              </div>
-            </a>
-          ))}
+    <div class="ci-top">
+      <a href="/weekend-ecosystem/quick-sheet" class="qs-card">
+        <div>
+          <span class="qs-card-tag">Done this before?</span>
+          <span class="qs-card-t">The Quick Sheet</span>
+          <span class="qs-card-b">All 36 prompts on one page, in the order you run them.</span>
         </div>
-      );
-    })}
+        <span class="qs-card-arrow">→</span>
+      </a>
 
-    <div style="margin-bottom:44px">
-      <span style="display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73;margin-bottom:6px">The Vaults</span>
-      <span style="display:block;font-family:Fraunces,serif;font-size:21px;font-weight:400;margin-bottom:22px">Reference you'll come back to for years</span>
-      {VAULTS.map((v) => (
-        <a href={`/weekend-ecosystem/${v.slug}`}
-          style="display:block;padding:18px 0;border-bottom:1px solid rgba(43,22,27,.11);text-decoration:none;color:#2B161B">
-          <span style="display:block;font-family:Fraunces,serif;font-size:19px;font-weight:400;line-height:1.3;margin-bottom:5px">{v.title}</span>
-          <span style="display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.62)">{v.blurb}</span>
-        </a>
-      ))}
+      <aside class="ci-vaults">
+        <span class="ci-vaults-tag">The Vaults</span>
+        <span class="ci-vaults-sub">Reference, not reading. Come back to these for years.</span>
+        {VAULTS.map((v) => (
+          <a href={`/weekend-ecosystem/${v.slug}`} class="ci-vault">
+            <span class="ci-vault-t">{v.title}</span>
+            <span class="ci-vault-b">{v.blurb}</span>
+          </a>
+        ))}
+      </aside>
+    </div>
+
+    <div class="ci-phases">
+      {phases.map((phase, pi) => {
+        const inPhase = MODULES.filter((m) => m.phase === phase);
+        const [when, what] = [inPhase[0].phaseLabel, inPhase[0].phaseSub];
+        const day = when.split("·")[1]?.trim() ?? when;
+        return (
+          <section class="ci-phase">
+            <header class="ci-phase-head">
+              <span class="ci-phase-n">{String(pi).padStart(2, "0")}</span>
+              <div>
+                <span class="ci-phase-when">{day}</span>
+                <h2 class="ci-phase-what">{what.split("—")[0].trim()}</h2>
+                <p class="ci-phase-sub">{what.split("—")[1]?.trim()}</p>
+              </div>
+            </header>
+            <div class="ci-mods">
+              {inPhase.map((m) => (
+                <a href={`/weekend-ecosystem/${m.slug}`} class="ci-mod">
+                  <span class="ci-mod-n">{String(m.num).padStart(2, "0")}</span>
+                  <span class="ci-mod-t">{m.title}</span>
+                  <span class="ci-mod-b">{m.blurb}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   </div>
+
+  <style is:global>
+    body:has(.ci-phases) .we-wrap{max-width:1040px}
+  </style>
+
   <style>
-    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 28px;margin:0 0 52px;background:linear-gradient(135deg,rgba(255,138,194,.22),rgba(203,183,247,.16));border:1px solid rgba(214,46,115,.22);border-radius:4px;text-decoration:none;transition:transform .2s,border-color .2s}
+    /* ── layout ── */
+    .ci-lede{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;margin:0 0 34px;max-width:62ch}
+    .ci-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:56px;align-items:start}
+
+    /* ── vaults, set aside ── */
+    .ci-vaults{background:#FFFDFB;border:1px solid rgba(43,22,27,.13);border-radius:4px;padding:22px 24px 8px}
+    .ci-vaults-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:6px}
+    .ci-vaults-sub{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.55);margin-bottom:16px}
+    .ci-vault{display:block;padding:13px 0;border-top:1px solid rgba(43,22,27,.09);text-decoration:none;color:#2B161B}
+    .ci-vault:hover .ci-vault-t{color:#D62E73}
+    .ci-vault-t{display:block;font-family:"Fraunces",serif;font-size:17px;line-height:1.25;margin-bottom:4px;transition:color .2s}
+    .ci-vault-b{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.58)}
+
+    /* ── phases as blocks ── */
+    .ci-phases{display:flex;flex-direction:column;gap:20px}
+    .ci-phase{border:1px solid rgba(43,22,27,.13);border-radius:5px;padding:26px 28px 28px;background:rgba(255,253,251,.6)}
+    .ci-phase:nth-child(odd){background:rgba(255,138,194,.05);border-color:rgba(214,46,115,.16)}
+    .ci-phase-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(43,22,27,.11)}
+    .ci-phase-n{font-family:"Fraunces",serif;font-size:34px;font-weight:300;line-height:1;color:rgba(214,46,115,.32);flex-shrink:0}
+    .ci-phase-when{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:6px}
+    .ci-phase-what{font-family:"Fraunces",serif;font-weight:400;font-size:24px;line-height:1.15;margin:0 0 5px}
+    .ci-phase-sub{font-size:14.5px;line-height:1.55;color:rgba(43,22,27,.6);margin:0}
+
+    /* ── modules in a grid, not a column ── */
+    .ci-mods{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px}
+    .ci-mod{display:block;padding:14px 0;text-decoration:none;color:#2B161B;border-top:1px solid rgba(43,22,27,.08)}
+    .ci-mod:hover .ci-mod-t{color:#D62E73}
+    .ci-mod-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1px;color:rgba(43,22,27,.38);margin-right:9px}
+    .ci-mod-t{font-family:"Fraunces",serif;font-size:17.5px;line-height:1.25;transition:color .2s}
+    .ci-mod-b{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.58);margin-top:5px}
+
+    @media(max-width:760px){
+      .ci-top{grid-template-columns:1fr}
+      .ci-mods{grid-template-columns:1fr}
+      .ci-phase{padding:22px 20px 24px}
+    }
+
+    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;margin:0;height:100%;box-sizing:border-box;background:linear-gradient(135deg,rgba(255,138,194,.22),rgba(203,183,247,.16));border:1px solid rgba(214,46,115,.22);border-radius:4px;text-decoration:none;transition:transform .2s,border-color .2s}
     .qs-card:hover{transform:translateY(-2px);border-color:#D62E73}
     .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:10px}
-    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:#2B161B;margin-bottom:8px}
-    .qs-card-b{display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.66);max-width:44ch}
+    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:23px;font-weight:400;color:#2B161B;margin-bottom:8px}
+    .qs-card-b{display:block;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
     .qs-card-arrow{font-size:22px;color:#D62E73;flex-shrink:0}
   </style>
 </CourseLayout>
