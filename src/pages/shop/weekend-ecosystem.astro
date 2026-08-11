@@ -1,60 +1,82 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import { MODULES } from "../../we-manifest.js";
 
 // PLACEHOLDER — fill when the Beacons product is created. Do not guess.
 const CHECKOUT = "";
 
+const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
+  const inPhase = MODULES.filter((m) => m.phase === p);
+  const [when, what] = [inPhase[0].phaseLabel, inPhase[0].phaseSub];
+  return {
+    day: when.split("·")[1]?.trim() ?? when,
+    title: what.split("—")[0].trim(),
+    sub: what.split("—")[1]?.trim(),
+    accent: inPhase[0].accent,
+    mods: inPhase,
+  };
+});
+
 const problems = [
-  { n: "01", t: "It's all trapped in Skool", p: "Every lesson, every call, every post you've written. None of it searchable, none of it ranking, none of it on a domain you own." },
-  { n: "02", t: "Nobody finds you unless they already know you", p: "A member has to join before they can read a word. There's no front door — only a members' entrance." },
-  { n: "03", t: "You post, then you post again", p: "A feed resets to zero every day. Nothing you made last March is working for you this March." },
-  { n: "04", t: "You've started a blog three times", p: "Blank page, no idea what to write, quit by week three. Not a discipline problem. A wrong-starting-point problem." },
+  { t: "It's all trapped in Skool", p: "Every lesson, every call, every post you've written. None of it searchable, none of it ranking, none of it on a domain you own." },
+  { t: "Nobody finds you unless they already know you", p: "A member has to join before they can read a word. There's no front door — only a members' entrance." },
+  { t: "You post, then you post again", p: "A feed resets to zero every day. Nothing you made last March is working for you this March." },
+  { t: "You've started a blog three times", p: "Blank page, no idea what to write, quit by week three. That's not a discipline problem. It's a wrong-starting-point problem." },
 ];
 
-const weekend = [
-  { d: "Friday night", h: "2 hours", t: "The Inventory", p: "You write nothing. You find what you already wrote — and most people are startled by how much there is." },
-  { d: "Saturday morning", h: "3 hours", t: "The Machine", p: "The site exists by lunch. Real domain, real stack, deploying automatically. You don't write code." },
-  { d: "Saturday afternoon", h: "3 hours", t: "The Blog Engine", p: "One Skool lesson becomes a 3,000-word article that ranks. Then the cluster around it." },
-  { d: "Saturday night", h: "2 hours", t: "The Capture", p: "Email capture that actually works, a free resource, and every reader routed to an offer." },
-  { d: "Sunday morning", h: "3 hours", t: "The Traffic", p: "Pinterest set up properly, one article turned into a month of assets, images without your face." },
-  { d: "Sunday afternoon", h: "2 hours", t: "The System", p: "Analytics, publishing pipeline, and a cadence you can actually hold at 2–4 hours a day." },
+const included = [
+  { t: "22 modules", p: "Each one teaches the step, hands you the prompt, and tells you what breaks there and how to fix it." },
+  { t: "The Quick Sheet", p: "All 36 prompts on one page in running order, one line each. For your second build, and your third." },
+  { t: "The Prompt Vault", p: "Every prompt verbatim and organised by tool — Claude, Chrome, image generation, GitHub." },
+  { t: "The Troubleshooting Vault", p: "An FAQ plus every roadblock from a real build, paired with the fix that worked." },
+  { t: "The Template Vault", p: "Canon File, pillar map, live-facts block, product register, operating cadence. Fill in and keep." },
+  { t: "Progress tracking + certificate", p: "Tick off each module, watch the ring fill, and unlock a completion certificate at twenty-two." },
 ];
 
-const vaults = [
-  { t: "The Prompt Vault", p: "Every prompt in the course, verbatim, in one place. Claude build prompts, the four SEO passes, the repurposing pack, image prompts, GitHub commits. Copy, swap the brackets, run." },
-  { t: "The Troubleshooting Vault", p: "Every roadblock hit during a real build, paired with the fix that worked. The silent email form. The Pinterest spam flag. The sitemap that reports zero pages. Nothing theoretical." },
-  { t: "The Template Vault", p: "The Canon File, the pillar map, the live-facts block, the product register, the operating cadence. Fill in and keep." },
+const bySunday = [
+  "A website on a domain you own, deploying automatically",
+  "A pillar article and the start of a cluster around it",
+  "Email capture that works — tested by you, not assumed",
+  "A free resource with automated delivery",
+  "Every reader routed to a free offer and a paid one",
+  "Bridge pages, so every outbound link is yours to change",
+  "A traffic source that compounds instead of resetting",
+  "One article turning into a month of assets",
+  "Brand-consistent images without your face in any of them",
+  "A cadence you can hold at 2–4 hours a day",
 ];
 
 const forYou = [
   "You run a Skool group and everything you've written lives inside it",
   "You sell digital products but don't own a real website",
-  "You have content, courses, or calls piling up with nowhere to send people",
+  "You have content, courses or calls piling up with nowhere to send people",
   "You want a blog that compounds instead of a feed that resets",
   "You'd rather not be on camera",
 ];
 
 const notForYou = [
   "You want someone to write your content for you",
-  "You have no existing content at all and nothing to say yet",
+  "You have no existing content and nothing to say yet",
   "You want a done-for-you agency build",
 ];
 
 const faqs = [
-  { q: "Do I need to know how to code?", a: "No. You paste prompts and click buttons. Claude writes every file. The course assumes you have never opened a code editor." },
-  { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain runs $10–15 a year." },
-  { q: "Do I need to pay for Claude?", a: "A paid Claude plan makes the longer builds much smoother, but the course doesn't require any specific plan or tool subscription beyond your domain." },
-  { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it. Filling the site out is ongoing, and Module 20 gives you the cadence for that." },
-  { q: "What if I don't use Skool?", a: "It works the same. Skool is the most common case because so much content gets trapped there, but the method applies to any pile of existing content." },
-  { q: "Will I have to be on camera?", a: "No. Module 17 covers producing brand-consistent images without your face in any of them." },
-  { q: "Is this the same as your membership?", a: "No. This is a standalone one-time purchase and isn't part of any membership tier." },
+  { q: "Do I need to know how to code?", a: "No. You paste prompts and click buttons — Claude writes every file. If something is wrong the deploy fails and tells you, and you paste the error back. The course assumes you've never opened a code editor." },
+  { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain is $10–15 a year." },
+  { q: "Do I need a paid Claude plan?", a: "It makes the longer builds smoother, but no module requires a specific plan or any tool subscription beyond your domain." },
+  { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it: two hours Friday, eight Saturday, five Sunday. Filling the site out afterwards is ongoing, which is what the operating cadence in Module 21 is for." },
+  { q: "What if I don't use Skool?", a: "It works the same. Skool is the most common case because so much content gets trapped there, but the method applies to any pile of existing content — a course platform, a newsletter archive, a folder of PDFs." },
+  { q: "Will I have to be on camera?", a: "No. Module 18 covers producing brand-consistent images without your face in any of them." },
+  { q: "What if I don't have a paid product yet?", a: "Build the site anyway. Every article routes to a free resource, you build the list, and the list tells you what to sell. That's a better sequence than guessing at a product first." },
+  { q: "Is this part of your membership?", a: "No. It's a standalone one-time purchase and isn't part of any membership tier." },
 ];
 ---
 <PageLayout
   wide
   title="The Weekend Ecosystem™"
-  description="The website-and-blog system that turns digital product sellers into digital business owners. Built from what you already have, in one weekend, with Claude AI. $97."
+  description="The website-and-blog system that turns digital product sellers into digital business owners. Built from what you already have, in one weekend, with Claude AI. $97 one-time."
 >
+  <!-- HERO -->
   <section class="we-hero">
     <div class="page-eyebrow">Standalone Course · $97 one-time</div>
     <h1>The Weekend <em>Ecosystem™</em></h1>
@@ -64,21 +86,26 @@ const faqs = [
         ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
+    <div class="we-hero-strip">
+      {phases.map((p) => <span class="we-chip" style={`--ac:${p.accent}`}>{p.title}</span>)}
+    </div>
   </section>
 
-  <section class="we-block">
+  <!-- THESIS -->
+  <section class="we-block we-thesis">
     <h2>You already wrote it</h2>
     <p class="we-lead">Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
-    <p class="we-lead">You don't have that problem. You have the opposite one — years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
-    <p class="we-lead">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
+    <p class="we-lead">You have the opposite problem — years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
+    <p class="we-lead we-lead-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
   </section>
 
+  <!-- PROBLEM -->
   <section class="we-block">
     <h2>What's actually wrong right now</h2>
     <div class="we-grid">
-      {problems.map((x) => (
+      {problems.map((x, i) => (
         <div class="we-card">
-          <span class="we-num">{x.n}</span>
+          <span class="we-num">{String(i + 1).padStart(2, "0")}</span>
           <h3>{x.t}</h3>
           <p>{x.p}</p>
         </div>
@@ -86,29 +113,37 @@ const faqs = [
     </div>
   </section>
 
+  <!-- THE WEEKEND -->
   <section class="we-block">
-    <h2>The weekend</h2>
-    <div class="we-timeline">
-      {weekend.map((x) => (
-        <div class="we-row">
-          <div class="we-when">
-            <span class="we-day">{x.d}</span>
-            <span class="we-hrs">{x.h}</span>
+    <h2>The weekend, hour by hour</h2>
+    <p class="we-sublead">Six phases. Each builds a working piece, and each piece feeds the next — the website holds the blog, the blog fills the list, the list buys the product.</p>
+    <div class="we-phases">
+      {phases.map((p, i) => (
+        <div class="we-phase" style={`--ac:${p.accent}`}>
+          <span class="we-phase-edge"></span>
+          <div class="we-phase-head">
+            <span class="we-phase-n">{String(i).padStart(2, "0")}</span>
+            <div>
+              <span class="we-phase-when">{p.day}</span>
+              <h3 class="we-phase-t">{p.title}</h3>
+              <p class="we-phase-s">{p.sub}</p>
+            </div>
           </div>
-          <div class="we-what">
-            <h3>{x.t}</h3>
-            <p>{x.p}</p>
-          </div>
+          <ul class="we-phase-mods">
+            {p.mods.map((m) => (
+              <li><span class="we-pm-n">{String(m.num).padStart(2, "0")}</span>{m.title}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
-    <p class="we-note">Twenty-two modules. Every one ends with a copy-paste prompt and a fix for what breaks at that step.</p>
   </section>
 
+  <!-- WHAT'S INCLUDED -->
   <section class="we-block">
-    <h2>Three vaults you'll keep going back to</h2>
+    <h2>What comes with it</h2>
     <div class="we-grid we-grid-3">
-      {vaults.map((x) => (
+      {included.map((x) => (
         <div class="we-card we-card-pink">
           <h3>{x.t}</h3>
           <p>{x.p}</p>
@@ -117,22 +152,13 @@ const faqs = [
     </div>
   </section>
 
+  <!-- BY SUNDAY -->
   <section class="we-block">
     <h2>By Sunday afternoon</h2>
-    <ul class="we-list">
-      <li>A website on a domain you own, deploying automatically</li>
-      <li>A pillar article and the start of a cluster around it</li>
-      <li>Email capture that works — tested by you, not assumed</li>
-      <li>A free resource with automated delivery</li>
-      <li>Every reader routed to a free offer and a paid one</li>
-      <li>Bridge pages, so every outbound link is yours to change</li>
-      <li>A traffic source that compounds instead of resetting</li>
-      <li>One article turning into a month of assets</li>
-      <li>Brand-consistent images without your face in any of them</li>
-      <li>A cadence you can hold at 2–4 hours a day</li>
-    </ul>
+    <ul class="we-list">{bySunday.map((x) => <li>{x}</li>)}</ul>
   </section>
 
+  <!-- FIT -->
   <section class="we-block we-split">
     <div>
       <h3 class="we-sub">This is for you if</h3>
@@ -144,6 +170,7 @@ const faqs = [
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="we-block">
     <h2>Questions</h2>
     <div class="we-faq">
@@ -156,6 +183,7 @@ const faqs = [
     </div>
   </section>
 
+  <!-- CLOSE -->
   <section class="we-close">
     <h2>You were a digital product seller.</h2>
     <p class="lede">Now you own the infrastructure.</p>
@@ -164,52 +192,74 @@ const faqs = [
         ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
+    <p class="we-close-note">One-time payment. Instant access with the email you buy with.</p>
   </section>
 
   <style>
-    .we-hero{text-align:center;padding:20px 0 70px;border-bottom:1px solid rgba(43,22,27,.1)}
-    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7vw,70px);line-height:1.02;letter-spacing:-1px;margin:0 0 24px}
+    .we-hero{text-align:center;padding:16px 0 60px}
+    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7.4vw,74px);line-height:1;letter-spacing:-1.4px;margin:0 0 24px}
     .we-hero h1 em{font-style:italic;color:var(--pink)}
-    .we-hero .lede{max-width:620px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.6;color:var(--taupe-deep)}
+    .we-hero .lede{max-width:620px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.6;color:var(--taupe-deep)}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
     .we-soon{display:inline-block;padding:15px 34px;border:1px solid rgba(43,22,27,.25);border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--taupe-deep)}
-    .we-block{padding:72px 0;border-bottom:1px solid rgba(43,22,27,.09)}
-    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 34px;letter-spacing:-.4px}
-    .we-lead{font-size:18px;line-height:1.85;max-width:640px;margin:0 0 22px}
-    .we-note{font-size:15px;color:var(--taupe-deep);margin-top:34px;font-style:italic}
-    .we-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
-    .we-grid-3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-    .we-card{padding:28px;border:1px solid rgba(43,22,27,.13);border-radius:6px;background:rgba(255,255,255,.5)}
-    .we-card-pink{border-top:3px solid var(--pink)}
-    .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 12px;line-height:1.25}
-    .we-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--taupe-deep)}
-    .we-num{display:block;font-size:11px;letter-spacing:2.4px;color:var(--gold);margin-bottom:14px}
-    .we-timeline{display:flex;flex-direction:column;gap:2px}
-    .we-row{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid rgba(43,22,27,.09)}
-    .we-row:last-child{border-bottom:none}
-    .we-day{display:block;font-family:"Fraunces",serif;font-size:18px;font-weight:400}
-    .we-hrs{display:block;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-top:5px}
-    .we-what h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0 0 9px}
-    .we-what p{font-size:16px;line-height:1.75;margin:0;color:var(--taupe-deep)}
-    .we-list{list-style:none;padding:0;margin:0;max-width:640px}
-    .we-list li{padding:13px 0 13px 30px;border-bottom:1px solid rgba(43,22,27,.09);font-size:16.5px;line-height:1.6;position:relative}
+    .we-hero-strip{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:44px;padding-top:34px;border-top:1px solid rgba(43,22,27,.1)}
+    .we-chip{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;padding:7px 15px;border-radius:20px;
+             background:color-mix(in srgb,var(--ac) 18%,transparent);color:#2B161B;border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+
+    .we-block{padding:70px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,44px);line-height:1.08;margin:0 0 20px;letter-spacing:-.6px}
+    .we-lead{font-size:18px;line-height:1.85;max-width:640px;margin:0 0 20px}
+    .we-lead-hit{font-family:"Cormorant Garamond",serif;font-size:23px;font-style:italic;line-height:1.6;color:var(--pink)}
+    .we-sublead{font-size:16.5px;line-height:1.75;color:var(--taupe-deep);max-width:640px;margin:0 0 38px}
+    .we-thesis{border-top:none}
+
+    .we-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
+    .we-grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .we-card{padding:26px;border:1px solid rgba(43,22,27,.13);border-radius:5px;background:rgba(255,253,251,.65)}
+    .we-card-pink{background:linear-gradient(160deg,rgba(255,138,194,.14),rgba(203,183,247,.08));border-color:rgba(214,46,115,.2)}
+    .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 11px;line-height:1.25}
+    .we-card p{font-size:15px;line-height:1.7;margin:0;color:var(--taupe-deep)}
+    .we-num{display:block;font-size:11px;letter-spacing:2.4px;color:var(--gold);margin-bottom:13px}
+
+    .we-phases{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .we-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.11);border-radius:6px;padding:24px 26px 22px;
+              background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 12%,transparent),color-mix(in srgb,var(--ac) 3%,transparent))}
+    .we-phase-edge{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ac)}
+    .we-phase-head{display:flex;gap:15px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--ac) 40%,transparent)}
+    .we-phase-n{font-family:"Fraunces",serif;font-size:48px;font-weight:300;line-height:.82;color:var(--ac);letter-spacing:-2px;flex-shrink:0}
+    .we-phase-when{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:5px}
+    .we-phase-t{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0 0 4px;line-height:1.15}
+    .we-phase-s{font-size:14px;line-height:1.55;color:var(--taupe-deep);margin:0}
+    .we-phase-mods{list-style:none;padding:0;margin:0}
+    .we-phase-mods li{font-size:15px;line-height:1.5;padding:6px 0;color:#2B161B}
+    .we-pm-n{font-size:10.5px;letter-spacing:1px;color:rgba(43,22,27,.4);margin-right:9px}
+
+    .we-list{list-style:none;padding:0;margin:34px 0 0;max-width:660px}
+    .we-list li{padding:13px 0 13px 28px;border-bottom:1px solid rgba(43,22,27,.09);font-size:16.5px;line-height:1.6;position:relative}
     .we-list li:before{content:"—";position:absolute;left:0;color:var(--pink)}
-    .we-list-tight li{font-size:15.5px;padding:11px 0 11px 30px}
-    .we-list-muted li:before{content:"—";color:var(--taupe-deep);opacity:.5}
+    .we-list-tight{margin-top:16px}
+    .we-list-tight li{font-size:15.5px;padding:11px 0 11px 28px}
+    .we-list-muted li:before{color:var(--taupe-deep);opacity:.45}
+
     .we-split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-    .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0 0 16px}
-    .we-faq details{border-bottom:1px solid rgba(43,22,27,.11);padding:19px 0}
+    .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0}
+
+    .we-faq{margin-top:30px;max-width:720px}
+    .we-faq details{border-bottom:1px solid rgba(43,22,27,.11);padding:18px 0}
     .we-faq summary{cursor:pointer;font-size:17px;font-weight:500;list-style:none}
     .we-faq summary::-webkit-details-marker{display:none}
     .we-faq summary:before{content:"+";color:var(--pink);margin-right:12px;font-weight:400}
     .we-faq details[open] summary:before{content:"–"}
-    .we-faq p{font-size:16px;line-height:1.78;margin:14px 0 4px 24px;color:var(--taupe-deep);max-width:620px}
-    .we-close{text-align:center;padding:80px 0 30px}
-    .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,44px);margin:0 0 14px;letter-spacing:-.4px}
-    .we-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;color:var(--pink);margin:0 0 36px}
-    @media(max-width:760px){
-      .we-row{grid-template-columns:1fr;gap:10px}
-      .we-split{grid-template-columns:1fr;gap:38px}
+    .we-faq p{font-size:16px;line-height:1.78;margin:13px 0 4px 24px;color:var(--taupe-deep);max-width:620px}
+
+    .we-close{text-align:center;padding:80px 0 30px;border-top:1px solid rgba(43,22,27,.09)}
+    .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.8vw,46px);margin:0 0 14px;letter-spacing:-.6px}
+    .we-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;color:var(--pink);margin:0 0 34px}
+    .we-close-note{font-size:13px;letter-spacing:.4px;color:var(--taupe-deep);margin-top:20px}
+
+    @media(max-width:820px){
+      .we-phases{grid-template-columns:1fr}
+      .we-split{grid-template-columns:1fr;gap:36px}
       .we-block{padding:52px 0}
     }
   </style>
