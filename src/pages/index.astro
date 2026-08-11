@@ -29,7 +29,6 @@ const shop = [
   { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time \u00b7 mine", copy: "A hundred done-for-you hooks and captions for the stage before you have proof \u2014 nothing to screenshot, no income claims, nothing that gets an account flagged.", url: "https://links.thedigitalincomeedit.com/shop/1ac018a9-859e-40fb-a75a-2490957c387c", aff: false },
   { name: "Leni Loves", price: "$37", note: "one-time \u00b7 theirs", copy: "A collection of aesthetic templates and resources for your brand and content.", url: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1", aff: true },
   { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "https://links.thedigitalincomeedit.com/shop/4fb73a6d-56a7-4c3f-b17c-ee28624bc4ac", aff: true },
-  { name: "Create Faceless Wealth", price: "$487", note: "one-time", copy: "A complete system for building a faceless digital income brand — strategy, content, monetisation.", url: "https://links.thedigitalincomeedit.com/shop/7d7d1473-4099-4e9a-b991-8de80a248d00", aff: true },
 ];
 
 // Membership tiers. Inclusion lists read from the live Skool plans screen,
@@ -115,7 +114,19 @@ const tiers = [
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     /* ── Weekend Ecosystem band ── */
-    .we-band{padding:0 0 8px}
+    .we-band{max-width:var(--wide);margin:0 auto;padding:0 40px 8px}
+    .we-band-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+    .we-band-badge{display:inline-flex;align-items:center;gap:6px;background:#D62E73;color:#FBF8F5;
+                   font-size:10.5px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;
+                   padding:6px 13px 6px 12px;border-radius:100px;line-height:1;white-space:nowrap;
+                   box-shadow:0 0 0 0 rgba(214,46,115,.42);animation:weGlow 2.8s ease-in-out infinite}
+    .we-band-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#FF8AC2;flex:none}
+    @keyframes weGlow{
+      0%,100%{box-shadow:0 0 0 0 rgba(214,46,115,.38)}
+      50%{box-shadow:0 0 0 7px rgba(214,46,115,0)}
+    }
+    @media(prefers-reduced-motion:reduce){.we-band-badge{animation:none}}
+    @media(max-width:600px){.we-band{padding:0 22px 8px}}
     .we-band-in{display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;text-decoration:none;color:inherit;
                 border:1px solid rgba(214,46,115,.24);border-radius:8px;overflow:hidden;
                 background:linear-gradient(120deg,rgba(203,183,247,.20),rgba(255,138,194,.16) 60%,rgba(214,46,115,.10));
@@ -263,10 +274,13 @@ const tiers = [
         <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem — your website and blog, built from what you already have." loading="lazy" width="1200" height="1490" />
       </div>
       <div class="we-band-txt">
-        <div class="we-band-k">New \u00b7 Waitlist open</div>
-        <h2>The Weekend Ecosystem\u2122</h2>
-        <p>You already wrote the blog posts \u2014 they're sitting in your Skool group. Over one weekend you turn everything you've already made into a real website and blog on a domain you own, with Claude doing the building. The waitlist gets in three days early, at the lowest price it will ever be.</p>
-        <span class="we-band-go">Join the waitlist <span class="a">\u2192</span></span>
+        <div class="we-band-row">
+          <span class="we-band-badge">New</span>
+          <span class="we-band-k" style="margin:0">Waitlist open · Three days early</span>
+        </div>
+        <h2>The Weekend Ecosystem™</h2>
+        <p>You already wrote the blog posts — they're sitting in your Skool group. Over one weekend you turn everything you've already made into a real website and blog on a domain you own, with Claude doing the building. The waitlist gets in three days early, at the lowest price it will ever be.</p>
+        <span class="we-band-go">Join the waitlist <span class="a">→</span></span>
       </div>
     </a>
   </section>
