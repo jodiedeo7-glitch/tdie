@@ -208,7 +208,7 @@ export const VAULTS = [
   {
     "slug": "troubleshooting-vault",
     "title": "The Troubleshooting Vault",
-    "blurb": "Every real roadblock paired with the fix that worked. Find your symptom."
+    "blurb": "FAQ plus every roadblock, grouped by website, blog, capture, traffic, publishing."
   },
   {
     "slug": "template-vault",

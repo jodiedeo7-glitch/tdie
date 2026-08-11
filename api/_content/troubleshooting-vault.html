@@ -1,11 +1,38 @@
 <h1>TROUBLESHOOTING VAULT</h1>
-<p>Every problem hit during a real build of this system, paired with the fix that actually worked.</p>
-<p><strong>How to use this:</strong> find your symptom, apply the fix. Nothing here is theoretical — each one cost someone real time.</p>
+<p>Every problem hit during a real build of this system, paired with the fix that actually worked. Nothing here is theoretical — each one cost someone real time.</p>
+<p><strong>How to use this:</strong> the sections match the phases of the course. If something breaks while you're building the website, look under The Website. Find your symptom, apply the fix.</p>
 <hr />
 <h2>CONTENTS</h2>
-<p><strong>1</strong> — Setup &amp; deploy · <strong>2</strong> — Files &amp; layouts · <strong>3</strong> — Writing with Claude · <strong>4</strong> — Links &amp; routing · <strong>5</strong> — Email capture · <strong>6</strong> — SEO &amp; indexing · <strong>7</strong> — Pinterest · <strong>8</strong> — Images · <strong>9</strong> — Publishing &amp; GitHub · <strong>10</strong> — Keeping it running</p>
+<p><strong>Questions people ask first</strong> — before you start, costs, time, whether you need X
+<strong>The Website</strong> — accounts, deploy, domain, files and layouts
+<strong>The Blog</strong> — writing with Claude, links, routing, SEO and indexing
+<strong>Capture &amp; Offers</strong> — email, gated resources, bridge pages
+<strong>Traffic &amp; Images</strong> — Pinterest, generated images
+<strong>Publishing</strong> — GitHub, commits, tokens
+<strong>Running It</strong> — cadence, cutting, maintenance</p>
 <hr />
-<h1>1 · SETUP &amp; DEPLOY</h1>
+<h1>QUESTIONS PEOPLE ASK FIRST</h1>
+<p><strong>"Do I need to know how to code?"</strong>
+No. You paste prompts and click buttons. Claude writes every file. If a file is wrong the deploy fails and tells you, and you paste the error back.</p>
+<p><strong>"What does this actually cost to run?"</strong>
+About a dollar a month. GitHub and Vercel are free at your traffic level; the domain is $10–15 a year. A paid Claude plan makes the longer builds smoother but isn't required for any specific module.</p>
+<p><strong>"Can I really do it in a weekend?"</strong>
+The build, yes — the modules are timed to it. Filling the site out is ongoing, which is what the cadence in Module 21 is for.</p>
+<p><strong>"What if I don't use Skool?"</strong>
+Everything works the same. Skool is the most common case because so much content gets trapped there, but the method applies to any pile of existing content.</p>
+<p><strong>"Do I have to be on camera?"</strong>
+No. Module 18 covers producing brand-consistent images without your face in any of them.</p>
+<p><strong>"Should I move my existing site?"</strong>
+No. Use a subdomain — <code>learn.yourdomain.com</code>. Leave what's working alone.</p>
+<p><strong>"What if I don't have a paid product yet?"</strong>
+Build the site anyway. Every article routes to the free resource, you build the list, and the list tells you what to sell. That's a better sequence than guessing at a product first.</p>
+<p><strong>"How long before I see traffic?"</strong>
+Google takes weeks to start indexing a new site. Pinterest takes 60–90 days to start reading a new account. Neither is broken. This is the single most common reason people quit right before it works.</p>
+<p><strong>"What if I fall off for a month?"</strong>
+Nothing is lost. Articles keep ranking and pins keep circulating — that's the whole point of assets over feeds. Restart at one article a week and don't try to catch up.</p>
+<hr />
+<h1>THE WEBSITE</h1>
+<p><em>Modules 4–7 — accounts, deploy, domain, files and layouts</em></p>
 <p><strong>"It's asking me to choose a plan."</strong>
 Free tier, on GitHub and Vercel both. Paid tiers are for teams and commercial usage.</p>
 <p><strong>"Public or private repo?"</strong>
@@ -21,7 +48,6 @@ Normal. Open Vercel's build log, copy the error, paste it to Claude. Deploy → 
 <p><strong>"It deployed but the site didn't change."</strong>
 Check the deployment log. A build error means Vercel keeps serving the last working version — the system protecting you. Fix the error and it redeploys.</p>
 <hr />
-<h1>2 · FILES &amp; LAYOUTS</h1>
 <p><strong>"Claude gave me a fragment, not the whole file."</strong>
 Ask for the complete file explicitly. Partial files are the single most common cause of a broken build — you paste it, something's missing, and the error points somewhere unrelated.</p>
 <p><strong>"I don't know if this file is correct."</strong>
@@ -44,7 +70,9 @@ The scaffold ships placeholder copy on purpose. Module 5's homepage prompt fills
 <p><strong>"A page has its own <code>&lt;html&gt;</code> tag and analytics doesn't load there."</strong>
 Any page bypassing the layout misses everything the layout provides. Ask Claude to check <em>every</em> file that renders its own <code>&lt;html&gt;</code>, not just the obvious one.</p>
 <hr />
-<h1>3 · WRITING WITH CLAUDE</h1>
+<hr />
+<h1>THE BLOG</h1>
+<p><em>Modules 8–11 — writing with Claude, links, routing, SEO</em></p>
 <p><strong>"It mentioned a product I don't sell."</strong>
 Your Canon File has a gap. Add it to the DOES NOT EXIST list, re-upload, regenerate. Fixing only the output means it recurs.</p>
 <p><strong>"It came out at 1,800 words instead of 3,000."</strong>
@@ -66,7 +94,6 @@ Tell it explicitly to omit that slot and continue. Directing an omission is comp
 <p><strong>"I ran one huge prompt and got a mess."</strong>
 Roles cancel each other, context collapses, and overlapping requests produce duplicate structures. Role and context in project instructions once; one task per conversation after that.</p>
 <hr />
-<h1>4 · LINKS &amp; ROUTING</h1>
 <p><strong>"My related links point to articles I haven't written."</strong>
 Remove them. A link to a page you plan to write is a broken link today.</p>
 <p><strong>"I have forty articles with hardcoded links."</strong>
@@ -80,19 +107,6 @@ Leave it empty. Substituting the nearest product teaches readers your recommenda
 <p><strong>"An empty slot rendered as a broken link."</strong>
 Your layout is filling slots rather than omitting them. The rule: if a prop is missing, render nothing. An omitted slot costs one opportunity; a broken link costs trust at the exact moment someone was interested.</p>
 <hr />
-<h1>5 · EMAIL CAPTURE</h1>
-<p><strong>"My form was live and broken for months."</strong>
-The most expensive failure in this build. It looks perfect, the button clicks, nothing is captured, and because it's in the layout it's on every page at once.
-<strong>Fix:</strong> don't build a form. Link to your email platform's hosted signup page. Their infrastructure, cannot silently break.
-<strong>Then:</strong> test it yourself monthly. Sign up with a real email. Ninety seconds.</p>
-<p><strong>"Claude generated a form with <code>onsubmit='return false'</code>."</strong>
-That form is decorative. It does nothing. Ask for the link version.</p>
-<p><strong>"I don't have an email platform."</strong>
-Pick one tonight, use the free tier. Which one matters far less than starting to collect — the list you don't build this month is the one you don't have next year.</p>
-<p><strong>"Someone found my gated PDF without signing up."</strong>
-It's at a public URL. Anything in your site's public folder is public — no exceptions. Move the file to your email platform's delivery and remove it from the site.</p>
-<hr />
-<h1>6 · SEO &amp; INDEXING</h1>
 <p><strong>"Search Console says my sitemap couldn't be fetched."</strong>
 Almost always the URL format. Full address with <code>https://</code>, matching your canonical domain exactly including whether you use <code>www</code>. Use a URL-prefix property, not a Domain property — they behave differently here.</p>
 <p><strong>"Discovered pages: 0."</strong>
@@ -108,7 +122,23 @@ Pass a real date on every article. Never invent one — if it's missing, omit it
 <p><strong>"Analytics shows zero."</strong>
 In order: enabled in the dashboard? Snippet in every layout? Ad blocker on your own browser?</p>
 <hr />
-<h1>7 · PINTEREST</h1>
+<hr />
+<h1>CAPTURE &amp; OFFERS</h1>
+<p><em>Modules 12–15 — email, gated resources, bridge pages</em></p>
+<p><strong>"My form was live and broken for months."</strong>
+The most expensive failure in this build. It looks perfect, the button clicks, nothing is captured, and because it's in the layout it's on every page at once.
+<strong>Fix:</strong> don't build a form. Link to your email platform's hosted signup page. Their infrastructure, cannot silently break.
+<strong>Then:</strong> test it yourself monthly. Sign up with a real email. Ninety seconds.</p>
+<p><strong>"Claude generated a form with <code>onsubmit='return false'</code>."</strong>
+That form is decorative. It does nothing. Ask for the link version.</p>
+<p><strong>"I don't have an email platform."</strong>
+Pick one tonight, use the free tier. Which one matters far less than starting to collect — the list you don't build this month is the one you don't have next year.</p>
+<p><strong>"Someone found my gated PDF without signing up."</strong>
+It's at a public URL. Anything in your site's public folder is public — no exceptions. Move the file to your email platform's delivery and remove it from the site.</p>
+<hr />
+<hr />
+<h1>TRAFFIC &amp; IMAGES</h1>
+<p><em>Modules 16–18 — Pinterest and generated images</em></p>
 <p><strong>"My links got flagged as spam."</strong>
 Four causes, fix all of them:
 1. Raw affiliate links in pins → route through bridge pages
@@ -127,7 +157,6 @@ Empty boards dilute the account. Merge down to 8–12, fill the ones you keep be
 <p><strong>"Two of my boards target the same terms."</strong>
 Merge them. Two half-boards split your own signal.</p>
 <hr />
-<h1>8 · IMAGES</h1>
 <p><strong>"My images look like 3D renders."</strong>
 Add "a real photograph, not a 3D render, not CGI" <em>and</em> real camera specs. Both, not one.</p>
 <p><strong>"Three covers look like three different brands."</strong>
@@ -151,7 +180,9 @@ Stop describing her in words — word descriptions drift. Generate one image, sa
 <p><strong>"My account got restricted over an image."</strong>
 Trademarked characters, brands, or logos in generated images. Hard ban, no exceptions, some platforms don't offer appeals.</p>
 <hr />
-<h1>9 · PUBLISHING &amp; GITHUB</h1>
+<hr />
+<h1>PUBLISHING</h1>
+<p><em>Module 20 — GitHub, commits, tokens</em></p>
 <p><strong>"It says 404 or not found."</strong>
 Almost always the token lacking access to that specific repo, not a wrong path.</p>
 <p><strong>"I pasted my token in chat and it refused to use it."</strong>
@@ -165,7 +196,9 @@ Binary files need base64 encoding with the encoding flag set in the blob payload
 <p><strong>"I forgot to revoke a token."</strong>
 Revoke it now. Make it reflexive at the end of every session — a token you forgot about is the one that causes the problem.</p>
 <hr />
-<h1>10 · KEEPING IT RUNNING</h1>
+<hr />
+<h1>RUNNING IT</h1>
+<p><em>Module 21 — cadence, cutting, maintenance</em></p>
 <p><strong>"I fell off for a month."</strong>
 Nothing was lost. Articles kept ranking, pins kept circulating — that's the whole point of assets over feeds. Restart at one article a week. Don't try to catch up; catching up is how people quit twice.</p>
 <p><strong>"I can't do 2 hours a day."</strong>

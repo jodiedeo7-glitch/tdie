@@ -29,19 +29,20 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
       feeds the next — the website holds the blog, the blog fills the list, the list buys the product.
     </p>
 
+    <span class="ci-kicker">Two ways in</span>
     <div class="ci-top">
       <a href="/weekend-ecosystem/quick-sheet" class="qs-card">
         <div>
-          <span class="qs-card-tag">Done this before?</span>
+          <span class="qs-card-tag">Prompts only · No teaching</span>
           <span class="qs-card-t">The Quick Sheet</span>
-          <span class="qs-card-b">All 36 prompts on one page, in the order you run them.</span>
+          <span class="qs-card-b">All 36 prompts on one page, in the order you run them, one line each on what they do. Use this if you've built a site before and just want the prompts — or come back to it once you've done the course and need to run the whole thing again.</span>
         </div>
         <span class="qs-card-arrow">→</span>
       </a>
 
       <aside class="ci-vaults">
-        <span class="ci-vaults-tag">The Vaults</span>
-        <span class="ci-vaults-sub">Reference, not reading. Come back to these for years.</span>
+        <span class="ci-vaults-tag">Reference · Look things up</span>
+        <span class="ci-vaults-sub">Not meant to be read front to back. Open these when you need one specific thing.</span>
         {VAULTS.map((v) => (
           <a href={`/weekend-ecosystem/${v.slug}`} class="ci-vault">
             <span class="ci-vault-t">{v.title}</span>
@@ -50,6 +51,17 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
         ))}
       </aside>
     </div>
+
+    <div class="ci-divider">
+      <span class="ci-divider-line"></span>
+      <span class="ci-divider-label">The full course</span>
+      <span class="ci-divider-line"></span>
+    </div>
+    <p class="ci-full-note">
+      Twenty-two modules below, in order. Each one teaches the step, gives you the prompt for it,
+      and tells you what breaks at that point and how to fix it. If this is your first build,
+      start at Module 01 and work down — don't skip to the prompts.
+    </p>
 
     <div class="ci-phases">
       {phases.map((phase, pi) => {
@@ -88,7 +100,12 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   <style>
     /* ── layout ── */
     .ci-lede{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;margin:0 0 34px;max-width:62ch}
-    .ci-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:56px;align-items:start}
+    .ci-kicker{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:14px}
+    .ci-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:64px;align-items:stretch}
+    .ci-divider{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .ci-divider-line{flex:1;height:1px;background:rgba(214,46,115,.28)}
+    .ci-divider-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73}
+    .ci-full-note{font-size:15.5px;line-height:1.7;color:rgba(43,22,27,.66);max-width:66ch;margin:0 auto 40px;text-align:center}
 
     /* ── vaults, set aside ── */
     .ci-vaults{background:#FFFDFB;border:1px solid rgba(43,22,27,.13);border-radius:4px;padding:22px 24px 8px}
