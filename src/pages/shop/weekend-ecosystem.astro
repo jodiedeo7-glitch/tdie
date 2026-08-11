@@ -1,0 +1,216 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+// PLACEHOLDER — fill when the Beacons product is created. Do not guess.
+const CHECKOUT = "";
+
+const problems = [
+  { n: "01", t: "It's all trapped in Skool", p: "Every lesson, every call, every post you've written. None of it searchable, none of it ranking, none of it on a domain you own." },
+  { n: "02", t: "Nobody finds you unless they already know you", p: "A member has to join before they can read a word. There's no front door — only a members' entrance." },
+  { n: "03", t: "You post, then you post again", p: "A feed resets to zero every day. Nothing you made last March is working for you this March." },
+  { n: "04", t: "You've started a blog three times", p: "Blank page, no idea what to write, quit by week three. Not a discipline problem. A wrong-starting-point problem." },
+];
+
+const weekend = [
+  { d: "Friday night", h: "2 hours", t: "The Inventory", p: "You write nothing. You find what you already wrote — and most people are startled by how much there is." },
+  { d: "Saturday morning", h: "3 hours", t: "The Machine", p: "The site exists by lunch. Real domain, real stack, deploying automatically. You don't write code." },
+  { d: "Saturday afternoon", h: "3 hours", t: "The Blog Engine", p: "One Skool lesson becomes a 3,000-word article that ranks. Then the cluster around it." },
+  { d: "Saturday night", h: "2 hours", t: "The Capture", p: "Email capture that actually works, a free resource, and every reader routed to an offer." },
+  { d: "Sunday morning", h: "3 hours", t: "The Traffic", p: "Pinterest set up properly, one article turned into a month of assets, images without your face." },
+  { d: "Sunday afternoon", h: "2 hours", t: "The System", p: "Analytics, publishing pipeline, and a cadence you can actually hold at 2–4 hours a day." },
+];
+
+const vaults = [
+  { t: "The Prompt Vault", p: "Every prompt in the course, verbatim, in one place. Claude build prompts, the four SEO passes, the repurposing pack, image prompts, GitHub commits. Copy, swap the brackets, run." },
+  { t: "The Troubleshooting Vault", p: "Every roadblock hit during a real build, paired with the fix that worked. The silent email form. The Pinterest spam flag. The sitemap that reports zero pages. Nothing theoretical." },
+  { t: "The Template Vault", p: "The Canon File, the pillar map, the live-facts block, the product register, the operating cadence. Fill in and keep." },
+];
+
+const forYou = [
+  "You run a Skool group and everything you've written lives inside it",
+  "You sell digital products but don't own a real website",
+  "You have content, courses, or calls piling up with nowhere to send people",
+  "You want a blog that compounds instead of a feed that resets",
+  "You'd rather not be on camera",
+];
+
+const notForYou = [
+  "You want someone to write your content for you",
+  "You have no existing content at all and nothing to say yet",
+  "You want a done-for-you agency build",
+];
+
+const faqs = [
+  { q: "Do I need to know how to code?", a: "No. You paste prompts and click buttons. Claude writes every file. The course assumes you have never opened a code editor." },
+  { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain runs $10–15 a year." },
+  { q: "Do I need to pay for Claude?", a: "A paid Claude plan makes the longer builds much smoother, but the course doesn't require any specific plan or tool subscription beyond your domain." },
+  { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it. Filling the site out is ongoing, and Module 20 gives you the cadence for that." },
+  { q: "What if I don't use Skool?", a: "It works the same. Skool is the most common case because so much content gets trapped there, but the method applies to any pile of existing content." },
+  { q: "Will I have to be on camera?", a: "No. Module 17 covers producing brand-consistent images without your face in any of them." },
+  { q: "Is this the same as your membership?", a: "No. This is a standalone one-time purchase and isn't part of any membership tier." },
+];
+---
+<PageLayout
+  wide
+  title="The Weekend Ecosystem™"
+  description="The website-and-blog system that turns digital product sellers into digital business owners. Built from what you already have, in one weekend, with Claude AI. $97."
+>
+  <section class="we-hero">
+    <div class="page-eyebrow">Standalone Course · $97 one-time</div>
+    <h1>The Weekend <em>Ecosystem™</em></h1>
+    <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
+    <div class="we-cta-row">
+      {CHECKOUT
+        ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
+        : <span class="we-soon">Enrollment opens shortly</span>}
+    </div>
+  </section>
+
+  <section class="we-block">
+    <h2>You already wrote it</h2>
+    <p class="we-lead">Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
+    <p class="we-lead">You don't have that problem. You have the opposite one — years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
+    <p class="we-lead">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
+  </section>
+
+  <section class="we-block">
+    <h2>What's actually wrong right now</h2>
+    <div class="we-grid">
+      {problems.map((x) => (
+        <div class="we-card">
+          <span class="we-num">{x.n}</span>
+          <h3>{x.t}</h3>
+          <p>{x.p}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="we-block">
+    <h2>The weekend</h2>
+    <div class="we-timeline">
+      {weekend.map((x) => (
+        <div class="we-row">
+          <div class="we-when">
+            <span class="we-day">{x.d}</span>
+            <span class="we-hrs">{x.h}</span>
+          </div>
+          <div class="we-what">
+            <h3>{x.t}</h3>
+            <p>{x.p}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="we-note">Twenty-two modules. Every one ends with a copy-paste prompt and a fix for what breaks at that step.</p>
+  </section>
+
+  <section class="we-block">
+    <h2>Three vaults you'll keep going back to</h2>
+    <div class="we-grid we-grid-3">
+      {vaults.map((x) => (
+        <div class="we-card we-card-pink">
+          <h3>{x.t}</h3>
+          <p>{x.p}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="we-block">
+    <h2>By Sunday afternoon</h2>
+    <ul class="we-list">
+      <li>A website on a domain you own, deploying automatically</li>
+      <li>A pillar article and the start of a cluster around it</li>
+      <li>Email capture that works — tested by you, not assumed</li>
+      <li>A free resource with automated delivery</li>
+      <li>Every reader routed to a free offer and a paid one</li>
+      <li>Bridge pages, so every outbound link is yours to change</li>
+      <li>A traffic source that compounds instead of resetting</li>
+      <li>One article turning into a month of assets</li>
+      <li>Brand-consistent images without your face in any of them</li>
+      <li>A cadence you can hold at 2–4 hours a day</li>
+    </ul>
+  </section>
+
+  <section class="we-block we-split">
+    <div>
+      <h3 class="we-sub">This is for you if</h3>
+      <ul class="we-list we-list-tight">{forYou.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <div>
+      <h3 class="we-sub">It isn't if</h3>
+      <ul class="we-list we-list-tight we-list-muted">{notForYou.map((x) => <li>{x}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="we-block">
+    <h2>Questions</h2>
+    <div class="we-faq">
+      {faqs.map((x) => (
+        <details>
+          <summary>{x.q}</summary>
+          <p>{x.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="we-close">
+    <h2>You were a digital product seller.</h2>
+    <p class="lede">Now you own the infrastructure.</p>
+    <div class="we-cta-row">
+      {CHECKOUT
+        ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
+        : <span class="we-soon">Enrollment opens shortly</span>}
+    </div>
+  </section>
+
+  <style>
+    .we-hero{text-align:center;padding:20px 0 70px;border-bottom:1px solid rgba(43,22,27,.1)}
+    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7vw,70px);line-height:1.02;letter-spacing:-1px;margin:0 0 24px}
+    .we-hero h1 em{font-style:italic;color:var(--pink)}
+    .we-hero .lede{max-width:620px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.6;color:var(--taupe-deep)}
+    .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+    .we-soon{display:inline-block;padding:15px 34px;border:1px solid rgba(43,22,27,.25);border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--taupe-deep)}
+    .we-block{padding:72px 0;border-bottom:1px solid rgba(43,22,27,.09)}
+    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 34px;letter-spacing:-.4px}
+    .we-lead{font-size:18px;line-height:1.85;max-width:640px;margin:0 0 22px}
+    .we-note{font-size:15px;color:var(--taupe-deep);margin-top:34px;font-style:italic}
+    .we-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+    .we-grid-3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+    .we-card{padding:28px;border:1px solid rgba(43,22,27,.13);border-radius:6px;background:rgba(255,255,255,.5)}
+    .we-card-pink{border-top:3px solid var(--pink)}
+    .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 12px;line-height:1.25}
+    .we-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--taupe-deep)}
+    .we-num{display:block;font-size:11px;letter-spacing:2.4px;color:var(--gold);margin-bottom:14px}
+    .we-timeline{display:flex;flex-direction:column;gap:2px}
+    .we-row{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid rgba(43,22,27,.09)}
+    .we-row:last-child{border-bottom:none}
+    .we-day{display:block;font-family:"Fraunces",serif;font-size:18px;font-weight:400}
+    .we-hrs{display:block;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-top:5px}
+    .we-what h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0 0 9px}
+    .we-what p{font-size:16px;line-height:1.75;margin:0;color:var(--taupe-deep)}
+    .we-list{list-style:none;padding:0;margin:0;max-width:640px}
+    .we-list li{padding:13px 0 13px 30px;border-bottom:1px solid rgba(43,22,27,.09);font-size:16.5px;line-height:1.6;position:relative}
+    .we-list li:before{content:"—";position:absolute;left:0;color:var(--pink)}
+    .we-list-tight li{font-size:15.5px;padding:11px 0 11px 30px}
+    .we-list-muted li:before{content:"—";color:var(--taupe-deep);opacity:.5}
+    .we-split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0 0 16px}
+    .we-faq details{border-bottom:1px solid rgba(43,22,27,.11);padding:19px 0}
+    .we-faq summary{cursor:pointer;font-size:17px;font-weight:500;list-style:none}
+    .we-faq summary::-webkit-details-marker{display:none}
+    .we-faq summary:before{content:"+";color:var(--pink);margin-right:12px;font-weight:400}
+    .we-faq details[open] summary:before{content:"–"}
+    .we-faq p{font-size:16px;line-height:1.78;margin:14px 0 4px 24px;color:var(--taupe-deep);max-width:620px}
+    .we-close{text-align:center;padding:80px 0 30px}
+    .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,44px);margin:0 0 14px;letter-spacing:-.4px}
+    .we-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;color:var(--pink);margin:0 0 36px}
+    @media(max-width:760px){
+      .we-row{grid-template-columns:1fr;gap:10px}
+      .we-split{grid-template-columns:1fr;gap:38px}
+      .we-block{padding:52px 0}
+    }
+  </style>
+</PageLayout>
