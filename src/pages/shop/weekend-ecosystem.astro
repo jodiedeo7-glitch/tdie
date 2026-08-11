@@ -42,6 +42,12 @@ const included = [
   { t: "Progress tracking + certificate", p: "Tick off each module, watch the ring fill, and unlock a completion certificate at twenty-two." },
 ];
 
+const proof = [
+  { t: "How to Build a Faceless Digital Business", u: "/learn/how-to-build-a-faceless-digital-business", n: "3,000+ words" },
+  { t: "The Complete Pinterest Marketing Guide", u: "/learn/complete-pinterest-marketing-guide", n: "Pillar + cluster" },
+  { t: "Automating Your Online Business", u: "/learn/automating-your-online-business", n: "Built from a lesson" },
+];
+
 const claudeDoes = [
   "Writes every file your website needs — config, layouts, pages, the homepage",
   "Turns a Skool lesson into a 3,000-word article written for a stranger",
@@ -126,6 +132,7 @@ const faqs = [
         ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
+    <p class="we-access">Access is tied to the email you buy with — use one you check.</p>
     <div class="we-hero-strip">
       {phases.map((p, i) => (
         <span class="we-chip" style={`--ac:${p.accent}`}>
@@ -150,6 +157,22 @@ const faqs = [
     <p class="we-lead">Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
     <p class="we-lead">You have the opposite problem — years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
     <p class="we-lead we-lead-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
+  </section>
+
+  <!-- PROOF -->
+  <section class="we-block we-proof">
+    <span class="we-proof-tag">Built with this system</span>
+    <h2>You're reading this on it</h2>
+    <p class="we-sublead">This website, and every article on it, came out of the process in this course. Most of them started life as a lesson inside my Skool group. Open one and see what a Skool lesson looks like after a Saturday afternoon.</p>
+    <div class="we-proof-grid">
+      {proof.map((p) => (
+        <a class="we-proof-card" href={p.u}>
+          <span class="we-proof-n">{p.n}</span>
+          <span class="we-proof-t">{p.t}</span>
+          <span class="we-proof-go">Read it →</span>
+        </a>
+      ))}
+    </div>
   </section>
 
   <!-- PROBLEM -->
@@ -230,6 +253,39 @@ const faqs = [
     </div>
   </section>
 
+  <!-- INSIDE -->
+  <section class="we-block">
+    <h2>Inside the course</h2>
+    <p class="we-sublead">Every prompt sits in a copy card. Every module has its own colour, a numbered spine of actions, and a collapsed panel of fixes for when something breaks.</p>
+    <div class="we-inside">
+      <div class="we-shot">
+        <div class="we-shot-bar"><span></span><span></span><span></span></div>
+        <div class="we-shot-body">
+          <span class="we-shot-eyebrow">Phase 0 — Module 2 of 22</span>
+          <span class="we-shot-h">Build Your Canon File</span>
+          <div class="we-shot-step"><span class="we-shot-num">01</span><span class="we-shot-label">Copy and fill</span></div>
+          <div class="we-shot-prompt">
+            <div class="we-shot-prompt-bar"><span>Copy this prompt</span><em>Copy</em></div>
+            <code>CANON FILE — [YOUR BRAND]<br/><br/>PRODUCTS — exact names, prices, URLs<br/>| Product | Price | Platform | URL |<br/><br/>DOES NOT EXIST — never reference<br/>- No free trial<br/>- No annual plan</code>
+          </div>
+          <div class="we-shot-road"><span>If you get stuck</span><em>+ Claude keeps forgetting my Canon File</em></div>
+        </div>
+      </div>
+      <div class="we-inside-side">
+        <div class="we-mini">
+          <span class="we-mini-tag">Progress</span>
+          <div class="we-mini-ring"><span>22</span></div>
+          <p>Tick each module off. The ring fills as you go, and every phase keeps its own tally.</p>
+        </div>
+        <div class="we-mini we-mini-cert">
+          <span class="we-mini-tag">At twenty-two</span>
+          <span class="we-mini-cert-h">Certificate of Completion</span>
+          <p>Your name, the date, and something to post when you're done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BY SUNDAY -->
   <section class="we-block">
     <h2>By Sunday afternoon</h2>
@@ -271,7 +327,8 @@ const faqs = [
         ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
-    <p class="we-close-note">One-time payment. Instant access with the email you buy with.</p>
+    <p class="we-close-note">One-time payment, $97. Access is tied to the email you buy with — use one you check.</p>
+    <p class="we-close-anchor">A developer quotes four figures for this build. A site builder charges more than this every year, forever. You pay once and own the thing.</p>
   </section>
 
   <style>
@@ -328,6 +385,55 @@ const faqs = [
     .we-phase-mods{list-style:none;padding:0;margin:0}
     .we-phase-mods li{font-size:15.5px;line-height:1.45;padding:7px 0;color:#2B161B}
     .we-pm-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1px;color:color-mix(in srgb,var(--ac) 78%,#2B161B);margin-right:10px}
+
+    /* ── proof ── */
+    .we-proof{border-top:none;padding-top:0}
+    .we-proof-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
+    .we-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+    .we-proof-card{display:flex;flex-direction:column;gap:9px;padding:22px 22px 20px;border-radius:6px;text-decoration:none;
+                   background:linear-gradient(165deg,rgba(203,183,247,.2),rgba(214,46,115,.06));
+                   border:1px solid rgba(185,162,232,.5);transition:transform .2s,border-color .2s}
+    .we-proof-card:hover{transform:translateY(-2px);border-color:var(--pink)}
+    .we-proof-n{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#6B4FA8}
+    .we-proof-t{font-family:"Fraunces",serif;font-size:19px;line-height:1.24;color:#2B161B}
+    .we-proof-go{font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink);margin-top:auto;padding-top:6px}
+
+    /* ── inside the course ── */
+    .we-inside{display:grid;grid-template-columns:1.42fr 1fr;gap:18px;margin-top:36px;align-items:start}
+    .we-shot{border-radius:8px;overflow:hidden;border:1px solid rgba(43,22,27,.16);background:#FBF8F5;box-shadow:0 10px 34px rgba(43,22,27,.09)}
+    .we-shot-bar{display:flex;gap:6px;padding:11px 14px;background:rgba(43,22,27,.055);border-bottom:1px solid rgba(43,22,27,.09)}
+    .we-shot-bar span{width:9px;height:9px;border-radius:50%;background:rgba(43,22,27,.16)}
+    .we-shot-body{padding:24px 26px 26px}
+    .we-shot-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#CD9CDD;margin-bottom:10px}
+    .we-shot-h{display:block;font-family:"Fraunces",serif;font-size:27px;font-weight:300;letter-spacing:-.6px;color:#2B161B;margin-bottom:22px}
+    .we-shot-step{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+    .we-shot-num{width:31px;height:31px;border-radius:50%;background:#CD9CDD;color:#fff;display:flex;align-items:center;justify-content:center;
+                 font-family:"JetBrains Mono",monospace;font-size:11px;flex-shrink:0}
+    .we-shot-label{font-family:"Fraunces",serif;font-size:19px;color:#2B161B}
+    .we-shot-prompt{border-radius:5px;overflow:hidden;border:1px solid rgba(214,46,115,.22);background:#FFFDFB;margin-bottom:14px}
+    .we-shot-prompt-bar{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.14)}
+    .we-shot-prompt-bar span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
+    .we-shot-prompt-bar em{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;
+                           color:var(--pink);border:1px solid rgba(214,46,115,.4);border-radius:3px;padding:3px 9px;background:#fff}
+    .we-shot-prompt code{display:block;padding:15px 16px;font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.75;color:#4A2C34}
+    .we-shot-road{display:flex;flex-direction:column;gap:9px;border:1px solid rgba(214,46,115,.18);background:rgba(255,138,194,.06);border-radius:5px;padding:14px 16px}
+    .we-shot-road span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
+    .we-shot-road em{font-style:normal;font-size:14px;color:#2B161B}
+
+    .we-inside-side{display:flex;flex-direction:column;gap:14px}
+    .we-mini{border-radius:8px;padding:24px 24px 22px;border:1px solid rgba(43,22,27,.14);background:#FFFDFB}
+    .we-mini-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
+    .we-mini p{font-size:14.5px;line-height:1.6;color:#57404A;margin:16px 0 0}
+    .we-mini-ring{width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+                  background:conic-gradient(#D62E73 0 100%,rgba(43,22,27,.09) 0);position:relative}
+    .we-mini-ring:after{content:"";position:absolute;inset:9px;border-radius:50%;background:#FFFDFB}
+    .we-mini-ring span{position:relative;z-index:1;font-family:"Fraunces",serif;font-size:23px;font-weight:300;color:#2B161B}
+    .we-mini-cert{background:linear-gradient(150deg,rgba(185,162,232,.28),rgba(200,123,166,.16))}
+    .we-mini-cert-h{display:block;font-family:"Fraunces",serif;font-size:21px;font-weight:300;color:#2B161B;padding-bottom:12px;border-bottom:1px solid rgba(214,46,115,.3)}
+
+    /* ── access + anchor ── */
+    .we-access{font-size:13px;letter-spacing:.3px;color:#7A5C63;margin:18px 0 0}
+    .we-close-anchor{font-size:14px;line-height:1.65;color:rgba(251,238,244,.82);max-width:52ch;margin:20px auto 0}
 
     /* ── who does what ── */
     .we-who{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-bottom:26px}
@@ -390,7 +496,8 @@ const faqs = [
 
     @media(max-width:820px){
       .we-stats{grid-template-columns:1fr 1fr}
-      .we-grid,.we-phases,.we-checks,.we-split,.we-who{grid-template-columns:1fr}
+      .we-grid,.we-phases,.we-checks,.we-split,.we-who,.we-inside{grid-template-columns:1fr}
+      .we-proof-grid{grid-template-columns:1fr}
       .we-split{gap:34px}
       .we-block{padding:56px 0}
       .we-close{padding:60px 24px 54px;margin-top:60px}

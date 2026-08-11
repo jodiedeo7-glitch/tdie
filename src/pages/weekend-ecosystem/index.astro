@@ -50,10 +50,13 @@ const total = MODULES.length;
           Tick <strong>Mark complete</strong> at the bottom of each module as you finish it.
           Check off all {total} and your completion certificate unlocks.
         </p>
-        <a id="tk-cert" href="/weekend-ecosystem/certificate" class="tk-cert tk-cert-locked">
+        <div class="tk-actions">
+          <a id="tk-resume" href="#" class="tk-resume">Start Module 01 →</a>
+          <a id="tk-cert" href="/weekend-ecosystem/certificate" class="tk-cert tk-cert-locked">
           <span class="tk-cert-icon">✕</span>
-          <span id="tk-cert-t">Certificate locked — {total} modules to go</span>
-        </a>
+            <span id="tk-cert-t">Certificate locked — {total} modules to go</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -90,6 +93,11 @@ const total = MODULES.length;
       tells you what breaks at that point and how to fix it. First build? Start at Module 01 and
       work down — don't skip to the prompts.
     </p>
+
+    <div class="ci-search">
+      <input id="ci-q" type="search" placeholder="Search modules — try canon file, pinterest, spam flag" autocomplete="off" />
+      <span id="ci-hits" class="ci-hits"></span>
+    </div>
 
     <div class="ci-phases">
       {phases.map((phase, pi) => {
@@ -153,6 +161,18 @@ const total = MODULES.length;
                   box-shadow:0 4px 14px rgba(214,46,115,.32);animation:cert 2.4s ease-in-out infinite}
     @keyframes cert{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
     .tk-cert-icon{font-size:12px}
+
+    .tk-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .tk-resume{display:inline-flex;align-items:center;padding:10px 18px;border-radius:4px;background:#D62E73;color:#fff;
+               font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;text-decoration:none;
+               transition:transform .2s,box-shadow .2s}
+    .tk-resume:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(214,46,115,.3)}
+
+    .ci-search{display:flex;align-items:center;gap:14px;margin:0 0 22px}
+    #ci-q{flex:1;padding:13px 16px;border:1px solid rgba(43,22,27,.18);border-radius:5px;font-size:15px;font-family:"Inter",sans-serif;background:#FFFDFB}
+    #ci-q:focus{outline:none;border-color:#D62E73;box-shadow:0 0 0 3px rgba(214,46,115,.1)}
+    .ci-hits{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27,.5);white-space:nowrap}
+    .ci-mod[hidden],.ci-phase[hidden]{display:none}
 
     /* ── two ways in ── */
     .ci-kicker{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:14px}
@@ -274,10 +294,46 @@ const total = MODULES.length;
     }
   }
 
+  function wireResume() {
+    const done = getDone();
+    const mods = [...document.querySelectorAll(".ci-mod")];
+    const next = mods.find((a) => !done.includes(a.dataset.slug)) || mods[0];
+    const link = document.getElementById("tk-resume");
+    if (!next) return;
+    const num = next.querySelector(".ci-mod-n").textContent.trim();
+    const title = next.querySelector(".ci-mod-t").textContent.trim();
+    link.href = next.getAttribute("href");
+    const anyDone = done.length > 0;
+    link.textContent = `${anyDone ? "Continue" : "Start"} — ${num} ${title} →`;
+  }
+
+  function wireSearch() {
+    const q = document.getElementById("ci-q");
+    const hits = document.getElementById("ci-hits");
+    q.addEventListener("input", () => {
+      const t = q.value.trim().toLowerCase();
+      let n = 0;
+      document.querySelectorAll(".ci-phase").forEach((sec) => {
+        let shown = 0;
+        sec.querySelectorAll(".ci-mod").forEach((a) => {
+          const hay = a.textContent.toLowerCase();
+          const match = !t || hay.includes(t);
+          a.hidden = !match;
+          if (match) shown++;
+        });
+        sec.hidden = shown === 0;
+        n += shown;
+      });
+      hits.textContent = t ? `${n} module${n === 1 ? "" : "s"}` : "";
+    });
+  }
+
   function show() {
     gate.style.display = "none";
     contents.style.display = "block";
     paint();
+    wireResume();
+    wireSearch();
   }
 
   if (localStorage.getItem(KEY)) show();
@@ -308,5 +364,7 @@ const total = MODULES.length;
 
   btn.addEventListener("click", unlock);
   input.addEventListener("keydown", (e) => { if (e.key === "Enter") unlock(); });
-  window.addEventListener("pageshow", () => { if (contents.style.display === "block") paint(); });
+  window.addEventListener("pageshow", () => {
+    if (contents.style.display === "block") { paint(); wireResume(); }
+  });
 </script>
