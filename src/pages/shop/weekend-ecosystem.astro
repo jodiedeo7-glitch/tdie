@@ -223,6 +223,9 @@ const faqs = [
   <section class="we-block">
     <h2>The weekend, hour by hour</h2>
     <p class="we-sublead">Six phases. Each builds a working piece, and each piece feeds the next — the website holds the blog, the blog fills the list, the list buys the product.</p>
+    <figure class="we-fig we-fig-timeline">
+      <img src="/images/we/weekend-timeline.jpg" alt="One weekend, hour by hour. 00 Friday night — Prep, 2 hrs. 01 Saturday morning — The Website, 3 hrs. 02 Saturday afternoon — The Blog, 3 hrs. 03 Saturday night — The Capture System, 3 hrs. 04 Sunday morning — Traffic, 3 hrs. 05 Sunday afternoon — Running It, 2 hrs." loading="lazy" width="1200" height="1490" />
+    </figure>
     <div class="we-phases">
       {phases.map((p, i) => (
         <div class="we-phase" style={`--ac:${p.accent}`}>
@@ -432,6 +435,7 @@ const faqs = [
     .we-fig-wide{max-width:520px;margin:42px 0 0}
     .we-fig-desktop{max-width:600px;margin:36px auto 0}
     .we-fig-tight{max-width:560px;margin:0 auto 8px}
+    .we-fig-timeline{max-width:600px;margin:36px auto 40px}
     .we-fig-modules{max-width:640px;margin:38px auto 0}
     .we-fig-flush{margin:0}
     .we-fig-flush img{box-shadow:0 6px 22px rgba(43,22,27,.1)}
