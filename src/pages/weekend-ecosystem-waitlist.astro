@@ -1,6 +1,18 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 
+const neverDo = [
+  "Write code",
+  "Design a page",
+  "Hire a developer",
+  "Learn WordPress",
+  "Stare at a blank page",
+  "Film yourself",
+  "Think of content ideas",
+  "Post daily to stay visible",
+  "Pay monthly, forever",
+];
+
 const teasers = [
   { n: "22", l: "Modules" },
   { n: "36", l: "Prompts, verbatim" },
@@ -61,6 +73,15 @@ const teasers = [
     <figure class="wl-fig wl-fig-wide">
       <img src="/images/we/who-does-what.jpg" alt="Who actually does the work. Claude does: writes every file your website needs, turns a lesson into a 3,000-word article, runs four SEO passes, builds the supporting article cluster, builds your email capture pages, writes your lead magnets, turns one article into thirty assets, generates every image, commits the files to your site. You do: paste the prompt, read what came back, say yes or say what to change. That's the whole job. Three moves, twenty-two times." loading="lazy" width="1200" height="1490" />
     </figure>
+  </section>
+
+  <section class="wl-block">
+    <h2>Building a website in 2026</h2>
+    <p class="wl-lead">None of this is required anymore. That's the part that hasn't sunk in for most people yet.</p>
+    <div class="wl-never">
+      {neverDo.map((x) => <span class="wl-never-chip">{x}</span>)}
+    </div>
+    <p class="wl-never-line">You already wrote it. Claude builds the rest.</p>
   </section>
 
   <section class="wl-block">
@@ -135,6 +156,13 @@ const teasers = [
     .wl-block{padding:64px 0;border-top:1px solid rgba(43,22,27,.1)}
     .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#2B161B}
     .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
+    .wl-never{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 26px}
+    .wl-never-chip{position:relative;font-size:15.5px;line-height:1.4;padding:11px 17px;border-radius:6px;
+                   background:rgba(203,183,247,.16);border:1px solid rgba(43,22,27,.09);color:#7A5C63;
+                   text-decoration:line-through;text-decoration-color:rgba(214,46,115,.6);text-decoration-thickness:1.5px}
+    .wl-never-chip:nth-child(3n+2){background:rgba(255,138,194,.14)}
+    .wl-never-chip:nth-child(3n){background:rgba(200,169,106,.12)}
+    .wl-never-line{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.5;color:var(--pink);margin:0}
     .wl-list{list-style:none;padding:0;margin:0;max-width:620px}
     .wl-list li{padding:16px 0 16px 28px;border-bottom:1px solid rgba(43,22,27,.1);font-size:16.5px;line-height:1.65;position:relative;color:#2B161B}
     .wl-list li:before{content:"—";position:absolute;left:0;color:var(--pink)}
