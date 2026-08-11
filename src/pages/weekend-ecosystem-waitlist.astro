@@ -28,10 +28,14 @@ const teasers = [
     </div>
 
     <figure class="wl-fig">
-      <img src="/images/we/cover-kitchen.jpg" alt="The Weekend Ecosystem — one weekend, a real website and blog, built with Claude." loading="eager" width="1200" height="1490" />
+      <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
     </figure>
 
-    <div class="wl-stats">
+    <figure class="wl-fig wl-fig-numbers">
+      <img src="/images/we/the-numbers.jpg" alt="22 modules. 36 prompts, verbatim. 3 reference vaults. 1 weekend. Your website and blog, built from what you already have." loading="lazy" width="1200" height="1490" />
+    </figure>
+
+    <div class="wl-stats wl-mobile-only">
       {teasers.map((t) => (
         <div class="wl-stat">
           <span class="wl-stat-n">{t.n}</span>
@@ -45,11 +49,25 @@ const teasers = [
     <h2>You already wrote it</h2>
     <p class="wl-lead">Every lesson in your classroom. Every post you've written. The call you recorded in March. The DM where you explained your whole method to one person, for free, at midnight.</p>
     <p class="wl-lead">It's all sitting somewhere nobody can search, on a platform you don't own. This weekend you don't write anything new — you build the place it lives, works, and compounds.</p>
+
+    <figure class="wl-fig wl-fig-wide">
+      <img src="/images/we/friday-sunday.jpg" alt="Friday: content scattered across a platform you don't own, no website, no blog, nobody finds you unless they already know you. Sunday: a site on a domain you own, a blog Google can find, an email list that captures, a system that runs without you. You didn't write anything new." loading="lazy" width="1200" height="1490" />
+    </figure>
   </section>
 
   <section class="wl-block">
+    <h2>You're not building it. You're approving it.</h2>
+    <p class="wl-lead">Nine things Claude does. Three things you do. That's the split that makes a weekend enough.</p>
     <figure class="wl-fig wl-fig-wide">
-      <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="lazy" width="1200" height="1490" />
+      <img src="/images/we/who-does-what.jpg" alt="Who actually does the work. Claude does: writes every file your website needs, turns a lesson into a 3,000-word article, runs four SEO passes, builds the supporting article cluster, builds your email capture pages, writes your lead magnets, turns one article into thirty assets, generates every image, commits the files to your site. You do: paste the prompt, read what came back, say yes or say what to change. That's the whole job. Three moves, twenty-two times." loading="lazy" width="1200" height="1490" />
+    </figure>
+  </section>
+
+  <section class="wl-block">
+    <h2>What's actually in it</h2>
+    <p class="wl-lead">Twenty-two modules across six phases, every prompt written out word for word, and a fix for every roadblock I hit building this myself.</p>
+    <figure class="wl-fig wl-fig-modules">
+      <img src="/images/we/module-list.jpg" alt="The full list of 22 modules across six phases: Prep, The Website, The Blog, The Capture System, Traffic, and Running It." loading="lazy" width="478" height="666" />
     </figure>
   </section>
 
@@ -102,7 +120,10 @@ const teasers = [
     .wl-stat-l{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:9px}
     .wl-fig{margin:0 auto 44px;max-width:520px;padding:0}
     .wl-fig img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 14px 44px rgba(43,22,27,.14)}
-    .wl-fig-wide{max-width:560px;margin:0 auto}
+    .wl-fig-wide{max-width:560px;margin:36px auto 0}
+    .wl-fig-modules{max-width:430px;margin:36px auto 0}
+    .wl-fig-numbers{max-width:520px;margin:0 auto 8px}
+    .wl-mobile-only{display:none}
     .wl-block{padding:64px 0;border-top:1px solid rgba(43,22,27,.1)}
     .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#2B161B}
     .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
@@ -115,7 +136,11 @@ const teasers = [
     .wl-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,5vw,48px);margin:0 0 12px;letter-spacing:-1px;color:#fff}
     .wl-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:#FBEEF4;margin:0 0 32px}
     .wl-close .btn{background:#FBF8F5;color:#8E2F53;border-color:#FBF8F5}
-    @media(max-width:720px){.wl-stats{grid-template-columns:1fr 1fr}.wl-close{padding:54px 22px 50px}}
+    @media(max-width:720px){
+      .wl-fig-numbers{display:none}
+      .wl-mobile-only{display:grid}
+      .wl-fig-wide,.wl-fig-modules{max-width:100%}
+      .wl-stats{grid-template-columns:1fr 1fr}.wl-close{padding:54px 22px 50px}}
   </style>
 </PageLayout>
 
