@@ -147,6 +147,30 @@ import CourseLayout from "../../layouts/CourseLayout.astro";
         year: "numeric", month: "long", day: "numeric",
       });
       document.getElementById("cprint").addEventListener("click", () => window.print());
+
+      // record the completion once, so Jodie can congratulate them
+      const RECORDED = "we_recorded";
+      async function record() {
+        if (localStorage.getItem(RECORDED)) return;
+        try {
+          const r = await fetch("/api/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              token: localStorage.getItem(KEY),
+              name: (localStorage.getItem(NAME) || "").trim(),
+            }),
+          });
+          if (r.ok) localStorage.setItem(RECORDED, "1");
+        } catch {}
+      }
+      record();
+      input.addEventListener("blur", () => {
+        if (input.value.trim()) {
+          localStorage.removeItem(RECORDED);
+          record();
+        }
+      });
     }
   }
 </script>
