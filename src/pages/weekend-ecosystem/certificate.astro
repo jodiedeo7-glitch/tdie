@@ -1,0 +1,152 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+---
+
+<CourseLayout title="Your Certificate" eyebrow="Completion · The Weekend Ecosystem™" progress={100}>
+  <div id="locked-gate" style="display:none">
+    <p style="font-size:17px;line-height:1.8">
+      This is part of The Weekend Ecosystem™.
+      <a href="/weekend-ecosystem" style="color:#D62E73">Enter your purchase email</a> to unlock it.
+    </p>
+  </div>
+
+  <div id="not-yet" style="display:none">
+    <p class="cf-lede">Not yet — and that's the point.</p>
+    <p class="cf-body">
+      The certificate unlocks when all twenty-two modules are checked off. You have
+      <strong id="ny-n">0</strong> done, <strong id="ny-left">22</strong> to go.
+    </p>
+    <p class="cf-body">
+      Tick <strong>Mark complete</strong> at the bottom of each module as you finish it.
+    </p>
+    <a href="/weekend-ecosystem" class="cf-back">← Back to the modules</a>
+  </div>
+
+  <div id="earned" style="display:none">
+    <p class="cf-lede">All twenty-two. You built the whole thing.</p>
+    <div class="cf-form">
+      <label for="cname">Name on the certificate</label>
+      <div class="cf-row">
+        <input id="cname" type="text" placeholder="Your name" autocomplete="name" />
+        <button id="cprint" class="cf-btn">Save or print</button>
+      </div>
+    </div>
+
+    <div class="cert" id="cert">
+      <div class="cert-inner">
+        <span class="cert-eyebrow">Certificate of Completion</span>
+        <h2 class="cert-title">The Weekend <em>Ecosystem™</em></h2>
+        <span class="cert-awarded">Awarded to</span>
+        <p class="cert-name" id="cert-name">Your name</p>
+        <p class="cert-body">
+          For building a website, a blog, a capture system, a traffic engine and an operating
+          cadence — from content that already existed — across twenty-two modules and one weekend.
+        </p>
+        <div class="cert-foot">
+          <div>
+            <span class="cert-foot-l">Completed</span>
+            <span class="cert-foot-v" id="cert-date">—</span>
+          </div>
+          <div class="cert-mark">
+            <span class="cert-brand">The Digital Income <em>Edit™</em></span>
+            <span class="cert-tag">Build Your Business Backwards. Scale It Forward.™</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="cf-after">
+      Now go do the part the course can't: publish one article a week. Module 21 has the cadence.
+    </p>
+  </div>
+
+  <style>
+    .cf-lede{font-family:"Fraunces",serif;font-size:30px;font-weight:300;line-height:1.15;margin:0 0 20px}
+    .cf-body{font-size:17px;line-height:1.8;margin:0 0 16px;max-width:58ch}
+    .cf-body strong{color:#D62E73;font-weight:600}
+    .cf-back{display:inline-block;margin-top:16px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#D62E73;text-decoration:none}
+
+    .cf-form{margin:0 0 30px}
+    .cf-form label{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:10px}
+    .cf-row{display:flex;gap:10px;flex-wrap:wrap;max-width:520px}
+    #cname{flex:1;min-width:220px;padding:13px 16px;border:1px solid rgba(43,22,27,.22);border-radius:5px;font-size:16px;font-family:"Inter",sans-serif;background:#fff}
+    .cf-btn{padding:13px 22px;background:#D62E73;color:#fff;border:none;border-radius:5px;cursor:pointer;
+            font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
+    .cf-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(214,46,115,.3)}
+
+    .cert{position:relative;border-radius:8px;padding:5px;
+          background:linear-gradient(135deg,#CBB7F7,#FF8AC2 45%,#D62E73 78%,#C8A96A);
+          box-shadow:0 14px 44px rgba(214,46,115,.18)}
+    .cert-inner{background:#FFFDFB;border-radius:5px;padding:52px 48px 40px;text-align:center}
+    .cert-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:3.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:26px}
+    .cert-title{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-1px;margin:0 0 34px}
+    .cert-title em{font-style:italic;color:#D62E73}
+    .cert-awarded{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:rgba(43,22,27,.55);margin-bottom:6px}
+    .cert-name{font-family:"Fraunces",serif;font-size:clamp(26px,4.4vw,38px);font-weight:400;margin:0 0 26px;padding-bottom:22px;
+               border-bottom:1px solid rgba(214,46,115,.28);display:inline-block;min-width:min(60%,340px)}
+    .cert-body{font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.62;color:rgba(43,22,27,.78);max-width:52ch;margin:0 auto 38px}
+    .cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;text-align:left;
+               padding-top:24px;border-top:1px solid rgba(43,22,27,.1)}
+    .cert-foot-l{display:block;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:5px}
+    .cert-foot-v{display:block;font-size:14px}
+    .cert-mark{text-align:right}
+    .cert-brand{display:block;font-family:"Fraunces",serif;font-size:16px}
+    .cert-brand em{font-style:italic;color:#D62E73}
+    .cert-tag{display:block;font-size:11px;color:rgba(43,22,27,.5);margin-top:4px}
+
+    .cf-after{font-size:15.5px;line-height:1.7;color:rgba(43,22,27,.62);margin:30px 0 0;text-align:center}
+
+    @media(max-width:640px){
+      .cert-inner{padding:36px 24px 28px}
+      .cert-foot{flex-direction:column;align-items:flex-start}
+      .cert-mark{text-align:left}
+    }
+    @media print{
+      .we-nav,.we-foot,.we-prog,.cf-lede,.cf-form,.cf-after,.we-eyebrow,.we-wrap>h1{display:none!important}
+      .we-wrap{padding:0!important;max-width:none!important}
+      .cert{box-shadow:none;page-break-inside:avoid}
+      body{background:#fff}
+    }
+  </style>
+</CourseLayout>
+
+<script>
+  const KEY = "we_token";
+  const DONE = "we_done";
+  const NAME = "we_name";
+  const TOTAL = 22;
+
+  const gate = document.getElementById("locked-gate");
+  const notYet = document.getElementById("not-yet");
+  const earned = document.getElementById("earned");
+
+  function getDone() {
+    try { return JSON.parse(localStorage.getItem(DONE) || "[]"); } catch { return []; }
+  }
+
+  if (!localStorage.getItem(KEY)) {
+    gate.style.display = "block";
+  } else {
+    const n = getDone().length;
+    if (n < TOTAL) {
+      notYet.style.display = "block";
+      document.getElementById("ny-n").textContent = String(n);
+      document.getElementById("ny-left").textContent = String(TOTAL - n);
+    } else {
+      earned.style.display = "block";
+      const nameEl = document.getElementById("cert-name");
+      const input = document.getElementById("cname");
+      const saved = localStorage.getItem(NAME) || "";
+      if (saved) { input.value = saved; nameEl.textContent = saved; }
+      input.addEventListener("input", () => {
+        const v = input.value.trim();
+        nameEl.textContent = v || "Your name";
+        localStorage.setItem(NAME, v);
+      });
+      document.getElementById("cert-date").textContent = new Date().toLocaleDateString(undefined, {
+        year: "numeric", month: "long", day: "numeric",
+      });
+      document.getElementById("cprint").addEventListener("click", () => window.print());
+    }
+  }
+</script>

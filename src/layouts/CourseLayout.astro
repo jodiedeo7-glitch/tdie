@@ -5,8 +5,9 @@ export interface Props {
   title: string;
   eyebrow?: string;
   progress?: number;
+  accent?: string;
 }
-const { title, eyebrow, progress = 0 } = Astro.props;
+const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     body{background:var(--wc);color:var(--wd);margin:0;font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
 
     /* ── progress ── */
-    .we-prog{position:fixed;top:0;left:0;height:2px;background:var(--wp);z-index:60;transition:width .4s ease}
+    .we-prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#CBB7F7,var(--ac,#D62E73));z-index:60;transition:width .4s ease}
 
     /* ── chrome ── */
     .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27,.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
@@ -42,7 +43,7 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     .we-nav .navlinks a:hover{opacity:1;color:var(--wp)}
 
     .we-wrap{max-width:768px;margin:0 auto;padding:78px 40px 140px}
-    .we-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--wg);margin-bottom:22px}
+    .we-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ac,#C8A96A);margin-bottom:22px}
     .we-wrap>h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
 
     /* ── the document ── */
@@ -74,10 +75,10 @@ const { title, eyebrow, progress = 0 } = Astro.props;
 
     /* DO — the spine of every module */
     .wb-do{position:relative;padding:0 0 0 62px;margin-bottom:52px}
-    .wb-do:before{content:"";position:absolute;left:19px;top:34px;bottom:-52px;width:1px;background:rgba(214,46,115,.22)}
+    .wb-do:before{content:"";position:absolute;left:19px;top:34px;bottom:-52px;width:1px;background:color-mix(in srgb,var(--ac,#D62E73) 32%,transparent)}
     .wb-do:last-of-type:before{display:none}
     .wb-do-head{display:flex;align-items:flex-start;gap:0;margin-bottom:18px}
-    .wb-step{position:absolute;left:0;top:0;width:39px;height:39px;border-radius:50%;background:var(--wp);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.5px;z-index:1}
+    .wb-step{position:absolute;left:0;top:0;width:39px;height:39px;border-radius:50%;background:var(--ac,#D62E73);box-shadow:0 2px 8px color-mix(in srgb,var(--ac,#D62E73) 32%,transparent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.5px;z-index:1}
     .wb-h-do{margin:6px 0 0}
     .wb-do-body>*:last-child{margin-bottom:0}
 
@@ -94,7 +95,7 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     .wb-road-body>*:last-child{margin-bottom:0}
 
     /* deliverable — the end cap */
-    .wb-deliv{background:linear-gradient(180deg,rgba(255,138,194,.20),rgba(255,138,194,.07));border-top:2px solid var(--wp);border-radius:0 0 4px 4px;padding:30px 32px;margin-bottom:0}
+    .wb-deliv{background:linear-gradient(180deg,color-mix(in srgb,var(--ac,#D62E73) 18%,transparent),color-mix(in srgb,var(--ac,#D62E73) 5%,transparent));border-top:2px solid var(--ac,#D62E73);border-radius:0 0 4px 4px;padding:30px 32px;margin-bottom:0}
     .wb-deliv p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;color:var(--wd)}
     .wb-deliv strong{color:var(--wp);font-weight:600}
     .wb-tag-deliv{color:var(--wp)}
@@ -138,7 +139,7 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
   </style>
 </head>
-<body>
+<body style={`--ac:${accent}`}>
   <div class="we-prog" style={`width:${progress}%`}></div>
 
   <nav class="we-nav">

@@ -3,6 +3,7 @@ import CourseLayout from "../../layouts/CourseLayout.astro";
 import { MODULES, VAULTS } from "../../we-manifest.js";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))];
+const total = MODULES.length;
 ---
 
 <CourseLayout title="The Weekend Ecosystem™" eyebrow="Your website + blog, built from what you already have">
@@ -24,10 +25,37 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   </div>
 
   <div id="contents" style="display:none">
-    <p class="ci-lede">
-      Six phases across one weekend. Each builds a working piece of the business, and each piece
-      feeds the next — the website holds the blog, the blog fills the list, the list buys the product.
-    </p>
+
+    <!-- ── TRACKER ── -->
+    <div class="tk">
+      <div class="tk-ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="tkg" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#CBB7F7" />
+              <stop offset="100%" stop-color="#D62E73" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(43,22,27,.09)" stroke-width="9" />
+          <circle id="tk-arc" cx="60" cy="60" r="52" fill="none" stroke="url(#tkg)" stroke-width="9"
+            stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"
+            transform="rotate(-90 60 60)" />
+        </svg>
+        <div class="tk-count"><span id="tk-n">0</span><small>/{total}</small></div>
+      </div>
+      <div class="tk-text">
+        <span class="tk-tag">Your progress</span>
+        <p id="tk-msg" class="tk-msg">Nothing checked off yet. Start with Module 01 tonight.</p>
+        <p class="tk-note">
+          Tick <strong>Mark complete</strong> at the bottom of each module as you finish it.
+          Check off all {total} and your completion certificate unlocks.
+        </p>
+        <a id="tk-cert" href="/weekend-ecosystem/certificate" class="tk-cert tk-cert-locked">
+          <span class="tk-cert-icon">✕</span>
+          <span id="tk-cert-t">Certificate locked — {total} modules to go</span>
+        </a>
+      </div>
+    </div>
 
     <span class="ci-kicker">Two ways in</span>
     <div class="ci-top">
@@ -35,7 +63,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
         <div>
           <span class="qs-card-tag">Prompts only · No teaching</span>
           <span class="qs-card-t">The Quick Sheet</span>
-          <span class="qs-card-b">All 36 prompts on one page, in the order you run them, one line each on what they do. Use this if you've built a site before and just want the prompts — or come back to it once you've done the course and need to run the whole thing again.</span>
+          <span class="qs-card-b">All 36 prompts on one page, in the order you run them, one line each on what they do. Use this if you've built a site before — or come back to it after the course when you're running the whole thing again.</span>
         </div>
         <span class="qs-card-arrow">→</span>
       </a>
@@ -58,29 +86,33 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
       <span class="ci-divider-line"></span>
     </div>
     <p class="ci-full-note">
-      Twenty-two modules below, in order. Each one teaches the step, gives you the prompt for it,
-      and tells you what breaks at that point and how to fix it. If this is your first build,
-      start at Module 01 and work down — don't skip to the prompts.
+      Twenty-two modules below, in order. Each teaches the step, gives you the prompt for it, and
+      tells you what breaks at that point and how to fix it. First build? Start at Module 01 and
+      work down — don't skip to the prompts.
     </p>
 
     <div class="ci-phases">
       {phases.map((phase, pi) => {
         const inPhase = MODULES.filter((m) => m.phase === phase);
-        const [when, what] = [inPhase[0].phaseLabel, inPhase[0].phaseSub];
-        const day = when.split("·")[1]?.trim() ?? when;
+        const accent = inPhase[0].accent;
+        const day = inPhase[0].phaseLabel.split("·")[1]?.trim() ?? phase;
+        const what = inPhase[0].phaseSub;
         return (
-          <section class="ci-phase">
+          <section class="ci-phase" style={`--ac:${accent}`} data-phase={phase}>
+            <span class="ci-phase-edge"></span>
             <header class="ci-phase-head">
               <span class="ci-phase-n">{String(pi).padStart(2, "0")}</span>
-              <div>
+              <div class="ci-phase-meta">
                 <span class="ci-phase-when">{day}</span>
                 <h2 class="ci-phase-what">{what.split("—")[0].trim()}</h2>
                 <p class="ci-phase-sub">{what.split("—")[1]?.trim()}</p>
               </div>
+              <span class="ci-phase-tally" data-tally={phase}>0/{inPhase.length}</span>
             </header>
             <div class="ci-mods">
               {inPhase.map((m) => (
-                <a href={`/weekend-ecosystem/${m.slug}`} class="ci-mod">
+                <a href={`/weekend-ecosystem/${m.slug}`} class="ci-mod" data-slug={m.slug}>
+                  <span class="ci-mod-tick" aria-hidden="true"></span>
                   <span class="ci-mod-n">{String(m.num).padStart(2, "0")}</span>
                   <span class="ci-mod-t">{m.title}</span>
                   <span class="ci-mod-b">{m.blurb}</span>
@@ -98,17 +130,43 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   </style>
 
   <style>
-    /* ── layout ── */
-    .ci-lede{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;margin:0 0 34px;max-width:62ch}
+    /* ── tracker ── */
+    .tk{display:flex;gap:30px;align-items:center;padding:28px 30px;margin:0 0 52px;border-radius:6px;
+        background:linear-gradient(115deg,rgba(203,183,247,.22),rgba(255,138,194,.20) 55%,rgba(214,46,115,.14));
+        border:1px solid rgba(214,46,115,.18)}
+    .tk-ring{position:relative;width:112px;height:112px;flex-shrink:0}
+    .tk-ring svg{width:112px;height:112px;display:block}
+    #tk-arc{transition:stroke-dashoffset .9s cubic-bezier(.22,1,.36,1)}
+    .tk-count{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+              font-family:"Fraunces",serif;font-size:30px;font-weight:300;color:#2B161B}
+    .tk-count small{font-size:15px;opacity:.45;margin-left:1px}
+    .tk-text{flex:1;min-width:0}
+    .tk-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:#D62E73;margin-bottom:8px}
+    .tk-msg{font-family:"Fraunces",serif;font-size:21px;line-height:1.3;margin:0 0 8px}
+    .tk-note{font-size:14px;line-height:1.6;color:rgba(43,22,27,.65);margin:0 0 16px;max-width:56ch}
+    .tk-note strong{color:#D62E73;font-weight:600}
+    .tk-cert{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:4px;
+             font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;
+             text-decoration:none;transition:all .25s}
+    .tk-cert-locked{background:rgba(43,22,27,.06);color:rgba(43,22,27,.5);border:1px solid rgba(43,22,27,.14);pointer-events:none}
+    .tk-cert-open{background:#D62E73;color:#fff;border:1px solid #D62E73;pointer-events:auto;
+                  box-shadow:0 4px 14px rgba(214,46,115,.32);animation:cert 2.4s ease-in-out infinite}
+    @keyframes cert{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    .tk-cert-icon{font-size:12px}
+
+    /* ── two ways in ── */
     .ci-kicker{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:14px}
     .ci-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:64px;align-items:stretch}
-    .ci-divider{display:flex;align-items:center;gap:18px;margin-bottom:18px}
-    .ci-divider-line{flex:1;height:1px;background:rgba(214,46,115,.28)}
-    .ci-divider-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73}
-    .ci-full-note{font-size:15.5px;line-height:1.7;color:rgba(43,22,27,.66);max-width:66ch;margin:0 auto 40px;text-align:center}
+    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;height:100%;box-sizing:border-box;
+             background:linear-gradient(135deg,rgba(255,138,194,.24),rgba(203,183,247,.18));border:1px solid rgba(214,46,115,.22);
+             border-radius:5px;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .qs-card:hover{transform:translateY(-2px);border-color:#D62E73;box-shadow:0 6px 20px rgba(214,46,115,.14)}
+    .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:10px}
+    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:23px;font-weight:400;color:#2B161B;margin-bottom:8px}
+    .qs-card-b{display:block;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
+    .qs-card-arrow{font-size:22px;color:#D62E73;flex-shrink:0}
 
-    /* ── vaults, set aside ── */
-    .ci-vaults{background:#FFFDFB;border:1px solid rgba(43,22,27,.13);border-radius:4px;padding:22px 24px 8px}
+    .ci-vaults{background:#FFFDFB;border:1px solid rgba(43,22,27,.13);border-radius:5px;padding:22px 24px 8px}
     .ci-vaults-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:6px}
     .ci-vaults-sub{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.55);margin-bottom:16px}
     .ci-vault{display:block;padding:13px 0;border-top:1px solid rgba(43,22,27,.09);text-decoration:none;color:#2B161B}
@@ -116,50 +174,110 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
     .ci-vault-t{display:block;font-family:"Fraunces",serif;font-size:17px;line-height:1.25;margin-bottom:4px;transition:color .2s}
     .ci-vault-b{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.58)}
 
-    /* ── phases as blocks ── */
-    .ci-phases{display:flex;flex-direction:column;gap:20px}
-    .ci-phase{border:1px solid rgba(43,22,27,.13);border-radius:5px;padding:26px 28px 28px;background:rgba(255,253,251,.6)}
-    .ci-phase:nth-child(odd){background:rgba(255,138,194,.05);border-color:rgba(214,46,115,.16)}
-    .ci-phase-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(43,22,27,.11)}
-    .ci-phase-n{font-family:"Fraunces",serif;font-size:34px;font-weight:300;line-height:1;color:rgba(214,46,115,.32);flex-shrink:0}
-    .ci-phase-when{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:6px}
-    .ci-phase-what{font-family:"Fraunces",serif;font-weight:400;font-size:24px;line-height:1.15;margin:0 0 5px}
-    .ci-phase-sub{font-size:14.5px;line-height:1.55;color:rgba(43,22,27,.6);margin:0}
+    .ci-divider{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .ci-divider-line{flex:1;height:1px;background:rgba(214,46,115,.28)}
+    .ci-divider-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73}
+    .ci-full-note{font-size:15.5px;line-height:1.7;color:rgba(43,22,27,.66);max-width:66ch;margin:0 auto 40px;text-align:center}
 
-    /* ── modules in a grid, not a column ── */
+    /* ── phase blocks ── */
+    .ci-phases{display:flex;flex-direction:column;gap:22px}
+    .ci-phase{position:relative;border:1px solid rgba(43,22,27,.11);border-radius:6px;padding:28px 30px 30px;overflow:hidden;
+              background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 11%,transparent),color-mix(in srgb,var(--ac) 3%,transparent))}
+    .ci-phase-edge{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ac)}
+    .ci-phase-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid color-mix(in srgb,var(--ac) 42%,transparent)}
+    .ci-phase-n{font-family:"Fraunces",serif;font-size:60px;font-weight:300;line-height:.82;color:var(--ac);flex-shrink:0;letter-spacing:-2px}
+    .ci-phase-meta{flex:1;min-width:0}
+    .ci-phase-when{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:6px}
+    .ci-phase-what{font-family:"Fraunces",serif;font-weight:400;font-size:26px;line-height:1.12;margin:0 0 5px}
+    .ci-phase-sub{font-size:14.5px;line-height:1.55;color:rgba(43,22,27,.62);margin:0}
+    .ci-phase-tally{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:1.4px;color:#fff;background:var(--ac);
+                    padding:5px 11px;border-radius:20px;flex-shrink:0;transition:transform .3s}
+    .ci-phase-tally.full{background:#2B161B}
+
     .ci-mods{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px}
-    .ci-mod{display:block;padding:14px 0;text-decoration:none;color:#2B161B;border-top:1px solid rgba(43,22,27,.08)}
-    .ci-mod:hover .ci-mod-t{color:#D62E73}
+    .ci-mod{position:relative;display:block;padding:15px 0 15px 28px;text-decoration:none;color:#2B161B;border-top:1px solid rgba(43,22,27,.08);transition:padding-left .2s}
+    .ci-mod:hover{padding-left:32px}
+    .ci-mod:hover .ci-mod-t{color:var(--ac)}
+    .ci-mod-tick{position:absolute;left:0;top:18px;width:17px;height:17px;border-radius:4px;border:1.5px solid rgba(43,22,27,.22);
+                 display:flex;align-items:center;justify-content:center;transition:all .25s}
+    .ci-mod.done .ci-mod-tick{background:var(--ac);border-color:var(--ac)}
+    .ci-mod.done .ci-mod-tick:after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+    .ci-mod.done .ci-mod-t{opacity:.55}
+    .ci-mod.done .ci-mod-b{opacity:.5}
     .ci-mod-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1px;color:rgba(43,22,27,.38);margin-right:9px}
-    .ci-mod-t{font-family:"Fraunces",serif;font-size:17.5px;line-height:1.25;transition:color .2s}
-    .ci-mod-b{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.58);margin-top:5px}
+    .ci-mod-t{font-family:"Fraunces",serif;font-size:17.5px;line-height:1.25;transition:color .2s,opacity .2s}
+    .ci-mod-b{display:block;font-size:13.5px;line-height:1.55;color:rgba(43,22,27,.58);margin-top:5px;transition:opacity .2s}
 
     @media(max-width:760px){
+      .tk{flex-direction:column;align-items:flex-start;gap:20px;padding:24px 20px}
       .ci-top{grid-template-columns:1fr}
       .ci-mods{grid-template-columns:1fr}
-      .ci-phase{padding:22px 20px 24px}
+      .ci-phase{padding:24px 20px 26px}
+      .ci-phase-n{font-size:46px}
+      .ci-phase-head{flex-wrap:wrap}
     }
-
-    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;margin:0;height:100%;box-sizing:border-box;background:linear-gradient(135deg,rgba(255,138,194,.22),rgba(203,183,247,.16));border:1px solid rgba(214,46,115,.22);border-radius:4px;text-decoration:none;transition:transform .2s,border-color .2s}
-    .qs-card:hover{transform:translateY(-2px);border-color:#D62E73}
-    .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:10px}
-    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:23px;font-weight:400;color:#2B161B;margin-bottom:8px}
-    .qs-card-b{display:block;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
-    .qs-card-arrow{font-size:22px;color:#D62E73;flex-shrink:0}
+    @media(prefers-reduced-motion:reduce){.tk-cert-open{animation:none}}
   </style>
 </CourseLayout>
 
 <script>
   const KEY = "we_token";
+  const DONE = "we_done";
   const gate = document.getElementById("gate");
   const contents = document.getElementById("contents");
   const err = document.getElementById("err");
   const btn = document.getElementById("go");
   const input = document.getElementById("email");
 
+  function getDone() {
+    try { return JSON.parse(localStorage.getItem(DONE) || "[]"); } catch { return []; }
+  }
+
+  function paint() {
+    const done = getDone();
+    const mods = [...document.querySelectorAll(".ci-mod")];
+    const total = mods.length;
+    let n = 0;
+    mods.forEach((a) => {
+      if (done.includes(a.dataset.slug)) { a.classList.add("done"); n++; }
+    });
+
+    document.querySelectorAll(".ci-phase").forEach((sec) => {
+      const inPhase = [...sec.querySelectorAll(".ci-mod")];
+      const d = inPhase.filter((a) => a.classList.contains("done")).length;
+      const tally = sec.querySelector(".ci-phase-tally");
+      tally.textContent = `${d}/${inPhase.length}`;
+      tally.classList.toggle("full", d === inPhase.length && d > 0);
+    });
+
+    document.getElementById("tk-n").textContent = n;
+    const arc = document.getElementById("tk-arc");
+    arc.style.strokeDashoffset = String(327 - (327 * n) / total);
+
+    const msg = document.getElementById("tk-msg");
+    if (n === 0) msg.textContent = "Nothing checked off yet. Start with Module 01 tonight.";
+    else if (n === total) msg.textContent = "All twenty-two done. Go get your certificate.";
+    else if (n >= total * 0.75) msg.textContent = `${total - n} to go. You're nearly through.`;
+    else if (n >= total * 0.5) msg.textContent = "Over halfway. The site exists by now.";
+    else if (n >= 3) msg.textContent = `${n} down, ${total - n} to go. Keep moving.`;
+    else msg.textContent = "Underway. Tick each module off as you finish it.";
+
+    const cert = document.getElementById("tk-cert");
+    const certT = document.getElementById("tk-cert-t");
+    if (n === total) {
+      cert.classList.remove("tk-cert-locked");
+      cert.classList.add("tk-cert-open");
+      cert.querySelector(".tk-cert-icon").textContent = "★";
+      certT.textContent = "Certificate unlocked — open it";
+    } else {
+      certT.textContent = `Certificate locked — ${total - n} module${total - n === 1 ? "" : "s"} to go`;
+    }
+  }
+
   function show() {
     gate.style.display = "none";
     contents.style.display = "block";
+    paint();
   }
 
   if (localStorage.getItem(KEY)) show();
@@ -189,7 +307,6 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
   }
 
   btn.addEventListener("click", unlock);
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") unlock();
-  });
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") unlock(); });
+  window.addEventListener("pageshow", () => { if (contents.style.display === "block") paint(); });
 </script>
