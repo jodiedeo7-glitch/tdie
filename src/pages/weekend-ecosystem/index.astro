@@ -78,12 +78,12 @@ const phases = [...new Set(MODULES.map((m) => m.phase))];
     </div>
   </div>
   <style>
-    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 28px;margin:0 0 52px;background:#2B161B;border-radius:4px;text-decoration:none;transition:transform .2s}
-    .qs-card:hover{transform:translateY(-2px)}
-    .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C8A96A;margin-bottom:10px}
-    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:#FBF8F5;margin-bottom:8px}
-    .qs-card-b{display:block;font-size:15px;line-height:1.6;color:rgba(251,248,245,.62);max-width:44ch}
-    .qs-card-arrow{font-size:22px;color:#FF8AC2;flex-shrink:0}
+    .qs-card{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 28px;margin:0 0 52px;background:linear-gradient(135deg,rgba(255,138,194,.22),rgba(203,183,247,.16));border:1px solid rgba(214,46,115,.22);border-radius:4px;text-decoration:none;transition:transform .2s,border-color .2s}
+    .qs-card:hover{transform:translateY(-2px);border-color:#D62E73}
+    .qs-card-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;margin-bottom:10px}
+    .qs-card-t{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:#2B161B;margin-bottom:8px}
+    .qs-card-b{display:block;font-size:15px;line-height:1.6;color:rgba(43,22,27,.66);max-width:44ch}
+    .qs-card-arrow{font-size:22px;color:#D62E73;flex-shrink:0}
   </style>
 </CourseLayout>
 

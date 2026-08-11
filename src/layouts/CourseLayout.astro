@@ -82,9 +82,9 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     .wb-do-body>*:last-child{margin-bottom:0}
 
     /* roadblocks — collapsed by default so the page reads clean */
-    .wb-roads{background:var(--wpaper);border:1px solid rgba(43,22,27,.13);border-radius:4px;padding:26px 30px 14px;margin-bottom:44px}
-    .wb-tag-road{color:var(--wg);display:block}
-    .wb-road{border-top:1px solid rgba(43,22,27,.09);padding:2px 0}
+    .wb-roads{background:rgba(255,138,194,.06);border:1px solid rgba(214,46,115,.18);border-radius:4px;padding:26px 30px 14px;margin-bottom:44px}
+    .wb-tag-road{color:var(--wp);display:block}
+    .wb-road{border-top:1px solid rgba(214,46,115,.14);padding:2px 0}
     .wb-road:first-of-type{border-top:none}
     .wb-road summary{cursor:pointer;list-style:none;padding:14px 0;font-size:16px;font-weight:500;display:flex;gap:12px;align-items:baseline}
     .wb-road summary::-webkit-details-marker{display:none}
@@ -94,18 +94,18 @@ const { title, eyebrow, progress = 0 } = Astro.props;
     .wb-road-body>*:last-child{margin-bottom:0}
 
     /* deliverable — the end cap */
-    .wb-deliv{background:var(--wd);color:#F6ECE9;border-radius:4px;padding:32px 34px;margin-bottom:0}
-    .wb-deliv p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55}
-    .wb-deliv strong{color:var(--wb)}
-    .wb-tag-deliv{color:var(--wg)}
+    .wb-deliv{background:linear-gradient(180deg,rgba(255,138,194,.20),rgba(255,138,194,.07));border-top:2px solid var(--wp);border-radius:0 0 4px 4px;padding:30px 32px;margin-bottom:0}
+    .wb-deliv p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;color:var(--wd)}
+    .wb-deliv strong{color:var(--wp);font-weight:600}
+    .wb-tag-deliv{color:var(--wp)}
 
     /* prompts */
-    .wb-prompt{margin:0 0 26px;border-radius:5px;overflow:hidden;background:var(--wink);box-shadow:0 1px 3px rgba(43,22,27,.12)}
-    .wb-prompt-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:rgba(0,0,0,.22)}
-    .wb-prompt-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .wb-prompt{margin:0 0 26px;border-radius:5px;overflow:hidden;background:var(--wpaper);border:1px solid rgba(214,46,115,.22)}
+    .wb-prompt-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.16)}
+    .wb-prompt-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--wp)}
     .wb-prompt pre{margin:0;padding:20px 22px;overflow-x:auto;background:none}
-    .wb-prompt pre code{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.72;color:#EFE3DF;white-space:pre;background:none;padding:0}
-    .copy-btn{background:none;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.75);border-radius:3px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;cursor:pointer;transition:all .2s}
+    .wb-prompt pre code{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.72;color:#4A2C34;white-space:pre;background:none;padding:0}
+    .copy-btn{background:#fff;border:1px solid rgba(214,46,115,.4);color:var(--wp);border-radius:3px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;cursor:pointer;transition:all .2s}
     .copy-btn:hover{background:var(--wp);border-color:var(--wp);color:#fff}
     .copy-btn.done{background:var(--wp);border-color:var(--wp);color:#fff}
 
