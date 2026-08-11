@@ -24,6 +24,15 @@ const problems = [
   { t: "You've started a blog three times", p: "Blank page, no idea what to write, quit by week three. That's not a discipline problem. It's a wrong-starting-point problem." },
 ];
 
+const ACC = ["#CBB7F7","#CD9CDD","#CF80C2","#D265A8","#D4498D","#D62E73"];
+
+const stats = [
+  { n: "22", l: "Modules" },
+  { n: "36", l: "Prompts, verbatim" },
+  { n: "3", l: "Reference vaults" },
+  { n: "1", l: "Weekend" },
+];
+
 const included = [
   { t: "22 modules", p: "Each one teaches the step, hands you the prompt, and tells you what breaks there and how to fix it." },
   { t: "The Quick Sheet", p: "All 36 prompts on one page in running order, one line each. For your second build, and your third." },
@@ -87,8 +96,21 @@ const faqs = [
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
     <div class="we-hero-strip">
-      {phases.map((p) => <span class="we-chip" style={`--ac:${p.accent}`}>{p.title}</span>)}
+      {phases.map((p, i) => (
+        <span class="we-chip" style={`--ac:${p.accent}`}>
+          <span class="we-chip-n">{String(i).padStart(2, "0")}</span>{p.title}
+        </span>
+      ))}
     </div>
+  </section>
+
+  <section class="we-stats">
+    {stats.map((s, i) => (
+      <div class="we-stat" style={`--ac:${ACC[i * 2 > 5 ? 5 : i * 2]}`}>
+        <span class="we-stat-n">{s.n}</span>
+        <span class="we-stat-l">{s.l}</span>
+      </div>
+    ))}
   </section>
 
   <!-- THESIS -->
@@ -143,8 +165,8 @@ const faqs = [
   <section class="we-block">
     <h2>What comes with it</h2>
     <div class="we-grid we-grid-3">
-      {included.map((x) => (
-        <div class="we-card we-card-pink">
+      {included.map((x, i) => (
+        <div class="we-card we-card-pink" style={`--ac:${ACC[i]}`}>
           <h3>{x.t}</h3>
           <p>{x.p}</p>
         </div>
@@ -155,7 +177,7 @@ const faqs = [
   <!-- BY SUNDAY -->
   <section class="we-block">
     <h2>By Sunday afternoon</h2>
-    <ul class="we-list">{bySunday.map((x) => <li>{x}</li>)}</ul>
+    <ul class="we-checks">{bySunday.map((x) => <li><span class="we-tick"></span>{x}</li>)}</ul>
   </section>
 
   <!-- FIT -->
@@ -185,6 +207,7 @@ const faqs = [
 
   <!-- CLOSE -->
   <section class="we-close">
+    <span class="we-close-eyebrow">One weekend from here</span>
     <h2>You were a digital product seller.</h2>
     <p class="lede">Now you own the infrastructure.</p>
     <div class="we-cta-row">
@@ -196,71 +219,100 @@ const faqs = [
   </section>
 
   <style>
-    .we-hero{text-align:center;padding:16px 0 60px}
-    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7.4vw,74px);line-height:1;letter-spacing:-1.4px;margin:0 0 24px}
+    /* ── hero ── */
+    .we-hero{text-align:center;padding:10px 0 54px}
+    .we-hero .page-eyebrow{color:var(--pink)!important}
+    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(44px,8.4vw,86px);line-height:.96;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
     .we-hero h1 em{font-style:italic;color:var(--pink)}
-    .we-hero .lede{max-width:620px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.6;color:var(--taupe-deep)}
+    .we-hero .lede{max-width:600px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-    .we-soon{display:inline-block;padding:15px 34px;border:1px solid rgba(43,22,27,.25);border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--taupe-deep)}
-    .we-hero-strip{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:44px;padding-top:34px;border-top:1px solid rgba(43,22,27,.1)}
-    .we-chip{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;padding:7px 15px;border-radius:20px;
-             background:color-mix(in srgb,var(--ac) 18%,transparent);color:#2B161B;border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .we-soon{display:inline-block;padding:16px 36px;border-radius:4px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
+             background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink)}
+    .we-hero-strip{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:46px}
+    .we-chip{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;padding:8px 15px;border-radius:22px;
+             background:color-mix(in srgb,var(--ac) 26%,transparent);color:#3B2228;border:1px solid color-mix(in srgb,var(--ac) 60%,transparent)}
+    .we-chip-n{font-family:"JetBrains Mono",monospace;font-size:10px;opacity:.55}
 
-    .we-block{padding:70px 0;border-top:1px solid rgba(43,22,27,.09)}
-    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,44px);line-height:1.08;margin:0 0 20px;letter-spacing:-.6px}
-    .we-lead{font-size:18px;line-height:1.85;max-width:640px;margin:0 0 20px}
-    .we-lead-hit{font-family:"Cormorant Garamond",serif;font-size:23px;font-style:italic;line-height:1.6;color:var(--pink)}
-    .we-sublead{font-size:16.5px;line-height:1.75;color:var(--taupe-deep);max-width:640px;margin:0 0 38px}
-    .we-thesis{border-top:none}
+    /* ── stat strip ── */
+    .we-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(43,22,27,.12);
+              border:1px solid rgba(43,22,27,.12);border-radius:6px;overflow:hidden;margin-bottom:8px}
+    .we-stat{background:#FBF8F5;padding:26px 18px;text-align:center}
+    .we-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(34px,4.6vw,50px);font-weight:300;line-height:1;color:var(--ac);letter-spacing:-1.5px}
+    .we-stat-l{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:10px}
 
-    .we-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
-    .we-grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .we-card{padding:26px;border:1px solid rgba(43,22,27,.13);border-radius:5px;background:rgba(255,253,251,.65)}
-    .we-card-pink{background:linear-gradient(160deg,rgba(255,138,194,.14),rgba(203,183,247,.08));border-color:rgba(214,46,115,.2)}
-    .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 11px;line-height:1.25}
-    .we-card p{font-size:15px;line-height:1.7;margin:0;color:var(--taupe-deep)}
-    .we-num{display:block;font-size:11px;letter-spacing:2.4px;color:var(--gold);margin-bottom:13px}
+    /* ── blocks ── */
+    .we-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#2B161B}
+    .we-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 0 20px;color:#3B2228}
+    .we-lead-hit{font-family:"Cormorant Garamond",serif;font-size:25px;font-style:italic;line-height:1.55;color:var(--pink);
+                 border-left:2px solid var(--pink);padding-left:22px;margin-top:30px}
+    .we-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:0 0 40px}
+    .we-thesis{border-top:none;padding-top:70px}
 
+    /* ── problem cards ── */
+    .we-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+    .we-grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .we-card{padding:28px 28px 26px;border-radius:6px;background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
+    .we-card-pink{background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
+                  border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:#2B161B}
+    .we-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+    .we-num{display:block;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:2px;color:var(--pink);margin-bottom:14px}
+
+    /* ── phases ── */
     .we-phases{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .we-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.11);border-radius:6px;padding:24px 26px 22px;
-              background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 12%,transparent),color-mix(in srgb,var(--ac) 3%,transparent))}
-    .we-phase-edge{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ac)}
-    .we-phase-head{display:flex;gap:15px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--ac) 40%,transparent)}
-    .we-phase-n{font-family:"Fraunces",serif;font-size:48px;font-weight:300;line-height:.82;color:var(--ac);letter-spacing:-2px;flex-shrink:0}
-    .we-phase-when{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:5px}
-    .we-phase-t{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0 0 4px;line-height:1.15}
-    .we-phase-s{font-size:14px;line-height:1.55;color:var(--taupe-deep);margin:0}
+    .we-phase{position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);border-radius:6px;padding:26px 28px 24px;
+              background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 22%,transparent),color-mix(in srgb,var(--ac) 5%,transparent))}
+    .we-phase-edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ac)}
+    .we-phase-head{display:flex;gap:16px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--ac) 55%,transparent)}
+    .we-phase-n{font-family:"Fraunces",serif;font-size:54px;font-weight:300;line-height:.8;color:var(--ac);letter-spacing:-2.5px;flex-shrink:0}
+    .we-phase-when{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:5px}
+    .we-phase-t{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0 0 4px;line-height:1.12;color:#2B161B}
+    .we-phase-s{font-size:14.5px;line-height:1.5;color:#5A4048;margin:0}
     .we-phase-mods{list-style:none;padding:0;margin:0}
-    .we-phase-mods li{font-size:15px;line-height:1.5;padding:6px 0;color:#2B161B}
-    .we-pm-n{font-size:10.5px;letter-spacing:1px;color:rgba(43,22,27,.4);margin-right:9px}
+    .we-phase-mods li{font-size:15.5px;line-height:1.45;padding:7px 0;color:#2B161B}
+    .we-pm-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1px;color:color-mix(in srgb,var(--ac) 78%,#2B161B);margin-right:10px}
 
-    .we-list{list-style:none;padding:0;margin:34px 0 0;max-width:660px}
-    .we-list li{padding:13px 0 13px 28px;border-bottom:1px solid rgba(43,22,27,.09);font-size:16.5px;line-height:1.6;position:relative}
+    /* ── ticked outcomes ── */
+    .we-checks{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:2px 30px}
+    .we-checks li{position:relative;padding:14px 0 14px 32px;border-top:1px solid rgba(43,22,27,.1);font-size:16.5px;line-height:1.55;color:#2B161B}
+    .we-tick{position:absolute;left:0;top:17px;width:18px;height:18px;border-radius:5px;background:var(--pink);display:flex;align-items:center;justify-content:center}
+    .we-tick:after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+
+    /* ── fit ── */
+    .we-split{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+    .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;color:#2B161B}
+    .we-list{list-style:none;padding:0;margin:18px 0 0}
+    .we-list li{padding:12px 0 12px 28px;border-bottom:1px solid rgba(43,22,27,.1);font-size:15.5px;line-height:1.6;position:relative;color:#2B161B}
     .we-list li:before{content:"—";position:absolute;left:0;color:var(--pink)}
-    .we-list-tight{margin-top:16px}
-    .we-list-tight li{font-size:15.5px;padding:11px 0 11px 28px}
-    .we-list-muted li:before{color:var(--taupe-deep);opacity:.45}
+    .we-list-muted li{color:#7A5C63}
+    .we-list-muted li:before{color:#B79AA3}
 
-    .we-split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-    .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:22px;margin:0}
-
-    .we-faq{margin-top:30px;max-width:720px}
-    .we-faq details{border-bottom:1px solid rgba(43,22,27,.11);padding:18px 0}
-    .we-faq summary{cursor:pointer;font-size:17px;font-weight:500;list-style:none}
+    /* ── faq ── */
+    .we-faq{margin-top:32px;max-width:740px}
+    .we-faq details{border-bottom:1px solid rgba(43,22,27,.12);padding:19px 0}
+    .we-faq summary{cursor:pointer;font-size:17.5px;font-weight:500;list-style:none;color:#2B161B}
     .we-faq summary::-webkit-details-marker{display:none}
-    .we-faq summary:before{content:"+";color:var(--pink);margin-right:12px;font-weight:400}
+    .we-faq summary:before{content:"+";color:var(--pink);margin-right:13px;font-weight:400}
     .we-faq details[open] summary:before{content:"–"}
-    .we-faq p{font-size:16px;line-height:1.78;margin:13px 0 4px 24px;color:var(--taupe-deep);max-width:620px}
+    .we-faq p{font-size:16.5px;line-height:1.78;margin:14px 0 4px 26px;color:#57404A;max-width:630px}
 
-    .we-close{text-align:center;padding:80px 0 30px;border-top:1px solid rgba(43,22,27,.09)}
-    .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.8vw,46px);margin:0 0 14px;letter-spacing:-.6px}
-    .we-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;color:var(--pink);margin:0 0 34px}
-    .we-close-note{font-size:13px;letter-spacing:.4px;color:var(--taupe-deep);margin-top:20px}
+    /* ── close: the one saturated moment ── */
+    .we-close{text-align:center;margin:80px 0 0;padding:80px 40px 74px;border-radius:8px;
+              background:linear-gradient(150deg,#CBB7F7,#FF8AC2 42%,#D62E73 88%)}
+    .we-close-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:22px}
+    .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5.2vw,52px);margin:0 0 12px;letter-spacing:-1px;color:#fff}
+    .we-close .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:28px;color:#FFF4F8;margin:0 0 36px}
+    .we-close .btn{background:#fff;color:var(--pink);border-color:#fff}
+    .we-close .we-soon{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5);color:#fff}
+    .we-close-note{font-size:12.5px;letter-spacing:.6px;color:rgba(255,255,255,.75);margin-top:22px}
 
     @media(max-width:820px){
-      .we-phases{grid-template-columns:1fr}
-      .we-split{grid-template-columns:1fr;gap:36px}
-      .we-block{padding:52px 0}
+      .we-stats{grid-template-columns:1fr 1fr}
+      .we-grid,.we-phases,.we-checks,.we-split{grid-template-columns:1fr}
+      .we-split{gap:34px}
+      .we-block{padding:56px 0}
+      .we-close{padding:60px 24px 54px;margin-top:60px}
     }
   </style>
 </PageLayout>
