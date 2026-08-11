@@ -2,8 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 
-// PLACEHOLDER — fill when the Beacons product is created. Do not guess.
-const CHECKOUT = "";
+const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -132,7 +131,7 @@ const faqs = [
         ? <a class="btn" href={CHECKOUT}>Get the course — $97 <span class="a">→</span></a>
         : <span class="we-soon">Enrollment opens shortly</span>}
     </div>
-    <p class="we-access">Access is tied to the email you buy with — use one you check.</p>
+    <p class="we-access">Access is tied to the email you buy with — use one you check. Access is opened within a few hours of purchase.</p>
     <div class="we-hero-strip">
       {phases.map((p, i) => (
         <span class="we-chip" style={`--ac:${p.accent}`}>
