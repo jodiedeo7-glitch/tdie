@@ -33,6 +33,14 @@ That thing belonged in a layout. Move it there, then delete it from the individu
 <p><strong>"A file named one thing turned out to contain something else."</strong>
 This one costs whole rebuilds. You paste in <code>resource-map.md</code> and it's actually an old decisions log you renamed. Claude trusts it completely and everything downstream is wrong while looking fine.
 <strong>Fix:</strong> every canon document starts with a title and version line — <code># RESOURCE MAP v2.1 — updated Aug 3</code>. Read the first three lines before using any file. Four seconds.</p>
+<p><strong>"I have two related-article blocks at the bottom of every article."</strong>
+Module 11's journey block was added alongside Module 6's block instead of replacing it. Tell Claude to remove the old one — there should be exactly one block at the end of an article.</p>
+<p><strong>"My /learn page is empty even though articles are live."</strong>
+The index isn't reading them automatically. It should glob over <code>src/pages/learn/</code> and read title, description and category from each article's frontmatter — and each article has to export those. Hand-maintained lists always fall behind.</p>
+<p><strong>"My homepage says PLACEHOLDER."</strong>
+The scaffold ships placeholder copy on purpose. Module 5's homepage prompt fills it. Four sections, nothing more.</p>
+<p><strong>"My article shows a broken image box."</strong>
+<code>featuredImage</code> points at a file that isn't in the repo. Either commit the image to <code>public/images/</code> or remove the prop — an article without an image still ranks fine.</p>
 <p><strong>"A page has its own <code>&lt;html&gt;</code> tag and analytics doesn't load there."</strong>
 Any page bypassing the layout misses everything the layout provides. Ask Claude to check <em>every</em> file that renders its own <code>&lt;html&gt;</code>, not just the obvious one.</p>
 <hr />

@@ -49,9 +49,14 @@ Rules:
 <pre><code>Convert that article into a complete .astro file at
 src/pages/learn/[slug].astro, using ArticleLayout with all props
 filled — title, description, category, publishDate, related.
+
+Export the same title, description and category from the file's
+frontmatter as well, so the /learn index picks it up automatically.
+
 Complete file, ready to paste.
 </code></pre>
 <p>Commit it to <code>src/pages/learn/</code>. Vercel deploys it in about ninety seconds. It's live.</p>
+<p><strong>On images:</strong> leave <code>featuredImage</code> off for now. Module 18 covers making them and where the files go. An article without one still ranks; an article pointing at an image that doesn't exist shows a broken box.</p>
 <h2>Roadblock — <em>"It came out at 1,800 words"</em></h2>
 <p>Say: <code>This is under the 3,000 floor. Expand by adding depth, not padding — more specific examples, more of the actual how, more edge cases. Don't restate what's already there.</code> Naming what you don't want matters; asking only for "longer" gets you restatement.</p>
 <h2>Roadblock — <em>"It doesn't sound like me"</em></h2>

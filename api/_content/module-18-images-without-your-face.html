@@ -59,6 +59,16 @@ SWAP FIELDS: [SUBJECT] [POSE] [HEADLINE] [SUBTITLE] [BADGE]
 <h2>The hard ban</h2>
 <p><strong>No trademarked characters, brands, logos, or IP in any generated image.</strong></p>
 <p>Not as a background element, not as a joke, not "in the style of" a known franchise. This has cost people their accounts on platforms that don't offer appeals. There is no version of this that's worth it.</p>
+<h2>Do this — where the files go</h2>
+<p>Generating an image is half of it. Getting it onto your site is the half nobody explains.</p>
+<p><strong>1. Save it with a real name.</strong> <code>faceless-business-pillar.jpg</code>, not <code>Gemini_Generated_Image_88x2k.png</code>. The filename is read by search engines.</p>
+<p><strong>2. Compress it.</strong> A 4MB image will slow your page badly. Anything under 300KB at 1200px wide is fine — use any free compressor, or Canva's export settings.</p>
+<p><strong>3. Put it in <code>public/images/</code></strong> in your repo. Same commit process as any other file.</p>
+<p><strong>4. Reference it from the article</strong> — the path starts at <code>public</code>, so a file at <code>public/images/name.jpg</code> is referenced as <code>/images/name.jpg</code>:</p>
+<pre><code class="language-astro">featuredImage=&quot;/images/faceless-business-pillar.jpg&quot;
+</code></pre>
+<p><strong>5. Always write alt text.</strong> One plain sentence describing what's in the image. It's what a screen reader announces and what a search engine reads.</p>
+<p>Pin graphics don't go in the repo at all — those upload straight to Pinterest.</p>
 <h2>Roadblock — <em>"My images look like 3D renders"</em></h2>
 <p>Add "a real photograph, not a 3D render, not CGI" and add real camera specs. Both, not one.</p>
 <h2>Roadblock — <em>"Colors don't match my brand"</em></h2>

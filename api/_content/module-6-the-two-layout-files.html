@@ -26,8 +26,12 @@ It must include:
 3. Nav and footer matching PageLayout
 4. Article body slot with brand typography
 5. An email capture block — as a LINK to [your opt-in URL],
-   not an inline form
-6. A related-articles block rendered from the `related` prop
+   not an inline form. If I don't have that URL yet, use the
+   constant NEWSLETTER_URL with the value &quot;#&quot; so it's a single
+   line to change later.
+6. A related-articles block rendered from the `related` prop.
+   Module 11 expands this into a full journey block — build it
+   as one section so it can be replaced cleanly.
 
 Rules:
 - If publishDate is missing, omit it from the schema. Never
@@ -40,6 +44,7 @@ Rules:
 <p>A form on your page needs somewhere to send the data. Wire it wrong and it looks perfect — styled, on-brand, submit button and all — and captures nothing. No error, no warning. It just quietly does nothing on every page of your site, for however long it takes you to notice.</p>
 <p>The way people usually notice is by testing their own signup months later and finding an empty list.</p>
 <p>Linking to your email platform's hosted opt-in page removes the failure entirely. Their page, their form, their infrastructure. Slightly less elegant, permanently reliable.</p>
+<p><strong>You may not have that URL yet.</strong> Module 12 sets up your email platform. Until then set the constant to <code>"#"</code> — the block renders and you change one line on Saturday night.</p>
 <p>Put that URL in <strong>one constant at the top of the layout</strong>:</p>
 <pre><code class="language-astro">const NEWSLETTER_URL = &quot;https://your-opt-in-page-url&quot;;
 </code></pre>

@@ -20,7 +20,10 @@ What I need:
 3. A base layout at src/layouts/PageLayout.astro — nav, footer,
    fonts loaded, brand colors as CSS variables
 4. A homepage at src/pages/index.astro
-5. A /learn index page listing articles
+5. A /learn index page that lists articles AUTOMATICALLY using
+   Astro's glob import over src/pages/learn/ — reading each
+   article's title, description and category from its frontmatter.
+   I don't want to hand-maintain a list.
 6. tsconfig.json, .gitignore, robots.txt
 
 Rules:
@@ -31,6 +34,26 @@ Rules:
 - Give me each file complete, with its exact file path. No fragments.
 </code></pre>
 <p>Claude returns a set of complete files. Read them for invented products — that's the one thing to check. If a price or product appears that isn't in your Canon File, say <code>That product doesn't exist. Remove it.</code> and it will.</p>
+<h2>Do this — the homepage</h2>
+<p>The scaffold gives you a homepage with PLACEHOLDER text. Fill it now, or you'll finish the weekend with a live site whose front page says PLACEHOLDER.</p>
+<p>It needs four things and nothing else:</p>
+<pre><code>Write the homepage copy for src/pages/index.astro. Use my Canon
+File and pillar map in project knowledge.
+
+Four sections only:
+1. A headline saying who I help and what they get — no tagline
+   fluff, a plain sentence a stranger understands
+2. A short paragraph on what this site is for
+3. The pillar topics as links to /learn — use my actual pillars
+4. One email signup link to [your opt-in URL or PLACEHOLDER
+   for now — Module 12 fills it]
+
+Rules:
+- No invented products, prices, testimonials, or credentials
+- No &quot;welcome to my blog&quot;
+- Complete file, ready to paste
+</code></pre>
+<p>Nothing else belongs on a homepage on day one. You can add to it once you have traffic telling you what people want.</p>
 <h2>Do this — getting files into GitHub</h2>
 <p>Two routes. Pick one and stay with it.</p>
 <p><strong>Route A — the web interface.</strong> Slower, zero setup, works on any computer. In your repo: <strong>Add file → Create new file</strong>. Type the full path in the filename box (<code>src/layouts/PageLayout.astro</code> — the slashes create the folders automatically). Paste the contents. Scroll down, <strong>Commit new file</strong>. Repeat per file.</p>
