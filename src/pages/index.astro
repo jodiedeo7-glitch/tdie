@@ -4,18 +4,18 @@ import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
 // Pillar guides — titles, slugs and categories read from the live pages, 24 July 2026.
 const pillars = [
-  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min" },
-  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", cat: "Mindset", read: "15 Min" },
-  { n: "03", title: "The Branding Guide", slug: "branding-guide", cat: "Branding", read: "16 Min" },
-  { n: "04", title: "The Beginner's Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", cat: "Content Creation", read: "13 Min" },
-  { n: "05", title: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", cat: "AI", read: "18 Min" },
-  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", cat: "Pinterest", read: "14 Min" },
-  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", cat: "Blogging", read: "17 Min" },
-  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", cat: "Email Marketing", read: "16 Min" },
-  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", cat: "Digital Products", read: "17 Min" },
-  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", cat: "Affiliate Marketing", read: "16 Min" },
-  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", cat: "Automation & Paid Traffic", read: "15 Min" },
-  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", cat: "Passive Income", read: "16 Min" },
+  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min", ac: "#CBB7F7" },
+  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", cat: "Mindset", read: "15 Min", ac: "#C7AEF3" },
+  { n: "03", title: "The Branding Guide", slug: "branding-guide", cat: "Branding", read: "16 Min", ac: "#C9A2E7" },
+  { n: "04", title: "The Beginner's Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", cat: "Content Creation", read: "13 Min", ac: "#CD97DD" },
+  { n: "05", title: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", cat: "AI", read: "18 Min", ac: "#CE8CD2" },
+  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", cat: "Pinterest", read: "14 Min", ac: "#CF80C2" },
+  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", cat: "Blogging", read: "17 Min", ac: "#D073B5" },
+  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", cat: "Email Marketing", read: "16 Min", ac: "#D265A8" },
+  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", cat: "Digital Products", read: "17 Min", ac: "#D3579B" },
+  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", cat: "Affiliate Marketing", read: "16 Min", ac: "#D44A8E" },
+  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", cat: "Automation & Paid Traffic", read: "15 Min", ac: "#D53C80" },
+  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", cat: "Passive Income", read: "16 Min", ac: "#D62E73" },
 ];
 
 // Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
@@ -178,18 +178,34 @@ const tiers = [
     @media(max-width:760px){.free-grid{grid-template-columns:1fr}}
 
     /* ---------- THE LIBRARY (contents) ---------- */
-    .contents{border-top:1px solid var(--gray);max-width:900px;margin:0 auto}
-    a.entry{display:grid;grid-template-columns:52px 1fr auto;align-items:baseline;gap:20px;padding:24px 6px;border-bottom:1px solid var(--gray);transition:padding-left .4s var(--ease),background .4s var(--ease)}
-    a.entry:hover{padding-left:18px;background:rgba(255,138,194,.06)}
-    a.entry .no{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mauve)}
-    a.entry .ttl{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.3vw,24px);line-height:1.22}
-    a.entry .ttl span{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-top:8px}
-    a.entry .rd{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
-    @media(max-width:640px){a.entry{grid-template-columns:38px 1fr;gap:14px}a.entry .rd{display:none}}
+    .contents{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+    a.entry{position:relative;display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:22px;
+      padding:22px 26px 22px 22px;border-radius:16px;background:var(--white);
+      border:1px solid rgba(183,159,150,.20);overflow:hidden;
+      transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+    a.entry::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac);
+      transition:width .4s var(--ease)}
+    a.entry:hover{transform:translateY(-2px);border-color:rgba(214,46,115,.30);
+      box-shadow:0 14px 34px -18px rgba(43,22,27,.28)}
+    a.entry:hover::before{width:9px}
+    a.entry:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+    a.entry .no{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--ac);text-align:center}
+    a.entry .ttl{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.2vw,23px);line-height:1.24}
+    a.entry .ttl span{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:9px;filter:brightness(.82)}
+    a.entry .rd{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
+    @media(max-width:640px){
+      a.entry{grid-template-columns:40px 1fr;gap:14px;padding:18px 18px 18px 16px;border-radius:13px}
+      a.entry .no{font-size:23px}
+      a.entry .rd{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){a.entry:hover{transform:none}}
     .sec-foot{text-align:center;margin-top:46px}
 
     /* ---------- SHOP ---------- */
-    .shop-band{background:var(--blush)}
+    .shop-band{background:linear-gradient(168deg,#F4EEFD 0%,#EFE7FB 46%,#F7EDF6 100%);
+      border-top:1px solid rgba(203,183,247,.42);border-bottom:1px solid rgba(203,183,247,.42)}
+    .shop-band .sec-head .k{color:#8A6FC4}
+    .shop-band .sh{border-color:rgba(203,183,247,.46)}
     .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
     @media(max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.shop-grid{grid-template-columns:1fr}}
@@ -322,9 +338,9 @@ const tiers = [
     </div>
     <div class="contents">
       {pillars.map((p) => (
-        <a class="entry" href={`/learn/${p.slug}`}>
+        <a class="entry" href={`/learn/${p.slug}`} style={`--ac:${p.ac}`}>
           <div class="no">{p.n}</div>
-          <div class="ttl">{p.title}<span>{p.cat}</span></div>
+          <div class="ttl"><span>{p.cat}</span>{p.title}</div>
           <div class="rd">{p.read}</div>
         </a>
       ))}

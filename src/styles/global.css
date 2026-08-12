@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}
 @keyframes reveal-failsafe{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;animation:none}*{scroll-behavior:auto!important}}
 
-.nav{position:sticky;top:0;z-index:60;background:rgba(251,248,245,.86);backdrop-filter:blur(10px)}
+.nav{position:sticky;top:0;z-index:60;background:#FBF8F5;background:rgba(251,248,245,.985);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid rgba(183,159,150,.16)}
 .nav-in{max-width:var(--wide);margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--display);font-size:21px;font-weight:500;letter-spacing:.3px}
 .logo em{font-style:italic;color:var(--pink)}
