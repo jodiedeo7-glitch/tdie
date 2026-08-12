@@ -151,7 +151,7 @@ const tiers = [
     .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.34) 0%,rgba(251,248,245,.62) 52%,var(--cream) 97%)}
     .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 70px;text-align:center}
     .h-hero .k{display:inline-block;transition:opacity .3s;font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
-    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.4px;max-width:15ch;margin:0 auto 24px}
+    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.4px;max-width:15ch;margin:0 auto 24px;color:var(--pink)}
     .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
     .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid var(--taupe);box-shadow:none}
@@ -159,10 +159,18 @@ const tiers = [
     @media(max-width:600px){.h-hero{min-height:76vh}.h-hero .in{padding:0 22px 52px}}
 
     /* ---------- SHARED SECTION FURNITURE ---------- */
-    .sec{max-width:var(--wide);margin:0 auto;padding:104px 40px}
+    .sec{max-width:var(--wide);margin:0 auto;padding:104px 40px;position:relative}
+    .sec::before{content:"";position:absolute;top:0;left:40px;right:40px;height:9px;pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 50%, #D62E73 0 3px, transparent 3.6px),
+        linear-gradient(90deg,transparent 0%, rgba(214,46,115,.24) 16%, rgba(200,169,106,.30) 50%, rgba(214,46,115,.24) 84%, transparent 100%);
+      background-repeat:no-repeat;background-size:100% 9px, 100% 1px;
+      background-position:center center, center center}
+    .shop-band .sec::before,.mem .sec::before{display:none}
+
     .sec-head{text-align:center;max-width:44ch;margin:0 auto 56px}
     .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
-    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px}
+    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:var(--pink)}
     .sec-head p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--taupe-deep)}
     @media(max-width:600px){.sec{padding:70px 22px}}
 

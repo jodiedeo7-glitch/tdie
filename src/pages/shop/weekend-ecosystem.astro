@@ -427,8 +427,19 @@ const faqs = [
     .we-stat-l{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:10px}
 
     /* ── blocks ── */
-    .we-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#2B161B}
+    .we-block{padding:76px 0}
+    /* section separator — hairline with a centred pink marker */
+    .we-block{position:relative;border-top:none !important}
+    .we-block::before{content:"";position:absolute;top:-4px;left:0;right:0;height:9px;pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 50%, #D62E73 0 3px, transparent 3.6px),
+        linear-gradient(90deg,transparent 0%, rgba(214,46,115,.24) 16%, rgba(200,169,106,.30) 50%, rgba(214,46,115,.24) 84%, transparent 100%);
+      background-repeat:no-repeat;
+      background-size:100% 9px, 100% 1px;
+      background-position:center center, center center}
+    .we-block:first-of-type::before{display:none}
+
+    .we-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#D62E73}
     .we-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 0 20px;color:#3B2228}
     .we-lead-hit{font-family:"Cormorant Garamond",serif;font-size:25px;font-style:italic;line-height:1.55;color:var(--pink);
                  border-left:2px solid var(--pink);padding-left:22px;margin-top:30px}

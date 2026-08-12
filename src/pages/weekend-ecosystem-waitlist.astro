@@ -143,8 +143,8 @@ const packOut = [
   <style>
     .wl-hero{text-align:center;padding:10px 0 60px}
     .wl-hero .page-eyebrow{color:var(--pink)!important}
-    .wl-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,8vw,80px);line-height:.98;letter-spacing:-2px;margin:0 0 24px;color:#2B161B}
-    .wl-hero h1 em{font-style:italic;color:var(--pink)}
+    .wl-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,8vw,80px);line-height:.98;letter-spacing:-2px;margin:0 0 24px;color:#D62E73}
+    .wl-hero h1 em{font-style:italic;color:#2B161B}
     .wl-hero .lede{max-width:600px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;line-height:1.55;color:#5A4048}
     .wl-form{margin-bottom:48px}
     .wl-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
@@ -173,8 +173,19 @@ const packOut = [
     .wl-fig-modules{max-width:640px;margin:36px auto 0}
     .wl-fig-numbers{max-width:520px;margin:0 auto 8px}
     .wl-mobile-only{display:none}
-    .wl-block{padding:64px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#2B161B}
+    .wl-block{padding:64px 0}
+    /* section separator — hairline with a centred pink marker */
+    .wl-block{position:relative;border-top:none !important}
+    .wl-block::before{content:"";position:absolute;top:-4px;left:0;right:0;height:9px;pointer-events:none;
+      background:
+        radial-gradient(circle at 50% 50%, #D62E73 0 3px, transparent 3.6px),
+        linear-gradient(90deg,transparent 0%, rgba(214,46,115,.24) 16%, rgba(200,169,106,.30) 50%, rgba(214,46,115,.24) 84%, transparent 100%);
+      background-repeat:no-repeat;
+      background-size:100% 9px, 100% 1px;
+      background-position:center center, center center}
+    .wl-block:first-of-type::before{display:none}
+
+    .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#D62E73}
     .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
     .wl-never{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 26px}
     .wl-never-chip{position:relative;font-size:15.5px;line-height:1.4;padding:11px 17px;border-radius:6px;
