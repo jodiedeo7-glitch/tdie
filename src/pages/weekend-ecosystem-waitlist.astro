@@ -17,7 +17,18 @@ const teasers = [
   { n: "22", l: "Modules" },
   { n: "36", l: "Prompts, verbatim" },
   { n: "3", l: "Reference vaults" },
-  { n: "1", l: "Weekend" },
+  { n: "30", l: "Assets per article" },
+];
+
+const packOut = [
+  "Ten Pinterest pins \u2014 each a different layout, with the image prompt written out in full",
+  "Eight Instagram card slides, plus the caption and five real search-term hashtags",
+  "Two short-video concepts, each with a cover image prompt",
+  "Three Threads or X posts, each standing on its own",
+  "One Facebook post, in a warmer register",
+  "One email \u2014 subject, preview text, body, one call to action",
+  "One community post, written the way a person talks",
+  "Every headline and subhead used above, listed for reuse",
 ];
 ---
 <PageLayout
@@ -98,6 +109,15 @@ const teasers = [
     <figure class="wl-fig wl-fig-modules">
       <img src="/images/we/module-list.jpg" alt="The full list of 22 modules across six phases: Prep, The Website, The Blog, The Capture System, Traffic, and Running It." loading="lazy" width="1100" height="1191" />
     </figure>
+  </section>
+
+  <section class="wl-block">
+    <h2>One article becomes a month of content</h2>
+    <p class="wl-lead">The part nobody expects. You paste a published article into one prompt and it comes back as a Repurposing Pack — roughly thirty finished assets, every one self-contained, nothing to assemble by hand.</p>
+    <ul class="wl-list">
+      {packOut.map((x) => <li>{x}</li>)}
+    </ul>
+    <p class="wl-lead" style="margin-top:24px">So the website isn't extra work stacked on top of posting. It's the thing that generates the posting.</p>
   </section>
 
   <section class="wl-block">
