@@ -21,14 +21,14 @@ const teasers = [
 ];
 
 const packOut = [
-  "Ten Pinterest pins \u2014 each a different layout, with the image prompt written out in full",
-  "Eight Instagram card slides, plus the caption and five real search-term hashtags",
-  "Two short-video concepts, each with a cover image prompt",
-  "Three Threads or X posts, each standing on its own",
-  "One Facebook post, in a warmer register",
-  "One email \u2014 subject, preview text, body, one call to action",
-  "One community post, written the way a person talks",
-  "Every headline and subhead used above, listed for reuse",
+  { n: "10", t: "Pinterest pins",   d: "Each a different layout. Image prompt written out in full.", ac: "#CBB7F7" },
+  { n: "8",  t: "Carousel slides",  d: "Hook slide first, plus caption and five real search-term hashtags.", ac: "#CD97DD" },
+  { n: "2",  t: "Video concepts",   d: "A six-second loop and an action clip, each with a cover prompt.", ac: "#CF80C2" },
+  { n: "3",  t: "Threads / X posts", d: "Three separate ideas, not one idea cut up.", ac: "#D265A8" },
+  { n: "1",  t: "Facebook post",    d: "The same material, warmer register.", ac: "#D4498D" },
+  { n: "1",  t: "Email",            d: "Subject, preview text, body, one call to action.", ac: "#D53C80" },
+  { n: "1",  t: "Community post",   d: "Written the way a person talks.", ac: "#D62E73" },
+  { n: "All", t: "Headlines listed", d: "Every headline and subhead, ready to reuse.", ac: "#C8A96A" },
 ];
 ---
 <PageLayout
@@ -113,11 +113,24 @@ const packOut = [
 
   <section class="wl-block">
     <h2>One article becomes a month of content</h2>
-    <p class="wl-lead">The part nobody expects. You paste a published article into one prompt and it comes back as a Repurposing Pack — roughly thirty finished assets, every one self-contained, nothing to assemble by hand.</p>
-    <ul class="wl-list">
-      {packOut.map((x) => <li>{x}</li>)}
-    </ul>
-    <p class="wl-lead" style="margin-top:24px">So the website isn't extra work stacked on top of posting. It's the thing that generates the posting.</p>
+    <p class="wl-lead">You paste a published article into one prompt. It comes back as a Repurposing Pack — every asset finished and self-contained, nothing to assemble by hand.</p>
+
+    <div class="wl-pack">
+      <div class="wl-pack-top">
+        <span class="wl-pack-badge">The part nobody expects</span>
+        <span class="wl-pack-total"><b>≈30</b> assets · one prompt · one article</span>
+      </div>
+      <div class="wl-pack-grid">
+        {packOut.map((x) => (
+          <div class="wl-pack-cell" style={`--ac:${x.ac}`}>
+            <span class="wl-pack-n">{x.n}</span>
+            <span class="wl-pack-t">{x.t}</span>
+            <span class="wl-pack-d">{x.d}</span>
+          </div>
+        ))}
+      </div>
+      <p class="wl-pack-foot">One pack is roughly a month of posting — ten pins across four weeks, one piece per platform per week for the rest. The website isn't work stacked on top of posting. It's the thing that generates the posting.</p>
+    </div>
   </section>
 
   <section class="wl-block">
@@ -187,6 +200,33 @@ const packOut = [
 
     .wl-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,42px);line-height:1.06;margin:0 0 22px;letter-spacing:-.8px;color:#D62E73}
     .wl-lead{font-size:18px;line-height:1.8;max-width:620px;margin:0 0 18px;color:#3B2228}
+    /* ── Repurposing Pack callout ── */
+    .wl-pack{margin:28px 0 0;padding:26px 28px 24px;border-radius:16px;
+      border:1.5px solid rgba(214,46,115,.34);
+      background:linear-gradient(150deg,rgba(203,183,247,.20) 0%,rgba(255,138,194,.16) 52%,rgba(214,46,115,.09) 100%);
+      box-shadow:0 18px 44px -30px rgba(214,46,115,.55)}
+    .wl-pack-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-bottom:20px}
+    .wl-pack-badge{display:inline-block;background:#D62E73;color:#FBF8F5;font-size:10px;font-weight:600;
+      letter-spacing:2.2px;text-transform:uppercase;padding:7px 15px;border-radius:100px;line-height:1}
+    .wl-pack-total{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63}
+    .wl-pack-total b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;letter-spacing:0;color:#D62E73;vertical-align:-2px}
+    .wl-pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .wl-pack-cell{position:relative;background:#FFFDFC;border:1px solid rgba(183,159,150,.22);
+      border-radius:10px;padding:14px 14px 14px 16px;overflow:hidden}
+    .wl-pack-cell::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac)}
+    .wl-pack-n{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:27px;line-height:1;color:var(--ac)}
+    .wl-pack-t{display:block;font-family:"Fraunces",serif;font-size:15px;line-height:1.2;margin:5px 0 5px;color:#2B161B}
+    .wl-pack-d{display:block;font-size:12.5px;line-height:1.5;color:#7A5C63}
+    .wl-pack-foot{font-size:14.5px;line-height:1.65;color:#5C4048;margin:20px 0 0;max-width:64ch}
+    @media(max-width:900px){.wl-pack-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){
+      .wl-pack{padding:20px 18px 18px;border-radius:13px}
+      .wl-pack-grid{gap:8px}
+      .wl-pack-n{font-size:22px}
+      .wl-pack-t{font-size:14px}
+      .wl-pack-d{font-size:11.5px}
+    }
+
     .wl-never{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 26px}
     .wl-never-chip{position:relative;font-size:15.5px;line-height:1.4;padding:11px 17px;border-radius:6px;
                    background:rgba(203,183,247,.16);border:1px solid rgba(43,22,27,.09);color:#7A5C63;

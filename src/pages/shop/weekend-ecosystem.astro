@@ -57,14 +57,14 @@ const stats = [
 
 // The Repurposing Pack — the exact output of the Module 17 prompt, as written in the module.
 const pack = [
-  { n: "10", t: "Pinterest pins", p: "Each one a different layout structure, with a search-phrased title, a keyword-rich description, the board it belongs on, and a complete image prompt written out in full.", ac: "#CBB7F7" },
-  { n: "8",  t: "Instagram card slides", p: "A hook slide first, then seven more, plus the caption and five hashtags that are real search terms rather than brand tags.", ac: "#CD97DD" },
-  { n: "2",  t: "Short-video concepts", p: "One six-second loop and one action clip, each with its own cover image prompt.", ac: "#CF80C2" },
-  { n: "3",  t: "Threads and X posts", p: "Three, each standing on its own — not one idea cut into pieces.", ac: "#D265A8" },
-  { n: "1",  t: "Facebook post", p: "The same material in a warmer, more personal register.", ac: "#D4498D" },
-  { n: "1",  t: "Email", p: "Subject line, preview text, body, and one call to action pointing at your free resource.", ac: "#D53C80" },
-  { n: "1",  t: "Community post", p: "Written the way a person talks, not the way your blog writes. Posting editorial voice into your own room is how rooms go quiet.", ac: "#D62E73" },
-  { n: "\u2014", t: "Every headline, listed", p: "A plain list of each headline and subhead used above, ready to reuse anywhere.", ac: "#C8A96A" },
+  { n: "10", t: "Pinterest pins",    p: "Each a different layout. Search-phrased title, keyword description, the board it goes on, and a complete image prompt.", ac: "#CBB7F7" },
+  { n: "8",  t: "Carousel slides",   p: "Hook slide first, plus the caption and five hashtags that are real search terms rather than brand tags.", ac: "#CD97DD" },
+  { n: "2",  t: "Video concepts",    p: "A six-second loop and an action clip, each with its own cover image prompt.", ac: "#CF80C2" },
+  { n: "3",  t: "Threads / X posts", p: "Three separate ideas, each standing on its own \u2014 not one idea cut into pieces.", ac: "#D265A8" },
+  { n: "1",  t: "Facebook post",     p: "The same material in a warmer, more personal register.", ac: "#D4498D" },
+  { n: "1",  t: "Email",             p: "Subject line, preview text, body, and one call to action pointing at your free resource.", ac: "#D53C80" },
+  { n: "1",  t: "Community post",    p: "Written the way a person talks. Editorial voice in your own room is how rooms go quiet.", ac: "#D62E73" },
+  { n: "All", t: "Headlines listed", p: "Every headline and subhead used above, in a plain list, ready to reuse anywhere.", ac: "#C8A96A" },
 ];
 
 const included = [
@@ -346,6 +346,11 @@ const faqs = [
     <h2>One article becomes a month of content</h2>
     <p class="we-pack-lede">This is the part that makes the rest sustainable. Without it you publish an article and then face a second job — promoting it. With it, publishing and promoting are the same action.</p>
     <p class="we-pack-lede">You paste your published article into one prompt. What comes back is a Repurposing Pack:</p>
+    <div class="we-pack-box">
+    <div class="we-pack-top">
+      <span class="we-pack-badge">Included · Module 17</span>
+      <span class="we-pack-total"><b>≈30</b> assets · one prompt · one article</span>
+    </div>
     <div class="we-pack-grid">
       {pack.map((x) => (
         <div class="we-pack-card" style={`--ac:${x.ac}`}>
@@ -354,6 +359,7 @@ const faqs = [
           <p class="we-pack-p">{x.p}</p>
         </div>
       ))}
+    </div>
     </div>
     <p class="we-pack-foot">Every asset arrives finished and self-contained. No reference tables, no "use the style from pin three", nothing to assemble by hand — that instruction is written into the prompt, because the forty minutes of reassembly is exactly the work you were trying to avoid.</p>
     <p class="we-pack-foot">One pack is roughly a month of posting. Ten pins spread across four weeks, one piece per platform per week for the rest.</p>
@@ -567,15 +573,25 @@ const faqs = [
     /* ── fit ── */
     .we-pack-eyebrow{display:inline-block;font-size:10px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:#D62E73;margin-bottom:14px}
     .we-pack-lede{font-size:17px;line-height:1.72;color:#4A3237;max-width:60ch;margin:0 0 16px}
-    .we-pack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:30px 0 26px}
-    .we-pack-card{position:relative;padding:22px 24px 22px 26px;border-radius:12px;background:#FFFDFC;
-      border:1px solid rgba(183,159,150,.24);overflow:hidden}
-    .we-pack-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac)}
-    .we-pack-n{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;line-height:1;color:var(--ac)}
-    .we-pack-t{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:19px;line-height:1.2;margin:7px 0 8px;color:#2B161B}
-    .we-pack-p{font-size:14.5px;line-height:1.62;color:#7A5C63;margin:0}
+    .we-pack-box{margin:26px 0;padding:26px 28px 26px;border-radius:16px;
+      border:1.5px solid rgba(214,46,115,.34);
+      background:linear-gradient(150deg,rgba(203,183,247,.20) 0%,rgba(255,138,194,.16) 52%,rgba(214,46,115,.09) 100%);
+      box-shadow:0 18px 44px -30px rgba(214,46,115,.55)}
+    .we-pack-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-bottom:20px}
+    .we-pack-badge{display:inline-block;background:#D62E73;color:#FBF8F5;font-size:10px;font-weight:600;
+      letter-spacing:2.2px;text-transform:uppercase;padding:7px 15px;border-radius:100px;line-height:1}
+    .we-pack-total{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63}
+    .we-pack-total b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;letter-spacing:0;color:#D62E73;vertical-align:-2px}
+    .we-pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .we-pack-card{position:relative;padding:14px 14px 14px 16px;border-radius:10px;background:#FFFDFC;
+      border:1px solid rgba(183,159,150,.22);overflow:hidden}
+    .we-pack-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac)}
+    .we-pack-n{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:27px;line-height:1;color:var(--ac)}
+    .we-pack-t{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:15px;line-height:1.2;margin:5px 0 5px;color:#2B161B}
+    .we-pack-p{font-size:12.5px;line-height:1.5;color:#7A5C63;margin:0}
     .we-pack-foot{font-size:15px;line-height:1.7;color:#7A5C63;max-width:62ch;margin:0 0 12px}
-    @media(max-width:700px){.we-pack-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.we-pack-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.we-pack-box{padding:20px 18px}.we-pack-n{font-size:22px}.we-pack-t{font-size:14px}.we-pack-p{font-size:11.5px}}
     .we-split{display:grid;grid-template-columns:1fr 1fr;gap:44px}
     .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;color:#2B161B}
     .we-list{list-style:none;padding:0;margin:18px 0 0}
