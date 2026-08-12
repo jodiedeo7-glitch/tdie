@@ -57,14 +57,14 @@ const stats = [
 
 // The Repurposing Pack — the exact output of the Module 17 prompt, as written in the module.
 const pack = [
-  { n: "10", t: "Pinterest pins",    p: "Each a different layout. Search-phrased title, keyword description, the board it goes on, and a complete image prompt.", ac: "#CBB7F7" },
-  { n: "8",  t: "Carousel slides",   p: "Hook slide first, plus the caption and five hashtags that are real search terms rather than brand tags.", ac: "#CD97DD" },
-  { n: "2",  t: "Video concepts",    p: "A six-second loop and an action clip, each with its own cover image prompt.", ac: "#CF80C2" },
-  { n: "3",  t: "Threads / X posts", p: "Three separate ideas, each standing on its own \u2014 not one idea cut into pieces.", ac: "#D265A8" },
-  { n: "1",  t: "Facebook post",     p: "The same material in a warmer, more personal register.", ac: "#D4498D" },
-  { n: "1",  t: "Email",             p: "Subject line, preview text, body, and one call to action pointing at your free resource.", ac: "#D53C80" },
-  { n: "1",  t: "Community post",    p: "Written the way a person talks. Editorial voice in your own room is how rooms go quiet.", ac: "#D62E73" },
-  { n: "All", t: "Headlines listed", p: "Every headline and subhead used above, in a plain list, ready to reuse anywhere.", ac: "#C8A96A" },
+  { n: "10", t: "Pinterest pins",    p: "Each a different layout, image prompt included", ac: "#CBB7F7" },
+  { n: "8",  t: "Carousel slides",   p: "Plus caption and five search-term hashtags", ac: "#CD97DD" },
+  { n: "2",  t: "Video concepts",    p: "Each with a cover image prompt", ac: "#CF80C2" },
+  { n: "3",  t: "Threads / X posts", p: "Three separate ideas, not one cut up", ac: "#D265A8" },
+  { n: "1",  t: "Facebook post",     p: "Same material, warmer register", ac: "#D4498D" },
+  { n: "1",  t: "Email",             p: "Subject, preview, body, one call to action", ac: "#D53C80" },
+  { n: "1",  t: "Community post",    p: "Written the way a person talks", ac: "#D62E73" },
+  { n: "All", t: "Headlines listed", p: "Every headline and subhead, ready to reuse", ac: "#C8A96A" },
 ];
 
 const included = [
@@ -353,7 +353,7 @@ const faqs = [
     </div>
     <div class="we-pack-grid">
       {pack.map((x) => (
-        <div class="we-pack-card" style={`--ac:${x.ac}`}>
+        <div class="we-pack-cell" style={`--ac:${x.ac}`}>
           <span class="we-pack-n">{x.n}</span>
           <span class="we-pack-t">{x.t}</span>
           <p class="we-pack-p">{x.p}</p>
@@ -582,16 +582,27 @@ const faqs = [
       letter-spacing:2.2px;text-transform:uppercase;padding:7px 15px;border-radius:100px;line-height:1}
     .we-pack-total{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63}
     .we-pack-total b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;letter-spacing:0;color:#D62E73;vertical-align:-2px}
-    .we-pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .we-pack-card{position:relative;padding:14px 14px 14px 16px;border-radius:10px;background:#FFFDFC;
-      border:1px solid rgba(183,159,150,.22);overflow:hidden}
-    .we-pack-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac)}
-    .we-pack-n{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:27px;line-height:1;color:var(--ac)}
-    .we-pack-t{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:15px;line-height:1.2;margin:5px 0 5px;color:#2B161B}
-    .we-pack-p{font-size:12.5px;line-height:1.5;color:#7A5C63;margin:0}
-    .we-pack-foot{font-size:15px;line-height:1.7;color:#7A5C63;max-width:62ch;margin:0 0 12px}
-    @media(max-width:900px){.we-pack-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){.we-pack-box{padding:20px 18px}.we-pack-n{font-size:22px}.we-pack-t{font-size:14px}.we-pack-p{font-size:11.5px}}
+    .we-pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+    .we-pack-cell{display:grid;grid-template-columns:56px 1fr;gap:0 16px;align-items:baseline;
+      padding:16px 0;border-bottom:1px solid rgba(214,46,115,.15)}
+    .we-pack-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:6px}
+    .we-pack-n{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:32px;line-height:1;
+      color:var(--ac);text-align:right;letter-spacing:-.5px}
+    .we-pack-t{font-family:"Fraunces",serif;font-weight:400;font-size:17px;line-height:1.25;color:#2B161B}
+    .we-pack-p{grid-column:2;font-size:13.5px;line-height:1.5;color:#7A5C63;margin:5px 0 0}
+    .we-pack-foot{font-size:14.5px;line-height:1.7;color:#5C4048;margin:26px 0 0;max-width:64ch}
+    @media(max-width:760px){
+      .we-pack-grid{grid-template-columns:1fr;gap:0}
+      .we-pack-cell:nth-last-child(-n+2){border-bottom:1px solid rgba(214,46,115,.15);padding-bottom:16px}
+      .we-pack-cell:last-child{border-bottom:none;padding-bottom:6px}
+    }
+    @media(max-width:520px){
+      .we-pack-box{padding:22px 18px 20px;border-radius:13px}
+      .we-pack-cell{grid-template-columns:46px 1fr;gap:0 13px}
+      .we-pack-n{font-size:26px}
+      .we-pack-t{font-size:15.5px}
+      .we-pack-p{font-size:12.5px}
+    }
     .we-split{display:grid;grid-template-columns:1fr 1fr;gap:44px}
     .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;color:#2B161B}
     .we-list{list-style:none;padding:0;margin:18px 0 0}
