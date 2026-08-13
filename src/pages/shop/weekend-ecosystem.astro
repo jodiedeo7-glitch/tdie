@@ -13,16 +13,16 @@ const WAITLIST = "/weekend-ecosystem-waitlist";
 const STAGES = {
   prelaunch: { cta: "Join the waitlist", href: WAITLIST, eyebrow: "Opening soon · Waitlist",
                note: "The waitlist opens first, three days early, at the lowest price this will ever be.",
-               access: "No payment now. You'll get one email when the doors open." },
+               access: "No payment now. You'll get one email when the doors open. One payment, and every future update is included." },
   public47:  { cta: "Get the course — $47", href: "CHECKOUT", eyebrow: "Launch week · $47",
                note: "Launch price. Goes to $67 in one week.",
-               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
+               access: "Access is tied to the email you buy with — use one you check. Opens within a few hours, and every future update is included free." },
   public67:  { cta: "Get the course — $67", href: "CHECKOUT", eyebrow: "Launch price · $67",
                note: "Goes to $97 in two weeks.",
-               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
+               access: "Access is tied to the email you buy with — use one you check. Opens within a few hours, and every future update is included free." },
   full:      { cta: "Get the course — $97", href: "CHECKOUT", eyebrow: "Standalone Course · $97 one-time",
                note: "One-time payment, $97.",
-               access: "Access is tied to the email you buy with — use one you check. Access opens within a few hours of purchase." },
+               access: "Access is tied to the email you buy with — use one you check. Opens within a few hours, and every future update is included free." },
 };
 const S = STAGES[STAGE];
 const HREF = S.href === "CHECKOUT" ? CHECKOUT : S.href;
@@ -52,7 +52,7 @@ const stats = [
   { n: "22", l: "Modules" },
   { n: "36", l: "Prompts, verbatim" },
   { n: "3", l: "Reference vaults" },
-  { n: "30", l: "Assets per article" },
+  { n: "\u221e", l: "Updates, included" },
 ];
 
 // The Repurposing Pack — the exact output of the Module 17 prompt, as written in the module.
@@ -75,6 +75,7 @@ const included = [
   { t: "The Template Vault", p: "Canon File, pillar map, live-facts block, product register, operating cadence. Fill in and keep." },
   { t: "The Repurposing Pack prompt", p: "One prompt that turns any published article into roughly thirty finished assets \u2014 a month of content off one piece of writing." },
   { t: "Progress tracking + certificate", p: "Tick off each module, watch the ring fill, and unlock a completion certificate at twenty-two." },
+  { t: "Every future update, free", p: "It's a live site, not a PDF. When my system changes I add the new modules, and they appear in your account. One payment covers all of it." },
 ];
 
 const proof = [
@@ -143,6 +144,7 @@ const notForYou = [
 const faqs = [
   { q: "Do I need to know how to code?", a: "No, and you won't write a line of it. Claude generates every file; you paste it and click commit. If something is wrong the deploy fails and tells you in plain English, and you paste that back. The course assumes you have never opened a code editor." },
   { q: "How much is actually automated?", a: "The building and the writing. Claude produces the site files, the articles, the SEO passes, the lead magnets, the images and the thirty repurposed assets per article. What stays yours is approval — reading what came back and saying yes or saying what to change. That's deliberate. Anything published under your name should be read by you first." },
+  { q: "Do I pay again when you update it?", a: "No. It's a live, interactive site rather than a downloaded file, and one payment covers everything I ever add to it. When my own system changes \u2014 a tool shifts, a platform changes its rules, I find a better way to do something \u2014 I write the new module and it appears in your account. You do not buy a version. You buy the thing, including everything it becomes." },
   { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain is $10–15 a year." },
   { q: "Do I need a paid Claude plan?", a: "It makes the longer builds smoother, but no module requires a specific plan or any tool subscription beyond your domain." },
   { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it: two hours Friday, eight Saturday, five Sunday. Filling the site out afterwards is ongoing, which is what the operating cadence in Module 21 is for." },
@@ -399,6 +401,16 @@ const faqs = [
   </section>
 
   <!-- CLOSE -->
+  <section class="we-block we-life">
+    <div class="we-life-box">
+      <span class="we-life-badge">Lifetime access</span>
+      <h2 class="we-life-h">You're buying a live site, not a PDF</h2>
+      <p>One payment. Every future update included, permanently.</p>
+      <p>This isn't a folder of files that ages the moment a tool changes its interface. It's a living, interactive site you log into — and when my own system changes, I write the new module and it simply appears in your account.</p>
+      <p>New tool worth using. A platform changing its rules. A better way to do a step I already teach. You don't buy a version and watch it go stale. You buy the thing, including everything it becomes.</p>
+    </div>
+  </section>
+
   <section class="we-close">
     <span class="we-close-eyebrow">One weekend from here</span>
     <h2>You were a digital product seller.</h2>
@@ -603,6 +615,18 @@ const faqs = [
       .we-pack-t{font-size:15.5px}
       .we-pack-p{font-size:12.5px}
     }
+    .we-life-box{padding:34px 36px;border-radius:18px;
+      border:1.5px solid rgba(214,46,115,.34);
+      background:linear-gradient(150deg,rgba(203,183,247,.20) 0%,rgba(255,138,194,.16) 52%,rgba(214,46,115,.09) 100%);
+      box-shadow:0 20px 50px -32px rgba(214,46,115,.55)}
+    .we-life-badge{display:inline-block;background:#D62E73;color:#FBF8F5;font-size:10px;font-weight:600;
+      letter-spacing:2.4px;text-transform:uppercase;padding:7px 16px;border-radius:100px;line-height:1;margin-bottom:16px}
+    .we-life-h{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);
+      letter-spacing:-.8px;line-height:1.1;margin:0 0 14px;color:#D62E73}
+    .we-life-box p{font-size:16px;line-height:1.75;color:#4A3237;max-width:62ch;margin:0 0 12px}
+    .we-life-box p:first-of-type{font-size:18px;color:#2B161B}
+    .we-life-box p:last-child{margin-bottom:0}
+    @media(max-width:520px){.we-life-box{padding:24px 20px;border-radius:14px}}
     .we-split{display:grid;grid-template-columns:1fr 1fr;gap:44px}
     .we-sub{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;color:#2B161B}
     .we-list{list-style:none;padding:0;margin:18px 0 0}
