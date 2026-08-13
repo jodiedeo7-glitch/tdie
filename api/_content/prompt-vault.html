@@ -3,7 +3,7 @@
 <p><strong>How to use this:</strong> everything here assumes you're working inside a Claude Project with your Canon File in project knowledge, and running one task per conversation. Both from Module 2. If you skipped that module, these will underperform and you'll blame the prompts.</p>
 <hr />
 <h2>CONTENTS</h2>
-<p><strong>A — Setup</strong> · A0 Chrome content inventory · A1 Canon File · A2 Standing instruction · A3 Live-facts block
+<p><strong>A — Setup</strong> · A0 Chrome inventory (4 runs) · A1 Canon File · A2 Standing instruction · A3 Live-facts block
 <strong>B — Building the site</strong> · B1 Scaffold · B2 ArticleLayout · B3 Journey block · B4 Resource landing page · B5 Bridge page · B6 Analytics · B7 Homepage
 <strong>C — Writing</strong> · C1 Pillar article · C2 Convert to page · C3 Supporting article · C4 Cluster topics · C5 Lead magnet
 <strong>D — SEO</strong> · D1 Google · D2 Pinterest · D3 AI search · D4 Human
@@ -13,13 +13,16 @@
 <strong>H — Fixes</strong> · H1–H8 correction prompts</p>
 <hr />
 <h1>A — SETUP</h1>
-<h2>A0 · Chrome content inventory</h2>
-<p><em>Module 1 — run in Claude in Chrome or any browser agent</em></p>
-<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Skool / your platform] and open [your group or workspace].
+<h2>A0 · Chrome content inventory — four runs</h2>
+<p><em>Module 1 — run in Claude in Chrome or any browser agent. One run per platform.</em></p>
+<p><strong>Run 1 — community or course platform</strong></p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Skool / Kajabi / Teachable / your platform] and open
+[your group or workspace].
 
-Work through EVERY item in these areas, oldest to newest. Do not skip any:
+Work through EVERY item in these areas, oldest to newest. Do not
+skip any:
 1. The classroom — every module, every lesson
-2. My own community posts — filter to posts by me
+2. My own posts — filter to posts by me
 3. Any call recordings or replays listed
 4. Any files, PDFs, or downloads attached anywhere
 
@@ -40,7 +43,53 @@ Rules:
 - If you approach the response limit, stop at a clean row and end
   with &quot;PAUSED AT [row number]&quot;. I will say continue.
 </code></pre></div>
-<p>Re-run pointed at your email platform's sent broadcasts, and anywhere else your writing lives. Save the result as <code>content-inventory.md</code> and upload it to your Claude Project's knowledge.</p>
+<p><strong>Run 2 — storefront</strong></p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Beacons / Etsy / Gumroad / Stan / your storefront] and
+open my shop.
+
+List EVERY product, including unlisted, draft, and retired ones.
+For each, append a row to a running table:
+Source | Product name | Price | What it teaches or contains |
+Format | Any description copy worth reusing
+
+Then, for any product with a description, sales page, or included
+PDF I can view, add 2-3 bullets on the actual content inside it.
+
+Rules:
+- Read-only. Do not edit, unpublish, reprice, or delete anything.
+- Include free products and lead magnets.
+- Run straight through without asking questions. Give me the
+  complete table at the end.
+</code></pre></div>
+<p><strong>Run 3 — existing website</strong></p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Go to [yourdomain.com] and crawl every page you can reach from the
+navigation and the sitemap.
+
+For each page, append a row to a running table:
+URL | Page title | Type (sales page, blog post, about, freebie) |
+Word count estimate | 2-3 bullets on what it covers
+
+Flag any page that is thin, outdated, or duplicated elsewhere.
+
+Read-only. Do not attempt to log in or edit anything. Run straight
+through and give me the complete table at the end.
+</code></pre></div>
+<p><strong>Run 4 — sent emails</strong></p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [MailerLite / ConvertKit / Flodesk / your email platform]
+and open my sent campaigns.
+
+Work through every broadcast I have sent, oldest to newest. For
+each, append a row to a running table:
+Date | Subject line | Topic | Approx length | 2-3 bullets on what
+it actually said
+
+Skip pure promotional emails with no teaching in them — note them
+as PROMO ONLY rather than detailing them.
+
+Read-only. Do not send, schedule, edit, or delete anything. Run
+straight through and give me the complete table at the end.
+</code></pre></div>
+<p>Save the combined result as <code>content-inventory.md</code> and upload it to your Claude Project's knowledge.</p>
 <h2>A1 · Canon File template</h2>
 <div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>CANON FILE — [YOUR BRAND]
 
