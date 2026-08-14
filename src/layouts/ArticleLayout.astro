@@ -565,6 +565,10 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImageAbsolute} />
   <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="The Digital Income Edit™" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={ogImageAbsolute} />
+  <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
 
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
@@ -751,13 +755,14 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
         <h5>Connect</h5>
         <a href="/community">Community</a>
         <a href="/newsletter">Newsletter</a>
-        <a href="#">Pinterest</a>
-        <a href="#">Instagram</a>
+        <a href="https://pinterest.com/Nursemadedigital" rel="noopener" target="_blank">Pinterest</a>
+        <a href="https://instagram.com/Nursemadedigital" rel="noopener" target="_blank">Instagram</a>
+        <a href="mailto:hello@thedigitalincomeedit.com">Contact</a>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 The Digital Income Edit™</span>
-      <span>Curated with intention.</span>
+      <span><a href="/privacy">Privacy</a> · <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></span>
     </div>
   </footer>
 
