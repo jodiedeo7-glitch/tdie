@@ -1,0 +1,78 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const NAME = "Pretty & Paid PLR Vault™";
+const PRICE = "$11";
+const NOTE = "per month";
+const DEST = "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839";
+const AFF = false;
+---
+<PageLayout
+  title={`${NAME} — The Digital Income Edit™`}
+  description="Done-for-you digital products you rebrand and sell as your own. Twenty new products every month."
+>
+  <section class="go">
+    <div class="page-eyebrow">{AFF ? "Recommended · Not mine" : "From the shop"}</div>
+    <h1>{NAME}</h1>
+    <p class="go-lede">Done-for-you digital products you rebrand and sell as your own. Twenty new products every month.</p>
+
+    <div class="go-meta">
+      <span class="go-price">{PRICE}</span>
+      <span class="go-note">{NOTE}</span>
+    </div>
+
+    <div class="go-body">
+      <p>Private label rights means you get the finished product and the right to put your name on it. No writing, no design, no waiting.</p>
+      <p>Twenty new products land every month, with the content and training to launch them. You rebrand, you price, you sell.</p>
+      <p>This is its own subscription at $11 a month. It is not part of the membership and never has been — different product, different thing entirely.</p>
+    </div>
+
+
+    <div class="go-good">
+      <div>
+        <span class="go-good-t">Good fit if</span>
+        <p>You want something to sell this week and you don't want to build it first.</p>
+      </div>
+      <div>
+        <span class="go-good-t">Not a fit if</span>
+        <p>You want a product that's unmistakably yours and nobody else's.</p>
+      </div>
+    </div>
+
+    {AFF && (
+      <p class="go-disc">
+        Affiliate link — I earn a commission if you buy through it, at no cost to you.
+        I only recommend things I use.
+      </p>
+    )}
+
+    <a class="btn go-btn" href={DEST} rel={AFF ? "sponsored noopener" : "noopener"}>
+      Get {NAME} — {PRICE} <span class="a">→</span>
+    </a>
+
+    <p class="go-back"><a href="/shop">← Everything in the shop</a></p>
+  </section>
+
+  <style>
+    .go{max-width:660px;margin:0 auto;padding:10px 0 70px}
+    .go h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(32px,5.4vw,52px);line-height:1.04;letter-spacing:-1px;margin:0 0 20px;color:#2B161B}
+    .go-lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.55;color:#5A4048;margin:0 0 26px}
+    .go-meta{display:flex;align-items:baseline;gap:12px;padding-bottom:26px;margin-bottom:30px;border-bottom:1px solid rgba(43,22,27,.13)}
+    .go-price{font-family:"Fraunces",serif;font-size:34px;font-weight:300;color:var(--pink);letter-spacing:-1px}
+    .go-note{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#7A5C63}
+    .go-body p{font-size:17.5px;line-height:1.8;margin:0 0 18px;color:#3B2228}
+    .go-good{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:34px 0 30px}
+    .go-good>div{padding:22px 24px;border-radius:6px;background:rgba(255,138,194,.1);border:1px solid rgba(214,46,115,.2)}
+    .go-good>div:last-child{background:rgba(43,22,27,.035);border-color:rgba(43,22,27,.12)}
+    .go-good-t{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:9px}
+    .go-good>div:last-child .go-good-t{color:#7A5C63}
+    .go-good p{font-size:15.5px;line-height:1.65;margin:0;color:#2B161B}
+    .go-disc{font-size:14.5px;line-height:1.65;color:#5A4048;padding:16px 18px;border-radius:5px;
+              background:rgba(200,169,106,.12);border:1px solid rgba(200,169,106,.4);margin:0 0 24px}
+    .go-btn{display:inline-block}
+    .go-back{margin-top:34px;font-size:13px;letter-spacing:.4px}
+    .go-back a{color:#7A5C63;text-decoration:none}
+    .go-back a:hover{color:var(--pink)}
+    @media(max-width:640px){.go-good{grid-template-columns:1fr}}
+  </style>
+</PageLayout>
