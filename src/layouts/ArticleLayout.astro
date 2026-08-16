@@ -86,6 +86,7 @@
 // never a guessed route.
 // ============================================================
 import "../styles/global.css";
+import LaunchCountdown from "../components/LaunchCountdown.astro";
 
 import Analytics from '@vercel/analytics/astro';
 export interface Props {
@@ -591,6 +592,8 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 </head>
 <body class="no-js">
   <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>
+
+  <LaunchCountdown href="/weekend-ecosystem-waitlist" />
 
   <div class="progress" id="progress"></div>
 
