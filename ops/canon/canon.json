@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "brand": "The Digital Income Edit\u2122",
+    "canon_version": "1.0",
+    "issued": "2026-08-16",
+    "built_from": [
+      "Product Register v3.1 (amending v3.0)",
+      "Corrections & Decisions Record v2.1",
+      "SOP Library v1.1",
+      "Prompt Library v1.7"
+    ],
+    "precedence": [
+      "Live site, repo and shop \u2014 override every document",
+      "Product Register v3.1 \u2014 product facts only",
+      "Corrections & Decisions Record v2.1 \u2014 decisions, standing rules, brand policy, process",
+      "Resource Map v2.1",
+      "SOP Library v1.1",
+      "Prompt Library v1.7",
+      "Master Operating Manual v3.0"
+    ],
+    "canonical_host": "https://www.thedigitalincomeedit.com",
+    "repo": "jodiedeo7-glitch/tdie",
+    "article_route_prefix": "/learn/",
+    "rule_of_use": "No asset ships naming a product, price, or link that is not a row in products[]. Absence is never grounds for deletion (Standing Rule 19)."
+  },
+
+  "hosts": {
+    "canonical": "www.thedigitalincomeedit.com",
+    "redirecting": ["thedigitalincomeedit.com", "learn.thedigitalincomeedit.com"],
+    "retired": ["nursemadedigital.com"],
+    "external_owned": [
+      "links.thedigitalincomeedit.com",
+      "www.skool.com/thedigitalincomeedit"
+    ],
+    "note": "Bare domain and learn. both 308 to www. An asset printed with a redirecting host is printed wrong (Prompt Library v1.7, Prompt 11). links.* is not fetchable and not indexed \u2014 treat as unverifiable by tooling."
+  },
+
+  "palette": {
+    "signature_hot_pink": "#D62E73",
+    "luxury_cream": "#FBF8F5",
+    "dark_chocolate": "#2B161B",
+    "muted_gold": "#C8A96A",
+    "bubblegum_pink": "#FF8AC2",
+    "lavender": "#CBB7F7",
+    "lavender_rule": "never dominant",
+    "retired_colour_words": ["magenta", "deep plum", "antique gold"]
+  },
+
+  "typography": {
+    "display": "Fraunces",
+    "serif": "Cormorant Garamond",
+    "sans": "Inter",
+    "fraunces_axis_order": ["opsz", "wght", "SOFT", "WONK"],
+    "rule": "1\u20132 families per asset. Text is set, never generated."
+  },
+
+  "tier_badges": {
+    "free": "#FBF8F5",
+    "premium": "#FF8AC2",
+    "vip": "#D62E73"
+  },
+
+  "ladder": [
+    {"name": "Free Community", "price": 0, "display": "$0", "platform": "Skool", "url": "https://www.skool.com/thedigitalincomeedit/about"},
+    {"name": "Membership Premium", "price": 9, "display": "$9/month", "recurring": true, "platform": "Skool", "url": "https://www.skool.com/thedigitalincomeedit/plans"},
+    {"name": "Membership VIP", "price": 27, "display": "$27/month", "recurring": true, "platform": "Skool", "url": "https://www.skool.com/thedigitalincomeedit/plans", "note": "includes The Ads Edit\u2122"},
+    {"name": "The Business Architect Mentorship Intensive\u2122", "price": null, "display": "pending", "platform": "Skool", "url": null, "status": "PENDING \u2014 not live. Stripped from all assets until launch. Supersedes the retired name Faceless Income Intensive\u2122."}
+  ],
+
+  "products": [
+    {"name": "The Faceless Income Blueprint\u2122", "price": 0, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47"},
+    {"name": "$10/Day Traffic Machine \u2014 Starter Map", "price": 0, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/8dcfbb25-bc42-47b2-8490-cfa9c1a577a8"},
+    {"name": "FREE GUIDE - One & Done Money Stream", "price": 0, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/d03bc54d-50e6-4725-b401-f91cb3ea251a"},
+    {"name": "Pretty & Paid PLR Vault\u2122", "price": 11, "display": "$11/month", "recurring": true, "owned": true, "off_ladder": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839", "note": "Off-ladder. Never framed beside a membership tier. Full 'Pretty & Paid' prefix on every first reference."},
+    {"name": "#TDIE FB GROUP PROMO", "price": 10, "display": "$10/month", "recurring": true, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/8b706bf8-79cb-4e65-8b8f-01b17cb6fddb"},
+    {"name": "550+ BRILLIANT chatGPT prompts for your business", "price": 2, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/edd98817-25bf-4916-b605-6ee6d179e3e4"},
+    {"name": "8 Claude Prompts That Save Me 12 Hours a Week", "price": 5, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/02d1799d-a588-438f-a9a5-7313e39bb8a0"},
+    {"name": "Build Your First Freebie in One Afternoon", "price": 7, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/68a7c033-a060-4c23-9d8b-de7a367ff33c"},
+    {"name": "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", "price": 9, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/8e31e02b-cc67-4217-ba21-139fb88584aa"},
+    {"name": "150 UGC Brand Contacts", "price": 15, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/4d0e0341-af50-4957-b915-def1246a2001"},
+    {"name": "\ud83c\udfac YouTube Shorts Side Hustle Mini Guide (14 Pages + Bonus) | 80% Resell Rights", "price": 15, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/39e976fa-519e-4333-9251-4c2010d5bddc"},
+    {"name": "The Tommy Kate Edit", "price": 17, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/33f23d28-8b7b-466c-9717-12952c813326", "also_at": "https://www.skool.com/thedigitalincomeedit/classroom/ac16b3b7"},
+    {"name": "The One and Done Money Stream", "price": 27, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/93657cd0-5971-4f14-9670-94809a91eb00"},
+    {"name": "BONUS BUNDLE WITH RESELL RIGHTS", "price": 27, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/15dadd2b-20d7-4523-aa29-177644c1dd7a"},
+    {"name": "Pinterest Foundations\u2122", "price": 27, "display": "$27 one-time", "owned": true, "platform": "Skool", "url": "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca", "note": "One-time, not recurring. Also included with Membership Premium \u2014 inclusion, not a ladder rung. No /shop/ route is to be built."},
+    {"name": "Zero Income Claim Guide - 100 DFY Reels", "price": 37, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/1ac018a9-859e-40fb-a75a-2490957c387c"},
+    {"name": "Leni Loves", "price": 37, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1", "note": "Affiliate. Publish list price $37 only \u2014 never a sale price."},
+    {"name": "The Conversion Architect", "price": 47, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/8e67a0e1-5174-4345-a023-73eb3ef0a7b4"},
+    {"name": "AI Influencer Flash Sale", "price": 50, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/375d5c04-ffec-4ce4-bae9-c4d9756b4897"},
+    {"name": "Claude Studio Kit", "price": 57, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/936479ee-b21a-4c8e-80bb-a92b66cf7626"},
+    {"name": "The Faceless Launch Formula by @thebossdigitalwealth | Stan", "price": 77, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/0454a1a0-ec6d-43c5-a90d-0ceb38b4d8c9"},
+    {"name": "Earn With Skool (SCC)", "price": 97, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/74512b39-f6d6-48ae-8aca-36e35631da7e"},
+    {"name": "AI Influencer Starter Twin", "price": 97, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/fdfdf1a4-ce57-4bdb-8a41-df57e5d13c2f"},
+    {"name": "AI Influencer Brand Bundle", "price": 147, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/adcbb901-c623-4597-b023-549593ba7c56"},
+    {"name": "The AI Subs Method", "price": 147, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/4fb73a6d-56a7-4c3f-b17c-ee28624bc4ac"},
+    {"name": "DFY Instagram Audit + Growth Optimization", "price": 197, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/cb231219-a29c-4394-8de4-31ee912ea70e"},
+    {"name": "NAVIA AI STUDIO", "price": 197, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/b8281e5f-10ba-4c7a-b07b-f07a2bac4874"},
+    {"name": "AI Influencer Content Drop", "price": 297, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/8e01b637-5b02-4d2d-9d67-2b418a47ea20"},
+    {"name": "DFY Instagram Audit + Custom Viral Content Calendar", "price": 350, "owned": true, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/cf2c6276-395f-4ba0-ac92-3f35a86ae656"},
+    {"name": "CREATE FACELESS WEALTH", "price": 487, "owned": false, "platform": "Beacons", "url": "https://links.thedigitalincomeedit.com/shop/7d7d1473-4099-4e9a-b991-8de80a248d00"}
+  ],
+
+  "flagged_not_cut": {
+    "note": "Standing Rule 19 \u2014 flagged, never deleted. These are named in canon but have no confirmed live listing. Do not write them into an asset until confirmed.",
+    "items": [
+      "Luxe Babe Prompt Pack",
+      "Vacation Vault\u2122",
+      "Workout Vault\u2122",
+      "AI CEO Planner\u2122",
+      "Vault Unlock ($49 one-time, Record v1.3)",
+      "DFY Pinterest packages ($97\u2013$497+, Record v1.1 open item 6)"
+    ]
+  },
+
+  "vault_disambiguation": {
+    "The Value Vault": "Guide collection inside Skool. Included with Free Community.",
+    "The VIP Vault": "The entire Value Vault unlocked, inside the VIP tier.",
+    "Pretty & Paid PLR Vault\u2122": "Separate $11/month Beacons subscription. Off-ladder. Never introduced alongside a membership tier."
+  },
+
+  "pillars": [
+    {"n": 1, "name": "AI", "slug": "/learn/ultimate-guide-to-ai"},
+    {"n": 2, "name": "Pinterest", "slug": "/learn/complete-pinterest-marketing-guide"},
+    {"n": 3, "name": "Content Creation", "slug": "/learn/content-creation-guide"},
+    {"n": 4, "name": "Digital Products", "slug": "/learn/digital-products-guide"},
+    {"n": 5, "name": "Affiliate Marketing", "slug": "/learn/affiliate-marketing-101"},
+    {"n": 6, "name": "Automation & Paid Traffic", "slug": "/learn/automating-your-online-business"},
+    {"n": 7, "name": "Email Marketing", "slug": "/learn/email-marketing-guide"},
+    {"n": 8, "name": "Branding", "slug": "/learn/branding-guide"},
+    {"n": 9, "name": "Business Systems", "slug": "/learn/how-to-build-a-faceless-digital-business"},
+    {"n": 10, "name": "Passive Income", "slug": "/learn/passive-income-guide"},
+    {"n": 11, "name": "Mindset", "slug": "/learn/mindset-guide"},
+    {"n": 12, "name": "Blogging", "slug": "/learn/complete-blogging-guide"}
+  ],
+
+  "checks": {
+    "fail": [
+      {"id": "placeholder", "patterns": ["\\[ ?INSERT", "\\bTODO\\b", "\\bTBD\\b", "\\blorem\\b"], "why": "SOP 8 step 9. A live money link shipped as a placeholder once already."},
+      {"id": "retired_blog_route", "patterns": ["/blog/"], "why": "SOP 12 step 11. /blog/ is retired as segment, label and page-type name."},
+      {"id": "price_floor", "patterns": ["from \\$", "starting at \\$", "as low as \\$"], "why": "Standing Rule 10. Prices are exact, never floors."},
+      {"id": "banned_product_name", "patterns": ["Pretty & Paid Digital Vault", "Pretty & Paid Vault"], "why": "SOP 12 step 5. Non-canonical name variants."},
+      {"id": "retired_domain", "patterns": ["nursemadedigital\\.com"], "why": "Decision 6. Retired domain."},
+      {"id": "non_canonical_host", "patterns": ["https?://learn\\.thedigitalincomeedit\\.com", "https?://(?!www\\.)thedigitalincomeedit\\.com"], "why": "Both 308 to www. A printed redirecting host is printed wrong."},
+      {"id": "banned_vocabulary", "patterns": ["\\bhack\\b", "\\bsecret\\b", "\\bexplode\\b", "crush it", "game-?changer"], "why": "Brand-wide vocabulary ban."},
+      {"id": "retired_colour_word", "patterns": ["\\bmagenta\\b", "deep plum", "antique gold"], "why": "Retired palette language."},
+      {"id": "bami_leak", "patterns": ["Business Architect Mentorship Intensive", "\\bBAMI\\b"], "why": "Stripped from all assets until launch.", "scope": "published"},
+      {"id": "retired_product_name", "patterns": ["Faceless Income Intensive"], "why": "Retired name. Superseded by BAMI, which is itself pre-launch."}
+    ],
+    "review": [
+      {"id": "ladder_vocabulary_near_vault", "patterns": ["\\bupgrade\\b", "\\bdowngrade\\b", "\\btier\\b", "\\blevel\\b", "step up", "next step", "\\bplan\\b"], "proximity_to": ["Vault"], "window": 400, "why": "Comparison-frame ban. Vocabulary banned in relation to the Vault."},
+      {"id": "vault_short_form", "patterns": ["(?<!Value )(?<!VIP )(?<!Paid )\\bPLR Vault\\b", "\\bthe Vault\\b"], "why": "SOP 12 steps 5\u20136. Short form is banned in first-reference positions \u2014 title, heading, meta, button, anchor text."},
+      {"id": "tier_comparison_frame", "patterns": ["\\$9[^.]{0,80}\\$27", "\\$27[^.]{0,80}\\$9", "\\$9[^.]{0,80}\\$11", "\\$11[^.]{0,80}\\$9"], "why": "Two prices on one screen with no statement of what each buys. Standing Rule 32."},
+      {"id": "meta_earnings_claim", "patterns": ["\\$[0-9,]+ ?(a|per) ?(day|week|month)", "made \\$", "earned \\$"], "why": "Income claims are permitted everywhere except Meta platforms. Check the destination before shipping."}
+    ]
+  },
+
+  "affiliate_rule": {
+    "standing_rule": 18,
+    "requirement": "The link, rel=\"sponsored\", and the disclosure ship as a set or not at all.",
+    "disclosure_markers": ["affiliate", "commission", "sponsored", "at no extra cost"],
+    "never_in_paid_slot": true,
+    "quarterly": "Verify every affiliate product still exists, at the price published."
+  },
+
+  "journey_slot_rules": {
+    "free": "Only $0 resources. Standing Rule 60. Topical relevance never overrides this.",
+    "paid": "Never an affiliate product.",
+    "close_out": "At most one price."
+  },
+
+  "pin_render": {
+    "canvas": [1000, 1500],
+    "supersample": 2,
+    "lockup_line_1": "THE DIGITAL INCOME EDIT\u2122",
+    "lockup_line_2": "www.thedigitalincomeedit.com",
+    "layouts": [
+      "editorial-cover", "hot-pink-block", "left-rail", "number-lead", "quote-card",
+      "split-horizon", "lower-third", "stacked-panels", "torn-paper", "collage"
+    ],
+    "layout_rules": {
+      "no_repeat_within_batch": true,
+      "collage_max_per_batch": 2,
+      "uniform_grids_banned": true,
+      "persona_layouts": ["split-horizon", "lower-third"],
+      "no_prices_on_pins": true,
+      "accents_max": 3
+    },
+    "copy_limits": {
+      "overlay_words": [3, 5],
+      "title_chars": [60, 100],
+      "description_chars": [450, 500],
+      "alt_chars": [150, 200]
+    },
+    "banned_on_pinterest": ["Make Money Online"]
+  }
+}
