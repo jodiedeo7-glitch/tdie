@@ -298,15 +298,18 @@ paid: {
   },
 
   // --- 5. Affiliate Marketing ---------------------------------
-  // free:  Lead²Engine Faceless Blueprint™ — /resources/lead-2-engine-blueprint — DOES NOT EXIST. Omitted.
-  // paid:  Leni Loves Collage Edit™ — /shop/leni-loves-collage-edit — DOES NOT EXIST. Omitted.
-  // free:  Lead²Engine Faceless Blueprint™ — /resources/lead-2-engine-blueprint — DOES NOT EXIST.
-  //        Fallback to the live Faceless Income Blueprint™ (session decision 24 Jul),
-  //        same pattern as the AI pillar.
-  // paid:  Leni Loves Collage Edit™ — $27, 70% resell — LIVE on Beacons (session decision).
-  //        Named alone; VIP ($27) is NOT placed beside it — double-$27 rule.
-  // affiliate: None — PASS. Amazon Associates is a teaching subject, taught in-body,
-  //            not a recommendation. Naming a real affiliate remains a future gate.
+  // free:  Lead²Engine Faceless Blueprint™ — DOES NOT EXIST. Live fallback:
+  //        The Affiliate Starter Kit.
+  // paid:  Membership Premium ($9/mo). Founder decision, 16 Aug 2026. No owned
+  //        standalone product exists for this pillar; affiliate marketing is
+  //        taught inside the membership. Same treatment as Email Marketing,
+  //        Branding and Passive Income.
+  // affiliate: Leni Loves — $37, AFFILIATE, NOT OWNED. Moved out of the paid
+  //        slot, which an affiliate product can never occupy. Linked, so the
+  //        layout ships rel="sponsored" and the disclosure as a set. Price is
+  //        deliberately absent from the blurb — $9 is already on this screen.
+  //        Prior copy claimed "$27, 70% resell rights kept by you." That was
+  //        wrong on price, name and ownership. Corrected.
   "Affiliate Marketing": {
     free: {
       label: "The Affiliate Starter Kit",
@@ -314,11 +317,17 @@ paid: {
         "How affiliate links work and the honest filter for what to recommend — free.",
       href: "/resources/affiliate-starter-kit",
     },
-    paid: {
-      label: "Leni Loves Collage Edit™",
+    affiliate: {
+      name: "Leni Loves",
       blurb:
-        "A product you resell as your own — $27, with 70% resell rights kept by you. Earn the whole sale, not a referral slice.",
+        "A finished collage product from another creator. Worth a look if you'd rather point your first recommendations at something already built than build one yourself.",
       href: "https://links.thedigitalincomeedit.com/shop/759b7d47-a917-40b3-b448-ed1f2ae541c1",
+    },
+    paid: {
+      label: "Affiliate Marketing — Membership Premium",
+      blurb:
+        "The affiliate module, the templates, and a room that reads your first recommendation before you publish it. $9/month.",
+      href: "/membership",
     },
     newsletter:
       "Recommending things you don't own is the fastest money in this business — and the easiest to do badly. Weekly, how to do it well.",
