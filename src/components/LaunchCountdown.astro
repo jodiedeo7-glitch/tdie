@@ -1,0 +1,75 @@
+---
+// Launch: Friday 21 August 2026, 2:00pm ET (EDT, UTC-4) = 18:00 UTC
+const LAUNCH_ISO = "2026-08-21T18:00:00Z";
+---
+
+<div id="wecd" class="wecd" data-launch={LAUNCH_ISO}>
+  <div class="wecd-in">
+    <span class="wecd-label">Doors open Friday · 2pm ET</span>
+    <div class="wecd-clock" id="wecd-clock">
+      <span class="wecd-unit"><b id="wecd-d">--</b><i>days</i></span>
+      <span class="wecd-sep">:</span>
+      <span class="wecd-unit"><b id="wecd-h">--</b><i>hrs</i></span>
+      <span class="wecd-sep">:</span>
+      <span class="wecd-unit"><b id="wecd-m">--</b><i>min</i></span>
+      <span class="wecd-sep">:</span>
+      <span class="wecd-unit"><b id="wecd-s">--</b><i>sec</i></span>
+    </div>
+    <span class="wecd-open" id="wecd-open">It's open — go get it</span>
+  </div>
+</div>
+
+<style>
+  .wecd{position:sticky;top:0;z-index:80;
+        background:linear-gradient(100deg,#B9A2E8 0%,#C79AD2 38%,#C87BA6 68%,#A8446B 100%)}
+  .wecd-in{max-width:1100px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;
+           justify-content:center;gap:22px;flex-wrap:wrap}
+  .wecd-label{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:2.4px;
+              text-transform:uppercase;color:rgba(255,255,255,.88)}
+  .wecd-clock{display:flex;align-items:baseline;gap:7px}
+  .wecd-unit{display:inline-flex;align-items:baseline;gap:5px}
+  .wecd-unit b{font-family:"Fraunces",serif;font-weight:400;font-size:21px;line-height:1;
+               color:#fff;font-variant-numeric:tabular-nums;min-width:1.6ch;text-align:right}
+  .wecd-unit i{font-style:normal;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;
+               color:rgba(255,255,255,.7)}
+  .wecd-sep{color:rgba(255,255,255,.4);font-size:15px;line-height:1}
+  .wecd-open{display:none;font-family:"Fraunces",serif;font-size:18px;color:#fff}
+  .wecd.is-open .wecd-clock,.wecd.is-open .wecd-label{display:none}
+  .wecd.is-open .wecd-open{display:inline}
+  @media(max-width:560px){
+    .wecd-in{gap:10px;padding:9px 16px}
+    .wecd-label{font-size:9.5px;letter-spacing:2px}
+    .wecd-unit b{font-size:18px}
+  }
+</style>
+
+<script>
+  (function () {
+    const el = document.getElementById("wecd");
+    if (!el) return;
+    const target = new Date(el.dataset.launch).getTime();
+    const d = document.getElementById("wecd-d");
+    const h = document.getElementById("wecd-h");
+    const m = document.getElementById("wecd-m");
+    const s = document.getElementById("wecd-s");
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+
+    function tick() {
+      const left = target - Date.now();
+      if (left <= 0) {
+        el.classList.add("is-open");
+        clearInterval(timer);
+        return;
+      }
+      const sec = Math.floor(left / 1000);
+      d.textContent = String(Math.floor(sec / 86400));
+      h.textContent = pad(Math.floor((sec % 86400) / 3600));
+      m.textContent = pad(Math.floor((sec % 3600) / 60));
+      s.textContent = pad(sec % 60);
+    }
+
+    tick();
+    const timer = setInterval(tick, 1000);
+  })();
+</script>

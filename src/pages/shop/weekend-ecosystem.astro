@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import LaunchCountdown from "../../components/LaunchCountdown.astro";
 import { MODULES } from "../../we-manifest.js";
 
 const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
@@ -146,6 +147,8 @@ const faqs = [
   title="The Weekend Ecosystem™"
   description="The website-and-blog system that turns digital product sellers into digital business owners. Built from what you already have, in one weekend, with Claude AI. $97 one-time."
 >
+  <LaunchCountdown />
+
   <!-- HERO -->
   <section class="we-hero">
     <div class="page-eyebrow">{S.eyebrow}</div>
