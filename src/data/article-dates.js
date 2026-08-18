@@ -32,6 +32,7 @@ export const ARTICLE_DATES = {
   "affiliate-marketing-for-beginners": "2026-06-28",
   "email-marketing-for-beginners": "2026-06-30",
   "blogging-guide": "2026-07-04",
+  "stuck-four-steps-earlier": "2026-08-18",
 };
 
 // Any article not listed above falls back to this date so it still appears.

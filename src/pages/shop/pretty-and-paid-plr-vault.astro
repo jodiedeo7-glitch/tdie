@@ -53,21 +53,27 @@ const dayThirty = [
 <PageLayout
   wide
   title="Pretty & Paid PLR Vault™"
-  description="Pretty & Paid PLR Vault™ — a stocked library of done-for-you digital products, licensed to rebrand and sell as your own. $11/month. What you download is yours permanently."
+  description="Pretty & Paid PLR Vault™ — a stocked library of done-for-you digital products, licensed to rebrand and sell as your own. Now $7/month, down from $11, and your price never rises. What you download is yours permanently."
 >
+  <!-- SALE BANNER -->
+  <aside class="v-sale">
+    <span class="v-sale-tag">Sale</span>
+    <p><strong>$7/month</strong> <s>$11</s> — and the price you join at is the price you keep. It never rises for you, for as long as you stay.</p>
+  </aside>
+
   <!-- HERO -->
   <section class="v-hero">
-    <div class="page-eyebrow">Digital Product Library · $11/month</div>
+    <div class="page-eyebrow">Digital Product Library · $7/month</div>
     <h1>Pretty &amp; Paid PLR Vault™</h1>
     <p class="lede">Done-for-you digital products, licensed to rebrand and sell as your own.</p>
     <div class="v-cta-row">
-      <a class="btn" href={CHECKOUT}>Open the Vault — $11/month <span class="a">→</span></a>
+      <a class="btn" href={CHECKOUT}>Open the Vault — $7/month <span class="a">→</span></a>
       <a class="v-link" href="#preview">See inside first →</a>
     </div>
     <div class="v-stats">
       <div><span class="v-stat">150+</span><span class="v-statlab">Downloads inside</span></div>
       <div><span class="v-stat">20+</span><span class="v-statlab">New every month</span></div>
-      <div><span class="v-stat">$11</span><span class="v-statlab">A month</span></div>
+      <div><span class="v-stat">$7</span><span class="v-statlab">A month, locked</span></div>
     </div>
     <ul class="v-trust">
       <li>Full resell license</li>
@@ -211,7 +217,8 @@ const dayThirty = [
   <section class="v-sec">
     <div class="v-kicker">The Price</div>
     <div class="v-price-box">
-      <div class="v-price-fig">$11<span>/month</span></div>
+      <div class="v-price-fig"><s class="v-was">$11</s>$7<span>/month</span></div>
+      <p class="v-lock">On sale from $11. Join now and $7 is your price permanently — it does not rise later, and it does not rise when the sale closes.</p>
       <ul class="v-price-list">
         <li>The full product library</li>
         <li>All marketing content packs</li>
@@ -238,6 +245,8 @@ const dayThirty = [
       <p>Nothing. They're yours permanently, license included. Canceling closes the door on new downloads — it never takes back what's on your computer.</p></details>
     <details class="v-faq"><summary>What does the PLR license let me do?</summary>
       <p>Rebrand, customize and sell the products as your own, keeping what you earn. Full private label rights.</p></details>
+    <details class="v-faq"><summary>Does the $7 price go up later?</summary>
+      <p>Not for you. The Vault is normally $11 a month. Join during the sale and $7 is what you are charged for as long as your subscription stays active — when the price returns to $11, it returns for new members, not for you.</p></details>
     <details class="v-faq"><summary>Do I need design skills?</summary>
       <p>No. Everything opens in Canva as an editable template, and the rebranding training covers the workflow.</p></details>
   </section>
@@ -245,7 +254,7 @@ const dayThirty = [
   <!-- FINAL -->
   <section class="v-final">
     <h2>Stock the shop today, or spend another month deciding what to sell.</h2>
-    <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ — $11/month <span class="a">→</span></a>
+    <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ — $7/month <span class="a">→</span></a>
     <p class="v-fine"><a href="#preview">Still deciding? Look through the previews →</a></p>
   </section>
 
@@ -253,6 +262,16 @@ const dayThirty = [
 </PageLayout>
 
 <style>
+  .v-sale{max-width:720px;margin:0 auto 26px;display:flex;align-items:center;gap:14px;
+          padding:14px 20px;border-radius:6px;background:var(--pink,#D62E73);color:#FBF8F5}
+  .v-sale-tag{flex:none;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;
+              padding:5px 10px;border:1px solid rgba(251,248,245,.5);border-radius:3px}
+  .v-sale p{margin:0;font-size:15px;line-height:1.55}
+  .v-sale strong{font-family:"Fraunces",serif;font-weight:400;font-size:18px}
+  .v-sale s{opacity:.62;margin-left:2px}
+  .v-was{font-size:.5em;opacity:.45;margin-right:10px;font-weight:300}
+  .v-lock{max-width:420px;margin:-6px auto 22px;font-size:13.5px;line-height:1.6;color:#5A4048}
+  @media(max-width:600px){.v-sale{flex-direction:column;align-items:flex-start;gap:9px}}
   .v-hero{max-width:720px;margin:0 auto}
   .v-hero h1{color:var(--pink)}
   .v-cta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin:4px 0 26px}
