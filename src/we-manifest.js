@@ -160,9 +160,9 @@ export const MODULES = [
     "accent": "#D4498D"
   },
   {
-    "slug": "module-17-one-article-thirty-assets",
+    "slug": "module-17-one-article-nineteen-assets",
     "num": 17,
-    "title": "One Article \u2192 Thirty Assets",
+    "title": "One Article \u2192 Nineteen Assets",
     "phase": "Phase 4 \u00b7 Sunday Morning",
     "phaseLabel": "Phase 4 \u00b7 Sunday Morning",
     "phaseSub": "Traffic \u2014 people start arriving",
