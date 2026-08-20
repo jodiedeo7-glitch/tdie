@@ -168,6 +168,18 @@ const dayThirty = [
         <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
       ))}
     </div>
+
+    <div class="v-peek" id="sneak-peek">
+      <div class="v-kicker">The Sneak Peek</div>
+      <h3>Take a full set home before you decide.</h3>
+      <p>One complete piece from inside the Vault, as a PDF, sent to your inbox and opened right here. Enter your email and it's yours.</p>
+      <div class="v-peek-row" id="sp-row">
+        <input id="sp-email" type="email" placeholder="you@example.com" autocomplete="email" />
+        <button id="sp-go" class="btn">Send me the sneak peek <span class="a">→</span></button>
+      </div>
+      <p id="sp-done" class="v-peek-done">It's ready. <a id="sp-link" href="#" target="_blank" rel="noopener">Open the sneak peek →</a></p>
+      <p id="sp-err" class="v-peek-err"></p>
+    </div>
   </section>
 
   <!-- THIRTY DAYS -->
@@ -259,6 +271,44 @@ const dayThirty = [
   </section>
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
+
+<script>
+  (() => {
+    const input = document.getElementById("sp-email");
+    const btn = document.getElementById("sp-go");
+    const row = document.getElementById("sp-row");
+    const done = document.getElementById("sp-done");
+    const link = document.getElementById("sp-link");
+    const err = document.getElementById("sp-err");
+    if (!btn) return;
+    const label = btn.innerHTML;
+    async function go() {
+      const email = input.value.trim();
+      err.style.display = "none";
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      try {
+        const r = await fetch("/api/sneak-peek", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || "Something went wrong.");
+        link.href = d.url;
+        row.style.display = "none";
+        done.style.display = "block";
+      } catch (e) {
+        err.textContent = e.message;
+        err.style.display = "block";
+        btn.disabled = false;
+        btn.innerHTML = label;
+      }
+    }
+    btn.addEventListener("click", go);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  })();
+</script>
 </PageLayout>
 
 <style>
@@ -393,4 +443,13 @@ const dayThirty = [
     .v-grid-2,.v-two-callouts{grid-template-columns:1fr}
     .v-price-box{padding:32px 22px}
   }
+
+  .v-peek{max-width:640px;margin:44px auto 0;padding:32px 28px;border:1px solid var(--pink);border-radius:14px;text-align:center}
+  .v-peek h3{margin:0 0 10px}
+  .v-peek p{margin:0 0 18px;font-size:15px;line-height:1.55}
+  .v-peek-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .v-peek-row input{flex:1 1 240px;padding:14px 16px;font:inherit;font-size:15px;border:1px solid var(--taupe-deep);border-radius:999px;background:#fff}
+  .v-peek-done,.v-peek-err{display:none;margin:14px 0 0}
+  .v-peek-done a{color:var(--pink);font-weight:500}
+  .v-peek-err{color:#b3261e}
 </style>
