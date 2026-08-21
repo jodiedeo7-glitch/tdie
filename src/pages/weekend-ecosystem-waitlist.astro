@@ -43,7 +43,19 @@ const teasers = [
       </div>
       <p id="wl-done" class="wl-done">You're on the list. Watch your inbox — one email when the doors open.</p>
       <p id="wl-err" class="wl-err"></p>
-      <p class="wl-note">The waitlist opens first, at the lowest price this will ever be. Everyone else waits three days and pays more.</p>
+      <p class="wl-note" id="wl-note">The waitlist opens first, at the lowest price this will ever be. Everyone else waits three days and pays more.</p>
+    </div>
+
+    <div class="wl-live" id="wl-live">
+      <p class="wl-live-h">Doors are open.</p>
+      <p class="wl-live-b">
+        If you're on the waitlist, your link is in your inbox — check it, including spam.
+        Can't find it? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a> and I'll resend it.
+      </p>
+      <p class="wl-live-b wl-live-public">
+        Not on the list? The Weekend Ecosystem™ opens to everyone on Monday 24 August.
+      </p>
+      <a class="btn" href="/shop/weekend-ecosystem">See what's inside <span class="a">→</span></a>
     </div>
 
     <figure class="wl-fig">
@@ -155,6 +167,13 @@ const teasers = [
     .wl-stat{background:#FBF8F5;padding:24px 16px}
     .wl-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(32px,4.4vw,46px);font-weight:300;line-height:1;color:var(--pink);letter-spacing:-1.5px}
     .wl-stat-l{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:9px}
+    .wl-live{display:none;max-width:520px;margin:0 auto}
+    .wl-live-h{font-family:"Fraunces",serif;font-weight:300;font-size:34px;line-height:1.1;margin:0 0 16px;color:var(--pink)}
+    .wl-live-b{font-size:16.5px;line-height:1.7;color:#3B2228;margin:0 0 16px}
+    .wl-live-b a{color:var(--pink)}
+    .wl-live-public{font-size:15px;color:#7A5C63;padding-top:16px;border-top:1px solid rgba(43,22,27,.12)}
+    body.we-open .wl-form,body.we-open #wl-row2,body.we-open #wl-done2,body.we-open #wl-err2{display:none!important}
+    body.we-open .wl-live{display:block}
     .wl-fig{margin:0 auto 44px;max-width:520px;padding:0}
     .wl-fig img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 14px 44px rgba(43,22,27,.14)}
     .wl-fig-wide{max-width:560px;margin:36px auto 0}
@@ -189,6 +208,23 @@ const teasers = [
 </PageLayout>
 
 <script>
+  (function () {
+    const OPEN = new Date("2026-08-21T18:00:00Z").getTime();
+    const PUBLIC_OPEN = new Date("2026-08-24T18:00:00Z").getTime();
+    function check() {
+      const now = Date.now();
+      if (now >= OPEN) {
+        document.body.classList.add("we-open");
+        const pub = document.querySelector(".wl-live-public");
+        if (pub && now >= PUBLIC_OPEN) {
+          pub.innerHTML = 'It\'s open to everyone now \u2014 <a href="/shop/weekend-ecosystem">go and get it</a>.';
+        }
+      }
+    }
+    check();
+    setInterval(check, 30000);
+  })();
+
   function wire(inputId, btnId, rowId, doneId, errId) {
     const input = document.getElementById(inputId);
     const btn = document.getElementById(btnId);
