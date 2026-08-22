@@ -166,7 +166,7 @@ export const MODULES = [
     "phase": "Phase 4 \u00b7 Sunday Morning",
     "phaseLabel": "Phase 4 \u00b7 Sunday Morning",
     "phaseSub": "Traffic \u2014 people start arriving",
-    "blurb": "One prompt turns a published article into ten pins, a carousel, two reels, an email and a post.",
+    "blurb": "One prompt turns a published article into nineteen finished assets across six platforms.",
     "accent": "#D4498D"
   },
   {
