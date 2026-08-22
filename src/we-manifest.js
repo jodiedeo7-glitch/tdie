@@ -160,13 +160,13 @@ export const MODULES = [
     "accent": "#D4498D"
   },
   {
-    "slug": "module-17-one-article-nineteen-assets",
+    "slug": "module-17-one-article-twenty-four-assets",
     "num": 17,
-    "title": "One Article \u2192 Nineteen Assets",
+    "title": "One Article \u2192 Twenty-Four Assets",
     "phase": "Phase 4 \u00b7 Sunday Morning",
     "phaseLabel": "Phase 4 \u00b7 Sunday Morning",
     "phaseSub": "Traffic \u2014 people start arriving",
-    "blurb": "One prompt turns a published article into nineteen finished assets across six platforms.",
+    "blurb": "One prompt turns a published article into ten pins, a carousel, two reels, an email and a post.",
     "accent": "#D4498D"
   },
   {
