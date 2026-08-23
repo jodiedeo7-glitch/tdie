@@ -20,6 +20,9 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     <div class="page-eyebrow">A look inside · No email required</div>
     <h1>What you're actually buying</h1>
     <p class="pv-lede">Most course sales pages describe the thing. This one shows it. Everything below is the real interface — the same pages you'd log into an hour from now.</p>
+    <figure class="pv-fig pv-fig-hero">
+      <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
+    </figure>
   </section>
 
   <section class="pv-sec">
@@ -55,12 +58,20 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
         <p class="pv-more">…and three more phases below</p>
       </div>
     </div>
+    <figure class="pv-fig">
+      <img src="/images/we/module-list.jpg" alt="The full list of 22 modules across six phases." loading="lazy" width="1100" height="1191" />
+      <figcaption>All twenty-two, across the six phases of the weekend.</figcaption>
+    </figure>
   </section>
 
   <section class="pv-sec">
     <span class="pv-n">02</span>
     <h2>A module</h2>
     <p class="pv-b">Every module runs the same way. The idea, then a numbered spine of actions, then the prompt you paste, then a collapsed panel of fixes for when something breaks. You never have to work out what to do next.</p>
+    <figure class="pv-fig pv-fig-wide">
+      <img src="/images/we/who-does-what.jpg" alt="Who actually does the work. Nine things Claude does, three things you do." loading="lazy" width="1200" height="1490" />
+      <figcaption>What you're doing across those twenty-two modules.</figcaption>
+    </figure>
 
     <div class="pv-shot">
       <div class="pv-bar"><span></span><span></span><span></span></div>
@@ -102,6 +113,10 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
         <p class="pv-more">…thirty more, each with the full prompt underneath</p>
       </div>
     </div>
+    <figure class="pv-fig pv-fig-wide">
+      <img src="/images/we/weekend-timeline.jpg" alt="One weekend hour by hour, across six phases from Friday night to Sunday afternoon." loading="lazy" width="1200" height="1490" />
+      <figcaption>The order you run them in.</figcaption>
+    </figure>
   </section>
 
   <section class="pv-sec">
@@ -147,6 +162,10 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       </div>
     </div>
 
+    <figure class="pv-fig pv-fig-wide">
+      <img src="/images/we/friday-sunday.jpg" alt="Friday: content scattered across a platform you don't own. Sunday: a site on a domain you own, a blog Google can find, an email list that captures." loading="lazy" width="1200" height="1490" />
+    </figure>
+
     <p class="pv-note">Ten pins, a carousel, eight Threads posts, two reels, a Facebook post, an email and a community post. Twenty-four things, across six platforms, from one afternoon — and the article underneath keeps ranking the whole time they circulate.</p>
   </section>
 
@@ -170,6 +189,12 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     </div>
   </section>
 
+  <section class="pv-sec pv-sec-flush">
+    <figure class="pv-fig pv-fig-wide">
+      <img src="/images/we/the-numbers.jpg" alt="22 modules. 36 prompts, verbatim. 3 reference vaults. 1 weekend." loading="lazy" width="1200" height="1490" />
+    </figure>
+  </section>
+
   <section class="pv-close">
     <h2>That's the whole thing.</h2>
     <p class="pv-clede">Twenty-two modules, thirty-six prompts, three reference vaults — and every future update, free, forever.</p>
@@ -187,6 +212,13 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-b{font-size:17.5px;line-height:1.78;max-width:640px;margin:0 0 32px;color:#3B2228}
     .pv-note{font-size:15.5px;line-height:1.7;color:#5A4048;margin:20px 0 0;font-style:italic}
 
+    .pv-fig{margin:34px 0 0;padding:0;max-width:560px}
+    .pv-fig img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 34px rgba(43,22,27,.11)}
+    .pv-fig figcaption{font-size:13.5px;color:rgba(43,22,27,.55);margin-top:12px;font-style:italic}
+    .pv-fig-hero{margin:44px auto 0}
+    .pv-fig-wide{max-width:600px;margin:34px auto 0}
+    .pv-fig-wide figcaption{text-align:center}
+    .pv-sec-flush{border-bottom:none;padding-bottom:0}
     .pv-shot{border-radius:8px;overflow:hidden;border:1px solid rgba(43,22,27,.16);background:#FBF8F5;box-shadow:0 12px 40px rgba(43,22,27,.1);max-width:720px}
     .pv-bar{display:flex;gap:6px;padding:11px 14px;background:rgba(43,22,27,.055);border-bottom:1px solid rgba(43,22,27,.09)}
     .pv-bar span{width:9px;height:9px;border-radius:50%;background:rgba(43,22,27,.16)}
