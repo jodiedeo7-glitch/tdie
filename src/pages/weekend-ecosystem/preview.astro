@@ -84,48 +84,24 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
 
   <section class="pv-sec">
     <span class="pv-n">03</span>
-    <h2>One of the prompts, in full</h2>
-    <p class="pv-b">There are 36 of these. Every one is written out completely — no summaries, no "adapt as needed." This is the one from Module 2, and it's the reason Claude stops inventing products you don't sell. Take it, it's useful on its own.</p>
+    <h2>Thirty-six prompts, written out in full</h2>
+    <p class="pv-b">Not summaries. Not "adapt this to your business." Every prompt is complete, sits in its own copy card, and is ready to run the moment you paste it. Here's what the Quick Sheet looks like — every prompt in the order you actually use them.</p>
 
-    <div class="pv-prompt pv-prompt-solo">
-      <div class="pv-pbar"><span>Free — take it</span><em id="pv-copy">Copy</em></div>
-      <code id="pv-canon">CANON FILE — [YOUR BRAND]
-Version 1.0 — [date]
-
-PRODUCTS — exact names, exact prices, exact URLs
-| Product | Price | Platform | URL |
-|---|---|---|---|
-| [Full™ Name] | $X | [platform] | [url or PENDING] |
-
-DOES NOT EXIST — never reference these
-- No free trial
-- No annual plan
-- No 1:1 coaching
-- [every plausible thing you don't offer]
-
-HARD RULES
-1. Never invent a product, price, link, or CTA.
-   Not in the table above = does not exist.
-2. If something is missing, stop and ask.
-   Do not fill the gap.
-3. Full trademark name on first reference.
-4. When two sources conflict, stop and flag it.
-   Never resolve it silently.
-
-VOICE
-Sounds like: [three descriptors]
-Never say: hack, secret, explode, crush it,
-game-changer, [your additions]
-Register: [editorial on the blog / warm in community]
-
-STRUCTURE
-Canonical domain: [the one address, with or without www]
-URL pattern: /[pattern]/[slug]
-Stack: [your stack]
-Colors: [hex codes]
-Fonts: [names]</code>
+    <div class="pv-shot">
+      <div class="pv-bar"><span></span><span></span><span></span></div>
+      <div class="pv-body">
+        <span class="pv-eyebrow">Every prompt, in the order you run them</span>
+        <span class="pv-h1">The Quick Sheet</span>
+        <div class="pv-group">Friday night — prep</div>
+        <div class="pv-qs"><span class="pv-qsn">01</span><div><b>Content inventory</b><i>Point a browser agent at your Skool group. It reads every lesson, post and file and hands you one table.</i></div></div>
+        <div class="pv-qs"><span class="pv-qsn">02</span><div><b>Canon File</b><i>The document that stops Claude inventing products you don't sell.</i></div></div>
+        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">03</span><div><b>Standing instruction</b><i>Makes Claude flag conflicts instead of quietly guessing.</i></div></div>
+        <div class="pv-group pv-group-blur">Saturday morning — the website</div>
+        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">05</span><div><b>Site scaffold</b><i>Generates every file your site needs.</i></div></div>
+        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">06</span><div><b>Homepage copy</b><i>Four sections, no fluff.</i></div></div>
+        <p class="pv-more">…thirty more, each with the full prompt underneath</p>
+      </div>
     </div>
-    <p class="pv-note">Paste that into a Claude Project, fill it in, and Claude stops guessing. That's one of thirty-six.</p>
   </section>
 
   <section class="pv-sec">
@@ -203,6 +179,13 @@ Fonts: [names]</code>
     .pv-road span{font-family:"JetBrains Mono","Inter",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
     .pv-road em{font-style:normal;font-size:14.5px;color:#2B161B}
 
+    .pv-group{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,169,106,.35)}
+    .pv-group:first-of-type{margin-top:6px}
+    .pv-qs{display:flex;gap:14px;align-items:flex-start;padding:11px 0}
+    .pv-qsn{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;color:var(--pink);padding-top:4px;flex-shrink:0}
+    .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
+    .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
+    .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
     .pv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
     .pv-card{border-radius:8px;padding:26px;border:1px solid rgba(43,22,27,.14);background:#FFFDFB}
     .pv-ctag{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
@@ -223,7 +206,14 @@ Fonts: [names]</code>
     .pv-close .btn{background:#FBF8F5;color:#8E2F53;border-color:#FBF8F5}
 
     @media(max-width:760px){
-      .pv-two{grid-template-columns:1fr}
+      .pv-group{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,169,106,.35)}
+    .pv-group:first-of-type{margin-top:6px}
+    .pv-qs{display:flex;gap:14px;align-items:flex-start;padding:11px 0}
+    .pv-qsn{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;color:var(--pink);padding-top:4px;flex-shrink:0}
+    .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
+    .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
+    .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
+    .pv-two{grid-template-columns:1fr}
       .pv-sec{padding:48px 0}
       .pv-body,.pv-body-index{padding:18px}
       .pv-close{padding:54px 22px 50px}
@@ -231,14 +221,3 @@ Fonts: [names]</code>
   </style>
 </PageLayout>
 
-<script>
-  const btn = document.getElementById("pv-copy");
-  const code = document.getElementById("pv-canon");
-  if (btn && code) {
-    btn.addEventListener("click", () => {
-      navigator.clipboard.writeText(code.innerText);
-      btn.textContent = "Copied";
-      setTimeout(() => (btn.textContent = "Copy"), 1600);
-    });
-  }
-</script>
