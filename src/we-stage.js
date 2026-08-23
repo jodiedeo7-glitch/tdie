@@ -1,7 +1,7 @@
 // ── LAUNCH STAGE — change STAGE here and both the sales page and
 // the preview page update together. Nothing else needs editing.
 // "prelaunch" | "launch37" | "public47" | "public67" | "full"
-export const STAGE = "prelaunch";
+export const STAGE = "public47";
 
 export const CHECKOUT =
   "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
