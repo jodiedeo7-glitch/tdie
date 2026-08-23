@@ -312,6 +312,32 @@ const faqs = [
     </div>
   </section>
 
+  <!-- REPURPOSING PROOF -->
+  <section class="we-block">
+    <h2>What one prompt actually produces</h2>
+    <p class="we-sublead">This is the module people message me about afterwards. You publish an article, paste one prompt, and twenty-four finished assets come back. Below is real output from running it against this page.</p>
+
+    <div class="rp-grid">
+      <div class="rp-card">
+        <div class="rp-tag">Three of the ten pins</div>
+        <div class="rp-o"><b>How to turn your Skool content into a blog</b><i>Your best lessons are already written — they're just trapped where nobody can search them.</i></div>
+        <div class="rp-o"><b>Where to find blog content you already wrote</b><i>Six places your best writing is already sitting. Most creators find dozens they'd forgotten.</i></div>
+        <div class="rp-o"><b>You don't need to code to build a website</b><i>Everything that used to be required, and isn't anymore.</i></div>
+      </div>
+
+      <div class="rp-card">
+        <div class="rp-tag">Three of the eight Threads posts</div>
+        <div class="rp-q">"Count the lessons in your Skool classroom. Now count how many a stranger could find on Google today. That gap is the whole problem."</div>
+        <div class="rp-q">"A post dies in three days. An article works for eighteen months. We spend almost all our time on the first one."</div>
+        <div class="rp-q">"Renting: Skool, Instagram, TikTok, Pinterest. Owning: a domain, a site, an email list. Do both. But please do the second one."</div>
+      </div>
+    </div>
+
+    <p class="rp-sum">Plus an 8-slide carousel, two reel prompts with matching cover stills, a Facebook post, an email and a community post. <strong>Twenty-four things across six platforms, from one afternoon</strong> — and the article underneath keeps ranking the whole time they circulate.</p>
+
+    <p class="we-sublead" style="margin-bottom:0"><a href="/weekend-ecosystem/preview" style="color:var(--pink);font-weight:500">See the rest of the output →</a></p>
+  </section>
+
   <!-- BY SUNDAY -->
   <section class="we-block">
     <h2>By Sunday afternoon</h2>
@@ -500,6 +526,20 @@ const faqs = [
     .we-never-grid{display:flex;flex-wrap:wrap;gap:9px}
     .we-never-chip{position:relative;font-size:15px;line-height:1.4;padding:9px 15px 9px 15px;border-radius:5px;
                    background:rgba(43,22,27,.045);color:#7A5C63;text-decoration:line-through;text-decoration-color:rgba(214,46,115,.55);text-decoration-thickness:1.5px}
+
+    /* ── repurposing proof ── */
+    .rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+    .rp-card{border:1px solid rgba(43,22,27,.13);border-radius:7px;padding:22px 24px 20px;background:#FFFDFB}
+    .rp-tag{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+    .rp-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .rp-o:first-of-type{border-top:none;padding-top:0}
+    .rp-o b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:17.5px;color:#2B161B;margin-bottom:5px;line-height:1.25}
+    .rp-o i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
+    .rp-q{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;line-height:1.55;color:#3B2228;padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .rp-q:first-of-type{border-top:none;padding-top:0}
+    .rp-sum{font-size:16.5px;line-height:1.75;color:#3B2228;max-width:660px;margin:26px 0 22px}
+    .rp-sum strong{color:var(--pink);font-weight:600}
+    @media(max-width:820px){.rp-grid{grid-template-columns:1fr}}
 
     /* ── ticked outcomes ── */
     .we-checks{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:2px 30px}
