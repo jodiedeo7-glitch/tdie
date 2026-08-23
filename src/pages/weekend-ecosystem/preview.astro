@@ -1,7 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
-import { S, HREF } from "../../we-stage.js";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -14,13 +13,14 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
 });
 ---
 <PageLayout
+  noindex
   title="Inside The Weekend Ecosystem™"
   description="A look inside the course before you buy — the module index, a real module page, the prompt cards, the progress tracker and the completion certificate."
 >
   <section class="pv-hero">
     <div class="page-eyebrow">A look inside · No email required</div>
     <h1>What you're actually buying</h1>
-    <a class="btn pv-hero-btn" href={HREF}>{S.cta} <span class="a">→</span></a>
+    <a class="btn pv-hero-btn" href="/shop/weekend-ecosystem">Get The Weekend Ecosystem™ <span class="a">→</span></a>
     <p class="pv-lede">Most course sales pages describe the thing. This one shows it. Everything below is the real interface — the same pages you'd log into an hour from now.</p>
     <figure class="pv-fig pv-fig-hero">
       <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
@@ -200,9 +200,8 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   <section class="pv-close">
     <h2>That's the whole thing.</h2>
     <p class="pv-clede">Twenty-two modules, thirty-six prompts, three reference vaults — and every future update, free, forever.</p>
-    <a class="btn pv-btn" href={HREF}>{S.cta} <span class="a">→</span></a>
-    <p class="pv-cnote">{S.access}</p>
-    <p class="pv-cnote pv-cnote-alt"><a href="/shop/weekend-ecosystem">Or read the full details first →</a></p>
+    <a class="btn pv-btn" href="/shop/weekend-ecosystem">Get The Weekend Ecosystem™ <span class="a">→</span></a>
+    <p class="pv-cnote">Full details, the complete module list and the current price are all on the sales page.</p>
   </section>
 
   <style>
