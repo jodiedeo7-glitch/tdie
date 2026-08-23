@@ -7,8 +7,9 @@ export interface Props {
   description: string;
   wide?: boolean;
   ogImage?: string;
+  noindex?: boolean;
 }
-const { title, description, wide = false, ogImage = "/og/default.jpg" } = Astro.props;
+const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = new URL(Astro.url.pathname, SITE).href;
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
@@ -27,6 +28,7 @@ const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage
   <title>{title} | The Digital Income Edit™</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
