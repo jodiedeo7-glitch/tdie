@@ -106,6 +106,52 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
 
   <section class="pv-sec">
     <span class="pv-n">04</span>
+    <h2>What one prompt actually produces</h2>
+    <p class="pv-b">This is the module people message me about afterwards. You publish an article, paste one prompt, and twenty-four finished assets come back. Below is the real output from running it against this page — not a sample, the actual thing.</p>
+
+    <div class="pv-out">
+      <div class="pv-otag">Ten pins · titles and descriptions</div>
+      <div class="pv-o"><b>How to turn your Skool content into a blog</b><i>Your best lessons are already written — they're just trapped where nobody can search them. Here's how to move them onto a site you own.</i></div>
+      <div class="pv-o"><b>Where to find blog content you already wrote</b><i>Six places your best writing is already sitting. Most creators find dozens of pieces they'd forgotten about.</i></div>
+      <div class="pv-o"><b>You don't need to code to build a website</b><i>Everything that used to be required, and isn't anymore. AI writes the files; you paste and approve.</i></div>
+      <p class="pv-omore">+ seven more, each a different layout, each with its own image prompt and board</p>
+    </div>
+
+    <div class="pv-out">
+      <div class="pv-otag">An 8-slide carousel</div>
+      <div class="pv-slides">
+        <span>YOU ALREADY WROTE THE BLOG POSTS.</span>
+        <span>Every lesson in your classroom is an article.</span>
+        <span>Every call recording is three posts.</span>
+        <span>None of it is searchable.</span>
+      </div>
+      <p class="pv-omore">+ four more slides, plus the caption and five hashtags</p>
+    </div>
+
+    <div class="pv-out">
+      <div class="pv-otag">Eight Threads posts</div>
+      <div class="pv-o pv-o-plain"><i>"Count the lessons in your Skool classroom. Now count how many a stranger could find on Google today. That gap is the whole problem."</i></div>
+      <div class="pv-o pv-o-plain"><i>"A post dies in three days. An article works for eighteen months. We spend almost all our time on the first one."</i></div>
+      <div class="pv-o pv-o-plain"><i>"Renting: Skool, Instagram, TikTok, Pinterest. Owning: a domain, a site, an email list. Do both. But please do the second one."</i></div>
+      <p class="pv-omore">+ five more, each a different structure, no two opening the same way</p>
+    </div>
+
+    <div class="pv-out pv-out-half">
+      <div>
+        <div class="pv-otag">Two reels</div>
+        <p class="pv-osmall">A full video generation prompt plus a matching cover still in the same setting, wardrobe and palette — so the cover and the video read as one asset. On-screen text and caption included.</p>
+      </div>
+      <div>
+        <div class="pv-otag">Plus</div>
+        <p class="pv-osmall">A Facebook post in a warmer register. An email with subject line and preview text. A community post that doesn't sound like your blog. And a plain list of every headline, for reuse.</p>
+      </div>
+    </div>
+
+    <p class="pv-note">Ten pins, a carousel, eight Threads posts, two reels, a Facebook post, an email and a community post. Twenty-four things, across six platforms, from one afternoon — and the article underneath keeps ranking the whole time they circulate.</p>
+  </section>
+
+  <section class="pv-sec">
+    <span class="pv-n">05</span>
     <h2>Progress, and the certificate</h2>
     <p class="pv-b">Tick each module off as you finish it. The ring fills, each phase keeps its own tally, and at twenty-two a completion certificate unlocks with your name on it.</p>
 
@@ -186,6 +232,21 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
     .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
     .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
+    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:7px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
+    .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+    .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .pv-o:first-of-type{border-top:none;padding-top:0}
+    .pv-o b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:5px}
+    .pv-o i{display:block;font-style:normal;font-size:14.5px;line-height:1.62;color:rgba(43,22,27,.68)}
+    .pv-o-plain i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;color:#3B2228;line-height:1.55}
+    .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
+    .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:6px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
+                    background:linear-gradient(160deg,rgba(255,138,194,.18),rgba(203,183,247,.12));border:1px solid rgba(214,46,115,.18);min-height:74px}
+    .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
+    .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .pv-osmall{font-size:14.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
+    @media(max-width:640px){.pv-slides,.pv-out-half{grid-template-columns:1fr}}
     .pv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
     .pv-card{border-radius:8px;padding:26px;border:1px solid rgba(43,22,27,.14);background:#FFFDFB}
     .pv-ctag{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
@@ -213,6 +274,21 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
     .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
     .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
+    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:7px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
+    .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+    .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .pv-o:first-of-type{border-top:none;padding-top:0}
+    .pv-o b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:5px}
+    .pv-o i{display:block;font-style:normal;font-size:14.5px;line-height:1.62;color:rgba(43,22,27,.68)}
+    .pv-o-plain i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;color:#3B2228;line-height:1.55}
+    .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
+    .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:6px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
+                    background:linear-gradient(160deg,rgba(255,138,194,.18),rgba(203,183,247,.12));border:1px solid rgba(214,46,115,.18);min-height:74px}
+    .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
+    .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .pv-osmall{font-size:14.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
+    @media(max-width:640px){.pv-slides,.pv-out-half{grid-template-columns:1fr}}
     .pv-two{grid-template-columns:1fr}
       .pv-sec{padding:48px 0}
       .pv-body,.pv-body-index{padding:18px}
