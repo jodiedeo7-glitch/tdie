@@ -136,6 +136,21 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
       .wb-prompt pre{padding:16px 14px}
       .wb-prompt pre code{font-size:12px}
     }
+
+    /* ── mobile text safety ── */
+    body{overflow-wrap:break-word}
+    #we-body h1,#we-body h2,#we-body h3,#we-body p,#we-body li,
+    #we-body a,#we-body strong,#we-body em,#we-body blockquote,
+    .wb-h,.wb-tag,.wb-road summary,.we-jump-t{overflow-wrap:break-word}
+    #we-body a[href^="http"]{word-break:break-word}
+    #we-body img,#we-body svg{max-width:100%;height:auto}
+    #we-body table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .wb-prompt pre{-webkit-overflow-scrolling:touch}
+    @media(max-width:640px){
+      .wb-prompt pre code{font-size:11.5px;line-height:1.65}
+      #we-body :not(pre)>code{word-break:break-word}
+    }
+
     @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
   </style>
 </head>
