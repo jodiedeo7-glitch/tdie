@@ -425,3 +425,33 @@ a.foot-brand:hover em{opacity:.75}
 /* letter-spacing settle on headings */
 .chapter h2,.hero h1{transition:letter-spacing 1.2s var(--ease),opacity 1.2s var(--ease)}
 
+/* ── mobile text safety ──────────────────────────────────────────
+   Long URLs, product names and trademark strings were overflowing
+   the viewport on narrow screens. These rules keep every piece of
+   text inside its container without hyphenating mid-word. */
+
+body{overflow-wrap:break-word;word-break:normal}
+
+h1,h2,h3,h4,h5,h6,p,li,a,span,em,strong,blockquote,figcaption,summary,
+dt,dd,td,th,label,button,input,textarea{overflow-wrap:break-word}
+
+/* URLs and emails are the usual culprits — allow them to break
+   anywhere rather than push the page sideways */
+a[href^="http"],a[href^="mailto"]{word-break:break-word}
+
+/* tables scroll rather than stretch the page */
+table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* code and prompt blocks scroll horizontally, never wrap mid-token */
+pre{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+pre code{white-space:pre;overflow-wrap:normal;word-break:normal}
+
+/* nothing may exceed the viewport */
+img,svg,video,iframe{max-width:100%;height:auto}
+
+@media(max-width:640px){
+  /* tight display letter-spacing causes ragged breaks at small sizes */
+  h1{letter-spacing:-.5px}
+  /* keep long single words from forcing a scrollbar */
+  .page-eyebrow,.k{overflow-wrap:anywhere}
+}
