@@ -43,13 +43,13 @@
 
 | Product | Price | Platform |
 |---|---|---|
-| Membership | $9/month · $99/year | Skool |
+| Membership Standard | $9/month · $99/year | Skool |
 | Membership Premium — includes The Ads Edit™ | $27/month · $250/year | Skool |
 | The Business Architect Mentorship Intensive™ | ⬜ pending | Skool |
 
 BAMI supersedes the retired name Faceless Income Intensive™. **It is not live and is stripped from every asset until it launches.**
 
-**Pinterest Foundations™ — $27 one-time, Skool.** Also included with the Membership. That is inclusion, not a ladder rung. No `/shop/` route is to be built for it.
+**Pinterest Foundations™ — $27 one-time, Skool.** Also included with Membership Standard. That is inclusion, not a ladder rung. No `/shop/` route is to be built for it.
 
 ---
 
@@ -143,7 +143,7 @@ Magenta, deep plum and antique gold are retired.
 
 **Type.** Fraunces (display) · Cormorant Garamond (serif; the italic carries the turn line) · Inter (sans; eyebrows and lockups only). One to two families per asset. Fraunces variable axes load in the order `[opsz, wght, SOFT, WONK]` — wrong order silently applies default weights.
 
-**Tier badges.** Membership `#FF8AC2` · Premium `#D62E73`. There is no free tier badge.
+**Tier badges.** Standard `#FF8AC2` · Premium `#D62E73`. There is no free tier badge.
 
 **Text is set, never generated — for nano banana (Gemini) only.** Canva AI renders text accurately; do not strip text from Canva prompts or warn about garbled letterforms. *(This resolves the open contradiction between Prompt Library v1.7's blanket rule and the Canva AI correction.)*
 
@@ -192,10 +192,10 @@ The free tier is retired. Entry is now a **free 7-day trial**, then $9/month.
 | Was | Now |
 |---|---|
 | Free Community ($0) | *retired* — replaced by a free 7-day trial |
-| Membership Premium ($9) | **Membership** ($9/mo · $99/yr) |
+| Membership Premium ($9) | **Membership Standard** ($9/mo · $99/yr) |
 | Membership VIP ($27) | **Membership Premium** ($27/mo · $250/yr) |
 | The VIP Vault | **The Premium Vault** |
 
 1,231 members who joined under the free tier are grandfathered permanently and are never charged.
 
-**Skool platform caveat.** Skool hard-codes its tier card labels as *Standard* and *Premium* and they cannot be edited. Site copy says Membership / Premium; the Skool checkout says Standard / Premium. Same prices, different first word.
+**Skool platform caveat.** Skool hard-codes its tier card labels as *Standard* and *Premium* and they cannot be edited. Site copy now says Standard / Premium to match the Skool checkout exactly.
