@@ -43,14 +43,13 @@
 
 | Product | Price | Platform |
 |---|---|---|
-| Free Community | $0 | Skool |
-| Membership Premium | $9/month | Skool |
-| Membership VIP — includes The Ads Edit™ | $27/month | Skool |
+| Membership | $9/month · $99/year | Skool |
+| Membership Premium — includes The Ads Edit™ | $27/month · $250/year | Skool |
 | The Business Architect Mentorship Intensive™ | ⬜ pending | Skool |
 
 BAMI supersedes the retired name Faceless Income Intensive™. **It is not live and is stripped from every asset until it launches.**
 
-**Pinterest Foundations™ — $27 one-time, Skool.** Also included with Membership Premium. That is inclusion, not a ladder rung. No `/shop/` route is to be built for it.
+**Pinterest Foundations™ — $27 one-time, Skool.** Also included with the Membership. That is inclusion, not a ladder rung. No `/shop/` route is to be built for it.
 
 ---
 
@@ -58,8 +57,8 @@ BAMI supersedes the retired name Faceless Income Intensive™. **It is not live 
 
 | Name | What it is |
 |---|---|
-| **The Value Vault** | Guide collection inside Skool. Included with Free Community. |
-| **The VIP Vault** | The entire Value Vault unlocked, inside the VIP tier. |
+| **The Value Vault** | Guide collection inside Skool. Browsable by all members; guides bought à la carte ($2–$10) or the whole collection for $49. |
+| **The Premium Vault** | The entire Value Vault unlocked, included with Membership Premium. |
 | **Pretty & Paid PLR Vault™** | Separate $11/month Beacons subscription. Off-ladder. |
 
 **Pretty & Paid PLR Vault™ carries its full prefix and trademark on every first reference.** Short form is banned outright in every title, overlay, heading, button, anchor and alt text — those are first-reference positions with no second reference behind them.
@@ -79,7 +78,7 @@ Full table with exact prices and live URLs: **`canon.json` → `products[]`.** T
 Seven prices are shared. `tdie_audit.py` computes the table from `canon.json` on every run, so it cannot go stale. The two that matter:
 
 - **$9** — Membership Premium (recurring) vs a Pinterest guide (one-time)
-- **$27** — Membership VIP (recurring) vs three one-time products
+- **$27** — Membership Premium (recurring) vs three one-time products
 
 **Standing Rule 32.** Every price written into an asset is checked against the computed collision table, not against a remembered list of numbers. Wherever two products share a price on one screen, the copy names what each price buys before the reader has to work it out.
 
@@ -144,7 +143,7 @@ Magenta, deep plum and antique gold are retired.
 
 **Type.** Fraunces (display) · Cormorant Garamond (serif; the italic carries the turn line) · Inter (sans; eyebrows and lockups only). One to two families per asset. Fraunces variable axes load in the order `[opsz, wght, SOFT, WONK]` — wrong order silently applies default weights.
 
-**Tier badges.** Free `#FBF8F5` · Premium `#FF8AC2` · VIP `#D62E73`.
+**Tier badges.** Membership `#FF8AC2` · Premium `#D62E73`. There is no free tier badge.
 
 **Text is set, never generated — for nano banana (Gemini) only.** Canva AI renders text accurately; do not strip text from Canva prompts or warn about garbled letterforms. *(This resolves the open contradiction between Prompt Library v1.7's blanket rule and the Canva AI correction.)*
 
@@ -183,3 +182,20 @@ Decisions, not process. No amount of correct execution resolves them.
 ---
 
 **The Digital Income Edit™ · Canon v1.0 · 16 August 2026**
+
+---
+
+## TIER RENAME — 30 AUGUST 2026
+
+The free tier is retired. Entry is now a **free 7-day trial**, then $9/month.
+
+| Was | Now |
+|---|---|
+| Free Community ($0) | *retired* — replaced by a free 7-day trial |
+| Membership Premium ($9) | **Membership** ($9/mo · $99/yr) |
+| Membership VIP ($27) | **Membership Premium** ($27/mo · $250/yr) |
+| The VIP Vault | **The Premium Vault** |
+
+1,231 members who joined under the free tier are grandfathered permanently and are never charged.
+
+**Skool platform caveat.** Skool hard-codes its tier card labels as *Standard* and *Premium* and they cannot be edited. Site copy says Membership / Premium; the Skool checkout says Standard / Premium. Same prices, different first word.
