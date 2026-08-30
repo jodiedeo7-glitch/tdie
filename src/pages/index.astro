@@ -33,16 +33,16 @@ const shop = [
 ];
 
 // Membership tiers. Two paid tiers only — the free tier was retired
-// 30 August 2026. Skool's own labels are Standard and Premium and the site
-// now matches them exactly. Inclusion lists read from the live Skool plans screen.
+// 30 August 2026 and replaced by a free 7-day trial. Site copy uses
+// Membership / Premium; Skool's own card labels read Standard / Premium.
 const tiers = [
   {
-    name: "Standard",
+    name: "Membership",
     price: "$9",
     per: "per month",
     line: "Everything you need to build the thing and start selling it.",
     feature: true,
-    cta: "Join Standard",
+    cta: "Start your free 7-day trial",
     ghost: false,
     href: "https://www.skool.com/thedigitalincomeedit/plans",
     items: [
@@ -64,13 +64,13 @@ const tiers = [
     name: "Premium",
     price: "$27",
     per: "per month",
-    line: "Standard is what you build by hand. Premium buys the hours back.",
+    line: "The Membership is what you build by hand. Premium buys the hours back.",
     feature: false,
     cta: "Join Premium",
     ghost: true,
     href: "https://www.skool.com/thedigitalincomeedit/plans",
     items: [
-      "Everything in Standard",
+      "Everything in the Membership",
       "Monthly DFY Content Calendar",
       "The Ads Edit\u2122",
       "The Offer Edit",
