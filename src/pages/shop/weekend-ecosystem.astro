@@ -134,6 +134,7 @@ const faqs = [
     <div class="page-eyebrow">{S.eyebrow}</div>
     <h1>The Weekend <em>Ecosystem™</em></h1>
     <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
+    <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <div class="we-cta-row">
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
     </div>
@@ -385,6 +386,8 @@ const faqs = [
   </section>
 
   <style>
+    .we-frame{font-size:15px;line-height:1.7;color:var(--taupe-deep);max-width:56ch;margin:-18px auto 30px}
+
     /* ── hero ── */
     .we-hero{text-align:center;padding:10px 0 54px}
     .we-hero .page-eyebrow{color:var(--pink)!important}
@@ -591,4 +594,40 @@ const faqs = [
       .we-close{padding:60px 24px 54px;margin-top:60px}
     }
   </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "The Weekend Ecosystem\u2122",
+        "description": "A 22-module course that turns content you have already made into a website and blog on a domain you own, over one weekend, with Claude AI doing the building.",
+        "brand": { "@type": "Brand", "name": "The Digital Income Edit\u2122" },
+        "url": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem",
+        "image": "https://www.thedigitalincomeedit.com/images/we/cover-sofa.jpg",
+        "offers": {
+          "@type": "Offer",
+          "price": "97.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need to know how to code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Claude generates every file. You paste the prompt, read what comes back, and approve it. When something breaks, the site explains it in plain English and you paste that back." } },
+          { "@type": "Question", "name": "Do I have to be a teacher or a coach?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. You need content, not authority. Skool lessons, community posts, call recordings, PDFs and products all work as source material." } },
+          { "@type": "Question", "name": "What if I do not have a free weekend?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is sixteen hours split into six chunks. You can spread it across three weeks if that suits you better." } },
+          { "@type": "Question", "name": "What if I do not have enough content?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Most people find forty to eighty pieces they had forgotten they made." } },
+          { "@type": "Question", "name": "Is this a one-time payment?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. One payment, and every future update is included permanently. It is delivered as a live website you log into, not a PDF you download, so modules are rewritten and added as tools change." } }
+        ]
+      }
+    ]
+  })} />
 </PageLayout>
