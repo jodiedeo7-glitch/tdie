@@ -32,63 +32,50 @@ const shop = [
   { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "/go/ai-subs-method", aff: true },
 ];
 
-// Membership tiers. Inclusion lists read from the live Skool plans screen,
-// 26 July 2026. Skool forces the free tier label to "Standard"; the canonical
-// name is Free Community (Product Register v3.1, Part 1) and that is what ships.
+// Membership tiers. Two paid tiers only — the free tier was retired
+// 30 August 2026. Skool's own labels are Standard and Premium and the site
+// now matches them exactly. Inclusion lists read from the live Skool plans screen.
 const tiers = [
   {
-    name: "Free Community",
-    price: "$0",
-    per: "forever",
-    line: "Enough to build the thing. Not enough to sell it yet.",
-    feature: false,
-    cta: "Join free",
-    ghost: true,
-    href: "https://www.skool.com/thedigitalincomeedit/about",
+    name: "Standard",
+    price: "$9",
+    per: "per month",
+    line: "Everything you need to build the thing and start selling it.",
+    feature: true,
+    cta: "Join Standard",
+    ghost: false,
+    href: "https://www.skool.com/thedigitalincomeedit/plans",
     items: [
       "The Essentials Edit",
       "AI Foundations for Creators",
       "Canva Crash Course",
-      "The Value Vault",
-      "Daily Prompts",
-    ],
-  },
-  {
-    name: "Premium",
-    price: "$9",
-    per: "per month",
-    line: "The half where it starts making money.",
-    feature: true,
-    cta: "Join Premium",
-    ghost: false,
-    href: "https://www.skool.com/thedigitalincomeedit/plans",
-    items: [
-      "Everything in the free community",
       "AI Twin / Influencer Creation",
       "The Monetization Edit",
       "Brand Building \u00b7 The Content Edit",
       "The Email Edit \u00b7 The Pinterest Edit",
       "The Tommy Kate Edit \u2014 included, not $17 here",
       "Pinterest Foundations\u2122",
+      "The Value Vault \u2014 browse and buy guides \u00e0 la carte",
+      "Daily Prompts",
       "Vacation & Luxe Babe Vault bonuses",
     ],
   },
   {
-    name: "VIP",
+    name: "Premium",
     price: "$27",
     per: "per month",
-    line: "Premium is what you build by hand. VIP buys the hours back.",
+    line: "Standard is what you build by hand. Premium buys the hours back.",
     feature: false,
-    cta: "Join VIP",
+    cta: "Join Premium",
     ghost: true,
     href: "https://www.skool.com/thedigitalincomeedit/plans",
     items: [
-      "Everything in Premium",
+      "Everything in Standard",
       "Monthly DFY Content Calendar",
       "The Ads Edit\u2122",
       "The Offer Edit",
       "The Funnel Edit",
-      "The VIP Vault \u2014 the entire Value Vault, unlocked",
+      "The Premium Vault \u2014 the entire Value Vault, unlocked",
       "Scaling & Systems",
     ],
   },
@@ -432,7 +419,7 @@ const tiers = [
 
       <p class="mem-note">
         Both paid tiers bill every month and you can leave from inside the app. <strong>$27 here is a subscription</strong> — it is not the same $27 as The One and Done Money Stream in the shop above, which you pay once.<br /><br />
-        Three things here have <em>vault</em> in the name and they are not the same thing. <strong>The Value Vault</strong> is the guide collection, and VIP unlocks every one of them. The <strong>Pretty &amp; Paid PLR Vault™</strong> is a separate subscription, $7 a month on sale from $11, that hands you finished products to resell under your own name. It is not part of either membership, and it always carries the full name.
+        Three things here have <em>vault</em> in the name and they are not the same thing. <strong>The Value Vault</strong> is the guide collection, and Premium unlocks every one of them. The <strong>Pretty &amp; Paid PLR Vault™</strong> is a separate subscription, $7 a month on sale from $11, that hands you finished products to resell under your own name. It is not part of either membership, and it always carries the full name.
       </p>
     </div>
   </section>
