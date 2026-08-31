@@ -1,6 +1,6 @@
 // ── LAUNCH STAGE — change STAGE here and both the sales page and
 // the preview page update together. Nothing else needs editing.
-// "public67" | "full"   — launch stages retired, the course is open
+// "full"   — launch ladder retired, settled price
 export const STAGE = "full";
 
 export const CHECKOUT =
