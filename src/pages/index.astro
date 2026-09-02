@@ -21,14 +21,11 @@ const pillars = [
 
 // Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
 const shop = [
-  { name: "The Weekend Ecosystem\u2122", price: "$97", note: "one-time", copy: "Your website + blog, built from what you already have. 22 modules, 36 prompts, three reference vaults \u2014 and one prompt that turns each article into twenty-four finished assets. A live site, so every future update is included. Open now.", url: "/shop/weekend-ecosystem", aff: false },
   { name: "Pretty & Paid PLR Vault™", price: "$7", note: "per month · on sale from $11 · price locked", copy: "Done-for-you digital products you rebrand and sell as your own, plus the content and training to launch them. 20 new products every month, and the full resell licence stays yours even if you cancel. On sale at $7 — join now and that stays your price permanently. Its own subscription, never part of the membership.", url: "/shop/pretty-and-paid-plr-vault/", aff: false },
   { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", copy: "Build the lead magnet and the paid offer behind it in a single afternoon.", url: "/go/first-freebie", aff: false },
   { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "/go/ugc-brand-contacts", aff: false },
-  { name: "The Tommy Kate Edit", price: "$17", note: "one-time \u00b7 lifetime access", copy: "A prompt pack for faceless lifestyle creators \u2014 ready-to-use AI prompts so you never start a caption from a blank screen. Lifetime updates included.", url: "/go/the-tommy-kate-edit", aff: false },
   { name: "The One and Done Money Stream", price: "$27", note: "one-time", copy: "Set up one reliable digital income stream. Create it once, let it earn on repeat.", url: "/go/one-and-done-money-stream", aff: false },
   { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time \u00b7 mine", copy: "A hundred done-for-you hooks and captions for the stage before you have proof \u2014 nothing to screenshot, no income claims, nothing that gets an account flagged.", url: "/go/zero-income-claim-reels", aff: false },
-  { name: "Leni Loves", price: "$37", note: "one-time \u00b7 theirs", copy: "A collection of aesthetic templates and resources for your brand and content.", url: "/go/leni-loves", aff: true },
   { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "/go/ai-subs-method", aff: true },
 ];
 
@@ -42,22 +39,32 @@ const tiers = [
     per: "per month",
     line: "Everything you need to build the thing and start selling it.",
     feature: true,
+    invert: false,
+    flag: "Most join here",
     cta: "Start your free 7-day trial",
-    ghost: false,
     href: "https://www.skool.com/thedigitalincomeedit/plans",
-    items: [
-      "The Essentials Edit",
-      "AI Foundations for Creators",
-      "Canva Crash Course",
-      "AI Twin / Influencer Creation",
-      "The Monetization Edit",
-      "Brand Building \u00b7 The Content Edit",
-      "The Email Edit \u00b7 The Pinterest Edit",
-      "The Tommy Kate Edit \u2014 included, not $17 here",
-      "Pinterest Foundations\u2122",
-      "The Value Vault \u2014 browse and buy guides \u00e0 la carte",
-      "Daily Prompts",
-      "Vacation & Luxe Babe Vault bonuses",
+    inherit: null,
+    groups: [
+      { label: "Foundations", items: [
+        "The Essentials Edit",
+        "AI Foundations for Creators",
+        "Canva Crash Course",
+      ] },
+      { label: "The brand", items: [
+        "AI Twin / Influencer Creation",
+        "Brand Building \u00b7 The Content Edit",
+        "The Tommy Kate Edit \u2014 included, not $17 here",
+      ] },
+      { label: "Traffic & selling", items: [
+        "The Monetization Edit",
+        "The Email Edit \u00b7 The Pinterest Edit",
+        "Pinterest Foundations\u2122",
+      ] },
+      { label: "In the room daily", items: [
+        "The Value Vault \u2014 browse and buy guides \u00e0 la carte",
+        "Daily Prompts",
+        "Vacation & Luxe Babe Vault bonuses",
+      ] },
     ],
   },
   {
@@ -66,17 +73,22 @@ const tiers = [
     per: "per month",
     line: "Standard is what you build by hand. Premium writes your content month for you.",
     feature: false,
+    invert: true,
+    flag: "Written before you sit down",
     cta: "Join Premium",
-    ghost: true,
     href: "https://www.skool.com/thedigitalincomeedit/plans",
-    items: [
-      "Everything in Standard",
-      "Monthly DFY Content Calendar \u2014 31 days written before the month starts",
-      "The Ads Edit\u2122",
-      "The Offer Edit",
-      "The Funnel Edit",
-      "The Premium Vault \u2014 the entire Value Vault, unlocked",
-      "Scaling & Systems",
+    inherit: "Everything in Standard",
+    groups: [
+      { label: "Done for you", items: [
+        "Monthly DFY Content Calendar \u2014 31 days written before the month starts",
+        "The Ads Edit\u2122",
+      ] },
+      { label: "The full build", items: [
+        "The Offer Edit",
+        "The Funnel Edit",
+        "The Premium Vault \u2014 the entire Value Vault, unlocked",
+        "Scaling & Systems",
+      ] },
     ],
   },
 ];
@@ -222,8 +234,30 @@ const tiers = [
     .mem .sec-head h2,.mem .sec-head p{color:var(--cream)}
     .mem .sec-head .k{color:var(--mauve)}
     .mem .sec-head p{color:var(--rose)}
-    .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto;align-items:stretch}
+    .tiers{display:grid;grid-template-columns:1.02fr 1.05fr 1.05fr;gap:clamp(20px,2.4vw,34px);max-width:1180px;margin:0 auto;align-items:stretch}
+    @media(max-width:1080px){.tiers{grid-template-columns:1fr 1fr;max-width:820px}}
     @media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:460px}}
+
+    /* ── editorial image panel — fills the third grid slot ── */
+    .tier-fig{display:flex;flex-direction:column;justify-content:space-between;padding-top:13px}
+    .tf-frame{position:relative;border-radius:3px}
+    .tf-frame::after{content:"";position:absolute;inset:-13px;border:1px solid rgba(200,169,106,.5);border-radius:3px;pointer-events:none}
+    .tf-frame img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;object-position:center 42%;
+      border-radius:3px;position:relative;z-index:1;box-shadow:0 26px 60px -24px rgba(0,0,0,.7)}
+    .tf-cap{margin-top:38px;padding-bottom:6px}
+    .tf-rule{display:block;width:40px;height:1px;background:var(--gold);margin-bottom:17px}
+    .tf-q{font-family:var(--display);font-weight:400;font-size:clamp(20px,1.7vw,24px);line-height:1.28;
+      letter-spacing:-.2px;color:var(--cream);margin:0 0 13px}
+    .tf-s{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mauve);margin:0}
+    @media(max-width:1080px){
+      .tier-fig{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center}
+      .tf-cap{margin-top:0}
+    }
+    @media(max-width:900px){
+      .tier-fig{grid-template-columns:1fr;gap:24px}
+      .tf-frame::after{inset:-9px}
+      .tf-frame img{aspect-ratio:3/2;object-position:center 24%}
+    }
     .tier{position:relative;display:flex;flex-direction:column;padding:34px 30px 32px;border-radius:20px;
       background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13)}
     .tier.feat{background:rgba(255,138,194,.10);border-color:rgba(255,138,194,.42);
@@ -236,10 +270,31 @@ const tiers = [
       letter-spacing:2px;text-transform:uppercase;color:var(--taupe);margin-top:8px}
     .tier .ln{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;color:var(--rose);
       margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14)}
-    .tier ul{list-style:none;margin:0 0 28px;flex:1}
+    .tier ul{list-style:none;margin:0}
+    .tier .btn{margin-top:auto}
     .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.55;color:var(--rose)}
     .tier li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;background:var(--mauve);transform:rotate(45deg)}
-    .tier .btn{width:100%;justify-content:center}
+    .tier .tg + .tg{margin-top:22px}
+    .tier .tgl{font-size:9.5px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;
+      color:var(--gold);margin:0 0 11px}
+    .tier .tg:last-of-type{margin-bottom:30px}
+    .tier .tg ul{margin:0}
+    .tier .inh{font-family:var(--display);font-size:16px;margin:0 0 24px;padding-bottom:19px;
+      border-bottom:1px solid rgba(43,22,27,.12)}
+    .tier .inh em{font-family:var(--serif);font-style:italic;opacity:.6}
+
+    /* Premium reads as the elevated card through treatment, not bullet count */
+    .tier.inv{background:var(--cream);border-color:var(--gold);color:var(--choc);
+      box-shadow:0 40px 80px -46px rgba(0,0,0,.72)}
+    .tier.inv .ln{color:var(--choc-soft)}
+    .tier.inv .pr{color:var(--pink)}
+    .tier.inv li{color:var(--choc-soft)}
+    .tier.inv li::before{background:var(--gold-deep)}
+    .tier.inv .tgl{color:var(--gold-deep)}
+    .tier.inv .flag{background:var(--choc);color:var(--gold);border:1px solid var(--gold)}
+    .tier.inv .btn{background:var(--choc);color:var(--cream)!important;box-shadow:0 10px 26px -10px rgba(43,22,27,.6)}
+    .tier.inv .btn:hover{box-shadow:0 16px 32px -10px rgba(43,22,27,.7)}
+    .tier .btn{width:100%;justify-content:center;padding:16px 18px;font-size:11.5px;letter-spacing:1.1px;white-space:nowrap}
     .mem-note{max-width:64ch;margin:48px auto 0;text-align:center;font-size:14px;line-height:1.8;color:var(--taupe)}
     .mem-note strong{color:var(--rose)}
 
@@ -403,16 +458,34 @@ const tiers = [
       </div>
 
       <div class="tiers">
+        <aside class="tier-fig">
+          <div class="tf-frame">
+            <img src="/images/membership-jodie.webp" alt="Building the business from a kitchen counter"
+                 width="460" height="552" loading="lazy" decoding="async" />
+          </div>
+          <div class="tf-cap">
+            <span class="tf-rule"></span>
+            <p class="tf-q">One woman. One laptop.<br />The entire machine.</p>
+            <p class="tf-s">xoxo, Jodie</p>
+          </div>
+        </aside>
+
         {tiers.map((t) => (
-          <div class={t.feature ? "tier feat" : "tier"}>
-            {t.feature && <div class="flag">Most join here</div>}
+          <div class={"tier" + (t.feature ? " feat" : "") + (t.invert ? " inv" : "")}>
+            <div class="flag">{t.flag}</div>
             <div class="nm">{t.name}</div>
             <div class="pr">{t.price}<em>{t.per}</em></div>
             <div class="ln">{t.line}</div>
-            <ul>
-              {t.items.map((i) => <li>{i}</li>)}
-            </ul>
-            <a class={t.ghost ? "btn ghost" : "btn"} href={t.href}>{t.cta} <span class="a">→</span></a>
+            {t.inherit && <p class="inh">{t.inherit}<em>, and then</em></p>}
+            {t.groups.map((g) => (
+              <div class="tg">
+                <p class="tgl">{g.label}</p>
+                <ul>
+                  {g.items.map((i) => <li>{i}</li>)}
+                </ul>
+              </div>
+            ))}
+            <a class="btn" href={t.href}>{t.cta} <span class="a">→</span></a>
           </div>
         ))}
       </div>
