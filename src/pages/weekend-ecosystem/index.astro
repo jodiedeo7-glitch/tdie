@@ -1,6 +1,7 @@
 ---
 import CourseLayout from "../../layouts/CourseLayout.astro";
 import { MODULES, VAULTS } from "../../we-manifest.js";
+import UpdateBanner from "../../components/UpdateBanner.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))];
 const total = MODULES.length;
@@ -28,6 +29,8 @@ const total = MODULES.length;
   </div>
 
   <div id="contents" style="display:none">
+    <UpdateBanner />
+
 
     <!-- ── TRACKER ── -->
     <div class="tk">
@@ -77,6 +80,10 @@ const total = MODULES.length;
       <aside class="ci-vaults">
         <span class="ci-vaults-tag">Reference · Look things up</span>
         <span class="ci-vaults-sub">Not meant to be read front to back. Open these when you need one specific thing.</span>
+        <a href="/weekend-ecosystem/updates" class="ci-vault">
+          <span class="ci-vault-t">What's changed</span>
+          <span class="ci-vault-b">Every update since launch. New and rewritten modules land here first.</span>
+        </a>
         {VAULTS.map((v) => (
           <a href={`/weekend-ecosystem/${v.slug}`} class="ci-vault">
             <span class="ci-vault-t">{v.title}</span>

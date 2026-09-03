@@ -1,0 +1,95 @@
+---
+import CourseLayout from "../../layouts/CourseLayout.astro";
+import { UPDATES } from "../../we-updates.js";
+
+const entries = UPDATES.map((u) => ({
+  ...u,
+  label: new Date(u.date).toLocaleDateString(undefined, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }),
+}));
+---
+
+<CourseLayout title="What's changed" eyebrow="Update log" progress={100}>
+  <div id="locked" style="display:none">
+    <p style="font-size:17px;line-height:1.8">
+      This is part of The Weekend Ecosystem™.
+      <a href="/weekend-ecosystem" style="color:#D62E73">Enter your purchase email</a> to unlock it.
+    </p>
+  </div>
+
+  <div id="log" style="display:none">
+    <p class="ul-lede">
+      This is a live site, not a download. When the tools change or I find a better way to do
+      something, I rewrite the module — and it appears in your account straight away, free, forever.
+    </p>
+    <p class="ul-note">Everything I've changed since launch is below, newest first.</p>
+
+    <div class="ul-list">
+      {entries.map((u) => (
+        <a class="ul-item" href={`/weekend-ecosystem/${u.slug}`}>
+          <span class="ul-date">{u.label}</span>
+          <div>
+            <span class="ul-mod">{u.module}</span>
+            <p class="ul-what">{u.what}</p>
+          </div>
+          <span class="ul-arrow">→</span>
+        </a>
+      ))}
+    </div>
+
+    <p class="ul-foot">
+      Found something that doesn't work, or a step that isn't clear? Email
+      <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a> —
+      most of what's on this page came from someone telling me.
+    </p>
+
+    <div class="we-jump">
+      <a href="/weekend-ecosystem" class="we-jump-card">
+        <span class="we-jump-dir">← Back</span>
+        <span class="we-jump-t">All modules</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .ul-lede{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;margin:0 0 14px}
+    .ul-note{font-size:15.5px;line-height:1.7;color:rgba(43,22,27,.62);margin:0 0 10px;
+             padding-bottom:34px;border-bottom:1px solid rgba(43,22,27,.13)}
+    .ul-list{display:flex;flex-direction:column}
+    .ul-item{display:flex;gap:20px;align-items:flex-start;padding:22px 0;
+             border-bottom:1px solid rgba(43,22,27,.1);text-decoration:none;color:#2B161B}
+    .ul-item:hover .ul-mod{color:#D62E73}
+    .ul-date{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.4px;
+             text-transform:uppercase;color:#C8A96A;width:110px;flex-shrink:0;padding-top:5px}
+    .ul-mod{display:block;font-family:"Fraunces",serif;font-size:19px;line-height:1.3;
+            margin-bottom:6px;transition:color .2s}
+    .ul-what{font-size:15.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
+    .ul-arrow{color:#D62E73;flex-shrink:0;padding-top:4px}
+    .ul-foot{font-size:15px;line-height:1.7;color:rgba(43,22,27,.62);margin:34px 0 0}
+    .ul-foot a{color:#D62E73}
+    .we-jump{display:grid;grid-template-columns:1fr;gap:14px;margin-top:60px;padding-top:34px;
+             border-top:1px solid rgba(43,22,27,.13)}
+    .we-jump-card{display:flex;flex-direction:column;gap:8px;padding:20px 22px;
+                  border:1px solid rgba(43,22,27,.14);border-radius:4px;text-decoration:none;color:#2B161B}
+    .we-jump-card:hover{border-color:#D62E73}
+    .we-jump-dir{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:1.8px;
+                 text-transform:uppercase;color:#C8A96A}
+    .we-jump-t{font-family:"Fraunces",serif;font-size:17px}
+    @media(max-width:640px){
+      .ul-item{flex-direction:column;gap:8px}
+      .ul-date{width:auto;padding-top:0}
+    }
+  </style>
+</CourseLayout>
+
+<script>
+  const KEY = "we_token";
+  if (localStorage.getItem(KEY)) {
+    document.getElementById("log").style.display = "block";
+  } else {
+    document.getElementById("locked").style.display = "block";
+  }
+</script>

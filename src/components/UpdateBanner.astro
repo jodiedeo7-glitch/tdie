@@ -1,0 +1,67 @@
+---
+import { UPDATES } from "../we-updates.js";
+
+const latest = UPDATES[0];
+const since = latest
+  ? Math.floor((Date.now() - new Date(latest.date).getTime()) / 86400000)
+  : 999;
+// only surface recent changes
+const show = latest && since <= 30;
+const label = new Date(latest?.date ?? Date.now()).toLocaleDateString(undefined, {
+  day: "numeric",
+  month: "long",
+});
+---
+
+{show && (
+  <div class="upd" id="upd" data-key={latest.date + latest.slug}>
+    <div class="upd-in">
+      <span class="upd-tag">Updated {label}</span>
+      <div class="upd-body">
+        <span class="upd-mod">{latest.module}</span>
+        <p class="upd-what">{latest.what}</p>
+      </div>
+      <a class="upd-go" href={`/weekend-ecosystem/${latest.slug}`}>Read it →</a>
+      <button class="upd-x" id="upd-x" aria-label="Dismiss">✕</button>
+    </div>
+    <a class="upd-all" href="/weekend-ecosystem/updates">See everything that's changed →</a>
+  </div>
+)}
+
+<style>
+  .upd{margin:0 0 34px;border-radius:7px;padding:20px 22px 16px;
+       background:linear-gradient(135deg,rgba(203,183,247,.24),rgba(255,138,194,.16));
+       border:1px solid rgba(214,46,115,.24)}
+  .upd-in{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+  .upd-tag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2px;
+           text-transform:uppercase;color:#D62E73;background:#fff;border-radius:20px;
+           padding:6px 12px;flex-shrink:0;margin-top:2px}
+  .upd-body{flex:1;min-width:220px}
+  .upd-mod{display:block;font-family:"Fraunces",serif;font-size:18px;color:#2B161B;margin-bottom:5px}
+  .upd-what{font-size:15px;line-height:1.6;color:rgba(43,22,27,.72);margin:0}
+  .upd-go{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.6px;
+          text-transform:uppercase;color:#fff;background:#D62E73;border-radius:4px;
+          padding:9px 15px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+  .upd-x{background:none;border:none;color:rgba(43,22,27,.4);font-size:15px;cursor:pointer;
+         padding:2px 4px;line-height:1;flex-shrink:0}
+  .upd-x:hover{color:#D62E73}
+  .upd-all{display:inline-block;margin-top:14px;font-size:13px;color:rgba(43,22,27,.6);text-decoration:none}
+  .upd-all:hover{color:#D62E73}
+  @media(max-width:640px){
+    .upd-in{gap:12px}
+    .upd-go{width:100%;text-align:center}
+  }
+</style>
+
+<script>
+  const el = document.getElementById("upd");
+  const x = document.getElementById("upd-x");
+  if (el && x) {
+    const KEY = "we_upd_seen";
+    if (localStorage.getItem(KEY) === el.dataset.key) el.style.display = "none";
+    x.addEventListener("click", () => {
+      localStorage.setItem(KEY, el.dataset.key);
+      el.style.display = "none";
+    });
+  }
+</script>
