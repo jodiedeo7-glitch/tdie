@@ -171,6 +171,20 @@ const faqs = [
     </figure>
   </section>
 
+  <!-- PROBLEM -->
+  <section class="we-block">
+    <h2>What's actually wrong right now</h2>
+    <div class="we-grid">
+      {problems.map((x, i) => (
+        <div class="we-card">
+          <span class="we-num">{String(i + 1).padStart(2, "0")}</span>
+          <h3>{x.t}</h3>
+          <p>{x.p}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
   <!-- PROOF -->
   <section class="we-block we-proof">
     <span class="we-proof-tag">Built with this system</span>
@@ -183,20 +197,6 @@ const faqs = [
           <span class="we-proof-t">{p.t}</span>
           <span class="we-proof-go">Read it →</span>
         </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="we-block">
-    <h2>What's actually wrong right now</h2>
-    <div class="we-grid">
-      {problems.map((x, i) => (
-        <div class="we-card">
-          <span class="we-num">{String(i + 1).padStart(2, "0")}</span>
-          <h3>{x.t}</h3>
-          <p>{x.p}</p>
-        </div>
       ))}
     </div>
   </section>
@@ -229,6 +229,13 @@ const faqs = [
       ))}
     </div>
   </section>
+
+  
+    <div class="we-midcta">
+      <p class="we-midcta-l">That's the whole weekend. Sixteen hours, six phases, and you write nothing new.</p>
+      <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
+      <p class="we-midcta-n">{S.access}</p>
+    </div>
 
   <!-- HANDS OFF -->
   <section class="we-block">
@@ -335,6 +342,13 @@ const faqs = [
     <p class="we-sublead" style="margin-bottom:0"><a href="/weekend-ecosystem/preview" style="color:var(--pink);font-weight:500">See the rest of the output →</a></p>
   </section>
 
+  
+    <div class="we-midcta">
+      <p class="we-midcta-l">Twenty-four assets, from one afternoon, off content you already wrote.</p>
+      <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
+      <p class="we-midcta-n">{S.access}</p>
+    </div>
+
   <!-- BY SUNDAY -->
   <section class="we-block">
     <h2>By Sunday afternoon</h2>
@@ -343,6 +357,13 @@ const faqs = [
     </figure>
     <ul class="we-checks we-mobile-only">{bySunday.map((x) => <li><span class="we-tick"></span>{x}</li>)}</ul>
   </section>
+
+  
+    <div class="we-midcta">
+      <p class="we-midcta-l">All of that, by Sunday afternoon.</p>
+      <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
+      <p class="we-midcta-n">{S.access}</p>
+    </div>
 
   <!-- FIT -->
   <section class="we-block we-split">
@@ -368,6 +389,16 @@ const faqs = [
       ))}
     </div>
   </section>
+
+  <div class="we-sticky" id="we-sticky">
+    <div class="we-sticky-in">
+      <div>
+        <span class="we-sticky-n">The Weekend Ecosystem™</span>
+        <span class="we-sticky-p">$97 · every update included</span>
+      </div>
+      <a class="btn we-sticky-b" href={HREF}>Get it <span class="a">→</span></a>
+    </div>
+  </div>
 
   <!-- CLOSE -->
   <section class="we-close">
@@ -564,6 +595,26 @@ const faqs = [
     .we-faq details[open] summary:before{content:"–"}
     .we-faq p{font-size:16.5px;line-height:1.78;margin:14px 0 4px 26px;color:#57404A;max-width:630px}
 
+    /* ── mid-page CTAs ── */
+    .we-midcta{text-align:center;margin:46px auto 0;padding:34px 30px;border-radius:8px;max-width:660px;
+               background:linear-gradient(140deg,rgba(203,183,247,.22),rgba(255,138,194,.16));
+               border:1px solid rgba(214,46,115,.22)}
+    .we-midcta-l{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.5;
+                 color:#3B2228;margin:0 0 22px}
+    .we-midcta-n{font-size:12.5px;line-height:1.6;color:#7A5C63;margin:16px auto 0;max-width:46ch}
+
+    /* ── sticky mobile buy bar ── */
+    .we-sticky{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+               background:rgba(251,248,245,.97);backdrop-filter:blur(10px);
+               border-top:1px solid rgba(214,46,115,.22);box-shadow:0 -4px 20px rgba(43,22,27,.08)}
+    .we-sticky.on{display:block}
+    .we-sticky-in{display:flex;align-items:center;justify-content:space-between;gap:14px;
+                  padding:11px 18px;max-width:680px;margin:0 auto}
+    .we-sticky-n{display:block;font-family:"Fraunces",serif;font-size:15px;color:#2B161B;line-height:1.2}
+    .we-sticky-p{display:block;font-size:11.5px;color:#7A5C63;margin-top:2px}
+    .we-sticky-b{padding:11px 20px!important;font-size:11px!important;white-space:nowrap}
+    @media(min-width:821px){.we-sticky{display:none!important}}
+
     /* ── close: the one saturated moment ── */
     .we-close{text-align:center;margin:80px 0 0;padding:80px 40px 74px;border-radius:8px;
               background:linear-gradient(145deg,#B9A2E8 0%,#C79AD2 34%,#C87BA6 64%,#A8446B 100%)}
@@ -583,6 +634,9 @@ const faqs = [
       .we-hero-img{max-width:100%;margin-top:34px}
       .we-fig-wide{max-width:100%}
       .we-stats{grid-template-columns:1fr 1fr}
+      .we-midcta{padding:26px 20px;margin-top:34px}
+      .we-midcta-l{font-size:19px}
+      body{padding-bottom:64px}
       .we-grid,.we-phases,.we-checks,.we-split,.we-who,.we-inside{grid-template-columns:1fr}
       .we-proof-grid{grid-template-columns:1fr}
       .we-split{gap:34px}
@@ -627,3 +681,15 @@ const faqs = [
     ]
   })} />
 </PageLayout>
+
+<script>
+  const bar = document.getElementById("we-sticky");
+  const hero = document.querySelector(".we-hero");
+  if (bar && hero) {
+    const io = new IntersectionObserver(
+      ([e]) => bar.classList.toggle("on", !e.isIntersecting),
+      { rootMargin: "-80px 0px 0px 0px" }
+    );
+    io.observe(hero);
+  }
+</script>
