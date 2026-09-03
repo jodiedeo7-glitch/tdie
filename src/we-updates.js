@@ -5,6 +5,12 @@
 
 export const UPDATES = [
   {
+    date: "2026-08-30",
+    module: "Module 1 — What You Already Own",
+    slug: "module-1-what-you-already-own",
+    what: "All four inventory prompts now tell the browser agent not to stop or ask for confirmation. It was pausing constantly and turning a twenty-minute job into a two-day one. Thanks to Gina for flagging it.",
+  },
+  {
     date: "2026-08-25",
     module: "Module 1 — What You Already Own",
     slug: "module-1-what-you-already-own",

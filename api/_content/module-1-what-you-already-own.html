@@ -53,8 +53,11 @@ Rules:
 - Do not skip short items. A four-sentence post is a row.
 - If something is too long to fully load, note it as PARTIAL rather
   than guessing at the contents.
-- Do not stop between items to ask questions. Run straight through
-  and give me the complete table at the end.
+- Do not stop, and do not ask for confirmation to continue.
+  Continue until the job is done, you have a question regarding
+  your task, or you hit a hard stop you cannot bypass. Otherwise
+  continue through until the task is complete.
+- Give me the complete table at the end.
 - If you approach the response limit, stop at a clean row and end
   with &quot;PAUSED AT [row number]&quot;. I will say continue.
 </code></pre></div>
@@ -73,8 +76,11 @@ PDF I can view, add 2-3 bullets on the actual content inside it.
 Rules:
 - Read-only. Do not edit, unpublish, reprice, or delete anything.
 - Include free products and lead magnets.
-- Run straight through without asking questions. Give me the
-  complete table at the end.
+- Do not stop, and do not ask for confirmation to continue.
+  Continue until the job is done, you have a question regarding
+  your task, or you hit a hard stop you cannot bypass. Otherwise
+  continue through until the task is complete.
+- Give me the complete table at the end.
 </code></pre></div>
 <p><strong>Run 3 — your existing website, if you have one</strong></p>
 <div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Go to [yourdomain.com] and crawl every page you can reach from the
@@ -86,8 +92,13 @@ Word count estimate | 2-3 bullets on what it covers
 
 Flag any page that is thin, outdated, or duplicated elsewhere.
 
-Read-only. Do not attempt to log in or edit anything. Run straight
-through and give me the complete table at the end.
+Read-only. Do not attempt to log in or edit anything.
+
+- Do not stop, and do not ask for confirmation to continue.
+  Continue until the job is done, you have a question regarding
+  your task, or you hit a hard stop you cannot bypass. Otherwise
+  continue through until the task is complete.
+- Give me the complete table at the end.
 </code></pre></div>
 <p><strong>Run 4 — your sent emails</strong></p>
 <div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [MailerLite / ConvertKit / Flodesk / your email platform]
@@ -101,9 +112,15 @@ it actually said
 Skip pure promotional emails with no teaching in them — note them
 as PROMO ONLY rather than detailing them.
 
-Read-only. Do not send, schedule, edit, or delete anything. Run
-straight through and give me the complete table at the end.
+Read-only. Do not send, schedule, edit, or delete anything.
+
+- Do not stop, and do not ask for confirmation to continue.
+  Continue until the job is done, you have a question regarding
+  your task, or you hit a hard stop you cannot bypass. Otherwise
+  continue through until the task is complete.
+- Give me the complete table at the end.
 </code></pre></div>
+<p><strong>Why the prompts say "do not stop."</strong> Browser agents pause constantly to ask whether they should keep going, and if you've wandered off to do something else, a twenty-minute job turns into two days of you coming back and typing "continue." That instruction is in all four runs above and it's the difference between walking away and babysitting.</p>
 <p>Four runs, roughly twenty minutes of unattended time, and you have every asset you own in one place.</p>
 <hr /></div></section>
 <section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Do it by hand</h2></div><div class="wb-do-body"><p>Open a spreadsheet. Six columns: <strong>Source · Title · Topic · Format · Approx length · Key points covered</strong>.</p>
@@ -127,6 +144,9 @@ straight through and give me the complete table at the end.
 <p>Under 15 means you're being too strict, not that you're short on content. A four-sentence comment reply is a row.</p></section>
 <div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
 <details class="wb-road"><summary>It's disorganized and not good enough to publish</summary><div class="wb-road-body"><p>It isn't supposed to be. It's raw material. Claude does the structuring and polishing in Phase 2 — that's the point of the build. What Claude can't invent is your actual method and the specific way you explain the thing you're good at. Log it messy.</p></div></details>
+<details class="wb-road"><summary>It keeps stopping and asking if it should continue</summary><div class="wb-road-body"><p>That's the agent being cautious, and left alone it'll turn twenty minutes into two days.</p>
+<p>All four prompts above already include the fix. If you're running your own variation, add this to the rules:</p>
+<p><em>"Do not stop, and do not ask for confirmation to continue. Continue until the job is done, you have a question regarding your task, or you hit a hard stop you cannot bypass."</em></p></div></details>
 <details class="wb-road"><summary>The agent only got through half of it</summary><div class="wb-road-body"><p>Say <code>continue</code>. Browser agents hit response length limits, not reading limits — it read everything and ran out of room writing it out. If it restarts from the top instead, tell it to resume at a specific row and not repeat earlier ones.</p></div></details>
 <details class="wb-road"><summary>Claude says it can't log into websites</summary><div class="wb-road-body"><p>You've pasted the prompt into regular Claude rather than into the Claude in Chrome side panel. Ordinary Claude has no browser and will always say this.</p>
 <p>Either install the extension using the steps above, or use Option B and do it by hand. Both get you to the same table.</p></div></details>
