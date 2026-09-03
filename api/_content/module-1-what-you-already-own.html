@@ -1,14 +1,35 @@
 <section class="wb wb-lead"><p>A blog isn't a writing project. It's a <strong>retrieval system for work you've already done.</strong></p>
 <p>Every question you answered in your community is a paragraph. Every classroom lesson is a section. Every call is three posts. It's written — it's just trapped somewhere nobody can search, on a platform you don't own.</p>
 <p>That's the real cost of keeping everything in Skool. Not that Skool is bad; it's excellent at what it does. But nothing inside it ranks, nothing works while you sleep, and a member has to already know you exist to reach any of it.</p></section>
-<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Two ways, pick one</h2></div><div class="wb-do-body"><p>This is the part everyone dreads. There's a fast way and a manual way, and the manual way is genuinely fine.</p>
-<p><strong>The fast way</strong> is a browser agent — Claude in Chrome, or whatever you have. You point it at a platform, walk away, and come back to a finished table. Roughly twenty minutes of unattended time across four runs.</p>
+<section class="wb wb-sect"><h2 class="wb-h">First — the thing that trips everyone up</h2><p><strong>Regular Claude cannot browse the internet.</strong> If you paste the inventory prompt into claude.ai and expect it to open your Skool group, it will politely tell you it can't log into websites, and you'll think the course is broken.</p>
+<p>It isn't. The prompt is written for a <em>browser agent</em> — a different thing that runs inside your browser and can actually click, scroll and read pages.</p>
+<p>There are two ways through this module, and the manual one is genuinely fine.</p>
+<p><strong>The fast way</strong> is a browser agent. You point it at a platform, walk away, and come back to a finished table. Roughly twenty minutes of unattended time across four runs.</p>
 <p><strong>The by-hand way</strong> is about an hour with a spreadsheet open. Slower, but you end up knowing your own content library in a way the agent version doesn't give you — and several people have said that hour was the most useful part of the weekend.</p>
-<p><strong>Do it by hand if:</strong> you don't have a browser agent, your platform blocks automation, you have fewer than about thirty pieces, or you just want to see it all yourself.</p>
+<p><strong>Do it by hand if:</strong> you don't want to install anything, you're on a free Claude plan, your platform blocks automation, or you have fewer than about thirty pieces.</p>
 <p><strong>Use the agent if:</strong> you have hundreds of pieces spread across four platforms and the thought of it is what's been stopping you.</p>
-<p>Same output either way — one table, every row filled. Both versions are below.</p>
+<p>Same output either way. Both versions are below.</p>
+<hr /></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">01</span><h2 class="wb-h wb-h-do">Setting up Claude in Chrome</h2></div><div class="wb-do-body"><p>Skip to Option B if you'd rather do this by hand — nothing later in the weekend depends on having the extension.</p>
+<p><strong>What it is.</strong> Claude in Chrome is Anthropic's official browser extension. It puts Claude in a side panel that can see the page you're on, and it can act in your browser — clicking, typing, scrolling, moving between tabs. That's what makes the inventory prompt work.</p>
+<p><strong>Before you start, two requirements:</strong></p>
+<p><strong>It needs a paid Claude plan.</strong> Free accounts can install it but can't use the agent features. Pro is the lowest tier that works.</p>
+<p><strong>It only runs in Google Chrome.</strong> Not Edge, not Brave, not Arc, not Safari, and not on your phone. If you don't use Chrome, you'll need to install it for this.</p>
+<p><strong>Install it:</strong></p>
+<ol>
+<li>Open Google Chrome and go to the Chrome Web Store.</li>
+<li>Search for <strong>Claude</strong>. Check the publisher says <strong>Anthropic</strong> — there are lookalike extensions, and you don't want those anywhere near your accounts.</li>
+<li>Click <strong>Add to Chrome</strong>, then <strong>Add extension</strong> in the pop-up.</li>
+<li>Click the Claude icon in your toolbar and sign in with your Claude account.</li>
+<li>Grant the permissions it asks for. It needs to read and act on pages — that's the whole point of it.</li>
+<li>Pin the icon to your toolbar so you can find it.</li>
+</ol>
+<p><strong>Then, the step people miss:</strong> Claude can only read sites you've explicitly allowed. Open the side panel, go to its settings, and <strong>add each platform you're about to inventory</strong> — your Skool domain, your storefront, your email platform. If you skip this, Claude will tell you it can't see the page even though everything is installed correctly.</p>
+<p><strong>Running the prompts:</strong> open the platform in a tab, open the Claude side panel, paste the prompt, and let it work. Don't switch tabs while it's running.</p>
+<p><strong>Do you need the desktop app?</strong> Not for this. The side panel reads the tab you're on with no extra setup. The desktop app only comes into it if you want Claude working with files on your own computer — which isn't part of this module.</p>
+<p><strong>One safety note.</strong> The extension can act on any site you've allowed. Start with the "ask before acting" setting rather than auto-approve, at least until you've watched it run a few times. And don't allow it on your bank.</p>
 <hr /></div></section>
-<section class="wb wb-sect"><h2 class="wb-h">Option A — let a browser agent do it</h2><p>Run it once per platform.</p>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">Let a browser agent do it</h2></div><div class="wb-do-body"><p>Run it once per platform.</p>
 <p><strong>Run 1 — your community or course platform</strong></p>
 <div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Log into [Skool / Kajabi / Teachable / your platform] and open
 [your group or workspace].
@@ -84,19 +105,19 @@ Read-only. Do not send, schedule, edit, or delete anything. Run
 straight through and give me the complete table at the end.
 </code></pre></div>
 <p>Four runs, roughly twenty minutes of unattended time, and you have every asset you own in one place.</p>
-<hr /></section>
-<section class="wb wb-sect"><h2 class="wb-h">Option B — do it by hand</h2><p>Open a spreadsheet. Six columns: <strong>Source · Title · Topic · Format · Approx length · Key points covered</strong>.</p>
+<hr /></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">Do it by hand</h2></div><div class="wb-do-body"><p>Open a spreadsheet. Six columns: <strong>Source · Title · Topic · Format · Approx length · Key points covered</strong>.</p>
 <p>Then work through these four places in order. Set a timer for fifteen minutes per place and stop when it goes — you can always come back, and a partial inventory is infinitely more useful than an abandoned one.</p>
 <p><strong>1 · Your community or course platform.</strong> Open your classroom and log every lesson as a row. Then your own posts — sort by most-liked and work down; the ones with engagement solved a real problem, which makes them pre-validated article topics. Then any call recordings and any files attached anywhere.</p>
 <p><strong>2 · Your storefront.</strong> Every product, including unlisted, draft and retired ones. Log the name, the price, and two or three bullets on what's actually inside it. Free products and lead magnets count.</p>
 <p><strong>3 · Your existing website, if you have one.</strong> Every page you can reach from the navigation. Note which ones are thin, outdated, or say the same thing as another page.</p>
 <p><strong>4 · Your sent emails.</strong> Open your email platform's sent campaigns and work backwards. Any broadcast you put real thought into is a row. Skip pure promos — mark them PROMO ONLY and move on.</p>
 <p><strong>Two shortcuts that save real time:</strong> don't open every item to summarise it — the title plus what you already remember is enough for most rows, and you can open the ones you're unsure about. And don't judge as you go. Log first, decide later.</p>
-<p><strong>A note on the "key points" column:</strong> two or three bullets is plenty. You're writing enough to recognise the piece in three weeks, not summarising it.</p></section>
-<section class="wb wb-sect"><h2 class="wb-h">Either way — the parts no agent should touch</h2><p><strong>Your DMs.</strong> No agent should be reading your inbox, and you shouldn't hand one the keys. Search your own long replies manually — this is often the best material you have, because explaining something to one stuck person produces clearer writing than "content mode" ever does. Ten minutes.</p>
+<p><strong>A note on the "key points" column:</strong> two or three bullets is plenty. You're writing enough to recognise the piece in three weeks, not summarising it.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">04</span><h2 class="wb-h wb-h-do">The parts no agent should touch</h2></div><div class="wb-do-body"><p><strong>Your DMs.</strong> No agent should be reading your inbox, and you shouldn't hand one the keys. Search your own long replies manually — this is often the best material you have, because explaining something to one stuck person produces clearer writing than "content mode" ever does. Ten minutes.</p>
 <p><strong>Call recordings.</strong> Log the recording as a row. Phase 2 covers pulling transcripts; you don't need them tonight.</p>
-<p><strong>Anything abandoned.</strong> Half-finished courses, drafted modules, the outline in your Notes app.</p></section>
-<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">Put it where Claude can use it</h2></div><div class="wb-do-body"><p>The table is useless sitting in a browser tab.</p>
+<p><strong>Anything abandoned.</strong> Half-finished courses, drafted modules, the outline in your Notes app.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">05</span><h2 class="wb-h wb-h-do">Put it where Claude can use it</h2></div><div class="wb-do-body"><p>The table is useless sitting in a browser tab.</p>
 <p><strong>1. Save it as a file.</strong> <code>content-inventory.md</code>, or a spreadsheet — either works.</p>
 <p><strong>2. Create a Claude Project.</strong> In Claude, click Projects, then Create project. Name it after your brand. Everything you build this weekend happens inside this one project.</p>
 <p><strong>3. Upload the inventory to project knowledge.</strong> Open the project, find project knowledge, upload the file.</p>
@@ -107,6 +128,9 @@ straight through and give me the complete table at the end.
 <div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
 <details class="wb-road"><summary>It's disorganized and not good enough to publish</summary><div class="wb-road-body"><p>It isn't supposed to be. It's raw material. Claude does the structuring and polishing in Phase 2 — that's the point of the build. What Claude can't invent is your actual method and the specific way you explain the thing you're good at. Log it messy.</p></div></details>
 <details class="wb-road"><summary>The agent only got through half of it</summary><div class="wb-road-body"><p>Say <code>continue</code>. Browser agents hit response length limits, not reading limits — it read everything and ran out of room writing it out. If it restarts from the top instead, tell it to resume at a specific row and not repeat earlier ones.</p></div></details>
+<details class="wb-road"><summary>Claude says it can't log into websites</summary><div class="wb-road-body"><p>You've pasted the prompt into regular Claude rather than into the Claude in Chrome side panel. Ordinary Claude has no browser and will always say this.</p>
+<p>Either install the extension using the steps above, or use Option B and do it by hand. Both get you to the same table.</p></div></details>
+<details class="wb-road"><summary>The extension is installed but Claude says it can't see the page</summary><div class="wb-road-body"><p>Site permissions. Claude only reads sites you've explicitly added to its access list. Open the side panel settings and add the platform you're on, then reload the tab.</p></div></details>
 <details class="wb-road"><summary>I don't have a browser agent and don't want one</summary><div class="wb-road-body"><p>Option B. It's an hour and the output is identical. Nothing later in the course assumes you used an agent for this — every other prompt in the weekend runs in normal Claude.</p></div></details>
 <details class="wb-road"><summary>The agent got blocked or logged out mid-run</summary><div class="wb-road-body"><p>Some platforms detect automation and interrupt it. Don't fight it — switch to Option B for that one platform and use the agent for the rest. A mixed inventory is still an inventory.</p></div></details>
 </div>
