@@ -296,15 +296,17 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-certh{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:12px}
     .pv-certname{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:300;color:#2B161B;padding-bottom:12px;border-bottom:1px solid rgba(214,46,115,.3)}
 
-    .pv-close{text-align:center;padding:70px 40px 66px;margin-top:60px;border-radius:8px;
-              background:linear-gradient(145deg,#B9A2E8 0%,#C79AD2 34%,#C87BA6 64%,#A8446B 100%)}
-    .pv-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.8vw,44px);margin:0 0 14px;letter-spacing:-.8px;color:#fff}
-    .pv-clede{font-size:17px;line-height:1.7;color:#FBEEF4;max-width:48ch;margin:0 auto 32px}
+    .pv-close{text-align:center;padding:60px 40px 56px;margin-top:60px;border-radius:10px;
+              border:1px solid rgba(214,46,115,.24);background:#FFFDFB;
+              background-image:linear-gradient(160deg,rgba(203,183,247,.18),rgba(255,138,194,.11) 60%,transparent);
+              box-shadow:0 14px 44px rgba(43,22,27,.09)}
+    .pv-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.8vw,44px);margin:0 0 14px;letter-spacing:-.8px;color:#2B161B}
+    .pv-clede{font-size:17px;line-height:1.7;color:#5A4048;max-width:48ch;margin:0 auto 32px}
     .pv-hero-btn{display:inline-block;margin-bottom:30px}
-    .pv-cnote{font-size:13px;line-height:1.6;color:rgba(251,238,244,.78);margin:20px auto 0;max-width:46ch}
+    .pv-cnote{font-size:13px;line-height:1.6;color:#7A5C63;margin:20px auto 0;max-width:46ch}
     .pv-cnote-alt{margin-top:12px}
-    .pv-cnote-alt a{color:#FBF8F5;text-decoration:underline}
-    .pv-close .btn{background:#FBF8F5;color:#8E2F53;border-color:#FBF8F5}
+    .pv-cnote-alt a{color:var(--pink);text-decoration:underline}
+    
 
     @media(max-width:760px){
       .pv-group{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,169,106,.35)}
