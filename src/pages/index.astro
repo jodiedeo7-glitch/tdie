@@ -129,13 +129,13 @@ const tiers = [
     }
     @media(prefers-reduced-motion:reduce){.we-band-badge{animation:none}}
     @media(max-width:600px){.we-band{padding:0 22px 8px}}
-    .we-band-in{display:grid;grid-template-columns:280px 1fr;gap:0;align-items:stretch;text-decoration:none;color:inherit;
+    .we-band-in{display:grid;grid-template-columns:250px 1fr;align-items:center;gap:0;align-items:stretch;text-decoration:none;color:inherit;
                 border:1px solid rgba(214,46,115,.24);border-radius:8px;overflow:hidden;
                 background:linear-gradient(120deg,rgba(203,183,247,.20),rgba(255,138,194,.16) 60%,rgba(214,46,115,.10));
                 transition:border-color .2s,box-shadow .2s,transform .2s}
     .we-band-in:hover{border-color:#D62E73;box-shadow:0 10px 32px rgba(214,46,115,.16);transform:translateY(-2px)}
-    .we-band-img{overflow:hidden}
-    .we-band-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .we-band-img{overflow:hidden;background:#FBF8F5;display:flex;align-items:center}
+    .we-band-img img{width:100%;height:auto;max-height:100%;object-fit:contain;display:block}
     .we-band-txt{padding:30px 34px}
     .we-band-k{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#D62E73;margin-bottom:12px}
     .we-band-txt h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-.8px;margin:0 0 12px}
