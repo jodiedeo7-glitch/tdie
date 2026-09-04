@@ -1,0 +1,145 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Can you really turn Skool posts into blog articles?",
+    answer: "Yes, and it's usually the fastest content you'll ever publish. A classroom lesson is already a structured explanation of one thing — it has a beginning, a method and a conclusion. What it lacks is the context a stranger needs, because it was written for someone who had already joined. Adding that context is the work, and it's a fraction of writing from scratch."
+  },
+  {
+    question: "Why can't Google find my Skool content?",
+    answer: "Skool classrooms sit behind a login, and search engines can't index pages they can't reach. Community posts are usually gated too. That means every lesson you've written is invisible to anyone who hasn't already joined your group — they have to find you first, then join, then get inside before they see any of it."
+  },
+  {
+    question: "Do I need a separate website if I already have a Skool group?",
+    answer: "You need one if you want strangers to find you. Skool is excellent at holding a community and delivering a course, but it can't bring new people in from search. A website is the front door; the group is the room behind it. Most creators have built the room and skipped the door."
+  },
+  {
+    question: "How much content do I need before starting a blog?",
+    answer: "Less than you think, because you already have it. Most people who audit their own platforms find between forty and eighty pieces they'd forgotten they wrote — lessons, posts, call recordings, old PDFs, long replies in comment threads. Five deep articles built from that material outperform twenty thin ones written from nothing."
+  },
+  {
+    question: "Should I delete my Skool content once it's on my blog?",
+    answer: "No. They serve different jobs. The article ranks and brings strangers in; the lesson sits inside the paid experience with the context, the community and the accountability around it. Publishing an expanded version publicly doesn't devalue the original — it advertises it."
+  },
+];
+---
+
+<ArticleLayout
+  title="How to Turn Your Skool Content Into a Blog (2026 Guide)"
+  description="Your Skool lessons are already blog articles — they're just locked behind a login where Google can't find them. Here's how to move them onto a site you own."
+  slug="turn-skool-content-into-a-blog"
+  category="Blogging"
+  issueNumber="024"
+  readTime="14 Min Read"
+  datePublished="2026-08-30"
+  dateModified="2026-08-30"
+  faqs={faqs}
+  related={[
+    { href: "/learn/complete-blogging-guide", title: "The Complete Blogging Guide" },
+    { href: "/learn/business-that-runs-without-you", title: "How to Build a Business That Runs Without You" },
+    { href: "/learn/complete-pinterest-marketing-guide", title: "The Complete Pinterest Marketing Guide" },
+    { href: "/learn/content-creation-guide", title: "The Content Creation Guide" },
+    { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" },
+    { href: "/learn/email-marketing-for-beginners", title: "Email Marketing for Beginners" },
+  ]}
+>
+
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Blogging</span>
+    <h1 class="reveal">How to Turn Your Skool Content Into a Blog</h1>
+    <p class="sub reveal">Your lessons are already articles. They're just locked behind a login where nobody can find them.</p>
+    <div class="hero-meta reveal"><span>14 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/hero-office-wide-01.jpg" alt="Editorial home office workspace with laptop and notebook, styled for The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#room">The room with one door</a></li>
+          <li><a href="#audit">Find what you already wrote</a></li>
+          <li><a href="#which">Which pieces become articles</a></li>
+          <li><a href="#gap">The context gap</a></li>
+          <li><a href="#expand">Turning a lesson into an article</a></li>
+          <li><a href="#cluster">Building the cluster</a></li>
+          <li><a href="#route">Routing readers back</a></li>
+          <li><a href="#cadence">Keeping it running</a></li>
+        </ol>
+      </div>
+    </nav>
+  </div>
+
+  <div class="chapter reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="room">The room with one door</h2></div>
+  <p class="answer reveal">Everything inside a Skool classroom is invisible to search engines, which means a stranger has to find you, decide to join, and get inside before they can read a single word you've written.</p>
+  <p class="reveal">Count the lessons in your classroom. Now count how many of them a person could find on Google today. For almost everyone, the second number is zero.</p>
+  <p class="reveal">That isn't a flaw in Skool. Skool is doing exactly what it's built for — holding a community, delivering a course, keeping the paid experience together in one place. It was never designed to bring new people in from search, and it doesn't pretend otherwise.</p>
+  <p class="reveal">The problem is that most creators have built the room and skipped the door. Your best lesson — the one members quote back to you — is the single most persuasive thing you own, and it's the one thing no prospective member can see.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>There are four steps between a stranger and your best work: find you, trust you, join, log in. A blog removes three of them. They search a problem, your article answers it, and <em>then</em> they come looking for the room.</p></div>
+
+  <div class="chapter reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="audit">Find what you already wrote</h2></div>
+  <p class="answer reveal">Before writing anything new, audit every platform you've published on — most people find between forty and eighty pieces of usable content they'd forgotten existed.</p>
+  <p class="reveal">This is the step people skip, and skipping it is why blogs stall. Starting from a blank page is a discipline problem. Starting from a list of sixty things you've already explained is an editing problem, and editing is far easier to sustain.</p>
+  <p class="reveal">Open a spreadsheet with five columns — source, title, topic, format, length — and work through these in order.</p>
+  <p class="reveal"><strong>Your classroom.</strong> Every lesson is a row. A single lesson is usually one supporting article; an entire module is usually a pillar.</p>
+  <p class="reveal"><strong>Your own community posts.</strong> Filter to posts by you and sort by engagement. Anything that got real replies solved a real problem, which makes it a pre-validated article topic — the audience already told you it mattered.</p>
+  <p class="reveal"><strong>Your call recordings.</strong> Log the call, not the topics. Forty-five minutes of you explaining something out loud is a transcript, and a transcript is three articles.</p>
+  <p class="reveal"><strong>Your PDFs and freebies.</strong> Including the ones nobody downloaded. A dead lead magnet is usually good content behind a bad landing page.</p>
+  <p class="reveal"><strong>Your long replies.</strong> Comment threads, DMs, the message you typed at midnight to one person who was stuck. This is the material most people overlook and frequently the best writing they've ever done, because explaining something to one confused person produces more clarity than any amount of content-mode planning.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Don't judge as you log. The instinct to filter — <em>that one's too short, that one's too old</em> — is what turns a two-hour audit into a three-week avoidance exercise. Log everything, decide later.</p></div>
+
+  <div class="chapter reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="which">Which pieces become articles</h2></div>
+  <p class="answer reveal">The pieces worth publishing are the ones that answer a question somebody would actually type into a search bar — not the ones you're proudest of.</p>
+  <p class="reveal">Those two categories overlap less than you'd expect. Your favourite lesson might be the philosophical one about mindset; the one that will bring you traffic for two years is the boring procedural one where you explained exactly how you set something up.</p>
+  <p class="reveal">Sort your list against one question: <em>would somebody search for this?</em></p>
+  <p class="reveal">A lesson called "Why consistency matters" is a hard no. Nobody searches that. A lesson called "How I batch a month of content in one sitting" is a yes, because the phrasing already matches the intent.</p>
+  <p class="reveal">Then group what survives into eight to twelve topics. Each topic gets one deep pillar article and a cluster of shorter supporting pieces that link to it. That structure is what makes a search engine read you as an authority on a subject rather than someone who published sixty unrelated posts.</p>
+
+  <div class="chapter reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="gap">The context gap</h2></div>
+  <p class="answer reveal">A classroom lesson assumes the reader already joined, already trusts you, and already read the three lessons before it — a stranger arriving from search has none of that, and closing that gap is the entire job.</p>
+  <p class="reveal">This is the difference between copying a lesson onto a website and actually publishing it. Copy it verbatim and it reads as an excerpt from something larger, because it is one.</p>
+  <p class="reveal">Three things need adding.</p>
+  <p class="reveal"><strong>The premise.</strong> Your members know why this matters. A stranger doesn't. Open by establishing the problem before offering the method.</p>
+  <p class="reveal"><strong>The definitions.</strong> Every term you use casually inside your community — your frameworks, your shorthand, the names you've given things — needs explaining once.</p>
+  <p class="reveal"><strong>The proof.</strong> Inside the group, your authority is assumed; you're the person whose course they bought. On the open internet you're a stranger too. Specificity is what substitutes for credentials — real numbers, real steps, real examples of what went wrong.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>The word count roughly triples in this step, and almost none of the new material is new <em>thinking</em>. It's context you already carry in your head and never had to write down because your audience already had it.</p></div>
+
+  <div class="chapter reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="expand">Turning a lesson into an article</h2></div>
+  <p class="answer reveal">Take the lesson as the spine, add the missing context, structure it into chapters where each one opens with a direct answer, and aim past three thousand words for a pillar.</p>
+  <p class="reveal">Length isn't the point, but it's a useful proxy. Long-form doesn't rank because search engines count words — it ranks because a complete answer takes that long, and a reader who finds a complete answer stops going back to the results page. That behaviour is what gets measured. Padding a thin article to three thousand words does nothing, because the reader still leaves.</p>
+  <p class="reveal">Four things make the difference between an expanded lesson and a real article.</p>
+  <p class="reveal"><strong>Answer-first paragraphs.</strong> Open every section with the answer to the question in its heading, then elaborate. Both readers and search engines want the answer at the top; both punish a paragraph that warms up for four sentences before saying anything.</p>
+  <p class="reveal"><strong>Descriptive subheadings.</strong> Not "Step Three" — the actual thing that happens in step three, phrased the way somebody would ask about it.</p>
+  <p class="reveal"><strong>An FAQ at the end.</strong> Five to seven real questions, answered in full sentences. This is the section most likely to be surfaced directly in search results and in AI answers.</p>
+  <p class="reveal"><strong>A publish date.</strong> Real, never invented. If you don't know it, leave it out rather than guessing.</p>
+
+  <div class="chapter reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="cluster">Building the cluster</h2></div>
+  <p class="answer reveal">One long article doesn't establish authority — a pillar with five to twelve supporting articles linking to it does.</p>
+  <p class="reveal">Supporting articles are shorter, between eight hundred and fifteen hundred words, and each answers one specific question inside the pillar's territory. Each links up to the pillar; the pillar links down to several of them.</p>
+  <p class="reveal">This is where the rest of your audit goes. Those forty leftover rows aren't scraps — they're the cluster, and most of them are already the right length.</p>
+  <p class="reveal">Five supporting articles is the minimum before a topic reads as a topic rather than a page. Eight to twelve is strong. Stop when new ideas start overlapping with ones you've already published, because two articles chasing the same phrase split your own ranking signal and you end up outranked by someone with one good page.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>The number that tells you to abandon a topic: a pillar still sitting under three supporting articles a year after you published it. That's not a backlog. That's a subject you don't actually want to write about.</p></div>
+
+  <div class="chapter reveal"><span class="bignum">07</span><div class="num">Chapter Seven</div><div class="orn"><span class="d"></span></div><h2 id="route">Routing readers back</h2></div>
+  <p class="answer reveal">Every article should offer exactly one free resource and one paid destination, routed automatically rather than written by hand into each page.</p>
+  <p class="reveal">The mistake is asking for everything at once. A page that pushes the newsletter, the community, the course and four related articles gets nothing chosen, because a page with four asks reads as a page with no answer.</p>
+  <p class="reveal">One primary ask per page. On a pillar article, that's the free resource — they've just arrived and don't trust you enough to buy. On a supporting article, it's the pillar, because deepening the visit comes before converting it.</p>
+  <p class="reveal">Two rules make this survivable at scale.</p>
+  <p class="reveal"><strong>Route from the template, not the page.</strong> If you write the links into each article by hand, changing a product URL means editing forty files and missing three. Pass them in as values and the change happens once.</p>
+  <p class="reveal"><strong>Anything you call free must actually be free.</strong> Not free with a membership, not a trial. Someone who clicks "free resource" and lands on a paywall doesn't just leave — they stop believing the rest of the page, and you spent three thousand words earning that trust.</p>
+
+  <div class="chapter reveal"><span class="bignum">08</span><div class="num">Chapter Eight</div><div class="orn"><span class="d"></span></div><h2 id="cadence">Keeping it running</h2></div>
+  <p class="answer reveal">One supporting article a week and one pillar a fortnight is enough to build a substantial site inside a year, and it's slow enough to actually sustain.</p>
+  <p class="reveal">That pace produces roughly fifty supporting articles and twenty-six pillars in twelve months. Nobody needs twenty-six pillars — you need eight to twelve — so the real cadence is even gentler than it sounds.</p>
+  <p class="reveal">What matters more than volume is that each published article keeps working. A post on any platform is dead within days. An article published today is still bringing in strangers in eighteen months, which means the effort accumulates instead of resetting every week.</p>
+  <p class="reveal">And each one multiplies. A single published article contains the raw material for a month of pins, posts and emails — the same thinking, repackaged for every channel you're on, rather than new thinking demanded by each one.</p>
+  <p class="reveal">That's the shift. You stop feeding platforms and start building something that feeds them for you.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>If you fall off for a month, nothing is lost. Your articles keep ranking and your pins keep circulating — which is the entire reason for building assets rather than a feed. Restart at one a week and don't try to catch up.</p></div>
+
+</ArticleLayout>
