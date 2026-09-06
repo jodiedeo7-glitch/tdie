@@ -811,7 +811,12 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
     const rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
     if (!rm) {
-      const px = [...document.querySelectorAll('.silence .img,.plate-photo .img,.chapter-cover .photo,.photo-quote .photo')];
+      // .silence .img is inset in the reading column, not full-bleed, and nothing
+      // clips it (its own overflow:hidden clips its children, not itself). The
+      // scale(1.08) parallax pushed it 3px past the viewport at tablet widths and
+      // put a sideways scroll on every guide page. Parallax now runs only on the
+      // full-bleed photography, which is clipped by its container.
+      const px = [...document.querySelectorAll('.plate-photo .img,.chapter-cover .photo,.photo-quote .photo')];
       px.forEach(el => { el.style.transform = 'scale(1.08)'; el.style.transition = 'transform .1s linear'; });
       let ticking = false;
       const move = () => {

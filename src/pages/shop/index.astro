@@ -233,8 +233,8 @@ const groups = [
         transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
   .flag:hover{border-color:rgba(214,46,115,.4);border-top-color:var(--pink);
               box-shadow:0 18px 44px -30px rgba(43,22,27,.35)}
-  .flag-img{overflow:hidden;background:var(--cream-deep);display:flex;align-items:center}
-  .flag-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .flag-img{overflow:hidden;background:var(--cream);display:flex;align-items:center;justify-content:center}
+  .flag-img img{width:100%;height:auto;object-fit:contain;display:block}
   .flag-body{padding:38px 40px 34px}
   .flag-k{display:block;font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
   .flag-h{font-family:var(--display);font-weight:300;font-size:clamp(28px,3.6vw,42px);line-height:1.04;
@@ -259,7 +259,6 @@ const groups = [
   .flag:hover .flag-go{background:var(--pink)}
   @media(max-width:860px){
     .flag{grid-template-columns:1fr}
-    .flag-img{aspect-ratio:16/10}
     .flag-body{padding:28px 22px 26px}
     .flag-stats{gap:20px}
     .flag-foot{flex-direction:column;align-items:stretch;gap:16px}

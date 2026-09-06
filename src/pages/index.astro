@@ -115,10 +115,15 @@ const tiers = [
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
+    @media(max-width:640px){
+      .h-cta{flex-direction:column;align-items:stretch;gap:12px}
+      .h-cta .btn{width:100%;justify-content:center}
+    }
+
     /* ── Weekend Ecosystem band ── */
     .we-band{max-width:var(--wide);margin:0 auto;padding:0 40px 8px}
     .we-band-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
-    .we-band-badge{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#B08F4E;
+    .we-band-badge{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--gold-deep);
                    font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;
                    border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5);
                    padding:7px 0;border-radius:0;line-height:1;white-space:nowrap;
@@ -201,9 +206,9 @@ const tiers = [
       box-shadow:0 14px 34px -18px rgba(43,22,27,.28)}
     a.entry:hover::before{width:9px}
     a.entry:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
-    a.entry .no{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--ac);text-align:center}
+    a.entry .no{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--choc-soft);text-align:center}
     a.entry .ttl{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.2vw,23px);line-height:1.24}
-    a.entry .ttl span{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:9px;filter:brightness(.82)}
+    a.entry .ttl span{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta);margin-bottom:9px}
     a.entry .rd{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
     @media(max-width:640px){
       a.entry{grid-template-columns:40px 1fr;gap:14px;padding:18px 18px 18px 16px;border-radius:2px}
@@ -260,24 +265,24 @@ const tiers = [
       .tf-frame img{aspect-ratio:3/2;object-position:center 24%}
     }
     .tier{position:relative;display:flex;flex-direction:column;padding:36px 32px 34px;border-radius:2px;
-      background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13)}
+      background:var(--white);border:1px solid rgba(43,22,27,.12);color:var(--choc)}
     .tier.feat{background:var(--white);border-color:rgba(43,22,27,.10);border-top:2px solid var(--gold);
       box-shadow:none}
     .tier .flag{position:absolute;top:-11px;left:30px;background:var(--pink);color:var(--white);
       font-size:10.5px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;padding:6px 0;border-radius:0;background:transparent!important;color:var(--gold-deep)!important;border-bottom:1px solid rgba(200,169,106,.5)}
-    .tier .nm{font-family:var(--display);font-size:26px;font-weight:400;margin-bottom:10px}
-    .tier .pr{font-family:var(--serif);font-size:44px;line-height:1;color:var(--mauve);margin-bottom:12px}
+    .tier .nm{font-family:var(--display);font-size:26px;font-weight:400;margin-bottom:10px;color:var(--choc)}
+    .tier .pr{font-family:var(--display);font-weight:300;font-size:44px;line-height:1;color:var(--choc);letter-spacing:-1.5px;margin-bottom:12px}
     .tier .pr em{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:500;
-      letter-spacing:2px;text-transform:uppercase;color:var(--taupe);margin-top:8px}
-    .tier .ln{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;color:var(--rose);
-      margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.14)}
+      letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta);margin-top:8px}
+    .tier .ln{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:var(--choc-mute);
+      margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(43,22,27,.12)}
     .tier ul{list-style:none;margin:0}
     .tier .btn{margin-top:auto}
-    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.55;color:var(--rose)}
-    .tier li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;background:var(--mauve);transform:rotate(45deg)}
+    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.55;color:var(--choc-soft)}
+    .tier li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;background:var(--pink);transform:rotate(45deg)}
     .tier .tg + .tg{margin-top:22px}
     .tier .tgl{font-size:10.5px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;
-      color:var(--gold);margin:0 0 11px}
+      color:var(--gold-deep);margin:0 0 11px}
     .tier .tg:last-of-type{margin-bottom:30px}
     .tier .tg ul{margin:0}
     .tier .inh{font-family:var(--display);font-size:16px;margin:0 0 24px;padding-bottom:19px;
@@ -285,8 +290,7 @@ const tiers = [
     .tier .inh em{font-family:var(--serif);font-style:italic;opacity:.6}
 
     /* Premium reads as the elevated card through treatment, not bullet count */
-    .tier.inv{background:var(--cream);border-color:var(--gold);color:var(--choc);
-      box-shadow:0 40px 80px -46px rgba(0,0,0,.72)}
+    .tier.inv{background:var(--cream);border-color:rgba(200,169,106,.55);border-top:2px solid var(--gold);color:var(--choc);box-shadow:none}
     .tier.inv .ln{color:var(--choc-soft)}
     .tier.inv .pr{color:var(--pink)}
     .tier.inv li{color:var(--choc-soft)}
