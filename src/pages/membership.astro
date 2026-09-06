@@ -9,6 +9,8 @@ const tiers = [
     name: "Standard",
     price: "$9",
     per: "per month",
+    annual: "$99 a year",
+    annualNote: "nine months' price for twelve",
     flag: "Most join here",
     line: "Everything you need to build the thing and start selling it.",
     cta: "Start your free 7-day trial",
@@ -25,6 +27,8 @@ const tiers = [
     name: "Premium",
     price: "$27",
     per: "per month",
+    annual: "$250 a year",
+    annualNote: "eight months' price for twelve",
     flag: "Written before you sit down",
     line: "Standard is what you build by hand. Premium writes your content month for you.",
     cta: "Join Premium",
@@ -72,6 +76,7 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
           <span class="ms-flag">{t.flag}</span>
           <h3 class="ms-tier-name">{t.name}</h3>
           <div class="ms-price"><span class="ms-price-n">{t.price}</span><span class="ms-price-p">{t.per}</span></div>
+          <div class="ms-annual"><strong>{t.annual}</strong> — {t.annualNote}</div>
           <p class="ms-tier-line">{t.line}</p>
           {t.inherit && <p class="ms-inherit">{t.inherit}, and then</p>}
           {t.groups.map((g) => (
@@ -117,7 +122,7 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
 
   <section class="ms-block ms-close">
     <h2>One woman. One laptop. The entire machine.</h2>
-    <p class="ms-sublead">Seven days free, either tier. Leave from inside the app if it isn't for you.</p>
+    <p class="ms-sublead">Seven days free, either tier. Pay monthly and leave from inside the app whenever you like, or pay for the year and skip a couple of months' worth.</p>
     <div class="ms-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
     <p class="ms-sign">xoxo, Jodie</p>
   </section>
@@ -155,6 +160,10 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
     .ms-tier-dark .ms-price-n{color:#FF8AC2}
     .ms-price-p{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#7A5C63}
     .ms-tier-dark .ms-price-p{color:var(--taupe)}
+    .ms-annual{font-size:14.5px;line-height:1.5;color:#7A5C63;margin:-8px 0 18px;padding-bottom:16px}
+    .ms-annual strong{color:var(--pink);font-weight:600}
+    .ms-tier-dark .ms-annual{color:var(--taupe)}
+    .ms-tier-dark .ms-annual strong{color:#FF8AC2}
     .ms-tier-line{font-size:16px;line-height:1.65;color:#57404A;margin:0 0 26px;padding-bottom:24px;border-bottom:1px solid rgba(43,22,27,.12)}
     .ms-tier-dark .ms-tier-line{color:var(--taupe);border-bottom-color:rgba(251,248,245,.16)}
     .ms-inherit{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:#FF8AC2;margin:0 0 22px}
