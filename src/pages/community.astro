@@ -1,26 +1,88 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+
+const SKOOL = "https://www.skool.com/thedigitalincomeedit";
+
+const room = [
+  { t: "Daily Prompts", p: "A prompt every day, written for the thing you're actually building — not a generic list you'll scroll past.", ac: "#CBB7F7" },
+  { t: "Start-here trainings", p: "The courses that turn a guide you've read into a thing that exists. Ordered, so you always know what's next.", ac: "#CF80C2" },
+  { t: "The Value Vault", p: "The guide collection, browsable à la carte. Premium unlocks all of it.", ac: "#D4498D" },
+  { t: "Women one step ahead", p: "Not gurus. Women who solved last month what you're stuck on this month, and who are still in the room to ask.", ac: "#D62E73" },
+];
 ---
 <PageLayout
+  wide
   title="Join the Community"
   description="Join The Digital Income Edit™ — daily AI prompts, start-here trainings, and women exactly one step ahead of you. Free for 7 days."
 >
-  <div class="page-eyebrow">The Room</div>
-  <h1>Join the Community</h1>
-  <p class="lede">A room full of women exactly one step ahead of you.</p>
+  <section class="cm-hero">
+    <div class="page-eyebrow">The room</div>
+    <h1>Reading it is one thing.<br /><em>Building it is another.</em></h1>
+    <p class="lede">A room full of women exactly one step ahead of you — and the trainings, prompts and templates to actually do the work.</p>
+    <div class="cm-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
+    <p class="cm-microcopy">Seven days free. $9 a month after that, or leave from inside the app.</p>
+  </section>
 
-  <p>Reading this guide is one thing. Actually building it is another — and that's easier with a room full of people doing it alongside you.</p>
+  <section class="cm-block cm-thesis">
+    <h2>What's actually in there</h2>
+    <div class="cm-grid">
+      {room.map((r) => (
+        <div class="cm-card" style={`--ac:${r.ac}`}>
+          <h3>{r.t}</h3>
+          <p>{r.p}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 
-  <p>The Digital Income Edit™ membership gives you:</p>
-  <ul>
-    <li>Daily AI prompts and start-here trainings</li>
-    <li>A feed of women exactly one step ahead of you</li>
-    <li>A place to actually <em>do</em> the work in this guide, instead of just reading it</li>
-  </ul>
+  <section class="cm-block">
+    <h2>Why a room and not a course</h2>
+    <p class="cm-lead">Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
+    <p class="cm-hit">It is much harder to quit in front of people who are still going.</p>
+  </section>
 
-  <p>It costs nothing, and it's the single best place to turn what you've just read into something real.</p>
+  <section class="cm-block cm-close">
+    <h2>Seven days, free</h2>
+    <p class="cm-sublead">Come in, look around, use the prompts, take a training. If it isn't for you, leave from inside the app before the week is out.</p>
+    <div class="cm-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
+    <p class="cm-microcopy cm-microcopy-c">Two paid tiers, $9 and $27 a month. <a href="/membership">See what's in each →</a></p>
+  </section>
 
-  <a class="btn" href="https://www.skool.com/thedigitalincomeedit" style="margin-top:16px">Start your free 7-day trial <span class="a">→</span></a>
+  <p class="cm-back"><a href="/learn">← Back to The Library</a></p>
 
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+  <style>
+    .cm-hero{text-align:center;padding:10px 0 52px}
+    .cm-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
+    .cm-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7.2vw,76px);line-height:1.02;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
+    .cm-hero h1 em{font-style:italic;color:var(--pink)}
+    .cm-hero .lede{max-width:610px;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
+    .cm-cta-row{display:flex;justify-content:center}
+    .cm-microcopy{font-size:13.5px;color:var(--taupe-deep);margin:18px 0 0}
+    .cm-microcopy-c{text-align:center}
+    .cm-microcopy a{color:var(--pink);font-weight:500}
+
+    .cm-block{padding:74px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .cm-thesis{border-top:none;padding-top:0}
+    .cm-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
+    .cm-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:#3B2228;text-align:center}
+    .cm-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:620px;margin:0 auto 32px;text-align:center}
+    .cm-hit{font-family:"Cormorant Garamond",serif;font-size:26px;font-style:italic;line-height:1.55;color:var(--pink);
+            padding:24px 0 0;margin:30px auto 0;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:560px}
+
+    .cm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+    .cm-card{padding:28px;border-radius:6px;
+             background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
+             border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .cm-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0 0 11px;line-height:1.2;color:#2B161B}
+    .cm-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+
+    .cm-close{text-align:center}
+    .cm-back{margin-top:64px;text-align:center}
+    .cm-back a{color:var(--pink);font-weight:500}
+
+    @media(max-width:860px){
+      .cm-grid{grid-template-columns:1fr}
+      .cm-block{padding:54px 0}
+    }
+  </style>
 </PageLayout>
