@@ -6,31 +6,72 @@ const PRICE = "$77";
 const NOTE = "one-time";
 const DEST = "https://links.thedigitalincomeedit.com/shop/0454a1a0-ec6d-43c5-a90d-0ceb38b4d8c9";
 const AFF = true;
+
+const modules = [
+  { n: "01", t: "Know Your Message", p: "What you're actually launching, why a small audience isn't a small launch, and messaging that converts." },
+  { n: "02", t: "Target Your Audience", p: "Audience clarity, building a faceless persona, and storylines that make someone feel seen." },
+  { n: "03", t: "The Launch Checklist", p: "What a real launch looks like start to finish, and a 30-day checklist so nothing gets missed." },
+  { n: "04", t: "The Breadcrumbing Phase", p: "Warming an audience before you ever pitch — including how to breadcrumb a product you didn't create." },
+  { n: "05", t: "Time to Launch", p: "Your content game plan, the wrap-up phase, and what to do after the sale." },
+  { n: "06", t: "Bonus — launching from zero", p: "How to run a launch on a brand-new account with no followers yet." },
+];
 ---
-<PageLayout title={`${NAME} — The Digital Income Edit™`} description="A launch framework built for faceless brands.">
+<PageLayout
+  title={`${NAME} — The Digital Income Edit™`}
+  description="A messaging and launch framework for faceless brands — five modules on positioning a digital product so it actually sells. Not mine; affiliate."
+>
   <section class="go">
     <div class="page-eyebrow">{AFF ? "Recommended · Not mine" : "From the shop"}</div>
-    <h1>{NAME}</h1>
-    <p class="go-lede">A launch framework built for faceless brands.</p>
+    <h1>The Faceless Launch Formula</h1>
+    <p class="go-lede">For the product you already made that nobody is buying — because the problem was never the product.</p>
 
     <div class="go-meta">
       <span class="go-price">{PRICE}</span>
-      {NOTE && <span class="go-note">{NOTE}</span>}
+      <span class="go-note">{NOTE}</span>
     </div>
 
     <div class="go-body">
-      <p>A launch framework built for faceless brands.</p>
+      <p>Most digital products don't fail on quality. They fail because the woman who made it never told anyone clearly enough who it was for, or what changes after they buy it. So it sits in a store, linked once, and goes quiet.</p>
+      <p>This is Nancy Ayala's framework for fixing that. Five modules and sixteen lessons on positioning and messaging, plus the launch structure she runs each time she releases something — warming an audience first, then launching into people who already understand why it's for them.</p>
+      <p>It works on something you built yourself and on something you're reselling as an affiliate, which is unusual — most launch training assumes the product is yours.</p>
+      <p>It isn't mine. I earn a commission if you buy through this page, and the price is set by the owner and can change without notice.</p>
+    </div>
+
+    <div class="go-mods">
+      <span class="go-mods-t">What's inside</span>
+      {modules.map((m) => (
+        <div class="go-mod">
+          <span class="go-mod-n">{m.n}</span>
+          <div>
+            <span class="go-mod-h">{m.t}</span>
+            <p>{m.p}</p>
+          </div>
+        </div>
+      ))}
+      <p class="go-mods-extra">Also included: a 30-day launch map and checklist, a clarity worksheet, her seven-phase launch outline, a content game plan, and 70% resell rights on the product itself.</p>
+    </div>
+
+    <div class="go-good">
+      <div>
+        <span class="go-good-t">Good fit if</span>
+        <p>You have something to sell — yours or an affiliate offer — and it isn't moving. You suspect the product is the problem. It usually isn't.</p>
+      </div>
+      <div>
+        <span class="go-good-t">Not a fit if</span>
+        <p>You don't have an offer yet. Build the thing first; this teaches you to launch it, not to create it.</p>
+      </div>
     </div>
 
     {AFF && (
       <p class="go-disc">
         Affiliate link — I earn a commission if you buy through it, at no cost to you.
         I only recommend things I use. The price is set by the owner and can change without notice.
+        It's a digital product and the seller does not offer refunds, so read the page before you buy.
       </p>
     )}
 
     <a class="btn go-btn" href={DEST} rel={AFF ? "sponsored noopener" : "noopener"}>
-      {PRICE === "$0" ? `Get ${NAME} free` : `Get ${NAME} — ${PRICE}`} <span class="a">→</span>
+      Get The Faceless Launch Formula — {PRICE} <span class="a">→</span>
     </a>
 
     <p class="go-back"><a href="/shop">← Everything in the shop</a></p>
@@ -38,13 +79,22 @@ const AFF = true;
 
   <style>
     .go{max-width:660px;margin:0 auto;padding:10px 0 70px}
-    .go h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5.2vw,48px);line-height:1.06;letter-spacing:-1px;margin:0 0 20px;color:#2B161B}
-    .go-lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.55;color:#5A4048;margin:0 0 26px}
-    .go-meta{display:flex;align-items:baseline;gap:12px;padding-bottom:24px;margin-bottom:28px;border-bottom:1px solid rgba(43,22,27,.13)}
-    .go-price{font-family:"Fraunces",serif;font-size:32px;font-weight:300;color:var(--pink);letter-spacing:-1px}
+    .go h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(32px,5.4vw,52px);line-height:1.04;letter-spacing:-1px;margin:0 0 20px;color:#2B161B}
+    .go-lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.55;color:#5A4048;margin:0 0 26px}
+    .go-meta{display:flex;align-items:baseline;gap:12px;padding-bottom:26px;margin-bottom:30px;border-bottom:1px solid rgba(43,22,27,.13)}
+    .go-price{font-family:"Fraunces",serif;font-size:34px;font-weight:300;color:var(--pink);letter-spacing:-1px}
     .go-note{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#7A5C63}
     .go-body p{font-size:17.5px;line-height:1.8;margin:0 0 18px;color:#3B2228}
-    .go-good{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:32px 0 28px}
+
+    .go-mods{margin:34px 0 30px;padding:28px 30px 24px;border-radius:6px;background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
+    .go-mods-t{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+    .go-mod{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(43,22,27,.09)}
+    .go-mod-n{font-size:11px;letter-spacing:1.4px;color:var(--taupe-deep);flex:none;min-width:22px}
+    .go-mod-h{display:block;font-family:"Fraunces",serif;font-size:18px;color:#2B161B;margin-bottom:4px}
+    .go-mod p{font-size:15px;line-height:1.6;margin:0;color:#57404A}
+    .go-mods-extra{font-size:15px;line-height:1.7;margin:18px 0 0;padding-top:18px;border-top:1px solid rgba(43,22,27,.09);color:#57404A}
+
+    .go-good{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}
     .go-good>div{padding:22px 24px;border-radius:6px;background:rgba(255,138,194,.1);border:1px solid rgba(214,46,115,.2)}
     .go-good>div:last-child{background:rgba(43,22,27,.035);border-color:rgba(43,22,27,.12)}
     .go-good-t{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:9px}
@@ -56,6 +106,6 @@ const AFF = true;
     .go-back{margin-top:34px;font-size:13px;letter-spacing:.4px}
     .go-back a{color:#7A5C63;text-decoration:none}
     .go-back a:hover{color:var(--pink)}
-    @media(max-width:640px){.go-good{grid-template-columns:1fr}}
+    @media(max-width:640px){.go-good{grid-template-columns:1fr}.go-mods{padding:24px 22px}}
   </style>
 </PageLayout>
