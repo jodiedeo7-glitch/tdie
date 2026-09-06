@@ -1,16 +1,17 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
 ---
-<PageLayout
+<ResourceLayout
   title="The Evergreen Blog Kit — Free Download"
   description="Free Blogging kit from The Digital Income Edit. How to write the article that keeps getting found for years, and the one-article-many-assets loop that make"
+  eyebrow="Free Resource · Blogging"
+  heading="The Evergreen Blog Kit"
+  lede="How to write the article that keeps getting found for years, and the one-article-many-assets loop that makes a single post work all year."
+  guideHref="/learn/complete-blogging-guide"
+  guideLabel="The Complete Blogging Guide"
 >
-  <div class="page-eyebrow">Free Resource · Blogging</div>
-  <h1>The Evergreen Blog Kit</h1>
-  <p class="lede">How to write the article that keeps getting found for years, and the one-article-many-assets loop that makes a single post work all year.</p>
-
-  <p>Blogging isn't dead — it changed jobs. It stopped being a diary and became the most durable traffic asset a small business can build. This kit shows you how to write the kind that keeps paying.</p>
+<p>Blogging isn't dead — it changed jobs. It stopped being a diary and became the most durable traffic asset a small business can build. This kit shows you how to write the kind that keeps paying.</p>
 
   <p><strong>Inside the kit:</strong></p>
   <ul>
@@ -28,7 +29,4 @@ import FreebieForm from "../../components/FreebieForm.astro";
       <li><strong>Ready for more?</strong> The full content and systems library for turning a blog into a business that compounds. $9/month. <a href="/membership">Membership Premium →</a></li>
     </ul>
   </div>
-
-  <p style="margin-top:48px"><a href="/learn/complete-blogging-guide" style="color:var(--pink);font-weight:500">Read the full guide →</a></p>
-  <p style="margin-top:12px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
-</PageLayout>
+</ResourceLayout>

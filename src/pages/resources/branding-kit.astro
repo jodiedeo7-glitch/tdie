@@ -1,16 +1,17 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
 ---
-<PageLayout
+<ResourceLayout
   title="The Brand Clarity Kit — Free Download"
   description="Free Branding kit from The Digital Income Edit. The one-sentence brand promise that makes every colour and font decision easy — and the one-page brand doc "
+  eyebrow="Free Resource · Branding"
+  heading="The Brand Clarity Kit"
+  lede="The one-sentence brand promise that makes every colour and font decision easy — and the one-page brand doc that keeps a business of one consistent."
+  guideHref="/learn/branding-guide"
+  guideLabel="The Branding Guide"
 >
-  <div class="page-eyebrow">Free Resource · Branding</div>
-  <h1>The Brand Clarity Kit</h1>
-  <p class="lede">The one-sentence brand promise that makes every colour and font decision easy — and the one-page brand doc that keeps a business of one consistent.</p>
-
-  <p>A brand isn't a colour palette. It's a promise, kept so consistently people start to expect it. This kit gets you the promise first — so the visuals finally have a job to do.</p>
+<p>A brand isn't a colour palette. It's a promise, kept so consistently people start to expect it. This kit gets you the promise first — so the visuals finally have a job to do.</p>
 
   <p><strong>Inside the kit:</strong></p>
   <ul>
@@ -28,7 +29,4 @@ import FreebieForm from "../../components/FreebieForm.astro";
       <li><strong>Ready for more?</strong> The module that walks you from a one-sentence promise to a finished, written brand identity. $9/month. <a href="https://www.skool.com/thedigitalincomeedit/classroom/81c6bb56?md=c19864e06b4d41db945a01ce66f806b2">Brand Building & Brand Identity — Membership Premium →</a></li>
     </ul>
   </div>
-
-  <p style="margin-top:48px"><a href="/learn/branding-guide" style="color:var(--pink);font-weight:500">Read the full guide →</a></p>
-  <p style="margin-top:12px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
-</PageLayout>
+</ResourceLayout>

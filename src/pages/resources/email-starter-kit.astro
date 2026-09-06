@@ -1,16 +1,17 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
 ---
-<PageLayout
+<ResourceLayout
   title="The Email List Starter Kit — Free Download"
   description="Free Email Marketing kit from The Digital Income Edit. How to start a list with zero subscribers, and the welcome sequence that turns a new signup into som"
+  eyebrow="Free Resource · Email Marketing"
+  heading="The Email List Starter Kit"
+  lede="How to start a list with zero subscribers, and the welcome sequence that turns a new signup into someone who trusts you — while you sleep."
+  guideHref="/learn/email-marketing-guide"
+  guideLabel="Email Marketing for Beginners"
 >
-  <div class="page-eyebrow">Free Resource · Email Marketing</div>
-  <h1>The Email List Starter Kit</h1>
-  <p class="lede">How to start a list with zero subscribers, and the welcome sequence that turns a new signup into someone who trusts you — while you sleep.</p>
-
-  <p>Every platform you build on is rented. Your email list is the one audience no algorithm can take from you. This kit gets you started today — even at zero subscribers, especially at zero.</p>
+<p>Every platform you build on is rented. Your email list is the one audience no algorithm can take from you. This kit gets you started today — even at zero subscribers, especially at zero.</p>
 
   <p><strong>Inside the kit:</strong></p>
   <ul>
@@ -28,7 +29,4 @@ import FreebieForm from "../../components/FreebieForm.astro";
       <li><strong>Ready for more?</strong> Welcome and nurture sequences, ready to adapt — the highest-leverage emails in your business, drafted. $9/month. <a href="/membership">The Email Edit™ — Membership Premium →</a></li>
     </ul>
   </div>
-
-  <p style="margin-top:48px"><a href="/learn/email-marketing-guide" style="color:var(--pink);font-weight:500">Read the full guide →</a></p>
-  <p style="margin-top:12px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
-</PageLayout>
+</ResourceLayout>

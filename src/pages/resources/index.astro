@@ -1,32 +1,114 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+
+const featured = [
+  { t: "The Faceless Income Blueprint™", p: "The entire faceless income machine on one page — the two-engine framework, a way to diagnose your own bottleneck, and the order to build in.", href: "/resources/faceless-income-blueprint", tag: "Free guide", ac: "#CBB7F7" },
+  { t: "The $10/Day Traffic Machine — Starter Map", p: "The whole paid-traffic pipeline on one page. Four boxes you fill in before you spend a cent.", href: "/resources/starter-map", tag: "Free guide", ac: "#CF80C2" },
+  { t: "The Pinterest Keyword Planner", p: "Six printable pages that take you from seed words to a bank of 30–50 verified keywords, grouped into your future boards.", href: "/resources/pinterest-keyword-planner", tag: "Free planner", ac: "#D62E73" },
+];
+
+const kits = [
+  { t: "The AI Starter Kit", c: "AI", href: "/resources/ai-starter-kit" },
+  { t: "The Pinterest Traffic Kit", c: "Pinterest", href: "/resources/pinterest-traffic-kit" },
+  { t: "The First Product Kit", c: "Digital Products", href: "/resources/digital-products-kit" },
+  { t: "The Email List Starter Kit", c: "Email Marketing", href: "/resources/email-starter-kit" },
+  { t: "The Affiliate Starter Kit", c: "Affiliate Marketing", href: "/resources/affiliate-starter-kit" },
+  { t: "The Evergreen Blog Kit", c: "Blogging", href: "/resources/blogging-kit" },
+  { t: "The Content Creation Kit", c: "Content Creation", href: "/resources/content-creation-kit" },
+  { t: "The Brand Clarity Kit", c: "Branding", href: "/resources/branding-kit" },
+  { t: "The Automation Starter Kit", c: "Automation", href: "/resources/automation-kit" },
+  { t: "The Systems Starter Kit", c: "Business Systems", href: "/resources/business-systems-kit" },
+  { t: "The Passive Income Starter Kit", c: "Passive Income", href: "/resources/passive-income-kit" },
+  { t: "The Creator to CEO Kit", c: "Mindset", href: "/resources/mindset-kit" },
+];
 ---
 <PageLayout
+  wide
   title="Free Resources"
-  description="Free guides, checklists, and starter tools from The Digital Income Edit™."
+  description="Free guides, kits, checklists and starter tools from The Digital Income Edit™ — one for every pillar in the library."
 >
-  <div class="page-eyebrow">The Library</div>
-  <h1>Free Resources</h1>
-  <p class="lede">Practical, no-fluff starting points — free, and built to move you one real step forward.</p>
+  <section class="rx-hero">
+    <div class="page-eyebrow">Free resources</div>
+    <h1>Practical starting points.<br /><em>All of them free.</em></h1>
+    <p class="rx-lede">No fluff, no drip sequence to sit through. Each one moves you a single real step forward.</p>
+  </section>
 
-  <div style="border-top:1px solid var(--gray);margin-top:40px">
-    <a href="/resources/faceless-income-blueprint" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">The Faceless Income Blueprint™</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">Free Guide</span>
-    </a>
-    <a href="/resources/starter-map" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">$10/Day Traffic Machine — Starter Map</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">Free Guide</span>
-    </a>
-    <a href="/resources/pinterest-keyword-planner" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">Pinterest Keyword Planner</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">Free Tool</span>
-    </a>
-    <a href="https://www.skool.com/thedigitalincomeedit/about" style="display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--gray);text-decoration:none;color:inherit">
-      <span style="font-family:'Fraunces',serif;font-size:22px">The Community on Skool</span>
-      <span style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--taupe-deep)">Free · Join</span>
-    </a>
-  </div>
+  <section class="rx-block rx-first">
+    <h2>Start with one of these</h2>
+    <div class="rx-featured">
+      {featured.map((f) => (
+        <a class="rx-feat" href={f.href} style={`--ac:${f.ac}`}>
+          <span class="rx-tag">{f.tag}</span>
+          <h3>{f.t}</h3>
+          <p>{f.p}</p>
+          <span class="rx-go">Get it →</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+  <section class="rx-block">
+    <h2>One kit per pillar</h2>
+    <p class="rx-sublead">Twelve guides in the library, twelve kits to go with them. Take the one that matches what you're stuck on.</p>
+    <div class="rx-kits">
+      {kits.map((k) => (
+        <a class="rx-kit" href={k.href}>
+          <span class="rx-kit-c">{k.c}</span>
+          <span class="rx-kit-t">{k.t}</span>
+          <span class="rx-kit-go">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="rx-block rx-close">
+    <h2>Then build it with people</h2>
+    <p class="rx-sublead">Reading is one thing. The room is where it gets built — daily prompts, start-here trainings, and women one step ahead of you.</p>
+    <div class="rx-cta"><a class="btn" href="/community">See the community <span class="a">→</span></a></div>
+  </section>
+
+  <p class="rx-back"><a href="/learn">← Back to The Library</a></p>
+
+  <style>
+    .rx-hero{text-align:center;padding:10px 0 48px}
+    .rx-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
+    .rx-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.6vw,70px);line-height:1.03;letter-spacing:-1.8px;margin:0 0 24px;color:#2B161B}
+    .rx-hero h1 em{font-style:italic;color:var(--pink)}
+    .rx-lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
+
+    .rx-block{padding:72px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .rx-first{border-top:none;padding-top:0}
+    .rx-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,46px);line-height:1.05;margin:0 0 20px;letter-spacing:-1px;color:#2B161B;text-align:center}
+    .rx-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:620px;margin:0 auto;text-align:center}
+
+    .rx-featured{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .rx-feat{display:flex;flex-direction:column;gap:10px;padding:30px 28px 26px;border-radius:8px;text-decoration:none;
+             background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
+             border:1px solid color-mix(in srgb,var(--ac) 46%,transparent);transition:transform .2s var(--ease),border-color .2s}
+    .rx-feat:hover{transform:translateY(-3px);border-color:var(--pink)}
+    .rx-tag{font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#7A5C63}
+    .rx-feat h3{font-family:"Fraunces",serif;font-weight:400;font-size:22px;line-height:1.2;margin:0;color:#2B161B}
+    .rx-feat p{font-size:15.5px;line-height:1.65;margin:0;color:#57404A}
+    .rx-go{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-top:auto;padding-top:8px}
+
+    .rx-kits{margin-top:38px;border-top:1px solid rgba(43,22,27,.12)}
+    .rx-kit{display:grid;grid-template-columns:200px 1fr 24px;align-items:baseline;gap:18px;padding:20px 6px;
+            border-bottom:1px solid rgba(43,22,27,.1);text-decoration:none;color:inherit;transition:padding-left .2s var(--ease),background .2s}
+    .rx-kit:hover{padding-left:16px;background:rgba(214,46,115,.04)}
+    .rx-kit-c{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44}
+    .rx-kit-t{font-family:"Fraunces",serif;font-weight:400;font-size:21px;color:#2B161B;line-height:1.25}
+    .rx-kit-go{color:var(--pink);font-size:16px;text-align:right}
+
+    .rx-close{text-align:center}
+    .rx-cta{display:flex;justify-content:center;margin-top:30px}
+    .rx-back{margin-top:62px;text-align:center}
+    .rx-back a{color:var(--pink);font-weight:500}
+
+    @media(max-width:900px){.rx-featured{grid-template-columns:1fr}}
+    @media(max-width:640px){
+      .rx-kit{grid-template-columns:1fr 24px;gap:4px 12px}
+      .rx-kit-c{grid-column:1 / -1}
+      .rx-block{padding:52px 0}
+    }
+  </style>
 </PageLayout>

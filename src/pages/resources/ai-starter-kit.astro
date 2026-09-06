@@ -1,16 +1,17 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
 ---
-<PageLayout
+<ResourceLayout
   title="The AI Starter Kit — Free Download"
   description="Free AI Starter Kit: the four jobs to hand AI first, the four-part brief that gets usable results, and a plug-and-play prompt to run today. Built for a business of one."
+  eyebrow="Free Resource · AI"
+  heading="The AI Starter Kit"
+  lede="The four jobs to hand AI first, and the exact brief that turns a generic answer into one you can actually use — in a single page you'll keep open all week."
+  guideHref="/learn/ultimate-guide-to-ai"
+  guideLabel="The Ultimate Beginner's Guide to AI"
 >
-  <div class="page-eyebrow">Free Resource · AI</div>
-  <h1>The AI Starter Kit</h1>
-  <p class="lede">The four jobs to hand AI first, and the exact brief that turns a generic answer into one you can actually use — in a single page you'll keep open all week.</p>
-
-  <p>Most women open an AI model, type a vague request, get back something forgettable, and quietly decide the tool is overhyped. The tool isn't the problem. The brief is. This kit fixes the brief.</p>
+<p>Most women open an AI model, type a vague request, get back something forgettable, and quietly decide the tool is overhyped. The tool isn't the problem. The brief is. This kit fixes the brief.</p>
 
   <p><strong>Inside the kit:</strong></p>
   <ul>
@@ -28,7 +29,4 @@ import FreebieForm from "../../components/FreebieForm.astro";
       <li><strong>Want the shortcut past the blank page?</strong> The <em>8 Claude Prompts That Save Me 12 Hours a Week</em> pack gives you the exact briefs I run, ready to paste. $5, one-time. <a href="/go/8-claude-prompts-that-save-me-12-hours-a-week">Get the prompt pack →</a></li>
     </ul>
   </div>
-
-  <p style="margin-top:48px"><a href="/learn/ultimate-guide-to-ai" style="color:var(--pink);font-weight:500">Read the full AI guide →</a></p>
-  <p style="margin-top:12px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
-</PageLayout>
+</ResourceLayout>
