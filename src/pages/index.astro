@@ -124,11 +124,6 @@ const tiers = [
                    padding:7px 0;border-radius:0;line-height:1;white-space:nowrap;
                    box-shadow:none}
     .we-band-badge::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);flex:none}
-    @keyframes weGlow{
-      0%,100%{box-shadow:0 0 0 0 rgba(214,46,115,.38)}
-      50%{box-shadow:0 0 0 7px rgba(214,46,115,0)}
-    }
-    @media(prefers-reduced-motion:reduce){.we-band-badge{animation:none}}
     @media(max-width:600px){.we-band{padding:0 22px 8px}}
     .we-band-in{display:grid;grid-template-columns:250px 1fr;align-items:center;gap:0;align-items:stretch;text-decoration:none;color:inherit;
                 border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;overflow:hidden;
@@ -205,7 +200,7 @@ const tiers = [
     a.entry .ttl span{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:9px;filter:brightness(.82)}
     a.entry .rd{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
     @media(max-width:640px){
-      a.entry{grid-template-columns:40px 1fr;gap:14px;padding:18px 18px 18px 16px;border-radius:13px}
+      a.entry{grid-template-columns:40px 1fr;gap:14px;padding:18px 18px 18px 16px;border-radius:2px}
       a.entry .no{font-size:23px}
       a.entry .rd{display:none}
     }
@@ -226,7 +221,7 @@ const tiers = [
     .sh .note{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:16px}
     .sh p{font-size:15px;line-height:1.62;color:var(--choc-soft);margin-bottom:22px;flex:1}
     .sh .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
-    .sh .aff{display:inline-block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);border:1px solid var(--gold);border-radius:100px;padding:3px 10px;margin-bottom:14px}
+    .sh .aff{display:inline-block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);border:0;border-bottom:1px solid rgba(200,169,106,.5);border-radius:0;padding:3px 0;margin-bottom:16px;letter-spacing:2.6px}
     .disclose{max-width:60ch;margin:38px auto 0;text-align:center;font-size:13.5px;line-height:1.7;color:var(--taupe-deep)}
 
     /* ---------- MEMBERSHIP ---------- */
