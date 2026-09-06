@@ -202,7 +202,7 @@ const problems = [
 
     /* ── stat strip ── */
     .bm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(43,22,27,.12);
-              border:1px solid rgba(43,22,27,.12);border-radius:6px;overflow:hidden}
+              border:1px solid rgba(43,22,27,.12);border-radius:2px;overflow:hidden}
     .bm-stat{background:#FBF8F5;padding:26px 18px;text-align:center}
     .bm-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(34px,4.6vw,50px);font-weight:300;line-height:1;color:var(--ac);letter-spacing:-1.5px}
     .bm-stat-l{display:block;font-size:10px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-top:12px}
@@ -219,31 +219,31 @@ const problems = [
     /* ── cards ── */
     .bm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
     .bm-grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-    .bm-card{padding:28px 28px 26px;border-radius:6px;
-             background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
-             border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .bm-card{padding:28px 28px 26px;border-radius:2px;
+             background:#FFFDFB;
+             border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac)}
     .bm-card-plain{background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
     .bm-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:#2B161B}
     .bm-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
 
     /* ── phases ── */
     .bm-phases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px}
-    .bm-phase{position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);border-radius:6px;padding:26px 28px 24px;
-              background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 22%,transparent),color-mix(in srgb,var(--ac) 5%,transparent))}
+    .bm-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.10);border-radius:2px;padding:26px 30px 24px;
+              background:#FFFDFB}
     .bm-phase:last-child:nth-child(odd){grid-column:1 / -1}
-    .bm-phase-edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ac)}
-    .bm-phase-head{display:flex;gap:16px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--ac) 55%,transparent)}
+    .bm-phase-edge{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac)}
+    .bm-phase-head{display:flex;gap:16px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid rgba(200,169,106,.45)}
     .bm-phase-n{font-family:"Fraunces",serif;font-size:46px;font-weight:300;line-height:.86;color:var(--ac);letter-spacing:-2px;flex-shrink:0;min-width:52px}
     .bm-phase-when{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:6px}
     .bm-phase-t{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;line-height:1.12;color:#2B161B}
     .bm-phase-s{font-size:15.5px;line-height:1.62;color:#5A4048;margin:0 0 14px}
     .bm-phase-mods{list-style:none;padding:0;margin:0}
-    .bm-phase-mods li{font-size:15px;line-height:1.45;padding:6px 0;color:#2B161B;border-top:1px solid color-mix(in srgb,var(--ac) 30%,transparent)}
+    .bm-phase-mods li{font-size:15px;line-height:1.45;padding:7px 0;color:#2B161B;border-top:1px solid rgba(43,22,27,.08)}
 
     /* ── waitlist ── */
     .bm-waitlist{scroll-margin-top:90px}
-    .bm-capture{max-width:520px;margin:38px auto 0;background:linear-gradient(160deg,rgba(203,183,247,.20),rgba(214,46,115,.07));
-                border:1px solid rgba(214,46,115,.3);border-radius:8px;padding:34px 32px}
+    .bm-capture{max-width:520px;margin:38px auto 0;background:#FFFDFB;
+                border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;padding:36px 34px}
     .bm-field{margin-bottom:20px}
     .bm-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-bottom:9px}
     .bm-capture input,.bm-capture select{width:100%;padding:14px 16px;border:1px solid rgba(43,22,27,.18);border-radius:5px;

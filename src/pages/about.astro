@@ -108,9 +108,9 @@ const machine = [
 
     /* ── the two orders ── */
     .ab-orders{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .ab-order{border-radius:8px;padding:32px 30px 28px}
-    .ab-order-dim{background:rgba(43,22,27,.035);border:1px solid rgba(43,22,27,.12)}
-    .ab-order-live{background:linear-gradient(165deg,rgba(203,183,247,.22),rgba(214,46,115,.08));border:1px solid rgba(214,46,115,.32)}
+    .ab-order{border-radius:2px;padding:32px 30px 28px}
+    .ab-order-dim{background:transparent;border:1px solid rgba(43,22,27,.09)}
+    .ab-order-live{background:#FFFDFB;border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold)}
     .ab-order-l{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:20px}
     .ab-order-dim .ab-order-l{color:#9A8378}
     .ab-order ol{list-style:none;padding:0;margin:0}
@@ -126,7 +126,7 @@ const machine = [
 
     /* ── machine cards ── */
     .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
-    .ab-card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:6px;text-decoration:none;
+    .ab-card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:2px;text-decoration:none;
              background:#FFFDFB;border:1px solid rgba(43,22,27,.14);transition:transform .2s var(--ease),border-color .2s}
     .ab-card:hover{transform:translateY(-2px);border-color:var(--pink)}
     .ab-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0;line-height:1.2;color:#2B161B}
