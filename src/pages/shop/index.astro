@@ -224,92 +224,95 @@ const groups = [
 
 <style>
   /* ---------- FLAGSHIP ---------- */
-  .flag{display:grid;grid-template-columns:300px 1fr;align-items:center;gap:0;margin:0 0 56px;
-        border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;
-        border:1px solid rgba(214,46,115,.26);
-        background:linear-gradient(125deg,rgba(203,183,247,.20),rgba(255,138,194,.14) 55%,rgba(214,46,115,.08));
-        box-shadow:0 12px 40px rgba(43,22,27,.1);
-        transition:transform .25s,box-shadow .25s,border-color .25s}
-  .flag:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:0 18px 52px rgba(214,46,115,.18)}
-  .flag-img{overflow:hidden;background:#FBF8F5;display:flex;align-items:center}
-  .flag-img img{width:100%;height:auto;max-height:100%;object-fit:contain;display:block}
-  .flag-body{padding:36px 40px 34px}
-  .flag-k{display:block;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
-  .flag-h{font-family:var(--display);font-weight:300;font-size:clamp(28px,3.6vw,42px);line-height:1.03;
+  /* Paper, not gradient. The 2px pink top rule is the house card pattern
+     already used by .toc .plate and .rail-card in global.css. */
+  .flag{display:grid;grid-template-columns:300px 1fr;align-items:stretch;gap:0;margin:0 0 56px;
+        border-radius:2px;overflow:hidden;text-decoration:none;color:inherit;
+        background:var(--white);
+        border:1px solid var(--gray);border-top:2px solid var(--pink);
+        transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
+  .flag:hover{border-color:rgba(214,46,115,.4);border-top-color:var(--pink);
+              box-shadow:0 18px 44px -30px rgba(43,22,27,.35)}
+  .flag-img{overflow:hidden;background:var(--cream-deep);display:flex;align-items:center}
+  .flag-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .flag-body{padding:38px 40px 34px}
+  .flag-k{display:block;font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+  .flag-h{font-family:var(--display);font-weight:300;font-size:clamp(28px,3.6vw,42px);line-height:1.04;
           letter-spacing:-1.2px;margin:0 0 14px;color:var(--choc)}
   .flag-h em{font-style:italic;color:var(--pink)}
-  .flag-sub{font-size:16.5px;line-height:1.7;color:var(--choc);margin:0 0 22px;max-width:52ch}
-  .flag-stats{display:flex;gap:26px;flex-wrap:wrap;padding:16px 0;margin-bottom:20px;
-              border-top:1px solid rgba(214,46,115,.2);border-bottom:1px solid rgba(214,46,115,.2)}
-  .flag-stats span{display:flex;align-items:baseline;gap:6px;font-size:11.5px;letter-spacing:1.4px;
+  .flag-sub{font-size:16.5px;line-height:1.7;color:var(--choc-soft);margin:0 0 24px;max-width:52ch}
+  .flag-stats{display:flex;gap:30px;flex-wrap:wrap;padding:18px 0;margin-bottom:22px;
+              border-top:1px solid var(--gray);border-bottom:1px solid var(--gray)}
+  .flag-stats span{display:flex;align-items:baseline;gap:7px;font-size:11px;letter-spacing:2px;
                    text-transform:uppercase;color:var(--taupe-deep)}
-  .flag-stats b{font-family:var(--display);font-size:26px;font-weight:300;color:var(--pink);letter-spacing:-1px}
-  .flag-list{list-style:none;padding:0;margin:0 0 24px}
-  .flag-list li{position:relative;padding:7px 0 7px 24px;font-size:15.5px;line-height:1.55;color:var(--choc)}
-  .flag-list li:before{content:"";position:absolute;left:0;top:14px;width:13px;height:13px;border-radius:4px;background:var(--pink)}
-  .flag-list li:after{content:"";position:absolute;left:4px;top:17px;width:4px;height:7px;
-                      border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .flag-stats b{font-family:var(--display);font-size:26px;font-weight:300;color:var(--choc);letter-spacing:-1px}
+  .flag-list{list-style:none;padding:0;margin:0 0 26px}
+  .flag-list li{position:relative;padding:6px 0 6px 22px;font-size:15.5px;line-height:1.6;color:var(--choc-soft)}
+  .flag-list li:before{content:"";position:absolute;left:0;top:14px;width:5px;height:5px;
+                       background:var(--gold-deep);transform:rotate(45deg)}
   .flag-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .flag-price{font-family:var(--display);font-size:34px;font-weight:300;color:var(--choc);letter-spacing:-1px}
   .flag-price em{font-style:normal;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin-left:9px}
-  .flag-go{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--pink);
-           padding:14px 26px;border-radius:100px;white-space:nowrap;
-           box-shadow:0 10px 26px -10px rgba(214,46,115,.55)}
+  .flag-go{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--cream);background:var(--choc);
+           padding:15px 30px;border-radius:2px;white-space:nowrap;
+           transition:background .35s var(--ease)}
+  .flag:hover .flag-go{background:var(--pink)}
   @media(max-width:860px){
     .flag{grid-template-columns:1fr}
-    .flag-body{padding:26px 22px 24px}
-    .flag-stats{gap:16px}
-    .flag-foot{flex-direction:column;align-items:stretch;gap:14px}
+    .flag-img{aspect-ratio:16/10}
+    .flag-body{padding:28px 22px 26px}
+    .flag-stats{gap:20px}
+    .flag-foot{flex-direction:column;align-items:stretch;gap:16px}
     .flag-go{text-align:center}
   }
 
-
-  /* ---------- VALUE VAULT (top, pink) ---------- */
+  /* ---------- VALUE VAULT ---------- */
+  /* Was a full pink gradient panel. Now paper inside a gold hairline frame —
+     the section reads as a plate, not a highlight box. */
   .vault{
-    margin:56px 0 0;padding:54px 44px 50px;border-radius:26px;
-    background:linear-gradient(165deg,#FFEAF3 0%,var(--rose) 46%,#F9DCE8 100%);
-    border:1px solid rgba(214,46,115,.16);
-    box-shadow:0 40px 80px -60px rgba(214,46,115,.55);
+    margin:56px 0 0;padding:54px 44px 50px;border-radius:2px;
+    background:var(--white);
+    border:1px solid rgba(200,169,106,.42);
   }
   .vault-head{text-align:center;max-width:52ch;margin:0 auto 40px}
-  .vault-k{font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+  .vault-k{font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
   .vault-script{
     font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(46px,7vw,76px);line-height:1;letter-spacing:-1.5px;
-    color:var(--pink);margin-bottom:6px;
+    font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-1.5px;
+    color:var(--choc);margin-bottom:10px;
   }
   .vault-sub{
     font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;
-    color:var(--choc-soft);margin:0;
+    color:var(--taupe-deep);margin:0;
   }
-  .vault-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media(max-width:860px){.vault-grid{grid-template-columns:1fr}.vault{padding:40px 24px 36px}}
+  .vault-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray);border:1px solid var(--gray)}
+  @media(max-width:860px){.vault-grid{grid-template-columns:1fr}.vault{padding:40px 22px 36px}}
   .vcard{
-    display:flex;flex-direction:column;background:var(--white);border-radius:16px;
-    padding:26px 24px 24px;border:1px solid rgba(214,46,115,.12);
-    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+    display:flex;flex-direction:column;background:var(--white);
+    padding:28px 26px 26px;
+    transition:background .35s var(--ease);
   }
-  .vcard:hover{transform:translateY(-3px);box-shadow:0 24px 44px -26px rgba(214,46,115,.5)}
-  .vprice{font-family:var(--serif);font-size:30px;line-height:1;color:var(--pink)}
-  .vnote{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin:6px 0 14px}
+  .vcard:hover{background:var(--cream)}
+  .vprice{font-family:var(--display);font-weight:300;font-size:30px;line-height:1;color:var(--choc);letter-spacing:-1px}
+  .vnote{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin:8px 0 16px}
   .vcard h3{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.22;margin:0 0 10px}
-  .vcard p{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 18px;flex:1}
-  .vgo{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+  .vcard p{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 20px;flex:1}
+  .vgo{font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--pink)}
 
   /* ---------- PRICE NOTE ---------- */
   .prices-note{
     margin:44px 0 0;padding:22px 26px;border-left:2px solid var(--gold);
-    background:rgba(200,169,106,.07);border-radius:0 12px 12px 0;
+    background:rgba(200,169,106,.07);border-radius:0 2px 2px 0;
   }
   .prices-note strong{display:block;font-size:14px;margin-bottom:8px}
   .prices-note span{display:block;font-size:14px;line-height:1.75;color:var(--choc-soft)}
 
   /* ---------- CATEGORY GROUPS ---------- */
   .grp{margin-top:78px}
-  .grp-head{margin-bottom:24px}
-  .grp-k{font-size:11px;font-weight:600;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
-  .grp-head h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);letter-spacing:-.4px;margin:0 0 8px}
-  .grp-note{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--taupe-deep);margin:0;max-width:56ch}
+  .grp-head{margin-bottom:26px}
+  .grp-k{font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+  .grp-head h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);line-height:1.08;letter-spacing:-.4px;margin:0 0 10px}
+  .grp-note{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:var(--taupe-deep);margin:0;max-width:56ch}
 
   .rows{border-top:1px solid var(--gray)}
   a.row{
@@ -317,20 +320,20 @@ const groups = [
     padding:24px 8px;border-bottom:1px solid var(--gray);
     transition:padding-left .4s var(--ease),background .4s var(--ease);
   }
-  a.row:hover{padding-left:16px;background:rgba(255,138,194,.07)}
+  a.row:hover{padding-left:16px;background:var(--cream-deep)}
   .r-name{display:block;font-family:var(--display);font-size:21px;line-height:1.25}
   .r-copy{display:block;font-size:14.5px;line-height:1.6;color:var(--taupe-deep);margin-top:6px;max-width:62ch}
   .r-aff{
     display:inline-block;margin-left:10px;vertical-align:middle;font-family:var(--sans);
-    font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);
-    border:1px solid var(--gold);border-radius:100px;padding:2px 9px;
+    font-size:9.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-deep);
+    border:1px solid rgba(200,169,106,.6);border-radius:2px;padding:3px 9px;
   }
   .r-price{
-    text-align:right;white-space:nowrap;font-family:var(--serif);font-size:25px;color:var(--pink);line-height:1.1;
+    text-align:right;white-space:nowrap;font-family:var(--display);font-weight:300;font-size:25px;color:var(--choc);line-height:1.1;letter-spacing:-.5px;
   }
   .r-price em{
-    display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:1.6px;
-    text-transform:uppercase;color:var(--taupe-deep);margin-top:5px;
+    display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:1.8px;
+    text-transform:uppercase;color:var(--taupe-deep);margin-top:6px;
   }
   @media(max-width:620px){
     a.row{grid-template-columns:1fr;gap:12px}

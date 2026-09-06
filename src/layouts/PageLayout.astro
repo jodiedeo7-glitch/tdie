@@ -43,18 +43,29 @@ const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
-  <style>
+  <!-- is:global is REQUIRED. Astro scopes component styles with a per-component
+       hash, and slotted children carry the *page's* hash, not the layout's.
+       Without is:global every selector below compiles to
+       `.page-wrap[cid-layout] h1[cid-layout]` and matches nothing, so page
+       headers fall back to browser defaults (bold Inter h1, unstyled eyebrow).
+       ResourceLayout and CourseLayout already do this correctly.
+
+       Selectors are deliberately low-specificity so the 36 pages that style
+       their own hero keep winning. Prose rules use the direct-child combinator
+       so they never reach inside cards. -->
+  <style is:global>
     .page-wrap{max-width:640px;margin:0 auto;padding:90px 40px 120px}
     .page-wrap.wide{max-width:1100px}
     @media(max-width:640px){.page-wrap{padding:64px 22px 90px}}
-    .page-eyebrow{display:block;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:24px}
+    .page-eyebrow{display:block;font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px}
     a.page-eyebrow{transition:color .3s}
     a.page-eyebrow:hover{color:var(--pink)}
-    .page-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-.5px;margin-bottom:24px}
-    .page-wrap .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.6;color:var(--taupe-deep);margin-bottom:40px}
-    .page-wrap p{font-size:17px;line-height:1.8;margin-bottom:24px}
-    .page-wrap ul{margin:0 0 32px;padding-left:20px}
-    .page-wrap li{margin-bottom:12px;line-height:1.6}
+    .page-wrap h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,6vw,56px);line-height:1.06;letter-spacing:-.5px;margin-bottom:24px}
+    .page-wrap h1 em{font-style:italic;color:var(--pink)}
+    .page-wrap > .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.55;color:var(--taupe-deep);margin-bottom:40px;max-width:60ch}
+    .page-wrap > p{font-size:17px;line-height:1.75;margin-bottom:24px}
+    .page-wrap > ul{margin:0 0 32px;padding-left:20px}
+    .page-wrap > ul > li{margin-bottom:12px;line-height:1.65}
   </style>
 </head>
 <body class="no-js">
