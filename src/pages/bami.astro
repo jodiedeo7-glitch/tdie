@@ -1,163 +1,279 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+
+const ACC = ["#CBB7F7", "#CD9CDD", "#CF80C2", "#D4498D", "#D62E73"];
+
+const stats = [
+  { n: "12", l: "Weeks" },
+  { n: "5", l: "Phases" },
+  { n: "20", l: "Modules" },
+  { n: "20", l: "Named assets" },
+];
+
+const phases = [
+  {
+    n: "I", when: "Weeks 1–2", title: "The Blueprint", sub: "Modules 1–4",
+    body: "You settle who is building before you build anything. By the close of Phase I the business is fully specified on paper: your identity as founder, your model, and the one woman you are building for.",
+    items: ["The Founder's Declaration™", "Your business model, named", "The one woman, specified", "The business on paper"],
+  },
+  {
+    n: "II", when: "Weeks 3–5", title: "The Foundation", sub: "Modules 5–8",
+    body: "Brand, message, and offer ecosystem — ending in a real Signature Offer™ with a price on it. Three weeks, because this is the hinge every later phase hangs on.",
+    items: ["Brand identity", "Your message", "The offer ecosystem", "A priced Signature Offer™"],
+  },
+  {
+    n: "III", when: "Weeks 6–8", title: "The Structure", sub: "Modules 9–12",
+    body: "The heaviest building in the program. By the end of week eight the selling machine stands and works without you standing next to it.",
+    items: ["Lead asset", "A live funnel", "Welcome sequence", "Published sales page"],
+  },
+  {
+    n: "IV", when: "Weeks 9–10", title: "The Utilities", sub: "Modules 13–16",
+    body: "One platform mastered rather than five half-run, and a content engine that keeps arriving after you stop pushing it.",
+    items: ["Content system", "One platform, mastered", "Nurture heartbeat", "A launch plan with dates"],
+  },
+  {
+    n: "V", when: "Weeks 11–12", title: "The Penthouse", sub: "Modules 17–20",
+    body: "The business starts running itself, and you get the document that proves it exists.",
+    items: ["Automations running", "Business dashboard", "A weekly CEO rhythm", "The Business Architecture Binder™"],
+  },
+];
+
+const problems = [
+  { t: "You have bought this before", p: "Three programs, maybe five. You finished none of them and concluded something is wrong with you. Nothing is wrong with you — you kept buying information when nobody was checking whether anything got built." },
+  { t: "You have pieces, not a business", p: "A logo. A half-written freebie. A Canva folder called BRAND FINAL v3. Nothing connects, because it was built in the order you happened to learn it rather than the order a business needs." },
+  { t: "You have an audience and no offer", p: "People follow you. You post consistently. You have never had anything real to sell them, so all of that attention just sits there doing nothing." },
+  { t: "You will not show your face", p: "Good. Nothing in these twelve weeks requires it. The brand's face is a persona, and building yours is inside the curriculum." },
+];
 ---
 <PageLayout
+  wide
   title="The Business Architect Mentorship Intensive™"
   description="Twelve weeks of building one asset at a time, in order, until a business exists. By application, to a small founding cohort. Join the waitlist."
 >
-  <a class="page-eyebrow brandlink" href="/">By Application · Founding Cohort</a>
-  <h1>You have bought the courses. You still do not have a business.</h1>
-  <p class="lede">The Business Architect Mentorship Intensive™ is twelve weeks of building one asset at a time, in order, until a business exists. Not more information. Construction.</p>
-
-  <a class="btn" href="#waitlist">Join the Waitlist <span class="a">→</span></a>
-  <p style="margin-top:16px;font-size:14px;color:var(--taupe-deep)">Applications open to the waitlist first. Dates announced shortly.</p>
-
-  <div style="border-top:1px solid var(--gray);margin-top:56px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">The consumer cycle</h2>
-    <p>Buy the course. Consume the course. Feel briefly capable. Abandon it around week three, right before the part where it gets hard. Buy the next one.</p>
-    <p>It is not a discipline problem. Every one of those courses handed you information when your actual bottleneck was construction — nobody was checking whether anything got built.</p>
-    <p>BAMI is built the other way around. Twenty modules, each one producing a finished, named business asset. A module does not close because you watched it. It closes because the thing exists.</p>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">You are not missing information</h2>
-    <p><strong>You have bought this before.</strong> Three programs, maybe five. You finished none of them, and you have concluded something is wrong with you. Nothing is wrong with you — you kept buying information when your problem was that nobody was checking whether anything got built.</p>
-    <p><strong>You have pieces, not a business.</strong> A logo. A half-written freebie. A Canva folder called BRAND FINAL v3. Nothing connects, because they were built in the order you happened to learn them rather than the order a business needs them.</p>
-    <p><strong>You have an audience and no offer.</strong> People follow you. You post consistently. You have never had anything real to sell them, so all of that attention just sits there.</p>
-    <p><strong>You will not show your face.</strong> Good. Nothing in these twelve weeks requires it. The brand's face is a persona, and building yours is inside the curriculum.</p>
-    <p><strong>You have four hours a week, not forty.</strong> That is the design assumption. Every module is scoped to be built inside a real week with a job and a family in it.</p>
-    <p><strong>You want to be the one who can do it.</strong> Not the one who paid someone to do it for her, and has to pay again next time something breaks.</p>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <span class="page-eyebrow" style="margin-bottom:16px">Build Your Business Backwards. Scale It Forward.™</span>
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">One asset at a time, in order</h2>
-    <p>Most programs start with content and hope an offer shows up. BAMI starts with who is building, moves to what she is selling and to whom, and only then builds the machine that sells it.</p>
-    <p>The order is the mechanism. Sequence is enforced — a module opens when the previous asset exists, not when you feel ready.</p>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 28px">Five phases. Twelve weeks. Twenty assets.</h2>
-
-    <div style="padding-bottom:26px;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:21px;margin-bottom:8px">Phase I — The Blueprint <span style="color:var(--taupe-deep);font-size:15px">· Weeks 1–2</span></div>
-      <p style="margin:0;font-size:16px">Modules 1–4. You settle who is building before you build anything. By the close of Phase I the business is fully specified on paper: your identity as founder, your model, and the one woman you are building for.</p>
+  <section class="bm-hero">
+    <a class="page-eyebrow" href="/">By application · Founding cohort</a>
+    <h1>You have bought the courses.<br /><em>You still do not have a business.</em></h1>
+    <p class="lede">Twelve weeks of building one asset at a time, in order, until a business exists. Not more information. Construction.</p>
+    <div class="bm-cta-row">
+      <a class="btn" href="#waitlist">Join the waitlist <span class="a">→</span></a>
     </div>
+    <p class="bm-microcopy">Applications open to the waitlist first. Dates announced shortly.</p>
+  </section>
 
-    <div style="padding:26px 0;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:21px;margin-bottom:8px">Phase II — The Foundation <span style="color:var(--taupe-deep);font-size:15px">· Weeks 3–5</span></div>
-      <p style="margin:0;font-size:16px">Modules 5–8. Brand, message, and offer ecosystem — ending in a real Signature Offer™ with a price on it. Three weeks, because this is the hinge every later phase hangs on.</p>
+  <div class="bm-stats">
+    {stats.map((s, i) => (
+      <div class="bm-stat" style={`--ac:${ACC[i]}`}>
+        <span class="bm-stat-n">{s.n}</span>
+        <span class="bm-stat-l">{s.l}</span>
+      </div>
+    ))}
+  </div>
+
+  <section class="bm-block bm-thesis">
+    <h2>The consumer cycle</h2>
+    <p class="bm-lead">Buy the course. Consume the course. Feel briefly capable. Abandon it around week three, right before the part where it gets hard. Buy the next one.</p>
+    <p class="bm-sublead">It is not a discipline problem. Every one of those courses handed you information when your actual bottleneck was construction.</p>
+    <p class="bm-hit">A module does not close because you watched it. It closes because the thing exists.</p>
+  </section>
+
+  <section class="bm-block">
+    <h2>You are not missing information</h2>
+    <div class="bm-grid">
+      {problems.map((c, i) => (
+        <div class="bm-card" style={`--ac:${ACC[i]}`}>
+          <h3>{c.t}</h3>
+          <p>{c.p}</p>
+        </div>
+      ))}
     </div>
+  </section>
 
-    <div style="padding:26px 0;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:21px;margin-bottom:8px">Phase III — The Structure <span style="color:var(--taupe-deep);font-size:15px">· Weeks 6–8</span></div>
-      <p style="margin:0;font-size:16px">Modules 9–12. Lead asset, live funnel, welcome sequence, published sales page. The heaviest building in the program. By the end of week eight the selling machine stands.</p>
+  <section class="bm-block">
+    <h2>Five phases. Twelve weeks. Twenty assets.</h2>
+    <p class="bm-sublead">The order is the mechanism. A module opens when the previous asset exists, not when you feel ready.</p>
+    <div class="bm-phases">
+      {phases.map((p, i) => (
+        <article class="bm-phase" style={`--ac:${ACC[i]}`}>
+          <span class="bm-phase-edge"></span>
+          <div class="bm-phase-head">
+            <span class="bm-phase-n">{p.n}</span>
+            <div>
+              <span class="bm-phase-when">{p.when} · {p.sub}</span>
+              <h3 class="bm-phase-t">{p.title}</h3>
+            </div>
+          </div>
+          <p class="bm-phase-s">{p.body}</p>
+          <ul class="bm-phase-mods">
+            {p.items.map((m) => (<li>{m}</li>))}
+          </ul>
+        </article>
+      ))}
     </div>
+  </section>
 
-    <div style="padding:26px 0;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:21px;margin-bottom:8px">Phase IV — The Utilities <span style="color:var(--taupe-deep);font-size:15px">· Weeks 9–10</span></div>
-      <p style="margin:0;font-size:16px">Modules 13–16. A content system, one platform mastered rather than five half-run, a nurture heartbeat, and a launch plan with dates on it.</p>
+  <section class="bm-block bm-runs">
+    <h2>Twelve weeks, and five times I read your work</h2>
+    <p class="bm-lead">Every module carries a recorded walkthrough, released the week its phase opens. Watch it at 6am or at midnight. Nothing you paid for happens while you are asleep in another timezone.</p>
+    <p class="bm-sublead">At the close of every phase you submit the asset that phase produced, and I write back on the actual work rather than on a template. Five phase gates. Five times someone who has built this looks at yours and tells you the truth about it.</p>
+    <p class="bm-hit">That is the part you cannot get from a course.</p>
+  </section>
+
+  <section class="bm-block">
+    <h2>The sequence is the product</h2>
+    <p class="bm-lead">There is a version of mentorship where you arrive each week, say what you are stuck on, and get help with that. It feels responsive. It is also how twelve weeks disappear without a business at the end, because the thing you feel stuck on is rarely the thing actually blocking you.</p>
+    <p class="bm-sublead">BAMI is fixed on purpose. What flexes is the feedback. What you build is yours — your model, your customer, your offer. What does not flex is the order you build it in.</p>
+  </section>
+
+  <section class="bm-block bm-not">
+    <h2>Who this is not for</h2>
+    <div class="bm-grid bm-grid-3">
+      <div class="bm-card bm-card-plain">
+        <h3>You want it built for you</h3>
+        <p>Nobody sets up your store or writes your sales page. You build it; I tell you where it is wrong.</p>
+      </div>
+      <div class="bm-card bm-card-plain">
+        <h3>You have under four hours a week</h3>
+        <p>Four hours in sequence beats forty scattered ones, but four is the floor, and there are twelve weeks of them.</p>
+      </div>
+      <div class="bm-card bm-card-plain">
+        <h3>You will keep buying other programs</h3>
+        <p>Not because they're bad. Because your bottleneck is construction, and running three blueprints at once is how nothing gets built.</p>
+      </div>
     </div>
+  </section>
 
-    <div style="padding:26px 0">
-      <div style="font-family:'Fraunces',serif;font-size:21px;margin-bottom:8px">Phase V — The Penthouse <span style="color:var(--taupe-deep);font-size:15px">· Weeks 11–12</span></div>
-      <p style="margin:0;font-size:16px">Modules 17–20. Automation, your business dashboard, a CEO operating rhythm, and The Business Architecture Binder™ — the whole business, documented, in your hands.</p>
-    </div>
-  </div>
+  <section class="bm-block bm-waitlist" id="waitlist">
+    <h2>The founding cohort is small</h2>
+    <p class="bm-lead">BAMI opens by application, to a small founding group, at a founding price that will not be offered again.</p>
+    <p class="bm-sublead">The waitlist hears first — dates, price, and the application link, before this page is announced anywhere.</p>
 
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">Twelve weeks, and five times I read your work</h2>
-    <p>Every module carries a recorded walkthrough, released the week its phase opens. Watch it at 6am or at midnight. Nothing you paid for happens while you are asleep in another timezone.</p>
-    <p>At the close of every phase, you submit the asset that phase produced. I read it and write back — on the actual work, not on a template.</p>
-    <p>Five phase gates. Five times someone who has built this looks at yours and tells you the truth about it.</p>
-    <p>That is the part you cannot get from a course.</p>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">The sequence is the product</h2>
-    <p>There is a version of mentorship where you arrive each week, say what you are stuck on, and get help with that. It feels responsive. It is also how twelve weeks disappear without a business at the end, because the thing you feel stuck on is rarely the thing actually blocking you.</p>
-    <p>BAMI is fixed on purpose. Twenty modules in an order that does not move, each one producing a named asset that the next one requires. You cannot build the funnel before the offer exists, so the program will not let you.</p>
-    <p>What flexes is the feedback. What you build is yours — your model, your customer, your offer. What does not flex is the order you build it in.</p>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">What you leave with</h2>
-    <ul>
-      <li>The Founder's Declaration™ — signed and dated</li>
-      <li>A named model and a specified customer</li>
-      <li>A Signature Offer™ with a defensible price</li>
-      <li>A lead asset, a live funnel, a welcome sequence, a published sales page</li>
-      <li>A ninety-day content architecture with the first thirty days built</li>
-      <li>A launch plan with dates</li>
-      <li>Automations running</li>
-      <li>A business dashboard you can read</li>
-      <li>A weekly CEO review you can keep</li>
-      <li>The Business Architecture Binder™ — your entire business, documented</li>
-    </ul>
-  </div>
-
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">Who this is not for</h2>
-    <p>Worth being honest with yourself before you put your name down.</p>
-    <p>This is not for you if you want it built for you. Nobody sets up your store or writes your sales page. You build it; I tell you where it is wrong.</p>
-    <p>This is not for you if you cannot give it four focused hours a week. Four hours in sequence beats forty scattered ones, but four is the floor, and there are twelve weeks of them.</p>
-    <p>This is not for you if you plan to keep buying other programs while you are in this one. Not because other programs are bad — because your bottleneck is construction, and running three blueprints at once is how nothing gets built.</p>
-  </div>
-
-  <div id="waitlist" style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px;scroll-margin-top:90px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 20px">The founding cohort is small</h2>
-    <p>BAMI opens by application, to a small founding group, at a founding price that will not be offered again.</p>
-    <p>The waitlist hears first — dates, price, and the application link, before this page is announced anywhere.</p>
-
-    <div class="bami-capture">
+    <div class="bm-capture">
       <form id="bami-form" novalidate>
-        <label class="bl" for="bami-name">First name</label>
-        <input id="bami-name" name="name" type="text" autocomplete="given-name" placeholder="Jodie" />
-
-        <label class="bl" for="bami-email">Email</label>
-        <input id="bami-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required />
-
-        <label class="bl" for="bami-stage">Where are you right now?</label>
-        <select id="bami-stage" name="stage">
-          <option value="">Choose one</option>
-          <option>No business yet</option>
-          <option>An idea, nothing built</option>
-          <option>Something built that isn't selling</option>
-          <option>Something selling that won't scale</option>
-        </select>
-
-        <button type="submit" id="bami-submit">Put Me on the List</button>
-        <p class="bmsg" id="bami-msg" role="status" aria-live="polite"></p>
+        <div class="bm-field">
+          <label for="bami-name">First name</label>
+          <input id="bami-name" name="name" type="text" autocomplete="given-name" placeholder="Jodie" />
+        </div>
+        <div class="bm-field">
+          <label for="bami-email">Email</label>
+          <input id="bami-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required />
+        </div>
+        <div class="bm-field">
+          <label for="bami-stage">Where are you right now?</label>
+          <select id="bami-stage" name="stage">
+            <option value="">Choose one</option>
+            <option>No business yet</option>
+            <option>An idea, nothing built</option>
+            <option>Something built that isn't selling</option>
+            <option>Something selling that won't scale</option>
+          </select>
+        </div>
+        <button type="submit" id="bami-submit">Put me on the list</button>
+        <p class="bm-msg" id="bami-msg" role="status" aria-live="polite"></p>
       </form>
     </div>
+    <p class="bm-microcopy bm-microcopy-c">No pitch in the meantime. One email when dates are set.</p>
+  </section>
 
-    <p style="font-size:14px;color:var(--taupe-deep)">No pitch in the meantime. One email when dates are set.</p>
-  </div>
+  <section class="bm-block bm-faq">
+    <h2>Questions</h2>
+    <div class="bm-faq-list">
+      <div class="bm-q"><h3>When does it start?</h3><p>Dates are announced shortly, to the waitlist first.</p></div>
+      <div class="bm-q"><h3>What will it cost?</h3><p>The founding price goes to the waitlist before it goes anywhere public.</p></div>
+      <div class="bm-q"><h3>Are there live calls?</h3><p>No. Every module is recorded and released on the phase calendar. The personal component is written review of your work at each of the five phase gates.</p></div>
+      <div class="bm-q"><h3>How much time does this take?</h3><p>Four focused hours a week is the floor. If you have twenty you'll move faster — the sequence is the same either way.</p></div>
+      <div class="bm-q"><h3>Do I need a product already?</h3><p>No. Phase II builds your Signature Offer™ from nothing.</p></div>
+      <div class="bm-q"><h3>Is it in the membership?</h3><p>No. BAMI is separate, by application only. Standard and Premium do not include it.</p></div>
+      <div class="bm-q"><h3>Do I need to show my face?</h3><p>No.</p></div>
+    </div>
+  </section>
 
-  <div style="border-top:1px solid var(--gray);margin-top:44px;padding-top:44px">
-    <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:32px;line-height:1.2;margin:0 0 24px">Questions</h2>
-    <p><strong>When does it start?</strong><br />Dates are announced shortly, to the waitlist first.</p>
-    <p><strong>What will it cost?</strong><br />The founding price goes to the waitlist before it goes anywhere public.</p>
-    <p><strong>Are there live calls?</strong><br />No. Every module is recorded and released on the phase calendar. The personal component is written review of your actual work at each of the five phase gates.</p>
-    <p><strong>How much time does this take?</strong><br />Four focused hours a week is the floor. If you have twenty, you will move faster — the sequence is the same either way.</p>
-    <p><strong>Do I need to already have a product?</strong><br />No. Phase II builds your Signature Offer™ from nothing.</p>
-    <p><strong>Is this included in the membership?</strong><br />No. BAMI is separate, by application only. Standard and Premium do not include it.</p>
-    <p><strong>Do I need to show my face?</strong><br />No.</p>
-  </div>
-
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+  <p class="bm-back"><a href="/learn">← Back to The Library</a></p>
 
   <style>
-    .bami-capture{background:linear-gradient(135deg,var(--blush) 0%,var(--cream) 100%);border:1px solid var(--pink-soft);border-radius:16px;padding:32px;margin:36px 0 20px;box-shadow:0 4px 24px rgba(203,154,168,.12)}
-    .bami-capture .bl{display:block;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe-deep);margin:0 0 8px}
-    .bami-capture input,.bami-capture select{width:100%;padding:13px 16px;border:1px solid var(--pink-soft);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:var(--choc);margin-bottom:20px}
-    .bami-capture input:focus,.bami-capture select:focus{outline:2px solid var(--pink);outline-offset:1px}
-    .bami-capture button{width:100%;padding:15px 26px;background:var(--pink);color:#fff;border:none;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;font-family:inherit;cursor:pointer;transition:opacity .3s}
-    .bami-capture button:hover{opacity:.88}
-    .bami-capture button[disabled]{opacity:.55;cursor:default}
-    .bmsg{margin:16px 0 0;font-size:15px;line-height:1.6;min-height:1px}
-    .bmsg.ok{color:var(--choc)}
-    .bmsg.err{color:var(--pink)}
+    /* ── hero ── */
+    .bm-hero{text-align:center;padding:10px 0 44px}
+    .bm-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
+    .bm-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7.4vw,78px);line-height:1;letter-spacing:-2px;margin:0 0 26px;color:#2B161B;max-width:16ch;margin-inline:auto}
+    .bm-hero h1 em{font-style:italic;color:var(--pink)}
+    .bm-hero .lede{max-width:600px;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
+    .bm-cta-row{display:flex;justify-content:center}
+    .bm-microcopy{font-size:13.5px;letter-spacing:.2px;color:var(--taupe-deep);margin:18px 0 0}
+    .bm-microcopy-c{text-align:center;margin-top:20px}
+
+    /* ── stat strip ── */
+    .bm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(43,22,27,.12);
+              border:1px solid rgba(43,22,27,.12);border-radius:6px;overflow:hidden}
+    .bm-stat{background:#FBF8F5;padding:26px 18px;text-align:center}
+    .bm-stat-n{display:block;font-family:"Fraunces",serif;font-size:clamp(34px,4.6vw,50px);font-weight:300;line-height:1;color:var(--ac);letter-spacing:-1.5px}
+    .bm-stat-l{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-top:10px}
+
+    /* ── blocks ── */
+    .bm-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .bm-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
+    .bm-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto 20px;color:#3B2228;text-align:center}
+    .bm-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:0 auto;text-align:center}
+    .bm-hit{font-family:"Cormorant Garamond",serif;font-size:25px;font-style:italic;line-height:1.55;color:var(--pink);
+            padding:22px 0 0;margin:30px auto 0;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:560px}
+    .bm-thesis{border-top:none;padding-top:70px}
+
+    /* ── cards ── */
+    .bm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+    .bm-grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .bm-card{padding:28px 28px 26px;border-radius:6px;
+             background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
+             border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .bm-card-plain{background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
+    .bm-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:#2B161B}
+    .bm-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+
+    /* ── phases ── */
+    .bm-phases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px}
+    .bm-phase{position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);border-radius:6px;padding:26px 28px 24px;
+              background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 22%,transparent),color-mix(in srgb,var(--ac) 5%,transparent))}
+    .bm-phase:last-child:nth-child(odd){grid-column:1 / -1}
+    .bm-phase-edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ac)}
+    .bm-phase-head{display:flex;gap:16px;align-items:flex-start;padding-bottom:16px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--ac) 55%,transparent)}
+    .bm-phase-n{font-family:"Fraunces",serif;font-size:46px;font-weight:300;line-height:.86;color:var(--ac);letter-spacing:-2px;flex-shrink:0;min-width:52px}
+    .bm-phase-when{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:6px}
+    .bm-phase-t{font-family:"Fraunces",serif;font-weight:400;font-size:23px;margin:0;line-height:1.12;color:#2B161B}
+    .bm-phase-s{font-size:15.5px;line-height:1.62;color:#5A4048;margin:0 0 14px}
+    .bm-phase-mods{list-style:none;padding:0;margin:0}
+    .bm-phase-mods li{font-size:15px;line-height:1.45;padding:6px 0;color:#2B161B;border-top:1px solid color-mix(in srgb,var(--ac) 30%,transparent)}
+
+    /* ── waitlist ── */
+    .bm-waitlist{scroll-margin-top:90px}
+    .bm-capture{max-width:520px;margin:38px auto 0;background:linear-gradient(160deg,rgba(203,183,247,.20),rgba(214,46,115,.07));
+                border:1px solid rgba(214,46,115,.3);border-radius:8px;padding:34px 32px}
+    .bm-field{margin-bottom:20px}
+    .bm-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C63;margin-bottom:9px}
+    .bm-capture input,.bm-capture select{width:100%;padding:14px 16px;border:1px solid rgba(43,22,27,.18);border-radius:5px;
+                                          font-size:15.5px;font-family:inherit;background:#FFFDFB;color:var(--choc)}
+    .bm-capture input:focus,.bm-capture select:focus{outline:2px solid var(--pink);outline-offset:1px;border-color:transparent}
+    .bm-capture button{width:100%;padding:16px 26px;background:var(--pink);color:#FFFDFC;border:none;border-radius:100px;
+                       font-size:12.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;font-family:inherit;cursor:pointer;
+                       box-shadow:0 10px 26px -10px rgba(214,46,115,.55);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+    .bm-capture button:hover{transform:translateY(-2px);box-shadow:0 16px 32px -10px rgba(214,46,115,.65)}
+    .bm-capture button[disabled]{opacity:.55;cursor:default;transform:none}
+    .bm-msg{margin:18px 0 0;font-size:15.5px;line-height:1.6;text-align:center}
+    .bm-msg.ok{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--pink)}
+    .bm-msg.err{color:var(--pink)}
+
+    /* ── faq ── */
+    .bm-faq-list{max-width:680px;margin:38px auto 0}
+    .bm-q{padding:22px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .bm-q:last-child{border-bottom:1px solid rgba(43,22,27,.1)}
+    .bm-q h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 7px;color:#2B161B}
+    .bm-q p{font-size:16px;line-height:1.7;margin:0;color:#5A4048}
+
+    .bm-back{margin-top:64px;text-align:center}
+    .bm-back a{color:var(--pink);font-weight:500}
+
+    @media(max-width:820px){
+      .bm-grid,.bm-phases{grid-template-columns:1fr}
+      .bm-stats{grid-template-columns:1fr 1fr}
+      .bm-block{padding:56px 0}
+      .bm-capture{padding:28px 22px}
+    }
   </style>
 
   <script is:inline>
@@ -170,7 +286,7 @@ import PageLayout from "../layouts/PageLayout.astro";
         e.preventDefault();
         var email = document.getElementById("bami-email").value.trim();
         if (!email || email.indexOf("@") === -1) {
-          msg.className = "bmsg err";
+          msg.className = "bm-msg err";
           msg.textContent = "Enter a valid email address.";
           return;
         }
@@ -189,17 +305,17 @@ import PageLayout from "../layouts/PageLayout.astro";
           });
           var d = await r.json().catch(function () { return {}; });
           if (r.ok && d.ok) {
-            f.querySelectorAll("input,select,button").forEach(function (el) { el.style.display = "none"; });
-            msg.className = "bmsg ok";
-            msg.textContent = "You are on the list. You will hear from me before anyone else does.";
+            f.querySelectorAll(".bm-field, button").forEach(function (el) { el.style.display = "none"; });
+            msg.className = "bm-msg ok";
+            msg.textContent = "You're on the list. You'll hear from me before anyone else does.";
           } else {
-            msg.className = "bmsg err";
+            msg.className = "bm-msg err";
             msg.textContent = d.error || "Couldn't add you just now. Try again in a moment.";
             btn.disabled = false;
             btn.textContent = original;
           }
         } catch (err) {
-          msg.className = "bmsg err";
+          msg.className = "bm-msg err";
           msg.textContent = "Couldn't add you just now. Try again in a moment.";
           btn.disabled = false;
           btn.textContent = original;
