@@ -1,39 +1,194 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+
+const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
+
+// Tier contents mirror the homepage exactly. If one changes, change both.
+const tiers = [
+  {
+    name: "Standard",
+    price: "$9",
+    per: "per month",
+    flag: "Most join here",
+    line: "Everything you need to build the thing and start selling it.",
+    cta: "Start your free 7-day trial",
+    invert: false,
+    inherit: null,
+    groups: [
+      { label: "Foundations", items: ["The Essentials Edit", "AI Foundations for Creators", "Canva Crash Course"] },
+      { label: "The brand", items: ["AI Twin / Influencer Creation", "Brand Building · The Content Edit", "The Tommy Kate Edit — included, not $17 here"] },
+      { label: "Traffic & selling", items: ["The Monetization Edit", "The Email Edit · The Pinterest Edit", "Pinterest Foundations™"] },
+      { label: "In the room daily", items: ["The Value Vault — browse and buy guides à la carte", "Daily Prompts", "Vacation & Luxe Babe Vault bonuses"] },
+    ],
+  },
+  {
+    name: "Premium",
+    price: "$27",
+    per: "per month",
+    flag: "Written before you sit down",
+    line: "Standard is what you build by hand. Premium writes your content month for you.",
+    cta: "Join Premium",
+    invert: true,
+    inherit: "Everything in Standard",
+    groups: [
+      { label: "Done for you", items: ["Monthly DFY Content Calendar — 31 days written before the month starts", "The Ads Edit™"] },
+      { label: "The full build", items: ["The Offer Edit", "The Funnel Edit", "The Premium Vault — the entire Value Vault, unlocked", "Scaling & Systems"] },
+    ],
+  },
+];
+
+const dfy = [
+  { t: "31 days written", p: "Every caption, hook, carousel slide and Story frame. Not prompts. Not ideas. Finished posts you copy and publish." },
+  { t: "62 Threads posts", p: "Two a day, written for the platform — not captions pasted over from somewhere else." },
+  { t: "A start-frame and motion prompt for every Reel", p: "Generate the still, drop it into your video tool, post it. You never film anything. Not your face, not your hands, not your desk." },
+  { t: "Built on what's actually working", p: "Every month starts with hundreds of viral Reels in this niche, read before a word gets written." },
+];
+
+const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
 ---
 <PageLayout
+  wide
   title="Membership"
   description="Every month I write your content for you — 31 days, finished. Standard teaches you to build it and sell it. Premium buys back your time. Start free for 7 days."
 >
-  <a class="page-eyebrow brandlink" href="/">The Digital Income Edit™</a>
-  <h1>Membership</h1>
-  <p class="lede">Standard teaches you to build it and sell it. Premium writes your content month for you. Both start with a free 7-day trial.</p>
-  <p>You learn the build from inside the building. This classroom sits inside the business it teaches — the site, the funnels, the automation you'll construct are the same ones delivering this page to you right now.</p>
-  <p>The membership grows with you, one rung at a time — no leaps, no overwhelm. You climb when the current step stops being your bottleneck.</p>
+  <section class="ms-hero">
+    <a class="page-eyebrow" href="/">The Digital Income Edit™</a>
+    <h1>The room where it<br /><em>actually gets built.</em></h1>
+    <p class="lede">Standard teaches you to build it and sell it. Premium writes your content month for you. Both start with a free 7-day trial.</p>
+    <div class="ms-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
+  </section>
 
-  <div style="border-top:1px solid var(--gray);margin-top:48px;padding-top:40px">
-    <h2 style="font-family:'Fraunces',serif;font-size:30px;line-height:1.2;margin:0 0 18px">Every month, I write your content for you.</h2>
-    <p>Most people don't quit because the business is hard. They quit on a Tuesday night, staring at a blank caption box, deciding they'll post tomorrow instead.</p>
-    <p>Premium members don't have that night. The month arrives finished.</p>
-    <ul style="margin:24px 0;padding-left:20px;line-height:1.75">
-      <li><strong>31 days written</strong> — every caption, hook, carousel slide and Story frame. Not prompts. Not ideas. Finished posts you copy and publish.</li>
-      <li><strong>62 Threads posts</strong> — two a day, written for the platform, not captions pasted over.</li>
-      <li><strong>A start-frame and motion prompt for every Reel</strong> — generate the still, drop it into your video tool, post it. You never film anything. Not your face, not your hands, not your desk.</li>
-      <li><strong>Built on what's actually working</strong> — every month starts with hundreds of viral Reels in this niche, read before a word gets written.</li>
-    </ul>
-    <p>Point it at your own offer, or share the community and earn on anyone who joins through you. The offer days are already written and paced either way.</p>
-  </div>
+  <section class="ms-block ms-thesis">
+    <h2>You learn the build from inside the building</h2>
+    <p class="ms-lead">This classroom sits inside the business it teaches. The site, the funnels, the automation you'll construct are the same ones delivering this page to you right now.</p>
+    <p class="ms-hit">You climb when the current step stops being your bottleneck. Not before.</p>
+  </section>
 
-  <div style="border-top:1px solid var(--gray);margin-top:40px">
-    <div style="padding:26px 0;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:22px;margin-bottom:6px">Standard — $9/mo</div>
-      <p style="margin:0;font-size:15px;color:var(--taupe-deep)">Learn to monetize and systematize — full content, offer, and funnel training, plus every course in the education library.</p>
+  <section class="ms-block">
+    <h2>Two ways in</h2>
+    <div class="ms-tiers">
+      {tiers.map((t) => (
+        <article class={t.invert ? "ms-tier ms-tier-dark" : "ms-tier"}>
+          <span class="ms-flag">{t.flag}</span>
+          <h3 class="ms-tier-name">{t.name}</h3>
+          <div class="ms-price"><span class="ms-price-n">{t.price}</span><span class="ms-price-p">{t.per}</span></div>
+          <p class="ms-tier-line">{t.line}</p>
+          {t.inherit && <p class="ms-inherit">{t.inherit}, and then</p>}
+          {t.groups.map((g) => (
+            <div class="ms-group">
+              <span class="ms-group-l">{g.label}</span>
+              <ul>{g.items.map((i) => (<li>{i}</li>))}</ul>
+            </div>
+          ))}
+          <a class={t.invert ? "btn ms-tier-cta btn-onmid" : "btn ms-tier-cta"} href={SKOOL}>{t.cta} <span class="a">→</span></a>
+        </article>
+      ))}
     </div>
-    <div style="padding:26px 0;border-bottom:1px solid var(--gray)">
-      <div style="font-family:'Fraunces',serif;font-size:22px;margin-bottom:6px">Premium — $27/mo</div>
-      <p style="margin:0;font-size:15px;color:var(--taupe-deep)">Everything in Standard, plus the monthly done-for-you content calendar — 31 days written before the month starts — The Ads Edit™, done-for-you assets, and scaling systems. Buy back your time.</p>
+  </section>
+
+  <section class="ms-block">
+    <h2>Every month, I write your content for you</h2>
+    <p class="ms-lead">Most people don't quit because the business is hard. They quit on a Tuesday night, staring at a blank caption box, deciding they'll post tomorrow instead.</p>
+    <p class="ms-sublead">Premium members don't have that night. The month arrives finished.</p>
+    <div class="ms-grid">
+      {dfy.map((d, i) => (
+        <div class="ms-card" style={`--ac:${ACC[i]}`}>
+          <h3>{d.t}</h3>
+          <p>{d.p}</p>
+        </div>
+      ))}
     </div>
-  </div>
-  <a class="btn" href="https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d" style="margin-top:40px">Join the Membership <span class="a">→</span></a>
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Back to The Library</a></p>
+    <p class="ms-sublead ms-after">Point it at your own offer, or share the community and earn on anyone who joins through you. The offer days are already written and paced either way.</p>
+  </section>
+
+  <section class="ms-block">
+    <h2>Before you join, two things worth knowing</h2>
+    <div class="ms-notes">
+      <div class="ms-note">
+        <h3>Three things here have "vault" in the name</h3>
+        <p>They are not the same thing. <strong>The Value Vault</strong> is the guide collection, and Premium unlocks every one of them. <strong>The Premium Vault</strong> is that full unlock. <strong>Pretty &amp; Paid PLR Vault™</strong> is a separate subscription at $11 a month that hands you finished products to resell under your own name — it is not part of either membership.</p>
+      </div>
+      <div class="ms-note">
+        <h3>This $27 is a subscription</h3>
+        <p>Both paid tiers bill every month and you can leave from inside the app at any time. It is not the same $27 as The One and Done Money Stream in the shop, which you pay once.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ms-block ms-close">
+    <h2>One woman. One laptop. The entire machine.</h2>
+    <p class="ms-sublead">Seven days free, either tier. Leave from inside the app if it isn't for you.</p>
+    <div class="ms-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
+    <p class="ms-sign">xoxo, Jodie</p>
+  </section>
+
+  <p class="ms-back"><a href="/learn">← Back to The Library</a></p>
+
+  <style>
+    .ms-hero{text-align:center;padding:10px 0 52px}
+    .ms-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
+    .ms-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,7.6vw,80px);line-height:1;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
+    .ms-hero h1 em{font-style:italic;color:var(--pink)}
+    .ms-hero .lede{max-width:610px;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
+    .ms-cta-row{display:flex;justify-content:center}
+
+    .ms-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .ms-thesis{border-top:none;padding-top:0}
+    .ms-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
+    .ms-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto 20px;color:#3B2228;text-align:center}
+    .ms-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:0 auto;text-align:center}
+    .ms-after{margin-top:38px}
+    .ms-hit{font-family:"Cormorant Garamond",serif;font-size:25px;font-style:italic;line-height:1.55;color:var(--pink);
+            padding:22px 0 0;margin:30px auto 0;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:560px}
+
+    .ms-tiers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;align-items:start}
+    .ms-tier{position:relative;border:1px solid rgba(43,22,27,.16);border-radius:8px;padding:34px 32px 32px;background:#FFFDFB}
+    .ms-tier-dark{background:var(--choc);border-color:rgba(214,46,115,.42);box-shadow:0 24px 60px -30px rgba(43,22,27,.6)}
+    .ms-flag{display:inline-block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:100px;
+             background:rgba(214,46,115,.1);color:var(--pink);border:1px solid rgba(214,46,115,.3);margin-bottom:20px}
+    .ms-tier-dark .ms-flag{background:rgba(214,46,115,.24);color:#FF8AC2;border-color:rgba(255,138,194,.45)}
+    .ms-tier-name{font-family:"Fraunces",serif;font-weight:300;font-size:34px;letter-spacing:-.5px;margin:0 0 8px;color:#2B161B}
+    .ms-tier-dark .ms-tier-name{color:var(--cream)}
+    .ms-price{display:flex;align-items:baseline;gap:9px;margin-bottom:16px}
+    .ms-price-n{font-family:"Fraunces",serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-2px;color:var(--pink)}
+    .ms-tier-dark .ms-price-n{color:#FF8AC2}
+    .ms-price-p{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#7A5C63}
+    .ms-tier-dark .ms-price-p{color:var(--taupe)}
+    .ms-tier-line{font-size:16px;line-height:1.65;color:#57404A;margin:0 0 26px;padding-bottom:24px;border-bottom:1px solid rgba(43,22,27,.12)}
+    .ms-tier-dark .ms-tier-line{color:var(--taupe);border-bottom-color:rgba(251,248,245,.16)}
+    .ms-inherit{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:#FF8AC2;margin:0 0 22px}
+    .ms-group{margin-bottom:22px}
+    .ms-group-l{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:10px}
+    .ms-tier-dark .ms-group-l{color:var(--gold)}
+    .ms-group ul{list-style:none;padding:0;margin:0}
+    .ms-group li{font-size:15.5px;line-height:1.5;padding:8px 0;color:#2B161B;border-top:1px solid rgba(43,22,27,.09)}
+    .ms-tier-dark .ms-group li{color:var(--cream);border-top-color:rgba(251,248,245,.13)}
+    .ms-tier-cta{margin-top:12px;width:100%;justify-content:center;text-align:center}
+    .btn-onmid{background:#FF8AC2;color:var(--choc)!important;box-shadow:0 10px 26px -10px rgba(255,138,194,.6)}
+
+    .ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+    .ms-card{padding:28px 28px 26px;border-radius:6px;
+             background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac) 5%,transparent));
+             border:1px solid color-mix(in srgb,var(--ac) 44%,transparent)}
+    .ms-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:#2B161B}
+    .ms-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+
+    .ms-notes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+    .ms-note{padding:28px;border-radius:6px;background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
+    .ms-note h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 11px;line-height:1.25;color:#2B161B}
+    .ms-note p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+    .ms-note strong{color:#2B161B;font-weight:600}
+
+    .ms-close{text-align:center}
+    .ms-close .ms-sublead{margin-bottom:32px}
+    .ms-sign{font-family:"Caveat",cursive;font-size:26px;color:var(--pink);margin:34px 0 0}
+    .ms-back{margin-top:64px;text-align:center}
+    .ms-back a{color:var(--pink);font-weight:500}
+
+    @media(max-width:860px){
+      .ms-tiers,.ms-grid,.ms-notes{grid-template-columns:1fr}
+      .ms-block{padding:56px 0}
+      .ms-tier{padding:28px 24px}
+    }
+  </style>
 </PageLayout>
