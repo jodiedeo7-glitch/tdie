@@ -1,23 +1,146 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+
+const usual = [
+  { n: "1", t: "Grow an audience" },
+  { n: "2", t: "Post daily, show your face" },
+  { n: "3", t: "Wait for reach" },
+  { n: "4", t: "Someday, an offer" },
+];
+
+const backwards = [
+  { n: "1", t: "The offer", ac: "#CBB7F7" },
+  { n: "2", t: "The funnel", ac: "#CF80C2" },
+  { n: "3", t: "The automation", ac: "#D4498D" },
+  { n: "4", t: "Then the audience", ac: "#D62E73" },
+];
+
+const machine = [
+  { t: "The Library", p: "Twelve pillar guides, written as lessons first and published as a curriculum you can read from the top.", href: "/learn" },
+  { t: "The classroom", p: "The membership this site was built to feed — where the guides become something you build rather than read.", href: "/membership" },
+  { t: "The shop", p: "Every product routed through a page I own, not a link in a bio I rent.", href: "/shop" },
+  { t: "The build itself", p: "The course that walks you through making the thing you're standing on, over one weekend.", href: "/shop/weekend-ecosystem" },
+];
 ---
 <PageLayout
+  wide
   title="About"
   description="The Digital Income Edit™ teaches women to build the complete faceless business — offer, funnel, automation — backwards, with AI as the build team."
 >
-  <div class="page-eyebrow">Our Story</div>
-  <h1>About The Digital Income Edit™</h1>
-  <p class="lede">I didn't build an audience and then work out what to sell them. I did it backwards — and that's the entire point.</p>
+  <section class="ab-hero">
+    <div class="page-eyebrow">Our story</div>
+    <h1>I didn't build an audience and then work out<br /><em>what to sell them.</em></h1>
+    <p class="lede">I did it backwards — and that's the entire point.</p>
+  </section>
 
-  <p>The Digital Income Edit™ exists because I think the order everyone teaches is wrong. Grow first, post daily, show your face, and someday a business will materialise. So women perform for an algorithm for two years and have nothing underneath them when the reach dies.</p>
+  <section class="ab-block ab-thesis">
+    <h2>The order everyone teaches is wrong</h2>
+    <p class="ab-lead">Grow first, post daily, show your face, and someday a business will materialise. So women perform for an algorithm for two years and have nothing underneath them when the reach dies.</p>
+  </section>
 
-  <p>I built the business first. The offer, the funnel, the brand system, the automation — with AI doing the heavy construction and me making the decisions. No face on camera. No audience when I started.</p>
+  <section class="ab-block">
+    <div class="ab-orders">
+      <div class="ab-order ab-order-dim">
+        <span class="ab-order-l">The usual order</span>
+        <ol>
+          {usual.map((s) => (
+            <li><span class="ab-n">{s.n}</span>{s.t}</li>
+          ))}
+        </ol>
+        <p class="ab-order-note">Two years of performing. Nothing underneath.</p>
+      </div>
+      <div class="ab-order ab-order-live">
+        <span class="ab-order-l">Backwards</span>
+        <ol>
+          {backwards.map((s) => (
+            <li style={`--ac:${s.ac}`}><span class="ab-n ab-n-ac">{s.n}</span>{s.t}</li>
+          ))}
+        </ol>
+        <p class="ab-order-note ab-order-note-live">Build Your Business Backwards. Scale It Forward.™</p>
+      </div>
+    </div>
+  </section>
 
-  <p>The site you're reading, the classroom behind it, the emails that land in your inbox if you join — all of it came off one method: <em>Build Your Business Backwards. Scale It Forward.™</em></p>
+  <section class="ab-block">
+    <h2>I built the business first</h2>
+    <p class="ab-lead">The offer, the funnel, the brand system, the automation — with AI doing the heavy construction and me making the decisions. No face on camera. No audience when I started.</p>
+    <p class="ab-sublead">The site you're reading, the classroom behind it, the emails that land in your inbox if you join — all of it came off one method.</p>
+  </section>
 
-  <p>Faceless doesn't mean nobody's there. It means your real face is never the thing being sold. The brand's face does that work, so yours doesn't have to.</p>
+  <section class="ab-block ab-faceless">
+    <h2>Faceless doesn't mean nobody's there</h2>
+    <p class="ab-hit">It means your real face is never the thing being sold. The brand's face does that work, so yours doesn't have to.</p>
+  </section>
 
-  <p>I'm not going to show you screenshots. I'm going to show you the machine. It's all here — walk through it.</p>
+  <section class="ab-block">
+    <h2>I'm not going to show you screenshots</h2>
+    <p class="ab-lead">I'm going to show you the machine. It's all here — walk through it.</p>
+    <div class="ab-grid">
+      {machine.map((m) => (
+        <a class="ab-card" href={m.href}>
+          <h3>{m.t}</h3>
+          <p>{m.p}</p>
+          <span class="ab-go">Open →</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-  <p style="margin-top:60px"><a href="/learn" style="color:var(--pink);font-weight:500">← Explore The Library</a></p>
+  <section class="ab-block ab-close">
+    <p class="ab-sign">xoxo, Jodie</p>
+    <p class="ab-back"><a href="/learn">← Explore The Library</a></p>
+  </section>
+
+  <style>
+    .ab-hero{text-align:center;padding:10px 0 52px}
+    .ab-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
+    .ab-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.6vw,72px);line-height:1.02;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
+    .ab-hero h1 em{font-style:italic;color:var(--pink)}
+    .ab-hero .lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;line-height:1.5;color:#5A4048}
+
+    .ab-block{padding:74px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .ab-thesis{border-top:none;padding-top:0}
+    .ab-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
+    .ab-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:#3B2228;text-align:center}
+    .ab-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:20px auto 0;text-align:center}
+    .ab-hit{font-family:"Cormorant Garamond",serif;font-size:26px;font-style:italic;line-height:1.55;color:var(--pink);
+            padding:24px 0 0;margin:0 auto;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:580px}
+
+    /* ── the two orders ── */
+    .ab-orders{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .ab-order{border-radius:8px;padding:32px 30px 28px}
+    .ab-order-dim{background:rgba(43,22,27,.035);border:1px solid rgba(43,22,27,.12)}
+    .ab-order-live{background:linear-gradient(165deg,rgba(203,183,247,.22),rgba(214,46,115,.08));border:1px solid rgba(214,46,115,.32)}
+    .ab-order-l{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:20px}
+    .ab-order-dim .ab-order-l{color:#9A8378}
+    .ab-order ol{list-style:none;padding:0;margin:0}
+    .ab-order li{display:flex;align-items:center;gap:16px;font-family:"Fraunces",serif;font-weight:300;font-size:23px;
+                 padding:15px 0;border-top:1px solid rgba(43,22,27,.1);color:#2B161B}
+    .ab-order-dim li{color:#9A8378;text-decoration:line-through;text-decoration-color:rgba(154,131,120,.5)}
+    .ab-n{font-family:"Inter",sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;width:26px;height:26px;flex:none;
+          display:inline-flex;align-items:center;justify-content:center;border-radius:50%;
+          background:rgba(43,22,27,.07);color:#9A8378}
+    .ab-n-ac{background:var(--ac);color:#FFFDFC}
+    .ab-order-note{font-size:14.5px;line-height:1.6;margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(43,22,27,.1);color:#9A8378}
+    .ab-order-note-live{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--pink);border-top-color:rgba(214,46,115,.3)}
+
+    /* ── machine cards ── */
+    .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+    .ab-card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:6px;text-decoration:none;
+             background:#FFFDFB;border:1px solid rgba(43,22,27,.14);transition:transform .2s var(--ease),border-color .2s}
+    .ab-card:hover{transform:translateY(-2px);border-color:var(--pink)}
+    .ab-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0;line-height:1.2;color:#2B161B}
+    .ab-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+    .ab-go{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-top:auto;padding-top:6px}
+
+    .ab-close{text-align:center;padding-bottom:0}
+    .ab-sign{font-family:"Caveat",cursive;font-size:28px;color:var(--pink);margin:0 0 34px}
+    .ab-back a{color:var(--pink);font-weight:500}
+
+    @media(max-width:860px){
+      .ab-orders,.ab-grid{grid-template-columns:1fr}
+      .ab-block{padding:54px 0}
+      .ab-order li{font-size:20px}
+    }
+  </style>
 </PageLayout>
