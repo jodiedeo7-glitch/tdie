@@ -10,14 +10,15 @@
 // STRUCTURED DATA
 // Article schema emits on every page, generated from props.
 //
-// ⚠️ datePublished is OPTIONAL here so that pages which don't
-// pass it still build. It is omitted from the schema when
-// absent rather than emitted empty or faked. This is a
-// deliberate, temporary state: Google's Article spec lists
-// datePublished as REQUIRED, and pages without it will be
-// flagged in Search Console and lose article rich-result
-// eligibility. Backfill the twelve dates and pass them here.
-// No layout change is needed when you do.
+// datePublished is OPTIONAL here so that a page which doesn't
+// pass it still builds. It is omitted from the schema when
+// absent rather than emitted empty or faked.
+//
+// STATUS, 6 Sept 2026: all 25 article pages in src/pages/learn/
+// now pass datePublished. The earlier backfill is COMPLETE and
+// the twelve-missing-dates warning that used to sit here is
+// resolved. Keep the prop optional, but any NEW article must
+// pass it or it loses article rich-result eligibility.
 //
 // FAQPage schema emits only when the optional `faqs` prop is
 // passed. Answers passed to `faqs` MUST match the visible FAQ
@@ -60,10 +61,14 @@
 // defect in this file. As each route ships, populate its row
 // below — one edit, all articles in that pillar update.
 //
-// LIVE ROUTES AS OF THIS COMMIT (the only ones used):
-//   /resources/faceless-income-blueprint   (Pillar 4; also 9, 10)
-//   /resources/starter-map                 (Pillar 6)
-//   /shop/plr-vault                        (Pillar 4)
+// LIVE ROUTES (verified against the repo, 6 Sept 2026):
+//   /resources/faceless-income-blueprint
+//   /resources/starter-map
+//   /resources/<pillar>-kit                — all twelve now live
+//   /shop/pretty-and-paid-plr-vault/       — NOT /shop/plr-vault,
+//     which never shipped; an earlier version of this comment
+//     named the wrong route. The code below is correct.
+//   /shop/weekend-ecosystem
 //   /membership                            (Membership CTAs)
 //
 // AFFILIATE MECHANICS — Standing Rule 18:
