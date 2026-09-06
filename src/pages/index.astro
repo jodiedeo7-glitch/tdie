@@ -146,14 +146,15 @@ const tiers = [
     /* ---------- HERO ---------- */
     .h-hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden}
     .h-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-02.jpg);background-size:cover;background-position:center}
-    .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.34) 0%,rgba(251,248,245,.62) 52%,var(--cream) 97%)}
+    .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,250,246,.58) 0%,rgba(253,250,246,.80) 52%,var(--cream) 97%)}
     .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 70px;text-align:center}
-    .h-hero .k{display:inline-block;transition:opacity .3s;font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:22px}
-    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.4px;max-width:15ch;margin:0 auto 24px;color:var(--pink)}
+    .h-hero .k{display:inline-block;transition:opacity .3s;font-size:10px;font-weight:500;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:26px;padding:8px 0;border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5)}
+    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.6px;max-width:15ch;margin:0 auto 26px;color:#2B161B}
+    .h-hero h1 em{font-style:italic;color:var(--pink)}
     .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
     .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid var(--taupe);box-shadow:none}
-    .btn.quiet:hover{border-color:var(--pink);color:var(--pink)!important}
+    .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid rgba(200,169,106,.65);box-shadow:none}
+    .btn.quiet:hover{background:var(--choc);border-color:var(--choc);color:var(--cream)!important}
     @media(max-width:600px){.h-hero{min-height:76vh}.h-hero .in{padding:0 22px 52px}}
 
     /* ---------- SHARED SECTION FURNITURE ---------- */
@@ -322,7 +323,7 @@ const tiers = [
     <div class="veil"></div>
     <div class="in">
       <a class="k" href="/">The Digital Income Edit™</a>
-      <h1>Build the whole business before anyone knows your name.</h1>
+      <h1>Build the whole business <em>before anyone knows your name.</em></h1>
       <p class="sub">I built this one faceless — the site you're standing on, the classroom behind it, the funnels underneath it. Offer first. Funnel second. Automation third. Audience last.</p>
       <div class="h-cta">
         <a class="btn" href="/learn">Start the build <span class="a">→</span></a>
