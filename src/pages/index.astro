@@ -20,7 +20,7 @@ const pillars = [
 
 // Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
 const shop = [
-  { name: "Pretty & Paid PLR Vault™", price: "$11", note: "per month · Beacons", copy: "Done-for-you digital products you rebrand and sell as your own, plus the content and training to launch them. 20 new products every month, and the full resell licence stays yours even if you cancel. Its own subscription, never part of the membership.", url: "/shop/pretty-and-paid-plr-vault/", aff: false },
+  { name: "Pretty & Paid PLR Vault™", price: "$11", note: "per month · Beacons", copy: "Done-for-you digital products you rebrand and sell as your own, plus the content and training to launch them. 20 new products every month, and the full resell licence stays yours even if you cancel. Its own subscription, never part of the membership.", url: "/shop/pretty-and-paid-plr-vault", aff: false },
   { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", copy: "Build the lead magnet and the paid offer behind it in a single afternoon.", url: "/go/first-freebie", aff: false },
   { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "/go/ugc-brand-contacts", aff: false },
   { name: "The One and Done Money Stream", price: "$27", note: "one-time", copy: "Set up one reliable digital income stream. Create it once, let it earn on repeat.", url: "/go/one-and-done-money-stream", aff: false },
@@ -40,7 +40,7 @@ const tiers = [
     feature: true,
     invert: false,
     flag: "Most join here",
-    cta: "Start your free 7-day trial",
+    cta: "Start Standard — 7 days free",
     href: "https://www.skool.com/thedigitalincomeedit/plans",
     inherit: null,
     groups: [
@@ -74,7 +74,7 @@ const tiers = [
     feature: false,
     invert: true,
     flag: "Written before you sit down",
-    cta: "Start your free 7-day trial",
+    cta: "Start Premium — 7 days free",
     href: "https://www.skool.com/thedigitalincomeedit/plans",
     inherit: "Everything in Standard",
     groups: [
@@ -127,16 +127,16 @@ const tiers = [
     @media(max-width:600px){.we-band{padding:0 22px 8px}}
     .we-band-in{display:grid;grid-template-columns:250px 1fr;align-items:center;gap:0;align-items:stretch;text-decoration:none;color:inherit;
                 border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;overflow:hidden;
-                background:#FFFDFB;
+                background:var(--white);
                 transition:border-color .3s var(--ease)}
     .we-band-in:hover{border-color:rgba(43,22,27,.28)}
-    .we-band-img{overflow:hidden;background:#FBF8F5;display:flex;align-items:center}
+    .we-band-img{overflow:hidden;background:var(--cream);display:flex;align-items:center}
     .we-band-img img{width:100%;height:auto;max-height:100%;object-fit:contain;display:block}
     .we-band-txt{padding:30px 34px}
-    .we-band-k{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#D62E73;margin-bottom:12px}
+    .we-band-k{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
     .we-band-txt h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-.8px;margin:0 0 12px}
     .we-band-txt p{font-size:16px;line-height:1.7;margin:0 0 18px;max-width:60ch}
-    .we-band-go{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#D62E73;font-weight:500}
+    .we-band-go{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:500}
     @media(max-width:780px){
       .we-band-in{grid-template-columns:1fr}
       .we-band-img{max-height:260px}
@@ -155,7 +155,7 @@ const tiers = [
     .h-hero .veil{display:none}
     .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:82px 40px 58px;text-align:center}
     .h-hero .k{display:inline-block;transition:opacity .3s;font-size:10px;font-weight:500;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:26px;padding:8px 0;border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5)}
-    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.6px;max-width:15ch;margin:0 auto 26px;color:#2B161B}
+    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.6px;max-width:15ch;margin:0 auto 26px;color:var(--choc)}
     .h-hero h1 em{font-style:italic;color:var(--pink)}
     .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
     .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -173,7 +173,7 @@ const tiers = [
 
     .sec-head{text-align:center;max-width:44ch;margin:0 auto 56px}
     .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
-    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:#2B161B}
+    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:var(--choc)}
     .sec-head h2 em{font-style:italic;color:var(--pink)}
     .sec-head p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--taupe-deep)}
     @media(max-width:600px){.sec{padding:70px 22px}}
@@ -261,7 +261,7 @@ const tiers = [
     }
     .tier{position:relative;display:flex;flex-direction:column;padding:36px 32px 34px;border-radius:2px;
       background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13)}
-    .tier.feat{background:#FFFDFB;border-color:rgba(43,22,27,.10);border-top:2px solid var(--gold);
+    .tier.feat{background:var(--white);border-color:rgba(43,22,27,.10);border-top:2px solid var(--gold);
       box-shadow:none}
     .tier .flag{position:absolute;top:-11px;left:30px;background:var(--pink);color:var(--white);
       font-size:9.5px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;padding:6px 0;border-radius:0;background:transparent!important;color:var(--gold-deep)!important;border-bottom:1px solid rgba(200,169,106,.5)}

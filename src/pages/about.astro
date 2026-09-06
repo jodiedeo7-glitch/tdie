@@ -94,15 +94,15 @@ const machine = [
   <style>
     .ab-hero{text-align:center;padding:10px 0 52px}
     .ab-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
-    .ab-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.6vw,72px);line-height:1.02;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
+    .ab-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.6vw,72px);line-height:1.02;letter-spacing:-2px;margin:0 0 26px;color:var(--choc)}
     .ab-hero h1 em{font-style:italic;color:var(--pink)}
-    .ab-hero .lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;line-height:1.5;color:#5A4048}
+    .ab-hero .lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;line-height:1.5;color:var(--choc-mute)}
 
     .ab-block{padding:74px 0;border-top:1px solid rgba(43,22,27,.1)}
     .ab-thesis{border-top:none;padding-top:0}
-    .ab-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
-    .ab-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:#3B2228;text-align:center}
-    .ab-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:20px auto 0;text-align:center}
+    .ab-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 22px;letter-spacing:-1px;color:var(--choc);text-align:center}
+    .ab-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:var(--choc-soft);text-align:center}
+    .ab-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:640px;margin:20px auto 0;text-align:center}
     .ab-hit{font-family:"Cormorant Garamond",serif;font-size:26px;font-style:italic;line-height:1.55;color:var(--pink);
             padding:24px 0 0;margin:0 auto;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:580px}
 
@@ -110,27 +110,27 @@ const machine = [
     .ab-orders{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .ab-order{border-radius:2px;padding:32px 30px 28px}
     .ab-order-dim{background:transparent;border:1px solid rgba(43,22,27,.09)}
-    .ab-order-live{background:#FFFDFB;border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold)}
+    .ab-order-live{background:var(--white);border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold)}
     .ab-order-l{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:20px}
-    .ab-order-dim .ab-order-l{color:#9A8378}
+    .ab-order-dim .ab-order-l{color:var(--taupe-deep)}
     .ab-order ol{list-style:none;padding:0;margin:0}
     .ab-order li{display:flex;align-items:center;gap:16px;font-family:"Fraunces",serif;font-weight:300;font-size:23px;
-                 padding:15px 0;border-top:1px solid rgba(43,22,27,.1);color:#2B161B}
-    .ab-order-dim li{color:#9A8378;text-decoration:line-through;text-decoration-color:rgba(154,131,120,.5)}
+                 padding:15px 0;border-top:1px solid rgba(43,22,27,.1);color:var(--choc)}
+    .ab-order-dim li{color:var(--taupe-deep);text-decoration:line-through;text-decoration-color:rgba(154,131,120,.5)}
     .ab-n{font-family:"Inter",sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;width:26px;height:26px;flex:none;
           display:inline-flex;align-items:center;justify-content:center;border-radius:50%;
-          background:rgba(43,22,27,.07);color:#9A8378}
-    .ab-n-ac{background:var(--ac);color:#FFFDFC}
-    .ab-order-note{font-size:14.5px;line-height:1.6;margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(43,22,27,.1);color:#9A8378}
+          background:rgba(43,22,27,.07);color:var(--taupe-deep)}
+    .ab-n-ac{background:var(--ac);color:var(--white)}
+    .ab-order-note{font-size:14.5px;line-height:1.6;margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(43,22,27,.1);color:var(--taupe-deep)}
     .ab-order-note-live{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--pink);border-top-color:rgba(214,46,115,.3)}
 
     /* ── machine cards ── */
     .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
     .ab-card{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:2px;text-decoration:none;
-             background:#FFFDFB;border:1px solid rgba(43,22,27,.14);transition:transform .2s var(--ease),border-color .2s}
+             background:var(--white);border:1px solid rgba(43,22,27,.14);transition:transform .2s var(--ease),border-color .2s}
     .ab-card:hover{transform:translateY(-2px);border-color:var(--pink)}
-    .ab-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0;line-height:1.2;color:#2B161B}
-    .ab-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+    .ab-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:21px;margin:0;line-height:1.2;color:var(--choc)}
+    .ab-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
     .ab-go{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-top:auto;padding-top:6px}
 
     .ab-close{text-align:center;padding-bottom:0}

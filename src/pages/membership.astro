@@ -13,7 +13,7 @@ const tiers = [
     annualNote: "nine months' price for twelve",
     flag: "Most join here",
     line: "Everything you need to build the thing and start selling it.",
-    cta: "Start your free 7-day trial",
+    cta: "Start Standard — 7 days free",
     invert: false,
     inherit: null,
     groups: [
@@ -31,7 +31,7 @@ const tiers = [
     annualNote: "eight months' price for twelve",
     flag: "Written before you sit down",
     line: "Standard is what you build by hand. Premium writes your content month for you.",
-    cta: "Start your free 7-day trial",
+    cta: "Start Premium — 7 days free",
     invert: true,
     inherit: "Everything in Standard",
     groups: [
@@ -132,63 +132,63 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
   <style>
     .ms-hero{text-align:center;padding:10px 0 52px}
     .ms-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
-    .ms-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,7.6vw,80px);line-height:1;letter-spacing:-2px;margin:0 0 26px;color:#2B161B}
+    .ms-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(42px,7.6vw,80px);line-height:1;letter-spacing:-2px;margin:0 0 26px;color:var(--choc)}
     .ms-hero h1 em{font-style:italic;color:var(--pink)}
-    .ms-hero .lede{max-width:610px;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:#5A4048}
+    .ms-hero .lede{max-width:610px;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
     .ms-cta-row{display:flex;justify-content:center}
 
     .ms-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
     .ms-thesis{border-top:none;padding-top:0}
-    .ms-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:#2B161B;text-align:center}
-    .ms-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto 20px;color:#3B2228;text-align:center}
-    .ms-sublead{font-size:17px;line-height:1.72;color:#5A4048;max-width:640px;margin:0 auto;text-align:center}
+    .ms-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:var(--choc);text-align:center}
+    .ms-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto 20px;color:var(--choc-soft);text-align:center}
+    .ms-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:640px;margin:0 auto;text-align:center}
     .ms-after{margin-top:38px}
     .ms-hit{font-family:"Cormorant Garamond",serif;font-size:25px;font-style:italic;line-height:1.55;color:var(--pink);
             padding:22px 0 0;margin:30px auto 0;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:560px}
 
     .ms-tiers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;align-items:stretch}
-    .ms-tier{position:relative;display:flex;flex-direction:column;border:1px solid rgba(43,22,27,.16);border-radius:2px;padding:34px 32px 32px;background:#FFFDFB}
+    .ms-tier{position:relative;display:flex;flex-direction:column;border:1px solid rgba(43,22,27,.16);border-radius:2px;padding:34px 32px 32px;background:var(--white)}
     .ms-tier .ms-flag{align-self:flex-start}
     .ms-tier-dark{background:var(--choc);border-color:rgba(214,46,115,.42);box-shadow:0 24px 60px -30px rgba(43,22,27,.6)}
     .ms-flag{display:inline-block;font-size:10px;letter-spacing:2.8px;text-transform:uppercase;padding:8px 0;border-radius:0;
              background:transparent;color:var(--gold-deep);border:0;border-bottom:1px solid rgba(200,169,106,.5);margin-bottom:24px}
     .ms-tier-dark .ms-flag{background:transparent;color:var(--gold);border-bottom-color:rgba(200,169,106,.5)}
-    .ms-tier-name{font-family:"Fraunces",serif;font-weight:300;font-size:34px;letter-spacing:-.5px;margin:0 0 8px;color:#2B161B}
+    .ms-tier-name{font-family:"Fraunces",serif;font-weight:300;font-size:34px;letter-spacing:-.5px;margin:0 0 8px;color:var(--choc)}
     .ms-tier-dark .ms-tier-name{color:var(--cream)}
     .ms-price{display:flex;align-items:baseline;gap:9px;margin-bottom:16px}
     .ms-price-n{font-family:"Fraunces",serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-2px;color:var(--pink)}
-    .ms-tier-dark .ms-price-n{color:#FF8AC2}
-    .ms-price-p{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#7A5C63}
+    .ms-tier-dark .ms-price-n{color:var(--mauve)}
+    .ms-price-p{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--choc-meta)}
     .ms-tier-dark .ms-price-p{color:var(--taupe)}
-    .ms-annual{font-size:14.5px;line-height:1.5;color:#7A5C63;margin:-8px 0 18px;padding-bottom:16px}
+    .ms-annual{font-size:14.5px;line-height:1.5;color:var(--choc-meta);margin:-8px 0 18px;padding-bottom:16px}
     .ms-annual strong{color:var(--pink);font-weight:600}
     .ms-tier-dark .ms-annual{color:var(--taupe)}
-    .ms-tier-dark .ms-annual strong{color:#FF8AC2}
-    .ms-tier-line{font-size:16px;line-height:1.65;color:#57404A;margin:0 0 26px;padding-bottom:24px;border-bottom:1px solid rgba(43,22,27,.12)}
+    .ms-tier-dark .ms-annual strong{color:var(--mauve)}
+    .ms-tier-line{font-size:16px;line-height:1.65;color:var(--choc-mute);margin:0 0 26px;padding-bottom:24px;border-bottom:1px solid rgba(43,22,27,.12)}
     .ms-tier-dark .ms-tier-line{color:var(--taupe);border-bottom-color:rgba(251,248,245,.16)}
-    .ms-inherit{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:#FF8AC2;margin:0 0 22px}
+    .ms-inherit{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--mauve);margin:0 0 22px}
     .ms-group{margin-bottom:22px}
     .ms-group-l{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:10px}
     .ms-tier-dark .ms-group-l{color:var(--gold)}
     .ms-group ul{list-style:none;padding:0;margin:0}
-    .ms-group li{font-size:15.5px;line-height:1.5;padding:8px 0;color:#2B161B;border-top:1px solid rgba(43,22,27,.09)}
+    .ms-group li{font-size:15.5px;line-height:1.5;padding:8px 0;color:var(--choc);border-top:1px solid rgba(43,22,27,.09)}
     .ms-tier-dark .ms-group li{color:var(--cream);border-top-color:rgba(251,248,245,.13)}
     .ms-tier-cta{margin-top:auto;width:100%;justify-content:center;text-align:center}
     .ms-group:last-of-type{margin-bottom:30px}
-    .btn-onmid{background:#FF8AC2;color:var(--choc)!important;box-shadow:0 10px 26px -10px rgba(255,138,194,.6)}
+    .btn-onmid{background:var(--mauve);color:var(--choc)!important;box-shadow:0 10px 26px -10px rgba(255,138,194,.6)}
 
     .ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
     .ms-card{padding:28px 28px 26px;border-radius:2px;
-             background:#FFFDFB;
+             background:var(--white);
              border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac)}
-    .ms-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:#2B161B}
-    .ms-card p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
+    .ms-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:var(--choc)}
+    .ms-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
 
     .ms-notes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
-    .ms-note{padding:28px;border-radius:2px;background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
-    .ms-note h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 11px;line-height:1.25;color:#2B161B}
-    .ms-note p{font-size:15.5px;line-height:1.7;margin:0;color:#57404A}
-    .ms-note strong{color:#2B161B;font-weight:600}
+    .ms-note{padding:28px;border-radius:2px;background:var(--white);border:1px solid rgba(43,22,27,.14)}
+    .ms-note h3{font-family:"Fraunces",serif;font-weight:400;font-size:19px;margin:0 0 11px;line-height:1.25;color:var(--choc)}
+    .ms-note p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
+    .ms-note strong{color:var(--choc);font-weight:600}
 
     .ms-close{text-align:center}
     .ms-close .ms-sublead{margin-bottom:32px}

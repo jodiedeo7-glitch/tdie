@@ -34,19 +34,19 @@ const label = new Date(latest?.date ?? Date.now()).toLocaleDateString(undefined,
        border:1px solid rgba(214,46,115,.24)}
   .upd-in{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
   .upd-tag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2px;
-           text-transform:uppercase;color:#D62E73;background:#fff;border-radius:2px;
+           text-transform:uppercase;color:var(--pink);background:#fff;border-radius:2px;
            padding:6px 12px;flex-shrink:0;margin-top:2px}
   .upd-body{flex:1;min-width:220px}
-  .upd-mod{display:block;font-family:"Fraunces",serif;font-size:18px;color:#2B161B;margin-bottom:5px}
+  .upd-mod{display:block;font-family:"Fraunces",serif;font-size:18px;color:var(--choc);margin-bottom:5px}
   .upd-what{font-size:15px;line-height:1.6;color:rgba(43,22,27,.72);margin:0}
   .upd-go{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.6px;
-          text-transform:uppercase;color:#fff;background:#D62E73;border-radius:2px;
+          text-transform:uppercase;color:#fff;background:var(--pink);border-radius:2px;
           padding:9px 15px;text-decoration:none;white-space:nowrap;flex-shrink:0}
   .upd-x{background:none;border:none;color:rgba(43,22,27,.4);font-size:15px;cursor:pointer;
          padding:2px 4px;line-height:1;flex-shrink:0}
-  .upd-x:hover{color:#D62E73}
+  .upd-x:hover{color:var(--pink)}
   .upd-all{display:inline-block;margin-top:14px;font-size:13px;color:rgba(43,22,27,.6);text-decoration:none}
-  .upd-all:hover{color:#D62E73}
+  .upd-all:hover{color:var(--pink)}
   @media(max-width:640px){
     .upd-in{gap:12px}
     .upd-go{width:100%;text-align:center}

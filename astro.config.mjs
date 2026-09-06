@@ -12,6 +12,6 @@ export default defineConfig({
     filter: (page) => !page.includes('/weekend-ecosystem/'),
   })],
   redirects: {
-    '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault/',
+    '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault',
   },
 });

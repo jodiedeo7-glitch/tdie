@@ -51,34 +51,34 @@ const { title, description, eyebrow, heading, lede, meta = [], guideHref, guideL
     .rs-hero{text-align:center;padding:10px 0 46px;border-bottom:1px solid rgba(43,22,27,.1)}
     .rs-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
     .rs-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.4vw,68px);line-height:1.03;
-                letter-spacing:-1.8px;margin:0 auto 24px;color:#2B161B;max-width:17ch}
+                letter-spacing:-1.8px;margin:0 auto 24px;color:var(--choc);max-width:17ch}
     .rs-lede{max-width:620px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;
-             font-size:25px;line-height:1.5;color:#5A4048}
+             font-size:25px;line-height:1.5;color:var(--choc-mute)}
     .rs-meta{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px;
              font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep)}
     .rs-dot{width:3px;height:3px;border-radius:50%;background:var(--gold)}
 
     .rs-body{max-width:660px;margin:0 auto;padding:52px 0 0}
-    .rs-body > p{font-size:18px;line-height:1.85;color:#3B2228;margin:0 0 22px}
+    .rs-body > p{font-size:18px;line-height:1.85;color:var(--choc-soft);margin:0 0 22px}
     .rs-body > p > strong{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:24px;
-                          color:#2B161B;margin:44px 0 -6px;letter-spacing:-.3px}
+                          color:var(--choc);margin:44px 0 -6px;letter-spacing:-.3px}
     .rs-body > ul{list-style:none;padding:0;margin:0 0 34px;
                   border-top:1px solid rgba(214,46,115,.22)}
-    .rs-body > ul > li{position:relative;font-size:17px;line-height:1.7;color:#3B2228;
+    .rs-body > ul > li{position:relative;font-size:17px;line-height:1.7;color:var(--choc-soft);
                        padding:17px 0 17px 30px;border-bottom:1px solid rgba(43,22,27,.09)}
     .rs-body > ul > li::before{content:"";position:absolute;left:4px;top:26px;width:7px;height:7px;
                                border-radius:50%;background:var(--pink)}
-    .rs-body > ul > li > strong{color:#2B161B;font-weight:600}
+    .rs-body > ul > li > strong{color:var(--choc);font-weight:600}
     .rs-body em{font-style:italic}
     .rs-body .btn{margin-top:8px}
 
     /* the freebie capture, restyled to the page */
-    .rs-body .freebie-capture{background:#FFFDFB;
+    .rs-body .freebie-capture{background:var(--white);
                               border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;padding:36px 34px;
                               margin:44px 0;box-shadow:none}
-    .rs-body .fc-h{font-family:"Fraunces",serif;font-weight:400;font-size:25px;color:#2B161B;margin:0 0 8px}
-    .rs-body .fc-sub{font-size:14.5px;color:#5A4048;margin:0 0 20px}
-    .rs-body .fc-row input{border-radius:2px;border-color:rgba(43,22,27,.18);background:#FFFDFB;padding:14px 16px}
+    .rs-body .fc-h{font-family:"Fraunces",serif;font-weight:400;font-size:25px;color:var(--choc);margin:0 0 8px}
+    .rs-body .fc-sub{font-size:14.5px;color:var(--choc-mute);margin:0 0 20px}
+    .rs-body .fc-row input{border-radius:2px;border-color:rgba(43,22,27,.18);background:var(--white);padding:14px 16px}
     .rs-body .fc-row button{border-radius:2px;background:var(--pink);padding:14px 30px;
                             font-size:12.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;
                             box-shadow:0 10px 26px -10px rgba(214,46,115,.55)}
@@ -86,21 +86,21 @@ const { title, description, eyebrow, heading, lede, meta = [], guideHref, guideL
 
     /* "then keep going" block */
     .rs-body .freebie-next{margin:46px 0 0;padding:30px 32px;border-radius:2px;
-                           background:#FFFDFB;border:1px solid rgba(43,22,27,.14)}
+                           background:var(--white);border:1px solid rgba(43,22,27,.14)}
     .rs-body .freebie-next > p:first-child > strong{margin:0 0 4px;font-size:21px}
     .rs-body .freebie-next ul{list-style:none;padding:0;margin:14px 0 0;border-top:none}
-    .rs-body .freebie-next li{font-size:15.5px;line-height:1.7;color:#57404A;
+    .rs-body .freebie-next li{font-size:15.5px;line-height:1.7;color:var(--choc-mute);
                               padding:16px 0;border-bottom:none;border-top:1px solid rgba(43,22,27,.1)}
     .rs-body .freebie-next li::before{display:none}
     .rs-body .freebie-next li{padding-left:0}
     .rs-body .freebie-next a{color:var(--pink);font-weight:500}
 
     .rs-deeper{max-width:660px;margin:52px auto 0;padding:24px 28px;border-radius:2px;
-               background:#FFFDFB;
+               background:var(--white);
                border:1px solid rgba(43,22,27,.10);border-left:2px solid var(--gold)}
     .rs-deeper span{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;
                     color:#6B4FA8;margin-bottom:8px}
-    .rs-deeper a{font-family:"Fraunces",serif;font-size:19px;line-height:1.35;color:#2B161B}
+    .rs-deeper a{font-family:"Fraunces",serif;font-size:19px;line-height:1.35;color:var(--choc)}
     .rs-deeper a:hover{color:var(--pink)}
 
     .rs-back{margin-top:60px;text-align:center}
