@@ -108,14 +108,14 @@ const faqs = [
   { q: "Do I need to know how to code?", a: "No, and you won't write a line of it. Claude generates every file; you paste it and click commit. If something is wrong the deploy fails and tells you in plain English, and you paste that back. The course assumes you have never opened a code editor." },
   { q: "How much is actually automated?", a: "The building and the writing. Claude produces the site files, the articles, the SEO passes, the lead magnets, the images and the twenty-four repurposed assets per article. What stays yours is approval — reading what came back and saying yes or saying what to change. That's deliberate. Anything published under your name should be read by you first." },
   { q: "What does it cost to run the site?", a: "About a dollar a month. GitHub and Vercel are free at your traffic level; the domain is $10–15 a year." },
-  { q: "Do I need a paid Claude plan?", a: "For most of the course, no. But Module 1 uses Claude in Chrome \u2014 the browser extension that reads your platforms and builds your content inventory automatically \u2014 and that needs a paid Claude plan, the lowest tier is enough. If you'd rather not pay for it, Module 1 includes a full by-hand version that takes about an hour with a spreadsheet and gets you the same result. Nothing later in the weekend depends on which route you take. Beyond that, the only thing you have to pay for is your domain." },
+  { q: "Do I need a paid Claude plan?", a: "For most of the course, no. But Module 1 uses Claude in Chrome \u2014 the browser extension that reads your platforms and builds your content inventory automatically \u2014 and that needs a paid Claude plan, the cheapest plan is enough. If you'd rather not pay for it, Module 1 includes a full by-hand version that takes about an hour with a spreadsheet and gets you the same result. Nothing later in the weekend depends on which route you take. Beyond that, the only thing you have to pay for is your domain." },
   { q: "Can I really do it in a weekend?", a: "The build, yes — the modules are timed to it: two hours Friday, eight Saturday, five Sunday. Filling the site out afterwards is ongoing, which is what the operating cadence in Module 21 is for." },
   { q: "What if I don't use Skool?", a: "It works the same. Skool is the most common case because so much content gets trapped there, but the method applies to any pile of existing content — a course platform, a newsletter archive, a folder of PDFs." },
   { q: "Will I have to be on camera?", a: "No. Module 18 covers producing brand-consistent images without your face in any of them." },
   { q: "What if I don't have a paid product yet?", a: "Build the site anyway. Every article routes to a free resource, you build the list, and the list tells you what to sell. That's a better sequence than guessing at a product first." },
   { q: "How fast do I get access?", a: "I open it manually for each buyer rather than running an automated system, so it's usually within the hour during waking hours \u2014 but I'm one person, so please allow a few hours if you buy late at night. You'll get an email the moment your access is live, telling you exactly how to get in. If it's been longer than that, email hello@thedigitalincomeedit.com and I'll sort it immediately." },
   { q: "What happens when the tools change?", a: "You get the update, free. This is a live site you log into rather than a file you download, so when something changes — or I find a better way to do a step — the module is rewritten and new ones get added. Everyone who has ever bought sees the new version next time they log in. One payment covers all of it." },
-  { q: "Is this part of your membership?", a: "No. It's a standalone one-time purchase and isn't part of any membership tier." },
+  { q: "Is this part of your membership?", a: "No. It's a standalone one-time purchase and isn't part of either membership." },
 ];
 ---
 <PageLayout
@@ -430,7 +430,7 @@ const faqs = [
     .we-hero .lede{max-width:600px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
     .we-soon{display:inline-block;padding:16px 36px;border-radius:2px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
-             background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink)}
+             background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink-deep)}
     .we-hero-strip{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:46px}
     .we-chip{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;padding:8px 15px;border-radius:2px;
              background:color-mix(in srgb,var(--ac) 26%,transparent);color:var(--choc-soft);border:1px solid color-mix(in srgb,var(--ac) 60%,transparent)}
@@ -460,7 +460,7 @@ const faqs = [
                   border-top:2px solid var(--ac)}
     .we-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 11px;line-height:1.22;color:var(--choc)}
     .we-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
-    .we-num{display:block;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:2px;color:var(--pink);margin-bottom:14px}
+    .we-num{display:block;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:2px;color:var(--pink-deep);margin-bottom:14px}
 
     /* ── phases ── */
     .we-phases{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -492,7 +492,7 @@ const faqs = [
 
     /* ── proof ── */
     .we-proof{border-top:none;padding-top:0}
-    .we-proof-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
+    .we-proof-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:14px}
     .we-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
     .we-proof-card{display:flex;flex-direction:column;gap:9px;padding:22px 22px 20px;border-radius:2px;text-decoration:none;
                    background:var(--white);
@@ -500,7 +500,7 @@ const faqs = [
     .we-proof-card:hover{border-color:rgba(214,46,115,.45)}
     .we-proof-n{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#6B4FA8}
     .we-proof-t{font-family:"Fraunces",serif;font-size:19px;line-height:1.24;color:var(--choc)}
-    .we-proof-go{font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink);margin-top:auto;padding-top:6px}
+    .we-proof-go{font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink-deep);margin-top:auto;padding-top:6px}
 
     /* ── inside the course ── */
     .we-inside{display:grid;grid-template-columns:1.42fr 1fr;gap:18px;margin-top:36px;align-items:start}
@@ -508,7 +508,7 @@ const faqs = [
     .we-shot-bar{display:flex;gap:6px;padding:11px 14px;background:rgba(43,22,27,.055);border-bottom:1px solid rgba(43,22,27,.09)}
     .we-shot-bar span{width:9px;height:9px;border-radius:50%;background:rgba(43,22,27,.16)}
     .we-shot-body{padding:24px 26px 26px}
-    .we-shot-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#CD9CDD;margin-bottom:10px}
+    .we-shot-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#CD9CDD;margin-bottom:10px}
     .we-shot-h{display:block;font-family:"Fraunces",serif;font-size:27px;font-weight:300;letter-spacing:-.6px;color:var(--choc);margin-bottom:22px}
     .we-shot-step{display:flex;align-items:center;gap:13px;margin-bottom:14px}
     .we-shot-num{width:31px;height:31px;border-radius:50%;background:#CD9CDD;color:#fff;display:flex;align-items:center;justify-content:center;
@@ -516,17 +516,17 @@ const faqs = [
     .we-shot-label{font-family:"Fraunces",serif;font-size:19px;color:var(--choc)}
     .we-shot-prompt{border-radius:2px;overflow:hidden;border:1px solid rgba(214,46,115,.22);background:var(--white);margin-bottom:14px}
     .we-shot-prompt-bar{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.14)}
-    .we-shot-prompt-bar span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
-    .we-shot-prompt-bar em{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;
-                           color:var(--pink);border:1px solid rgba(214,46,115,.4);border-radius:2px;padding:3px 9px;background:#fff}
+    .we-shot-prompt-bar span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink-deep)}
+    .we-shot-prompt-bar em{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;
+                           color:var(--pink-deep);border:1px solid rgba(214,46,115,.4);border-radius:2px;padding:3px 9px;background:#fff}
     .we-shot-prompt code{display:block;padding:15px 16px;font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.75;color:#4A2C34}
     .we-shot-road{display:flex;flex-direction:column;gap:9px;border:1px solid rgba(214,46,115,.18);background:rgba(255,138,194,.06);border-radius:2px;padding:14px 16px}
-    .we-shot-road span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
+    .we-shot-road span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink-deep)}
     .we-shot-road em{font-style:normal;font-size:14px;color:var(--choc)}
 
     .we-inside-side{display:flex;flex-direction:column;gap:14px}
     .we-mini{border-radius:2px;padding:24px 24px 22px;border:1px solid rgba(43,22,27,.14);background:var(--white)}
-    .we-mini-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
+    .we-mini-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
     .we-mini p{font-size:14.5px;line-height:1.6;color:var(--choc-mute);margin:16px 0 0}
     .we-mini-ring{width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;
                   background:conic-gradient(var(--pink) 0 100%,rgba(43,22,27,.09) 0);position:relative}
@@ -567,7 +567,7 @@ const faqs = [
     /* ── repurposing proof ── */
     .rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
     .rp-card{border:1px solid rgba(43,22,27,.13);border-radius:2px;padding:22px 24px 20px;background:var(--white)}
-    .rp-tag{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+    .rp-tag{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:16px}
     .rp-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
     .rp-o:first-of-type{border-top:none;padding-top:0}
     .rp-o b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:17.5px;color:var(--choc);margin-bottom:5px;line-height:1.25}
@@ -630,7 +630,7 @@ const faqs = [
     .we-close-img img{width:100%;height:auto;max-height:100%;object-fit:contain;display:block}
     .we-close-body{padding:56px 52px 50px;
                    background:var(--cream)}
-    .we-close-eyebrow{display:block;font-size:11px;letter-spacing:2.8px;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+    .we-close-eyebrow{display:block;font-size:11px;letter-spacing:2.8px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:20px}
     .we-close h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,3.9vw,46px);line-height:1.02;
                  margin:0 0 12px;letter-spacing:-1.3px;color:var(--choc);text-align:left}
     .we-close-lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:27px;line-height:1.35;

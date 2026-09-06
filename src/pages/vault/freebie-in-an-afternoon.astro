@@ -2,7 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 
 const CHECKOUT = "/go/first-freebie";
-const VIP = "/membership";
+const PREMIUM = "/membership";
 const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=001e4409f19d41beb58be618800d5589";
 ---
 <PageLayout
@@ -16,7 +16,7 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
       <h1>Build Your First Freebie in One Afternoon</h1>
       <p class="v-sub">And have the paid upsell attached — built, live, and ready to sell tomorrow morning.</p>
       <a class="btn" href={CHECKOUT}>Get the Guide — $7 <span class="a">→</span></a>
-      <div class="v-price-note">Instant download · or free inside VIP</div>
+      <div class="v-price-note">Instant download · or included with Premium</div>
     </div>
 
     <div class="v-hero-art">
@@ -43,13 +43,13 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
 
     <div class="v-inside">
       <div class="v-inside-mark">Let's see what's inside</div>
-      <h3>Everything you get</h3>
-      <div class="v-num-row"><span class="v-num">1</span><div><h5>5 done-for-you freebie ideas</h5><p>Each one with its upsell already mapped — pick and go.</p></div></div>
-      <div class="v-num-row"><span class="v-num">2</span><div><h5>3 fill-in-the-blank templates</h5><p>Plus the exact Canva AI prompt to build each one fast.</p></div></div>
-      <div class="v-num-row"><span class="v-num">3</span><div><h5>The $0 "purchase" Beacons setup</h5><p>The trick that captures emails and delivers automatically.</p></div></div>
-      <div class="v-num-row"><span class="v-num">4</span><div><h5>Swipe-and-paste copy</h5><p>Delivery message + upsell copy, ready to drop in.</p></div></div>
-      <div class="v-num-row"><span class="v-num">5</span><div><h5>The $5–$9 Upsell Menu</h5><p>So you never stall on what to sell next.</p></div></div>
-      <div class="v-num-row"><span class="v-num">6</span><div><h5>Copy-paste AI prompts</h5><p>Under every step — heavy on Canva AI.</p></div></div>
+      <h2>Everything you get</h2>
+      <div class="v-num-row"><span class="v-num">1</span><div><h3>5 done-for-you freebie ideas</h3><p>Each one with its upsell already mapped — pick and go.</p></div></div>
+      <div class="v-num-row"><span class="v-num">2</span><div><h3>3 fill-in-the-blank templates</h3><p>Plus the exact Canva AI prompt to build each one fast.</p></div></div>
+      <div class="v-num-row"><span class="v-num">3</span><div><h3>The $0 "purchase" Beacons setup</h3><p>The trick that captures emails and delivers automatically.</p></div></div>
+      <div class="v-num-row"><span class="v-num">4</span><div><h3>Swipe-and-paste copy</h3><p>Delivery message + upsell copy, ready to drop in.</p></div></div>
+      <div class="v-num-row"><span class="v-num">5</span><div><h3>The $5–$9 Upsell Menu</h3><p>So you never stall on what to sell next.</p></div></div>
+      <div class="v-num-row"><span class="v-num">6</span><div><h3>Copy-paste AI prompts</h3><p>Under every step — heavy on Canva AI.</p></div></div>
     </div>
 
     <div class="v-expect">
@@ -74,10 +74,10 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
     <p class="v-cross-lead">This is one guide in The Value Vault. Two ways to skip buying them one at a time:</p>
     <div class="v-cross-grid">
       <div class="v-card">
-        <h4>Go VIP</h4>
+        <h4>Go Premium</h4>
         <p>Unlocks <em>everything</em> inside The Digital Income Edit™ — every Edit, every training, every resource — plus a brand-new Vault guide every single month, free.</p>
         <div class="v-card-price">$27<span>/month</span></div>
-        <a href={VIP}>Explore VIP →</a>
+        <a href={PREMIUM}>Explore Premium →</a>
       </div>
       <div class="v-card gold">
         <h4>Unlock the Vault</h4>
@@ -120,8 +120,8 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
       border:3px solid #fff}
     .v-burst-in{font-family:"Fraunces",serif;font-weight:500;font-size:30px;color:var(--choc);
       line-height:.9;text-align:center;display:flex;flex-direction:column}
-    .v-burst-in small{font-family:var(--sans);font-size:9px;letter-spacing:1.5px;
-      text-transform:uppercase;color:var(--pink);margin-top:2px;font-weight:700}
+    .v-burst-in small{font-family:var(--sans);font-size:10.5px;letter-spacing:1.5px;
+      text-transform:uppercase;color:var(--pink-deep);margin-top:2px;font-weight:700}
 
     /* badge */
     .v-badge{position:absolute;top:-16px;left:-20px;background:var(--gold);color:var(--choc);
@@ -143,7 +143,7 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
     .v-hook{font-size:19px;line-height:1.7;margin-bottom:22px}
     .v-body p{font-size:17px;line-height:1.8;margin-bottom:22px}
     .v-inside{background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);border-radius:2px;padding:34px 38px;margin:36px 0}
-    .v-inside h3{font-family:"Fraunces",serif;font-weight:500;font-size:24px;color:var(--pink);margin-bottom:20px}
+    .v-inside h2{font-family:"Fraunces",serif;font-weight:500;font-size:24px;color:var(--pink);margin-bottom:20px}
     .v-inside ul{list-style:none;margin:0;padding:0}
     .v-inside li{position:relative;padding-left:34px;margin-bottom:16px;font-size:16px;line-height:1.55}
     .v-inside li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;
@@ -166,7 +166,7 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
     .v-card p{font-size:15px;line-height:1.65;margin-bottom:18px;color:var(--choc-soft)}
     .v-card-price{font-family:"Fraunces",serif;font-size:34px;color:var(--choc);margin-bottom:18px}
     .v-card-price span{font-size:14px;color:var(--taupe-deep);font-family:var(--sans);margin-left:6px}
-    .v-card a{font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--pink);text-decoration:none}
+    .v-card a{font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--pink-deep);text-decoration:none}
     .v-card.gold a{color:var(--gold-deep)}
 
     .v-back{text-align:center;margin-top:56px}
@@ -178,7 +178,7 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
     .v-num{flex:none;width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;
       font-family:"Fraunces",serif;font-size:19px;display:flex;align-items:center;justify-content:center;
       box-shadow:0 6px 14px -4px rgba(214,46,115,.5)}
-    .v-num-row h5{font-family:"Inter",sans-serif;font-weight:600;font-size:16px;color:var(--choc);margin:4px 0 4px}
+    .v-num-row h3{font-family:"Inter",sans-serif;font-weight:600;font-size:16px;color:var(--choc);margin:4px 0 4px}
     .v-num-row p{font-size:14.5px;line-height:1.55;color:var(--choc-soft);margin:0}
 
     /* what to expect strip */

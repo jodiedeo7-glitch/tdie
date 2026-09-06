@@ -50,7 +50,7 @@ const faqs = [
   { q: "Are your services really application-based?", a: "Yes. Every engagement starts with an email so I can make sure we're the right fit before we begin. No pressure, no hard sell." },
   { q: "How soon can we start?", a: "Once we've had our discovery call, most projects begin within one to two weeks depending on availability." },
   { q: "Do you offer payment plans?", a: "Yes — flexible payment options are available for most services. We'll cover the details on your call." },
-  { q: "What if I'm just starting out?", a: "Many of my clients begin from scratch. If a service isn't the right fit yet, I'll point you to the best next step — often something free in the library." },
+  { q: "What if I'm just starting out?", a: "Many of my clients begin from scratch. If a service isn't the right fit yet, I'll point you somewhere better — often something free in the library." },
 ];
 ---
 <!DOCTYPE html>
@@ -80,7 +80,7 @@ const faqs = [
     .w-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-05.jpg);background-size:cover;background-position:center}
     .w-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.35),rgba(251,248,245,.68) 55%,var(--cream) 97%)}
     .w-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 62px;text-align:center}
-    .w-hero .k{font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+    .w-hero .k{font-size:11px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:20px}
     .w-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,6vw,74px);line-height:1.03;letter-spacing:-1.2px;max-width:16ch;margin:0 auto 22px}
     .w-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,24px);line-height:1.55;color:var(--choc-soft);max-width:58ch;margin:0 auto 34px}
     @media(max-width:600px){.w-hero .in{padding:0 22px 46px}}
@@ -106,14 +106,14 @@ const faqs = [
     .svc .g{font-size:26px;margin-bottom:16px}
     .svc h3{font-family:var(--display);font-weight:400;font-size:23px;line-height:1.2;margin-bottom:12px}
     .svc p{font-size:15px;line-height:1.65;color:var(--choc-soft);margin-bottom:24px;flex:1}
-    .svc .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+    .svc .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink-deep)}
 
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;max-width:1080px;margin:0 auto}
     @media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
     @media(max-width:520px){.steps{grid-template-columns:1fr}}
     .step{border-top:2px solid var(--pink);padding-top:22px}
-    .step .n{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:2px;color:var(--pink);margin-bottom:10px}
-    .step h4{font-family:var(--display);font-weight:400;font-size:23px;margin-bottom:10px}
+    .step .n{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:2px;color:var(--pink-deep);margin-bottom:10px}
+    .step h3{font-family:var(--display);font-weight:400;font-size:23px;margin-bottom:10px}
     .step p{font-size:15px;line-height:1.68;color:var(--taupe-deep)}
 
     .faq{max-width:720px;margin:0 auto}
@@ -169,7 +169,7 @@ const faqs = [
         <h2>Why work with me</h2>
         <p>I'm the founder of The Digital Income Edit™, and I help women turn scattered ideas into elegant, profitable online businesses.</p>
         <p>My approach blends Pinterest-first traffic, AI-powered systems, and beautifully positioned digital offers — so your business feels effortless and looks premium.</p>
-        <p>When we work together you get calm strategy instead of hustle, clear next steps instead of overwhelm, and systems built to keep paying you long after our work is done.</p>
+        <p>When we work together you get calm strategy instead of hustle, a clear order of work instead of overwhelm, and systems built to keep paying you long after our work is done.</p>
       </div>
     </div>
   </section>
@@ -204,7 +204,7 @@ const faqs = [
       {process.map((p) => (
         <div class="step">
           <div class="n">{p.n}</div>
-          <h4>{p.t}</h4>
+          <h3>{p.t}</h3>
           <p>{p.c}</p>
         </div>
       ))}
@@ -245,14 +245,14 @@ const faqs = [
         <div class="foot-tag">Build a business you're obsessed with — online, on your terms.</div>
       </div>
       <div class="foot-col">
-        <h5>Learn</h5>
+        <h2 class="foot-h">Learn</h2>
         <a href="/learn">The Library</a>
         <a href="/learn/complete-pinterest-marketing-guide">Pinterest</a>
         <a href="/learn/ultimate-guide-to-ai">AI</a>
         <a href="/learn/digital-products-guide">Digital Products</a>
       </div>
       <div class="foot-col">
-        <h5>Explore</h5>
+        <h2 class="foot-h">Explore</h2>
         <a href="/shop">Shop</a>
         <a href="/resources">Free Resources</a>
         <a href="/membership">Membership</a>
@@ -260,7 +260,7 @@ const faqs = [
         <a href="/about">About</a>
       </div>
       <div class="foot-col">
-        <h5>Connect</h5>
+        <h2 class="foot-h">Connect</h2>
         <a href="/community">Community</a>
         <a href="/newsletter">Newsletter</a>
         <a href="https://pinterest.com/Nursemadedigital">Pinterest</a>
