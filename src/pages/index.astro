@@ -144,10 +144,16 @@ const tiers = [
     }
 
     /* ---------- HERO ---------- */
-    .h-hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden}
-    .h-hero .bg{position:absolute;inset:0;background-image:url(/images/library/hero-office-wide-02.jpg);background-size:cover;background-position:center}
-    .h-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,250,246,.58) 0%,rgba(253,250,246,.80) 52%,var(--cream) 97%)}
-    .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:0 40px 70px;text-align:center}
+    .h-hero{position:relative;display:block;overflow:hidden}
+    /* The type gets a clean field. The photograph sits below it, at full
+       strength, as a band — neither is compromised for the other. */
+    .h-hero .bg{position:relative;height:clamp(300px,42vw,520px);margin-top:14px;
+                background-image:url(/images/library/hero-office-wide-02.jpg);
+                background-size:cover;background-position:center 42%}
+    .h-hero .bg::after{content:"";position:absolute;inset:0;
+                background:linear-gradient(180deg,var(--cream) 0%,transparent 16%,transparent 84%,var(--cream) 100%)}
+    .h-hero .veil{display:none}
+    .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:82px 40px 58px;text-align:center}
     .h-hero .k{display:inline-block;transition:opacity .3s;font-size:10px;font-weight:500;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:26px;padding:8px 0;border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5)}
     .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.6px;max-width:15ch;margin:0 auto 26px;color:#2B161B}
     .h-hero h1 em{font-style:italic;color:var(--pink)}
@@ -155,21 +161,20 @@ const tiers = [
     .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid rgba(200,169,106,.65);box-shadow:none}
     .btn.quiet:hover{background:var(--choc);border-color:var(--choc);color:var(--cream)!important}
-    @media(max-width:600px){.h-hero{min-height:76vh}.h-hero .in{padding:0 22px 52px}}
+    @media(max-width:600px){.h-hero .in{padding:56px 22px 44px}.h-hero .bg{height:260px}}
 
     /* ---------- SHARED SECTION FURNITURE ---------- */
     .sec{max-width:var(--wide);margin:0 auto;padding:104px 40px;position:relative}
     .sec::before{content:"";position:absolute;top:0;left:40px;right:40px;height:9px;pointer-events:none;
-      background:
-        radial-gradient(circle at 50% 50%, #D62E73 0 3px, transparent 3.6px),
-        linear-gradient(90deg,transparent 0%, rgba(214,46,115,.24) 16%, rgba(200,169,106,.30) 50%, rgba(214,46,115,.24) 84%, transparent 100%);
-      background-repeat:no-repeat;background-size:100% 9px, 100% 1px;
-      background-position:center center, center center}
+      background:linear-gradient(90deg,transparent 0%, rgba(200,169,106,.55) 50%, transparent 100%);
+      background-repeat:no-repeat;background-size:100% 1px;
+      background-position:center center}
     .shop-band .sec::before,.mem .sec::before{display:none}
 
     .sec-head{text-align:center;max-width:44ch;margin:0 auto 56px}
     .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
-    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:var(--pink)}
+    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:#2B161B}
+    .sec-head h2 em{font-style:italic;color:var(--pink)}
     .sec-head p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--taupe-deep)}
     @media(max-width:600px){.sec{padding:70px 22px}}
 
@@ -319,8 +324,6 @@ const tiers = [
 
   <!-- HERO -->
   <section class="h-hero">
-    <div class="bg"></div>
-    <div class="veil"></div>
     <div class="in">
       <a class="k" href="/">The Digital Income Edit™</a>
       <h1>Build the whole business <em>before anyone knows your name.</em></h1>
@@ -330,6 +333,7 @@ const tiers = [
         <a class="btn quiet" href="/shop/weekend-ecosystem">See how this site was built</a>
       </div>
     </div>
+    <div class="bg"></div>
   </section>
 
   <!-- PROOF -->
