@@ -1,0 +1,113 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const groups = [
+  {
+    label: "Buying",
+    ac: "#CBB7F7",
+    qs: [
+      { q: "Do you offer refunds?",
+        a: "No. Everything sold here is digital and delivered instantly, so all sales are final — that includes guides, courses, template packs and the PLR vault. This is standard across digital products, mine and everyone else's, so assume it applies to anything you buy through this site or through a link on it. Read the page before you buy, and if you're unsure whether something fits where you are, email me first and I'll tell you honestly." },
+      { q: "What about the membership?",
+        a: "Different, because it's a subscription rather than a purchase. Both tiers start with a free 7-day trial and you can cancel from inside the app at any time. Cancelling stops the next payment; it doesn't refund one you've already made." },
+      { q: "Where do I get what I bought?",
+        a: "Checkout runs through Beacons, and your files arrive by email at the address you paid with. If nothing appears, check spam first, then email me and I'll resend it." },
+      { q: "Is $27 in the shop the same as $27 membership?",
+        a: "No, and it's worth being clear about. The One and Done Money Stream is $27 once. Premium membership is $27 every month. Same number, completely different thing." },
+    ],
+  },
+  {
+    label: "The membership",
+    ac: "#CF80C2",
+    qs: [
+      { q: "What's the difference between Standard and Premium?",
+        a: "Standard at $9 a month teaches you to build it and sell it — the full education library, brand and content training, and Pinterest Foundations™. Premium at $27 adds the monthly done-for-you content calendar, The Ads Edit™, the offer and funnel training, and the Premium Vault." },
+      { q: "Is there a free tier?",
+        a: "Not any more. There's a free 7-day trial on either tier instead." },
+      { q: "Three things have \"vault\" in the name. Which is which?",
+        a: "The Value Vault is the guide collection inside the membership. The Premium Vault is that same collection fully unlocked, included with Premium. Pretty & Paid PLR Vault™ is a separate $11 a month subscription for products you rebrand and resell — it isn't part of either membership." },
+      { q: "Is BAMI included?",
+        a: "No. The Business Architect Mentorship Intensive™ is separate and by application only." },
+    ],
+  },
+  {
+    label: "Affiliate links",
+    ac: "#D4498D",
+    qs: [
+      { q: "Some products here aren't yours. How does that work?",
+        a: "Anything marked Recommended · Not mine was built by someone else. I earn a commission if you buy through my link, at no extra cost to you. Those products carry their own prices set by their owners, which can change without notice, and their own delivery and support." },
+      { q: "Do you recommend everything you've ever bought?",
+        a: "No. Things I've bought and wouldn't recommend don't appear here, and if one turns out not to be worth it I take it down rather than leave it up earning." },
+    ],
+  },
+  {
+    label: "The work itself",
+    ac: "#D62E73",
+    qs: [
+      { q: "Do I have to show my face?",
+        a: "No. Nothing taught here requires it. Faceless doesn't mean nobody's there — it means your real face is never the thing being sold." },
+      { q: "Do I need an audience to start?",
+        a: "No, and starting without one is the point. The order taught here is offer first, then funnel, then automation, then audience — because building the audience first is what leaves people with two years of content and nothing underneath it." },
+      { q: "How much time does this actually take?",
+        a: "Depends what you're building. The Weekend Ecosystem™ is designed to be finished in two days. The membership moves at whatever pace you set. BAMI assumes four focused hours a week across twelve weeks." },
+      { q: "Do I need to be technical?",
+        a: "No. AI does the heavy construction throughout — you make the decisions." },
+    ],
+  },
+];
+---
+<PageLayout
+  wide
+  title="Questions"
+  description="Refunds, delivery, membership tiers, affiliate links, and how the work actually runs at The Digital Income Edit™."
+>
+  <section class="fq-hero">
+    <div class="page-eyebrow">Questions</div>
+    <h1>The things worth<br /><em>knowing first.</em></h1>
+    <p class="fq-lede">Buying, billing, what's included where, and how the affiliate side works. If yours isn't here, email me.</p>
+  </section>
+
+  {groups.map((g) => (
+    <section class="fq-block" style={`--ac:${g.ac}`}>
+      <h2>{g.label}</h2>
+      <div class="fq-list">
+        {g.qs.map((item) => (
+          <div class="fq-q">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="fq-block fq-close">
+    <h2>Still stuck?</h2>
+    <p class="fq-sublead">Email me and a person answers — <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
+  </section>
+
+  <p class="fq-back"><a href="/learn">← Back to The Library</a></p>
+
+  <style>
+    .fq-hero{text-align:center;padding:10px 0 48px}
+    .fq-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
+    .fq-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(40px,7vw,74px);line-height:1.02;letter-spacing:-2px;margin:0 0 24px;color:#2B161B}
+    .fq-hero h1 em{font-style:italic;color:var(--pink)}
+    .fq-lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;line-height:1.5;color:#5A4048}
+
+    .fq-block{padding:56px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .fq-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,4vw,38px);line-height:1.08;
+                 margin:0 0 8px;letter-spacing:-.8px;color:var(--ac);text-align:center}
+    .fq-list{max-width:700px;margin:22px auto 0}
+    .fq-q{padding:24px 0;border-top:1px solid rgba(43,22,27,.1)}
+    .fq-q h3{font-family:"Fraunces",serif;font-weight:400;font-size:20px;margin:0 0 9px;line-height:1.28;color:#2B161B}
+    .fq-q p{font-size:16.5px;line-height:1.75;margin:0;color:#57404A}
+
+    .fq-close{text-align:center}
+    .fq-sublead{font-size:17.5px;line-height:1.75;color:#5A4048;max-width:600px;margin:0 auto}
+    .fq-sublead a{color:var(--pink);font-weight:500}
+    .fq-back{margin-top:58px;text-align:center}
+    .fq-back a{color:var(--pink);font-weight:500}
+    @media(max-width:700px){.fq-block{padding:44px 0}}
+  </style>
+</PageLayout>
