@@ -217,29 +217,29 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-note{font-size:15.5px;line-height:1.7;color:#5A4048;margin:20px 0 0;font-style:italic}
 
     .pv-fig{margin:34px 0 0;padding:0;max-width:560px}
-    .pv-fig img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 34px rgba(43,22,27,.11)}
+    .pv-fig img{width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 10px 34px rgba(43,22,27,.11)}
     .pv-fig figcaption{font-size:13.5px;color:rgba(43,22,27,.55);margin-top:12px;font-style:italic}
     .pv-fig-hero{margin:44px auto 0}
     .pv-fig-wide{max-width:600px;margin:34px auto 0}
     .pv-fig-wide figcaption{text-align:center}
     .pv-sec-flush{border-bottom:none;padding-bottom:0}
-    .pv-shot{border-radius:8px;overflow:hidden;border:1px solid rgba(43,22,27,.16);background:#FBF8F5;box-shadow:0 12px 40px rgba(43,22,27,.1);max-width:720px}
+    .pv-shot{border-radius:2px;overflow:hidden;border:1px solid rgba(43,22,27,.16);background:#FBF8F5;box-shadow:0 12px 40px rgba(43,22,27,.1);max-width:720px}
     .pv-bar{display:flex;gap:6px;padding:11px 14px;background:rgba(43,22,27,.055);border-bottom:1px solid rgba(43,22,27,.09)}
     .pv-bar span{width:9px;height:9px;border-radius:50%;background:rgba(43,22,27,.16)}
     .pv-body{padding:26px 28px 28px}
     .pv-body-index{padding:20px}
 
-    .pv-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.11);border-radius:6px;padding:18px 20px;margin-bottom:12px;
+    .pv-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.11);border-radius:2px;padding:18px 20px;margin-bottom:12px;
               background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 13%,transparent),color-mix(in srgb,var(--ac) 3%,transparent))}
     .pv-edge{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ac)}
     .pv-phead{display:flex;gap:13px;align-items:flex-start;padding-bottom:12px;margin-bottom:10px;border-bottom:1px solid color-mix(in srgb,var(--ac) 42%,transparent)}
     .pv-pnum{font-family:"Fraunces",serif;font-size:36px;font-weight:300;line-height:.8;color:var(--ac);letter-spacing:-1.5px}
     .pv-pday{display:block;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:3px}
     .pv-ptitle{display:block;font-family:"Fraunces",serif;font-size:19px;color:#2B161B}
-    .pv-tally{margin-left:auto;font-family:"JetBrains Mono","Inter",monospace;font-size:10px;color:#fff;background:var(--ac);padding:4px 9px;border-radius:20px}
+    .pv-tally{margin-left:auto;font-family:"JetBrains Mono","Inter",monospace;font-size:10px;color:#fff;background:var(--ac);padding:4px 9px;border-radius:2px}
     .pv-mods{display:flex;flex-direction:column;gap:1px}
     .pv-mod{position:relative;padding:7px 0 7px 24px;font-family:"Fraunces",serif;font-size:15.5px;color:#2B161B}
-    .pv-tick{position:absolute;left:0;top:10px;width:14px;height:14px;border-radius:3px;border:1.5px solid rgba(43,22,27,.24)}
+    .pv-tick{position:absolute;left:0;top:10px;width:14px;height:14px;border-radius:2px;border:1.5px solid rgba(43,22,27,.24)}
     .pv-mnum{font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;color:rgba(43,22,27,.4);margin-right:7px}
     .pv-more{font-size:13px;color:rgba(43,22,27,.45);margin:10px 0 0;text-align:center;font-style:italic}
 
@@ -250,14 +250,14 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-stepnum{width:31px;height:31px;border-radius:50%;background:#CD9CDD;color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono","Inter",monospace;font-size:11px;flex-shrink:0}
     .pv-steplabel{font-family:"Fraunces",serif;font-size:19px;color:#2B161B}
 
-    .pv-prompt{border-radius:5px;overflow:hidden;border:1px solid rgba(214,46,115,.22);background:#FFFDFB;margin-bottom:14px}
+    .pv-prompt{border-radius:2px;overflow:hidden;border:1px solid rgba(214,46,115,.22);background:#FFFDFB;margin-bottom:14px}
     .pv-prompt-solo{max-width:640px;margin-bottom:0}
     .pv-pbar{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.14)}
     .pv-pbar span{font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
-    .pv-pbar em{font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;color:var(--pink);border:1px solid rgba(214,46,115,.4);border-radius:3px;padding:3px 10px;background:#fff;cursor:pointer}
+    .pv-pbar em{font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;color:var(--pink);border:1px solid rgba(214,46,115,.4);border-radius:2px;padding:3px 10px;background:#fff;cursor:pointer}
     .pv-prompt code{display:block;padding:16px 18px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;line-height:1.72;color:#4A2C34;white-space:pre-wrap;overflow-x:auto}
 
-    .pv-road{display:flex;flex-direction:column;gap:8px;border:1px solid rgba(214,46,115,.18);background:rgba(255,138,194,.06);border-radius:5px;padding:14px 16px}
+    .pv-road{display:flex;flex-direction:column;gap:8px;border:1px solid rgba(214,46,115,.18);background:rgba(255,138,194,.06);border-radius:2px;padding:14px 16px}
     .pv-road span{font-family:"JetBrains Mono","Inter",monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
     .pv-road em{font-style:normal;font-size:14.5px;color:#2B161B}
 
@@ -268,7 +268,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
     .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
     .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
-    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:7px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
+    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:2px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
     .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
     .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
     .pv-o:first-of-type{border-top:none;padding-top:0}
@@ -277,14 +277,14 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-o-plain i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;color:#3B2228;line-height:1.55}
     .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
     .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:6px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
+    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:2px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
                     background:linear-gradient(160deg,rgba(255,138,194,.18),rgba(203,183,247,.12));border:1px solid rgba(214,46,115,.18);min-height:74px}
     .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
     .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
     .pv-osmall{font-size:14.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
     @media(max-width:640px){.pv-slides,.pv-out-half{grid-template-columns:1fr}}
     .pv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
-    .pv-card{border-radius:8px;padding:26px;border:1px solid rgba(43,22,27,.14);background:#FFFDFB}
+    .pv-card{border-radius:2px;padding:26px;border:1px solid rgba(43,22,27,.14);background:#FFFDFB}
     .pv-ctag{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
     .pv-card p{font-size:14.5px;line-height:1.6;color:#57404A;margin:16px 0 0}
     .pv-ring{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;
@@ -296,7 +296,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-certh{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;color:#C8A96A;margin-bottom:12px}
     .pv-certname{display:block;font-family:"Fraunces",serif;font-size:24px;font-weight:300;color:#2B161B;padding-bottom:12px;border-bottom:1px solid rgba(214,46,115,.3)}
 
-    .pv-close{text-align:center;padding:60px 40px 56px;margin-top:60px;border-radius:10px;
+    .pv-close{text-align:center;padding:60px 40px 56px;margin-top:60px;border-radius:2px;
               border:1px solid rgba(214,46,115,.24);background:#FFFDFB;
               background-image:linear-gradient(160deg,rgba(203,183,247,.18),rgba(255,138,194,.11) 60%,transparent);
               box-shadow:0 14px 44px rgba(43,22,27,.09)}
@@ -316,7 +316,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-qs b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:18px;color:#2B161B;margin-bottom:4px}
     .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
     .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
-    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:7px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
+    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:2px;padding:22px 24px 18px;margin-bottom:14px;background:#FFFDFB;max-width:720px}
     .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
     .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
     .pv-o:first-of-type{border-top:none;padding-top:0}
@@ -325,7 +325,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     .pv-o-plain i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;color:#3B2228;line-height:1.55}
     .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
     .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:6px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
+    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:2px;font-family:"Fraunces",serif;font-size:15px;line-height:1.3;color:#2B161B;
                     background:linear-gradient(160deg,rgba(255,138,194,.18),rgba(203,183,247,.12));border:1px solid rgba(214,46,115,.18);min-height:74px}
     .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
     .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
