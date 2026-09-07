@@ -1,16 +1,5 @@
 ---
-// ── SALE ────────────────────────────────────────────────────────
-// One switch. Flip ACTIVE to true when the sale opens, false when
-// it closes. Nothing renders at all while it is false, so this can
-// sit in the page permanently between sales.
-export const SALE = {
-  ACTIVE: true,
-  price: "$67",
-  full: "$97",
-  code: "LABOR",
-  label: "Labor Day",
-  ends: "noon Wednesday",
-};
+import { SALE } from "../we-sale.js";
 
 export interface Props {
   variant?: "inline" | "bar";
@@ -40,5 +29,5 @@ const { variant = "inline" } = Astro.props;
   .sb-line code{font-family:"JetBrains Mono","Inter",monospace;font-size:13.5px;
                 letter-spacing:1px;border:1px solid rgba(43,22,27,.28);
                 border-radius:2px;padding:2px 8px;margin-left:2px}
-  .sb-bar{text-align:center;max-width:540px;margin:22px auto 0}
+  .sb-bar{text-align:center;max-width:560px;margin:0 auto 24px}
 </style>
