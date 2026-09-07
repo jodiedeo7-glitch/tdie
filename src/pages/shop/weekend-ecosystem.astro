@@ -134,7 +134,9 @@ const faqs = [
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <div class="we-cta-row">
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
+      <a class="btn-ghost" href="/weekend-ecosystem/preview">Look inside first <span class="a">→</span></a>
     </div>
+    <p class="we-peek">Open the real thing before you decide. Two full modules, the prompt cards, the update log — no email, no checkout, nothing to enter.</p>
     <p class="we-access">{S.access}</p>
     <figure class="we-hero-img">
       <img src="/images/we/cover-sofa.jpg" alt="A woman working on a laptop on a sofa, beside the words: The Weekend Ecosystem — your website and blog, built from what you already have." loading="eager" width="1200" height="1490" />
@@ -431,6 +433,12 @@ const faqs = [
     .we-hero h1 em{font-style:italic;color:var(--pink)}
     .we-hero .lede{max-width:600px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;
+               border:1px solid rgba(43,22,27,.28);border-radius:2px;text-decoration:none;
+               color:var(--choc);font-size:15px;letter-spacing:.2px;
+               transition:border-color .2s,color .2s}
+    .btn-ghost:hover{border-color:var(--pink);color:var(--pink)}
+    .we-peek{font-size:14.5px;line-height:1.7;color:var(--choc-meta);max-width:540px;margin:20px auto 0;text-align:center}
     .we-soon{display:inline-block;padding:16px 36px;border-radius:2px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
              background:rgba(214,46,115,.08);border:1px solid rgba(214,46,115,.3);color:var(--pink-deep)}
     .we-hero-strip{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:46px}
