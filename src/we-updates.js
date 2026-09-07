@@ -5,6 +5,12 @@
 
 export const UPDATES = [
   {
+    date: "2026-08-31",
+    module: "New — The Ask-For-It List",
+    slug: "ask-for-it-list",
+    what: "A fourth vault. 51 real asks written out as exact sentences — design changes, new pages, fixes, mobile, SEO, images, selling, legal. Everything I've actually asked Claude for while building this site.",
+  },
+  {
     date: "2026-09-07",
     module: "Module 19 — Analytics & Search Console",
     slug: "module-19-analytics-search-console",

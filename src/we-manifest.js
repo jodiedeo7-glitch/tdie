@@ -223,6 +223,11 @@ export const MODULES = [
 
 export const VAULTS = [
   {
+    "slug": "ask-for-it-list",
+    "title": "The Ask-For-It List",
+    "blurb": "51 things you can change on your site by asking for them in one sentence."
+  },
+  {
     "slug": "prompt-vault",
     "title": "The Prompt Vault",
     "blurb": "Every prompt in the course, verbatim, organized by tool. Copy, swap the brackets, run."
