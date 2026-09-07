@@ -33,7 +33,7 @@ const stats = [
 ];
 
 const included = [
-  { t: "22 modules", p: "Each one teaches the step, hands you the prompt, and tells you what breaks there and how to fix it." },
+  { t: "22 modules", p: "My exact build, in order. Each one teaches the step, hands you the prompt I used, and tells you what broke for me there and how I fixed it." },
   { t: "The Quick Sheet", p: "All 36 prompts on one page in running order, one line each. For your second build, and your third." },
   { t: "The Prompt Vault", p: "Every prompt verbatim and organised by tool — Claude, Chrome, image generation, GitHub." },
   { t: "The Troubleshooting Vault", p: "An FAQ plus every roadblock from a real build, paired with the fix that worked." },
@@ -131,7 +131,8 @@ const faqs = [
   <section class="we-hero">
     <div class="page-eyebrow">{S.eyebrow}</div>
     <h1>The Weekend <em>Ecosystem™</em></h1>
-    <p class="lede">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
+    <p class="lede">The exact steps I used to build this website, this blog, and the course you're reading right now \u2014 written down, in order, with every prompt.</p>
+    <p class="we-hero-sub">One weekend. Your content. Claude does the building.</p>
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <div class="we-cta-row">
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
@@ -192,8 +193,8 @@ const faqs = [
   <!-- PROOF -->
   <section class="we-block we-proof">
     <span class="we-proof-tag">Built with this system</span>
-    <h2>You're reading this on it</h2>
-    <p class="we-sublead">This website, and every article on it, came out of the process in this course. Most of them started life as a lesson inside my Skool group. Open one and see what a Skool lesson looks like after a Saturday afternoon.</p>
+    <h2>This isn't a method I teach. It's the one I used.</h2>
+    <p class="we-sublead">I built this site over one weekend, wrote down every step as I went, and that record became the course. The pages you are on right now \u2014 this one, the blog, the checkout, the members\u2019 area \u2014 were all built with the twenty-two modules you would be buying. Open an article and see what one of my Skool lessons looks like after a Saturday afternoon.</p>
     <div class="we-proof-grid">
       {proof.map((p) => (
         <a class="we-proof-card" href={p.u}>
@@ -433,6 +434,7 @@ const faqs = [
     .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(44px,8.4vw,86px);line-height:.96;letter-spacing:-2px;margin:0 0 26px;color:var(--choc)}
     .we-hero h1 em{font-style:italic;color:var(--pink)}
     .we-hero .lede{max-width:600px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
+    .we-hero-sub{font-size:16px;letter-spacing:.4px;color:#7A5C63;margin:-18px auto 34px;max-width:44ch}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
     .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;
                border:1px solid rgba(43,22,27,.28);border-radius:2px;text-decoration:none;
