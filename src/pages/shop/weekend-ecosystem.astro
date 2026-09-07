@@ -2,6 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 import { S, HREF } from "../../we-stage.js";
+import { SALE } from "../../we-sale.js";
 import SaleBanner from "../../components/SaleBanner.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
@@ -131,7 +132,7 @@ const faqs = [
   <section class="we-hero">
     <div class="page-eyebrow">{S.eyebrow}</div>
     <h1>The Weekend <em>Ecosystem™</em></h1>
-    <p class="lede">The exact steps I used to build this website, this blog, and the course you're reading right now \u2014 written down, in order, with every prompt.</p>
+    <p class="lede">The exact steps I used to build this website, this blog, and the course you're reading right now — written down, in order, with every prompt.</p>
     <p class="we-hero-sub">One weekend. Your content. Claude does the building.</p>
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <div class="we-cta-row">
@@ -139,6 +140,7 @@ const faqs = [
       <a class="btn-ghost" href="/weekend-ecosystem/preview">Look inside first <span class="a">→</span></a>
     </div>
     <p class="we-peek">Open the real thing before you decide. Two full modules, the prompt cards, the update log — no email, no checkout, nothing to enter.</p>
+    <SaleBanner variant="bar" />
     <p class="we-access">{S.access}</p>
     <figure class="we-hero-img">
       <img src="/images/we/cover-sofa.jpg" alt="A woman working on a laptop on a sofa, beside the words: The Weekend Ecosystem — your website and blog, built from what you already have." loading="eager" width="1200" height="1490" />
@@ -399,7 +401,7 @@ const faqs = [
     <div class="we-sticky-in">
       <div>
         <span class="we-sticky-n">The Weekend Ecosystem™</span>
-        <span class="we-sticky-p">$97 · every update included</span>
+        <span class="we-sticky-p">{SALE.ACTIVE ? `${SALE.price} with code ${SALE.code}` : "$97"} · every update included</span>
       </div>
       <a class="btn we-sticky-b" href={HREF}>Get it <span class="a">→</span></a>
     </div>
@@ -416,8 +418,8 @@ const faqs = [
       <p class="we-close-lede">Now you own the infrastructure.</p>
       <p class="we-close-anchor">A developer quotes four figures for this build. A site builder charges more than this every year, forever. You pay once and own the thing.</p>
       <div class="we-close-price">
-        <span class="we-close-num">$97</span>
-        <span class="we-close-unit">one-time · every future update included</span>
+        <span class="we-close-num">{SALE.ACTIVE ? SALE.price : "$97"}</span>
+        <span class="we-close-unit">{SALE.ACTIVE ? `was ${SALE.full} · code ${SALE.code} · ends ${SALE.ends}` : "one-time · every future update included"}</span>
       </div>
       <SaleBanner variant="inline" />
       <a class="btn we-close-btn" href={HREF}>{S.cta} <span class="a">→</span></a>
