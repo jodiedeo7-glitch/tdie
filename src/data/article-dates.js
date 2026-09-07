@@ -32,6 +32,7 @@ export const ARTICLE_DATES = {
   "affiliate-marketing-for-beginners": "2026-06-28",
   "email-marketing-for-beginners": "2026-06-30",
   "blogging-guide": "2026-07-04",
+  "turn-skool-content-into-a-blog": "2026-09-02",
   "stuck-four-steps-earlier": "2026-08-18",
 };
 
