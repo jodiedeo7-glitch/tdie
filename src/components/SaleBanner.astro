@@ -1,0 +1,44 @@
+---
+// ── SALE ────────────────────────────────────────────────────────
+// One switch. Flip ACTIVE to true when the sale opens, false when
+// it closes. Nothing renders at all while it is false, so this can
+// sit in the page permanently between sales.
+export const SALE = {
+  ACTIVE: false,
+  price: "$67",
+  full: "$97",
+  code: "LABOR",
+  label: "Labor Day",
+  ends: "noon Wednesday",
+};
+
+export interface Props {
+  variant?: "inline" | "bar";
+}
+const { variant = "inline" } = Astro.props;
+---
+
+{SALE.ACTIVE && (
+  <div class={`sb sb-${variant}`}>
+    <span class="sb-eyebrow">{SALE.label} · ends {SALE.ends}</span>
+    <p class="sb-line">
+      <strong>{SALE.price}</strong> today, down from {SALE.full}.
+      Use code <code>{SALE.code}</code> at checkout.
+    </p>
+  </div>
+)}
+
+<style>
+  .sb{border:1px solid rgba(43,22,27,.14);border-top:2px solid var(--pink);
+      border-radius:2px;background:var(--cream,#FBF8F5);padding:18px 22px;
+      margin:0 0 22px;text-align:left}
+  .sb-eyebrow{display:block;font-family:"JetBrains Mono","Inter",monospace;
+              font-size:10px;letter-spacing:1.8px;text-transform:uppercase;
+              color:var(--gold);margin-bottom:8px}
+  .sb-line{font-size:15.5px;line-height:1.65;color:var(--choc);margin:0}
+  .sb-line strong{font-family:"Fraunces",serif;font-size:20px;color:var(--pink)}
+  .sb-line code{font-family:"JetBrains Mono","Inter",monospace;font-size:13.5px;
+                letter-spacing:1px;border:1px solid rgba(43,22,27,.28);
+                border-radius:2px;padding:2px 8px;margin-left:2px}
+  .sb-bar{text-align:center;max-width:540px;margin:22px auto 0}
+</style>
