@@ -2,6 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 import { S, HREF } from "../../we-stage.js";
+import SaleBanner from "../../components/SaleBanner.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -414,6 +415,7 @@ const faqs = [
         <span class="we-close-num">$97</span>
         <span class="we-close-unit">one-time · every future update included</span>
       </div>
+      <SaleBanner variant="inline" />
       <a class="btn we-close-btn" href={HREF}>{S.cta} <span class="a">→</span></a>
       <p class="we-close-note">{S.access}</p>
     </div>
