@@ -193,6 +193,15 @@ const groups = [
     <span><b>$9</b> is either Membership Standard, which bills every month after a free 7-day trial, or the Pinterest batching guide, which is a one-time download. <b>$27</b> is either Membership Premium, which bills every month, or one of three one-time purchases — Pinterest Foundations™, The One and Done Money Stream, or the Bonus Bundle. Recurring items are labelled <em>per month</em>. Everything else is paid once. <b>$11</b> is Pretty &amp; Paid PLR Vault™, its own Beacons subscription — it lands two dollars from Membership Standard by coincidence, not because one leads into the other.</span>
   </div>
 
+  <!-- ── CATEGORY NAV ────────────────────────────────────── -->
+  <nav class="shopnav" aria-label="Shop categories">
+    <div class="shopnav-in">
+      {groups.map((g) => (
+        <a class="shopnav-l" href={`#${g.id}`}>{g.label}<em>{g.items.length}</em></a>
+      ))}
+    </div>
+  </nav>
+
   <!-- ── CATEGORIES ──────────────────────────────────────── -->
   {groups.map((g) => (
     <section class="grp" id={g.id}>
@@ -307,6 +316,24 @@ const groups = [
   .prices-note span{display:block;font-size:14px;line-height:1.75;color:var(--choc-soft)}
 
   /* ---------- CATEGORY GROUPS ---------- */
+  .shopnav{position:sticky;top:0;z-index:40;margin:64px 0 0;
+           background:rgba(251,248,245,.94);backdrop-filter:blur(10px);
+           border-top:1px solid rgba(43,22,27,.12);border-bottom:1px solid rgba(43,22,27,.12)}
+  .shopnav-in{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .shopnav-in::-webkit-scrollbar{display:none}
+  .shopnav-l{flex:0 0 auto;display:inline-flex;align-items:baseline;gap:7px;
+             padding:15px 20px;text-decoration:none;white-space:nowrap;
+             font-family:"Inter",system-ui,sans-serif;font-size:12px;letter-spacing:1.3px;
+             text-transform:uppercase;color:var(--choc);
+             border-right:1px solid rgba(43,22,27,.09);transition:color .18s,background .18s}
+  .shopnav-l:first-child{border-left:1px solid rgba(43,22,27,.09)}
+  .shopnav-l em{font-style:normal;font-size:10px;letter-spacing:.5px;color:var(--gold)}
+  .shopnav-l:hover{color:var(--pink);background:rgba(214,46,115,.05)}
+  .shopnav-l:hover em{color:var(--pink)}
+  .grp{scroll-margin-top:64px}
+  @media (max-width:700px){
+    .shopnav-l{padding:13px 15px;font-size:11px;letter-spacing:1px}
+  }
   .grp{margin-top:78px}
   .grp-head{margin-bottom:26px}
   .grp-k{font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
