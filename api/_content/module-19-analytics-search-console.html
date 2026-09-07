@@ -12,6 +12,20 @@ the main one. Give me each changed file complete.
 <section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">02</span><h2 class="wb-h wb-h-do">Search Console</h2></div><div class="wb-do-body"><p>Set up in Module 7. Now use it. Two reports:</p>
 <p><strong>Performance</strong> — every search that showed your site, with impressions, clicks, and position. This is where your next articles come from.</p>
 <p><strong>Pages</strong> — what's indexed and what isn't, with reasons.</p></div></section>
+<section class="wb wb-do"><div class="wb-do-head"><span class="wb-step">03</span><h2 class="wb-h wb-h-do">The pixel, if you run ads</h2></div><div class="wb-do-body"><p>Skip this if you don't run Meta ads. If you do, it is the thing most likely to be quietly broken right now.</p>
+<p>Your funnel crosses two domains. The sales page sits on the domain you built this weekend. The checkout sits somewhere else — Beacons, Stan, Gumroad, Podia. That host installs a pixel for you the moment you paste an ID into its settings, so Meta sees the purchase and never sees the page in front of it.</p>
+<p>Which means you can run ads for months, watch purchases land, and still have no retargeting audience. The audience worth having is the woman who read the entire sales page and didn't buy. If the pixel isn't on your own domain, she doesn't exist as far as Meta is concerned.</p>
+<p><strong>One ID in both places.</strong> Don't create a second pixel for the new site because the existing one is named after an older brand. Two IDs split the learning in half and neither half gets good.</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add the Meta Pixel base code to my Astro site. My pixel ID is
+PASTE_YOUR_ID. Put it in the head of every layout file that renders
+its own &lt;html&gt; tag — check all of them, not just the main one.
+Use &lt;script is:inline&gt; so Astro ships the snippet exactly as
+written instead of bundling it. Include the noscript fallback.
+Give me each changed file complete.
+</code></pre></div>
+<p><strong>The trap:</strong> Astro bundles and defers a plain script tag, which lifts your pixel out of the head and changes when it fires. <code>is:inline</code> tells it to leave the snippet alone. Same shape as the analytics trap above — every layout with its own <code>&lt;html&gt;</code> tag, not just the obvious one.</p>
+<p><strong>The second trap:</strong> if your checkout host already sends Initiate checkout and Purchase, don't add your own click handler to the handoff link. You'll count every checkout twice and then optimise against numbers that aren't real.</p>
+<p>Confirm it worked in Events Manager: open the dataset and read the Websites list in the right column. Your domain should appear there within about half an hour, sitting alongside the checkout host.</p></div></section>
 <section class="wb wb-sect"><h2 class="wb-h">What actually matters in month one</h2><p><strong>Impressions.</strong> Not clicks — impressions. Impressions mean Google is showing you. Clicks follow, but impressions move first and they're the early signal that anything is working.</p>
 <p><strong>Which queries you appear for.</strong> Frequently not the ones you targeted. This is genuinely useful information: a query you're at position 15 for, that you never wrote about deliberately, is an article you should write on purpose.</p>
 <p><strong>Which pages get indexed.</strong> New pages take days to weeks. If something isn't indexed after a month, check it for a <code>noindex</code> tag or an orphaned URL with no internal links.</p></section>
@@ -20,6 +34,7 @@ the main one. Give me each changed file complete.
 <div class="wb wb-roads"><span class="wb-tag wb-tag-road">If you get stuck</span>
 <details class="wb-road"><summary>Analytics shows zero</summary><div class="wb-road-body"><p>Enabled in the dashboard? Snippet in every layout? Ad blocker on your own browser? Check in that order.</p></div></details>
 <details class="wb-road"><summary>Search Console shows nothing after two weeks</summary><div class="wb-road-body"><p>Normal. New sites take weeks to accumulate enough data to display. Nothing to fix.</p></div></details>
+<details class="wb-road"><summary>Pixel fires on the page but Meta shows no audience</summary><div class="wb-road-body"><p>Audiences build forward from the day you install. There is no backfill, and nothing you sent before today counts. Give it a few hundred people before you judge it. Then check your root domain is verified in Business Settings — verification happens on the root domain, and one record covers every subdomain underneath it.</p></div></details>
 </div>
-<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>Analytics on every layout and enabled in the dashboard, Search Console verified with a submitted sitemap.</p>
+<section class="wb wb-deliv"><span class="wb-tag wb-tag-deliv">Before you move on</span><p>Analytics on every layout and enabled in the dashboard, Search Console verified with a submitted sitemap. If you run ads: one pixel ID on both halves of the funnel, and your root domain verified.</p>
 <hr /></section>
