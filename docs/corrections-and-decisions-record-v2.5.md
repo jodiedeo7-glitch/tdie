@@ -51,7 +51,7 @@ Meta verifies root domains only, never subdomains. **`thedigitalincomeedit.com`*
 
 Method used: DNS TXT at Porkbun. Host blank, value `facebook-domain-verification=ez227fq8aajppa81pknp97e3mhkoeh`, TTL 600. Verified 7 September 2026.
 
-The meta-tag method was attempted first and failed: the `facebook-domain-verification` tag already in the site's `<head>` carries a different token. **That stale tag should be removed** — it verifies nothing and will mislead the next person who reads it.
+The meta-tag method was attempted first and failed, but **not because the tag was wrong.** Corrected 7 September 2026: the `facebook-domain-verification` tag in `PageLayout.astro` carries the correct token, character for character. Meta scrapes the bare root `http://thedigitalincomeedit.com/`, which 308-redirects to `www.`, and the scraper does not follow the redirect to find it. **Leave the tag in place.** It is correct and harmless, and it becomes a working second method the moment anything serves that token at the bare root.
 
 ---
 
@@ -93,9 +93,8 @@ Neither is fixable by changing the Astro site. The fix belongs in the Beacons pr
 
 ## ASSETS REQUIRING REPLACEMENT UNDER THIS RECORD
 
-- ⬜ Stale `facebook-domain-verification` meta tag in the site `<head>` — wrong token, remove it
 - ⬜ Beacons Purchase event value parameter — sending a fixed or missing price
-- ⬜ Dataset names in Events Manager — the two dead datasets are still named as though they were live
+- ✅ Dataset names in Events Manager — both dead datasets renamed to `DO NOT USE - empty - …` on 7 September 2026
 - ✅ Meta Pixel on every site layout — installed 7 September 2026
 - ✅ Root domain verified in Meta Business Settings — 7 September 2026
 - ✅ Module 19 of The Weekend Ecosystem™ — pixel section added and logged in the update log
