@@ -124,6 +124,20 @@ const problems = [
     <p class="bm-sublead">BAMI is fixed on purpose. What flexes is the feedback. What you build is yours — your model, your customer, your offer. What does not flex is the order you build it in.</p>
   </section>
 
+  <section class="bm-block bm-reward">
+    <div class="bm-reward-in">
+      <span class="bm-reward-k">Finish and it's yours</span>
+      <h2 class="bm-reward-h">The Weekend <em>Ecosystem™</em>, free on completion.</h2>
+      <p class="bm-reward-p">Complete all five phases and my full website-and-blog course is yours — the site on a domain you own, the blog Google can find, the email capture, and the system that keeps all of it running. Twenty-two modules, every prompt written out, four reference vaults.</p>
+      <p class="bm-reward-p">It's the exact build I used to make this website and everything on it.</p>
+      <div class="bm-reward-foot">
+        <span class="bm-reward-price">$97 on its own</span>
+        <span class="bm-reward-earn">You don't buy it. You earn it.</span>
+      </div>
+      <a class="bm-reward-link" href="/shop/weekend-ecosystem">See what it is →</a>
+    </div>
+  </section>
+
   <section class="bm-block bm-not">
     <h2>Who this is not for</h2>
     <div class="bm-grid bm-grid-3">
@@ -183,13 +197,36 @@ const problems = [
       <div class="bm-q"><h3>How much time does this take?</h3><p>Four focused hours a week is the floor. If you have twenty you'll move faster — the sequence is the same either way.</p></div>
       <div class="bm-q"><h3>Do I need a product already?</h3><p>No. Phase II builds your Signature Offer™ from nothing.</p></div>
       <div class="bm-q"><h3>Is it in the membership?</h3><p>No. BAMI is separate, by application only. Standard and Premium do not include it.</p></div>
-      <div class="bm-q"><h3>Do I need to show my face?</h3><p>No.</p></div>
+      <div class="bm-q"><h3>What do I get when I finish?</h3><p>The Weekend Ecosystem\u2122, free \u2014 my full website-and-blog course, $97 on its own. It is earned at completion rather than included at purchase, and it applies to the founding cohort.</p></div>
+          <div class="bm-q"><h3>Do I need to show my face?</h3><p>No.</p></div>
     </div>
   </section>
 
   <p class="bm-back"><a href="/learn">← Back to The Library</a></p>
 
   <style>
+  /* ---------- COMPLETION REWARD ---------- */
+  .bm-reward{padding:0}
+  .bm-reward-in{border-radius:14px;padding:44px 46px 40px;
+    border:1px solid rgba(200,169,106,.5);
+    background:linear-gradient(150deg,rgba(200,169,106,.14),rgba(203,183,247,.14) 55%,rgba(214,46,115,.08))}
+  .bm-reward-k{display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;
+    color:#8A6B44;margin-bottom:16px}
+  .bm-reward-h{font-family:var(--display);font-weight:300;font-size:clamp(26px,3.4vw,38px);
+    line-height:1.06;letter-spacing:-1px;margin:0 0 20px;color:var(--choc)}
+  .bm-reward-h em{font-style:italic;color:var(--pink)}
+  .bm-reward-p{font-size:16.5px;line-height:1.75;color:var(--choc);margin:0 0 16px;max-width:60ch}
+  .bm-reward-foot{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+    margin:26px 0 20px;padding-top:22px;border-top:1px solid rgba(200,169,106,.45)}
+  .bm-reward-price{font-family:var(--display);font-size:26px;font-weight:300;color:var(--choc);letter-spacing:-.6px}
+  .bm-reward-earn{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--pink)}
+  .bm-reward-link{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);text-decoration:none}
+  .bm-reward-link:hover{text-decoration:underline}
+  @media(max-width:720px){
+    .bm-reward-in{padding:30px 24px 28px}
+    .bm-reward-foot{gap:10px}
+  }
+
     /* ── hero ── */
     .bm-hero{text-align:center;padding:10px 0 44px}
     .bm-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
