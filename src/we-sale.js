@@ -3,7 +3,7 @@
 // Eyebrow, every buy button, the sticky bar, the close price
 // and the banner all read from here. Nothing else to edit.
 export const SALE = {
-  ACTIVE: true,
+  ACTIVE: false,
   price: "$67",
   full:  "$97",
   code:  "LABOR",
