@@ -14,10 +14,13 @@ export default defineConfig({
   // the sitemap is a contradictory signal to every crawler that reads both —
   // including Pinterest's. Filter them out. The waitlist page canonicals to
   // /shop/weekend-ecosystem, so it doesn't belong in the sitemap either.
+  // Match on the path, not on a slash-terminated substring: with
+  // trailingSlash 'never' the course index is /weekend-ecosystem with no
+  // slash, and a '/weekend-ecosystem/' test lets it through. This one
+  // condition covers the index, the modules and the waitlist, and leaves
+  // /shop/weekend-ecosystem alone.
   integrations: [sitemap({
-    filter: (page) =>
-      !page.includes('/weekend-ecosystem/') &&
-      !page.includes('/weekend-ecosystem-waitlist'),
+    filter: (page) => !new URL(page).pathname.startsWith('/weekend-ecosystem'),
   })],
   redirects: {
     '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault',
