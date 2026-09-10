@@ -1,7 +1,15 @@
 {
+  "trailingSlash": false,
   "functions": {
     "api/**/*.js": {
       "includeFiles": "api/_content/**"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/weekend-ecosystem/module-17-one-article-thirty-assets",
+      "destination": "/weekend-ecosystem/module-17-one-article-twenty-four-assets",
+      "permanent": true
+    }
+  ]
 }

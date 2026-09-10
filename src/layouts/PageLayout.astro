@@ -11,7 +11,7 @@ export interface Props {
 }
 const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
-const canonical = new URL(Astro.url.pathname, SITE).href;
+const canonical = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", SITE).href;
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
 ---
 
