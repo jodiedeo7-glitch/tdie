@@ -130,8 +130,18 @@ const faqs = [
   <!-- HERO -->
   <section class="we-hero">
     <div class="page-eyebrow">{S.eyebrow}</div>
-    <h1>The Weekend <em>Ecosystem™</em></h1>
+    <h1>Own a website, a blog, and an email list by Sunday afternoon.</h1>
+    <p class="we-hero-twist">Built entirely from content you've already written.</p>
+    <div class="we-hero-brand">The Weekend <em>Ecosystem™</em></div>
     <p class="lede">The exact steps I used to build this website, this blog, and the course you're reading right now — written down, in order, with every prompt.</p>
+
+    <div class="we-outcomes">
+      <div class="we-out"><span class="we-out-t">A site you own</span><span class="we-out-s">Your own domain. Not rented.</span></div>
+      <div class="we-out"><span class="we-out-t">A blog Google can find</span><span class="we-out-s">Your lessons, working as articles.</span></div>
+      <div class="we-out"><span class="we-out-t">A list that captures</span><span class="we-out-s">Automatically, from every page.</span></div>
+      <div class="we-out"><span class="we-out-t">Traffic that compounds</span><span class="we-out-s">Instead of resetting every week.</span></div>
+    </div>
+
     <p class="we-hero-sub">One weekend. Your content. Claude does the building.</p>
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <div class="we-cta-row">
@@ -431,9 +441,20 @@ const faqs = [
     /* ── hero ── */
     .we-hero{text-align:center;padding:10px 0 54px}
     .we-hero .page-eyebrow{color:var(--pink)!important}
-    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(44px,8.4vw,86px);line-height:.96;letter-spacing:-2px;margin:0 0 26px;color:var(--choc)}
+    .we-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,5.6vw,60px);line-height:1.04;letter-spacing:-1.6px;margin:0 auto 16px;color:var(--choc);max-width:17ch}
+    .we-hero-twist{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.7vw,27px);
+                   line-height:1.4;color:var(--pink);margin:0 auto 26px;max-width:28ch}
+    .we-hero-brand{font-family:"Fraunces",serif;font-weight:300;font-size:15px;letter-spacing:2.4px;
+                   text-transform:uppercase;color:var(--taupe-deep);margin:0 auto 22px;
+                   padding-top:20px;border-top:1px solid rgba(214,46,115,.26);display:inline-block}
+    .we-hero-brand em{font-style:italic;text-transform:none;letter-spacing:0;color:var(--pink);font-size:17px}
+    .we-outcomes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0 auto 32px;max-width:860px;
+                 background:rgba(214,46,115,.18);border:1px solid rgba(214,46,115,.18);border-radius:8px;overflow:hidden}
+    .we-out{background:#FBF8F5;padding:20px 16px;text-align:center}
+    .we-out-t{display:block;font-family:"Fraunces",serif;font-size:17px;line-height:1.25;color:var(--choc);margin-bottom:7px}
+    .we-out-s{display:block;font-size:12.5px;line-height:1.5;color:#7A5C63}
     .we-hero h1 em{font-style:italic;color:var(--pink)}
-    .we-hero .lede{max-width:600px;margin:0 auto 36px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
+    .we-hero .lede{max-width:600px;margin:0 auto 30px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
     .we-hero-sub{font-size:16px;letter-spacing:.4px;color:#7A5C63;margin:-18px auto 34px;max-width:44ch}
     .we-cta-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
     .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;
@@ -674,6 +695,10 @@ const faqs = [
       .we-hero-img{max-width:100%;margin-top:34px}
       .we-fig-wide{max-width:100%}
       .we-stats{grid-template-columns:1fr 1fr}
+      .we-outcomes{grid-template-columns:1fr 1fr}
+      .we-out{padding:16px 12px}
+      .we-out-t{font-size:15.5px}
+      .we-out-s{font-size:11.5px}
       .we-midcta{padding:26px 20px;margin-top:34px}
       .we-midcta-l{font-size:19px}
       body{padding-bottom:64px}
