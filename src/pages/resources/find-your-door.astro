@@ -543,7 +543,7 @@ const stats = [
 
     .fd-stalls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
     .fd-stall{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px 22px;background:var(--white);border:1px solid rgba(43,22,27,.12);border-top:2px solid var(--gold);border-radius:2px;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
-    .fd-stall:hover{transform:translateY(-2px);box-shadow:0 20px 40px -30px rgba(43,22,27,.4)}
+    @media(hover:hover){.fd-stall:hover{transform:translateY(-2px);box-shadow:0 20px 40px -30px rgba(43,22,27,.4)}}
     .fd-stall:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
     .fd-stall-n{font-size:11px;letter-spacing:2px;color:var(--gold-deep)}
     .fd-stall-t{font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:var(--choc);line-height:1.15}
@@ -561,7 +561,7 @@ const stats = [
     .fd-q-h{font-size:clamp(26px,3.6vw,36px)!important;margin-bottom:24px!important}
     .fd-opts{display:flex;flex-direction:column;gap:10px}
     .fd-opt{all:unset;box-sizing:border-box;cursor:pointer;padding:17px 20px;border:1px solid rgba(43,22,27,.14);border-radius:2px;font-size:16.5px;line-height:1.45;color:var(--choc);background:var(--cream);transition:border-color .2s,background .2s,transform .2s}
-    .fd-opt:hover{border-color:var(--pink);transform:translateX(3px)}
+    @media(hover:hover){.fd-opt:hover{border-color:var(--pink);transform:translateX(3px)}}
     .fd-opt:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
     .fd-opt.on{border-color:var(--pink);background:rgba(255,138,194,.14)}
     .fd-back{all:unset;cursor:pointer;margin-top:22px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--choc-meta)}

@@ -1,17 +1,19 @@
 # Find Your Door — result emails (MailerLite)
 
-The quiz page shows every result on screen. The "Send my results" form stays **hidden** until you finish steps 1–3, so nobody is ever promised an email that doesn't arrive.
+The quiz page shows every result on screen. The "Send my results" form stays **hidden** until you finish steps 1–4, so nobody is ever promised an email that doesn't arrive.
 
 ## Setup — about 20 minutes, once
 
-1. **Deploy the page and `api/quiz-result.js`.** The function uses the `MAILERLITE_API_KEY` already in Vercel. It creates the custom fields and the five groups itself the first time someone submits, so you don't make them by hand.
-   - Fields: `quiz_door`, `quiz_stage`, `quiz_goal`, `quiz_stuck`, `quiz_fear`, `quiz_reframe`, `quiz_first_move`, `quiz_time`
-   - Groups: `Quiz — Membership Standard` · `Quiz — Membership Premium` · `Quiz — Pretty & Paid PLR Vault` · `Quiz — The Weekend Ecosystem` · `Quiz — Earn With Skool`
-   - To have the groups ready before building automations, submit the form once with your own email per door, or create the five groups by hand using those exact names.
-2. **Build five automations in MailerLite.** Trigger: *When subscriber joins a group* → pick one quiz group → one email (below). Name each automation after its door.
-3. **In Vercel, add `QUIZ_EMAIL_LIVE` = `true`** and redeploy. The form appears on the page.
+1. **Create the five groups by hand** in MailerLite (Subscribers → Groups), named exactly:
+   `Quiz — Membership Standard` · `Quiz — Membership Premium` · `Quiz — Pretty & Paid PLR Vault` · `Quiz — The Weekend Ecosystem` · `Quiz — Earn With Skool`
+2. **Create the eight text fields by hand** (Subscribers → Fields), named exactly:
+   `quiz_door`, `quiz_stage`, `quiz_goal`, `quiz_stuck`, `quiz_fear`, `quiz_reframe`, `quiz_first_move`, `quiz_time`
+   The function looks both up by name. (It can also create missing ones, but only once the form is live — too late for building the automations below.)
+3. **Build five automations.** Trigger: *When subscriber joins a group* → pick one quiz group → one email (below). Turn each on.
+4. **In Vercel, confirm `MAILERLITE_API_KEY` exists and add `QUIZ_EMAIL_LIVE` = `true`** (Production), then redeploy. The form appears on the page.
+5. **Test** with your own email: the email arrives, the answers fill in, and you sit in one quiz group only.
 
-Merge tags below use MailerLite's `{$field}` format. `{$name|default:'there'}` falls back when no first name was given.
+Merge tags below use MailerLite's `{$field}` format. **Unverified:** the first-name fallback syntax `{$name|default:'there'}` — replace it with the fallback inserted by the editor's own personalisation button.
 
 ---
 
