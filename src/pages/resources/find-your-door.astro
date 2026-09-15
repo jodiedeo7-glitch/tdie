@@ -1,0 +1,669 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+// ─────────────────────────────────────────────────────────────
+// FIND YOUR DOOR — the central free routing guide.
+// Every name, price and URL below is copied from a live page:
+//   Membership  → src/pages/membership.astro (Standard $9, Premium $27, 7-day trial)
+//   WE          → src/pages/shop/weekend-ecosystem.astro (sales page owns its CTA + sale state)
+//   Vault       → src/pages/shop/pretty-and-paid-plr-vault.astro ($11/month, own subscription)
+//   Earn With Skool (SCC) → src/pages/go/earn-with-skool-scc.astro (affiliate, $97)
+// Standing Rule 18: the affiliate door ships link + rel="sponsored" + disclosure together.
+// Comparison-frame rule: Pretty & Paid PLR Vault™ is never paired with a membership door.
+// Results show on screen for everyone. The email form appears only when
+// /api/quiz-result reports QUIZ_EMAIL_LIVE=true (Decision 76 deferred automation;
+// the founder has asked for it — see the setup notes shipped with this page).
+// ─────────────────────────────────────────────────────────────
+
+const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
+const WE = "/shop/weekend-ecosystem";
+const VAULT = "/shop/pretty-and-paid-plr-vault";
+const SCC = "/go/earn-with-skool-scc";
+
+const stalls = [
+  { n: "01", t: "No map", p: "You know a hundred things about online business and can't say which one comes first. That isn't a knowledge problem. It's a sequence problem.", d: "Membership Standard", k: "S" },
+  { n: "02", t: "Nothing to post", p: "The business works. The calendar doesn't. You are one missed Tuesday away from going quiet for a month.", d: "Membership Premium", k: "P" },
+  { n: "03", t: "Nothing on the shelf", p: "The shop is open and half-empty, and every new product starts on a blank Canva page.", d: "Pretty & Paid PLR Vault™", k: "V" },
+  { n: "04", t: "No front door", p: "Years of lessons, calls and guides — all of it behind a login. A stranger can't find a word of it.", d: "The Weekend Ecosystem™", k: "W" },
+  { n: "05", t: "No room of your own", p: "You're the one answering questions in other people's groups. You've just never opened your own.", d: "Earn With Skool (SCC)", k: "K" },
+];
+
+const stats = [
+  { n: "12", l: "Pillar guides live in The Library" },
+  { n: "22", l: "Modules in The Weekend Ecosystem™" },
+  { n: "31", l: "Days of content written before each month starts" },
+  { n: "20", l: "New rebrandable products added every month" },
+];
+---
+<PageLayout
+  wide
+  title="Find Your Door — Free Guide"
+  description="A free eleven-question guide from The Digital Income Edit™. Tell me where you are, where it stops and what you're afraid of — I'll point you to the one door built for it."
+>
+  <div class="fd">
+
+  <!-- HERO -->
+  <section class="fd-hero">
+    <a class="page-eyebrow" href="/resources">Free Guide · The Digital Income Edit™</a>
+    <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
+    <p class="fd-lede">Most free guides hand you everything, which is the same as handing you nothing. This one asks eleven questions — where you are, what you want, where it stops, and what scares you — and sends you to one place. About three minutes.</p>
+    <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
+    <div class="fd-meta"><span>11 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
+  </section>
+
+  <!-- THESIS -->
+  <section class="fd-block fd-thesis fd-rv">
+    <div class="fd-thesis-grid">
+      <figure class="fd-fig">
+        <img src="/images/membership-jodie.webp" alt="The face of The Digital Income Edit™, working from a kitchen counter" width="460" height="552" loading="lazy" decoding="async" />
+        <figcaption>The brand has a face. It just isn't mine.</figcaption>
+      </figure>
+      <div>
+        <h2>I don't sell courses <em>about</em> a business. I sell the parts of mine.</h2>
+        <p>Every door on this page is a piece of the machine that is running this page. The site you're reading was built with the course I sell for building it. The articles in The Library started life as lessons in a Skool classroom. The content calendar Premium members get is the one I write before each month begins.</p>
+        <p>And it's faceless the way I mean it: <strong>my real face is never required.</strong> Not that nobody appears — the brand's face is its AI persona. That's the New Faceless, and it's the only version I teach.</p>
+        <p class="fd-hit">So when I tell you which door is yours, I'm not guessing. I've stood in every one of these rooms.</p>
+      </div>
+    </div>
+    <div class="fd-stats">
+      {stats.map((s) => (<div class="fd-stat"><span class="fd-stat-n">{s.n}</span><span class="fd-stat-l">{s.l}</span></div>))}
+    </div>
+  </section>
+
+  <!-- STALLS -->
+  <section class="fd-block fd-rv">
+    <h2>A faceless business stalls in exactly five places</h2>
+    <p class="fd-sub">Not fifty. Five. Tap the one that made your stomach drop.</p>
+    <div class="fd-stalls">
+      {stalls.map((s) => (
+        <button class="fd-stall" type="button" aria-expanded="false">
+          <span class="fd-stall-n">{s.n}</span>
+          <span class="fd-stall-t">{s.t}</span>
+          <span class="fd-stall-p">{s.p}</span>
+          <span class="fd-stall-d">The door for this: <strong>{s.d}</strong></span>
+        </button>
+      ))}
+    </div>
+    <p class="fd-sub fd-after">Recognised two? Normal. The quiz decides which one is costing you the most right now.</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="fd-block fd-quiz-wrap" id="quiz">
+    <div class="fd-quiz-intro">
+      <h2>Eleven questions. <em>Answer them honestly.</em></h2>
+      <p class="fd-sub">Where you are, where you want to be, where it stops moving, and the fear underneath it. About three minutes. Your result appears on this screen — no email needed to see it.</p>
+    </div>
+    <div class="fd-quiz" id="fd-quiz">
+      <div class="fd-q-top">
+        <span class="fd-q-count" id="fd-count">Question 1 of 11</span>
+        <div class="fd-q-bar"><span id="fd-bar"></span></div>
+      </div>
+      <span class="fd-q-sec" id="fd-sec"></span>
+      <h2 class="fd-q-h" id="fd-q"></h2>
+      <p class="fd-q-sub" id="fd-qsub"></p>
+      <div class="fd-opts" id="fd-opts"></div>
+      <div class="fd-q-nav">
+        <button class="fd-back" id="fd-back" type="button" hidden>← Back</button>
+        <button class="btn fd-next" id="fd-next" type="button" hidden>Next <span class="a">→</span></button>
+      </div>
+    </div>
+
+    <div class="fd-result" id="fd-result" hidden aria-live="polite">
+      <span class="fd-r-eye">Your door</span>
+      <h2 class="fd-r-name" id="fd-r-name"></h2>
+      <div class="fd-r-price" id="fd-r-price"></div>
+      <p class="fd-r-why" id="fd-r-why"></p>
+
+      <span class="fd-r-l">Your read</span>
+      <dl class="fd-read">
+        <div><dt>Where you are</dt><dd id="fd-read-stage"></dd></div>
+        <div><dt>What has to be true</dt><dd id="fd-read-goal"></dd></div>
+        <div><dt>Where it stops moving</dt><dd id="fd-read-stuck"></dd></div>
+        <div><dt>What's underneath it</dt><dd id="fd-read-fear"></dd></div>
+      </dl>
+      <p class="fd-reframe" id="fd-reframe"></p>
+
+      <span class="fd-r-l">Your first three moves</span>
+      <ol class="fd-r-list" id="fd-r-list"></ol>
+      <p class="fd-r-time" id="fd-r-time"></p>
+
+      <p class="fd-r-disc" id="fd-r-disc" hidden>Affiliate link — this one isn't mine. I earn a commission if you buy through it, at no cost to you. The owner sets the price and can change it without notice.</p>
+      <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
+      <p class="fd-r-later" id="fd-r-later"></p>
+
+      <form class="fd-send" id="fd-send" hidden>
+        <span class="fd-r-l">Keep this</span>
+        <h3>Send my results to my inbox</h3>
+        <p>Your read, your fear and the reframe, your first three moves, and the door — in one email you can come back to. You'll also get my weekly emails. Unsubscribe anytime.</p>
+        <div class="fd-send-row">
+          <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
+          <input type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required />
+          <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="fd-hp" />
+          <button class="btn" type="submit">Send my results <span class="a">→</span></button>
+        </div>
+        <p class="fd-send-msg" id="fd-send-msg" role="status"></p>
+      </form>
+
+      <button class="fd-back" id="fd-retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+
+  <!-- ALL DOORS -->
+  <section class="fd-block fd-rv" id="doors">
+    <h2>Every door, in plain sight</h2>
+    <p class="fd-sub">Skipped the quiz? Fine. Here's who each one is for — and who should walk past it.</p>
+
+    <!-- Membership: two ways in, each priced with what it buys (Standing Rule 32) -->
+    <div class="fd-door">
+      <span class="fd-door-k">The Membership · on Skool · both start with a free 7-day trial</span>
+      <div class="fd-duo">
+        <article class="fd-card">
+          <h3>Membership Standard</h3>
+          <div class="fd-price"><b>$9</b> per month after 7 free days · or $99 a year</div>
+          <p class="fd-card-line">Everything you need to build the thing and start selling it.</p>
+          <p><strong>Inside:</strong> AI Twin / Influencer Creation, Brand Building, The Content Edit, The Monetization Edit, The Email Edit, The Pinterest Edit, Pinterest Foundations™, The Tommy Kate Edit, Canva Crash Course and Daily Prompts.</p>
+          <p class="fd-for"><strong>For you if</strong> you have the idea and not the order of operations.</p>
+          <p class="fd-not"><strong>Walk past if</strong> you already know what to build and just can't keep up with posting.</p>
+          <a class="btn" href={SKOOL}>Start Standard — 7 days free <span class="a">→</span></a>
+        </article>
+        <article class="fd-card fd-card-dark">
+          <h3>Membership Premium</h3>
+          <div class="fd-price"><b>$27</b> per month after 7 free days · or $250 a year</div>
+          <p class="fd-card-line">Everything in Standard — and your content month, written for you.</p>
+          <p><strong>Adds:</strong> the Monthly DFY Content Calendar (31 days written before the month starts, 62 Threads posts, a start-frame and motion prompt for every Reel), The Ads Edit™, The Offer Edit, The Funnel Edit and Scaling &amp; Systems.</p>
+          <p class="fd-for"><strong>For you if</strong> the blank caption box is the reason you go quiet.</p>
+          <p class="fd-not"><strong>Walk past if</strong> you don't have an offer to point the content at yet.</p>
+          <a class="btn btn-onmid" href={SKOOL}>Start Premium — 7 days free <span class="a">→</span></a>
+        </article>
+      </div>
+      <p class="fd-fine">Cancel from inside the Skool app whenever you like. Cancelling stops the next payment.</p>
+    </div>
+
+    <div class="fd-door fd-door-img">
+      <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem™ — your website and blog, built from what you already have" width="1400" height="1737" loading="lazy" />
+      <article class="fd-card">
+        <span class="fd-door-k">Standalone course · yours for good</span>
+        <h3>The Weekend Ecosystem™</h3>
+        <div class="fd-price"><b>$97</b> one-time · every future update included</div>
+        <p class="fd-card-line">You're not short on content. You're short on a place to put it.</p>
+        <p>Twenty-two modules that turn what you've already made — Skool lessons, calls, PDFs, posts — into a website on a domain you own and a blog a stranger can find on Google, with email capture and your offers routed from every article. Claude writes every file. You paste the prompt, read what came back, and say yes. Sixteen hours in six chunks; spread it over three weekends if you need to.</p>
+        <p class="fd-for"><strong>For you if</strong> you run a Skool group, sell courses or guides, or have simply been creating for years and all of it lives on platforms you rent.</p>
+        <p class="fd-not"><strong>Walk past if</strong> you haven't made anything yet. Build first, then give it a home.</p>
+        <div class="fd-row fd-row-left">
+          <a class="btn" href={WE}>See The Weekend Ecosystem™ <span class="a">→</span></a>
+          <a class="fd-link" href="/weekend-ecosystem/preview">Look inside first →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="fd-door fd-door-img fd-door-flip">
+      <img src="/images/vault/canva-templates.jpg" alt="Canva template preview from Pretty & Paid PLR Vault™" width="1000" height="536" loading="lazy" />
+      <article class="fd-card">
+        <span class="fd-door-k">Its own subscription · on Beacons · separate from the membership</span>
+        <h3>Pretty &amp; Paid PLR Vault™</h3>
+        <div class="fd-price"><b>$11</b> per month · what you download stays yours</div>
+        <p class="fd-card-line">Stop designing products from a blank page. Rebrand finished ones and sell them as your own.</p>
+        <p>Planners, journals, guides, eBooks, printables and coloring sets, Canva-editable with a full PLR license. Faceless Reel packs, stock photo sets, AI influencer image packs, Pinterest and carousel templates. Training for Etsy, Stan Store, Beacons and Canva rebranding. PLR Glow Studio writes your mockup prompts, SEO title, description and tags. Twenty new products land every month, and your license survives if you ever cancel.</p>
+        <p class="fd-for"><strong>For you if</strong> you have a digital store — or want one this month — and the shelf is the bottleneck.</p>
+        <p class="fd-not"><strong>Walk past if</strong> you'd rather sell only things you designed yourself.</p>
+        <a class="btn" href={VAULT}>Open Pretty &amp; Paid PLR Vault™ <span class="a">→</span></a>
+      </article>
+    </div>
+
+    <div class="fd-door">
+      <article class="fd-card fd-card-aff">
+        <span class="fd-door-k">Recommended · not mine</span>
+        <h3>Earn With Skool (SCC)</h3>
+        <div class="fd-price"><b>$97</b> one-time</div>
+        <p class="fd-card-line">For the woman who keeps answering questions in other people's groups.</p>
+        <p>This is the course I point you to for building and earning from a Skool community of your own.</p>
+        <p>Here's my opinion, free: you do not need to feel ready. Nobody who runs a room felt qualified the week they opened it. Authority isn't a credential you wait for — it's what people call you after you've been useful in public for long enough. And "not enough material" is almost never true; it's usually "not enough material I'm proud of yet," which is a different problem with a much faster fix.</p>
+        <p class="fd-for"><strong>For you if</strong> you want your own group and keep talking yourself out of it — or you're ready and just don't know where to start.</p>
+        <p class="fd-not"><strong>Walk past if</strong> you'd rather learn inside someone else's room than run your own.</p>
+        <p class="fd-disc">Affiliate link — I earn a commission if you buy through it, at no cost to you. The owner sets the price and can change it without notice.</p>
+        <a class="btn" href={SCC} rel="sponsored nofollow">See Earn With Skool (SCC) <span class="a">→</span></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="fd-block fd-close fd-rv">
+    <h2>Pick one. <em>Not all five.</em></h2>
+    <p class="fd-lede">The fastest way to stall is to buy the whole ecosystem on a Tuesday night and open none of it. Walk through the door that fixes this month's bottleneck. The next one will be obvious when you get there.</p>
+    <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
+    <p class="fd-fine">Questions about billing or refunds? <a href="/faq">They're all answered in one place.</a></p>
+    <p class="fd-sign">xoxo, Jodie</p>
+  </section>
+
+  <p class="fd-backlink"><a href="/resources">← All free resources</a></p>
+  </div>
+
+  <script is:inline>
+  (function(){
+    var SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
+
+    // ── The five doors. Names, prices and routes match the live pages. ──
+    var DOORS = {
+      S: { name: "Membership Standard", price: "$9 per month after a free 7-day trial",
+           why: "You don't need more information. You need the order it goes in. Standard is the build curriculum — brand, offer, content, email and Pinterest — laid out in the sequence I'd do it again.",
+           moves: ["Start the trial and open the start-here trainings before anything else", "Build your AI twin and brand first, so everything after it looks like one business", "Shape one offer inside The Monetization Edit before you make a single product"],
+           cta: "Start Standard — 7 days free", href: SKOOL, aff: false,
+           later: "When content becomes the thing that stops you, Membership Premium writes the month for you." },
+      P: { name: "Membership Premium", price: "$27 per month after a free 7-day trial",
+           why: "Your business isn't the problem. The daily writing is. Premium hands you the month already written, so the blank caption box stops deciding whether you show up.",
+           moves: ["Start the trial and open this month's DFY Content Calendar", "Point the calendar's offer days at the one thing you sell", "Schedule the first week in a single sitting, then stop thinking about it"],
+           cta: "Start Premium — 7 days free", href: SKOOL, aff: false,
+           later: "When you want those posts to outlive the feed, The Weekend Ecosystem™ turns them into a site that ranks." },
+      V: { name: "Pretty & Paid PLR Vault™", price: "$11 per month · its own subscription",
+           why: "Your shop isn't failing because you can't sell. It's failing because the shelf is empty. Stock it with finished products you rebrand in Canva and list the same week.",
+           moves: ["Pick the three products that fit your niche — not ten", "Rebrand them in Canva: your colours, your fonts, your name", "Let PLR Glow Studio write the titles, descriptions and tags, then list all three"],
+           cta: "Open Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault", aff: false,
+           later: "When the shop deserves a home that Google can find, The Weekend Ecosystem™ builds it." },
+      W: { name: "The Weekend Ecosystem™", price: "$97 one-time · every future update included",
+           why: "You wrote the blog posts years ago. They're sitting behind a login. This turns what you've already made into a website and blog on a domain you own — built by Claude, approved by you.",
+           moves: ["Friday night: list everything you've already made — you'll find more than you expect", "Saturday: your site goes live and your best lessons become articles", "Sunday: email capture, offers on every article, and the system that keeps it running"],
+           cta: "See The Weekend Ecosystem™", href: "/shop/weekend-ecosystem", aff: false,
+           later: "When the site needs feeding every month, Membership Premium writes the content." },
+      K: { name: "Earn With Skool (SCC)", price: "$97 one-time · recommended, not mine",
+           why: "You're already the one answering questions in other people's groups. That isn't a sign you aren't ready — it's the job description. This is the course I point you to for opening your own.",
+           moves: ["Write down the ten questions people already ask you — that's your first curriculum", "Stop waiting to feel qualified; decide the one result your group is for", "Open the room, then learn to earn from it"],
+           cta: "See Earn With Skool (SCC)", href: "/go/earn-with-skool-scc", aff: true,
+           later: "Once the group exists, The Weekend Ecosystem™ gives it a front door on Google." }
+    };
+    // Vault is never paired with a membership door (comparison-frame rule).
+    var NO_PAIR = { V: ["S","P"], S: ["V"], P: ["V"] };
+
+    var FEARS = {
+      expert: "Nobody in a niche asks for credentials. They ask whether you're one step ahead of them. Be useful in public, specifically, for long enough — authority is just what people call that afterwards.",
+      nobody: "Nobody comes to an announcement. People come to a door that's been open a while. Build the thing that keeps working after you publish it, and \u201cnobody came\u201d stops being a one-day verdict.",
+      tech: "You won't write code or wrestle a page builder. The work is reading what came back and saying yes or no. That's judgement, not tech — and you already have it.",
+      money: "The course you didn't finish wasn't too hard. It asked for everything at once. Walk through the one door that fixes this month's bottleneck and ignore the rest until it stops being one.",
+      face: "You never have to. Faceless here means your real face is never required — the brand's face is an AI persona. Nothing on your path asks you to film yourself.",
+      material: "You have more than you think — old posts, voice notes, answers you've typed in other people's comments. And where you genuinely don't, finished material can be licensed, not invented.",
+      quit: "Week three is when the blank page wins. Take the blank page away and week three is just another week. That's the whole design behind the door I'm pointing you to."
+    };
+
+    var TIME = {
+      t1: "At under three hours a week, protect one fixed block — same day, same hour — and give it to move one only. Momentum beats volume at your pace.",
+      t2: "At three to seven hours a week, give each move its own week. You'll be through all three inside a month.",
+      t3: "At seven to fifteen hours a week, you can do moves one and two this week. Leave the third for next week so it gets your full attention.",
+      t4: "With fifteen-plus hours or a clear weekend, do all three before Monday. Then spend next week fixing only what broke."
+    };
+
+    // [label, value (what we store), weights]
+    var QS = [
+      { sec: "Where you are", q: "Where are you, honestly?", k: "stage", o: [
+        ["Nothing built yet — I'm still circling an idea", "Circling an idea, nothing built yet", {S:3,W:-2}],
+        ["I've made something, but I haven't sold it", "Built something, not selling yet", {S:2,V:1}],
+        ["I'm selling, just not consistently", "Selling, but not consistently", {P:2,V:1}],
+        ["I have a real body of work — lessons, guides, years of posts", "Sitting on a real body of work", {W:3}],
+        ["I already run a community or a course", "Already running a room of my own", {W:3,P:1}],
+        ["I help in other people's communities, but haven't opened my own", "Helping in other people's rooms", {K:3}] ] },
+      { sec: "What you want", q: "Twelve months from now, what has to be true?", k: "goal", o: [
+        ["I've made sales from something I built", "Sales from something I built", {S:3,V:1}],
+        ["I show up every day without writing every day", "Showing up daily without writing daily", {P:3}],
+        ["My shop is full and new listings take minutes", "A full shop that's quick to restock", {V:3}],
+        ["Strangers find my work on Google and join my list", "Strangers finding my work on Google", {W:3}],
+        ["I run my own paid community", "Running my own paid community", {K:3}],
+        ["One system that runs whether I post or not", "A system that runs whether I post or not", {W:1,P:1,S:1}] ] },
+      { sec: "Where you are", q: "What do you already have?", sub: "Pick everything that applies.", k: "have", multi: true, o: [
+        ["A Skool group or course platform", "Skool group or course platform", {W:2,K:-1}],
+        ["Lessons, guides, PDFs or recordings", "Lessons, guides or recordings", {W:2}],
+        ["A digital shop — Etsy, Stan or Beacons", "A digital shop", {V:2}],
+        ["Products of my own for sale", "Own products", {P:1,V:1}],
+        ["A social following", "A social following", {P:1}],
+        ["An email list", "An email list", {W:1}],
+        ["None of these yet", "Nothing yet", {S:3,W:-3}, "none"] ] },
+      { sec: "Where it stops", q: "Where exactly does it stop moving?", k: "stuck", o: [
+        ["I don't know what to do first, so I do a little of everything", "Not knowing the order to build in", {S:3}],
+        ["I run out of things to post, then go quiet", "Running out of things to post", {P:3}],
+        ["Making products from a blank page takes weeks", "Making products from a blank page", {V:3}],
+        ["My listings exist, but they don't move", "Listings that sit there", {V:2,S:1}],
+        ["My best work is behind a login no stranger can see", "My best work hidden behind a login", {W:3}],
+        ["I keep putting off opening my own group", "Putting off opening my own group", {K:3}],
+        ["I don't have an offer to point anything at", "No offer to point anything at", {S:3}] ] },
+      { sec: "What's underneath", q: "What's the fear under it?", sub: "Pick the one that's truest, not the one that sounds best.", k: "fear", o: [
+        ["I'm not expert enough to be taken seriously", "Not being expert enough", {K:1,S:1}, "expert"],
+        ["I'll build it and nobody will come", "Building it and nobody coming", {K:1,S:1}, "nobody"],
+        ["The tech will beat me", "The tech beating me", {P:1,V:1}, "tech"],
+        ["I'll waste money on another course I don't finish", "Wasting money on another unfinished course", {P:1,V:1}, "money"],
+        ["I'll end up having to show my face", "Having to show my face", {P:1}, "face"],
+        ["I don't have enough material", "Not having enough material", {V:1,K:1}, "material"],
+        ["I'll start strong and quit by week three", "Starting strong and quitting by week three", {P:2}, "quit"] ] },
+      { sec: "What you've tried", q: "What have you already tried?", sub: "Pick everything that applies.", k: "tried", multi: true, o: [
+        ["Bought courses I didn't finish", "Unfinished courses", {P:1}],
+        ["Posted daily until I burned out", "Posting daily until burnout", {P:2}],
+        ["Opened a shop and stocked it by hand", "Stocking a shop by hand", {V:2}],
+        ["Started a blog and abandoned it", "An abandoned blog", {W:2}],
+        ["Tried to start a group", "Trying to start a group", {K:2}],
+        ["Joined a community and mostly lurked", "Lurking in a community", {S:1,K:1}],
+        ["Nothing yet", "Nothing yet", {S:1}, "none"] ] },
+      { sec: "How you work", q: "How do you want help to arrive?", k: "style", o: [
+        ["Teach me the whole thing, in order", "Taught in order", {S:3}],
+        ["Write it for me — I'll press publish", "Written for me", {P:3}],
+        ["Hand me finished pieces I can rebrand", "Finished pieces to rebrand", {V:3}],
+        ["Walk me through one build, once, and I own it", "One build I own", {W:3}],
+        ["Show me how to build the exact thing I want", "The exact thing I want, shown", {K:2}] ] },
+      { sec: "How you work", q: "How many hours a week can you honestly give this?", k: "time", o: [
+        ["Under 3", "Under 3 hours a week", {P:2,V:1,S:-1}, "t1"],
+        ["3 to 7", "3–7 hours a week", {V:1,S:1}, "t2"],
+        ["7 to 15", "7–15 hours a week", {S:1,K:1}, "t3"],
+        ["15 or more — or one clear weekend", "15+ hours, or a clear weekend", {W:2}, "t4"] ] },
+      { sec: "How you work", q: "How do you prefer to pay for help?", k: "pay", o: [
+        ["Monthly — and I want to try it free first", "Monthly, with a free trial", {S:2,P:2}],
+        ["Once, and then it's mine", "Once, and it's mine", {W:2,K:2}],
+        ["A small monthly fee for fresh stock", "Small monthly, for fresh stock", {V:3}] ] },
+      { sec: "Where it stops", q: "A stranger Googles the exact thing you know. What do they find?", k: "google", o: [
+        ["Nothing — I don't have a thing to be found for yet", "Nothing yet", {S:2}],
+        ["Someone else, explaining what I already taught", "Someone else", {W:3}],
+        ["A listing of mine, maybe", "A listing, maybe", {V:2}],
+        ["Someone else's community", "Someone else's community", {K:2}],
+        ["My last post, if they're lucky", "My last post", {P:2}] ] },
+      { sec: "The last one", q: "What would you pay to never do again?", sub: "This one breaks ties. Go with your gut.", k: "never", o: [
+        ["Make a product from scratch", "Make a product from scratch", {V:3}, null, "V"],
+        ["Stare at an empty caption box", "Stare at an empty caption box", {P:3}, null, "P"],
+        ["Wonder whether I'm \u201cready\u201d to lead", "Wonder whether I'm ready to lead", {K:3}, null, "K"],
+        ["Figure out the order of operations alone", "Figure out the order alone", {S:3}, null, "S"],
+        ["Start from zero every time the algorithm moves", "Start from zero every algorithm change", {W:3}, null, "W"] ] }
+    ];
+
+    var i = 0, ans = [], cur = null;
+    var $ = function(id){ return document.getElementById(id); };
+    var quiz = $("fd-quiz"), result = $("fd-result");
+
+    function render(){
+      var q = QS[i];
+      $("fd-count").textContent = "Question " + (i+1) + " of " + QS.length;
+      $("fd-bar").style.width = (i / QS.length * 100) + "%";
+      $("fd-sec").textContent = q.sec;
+      $("fd-q").textContent = q.q;
+      $("fd-qsub").textContent = q.sub || "";
+      var box = $("fd-opts"); box.innerHTML = "";
+      box.setAttribute("role", q.multi ? "group" : "radiogroup");
+      var picked = ans[i] || [];
+      q.o.forEach(function(opt, n){
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "fd-opt" + (q.multi ? " fd-multi" : "");
+        b.textContent = opt[0];
+        b.setAttribute("aria-pressed", picked.indexOf(n) > -1 ? "true" : "false");
+        if (picked.indexOf(n) > -1) b.classList.add("on");
+        b.onclick = function(){
+          if (!q.multi) {
+            ans[i] = [n]; b.classList.add("on");
+            setTimeout(next, 220);
+            return;
+          }
+          var sel = (ans[i] || []).slice();
+          var isNone = opt[3] === "none";
+          var at = sel.indexOf(n);
+          if (at > -1) sel.splice(at, 1);
+          else if (isNone) sel = [n];
+          else { sel = sel.filter(function(x){ return q.o[x][3] !== "none"; }); sel.push(n); }
+          ans[i] = sel;
+          render();
+        };
+        box.appendChild(b);
+      });
+      $("fd-back").hidden = i === 0;
+      $("fd-next").hidden = !q.multi;
+      $("fd-next").disabled = q.multi && !(ans[i] && ans[i].length);
+    }
+
+    function next(){ i++; i < QS.length ? render() : finish(); }
+
+    function pick(k){ var q = QS.filter(function(x){ return x.k === k; })[0]; var idx = QS.indexOf(q); return q.o[(ans[idx] || [0])[0]]; }
+
+    function finish(){
+      var score = {S:0,P:0,V:0,W:0,K:0};
+      ans.forEach(function(sel, qi){ (sel || []).forEach(function(n){
+        var w = QS[qi].o[n][2]; for (var d in w) score[d] += w[d];
+      }); });
+      var order = ["S","P","W","V","K"];
+      var top = Math.max.apply(null, order.map(function(d){ return score[d]; }));
+      var tied = order.filter(function(d){ return score[d] === top; });
+      var neverDoor = pick("never")[4];
+      var stuckQ = pick("stuck"), stuckDoor = null, sw = stuckQ[2], best = -99;
+      for (var d0 in sw) if (sw[d0] > best) { best = sw[d0]; stuckDoor = d0; }
+      var door = tied.indexOf(neverDoor) > -1 ? neverDoor : (tied.indexOf(stuckDoor) > -1 ? stuckDoor : tied[0]);
+      var D = DOORS[door];
+
+      var stage = pick("stage")[1], goal = pick("goal")[1], stuck = stuckQ[1];
+      var fearOpt = pick("fear"), timeOpt = pick("time");
+      var reframe = FEARS[fearOpt[3]];
+      var timeLine = TIME[timeOpt[3]];
+
+      $("fd-r-name").textContent = D.name;
+      $("fd-r-price").textContent = D.price;
+      $("fd-r-why").textContent = D.why;
+      $("fd-read-stage").textContent = stage;
+      $("fd-read-goal").textContent = goal;
+      $("fd-read-stuck").textContent = stuck;
+      $("fd-read-fear").textContent = fearOpt[1];
+      $("fd-reframe").textContent = reframe;
+      var ol = $("fd-r-list"); ol.innerHTML = "";
+      D.moves.forEach(function(t){ var li = document.createElement("li"); li.textContent = t; ol.appendChild(li); });
+      $("fd-r-time").textContent = timeLine;
+      var btn = $("fd-r-btn");
+      btn.href = D.href; $("fd-r-cta").textContent = D.cta;
+      if (D.aff) btn.setAttribute("rel", "sponsored nofollow"); else btn.removeAttribute("rel");
+      $("fd-r-disc").hidden = !D.aff;
+      $("fd-r-later").textContent = D.later;
+
+      window.__fdResult = { door: door, stage: stage, goal: goal, stuck: stuck, fear: fearOpt[1],
+        reframe: reframe, first_move: D.moves[0], time: timeOpt[1] };
+
+      $("fd-bar").style.width = "100%";
+      quiz.hidden = true; result.hidden = false;
+      $("fd-send-msg").textContent = "";
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // Email form only appears once the MailerLite automations are live.
+    var form = $("fd-send");
+    fetch("/api/quiz-result").then(function(r){ return r.ok ? r.json() : { live: false }; })
+      .then(function(j){ form.hidden = !j.live; }).catch(function(){ form.hidden = true; });
+
+    form.onsubmit = function(e){
+      e.preventDefault();
+      var msg = $("fd-send-msg"), btn = form.querySelector("button");
+      var body = Object.assign({}, window.__fdResult || {}, {
+        name: form.elements.namedItem("name").value, email: form.elements.namedItem("email").value, hp: form.elements.namedItem("hp").value
+      });
+      btn.disabled = true; msg.textContent = "Sending…";
+      fetch("/api/quiz-result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+        .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+        .then(function(x){
+          msg.textContent = x.ok ? "Done. Your results are on their way — check your inbox in a few minutes." : (x.j.error || "Couldn't send that just now. Try again in a moment.");
+          if (!x.ok) btn.disabled = false;
+        })
+        .catch(function(){ msg.textContent = "Couldn't send that just now. Try again in a moment."; btn.disabled = false; });
+    };
+
+    $("fd-next").onclick = function(){ if (ans[i] && ans[i].length) next(); };
+    $("fd-back").onclick = function(){ if (i > 0) { i--; render(); } };
+    $("fd-retake").onclick = function(){
+      i = 0; ans = []; result.hidden = true; quiz.hidden = false;
+      form.querySelector("button").disabled = false;
+      render(); quiz.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    document.querySelectorAll(".fd-stall").forEach(function(s){
+      s.onclick = function(){
+        var open = s.classList.toggle("open");
+        s.setAttribute("aria-expanded", open ? "true" : "false");
+      };
+    });
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: .12 });
+      document.querySelectorAll(".fd-rv").forEach(function(el){ io.observe(el); });
+    } else {
+      document.querySelectorAll(".fd-rv").forEach(function(el){ el.classList.add("in"); });
+    }
+
+    render();
+  })();
+  </script>
+
+  <!-- is:global — quiz options and results are built by script and carry no scope hash. Every selector is .fd- prefixed. -->
+  <style is:global>
+    .fd{--fd-line:rgba(43,22,27,.1)}
+    .fd-rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease-out,transform .5s ease-out;animation:fd-fs 0s linear 2.5s forwards}
+    .fd-rv.in{opacity:1;transform:none;animation:none}
+    @keyframes fd-fs{to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){.fd-rv{opacity:1;transform:none;transition:none;animation:none}}
+
+    .fd-hero{text-align:center;padding:10px 0 56px}
+    .fd-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
+    .fd-hero h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,7vw,76px);line-height:1.02;letter-spacing:-1.5px;margin:0 auto 26px;max-width:16ch;color:var(--choc)}
+    .fd-hero h1 em,.fd h2 em{font-style:italic;color:var(--pink)}
+    .fd-lede{max-width:600px;margin:0 auto 32px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.6vw,25px);line-height:1.5;color:var(--choc-mute)}
+    .fd-row{display:flex;justify-content:center;gap:22px;align-items:center;flex-wrap:wrap}
+    .fd-row-left{justify-content:flex-start}
+    .fd-meta{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:26px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta)}
+    .fd-meta .b{width:3px;height:3px;border-radius:50%;background:var(--gold)}
+
+    .fd-block{padding:76px 0;border-top:1px solid var(--fd-line)}
+    .fd h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 16px;color:var(--choc)}
+    .fd-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--choc-mute);margin:0 0 34px;max-width:620px}
+    .fd-after{margin:28px 0 0}
+
+    .fd-thesis-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+    .fd-fig img{width:100%;height:auto;border-radius:2px;box-shadow:0 40px 80px -50px rgba(43,22,27,.5)}
+    .fd-fig figcaption{margin-top:14px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--choc-meta)}
+    .fd-thesis p{font-size:17.5px;line-height:1.8;color:var(--choc-soft);margin:0 0 16px}
+    .fd-hit{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px!important;line-height:1.45!important;color:var(--pink-deep)!important;margin-top:22px!important}
+    .fd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5)}
+    .fd-stat{padding:26px 18px;text-align:center;border-right:1px solid rgba(200,169,106,.3)}
+    .fd-stat:last-child{border-right:0}
+    .fd-stat-n{display:block;font-family:"Fraunces",serif;font-weight:300;font-size:46px;line-height:1;color:var(--pink);letter-spacing:-1px}
+    .fd-stat-l{display:block;margin-top:10px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;line-height:1.5;color:var(--choc-meta)}
+
+    .fd-stalls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+    .fd-stall{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px 22px;background:var(--white);border:1px solid rgba(43,22,27,.12);border-top:2px solid var(--gold);border-radius:2px;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
+    .fd-stall:hover{transform:translateY(-2px);box-shadow:0 20px 40px -30px rgba(43,22,27,.4)}
+    .fd-stall:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+    .fd-stall-n{font-size:11px;letter-spacing:2px;color:var(--gold-deep)}
+    .fd-stall-t{font-family:"Fraunces",serif;font-size:24px;font-weight:400;color:var(--choc);line-height:1.15}
+    .fd-stall-p{font-size:15px;line-height:1.6;color:var(--choc-soft)}
+    .fd-stall-d{max-height:0;overflow:hidden;opacity:0;font-size:13.5px;line-height:1.5;color:var(--pink-deep);transition:max-height .35s var(--ease),opacity .35s,margin .35s}
+    .fd-stall.open{border-top-color:var(--pink)}
+    .fd-stall.open .fd-stall-d{max-height:80px;opacity:1;margin-top:6px}
+
+    .fd-quiz-wrap{scroll-margin-top:90px}
+    .fd-quiz,.fd-result{max-width:720px;margin:0 auto;background:var(--white);border:1px solid rgba(43,22,27,.12);border-top:3px solid var(--pink);border-radius:2px;padding:44px 44px 38px;box-shadow:0 50px 90px -60px rgba(43,22,27,.45);scroll-margin-top:90px}
+    .fd-q-top{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+    .fd-q-count{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
+    .fd-q-bar{flex:1;height:3px;background:rgba(43,22,27,.08);border-radius:2px;overflow:hidden}
+    .fd-q-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--mauve));transition:width .4s var(--ease)}
+    .fd-q-h{font-size:clamp(26px,3.6vw,36px)!important;margin-bottom:24px!important}
+    .fd-opts{display:flex;flex-direction:column;gap:10px}
+    .fd-opt{all:unset;box-sizing:border-box;cursor:pointer;padding:17px 20px;border:1px solid rgba(43,22,27,.14);border-radius:2px;font-size:16.5px;line-height:1.45;color:var(--choc);background:var(--cream);transition:border-color .2s,background .2s,transform .2s}
+    .fd-opt:hover{border-color:var(--pink);transform:translateX(3px)}
+    .fd-opt:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+    .fd-opt.on{border-color:var(--pink);background:rgba(255,138,194,.14)}
+    .fd-back{all:unset;cursor:pointer;margin-top:22px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--choc-meta)}
+    .fd-back:hover{color:var(--pink)}
+    .fd-back[hidden]{display:none}
+
+    .fd-result[hidden],.fd-quiz[hidden],.fd-r-disc[hidden]{display:none}
+    .fd-r-eye{display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink)}
+    .fd-r-name{font-size:clamp(32px,5vw,50px)!important;margin:10px 0 8px!important}
+    .fd-r-price{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--choc-meta);padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--fd-line)}
+    .fd-r-why{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:23px;line-height:1.5;color:var(--choc);margin:0 0 24px}
+    .fd-r-l{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+    .fd-r-list{list-style:none;margin:0 0 28px;padding:0}
+    .fd-r-list li{position:relative;padding:9px 0 9px 26px;font-size:16.5px;line-height:1.55;border-bottom:1px dashed rgba(43,22,27,.1)}
+    .fd-r-list li::before{content:"✦";position:absolute;left:0;top:9px;color:var(--pink);font-size:13px}
+    .fd-r-later{margin:22px 0 0;font-size:14.5px;line-height:1.6;color:var(--choc-mute)}
+
+
+    .fd-quiz-intro{text-align:center;max-width:680px;margin:0 auto 34px}
+    .fd-quiz-intro .fd-sub{margin:0 auto}
+    .fd-q-sec{display:block;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+    .fd-q-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--choc-mute);margin:-12px 0 20px}
+    .fd-q-sub:empty{display:none}
+    .fd-multi{padding-left:48px!important;position:relative}
+    .fd-multi::before{content:"";position:absolute;left:18px;top:50%;width:16px;height:16px;margin-top:-8px;border:1.5px solid rgba(43,22,27,.35);border-radius:2px;background:var(--white)}
+    .fd-multi.on::before{background:var(--pink);border-color:var(--pink);box-shadow:inset 0 0 0 3px var(--white)}
+    .fd-q-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px}
+    .fd-q-nav .fd-back{margin-top:0}
+    .fd-next{margin-left:auto}
+    .fd-next[hidden]{display:none}
+    .fd-next:disabled{opacity:.4;cursor:not-allowed}
+    .fd-read{margin:0 0 20px;border-top:1px solid var(--fd-line)}
+    .fd-read div{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--fd-line)}
+    .fd-read dt{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-meta);padding-top:3px}
+    .fd-read dd{margin:0;font-size:16.5px;line-height:1.5;color:var(--choc)}
+    .fd-reframe{margin:0 0 30px;padding:18px 20px;background:rgba(255,138,194,.1);border-left:3px solid var(--pink);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--choc)}
+    ol.fd-r-list{counter-reset:fdm}
+    ol.fd-r-list li{counter-increment:fdm}
+    ol.fd-r-list li::before{content:counter(fdm,decimal-leading-zero);font-size:11px;letter-spacing:1px;top:12px}
+    .fd-r-time{margin:-12px 0 28px;font-size:15px;line-height:1.6;color:var(--choc-mute)}
+    .fd-send{margin-top:34px;padding-top:28px;border-top:1px solid var(--fd-line)}
+    .fd-send[hidden]{display:none}
+    .fd-send h3{font-family:"Fraunces",serif;font-weight:400;font-size:26px;margin:0 0 8px;color:var(--choc)}
+    .fd-send p{font-size:15px;line-height:1.6;color:var(--choc-mute);margin:0 0 16px}
+    .fd-send-row{display:flex;flex-wrap:wrap;gap:10px}
+    .fd-send-row input{flex:1 1 180px;min-width:0;padding:15px 16px;font:inherit;font-size:16px;border:1px solid rgba(43,22,27,.2);border-radius:2px;background:var(--cream);color:var(--choc)}
+    .fd-send-row input:focus{outline:2px solid var(--pink);outline-offset:0;border-color:var(--pink)}
+    .fd-send-row .btn:disabled{opacity:.5}
+    .fd-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
+    .fd-send-msg{margin:12px 0 0!important;font-size:14.5px!important;color:var(--pink-deep)!important}
+    .fd-send-msg:empty{display:none}
+    @media(max-width:560px){.fd-read div{grid-template-columns:1fr;gap:4px}}
+    .fd-door{margin-top:40px}
+    .fd-door-k{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+    .fd-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .fd-card{background:var(--white);border:1px solid rgba(43,22,27,.12);border-radius:2px;padding:34px 32px;display:flex;flex-direction:column}
+    .fd-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:30px;line-height:1.1;margin:0 0 10px;color:var(--choc)}
+    .fd-card p{font-size:15.5px;line-height:1.7;color:var(--choc-soft);margin:0 0 14px}
+    .fd-card .btn{align-self:flex-start;margin-top:auto}
+    .fd-card .fd-row .btn{margin-top:0}
+    .fd-price{font-size:13px;letter-spacing:.4px;color:var(--choc-meta);margin-bottom:16px}
+    .fd-price b{font-family:"Fraunces",serif;font-weight:300;font-size:30px;color:var(--pink);letter-spacing:-.5px;margin-right:4px}
+    .fd-card-line{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px!important;line-height:1.45!important;color:var(--choc)!important}
+    .fd-for,.fd-not{padding-left:14px;border-left:2px solid var(--pink)}
+    .fd-not{border-left-color:rgba(43,22,27,.2)}
+    .fd-card-dark{background:var(--choc);border-color:var(--choc)}
+    .fd-card-dark h3,.fd-card-dark .fd-card-line{color:var(--cream)!important}
+    .fd-card-dark p,.fd-card-dark .fd-price{color:rgba(251,248,245,.78)}
+    .fd-card-dark .fd-price b{color:var(--mauve)}
+    .fd-card-dark .fd-not{border-left-color:rgba(251,248,245,.3)}
+    .fd .btn-onmid{background:var(--mauve);color:var(--choc)!important;margin-top:auto}
+    .fd-fine{margin-top:14px;font-size:13.5px;color:var(--choc-meta)}
+    .fd-fine a{color:var(--pink);text-decoration:underline}
+    .fd-door-img{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:28px;align-items:stretch}
+    .fd-door-img img{width:100%;height:100%;object-fit:cover;border-radius:2px;max-height:620px}
+    .fd-door-flip{grid-template-columns:minmax(0,7fr) minmax(0,4fr)}
+    .fd-door-flip img{order:2}
+    .fd-link{font-size:13px;letter-spacing:.4px;color:var(--pink);font-weight:500}
+    .fd-card-aff{border-top:2px solid var(--gold);max-width:760px}
+    .fd-disc,.fd-r-disc{font-size:13.5px!important;line-height:1.6!important;color:var(--choc-mute)!important;padding:14px 16px;background:rgba(200,169,106,.12);border:1px solid rgba(200,169,106,.4);border-radius:2px;margin:6px 0 20px!important}
+
+    .fd-close{text-align:center}
+    .fd-close h2{font-size:clamp(34px,5.6vw,60px)}
+    .fd-close .fd-fine{margin-top:26px}
+    .fd-sign{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--pink);margin-top:30px}
+    .fd-backlink{margin-top:10px;font-size:13px;letter-spacing:.4px}
+    .fd-backlink a{color:var(--choc-meta)}
+    .fd-backlink a:hover{color:var(--pink)}
+
+    @media(max-width:860px){
+      .fd-thesis-grid,.fd-duo,.fd-door-img,.fd-door-flip{grid-template-columns:1fr}
+      .fd-door-flip img{order:0}
+      .fd-door-img img{max-height:340px}
+      .fd-fig{max-width:340px}
+      .fd-stats{grid-template-columns:1fr 1fr}
+      .fd-stat:nth-child(2){border-right:0}
+      .fd-stat:nth-child(-n+2){border-bottom:1px solid rgba(200,169,106,.3)}
+    }
+    @media(max-width:560px){
+      .fd-quiz,.fd-result{padding:30px 22px 26px}
+      .fd-card{padding:28px 22px}
+      .fd-block{padding:58px 0}
+    }
+  </style>
+</PageLayout>

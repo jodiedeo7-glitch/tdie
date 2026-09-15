@@ -33,6 +33,12 @@ const kits = [
     <p class="rx-lede">No fluff, no drip sequence to sit through. Each one moves you a single real step forward.</p>
   </section>
 
+  <a class="rx-door" href="/resources/find-your-door">
+    <span class="rx-tag">Not sure where to start?</span>
+    <span class="rx-door-t">Find your door — eleven questions, one answer, results on screen.</span>
+    <span class="rx-go">Take it →</span>
+  </a>
+
   <section class="rx-block rx-first">
     <h2>Start with one of these</h2>
     <div class="rx-featured">
@@ -76,6 +82,12 @@ const kits = [
     .rx-hero h1 em{font-style:italic;color:var(--pink)}
     .rx-lede{max-width:600px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
 
+    .rx-door{display:flex;align-items:center;gap:22px;flex-wrap:wrap;max-width:860px;margin:0 auto 64px;padding:22px 28px;border-radius:2px;text-decoration:none;
+             background:var(--choc);border:1px solid var(--choc);transition:transform .2s var(--ease)}
+    .rx-door:hover{transform:translateY(-2px)}
+    .rx-door .rx-tag{color:var(--mauve)}
+    .rx-door-t{flex:1;min-width:220px;font-family:"Fraunces",serif;font-weight:300;font-size:22px;line-height:1.25;color:var(--cream)}
+    .rx-door .rx-go{color:var(--mauve)}
     .rx-block{padding:72px 0;border-top:1px solid rgba(43,22,27,.1)}
     .rx-first{border-top:none;padding-top:0}
     .rx-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,4.6vw,46px);line-height:1.05;margin:0 0 20px;letter-spacing:-1px;color:var(--choc);text-align:center}
