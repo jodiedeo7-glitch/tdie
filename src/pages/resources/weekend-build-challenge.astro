@@ -1,0 +1,37 @@
+---
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
+import FreebieForm from "../../components/FreebieForm.astro";
+
+// Own MailerLite form ("Weekend Build Challenge") → group "Challenge — Weekend Build",
+// which triggers the 5-day automation. Do not swap for the shared freebie form.
+const CHALLENGE_FORM = "https://assets.mailerlite.com/jsonp/2532349/forms/198806704189605117/subscribe";
+---
+<ResourceLayout
+  title="The Weekend Build Challenge — Free 5-Day Email Challenge"
+  description="Five days, five emails, one small faceless business built on purpose. A model, an offer, a product, a funnel and a way to be found — in the time you actually have."
+  eyebrow="Free Challenge · 5 Days"
+  heading="The Weekend Build Challenge"
+  lede="You don't need more time. You need a business that fits the time you have. Five emails, one assignment each, and by Friday you've built the skeleton."
+  guideHref="/learn/how-to-build-a-faceless-digital-business"
+  guideLabel="How to Build a Faceless Digital Business"
+>
+  <p>Most women don't stall because they picked the wrong idea. They stall because they tried to build everything at once, in hours they didn't have. This challenge does it in order, one piece a day, about thirty minutes each.</p>
+
+  <p><strong>What you'll have built by day five:</strong></p>
+  <ul>
+    <li>A business model chosen on purpose, not by whatever was trending</li>
+    <li>An offer named so clearly a stranger understands it</li>
+    <li>A small first product, drafted with Claude and dressed in Canva</li>
+    <li>A free-piece-to-email-to-product funnel, tested end to end</li>
+    <li>A way to turn one idea into a week of posts</li>
+  </ul>
+
+  <FreebieForm heading="Start the challenge" button="Send Day One" action={CHALLENGE_FORM} />
+
+  <div class="freebie-next">
+    <p><strong>Want to see where this leads?</strong></p>
+    <ul>
+      <li>The Weekend Ecosystem™ builds the website, blog and email list that hold everything you make. Two full modules are open to look through — no email needed. <a href="/weekend-ecosystem/preview">Look inside →</a></li>
+    </ul>
+  </div>
+</ResourceLayout>

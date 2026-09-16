@@ -8,8 +8,10 @@
 // Props:
 //   heading  - the capture headline (e.g. "Get the AI Starter Kit")
 //   button   - submit button label (e.g. "Send Me the Kit")
-const { heading = "Get the free guide", button = "Send It to Me" } = Astro.props;
-const ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
+//   action   - optional MailerLite form URL; omit to use the shared freebie form
+const DEFAULT_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
+const { heading = "Get the free guide", button = "Send It to Me", action = DEFAULT_ACTION } = Astro.props;
+const ACTION = action;
 ---
 
 <div class="freebie-capture">
