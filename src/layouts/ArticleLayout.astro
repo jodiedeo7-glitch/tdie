@@ -162,6 +162,20 @@ const articleSchema = {
   },
 };
 
+// BreadcrumbList — Home → The Library → this article.
+// The category level is deliberately omitted: no pillar has its own URL, and a
+// breadcrumb item must point at a real page. Add it here if category pages ship.
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+    { "@type": "ListItem", position: 2, name: "The Library", item: `${SITE}/learn` },
+    { "@type": "ListItem", position: 3, name: title, item: canonical },
+  ],
+};
+
 const faqSchema = faqs?.length
   ? {
       "@context": "https://schema.org",
@@ -602,6 +616,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

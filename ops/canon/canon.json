@@ -1,27 +1,20 @@
 {
   "meta": {
     "brand": "The Digital Income Edit™",
-    "canon_version": "1.0",
-    "issued": "2026-08-16",
-    "built_from": [
-      "Product Register v3.1 (amending v3.0)",
-      "Corrections & Decisions Record v2.1",
-      "SOP Library v1.1",
-      "Prompt Library v1.7"
-    ],
+    "tagline": "Build Your Business Backwards. Scale It Forward.™",
+    "status": "CURRENT — single live copy. No versioned predecessors. Supersedes canon.json v1.0/v1.1 and every reconciliation document.",
+    "issued": "2026-09-01",
     "precedence": [
-      "Live site, repo and shop — override every document",
-      "Product Register v3.1 — product facts only",
-      "Corrections & Decisions Record v2.1 — decisions, standing rules, brand policy, process",
-      "Resource Map v2.1",
-      "SOP Library v1.1",
-      "Prompt Library v1.7",
-      "Master Operating Manual v3.0"
+      "Live site, repo, Skool and shop — override every document including this one",
+      "TDIE_CANON.md and canon.json — governing, kept in sync same-day",
+      "Resource Map, SOP Library, Prompt Library — process, subordinate to canon",
+      "Historical records (Corrections & Decisions Record, Master Operating Manual, Decision 73) — reference only, retained as changelog"
     ],
     "canonical_host": "https://www.thedigitalincomeedit.com",
     "repo": "jodiedeo7-glitch/tdie",
     "article_route_prefix": "/learn/",
-    "rule_of_use": "No asset ships naming a product, price, or link that is not a row in products[]. Absence is never grounds for deletion (Standing Rule 19)."
+    "rule_of_use": "No asset ships naming a product, price, or link that is not a row in products[]. Absence from a document is never grounds for deletion; only positive confirmation that a product does not exist permits removal.",
+    "product_register_rule": "A product gets a row here before it gets a single asset. No exceptions."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -36,7 +29,7 @@
       "links.thedigitalincomeedit.com",
       "www.skool.com/thedigitalincomeedit"
     ],
-    "note": "Bare domain and learn. both 308 to www. An asset printed with a redirecting host is printed wrong (Prompt Library v1.7, Prompt 11). links.* is not fetchable and not indexed — treat as unverifiable by tooling."
+    "note": "Bare domain and learn. both 308 to www. An asset printed with a redirecting host is printed wrong. links.* is not fetchable and not indexed — unverifiable by tooling."
   },
   "palette": {
     "signature_hot_pink": "#D62E73",
@@ -62,30 +55,38 @@
       "SOFT",
       "WONK"
     ],
-    "rule": "1–2 families per asset. Text is set, never generated."
+    "rule": "1–2 families per asset. Text is set, never generated — nano banana (Gemini) only. Canva AI renders text accurately; do not strip text from Canva prompts.",
+    "cormorant_axis_order": [
+      "wght"
+    ],
+    "inter_axis_order": [
+      "opsz",
+      "wght"
+    ]
   },
   "tier_badges": {
     "standard": "#FF8AC2",
-    "premium": "#D62E73"
+    "premium": "#D62E73",
+    "note": "Free badge retired with the free tier. Gold and Lavender badges for standalones and member rewards remain proposed, not canon."
   },
   "ladder": [
     {
       "name": "Membership Standard",
       "price": 9,
-      "display": "$9/month",
+      "display": "$9/month · $99/year",
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
-      "note": "Free 7-day trial on entry."
+      "note": "Formerly Membership Premium. Includes Pinterest Foundations™."
     },
     {
       "name": "Membership Premium",
       "price": 27,
-      "display": "$27/month",
+      "display": "$27/month · $250/year",
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
-      "note": "includes The Ads Edit™"
+      "note": "Formerly Membership VIP. Includes The Ads Edit™ and unlocks The Premium Vault."
     },
     {
       "name": "The Business Architect Mentorship Intensive™",
@@ -93,10 +94,30 @@
       "display": "pending",
       "platform": "Skool",
       "url": null,
-      "status": "PENDING — not live. Stripped from all assets until launch. Supersedes the retired name Faceless Income Intensive™."
+      "status": "NOT LIVE. Third Skool tier card is toggled off and reserved. Sold by application. Structure undecided — do not pre-solve. Stripped from every asset until launch. Supersedes the retired name Faceless Income Intensive™."
     }
   ],
+  "retired_structure": {
+    "free_tier": "PERMANENTLY RETIRED. Never reference 'Free Community', 'Free tier', or a $0 Skool rung again.",
+    "grandfathered": "~1,231 members carried over from the prior free tier.",
+    "renames": {
+      "Membership Premium ($9)": "Membership Standard",
+      "Membership VIP ($27)": "Membership Premium",
+      "The VIP Vault": "The Premium Vault"
+    },
+    "never_existed": "Skool at $17/month. Any asset showing $17/mo is wrong."
+  },
   "products": [
+    {
+      "name": "The Weekend Ecosystem™",
+      "price": 97,
+      "display": "$97 one-time",
+      "recurring": false,
+      "owned": true,
+      "platform": "Owned site",
+      "url": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem",
+      "note": "22-module course. Permanent price; launch ladder closed. Waitlist page 301s to the sales page. All future updates included free, forever."
+    },
     {
       "name": "The Faceless Income Blueprint™",
       "price": 0,
@@ -117,26 +138,6 @@
       "owned": true,
       "platform": "Beacons",
       "url": "https://links.thedigitalincomeedit.com/shop/d03bc54d-50e6-4725-b401-f91cb3ea251a"
-    },
-    {
-      "name": "Pretty & Paid PLR Vault™",
-      "price": 11,
-      "display": "$11/month",
-      "recurring": true,
-      "owned": true,
-      "off_ladder": true,
-      "platform": "Beacons",
-      "url": "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839",
-      "note": "Off-ladder. Never framed beside a membership tier. Full 'Pretty & Paid' prefix on every first reference."
-    },
-    {
-      "name": "#TDIE FB GROUP PROMO",
-      "price": 10,
-      "display": "$10/month",
-      "recurring": true,
-      "owned": true,
-      "platform": "Beacons",
-      "url": "https://links.thedigitalincomeedit.com/shop/8b706bf8-79cb-4e65-8b8f-01b17cb6fddb"
     },
     {
       "name": "550+ BRILLIANT chatGPT prompts for your business",
@@ -165,6 +166,26 @@
       "owned": true,
       "platform": "Beacons",
       "url": "https://links.thedigitalincomeedit.com/shop/8e31e02b-cc67-4217-ba21-139fb88584aa"
+    },
+    {
+      "name": "#TDIE FB GROUP PROMO",
+      "price": 10,
+      "display": "$10/month",
+      "recurring": true,
+      "owned": true,
+      "platform": "Beacons",
+      "url": "https://links.thedigitalincomeedit.com/shop/8b706bf8-79cb-4e65-8b8f-01b17cb6fddb"
+    },
+    {
+      "name": "Pretty & Paid PLR Vault™",
+      "price": 11,
+      "display": "$11/month",
+      "recurring": true,
+      "owned": true,
+      "off_ladder": true,
+      "platform": "Beacons",
+      "url": "https://links.thedigitalincomeedit.com/shop/e7555c8f-7348-4ab4-99ce-0569d6dd0839",
+      "note": "Off-ladder. Never framed beside a membership tier. Full 'Pretty & Paid' prefix on every first reference."
     },
     {
       "name": "150 UGC Brand Contacts",
@@ -209,7 +230,7 @@
       "owned": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca",
-      "note": "One-time, not recurring. Also included with the Membership — inclusion, not a ladder rung. No /shop/ route is to be built."
+      "note": "One-time, not recurring. Also included with Membership Premium — inclusion, not a ladder rung. No /shop/ route is to be built."
     },
     {
       "name": "Zero Income Claim Guide - 100 DFY Reels",
@@ -319,20 +340,31 @@
     }
   ],
   "flagged_not_cut": {
-    "note": "Standing Rule 19 — flagged, never deleted. These are named in canon but have no confirmed live listing. Do not write them into an asset until confirmed.",
+    "note": "Named in canon, no confirmed live listing. Do not write into an asset until confirmed. Flagged, never deleted.",
     "items": [
       "Luxe Babe Prompt Pack",
       "Vacation Vault™",
       "Workout Vault™",
-      "AI CEO Planner™",
-      "Vault Unlock ($49 one-time, Record v1.3)",
-      "DFY Pinterest packages ($97–$497+, Record v1.1 open item 6)"
+      "AI CEO Planner™ — confirmed to exist as a Module 6 companion asset; no confirmed standalone listing",
+      "Vault Unlock ($49 one-time)",
+      "DFY Pinterest packages ($97–$497+)",
+      "Pinterest Traffic Engine™ — canon name exists, build status unconfirmed, Premium-tier intent"
     ]
   },
   "vault_disambiguation": {
-    "The Value Vault": "Guide collection inside Skool. Browsable by all members; guides bought à la carte ($2–$10) or the whole collection for $49.",
-    "Pretty & Paid PLR Vault™": "Separate $11/month Beacons subscription. Off-ladder. Never introduced alongside a membership tier.",
-    "The Premium Vault": "The entire Value Vault unlocked, included with Premium ($27/mo)."
+    "The Value Vault": "Individually priced guide collection inside Skool. Never called 'PLR Vault' alone.",
+    "The Premium Vault": "The Value Vault unlocked in full for Premium members. Formerly The VIP Vault.",
+    "Pretty & Paid PLR Vault™": "Separate $11/month Beacons subscription. Off-ladder. Never in a membership tier, never adjacent to Standard or Premium content, Wednesday promotion slot only.",
+    "rule": "Three distinct products. Never conflated, never renamed, never merged."
+  },
+  "vault_contents_pretty_and_paid": {
+    "products": "Planners, journals, guides, eBooks, printables, colouring page sets. Canva-editable, full PLR licence. Bundles not single files.",
+    "content": "Faceless Reel packs, stock photo sets, AI influencer image packs, Pinterest templates, carousel templates, engagement stories, announcement post sets.",
+    "training": "Etsy, Stan Store, Beacons, Canva rebranding.",
+    "tool": "PLR Glow Studio — returns four branded mockup prompts, an SEO product title, a product description, SEO tags.",
+    "cadence": "20 new products monthly.",
+    "licence": "Full PLR, survives cancellation. Downloads permanent.",
+    "retired_description": "'Six rebrandable products and three AI transformation workflows' — RETIRED. Any surviving instance is a defect."
   },
   "pillars": [
     {
@@ -482,6 +514,42 @@
           "Faceless Income Intensive"
         ],
         "why": "Retired name. Superseded by BAMI, which is itself pre-launch."
+      },
+      {
+        "id": "retired_tier_vocabulary",
+        "patterns": [
+          "Free Community",
+          "\\bVIP\\b",
+          "free tier",
+          "Free Tier"
+        ],
+        "why": "Free tier permanently retired; VIP renamed to Premium."
+      },
+      {
+        "id": "phantom_price",
+        "patterns": [
+          "\\$17 ?/ ?(mo|month)",
+          "\\$17/mo"
+        ],
+        "why": "Skool has never been $17/month. Live lead magnets still print it."
+      },
+      {
+        "id": "retired_vault_description",
+        "patterns": [
+          "rebrandable",
+          "transformation workflows"
+        ],
+        "why": "Decision 73. The 6+3 description is retired."
+      },
+      {
+        "id": "results_timing_claim",
+        "patterns": [
+          "24-72 hours",
+          "get paid tomorrow",
+          "results in \\d+",
+          "launch tonight"
+        ],
+        "why": "No promises about how fast results arrive. Brand-wide."
       }
     ],
     "review": [
@@ -505,7 +573,7 @@
       {
         "id": "vault_short_form",
         "patterns": [
-          "(?<!Value )(?<!Premium )(?<!Paid )\\bPLR Vault\\b",
+          "(?<!Value )(?<!VIP )(?<!Paid )\\bPLR Vault\\b",
           "\\bthe Vault\\b"
         ],
         "why": "SOP 12 steps 5–6. Short form is banned in first-reference positions — title, heading, meta, button, anchor text."
@@ -528,6 +596,42 @@
           "earned \\$"
         ],
         "why": "Income claims are permitted everywhere except Meta platforms. Check the destination before shipping."
+      },
+      {
+        "id": "third_party_ip",
+        "patterns": [
+          "Barbie",
+          "Margot Robbie",
+          "YSL",
+          "Saint Laurent",
+          "Disney",
+          "Marvel",
+          "Chanel",
+          "Louis Vuitton",
+          "Gucci"
+        ],
+        "why": "Hard third-party IP ban in every generated image, listing and asset. This has caused platform deactivations."
+      },
+      {
+        "id": "fabricated_proof_or_scarcity",
+        "patterns": [
+          "limited spots",
+          "spots available",
+          "joined this week",
+          "\\d+\\+? women already",
+          "most popular"
+        ],
+        "why": "No fabricated social proof, no manufactured scarcity."
+      },
+      {
+        "id": "income_screenshot_proof",
+        "patterns": [
+          "Sale received",
+          "EARNINGS",
+          "Total Revenue",
+          "vs last month"
+        ],
+        "why": "Proof strategy is the business itself, not income screenshots."
       }
     ]
   },
@@ -600,5 +704,37 @@
     "banned_on_pinterest": [
       "Make Money Online"
     ]
+  },
+  "content_calendar_rules": {
+    "no_membership_tue_thu": "No membership tier content Tuesday–Thursday.",
+    "vault_wednesday_only": "Pretty & Paid PLR Vault™ promotes Wednesday only.",
+    "never_adjacent": "Vault and membership posts never share a day and never sit on adjacent days.",
+    "meta": "No income or earnings claims on Facebook or Instagram. Permitted on every other surface.",
+    "registers": "Skool community posts: warm, casual, emoji-forward, peer-to-peer. Site and editorial: luxury editorial. The two voices do not mix."
+  },
+  "infrastructure": {
+    "site": "Astro on Vercel",
+    "repo": "jodiedeo7-glitch/tdie",
+    "community": "Skool — Tiers pricing model",
+    "shop": "Beacons — links.thedigitalincomeedit.com",
+    "email": "MailerLite",
+    "email_env": [
+      "MAILERLITE_GROUP_ID (buyers)",
+      "MAILERLITE_WAITLIST_GROUP_ID (waitlist)"
+    ],
+    "analytics": "Vercel Web Analytics, site-wide",
+    "pinterest": "@NurseMadeDigital — domain block open",
+    "tool_stack": [
+      "Astro",
+      "Vercel",
+      "GitHub",
+      "Skool",
+      "Beacons",
+      "Canva",
+      "Claude",
+      "MailerLite",
+      "Pinterest native"
+    ],
+    "rule": "Nothing outside this list. No automation outside the named stack."
   }
 }

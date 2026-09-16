@@ -325,7 +325,7 @@ def report(canon, findings, path=None):
     for r in findings.rows:
         by_check[(r["level"], r["check"])].append(r)
 
-    out = ["# TDIE audit", "", f'Canon v{canon["meta"]["canon_version"]} · {time.strftime("%Y-%m-%d %H:%M")}', "",
+    out = ["# TDIE audit", "", f'Canon issued {canon["meta"].get("issued", "?")} · {time.strftime("%Y-%m-%d %H:%M")}', "",
            f"**{len(findings.fails)} FAIL · {len(findings.reviews)} REVIEW**", ""]
 
     for level in ("FAIL", "REVIEW"):
