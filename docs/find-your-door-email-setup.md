@@ -69,7 +69,7 @@ Here's what you told me, and what I'd do about it.
 
 {$quiz_reframe}
 
-Your door is **Membership Premium**. Your business isn't the problem — the daily writing is. Premium hands you the month already written: 31 days of posts finished before the month starts, 62 Threads posts, and a start-frame and motion prompt for every Reel. It also includes everything in Standard, plus The Ads Edit™, The Offer Edit, The Funnel Edit and Scaling & Systems.
+Your door is **Membership Premium**. Your business isn't the problem — the daily writing is. Premium hands you the month already written: 31 days of finished posts, released a week at a time around the 1st, 62 Threads posts, and a start-frame and motion prompt for every Reel. It also includes everything in Standard, plus The Ads Edit™, The Offer Edit, The Funnel Edit and Scaling & Systems.
 
 **Your first three moves**
 1. Start the trial and open this month's DFY Content Calendar.

@@ -74,7 +74,7 @@
 
 **BAMI graduates receive The Weekend Ecosystem™ free on completion** — earned at completion, never "included with BAMI." Stated on `/bami` before application. Applies retroactively to the founding cohort.
 
-**The Premium Monthly DFY Content Calendar** — 31 days of Instagram content delivered as a Skool classroom module, published before the first of the month it covers. Premium only, and the primary reason Premium exists over Standard. Process: SOP 15.
+**The Premium Monthly DFY Content Calendar** — 31 days of Instagram content delivered as a Skool classroom module. **Two-week rollout:** research starts at the beginning of the last week of the preceding month; the calendar is released one week of posts at a time, every 3–4 days, across the last week of the preceding month and the first week of the month it covers, so each week is tested and scheduled before it runs. Never promise the whole month "before the 1st." Premium only, and the primary reason Premium exists over Standard. Process: SOP 15.
 
 **Pinterest Foundations™** — Standard module, also purchasable standalone at $27. **All Skool modules unlock inside Skool.** No separate checkout page exists for any module, and none is to be built.
 
@@ -307,6 +307,7 @@ An append-only record. Nothing here governs; it explains why the rules above rea
 **77.** Canon collapses to one file per document. Version numbers retired. Corrections & Decisions Record, Master Operating Manual, Decision 73 and Canon v1.0/v1.1 cease to be governing documents.
 **78.** The Weekend Ecosystem™ adds a 3 × $33.33 payment option beside $97 one-time.
 **79.** The Weekend Build Challenge goes live at `/resources/weekend-build-challenge` — free 5-day email challenge on its own MailerLite form and automation, featured first on `/resources` and on the Beacons bio. Single door: The Weekend Ecosystem™.
+**80.** The Premium DFY Content Calendar moves to a two-week rollout: research from the start of the last week of the preceding month; one week of posts released every 3–4 days across the last week of that month and the first week of the covered month. Site copy changed from "31 days written before the month starts" to "31 days, released a week at a time around the 1st."
 
 ---
 
