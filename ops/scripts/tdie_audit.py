@@ -123,8 +123,12 @@ def check_prices(canon, findings, where, text):
     """Standing Rule 32 — every price string checked against the collision table."""
     table = price_table(canon)
     known = set(table.keys())
+    plans = {f'{p["payment_plan"]["amount"]:.2f}' for p in canon["products"] if p.get("payment_plan")}
+    plans |= {f'{p["payment_plan"]["total"]:.2f}' for p in canon["products"] if p.get("payment_plan")}
     for m in re.finditer(r"\$(\d[\d,]*)(?:\.(\d{2}))?", text):
         val = int(m.group(1).replace(",", ""))
+        if m.group(2) and f"{val}.{m.group(2)}" in plans:
+            continue  # a registered payment-plan installment or total
         if m.group(2) and m.group(2) != "00":
             findings.add("REVIEW", "price_not_in_register", where, line_of(text, m.start()),
                          f"${m.group(1)}.{m.group(2)} — no product carries this price",

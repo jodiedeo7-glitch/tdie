@@ -78,7 +78,7 @@
 
 **Pinterest Foundations™** — Standard module, also purchasable standalone at $27. **All Skool modules unlock inside Skool.** No separate checkout page exists for any module, and none is to be built.
 
-**The Weekend Ecosystem™** — $97 one-time, permanent price, 22 modules, delivered as a live website. The launch price ladder is closed; the waitlist page 301-redirects to the sales page. All future updates included free, forever.
+**The Weekend Ecosystem™** — $97 one-time, or 3 × $33.33 (the platform's payment-plan minimum is $100), permanent price, 22 modules, delivered as a live website. The launch price ladder is closed; the waitlist page 301-redirects to the sales page. All future updates included free, forever.
 
 ---
 
@@ -263,7 +263,7 @@ Decisions and dependencies, not process. No amount of correct execution resolves
 | Both Blueprint lead magnets are materially wrong — see the Defect Register | Every opt-in currently running |
 | The One & Done sales page carries third-party IP and income projections | The $27 product's entire funnel |
 | Skool cover image carries fabricated earnings and a branded handbag | The community's first impression |
-| BAMI price, structure and live URL | The ladder's top rung |
+| BAMI price, structure and live URL — provisional thinking only (beta around $297, launch around $1,497, then scale on results); nothing is final and none of it goes into an asset | The ladder's top rung |
 | Value Vault ledger count | Every "total value" claim in Vault marketing |
 | Four Skool module tier assignments — AI Twin/Influencer Creation, Monetization Edit, Content Edit, Pinterest Edit | Module cover production |
 | Pinterest domain unblock | The collections-pin lesson; Pinterest Traffic Engine™ |
@@ -305,6 +305,8 @@ An append-only record. Nothing here governs; it explains why the rules above rea
 **75.** The Weekend Ecosystem™ launches at $97 permanent. Launch ladder closed; waitlist 301s to the sales page.
 **76.** All 26 owned bridge pages live; Beacons direct links removed site-wide.
 **77.** Canon collapses to one file per document. Version numbers retired. Corrections & Decisions Record, Master Operating Manual, Decision 73 and Canon v1.0/v1.1 cease to be governing documents.
+**78.** The Weekend Ecosystem™ adds a 3 × $33.33 payment option beside $97 one-time.
+**79.** The Weekend Build Challenge goes live at `/resources/weekend-build-challenge` — free 5-day email challenge on its own MailerLite form and automation, featured first on `/resources` and on the Beacons bio. Single door: The Weekend Ecosystem™.
 
 ---
 

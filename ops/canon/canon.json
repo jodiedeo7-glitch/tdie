@@ -111,12 +111,18 @@
     {
       "name": "The Weekend Ecosystem™",
       "price": 97,
-      "display": "$97 one-time",
+      "display": "$97 one-time, or 3 × $33.33",
       "recurring": false,
       "owned": true,
       "platform": "Owned site",
       "url": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem",
-      "note": "22-module course. Permanent price; launch ladder closed. Waitlist page 301s to the sales page. All future updates included free, forever."
+      "note": "22-module course. Permanent price; launch ladder closed. Waitlist page 301s to the sales page. All future updates included free, forever.",
+      "payment_plan": {
+        "installments": 3,
+        "amount": 33.33,
+        "total": 99.99,
+        "note": "Platform minimum for a payment plan is $100; plan totals $99.99."
+      }
     },
     {
       "name": "The Faceless Income Blueprint™",
@@ -138,6 +144,14 @@
       "owned": true,
       "platform": "Beacons",
       "url": "https://links.thedigitalincomeedit.com/shop/d03bc54d-50e6-4725-b401-f91cb3ea251a"
+    },
+    {
+      "name": "The Weekend Build Challenge",
+      "price": 0,
+      "owned": true,
+      "platform": "Owned site",
+      "url": "https://www.thedigitalincomeedit.com/resources/weekend-build-challenge",
+      "note": "Free 5-day email challenge. Own MailerLite form (198806704189605117) → group \"Challenge — Weekend Build\" → 8-email automation ending at The Weekend Ecosystem™. No membership, Vault or BAMI mention in the sequence."
     },
     {
       "name": "550+ BRILLIANT chatGPT prompts for your business",
