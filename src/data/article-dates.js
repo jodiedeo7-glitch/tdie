@@ -34,6 +34,7 @@ export const ARTICLE_DATES = {
   "blogging-guide": "2026-07-04",
   "turn-skool-content-into-a-blog": "2026-09-02",
   "stuck-four-steps-earlier": "2026-08-18",
+  "boring-first-passive-stream": "2026-09-16",
 };
 
 // Any article not listed above falls back to this date so it still appears.
