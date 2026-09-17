@@ -1,0 +1,137 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "What is the logo-off test?",
+    answer: "Take your last ten posts, cover the logo, handle and brand colours, and ask whether a regular reader would still know they were yours. If the words alone don't identify you, the brand is living in the decoration rather than the thinking.",
+  },
+  {
+    question: "Why do faceless brands blur together?",
+    answer: "Without a founder's face carrying recognition, most faceless accounts lean on templates, trending audio and the same safe advice. The visuals differ slightly; the point of view doesn't. Recognition has to come from what you say, not what you look like.",
+  },
+  {
+    question: "What makes a brand recognisable without a face?",
+    answer: "A clear opinion, a specific reader, phrases you repeat on purpose, and a consistent way of structuring what you teach. Those survive with the logo covered. Colours and fonts don't.",
+  },
+  {
+    question: "How consistent does a faceless brand need to be?",
+    answer: "Completely consistent on point of view and reader, deliberately consistent on a few signature phrases and formats, and free to vary on topics, hooks and design details. Consistency is about the parts people use to recognise you.",
+  },
+  {
+    question: "How often should I run the test?",
+    answer: "Once a quarter is enough. Run it on your most recent ten pieces of content, not your favourites, because the test is about what a new reader actually sees.",
+  },
+];
+---
+
+<ArticleLayout
+  title="Would Anyone Recognise Your Brand With the Logo Covered?"
+  description="Most faceless brands are interchangeable once you hide the logo. The logo-off test shows whether yours lives in its thinking or only its decoration, and what to fix if it fails."
+  slug="logo-off-test"
+  category="Branding"
+  issueNumber="042"
+  readTime="10 Min Read"
+  datePublished="2026-09-16"
+  dateModified="2026-09-16"
+  faqs={faqs}
+  ogImage="/images/library/detail-shelf-styling-01.jpg"
+  related={[
+    { href: "/learn/branding-guide", title: "The Branding Guide" },
+    { href: "/learn/content-creation-guide", title: "The Beginner's Guide to Content Creation for Faceless Brands" },
+    { href: "/learn/how-to-build-a-faceless-digital-business", title: "How to Build a Faceless Digital Business" },
+    { href: "/learn/mindset-guide", title: "The Mindset Guide" }
+  ]}
+>
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Branding</span>
+    <h1 class="reveal">Would Anyone Recognise Your Brand With the Logo Covered?</h1>
+    <p class="sub reveal">If the answer is no, you don't have a brand yet. You have a colour palette.</p>
+    <div class="hero-meta reveal"><span>10 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/detail-shelf-styling-01.jpg" alt="Would Anyone Recognise Your Brand With the Logo Covered — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#blur">Why faceless brands blur together</a></li>
+          <li><a href="#test">The logo-off test</a></li>
+          <li><a href="#survives">What survives with the logo covered</a></li>
+          <li><a href="#fixed">What stays fixed, what can move</a></li>
+          <li><a href="#fails">When your brand fails the test</a></li>
+          <li><a href="#trust">Recognition is where trust starts</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ol>
+        <div class="foot">Est. 10 Min Read</div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="lede first reveal">Scroll through twenty faceless accounts in the same niche and try something. Cover the handle. Cover the logo. Squint past the colours. Now tell me which account each post came from.</p>
+  <p class="reveal">Most of the time you can't. The pastel changes, the font changes, the advice doesn't. Same hooks, same five tips, same calm voice saying nothing anyone would disagree with. The branding is doing all the work, and the branding is the part a reader forgets first.</p>
+  <p class="reveal">When your face isn't carrying recognition, something else has to. That something is not your palette. It's how you think, and whether a reader could pick it out of a crowd with everything else stripped away.</p>
+
+  <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="blur">Why faceless brands blur together</h2></div>
+  <p class="answer reveal">Faceless brands blur because they borrow the same templates, the same trends and the same safe advice. The look varies slightly. The point of view doesn't vary at all.</p>
+  <p class="reveal">A founder who shows up on camera gets recognition for free. People remember a face, a laugh, a way of standing. Take that away and recognition has to be earned somewhere else, and most faceless accounts never decide where.</p>
+  <p class="reveal">So they default to decoration. A carefully chosen palette. A signature font. A logo in the corner. All of it looks intentional, and all of it disappears the moment the post is screenshotted, reshared or read by someone scrolling fast.</p>
+  <p class="reveal">Meanwhile the words underneath could have been written by anyone. That's not a design problem. It's a thinking problem wearing a design solution.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Your palette tells people you have taste. Your point of view tells them who you are. Only one of those builds a following that follows you somewhere new.</p></div>
+
+  <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="test">The logo-off test</h2></div>
+  <p class="answer reveal">Take your last ten posts, remove the logo, handle and brand colours, and ask whether a regular reader would still know they were yours. If the words alone don't identify you, the brand isn't finished.</p>
+  <p class="reveal">Run it honestly. Not your ten best posts. Your ten most recent, because that's what a new reader actually meets.</p>
+  <p class="reveal"><strong>Strip the decoration.</strong> Copy the text of each post into a plain document. No images, no fonts, no colours, no handle.</p>
+  <p class="reveal"><strong>Read them cold.</strong> Ideally, hand them to someone who knows your work and mix in three posts from other accounts in your niche. Ask her to pick yours.</p>
+  <p class="reveal"><strong>Mark what gave you away.</strong> If she picked correctly, write down why. A phrase? An opinion? The way you structure a lesson? Those are your real brand assets.</p>
+  <p class="reveal"><strong>Mark what didn't.</strong> If she hesitated on a post, that post could have come from anyone. Note it. That's where the brand thinned out.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Passing looks like</span><p>Seven or more of ten posts identified from the words alone, with a clear reason each time. Fewer than five, and the decoration is carrying the brand.</p></div>
+
+  <div class="chapter  reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="survives">What survives with the logo covered</h2></div>
+  <p class="answer reveal">Four things survive: a clear opinion, a specific reader, phrases you repeat on purpose, and a consistent way of teaching. None of them are visual.</p>
+  <p class="reveal"><strong>An opinion.</strong> Not a hot take for its own sake. A position you hold consistently and would defend. <em>Boring products beat clever ones.</em> <em>Your first offer should be finished before it's good.</em> A reader who has heard you say it twice will recognise it the third time without looking at the handle.</p>
+  <p class="reveal"><strong>A specific reader.</strong> When you write to one woman in one situation, the details give you away. The night-shift schedule. The toddler at the kitchen table. The job she hasn't quit yet. Generic advice has no fingerprints. Specific advice is covered in them.</p>
+  <p class="reveal"><strong>Phrases you repeat on purpose.</strong> Every recognisable brand has a handful of lines it returns to. Not slogans. Just ways of saying things that become yours through repetition. Pick three and use them until you're bored of them. Your readers won't be.</p>
+  <p class="reveal"><strong>A way of teaching.</strong> Maybe you always name the mistake before the fix. Maybe every lesson ends with one thing to do tonight. Structure is recognisable, even when the topic changes completely.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/branding-guide">The Branding Guide →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="fixed">What stays fixed, what can move</h2></div>
+  <p class="answer reveal">Keep your point of view and your reader fixed. Keep a few signature phrases and formats deliberately steady. Let topics, hooks and design details change as often as you like.</p>
+  <p class="reveal">Consistency gets misread as sameness, and sameness is boring to make and boring to read. The trick is knowing which parts people actually use to recognise you, and holding only those still.</p>
+  <p class="reveal"><strong>Never changes:</strong> who you're talking to and what you believe about her problem. If either drifts, the audience you built stops recognising the account, even if every post looks identical.</p>
+  <p class="reveal"><strong>Changes slowly, on purpose:</strong> your signature phrases and your teaching structure. Retire one when it's genuinely worn out, not because you're tired of typing it.</p>
+  <p class="reveal"><strong>Changes freely:</strong> topics, hooks, formats, colours within your palette, the design of a single post. This is where you get to stay interested. Variety here costs you nothing because recognition doesn't live here.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/content-creation-guide">The Beginner's Guide to Content Creation for Faceless Brands →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="fails">When your brand fails the test</h2></div>
+  <p class="answer reveal">Don't redesign anything. Write down one opinion, one reader and three phrases, then rewrite your next ten posts so each one carries at least two of them.</p>
+  <p class="reveal">Failing the test is common and fixable. The instinct is to reach for a rebrand: new colours, new logo, new name. That's the one fix guaranteed not to work, because it changes the part that was never carrying recognition.</p>
+  <p class="reveal"><strong>Write the opinion.</strong> One sentence you believe about your reader's problem that not everyone in your niche would say. If every competitor would nod along, sharpen it.</p>
+  <p class="reveal"><strong>Write the reader.</strong> One woman, one situation, one sentence. Where she is, what she's stuck on, what she's tried.</p>
+  <p class="reveal"><strong>Choose three phrases.</strong> Look at your posts that people did recognise and pull the lines that sounded most like you. If none exist yet, write three now.</p>
+  <p class="reveal"><strong>Rewrite forward.</strong> Don't go back and edit the archive. Make every new post carry at least two of those elements, then run the test again in a month.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/ai-for-online-business">How to Use AI Without Sounding Like a Robot →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="trust">Recognition is where trust starts</h2></div>
+  <p class="answer reveal">A reader has to recognise you before she can trust you, and she has to trust you before she buys. Recognition built on thinking travels further than recognition built on design.</p>
+  <p class="reveal">Recognition is the first quiet step in every sale. She sees a post and thinks, <em>oh, it's her again</em>. That flicker is what turns a stranger into a regular. Without it, every post you publish is a first impression, and first impressions rarely convert.</p>
+  <p class="reveal">Recognition built on thinking also moves with you. Launch a new product, open a new platform, change your colours next year, and the women who know how you think will still find you. Recognition built only on design resets every time the design does.</p>
+  <p class="reveal">So cover the logo. Read what's left. Whatever you find there is your brand. Everything else is packaging, and packaging is the easy part.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/mindset-guide">The Mindset Guide →</a></p>
+
+  <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+  {faqs.map((f) => (
+    <>
+      <h3 class="reveal">{f.question}</h3>
+      <p class="reveal">{f.answer}</p>
+    </>
+  ))}
+
+</ArticleLayout>
