@@ -74,7 +74,7 @@
 
 **BAMI graduates receive The Weekend Ecosystem™ free on completion** — earned at completion, never "included with BAMI." Stated on `/bami` before application. Applies retroactively to the founding cohort.
 
-**The Premium Monthly DFY Content Calendar** — 31 days of Instagram content delivered as a Skool classroom module. **Two-week rollout:** research starts at the beginning of the last week of the preceding month; the calendar is released one week of posts at a time, every 3–4 days, across the last week of the preceding month and the first week of the month it covers, so each week is tested and scheduled before it runs. Never promise the whole month "before the 1st." Premium only, and the primary reason Premium exists over Standard. Process: SOP 15.
+**The Premium Monthly DFY Content Calendar** — 31 days of Instagram content delivered as a Skool classroom module. **Two-week rollout:** research starts at the beginning of the last week of the preceding month; the calendar is released one week of posts at a time, every 3–4 days, across the last week of the preceding month and the first week of the month it covers, so each week is tested and scheduled before it runs. Never promise the whole month "before the 1st." Premium only, and the primary reason Premium exists over Standard. **Purpose:** the calendar organically promotes The Digital Income Edit™ and its paid tiers — anything inside TDIE is fair game. Every offer mention is written as a swap-in slot, so a member can run her own offer or keep the TDIE mention and earn through her Skool affiliate link. Process: SOP 15.
 
 **Pinterest Foundations™** — Standard module, also purchasable standalone at $27. **All Skool modules unlock inside Skool.** No separate checkout page exists for any module, and none is to be built.
 
@@ -308,6 +308,7 @@ An append-only record. Nothing here governs; it explains why the rules above rea
 **78.** The Weekend Ecosystem™ adds a 3 × $33.33 payment option beside $97 one-time.
 **79.** The Weekend Build Challenge goes live at `/resources/weekend-build-challenge` — free 5-day email challenge on its own MailerLite form and automation, featured first on `/resources` and on the Beacons bio. Single door: The Weekend Ecosystem™.
 **80.** The Premium DFY Content Calendar moves to a two-week rollout: research from the start of the last week of the preceding month; one week of posts released every 3–4 days across the last week of that month and the first week of the covered month. Site copy changed from "31 days written before the month starts" to "31 days, released a week at a time around the 1st."
+**81.** The DFY Content Calendar is a TDIE promotion engine, not an offer-neutral one: any TDIE product or tier may be mentioned, every mention is a swap-in slot for the member's own offer, and kept mentions pay the member through her Skool affiliate link. Replaces SOP 15's "two or three offer mentions" cap. Posting-day rules still apply.
 
 ---
 
