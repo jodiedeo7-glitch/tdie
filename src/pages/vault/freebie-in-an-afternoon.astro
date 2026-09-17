@@ -3,7 +3,6 @@ import PageLayout from "../../layouts/PageLayout.astro";
 
 const CHECKOUT = "/go/first-freebie";
 const PREMIUM = "/membership";
-const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=001e4409f19d41beb58be618800d5589";
 ---
 <PageLayout
   title="Build Your First Freebie in One Afternoon — The Value Vault"
@@ -70,20 +69,13 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
 
   <!-- CROSS-SELL -->
   <section class="v-cross">
-    <div class="v-cross-mark">Or get everything at once</div>
-    <p class="v-cross-lead">This is one guide in The Value Vault. Two ways to skip buying them one at a time:</p>
+    <div class="v-cross-mark">Or get the whole library</div>
+    <p class="v-cross-lead">This is one guide in The Value Vault — and the entire Vault comes unlocked inside a membership.</p>
     <div class="v-cross-grid">
-      <div class="v-card">
-        <h4>Go Premium</h4>
-        <p>Unlocks <em>everything</em> inside The Digital Income Edit™ — every Edit, every training, every resource — plus a brand-new Vault guide every single month, free.</p>
-        <div class="v-card-price">$27<span>/month</span></div>
-        <a href={PREMIUM}>Explore Premium →</a>
-      </div>
       <div class="v-card gold">
-        <h4>Unlock the Vault</h4>
-        <p>Want the whole Value Vault and every future monthly drop, with no subscription? Unlock it all once, keep it forever.</p>
-        <div class="v-card-price">$49<span>one-time</span></div>
-        <a href={VAULT_UNLOCK}>Unlock the Vault →</a>
+        <h4>Become a member</h4>
+        <p>Standard gives you every Edit, training, and resource to build by hand. Premium adds the done-for-you content and unlocks the entire Value Vault. Both start with a 7-day free trial.</p>
+        <a href={PREMIUM}>Choose your membership →</a>
       </div>
     </div>
   </section>
@@ -157,7 +149,7 @@ const VAULT_UNLOCK = "https://www.skool.com/thedigitalincomeedit/classroom/143e0
     .v-cross{max-width:820px;margin:56px auto 0;padding:44px;background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);border-radius:2px}
     .v-cross-mark{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;font-weight:600}
     .v-cross-lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--choc-soft);margin-bottom:30px}
-    .v-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .v-cross-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:520px}
     @media(max-width:640px){.v-cross-grid{grid-template-columns:1fr}}
     .v-card{background:#fff;border-radius:2px;padding:30px;border:1px solid rgba(214,46,115,.14)}
     .v-card.gold{border:2px solid var(--gold)}
