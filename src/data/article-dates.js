@@ -23,6 +23,7 @@ export const ARTICLE_DATES = {
   "ai-for-online-business": "2026-06-20",
   "business-that-runs-without-you": "2026-06-24",
   "choosing-a-niche": "2026-06-10",
+  "room-with-one-door": "2026-08-16",
   "creating-your-first-offer": "2026-06-12",
   "pinterest-marketing-guide": "2026-06-14",
   "pinterest-seo": "2026-06-16",
