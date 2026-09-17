@@ -1,0 +1,135 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Where do I find content ideas when I don't know what to post?",
+    answer: "In the questions people already ask you: comments, messages, replies to your emails, community threads, and the things friends ask you offline. Each real question is a post someone has already told you she wants to read.",
+  },
+  {
+    question: "What if nobody is asking me questions yet?",
+    answer: "Borrow them. Read the comments under bigger accounts in your niche, the questions in groups your reader belongs to, and the suggestions a search bar offers when you type the start of her problem. You're collecting her wording, not their answers.",
+  },
+  {
+    question: "Why write down the exact wording of a question?",
+    answer: "Because her words are the words she searches with and the words that make her stop scrolling. If you translate a question into your own vocabulary, you lose the part that made it recognisable to her.",
+  },
+  {
+    question: "How do I turn a question into a post?",
+    answer: "Answer it in the first line, explain why the answer is true, then give her one thing she can do today. Most posts that fail do so because the answer arrives last or never arrives at all.",
+  },
+  {
+    question: "Can I answer the same question more than once?",
+    answer: "Yes. New readers arrive every week and most of them never saw the first answer. Answer it again from a different angle, with a different example, and it becomes a new post.",
+  },
+];
+---
+
+<ArticleLayout
+  title="Stop Asking What to Post. Your Readers Already Told You."
+  description="The blank page wins because you're inventing ideas instead of collecting them. How to turn the questions your readers already ask into a month of content that feels written for them."
+  slug="content-from-questions"
+  category="Content Creation"
+  issueNumber="043"
+  readTime="9 Min Read"
+  datePublished="2026-09-17"
+  dateModified="2026-09-17"
+  faqs={faqs}
+  ogImage="/images/library/detail-hands-typing-cinematic.jpg"
+  related={[
+    { href: "/learn/content-creation-guide", title: "The Beginner's Guide to Content Creation for Faceless Brands" },
+    { href: "/learn/ai-for-online-business", title: "How to Use AI Without Sounding Like a Robot" },
+    { href: "/learn/logo-off-test", title: "Would Anyone Recognise Your Brand With the Logo Covered?" },
+    { href: "/learn/pinterest-seo", title: "How Pinterest SEO Actually Works" }
+  ]}
+>
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Content Creation</span>
+    <h1 class="reveal">Stop Asking What to Post. Your Readers Already Told You.</h1>
+    <p class="sub reveal">Your best ideas aren't in your head. They're sitting in your comments, waiting to be written down.</p>
+    <div class="hero-meta reveal"><span>9 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/detail-hands-typing-cinematic.jpg" alt="Stop Asking What to Post — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#blank">Why the blank page keeps winning</a></li>
+          <li><a href="#where">Where the questions are hiding</a></li>
+          <li><a href="#log">Keep a question log</a></li>
+          <li><a href="#turn">Turning one question into a post</a></li>
+          <li><a href="#behind">The question behind the question</a></li>
+          <li><a href="#dry">When the log runs dry</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ol>
+        <div class="foot">Est. 9 Min Read</div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="lede first reveal">You sit down to make content and the first thing you do is ask yourself what to post. Then you open your feed for inspiration. Twenty minutes later you've saved six posts from other people and written nothing of your own.</p>
+  <p class="reveal">That question, <em>what should I post?</em>, is the wrong one. It asks you to invent. Invention is slow, it's lonely, and it tends to produce content that sounds like everyone else's, because everyone else's content is what you just finished reading.</p>
+  <p class="reveal">The better question is <em>what has she already asked me?</em> That one asks you to collect. And collecting is fast, because your readers have been handing you ideas for months. You just haven't been writing them down.</p>
+
+  <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="blank">Why the blank page keeps winning</h2></div>
+  <p class="answer reveal">The blank page wins because you start from nothing every time. Without a stored supply of real questions, every session begins with invention, and invention runs out.</p>
+  <p class="reveal">Most content systems focus on the back half: batching, templates, scheduling, repurposing. Those matter. But they all assume you already know what to say. When the ideas aren't there, the system just gives you a very organised way to stare at an empty calendar.</p>
+  <p class="reveal">The women who never seem short of ideas aren't more creative. They have a supply. Somewhere, usually in a very unglamorous note on their phone, there's a list of things people have asked them. When it's time to create, they don't brainstorm. They pick.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>You don't have an ideas problem. You have a storage problem. The ideas arrived; you just didn't keep them.</p></div>
+
+  <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="where">Where the questions are hiding</h2></div>
+  <p class="answer reveal">Comments, messages, email replies, community threads, search suggestions and the questions people ask you in real life. Each one is a reader telling you what she wants to read.</p>
+  <p class="reveal"><strong>Your comments and messages.</strong> Not just the direct questions. The <em>how did you</em> and <em>wait, does this work for</em> replies count too. So does every comment that starts with <em>I always struggle with</em>.</p>
+  <p class="reveal"><strong>Replies to your emails.</strong> Someone who hits reply is telling you exactly where your last email left her. Those replies are some of the most honest research you'll ever get.</p>
+  <p class="reveal"><strong>Community threads.</strong> Wherever your reader gathers, she asks for help in her own words. Read the questions, not just the answers.</p>
+  <p class="reveal"><strong>Search suggestions.</strong> Type the start of her problem into a search bar and read what it offers to finish the sentence. Those suggestions exist because real people typed them.</p>
+  <p class="reveal"><strong>Real life.</strong> The questions friends, family and colleagues bring to you more than once. If people already treat you as the person who knows, that knowledge is content.</p>
+
+  <div class="chapter  reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="log">Keep a question log</h2></div>
+  <p class="answer reveal">One running note, one line per question, in the asker's exact words. Add to it whenever a question arrives and never create content without opening it first.</p>
+  <p class="reveal">The log doesn't need a template or a tool. A single note on your phone works. What matters is the habit: the moment a question arrives, it goes in, before you answer it and before you forget it.</p>
+  <p class="reveal"><strong>Keep her wording.</strong> Write the question exactly as she asked it, typos and all. Her phrasing is how the next woman will search, and it's the phrasing that makes a post feel like it was written for her. Translate it into your vocabulary and you lose the part that made it land.</p>
+  <p class="reveal"><strong>Mark repeats.</strong> When a question comes in that's already on the list, add a tally next to it. The questions with the most tallies are the posts your audience wants most.</p>
+  <p class="reveal"><strong>Don't sort it yet.</strong> Sorting is a job for content day. Collecting is a job for every day. Keeping them separate is what makes the habit stick.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> A healthy log</span><p>Exact wording · one line each · tallies on repeats · opened before every content session. Thirty lines is a month of posts.</p></div>
+
+  <div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="turn">Turning one question into a post</h2></div>
+  <p class="answer reveal">Answer the question in the first line, explain why the answer is true, then give her one thing to do today. The answer goes first, always.</p>
+  <p class="reveal">The most common mistake in educational content is making the reader wait. A long setup, a story, three paragraphs of context, and the answer finally appears near the end, by which point she's already scrolled away.</p>
+  <p class="reveal"><strong>Lead with the answer.</strong> Use her question as the hook and your answer as the very next line. <em>Can I sell printables without an audience? Yes, if people can find them through search.</em></p>
+  <p class="reveal"><strong>Explain the why.</strong> One or two short paragraphs on why the answer is true. This is where your point of view lives, and where she learns to trust how you think.</p>
+  <p class="reveal"><strong>Give her one action.</strong> Not a list. One thing she can do before bed. Content that ends in an action gets saved; content that ends in a summary gets forgotten.</p>
+  <p class="reveal">That shape works on a carousel, a caption, an email or a full article. Once you have it, one question becomes several pieces without any extra thinking.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/content-creation-guide">The Beginner's Guide to Content Creation for Faceless Brands →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="behind">The question behind the question</h2></div>
+  <p class="answer reveal">Every surface question has a deeper one underneath it. Answer the surface question first, then write a second post for the one she didn't know how to ask.</p>
+  <p class="reveal">A reader asks which font to use for her brand. The surface answer is a font. The question underneath is usually <em>how do I make my brand look like it knows what it's doing?</em> That's a much bigger post, and it's the one that builds trust.</p>
+  <p class="reveal">A reader asks how often she should post. Underneath: <em>how do I keep going when nothing seems to be working?</em> Answer the frequency question, then answer the real one.</p>
+  <p class="reveal">You don't need to guess at these. Look for questions in your log that feel oddly specific or slightly anxious. Ask yourself what she'd be worried about if that question came up at all. That worry is your next post.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/logo-off-test">Would Anyone Recognise Your Brand With the Logo Covered? →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="dry">When the log runs dry</h2></div>
+  <p class="answer reveal">Answer your most-asked questions again from a new angle, borrow wording from where your reader gathers, and use AI to sort and expand what you've collected, not to invent it.</p>
+  <p class="reveal"><strong>Answer it again.</strong> New readers arrive every week, and most never saw your first answer. The same question with a different example, a different format or a sharper opinion is a genuinely new post.</p>
+  <p class="reveal"><strong>Borrow the wording.</strong> If your own audience is still small, read the questions people ask under bigger accounts in your niche. You're collecting her language, not copying anyone's answer.</p>
+  <p class="reveal"><strong>Let AI sort, not start.</strong> Paste your log into an AI tool and ask it to group the questions and suggest the question behind each one. It's excellent at finding patterns in real material. It's much weaker at inventing questions a real woman would actually ask.</p>
+  <p class="reveal">The goal isn't a bigger idea list. It's never again sitting down to create and asking yourself what to post. She already told you. Write it down.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/ai-for-online-business">How to Use AI Without Sounding Like a Robot →</a></p>
+
+  <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+  {faqs.map((f) => (
+    <>
+      <h3 class="reveal">{f.question}</h3>
+      <p class="reveal">{f.answer}</p>
+    </>
+  ))}
+
+</ArticleLayout>
