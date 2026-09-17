@@ -34,7 +34,8 @@ const faq = [
       <h1>Five days.<br />One small business,<br /><span>built in order.</span></h1>
       <p class="lead">You don't need more time. You need a business that fits the time you already have. One email a day, one assignment, about thirty minutes.</p>
 
-      <form class="wbc-form" action={CHALLENGE_FORM} method="post" target="_blank" data-ml>
+      <iframe name="ml-sink-1" class="ml-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
+      <form class="wbc-form" action={CHALLENGE_FORM} method="post" target="ml-sink-1" data-ml>
         <label class="sr" for="wbc-name-1">First name</label>
         <input id="wbc-name-1" type="text" name="fields[name]" placeholder="First name" autocomplete="given-name" />
         <label class="sr" for="wbc-email-1">Email</label>
@@ -131,7 +132,8 @@ const faq = [
     <div class="close-in">
       <h2>Start today.<br />Have the skeleton by Day 5.</h2>
       <div>
-      <form class="wbc-form light" action={CHALLENGE_FORM} method="post" target="_blank" data-ml>
+      <iframe name="ml-sink-2" class="ml-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
+      <form class="wbc-form light" action={CHALLENGE_FORM} method="post" target="ml-sink-2" data-ml>
         <label class="sr" for="wbc-name-2">First name</label>
         <input id="wbc-name-2" type="text" name="fields[name]" placeholder="First name" autocomplete="given-name" />
         <label class="sr" for="wbc-email-2">Email</label>
@@ -148,21 +150,22 @@ const faq = [
 </div>
 
 <script is:inline>
-  // Submit in place so nobody lands on a raw MailerLite response page.
-  // Falls back to the normal form post if fetch is unavailable.
+  // The form posts into a hidden iframe, so MailerLite's raw {"success":true}
+  // response never opens in a tab. When the iframe finishes loading, the form
+  // swaps to the confirmation message.
   document.querySelectorAll('form[data-ml]').forEach(function (f) {
-    f.addEventListener('submit', function (e) {
-      if (!window.fetch) return;
-      e.preventDefault();
+    var sink = document.getElementsByName(f.target)[0];
+    var sent = false;
+    f.addEventListener('submit', function () {
+      sent = true;
       var btn = f.querySelector('button');
       btn.disabled = true; btn.textContent = 'Sending…';
-      fetch(f.action, { method: 'POST', body: new FormData(f), mode: 'no-cors' })
-        .then(function () {
-          f.querySelectorAll('input:not([type=hidden]), button').forEach(function (el) { el.hidden = true; });
-          f.querySelector('.done').hidden = false;
-          if (window.fbq) fbq('track', 'Lead', { content_name: 'Weekend Build Challenge' });
-        })
-        .catch(function () { btn.disabled = false; btn.textContent = 'Start the challenge'; f.submit(); });
+    });
+    sink.addEventListener('load', function () {
+      if (!sent) return;
+      f.querySelectorAll('input:not([type=hidden]), button').forEach(function (el) { el.hidden = true; });
+      f.querySelector('.done').hidden = false;
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Weekend Build Challenge' });
     });
   });
 </script>
@@ -171,6 +174,7 @@ const faq = [
 <style>
   :global(main.page-wrap:has(.wbc)){padding:0;max-width:none}
   .wbc{--edge:max(24px,calc((100vw - 1180px)/2))}
+  .ml-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.5px}
 

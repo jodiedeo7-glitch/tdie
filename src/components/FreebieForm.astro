@@ -12,10 +12,13 @@
 const DEFAULT_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
 const { heading = "Get the free guide", button = "Send It to Me", action = DEFAULT_ACTION } = Astro.props;
 const ACTION = action;
+// Each instance posts into its own hidden iframe (never a new tab).
+const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
 ---
 
 <div class="freebie-capture">
-  <form class="fc-form" action={ACTION} method="post" target="_blank">
+  <iframe name={SINK} class="fc-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
+  <form class="fc-form" action={ACTION} method="post" target={SINK} data-fc>
     <h2 class="fc-h">{heading}</h2>
     <p class="fc-sub">Drop your email — it lands in your inbox in a minute. No spam, unsubscribe anytime.</p>
     <div class="fc-row">
@@ -31,10 +34,36 @@ const ACTION = action;
     </div>
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
+    <p class="fc-done" role="status" hidden>You're in. Check your inbox — it's on its way.</p>
   </form>
 </div>
 
+<script is:inline>
+  (function () {
+    var forms = document.querySelectorAll('form[data-fc]:not([data-fc-ready])');
+    forms.forEach(function (f) {
+      f.setAttribute('data-fc-ready', '');
+      var sink = document.getElementsByName(f.target)[0];
+      var sent = false;
+      f.addEventListener('submit', function () {
+        sent = true;
+        var b = f.querySelector('button'); b.disabled = true; b.textContent = 'Sending…';
+      });
+      sink.addEventListener('load', function () {
+        if (!sent) return;
+        f.querySelector('.fc-row').hidden = true;
+        f.querySelector('.fc-sub').hidden = true;
+        f.querySelector('.fc-done').hidden = false;
+        if (window.fbq) fbq('track', 'Lead');
+      });
+    });
+  })();
+</script>
+
 <style>
+  .fc-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
+  .fc-done{font-family:"Fraunces",serif;font-size:22px;line-height:1.35;color:var(--pink);margin-top:6px}
+  .fc-row[hidden],.fc-sub[hidden]{display:none}
   .freebie-capture {
     background: var(--white);
     border: 1px solid rgba(43,22,27,.13);
