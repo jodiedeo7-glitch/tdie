@@ -36,6 +36,7 @@ export const ARTICLE_DATES = {
   "stuck-four-steps-earlier": "2026-08-18",
   "boring-first-passive-stream": "2026-09-16",
   "logo-off-test": "2026-09-16",
+  "content-from-questions": "2026-09-17",
 };
 
 // Any article not listed above falls back to this date so it still appears.
