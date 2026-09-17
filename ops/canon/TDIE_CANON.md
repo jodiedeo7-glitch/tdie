@@ -1,5 +1,5 @@
 # THE DIGITAL INCOME EDIT™ — CANON
-### Current · 1 September 2026 · Single live copy — no versioned predecessors
+### Current · 16 September 2026 · Single live copy — no versioned predecessors
 
 **Build Your Business Backwards. Scale It Forward.™**
 
@@ -31,14 +31,14 @@
 | **Canonical host** | `https://www.thedigitalincomeedit.com` |
 | **Redirecting hosts** | `thedigitalincomeedit.com` redirects to www. `learn.thedigitalincomeedit.com` 301s to www with the path preserved, and remains the education subdomain — it is no longer the home. An asset printed with a redirecting host as the home is printed wrong. |
 | **URL form** | **No trailing slash.** Flat `/learn/[slug]`. |
-| **Retired brand** | `nursemadedigital.com` and the NurseMadeDigital name. Everything runs under The Digital Income Edit™. Nurse-forward naming risks brand drift. **The one exception is the Pinterest handle**, which is the live account name and cannot be changed — it is not a licence to use the name anywhere else. |
+| **Retired brand** | `nursemadedigital.com` and the NurseMadeDigital name. Everything runs under The Digital Income Edit™. Nurse-forward naming risks brand drift. There are no exceptions: the Pinterest username was changed to `TheDigitalIncomeEditTDIE` (September 2026), so NurseMadeDigital is no longer a live handle anywhere. |
 | **Repo** | `jodiedeo7-glitch/tdie` — Astro on Vercel |
 | **Article route** | `/learn/[slug]`, flat. `/blog/` is retired as segment, label and page-type name. |
 | **Community** | Skool · `skool.com/thedigitalincomeedit` · Tiers pricing model |
 | **Shop** | Beacons · `links.thedigitalincomeedit.com` — not fetchable, not indexed, unverifiable by tooling |
 | **Email** | MailerLite. Env vars: `MAILERLITE_GROUP_ID` (buyers), `MAILERLITE_WAITLIST_GROUP_ID` (waitlist), `MAILERLITE_BAMI_WAITLIST_GROUP_ID`. Kit was never adopted. |
 | **Analytics** | Vercel Web Analytics, site-wide |
-| **Pinterest** | Handle `NurseMadeDigital` (the username `thedigitalincomeedit` was unavailable). **Pinterest has blocked all of Jodie's domains, not just this one.** Appeals returned automated denials. Claimed domain form is `https://www.thedigitalincomeedit.com` — not `http://`, not bare. Do not edit bio metadata until the appeal resolves. |
+| **Pinterest** | Username `TheDigitalIncomeEditTDIE` (changed from NurseMadeDigital, September 2026 — `pinterest.com/Nursemadedigital` is now a dead link). **Pinterest blocks every URL on Jodie's domains** — confirmed across www, learn and links. Three appeals were auto-denied. Skool links are the only working Pinterest destination until Jodie says otherwise. Claimed domain form is `https://www.thedigitalincomeedit.com` — not `http://`, not bare. Do not edit bio metadata or unclaim the domain until the block resolves. |
 | **Meta Pixel** | ID ends `...031...` — digit 9 is a THREE. Never "correct" it to `...051...`. |
 | **Tool stack** | Astro · Vercel · GitHub · Skool · Beacons · Canva · Claude · MailerLite · Pinterest native. Nothing outside this list. |
 
@@ -309,7 +309,8 @@ An append-only record. Nothing here governs; it explains why the rules above rea
 **79.** The Weekend Build Challenge goes live at `/resources/weekend-build-challenge` — free 5-day email challenge on its own MailerLite form and automation, featured first on `/resources` and on the Beacons bio. Single door: The Weekend Ecosystem™.
 **80.** The Premium DFY Content Calendar moves to a two-week rollout: research from the start of the last week of the preceding month; one week of posts released every 3–4 days across the last week of that month and the first week of the covered month. Site copy changed from "31 days written before the month starts" to "31 days, released a week at a time around the 1st."
 **81.** The DFY Content Calendar is a TDIE promotion engine, not an offer-neutral one: any TDIE product or tier may be mentioned, every mention is a swap-in slot for the member's own offer, and kept mentions pay the member through her Skool affiliate link. Replaces SOP 15's "two or three offer mentions" cap. Posting-day rules still apply.
+**82.** The Pinterest username changes from NurseMadeDigital to TheDigitalIncomeEditTDIE. The retired-brand exception for the Pinterest handle is removed; NurseMadeDigital is no longer live anywhere. The block is recorded as domain-wide with Skool as the only working destination.
 
 ---
 
-**The Digital Income Edit™ · Canon · 1 September 2026**
+**The Digital Income Edit™ · Canon · 16 September 2026**
