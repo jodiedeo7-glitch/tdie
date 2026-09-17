@@ -38,6 +38,7 @@ export const ARTICLE_DATES = {
   "boring-first-passive-stream": "2026-09-16",
   "logo-off-test": "2026-09-16",
   "content-from-questions": "2026-09-17",
+  "measuring-the-wrong-thing": "2026-09-17",
 };
 
 // Any article not listed above falls back to this date so it still appears.
