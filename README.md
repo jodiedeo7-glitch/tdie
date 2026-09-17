@@ -1,65 +1,29 @@
 # The Digital Income Edit™ — Website
 
-This is your real, working website. It already contains your first article,
-fully designed and built.
+Live at www.thedigitalincomeedit.com. Astro, deployed on Vercel from this repo's main branch. Every push to main rebuilds and republishes automatically, usually inside a minute.
 
-You do not need to understand any of the code inside this folder. The two
-things you need to do are below.
+learn.thedigitalincomeedit.com 301-redirects to www., path preserved.
 
----
+## URLs
 
-## Step 1 — Put this on GitHub
+Flat — /learn/[slug], no trailing slash, no dates.
 
-1. Go to **github.com** and log in.
-2. Click the **+** icon (top right) → **New repository**.
-3. Name it `nursemadedigital-blog` (or anything you like).
-4. Leave everything else as default. Click **Create repository**.
-5. On the next page, click **uploading an existing file**.
-6. Drag this **entire folder's contents** into the upload box
-   (everything inside `tdie-site`, not the folder itself).
-7. Scroll down, click **Commit changes**.
+## Adding an article
 
-That's it — your website's files now live on GitHub.
+Articles are .astro files in src/pages/learn/. This is not an Astro content collection, so a new article needs three edits, not one.
 
----
+First, the article file itself, in src/pages/learn/. Second, a matching entry in the cluster array in src/pages/learn/index.astro. Third, a matching entry in src/data/article-dates.js.
 
-## Step 2 — Put this online with Vercel
+Skip either of the last two and the article exists but appears nowhere — not in the library, not in the RSS feed, not in the newsletter that runs off the feed.
 
-1. Go to **vercel.com** and log in (with GitHub, like you already set up).
-2. Click **Add New... → Project**.
-3. Find the repository you just created and click **Import**.
-4. Vercel will detect it's an Astro site automatically. Don't change
-   any settings.
-5. Click **Deploy**.
+## Gotchas
 
-In about a minute, Vercel will give you a live web address, something like
-`nursemadedigital-blog.vercel.app`. That is your real, live website.
+ArticleLayout.astro routes the close-out CTAs by pillar category through the "related" prop. Never hardcode a journey slot.
 
----
+The style tag in PageLayout.astro needs is:global, or it causes scoping bugs across other pages.
 
-## Step 3 — Link it from Beacons
+The Meta Pixel script needs is:inline so Astro does not bundle it.
 
-On your Beacons site, add a button or link (e.g. "Read the Blog") that
-points to that Vercel address, or to your custom domain once it's
-connected (see below).
+## Canon
 
----
-
-## Using your own domain (optional, later)
-
-If you'd rather your articles live at `nursemadedigital.com/learn` instead
-of the vercel.app address, that's possible later — just tell Claude when
-you're ready and it'll walk you through the one extra step.
-
----
-
-## How future articles get added
-
-You never need to touch this process yourself. Once this is connected,
-publishing works like this:
-
-1. You write or approve an article.
-2. You paste it to Claude.
-3. Claude adds the new file to this project and updates the library page.
-4. The site rebuilds and republishes itself automatically within
-   about a minute — no clicking, no manual steps.
+Governing documents live in ops/canon/. The live site, repo and shop override every document.
