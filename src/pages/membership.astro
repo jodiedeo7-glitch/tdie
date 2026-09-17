@@ -63,9 +63,15 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
   </section>
 
   <section class="ms-block ms-thesis">
+    <figure class="ms-fig">
+      <img src="/images/membership-jodie.webp" alt="Building the business from a kitchen counter"
+           width="570" height="684" loading="lazy" decoding="async" />
+    </figure>
+    <div class="ms-thesis-copy">
     <h2>You learn the build from inside the building</h2>
     <p class="ms-lead">This classroom sits inside the business it teaches. The site, the funnels, the automation you'll construct are the same ones delivering this page to you right now.</p>
     <p class="ms-hit">You climb when the current step stops being your bottleneck. Not before.</p>
+    </div>
   </section>
 
   <section class="ms-block">
@@ -138,7 +144,12 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
     .ms-cta-row{display:flex;justify-content:center}
 
     .ms-block{padding:76px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .ms-thesis{border-top:none;padding-top:0}
+    .ms-thesis{border-top:none;padding-top:20px;display:grid;grid-template-columns:.82fr 1fr;gap:clamp(30px,4.5vw,64px);align-items:center}
+    .ms-thesis .ms-thesis-copy h2,.ms-thesis .ms-thesis-copy .ms-lead,.ms-thesis .ms-thesis-copy .ms-hit{text-align:left;margin-left:0;margin-right:0;max-width:none}
+    .ms-thesis .ms-thesis-copy .ms-hit{margin-top:28px}
+    .ms-fig{margin:0;position:relative;padding:12px 0 0 12px}
+    .ms-fig::before{content:"";position:absolute;left:0;top:0;right:12px;bottom:12px;border:1px solid rgba(200,169,106,.55);border-radius:2px;pointer-events:none}
+    .ms-fig img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;object-position:center 42%;border-radius:2px;position:relative;z-index:1;box-shadow:0 26px 60px -30px rgba(43,22,27,.55)}
     .ms-block h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,5vw,50px);line-height:1.04;margin:0 0 22px;letter-spacing:-1px;color:var(--choc);text-align:center}
     .ms-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto 20px;color:var(--choc-soft);text-align:center}
     .ms-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:640px;margin:0 auto;text-align:center}
@@ -198,6 +209,9 @@ const ACC = ["#CBB7F7", "#CF80C2", "#D4498D", "#D62E73"];
 
     @media(max-width:860px){
       .ms-tiers,.ms-grid,.ms-notes{grid-template-columns:1fr}
+      .ms-thesis{grid-template-columns:1fr;gap:30px}
+      .ms-thesis .ms-thesis-copy h2,.ms-thesis .ms-thesis-copy .ms-lead,.ms-thesis .ms-thesis-copy .ms-hit{text-align:center;margin-left:auto;margin-right:auto}
+      .ms-fig img{aspect-ratio:3/2;object-position:center 24%}
       .ms-block{padding:56px 0}
       .ms-tier{padding:28px 24px}
     }
