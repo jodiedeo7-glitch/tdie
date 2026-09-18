@@ -1,0 +1,14 @@
+---
+const { src, alt = "", caption = "" } = Astro.props;
+---
+<figure class="art-fig reveal">
+  <div class="art-img"><img src={src} alt={alt} loading="lazy" /></div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+<style>
+  .art-fig{margin:46px 0}
+  .art-img{position:relative;width:100%;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:var(--cream-deep)}
+  .art-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .art-fig figcaption{font-family:var(--sans);font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-meta);margin-top:14px;text-align:center}
+  @media(max-width:640px){.art-img{aspect-ratio:4/3}}
+</style>

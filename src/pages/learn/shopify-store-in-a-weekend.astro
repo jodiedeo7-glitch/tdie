@@ -1,5 +1,7 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import ShopifyCTA from "../../components/ShopifyCTA.astro";
+import ArticleImage from "../../components/ArticleImage.astro";
 
 const faqs = [
   {
@@ -78,6 +80,8 @@ const faqs = [
   <p class="lede first reveal">Most Shopify stores that never launch die in the same place: the trial. Someone opens an account on a Tuesday with a vague idea, spends nine evenings choosing fonts, and the store expires with no product in it. The tool wasn't the problem. The order of operations was.</p>
   <p class="reveal">So this is a plan with a clock on it. Friday is for deciding, Saturday for building, Sunday for the boring pages and one real order placed by you. The order matters more than the speed: product first, store second, fulfilment app third, buyers last. Which is why the theme comes nowhere near Friday night.</p>
 
+  <ShopifyCTA heading="Start your $1-a-month trial" />
+
   <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="friday">Friday night: decide before you open Shopify</h2></div>
   <p class="answer reveal">Three decisions get made on Friday, and none of them happen inside Shopify: what the one product is, what the store is called, and which supplier app will make and ship it.</p>
   <p class="reveal">Do not open a Shopify account tonight. The trial is short and the $1 months count from the day you start. Friday is a notes app and about ninety minutes.</p>
@@ -87,6 +91,8 @@ const faqs = [
   <p class="reveal">Write all three on one line. Product, name, app. That's Saturday's brief. Close the laptop.</p>
   <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Nobody has ever failed to sell because the theme was wrong. Plenty have failed because they spent the trial on the theme.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/print-on-demand-vs-dropshipping">Print on Demand vs Dropshipping: Which to Start With →</a></p>
+
+  <ArticleImage src="/images/library/detail-hands-typing-cinematic.jpg" alt="Hands typing on a laptop \u2014 The Digital Income Edit" caption="The weekend build, in order" />
 
   <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="saturday-am">Saturday morning: opening the store</h2></div>
   <p class="answer reveal">Open the account, pick a free theme, and set the six settings that decide whether an order can actually go through. That's the whole morning, and it's about two hours.</p>
@@ -140,6 +146,8 @@ const faqs = [
   <p class="reveal"><strong>Don't build a logo for a week.</strong> Type the store name in a clean font. That's the logo for now. A real identity is worth doing, but it's a job for a store that has proven someone wants what's in it.</p>
   <p class="reveal">If you want the same build laid out lesson by lesson, that's what The Shopify Edit inside the Standard membership does ($9/month or $99/year, with a 7-day free trial), and The Shopify Starter Kit is the free download that goes with this run. But nothing in either replaces what you can do right now: one product, one app, one order, and a store that's live by Sunday evening.</p>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <ShopifyCTA heading="Ready to start? Open your store." button="Start on Shopify \u2014 $1/month" />
 
   <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
   {faqs.map((f) => (

@@ -1,0 +1,33 @@
+---
+const {
+  eyebrow = "Start here \u00b7 Shopify",
+  heading = "Open your store for $1 a month",
+  sub = "New stores get a 3-day free trial, then $1/month for the first three months. Basic is $39/month after \u2014 Shopify\u2019s price, and it can change.",
+  button = "Start your Shopify store",
+} = Astro.props;
+---
+<aside class="scta reveal">
+  <div class="scta-in">
+    <span class="scta-eye">{eyebrow}</span>
+    <h3 class="scta-h">{heading}</h3>
+    <p class="scta-sub">{sub}</p>
+    <a class="scta-btn" href="https://shopify.pxf.io/eK3xYz" rel="sponsored noopener" target="_blank">{button} <span aria-hidden="true">\u2192</span></a>
+    <p class="scta-disc">Affiliate link \u2014 I may earn a commission if you start a store, at no extra cost to you.</p>
+  </div>
+</aside>
+<style>
+  .scta{margin:48px 0;border-radius:4px;overflow:hidden;
+    background:linear-gradient(135deg,var(--blush) 0%,var(--cream) 58%,var(--rose) 150%);
+    border:1px solid rgba(200,169,106,.5);border-top:3px solid var(--pink);
+    box-shadow:0 20px 44px -30px rgba(43,22,27,.45)}
+  .scta-in{padding:36px 40px}
+  .scta-eye{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+  .scta-h{font-family:var(--display);font-size:31px;line-height:1.14;color:var(--choc);margin:0 0 12px}
+  .scta-sub{font-family:var(--sans);font-size:16px;line-height:1.62;color:var(--choc-soft);margin:0 0 24px;max-width:54ch}
+  .scta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:#fff;
+    font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.3px;
+    padding:16px 32px;border-radius:3px;text-decoration:none;transition:background .3s ease,transform .3s ease}
+  .scta-btn:hover{background:var(--pink-deep);transform:translateY(-1px)}
+  .scta-disc{font-family:var(--sans);font-size:12px;color:var(--choc-meta);margin:16px 0 0}
+  @media(max-width:640px){.scta-in{padding:26px 22px}.scta-h{font-size:25px}.scta-sub{font-size:15px}}
+</style>

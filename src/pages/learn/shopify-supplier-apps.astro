@@ -1,5 +1,7 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import ShopifyCTA from "../../components/ShopifyCTA.astro";
+import ArticleImage from "../../components/ArticleImage.astro";
 
 const faqs = [
   {
@@ -78,6 +80,8 @@ const faqs = [
   <p class="lede first reveal">Type "supplier" into the Shopify app store and you'll get more results than you can read in a lunch break. From the outside they look the same: a green install button, a catalogue of mugs and hoodies, a promise about fast shipping. The differences live underneath, in where the thing actually gets made and who pays when it goes wrong.</p>
   <p class="reveal">This is the door in the house where you don't need your face, a warehouse or an audience. You need a product, a store and an app that ships for you. The build order is the same as everywhere else we teach: product first, store second, fulfilment app third, buyers last. This piece is step three, the one where a wrong guess quietly eats a season.</p>
 
+  <ShopifyCTA heading="Open your Shopify store" />
+
   <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="how">How a supplier app actually works</h2></div>
   <p class="answer reveal">A supplier app sits between your store and someone else's warehouse. A customer orders from you, the app sends the order to the supplier, the supplier makes or picks it and ships it in your name. You pay their base price and keep the difference.</p>
   <p class="reveal">You never touch the product. You never buy stock. The money comes in from the customer first, goes out to the supplier a moment later, and the gap is yours.</p>
@@ -85,6 +89,8 @@ const faqs = [
   <p class="reveal"><strong>Installing it is the easy bit.</strong> Every app here connects to Shopify in under a minute, which is why beginners pick one on a whim. The install is instant; living with the choice is not.</p>
   <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Before you fall in love with any product, write base price, shipping and your retail price on one line. If the gap can't survive the occasional refund, it isn't a product.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <ArticleImage src="/images/library/flatlay-automation-systems.jpg" alt="A flatlay of a planner and devices \u2014 The Digital Income Edit" caption="The app that ships for you" />
 
   <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="pod">The print-on-demand apps</h2></div>
   <p class="answer reveal">Print on demand is the beginner door: nothing is made until it's paid for, so there's no stock and no upfront cost beyond samples. Printful, Printify and Gelato are the three worth a first look; Apliiq and SPOD are the specialists.</p>
@@ -155,6 +161,8 @@ const faqs = [
   <p class="reveal">For what it's worth, I started on CJdropshipping linked to Shopify and never had a problem with it. That's my experience, not a guarantee, and it was with US-warehoused products chosen after these three checks.</p>
   <div class="box check reveal"><span class="tag"><span class="g">✓</span> Before you press install</span><p>Sample priced to your door · Defect policy read and matched · Ship-from country confirmed. Three checks, one sitting, then install and move on.</p></div>
   <p class="reveal">If you want the whole build lesson by lesson, from product to app to first shipped order, The Shopify Edit inside the <a href="/membership">Membership Standard</a> ($9/month or $99/year, 7-day free trial) walks it in order. The free <a href="/resources/shopify-starter-kit">Shopify Starter Kit</a> is the short version.</p>
+
+  <ShopifyCTA heading="Ready to start? Open your store." button="Start on Shopify \u2014 $1/month" />
 
   <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
   {faqs.map((f) => (

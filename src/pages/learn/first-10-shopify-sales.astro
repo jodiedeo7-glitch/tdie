@@ -1,5 +1,7 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import ShopifyCTA from "../../components/ShopifyCTA.astro";
+import ArticleImage from "../../components/ArticleImage.astro";
 
 const faqs = [
   {
@@ -79,12 +81,16 @@ const faqs = [
   <p class="reveal">This is where most new stores stall: not at the build, but at the gap between "it exists" and "a stranger paid for something." Most advice for closing that gap is <em>run ads</em> or <em>grow a following</em>, and if you're building this around a day job without showing your face, neither is on the table yet.</p>
   <p class="reveal">So this is the third route. You go where your buyer already asks questions, you make one product page that answers hers, you collect twenty email addresses, and you let the product be the face. The build order is the same as everywhere in this house: product first, store second, fulfilment app third, buyers last. This is the last step.</p>
 
+  <ShopifyCTA heading="No store yet? Start here." />
+
   <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="why-ten">Why ten, and why strangers</h2></div>
   <p class="answer reveal">Ten sales to strangers prove three things at once: the product is wanted, the page converts, and the price is right. Ten sales to people who love you prove that people love you.</p>
   <p class="reveal">Friends-and-family orders feel like progress and they aren't. Your sister buys the mug because she's your sister. She'd buy it at twice the price with a worse photo. Her order tells you nothing about whether a woman in another city, who has never heard your name, will look at the same page and reach for her card.</p>
   <p class="reveal">A stranger's order is different. She arrived from somewhere, so one channel works. She read the page and didn't leave, so the page holds. She saw the shipping cost and paid anyway, so the price survived the checkout. One stranger could be a fluke. Ten is a pattern. It isn't a business yet, but it's a test that came back positive, and it tells you which thing to do more of.</p>
   <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Keep two counts from day one: sales, and sales to people you don't know. Only the second count decides anything.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <ArticleImage src="/images/library/detail-hands-writing-journal.jpg" alt="Hands writing in a journal \u2014 The Digital Income Edit" caption="The first ten come from being useful" />
 
   <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="asking">Go where people are already asking</h2></div>
   <p class="answer reveal">Your first buyers are already in a Facebook group or a forum, asking the exact question your product answers. Go there, answer it properly, and let the link come second.</p>
@@ -137,6 +143,8 @@ const faqs = [
   <p class="reveal">Then do more of the one thing. One product, one channel, one page, until the next ten arrive faster than the first ten did. That is what a store looks like when it starts to work: not louder, just narrower. The rest of the build is in <strong>The Shopify Edit</strong> inside the membership, but you don't need it until the first ten have told you what they know.</p>
   <div class="box check reveal"><span class="tag"><span class="g">✓</span> The sale-ten review</span><p>Which product sold · Which page converted · Where the buyers came from. One answer each. Double down on those three. Cut everything else for now.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <ShopifyCTA heading="Ready to start? Open your store." button="Start on Shopify \u2014 $1/month" />
 
   <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
   {faqs.map((f) => (

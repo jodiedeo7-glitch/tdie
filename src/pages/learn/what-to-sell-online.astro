@@ -1,5 +1,7 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import ShopifyCTA from "../../components/ShopifyCTA.astro";
+import ArticleImage from "../../components/ArticleImage.astro";
 
 const faqs = [
   {
@@ -79,6 +81,8 @@ const faqs = [
   <p class="reveal">It doesn't. Almost nobody running a small online store makes the thing they sell. A supplier prints the mug, stitches the sweatshirt. What the store owner brings is a decision: who this is for, and why she'd want it. That decision is the product.</p>
   <p class="reveal">This piece is about making that decision well: with a person, a moment in her year, and four filters that stop you listing things nobody will buy.</p>
 
+  <ShopifyCTA heading="Got the product? Open the store." />
+
   <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="person">Stop looking for a product; look for a person and a moment</h2></div>
   <p class="answer reveal">Pick one woman you understand, then list the moments that come round in her year. The products fall out of the moments. Starting from a product and hunting for a buyer is backwards.</p>
   <p class="reveal">Product-first thinking sounds like this: <em>mugs are popular, what could I put on a mug?</em> It produces a hundred ideas and no reason for anyone to choose yours. Person-first sounds like this: <em>a nurse on nights, three weeks into a new rotation. What does she reach for, give, or wish existed?</em> It produces six ideas, each with a buyer attached.</p>
@@ -87,6 +91,8 @@ const faqs = [
   <p class="reveal">Write the person at the top of a page and ten moments underneath. Beside each, write what a physical object would do there: mark it, celebrate it, make it easier, or say something she's thinking but wouldn't say out loud. That page is the product list you were told you'd never be able to make.</p>
   <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>The build order in this house never changes: offer first, store second, automation third, audience last. For a physical store that reads product first, store second, fulfilment app third, buyers last. This chapter is "product first", and it happens on paper before you open an app.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/choosing-a-niche">How to Choose Your Niche in a Weekend →</a></p>
+
+  <ArticleImage src="/images/library/detail-shelf-styling-02.jpg" alt="A styled shelf of objects \u2014 The Digital Income Edit" caption="Ordinary objects, made specific" />
 
   <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="filters">The four filters</h2></div>
   <p class="answer reveal">A candidate product passes if she'd buy it without a video, it's gift-able or tied to an occasion, a supplier already makes it well, and you can describe it in one sentence. Fail one and it goes back on the list.</p>
@@ -135,6 +141,8 @@ const faqs = [
   <p class="reveal">If you'd rather work the decision through a worksheet, <a href="/resources/shopify-starter-kit"><strong>The Shopify Starter Kit</strong></a> is free and covers this stage. The full build, lesson by lesson, is <strong>The Shopify Edit</strong> inside the <a href="/membership">Membership Standard ($9/month or $99/year, 7-day free trial)</a>.</p>
   <div class="box check reveal"><span class="tag"><span class="g">✓</span> The rule</span><p>Three candidates on paper. One live. Two queued until the first has been ordered, shipped and reviewed. That's the whole launch plan.</p></div>
   <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-in-a-weekend">How to Set Up a Shopify Store in a Weekend →</a></p>
+
+  <ShopifyCTA heading="Ready to start? Open your store." button="Start on Shopify \u2014 $1/month" />
 
   <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
   {faqs.map((f) => (
