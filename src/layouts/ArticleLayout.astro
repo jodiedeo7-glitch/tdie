@@ -553,6 +553,44 @@ paid: {
     community:
       "Post the URL of the one article you're proudest of. The community will find the three links you forgot to add.",
   },
+
+  // --- 13. Physical Products ---------------------------------
+  // Added 18 Sep 2026 (Decision 83). The physical-goods door: Shopify,
+  // print on demand, dropshipping. Same machine, different offer slot.
+  // free:  The Shopify Starter Kit — /resources/shopify-starter-kit — LIVE.
+  // paid:  Membership Standard ($9/mo) — The Shopify Edit module lives there.
+  //        No standalone product; same treatment as Email, Branding, Passive.
+  // affiliate: Shopify — LINKED with Jodie's DIRECT affiliate URL
+  //            (shopify.pxf.io/eK3xYz), founder decision 18 Sep 2026: every
+  //            Shopify link is the direct affiliate link, no bridge. The
+  //            journey card still ships rel="sponsored" + the disclosure as a
+  //            set (Standing Rule 18), so the direct link is compliant.
+  //            canon.json → products[] "Shopify" (owned: false). Price is
+  //            deliberately absent from the blurb — $9 is already on screen.
+  "Physical Products": {
+    free: {
+      label: "The Shopify Starter Kit",
+      blurb:
+        "The product filter, the weekend setup checklist and the supplier-app decision — free.",
+      href: "/resources/shopify-starter-kit",
+    },
+    affiliate: {
+      name: "Shopify",
+      blurb:
+        "The store platform every guide in this pillar assumes. Three days free, then a dollar a month for three months while you find out whether the thing sells.",
+      href: "https://shopify.pxf.io/eK3xYz",
+    },
+    paid: {
+      label: "The Shopify Edit — Membership Standard",
+      blurb:
+        "The full build, lesson by lesson: the store, the app, the product page and the first ten sales — plus a room that will tell you whether they'd buy it. $9/month.",
+      href: "/membership",
+    },
+    newsletter:
+      "A store doesn't need your face or a warehouse. It needs one product a specific woman already wants. Weekly, how to find it.",
+    community:
+      "Post the product you're leaning toward before you build the store. Someone in the room has already sold it — or tried to.",
+  },
 } as const;
 
 // Fallback for an unrecognised category. Newsletter + community only.

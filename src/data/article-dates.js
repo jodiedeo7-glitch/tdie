@@ -39,6 +39,14 @@ export const ARTICLE_DATES = {
   "logo-off-test": "2026-09-16",
   "content-from-questions": "2026-09-17",
   "measuring-the-wrong-thing": "2026-09-17",
+
+  // Physical Products track — Decision 83, 18 Sep 2026.
+  "shopify-store-guide": "2026-09-18",
+  "print-on-demand-vs-dropshipping": "2026-09-18",
+  "shopify-store-in-a-weekend": "2026-09-18",
+  "what-to-sell-online": "2026-09-18",
+  "shopify-supplier-apps": "2026-09-18",
+  "first-10-shopify-sales": "2026-09-18",
 };
 
 // Any article not listed above falls back to this date so it still appears.

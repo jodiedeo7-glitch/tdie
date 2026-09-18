@@ -1,0 +1,195 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "How much does it cost to start a Shopify store?",
+    answer: "Shopify's Basic plan is $39 a month billed monthly, or $29 a month billed annually, and new stores currently get a 3-day free trial followed by $1 a month for the first three months. The print on demand apps are free to install, so your only other early costs are a domain, a few product samples, and the card fee on each sale. Shopify's prices are Shopify's and can change.",
+  },
+  {
+    question: "Do I need inventory to start a Shopify store?",
+    answer: "No. With print on demand, nothing is made until someone orders it, and the supplier prints and ships it under your brand. With dropshipping, the supplier holds the stock and ships each order for you. In both cases you never buy stock up front or touch a parcel.",
+  },
+  {
+    question: "Can I run a Shopify store without showing my face?",
+    answer: "Yes. A store is a brand name, a set of product photos and a checkout. Customers buy from the brand, not from a founder photo. Product mockups, a clear brand name and a short About page written in the brand's voice are all you need.",
+  },
+  {
+    question: "Is print on demand or dropshipping better for a beginner?",
+    answer: "Print on demand, almost always. There is no stock, no supplier negotiation and no minimum order, and the apps are free. Dropshipping makes sense as a second step once you understand your customer, and only with suppliers who hold stock in your own country, because China-direct parcels now carry duties and delays.",
+  },
+  {
+    question: "How long does it take to get the first sale on Shopify?",
+    answer: "Nobody honest can give you a date. It depends on whether your product answers a real question, whether the page removes the buyer's doubts, and whether you are showing up where that buyer already asks for help. Most first sales come from one of those three things being fixed, not from more traffic.",
+  },
+];
+---
+
+<ArticleLayout
+  title="How to Start a Shopify Store (2026 Guide)"
+  description="The complete beginner's guide to starting a Shopify store: what to sell, print on demand vs dropshipping, setup, supplier apps, and the first ten sales."
+  slug="shopify-store-guide"
+  category="Physical Products"
+  issueNumber="045"
+  readTime="18 Min Read"
+  datePublished="2026-09-18"
+  dateModified="2026-09-18"
+  faqs={faqs}
+  ogImage="/images/library/hero-office-wide-02.jpg"
+  related={[
+    { href: "/learn/print-on-demand-vs-dropshipping", title: "Print on Demand vs Dropshipping: Which to Start With" },
+    { href: "/learn/what-to-sell-online", title: "How to Decide What to Sell When You Don't Make Anything" },
+    { href: "/learn/shopify-store-in-a-weekend", title: "How to Set Up a Shopify Store in a Weekend" },
+    { href: "/learn/shopify-supplier-apps", title: "The Supplier Apps That Plug Into Shopify, Compared" },
+    { href: "/learn/first-10-shopify-sales", title: "How to Get Your First 10 Shopify Sales Without Ads" },
+    { href: "/learn/choosing-a-niche", title: "How to Choose Your Niche in a Weekend" },
+  ]}
+>
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Physical Products</span>
+    <h1 class="reveal">How to Start a Shopify Store</h1>
+    <p class="sub reveal">A store that sells something real — without a warehouse, an audience, or your face on it.</p>
+    <div class="hero-meta reveal"><span>18 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/hero-office-wide-02.jpg" alt="A wide, sunlit home office with a styled desk and shelving — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#why">Why a physical store belongs here</a></li>
+          <li><a href="#order">The build order</a></li>
+          <li><a href="#sell">What to sell when you make nothing</a></li>
+          <li><a href="#pod">Print on demand vs dropshipping</a></li>
+          <li><a href="#setup">Setting up the store in a weekend</a></li>
+          <li><a href="#apps">The supplier apps, briefly</a></li>
+          <li><a href="#brand">Branding a store nobody knows your name behind</a></li>
+          <li><a href="#sales">The first ten sales without ads</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ol>
+        <div class="foot">Est. 18 Min Read</div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="lede first reveal">Most women who find this site arrive wanting to sell something digital, and that is still the right first door for most of them. But there's a second door in the same house, and it's the one people assume is closed to them: a store that sells real, physical things. A mug that arrives in a box. A tote bag someone carries to work. A journal with your brand on the spine.</p>
+  <p class="reveal">The assumption is that a physical store needs a garage full of stock, a face to put on it, and a following to sell to. None of that is true anymore. A supplier prints and ships the product after it sells. The brand is a name and a look, not a person. And the first buyers come from search and from answering questions, not from an audience you had to build first.</p>
+  <p class="reveal"><strong>What you actually need is three things: a product, a store, and an app that ships for you.</strong> This guide walks through all three in the order that works, then hands you to a shorter article for each part when you're ready to go deeper.</p>
+
+  <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="why">Why a physical store belongs in a faceless business</h2></div>
+  <p class="answer reveal">A physical store belongs in a faceless business because the customer buys from a brand, not a founder, and a supplier app handles the making and shipping. You supply the name, the product idea and the store; nothing else requires you.</p>
+  <p class="reveal">Think about the last thing you ordered online from a small brand. Did you know the owner's name? Did you see her face? Almost certainly not. You saw a product photo, a price, a few reviews and a checkout that worked. That's the whole relationship. The store was faceless and you didn't notice, because a store is supposed to be about the thing you're buying.</p>
+  <p class="reveal">This is why a physical store fits so cleanly into the way we build here. The brand carries the personality. The product carries the value. Your face was never part of the deal, and the customer never expected it to be.</p>
+  <p class="reveal">There's a second reason it belongs, and it's about what physical goods do that digital ones don't. A digital download is bought once. A candle, a notebook, a set of cards gets used up, gifted, replaced. Physical products bring repeat buyers and gift buyers in a way a PDF rarely does. They also sit comfortably next to a digital business: the woman who buys your planner template is a natural buyer of the printed version.</p>
+  <p class="reveal">And there's a third reason, quieter than the other two. A physical product is something you can hold. For a lot of women building around a day job, the first parcel that arrives with their brand name on it is the moment the business stops feeling hypothetical.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>A store isn't a bigger version of a digital product shop. It's a different door with the same rules: no face required, no audience first, no stock in your spare room. If a plan asks you for any of those three, it isn't this plan.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/how-to-build-a-faceless-digital-business">How to Build a Faceless Digital Business →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="order">The build order: product, store, fulfilment, buyers</h2></div>
+  <p class="answer reveal">Build a physical store in this order: product first, store second, fulfilment app third, buyers last. Every slow, expensive mistake in this business comes from doing those four in a different order.</p>
+  <p class="reveal">The order we teach everywhere on this site is offer first, store second, automation third, audience last. For a physical store, translate it word for word: <strong>product first, store second, fulfilment app third, buyers last.</strong> It sounds obvious. Almost nobody does it.</p>
+  <p class="reveal">What people do instead is open the store first, because opening a store feels like starting. They spend a weekend on a theme, a logo and a colour palette for a store that has nothing in it. Then they go looking for something to fill it with, which is backwards: the product should decide what the store looks like, not the other way round.</p>
+  <p class="reveal">Or they start with buyers. They open a social account for a brand that doesn't exist yet and try to build a following in advance. Months later they have a small audience waiting for a product that still hasn't been chosen, and the audience drifts.</p>
+  <p class="reveal"><strong>Product first</strong> means you decide what one thing you're selling and who it's for before you touch a store. One product, one person, one sentence.</p>
+  <p class="reveal"><strong>Store second</strong> means a plain, fast Shopify store built around that product. Not a catalogue. A page that sells one thing well.</p>
+  <p class="reveal"><strong>Fulfilment app third</strong> means you connect the supplier that will make and ship it. This is the automation. Once it's connected, an order placed at midnight is printed and posted without you.</p>
+  <p class="reveal"><strong>Buyers last</strong> means you go looking for customers only once there is something real for them to buy. You'll find them faster than you expect, because you'll be sending them to a product instead of a promise.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> The order, in one line</span><p>Product · Store · Fulfilment app · Buyers. If you're working on step three before step one is decided, stop and go back. It's cheaper now than later.</p></div>
+
+  <div class="chapter  reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="sell">What to sell when you don't make anything</h2></div>
+  <p class="answer reveal">Sell a plain, useful product to a specific person, with a design or a message on it that makes it hers. The product is ordinary; the specificity is what sells it. You don't need to make anything, only to decide what goes on it.</p>
+  <p class="reveal">The phrase that stops most women here is "but I don't make anything." Good. Neither does almost any brand you buy from. The mug wasn't thrown by the founder. The tote bag wasn't sewn by her. Someone else made the blank; she decided what went on it and who it was for. That decision is the product.</p>
+  <p class="reveal">So the question isn't what can you make. It's what does a particular woman already buy, and what would she buy from you if it spoke to her a little more directly than the generic version does.</p>
+  <p class="reveal"><strong>Start with a person, not a product.</strong> A night-shift nurse. A first-year teacher. A woman training for her first half marathon at forty. A new dog owner. Pick someone you understand well enough to know what she'd laugh at, what she's tired of, and what she'd put on her desk.</p>
+  <p class="reveal"><strong>Then pick an ordinary object she already owns.</strong> Mugs, tote bags, T-shirts, sweatshirts, notebooks, stickers, wall prints, phone cases, water bottles. All of these are print on demand staples, and all of them are things she buys anyway. You're not inventing demand. You're redirecting it.</p>
+  <p class="reveal"><strong>Then decide what goes on it.</strong> A phrase only she would get. A design in a style she'd choose herself. A clean, minimal version of something that usually comes cluttered. This is where the product becomes yours, and it's the only part you actually create.</p>
+  <p class="reveal">Two cautions. First, the design has to be yours or licensed for commercial use. A cartoon character, a sports team logo, a band name, a meme, a font licensed for personal use only: the supplier apps remove these, and recolouring them doesn't make them safe. Second, resist the catalogue. One product for one person, done well, beats forty products for everyone.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>The best first products are boring objects with a specific point of view. Nobody searches for "a mug." Plenty of people search for a mug that says what they're thinking at 6am on a twelve-hour shift.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/what-to-sell-online">How to Decide What to Sell When You Don't Make Anything →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="pod">Print on demand vs dropshipping (and why POD is door one now)</h2></div>
+  <p class="answer reveal">Print on demand makes each product only after it's ordered, so there's no stock and no upfront cost; dropshipping sells a supplier's existing stock, which they ship for you. Start with print on demand. Move to dropshipping later, and only with suppliers who hold stock in your own country.</p>
+  <p class="reveal">These two get lumped together because neither involves you touching a parcel. Underneath, they are quite different businesses.</p>
+  <p class="reveal"><strong>Print on demand</strong> works like this. You upload a design to a blank product inside a supplier app. The product appears in your Shopify store. When someone buys it, the app receives the order, prints your design on the blank, packs it and ships it to the customer. You're charged the base cost of the product and shipping; the difference between that and your price is your margin. Nothing is made until it's sold, so you never own stock and never guess wrong about quantities.</p>
+  <p class="reveal"><strong>Dropshipping</strong> works like this. A supplier already holds stock of a finished product: a kitchen gadget, a yoga mat, a pet accessory. You list it in your store. When someone buys, the order goes to the supplier, who ships it. You didn't design it and you don't hold it; you found it, priced it and sold it.</p>
+  <p class="reveal">For a beginner, print on demand wins, and it isn't close. The apps are free to install. There's no minimum order. Your product is unique to you, which means you're not competing on price with a hundred other stores listing the identical gadget. And the whole thing runs on the one skill you're already building everywhere else in this business: knowing a specific woman well enough to make something for her.</p>
+  <p class="reveal">Dropshipping is a real second door, but it changed in 2025 and you need to know how. The US de minimis duty exemption, which used to let small parcels from overseas arrive duty-free, ended that year. A China-direct parcel now carries duties, brokerage fees and delays, and it's your customer who opens the surprise bill or waits three weeks. <strong>If you dropship, use suppliers with stock in a US warehouse, or in whatever country you're selling into.</strong> The old model of listing an AliExpress product and shipping it from China is no longer a beginner-safe plan.</p>
+  <p class="reveal">One honesty about print on demand before you fall in love with it: because each item is made to order, there are no returns for wrong size or change of mind. If the customer picks the wrong size, you pay for the reprint unless it's a defect. Clear size charts and plain product descriptions are not decoration; they're margin protection.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Which door</span><p>Print on demand: no stock, unique product, free apps, start here. Dropshipping: existing products, faster to list, US-warehoused or same-country suppliers only, and best as a second step once you know your buyer.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/print-on-demand-vs-dropshipping">Print on Demand vs Dropshipping: Which to Start With →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="setup">Setting up the store in a weekend</h2></div>
+  <p class="answer reveal">A first Shopify store takes one weekend: open the trial, pick a free theme, build one product page, connect payments and shipping, and write three short pages. Everything else can wait until after the first order.</p>
+  <p class="reveal">Shopify is the platform we teach because it's the one I use. It's the boring, reliable choice, and boring is what you want holding your checkout. Open <a href="https://shopify.pxf.io/eK3xYz" rel="sponsored noopener" target="_blank">Shopify's $1-a-month start</a> (affiliate link) and you get a 3-day free trial, then $1 a month for your first three months on monthly billing. After that the Basic plan is Shopify's standard price: $39 a month billed monthly, or $29 a month if you pay for the year. Card payments through Shopify Payments cost 2.9% plus 30 cents per online transaction on Basic. All of those are Shopify's numbers and Shopify can change them.</p>
+  <p class="reveal">Here's the weekend, in order.</p>
+  <p class="reveal"><strong>Saturday morning: the shell.</strong> Open the trial. Name the store after your brand, not yourself. Pick a free theme, and pick the plainest one that shows product photos large. Set your currency and your country. Don't touch the colours yet.</p>
+  <p class="reveal"><strong>Saturday afternoon: the product.</strong> Install your print on demand app, connect it to the store, and build your one product. Upload the design, choose the blank, set the colours and sizes, and let the app push it into Shopify. Then rewrite the product description in plain words: who it's for, what it's made of, how it's sized, how long it takes to arrive. The app's default description is not good enough.</p>
+  <p class="reveal"><strong>Sunday morning: money and shipping.</strong> Turn on Shopify Payments so cards work. Set your shipping so the customer sees an honest price and an honest delivery window, matched to what your supplier actually quotes for her region. Order a sample of your own product to your own address. You will learn more from that parcel than from any tutorial.</p>
+  <p class="reveal"><strong>Sunday afternoon: the three pages.</strong> An About page in the brand's voice, a Shipping and Returns page that says plainly what print on demand means for exchanges, and a Contact page with a real email address. Then walk through checkout yourself on your phone, start to finish.</p>
+  <p class="reveal">That's a live store. It's not finished, and it won't be for months. But it can take an order tonight, and a store that can take an order is the only kind worth having.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Everything you're tempted to do first — logo, palette, homepage banner, Instagram grid — is the last thing that matters this weekend. A plain store with one great product page outsells a beautiful store with nothing to buy. The Shopify Starter Kit at <a href="/resources/shopify-starter-kit">/resources/shopify-starter-kit</a> has the weekend as a checklist.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-in-a-weekend">How to Set Up a Shopify Store in a Weekend →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="apps">The supplier apps, briefly</h2></div>
+  <p class="answer reveal">The supplier app is the piece that makes and ships your product after it sells. For print on demand, Printful, Printify and Gelato are the three to know; for dropshipping, choose an app whose suppliers hold stock in your country. All of them are free to install.</p>
+  <p class="reveal">This is the automation step, and it's less of a decision than it looks. The apps do the same job: they sit between your store and a factory. Where they differ is who does the printing, how the quality is controlled, and where the product ships from.</p>
+  <table class="reveal">
+    <thead>
+      <tr><th>App</th><th>Type</th><th>Cost to install</th><th>What to know</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Printful</td><td>Print on demand</td><td>Free (optional Growth plan $24.99/mo for product discounts)</td><td>Prints in-house, so quality is consistent. Around 86% of orders are fulfilled in the customer's region.</td></tr>
+      <tr><td>Printify</td><td>Print on demand</td><td>Free (Premium $39/mo, or $24.99/mo annual, for up to 20% off)</td><td>A marketplace of 90+ print providers across 140+ facilities. Widest choice and often the lowest base cost, but quality varies by provider. Order samples.</td></tr>
+      <tr><td>Gelato</td><td>Print on demand</td><td>Free (Gelato+ $23.99/mo, or $19.99/mo annual)</td><td>Local production in 32 countries. Strong if your buyers are spread across regions.</td></tr>
+      <tr><td>Apliiq</td><td>Print on demand</td><td>Free</td><td>US apparel with more customisation than most, such as labels and embroidery.</td></tr>
+      <tr><td>SPOD</td><td>Print on demand</td><td>Free</td><td>Claims 48-hour production. Simpler catalogue.</td></tr>
+      <tr><td>CJdropshipping</td><td>Dropshipping</td><td>Free, no monthly fee</td><td>US, EU and China warehouses. Claims 3–7 day delivery from local stock. Choose local-warehouse products only.</td></tr>
+      <tr><td>Zendrop</td><td>Dropshipping</td><td>Free tier; Beginner $29, Pro $49, Plus $79/mo</td><td>US warehouse stock arrives in 2–8 days after 1–3 days processing. China stock takes 10–15 days and carries duties.</td></tr>
+      <tr><td>Spocket</td><td>Dropshipping</td><td>Free tier; Starter $39.99, Pro $59.99, Empire $99.99/mo</td><td>Suppliers in the US and Europe.</td></tr>
+      <tr><td>Syncee</td><td>Dropshipping</td><td>Free for 25 products; Basic $39.99, Pro $59.99, Business $99.99/mo</td><td>Suppliers in the US, Canada, EU, UK and Australia.</td></tr>
+      <tr><td>DSers</td><td>Dropshipping</td><td>Basic free; Advanced $19.90, Pro $49.90/mo</td><td>AliExpress, so China-direct. Duties, fees and delays now apply. Not a beginner door.</td></tr>
+      <tr><td>Shopify Collective</td><td>Dropshipping</td><td>Free, built into Shopify</td><td>Sell other Shopify brands' products; they ship. Both stores need a paid plan, Shopify Payments, and the same country and currency.</td></tr>
+    </tbody>
+  </table>
+  <p class="reveal">If you're doing print on demand and you want the short answer: start with Printful if you'd rather pay a little more for consistency, or Printify if you want the widest catalogue and are willing to order samples from two or three providers before you commit. Either way, order the sample. "Fast shipping" claims everywhere in this table apply to locally warehoused stock only, and the only way to know what your customer will unwrap is to unwrap it yourself.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Before you trust any app</span><p>Order a sample to your own address · Check where it actually ships from for your customer's country · Read the app's rules on designs it will remove · Match your store's delivery promise to the app's real quote, not its headline.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-supplier-apps">The Supplier Apps That Plug Into Shopify, Compared →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">07</span><div class="num">Chapter Seven</div><div class="orn"><span class="d"></span></div><h2 id="brand">Branding a store nobody knows your name behind</h2></div>
+  <p class="answer reveal">A faceless store is branded with a name, a consistent look, and product photos that make the item feel real. No founder photo is needed, because customers buy from the brand and the product, not from a person.</p>
+  <p class="reveal">The worry underneath "faceless" is that a store without a person feels untrustworthy. Look at what actually builds trust on a product page: clear photos, honest sizing, a delivery window that's kept, a returns page in plain English, and a brand that looks like it will still exist next month. Not one of those is a face.</p>
+  <p class="reveal"><strong>The name.</strong> Name the brand, not yourself. A good store name says who it's for or what it feels like, and it fits on a mug. Check the domain and the main social handles are free before you commit to it, and then stop agonising. Nobody chose the brand they love because of its name.</p>
+  <p class="reveal"><strong>The look.</strong> Two colours, one typeface, and the same photo style everywhere. Restraint reads as expensive. Clutter reads as a hobby. If you already have a brand from your digital business, use the same one; a store is a shelf in the same house, not a new house.</p>
+  <p class="reveal"><strong>The product photos.</strong> This is where the faceless approach has quietly become easier than it was. Your print on demand app generates mockups of your design on the blank, and AI image tools can now place that product in a styled setting: a mug on a kitchen counter in morning light, a tote on a chair in a hallway. You don't need a photographer or a model. You need one consistent style, and the sample you ordered, so you can shoot a couple of honest real-life shots on your phone next to the mockups.</p>
+  <p class="reveal"><strong>The About page.</strong> Write it in the brand's voice, about the customer. "We make things for women who work nights" says more than a paragraph about you. If you want a person on the page, the brand's persona can carry it. Your real face is never required.</p>
+  <p class="reveal">One more thing, because people miss it: the brand extends into the box. A short thank-you card is often something the supplier app can include, and the packaging on most print on demand orders is plain. Put the brand name on the card and the product, and the parcel does the rest of the branding for you.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Customers don't trust faces. They trust consistency. Same colours, same tone, same delivery promise kept three times in a row. That's a brand, and none of it needs a photo of you.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/branding-guide">The Branding Guide →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">08</span><div class="num">Chapter Eight</div><div class="orn"><span class="d"></span></div><h2 id="sales">The first ten sales without ads</h2></div>
+  <p class="answer reveal">The first ten sales come from three places: being helpful in the groups where your customer already asks questions, a small email list of people who opted in for something useful, and one product page that answers every objection before it's raised. None of those require ads.</p>
+  <p class="reveal">You built the product, the store and the fulfilment. Now the buyers, last, exactly where they belong. And the first ten are different from the next hundred. The next hundred come from search and from an email list that's grown. The first ten come from you being present, briefly and honestly, where your customer already is.</p>
+  <p class="reveal"><strong>Answer questions where they're asked.</strong> Every niche has groups, forums and comment threads where people ask "what store do you use for this," "where did you get that," "does anyone know a good one for X." Be the person who answers properly, with a real recommendation, and mention your store only when it genuinely is the answer. This isn't spamming a link. It's showing up as someone who knows the subject and happens to make the thing. Done sparingly and honestly, it brings the kind of buyer who comes back.</p>
+  <p class="reveal"><strong>Start a small email list.</strong> Not a newsletter you'll dread writing. A single useful download for your customer, connected to your store, and a handful of short emails that follow. The women who opt in are the warmest buyers you'll ever have, because they told you what they cared about before you sold them anything. A list of forty people who wanted the thing beats a following of four thousand who scrolled past it.</p>
+  <p class="reveal"><strong>Make one product page do the selling.</strong> Most first stores lose the sale on the page, not on the traffic. Read your product page as the most sceptical version of your customer. What's the fabric like? Will it shrink? How big is it really? How long until it arrives? What happens if it's wrong? Answer every one of those in plain words, on the page, with a photo where a photo helps. A page that removes doubt doesn't need more visitors; it needs the ones it already has.</p>
+  <p class="reveal">Notice what isn't on this list. No ads, because you don't yet know which page converts, and ads will only tell you that expensively. No daily posting, because a feed forgets you the moment you stop feeding it. No discount codes shouted at strangers. Just a product that answers a real need, put in front of the woman who has it.</p>
+  <p class="reveal">When the tenth order comes in, you'll know something no course can teach you: what she actually bought, which page she came from, and what she asked before she paid. That is the information the next hundred sales are built on.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> The first-ten checklist</span><p>Three groups where your customer asks for recommendations · One useful download and five short emails · One product page rewritten to answer every objection · Sample in hand so every claim on the page is true.</p></div>
+  <p class="reveal">If you want the whole build laid out lesson by lesson — the store, the app, the page and the first sales, in order — it lives inside <strong>The Shopify Edit</strong>, a module inside <a href="/membership">Membership Standard</a> — $9 a month or $99 a year, with a 7-day free trial.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/first-10-shopify-sales">How to Get Your First 10 Shopify Sales Without Ads →</a></p>
+
+  <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+  {faqs.map((f) => (
+    <>
+      <h3 class="reveal">{f.question}</h3>
+      <p class="reveal">{f.answer}</p>
+    </>
+  ))}
+
+</ArticleLayout>

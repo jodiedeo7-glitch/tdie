@@ -1,0 +1,160 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Is print on demand or dropshipping better for beginners?",
+    answer: "Print on demand, almost every time. Nothing is made until a customer pays, so there is no stock to buy and no wrong guess to eat. Dropshipping can work, but the cheap China-direct version now carries import duties and slow delivery, which makes it a poor place to learn.",
+  },
+  {
+    question: "Do I need to buy inventory for print on demand?",
+    answer: "No. The supplier prints and ships each item after the order comes in, and you pay them from the customer's money. Your only real upfront cost is a few sample orders so you can check quality before you sell.",
+  },
+  {
+    question: "Can I still dropship from AliExpress in 2026?",
+    answer: "You can, but the economics changed. The US de minimis exemption ended in 2025, so parcels shipped direct from China now attract duties, brokerage fees and customs delays. If you want to dropship into the US, use a supplier that holds stock in a US warehouse.",
+  },
+  {
+    question: "How much does it cost to start a print on demand store on Shopify?",
+    answer: "The print on demand apps are free to install, and Shopify currently offers a 3-day free trial followed by $1 a month for the first 3 months on monthly billing, though Shopify's prices can change. Budget for a handful of samples on top of that. Most beginners start for well under a hundred dollars.",
+  },
+  {
+    question: "Can I do both print on demand and dropshipping in one store?",
+    answer: "Yes, and many stores do once they have found their footing. Start with one, prove you can get a product from listing to doorstep, then add the other if a specific product calls for it. Running both from day one splits your attention before you have earned it.",
+  },
+];
+---
+
+<ArticleLayout
+  title="Print on Demand vs Dropshipping: Which to Start With"
+  description="Print on demand vs dropshipping for a first Shopify store — how each works, what changed with US import duties, and which one a beginner should open first."
+  slug="print-on-demand-vs-dropshipping"
+  category="Physical Products"
+  issueNumber="046"
+  readTime="12 Min Read"
+  datePublished="2026-09-18"
+  dateModified="2026-09-18"
+  faqs={faqs}
+  ogImage="/images/library/product-ribbon-notecards.jpg"
+  related={[
+    { href: "/learn/shopify-store-guide", title: "How to Start a Shopify Store" },
+    { href: "/learn/shopify-supplier-apps", title: "The Supplier Apps That Plug Into Shopify, Compared" },
+    { href: "/learn/what-to-sell-online", title: "How to Decide What to Sell When You Don't Make Anything" },
+    { href: "/learn/shopify-store-in-a-weekend", title: "How to Set Up a Shopify Store in a Weekend" },
+    { href: "/learn/boring-first-passive-stream", title: "Your First Passive Stream Should Be Boring" }
+  ]}
+>
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Physical Products</span>
+    <h1 class="reveal">Print on Demand vs Dropshipping: Which to Start With</h1>
+    <p class="sub reveal">Both let you sell without touching a box. Only one of them is safe to learn on.</p>
+    <div class="hero-meta reveal"><span>12 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/product-ribbon-notecards.jpg" alt="A stack of notecards tied with ribbon on a styled desk — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#what">What each one actually is</a></li>
+          <li><a href="#door-one">Why print on demand is door one</a></li>
+          <li><a href="#duties">What dropshipping became after the duty change</a></li>
+          <li><a href="#table">The comparison, side by side</a></li>
+          <li><a href="#exception">The one case for dropshipping first</a></li>
+          <li><a href="#decide">How to decide by Sunday</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ol>
+        <div class="foot">Est. 12 Min Read</div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="lede first reveal">Print on demand and dropshipping get lumped together because they share one promise: you sell a physical thing and someone else packs and posts it. From the inside they are not the same business, and the difference decides whether your first store teaches you something or just costs you something.</p>
+  <p class="reveal">If you are opening your first store around a day job, with no warehouse, no face on camera and no audience yet, print on demand is the door you walk through first. Dropshipping is door two, and it changed shape in 2025 in a way most of the advice online still hasn't caught up with.</p>
+  <p class="reveal">The build order in this house never changes: offer first, store second, automation third, audience last. For a physical store that reads product first, store second, fulfilment app third, buyers last. This piece is about the third step, because the app you pick quietly shapes the first two.</p>
+
+  <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="what">What each one actually is</h2></div>
+  <p class="answer reveal">Print on demand makes a blank product with your design on it after someone orders it. Dropshipping sells a product that already exists in someone else's warehouse, and they post it when you get the order.</p>
+  <p class="reveal"><strong>Print on demand.</strong> You upload a design to an app like Printful, Printify or Gelato. The app shows you a catalogue of blanks: tote bags, mugs, notecards, sweatshirts, art prints. You put your design on a blank, set a price, and the product appears in your Shopify store. A customer pays you. The app charges your card for the base cost and the shipping, prints it, packs it and posts it with your store name on the label. You keep the difference. Nothing exists until she buys it.</p>
+  <p class="reveal"><strong>Dropshipping.</strong> You connect an app like Zendrop, Spocket or CJdropshipping and browse products a supplier already has in stock: a ceramic ring dish, a linen apron, a set of felt drawer organisers. You import the listing, set your price, and a customer pays you. The app charges you the supplier's price plus shipping and the supplier posts it from their warehouse. You keep the difference. The product existed before anyone bought it, and someone else designed it.</p>
+  <p class="reveal">The money flows the same way in both. The difference is who made the thing and where it was sitting when the order arrived. That drives everything else in this piece.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>In print on demand you sell your idea on someone else's blank. In dropshipping you sell someone else's idea from someone else's shelf. One of those is much harder to copy.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="door-one">Why print on demand is door one</h2></div>
+  <p class="answer reveal">Because it is the only version of a physical-product store where a beginner's mistakes cost almost nothing. No stock, no duties on the beginner setup, nothing made until it is paid for.</p>
+  <p class="reveal">A first store is a classroom before it is a business. You are learning to write a product page, to price, to answer a complaint. Every lesson is cheaper where a wrong guess costs a listing, not a pallet.</p>
+  <p class="reveal"><strong>There is no stock.</strong> You never buy fifty of anything hoping they sell. If the notecard design nobody wanted sits in your store for six months, it costs you the afternoon you spent making it.</p>
+  <p class="reveal"><strong>Most of it is printed near the buyer.</strong> Printful says around 86% of its orders are fulfilled in the customer's region. Gelato prints locally in 32 countries. For a US customer that usually means a domestic parcel, no border to cross and no duty bill at the door.</p>
+  <p class="reveal"><strong>Made to order means cheap tests.</strong> Try a design on a mug, a tote and an art print in the same week for no more than the sample money. If one wins, lean in. If none do, try again on Tuesday.</p>
+  <p class="reveal"><strong>The apps are free to install.</strong> Printful, Printify, Gelato, Apliiq and SPOD all cost nothing until an order lands. The paid tiers buy a discount on volume you do not have yet.</p>
+  <p class="reveal">Two honest costs. Order samples before you sell, because Printify is a marketplace of 90-plus print providers and quality varies by who prints your order. And made to order means no returns for a wrong size or a change of mind. Reprints come out of your margin unless the item is faulty. Write your size guide like you mean it.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Before your first listing</span><p>Order one sample of each blank you plan to sell · Check the print, the seams and the packaging · Write a plain-words size guide · Decide your reprint policy before anyone tests it.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-supplier-apps">The Supplier Apps That Plug Into Shopify, Compared →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="duties">What dropshipping became after the duty change</h2></div>
+  <p class="answer reveal">The cheap version of dropshipping, where a supplier in China posts a parcel straight to a US customer, stopped being cheap in 2025. The honest version now uses suppliers with stock in a US or same-country warehouse.</p>
+  <p class="reveal">For years the whole dropshipping pitch rested on one quiet rule. Parcels worth under $800 could enter the US without import duty. That was the de minimis exemption, and it is why a store could list a $4 phone stand from a Chinese supplier, sell it for $19, and never think about customs.</p>
+  <p class="reveal">That exemption ended in 2025. A China-direct parcel arriving in the US now carries duties, often a brokerage fee from the carrier, and a customs delay on top of a shipping time that was already two to three weeks. Sometimes the customer gets a bill at the door before the box is handed over. You can imagine how that review reads.</p>
+  <p class="reveal">The old tutorials are not wrong about the software. They are wrong about the maths. The margin on a $4 product is gone once you add duty, the fee and the refunds from customers who expected neither.</p>
+  <p class="reveal"><strong>The version that still works</strong> is a supplier who holds stock in the country you are selling to. Zendrop quotes 2 to 8 days from its US warehouse after processing, against 10 to 15 days for China stock. CJdropshipping runs US and EU warehouses and claims 3 to 7 days from the local ones. Spocket and Syncee are built around US and European suppliers. Shopify Collective, built into Shopify, lets you sell another Shopify brand's products and have them ship, as long as both stores are on a paid plan, use Shopify Payments, and sit in the same country and currency.</p>
+  <p class="reveal">DSers still plugs Shopify into AliExpress and works as it always did. It is China-direct, so every parcel carries the duty problem. It is not the beginner's tool anymore.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>When an app advertises fast shipping, read the small print. Fast almost always means the US-warehouse stock. The same app's China stock ships on the old timeline with the new duties.</p></div>
+
+  <div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="table">The comparison, side by side</h2></div>
+  <p class="answer reveal">Print on demand wins on upfront cost, control over the product and the price of a mistake. US-warehoused dropshipping wins on shipping speed and product variety. China-direct dropshipping now loses on nearly every row.</p>
+  <table class="reveal">
+    <thead>
+      <tr><th></th><th>Print on demand</th><th>Dropshipping (US warehouse)</th><th>Dropshipping (China-direct)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Upfront cost</strong></td><td>App is free; pay for samples only</td><td>Free to about $40–$100/mo; samples</td><td>Free to low cost; samples</td></tr>
+      <tr><td><strong>Margin per item</strong></td><td>Moderate; printed one at a time</td><td>Moderate; US stock costs more</td><td>Was high; now eaten by duties</td></tr>
+      <tr><td><strong>Shipping time (US buyer)</strong></td><td>Print time plus a domestic parcel, about a week</td><td>Roughly 2–8 days after processing</td><td>10–15 days plus customs delays</td></tr>
+      <tr><td><strong>Duties and border fees</strong></td><td>Usually none, printed in region</td><td>None, already imported</td><td>Duties, brokerage, sometimes a bill at the door</td></tr>
+      <tr><td><strong>Returns</strong></td><td>Defects only; other reprints are on you</td><td>Varies; often to a US address</td><td>Rarely worth the postage</td></tr>
+      <tr><td><strong>Control over the product</strong></td><td>High; your design</td><td>Low; same item in other stores</td><td>Low; same item everywhere</td></tr>
+      <tr><td><strong>Cost of a wrong guess</strong></td><td>One afternoon</td><td>A sample and a listing</td><td>A sample, a listing and an angry customer</td></tr>
+    </tbody>
+  </table>
+  <p class="reveal">Read the last two rows twice. Control and the cost of a mistake matter most when you have not made any yet. A US-warehouse dropshipper gives you speed but hands you a product anyone can list tomorrow. Fine later, with a brand people come back to. A hard way to start.</p>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/what-to-sell-online">How to Decide What to Sell When You Don't Make Anything →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="exception">The one case for dropshipping first</h2></div>
+  <p class="answer reveal">Start with dropshipping only when there is a specific product your niche needs, a US or EU supplier already carries it, no printable blank does the same job, and you are willing to order and live with a sample before you list it.</p>
+  <p class="reveal">Print on demand covers what can be printed: fabric, paper, ceramic, a few hard goods. It may not cover the thing your niche is actually asking for.</p>
+  <p class="reveal">Say your niche is home organising for shift workers and the product that keeps coming up is a set of stackable, labelled meal-prep containers. No print provider makes that. A supplier on Spocket or Syncee with a warehouse in Ohio or Rotterdam might. The product came first, which is the right order, and the fulfilment method should follow it.</p>
+  <p class="reveal">Three conditions, all true.</p>
+  <p class="reveal"><strong>The product is specific to your niche.</strong> Not a generic gadget anyone could sell to anyone. Something the woman in your niche would recognise as made for her problem.</p>
+  <p class="reveal"><strong>A same-country supplier carries it.</strong> US warehouse for US buyers, EU warehouse for EU buyers. If the only source is China-direct, wait for a local supplier or find the printable version of the problem instead.</p>
+  <p class="reveal"><strong>You will order the sample.</strong> Pay for one, open it on your kitchen table and decide honestly whether you would be happy to receive it. If you are not willing to do that, you are not ready to put your name on it.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> The exception test</span><p>Niche-specific product · Stocked in a US or EU warehouse · Sample ordered and approved. Three yeses and dropshipping first is a sensible call. Anything less, open the print on demand door.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/boring-first-passive-stream">Your First Passive Stream Should Be Boring →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="decide">How to decide by Sunday</h2></div>
+  <p class="answer reveal">Name the product, check whether it can be printed, check whether a local supplier stocks it, order one sample, and open the store around whichever answer came back yes.</p>
+  <p class="reveal">You need one honest weekend and a willingness to pick.</p>
+  <p class="reveal"><strong>Friday evening: write the product down.</strong> One sentence. <em>A set of six recipe cards for batch-cooking on a night-shift week.</em> If you cannot write the sentence yet, that is the step you are on, and the article on what to sell is tonight's reading.</p>
+  <p class="reveal"><strong>Saturday morning: can it be printed?</strong> Open Printful and Gelato and look for a blank that carries your idea. If yes, you are in print on demand and you can stop looking. Most first products end here.</p>
+  <p class="reveal"><strong>Saturday afternoon: if not, is it stocked locally?</strong> Search Spocket, Syncee and Zendrop's US-warehouse listings. If a same-country supplier has it, you have met the exception. If only China-direct has it, it goes in the later pile.</p>
+  <p class="reveal"><strong>Saturday evening: order the sample.</strong> Whichever door you are in, put in one order to yourself. This is the only money you need to spend before your store exists.</p>
+  <p class="reveal"><strong>Sunday: open the store.</strong> While the sample is on its way, start on <a href="https://shopify.pxf.io/eK3xYz" rel="sponsored noopener" target="_blank">Shopify's $1-a-month start</a> (affiliate link), connect the app you chose, and build the one product page. <a href="/resources/shopify-starter-kit">The Shopify Starter Kit</a> is the free checklist to keep beside you, and The Shopify Edit inside <a href="/membership">Membership Standard</a> goes through the full build lesson by lesson.</p>
+  <p class="reveal">Then you wait for the parcel. When it opens you will know in thirty seconds whether you chose well. If you were wrong, you were wrong for the price of a mug.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>The store that teaches you most is the one where a mistake costs an afternoon. Print on demand is that store. Dropshipping is where you go once you know what your buyer wants and can prove it with a sample on your table.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-in-a-weekend">How to Set Up a Shopify Store in a Weekend →</a></p>
+
+  <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+  {faqs.map((f) => (
+    <>
+      <h3 class="reveal">{f.question}</h3>
+      <p class="reveal">{f.answer}</p>
+    </>
+  ))}
+
+</ArticleLayout>

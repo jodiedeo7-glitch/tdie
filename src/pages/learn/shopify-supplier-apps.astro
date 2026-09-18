@@ -1,0 +1,167 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Which supplier app is best for a first Shopify store?",
+    answer: "For most beginners it's a print-on-demand app, because there's no stock to buy and nothing ships until a customer pays. Printful is the simplest single-printer option, Printify has the widest catalogue, and Gelato prints locally in more countries. All three are free to install, so the real cost is the base price of each product you sell.",
+  },
+  {
+    question: "Do I need to pay for a supplier app before I make a sale?",
+    answer: "No. Every app in this comparison has a free plan or is free to install. The paid tiers mostly buy you product discounts, more listings or faster support. Start on the free plan and upgrade only when the discount would save you more than the subscription costs.",
+  },
+  {
+    question: "Can I use more than one supplier app on the same store?",
+    answer: "Yes. Shopify lets you install several apps at once, and each one only manages the products you connect to it. Plenty of stores run a print-on-demand app for designed goods alongside a dropshipping app for ready-made products. Keep it to two while you're learning so the orders stay easy to follow.",
+  },
+  {
+    question: "Is dropshipping from China still worth it in 2026?",
+    answer: "For a first store, no. The US de minimis duty exemption ended in 2025, so parcels shipped direct from China now carry duties, brokerage fees and delays that land on your customer or on you. Choose suppliers with warehouses in your buyer's country instead, which is why apps with US and EU stock are the ones worth considering.",
+  },
+  {
+    question: "What happens when a customer wants to return a print-on-demand order?",
+    answer: "Print-on-demand products are made to order, so the printer won't take back an item because of a wrong size or a change of mind. If the item is defective or misprinted, the app reprints or refunds it. For anything else, you decide whether to refund the customer out of your margin, which is why you should set your return policy before your first sale.",
+  },
+];
+---
+
+<ArticleLayout
+  title="The Supplier Apps That Plug Into Shopify, Compared (2026)"
+  description="Printful, Printify, Gelato, CJdropshipping, Zendrop, Spocket, Syncee and Shopify Collective compared for a first store — pricing, shipping, and who each is for."
+  slug="shopify-supplier-apps"
+  category="Physical Products"
+  issueNumber="049"
+  readTime="14 Min Read"
+  datePublished="2026-09-18"
+  dateModified="2026-09-18"
+  faqs={faqs}
+  ogImage="/images/library/flatlay-digital-workbook.jpg"
+  related={[
+    { href: "/learn/shopify-store-guide", title: "How to Start a Shopify Store" },
+    { href: "/learn/print-on-demand-vs-dropshipping", title: "Print on Demand vs Dropshipping: Which to Start With" },
+    { href: "/learn/shopify-store-in-a-weekend", title: "How to Set Up a Shopify Store in a Weekend" },
+    { href: "/learn/what-to-sell-online", title: "How to Decide What to Sell When You Don't Make Anything" },
+    { href: "/learn/first-10-shopify-sales", title: "How to Get Your First 10 Shopify Sales Without Ads" }
+  ]}
+>
+  <header class="hero" slot="hero">
+    <span class="kicker reveal">Physical Products</span>
+    <h1 class="reveal">The Supplier Apps That Plug Into Shopify, Compared</h1>
+    <p class="sub reveal">Every one of these installs in a minute. Picking the wrong one costs you a season.</p>
+    <div class="hero-meta reveal"><span>14 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+  </header>
+
+  <figure class="hero-figure reveal" slot="hero">
+    <div class="img"><img src="/images/library/flatlay-digital-workbook.jpg" alt="A flat lay of a digital workbook, pen and notes laid out on a desk — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+    <figcaption>The Digital Income Edit™ · The Library</figcaption>
+  </figure>
+
+  <div slot="toc">
+    <nav class="toc" id="toc">
+      <div class="plate">
+        <div class="run">In This Edition</div>
+        <div class="lbl">Contents</div>
+        <ol>
+          <li><a href="#how">How a supplier app actually works</a></li>
+          <li><a href="#pod">The print-on-demand apps</a></li>
+          <li><a href="#dropship">The dropshipping apps</a></li>
+          <li><a href="#collective">Shopify Collective, the one most beginners haven't heard of</a></li>
+          <li><a href="#choose">How to choose in one sitting</a></li>
+          <li><a href="#check">The three things to check before you install anything</a></li>
+          <li><a href="#faq">Questions</a></li>
+        </ol>
+        <div class="foot">Est. 14 Min Read</div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="lede first reveal">Type "supplier" into the Shopify app store and you'll get more results than you can read in a lunch break. From the outside they look the same: a green install button, a catalogue of mugs and hoodies, a promise about fast shipping. The differences live underneath, in where the thing actually gets made and who pays when it goes wrong.</p>
+  <p class="reveal">This is the door in the house where you don't need your face, a warehouse or an audience. You need a product, a store and an app that ships for you. The build order is the same as everywhere else we teach: product first, store second, fulfilment app third, buyers last. This piece is step three, the one where a wrong guess quietly eats a season.</p>
+
+  <div class="chapter  reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="how">How a supplier app actually works</h2></div>
+  <p class="answer reveal">A supplier app sits between your store and someone else's warehouse. A customer orders from you, the app sends the order to the supplier, the supplier makes or picks it and ships it in your name. You pay their base price and keep the difference.</p>
+  <p class="reveal">You never touch the product. You never buy stock. The money comes in from the customer first, goes out to the supplier a moment later, and the gap is yours.</p>
+  <p class="reveal"><strong>The order flows one way.</strong> Someone buys a tote bag on your store for $28. Shopify takes the payment. The app charges your card the supplier's base price (say $12 plus shipping), and the supplier prints, packs and posts it with your store's name on the slip. You get an email saying it shipped.</p>
+  <p class="reveal"><strong>Installing it is the easy bit.</strong> Every app here connects to Shopify in under a minute, which is why beginners pick one on a whim. The install is instant; living with the choice is not.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Before you fall in love with any product, write base price, shipping and your retail price on one line. If the gap can't survive the occasional refund, it isn't a product.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-guide">How to Start a Shopify Store →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="pod">The print-on-demand apps</h2></div>
+  <p class="answer reveal">Print on demand is the beginner door: nothing is made until it's paid for, so there's no stock and no upfront cost beyond samples. Printful, Printify and Gelato are the three worth a first look; Apliiq and SPOD are the specialists.</p>
+  <table class="reveal">
+    <thead><tr><th>App</th><th>Free / paid</th><th>Where it prints</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td>Printful</td><td>Free; Growth $24.99/mo for product discounts</td><td>In-house facilities; about 86% of orders fulfilled in the customer's region</td><td>One reliable printer, consistent quality</td></tr>
+      <tr><td>Printify</td><td>Free; Premium $39/mo or $24.99/mo annual for up to 20% off</td><td>Marketplace of 90+ print providers, 140+ facilities</td><td>Widest catalogue, lowest base prices</td></tr>
+      <tr><td>Gelato</td><td>Free; Gelato+ $23.99/mo or $19.99/mo annual</td><td>Local production in 32 countries</td><td>Buyers outside the US</td></tr>
+      <tr><td>Apliiq</td><td>Free</td><td>United States</td><td>Apparel with a made-in-the-US story</td></tr>
+      <tr><td>SPOD</td><td>Free</td><td>Own facilities; 48-hour production claim</td><td>Speed of production</td></tr>
+    </tbody>
+  </table>
+  <p class="reveal"><strong>Printful</strong> owns its printers, and that's the most important thing about it. The print you approved on a sample is the print your customer gets in March and again in October. The catalogue is smaller and base prices sit a little higher than the marketplace apps; that's the price of not having to think about it.</p>
+  <p class="reveal"><strong>Printify</strong> is a marketplace, not a printer. You pick a product, then which of its 90-plus print providers makes it, and each provider sets its own price, production time and quality. The catalogue is enormous and base prices are the lowest of the three. The trade is that quality varies by provider, sometimes a lot, so you order samples from the specific provider you'll use. Not from Printify in general. From that provider.</p>
+  <p class="reveal"><strong>Gelato</strong> prints locally in 32 countries. If your buyer lives in Germany, her poster is printed in Europe and never crosses an ocean. For buyers spread across the UK, Europe and Australia, that means shorter delivery and fewer customs surprises.</p>
+  <p class="reveal"><strong>Apliiq</strong> is free US apparel. <strong>SPOD</strong> is free with a 48-hour production claim. Neither needs to be your first install.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> The design rule nobody reads until it's too late</span><p>Every one of these apps removes designs that use a cartoon character, a sports team logo, a band name, a meme, or a font licensed for personal use only. Recolouring it doesn't make it safe. Design something that's yours.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/print-on-demand-vs-dropshipping">Print on Demand vs Dropshipping: Which to Start With →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="dropship">The dropshipping apps</h2></div>
+  <p class="answer reveal">Dropshipping is door two, and in 2026 it's only worth walking through with suppliers whose stock sits in your buyer's country. The US de minimis duty exemption ended in 2025, so China-direct parcels now carry duties, brokerage fees and delays.</p>
+  <p class="reveal">Most of what you'll read about dropshipping was written before that was true. A parcel that used to slide into the US untaxed now gets stopped and billed, and the bill lands on your customer or on you as a refund. "Fast shipping" claims apply to US-warehouse stock only.</p>
+  <table class="reveal">
+    <thead><tr><th>App</th><th>Free tier</th><th>Paid tiers</th><th>Warehouses</th><th>Shipping claim</th></tr></thead>
+    <tbody>
+      <tr><td>CJdropshipping</td><td>Free, no monthly fee</td><td>None required</td><td>US, EU and China</td><td>3–7 days from local warehouses</td></tr>
+      <tr><td>Zendrop</td><td>Free</td><td>Beginner $29 · Pro $49 · Plus $79/mo</td><td>US and China</td><td>US stock 2–8 days after 1–3 days processing; China stock 10–15 days</td></tr>
+      <tr><td>Spocket</td><td>Free</td><td>Starter $39.99 · Pro $59.99 · Empire $99.99/mo</td><td>Suppliers in US and Europe</td><td>Varies by supplier</td></tr>
+      <tr><td>Syncee</td><td>Free for 25 products</td><td>Basic $39.99 · Pro $59.99 · Business $99.99/mo</td><td>Suppliers in US, Canada, EU, UK, Australia</td><td>Varies by supplier</td></tr>
+      <tr><td>DSers</td><td>Basic free</td><td>Advanced $19.90 · Pro $49.90/mo</td><td>AliExpress sellers, China-direct</td><td>Duties now apply</td></tr>
+      <tr><td>AutoDS</td><td>None</td><td>From about $20/mo; tiers change</td><td>Mixed</td><td>Varies by supplier</td></tr>
+    </tbody>
+  </table>
+  <p class="reveal"><strong>CJdropshipping</strong> is free with no monthly fee, rare in this category. It holds stock in US, EU and China warehouses and claims 3–7 day delivery from the local ones. The interface is busier than the polished apps, but the price of entry is zero and the US stock is real.</p>
+  <p class="reveal"><strong>Zendrop</strong> is the cleaner-looking option: free plan, then $29, $49 and $79 a month. US-warehouse products ship in 2–8 days after 1–3 days of processing; China stock takes 10–15 days plus duties. Filter for US stock and ignore the rest.</p>
+  <p class="reveal"><strong>Spocket</strong> and <strong>Syncee</strong> connect you to independent brands and wholesalers in the US, Europe and (for Syncee) Canada, the UK and Australia rather than one company's warehouse. Brand-name goods, thinner margins, parcels from inside your buyer's country. Both start free, Syncee up to 25 products, with paid tiers from $39.99 a month.</p>
+  <p class="reveal"><strong>DSers</strong> connects you to AliExpress sellers, which means China-direct shipping, which means duties apply now. In 2026 it's the one to skip. <strong>AutoDS</strong> automates listings from several sources with plans from about $20 a month; check the app's pricing page — this changes.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>Look for the warehouse flag before the price. A cheaper item shipped from China is not cheaper once the duty bill and the refund request arrive in the same week.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/what-to-sell-online">How to Decide What to Sell When You Don't Make Anything →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="collective">Shopify Collective, the one most beginners haven't heard of</h2></div>
+  <p class="answer reveal">Shopify Collective is free and built into Shopify. You list products from other Shopify brands, they ship the order, and you keep a margin. It's the cleanest version of door two because the supplier is a real shop in your own country.</p>
+  <p class="reveal">Nobody advertises Collective because there's no app company behind it selling a Pro plan. A brand making ceramic mugs in Ohio opts in as a supplier. You add their mugs at wholesale, set your own retail price, and when someone buys, the Ohio brand ships it and you're paid the difference.</p>
+  <p class="reveal"><strong>The requirements are strict and that's the point.</strong> Both stores must be on a paid Shopify plan, use Shopify Payments, and be in the same country and currency. Every Collective parcel ships from inside the country it sells to.</p>
+  <p class="reveal"><strong>What it's good at.</strong> A curated store around a theme, a room or a person, stocked with real small brands, without holding any of it. Wholesale margins, but goods people photograph and reorder.</p>
+  <p class="reveal"><strong>What it isn't.</strong> A catalogue of thousands of generic items. The supply is whichever brands have opted in, and in some niches that's a short list.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Collective in one line</span><p>Free · built into Shopify · other Shopify brands ship for you · both stores on a paid plan, on Shopify Payments, in the same country and currency.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/shopify-store-in-a-weekend">How to Set Up a Shopify Store in a Weekend →</a></p>
+
+  <div class="chapter  reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="choose">How to choose in one sitting</h2></div>
+  <p class="answer reveal">Start with print on demand unless you have a clear reason not to. Then pick by one question: do you want one reliable printer, the widest catalogue, or local printing for buyers outside the US?</p>
+  <p class="reveal"><strong>Printful</strong> if you want one reliable printer and would rather pay a little more per item than police quality. The default for a first store.</p>
+  <p class="reveal"><strong>Printify</strong> if you want the widest catalogue and the lowest base prices, and you will actually order samples from the specific provider. If you know you'll skip the samples, pick Printful.</p>
+  <p class="reveal"><strong>Gelato</strong> if most of your buyers are outside the US. Local printing in 32 countries beats a cheaper base price once you count the customs forms you'll never fill in.</p>
+  <p class="reveal"><strong>Zendrop or CJdropshipping</strong> if you're set on ready-made goods, and only for their US-warehoused stock. CJ costs nothing monthly; Zendrop is tidier to use.</p>
+  <p class="reveal"><strong>Spocket or Syncee</strong> if you want brand-name products from US or European suppliers and can live with thinner margins for goods that arrive quickly.</p>
+  <p class="reveal"><strong>Shopify Collective</strong> if you'd rather curate real small brands than sell blanks, and you're on a paid plan with Shopify Payments.</p>
+  <p class="reveal">Whichever you pick, the store underneath is the same. <a href="https://shopify.pxf.io/eK3xYz" rel="sponsored noopener" target="_blank">Shopify's $1-a-month start</a> (affiliate link) gives you a 3-day free trial then $1 a month for your first three months on monthly billing, and every app here connects to it. Shopify's prices are theirs and do change.</p>
+  <div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>One app for your first ten sales. Not three. Every extra app is another dashboard and another place an order can get stuck while you're at work.</p></div>
+  <p class="deeper reveal"><span>Go deeper —</span> <a href="/learn/first-10-shopify-sales">How to Get Your First 10 Shopify Sales Without Ads →</a></p>
+
+  <div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="check">The three things to check before you install anything</h2></div>
+  <p class="answer reveal">Sample cost, return policy and where it ships from. Ten minutes on those three saves you the season the wrong app would cost.</p>
+  <p class="reveal"><strong>Sample cost.</strong> Price one unit of the product you plan to sell shipped to your own door, postage included. That's the entry fee for selling it honestly. Order it. Wash the shirt. Drop the mug. Nobody else will test it before a stranger does.</p>
+  <p class="reveal"><strong>Return policy.</strong> Print-on-demand goods are made to order, so there are no returns for a wrong size or a change of mind. You pay for reprints unless it's a defect. Read what counts as a defect in the app's own words, then write your store's policy to match it before the first sale, not after the first complaint.</p>
+  <p class="reveal"><strong>Where it ships from.</strong> Not where the company is based. Where the parcel leaves from, for your product, to your buyer's country. If the answer is China and your buyer is in the US, choose a different product or app.</p>
+  <p class="reveal">For what it's worth, I started on CJdropshipping linked to Shopify and never had a problem with it. That's my experience, not a guarantee, and it was with US-warehoused products chosen after these three checks.</p>
+  <div class="box check reveal"><span class="tag"><span class="g">✓</span> Before you press install</span><p>Sample priced to your door · Defect policy read and matched · Ship-from country confirmed. Three checks, one sitting, then install and move on.</p></div>
+  <p class="reveal">If you want the whole build lesson by lesson, from product to app to first shipped order, The Shopify Edit inside the <a href="/membership">Membership Standard</a> ($9/month or $99/year, 7-day free trial) walks it in order. The free <a href="/resources/shopify-starter-kit">Shopify Starter Kit</a> is the short version.</p>
+
+  <div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+  {faqs.map((f) => (
+    <>
+      <h3 class="reveal">{f.question}</h3>
+      <p class="reveal">{f.answer}</p>
+    </>
+  ))}
+
+</ArticleLayout>
