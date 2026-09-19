@@ -88,7 +88,7 @@
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
-      "verified": "2026-09-19 — read directly from the Skool plan selector at /plans",
+      "verified": "2026-09-19 — read from the Skool plan selector at /plans and confirmed by Jodie the same day",
       "note": "Formerly Membership Premium. Includes Pinterest Foundations™ and, from 18 Sep 2026 (Decision 83), The Shopify Edit."
     },
     {
@@ -98,7 +98,7 @@
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
-      "verified": "2026-09-19 — read directly from the Skool plan selector at /plans",
+      "verified": "2026-09-19 — read from the Skool plan selector at /plans and confirmed by Jodie the same day",
       "note": "Formerly Membership VIP. Includes The Ads Edit™ and unlocks The Premium Vault."
     },
     {
@@ -110,12 +110,16 @@
       "status": "NOT LIVE. Third Skool tier card is toggled off and reserved. Sold by application. Structure undecided — do not pre-solve. Stripped from every asset until launch. Supersedes the retired name Faceless Income Intensive™."
     }
   ],
-  "tier_pricing_open_question": {
-    "status": "OPEN — raised 19 Sep 2026, awaiting Jodie. Do not resolve silently, and do not publish a tier price other than the verified ones in ladder[] until it closes.",
-    "what_skool_shows": "The Skool plan selector at /plans renders Standard $9/month and Premium $27/month. The community about page renders the same two figures. Read directly on 19 Sep 2026.",
-    "what_jodie_said": "On 19 Sep 2026, in one session: first that any member paying $17 or $29 a month is old VIP / new Premium; then that the current tiers are $7/month and $29/month and that before those prices they were lower.",
-    "why_it_matters": "Three of those figures — $7, $17 and $29 — appear nowhere on Skool. canon also carries a hard FAIL check saying Skool has never been $17/month. Legacy grandfathered pricing may explain some of it, but not the current-tier figures.",
-    "the_one_question": "Are the prices a new member pays today $9 and $27, as Skool shows, or $7 and $29?"
+  "tier_pricing_settled": {
+    "status": "CLOSED — 19 September 2026. Settled by Jodie. This is a closed item: it is never re-raised as an open question, an audit finding, or a defect.",
+    "decision": "Membership Standard is $9/month. Membership Premium is $27/month. These are the prices a new member pays today.",
+    "evidence": "Matches the Skool plan selector at /plans and the community about page, both read directly on 19 Sep 2026, and Jodie confirmed the same day.",
+    "figures_that_are_not_tier_prices": [
+      "$7/month",
+      "$17/month",
+      "$29/month"
+    ],
+    "why_recorded": "All three were named in conversation on 19 Sep 2026 and none has ever been a Skool tier price. They are recorded here so the check below has a reason and so the question is not asked a third time. Legacy grandfathered members pay less than the current price for their tier; those rates are never published and are never the price of a tier."
   },
   "retired_structure": {
     "free_tier": "PERMANENTLY RETIRED. Never reference 'Free Community', 'Free tier', or a $0 Skool rung again.",
@@ -126,7 +130,7 @@
       "Membership VIP ($27)": "Membership Premium",
       "The VIP Vault": "The Premium Vault"
     },
-    "never_existed": "No Skool tier has ever been sold at $17/month as a current price. See tier_pricing_open_question before treating any $17 figure as legacy."
+    "never_existed": "No Skool tier has ever been sold at $7, $17 or $29 a month. Settled 19 Sep 2026 — see tier_pricing_settled. Any asset showing one of those as a tier price is wrong."
   },
   "repurposing_pack": {
     "asset_count": 24,
@@ -619,7 +623,7 @@
         "why": "Free tier permanently retired; VIP renamed to Premium."
       },
       {
-        "id": "unverified_tier_price",
+        "id": "wrong_tier_price",
         "patterns": [
           "\\$7 ?/ ?(mo|month)",
           "\\$7/mo",
@@ -628,7 +632,7 @@
           "\\$29 ?/ ?(mo|month)",
           "\\$29/mo"
         ],
-        "why": "Tier prices verified on Skool 19 Sep 2026 are $9 and $27. $7, $17 and $29 have been named but appear nowhere on Skool — see tier_pricing_open_question. Any of them printed as a tier price is a FAIL until that closes. $29/month may legitimately appear as Shopify's annual Basic plan price; check what the figure is describing before failing it.",
+        "why": "Tier prices are $9 Standard and $27 Premium — settled 19 Sep 2026, see tier_pricing_settled. $7, $17 and $29 have never been Skool tier prices. Any of them printed as a tier price is a FAIL. $29/month may legitimately appear as Shopify's annual Basic plan price; check what the figure is describing before failing it.",
         "scope": "tier prices only"
       },
       {
