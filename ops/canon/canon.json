@@ -3,7 +3,7 @@
     "brand": "The Digital Income Edit™",
     "tagline": "Build Your Business Backwards. Scale It Forward.™",
     "status": "CURRENT — single live copy. No versioned predecessors. Supersedes canon.json v1.0/v1.1 and every reconciliation document.",
-    "issued": "2026-09-01",
+    "issued": "2026-09-19",
     "precedence": [
       "Live site, repo, Skool and shop — override every document including this one",
       "TDIE_CANON.md and canon.json — governing, kept in sync same-day",
@@ -14,7 +14,8 @@
     "repo": "jodiedeo7-glitch/tdie",
     "article_route_prefix": "/learn/",
     "rule_of_use": "No asset ships naming a product, price, or link that is not a row in products[]. Absence from a document is never grounds for deletion; only positive confirmation that a product does not exist permits removal.",
-    "product_register_rule": "A product gets a row here before it gets a single asset. No exceptions."
+    "product_register_rule": "A product gets a row here before it gets a single asset. No exceptions.",
+    "link_fix_2026_09_19": "The $10/Day Traffic Machine — Starter Map URL read 8dfcbb25 in the project copy of canon and 8dcfbb25 in the repo copy. Both were loaded in a browser on 19 Sep 2026: 8dcfbb25 returns the product page, 8dfcbb25 returns a Beacons error page. 8dcfbb25 is correct and is now the only value."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -30,6 +31,16 @@
       "www.skool.com/thedigitalincomeedit"
     ],
     "note": "Bare domain and learn. both 308 to www. An asset printed with a redirecting host is printed wrong. links.* is not fetchable and not indexed — unverifiable by tooling."
+  },
+  "key_pages": {
+    "note": "Owned pages that are routing destinations but not products. A link here is as usable in an asset as a products[] row.",
+    "weekend_ecosystem_sales": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem",
+    "weekend_ecosystem_preview": "https://www.thedigitalincomeedit.com/weekend-ecosystem/preview",
+    "weekend_ecosystem_preview_note": "A look inside, no email required. Verified live 19 Sep 2026. The low-friction destination for cold traffic — use it where a sales page would be too strong an ask.",
+    "article_library": "https://www.thedigitalincomeedit.com/learn",
+    "find_your_door": "https://www.thedigitalincomeedit.com/resources/find-your-door",
+    "dashboard_stats_api": "https://www.thedigitalincomeedit.com/api/dashboard-stats",
+    "dashboard_stats_note": "Read-only JSON feed for the Business Command Centre — MailerLite group sizes and the published article list. Added 19 Sep 2026. Counts and titles only, no subscriber data."
   },
   "palette": {
     "signature_hot_pink": "#D62E73",
@@ -77,7 +88,8 @@
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
-      "note": "Formerly Membership Premium. Includes Pinterest Foundations™."
+      "verified": "2026-09-19 — read directly from the Skool plan selector at /plans",
+      "note": "Formerly Membership Premium. Includes Pinterest Foundations™ and, from 18 Sep 2026 (Decision 83), The Shopify Edit."
     },
     {
       "name": "Membership Premium",
@@ -86,6 +98,7 @@
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
+      "verified": "2026-09-19 — read directly from the Skool plan selector at /plans",
       "note": "Formerly Membership VIP. Includes The Ads Edit™ and unlocks The Premium Vault."
     },
     {
@@ -97,15 +110,34 @@
       "status": "NOT LIVE. Third Skool tier card is toggled off and reserved. Sold by application. Structure undecided — do not pre-solve. Stripped from every asset until launch. Supersedes the retired name Faceless Income Intensive™."
     }
   ],
+  "tier_pricing_open_question": {
+    "status": "OPEN — raised 19 Sep 2026, awaiting Jodie. Do not resolve silently, and do not publish a tier price other than the verified ones in ladder[] until it closes.",
+    "what_skool_shows": "The Skool plan selector at /plans renders Standard $9/month and Premium $27/month. The community about page renders the same two figures. Read directly on 19 Sep 2026.",
+    "what_jodie_said": "On 19 Sep 2026, in one session: first that any member paying $17 or $29 a month is old VIP / new Premium; then that the current tiers are $7/month and $29/month and that before those prices they were lower.",
+    "why_it_matters": "Three of those figures — $7, $17 and $29 — appear nowhere on Skool. canon also carries a hard FAIL check saying Skool has never been $17/month. Legacy grandfathered pricing may explain some of it, but not the current-tier figures.",
+    "the_one_question": "Are the prices a new member pays today $9 and $27, as Skool shows, or $7 and $29?"
+  },
   "retired_structure": {
     "free_tier": "PERMANENTLY RETIRED. Never reference 'Free Community', 'Free tier', or a $0 Skool rung again.",
     "grandfathered": "~1,231 members carried over from the prior free tier.",
+    "legacy_pricing": "Members who joined before the current prices pay less than the current price for the same tier. Legacy rates are real and are never published, never compared to current prices in an asset, and never used as the price of a tier.",
     "renames": {
       "Membership Premium ($9)": "Membership Standard",
       "Membership VIP ($27)": "Membership Premium",
       "The VIP Vault": "The Premium Vault"
     },
-    "never_existed": "Skool at $17/month. Any asset showing $17/mo is wrong."
+    "never_existed": "No Skool tier has ever been sold at $17/month as a current price. See tier_pricing_open_question before treating any $17 figure as legacy."
+  },
+  "repurposing_pack": {
+    "asset_count": 24,
+    "settled": "2026-09-19",
+    "breakdown": "10 Pinterest pins · 1 carousel · 8 Threads posts · 2 reels · 1 Facebook post · 1 email · 1 community post = 24. The headlines bank is a bank, not an asset, and is not counted.",
+    "authority": "Matches the live sales page, the preview page, and the Module 17 slug /weekend-ecosystem/module-17-one-article-twenty-four-assets, with a permanent redirect in vercel.json from the retired -thirty-assets slug.",
+    "retired_numbers": [
+      "thirty",
+      "26"
+    ],
+    "retired_note": "'Roughly thirty' is superseded by the 301. '26' briefly entered the docs on 19 Sep 2026 from an older promo itemisation that counted eight carousel slides separately and only three Threads posts; it was never on the site. Both are defects wherever they survive."
   },
   "products": [
     {
@@ -152,6 +184,25 @@
       "platform": "Owned site",
       "url": "https://www.thedigitalincomeedit.com/resources/weekend-build-challenge",
       "note": "Free 5-day email challenge. Own MailerLite form (198806704189605117) → group \"Challenge — Weekend Build\" → 8-email automation ending at The Weekend Ecosystem™. No membership, Vault or BAMI mention in the sequence."
+    },
+    {
+      "name": "The Shopify Starter Kit",
+      "price": 0,
+      "owned": true,
+      "platform": "Owned site",
+      "url": "https://www.thedigitalincomeedit.com/resources/shopify-starter-kit",
+      "note": "Free lead magnet for Pillar 13 (Physical Products). Added 18 Sep 2026 (Decision 83). Delivering live (18 Sep 2026): 5-page editorial PDF hosted in MailerLite; the kit page posts to a dedicated single-opt-in MailerLite form (id 198982894072366185) that adds subscribers to the Physical Products group, and the active automation \"Shopify Starter Kit — Delivery\" emails the kit on join. First per-pillar freebie; the other twelve still use the shared TDIE Freebie Capture form."
+    },
+    {
+      "name": "Shopify",
+      "price": 1,
+      "display": "$1/month for the first 3 months after a 3-day free trial (Shopify's offer, monthly billing only); then Shopify's plan price — Basic $39/month monthly or $29/month annual as of 18 Sep 2026",
+      "recurring": true,
+      "owned": false,
+      "platform": "Shopify (affiliate)",
+      "url": "https://shopify.pxf.io/eK3xYz",
+      "affiliate_destination": "https://shopify.pxf.io/eK3xYz",
+      "note": "AFFILIATE, NOT OWNED. Pillar 13's affiliate slot. Founder decision (18 Sep 2026, Decision 83, amended same day): EVERY Shopify link on every surface — site, Skool, email, Facebook — is Jodie's DIRECT affiliate link https://shopify.pxf.io/eK3xYz. No bridge/redirect page. Wherever the link ships it travels with rel=\"sponsored\" and the affiliate disclosure as a set (Standing Rule 18); on Facebook the disclosure is carried in the comment, and NO earnings figures ever appear on a Meta surface. Prices are Shopify's and change; verify quarterly."
     },
     {
       "name": "550+ BRILLIANT chatGPT prompts for your business",
@@ -353,6 +404,28 @@
       "url": "https://links.thedigitalincomeedit.com/shop/7d7d1473-4099-4e9a-b991-8de80a248d00"
     }
   ],
+  "own_affiliate_programs": {
+    "note": "Programs where TDIE members earn commission on TDIE's own products. Distinct from affiliate_rule, which governs TDIE promoting other people's products.",
+    "weekend_ecosystem": {
+      "status": "LIVE — turned on 19 Sep 2026",
+      "commission_percent": 30,
+      "commission_per_sale": 29.1,
+      "product_price": 97,
+      "cap": "none",
+      "application": "none",
+      "link": "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c",
+      "link_verified": "2026-09-19 — resolves to the Weekend Ecosystem™ page",
+      "mechanic": "One link, identical for every member. Members add it to their own Beacons and Beacons handles attribution. There is NO 'reply AFFILIATE to get your link' step — that mechanic appeared in earlier sent copy, was never real, and does not appear in copy again.",
+      "unverified": "That a click from a member's own Beacons page attributes the sale back to that member. Confirm before promoting hard — an affiliate who promotes and sees no commission is a trust problem, not a support ticket.",
+      "meta_rule": "The 30% and $29.10 figures are permitted on Skool, Threads, email and the site. NEVER on Facebook or Instagram — earnings claims.",
+      "not_a_pack_cta": "This is a member-promotion link. It never fills the affiliate slot in a Repurposing Pack and never appears in a pin, carousel, reel, email or Facebook post produced by a pack."
+    },
+    "skool_tiers": {
+      "status": "LIVE",
+      "commission_percent": 40,
+      "note": "Skool's own affiliate rate on membership tiers. Separate from the Weekend Ecosystem™ rate — two rates, not a conflict."
+    }
+  },
   "flagged_not_cut": {
     "note": "Named in canon, no confirmed live listing. Do not write into an asset until confirmed. Flagged, never deleted.",
     "items": [
@@ -440,6 +513,12 @@
       "n": 12,
       "name": "Blogging",
       "slug": "/learn/complete-blogging-guide"
+    },
+    {
+      "n": 13,
+      "name": "Physical Products",
+      "slug": "/learn/shopify-store-guide",
+      "note": "Added 18 Sep 2026 (Decision 83). The physical-goods door: Shopify, print on demand, dropshipping. Cluster: print-on-demand-vs-dropshipping, shopify-store-in-a-weekend, what-to-sell-online, shopify-supplier-apps, first-10-shopify-sales. Free: The Shopify Starter Kit. Paid: Membership Standard (The Shopify Edit). Affiliate: Shopify — Jodie's direct affiliate link on every link, with rel=sponsored and disclosure."
     }
   ],
   "checks": {
@@ -540,12 +619,36 @@
         "why": "Free tier permanently retired; VIP renamed to Premium."
       },
       {
-        "id": "phantom_price",
+        "id": "unverified_tier_price",
         "patterns": [
+          "\\$7 ?/ ?(mo|month)",
+          "\\$7/mo",
           "\\$17 ?/ ?(mo|month)",
-          "\\$17/mo"
+          "\\$17/mo",
+          "\\$29 ?/ ?(mo|month)",
+          "\\$29/mo"
         ],
-        "why": "Skool has never been $17/month. Live lead magnets still print it."
+        "why": "Tier prices verified on Skool 19 Sep 2026 are $9 and $27. $7, $17 and $29 have been named but appear nowhere on Skool — see tier_pricing_open_question. Any of them printed as a tier price is a FAIL until that closes. $29/month may legitimately appear as Shopify's annual Basic plan price; check what the figure is describing before failing it.",
+        "scope": "tier prices only"
+      },
+      {
+        "id": "retired_asset_count",
+        "patterns": [
+          "thirty assets",
+          "30 assets",
+          "26 assets",
+          "26 finished"
+        ],
+        "why": "The Repurposing Pack produces 24 finished assets. See repurposing_pack."
+      },
+      {
+        "id": "retired_affiliate_mechanic",
+        "patterns": [
+          "reply AFFILIATE",
+          "comment AFFILIATE",
+          "type AFFILIATE"
+        ],
+        "why": "Never a real mechanic. One shared link, added to the member's own Beacons. See own_affiliate_programs.weekend_ecosystem."
       },
       {
         "id": "retired_vault_description",
@@ -607,9 +710,10 @@
         "patterns": [
           "\\$[0-9,]+ ?(a|per) ?(day|week|month)",
           "made \\$",
-          "earned \\$"
+          "earned \\$",
+          "\\$29\\.10"
         ],
-        "why": "Income claims are permitted everywhere except Meta platforms. Check the destination before shipping."
+        "why": "Income claims are permitted everywhere except Meta platforms. Check the destination before shipping. The affiliate commission figure counts as an earnings claim on Meta."
       },
       {
         "id": "third_party_ip",
@@ -735,8 +839,11 @@
     "shop": "Beacons — links.thedigitalincomeedit.com",
     "email": "MailerLite",
     "email_env": [
+      "MAILERLITE_API_KEY",
       "MAILERLITE_GROUP_ID (buyers)",
-      "MAILERLITE_WAITLIST_GROUP_ID (waitlist)"
+      "MAILERLITE_WAITLIST_GROUP_ID (waitlist)",
+      "MAILERLITE_COMPLETED_GROUP_ID (completed)",
+      "DASHBOARD_TOKEN (optional, gates /api/dashboard-stats)"
     ],
     "analytics": "Vercel Web Analytics, site-wide",
     "pinterest": "@TheDigitalIncomeEditTDIE — domain-wide block open; Skool links only",
