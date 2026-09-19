@@ -576,7 +576,7 @@
           "starting at \\$",
           "as low as \\$"
         ],
-        "why": "Standing Rule 10. Prices are exact, never floors."
+        "why": "Standing Rule 10. Prices are exact, never floors. This is a price-accuracy rule, not a vocabulary rule."
       },
       {
         "id": "banned_product_name",
@@ -584,14 +584,14 @@
           "Pretty & Paid Digital Vault",
           "Pretty & Paid Vault"
         ],
-        "why": "SOP 12 step 5. Non-canonical name variants."
+        "why": "SOP 12 step 5. Non-canonical variants of a product's own registered name — a naming-accuracy rule."
       },
       {
         "id": "retired_domain",
         "patterns": [
           "nursemadedigital\\.com"
         ],
-        "why": "Decision 6. Retired domain."
+        "why": "Decision 6. Retired domain — a dead link, not a word choice."
       },
       {
         "id": "non_canonical_host",
@@ -608,7 +608,7 @@
           "deep plum",
           "antique gold"
         ],
-        "why": "Retired palette language."
+        "why": "Retired palette. These name colours that are no longer in the brand — a design-accuracy rule."
       },
       {
         "id": "bami_leak",
@@ -616,7 +616,7 @@
           "Business Architect Mentorship Intensive",
           "\\bBAMI\\b"
         ],
-        "why": "Stripped from all assets until launch.",
+        "why": "Pre-launch product with no price or URL. Naming it in a live asset promises something that cannot be bought.",
         "scope": "published"
       },
       {
@@ -634,7 +634,7 @@
           "free tier",
           "Free Tier"
         ],
-        "why": "Free tier permanently retired; VIP renamed to Premium."
+        "why": "These name a tier that no longer exists. A reader offered a free tier cannot join one — a fact rule, not a style rule."
       },
       {
         "id": "wrong_tier_price",
@@ -666,7 +666,7 @@
           "comment AFFILIATE",
           "type AFFILIATE"
         ],
-        "why": "Never a real mechanic. One shared link, added to the member's own Beacons. See own_affiliate_programs.weekend_ecosystem."
+        "why": "Never a real mechanic. A member who replies gets nothing. One shared link, added to the member's own Beacons. See own_affiliate_programs.weekend_ecosystem."
       },
       {
         "id": "retired_vault_description",
@@ -674,7 +674,7 @@
           "rebrandable",
           "transformation workflows"
         ],
-        "why": "Decision 73. The 6+3 description is retired."
+        "why": "Decision 73. The 6+3 description no longer matches the live product."
       },
       {
         "id": "results_timing_claim",
@@ -684,7 +684,7 @@
           "results in \\d+",
           "launch tonight"
         ],
-        "why": "No promises about how fast results arrive. Brand-wide."
+        "why": "A promise about how fast money arrives. Cannot be substantiated, and it is the claim type that draws platform review. Claim rule."
       },
       {
         "id": "vault_included_in_standard",
@@ -706,7 +706,7 @@
           "(?<!Value )(?<!VIP )(?<!Paid )\\bPLR Vault\\b",
           "\\bthe Vault\\b"
         ],
-        "why": "SOP 12 steps 5–6. Short form is banned in first-reference positions — title, heading, meta, button, anchor text."
+        "why": "Three different products carry the word Vault. A bare 'the Vault' in a first-reference position — title, heading, meta, button, anchor — tells the reader which one is meant only by luck. Disambiguation, not vocabulary."
       },
       {
         "id": "tier_comparison_frame",
@@ -716,7 +716,7 @@
           "\\$9[^.]{0,80}\\$11",
           "\\$11[^.]{0,80}\\$9"
         ],
-        "why": "Two prices on one screen with no statement of what each buys. Standing Rule 32."
+        "why": "Two prices on one screen with no statement of what each buys. Standing Rule 32. The fix is to name what each price buys, not to remove a word."
       },
       {
         "id": "meta_earnings_claim",
@@ -752,7 +752,7 @@
           "\\d+\\+? women already",
           "most popular"
         ],
-        "why": "No fabricated social proof, no manufactured scarcity."
+        "why": "Flags a proof or scarcity claim so the number can be checked against reality. A TRUE figure passes — '1,200+ women already inside' is supported by the ~1,231 grandfathered count. An invented one does not. This check asks 'is it true', never 'is that word allowed'."
       },
       {
         "id": "income_screenshot_proof",
@@ -762,7 +762,7 @@
           "Total Revenue",
           "vs last month"
         ],
-        "why": "Proof strategy is the business itself, not income screenshots."
+        "why": "Proof strategy is the business itself, not income screenshots. Positioning rule."
       },
       {
         "id": "value_vault_bare_bullet",
