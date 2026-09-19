@@ -2,7 +2,10 @@
 //
 // Returns MailerLite list sizes and the published article list so the dashboard
 // stops being typed in by hand. No subscriber data, no email addresses, no PII —
-// counts and article titles only.
+// counts, titles and slugs only.
+//
+// Response shape is the contract the Command Centre reads:
+//   { generated_at, mailerlite: { subscribers, groups: {...} }, articles: [ {slug,title,pub,url} ] }
 //
 // Environment (Vercel project settings, never committed):
 //   MAILERLITE_API_KEY              required
@@ -23,26 +26,29 @@ const GROUPS = {
 
 const SITE = "https://www.thedigitalincomeedit.com";
 
-async function mailerliteGroups() {
-  if (!ML_KEY) return { error: "MAILERLITE_API_KEY is not set" };
-
-  const r = await fetch("https://connect.mailerlite.com/api/groups?limit=100", {
-    headers: {
-      Authorization: `Bearer ${ML_KEY}`,
-      Accept: "application/json",
-    },
+const ml = (path) =>
+  fetch(`https://connect.mailerlite.com/api/${path}`, {
+    headers: { Authorization: `Bearer ${ML_KEY}`, Accept: "application/json" },
   });
 
-  if (!r.ok) return { error: `MailerLite returned ${r.status}` };
+async function mailerlite() {
+  if (!ML_KEY) return { error: "MAILERLITE_API_KEY is not set" };
 
-  const body = await r.json();
-  const rows = Array.isArray(body?.data) ? body.data : [];
+  const [gRes, sRes] = await Promise.all([
+    ml("groups?limit=100"),
+    ml("subscribers?limit=1&filter[status]=active"),
+  ]);
+
+  if (!gRes.ok) return { error: `MailerLite groups returned ${gRes.status}` };
+
+  const gBody = await gRes.json();
+  const rows = Array.isArray(gBody?.data) ? gBody.data : [];
   const byId = new Map(rows.map((g) => [String(g.id), g]));
 
-  const out = {};
+  const groups = {};
   for (const [label, id] of Object.entries(GROUPS)) {
     const g = byId.get(String(id));
-    out[label] = g
+    groups[label] = g
       ? {
           id: String(id),
           name: g.name ?? null,
@@ -50,47 +56,80 @@ async function mailerliteGroups() {
           unsubscribed: Number(g.unsubscribed_count ?? 0),
           unconfirmed: Number(g.unconfirmed_count ?? 0),
         }
-      : { id: String(id), error: "group not found on this account" };
+      : { id: String(id), active: 0, error: "group not found on this account" };
   }
 
-  // Total list size across the account, not just these three groups.
-  const totalRow = rows.reduce((a, g) => a + Number(g.active_count ?? 0), 0);
-  return { groups: out, all_groups_active_sum: totalRow, group_count: rows.length };
+  // Unique active subscribers across the whole account. Falls back to the sum of
+  // group counts, which double-counts anyone in more than one group.
+  let subscribers = null;
+  if (sRes.ok) {
+    const sBody = await sRes.json().catch(() => null);
+    const total = sBody?.meta?.total ?? sBody?.total ?? null;
+    if (typeof total === "number") subscribers = total;
+  }
+  const groupSum = rows.reduce((a, g) => a + Number(g.active_count ?? 0), 0);
+  if (subscribers === null) subscribers = groupSum;
+
+  return {
+    subscribers,
+    buyers: groups.buyers?.active ?? 0,
+    waitlist: groups.waitlist?.active ?? 0,
+    completed: groups.completed?.active ?? 0,
+    groups,
+    group_count: rows.length,
+    group_active_sum: groupSum,
+    subscribers_is_unique: subscribers !== groupSum,
+  };
 }
 
 function textBetween(xml, tag) {
   const m = xml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i"));
   if (!m) return null;
-  return m[1]
-    .replace(/^<!\[CDATA\[/, "")
-    .replace(/\]\]>$/, "")
-    .trim();
+  return m[1].replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "").trim();
+}
+
+function decode(s) {
+  if (!s) return s;
+  return s
+    .replace(/&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
 }
 
 async function articles() {
   const r = await fetch(`${SITE}/rss.xml`, {
     headers: { Accept: "application/rss+xml, application/xml, text/xml" },
   });
-  if (!r.ok) return { error: `rss.xml returned ${r.status}` };
+  if (!r.ok) throw new Error(`rss.xml returned ${r.status}`);
 
   const xml = await r.text();
-  const items = xml.split(/<item[\s>]/i).slice(1);
-
-  const list = items.map((chunk) => {
-    const block = chunk.split(/<\/item>/i)[0];
-    return {
-      title: textBetween(block, "title"),
-      url: textBetween(block, "link"),
-      published: textBetween(block, "pubDate"),
-    };
-  });
-
-  return { count: list.length, items: list };
+  return xml
+    .split(/<item[\s>]/i)
+    .slice(1)
+    .map((chunk) => {
+      const block = chunk.split(/<\/item>/i)[0];
+      const url = textBetween(block, "link") || "";
+      const slug = (url.split("/learn/")[1] || url.split("/").filter(Boolean).pop() || "")
+        .replace(/\/$/, "");
+      const pubDate = textBetween(block, "pubDate");
+      const d = pubDate ? new Date(pubDate) : null;
+      return {
+        slug,
+        title: decode(textBetween(block, "title")),
+        pub: d && !isNaN(d) ? d.toISOString().slice(0, 10) : null,
+        url,
+      };
+    })
+    .filter((a) => a.slug);
 }
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Accept, Content-Type");
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
 
   if (req.method === "OPTIONS") return res.status(204).end();
@@ -101,14 +140,16 @@ export default async function handler(req, res) {
     if (sent !== DASHBOARD_TOKEN) return res.status(401).json({ error: "unauthorized" });
   }
 
-  const [email, learn] = await Promise.all([
-    mailerliteGroups().catch((e) => ({ error: String(e?.message || e) })),
-    articles().catch((e) => ({ error: String(e?.message || e) })),
+  const [mlOut, artOut] = await Promise.all([
+    mailerlite().catch((e) => ({ error: String(e?.message || e) })),
+    articles().catch(() => null),
   ]);
 
   return res.status(200).json({
     generated_at: new Date().toISOString(),
-    email,
-    articles: learn,
+    mailerlite: mlOut,
+    articles: Array.isArray(artOut) ? artOut : [],
+    article_count: Array.isArray(artOut) ? artOut.length : 0,
+    articles_error: artOut ? null : "could not read rss.xml",
   });
 }
