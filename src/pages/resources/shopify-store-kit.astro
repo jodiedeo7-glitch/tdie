@@ -26,7 +26,7 @@ import Analytics from '@vercel/analytics/astro';
   <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Shopify Store Kit | The Digital Income Edit™</title>
-  <meta name="description" content="Four free downloads to open a print-on-demand or dropshipping store — 30 money-making niches, the weekend setup checklist, the vendor and app directory, and 20 AI prompts. No email." />
+  <meta name="description" content="Four free downloads to open a print-on-demand or dropshipping store — 30 money-making niches, the weekend setup checklist, the vendor and app directory, and 20 AI prompts — three instant, the niche vault for your email." />
   <link rel="canonical" href="https://www.thedigitalincomeedit.com/resources/shopify-store-kit" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Shopify Store Kit" />
@@ -77,7 +77,7 @@ import Analytics from '@vercel/analytics/astro';
   <div class="hero">
     <span class="kicker">Free — 4 Downloads</span>
     <h1>The Shopify Store Kit</h1>
-    <p class="sub">Everything you decide on paper before you open a store — the niche, the setup, the supplier, the words. Four PDFs, no email.</p>
+    <p class="sub">Everything you decide on paper before you open a store — the niche, the setup, the supplier, the words. Four PDFs — three instant, one for your email.</p>
     <div class="hero-meta">
       <span>4 PDFs</span>
       <span class="b"></span>
@@ -96,7 +96,7 @@ import Analytics from '@vercel/analytics/astro';
 
       <p>What it needs is the thinking done first: who you're selling to, which supplier makes it, how the store is set up, and the words on the page. That's what these four do. Print on demand means nothing is made until it's paid for, so a wrong guess costs you an afternoon, not a pallet.</p>
 
-      <p>Everything here is free, and there's no email wall. Each PDF carries the exact Shopify sign-up link, so the day you're ready, the door is one tap away.</p>
+      <p>Everything here is free. Three download the moment you click; the Niche Vault unlocks with your email. Each PDF carries the exact Shopify sign-up link, so the day you're ready, the door is one tap away.</p>
 
       <div class="box check">
         <div class="tag"><span class="g">✦</span> What's inside — four PDFs</div>
@@ -109,14 +109,45 @@ import Analytics from '@vercel/analytics/astro';
       </div>
 
       <div class="box action">
-        <div class="tag"><span class="g">✦</span> Yours free — all four</div>
+        <div class="tag"><span class="g">✦</span> Yours free</div>
         <h2>Download the kit</h2>
-        <p>No email, no drip sequence. Take the ones you need.</p>
-        <p style="margin:16px 0 8px"><a class="btn" href="/shopify-niche-vault.pdf" download>The Store Niche Vault <span class="a">→</span></a></p>
-        <p style="margin:8px 0"><a class="btn" href="/shopify-setup-checklist.pdf" download>The Weekend Setup Checklist <span class="a">→</span></a></p>
+        <p>Three are instant — no email. The fourth, The Store Niche Vault (the full 30-niche list), unlocks the second you drop your email, right here on the page.</p>
+        <p style="margin:16px 0 8px"><a class="btn" href="/shopify-setup-checklist.pdf" download>The Weekend Setup Checklist <span class="a">→</span></a></p>
         <p style="margin:8px 0"><a class="btn" href="/shopify-vendor-guide.pdf" download>The Vendor &amp; App Guide <span class="a">→</span></a></p>
         <p style="margin:8px 0 0"><a class="btn" href="/shopify-ai-prompt-pack.pdf" download>The AI Prompt Pack <span class="a">→</span></a></p>
+
+        <div class="nv-gate" style="margin-top:24px;padding-top:22px;border-top:1px solid rgba(43,22,27,.13)">
+          <iframe name="nv-sink" title="Signup response" tabindex="-1" aria-hidden="true" style="position:absolute;width:0;height:0;border:0;visibility:hidden"></iframe>
+          <form id="nv-form" action="https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe" method="post" target="nv-sink">
+            <p style="margin:0 0 12px"><strong>🎯 The Store Niche Vault — 30 money-making niches.</strong> Enter your email and it unlocks below:</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <input type="email" name="fields[email]" placeholder="your@email.com" aria-label="Email" required autocomplete="email" style="flex:1 1 240px;padding:13px 16px;border:1px solid var(--gray);border-radius:2px;font-size:15px;font-family:inherit;background:#fff" />
+              <button class="btn" type="submit" style="border:none;cursor:pointer">Send me the Niche Vault <span class="a">→</span></button>
+            </div>
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
+          </form>
+          <div id="nv-done" hidden>
+            <p style="margin:0 0 10px">You're in — it's on its way to your inbox. Grab it right here too:</p>
+            <p style="margin:0"><a class="btn" id="nv-link" href="/shopify-niche-vault.pdf" download>Download The Store Niche Vault <span class="a">→</span></a></p>
+          </div>
+        </div>
       </div>
+
+      <script is:inline>
+        (function(){
+          var f=document.getElementById('nv-form'); if(!f) return;
+          var sink=document.getElementsByName('nv-sink')[0]; var sent=false;
+          f.addEventListener('submit',function(){ sent=true; var b=f.querySelector('button'); if(b){b.disabled=true;b.textContent='Sending…';} });
+          sink.addEventListener('load',function(){
+            if(!sent) return;
+            f.style.display='none';
+            var d=document.getElementById('nv-done'); if(d) d.hidden=false;
+            if(window.fbq) fbq('track','Lead');
+            try{ var t=document.createElement('a'); t.href='/shopify-niche-vault.pdf'; t.download=''; document.body.appendChild(t); t.click(); t.remove(); }catch(e){}
+          });
+        })();
+      </script>
 
       <div class="box tip">
         <div class="tag"><span class="g">✦</span> Open the store for a dollar</div>
