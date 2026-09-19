@@ -15,7 +15,9 @@
     "article_route_prefix": "/learn/",
     "rule_of_use": "No asset ships naming a product, price, or link that is not a row in products[]. Absence from a document is never grounds for deletion; only positive confirmation that a product does not exist permits removal.",
     "product_register_rule": "A product gets a row here before it gets a single asset. No exceptions.",
-    "link_fix_2026_09_19": "The $10/Day Traffic Machine — Starter Map URL read 8dfcbb25 in the project copy of canon and 8dcfbb25 in the repo copy. Both were loaded in a browser on 19 Sep 2026: 8dcfbb25 returns the product page, 8dfcbb25 returns a Beacons error page. 8dcfbb25 is correct and is now the only value."
+    "link_fix_2026_09_19": "The $10/Day Traffic Machine — Starter Map URL read 8dfcbb25 in the project copy of canon and 8dcfbb25 in the repo copy. Both were loaded in a browser on 19 Sep 2026: 8dcfbb25 returns the product page, 8dfcbb25 returns a Beacons error page. 8dcfbb25 is correct and is now the only value.",
+    "vault_fix_2026_09_19": "The Value Vault / Premium Vault mechanic is written out in full in vault_disambiguation, Vault Unlock is confirmed at $49 and registered in products[], and two checks were added (fail: vault_included_in_standard; review: value_vault_bare_bullet). Prompted by two live Skool posts telling Standard members the vault was included in their tier.",
+    "vocabulary_bans_removed_2026_09_19": "Decision 85. Every banned-word and banned-vocabulary list is removed from canon. Founder instruction: there are no banned words in this brand. The audit checks banned_vocabulary and ladder_vocabulary_near_vault are deleted. What remains are claim rules and fact rules — do not fabricate proof, do not manufacture scarcity, do not promise a timeline for results, do not put earnings figures on Meta, do not use third-party IP, do not misstate what a tier includes. Those constrain what is asserted, never which words are used. Word choice is the founder's."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -145,6 +147,16 @@
   },
   "products": [
     {
+      "name": "Vault Unlock",
+      "price": 49,
+      "display": "$49 one-time",
+      "recurring": false,
+      "owned": true,
+      "platform": "Skool",
+      "url": null,
+      "note": "Unlocks the entire Value Vault for a Standard member in one payment, instead of buying guides a la carte. Confirmed by Jodie 19 Sep 2026 and moved out of flagged_not_cut. Premium members do not buy this — they already have every guide via The Premium Vault. URL still to be captured."
+    },
+    {
       "name": "The Weekend Ecosystem™",
       "price": 97,
       "display": "$97 one-time, or 3 × $33.33",
@@ -165,7 +177,8 @@
       "price": 0,
       "owned": true,
       "platform": "Beacons",
-      "url": "https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47"
+      "url": "https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47",
+      "note": "Rebuilt 17 Sep 2026 and live on Beacons — the download now serves the rebuilt guide. The retired four-rung version is gone. See TDIE_ASSET_DEFECT_REGISTER.md D1."
     },
     {
       "name": "$10/Day Traffic Machine — Starter Map",
@@ -443,10 +456,21 @@
     ]
   },
   "vault_disambiguation": {
-    "The Value Vault": "Individually priced guide collection inside Skool. Never called 'PLR Vault' alone.",
-    "The Premium Vault": "The Value Vault unlocked in full for Premium members. Formerly The VIP Vault.",
+    "The Value Vault": "The guide collection inside Skool, sold A LA CARTE to Standard members. Each guide carries its own price. A Standard member either buys individual guides, or pays Vault Unlock ($49 one-time) to take the whole vault. It is NOT included in the Standard tier. Never called 'PLR Vault' alone.",
+    "The Premium Vault": "The EXACT SAME guides as The Value Vault, every one already unlocked, included in Membership Premium at no extra cost. Nothing is bought a la carte at this tier. Formerly The VIP Vault.",
     "Pretty & Paid PLR Vault™": "Separate $11/month Beacons subscription. Off-ladder. Never in a membership tier, never adjacent to Standard or Premium content, Wednesday promotion slot only.",
-    "rule": "Three distinct products. Never conflated, never renamed, never merged."
+    "rule": "Three distinct products. Never conflated, never renamed, never merged.",
+    "value_vs_premium": "The two vaults hold IDENTICAL contents. The only difference is how the member pays: Standard pays per guide (or $49 for the lot), Premium pays nothing further because it is already unlocked. This is the single most misstated fact in the brand.",
+    "banned_claims": [
+      "The Value Vault is included in Standard",
+      "every guide, included in Standard",
+      "nothing extra to buy (attached to Standard)",
+      "any Standard inclusions list naming The Value Vault without stating it is a la carte"
+    ],
+    "banned_claims_note": "These are FALSE STATEMENTS, not banned vocabulary. The rule is about what is asserted, not which words are used.",
+    "bullet_rule": "A bare bullet reading 'The Value Vault' inside a list of what Standard includes is a defect even where the page defines the vault correctly elsewhere. Write 'The Value Vault — guides a la carte' or do not list it.",
+    "recorded": "2026-09-19, after two published Skool posts told Standard members the vault came free with their tier. Both corrected; one deleted.",
+    "price_relationship_closed": "Vault Unlock at $49 one-time sits above the $27/month Premium tier that already includes the same guides. Jodie knows; the vault is still being filled. Deliberate interim state, never raised as a defect, audit finding, pricing conflict or open item."
   },
   "vault_contents_pretty_and_paid": {
     "products": "Planners, journals, guides, eBooks, printables, colouring page sets. Canva-editable, full PLR licence. Bundles not single files.",
@@ -526,6 +550,7 @@
     }
   ],
   "checks": {
+    "note": "Decision 85 (19 Sep 2026): there are no vocabulary checks. banned_vocabulary and ladder_vocabulary_near_vault are deleted. Every check below tests a CLAIM, a FACT, or a LINK — never a word choice. Do not add a check that fails an asset for the words it uses.",
     "fail": [
       {
         "id": "placeholder",
@@ -575,17 +600,6 @@
           "https?://(?!www\\.)thedigitalincomeedit\\.com"
         ],
         "why": "Both 308 to www. A printed redirecting host is printed wrong."
-      },
-      {
-        "id": "banned_vocabulary",
-        "patterns": [
-          "\\bhack\\b",
-          "\\bsecret\\b",
-          "\\bexplode\\b",
-          "crush it",
-          "game-?changer"
-        ],
-        "why": "Brand-wide vocabulary ban."
       },
       {
         "id": "retired_colour_word",
@@ -671,26 +685,21 @@
           "launch tonight"
         ],
         "why": "No promises about how fast results arrive. Brand-wide."
+      },
+      {
+        "id": "vault_included_in_standard",
+        "patterns": [
+          "Value Vault and every guide",
+          "every guide,? included in Standard",
+          "Value Vault[^.]{0,60}included in Standard",
+          "included in Standard[^.]{0,60}Value Vault",
+          "Nothing extra to buy",
+          "nothing else to buy"
+        ],
+        "why": "FALSE. The Value Vault is NOT included in Membership Standard — Standard buys guides a la carte or pays Vault Unlock ($49). Only Premium has them unlocked. Two Skool posts shipped this error on 19 Sep 2026. See vault_disambiguation."
       }
     ],
     "review": [
-      {
-        "id": "ladder_vocabulary_near_vault",
-        "patterns": [
-          "\\bupgrade\\b",
-          "\\bdowngrade\\b",
-          "\\btier\\b",
-          "\\blevel\\b",
-          "step up",
-          "next step",
-          "\\bplan\\b"
-        ],
-        "proximity_to": [
-          "Vault"
-        ],
-        "window": 400,
-        "why": "Comparison-frame ban. Vocabulary banned in relation to the Vault."
-      },
       {
         "id": "vault_short_form",
         "patterns": [
@@ -754,6 +763,19 @@
           "vs last month"
         ],
         "why": "Proof strategy is the business itself, not income screenshots."
+      },
+      {
+        "id": "value_vault_bare_bullet",
+        "patterns": [
+          "The Value Vault"
+        ],
+        "proximity_to": [
+          "Standard",
+          "includes",
+          "what you get"
+        ],
+        "window": 200,
+        "why": "A bare 'The Value Vault' bullet in a Standard inclusions list reads as included, which is false. Must say 'guides a la carte'. See vault_disambiguation.bullet_rule."
       }
     ]
   },
@@ -823,9 +845,10 @@
         200
       ]
     },
-    "banned_on_pinterest": [
+    "pinterest_spam_risk_phrases": [
       "Make Money Online"
-    ]
+    ],
+    "pinterest_spam_risk_note": "Not a style rule and not a banned word. Pinterest's own spam scoring penalises this phrase and its keyword-stuffed variants, and the September 2026 account audit removed it from 86 pin descriptions while the domain block was being appealed. Flag it as platform risk and let Jodie decide."
   },
   "content_calendar_rules": {
     "no_membership_tue_thu": "No membership tier content Tuesday–Thursday.",
