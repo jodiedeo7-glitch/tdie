@@ -200,7 +200,7 @@
       "owned": true,
       "platform": "Owned site",
       "url": "https://www.thedigitalincomeedit.com/resources/weekend-build-challenge",
-      "note": "Free 5-day email challenge. Own MailerLite form (198806704189605117) → group \"Challenge — Weekend Build\" → 8-email automation ending at The Weekend Ecosystem™. No membership, Vault or BAMI mention in the sequence."
+      "note": "Free 5-day email challenge. Own MailerLite form (198806704189605117) → group \"Challenge — Weekend Build\" → 11-email automation (198806793685567038) with two doors: The Weekend Ecosystem™ on Days 5, 7 and 10, then Membership Standard $9/month or $99/year on Days 13, 16 and 20. Corrected 19 Sep 2026 — it ran 8 emails and a single door until three follow-ups were appended and verified against the live workflow. No Vault or BAMI mention in the sequence."
     },
     {
       "name": "The Shopify Starter Kit",
@@ -776,6 +776,33 @@
         ],
         "window": 200,
         "why": "A bare 'The Value Vault' bullet in a Standard inclusions list reads as included, which is false. Must say 'guides a la carte'. See vault_disambiguation.bullet_rule."
+      },
+      {
+        "id": "challenge_email_count",
+        "patterns": [
+          "8-email",
+          "eight-email",
+          "8 email"
+        ],
+        "proximity_to": [
+          "Challenge",
+          "Weekend Build"
+        ],
+        "window": 200,
+        "why": "The Weekend Build Challenge automation runs 11 emails and two doors, not 8 and one. The old figure kept propagating into new documents after the sequence was extended on 19 Sep 2026."
+      },
+      {
+        "id": "challenge_single_door",
+        "patterns": [
+          "[Ss]ingle door",
+          "one door"
+        ],
+        "proximity_to": [
+          "Challenge",
+          "Weekend Build"
+        ],
+        "window": 200,
+        "why": "The challenge has two doors: The Weekend Ecosystem™ on Days 5, 7 and 10, then Membership Standard on Days 13, 16 and 20. 'Single door' is the pre-19-Sep-2026 state."
       }
     ]
   },
