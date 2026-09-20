@@ -1,6 +1,7 @@
 ---
 import "../../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
+import FreebieForm from "../../components/FreebieForm.astro";
 ---
 
 <!DOCTYPE html>
@@ -114,6 +115,12 @@ import Analytics from '@vercel/analytics/astro';
         <p>Six pages. Print it, or fill it on screen. No email required — it's just yours.</p>
         <a class="btn" href="/pinterest-keyword-planner.pdf" download>Download the Planner <span class="a">→</span></a>
       </div>
+
+      <FreebieForm
+        heading="Want the thinking behind it?"
+        button="Send Me the Edit"
+        sub="The planner is yours above — no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
+      />
 
       <div class="rule"><span class="d"></span></div>
 
