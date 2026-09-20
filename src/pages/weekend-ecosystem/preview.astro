@@ -17,6 +17,16 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   title="Inside The Weekend Ecosystem™"
   description="A look inside the course before you buy — the module index, a real module page, the prompt cards, the progress tracker and the completion certificate."
 >
+  <div class="pv-sticky" id="pv-sticky">
+    <div class="pv-sticky-in">
+      <div>
+        <span class="pv-sticky-n">The Weekend Ecosystem™</span>
+        <span class="pv-sticky-p">$97 or 3 × $33.33 · every update included</span>
+      </div>
+      <a class="btn pv-sticky-b" href="/shop/weekend-ecosystem">Get it <span class="a">→</span></a>
+    </div>
+  </div>
+
   <section class="pv-hero">
     <div class="page-eyebrow">A look inside · No email required</div>
     <h1>What you're actually buying</h1>
@@ -25,6 +35,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     <figure class="pv-fig pv-fig-hero">
       <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
     </figure>
+    <p class="pv-buy">Twenty-two of these, timed to one weekend. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
   <section class="pv-sec">
@@ -64,6 +75,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       <img src="/images/we/module-list.jpg" alt="The full list of 22 modules across six phases." loading="lazy" width="1100" height="1191" />
       <figcaption>All twenty-two, across the six phases of the weekend.</figcaption>
     </figure>
+    <p class="pv-buy">Every module looks like that. Twenty-two of them. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
   <section class="pv-sec">
@@ -93,6 +105,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
         </div>
       </div>
     </div>
+    <p class="pv-buy">All thirty-six, written out in full, ready to paste. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
   <section class="pv-sec">
@@ -119,6 +132,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       <img src="/images/we/weekend-timeline.jpg" alt="One weekend hour by hour, across six phases from Friday night to Sunday afternoon." loading="lazy" width="1200" height="1490" />
       <figcaption>The order you run them in.</figcaption>
     </figure>
+    <p class="pv-buy">That's one prompt. There are thirty-six, and they run in order. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
   <section class="pv-sec">
@@ -169,6 +183,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     </figure>
 
     <p class="pv-note">Ten pins, a carousel, eight Threads posts, two reels, a Facebook post, an email and a community post. Twenty-four things, across six platforms, from one afternoon — and the article underneath keeps ranking the whole time they circulate.</p>
+    <p class="pv-buy">Yours the moment you're in, and it fills up as you go. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
   <section class="pv-sec">
@@ -349,5 +364,32 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       .pv-close{padding:54px 22px 50px}
     }
   </style>
+<style>
+  .pv-buy{margin:26px 0 0;font-size:16px;line-height:1.8;color:var(--taupe-deep);
+          padding-top:20px;border-top:1px solid rgba(43,22,27,.1)}
+  .pv-buy a{color:var(--pink);font-weight:600;text-decoration:none;white-space:nowrap}
+  .pv-buy a:hover{text-decoration:underline}
+  .pv-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--white);
+             border-top:1px solid rgba(43,22,27,.14);box-shadow:0 -6px 24px rgba(43,22,27,.08);
+             transform:translateY(110%);transition:transform .25s ease}
+  .pv-sticky.on{transform:translateY(0)}
+  .pv-sticky-in{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;
+                justify-content:space-between;gap:16px}
+  .pv-sticky-n{display:block;font-family:"Fraunces",serif;font-size:16px;color:var(--choc)}
+  .pv-sticky-p{display:block;font-size:13px;color:var(--taupe-deep);margin-top:2px}
+  .pv-sticky-b{white-space:nowrap}
+  @media(max-width:560px){.pv-sticky-n{font-size:14px}.pv-sticky-p{font-size:11px}}
+</style>
+
+<script is:inline>
+  (function(){
+    var bar=document.getElementById('pv-sticky'); if(!bar) return;
+    function tick(){
+      if(window.scrollY>700) bar.classList.add('on'); else bar.classList.remove('on');
+    }
+    window.addEventListener('scroll',tick,{passive:true}); tick();
+  })();
+</script>
+
 </PageLayout>
 

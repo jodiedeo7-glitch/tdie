@@ -132,6 +132,7 @@ const faqs = [
     <div class="page-eyebrow">{S.eyebrow}</div>
     <h1>Own a website, a blog, and an email list by Sunday afternoon.</h1>
     <p class="we-hero-twist">Built entirely from content you've already written.</p>
+    <p class="we-disarm">I had never opened a code editor when I built this site. You won't write a line of code either — you paste a prompt, read what came back, and say yes or say what to change.</p>
     <div class="we-hero-brand">The Weekend <em>Ecosystem™</em></div>
     <p class="lede">The exact steps I used to build this website, this blog, and the course you're reading right now — written down, in order, with every prompt.</p>
 
@@ -144,10 +145,12 @@ const faqs = [
 
     <p class="we-hero-sub">One weekend. Your content. Claude does the building.</p>
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
+    <p class="we-hero-price"><strong>$97 once</strong> — or three payments of $33.33. Every future update included, forever.</p>
     <div class="we-cta-row">
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
       <a class="btn-ghost" href="/weekend-ecosystem/preview">Look inside first <span class="a">→</span></a>
     </div>
+    <p class="we-hero-time">Fifteen hours across a weekend — two Friday evening, eight Saturday, five Sunday. Or three weeks of evenings. The modules don't expire and neither does your access.</p>
     <p class="we-peek">Open the real thing before you decide. Two full modules, the prompt cards, the update log — no email, no checkout, nothing to enter.</p>
     <p class="we-access">{S.access}</p>
     <figure class="we-hero-img">
@@ -415,6 +418,15 @@ const faqs = [
     </div>
   </div>
 
+  <!-- TERMS -->
+  <section class="we-guar">
+    <span class="we-guar-tag">Before you buy</span>
+    <h2>There are no refunds. That's deliberate.</h2>
+    <p>The moment you're in you have all of it — twenty-two modules, thirty-six prompts, every vault, the templates. There is nothing to hand back, and I'm not funding weekends that never got taken.</p>
+    <p>So look first. The preview is the real interface — two full modules, the prompt cards, the tracker, the certificate. No email, no card, nothing to enter. Read it properly, decide properly, then buy.</p>
+    <p class="we-guar-small"><a href="/weekend-ecosystem/preview">Look inside before you decide →</a></p>
+  </section>
+
   <!-- CLOSE -->
   <section class="we-close">
     <div class="we-close-img">
@@ -437,6 +449,22 @@ const faqs = [
 
   <style>
     .we-frame{font-size:15px;line-height:1.7;color:var(--taupe-deep);max-width:56ch;margin:-18px auto 30px}
+    .we-disarm{font-size:17px;line-height:1.75;color:var(--choc);max-width:54ch;margin:0 auto 26px;
+               padding:0 0 0 16px;border-left:2px solid var(--pink);text-align:left}
+    .we-hero-price{font-size:16px;line-height:1.7;color:var(--choc);margin:0 auto 18px;max-width:46ch}
+    .we-hero-price strong{color:var(--pink)}
+    .we-hero-time{font-size:14px;line-height:1.7;color:var(--taupe-deep);max-width:52ch;margin:16px auto 0}
+    .we-guar{background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);
+             border-radius:2px;padding:40px 38px;margin:56px auto;max-width:66ch}
+    .we-guar-tag{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+                 color:var(--pink);margin-bottom:14px}
+    .we-guar h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.4vw,36px);
+                line-height:1.15;margin:0 0 18px;color:var(--choc)}
+    .we-guar p{font-size:17px;line-height:1.8;margin:0 0 16px;color:var(--choc)}
+    .we-guar-small{font-size:15px!important;margin-bottom:0!important}
+    .we-guar-small a{color:var(--pink);font-weight:600;text-decoration:none}
+    .we-guar-small a:hover{text-decoration:underline}
+    @media(max-width:640px){.we-guar{padding:30px 22px;margin:40px auto}}
 
     /* ── hero ── */
     .we-hero{text-align:center;padding:10px 0 54px}

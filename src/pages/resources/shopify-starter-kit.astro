@@ -1,13 +1,19 @@
 ---
 import ResourceLayout from "../../layouts/ResourceLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
+// 20 Sep 2026 — consolidation. The Shopify Store Kit lived at
+// /resources/shopify-store-kit and offered the same audience the same thing:
+// two Shopify freebies, two MailerLite forms, one page in canon and one not.
+// Its four downloads now live here, on the page every article already links
+// to, behind the dedicated Physical Products form whose delivery automation
+// is verified. The old URL 301s here.
 ---
 <ResourceLayout
   title="The Shopify Starter Kit — Free Download"
-  description="Free Physical Products kit from The Digital Income Edit. The product filter, the weekend setup checklist, and the supplier-app decision — so your first store"
+  description="Free Physical Products kit from The Digital Income Edit. Four downloads: 30 money-making niches, the weekend setup checklist, the vendor and app guide, and 20 AI prompts."
   eyebrow="Free Resource · Physical Products"
   heading="The Shopify Starter Kit"
-  lede="The product filter, the weekend setup checklist, and the supplier-app decision — so your first store sells something real without a warehouse, an audience, or your face."
+  lede="Four downloads that take you from no idea to an open store — the product filter, the weekend setup checklist, the supplier-app decision, and the niche list. No warehouse, no audience, no face."
   guideHref="/learn/shopify-store-guide"
   guideLabel="How to Start a Shopify Store"
 >
@@ -15,12 +21,32 @@ import FreebieForm from "../../components/FreebieForm.astro";
 
   <p><strong>Inside the kit:</strong></p>
   <ul>
-    <li>The four-filter product test — the person, the recurring moment, the supplier who already makes it, the one-sentence description</li>
-    <li>The weekend setup checklist: the six Shopify settings that matter and the ten that don't yet</li>
-    <li>Print on demand vs dropshipping in one page, including what changed with US import duties and which supplier apps still make sense</li>
+    <li><strong>The Weekend Setup Checklist</strong> — the six Shopify settings that matter and the ten that don't yet</li>
+    <li><strong>The Vendor &amp; App Guide</strong> — print on demand vs dropshipping in one page, including what changed with US import duties and which supplier apps still make sense</li>
+    <li><strong>The AI Prompt Pack</strong> — 20 prompts for product descriptions, store copy and the listings you'd otherwise stare at</li>
+    <li><strong>The Store Niche Vault</strong> — 30 niches that make money, with the four-filter product test: the person, the recurring moment, the supplier who already makes it, the one-sentence description</li>
   </ul>
 
-  <FreebieForm action="https://assets.mailerlite.com/jsonp/2532349/forms/198982894072366185/subscribe" heading="Send me the Shopify Starter Kit" button="Get the Kit" />
+  <div class="kit-grab">
+    <p class="kit-h"><strong>Three download right now. No email.</strong></p>
+    <p><a class="kit-btn" href="/shopify-setup-checklist.pdf" download>The Weekend Setup Checklist →</a></p>
+    <p><a class="kit-btn" href="/shopify-vendor-guide.pdf" download>The Vendor &amp; App Guide →</a></p>
+    <p><a class="kit-btn" href="/shopify-ai-prompt-pack.pdf" download>The AI Prompt Pack →</a></p>
+  </div>
+
+  <FreebieForm
+    action="https://assets.mailerlite.com/jsonp/2532349/forms/198982894072366185/subscribe"
+    heading="Unlock The Store Niche Vault"
+    button="Send me the Niche Vault"
+    sub="The full 30-niche list. It unlocks on this page the second you submit, and the rest of the kit follows by email."
+  />
+
+  <div id="nv-done" hidden>
+    <p><strong>You're in.</strong> The Niche Vault is downloading — if it didn't start, grab it here:</p>
+    <p><a class="kit-btn" id="nv-link" href="/shopify-niche-vault.pdf" download>Download The Store Niche Vault →</a></p>
+  </div>
+
+  <p><strong>Open the store for a dollar.</strong> Every one of these points at the same door. New Shopify stores get a 3-day free trial, then $1 a month for the first three months on the Basic plan — Shopify's offer, and it can change, so read the screen when you sign up. Not in the US? Shopify works anywhere; you set your own shipping zones, so you can sell to just your own country and skip the customs mess, and the intro price runs in your local currency.</p>
 
   <div class="freebie-next">
     <p><strong>Then keep going:</strong></p>
@@ -30,3 +56,53 @@ import FreebieForm from "../../components/FreebieForm.astro";
     </ul>
   </div>
 </ResourceLayout>
+
+<script is:inline>
+  (function () {
+    var form = document.querySelector('.freebie-capture form[data-fc]');
+    if (!form) return;
+    var sink = document.getElementsByName(form.target)[0];
+    if (!sink) return;
+    var sent = false;
+    form.addEventListener('submit', function () { sent = true; });
+    sink.addEventListener('load', function () {
+      if (!sent) return;
+      var done = document.getElementById('nv-done');
+      if (done) done.hidden = false;
+      try {
+        var a = document.createElement('a');
+        a.href = '/shopify-niche-vault.pdf';
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      } catch (e) {}
+    });
+  })();
+</script>
+
+<style>
+  .kit-grab {
+    background: var(--white);
+    border: 1px solid rgba(43,22,27,.13);
+    border-left: 2px solid var(--gold, #C8A96A);
+    border-radius: 2px;
+    padding: 26px 28px;
+    margin: 34px 0;
+  }
+  .kit-grab .kit-h { margin: 0 0 14px; font-size: 16px; }
+  .kit-grab p { margin: 8px 0; }
+  .kit-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .15s, color .15s;
+  }
+  .kit-btn:hover { background: var(--pink); color: #fff; }
+  #nv-done { margin: 0 0 34px; }
+</style>
