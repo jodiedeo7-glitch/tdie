@@ -1,40 +1,45 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 
-const ACC = ["#CBB7F7", "#CD9CDD", "#CF80C2", "#D4498D", "#D62E73"];
+const ACC = ["#CBB7F7", "#CD9CDD", "#CF80C2", "#D265A8", "#D4498D", "#D62E73"];
 
 const stats = [
   { n: "12", l: "Weeks" },
-  { n: "5", l: "Phases" },
-  { n: "20", l: "Modules" },
-  { n: "20", l: "Named assets" },
+  { n: "6", l: "Phases" },
+  { n: "24", l: "Modules" },
+  { n: "24", l: "Named assets" },
 ];
 
 const phases = [
   {
-    n: "I", when: "Weeks 1–2", title: "The Blueprint", sub: "Modules 1–4",
-    body: "You settle who is building before you build anything. By the close of Phase I the business is fully specified on paper: your identity as founder, your model, and the one woman you are building for.",
-    items: ["The Founder's Declaration™", "Your business model, named", "The one woman, specified", "The business on paper"],
+    n: "I", when: "Weeks 1\u20132", title: "The Specification", sub: "Modules 1\u20134",
+    body: "You settle who is building, and how, before you build anything. By the close of Phase I the whole business exists on paper \u2014 your identity as founder, the method, your model, and the one woman you are building for.",
+    items: ["The Founder's Declaration\u2122", "The Business Blueprint\u2122", "The Business Model Decision\u2122", "The Customer Blueprint\u2122"],
   },
   {
-    n: "II", when: "Weeks 3–5", title: "The Foundation", sub: "Modules 5–8",
-    body: "Brand, message, and offer ecosystem — ending in a real Signature Offer™ with a price on it. Three weeks, because this is the hinge every later phase hangs on.",
-    items: ["Brand identity", "Your message", "The offer ecosystem", "A priced Signature Offer™"],
+    n: "II", when: "Weeks 3\u20134", title: "The Brand", sub: "Modules 5\u20138",
+    body: "Your look, your faceless decision, the persona that fronts the brand, and a message that finally says who this is for. By the close of Phase II the brand is something a stranger could recognise.",
+    items: ["The Brand Guide\u2122", "The Faceless Decision\u2122", "The Persona Bible\u2122", "The Messaging Guide\u2122"],
   },
   {
-    n: "III", when: "Weeks 6–8", title: "The Structure", sub: "Modules 9–12",
-    body: "The heaviest building in the program. By the end of week eight the selling machine stands and works without you standing next to it.",
-    items: ["Lead asset", "A live funnel", "Welcome sequence", "Published sales page"],
+    n: "III", when: "Weeks 5\u20136", title: "The Offer", sub: "Modules 9\u201312",
+    body: "The ecosystem, the offer that carries it, the asset that attracts the right woman, and the funnel between them. By the close of Phase III there is something real to buy, at a real price, with a path to it.",
+    items: ["The Offer Ecosystem Map\u2122", "The Signature Offer\u2122", "The Lead Asset\u2122", "The Funnel Frame\u2122"],
   },
   {
-    n: "IV", when: "Weeks 9–10", title: "The Utilities", sub: "Modules 13–16",
-    body: "One platform mastered rather than five half-run, and a content engine that keeps arriving after you stop pushing it.",
-    items: ["Content system", "One platform, mastered", "Nurture heartbeat", "A launch plan with dates"],
+    n: "IV", when: "Weeks 7\u20138", title: "The Machine", sub: "Modules 13\u201316",
+    body: "Email architecture, a published sales page, a content system that survives a bad week, and one platform chosen properly rather than five run half-heartedly. By the close of Phase IV the selling machine stands on its own.",
+    items: ["The Welcome Sequence\u2122", "The Sales Page\u2122", "The Content Planner\u2122", "The Platform Plan\u2122"],
   },
   {
-    n: "V", when: "Weeks 11–12", title: "The Penthouse", sub: "Modules 17–20",
-    body: "The business starts running itself, and you get the document that proves it exists.",
-    items: ["Automations running", "Business dashboard", "A weekly CEO rhythm", "The Business Architecture Binder™"],
+    n: "V", when: "Weeks 9\u201310", title: "The Traffic", sub: "Modules 17\u201320",
+    body: "The engine that brings people in, the loop that keeps the list warm, a launch with dates on it, and an honest answer about whether you have earned the right to spend on ads. By the close of Phase V people arrive, and they keep arriving.",
+    items: ["The Pinterest System\u2122", "The Nurture System\u2122", "The Launch Planner\u2122", "The Amplification Plan\u2122"],
+  },
+  {
+    n: "VI", when: "Weeks 11\u201312", title: "The Business", sub: "Modules 21\u201324",
+    body: "Automation, the numbers worth watching, a weekly rhythm you can hold, and the document that proves all of it exists. By the close of Phase VI it runs without you holding it up.",
+    items: ["The Automation Planner\u2122", "The Business Dashboard\u2122", "The CEO Review System\u2122", "The Business Architecture Binder\u2122"],
   },
 ];
 
@@ -89,7 +94,7 @@ const problems = [
   </section>
 
   <section class="bm-block">
-    <h2>Five phases. Twelve weeks. Twenty assets.</h2>
+    <h2>Six phases. Twelve weeks. Twenty-four assets.</h2>
     <p class="bm-sublead">The order is the mechanism. A module opens when the previous asset exists, not when you feel ready.</p>
     <div class="bm-phases">
       {phases.map((p, i) => (
@@ -112,9 +117,9 @@ const problems = [
   </section>
 
   <section class="bm-block bm-runs">
-    <h2>Twelve weeks, and five times I read your work</h2>
+    <h2>Twelve weeks, and six times I read your work</h2>
     <p class="bm-lead">Every module carries a recorded walkthrough, released the week its phase opens. Watch it at 6am or at midnight. Nothing you paid for happens while you are asleep in another timezone.</p>
-    <p class="bm-sublead">At the close of every phase you submit the asset that phase produced, and I write back on the actual work rather than on a template. Five phase gates. Five times someone who has built this looks at yours and tells you the truth about it.</p>
+    <p class="bm-sublead">At the close of every phase you submit the asset that phase produced, and I write back on the actual work rather than on a template. Six phase gates. Six times someone who has built this looks at yours and tells you the truth about it.</p>
     <p class="bm-hit">That is the part you cannot get from a course.</p>
   </section>
 
@@ -128,7 +133,7 @@ const problems = [
     <div class="bm-reward-in">
       <span class="bm-reward-k">Finish and it's yours</span>
       <h2 class="bm-reward-h">The Weekend <em>Ecosystem™</em>, free on completion.</h2>
-      <p class="bm-reward-p">Complete all five phases and my full website-and-blog course is yours — the site on a domain you own, the blog Google can find, the email capture, and the system that keeps all of it running. Twenty-two modules, every prompt written out, four reference vaults.</p>
+      <p class="bm-reward-p">Complete all six phases and my full website-and-blog course is yours — the site on a domain you own, the blog Google can find, the email capture, and the system that keeps all of it running. Twenty-two modules, every prompt written out, four reference vaults.</p>
       <p class="bm-reward-p">It's the exact build I used to make this website and everything on it.</p>
       <div class="bm-reward-foot">
         <span class="bm-reward-price">$97 on its own</span>
@@ -193,11 +198,11 @@ const problems = [
     <div class="bm-faq-list">
       <div class="bm-q"><h3>When does it start?</h3><p>Dates are announced shortly, to the waitlist first.</p></div>
       <div class="bm-q"><h3>What will it cost?</h3><p>The founding price goes to the waitlist before it goes anywhere public.</p></div>
-      <div class="bm-q"><h3>Are there live calls?</h3><p>No. Every module is recorded and released on the phase calendar. The personal component is written review of your work at each of the five phase gates.</p></div>
+      <div class="bm-q"><h3>Are there live calls?</h3><p>No. Every module is recorded and released on the phase calendar. The personal component is written review of your work at each of the six phase gates.</p></div>
       <div class="bm-q"><h3>How much time does this take?</h3><p>Four focused hours a week is the floor. If you have twenty you'll move faster — the sequence is the same either way.</p></div>
       <div class="bm-q"><h3>Do I need a product already?</h3><p>No. Phase II builds your Signature Offer™ from nothing.</p></div>
       <div class="bm-q"><h3>Is it in the membership?</h3><p>No. BAMI is separate, by application only. Standard and Premium do not include it.</p></div>
-      <div class="bm-q"><h3>What do I get when I finish?</h3><p>The Weekend Ecosystem\u2122, free \u2014 my full website-and-blog course, $97 on its own. It is earned at completion rather than included at purchase, and it applies to the founding cohort.</p></div>
+      <div class="bm-q"><h3>What do I get when I finish?</h3><p>The Weekend Ecosystem™, free — my full website-and-blog course, $97 on its own. It is earned at completion rather than included at purchase, and it applies to the founding cohort.</p></div>
           <div class="bm-q"><h3>Do I need to show my face?</h3><p>No.</p></div>
       <div class="bm-q"><h3>What if it isn't right for me?</h3><p>Do Phase I, and if the programme isn't for you, you get your money back. Submit your completed Phase I asset within 21 days of your cohort start date, tell me it isn't right, and you're refunded in full within 10 business days — no explanation needed, and no prejudice if you apply again later. The submission is the condition, because Phase I is where you settle who is building, what the model is and who you're building for. If you've done that and it still isn't right, it genuinely isn't.</p></div>
       <div class="bm-q"><h3>Can I move to a later cohort?</h3><p>Once, at no cost, if you tell me before your cohort starts. If I cancel or move a cohort, you choose — a full refund, or a seat in the next one at the price you paid.</p></div>
