@@ -8,6 +8,7 @@ import PageLayout from "./PageLayout.astro";
 export interface Props {
   title: string;
   description: string;
+  ogImage?: string;
   eyebrow: string;
   heading: string;
   lede: string;
@@ -15,9 +16,9 @@ export interface Props {
   guideHref?: string;
   guideLabel?: string;
 }
-const { title, description, eyebrow, heading, lede, meta = [], guideHref, guideLabel } = Astro.props;
+const { title, description, ogImage, eyebrow, heading, lede, meta = [], guideHref, guideLabel } = Astro.props;
 ---
-<PageLayout wide title={title} description={description}>
+<PageLayout wide title={title} description={description} ogImage={ogImage}>
   <section class="rs-hero">
     <div class="page-eyebrow">{eyebrow}</div>
     <h1>{heading}</h1>
