@@ -39,7 +39,10 @@ TEXT_EXT = (
     ".astro", ".md", ".mdx", ".html", ".ts", ".tsx", ".js", ".jsx",
     ".json", ".txt", ".yml", ".yaml", ".css", ".xml",
 )
-SKIP_DIRS = ("node_modules/", ".git/", "dist/", ".vercel/", ".astro/", "public/images/")
+SKIP_DIRS = (
+    "node_modules/", ".git/", "dist/", ".vercel/", ".astro/", "public/images/",
+    "docs/", "ops/canon/",
+)
 SKIP_FILES = ("canon.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock")
 
 
