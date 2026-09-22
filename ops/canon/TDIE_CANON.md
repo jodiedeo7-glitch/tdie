@@ -357,7 +357,7 @@ Decisions and dependencies, not process. No amount of correct execution resolves
 | `tdie_audit.py` GitHub Actions deploy — token missing `workflow` scope | The Friday automated audit |
 | Sneak-peek PDF in `public/` is publicly reachable and bypasses the email gate | Every opt-in that PDF was built to earn |
 | Inactive *WAITLIST* product in Beacons | Nothing — but it carries the retired domain |
-| `/affiliates` hub page — status unconfirmed | Nothing confirmed |
+| ~~`/affiliates` hub page — status unconfirmed~~ RESOLVED 21 Sep 2026 (Decision 100): there is no `/affiliates` page and none is to be built. Founder call. The route never existed, no page file was ever written, nothing on the site links to it, and it returned a 404 the whole time it sat on this list. The member affiliate programme is explained where a buyer already is — in the Weekend Ecosystem™ Access Granted email — not on a page of its own. | — |
 | Product and FAQPage JSON-LD on `/shop/weekend-ecosystem`; public `/weekend-ecosystem/curriculum` page | Search indexing of the flagship |
 | EverAds Standard-tier campaign — 60 creatives selected, generation not triggered | Standard acquisition |
 | Fourthwall merch — awaiting designs, retail pricing, collection name | The merch component of Meta ads |
@@ -397,6 +397,7 @@ These have been decided. They are not open items, not ship gates, and not audit 
 - **How colour and the persona are written in image prompts.** Settled 21 September 2026 (Decision 89). No hex inside a generator prompt; locked features never described, changeable style described freely; the quiet-wealth farmhouse register. Not re-raised as a conflict between canon and the SOPs.
 - **The `@nursemadedigital` Threads exception exists (Decision 92).** Jodie posts to the Threads account `@nursemadedigital`, as herself, not as an AI persona. This is a deliberate, scoped carve-out from the retired-brand rule and from "The New Faceless" positioning — Threads only, nowhere else. Never flagged as a conflict with either rule, and never re-litigated as whether NurseMadeDigital "should" be retired — it already is, everywhere except this one account.
 - **The repo and project copies of canon are the same document (Decision 99).** Brought level 21 September 2026. Neither is "the other one." A change that lands in only one of them is an incomplete change, not a disagreement between sources.
+- **There is no `/affiliates` page, and the member affiliate mechanic is Beacons' own affiliate product (Decision 100).** Founder call, 21 September 2026. Do not propose building an affiliate hub page, and do not re-flag the route as unconfirmed — it is confirmed absent. The setup is four steps inside the member's own Beacons account: add a digital product, choose affiliate product, paste The Weekend Ecosystem™ link, done. Beacons issues the member's own tracked link, which is what resolves the old attribution question — that is no longer unverified and is not raised again.
 
 ---
 
@@ -510,6 +511,14 @@ Patching only the stale BAMI line was considered and rejected. A patched stale f
 **The standing rule this adds:** canon changes in both places on the same day, or it has not changed. The repo copy and the project copy are one document with two locations, never two sources to be reconciled later. A session that edits one and not the other has left the job half done.
 
 The same push recorded the chunked-base64 method in §9, since this file is far too large to paste into a single browser script: send the new content as base64 in numbered chunks, concatenate them in page context, and hand the assembled string straight to the contents API, which wants base64 for `content` anyway.
+
+**100.** (21 September 2026) **The `/affiliates` hub page is confirmed never to exist, and the member affiliate mechanic is written down properly.** Two loose ends from the same conversation, closed together by founder call.
+
+**The page.** `/affiliates` had sat in §10 as "status unconfirmed / nothing confirmed" long enough for an audit to go looking for it. There was nothing to find: no page file in the repo, no link to it anywhere on the site, and a 404 for anyone who typed it. Founder decision: it should not have its own page at all. An affiliate programme explained on a page nobody visits earns nothing; explained to a buyer who has just paid, it lands. So the explanation goes in the Weekend Ecosystem™ Access Granted email and nowhere else, and the route stays absent.
+
+**The mechanic.** `canon.json` recorded the member affiliate setup as "members add it to their own Beacons and Beacons handles attribution," with a standing `unverified` note against whether a click from a member's own Beacons page actually attributes the sale back to her. That vagueness is what made the note necessary. The real mechanic, from the founder: inside her own Beacons account the member adds a digital product, chooses affiliate product, and pastes The Weekend Ecosystem™ link — Beacons then issues *her* tracked affiliate link. It is Beacons' own affiliate product feature, not a link block, so the tracking is the platform's job by design. **The attribution question is answered and the `unverified` note is retired.**
+
+Shipped the same day into the live *Weekend Ecosystem — Access Granted* email (MailerLite workflow `196430036792772181`, email `196430145647544181`): the 30% / $29.10 terms, the four-step Beacons setup, and "Grab your affiliate link" hyperlinked to the registered programme URL. The automation was never paused to do it — MailerLite allows email content edits on a live workflow, which avoids the slot-promotion trap recorded in the Defect Register. All four workflows verified still in their original states afterwards.
 
 ---
 
