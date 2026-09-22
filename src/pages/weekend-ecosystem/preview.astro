@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
+import Testimonial from "../../components/Testimonial.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -36,6 +37,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
     </figure>
     <p class="pv-buy">Twenty-two of these, timed to one weekend. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
+    <Testimonial variant="full" eyebrow="From someone who already did it" />
   </section>
 
   <section class="pv-sec">
@@ -230,6 +232,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     <a class="btn pv-btn" href="/shop/weekend-ecosystem">Get The Weekend Ecosystem™ <span class="a">→</span></a>
     <p class="pv-cnote">Full details, the complete module list and the current price are all on the sales page.</p>
     <p class="pv-cnote">Access is unlocked by hand after purchase \u2014 usually within the hour during waking hours, and you'll get an email the moment you're in.</p>
+    <Testimonial variant="line" />
   </section>
 
   <style>
