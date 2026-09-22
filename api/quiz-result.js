@@ -1,6 +1,6 @@
 // Find Your Door — quiz results → MailerLite.
 //
-// GET  /api/quiz-result            → { live: boolean }  (the page only shows the email form when live)
+// GET  /api/quiz-result            → { live: boolean }  (whether the subscribe form can reach MailerLite)
 // POST /api/quiz-result { email, name, door, stage, goal, stuck, fear, reframe, first_move, time, hp }
 //
 // What it does on POST:
@@ -8,15 +8,13 @@
 //   2. Finds or creates the five "Quiz — <door>" groups.
 //   3. Upserts the subscriber with their answers in those fields and adds them to their door's group.
 //   4. Removes them from the other four quiz groups, so a retake leaves them in one door only.
-// The email itself is sent by a MailerLite automation triggered when someone joins a quiz group.
+// Nothing is emailed from here. The quiz result stays on the page; this is a list signup
+// carrying the door, so a MailerLite automation on a quiz group can pick it up later.
 //
 // Env: MAILERLITE_API_KEY (already set for the other functions)
-//      QUIZ_EMAIL_LIVE = "true" once the five automations are switched on. Until then the page
-//      shows results on screen only and never promises an email.
 
 const ML = "https://connect.mailerlite.com/api";
 const KEY = process.env.MAILERLITE_API_KEY;
-const LIVE = process.env.QUIZ_EMAIL_LIVE === "true";
 
 const GROUPS = {
   S: "Quiz — Membership Standard",
@@ -76,9 +74,9 @@ async function groupId(door) {
 const clean = (v, max = 250) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, max);
 
 export default async function handler(req, res) {
-  if (req.method === "GET") return res.status(200).json({ live: LIVE && Boolean(KEY) });
+  if (req.method === "GET") return res.status(200).json({ live: Boolean(KEY) });
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
-  if (!LIVE || !KEY) return res.status(503).json({ error: "Email results aren't switched on yet." });
+  if (!KEY) return res.status(503).json({ error: "Email results aren't switched on yet." });
 
   const b = req.body || {};
   if (b.hp) return res.status(200).json({ ok: true }); // honeypot: quietly accept, do nothing

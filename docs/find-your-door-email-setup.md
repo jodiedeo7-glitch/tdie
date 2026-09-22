@@ -1,6 +1,6 @@
 # Find Your Door — result emails (MailerLite)
 
-The quiz page shows every result on screen. The "Send my results" form stays **hidden** until you finish steps 1–4, so nobody is ever promised an email that doesn't arrive.
+The quiz page shows every result on screen and keeps it there — no result is ever emailed. Under the result, the form subscribes people to the weekly list and tags them with the door they landed on. It is live whenever `MAILERLITE_API_KEY` is set. Steps 1–3 below are what turns those tagged signups into the five door emails; until they're done, people simply join the list.
 
 ## Setup — about 20 minutes, once
 
@@ -10,7 +10,7 @@ The quiz page shows every result on screen. The "Send my results" form stays **h
    `quiz_door`, `quiz_stage`, `quiz_goal`, `quiz_stuck`, `quiz_fear`, `quiz_reframe`, `quiz_first_move`, `quiz_time`
    The function looks both up by name. (It can also create missing ones, but only once the form is live — too late for building the automations below.)
 3. **Build five automations.** Trigger: *When subscriber joins a group* → pick one quiz group → one email (below). Turn each on.
-4. **In Vercel, confirm `MAILERLITE_API_KEY` exists and add `QUIZ_EMAIL_LIVE` = `true`** (Production), then redeploy. The form appears on the page.
+4. **In Vercel, confirm `MAILERLITE_API_KEY` exists** (Production). That key alone is what the form needs.
 5. **Test** with your own email: the email arrives, the answers fill in, and you sit in one quiz group only.
 
 Merge tags below use MailerLite's `{$field}` format. **Unverified:** the first-name fallback syntax `{$name|default:'there'}` — replace it with the fallback inserted by the editor's own personalisation button.

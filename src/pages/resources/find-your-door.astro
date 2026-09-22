@@ -10,9 +10,9 @@ import PageLayout from "../../layouts/PageLayout.astro";
 //   Earn With Skool (SCC) → src/pages/go/earn-with-skool-scc.astro (affiliate, $97)
 // Standing Rule 18: the affiliate door ships link + rel="sponsored" + disclosure together.
 // Comparison-frame rule: Pretty & Paid PLR Vault™ is never paired with a membership door.
-// Results show on screen for everyone. The email form appears only when
-// /api/quiz-result reports QUIZ_EMAIL_LIVE=true (Decision 76 deferred automation;
-// the founder has asked for it — see the setup notes shipped with this page).
+// Results show on screen for everyone, and stay there — nothing is emailed.
+// The form under the result subscribes to the weekly list, tagged with the door
+// the quiz landed on. It posts to /api/quiz-result, which needs MAILERLITE_API_KEY.
 // ─────────────────────────────────────────────────────────────
 
 const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
@@ -131,15 +131,15 @@ const stats = [
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
       <p class="fd-r-later" id="fd-r-later"></p>
 
-      <form class="fd-send" id="fd-send" hidden>
-        <span class="fd-r-l">Keep this</span>
-        <h3>Send my results to my inbox</h3>
-        <p>Your read, your fear and the reframe, your first three moves, and the door — in one email you can come back to. You'll also get my weekly emails. Unsubscribe anytime.</p>
+      <form class="fd-send" id="fd-send">
+        <span class="fd-r-l">Before you go</span>
+        <h3>Weekly emails, pointed at your door</h3>
+        <p>Your result lives on this screen — screenshot it before you go. The list is where the rest of it happens: one idea a week, written for the door you just landed on. Unsubscribe anytime.</p>
         <div class="fd-send-row">
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required />
           <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="fd-hp" />
-          <button class="btn" type="submit">Send my results <span class="a">→</span></button>
+          <button class="btn" type="submit">Subscribe <span class="a">→</span></button>
         </div>
         <p class="fd-send-msg" id="fd-send-msg" role="status"></p>
       </form>
@@ -458,10 +458,7 @@ const stats = [
       result.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
-    // Email form only appears once the MailerLite automations are live.
     var form = $("fd-send");
-    fetch("/api/quiz-result").then(function(r){ return r.ok ? r.json() : { live: false }; })
-      .then(function(j){ form.hidden = !j.live; }).catch(function(){ form.hidden = true; });
 
     form.onsubmit = function(e){
       e.preventDefault();
@@ -469,11 +466,11 @@ const stats = [
       var body = Object.assign({}, window.__fdResult || {}, {
         name: form.elements.namedItem("name").value, email: form.elements.namedItem("email").value, hp: form.elements.namedItem("hp").value
       });
-      btn.disabled = true; msg.textContent = "Sending…";
+      btn.disabled = true; msg.textContent = "Subscribing…";
       fetch("/api/quiz-result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(x){
-          msg.textContent = x.ok ? "Done. Your results are on their way — check your inbox in a few minutes." : (x.j.error || "Couldn't send that just now. Try again in a moment.");
+          msg.textContent = x.ok ? "You're on the list. Screenshot your result before you go." : (x.j.error || "Couldn't send that just now. Try again in a moment.");
           if (!x.ok) btn.disabled = false;
         })
         .catch(function(){ msg.textContent = "Couldn't send that just now. Try again in a moment."; btn.disabled = false; });
