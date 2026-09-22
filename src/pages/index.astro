@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Analytics from '@vercel/analytics/astro';
+import Testimonial from "../components/Testimonial.astro";
 // Pillar guides — titles, slugs and categories read from the live pages, 24 July 2026.
 const pillars = [
   { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min", ac: "#CBB7F7" },
@@ -320,6 +321,13 @@ const tiers = [
     .mem-note{max-width:64ch;margin:48px auto 0;text-align:center;font-size:14px;line-height:1.8;color:var(--taupe)}
     .mem-note strong{color:var(--rose)}
 
+    /* ---------- TESTIMONIALS ---------- */
+    .tmz{background:var(--cream-deep);padding:86px 40px;text-align:center}
+    .tmz-in{max-width:700px;margin:0 auto}
+    .tmz .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px}
+    .tmz .btn{margin-top:6px}
+    @media(max-width:640px){.tmz{padding:60px 20px}}
+
     /* ---------- NEWSLETTER ---------- */
     .news .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   </style>
@@ -517,8 +525,15 @@ const tiers = [
   </section>
 
   <!-- TESTIMONIALS
-       Deliberately absent. Real member results only — nothing goes here until
-       genuine, attributable testimonials exist. Do not fill with examples. -->
+       Real, attributable member reviews only. Quotes live in src/we-reviews.js.
+       Nothing goes in here that a real member did not write under her own name. -->
+  <section class="tmz">
+    <div class="tmz-in">
+      <div class="k">In her own words</div>
+      <Testimonial variant="full" eyebrow="The Weekend Ecosystem™" />
+      <a class="btn" href="/shop/weekend-ecosystem">See The Weekend Ecosystem™ <span class="a">→</span></a>
+    </div>
+  </section>
 
   <!-- NEWSLETTER -->
   <section class="news">
