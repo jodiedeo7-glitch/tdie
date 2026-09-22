@@ -1,0 +1,78 @@
+---
+import { FEATURED } from "../we-reviews.js";
+
+export interface Props {
+  /** full = bordered card with the whole quote. pull = short quote, no card. line = one-line strip. */
+  variant?: "full" | "pull" | "line";
+  review?: typeof FEATURED;
+  eyebrow?: string;
+}
+const { variant = "full", review = FEATURED, eyebrow } = Astro.props;
+const stars = "★".repeat(review.stars);
+---
+
+{variant === "line" && (
+  <p class="tm-line">
+    <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    <span class="tm-line-q">&ldquo;{review.line}&rdquo;</span>
+    <span class="tm-line-n">{review.name}</span>
+  </p>
+)}
+
+{variant === "pull" && (
+  <figure class="tm-pull">
+    <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    <blockquote>{review.pull}</blockquote>
+    <figcaption>
+      <strong>{review.name}</strong>
+      <span>{review.tenure}</span>
+    </figcaption>
+  </figure>
+)}
+
+{variant === "full" && (
+  <figure class="tm-card">
+    {eyebrow && <span class="tm-tag">{eyebrow}</span>}
+    <span class="tm-stars tm-stars-lg" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    <blockquote>{review.quote}</blockquote>
+    <figcaption>
+      <strong>{review.name}</strong>
+      <span>{review.source}</span>
+      <span>{review.tenure}</span>
+    </figcaption>
+  </figure>
+)}
+
+<style>
+  .tm-stars{color:var(--pink);letter-spacing:3px;font-size:14px;line-height:1;display:inline-block}
+  .tm-stars-lg{font-size:17px;letter-spacing:4px;margin-bottom:16px;display:block}
+
+  /* ── line ── */
+  .tm-line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:10px;
+           margin:18px auto 0;max-width:62ch;font-size:15px;line-height:1.6;color:var(--choc)}
+  .tm-line-q{font-family:"Fraunces",serif;font-style:italic}
+  .tm-line-n{font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--taupe-deep)}
+
+  /* ── pull ── */
+  .tm-pull{margin:30px auto;max-width:58ch;padding:0 0 0 18px;border-left:2px solid var(--pink);text-align:left}
+  .tm-pull blockquote{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(19px,2.4vw,23px);
+                      line-height:1.45;color:var(--choc);margin:10px 0 12px}
+  .tm-pull figcaption{font-size:13px;line-height:1.6;color:var(--taupe-deep);display:flex;flex-wrap:wrap;gap:10px}
+  .tm-pull figcaption strong{color:var(--choc);font-weight:600}
+
+  /* ── full card ── */
+  .tm-card{background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);
+           border-radius:2px;padding:34px 34px 30px;margin:44px auto;max-width:66ch;text-align:left}
+  .tm-tag{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;
+          letter-spacing:2.4px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:12px}
+  .tm-card blockquote{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(20px,2.6vw,25px);
+                      line-height:1.5;color:var(--choc);margin:0 0 20px}
+  .tm-card blockquote::before{content:"\201C"}
+  .tm-card blockquote::after{content:"\201D"}
+  .tm-card figcaption{display:flex;flex-direction:column;gap:3px;font-size:13.5px;line-height:1.6;color:var(--taupe-deep)}
+  .tm-card figcaption strong{font-size:15px;color:var(--choc);font-weight:600;letter-spacing:.2px}
+  @media(max-width:640px){
+    .tm-card{padding:26px 22px 24px;margin:34px auto}
+    .tm-line{gap:6px}
+  }
+</style>
