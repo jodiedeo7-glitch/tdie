@@ -3,6 +3,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 import { S, HREF } from "../../we-stage.js";
 import SaleBanner from "../../components/SaleBanner.astro";
+import Testimonial from "../../components/Testimonial.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -150,6 +151,7 @@ const faqs = [
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
       <a class="btn-ghost" href="/weekend-ecosystem/preview">Look inside first <span class="a">→</span></a>
     </div>
+    <Testimonial variant="line" />
     <p class="we-hero-time">Fifteen hours across a weekend — two Friday evening, eight Saturday, five Sunday. Or three weeks of evenings. The modules don't expire and neither does your access.</p>
     <p class="we-peek">Open the real thing before you decide. Two full modules, the prompt cards, the update log — no email, no checkout, nothing to enter.</p>
     <p class="we-access">{S.access}</p>
@@ -217,6 +219,7 @@ const faqs = [
         </a>
       ))}
     </div>
+    <Testimonial variant="full" eyebrow="And what a member built with it" />
   </section>
 
   <!-- THE WEEKEND -->
@@ -424,6 +427,7 @@ const faqs = [
     <h2>There are no refunds. That's deliberate.</h2>
     <p>The moment you're in you have all of it — twenty-two modules, thirty-six prompts, every vault, the templates. There is nothing to hand back, and I'm not funding weekends that never got taken.</p>
     <p>So look first. The preview is the real interface — two full modules, the prompt cards, the tracker, the certificate. No email, no card, nothing to enter. Read it properly, decide properly, then buy.</p>
+    <Testimonial variant="pull" />
     <p class="we-guar-small"><a href="/weekend-ecosystem/preview">Look inside before you decide →</a></p>
   </section>
 
