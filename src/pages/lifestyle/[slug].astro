@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
+import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 export function getStaticPaths() {
@@ -42,7 +43,8 @@ const rel = "sponsored nofollow noopener";
       ) : (
         <p class="ls-empty">Nothing here yet. The first {category.name.toLowerCase()} looks are on their way.</p>
       )}
-      <p class="ls-disclosure">{DISCLOSURE}</p>
+      <LifestyleExtras />
+    <p class="ls-disclosure">{DISCLOSURE}</p>
     </section>
   </PageLayout>
 ) : (
@@ -93,7 +95,8 @@ const rel = "sponsored nofollow noopener";
           </div>
         </>
       )}
-      <p class="ls-disclosure">{DISCLOSURE}</p>
+      <LifestyleExtras />
+    <p class="ls-disclosure">{DISCLOSURE}</p>
     </article>
   </PageLayout>
 )}
