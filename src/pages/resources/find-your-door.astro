@@ -12,11 +12,12 @@ import Testimonial from "../../components/Testimonial.astro";
 // Standing Rule 18: the affiliate door ships link + rel="sponsored" + disclosure together.
 // Comparison-frame rule: Pretty & Paid PLR Vault™ is never paired with a membership door.
 // Results show on screen for everyone, and stay there — nothing is emailed.
+// 24 Sep 2026: quiz-specific Skool UTM, WE payment plan, free/secondary step (alt) on S, W and K results.
 // The form under the result subscribes to the weekly list, tagged with the door
 // the quiz landed on. It posts to /api/quiz-result, which needs MAILERLITE_API_KEY.
 // ─────────────────────────────────────────────────────────────
 
-const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
+const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_source=site&utm_medium=quiz&utm_campaign=find-your-door";
 const WE = "/shop/weekend-ecosystem";
 const VAULT = "/shop/pretty-and-paid-plr-vault";
 const SCC = "/go/earn-with-skool-scc";
@@ -130,11 +131,12 @@ const stats = [
 
       <p class="fd-r-disc" id="fd-r-disc" hidden>Affiliate link — this one isn't mine. I earn a commission if you buy through it, at no cost to you. The owner sets the price and can change it without notice.</p>
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
+      <p class="fd-r-alt" id="fd-r-alt" hidden></p>
       <p class="fd-r-later" id="fd-r-later"></p>
 
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
-        <h3>Weekly emails, pointed at your door</h3>
+        <h3 id="fd-send-h">Weekly emails, pointed at your door</h3>
         <p>Your result lives on this screen — screenshot it before you go. The list is where the rest of it happens: one idea a week, written for the door you just landed on. Unsubscribe anytime.</p>
         <div class="fd-send-row">
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
@@ -185,7 +187,7 @@ const stats = [
       <article class="fd-card">
         <span class="fd-door-k">Standalone course · yours for good</span>
         <h3>The Weekend Ecosystem™</h3>
-        <div class="fd-price"><b>$97</b> one-time · every future update included</div>
+        <div class="fd-price"><b>$97</b> one-time, or 3 × $33.33 · every future update included</div>
         <p class="fd-card-line">You're not short on content. You're short on a place to put it.</p>
         <p>Twenty-two modules that turn what you've already made — Skool lessons, calls, PDFs, posts — into a website on a domain you own and a blog a stranger can find on Google, with email capture and your offers routed from every article. Claude writes every file. You paste the prompt, read what came back, and say yes. Sixteen hours in six chunks; spread it over three weekends if you need to.</p>
         <p class="fd-for"><strong>For you if</strong> you run a Skool group, sell courses or guides, or have simply been creating for years and all of it lives on platforms you rent.</p>
@@ -242,7 +244,7 @@ const stats = [
 
   <script is:inline>
   (function(){
-    var SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_campaign=skool_link_sidebar_links&utm_content=84529be4ccf6404fbd5b7235626ae55d";
+    var SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_source=site&utm_medium=quiz&utm_campaign=find-your-door";
 
     // ── The five doors. Names, prices and routes match the live pages. ──
     var DOORS = {
@@ -250,6 +252,7 @@ const stats = [
            why: "You don't need more information. You need the order it goes in. Standard is the build curriculum — brand, offer, content, email and Pinterest — laid out in the sequence I'd do it again.",
            moves: ["Start the trial and open the start-here trainings before anything else", "Build your AI twin and brand first, so everything after it looks like one business", "Shape one offer inside The Monetization Edit before you make a single product"],
            cta: "Start Standard — 7 days free", href: SKOOL, aff: false,
+           alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: " — free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge" },
            later: "When content becomes the thing that stops you, Membership Premium writes the month for you." },
       P: { name: "Membership Premium", price: "$27 per month after a free 7-day trial",
            why: "Your business isn't the problem. The daily writing is. Premium hands you the month already written, so the blank caption box stops deciding whether you show up.",
@@ -261,15 +264,17 @@ const stats = [
            moves: ["Pick the three products that fit your niche — not ten", "Rebrand them in Canva: your colours, your fonts, your name", "Let PLR Glow Studio write the titles, descriptions and tags, then list all three"],
            cta: "Open Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault", aff: false,
            later: "When the shop deserves a home that Google can find, The Weekend Ecosystem™ builds it." },
-      W: { name: "The Weekend Ecosystem™", price: "$97 one-time · every future update included",
+      W: { name: "The Weekend Ecosystem™", price: "$97 one-time, or 3 payments of $33.33 · every future update included",
            why: "You wrote the blog posts years ago. They're sitting behind a login. This turns what you've already made into a website and blog on a domain you own — built by Claude, approved by you.",
            moves: ["Friday night: list everything you've already made — you'll find more than you expect", "Saturday: your site goes live and your best lessons become articles", "Sunday: email capture, offers on every article, and the system that keeps it running"],
            cta: "See The Weekend Ecosystem™", href: "/shop/weekend-ecosystem", aff: false,
+           alt: { pre: "Want to see it before you decide? ", label: "Look inside the course first", post: " — a proper look inside, no email needed.", href: "/weekend-ecosystem/preview" },
            later: "When the site needs feeding every month, Membership Premium writes the content." },
       K: { name: "Earn With Skool (SCC)", price: "$97 one-time · recommended, not mine",
            why: "You're already the one answering questions in other people's groups. That isn't a sign you aren't ready — it's the job description. This is the course I point you to for opening your own.",
            moves: ["Write down the ten questions people already ask you — that's your first curriculum", "Stop waiting to feel qualified; decide the one result your group is for", "Open the room, then learn to earn from it"],
            cta: "See Earn With Skool (SCC)", href: "/go/earn-with-skool-scc", aff: true,
+           alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: " — Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true },
            later: "Once the group exists, The Weekend Ecosystem™ gives it a front door on Google." }
     };
     // Vault is never paired with a membership door (comparison-frame rule).
@@ -450,6 +455,15 @@ const stats = [
       if (D.aff) btn.setAttribute("rel", "sponsored nofollow"); else btn.removeAttribute("rel");
       $("fd-r-disc").hidden = !D.aff;
       $("fd-r-later").textContent = D.later;
+      var alt = $("fd-r-alt"); alt.innerHTML = "";
+      if (D.alt) {
+        alt.appendChild(document.createTextNode(D.alt.pre));
+        var al = document.createElement("a"); al.href = D.alt.href; al.textContent = D.alt.label;
+        if (D.alt.aff) al.setAttribute("rel", "sponsored nofollow");
+        alt.appendChild(al); alt.appendChild(document.createTextNode(D.alt.post));
+        alt.hidden = false;
+      } else { alt.hidden = true; }
+      $("fd-send-h").textContent = "Weekly emails, pointed at " + D.name;
 
       window.__fdResult = { door: door, stage: stage, goal: goal, stuck: stuck, fear: fearOpt[1],
         reframe: reframe, first_move: D.moves[0], time: timeOpt[1] };
@@ -576,6 +590,9 @@ const stats = [
     .fd-r-list{list-style:none;margin:0 0 28px;padding:0}
     .fd-r-list li{position:relative;padding:9px 0 9px 26px;font-size:16.5px;line-height:1.55;border-bottom:1px dashed rgba(43,22,27,.1)}
     .fd-r-list li::before{content:"✦";position:absolute;left:0;top:9px;color:var(--pink);font-size:13px}
+    .fd-r-alt{margin:18px 0 0;font-size:15px;line-height:1.6;color:var(--choc-soft)}
+    .fd-r-alt[hidden]{display:none}
+    .fd-r-alt a{color:var(--pink);text-decoration:underline;font-weight:500}
     .fd-r-later{margin:22px 0 0;font-size:14.5px;line-height:1.6;color:var(--choc-mute)}
 
 
