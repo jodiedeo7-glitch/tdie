@@ -106,6 +106,12 @@ export interface Props {
   dateModified?: string;     // ISO 8601. Defaults to datePublished when that exists.
   faqs?: { question: string; answer: string }[];  // Omit for Article schema only.
   related?: { href: string; title: string }[];    // Recommended Reading rows. Omit to render none.
+  // Per-article overrides (added 24 Sep 2026). Use ONLY when this article's
+  // topic matches one product more closely than its pillar's default does.
+  // Same rules as a pillar row: the href must be live, the free slot takes $0
+  // resources only, and the paid slot never takes an affiliate product.
+  routeFree?: { label: string; blurb: string; href: string };
+  routePaid?: { label: string; blurb: string; href: string };
 }
 
 const {
@@ -120,6 +126,8 @@ const {
   dateModified,
   faqs,
   related,
+  routeFree,
+  routePaid,
 } = Astro.props;
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -241,7 +249,13 @@ paid: {
 
   // --- 2. Pinterest -------------------------------------------
   // free:  Pinterest Keyword Planner — /resources/pinterest-keyword-planner — DOES NOT EXIST. Omitted.
-  // paid:  Pinterest Foundations™ — /shop/pinterest-foundations — DOES NOT EXIST. Omitted.
+  // paid:  Membership Standard ($9/mo · $99/yr), led by Pinterest Foundations™ — founder
+  //        call 24 Sep 2026: the tier that includes the module, plus every other
+  //        Standard module, is the upsell. (Foundations also sells alone at $27.)
+  //        Changed 24 Sep 2026. The slot used to sell the batching guide at "$5",
+  //        which is not its price (canon: $9), next to a "$9 monthly membership"
+  //        comparison. Foundations got its $27 Buy Now on 21 Sep 2026, and it is the
+  //        course the pillar guide already recommends in its own body.
   // affiliate: None — Pinterest pays nothing; Tailwind isn't taught. Empty is a PASS.
 "Pinterest": {
     free: {
@@ -251,10 +265,10 @@ paid: {
       href: "/resources/pinterest-traffic-kit",
     },
 paid: {
-      label: "How I Batch & Schedule Pinterest",
+      label: "Membership Standard — Pinterest Foundations™ included",
       blurb:
-        "One sitting, two weeks queued. The batching system, start to finish. $5 one time — not the $9 monthly membership.",
-      href: "/go/how-i-batch-schedule-a-month-of-pinterest-in-one-3-hour-bloc",
+        "Pinterest Foundations™ walks the whole setup, done properly the first time: boards, keywords, pin structure and claiming your site. Membership Standard includes it, plus every other Standard module, for $9/month or $99/year.",
+      href: "/membership",
     },
     newsletter:
       "Pinterest isn't social media. Treating it like Instagram is why yours is flat. Weekly, what it actually is.",
@@ -264,7 +278,11 @@ paid: {
   // --- 3. Content Creation ------------------------------------
   // free:  Canva Crash Course — /resources/canva-crash-course — DOES NOT EXIST. Omitted.
   //        (Cheapest gap on the map — PDF is built, only the page is missing. Action B.5.)
-  // paid:  Tommy Kate Edit™ — /shop/tommy-kate-edit — DOES NOT EXIST. Omitted.
+  // paid:  The Content Edit — Membership Standard, $9/month. Changed 24 Sep 2026.
+  //        The slot used to sell The Tommy Kate Edit at "$17, inside the community",
+  //        but the link went to a Skool course that is locked to Membership Standard
+  //        with no $17 buy button (canon Decision 94), so the price it showed could
+  //        not be paid. The Content Edit is the Standard module this pillar teaches.
   // affiliate: Canva — the ONLY pillar where Canva is correct, and the only
   //            affiliate on the site that ships as a link.
   "Content Creation": {
@@ -275,10 +293,10 @@ paid: {
       href: "/resources/content-creation-kit",
     },
 paid: {
-      label: "The Tommy Kate Edit™",
+      label: "The Content Edit — Membership Standard",
       blurb:
-        "Image prompts that hold one AI persona steady across themed sets. Swap in your own avatar. $17, inside the community.",
-      href: "https://www.skool.com/thedigitalincomeedit/classroom/ac16b3b7?md=3ceb0b3048754b20bf181b1c1882b13a",
+        "The module for never starting from a blank screen again: your content pillars, and what to post from each one. $9/month.",
+      href: "/membership",
     },
     affiliate: {
       name: "Canva",
@@ -323,7 +341,10 @@ paid: {
   //        standalone product exists for this pillar; affiliate marketing is
   //        taught inside the membership. Same treatment as Email Marketing,
   //        Branding and Passive Income.
-  // affiliate: Leni Loves — $37, AFFILIATE, NOT OWNED. Moved out of the paid
+  // affiliate: The Brand Closet™ — founder call 24 Sep 2026 (replaces Leni Loves).
+  //        canon.json products[] row, AFFILIATE, NOT OWNED, 50% recurring. Free to
+  //        join; its paid tiers are Rose Berry's prices, so no price on the card.
+  //        Previously: Leni Loves — $27 (closed 21 Sep 2026), AFFILIATE, NOT OWNED. Moved out of the paid
   //        slot, which an affiliate product can never occupy. Linked, so the
   //        layout ships rel="sponsored" and the disclosure as a set. Price is
   //        deliberately absent from the blurb — $9 is already on this screen.
@@ -337,10 +358,10 @@ paid: {
       href: "/resources/affiliate-starter-kit",
     },
     affiliate: {
-      name: "Leni Loves",
+      name: "The Brand Closet™",
       blurb:
-        "A finished collage product from another creator. Worth a look if you'd rather point your first recommendations at something already built than build one yourself.",
-      href: "/go/leni-loves",
+        "Rose Berry's community for dressing AI influencers in trending looks and pinning them with affiliate links. A working example of everything on this page, and free to join.",
+      href: "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce",
     },
     paid: {
       label: "Affiliate Marketing — Membership Standard",
@@ -359,10 +380,17 @@ paid: {
   //        Landing page on-site, delivery via Beacons — the Blueprint pattern.
   //        A.1 CLOSED: PDF corrected; the Beacons listing carries no tier and
   //        no price, so the price defect does not apply to the listing.
-  // paid:  GAP — no standalone product. Resource Map names Membership Premium
-  //        ($27/mo) as the CTA. /membership is LIVE, so this slot ships.
-  // affiliate: Make — recommended, UNLINKED. No relationship exists
-  //            (Decision 11). Honest, taught in Module 6, not monetized.
+  // paid:  Membership Premium ($27/mo · $250/yr), led by Scaling & Systems — founder
+  //        call 24 Sep 2026: the tier that includes the module and every other
+  //        module is the upsell. (Scaling & Systems also sells alone at $97.)
+  //        Changed 24 Sep 2026. Rebuilt 20 Sep 2026 on the real stack: the
+  //        morning publishing task, the reply sweep, the Sunday content batch,
+  //        email inside real limits. It is exactly what this pillar describes.
+  // affiliate: NONE. Removed 24 Sep 2026. The old card called Make "the automation
+  //        tool this business actually runs on, and the one taught in Module 6".
+  //        Both halves stopped being true on 20 Sep 2026: Make is not in the stack
+  //        (canon infrastructure) and its lesson was retired in the rebuild.
+  //        Nothing in the real stack pays a referral, so empty is the honest PASS.
   "Automation & Paid Traffic": {
     free: {
       label: "The Automation Starter Kit",
@@ -371,15 +399,10 @@ paid: {
       href: "/resources/automation-kit",
     },
     paid: {
-      label: "Membership — Premium",
+      label: "Membership Premium — Scaling & Systems included",
       blurb:
-        "The Ads Edit™ and Module 6 live inside Premium. $27/month, and the only place this is taught end to end.",
+        "Scaling & Systems builds the automations this business actually runs on, lesson by lesson: the post that publishes itself, the reply sweep, the Sunday batch. Membership Premium includes it, plus every other module and The Ads Edit™, for $27/month or $250/year.",
       href: "/membership",
-    },
-    affiliate: {
-      name: "Make",
-      blurb:
-        "The automation tool this business actually runs on, and the one taught in Module 6. No affiliate relationship — just the honest answer.",
     },
     newsletter:
       "Doing it by hand isn't discipline. It's a bottleneck. Weekly: one thing you should stop doing yourself.",
@@ -454,7 +477,8 @@ paid: {
   //        segmentation OPEN).
   // paid:  Business Architecture Blueprint™ — /shop/business-architecture-blueprint
   //        — DOES NOT EXIST. Omitted.
-  // affiliate: Make — recommended, UNLINKED. Identical treatment to Pillar 6.
+  // affiliate: NONE. Make removed 24 Sep 2026 for the same reason as Pillar 6:
+  //            not in the stack, and its lesson was retired. Empty is a PASS.
   "Business Systems": {
     free: {
       label: "The Systems Starter Kit",
@@ -467,11 +491,6 @@ paid: {
       blurb:
         "Turn everything you've already written into a website and blog that works while you sleep. One weekend, 22 modules. Open now.",
       href: "/shop/weekend-ecosystem",
-    },
-    affiliate: {
-      name: "Make",
-      blurb:
-        "Where the systems in this article stop being diagrams and start running. Named in Module 6. No affiliate relationship.",
     },
     newsletter:
       "Most people don't have a business. They have a job they gave themselves. Weekly, the difference — and how to cross it.",
@@ -605,8 +624,9 @@ const DEFAULT_PILLAR = {
 
 const pillar = PILLARS[category as keyof typeof PILLARS] ?? DEFAULT_PILLAR;
 
-const free = "free" in pillar ? pillar.free : null;
-const paid = "paid" in pillar ? pillar.paid : null;
+// A per-article override wins over the pillar default, for that one slot only.
+const free = routeFree ?? ("free" in pillar ? pillar.free : null);
+const paid = routePaid ?? ("paid" in pillar ? pillar.paid : null);
 const affiliate = "affiliate" in pillar ? pillar.affiliate : null;
 
 // Narrowed once here rather than inline, so the template branches on a
@@ -802,7 +822,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
         shared freebie form and lands the address on the list.
       */}
       <div class="news-form"><FreebieForm heading="Get The Weekly Edit" button="Subscribe" /></div>
-      <div class="fine">One idea a week for over 1,200 women building on their own terms. Unsubscribe anytime.</div>
+      <div class="fine">One idea a week for women building on their own terms. Unsubscribe anytime.</div>
     </div>
   </section>
 
