@@ -1,0 +1,65 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
+
+const counts = Object.fromEntries(CATEGORIES.map((c) => [c.slug, LOOKS.filter((l) => l.category === c.slug).length]));
+const latest = LOOKS.slice(0, 24);
+---
+<PageLayout
+  title="Lifestyle · Pink Outfits, Rooms and Finds | The Digital Income Edit™"
+  description="Pink outfits, dorm rooms, home decor, car accessories and gift guides, every piece linked on Amazon. New looks every day."
+  wide
+>
+  <section class="page-wrap wide ls">
+    <span class="page-eyebrow">Lifestyle</span>
+    <h1>Pink, <em>on purpose.</em></h1>
+    <p class="lede">Outfits, rooms and the small pretty things, styled head to toe and linked piece by piece. New looks land every day.</p>
+
+    <nav class="ls-cats" aria-label="Lifestyle categories">
+      {CATEGORIES.map((c) => (
+        <a class="ls-cat" href={`/lifestyle/${c.slug}`}>
+          <span class="ls-cat-name">{c.name}</span>
+          <span class="ls-cat-blurb">{c.blurb}</span>
+          <span class="ls-cat-count">{counts[c.slug] ? `${counts[c.slug]} look${counts[c.slug] === 1 ? "" : "s"}` : "Coming soon"}</span>
+        </a>
+      ))}
+    </nav>
+
+    <h2 class="ls-h2">The latest looks</h2>
+    {latest.length ? (
+      <div class="ls-grid">
+        {latest.map((l) => (
+          <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+            <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, 300px" />
+            <span class="ls-card-cat">{categoryOf(l.category)?.name}{l.season ? ` · ${l.season}` : ""}</span>
+            <span class="ls-card-title">{l.title}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="ls-empty">The first looks land this week. Pink Halloween first, obviously.</p>
+    )}
+
+    <p class="ls-disclosure">{DISCLOSURE}</p>
+  </section>
+</PageLayout>
+
+<style is:global>
+  .ls .ls-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:8px 0 64px}
+  .ls .ls-cat{display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;background:var(--white);border:1px solid var(--cream-deep);text-decoration:none;color:var(--choc);transition:border-color .3s var(--ease),transform .3s var(--ease)}
+  .ls .ls-cat:hover{border-color:var(--pink);transform:translateY(-2px)}
+  .ls .ls-cat-name{font-family:var(--display);font-size:22px;font-weight:400}
+  .ls .ls-cat-blurb{font-size:14px;line-height:1.5;color:var(--choc-mute)}
+  .ls .ls-cat-count{margin-top:auto;padding-top:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep);font-weight:600}
+  .ls .ls-h2{font-family:var(--display);font-weight:300;font-size:clamp(26px,4vw,36px);margin:0 0 22px}
+  .ls .ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+  .ls .ls-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
+  .ls .ls-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush)}
+  .ls .ls-card-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
+  .ls .ls-card-title{font-family:var(--display);font-size:19px;line-height:1.25}
+  .ls .ls-card:hover .ls-card-title{color:var(--pink-deep)}
+  .ls .ls-empty{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--taupe-deep)}
+  .ls .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
+  @media(max-width:640px){.ls .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .ls-card-title{font-size:16px}}
+</style>

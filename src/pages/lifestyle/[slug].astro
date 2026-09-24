@@ -1,0 +1,127 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
+
+export function getStaticPaths() {
+  const catSlugs = new Set(CATEGORIES.map((c) => c.slug));
+  const clash = LOOKS.find((l) => catSlugs.has(l.slug));
+  if (clash) throw new Error(`Lifestyle look slug "${clash.slug}" collides with a category name. Rename the look.`);
+  return [
+    ...CATEGORIES.map((c) => ({ params: { slug: c.slug }, props: { kind: "category", category: c } })),
+    ...LOOKS.map((l) => ({ params: { slug: l.slug }, props: { kind: "look", look: l } })),
+  ];
+}
+
+const { kind, category, look } = Astro.props;
+const catLooks = kind === "category" ? LOOKS.filter((l) => l.category === category.slug) : [];
+const cat = kind === "look" ? categoryOf(look.category) : category;
+const more = kind === "look" ? LOOKS.filter((l) => l.slug !== look.slug && l.category === look.category).slice(0, 4) : [];
+const rel = "sponsored nofollow noopener";
+---
+{kind === "category" ? (
+  <PageLayout
+    title={`${category.name} · Pink Amazon Finds | The Digital Income Edit™`}
+    description={`${category.blurb} Every piece linked on Amazon.`}
+    wide
+  >
+    <section class="page-wrap wide ls">
+      <a class="page-eyebrow" href="/lifestyle">Lifestyle</a>
+      <h1>{category.name}</h1>
+      <p class="lede">{category.blurb}</p>
+      {catLooks.length ? (
+        <div class="ls-grid">
+          {catLooks.map((l) => (
+            <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+              <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, 300px" />
+              <span class="ls-card-cat">{l.season || cat.name}</span>
+              <span class="ls-card-title">{l.title}</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="ls-empty">Nothing here yet. The first {category.name.toLowerCase()} looks are on their way.</p>
+      )}
+      <p class="ls-disclosure">{DISCLOSURE}</p>
+    </section>
+  </PageLayout>
+) : (
+  <PageLayout
+    title={`${look.title} | The Digital Income Edit™`}
+    description={(look.intro || `${look.title}. Every piece linked on Amazon.`).slice(0, 158)}
+    wide
+    ogImage={look.images[0].src.src}
+  >
+    <article class="page-wrap wide ls ls-look">
+      <a class="page-eyebrow" href={`/lifestyle/${cat.slug}`}>Lifestyle · {cat.name}{look.season ? ` · ${look.season}` : ""}</a>
+      <h1>{look.title}</h1>
+      {look.intro && <p class="lede">{look.intro}</p>}
+      <p class="ls-disclosure ls-disclosure-top">Affiliate links. {DISCLOSURE.split(". ")[0]}.</p>
+
+      <div class="ls-look-body">
+        <div class="ls-look-images">
+          {look.images.map((im) => (
+            <Image src={im.src} alt={im.alt || look.title} widths={[480, 720, 1000]} sizes="(max-width: 900px) 100vw, 520px" />
+          ))}
+        </div>
+        <div class="ls-look-items">
+          <h2 class="ls-h2">Shop the look</h2>
+          <ol class="ls-items">
+            {look.items.map((it) => (
+              <li>
+                <a href={it.link} rel={rel} target="_blank">{it.name}</a>
+                {it.note && <span class="ls-item-note">{it.note}</span>}
+              </li>
+            ))}
+          </ol>
+          {look.ideaList && (
+            <a class="ls-all" href={look.ideaList} rel={rel} target="_blank">Shop every piece on Amazon</a>
+          )}
+        </div>
+      </div>
+
+      {more.length > 0 && (
+        <>
+          <h2 class="ls-h2 ls-more-h">More {cat.name.toLowerCase()}</h2>
+          <div class="ls-grid">
+            {more.map((l) => (
+              <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+                <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480]} sizes="(max-width: 640px) 50vw, 240px" />
+                <span class="ls-card-title">{l.title}</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+      <p class="ls-disclosure">{DISCLOSURE}</p>
+    </article>
+  </PageLayout>
+)}
+
+<style is:global>
+  .ls .ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+  .ls .ls-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
+  .ls .ls-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush)}
+  .ls .ls-card-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
+  .ls .ls-card-title{font-family:var(--display);font-size:19px;line-height:1.25}
+  .ls .ls-card:hover .ls-card-title{color:var(--pink-deep)}
+  .ls .ls-empty{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--taupe-deep)}
+  .ls .ls-h2{font-family:var(--display);font-weight:300;font-size:clamp(24px,3.4vw,32px);margin:0 0 18px}
+  .ls .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
+  .ls .ls-disclosure-top{margin:-24px 0 36px;padding:0;border:0}
+  .ls-look .ls-look-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
+  .ls-look .ls-look-images{display:grid;gap:18px}
+  .ls-look .ls-look-images img{width:100%;height:auto;background:var(--blush)}
+  .ls-look .ls-look-items{position:sticky;top:96px}
+  .ls-look .ls-items{list-style:none;counter-reset:it;padding:0;margin:0 0 28px;border-top:1px solid var(--cream-deep)}
+  .ls-look .ls-items li{counter-increment:it;display:flex;flex-direction:column;gap:4px;padding:16px 0 16px 44px;border-bottom:1px solid var(--cream-deep);position:relative}
+  .ls-look .ls-items li::before{content:counter(it,decimal-leading-zero);position:absolute;left:0;top:17px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold-deep)}
+  .ls-look .ls-items a{font-size:17px;color:var(--choc);text-decoration:underline;text-decoration-color:var(--pink-soft);text-underline-offset:4px}
+  .ls-look .ls-items a:hover{color:var(--pink-deep)}
+  .ls-look .ls-item-note{font-size:14px;color:var(--choc-mute);line-height:1.5}
+  .ls-look .ls-all{display:inline-block;background:var(--choc);color:var(--cream);padding:16px 26px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none}
+  .ls-look .ls-all:hover{background:var(--pink-deep)}
+  .ls-look .ls-more-h{margin-top:72px}
+  @media(max-width:900px){.ls-look .ls-look-body{grid-template-columns:1fr;gap:32px}.ls-look .ls-look-items{position:static;order:-1}}
+  @media(max-width:640px){.ls .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .ls-card-title{font-size:16px}}
+</style>
