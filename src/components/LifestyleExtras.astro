@@ -1,0 +1,49 @@
+---
+// Lifestyle section extras (Jodie, 24 Sep 2026): the Pink Finds email signup
+// plus two cards. Card 1 = TDIE (build and monetize your own AI influencer).
+// Card 2 = The Brand Closet™ (affiliate, rel=sponsored + disclosure as a set,
+// Standing Rule 18). Signup posts to MailerLite form 199525394616943647,
+// group "Lifestyle Pink Finds".
+import FreebieForm from "./FreebieForm.astro";
+const BC = "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce";
+---
+<section class="lx">
+  <FreebieForm
+    heading="New pink finds, every Friday"
+    button="Send Me the Finds"
+    action="https://assets.mailerlite.com/jsonp/2532349/forms/199525394616943647/subscribe"
+    sub="The week's new looks in one email, every piece linked. Unsubscribe anytime."
+  />
+
+  <p class="lx-eyebrow">Plot twist: this whole shop is run by an AI model</p>
+  <div class="lx-cards">
+    <a class="lx-card" href="/membership">
+      <span class="lx-k">Build your own</span>
+      <span class="lx-t">Create an AI influencer, then make her pay</span>
+      <span class="lx-d">The girl in these photos isn't real, and the commissions are. Inside The Digital Income Edit™ you build your own AI twin, give her a look that stays consistent, and turn her into a business that earns while you sleep in.</span>
+      <span class="lx-btn">Start with Membership Standard · $9/month</span>
+    </a>
+    <a class="lx-card lx-card-pink" href={BC} rel="sponsored nofollow noopener" target="_blank">
+      <span class="lx-k">Already have a twin?</span>
+      <span class="lx-t">Dress her in what's trending</span>
+      <span class="lx-d">The Brand Closet™ hands you trending Amazon looks, done-for-you Pinterest pins and 600+ fashion prompts ready to copy and paste for your AI twin. Copy, paste, post. Paid.</span>
+      <span class="lx-btn">Join The Brand Closet™ free</span>
+      <span class="lx-disc">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</span>
+    </a>
+  </div>
+</section>
+
+<style is:global>
+  .lx{margin-top:72px}
+  .lx .lx-eyebrow{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin:56px 0 16px}
+  .lx .lx-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .lx .lx-card{display:flex;flex-direction:column;gap:10px;padding:28px 26px;background:var(--white);border:1px solid var(--cream-deep);border-top:2px solid var(--choc);text-decoration:none;color:var(--choc);transition:transform .3s var(--ease),border-color .3s var(--ease)}
+  .lx .lx-card:hover{transform:translateY(-2px);border-color:var(--pink)}
+  .lx .lx-card-pink{background:var(--blush);border-top-color:var(--pink)}
+  .lx .lx-k{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep);font-weight:600}
+  .lx .lx-t{font-family:var(--display);font-size:25px;line-height:1.2}
+  .lx .lx-d{font-size:15px;line-height:1.65;color:var(--choc-soft)}
+  .lx .lx-btn{margin-top:auto;padding-top:10px;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;font-weight:600;color:var(--choc);text-decoration:underline;text-decoration-color:var(--pink);text-underline-offset:5px}
+  .lx .lx-disc{font-size:12px;color:var(--choc-meta);line-height:1.5}
+  @media(max-width:760px){.lx .lx-cards{grid-template-columns:1fr}}
+</style>
