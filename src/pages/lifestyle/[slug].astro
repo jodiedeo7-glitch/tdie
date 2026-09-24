@@ -22,7 +22,7 @@ const rel = "sponsored nofollow noopener";
 ---
 {kind === "category" ? (
   <PageLayout
-    title={`${category.name} · Pink Amazon Finds | The Digital Income Edit™`}
+    title={`${category.name} · Pink Amazon Finds`}
     description={`${category.blurb} Every piece linked on Amazon.`}
     wide
   >
@@ -49,7 +49,7 @@ const rel = "sponsored nofollow noopener";
   </PageLayout>
 ) : (
   <PageLayout
-    title={`${look.title} | The Digital Income Edit™`}
+    title={`${look.title}`}
     description={(look.intro || `${look.title}. Every piece linked on Amazon.`).slice(0, 158)}
     wide
     ogImage={look.images[0].src.src}
