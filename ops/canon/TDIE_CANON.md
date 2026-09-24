@@ -1,5 +1,5 @@
 # THE DIGITAL INCOME EDIT™ — CANON
-### Current · 21 September 2026 · Single live copy — no versioned predecessors
+### Current · 24 September 2026 · Single live copy — no versioned predecessors
 
 **Build Your Business Backwards. Scale It Forward.™**
 
@@ -41,6 +41,8 @@
 | **Email** | MailerLite. Env vars: `MAILERLITE_GROUP_ID` (buyers), `MAILERLITE_WAITLIST_GROUP_ID` (waitlist), `MAILERLITE_BAMI_WAITLIST_GROUP_ID`. Kit was never adopted. |
 | **Analytics** | Vercel Web Analytics, site-wide |
 | **Pinterest** | Username `TheDigitalIncomeEditTDIE` (changed from NurseMadeDigital, September 2026 — `pinterest.com/Nursemadedigital` is now a dead link). **Pinterest blocks every URL on Jodie's domains** — confirmed across www, learn and links. Three appeals were auto-denied. Skool links are the only working Pinterest destination until Jodie says otherwise. The claimed website in Pinterest settings is the bare `thedigitalincomeedit.com` (checked in Pinterest, 16 September 2026); the profile website field shows `www.thedigitalincomeedit.com` as verified. Leave both as they are. Do not edit bio metadata or unclaim the domain until the block resolves — a blocked domain may not be re-claimable. |
+| **Amazon** | **Jodie is an approved Amazon Associate and Amazon Influencer** (Decision 101, 24 September 2026). One Associates account, one tracking tag; the Influencer storefront runs on it. Registered in `canon.json → products[]` as "Amazon Influencer Storefront" (not owned). Used on the Legally Blonde Pinterest boards, on Instagram `@itstommykate`, and on the site's `/lifestyle` section. Every link ships with the Amazon disclosure. Never a price. |
+| **Instagram** | `@the.faceless.homestead.mama` is the Premium DFY Content Calendar test account (Decision 99). `@itstommykate` is revived 24 September 2026 as the Tommy Kate account for Amazon and lifestyle looks only (Decision 101). The two are never mixed. |
 | **Meta Pixel** | ID ends `...031...` — digit 9 is a THREE. Never "correct" it to `...051...`. |
 | **Tool stack** | Astro · Vercel · GitHub · Skool · Beacons · Canva · Claude · MailerLite · Pinterest native. Threads is a channel, run manually/by automation through the browser, not a stack dependency. Nothing outside this list. |
 
@@ -171,7 +173,7 @@ The "six rebrandable products and three AI transformation workflows" description
 
 ## 5 · PRODUCTS
 
-Forty-two rows with exact prices and live URLs: **`canon.json → products[]`.** Three affiliate rows were added 21 September 2026 (Decision 90) — The Brand Closet™, Upside and The Anti-Influencer Method™ (AIM) — the Skool platform referral row the same day (Decision 91), and three owned classroom modules the same day (Decision 93) — The Offer Edit, The Funnel Edit and Scaling & Systems, which sell standalone and had been priced in Skool with no register row behind them.
+Forty-four rows with exact prices and live URLs: **`canon.json → products[]`.** Three affiliate rows were added 21 September 2026 (Decision 90) — The Brand Closet™, Upside and The Anti-Influencer Method™ (AIM) — the Skool platform referral row the same day (Decision 91), and three owned classroom modules the same day (Decision 93) — The Offer Edit, The Funnel Edit and Scaling & Systems, which sell standalone and had been priced in Skool with no register row behind them.
 
 **Price collisions.** `tdie_audit.py` computes the collision table from `canon.json` on every run, so it cannot go stale. Wherever two products share a price on one screen, the copy names what each price buys before the reader has to work it out.
 
@@ -186,6 +188,8 @@ Forty-two rows with exact prices and live URLs: **`canon.json → products[]`.**
 **Leni Loves is $27.** Confirmed by Jodie 21 September 2026, closing a three-way conflict between $37 in the register, $27 as the live shop price and $17 in a July 2026 record. Publish $27 plainly — never as a discount off $37, never beside a struck-through figure. Closed item.
 
 **Shopify (affiliate, Decision 83, amended 18 September 2026).** Registered in `products[]` as not owned. **Every Shopify link on every surface — site, Skool, email, Facebook — is Jodie's direct affiliate link `https://shopify.pxf.io/eK3xYz`. There is no bridge page.** Founder call: the link that ships is always the direct one. Wherever it appears it travels with `rel="sponsored"` and the affiliate disclosure as a set (Standing Rule 18) — the journey card and the inline article links both carry the disclosure, and on Facebook the disclosure sits in the comment beside the link. No earnings figures ever appear on a Meta surface. Shopify's offer as of 18 September 2026: 3-day free trial, then $1/month for 3 months (monthly billing), then Basic at $39/month monthly or $29/month annual. Shopify's prices, subject to change — verified quarterly with the other affiliates.
+
+**Amazon (affiliate, Decision 101, 24 September 2026).** Jodie is an approved Amazon Associate and Amazon Influencer. Registered in `products[]` as "Amazon Influencer Storefront", not owned. Pinterest pins link to the storefront Idea List for each look; the site's `/lifestyle` pages use her SiteStripe item links and Idea Lists. Every link travels with the disclosure (Standing Rule 18) and `rel="sponsored nofollow"` on the site. No price is ever shown. It does not fill the Pillar 5 affiliate slot. Amazon's own listing photos are never posted; they are only references for AI-made images.
 
 **Jodie is not a Canva affiliate** (September 2026). Canva is recommended without a link and without an affiliate disclosure. Any asset naming "Canva Pro" in a list of affiliate examples is stale — corrected in the Scaling & Systems module on 20 September 2026.
 
@@ -202,7 +206,9 @@ Utility, top-right: `Search · Member Login · Join the Membership`
 
 **Learn is the sole educational hub.** There is no Blog section, no `/blog/` segment, no "blog post" as a page-type name. Blogging survives as a *topic*, not a section.
 
-**Routes:** `/` `/learn/` `/learn/[slug]` `/shop/` `/resources/` `/about/` `/contact/` `/membership/`
+**Routes:** `/` `/learn/` `/learn/[slug]` `/shop/` `/resources/` `/about/` `/contact/` `/membership/` `/lifestyle` `/lifestyle/[category]` `/lifestyle/[look]`
+
+**`/lifestyle` (Decision 101, 24 September 2026)** is the shop-the-look section for Jodie's Amazon Influencer looks: a hub, ten category pages (clothing, accessories, jewelry, beauty, perfume, home decor, dorm, car, books, gift guides) and one page per look. It is in the site nav and footer. It is **not a pillar, not part of the `/learn` library, never a journey slot**, and it changes no Resource Map pillar row. Pages build automatically from one JSON file plus images per look in `src/lifestyle/` (format in `src/lifestyle/README.md`); the Legally Blonde pin factory adds them. A look with no images or no links is skipped by the build.
 No dates in URLs. Short descriptive slugs only.
 
 **`/bami`** is live, indexable, in the sitemap, and deliberately not in the navigation. It is reached by direct link from promotion, not by browsing.
@@ -520,6 +526,8 @@ The same push recorded the chunked-base64 method in §9, since this file is far 
 
 Shipped the same day into the live *Weekend Ecosystem — Access Granted* email (MailerLite workflow `196430036792772181`, email `196430145647544181`): the 30% / $29.10 terms, the four-step Beacons setup, and "Grab your affiliate link" hyperlinked to the registered programme URL. The automation was never paused to do it — MailerLite allows email content edits on a live workflow, which avoids the slot-promotion trap recorded in the Defect Register. All four workflows verified still in their original states afterwards.
 
+**101.** (24 September 2026) **Jodie is an approved Amazon Associate and Amazon Influencer, and the site gets a Lifestyle section.** Founder call. Three things follow. The Amazon Influencer Storefront gets a row in `products[]` (not owned); its public URL is captured by the first Legally Blonde sprint run and written in. A `/lifestyle` shop-the-look section goes live on the site (hub, ten categories, one page per look), linked in the nav and footer, built from JSON plus images in `src/lifestyle/`; it is not a pillar and never a journey slot. And the looks come from the Legally Blonde Amazon pin factory (`claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md`): a flat lay or shoppable collage pin plus a lifestyle photo of Tommy Kate wearing every item, two a day for six months, seasonal, linking to storefront Idea Lists. Each look is also posted to the revived Instagram account `@itstommykate`, feed post plus Story with a link sticker, and never to `@the.faceless.homestead.mama`, which stays the Premium DFY Content Calendar test account. Every link ships with the Amazon disclosure; no prices; Amazon's listing photos are generation references only, never posted. The owned-domain bridge-page rule cannot apply to Pinterest while the domain is blocked, so Amazon pin links go direct, following the Shopify precedent (Decision 83). Amazon onsite commission videos are planned by Jodie and not yet made.
+
 ---
 
-**The Digital Income Edit™ · Canon · 21 September 2026**
+**The Digital Income Edit™ · Canon · 24 September 2026**
