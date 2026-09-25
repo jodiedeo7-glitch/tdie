@@ -69,7 +69,8 @@
       "rule": "Both Instagram accounts are Tommy Kate, with two jobs, never mixed.",
       "the.faceless.homestead.mama": "TDIE's face, voice and experiment member. The Premium DFY Content Calendar test account. The Daily Prompts, the calendar and every other TDIE asset link to, are inspired by, or use this account.",
       "itstommykate": "Affiliate influencer account on a revived old Tommy Kate account. Separate from TDIE, influencer only, never uses the Daily Prompts or the DFY Content Calendar. Will expand into a UGC account and is the planned subject of a UGC / AI UGC module, so her content is made with that goal in mind."
-    }
+    },
+    "premium_public_price_2026_09_24": "Decision 114. Founder call, 24 Sep 2026, 10:57 pm Eastern: every page, post, email, PDF, DM and scheduled task that tells anyone what Membership Premium costs quotes $35/month · $297/year from this moment, not from 30 Sep. Skool's checkout keeps the Decision 110 flash-sale schedule exactly as set (so a buyer before 11:59 pm Eastern 30 Sep pays less than quoted). Founder's reason: 'I'd rather have people see a happy surprise at checkout than think it's 27 and see 35.' The only exceptions are the member flash sale itself: Blast 1, Blast 2, any post that exists only to announce that sale, and the three Skool price-change scheduled tasks, because those are the real checkout prices on the days they run. The annual saving is written 'eight and a half months' price for twelve'. The 'former free members pay $27/month for Premium' line is replaced now, not on 1 Oct. Site changed on ten pages and checked live the same night; the Skool member-watch task now quotes $35/$297; the 1 Oct Offer Edit card task was turned off. Closed item; never re-raised as a conflict with Decision 110."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -149,8 +150,8 @@
     },
     {
       "name": "Membership Premium",
-      "price": 27,
-      "display": "$27/month · $250/year",
+      "price": 35,
+      "display": "$35/month · $297/year",
       "recurring": true,
       "platform": "Skool",
       "url": "https://www.skool.com/thedigitalincomeedit/plans",
@@ -163,7 +164,8 @@
         "price": 35,
         "display": "$35/month · $297/year",
         "note": "From 11:59 pm Eastern on 30 Sep 2026 price becomes 35 and display becomes '$35/month · $297/year'. Existing members keep the price they joined at. See meta.premium_price_increase_2026_09_24."
-      }
+      },
+      "public_price_note": "Decision 114, 24 Sep 2026: $35/month · $297/year is the only Premium price any asset quotes, effective immediately. Skool checkout charges the Decision 110 flash-sale prices until 11:59 pm Eastern, 30 Sep 2026 (see scheduled_change); existing members keep the price they joined at."
     },
     {
       "name": "The Business Architect Mentorship Intensive™",
@@ -184,7 +186,8 @@
       "$17/month",
       "$29/month"
     ],
-    "why_recorded": "All three were named in conversation on 19 Sep 2026 and none has ever been a Skool tier price. They are recorded here so the check below has a reason and so the question is not asked a third time. Legacy grandfathered members pay less than the current price for their tier; those rates are never published and are never the price of a tier."
+    "why_recorded": "All three were named in conversation on 19 Sep 2026 and none has ever been a Skool tier price. They are recorded here so the check below has a reason and so the question is not asked a third time. Legacy grandfathered members pay less than the current price for their tier; those rates are never published and are never the price of a tier.",
+    "premium_public_price": "Decision 114, founder call 24 Sep 2026: every asset quotes Membership Premium at $35/month · $297/year from 24 Sep 2026, ahead of the 30 Sep checkout change. See meta.premium_public_price_2026_09_24."
   },
   "retired_structure": {
     "free_tier": "PERMANENTLY RETIRED. Never reference 'Free Community', 'Free tier', or a $0 Skool rung again.",
@@ -866,7 +869,7 @@
           "\\$29 ?/ ?(mo|month)",
           "\\$29/mo"
         ],
-        "why": "Tier prices are $9 Standard and $27 Premium — settled 19 Sep 2026, see tier_pricing_settled. $7, $17 and $29 have never been Skool tier prices. Any of them printed as a tier price is a FAIL. $29/month may legitimately appear as Shopify's annual Basic plan price; check what the figure is describing before failing it.",
+        "why": "Tier prices are $9 Standard and $35 Premium (quoted from 24 Sep 2026, Decision 114; $27 before that) — settled 19 Sep 2026, see tier_pricing_settled. $7, $17 and $29 have never been Skool tier prices. Any of them printed as a tier price is a FAIL. $29/month may legitimately appear as Shopify's annual Basic plan price; check what the figure is describing before failing it.",
         "scope": "tier prices only"
       },
       {
@@ -975,7 +978,9 @@
           "\\$9[^.]{0,80}\\$27",
           "\\$27[^.]{0,80}\\$9",
           "\\$9[^.]{0,80}\\$11",
-          "\\$11[^.]{0,80}\\$9"
+          "\\$11[^.]{0,80}\\$9",
+          "\\$9[^.]{0,80}\\$35",
+          "\\$35[^.]{0,80}\\$9"
         ],
         "why": "Two prices on one screen with no statement of what each buys. Standing Rule 32. The fix is to name what each price buys, not to remove a word."
       },
