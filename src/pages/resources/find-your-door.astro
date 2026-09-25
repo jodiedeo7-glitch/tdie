@@ -12,7 +12,7 @@ import Testimonial from "../../components/Testimonial.astro";
 // Standing Rule 18: the affiliate door ships link + rel="sponsored" + disclosure together.
 // Comparison-frame rule: Pretty & Paid PLR Vault™ is never paired with a membership door.
 // Results show on screen for everyone, and stay there — nothing is emailed.
-// 24 Sep 2026: quiz-specific Skool UTM, WE payment plan, free/secondary step (alt) on S, W and K results.
+// 24 Sep 2026: quiz-specific Skool UTM, WE payment plan, free/secondary step (alt) on S, W and K results. S also offers The First Product Cheat Sheet.
 // The form under the result subscribes to the weekly list, tagged with the door
 // the quiz landed on. It posts to /api/quiz-result, which needs MAILERLITE_API_KEY.
 // ─────────────────────────────────────────────────────────────
@@ -252,7 +252,8 @@ const stats = [
            why: "You don't need more information. You need the order it goes in. Standard is the build curriculum — brand, offer, content, email and Pinterest — laid out in the sequence I'd do it again.",
            moves: ["Start the trial and open the start-here trainings before anything else", "Build your AI twin and brand first, so everything after it looks like one business", "Shape one offer inside The Monetization Edit before you make a single product"],
            cta: "Start Standard — 7 days free", href: SKOOL, aff: false,
-           alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: " — free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge" },
+           alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: " — free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge",
+             more: { pre: " Or grab ", label: "The First Product Cheat Sheet", post: " — free, four pages, eight lessons, one small move each.", href: "https://links.thedigitalincomeedit.com/shop/53d07da4-31ac-4720-beb8-c6498ac40eea" } },
            later: "When content becomes the thing that stops you, Membership Premium writes the month for you." },
       P: { name: "Membership Premium", price: "$27 per month after a free 7-day trial",
            why: "Your business isn't the problem. The daily writing is. Premium hands you the month already written, so the blank caption box stops deciding whether you show up.",
@@ -461,6 +462,11 @@ const stats = [
         var al = document.createElement("a"); al.href = D.alt.href; al.textContent = D.alt.label;
         if (D.alt.aff) al.setAttribute("rel", "sponsored nofollow");
         alt.appendChild(al); alt.appendChild(document.createTextNode(D.alt.post));
+        if (D.alt.more) {
+          alt.appendChild(document.createTextNode(D.alt.more.pre));
+          var am = document.createElement("a"); am.href = D.alt.more.href; am.textContent = D.alt.more.label;
+          alt.appendChild(am); alt.appendChild(document.createTextNode(D.alt.more.post));
+        }
         alt.hidden = false;
       } else { alt.hidden = true; }
       $("fd-send-h").textContent = "Weekly emails, pointed at " + D.name;
