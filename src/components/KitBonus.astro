@@ -1,0 +1,40 @@
+---
+// The Keep It Running Kit bonus (Decision 105). Shows until the deadline, then disappears on its own:
+// hidden at build time after the deadline, and removed in the browser the moment the deadline passes.
+const DEADLINE = "2026-10-05T03:59:00Z"; // Sunday 4 October 2026, 11:59 pm Eastern
+export interface Props {
+  variant?: "hero" | "inline";
+}
+const { variant = "inline" } = Astro.props;
+const live = Date.now() < Date.parse(DEADLINE);
+---
+
+{live && (
+  <div class={`kb kb-${variant}`} data-kit-deadline={DEADLINE}>
+    <span class="kb-eyebrow">Free bonus · until Sunday, October 4, 11:59 pm Eastern</span>
+    <p class="kb-line"><strong>The Keep It Running Kit</strong> comes free with it: six of my paid guides, $63 worth.</p>
+    <p class="kb-list">The Operating Prompts™ · The First 30 Days After Your Site Goes Live · How I Batch &amp; Schedule a Month of Pinterest in One 3-Hour Block · Build Your First Freebie in One Afternoon · My Exact $0-to-First-Sale Path · My 5-Minute Canva Pin Template Swap</p>
+    <p class="kb-note">In your access email the minute you pay, on one payment or three.</p>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll("[data-kit-deadline]").forEach((el) => {
+    const end = Date.parse(el.getAttribute("data-kit-deadline") || "");
+    if (Date.now() > end) el.remove();
+  });
+</script>
+
+<style>
+  .kb{border:1px solid rgba(43,22,27,.14);border-top:2px solid var(--pink);
+      border-radius:2px;background:var(--cream,#FBF8F5);padding:18px 22px;
+      margin:0 0 22px;text-align:left}
+  .kb-hero{max-width:560px;margin:0 auto 22px}
+  .kb-eyebrow{display:block;font-family:"JetBrains Mono","Inter",monospace;
+              font-size:10px;letter-spacing:1.8px;text-transform:uppercase;
+              color:var(--gold);margin-bottom:8px}
+  .kb-line{font-size:15.5px;line-height:1.65;color:var(--choc);margin:0 0 6px}
+  .kb-line strong{font-family:"Fraunces",serif;font-size:19px;font-weight:400;color:var(--pink)}
+  .kb-list{font-size:13.5px;line-height:1.7;color:var(--choc);opacity:.85;margin:0 0 6px}
+  .kb-note{font-size:13px;line-height:1.6;color:var(--gold);margin:0}
+</style>
