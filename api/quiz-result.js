@@ -76,7 +76,7 @@ const clean = (v, max = 250) => String(v ?? "").replace(/\s+/g, " ").trim().slic
 export default async function handler(req, res) {
   if (req.method === "GET") return res.status(200).json({ live: Boolean(KEY) });
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
-  if (!KEY) return res.status(503).json({ error: "Email results aren't switched on yet." });
+  if (!KEY) return res.status(503).json({ error: "Couldn't add you to the list just now. Try again in a moment." });
 
   const b = req.body || {};
   if (b.hp) return res.status(200).json({ ok: true }); // honeypot: quietly accept, do nothing
@@ -86,7 +86,7 @@ export default async function handler(req, res) {
   if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return res.status(400).json({ error: "Enter a valid email address." });
   }
-  if (!GROUPS[door]) return res.status(400).json({ error: "Take the quiz first, then send your results." });
+  if (!GROUPS[door]) return res.status(400).json({ error: "Take the quiz first, then subscribe." });
 
   try {
     await ensureFields();
@@ -109,7 +109,7 @@ export default async function handler(req, res) {
       method: "POST",
       body: JSON.stringify({ email, fields, groups: [target] }),
     });
-    if (!r.ok) return res.status(500).json({ error: "Couldn't send that just now. Try again in a moment." });
+    if (!r.ok) return res.status(500).json({ error: "Couldn't add you to the list just now. Try again in a moment." });
     const sub = (await r.json()).data;
 
     // One door at a time: take them out of the other quiz groups.
@@ -121,6 +121,6 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ ok: true });
   } catch {
-    return res.status(500).json({ error: "Couldn't send that just now. Try again in a moment." });
+    return res.status(500).json({ error: "Couldn't add you to the list just now. Try again in a moment." });
   }
 }

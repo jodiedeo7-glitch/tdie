@@ -492,10 +492,10 @@ const stats = [
       fetch("/api/quiz-result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(x){
-          msg.textContent = x.ok ? "You're on the list. Screenshot your result before you go." : (x.j.error || "Couldn't send that just now. Try again in a moment.");
+          msg.textContent = x.ok ? "You're on the list. This screen is the only copy of your result — screenshot it before you go." : (x.j.error || "Couldn't add you to the list just now. Try again in a moment.");
           if (!x.ok) btn.disabled = false;
         })
-        .catch(function(){ msg.textContent = "Couldn't send that just now. Try again in a moment."; btn.disabled = false; });
+        .catch(function(){ msg.textContent = "Couldn't add you to the list just now. Try again in a moment."; btn.disabled = false; });
     };
 
     $("fd-next").onclick = function(){ if (ans[i] && ans[i].length) next(); };
