@@ -72,7 +72,9 @@
     },
     "premium_public_price_2026_09_24": "Decision 114. Founder call, 24 Sep 2026, 10:57 pm Eastern: every page, post, email, PDF, DM and scheduled task that tells anyone what Membership Premium costs quotes $35/month · $297/year from this moment, not from 30 Sep. Skool's checkout keeps the Decision 110 flash-sale schedule exactly as set (so a buyer before 11:59 pm Eastern 30 Sep pays less than quoted). Founder's reason: 'I'd rather have people see a happy surprise at checkout than think it's 27 and see 35.' The only exceptions are the member flash sale itself: Blast 1, Blast 2, any post that exists only to announce that sale, and the three Skool price-change scheduled tasks, because those are the real checkout prices on the days they run. The annual saving is written 'eight and a half months' price for twelve'. The 'former free members pay $27/month for Premium' line is replaced now, not on 1 Oct. Site changed on ten pages and checked live the same night; the Skool member-watch task now quotes $35/$297; the 1 Oct Offer Edit card task was turned off. Closed item; never re-raised as a conflict with Decision 110.",
     "meta_link_rule_2026_09_25": "Decision 115. Founder rule, 25 Sep 2026: no link of any kind ever goes in a Facebook or Instagram post body or caption, because Meta suppresses posts that carry one. The post names the CTA in words and points to the comments. The link goes ONLY in the first comment, set to post automatically 5 minutes after the post's scheduled publish time; where the scheduler cannot do that, the comment goes up by hand 5 minutes after the post is live, and no post is reported done until its first-comment link is seen live. Skool links are never a raw URL: anywhere a link can sit behind words (Skool posts, comments and lessons, email, site, PDFs) a Skool link is a hyperlink buried in the CTA words. Facebook and Instagram comments cannot hide a link behind words, so there the link sits on its own line after a short CTA line. Overrides any document line that puts a link in a Meta post body or caption, including TDIE_SIX_M_FRAMEWORK.md pre-ship check step 6 on Facebook and Instagram. Instagram Story link stickers are not covered. Threads is not covered; Threads links follow claude/TDIE_THREADS_SYSTEM.md. Does not reopen Decision 107 (outreach and reply comments on other people's Threads and Instagram posts never carry a pasted link). Closed item.",
-    "dfy_services_2026_09_25": "Decision 116. Founder instruction and price approval, 25 Sep 2026 (~1 am Eastern): every fast automation Jodie already runs for TDIE becomes a done-for-you service, tweaked per client, and each one doubles as proof of concept (the member can watch the same system running in TDIE). Eleven new lessons published in the Open DFY Services classroom course (slug c83b49d5) and the How It Works lesson rewritten, all read back from the server. Ordering is by DM keyword, then intake form, then a payment link; there are no Beacons listings for these. Each service has a row in products[] (platform 'Skool (DFY, DM to order)'). The spicy DFY lesson is Jodie's and is never edited. Doc of record: claude/TDIE_DFY_SERVICES.md."
+    "dfy_services_2026_09_25": "Decision 116. Founder instruction and price approval, 25 Sep 2026 (~1 am Eastern): every fast automation Jodie already runs for TDIE becomes a done-for-you service, tweaked per client, and each one doubles as proof of concept (the member can watch the same system running in TDIE). Eleven new lessons published in the Open DFY Services classroom course (slug c83b49d5) and the How It Works lesson rewritten, all read back from the server. Ordering is by DM keyword, then intake form, then a payment link; there are no Beacons listings for these. Each service has a row in products[] (platform 'Skool (DFY, DM to order)'). The spicy DFY lesson is Jodie's and is never edited. Doc of record: claude/TDIE_DFY_SERVICES.md.",
+    "decision_117_2026_09_25": "Decision 117. Founder instruction, 25 Sep 2026. Instagram carries no links, ever (captions, comments, first comments, replies); calls to action point to the link in bio; Story link stickers excepted. Facebook first-comment rule unchanged. The old posting day rules (no membership Tue to Thu, Vault Wednesday only, Vault/membership never adjacent, Premium Monday or Friday only, weekly affiliate cap of three) are removed and replaced by the spread rules in content_calendar_rules.spread_rules. Reel renders on Higgsfield must cost under 30 credits (Wan 3.0 720p default, Grok Imagine 1.5 fallback). Recorded the same day in TDIE_CANON.md §3, §4, §5, §7, here, claude/TDIE_SKOOL_POSTING_SYSTEM.md, SOP-15-dfy-content-calendar.md and claude/TDIE_THREADS_SYSTEM.md.",
+    "dfy_beacons_checkout_2026_09_25": "Decision 118. 25 Sep 2026, conversion-optimization pass on the 11 new DFY services (Decision 116). Each DFY service now also has a Beacons checkout page in addition to the DM-to-order flow, so a buyer can pay directly instead of only DMing. Beacons checkout URLs were added to each product row below (beacons_checkout_url or beacons_checkout_urls for services with more than one price tier). Discount terms added at checkout and in the Skool lesson bodies: Premium members get 15% off; a service's first 2 clients get 25% off in exchange for a testimonial (does not stack with the Premium discount). Two exceptions have no Beacons checkout: Run It Like Mine: DFY Automation Setup (no product built for any of its four tiers — DM only) and the ongoing/monthly halves of DFY Viral Instagram Content Calendar and DFY Skool Autopilot (their one-time/setup prices do have checkout links; their recurring monthly options and the Skool Autopilot Mirror add-on remain DM-only)."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -604,7 +606,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=d95e61de09e8476ebcb146b34cac4557",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Custom one-page business dashboard in the client's colours with the numbers she tracks. Built on claude/TDIE_DASHBOARD_LESSON.md. Order word DASHBOARD. 48 to 72 hours."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Custom one-page business dashboard in the client's colours with the numbers she tracks. Built on claude/TDIE_DASHBOARD_LESSON.md. Order word DASHBOARD. 48 to 72 hours.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/dd510a07-ebb1-44d6-bb62-e6cdc6a4765a"
     },
     {
       "name": "AI Influencer Brand Bundle",
@@ -642,7 +645,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=ba015faf8a814dc6a5cbee70c7fc56e6",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 30 days of Threads posts in the client's voice, daily slot plan, one offer a day with link-in-reply, hook bank. Built on claude/TDIE_THREADS_SYSTEM.md, written in Jodie's own framework words; no third-party course material is sold. Order word THREADS CALENDAR. 3 to 5 business days."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 30 days of Threads posts in the client's voice, daily slot plan, one offer a day with link-in-reply, hook bank. Built on claude/TDIE_THREADS_SYSTEM.md, written in Jodie's own framework words; no third-party course material is sold. Order word THREADS CALENDAR. 3 to 5 business days.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/557a062a-ece0-4bb5-9ab4-333acf4fec54"
     },
     {
       "name": "DFY Repurposing Pack",
@@ -652,7 +656,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=50a82ec38df941a581e7bb4b0865048d",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). One article into 24 finished assets, the canon count (see repurposing_pack). Order word REPURPOSE. 3 to 5 business days."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). One article into 24 finished assets, the canon count (see repurposing_pack). Order word REPURPOSE. 3 to 5 business days.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/4ab01ccf-0185-499e-b4c0-5109292c25af"
     },
     {
       "name": "DFY 6-Email Sales Series",
@@ -662,7 +667,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=5f809aa8e50f48e1b49026165fa1793c",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Six objection emails for one offer, written and scheduled in the client's MailerLite with buyers excluded. Built on the Weekend Ecosystem objection series. Order word EMAIL SERIES. 3 to 5 business days."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Six objection emails for one offer, written and scheduled in the client's MailerLite with buyers excluded. Built on the Weekend Ecosystem objection series. Order word EMAIL SERIES. 3 to 5 business days.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/9e808b17-a9ad-480b-8434-dbd67bc6bbc9"
     },
     {
       "name": "DFY Etsy Listing Pack",
@@ -672,7 +678,11 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=c1eea7188a34452599f0ac10eb9f2343",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Title, 13 tags, description, 8 mockups and publishing per listing, from the client's own original designs only (no PLR, prompt packs, affiliate or third-party IP). Built on claude/TDIE_ETSY_SHOP.md. Order words ETSY 5 / ETSY 10."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Title, 13 tags, description, 8 mockups and publishing per listing, from the client's own original designs only (no PLR, prompt packs, affiliate or third-party IP). Built on claude/TDIE_ETSY_SHOP.md. Order words ETSY 5 / ETSY 10.",
+      "beacons_checkout_urls": {
+        "ETSY 5 ($197)": "https://links.thedigitalincomeedit.com/shop/71771c33-f23a-41ba-8d6f-55226951f21c",
+        "ETSY 10 ($347)": "https://links.thedigitalincomeedit.com/shop/d57cb9cd-d815-46e7-ae5e-57bfa33b8010"
+      }
     },
     {
       "name": "30 Days of AI Persona Photo Prompts",
@@ -682,7 +692,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=97d70a3685ab4113b455961e106b870e",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 30 copy-paste persona photo prompts plus 30 finished photos and the persona's written world. Built on SOP 16. Order word PERSONA PROMPTS. 3 to 5 business days."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 30 copy-paste persona photo prompts plus 30 finished photos and the persona's written world. Built on SOP 16. Order word PERSONA PROMPTS. 3 to 5 business days.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/9e89a69e-610e-4b0d-af26-2a89ec15aa1f"
     },
     {
       "name": "DFY 30 Days of Pinterest, Done & Scheduled",
@@ -692,7 +703,11 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=91a2c86e739a44e58d15505aadab1f51",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Pins designed, written (title, 450 to 500 character description, alt text) and scheduled into the client's Pinterest. Built on claude/TDIE_PIN_FACTORY.md. Order words 30 DAYS OF PINS / 150 PINS."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Pins designed, written (title, 450 to 500 character description, alt text) and scheduled into the client's Pinterest. Built on claude/TDIE_PIN_FACTORY.md. Order words 30 DAYS OF PINS / 150 PINS.",
+      "beacons_checkout_urls": {
+        "30 DAYS OF PINS ($247)": "https://links.thedigitalincomeedit.com/shop/c8e3bdeb-95e8-4f45-92fe-13fc4c625bed",
+        "150 PINS ($597)": "https://links.thedigitalincomeedit.com/shop/2054fc54-3808-47d2-86a7-439f8f520a45"
+      }
     },
     {
       "name": "DFY Viral Instagram Content Calendar",
@@ -702,7 +717,9 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=e48d0013432c48b0b5787c8194028a42",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). A custom month of Instagram content built on SOP 15 including Decision 111 viral research. Distinct from the Premium Monthly DFY Content Calendar, which is never sold as a one-time unlock: this is a custom build for the client's own brand. Order words VIRAL CALENDAR / CALENDAR MONTHLY. 7 to 10 business days."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). A custom month of Instagram content built on SOP 15 including Decision 111 viral research. Distinct from the Premium Monthly DFY Content Calendar, which is never sold as a one-time unlock: this is a custom build for the client's own brand. Order words VIRAL CALENDAR / CALENDAR MONTHLY. 7 to 10 business days.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/9f47e9c0-feed-4a2d-99e6-0277a9382f32",
+      "beacons_checkout_note": "One-time month only ($297). The $247/month ongoing plan (CALENDAR MONTHLY) is DM-only, no Beacons product."
     },
     {
       "name": "AI Influencer Content Drop",
@@ -719,7 +736,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=8ec7129809ce4a85a7e0607b8105deec",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 10 themed looks, each an Idea List in the client's storefront plus 2 pins with #ad disclosure. Built on claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md. Order word STOREFRONT."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). 10 themed looks, each an Idea List in the client's storefront plus 2 pins with #ad disclosure. Built on claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md. Order word STOREFRONT.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/def5d3b8-006e-4cb8-8db5-f59956bab730"
     },
     {
       "name": "DFY Skool Autopilot",
@@ -729,7 +747,9 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=c28d7087b60f47efb1e148354f30012d",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). A month of 4-slot community posts written and scheduled in the client's SkoolKit, daily post auto-publish, weekly quiet-member DM list. Built on claude/TDIE_SKOOL_POSTING_SYSTEM.md. Order words SKOOL AUTOPILOT / AUTOPILOT MONTHLY / MIRROR."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). A month of 4-slot community posts written and scheduled in the client's SkoolKit, daily post auto-publish, weekly quiet-member DM list. Built on claude/TDIE_SKOOL_POSTING_SYSTEM.md. Order words SKOOL AUTOPILOT / AUTOPILOT MONTHLY / MIRROR.",
+      "beacons_checkout_url": "https://links.thedigitalincomeedit.com/shop/1444c360-23d5-4ba8-9d7c-c09aa79245e4",
+      "beacons_checkout_note": "Setup month only ($497). The $297/month ongoing plan (AUTOPILOT MONTHLY) and the Facebook Group Mirror add-on are DM-only, no Beacons product."
     },
     {
       "name": "Run It Like Mine: DFY Automation Setup",
@@ -739,7 +759,8 @@
       "owned": true,
       "platform": "Skool (DFY, DM to order)",
       "url": "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=8ab40eaa185d4f58923a53d41b812396",
-      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Jodie's own scheduled automations (8 AM publisher, weekly Skool loader, pin factory, Threads writer and loader, Facebook group mirror, member check-in list, Etsy listing builder, Friday readout) set up on the client's own Claude account, in her voice, with test run and instruction sheet. Order words ONE AUTOMATION / THE ENGINE / FULL MACHINE / CARE PLAN."
+      "note": "DFY SERVICE, Decision 116 (25 Sep 2026). Jodie's own scheduled automations (8 AM publisher, weekly Skool loader, pin factory, Threads writer and loader, Facebook group mirror, member check-in list, Etsy listing builder, Friday readout) set up on the client's own Claude account, in her voice, with test run and instruction sheet. Order words ONE AUTOMATION / THE ENGINE / FULL MACHINE / CARE PLAN.",
+      "beacons_checkout_note": "No Beacons product exists for any tier of this service. DM-only for all four packages (ONE AUTOMATION / THE ENGINE / FULL MACHINE / CARE PLAN)."
     },
     {
       "name": "DFY Instagram Audit + Custom Viral Content Calendar",
@@ -1328,15 +1349,19 @@
     "pinterest_spam_risk_note": "Not a style rule and not a banned word. Pinterest's own spam scoring penalises this phrase and its keyword-stuffed variants, and the September 2026 account audit removed it from 86 pin descriptions while the domain block was being appealed. Flag it as platform risk and let Jodie decide."
   },
   "content_calendar_rules": {
-    "no_membership_tue_thu": "No membership tier content Tuesday–Thursday.",
-    "vault_wednesday_only": "Pretty & Paid PLR Vault™ promotes Wednesday only.",
-    "never_adjacent": "Vault and membership posts never share a day and never sit on adjacent days.",
     "meta": "No income or earnings claims on Facebook or Instagram. Permitted on every other surface.",
     "registers": "Skool community posts: warm, casual, emoji-forward, peer-to-peer. Site and editorial: luxury editorial. The two voices do not mix.",
     "rollout": "Two-week rollout. Research starts at the beginning of the last week of the preceding month. One week of posts is released every 3–4 days across the last week of the preceding month and the first week of the covered month, each week tested and scheduled before it runs. Never promise the whole month before the 1st.",
-    "purpose": "The calendar organically promotes TDIE and its paid tiers. Anything inside TDIE is fair game. Every offer mention is a swap-in slot for the member's own offer; kept mentions pay the member via her Skool affiliate link (40%). Posting-day rules still apply.",
+    "purpose": "The calendar organically promotes TDIE and its paid tiers. Anything inside TDIE is fair game. Every offer mention is a swap-in slot for the member's own offer; kept mentions pay the member via her Skool affiliate link (40%). Posting-day rules are retired — see spread_rules (Decision 117).",
     "sale_window_rule": "Decision 110 (24 Sep 2026). A price-increase or flash-sale window runs 4–5 days at most, with only a few days' heads-up before it opens. Never announce an increase a month out.",
-    "meta_links": "Decision 115 (25 Sep 2026). No link in any Facebook or Instagram post body or caption. The link goes only in the first comment, 5 minutes after the post publishes. Skool links are always hyperlinked CTA words, never a raw URL, wherever a link can sit behind words."
+    "meta_links": "Decision 115 (25 Sep 2026). No link in any Facebook or Instagram post body or caption. The link goes only in the first comment, 5 minutes after the post publishes. Skool links are always hyperlinked CTA words, never a raw URL, wherever a link can sit behind words.",
+    "spread_rules": {
+      "decision": 117,
+      "date": "2026-09-25",
+      "rule": "Replaces the old posting-day rules (no membership Tue to Thu, Vault Wednesday only, Vault/membership never adjacent, Premium Monday or Friday only, weekly affiliate cap of three). Any offer any day. At most one selling post a day. Never two selling posts back to back. Same offer never two days running or more than twice a week outside a promo window. Affiliates never same or consecutive days, never the same product twice a week. Nothing repeats inside 14 days.",
+      "instagram_no_links": "Instagram carries no links anywhere, ever — captions, comments, first comments, replies. Calls to action point to the link in bio. Story link stickers are excepted. Facebook's first-comment rule is unchanged (see meta_links).",
+      "reel_render_cost": "Reel renders on Higgsfield must cost under 30 credits (Wan 3.0 720p default, Grok Imagine 1.5 fallback)."
+    }
   },
   "infrastructure": {
     "site": "Astro on Vercel",
