@@ -11,8 +11,8 @@ const posts = Object.values(files)
 
 const SKOOL = "https://www.skool.com/thedigitalincomeedit/about";
 const always = [
-  { title: "Come inside the community", blurb: "Daily prompts, start-here trainings and the whole system I run this account on. Seven days free.", cta: "Start your free 7-day trial", url: SKOOL },
-  { title: "Not sure where to start?", blurb: "Four questions and it tells you which door fits the time and money you actually have.", cta: "Take the free quiz", url: "https://www.thedigitalincomeedit.com/resources/find-your-door" },
+  { t: "Come inside the community", p: "Daily prompts, start-here trainings and the whole system I run this account on. Seven days free.", cta: "Start your free 7-day trial", url: SKOOL, ac: "#D4498D" },
+  { t: "Not sure where to start?", p: "Four questions and it tells you which door fits the time and money you actually have.", cta: "Take the free quiz", url: "https://www.thedigitalincomeedit.com/resources/find-your-door", ac: "#CBB7F7" },
 ];
 ---
 <PageLayout
@@ -22,8 +22,8 @@ const always = [
 >
   <section class="ig-hero">
     <div class="page-eyebrow">@the.faceless.homestead.mama</div>
-    <h1>From my posts</h1>
-    <p class="ig-lede">Saw something in a post? It's right here, newest first.</p>
+    <h1>From <em>my posts.</em></h1>
+    <p class="lede">Saw something today? It's right here — newest first, nothing to scroll for.</p>
   </section>
 
   <section class="ig-list" id="ig-list">
@@ -39,46 +39,91 @@ const always = [
   </section>
 
   <section class="ig-always">
-    {always.map((p) => (
-      <a class="ig-card ig-card-alt" href={p.url} rel="noopener">
-        <h2>{p.title}</h2>
-        <p>{p.blurb}</p>
-        <span class="ig-cta">{p.cta} <span class="a">→</span></span>
-      </a>
-    ))}
+    <div class="ig-divider"><span>Always here</span></div>
+    <div class="ig-always-grid">
+      {always.map((p) => (
+        <a class="ig-alt-card" href={p.url} rel="noopener" style={`--ac:${p.ac}`}>
+          <h3>{p.t}</h3>
+          <p>{p.p}</p>
+          <span class="ig-cta ig-cta-alt">{p.cta} <span class="a">→</span></span>
+        </a>
+      ))}
+    </div>
   </section>
 
   <script is:inline>
     (function () {
       var today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+      var list = document.getElementById("ig-list");
       var shown = 0;
       document.querySelectorAll("#ig-list .ig-card").forEach(function (el) {
         var d = el.getAttribute("data-date");
         if (d > today) { el.remove(); return; }
         var w = el.querySelector(".ig-when");
-        if (w) w.textContent = shown === 0 ? (d === today ? "From today's post" : "From my latest post") : "Earlier";
-        if (shown === 0) el.classList.add("ig-latest");
+        if (shown === 0) {
+          if (w) w.textContent = d === today ? "Today's post" : "My latest post";
+          el.classList.add("ig-latest");
+        } else {
+          if (w) w.textContent = "Earlier";
+        }
         shown++;
       });
+      if (list && shown === 0) list.style.display = "none";
     })();
   </script>
 
   <style>
-    .ig-hero{text-align:center;padding:6px 0 26px}
-    .ig-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:14px}
-    .ig-hero h1{font-weight:600;font-size:clamp(34px,7vw,52px);line-height:1.05;margin:0 0 12px;color:#1a1a1a}
-    .ig-lede{font-size:17px;line-height:1.6;color:#1a1a1a;margin:0}
-    .ig-list,.ig-always{display:grid;gap:14px;max-width:560px;margin:0 auto 14px}
-    .ig-card{display:block;padding:22px 22px 20px;border-radius:14px;background:#fff;border:1px solid rgba(26,26,26,.12);
-      text-decoration:none;color:#1a1a1a;box-shadow:0 10px 30px rgba(214,46,115,.10);transition:transform .15s}
-    .ig-card:hover{transform:translateY(-2px)}
-    .ig-card h2{font-size:21px;font-weight:700;margin:4px 0 6px;line-height:1.25;color:#1a1a1a}
-    .ig-card p{font-size:15.5px;line-height:1.6;margin:0 0 12px;color:#1a1a1a}
-    .ig-when{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--pink)}
-    .ig-cta{font-weight:700;font-size:15px;color:var(--pink)}
-    .ig-latest{background:#D62E73;border-color:#D62E73}
-    .ig-latest h2,.ig-latest p,.ig-latest .ig-when,.ig-latest .ig-cta,.ig-latest .ig-disc{color:#fff}
-    .ig-card-alt{background:#fff}
-    .ig-disc{display:block;margin-top:10px;font-size:12.5px;color:#1a1a1a}
+    .ig-hero{text-align:center;padding:6px 0 8px}
+    .ig-hero .page-eyebrow{color:var(--pink)!important}
+    .ig-hero h1{margin-bottom:18px}
+    .ig-hero h1 em{font-style:italic;color:var(--pink);font-family:var(--display)}
+    .ig-hero .lede{margin:0 auto 8px}
+
+    .ig-list{display:grid;gap:18px;margin:52px 0 0}
+
+    .ig-card{
+      display:block;position:relative;padding:30px 32px 28px;border-radius:var(--r);
+      background:var(--white);border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);
+      transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+    }
+    .ig-card:hover{transform:translateY(-3px);box-shadow:0 30px 60px -34px rgba(43,22,27,.28)}
+    .ig-card h2{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.24;margin:2px 0 10px;color:var(--choc)}
+    .ig-card p{font-size:16px;line-height:1.7;margin:0 0 16px;color:var(--choc-mute)}
+    .ig-when{display:block;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;font-weight:500;color:var(--gold-deep);margin-bottom:10px}
+
+    .ig-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.3px;color:var(--pink)}
+    .ig-cta .a{transition:transform .35s var(--ease)}
+    .ig-card:hover .ig-cta .a{transform:translateX(5px)}
+    .ig-disc{display:block;margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--taupe-deep)}
+
+    .ig-card.ig-latest{
+      background:linear-gradient(155deg,var(--choc) 0%,#3a2229 100%);
+      border-top-color:var(--pink);border-color:transparent;
+      box-shadow:0 40px 80px -44px rgba(43,22,27,.55);
+    }
+    .ig-card.ig-latest .ig-when{color:var(--mauve)}
+    .ig-card.ig-latest h2,.ig-card.ig-latest p{color:var(--cream)}
+    .ig-card.ig-latest p{color:rgba(251,248,245,.78)}
+    .ig-card.ig-latest .ig-cta{color:var(--mauve)}
+    .ig-card.ig-latest .ig-disc{color:rgba(251,248,245,.55)}
+    .ig-card.ig-latest:hover{box-shadow:0 46px 90px -40px rgba(43,22,27,.6)}
+
+    .ig-divider{display:flex;align-items:center;gap:16px;margin:64px 0 30px;color:var(--taupe-deep)}
+    .ig-divider::before,.ig-divider::after{content:"";flex:1;height:1px;background:rgba(43,22,27,.12)}
+    .ig-divider span{font-size:11px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);white-space:nowrap}
+
+    .ig-always-grid{display:grid;gap:16px}
+    .ig-alt-card{display:block;padding:26px 28px;border-radius:var(--r);background:var(--white);
+      border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac);
+      transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+    .ig-alt-card:hover{transform:translateY(-2px);box-shadow:0 24px 46px -30px rgba(43,22,27,.24)}
+    .ig-alt-card h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--choc)}
+    .ig-alt-card p{font-size:14.5px;line-height:1.65;margin:0 0 14px;color:var(--choc-mute)}
+    .ig-cta-alt{font-size:12px}
+
+    @media(max-width:640px){
+      .ig-card{padding:26px 24px 24px}
+      .ig-card h2{font-size:21px}
+    }
   </style>
 </PageLayout>
