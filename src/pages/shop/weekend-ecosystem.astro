@@ -3,7 +3,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 import { S, HREF } from "../../we-stage.js";
 import SaleBanner from "../../components/SaleBanner.astro";
-import KitBonus from "../../components/KitBonus.astro";
+import KitBanner from "../../components/KitBanner.astro";
 import Testimonial from "../../components/Testimonial.astro";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
@@ -148,7 +148,7 @@ const faqs = [
     <p class="we-hero-sub">One weekend. Your content. Claude does the building.</p>
     <p class="we-frame">From the founder who built this entire business faceless, with AI — this is that exact build, packaged into one weekend.</p>
     <p class="we-hero-price"><strong>$97 once</strong> — or three payments of $33.33. Every future update included, forever.</p>
-    <KitBonus variant="hero" />
+    <KitBanner variant="hero" />
     <div class="we-cta-row">
       <a class="btn" href={HREF}>{S.cta} <span class="a">→</span></a>
       <a class="btn-ghost" href="/weekend-ecosystem/preview">Look inside first <span class="a">→</span></a>
@@ -448,7 +448,7 @@ const faqs = [
         <span class="we-close-unit">one-time, or 3 × $33.33 · every future update included</span>
       </div>
       <SaleBanner variant="inline" />
-      <KitBonus variant="inline" />
+      <KitBanner variant="inline" />
       <a class="btn we-close-btn" href={HREF}>{S.cta} <span class="a">→</span></a>
       <p class="we-close-note">{S.access}</p>
     </div>
