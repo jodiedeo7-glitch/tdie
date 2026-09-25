@@ -63,10 +63,22 @@
 | Product | Price | Platform |
 |---|---|---|
 | **Membership Standard** — The Value Vault is available to Standard members à la carte, or in full via Vault Unlock ($49 one-time); it is **not** included in the tier | $9/month · $99/year | Skool |
-| **Membership Premium** — includes The Ads Edit™ and the monthly DFY Content Calendar, unlocks The Premium Vault | $27/month · $250/year | Skool |
+| **Membership Premium** — includes The Ads Edit™ and the monthly DFY Content Calendar, unlocks The Premium Vault | $27/month · $250/year until 11:59 pm Eastern, Wednesday 30 September 2026. From then: **$35/month · $297/year** (Decision 110) | Skool |
 | The Business Architect Mentorship Intensive™ (BAMI) | ⬜ pending | Skool |
 
 **Both tiers carry a 7-day free trial.**
+
+**Premium price increase and member flash sale (Decision 110, confirmed by Jodie 24 September 2026).** Membership Premium goes to **$35/month · $297/year** at 11:59 pm Eastern on Wednesday 30 September 2026. Before that, members get first dibs:
+
+| When (Eastern) | Premium price in Skool |
+|---|---|
+| Sunday 27 Sep, 6:00 pm | $27/month, locked for as long as she stays, or **$197/year** (72 hours) |
+| Wednesday 30 Sep, 6:00 pm | $197 closes. Last call: $27/month locked or $250/year |
+| Wednesday 30 Sep, 11:59 pm | $35/month · $297/year, permanent |
+
+Existing members keep the price they bought in at (Skool's own pricing dialog says so). Grandfathered Standard access is never taken away and nobody is asked to pay or leave. From 1 October 2026 the "former free members pay $27/month for Premium" line is replaced by the new price. The three price changes run as scheduled tasks on Jodie's computer, each checking the live price after it saves. The two member emails are scheduled in SkoolKit with "Send email to all members" on: **Blast 1** "Premium prices go up Thursday. You get first dibs." Sunday 27 Sep, 6:05 pm, and **Blast 2** "$197 just closed. Last call on the old prices before midnight." Wednesday 30 Sep, 6:10 pm, set 72 hours and 5 minutes after Blast 1 because Skool allows one all-member email every 72 hours. Both link to the plans page twice on the CTA words and were read back in SkoolKit on 24 September 2026.
+
+**Price-increase and flash-sale windows run 4–5 days at most, with only a few days' heads-up (founder rule, 24 September 2026).** Never announce an increase a month out: a long runway is not scarcity, it reads as unbelievable or just tells people to wait for the deadline. Applies to every future sale or increase.
 
 **No refunds on any digital product.** Stated once on `/faq`, never repeated per-product. **BAMI is the one exception** — see its guarantee below.
 
@@ -411,6 +423,7 @@ These have been decided. They are not open items, not ship gates, and not audit 
 - **The repo and project copies of canon are the same document (Decision 99).** Brought level 21 September 2026. Neither is "the other one." A change that lands in only one of them is an incomplete change, not a disagreement between sources.
 - **There is no `/affiliates` page, and the member affiliate mechanic is Beacons' own affiliate product (Decision 100).** Founder call, 21 September 2026. Do not propose building an affiliate hub page, and do not re-flag the route as unconfirmed — it is confirmed absent. The setup is four steps inside the member's own Beacons account: add a digital product, choose affiliate product, paste The Weekend Ecosystem™ link, done. Beacons issues the member's own tracked link, which is what resolves the old attribution question — that is no longer unverified and is not raised again.
 - **No DMs, ever, on Threads or Instagram, from any part of this system; outreach and reply comments never carry a pasted link (Decision 107, 24 September 2026).** Founder request, not a response to any incident. Do not propose adding a DM channel, an auto-DM, or a link-in-comment tactic without Jodie raising it by name — and do not re-flag the absence of links in outreach/reply comments as a missed growth lever. The links that already run on Jodie's own posts (the 5 PM offer's pinned comment, article self-replies) are unaffected and are not what this closes.
+- **The Premium price increase is confirmed (Decision 110).** $35/month · $297/year from 11:59 pm Eastern, 30 September 2026, after the member flash sale. Existing members keep their price; grandfathered Standard access is never taken away. Not an open item.
 - **The Legally Blonde Amazon pins keep their generated title overlay (Decision 109).** Founder call, 24 September 2026. It is a scoped exception to the set-text rule in §8, not a conflict between canon and `claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md`, and it is never re-raised as one.
 
 ---
@@ -548,6 +561,8 @@ Shipped the same day into the live *Weekend Ecosystem — Access Granted* email 
 
 **109.** (24 September 2026) **Generated title overlays stay on the Legally Blonde Amazon pins.** Founder call ("do whatever looks the best"). The pin factory's generated titles came out crisp and spelled right on the first sprint, and they look better than set type on these images. So the rule that text is set, never generated, gets one scoped exception: those pins and their Instagram versions only, each overlay checked letter by letter before shipping. Recorded in §8, §10a, `canon.json` (`typography.rule`, `image_prompts.text_rule`, `meta.amazon_pin_text_overlay_2026_09_24`) and the pin factory recipe.
 
+
+**110.** (24 September 2026) **Membership Premium goes to $35/month · $297/year, after a member flash sale.** Confirmed by Jodie. Sale: Sunday 27 September 6:00 pm Eastern, $27/month locked or $197/year; Wednesday 30 September 6:00 pm, $197 closes and $27/month or $250/year runs as a last call; 11:59 pm that night, $35/month · $297/year permanently. Existing members keep the price they joined at. Two all-member email posts carry it (Blast 1 Sunday 6:05 pm, Blast 2 Wednesday 6:10 pm), scheduled in SkoolKit and read back 24 September 2026. The scheduled Premium posts for 11 and 25 October were updated to $35/$297 the same day, and the Monday 28 September post "The one door above the one you're already in" was deleted. Also recorded: sale and price-increase windows run 4–5 days at most with only a few days' heads-up. See §3.
 ---
 
 **The Digital Income Edit™ · Canon · 24 September 2026**
