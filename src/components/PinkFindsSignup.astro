@@ -1,0 +1,78 @@
+---
+// Pink Finds signup (Jodie, 25 Sep 2026). Posts to the MailerLite
+// "Lifestyle Pink Finds" form. Variants:
+//   strip - slim bar under a page intro (Lifestyle hub, landing page)
+//   side  - small box under "Shop the look" on every look page
+//   box   - full box (landing page close)
+// Copy and the Prime Big Deal Days switch live in src/data/pinkfinds.js.
+import { PF_ACTION, PRIME_END, PF } from "../data/pinkfinds.js";
+const { variant = "strip", id } = Astro.props;
+const SINK = "pf-sink-" + Math.random().toString(36).slice(2, 9);
+const primeNow = Date.now() < Date.parse(PRIME_END);
+---
+<div class={`pf pf-${variant}`} data-pf-end={PRIME_END} id={id}>
+  <iframe name={SINK} class="pf-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
+  <form class="pf-form" action={PF_ACTION} method="post" target={SINK} data-pf>
+    <div class="pf-copy">
+      <p class="pf-h" data-pf-prime hidden={!primeNow}>{PF.prime.heading}</p>
+      <p class="pf-h" data-pf-ever hidden={primeNow}>{PF.evergreen.heading}</p>
+      <p class="pf-sub" data-pf-prime hidden={!primeNow}>{PF.prime.sub}</p>
+      <p class="pf-sub" data-pf-ever hidden={primeNow}>{PF.evergreen.sub}</p>
+    </div>
+    <div class="pf-row">
+      <input type="email" name="fields[email]" placeholder="your@email.com" aria-label="Email" required autocomplete="email" />
+      <button type="submit">{PF.button}</button>
+    </div>
+    <input type="hidden" name="ml-submit" value="1" />
+    <input type="hidden" name="anticsrf" value="true" />
+    <p class="pf-done" role="status" hidden>{PF.done}</p>
+  </form>
+</div>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-pf-end]').forEach(function (box) {
+      var prime = Date.now() < Date.parse(box.getAttribute('data-pf-end'));
+      box.querySelectorAll('[data-pf-prime]').forEach(function (el) { el.hidden = !prime; });
+      box.querySelectorAll('[data-pf-ever]').forEach(function (el) { el.hidden = prime; });
+    });
+    document.querySelectorAll('form[data-pf]:not([data-pf-ready])').forEach(function (f) {
+      f.setAttribute('data-pf-ready', '');
+      var sink = document.getElementsByName(f.target)[0];
+      var sent = false;
+      f.addEventListener('submit', function () {
+        sent = true;
+        var b = f.querySelector('button'); b.disabled = true; b.textContent = 'Sending...';
+      });
+      sink.addEventListener('load', function () {
+        if (!sent) return;
+        f.querySelector('.pf-row').hidden = true;
+        f.querySelectorAll('.pf-sub').forEach(function (el) { el.hidden = true; });
+        f.querySelector('.pf-done').hidden = false;
+        if (window.fbq) fbq('track', 'Lead', { content_name: 'Pink Finds' });
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  .pf .pf-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
+  .pf [hidden]{display:none !important}
+  .pf .pf-form{display:flex;flex-direction:column;gap:14px}
+  .pf .pf-h{font-family:var(--display);font-size:24px;line-height:1.2;color:var(--choc);margin:0}
+  .pf .pf-sub{font-size:15px;line-height:1.55;color:var(--choc-soft);margin:4px 0 0}
+  .pf .pf-row{display:flex;gap:10px;flex-wrap:wrap}
+  .pf .pf-row input{flex:1 1 220px;padding:13px 16px;border:1px solid var(--gray);border-radius:2px;font-size:15px;font-family:inherit;background:#fff;color:var(--choc)}
+  .pf .pf-row input:focus{outline:2px solid var(--pink);outline-offset:1px}
+  .pf .pf-row button{padding:13px 24px;background:var(--pink);color:#fff;border:none;border-radius:2px;font-size:14px;font-weight:600;letter-spacing:.4px;font-family:inherit;cursor:pointer;white-space:nowrap}
+  .pf .pf-row button:hover{background:var(--pink-deep)}
+  .pf .pf-done{font-family:var(--display);font-size:20px;line-height:1.35;color:var(--pink-deep);margin:0}
+  .pf-strip{background:var(--white);border:1px solid var(--cream-deep);border-left:3px solid var(--pink);padding:22px 24px;margin:0 0 48px}
+  .pf-strip .pf-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}
+  .pf-side{background:var(--blush);border-top:2px solid var(--pink);padding:22px 20px;margin-top:28px}
+  .pf-side .pf-h{font-size:20px}
+  .pf-side .pf-sub{font-size:14px}
+  .pf-box{background:var(--white);border:1px solid var(--cream-deep);border-top:2px solid var(--pink);padding:34px 32px;margin:56px 0 0}
+  .pf-box .pf-h{font-size:28px}
+  @media(max-width:760px){.pf-strip .pf-form{grid-template-columns:1fr;gap:14px}.pf-strip{padding:20px 18px}}
+</style>

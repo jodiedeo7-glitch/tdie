@@ -3,17 +3,12 @@
 // plus two cards. Card 1 = TDIE (build and monetize your own AI influencer).
 // Card 2 = The Brand Closet™ (affiliate, rel=sponsored + disclosure as a set,
 // Standing Rule 18). Signup posts to MailerLite form 199525394616943647,
-// group "Lifestyle Pink Finds".
-import FreebieForm from "./FreebieForm.astro";
+// group "Lifestyle Pink Finds" (PinkFindsSignup, 25 Sep 2026 campaign).
+import PinkFindsSignup from "./PinkFindsSignup.astro";
 const BC = "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce";
 ---
 <section class="lx">
-  <FreebieForm
-    heading="New pink finds, every Friday"
-    button="Send Me the Finds"
-    action="https://assets.mailerlite.com/jsonp/2532349/forms/199525394616943647/subscribe"
-    sub="The week's new looks in one email, every piece linked. Unsubscribe anytime."
-  />
+  <PinkFindsSignup variant="box" />
 
   <p class="lx-eyebrow">Plot twist: this whole shop is run by an AI model</p>
   <div class="lx-cards">
