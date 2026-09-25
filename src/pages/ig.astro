@@ -1,0 +1,84 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+// Link-in-bio page for Instagram @the.faceless.homestead.mama (added 25 Sep 2026).
+// Instagram posts carry no links (Decision 117), so every post says "it's in my bio"
+// and the bio points here. One JSON file per post lives in src/ig/ (see README there).
+const files = import.meta.glob("../ig/*.json", { eager: true, import: "default" });
+const posts = Object.values(files)
+  .filter((p) => p && p.date && p.url)
+  .sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const SKOOL = "https://www.skool.com/thedigitalincomeedit/about";
+const always = [
+  { title: "Come inside the community", blurb: "Daily prompts, start-here trainings and the whole system I run this account on. Seven days free.", cta: "Start your free 7-day trial", url: SKOOL },
+  { title: "Not sure where to start?", blurb: "Four questions and it tells you which door fits the time and money you actually have.", cta: "Take the free quiz", url: "https://www.thedigitalincomeedit.com/resources/find-your-door" },
+];
+---
+<PageLayout
+  title="From my posts"
+  description="Everything mentioned in my Instagram posts, in one place."
+  noindex
+>
+  <section class="ig-hero">
+    <div class="page-eyebrow">@the.faceless.homestead.mama</div>
+    <h1>From my posts</h1>
+    <p class="ig-lede">Saw something in a post? It's right here, newest first.</p>
+  </section>
+
+  <section class="ig-list" id="ig-list">
+    {posts.map((p) => (
+      <a class="ig-card" href={p.url} data-date={p.date} rel={p.affiliate ? "sponsored noopener" : "noopener"}>
+        <span class="ig-when" data-when={p.date}></span>
+        <h2>{p.title}</h2>
+        <p>{p.blurb}</p>
+        <span class="ig-cta">{p.cta} <span class="a">→</span></span>
+        {p.affiliate && <small class="ig-disc">Affiliate link. I earn a commission if you buy, at no extra cost to you.</small>}
+      </a>
+    ))}
+  </section>
+
+  <section class="ig-always">
+    {always.map((p) => (
+      <a class="ig-card ig-card-alt" href={p.url} rel="noopener">
+        <h2>{p.title}</h2>
+        <p>{p.blurb}</p>
+        <span class="ig-cta">{p.cta} <span class="a">→</span></span>
+      </a>
+    ))}
+  </section>
+
+  <script is:inline>
+    (function () {
+      var today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+      var shown = 0;
+      document.querySelectorAll("#ig-list .ig-card").forEach(function (el) {
+        var d = el.getAttribute("data-date");
+        if (d > today) { el.remove(); return; }
+        var w = el.querySelector(".ig-when");
+        if (w) w.textContent = shown === 0 ? (d === today ? "From today's post" : "From my latest post") : "Earlier";
+        if (shown === 0) el.classList.add("ig-latest");
+        shown++;
+      });
+    })();
+  </script>
+
+  <style>
+    .ig-hero{text-align:center;padding:6px 0 26px}
+    .ig-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:14px}
+    .ig-hero h1{font-weight:600;font-size:clamp(34px,7vw,52px);line-height:1.05;margin:0 0 12px;color:#1a1a1a}
+    .ig-lede{font-size:17px;line-height:1.6;color:#1a1a1a;margin:0}
+    .ig-list,.ig-always{display:grid;gap:14px;max-width:560px;margin:0 auto 14px}
+    .ig-card{display:block;padding:22px 22px 20px;border-radius:14px;background:#fff;border:1px solid rgba(26,26,26,.12);
+      text-decoration:none;color:#1a1a1a;box-shadow:0 10px 30px rgba(214,46,115,.10);transition:transform .15s}
+    .ig-card:hover{transform:translateY(-2px)}
+    .ig-card h2{font-size:21px;font-weight:700;margin:4px 0 6px;line-height:1.25;color:#1a1a1a}
+    .ig-card p{font-size:15.5px;line-height:1.6;margin:0 0 12px;color:#1a1a1a}
+    .ig-when{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--pink)}
+    .ig-cta{font-weight:700;font-size:15px;color:var(--pink)}
+    .ig-latest{background:#D62E73;border-color:#D62E73}
+    .ig-latest h2,.ig-latest p,.ig-latest .ig-when,.ig-latest .ig-cta,.ig-latest .ig-disc{color:#fff}
+    .ig-card-alt{background:#fff}
+    .ig-disc{display:block;margin-top:10px;font-size:12.5px;color:#1a1a1a}
+  </style>
+</PageLayout>
