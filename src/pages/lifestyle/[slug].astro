@@ -2,6 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
+import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
 import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 export function getStaticPaths() {
@@ -30,6 +31,7 @@ const rel = "sponsored nofollow noopener";
       <a class="page-eyebrow" href="/lifestyle">Lifestyle</a>
       <h1>{category.name}</h1>
       <p class="lede">{category.blurb}</p>
+      <PinkFindsSignup variant="strip" />
       {catLooks.length ? (
         <div class="ls-grid">
           {catLooks.map((l) => (
@@ -79,6 +81,7 @@ const rel = "sponsored nofollow noopener";
           {look.ideaList && (
             <a class="ls-all" href={look.ideaList} rel={rel} target="_blank">Shop every piece on Amazon</a>
           )}
+          <PinkFindsSignup variant="side" />
         </div>
       </div>
 

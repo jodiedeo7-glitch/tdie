@@ -1,0 +1,81 @@
+---
+// /lifestyle/pink-finds (Jodie, 25 Sep 2026): the dedicated signup page
+// for the Pink Finds Friday email. This is the link for Instagram
+// stories, the Facebook group first comments and every "join the list"
+// mention. No affiliate links live on this page; the looks link to their
+// own Lifestyle pages, which carry the Amazon disclosure.
+import PageLayout from "../../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
+import { LOOKS, categoryOf } from "../../data/lifestyle.js";
+const latest = LOOKS.slice(0, 6);
+const og = latest[0]?.images[0]?.src?.src;
+---
+<PageLayout
+  title="Pink Finds · The Friday Email"
+  description="If your cart is already pink, this is for you. The week's new pink looks in one Friday email, every piece linked. Outfits, rooms, gifts."
+  wide
+  ogImage={og}
+>
+  <section class="page-wrap wide ls pfp">
+    <a class="page-eyebrow" href="/lifestyle">Lifestyle · The Friday Email</a>
+    <h1>Your cart is already pink. <em>Let's make it good.</em></h1>
+    <p class="lede">If you've scrolled past the same four viral dupes all month, this is for you. Every Friday I send the week's new looks, styled head to toe and linked piece by piece. Outfits, dorm rooms, pretty home things, and the gift guides when the season turns.</p>
+
+    <PinkFindsSignup variant="strip" id="join" />
+
+    <div class="pfp-gets">
+      <div class="pfp-get">
+        <span class="pfp-n">01</span>
+        <span class="pfp-t">Whole looks, not random links</span>
+        <span class="pfp-d">Every find arrives as a finished outfit or room, so you can see it together before anything goes in your cart.</span>
+      </div>
+      <div class="pfp-get">
+        <span class="pfp-n">02</span>
+        <span class="pfp-t">Pink, on purpose</span>
+        <span class="pfp-d">Hot pink, blush, candy, rose. If it's beige, it had to earn its spot.</span>
+      </div>
+      <div class="pfp-get">
+        <span class="pfp-n">03</span>
+        <span class="pfp-t">One email. Friday.</span>
+        <span class="pfp-d">That's the whole deal. Unsubscribe with one click whenever you want.</span>
+      </div>
+    </div>
+
+    {latest.length > 0 && (
+      <>
+        <h2 class="ls-h2">What lands in your inbox</h2>
+        <div class="ls-grid">
+          {latest.map((l) => (
+            <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+              <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480]} sizes="(max-width: 640px) 50vw, 300px" />
+              <span class="ls-card-cat">{categoryOf(l.category)?.name}{l.season ? ` · ${l.season}` : ""}</span>
+              <span class="ls-card-title">{l.title}</span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    <PinkFindsSignup variant="box" />
+    <p class="ls-disclosure">The looks are styled on an AI model. The Lifestyle pages they link to contain Amazon affiliate links: as an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>
+  </section>
+</PageLayout>
+
+<style is:global>
+  .pfp h1{max-width:18ch}
+  .pfp .pfp-gets{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 0 64px}
+  .pfp .pfp-get{display:flex;flex-direction:column;gap:8px;padding:24px 22px;background:var(--white);border:1px solid var(--cream-deep);border-top:2px solid var(--pink)}
+  .pfp .pfp-n{font-size:13px;font-weight:600;color:var(--gold-deep)}
+  .pfp .pfp-t{font-family:var(--display);font-size:22px;line-height:1.2;color:var(--choc)}
+  .pfp .pfp-d{font-size:15px;line-height:1.6;color:var(--choc-soft)}
+  .pfp .ls-h2{font-family:var(--display);font-weight:300;font-size:clamp(26px,4vw,36px);margin:0 0 22px}
+  .pfp .ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+  .pfp .ls-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
+  .pfp .ls-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush)}
+  .pfp .ls-card-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
+  .pfp .ls-card-title{font-family:var(--display);font-size:19px;line-height:1.25}
+  .pfp .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
+  @media(max-width:760px){.pfp .pfp-gets{grid-template-columns:1fr}}
+  @media(max-width:640px){.pfp .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.pfp .ls-card-title{font-size:16px}}
+</style>
