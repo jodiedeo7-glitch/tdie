@@ -133,6 +133,7 @@ const stats = [
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
       <p class="fd-r-alt" id="fd-r-alt" hidden></p>
       <p class="fd-r-later" id="fd-r-later"></p>
+      <p class="fd-r-tool">Whichever door it is, the offer comes first. <a href="/resources/one-sentence-offer">Get what you sell down to one sentence</a>: free, two minutes, results on screen.</p>
 
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
@@ -528,6 +529,8 @@ const stats = [
 
   <!-- is:global — quiz options and results are built by script and carry no scope hash. Every selector is .fd- prefixed. -->
   <style is:global>
+    .fd-r-tool{margin:18px 0 0;padding:14px 16px;border-left:2px solid var(--pink);background:rgba(255,138,194,.12);font-size:15.5px;line-height:1.6}
+    .fd-r-tool a{color:var(--pink-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
     .fd{--fd-line:rgba(43,22,27,.1)}
     .fd-rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease-out,transform .5s ease-out;animation:fd-fs 0s linear 2.5s forwards}
     .fd-rv.in{opacity:1;transform:none;animation:none}

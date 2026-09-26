@@ -1,0 +1,627 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import Testimonial from "../../components/Testimonial.astro";
+
+// ─────────────────────────────────────────────────────────────
+// THE ONE-SENTENCE OFFER TOOL. Free, on screen only.
+// Teaching source of record: ops/cloud-kit/TDIE_ONE_SENTENCE_OFFER.md
+// Before/after pairs: the anonymous bank in ops/cloud-kit/TDIE_SATURDAY_OFFER_AUDIT.md.
+// Nothing is emailed, nothing is stored, no AI calls: every check is a plain
+// rule that runs in the page. Built 26 Sep 2026.
+// Doors, in this order, from ops/canon/canon.json:
+//   The Offer Edit            → products[] "The Offer Edit" (classroom URL is the checkout)
+//   The Weekend Ecosystem™    → key_pages.weekend_ecosystem_sales
+//   Membership Standard       → ladder "Membership Standard" (Skool plans page)
+// Review: src/we-reviews.js via Testimonial.astro. Never hand-pasted.
+// ─────────────────────────────────────────────────────────────
+
+const OFFER_EDIT = "https://www.skool.com/thedigitalincomeedit/classroom/c47c7df7";
+const WE = "/shop/weekend-ecosystem";
+const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_source=site&utm_medium=tool&utm_campaign=one-sentence-offer";
+
+// The five failure modes, each with a real anonymous pair from the bank.
+const modes = [
+  { k: "container", n: "01", t: "You sell the container, not the contents",
+    p: "The sentence describes the box: the length, the format, the price. Nobody wants a 60-minute session. She wants what she feels like when it's over.",
+    b: "The $147 Bookkeeping Clarity Session is a personalized 60-minute session for women in business who are tired of guessing about their numbers…",
+    a: "In 60 minutes you'll stop guessing about your numbers and leave with a plan you can actually follow." },
+  { k: "buried", n: "02", t: "You bury the surprising part",
+    p: "Your offer has one genuinely surprising thing in it, and it's sitting at the back of the sentence. Say the surprising part first, explain it second.",
+    b: "I create Hollywood-level professional headshots remotely from anywhere in the world, personally directing and capturing your images using your smartphone.",
+    a: "I direct you through your own phone camera and you walk away with headshots that look like a studio shoot." },
+  { k: "list", n: "03", t: "You list what's inside instead of what it saves her",
+    p: "Hooks, captions, hashtags, bonuses. A list tells her what she's buying. It never tells her what she gets to stop doing.",
+    b: "I created a 1,000 Quote App with photo prompt, hooks, captions, and hashtags. Your all-in-one app for a quote page.",
+    a: "Never sit down to write a quote post again, your whole month is already written." },
+  { k: "stops", n: "04", t: "You name the person and stop there",
+    p: "Knowing exactly who she is is the hard part, and you've done it. Now say what she gets, then say how fast.",
+    b: "Printable solutions for overwhelmed nurse moms.",
+    a: "I help overwhelmed nurse moms get their week back with printables they can use tonight." },
+  { k: "self", n: "05", t: "You start the sentence with yourself",
+    p: "“I created,” “I offer,” “I take.” The first words are about you, so she has to wait to find out what's in it for her. Cut it. Start where she is.",
+    b: "I created [brand] for women who want to turn ordinary Halloween content into bold, luxurious, scroll-stopping visuals without spending hours figuring out what to create.",
+    a: "Turn your Halloween content into visuals that look expensive, without spending a night figuring out what to make." },
+];
+---
+<PageLayout
+  wide
+  title="How to Describe Your Digital Product in One Sentence (Free Tool)"
+  description="Free tool: type how you describe your digital product now, rewrite it in one sentence with a three-part formula, and see four checks run live. No email needed."
+  ogImage="/images/library/portrait-woman-golden-hour.jpg"
+>
+<div class="os">
+
+  <!-- HERO -->
+  <section class="os-hero">
+    <div class="os-hero-copy">
+      <a class="os-brand" href="/resources"><span class="os-dot"></span>The Digital Income Edit™ · Free tool</a>
+      <h1>Say what you sell <em>in one sentence.</em></h1>
+      <p class="os-lede">If you can't say it in one line, she can't repeat it to her friend, and she is never going to buy something she can't explain to herself. Type yours the way you say it now. Two minutes later you'll have one that works.</p>
+      <div class="os-row"><a class="os-btn" href="#tool">Fix my sentence <span aria-hidden="true">→</span></a></div>
+      <div class="os-meta"><span>Free</span><i></i><span>No email</span><i></i><span>Results on this screen</span></div>
+    </div>
+    <figure class="os-hero-fig">
+      <img src="/images/library/portrait-woman-golden-hour.jpg" alt="A woman working at a round wooden desk at golden hour, peonies in a vase and a golden retriever asleep on the rug" width="1280" height="549" loading="eager" decoding="async" />
+      <span class="os-sticker os-sticker-a"><span>Free<br />no email</span></span>
+      <span class="os-sticker os-sticker-b"><span>22 rewrites<br />one weekend</span></span>
+    </figure>
+  </section>
+
+  <!-- WHY -->
+  <section class="os-why">
+    <p class="os-kicker">Why this exists</p>
+    <h2>22 women wrote their offer in one sentence. <em>Every one led with what she made.</em></h2>
+    <p>Not one led with what the buyer gets. I rewrote all 22 by hand in the comments, which is the same correction given 22 times in one weekend. So here it is as a tool. It runs on simple rules inside this page. Nothing you type leaves your screen.</p>
+  </section>
+
+  <!-- TOOL -->
+  <section class="os-tool" id="tool">
+
+    <!-- STEP 1 -->
+    <div class="os-card os-step" id="os-step1">
+      <span class="os-step-n">Step 1 of 3</span>
+      <h2 class="os-step-h">What do you sell? <em>Say it the way you say it now.</em></h2>
+      <p class="os-help">Don't polish it. Paste your shop bio, your link in bio or the first line of your sales page, exactly as it's live.</p>
+      <label class="os-sr" for="os-orig">Your offer, the way you describe it now</label>
+      <textarea id="os-orig" rows="4" maxlength="600" placeholder="e.g. I created a 30-page planner bundle for busy moms with meal plans, budget sheets and cleaning schedules."></textarea>
+      <div class="os-step-foot">
+        <button type="button" class="os-link-btn" id="os-example">Try one from the Saturday thread</button>
+        <button type="button" class="os-btn" id="os-next1" disabled>Next: the formula <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="os-card os-step" id="os-step2" hidden>
+      <span class="os-step-n">Step 2 of 3</span>
+      <h2 class="os-step-h">Three parts, <em>in this order.</em></h2>
+      <p class="os-help">Format, price and bonus list go underneath. Underneath is not nowhere. It's just not first.</p>
+
+      <div class="os-fields">
+        <div class="os-field">
+          <label for="os-who"><b>1</b> Who she is</label>
+          <span class="os-hint">Specific enough that the wrong person walks away.</span>
+          <input id="os-who" type="text" maxlength="120" autocomplete="off" placeholder="overwhelmed nurse moms" />
+        </div>
+        <div class="os-field">
+          <label for="os-gets"><b>2</b> What she walks away with</label>
+          <span class="os-hint">The state she's in afterwards, not the thing you hand her. Start with a verb.</span>
+          <input id="os-gets" type="text" maxlength="160" autocomplete="off" placeholder="get their week back" />
+        </div>
+        <div class="os-field">
+          <label for="os-cost"><b>3</b> What it costs her to get there</label>
+          <span class="os-hint">Time, effort, or the thing she doesn't have to do.</span>
+          <input id="os-cost" type="text" maxlength="160" autocomplete="off" placeholder="with printables they can use tonight" />
+        </div>
+      </div>
+
+      <div class="os-new">
+        <label for="os-final" class="os-new-l">Your new sentence <span>edit it until it sounds like you</span></label>
+        <textarea id="os-final" rows="3" maxlength="400" placeholder="Fill in the three parts above and your sentence builds here."></textarea>
+        <button type="button" class="os-link-btn" id="os-rebuild" hidden>Rebuild it from my three answers</button>
+      </div>
+
+      <div class="os-checks" aria-live="polite">
+        <p class="os-kicker">The four checks, running live</p>
+        <ul id="os-checks"></ul>
+      </div>
+
+      <div class="os-step-foot">
+        <button type="button" class="os-link-btn" id="os-back2">← Change my original</button>
+        <button type="button" class="os-btn" id="os-next2" disabled>See my result <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: RESULT -->
+    <div class="os-result" id="os-result" hidden aria-live="polite">
+      <span class="os-step-n">Step 3 of 3 · your result</span>
+
+      <div class="os-pair">
+        <div class="os-card os-before">
+          <p class="os-kicker">Before</p>
+          <p class="os-before-t" id="os-r-before"></p>
+        </div>
+        <div class="os-hero-card">
+          <p class="os-kicker os-kicker-w">After</p>
+          <p class="os-after-t" id="os-r-after"></p>
+          <button type="button" class="os-copy" id="os-copy">Copy my sentence</button>
+          <span class="os-copied" id="os-copied" role="status"></span>
+        </div>
+      </div>
+
+      <div class="os-card os-place">
+        <span class="os-place-badge"><span>Same<br />sentence<br />×3</span></span>
+        <p><strong>Now put this exact sentence in three places:</strong> your shop bio, your link in bio, and the first line of your sales page. Same sentence in all three.</p>
+      </div>
+
+      <div class="os-card os-score">
+        <p class="os-kicker">Your new sentence, checked</p>
+        <ul id="os-r-checks"></ul>
+      </div>
+
+      <div class="os-modes-wrap">
+        <h2 class="os-sec-h">What your old sentence <em>was doing.</em></h2>
+        <p class="os-sub" id="os-modes-lead"></p>
+        <div class="os-modes" id="os-modes">
+          {modes.map((m) => (
+            <article class="os-card os-mode" data-mode={m.k}>
+              <div class="os-mode-top">
+                <span class="os-mode-n">{m.n}</span>
+                <span class="os-mode-flag">Yours did this</span>
+              </div>
+              <h3>{m.t}</h3>
+              <p>{m.p}</p>
+              <div class="os-ex">
+                <p class="os-ex-b"><span>Before</span>&ldquo;{m.b}&rdquo;</p>
+                <p class="os-ex-a"><span>After</span>&ldquo;{m.a}&rdquo;</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="os-fine">Every before and after here is a real member sentence from the Saturday Offer Audit and my real reply. No names. The $147 is a member's own price, not mine.</p>
+      </div>
+
+      <!-- DOORS -->
+      <div class="os-doors">
+        <h2 class="os-sec-h">The sentence is the front door. <em>Here's what's behind it.</em></h2>
+
+        <article class="os-card os-door">
+          <span class="os-door-k">Door 1 · the offer behind the sentence</span>
+          <h3>The Offer Edit</h3>
+          <div class="os-price"><b>$37</b> one-time, or included in Membership Premium ($35/month or $297/year)</div>
+          <p>A good sentence only works if the offer behind it is built the same way: for her, around what she walks away with. The Offer Edit is eighteen lessons on the offer itself, inside the Skool classroom.</p>
+          <a class="os-btn" href={OFFER_EDIT}>Open The Offer Edit <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="os-card os-door">
+          <span class="os-door-k">Door 2 · somewhere for the sentence to live</span>
+          <h3>The Weekend Ecosystem™</h3>
+          <div class="os-price"><b>$97</b> one-time, or 3 × $33.33 · every future update included</div>
+          <p>You're not short on content. You're short on a place to put it. Twenty-two modules turn what you've already made into a website and blog on a domain you own, with your offer routed from every article.</p>
+          <Testimonial variant="pull" />
+          <a class="os-btn" href={WE}>See The Weekend Ecosystem™ <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="os-card os-door">
+          <span class="os-door-k">Door 3 · the room where I fix it with you</span>
+          <h3>Membership Standard</h3>
+          <div class="os-price"><b>$9</b>/month after a 7-day free trial, or $99/year</div>
+          <p>Every Saturday I rewrite members' sentences in the comments, one at a time, with the actual new line. Standard is also the build curriculum laid out in the order I'd do it again: offer first, funnel second, automation third, audience last.</p>
+          <a class="os-btn" href={SKOOL}>Start Membership Standard <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="os-again">
+        <button type="button" class="os-link-btn" id="os-restart">Start again with another sentence</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TEACHING, IN PLAIN TEXT -->
+  <section class="os-teach">
+    <p class="os-kicker">The rules the tool runs on</p>
+    <h2>How to describe your digital product <em>in one sentence.</em></h2>
+    <div class="os-teach-grid">
+      <div class="os-card">
+        <h3>The formula</h3>
+        <ol>
+          <li><strong>Who she is.</strong> Specific enough that the wrong person self-selects out.</li>
+          <li><strong>What she walks away with.</strong> The state she's in afterwards, not the thing you hand her.</li>
+          <li><strong>What it costs her to get there.</strong> Time, effort, the thing she doesn't have to do.</li>
+        </ol>
+        <p>The format, the price and the bonus list go underneath.</p>
+      </div>
+      <div class="os-card">
+        <h3>The four checks</h3>
+        <ol>
+          <li>Does it start with her, or with you?</li>
+          <li>Does it name a format or a length? Move that to the second sentence.</li>
+          <li>Does it contain a price? Move it.</li>
+          <li>Could she repeat it to a friend from memory after reading it once? If not, it's too long.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="os-row"><a class="os-btn" href="#tool">Run mine through it <span aria-hidden="true">→</span></a></div>
+    <p class="os-sign">xoxo, Jodie</p>
+  </section>
+
+  <p class="os-backlink"><a href="/resources">← All free resources</a> · <a href="/resources/find-your-door">Not sure what to build yet? Find your door</a></p>
+</div>
+
+<script is:inline>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+
+  // Real "before" sentences from the Saturday Offer Audit bank (anonymous).
+  var EXAMPLES = [
+    "The $147 Bookkeeping Clarity Session is a personalized 60-minute session for women in business who are tired of guessing about their numbers and ready to understand their finances, identify what needs attention, and walk away with a clear action plan.",
+    "I create Hollywood-level professional headshots remotely from anywhere in the world, personally directing and capturing your images using your smartphone.",
+    "I created a 1,000 Quote App with photo prompt, hooks, captions, and hashtags. Your all-in-one app for a quote page.",
+    "Printable solutions for overwhelmed nurse moms.",
+    "I created [brand] for women who want to turn ordinary Halloween content into bold, luxurious, scroll-stopping visuals without spending hours figuring out what to create.",
+    "I take one raw video from my client each week and turn it into 15 scheduled posts in blotato so they never have to touch a dashboard again 😁"
+  ];
+  var exI = Math.floor(Math.random() * EXAMPLES.length);
+
+  // ── The rules ──
+  var FORMAT = /\b(sessions?|courses?|mini-courses?|programs?|programmes?|e-?books?|guides?|templates?|planners?|workbooks?|bundles?|apps?|checklists?|masterclass(es)?|workshops?|pdfs?|printables?|modules?|lessons?|videos?|calls?|kits?|toolkits?|memberships?|coaching|audits?|packs?|journals?|challenges?|webinars?|consults?|consultations?|cheat ?sheets?|swipe files?)\b/gi;
+  var LENGTH = /\b(\d[\d,]*|one|two|three|four|five|six|seven|eight|nine|ten|twelve|fifteen|twenty|thirty|forty|fifty|sixty|ninety|hundred)[\s-]*(minutes?|mins?|hours?|hrs?|days?|weeks?|months?|pages?|modules?|lessons?|videos?|steps?|parts?|sessions?)\b/gi;
+  var PRICE = /([$£€]\s?\d)|(\b\d+(\.\d+)?\s?(dollars|usd|bucks)\b)|(\/\s?(mo|month|yr|year)\b)|(\bper (month|year)\b)/i;
+  var SELF = /^\s*["'“]?\s*(i\s+(created?|made|make|offer(ed)?|sell|sold|design(ed)?|build|built|am|have|provide|specialize|develop(ed)?|put together|launch(ed)?|take|help you)\b|i'm\b|i’m\b|im\b|we\b|we're\b|we’re\b|my\b|our\b)/i;
+  var OBJECT_FIRST = /^\s*["'“]?\s*(the|this|a|an|my|our)\s+[^.]{0,70}?\b(is|are)\s+(a|an|the)\b/i;
+  var SURPRISE = /\b(remotely|from anywhere|anywhere in the world|using (your|only|just)|with (just|only) (your|a)|on your phone|smartphone|phone camera|even if|without ever|while you sleep|in your sleep|done[- ]for[- ]you|no experience|overnight|in minutes)\b/i;
+  var LISTWORDS = /\b(includes?|including|comes with|packed with|all-in-one|all in one|bonus(es)?)\b/i;
+  var OUTCOME = /\b(get|gets|stop|stops|never|leave|walk away|without|so (that|she|you|they)|you'll|you will|turn|turns|finally|save|saves|back|keep|make|start|sell|launch|grow|feel|look|looks)\b/i;
+
+  function words(s){ return s.trim().split(/\s+/).filter(Boolean); }
+  function uniq(a){ var o = []; a.forEach(function(x){ x = x.toLowerCase(); if (o.indexOf(x) < 0) o.push(x); }); return o; }
+  function found(re, s){ var m = s.match(re); return m ? uniq(m) : []; }
+  function sentences(s){ return s.split(/[.!?]+(\s|$)/).filter(function(x){ return x && x.trim().length > 2; }); }
+  function shortSegments(s){
+    var clean = s.replace(/(\d),(\d)/g, "$1$2");
+    return clean.split(/[,.;!?]/).filter(function(seg){
+      var w = words(seg.replace(/^\s*(and|or|plus)\s+/i, ""));
+      return w.length >= 1 && w.length <= 4;
+    }).length;
+  }
+  // Position (0 to 1) of the first regex match, by characters.
+  function pos(re, s){ var m = s.search(re); return m < 0 ? -1 : m / Math.max(s.length, 1); }
+
+  // ── Four checks on the NEW sentence. Each returns {state: pass|watch|fix, t, d}
+  function runChecks(s){
+    var out = [];
+    var trimmed = s.trim();
+
+    // 1. Her or you
+    if (SELF.test(trimmed)) out.push({ state: "fix", t: "It starts with you", d: "Cut “I created,” “I offer” and the rest. Start where she is." });
+    else if (OBJECT_FIRST.test(trimmed)) out.push({ state: "fix", t: "It starts with the product", d: "The first words are the thing you made. Start with her, or with what she gets." });
+    else out.push({ state: "pass", t: "It starts with her", d: "The first words are about her, not you." });
+
+    // 2. Format or length
+    var fmt = found(FORMAT, trimmed).concat(found(LENGTH, trimmed));
+    fmt = uniq(fmt).filter(function(x, _, all){ return !all.some(function(y){ return y !== x && y.indexOf(x) > -1; }); });
+    var firstWords = words(trimmed).slice(0, 3).join(" ");
+    if (!fmt.length) out.push({ state: "pass", t: "No format or length up front", d: "Nothing about the box. Good. It can go in the second sentence." });
+    else if (new RegExp(FORMAT.source, "i").test(firstWords)) out.push({ state: "fix", t: "It leads with the format", d: "It opens on “" + fmt[0] + "”. Move the format to a second sentence." });
+    else out.push({ state: "watch", t: "It names “" + fmt.join("”, “") + "”", d: "Keep it only if it says how fast or how easy she gets there, like “printables they can use tonight.” If it's describing the box, move it to a second sentence." });
+
+    // 3. Price
+    if (PRICE.test(trimmed)) out.push({ state: "fix", t: "It contains a price", d: "Move it. The price goes underneath, on the sales page." });
+    else out.push({ state: "pass", t: "No price in it", d: "The price goes underneath. Good." });
+
+    // 4. Memory
+    var wc = words(trimmed).length, sc = sentences(trimmed).length, listy = shortSegments(trimmed) >= 3;
+    if (listy) out.push({ state: "fix", t: "It reads like a list", d: "Three or more short items in a row. She won't remember a list. Pick the one thing it saves her." });
+    else if (wc <= 22 && sc <= 2) out.push({ state: "pass", t: "She could repeat it (" + wc + " words)", d: "Short enough to say to a friend after reading it once." });
+    else if (wc <= 30) out.push({ state: "watch", t: "Getting long (" + wc + " words)", d: "Read it once, look away, say it out loud. If you stumble, cut the middle." });
+    else out.push({ state: "fix", t: "Too long to remember (" + wc + " words)", d: "Nobody repeats this to a friend. Aim for about twenty words, one sentence." });
+
+    return out;
+  }
+
+  // ── Five failure modes on the ORIGINAL sentence
+  function detectModes(s){
+    var t = s.trim(), hit = {};
+    var hasFmt = new RegExp(FORMAT.source, "i").test(t);
+    var hasLen = new RegExp(LENGTH.source, "i").test(t);
+    var hasPrice = PRICE.test(t);
+    var wc = words(t).length;
+    if (hasFmt && (hasPrice || hasLen || OBJECT_FIRST.test(t) || /\b(is|are)\s+an?\b/i.test(t))) hit.container = true;
+    var sp = pos(SURPRISE, t), pp = pos(/,\s+(\w+ly\s+)?\w+ing\b/, t);
+    if (wc > 18 && (sp >= 0.4 || pp >= 0.4)) hit.buried = true;
+    if (shortSegments(t) >= 3 || LISTWORDS.test(t)) hit.list = true;
+    if (wc <= 12 && /\bfor\b/i.test(t) && !OUTCOME.test(t)) hit.stops = true;
+    if (SELF.test(t)) hit.self = true;
+    return hit;
+  }
+
+  function paintChecks(ul, list){
+    ul.innerHTML = "";
+    list.forEach(function(c){
+      var li = document.createElement("li"); li.className = "os-check os-" + c.state;
+      var ic = document.createElement("span"); ic.className = "os-ic"; ic.setAttribute("aria-hidden", "true");
+      ic.textContent = c.state === "pass" ? "✓" : (c.state === "watch" ? "!" : "×");
+      var body = document.createElement("span"); body.className = "os-cb";
+      var st = document.createElement("span"); st.className = "os-sr";
+      st.textContent = c.state === "pass" ? "Passes: " : (c.state === "watch" ? "Check this: " : "Fix this: ");
+      var h = document.createElement("strong"); h.textContent = c.t;
+      var d = document.createElement("span"); d.textContent = c.d;
+      body.appendChild(st); body.appendChild(h); body.appendChild(d);
+      li.appendChild(ic); li.appendChild(body); ul.appendChild(li);
+    });
+  }
+
+  // ── Wiring ──
+  var orig = $("os-orig"), who = $("os-who"), gets = $("os-gets"), cost = $("os-cost"), fin = $("os-final");
+  var s1 = $("os-step1"), s2 = $("os-step2"), res = $("os-result");
+  var edited = false;
+
+  function tidy(x){ return x.trim().replace(/\s+/g, " ").replace(/[.!\s]+$/, ""); }
+  function build(){
+    var a = tidy(who.value), b = tidy(gets.value), c = tidy(cost.value);
+    if (!a && !b) return "";
+    var s = "I help " + (a || "___") + " " + (b || "___") + (c ? " " + c : "");
+    return s + ".";
+  }
+  function emptyChecks(){
+    var ul = $("os-checks"); ul.innerHTML = "";
+    var li = document.createElement("li"); li.className = "os-check os-idle";
+    li.textContent = "Your checks appear here as soon as your sentence starts to build.";
+    ul.appendChild(li);
+  }
+  function refresh(){
+    if (!edited) fin.value = build();
+    var s = fin.value.trim();
+    if (s) paintChecks($("os-checks"), runChecks(s)); else emptyChecks();
+    $("os-next2").disabled = s.replace(/_/g, "").trim().length < 8;
+  }
+
+  orig.addEventListener("input", function(){ $("os-next1").disabled = orig.value.trim().length < 3; });
+  $("os-example").onclick = function(){
+    orig.value = EXAMPLES[exI % EXAMPLES.length]; exI++;
+    $("os-next1").disabled = false; orig.focus();
+  };
+  $("os-next1").onclick = function(){
+    s1.hidden = true; s2.hidden = false; refresh();
+    s2.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(function(){ try { who.focus({ preventScroll: true }); } catch(e){} }, 350);
+  };
+  $("os-back2").onclick = function(){ s2.hidden = true; s1.hidden = false; s1.scrollIntoView({ behavior: "smooth", block: "start" }); };
+  [who, gets, cost].forEach(function(el){ el.addEventListener("input", refresh); });
+  fin.addEventListener("input", function(){ edited = true; $("os-rebuild").hidden = false; refresh(); });
+  $("os-rebuild").onclick = function(){ edited = false; $("os-rebuild").hidden = true; refresh(); };
+
+  $("os-next2").onclick = function(){
+    var before = orig.value.trim(), after = fin.value.trim();
+    $("os-r-before").textContent = "“" + before + "”";
+    $("os-r-after").textContent = after;
+    paintChecks($("os-r-checks"), runChecks(after));
+
+    var hit = detectModes(before), n = 0;
+    var cards = document.querySelectorAll(".os-mode"), box = $("os-modes");
+    var hits = [], rest = [];
+    Array.prototype.forEach.call(cards, function(c){
+      var on = !!hit[c.getAttribute("data-mode")];
+      c.classList.toggle("os-hit", on);
+      (on ? hits : rest).push(c);
+      if (on) n++;
+    });
+    hits.concat(rest).forEach(function(c){ box.appendChild(c); });
+    $("os-modes-lead").textContent = n === 0
+      ? "Your original didn't trip any of the five rules this tool can spot. These are simple rules, not a person, so read all five anyway. The one that makes you wince is yours."
+      : (n === 1 ? "Your original hit one of the five. It's marked first. The other four are underneath so you can spot them next time."
+                 : "Your original hit " + n + " of the five. They're marked first. The rest are underneath so you can spot them next time.");
+
+    $("os-copied").textContent = "";
+    s2.hidden = true; res.hidden = false;
+    res.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  $("os-copy").onclick = function(){
+    var text = fin.value.trim(), msg = $("os-copied");
+    function done(){ msg.textContent = "Copied. Now paste it in all three places."; }
+    function fallback(){
+      var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){ msg.textContent = "Press and hold the sentence to copy it."; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+    else fallback();
+  };
+
+  $("os-restart").onclick = function(){
+    orig.value = ""; who.value = ""; gets.value = ""; cost.value = ""; fin.value = ""; edited = false;
+    $("os-rebuild").hidden = true; $("os-next1").disabled = true;
+    res.hidden = true; s2.hidden = true; s1.hidden = false;
+    s1.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Exposed for testing only; the page never sends anything anywhere.
+  window.__osRules = { runChecks: runChecks, detectModes: detectModes };
+})();
+</script>
+
+<style is:global>
+  .os{--ink:#1A1417;--ink-soft:#4A3F44;--hot:#D62E73;--bub:#FF8AC2;--gold:#C8A96A;--cream:#FBF8F5;
+      --glass:rgba(255,253,252,.78);--edge:rgba(200,169,106,.55);
+      --shadow:0 30px 60px -34px rgba(214,46,115,.38),0 10px 24px -14px rgba(26,20,23,.14);
+      color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif}
+  .os h1,.os h2,.os h3{font-family:Newsreader,Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.4px}
+  .os h1 em,.os h2 em,.page-wrap .os h1 em{font-style:normal;color:var(--hot)}
+  .os-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .os-kicker{font-family:Inter,sans-serif;font-weight:700;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--hot);margin:0 0 12px}
+  .os-kicker-w{color:#fff}
+
+  /* buttons */
+  .os-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+          padding:16px 30px;border-radius:999px;font-family:Inter,sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+          color:#fff!important;background:linear-gradient(135deg,#E8458A 0%,var(--hot) 55%,#B8245F 100%);
+          box-shadow:0 14px 28px -12px rgba(214,46,115,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s;text-align:center}
+  .os-btn:hover{transform:translateY(-1px);box-shadow:0 18px 32px -12px rgba(214,46,115,.8),inset 0 1px 0 rgba(255,255,255,.35)}
+  .os-btn:disabled{opacity:.42;cursor:not-allowed;transform:none}
+  .os-link-btn{background:none;border:0;padding:6px 0;cursor:pointer;font:600 14px/1.4 Inter,sans-serif;color:var(--hot);text-decoration:underline;text-underline-offset:3px}
+
+  /* cards */
+  .os-card{position:relative;background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+           border:1px solid var(--edge);border-radius:18px;box-shadow:var(--shadow);padding:30px}
+
+  /* hero */
+  .os-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:0 0 60px}
+  .os-brand{display:inline-flex;align-items:center;gap:10px;font:700 11px/1 Inter,sans-serif;letter-spacing:2.8px;text-transform:uppercase;color:var(--ink);margin-bottom:24px}
+  .os-dot{width:9px;height:9px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(214,46,115,.15)}
+  .page-wrap .os-hero h1{font-weight:600;letter-spacing:-.8px;font-size:clamp(40px,6.4vw,68px);line-height:1.02;margin:0 0 22px}
+  .os-lede{font-size:18px;line-height:1.65;color:var(--ink-soft);max-width:34em;margin:0 0 28px}
+  .os-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .os-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px;font:600 11px/1 Inter,sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-soft)}
+  .os-meta i{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+  .os-hero-fig{position:relative;margin:0}
+  .os-hero-fig img{width:100%;height:440px;object-fit:cover;object-position:32% 50%;border-radius:22px;border:1px solid var(--edge);
+                   box-shadow:0 40px 70px -36px rgba(214,46,115,.5),0 14px 30px -18px rgba(26,20,23,.25)}
+  .os-sticker{position:absolute;display:grid;place-items:center;width:112px;height:112px;border-radius:50%;
+              font:800 11.5px/1.25 Inter,sans-serif;letter-spacing:1.4px;text-transform:uppercase;text-align:center;color:var(--hot);
+              box-shadow:0 14px 26px -12px rgba(214,46,115,.55)}
+  .os-sticker>span{display:grid;place-items:center;width:94px;height:94px;border-radius:50%;border:1.5px dashed currentColor}
+  .os-sticker-a{background:#fff;top:-18px;left:-22px;transform:rotate(-10deg)}
+  .os-sticker-b{background:var(--bub);color:#fff;bottom:-20px;right:18px;transform:rotate(8deg)}
+  .os-sticker-b>span{border-color:rgba(255,255,255,.9)}
+
+  /* why */
+  .os-why{max-width:760px;margin:0 auto;padding:40px 0 56px;text-align:center;border-top:1px solid var(--edge)}
+  .os-why h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin:0 0 18px}
+  .os-why .os-kicker{font-size:11px;color:var(--hot)}
+  .os-why p{font-size:17px;line-height:1.7;color:var(--ink-soft)}
+
+  /* tool */
+  .os-tool{max-width:820px;margin:0 auto;scroll-margin-top:90px}
+  .os-step{scroll-margin-top:90px}
+  .os-step-n{display:inline-block;font:700 11px/1 Inter,sans-serif;letter-spacing:2.2px;text-transform:uppercase;color:#fff;background:var(--hot);padding:8px 12px;border-radius:999px;margin-bottom:16px}
+  .os-step-h{font-size:clamp(26px,3.6vw,36px);line-height:1.12;margin:0 0 10px}
+  .os-help{font-size:16px;line-height:1.6;color:var(--ink-soft);margin:0 0 18px}
+  .os textarea,.os input[type=text]{width:100%;font:400 17px/1.55 Inter,sans-serif;color:var(--ink);background:#fff;
+       border:1.5px solid rgba(200,169,106,.6);border-radius:12px;padding:14px 16px;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+  .os textarea{resize:vertical;min-height:110px}
+  .os textarea:focus,.os input[type=text]:focus{outline:none;border-color:var(--hot);box-shadow:0 0 0 4px rgba(214,46,115,.14)}
+  .os ::placeholder{color:#9A8C91}
+  .os-step-foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:20px}
+
+  .os-fields{display:grid;gap:18px;margin:6px 0 26px}
+  .os-field label{display:flex;align-items:center;gap:10px;font:700 15px/1.3 Inter,sans-serif;color:var(--ink)}
+  .os-field label b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--bub);color:#fff;font-size:13px;flex:none}
+  .os-hint{display:block;font-size:14px;line-height:1.5;color:var(--ink-soft);margin:4px 0 8px 36px}
+
+  .os-new{padding:20px;border-radius:14px;background:linear-gradient(135deg,rgba(255,138,194,.16),rgba(255,253,252,.6));border:1px dashed rgba(214,46,115,.45)}
+  .os-new-l{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font:700 15px/1.3 Inter,sans-serif;margin-bottom:10px}
+  .os-new-l span{font-weight:400;font-size:13.5px;color:var(--ink-soft)}
+  .os-new textarea{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:21px;line-height:1.4;min-height:96px}
+
+  .os-checks{margin-top:24px}
+  .os-checks ul,.os-score ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .os-check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid rgba(26,20,23,.08);font-size:15px;line-height:1.5}
+  .os-idle{color:var(--ink-soft);font-style:italic}
+  .os-ic{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font:800 14px/1 Inter,sans-serif;color:#fff}
+  .os-pass .os-ic{background:#2E8B57}
+  .os-watch .os-ic{background:#C8A96A}
+  .os-fix .os-ic{background:var(--hot)}
+  .os-fix{border-color:rgba(214,46,115,.35)}
+  .os-cb{display:flex;flex-direction:column;gap:2px}
+  .os-cb strong{font-weight:700;color:var(--ink)}
+  .os-cb>span:last-child{color:var(--ink-soft)}
+
+  /* result */
+  .os-result{scroll-margin-top:90px}
+  .os-pair{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:stretch;margin-bottom:18px}
+  .os-before-t{font-family:Newsreader,Georgia,serif;font-size:18px;line-height:1.5;color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(214,46,115,.55);text-decoration-thickness:1.5px;margin:0;overflow-wrap:anywhere}
+  .os-hero-card{position:relative;overflow:hidden;border-radius:18px;padding:30px;color:#fff;
+                background:linear-gradient(140deg,#F0589A 0%,var(--hot) 48%,#A81F57 100%);
+                box-shadow:0 36px 60px -30px rgba(214,46,115,.75),inset 0 1px 0 rgba(255,255,255,.4)}
+  .os-hero-card::before{content:"";position:absolute;top:-60%;left:-30%;width:90%;height:160%;transform:rotate(18deg);
+                        background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.18),rgba(255,255,255,0));pointer-events:none}
+  .os-after-t{position:relative;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(22px,2.8vw,28px);line-height:1.3;margin:0 0 20px;color:#fff;overflow-wrap:anywhere}
+  .os-copy{position:relative;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:999px;padding:14px 24px;
+           background:#fff;color:var(--hot);font:800 12px/1 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 10px 20px -10px rgba(26,20,23,.4)}
+  .os-copied{position:relative;display:block;margin-top:10px;font-size:14px;font-weight:600;color:#fff;min-height:1.2em}
+
+  .os-place{display:flex;gap:20px;align-items:center;margin-bottom:18px}
+  .os-place p{margin:0;font-size:17px;line-height:1.6}
+  .os-place-badge{flex:none;display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:var(--bub);color:#fff;transform:rotate(-8deg);
+                  font:800 10.5px/1.2 Inter,sans-serif;letter-spacing:1.2px;text-transform:uppercase;text-align:center;box-shadow:0 12px 22px -10px rgba(214,46,115,.55)}
+  .os-place-badge>span{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.9)}
+  .os-score{margin-bottom:56px}
+
+  .os-sec-h{font-size:clamp(28px,4vw,42px);line-height:1.1;text-align:center;margin:0 0 12px}
+  .os-sub{text-align:center;font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:38em;margin:0 auto 26px}
+  .os-modes{display:grid;gap:16px}
+  .os-mode{padding:26px}
+  .os-mode-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .os-mode-n{font:700 12px/1 Inter,sans-serif;letter-spacing:2px;color:var(--gold)}
+  .os-mode-flag{display:none;font:800 10.5px/1 Inter,sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:#fff;background:var(--hot);padding:7px 11px;border-radius:999px;transform:rotate(-3deg)}
+  .os-mode h3{font-size:23px;line-height:1.2;margin:0 0 8px}
+  .os-mode>p{font-size:16px;line-height:1.6;color:var(--ink-soft);margin:0 0 14px}
+  .os-mode:not(.os-hit){opacity:.82}
+  .os-hit{border:2px solid var(--hot);opacity:1}
+  .os-hit .os-mode-flag{display:inline-block}
+  .os-ex{display:grid;gap:10px}
+  .os-ex p{margin:0;padding:12px 14px;border-radius:10px;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+  .os-ex span{display:block;font:700 10.5px/1 Inter,sans-serif;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:6px}
+  .os-ex-b{background:rgba(26,20,23,.04);color:var(--ink-soft)}
+  .os-ex-b span{color:var(--ink-soft)}
+  .os-ex-a{background:rgba(255,138,194,.18);color:var(--ink);font-family:Newsreader,Georgia,serif;font-weight:600;font-size:17px}
+  .os-ex-a span{font-family:Inter,sans-serif;color:var(--hot)}
+  .os-fine{font-size:13.5px;line-height:1.6;color:var(--ink-soft);text-align:center;margin:18px auto 0;max-width:40em}
+
+  .os-doors{margin-top:64px;display:grid;gap:18px}
+  .os-doors .os-sec-h{margin-bottom:10px}
+  .os-door{padding:30px;border-top:3px solid var(--hot)}
+  .os-door-k{display:block;font:700 11px/1.3 Inter,sans-serif;letter-spacing:2.2px;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+  .os-door h3{font-size:28px;line-height:1.15;margin:0 0 8px}
+  .os-price{font-size:15px;line-height:1.5;color:var(--ink-soft);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--edge)}
+  .os-price b{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:26px;color:var(--ink);margin-right:4px}
+  .os-door>p{font-size:16.5px;line-height:1.65;margin:0 0 20px}
+  .os-door .tm-pull{margin:0 0 22px;max-width:none}
+  .os-door .tm-pull blockquote{font-weight:600;font-size:19px}
+  .os-again{text-align:center;margin-top:34px}
+
+  /* teach */
+  .os-teach{max-width:980px;margin:96px auto 0;padding-top:56px;border-top:1px solid var(--edge);text-align:center}
+  .os-teach h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:0 0 30px}
+  .os-teach-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;margin-bottom:30px}
+  .os-teach-grid h3{font-size:24px;margin:0 0 12px}
+  .os-teach-grid ol{margin:0 0 12px;padding-left:20px;display:grid;gap:8px;font-size:16px;line-height:1.6}
+  .os-teach-grid p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .os-teach .os-row{justify-content:center}
+  .os-sign{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:22px;color:var(--hot);margin-top:30px}
+  .os-backlink{text-align:center;margin-top:48px;font-size:15px;line-height:1.8}
+  .os-backlink a{color:var(--hot);font-weight:600}
+
+  @media(max-width:900px){
+    .os-hero{grid-template-columns:1fr;gap:34px}
+    .os-hero-fig img{height:300px}
+    .os-pair{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .os-card{padding:22px 18px;border-radius:16px}
+    .os-hero{padding-bottom:40px}
+    .os-hero-fig img{height:230px;border-radius:18px}
+    .os-sticker{width:90px;height:90px;font-size:9.5px;letter-spacing:1px}
+    .os-sticker>span{width:75px;height:75px}
+    .os-sticker-a{top:-14px;left:-6px}
+    .os-sticker-b{bottom:-16px;right:8px}
+    .os-lede{font-size:17px}
+    .os-brand{font-size:10px;letter-spacing:2px;line-height:1.4}
+    .os-btn{width:100%;padding:16px 20px}
+    .os-step-foot{flex-direction:column-reverse;align-items:stretch}
+    .os-step-foot .os-link-btn{text-align:center}
+    .os-hint{margin-left:0}
+    .os-new{padding:14px}
+    .os-new textarea{font-size:19px}
+    .os-hero-card{padding:24px 20px}
+    .os-copy{width:100%;justify-content:center}
+    .os-place{flex-direction:column;text-align:center}
+    .os-teach-grid{grid-template-columns:1fr}
+    .os-teach{margin-top:70px}
+    .os-door{padding:24px 18px}
+    .os-mode{padding:20px 18px}
+  }
+  @media(prefers-reduced-motion:reduce){.os-btn,.os-btn:hover{transition:none;transform:none}}
+</style>
+</PageLayout>
