@@ -36,7 +36,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   />
   <style is:global>
@@ -53,14 +53,14 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 
     /* ── chrome ── */
     .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27,.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-    .we-nav a.brand{font-family:"Fraunces",serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
+    .we-nav a.brand{font-family:Newsreader,serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
     .we-nav a.brand em{color:var(--wp);font-style:italic}
     .we-nav .navlinks a{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wd);text-decoration:none;margin-left:22px;opacity:.55;transition:opacity .2s,color .2s}
     .we-nav .navlinks a:hover{opacity:1;color:var(--wp)}
 
     .we-wrap{max-width:768px;margin:0 auto;padding:78px 40px 140px}
     .we-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ac,var(--gold));margin-bottom:22px}
-    .we-wrap>h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
+    .we-wrap>h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
 
     /* ── the document ── */
     #we-body{font-size:17px;line-height:1.78}
@@ -76,11 +76,11 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     #we-body>*:last-child{margin-bottom:0}
 
     .wb{margin:0 0 40px}
-    .wb-h{font-family:"Fraunces",serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
+    .wb-h{font-family:Newsreader,serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
     .wb-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 
     /* lead — the opening idea, set apart by type not by box */
-    .wb-lead p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.62;margin-bottom:18px}
+    .wb-lead p{font-family:Newsreader,serif;font-size:22px;line-height:1.62;margin-bottom:18px}
     .wb-lead{margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(43,22,27,.13)}
 
     .wb-sect{margin-bottom:46px}
@@ -112,7 +112,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 
     /* deliverable — the end cap */
     .wb-deliv{background:linear-gradient(180deg,color-mix(in srgb,var(--ac,var(--pink)) 18%,transparent),color-mix(in srgb,var(--ac,var(--pink)) 5%,transparent));border-top:2px solid var(--ac,var(--pink));border-radius:0 0 2px 2px;padding:30px 32px;margin-bottom:0}
-    .wb-deliv p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;color:var(--wd)}
+    .wb-deliv p{margin:0;font-family:Newsreader,serif;font-size:21px;line-height:1.55;color:var(--wd)}
     .wb-deliv strong{color:var(--wp);font-weight:600}
     .wb-tag-deliv{color:var(--wp)}
 
@@ -135,7 +135,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     #we-body td{border-bottom:1px solid rgba(43,22,27,.1);padding:12px 14px 12px 0;vertical-align:top;line-height:1.6}
 
     /* blockquote */
-    #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.6}
+    #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:Newsreader,serif;font-style:italic;font-size:20px;line-height:1.6}
     #we-body blockquote p{margin:0}
 
     .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:32px 40px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27,.4);text-align:center}
