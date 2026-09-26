@@ -24,3 +24,10 @@ File name: `<slug>.json`, images `<slug>-flatlay.jpg` and `<slug>-lifestyle.jpg`
 ```
 
 category is one of: clothing, accessories, jewelry, beauty, perfume, home-decor, dorm, car, books, gifts. A look with no images or no items is skipped by the build. Slugs must never equal a category name.
+
+Optional fields (Holiday Gift Guides, 26 Sep 2026):
+
+- `"draft": true` keeps a look off the site even when its files are complete. Remove it to publish.
+- `"giftGuide": true` puts the look in the Holiday Gift Guides block on /lifestyle, ordered by `"guide"` (a number), with `"label"` as its short name on the chips and cards. Gift guide pages show no prices anywhere, including the Membership card.
+
+The 25 holiday gift guide looks, their image prompts, pins and Instagram posts are in `claude/HOLIDAY_GIFT_GUIDES_BUILD.md`. Their links go in `claude/HOLIDAY_GIFT_GUIDES_LINKS.md` first.

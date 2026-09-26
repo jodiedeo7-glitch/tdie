@@ -3,7 +3,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
-import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
+import { CATEGORIES, LOOKS, GIFT_GUIDES, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 const counts = Object.fromEntries(CATEGORIES.map((c) => [c.slug, LOOKS.filter((l) => l.category === c.slug).length]));
 const latest = LOOKS.slice(0, 24);
@@ -18,6 +18,34 @@ const latest = LOOKS.slice(0, 24);
     <h1>Pink, <em>on purpose.</em></h1>
     <p class="lede">Outfits, rooms and the small pretty things, styled head to toe and linked piece by piece. New looks land every day.</p>
     <PinkFindsSignup variant="strip" />
+
+    {GIFT_GUIDES.length > 0 && (
+      <section class="hg" id="holiday-gift-guides" aria-labelledby="hg-h">
+        <div class="hg-head">
+          <span class="hg-k">The Holiday Edit · 2026</span>
+          <h2 id="hg-h" class="hg-h">Holiday Gift <em>Guides</em></h2>
+          <p class="hg-d">{GIFT_GUIDES.length} lists, one per person on your list, all shot in the same pink little world. Pick the person, then shop the whole list.</p>
+        </div>
+        <nav class="hg-chips" aria-label="Jump to a gift guide">
+          {GIFT_GUIDES.map((l) => <a class="hg-chip" href={`/lifestyle/${l.slug}`}>{l.label || l.title}</a>)}
+        </nav>
+        <div class="hg-grid">
+          {GIFT_GUIDES.map((l, i) => {
+            const im = l.images[1] || l.images[0];
+            return (
+              <a class="hg-card" href={`/lifestyle/${l.slug}`}>
+                <span class="hg-img">
+                  <Image src={im.src} alt={im.alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, 280px" />
+                  <span class="hg-no">No. {String(i + 1).padStart(2, "0")}</span>
+                </span>
+                <span class="hg-for">{l.label || categoryOf(l.category)?.name}</span>
+                <span class="hg-title">{l.title}</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
 
     <nav class="ls-cats" aria-label="Lifestyle categories">
       {CATEGORIES.map((c) => (
@@ -65,5 +93,24 @@ const latest = LOOKS.slice(0, 24);
   .ls .ls-card:hover .ls-card-title{color:var(--pink-deep)}
   .ls .ls-empty{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--taupe-deep)}
   .ls .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
+  .ls .hg{margin:8px 0 64px;padding:40px 32px 36px;background:linear-gradient(160deg,var(--rose) 0%,var(--blush) 38%,var(--cream) 100%);border:1px solid var(--cream-deep);border-top:2px solid var(--pink);position:relative}
+  .ls .hg-head{max-width:640px;margin-bottom:22px}
+  .ls .hg-k{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink-deep);font-weight:700}
+  .ls .hg-h{font-family:var(--display);font-weight:400;font-size:clamp(32px,5vw,48px);line-height:1.08;margin:10px 0 12px}
+  .ls .hg-h em{color:var(--pink)}
+  .ls .hg-d{font-size:16px;line-height:1.6;color:var(--choc-soft);margin:0}
+  .ls .hg-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+  .ls .hg-chip{padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--rose);font-size:13px;color:var(--choc);text-decoration:none;transition:background .25s var(--ease),color .25s var(--ease)}
+  .ls .hg-chip:hover{background:var(--pink);border-color:var(--pink);color:var(--white)}
+  .ls .hg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+  .ls .hg-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
+  .ls .hg-img{position:relative;display:block;overflow:hidden;box-shadow:0 14px 30px -18px rgba(184,36,95,.45)}
+  .ls .hg-img img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush);transition:transform .5s var(--ease)}
+  .ls .hg-card:hover .hg-img img{transform:scale(1.03)}
+  .ls .hg-no{position:absolute;top:10px;left:10px;padding:4px 9px;border-radius:999px;background:rgba(255,253,252,.92);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:var(--pink-deep)}
+  .ls .hg-for{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep);font-weight:600;margin-top:8px}
+  .ls .hg-title{font-family:var(--display);font-size:18px;line-height:1.25}
+  .ls .hg-card:hover .hg-title{color:var(--pink-deep)}
+  @media(max-width:640px){.ls .hg{padding:28px 16px 24px;margin-left:-4px;margin-right:-4px}.ls .hg-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .hg-title{font-size:15px}}
   @media(max-width:640px){.ls .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .ls-card-title{font-size:16px}}
 </style>

@@ -31,8 +31,10 @@ function imageFor(file) {
 
 const catSlugs = new Set(CATEGORIES.map((c) => c.slug));
 
+// A look with "draft": true stays off the site until its links and images
+// are in and the flag is removed (Holiday Gift Guides, 26 Sep 2026).
 export const LOOKS = Object.values(lookFiles)
-  .filter((l) => l && l.slug && l.title && catSlugs.has(l.category))
+  .filter((l) => l && l.slug && l.title && !l.draft && catSlugs.has(l.category))
   .map((l) => ({
     ...l,
     images: (l.images || [])
@@ -42,6 +44,9 @@ export const LOOKS = Object.values(lookFiles)
   }))
   .filter((l) => l.images.length && l.items.length)
   .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+// Holiday Gift Guides: looks with "giftGuide": true, in their "guide" order.
+export const GIFT_GUIDES = LOOKS.filter((l) => l.giftGuide).sort((a, b) => (a.guide || 99) - (b.guide || 99));
 
 export const categoryOf = (slug) => CATEGORIES.find((c) => c.slug === slug);
 

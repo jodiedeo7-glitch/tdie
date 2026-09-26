@@ -3,7 +3,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
-import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
+import { CATEGORIES, LOOKS, GIFT_GUIDES, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 export function getStaticPaths() {
   const catSlugs = new Set(CATEGORIES.map((c) => c.slug));
@@ -18,7 +18,10 @@ export function getStaticPaths() {
 const { kind, category, look } = Astro.props;
 const catLooks = kind === "category" ? LOOKS.filter((l) => l.category === category.slug) : [];
 const cat = kind === "look" ? categoryOf(look.category) : category;
-const more = kind === "look" ? LOOKS.filter((l) => l.slug !== look.slug && l.category === look.category).slice(0, 4) : [];
+const gift = kind === "look" && look.giftGuide;
+const more = kind !== "look" ? []
+  : gift ? GIFT_GUIDES.filter((l) => l.slug !== look.slug).slice(0, 8)
+  : LOOKS.filter((l) => l.slug !== look.slug && l.category === look.category).slice(0, 4);
 const rel = "sponsored nofollow noopener";
 ---
 {kind === "category" ? (
@@ -45,7 +48,7 @@ const rel = "sponsored nofollow noopener";
       ) : (
         <p class="ls-empty">Nothing here yet. The first {category.name.toLowerCase()} looks are on their way.</p>
       )}
-      <LifestyleExtras />
+      <LifestyleExtras noPrice={category.slug === "gifts"} />
     <p class="ls-disclosure">{DISCLOSURE}</p>
     </section>
   </PageLayout>
@@ -87,7 +90,7 @@ const rel = "sponsored nofollow noopener";
 
       {more.length > 0 && (
         <>
-          <h2 class="ls-h2 ls-more-h">More {cat.name.toLowerCase()}</h2>
+          <h2 class="ls-h2 ls-more-h">{gift ? "More holiday gift guides" : `More ${cat.name.toLowerCase()}`}</h2>
           <div class="ls-grid">
             {more.map((l) => (
               <a class="ls-card" href={`/lifestyle/${l.slug}`}>
@@ -98,7 +101,7 @@ const rel = "sponsored nofollow noopener";
           </div>
         </>
       )}
-      <LifestyleExtras />
+      <LifestyleExtras noPrice={gift} />
     <p class="ls-disclosure">{DISCLOSURE}</p>
     </article>
   </PageLayout>
