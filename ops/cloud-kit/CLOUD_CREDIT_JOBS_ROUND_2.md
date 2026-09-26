@@ -1,0 +1,150 @@
+# CLOUD CREDIT JOBS: ROUND 2
+
+26 September 2026. For the $250 cloud credit (expires 2:59 am ET, 5 November 2026). Already running, so not on this list: the holiday gift guides, the DFY proof samples, the One-Sentence Offer tool. STV is on hold until he replies.
+
+## How every job works
+- Start a new cloud session from the Code section (phone, desktop app or claude.ai/code) and pick the repo **jodiedeo7-glitch/tdie**.
+- Paste one prompt, everything between START and END. Nothing to attach: every file it needs is in the repo at `ops/cloud-kit/` and `ops/canon/`.
+- The cloud does the tedious part. Anything that needs your sign-ins (Amazon, Pinterest, MailerLite, Skool, Beacons, Gemini, Higgsfield) goes into `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, fully written out. When your week resets, run the DESKTOP FINISH prompt (bottom of `ops/cloud-kit/CLOUD_CREDIT_JOBS.md`) once on your computer and it clears the whole queue.
+- Credit figures are estimates (unverified). Watch your balance after the first two; if it's lower than expected, switch the rest to Opus.
+
+## THE LIST, in the order to start them
+
+| # | Job | Model | Credit | What it does for you |
+|---|---|---|---|---|
+| 1 | Site conversion sweep | Opus | $20 | Fixes the leaks on pages people already visit, live the same day. Starts with the "Coming soon" cards on /lifestyle |
+| 2 | Black Friday and Christmas Pink Finds campaign | Opus | $20 | The list-building push and every email for Amazon's biggest commission weeks, forms switching themselves on the right dates |
+| 3 | Evergreen Amazon look bank, 8 weeks | Fable | $35 | Everything for 16 evergreen looks except the clicks only your account can do. Your storefront keeps earning after the holidays |
+| 4 | Q4 TDIE Pinterest batch, 60 pins | Opus | $25 | 60 finished, rendered pins routed to Skool: 12 days of your 5-a-day cadence |
+| 5 | Weekend Ecosystem™ conversion rebuild | Opus | $20 | Your $97 flagship's sales page, preview page and checkout copy, rebuilt |
+| 6 | 15 buyer-intent articles + packs | Opus | $50 | Google traffic to the Ecosystem, the one search channel Pinterest can't block |
+| 7 | Pin Writer Bot + Product Builder Bot | Fable | $45 | Two new products with almost no delivery cost |
+| 8 | Maniacally Thorough, 10 packets | Fable | $40 | A launch runway for the TikTok channel, with Amazon book tie-ins |
+| 9 | Amazon onsite video starter kit | Opus | $10 | The research and 20 scripts you need to unlock onsite commissions (Creator Hub shows 0 of 3 videos) |
+
+Jobs 6, 7 and 8 are the same prompts as Jobs 5, 2 and 3 in `ops/cloud-kit/CLOUD_CREDIT_JOBS.md`. Use those.
+
+---
+
+## JOB 1 · SITE CONVERSION SWEEP (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/canon/canon.json`, `ops/canon/TDIE_CANON.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/cloud-kit/TDIE_DESIGN_RULES.md` and `ops/cloud-kit/TDIE_PINK_FINDS_GROWTH_PLAN.md`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Find and fix every conversion leak on the live site, then push the fixes live.
+
+1. Build the site and crawl every page of the built output. For each page record: its one main call to action (or that it has none, or more than one), every price on it, every link and whether it resolves, and whether it passes the Six M pre-ship check.
+2. Fix, directly in the code:
+   - Wrong or stale prices against canon.json (Membership Premium is quoted at $35/month · $297/year everywhere; The Offer Edit, The Funnel Edit and Scaling & Systems carry their Decision 93 prices; Leni Loves shows its real sale state).
+   - Broken internal links, dead-end pages with no next step, retired names (8 Claude Prompts, Free Community, VIP, NurseMadeDigital as a brand).
+   - Raw URLs showing where a CTA should be words. Links that appear only once where canon wants twice.
+   - The "Coming soon" category cards on /lifestyle (Car, Books, Gift Guides and the rest): a shopper who taps one hits nothing. Change each empty category card so it shows the newest looks that do exist and the Pink Finds signup, with honest copy (no promise of a date). A card fills itself as soon as its category gets a look.
+   - Any heading or display text still using a thin display serif.
+   - Pages missing a title, description or social preview image.
+3. Do not change any price, product, offer structure or settled decision. If a page contradicts canon in a way that isn't a clear typo, list it in your report with the fix you'd make, and leave it.
+4. Run npm run build, commit, push to main. After the deploy, load every changed page live with the headless browser at phone width and confirm the fix.
+5. Save the full crawl table to `ops/cloud-output/conversion-sweep-2026-09.md`, and send it to Jodie. It is data, so report it in full: what you fixed, and anything you left for her decision, each with its one-line fix.
+
+----- END -----
+
+---
+
+## JOB 2 · BLACK FRIDAY + CHRISTMAS PINK FINDS CAMPAIGN (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_PINK_FINDS_GROWTH_PLAN.md`, `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` (sections 8c, 8d, 10 and 12), `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, and in the repo `src/data/pinkfinds.js`, `src/components/PinkFindsSignup.astro`, `src/pages/lifestyle/pink-finds.astro` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Build the whole Q4 Pink Finds push so it runs on real dates with nothing left to write.
+
+1. Confirm the real 2026 dates with web search from Amazon's own announcements where they exist: Black Friday week, Cyber Monday (30 Nov 2026), and any holiday deal events Amazon has announced. Anything not announced is written as unconfirmed and not promised.
+2. Extend `src/data/pinkfinds.js` so the site forms switch themselves by date: Halloween last call (week of 19 Oct), Black Friday and Cyber Monday gift guides (from about 20 Nov to the end of Cyber Monday), Christmas gift guide (1 Dec to about 20 Dec), then back to "New pink finds, every Friday." Each window gets its own headline and button in Jodie's site voice, and only promises a send that the calendar below actually makes. Build, push, and load /lifestyle/pink-finds live to confirm the current copy still shows correctly.
+3. Write every email in full, ready to paste into MailerLite as regular campaigns to the "Lifestyle Pink Finds" group: a Halloween last-call email, a Black Friday picks email, a Cyber Monday email, two Christmas gift-guide emails, and a "last shipping days" email. Each: 3 subject lines, preview text, body, footer ("The looks are styled on an AI model. Pages contain affiliate links; I may earn a commission at no extra cost to you."). Every look links to its thedigitalincomeedit.com/lifestyle page, NEVER to Amazon. No invented deals: where a deal would be named, write "[check Amazon at send time]". Sign off "Jodie".
+4. Write the matching Facebook group posts (link in the first comment only, no earnings figures) and @itstommykate story frames (link sticker to /lifestyle/pink-finds; no other links on Instagram), in the voices the README names.
+5. Save everything to `ops/cloud-output/pink-finds-q4.md` with a dated send calendar at the top. Push, and send it to Jodie.
+6. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: schedule each email in MailerLite on its date (every piece of copy pasted in), and queue the Facebook posts and stories, reading each one back.
+
+Report in one line.
+
+----- END -----
+
+---
+
+## JOB 3 · EVERGREEN AMAZON LOOK BANK, 8 WEEKS (Fable)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` (all of it), `ops/cloud-kit/TDIE_LIFESTYLE_LIST_MAP.md`, `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md`, and in the repo `src/lifestyle/README.md` plus three existing look JSON files in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Every holiday look stops earning after about three weeks. Prepare 16 evergreen looks (two a week for 8 weeks, from 5 Oct 2026) from the Lifestyle List Map so the desktop session only has to do what needs Jodie's sign-ins.
+
+1. Pick the 16 by the map's rules: never the already-built "Pink Workwear for a Freezing Office", pink workwear most weeks, never two clothing looks in the same week, dressed for the season each week falls in (fall into winter).
+2. For each look, research the products with web search (Amazon listings, review roundups): 5 to 8 items meeting the recipe's bar (4.0 stars or better, 100+ ratings, in stock, Prime where possible, colour story, one neutral). Record each item's short name, its Amazon product page link and ASIN where you can find them, and two backup items. amazon.com itself may be blocked from this container; if so, use search results and label every item "confirm on Amazon".
+3. Write, for each look: the lifestyle page JSON in the exact `src/lifestyle/README.md` format (title, category, `season: "Evergreen"`, intro in Jodie's site voice with no prices, image alt text, items with `link` left as "SITESTRIPE_PENDING"); the flat lay or collage image prompt (factory section 4); the Tommy Kate lifestyle photo prompt (factory section 5 and the image master, including her pink tumbler rule and her wardrobe rules); two pins' title, description and alt text within the copy limits, with the #ad disclosure; the @itstommykate caption; and one cross-link line to another evergreen look.
+4. Save the JSON drafts to `ops/cloud-output/evergreen-looks/` (NOT in `src/lifestyle/`, so nothing half-built goes live), plus one `PLAN.md` with the 8-week calendar using the factory's posting times. Push, and send Jodie the plan.
+5. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, one section per look: confirm each product on Amazon and swap any that fail the bar, capture Jodie's SiteStripe short links, build the Idea List, generate both images (prompts pasted in), move the finished JSON and images into `src/lifestyle/`, schedule the pins and queue the Instagram post, all per the factory recipe, logging in `claude/LB_PIN_LOG.md`.
+
+Report in one line.
+
+----- END -----
+
+---
+
+## JOB 4 · Q4 TDIE PINTEREST BATCH, 60 PINS (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_PIN_RULES.md`, `ops/cloud-kit/TDIE_DESIGN_RULES.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/canon/canon.json` (`pin_render`, `products[]`) and the articles and resource pages in `src/pages/learn/` and `src/pages/resources/`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Make 60 finished TDIE pins (six batches of ten), every one linking to https://www.skool.com/thedigitalincomeedit/about, ready to schedule.
+
+1. Material: the free resources, the /learn articles and the classroom topics. Rewrite each idea search-first. Favour the content-dense reference cards the research says rank (numbered steps, checkbox rows, real list items). About a third saturated hot pink or bubblegum, the rest light.
+2. Build a renderer in this container per TDIE_PIN_RULES.md "Rendering in a cloud container", using Newsreader and Inter only and the palette in the design rules (no brown fills). Ten layouts per batch, no layout twice, collage at most twice, lockup on every pin. Persona layouts get a clean photo placeholder plus a full Tommy Kate image prompt.
+3. For each pin write the title, description and alt text within the limits, the board (rotate the five boards), and a suggested date and time on the 5-a-day cadence starting the first free day after today, with close cousins 3 days apart.
+4. Look at every pin at thumbnail size and fix anything that isn't crisp.
+5. Commit the PNGs, a contact sheet image and `pins.csv` (file, title, description, alt, link, board, date, time) to `ops/cloud-output/pins-q4/`. Push, and send Jodie the contact sheet.
+6. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: generate the persona photos (prompts pasted in) and drop them into those pins, show Jodie the contact sheet (first run of this batch), then schedule each pin per the scheduling rules, verifying the count.
+
+Report in one line.
+
+----- END -----
+
+---
+
+## JOB 5 · WEEKEND ECOSYSTEM™ CONVERSION REBUILD (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/canon/canon.json` (The Weekend Ecosystem™ row, key_pages, own_affiliate_programs, emails), `ops/canon/TDIE_CANON.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/cloud-kit/TDIE_DESIGN_RULES.md`, and in the repo every page under `src/pages/weekend-ecosystem/` plus `src/pages/shop/weekend-ecosystem*`, `src/we-reviews.js` and `src/components/Testimonial.astro`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. The Weekend Ecosystem™ ($97 one-time, or 3 × $33.33) is the flagship. Make its sales page and preview page convert harder, without changing the offer.
+
+1. Audit both pages against the Six M pre-ship check and write down each gap before changing anything.
+2. Rebuild: her ideal state in the first screen, before the module list; one CTA said at least twice; the payment plan named next to the price; Tina Alexander's review placed where the doubt is highest (through the component; her spelling "word press" kept); an objections section built from the six objection emails' objections (can't build a website, no free weekend, the price, no refunds and what if it isn't what I think, not enough content, I'll do it later), answered honestly: no guarantee, no refund window, no income promise; the free preview as the no-risk step for cold readers.
+3. Keep every fact, price and inclusion exactly as canon has it. Zero refunds is stated plainly, never softened into a guarantee.
+4. Design per the design rules. Perfect on a phone.
+5. Build, push, then load both pages live at phone and desktop width and check every link.
+6. Write the Beacons checkout page product description (the only surface with no social proof on it) in the site voice, including Tina's review line, and add it to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md` for pasting into Beacons with a read-back.
+
+Report in one line with both live links.
+
+----- END -----
+
+---
+
+## JOB 9 · AMAZON ONSITE VIDEO STARTER KIT (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Jodie's Amazon Creator Hub shows 0 of 3 videos, so onsite commissions are locked. She wants to learn the process before making any. Build her a starter kit.
+
+1. Research, from Amazon's own Associates and Influencer help pages and reputable creator guides: how onsite commission videos work, the eligibility steps, video specs, what gets a video rejected, and specifically what Amazon's current rules say about AI-generated or AI-assisted video and whether a person must appear. Cite every rule with its source link. Anything you can't confirm from Amazon's own pages is labelled unverified. If AI video isn't allowed, say so plainly at the top.
+2. Pick 20 products from her existing looks that suit short review videos, and write a 30 to 60 second script and shot list for each, in a real-reviewer voice, following whatever the rules in step 1 allow.
+3. Save it all as a designed PDF per `ops/cloud-kit/TDIE_DESIGN_RULES.md` plus a plain text copy, in `ops/cloud-output/amazon-onsite-video/`. Push, and send Jodie the PDF. Nothing goes in the finish queue: she makes these herself when she's ready.
+
+Report in one line.
+
+----- END -----
