@@ -1,0 +1,137 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Where do you host a free lead magnet?",
+    answer: "Inside your email platform. MailerLite and Beacons both host the file and build the landing page, and both give you a real web address you can share anywhere. You do not need a website to host a lead magnet."
+  },
+  {
+    question: "Do I need a website before I can offer a freebie?",
+    answer: "No. Your email platform's landing page is a real page with a real address. A website is something you add later."
+  },
+  {
+    question: "How does the freebie actually get sent?",
+    answer: "An automation. It is a rule that fires when someone joins a group and sends an email carrying a link to the file. You build it once."
+  },
+  {
+    question: "How do I know it works?",
+    answer: "Test it on yourself from a different email address before you tell anyone about it, and check five things: the confirmation, the delivery, which tab it landed in, whether the file link opens the right version, and whether your own name is on the email."
+  },
+  {
+    question: "How many people do I need before it is worth doing?",
+    answer: "One. One subscriber proves the machine runs, and the machine is identical at one and at two hundred."
+  },
+];
+---
+
+<ArticleLayout
+  title="Where Does Your Lead Magnet Actually Go? The Whole Setup in One Evening"
+  description="Your freebie is finished and sitting on your laptop and nothing happens. Here is the whole route: the page that asks for the email, the thing that sends the file, and the test you run before you tell anyone."
+  slug="where-your-freebie-lives"
+  category="Email Marketing"
+  issueNumber="051"
+  readTime="10 Min Read"
+  datePublished="2026-09-26"
+  dateModified="2026-09-26"
+  faqs={faqs}
+  ogImage="/images/library/hero-office-wide-04.jpg"
+  related={[
+    { href: "/learn/email-marketing-guide", title: "Email Marketing for Beginners (2026 Guide)" },
+    { href: "/learn/email-marketing-for-beginners", title: "How to Write Your First 5 Emails" },
+    { href: "/learn/digital-products-guide", title: "Digital Products for Beginners" },
+    { href: "/learn/creating-your-first-offer", title: "How to Create Your First Offer in a Week" },
+    { href: "/learn/automating-your-online-business", title: "How to Automate Your Online Business" },
+    { href: "/learn/room-with-one-door", title: "Everything You've Ever Made Lives in a Room With One Door" }
+  ]}
+  routePaid={{
+    label: "Build Your First Freebie in One Afternoon",
+    blurb: "The lead magnet this article says you need, and the small paid offer behind it, built in a single sitting. $7, one time.",
+    href: "/go/first-freebie"
+  }}
+>
+<header class="hero" slot="hero">
+<span class="kicker reveal">Email Marketing</span>
+<h1 class="reveal">Where Your Freebie Actually Lives</h1>
+<p class="sub reveal">The freebie was never the hard part. Here is the whole route: the page, the automation, and the test you run before you tell anyone.</p>
+<div class="hero-meta reveal"><span>10 Min Read</span><span class="b"></span><span>Updated 2026</span><span class="b"></span><span>The Digital Income Edit™ Editorial</span></div>
+</header>
+
+<figure class="hero-figure reveal" slot="hero">
+<div class="img"><img src="/images/library/hero-office-wide-04.jpg" alt="Where Your Freebie Actually Lives — The Digital Income Edit" loading="eager" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div>
+<figcaption>The Digital Income Edit™ · The Library</figcaption>
+</figure>
+
+<div slot="toc">
+<nav class="toc" id="toc">
+<div class="plate">
+<div class="run">In This Edition</div>
+<div class="lbl">Contents</div>
+<ol>
+<li><a href="#three">Only three pieces</a></li>
+<li><a href="#page">The page</a></li>
+<li><a href="#automation">The automation</a></li>
+<li><a href="#test">The test</a></li>
+<li><a href="#tell">Then tell someone</a></li>
+<li><a href="#wrong">Where it breaks</a></li>
+<li><a href="#faq">Questions</a></li>
+</ol>
+<div class="foot">Est. 10 Min Read</div>
+</div>
+</nav>
+</div>
+
+<p class="lede first reveal">Nobody gets stuck making the freebie. The making is the fun part — you have an idea, you open Canva, you build a five page PDF about the thing you already know, and by Sunday night it is done and it looks good.</p>
+<p class="reveal">Then it sits on your laptop and nothing happens.</p>
+<p class="reveal">Because the next question is one almost nobody answers for you: <strong>where does it go?</strong> Not conceptually. Physically. What web address does a stranger type, what happens after she types her email into it, and what actually attaches the file to the email that arrives.</p>
+<p class="reveal">I have seen a woman in my community describe the exact moment. Freebie half built. Facebook page already sending her traffic. And this: <em>just need somewhere for the freebie to be.</em></p>
+<p class="reveal">Four days later she had it working and a first subscriber. Here is the route she took, and it is the one I would give anyone.</p>
+
+<div class="chapter reveal"><span class="bignum">01</span><div class="num">Chapter One</div><div class="orn"><span class="d"></span></div><h2 id="three">The three pieces, and that is all there are</h2></div>
+<p class="answer reveal">A working freebie is three things. Not seven. Three: a page that asks for the email, something that sends the file the second she asks for it, and a test you run on yourself before a single stranger sees it.</p>
+<p class="reveal">Everything else you have been told to build first — the website, the brand, the funnel diagram with six boxes — is a thing you add later to a machine that already works. If you build those first you will have a beautiful business with no way for anyone to give you their email address.</p>
+<div class="box tip reveal"><span class="tag"><span class="g">✦</span> The Edit</span><p>One page. One field. One automation. One test on yourself. That is the entire machine — everything else is decoration you add once it already runs.</p></div>
+
+<div class="chapter left reveal"><span class="bignum">02</span><div class="num">Chapter Two</div><div class="orn"><span class="d"></span></div><h2 id="page">Piece one: the page</h2></div>
+<p class="answer reveal">You do not need a website for this. That is the belief that stalls most people, and it is wrong — your email platform makes the page for you.</p>
+<p class="reveal">MailerLite calls it a landing page, Beacons builds it into your link in bio, and both of them hand you a real web address you can paste anywhere.</p>
+<p class="reveal"><strong>What goes on it, in this order:</strong> one line that says what she gets, written as the outcome and not the format — not "free PDF download," try "the checklist I use so I stop forgetting the same three things every shift." A picture of it — a flat mockup of the cover, because it makes a file feel like a thing. Three bullets, maximum, on what is inside. One field: email, only email — every extra field you add costs you people, and you do not need her first name to send her a PDF. And one button, and the button says what happens next: "Send me the checklist," never "Submit."</p>
+<p class="reveal">That is the page. It takes about twenty minutes and it is not going to be the thing that fails.</p>
+
+<div class="chapter reveal"><span class="bignum">03</span><div class="num">Chapter Three</div><div class="orn"><span class="d"></span></div><h2 id="automation">Piece two: the thing that sends it</h2></div>
+<p class="answer reveal">This is where it actually breaks, and it breaks quietly. When someone fills in that form, something has to notice and send the file — in MailerLite that something is an automation: a small rule that says when a subscriber joins this group, send this email. You build it once and it runs forever at three in the morning while you are asleep.</p>
+<p class="reveal"><strong>The part that catches people out:</strong> the file does not live inside the automation. You upload the PDF somewhere it can be linked, then the email carries a button pointing at it. MailerLite will host the file for you. So will Beacons. Either is fine. What matters is that the link in the email is a real, public, permanent address, because you are going to be handing it out for months and you do not want to be re-uploading it.</p>
+<div class="box mistake reveal"><span class="tag"><span class="g">!</span> One Real Limit</span><p>MailerLite's free plan allows three active automations at a time. Three is plenty for a first freebie, but if you already have three running, the new one will not turn on until you pause one. It does not warn you loudly — check the count before you build, not after.</p></div>
+<p class="reveal"><strong>Beacons does the same job differently.</strong> You add the freebie as a digital product priced at zero, and Beacons handles the page, the email capture and the delivery in one object. Fewer moving parts. Less control over what the email says. If you want something live tonight, this is the shorter road. Pick one. Do not build both.</p>
+
+<div class="chapter left reveal"><span class="bignum">04</span><div class="num">Chapter Four</div><div class="orn"><span class="d"></span></div><h2 id="test">Piece three: the test</h2></div>
+<p class="answer reveal">Do not skip this. It is the single highest-value ten minutes in the whole build.</p>
+<p class="reveal">Use a different email address than the one you built the thing on — a second personal address is perfect. Then go to your own page as though you have never seen it, type that address in, and press the button.</p>
+<div class="box check reveal"><span class="tag"><span class="g">✓</span> Watch for these five, in order</span><p>Does the confirmation actually confirm, or does it just sit there looking broken? · Does the email arrive, and how long did it take? · Did it land in the inbox or in promotions — both are survivable, but you want to know which. · Does the button in the email open the right file, and is it the finished version rather than the draft you renamed at midnight? · Is your name on the email, or is it still whatever placeholder the platform came with?</p></div>
+<p class="reveal">Almost everyone finds one broken thing here. The people who do not test find it three weeks later, in a message from someone who wanted the thing and did not get it.</p>
+
+<div class="chapter reveal"><span class="bignum">05</span><div class="num">Chapter Five</div><div class="orn"><span class="d"></span></div><h2 id="tell">Then, and only then, tell someone</h2></div>
+<p class="answer reveal">Here is what she did next, and it is why it worked so fast: she already had somewhere to put it — a Facebook page for her shop that was already sending her traffic.</p>
+<p class="reveal">That is the part worth copying. <strong>The freebie does not create the audience. It converts the one you already brush past every day.</strong> A Facebook page. A Pinterest account with four hundred monthly viewers. A group you have been quietly in for a year. Twelve people in your phone who keep asking you the same question.</p>
+<p class="reveal">Put the link in exactly three places the day it works: the bio of whichever platform you are actually on, one post on the platform where people already know you, and your email signature, which costs nothing and runs forever.</p>
+<p class="reveal">She got her first subscriber the next day. One. She called it <em>only one download, but it's eyeballs on my work</em>, and she was right to be pleased, because one is the number that proves the machine runs. Two is the same machine. Two hundred is the same machine.</p>
+
+<div class="chapter left reveal"><span class="bignum">06</span><div class="num">Chapter Six</div><div class="orn"><span class="d"></span></div><h2 id="wrong">Where it goes wrong</h2></div>
+<p class="answer reveal">The same five mistakes account for almost every freebie that goes quiet after launch.</p>
+<div class="box mistake reveal"><span class="tag"><span class="g">✕</span> Common Mistakes</span><p><strong>You hosted the PDF somewhere temporary.</strong> A file link that expires, or lives in a folder you later reorganise, breaks every email you have ever sent. Host it where the platform hosts it. <strong>You asked for the first name.</strong> Every field costs you people. Ask for what you need to deliver the thing. <strong>You wrote a welcome email that does not include the thing.</strong> It happens more than you would think — the email says hello, tells her about you, and forgets to attach the reason she is there. The file goes in email one, above the fold. <strong>You built it and told nobody.</strong> A freebie with no traffic is a PDF with extra steps. <strong>You are waiting for the website.</strong> You do not need one to start a list. You will want one eventually, but it is not a prerequisite — it is a later problem.</p></div>
+<p class="reveal">Twenty minutes for the page. Twenty for the automation. Ten for the test. Then send the link to one person who already knows you and ask her to run through it and tell you what was confusing. That is your whole list build for today, and by tomorrow you will have a machine that collects email addresses while you are asleep.</p>
+<p class="reveal">The making was never the hard part. The wiring is. Now it is done.</p>
+
+<div class="chapter reveal"><div class="num">Answered</div><div class="orn"><span class="d"></span></div><h2 id="faq">Frequently asked</h2></div>
+<h3 class="reveal">Where do you host a free lead magnet?</h3>
+<p class="reveal">Inside your email platform. MailerLite and Beacons both host the file and build the landing page, and both give you a real web address you can share anywhere. You do not need a website to host a lead magnet.</p>
+<h3 class="reveal">Do I need a website before I can offer a freebie?</h3>
+<p class="reveal">No. Your email platform's landing page is a real page with a real address. A website is something you add later.</p>
+<h3 class="reveal">How does the freebie actually get sent?</h3>
+<p class="reveal">An automation. It is a rule that fires when someone joins a group and sends an email carrying a link to the file. You build it once.</p>
+<h3 class="reveal">How do I know it works?</h3>
+<p class="reveal">Test it on yourself from a different email address before you tell anyone about it, and check five things: the confirmation, the delivery, which tab it landed in, whether the file link opens the right version, and whether your own name is on the email.</p>
+<h3 class="reveal">How many people do I need before it is worth doing?</h3>
+<p class="reveal">One. One subscriber proves the machine runs, and the machine is identical at one and at two hundred.</p>
+
+</ArticleLayout>
