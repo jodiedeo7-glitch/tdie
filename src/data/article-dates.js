@@ -47,6 +47,9 @@ export const ARTICLE_DATES = {
   "what-to-sell-online": "2026-09-18",
   "shopify-supplier-apps": "2026-09-18",
   "first-10-shopify-sales": "2026-09-18",
+
+  // Email Marketing cluster, 26 Sep 2026.
+  "where-your-freebie-lives": "2026-09-26",
 };
 
 // Any article not listed above falls back to this date so it still appears.
