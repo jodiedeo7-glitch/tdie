@@ -31,3 +31,23 @@ Beacons checkout URLs for each service are in `ops/canon/canon.json` on the matc
 
 ## Skool writing mechanics (for whoever uploads)
 Lesson edits: `PUT /courses/{id}` on api2.skool.com with a flat body `{title, desc, group_id}`. Body format is `[v2]` plus a JSON array of paragraph nodes. Filter out every empty paragraph node before writing; one empty node blanks the whole lesson. Reload and confirm after every write, because Skool drops writes silently.
+
+## Proof samples
+
+Added 26 Sep 2026 (cloud session). One finished proof sample per service, each built for one made-up client and each saying "Sample built for a fictional client." on every page. All files live in the repo at `ops/cloud-output/dfy-samples/`. The build source (one Python file per sample, fonts, `render.py`) is in `ops/cloud-output/dfy-samples/build/`; drop a generated photo into `build/images/<photo id>.jpg` and run `python3 render.py` to replace its placeholder.
+
+**Status (26 Sep 2026):** PDFs finished. Photo slots are designed placeholders until the prompts are generated on Jodie's computer (Gemini and Higgsfield are not reachable from a cloud session). Not yet attached in Skool: queued in `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 1. The project copy of this doc (`claude/TDIE_DFY_SERVICES.md`) gets the same section when that queue runs.
+
+| Service | Sample | Fictional client | PDF | Also |
+|---|---|---|---|---|
+| Run It Like Mine: DFY Automation Setup | The Engine: one-week run log | Velvet Turnip Printables | `ops/cloud-output/dfy-samples/Run-It-Like-Mine-DFY-Automation-Setup_The-Engine_Proof-Sample.pdf` |  |
+| DFY Skool Autopilot | A full week of Skool Autopilot posts (28) + quiet-member list | The Crumb & Kettle Circle | `ops/cloud-output/dfy-samples/DFY-Skool-Autopilot_Proof-Sample.pdf` |  |
+| DFY Viral Instagram Content Calendar | One week of the Instagram calendar | Goosefeather Hollow Homestead | `ops/cloud-output/dfy-samples/DFY-Viral-Instagram-Content-Calendar_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-Viral-Instagram-Content-Calendar_Proof-Sample_image-prompts.md` |
+| DFY 30-Day Threads Calendar | The full first week (21 posts) + hook bank | Pennywhistle Ledger Studio | `ops/cloud-output/dfy-samples/DFY-30-Day-Threads-Calendar_Proof-Sample.pdf` |  |
+| DFY 30 Days of Pinterest, Done & Scheduled | 5 finished pins with full copy | Wildwren Planner Co. | `ops/cloud-output/dfy-samples/DFY-30-Days-of-Pinterest_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-30-Days-of-Pinterest_Proof-Sample_image-prompts.md` |
+| DFY Repurposing Pack | 6 of the 24 finished assets | The Pocket Plot Garden Club | `ops/cloud-output/dfy-samples/DFY-Repurposing-Pack_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-Repurposing-Pack_Proof-Sample_image-prompts.md` |
+| DFY 6-Email Sales Series | Emails 1 and 4 of 6 in full | Paperlark Planner Studio | `ops/cloud-output/dfy-samples/DFY-6-Email-Sales-Series_Proof-Sample.pdf` |  |
+| DFY Etsy Listing Pack | 1 complete Etsy listing | Bramblewick Paper Goods | `ops/cloud-output/dfy-samples/DFY-Etsy-Listing-Pack_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-Etsy-Listing-Pack_Proof-Sample_image-prompts.md` |
+| DFY Amazon Storefront Launch | 3 complete storefront looks | Lilac Lane Nursery Finds | `ops/cloud-output/dfy-samples/DFY-Amazon-Storefront-Launch_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-Amazon-Storefront-Launch_Proof-Sample_image-prompts.md` |
+| 30 Days of AI Persona Photo Prompts | 5 finished prompts + their photo slots | Saltbox Cove Candle Co. | `ops/cloud-output/dfy-samples/30-Days-of-AI-Persona-Photo-Prompts_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/30-Days-of-AI-Persona-Photo-Prompts_Proof-Sample_image-prompts.md` |
+| DFY Custom Business Dashboard | Working one-page dashboard file | Clementine Loom Knit Patterns | `ops/cloud-output/dfy-samples/DFY-Custom-Business-Dashboard_Proof-Sample.pdf` | `ops/cloud-output/dfy-samples/DFY-Custom-Business-Dashboard_Sample_Clementine-Loom.html` (the working file) |

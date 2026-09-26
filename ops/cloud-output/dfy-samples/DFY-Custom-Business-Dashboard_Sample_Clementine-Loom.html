@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clementine Loom Dashboard</title>
+<!-- DFY Custom Business Dashboard: proof sample by The Digital Income Edit. Sample built for a fictional client. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#F08A4B;--orange2:#F6B27D;--teal:#1F4E5A;--teal2:#3F7C86;--cream:#FFF8EF;--ink:#1d1a1b;--muted:#6b6264;--line:#eadfce}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:radial-gradient(ellipse 60% 50% at 95% 0%,rgba(240,138,75,.22),transparent 70%),radial-gradient(ellipse 50% 40% at 0% 100%,rgba(31,78,90,.14),transparent 70%),var(--cream);min-height:100vh;padding:22px 26px 30px}
+h1,h2,.serif{font-family:Newsreader,Georgia,serif;font-weight:600}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+header h1{font-size:30px;line-height:1.05}
+header h1 span{color:var(--orange)}
+.sub{font-size:12px;color:var(--muted);margin-top:4px}
+.btns{display:flex;gap:8px;align-items:center}
+select,button{font-family:inherit;font-size:12px;font-weight:700;border-radius:999px;border:1px solid var(--line);background:#fff;padding:8px 14px;cursor:pointer;color:var(--teal)}
+button.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+.fict{font-size:10px;font-weight:700;color:var(--teal);border:1.5px dashed var(--teal2);border-radius:999px;padding:5px 10px;background:#fff}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(5,1fr)}
+.card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 18px 36px -24px rgba(31,78,90,.55)}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal2)}
+.val{font-family:Newsreader,Georgia,serif;font-size:32px;line-height:1.1;margin-top:4px}
+.delta{font-size:11px;font-weight:700;margin-top:2px}
+.up{color:#2d7a4f}.down{color:#b3452b}
+.row2{grid-template-columns:1.6fr 1fr 1fr;margin-top:14px}
+.row3{grid-template-columns:1.2fr 1fr;margin-top:14px}
+.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;border:none}
+.hero .lbl{color:#cfe6e8}
+.bars{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:12px;padding-top:6px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar i{display:block;width:100%;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,var(--orange2),var(--orange))}
+.bar.cur i{background:linear-gradient(180deg,var(--teal2),var(--teal))}
+.bar b{font-size:10px;margin-bottom:4px}
+.bar span{font-size:10px;color:var(--muted);margin-top:5px}
+.ring{display:flex;align-items:center;gap:16px;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12px}
+td{padding:7px 4px;border-bottom:1px solid var(--line)}
+td.n{text-align:right;font-weight:700}
+.meter{height:6px;border-radius:9px;background:#f2e6d6;overflow:hidden;margin-top:3px}
+.meter i{display:block;height:100%;background:var(--orange)}
+.todo label{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;padding:6px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.todo input{margin-top:2px;accent-color:var(--teal)}
+.todo input:checked + span{text-decoration:line-through;color:var(--muted)}
+.edit{display:none}
+body.editing .edit{display:block}
+body.editing .view{display:none}
+.edit input{width:100%;font-family:inherit;font-size:16px;font-weight:700;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;margin-top:6px}
+.note{font-size:11px;color:var(--muted);margin-top:14px;text-align:center}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.row2,.row3{grid-template-columns:1fr}body{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+ <div><h1>Clementine Loom <span>at a glance</span></h1><div class="sub">Knit pattern shop · Nora's numbers, one page · <span id="monthName"></span></div></div>
+ <div class="btns"><span class="fict">Sample built for a fictional client.</span>
+  <select id="month" aria-label="Month"></select>
+  <button id="editBtn" class="primary">Update this month's numbers</button></div>
+</header>
+
+<section class="grid kpis">
+ <div class="card"><div class="lbl">Pattern sales</div><div class="val view" data-k="sales"></div><div class="edit"><input type="number" data-in="sales" min="0"></div><div class="delta" data-d="sales"></div></div>
+ <div class="card"><div class="lbl">Revenue</div><div class="val view" data-k="revenue"></div><div class="edit"><input type="number" data-in="revenue" min="0"></div><div class="delta" data-d="revenue"></div></div>
+ <div class="card"><div class="lbl">Etsy shop views</div><div class="val view" data-k="views"></div><div class="edit"><input type="number" data-in="views" min="0"></div><div class="delta" data-d="views"></div></div>
+ <div class="card"><div class="lbl">Email subscribers</div><div class="val view" data-k="subs"></div><div class="edit"><input type="number" data-in="subs" min="0"></div><div class="delta" data-d="subs"></div></div>
+ <div class="card"><div class="lbl">Pin outbound clicks</div><div class="val view" data-k="clicks"></div><div class="edit"><input type="number" data-in="clicks" min="0"></div><div class="delta" data-d="clicks"></div></div>
+</section>
+
+<section class="grid row2">
+ <div class="card"><div class="lbl">Revenue, last 6 months</div><div class="bars" id="bars"></div></div>
+ <div class="card hero"><div class="lbl">Monthly goal</div>
+  <div class="ring"><svg width="110" height="110" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="12"/><circle id="ringArc" cx="60" cy="60" r="50" fill="none" stroke="#F6B27D" stroke-width="12" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="314.16" stroke-dashoffset="314.16"/><text id="ringPct" x="60" y="67" text-anchor="middle" fill="#fff" font-family="Newsreader, Georgia, serif" font-size="26"></text></svg>
+  <div><div class="serif" style="font-size:22px" id="goalLine"></div><div style="font-size:12px;opacity:.85;margin-top:4px" id="goalLeft"></div>
+  <div class="edit"><div style="font-size:11px;margin-top:8px">Goal for this month</div><input type="number" data-in="goal" min="1"></div></div></div></div>
+ <div class="card"><div class="lbl">Shop conversion</div><div class="val" id="conv"></div><div class="sub">Sales ÷ Etsy shop views. Worked out for you.</div>
+  <div class="lbl" style="margin-top:14px">Average order</div><div class="val" id="aov" style="font-size:26px"></div><div class="sub">Revenue ÷ sales.</div></div>
+</section>
+
+<section class="grid row3">
+ <div class="card"><div class="lbl">Top 5 patterns this month</div><table id="top"></table></div>
+ <div class="card todo"><div class="lbl">This week's focus</div><div id="todo"></div><div class="sub" style="margin-top:8px">Ticks are saved on this device.</div></div>
+</section>
+<div class="note">Built by The Digital Income Edit™ as a DFY Custom Business Dashboard proof sample. Every name and number here is made up.</div>
+
+<script>
+const MONTHS=["May 2026","June 2026","July 2026","August 2026","September 2026","October 2026"];
+const SEED={
+ "May 2026":{sales:212,revenue:1452,views:6120,subs:1880,clicks:940,goal:1800},
+ "June 2026":{sales:188,revenue:1296,views:5800,subs:1942,clicks:1010,goal:1800},
+ "July 2026":{sales:176,revenue:1210,views:5410,subs:2005,clicks:1120,goal:1800},
+ "August 2026":{sales:241,revenue:1690,views:6950,subs:2110,clicks:1305,goal:1800},
+ "September 2026":{sales:298,revenue:2104,views:7820,subs:2264,clicks:1472,goal:2200},
+ "October 2026":{sales:327,revenue:2318,views:8460,subs:2391,clicks:1618,goal:2600}};
+const TOP={"default":[["Harbour Cable Cardigan",64],["Moss Stitch Market Bag",51],["First Snow Beanie",47],["Clementine Mitts",39],["Sunday Shawl",33]]};
+const TODO=["Pin the First Snow Beanie 3 more times before the 1st","Email list: send the mitts pattern to new subscribers","Refresh photos on the Sunday Shawl listing","Reply to this week's Etsy reviews"];
+const KEY="clementine-dash-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+let store=load(); store.data=Object.assign({},SEED,store.data||{}); store.todo=store.todo||{};
+let cur=store.month&&MONTHS.includes(store.month)?store.month:MONTHS[MONTHS.length-1];
+const money=n=>"$"+Math.round(n).toLocaleString("en-US");
+const num=n=>Math.round(n).toLocaleString("en-US");
+const sel=document.getElementById("month");
+MONTHS.forEach(m=>{const o=document.createElement("option");o.value=o.textContent=m;sel.appendChild(o)});
+sel.onchange=()=>{cur=sel.value;store.month=cur;save(store);render()};
+document.getElementById("editBtn").onclick=()=>{
+ const on=document.body.classList.toggle("editing");
+ document.getElementById("editBtn").textContent=on?"Save numbers":"Update this month's numbers";
+ if(!on){document.querySelectorAll("[data-in]").forEach(i=>{const v=parseFloat(i.value);if(!isNaN(v))store.data[cur][i.dataset.in]=v});save(store);render()}};
+function render(){
+ sel.value=cur; document.getElementById("monthName").textContent=cur;
+ const d=store.data[cur], idx=MONTHS.indexOf(cur), prev=idx>0?store.data[MONTHS[idx-1]]:null;
+ const fmt={sales:num,revenue:money,views:num,subs:num,clicks:num};
+ for(const k in fmt){
+  document.querySelector(`[data-k=${k}]`).textContent=fmt[k](d[k]);
+  const el=document.querySelector(`[data-d=${k}]`);
+  if(prev){const ch=(d[k]-prev[k])/prev[k]*100;el.textContent=(ch>=0?"▲ ":"▼ ")+Math.abs(ch).toFixed(1)+"% vs "+MONTHS[idx-1].split(" ")[0];el.className="delta "+(ch>=0?"up":"down")}else{el.textContent="first month tracked";el.className="delta"}}
+ document.querySelectorAll("[data-in]").forEach(i=>i.value=d[i.dataset.in]);
+ const bars=document.getElementById("bars"); bars.innerHTML="";
+ const shown=MONTHS.slice(Math.max(0,idx-5),idx+1), mx=Math.max(...shown.map(m=>store.data[m].revenue));
+ shown.forEach(m=>{const b=document.createElement("div");b.className="bar"+(m===cur?" cur":"");b.innerHTML=`<b>${money(store.data[m].revenue)}</b><i style="height:${(store.data[m].revenue/mx*100).toFixed(1)}%"></i><span>${m.slice(0,3)}</span>`;bars.appendChild(b)});
+ const pct=Math.min(1,d.revenue/d.goal);
+ document.getElementById("ringArc").setAttribute("stroke-dashoffset",(314.16*(1-pct)).toFixed(2));
+ document.getElementById("ringPct").textContent=Math.round(d.revenue/d.goal*100)+"%";
+ document.getElementById("goalLine").textContent=money(d.revenue)+" of "+money(d.goal);
+ document.getElementById("goalLeft").textContent=d.revenue>=d.goal?"Goal reached. Nice.":money(d.goal-d.revenue)+" to go this month";
+ document.getElementById("conv").textContent=(d.views?d.sales/d.views*100:0).toFixed(2)+"%";
+ document.getElementById("aov").textContent=d.sales?"$"+(d.revenue/d.sales).toFixed(2):"$0";
+ const top=TOP.default, tm=top[0][1];
+ document.getElementById("top").innerHTML=top.map(([n,v],i)=>`<tr><td>${i+1}. ${n}<div class="meter"><i style="width:${v/tm*100}%"></i></div></td><td class="n">${v} sold</td></tr>`).join("");
+ const td=document.getElementById("todo"); td.innerHTML="";
+ TODO.forEach((t,i)=>{const l=document.createElement("label");l.innerHTML=`<input type="checkbox" ${store.todo[i]?"checked":""}><span>${t}</span>`;l.querySelector("input").onchange=e=>{store.todo[i]=e.target.checked;save(store)};td.appendChild(l)});
+}
+render();
+</script>
+</body>
+</html>
