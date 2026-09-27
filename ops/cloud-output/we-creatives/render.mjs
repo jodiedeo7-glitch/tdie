@@ -77,14 +77,13 @@ const CSS = `
 html,body{width:var(--W);height:var(--H);overflow:hidden}
 body{font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
   background:
-    radial-gradient(60% 45% at 8% 92%,rgba(255,138,194,.30),transparent 70%),
-    radial-gradient(50% 40% at 30% 4%,rgba(255,138,194,.18),transparent 70%),
-    linear-gradient(160deg,#FFFDFB 0%,#FBF8F5 45%,#F7EEEA 100%)}
+    radial-gradient(55% 40% at 0% 100%,rgba(255,138,194,.10),transparent 70%),
+    linear-gradient(165deg,#FFFEFC 0%,#FBF8F5 55%,#F6EFEA 100%)}
 .stage{position:relative;width:var(--W);height:var(--H);overflow:hidden}
 .ph{position:absolute;overflow:hidden}
 .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.ph.fadeL{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
-.ph.fadeT{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 20%)}
+.ph.fadeL{box-shadow:-34px 0 60px -34px rgba(26,20,23,.28);border-left:2px solid var(--gold)}
+.ph.fadeT{box-shadow:0 -34px 60px -34px rgba(26,20,23,.28);border-top:2px solid var(--gold)}
 .ph.fadeLR{-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent 100%)}
 .ph.fadeRL{-webkit-mask-image:linear-gradient(270deg,#000 70%,transparent 100%)}
 .ph.round{border-radius:calc(28px*var(--u));border:1px solid var(--edge);box-shadow:var(--shadow)}
@@ -143,6 +142,12 @@ h1 em{font-style:normal;color:var(--hot)}
 .stats span{display:block;margin-top:calc(8px*var(--u));font:700 calc(15px*var(--u))/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .stats .hotcard b{color:#fff;font-size:calc(40px*var(--u));line-height:1.05}
 .stats .hotcard span{color:#fff}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:calc(16px*var(--u));padding-top:calc(16px*var(--u));border-top:1px solid rgba(200,169,106,.55);
+  font:700 calc(15px*var(--u))/1.2 Inter,sans-serif;letter-spacing:.06em;color:var(--ink)}
+.foot i{font-style:normal;font-weight:600;letter-spacing:.04em;color:var(--ink-soft)}
+.mid{display:flex;flex-direction:column;gap:inherit;margin:auto 0}
+.storycard{background:rgba(255,253,252,.9);position:absolute}
+.storycard .mid{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:calc(10px*var(--u))}
 .chips span{padding:calc(10px*var(--u)) calc(16px*var(--u));border-radius:999px;background:var(--glass);border:1px solid var(--edge);
   font:700 calc(15px*var(--u))/1 Inter,sans-serif;letter-spacing:.08em;color:var(--ink);box-shadow:0 10px 20px -14px rgba(214,46,115,.5)}
@@ -162,95 +167,92 @@ const sticker = (html, style, bub = false) => `<div class="sticker${bub ? " bub"
 // ---------- the five ad angles (copy shared across sizes) ----------
 const ANGLES = {
   ideal: {
-    photo: "porch", pos: { sq: "55% 40%", p45: "55% 40%", st: "55% 45%", ls: "55% 30%" },
+    photo: "porch", posSt: "50% 0%", pos: { sq: "55% 40%", p45: "55% 40%", st: "55% 45%", ls: "55% 30%" },
     kicker: "The Weekend Ecosystem&trade;",
     h1: `A business that keeps selling <em>on the Tuesday you're too tired to post.</em>`,
     sub: `Your own website, blog and email list, built in one weekend from content you already wrote.`,
     body: (s) => `<div class="card"><ul class="ticks">
       <li>Your time back</li><li>Your domain, your list</li><li>Your face, optional</li></ul></div>`,
-    sticker: "No code<br>no camera", cta: "See inside, free",
+    trust: "Every future update, free", cta: "See inside, free",
   },
   preview: {
-    photo: "loftFace", zoomSt: 1.22, pos: { sq: "62% 35%", p45: "62% 35%", st: "100% 40%", ls: "100% 25%" },
+    photo: "loftFace", posSt: "22% 0%", pos: { sq: "8% 35%", p45: "8% 35%", st: "100% 40%", ls: "100% 25%" },
     kicker: "Free look inside &middot; no email",
     h1: `See the whole machine <em>before you buy a thing.</em>`,
     sub: `The free preview of The Weekend Ecosystem&trade;. <strong>No email, no card, no sign-up.</strong>`,
     body: (s) => `<div class="chips"><span>The module index</span><span>A real module</span><span>The prompt cards</span><span>Real output</span><span>The certificate</span></div>`,
-    sticker: "Free<br>no email", bub: true, cta: "Open the preview",
+    trust: "Free preview &middot; no email", cta: "Open the preview",
   },
   build: {
-    photo: "loftLap", photoLs: "loftWide", photoSt: "loftWide", pos: { sq: "70% 40%", p45: "70% 40%", st: "80% 40%", ls: "80% 40%" },
+    photo: "loftLap", photoLs: "loftWide", posSt: "100% 0%", zoomSt: 1.14, pos: { sq: "78% 40%", p45: "70% 40%", st: "80% 40%", ls: "80% 40%" },
     kicker: "&ldquo;But I can't build a website.&rdquo;",
     h1: `You won't have to. <em>Claude writes every file.</em>`,
     sub: `No code, no developer, no WordPress. Three moves are yours.`,
     body: (s) => `<div class="two">
       <div class="card"><h3>Claude does</h3><ul><li>Every file your site needs</li><li>Your articles and SEO</li><li>Your email capture</li></ul></div>
       <div class="hotcard"><h3>You do</h3><ul><li>Paste the prompt</li><li>Read what came back</li><li>Say yes</li></ul></div></div>`,
-    sticker: "No code<br>needed", cta: "See how it works",
+    trust: "Every future update, free", cta: "See how it works",
   },
   payplan: {
-    photo: "pasture", pos: { sq: "50% 40%", p45: "50% 40%", st: "50% 40%", ls: "50% 35%" },
+    photo: "pasture", posSt: "50% 0%", pos: { sq: "50% 40%", p45: "50% 40%", st: "50% 40%", ls: "50% 35%" },
     kicker: "The Weekend Ecosystem&trade;",
     h1: `Build it this weekend. <em>Pay in three.</em>`,
     sub: `Your website, blog and email list, built from content you already wrote. <strong>Every future update, free.</strong>`,
     body: (s) => `<div class="hotcard"><div class="price"><b style="font-size:calc(${s === "ls" ? 58 : 74}px*var(--u))">3 &times; $33.33</b><span class="or">or $97 once</span></div></div>`,
-    sticker: "Both at<br>checkout", bub: true, cta: "See inside, free",
+    trust: "Both options at checkout", cta: "See inside, free",
   },
   review: {
-    photo: "sofa", pos: { sq: "62% 50%", p45: "62% 50%", st: "60% 50%", ls: "60% 40%" },
+    photo: "sofa", posSt: "78% 0%", pos: { sq: "62% 50%", p45: "62% 50%", st: "60% 50%", ls: "60% 40%" },
     kicker: "A member review &middot; Skool",
     h1: `Her website, <em>in her words.</em>`,
     sub: null,
     body: (s) => `<div class="card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="quote" style="font-size:calc(${s === "ls" ? 23 : 29}px*var(--u));margin:calc(12px*var(--u)) 0 calc(14px*var(--u))">In 3 days I had a beautiful website/blog set up and everything connected and looks way better than the word press site would have looked.</p>
       <p class="who"><b>Tina Alexander</b> &middot; paying member</p></div>`,
-    sticker: "Real<br>member<br>review", cta: "See what she used",
+    trust: "Posted on Skool under her name", cta: "See what she used",
   },
 };
 
-// Layout per ad size. Photo on the right (or bottom for stories), cream copy column left (or top).
+// Layout per ad size. Photo panel on the right (or bottom for stories) with a hard gold seam,
+// cream copy column left (or top). Brand line top, copy centred, web address and a trust line at the foot.
+// No stickers on ads: they read as "limited offer" stamps on a cold feed.
 function adHTML(angleKey, size) {
   const a = ANGLES[angleKey];
   const { w, h } = SIZES[size];
   const key = (size === "ls" && a.photoLs) || (size === "st" && a.photoSt) || a.photo;
   const pos = a.pos[size];
-  let ph, copy, stk, u, h1size, line;
+  let ph, copy, u, h1size;
   if (size === "sq") {
-    u = 1; h1size = 58;
-    ph = photo(key, "right:0;top:0;width:500px;height:1080px", "fadeL", pos);
-    copy = `left:64px;top:70px;width:530px;bottom:64px;gap:22px`;
-    stk = sticker(a.sticker, "right:42px;bottom:46px;transform:rotate(9deg)", a.bub);
-    line = `<div class="goldline" style="left:64px;top:118px;width:200px"></div>`;
+    u = 1; h1size = 64;
+    ph = photo(key, "right:0;top:0;width:470px;height:1080px", "fadeL", pos);
+    copy = `left:64px;top:64px;width:500px;bottom:56px;gap:24px`;
   } else if (size === "p45") {
-    u = 1.04; h1size = 62;
-    ph = photo(key, "right:0;top:0;width:520px;height:1350px", "fadeL", pos);
-    copy = `left:66px;top:84px;width:560px;bottom:84px;gap:28px`;
-    stk = sticker(a.sticker, "right:44px;bottom:60px;transform:rotate(9deg)", a.bub);
-    line = `<div class="goldline" style="left:66px;top:134px;width:220px"></div>`;
+    u = 1.05; h1size = 70;
+    ph = photo(key, "right:0;top:0;width:480px;height:1350px", "fadeL", pos);
+    copy = `left:64px;top:80px;width:500px;bottom:72px;gap:30px`;
   } else if (size === "st") {
-    // Meta story safe area: keep copy between y=250 and y=1580.
-    u = 1.14; h1size = 76;
-    ph = photo(key, "left:0;bottom:0;width:1080px;height:1060px", "fadeT", pos, a.zoomSt || 1);
-    copy = `left:72px;right:72px;top:250px;gap:26px`;
-    stk = sticker(a.sticker, "right:60px;top:170px;transform:rotate(9deg)", a.bub);
-    line = `<div class="goldline" style="left:72px;top:306px;width:240px"></div>`;
-  } else {
-    u = 0.8; h1size = 46;
-    ph = photo(key, "right:0;top:0;width:520px;height:628px", "fadeL", pos);
-    copy = `left:44px;top:34px;width:620px;bottom:34px;gap:12px`;
-    stk = sticker(a.sticker, "right:26px;bottom:26px;transform:rotate(9deg)", a.bub);
-    line = `<div class="goldline" style="left:44px;top:70px;width:150px"></div>`;
+    // Stories: full-bleed photo, her face in the top half, copy on one frosted card.
+    // Every word sits between y=250 and y=1580 (Meta safe area).
+    u = 1.12; h1size = 66;
+    ph = photo(key, "left:0;top:0;width:1080px;height:1920px", "", a.posSt || "50% 0%", a.zoomSt || 1);
+    copy = `left:56px;right:56px;bottom:340px;gap:20px;padding:40px 44px 34px`;
+    } else {
+    u = 0.82; h1size = 50;
+    ph = photo(key, "right:0;top:0;width:470px;height:628px", "fadeL", pos);
+    copy = `left:48px;top:36px;width:640px;bottom:30px;gap:14px`;
   }
-  const sub = a.sub && size !== "ls" ? `<p class="sub">${a.sub}</p>` : "";
+  const sub = a.sub && size !== "ls" && size !== "st" ? `<p class="sub">${a.sub}</p>` : "";
   const body = `
     ${brand()}
-    <div style="height:calc(10px*var(--u))"></div>
-    <p class="kicker">${a.kicker}</p>
-    <h1 style="font-size:${h1size}px">${a.h1}</h1>
-    ${sub}
-    ${a.body(size)}
-    <div class="cta">${a.cta} <span>&rarr;</span></div>`;
-  return page(w, h, u, `${ph}${line}<div class="copy" style="${copy}">${body}</div>${stk}`);
+    <div class="mid">
+      <p class="kicker">${a.kicker}</p>
+      <h1 style="font-size:${h1size}px">${a.h1}</h1>
+      ${sub}
+      ${a.body(size)}
+      <div class="cta">${a.cta} <span>&rarr;</span></div>
+    </div>
+    <div class="foot"><span>thedigitalincomeedit.com</span><i>${a.trust}</i></div>`;
+  return page(w, h, u, `${ph}<div class="copy${size === "st" ? " card storycard" : ""}" style="${copy}">${body}</div>`);
 }
 
 function page(w, h, u, inner) {
@@ -269,27 +271,28 @@ function heroHTML(kit) {
     : `<div class="card" style="padding:22px 28px"><div class="price" style="color:var(--ink)"><b style="font-size:58px">$97</b><span class="or" style="color:var(--ink-soft)">one-time &middot; or 3 &times; $33.33</span></div>
          <p style="font:600 17px/1.35 Inter,sans-serif;color:var(--ink-soft);margin-top:10px">Every future update, free.</p></div>`;
   const inner = `
-    ${photo("loftCross", "right:0;top:0;width:560px;height:1080px", "fadeL", "78% 40%")}
+    ${photo("loftCross", "right:0;top:0;width:470px;height:1080px", "fadeL", "78% 40%")}
     <div class="goldline" style="left:64px;top:118px;width:200px"></div>
-    <div class="copy" style="left:64px;top:70px;width:590px;bottom:60px;gap:22px">
+    <div class="copy" style="left:64px;top:70px;width:514px;bottom:56px;gap:22px">
       ${brand()}
       <div style="height:10px"></div>
       <p class="kicker">Standalone course</p>
-      <h1 style="font-size:96px;line-height:.98">The Weekend <em>Ecosystem&trade;</em></h1>
+      <h1 style="font-size:84px;line-height:.98">The Weekend <em>Ecosystem<sup style="font-size:.38em;vertical-align:1.25em;margin-left:2px">&trade;</sup></em></h1>
       <p class="sub" style="font-size:27px">Your website + blog, <strong>built from what you already have.</strong></p>
       ${kitCard}
       <p class="sign" style="margin-top:auto">xoxo, Jodie</p>
+      <div class="foot"><span>thedigitalincomeedit.com</span></div>
     </div>
-    ${sticker(kit ? "Free<br>bonus kit" : "No code<br>no camera", "left:300px;bottom:40px;transform:rotate(9deg)", kit)}
-    ${kit ? "" : sticker("Every<br>update<br>free", "left:440px;bottom:70px;transform:rotate(-8deg);width:128px;height:128px;font-size:14px", true)}`;
+    ${sticker(kit ? "Free<br>bonus kit" : "No code<br>no camera", "left:520px;top:170px;transform:rotate(9deg);width:136px;height:136px;font-size:14px", kit)}
+`;
   return page(1080, 1080, u, inner);
 }
 
 function getHTML() {
   const inner = `
-    ${photo("loftWide", "right:0;top:0;width:520px;height:1080px", "fadeL", "84% 40%")}
+    ${photo("loftWide", "right:0;top:0;width:470px;height:1080px", "fadeL", "84% 40%")}
     <div class="goldline" style="left:64px;top:118px;width:200px"></div>
-    <div class="copy" style="left:64px;top:70px;width:600px;bottom:60px;gap:22px">
+    <div class="copy" style="left:64px;top:70px;width:514px;bottom:56px;gap:22px">
       ${brand()}
       <div style="height:10px"></div>
       <p class="kicker">What you get</p>
@@ -301,16 +304,16 @@ function getHTML() {
         <div class="hotcard"><b>Every update</b><span>Free, forever</span></div>
       </div>
       <p class="sub" style="font-size:21px">Plus the Quick Sheet, the Ask-For-It List, progress tracking and a certificate.</p>
-    </div>
-    ${sticker("$97 or<br>3 &times; $33.33", "right:44px;bottom:48px;transform:rotate(9deg)")}`;
+      <div class="foot" style="margin-top:auto"><span>thedigitalincomeedit.com</span><i>$97 one-time &middot; or 3 &times; $33.33</i></div>
+    </div>`;
   return page(1080, 1080, 1, inner);
 }
 
 function reviewCardHTML() {
   const inner = `
-    ${photo("sofa", "right:0;top:0;width:520px;height:1080px", "fadeL", "64% 50%")}
+    ${photo("sofa", "right:0;top:0;width:470px;height:1080px", "fadeL", "64% 50%")}
     <div class="goldline" style="left:64px;top:118px;width:200px"></div>
-    <div class="copy" style="left:64px;top:70px;width:620px;bottom:60px;gap:22px">
+    <div class="copy" style="left:64px;top:70px;width:514px;bottom:56px;gap:22px">
       ${brand()}
       <div style="height:10px"></div>
       <p class="kicker">A member review &middot; Skool</p>
@@ -320,8 +323,8 @@ function reviewCardHTML() {
         <p class="quote" style="font-size:33px;margin:14px 0 18px">In 3 days I had a beautiful website/blog set up and everything connected and looks way better than the word press site would have looked.</p>
         <p class="who"><b>Tina Alexander</b> &middot; paying member &middot; Skool review</p>
       </div>
-    </div>
-    ${sticker("5 stars<br>on Skool", "right:44px;bottom:48px;transform:rotate(9deg)", true)}`;
+      <div class="foot" style="margin-top:auto"><span>thedigitalincomeedit.com</span><i>Posted on Skool under her name</i></div>
+    </div>`;
   return page(1080, 1080, 1, inner);
 }
 
@@ -336,8 +339,26 @@ function ogHTML() {
       <h1 style="font-size:50px;line-height:1.02">A business that keeps selling <em>on the Tuesday you're too tired to post.</em></h1>
       <p class="sub" style="font-size:19px">Your website, blog and email list, built in one weekend from content you already wrote.</p>
       <div class="cta" style="align-self:center;font-size:15px;padding:16px 30px">$97 or 3 &times; $33.33 <span>&rarr;</span></div>
-    </div>
-    ${sticker("No code<br>no camera", "left:318px;top:470px;transform:rotate(-10deg);width:112px;height:112px;font-size:12px", true)}`;
+      <p style="font:700 13px/1 Inter,sans-serif;letter-spacing:.08em;color:var(--ink-soft);margin-top:auto">thedigitalincomeedit.com</p>
+    </div>`;
+  return page(1200, 630, 1, inner);
+}
+
+
+// Preview page OG 1200 x 630: same frame as the sales OG, preview message. Every word in the centre 600 px.
+// Uses preview-hero.jpg and hub-header.jpg, so dropping new photos in and re-running refreshes it.
+function ogPreviewHTML() {
+  const inner = `
+    ${photo("loftFace", "left:0;top:0;width:420px;height:630px", "fadeLR", "0% 22%")}
+    ${photo("loftWide", "right:0;top:0;width:420px;height:630px", "fadeRL", "60% 40%")}
+    <div class="card" style="position:absolute;left:310px;top:44px;width:580px;height:542px;padding:34px 38px;display:flex;flex-direction:column;gap:16px;z-index:3;text-align:center;align-items:center">
+      <div class="brand" style="font-size:13px"><span class="dot"></span>The Weekend Ecosystem&trade; &middot; free preview</div>
+      <div class="goldline" style="position:static;width:120px;background:var(--gold)"></div>
+      <h1 style="font-size:54px;line-height:1.02">See the whole machine <em>before you buy a thing.</em></h1>
+      <p class="sub" style="font-size:19px">The module index, a real module, the prompt cards, real output and the certificate. <strong>No email, no card.</strong></p>
+      <div class="cta" style="align-self:center;font-size:15px;padding:16px 30px">Open the preview <span>&rarr;</span></div>
+      <p style="font:700 13px/1 Inter,sans-serif;letter-spacing:.08em;color:var(--ink-soft);margin-top:auto">thedigitalincomeedit.com</p>
+    </div>`;
   return page(1200, 630, 1, inner);
 }
 
@@ -348,6 +369,7 @@ const JOBS = [
   ["beacons-3-review", reviewCardHTML, 1080, 1080],
   ["beacons-hero-keep-it-running-kit", () => heroHTML(true), 1080, 1080],
   ["og-weekend-ecosystem-2026-09", ogHTML, 1200, 630],
+  ["og-weekend-ecosystem-preview", ogPreviewHTML, 1200, 630],
 ];
 for (const angle of Object.keys(ANGLES)) {
   for (const [size, tag] of [["sq", "1080x1080"], ["p45", "1080x1350"], ["st", "1080x1920"], ["ls", "1200x628"]]) {
