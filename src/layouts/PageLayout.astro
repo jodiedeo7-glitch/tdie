@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Analytics from '@vercel/analytics/astro';
+import OG_THUMBNAILS from "../data/og-thumbnails.js";
 export interface Props {
   title: string;
   description: string;
@@ -12,7 +13,11 @@ export interface Props {
 const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", SITE).href;
-const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
+// Product pages get their link thumbnail from the generated map (ops/og-thumbnails), so a
+// page never has to set its own. The map wins over any ogImage prop.
+const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const ogImageFinal = (OG_THUMBNAILS as Record<string, string>)[path] ?? ogImage;
+const ogImageAbsolute = ogImageFinal.startsWith("http") ? ogImageFinal : `${SITE}${ogImageFinal}`;
 ---
 
 <!DOCTYPE html>

@@ -2,6 +2,10 @@
 
 > **🖼️ IMAGE RULES (Jodie, 25 September 2026; pink rule corrected 26 September 2026). Read before any image prompt or generation.** Every image prompt and every generated image follows `claude/TDIE_IMAGE_GENERATION_MASTER.md`, which wins over anything older in this document. Canon beats generic words like "luxury" or "editorial": Tommy Kate is photographed in her own world (farmhouse, pink attic gaming loft, porch, kitchen, living room, pasture, red barn, garden beds, golden retriever), never a Paris apartment, café, marble office, mansion or influencer set. Every prompt with her in it opens: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Her locked features are never written in words, not even as "same face" or "same freckles". **The pink rule:** any frame with her in it (full body, hands or boots) always includes her glitter-flecked pink iced coffee tumbler with a lavender straw, and the tumbler is never the only pink item: her clothes can be candy pink and other pink pieces can be in the frame with her. A frame without her carries exactly one intentional saturated candy-pink object. Real lens and real light language, photorealism language, no text or logos in the photo. **Tool order (standing rule):** any image with the avatar or a person goes to Google Gemini first, reference sheet attached, while Gemini has credits, then Nano Banana Pro at 2K on Higgsfield, reference sheet attached. Any image with no person goes to Seedream 4.5 on Higgsfield. Garbled text or an unsatisfactory image re-runs on Nano Banana Pro at 2K on Higgsfield. No other image generator, and never Canva.
 
+> **🔤 HEADLINE FONT (Jodie, 27 September 2026). Wins over every older line below.** Newsreader is retired for headlines: not readable enough. Headlines are **Inter Black (900)** in near-black #1A1417 with the turn phrase in hot pink #D62E73; Inter for everything else. No serif carries a headline anywhere (graphics, thumbnails, covers, ads). Section 2's "Newsreader SemiBold headlines" line is superseded.
+>
+> **🖼️ PRODUCT LINK THUMBNAILS.** Every product page's link image (what Facebook, Skool, iMessage show when a link is shared) is drawn by `ops/og-thumbnails/render.mjs` from `ops/og-thumbnails/products.mjs`. New product: add one entry there and run `node ops/og-thumbnails/render.mjs`. A product with no entry still gets an automatic thumbnail from its own name and price. All words sit inside the centre 600 px square, which is what Facebook shows in comments.
+
 ### 25 September 2026 · founder instruction
 
 These override canon §8 "Type" and the Dark Chocolate palette row wherever they disagree. Canon §8 and `canon.json → typography / palette` still carry the old lines and need the same change (see bottom).
@@ -10,6 +14,7 @@ These override canon §8 "Type" and the Dark Chocolate palette row wherever they
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
+- Newsreader, or any serif, for headlines ("not readable", 27 Sep 2026).
 - Fraunces, Cormorant Garamond, or any thin-hairline, soft, wonky or italic display serif for headings ("weird, blurred, hard to read").
 - Montserrat or any generic geometric sans for headings ("very AI").
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
@@ -27,7 +32,7 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - **Layout:** cream gradient scrim from the left holding the copy; Tommy Kate on the right. Brand line top-left: small pink dot plus "THE DIGITAL INCOME EDIT™" in wide-tracked caps.
 - **Cards:** frosted white glass with a thin gold border and deep soft pink-tinted shadows. One glossy hot pink gradient hero card per image with a light sheen.
 - **Stickers:** round white or bubblegum badges, tilted, dashed inner ring, pink type ("7 DAYS FREE", "1,200+ MEMBERS BUILDING"). Never over her face or body.
-- **Type:** Newsreader SemiBold headlines in near-black with the turn phrase in hot pink; Inter for everything else; kickers Inter Bold uppercase, wide tracking, pink.
+- **Type:** ~~Newsreader SemiBold~~ Inter Black (27 Sep 2026) headlines in near-black with the turn phrase in hot pink; Inter for everything else; kickers Inter Bold uppercase, wide tracking, pink.
 - **CTA:** hot pink gradient pill button, white caps.
 - Render at 1600x900 @2x, export JPG quality 93 for Skool.
 

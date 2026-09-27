@@ -2,6 +2,8 @@
 import "../../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
 import FreebieForm from "../../components/FreebieForm.astro";
+import OG_THUMBNAILS from "../../data/og-thumbnails.js";
+const OG_IMAGE = `https://www.thedigitalincomeedit.com${OG_THUMBNAILS["/resources/pinterest-keyword-planner"] ?? "/og/default.jpg"}`;
 ---
 
 <!DOCTYPE html>
@@ -33,10 +35,10 @@ import FreebieForm from "../../components/FreebieForm.astro";
   <meta property="og:title" content="The Pinterest Keyword Planner" />
   <meta property="og:description" content="A free planner that takes you from seed words to a bank of 30-50 verified Pinterest keywords, grouped into the topics that become your boards." />
   <meta property="og:url" content="https://www.thedigitalincomeedit.com/resources/pinterest-keyword-planner" />
-  <meta property="og:image" content="https://www.thedigitalincomeedit.com/og/default.jpg" />
+  <meta property="og:image" content={OG_IMAGE} />
   <meta property="og:site_name" content="The Digital Income Edit™" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://www.thedigitalincomeedit.com/og/default.jpg" />
+  <meta name="twitter:image" content={OG_IMAGE} />
   <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
