@@ -46,7 +46,7 @@ const PHOTOS = {
   porch:    { src: "public/images/we/cover-sofa.jpg" },          // porch at sunrise, red barn, Player Two? mug
   loftCross:{ src: "public/images/we/cover-kitchen.jpg" },       // attic loft, cross-legged, laptop on lap
   loftFace: { src: "public/images/we/preview-hero.jpg" },        // attic loft, facing camera, closed laptop
-  loftLap:  { src: "public/images/we/preview-working.jpg" },     // attic loft, laptop on lap, barn in window
+  loftLap:  { src: "ops/cloud-output/we-creatives/photos/loft-lap-no-logo.jpg" }, // the old preview-working.jpg (logo retouched), kept for ad-build after the page got the new kitchen photo     // attic loft, laptop on lap, barn in window
   loftWide: { src: "public/images/we/hub-header.jpg" },          // attic loft, wide, typing at the pink desk
   sofa:     { src: "ops/cloud-output/we-creatives/photos/sofa-tumbler-no-lettering.jpg" }, // public/images/we/hook-blog-posts.jpg with its baked-in lettering cropped off (top 568 px)
   pasture:  { src: "ops/cloud-output/we-creatives/photos/pay-plan-pasture-blanket.jpg" }, // generated 27 Sep 2026 from the PHOTO_PROMPTS.md prompt; laptop logo and sneaker patch retouched out
