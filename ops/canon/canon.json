@@ -3,7 +3,7 @@
     "brand": "The Digital Income Edit™",
     "tagline": "Build Your Business Backwards. Scale It Forward.™",
     "status": "CURRENT — single live copy. No versioned predecessors. Supersedes canon.json v1.0/v1.1 and every reconciliation document.",
-    "issued": "2026-09-25",
+    "issued": "2026-09-27",
     "precedence": [
       "Live site, repo, Skool and shop — override every document including this one",
       "TDIE_CANON.md and canon.json — governing, kept in sync same-day",
@@ -76,7 +76,8 @@
     "decision_117_2026_09_25": "Decision 117. Founder instruction, 25 Sep 2026. Instagram carries no links, ever (captions, comments, first comments, replies); calls to action point to the link in bio; Story link stickers excepted. Facebook first-comment rule unchanged. The old posting day rules (no membership Tue to Thu, Vault Wednesday only, Vault/membership never adjacent, Premium Monday or Friday only, weekly affiliate cap of three) are removed and replaced by the spread rules in content_calendar_rules.spread_rules. Reel renders on Higgsfield must cost under 30 credits (Wan 3.0 720p default, Grok Imagine 1.5 fallback). Recorded the same day in TDIE_CANON.md §3, §4, §5, §7, here, claude/TDIE_SKOOL_POSTING_SYSTEM.md, SOP-15-dfy-content-calendar.md and claude/TDIE_THREADS_SYSTEM.md.",
     "dfy_beacons_checkout_2026_09_25": "Decision 118. 25 Sep 2026, conversion-optimization pass on the 11 new DFY services (Decision 116). Each DFY service now also has a Beacons checkout page in addition to the DM-to-order flow, so a buyer can pay directly instead of only DMing. Beacons checkout URLs were added to each product row below (beacons_checkout_url or beacons_checkout_urls for services with more than one price tier). Discount terms added at checkout and in the Skool lesson bodies: Premium members get 15% off; a service's first 2 clients get 25% off in exchange for a testimonial (does not stack with the Premium discount). Two exceptions have no Beacons checkout: Run It Like Mine: DFY Automation Setup (no product built for any of its four tiers — DM only) and the ongoing/monthly halves of DFY Viral Instagram Content Calendar and DFY Skool Autopilot (their one-time/setup prices do have checkout links; their recurring monthly options and the Skool Autopilot Mirror add-on remain DM-only).",
     "while_you_sleep_storefront_2026_09_27": "Decision 121. Founder instruction, 27 Sep 2026: Jodie's two Amazon pin automations become one standalone product, The While-You-Sleep Storefront™ (working name). Presale $10 for everyone, Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern, then $27 one-time on Beacons from Fri 9 Oct 9:00 am. Membership Standard $17 through a private Beacons product linked only from a Value Vault lesson. Membership Premium: code PREMIUM50, 50% off the member product ($8.50), shown only in a Premium Vault lesson. Member affiliate 40% via Beacons' affiliate product. Zero refunds, stated once. Never included free in any tier. Upgrade: DFY Amazon Storefront Launch ($297). Registered 27 Sep 2026.",
-    "vault_member_pricing_2026_09_27": "Decision 122. Founder call, 27 Sep 2026. The While-You-Sleep Storefront™ is a standalone product, not a vault guide. It appears as one member-pricing lesson in BOTH The Value Vault and The Premium Vault, so the two vaults still hold identical lessons and only how each tier pays differs: The Value Vault lesson links the private $17 Beacons product; The Premium Vault lesson links the same $17 product plus code PREMIUM50 (50% off, $8.50). Premium pays half, not nothing. This is a scoped exception to 'every guide already unlocked in The Premium Vault' and is never re-raised as a vault defect, an audit finding or a pricing conflict. Closed item."
+    "vault_member_pricing_2026_09_27": "Decision 122. Founder call, 27 Sep 2026. The While-You-Sleep Storefront™ is a standalone product, not a vault guide. It appears as one member-pricing lesson in BOTH The Value Vault and The Premium Vault, so the two vaults still hold identical lessons and only how each tier pays differs: The Value Vault lesson links the private $17 Beacons product; The Premium Vault lesson links the same $17 product plus code PREMIUM50 (50% off, $8.50). Premium pays half, not nothing. This is a scoped exception to 'every guide already unlocked in The Premium Vault' and is never re-raised as a vault defect, an audit finding or a pricing conflict. Closed item.",
+    "image_generation_master_2026_09_25": "Decision 119. Founder instruction, 25 Sep 2026. Every image prompt and generated image follows claude/TDIE_IMAGE_GENERATION_MASTER.md. Every prompt with her in it opens: 'Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.' Locked features are never written, not even as 'same face' or 'unchanged'. Tool order (standing): any image with the avatar or a person -> Google Gemini first while it has credits, then Nano Banana Pro at 2K on Higgsfield, reference sheet attached; any image with no person -> Seedream 4.5 on Higgsfield; garbled text or bad result -> re-run on Nano Banana Pro 2K. No other image generator, never Canva. About-page work order: claude/TDIE_ABOUT_PAGE_HANDOFF.md."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -1466,7 +1467,15 @@
     "standalone_rule": "Every prompt is a complete standalone unit. Every image in a carousel or story set gets its own complete prompt — never a shared spec block plus fragments.",
     "text_rule": "Nano banana (Gemini): text is set, never generated — no lettering in frame. Canva AI renders text accurately; do not strip text from Canva prompts. One scoped exception: the Legally Blonde Amazon pins and their Instagram versions keep a short generated title overlay, checked letter by letter before shipping (Decision 109).",
     "operator_handoff": "claude/TDIE_CHATGPT_IMAGE_BRIEF.md — the paste-once block for ChatGPT, the per-image request format, and a worked example.",
-    "persona_required_in_every_calendar_image": false
+    "persona_required_in_every_calendar_image": false,
+    "master_instructions": "claude/TDIE_IMAGE_GENERATION_MASTER.md (Decision 119, 25 Sep 2026). Governs every image prompt and generation.",
+    "identity_opening_line": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.",
+    "tool_order": {
+      "person_or_avatar": "Google Gemini first (reference sheet attached, one image per new chat) while it has credits, then Nano Banana Pro at 2K on Higgsfield (reference sheet attached)",
+      "no_person": "Seedream 4.5 on Higgsfield (Unlimited on)",
+      "garbled_or_unsatisfactory": "re-run on Nano Banana Pro at 2K on Higgsfield",
+      "never": "any other image generator, including Canva"
+    }
   },
   "emails": {
     "note": "Email series and automation emails on record. A series listed here is canon: its subject lines, send dates, audience and links are fixed once scheduled, and edits are made in MailerLite and in the doc of record together.",
