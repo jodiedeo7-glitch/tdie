@@ -1,0 +1,199 @@
+---
+// "What's in the box" for The Weekend Ecosystem™. A digital product can't be picked up,
+// so this is its packaging: the real module index on a laptop, and a mini cover for every
+// piece that comes with it, laid out like a desk flat-lay. Labels are canon-true only
+// (22 modules, 36 prompts, three vaults, the Ask-For-It List, the certificate, updates free).
+import { MODULES } from "../we-manifest.js";
+
+export interface Props {
+  /** "full" = laptop + every cover. "peek" = the laptop alone, for the hero collage. */
+  variant?: "full" | "peek";
+}
+const { variant = "full" } = Astro.props;
+
+const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
+  const inPhase = MODULES.filter((m) => m.phase === p);
+  return {
+    accent: inPhase[0].accent,
+    day: inPhase[0].phaseLabel.split("·")[1]?.trim() ?? p,
+    title: inPhase[0].phaseSub.split("—")[0].trim(),
+    mods: inPhase,
+  };
+});
+
+const covers = [
+  { k: "36 prompts", t: "The Quick Sheet", s: "Every prompt on one page, in running order", c: "wb-c-hot", tape: true },
+  { k: "Vault 01", t: "The Prompt Vault", s: "Every prompt, verbatim, sorted by tool", c: "wb-c-white" },
+  { k: "Vault 02", t: "The Troubleshooting Vault", s: "Every roadblock, paired with the fix", c: "wb-c-bub", tape: true },
+  { k: "Vault 03", t: "The Template Vault", s: "Canon File, pillar map, cadence. Fill in and keep", c: "wb-c-lav" },
+  { k: "51 asks", t: "The Ask-For-It List", s: "Change your site in one sentence", c: "wb-c-white", tape: true },
+  { k: "At 22 of 22", t: "Certificate of Completion", s: "Your name, the date, something to post", c: "wb-c-cert" },
+];
+---
+
+<div class={`wb wb-${variant}`}>
+  <div class="wb-stage">
+    <!-- the laptop: the real module index -->
+    <figure class="wb-laptop" aria-label="The Weekend Ecosystem™ course on a laptop: the module index with a progress tracker">
+      <div class="wb-screen">
+        <div class="wb-bar"><i></i><i></i><i></i><span>The Weekend Ecosystem™</span></div>
+        <div class="wb-ui">
+          <div class="wb-ui-top">
+            <div class="wb-ring"><b>14</b></div>
+            <div>
+              <span class="wb-ui-k">Your progress</span>
+              <span class="wb-ui-h">Over halfway. The site exists by now.</span>
+            </div>
+          </div>
+          {phases.slice(0, variant === "peek" ? 2 : 3).map((p, i) => (
+            <div class="wb-ph" style={`--ac:${p.accent}`}>
+              <div class="wb-ph-h"><span>{p.day}</span><b>{p.title}</b></div>
+              {p.mods.slice(0, 2).map((m) => (
+                <div class={`wb-mod${m.num <= 14 ? " wb-done" : ""}`}><i></i>{String(m.num).padStart(2, "0")} {m.title}</div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="wb-base"></div>
+    </figure>
+
+    {variant === "full" && (
+      <ul class="wb-covers" role="list">
+        {covers.map((c, i) => (
+          <li class={`wb-cover ${c.c}`} style={`--r:${[-4, 3, -2, 4, -3, 2][i]}deg`}>
+            {c.tape && <span class="wb-tape" aria-hidden="true"></span>}
+            <span class="wb-spine" aria-hidden="true"></span>
+            <span class="wb-brand">The Weekend Ecosystem™</span>
+            <span class="wb-k">{c.k}</span>
+            <span class="wb-t">{c.t}</span>
+            <span class="wb-s">{c.s}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {variant === "full" && (
+      <>
+        <span class="wb-stk wb-stk-a" aria-hidden="true"><span>22<br />modules</span></span>
+        <span class="wb-stk wb-stk-b" aria-hidden="true"><span>Every<br />update<br />free</span></span>
+      </>
+    )}
+  </div>
+</div>
+
+<style>
+  .wb{--ink:#1A1417;--ink-soft:#4A3F44;--hot:#D62E73;--bub:#FF8AC2;--lav:#CBB7F7;--gold:#C8A96A;--edge:rgba(200,169,106,.55)}
+
+  /* ── desk stage: cream paper, grain, soft blush light ── */
+  .wb-full .wb-stage{position:relative;display:grid;grid-template-columns:1fr 1.55fr 1fr;grid-template-areas:"l1 lap r1" "l2 lap r2" "l3 lap r3";gap:18px 26px;align-items:center;
+    padding:70px 40px 74px;border-radius:26px;border:1px solid var(--edge);overflow:hidden;
+    background:
+      radial-gradient(60% 55% at 50% 42%,rgba(255,138,194,.26),transparent 70%),
+      radial-gradient(40% 40% at 8% 90%,rgba(203,183,247,.32),transparent 70%),
+      radial-gradient(35% 35% at 96% 6%,rgba(255,138,194,.22),transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.08 0 0 0 0 0.09 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"),
+      #FBF6F1;
+    box-shadow:0 40px 80px -50px rgba(214,46,115,.55),inset 0 1px 0 #fff}
+
+  /* ── laptop ── */
+  .wb-laptop{grid-area:lap;position:relative;z-index:2;margin:0}
+  .wb-screen{border-radius:16px 16px 6px 6px;padding:10px 10px 12px;background:linear-gradient(180deg,#2A2226,#1A1417);
+             box-shadow:0 30px 50px -26px rgba(26,20,23,.55),0 0 0 1px rgba(255,255,255,.08) inset}
+  .wb-bar{display:flex;align-items:center;gap:5px;padding:7px 10px;border-radius:9px 9px 0 0;background:#F3ECE6}
+  .wb-bar i{width:8px;height:8px;border-radius:50%;background:rgba(26,20,23,.18)}
+  .wb-bar i:first-child{background:var(--bub)}
+  .wb-bar span{margin-left:8px;font:600 12px/1 Inter,sans-serif;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wb-ui{background:#FBF8F5;border-radius:0 0 8px 8px;padding:14px;display:grid;gap:9px}
+  .wb-ui-top{display:flex;gap:12px;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--edge)}
+  .wb-ring{flex:none;position:relative;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+           background:conic-gradient(var(--hot) 0 63%,rgba(26,20,23,.1) 63%)}
+  .wb-ring::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#FBF8F5}
+  .wb-ring b{position:relative;z-index:1}
+  .wb-ring b{font:600 17px/1 Newsreader,Georgia,serif;color:var(--ink)}
+  .wb-ui-k{display:block;font:700 12px/1.2 Inter,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--hot)}
+  .wb-ui-h{display:block;font:600 15px/1.3 Newsreader,Georgia,serif;color:var(--ink);margin-top:3px}
+  .wb-ph{position:relative;background:#fff;border-radius:9px;padding:8px 10px 6px 14px;border:1px solid rgba(26,20,23,.07)}
+  .wb-ph::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:9px 0 0 9px;background:var(--ac)}
+  .wb-ph-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;margin-bottom:3px}
+  .wb-ph-h span{font:700 12px/1.2 Inter,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+  .wb-ph-h b{font:600 14px/1.2 Newsreader,Georgia,serif;color:var(--ink)}
+  .wb-mod{display:flex;align-items:center;gap:7px;font:500 12.5px/1.6 Inter,sans-serif;color:var(--ink)}
+  .wb-mod i{flex:none;width:12px;height:12px;border-radius:3px;border:1.5px solid rgba(26,20,23,.25)}
+  .wb-done i{background:var(--hot);border-color:var(--hot);box-shadow:inset 0 0 0 2px #fff}
+  .wb-base{height:14px;margin:0 -7%;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#E9E1DB,#CFC4BD);
+           box-shadow:0 18px 28px -14px rgba(26,20,23,.45)}
+  .wb-base::before{content:"";display:block;width:18%;height:5px;margin:0 auto;border-radius:0 0 8px 8px;background:#BDB1AA}
+
+  /* ── covers ── */
+  .wb-covers{display:contents;list-style:none;margin:0;padding:0}
+  .wb-cover{position:relative;display:flex;flex-direction:column;gap:4px;min-height:132px;padding:14px 14px 14px 20px;border-radius:6px 12px 12px 6px;
+            transform:rotate(var(--r));list-style:none;
+            box-shadow:0 22px 34px -22px rgba(26,20,23,.5),0 2px 0 rgba(255,255,255,.7) inset,0 0 0 1px rgba(26,20,23,.06);
+            transition:transform .3s ease}
+  .wb-cover:hover{transform:rotate(0) translateY(-4px)}
+  .wb-cover:nth-child(1){grid-area:l1}
+  .wb-cover:nth-child(2){grid-area:l2}
+  .wb-cover:nth-child(3){grid-area:l3}
+  .wb-cover:nth-child(4){grid-area:r1}
+  .wb-cover:nth-child(5){grid-area:r2}
+  .wb-cover:nth-child(6){grid-area:r3}
+  .wb-spine{position:absolute;left:0;top:0;bottom:0;width:8px;border-radius:6px 0 0 6px;background:rgba(26,20,23,.12)}
+  .wb-brand{font:700 12px/1.2 Inter,sans-serif;letter-spacing:.6px;opacity:.75}
+  .wb-k{align-self:flex-start;margin-top:6px;font:800 12px/1 Inter,sans-serif;letter-spacing:1.2px;text-transform:uppercase;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--hot)}
+  .wb-t{font:600 19px/1.12 Newsreader,Georgia,serif;margin-top:4px}
+  .wb-s{font:500 13px/1.35 Inter,sans-serif;opacity:.85;margin-top:auto}
+  .wb-c-hot{color:#fff;background:linear-gradient(145deg,#F0589A,var(--hot) 55%,#A81F57)}
+  .wb-c-hot .wb-spine{background:rgba(255,255,255,.28)}
+  .wb-c-white{color:var(--ink);background:linear-gradient(160deg,#fff,#FBF3F6)}
+  .wb-c-white .wb-spine{background:var(--hot)}
+  .wb-c-white .wb-k{background:rgba(255,138,194,.22)}
+  .wb-c-bub{color:var(--ink);background:linear-gradient(150deg,#FFC2DD,var(--bub))}
+  .wb-c-bub .wb-spine{background:rgba(214,46,115,.55)}
+  .wb-c-lav{color:var(--ink);background:linear-gradient(150deg,#E7DDFB,var(--lav))}
+  .wb-c-lav .wb-spine{background:#8B6FC4}
+  .wb-c-cert{color:var(--ink);background:#FFFDFC;outline:1px solid var(--gold);outline-offset:-7px}
+  .wb-c-cert .wb-spine{background:var(--gold);width:3px}
+  .wb-c-cert .wb-k{background:rgba(214,46,115,.1)}
+
+  /* washi tape */
+  .wb-tape{position:absolute;top:-10px;left:50%;width:62px;height:20px;transform:translateX(-50%) rotate(-6deg);opacity:.85;
+           background:repeating-linear-gradient(45deg,rgba(255,138,194,.85) 0 6px,rgba(255,255,255,.7) 6px 12px);
+           box-shadow:0 1px 2px rgba(26,20,23,.12);clip-path:polygon(3% 0,97% 4%,100% 50%,96% 100%,2% 96%,0 50%)}
+  .wb-c-hot .wb-tape,.wb-c-bub .wb-tape{background:repeating-linear-gradient(45deg,rgba(203,183,247,.9) 0 6px,rgba(255,255,255,.75) 6px 12px)}
+
+  /* stickers */
+  .wb-stk{position:absolute;z-index:3;display:grid;place-items:center;width:98px;height:98px;border-radius:50%;
+          font:800 12px/1.2 Inter,sans-serif;letter-spacing:1px;text-transform:uppercase;text-align:center;box-shadow:0 14px 26px -12px rgba(214,46,115,.55)}
+  .wb-stk>span{display:grid;place-items:center;width:82px;height:82px;border-radius:50%;border:1.5px dashed currentColor}
+  .wb-stk-a{top:10px;left:calc(50% - 230px);background:#fff;color:var(--hot);transform:rotate(-10deg)}
+  .wb-stk-b{bottom:8px;right:calc(50% - 235px);background:var(--bub);color:#fff;transform:rotate(9deg)}
+  .wb-stk-b>span{border-color:rgba(255,255,255,.9)}
+
+  /* ── peek (hero collage): laptop only ── */
+  .wb-peek .wb-ui{padding:10px;gap:7px}
+  .wb-peek .wb-ring{width:44px;height:44px}
+  .wb-peek .wb-ring b{font-size:15px}
+
+  @media(max-width:900px){
+    .wb-full .wb-stage{grid-template-columns:1fr 1fr;grid-template-areas:"lap lap";padding:44px 22px 40px;gap:18px}
+    .wb-covers{display:contents}
+    .wb-cover:nth-child(n){grid-area:auto;align-self:stretch}
+    .wb-laptop{margin:0 4% 18px}
+    .wb-stk-a{top:12px;left:10px}
+    .wb-stk-b{top:12px;bottom:auto;right:10px}
+  }
+  @media(max-width:640px){
+    .wb-full .wb-stage{padding:64px 14px 26px;gap:14px;border-radius:20px}
+    .wb-laptop{margin:0 0 14px}
+    .wb-cover{min-height:138px;padding:13px 11px 12px 17px}
+    .wb-t{font-size:17px}
+    .wb-s{font-size:12.5px}
+    .wb-stk{width:90px;height:90px;font-size:12px;letter-spacing:.4px}
+    .wb-stk>span{width:76px;height:76px}
+    .wb-stk-a{top:-4px;left:4px}
+    .wb-stk-b{top:-4px;right:4px}
+    .wb-mod{font-size:12px}
+  }
+  @media(prefers-reduced-motion:reduce){.wb-cover{transition:none}}
+</style>
