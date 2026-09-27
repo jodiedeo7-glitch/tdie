@@ -1,138 +1,268 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import "../../styles/edit.css";
+import { library, membership, word, cap } from "../../data/facts.js";
+import { pillars } from "../../data/library.js";
 
-const featured = [
-  { t: "The Weekend Build Challenge", p: "Five days, five emails, one small business built in order — a model, an offer, a product, a funnel and a way to be found. About thirty minutes a day.", href: "/resources/weekend-build-challenge", tag: "Free 5-day challenge", ac: "#FF8AC2" },
-  { t: "The Faceless Income Blueprint™", p: "The entire faceless income machine on one page — the two-engine framework, a way to diagnose your own bottleneck, and the order to build in.", href: "/resources/faceless-income-blueprint", tag: "Free guide", ac: "#CBB7F7" },
-  { t: "The $10/Day Traffic Machine — Starter Map", p: "The whole paid-traffic pipeline on one page. Four boxes you fill in before you spend a cent.", href: "/resources/starter-map", tag: "Free guide", ac: "#CF80C2" },
-  { t: "The Pinterest Keyword Planner", p: "Six printable pages that take you from seed words to a bank of 30–50 verified keywords, grouped into your future boards.", href: "/resources/pinterest-keyword-planner", tag: "Free planner", ac: "#D62E73" },
+// /resources is a set of entry points, not a download shelf.
+// 1. Find Your Door (free, no email) is the navigation: the first and strongest move.
+// 2. Six situations, each pointing to ONE $0 resource (canon products[] or key_pages).
+// 3. The per-pillar kits, quieter, as a scannable index.
+// Only $0 resources sit in these slots (canon journey_slot_rules.free).
+
+const FIND_YOUR_DOOR = "/resources/find-your-door";
+
+const doors = [
+  {
+    s: "I have nothing yet.",
+    p: "The whole machine on one page, so you can see how the pieces connect and which one to build first.",
+    r: "The Faceless Income Blueprint™",
+    f: "Free guide, 15 pages",
+    href: "/resources/faceless-income-blueprint",
+    go: "Get the Blueprint",
+  },
+  {
+    s: "I have an idea, but no offer.",
+    p: "Type what you sell the way you say it now, rebuild it in one sentence and watch four checks run live.",
+    r: "The One-Sentence Offer tool",
+    f: "Free tool, no email",
+    href: "/resources/one-sentence-offer",
+    go: "Write my sentence",
+  },
+  {
+    s: "I want it built in order, this week.",
+    p: "Five days, five emails: a model, an offer, a product, a funnel and a way to be found. About thirty minutes a day.",
+    r: "The Weekend Build Challenge",
+    f: "Free 5-day email challenge",
+    href: "/resources/weekend-build-challenge",
+    go: "Start the challenge",
+  },
+  {
+    s: "I have content, but no system.",
+    p: "Your lessons and posts can become a website you own. Walk through the course that builds it first, before you decide anything.",
+    r: "A look inside The Weekend Ecosystem™",
+    f: "Free preview, no email",
+    href: "/weekend-ecosystem/preview",
+    go: "Take the look inside",
+  },
+  {
+    s: "I'm about to pay for traffic.",
+    p: "The paid-traffic pipeline on one page: four boxes you fill in before you spend a cent.",
+    r: "The $10/Day Traffic Machine Starter Map",
+    f: "Free guide",
+    href: "/resources/starter-map",
+    go: "Get the Starter Map",
+  },
+  {
+    s: "I'd rather sell something physical.",
+    p: "Four downloads for a store with no warehouse and no face on it: a setup checklist, a vendor and app guide, AI prompts and a niche list.",
+    r: "The Shopify Starter Kit",
+    f: "Free kit",
+    href: "/resources/shopify-starter-kit",
+    go: "Get the kit",
+  },
 ];
 
-const kits = [
-  { t: "The AI Starter Kit", c: "AI", href: "/resources/ai-starter-kit" },
-  { t: "The Pinterest Traffic Kit", c: "Pinterest", href: "/resources/pinterest-traffic-kit" },
-  { t: "The First Product Kit", c: "Digital Products", href: "/resources/digital-products-kit" },
-  { t: "The Email List Starter Kit", c: "Email Marketing", href: "/resources/email-starter-kit" },
-  { t: "The Affiliate Starter Kit", c: "Affiliate Marketing", href: "/resources/affiliate-starter-kit" },
-  { t: "The Evergreen Blog Kit", c: "Blogging", href: "/resources/blogging-kit" },
-  { t: "The Content Creation Kit", c: "Content Creation", href: "/resources/content-creation-kit" },
-  { t: "The Brand Clarity Kit", c: "Branding", href: "/resources/branding-kit" },
-  { t: "The Automation Starter Kit", c: "Automation", href: "/resources/automation-kit" },
-  { t: "The Systems Starter Kit", c: "Business Systems", href: "/resources/business-systems-kit" },
-  { t: "The Passive Income Starter Kit", c: "Passive Income", href: "/resources/passive-income-kit" },
-  { t: "The Creator to CEO Kit", c: "Mindset", href: "/resources/mindset-kit" },
-  { t: "The Shopify Starter Kit", c: "Physical Products", href: "/resources/shopify-starter-kit" },
-];
+// One kit per pillar, in library order. `t` must match library.js `freebie`.
+const kitPages = {
+  "The Systems Starter Kit": { c: "Business Systems", href: "/resources/business-systems-kit" },
+  "The Creator to CEO Kit": { c: "Mindset", href: "/resources/mindset-kit" },
+  "The Brand Clarity Kit": { c: "Branding", href: "/resources/branding-kit" },
+  "The Content Creation Kit": { c: "Content Creation", href: "/resources/content-creation-kit" },
+  "The AI Starter Kit": { c: "AI", href: "/resources/ai-starter-kit" },
+  "The Pinterest Traffic Kit": { c: "Pinterest", href: "/resources/pinterest-traffic-kit" },
+  "The Evergreen Blog Kit": { c: "Blogging", href: "/resources/blogging-kit" },
+  "The Email List Starter Kit": { c: "Email Marketing", href: "/resources/email-starter-kit" },
+  "The First Product Kit": { c: "Digital Products", href: "/resources/digital-products-kit" },
+  "The Affiliate Starter Kit": { c: "Affiliate Marketing", href: "/resources/affiliate-starter-kit" },
+  "The Automation Starter Kit": { c: "Automation", href: "/resources/automation-kit" },
+  "The Passive Income Starter Kit": { c: "Passive Income", href: "/resources/passive-income-kit" },
+  "The Shopify Starter Kit": { c: "Physical Products", href: "/resources/shopify-starter-kit" },
+};
+const kits = Object.entries(kitPages).map(([t, k]) => ({ t, ...k }));
+
+// Guides that share a kit, worked out from the library itself.
+const byKit = {};
+for (const g of pillars) (byKit[g.freebie] ||= []).push(g);
+const shared = Object.entries(byKit).filter(([, gs]) => gs.length > 1);
+const sharedLine = shared.map(([kit, gs]) => {
+  const cats = [...new Set(gs.map((g) => g.category))];
+  return `The ${word(gs.length)} ${cats.length === 1 ? cats[0] + " " : ""}guides share ${kit}.`;
+}).join(" ");
+const countLine = `${cap(library.guidesWord)} guides in the library, ${word(kits.length)} kits to go with them.`;
 ---
 <PageLayout
-  wide
+  bare
   title="Free Resources"
-  description="Free guides, kits, checklists and starter tools from The Digital Income Edit™ — one for every pillar in the library."
+  description="Free guides, tools and kits from The Digital Income Edit™. Start with Find Your Door, or pick the one free resource that fits where you are."
 >
-  <section class="rx-hero">
-    <div class="page-eyebrow">Free resources</div>
-    <h1>Practical starting points.<br /><em>All of them free.</em></h1>
-    <p class="rx-lede">No fluff, no drip sequence to sit through. Each one moves you a single real step forward.</p>
-  </section>
+  <!-- 1. FIND YOUR DOOR: the navigation -->
+  <section class="rs-hero" aria-labelledby="rs-h">
+    <div class="e-wrap rs-hero-grid">
+      <div class="rs-hero-copy e-rise">
+        <p class="e-kick">Free resources</p>
+        <h1 class="e-d1" id="rs-h">Start with the right one. <em>Not all of them.</em></h1>
+        <p class="e-lede">Everything on this page is free. The quickest way to the piece you need is Find Your Door: eleven questions about where you are and where it stops, then one answer, on screen. No email.</p>
+        <div class="e-actions">
+          <a class="e-btn" href={FIND_YOUR_DOOR}>Find my door <span class="ar" aria-hidden="true">→</span></a>
+          <a class="e-link" href="#situations">Or choose by situation</a>
+        </div>
+      </div>
 
-  <a class="rx-door" href="/resources/find-your-door">
-    <span class="rx-tag">Not sure where to start?</span>
-    <span class="rx-door-t">Find your door — eleven questions, one answer, results on screen.</span>
-    <span class="rx-go">Take it →</span>
-  </a>
-
-  <a class="rx-tool" href="/resources/one-sentence-offer">
-    <span class="rx-tag">Free tool · results on screen</span>
-    <span class="rx-tool-t">Can't say what you sell in one sentence? Fix it here in two minutes.</span>
-    <span class="rx-go">Fix my sentence →</span>
-  </a>
-
-  <section class="rx-block rx-first">
-    <h2>Start with one of these</h2>
-    <div class="rx-featured">
-      {featured.map((f) => (
-        <a class="rx-feat" href={f.href} style={`--ac:${f.ac}`}>
-          <span class="rx-tag">{f.tag}</span>
-          <h3>{f.t}</h3>
-          <p>{f.p}</p>
-          <span class="rx-go">Get it →</span>
-        </a>
-      ))}
+      <aside class="rs-door e-rise e-rise-2" aria-label="How Find Your Door works">
+        <p class="rs-door-k">Find Your Door</p>
+        <p class="rs-door-t">Eleven questions. <span>One door.</span></p>
+        <ol class="rs-door-steps">
+          <li><span>01</span>Where you are right now</li>
+          <li><span>02</span>Where you want to be</li>
+          <li><span>03</span>Where it stops moving</li>
+          <li><span>04</span>The worry underneath it</li>
+        </ol>
+        <p class="rs-door-out">Then one starting point, named on screen, with the reason it fits.</p>
+        <ul class="rs-door-meta" aria-label="At a glance">
+          <li>About three minutes</li>
+          <li>Results on screen</li>
+          <li>No email</li>
+        </ul>
+      </aside>
     </div>
   </section>
 
-  <section class="rx-block">
-    <h2>One kit per pillar</h2>
-    <p class="rx-sublead">Fourteen guides in the library, thirteen kits to go with them — the two blogging guides share one. Take the one that matches what you're stuck on.</p>
-    <div class="rx-kits">
-      {kits.map((k) => (
-        <a class="rx-kit" href={k.href}>
-          <span class="rx-kit-c">{k.c}</span>
-          <span class="rx-kit-t">{k.t}</span>
-          <span class="rx-kit-go">→</span>
-        </a>
-      ))}
+  <!-- 2. SIX SITUATIONS, ONE FREE RESOURCE EACH -->
+  <section class="e-sec e-white rs-sit" id="situations" aria-labelledby="sit-h">
+    <div class="e-wrap">
+      <div class="rs-head">
+        <p class="e-kick">Or choose by situation</p>
+        <h2 class="e-d2" id="sit-h">Six places to start. <em>One free resource each.</em></h2>
+        <p class="e-lede">Find the sentence that sounds like you. Each one leads to a single thing to open today, all of them free.</p>
+      </div>
+
+      <ol class="rs-doors">
+        {doors.map((d, i) => (
+          <li class="rs-card">
+            <span class="rs-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <h3 class="rs-s">{d.s}</h3>
+            <p class="rs-p">{d.p}</p>
+            <div class="rs-foot">
+              <p class="rs-r">{d.r}<span>{d.f}</span></p>
+              <a class="rs-go" href={d.href}>{d.go}<span class="rs-sr">: {d.r}</span> <span class="ar" aria-hidden="true">→</span></a>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <section class="rx-block rx-close">
-    <h2>Then build it with people</h2>
-    <p class="rx-sublead">Reading is one thing. The room is where it gets built — daily prompts, start-here trainings, and women one step ahead of you.</p>
-    <div class="rx-cta"><a class="btn" href="/community">See the community <span class="a">→</span></a></div>
+  <!-- 3. THE PER-PILLAR KITS, QUIETER -->
+  <section class="e-sec rs-kits-sec" aria-labelledby="kits-h">
+    <div class="e-wrap">
+      <div class="rs-kits-grid">
+        <div class="rs-kits-intro">
+          <p class="e-kick">By topic</p>
+          <h2 class="e-d3" id="kits-h">One kit for each guide in the library.</h2>
+          <p class="rs-count">{countLine} {sharedLine}</p>
+          <p class="rs-count">Reading a guide already? Its kit is the one to take.</p>
+          <p class="rs-also">Also free: <a class="e-link" href="/resources/pinterest-keyword-planner">The Pinterest Keyword Planner</a></p>
+        </div>
+        <ul class="rs-kits">
+          {kits.map((k) => (
+            <li>
+              <a class="rs-kit" href={k.href}>
+                <span class="rs-kit-c">{k.c}</span>
+                <span class="rs-kit-t">{k.t}</span>
+                <span class="rs-kit-go" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <p class="rx-back"><a href="/learn">← Back to The Library</a></p>
-
-  <style>
-    .rx-hero{text-align:center;padding:10px 0 48px}
-    .rx-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
-    .rx-hero h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(38px,6.6vw,70px);line-height:1.03;letter-spacing:-1.8px;margin:0 0 24px;color:var(--choc)}
-    .rx-hero h1 em{font-style:italic;color:var(--pink)}
-    .rx-lede{max-width:600px;margin:0 auto;font-family:Newsreader,serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
-
-    .rx-door{display:flex;align-items:center;gap:22px;flex-wrap:wrap;max-width:860px;margin:0 auto 64px;padding:22px 28px;border-radius:2px;text-decoration:none;
-             background:var(--choc);border:1px solid var(--choc);transition:transform .2s var(--ease)}
-    .rx-door:hover{transform:none}
-    .rx-door .rx-tag{color:var(--mauve)}
-    .rx-door-t{flex:1;min-width:220px;font-family:Newsreader,serif;font-weight:300;font-size:22px;line-height:1.25;color:var(--cream)}
-    .rx-door .rx-go{color:var(--mauve)}
-    .rx-tool{display:flex;align-items:center;gap:22px;flex-wrap:wrap;max-width:860px;margin:-40px auto 64px;padding:22px 28px;border-radius:2px;text-decoration:none;
-             background:var(--white);border:1px solid rgba(200,169,106,.55);border-left:3px solid var(--pink)}
-    .rx-tool-t{flex:1;min-width:220px;font-family:Newsreader,serif;font-weight:600;font-size:21px;line-height:1.3;color:#1A1417}
-    .rx-tool .rx-tag{color:var(--pink)}
-    .rx-block{padding:72px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .rx-first{border-top:none;padding-top:0}
-    .rx-block h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(28px,4.6vw,46px);line-height:1.05;margin:0 0 20px;letter-spacing:-1px;color:var(--choc);text-align:center}
-    .rx-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:620px;margin:0 auto;text-align:center}
-
-    .rx-featured{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px}
-    .rx-feat{display:flex;flex-direction:column;gap:10px;padding:30px 28px 26px;border-radius:2px;text-decoration:none;
-             background:var(--white);
-             border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac);transition:transform .2s var(--ease),border-color .2s}
-    .rx-feat:hover{transform:none;border-color:var(--pink)}
-    .rx-tag{font-size:10px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep)}
-    .rx-feat h3{font-family:Newsreader,serif;font-weight:400;font-size:22px;line-height:1.2;margin:0;color:var(--choc)}
-    .rx-feat p{font-size:15.5px;line-height:1.65;margin:0;color:var(--choc-mute)}
-    .rx-go{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink-deep);margin-top:auto;padding-top:8px}
-
-    .rx-kits{margin-top:38px;border-top:1px solid rgba(43,22,27,.12)}
-    .rx-kit{display:grid;grid-template-columns:200px 1fr 24px;align-items:baseline;gap:18px;padding:20px 6px;
-            border-bottom:1px solid rgba(43,22,27,.1);text-decoration:none;color:inherit;transition:padding-left .2s var(--ease),background .2s}
-    .rx-kit:hover{padding-left:16px;background:rgba(214,46,115,.04)}
-    .rx-kit-c{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44}
-    .rx-kit-t{font-family:Newsreader,serif;font-weight:400;font-size:21px;color:var(--choc);line-height:1.25}
-    .rx-kit-go{color:var(--pink-deep);font-size:16px;text-align:right}
-
-    .rx-close{text-align:center}
-    .rx-cta{display:flex;justify-content:center;margin-top:30px}
-    .rx-back{margin-top:62px;text-align:center}
-    .rx-back a{color:var(--pink);font-weight:500}
-
-    @media(max-width:900px){.rx-featured{grid-template-columns:1fr}}
-    @media(max-width:640px){
-      .rx-kit{grid-template-columns:1fr 24px;gap:4px 12px}
-      .rx-kit-c{grid-column:1 / -1}
-      .rx-block{padding:52px 0}
-    }
-  </style>
+  <!-- 4. CLOSE -->
+  <section class="e-sec-sm e-paper rs-close" aria-labelledby="close-h">
+    <div class="e-wrap e-narrow e-center">
+      <h2 class="e-d3" id="close-h">When you'd rather build it beside other women.</h2>
+      <p class="e-lede">The free pieces get you started. The membership is where the build keeps going: the classroom, the daily prompts and a room to post in before you launch. Membership Standard is {membership.standard.perMonth} after a {membership.trial}.</p>
+      <div class="e-actions rs-close-act">
+        <a class="e-btn e-btn--ghost" href="/community">See the community <span class="ar" aria-hidden="true">→</span></a>
+        <a class="e-link" href="/learn">Back to The Library</a>
+      </div>
+    </div>
+  </section>
 </PageLayout>
+
+<style>
+  /* Hero */
+  .rs-hero{padding:clamp(56px,8vw,112px) 0 clamp(64px,8vw,112px)}
+  .rs-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,80px);align-items:center}
+  .rs-hero .e-d1{font-size:clamp(44px,6vw,86px)}
+  .rs-hero .e-d1 em{display:block}
+  .rs-hero .e-lede{max-width:34em}
+
+  .rs-door{background:var(--e-ink);color:#F6EFEA;border-radius:6px;padding:clamp(28px,3.4vw,44px);position:relative}
+  .rs-door::before{content:"";position:absolute;left:clamp(28px,3.4vw,44px);right:clamp(28px,3.4vw,44px);top:0;height:1px;background:var(--e-gold)}
+  .rs-door-k{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-bubble);margin:0 0 14px}
+  .rs-door-t{font-family:var(--e-serif);font-weight:600;font-size:clamp(28px,3vw,38px);line-height:1.08;letter-spacing:-.02em;color:#fff;margin:0 0 26px}
+  .rs-door-t span{color:var(--e-bubble);white-space:nowrap}
+  .rs-door-steps{list-style:none;margin:0 0 22px;padding:0;border-top:1px solid rgba(246,239,234,.16)}
+  .rs-door-steps li{display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(246,239,234,.16);font-size:16px;color:rgba(246,239,234,.9)}
+  .rs-door-steps li span{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-bubble);min-width:22px}
+  .rs-door-out{font-size:15.5px;line-height:1.55;color:rgba(246,239,234,.82);margin:0 0 20px}
+  .rs-door-meta{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .rs-door-meta li{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F6EFEA;border:1px solid rgba(246,239,234,.3);border-radius:999px;padding:6px 12px}
+
+  /* Situations */
+  .rs-head{max-width:760px;margin:0 0 clamp(36px,5vw,56px)}
+  .rs-head .e-lede{margin-bottom:0}
+  .rs-doors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .rs-card{position:relative;display:flex;flex-direction:column;background:var(--e-cream);border:1px solid var(--e-line);border-radius:6px;padding:28px 28px 24px;transition:border-color .2s}
+  .rs-card:hover{border-color:rgba(214,46,115,.55)}
+  .rs-card:focus-within{border-color:var(--e-pink)}
+  .rs-n{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t);letter-spacing:.02em;padding-bottom:14px;margin-bottom:18px;border-bottom:var(--e-hair);align-self:flex-start;min-width:40px}
+  .rs-s{font-size:clamp(23px,2.2vw,27px);line-height:1.15;margin:0 0 12px}
+  .rs-p{font-size:15.5px;line-height:1.6;color:var(--e-ink-2);margin:0 0 22px}
+  .rs-foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--e-line)}
+  .rs-r{font-weight:600;font-size:15px;line-height:1.4;color:var(--e-ink);margin:0 0 4px}
+  .rs-r span{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3);margin-top:6px}
+  .rs-go{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;font-size:15px;color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:rgba(184,36,95,.4)}
+  .rs-go::after{content:"";position:absolute;inset:0;border-radius:6px}
+  .rs-card:hover .rs-go{text-decoration-color:currentColor}
+  .rs-go .ar{transition:transform .2s}
+  .rs-card:hover .rs-go .ar{transform:translateX(3px)}
+  .rs-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+  /* Kits */
+  .rs-kits-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+  .rs-count{font-size:16px;color:var(--e-ink-2);margin:0 0 12px;max-width:30em}
+  .rs-also{font-size:15px;color:var(--e-ink-3);margin:18px 0 0}
+  .rs-kits{list-style:none;margin:0;padding:0;border-top:var(--e-hair)}
+  .rs-kits li{border-bottom:1px solid var(--e-line)}
+  .rs-kit{display:grid;grid-template-columns:170px minmax(0,1fr) 20px;align-items:baseline;gap:16px;min-height:52px;padding:14px 4px;color:var(--e-ink)}
+  .rs-kit-c{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3)}
+  .rs-kit-t{font-family:var(--e-serif);font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.01em}
+  .rs-kit-go{color:var(--e-pink-t);text-align:right;transition:transform .2s}
+  .rs-kit:hover .rs-kit-t{color:var(--e-pink-t)}
+  .rs-kit:hover .rs-kit-go{transform:translateX(3px)}
+
+  /* Close */
+  .rs-close .e-lede{margin-bottom:24px}
+  .rs-close-act{justify-content:center}
+
+  @media (max-width:1020px){
+    .rs-hero-grid{grid-template-columns:1fr}
+    .rs-door{max-width:620px}
+    .rs-doors{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .rs-kits-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .rs-doors{grid-template-columns:1fr;gap:14px}
+    .rs-card{padding:24px 22px 20px}
+    .rs-kit{grid-template-columns:minmax(0,1fr) 20px;gap:2px 12px}
+    .rs-kit-c{grid-column:1 / -1}
+    .rs-hero .e-actions .e-btn{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rs-card,.rs-go .ar,.rs-kit-go{transition:none}
+  }
+</style>

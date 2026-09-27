@@ -1,42 +1,209 @@
 ---
-import ResourceLayout from "../../layouts/ResourceLayout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
+import "../../styles/edit.css";
+import { membership } from "../../data/facts.js";
+
+// The Faceless Income Blueprint™: canon products[] row, $0, delivered by Beacons.
+// ONE primary route: the Beacons download (it is the only thing that delivers
+// the Blueprint). The FreebieForm below is secondary on purpose: it signs her
+// up for the Sunday letter on the shared list and does not deliver the file.
+const BEACONS = "https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47";
+
+const outcomes = [
+  "A clear picture of how the pieces of a faceless business connect, so the saved reels and bookmarked guides finally have somewhere to go.",
+  "The one engine that is actually holding you back, named on paper instead of guessed.",
+  "A seven-day build order, and one next move instead of seventeen.",
+];
+
+const inside = [
+  { t: "The two-engine framework", p: "The one every faceless business runs on: what you sell, and how you grow." },
+  { t: "The bottleneck worksheet", p: "It tells you which engine is actually your bottleneck, instead of guessing." },
+  { t: "The 7-day plug-in plan", p: "The exact order to build in, starting tonight." },
+  { t: "One clear next step", p: "One thing to do next instead of seventeen." },
+];
+
+const forYou = [
+  "You have collected tips for months and still can't say what you would build first.",
+  "You want a business that sells without your face on it.",
+  "You would rather see the whole structure once than learn it one reel at a time.",
+];
 ---
-<ResourceLayout
-  title="The Faceless Income Blueprint™ — Free Guide"
-  description="Get the free Faceless Income Blueprint™ — the entire faceless income machine on one page, plus a simple way to find exactly where you're stuck."
-  eyebrow="Free Resource"
-  heading="The Faceless Income Blueprint™"
-  lede="The entire faceless income machine, on one page — so you can stop collecting tips and start building."
-  meta={["15 pages", "Free", "No face required"]}
-  guideHref="/learn/how-to-build-a-faceless-digital-business"
-  guideLabel="How to Build a Faceless Digital Business"
+<PageLayout
+  bare
+  title="Free Guide: The Faceless Income Blueprint™"
+  description="A free 15-page guide: the whole faceless income machine on one page, a worksheet that finds your bottleneck, and a 7-day build order."
 >
-<p>You've saved the reels. You've bookmarked the guides. You know it's possible — you've watched ordinary women do it — but every time you sit down to actually build, something's missing.</p>
+  <!-- HERO: outcome first, one primary action -->
+  <section class="bp-hero" aria-labelledby="bp-h">
+    <div class="e-wrap bp-hero-grid">
+      <div class="bp-hero-copy e-rise">
+        <p class="e-kick">Free guide · The Faceless Income Blueprint™</p>
+        <h1 class="e-d1" id="bp-h">See the whole machine <em>on one page.</em></h1>
+        <p class="e-lede">The entire faceless income machine, on a single page, so you can stop collecting tips and start building. Here is what you walk away with:</p>
+        <ul class="e-list bp-out">
+          {outcomes.map((o) => <li>{o}</li>)}
+        </ul>
+        <div class="bp-cta">
+          <a class="e-btn" href={BEACONS}>Download the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
+          <p class="bp-cta-note">Opens the Blueprint's download page on Beacons, the shop that delivers the file.</p>
+        </div>
+        <ul class="bp-meta" aria-label="At a glance">
+          <li>15 pages</li><li>Free</li><li>No face required</li>
+        </ul>
+      </div>
+      <figure class="e-figure bp-hero-fig e-rise e-rise-2">
+        <img
+          src="/images/pages/blueprint-cover-desk-560.webp"
+          srcset="/images/pages/blueprint-cover-desk-560.webp 560w, /images/pages/blueprint-cover-desk-960.webp 960w"
+          sizes="(max-width: 900px) 92vw, 480px"
+          width="560" height="747" fetchpriority="high" decoding="async"
+          alt="A printed copy of The Faceless Income Blueprint on a sunlit wooden desk beside a vase of pink peonies and a cup of tea, with a golden retriever asleep underneath."
+        />
+      </figure>
+    </div>
+  </section>
 
-  <p>That's not a laziness problem. It's a structure problem. This free guide puts the entire faceless income machine in front of you on a single page, so you can finally see how the pieces connect — and exactly where <em>you're</em> personally stuck.</p>
+  <!-- WHO IT IS FOR -->
+  <section class="e-sec e-white" aria-labelledby="who-h">
+    <div class="e-wrap bp-who">
+      <div>
+        <p class="e-kick">Who it's for</p>
+        <h2 class="e-d2" id="who-h">Not a laziness problem. <em>A structure problem.</em></h2>
+      </div>
+      <div class="bp-who-body">
+        <p>You've saved the reels. You've bookmarked the guides. You know it's possible, you've watched ordinary women do it, but every time you sit down to actually build, something's missing.</p>
+        <p>This free guide puts the entire machine in front of you on a single page, so you can finally see how the pieces connect, and exactly where <em>you're</em> personally stuck. It's for you if:</p>
+        <ul class="e-list">
+          {forYou.map((f) => <li>{f}</li>)}
+        </ul>
+        <p class="bp-alt">Already selling, and about to pay for traffic? The <a class="e-link" href="/resources/starter-map">$10/Day Traffic Machine Starter Map</a> is the better free start.</p>
+      </div>
+    </div>
+  </section>
 
-  <p><strong>Inside, you'll get:</strong></p>
-  <ul>
-    <li>The two-engine framework every faceless business runs on — what you sell, and how you grow</li>
-    <li>A worksheet that tells you which engine is actually your bottleneck, instead of guessing</li>
-    <li>The 7-day plug-in plan — the exact order to build in, starting tonight</li>
-    <li>One clear thing to do next instead of seventeen</li>
-  </ul>
+  <!-- WHAT IS INSIDE -->
+  <section class="e-sec e-paper" aria-labelledby="in-h">
+    <div class="e-wrap bp-in">
+      <figure class="e-figure bp-in-fig">
+        <img
+          src="/images/pages/blueprint-pink-desk-520.webp"
+          srcset="/images/pages/blueprint-pink-desk-520.webp 520w, /images/pages/blueprint-pink-desk-900.webp 900w"
+          sizes="(max-width: 900px) 92vw, 440px"
+          width="520" height="669" loading="lazy" decoding="async"
+          alt="The pink Faceless Income Blueprint notebook on a light wooden desk in front of a pink computer, a tablet calendar and a blush tumbler."
+        />
+      </figure>
+      <div>
+        <p class="e-kick">What's inside</p>
+        <h2 class="e-d2" id="in-h">Four parts, <em>in build order.</em></h2>
+        <ol class="bp-parts">
+          {inside.map((x, i) => (
+            <li>
+              <span class="bp-parts-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <div><h3>{x.t}</h3><p>{x.p}</p></div>
+            </li>
+          ))}
+        </ol>
+        <div class="e-actions">
+          <a class="e-btn" href={BEACONS}>Download the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <a class="btn" href="https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47" style="margin-top:16px">Download the Free Blueprint <span class="a">→</span></a>
+  <!-- SECONDARY: the Sunday letter -->
+  <section class="e-sec-sm" aria-label="The Sunday letter">
+    <div class="e-wrap bp-letter">
+      <p class="e-kick">Optional, and separate</p>
+      <FreebieForm
+        heading="Want the thinking behind it?"
+        button="Send me the Sunday letter"
+        sub="This does not send the Blueprint; the download above does that. This is the Sunday letter: one idea a week about building faceless income, written the way I'd explain it to a friend."
+        done="You're in. Your first Sunday letter is on its way."
+      />
+    </div>
+  </section>
 
-  <FreebieForm
-    heading="Want the thinking behind it?"
-    button="Send Me the Edit"
-    sub="The Blueprint is yours above — no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
-  />
+  <!-- NEXT -->
+  <section class="e-sec e-white" aria-labelledby="next-h">
+    <div class="e-wrap">
+      <p class="e-kick">When you've read it</p>
+      <h2 class="e-d3" id="next-h">Where to go next.</h2>
+      <ul class="bp-next">
+        <li>
+          <h3>Work out which door is yours.</h3>
+          <p>Eleven questions, about three minutes, and one starting point named on screen. No email.</p>
+          <a class="e-link" href="/resources/find-your-door">Find your door <span aria-hidden="true">→</span></a>
+        </li>
+        <li>
+          <h3>Read the full system.</h3>
+          <p>The long guide the Blueprint comes from, with every piece explained in order.</p>
+          <a class="e-link" href="/learn/how-to-build-a-faceless-digital-business">How to Build a Faceless Digital Business <span aria-hidden="true">→</span></a>
+        </li>
+        <li>
+          <h3>Build it with people building the same week.</h3>
+          <p>Membership Standard is {membership.standard.perMonth}: the classroom, the prompts, and somewhere to post the thing before you launch it.</p>
+          <a class="e-link" href="/membership">See what's inside <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+      <p class="bp-back"><a class="e-link" href="/resources"><span aria-hidden="true">←</span> All free resources</a></p>
+    </div>
+  </section>
+</PageLayout>
 
-  <div class="freebie-next">
-    <p><strong>Then keep going:</strong></p>
-    <ul>
-      <li><strong>Work out which engine is yours.</strong> Two minutes, four questions, and it routes you to the one thing worth doing first. <a href="/resources/find-your-door">Find your door →</a></li>
-      <li><strong>Build it with people who are building the same week.</strong> Membership Standard is $9/month — the classroom, the prompts, and somewhere to post the thing before you launch it. <a href="/membership">See what's inside →</a></li>
-    </ul>
-  </div>
-</ResourceLayout>
+<style>
+  .bp-hero{padding:clamp(48px,7vw,104px) 0 clamp(64px,8vw,112px)}
+  .bp-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:center}
+  .bp-hero .e-d1{font-size:clamp(44px,5.6vw,84px)}
+  .bp-hero .e-d1 em{display:block}
+  .bp-hero .e-lede{margin-bottom:18px}
+  .bp-out{margin:0 0 32px;max-width:34em}
+  .bp-out li{font-size:16.5px;color:var(--e-ink-2)}
+  .bp-cta .e-btn{min-width:min(100%,320px)}
+  .bp-cta-note{font-size:14px;color:var(--e-ink-3);margin:12px 0 0}
+  .bp-meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0}
+  .bp-meta li{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-pink-t);border:1px solid rgba(184,36,95,.35);border-radius:999px;padding:6px 12px;background:#fff}
+  .bp-hero-fig{aspect-ratio:560/747;box-shadow:var(--e-lift)}
+
+  .bp-who{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,96px);align-items:start}
+  .bp-who-body p{color:var(--e-ink-2);margin:0 0 18px;max-width:36em}
+  .bp-who-body .e-list{margin:6px 0 28px}
+  .bp-alt{padding-top:20px;border-top:var(--e-hair);font-size:15.5px}
+  .bp-alt .e-link{min-height:0;display:inline}
+
+  .bp-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px);align-items:center}
+  .bp-in-fig{aspect-ratio:520/669}
+  .bp-parts{list-style:none;margin:8px 0 36px;padding:0;border-top:var(--e-hair)}
+  .bp-parts li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-bottom:1px solid var(--e-line)}
+  .bp-parts-n{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-pink);line-height:1.2}
+  .bp-parts h3{font-size:22px;line-height:1.2;margin:0 0 4px}
+  .bp-parts p{font-size:16px;color:var(--e-ink-2);margin:0}
+
+  .bp-letter{max-width:760px}
+  .bp-letter :global(.freebie-capture){background:var(--e-white);border:1px solid var(--e-line);border-top:1px solid var(--e-gold);border-radius:6px;padding:clamp(24px,3.4vw,36px);margin:0}
+  .bp-letter :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--e-ink);margin:0 0 8px}
+  .bp-letter :global(.fc-sub){font-size:15px;line-height:1.6;color:var(--e-ink-2);margin:0 0 20px}
+  .bp-letter :global(.fc-row input){min-height:52px;border:1px solid rgba(26,20,23,.28);border-radius:999px;padding:14px 22px}
+  .bp-letter :global(.fc-row button){min-height:52px;border-radius:999px;background:transparent;color:var(--e-ink);border:1px solid rgba(26,20,23,.45);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px}
+  .bp-letter :global(.fc-row button:hover){background:var(--e-ink);color:#fff;border-color:var(--e-ink)}
+  .bp-letter :global(.fc-done){font-family:var(--e-serif);font-weight:600;color:var(--e-pink-t)}
+
+  .bp-next{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .bp-next li{display:flex;flex-direction:column;border-top:var(--e-hair);padding-top:20px}
+  .bp-next h3{font-size:22px;line-height:1.2;margin:0 0 8px}
+  .bp-next p{font-size:15.5px;color:var(--e-ink-2);margin:0 0 8px}
+  .bp-next .e-link{margin-top:auto}
+  .bp-back{margin:48px 0 0}
+
+  @media (max-width:900px){
+    .bp-hero-grid,.bp-who,.bp-in{grid-template-columns:1fr}
+    .bp-hero-fig{max-width:480px}
+    .bp-in-fig{display:none}
+    .bp-next{grid-template-columns:1fr;gap:8px}
+  }
+  @media (max-width:640px){
+    .bp-cta .e-btn{width:100%}
+    .bp-in .e-actions .e-btn{width:100%}
+  }
+</style>

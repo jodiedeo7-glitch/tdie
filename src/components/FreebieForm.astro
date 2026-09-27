@@ -5,7 +5,7 @@
 // into one list for now (Option 1). To segment per-pillar later, swap the
 // action URL for a pillar-specific form ID — one line per page.
 //
-// Props:
+// Props (all optional, all backwards compatible):
 //   heading  - the capture headline (e.g. "Get the AI Starter Kit")
 //   button   - submit button label (e.g. "Send Me the Kit")
 //   action   - optional MailerLite form URL; omit to use the shared freebie form
@@ -14,53 +14,126 @@
 //              hands over the file, pass a sub that doesn't promise a delivery
 //              that isn't coming.
 //   done     - optional confirmation line shown after submit
+//   privacy  - optional fine-print line under the field, always followed by a
+//              link to /privacy. Omit it for the default ("No spam. Unsubscribe
+//              anytime." + the link; the first half is dropped automatically
+//              when `sub` already says unsubscribe). Pass privacy="" on a page
+//              that prints its own fine print, so nothing is said twice.
+//   emailLabel - optional accessible name for the field (visually hidden).
+//
+// Accessibility: a real <label for> tied to a per-instance id, an inline error
+// announced through role="alert" and wired with aria-invalid/aria-describedby,
+// 48px field and button, focus moves to the confirmation after submit.
+// Without JavaScript the browser's own `required`/type=email validation runs.
 const DEFAULT_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
-const DEFAULT_SUB = "Drop your email — it lands in your inbox in a minute. No spam, unsubscribe anytime.";
-const DEFAULT_DONE = "You're in. Check your inbox — it's on its way.";
-const { heading = "Get the free guide", button = "Send It to Me", action = DEFAULT_ACTION, sub = DEFAULT_SUB, done = DEFAULT_DONE } = Astro.props;
+const DEFAULT_SUB = "Drop your email and it lands in your inbox in a minute. No spam, unsubscribe anytime.";
+const DEFAULT_DONE = "You're in. Check your inbox, it's on its way.";
+const {
+  heading = "Get the free guide",
+  button = "Send It to Me",
+  action = DEFAULT_ACTION,
+  sub = DEFAULT_SUB,
+  done = DEFAULT_DONE,
+  privacy,
+  emailLabel = "Email address",
+} = Astro.props;
 const ACTION = action;
-// Each instance posts into its own hidden iframe (never a new tab).
-const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
+// Each instance posts into its own hidden iframe (never a new tab) and owns
+// its own ids, so two forms on one page never share a label or an error.
+const UID = Math.random().toString(36).slice(2, 9);
+const SINK = "fc-sink-" + UID;
+const EMAIL_ID = "fc-email-" + UID;
+const ERR_ID = "fc-err-" + UID;
+const PRIV_ID = "fc-priv-" + UID;
+const subSaysUnsubscribe = /unsubscribe/i.test(sub || "");
+const showPrivacy = privacy !== "";
+const privacyLead = privacy === undefined ? (subSaysUnsubscribe ? "" : "No spam. Unsubscribe anytime.") : privacy;
 ---
 
 <div class="freebie-capture">
   <iframe name={SINK} class="fc-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
   <form class="fc-form" action={ACTION} method="post" target={SINK} data-fc>
     <h2 class="fc-h">{heading}</h2>
-    <p class="fc-sub">{sub}</p>
+    {sub && <p class="fc-sub">{sub}</p>}
     <div class="fc-row">
+      <label class="fc-label" for={EMAIL_ID}>{emailLabel}</label>
       <input
+        id={EMAIL_ID}
         type="email"
         name="fields[email]"
         placeholder="your@email.com"
-        aria-label="Email"
         required
         autocomplete="email"
+        inputmode="email"
+        spellcheck="false"
+        autocapitalize="off"
+        aria-describedby={showPrivacy ? `${ERR_ID} ${PRIV_ID}` : ERR_ID}
       />
       <button type="submit">{button}</button>
     </div>
+    <p class="fc-error" id={ERR_ID} role="alert"></p>
+    {showPrivacy && (
+      <p class="fc-privacy" id={PRIV_ID}>{privacyLead && <>{privacyLead} </>}See the <a href="/privacy">privacy policy</a>.</p>
+    )}
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
-    <p class="fc-done" role="status" hidden>{done}</p>
+    <p class="fc-done" role="status" tabindex="-1" hidden>{done}</p>
   </form>
 </div>
 
 <script is:inline>
   (function () {
+    var MSG_EMPTY = 'Add your email address first.';
+    var MSG_BAD = 'That email looks incomplete. Check it reads like name@example.com.';
     var forms = document.querySelectorAll('form[data-fc]:not([data-fc-ready])');
     forms.forEach(function (f) {
       f.setAttribute('data-fc-ready', '');
+      // JavaScript is running, so the inline error replaces the browser bubble.
+      f.noValidate = true;
       var sink = document.getElementsByName(f.target)[0];
+      var input = f.querySelector('input[type="email"]');
+      var err = f.querySelector('.fc-error');
       var sent = false;
-      f.addEventListener('submit', function () {
+      var shown = false;
+      function problem() {
+        var v = (input.value || '').trim();
+        if (!v) return MSG_EMPTY;
+        if (input.value !== v) input.value = v;
+        if (!input.checkValidity() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return MSG_BAD;
+        return '';
+      }
+      function show(msg) {
+        shown = !!msg;
+        err.textContent = msg;
+        f.classList.toggle('fc-invalid', shown);
+        if (shown) input.setAttribute('aria-invalid', 'true');
+        else input.removeAttribute('aria-invalid');
+      }
+      input.addEventListener('input', function () {
+        // Only re-check once an error is on screen, then clear it the moment it's fixed.
+        if (shown && !problem()) show('');
+      });
+      f.addEventListener('submit', function (e) {
+        var msg = problem();
+        if (msg) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          show(msg);
+          input.focus();
+          return;
+        }
+        show('');
         sent = true;
-        var b = f.querySelector('button'); b.disabled = true; b.textContent = 'Sending…';
+        var b = f.querySelector('button[type="submit"]'); b.disabled = true; b.textContent = 'Sending…';
       });
       sink.addEventListener('load', function () {
         if (!sent) return;
         f.querySelector('.fc-row').hidden = true;
-        f.querySelector('.fc-sub').hidden = true;
-        f.querySelector('.fc-done').hidden = false;
+        var s = f.querySelector('.fc-sub'); if (s) s.hidden = true;
+        var p = f.querySelector('.fc-privacy'); if (p) p.hidden = true;
+        var d = f.querySelector('.fc-done');
+        d.hidden = false;
+        try { d.focus(); } catch (x) {}
         if (window.fbq) fbq('track', 'Lead');
       });
     });
@@ -70,7 +143,9 @@ const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
 <style>
   .fc-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
   .fc-done{font-family:Newsreader,serif;font-size:22px;line-height:1.35;color:var(--pink);margin-top:6px}
-  .fc-row[hidden],.fc-sub[hidden]{display:none}
+  .fc-done:focus{outline:none}
+  .fc-done:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+  .fc-row[hidden],.fc-sub[hidden],.fc-privacy[hidden]{display:none}
   .freebie-capture {
     background: var(--white);
     border: 1px solid rgba(43,22,27,.13);
@@ -91,17 +166,23 @@ const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
     color: var(--choc-meta);
     margin: 0 0 18px 0;
   }
-  .fc-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  /* Visually hidden, still read by screen readers and clickable via the input. */
+  .fc-label{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  .fc-row { display: flex; gap: 10px; flex-wrap: wrap; position: relative; }
   .fc-row input {
     flex: 1 1 240px;
+    min-width: 0;
     padding: 13px 16px;
     border: 1px solid var(--gray);
     border-radius:2px;
-    font-size: 15px;
+    font-size: 16px;
     font-family: inherit;
+    color: #1A1417;
     background: #fff;
   }
+  .fc-row input::placeholder { color: #6B5F64; opacity: 1; }
   .fc-row input:focus { outline: 2px solid var(--pink); outline-offset: 1px; }
+  .fc-row input[aria-invalid="true"] { border-color: #B3261E; box-shadow: inset 0 0 0 1px #B3261E; }
   .fc-row button {
     padding: 13px 26px;
     background: var(--pink);
@@ -116,4 +197,21 @@ const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
     transition: background 0.15s;
   }
   .fc-row button:hover { background: var(--pink-deep); }
+  .fc-row button:focus-visible { outline: 3px solid #1A1417; outline-offset: 2px; }
+  .fc-row button:disabled { cursor: progress; opacity: .85; }
+  .fc-error { margin: 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #B3261E; }
+  .fc-error:not(:empty) { margin-top: 10px; }
+  .fc-error:not(:empty)::before { content: "!"; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; margin-right: 8px; border-radius: 50%; background: #B3261E; color: #fff; font-size: 12px; vertical-align: 1px; }
+  .fc-privacy { margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #6B5F64; }
+  .fc-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .fc-privacy a:hover { color: #B8245F; }
+  @media (max-width: 480px) { .fc-row button { white-space: normal; } }
+  @media (prefers-reduced-motion: reduce) { .fc-row button { transition: none; } }
+</style>
+
+<!-- Floors, not styles: zero-specificity (:where) so every page that restyles
+     the form (.letter-body, .rs-body, .nw-form, .news-form...) still wins. -->
+<style is:global>
+  :where(.freebie-capture .fc-row) input,:where(.freebie-capture .fc-row) button{min-height:48px}
+  @media (max-width:480px){:where(.freebie-capture .fc-row) button{flex:1 1 100%}}
 </style>
