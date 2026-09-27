@@ -34,8 +34,8 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     display:inline-flex;align-items:center;min-height:44px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
   .sn-links a:hover{color:#B8245F}
   .sn-links a[aria-current="page"]{color:#1A1417;border-bottom-color:#D62E73}
-  .sn-links a.sn-cta{padding:0 20px;border-radius:999px;background:#D62E73;color:#fff;border:0;letter-spacing:.1em}
-  .sn-links a.sn-cta:hover{background:#B8245F;color:#fff}
+  .sn-links a.sn-cta{padding:0 20px;border-radius:999px;background:transparent;color:#1A1417;border:1px solid rgba(26,20,23,.4);letter-spacing:.1em}
+  .sn-links a.sn-cta:hover,.sn-links a.sn-cta[aria-current="page"]{background:#1A1417;border-color:#1A1417;color:#fff}
   .sn-menu,.sn-close{display:none;min-width:44px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(26,20,23,.25);background:transparent;
     font:600 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1A1417;cursor:pointer}
   .sn-drawer{margin:0;inset:0;width:100%;max-width:none;height:100%;max-height:none;border:0;padding:84px 24px 32px;background:#FBF8F5;color:#1A1417}
