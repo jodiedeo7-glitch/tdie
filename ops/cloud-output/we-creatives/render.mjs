@@ -49,7 +49,7 @@ const PHOTOS = {
   loftLap:  { src: "public/images/we/preview-working.jpg" },     // attic loft, laptop on lap, barn in window
   loftWide: { src: "public/images/we/hub-header.jpg" },          // attic loft, wide, typing at the pink desk
   sofa:     { src: "ops/cloud-output/we-creatives/photos/sofa-tumbler-no-lettering.jpg" }, // public/images/we/hook-blog-posts.jpg with its baked-in lettering cropped off (top 568 px)
-  pasture:  { src: "ops/cloud-output/we-creatives/photos/pay-plan-pasture-blanket.jpg", placeholder: true }, // NEW, prompt in PHOTO_PROMPTS.md
+  pasture:  { src: "ops/cloud-output/we-creatives/photos/pay-plan-pasture-blanket.jpg" }, // generated 27 Sep 2026 from the PHOTO_PROMPTS.md prompt; laptop logo and sneaker patch retouched out
 };
 
 function photoUrl(key) {
@@ -197,7 +197,7 @@ const ANGLES = {
     trust: "Every future update, free", cta: "See how it works",
   },
   payplan: {
-    photo: "pasture", posSt: "50% 0%", pos: { sq: "50% 40%", p45: "50% 40%", st: "50% 40%", ls: "50% 35%" },
+    photo: "pasture", posSt: "78% 0%", pos: { sq: "86% 40%", p45: "84% 40%", st: "78% 0%", ls: "70% 40%" },
     kicker: "The Weekend Ecosystem&trade;",
     h1: `Build it this weekend. <em>Pay in three.</em>`,
     sub: `Your website, blog and email list, built from content you already wrote. <strong>Every future update, free.</strong>`,
