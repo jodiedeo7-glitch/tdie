@@ -1,7 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import { MODULES } from "../../we-manifest.js";
+import { S, HREF } from "../../we-stage.js";
+import { OBJECTIONS } from "../../we-objections.js";
 import Testimonial from "../../components/Testimonial.astro";
+import WePrice from "../../components/WePrice.astro";
+import "../../styles/we.css";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
   const inPhase = MODULES.filter((m) => m.phase === p);
@@ -12,43 +16,62 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
     mods: inPhase,
   };
 });
+
+const SCAFFOLD = [
+  "Build the scaffold for my Astro site. Use my Canon File in project knowledge as the source of truth.",
+  "",
+  "LIVE FACTS (these override anything that disagrees):",
+  "- Domain: [yourdomain.com]",
+  "- URL pattern: /learn/[slug], flat, no folders",
+  "  \u2026",
+].join("\n");
+
+const onPage = [
+  { id: "index", t: "The module index" },
+  { id: "module", t: "A real module" },
+  { id: "prompts", t: "The prompts" },
+  { id: "output", t: "What one prompt produces" },
+  { id: "progress", t: "Progress + certificate" },
+  { id: "questions", t: "Before you decide" },
+];
 ---
 <PageLayout
   ogImage="/og/weekend-ecosystem.jpg"
+  wide
   title="Inside The Weekend Ecosystem™"
-  description="A look inside the course before you buy — the module index, a real module page, the prompt cards, the progress tracker and the completion certificate."
+  description="A free look inside The Weekend Ecosystem™, no email required: the module index, a real module, the prompt cards, real output, the progress tracker and the completion certificate."
 >
-  <div class="pv-sticky" id="pv-sticky">
-    <div class="pv-sticky-in">
-      <div>
-        <span class="pv-sticky-n">The Weekend Ecosystem™</span>
-        <span class="pv-sticky-p">$97 or 3 × $33.33 · every update included</span>
-      </div>
-      <a class="btn pv-sticky-b" href="/shop/weekend-ecosystem">Get it <span class="a">→</span></a>
-    </div>
-  </div>
+<div class="wx">
 
-  <section class="pv-hero">
-    <div class="page-eyebrow">A look inside · No email required</div>
-    <h1>What you're actually buying</h1>
-    <a class="btn pv-hero-btn" href="/shop/weekend-ecosystem">Get The Weekend Ecosystem™ <span class="a">→</span></a>
-    <p class="pv-lede">This is the exact build I used to make this website, this blog and this course \u2014 written down as I went. Everything below is the real interface, the same pages you'd log into an hour from now.</p>
-    <figure class="pv-fig pv-fig-hero">
-      <img src="/images/we/hook-blog-posts.jpg" alt="You already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
+  <!-- HERO -->
+  <section class="wx-hero">
+    <div>
+      <p class="wx-brand"><span class="wx-dot"></span><span><span class="wx-brand-x">A look inside </span>The Weekend Ecosystem™<span class="wx-brand-x"> · Free</span></span></p>
+      <h1 class="pv-hero-h">A business that keeps selling on the Tuesday you're too tired to post. <em>Here's what builds it.</em></h1>
+      <p class="wx-lede">By Sunday: a website on a domain you own, a blog Google can find, an email list that captures, and every reader routed to your free offer and your paid one. Built from content you already wrote, without your face. <strong>Everything below is the real interface. No email, no card, nothing to enter.</strong></p>
+      <nav class="pv-toc" aria-label="On this page">
+        {onPage.map((x, i) => (
+          <a href={`#${x.id}`}><b>{String(i + 1).padStart(2, "0")}</b>{x.t}</a>
+        ))}
+      </nav>
+    </div>
+    <figure class="wx-hero-fig">
+      <img src="/images/we/preview-hero.jpg" alt="At the pink attic desk in the evening, the pasture and red barn through the window." loading="eager" width="1400" height="1737" />
+      <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>Free<br />no email</span></span>
+      <span class="wx-sticker wx-sticker-b" aria-hidden="true"><span>The real<br />interface</span></span>
     </figure>
-    <p class="pv-buy">Twenty-two of these, timed to one weekend. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
-    <Testimonial variant="full" eyebrow="From someone who already did it" />
   </section>
 
-  <section class="pv-sec">
+  <!-- 01 INDEX -->
+  <section class="wx-sec pv-sec" id="index">
     <span class="pv-n">01</span>
-    <h2>The module index</h2>
-    <p class="pv-b">Twenty-two modules across six phases. Each phase has its own colour, running from lavender on Friday night to hot pink by Sunday afternoon — so you always know where you are in the weekend.</p>
+    <h2>The module <em>index.</em></h2>
+    <p class="pv-b">Twenty-two modules across six phases. Each phase has its own colour, running from lavender on Friday night to hot pink by Sunday afternoon, so you always know where you are in the weekend.</p>
 
     <div class="pv-shot">
       <div class="pv-bar"><span></span><span></span><span></span></div>
       <div class="pv-body pv-body-index">
-        {phases.slice(0, 3).map((p, i) => (
+        {phases.map((p, i) => (
           <div class="pv-phase" style={`--ac:${p.accent}`}>
             <span class="pv-edge"></span>
             <div class="pv-phead">
@@ -70,35 +93,26 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
             </div>
           </div>
         ))}
-        <p class="pv-more">…and three more phases below</p>
       </div>
     </div>
-    <figure class="pv-fig">
-      <img src="/images/we/module-list.jpg" alt="The full list of 22 modules across six phases." loading="lazy" width="1100" height="1191" />
-      <figcaption>All twenty-two, across the six phases of the weekend.</figcaption>
-    </figure>
-    <p class="pv-buy">Every module looks like that. Twenty-two of them. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
   </section>
 
-  <section class="pv-sec">
+  <!-- 02 MODULE -->
+  <section class="wx-sec pv-sec" id="module">
     <span class="pv-n">02</span>
-    <h2>A module</h2>
+    <h2>A real <em>module.</em></h2>
     <p class="pv-b">Every module runs the same way. The idea, then a numbered spine of actions, then the prompt you paste, then a collapsed panel of fixes for when something breaks. You never have to work out what to do next.</p>
-    <figure class="pv-fig pv-fig-wide">
-      <img src="/images/we/who-does-what.jpg" alt="Who actually does the work. Nine things Claude does, three things you do." loading="lazy" width="1200" height="1490" />
-      <figcaption>What you're doing across those twenty-two modules.</figcaption>
-    </figure>
 
     <div class="pv-shot">
       <div class="pv-bar"><span></span><span></span><span></span></div>
       <div class="pv-body">
-        <span class="pv-eyebrow">Phase 1 — Module 5 of 22</span>
+        <span class="pv-eyebrow">Phase 1 · Module 5 of 22</span>
         <span class="pv-h1">Claude Builds the Repo</span>
-        <p class="pv-lead-italic">You're about to ask Claude to generate an entire website's worth of files. This works — reliably — but only with the right setup.</p>
+        <p class="pv-lead-italic">You're about to ask Claude to generate an entire website's worth of files. This works, reliably, but only with the right setup.</p>
         <div class="pv-step"><span class="pv-stepnum">01</span><span class="pv-steplabel">The scaffold prompt</span></div>
         <div class="pv-prompt">
           <div class="pv-pbar"><span>Copy this prompt</span><em>Copy</em></div>
-          <code>Build the scaffold for my Astro site. Use my Canon<br/>File in project knowledge as the source of truth.<br/><br/>LIVE FACTS — these override anything that disagrees:<br/>- Domain: [yourdomain.com]<br/>- URL pattern: /learn/[slug] — flat, no folders<br/>&nbsp;&nbsp;…</code>
+          <code set:text={SCAFFOLD} />
         </div>
         <div class="pv-road">
           <span>If you get stuck</span>
@@ -107,50 +121,66 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
         </div>
       </div>
     </div>
-    <p class="pv-buy">All thirty-six, written out in full, ready to paste. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
+
+    <div class="pv-who">
+      <div class="wx-card">
+        <span class="wx-kicker" style="color:#6B4FA8">Claude does</span>
+        <p>Writes every file, every article, every SEO pass, every image, and commits it to your site.</p>
+      </div>
+      <div class="wx-hot">
+        <span class="wx-kicker" style="color:#fff">You do</span>
+        <p>Paste the prompt. Read what came back. Say yes, or say what to change.</p>
+      </div>
+    </div>
+
+    <div class="pv-tina">
+      <Testimonial variant="full" eyebrow="What a member built with it" />
+    </div>
   </section>
 
-  <section class="pv-sec">
+  <!-- 03 PROMPTS -->
+  <section class="wx-sec pv-sec" id="prompts">
     <span class="pv-n">03</span>
-    <h2>Thirty-six prompts, written out in full</h2>
-    <p class="pv-b">Not summaries. Not "adapt this to your business." Every prompt is complete, sits in its own copy card, and is ready to run the moment you paste it. Here's what the Quick Sheet looks like — every prompt in the order you actually use them.</p>
+    <h2>Thirty-six prompts, <em>written out in full.</em></h2>
+    <p class="pv-b">Not summaries. Not "adapt this to your business." Every prompt is complete, sits in its own copy card, and is ready to run the moment you paste it. Here's the Quick Sheet: every prompt in the order you actually use them.</p>
 
     <div class="pv-shot">
       <div class="pv-bar"><span></span><span></span><span></span></div>
       <div class="pv-body">
         <span class="pv-eyebrow">Every prompt, in the order you run them</span>
         <span class="pv-h1">The Quick Sheet</span>
-        <div class="pv-group">Friday night — prep</div>
+        <div class="pv-group">Friday night · prep</div>
         <div class="pv-qs"><span class="pv-qsn">01</span><div><b>Content inventory</b><i>Point a browser agent at your Skool group. It reads every lesson, post and file and hands you one table.</i></div></div>
         <div class="pv-qs"><span class="pv-qsn">02</span><div><b>Canon File</b><i>The document that stops Claude inventing products you don't sell.</i></div></div>
-        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">03</span><div><b>Standing instruction</b><i>Makes Claude flag conflicts instead of quietly guessing.</i></div></div>
-        <div class="pv-group pv-group-blur">Saturday morning — the website</div>
-        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">05</span><div><b>Site scaffold</b><i>Generates every file your site needs.</i></div></div>
-        <div class="pv-qs pv-qs-blur"><span class="pv-qsn">06</span><div><b>Homepage copy</b><i>Four sections, no fluff.</i></div></div>
+        <div class="pv-qs pv-qs-blur" aria-hidden="true"><span class="pv-qsn">03</span><div><b>Standing instruction</b><i>Makes Claude flag conflicts instead of quietly guessing.</i></div></div>
+        <div class="pv-group pv-group-blur" aria-hidden="true">Saturday morning · the website</div>
+        <div class="pv-qs pv-qs-blur" aria-hidden="true"><span class="pv-qsn">05</span><div><b>Site scaffold</b><i>Generates every file your site needs.</i></div></div>
+        <div class="pv-qs pv-qs-blur" aria-hidden="true"><span class="pv-qsn">06</span><div><b>Homepage copy</b><i>Four sections, no fluff.</i></div></div>
         <p class="pv-more">…thirty more, each with the full prompt underneath</p>
       </div>
     </div>
-    <figure class="pv-fig pv-fig-wide">
-      <img src="/images/we/weekend-timeline.jpg" alt="One weekend hour by hour, across six phases from Friday night to Sunday afternoon." loading="lazy" width="1200" height="1490" />
-      <figcaption>The order you run them in.</figcaption>
-    </figure>
-    <p class="pv-buy">That's one prompt. There are thirty-six, and they run in order. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
+
+    <div class="wx-card wx-mid">
+      <p class="wx-mid-l">Seen enough to know it's the real thing?</p>
+      <WePrice note="Both options are at checkout. Every future update included, free." />
+    </div>
   </section>
 
-  <section class="pv-sec">
+  <!-- 04 OUTPUT -->
+  <section class="wx-sec pv-sec" id="output">
     <span class="pv-n">04</span>
-    <h2>What one prompt actually produces</h2>
-    <p class="pv-b">This is the module people message me about afterwards. You publish an article, paste one prompt, and twenty-four finished assets come back. Below is the real output from running it against this page — not a sample, the actual thing.</p>
+    <h2>What one prompt <em>actually produces.</em></h2>
+    <p class="pv-b">This is the module people message me about afterwards. You publish an article, paste one prompt, and twenty-four finished assets come back. Below is the real output from running it against this page. Not a sample: the actual thing.</p>
 
-    <div class="pv-out">
+    <div class="wx-card pv-out">
       <div class="pv-otag">Ten pins · titles and descriptions</div>
-      <div class="pv-o"><b>How to turn your Skool content into a blog</b><i>Your best lessons are already written — they're just trapped where nobody can search them. Here's how to move them onto a site you own.</i></div>
+      <div class="pv-o"><b>How to turn your Skool content into a blog</b><i>Your best lessons are already written. They're just trapped where nobody can search them. Here's how to move them onto a site you own.</i></div>
       <div class="pv-o"><b>Where to find blog content you already wrote</b><i>Six places your best writing is already sitting. Most creators find dozens of pieces they'd forgotten about.</i></div>
       <div class="pv-o"><b>You don't need to code to build a website</b><i>Everything that used to be required, and isn't anymore. AI writes the files; you paste and approve.</i></div>
       <p class="pv-omore">+ seven more, each a different layout, each with its own image prompt and board</p>
     </div>
 
-    <div class="pv-out">
+    <div class="wx-card pv-out">
       <div class="pv-otag">An 8-slide carousel</div>
       <div class="pv-slides">
         <span>YOU ALREADY WROTE THE BLOG POSTS.</span>
@@ -161,7 +191,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       <p class="pv-omore">+ four more slides, plus the caption and five hashtags</p>
     </div>
 
-    <div class="pv-out">
+    <div class="wx-card pv-out">
       <div class="pv-otag">Eight Threads posts</div>
       <div class="pv-o pv-o-plain"><i>"Count the lessons in your Skool classroom. Now count how many a stranger could find on Google today. That gap is the whole problem."</i></div>
       <div class="pv-o pv-o-plain"><i>"A post dies in three days. An article works for eighteen months. We spend almost all our time on the first one."</i></div>
@@ -169,10 +199,10 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       <p class="pv-omore">+ five more, each a different structure, no two opening the same way</p>
     </div>
 
-    <div class="pv-out pv-out-half">
+    <div class="wx-card pv-out pv-out-half">
       <div>
         <div class="pv-otag">Two reels</div>
-        <p class="pv-osmall">A full video generation prompt plus a matching cover still in the same setting, wardrobe and palette — so the cover and the video read as one asset. On-screen text and caption included.</p>
+        <p class="pv-osmall">A full video generation prompt plus a matching cover still in the same setting, wardrobe and palette, so the cover and the video read as one asset. On-screen text and caption included.</p>
       </div>
       <div>
         <div class="pv-otag">Plus</div>
@@ -180,219 +210,190 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
       </div>
     </div>
 
-    <figure class="pv-fig pv-fig-wide">
-      <img src="/images/we/friday-sunday.jpg" alt="Friday: content scattered across a platform you don't own. Sunday: a site on a domain you own, a blog Google can find, an email list that captures." loading="lazy" width="1200" height="1490" />
-    </figure>
-
-    <p class="pv-note">Ten pins, a carousel, eight Threads posts, two reels, a Facebook post, an email and a community post. Twenty-four things, across six platforms, from one afternoon — and the article underneath keeps ranking the whole time they circulate.</p>
-    <p class="pv-buy">Yours the moment you're in, and it fills up as you go. <a href="/shop/weekend-ecosystem">Get it — $97 <span class="a">→</span></a></p>
+    <p class="pv-note">Twenty-four things across six platforms, from one afternoon, and the article underneath keeps working the whole time they circulate.</p>
   </section>
 
-  <section class="pv-sec">
+  <!-- 05 PROGRESS -->
+  <section class="wx-sec pv-sec" id="progress">
     <span class="pv-n">05</span>
-    <h2>Progress, and the certificate</h2>
+    <h2>Progress, and <em>the certificate.</em></h2>
     <p class="pv-b">Tick each module off as you finish it. The ring fills, each phase keeps its own tally, and at twenty-two a completion certificate unlocks with your name on it.</p>
 
     <div class="pv-two">
-      <div class="pv-card">
+      <div class="wx-card">
         <span class="pv-ctag">Your progress</span>
         <div class="pv-ring"><span>14<small>/22</small></span></div>
         <p>Over halfway. The site exists by now.</p>
       </div>
-      <div class="pv-card pv-cert">
+      <div class="wx-card pv-cert">
         <span class="pv-ctag">At twenty-two</span>
-        <span class="pv-certh">Certificate of Completion</span>
-        <span class="pv-certname">Your name</span>
-        <p>Something to post when you're done.</p>
+        <span class="pv-certname">Certificate of Completion</span>
+        <p>Your name, the date, and something to post when you're done.</p>
       </div>
     </div>
   </section>
 
-  <section class="pv-sec pv-sec-flush">
-    <figure class="pv-fig pv-fig-wide">
-      <img src="/images/we/preview-hero.jpg" alt="At the pink attic desk in the evening, the pasture and red barn through the window." loading="lazy" width="1400" height="1737" />
-    </figure>
+  <!-- 06 OBJECTIONS -->
+  <section class="wx-sec pv-sec" id="questions">
+    <span class="pv-n">06</span>
+    <h2>Before <em>you decide.</em></h2>
+    <p class="pv-b">The six things that stop people, answered straight. No guarantee, because there isn't one.</p>
+    <div class="wx-faq pv-faq">
+      {OBJECTIONS.map((o) => (
+        <details open={o.id === "no-refunds"}>
+          <summary>{o.q}</summary>
+          <p>{o.short}</p>
+        </details>
+      ))}
+    </div>
+    <p class="pv-b pv-more-q">The full answers, the complete module list and everything that comes with it are on <a class="wx-link" href="/shop/weekend-ecosystem#questions">the sales page</a>.</p>
   </section>
 
-  <section class="pv-sec pv-sec-flush">
-    <figure class="pv-fig pv-fig-wide">
-      <img src="/images/we/the-numbers.jpg" alt="22 modules. 36 prompts, verbatim. 3 reference vaults. 1 weekend." loading="lazy" width="1200" height="1490" />
-    </figure>
-  </section>
-
-  <section class="pv-sec pv-sec-flush">
-    <figure class="pv-fig pv-fig-wide">
+  <!-- CLOSE -->
+  <section class="wx-card wx-close">
+    <div class="wx-close-img">
       <img src="/images/we/preview-working.jpg" alt="Working at the pink attic desk on a quiet morning, the red barn visible through the window." loading="lazy" width="1400" height="1737" />
-    </figure>
+    </div>
+    <div class="wx-close-body">
+      <span class="wx-kicker">That's the whole thing</span>
+      <h2>Twenty-two modules, thirty-six prompts, <em>every future update.</em></h2>
+      <p class="wx-close-l">Three reference vaults, the Quick Sheet, the Ask-For-It List, the tracker and the certificate. One payment or three.</p>
+      <WePrice note="No refunds. Both options are at checkout. Every future update included, free." />
+      <p class="wx-access">{S.access}</p>
+      <div class="wx-final-line"><Testimonial variant="line" /></div>
+    </div>
   </section>
 
-  <section class="pv-close">
-    <h2>That's the whole thing.</h2>
-    <p class="pv-clede">Twenty-two modules, thirty-six prompts, four reference vaults — and every future update, free, forever.</p>
-    <a class="btn pv-btn" href="/shop/weekend-ecosystem">Get The Weekend Ecosystem™ <span class="a">→</span></a>
-    <p class="pv-cnote">Full details, the complete module list and the current price are all on the sales page.</p>
-    <p class="pv-cnote">Access is unlocked by hand after purchase \u2014 usually within the hour during waking hours, and you'll get an email the moment you're in.</p>
-    <Testimonial variant="line" />
-  </section>
+  <div class="wx-sticky" id="wx-sticky">
+    <div class="wx-sticky-in">
+      <p class="wx-sticky-p"><b>$97</b>or 3 × $33.33</p>
+      <a class="wx-btn" href={HREF}>{S.cta} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
 
-  <style>
-    .pv-hero{text-align:center;padding:10px 0 56px;border-bottom:1px solid rgba(43,22,27,.1)}
-    .pv-hero h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(36px,6.4vw,64px);line-height:1.02;letter-spacing:-1.6px;margin:0 0 22px;color:var(--choc)}
-    .pv-lede{max-width:620px;margin:0 auto;font-family:Newsreader,serif;font-style:italic;font-size:23px;line-height:1.55;color:var(--choc-mute)}
+</div>
 
-    .pv-sec{padding:64px 0;border-bottom:1px solid rgba(43,22,27,.09)}
-    .pv-n{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:11px;letter-spacing:2.6px;color:var(--pink-deep);margin-bottom:12px}
-    .pv-sec h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(28px,4.4vw,42px);line-height:1.08;margin:0 0 16px;letter-spacing:-.8px;color:var(--choc)}
-    .pv-b{font-size:17.5px;line-height:1.78;max-width:640px;margin:0 0 32px;color:var(--choc-soft)}
-    .pv-note{font-size:15.5px;line-height:1.7;color:var(--choc-mute);margin:20px 0 0;font-style:italic}
-
-    .pv-fig{margin:34px 0 0;padding:0;max-width:560px}
-    .pv-fig img{width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 10px 34px rgba(43,22,27,.11)}
-    .pv-fig figcaption{font-size:13.5px;color:rgba(43,22,27,.55);margin-top:12px;font-style:italic}
-    .pv-fig-hero{margin:44px auto 0}
-    .pv-fig-wide{max-width:600px;margin:34px auto 0}
-    .pv-fig-wide figcaption{text-align:center}
-    .pv-sec-flush{border-bottom:none;padding-bottom:0}
-    .pv-shot{border-radius:2px;overflow:hidden;border:1px solid rgba(43,22,27,.16);background:var(--cream);box-shadow:0 12px 40px rgba(43,22,27,.1);max-width:720px}
-    .pv-bar{display:flex;gap:6px;padding:11px 14px;background:rgba(43,22,27,.055);border-bottom:1px solid rgba(43,22,27,.09)}
-    .pv-bar span{width:9px;height:9px;border-radius:50%;background:rgba(43,22,27,.16)}
-    .pv-body{padding:26px 28px 28px}
-    .pv-body-index{padding:20px}
-
-    .pv-phase{position:relative;overflow:hidden;border:1px solid rgba(43,22,27,.11);border-radius:2px;padding:18px 20px;margin-bottom:12px;
-              background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 0%,transparent),color-mix(in srgb,var(--ac) 3%,transparent))}
-    .pv-edge{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ac)}
-    .pv-phead{display:flex;gap:13px;align-items:flex-start;padding-bottom:12px;margin-bottom:10px;border-bottom:1px solid color-mix(in srgb,var(--ac) 42%,transparent)}
-    .pv-pnum{font-family:Newsreader,serif;font-size:36px;font-weight:300;line-height:.8;color:var(--ac);letter-spacing:-1.5px}
-    .pv-pday{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#8A6B44;margin-bottom:3px}
-    .pv-ptitle{display:block;font-family:Newsreader,serif;font-size:19px;color:var(--choc)}
-    .pv-tally{margin-left:auto;font-family:"JetBrains Mono","Inter",monospace;font-size:10px;color:#fff;background:var(--pink-deep);padding:4px 9px;border-radius:2px}
-    .pv-mods{display:flex;flex-direction:column;gap:1px}
-    .pv-mod{position:relative;padding:7px 0 7px 24px;font-family:Newsreader,serif;font-size:15.5px;color:var(--choc)}
-    .pv-tick{position:absolute;left:0;top:10px;width:14px;height:14px;border-radius:2px;border:1.5px solid rgba(43,22,27,.24)}
-    .pv-mnum{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;color:rgba(43,22,27,.4);margin-right:7px}
-    .pv-more{font-size:13px;color:rgba(43,22,27,.45);margin:10px 0 0;text-align:center;font-style:italic}
-
-    .pv-eyebrow{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
-    .pv-h1{display:block;font-family:Newsreader,serif;font-size:29px;font-weight:300;letter-spacing:-.7px;color:var(--choc);margin-bottom:18px}
-    .pv-lead-italic{font-family:Newsreader,serif;font-size:19px;font-style:italic;line-height:1.6;color:var(--choc-soft);margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid rgba(43,22,27,.13)}
-    .pv-step{display:flex;align-items:center;gap:13px;margin-bottom:14px}
-    .pv-stepnum{width:31px;height:31px;border-radius:50%;background:var(--choc);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono","Inter",monospace;font-size:11px;flex-shrink:0}
-    .pv-steplabel{font-family:Newsreader,serif;font-size:19px;color:var(--choc)}
-
-    .pv-prompt{border-radius:2px;overflow:hidden;border:1px solid rgba(214,46,115,.22);background:var(--white);margin-bottom:14px}
-    .pv-prompt-solo{max-width:640px;margin-bottom:0}
-    .pv-pbar{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.14)}
-    .pv-pbar span{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink-deep)}
-    .pv-pbar em{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-style:normal;color:var(--pink-deep);border:1px solid rgba(214,46,115,.4);border-radius:2px;padding:3px 10px;background:#fff;cursor:pointer}
-    .pv-prompt code{display:block;padding:16px 18px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;line-height:1.72;color:#4A2C34;white-space:pre-wrap;overflow-x:auto}
-
-    .pv-road{display:flex;flex-direction:column;gap:8px;border:1px solid rgba(214,46,115,.18);background:rgba(255,138,194,.06);border-radius:2px;padding:14px 16px}
-    .pv-road span{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink-deep)}
-    .pv-road em{font-style:normal;font-size:14.5px;color:var(--choc)}
-
-    .pv-group{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-deep);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,169,106,.35)}
-    .pv-group:first-of-type{margin-top:6px}
-    .pv-qs{display:flex;gap:14px;align-items:flex-start;padding:11px 0}
-    .pv-qsn{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;color:var(--pink-deep);padding-top:4px;flex-shrink:0}
-    .pv-qs b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:18px;color:var(--choc);margin-bottom:4px}
-    .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
-    .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
-    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:2px;padding:22px 24px 18px;margin-bottom:14px;background:var(--white);max-width:720px}
-    .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:16px}
-    .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
-    .pv-o:first-of-type{border-top:none;padding-top:0}
-    .pv-o b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:18px;color:var(--choc);margin-bottom:5px}
-    .pv-o i{display:block;font-style:normal;font-size:14.5px;line-height:1.62;color:rgba(43,22,27,.68)}
-    .pv-o-plain i{font-family:Newsreader,serif;font-style:italic;font-size:17.5px;color:var(--choc-soft);line-height:1.55}
-    .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
-    .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:2px;font-family:Newsreader,serif;font-size:15px;line-height:1.3;color:var(--choc);
-                    background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);min-height:74px}
-    .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
-    .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-    .pv-osmall{font-size:14.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
-    @media(max-width:640px){.pv-slides,.pv-out-half{grid-template-columns:1fr}}
-    .pv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
-    .pv-card{border-radius:2px;padding:26px;border:1px solid rgba(43,22,27,.14);background:var(--white)}
-    .pv-ctag{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A6B44;margin-bottom:16px}
-    .pv-card p{font-size:14.5px;line-height:1.6;color:var(--choc-mute);margin:16px 0 0}
-    .pv-ring{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;
-             background:conic-gradient(var(--pink) 0 63%,rgba(43,22,27,.09) 63%)}
-    .pv-ring:after{content:"";position:absolute;inset:10px;border-radius:50%;background:var(--white)}
-    .pv-ring span{position:relative;z-index:1;font-family:Newsreader,serif;font-size:24px;font-weight:300;color:var(--choc)}
-    .pv-ring small{font-size:13px;opacity:.45}
-    .pv-cert{background:var(--white);border-top:2px solid #B9A2E8}
-    .pv-certh{display:block;font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
-    .pv-certname{display:block;font-family:Newsreader,serif;font-size:24px;font-weight:300;color:var(--choc);padding-bottom:12px;border-bottom:1px solid rgba(214,46,115,.3)}
-
-    .pv-close{text-align:center;padding:60px 40px 56px;margin-top:60px;border-radius:2px;
-              border:1px solid rgba(214,46,115,.24);background:var(--white);
-              background-image:none;
-              box-shadow:0 14px 44px rgba(43,22,27,.09)}
-    .pv-close h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(28px,4.8vw,44px);margin:0 0 14px;letter-spacing:-.8px;color:var(--choc)}
-    .pv-clede{font-size:17px;line-height:1.7;color:var(--choc-mute);max-width:48ch;margin:0 auto 32px}
-    .pv-hero-btn{display:inline-block;margin-bottom:30px}
-    .pv-cnote{font-size:13px;line-height:1.6;color:var(--choc-meta);margin:20px auto 0;max-width:46ch}
-    .pv-cnote-alt{margin-top:12px}
-    .pv-cnote-alt a{color:var(--pink);text-decoration:underline}
-    
-
-    @media(max-width:760px){
-      .pv-group{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-deep);margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,169,106,.35)}
-    .pv-group:first-of-type{margin-top:6px}
-    .pv-qs{display:flex;gap:14px;align-items:flex-start;padding:11px 0}
-    .pv-qsn{font-family:"JetBrains Mono","Inter",monospace;font-size:10.5px;color:var(--pink-deep);padding-top:4px;flex-shrink:0}
-    .pv-qs b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:18px;color:var(--choc);margin-bottom:4px}
-    .pv-qs i{display:block;font-style:normal;font-size:14.5px;line-height:1.6;color:rgba(43,22,27,.66)}
-    .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
-    .pv-out{border:1px solid rgba(43,22,27,.13);border-radius:2px;padding:22px 24px 18px;margin-bottom:14px;background:var(--white);max-width:720px}
-    .pv-otag{font-family:"JetBrains Mono","Inter",monospace;font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:16px}
-    .pv-o{padding:12px 0;border-top:1px solid rgba(43,22,27,.09)}
-    .pv-o:first-of-type{border-top:none;padding-top:0}
-    .pv-o b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:18px;color:var(--choc);margin-bottom:5px}
-    .pv-o i{display:block;font-style:normal;font-size:14.5px;line-height:1.62;color:rgba(43,22,27,.68)}
-    .pv-o-plain i{font-family:Newsreader,serif;font-style:italic;font-size:17.5px;color:var(--choc-soft);line-height:1.55}
-    .pv-omore{font-size:13.5px;color:rgba(43,22,27,.5);margin:14px 0 0;font-style:italic;padding-top:12px;border-top:1px solid rgba(43,22,27,.09)}
-    .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pv-slides span{display:flex;align-items:center;padding:18px 16px;border-radius:2px;font-family:Newsreader,serif;font-size:15px;line-height:1.3;color:var(--choc);
-                    background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);min-height:74px}
-    .pv-slides span:first-child{font-size:17px;background:linear-gradient(160deg,rgba(214,46,115,.2),rgba(255,138,194,.12))}
-    .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-    .pv-osmall{font-size:14.5px;line-height:1.65;color:rgba(43,22,27,.68);margin:0}
-    @media(max-width:640px){.pv-slides,.pv-out-half{grid-template-columns:1fr}}
-    .pv-two{grid-template-columns:1fr}
-      .pv-sec{padding:48px 0}
-      .pv-body,.pv-body-index{padding:18px}
-      .pv-close{padding:54px 22px 50px}
-    }
-  </style>
 <style>
-  .pv-buy{margin:26px 0 0;font-size:16px;line-height:1.8;color:var(--taupe-deep);
-          padding-top:20px;border-top:1px solid rgba(43,22,27,.1)}
-  .pv-buy a{color:var(--pink);font-weight:600;text-decoration:none;white-space:nowrap}
-  .pv-buy a:hover{text-decoration:underline}
-  .pv-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--white);
-             border-top:1px solid rgba(43,22,27,.14);box-shadow:0 -6px 24px rgba(43,22,27,.08);
-             transform:translateY(110%);transition:transform .25s ease}
-  .pv-sticky.on{transform:translateY(0)}
-  .pv-sticky-in{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;
-                justify-content:space-between;gap:16px}
-  .pv-sticky-n{display:block;font-family:Newsreader,serif;font-size:16px;color:var(--choc)}
-  .pv-sticky-p{display:block;font-size:13px;color:var(--taupe-deep);margin-top:2px}
-  .pv-sticky-b{white-space:nowrap}
-  @media(max-width:560px){.pv-sticky-n{font-size:14px}.pv-sticky-p{font-size:11px}}
+  .page-wrap .pv-hero-h{font-size:clamp(32px,4.2vw,50px)}
+  .pv-toc{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:520px}
+  .pv-toc a{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 14px;border-radius:14px;text-decoration:none;
+            font-size:15px;line-height:1.3;font-weight:600;color:var(--ink);background:rgba(255,253,252,.82);border:1px solid var(--edge);
+            box-shadow:0 12px 24px -20px rgba(214,46,115,.5)}
+  .pv-toc a:hover{border-color:var(--hot)}
+  .pv-toc b{flex:none;font:800 12px/1 Inter,sans-serif;color:var(--hot)}
+
+  .pv-sec{scroll-margin-top:80px}
+  .pv-n{display:inline-block;font:800 12px/1 Inter,sans-serif;letter-spacing:2px;color:#fff;background:var(--hot);padding:7px 11px;border-radius:999px;transform:rotate(-2deg);margin-bottom:14px}
+  .pv-sec h2{font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:0 0 14px}
+  .pv-b{font-size:18px;line-height:1.7;max-width:640px;margin:0 0 28px!important;color:var(--ink-soft)}
+  .pv-note{font-family:Newsreader,Georgia,serif;font-weight:600;font-style:italic;font-size:20px;line-height:1.5;color:var(--hot);margin:22px 0 0!important;max-width:720px}
+
+  .pv-shot{border-radius:18px;overflow:hidden;border:1px solid var(--edge);background:var(--cream);box-shadow:var(--shadow);max-width:760px}
+  .pv-bar{display:flex;gap:6px;padding:12px 16px;background:rgba(26,20,23,.05);border-bottom:1px solid rgba(26,20,23,.08)}
+  .pv-bar span{width:10px;height:10px;border-radius:50%;background:rgba(26,20,23,.16)}
+  .pv-bar span:first-child{background:var(--bub)}
+  .pv-body{padding:26px 28px 28px}
+  .pv-body-index{padding:20px}
+
+  .pv-phase{position:relative;overflow:hidden;border:1px solid rgba(26,20,23,.1);border-radius:12px;padding:18px 20px 14px 24px;margin-bottom:12px;background:#fff}
+  .pv-edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ac)}
+  .pv-phead{display:flex;gap:13px;align-items:flex-start;padding-bottom:12px;margin-bottom:8px;border-bottom:1px solid color-mix(in srgb,var(--ac) 50%,transparent)}
+  .pv-pnum{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:34px;line-height:.85;color:var(--ac)}
+  .pv-pday{display:block;font:700 12px/1.3 Inter,sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+  .pv-ptitle{display:block;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:20px;color:var(--ink)}
+  .pv-tally{margin-left:auto;font:700 12px/1 Inter,sans-serif;color:#fff;background:var(--hot);padding:5px 9px;border-radius:999px}
+  .pv-mods{display:flex;flex-direction:column}
+  .pv-mod{position:relative;padding:8px 0 8px 26px;font-size:16px;line-height:1.4;color:var(--ink)}
+  .pv-tick{position:absolute;left:0;top:10px;width:15px;height:15px;border-radius:4px;border:1.5px solid rgba(26,20,23,.28)}
+  .pv-mnum{font:700 12px/1 Inter,sans-serif;color:var(--hot);margin-right:8px}
+
+  .pv-eyebrow{display:block;font:700 12px/1.4 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+  .pv-h1{display:block;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:29px;line-height:1.15;color:var(--ink);margin-bottom:16px}
+  .pv-lead-italic{font-family:Newsreader,Georgia,serif;font-style:italic;font-size:19px;line-height:1.6;color:var(--ink-soft);margin:0 0 20px!important;padding-bottom:18px;border-bottom:1px solid rgba(26,20,23,.12)}
+  .pv-step{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+  .pv-stepnum{width:32px;height:32px;border-radius:50%;background:var(--hot);color:#fff;display:flex;align-items:center;justify-content:center;font:700 12px/1 Inter,sans-serif;flex-shrink:0}
+  .pv-steplabel{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:19px;color:var(--ink)}
+  .pv-prompt{border-radius:12px;overflow:hidden;border:1px solid rgba(214,46,115,.25);background:#fff;margin-bottom:14px}
+  .pv-pbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.14)}
+  .pv-pbar span{font:700 12px/1 Inter,sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--hot-deep)}
+  .pv-pbar em{font:700 12px/1 Inter,sans-serif;letter-spacing:1.4px;text-transform:uppercase;font-style:normal;color:var(--hot-deep);border:1px solid rgba(214,46,115,.4);border-radius:999px;padding:5px 11px;background:#fff}
+  .pv-prompt code{display:block;padding:16px 18px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13.5px;line-height:1.7;color:#3A2A30;white-space:pre-wrap;overflow-wrap:anywhere}
+  .pv-road{display:flex;flex-direction:column;gap:8px;border:1px dashed rgba(214,46,115,.4);background:rgba(255,138,194,.08);border-radius:12px;padding:14px 16px}
+  .pv-road span{font:700 12px/1.3 Inter,sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--hot-deep)}
+  .pv-road em{font-style:normal;font-size:15px;color:var(--ink)}
+
+  .pv-who{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:18px}
+  .pv-who p{font-size:16.5px;line-height:1.55}
+  .pv-who .wx-hot p{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:21px;line-height:1.35;color:#fff}
+  .pv-tina{max-width:760px}
+
+  .pv-group{font:700 12px/1.3 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--edge)}
+  .pv-qs{display:flex;gap:14px;align-items:flex-start;padding:10px 0}
+  .pv-qsn{font:700 12px/1 Inter,sans-serif;color:var(--hot);padding-top:6px;flex-shrink:0}
+  .pv-qs b{display:block;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:19px;color:var(--ink);margin-bottom:4px}
+  .pv-qs i{display:block;font-style:normal;font-size:15.5px;line-height:1.55;color:var(--ink-soft)}
+  .pv-qs-blur,.pv-group-blur{filter:blur(3.5px);opacity:.5;user-select:none;pointer-events:none}
+  .pv-more{font-size:14.5px;color:var(--ink-soft);margin:12px 0 0!important;text-align:center;font-style:italic}
+
+  .pv-out{max-width:760px;margin-bottom:14px}
+  .pv-otag{font:700 12px/1.3 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--hot);margin-bottom:14px}
+  .pv-o{padding:12px 0;border-top:1px solid rgba(26,20,23,.08)}
+  .pv-o:first-of-type{border-top:none;padding-top:0}
+  .pv-o b{display:block;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:19px;color:var(--ink);margin-bottom:5px}
+  .pv-o i{display:block;font-style:normal;font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+  .pv-o-plain i{font-family:Newsreader,Georgia,serif;font-style:italic;font-size:18px;color:var(--ink);line-height:1.5}
+  .pv-omore{font-size:14.5px;color:var(--ink-soft);margin:12px 0 0!important;font-style:italic;padding-top:12px;border-top:1px solid rgba(26,20,23,.08)}
+  .pv-slides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .pv-slides span{display:flex;align-items:center;padding:16px;border-radius:12px;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:16px;line-height:1.3;color:var(--ink);
+                  background:#fff;border:1px solid rgba(26,20,23,.1);border-top:3px solid var(--hot);min-height:76px}
+  .pv-slides span:first-child{background:linear-gradient(140deg,#F0589A,var(--hot));color:#fff;border-top-color:transparent}
+  .pv-out-half{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pv-osmall{font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+
+  .pv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}
+  .pv-two p{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin-top:16px!important}
+  .pv-ctag{display:block;font:700 12px/1.3 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--hot);margin-bottom:16px}
+  .pv-ring{width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;
+           background:conic-gradient(var(--hot) 0 63%,rgba(26,20,23,.09) 63%)}
+  .pv-ring:after{content:"";position:absolute;inset:10px;border-radius:50%;background:#fff}
+  .pv-ring span{position:relative;z-index:1;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:24px;color:var(--ink)}
+  .pv-ring small{font-size:13px;opacity:.5}
+  .pv-cert{border-top:3px solid #B9A2E8}
+  .pv-certname{display:block;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:24px;line-height:1.2;color:var(--ink);padding-bottom:12px;border-bottom:1px solid var(--edge)}
+
+  .pv-faq{margin:0;max-width:760px}
+  .pv-more-q{margin-top:22px!important;margin-bottom:0!important}
+
+  @media(max-width:820px){
+    .pv-who,.pv-two{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .pv-toc{grid-template-columns:1fr}
+    .pv-body{padding:20px 16px 22px}
+    .pv-body-index{padding:12px}
+    .pv-phase{padding:16px 14px 10px 20px}
+    .pv-slides,.pv-out-half{grid-template-columns:1fr}
+    .pv-h1{font-size:25px}
+    .pv-b{font-size:17px}
+  }
 </style>
 
-<script is:inline>
-  (function(){
-    var bar=document.getElementById('pv-sticky'); if(!bar) return;
-    function tick(){
-      if(window.scrollY>700) bar.classList.add('on'); else bar.classList.remove('on');
-    }
-    window.addEventListener('scroll',tick,{passive:true}); tick();
-  })();
+<script>
+  const bar = document.getElementById("wx-sticky");
+  const blocks = [...document.querySelectorAll(".wp")];
+  const start = document.getElementById("index");
+  if (bar && start) {
+    const seen = new Set();
+    const update = () => {
+      const past = start.getBoundingClientRect().top < 0;
+      bar.classList.toggle("on", past && seen.size === 0);
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
+      update();
+    });
+    blocks.forEach((b) => io.observe(b));
+    window.addEventListener("scroll", update, { passive: true });
+  }
 </script>
-
 </PageLayout>
-

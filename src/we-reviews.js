@@ -8,7 +8,7 @@ export const REVIEWS = [
     id: "tina-alexander",
     name: "Tina Alexander",
     stars: 5,
-    source: "Skool review \u2014 public, posted with her name and photo",
+    source: "Skool review \u00b7 public, posted with her name and photo",
     tenure: "Paying member, 4 months",
     date: "2026-09",
     // The full quote, verbatim -- her exact spelling of "word press", unfixed.

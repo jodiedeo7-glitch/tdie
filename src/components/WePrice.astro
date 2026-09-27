@@ -1,0 +1,61 @@
+---
+// The Weekend Ecosystem™ price and buy button. Both payment options sit side by side,
+// directly above the one primary CTA, everywhere the price appears.
+// Canon: $97 one-time, or 3 × $33.33 (plan totals $99.99).
+import { S, HREF } from "../we-stage.js";
+import { SALE } from "../we-sale.js";
+
+export interface Props {
+  id?: string;
+  /** The small line under the button. */
+  note?: string;
+  /** Show the free look-inside link under the button. */
+  preview?: boolean;
+}
+const { id, note = "Both options are at checkout. Every future update included, free.", preview = false } = Astro.props;
+---
+
+<div class="wp" id={id}>
+  <div class="wp-opts" role="group" aria-label="Two ways to pay">
+    <div class="wp-opt wp-opt-a">
+      <span class="wp-k">Pay once</span>
+      <span class="wp-n">{SALE.ACTIVE ? SALE.price : "$97"}</span>
+      <span class="wp-s">one-time</span>
+    </div>
+    <span class="wp-or" aria-hidden="true">or</span>
+    <div class="wp-opt wp-opt-b">
+      <span class="wp-k">Split it</span>
+      <span class="wp-n">3 × $33.33</span>
+      <span class="wp-s">three payments, $99.99 total</span>
+    </div>
+  </div>
+  <a class="wx-btn wp-btn" href={HREF}>{S.cta} <span aria-hidden="true">→</span></a>
+  <p class="wp-note">{note}</p>
+  {preview && (
+    <p class="wp-peek">Not sure yet? <a href="/weekend-ecosystem/preview">Look inside first</a>. Free, no email, no card.</p>
+  )}
+</div>
+
+<style>
+  .wp{max-width:520px}
+  .wp-opts{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:10px;margin:0 0 16px}
+  .wp-opt{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:16px 14px;border-radius:16px;text-align:center;
+          background:rgba(255,253,252,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+          border:1px solid rgba(200,169,106,.55);box-shadow:0 18px 34px -24px rgba(214,46,115,.45)}
+  .wp-opt-b{background:linear-gradient(135deg,rgba(255,138,194,.22),rgba(255,253,252,.85))}
+  .wp-k{font:700 12px/1.2 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#D62E73}
+  .wp-n{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(26px,3.4vw,34px);line-height:1.05;color:#1A1417;white-space:nowrap}
+  .wp-s{font-size:13px;line-height:1.35;color:#4A3F44}
+  .wp-or{align-self:center;font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:600;font-size:17px;color:#4A3F44}
+  .wp-btn{width:100%}
+  .wp-note{font-size:14px;line-height:1.55;color:#4A3F44;margin:12px 0 0;text-align:center}
+  .wp-peek{font-size:15px;line-height:1.55;color:#1A1417;margin:12px 0 0;text-align:center}
+  .wp-peek a{display:inline-block;padding:12px 2px;margin:-12px 0;color:#D62E73;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:400px){
+    .wp-opts{gap:6px}
+    .wp-opt{padding:14px 8px}
+    .wp-n{font-size:23px}
+    .wp-s{font-size:12.5px}
+    .wp-or{font-size:15px}
+  }
+</style>
