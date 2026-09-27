@@ -36,7 +36,7 @@ ASK ME THESE SIX THINGS, IN THIS ORDER
 
 6. TIMES. "What time zone are you in, and when is your computer usually on?" Write the time zone as a named zone (for example America/Chicago), never a fixed offset. Then propose, in my time zone:
    RUN TIMES (my computer must be on):
-     Weekly build: Saturday 1:05 pm. If I choose more than 4 looks a week, also Wednesday 1:05 pm (each run builds at most 4 looks).
+     Weekly build: Saturday 1:05 pm. If I choose 5 or more looks a week, also Wednesday 1:05 pm (each run builds at most 4 looks).
      Pull sweep: 12:00 pm and 6:00 pm daily.
      Brand Closet™ members only: nightly Outfit of the Day run, Sunday to Friday, 9:20 pm. Allow about 2 hours per outfit: if two outfits can't finish before my shutdown, move the run earlier or set OUTFITS PER NIGHT: 1 and tell me why.
    PIN SLOTS (Pinterest posts these itself; my computer does NOT need to be on):
@@ -45,7 +45,7 @@ ASK ME THESE SIX THINGS, IN THIS ORDER
      At 6 or 7 looks a week, add a spare themed-look slot at 10:30 am, for leftovers only.
    PACE: "How many looks a week? 3 is light, 5 is steady, 7 is one a day. Each look keeps the task busy in Chrome for a while (plan on up to an hour a look while it's new), so more looks means longer runs and more of your Claude usage." Default 4. Then set LOOK DAYS: 3 = Monday, Wednesday, Friday; 4 = Monday, Tuesday, Thursday, Friday; 5 = Monday to Friday; 6 = Monday to Saturday; 7 = every day. On a paste-it-yourself site, the first look day each week is at least two days after the build, so I have time to paste.
    Move any RUN time that falls while my computer is off, or within an hour of when I shut it down. The nightly run must start at least 2 hours before shutdown; the evening sweep at least 1 hour before. Never move a PIN SLOT for that reason, and tell me so in one line.
-   Rules you enforce: pin slots are on the hour or half hour; no two pin slots within 1 hour of each other; the two automations never share a pin slot; no run starts before 7:00 am; nothing is ever scheduled more than 14 days ahead.
+   Rules you enforce: pin slots are on the hour or half hour; no two pin slots less than 1 hour apart (exactly 1 hour is fine); the two automations never share a pin slot; no run starts before 7:00 am; nothing is ever scheduled more than 14 days ahead.
    Tell me in one line each: leave the Chrome window the tasks use alone while a run is going; set the computer not to sleep during run times.
 
 THEN WRITE MY FILES
@@ -53,7 +53,7 @@ Write these into the attached folder. If you can't write to the folder, show eac
 
 A. MY_RECIPE.txt. My settings, read by every task. Sections, in this order:
    SETTINGS: THEME (my words plus a one-line style summary), MIX (clothing, home or both, and the ratio), VOICE, TIME ZONE, BOARDS (exact names, their sections and which kind of look goes in each, each board marked "no lock, confirmed" and today's date), PATH (Influencer or Associates-only), STOREFRONT, SITE, SITE PLATFORM, SITE PAGE BASE (Associates-only), CAN PUBLISH TO SITE (yes only for a Weekend Ecosystem™ site once the blog half is on), PERSONA (yes/no and the image file name), PERSONA WORLD, BRAND CLOSET MEMBER (yes/no and tier), OUTFITS PER NIGHT (2 unless set to 1), PACE, LOOK DAYS, BLOG HALF: off, PIN LINE: off, BRAND CLOSET CARD: off, INSTAGRAM: off. Mark which boards each automation uses.
-   SLOTS: every run time and pin slot from question 5, labelled RUN or PIN, in my time zone.
+   SLOTS: every run time and pin slot from question 6, labelled RUN or PIN, in my time zone.
    DISCLOSURE LINE: "#ad As an Amazon Associate I earn from qualifying purchases." (the same on both paths: it is the wording Amazon's own rules give).
    THEME CALENDAR: tag every look idea [outfit], [theme list] or [roundup]; at least a third of each window is not [outfit]. From today to 6 months out, split into windows for my theme. Each holiday window starts about 6 weeks before the holiday (or when the previous window ends, if later) and runs until one week before the day. Holidays within 2 weeks of each other share a window. Seasonal windows fill the gaps. For each window: dates, theme, and at least (my pace x the window's weeks) + 3 look ideas in my style, never fewer than 8. No look idea mentions a price or a price range, a real person, a film, a character or a brand.
    EVERGREEN BANK: 30 look ideas in my style that sell in any month, across at least 5 categories, each one fitting one of my boards (suggest a new board in one line if a category needs one).
@@ -61,9 +61,9 @@ A. MY_RECIPE.txt. My settings, read by every task. Sections, in this order:
 
 B. storefront-log.md. Two tables, headers only unless the file already exists.
    Looks: date (pin 1 date), window or category, look name, kind (outfit / theme list / roundup / outfit of the day), board, items (short name + ASIN + short link if captured), list or page link, pin 1 format, pin 2 format or persona shot, status (building / built / scheduled, not verified / verified / pulled / dropped), notes.
-   Outfit of the Day lessons (members only): lesson date, lesson title, lesson address, list link, status (new / sourcing / built / scheduled / verified / skipped), notes.
+   Outfit of the Day lessons (members only): lesson date, lesson title, lesson address, list link, status (new / sourcing / built / scheduled, not verified / verified / skipped), notes.
 
-C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, link, status, PULL. Top line: "To pull a pin, type PULL in its last column and save before 11:30 am on its posting day (the sweeps run at 12:00 pm and 6:00 pm). Or delete it yourself in the Pinterest app, any time, and type PULLED here so the log stays true."
+C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, link, status, PULL. Top line, with my real sweep times filled in: "To pull a pin, type PULL in its last column and save at least 30 minutes before the last sweep ahead of its posting time (the sweeps run at [my two sweep times]; a pin that posts before noon needs PULL by the evening before). Or delete it yourself in the Pinterest app, any time, and type PULLED here so the log stays true."
 
 D. pin-drafts.md. Headers only: look, pin (1 or 2), board, title, description, alt text, link, image made in (Higgsfield or Gemini), date and time made, first words of the image prompt, status. Every pin's copy is written here the moment it's finished, so a later run can finish a leftover.
 

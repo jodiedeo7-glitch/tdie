@@ -153,7 +153,7 @@ guide.push(`<section class="pg" style="padding:0">
       <div class="card" style="margin-top:6px">
         <ul class="ticks">
           <li>About 5 minutes to start<span>once your accounts are ready</span></li>
-          <li>Then no building, no selling, no posting<span>the scheduled tasks do it</span></li>
+          <li>Then no building, no selling, no posting<span>on the Influencer path: the scheduled tasks do it</span></li>
           <li>Found through search<span>not the feed</span></li>
         </ul>
       </div>
@@ -179,7 +179,7 @@ guide.push(`<section class="pg">${top(2)}
     <div class="card"><h3>Automation 1 &middot; Themed looks</h3>
       <p>Once a week it picks looks for your theme from a seasonal calendar and an evergreen bank, sources the pieces, builds the list, makes a styled flat lay and a second image, writes the pin copy, schedules both pins and logs everything.</p></div>
     <div class="hotcard"><h3>Automation 2 &middot; Outfit of the Day</h3>
-      <p>For members of The Brand Closet&trade;: every night it turns the new Outfit of the Day into <strong>your own</strong> pins, with your own Amazon links and your own images. Nothing of Rose's is ever posted.</p></div>
+      <p>For The Brand Closet&trade; members on Rose's $9/month tier or above: Sunday to Friday nights it turns the new Outfit of the Day into <strong>your own</strong> pins, with your own Amazon links and your own images. Nothing of Rose's is ever posted.</p></div>
   </div>
   <div class="call"><p><strong>The honest part.</strong> The tasks run from your own computer, so it stays on with Chrome open and signed in when they run. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
   <div class="call" style="background:rgba(200,169,106,.12);border-left-color:var(--gold)"><p><strong>What it doesn't promise:</strong> sales. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></div>
@@ -232,7 +232,7 @@ guide.push(`<section class="pg">${top(5)}
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
       <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. Claude asks you six things, one at a time, with an example each time:</p>
       <ol><li>your theme</li><li>your boards (and it makes you check each one is public)</li><li>your storefront and your website, if you have one</li><li>whether you have an AI persona</li><li>whether you're in The Brand Closet&trade;</li><li>your time zone and when your computer is on</li></ol>
-      <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>browser-lock.txt</strong> and <strong>MY_SCHEDULED_TASKS.txt</strong>.</p></div></div>
+      <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>browser-lock.txt</strong> and <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p></div></div>
   </div>
   <div class="call"><p>My own words, because people ask: it took me 5 minutes to set up. That's with Amazon, Pinterest and my image tools already signed in.</p></div>
     ${foot()}
@@ -253,7 +253,7 @@ guide.push(`<section class="pg">${top(6)}
       <li><strong>Save.</strong></li></ol>
       <p class="small">App menus move as Claude updates. If you can't find Scheduled, ask Claude in any chat: "How do I create a scheduled task in this app?"</p></div></div>
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini). Allow them. After that, it runs on its own.</p></div></div>
+      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
   </div>
   ${strip(["pink-suit-law-student-halloween-costume-flatlay.jpg", "pink-suit-law-student-halloween-costume-lifestyle.jpg", "pink-dorm-halloween-decor-flatlay.jpg", "elle-and-emmett-couples-costume-lifestyle.jpg"], sticker("3 days<br>between<br>pins", "right:-10px;top:40px;transform:rotate(8deg)", true))}
   ${foot()}
@@ -267,12 +267,12 @@ guide.push(`<section class="pg">${top(7)}
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
       <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it's off at run time, that run waits until it's back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
-      <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day: the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
+      <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
       <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
   </div>
   <div class="hotcard" style="margin-top:16px"><h3>What a normal week looks like</h3>
-    <p>Saturday, the weekly task builds next week's looks and schedules them. Every night (if you're in The Brand Closet&trade;), the Outfit of the Day run turns in new outfits. Twice a day, the sweep checks for pulls and leftovers, and opens nothing if there aren't any. You get a one-line report when a run finishes.</p></div>
+    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the sweep checks for pulls and leftovers, and opens nothing if there aren't any. You get a one-line report when a run finishes.</p></div>
   ${foot()}
 </section>`);
 
