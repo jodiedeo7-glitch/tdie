@@ -1,0 +1,36 @@
+---
+// A slow-moving ribbon of true facts about The Weekend Ecosystem™ (canon only).
+// Pauses for anyone who prefers reduced motion, and is hidden from screen readers
+// because every fact on it is said in full elsewhere on the page.
+const facts = [
+  "No code",
+  "No camera",
+  "22 modules",
+  "36 prompts",
+  "Built from what you already wrote",
+  "Every future update free",
+  "$97 or 3 × $33.33",
+  "Your domain, your list",
+];
+---
+
+<div class="wr" aria-hidden="true">
+  <div class="wr-track">
+    {[0, 1].map(() => (
+      <div class="wr-set">
+        {facts.map((f) => (<><span>{f}</span><i>♡</i></>))}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .wr{position:relative;left:50%;width:100vw;margin-left:-50vw;overflow:hidden;transform:rotate(-1.2deg);margin-top:4px;margin-bottom:28px;
+      background:linear-gradient(90deg,#E8458A,#D62E73 50%,#B8245F);box-shadow:0 18px 30px -20px rgba(214,46,115,.7)}
+  .wr-track{display:flex;width:max-content;animation:wr-slide 48s linear infinite}
+  .wr-set{display:flex;align-items:center;gap:18px;padding:13px 9px}
+  .wr span{font:800 13px/1 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#fff;white-space:nowrap}
+  .wr i{font-style:normal;color:#FFC2DD;font-size:14px}
+  @keyframes wr-slide{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.wr-track{animation:none}}
+</style>

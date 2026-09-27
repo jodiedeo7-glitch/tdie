@@ -5,6 +5,8 @@ import { S, HREF } from "../../we-stage.js";
 import { OBJECTIONS } from "../../we-objections.js";
 import Testimonial from "../../components/Testimonial.astro";
 import WePrice from "../../components/WePrice.astro";
+import WeBundle from "../../components/WeBundle.astro";
+import WeRibbon from "../../components/WeRibbon.astro";
 import "../../styles/we.css";
 
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
@@ -27,6 +29,7 @@ const SCAFFOLD = [
 ].join("\n");
 
 const onPage = [
+  { id: "box", t: "Everything in the box" },
   { id: "index", t: "The module index" },
   { id: "module", t: "A real module" },
   { id: "prompts", t: "The prompts" },
@@ -51,15 +54,29 @@ const onPage = [
       <p class="wx-lede">By Sunday: a website on a domain you own, a blog Google can find, an email list that captures, and every reader routed to your free offer and your paid one. Built from content you already wrote, without your face. <strong>Everything below is the real interface. No email, no card, nothing to enter.</strong></p>
       <nav class="pv-toc" aria-label="On this page">
         {onPage.map((x, i) => (
-          <a href={`#${x.id}`}><b>{String(i + 1).padStart(2, "0")}</b>{x.t}</a>
+          <a href={`#${x.id}`}><b>{String(i).padStart(2, "0")}</b>{x.t}</a>
         ))}
       </nav>
     </div>
-    <figure class="wx-hero-fig">
-      <img src="/images/we/preview-hero.jpg" alt="At the pink attic desk in the evening, the pasture and red barn through the window." loading="eager" width="1400" height="1737" />
+    <div class="wx-collage pv-collage">
+      <figure class="wx-polaroid">
+        <span class="wx-tape wx-tape-l" aria-hidden="true"></span>
+        <img src="/images/we/preview-hero.jpg" alt="At the pink attic desk in the evening, the pasture and red barn through the window." loading="eager" width="1400" height="1737" />
+        <figcaption>Friday night, the attic desk. Module 01.</figcaption>
+      </figure>
       <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>Free<br />no email</span></span>
       <span class="wx-sticker wx-sticker-b" aria-hidden="true"><span>The real<br />interface</span></span>
-    </figure>
+    </div>
+  </section>
+
+  <WeRibbon />
+
+  <!-- IN THE BOX -->
+  <section class="wx-sec pv-sec" id="box">
+    <span class="pv-n">00</span>
+    <h2>Everything <em>in the box.</em></h2>
+    <p class="pv-b">Before the close-ups, the whole thing at once. It's a live site you log into, and every piece below is inside it.</p>
+    <WeBundle />
   </section>
 
   <!-- 01 INDEX -->
@@ -368,7 +385,8 @@ const onPage = [
     .pv-who,.pv-two{grid-template-columns:1fr}
   }
   @media(max-width:640px){
-    .pv-toc{grid-template-columns:1fr}
+    .pv-toc{display:flex;flex-wrap:wrap;gap:8px}
+    .pv-toc a{padding:10px 13px;border-radius:999px;font-size:14.5px}
     .pv-body{padding:20px 16px 22px}
     .pv-body-index{padding:12px}
     .pv-phase{padding:16px 14px 10px 20px}

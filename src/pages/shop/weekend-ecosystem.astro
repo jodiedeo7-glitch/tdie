@@ -8,6 +8,8 @@ import SaleBanner from "../../components/SaleBanner.astro";
 import KitBanner from "../../components/KitBanner.astro";
 import Testimonial from "../../components/Testimonial.astro";
 import WePrice from "../../components/WePrice.astro";
+import WeBundle from "../../components/WeBundle.astro";
+import WeRibbon from "../../components/WeRibbon.astro";
 import "../../styles/we.css";
 
 // Hours per phase, from the weekend timeline: 2 + 3 + 3 + 3 + 3 + 2 = 16.
@@ -72,12 +74,6 @@ const neverDo = [
   "Film yourself", "Think of content ideas", "Post daily to stay visible", "Pay monthly for a site builder",
 ];
 
-const stats = [
-  { n: "22", l: "Modules" },
-  { n: "36", l: "Prompts, verbatim" },
-  { n: "3", l: "Reference vaults" },
-  { n: "1", l: "Weekend" },
-];
 
 const included = [
   { t: "22 modules", p: "My exact build, in order. Each one teaches the step, hands you the prompt I used, and tells you what broke for me there and how I fixed it." },
@@ -134,12 +130,19 @@ const showKit = kitLive();
       <p class="wx-lede">Your own website, blog and email list, on a domain you own. Your articles sit where Google can find them, every page collects emails, and every reader is routed to your free offer and your paid one. <strong>Built in one weekend from content you've already written. No code, and your face is never required.</strong></p>
       <WePrice id="get" preview />
     </div>
-    <figure class="wx-hero-fig">
-      <img src="/images/we/cover-sofa.jpg" alt="A woman on a farmhouse porch at sunrise holding a pink mug, the red barn and pasture behind her." loading="eager" width="1200" height="1490" />
+    <div class="wx-collage">
+      <figure class="wx-polaroid">
+        <span class="wx-tape wx-tape-l" aria-hidden="true"></span>
+        <img src="/images/we/cover-sofa.jpg" alt="A woman on a farmhouse porch at sunrise holding a pink mug, the red barn and pasture behind her." loading="eager" width="1200" height="1490" />
+        <figcaption>Tuesday. Porch. Coffee. The site's still working.</figcaption>
+      </figure>
+      <div class="wx-collage-peek"><WeBundle variant="peek" /></div>
       <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>No code<br />no camera</span></span>
       <span class="wx-sticker wx-sticker-b" aria-hidden="true"><span>Every update<br />free</span></span>
-    </figure>
+    </div>
   </section>
+
+  <WeRibbon />
 
   {showKit && <KitBanner variant="hero" />}
 
@@ -170,12 +173,35 @@ const showKit = kitLive();
     </div>
   </section>
 
-  <!-- THESIS -->
-  <section class="wx-sec wx-thesis">
-    <h2 class="wx-sec-h">You already <em>wrote it.</em></h2>
-    <p>Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
-    <p>You have the opposite problem: years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
-    <p class="wx-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
+  <!-- WHAT'S IN THE BOX: the packaging, right after the ideal state -->
+  <section class="wx-sec" id="inside">
+    <span class="wx-kicker" style="text-align:center">Everything in the box</span>
+    <h2 class="wx-sec-h">Here's what you're <em>actually getting.</em></h2>
+    <p class="wx-sub">Not a PDF. A live site you log into, with every piece below waiting inside the minute your access opens.</p>
+    <WeBundle />
+    <ul class="wx-box-list">
+      {included.map((x) => (
+        <li><b>{x.t}</b><span>{x.p}</span></li>
+      ))}
+    </ul>
+
+    <div class="wx-card wx-mid">
+      <p class="wx-mid-l">All of it, for one payment or three.</p>
+      <WePrice preview />
+    </div>
+  </section>
+
+  <!-- A NOTE FROM JODIE -->
+  <section class="wx-sec">
+    <div class="wx-note">
+      <span class="wx-tape wx-tape-c" aria-hidden="true"></span>
+      <span class="wx-note-k">A note before you scroll</span>
+      <h2>You already <em>wrote it.</em></h2>
+      <p>Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
+      <p>You have the opposite problem: years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
+      <p class="wx-note-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
+      <p class="wx-sign">xoxo, Jodie</p>
+    </div>
   </section>
 
   <!-- SHOW THE MACHINE -->
@@ -235,27 +261,6 @@ const showKit = kitLive();
           </ol>
         </div>
       ))}
-    </div>
-  </section>
-
-  <!-- WHAT COMES WITH IT -->
-  <section class="wx-sec">
-    <h2 class="wx-sec-h">What comes <em>with it.</em></h2>
-    <div class="wx-stats">
-      {stats.map((s) => <div class="wx-card wx-stat"><b>{s.n}</b><span>{s.l}</span></div>)}
-    </div>
-    <div class="wx-inc">
-      {included.map((x) => (
-        <div class="wx-card">
-          <h3>{x.t}</h3>
-          <p>{x.p}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="wx-card wx-mid">
-      <p class="wx-mid-l">All of it, for one payment or three.</p>
-      <WePrice preview />
     </div>
   </section>
 
