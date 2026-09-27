@@ -117,143 +117,181 @@ const jsonLd = {
   <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
   <link rel="preload" as="image" type="image/webp"
         imagesrcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
-        imagesizes="(max-width: 900px) 100vw, 46vw" fetchpriority="high" />
+        imagesizes="(max-width: 900px) 100vw, 44vw" fetchpriority="high" />
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <style>
     body.e-page::before,body.e-page::after{display:none}
 
-    /* ============ 1 · HERO: an editorial cover ============ */
-    .cover{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);min-height:min(88vh,860px);border-bottom:1px solid rgba(200,169,106,.45)}
-    .cover-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,96px) clamp(20px,5vw,72px) clamp(40px,5vw,72px) max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut)))}
-    .cover h1{font-size:clamp(48px,6.8vw,104px);line-height:.94;letter-spacing:-.04em;margin:0 0 28px;max-width:10.5ch}
+    /* ============ 1 · COVER ============ */
+    .cover{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);min-height:min(92vh,900px);border-bottom:1px solid rgba(26,20,23,.18)}
+    .mast{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut)));border-bottom:1px solid rgba(26,20,23,.14)}
+    .mast span{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--e-ink-3)}
+    .mast span:first-child{color:var(--e-pink-t)}
+    .mast i{flex:1;height:1px;background:rgba(200,169,106,.6)}
+    .cover-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,6vw,104px) clamp(20px,4vw,64px) clamp(40px,5vw,80px) max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut)))}
+    .cover .e-kick{margin-bottom:28px}
+    .cover h1{font-size:clamp(52px,8.2vw,132px);line-height:.88;letter-spacing:-.05em;margin:0 0 34px;max-width:9.6ch}
     .cover h1 em{display:block}
-    .cover .e-lede{font-size:clamp(18px,1.5vw,20px);max-width:31em;margin-bottom:34px}
+    .cover .e-lede{font-size:clamp(17px,1.35vw,19px);max-width:27em;margin-bottom:36px;color:var(--e-ink-2)}
     .cover .e-lede strong{color:var(--e-ink);font-weight:600}
-    .cover-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:34px 0 0;padding:18px 0 0;border-top:1px solid rgba(200,169,106,.5);list-style:none;font-size:13.5px;color:var(--e-ink-2)}
-    .cover-meta b{font-family:var(--e-serif);font-weight:600;font-size:20px;color:var(--e-pink-t);margin-right:6px;letter-spacing:-.01em}
-    .cover-photo{position:relative;margin:0;min-height:420px;background:var(--e-paper)}
+    .cover-meta{display:flex;flex-wrap:wrap;gap:6px 26px;margin:44px 0 0;padding:0;list-style:none;font-size:13px;color:var(--e-ink-3)}
+    .cover-meta b{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-ink);margin-right:7px;letter-spacing:-.02em}
+    .cover-photo{position:relative;margin:0;min-height:460px;background:var(--e-paper);overflow:hidden}
     .cover-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:32% 40%}
-    .cover-photo figcaption{position:absolute;left:0;bottom:0;background:var(--e-cream);padding:12px 18px 0 0;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-ink-2)}
-    .cover-photo figcaption span{color:var(--e-pink-t)}
+    .cover-photo figcaption{position:absolute;right:0;top:0;background:var(--e-cream);padding:0 max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut))) 12px 18px;line-height:1.5}
+    .cover-photo figcaption .e-credit{display:block}
     @media(max-width:900px){
       .cover{grid-template-columns:1fr;min-height:0}
-      .cover-copy{padding:40px var(--e-gut) 36px}
-      .cover-photo{min-height:0;aspect-ratio:4/3;max-height:620px}
+      .mast{padding:12px var(--e-gut)}
+      .mast span:last-child{display:none}
+      .cover-copy{padding:36px var(--e-gut) 40px}
+      .cover h1{font-size:clamp(46px,13.4vw,84px)}
+      .cover-photo{min-height:0;aspect-ratio:4/3;max-height:640px}
       .cover-photo img{object-position:30% 38%}
       .cover .e-actions .e-btn{width:100%}
+      .cover-photo figcaption{display:none}
     }
 
-    /* ============ 2 · THE METHOD: signature IP ============ */
-    .method-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
-    .method-head .e-d2{margin:0}
-    .forwards{margin:0;font-size:15px;line-height:1.7;color:var(--e-ink-2)}
-    .forwards s{text-decoration-color:var(--e-pink);text-decoration-thickness:2px;color:var(--e-ink-3);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
-    .forwards strong{display:block;margin-top:10px;color:var(--e-ink);font-weight:600}
-    .stack{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
-    .tier-row{display:grid;grid-template-columns:clamp(44px,6vw,90px) minmax(0,1.45fr) minmax(0,1fr);gap:clamp(16px,3vw,48px);align-items:center;padding:clamp(18px,2.6vw,30px) 0;border-bottom:1px solid rgba(26,20,23,.18);position:relative}
-    .tier-row .n{font-family:var(--e-serif);font-weight:600;font-size:clamp(18px,1.8vw,22px);color:var(--e-pink-t)}
-    .tier-row h3{font-size:clamp(40px,6.9vw,100px);line-height:.9;letter-spacing:-.045em;margin:0;color:var(--e-ink);overflow-wrap:normal;word-break:keep-all;white-space:nowrap}
-    .tier-row:nth-child(1) h3{color:var(--e-pink)}
-    .tier-row p{margin:0;font-size:16px;line-height:1.6;color:var(--e-ink-2)}
-    .tier-row p b{display:block;margin-top:8px;font-weight:600;color:var(--e-ink)}
-    .tier-row .ord{display:block;font-family:var(--e-sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-ink-3);margin-top:6px}
-    .tier-row:not(:last-child)::after{content:"↓";position:absolute;left:clamp(0px,1vw,6px);bottom:-14px;width:28px;height:28px;display:grid;place-items:center;background:var(--e-cream);color:var(--e-pink);font-size:16px;font-weight:700;z-index:1}
-    .method-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px;margin-top:28px}
-    .method-foot .tl{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,2vw,26px);margin:0}
-    .method-foot p{margin:0;color:var(--e-ink-2)}
+    /* ============ 2 · BUILT BACKWARDS: the staircase ============ */
+    .method-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(48px,7vw,96px)}
+    .method-head .e-d2{margin:0;font-size:clamp(40px,5.6vw,80px)}
+    .forwards{margin:0;font-size:15px;line-height:1.7;color:var(--e-ink-2);padding-left:22px;border-left:1px solid rgba(200,169,106,.7)}
+    .forwards .fw{display:block;margin-bottom:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3)}
+    .forwards s{text-decoration-color:var(--e-pink);text-decoration-thickness:2px}
+    .forwards strong{display:block;margin-top:12px;color:var(--e-ink);font-weight:600;font-size:16px}
+    .stair{list-style:none;margin:0;padding:0;position:relative;counter-reset:s}
+    .stair::before{content:"";position:absolute;left:clamp(14px,2.2vw,30px);top:10px;bottom:10px;width:2px;background:linear-gradient(var(--e-pink),var(--e-pink)) top/2px 100% no-repeat;opacity:.9}
+    .step{--i:0;position:relative;display:grid;grid-template-columns:clamp(44px,6vw,84px) minmax(0,1fr) minmax(0,.5fr);gap:clamp(12px,2.4vw,40px);align-items:end;padding:clamp(16px,2.2vw,28px) 0;border-bottom:1px solid rgba(26,20,23,.14)}
+    .step:first-child{border-top:1px solid var(--e-ink)}
+    .step .dot{position:relative;z-index:1;align-self:center;justify-self:start;margin-left:calc(clamp(14px,2.2vw,30px) - 7px);width:16px;height:16px;border-radius:50%;background:var(--e-cream);border:2px solid var(--e-pink)}
+    .step:first-child .dot{background:var(--e-pink)}
+    .step h3{padding-left:calc(var(--i) * clamp(0px,3vw,44px));font-size:clamp(44px,6.6vw,96px);line-height:.86;letter-spacing:-.05em;margin:0;color:var(--e-ink);white-space:nowrap;overflow-wrap:normal;word-break:keep-all}
+    .step h3 .ord{display:block;font-family:var(--e-sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-pink-t);margin-bottom:10px}
+    .step:first-child h3{color:var(--e-pink)}
+    .step p{margin:0;font-size:15.5px;line-height:1.6;color:var(--e-ink-2);padding-bottom:6px}
+    .step p b{display:block;margin-top:8px;font-weight:600;color:var(--e-ink)}
+    .scale{display:grid;grid-template-columns:clamp(44px,6vw,84px) minmax(0,1fr);gap:clamp(12px,2.4vw,40px);align-items:center;padding-top:26px}
+    .scale .dot{margin-left:calc(clamp(14px,2.2vw,30px) - 7px);width:16px;height:16px;border-radius:50%;background:var(--e-ink)}
+    .scale p{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 32px}
+    .scale .tl{font-family:var(--e-serif);font-weight:600;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em;color:var(--e-ink)}
+    .scale .ai{font-size:15px;color:var(--e-ink-2)}
+    .scale .ai b{color:var(--e-ink);font-weight:600}
+    /* The order builds as you scroll: each word sets in from outline to solid. */
+    @media (prefers-reduced-motion:no-preference){
+      @supports (animation-timeline:view()) and (-webkit-text-stroke:1px black){
+        .step h3 .w{-webkit-text-stroke:1.5px currentColor;animation:set-in linear both;animation-timeline:view();animation-range:entry 30% cover 45%}
+        @keyframes set-in{from{-webkit-text-fill-color:transparent;transform:translateX(-18px)}to{-webkit-text-fill-color:currentColor;transform:none}}
+        .stair::before{animation:draw linear both;animation-timeline:view();animation-range:entry 20% exit 60%;transform-origin:top}
+        @keyframes draw{from{transform:scaleY(.04)}to{transform:scaleY(1)}}
+      }
+    }
     @media(max-width:760px){
       .method-head{grid-template-columns:1fr}
-      .tier-row{grid-template-columns:40px minmax(0,1fr)}
-      .tier-row h3{font-size:min(12.4vw,64px)}
-      .tier-row p{grid-column:2}
+      .step{grid-template-columns:40px minmax(0,1fr);align-items:start}
+      .step p{grid-column:2}
+      .step h3{font-size:min(12.6vw,64px);padding-left:calc(var(--i) * 3.2vw)}
+      .stair::before{left:19px}
+      .step .dot,.scale .dot{margin-left:12px;margin-top:18px;align-self:start}
+      .scale{grid-template-columns:40px minmax(0,1fr)}
     }
 
     /* ============ 3 · FACELESS: the one dark moment ============ */
-    .faceless{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--e-ink);color:#F6EFEA}
-    .faceless-photo{position:relative;margin:0;min-height:520px}
+    .faceless{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);background:var(--e-ink);color:#F6EFEA}
+    .faceless-photo{position:relative;margin:0;min-height:600px;overflow:hidden}
     .faceless-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
-    .faceless-copy{padding:clamp(56px,8vw,112px) max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut))) clamp(56px,8vw,112px) clamp(28px,5vw,80px)}
-    .faceless h2{font-size:clamp(40px,5.2vw,76px);line-height:.98;letter-spacing:-.035em;margin:0 0 22px;color:#fff}
-    .faceless .e-lede{color:rgba(246,239,234,.82);margin-bottom:34px}
+    .faceless-photo figcaption{position:absolute;left:0;top:0;background:var(--e-ink);padding:0 18px 12px 0;max-width:80%}
+    .faceless-photo figcaption .e-credit{color:rgba(246,239,234,.72)}
+    .faceless-photo figcaption .e-credit b{color:var(--e-bubble)}
+    .faceless-copy{padding:clamp(64px,9vw,128px) max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut))) clamp(64px,9vw,128px) clamp(28px,5vw,88px);display:flex;flex-direction:column;justify-content:center}
     .faceless .e-kick{color:var(--e-bubble)}
-    .refuse-h{font-family:var(--e-sans);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-bubble);margin:0 0 6px}
-    .refuse{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.2)}
-    .refuse li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2)}
-    .refuse strong{font-family:var(--e-serif);font-weight:600;font-size:22px;line-height:1.2;color:#fff}
-    .refuse span{font-size:15px;line-height:1.55;color:rgba(246,239,234,.78)}
+    .faceless h2{font-size:clamp(44px,5.8vw,88px);line-height:.94;letter-spacing:-.04em;margin:0 0 26px;color:#fff}
+    .faceless h2 em{color:var(--e-bubble)}
+    .faceless .e-lede{color:rgba(246,239,234,.8);margin-bottom:44px;max-width:30em}
+    .refuse-h{font-family:var(--e-sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,239,234,.6);margin:0 0 8px}
+    .refuse{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.22)}
+    .refuse li{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+    .refuse strong{font-family:var(--e-serif);font-weight:600;font-size:21px;line-height:1.2;color:#fff;text-decoration:line-through;text-decoration-color:var(--e-pink);text-decoration-thickness:2px}
+    .refuse span{font-size:14.5px;line-height:1.55;color:rgba(246,239,234,.74)}
     @media(max-width:900px){
       .faceless{grid-template-columns:1fr}
-      .faceless-photo{min-height:0;aspect-ratio:3/2}
-      .faceless-copy{padding:48px var(--e-gut) 56px}
+      .faceless-photo{min-height:0;aspect-ratio:4/3}
+      .faceless-copy{padding:52px var(--e-gut) 60px}
       .refuse li{grid-template-columns:1fr;gap:4px}
     }
 
-    /* ============ 4 · THE SHOWROOM: proof by inspection ============ */
-    .show-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+    /* ============ 4 · THE SHOWROOM: exhibits ============ */
+    .show-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
     .show-head .e-d2{margin:0}
-    .show-head p{margin:0;color:var(--e-ink-2);font-size:17px}
-    .rooms{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+    .show-head p{margin:0;color:var(--e-ink-2);font-size:16.5px;max-width:30em}
+    .rooms{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(18px,2.2vw,32px)}
     .rooms li{grid-column:span 2;min-width:0}
     .rooms li:nth-child(1){grid-column:span 4;grid-row:span 2}
-    .room{display:flex;flex-direction:column;height:100%;background:var(--e-white);border:1px solid var(--e-line);border-radius:6px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
-    .room:hover{transform:translateY(-3px);box-shadow:var(--e-lift)}
-    .shot{position:relative;margin:0;background:var(--e-paper);border-bottom:1px solid var(--e-line)}
-    .shot .bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#F1EAE3;border-bottom:1px solid var(--e-line);font-size:11.5px;color:var(--e-ink-3);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .shot .bar i{width:8px;height:8px;border-radius:50%;background:rgba(26,20,23,.18);flex:none}
-    .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;display:block}
-    .rooms li:nth-child(1) .shot img{aspect-ratio:16/11}
-    .room-body{padding:20px 22px 20px;display:flex;flex-direction:column;flex:1}
-    .room-body .k{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-pink-t);margin-bottom:8px}
-    .room-body h3{font-size:22px;line-height:1.15;margin:0 0 8px}
-    .rooms li:nth-child(1) .room-body h3{font-size:clamp(26px,2.6vw,34px)}
-    .room-body p{font-size:15px;line-height:1.55;color:var(--e-ink-2);margin:0 0 14px;flex:1}
-    .room-body .go{font-size:14px;font-weight:700;color:var(--e-pink-t)}
-    @media(max-width:1020px){.rooms{grid-template-columns:repeat(2,minmax(0,1fr))}.rooms li,.rooms li:nth-child(1){grid-column:span 1;grid-row:auto}.rooms li:nth-child(1){grid-column:1/-1}}
+    .rooms li:nth-child(5){transform:translateY(clamp(0px,2.4vw,36px))}
+    .room{display:flex;flex-direction:column;height:100%}
+    .room .e-artifact figcaption{flex-direction:column;gap:2px}
+    .room .e-artifact figcaption span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+    .rooms li:nth-child(1) .e-artifact figcaption{flex-direction:row}
+    .room .e-art-img img{aspect-ratio:16/10;object-fit:cover;object-position:top center}
+    .rooms li:nth-child(1) .e-art-img img{aspect-ratio:16/11}
+    .room-body{padding:16px 2px 0;display:flex;flex-direction:column}
+    .room-body h3{font-size:22px;line-height:1.15;margin:0 0 6px;transition:color .2s}
+    .rooms li:nth-child(1) .room-body h3{font-size:clamp(28px,2.8vw,38px)}
+    .room-body p{font-size:15px;line-height:1.55;color:var(--e-ink-2);margin:0 0 10px;max-width:34em}
+    .room-body .go{font-size:13.5px;font-weight:700;color:var(--e-pink-t);display:inline-flex;gap:6px;align-items:center}
+    .room-body .go .ar{transition:transform .25s}
+    .room:hover h3{color:var(--e-pink-t)}
+    .room:hover .go .ar{transform:translateX(4px)}
+    @media(max-width:1020px){.rooms{grid-template-columns:repeat(2,minmax(0,1fr))}.rooms li,.rooms li:nth-child(1){grid-column:span 1;grid-row:auto}.rooms li:nth-child(1){grid-column:1/-1}.rooms li:nth-child(5){transform:none}}
     @media(max-width:620px){.rooms{grid-template-columns:minmax(0,1fr)}.show-head{grid-template-columns:1fr}}
 
     /* ============ 5 · THE FLAGSHIP: product editorial ============ */
-    .flag{background:var(--e-white);border-top:1px solid var(--e-line);border-bottom:1px solid var(--e-line)}
-    .flag-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(32px,6vw,96px);align-items:start}
-    .flag-fig{margin:0;position:sticky;top:96px}
-    .flag-fig .e-figure{aspect-ratio:4/5}
-    .flag-fig .e-figure img{object-position:40% 50%}
-    .flag h2{font-size:clamp(38px,4.8vw,66px);line-height:1;letter-spacing:-.035em;margin:0 0 20px}
-    .flag .for{font-size:17px;color:var(--e-ink-2);margin:0 0 30px;max-width:34em}
+    .flag{background:var(--e-white);border-top:1px solid var(--e-line);border-bottom:1px solid var(--e-line);overflow:hidden}
+    .flag-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,104px);align-items:start}
+    .flag-visual{position:relative;padding-bottom:clamp(90px,11vw,170px)}
+    .flag-visual .photo{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--e-paper)}
+    .flag-visual .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+    .flag-visual .e-artifact{position:absolute;right:clamp(-72px,-5vw,-16px);bottom:0;width:min(62%,380px)}
+    .flag-visual .credit{margin:14px 0 0;max-width:36%}
+    .flag h2{font-size:clamp(40px,5vw,72px);line-height:.98;letter-spacing:-.04em;margin:0 0 22px}
+    .flag .for{font-size:17px;color:var(--e-ink-2);margin:0 0 36px;max-width:32em}
     .flag .for strong{color:var(--e-ink);font-weight:600}
-    .ba{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--e-line);border-radius:6px;overflow:hidden;margin:0 0 28px}
-    .ba > div{padding:22px 22px 20px}
-    .ba > div + div{background:var(--e-blush);border-left:1px solid var(--e-line)}
-    .ba h3{font-family:var(--e-sans);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 12px}
-    .ba ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px;line-height:1.5;color:var(--e-ink-2)}
-    .evidence{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--e-ink);border-bottom:1px solid rgba(26,20,23,.18);margin:0 0 30px}
-    .evidence div{padding:16px 10px 16px 0}
-    .evidence b{display:block;font-family:var(--e-serif);font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--e-ink);letter-spacing:-.02em}
-    .evidence span{display:block;font-size:12.5px;line-height:1.4;color:var(--e-ink-2);margin-top:6px}
-    .buy{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin:0 0 34px}
-    .buy .e-price{font-size:clamp(48px,5vw,64px);color:var(--e-pink)}
-    .buy .terms{font-size:14.5px;line-height:1.5;color:var(--e-ink-2)}
+    .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(12px,2vw,28px);align-items:start;margin:0 0 36px;padding:26px 0;border-top:1px solid var(--e-ink);border-bottom:1px solid rgba(26,20,23,.16)}
+    .ba h3{font-size:clamp(28px,2.6vw,36px);line-height:1;margin:0 0 4px}
+    .ba .when{display:block;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-ink-3);margin-bottom:14px}
+    .ba > div + div + div h3{color:var(--e-pink)}
+    .ba .arrow{align-self:center;font-family:var(--e-serif);font-size:40px;color:var(--e-pink);line-height:1}
+    .ba ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px;line-height:1.45;color:var(--e-ink-2)}
+    .evidence{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 34px;padding:0;list-style:none;font-size:13px;color:var(--e-ink-3)}
+    .evidence b{font-family:var(--e-serif);font-weight:600;font-size:20px;color:var(--e-ink);margin-right:5px}
+    .buy{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin:0 0 30px}
+    .buy .e-price{font-size:clamp(56px,5.6vw,80px);color:var(--e-pink);margin:0}
+    .buy .terms{font-size:14.5px;line-height:1.5;color:var(--e-ink-2);margin:0}
     .buy .terms b{color:var(--e-ink);font-weight:600}
-    .quote{margin:0;padding:26px 0 0;border-top:1px solid rgba(200,169,106,.6)}
+    .quote{margin:36px 0 0;padding:28px 0 0;border-top:1px solid rgba(200,169,106,.6)}
     .quote blockquote{margin:0 0 14px;font-family:var(--e-serif);font-weight:600;font-size:clamp(19px,1.7vw,22px);line-height:1.45;color:var(--e-ink)}
     .quote blockquote::before{content:"“";color:var(--e-pink);margin-right:2px}
     .quote blockquote::after{content:"”";color:var(--e-pink)}
     .quote figcaption{font-size:13.5px;color:var(--e-ink-2)}
     .quote figcaption strong{color:var(--e-ink);font-weight:600;margin-right:10px}
     .quote .stars{color:var(--e-pink);letter-spacing:3px;margin-left:10px}
-    @media(max-width:900px){.flag-grid{grid-template-columns:1fr}.flag-fig{position:relative;top:0}.flag-fig .e-figure{aspect-ratio:3/2}.evidence{grid-template-columns:1fr 1fr}.buy .e-btn{width:100%}}
-    @media(max-width:520px){.ba{grid-template-columns:1fr}.ba > div + div{border-left:0;border-top:1px solid var(--e-line)}}
+    @media(max-width:900px){.flag-grid{grid-template-columns:1fr}.flag-visual{max-width:560px}.flag-visual .e-artifact{right:-6px;width:60%}.flag-visual .credit{display:none}.flag-visual{padding-bottom:110px}.buy .e-btn,.flag .e-actions .e-btn{width:100%}}
+    @media(max-width:520px){.ba{grid-template-columns:1fr}.ba .arrow{transform:rotate(90deg);justify-self:start}}
 
     /* ============ 6 · FIT: where to start ============ */
+    .fit-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
+    .fit-head .e-d2{margin:0}
+    .fit-head p{margin:0;color:var(--e-ink-2)}
     .fit{width:100%;border-collapse:collapse;text-align:left}
-    .fit th,.fit td{padding:20px 18px;border-bottom:1px solid rgba(26,20,23,.14);vertical-align:top}
-    .fit thead th{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-ink-3);border-bottom:1px solid var(--e-ink);padding-top:0}
-    .fit tbody th{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,1.9vw,24px);line-height:1.2;color:var(--e-ink);width:30%}
+    .fit th,.fit td{padding:22px 18px;border-bottom:1px solid rgba(26,20,23,.14);vertical-align:top}
+    .fit thead th{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-ink-3);border-bottom:1px solid var(--e-ink);padding-top:0}
+    .fit tbody th{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,1.9vw,25px);line-height:1.2;color:var(--e-ink);width:30%}
     .fit td{font-size:15.5px;line-height:1.55;color:var(--e-ink-2)}
-    .fit .p{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-ink);white-space:nowrap}
+    .fit .p{font-family:var(--e-serif);font-weight:600;font-size:24px;color:var(--e-ink);white-space:nowrap}
     .fit .p small{display:block;font-family:var(--e-sans);font-size:12.5px;font-weight:500;color:var(--e-ink-3);white-space:normal;margin-top:4px}
     .fit tr.hl th,.fit tr.hl td{background:var(--e-blush)}
     .fit a{font-weight:700;color:var(--e-pink-t);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(184,36,95,.4);display:inline-flex;min-height:44px;align-items:center}
     @media(max-width:760px){
+      .fit-head{grid-template-columns:1fr}
       .fit thead{display:none}
       .fit,.fit tbody,.fit tr,.fit th,.fit td{display:block;width:100%}
       .fit tr{border-bottom:1px solid rgba(26,20,23,.18);padding:18px 0}
@@ -263,42 +301,58 @@ const jsonLd = {
       .fit tr.hl th,.fit tr.hl td{background:transparent}
     }
 
-    /* ============ 7 · MEMBERSHIP: choose your room ============ */
-    .mem-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--e-ink);border-radius:6px;overflow:hidden;background:var(--e-white)}
-    .mem-grid article{padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column}
-    .mem-grid article + article{border-left:1px solid var(--e-ink);background:var(--e-cream)}
-    .mem-grid .who{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 12px}
-    .mem-grid h3{font-size:clamp(26px,2.6vw,34px);line-height:1.1;margin:0 0 10px}
-    .mem-grid .sell{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,1.8vw,23px);line-height:1.3;color:var(--e-ink);margin:0 0 20px}
-    .mem-grid .e-price{font-size:46px;color:var(--e-pink)}
+    /* ============ 7 · MEMBERSHIP: two rooms, visibly different ============ */
+    .mem-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,5vw,52px)}
+    .mem-head .e-d2{margin:0}
+    .mem-head p{margin:0;color:var(--e-ink-2)}
+    .mem-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:stretch}
+    .mem-grid article{padding:clamp(30px,3.6vw,52px);display:flex;flex-direction:column}
+    .mem-grid .std{background:var(--e-white);border:1px solid rgba(26,20,23,.16);border-right:0;margin:clamp(0px,2.4vw,32px) 0}
+    .mem-grid .prm{background:var(--e-ink);color:#F6EFEA}
+    .mem-grid .who{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 14px}
+    .mem-grid .prm .who{color:var(--e-bubble)}
+    .mem-grid h3{font-size:clamp(34px,3.4vw,50px);line-height:1;letter-spacing:-.035em;margin:0 0 10px}
+    .mem-grid .prm h3{color:#fff}
+    .mem-grid .prm h3 em{color:var(--e-bubble)}
+    .mem-grid .name{font-size:14px;color:var(--e-ink-2);margin:0 0 24px}
+    .mem-grid .prm .name{color:rgba(246,239,234,.72)}
+    .mem-grid .e-price{font-size:48px;color:var(--e-pink);margin:0}
+    .mem-grid .prm .e-price{color:#fff}
     .mem-grid .e-price small{font-family:var(--e-sans);font-size:15px;font-weight:600;color:var(--e-ink-2);letter-spacing:0}
-    .mem-grid .alt{font-size:14px;color:var(--e-ink-2);margin:8px 0 20px}
-    .mem-grid .e-list{margin:0 0 26px;font-size:15px;color:var(--e-ink-2)}
+    .mem-grid .prm .e-price small{color:rgba(246,239,234,.72)}
+    .mem-grid .alt{font-size:14px;color:var(--e-ink-2);margin:8px 0 24px}
+    .mem-grid .prm .alt{color:rgba(246,239,234,.72)}
+    .mem-grid .e-list{margin:0 0 30px;font-size:15px;color:var(--e-ink-2)}
+    .mem-grid .prm .e-list{color:rgba(246,239,234,.86)}
+    .mem-grid .prm .e-list li::before{background:var(--e-bubble)}
     .mem-grid .e-btn{margin-top:auto;align-self:flex-start}
-    @media(max-width:780px){.mem-grid{grid-template-columns:1fr}.mem-grid article + article{border-left:0;border-top:1px solid var(--e-ink)}.mem-grid .e-btn{width:100%}}
+    @media(max-width:780px){.mem-head{grid-template-columns:1fr}.mem-grid{grid-template-columns:1fr}.mem-grid .std{border-right:1px solid rgba(26,20,23,.16);border-bottom:0;margin:0}.mem-grid .e-btn{width:100%}}
 
-    /* ============ 8 · LIBRARY + 9 · LETTER: quiet supporting content ============ */
+    /* ============ 8 · LIBRARY + 9 · LETTER: quiet ============ */
+    .lib-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:28px}
+    .lib-head h2{font-size:clamp(30px,3.4vw,44px);line-height:1.05;margin:0;max-width:18ch}
     .shelf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--e-ink)}
     .shelf li + li{border-left:1px solid rgba(26,20,23,.14)}
     .shelf a{display:flex;flex-direction:column;height:100%;padding:22px 20px 24px;transition:background .2s}
     .shelf a:hover{background:var(--e-white)}
-    .shelf .cat{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);margin-bottom:10px}
+    .shelf .n{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t);margin-bottom:18px}
+    .shelf .cat{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);margin-bottom:8px}
     .shelf h3{font-size:21px;line-height:1.22;margin:0 0 14px;flex:1}
     .shelf .rd{font-size:13px;color:var(--e-ink-3)}
     @media(max-width:900px){.shelf{grid-template-columns:1fr 1fr}.shelf li:nth-child(3){border-left:0}.shelf li:nth-child(n+3){border-top:1px solid rgba(26,20,23,.14)}}
     @media(max-width:520px){.shelf{grid-template-columns:1fr}.shelf li + li{border-left:0;border-top:1px solid rgba(26,20,23,.14)}}
-    .letter{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:center}
-    .letter .e-figure{aspect-ratio:4/5;max-height:520px}
+    .letter{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,6vw,96px);align-items:center}
+    .letter .e-figure{aspect-ratio:4/5;max-height:560px}
     .letter :global(.freebie-capture){margin:18px 0 0;padding:0;border:0;background:transparent}
-    .letter :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(32px,3.8vw,48px);line-height:1.04;letter-spacing:-.03em;color:var(--e-ink);margin:0 0 12px}
-    .letter :global(.fc-sub){font-size:16px;color:var(--e-ink-2);margin:0 0 20px}
+    .letter :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(34px,4.2vw,56px);line-height:1;letter-spacing:-.035em;color:var(--e-ink);margin:0 0 14px}
+    .letter :global(.fc-sub){font-size:16px;color:var(--e-ink-2);margin:0 0 22px;max-width:32em}
     .letter :global(.fc-row input){min-height:52px;border-radius:999px;border:1px solid rgba(26,20,23,.3);padding:14px 22px;font-size:16px;background:#fff}
     .letter :global(.fc-row button){min-height:52px;border-radius:999px;background:var(--e-pink);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px}
     .letter :global(.fc-row button:hover){background:var(--e-pink-t)}
     .letter :global(.fc-done){font-family:var(--e-serif);font-weight:600;font-style:normal}
     @media(max-width:820px){.letter{grid-template-columns:1fr}.letter .e-figure{aspect-ratio:3/2}.letter :global(.fc-row button){width:100%}}
 
-    @media(prefers-reduced-motion:reduce){.room,.shelf a{transition:none}.room:hover{transform:none}}
+    @media(prefers-reduced-motion:reduce){.shelf a,.room-body h3,.room-body .go .ar{transition:none}}
   </style>
 </head>
 <body class="e-page">
@@ -307,6 +361,7 @@ const jsonLd = {
   <main>
     <!-- 1 · HOOK: the cover -->
     <section class="cover" aria-labelledby="hero-h">
+      <div class="mast" aria-hidden="true"><span>The New Faceless</span><i></i><span>Build Your Business Backwards. Scale It Forward.™</span></div>
       <div class="cover-copy">
         <p class="e-kick">For women building without a personal brand</p>
         <h1 id="hero-h">Build the whole business <em>before anyone knows your name.</em></h1>
@@ -318,19 +373,19 @@ const jsonLd = {
         <ul class="cover-meta" aria-label="The business, by the numbers">
           <li><b>{community.members}</b>women in the community</li>
           <li><b>{library.guides}</b>free pillar guides</li>
-          <li><b>{WE.modules}</b>module flagship, delivered as a website</li>
+          <li><b>{WE.modules}</b>module flagship</li>
         </ul>
       </div>
       <figure class="cover-photo">
         <img src="/images/home/hero-pink-knit-desk-720.webp"
              srcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
-             sizes="(max-width: 900px) 100vw, 46vw" width="480" height="596" fetchpriority="high" decoding="async"
-             alt="The brand's AI persona in an oversized pink knit sweater, sipping a glitter pink iced coffee at a cream farmhouse desk, her laptop open beside sticky notes and wildflowers, an open window onto the garden behind her." />
-        <figcaption><span>The New Faceless</span> · this site is the case study</figcaption>
+             sizes="(max-width: 900px) 100vw, 44vw" width="480" height="596" fetchpriority="high" decoding="async"
+             alt="Tommy Kate, the brand's AI persona, in an oversized pink knit sweater, sipping a glitter pink iced coffee at a cream farmhouse desk, her laptop open beside sticky notes and wildflowers, an open window onto the garden behind her." />
+        <figcaption><span class="e-credit"><b>On the cover</b> · Tommy Kate, the brand's AI persona</span></figcaption>
       </figure>
     </section>
 
-    <!-- 2 · DIFFERENTIATION + METHOD -->
+    <!-- 2 · DIFFERENTIATION + METHOD: the staircase -->
     <section class="e-sec" id="method" aria-labelledby="method-h">
       <div class="e-wrap">
         <div class="method-head">
@@ -339,22 +394,23 @@ const jsonLd = {
             <h2 class="e-d2" id="method-h">Built Backwards. <em>The order is the method.</em></h2>
           </div>
           <p class="forwards">
-            Most people build it forwards: <s>audience</s> → <s>automation</s> → <s>funnel</s> → <s>offer</s>. That is how you end up with followers and no business.
+            <span class="fw">How most people build it</span>
+            <s>Audience</s>, then <s>automation</s>, then <s>funnel</s>, then <s>offer</s>. That is how you end up with followers and no business.
             <strong>You are not learning four topics. You are learning the sequence.</strong>
           </p>
         </div>
-        <ol class="stack">
+        <ol class="stair">
           {method.map((m, i) => (
-            <li class="tier-row">
-              <span class="n" aria-hidden="true">{m.n}</span>
-              <h3>{m.name}<span class="ord">{["First", "Second", "Third", "Last"][i]}</span></h3>
+            <li class="step" style={`--i:${i}`}>
+              <span class="dot" aria-hidden="true"></span>
+              <h3><span class="ord">{m.n} · {["First", "Second", "Third", "Last"][i]}</span><span class="w">{m.name}</span></h3>
               <p>{m.line}<b>{m.out}</b></p>
             </li>
           ))}
         </ol>
-        <div class="method-foot">
-          <p class="tl">Build Your Business Backwards. Scale It Forward.™</p>
-          <p><strong>AI + architecture.</strong> AI is the build team. The architecture is what makes it a business.</p>
+        <div class="scale">
+          <span class="dot" aria-hidden="true"></span>
+          <p><span class="tl">Build Your Business Backwards. Scale It Forward.™</span><span class="ai"><b>AI + architecture.</b> AI is the build team. The architecture is what makes it a business.</span></p>
         </div>
       </div>
     </section>
@@ -362,14 +418,15 @@ const jsonLd = {
     <!-- 3 · THE FACELESS MOMENT -->
     <section class="faceless" aria-labelledby="faceless-h">
       <figure class="faceless-photo">
-        <img src="/images/home/founder-window-seat-1000.webp"
+        <img class="e-unveil" src="/images/home/founder-window-seat-1000.webp"
              srcset="/images/home/founder-window-seat-640.webp 640w, /images/home/founder-window-seat-1000.webp 1000w"
-             sizes="(max-width: 900px) 100vw, 50vw" width="1000" height="666" loading="lazy" decoding="async"
-             alt="The brand's AI persona in a cream tee and pink sweatpants on a farmhouse window seat, laptop on her knees, a pink tumbler and lavender on the sill and open pasture outside." />
+             sizes="(max-width: 900px) 100vw, 52vw" width="1000" height="666" loading="lazy" decoding="async"
+             alt="Tommy Kate, the brand's AI persona, in a cream tee and pink sweatpants on a farmhouse window seat, laptop on her knees, a pink tumbler and lavender on the sill and open pasture outside." />
+        <figcaption><span class="e-credit"><b>Tommy Kate</b> · the brand's AI persona</span></figcaption>
       </figure>
       <div class="faceless-copy">
         <p class="e-kick">The New Faceless</p>
-        <h2 id="faceless-h">Faceless doesn't mean nobody's there.</h2>
+        <h2 id="faceless-h">Faceless doesn't mean <em>nobody's there.</em></h2>
         <p class="e-lede">It means your real face is never required. The business is built first, the brand's face is an AI persona, and everything you need to trust is on the page, open to inspect.</p>
         <p class="refuse-h">Four things I refuse to teach</p>
         <ul class="refuse">
@@ -386,22 +443,23 @@ const jsonLd = {
             <p class="e-kick">Proof by inspection</p>
             <h2 class="e-d2" id="show-h">Walk through the build. <em>Every room is open.</em></h2>
           </div>
-          <p>No income screenshots. Every article on this site started as a Skool lesson, and the course is delivered on the very site it teaches you to build. Open any room and look for yourself.</p>
+          <p>No income screenshots. Six exhibits from the business itself, each one a live page you can open right now. Every article on this site started as a Skool lesson, and the course is delivered on the very site it teaches you to build.</p>
         </div>
         <ul class="rooms">
           {rooms.map((r, i) => (
-            <li>
+            <li class="e-reveal">
               <a class="room" href={r.href}>
-                <figure class="shot">
-                  <span class="bar" aria-hidden="true"><i></i><i></i><i></i>thedigitalincomeedit.com{r.path}</span>
-                  <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
-                       loading="lazy" decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
+                <figure class="e-artifact">
+                  <div class="e-art-img">
+                    <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
+                         loading="lazy" decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
+                  </div>
+                  <figcaption><b>Exhibit {String(i + 1).padStart(2, "0")} · {r.room}</b><span>{r.path}</span></figcaption>
                 </figure>
                 <span class="room-body">
-                  <span class="k">{r.room}</span>
                   <h3>{r.t}</h3>
                   <p>{r.p}</p>
-                  <span class="go">{r.go} <span aria-hidden="true">→</span></span>
+                  <span class="go">{r.go} <span class="ar" aria-hidden="true">→</span></span>
                 </span>
               </a>
             </li>
@@ -413,40 +471,50 @@ const jsonLd = {
     <!-- 5 · THE FLAGSHIP OFFER -->
     <section class="e-sec flag" id="weekend-ecosystem" aria-labelledby="flag-h">
       <div class="e-wrap flag-grid">
-        <figure class="flag-fig">
-          <div class="e-figure">
-            <img src="/images/home/build-armchair-laptop-900.webp"
-                 srcset="/images/home/build-armchair-laptop-560.webp 560w, /images/home/build-armchair-laptop-900.webp 900w"
-                 sizes="(max-width: 900px) 100vw, 46vw" width="900" height="604" loading="lazy" decoding="async"
-                 alt="Over the shoulder of the brand's AI persona in a pink hoodie, curled in a farmhouse armchair in fuzzy socks, building on her laptop with a pink tumbler at her side." />
-          </div>
-          <figcaption class="e-cap">Built with Claude doing the building. No code, no camera.</figcaption>
-        </figure>
+        <div class="flag-visual">
+          <figure class="photo">
+            <img class="e-unveil" src="/images/home/flagship-attic-900.webp"
+                 srcset="/images/home/flagship-attic-560.webp 560w, /images/home/flagship-attic-900.webp 900w, /images/home/flagship-attic-1200.webp 1200w"
+                 sizes="(max-width: 900px) 100vw, 46vw" width="900" height="1117" loading="lazy" decoding="async"
+                 alt="Tommy Kate, the brand's AI persona, laughing in a pink gaming chair in a farmhouse attic loft, a glitter pink tumbler in her hand and her laptop open on the desk." />
+          </figure>
+          <figure class="e-artifact">
+            <div class="e-art-img">
+              <img src="/images/home/flagship-module-760.webp" srcset="/images/home/flagship-module-440.webp 440w, /images/home/flagship-module-760.webp 760w"
+                   sizes="(max-width: 900px) 72vw, 440px" width="760" height="559" loading="lazy" decoding="async"
+                   alt="A real module from the course: Phase 1, Module 5 of 22, Claude Builds the Repo, with the scaffold prompt ready to copy." />
+            </div>
+            <figcaption><b>The real interface</b><span>Module 5 of {WE.modules}</span></figcaption>
+          </figure>
+          <p class="credit e-credit"><b>Saturday afternoon</b> · Tommy Kate, mid-build</p>
+        </div>
         <div>
           <p class="e-kick">The flagship · {WE.name}</p>
           <h2 id="flag-h">Your own website and blog, <em>built in a weekend</em> from what you've already written.</h2>
           <p class="for"><strong>For you if</strong> your best writing is sitting in a Skool group, a notes app or a feed you don't own, and you want it working for you on a domain that is yours.</p>
           <div class="ba">
             <div>
-              <h3>Friday, you have</h3>
+              <span class="when">You walk in with</span>
+              <h3>Friday.</h3>
               <ul><li>Posts and lessons you already wrote</li><li>No website, or one you avoid</li><li>A list that isn't growing</li></ul>
             </div>
+            <span class="arrow" aria-hidden="true">→</span>
             <div>
-              <h3>Sunday, you have</h3>
+              <span class="when">You walk out with</span>
+              <h3>Sunday.</h3>
               <ul><li>A live site and blog on your own domain</li><li>Email capture and your offer, wired in</li><li>One prompt that turns each article into {WE.assetsPerArticle} assets</li></ul>
             </div>
           </div>
-          <div class="evidence" aria-label="What's inside">
-            <div><b>{WE.modules}</b><span>modules, as a live website</span></div>
-            <div><b>{WE.prompts}</b><span>prompts, written out in full</span></div>
-            <div><b>{WE.assetsPerArticle}</b><span>assets from each article</span></div>
-            <div><b>Free</b><span>every future update</span></div>
-          </div>
+          <ul class="evidence" aria-label="What's inside">
+            <li><b>{WE.modules}</b>modules, delivered as a website</li>
+            <li><b>{WE.prompts}</b>prompts, written out in full</li>
+            <li><b>Free</b>every future update</li>
+          </ul>
           <div class="buy">
-            <p class="e-price" style="margin:0">{WE.price}</p>
-            <p class="terms" style="margin:0"><b>One payment, or {WE.plan}.</b><br />Yours for good, updates included.</p>
+            <p class="e-price">{WE.price}</p>
+            <p class="terms"><b>One payment, or {WE.plan}.</b><br />Yours for good, updates included.</p>
           </div>
-          <div class="e-actions" style="margin-bottom:34px">
+          <div class="e-actions">
             <a class="e-btn" href={WE.url}>Build my site this weekend <span class="ar" aria-hidden="true">→</span></a>
             <a class="e-link" href={WE.preview}>See inside first, no email</a>
           </div>
@@ -461,12 +529,15 @@ const jsonLd = {
     <!-- 6 · FIT: where to start -->
     <section class="e-sec" id="start" aria-labelledby="fit-h">
       <div class="e-wrap">
-        <div class="e-center" style="max-width:760px;margin:0 auto clamp(32px,5vw,56px)">
-          <p class="e-kick">Where to start</p>
-          <h2 class="e-d2" id="fit-h">Three ways in. <em>Pick the one that fits today.</em></h2>
+        <div class="fit-head">
+          <div>
+            <p class="e-kick">Where to start</p>
+            <h2 class="e-d2" id="fit-h">Three ways in. <em>Pick the one that fits today.</em></h2>
+          </div>
+          <p>Free if you want the plan first. {WE.price} if you want it built this weekend. The membership if you want to keep building beside other women.</p>
         </div>
         <table class="fit">
-          <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Where to start with The Digital Income Edit™</caption>
+          <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Where to start with The Digital Income Edit™</caption>
           <thead><tr><th scope="col">If you are</th><th scope="col">Start with</th><th scope="col">It costs</th><th scope="col"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Go</span></th></tr></thead>
           <tbody>
             <tr>
@@ -495,15 +566,18 @@ const jsonLd = {
     <!-- 7 · MEMBERSHIP -->
     <section class="e-sec e-paper" id="membership" aria-labelledby="mem-h">
       <div class="e-wrap">
-        <div style="max-width:760px;margin:0 0 clamp(32px,5vw,52px)">
-          <p class="e-kick">The membership</p>
-          <h2 class="e-d2" id="mem-h">Choose your room. <em>Both start free for {M.trialDays} days.</em></h2>
+        <div class="mem-head">
+          <div>
+            <p class="e-kick">The membership</p>
+            <h2 class="e-d2" id="mem-h">Two rooms. <em>Both free for {M.trialDays} days.</em></h2>
+          </div>
+          <p>The difference is simple. In one, you build it with the system. In the other, more of the work is done for you.</p>
         </div>
         <div class="mem-grid">
-          <article>
-            <p class="who">You build it</p>
-            <h3>{M.standard.name}</h3>
-            <p class="sell">The whole build, by hand, with the room beside you.</p>
+          <article class="std">
+            <p class="who">{M.standard.short}</p>
+            <h3>You build it.</h3>
+            <p class="name">{M.standard.name}: the whole build, by hand, with the room beside you.</p>
             <p class="e-price">{M.standard.monthly}<small>/month</small></p>
             <p class="alt">or {M.standard.perYear} · {M.trial}</p>
             <ul class="e-list">
@@ -512,12 +586,12 @@ const jsonLd = {
               <li>Daily Prompts and the community, every day</li>
               <li>The Value Vault guides, bought à la carte</li>
             </ul>
-            <a class="e-btn e-btn--ghost" href={SKOOL_PLANS}>Start Standard free <span class="ar" aria-hidden="true">→</span></a>
+            <a class="e-btn" href={SKOOL_PLANS}>Start Standard free <span class="ar" aria-hidden="true">→</span></a>
           </article>
-          <article>
-            <p class="who">More of it done for you</p>
-            <h3>{M.premium.name}</h3>
-            <p class="sell">Everything in Standard, with your content month written before you sit down.</p>
+          <article class="prm">
+            <p class="who">{M.premium.short}</p>
+            <h3>It's written <em>for you.</em></h3>
+            <p class="name">{M.premium.name}: everything in Standard, with your content month written before you sit down.</p>
             <p class="e-price">{M.premium.monthly}<small>/month</small></p>
             <p class="alt">or {M.premium.perYear} · {M.trial}</p>
             <ul class="e-list">
@@ -526,27 +600,28 @@ const jsonLd = {
               <li>The Ads Edit™</li>
               <li>The Premium Vault: every Value Vault guide, already unlocked</li>
             </ul>
-            <a class="e-btn" href={SKOOL_PLANS}>Start Premium free <span class="ar" aria-hidden="true">→</span></a>
+            <a class="e-btn e-btn--light" href={SKOOL_PLANS}>Start Premium free <span class="ar" aria-hidden="true">→</span></a>
           </article>
         </div>
-        <p style="margin:22px 0 0"><a class="e-link" href="/membership">Compare the two memberships in full <span aria-hidden="true">→</span></a></p>
+        <p style="margin:24px 0 0"><a class="e-link" href="/membership">Compare the two memberships in full <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
     <!-- 8 · DEEPER CONTENT -->
     <section class="e-sec" aria-labelledby="lib-h">
       <div class="e-wrap">
-        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:28px">
-          <div style="max-width:640px">
+        <div class="lib-head">
+          <div>
             <p class="e-kick">The library</p>
-            <h2 class="e-d3" id="lib-h" style="font-size:clamp(30px,3.6vw,46px);margin:0">{cap(library.guidesWord)} pillar guides, free. <em>Start with these four.</em></h2>
+            <h2 id="lib-h">{cap(library.guidesWord)} pillar guides, free. <em>Start with these four.</em></h2>
           </div>
           <a class="e-link" href="/learn">Explore the Library <span aria-hidden="true">→</span></a>
         </div>
         <ul class="shelf">
-          {guides.map((g) => (
+          {guides.map((g, i) => (
             <li>
               <a href={`/learn/${g.slug}`}>
+                <span class="n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                 <span class="cat">{g.cat}</span>
                 <h3>{g.t}</h3>
                 <span class="rd">{g.read} read</span>
@@ -561,8 +636,8 @@ const jsonLd = {
     <section class="e-sec e-white" style="border-top:1px solid var(--e-line)" aria-label="The Weekly Edit newsletter">
       <div class="e-wrap letter">
         <div class="e-figure">
-          <img src="/images/home/sunday-journal-640.webp" srcset="/images/home/sunday-journal-640.webp 640w, /images/home/sunday-journal-1100.webp 1100w"
-               sizes="(max-width: 820px) 100vw, 40vw" width="640" height="794" loading="lazy" decoding="async"
+          <img class="e-unveil" src="/images/home/sunday-journal-640.webp" srcset="/images/home/sunday-journal-640.webp 640w, /images/home/sunday-journal-1100.webp 1100w"
+               sizes="(max-width: 820px) 100vw, 36vw" width="640" height="794" loading="lazy" decoding="async"
                alt="Hands writing in a cream journal at a sunlit desk, a pink folder, a gold pen and a small vase of blush flowers beside it." />
         </div>
         <div>
