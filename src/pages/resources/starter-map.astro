@@ -1,40 +1,159 @@
 ---
-import ResourceLayout from "../../layouts/ResourceLayout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
+import "../../styles/edit.css";
+import { membership } from "../../data/facts.js";
+
+// Canon products[] row: "$10/Day Traffic Machine" + "Starter Map", $0, Beacons.
+// The canon name carries a dash; the page sets it on two lines instead
+// (title, then "Starter Map" as a subtitle), so no punctuation is invented.
+// Beacons id is 8dcfbb25 (never 8dfcbb25).
+const BEACONS = "https://links.thedigitalincomeedit.com/shop/8dcfbb25-bc42-47b2-8490-cfa9c1a577a8";
+
+const inside = [
+  "The four-stage pipeline: ad, landing page, list, offer, and why skipping one costs you the whole budget",
+  "The four numbers that actually diagnose a failing ad, and the thirty-six you can ignore",
+  "The two rules that protect you from your own panic: the 72-hour rule and the 10 to 20% rule",
+];
 ---
-<ResourceLayout
-  title="The $10/Day Traffic Machine — Starter Map — Free Guide"
-  description="Get the free Starter Map — the entire paid traffic pipeline on one page: ad, landing page, list, offer. Fill in four boxes before you spend a dollar."
-  eyebrow="Free Resource · Automation & Paid Traffic"
-  heading="The $10/Day Traffic Machine — Starter Map"
-  lede="The entire pipeline on one page — ad, landing page, list, offer — and the four boxes you fill in before you spend a cent."
-  guideHref="/learn/automating-your-online-business"
-  guideLabel="Automating Your Online Business"
+<PageLayout
+  bare
+  title="Free Guide: The $10/Day Traffic Machine Starter Map"
+  description="The free Starter Map: the whole paid traffic pipeline on one page (ad, landing page, list, offer). Fill in four boxes before you spend a dollar."
 >
-<p>Most women who try ads lose money in the first week, and they lose it the same way: they turn on a budget before they can name what happens after the click. The ad works. The click lands somewhere that isn't ready. The money is gone and the lesson isn't.</p>
+  <!-- HERO -->
+  <section class="sm-hero" aria-labelledby="sm-h">
+    <div class="e-wrap sm-hero-grid">
+      <div class="sm-hero-copy e-rise">
+        <p class="e-kick">Free resource · Automation &amp; paid traffic</p>
+        <h1 class="e-d1" id="sm-h">The $10/Day Traffic Machine <span class="sm-sub">Starter Map</span></h1>
+        <p class="e-lede">The entire pipeline on one page (ad, landing page, list, offer) and the four boxes you fill in before you spend a cent.</p>
+        <div class="sm-cta">
+          <a class="e-btn" href={BEACONS}>Get the free Starter Map <span class="ar" aria-hidden="true">→</span></a>
+          <p class="sm-cta-note">Opens the Starter Map's download page on Beacons, the shop that delivers the file.</p>
+        </div>
+      </div>
+      <figure class="e-artifact sm-cover e-rise e-rise-2">
+        <div class="e-art-img">
+          <img
+            src="/images/pages/starter-map-cover-480.webp"
+            srcset="/images/pages/starter-map-cover-480.webp 480w, /images/pages/starter-map-cover-720.webp 720w, /images/pages/starter-map-cover-960.webp 960w"
+            sizes="(max-width: 900px) 80vw, 420px"
+            width="480" height="640" fetchpriority="high" decoding="async"
+            alt="Cover of The $10/Day Traffic Machine Starter Map: the title in large dark and pink type, a woman seen from behind holding a phone showing an ad dashboard, beside pink peonies, a coffee cup and a stack of books."
+          />
+        </div>
+        <figcaption><b>The Starter Map</b><span>Free · PDF</span></figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <p>An ad is a faucet with a dial. It doesn't build the pipe. This free guide is the pipe on one page — four boxes, in order, and you don't spend a dollar until all four have names in them.</p>
+  <!-- BODY -->
+  <section class="e-sec e-white" aria-labelledby="sm-in-h">
+    <div class="e-wrap sm-body">
+      <div class="sm-body-head">
+        <p class="e-kick">Why it exists</p>
+        <p class="sm-pull">An ad is a faucet with a dial. <em>It doesn't build the pipe.</em></p>
+      </div>
+      <div class="sm-body-copy">
+        <p>Most women who try ads lose money in the first week, and they lose it the same way: they turn on a budget before they can name what happens after the click. The ad works. The click lands somewhere that isn't ready. The money is gone and the lesson isn't.</p>
+        <p>This free guide is the pipe on one page: four boxes, in order, and you don't spend a dollar until all four have names in them.</p>
 
-  <p><strong>Inside, you'll get:</strong></p>
-  <ul>
-    <li>The four-stage pipeline — ad, landing page, list, offer — and why skipping one costs you the whole budget</li>
-    <li>The four numbers that actually diagnose a failing ad, and the thirty-six you can ignore</li>
-    <li>The two rules that protect you from your own panic: the 72-hour rule and the 10–20% rule</li>
-  </ul>
+        <h2 class="e-d3" id="sm-in-h">Inside, you'll get</h2>
+        <ul class="sm-in">
+          {inside.map((x, i) => (
+            <li><span class="sm-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><span>{x}</span></li>
+          ))}
+        </ul>
+        <div class="e-actions">
+          <a class="e-btn" href={BEACONS}>Get the free Starter Map <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <a class="btn" href="https://links.thedigitalincomeedit.com/shop/8dcfbb25-bc42-47b2-8490-cfa9c1a577a8" style="margin-top:16px">Download the Free Starter Map <span class="a">→</span></a>
+  <!-- SECONDARY: the weekly letter -->
+  <section class="e-sec-sm" aria-label="The weekly edit">
+    <div class="e-wrap sm-letter">
+      <p class="e-kick">Optional, and separate</p>
+      <FreebieForm
+        heading="Want the thinking behind it?"
+        button="Send Me the Edit"
+        sub="The Starter Map is yours above, no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
+      />
+    </div>
+  </section>
 
-  <FreebieForm
-    heading="Want the thinking behind it?"
-    button="Send Me the Edit"
-    sub="The Starter Map is yours above — no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
-  />
+  <!-- NEXT -->
+  <section class="e-sec e-paper" aria-labelledby="sm-next-h">
+    <div class="e-wrap">
+      <p class="e-kick">Then keep going</p>
+      <h2 class="e-d3" id="sm-next-h">Where to go next.</h2>
+      <ul class="sm-next">
+        <li>
+          <h3>Build the pipe before you turn on the faucet.</h3>
+          <p>The Faceless Income Blueprint™ is the machine the ad is pointing at, on one page.</p>
+          <a class="e-link" href="/resources/faceless-income-blueprint">Get the Blueprint <span aria-hidden="true">→</span></a>
+        </li>
+        <li>
+          <h3>Run ads without guessing.</h3>
+          <p>The Ads Edit™ comes with Membership Premium at {membership.premium.perMonth}: what to spend, what to read, and when to leave it alone.</p>
+          <a class="e-link" href="/membership">See what's inside <span aria-hidden="true">→</span></a>
+        </li>
+        <li>
+          <h3>The full system.</h3>
+          <p>The long guide the Starter Map sits inside, with every stage explained in order.</p>
+          <a class="e-link" href="/learn/automating-your-online-business">Automating Your Online Business <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+      <p class="sm-back"><a class="e-link" href="/resources"><span aria-hidden="true">←</span> All free resources</a></p>
+    </div>
+  </section>
+</PageLayout>
 
-  <div class="freebie-next">
-    <p><strong>Then keep going:</strong></p>
-    <ul>
-      <li><strong>Build the pipe before you turn on the faucet.</strong> The Faceless Income Blueprint™ is the machine the ad is pointing at, on one page. <a href="/resources/faceless-income-blueprint">Get the Blueprint →</a></li>
-      <li><strong>Run ads without guessing.</strong> The Ads Edit™ comes with Membership Premium at $35/month — what to spend, what to read, and when to leave it alone. <a href="/membership">See what's inside →</a></li>
-    </ul>
-  </div>
-</ResourceLayout>
+<style>
+  .sm-hero{padding:clamp(48px,7vw,104px) 0 clamp(64px,8vw,112px)}
+  .sm-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center}
+  .sm-hero .e-d1{font-size:clamp(42px,5.6vw,84px);max-width:11ch}
+  .sm-sub{display:block;margin-top:.2em;font-size:max(26px,.5em);line-height:1.1;letter-spacing:-.02em;color:var(--e-pink)}
+  .sm-cta .e-btn{min-width:min(100%,320px)}
+  .sm-cta-note{font-size:14px;color:var(--e-ink-3);margin:12px 0 0}
+  .sm-cover{max-width:420px;justify-self:end;width:100%}
+  .sm-cover figcaption span{font-size:11.5px}
+
+  .sm-body{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,104px);align-items:start}
+  .sm-body-head{position:sticky;top:112px}
+  .sm-pull{font-family:var(--e-serif);font-weight:600;font-size:clamp(30px,3.6vw,50px);line-height:1.06;letter-spacing:-.03em;color:var(--e-ink);margin:0}
+  .sm-pull em{font-style:normal;color:var(--e-pink);display:block}
+  .sm-body-copy > p{font-size:17.5px;line-height:1.75;color:var(--e-ink-2);margin:0 0 20px;max-width:36em}
+  .sm-body-copy h2{margin:44px 0 16px}
+  .sm-in{list-style:none;margin:0 0 36px;padding:0;border-top:1px solid var(--e-ink)}
+  .sm-in li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-bottom:1px solid var(--e-line);font-size:16.5px;line-height:1.6;color:var(--e-ink-2)}
+  .sm-n{font-family:var(--e-serif);font-weight:600;font-size:22px;line-height:1.2;color:var(--e-pink-t)}
+
+  .sm-letter{max-width:760px}
+  .sm-letter :global(.freebie-capture){background:var(--e-white);border:1px solid var(--e-line);border-top:1px solid var(--e-gold);border-radius:6px;padding:clamp(24px,3.4vw,36px);margin:0}
+  .sm-letter :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--e-ink);margin:0 0 8px}
+  .sm-letter :global(.fc-sub){font-size:15px;line-height:1.6;color:var(--e-ink-2);margin:0 0 20px}
+  .sm-letter :global(.fc-row input){min-height:52px;border:1px solid rgba(26,20,23,.28);border-radius:999px;padding:14px 22px}
+  .sm-letter :global(.fc-row button){min-height:52px;border-radius:999px;background:transparent;color:var(--e-ink);border:1px solid rgba(26,20,23,.45);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px}
+  .sm-letter :global(.fc-row button:hover){background:var(--e-ink);color:#fff;border-color:var(--e-ink)}
+  .sm-letter :global(.fc-done){font-family:var(--e-serif);font-weight:600;color:var(--e-pink-t)}
+
+  .sm-next{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .sm-next li{display:flex;flex-direction:column;border-top:var(--e-hair);padding-top:20px}
+  .sm-next h3{font-size:22px;line-height:1.2;margin:0 0 8px}
+  .sm-next p{font-size:15.5px;color:var(--e-ink-2);margin:0 0 8px}
+  .sm-next .e-link{margin-top:auto}
+  .sm-back{margin:48px 0 0}
+
+  @media (max-width:900px){
+    .sm-hero-grid,.sm-body{grid-template-columns:1fr}
+    .sm-cover{justify-self:start;max-width:340px}
+    .sm-body-head{position:static}
+    .sm-next{grid-template-columns:1fr;gap:8px}
+  }
+  @media (max-width:640px){
+    .sm-cta .e-btn,.sm-body .e-actions .e-btn{width:100%}
+  }
+</style>

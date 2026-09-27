@@ -1,41 +1,43 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { membership as M } from "../data/facts.js";
+import "../styles/edit.css";
+import { membership as M, word } from "../data/facts.js";
+
+// Annual plans expressed as "months' price for twelve", computed from facts.js
+// so the sentence can never drift from the prices beside it.
+const n = (s) => Number(String(s).replace(/[^0-9.]/g, ""));
+const monthsFor = (t) => {
+  const r = Math.round((n(t.annual) / n(t.monthly)) * 2) / 2;
+  return Number.isInteger(r) ? word(r) : `${word(Math.floor(r))} and a half`;
+};
 
 const groups = [
   {
     label: "Buying",
-    ac: "#CBB7F7",
     qs: [
       { q: "Do you offer refunds?",
-        a: "On digital products, no. Everything in the shop is delivered instantly, so all sales are final — guides, courses, template packs and the PLR vault. That's standard across digital products, mine and everyone else's. Read the page before you buy, and if you're unsure whether something fits where you are, email me first and I'll tell you honestly. Two things work differently: the membership, and BAMI. Both are below." },
+        a: "On digital products, no. Everything in the shop is delivered instantly, so all sales are final: guides, courses, template packs and the PLR vault. That's standard across digital products, mine and everyone else's. Read the page before you buy, and if you're unsure whether something fits where you are, email me first and I'll tell you honestly. The membership works differently, and it's below." },
       { q: "What about the membership?",
         a: `Different, because it's a subscription rather than a purchase. Both start with a ${M.trial} and you can cancel from inside the app at any time. Cancelling stops the next payment; it doesn't refund one you've already made.` },
-      { q: "Does BAMI have a guarantee?",
-        a: "Yes, and it's the one exception. If within 21 days of your cohort start date you've submitted your completed Phase I business asset and you decide BAMI isn't right for you, email me and your payment is refunded in full within 10 business days. No explanation needed, and it won't count against you if you apply for a later cohort. The Phase I submission is the condition — Phase I is where you settle your identity, your model and your customer, so if you've done that and it still isn't right, it genuinely isn't. Without a submission there's nothing to assess, and the refund comes out of a seat someone else wanted. On a payment plan, any instalment already taken is returned and the rest are cancelled. If I cancel or move a cohort, you choose a full refund or a seat in the next one at the price you paid." },
       { q: "Where do I get what I bought?",
         a: "Checkout runs through Beacons, and your files arrive by email at the address you paid with. If nothing appears, check spam first, then email me and I'll resend it." },
     ],
   },
   {
     label: "The membership",
-    ac: "#CF80C2",
     qs: [
       { q: "What's the difference between Standard and Premium?",
-        a: `Standard at ${M.standard.monthly} a month teaches you to build it and sell it — the full education library, brand and content training, and Pinterest Foundations™. Premium at ${M.premium.monthly} adds the monthly done-for-you content calendar, The Ads Edit™, the offer and funnel training, and the Premium Vault.` },
+        a: `Standard at ${M.standard.monthly} a month teaches you to build it and sell it: the full education library, brand and content training, and Pinterest Foundations™. Premium at ${M.premium.monthly} adds the monthly done-for-you content calendar, The Ads Edit™, the offer and funnel training, and the Premium Vault.` },
       { q: "Can I pay yearly?",
-        a: `Yes. Standard is ${M.standard.annual} for the year and Premium is ${M.premium.annual}, both billed once. That's roughly eleven months' price for twelve on Standard and eight and a half for twelve on Premium. The ${M.trial} applies either way, and annual plans renew annually rather than monthly.` },
-      { q: "Is there a free tier?",
-        a: `Not any more. There's a ${M.trial} on either tier instead.` },
+        a: `Yes. Standard is ${M.standard.annual} for the year and Premium is ${M.premium.annual}, both billed once. That's roughly ${monthsFor(M.standard)} months' price for twelve on Standard and ${monthsFor(M.premium)} for twelve on Premium. The ${M.trial} applies either way, and annual plans renew annually rather than monthly.` },
+      { q: "Is there a free plan?",
+        a: `No. There's a ${M.trial} on either tier instead.` },
       { q: "Three things have \"vault\" in the name. Which is which?",
-        a: "The Value Vault is the guide collection inside the membership. The Premium Vault is that same collection fully unlocked, included with Premium. Pretty & Paid PLR Vault™ is a separate $11 a month subscription for products you rebrand and resell — it isn't part of either membership." },
-      { q: "Is BAMI included?",
-        a: "No. The Business Architect Mentorship Intensive™ is separate and by application only." },
+        a: "The Value Vault is the guide collection inside the membership. The Premium Vault is that same collection fully unlocked, included with Premium. Pretty & Paid PLR Vault™ is a separate $11 a month subscription for products you rebrand and resell. It isn't part of either membership." },
     ],
   },
   {
     label: "Affiliate links",
-    ac: "#D4498D",
     qs: [
       { q: "Some products here aren't yours. How does that work?",
         a: "Anything marked Recommended · Not mine was built by someone else. I earn a commission if you buy through my link, at no extra cost to you. Those products carry their own prices set by their owners, which can change without notice, and their own delivery and support." },
@@ -45,72 +47,115 @@ const groups = [
   },
   {
     label: "The work itself",
-    ac: "#D62E73",
     qs: [
       { q: "Do I have to show my face?",
-        a: "No. Nothing taught here requires it. Faceless doesn't mean nobody's there — it means your real face is never the thing being sold." },
+        a: "No. Nothing taught here requires it. Faceless doesn't mean nobody's there. It means your real face is never the thing being sold." },
       { q: "Do I need an audience to start?",
-        a: "No, and starting without one is the point. The order taught here is offer first, then funnel, then automation, then audience — because building the audience first is what leaves people with two years of content and nothing underneath it." },
+        a: "No, and starting without one is the point. The order taught here is offer first, then funnel, then automation, then audience, because building the audience first is what leaves people with two years of content and nothing underneath it." },
       { q: "How much time does this actually take?",
-        a: "Depends what you're building. The Weekend Ecosystem™ is designed to be finished in two days. The membership moves at whatever pace you set. BAMI assumes four focused hours a week across twelve weeks." },
+        a: "Depends what you're building. The Weekend Ecosystem™ is designed to be finished in two days. The membership moves at whatever pace you set." },
       { q: "Do I need to be technical?",
-        a: "No. AI does the heavy construction throughout — you make the decisions." },
+        a: "No. AI does the heavy construction throughout. You make the decisions." },
     ],
   },
 ];
+
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 ---
 <PageLayout
-  wide
+  bare
   title="Questions"
   description="Refunds, delivery, membership tiers, affiliate links, and how the work actually runs at The Digital Income Edit™."
 >
-  <section class="fq-hero">
-    <div class="page-eyebrow">Questions</div>
-    <h1>The things worth<br /><em>knowing first.</em></h1>
-    <p class="fq-lede">Buying, billing, what's included where, and how the affiliate side works. If yours isn't here, email me.</p>
+  <!-- HERO -->
+  <section class="fq-hero" aria-labelledby="fq-h">
+    <div class="e-wrap fq-hero-grid">
+      <div class="e-rise">
+        <p class="e-kick">Questions</p>
+        <h1 class="e-d1" id="fq-h">The things worth <em>knowing first.</em></h1>
+      </div>
+      <div class="fq-hero-side e-rise e-rise-2">
+        <p class="e-lede">Buying, billing, what's included where, and how the affiliate side works. If yours isn't here, email me.</p>
+        <nav aria-label="Question topics">
+          <ol class="fq-toc">
+            {groups.map((g, i) => (
+              <li><a href={`#${slug(g.label)}`}><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>{g.label}</a></li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+    </div>
   </section>
 
-  {groups.map((g) => (
-    <section class="fq-block" style={`--ac:${g.ac}`}>
-      <h2>{g.label}</h2>
-      <div class="fq-list">
-        {g.qs.map((item) => (
-          <div class="fq-q">
-            <h3>{item.q}</h3>
-            <p>{item.a}</p>
-          </div>
-        ))}
+  {groups.map((g, i) => (
+    <section class={`fq-block ${i % 2 === 0 ? "e-white" : ""}`} id={slug(g.label)} aria-labelledby={`${slug(g.label)}-h`}>
+      <div class="e-wrap fq-grid">
+        <div class="fq-label">
+          <p class="e-credit"><b>{String(i + 1).padStart(2, "0")}</b> · of {groups.length}</p>
+          <h2 class="e-d3" id={`${slug(g.label)}-h`}>{g.label}</h2>
+        </div>
+        <div class="fq-list">
+          {g.qs.map((item) => (
+            <div class="fq-q">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   ))}
 
-  <section class="fq-block fq-close">
-    <h2>Still stuck?</h2>
-    <p class="fq-sublead">Email me and a person answers — <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
+  <!-- CLOSE -->
+  <section class="e-sec fq-close" aria-labelledby="fq-close-h">
+    <div class="e-wrap fq-grid">
+      <div class="fq-label">
+        <p class="e-kick">Contact</p>
+      </div>
+      <div>
+        <h2 class="e-d2" id="fq-close-h">Still stuck?</h2>
+        <p class="fq-sublead">Email me and a person answers.</p>
+        <p class="fq-mail"><a class="e-link" href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
+        <p class="fq-back"><a class="e-link" href="/learn"><span aria-hidden="true">←</span> Back to The Library</a></p>
+      </div>
+    </div>
   </section>
-
-  <p class="fq-back"><a href="/learn">← Back to The Library</a></p>
-
-  <style>
-    .fq-hero{text-align:center;padding:10px 0 48px}
-    .fq-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
-    .fq-hero h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(40px,7vw,74px);line-height:1.02;letter-spacing:-2px;margin:0 0 24px;color:var(--choc)}
-    .fq-hero h1 em{font-style:italic;color:var(--pink)}
-    .fq-lede{max-width:600px;margin:0 auto;font-family:Newsreader,serif;font-style:italic;font-size:24px;line-height:1.5;color:var(--choc-mute)}
-
-    .fq-block{padding:56px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .fq-block h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(26px,4vw,38px);line-height:1.08;
-                 margin:0 0 8px;letter-spacing:-.8px;color:var(--choc);text-align:center}
-    .fq-list{max-width:700px;margin:22px auto 0}
-    .fq-q{padding:24px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .fq-q h3{font-family:Newsreader,serif;font-weight:400;font-size:20px;margin:0 0 9px;line-height:1.28;color:var(--choc)}
-    .fq-q p{font-size:16.5px;line-height:1.75;margin:0;color:var(--choc-mute)}
-
-    .fq-close{text-align:center}
-    .fq-sublead{font-size:17.5px;line-height:1.75;color:var(--choc-mute);max-width:600px;margin:0 auto}
-    .fq-sublead a{color:var(--pink);font-weight:500}
-    .fq-back{margin-top:58px;text-align:center}
-    .fq-back a{color:var(--pink);font-weight:500}
-    @media(max-width:700px){.fq-block{padding:44px 0}}
-  </style>
 </PageLayout>
+
+<style>
+  .fq-hero{padding:clamp(48px,7vw,104px) 0 clamp(56px,7vw,96px)}
+  .fq-hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,6vw,96px);align-items:end}
+  .fq-hero .e-d1{margin:0;max-width:9ch}
+  .fq-hero .e-d1 em{display:block}
+  .fq-hero .e-lede{margin:0 0 24px}
+  .fq-toc{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
+  .fq-toc li{border-bottom:1px solid var(--e-line)}
+  .fq-toc a{display:flex;align-items:center;gap:16px;min-height:48px;padding:6px 0;font-weight:600;font-size:15.5px;color:var(--e-ink);text-decoration:none;transition:color .2s}
+  .fq-toc a span{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t);min-width:22px}
+  .fq-toc a:hover{color:var(--e-pink-t)}
+
+  .fq-block{padding:clamp(56px,7vw,104px) 0;border-top:1px solid var(--e-line);scroll-margin-top:72px}
+  .fq-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,6vw,96px);align-items:start}
+  .fq-label{position:sticky;top:112px}
+  .fq-label .e-credit{margin:0 0 12px}
+  .fq-label h2{margin:0}
+  .fq-list{border-top:1px solid var(--e-ink)}
+  .fq-q{padding:26px 0 28px;border-bottom:1px solid var(--e-line)}
+  .fq-q h3{font-size:clamp(21px,2vw,25px);line-height:1.22;margin:0 0 10px}
+  .fq-q p{font-size:16.5px;line-height:1.72;color:var(--e-ink-2);margin:0;max-width:40em}
+
+  .fq-close{border-top:1px solid var(--e-line)}
+  .fq-close .e-d2{margin-bottom:12px}
+  .fq-sublead{font-size:18px;color:var(--e-ink-2);margin:0 0 6px}
+  .fq-mail{margin:0 0 36px}
+  .fq-mail .e-link{font-size:clamp(18px,2vw,22px);overflow-wrap:anywhere}
+  .fq-back{margin:0;padding-top:20px;border-top:var(--e-hair)}
+
+  @media (max-width:900px){
+    .fq-hero-grid,.fq-grid{grid-template-columns:1fr}
+    .fq-hero-grid{align-items:start}
+    .fq-label{position:static}
+    .fq-close .fq-label{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){.fq-toc a{transition:none}}
+</style>

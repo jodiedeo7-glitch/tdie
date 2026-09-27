@@ -1,185 +1,238 @@
 ---
-import SiteNav from "../../components/SiteNav.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
-import "../../styles/global.css";
-import Analytics from '@vercel/analytics/astro';
+import PageLayout from "../../layouts/PageLayout.astro";
 import FreebieForm from "../../components/FreebieForm.astro";
+import "../../styles/edit.css";
+import { membership } from "../../data/facts.js";
+
+// Pinterest Foundations™: canon products[] row, $27 one-time on Skool, also
+// included with Membership Standard (inclusion, not a ladder rung).
+const FOUNDATIONS = "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca?md=63eb80fb5d114f77870c962337a58a1b";
+const PDF = "/pinterest-keyword-planner.pdf";
+
+const inside = [
+  "The four-step keyword method, start to finish",
+  "The autocomplete check that separates real searches from guesses",
+  "A ten-slot seed word page to start from",
+  "A 50-row keyword bank, grouped into your future boards",
+];
+
+const steps = [
+  { t: "Start with seed words.", p: "The obvious phrases for your niche. Ten is plenty." },
+  { t: "Type each into the Pinterest search bar", p: "and record what autocomplete suggests. Those suggestions are real searches." },
+  { t: "Click the guided search tiles", p: "across the top of the results for more related keywords." },
+  { t: "Aim for 30-50 keywords", p: "to start. Favor specific, longer phrases over broad ones." },
+];
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <!-- Meta Pixel — dataset 1274879031402082 -->
-  <script is:inline>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1274879031402082');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" alt=""
-    src="https://www.facebook.com/tr?id=1274879031402082&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel -->
-  <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Pinterest Keyword Planner | The Digital Income Edit™</title>
-  <meta name="description" content="A free planner that takes you from seed words to a bank of 30-50 verified Pinterest keywords, grouped into the topics that become your boards." />
-  <link rel="canonical" href="https://www.thedigitalincomeedit.com/resources/pinterest-keyword-planner" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="The Pinterest Keyword Planner" />
-  <meta property="og:description" content="A free planner that takes you from seed words to a bank of 30-50 verified Pinterest keywords, grouped into the topics that become your boards." />
-  <meta property="og:url" content="https://www.thedigitalincomeedit.com/resources/pinterest-keyword-planner" />
-  <meta property="og:image" content="https://www.thedigitalincomeedit.com/og/default.jpg" />
-  <meta property="og:site_name" content="The Digital Income Edit™" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://www.thedigitalincomeedit.com/og/default.jpg" />
-  <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
-</head>
-<body class="no-js">
-  <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>
-
-  <SiteNav />
-
-  <div class="masthead reveal">
-    <span class="line"></span>
-    <span class="issue">Free Resources &nbsp;·&nbsp; <b>Pinterest</b></span>
-    <span class="line r"></span>
-  </div>
-
-  <div class="hero">
-    <span class="kicker">Free Planner</span>
-    <h1>The Pinterest Keyword Planner</h1>
-    <p class="sub">Keywords are the load-bearing wall of everything on Pinterest. This is where you build yours.</p>
-    <div class="hero-meta">
-      <span>6 Pages</span>
-      <span class="b"></span>
-      <span>Printable PDF</span>
-      <span class="b"></span>
-      <span>Free</span>
-    </div>
-  </div>
-
-  <div class="shell">
-    <aside class="rail-left"></aside>
-
-    <article class="article">
-
-      <p class="lede first">Most Pinterest accounts are flat because of a keyword problem wearing a design costume. The pins look fine. Nobody is searching the words on them.</p>
-
-      <p>This planner fixes the order of operations. You choose the keyword first, then you design the pin — never the reverse.</p>
-
-      <p>It's the worksheet system from inside Pinterest Foundations™, extracted and given away. Fill it once per content pillar and you'll never stare at a blank pin description again.</p>
-
-      <div class="box check">
-        <div class="tag"><span class="g">✦</span> What's inside</div>
-        <ul>
-          <li>The four-step keyword method, start to finish</li>
-          <li>The autocomplete check that separates real searches from guesses</li>
-          <li>A ten-slot seed word page to start from</li>
-          <li>A 50-row keyword bank, grouped into your future boards</li>
+<PageLayout
+  bare
+  title="The Pinterest Keyword Planner"
+  description="A free planner that takes you from seed words to a bank of 30-50 verified Pinterest keywords, grouped into the topics that become your boards."
+>
+  <!-- HERO -->
+  <section class="kp-hero" aria-labelledby="kp-h">
+    <div class="e-wrap kp-hero-grid">
+      <div class="kp-hero-copy e-rise">
+        <p class="e-kick">Free planner · Pinterest</p>
+        <h1 class="e-d1" id="kp-h">The Pinterest <em>Keyword Planner</em></h1>
+        <p class="e-lede">Keywords are the load-bearing wall of everything on Pinterest. This is where you build yours.</p>
+        <div class="e-actions">
+          <a class="e-btn" href={PDF} download>Download the free planner <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="kp-meta" aria-label="At a glance">
+          <li>6 pages</li><li>Printable PDF</li><li>Free</li>
         </ul>
       </div>
-
-      <div class="box action">
-        <div class="tag"><span class="g">✦</span> Yours free</div>
-        <h2>The Pinterest Keyword Planner</h2>
-        <p>Six pages. Print it, or fill it on screen. No email required — it's just yours.</p>
-        <a class="btn" href="/pinterest-keyword-planner.pdf" download>Download the Planner <span class="a">→</span></a>
-      </div>
-
-      <FreebieForm
-        heading="Want the thinking behind it?"
-        button="Send Me the Edit"
-        sub="The planner is yours above — no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
-      />
-
-      <div class="rule"><span class="d"></span></div>
-
-      <div class="chapter left reveal">
-        <div class="num">How to use it</div>
-        <div class="orn"><span class="d"></span></div>
-        <h2>Four steps, in order</h2>
-      </div>
-
-      <ol class="list">
-        <li><strong>Start with seed words.</strong> The obvious phrases for your niche. Ten is plenty.</li>
-        <li><strong>Type each into the Pinterest search bar</strong> and record what autocomplete suggests. Those suggestions are real searches.</li>
-        <li><strong>Click the guided search tiles</strong> across the top of the results for more related keywords.</li>
-        <li><strong>Aim for 30-50 keywords</strong> to start. Favor specific, longer phrases over broad ones.</li>
-      </ol>
-
-      <div class="box tip">
-        <div class="tag"><span class="g">✦</span> Verify as you go</div>
-        <p>If a keyword shows up in Pinterest's autocomplete, real people search it — keep it. If nothing comes up, skip it. However clever the phrase is.</p>
-      </div>
-
-      <div class="deeper">
-        <span>The full system —</span>
-        <a href="/learn/complete-pinterest-marketing-guide">The Complete Pinterest Marketing Guide covers account setup, pins, publishing rhythm, and the funnel →</a>
-      </div>
-
-      <div class="rule"><span class="d"></span></div>
-
-      <div class="chapter reveal">
-        <div class="num">Going further</div>
-        <div class="orn"><span class="d"></span></div>
-        <h2>When you want the turn-by-turn</h2>
-      </div>
-
-      <p>This planner is Lesson 3 of Pinterest Foundations™ — the full course this brand teaches Pinterest through, from account architecture to keyword systems to pin production, in sequence, inside the classroom.</p>
-
-      <p>Pinterest Foundations™ is $27, standalone, yours permanently. It's also included with Standard membership at $9/mo alongside the rest of the education library. Different questions, different doors — pick the one that matches yours.</p>
-
-      <p style="margin-bottom:44px"><a class="btn" href="https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca?md=63eb80fb5d114f77870c962337a58a1b" rel="noopener">See Pinterest Foundations™ <span class="a">→</span></a></p>
-
-    </article>
-
-    <aside class="rail-right">
-      <div class="rail-card">
-        <div class="eye">The Membership</div>
-        <h3>Build it with women one step ahead</h3>
-        <p>Daily prompts, start-here trainings, and the room that turns reading into building.</p>
-        <a class="btn" href="/membership" style="padding:13px 22px;font-size:11px">Explore <span class="a">→</span></a>
-      </div>
-    </aside>
-  </div>
-
-  <section class="news">
-    <div class="news-in reveal">
-      <div class="k">The Weekly Edit</div>
-      <h2>Continue learning every week</h2>
-      <p>Pinterest isn't social media. Treating it like Instagram is why yours is flat. Weekly, what it actually is.</p>
-      <a class="btn" href="https://links.thedigitalincomeedit.com/page2" rel="noopener">Subscribe <span class="a">→</span></a>
-      <div class="fine">Written for women building quietly, without a personal brand to maintain. Unsubscribe anytime.</div>
+      <figure class="kp-hero-fig e-rise e-rise-2">
+        <div class="e-figure">
+          <img
+            src="/images/pages/keyword-planner-phone-560.webp"
+            srcset="/images/pages/keyword-planner-phone-560.webp 560w, /images/pages/keyword-planner-phone-900.webp 900w"
+            sizes="(max-width: 900px) 92vw, 440px"
+            width="560" height="700" fetchpriority="high" decoding="async"
+            alt="A hand holding a phone with a pink case showing a grid of Pinterest pins, in a bright home office with a round wooden desk, pink peonies and a blush armchair."
+          />
+        </div>
+        <figcaption class="e-credit"><b>Search first</b> · then design the pin</figcaption>
+      </figure>
     </div>
   </section>
 
-  <SiteFooter />
+  <!-- ARTICLE + RAIL -->
+  <section class="e-sec e-white kp-main" aria-label="About the planner">
+    <div class="e-wrap kp-shell">
+      <article class="kp-article">
+        <p class="kp-first">Most Pinterest accounts are flat because of a keyword problem wearing a design costume. The pins look fine. Nobody is searching the words on them.</p>
+        <p>This planner fixes the order of operations. You choose the keyword first, then you design the pin, never the reverse.</p>
+        <p>It's the worksheet system from inside Pinterest Foundations™, extracted and given away. Fill it once per content pillar and you'll never stare at a blank pin description again.</p>
 
-  <script>
-    document.body.classList.remove('no-js');
-    var io = new IntersectionObserver(function (es) {
-      for (var i = 0; i < es.length; i++) {
-        if (es[i].isIntersecting) {
-          es[i].target.classList.add('in');
-          io.unobserve(es[i].target);
-        }
-      }
-    }, { threshold: 0.01, rootMargin: '0px 0px 10% 0px' });
-    var reveals = document.querySelectorAll('.reveal');
-    for (var r = 0; r < reveals.length; r++) io.observe(reveals[r]);
+        <div class="kp-inside">
+          <p class="e-credit"><b>What's inside</b></p>
+          <ul class="e-list">
+            {inside.map((x) => <li>{x}</li>)}
+          </ul>
+        </div>
 
-  </script>
-  <Analytics />
-</body>
-</html>
+        <div class="kp-action e-card e-card--line">
+          <p class="e-kick">Yours free</p>
+          <h2 class="e-d3">The Pinterest Keyword Planner</h2>
+          <p>Six pages. Print it, or fill it on screen. No email required, it's just yours.</p>
+          <a class="e-btn" href={PDF} download>Download the PDF <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="kp-letter">
+          <FreebieForm
+            heading="Want the thinking behind it?"
+            button="Send Me the Edit"
+            sub="The planner is yours above, no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
+          />
+        </div>
+
+        <div class="kp-chapter">
+          <p class="e-kick">How to use it</p>
+          <h2 class="e-d2">Four steps, <em>in order.</em></h2>
+        </div>
+
+        <ol class="kp-steps">
+          {steps.map((s, i) => (
+            <li class="e-reveal">
+              <span class="kp-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <p><strong>{s.t}</strong> {s.p}</p>
+            </li>
+          ))}
+        </ol>
+
+        <aside class="kp-tip" aria-label="Verify as you go">
+          <p class="e-credit"><b>Verify as you go</b></p>
+          <p>If a keyword shows up in Pinterest's autocomplete, real people search it: keep it. If nothing comes up, skip it. However clever the phrase is.</p>
+        </aside>
+
+        <p class="kp-deeper">
+          <span class="e-credit">The full system</span>
+          <a class="e-link" href="/learn/complete-pinterest-marketing-guide">The Complete Pinterest Marketing Guide covers account setup, pins, publishing rhythm, and the funnel <span aria-hidden="true">→</span></a>
+        </p>
+
+        <div class="kp-chapter">
+          <p class="e-kick">Going further</p>
+          <h2 class="e-d2">When you want <em>the turn-by-turn.</em></h2>
+        </div>
+
+        <p>This planner is Lesson 3 of Pinterest Foundations™, the full course this brand teaches Pinterest through, from account architecture to keyword systems to pin production, in sequence, inside the classroom.</p>
+        <p>Pinterest Foundations™ is $27, standalone, yours permanently. It's also included with Membership Standard at {membership.standard.perMonth} alongside the rest of the education library. Different questions, different doors: pick the one that matches yours.</p>
+
+        <div class="e-actions kp-go">
+          <a class="e-btn e-btn--ghost" href={FOUNDATIONS} rel="noopener">See Pinterest Foundations™ <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <aside class="kp-rail" aria-labelledby="kp-rail-h">
+        <div class="kp-rail-card">
+          <p class="e-credit"><b>The Membership</b></p>
+          <h2 class="kp-rail-h" id="kp-rail-h">Build it with women one step ahead</h2>
+          <p>Daily prompts, start-here trainings, and the room that turns reading into building.</p>
+          <a class="e-link" href="/membership">Explore the membership <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- THE WEEKLY EDIT -->
+  <section class="e-sec e-dark kp-news" aria-labelledby="kp-news-h">
+    <div class="e-wrap kp-news-grid">
+      <div>
+        <p class="e-kick">The Weekly Edit</p>
+        <h2 class="e-d2" id="kp-news-h">Continue learning <em>every week.</em></h2>
+      </div>
+      <div>
+        <p class="kp-news-p">Pinterest isn't social media. Treating it like Instagram is why yours is flat. Weekly, what it actually is.</p>
+        <a class="e-btn e-btn--light" href="https://links.thedigitalincomeedit.com/page2" rel="noopener">Subscribe to The Weekly Edit <span class="ar" aria-hidden="true">→</span></a>
+        <p class="kp-fine">Written for women building quietly, without a personal brand to maintain. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="e-wrap kp-back">
+    <a class="e-link" href="/resources"><span aria-hidden="true">←</span> All free resources</a>
+  </div>
+</PageLayout>
+
+<style>
+  .kp-hero{padding:clamp(48px,7vw,104px) 0 clamp(64px,8vw,112px)}
+  .kp-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center}
+  .kp-hero .e-d1{font-size:clamp(44px,6vw,92px);max-width:12ch}
+  .kp-hero .e-d1 em{display:block}
+  .kp-meta{list-style:none;display:flex;flex-wrap:wrap;margin:32px 0 0;padding:0}
+  .kp-meta li{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);padding:0 16px;border-left:1px solid rgba(200,169,106,.7);line-height:1.2}
+  .kp-meta li:first-child{padding-left:0;border-left:0}
+  .kp-hero-fig{margin:0}
+  .kp-hero-fig .e-figure{aspect-ratio:560/700;box-shadow:var(--e-lift)}
+  .kp-hero-fig figcaption{margin-top:14px}
+
+  .kp-shell{display:grid;grid-template-columns:minmax(0,680px) minmax(0,260px);justify-content:space-between;gap:clamp(32px,6vw,96px);align-items:start}
+  .kp-article > p{font-size:17.5px;line-height:1.75;color:var(--e-ink-2);margin:0 0 20px}
+  .kp-article > p.kp-first{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.5vw,32px);line-height:1.25;letter-spacing:-.02em;color:var(--e-ink);margin-bottom:28px}
+
+  .kp-inside{margin:40px 0;padding:24px 0;border-top:var(--e-hair);border-bottom:var(--e-hair)}
+  .kp-inside .e-credit{margin:0 0 14px}
+  .kp-inside .e-list li{font-size:16.5px;color:var(--e-ink-2)}
+
+  .kp-action{margin:0 0 40px;background:var(--e-cream);padding:clamp(24px,3.4vw,40px)}
+  .kp-action .e-kick{margin-bottom:12px}
+  .kp-action h2{margin:0 0 10px}
+  .kp-action p:not(.e-kick){font-size:16px;color:var(--e-ink-2);margin:0 0 22px}
+
+  .kp-letter :global(.freebie-capture){background:var(--e-white);border:1px solid var(--e-line);border-top:1px solid var(--e-gold);border-radius:6px;padding:clamp(24px,3.4vw,36px);margin:0}
+  .kp-letter :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--e-ink);margin:0 0 8px}
+  .kp-letter :global(.fc-sub){font-size:15px;line-height:1.6;color:var(--e-ink-2);margin:0 0 20px}
+  .kp-letter :global(.fc-row input){min-height:52px;border:1px solid rgba(26,20,23,.28);border-radius:999px;padding:14px 22px}
+  .kp-letter :global(.fc-row button){min-height:52px;border-radius:999px;background:transparent;color:var(--e-ink);border:1px solid rgba(26,20,23,.45);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px}
+  .kp-letter :global(.fc-row button:hover){background:var(--e-ink);color:#fff;border-color:var(--e-ink)}
+  .kp-letter :global(.fc-done){font-family:var(--e-serif);font-weight:600;color:var(--e-pink-t)}
+
+  .kp-chapter{margin:clamp(72px,9vw,120px) 0 28px;padding-top:28px;border-top:1px solid var(--e-ink)}
+  .kp-chapter .e-d2{font-size:clamp(34px,4.2vw,58px);margin:0}
+  .kp-chapter .e-d2 em{display:block}
+
+  .kp-steps{list-style:none;margin:0 0 36px;padding:0}
+  .kp-steps li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;padding:22px 0;border-bottom:1px solid var(--e-line)}
+  .kp-steps li:first-child{padding-top:4px}
+  .kp-n{font-family:var(--e-serif);font-weight:600;font-size:30px;line-height:1;color:var(--e-pink);letter-spacing:-.03em}
+  .kp-steps p{font-size:17px;line-height:1.65;color:var(--e-ink-2);margin:0}
+  .kp-steps strong{color:var(--e-ink);font-weight:600}
+
+  .kp-tip{background:var(--e-blush);border-radius:6px;padding:24px 26px;margin:0 0 32px}
+  .kp-tip .e-credit{margin:0 0 10px}
+  .kp-tip p:not(.e-credit){font-size:16.5px;line-height:1.65;color:var(--e-ink);margin:0}
+
+  .kp-deeper{display:flex;flex-direction:column;gap:4px;margin:0!important}
+  .kp-deeper .e-link{display:inline;font-size:16.5px;line-height:1.55;padding:10px 0}
+
+  .kp-go{margin-top:12px}
+
+  .kp-rail{position:sticky;top:112px}
+  .kp-rail-card{border-top:3px solid var(--e-pink);padding-top:22px}
+  .kp-rail-card .e-credit{margin:0 0 12px}
+  .kp-rail-h{font-size:24px;line-height:1.15;margin:0 0 10px}
+  .kp-rail-card p:not(.e-credit){font-size:15px;line-height:1.6;color:var(--e-ink-2);margin:0 0 8px}
+
+  .kp-news-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:end}
+  .kp-news .e-d2{margin:0;color:#fff}
+  .kp-news-p{font-size:18px;line-height:1.65;margin:0 0 26px}
+  .kp-fine{font-size:14px;margin:18px 0 0}
+  .e-dark .kp-fine{color:rgba(246,239,234,.72)}
+
+  .kp-back{padding-top:40px;padding-bottom:72px}
+
+  @media (max-width:1020px){
+    .kp-shell{grid-template-columns:minmax(0,1fr)}
+    .kp-rail{position:static;max-width:680px}
+  }
+  @media (max-width:900px){
+    .kp-hero-grid,.kp-news-grid{grid-template-columns:1fr}
+    .kp-hero-fig{max-width:440px}
+  }
+  @media (max-width:640px){
+    .kp-hero .e-actions .e-btn,.kp-action .e-btn,.kp-go .e-btn,.kp-news .e-btn{width:100%}
+    .kp-steps li{grid-template-columns:44px minmax(0,1fr)}
+    .kp-n{font-size:24px}
+  }
+</style>

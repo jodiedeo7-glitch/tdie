@@ -1,89 +1,134 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import FreebieForm from "../components/FreebieForm.astro";
+import "../styles/edit.css";
 
 const inside = [
-  { t: "A workflow you can run", p: "Not a concept to think about. A sequence you can follow on a Tuesday night with the time you actually have.", ac: "#CBB7F7" },
-  { t: "The thinking behind a real decision", p: "Something I changed in this business that week, why I changed it, and what it cost me to find out.", ac: "#CF80C2" },
-  { t: "Pinterest, AI, digital products", p: "The three engines this brand runs on, and the systems underneath them — written for a business of one.", ac: "#D4498D" },
-  { t: "Nothing you've read four times", p: "No recycled carousel advice. If I don't have something worth your Sunday, I don't send one.", ac: "#D62E73" },
+  { t: "A workflow you can run", p: "Not a concept to think about. A sequence you can follow on a Tuesday night with the time you actually have." },
+  { t: "The thinking behind a real decision", p: "Something I changed in this business that week, why I changed it, and what it cost me to find out." },
+  { t: "Pinterest, AI, digital products", p: "The three engines this brand runs on, and the systems underneath them, written for a business of one." },
+  { t: "Nothing you've read four times", p: "No recycled carousel advice. If I don't have something worth your Sunday, I don't send one." },
 ];
 ---
 <PageLayout
-  wide
-  title="The Weekly Edit — Newsletter"
-  description="Practical tutorials, AI workflows, Pinterest strategies, and digital product ideas — one useful email at a time."
+  bare
+  title="The Weekly Edit Newsletter"
+  description="Practical tutorials, AI workflows, Pinterest strategies and digital product ideas. One useful email every Sunday, free."
 >
-  <section class="nw-hero">
-    <div class="page-eyebrow">The Weekly Edit</div>
-    <h1>One idea you can act on<br /><em>before Monday.</em></h1>
-    <p class="nw-lede">Practical tutorials, AI workflows, Pinterest strategies and digital product ideas — one beautiful, useful email at a time.</p>
-    <div class="nw-meta">
-      <span>Every Sunday</span><span class="nw-dot"></span><span>One email</span><span class="nw-dot"></span><span>Free</span>
-    </div>
-  </section>
-
-  <section class="nw-block nw-first">
-    <h2>No daily noise, no recycled advice</h2>
-    <p class="nw-lead">Most newsletters in this space are a content calendar wearing a disguise — five sends a week, each one a repackaged reel. This is one email, once, with something in it.</p>
-    <div class="nw-grid">
-      {inside.map((i) => (
-        <div class="nw-card" style={`--ac:${i.ac}`}>
-          <h3>{i.t}</h3>
-          <p>{i.p}</p>
+  <!-- HERO -->
+  <section class="nw-hero" aria-labelledby="nw-h">
+    <div class="e-wrap nw-hero-grid">
+      <div class="nw-hero-copy e-rise">
+        <p class="e-kick">The Weekly Edit</p>
+        <h1 class="e-d1" id="nw-h">One idea you can act on <em>before Monday.</em></h1>
+        <p class="e-lede">Practical tutorials, AI workflows, Pinterest strategies and digital product ideas, one beautiful, useful email at a time.</p>
+        <div class="e-actions">
+          <a class="e-btn" href="#subscribe">Get The Weekly Edit <span class="ar" aria-hidden="true">→</span></a>
         </div>
-      ))}
+        <ul class="nw-meta" aria-label="At a glance">
+          <li>Every Sunday</li><li>One email</li><li>Free</li>
+        </ul>
+      </div>
+      <figure class="nw-hero-fig e-rise e-rise-2">
+        <div class="e-figure">
+          <img
+            src="/images/pages/newsletter-journal-desk-560.webp"
+            srcset="/images/pages/newsletter-journal-desk-560.webp 560w, /images/pages/newsletter-journal-desk-900.webp 900w"
+            sizes="(max-width: 900px) 92vw, 460px"
+            width="560" height="695" fetchpriority="high" decoding="async"
+            alt="Hands writing in an open notebook with a gold pen at a sunlit wooden table, beside a cup of coffee, pink peonies and roses, and a pink folder."
+          />
+        </div>
+        <figcaption class="e-credit"><b>Sunday</b> · pen, paper, one idea</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="nw-block nw-signup">
-    <h2>Come read it</h2>
-    <p class="nw-sublead">Written for women building quietly, without a personal brand to maintain.</p>
-    <div class="nw-form">
-      <FreebieForm heading="Get The Weekly Edit" button="Subscribe" />
+  <!-- WHAT IS IN IT -->
+  <section class="e-sec e-white" aria-labelledby="nw-in-h">
+    <div class="e-wrap nw-in">
+      <div class="nw-in-head">
+        <p class="e-kick">What's in it</p>
+        <h2 class="e-d2" id="nw-in-h">No daily noise, <em>no recycled advice.</em></h2>
+        <p class="nw-lead">Most newsletters in this space are a content calendar wearing a disguise: five sends a week, each one a repackaged reel. This is one email, once, with something in it.</p>
+      </div>
+      <ol class="nw-list">
+        {inside.map((i, n) => (
+          <li class="e-reveal">
+            <span class="nw-n" aria-hidden="true">{String(n + 1).padStart(2, "0")}</span>
+            <div>
+              <h3>{i.t}</h3>
+              <p>{i.p}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
-    <p class="nw-fine">Unsubscribe whenever you like. No pitch stack, no daily sequence.</p>
   </section>
 
-  <p class="nw-back"><a href="/learn">← Back to The Library</a></p>
+  <!-- SIGNUP -->
+  <section class="e-sec e-paper" id="subscribe" aria-labelledby="nw-sign-h">
+    <div class="e-wrap nw-sign">
+      <div>
+        <p class="e-kick">Subscribe</p>
+        <h2 class="e-d2" id="nw-sign-h">Come read it.</h2>
+        <p class="nw-sublead">Written for women building quietly, without a personal brand to maintain.</p>
+        <p class="nw-fine">Unsubscribe whenever you like. No pitch stack, no daily sequence.</p>
+      </div>
+      <div class="nw-form">
+        <FreebieForm heading="Get The Weekly Edit" button="Subscribe" />
+      </div>
+    </div>
+  </section>
 
-  <style>
-    .nw-hero{text-align:center;padding:10px 0 50px}
-    .nw-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:24px}
-    .nw-hero h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(40px,7vw,74px);line-height:1.02;letter-spacing:-2px;margin:0 0 24px;color:var(--choc)}
-    .nw-hero h1 em{font-style:italic;color:var(--pink)}
-    .nw-lede{max-width:620px;margin:0 auto;font-family:Newsreader,serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
-    .nw-meta{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px;
-             font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep)}
-    .nw-dot{width:3px;height:3px;border-radius:50%;background:var(--gold)}
-
-    .nw-block{padding:72px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .nw-first{border-top:none;padding-top:0}
-    .nw-block h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(28px,4.8vw,46px);line-height:1.05;margin:0 0 20px;letter-spacing:-1px;color:var(--choc);text-align:center}
-    .nw-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:var(--choc-soft);text-align:center}
-    .nw-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:600px;margin:0 auto;text-align:center}
-
-    .nw-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
-    .nw-card{padding:28px;border-radius:2px;
-             background:var(--white);
-             border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac)}
-    .nw-card h3{font-family:Newsreader,serif;font-weight:400;font-size:20px;margin:0 0 10px;line-height:1.22;color:var(--choc)}
-    .nw-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
-
-    .nw-signup{text-align:center}
-    .nw-form{max-width:560px;margin:0 auto}
-    .nw-form :global(.freebie-capture){background:var(--white);
-      border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;padding:36px 34px;margin:34px 0 0;box-shadow:none;text-align:left}
-    .nw-form :global(.fc-h){font-family:Newsreader,serif;font-weight:400;font-size:25px;color:var(--choc);margin:0 0 8px}
-    .nw-form :global(.fc-sub){font-size:14.5px;color:var(--choc-mute);margin:0 0 20px}
-    .nw-form :global(.fc-row input){border-radius:2px;border-color:rgba(43,22,27,.18);background:var(--white);padding:14px 16px}
-    .nw-form :global(.fc-row button){border-radius:2px;background:var(--pink);padding:14px 30px;font-size:12.5px;
-      font-weight:600;letter-spacing:1.6px;text-transform:uppercase;box-shadow:none}
-    .nw-fine{font-size:13.5px;color:var(--taupe-deep);margin:20px 0 0}
-
-    .nw-back{margin-top:62px;text-align:center}
-    .nw-back a{color:var(--pink);font-weight:500}
-
-    @media(max-width:820px){.nw-grid{grid-template-columns:1fr}.nw-block{padding:52px 0}}
-  </style>
+  <div class="e-wrap nw-back">
+    <a class="e-link" href="/learn"><span aria-hidden="true">←</span> Back to The Library</a>
+  </div>
 </PageLayout>
+
+<style>
+  .nw-hero{padding:clamp(48px,7vw,104px) 0 clamp(64px,8vw,112px)}
+  .nw-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center}
+  .nw-hero .e-d1{font-size:clamp(44px,6vw,92px);max-width:12ch}
+  .nw-hero .e-d1 em{display:block}
+  .nw-meta{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:32px 0 0;padding:0}
+  .nw-meta li{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);padding:0 16px;border-left:1px solid rgba(200,169,106,.7);line-height:1.2}
+  .nw-meta li:first-child{padding-left:0;border-left:0}
+  .nw-hero-fig{margin:0}
+  .nw-hero-fig .e-figure{aspect-ratio:560/695;box-shadow:var(--e-lift)}
+  .nw-hero-fig figcaption{margin-top:14px}
+
+  .nw-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,104px);align-items:start}
+  .nw-in-head{position:sticky;top:112px}
+  .nw-lead{font-size:18px;line-height:1.7;color:var(--e-ink-2);max-width:32em;margin:0}
+  .nw-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
+  .nw-list li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;padding:28px 0;border-bottom:1px solid var(--e-line)}
+  .nw-n{font-family:var(--e-serif);font-weight:600;font-size:30px;line-height:1;color:var(--e-pink);letter-spacing:-.03em}
+  .nw-list h3{font-size:clamp(22px,2.1vw,27px);line-height:1.18;margin:0 0 8px}
+  .nw-list p{font-size:16px;line-height:1.65;color:var(--e-ink-2);margin:0;max-width:34em}
+
+  .nw-sign{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,104px);align-items:center}
+  .nw-sublead{font-size:18px;line-height:1.65;color:var(--e-ink-2);margin:0 0 20px;max-width:28em}
+  .nw-fine{font-size:14px;color:var(--e-ink-3);margin:0;padding-top:18px;border-top:var(--e-hair);max-width:30em}
+  .nw-form :global(.freebie-capture){background:var(--e-white);border:1px solid var(--e-line);border-top:3px solid var(--e-pink);border-radius:6px;padding:clamp(26px,3.6vw,44px);margin:0}
+  .nw-form :global(.fc-h){font-family:var(--e-serif);font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1.1;letter-spacing:-.02em;color:var(--e-ink);margin:0 0 10px}
+  .nw-form :global(.fc-sub){font-size:15px;line-height:1.6;color:var(--e-ink-2);margin:0 0 22px}
+  .nw-form :global(.fc-row input){min-height:52px;border:1px solid rgba(26,20,23,.3);border-radius:999px;padding:14px 22px}
+  .nw-form :global(.fc-row button){min-height:52px;border-radius:999px;background:var(--e-pink);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:14px 30px}
+  .nw-form :global(.fc-row button:hover){background:var(--e-pink-t)}
+  .nw-form :global(.fc-done){font-family:var(--e-serif);font-weight:600;color:var(--e-pink-t)}
+
+  .nw-back{padding-top:40px;padding-bottom:72px}
+
+  @media (max-width:900px){
+    .nw-hero-grid,.nw-in,.nw-sign{grid-template-columns:1fr}
+    .nw-hero-fig{max-width:460px}
+    .nw-in-head{position:static}
+  }
+  @media (max-width:640px){
+    .nw-hero .e-actions .e-btn{width:100%}
+    .nw-list li{grid-template-columns:44px minmax(0,1fr)}
+    .nw-n{font-size:24px}
+    .nw-form :global(.fc-row button){width:100%}
+  }
+</style>
