@@ -179,7 +179,7 @@ const ANGLES = {
     trust: "Every future update, free", cta: "See inside, free",
   },
   preview: {
-    photo: "loftFace", posSt: "22% 0%", pos: { sq: "8% 35%", p45: "8% 35%", st: "100% 40%", ls: "100% 25%" },
+    photo: "loftFace", posSt: "60% 0%", pos: { sq: "63% 35%", p45: "61% 35%", st: "60% 40%", ls: "60% 30%" },
     kicker: "Free look inside &middot; no email",
     h1: `See the whole machine <em>before you buy a thing.</em>`,
     sub: `The free preview of The Weekend Ecosystem&trade;. <strong>No email, no card, <span style="white-space:nowrap">no sign-up.</span></strong>`,
@@ -352,7 +352,7 @@ function ogHTML() {
 // Uses preview-hero.jpg and hub-header.jpg, so dropping new photos in and re-running refreshes it.
 function ogPreviewHTML() {
   const inner = `
-    ${photo("loftFace", "left:0;top:0;width:420px;height:630px", "fadeLR", "0% 22%")}
+    ${photo("loftFace", "left:0;top:0;width:420px;height:630px", "fadeLR", "100% 25%")}
     ${photo("loftWide", "right:0;top:0;width:420px;height:630px", "fadeRL", "60% 40%")}
     <div class="card" style="position:absolute;left:310px;top:44px;width:580px;height:542px;padding:34px 38px;display:flex;flex-direction:column;gap:16px;z-index:3;text-align:center;align-items:center">
       ${brand()}
