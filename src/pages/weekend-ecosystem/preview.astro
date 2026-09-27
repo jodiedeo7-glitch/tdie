@@ -62,7 +62,7 @@ const onPage = [
       <figure class="wx-polaroid">
         <span class="wx-tape wx-tape-l" aria-hidden="true"></span>
         <img src="/images/we/preview-hero.jpg" alt="At the pink attic desk in the evening, the pasture and red barn through the window." loading="eager" width="1400" height="1737" />
-        <figcaption>Friday night, the attic desk. Module 01.</figcaption>
+        <figcaption>Friday night, the attic desk. Module&nbsp;01.</figcaption>
       </figure>
       <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>Free<br />no email</span></span>
       <span class="wx-sticker wx-sticker-b" aria-hidden="true"><span>The real<br />interface</span></span>
@@ -269,7 +269,7 @@ const onPage = [
   <!-- CLOSE -->
   <section class="wx-card wx-close">
     <div class="wx-close-img">
-      <img src="/images/we/cover-sofa.jpg" alt="A woman on a farmhouse porch at sunrise holding a pink mug, the red barn and pasture behind her." loading="lazy" width="1200" height="1490" />
+      <img src="/images/we/cover-sofa.jpg" alt="A woman on a farmhouse porch at sunrise holding a pink mug, the red barn and pasture behind her." loading="lazy" width="1200" height="1490" style="object-position:50% 8%" />
     </div>
     <div class="wx-close-body">
       <span class="wx-kicker">That's the whole thing</span>
@@ -302,8 +302,10 @@ const onPage = [
   .pv-sec{scroll-margin-top:80px}
   .pv-n{display:inline-block;font:800 12px/1 Inter,sans-serif;letter-spacing:2px;color:#fff;background:var(--hot);padding:7px 11px;border-radius:999px;transform:rotate(-2deg);margin-bottom:14px}
   .pv-sec h2{font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:0 0 14px}
-  .pv-b{font-size:18px;line-height:1.7;max-width:640px;margin:0 0 28px!important;color:var(--ink-soft)}
-  .pv-note{font-family:Newsreader,Georgia,serif;font-weight:600;font-style:italic;font-size:20px;line-height:1.5;color:var(--hot);margin:22px 0 0!important;max-width:720px}
+  .pv-b{font-size:18px;line-height:1.7;max-width:640px;margin-top:0!important;margin-bottom:28px!important;color:var(--ink-soft)}
+  /* Desktop: one centred 760 px reading column, left edges aligned, instead of everything hugging the left. */
+  .pv-sec:not(#box) > :not(.wx-mid){margin-left:max(0px,calc((100% - 760px) / 2))}
+  .pv-note{font-family:Newsreader,Georgia,serif;font-weight:600;font-style:italic;font-size:20px;line-height:1.5;color:var(--hot);margin-top:22px!important;margin-bottom:0!important;max-width:720px}
 
   .pv-shot{border-radius:18px;overflow:hidden;border:1px solid var(--edge);background:var(--cream);box-shadow:var(--shadow);max-width:760px}
   .pv-bar{display:flex;gap:6px;padding:12px 16px;background:rgba(26,20,23,.05);border-bottom:1px solid rgba(26,20,23,.08)}

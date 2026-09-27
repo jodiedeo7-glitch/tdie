@@ -58,3 +58,29 @@ Brief from Jodie: branded, premium, trustworthy, never a random scam ad. What ch
 - **Tumbler rule.** The older loft and porch photos show the Player Two? mug, not the glitter tumbler; they predate the 26 Sep rule. The review images and the new pasture photo carry the tumbler.
 - **Preview page (fixed 27 Sep 2026).** New link preview `public/og/weekend-ecosystem-preview.jpg` (rendered here as `og-weekend-ecosystem-preview.png`). `preview-hero.jpg` cropped to take the toys out; the closing image temporarily shows the porch photo. Two replacement photos are prompted in `PHOTO_PROMPTS.md`, with the paste-ready finish instruction.
 - **Tina's review** is the approved `pull` cut from `src/we-reviews.js`, verbatim, "word press" spelling kept.
+
+## 4 · Final pass (27 Sep 2026)
+
+**Photos (source files, so every crop on the site and in this set is clean)**
+- Apple logos retouched off the laptop lids in `public/images/we/preview-hero.jpg`, `preview-working.jpg`, `cover-kitchen.jpg` and `photos/sofa-tumbler-no-lettering.jpg` (lid colour blended in from all four sides, grain matched). Same file names and sizes.
+
+**Preview page `/weekend-ecosystem/preview`**
+- Link image confirmed as `/og/weekend-ecosystem-preview.jpg`, re-rendered: brand line now THE DIGITAL INCOME EDIT™, web address and "Free preview · no email" at the foot, every word inside x 310 to 890.
+- `preview-hero.jpg` checked at desktop (392 × 484), tablet (288 × 410) and phone (278 × 340): no toy, character or logo.
+- Closing image (`cover-sofa.jpg`): reads well on desktop; on the 300 px phone strip her face was cut off at the top, so the crop is now `object-position:50% 8%` (face and mug in the strip).
+- Hero caption no longer leaves "01." alone on a line (non-breaking space; wording unchanged).
+- Desktop: section intros, screens and cards now sit in one centred 760 px column instead of hugging the left edge under full-width rules.
+- Sales page close (same issue, found while checking): `cover-kitchen.jpg` showed the Hello Kitty and Kuromi plush on tablet and phone; swapped to `hub-header.jpg` (no toys).
+
+**PHOTO_PROMPTS.md, both preview prompts rewritten against image master section 10.** Failed boxes: subject not in the right third (hero said "centre-right", working said "centre"); left side not kept as negative space (working); prop overload, about ten anchors each against section 8's 2 to 5; preview-working repeated the matrix HERO story (loft desk, typing, 35mm); both ended "Cinematic Tommy realism" plus an em dash (em dash, house rule 9). Rewritten in section 9 order (A to J), right third, calm left side, 3 to 4 anchors, working moved to the loft window seat with no desk in frame.
+
+**All 26 creatives (render.mjs)**
+- Pink only on the turn words, the one hero card and the button: kickers, stars, quote marks, stat numbers, tick circles, "Claude does" labels, sign-off and stickers moved to ink.
+- No word under 16 px (the 1200 × 628 size was rendering its small text at 12 px).
+- Widows removed: `text-wrap:balance` on headlines and stat labels, `pretty` on body text, footer lines never wrap, "no sign-up" never splits, review byline shortened to "Tina Alexander · paying member".
+- ad-build square, 4:5 and story crops moved right (94% / 91%, story zoom 1.26): a plush toy was showing at the photo's left edge.
+- Sales OG right panel moved off the loft photo with the plush toys to the living-room tumbler photo.
+- Both OGs: brand line THE DIGITAL INCOME EDIT™ and a trust line at the foot.
+- Beacons hero and Kit hero: sticker moved off the photo seam into the copy column; Kit hero's "FREE BONUS KIT" stamp replaced by the same "No code / no camera" sticker; foot trust line added (hero: "Both options at checkout"; Kit hero: "$97 one-time · or 3 × $33.33", since its card shows the Kit, not the price).
+- Payment-plan story: placeholder label moved above the card so it can be read. The four payment-plan images still carry the placeholder until `photos/pay-plan-pasture-blanket.jpg` exists.
+- `CONTACT_SHEET.jpg` rebuilt with all 26 at feed size (400 px wide). Live copies `public/og/weekend-ecosystem-2026-09.jpg` and `public/og/weekend-ecosystem-preview.jpg` saved as JPG quality 92.
