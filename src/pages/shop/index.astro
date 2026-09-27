@@ -1,375 +1,556 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import Testimonial from "../../components/Testimonial.astro";
+import "../../styles/edit.css";
+import { membership, weekendEcosystem as we, SKOOL_PLANS } from "../../data/facts.js";
+// Tina's words come from the single verbatim source, unedited.
+import { FEATURED as tina } from "../../we-reviews.js";
 
-// ─────────────────────────────────────────────────────────────
-// Every name, price and URL below is a Product Register v3.1 row.
-// Nothing here is inferred. Ownership flags drive the affiliate
-// badge and rel="sponsored" (Standing Rule 18 — link, rel and
-// disclosure ship as a set).
-// ─────────────────────────────────────────────────────────────
+// Every name, price and URL below is a products[] row in ops/canon/canon.json.
+// Nothing is inferred. Membership and Weekend Ecosystem facts come from
+// src/data/facts.js only. Affiliate rows ship link, rel="sponsored" and the
+// disclosure as a set (Standing Rule 18), in their own section, never in a
+// primary slot. Pretty & Paid PLR Vault is its own section, never beside the
+// membership band.
 
-// TOP BLOCK — The Value Vault. Ledger-confirmed items only.
+const SITE = "https://www.thedigitalincomeedit.com";
+
+// 01 START HERE: $0 only (journey_slot_rules.free).
+const free = [
+  { name: "The Faceless Income Blueprint™", url: "/resources/faceless-income-blueprint", go: "Get the Blueprint",
+    copy: "Niche, first product, first traffic source: the whole shape of the business in one document." },
+  // Canon name: "$10/Day Traffic Machine" + "Starter Map", set on two lines so the page carries no dash.
+  { name: "$10/Day Traffic Machine", sub: "Starter Map", url: "/resources/starter-map", go: "Get the Starter Map",
+    copy: "Ten pages on buying traffic without gambling: what to spend, what to watch, when to stop." },
+  { name: "FREE GUIDE - One & Done Money Stream", url: "/go/free-guide-one-done-money-stream", go: "Read the free guide",
+    copy: "The short version of the one-product, one-system approach." },
+];
+
+// 03 MEMBERSHIP: compact. Full comparison lives on /membership.
+const tiers = [
+  { key: "standard", t: membership.standard,
+    buys: "The build, lesson by lesson, with the room beside you.",
+    items: ["Pinterest Foundations™, The Email Edit and The Shopify Edit", "Daily Prompts and the community", "The Value Vault guides, bought à la carte"] },
+  { key: "premium", t: membership.premium,
+    buys: "The whole architecture, with your content month written for you.",
+    items: ["Everything in Standard", "The Offer Edit, The Funnel Edit, Scaling & Systems and The Ads Edit™", "The Premium Vault: every Value Vault guide, already unlocked"] },
+];
+
+// 04 GUIDES. The Value Vault: ledger-confirmed items only.
 const vault = [
-  { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", url: "/vault/freebie-in-an-afternoon",
+  { name: "Build Your First Freebie in One Afternoon", price: "$7", url: "/vault/freebie-in-an-afternoon", go: "Build my freebie",
     copy: "The lead magnet and the paid offer behind it, both finished before dinner." },
-  { name: "The Operating Prompts™", price: "$19", note: "one-time", url: "/go/the-operating-prompts",
+  { name: "The Operating Prompts™", price: "$19", url: "/go/the-operating-prompts", go: "Get The Operating Prompts™",
     copy: "The thirty-four prompts that actually run my business. Strict on purpose, built on your own Brand Card." },
-  { name: "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", price: "$9", note: "one-time", url: "/go/how-i-batch-schedule-a-month-of-pinterest-in-one-3-hour-bloc",
+  { name: "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", price: "$9", url: "/go/how-i-batch-schedule-a-month-of-pinterest-in-one-3-hour-bloc", go: "Get the batching guide",
     copy: "A month of pins queued in a single sitting. The exact order I work in." },
 ];
 
-const groups = [
-  {
-    id: "free",
-    label: "Start Here",
-    title: "Free downloads",
-    note: "Finished guides, not teasers. No card, no trial.",
-    items: [
-      { name: "The Faceless Income Blueprint\u2122", price: "$0", note: "free", url: "/resources/faceless-income-blueprint", aff: false,
-        copy: "Niche, first product, first traffic source \u2014 the whole shape of the business in one document." },
-      { name: "The $10/Day Traffic Machine \u2014 Starter Map", price: "$0", note: "free", url: "/resources/starter-map", aff: false,
-        copy: "Ten pages on buying traffic without gambling: what to spend, what to watch, when to stop." },
-      { name: "FREE GUIDE \u2014 One & Done Money Stream", price: "$0", note: "free", url: "/go/free-guide-one-done-money-stream", aff: false,
-        copy: "The short version of the one-product, one-system approach." },
-    ],
-  },
-  {
-    id: "recurring",
-    label: "Billed Monthly",
-    title: "Memberships & subscriptions",
-    note: "Three separate doors. Only two of them are rungs on the same ladder.",
-    items: [
-      { name: "Membership Standard", price: "$9", note: "per month \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/plans", aff: false,
-        copy: "The full build curriculum \u2014 the start-here trainings, your AI twin, offer, content, email and Pinterest. Free for 7 days." },
-      { name: "Membership Premium", price: "$35", note: "per month \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/plans", aff: false,
-        copy: "Everything in Standard, plus The Ads Edit\u2122, the monthly done-for-you content calendar, Scaling & Systems, and the Premium Vault \u2014 the entire Value Vault unlocked." },
-      { name: "Pretty & Paid PLR Vault\u2122", price: "$11", note: "per month \u00b7 Beacons", url: "/shop/pretty-and-paid-plr-vault", aff: false,
-        copy: "Rebrandable products you resell as your own, refreshed monthly. Its own subscription, not part of any membership \u2014 and not the same thing as The Value Vault below." },
-      { name: "#TDIE FB GROUP PROMO", price: "$10", note: "per month \u00b7 promotion slot", url: "/go/tdie-fb-group-promo", aff: false,
-        copy: "A recurring promotion placement inside the Facebook group." },
-    ],
-  },
-  {
-    id: "courses",
-    label: "Courses",
-    title: "Delivered inside Skool",
-    note: "Bought once, opened inside the classroom.",
-    items: [
-      { name: "Pinterest Foundations\u2122", price: "$27", note: "one-time \u00b7 Skool", url: "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca?md=63eb80fb5d114f77870c962337a58a1b", aff: false,
-        copy: "The full Pinterest system as a course. Also included with Membership Standard \u2014 buying it outright is for people who only want this one thing." },
-    ],
-  },
-  {
-    id: "products",
-    label: "One-Time",
-    title: "Products & guides",
-    note: "Buy it, use it that week, never think about it again.",
-    items: [
-            { name: "550+ BRILLIANT chatGPT prompts for your business", price: "$2", note: "one-time", url: "/go/550-brilliant-chatgpt-prompts-for-your-business", aff: false,
-        copy: "A wide prompt library to raid when you are staring at a blank box." },
-      { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", url: "/go/ugc-brand-contacts", aff: false,
-        copy: "Brands actively paying creators, with the contact route. Skip the research, start pitching." },
-      { name: "The Tommy Kate Edit", price: "$17", note: "one-time \u00b7 lifetime access", url: "/go/the-tommy-kate-edit", aff: false,
-        copy: "The AI prompt bank behind a consistent faceless persona. Lifetime updates. Also included with Premium." },
-      { name: "The One and Done Money Stream", price: "$27", note: "one-time", url: "/go/one-and-done-money-stream", aff: false,
-        copy: "One digital income stream, built once, set to earn on repeat. Includes resell rights." },
-      { name: "BONUS BUNDLE WITH RESELL RIGHTS", price: "$27", note: "one-time", url: "/go/bonus-bundle-with-resell-rights", aff: false,
-        copy: "A bundle of ready-made products you can rebrand and sell as your own." },
-      { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time", url: "/go/zero-income-claim-reels", aff: false,
-        copy: "A hundred done-for-you hooks and captions for Reels that sell nothing you have not earned yet \u2014 no screenshots, no income claims, nothing that gets an account flagged. Written for the stage before you have social proof." },
-    ],
-  },
-  {
-    id: "ai-influencer",
-    label: "The AI Influencer Suite",
-    title: "Build the persona, then feed her",
-    note: "Four steps of the same build, sold separately.",
-    items: [
-      { name: "AI Influencer Flash Sale", price: "$50", note: "one-time", url: "/go/ai-influencer-flash-sale", aff: false,
-        copy: "The entry point into the AI influencer build." },
-      { name: "AI Influencer Starter Twin", price: "$97", note: "one-time", url: "/go/ai-influencer-starter-twin", aff: false,
-        copy: "Your persona, generated to stay the same face every time." },
-      { name: "AI Influencer Brand Bundle", price: "$147", note: "one-time", url: "/go/ai-influencer-brand-bundle", aff: false,
-        copy: "The persona plus the brand assets that surround her." },
-      { name: "AI Influencer Content Drop", price: "$297", note: "one-time", url: "/go/ai-influencer-content-drop", aff: false,
-        copy: "A delivered content library for a persona already built." },
-    ],
-  },
-  {
-    id: "dfy",
-    label: "Done For You",
-    title: "Services",
-    note: "I do the work and hand it back finished.",
-    items: [
-      { name: "DFY Instagram Audit + Growth Optimization", price: "$197", note: "one-time", url: "/go/dfy-instagram-audit-growth-optimization", aff: false,
-        copy: "A full read of the account and the specific changes that move it." },
-      { name: "DFY Instagram Audit + Custom Viral Content Calendar", price: "$350", note: "one-time", url: "/go/dfy-instagram-audit-custom-viral-content-calendar", aff: false,
-        copy: "The audit, plus a content calendar built for your account rather than a template." },
-    ],
-  },
-  {
-    id: "affiliate",
-    label: "Not Mine",
-    title: "Recommended, not made here",
-    note: "Products I use and rate, built by other people. Prices are theirs and can change without notice.",
-    items: [
-      { name: "Leni Loves", price: "$37", note: "one-time", url: "/go/leni-loves", aff: true,
-        copy: "Aesthetic templates and brand resources." },
-      { name: "The Conversion Architect", price: "$47", note: "one-time", url: "/go/the-conversion-architect", aff: true,
-        copy: "Conversion structure for offers and pages." },
-      { name: "Claude Studio Kit", price: "$57", note: "one-time", url: "/go/claude-studio-kit", aff: true,
-        copy: "A working setup for running Claude as a studio rather than a chat box." },
-      { name: "The Faceless Launch Formula by @thebossdigitalwealth | Stan", price: "$77", note: "one-time", url: "/go/the-faceless-launch-formula-by-thebossdigitalwealth-stan", aff: true,
-        copy: "A launch framework built for faceless brands." },
-      { name: "Earn With Skool (SCC)", price: "$97", note: "one-time", url: "/go/earn-with-skool-scc", aff: true,
-        copy: "Building and earning from a Skool community." },
-      { name: "The AI Subs Method", price: "$147", note: "one-time", url: "/go/ai-subs-method", aff: true,
-        copy: "Growing and monetising a faceless AI subscription channel." },
-      { name: "NAVIA AI STUDIO", price: "$197", note: "one-time", url: "/go/navia-ai-studio", aff: true,
-        copy: "An AI production studio setup." },
-    ],
-  },
+const guides = [
+  { name: "Pinterest Foundations™", price: "$27", terms: "one-time · Skool course", url: "https://www.skool.com/thedigitalincomeedit/classroom/ede8aaca",
+    copy: "The full Pinterest system as a course. Also included with Membership Standard; buying it outright is for people who only want this one thing." },
+  { name: "The One and Done Money Stream", price: "$27", terms: "one-time", url: "/go/one-and-done-money-stream",
+    copy: "One digital income stream, built once, set to earn on repeat. Includes resell rights." },
+  { name: "BONUS BUNDLE WITH RESELL RIGHTS", price: "$27", terms: "one-time", url: "/go/bonus-bundle-with-resell-rights",
+    copy: "A bundle of ready-made products you can put your own name on and sell." },
+  { name: "550+ BRILLIANT chatGPT prompts for your business", price: "$2", terms: "one-time", url: "/go/550-brilliant-chatgpt-prompts-for-your-business",
+    copy: "A wide prompt library to raid when you are staring at a blank box." },
 ];
+
+// 05 AI & CREATOR
+const suite = [
+  { n: "01", name: "AI Influencer Flash Sale", price: "$50", url: "/go/ai-influencer-flash-sale",
+    copy: "The entry point into the AI influencer build." },
+  { n: "02", name: "AI Influencer Starter Twin", price: "$97", url: "/go/ai-influencer-starter-twin",
+    copy: "Your persona, generated to stay the same face every time." },
+  { n: "03", name: "AI Influencer Brand Bundle", price: "$147", url: "/go/ai-influencer-brand-bundle",
+    copy: "The persona plus the brand assets that surround her." },
+  { n: "04", name: "AI Influencer Content Drop", price: "$297", url: "/go/ai-influencer-content-drop",
+    copy: "A delivered content library for a persona already built." },
+];
+
+const creator = [
+  { name: "The Tommy Kate Edit", price: "$17", terms: "one-time · lifetime access", url: "/go/the-tommy-kate-edit",
+    copy: "The AI prompt bank behind a consistent faceless persona, with lifetime updates. Also inside both memberships." },
+  { name: "150 UGC Brand Contacts", price: "$15", terms: "one-time", url: "/go/ugc-brand-contacts",
+    copy: "Brands actively paying creators, with the contact route. Skip the research, start pitching." },
+  { name: "Zero Income Claim Guide - 100 DFY Reels", price: "$37", terms: "one-time", url: "/go/zero-income-claim-reels",
+    copy: "A hundred done-for-you hooks and captions for Reels, written for the stage before you have social proof: no screenshots, no income claims, nothing that gets an account flagged." },
+];
+
+// 07 DONE FOR YOU
+const dfy = [
+  { name: "DFY Instagram Audit + Growth Optimization", price: "$197", terms: "one-time", url: "/go/dfy-instagram-audit-growth-optimization",
+    copy: "A full read of the account and the specific changes that move it." },
+  { name: "DFY Instagram Audit + Custom Viral Content Calendar", price: "$350", terms: "one-time", url: "/go/dfy-instagram-audit-custom-viral-content-calendar",
+    copy: "The audit, plus a content calendar built for your account rather than a template." },
+  { name: "#TDIE FB GROUP PROMO", price: "$10", terms: "per month · promotion slot", url: "/go/tdie-fb-group-promo",
+    copy: "A recurring promotion placement inside the Facebook group." },
+];
+
+// 08 RECOMMENDED: affiliate, not owned. Prices are the owners' and can change.
+const recommended = [
+  { name: "Leni Loves", price: "$27", terms: "on sale, regular $37", url: "/go/leni-loves",
+    copy: "Aesthetic templates and brand resources." },
+  { name: "The Conversion Architect", price: "$47", terms: "one-time", url: "/go/the-conversion-architect",
+    copy: "Conversion structure for offers and pages." },
+  { name: "Claude Studio Kit", price: "$57", terms: "one-time", url: "/go/claude-studio-kit",
+    copy: "A working setup for running Claude as a studio rather than a chat box." },
+  { name: "The Faceless Launch Formula by @thebossdigitalwealth | Stan", price: "$77", terms: "one-time", url: "/go/the-faceless-launch-formula-by-thebossdigitalwealth-stan",
+    copy: "A launch framework built for faceless brands." },
+  { name: "Earn With Skool (SCC)", price: "$97", terms: "one-time", url: "/go/earn-with-skool-scc",
+    copy: "The course I used to build this community's own Skool group." },
+  { name: "The AI Subs Method", price: "$147", terms: "one-time", url: "/go/ai-subs-method",
+    copy: "Growing and monetising a faceless AI subscription channel." },
+  { name: "NAVIA AI STUDIO", price: "$197", terms: "one-time", url: "/go/navia-ai-studio",
+    copy: "An AI production studio setup." },
+];
+
+const index = [
+  { id: "start-here", n: "01", t: "Start here, free" },
+  { id: "flagship", n: "02", t: "The flagship" },
+  { id: "membership", n: "03", t: "The membership" },
+  { id: "guides", n: "04", t: "Guides" },
+  { id: "ai-creator", n: "05", t: "AI & creator" },
+  { id: "plr-vault", n: "06", t: "Pretty & Paid PLR Vault™" },
+  { id: "done-for-you", n: "07", t: "Done for you" },
+  { id: "recommended", n: "08", t: "Recommended" },
+];
+
+// Owned products only, in page order. Affiliates are not listed as ours.
+const abs = (u) => (u.startsWith("http") ? u : `${SITE}${u}`);
+const owned = [
+  ...free.map((f) => ({ name: f.sub ? `${f.name} ${f.sub}` : f.name, url: f.url })),
+  { name: we.name, url: we.url },
+  { name: membership.standard.name, url: SKOOL_PLANS },
+  { name: membership.premium.name, url: SKOOL_PLANS },
+  ...vault, ...guides, ...suite, ...creator,
+  { name: "Pretty & Paid PLR Vault™", url: "/shop/pretty-and-paid-plr-vault" },
+  ...dfy,
+];
+const schema = [{
+  "@type": "ItemList",
+  name: "The Digital Income Edit™ shop",
+  itemListElement: owned.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name, url: abs(p.url) })),
+}];
 ---
 <PageLayout
-  wide={true}
+  bare
   title="Shop"
-  description="Every live product from The Digital Income Edit™ — the Value Vault, memberships, one-time guides, the AI Influencer suite, done-for-you services, and recommended tools."
+  description="The Digital Income Edit™ shop, in order: free guides first, then The Weekend Ecosystem™, the membership, single guides and done-for-you services."
+  schema={schema}
 >
-  <div class="page-eyebrow">Shop</div>
-  <h1>Everything, in one place</h1>
-  <p class="lede">Nothing here is a course you will not finish. Short, specific, and built to remove the next bottleneck rather than add to your pile.</p>
-
-  <!-- ── THE VALUE VAULT ─────────────────────────────────── -->
-  <!-- ── FLAGSHIP ─────────────────────────────────────────── -->
-  <a class="flag" href="/shop/weekend-ecosystem">
-    <div class="flag-img">
-      <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem — your website and blog, built from what you already have." loading="eager" width="1200" height="1490" />
-    </div>
-    <div class="flag-body">
-      <span class="flag-k">The flagship · Standalone</span>
-      <h2 class="flag-h">The Weekend <em>Ecosystem™</em></h2>
-      <p class="flag-sub">Your website + blog, built from what you already have. One weekend with Claude, and you're a business owner — not just a product seller.</p>
-      <div class="flag-stats">
-        <span><b>22</b>modules</span>
-        <span><b>36</b>prompts</span>
-        <span><b>4</b>vaults</span>
-        <span><b>24</b>assets per article</span>
+  <!-- MASTHEAD -->
+  <header class="mast">
+    <div class="e-wrap mast-grid">
+      <div class="e-rise">
+        <p class="e-kick">The shop</p>
+        <h1 class="e-d1">The shop, <em>edited.</em></h1>
+        <p class="e-lede">Everything I make, in the order I would hand it to you. Lay the foundations free, build the house in a weekend, then move in with the membership. Every other room on this page is one you add when the build calls for it.</p>
       </div>
-      <ul class="flag-list">
-        <li>A real site on a domain you own — no code, no designer</li>
-        <li>Your Skool lessons become articles Google can find</li>
-        <li>Every future update included, permanently</li>
+      <nav class="idx e-rise e-rise-2" aria-label="On this page">
+        <p class="idx-h">On this page</p>
+        <ol>
+          {index.map((s) => (
+            <li><a href={`#${s.id}`}><span class="idx-n">{s.n}</span>{s.t}</a></li>
+          ))}
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 01 START HERE -->
+  <section class="e-sec-sm sec" id="start-here" aria-labelledby="h-free">
+    <div class="e-wrap">
+      <div class="head">
+        <p class="e-kick">01 · Start here</p>
+        <h2 class="e-d3" id="h-free">Lay the foundations for <em>$0.</em></h2>
+        <p class="note">Finished guides, not teasers. No card, no trial.</p>
+      </div>
+      <ul class="free">
+        {free.map((f) => (
+          <li>
+            <span class="free-tag">Free</span>
+            <h3>{f.name}{f.sub && <span class="sub">{f.sub}</span>}</h3>
+            <p>{f.copy}</p>
+            <a class="e-link" href={f.url}>{f.go} <span class="ar" aria-hidden="true">→</span></a>
+          </li>
+        ))}
       </ul>
-      <div class="flag-foot">
-        <span class="flag-price">$97<em>one-time</em></span>
-        <span class="flag-go">See what's inside →</span>
-      </div>
-    </div>
-  </a>
-
-  <Testimonial variant="pull" />
-
-  <section class="vault">
-    <div class="vault-head">
-      <div class="vault-k">The Value Vault</div>
-      <div class="vault-script">Value Vault</div>
-      <p class="vault-sub">Single-problem guides, priced like a coffee. Buy the one you need this week — or open all of them at once inside Premium, where the whole collection unlocks as the Premium Vault.</p>
-    </div>
-    <div class="vault-grid">
-      {vault.map((v) => (
-        <a class="vcard" href={v.url}>
-          <div class="vprice">{v.price}</div>
-          <div class="vnote">{v.note}</div>
-          <h3>{v.name}</h3>
-          <p>{v.copy}</p>
-          <span class="vgo">Get the guide →</span>
-        </a>
-      ))}
     </div>
   </section>
 
-  <!-- ── READING THE PRICES ──────────────────────────────── -->
-  <div class="prices-note">
-    <strong>Two numbers repeat on this page, so here is what each one buys.</strong>
-    <span><b>$9</b> is either Membership Standard, which bills every month after a free 7-day trial, or the Pinterest batching guide, which is a one-time download. <b>$27</b> is one of three one-time purchases — Pinterest Foundations™, The One and Done Money Stream, or the Bonus Bundle. Recurring items are labelled <em>per month</em>. Everything else is paid once. <b>$11</b> is Pretty &amp; Paid PLR Vault™, its own Beacons subscription — it lands two dollars from Membership Standard by coincidence, not because one leads into the other.</span>
-  </div>
+  <!-- 02 THE FLAGSHIP -->
+  <section class="e-dark flag" id="flagship" aria-labelledby="h-flag">
+    <div class="e-wrap flag-grid">
+      <figure class="e-figure flag-fig">
+        <img
+          src="/images/pages/shop-flagship-840.webp"
+          srcset="/images/pages/shop-flagship-560.webp 560w, /images/pages/shop-flagship-840.webp 840w, /images/pages/shop-flagship-1120.webp 1120w"
+          sizes="(max-width: 860px) 100vw, 480px"
+          width="840" height="1042" loading="lazy" decoding="async"
+          alt="A woman in an oatmeal hoodie smiles at her laptop at a farmhouse kitchen table, lilacs and a pink tumbler beside her, a golden retriever at her knee."
+        />
+      </figure>
+      <div class="flag-body">
+        <p class="e-kick">02 · The flagship</p>
+        <p class="flag-name">{we.name}</p>
+        <h2 class="e-d2" id="h-flag">Your website and blog, <em>built in one weekend.</em></h2>
+        <p class="e-lede">A real site on a domain you own, built from the content you already have, with Claude doing the heavy lifting. No code, no designer, no starting from blank.</p>
 
-  <!-- ── CATEGORY NAV ────────────────────────────────────── -->
-  <nav class="shopnav" aria-label="Shop categories">
-    <div class="shopnav-in">
-      {groups.map((g) => (
-        <a class="shopnav-l" href={`#${g.id}`}>{g.label}<em>{g.items.length}</em></a>
-      ))}
-    </div>
-  </nav>
+        <dl class="flag-dl">
+          <div>
+            <dt>Who it is for</dt>
+            <dd>You run a Skool group, sell digital products, or have courses and calls piling up, and none of it lives on a site you own.</dd>
+          </div>
+          <div>
+            <dt>What changes</dt>
+            <dd>Your lessons become articles Google can find, your products get a home that is yours, and every future update lands in your account free.</dd>
+          </div>
+        </dl>
 
-  <!-- ── CATEGORIES ──────────────────────────────────────── -->
-  {groups.map((g) => (
-    <section class="grp" id={g.id}>
-      <div class="grp-head">
-        <div class="grp-k">{g.label}</div>
-        <h2>{g.title}</h2>
-        <p class="grp-note">{g.note}</p>
+        <figure class="flag-quote">
+          <blockquote>&ldquo;{tina.pull}&rdquo;</blockquote>
+          <figcaption><strong>{tina.name}</strong> · Skool review · public</figcaption>
+        </figure>
+
+        <p class="flag-ev">{we.modules} modules · {we.prompts} prompts · {we.assetsPerArticle} assets from every article</p>
+
+        <div class="flag-buy">
+          <p class="flag-price"><span class="e-price">{we.price}</span><span class="flag-terms">one-time, or {we.plan}</span></p>
+          <div class="e-actions">
+            <a class="e-btn" href={we.url}>Build my weekend site <span class="ar" aria-hidden="true">→</span></a>
+            <a class="e-btn e-btn--ghost" href={we.preview}>See inside first, no email</a>
+          </div>
+        </div>
       </div>
-      <div class="rows">
-        {g.items.map((it) => (
-          <a class="row" href={it.url} rel={it.aff ? "sponsored nofollow" : null} target={it.aff ? "_blank" : null}>
-            <span class="r-main">
-              <span class="r-name">{it.name}{it.aff && <span class="r-aff">Affiliate</span>}</span>
-              <span class="r-copy">{it.copy}</span>
-            </span>
-            <span class="r-price">{it.price}<em>{it.note}</em></span>
-          </a>
+    </div>
+  </section>
+
+  <!-- 03 THE MEMBERSHIP -->
+  <section class="e-sec-sm e-white sec" id="membership" aria-labelledby="h-mem">
+    <div class="e-wrap mem-grid">
+      <div class="head">
+        <p class="e-kick">03 · The membership</p>
+        <h2 class="e-d3" id="h-mem">Move in, <em>and keep building.</em></h2>
+        <p class="note">Two tiers of one Skool community. Both open with a <span class="nw">{membership.trial}</span>.</p>
+        <div class="e-actions mem-actions">
+          <a class="e-btn e-btn--ghost" href="/membership">Compare Standard and Premium</a>
+          <a class="e-link" href={SKOOL_PLANS}>Start my {membership.trial} <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="tiers">
+        {tiers.map((x) => (
+          <div class={`tier tier--${x.key}`}>
+            <h3>{x.t.name}</h3>
+            <p class="tier-price"><span class="e-price">{x.t.monthly}</span><span class="tier-per">/month</span> <span class="tier-alt">or {x.t.perYear}</span></p>
+            <p class="tier-buys">{x.buys}</p>
+            <ul class="e-list">{x.items.map((i) => <li>{i}</li>)}</ul>
+          </div>
         ))}
       </div>
-    </section>
-  ))}
+    </div>
+  </section>
 
-  <p class="disclose">
-    Products marked <strong>Affiliate</strong> are not mine. I recommend them because I use them, and I earn a commission if you buy — at no extra cost to you. Their owners set those prices and can change them without telling me.
-  </p>
+  <!-- 04 GUIDES -->
+  <section class="e-sec sec" id="guides" aria-labelledby="h-guides">
+    <div class="e-wrap">
+      <div class="head">
+        <p class="e-kick">04 · Guides</p>
+        <h2 class="e-d3" id="h-guides">Guides you finish <em>the week you buy them.</em></h2>
+      </div>
 
-  <p class="back"><a href="/learn">← Back to The Library</a></p>
+      <div class="sub-head">
+        <h3>The Value Vault</h3>
+        <p class="note">Single-problem guides, each with its own price, bought à la carte. Membership Premium holds every one already unlocked, as The Premium Vault.</p>
+      </div>
+      <ul class="trio">
+        {vault.map((v) => (
+          <li>
+            <p class="trio-price"><span class="e-price">{v.price}</span> one-time</p>
+            <h4>{v.name}</h4>
+            <p>{v.copy}</p>
+            <a class="e-link" href={v.url}>{v.go} <span class="ar" aria-hidden="true">→</span></a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="sub-head">
+        <h3>More guides and products</h3>
+      </div>
+      <ul class="rows">
+        {guides.map((r) => (
+          <li class="row">
+            <div class="row-main"><h4><a href={r.url}>{r.name}</a></h4><p>{r.copy}</p></div>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 AI & CREATOR -->
+  <section class="e-sec e-white sec" id="ai-creator" aria-labelledby="h-ai">
+    <div class="e-wrap">
+      <div class="head">
+        <p class="e-kick">05 · AI & creator</p>
+        <h2 class="e-d3" id="h-ai">Build the persona, <em>then feed her.</em></h2>
+      </div>
+
+      <div class="sub-head">
+        <h3>The AI Influencer Suite</h3>
+        <p class="note">Four stages of the same build, sold separately. Start at the stage you are at.</p>
+      </div>
+      <ol class="steps">
+        {suite.map((s) => (
+          <li>
+            <span class="step-n" aria-hidden="true">{s.n}</span>
+            <h4><a href={s.url}>{s.name}</a></h4>
+            <p>{s.copy}</p>
+            <p class="step-price"><span class="e-price">{s.price}</span> one-time</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="sub-head">
+        <h3>For creators</h3>
+      </div>
+      <ul class="rows">
+        {creator.map((r) => (
+          <li class="row">
+            <div class="row-main"><h4><a href={r.url}>{r.name}</a></h4><p>{r.copy}</p></div>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06 PRETTY & PAID PLR VAULT: its own subscription, off the membership ladder -->
+  <section class="e-sec-sm e-blush sec" id="plr-vault" aria-labelledby="h-plr">
+    <div class="e-wrap plr-grid">
+      <div>
+        <p class="e-kick">06 · A separate subscription</p>
+        <h2 class="e-d3" id="h-plr">Pretty &amp; Paid PLR Vault™</h2>
+        <p class="plr-lede">A stocked library of done-for-you digital products with a full PLR licence, so you can put your own name on them and sell. Twenty new products arrive every month: planners, journals, guides, printables, Pinterest and carousel templates, Reel packs. What you download stays yours, even if you cancel.</p>
+        <p class="note">Its own subscription on Beacons. Not part of either membership, and not the same thing as The Value Vault.</p>
+      </div>
+      <div class="plr-buy">
+        <p class="plr-price"><span class="e-price">$11</span><span class="row-terms">per month · Beacons</span></p>
+        <a class="e-btn e-btn--ghost" href="/shop/pretty-and-paid-plr-vault">Open the PLR library</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 DONE FOR YOU -->
+  <section class="e-sec-sm sec" id="done-for-you" aria-labelledby="h-dfy">
+    <div class="e-wrap">
+      <div class="head">
+        <p class="e-kick">07 · Done for you</p>
+        <h2 class="e-d3" id="h-dfy">Handed back <em>finished.</em></h2>
+        <p class="note">I do the work and return it built.</p>
+      </div>
+      <ul class="rows">
+        {dfy.map((r) => (
+          <li class="row">
+            <div class="row-main"><h3><a href={r.url}>{r.name}</a></h3><p>{r.copy}</p></div>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 08 RECOMMENDED: affiliate links, rel sponsored, disclosure in this section -->
+  <section class="e-sec-sm e-paper sec rec" id="recommended" aria-labelledby="h-rec">
+    <div class="e-wrap rec-grid">
+      <div class="head">
+        <p class="e-kick">08 · Recommended, not mine</p>
+        <h2 class="rec-h" id="h-rec">Things Jodie recommends</h2>
+        <p class="rec-disclose"><strong>These are affiliate links.</strong> Other people built these products. I use them and rate them, and I earn a commission if you buy, at no extra cost to you. Their owners set the prices and can change them without telling me.</p>
+      </div>
+      <ul class="rows rows--quiet">
+        {recommended.map((r) => (
+          <li class="row">
+            <div class="row-main">
+              <h3><a href={r.url} rel="sponsored nofollow noopener" target="_blank">{r.name}<span class="sr"> (affiliate link, opens in a new tab)</span></a></h3>
+              <p>{r.copy}</p>
+            </div>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <p class="e-wrap outro">Not sure which door is yours? <a class="e-link" href="/resources/find-your-door">Find your door in two minutes</a></p>
 </PageLayout>
 
 <style>
-  /* ---------- FLAGSHIP ---------- */
-  /* Paper, not gradient. The 2px pink top rule is the house card pattern
-     already used by .toc .plate and .rail-card in global.css. */
-  .flag{display:grid;grid-template-columns:300px 1fr;align-items:stretch;gap:0;margin:0 0 56px;
-        border-radius:2px;overflow:hidden;text-decoration:none;color:inherit;
-        background:var(--white);
-        border:1px solid var(--gray);border-top:2px solid var(--pink);
-        transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
-  .flag:hover{border-color:rgba(214,46,115,.4);border-top-color:var(--pink);
-              box-shadow:0 18px 44px -30px rgba(43,22,27,.35)}
-  .flag-img{overflow:hidden;background:var(--cream);display:flex;align-items:center;justify-content:center}
-  .flag-img img{width:100%;height:auto;object-fit:contain;display:block}
-  .flag-body{padding:38px 40px 34px}
-  .flag-k{display:block;font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
-  .flag-h{font-family:var(--display);font-weight:300;font-size:clamp(28px,3.6vw,42px);line-height:1.04;
-          letter-spacing:-1.2px;margin:0 0 14px;color:var(--choc)}
-  .flag-h em{font-style:italic;color:var(--pink)}
-  .flag-sub{font-size:16.5px;line-height:1.7;color:var(--choc-soft);margin:0 0 24px;max-width:52ch}
-  .flag-stats{display:flex;gap:30px;flex-wrap:wrap;padding:18px 0;margin-bottom:22px;
-              border-top:1px solid var(--gray);border-bottom:1px solid var(--gray)}
-  .flag-stats span{display:flex;align-items:baseline;gap:7px;font-size:11px;letter-spacing:2px;
-                   text-transform:uppercase;color:var(--taupe-deep)}
-  .flag-stats b{font-family:var(--display);font-size:26px;font-weight:300;color:var(--choc);letter-spacing:-1px}
-  .flag-list{list-style:none;padding:0;margin:0 0 26px}
-  .flag-list li{position:relative;padding:6px 0 6px 22px;font-size:15.5px;line-height:1.6;color:var(--choc-soft)}
-  .flag-list li:before{content:"";position:absolute;left:0;top:14px;width:5px;height:5px;
-                       background:var(--gold-deep);transform:rotate(45deg)}
-  .flag-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  .flag-price{font-family:var(--display);font-size:34px;font-weight:300;color:var(--choc);letter-spacing:-1px}
-  .flag-price em{font-style:normal;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin-left:9px}
-  .flag-go{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--cream);background:var(--choc);
-           padding:15px 30px;border-radius:2px;white-space:nowrap;
-           transition:background .35s var(--ease)}
-  .flag:hover .flag-go{background:var(--pink)}
-  @media(max-width:860px){
-    .flag{grid-template-columns:1fr}
-    .flag-body{padding:28px 22px 26px}
-    .flag-stats{gap:20px}
-    .flag-foot{flex-direction:column;align-items:stretch;gap:16px}
-    .flag-go{text-align:center}
-  }
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .sec{scroll-margin-top:96px}
+  .note{font-size:15.5px;line-height:1.6;color:var(--e-ink-3);margin:0;max-width:46em}
+  .e-link .ar{transition:transform .2s}
+  .e-link:hover .ar{transform:translateX(3px)}
 
-  /* ---------- VALUE VAULT ---------- */
-  /* Was a full pink gradient panel. Now paper inside a gold hairline frame —
-     the section reads as a plate, not a highlight box. */
-  .vault{
-    margin:56px 0 0;padding:54px 44px 50px;border-radius:2px;
-    background:var(--white);
-    border:1px solid rgba(200,169,106,.42);
-  }
-  .vault-head{text-align:center;max-width:52ch;margin:0 auto 40px}
-  .vault-k{font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
-  .vault-script{
-    font-family:var(--display);font-style:italic;font-weight:300;
-    font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-1.5px;
-    color:var(--choc);margin-bottom:10px;
-  }
-  .vault-sub{
-    font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;
-    color:var(--taupe-deep);margin:0;
-  }
-  .vault-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray);border:1px solid var(--gray)}
-  @media(max-width:860px){.vault-grid{grid-template-columns:1fr}.vault{padding:40px 22px 36px}}
-  .vcard{
-    display:flex;flex-direction:column;background:var(--white);
-    padding:28px 26px 26px;
-    transition:background .35s var(--ease);
-  }
-  .vcard:hover{background:var(--cream)}
-  .vprice{font-family:var(--display);font-weight:300;font-size:30px;line-height:1;color:var(--choc);letter-spacing:-1px}
-  .vnote{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--taupe-deep);margin:8px 0 16px}
-  .vcard h3{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.22;margin:0 0 10px}
-  .vcard p{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 20px;flex:1}
-  .vgo{font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep)}
+  /* MASTHEAD */
+  .mast{padding:clamp(56px,8vw,112px) 0 clamp(40px,5vw,64px);border-bottom:var(--e-hair)}
+  .mast-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,96px);align-items:end}
+  .mast .e-lede{margin-bottom:0}
+  .idx-h{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-ink-3);margin:0 0 8px}
+  .idx ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-line)}
+  .idx li{border-bottom:1px solid var(--e-line)}
+  .idx a{display:flex;align-items:center;gap:14px;min-height:44px;font-size:15px;font-weight:500;color:var(--e-ink);text-decoration:none}
+  .idx a:hover{color:var(--e-pink-t)}
+  .idx-n{font-family:var(--e-serif);font-weight:600;font-size:14px;color:var(--e-pink-t);min-width:22px}
 
-  /* ---------- PRICE NOTE ---------- */
-  .prices-note{
-    margin:44px 0 0;padding:22px 26px;border-left:2px solid var(--gold);
-    background:rgba(200,169,106,.07);border-radius:0 2px 2px 0;
-  }
-  .prices-note strong{display:block;font-size:14px;margin-bottom:8px}
-  .prices-note span{display:block;font-size:14px;line-height:1.75;color:var(--choc-soft)}
+  .head{margin-bottom:clamp(28px,4vw,44px)}
+  .head .e-d3,.head .e-d2{max-width:18em}
 
-  /* ---------- CATEGORY GROUPS ---------- */
-  .shopnav{position:sticky;top:0;z-index:40;margin:64px 0 0;
-           background:rgba(251,248,245,.94);backdrop-filter:blur(10px);
-           border-top:1px solid rgba(43,22,27,.12);border-bottom:1px solid rgba(43,22,27,.12)}
-  .shopnav-in{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .shopnav-in::-webkit-scrollbar{display:none}
-  .shopnav-l{flex:0 0 auto;display:inline-flex;align-items:baseline;gap:7px;
-             padding:15px 20px;text-decoration:none;white-space:nowrap;
-             font-family:"Inter",system-ui,sans-serif;font-size:12px;letter-spacing:1.3px;
-             text-transform:uppercase;color:var(--choc);
-             border-right:1px solid rgba(43,22,27,.09);transition:color .18s,background .18s}
-  .shopnav-l:first-child{border-left:1px solid rgba(43,22,27,.09)}
-  .shopnav-l em{font-style:normal;font-size:10px;letter-spacing:.5px;color:var(--gold)}
-  .shopnav-l:hover{color:var(--pink);background:rgba(214,46,115,.05)}
-  .shopnav-l:hover em{color:var(--pink)}
-  .grp{scroll-margin-top:64px}
-  @media (max-width:700px){
-    .shopnav-l{padding:13px 15px;font-size:11px;letter-spacing:1px}
-  }
-  .grp{margin-top:78px}
-  .grp-head{margin-bottom:26px}
-  .grp-k{font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
-  .grp-head h2{font-family:var(--display);font-weight:300;font-size:clamp(27px,3.6vw,38px);line-height:1.08;letter-spacing:-.4px;margin:0 0 10px}
-  .grp-note{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:var(--taupe-deep);margin:0;max-width:56ch}
+  /* 01 FREE */
+  .free{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--e-hair)}
+  .free li{display:flex;flex-direction:column;padding:26px 28px 8px 0}
+  .free li + li{padding-left:28px;border-left:1px solid var(--e-line)}
+  .free-tag{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);margin-bottom:12px}
+  .free h3{font-size:23px;line-height:1.18;margin:0 0 10px}
+  .free .sub{display:block;font-family:var(--e-sans);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--e-ink-3);margin-top:6px}
+  .free p{font-size:15.5px;color:var(--e-ink-2);margin:0 0 10px;flex:1}
 
-  .rows{border-top:1px solid var(--gray)}
-  a.row{
-    display:grid;grid-template-columns:1fr auto;gap:26px;align-items:start;
-    padding:24px 8px;border-bottom:1px solid var(--gray);
-    transition:padding-left .4s var(--ease),background .4s var(--ease);
-  }
-  a.row:hover{padding-left:16px;background:var(--cream-deep)}
-  .r-name{display:block;font-family:var(--display);font-size:21px;line-height:1.25}
-  .r-copy{display:block;font-size:14.5px;line-height:1.6;color:var(--taupe-deep);margin-top:6px;max-width:62ch}
-  .r-aff{
-    display:inline-block;margin-left:10px;vertical-align:middle;font-family:var(--sans);
-    font-size:10.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-deep);
-    border:1px solid rgba(200,169,106,.6);border-radius:2px;padding:3px 9px;
-  }
-  .r-price{
-    text-align:right;white-space:nowrap;font-family:var(--display);font-weight:300;font-size:25px;color:var(--choc);line-height:1.1;letter-spacing:-.5px;
-  }
-  .r-price em{
-    display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:1.8px;
-    text-transform:uppercase;color:var(--taupe-deep);margin-top:6px;
-  }
-  @media(max-width:620px){
-    a.row{grid-template-columns:1fr;gap:12px}
-    .r-price{text-align:left}
-  }
+  /* 02 FLAGSHIP */
+  .flag{padding:clamp(64px,9vw,128px) 0}
+  .flag-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,88px);align-items:start}
+  .flag-fig{aspect-ratio:4/5;position:sticky;top:32px}
+  .flag-fig img{object-position:60% 40%}
+  .flag .e-d2{color:#fff;max-width:13em}
+  .flag .e-lede{max-width:34em}
+  .flag-dl{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 0 36px;padding:26px 0;border-top:1px solid rgba(200,169,106,.45);border-bottom:1px solid rgba(200,169,106,.45)}
+  .flag-dl dt{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-bubble);margin:0 0 10px}
+  .flag-dl dd{margin:0;font-size:16px;line-height:1.6;color:rgba(246,239,234,.86)}
+  .flag-quote{margin:0 0 30px;padding-left:22px;border-left:2px solid var(--e-pink)}
+  .flag-quote blockquote{margin:0 0 12px;font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,2vw,25px);line-height:1.38;color:#fff;letter-spacing:-.01em}
+  .flag-quote figcaption{font-size:14px;color:rgba(246,239,234,.72)}
+  .flag-quote strong{color:#fff;font-weight:600}
+  .flag .flag-ev{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,234,.66);margin:0 0 30px}
+  .flag-buy{display:flex;flex-wrap:wrap;align-items:center;gap:22px 36px}
+  .flag .flag-price{display:flex;align-items:baseline;gap:14px;margin:0;color:#fff}
+  .flag-price .e-price{font-size:clamp(52px,6vw,72px);color:#fff}
+  .flag-terms{font-size:15px;color:rgba(246,239,234,.78)}
+  .flag .flag-name{margin:-4px 0 18px;font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,2vw,24px);letter-spacing:-.01em;color:#fff;padding-bottom:14px;border-bottom:1px solid rgba(200,169,106,.45);display:block;width:fit-content}
 
-  .disclose{margin-top:56px;font-size:14px;line-height:1.75;color:var(--taupe-deep)}
-  .back{margin-top:44px}
-  .back a{color:var(--pink);font-weight:500}
+  /* 03 MEMBERSHIP */
+  .mem-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,6vw,88px);align-items:start}
+  .mem-grid .head{margin-bottom:0}
+  .mem-actions{margin-top:28px}
+  .tiers{display:grid;grid-template-columns:1fr 1fr;border-top:var(--e-hair)}
+  .tier{padding:26px 28px 6px 0}
+  .tier + .tier{padding-left:28px;border-left:1px solid var(--e-line)}
+  .tier h3{font-family:var(--e-sans);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:10px;letter-spacing:.16em}
+  .tier h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--e-bubble)}
+  .tier--premium h3::before{background:var(--e-pink)}
+  .tier-price{margin:0 0 12px;font-size:15px;color:var(--e-ink-2)}
+  .tier-price .e-price{font-size:44px;color:var(--e-ink)}
+  .nw{white-space:nowrap}
+  .tier-per{margin-left:3px}
+  .tier-alt{display:block;font-size:14px;color:var(--e-ink-3);margin-top:6px}
+  .tier-buys{font-family:var(--e-serif);font-weight:600;font-size:19px;line-height:1.35;margin:0 0 16px}
+  .tier .e-list{font-size:15px;color:var(--e-ink-2)}
+
+  /* 04 / 05 SUB-HEADS */
+  .sub-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 28px;margin:clamp(40px,5vw,64px) 0 18px}
+  .head + .sub-head{margin-top:0}
+  .sub-head h3{font-size:clamp(24px,2.4vw,30px);margin:0}
+  .sub-head .note{font-size:15px;max-width:40em}
+
+  /* VALUE VAULT TRIO */
+  .trio{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--e-ink)}
+  .trio li{display:flex;flex-direction:column;padding:24px 28px 6px 0}
+  .trio li + li{padding-left:28px;border-left:1px solid var(--e-line)}
+  .trio-price{margin:0 0 14px;font-size:13px;color:var(--e-ink-3);letter-spacing:.04em}
+  .trio-price .e-price{font-size:38px;color:var(--e-pink);margin-right:6px}
+  .trio h4{font-family:var(--e-serif);font-weight:600;font-size:21px;line-height:1.22;margin:0 0 10px;letter-spacing:-.01em}
+  .trio p{font-size:15px;color:var(--e-ink-2);margin:0 0 10px}
+  .trio li > p:nth-of-type(2){flex:1}
+
+  /* EDITORIAL ROWS: whole row is the product link */
+  .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-line)}
+  .row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--e-line);transition:background .2s}
+  .row:hover{background:rgba(214,46,115,.04)}
+  .row h3,.row h4{font-family:var(--e-serif);font-weight:600;font-size:21px;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+  .row h3 a,.row h4 a{color:var(--e-ink);text-decoration:none}
+  .row h3 a::after,.row h4 a::after{content:"";position:absolute;inset:0}
+  .row:hover h3 a,.row:hover h4 a{color:var(--e-pink-t);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .row p{margin:0;font-size:15px;color:var(--e-ink-2);max-width:40em}
+  .row .row-price{text-align:right;white-space:nowrap}
+  .row-price .e-price{display:block;font-size:26px;color:var(--e-ink)}
+  .row-terms{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--e-ink-3);margin-top:6px}
+  .row a:focus-visible::after{outline:3px solid var(--e-pink);outline-offset:-3px}
+
+  /* AI SUITE STEPS */
+  .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--e-ink)}
+  .steps li{position:relative;display:flex;flex-direction:column;padding:22px 22px 8px 0}
+  .steps li + li{padding-left:22px;border-left:1px solid var(--e-line)}
+  .step-n{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t);margin-bottom:10px}
+  .steps h4{font-family:var(--e-serif);font-weight:600;font-size:20px;line-height:1.22;margin:0 0 8px;letter-spacing:-.01em}
+  .steps h4 a{color:var(--e-ink);text-decoration:none}
+  .steps h4 a::after{content:"";position:absolute;inset:0}
+  .steps li:hover h4 a{color:var(--e-pink-t);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .steps a:focus-visible::after{outline:3px solid var(--e-pink);outline-offset:-3px}
+  .steps p{margin:0 0 12px;font-size:15px;color:var(--e-ink-2);flex:1}
+  .steps .step-price{flex:0;font-size:13px;color:var(--e-ink-3)}
+  .step-price .e-price{font-size:28px;color:var(--e-ink);margin-right:4px}
+
+  /* 06 PLR */
+  .plr-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,6vw,96px);align-items:end}
+  .plr-lede{font-size:17px;line-height:1.65;color:var(--e-ink-2);max-width:40em;margin:0 0 16px}
+  .plr-buy{display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding-left:clamp(0px,3vw,40px);border-left:var(--e-hair)}
+  .plr-price{margin:0}
+  .plr-price .e-price{display:block;font-size:52px;color:var(--e-ink)}
+
+  /* 08 RECOMMENDED: quieter by design */
+  .rec-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,6vw,88px);align-items:start}
+  .rec-grid .head{margin-bottom:0}
+  .rec-h{font-size:clamp(24px,2.4vw,30px);line-height:1.15;margin:0 0 14px}
+  .rec-disclose{font-size:14.5px;line-height:1.65;color:var(--e-ink-2);margin:0;padding:16px 0 0;border-top:var(--e-hair)}
+  .rec-disclose strong{color:var(--e-ink)}
+  .rows--quiet .row{padding:16px 0}
+  .rows--quiet .row h3{font-family:var(--e-sans);font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+  .rows--quiet .row p{font-size:14px;color:var(--e-ink-3)}
+  .rows--quiet .row-price .e-price{font-family:var(--e-sans);font-size:16px;font-weight:600;letter-spacing:0;color:var(--e-ink-2)}
+  .rows--quiet .row-terms{font-size:11px}
+
+  .outro{padding-top:40px;padding-bottom:clamp(56px,8vw,96px);font-size:15.5px;color:var(--e-ink-2);display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px}
+
+  @media (max-width:980px){
+    .steps{grid-template-columns:1fr 1fr}
+    .steps li:nth-child(3){padding-left:0;border-left:0}
+    .steps li:nth-child(n+3){border-top:1px solid var(--e-line)}
+  }
+  @media (max-width:860px){
+    .mast-grid,.flag-grid,.mem-grid,.rec-grid,.plr-grid{grid-template-columns:1fr}
+    .idx ol{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}
+    .flag-fig{position:relative;top:auto;aspect-ratio:4/3}
+    .flag-fig img{object-position:60% 35%}
+    .free,.trio{grid-template-columns:1fr}
+    .free li,.free li + li,.trio li,.trio li + li{padding:22px 0 8px;border-left:0}
+    .free li + li,.trio li + li{border-top:1px solid var(--e-line)}
+    .plr-buy{padding-left:0;border-left:0;padding-top:20px;border-top:var(--e-hair);flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;width:100%}
+  }
+  @media (max-width:620px){
+    .idx ol{grid-template-columns:1fr}
+    .flag-dl{grid-template-columns:1fr;gap:20px}
+    .tiers{grid-template-columns:1fr}
+    .tier,.tier + .tier{padding:22px 0 8px;border-left:0}
+    .tier + .tier{border-top:1px solid var(--e-line)}
+    .steps{grid-template-columns:1fr}
+    .steps li,.steps li + li,.steps li:nth-child(3){padding:20px 0 6px;border-left:0}
+    .steps li + li{border-top:1px solid var(--e-line)}
+    .row{grid-template-columns:1fr;gap:10px}
+    .row .row-price{text-align:left;display:flex;align-items:baseline;gap:12px}
+    .row-price .e-price{display:inline}
+    .row-terms{display:inline;margin:0}
+    .flag-buy .e-actions{width:100%}
+    .flag-buy .e-btn{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .row,.e-link .ar{transition:none}
+  }
 </style>
