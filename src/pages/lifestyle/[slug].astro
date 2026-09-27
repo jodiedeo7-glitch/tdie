@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import "../../styles/edit.css";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
@@ -20,114 +21,249 @@ const catLooks = kind === "category" ? LOOKS.filter((l) => l.category === catego
 const cat = kind === "look" ? categoryOf(look.category) : category;
 const more = kind === "look" ? LOOKS.filter((l) => l.slug !== look.slug && l.category === look.category).slice(0, 4) : [];
 const rel = "sponsored nofollow noopener";
+// A worn photo (file name ends -lifestyle) is Tommy Kate; a flat lay is product only.
+const isWorn = (im) => /-lifestyle\./.test(im.file || "");
+const catCover = kind === "category" ? catLooks.find((l) => l.images.some(isWorn)) : null;
+const catCoverImg = catCover?.images.find(isWorn);
+const pad = (n) => String(n).padStart(2, "0");
 ---
 {kind === "category" ? (
   <PageLayout
+    bare
     title={`${category.name} · Pink Amazon Finds`}
     description={`${category.blurb} Every piece linked on Amazon.`}
-    wide
   >
-    <section class="page-wrap wide ls">
-      <a class="page-eyebrow" href="/lifestyle">Lifestyle</a>
-      <h1>{category.name}</h1>
-      <p class="lede">{category.blurb}</p>
-      <PinkFindsSignup variant="strip" />
-      {catLooks.length ? (
-        <div class="ls-grid">
-          {catLooks.map((l) => (
-            <a class="ls-card" href={`/lifestyle/${l.slug}`}>
-              <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, 300px" />
-              <span class="ls-card-cat">{l.season || cat.name}</span>
-              <span class="ls-card-title">{l.title}</span>
+    <div class="ls">
+      <header class="ls-mast">
+        <div class={`e-wrap ls-mast-grid${catCover ? "" : " is-solo"}`}>
+          <div class="ls-mast-copy">
+            <p class="ls-crumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><span>Department</span></p>
+            <h1 class="e-d1">{category.name}</h1>
+            <p class="e-lede">{category.blurb}</p>
+            <p class="e-credit ls-mast-meta">{catLooks.length ? `${catLooks.length} look${catLooks.length === 1 ? "" : "s"}` : "Coming soon"} · <b>Linked on Amazon</b></p>
+          </div>
+          {catCover && catCoverImg && (
+            <a class="ls-cover" href={`/lifestyle/${catCover.slug}`}>
+              <figure class="ls-cover-fig">
+                <span class="e-figure ls-cover-img">
+                  <Image src={catCoverImg.src} alt={catCoverImg.alt || catCover.title} widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 440px" loading="eager" fetchpriority="high" />
+                </span>
+                <figcaption class="e-credit"><span>On the cover · <b>{catCover.title}</b></span><span>Worn by Tommy Kate, our AI model</span></figcaption>
+              </figure>
             </a>
-          ))}
+          )}
         </div>
-      ) : (
-        <p class="ls-empty">Nothing here yet. The first {category.name.toLowerCase()} looks are on their way.</p>
-      )}
-      <LifestyleExtras />
-    <p class="ls-disclosure">{DISCLOSURE}</p>
-    </section>
+      </header>
+
+      <div class="e-wrap ls-strip">
+        <PinkFindsSignup variant="strip" />
+      </div>
+
+      <section class="e-wrap ls-sec" aria-labelledby="h-looks">
+        <div class="ls-head ls-head-row">
+          <h2 class="e-d3" id="h-looks">Every {category.name.toLowerCase()} look</h2>
+          <p class="ls-aff-note"><span class="ls-aff-tag">Affiliate</span> Every piece links to Amazon. Disclosure at the foot of the page.</p>
+        </div>
+        {catLooks.length ? (
+          <ul class="ls-grid">
+            {catLooks.map((l) => (
+              <li>
+                <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+                  <span class="ls-card-img">
+                    <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 280px" />
+                  </span>
+                  <span class="e-credit ls-card-cat">{l.season || cat.name}</span>
+                  <h3 class="ls-card-title">{l.title}</h3>
+                  <span class="ls-card-n">{l.items.length} pieces linked</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="ls-empty">Nothing here yet. The first {category.name.toLowerCase()} looks are on their way.</p>
+        )}
+      </section>
+
+      <div class="e-wrap ls-foot">
+        <LifestyleExtras />
+        <p class="ls-disclosure"><span class="ls-aff-tag">Disclosure</span> {DISCLOSURE}</p>
+      </div>
+    </div>
   </PageLayout>
 ) : (
   <PageLayout
+    bare
     title={`${look.title}`}
     description={(look.intro || `${look.title}. Every piece linked on Amazon.`).slice(0, 158)}
-    wide
     ogImage={look.images[0].src.src}
   >
-    <article class="page-wrap wide ls ls-look">
-      <a class="page-eyebrow" href={`/lifestyle/${cat.slug}`}>Lifestyle · {cat.name}{look.season ? ` · ${look.season}` : ""}</a>
-      <h1>{look.title}</h1>
-      {look.intro && <p class="lede">{look.intro}</p>}
-      <p class="ls-disclosure ls-disclosure-top">Affiliate links. {DISCLOSURE.split(". ")[0]}.</p>
+    <article class="ls ls-look">
+      <header class="e-wrap ls-look-head">
+        <p class="ls-crumb">
+          <a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a>{look.season && <><span aria-hidden="true">/</span><span>{look.season}</span></>}
+        </p>
+        <h1 class="e-d2">{look.title}</h1>
+        {look.intro && <p class="e-lede">{look.intro}</p>}
+      </header>
 
-      <div class="ls-look-body">
-        <div class="ls-look-images">
-          {look.images.map((im) => (
-            <Image src={im.src} alt={im.alt || look.title} widths={[480, 720, 1000]} sizes="(max-width: 900px) 100vw, 520px" />
+      <div class="e-wrap ls-look-body">
+        <div class={`ls-look-images n-${look.images.length}`}>
+          {look.images.map((im, i) => (
+            <figure class="ls-look-fig">
+              <span class="e-figure ls-look-img">
+                <Image src={im.src} alt={im.alt || look.title} widths={[480, 720, 1000]} sizes="(max-width: 900px) 50vw, 640px" loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} />
+              </span>
+              <figcaption class="e-credit">{isWorn(im) ? <><b>Worn</b> by Tommy Kate, our AI model</> : <><b>The pieces</b> · every one linked</>}</figcaption>
+            </figure>
           ))}
         </div>
         <div class="ls-look-items">
-          <h2 class="ls-h2">Shop the look</h2>
+          <p class="ls-disclosure-top"><span class="ls-aff-tag">Disclosure</span> Affiliate links. {DISCLOSURE.split(". ")[0]}.</p>
+          <h2 class="ls-shop-h">Shop the look</h2>
           <ol class="ls-items">
-            {look.items.map((it) => (
+            {look.items.map((it, i) => (
               <li>
-                <a href={it.link} rel={rel} target="_blank">{it.name}</a>
-                {it.note && <span class="ls-item-note">{it.note}</span>}
+                <span class="ls-item-n" aria-hidden="true">{pad(i + 1)}</span>
+                <span class="ls-item-main">
+                  <a href={it.link} rel={rel} target="_blank">{it.name}<span class="ls-sr"> (Amazon affiliate link, opens in a new tab)</span></a>
+                  {it.note && <span class="ls-item-note">{it.note}</span>}
+                </span>
+                <span class="ls-item-go" aria-hidden="true">Amazon ↗</span>
               </li>
             ))}
           </ol>
           {look.ideaList && (
-            <a class="ls-all" href={look.ideaList} rel={rel} target="_blank">Shop every piece on Amazon</a>
+            <a class="e-btn e-btn--ghost ls-all" href={look.ideaList} rel={rel} target="_blank">Shop every piece on Amazon<span class="ls-sr"> (affiliate link, opens in a new tab)</span></a>
           )}
-          <PinkFindsSignup variant="side" />
+          <div class="ls-side-signup">
+            <PinkFindsSignup variant="side" />
+          </div>
         </div>
       </div>
 
       {more.length > 0 && (
-        <>
-          <h2 class="ls-h2 ls-more-h">More {cat.name.toLowerCase()}</h2>
-          <div class="ls-grid">
-            {more.map((l) => (
-              <a class="ls-card" href={`/lifestyle/${l.slug}`}>
-                <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480]} sizes="(max-width: 640px) 50vw, 240px" />
-                <span class="ls-card-title">{l.title}</span>
-              </a>
-            ))}
+        <section class="e-wrap ls-sec ls-more" aria-labelledby="h-more">
+          <div class="ls-head ls-head-row">
+            <h2 class="e-d3" id="h-more">More {cat.name.toLowerCase()}</h2>
+            <a class="e-link" href={`/lifestyle/${cat.slug}`}>Every {cat.name.toLowerCase()} look <span aria-hidden="true">→</span></a>
           </div>
-        </>
+          <ul class="ls-grid">
+            {more.map((l) => (
+              <li>
+                <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+                  <span class="ls-card-img">
+                    <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480]} sizes="(max-width: 640px) 50vw, 280px" />
+                  </span>
+                  <span class="e-credit ls-card-cat">{l.season || cat.name}</span>
+                  <h3 class="ls-card-title">{l.title}</h3>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
-      <LifestyleExtras />
-    <p class="ls-disclosure">{DISCLOSURE}</p>
+
+      <div class="e-wrap ls-foot">
+        <LifestyleExtras />
+        <p class="ls-disclosure"><span class="ls-aff-tag">Disclosure</span> {DISCLOSURE}</p>
+      </div>
     </article>
   </PageLayout>
 )}
 
 <style is:global>
-  .ls .ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
-  .ls .ls-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
-  .ls .ls-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush)}
-  .ls .ls-card-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
-  .ls .ls-card-title{font-family:var(--display);font-size:19px;line-height:1.25}
-  .ls .ls-card:hover .ls-card-title{color:var(--pink-deep)}
-  .ls .ls-empty{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--taupe-deep)}
-  .ls .ls-h2{font-family:var(--display);font-weight:300;font-size:clamp(24px,3.4vw,32px);margin:0 0 18px}
-  .ls .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
-  .ls .ls-disclosure-top{margin:-24px 0 36px;padding:0;border:0}
-  .ls-look .ls-look-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
-  .ls-look .ls-look-images{display:grid;gap:18px}
-  .ls-look .ls-look-images img{width:100%;height:auto;background:var(--blush)}
-  .ls-look .ls-look-items{position:sticky;top:96px}
-  .ls-look .ls-items{list-style:none;counter-reset:it;padding:0;margin:0 0 28px;border-top:1px solid var(--cream-deep)}
-  .ls-look .ls-items li{counter-increment:it;display:flex;flex-direction:column;gap:4px;padding:16px 0 16px 44px;border-bottom:1px solid var(--cream-deep);position:relative}
-  .ls-look .ls-items li::before{content:counter(it,decimal-leading-zero);position:absolute;left:0;top:17px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold-deep)}
-  .ls-look .ls-items a{font-size:17px;color:var(--choc);text-decoration:underline;text-decoration-color:var(--pink-soft);text-underline-offset:4px}
-  .ls-look .ls-items a:hover{color:var(--pink-deep)}
-  .ls-look .ls-item-note{font-size:14px;color:var(--choc-mute);line-height:1.5}
-  .ls-look .ls-all{display:inline-block;background:var(--choc);color:var(--cream);padding:16px 26px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none}
-  .ls-look .ls-all:hover{background:var(--pink-deep)}
-  .ls-look .ls-more-h{margin-top:72px}
-  @media(max-width:900px){.ls-look .ls-look-body{grid-template-columns:1fr;gap:32px}.ls-look .ls-look-items{position:static;order:-1}}
-  @media(max-width:640px){.ls .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .ls-card-title{font-size:16px}}
+  .ls .ls-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .ls .ls-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-ink-3)}
+  .ls .ls-crumb a{display:inline-flex;align-items:center;min-height:44px;color:var(--e-pink-t);text-decoration:none}
+  .ls .ls-crumb a:hover{text-decoration:underline;text-underline-offset:4px}
+  .ls .ls-crumb [aria-hidden]{color:var(--e-gold)}
+
+  .ls .ls-mast{padding:clamp(40px,6vw,88px) 0 clamp(40px,5vw,72px)}
+  .ls .ls-mast-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(32px,6vw,96px);align-items:end}
+  .ls .ls-mast-grid.is-solo{grid-template-columns:minmax(0,1fr)}
+  .ls .ls-mast-copy .e-lede{margin-bottom:22px}
+  .ls .ls-mast-meta{margin:0;padding-top:18px;border-top:var(--e-hair);max-width:34em}
+  .ls .ls-cover{display:block;text-decoration:none;color:inherit}
+  .ls .ls-cover-fig{margin:0}
+  .ls .ls-cover-img{display:block;aspect-ratio:4/5}
+  .ls .ls-cover-img img{object-position:50% 30%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .ls .ls-cover:hover .ls-cover-img img{transform:scale(1.03)}
+  .ls .ls-cover figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;margin-top:12px;font-size:11px;letter-spacing:.14em}
+  .ls .ls-cover:focus-visible{outline:3px solid var(--e-pink);outline-offset:6px}
+
+  .ls .ls-strip{margin-bottom:clamp(56px,8vw,104px)}
+  .ls .ls-sec{margin-bottom:clamp(64px,9vw,120px)}
+  .ls .ls-head{margin-bottom:clamp(24px,3vw,36px)}
+  .ls .ls-head .e-d3{margin:0}
+  .ls .ls-head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 40px;padding-bottom:18px;border-bottom:1px solid var(--e-ink)}
+  .ls .ls-aff-note{margin:0;font-size:14px;line-height:1.5;color:var(--e-ink-3);max-width:28em}
+  .ls .ls-aff-tag{display:inline-block;margin-right:8px;padding:3px 9px;border:1px solid var(--e-line);border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3);background:var(--e-white);vertical-align:1px}
+
+  .ls .ls-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3.4vw,48px) clamp(16px,2vw,28px)}
+  .ls .ls-card{display:flex;flex-direction:column;text-decoration:none;color:var(--e-ink)}
+  .ls .ls-card-img{display:block;overflow:hidden;border-radius:4px;background:var(--e-paper);aspect-ratio:2/3}
+  .ls .ls-card-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .ls .ls-card:hover .ls-card-img img{transform:scale(1.035)}
+  .ls .ls-card-cat{margin-top:14px;font-size:11px}
+  .ls .ls-card-title{font-family:var(--e-serif);font-weight:600;font-size:20px;line-height:1.2;letter-spacing:-.015em;margin:6px 0 6px}
+  .ls .ls-card:hover .ls-card-title{color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+  .ls .ls-card-n{font-size:13px;color:var(--e-ink-3)}
+  .ls .ls-card:focus-visible{outline:3px solid var(--e-pink);outline-offset:6px}
+  .ls .ls-empty{font-family:var(--e-serif);font-weight:600;font-size:22px;line-height:1.35;color:var(--e-ink-2);margin:0;padding:8px 0}
+
+  .ls .ls-foot{padding-bottom:clamp(56px,8vw,104px)}
+  .ls .ls-disclosure{margin:clamp(48px,6vw,72px) 0 0;padding-top:20px;border-top:var(--e-hair);font-size:13.5px;line-height:1.65;color:var(--e-ink-3);max-width:60em}
+
+  /* LOOK PAGE */
+  .ls-look .ls-look-head{padding-top:clamp(32px,5vw,72px);padding-bottom:clamp(28px,4vw,48px)}
+  .ls-look .ls-look-head .e-d2{max-width:16em;margin-bottom:18px}
+  .ls-look .ls-look-head .e-lede{margin:0;max-width:38em}
+  .ls-look .ls-look-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,72px);align-items:start;margin-bottom:clamp(72px,10vw,128px)}
+  .ls-look .ls-look-images{display:grid;gap:clamp(20px,2.4vw,32px)}
+  .ls-look .ls-look-fig{margin:0}
+  .ls-look .ls-look-img{display:block;aspect-ratio:2/3}
+  .ls-look .ls-look-fig figcaption{margin-top:10px;font-size:11px}
+  .ls-look .ls-look-items{position:sticky;top:32px;padding-top:4px}
+  .ls-look .ls-disclosure-top{margin:0 0 22px;font-size:13px;line-height:1.55;color:var(--e-ink-3)}
+  .ls-look .ls-shop-h{font-size:clamp(28px,3vw,38px);line-height:1.08;margin:0 0 18px}
+  .ls-look .ls-items{list-style:none;padding:0;margin:0 0 28px;border-top:1px solid var(--e-ink)}
+  .ls-look .ls-items li{position:relative;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--e-line);transition:background .2s}
+  .ls-look .ls-items li:hover{background:rgba(214,46,115,.04)}
+  .ls-look .ls-item-n{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t)}
+  .ls-look .ls-item-main{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .ls-look .ls-items a{font-size:16.5px;font-weight:500;line-height:1.4;color:var(--e-ink);text-decoration:none}
+  .ls-look .ls-items a::after{content:"";position:absolute;inset:0}
+  .ls-look .ls-items li:hover a{color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+  .ls-look .ls-items a:focus-visible{outline:none}
+  .ls-look .ls-items a:focus-visible::after{outline:3px solid var(--e-pink);outline-offset:-3px}
+  .ls-look .ls-item-note{font-size:14px;color:var(--e-ink-3);line-height:1.5}
+  .ls-look .ls-item-go{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3);white-space:nowrap}
+  .ls-look .ls-all{width:100%}
+  .ls-look .ls-side-signup{margin-top:32px}
+  .ls-look .ls-more .ls-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+  @media(max-width:1100px){
+    .ls .ls-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .ls-look .ls-more .ls-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  }
+  @media(max-width:900px){
+    .ls-look .ls-look-body{grid-template-columns:1fr}
+    .ls-look .ls-look-items{position:static}
+    .ls-look .ls-look-images.n-2{grid-template-columns:1fr 1fr;gap:12px}
+  }
+  @media(max-width:860px){
+    .ls .ls-mast-grid{grid-template-columns:1fr}
+    .ls .ls-cover-img{aspect-ratio:4/3}
+  }
+  @media(max-width:640px){
+    .ls .ls-grid,.ls-look .ls-more .ls-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}
+    .ls .ls-card-title{font-size:17px}
+    .ls-look .ls-items li{grid-template-columns:28px minmax(0,1fr)}
+    .ls-look .ls-item-go{display:none}
+    .ls-look .ls-look-fig figcaption{font-size:10px;letter-spacing:.1em}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ls .ls-card-img img,.ls .ls-cover-img img,.ls-look .ls-items li{transition:none}
+    .ls .ls-card:hover .ls-card-img img,.ls .ls-cover:hover .ls-cover-img img{transform:none}
+  }
 </style>

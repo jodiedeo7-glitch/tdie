@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import "../../styles/edit.css";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
@@ -7,63 +8,168 @@ import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.
 
 const counts = Object.fromEntries(CATEGORIES.map((c) => [c.slug, LOOKS.filter((l) => l.category === c.slug).length]));
 const latest = LOOKS.slice(0, 24);
+// The cover: the newest look that has a worn (lifestyle) photo of Tommy Kate.
+const coverLook = LOOKS.find((l) => l.images.some((im) => /-lifestyle\./.test(im.file)));
+const coverImg = coverLook?.images.find((im) => /-lifestyle\./.test(im.file));
+const pad = (n) => String(n).padStart(2, "0");
 ---
 <PageLayout
+  bare
   title="Lifestyle · Pink Outfits, Rooms and Finds"
   description="Pink outfits, dorm rooms, home decor, car accessories and gift guides, every piece linked on Amazon. New looks every day."
-  wide
 >
-  <section class="page-wrap wide ls">
-    <span class="page-eyebrow">Lifestyle</span>
-    <h1>Pink, <em>on purpose.</em></h1>
-    <p class="lede">Outfits, rooms and the small pretty things, styled head to toe and linked piece by piece. New looks land every day.</p>
-    <PinkFindsSignup variant="strip" />
-
-    <nav class="ls-cats" aria-label="Lifestyle categories">
-      {CATEGORIES.map((c) => (
-        <a class="ls-cat" href={`/lifestyle/${c.slug}`}>
-          <span class="ls-cat-name">{c.name}</span>
-          <span class="ls-cat-blurb">{c.blurb}</span>
-          <span class="ls-cat-count">{counts[c.slug] ? `${counts[c.slug]} look${counts[c.slug] === 1 ? "" : "s"}` : "Coming soon"}</span>
-        </a>
-      ))}
-    </nav>
-
-    <h2 class="ls-h2">The latest looks</h2>
-    {latest.length ? (
-      <div class="ls-grid">
-        {latest.map((l) => (
-          <a class="ls-card" href={`/lifestyle/${l.slug}`}>
-            <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, 300px" />
-            <span class="ls-card-cat">{categoryOf(l.category)?.name}{l.season ? ` · ${l.season}` : ""}</span>
-            <span class="ls-card-title">{l.title}</span>
+  <div class="ls">
+    <header class="ls-mast">
+      <div class="e-wrap ls-mast-grid">
+        <div class="ls-mast-copy">
+          <p class="e-kick">Lifestyle · Shop the look</p>
+          <h1 class="e-d1">Pink, <em>on purpose.</em></h1>
+          <p class="e-lede">Outfits, rooms and the small pretty things, styled head to toe and linked piece by piece. New looks land every day.</p>
+          <p class="e-credit ls-mast-meta">{LOOKS.length} looks · {CATEGORIES.length} departments · <b>Linked on Amazon</b></p>
+        </div>
+        {coverLook && coverImg && (
+          <a class="ls-cover" href={`/lifestyle/${coverLook.slug}`}>
+            <figure class="ls-cover-fig">
+              <span class="e-figure ls-cover-img">
+                <Image src={coverImg.src} alt={coverImg.alt || coverLook.title} widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 440px" loading="eager" fetchpriority="high" />
+              </span>
+              <figcaption class="e-credit"><span>On the cover · <b>{coverLook.title}</b></span><span>Worn by Tommy Kate, our AI model</span></figcaption>
+            </figure>
           </a>
-        ))}
+        )}
       </div>
-    ) : (
-      <p class="ls-empty">The first looks land this week. Pink Halloween first, obviously.</p>
-    )}
+    </header>
 
-    <LifestyleExtras />
-    <p class="ls-disclosure">{DISCLOSURE}</p>
-  </section>
+    <div class="e-wrap ls-strip">
+      <PinkFindsSignup variant="strip" />
+    </div>
+
+    <section class="e-wrap ls-sec" aria-labelledby="h-departments">
+      <div class="ls-head">
+        <p class="e-kick">The departments</p>
+        <h2 class="e-d3" id="h-departments">Shop by <em>room.</em></h2>
+      </div>
+      <nav aria-label="Lifestyle categories">
+        <ol class="ls-cats">
+          {CATEGORIES.map((c, i) => (
+            <li>
+              <a class="ls-cat" href={`/lifestyle/${c.slug}`}>
+                <span class="ls-cat-n" aria-hidden="true">{pad(i + 1)}</span>
+                <span class="ls-cat-name">{c.name}</span>
+                <span class="ls-cat-blurb">{c.blurb}</span>
+                <span class={`ls-cat-count${counts[c.slug] ? "" : " is-soon"}`}>{counts[c.slug] ? `${counts[c.slug]} look${counts[c.slug] === 1 ? "" : "s"}` : "Coming soon"}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </section>
+
+    <section class="e-wrap ls-sec" aria-labelledby="h-latest">
+      <div class="ls-head ls-head-row">
+        <div>
+          <p class="e-kick">Just in</p>
+          <h2 class="e-d3" id="h-latest">The latest looks</h2>
+        </div>
+        <p class="ls-aff-note"><span class="ls-aff-tag">Affiliate</span> Every piece links to Amazon. Disclosure at the foot of the page.</p>
+      </div>
+      {latest.length ? (
+        <ul class="ls-grid">
+          {latest.map((l) => (
+            <li>
+              <a class="ls-card" href={`/lifestyle/${l.slug}`}>
+                <span class="ls-card-img">
+                  <Image src={l.images[0].src} alt={l.images[0].alt || l.title} widths={[320, 480, 640]} sizes="(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 280px" />
+                </span>
+                <span class="e-credit ls-card-cat">{categoryOf(l.category)?.name}{l.season ? ` · ${l.season}` : ""}</span>
+                <h3 class="ls-card-title">{l.title}</h3>
+                <span class="ls-card-n">{l.items.length} pieces linked</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="ls-empty">The first looks land this week. Pink Halloween first, obviously.</p>
+      )}
+    </section>
+
+    <div class="e-wrap ls-foot">
+      <LifestyleExtras />
+      <p class="ls-disclosure"><span class="ls-aff-tag">Disclosure</span> {DISCLOSURE}</p>
+    </div>
+  </div>
 </PageLayout>
 
 <style is:global>
-  .ls .ls-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:8px 0 64px}
-  .ls .ls-cat{display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;background:var(--white);border:1px solid var(--cream-deep);text-decoration:none;color:var(--choc);transition:border-color .3s var(--ease),transform .3s var(--ease)}
-  .ls .ls-cat:hover{border-color:var(--pink);transform:translateY(-2px)}
-  .ls .ls-cat-name{font-family:var(--display);font-size:22px;font-weight:400}
-  .ls .ls-cat-blurb{font-size:14px;line-height:1.5;color:var(--choc-mute)}
-  .ls .ls-cat-count{margin-top:auto;padding-top:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep);font-weight:600}
-  .ls .ls-h2{font-family:var(--display);font-weight:300;font-size:clamp(26px,4vw,36px);margin:0 0 22px}
-  .ls .ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
-  .ls .ls-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--choc)}
-  .ls .ls-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:var(--blush)}
-  .ls .ls-card-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
-  .ls .ls-card-title{font-family:var(--display);font-size:19px;line-height:1.25}
-  .ls .ls-card:hover .ls-card-title{color:var(--pink-deep)}
-  .ls .ls-empty{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--taupe-deep)}
-  .ls .ls-disclosure{margin-top:56px;padding-top:20px;border-top:1px solid var(--cream-deep);font-size:13px;line-height:1.6;color:var(--choc-meta)}
-  @media(max-width:640px){.ls .ls-grid{grid-template-columns:repeat(2,1fr);gap:14px}.ls .ls-card-title{font-size:16px}}
+  .ls .ls-mast{padding:clamp(48px,7vw,104px) 0 clamp(40px,5vw,72px)}
+  .ls .ls-mast-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(32px,6vw,96px);align-items:end}
+  .ls .ls-mast-copy .e-lede{margin-bottom:22px}
+  .ls .ls-mast-meta{margin:0;padding-top:18px;border-top:var(--e-hair);max-width:34em}
+  .ls .ls-cover{display:block;text-decoration:none;color:inherit}
+  .ls .ls-cover-fig{margin:0}
+  .ls .ls-cover-img{display:block;aspect-ratio:4/5}
+  .ls .ls-cover-img img{object-position:50% 30%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .ls .ls-cover:hover .ls-cover-img img{transform:scale(1.03)}
+  .ls .ls-cover figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;margin-top:12px;font-size:11px;letter-spacing:.14em}
+  .ls .ls-cover:focus-visible{outline:3px solid var(--e-pink);outline-offset:6px}
+
+  .ls .ls-strip{margin-bottom:clamp(56px,8vw,104px)}
+  .ls .ls-sec{margin-bottom:clamp(64px,9vw,120px)}
+  .ls .ls-head{margin-bottom:clamp(24px,3vw,36px)}
+  .ls .ls-head .e-d3{margin:0}
+  .ls .ls-head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px}
+  .ls .ls-aff-note{margin:0;font-size:14px;line-height:1.5;color:var(--e-ink-3);max-width:28em}
+  .ls .ls-aff-tag{display:inline-block;margin-right:8px;padding:3px 9px;border:1px solid var(--e-line);border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3);background:var(--e-white);vertical-align:1px}
+
+  /* Departments: a magazine index, hairline grid */
+  .ls .ls-cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--e-ink)}
+  .ls .ls-cats li{border-bottom:1px solid var(--e-line)}
+  .ls .ls-cats li:not(:nth-child(5n+1)){border-left:1px solid var(--e-line)}
+  .ls .ls-cat{display:flex;flex-direction:column;gap:6px;height:100%;min-height:44px;padding:22px 20px 20px;text-decoration:none;color:var(--e-ink);transition:background .2s}
+  .ls .ls-cat:hover{background:var(--e-white)}
+  .ls .ls-cat:focus-visible{outline:3px solid var(--e-pink);outline-offset:-3px;border-radius:0}
+  .ls .ls-cat-n{font-family:var(--e-serif);font-weight:600;font-size:14px;color:var(--e-pink-t)}
+  .ls .ls-cat-name{font-family:var(--e-serif);font-weight:600;font-size:23px;line-height:1.15;letter-spacing:-.015em}
+  .ls .ls-cat:hover .ls-cat-name{color:var(--e-pink-t)}
+  .ls .ls-cat-blurb{font-size:14px;line-height:1.5;color:var(--e-ink-2)}
+  .ls .ls-cat-count{margin-top:auto;padding-top:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--e-pink-t);font-weight:700}
+  .ls .ls-cat-count.is-soon{color:var(--e-ink-3);font-weight:600}
+
+  /* Look cards */
+  .ls .ls-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3.4vw,48px) clamp(16px,2vw,28px)}
+  .ls .ls-card{display:flex;flex-direction:column;text-decoration:none;color:var(--e-ink)}
+  .ls .ls-card-img{display:block;overflow:hidden;border-radius:4px;background:var(--e-paper);aspect-ratio:2/3}
+  .ls .ls-card-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .ls .ls-card:hover .ls-card-img img{transform:scale(1.035)}
+  .ls .ls-card-cat{margin-top:14px;font-size:11px}
+  .ls .ls-card-title{font-family:var(--e-serif);font-weight:600;font-size:20px;line-height:1.2;letter-spacing:-.015em;margin:6px 0 6px}
+  .ls .ls-card:hover .ls-card-title{color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+  .ls .ls-card-n{font-size:13px;color:var(--e-ink-3)}
+  .ls .ls-card:focus-visible{outline:3px solid var(--e-pink);outline-offset:6px}
+  .ls .ls-empty{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-ink-2)}
+
+  .ls .ls-foot{padding-bottom:clamp(56px,8vw,104px)}
+  .ls .ls-disclosure{margin:clamp(48px,6vw,72px) 0 0;padding-top:20px;border-top:var(--e-hair);font-size:13.5px;line-height:1.65;color:var(--e-ink-3);max-width:60em}
+
+  @media(max-width:1100px){
+    .ls .ls-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .ls .ls-cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .ls .ls-cats li:not(:nth-child(5n+1)){border-left:0}
+    .ls .ls-cats li:nth-child(even){border-left:1px solid var(--e-line)}
+  }
+  @media(max-width:860px){
+    .ls .ls-mast-grid{grid-template-columns:1fr}
+    .ls .ls-cover-img{aspect-ratio:4/3}
+  }
+  @media(max-width:640px){
+    .ls .ls-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}
+    .ls .ls-card-title{font-size:17px}
+    .ls .ls-cat{padding:18px 14px 16px}
+    .ls .ls-cat-name{font-size:20px}
+    .ls .ls-cat-blurb{font-size:13.5px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ls .ls-card-img img,.ls .ls-cover-img img,.ls .ls-cat{transition:none}
+    .ls .ls-card:hover .ls-card-img img,.ls .ls-cover:hover .ls-cover-img img{transform:none}
+  }
 </style>
