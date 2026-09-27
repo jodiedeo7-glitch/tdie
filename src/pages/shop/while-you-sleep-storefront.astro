@@ -25,8 +25,8 @@ const CHECKOUT = "BEACONS_PRODUCT_URL";
 const LIVE_LINK = CHECKOUT.startsWith("https://");
 
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
-const PRESALE_OPENS = "2026-10-01T16:05:00Z"; // Thu 1 Oct 2026, 12:05 pm ET
-const PUBLIC_PRICE_AT = "2026-10-05T13:00:00Z"; // Mon 5 Oct 2026, 9:00 am ET
+const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
+const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
 const now = Date.now();
 const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
 
@@ -61,7 +61,7 @@ const inside = [
   "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
   "The themed-look recipe, for any theme and any season",
   "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
-  "The three scheduled task prompts, complete and ready to paste",
+  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
   "The setup guide, with two of my own looks worked through step by step",
@@ -157,7 +157,7 @@ const inside = [
       </div>
       <div class="ws-card ws-callout">
         <h3>The honest part</h3>
-        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it's off, that run waits.</p>
+        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
         <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
       </div>
     </div>
@@ -176,11 +176,11 @@ const inside = [
     <div class="ws-price-box">
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
         <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">The presale opens Thursday 1 October, 12:05 pm Eastern, for 4 days. Then $27.</p>
+        <p class="ws-price-when">The presale opens Monday 5 October, 7:00 pm Eastern, and runs until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27.</p>
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
         <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">Until Sunday 4 October, 11:59 pm Eastern. Then $27. Your kit unlocks Monday 5 October at 9 am Eastern, at the same download link.</p>
+        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
       </div>
       <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
         <div class="ws-price-fig">$27<span> one-time</span></div>
@@ -203,7 +203,7 @@ const inside = [
     <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
       <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
     <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
-      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it's off, that run waits and picks up where it left off.</p></details>
+      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
       <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
