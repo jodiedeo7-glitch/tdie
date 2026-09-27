@@ -4,6 +4,19 @@ import "../../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
 // Pillar guides and supporting articles live in src/data/library.js.
 import { pillars, articles } from "../../data/library.js";
+import { library as LIB, cap } from "../../data/facts.js";
+const SITE_URL = "https://www.thedigitalincomeedit.com";
+const libLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "CollectionPage", "@id": `${SITE_URL}/learn#page`, url: `${SITE_URL}/learn`, name: "The Library",
+      isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#site`, url: `${SITE_URL}/`, name: "The Digital Income Edit™" },
+      mainEntity: { "@type": "ItemList", itemListElement: pillars.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.title, url: `${SITE_URL}/learn/${p.slug}` })) } },
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "The Library", item: `${SITE_URL}/learn` } ] },
+  ],
+};
 import SiteNav from "../../components/SiteNav.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 
@@ -39,7 +52,7 @@ const totalPieces = pillars.length + articles.length;
   <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Library — Faceless Business Guides | The Digital Income Edit™</title>
-  <meta name="description" content="Every guide from The Digital Income Edit™ — fourteen complete pillar guides on Pinterest, AI, digital products, physical products, email, blogging and automation, plus the supporting articles underneath them." />
+  <meta name="description" content={`${pillars.length} free pillar guides and ${articles.length} supporting articles on building a faceless business with AI: offers, email, blogging, automation and more.`} />
   <link rel="canonical" href="https://www.thedigitalincomeedit.com/learn" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Library | The Digital Income Edit™" />
@@ -166,6 +179,7 @@ const totalPieces = pillars.length + articles.length;
       .clus{padding-left:14px}
     }
   </style>
+  <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
 </head>
 <body>
   <SiteNav />
@@ -193,13 +207,13 @@ const totalPieces = pillars.length + articles.length;
       <div>
         <span class="start-k">New here</span>
         <h2>Start with number one.</h2>
-        <p>It's the widest of the fourteen, and everything below it assumes you've read it. Twenty minutes, and you leave with a niche, an offer and a traffic source.</p>
+        <p>It's the widest of the {LIB.guidesWord}, and everything below it assumes you've read it. Twenty minutes, and you leave with a niche, an offer and a traffic source.</p>
       </div>
       <a class="start-go" href={`/learn/${pillars[0].slug}`}>Read guide 01 →</a>
     </div>
 
     <div class="sec-head">
-      <div class="lbl">The Fourteen</div>
+      <div class="lbl">The {cap(LIB.guidesWord)}</div>
       <h2>The pillar guides</h2>
       <p class="note">Each one is complete on its own, and each carries its own free kit. Read from the top and they build into a business. The shorter pieces underneath a guide answer one problem inside it.</p>
     </div>

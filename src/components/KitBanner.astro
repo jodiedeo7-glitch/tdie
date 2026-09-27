@@ -1,6 +1,8 @@
 ---
 // The Keep It Running Kit bonus (Decision 105). Shows until the deadline, then disappears on its own:
 // hidden at build time after the deadline, and removed in the browser the moment the deadline passes.
+// Without JavaScript the browser cannot check the clock, so no-script visitors never see it:
+// an expired deadline must never be shown, even if the site is not rebuilt after the date.
 import { KIT_DEADLINE as DEADLINE, kitLive } from "../we-kit.js";
 export interface Props {
   variant?: "hero" | "inline";
@@ -16,6 +18,10 @@ const live = kitLive();
     <p class="kb-list">The Operating Prompts™ · The First 30 Days After Your Site Goes Live · How I Batch &amp; Schedule a Month of Pinterest in One 3-Hour Block · Build Your First Freebie in One Afternoon · My Exact $0-to-First-Sale Path · My 5-Minute Canva Pin Template Swap</p>
     <p class="kb-note">In your access email the minute you pay, on one payment or three.</p>
   </div>
+)}
+
+{live && (
+  <noscript set:html={"<style>[data-kit-deadline]{display:none!important}</style>"} />
 )}
 
 <script>
