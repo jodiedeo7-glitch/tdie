@@ -136,21 +136,24 @@ const schema = [
     </div>
   </section>
 
-  <!-- HOW I WORK -->
-  <section class="e-sec e-white" aria-labelledby="ww-how">
-    <div class="e-wrap ww-how">
-      <figure class="e-figure ww-how-fig">
-        <img
-          src="/images/pages/work-golden-hour-desk-1280.webp"
-          srcset="/images/pages/work-golden-hour-desk-800.webp 800w, /images/pages/work-golden-hour-desk-1280.webp 1280w"
-          sizes="(max-width: 900px) 92vw, 620px" width="1280" height="549" loading="lazy" decoding="async"
-          alt="A woman seen from behind at a round oak desk at golden hour, typing on a laptop beside peonies, an open notebook and a pink journal, a golden retriever asleep by the glass doors." />
-      </figure>
-      <div>
-        <p class="e-kick">How I work</p>
-        <h2 id="ww-how" class="e-d2">Architecture first. <em>Tactics after.</em></h2>
-        <p>Every engagement starts from the offer and is built outward in one order, so each piece has somewhere to send the next. It is the same method I used to build The Digital Income Edit™, faceless and solo, with AI: offer first, funnel second, automation third, audience last.</p>
-        <p>That means I will ask about what you sell before I ask about your followers, and I will design the rooms to work together before we switch the traffic on.</p>
+  <!-- HOW I WORK: the page's one oversized statement -->
+  <section class="e-white ww-how-sec" aria-labelledby="ww-how">
+    <div class="e-wrap">
+      <p class="e-kick">How I work</p>
+      <h2 id="ww-how" class="ww-state"><span>Architecture first.</span> <em>Tactics after.</em></h2>
+    </div>
+    <figure class="ww-bleed e-unveil">
+      <img
+        src="/images/pages/work-golden-hour-desk-1280.webp"
+        srcset="/images/pages/work-golden-hour-desk-800.webp 800w, /images/pages/work-golden-hour-desk-1280.webp 1280w"
+        sizes="100vw" width="1280" height="549" loading="lazy" decoding="async"
+        alt="A woman seen from behind at a round oak desk at golden hour, typing on a laptop beside peonies, an open notebook and a pink journal, a golden retriever asleep by the glass doors." />
+    </figure>
+    <div class="e-wrap ww-how-body">
+      <p class="e-credit ww-how-cap">The order: <b>offer</b> · funnel · automation · audience</p>
+      <div class="ww-how-copy e-reveal">
+        <p class="ww-how-lead">Every engagement starts from the offer and is built outward in one order, so each piece has somewhere to send the next.</p>
+        <p>It is the same method I used to build The Digital Income Edit™, faceless and solo, with AI: offer first, funnel second, automation third, audience last. That means I will ask about what you sell before I ask about your followers, and I will design the rooms to work together before we switch the traffic on.</p>
       </div>
     </div>
   </section>
@@ -206,20 +209,20 @@ const schema = [
 
   <!-- PROCESS -->
   <section class="e-sec" id="process" aria-labelledby="ww-process">
-    <div class="e-wrap">
-      <div class="ww-head">
-        <div>
-          <p class="e-kick">The process</p>
-          <h2 id="ww-process" class="e-d2">Four steps, <em>in order.</em></h2>
-        </div>
-        <p class="e-lede">You always know what happens next, and nothing is agreed until we have spoken.</p>
+    <div class="e-wrap ww-proc">
+      <div class="ww-proc-head">
+        <p class="e-kick">The process</p>
+        <h2 id="ww-process" class="e-d2">Four steps, <em>in order.</em></h2>
+        <p class="ww-proc-lede">You always know what happens next, and nothing is agreed until we have spoken.</p>
       </div>
       <ol class="ww-steps">
         {process.map((p) => (
-          <li>
-            <span class="ww-step-n">{p.n}</span>
-            <h3>{p.t}</h3>
-            <p>{p.c}</p>
+          <li class="e-reveal">
+            <span class="ww-step-n" aria-hidden="true">{p.n}</span>
+            <div>
+              <h3>{p.t}</h3>
+              <p>{p.c}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -268,7 +271,7 @@ const schema = [
   <section class="e-sec e-dark" aria-labelledby="ww-close">
     <div class="e-wrap ww-close">
       <p class="e-kick">Applications are open</p>
-      <h2 id="ww-close" class="e-d2">Tell me what <em>you are building.</em></h2>
+      <h2 id="ww-close" class="ww-close-h">Tell me what <em>you are building.</em></h2>
       <p class="e-lede">Where it is now, what it sells and what you want it to become. I read every email personally and reply within one to two business days.</p>
       <div class="e-actions">
         <a class="e-btn" href={APPLY}>Apply by email <span class="ar" aria-hidden="true">→</span></a>
@@ -290,11 +293,18 @@ const schema = [
   .ww-glance dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--e-ink-3);margin-bottom:4px}
   .ww-glance dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--e-ink)}
 
-  /* How I work */
-  .ww-how{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
-  .ww-how-fig{aspect-ratio:4/5}
-  .ww-how-fig img{object-position:30% 50%}
-  .ww-how p:not(.e-kick){color:var(--e-ink-2);margin:0 0 20px;max-width:34em}
+  /* How I work: one oversized statement, one full-bleed frame */
+  .ww-how-sec{padding:clamp(88px,12vw,168px) 0 clamp(80px,10vw,140px)}
+  .ww-state{font-size:clamp(44px,8.2vw,124px);line-height:.9;letter-spacing:-.05em;margin:0 0 clamp(44px,6vw,80px)}
+  .ww-state span,.ww-state em{display:block}
+  .ww-state em{padding-left:clamp(0px,14vw,210px)}
+  .ww-bleed{margin:0;overflow:hidden;background:var(--e-paper);aspect-ratio:1280/549;max-height:640px;width:100%}
+  .ww-bleed img{display:block;width:100%;height:100%;object-fit:cover;object-position:40% 55%}
+  .ww-how-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px);padding-top:clamp(28px,3vw,40px)}
+  .ww-how-cap{margin:6px 0 0;padding-top:14px;border-top:var(--e-hair);align-self:start;max-width:34em}
+  .ww-how-copy{max-width:36em}
+  .ww-how-copy p{color:var(--e-ink-2);margin:0 0 18px}
+  .ww-how-copy .ww-how-lead{font-family:var(--e-serif);font-weight:600;font-size:clamp(23px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;color:var(--e-ink);margin-bottom:22px}
 
   /* Section heads */
   .ww-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 64px;align-items:end;margin-bottom:clamp(36px,5vw,56px)}
@@ -318,13 +328,15 @@ const schema = [
   .ww-fit-alt{margin:24px 0 0;padding-top:18px;border-top:var(--e-hair);font-size:15.5px;color:var(--e-ink-2)}
   .ww-fit-alt .e-link{display:flex;width:max-content;max-width:100%}
 
-  /* Process */
-  .ww-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .ww-steps li{padding:26px 28px 8px 0;border-top:3px solid var(--e-pink)}
-  .ww-steps li + li{padding-left:28px;border-left:var(--e-hair)}
-  .ww-step-n{display:block;font-family:var(--e-serif);font-weight:600;font-size:15px;letter-spacing:.12em;color:var(--e-pink-t);margin-bottom:10px}
-  .ww-steps h3{font-size:25px;margin:0 0 10px}
-  .ww-steps p{font-size:15.5px;margin:0;color:var(--e-ink-2)}
+  /* Process: the heading holds the left, the steps read down the right */
+  .ww-proc{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,7vw,120px);align-items:start}
+  .ww-proc-head{position:sticky;top:120px}
+  .ww-proc-lede{font-size:17px;color:var(--e-ink-2);margin:0;max-width:22em}
+  .ww-steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
+  .ww-steps li{display:grid;grid-template-columns:clamp(64px,8vw,112px) minmax(0,1fr);gap:clamp(12px,3vw,36px);align-items:baseline;padding:clamp(24px,3vw,38px) 0;border-bottom:var(--e-hair)}
+  .ww-step-n{font-family:var(--e-serif);font-weight:600;font-size:clamp(40px,5vw,64px);line-height:.9;letter-spacing:-.04em;color:var(--e-pink)}
+  .ww-steps h3{font-size:clamp(24px,2.4vw,30px);line-height:1.15;margin:0 0 10px}
+  .ww-steps p{font-size:16px;margin:0;color:var(--e-ink-2);max-width:34em}
 
   /* Proof + DFY */
   .ww-proof{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:start}
@@ -344,25 +356,29 @@ const schema = [
   .ww-faq details p{margin:0 0 22px;color:var(--e-ink-2);max-width:40em}
 
   /* Close */
-  .ww-close{max-width:880px}
+  .ww-close{max-width:1080px;padding-top:clamp(16px,4vw,56px);padding-bottom:clamp(16px,4vw,56px)}
+  .ww-close-h{font-size:clamp(44px,7.6vw,112px);line-height:.94;letter-spacing:-.04em;margin:0 0 28px;max-width:9.5em;color:#fff}
+  .ww-close .e-lede{margin-bottom:36px}
   .ww-close .e-link{word-break:break-all}
 
   @media (max-width:1000px){
     .ww-svc li{grid-template-columns:56px minmax(0,1fr) auto;}
     .ww-svc li p{grid-column:2 / 3}
     .ww-svc li .e-link{grid-column:3;grid-row:1}
-    .ww-steps{grid-template-columns:1fr 1fr}
-    .ww-steps li:nth-child(3){padding-left:0;border-left:0}
   }
   @media (max-width:820px){
-    .ww-hero-grid,.ww-how,.ww-head,.ww-proof,.ww-faq-wrap{grid-template-columns:1fr}
-    .ww-how-fig{aspect-ratio:16/10}
+    .ww-hero-grid,.ww-head,.ww-proof,.ww-faq-wrap,.ww-proc,.ww-how-body{grid-template-columns:1fr}
+    .ww-proc-head{position:static}
+    .ww-bleed{aspect-ratio:16/10}
     .ww-dfy{padding-left:0;border-left:0;padding-top:28px;border-top:var(--e-hair)}
   }
   @media (max-width:600px){
-    .ww-fit,.ww-steps{grid-template-columns:1fr}
+    .ww-fit{grid-template-columns:1fr}
     .ww-fit-col--no{padding-left:0;border-left:0;margin-top:32px}
-    .ww-steps li,.ww-steps li + li{padding:22px 0 18px;border-left:0}
+    .ww-bleed{aspect-ratio:4/3}
+    .ww-bleed img{object-position:30% 50%}
+    .ww-steps li{grid-template-columns:52px minmax(0,1fr)}
+    .ww-step-n{font-size:38px}
     .ww-svc li{grid-template-columns:44px minmax(0,1fr);gap:10px 14px;padding:26px 0}
     .ww-svc-n{font-size:30px}
     .ww-svc li p,.ww-svc li .e-link{grid-column:2;grid-row:auto}

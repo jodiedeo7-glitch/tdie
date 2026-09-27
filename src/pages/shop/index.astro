@@ -144,7 +144,7 @@ const schema = [{
     <div class="e-wrap mast-grid">
       <div class="e-rise">
         <p class="e-kick">The shop</p>
-        <h1 class="e-d1">The shop, <em>edited.</em></h1>
+        <h1 class="mast-h">The shop, <em>edited.</em></h1>
         <p class="e-lede">Everything I make, in the order I would hand it to you. Lay the foundations free, build the house in a weekend, then move in with the membership. Every other room on this page is one you add when the build calls for it.</p>
       </div>
       <nav class="idx e-rise e-rise-2" aria-label="On this page">
@@ -166,7 +166,7 @@ const schema = [{
         <h2 class="e-d3" id="h-free">Lay the foundations for <em>$0.</em></h2>
         <p class="note">Finished guides, not teasers. No card, no trial.</p>
       </div>
-      <ul class="free">
+      <ul class="free e-reveal">
         {free.map((f) => (
           <li>
             <span class="free-tag">Free</span>
@@ -181,20 +181,23 @@ const schema = [{
 
   <!-- 02 THE FLAGSHIP -->
   <section class="e-dark flag" id="flagship" aria-labelledby="h-flag">
-    <div class="e-wrap flag-grid">
-      <figure class="e-figure flag-fig">
-        <img
-          src="/images/pages/shop-flagship-840.webp"
-          srcset="/images/pages/shop-flagship-560.webp 560w, /images/pages/shop-flagship-840.webp 840w, /images/pages/shop-flagship-1120.webp 1120w"
-          sizes="(max-width: 860px) 100vw, 480px"
-          width="840" height="1042" loading="lazy" decoding="async"
-          alt="A woman in an oatmeal hoodie smiles at her laptop at a farmhouse kitchen table, lilacs and a pink tumbler beside her, a golden retriever at her knee."
-        />
+    <div class="flag-grid">
+      <figure class="flag-fig">
+        <div class="flag-img e-unveil">
+          <img
+            src="/images/pages/shop-flagship-840.webp"
+            srcset="/images/pages/shop-flagship-560.webp 560w, /images/pages/shop-flagship-840.webp 840w, /images/pages/shop-flagship-1120.webp 1120w"
+            sizes="(max-width: 860px) 100vw, 42vw"
+            width="840" height="1042" loading="lazy" decoding="async"
+            alt="A woman in an oatmeal hoodie smiles at her laptop at a farmhouse kitchen table, lilacs and a pink tumbler beside her, a golden retriever at her knee."
+          />
+        </div>
+        <figcaption class="e-credit flag-cap"><b>Pictured</b> Tommy Kate, the brand's AI persona</figcaption>
       </figure>
       <div class="flag-body">
         <p class="e-kick">02 · The flagship</p>
         <p class="flag-name">{we.name}</p>
-        <h2 class="e-d2" id="h-flag">Your website and blog, <em>built in one weekend.</em></h2>
+        <h2 class="flag-h" id="h-flag">Your website and blog, <em>built in one weekend.</em></h2>
         <p class="e-lede">A real site on a domain you own, built from the content you already have, with Claude doing the heavy lifting. No code, no designer, no starting from blank.</p>
 
         <dl class="flag-dl">
@@ -231,7 +234,7 @@ const schema = [{
     <div class="e-wrap mem-grid">
       <div class="head">
         <p class="e-kick">03 · The membership</p>
-        <h2 class="e-d3" id="h-mem">Move in, <em>and keep building.</em></h2>
+        <h2 class="mem-h" id="h-mem">Move in, <em>and keep building.</em></h2>
         <p class="note">Two tiers of one Skool community. Both open with a <span class="nw">{membership.trial}</span>.</p>
         <div class="e-actions mem-actions">
           <a class="e-btn e-btn--ghost" href="/membership">Compare Standard and Premium</a>
@@ -263,7 +266,7 @@ const schema = [{
         <h3>The Value Vault</h3>
         <p class="note">Single-problem guides, each with its own price, bought à la carte. Membership Premium holds every one already unlocked, as The Premium Vault.</p>
       </div>
-      <ul class="trio">
+      <ul class="trio e-reveal">
         {vault.map((v) => (
           <li>
             <p class="trio-price"><span class="e-price">{v.price}</span> one-time</p>
@@ -300,7 +303,7 @@ const schema = [{
         <h3>The AI Influencer Suite</h3>
         <p class="note">Four stages of the same build, sold separately. Start at the stage you are at.</p>
       </div>
-      <ol class="steps">
+      <ol class="steps e-reveal">
         {suite.map((s) => (
           <li>
             <span class="step-n" aria-hidden="true">{s.n}</span>
@@ -330,7 +333,7 @@ const schema = [{
     <div class="e-wrap plr-grid">
       <div>
         <p class="e-kick">06 · A separate subscription</p>
-        <h2 class="e-d3" id="h-plr">Pretty &amp; Paid PLR Vault™</h2>
+        <h2 class="plr-h" id="h-plr">Pretty &amp; Paid <span>PLR Vault™</span></h2>
         <p class="plr-lede">A stocked library of done-for-you digital products with a full PLR licence, so you can put your own name on them and sell. Twenty new products arrive every month: planners, journals, guides, printables, Pinterest and carousel templates, Reel packs. What you download stays yours, even if you cancel.</p>
         <p class="note">Its own subscription on Beacons. Not part of either membership, and not the same thing as The Value Vault.</p>
       </div>
@@ -395,8 +398,10 @@ const schema = [{
   /* MASTHEAD */
   .mast{padding:clamp(56px,8vw,112px) 0 clamp(40px,5vw,64px);border-bottom:var(--e-hair)}
   .mast-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,96px);align-items:end}
-  .mast .e-lede{margin-bottom:0}
-  .idx-h{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-ink-3);margin:0 0 8px}
+  .mast .e-lede{margin-bottom:0;max-width:34em}
+  .mast-h{font-size:clamp(42px,5.4vw,76px);line-height:.95;letter-spacing:-.035em;margin:0 0 28px}
+  .mast-h em{display:block;font-size:clamp(84px,14vw,208px);line-height:.8;letter-spacing:-.06em;margin:.04em 0 0 -.04em}
+  .idx-h{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);margin:0 0 8px}
   .idx ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-line)}
   .idx li{border-bottom:1px solid var(--e-line)}
   .idx a{display:flex;align-items:center;gap:14px;min-height:44px;font-size:15px;font-weight:500;color:var(--e-ink);text-decoration:none}
@@ -416,12 +421,18 @@ const schema = [{
   .free p{font-size:15.5px;color:var(--e-ink-2);margin:0 0 10px;flex:1}
 
   /* 02 FLAGSHIP */
-  .flag{padding:clamp(64px,9vw,128px) 0}
-  .flag-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,88px);align-items:start}
-  .flag-fig{aspect-ratio:4/5;position:sticky;top:32px}
-  .flag-fig img{object-position:60% 40%}
-  .flag .e-d2{color:#fff;max-width:13em}
-  .flag .e-lede{max-width:34em}
+  /* The one big editorial moment: the photograph bleeds off the left edge
+     and runs the full height of the room; the copy keeps the page grid. */
+  .flag{padding:0;overflow:hidden}
+  .flag-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch}
+  .flag-fig{margin:0;display:flex;flex-direction:column;min-height:100%}
+  .flag-img{position:relative;flex:1;min-height:560px;overflow:hidden;background:var(--e-ink)}
+  .flag-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 42%}
+  .flag .flag-cap{margin:0;padding:14px var(--e-gut) 16px;color:rgba(246,239,234,.7);border-top:1px solid rgba(200,169,106,.45)}
+  .flag .flag-cap b{color:var(--e-bubble);margin-right:8px}
+  .flag-body{padding:clamp(72px,9vw,136px) max(var(--e-gut),calc((100vw - var(--e-w)) / 2 + var(--e-gut))) clamp(72px,9vw,136px) clamp(36px,6vw,96px);max-width:none}
+  .flag-h{font-size:clamp(44px,6.6vw,96px);line-height:.95;letter-spacing:-.04em;margin:0 0 28px;color:#fff;max-width:9.5em}
+  .flag .e-lede{max-width:32em;font-size:clamp(18px,1.7vw,21px)}
   .flag-dl{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 0 36px;padding:26px 0;border-top:1px solid rgba(200,169,106,.45);border-bottom:1px solid rgba(200,169,106,.45)}
   .flag-dl dt{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-bubble);margin:0 0 10px}
   .flag-dl dd{margin:0;font-size:16px;line-height:1.6;color:rgba(246,239,234,.86)}
@@ -439,6 +450,7 @@ const schema = [{
   /* 03 MEMBERSHIP */
   .mem-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,6vw,88px);align-items:start}
   .mem-grid .head{margin-bottom:0}
+  .mem-h{font-size:clamp(34px,4vw,56px);line-height:1;letter-spacing:-.03em;margin:0 0 18px}
   .mem-actions{margin-top:28px}
   .tiers{display:grid;grid-template-columns:1fr 1fr;border-top:var(--e-hair)}
   .tier{padding:26px 28px 6px 0}
@@ -499,11 +511,15 @@ const schema = [{
   .step-price .e-price{font-size:28px;color:var(--e-ink);margin-right:4px}
 
   /* 06 PLR */
+  /* Its own room: a separate band, its own type treatment, its own price block. */
+  #plr-vault{padding:clamp(72px,9vw,128px) 0;border-top:1px solid rgba(184,36,95,.22);border-bottom:1px solid rgba(184,36,95,.22)}
   .plr-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,6vw,96px);align-items:end}
-  .plr-lede{font-size:17px;line-height:1.65;color:var(--e-ink-2);max-width:40em;margin:0 0 16px}
-  .plr-buy{display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding-left:clamp(0px,3vw,40px);border-left:var(--e-hair)}
+  .plr-h{font-size:clamp(40px,5.6vw,80px);line-height:.94;letter-spacing:-.04em;margin:0 0 26px}
+  .plr-h span{display:block;color:var(--e-pink)}
+  .plr-lede{font-size:17px;line-height:1.65;color:var(--e-ink-2);max-width:38em;margin:0 0 16px}
+  .plr-buy{display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding-left:clamp(0px,3vw,48px);border-left:1px solid rgba(184,36,95,.3)}
   .plr-price{margin:0}
-  .plr-price .e-price{display:block;font-size:52px;color:var(--e-ink)}
+  .plr-price .e-price{display:block;font-size:clamp(64px,7vw,96px);letter-spacing:-.04em;color:var(--e-ink)}
 
   /* 08 RECOMMENDED: quieter by design */
   .rec-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,6vw,88px);align-items:start}
@@ -527,8 +543,9 @@ const schema = [{
   @media (max-width:860px){
     .mast-grid,.flag-grid,.mem-grid,.rec-grid,.plr-grid{grid-template-columns:1fr}
     .idx ol{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}
-    .flag-fig{position:relative;top:auto;aspect-ratio:4/3}
-    .flag-fig img{object-position:60% 35%}
+    .flag-img{min-height:0;aspect-ratio:4/3}
+    .flag-img img{object-position:60% 35%}
+    .flag-body{padding:clamp(48px,8vw,72px) var(--e-gut) clamp(64px,10vw,96px)}
     .free,.trio{grid-template-columns:1fr}
     .free li,.free li + li,.trio li,.trio li + li{padding:22px 0 8px;border-left:0}
     .free li + li,.trio li + li{border-top:1px solid var(--e-line)}
