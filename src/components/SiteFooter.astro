@@ -1,0 +1,45 @@
+---
+// One footer for every page. Columns live in src/data/site.js.
+import { FOOTER, SOCIAL } from "../data/site.js";
+---
+<footer class="sf">
+  <div class="sf-in">
+    <div class="sf-brand">
+      <a class="sf-logo" href="/">The Digital Income <span>Edit™</span></a>
+      <p class="sf-tag">Build Your Business Backwards. Scale It Forward.™</p>
+      <p class="sf-note">The AI-built faceless business, and the site you are reading is the proof.</p>
+      <p class="sf-social">
+        {SOCIAL.map((s) => <a href={s.href} rel="noopener" target="_blank">{s.label}</a>)}
+      </p>
+    </div>
+    {FOOTER.map((col) => (
+      <div class="sf-col">
+        <h2>{col.h}</h2>
+        <ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </div>
+    ))}
+  </div>
+  <div class="sf-bar">
+    <span>© 2026 The Digital Income Edit™</span>
+    <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a>
+  </div>
+</footer>
+
+<style>
+  .sf{background:#FFFFFF;border-top:1px solid rgba(200,169,106,.55);color:#4A3F44;font-family:"Inter",system-ui,sans-serif}
+  .sf-in{max-width:1240px;margin:0 auto;padding:64px clamp(16px,4vw,40px) 40px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+  .sf-logo{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:25px;color:#1A1417;display:inline-flex;align-items:center;min-height:44px}
+  .sf-logo span{color:#B8245F;margin-left:.25em}
+  .sf-tag{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:18px;line-height:1.35;color:#1A1417;margin:6px 0 10px;max-width:24ch}
+  .sf-note{font-size:14.5px;line-height:1.6;margin:0 0 14px;max-width:34ch}
+  .sf-social{display:flex;gap:18px;margin:0}
+  .sf-social a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600;color:#B8245F;border-bottom:1px solid rgba(184,36,95,.3)}
+  .sf-col h2{font-family:"Inter",system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#B8245F;margin:0 0 8px}
+  .sf-col ul{list-style:none;margin:0;padding:0}
+  .sf-col a{display:flex;align-items:center;min-height:44px;font-size:15px;color:#4A3F44;transition:color .2s}
+  .sf-col a:hover,.sf-social a:hover{color:#1A1417}
+  .sf-bar{border-top:1px solid rgba(200,169,106,.35);max-width:1240px;margin:0 auto;padding:18px clamp(16px,4vw,40px) 28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font-size:13px;color:#4A3F44}
+  .sf-bar a{display:inline-flex;align-items:center;min-height:44px;color:#4A3F44}
+  .sf a:focus-visible{outline:3px solid #D62E73;outline-offset:3px}
+  @media(max-width:860px){.sf-in{grid-template-columns:1fr 1fr}.sf-brand{grid-column:1/-1}}
+</style>

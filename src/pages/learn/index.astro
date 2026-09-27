@@ -2,104 +2,10 @@
 import "../../styles/global.css";
 
 import Analytics from '@vercel/analytics/astro';
-// The fourteen pillar guides. Slugs of record: Corrections & Decisions Record v2.1, Decision 66.
-// `sub` is the outcome, not the topic. `freebie` is the live /resources kit that
-// belongs to that pillar — all fourteen exist and are deployed.
-// `ac` is the spine colour: a twelve-step ramp from Lavender to Signature Hot Pink.
-const pillars = [
-  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", category: "Business Systems", readTime: "20 Min Read", ac: "#CBB7F7",
-    sub: "Leave with a niche, an offer and a traffic source — not just a business name.",
-    freebie: "The Systems Starter Kit" },
-  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", category: "Mindset", readTime: "15 Min Read", ac: "#C7AEF3",
-    sub: "Finish the thing you keep restarting.",
-    freebie: "The Creator to CEO Kit" },
-  { n: "03", title: "The Branding Guide", slug: "branding-guide", category: "Branding", readTime: "16 Min Read", ac: "#C9A2E7",
-    sub: "A brand she recognises before she reads the name.",
-    freebie: "The Brand Clarity Kit" },
-  { n: "04", title: "The Beginner’s Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", category: "Content Creation", readTime: "13 Min Read", ac: "#CD97DD",
-    sub: "One session that fills the whole week.",
-    freebie: "The Content Creation Kit" },
-  { n: "05", title: "The Ultimate Beginner’s Guide to AI", slug: "ultimate-guide-to-ai", category: "AI", readTime: "18 Min Read", ac: "#CE8CD2",
-    sub: "Stop collecting prompts. Run a workflow that already knows your brand.",
-    freebie: "The AI Starter Kit" },
-  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", category: "Pinterest", readTime: "14 Min Read", ac: "#CF80C2",
-    sub: "Traffic that still arrives in the months you post nothing.",
-    freebie: "The Pinterest Traffic Kit" },
-  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", category: "Blogging", readTime: "17 Min Read", ac: "#D073B5",
-    sub: "Posts still being read a year after you publish them.",
-    freebie: "The Evergreen Blog Kit" },
-  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", category: "Email Marketing", readTime: "16 Min Read", ac: "#D265A8",
-    sub: "A list that earns, instead of a list you feel guilty about.",
-    freebie: "The Email List Starter Kit" },
-  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", category: "Digital Products", readTime: "17 Min Read", ac: "#D3579B",
-    sub: "A first product priced, packaged and live.",
-    freebie: "The First Product Kit" },
-  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", category: "Affiliate Marketing", readTime: "16 Min Read", ac: "#D44A8E",
-    sub: "Commission on the products you already recommend for free.",
-    freebie: "The Affiliate Starter Kit" },
-  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", category: "Automation & Paid Traffic", readTime: "15 Min Read", ac: "#D53C80",
-    sub: "Get back the hours you spend re-doing the same three tasks.",
-    freebie: "The Automation Starter Kit" },
-  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", category: "Passive Income", readTime: "16 Min Read", ac: "#D62E73",
-    sub: "Income that does not stop the week you do.",
-    freebie: "The Passive Income Starter Kit" },
-  { n: "13", title: "How to Turn Your Skool Content Into a Blog", slug: "turn-skool-content-into-a-blog", category: "Blogging", readTime: "14 Min Read", ac: "#D073B5",
-    sub: "Your lessons are already articles. They're just locked where nobody can find them.",
-    freebie: "The Evergreen Blog Kit" },
-  { n: "14", title: "How to Start a Shopify Store", slug: "shopify-store-guide", category: "Physical Products", readTime: "18 Min Read", ac: "#D62E73",
-    sub: "A store that sells something real — without a warehouse, an audience, or your face on it.",
-    freebie: "The Shopify Starter Kit" },
-];
-
-// Supporting articles — the cluster pieces that sit under a pillar.
-// No dedicated freebie: the pillar above each one carries it.
-// Matched to their pillar by `category`, so each cluster renders in place.
-const articles = [
-  { title: "How to Choose Your Niche in a Weekend", slug: "choosing-a-niche", category: "Business Systems", readTime: "12 Min Read",
-    sub: "Pick one by Sunday and stop reopening the question." },
-  { title: "Everything You've Ever Made Lives in a Room With One Door", slug: "room-with-one-door", category: "Business Systems", readTime: "12 Min Read",
-    sub: "You are not short on content. You're short on a place to put it." },
-  { title: "How to Create Your First Offer in a Week", slug: "creating-your-first-offer", category: "Digital Products", readTime: "13 Min Read",
-    sub: "Something real to sell by Friday." },
-  { title: "How to Sell Digital Products Without an Audience", slug: "digital-products-for-beginners", category: "Digital Products", readTime: "12 Min Read",
-    sub: "Sales before followers, in that order." },
-  { title: "Nobody Is Stuck on Selling. They're Stuck Four Steps Earlier", slug: "stuck-four-steps-earlier", category: "Digital Products", readTime: "12 Min Read",
-    sub: "The bottleneck was never the sale. It was the blank page." },
-  { title: "How to Get Your First 1,000 Pinterest Visitors", slug: "pinterest-marketing-guide", category: "Pinterest", readTime: "14 Min Read",
-    sub: "The first thousand, from a standing start." },
-  { title: "How Pinterest SEO Actually Works", slug: "pinterest-seo", category: "Pinterest", readTime: "11 Min Read",
-    sub: "Get found by the woman already searching for it." },
-  { title: "How to Write Blog Posts That Still Get Read in a Year", slug: "blogging-guide", category: "Blogging", readTime: "13 Min Read",
-    sub: "Write it once. Let it rank for years." },
-  { title: "How to Write Your First 5 Emails", slug: "email-marketing-for-beginners", category: "Email Marketing", readTime: "12 Min Read",
-    sub: "Five emails that turn a subscriber into a buyer." },
-  { title: "Where Your Freebie Actually Lives", slug: "where-your-freebie-lives", category: "Email Marketing", readTime: "10 Min Read",
-    sub: "The making was never the hard part. The wiring is." },
-  { title: "How to Earn Your First Affiliate Sale", slug: "affiliate-marketing-for-beginners", category: "Affiliate Marketing", readTime: "11 Min Read",
-    sub: "The first commission is the only difficult one." },
-  { title: "How to Use AI Without Sounding Like a Robot", slug: "ai-for-online-business", category: "AI", readTime: "12 Min Read",
-    sub: "Copy that sounds like you wrote it, because you did." },
-  { title: "How to Build a Business That Runs Without You", slug: "business-that-runs-without-you", category: "Automation & Paid Traffic", readTime: "13 Min Read",
-    sub: "Take a week off without anything breaking." },
-  { title: "Your First Passive Stream Should Be Boring", slug: "boring-first-passive-stream", category: "Passive Income", readTime: "10 Min Read",
-    sub: "The exciting idea is the one that stops paying." },
-  { title: "Would Anyone Recognise Your Brand With the Logo Covered?", slug: "logo-off-test", category: "Branding", readTime: "10 Min Read",
-    sub: "If the words alone don't give you away, the brand isn't finished." },
-  { title: "Stop Asking What to Post. Your Readers Already Told You.", slug: "content-from-questions", category: "Content Creation", readTime: "9 Min Read",
-    sub: "Your best ideas are already sitting in your comments." },
-  { title: "You're Not Behind. You're Measuring the Wrong Thing.", slug: "measuring-the-wrong-thing", category: "Mindset", readTime: "9 Min Read",
-    sub: "Count what you finish, not what came back yet." },
-  { title: "Print on Demand vs Dropshipping: Which to Start With", slug: "print-on-demand-vs-dropshipping", category: "Physical Products", readTime: "12 Min Read",
-    sub: "Both let you sell without touching a box. Only one is safe to learn on." },
-  { title: "How to Set Up a Shopify Store in a Weekend", slug: "shopify-store-in-a-weekend", category: "Physical Products", readTime: "13 Min Read",
-    sub: "One product live, one app connected, by Sunday evening." },
-  { title: "How to Decide What to Sell When You Don't Make Anything", slug: "what-to-sell-online", category: "Physical Products", readTime: "12 Min Read",
-    sub: "A person, a recurring moment, and a supplier who already makes the thing." },
-  { title: "The Supplier Apps That Plug Into Shopify, Compared", slug: "shopify-supplier-apps", category: "Physical Products", readTime: "14 Min Read",
-    sub: "Every one installs in a minute. Picking the wrong one costs you a season." },
-  { title: "How to Get Your First 10 Shopify Sales Without Ads", slug: "first-10-shopify-sales", category: "Physical Products", readTime: "12 Min Read",
-    sub: "Ten strangers, not ten friends. That's the number that tells you the store works." },
-];
+// Pillar guides and supporting articles live in src/data/library.js.
+import { pillars, articles } from "../../data/library.js";
+import SiteNav from "../../components/SiteNav.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 
 // Attach each supporting article to the pillar that carries its category.
 const shelf = pillars.map((p) => ({
@@ -262,6 +168,7 @@ const totalPieces = pillars.length + articles.length;
   </style>
 </head>
 <body>
+  <SiteNav />
   <section class="lib-hero">
     <div class="bg"></div><div class="veil"></div>
     <div class="in">
@@ -333,6 +240,7 @@ const totalPieces = pillars.length + articles.length;
       ))}
     </div>
   </div>
+  <SiteFooter />
   <Analytics />
 </body>
 </html>

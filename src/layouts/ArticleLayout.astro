@@ -1,4 +1,6 @@
 ---
+import SiteNav from "../components/SiteNav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 // ============================================================
 // THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
 // Every article page wraps its content in this layout.
@@ -15,7 +17,7 @@
 // absent rather than emitted empty or faked.
 //
 // STATUS, 6 Sept 2026: all 25 article pages in src/pages/learn/
-// now pass datePublished. The earlier backfill is COMPLETE and
+// now pass datePublished. The earlier backfill is ../componentsLETE and
 // the twelve-missing-dates warning that used to sit here is
 // resolved. Keep the prop optional, but any NEW article must
 // pass it or it loses article rich-result eligibility.
@@ -688,21 +690,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
   <div class="progress" id="progress"></div>
 
-  <nav class="nav">
-    <div class="nav-in">
-      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
-      <div class="nav-links">
-        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
-        <a class="nav-join" href="/membership">Join</a>
-      </div>
-      <button class="burger" id="burger" aria-label="Menu">☰</button>
-    </div>
-  </nav>
-
-  <div class="drawer" id="drawer">
-    <button class="close" id="close" aria-label="Close">✕</button>
-    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
-  </div>
+  <SiteNav />
 
   <div class="masthead reveal">
     <span class="line"></span>
@@ -855,40 +843,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     </div>
   </section>
 
-  <footer>
-    <div class="foot-in">
-      <div>
-        <a class="foot-brand" href="/">The Digital Income <em>Edit™</em></a>
-        <div class="foot-tag">Build Your Business Backwards. Scale It Forward.™</div>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Learn</h2>
-        <a href="/learn">The Library</a>
-        <a href="/learn">Pinterest</a>
-        <a href="/learn">AI</a>
-        <a href="/learn">Digital Products</a>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Explore</h2>
-        <a href="/shop">Shop</a>
-        <a href="/resources">Free Resources</a>
-        <a href="/membership">Membership</a>
-        <a href="/about">About</a>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Connect</h2>
-        <a href="/community">Community</a>
-        <a href="/newsletter">Newsletter</a>
-        <a href="https://pinterest.com/TheDigitalIncomeEditTDIE" rel="noopener" target="_blank">Pinterest</a>
-        <a href="https://instagram.com/the.faceless.homestead.mama" rel="noopener" target="_blank">Instagram</a>
-        <a href="mailto:hello@thedigitalincomeedit.com">Contact</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 The Digital Income Edit™</span>
-      <span><a href="/privacy">Privacy</a> · <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></span>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     document.body.classList.remove('no-js');
@@ -951,10 +906,6 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     }, { rootMargin: '-40% 0px -55% 0px' });
     ids.forEach(s => s && spy.observe(s));
 
-    const drawer = document.getElementById('drawer');
-    document.getElementById('burger').onclick = () => drawer.classList.add('open');
-    document.getElementById('close').onclick = () => drawer.classList.remove('open');
-    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
   <Analytics />
 </body>

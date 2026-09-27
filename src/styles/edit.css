@@ -1,0 +1,94 @@
+/* ==========================================================================
+   THE EDIT — shared editorial system for the site's front-of-house pages.
+   Imported only by the pages redesigned in the September 2026 art-direction
+   pass (home, membership, shop, about, work-with-me, resources, community).
+   Articles keep their own layout.
+
+   Rules of the system:
+   - Cream is the room. White is paper. Ink (#1A1417) is the one dark.
+   - Signature Hot Pink #D62E73 for large type and solid fills only.
+     Small pink text uses #B8245F (4.5:1 on cream).
+   - Muted Gold is a hairline, never a fill.
+   - Newsreader SemiBold, upright, for display. Inter for everything else.
+   - Depth comes from scale, crop and contrast. No glass, no glow,
+     no gradients on buttons, shadows only where something lifts.
+   ========================================================================== */
+
+:root{
+  --e-cream:#FBF8F5;--e-paper:#F4EDE6;--e-white:#FFFFFF;--e-blush:#FBE8F0;
+  --e-ink:#1A1417;--e-ink-2:#4A3F44;--e-ink-3:#6B5F64;
+  --e-pink:#D62E73;--e-pink-t:#B8245F;--e-bubble:#FF8AC2;--e-gold:#C8A96A;--e-lav:#CBB7F7;
+  --e-line:rgba(26,20,23,.12);--e-hair:1px solid rgba(200,169,106,.55);
+  --e-serif:"Newsreader",Georgia,serif;--e-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --e-w:1200px;--e-gut:clamp(16px,4vw,40px);
+  --e-d1:clamp(46px,7.6vw,108px);--e-d2:clamp(36px,5.4vw,72px);--e-d3:clamp(26px,3vw,38px);
+  --e-lift:0 30px 60px -34px rgba(26,20,23,.35);
+}
+
+.e-page{font-family:var(--e-sans);color:var(--e-ink);background:var(--e-cream);font-size:17px;line-height:1.65}
+.e-page h1,.e-page h2,.e-page h3{font-family:var(--e-serif);font-weight:600;font-style:normal;color:inherit;letter-spacing:-.02em}
+.e-page h1 em,.e-page h2 em,.e-page h3 em{font-style:normal;color:var(--e-pink)}
+.e-wrap{max-width:var(--e-w);margin:0 auto;padding-left:var(--e-gut);padding-right:var(--e-gut)}
+.e-narrow{max-width:760px}
+.e-sec{padding:clamp(72px,10vw,136px) 0;position:relative}
+.e-sec-sm{padding:clamp(48px,6vw,80px) 0}
+.e-paper{background:var(--e-paper)}
+.e-white{background:var(--e-white)}
+.e-blush{background:var(--e-blush)}
+.e-dark{background:var(--e-ink);color:#F6EFEA}
+.e-dark .e-kick{color:var(--e-bubble)}
+.e-dark h1 em,.e-dark h2 em,.e-dark h3 em{color:var(--e-bubble)}
+.e-dark .e-lede,.e-dark p{color:rgba(246,239,234,.82)}
+
+.e-kick{display:inline-flex;align-items:center;gap:12px;font-family:var(--e-sans);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 20px}
+.e-kick::before{content:"";width:28px;height:1px;background:var(--e-gold)}
+.e-d1{font-size:var(--e-d1);line-height:.96;letter-spacing:-.035em;margin:0 0 24px}
+.e-d2{font-size:var(--e-d2);line-height:1.02;letter-spacing:-.03em;margin:0 0 20px}
+.e-d3{font-size:var(--e-d3);line-height:1.12;margin:0 0 14px}
+.e-lede{font-size:clamp(18px,1.6vw,20px);line-height:1.6;color:var(--e-ink-2);max-width:40em;margin:0 0 28px}
+.e-small{font-size:14px;color:var(--e-ink-3)}
+.e-center{text-align:center}
+.e-center .e-kick{justify-content:center}
+.e-center .e-lede{margin-left:auto;margin-right:auto}
+.e-rule{height:1px;background:rgba(200,169,106,.55);border:0;margin:0}
+
+/* CTA hierarchy: one primary, one secondary, then text links. */
+.e-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:999px;
+  background:var(--e-pink);color:#fff!important;border:1px solid var(--e-pink);font-family:var(--e-sans);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;line-height:1.3;text-align:center;transition:background .2s,border-color .2s,transform .2s}
+.e-btn:hover{background:var(--e-pink-t);border-color:var(--e-pink-t)}
+.e-btn .ar{transition:transform .2s}
+.e-btn:hover .ar{transform:translateX(3px)}
+.e-btn--ghost{background:transparent;color:var(--e-ink)!important;border-color:rgba(26,20,23,.35)}
+.e-btn--ghost:hover{background:var(--e-ink);color:#fff!important;border-color:var(--e-ink)}
+.e-btn--light{background:#fff;color:var(--e-ink)!important;border-color:#fff}
+.e-btn--light:hover{background:var(--e-bubble);border-color:var(--e-bubble)}
+.e-dark .e-btn--ghost{color:#fff!important;border-color:rgba(255,255,255,.45)}
+.e-dark .e-btn--ghost:hover{background:#fff;color:var(--e-ink)!important}
+.e-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:rgba(184,36,95,.4)}
+.e-link:hover{text-decoration-color:currentColor}
+.e-dark .e-link{color:var(--e-bubble);text-decoration-color:rgba(255,138,194,.5)}
+.e-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+
+/* Surfaces */
+.e-card{background:var(--e-white);border:1px solid var(--e-line);border-radius:6px;padding:28px}
+.e-card--line{border-top:3px solid var(--e-pink)}
+.e-figure{margin:0;position:relative;overflow:hidden;border-radius:4px;background:var(--e-paper)}
+.e-figure img{width:100%;height:100%;object-fit:cover;display:block}
+.e-cap{font-size:13px;color:var(--e-ink-3);margin-top:10px}
+.e-num{font-family:var(--e-serif);font-weight:600;color:var(--e-pink);letter-spacing:-.03em;line-height:.9}
+.e-price{font-family:var(--e-serif);font-weight:600;letter-spacing:-.02em;line-height:1}
+.e-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(184,36,95,.35);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);background:#fff}
+.e-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.e-list li{position:relative;padding-left:24px;line-height:1.55}
+.e-list li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:1px;background:var(--e-pink)}
+
+.e-page a:focus-visible,.e-page button:focus-visible,.e-page input:focus-visible,.e-page summary:focus-visible{outline:3px solid var(--e-pink);outline-offset:3px;border-radius:4px}
+
+/* Motion: one quiet reveal, off for reduced motion. */
+@media (prefers-reduced-motion:no-preference){
+  .e-rise{animation:e-rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .e-rise-2{animation-delay:.08s}.e-rise-3{animation-delay:.16s}
+  @keyframes e-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.e-btn,.e-btn .ar{transition:none}}

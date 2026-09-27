@@ -1,4 +1,6 @@
 ---
+import SiteNav from "../components/SiteNav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/global.css";
 
 import Analytics from '@vercel/analytics/astro';
@@ -151,21 +153,7 @@ const faqs = [
 <body class="no-js">
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
-  <nav class="nav">
-    <div class="nav-in">
-      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
-      <div class="nav-links">
-        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
-        <a class="nav-join" href="/community">Community</a>
-      </div>
-      <button class="burger" id="burger" aria-label="Menu">☰</button>
-    </div>
-  </nav>
-
-  <div class="drawer" id="drawer">
-    <button class="close" id="close" aria-label="Close">✕</button>
-    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
-  </div>
+  <SiteNav />
 
   <section class="w-hero">
     <div class="bg"></div>
@@ -254,47 +242,10 @@ const faqs = [
     <div class="fine">I read every email personally and reply within one to two business days.</div>
   </section>
 
-  <footer>
-    <div class="foot-in">
-      <div>
-        <a class="foot-brand" href="/">The Digital Income <em>Edit™</em></a>
-        <div class="foot-tag">Build Your Business Backwards. Scale It Forward.™</div>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Learn</h2>
-        <a href="/learn">The Library</a>
-        <a href="/learn/complete-pinterest-marketing-guide">Pinterest</a>
-        <a href="/learn/ultimate-guide-to-ai">AI</a>
-        <a href="/learn/digital-products-guide">Digital Products</a>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Explore</h2>
-        <a href="/shop">Shop</a>
-        <a href="/resources">Free Resources</a>
-        <a href="/membership">Membership</a>
-        <a href="/work-with-me">Work With Me</a>
-        <a href="/about">About</a>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Connect</h2>
-        <a href="/community">Community</a>
-        <a href="/newsletter">Newsletter</a>
-        <a href="https://pinterest.com/TheDigitalIncomeEditTDIE">Pinterest</a>
-        <a href="https://instagram.com/the.faceless.homestead.mama">Instagram</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 The Digital Income Edit™</span>
-      <span>Curated with intention.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     document.body.classList.remove('no-js');
-    const drawer = document.getElementById('drawer');
-    document.getElementById('burger').onclick = () => drawer.classList.add('open');
-    document.getElementById('close').onclick = () => drawer.classList.remove('open');
-    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
   </script>
   <Analytics />
 </body>
