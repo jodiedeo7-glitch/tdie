@@ -45,4 +45,4 @@ Still true and noted: canon's Product Register rule is met by finish step 4 comi
 
 ## Recommend it too
 
-Referral check result: recorded here at the desktop finish (step 1).
+Referral check result: 27 Sep 2026, YES. Version A kept. Path: profile picture (top right of Skool) > Settings > Affiliates > "Your affiliate links" > The Brand Closet™ > COPY. The Brand Closet™ About page states members earn 50% recurring commissions when they refer members.

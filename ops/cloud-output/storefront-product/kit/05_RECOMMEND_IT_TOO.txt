@@ -1,17 +1,11 @@
 RECOMMEND IT TOO (optional)
 Putting The Brand Closet™ on your own pages.
 
-[KIT BUILD NOTE, removed before this file ships: this file is written two ways. The desktop finish checks whether Brand Closet™ members get their own referral link, keeps VERSION A if they do and VERSION B if they don't, and deletes the other version and this note.]
-
-====================================================================
-VERSION A (members get their own referral link)
-====================================================================
-
 If you're a member of The Brand Closet™, you can recommend it with your own referral link, so a friend who joins through you is tracked to you. Rose's program sets the terms, and she can change them, so read them on her site before you promise anyone anything. I don't quote a rate here on purpose.
 
 FIND YOUR LINK
-1. Open The Brand Closet™ on Skool, signed in.
-2. Click the group name at the top left to open the group menu, and choose the affiliate option (on Skool it's labelled Affiliates). Copy your link.
+1. Join The Brand Closet™ on Skool, then stay signed in.
+2. Click your profile picture at the top right of Skool, choose Settings, then Affiliates. Under "Your affiliate links", click The Brand Closet™ and press COPY.
 3. Paste it into MY_RECIPE.txt under a new line: BRAND CLOSET REFERRAL LINK: (your link), and change BRAND CLOSET CARD: off to on.
 
 ADD A CARD TO YOUR SHOP-THE-LOOK PAGES (needs the blog half, 09_THE_BLOG_HALF.txt)
@@ -29,26 +23,4 @@ The link, the rel attribute and the disclosure ship together or not at all. No c
 
 ADD ONE LINE TO YOUR PIN DESCRIPTIONS (optional)
 Pinterest descriptions can't hold a clickable link, so this line is awareness only; your card is where your link lives. If you want it, add to MY_RECIPE.txt: PIN LINE: on. The tasks then add this sentence before the disclosure on Outfit of the Day pins only, and still keep the description at 450 to 500 characters:
-"Outfit ideas like this come from a styling community I'm in: search The Brand Closet™ on Skool."
-
-====================================================================
-VERSION B (no member referral link)
-====================================================================
-
-If you love The Brand Closet™, you can still point people to it. There's no referral link for members, so you won't earn from recommending it. Recommend it because it's useful, or don't.
-
-ADD A CARD TO YOUR SHOP-THE-LOOK PAGES (needs the blog half, 09_THE_BLOG_HALF.txt)
-Paste this into a Claude chat with your website's code open:
-
-------------------------------------------------------------------
-Add a small card component to my shop-the-look section and show it on the hub page, every category page and every look page, just above the Amazon disclosure. Match my site's existing card style. The card has:
-- a small label: "Love these looks?"
-- a title: "Where my outfit ideas come from"
-- one line: "The Brand Closet™ is Rose's community on Skool. It's free to join. The Outfit of the Day is on her $9/month tier, and she also has a $19/month tier. Her prices, her community."
-- a button reading "See The Brand Closet™", linked to https://www.skool.com/the-brand-closet/about, opening in a new tab, with rel="nofollow noopener"
-No affiliate disclosure, because this isn't an affiliate link. No em dashes. Name only what's written above. Build the site, open one look page locally and show me the card.
-------------------------------------------------------------------
-
-ADD ONE LINE TO YOUR PIN DESCRIPTIONS (optional)
-Pinterest descriptions can't hold a clickable link. If you want the line, add to MY_RECIPE.txt: PIN LINE: on. The tasks add this sentence before the disclosure on Outfit of the Day pins only, and keep the description at 450 to 500 characters:
 "Outfit ideas like this come from a styling community I'm in: search The Brand Closet™ on Skool."
