@@ -70,16 +70,18 @@ const schema = [
         <p class="e-lede">I built the business first. The offer, then the funnel, then the automation, and only then the audience, with AI doing the heavy construction and me making every decision. This site is what came out of it, and every room is open.</p>
         <p class="ab-byline">Jodie, founder of The Digital Income Edit™</p>
       </div>
-      <figure class="ab-hero-fig e-figure e-rise e-rise-2">
+      <figure class="ab-hero-fig e-rise e-rise-2">
+        <div class="ab-hero-img e-figure">
         <img
           src="/images/pages/about-porch-red-barn-840.webp"
           srcset="/images/pages/about-porch-red-barn-560.webp 560w, /images/pages/about-porch-red-barn-840.webp 840w, /images/pages/about-porch-red-barn-1120.webp 1120w"
           sizes="(max-width: 820px) 92vw, 520px"
           width="840" height="1042" fetchpriority="high" decoding="async"
           alt="The brand's AI persona on a weathered farmhouse porch at golden hour, in a cream knit sweater and wool socks, holding a pink mug, with a red barn and open pasture behind her." />
+        </div>
+        <figcaption class="e-credit ab-credit"><b>Tommy Kate</b> The brand's AI persona, photographed in her world. My face is never required.</figcaption>
       </figure>
     </div>
-    <p class="e-wrap ab-hero-cap e-cap">The face of this brand is an AI persona, photographed in her world. Mine is never required.</p>
   </section>
 
   <!-- HOW I BUILT IT -->
@@ -87,7 +89,7 @@ const schema = [
     <div class="e-wrap ab-split">
       <div>
         <p class="e-kick">How I built it</p>
-        <h2 id="ab-built" class="e-d2">Backwards, <em>on purpose.</em></h2>
+        <h2 id="ab-built" class="ab-built-h"><span class="e-giant ab-giant">Backwards,</span> <span class="ab-built-sub"><em>on purpose.</em></span></h2>
       </div>
       <div class="ab-prose">
         <p class="ab-first">I started with no audience and nothing to post. So I started where every other decision gets made: what I would sell, who it was for and what it would cost her.</p>
@@ -106,7 +108,7 @@ const schema = [
       </div>
       <ol class="ab-lessons">
         {lessons.map((l, i) => (
-          <li>
+          <li class={i === 0 ? "ab-lead" : "e-reveal"}>
             <span class="ab-lnum e-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
             <div>
               <h3 class="ab-lt">{l.t}</h3>
@@ -120,12 +122,14 @@ const schema = [
 
   <!-- THE IMAGE MOMENT: full bleed, nothing over it -->
   <figure class="ab-bleed">
+    <div class="ab-bleed-img e-unveil">
     <img
       src="/images/pages/about-office-desk-wide-1600.webp"
       srcset="/images/pages/about-office-desk-wide-960.webp 960w, /images/pages/about-office-desk-wide-1600.webp 1600w, /images/pages/about-office-desk-wide-2400.webp 2400w"
       sizes="100vw" width="1600" height="1073" loading="lazy" decoding="async"
       alt="A woman seen from behind at a walnut desk in a sunlit cream study, typing on a laptop beside an open notebook, a brass lamp and white flowers on the built-in shelves." />
-    <figcaption class="e-wrap e-cap">The room where the building happens. A desk, a window and one decision at a time.</figcaption>
+    </div>
+    <figcaption class="e-wrap e-credit ab-bleed-cap"><b>The TDIE studio</b> The room where the building happens. A desk, a window and one decision at a time.</figcaption>
   </figure>
 
   <!-- WHY THE ORDER MATTERS -->
@@ -152,7 +156,7 @@ const schema = [
   <!-- PULL STATEMENT -->
   <section class="e-sec-sm" aria-label="A note on proof">
     <div class="e-wrap">
-      <blockquote class="ab-pull">
+      <blockquote class="ab-pull e-reveal">
         <p>I'm not going to show you screenshots. <em>I'm going to show you the business,</em> and let you walk through it.</p>
       </blockquote>
     </div>
@@ -170,7 +174,7 @@ const schema = [
       </div>
       <ul class="ab-rooms">
         {inspect.map((r) => (
-          <li>
+          <li class="e-reveal">
             <a href={r.href}>
               <span class="ab-room">{r.room}</span>
               <span class="ab-rt">{r.t}</span>
@@ -209,15 +213,23 @@ const schema = [
 <style>
   /* Hero */
   .ab-hero{padding:clamp(40px,6vw,88px) 0 clamp(28px,4vw,48px)}
-  .ab-hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:end}
+  .ab-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);gap:clamp(32px,5vw,80px);align-items:end}
   .ab-h1{font-size:clamp(42px,6vw,88px);line-height:.98;letter-spacing:-.035em;margin:0 0 28px}
   .ab-byline{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--e-ink-2);margin:0;padding-top:18px;border-top:var(--e-hair);display:inline-block}
-  .ab-hero-fig{aspect-ratio:4/5}
-  .ab-hero-fig img{object-position:50% 30%}
-  .ab-hero-cap{text-align:right;margin-top:14px}
+  .ab-hero-fig{margin:0 calc(var(--e-gut) * -1) 0 0}
+  .ab-hero-img{aspect-ratio:4/5;border-radius:2px 0 0 2px}
+  .ab-hero-img img{object-position:50% 30%}
+  .ab-credit{display:block;margin-top:14px;max-width:34em;line-height:1.6}
+  .ab-credit b{margin-right:10px}
 
   /* How I built it */
-  .ab-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px);align-items:start}
+  .ab-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start}
+  /* The page's one oversized statement. */
+  .ab-built-h{margin:0}
+  .ab-split > div:first-child{grid-column:1 / -1}
+  .ab-split .ab-prose{grid-column:2;margin-top:calc(clamp(0px,9vw,130px) * -1)}
+  .ab-giant{display:block;font-size:clamp(72px,14vw,196px);margin-left:-.05em}
+  .ab-built-sub{display:block;font-size:var(--e-d3);letter-spacing:-.02em;margin:20px 0 0 clamp(0px,6vw,96px)}
   .ab-prose p{font-size:18px;line-height:1.75;color:var(--e-ink-2);margin:0 0 22px;max-width:36em}
   .ab-prose .ab-first{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px);line-height:1.3;letter-spacing:-.015em;color:var(--e-ink)}
 
@@ -225,16 +237,23 @@ const schema = [
   .ab-head{max-width:720px;margin-bottom:clamp(36px,5vw,64px)}
   .ab-head--row{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end}
   .ab-head-lede{margin:0 0 20px}
-  .ab-lessons{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(32px,6vw,96px)}
-  .ab-lessons li{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:32px 0;border-top:var(--e-hair)}
-  .ab-lnum{font-size:44px}
-  .ab-lt{font-size:clamp(22px,2.2vw,28px);line-height:1.18;margin:4px 0 12px}
+  .ab-lessons{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(28px,4vw,64px)}
+  .ab-lessons .ab-lead{grid-column:1 / -1;padding:0 0 clamp(48px,6vw,88px);border-top:0}
+  .ab-lead > div{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px clamp(32px,6vw,96px);align-items:end}
+  .ab-lead .ab-lnum{display:none}
+  .ab-lead .ab-lt{font-size:clamp(30px,3.8vw,52px);line-height:1.02;letter-spacing:-.03em;margin:0}
+  .ab-lead p{font-size:18px;padding-bottom:6px}
+  .ab-lessons li{display:grid;grid-template-columns:1fr;align-content:start;gap:10px;padding:28px 0;border-top:var(--e-hair)}
+  .ab-lnum{font-size:32px}
+  .ab-lt{font-size:clamp(21px,1.9vw,25px);line-height:1.18;margin:0 0 10px}
   .ab-lessons p{margin:0;color:var(--e-ink-2);max-width:32em}
 
   /* Full-bleed image */
   .ab-bleed{margin:0}
+  .ab-bleed-img{overflow:hidden}
   .ab-bleed img{display:block;width:100%;height:clamp(320px,62vw,760px);object-fit:cover;object-position:50% 45%}
-  .ab-bleed figcaption{padding-top:12px;padding-bottom:0}
+  .ab-bleed-cap{display:block;padding-top:14px;padding-bottom:0}
+  .ab-bleed-cap b{margin-right:10px}
 
   /* Why the order matters */
   .ab-order-h{font-size:clamp(34px,5.2vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:15em;margin:0 0 clamp(40px,5vw,64px)}
@@ -249,7 +268,7 @@ const schema = [
   .ab-order-foot .ab-tagline{font-family:var(--e-serif);font-weight:600;font-size:22px;line-height:1.3;color:var(--e-pink-t);text-align:right}
 
   /* Pull statement */
-  .ab-pull{margin:0 auto;max-width:980px;padding:clamp(24px,4vw,48px) 0;border-top:var(--e-hair);border-bottom:var(--e-hair)}
+  .ab-pull{margin:0 0 0 auto;max-width:900px;padding:clamp(24px,4vw,48px) 0;border-top:var(--e-hair)}
   .ab-pull p{font-family:var(--e-serif);font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.1;letter-spacing:-.025em;margin:0;color:var(--e-ink)}
   .ab-pull em{font-style:normal;color:var(--e-pink)}
 
@@ -259,6 +278,8 @@ const schema = [
   .ab-rooms li:not(:nth-child(3n+1)){border-left:var(--e-hair)}
   .ab-rooms a{display:flex;flex-direction:column;gap:10px;height:100%;padding:28px 28px 24px;color:var(--e-ink);text-decoration:none;transition:background .2s}
   .ab-rooms a:hover{background:var(--e-cream)}
+  .ab-go span{transition:transform .2s}
+  .ab-rooms a:hover .ab-go span{transform:translateX(4px)}
   .ab-room{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-pink-t)}
   .ab-rt{font-family:var(--e-serif);font-weight:600;font-size:24px;line-height:1.2;letter-spacing:-.015em}
   .ab-rp{font-size:15.5px;line-height:1.6;color:var(--e-ink-2)}
@@ -275,6 +296,7 @@ const schema = [
 
   @media (max-width:1000px){
     .ab-rooms{grid-template-columns:1fr 1fr}
+    .ab-lessons{grid-template-columns:1fr}
     .ab-rooms li:not(:nth-child(3n+1)){border-left:0}
     .ab-rooms li:nth-child(2n){border-left:var(--e-hair)}
     .ab-order{grid-template-columns:1fr 1fr}
@@ -282,16 +304,18 @@ const schema = [
   }
   @media (max-width:820px){
     .ab-hero-grid,.ab-split,.ab-lessons,.ab-head--row,.ab-order-foot,.ab-next{grid-template-columns:1fr}
-    .ab-hero-fig{aspect-ratio:4/5;max-width:520px}
-    .ab-hero-cap{text-align:left}
+    .ab-hero-fig{max-width:520px;margin-right:0}
+    .ab-built-sub{margin-left:0}
+    .ab-split .ab-prose{grid-column:1;margin-top:0}
+    .ab-lead > div{grid-template-columns:1fr}
     .ab-order-foot .ab-tagline{text-align:left}
   }
+  @media (prefers-reduced-motion:reduce){.ab-go span{transition:none}.ab-rooms a:hover .ab-go span{transform:none}}
   @media (max-width:560px){
     .ab-rooms,.ab-order{grid-template-columns:1fr}
     .ab-rooms li:nth-child(2n){border-left:0}
     .ab-rooms a{padding:24px 0}
     .ab-order li,.ab-order li + li{padding:22px 0 18px;border-left:0}
-    .ab-lessons li{grid-template-columns:48px 1fr;gap:12px}
-    .ab-lnum{font-size:34px}
+    .ab-lnum{font-size:28px}
   }
 </style>

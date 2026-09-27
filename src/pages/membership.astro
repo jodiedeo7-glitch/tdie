@@ -81,7 +81,7 @@ const schema = [{
         <p class="e-lede">Two memberships, one Skool classroom, {community.members} women building the same architecture beside you. Standard gives you the curriculum and the room. Premium adds the rooms most builds stall in, and writes your content before you sit down.</p>
         <div class="e-actions">
           <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
-          <a class="e-btn e-btn--ghost" href="#compare">Compare the two memberships</a>
+          <a class="e-link" href="#compare">Compare the two memberships</a>
         </div>
         <dl class="mb-hero-facts">
           <div><dt>Standard</dt><dd>{S.perMonth}</dd></div>
@@ -94,7 +94,7 @@ const schema = [{
           <img src="/images/membership-jodie.webp" width="460" height="552" fetchpriority="high" decoding="async"
                alt="A woman in a coral sweater working on a laptop at a sunlit kitchen counter, pink roses on the windowsill behind her" />
         </div>
-        <figcaption class="e-cap">The classroom sits inside the business it teaches.</figcaption>
+        <figcaption class="e-credit mb-hero-credit">The classroom sits inside <b>the business it teaches</b></figcaption>
       </figure>
     </div>
   </section>
@@ -107,9 +107,11 @@ const schema = [{
         <h2 class="e-d2" id="choose-h">Same room. <em>A different amount of it done for you.</em></h2>
       </div>
       <div class="mb-plans">
-        <article class="mb-plan">
+        <article class="mb-plan e-reveal">
           <p class="mb-plan-name">{S.name}</p>
-          <h3 class="mb-plan-claim">You build it by hand.</h3>
+          <h3 class="mb-plan-claim">You build it <span class="mb-plan-word">by hand.</span></h3>
+          <div class="mb-strip" aria-hidden="true">{Array.from({ length: 31 }, () => <span></span>)}</div>
+          <p class="e-credit mb-strip-cap">Your month: you write it, with the system</p>
           <p class="mb-plan-line">The curriculum and the room. You learn each step, then do it yourself, with women one step ahead of you in the same classroom.</p>
           <p class="mb-plan-if">Choose Standard if</p>
           <ul class="e-list">{forStandard.map((i) => <li>{i}</li>)}</ul>
@@ -120,9 +122,11 @@ const schema = [{
           <a class="e-btn e-btn--ghost mb-plan-cta" href={SKOOL_PLANS}>Start Standard free for {days}</a>
         </article>
 
-        <article class="mb-plan mb-plan--premium">
+        <article class="mb-plan mb-plan--premium e-reveal">
           <p class="mb-plan-name">{P.name}</p>
-          <h3 class="mb-plan-claim">More of it is <em>done for you.</em></h3>
+          <h3 class="mb-plan-claim">More of it is <span class="mb-plan-word"><em>done for you.</em></span></h3>
+          <div class="mb-strip mb-strip--done" aria-hidden="true">{Array.from({ length: 31 }, () => <span></span>)}</div>
+          <p class="e-credit mb-strip-cap">Your month: 31 days, already written</p>
           <p class="mb-plan-line">Everything in Standard, plus The Offer Edit, The Funnel Edit, Scaling &amp; Systems and The Ads Edit™, and a month of content written for you, every month.</p>
           <p class="mb-plan-if">Choose Premium if</p>
           <ul class="e-list">{forPremium.map((i) => <li>{i}</li>)}</ul>
@@ -142,7 +146,7 @@ const schema = [{
       <div class="mb-head mb-head--split">
         <div>
           <p class="e-kick">Side by side</p>
-          <h2 class="e-d3 mb-h2-md" id="side-h">What is in each, grouped by what it does for you</h2>
+          <h2 class="e-d3 mb-h2-md" id="side-h">What is in each, grouped by what it does for you.</h2>
         </div>
         <p class="e-small mb-head-note">Course names sit under each row. The difference lives in the bottom three groups.</p>
       </div>
@@ -181,7 +185,7 @@ const schema = [{
   </section>
 
   <!-- 4. Why upgrade: the calendar, shown -->
-  <section class="e-sec e-white mb-dfy" aria-labelledby="dfy-h">
+  <section class="e-sec e-dark mb-dfy" aria-labelledby="dfy-h">
     <div class="e-wrap mb-dfy-grid">
       <div class="mb-dfy-copy">
         <p class="e-kick">Why people upgrade</p>
@@ -194,10 +198,13 @@ const schema = [{
       </div>
 
       <div class="mb-dfy-side">
-        <figure class="mb-cal" aria-labelledby="cal-cap">
+        <figure class="mb-cal e-unveil" aria-labelledby="cal-cap">
           <div class="mb-cal-head" aria-hidden="true">
-            <span class="mb-cal-title">Your month</span>
-            <span class="mb-cal-count">31 of 31 days written</span>
+            <span class="e-giant mb-cal-big">31</span>
+            <span class="mb-cal-hl">
+              <span class="mb-cal-title">Your month</span>
+              <span class="mb-cal-count">31 of 31 days written</span>
+            </span>
           </div>
           <div class="mb-cal-body" aria-hidden="true">
             {weeks.map((wk, i) => (
@@ -253,10 +260,9 @@ const schema = [{
         <div>
           <p class="e-lede">Not before. Start with the membership that fits the build you are in now. Either one is free for {days}, and both leave from inside the app whenever you like.</p>
           <div class="e-actions">
-            <a class="e-btn" href={SKOOL_PLANS}>Start Standard free for {days} <span class="ar" aria-hidden="true">→</span></a>
-            <a class="e-btn e-btn--ghost" href={SKOOL_PLANS}>Start Premium free for {days}</a>
+            <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
+            <a class="e-link" href="/community">See what happens inside the room</a>
           </div>
-          <p class="mb-close-link"><a class="e-link" href="/community">See what happens inside the room</a></p>
         </div>
       </div>
     </div>
@@ -279,26 +285,38 @@ const schema = [{
     .mb-hero-facts div{flex:1 1 0;min-width:120px;padding-right:20px}
     .mb-hero-facts dt{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);margin:0 0 4px}
     .mb-hero-facts dd{margin:0;font-family:var(--e-serif);font-weight:600;font-size:24px;letter-spacing:-.02em}
-    .mb-hero-fig{margin:0;justify-self:end;width:100%;max-width:420px}
+    .mb-hero-fig{margin:0 calc(var(--e-gut) * -1) 0 0;justify-self:end;width:100%;max-width:470px;align-self:start;margin-top:clamp(8px,3vw,48px)}
     .mb-hero-frame{position:relative;padding:0 0 18px 18px}
     .mb-hero-frame::before{content:"";position:absolute;left:0;bottom:0;right:18px;top:18px;border:var(--e-hair);border-radius:4px}
     .mb-hero-frame img{position:relative;width:100%;height:auto;aspect-ratio:460/552;object-fit:cover;border-radius:4px;box-shadow:var(--e-lift)}
-    .mb-hero-fig .e-cap{margin:14px 0 0 18px}
+    .mb-hero-credit{display:block;margin:16px 0 0 18px;max-width:28em}
 
     /* Plans */
-    .mb-plans{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(16px,2.4vw,28px);align-items:stretch}
-    .mb-plan{display:flex;flex-direction:column;background:var(--e-white);border:1px solid var(--e-line);border-radius:6px;padding:clamp(28px,3.6vw,48px)}
-    .mb-plan--premium{background:var(--e-ink);color:#F6EFEA;border-color:var(--e-ink);border-top:4px solid var(--e-pink);margin-top:-24px}
+    /* Standard is an open plan on paper; Premium is the finished room.
+       The difference is carried by weight, scale and the month strip. */
+    .mb-plans{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(16px,2.4vw,28px);align-items:stretch}
+    .mb-plan{display:flex;flex-direction:column;background:transparent;border:1px solid rgba(26,20,23,.28);border-radius:2px;padding:clamp(28px,3.4vw,44px)}
+    .mb-plan--premium{background:var(--e-ink);color:#F6EFEA;border:0;border-top:4px solid var(--e-pink);padding:clamp(32px,4.2vw,60px);margin-top:-56px}
+    .mb-plan:not(.mb-plan--premium){margin-top:40px}
+    .mb-plan-word{display:block}
+    .mb-plan--premium .mb-plan-claim{font-size:clamp(38px,4.6vw,64px);line-height:.98;letter-spacing:-.03em}
+    .mb-strip{display:grid;grid-template-columns:repeat(31,minmax(0,1fr));gap:3px;margin:6px 0 10px;max-width:420px}
+    .mb-strip span{height:22px;border:1px solid rgba(26,20,23,.4);border-radius:1px}
+    .mb-strip--done{max-width:none}
+    .mb-strip--done span{height:34px;border:0;background:var(--e-pink)}
+    .mb-strip-cap{margin:0 0 26px}
+    .mb-plan--premium .mb-strip-cap{color:rgba(246,239,234,.72)}
     .mb-plan-name{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 18px}
     .mb-plan--premium .mb-plan-name{color:var(--e-bubble)}
-    .mb-plan-claim{font-size:clamp(30px,3.4vw,46px);line-height:1.04;margin:0 0 16px}
+    .mb-plan-claim{font-size:clamp(30px,3.2vw,42px);line-height:1.04;margin:0 0 22px}
     .mb-plan--premium .mb-plan-claim em{color:var(--e-bubble)}
-    .mb-plan-line{margin:0 0 28px;color:var(--e-ink-2);max-width:30em}
+    .mb-plan-line{margin:0 0 28px;color:var(--e-ink-2);max-width:30em;font-size:16px}
     .mb-plan--premium .mb-plan-line{color:rgba(246,239,234,.82)}
     .mb-plan-if{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-ink-3);margin:0 0 14px;padding-top:22px;border-top:1px solid var(--e-line)}
     .mb-plan--premium .mb-plan-if{color:rgba(246,239,234,.7);border-top-color:rgba(246,239,234,.16)}
     .mb-plan--premium .e-list li::before{background:var(--e-bubble)}
-    .mb-plan .e-list{margin-bottom:32px;font-size:16px}
+    .mb-plan .e-list{margin-bottom:32px;font-size:15.5px}
+    .mb-plan:not(.mb-plan--premium) .mb-price-n{color:var(--e-ink)}
     .mb-plan-price{margin-top:auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding-top:24px;border-top:var(--e-hair);margin-bottom:24px}
     .mb-price-n{font-size:clamp(52px,5vw,68px);color:var(--e-pink)}
     .mb-plan--premium .mb-price-n{color:#fff}
@@ -328,20 +346,24 @@ const schema = [{
     .mb-col-p .mb-word{color:var(--e-pink-t)}
 
     /* DFY */
-    .mb-dfy-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,96px);align-items:start}
+    .mb-dfy-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(40px,6vw,96px);align-items:start}
+    .mb-dfy{padding-bottom:clamp(88px,11vw,160px)}
     .mb-dfy-copy{position:sticky;top:110px}
-    .mb-dfy-lead{font-family:var(--e-serif);font-weight:600;font-size:clamp(22px,2.2vw,27px);line-height:1.35;letter-spacing:-.01em;color:var(--e-ink);margin:0 0 20px}
-    .mb-dfy-copy p:not(.e-kick):not(.mb-dfy-lead){color:var(--e-ink-2);max-width:32em}
+    .mb-dfy-lead{font-family:var(--e-serif);font-weight:600;font-size:clamp(22px,2.2vw,27px);line-height:1.35;letter-spacing:-.01em;color:#F6EFEA!important;margin:0 0 20px}
+    .mb-dfy-copy p:not(.e-kick):not(.mb-dfy-lead){max-width:32em;font-size:16px}
     .mb-dfy-cta{margin-top:32px}
-    .mb-cal{margin:0;background:var(--e-cream);border:1px solid var(--e-line);border-radius:6px;padding:clamp(18px,2.6vw,32px)}
-    .mb-cal-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:16px;margin-bottom:16px;border-bottom:var(--e-hair)}
-    .mb-cal-title{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px);letter-spacing:-.02em}
+    /* The calendar is presented as a print: cream paper on the ink room. */
+    .mb-cal{margin:0;background:var(--e-cream);color:var(--e-ink);border-radius:2px;padding:clamp(20px,3vw,40px);box-shadow:0 40px 80px -40px rgba(0,0,0,.7);transform:rotate(-.5deg)}
+    .mb-cal-head{display:flex;align-items:flex-end;gap:clamp(14px,2vw,24px);padding-bottom:18px;margin-bottom:18px;border-bottom:var(--e-hair)}
+    .mb-cal-big{color:var(--e-pink);font-size:clamp(84px,10vw,150px)}
+    .mb-cal-hl{display:flex;flex-direction:column;gap:6px;padding-bottom:8px}
+    .mb-cal-title{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,32px);line-height:1;letter-spacing:-.02em}
     .mb-cal-count{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t)}
     .mb-cal-body{display:grid;gap:8px}
     .mb-cal-row{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;align-items:center}
     .mb-cal-wk{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3)}
     .mb-cal-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-    .mb-cal-day{display:flex;flex-direction:column;gap:5px;background:var(--e-white);border:1px solid var(--e-line);border-radius:4px;padding:8px 8px 10px;min-height:66px}
+    .mb-cal-day{display:flex;flex-direction:column;gap:5px;background:var(--e-white);border:1px solid var(--e-line);border-radius:2px;padding:8px 8px 10px;min-height:66px}
     .mb-cal-n{font-family:var(--e-serif);font-weight:600;font-size:17px;line-height:1}
     .mb-cal-post{display:block;height:4px;border-radius:2px;background:var(--e-pink);margin-top:auto}
     .mb-cal-thr{display:block;height:4px;border-top:1px solid var(--e-ink-3);border-bottom:1px solid var(--e-ink-3);width:60%}
@@ -351,9 +373,9 @@ const schema = [{
     .mb-key-thr{width:22px;height:4px;border-top:1px solid var(--e-ink-3);border-bottom:1px solid var(--e-ink-3)}
     .mb-key-note{flex-basis:100%;color:var(--e-ink-3)}
     .mb-dfy-facts{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin:40px 0 0}
-    .mb-dfy-facts div{border-top:1px solid var(--e-pink);padding-top:14px}
-    .mb-dfy-facts dt{font-family:var(--e-serif);font-weight:600;font-size:20px;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px}
-    .mb-dfy-facts dd{margin:0;font-size:15px;line-height:1.6;color:var(--e-ink-2)}
+    .mb-dfy-facts div{border-top:1px solid rgba(200,169,106,.55);padding-top:14px}
+    .mb-dfy-facts dt{font-family:var(--e-serif);font-weight:600;font-size:19px;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px;color:#F6EFEA}
+    .mb-dfy-facts dd{margin:0;font-size:14.5px;line-height:1.6;color:rgba(246,239,234,.74)}
 
     /* FAQ */
     .mb-faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px)}
@@ -378,7 +400,9 @@ const schema = [{
     @media (max-width:860px){
       .mb-hero-grid,.mb-plans,.mb-faq-grid,.mb-close-grid,.mb-head--split{grid-template-columns:1fr}
       .mb-hero-fig{justify-self:start;max-width:380px}
-      .mb-plan--premium{margin-top:0}
+      .mb-plan--premium,.mb-plan:not(.mb-plan--premium){margin-top:0}
+      .mb-hero-fig{margin-right:0}
+      .mb-cal{transform:none}
       .mb-table thead th:not(:first-child),.mb-table td{width:112px}
     }
     @media (max-width:560px){
@@ -392,6 +416,9 @@ const schema = [{
       .mb-table .mb-group th{padding:28px 8px 8px}
       .mb-row-sub{font-size:13px}
       .mb-cal-row{grid-template-columns:1fr;gap:4px}
+      .mb-strip{gap:2px}
+      .mb-strip span{height:16px}
+      .mb-strip--done span{height:24px}
       .mb-cal-days{gap:4px}
       .mb-cal-day{min-height:48px;padding:6px 5px 7px;gap:4px}
       .mb-cal-n{font-size:14px}
