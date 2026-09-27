@@ -176,7 +176,7 @@ Checked against canon §3, Decisions 110 and 114, and the date (Sunday 27 Sep 20
 | Trial | 7 days free | both tiers, 7 days | ✔ |
 | Member count | "1k members" (Skool) | 1,234; "1,200+" approved | ✔ not used in copy |
 | Tagline | "Build it backwards. Scale it forward.™" | "Build Your Business Backwards. Scale It Forward.™" | ⚠ paraphrase carrying ™ |
-| Pinterest module | "The Pinterest Edit™" | canon: "The Pinterest Edit" (no ™); ™ is on "Pinterest Foundations™" | ⚠ check which name the classroom uses |
+| Pinterest module | "The Pinterest Edit™" | an unpublished draft (canon §10); the live Standard course is Pinterest Foundations™ | ✘ F12 |
 | Module count | "Over 20 Modules Inside" | ~22 gated courses across both tiers (Dec 94); ~14 at Standard | ⚠ true only across both tiers |
 | Offer/Funnel Edit | Premium, "turns a following into a business" | Premium ✔; sold alone at $37 each (Dec 93) | ⚠ contradicts "no audience" |
 | AI Twin Creation | untagged (reads as Standard) | Standard ✔ | ✔ |
@@ -280,12 +280,12 @@ Audited from the 1600×900 files Jodie shared on 27 Sep. These are copy findings
 - **F5 · Offer/Funnel line contradicts the positioning** ("turns a following into a business" vs "You don't need an audience").
 - **F6 · "Over 20 Modules"** is true only across both tiers, but shown next to $9.
 - **F7 · Tagline paraphrase carries ™** ("Build it backwards. Scale it forward.™").
-- **F8 · "The Pinterest Edit™"** vs canon's "The Pinterest Edit". Check the classroom name before correcting.
+- **F8 · "The Pinterest Edit™"**: see F12. It's an unpublished draft, so the ™ question doesn't matter; the name comes out.
 - **F9 · Gallery version.** **Closed: the five graphics in §11 are current.** Open item: the older 90-day hero still shows as gallery image 1 on the phone screenshot. Remove it or move it out of slot 1.
 - **F10 · "$171".** **Closed:** it's the Premium sticker "$171 of modules included", which is $37 + $37 + $97 (The Offer Edit, The Funnel Edit, Scaling & Systems, Decision 93). The maths is correct. Thumbnail 2's "277 / 83" isn't in any of the five current graphics, so it's another older image. See §11.
-- **F12 · Pinterest module name, three versions.** The description says "The Pinterest Edit™", the Tiers graphic says "Pinterest Foundations™", and canon's tier split says "The Pinterest Edit" while its gated-course list (Decision 94) says "Pinterest Foundations™". Pick the name the classroom uses and use it everywhere.
-- **F13 · Course count, three versions.** The description says "Over 20 Modules", the Roadmap says "25 courses, in build order", and canon's Decision 94 gated list counts 22, including The Value Vault storefront, DFY Services and two calendars. Count the live classroom once and use that number. "In build order" shouldn't count storefront courses.
-- **F14 · Step 1 isn't in the $9 tier.** The Roadmap says "Start at step 1. We go in order." Step 1 is the Offer, and The Offer Edit is a Premium module (or $37 alone). A Standard member told to start at step 1 has no step-1 course listed on the Tiers card. **Question for Jodie:** which Standard course covers the offer (The Monetization Edit? The Essentials Edit?) If one does, say so on the Roadmap. If none does, the Standard path is "The Offer Edit, $37 alone", and the page should say that plainly.
+- **F12 · The description names a course members can't open.** "The Pinterest Edit™" in the description is an **unpublished draft** in the classroom. Canon §10 lists it as an open item: "a tier promise nobody can open". The live Standard course is **Pinterest Foundations™** (Decision 94), which is what the Tiers graphic says. **Fix the description, not the graphic:** "✅ Pinterest Foundations™ + The Email Edit - traffic and a list you own". The site has the same problem: `/membership`, the homepage and Find Your Door all still list The Pinterest Edit. That's outside this audit, but it's the same defect.
+- **F13 · "25 courses" doesn't match the repo record.** Canon's Decision 94 gated list is 22 published courses: 3 open, 11 Standard, 8 Premium. The Canva Crash Course was set to Draft on 24 Sep (Decision 103), which leaves **21**. A Standard member can open **13** of them (3 open + 10). The 21 Sep link sweep counted 30 courses, but that includes drafts. Nothing in the repo gives 25. "Over 20" in the description is accurate. On the Roadmap, use "20+ courses", or count the live classroom before printing an exact number.
+- **F14 · Step 1 for a Standard member, answered from the repo.** Standard's offer step is **The Monetization Edit**. The site's Find Your Door result says "Shape one offer inside The Monetization Edit before you make a single product." Standard also gets the Saturday offer rewrites in the feed (`/resources/one-sentence-offer`: "Every Saturday I rewrite members' sentences in the comments"). **The Offer Edit** is the full offer build: Premium, or $37 on its own. So "Start at step 1" holds at $9, but the Roadmap and Tiers graphics never say which course step 1 is. That's a copy gap, not a tier problem (G9).
 - **F11 · Only testimonial is off-product** (The Weekend Ecosystem™, not the membership).
 
 ## G. RECOMMENDED COPY CHANGES
@@ -315,7 +315,7 @@ CURRENT: (six mixed bullets, two tagged "(Premium)", ending "✅Over 20 Modules 
 RECOMMENDED:
 > **Standard, $9/month.** Everything you need to build the thing and start selling it.
 > ✅ AI Twin Creation - an AI persona fronts your brand, so your face never has to
-> ✅ The Pinterest Edit + The Email Edit - traffic and a list you own
+> ✅ Pinterest Foundations™ + The Email Edit - traffic and a list you own
 > ✅ The Content Edit + The Monetization Edit - make it, then make it pay
 >
 > **Premium, $35/month or $297/year.** Everything in Standard, then the full build, and your content written for you.
@@ -325,7 +325,7 @@ RECOMMENDED:
 >
 > 20+ modules across both.
 
-WHY: answers "which one is for me?" with approved use-case lines (site `/membership`), removes the "following" contradiction (F5), scopes the module count (F6), and uses only canon tier contents. Check the Pinterest module name (F8) before publishing.
+WHY: answers "which one is for me?" with approved use-case lines (site `/membership`), removes the "following" contradiction (F5), scopes the module count (F6), and uses only canon tier contents. Pinterest Foundations™ replaces The Pinterest Edit, which is still an unpublished draft (F12).
 
 **G6 · Closing CTA**
 CURRENT: ✨7 days FREE. Click the yellow button on the right to start👉
@@ -344,7 +344,7 @@ WHY: the ™ belongs on the exact mark. (This line is only on the old 90-day gra
 
 **G9 · Roadmap graphic: map the courses to the steps (for the graphics fix pass)**
 CURRENT: Four steps with one-line descriptions ("Build the thing people pay for, first." · "The path from a stranger's click to a sale." · "Set it up once so it runs without you." · "Traffic lands on a business that's already built.")
-RECOMMENDED: keep "Four steps. One build." and the step names. Under each step, name the course(s) that teach it and which tier they're in. Use the real mapping Jodie confirms for F14; don't guess it.
+RECOMMENDED: keep "Four steps. One build." and the step names. Under each step, name the course(s) that teach it and which tier they're in. Step 1 is the one the repo confirms: "The Monetization Edit (Standard) · The Offer Edit (Premium, or $37 alone)". Confirm the course mapping for steps 2 to 4 against the classroom before printing it.
 WHY: the Same effort graphic already carries these four steps with near-identical lines. The Roadmap earns its slot by showing *what you'd actually open* for each step. That turns a course list into a path, and answers F14.
 
 **G10 · Member wins: one line of context per quote (for the graphics fix pass)**
@@ -365,11 +365,11 @@ WHY: the sticker is big and pink right beside $35, so at a glance it reads as a 
 2. **Biggest conversion weakness:** the old 90-day graphic is still gallery image 1. It sells a generic timing promise that breaks canon's claim rule, while the new "Faceless income, built with AI." hero, which fixes it, sits further back or isn't up yet.
 3. **Biggest clarity problem:** the $9 sidebar price next to an untiered "$35/month" price increase. A stranger can't tell what they'd pay.
 4. **Biggest trust gap:** the description text has no founder proof, and the only Skool review is for a different product. The Member wins graphic is good proof and should sit before Tiers. It leans on one member (two of its three quotes are Brittany's).
-5. **Biggest decision-friction point:** "Start at step 1" when step 1's course (The Offer Edit) isn't in the $9 tier (F14). The Tiers graphic otherwise answers "which one is for me?" well.
+5. **Biggest decision-friction point:** the description sells "The Pinterest Edit™", which a paying member can't open (F12). It also never says which course step 1 is at $9 (F14). The Tiers graphic otherwise answers "which one is for me?" well.
 6. **The 3–5 changes most likely to move the page:**
    1. Put the new hero in gallery slot 1 and take the 90-day graphic out (G1). This also clears the compliance issue.
    2. Rewrite the price line to say what "lock your low price" means and which tier it's about (G2).
-   3. Settle where step 1 lives for a Standard member, and show it on the Roadmap (F14, G9).
+   3. Swap "The Pinterest Edit™" for Pinterest Foundations™ in the description (F12), and name step 1's course on the Roadmap (F14, G9).
    4. Add tier names and the founder-proof line to the description (G5, G3).
    5. Fix the closing CTA: device-proof, plus what happens after the trial (G6).
 7. **Do not change:** "You don't need an audience. You need something to sell." · "Offer first. Funnel second. Automation third. Audience last." · "You walk out with a machine… Not a content habit. A business." · "Faceless income, built with AI." · "Build the whole business before anyone knows your name." · the whole Same effort graphic · "Four steps. One build." · "Real members. Real wins." · "Two ways in. Both free for 7 days." · the Standard/Premium labels · every member quote and Tina's review, word for word.
@@ -378,10 +378,9 @@ WHY: the sticker is big and pink right beside $35, so at a glance it reads as a 
 
 ### Waiting on Jodie
 
-- **F14:** which Standard course covers step 1 (the offer), if any?
-- **F12:** which name does the classroom use: "The Pinterest Edit" or "Pinterest Foundations™"?
-- **F13:** how many courses are live, and which count as "in build order"?
 - **Gallery:** take the 90-day graphic and the other older images out of the gallery.
+- **Roadmap:** confirm the course for steps 2 to 4, and the live course count, before printing an exact number.
+- Answered from the repo, 27 Sep: F12 (Pinterest Foundations™ is the live course; The Pinterest Edit is a draft), F13 (the record says 21 published, 13 at Standard), F14 (step 1 at Standard is The Monetization Edit).
 - Closed 27 Sep: F3 (Jodie removes the price line by hand), F4 (it's a price lock), F9 (the five graphics in §11 are current), F10 ($171 = $37 + $37 + $97).
 
 ### Side note: the site's `/about` page (`src/pages/about.astro`)
