@@ -1,5 +1,5 @@
 # THE DIGITAL INCOME EDIT™ — CANON
-### Current · 25 September 2026 · Single live copy — no versioned predecessors
+### Current · 27 September 2026 · Single live copy — no versioned predecessors
 
 **Build Your Business Backwards. Scale It Forward.™**
 
@@ -206,6 +206,8 @@ Forty-four rows with exact prices and live URLs: **`canon.json → products[]`.*
 **Leni Loves: regular price $37, currently on sale at $27 (Decision 104, 24 September 2026).** Founder correction. The Beacons page shows the real sale, struck-through $37 beside $27, and that is exactly what it should say. Jodie never falsifies a discount; when a real sale or discount is listed on the product, she lists it as a sale. While the sale runs, publish "$27 (regular $37)" or the struck-through $37 beside $27; when it ends, publish $37. Check the live page before naming a price. The $17 figure stays dead. This replaces the 21 September rule that $27 was the only price.
 
 **The Keep It Running Kit (Decision 105, 24 September 2026).** A free bonus with any purchase of The Weekend Ecosystem™, one payment or three, made by Sunday 4 October 2026 at 11:59 pm Eastern: six paid guides worth $63: The Operating Prompts™ ($19), The First 30 Days After Your Site Goes Live ($17), How I Batch & Schedule a Month of Pinterest in One 3-Hour Block ($9), Build Your First Freebie in One Afternoon ($7), My Exact $0-to-First-Sale Path (What I'd Do This Week) ($7) and My 5-Minute Canva Pin Template Swap (1 Design → 30) ($4). Delivered through a private $0 Beacons product linked only from the Access Granted email during the window. Every guide has its own row in `products[]`, and so does the Kit, marked private. The deadline is real: the email block comes out at 11:59 pm on 4 October.
+
+**The While-You-Sleep Storefront™ (Decision 121, founder instruction 27 Sep 2026, working name).** A standalone copy-paste kit that turns Jodie's two Amazon pin automations into a buyer's own: Amazon links to Pinterest pins to an optional shop-the-look section, built and scheduled by the buyer's own Claude scheduled tasks. **$27 one-time on Beacons**, after a **$10 presale** for everyone (Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern; public price from Fri 9 Oct 9:00 am). Membership Standard members pay **$17** through a private Beacons product linked only from a Value Vault lesson; Membership Premium members use code **PREMIUM50** (50% off, $8.50), shown only in a Premium Vault lesson and never in public copy. It is never included free in any tier, and it is not a vault guide: it appears as one member-pricing lesson in both vaults, so the vaults still hold identical lessons and only how each tier pays differs. Premium pays half, not nothing: a scoped founder exception to "every guide already unlocked in The Premium Vault" (Decision 122, 27 Sep 2026), never flagged as a vault defect. Member affiliate program **40%** through Beacons' affiliate product (one shared link, no reply step); the rate never appears on Facebook, Instagram or the sales page. Zero refunds, stated once on the sales page. Upgrade: DFY Amazon Storefront Launch ($297). Proof is the machine only, never sales or income. Sales page `/shop/while-you-sleep-storefront`. Row: `canon.json → products[]`.
 
 **Email series of record (`canon.json → emails`).** The Weekend Ecosystem™ objection series: six emails, 11:00 am Eastern on 25, 27 and 29 September and 1, 3 and 4 October 2026, to every subscriber except the Weekend Ecosystem Buyers group, scheduled and read back in MailerLite on 24 September 2026. Email 3 is the payment plan email; Emails 2 and 6 mention the plan. Doc of record: `claude/TDIE_ECOSYSTEM_OBJECTION_SERIES.md`.
 
@@ -597,4 +599,10 @@ Shipped the same day into the live *Weekend Ecosystem — Access Granted* email 
 
 ---
 
-**The Digital Income Edit™ · Canon · 25 September 2026**
+**121.** (27 September 2026) **The While-You-Sleep Storefront™ enters canon.** Founder instruction: the Legally Blonde themed-look pin line and the Brand Closet™ Outfit of the Day pin line become one standalone copy-paste product. $10 presale (Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern), then $27 on Beacons from Fri 9 Oct 9:00 am; $17 for Membership Standard through a private Beacons product; code PREMIUM50 gives Membership Premium 50% off the member product ($8.50); 40% member affiliate through Beacons. Built in a cloud session (kit, copy, sales page, own-setup audit in `ops/cloud-output/storefront-product/`); rows added before any Beacons product existed, per the Product Register rule.
+
+**122.** (27 September 2026) **Standalone member pricing in both vaults.** Founder call: the new product is not a vault guide. One member-pricing lesson sits in BOTH vaults, so the vaults still hold identical lessons and only how each tier pays differs; Premium pays half, not nothing. Scoped exception to "every guide already unlocked in The Premium Vault". Closed item. `canon.json → vault_disambiguation.standalone_member_pricing`.
+
+---
+
+**The Digital Income Edit™ · Canon · 27 September 2026**

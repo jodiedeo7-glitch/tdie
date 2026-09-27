@@ -74,7 +74,9 @@
     "meta_link_rule_2026_09_25": "Decision 115. Founder rule, 25 Sep 2026: no link of any kind ever goes in a Facebook or Instagram post body or caption, because Meta suppresses posts that carry one. The post names the CTA in words and points to the comments. The link goes ONLY in the first comment, set to post automatically 5 minutes after the post's scheduled publish time; where the scheduler cannot do that, the comment goes up by hand 5 minutes after the post is live, and no post is reported done until its first-comment link is seen live. Skool links are never a raw URL: anywhere a link can sit behind words (Skool posts, comments and lessons, email, site, PDFs) a Skool link is a hyperlink buried in the CTA words. Facebook and Instagram comments cannot hide a link behind words, so there the link sits on its own line after a short CTA line. Overrides any document line that puts a link in a Meta post body or caption, including TDIE_SIX_M_FRAMEWORK.md pre-ship check step 6 on Facebook and Instagram. Instagram Story link stickers are not covered. Threads is not covered; Threads links follow claude/TDIE_THREADS_SYSTEM.md. Does not reopen Decision 107 (outreach and reply comments on other people's Threads and Instagram posts never carry a pasted link). Closed item.",
     "dfy_services_2026_09_25": "Decision 116. Founder instruction and price approval, 25 Sep 2026 (~1 am Eastern): every fast automation Jodie already runs for TDIE becomes a done-for-you service, tweaked per client, and each one doubles as proof of concept (the member can watch the same system running in TDIE). Eleven new lessons published in the Open DFY Services classroom course (slug c83b49d5) and the How It Works lesson rewritten, all read back from the server. Ordering is by DM keyword, then intake form, then a payment link; there are no Beacons listings for these. Each service has a row in products[] (platform 'Skool (DFY, DM to order)'). The spicy DFY lesson is Jodie's and is never edited. Doc of record: claude/TDIE_DFY_SERVICES.md.",
     "decision_117_2026_09_25": "Decision 117. Founder instruction, 25 Sep 2026. Instagram carries no links, ever (captions, comments, first comments, replies); calls to action point to the link in bio; Story link stickers excepted. Facebook first-comment rule unchanged. The old posting day rules (no membership Tue to Thu, Vault Wednesday only, Vault/membership never adjacent, Premium Monday or Friday only, weekly affiliate cap of three) are removed and replaced by the spread rules in content_calendar_rules.spread_rules. Reel renders on Higgsfield must cost under 30 credits (Wan 3.0 720p default, Grok Imagine 1.5 fallback). Recorded the same day in TDIE_CANON.md §3, §4, §5, §7, here, claude/TDIE_SKOOL_POSTING_SYSTEM.md, SOP-15-dfy-content-calendar.md and claude/TDIE_THREADS_SYSTEM.md.",
-    "dfy_beacons_checkout_2026_09_25": "Decision 118. 25 Sep 2026, conversion-optimization pass on the 11 new DFY services (Decision 116). Each DFY service now also has a Beacons checkout page in addition to the DM-to-order flow, so a buyer can pay directly instead of only DMing. Beacons checkout URLs were added to each product row below (beacons_checkout_url or beacons_checkout_urls for services with more than one price tier). Discount terms added at checkout and in the Skool lesson bodies: Premium members get 15% off; a service's first 2 clients get 25% off in exchange for a testimonial (does not stack with the Premium discount). Two exceptions have no Beacons checkout: Run It Like Mine: DFY Automation Setup (no product built for any of its four tiers — DM only) and the ongoing/monthly halves of DFY Viral Instagram Content Calendar and DFY Skool Autopilot (their one-time/setup prices do have checkout links; their recurring monthly options and the Skool Autopilot Mirror add-on remain DM-only)."
+    "dfy_beacons_checkout_2026_09_25": "Decision 118. 25 Sep 2026, conversion-optimization pass on the 11 new DFY services (Decision 116). Each DFY service now also has a Beacons checkout page in addition to the DM-to-order flow, so a buyer can pay directly instead of only DMing. Beacons checkout URLs were added to each product row below (beacons_checkout_url or beacons_checkout_urls for services with more than one price tier). Discount terms added at checkout and in the Skool lesson bodies: Premium members get 15% off; a service's first 2 clients get 25% off in exchange for a testimonial (does not stack with the Premium discount). Two exceptions have no Beacons checkout: Run It Like Mine: DFY Automation Setup (no product built for any of its four tiers — DM only) and the ongoing/monthly halves of DFY Viral Instagram Content Calendar and DFY Skool Autopilot (their one-time/setup prices do have checkout links; their recurring monthly options and the Skool Autopilot Mirror add-on remain DM-only).",
+    "while_you_sleep_storefront_2026_09_27": "Decision 121. Founder instruction, 27 Sep 2026: Jodie's two Amazon pin automations become one standalone product, The While-You-Sleep Storefront™ (working name). Presale $10 for everyone, Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern, then $27 one-time on Beacons from Fri 9 Oct 9:00 am. Membership Standard $17 through a private Beacons product linked only from a Value Vault lesson. Membership Premium: code PREMIUM50, 50% off the member product ($8.50), shown only in a Premium Vault lesson. Member affiliate 40% via Beacons' affiliate product. Zero refunds, stated once. Never included free in any tier. Upgrade: DFY Amazon Storefront Launch ($297). Registered 27 Sep 2026.",
+    "vault_member_pricing_2026_09_27": "Decision 122. Founder call, 27 Sep 2026. The While-You-Sleep Storefront™ is a standalone product, not a vault guide. It appears as one member-pricing lesson in BOTH The Value Vault and The Premium Vault, so the two vaults still hold identical lessons and only how each tier pays differs: The Value Vault lesson links the private $17 Beacons product; The Premium Vault lesson links the same $17 product plus code PREMIUM50 (50% off, $8.50). Premium pays half, not nothing. This is a scoped exception to 'every guide already unlocked in The Premium Vault' and is never re-raised as a vault defect, an audit finding or a pricing conflict. Closed item."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -485,6 +487,33 @@
       "regular_price": 37
     },
     {
+      "name": "The While-You-Sleep Storefront™",
+      "price": 27,
+      "display": "$27 one-time on Beacons. Presale $10 for everyone (4 days). Membership Standard members $17 through a private Beacons product. Membership Premium members $8.50 with code PREMIUM50 on the member product.",
+      "recurring": false,
+      "owned": true,
+      "platform": "Beacons",
+      "url": "pending: set in finish step 5, same day",
+      "member_product": {
+        "price": 17,
+        "url": "pending: set in finish step 5, same day",
+        "visibility": "Hidden on Beacons. Never on the storefront or the link in bio. Linked only from the Value Vault lesson and the Premium Vault lesson."
+      },
+      "premium_code": {
+        "code": "PREMIUM50",
+        "discount": "50% off the $17 member product ($8.50)",
+        "where": "Only in the Premium Vault lesson. Never in public copy, a Skool post, an email or a Beacons description."
+      },
+      "value_vault_lesson": "pending: set in finish step 7, same day",
+      "premium_vault_lesson": "pending: set in finish step 7, same day",
+      "presale": "$10 for everyone, Mon 5 Oct 2026 7:00 pm to Thu 8 Oct 2026 11:59 pm Eastern (founder dates, 27 Sep 2026). Public $27 and member $17 from Fri 9 Oct 2026 9:00 am Eastern. The presale product is the public product, repriced at launch; its presale file is a one-page note swapped for the full kit on launch morning.",
+      "sales_page": "https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront",
+      "affiliate": "Member affiliate program, 40%, Beacons affiliate product. See own_affiliate_programs.while_you_sleep_storefront.",
+      "refunds": "None. Stated once, on the sales page.",
+      "upgrade": "DFY Amazon Storefront Launch ($297) is the done-for-you upgrade named at the end of the kit.",
+      "note": "Decision 121. Standalone product, never included free in any tier. Working name. A copy-paste kit that turns Jodie's two Amazon pin automations (the themed-look line built on claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md and the Brand Closet™ Outfit of the Day line built on claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md) into a buyer's own: setup prompt, two recipes, four scheduled task prompts (including a daily missed-run sweep), persona and storefront paths, the blog half for Weekend Ecosystem™ sites, an optional Instagram add-on and a setup PDF. Proof is the machine: 15 looks, 15 Idea Lists, 15 live /lifestyle pages, 84 tagged links, 26 pins built (27 Sep 2026 log). Never a sales, commission or income claim: the storefront had 2 clicks and no earnings at the 24 Sep 2026 check. Not a vault guide: it appears as one member-pricing lesson in both vaults (Decision 122). Kit files: ops/cloud-output/storefront-product/kit/."
+    },
+    {
       "name": "Zero Income Claim Guide - 100 DFY Reels",
       "price": 37,
       "owned": true,
@@ -798,6 +827,17 @@
       "status": "LIVE",
       "commission_percent": 40,
       "note": "Skool's own affiliate rate on membership tiers. Separate from the Weekend Ecosystem™ rate — two rates, not a conflict. Also separate from the Skool (platform referral) products[] row, which pays when someone starts their OWN community rather than joining TDIE's."
+    },
+    "while_you_sleep_storefront": {
+      "status": "LIVE from presale open (Mon 5 Oct 2026, 7:00 pm Eastern) once turned on in Beacons at the desktop finish.",
+      "commission_percent": 40,
+      "product_price": 27,
+      "cap": "none",
+      "application": "none",
+      "link": "pending: set in finish step 5, same day",
+      "mechanic": "Same as own_affiliate_programs.weekend_ecosystem.mechanic: one link, identical for every member, added in her own Beacons account (add a digital product, choose affiliate product, paste the link). Beacons issues her own tracked link. There is no reply-for-a-link step.",
+      "meta_rule": "The 40% figure is permitted on Skool, Threads, email and the kit. Never on Facebook or Instagram, and never on the sales page (it carries the Meta Pixel).",
+      "not_a_pack_cta": "Member-promotion link. Never fills the affiliate slot in a Repurposing Pack."
     }
   },
   "flagged_not_cut": {
@@ -828,7 +868,8 @@
     "banned_claims_note": "These are FALSE STATEMENTS, not banned vocabulary. The rule is about what is asserted, not which words are used.",
     "bullet_rule": "A bare bullet reading 'The Value Vault' inside a list of what Standard includes is a defect even where the page defines the vault correctly elsewhere. Write 'The Value Vault — guides a la carte' or do not list it.",
     "recorded": "2026-09-19, after two published Skool posts told Standard members the vault came free with their tier. Both corrected; one deleted.",
-    "price_relationship_closed": "Vault Unlock at $49 one-time sits above the $27/month Premium tier that already includes the same guides. Jodie knows; the vault is still being filled. Deliberate interim state, never raised as a defect, audit finding, pricing conflict or open item."
+    "price_relationship_closed": "Vault Unlock at $49 one-time sits above the $27/month Premium tier that already includes the same guides. Jodie knows; the vault is still being filled. Deliberate interim state, never raised as a defect, audit finding, pricing conflict or open item.",
+    "standalone_member_pricing": "Decision 122. A standalone product can appear as one member-pricing lesson in BOTH vaults without being a vault guide. The While-You-Sleep Storefront™ is the first: The Value Vault lesson links the private $17 product, The Premium Vault lesson links the same $17 product plus code PREMIUM50 (50% off). The two vaults still hold identical lessons; only how each tier pays differs. Premium pays half, not nothing: a scoped founder exception to 'every guide already unlocked in The Premium Vault'. Never flagged as a vault defect, an audit finding or a pricing conflict."
   },
   "vault_contents_pretty_and_paid": {
     "products": "Planners, journals, guides, eBooks, printables, colouring page sets. Canva-editable, full PLR licence. Bundles not single files.",
