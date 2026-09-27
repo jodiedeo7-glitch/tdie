@@ -173,3 +173,52 @@ THE JOB. Build a finished set of images for The Weekend Ecosystem™ ($97 one-ti
 Report in one line.
 
 ----- END -----
+
+---
+
+## JOB 11 · FULL SITE DESIGN AUDIT + FIXES (Fable)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_DESIGN_RULES.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/canon/canon.json` and `ops/canon/TDIE_CANON.md`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Audit every page of the site the way a senior brand designer and conversion designer would, then fix it. The brand stays the brand: this is polish and consistency, never a redesign (Jodie's standing rule).
+
+1. Build the site and screenshot every page with the headless browser at phone (390 px) and desktop (1440 px) width. Group pages by template (home, articles, resources, shop and sales pages, lifestyle, membership, Weekend Ecosystem member pages).
+2. Score each template against the design rules and the Six M check: headline type (Newsreader SemiBold, key words hot pink, big and crisp), depth and something that pops (frosted cards, stickers, callouts), colour (no brown fills, no full pink wash, gold only as a thin line), spacing and rhythm, image quality and consistency, tap targets and text size on phone, one clear call to action, the first screen doing its job, and page speed (image sizes, layout shift). Note every inconsistency between templates.
+3. Fix directly in code, template first so one fix lands everywhere: shared components and styles, then page-level. Safe fixes (spacing, type, contrast, image sizing, mobile bugs, inconsistent buttons, missing alt text) ship straight away. Anything that changes a page's structure or look substantially gets built on a branch with before-and-after screenshots and waits for Jodie; never merge those without her yes.
+4. Never change a price, product, offer, testimonial or settled decision. Never invent copy claims.
+5. Build, push the safe fixes to main, then re-screenshot the changed pages live-equivalent (local build) at both widths.
+6. Save `ops/cloud-output/design-audit-2026-09/` with the report (every finding, what was fixed, what's waiting on a branch) and a before-and-after contact sheet per template. Send Jodie the contact sheets and the branch list. This job hands her data, so report it in full.
+
+----- END -----
+
+---
+
+## JOB 12 · EVERY PRODUCT COVER + LISTING (starts on your computer, finishes in the cloud)
+
+Beacons, Etsy and Skool can't be opened from a cloud session, so this one is two runs.
+
+**Run A, on your computer (normal usage, short):** Claude desktop app, Chrome signed into Beacons, Etsy and Skool. Paste:
+
+----- START (RUN A) -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md`. Using Chrome on this computer (take the browser lock in `claude/TDIE_BROWSER_LOCK.md` first), open every live product on my Beacons store, every active Etsy listing and every Skool classroom course cover. For each, save: the cover image(s) at full size, the title, the price as shown, the full description text, and the page URL. Change nothing. Commit it all to `ops/cloud-output/listings-capture/` (one folder per product, plus `INDEX.csv`) and push to main. Report in one line with the count.
+
+----- END (RUN A) -----
+
+**Run B, cloud credit (Opus):**
+
+----- START (RUN B) -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_DESIGN_RULES.md`, `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/canon/canon.json` and everything in `ops/cloud-output/listings-capture/`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Audit and redesign every captured product cover and listing so the whole shop looks like one brand and sells harder.
+1. Audit each: cover against the design rules at thumbnail size; title and description against the Six M check, canon prices and names, and platform rules (Etsy: original designs only, no PLR claims, 13 tags; Beacons: price and payment plan correct; no em dashes; no earnings claims anywhere Meta might show it).
+2. Build one cover system in code (Newsreader and Inter, the approved build in the design rules) and render a new cover set for every product, reusing existing Tommy Kate photos where they fit and leaving a placeholder plus a full image prompt where a new photo is needed. Rewrite every title and description. Never change a price or what a product includes.
+3. Save everything to `ops/cloud-output/listings-redesign/` (per product: new covers, new copy, and a before-and-after card), push, and send Jodie one contact sheet of all the before-and-afters.
+4. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: generate any placeholder photos, then upload each product's new covers and copy, reading each listing back live. Only after Jodie approves the contact sheet.
+
+Report in one line with the count.
+
+----- END (RUN B) -----
