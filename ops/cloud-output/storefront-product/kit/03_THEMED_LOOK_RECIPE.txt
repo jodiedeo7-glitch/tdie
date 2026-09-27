@@ -1,0 +1,116 @@
+AUTOMATION 1: THE THEMED-LOOK RECIPE
+The weekly task reads this file and MY_RECIPE.txt at the start of every run. You never edit this file. Your theme, boards, times and path live in MY_RECIPE.txt.
+
+WHAT ONE LOOK PRODUCES
+One look = 5 to 8 Amazon pieces that go together (a roundup: 3 or 5), one list or page that links every piece, and two pins that point to it, posted 3 days apart.
+
+Three kinds of look, all built the same way:
+  Outfit: one full outfit. Main piece (dress, set, or top plus bottom), shoes, bag, at least one piece of jewelry, one accessory, and optionally one beauty item or one book (a plain clothbound book with no title showing, named by its kind, never its title or author).
+  Theme list: 5 to 8 matching finds for one space or purpose (a room, a desk, a car, a party table, a gift guide).
+  Roundup: 3 or 5 options of one item ("3 cozy cardigans for...").
+
+====================================================================
+PART 1. THE RULES THAT NEVER MOVE
+====================================================================
+
+R1. Fresh tab for every pin, closed when that pin is done. Never hammer Pinterest: one Pinterest tab at a time, wait 60 seconds between one pin's Publish and the next pin's new tab, and after 6 pins in a row pause 5 minutes.
+R2. Blank page rule. If a Pinterest page loads blank, close the tab, wait 60 seconds, open a fresh one. If it loads blank twice in a row, STOP scheduling for this run. Everything finished is already in pin-drafts.md (Part 7); mark it "built" in storefront-log.md and end the run. The next run or pull sweep picks up the leftovers automatically. Never retry a third time.
+R3. Link and disclosure ship together. Every pin description starts with "#ad" and ends with the DISCLOSURE LINE from MY_RECIPE.txt. A pin with a link and no disclosure, or a disclosure and no link, does not ship.
+R4. No prices, anywhere. Not on the image, not in the title, description or alt text, not on a site page, not in a look idea. Amazon prices change by the hour.
+R5. No third-party IP in any image. No film stills, no character likenesses, no logos, no designer monograms, no team or university crests, no printed brand names, no book titles. Skip any Amazon product whose listing name uses a character, film, toy or designer brand, even if it's perfect.
+R6. No brand names in listings. List titles, pin titles, descriptions, hashtags, alt text and page item names describe the piece ("black velvet square neck mini dress"), never the brand. No real people, films, shows or characters either, even if that's how I describe my theme. One exception: the PIN LINE sentence from 05_RECOMMEND_IT_TOO.txt, when MY_RECIPE.txt says PIN LINE: on.
+R7. The 3-day spacing rule. The two pins of one look never go out on the same day. Pin 1 goes out on the look's date, pin 2 exactly 3 days later. Any two near-identical pins on the account go at least 3 days apart.
+R8. No affiliate links in email. Amazon's rules ban them. If you ever email about a look, link to your own site page, never to Amazon.
+R9. No downloads. Never click a download button, never save anything to the Downloads folder or the computer. Images move by the capture method in Part 4.
+R10. Two correction rounds at most per image. If it's still wrong after two, regenerate once from the first prompt with the fix written into it, or drop the look and log why.
+R11. Every board checked public before the first pin of each run. Open each board in MY_RECIPE.txt. A lock icon next to its name means Secret. If any board is secret, schedule nothing and tell me in one line which board.
+R12. Never more than 14 days ahead. Never two pins within 1 hour of each other. Only the PIN slots in MY_RECIPE.txt. Never a pin 1 less than 3 hours from now.
+R13. AI label. If Pinterest's pin builder offers an AI-generated label, turn it on for every pin. If it doesn't, carry on and note "no AI label option" once in the log for that run.
+R14. Signed out = stop. If the Amazon SiteStripe bar is missing on a product page, I'm signed out of Amazon: stop and tell me in one line. Never ship a link without my tag. Never type a password.
+R15. No em dashes in anything you write.
+R16. Browser lock. Before opening Chrome, read browser-lock.txt. If it says "free", write "busy [task name] [YYYY-MM-DD HH:MM]" in my time zone and continue. While you hold it, rewrite that time to now after every look and at least every 20 minutes. If it says busy and that time is less than 45 minutes old, wait 10 minutes and check again, up to 6 times, then end the run and log it. If it's 45 minutes old or more, the task that wrote it has stopped: take it. Write "free" back at the end of the run, even after a failure.
+R17. Pinterest's clock. Before the first pin of each run, check the time zone Pinterest's scheduler uses matches MY_RECIPE.txt. If it doesn't, stop and tell me in one line.
+R18. Amazon, gently. Read Amazon pages as they load in the tab, like a person browsing. Never fetch or scrape Amazon pages in the background.
+
+====================================================================
+PART 2. PICK THE LOOKS
+====================================================================
+
+1. Read storefront-log.md and pin-drafts.md first. Leftovers (Part 7 step 4) go before anything new.
+2. Look dates: the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no pin 1 scheduled. At most 4 looks per run.
+3. Take each look from the THEME CALENDAR window that covers that look's own date. At least one look every week comes from the EVERGREEN BANK.
+4. Mix. If MY_RECIPE.txt says both clothing and home, follow its MIX. Two outfit looks never land on back-to-back days: put a theme list or roundup between them. Outfit of the Day pins don't count toward this.
+5. No repeats. The hero piece (the dress, set, top or statement item the look is built on) never repeats within 30 days, counting both automations' rows in storefront-log.md. Shoes, bags, jewelry and accessories may repeat, at most once a week each.
+6. If a window has no unused ideas left, fill from the EVERGREEN BANK and tell me in one line to renew the calendar early.
+
+====================================================================
+PART 3. SOURCE ON AMAZON
+====================================================================
+
+1. For each piece, search amazon.com in the tab and read the results as they load (skip anything marked Sponsored): the ASIN, the title, the star rating and the rating count. Pick products that are: in stock (not "only a few left"), 4.0 stars or better with at least 100 ratings, Prime where possible, clearly photographed, in the look's colors. Every outfit has one easy anchor piece (a plain basic in black, white, cream, denim or camel); if the whole theme is neutral, make one piece the texture or detail that stands out instead.
+2. Color variants: open the product page and read each color's own ASIN.
+3. Your SiteStripe link for every piece, when you need one: on the Associates-only path, or when the blog half is on. Open the product page, wait 3 seconds, click "Get Link" in the SiteStripe bar, choose the short link, copy it. Capture it by replacing the page's clipboard write with a function that stores the text, then read the stored text. Keep collected links in the page's localStorage so a frozen tab loses nothing. On the Influencer path with the blog half off, skip the Get Link clicks, but still confirm the SiteStripe bar is showing on the first product page (R14).
+4. Log every piece before you make anything: short name, ASIN, and the short link if captured. Set the look's status to "building".
+5. The link for the pins:
+   INFLUENCER PATH: build an Idea List. Storefront > Create content > Idea List. Title = the look name. Add every piece by ASIN (search the ASIN in the add-products box, tick it, Done). If the Idea List search can't find a piece, swap the piece now, before any image is made. Dismiss the suggested AI description. Save, Submit. Read the list's public address from your storefront page (a link containing /list/). Open it in a fresh tab: if it doesn't load or is missing pieces, wait 10 minutes and try once more; if it still fails, both pins link to your storefront home and the log says "list pending".
+   ASSOCIATES-ONLY PATH: follow 08_STOREFRONT_PATHS.txt, Associates-only section.
+6. Product sheet, for reference only. On an amazon.com tab, lay the look's main product images in one grid over the page and take ONE screenshot. That screenshot is the reference for both images. Amazon's photos are never posted, never cut into a collage, never uploaded anywhere public.
+
+====================================================================
+PART 4. MAKE THE IMAGES
+====================================================================
+
+The capture method (no downloads): show the finished image in its own tab at 1000 by 1500 pixels (zoom so the whole image is visible and the capture is at least 1000 pixels wide), take a screenshot of it, and keep it in your own working files for this run. To attach a file to a generator, to Pinterest or to a site upload page, use the page's file input, never a download. Hand fixes (a little grain if it looks too glossy, a small crop that keeps 2:3) are done on the screenshot, never with another generation. Before the run ends, write in pin-drafts.md where each image lives in the generator's history (Higgsfield or Gemini, date and time, first words of the prompt), so a later run can capture it again.
+
+PIN 1: THE FLAT LAY OR COLLAGE (no person, so Seedream 4.5 on Higgsfield, 2K, portrait 2:3)
+Read the last look's pin 1 format in storefront-log.md and use the other one this time. Frames are full and styled edge to edge: never a plain white background with tidy boxes. Attach the product sheet. Write colors as a name plus a shade (for example "soft blush pink, never pale"), never as a color code.
+
+Format A prompt (fill the brackets, keep every other word):
+Please make me a very realistic overhead flat lay photo of the [outfit / pieces] in the attached image. I can't use the exact Amazon images outside of Amazon, so this needs to be a new photo. Shot straight down, portrait 2:3, like a good-quality photo taken on a phone. [For an outfit: The outfit is laid out as if worn, pieces overlapping and touching / For a theme list or roundup: The pieces are styled together as a real (entryway / table / desk / vanity) vignette seen from above, overlapping and touching], on [a surface that suits the look: fluffy faux fur / rumpled satin / crumpled white linen / chunky knit throw / warm wood floorboards / velvet]: [each piece described exactly as in its screenshot, one by one]. Each piece matches its screenshot in color, shape and detail. Tucked in around them, filling the frame edge to edge with almost no empty background: [4 to 8 styling extras that suit the theme, such as fresh flowers, an iced latte, sunglasses, an unlabelled perfume bottle, a hair bow, a candle]. Every product sits fully inside the frame. Soft natural window light, gentle real shadows, visible texture, small real-life imperfections, photorealistic. Across the upper third, set directly on the photo, a large two-style title: "[2 or 3 words]" in a bold high-contrast serif in capitals, with "[1 or 2 words]" beneath it in a thick flowing brush script, both in [near-black / white, whichever contrasts most], perfectly spelled, sharp edges, filling about two thirds of the width. No logos, no brand names, no labels on products, no book titles, no prices, no watermark, no person, no other text.
+
+Format B prompt:
+Please make me a shoppable Amazon finds collage for Pinterest, portrait 2:3, on a soft [a background color that suits the theme, for example blush pink, dusty blue, cream, pale lilac, sage] background with a faint paper texture. I can't use the exact Amazon images outside of Amazon, so please create a new clean cut-out product photo of each item in the attached image, each with a soft drop shadow: [each piece, one by one]. Add [3 to 5 matching extras]. Pack them around a central title so the whole canvas is full edge to edge, items overlapping slightly, every product fully inside the frame. Add a few tiny accents that suit the theme [for example small hearts and a bow for girly themes, tiny shells for coastal, pressed leaves and a wax seal for dark academia]. In the middle, set directly on the background, a large two-style title: "[serif words]" in a bold high-contrast serif with "[script words]" in a thick flowing brush script, near-black, perfectly spelled, crisp and fully legible, filling about half the width. Each item matches its screenshot and looks like a real photo, not a render. No logos, no brand names, no labels, no book titles, no prices, no other text.
+
+The title on the image: 3 to 5 words. Check every letter at phone size before it ships. A misspelled, warped or soft word is a re-run with the fix written in, never a ship.
+
+PIN 2 depends on your path and the kind of look (07_PERSONA_PATHS.txt):
+  PERSONA PATH, OUTFIT LOOKS: a lifestyle photo of your persona wearing every wearable piece (a beauty item or book in her hand or in the scene), made in Gemini with her reference image attached.
+  PERSONA PATH, THEME LISTS AND ROUNDUPS: the other Seedream format, as below. Your persona is never shown with home items.
+  NO-PERSONA PATH: the other format (if pin 1 was Format A, pin 2 is Format B, and the other way round), with a different surface or background and a different title.
+
+Refine, never restart: if something's off (wrong color, a missing piece, something cut off at the edge), say exactly what to change in the same chat. Two rounds at most (R10).
+
+====================================================================
+PART 5. WRITE THE PIN COPY
+====================================================================
+
+Title, 60 to 100 characters: the search phrase first, then the hook. Specific, a little flirty. Example: "Cozy Fall Outfit Ideas for Moms: The Sweater and Boots Look for Every School Run".
+Description, 450 to 500 characters including the disclosure: start with "#ad ", then a first sentence that repeats the search phrase naturally. Name what's in the look (by description, never brand). One line of personality in my VOICE from MY_RECIPE.txt. Then "Every piece is linked in my [Idea List / shop page]." Then 3 to 5 keyword hashtags (the #ad doesn't count). Then the DISCLOSURE LINE, last.
+Alt text, 150 to 200 characters: a plain description of what's literally in the image, including the title words if they're on it.
+Board: the board in MY_RECIPE.txt that fits the look. If the board has sections, use the one MY_RECIPE.txt names for that kind of look; if none fits, no section.
+No price. No brand. No em dashes. No promise about what the buyer will get or how fast.
+Write each pin's full copy into pin-drafts.md the moment it's finished.
+
+====================================================================
+PART 6. SCHEDULE AND VERIFY
+====================================================================
+
+1. Take the browser lock (R16). Check every board is public (R11). Check Pinterest's time zone (R17).
+2. Associates-only path: never schedule a pin until its page loads (08_STOREFRONT_PATHS.txt). Open the page first.
+3. For each pin, fresh tab (R1): Pinterest > Create Pin. Upload the image through the file input. Title, description, link, alt text, board, section. AI label (R13). "Publish at a later date": pin 1 at the pin 1 slot on the look's date, pin 2 at the pin 2 slot 3 days later (R7). Never over 14 days ahead (R12). Publish. Straight away, before the next pin, set it to "scheduled, not verified" in storefront-log.md and pin-drafts.md. Close the tab.
+4. Verify: open Pinterest's scheduled pins page in a fresh tab and read it (text, not screenshots). Find each pin by its title and time, and confirm the board and link. Only a pin you've seen there is "verified".
+5. Blank twice? R2. Stop, log, end.
+
+====================================================================
+PART 7. LOG, PIN TAB AND LEFTOVERS
+====================================================================
+
+1. Add each verified pin to pin-tab.md: posting date, time, board, kind, look, title, link, status "scheduled", PULL column empty.
+2. Update storefront-log.md: the look's row, its pin 1 and pin 2 formats, and its status ("verified", or "built" with the reason).
+3. A run that ends early changes its own "building" rows to "built" (if both images and all copy are finished and in pin-drafts.md) or "dropped" (if not). Only the run that wrote "building" may change it.
+4. Leftovers: before scheduling any pin logged "built" or "scheduled, not verified", open Pinterest's scheduled pins page and look for its title. Already there? Mark it verified. Otherwise take its copy from pin-drafts.md, open its image from the generator's history (Higgsfield assets or the Gemini chat, found by the date and prompt words in pin-drafts.md), capture it again, and schedule it into the next free slot of its own type (pin 1 slot on a look day; pin 2 slot exactly 3 days after its pin 1, or the next free pin 2 slot if that has passed), before anything new is made. Image gone? Regenerate once from the saved prompt words and the product sheet, or log it "dropped: image lost".
+5. Blog half on (09_THE_BLOG_HALF.txt): Influencer path, add the look's page after its pins are verified. Associates-only path, add and verify the page BEFORE scheduling its pins. Either way, open the live page and confirm it loads before logging it live.
+6. Write "free" to browser-lock.txt.
+7. Report to me in one line if everything worked ("Built 4 looks, 8 pins scheduled and verified."). Only add a second line if something needs me, and then say exactly what to do.
+
+On the RENEWAL DATE in MY_RECIPE.txt: schedule nothing past it, and tell me in one line that the calendar needs renewing (paste 02_SETUP_PROMPT.txt again and answer "renew").
