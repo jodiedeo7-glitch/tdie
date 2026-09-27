@@ -108,11 +108,11 @@ It took me 5 minutes to set up. That's once your Amazon and Pinterest are ready,
 
 The presale price is $10 for the whole kit until Thursday at 11:59 pm Eastern. After that, the same kit is $27.
 
-👉 [Grab it for $10](BEACONS_PRODUCT_URL)
+👉 [Grab it for $10](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 No gatekeeping. That's the whole machine.
 
-👉 [Get The While-You-Sleep Storefront™ here](BEACONS_PRODUCT_URL)
+👉 [Get The While-You-Sleep Storefront™ here](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 ### Skool 3 · Prime Big Deal Days · Tue 6 Oct, 3:00 pm (value slot)
 
@@ -145,11 +145,11 @@ What I'm not going to tell you is that it's made me money. It's new. I'm showing
 
 The presale is still $10 for the whole kit, until Thursday night.
 
-👉 [Get the machine for $10](BEACONS_PRODUCT_URL)
+👉 [Get the machine for $10](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 Then go enjoy the deals. Your pins can work on the next ones 😉
 
-👉 [Grab The While-You-Sleep Storefront™ here](BEACONS_PRODUCT_URL)
+👉 [Grab The While-You-Sleep Storefront™ here](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 ### Skool 4 · Last call · Thu 8 Oct, 7:05 pm (sell slot)
 
@@ -162,7 +162,7 @@ Last call on the presale 🤍
 
 Tonight at 11:59 pm Eastern, The While-You-Sleep Storefront™ goes from the $10 presale price to $27. Same kit either way. The only thing that changes is what you pay for it.
 
-👉 [Get it for $10 before midnight](BEACONS_PRODUCT_URL)
+👉 [Get it for $10 before midnight](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 Quick recap if you missed the week:
 
@@ -179,7 +179,7 @@ What you need, up front, so nobody's surprised:
 
 People are searching for you. This makes sure something's there when they do.
 
-👉 [Grab The While-You-Sleep Storefront™ for $10](BEACONS_PRODUCT_URL)
+👉 [Grab The While-You-Sleep Storefront™ for $10](https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39)
 
 ### Skool 5 · Launch · Fri 9 Oct, 7:00 pm (sell slot)
 
@@ -194,7 +194,7 @@ On the public shop it's $27. That's the price for anyone outside this community.
 
 You're not outside this community.
 
-Your member price is in The Value Vault 👉 [open your member price](VALUE_VAULT_LESSON_URL)
+Your member price is in The Value Vault 👉 [open your member price](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87)
 
 If you missed the week: it's my exact Amazon pin machine. It picks the look, finds the pieces, grabs your links, makes the images, writes and schedules the pins, and logs every single one. The Brand Closet™ line is in there too, for anyone on Rose's $9/month tier.
 
@@ -220,7 +220,7 @@ The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Sch
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
-[Get The While-You-Sleep Storefront™ for $17](MEMBER_PRODUCT_URL)
+[Get The While-You-Sleep Storefront™ for $17](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
 What's inside: the setup prompt, the themed-look recipe, The Brand Closet™ Outfit of the Day recipe (for members of Rose's community on her $9/month tier), four scheduled task prompts, the persona and no-persona paths, the Influencer and Associates-only paths, the blog half for Weekend Ecosystem™ sites, and the setup guide with two worked examples.
 
@@ -228,13 +228,13 @@ What you need: a Claude plan with scheduled tasks and Claude in Chrome, the Clau
 
 Premium members get this at half price. Membership Premium is $35/month · $297/year: [see Membership Premium](https://www.skool.com/thedigitalincomeedit/plans).
 
-[Get it for $17 here](MEMBER_PRODUCT_URL)
+[Get it for $17 here](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
 ---
 
 ## THE PREMIUM VAULT LESSON (Premium only · published Fri 9 Oct, 9:00 am)
 
-**Course:** The Premium Vault · **Lesson title:** The While-You-Sleep Storefront™ · your half-price code
+**Course:** The Premium Vault · **Lesson title:** The While-You-Sleep Storefront™ · half-price code (Skool caps titles near 50 characters)
 
 **Body:**
 
@@ -246,13 +246,13 @@ Your code: PREMIUM50
 
 Use it at the member checkout and you pay $8.50.
 
-[Open the member checkout and use PREMIUM50](MEMBER_PRODUCT_URL)
+[Open the member checkout and use PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
 What it is: my own Amazon pin machine. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
 
 This code is for Premium members only. Please don't share it outside The Premium Vault.
 
-[Get it for $8.50 with PREMIUM50](MEMBER_PRODUCT_URL)
+[Get it for $8.50 with PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
 ---
 
@@ -421,7 +421,7 @@ $27.
 ### Public product (presale, then public) · title: The While-You-Sleep Storefront™
 
 **Price:** $10 from Mon 5 Oct, 7:00 pm Eastern (presale); $27 from Fri 9 Oct, 9:00 am Eastern.
-**Affiliate:** on, 40%, for The Digital Income Edit™ members (Beacons affiliate product feature).
+**Affiliate:** 40%, for The Digital Income Edit™ members (Beacons affiliate product feature), turned on at the $27 launch on Fri 9 Oct, 9:00 am. Beacons refuses affiliate links on products under $15, so it can't run during the $10 presale.
 
 **Description (presale, until Fri 9 Oct, 9:00 am):**
 

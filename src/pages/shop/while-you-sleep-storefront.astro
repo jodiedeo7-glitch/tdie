@@ -1,0 +1,318 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import Testimonial from "../../components/Testimonial.astro";
+import { Image } from "astro:assets";
+
+// The While-You-Sleep Storefront(TM). Standalone Beacons product, never included
+// free in any tier. Canon row drafted in ops/cloud-output/storefront-product/
+// CANON_ROWS_DRAFT.md and registered at the desktop finish before this merges.
+// Proof is the machine only: never a sales, commission or income claim. This page
+// carries the Meta Pixel, so no earnings figures and no affiliate rate appear on it.
+// Every image below is one of Jodie's own published pins from src/lifestyle/.
+
+import witchFlat from "../../lifestyle/pink-witch-halloween-costume-flatlay.jpg";
+import witchLife from "../../lifestyle/pink-witch-halloween-costume-lifestyle.jpg";
+import officeFlat from "../../lifestyle/pink-workwear-freezing-office-flatlay.jpg";
+import catLife from "../../lifestyle/pink-cat-halloween-costume-lifestyle.jpg";
+import angelFlat from "../../lifestyle/pink-angel-halloween-costume-flatlay.jpg";
+import suitLife from "../../lifestyle/pink-suit-law-student-halloween-costume-lifestyle.jpg";
+import porchFlat from "../../lifestyle/pink-halloween-porch-decor-flatlay.jpg";
+import sequinLife from "../../lifestyle/pink-sequin-mini-dress-halloween-costume-lifestyle.jpg";
+
+// Filled at the desktop finish with the Beacons product address. Until then the
+// button renders as a closed notice instead of a dead link.
+const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39";
+const LIVE_LINK = CHECKOUT.startsWith("https://");
+
+// Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
+const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
+const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
+const now = Date.now();
+const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+
+const proof = [
+  { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
+  { img: witchLife, alt: "Mirror selfie in a farmhouse hallway of a woman in a black velvet mini dress, pink velvet witch hat, pink lace gloves and black Mary Janes, holding a pink tumbler.", cap: "Pin 2 · three days later" },
+  { img: officeFlat, alt: "That girl collage on blush pink of a pink cable knit cardigan, beige wide leg trousers, black penny loafers, brown leather laptop tote, pearl stud earrings and a hot pink tumbler.", cap: "Evergreen collage" },
+  { img: catLife, alt: "Woman walking down farmhouse porch steps at dusk in a pink sweater dress, pink cat ears, white thigh high socks and bow flats, carrying a pink heart bag and tumbler.", cap: "Lifestyle · walk-away" },
+  { img: angelFlat, alt: "That girl collage on blush pink of a hot pink ruffle dress, pink feather angel wings, a white feather halo, white platform heels, a pink rose clutch and silver star earrings.", cap: "Collage" },
+  { img: suitLife, alt: "Woman taking a full length mirror selfie in a bright bedroom, wearing a hot pink skirt suit, pearls, a pink velvet headband and pink patent pumps, holding a pink satchel.", cap: "Lifestyle" },
+  { img: porchFlat, alt: "Overhead photo of a white painted porch floor with pink velvet pumpkins, a pink ghost print candy basket, a pink check BOO ghost door sign, hot pink creepy cloth and a pink SPOOKY ghost doormat.", cap: "Theme list" },
+  { img: sequinLife, alt: "Woman at a Halloween house party under string lights, wearing a hot pink sequin mini dress, hot pink tassel earrings and silver strappy heels, holding a rose gold glitter clutch.", cap: "Lifestyle" },
+];
+
+const steps = [
+  { n: "01", t: "It picks the look", p: "From a seasonal calendar and an evergreen bank written for your theme, so it's never costumes in March." },
+  { n: "02", t: "It shops Amazon for you", p: "Five to eight pieces per look: in stock, four stars and up, a hundred ratings or more. Every one with your own affiliate link." },
+  { n: "03", t: "It builds the list", p: "An Idea List in your storefront holding every piece, or a shop-the-look page on your own site." },
+  { n: "04", t: "It makes the pins", p: "A styled flat lay or collage, and a lifestyle photo of your AI persona (or a second collage if you don't have one). Title, description, alt text, #ad line." },
+  { n: "05", t: "It schedules and logs", p: "Two pins per look, three days apart, checked on Pinterest's scheduled page and written to your pin tab and log." },
+];
+
+const needs = [
+  "A Claude plan with scheduled tasks and Claude in Chrome",
+  "The Claude desktop app, with your computer on when the tasks run",
+  "Amazon Associates, plus Influencer approval for Idea Lists",
+  "A Pinterest business account with public boards",
+  "Gemini and Higgsfield accounts",
+];
+
+const inside = [
+  "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
+  "The themed-look recipe, for any theme and any season",
+  "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
+  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
+  "Persona and no-persona paths, Influencer and Associates-only paths",
+  "The blog half, for Weekend Ecosystem™ sites",
+  "The setup guide, with two of my own looks worked through step by step",
+];
+---
+<PageLayout
+  wide
+  ogImage={witchFlat.src}
+  title="The While-You-Sleep Storefront™ · Amazon Pins on a Schedule"
+  description="Your Amazon affiliate links, turned into Pinterest pins that get built, scheduled and logged by your own Claude scheduled tasks. Found through search, not the feed."
+>
+  <section class="ws-hero">
+    <div class="page-eyebrow">Amazon links to Pinterest pins · on a schedule</div>
+    <h1>The <em>While-You-Sleep</em> Storefront™</h1>
+    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
+    <div class="ws-cta-row">
+      <a class="btn" href="#buy">See the price <span class="a">→</span></a>
+      <a class="ws-link" href="#proof">See the real pins first →</a>
+    </div>
+    <ul class="ws-trust">
+      <li>About 5 minutes to start</li>
+      <li>No building, no selling, no posting</li>
+      <li>Runs from your own computer</li>
+    </ul>
+  </section>
+
+  <section class="ws-strip" id="proof">
+    {proof.slice(0, 4).map((p) => (
+      <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
+    ))}
+  </section>
+  <p class="ws-note">Every image, title and schedule above was made by the tasks you're about to copy. Not by me.</p>
+
+  <section class="ws-sec">
+    <div class="ws-kicker">The problem nobody says out loud</div>
+    <h2>Passive income isn't passive if you're on your phone all day for the sale.</h2>
+    <p class="ws-p">Posting, replying, filming the reel, filming it again because the light changed. The feed forgets you by Wednesday and you start over on Thursday. That's not a business that runs while you sleep. That's a second shift.</p>
+    <p class="ws-p">Pinterest works the other way round. Nobody's there to be entertained. They're typing "pink witch costume" or "cozy fall outfit" into a search bar with their wallet already half open. A pin you schedule today can still be found months from now. The only job is making sure something of yours is there when they search.</p>
+    <p class="ws-p">So I stopped doing that job myself.</p>
+  </section>
+
+  <section class="ws-sec ws-tint">
+    <div class="ws-kicker">What the tasks do, on their own</div>
+    <h2>Five jobs you never do again.</h2>
+    <div class="ws-steps">
+      {steps.map((s) => (
+        <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
+      ))}
+    </div>
+    <p class="ws-close">No prices on any pin, no brand names in any listing, and Amazon's own photos never posted: they're only the reference for new images.</p>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-kicker">Two automations, one machine</div>
+    <h2>Your theme, every week. And the Outfit of the Day, every night.</h2>
+    <div class="ws-grid-2">
+      <div class="ws-card">
+        <h3>Themed looks</h3>
+        <p>Once a week, looks for your theme: cozy mom, coastal home, pink everything, dark academia, whatever you'd pin yourself. Holidays until a week before the day, evergreen looks every single week.</p>
+      </div>
+      <div class="ws-card ws-card-pink">
+        <h3>The Brand Closet™ Outfit of the Day</h3>
+        <p>If you're a member of The Brand Closet™ on Rose's $9/month tier, a second automation turns each new Outfit of the Day into your own pins, with your own Amazon links, your own list and brand-new images. Nothing of Rose's is ever posted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-kicker">The receipts, from my own log</div>
+    <h2>The machine, not a payout.</h2>
+    <div class="ws-stats">
+      <div><span class="ws-stat">15</span><span class="ws-statlab">Looks built</span></div>
+      <div><span class="ws-stat">15</span><span class="ws-statlab">Idea Lists</span></div>
+      <div><span class="ws-stat">15</span><span class="ws-statlab">Shop-the-look pages live</span></div>
+      <div><span class="ws-stat">84</span><span class="ws-statlab">Tagged product links</span></div>
+      <div><span class="ws-stat">26</span><span class="ws-statlab">Pins built</span></div>
+    </div>
+    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work. It took me 5 minutes to set up.</p>
+    <div class="ws-gallery">
+      {proof.slice(4).map((p) => (
+        <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-kicker">Up front, so nobody's surprised</div>
+    <h2>What you need before you buy.</h2>
+    <div class="ws-grid-2">
+      <div class="ws-card">
+        <ul class="ws-yes">{needs.map((n) => (<li>{n}</li>))}</ul>
+        <p class="ws-fine-dark">The Outfit of the Day line also needs The Brand Closet™ at Rose's $9/month tier. It's optional: the themed-look line runs without it.</p>
+      </div>
+      <div class="ws-card ws-callout">
+        <h3>The honest part</h3>
+        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
+        <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ws-sec">
+    <div class="ws-kicker">The blog half</div>
+    <h2>Have The Weekend Ecosystem™? Your looks become pages Google can find.</h2>
+    <p class="ws-p">One paste adds a shop-the-look section to your own site, with every look page written for search. My Pinterest block is on my domain only, so your pins can link to your own pages.</p>
+    <p class="ws-p">No site? You don't need one. The machine runs straight to your Idea Lists. And if you ever want the blog half, <a href="/shop/weekend-ecosystem">The Weekend Ecosystem™</a> is $97 one-time, or 3 × $33.33. Here's what one owner said about building her site with it:</p>
+    <Testimonial variant="line" />
+  </section>
+
+  <section class="ws-sec" id="buy">
+    <div class="ws-kicker">The price</div>
+    <div class="ws-price-box">
+      <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
+        <div class="ws-price-fig">$10<span> presale</span></div>
+        <p class="ws-price-when">The presale opens Monday 5 October, 7:00 pm Eastern, and runs until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27.</p>
+      </div>
+      <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
+        <div class="ws-price-fig">$10<span> presale</span></div>
+        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
+      </div>
+      <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
+        <div class="ws-price-fig">$27<span> one-time</span></div>
+        <p class="ws-price-when">The whole kit, yours to keep.</p>
+      </div>
+      <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
+      {LIVE_LINK && stage !== "soon"
+        ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
+        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
+      {LIVE_LINK && stage === "soon" && (
+        <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
+      )}
+      <p class="ws-fine">No refunds on digital products. Already a member of The Digital Income Edit™? Your member price is in The Value Vault.</p>
+    </div>
+  </section>
+
+  <section class="ws-sec ws-tint">
+    <div class="ws-kicker">Questions</div>
+    <h2>Asked, answered.</h2>
+    <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
+      <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
+    <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
+      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
+    <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
+      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
+    <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
+      <p>There's an Associates-only path: each look gets a page on your own site, and the pins link there. It's hands-off if the tasks can publish to your site (a Weekend Ecosystem™ site can). Influencer approval is the easy path, because Idea Lists need no website at all.</p></details>
+    <details class="ws-faq"><summary>Will it make me money?</summary>
+      <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
+    <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
+      <p>No. Instagram isn't part of the machine. There's an optional add-on page for feed posts, and it says plainly that stories are posted by hand.</p></details>
+  </section>
+
+  <section class="ws-final">
+    <h2>People are searching for you. Be there when they do.</h2>
+    <a class="ws-link" href="#buy">Back to the price →</a>
+  </section>
+
+  <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
+
+<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT }}>
+  (() => {
+    const t = Date.now();
+    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+    document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
+    // A page built before the presale opens reveals its checkout button once the presale is live.
+    const late = document.querySelector(".ws-buy-late");
+    const off = document.querySelector(".ws-buy-off");
+    if (late && s !== "soon") { late.hidden = false; if (off) off.hidden = true; }
+  })();
+</script>
+</PageLayout>
+
+<style>
+  .ws-hero{max-width:760px;margin:0 auto}
+  .ws-hero h1 em{font-style:normal;color:var(--pink)}
+  .ws-cta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin:4px 0 26px}
+  .ws-link{color:var(--pink-deep);font-weight:500;font-size:15px}
+  .ws-trust{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:9px}
+  .ws-trust li{font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pink-deep);background:var(--rose);border-radius:999px;padding:8px 16px;margin:0}
+
+  .ws-strip,.ws-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:52px 0 10px}
+  .ws-strip figure,.ws-gallery figure{margin:0}
+  .ws-strip img,.ws-gallery img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;display:block;border-radius:12px;box-shadow:0 26px 44px -26px rgba(214,46,115,.45)}
+  .ws-strip figure:nth-child(odd){transform:rotate(-1.2deg)}
+  .ws-strip figure:nth-child(even){transform:rotate(1.2deg) translateY(10px)}
+  .ws-strip figcaption,.ws-gallery figcaption{font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink-deep);margin-top:12px}
+  .ws-note{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--choc-mute);text-align:center;margin:18px auto 0;max-width:52ch}
+
+  .ws-sec{max-width:1000px;margin:0 auto;padding:72px 0;border-top:1px solid var(--gray)}
+  .ws-sec.ws-tint{background:linear-gradient(160deg,var(--rose) 0%,var(--blush) 100%);border-radius:18px;padding:60px 44px;margin:72px auto;border-top:none}
+  .ws-kicker{font-size:11.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:16px;font-weight:600}
+  .ws-sec h2,.ws-final h2{font-family:var(--display);font-weight:600;font-size:clamp(27px,3.6vw,40px);line-height:1.15;letter-spacing:-.4px;margin:0 0 26px;max-width:24ch;color:#1A1417}
+  .ws-sec h3{font-family:var(--display);font-weight:600;font-size:21px;margin:0 0 9px;line-height:1.25;color:var(--pink-deep)}
+  .ws-p{font-size:17px;line-height:1.75;color:var(--choc-soft);max-width:66ch;margin:0 0 16px}
+  .ws-p a{color:var(--pink);font-weight:500}
+  .ws-close{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--choc-soft);margin-top:30px}
+
+  .ws-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .ws-step{background:rgba(255,253,252,.86);border:1px solid rgba(200,169,106,.5);border-radius:16px;padding:22px 18px;box-shadow:0 26px 44px -30px rgba(214,46,115,.45)}
+  .ws-step p{font-size:14.5px;line-height:1.6;margin:0;color:var(--choc-soft)}
+  .ws-num{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--pink);color:var(--white);font:600 15px/1 var(--display);margin-bottom:12px}
+
+  .ws-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .ws-card{background:var(--white);border:1px solid rgba(200,169,106,.5);border-radius:16px;padding:30px;box-shadow:0 30px 50px -34px rgba(214,46,115,.45)}
+  .ws-card p{font-size:15.5px;line-height:1.7;margin:0 0 10px;color:var(--choc-soft)}
+  .ws-card p:last-child{margin-bottom:0}
+  .ws-card-pink{background:linear-gradient(140deg,#F0589A 0%,var(--pink) 55%,var(--pink-deep) 100%);border:none}
+  .ws-card-pink h3,.ws-card-pink p{color:var(--white)}
+  .ws-callout{border-left:4px solid var(--pink);background:var(--rose)}
+  .ws-fine-dark{font-size:14px!important;color:var(--choc-mute)!important;margin-top:14px!important}
+
+  .ws-yes{list-style:none;padding:0;margin:0}
+  .ws-yes li{font-size:15.5px;line-height:1.55;margin-bottom:12px;padding-left:28px;position:relative;color:#1A1417}
+  .ws-yes li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:700}
+
+  .ws-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:0 0 28px}
+  .ws-stats div{background:var(--white);border:1px solid rgba(200,169,106,.5);border-radius:14px;padding:20px 10px;text-align:center}
+  .ws-stat{display:block;font-family:var(--display);font-weight:600;font-size:40px;line-height:1;color:var(--pink)}
+  .ws-statlab{display:block;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-mute);margin-top:8px}
+
+  .ws-price-box{background:linear-gradient(160deg,var(--white) 0%,var(--rose) 100%);border:1px solid rgba(200,169,106,.6);border-radius:20px;padding:44px;text-align:center;box-shadow:0 40px 70px -40px rgba(214,46,115,.55);max-width:640px;margin:0 auto}
+  .ws-price-fig{font-family:var(--display);font-weight:600;font-size:64px;line-height:1;margin-bottom:8px;color:var(--pink)}
+  .ws-price-fig span{font-family:var(--sans);font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-mute)}
+  .ws-price-when{font-size:15px;line-height:1.6;color:var(--choc-soft);max-width:44ch;margin:0 auto}
+  .ws-price-list{list-style:none;padding:0;margin:26px auto 30px;max-width:460px;text-align:left}
+  .ws-price-list li{font-size:15px;line-height:1.5;margin-bottom:11px;padding-left:24px;position:relative;color:#1A1417}
+  .ws-price-list li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:700}
+  .ws-buy{border-radius:999px}
+  .ws-buy-off{background:var(--pink-soft);cursor:default}
+  .ws-buy[hidden]{display:none}
+  .ws-fine{font-size:13px;color:var(--choc-mute);margin:18px 0 0}
+
+  .ws-faq{border-bottom:1px solid rgba(214,46,115,.2);padding:18px 0}
+  .ws-faq summary{cursor:pointer;font-family:var(--display);font-size:18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px;color:#1A1417}
+  .ws-faq summary::-webkit-details-marker{display:none}
+  .ws-faq summary::after{content:"+";color:var(--pink);font-size:21px;line-height:1;flex-shrink:0}
+  .ws-faq[open] summary::after{content:"–"}
+  .ws-faq p{margin:14px 0 0;font-size:15.5px;line-height:1.7;color:var(--choc-soft)}
+
+  .ws-final{max-width:720px;margin:76px auto 0;text-align:center;padding-top:64px;border-top:1px solid var(--gray)}
+  .ws-final h2{margin:0 auto 20px}
+
+  @media(max-width:900px){
+    .ws-steps{grid-template-columns:1fr 1fr}
+    .ws-stats{grid-template-columns:repeat(3,1fr)}
+    .ws-sec.ws-tint{padding:48px 22px}
+  }
+  @media(max-width:640px){
+    .ws-strip,.ws-gallery{grid-template-columns:1fr 1fr}
+    .ws-grid-2{grid-template-columns:1fr}
+    .ws-stats{grid-template-columns:1fr 1fr}
+    .ws-price-box{padding:32px 20px}
+  }
+</style>
