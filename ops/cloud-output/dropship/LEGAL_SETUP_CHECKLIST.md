@@ -1,0 +1,60 @@
+# LEGAL AND SETUP CHECKLIST, BEFORE THE FIRST SALE (Job D1, 27 September 2026)
+
+Facts with sources, not legal advice. Every fact was read from a web search snippet on 27 September 2026 because this container cannot open the source sites; "confirm on [site]" means the figure was not read from the official page itself. Jodie does each item herself, in this order. Nothing here is done by a cloud session.
+
+## 1. Decide the entity, then register it (do this first, everything else asks for it)
+- Sole proprietor: no Georgia state filing needed. A trade name ("doing business as") is filed with the Clerk of Superior Court in the county of business; Fortson, GA sits in Muscogee and Harris counties. Unverified: county filing fee not researched.
+- Georgia LLC: Articles of Organization $100 online at https://ecorp.sos.ga.gov ($110 by mail); annual registration $60 ($50 plus $10 service charge), first one due 1 January to 1 April of the year after formation. Source: https://sos.ga.gov/how-to-guide/how-guide-register-domestic-entity and https://sos.ga.gov/how-to-guide/filing-fees-and-expedited-processing-document-filings (via snippet, 2026); https://www.llcuniversity.com/georgia-llc/annual-report/ (2026). Seen in snippet.
+- Ask the accountant which one. The store's Shopify Payments account, the Georgia tax account and the return address all need the same legal name.
+
+## 2. Georgia sales tax registration
+- Where: Georgia Tax Center, https://gtc.dor.ga.gov/_/ . How-to: https://dor.georgia.gov/how-register-sales-and-use-tax-account . FAQ: https://dor.georgia.gov/taxes/business-taxes/sales-use-tax/sales-and-use-tax-registration-faq . Seen in snippet.
+- Cost: free (third-party source, https://www.salestaxsolutions.us/georgia-sales-tax-registration-guide/ ). Unverified on dor.georgia.gov.
+- What you get: a sales and use tax account number, emailed about 15 minutes after the online submission. Anyone who meets the definition of a "dealer" must register even if all sales are online or out of state. Seen in snippet (dor.georgia.gov FAQ).
+- Rate: 4% state plus local, combined up to 9%, average about 7.37% (https://taxcloud.com/sales-tax/georgia/ , 2026). Unverified on dor.georgia.gov. Shopify Tax applies the right local rate at checkout once the Georgia registration is entered.
+- Georgia's own remote-seller threshold, $100,000 or 200 transactions, applies to out-of-state sellers; a Georgia business collects from its first sale to a Georgia address.
+
+## 3. Economic nexus in other states
+- Standard threshold: $100,000 of sales into a state over 12 months, in 41 of 46 jurisdictions (https://taxesledger.com/guides/economic-nexus-guide , 2026). Seen in snippet.
+- 17 states had dropped the 200-transaction test as of 1 August 2026 (Alaska, Utah, Illinois, Iowa, Wisconsin, Kentucky among them); about 14 states plus DC and Puerto Rico still count transactions (https://www.avalara.com/blog/en/north-america/2025/06/states-eliminating-economic-nexus-transaction-thresholds.html ; https://taxcloud.com/blog/sales-tax-nexus-by-state/ , 2026). Seen in snippet.
+- State-by-state lists: https://www.numeral.com/blog/economic-nexus and https://eightx.co/blog/economic-nexus-thresholds-2026 .
+- Marketplace facilitator laws do not cover an own Shopify store: Jodie collects and remits on every own-store sale where she has nexus (https://www.avalara.com/us/en/learn/guides/state-by-state-guide-to-marketplace-facilitator-laws.html ). Seen in snippet.
+- Practical rule for year one: register Georgia now, then watch the Shopify Tax "liability" report monthly and register a state when it shows the threshold approaching. Shopify Tax is free up to $100,000 US sales a year, then 0.35% per order; automated filing is $75 per filing per state plus $150 one-time registration per state (https://help.shopify.com/en/manual/taxes/shopify-tax/pricing and https://help.shopify.com/en/manual/taxes/shopify-tax/automated-filing/pricing , 2026). Seen in snippet. Unverified: the lifetime threshold for stores created on or after 13 May 2026.
+
+## 4. Refund and return policy page
+- No federal law requires a return policy (https://www.findlaw.com/consumer/consumer-transactions/return-policies-and-refunds.html ). California: post the policy or customers may return for a full refund within 30 days. New York: post the policy and any restocking fee or refund within 30 days. Florida: post a no-refund notice or a 20-day refund right applies (https://www.termsfeed.com/blog/return-refund-laws-usa/ ). Seen in snippet.
+- Shopify admin adds the refund, privacy, terms and shipping policies under Settings > Policies (https://help.shopify.com/en/manual/checkout-settings/refund-privacy-tos ). Seen in snippet (page exists). Unverified: whether a posted policy is mandatory for Shop Pay.
+- Draft store line used on every D1 product page (Jodie confirms or changes it): "Returns: 30 days on unused items in the original packaging. You cover return postage. Damaged or wrong items are replaced free." This matches what CJ and Zendrop cover (damaged, wrong or lost orders) and what they do not (change of mind). Confirm CJ's and Zendrop's own return terms on cjdropshipping.com and support.zendrop.com.
+
+## 5. Privacy policy and terms page
+- CCPA/CPRA applies to a business with gross revenue over $25 million ($26.625 million from 1 Jan 2025), or personal data of 100,000 or more California consumers or households, or half its revenue from selling or sharing personal data. Any one trigger applies (https://www.clym.io/blog/ccpa-applicability-guide ; https://transcend.io/blog/cpra-vs-ccpa , 2026). Seen in snippet. Official page to confirm: https://oag.ca.gov/privacy/ccpa .
+- The store will be under every threshold on day one, but Pinterest's merchant guidelines and payment providers expect the pages to exist. Use Shopify's generated templates and add the Meta Pixel and MailerLite disclosures (the Pink Finds pixel already fires a Lead event on the existing site).
+
+## 6. Product liability exposure, by category in the bank
+- Seller of record: a dropshipper is the seller the customer contracts with, so returns, refunds and any product claim land with the store first. Ask each supplier, in the sourcing chat, for the test report or certificate below before a product goes live.
+- Textiles and apparel (pajama set E21, robe E23, faux fur throw Q03, velvet pillow covers Q04, seat belt covers E11, wearable blanket E24, bonnet Q14, sleep mask E20): all clothing textiles sold in the US must comply with the Standard for the Flammability of Clothing Textiles, 16 CFR Part 1610, Class 1 or 2 (https://www.ecfr.gov/current/title-16/chapter-II/subchapter-D/part-1610 ; https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Flammable-Fabrics-Act ). Seen in snippet.
+- Food contact (tumbler Q11, party cups Q05, champagne flutes Q15): FDA food-contact rules (21 CFR Parts 174 to 190). Unverified in this session (not searched); ask the supplier for an FDA or LFGB food-grade statement and state "BPA-free" only if the supplier's sheet says so.
+- Candles: kept OUT of the bank. If added later, ASTM F2417 (fire safety), ASTM F2058 (cautionary labels) and the lead-wick limit in 16 CFR 1500.17 (https://www.compliancegate.com/candle-regulations-united-states/ ; https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Candles ). Seen in snippet.
+- Batteries and anything that plugs in: kept OUT of the bank (pre-lit trees, LED mirrors, heated blankets, lamps). If added later, UL or ETL listing on the product, not just the charger. Unverified: not searched.
+- Children's products: nothing in the bank is marketed to under-13s; if a product could be (bunny ears Q01), keep the copy adult and do not add "for kids", because CPSIA testing and a Children's Product Certificate would apply. Unverified: not searched.
+- Cosmetics: kept OUT (nothing that touches skin or lips). The spa headband set, bonnet, sleep mask and heatless rod are textile accessories, not cosmetics.
+- General liability insurance for an online seller: not researched (unverified). Ask the accountant or an insurance broker before the first sale.
+
+## 7. FTC Mail, Internet, or Telephone Order Merchandise Rule (16 CFR Part 435)
+- The seller must have a reasonable basis to expect it can ship within the advertised time, or within 30 days if no time is stated. If it cannot, it must get the buyer's consent to the delay or refund promptly without being asked (https://www.ftc.gov/legal-library/browse/rules/mail-internet-or-telephone-order-merchandise-rule ; https://www.ftc.gov/business-guidance/resources/business-guide-ftcs-mail-internet-or-telephone-order-merchandise-rule ). Seen in snippet.
+- What this means for the store: every product page states the supplier's real window (D1 drafts say "Ships from our US warehouse in 4 to 9 business days" for CJ US stock), the Q4 emails carry the order-by dates from the OrderByDates sheet, and a delay email template must exist before launch (D2 writes it).
+
+## 8. Pinterest merchant guidelines for the new store domain
+- Requirements: a clear, easy-to-find returns policy (whether returns are accepted, process, timing, contact details); a visible shipping policy with expected processing and shipping times and costs; contact email, phone or live chat; a high-quality site and product pages; the domain claimed and verified in Pinterest business settings; the merchant handles all purchases, deliveries and disputes (https://policy.pinterest.com/en/merchant-guidelines ; https://help.pinterest.com/en/business/article/verified-merchant-program ). Seen in snippet.
+- The store gets its own new domain. Pinterest's block is on thedigitalincomeedit.com; the store domain is claimed separately and is never mentioned alongside the blocked domain on Pinterest. Unverified: whether Pinterest links a new domain to a blocked one by account; keep the store's pins on the same Pinterest account only after the domain claim succeeds, and stop if the claim is refused.
+- Domain age: Shopify community threads report Pinterest refusing the Verified Merchant Program on very new domains; expect to wait for the badge, not for the domain claim (https://community.shopify.com/t/pinterest-says-domain-age-does-not-meet-their-requirements/82474 ). Seen in snippet.
+
+## 9. Tariffs and de minimis
+- The $800 duty-free de minimis entry ended for China and Hong Kong on 2 May 2025 and for all countries on 29 August 2025; low-value parcels now face full tariff treatment, and Congress repealed Section 321 for all commercial shipments effective 1 July 2027 (https://www.cbp.gov/newsroom/national-media-release/cbp-collects-1-billion-end-de-minimis-loophole ; https://www.federalregister.gov/documents/2026/06/24/2026-12670/indefinite-suspension-of-the-de-minimis-exemption-for-merchandise-arriving-through-all-modes-other ). Seen in snippet.
+- Store rule that follows: US warehouse stock only for Q4; a China-shipped product is a last resort for evergreen only, and its landed cost must include duty (the supplier's "shipping" quote may or may not, so ask).
+
+## 10. The Shopify signup itself
+- Open the store through Jodie's own affiliate link https://shopify.pxf.io/eK3xYz (canon Decision 83: every Shopify link is her direct affiliate link). Intro offer seen: 3 days free, then $1/month for the first 3 months on Basic, monthly billing only; switching to annual forfeits it (https://www.stylefactoryproductions.com/blog/shopify-3-months-for-1-dollar , re-checked on shopify.com/pricing 14 Sep 2026). Confirm on shopify.com/pricing.
+- The Starter plan is not available to new stores (https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-starter-plan ). Seen in snippet. Do not plan around it.
+
+This matches `ops/canon/canon.json` (Shopify row, Decision 83) and `ops/cloud-kit/README_START_HERE.md` (no refund windows are ever written for digital products; the returns line above is for physical goods only and never appears on a TDIE digital product page).
