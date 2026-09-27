@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import Testimonial from "../../components/Testimonial.astro";
+import { membership as M, weekendEcosystem as WEF } from "../../data/facts.js";
 
 // ─────────────────────────────────────────────────────────────
 // THE ONE-SENTENCE OFFER TOOL. Free, on screen only.
@@ -187,7 +188,7 @@ const modes = [
         <article class="os-card os-door">
           <span class="os-door-k">Door 1 · the offer behind the sentence</span>
           <h3>The Offer Edit</h3>
-          <div class="os-price"><b>$37</b> one-time, or included in Membership Premium ($35/month or $297/year)</div>
+          <div class="os-price"><b>$37</b> one-time, or included in Membership Premium ({M.premium.perMonth} or {M.premium.perYear})</div>
           <p>A good sentence only works if the offer behind it is built the same way: for her, around what she walks away with. The Offer Edit is eighteen lessons on the offer itself, inside the Skool classroom.</p>
           <a class="os-btn" href={OFFER_EDIT}>Open The Offer Edit <span aria-hidden="true">→</span></a>
         </article>
@@ -195,7 +196,7 @@ const modes = [
         <article class="os-card os-door">
           <span class="os-door-k">Door 2 · somewhere for the sentence to live</span>
           <h3>The Weekend Ecosystem™</h3>
-          <div class="os-price"><b>$97</b> one-time, or 3 × $33.33 · every future update included</div>
+          <div class="os-price"><b>{WEF.price}</b> one-time, or {WEF.plan} · every future update included</div>
           <p>You're not short on content. You're short on a place to put it. Twenty-two modules turn what you've already made into a website and blog on a domain you own, with your offer routed from every article.</p>
           <Testimonial variant="pull" />
           <a class="os-btn" href={WE}>See The Weekend Ecosystem™ <span aria-hidden="true">→</span></a>
@@ -204,7 +205,7 @@ const modes = [
         <article class="os-card os-door">
           <span class="os-door-k">Door 3 · the room where I fix it with you</span>
           <h3>Membership Standard</h3>
-          <div class="os-price"><b>$9</b>/month after a 7-day free trial, or $99/year</div>
+          <div class="os-price"><b>{M.standard.monthly}</b>/month after a {M.trial}, or {M.standard.perYear}</div>
           <p>Every Saturday I rewrite members' sentences in the comments, one at a time, with the actual new line. Standard is also the build curriculum laid out in the order I'd do it again: offer first, funnel second, automation third, audience last.</p>
           <a class="os-btn" href={SKOOL}>Start Membership Standard <span aria-hidden="true">→</span></a>
         </article>

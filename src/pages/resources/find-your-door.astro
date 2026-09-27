@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import Testimonial from "../../components/Testimonial.astro";
+import { membership as M } from "../../data/facts.js";
 
 // ─────────────────────────────────────────────────────────────
 // FIND YOUR DOOR — the central free routing guide.
@@ -159,11 +160,11 @@ const stats = [
 
     <!-- Membership: two ways in, each priced with what it buys (Standing Rule 32) -->
     <div class="fd-door">
-      <span class="fd-door-k">The Membership · on Skool · both start with a free 7-day trial</span>
+      <span class="fd-door-k">The Membership · on Skool · both start with a {M.trial}</span>
       <div class="fd-duo">
         <article class="fd-card">
           <h3>Membership Standard</h3>
-          <div class="fd-price"><b>$9</b> per month after 7 free days · or $99 a year</div>
+          <div class="fd-price"><b>{M.standard.monthly}</b> per month after {M.trialDays} free days · or {M.standard.annual} a year</div>
           <p class="fd-card-line">Everything you need to build the thing and start selling it.</p>
           <p><strong>Inside:</strong> AI Twin / Influencer Creation, Brand Building, The Content Edit, The Monetization Edit, The Email Edit, The Pinterest Edit, Pinterest Foundations™, The Tommy Kate Edit, Canva Crash Course and Daily Prompts.</p>
           <p class="fd-for"><strong>For you if</strong> you have the idea and not the order of operations.</p>
@@ -172,7 +173,7 @@ const stats = [
         </article>
         <article class="fd-card fd-card-dark">
           <h3>Membership Premium</h3>
-          <div class="fd-price"><b>$35</b> per month after 7 free days · or $297 a year</div>
+          <div class="fd-price"><b>{M.premium.monthly}</b> per month after {M.trialDays} free days · or {M.premium.annual} a year</div>
           <p class="fd-card-line">Everything in Standard — and your content month, written for you.</p>
           <p><strong>Adds:</strong> the Monthly DFY Content Calendar (31 days, released a week at a time around the 1st, 62 Threads posts, a start-frame and motion prompt for every Reel), The Ads Edit™, The Offer Edit, The Funnel Edit and Scaling &amp; Systems.</p>
           <p class="fd-for"><strong>For you if</strong> the blank caption box is the reason you go quiet.</p>
