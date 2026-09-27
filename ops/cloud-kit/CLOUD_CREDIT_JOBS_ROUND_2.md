@@ -148,3 +148,28 @@ THE JOB. Jodie's Amazon Creator Hub shows 0 of 3 videos, so onsite commissions a
 Report in one line.
 
 ----- END -----
+
+---
+
+## JOB 10 · WEEKEND ECOSYSTEM™ COVER + AD CREATIVES (Opus)
+
+----- START -----
+
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_DESIGN_RULES.md`, `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md`, `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, `ops/canon/canon.json` (The Weekend Ecosystem™ row), `src/pages/shop/weekend-ecosystem.astro`, `src/we-reviews.js`, and look at every image in `public/images/we/` and `public/og/weekend-ecosystem.jpg`. Start your first reply with "Sources checked: [file names]."
+
+THE JOB. Build a finished set of images for The Weekend Ecosystem™ ($97 one-time, or 3 × $33.33), composed in code from the photos already in the repo. This container cannot generate new photos; it designs with the ones that exist and writes prompts for any new ones.
+
+1. Audit the current Beacons cover (Jodie's screenshot: big condensed pink sans headline "The Weekend Ecosystem™", subline "Your website + blog, built from what you already have", "XOXO, Jodie" script, Tommy Kate on a sofa with a laptop and her tumbler) against the design rules. It breaks the type rule (headlines must be Newsreader SemiBold, key words hot pink) and has no depth, stickers or callouts. List what to keep and what to change.
+2. Build a renderer (HTML to PNG, Newsreader and Inter from raw.githubusercontent.com/google/fonts) and make:
+   - Beacons product cover, 3 images for its carousel (square, 1080 × 1080): the hero; a "what you get" card (22 modules, 36 prompts, three vaults, every update free); Tina Alexander's review card (approved `pull` cut from `src/we-reviews.js`, "word press" spelling kept).
+   - Site social preview, 1200 × 630, all text inside the centre 600 px (Facebook crops the sides). Save as a NEW filename in `public/og/` and point the sales page's `ogImage` at it (Facebook caches by filename).
+   - Meta ad creatives in four sizes (1080 × 1080, 1080 × 1350, 1080 × 1920, 1200 × 628), five angles each, following the Six M framework: her ideal state, "see the machine free" (preview, no email), the objection "I can't build a website", the payment plan, and the review. **Meta rules: no income or earnings figures, no "make money" promises; Tina's review is allowed because it names no money.**
+   - A Keep It Running Kit version of the hero ("free until 4 Oct, 11:59 pm Eastern") as a separate file, so the evergreen hero never goes stale.
+   Every image: depth, frosted cards, a sticker badge, big crisp headline with the turn words in hot pink, no brown fills, no thin serifs, readable at phone thumbnail size. Use a different photo per image where the repo has one; where a new photo would do better, leave a clean placeholder and write the full Tommy Kate prompt (her tumbler rule, her wardrobe rules, her world).
+3. Write primary text, headline and description for each ad angle (Meta rules; link in no caption; CTA "Learn More" to the preview page).
+4. Commit everything to `ops/cloud-output/we-creatives/` plus the new OG image and the page change, build, push to main. Send Jodie a contact sheet of every image.
+5. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: generate any placeholder photos (prompts pasted in) and drop them in; upload the 3 carousel images to the Beacons product in order, reading back; re-scrape the sales page in Facebook's Sharing Debugger; load the ads into Meta Ads Manager only with Jodie's go.
+
+Report in one line.
+
+----- END -----
