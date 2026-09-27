@@ -123,7 +123,7 @@ a:hover .e-artifact img,a:focus-visible .e-artifact img{transform:scale(1.035)}
     .e-reveal{animation:e-reveal linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 28%}
     @keyframes e-reveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
     .e-unveil{animation:e-unveil linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 35%}
-    @keyframes e-unveil{from{clip-path:inset(12% 0 0 0);transform:scale(1.04)}to{clip-path:inset(0 0 0 0);transform:none}}
+    @keyframes e-unveil{from{clip-path:inset(14% 0 0 0);opacity:.6}to{clip-path:inset(0 0 0 0);opacity:1}}
   }
 }
 @media (prefers-reduced-motion:reduce){.e-artifact img{transition:none}a:hover .e-artifact img{transform:none}}
