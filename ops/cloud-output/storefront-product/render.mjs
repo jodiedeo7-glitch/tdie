@@ -40,7 +40,7 @@ for (const [name, url] of Object.entries(FONT_SRC)) {
   writeFileSync(p, Buffer.from(await r.arrayBuffer()));
 }
 
-const LAUNCH = process.env.LAUNCH || "Monday 5 October 2026";
+const LAUNCH = process.env.LAUNCH || "Friday 9 October 2026";
 const BC = "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce";
 const DFY = "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=8ec7129809ce4a85a7e0607b8105deec";
 const WE = "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem";
@@ -216,7 +216,7 @@ guide.push(`<section class="pg">${top(4)}
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
       <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
-      <p class="small">Affiliate link: I earn a commission if you join, at no extra cost to you.</p></div></div>
+      <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p></div></div>
   </div>
   ${strip(["pink-angel-halloween-costume-flatlay.jpg", "pink-bunny-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"], sticker("Made by<br>the tasks,<br>not me", "right:-10px;top:40px;transform:rotate(8deg)", true))}
   ${foot()}
@@ -244,7 +244,7 @@ guide.push(`<section class="pg">${top(6)}
   <h2>Hand it <em>the timetable.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
-      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks (three if you're in The Brand Closet&trade;), each with one line telling you exactly what to type. For each one:</p>
+      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds three tasks (four if you're in The Brand Closet&trade;): the weekly build, the pull sweep, the missed-run sweep and, for members, the nightly Outfit of the Day run. Each has one line telling you exactly what to type. For each one:</p>
       <ol><li>In the Claude desktop app, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
       <li>Type the <strong>name</strong> from the file.</li>
       <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
@@ -255,8 +255,7 @@ guide.push(`<section class="pg">${top(6)}
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
       <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
   </div>
-  ${strip(["pink-suit-law-student-halloween-costume-flatlay.jpg", "pink-suit-law-student-halloween-costume-lifestyle.jpg", "pink-dorm-halloween-decor-flatlay.jpg", "elle-and-emmett-couples-costume-lifestyle.jpg"], sticker("3 days<br>between<br>pins", "right:-10px;top:40px;transform:rotate(8deg)", true))}
-  ${foot()}
+    ${foot()}
 </section>`);
 
 // 7 steps 8-10
@@ -265,14 +264,14 @@ guide.push(`<section class="pg">${top(7)}
   <h2>Then you <em>leave it alone.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
-      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it's off at run time, that run waits until it's back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
+      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
       <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
       <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
   </div>
   <div class="hotcard" style="margin-top:16px"><h3>What a normal week looks like</h3>
-    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the sweep checks for pulls and leftovers, and opens nothing if there aren't any. You get a one-line report when a run finishes.</p></div>
+    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the pull sweep checks for pulls and leftovers, and every morning the missed-run sweep checks nothing was skipped. Both open nothing if there's nothing to do. You get a one-line report when a run finishes.</p></div>
   ${foot()}
 </section>`);
 
@@ -335,7 +334,7 @@ guide.push(`<section class="pg">${top(10)}
     <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
     <div class="card"><h3>You're signed out</h3><p>If Amazon's SiteStripe bar is missing, the task stops and tells you in one line. It never ships a link without your tag, and never types a password. Sign back in; the next run carries on.</p></div>
     <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
-    <div class="card"><h3>The computer was off</h3><p>That run waits until the computer is back on. Nothing is lost: leftovers are logged and scheduled first next time.</p></div>
+    <div class="card"><h3>The computer was off</h3><p>The daily missed-run sweep (9:45 am) spots the missed run and runs it once, taking the same lock so two runs never overlap. Leftovers are logged and scheduled first.</p></div>
     <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
     <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
   </div>
@@ -380,13 +379,13 @@ const presale = [`<section class="pg" style="padding:0">
 const G = [
   { name: "g1-presale-open", w: 1600, h: 900, photo: "g1-porch-morning.jpg", pos: "70% 50%",
     kicker: "Presale &middot; 4 days only", h1: "Your Amazon pins, made <em>while you sleep.</em>",
-    card: `<b>$10</b><span>until Sunday 11:59 pm ET &middot; then $27</span>`, sticker: "No more<br>posting" },
+    card: `<b>$10</b><span>until Thursday 11:59 pm ET &middot; then $27</span>`, sticker: "No more<br>posting" },
   { name: "g2-tease", w: 1600, h: 900, photo: "g2-loft-night-desk.jpg", pos: "70% 50%",
-    kicker: "Thursday &middot; noon ET", h1: "Something's been running <em>while I sleep.</em>",
-    card: `<span style="font-size:24px;letter-spacing:.06em">I cannot and will not gatekeep this.</span>`, sticker: "Noon<br>today" },
+    kicker: "Coming Monday", h1: "Something's been running <em>while I sleep.</em>",
+    card: `<span style="font-size:24px;letter-spacing:.06em">I cannot and will not gatekeep this.</span>`, sticker: "Coming<br>Monday" },
   { name: "g3-last-call", w: 1080, h: 1350, photo: "g3-kitchen-late.jpg", pos: "65% 70%", vertical: true,
     kicker: "Last call", h1: "$10 ends <em>at midnight.</em>",
-    card: `<span>The While-You-Sleep Storefront&trade;</span><span>then $27</span>`, sticker: "Sunday<br>11:59 pm<br>ET" },
+    card: `<span>The While-You-Sleep Storefront&trade;</span><span>then $27</span>`, sticker: "Thursday<br>11:59 pm<br>ET" },
   { name: "g4-share", w: 1200, h: 630, photo: "g4-nightstand-phone.jpg", pos: "75% 50%",
     kicker: "The Digital Income Edit&trade;", h1: "The <span style=\"white-space:nowrap\">While-You-Sleep</span> <em>Storefront&trade;</em>",
     card: `<span>Amazon links &rarr; Pinterest pins, on a schedule</span>`, sticker: "Found<br>through<br>search" },

@@ -1,5 +1,5 @@
 THE SCHEDULED TASK PROMPTS
-Three jobs: the weekly themed-look build, the nightly Outfit of the Day run (Brand Closet™ members only) and the pull sweep. Each prompt is complete on its own. Your setup chat already copied them into MY_SCHEDULED_TASKS.txt with your folder, time zone and times filled in: paste from that file, not this one. This file is the master copy.
+Four jobs: the weekly themed-look build, the nightly Outfit of the Day run (Brand Closet™ members only), the pull sweep and the missed-run sweep. Each prompt is complete on its own. Your setup chat already copied them into MY_SCHEDULED_TASKS.txt with your folder, time zone and times filled in: paste from that file, not this one. This file is the master copy.
 
 In the prompts below, «FOLDER» is your While-You-Sleep Storefront folder, «TZ» is your time zone (a named zone such as America/Chicago) and «TIME» is the run time from MY_RECIPE.txt. The setup chat fills them in.
 
@@ -52,10 +52,10 @@ You are my nightly Outfit of the Day run for The While-You-Sleep Storefront™. 
 READ FIRST, in this order, from the folder «FOLDER»: MY_RECIPE.txt, 04_OUTFIT_OF_THE_DAY_RECIPE.txt, 03_THEMED_LOOK_RECIPE.txt, 07_PERSONA_PATHS.txt, 08_STOREFRONT_PATHS.txt, storefront-log.md, pin-drafts.md, pin-tab.md, browser-lock.txt. If any file is missing, stop and tell me which one in one line.
 
 JOB
-Follow 04_OUTFIT_OF_THE_DAY_RECIPE.txt, "The nightly run", steps 0 to 12, exactly. Browser lock first, kept fresh. Every board checked public before scheduling. Leftovers first. Up to OUTFITS PER NIGHT new outfits, oldest first, from the last 14 days, only lessons whose address isn't already in the log, or is logged "sourcing". If there's nothing new and nothing left over, end the run after checking the course and say "No new outfits tonight."
+Follow 04_OUTFIT_OF_THE_DAY_RECIPE.txt, "The nightly run", steps 0 to 13, exactly. Browser lock first, kept fresh. Every board checked public before scheduling. Leftovers first. Every outfit lesson from the last 3 days that isn't already in the log (or is logged "sourcing"), oldest first, starting no new outfit that can't finish before the out-by time in step 0. If there's nothing new and nothing left over, end the run after checking the course and say "No new outfits tonight."
 
 THE SAFETY RULES (never break)
-Rose's images, prompts and lesson text are paid member content: never posted, uploaded, saved, attached to a generator or a pin, copied or resold. Look at her outfit only to know what it is. Never open, use or search from the lesson's Benable links. Every piece is re-found on Amazon from your own plain-words list with my own SiteStripe link, and my own list or page is the pin link. Every scene is a PERSONA WORLD place; from Rose's lifestyle prompt take at most the moment and mood, rewritten, with every brand, store and business cue removed. Only my Outfit of the Day slots from MY_RECIPE.txt.
+Rose's images, prompts and lesson text are paid member content: never posted, uploaded, saved, attached to a generator or a pin, copied or resold. Look at her outfit only to know what it is. Never open, use or search from the lesson's Benable links. Every piece is re-found on Amazon from your own plain-words list with my own SiteStripe link, and my own list or page is the pin link. Rose's flat lay is a screenshot in this session only, never saved to the computer. Never touch the "Link to Outfit" button. Every scene is a PERSONA WORLD place; from Rose's lifestyle prompt take at most the moment and mood, rewritten, with every brand, store and business cue removed. Only my Outfit of the Day slots from MY_RECIPE.txt.
 
 VERIFY
 Read Pinterest's scheduled pins page in a fresh tab and confirm both pins of each outfit are there with the right title, time, board and link. Nothing is reported as done until you've seen it.
@@ -99,4 +99,36 @@ Nothing to do: no report. Work done: one line, for example "Pulled 1 pin, schedu
 
 BROWSER FALLBACK
 If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up. Never type a password. Only if all of that fails, release the browser lock and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
+------------------------------------------------------------------
+
+====================================================================
+MISSED-RUN SWEEP (catches up a run the computer missed)
+Name: While-You-Sleep: missed-run sweep
+Schedule: daily, 9:45 am («TZ»), or the MISSED-RUN SWEEP time in MY_RECIPE.txt.
+Folder: «FOLDER»
+====================================================================
+
+------------------------------------------------------------------
+You are the missed-run sweep for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ».
+
+READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET MEMBER), the Runs table in storefront-log.md, browser-lock.txt, and 06_SCHEDULED_TASK_PROMPTS.txt (the weekly build and nightly run prompts).
+
+JOB
+1. Without opening a browser, work out which runs were due since this sweep last ran:
+   - the weekly build: the most recent Saturday at its RUN time (and the most recent Wednesday, at a pace of 5 or more);
+   - the nightly Outfit of the Day run, if I'm a member: last night at its RUN time, unless last night was a Saturday.
+2. A run was missed if the Runs table has no row for that task that started on or after its due time. Anything that ran, even with a stop or a report, is not missed.
+3. Nothing missed? End. Don't open Chrome. Report nothing.
+4. Something missed: read browser-lock.txt. If another task holds a fresh lock (recipe R16), wait 10 minutes and check again, up to 6 times; if it's still held, end and let tomorrow's sweep try. Otherwise take the lock with your own name.
+5. Run each missed task ONCE, in this order: the weekly build, then the nightly run. Follow that task's prompt in 06_SCHEDULED_TASK_PROMPTS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
+6. Write a Runs row for each ("weekly (catch-up)" or "nightly (catch-up)", date, started, finished, result) and release the lock.
+
+RULES
+Never run the same missed task twice. Never run a task that is due within the next 2 hours anyway: leave it to its own schedule. Never type a password. No em dashes.
+
+REPORT
+Nothing missed: no report. A catch-up ran: one line, for example "Caught up Saturday's weekly build: 4 looks, 8 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
+
+BROWSER FALLBACK
+Same as the task you are catching up. The Pinterest blank-page rule always wins.
 ------------------------------------------------------------------

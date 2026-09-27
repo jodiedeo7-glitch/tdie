@@ -6,7 +6,7 @@ Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look 
 
 | Path | What it is |
 |---|---|
-| `kit/` | The product the buyer gets: 12 plain-text files and the Setup Guide PDF |
+| `kit/` | The product the buyer gets: 12 plain-text files (four scheduled tasks) and the Setup Guide PDF |
 | `While-You-Sleep-Storefront-Kit.zip` | The kit, zipped (rebuilt at the finish after the link tokens are filled) |
 | `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | 11-page setup guide, numbered steps, two worked examples |
 | `pdf/While-You-Sleep-Storefront-Presale.pdf` | The one-page presale file ("You're in ...") |
@@ -25,16 +25,23 @@ Sales page: branch `storefront-launch`, `src/pages/shop/while-you-sleep-storefro
 
 Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` (products[] including The Brand Closet™ and Amazon Influencer Storefront, own_affiliate_programs, vault_disambiguation, content_calendar_rules, affiliate_rule, checks, meta.premium_price_increase_2026_09_24, meta.meta_link_rule_2026_09_25), `ops/canon/TDIE_CANON.md`, `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md`, `TDIE_IMAGE_GENERATION_MASTER.md`, `TDIE_SIX_M_FRAMEWORK.md`, `TDIE_DESIGN_RULES.md`, `TDIE_DFY_SERVICES.md`, `TDIE_THREADS_SYSTEM.md`, `TDIE_JODIE_THREADS_VOICE.md`, `TDIE_ONE_SENTENCE_OFFER.md` (Skool voice sample), `src/lifestyle/README.md`, the look JSON files in `src/lifestyle/`, `src/pages/shop/`, `src/components/LifestyleExtras.astro`, `src/components/Testimonial.astro`, `src/we-reviews.js`.
 
-**Not in the repo (copy from the TDIE Website project):** `claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md` (worked from the facts in the job brief), `claude/TDIE_SKOOL_POSTING_SYSTEM.md` (Skool copy matched to the approved samples in `TDIE_ONE_SENTENCE_OFFER.md` and `TDIE_OFFER_TOOL_PROMO.md` and the tdie-skool-post skill instead), and `claude/BRAND_CLOSET_PIN_LOG.md` (holds the hoodie lifestyle pin copy the audit schedules).
+**Not in the repo (copy from the TDIE Website project):** `claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md` (its facts were supplied by Jodie on 27 Sep 2026 and are now in `kit/04`), `claude/TDIE_SKOOL_POSTING_SYSTEM.md` (its rules and four approved posts were supplied by Jodie on 27 Sep 2026; the Skool and Facebook copy is rewritten against them), and `claude/BRAND_CLOSET_PIN_LOG.md` (holds the hoodie lifestyle pin copy the audit schedules).
 
-## Flagged once, with the fix
+## Founder decisions (27 Sep 2026), all applied
 
-1. **Tease date vs the flash sale.** The brief says the tease posts on the finish day, and also that no date may fall inside the Premium flash sale (ends 11:59 pm Eastern, 30 Sep 2026). A finish on 28 to 30 Sep would put the tease inside it. Fix: the tease posts Thu 1 Oct, 9:00 am, three hours before the presale opens; presale Thu 1 to Sun 4 Oct and launch Mon 5 Oct stay exactly as briefed. A later finish uses the shifted table in the queue.
-2. **Product before its canon row.** Canon's Product Register rule wants the row first; the brief says drafts only. Fix: the finish adds the rows (step 6) before anything goes live (steps 7 to 10).
-3. **Premium pays for something in The Premium Vault.** Canon says the Premium Vault is the Value Vault fully unlocked. This product is standalone by instruction, so the draft rows say the two lessons carry a price, not a guide, and add one clarifying line to `vault_disambiguation`.
-4. **Same-day emails.** The Weekend Ecosystem™ objection series sends at 11:00 am on 1, 3 and 4 Oct. The presale email goes on Fri 2 Oct (the free day); the last-call email has to go on Sun 4 Oct, the presale's last day, at 6:00 pm, seven hours after that morning's objection email.
-5. **The Brand Closet™ join line.** Written exactly as briefed ("I earn a commission if you join"). Joining is free and canon's commission is on paid tiers, so strictly it pays only if she upgrades; the existing site card says "if you upgrade". Left as briefed; change "join" to "upgrade" in `kit/04` and the PDF if Jodie prefers the stricter line.
-6. **Buyers' pin disclosure.** The kit uses Amazon's own statement on both paths (`#ad As an Amazon Associate I earn from qualifying purchases.`). Jodie's own pins keep canon's Influencer wording; nothing in her setup changes.
+1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
+2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
+3. **Skool and Facebook posts** rewritten against the posting system rules and four approved posts (see `COPY.md`). The two-link cap wins over "each link twice".
+4. **Brand Closet™ line** now carries the facts from Jodie's real recipe: the course address, month folders, lesson contents, the "Link to Outfit" Benable button (never used), Rose's posting pattern, the `__NEXT_DATA__` read, the 3-day window, the out-by time, Saturday catch-up on Sunday, two pins on different days, and the public-board check.
+5. **Join line:** "Affiliate link: I earn a commission if you upgrade, at no extra cost to you." everywhere.
+6. **Vault call:** one member-pricing lesson in BOTH vaults; Premium pays half, not nothing; recorded as its own numbered decision in `CANON_ROWS_DRAFT.md`.
+7. **Canon rows first:** finish step 4, before any Beacons product.
+8. **Amazon search:** the kit reads pages as they load and never fetches in the background (recipe rule R18); the requirements page states the account risk plainly.
+9. **Missed runs:** a fourth task, the daily 9:45 am missed-run sweep, backed by a Runs table every build and nightly run writes.
+10. **Live test** in the buyer's shoes (finish step 9) gates the presale and answers every open item in `tests/ROUND_2.md`.
+11. **Pinterest API:** scheduling stays in the browser.
+
+Still true and noted: canon's Product Register rule is met by finish step 4 coming before anything goes live. The Value Vault course is Open by design (Decision 95), so the $17 lesson is reachable by non-members; the $17 product itself stays hidden. Buyers' pins use Amazon's own disclosure statement; Jodie's own pins keep canon's wording.
 
 ## Recommend it too
 

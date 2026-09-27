@@ -53,3 +53,7 @@ See `ROUND_2.md` in this folder.
 ## Canon checks on this folder
 
 `run_checks.py` flags four review hits inside the buyer folders. Each is a simulated buyer's own words or a tester's note about the kit refusing them ("she's blonde", "barbie vibes", "hair color", a character-count note), kept as evidence that the kit's rules held. None appears in anything a buyer receives. One fail hit (a retired colour word in a simulated look idea) was reworded.
+
+## After round 2: founder decisions (27 Sep 2026)
+
+Applied to the kit after round 2: the Brand Closet™ line now uses the facts from Jodie's real recipe (course address, lesson contents, `__NEXT_DATA__` read, 3-day window with an out-by time, Saturday caught up on Sunday); the join line reads "if you upgrade"; a fourth task (the daily missed-run sweep) and a Runs table were added; the requirements page states the account risk; a board marked TEST may stay secret for a dry run. The open items in `ROUND_2.md` are answered by the live test in the desktop finish (queue section 4, step 9), which gates the presale.
