@@ -6,7 +6,7 @@
 // `ac` is the spine colour: a ramp from Lavender to Signature Hot Pink.
 export const pillars = [
   { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", category: "Business Systems", readTime: "20 Min Read", ac: "#CBB7F7",
-    sub: "Leave with a niche, an offer and a traffic source — not just a business name.",
+    sub: "Leave with a niche, an offer and a traffic source, not just a business name.",
     freebie: "The Systems Starter Kit" },
   { n: "02", title: "The Mindset Guide", slug: "mindset-guide", category: "Mindset", readTime: "15 Min Read", ac: "#C7AEF3",
     sub: "Finish the thing you keep restarting.",
@@ -45,11 +45,11 @@ export const pillars = [
     sub: "Your lessons are already articles. They're just locked where nobody can find them.",
     freebie: "The Evergreen Blog Kit" },
   { n: "14", title: "How to Start a Shopify Store", slug: "shopify-store-guide", category: "Physical Products", readTime: "18 Min Read", ac: "#D62E73",
-    sub: "A store that sells something real — without a warehouse, an audience, or your face on it.",
+    sub: "A store that sells something real, without a warehouse, an audience, or your face on it.",
     freebie: "The Shopify Starter Kit" },
 ];
 
-// Supporting articles — the cluster pieces that sit under a pillar.
+// Supporting articles: the cluster pieces that sit under a pillar.
 // No dedicated freebie: the pillar above each one carries it.
 // Matched to their pillar by `category`, so each cluster renders in place.
 export const articles = [
