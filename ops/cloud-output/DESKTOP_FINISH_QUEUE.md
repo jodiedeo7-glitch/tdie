@@ -45,6 +45,8 @@ Three link tokens are used across the copy and are replaced in steps 5 and 7: `B
 
 ### Step 1 · Brand Closet™ referral check
 
+**DONE 27 Sep 2026.** YES, Version A kept (path in README).
+
 1. In Jodie's Chrome, open https://www.skool.com/the-brand-closet (signed in as Jodie).
 2. Click the group name at the top left to open the group menu. Look for an affiliate option (Skool labels it "Affiliates"). Also check the About page and settings menu for "Invite", "Refer" or "Earn" with a personal link.
 3. If a member-level personal referral link exists, the answer is YES. In `ops/cloud-output/storefront-product/kit/05_RECOMMEND_IT_TOO.txt`, delete the `[KIT BUILD NOTE ...]` paragraph, delete everything from the line `VERSION B (no member referral link)` to the end of the file, and delete the line `VERSION A (members get their own referral link)` with the `====` lines around it. If the path you used differs from "Click the group name at the top left to open the group menu, and choose the affiliate option (on Skool it's labelled Affiliates)", replace that sentence with the exact path.
@@ -53,6 +55,8 @@ Three link tokens are used across the copy and are replaced in steps 5 and 7: `B
 6. Read `05_RECOMMEND_IT_TOO.txt` back: one version only, no build note, no em dashes, and the disclosure reads "Affiliate link: I earn a commission if you upgrade, at no extra cost to you."
 
 ### Step 2 · Images
+
+**DONE 27 Sep 2026.** Five photos plus the hoodie flat lay in graphics/photos, render and zip rebuilt, pushed.
 
 1. Open `ops/cloud-output/storefront-product/IMAGE_PROMPTS.md`. For each of the five photos, in its table order:
    - Tommy Kate photos (`cover-sofa-dusk.jpg`, `g1-porch-morning.jpg`, `g3-kitchen-late.jpg`): Google Gemini, attach `public/images/library/avatar-seed-omni-reference.png`, paste the full prompt. If Gemini has no credits or the face drifts, Nano Banana Pro at 2K on Higgsfield with the same reference.
@@ -88,12 +92,16 @@ Checks in SkoolKit before scheduling (step 10):
 
 ### Step 4 · Canon rows first (before any Beacons product exists)
 
+**DONE 27 Sep 2026.** Decisions 121 and 122, both canon copies.
+
 On the same day, in both copies (the claude.ai Project's `canon.json` and `TDIE_CANON.md`, and the repo's `ops/canon/canon.json` and `ops/canon/TDIE_CANON.md`):
 1. Paste the blocks from `ops/cloud-output/storefront-product/CANON_ROWS_DRAFT.md`: the products[] row (in price order after the $27 rows), `own_affiliate_programs.while_you_sleep_storefront`, `vault_disambiguation.standalone_member_pricing`, and both `meta` decisions (the product decision and `vault_member_pricing`, the founder's vault call). Decision numbers: the highest "Decision N" in `meta` plus one for the product, plus two for the vault call. Replace `DATE` in the keys with today as `YYYY_MM_DD`. The address fields stay `pending: set in finish step 5, same day` (or step 7) until those steps.
 2. Paste the `TDIE_CANON.md` paragraph into §5 PRODUCTS after The Keep It Running Kit paragraph, with the same decision numbers.
 3. Validate the repo JSON: `python3 -c "import json;json.load(open('ops/canon/canon.json'))"`. Commit and push. Read the project copies back.
 
 ### Step 5 · Beacons
+
+**DONE 27 Sep 2026.** Public product https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39 ($10, presale PDF, published UNLISTED: the Mon 5 Oct 7:10 pm task adds it to the link in bio). Member product https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f ($17, kit zip, unlisted). PREMIUM50 read back at checkout: $8.50. Tokens filled everywhere.
 
 1. **The public product** (the presale, repriced at launch). Add a digital product. Title: `The While-You-Sleep Storefront™`. Price: $10. File: `ops/cloud-output/storefront-product/pdf/While-You-Sleep-Storefront-Presale.pdf`. Description: COPY.md, "Public product", "Description (presale ...)", exactly. Product image: `ops/cloud-output/storefront-product/graphics/g4-share.png`. Visible on the storefront. Save. Copy its public address: this is `BEACONS_PRODUCT_URL`.
 2. **The private member product.** Add a digital product. Title: `The While-You-Sleep Storefront™ · member price`. Price: $17. File: `ops/cloud-output/storefront-product/While-You-Sleep-Storefront-Kit.zip` (if Beacons refuses a zip, attach `kit/While-You-Sleep-Storefront-Setup-Guide.pdf` and every `kit/*.txt` file instead). Description: COPY.md, "Private member product". Hidden: never on the storefront, never in the link in bio. Save. Copy its address: this is `MEMBER_PRODUCT_URL`.
@@ -104,10 +112,14 @@ On the same day, in both copies (the claude.ai Project's `canon.json` and `TDIE_
 
 ### Step 6 · Affiliate
 
+**CHANGED 27 Sep 2026.** Beacons refuses affiliate links on any product under $15 (sale price included), so the 40% link cannot exist during the $10 presale. It is turned on by the launch-morning task (Fri 9 Oct 9:00 am) right after the price moves to $27. Canon updated.
+
 1. In Beacons, turn on the public product's affiliate program at 40% (Beacons' own affiliate product feature, the same mechanic as The Weekend Ecosystem™: one shared link, no application).
 2. Read back: in a second browser profile or a test Beacons account, add a digital product, choose affiliate product, paste `BEACONS_PRODUCT_URL`, confirm Beacons offers it at 40%, then delete the test product.
 
 ### Step 7 · Vault lessons (one member-pricing lesson in BOTH vaults)
+
+**DONE 27 Sep 2026.** Drafts read back from the server: Value Vault c43ba8257c3c474ba386ba070bb97f87, Premium Vault f35c395b0f3d4e0abfd42f064262e012 (title "The While-You-Sleep Storefront™ · half-price code", Skool caps titles near 50 characters). Published by the launch-morning task.
 
 1. **The Value Vault** course: add a lesson `The While-You-Sleep Storefront™ · member price`. Body: COPY.md, "THE VALUE VAULT LESSON", every link on its words (the two `MEMBER_PRODUCT_URL` links and "see Membership Premium" to https://www.skool.com/thedigitalincomeedit/plans). Leave it unpublished. Copy its address: this is `VALUE_VAULT_LESSON_URL`.
 2. **The Premium Vault** course: add a lesson `The While-You-Sleep Storefront™ · your half-price code`. Body: COPY.md, "THE PREMIUM VAULT LESSON", links on their words. Unpublished.
@@ -115,6 +127,8 @@ On the same day, in both copies (the claude.ai Project's `canon.json` and `TDIE_
 4. Read both drafts back from the server (Skool drops writes silently): body complete, no empty paragraphs, links on their words, `PREMIUM50` only in the Premium lesson. Both publish on launch morning (step 11).
 
 ### Step 8 · Sales page
+
+**DONE 27 Sep 2026.** Checkout link set, build passed, live on main; 8 images load, phone width clean, button hidden until Mon 5 Oct 7:00 pm.
 
 1. On `storefront-launch`, confirm `CHECKOUT` in `src/pages/shop/while-you-sleep-storefront.astro` holds the real `BEACONS_PRODUCT_URL` address, `PRESALE_OPENS` is `2026-10-05T23:00:00Z` and `PUBLIC_PRICE_AT` is `2026-10-09T13:00:00Z`.
 2. `npm ci && npx astro build` must pass. Commit ("Sales page: checkout link"), push `storefront-launch`, open a pull request into `main`, merge it.
@@ -136,6 +150,8 @@ Run the kit exactly as a new buyer would, in Jodie's own accounts, on a throwawa
 
 ### Step 10 · Scheduling
 
+**SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
+
 All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in its date table. Paste it exactly.
 1. **Skool (SkoolKit):** schedule Skool 1 to 5 with their titles, bodies and images (Skool 1: `graphics/g2-tease.png`; Skool 2: `graphics/g1-presale-open.png`; Skool 3: the four `src/lifestyle/` images it names; Skool 4: `graphics/g3-last-call.png`; Skool 5: `graphics/g4-share.png`). Links hyperlinked on their words, at most two per post. "Send email to all members" per step 3 check 1. Read each back in SkoolKit.
 2. **Email (MailerLite):** two regular campaigns (not automations), all active subscribers, from COPY.md, links on their words, signed "xoxo, Jodie", no Amazon links. Send a test to Jodie, then schedule for Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. Read back: both Scheduled.
@@ -144,11 +160,15 @@ All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in it
 
 ### Step 11 · Presale open and launch morning
 
+**SCHEDULED 27 Sep 2026.** 11.1 by the Mon 5 Oct 7:10 pm task (also lists the product in the link in bio). 11.2 and 11.3 by the Fri 9 Oct 9:00 am task (also turns on the 40% affiliate link).
+
 1. **Mon 5 Oct, 7:00 pm:** confirm the public Beacons product shows $10 and the sales page shows the open checkout button.
 2. **Fri 9 Oct, 9:00 am:** Beacons public product: replace the file with `ops/cloud-output/storefront-product/While-You-Sleep-Storefront-Kit.zip` (or the PDF and .txt files), change the price to $27, and replace the description with COPY.md's "from Fri 9 Oct" version. Publish both vault lessons.
 3. Read back: public product $27 with the new description; a test download serves the kit, not the presale note; member product $17 and hidden; `PREMIUM50` still gives $8.50; both lessons live (the Premium one visible only to Premium); the sales page price box shows $27.
 
 ### Step 12 · Own-setup fixes
+
+**STATUS 27 Sep 2026.** 12b, 12c, 12f (2K, early exit, Amazon search) done in both recipes and the nightly task. 12a (board rename and public) and 12d moved into one catch-up task, Mon 28 Sep 2:20 pm, because Pinterest loaded blank today. 12e: stories pause and recipe leftovers line done; the LEFTOVERS block for trig_015j was not added because Jodie retired the pull sweep on 26 Sep (leftovers go to the next build run instead). 12f deletion of trig_01F6oCmn4yiWQJhKka6KhhN2 is in the Mon 5 Oct task (it still has a run on 30 Sep).
 
 Apply `ops/cloud-output/storefront-product/OWN_SETUP_AUDIT.md` in its order, to both recipes (`claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` and `claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md` in the project, plus the repo copy `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md`) and the scheduled tasks, using the exact text written there:
 - 12a. Section 1: the TK Outfits board (rename, description, public, confirm the scheduled hoodie flat lay is on it), then the recipe and task lines.
