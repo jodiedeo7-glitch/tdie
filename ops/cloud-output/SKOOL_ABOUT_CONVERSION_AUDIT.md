@@ -4,7 +4,9 @@
 
 **What was audited.** The live Skool About page at `skool.com/thedigitalincomeedit/about`, read from Jodie's three phone screenshots taken 27 Sep 2026 (hero gallery image, sidebar facts, full description, reviews). The cloud container cannot reach skool.com, so the screenshots are the source of record. The gallery thumbnails 2 to 6 were only visible as small crops and are audited only where legible. Facts were checked against `ops/canon/TDIE_CANON.md` and `ops/canon/canon.json` (current 25 Sep 2026), plus the site's `/membership`, `/community` and `/about` pages.
 
-**One thing to know first.** Several phrases the brief names as TDIE language ("Faceless income, built with AI", "Build the whole business before anyone knows your name", "Same effort. Opposite order.", "Four steps. One build.", "Real members. Real wins.", "Start Your 7 Days Free") **are not on the live About page**. They are not in the repo or Drive either. They may be in the approved gallery build (TDIE_DESIGN_RULES §2, the five-image set: Hero, Before/After, Tiers, Member Wins, Roadmap) that hasn't been uploaded yet, or the uploaded gallery may be an older set. The live hero image is a different design with a different headline ("Get Your First Online Income in 90 Days"). **Decide which gallery is current before any copy changes.** Most of the findings below apply either way.
+**Updated 27 Sep 2026 with Jodie's answers.** The five current gallery graphics (Hero, Same effort, Roadmap, Member wins, Tiers) are audited in §11. Jodie will fix them in a later pass. Jodie is removing the price-increase line by hand after 30 Sep. "Lock your LOW price" means the price a member joins at is the price she keeps. These answers close F3, F4, F9 and F10.
+
+**Still true on the phone screenshot:** the first gallery image a visitor sees is the older "Get Your First Online Income in 90 Days" graphic, not the new "Faceless income, built with AI." hero. Thumbnails 2 and 5 also don't match any of the five current graphics. If those older images are still in the gallery, they are the first thing a stranger sees, and they carry the timing promise (F1).
 
 ---
 
@@ -183,8 +185,46 @@ Checked against canon §3, Decisions 110 and 114, and the date (Sunday 27 Sep 20
 | Hero headline | "Get Your First Online Income…" | Brief/approved: "Faceless income, built with AI." | ⚠ gallery version conflict |
 | CTA wording | "START YOUR FREE 7 DAY TRIAL NOW!" / "7 days FREE" | Brief: "Start Your 7 Days Free"; site: "Start your free 7-day trial" | ⚠ three versions |
 | Testimonial | Weekend Ecosystem™ review | membership proof | ⚠ off-product |
-| Thumbnail 4 | shows "$35" and a second figure (reads like "$171", illegible at this size) | Premium $35 · $297/yr; Standard $9 · $99/yr | ❓ **verify on desktop**: no canon price matches "$171" |
-| Thumbnail 2 | shows "277" and "83" | unknown | ❓ verify what these figures claim and that they're real |
+| Tiers "$171" sticker | "$171 of modules included" | $37 + $37 + $97 (Dec 93) | ✔ maths correct; reads like a price (G11) |
+| Thumbnail 2 | shows "277" and "83" | not one of the five current graphics | ⚠ older image; take it out of the gallery |
+| Course count | Roadmap: "25 courses" | description "Over 20"; canon 22 | ⚠ F13 |
+| Pinterest module | Tiers: "Pinterest Foundations™" | description "The Pinterest Edit™" | ⚠ F12 |
+
+---
+
+## 11. The five current gallery graphics
+
+Audited from the 1600×900 files Jodie shared on 27 Sep. These are copy findings only; the design and image fixes are for the later graphics pass.
+
+**Hero: "Faceless income, built with AI."**
+- **Keep:** the headline, "Build the whole business before anyone knows your name.", "START YOUR 7 DAYS FREE →", and the 7 DAYS FREE and 1,200+ MEMBERS stickers. It passes every part of the 5-second test the old hero failed: what it is, who it's for, faceless, AI, and the trial.
+- **Consolidate:** "No filming" and "Your face never required" say the same thing twice. One of them could become "No trending audio" or "No performing" from the old graphic, which were the strongest lines on it.
+- **Clarify:** "built with AI" is clear as a headline, but nothing on the image says what AI does. That's fine for a hero, as long as the description body says it (G4).
+
+**Same effort: "Same effort. Opposite order."**
+- **Keep all of it.** "Most people post for months, then try to make an offer. We build it backwards." / "Months in, nothing to sell." It's the clearest demonstration of the mechanism anywhere in the brand. It does exactly what §3 said the page was missing.
+
+**Roadmap: "Four steps. One build."**
+- **Keep:** the headline, "START HERE" on step 1, and "Start at step 1. We go in order."
+- **Remove/consolidate:** the four step descriptions repeat the Same effort graphic almost word for word (G9).
+- **Factual:** "25 courses, in build order" doesn't match "Over 20 Modules" in the description or canon's 22 (F13). Also, step 1's course isn't in Standard (F14).
+- **Clarify:** "7 days free to look inside" undersells the trial: it's full access, not a look. The description separately offers a free look through the Community and Classroom tabs, so the phrasing blurs two different things. Suggest "7 days free, full access".
+
+**Member wins: "Real members. Real wins."**
+- **Keep:** the headline, "Straight from the community feed, word for word.", the "What members are building" list, and "Post your work in the feed. Get a real answer back." The last line is a real benefit, and the build list supports the "list you own" claim.
+- **Strengthen:** two of the three quotes are Brittany's, so the section reads as one member's wins. When there's another member win, swap one Brittany quote for it. Don't invent one. Cristal's quote needs context (G10).
+- **Verify before republishing:** the quotes are word for word (the graphic promises that), both members are happy to be named with initial, and every item in "What members are building" has at least one real member behind it. Brittany's Etsy shop and freebie are on record in the Operating Manual; the others weren't checkable from here.
+- **Positioning:** this is the proof slot the description lacks, and it's specific and credible. It should sit before Tiers in the gallery so proof comes before the price.
+
+**Tiers: "Two ways in. Both free for 7 days."**
+- **Keep:** the headline, the "START BUILDING" / "EVERYTHING + DONE FOR YOU" labels (the clearest tier use-case framing anywhere on the page), "Everything in Standard, plus:", the "$37 alone / $97 alone" tags, "The Value Vault, guides à la carte" (canon-correct, and marked + rather than ✓), and "Pick either one. Both start free."
+- **Factual:** every price matches canon ($9 · $99/yr; $35 · $297/yr; $37, $37, $97). The "$171" sticker is correct maths (F10) but reads like a price (G11). The Pinterest name differs from the description (F12).
+- **Add:** the price-lock line from G2 belongs here too while the increase runs, because this is where people decide. Jodie removes it by hand with the description line.
+- **Resolves** most of §5: with this graphic up, the description's tier split (G5) can be shorter, but it still needs the tier names, because the description is what people read on mobile.
+
+**Suggested gallery order:** Hero → Same effort → Roadmap → Member wins → Tiers. That runs promise, mechanism, path, proof, then decision. Take the older 90-day hero and any other older images out, so none of them sit in slot 1.
+
+**For the graphics fix pass (design, not copy):** by the house image rule, the tumbler should be in every frame with Tommy Kate. It's visible only in Tiers. Check the Hero, Same effort, Roadmap and Member wins photos against TDIE_IMAGE_GENERATION_MASTER.md, including whether all five read as the same woman.
 
 ---
 
@@ -235,27 +275,30 @@ Checked against canon §3, Decisions 110 and 114, and the date (Sunday 27 Sep 20
 
 - **F1 · Timing promise (compliance).** "Get Your First Online Income in 90 Days" is a promise about how fast results arrive. Canon §7 forbids it ("no promises about how fast results arrive"), and `canon.json` carries a `results_timing_claim` check for this claim type. It also matters because the About page is reachable from Facebook and Pinterest traffic. **Highest priority.**
 - **F2 · $9 vs $35 ambiguity.** The increase line doesn't name Premium, so it reads as the $9 group going to $35.
-- **F3 · Expiring date.** The "OCT. 1ST" line is dead at 11:59 pm ET, 30 Sep. No removal task is recorded.
-- **F4 · Decision 114 scope (flagged, not resolved).** Is "Lock your LOW price in now!" on a public page within the flash-sale exception? Founder call.
+- **F3 · Expiring date.** The "OCT. 1ST" line is dead at 11:59 pm ET, 30 Sep. **Closed: Jodie removes it by hand.**
+- **F4 · "Lock your LOW price in now!"** **Closed: Jodie's meaning is that the price you join at is the price you keep.** That's a true, canon-backed benefit (existing members keep their price; Premium at $27/month is "locked for as long as she stays"). The copy just doesn't say it yet (G2).
 - **F5 · Offer/Funnel line contradicts the positioning** ("turns a following into a business" vs "You don't need an audience").
 - **F6 · "Over 20 Modules"** is true only across both tiers, but shown next to $9.
 - **F7 · Tagline paraphrase carries ™** ("Build it backwards. Scale it forward.™").
 - **F8 · "The Pinterest Edit™"** vs canon's "The Pinterest Edit". Check the classroom name before correcting.
-- **F9 · Gallery version.** The live hero doesn't match the brief's approved language. Is the uploaded gallery current?
-- **F10 · Thumbnails 2 and 4** carry figures ("277", "83", something like "$171") that couldn't be read or matched to canon. Verify on desktop.
+- **F9 · Gallery version.** **Closed: the five graphics in §11 are current.** Open item: the older 90-day hero still shows as gallery image 1 on the phone screenshot. Remove it or move it out of slot 1.
+- **F10 · "$171".** **Closed:** it's the Premium sticker "$171 of modules included", which is $37 + $37 + $97 (The Offer Edit, The Funnel Edit, Scaling & Systems, Decision 93). The maths is correct. Thumbnail 2's "277 / 83" isn't in any of the five current graphics, so it's another older image. See §11.
+- **F12 · Pinterest module name, three versions.** The description says "The Pinterest Edit™", the Tiers graphic says "Pinterest Foundations™", and canon's tier split says "The Pinterest Edit" while its gated-course list (Decision 94) says "Pinterest Foundations™". Pick the name the classroom uses and use it everywhere.
+- **F13 · Course count, three versions.** The description says "Over 20 Modules", the Roadmap says "25 courses, in build order", and canon's Decision 94 gated list counts 22, including The Value Vault storefront, DFY Services and two calendars. Count the live classroom once and use that number. "In build order" shouldn't count storefront courses.
+- **F14 · Step 1 isn't in the $9 tier.** The Roadmap says "Start at step 1. We go in order." Step 1 is the Offer, and The Offer Edit is a Premium module (or $37 alone). A Standard member told to start at step 1 has no step-1 course listed on the Tiers card. **Question for Jodie:** which Standard course covers the offer (The Monetization Edit? The Essentials Edit?) If one does, say so on the Roadmap. If none does, the Standard path is "The Offer Edit, $37 alone", and the page should say that plainly.
 - **F11 · Only testimonial is off-product** (The Weekend Ecosystem™, not the membership).
 
 ## G. RECOMMENDED COPY CHANGES
 
-**G1 · Hero image headline**
-CURRENT: Get Your First Online Income in 90 Days / A step-by-step roadmap to build your online business — even if you're a complete beginner.
-RECOMMENDED: Faceless income, built with AI. / The whole business built before anyone knows your name, even if you're a complete beginner.
-WHY: removes the timing promise (F1), puts faceless and AI in the first five seconds, and uses the brief's approved language. The icon row gets replaced by "No filming. No trending audio. No performing." at a readable size.
+**G1 · Gallery slot 1**
+CURRENT: the older graphic, "Get Your First Online Income in 90 Days".
+RECOMMENDED: the new hero, "Faceless income, built with AI." in slot 1, and the 90-day graphic taken out of the gallery.
+WHY: the new hero already fixes the timing promise (F1) and puts faceless and AI in the first five seconds. It only works if it's the first image a visitor sees.
 
-**G2 · Price-increase line (valid until 11:59 pm ET, 30 Sep only; then delete)**
+**G2 · Price-increase line (Jodie removes it by hand after 30 Sep)**
 CURRENT: 🚨PRICE INCREASE OCT. 1ST- $35/month Lock your LOW price in now!🚨
-RECOMMENDED (move to just above the CTA): 🚨 Premium goes up at midnight on 30 September. Standard stays $9/month.
-WHY: names the tier so $9 and $35 stop colliding, keeps the real deadline, and doesn't quote a sale price. If Jodie rules the About page is inside the flash-sale exception (F4), the real checkout price can be named here instead.
+RECOMMENDED (move to just above the CTA): 🚨 Premium goes to $35/month on 1 October. Join before then and the price you start at is yours for as long as you stay. Standard stays $9/month.
+WHY: says what "lock your low price" actually means, names the tier so $9 and $35 stop colliding, and keeps the real deadline. "For as long as you stay" matches canon's wording and is more accurate than "forever", because the lock ends if a member leaves.
 
 **G3 · Founder proof (new line, after "Not a content habit. A business.")**
 CURRENT: Built faceless, start to finish✨
@@ -297,33 +340,49 @@ WHY: a real, canon-backed shop window (Decision 94), but in line two it pulls vi
 **G8 · Tagline on the hero image**
 CURRENT: Build it backwards. Scale it forward.™
 RECOMMENDED: Build Your Business Backwards. Scale It Forward.™
-WHY: the ™ belongs on the exact mark.
+WHY: the ™ belongs on the exact mark. (This line is only on the old 90-day graphic, so G1 makes it moot.)
+
+**G9 · Roadmap graphic: map the courses to the steps (for the graphics fix pass)**
+CURRENT: Four steps with one-line descriptions ("Build the thing people pay for, first." · "The path from a stranger's click to a sale." · "Set it up once so it runs without you." · "Traffic lands on a business that's already built.")
+RECOMMENDED: keep "Four steps. One build." and the step names. Under each step, name the course(s) that teach it and which tier they're in. Use the real mapping Jodie confirms for F14; don't guess it.
+WHY: the Same effort graphic already carries these four steps with near-identical lines. The Roadmap earns its slot by showing *what you'd actually open* for each step. That turns a course list into a path, and answers F14.
+
+**G10 · Member wins: one line of context per quote (for the graphics fix pass)**
+CURRENT: Cristal V.: "The remote part IS the surprise, and I've been explaining everything else before I get to the thing that makes my service different!"
+RECOMMENDED: keep the quote word for word, and add a small context line above it, e.g. "After her Saturday offer rewrite". Use whatever is true.
+WHY: without context, a stranger can't tell it's a win. With it, the quote proves the one-sentence-offer work happens inside. Brittany's two quotes need no context.
+
+**G11 · Tiers sticker**
+CURRENT: $171 OF MODULES INCLUDED
+RECOMMENDED: $171 in modules, included
+WHY: the sticker is big and pink right beside $35, so at a glance it reads as a third price. Rewording it keeps the maths and removes the misreading.
 
 ---
 
 # Final conversion decision
 
 1. **Single strongest message:** "You don't need an audience. You need something to sell." Together with the backwards order that follows it, this is the whole brand in two lines.
-2. **Biggest conversion weakness:** the hero image sells a generic 90-day income promise instead of the page's own, much stronger mechanism, and that promise breaks canon's claim rule.
+2. **Biggest conversion weakness:** the old 90-day graphic is still gallery image 1. It sells a generic timing promise that breaks canon's claim rule, while the new "Faceless income, built with AI." hero, which fixes it, sits further back or isn't up yet.
 3. **Biggest clarity problem:** the $9 sidebar price next to an untiered "$35/month" price increase. A stranger can't tell what they'd pay.
-4. **Biggest trust gap:** there's no founder proof and only one testimonial, which is for a different product. The page never says Jodie built this business exactly this way.
-5. **Biggest decision-friction point:** Standard vs Premium is never named or explained, and the first two steps of the method (Offer, Funnel) sit in the tier the page doesn't price.
+4. **Biggest trust gap:** the description text has no founder proof, and the only Skool review is for a different product. The Member wins graphic is good proof and should sit before Tiers. It leans on one member (two of its three quotes are Brittany's).
+5. **Biggest decision-friction point:** "Start at step 1" when step 1's course (The Offer Edit) isn't in the $9 tier (F14). The Tiers graphic otherwise answers "which one is for me?" well.
 6. **The 3–5 changes most likely to move the page:**
-   1. Replace the hero headline and icon row (G1). This also clears the compliance issue.
-   2. Name the tier in the price line, move it down, and delete it at 11:59 pm on 30 Sep (G2, F3).
-   3. Split "Inside" into Standard and Premium with one use-case line each (G5).
-   4. Add the founder-proof line with 1,200+ (G3).
+   1. Put the new hero in gallery slot 1 and take the 90-day graphic out (G1). This also clears the compliance issue.
+   2. Rewrite the price line to say what "lock your low price" means and which tier it's about (G2).
+   3. Settle where step 1 lives for a Standard member, and show it on the Roadmap (F14, G9).
+   4. Add tier names and the founder-proof line to the description (G5, G3).
    5. Fix the closing CTA: device-proof, plus what happens after the trial (G6).
-7. **Do not change:** "You don't need an audience. You need something to sell." · "Offer first. Funnel second. Automation third. Audience last." · "You walk out with a machine… Not a content habit. A business." · "No filming. No trending audio. No performing." · "traffic and a list you own" · "make it, then make it pay" · Tina Alexander's review, word for word.
+7. **Do not change:** "You don't need an audience. You need something to sell." · "Offer first. Funnel second. Automation third. Audience last." · "You walk out with a machine… Not a content habit. A business." · "Faceless income, built with AI." · "Build the whole business before anyone knows your name." · the whole Same effort graphic · "Four steps. One build." · "Real members. Real wins." · "Two ways in. Both free for 7 days." · the Standard/Premium labels · every member quote and Tina's review, word for word.
 
 ---
 
 ### Waiting on Jodie
 
-- **F9:** which gallery is current: the live one, or the approved five-image set?
-- **F4:** does "Lock your LOW price" on the public About page fall inside the Decision 114 flash-sale exception?
-- **F3:** who removes the price line at 11:59 pm ET on 30 Sep?
-- **F10:** what do the figures on thumbnails 2 and 4 say?
+- **F14:** which Standard course covers step 1 (the offer), if any?
+- **F12:** which name does the classroom use: "The Pinterest Edit" or "Pinterest Foundations™"?
+- **F13:** how many courses are live, and which count as "in build order"?
+- **Gallery:** take the 90-day graphic and the other older images out of the gallery.
+- Closed 27 Sep: F3 (Jodie removes the price line by hand), F4 (it's a price lock), F9 (the five graphics in §11 are current), F10 ($171 = $37 + $37 + $97).
 
 ### Side note: the site's `/about` page (`src/pages/about.astro`)
 
