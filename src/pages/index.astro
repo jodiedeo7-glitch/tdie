@@ -1,104 +1,118 @@
 ---
 import "../styles/global.css";
+// Homepage type, self-hosted and scoped to this file only: Newsreader SemiBold
+// for headlines and prices, Inter for everything else. No other page loads these.
+import "@fontsource/newsreader/latin-600.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
+import newsreader600 from "@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url";
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 
-import Analytics from '@vercel/analytics/astro';
-import Testimonial from "../components/Testimonial.astro";
-// Pillar guides — titles, slugs and categories read from the live pages, 24 July 2026.
-const pillars = [
-  { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", cat: "Business Systems", read: "20 Min", ac: "#CBB7F7" },
-  { n: "02", title: "The Mindset Guide", slug: "mindset-guide", cat: "Mindset", read: "15 Min", ac: "#C7AEF3" },
-  { n: "03", title: "The Branding Guide", slug: "branding-guide", cat: "Branding", read: "16 Min", ac: "#C9A2E7" },
-  { n: "04", title: "The Beginner's Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", cat: "Content Creation", read: "13 Min", ac: "#CD97DD" },
-  { n: "05", title: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", cat: "AI", read: "18 Min", ac: "#CE8CD2" },
-  { n: "06", title: "The Complete Pinterest Marketing Guide", slug: "complete-pinterest-marketing-guide", cat: "Pinterest", read: "14 Min", ac: "#CF80C2" },
-  { n: "07", title: "The Complete Blogging Guide", slug: "complete-blogging-guide", cat: "Blogging", read: "17 Min", ac: "#D073B5" },
-  { n: "13", title: "How to Turn Your Skool Content Into a Blog", slug: "turn-skool-content-into-a-blog", cat: "Blogging", read: "14 Min", ac: "#D073B5" },
-  { n: "08", title: "Email Marketing for Beginners", slug: "email-marketing-guide", cat: "Email Marketing", read: "16 Min", ac: "#D265A8" },
-  { n: "09", title: "Digital Products for Beginners", slug: "digital-products-guide", cat: "Digital Products", read: "17 Min", ac: "#D3579B" },
-  { n: "10", title: "Affiliate Marketing 101", slug: "affiliate-marketing-101", cat: "Affiliate Marketing", read: "16 Min", ac: "#D44A8E" },
-  { n: "11", title: "How to Automate Your Online Business", slug: "automating-your-online-business", cat: "Automation & Paid Traffic", read: "15 Min", ac: "#D53C80" },
-  { n: "12", title: "How to Build Passive Income Streams", slug: "passive-income-guide", cat: "Passive Income", read: "16 Min", ac: "#D62E73" },
+import Analytics from "@vercel/analytics/astro";
+import FreebieForm from "../components/FreebieForm.astro";
+// Tina's words come from the single verbatim source, unedited.
+import { FEATURED as tina } from "../we-reviews.js";
+
+const SITE = "https://www.thedigitalincomeedit.com";
+const SKOOL_PLANS = "https://www.skool.com/thedigitalincomeedit/plans";
+const OG_IMAGE = `${SITE}/og/home-built-backwards-2026-09.jpg`;
+
+const title = "Faceless Digital Business Built With AI | The Digital Income Edit™";
+const description = "Build a faceless business with AI in the right order: offer, funnel, automation, then audience. 1,200+ women are building it inside The Digital Income Edit™.";
+
+// Proof strip: real, countable figures only. No income numbers on this page.
+const proof = [
+  { big: "1,200+", small: "women inside the community" },
+  { big: "13", small: "guides in the library" },
+  { big: "22", small: "modules, delivered as a live website" },
+  { big: "1 → 24", small: "one article becomes 24 finished assets" },
+  { big: "Solo", small: "site, classroom, funnels and emails, built faceless with AI" },
 ];
 
-// Shop — every name, price and URL is a Product Register v3.1 row. Nothing here is inferred.
-const shop = [
-  { name: "Pretty & Paid PLR Vault™", price: "$11", note: "per month · Beacons", copy: "Done-for-you digital products you rebrand and sell as your own, plus the content and training to launch them. 20 new products every month, and the full resell licence stays yours even if you cancel. Its own subscription, never part of the membership.", url: "/shop/pretty-and-paid-plr-vault", aff: false },
-  { name: "Build Your First Freebie in One Afternoon", price: "$7", note: "one-time", copy: "Build the lead magnet and the paid offer behind it in a single afternoon.", url: "/go/first-freebie", aff: false },
-  { name: "150 UGC Brand Contacts", price: "$15", note: "one-time", copy: "A curated list of brands actively paying creators. Skip the research, start pitching.", url: "/go/ugc-brand-contacts", aff: false },
-  { name: "The One and Done Money Stream", price: "$27", note: "one-time", copy: "Set up one reliable digital income stream. Create it once, let it earn on repeat.", url: "/go/one-and-done-money-stream", aff: false },
-  { name: "Zero Income Claim Guide \u2014 100 DFY Reels", price: "$37", note: "one-time \u00b7 mine", copy: "A hundred done-for-you hooks and captions for the stage before you have proof \u2014 nothing to screenshot, no income claims, nothing that gets an account flagged.", url: "/go/zero-income-claim-reels", aff: false },
-  { name: "The AI Subs Method", price: "$147", note: "one-time", copy: "A step-by-step system for growing and monetising a faceless AI subscription channel.", url: "/go/ai-subs-method", aff: true },
+// The Built Backwards Method. Offer first, funnel second, automation third, audience last.
+const method = [
+  { n: "01", name: "Offer", line: "What you sell, who pays for it and what it costs. Decided before a single post exists.", out: "One sentence, one buyer, one price" },
+  { n: "02", name: "Funnel", line: "The road a stranger walks from free to paid: the free thing, the page, the emails that do the asking.", out: "A path that sells without you in the room" },
+  { n: "03", name: "Automation", line: "AI and schedules take the repeat work. The emails send themselves and one article becomes 24 finished assets.", out: "A machine that runs on a Tuesday you skip" },
+  { n: "04", name: "Audience", line: "Only now do you turn on traffic, pointed at a machine that already knows what to do with a visitor.", out: "Traffic that lands somewhere" },
 ];
 
-// Membership tiers. Two paid tiers only — the free tier was retired
-// 30 August 2026 and replaced by a free 7-day trial. Site copy uses
-// Standard / Premium, matching Skool's own card labels exactly.
+// What Jodie refuses to teach, and why.
+const refusals = [
+  { t: "Audience first.", p: "Growing followers before you have anything to sell is a year of performing for strangers. The audience is the last room I build, never the first." },
+  { t: "Income screenshots.", p: "A screenshot proves someone had a good month. It proves nothing about a machine. I would rather hand you the machine and let you walk through it." },
+  { t: "Showing your face.", p: "Faceless means your real face is never required. The face of this brand is an AI persona, and the business behind her is real, built and running." },
+  { t: "One-channel experts.", p: "Pinterest, blogging, email and automation are rooms inside one build. Anyone selling you a single room as the whole house is selling you a dependency." },
+];
+
+// Walk the machine: every node links to the live page it describes.
+const machine = [
+  { n: "01", room: "The offer", t: "The One-Sentence Offer tool", p: "Step one of the method as a free tool. Type your offer, watch it get checked. No email.", href: "/resources/one-sentence-offer", go: "Test your offer free" },
+  { n: "02", room: "The course", t: "22 modules, delivered as a website", p: "The Weekend Ecosystem™ lives on the very site it teaches you to build. Walk the lobby.", href: "/weekend-ecosystem/preview", go: "Open your free look inside" },
+  { n: "03", room: "The funnel", t: "The Weekend Build Challenge", p: "Five free days by email that walk a stranger, in order, from nothing to an offer.", href: "/resources/weekend-build-challenge", go: "Inspect your five-day funnel" },
+  { n: "04", room: "The classroom", t: "The Skool room behind it", p: "Where 1,200+ women build the same machine, lesson by lesson, beside each other.", href: "/community", go: "See your future classroom" },
+  { n: "05", room: "The library", t: "Every article started as a lesson", p: "Each guide on this site began as a Skool lesson and was turned into a page by the method it teaches.", href: "/learn/turn-skool-content-into-a-blog", go: "Read your proof, lesson to article" },
+  { n: "06", room: "The email", t: "The Sunday letter", p: "Written once a week, delivered to every subscriber by the automation underneath this site.", href: "/newsletter", go: "Read your Sunday letter" },
+];
+
+// A curated few of the thirteen guides. The full library lives at /learn.
+const guides = [
+  { cat: "Business Systems", t: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", read: "20 min" },
+  { cat: "AI", t: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", read: "18 min" },
+  { cat: "Blogging", t: "How to Turn Your Skool Content Into a Blog", slug: "turn-skool-content-into-a-blog", read: "14 min" },
+  { cat: "Automation & Paid Traffic", t: "How to Automate Your Online Business", slug: "automating-your-online-business", read: "15 min" },
+];
+
+// Membership, compact. Full tier detail lives on /membership.
 const tiers = [
   {
-    name: "Standard",
+    key: "standard",
+    name: "Membership Standard",
     price: "$9",
-    per: "per month",
-    line: "Everything you need to build the thing and start selling it.",
-    feature: true,
-    invert: false,
-    flag: "Most join here",
-    cta: "Start Standard — 7 days free",
-    href: "https://www.skool.com/thedigitalincomeedit/plans",
-    inherit: null,
-    groups: [
-      { label: "Foundations", items: [
-        "The Essentials Edit",
-        "AI Foundations for Creators",
-        "Canva Crash Course",
-      ] },
-      { label: "The brand", items: [
-        "AI Twin / Influencer Creation",
-        "Brand Building \u00b7 The Content Edit",
-        "The Tommy Kate Edit \u2014 included, not $17 here",
-      ] },
-      { label: "Traffic & selling", items: [
-        "The Monetization Edit",
-        "The Email Edit \u00b7 The Pinterest Edit",
-        "Pinterest Foundations\u2122",
-      ] },
-      { label: "In the room daily", items: [
-        "The Value Vault — buy guides à la carte, or unlock all of it for $49",
-        "Daily Prompts",
-        "Vacation & Luxe Babe Vault bonuses",
-      ] },
+    per: "/month",
+    alt: "or $99/year",
+    buys: "The build, by hand, with the room beside you.",
+    items: [
+      "The Essentials Edit, AI Foundations for Creators and Canva Crash Course",
+      "Pinterest Foundations™, The Email Edit and The Shopify Edit",
+      "Daily Prompts and the community, every day",
+      "The Value Vault guides, bought à la carte",
     ],
+    cta: "Start my 7 free days of Standard",
   },
   {
-    name: "Premium",
+    key: "premium",
+    name: "Membership Premium",
     price: "$35",
-    per: "per month",
-    line: "Standard is what you build by hand. Premium writes your content month for you.",
-    feature: false,
-    invert: true,
-    flag: "Written before you sit down",
-    cta: "Start Premium — 7 days free",
-    href: "https://www.skool.com/thedigitalincomeedit/plans",
-    inherit: "Everything in Standard",
-    groups: [
-      { label: "Done for you", items: [
-        "Monthly DFY Content Calendar \u2014 31 days, released a week at a time around the 1st",
-        "The Ads Edit\u2122",
-      ] },
-      { label: "The full build", items: [
-        "The Offer Edit",
-        "The Funnel Edit",
-        "The Premium Vault \u2014 the entire Value Vault, unlocked",
-        "Scaling & Systems",
-      ] },
+    per: "/month",
+    alt: "or $297/year",
+    buys: "The whole architecture, with your content month written for you.",
+    items: [
+      "Everything in Standard",
+      "The Offer Edit, The Funnel Edit and Scaling & Systems",
+      "The Ads Edit™ and a done-for-you content calendar every month",
+      "The Premium Vault: every Value Vault guide, already unlocked",
     ],
+    cta: "Start my 7 free days of Premium",
   },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": `${SITE}/#org`, name: "The Digital Income Edit™", url: `${SITE}/`, slogan: "Build Your Business Backwards. Scale It Forward.™",
+      sameAs: ["https://pinterest.com/TheDigitalIncomeEditTDIE", "https://instagram.com/the.faceless.homestead.mama"] },
+    { "@type": "WebSite", "@id": `${SITE}/#site`, url: `${SITE}/`, name: "The Digital Income Edit™", publisher: { "@id": `${SITE}/#org` } },
+  ],
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Meta Pixel — dataset 1274879031402082 -->
+  <!-- Meta Pixel, dataset 1274879031402082 -->
   <script is:inline>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -117,479 +131,650 @@ const tiers = [
   <meta name="google-site-verification" content="c0MzbaUMBCrxCzIuIJfqoxBus1ConcrweH0DkKajo_Y" />
   <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <title>The Digital Income Edit™ — The AI-Built Faceless Business</title>
-  <meta name="description" content="The Digital Income Edit™ teaches women to build the complete faceless business — offer, funnel, automation — backwards, with AI as the build team. Built faceless. Proven live." />
-  <link rel="canonical" href="https://www.thedigitalincomeedit.com/" />
+  <meta name="theme-color" content="#FBF8F5" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={`${SITE}/`} />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="The Digital Income Edit™" />
-  <meta property="og:description" content="Build the whole business before anyone knows your name. The AI-built faceless business — proven by this one." />
-  <meta property="og:url" content="https://www.thedigitalincomeedit.com/" />
-  <meta property="og:image" content="https://www.thedigitalincomeedit.com/images/library/hero-office-wide-02.jpg" />
+  <meta property="og:site_name" content="The Digital Income Edit™" />
+  <meta property="og:title" content="Build the whole business before anyone knows your name." />
+  <meta property="og:description" content="The AI-built faceless business, built backwards: offer first, funnel second, automation third, audience last." />
+  <meta property="og:url" content={`${SITE}/`} />
+  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Digital Income Edit™: build the whole business before anyone knows your name. Offer, funnel, automation, audience." />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="twitter:title" content="Build the whole business before anyone knows your name." />
+  <meta name="twitter:description" content="The AI-built faceless business, built backwards: offer first, funnel second, automation third, audience last." />
+  <meta name="twitter:image" content={OG_IMAGE} />
+  <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
+  <link rel="preload" as="image" type="image/webp"
+        imagesrcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
+        imagesizes="(max-width: 900px) 78vw, 440px" fetchpriority="high" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <style>
-    @media(max-width:640px){
-      .h-cta{flex-direction:column;align-items:stretch;gap:12px}
-      .h-cta .btn{width:100%;justify-content:center}
+    /* ============ HOMEPAGE DESIGN SYSTEM (scoped to this page) ============ */
+    :root{
+      --hp-ink:#1A1417;--hp-ink-2:#4A3F44;--hp-pink:#D62E73;--hp-pink-2:#B8245F;--hp-bubble:#FF8AC2;
+      --hp-gold:#C8A96A;--hp-lav:#CBB7F7;--hp-cream:#FBF8F5;--hp-white:#FFFFFF;
+      --hp-serif:"Newsreader",Georgia,serif;--hp-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --hp-glass:rgba(255,255,255,.78);--hp-line:1px solid rgba(200,169,106,.55);
+      --hp-shadow:0 30px 60px -28px rgba(214,46,115,.38),0 10px 24px -14px rgba(26,20,23,.18);
+      --hp-shadow-sm:0 18px 36px -22px rgba(214,46,115,.40),0 4px 12px -6px rgba(26,20,23,.10);
+      --hp-grad:linear-gradient(135deg,#E8458A 0%,#D62E73 45%,#B8245F 100%);
+      --hp-w:1200px;--hp-gut:clamp(16px,4vw,40px);
     }
+    body.hp{font-family:var(--hp-sans);color:var(--hp-ink);background:var(--hp-cream);font-size:17px;line-height:1.65}
+    body.hp::before,body.hp::after{display:none}
+    .hp h1,.hp h2,.hp h3{font-family:var(--hp-serif);font-weight:600;font-style:normal;color:var(--hp-ink);letter-spacing:-.02em}
+    .hp em{font-style:normal}
+    .hp .pk{color:var(--hp-pink)}
+    .wrap{max-width:var(--hp-w);margin:0 auto;padding-left:var(--hp-gut);padding-right:var(--hp-gut)}
+    .hp .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--hp-sans);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--hp-pink-2);margin:0 0 18px}
+    .hp .kick::before{content:"";width:26px;height:1px;background:var(--hp-gold)}
+    .h2{font-size:clamp(34px,5vw,58px);line-height:1.04;margin:0 0 18px}
+    .hp-lede{font-family:var(--hp-sans);font-size:clamp(17px,1.6vw,19px);line-height:1.65;color:var(--hp-ink-2);max-width:60ch}
+    .sec{padding:clamp(72px,10vw,128px) 0;position:relative}
+    .sec-head{max-width:760px;margin:0 0 clamp(36px,5vw,56px)}
+    .sec-head.c{margin-left:auto;margin-right:auto;text-align:center}
+    .hp .sec-head.c .kick{justify-content:center}
+    .sec-head.c .hp-lede{margin-left:auto;margin-right:auto}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--hp-pink);outline-offset:3px;border-radius:4px}
 
-    /* ── Weekend Ecosystem band ── */
-    .we-band{max-width:var(--wide);margin:0 auto;padding:0 40px 8px}
-    .we-band-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
-    .we-band-badge{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--gold-deep);
-                   font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;
-                   border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5);
-                   padding:7px 0;border-radius:0;line-height:1;white-space:nowrap;
-                   box-shadow:none}
-    .we-band-badge::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);flex:none}
-    @media(max-width:600px){.we-band{padding:0 22px 8px}}
-    .we-band-in{display:grid;grid-template-columns:250px 1fr;align-items:center;gap:0;align-items:stretch;text-decoration:none;color:inherit;
-                border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;overflow:hidden;
-                background:var(--white);
-                transition:border-color .3s var(--ease)}
-    .we-band-in:hover{border-color:rgba(43,22,27,.28)}
-    .we-band-img{overflow:hidden;background:var(--cream);display:flex;align-items:center}
-    .we-band-img img{width:100%;height:auto;max-height:100%;object-fit:contain;display:block}
-    .we-band-txt{padding:30px 34px}
-    .we-band-k{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:12px}
-    .we-band-txt h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-.8px;margin:0 0 12px}
-    .we-band-txt p{font-size:16px;line-height:1.7;margin:0 0 18px;max-width:60ch}
-    .we-band-go{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-deep);font-weight:500}
-    @media(max-width:780px){
-      .we-band-in{grid-template-columns:1fr}
-      .we-band-img{max-height:260px}
-      .we-band-txt{padding:24px 22px}
-    }
+    /* Buttons: hot pink gradient pills, white caps */
+    .pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:15px 30px;border-radius:999px;
+      background:var(--hp-grad);color:#fff!important;font-family:var(--hp-sans);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      text-align:center;line-height:1.3;box-shadow:0 14px 30px -12px rgba(214,46,115,.65),inset 0 1px 0 rgba(255,255,255,.35);
+      transition:transform .25s ease,box-shadow .25s ease}
+    .pill:hover{transform:translateY(-2px);box-shadow:0 20px 38px -14px rgba(214,46,115,.75),inset 0 1px 0 rgba(255,255,255,.35)}
+    .pill .ar{transition:transform .25s ease}
+    .pill:hover .ar{transform:translateX(4px)}
+    .pill.white{background:#fff;color:var(--hp-pink-2)!important;box-shadow:0 14px 30px -14px rgba(26,20,23,.45)}
+    .quiet{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;color:var(--hp-pink-2);
+      border-bottom:1px solid rgba(214,46,115,.35);transition:border-color .2s}
+    .quiet:hover{border-color:var(--hp-pink-2)}
 
-    /* ---------- HERO ---------- */
-    .h-hero{position:relative;display:block;overflow:hidden}
-    /* The type gets a clean field. The photograph sits below it, at full
-       strength, as a band — neither is compromised for the other. */
-    .h-hero .bg{position:relative;height:clamp(300px,42vw,520px);margin-top:14px;
-                background-image:url(/images/library/hero-office-wide-03.jpg);
-                background-size:cover;background-position:center 42%}
-    .h-hero .bg::after{content:"";position:absolute;inset:0;
-                background:linear-gradient(180deg,var(--cream) 0%,transparent 16%,transparent 84%,var(--cream) 100%)}
-    .h-hero .veil{display:none}
-    .h-hero .in{position:relative;width:100%;max-width:var(--wide);margin:0 auto;padding:82px 40px 58px;text-align:center}
-    .h-hero .k{display:inline-block;transition:opacity .3s;font-size:10px;font-weight:500;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:26px;padding:8px 0;border-top:1px solid rgba(200,169,106,.5);border-bottom:1px solid rgba(200,169,106,.5)}
-    .h-hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,6.6vw,84px);line-height:1.02;letter-spacing:-1.6px;max-width:15ch;margin:0 auto 26px;color:var(--choc)}
-    .h-hero h1 em{font-style:italic;color:var(--pink)}
-    .h-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);line-height:1.55;color:var(--choc-soft);max-width:52ch;margin:0 auto 36px}
-    .h-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn.quiet{background:transparent;color:var(--choc)!important;border:1px solid rgba(200,169,106,.65);box-shadow:none}
-    .btn.quiet:hover{background:var(--choc);border-color:var(--choc);color:var(--cream)!important}
-    @media(max-width:600px){.h-hero .in{padding:56px 22px 44px}.h-hero .bg{height:260px}}
+    /* Glass card with a thin gold border and deep pink-tinted shadow */
+    .glass{background:var(--hp-glass);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+      border:var(--hp-line);border-radius:22px;box-shadow:var(--hp-shadow)}
 
-    /* ---------- SHARED SECTION FURNITURE ---------- */
-    .sec{max-width:var(--wide);margin:0 auto;padding:104px 40px;position:relative}
-    .sec::before{content:"";position:absolute;top:0;left:40px;right:40px;height:9px;pointer-events:none;
-      background:linear-gradient(90deg,transparent 0%, rgba(200,169,106,.55) 50%, transparent 100%);
-      background-repeat:no-repeat;background-size:100% 1px;
-      background-position:center center}
-    .shop-band .sec::before,.mem .sec::before{display:none}
+    /* Round tilted sticker with dashed inner ring */
+    .sticker{position:absolute;z-index:3;width:118px;height:118px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;
+      box-shadow:0 16px 30px -12px rgba(214,46,115,.55);transform:rotate(-12deg);color:var(--hp-pink-2);
+      font-family:var(--hp-sans);font-weight:800;font-size:12.5px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;padding:18px}
+    .sticker::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1.5px dashed var(--hp-pink);opacity:.8}
+    .sticker b{display:block;font-family:var(--hp-serif);font-weight:600;font-size:30px;letter-spacing:-.02em;line-height:1;margin-bottom:3px;text-transform:none}
+    .sticker.pinkfill{background:var(--hp-grad);color:#fff}
+    .sticker.pinkfill::before{border-color:rgba(255,255,255,.85)}
 
-    .sec-head{text-align:center;max-width:44ch;margin:0 auto 56px}
-    .sec-head .k{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
-    .sec-head h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.8vw,54px);line-height:1.05;letter-spacing:-.7px;margin-bottom:16px;color:var(--choc)}
-    .sec-head h2 em{font-style:italic;color:var(--pink)}
-    .sec-head p{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.55;color:var(--taupe-deep)}
-    @media(max-width:600px){.sec{padding:70px 22px}}
+    /* ============ NAV ============ */
+    .hp-nav{position:sticky;top:0;z-index:60;background:rgba(251,248,245,.86);-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);border-bottom:1px solid rgba(200,169,106,.35)}
+    .hp-nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
+    .hp-logo{font-family:var(--hp-serif);font-weight:600;font-size:21px;letter-spacing:-.01em;color:var(--hp-ink);display:inline-flex;align-items:center;min-height:44px}
+    .hp-logo span{color:var(--hp-pink-2);margin-left:.25em}
+    .hp-links{display:flex;align-items:center;gap:30px}
+    .hp-links a{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--hp-ink-2);display:inline-flex;align-items:center;min-height:44px}
+    .hp-links a:hover{color:var(--hp-pink-2)}
+    .hp-links a.cta{padding:0 20px;border-radius:999px;background:var(--hp-grad);color:#fff;box-shadow:0 10px 22px -12px rgba(214,46,115,.7)}
+    .hp-burger{display:none;min-width:44px;min-height:44px;border:1px solid rgba(200,169,106,.6);border-radius:999px;background:#fff;color:var(--hp-ink);
+      font:600 12px/1 var(--hp-sans);letter-spacing:.14em;text-transform:uppercase;padding:0 16px;cursor:pointer}
+    .hp-drawer{margin:0;inset:0;width:100%;max-width:none;height:100%;max-height:none;border:0;padding:84px 24px 32px;background:var(--hp-cream)}
+    .hp-drawer::backdrop{background:rgba(26,20,23,.3)}
+    .hp-drawer a{display:flex;align-items:center;min-height:56px;font-family:var(--hp-serif);font-weight:600;font-size:30px;border-bottom:1px solid rgba(200,169,106,.35);color:var(--hp-ink)}
+    .hp-drawer a.cta{color:var(--hp-pink-2)}
+    .hp-drawer button{position:absolute;top:14px;right:16px;min-width:44px;min-height:44px;border-radius:999px;border:1px solid rgba(200,169,106,.6);background:#fff;font:600 12px/1 var(--hp-sans);letter-spacing:.14em;text-transform:uppercase;padding:0 16px;cursor:pointer;color:var(--hp-ink)}
+    @media(max-width:900px){.hp-links{display:none}.hp-burger{display:inline-flex;align-items:center}}
 
-    /* ---------- START HERE ---------- */
-    .free-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:940px;margin:0 auto}
-    .free-card{background:var(--white);border:1px solid var(--gray);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-    .free-card .ph{aspect-ratio:4/5;background-color:var(--blush);background-size:cover;background-position:center top;border-bottom:1px solid var(--gray)}
-    @media(max-width:760px){.free-card .ph{aspect-ratio:3/4}}
-    .free-card .bd{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
-    .free-card .tag{font-size:10px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--pink-deep);margin-bottom:12px}
-    .free-card h3{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.15;margin-bottom:12px}
-    .free-card p{font-size:15.5px;line-height:1.65;color:var(--taupe-deep);margin-bottom:22px;flex:1}
-    @media(max-width:760px){.free-grid{grid-template-columns:1fr}}
-
-    /* ---------- THE LIBRARY (contents) ---------- */
-    .contents{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
-    a.entry{position:relative;display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:22px;
-      padding:24px 28px 24px 24px;border-radius:2px;background:var(--white);
-      border:1px solid rgba(183,159,150,.20);overflow:hidden;
-      transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
-    a.entry::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac);
-      transition:width .4s var(--ease)}
-    a.entry:hover{transform:none;border-color:rgba(214,46,115,.30);
-      box-shadow:0 14px 34px -18px rgba(43,22,27,.28)}
-    a.entry:hover::before{width:9px}
-    a.entry:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
-    a.entry .no{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--choc-soft);text-align:center}
-    a.entry .ttl{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.2vw,23px);line-height:1.24}
-    a.entry .ttl span{display:block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta);margin-bottom:9px}
-    a.entry .rd{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
-    @media(max-width:640px){
-      a.entry{grid-template-columns:40px 1fr;gap:14px;padding:18px 18px 18px 16px;border-radius:2px}
-      a.entry .no{font-size:23px}
-      a.entry .rd{display:none}
-    }
-    @media(prefers-reduced-motion:reduce){a.entry:hover{transform:none}}
-    .sec-foot{text-align:center;margin-top:46px}
-
-    /* ---------- SHOP ---------- */
-    .shop-band{background:linear-gradient(168deg,#FDEAF3 0%,#FBDFEC 46%,#FDEDF4 100%);
-      border-top:1px solid rgba(200,169,106,.42);border-bottom:1px solid rgba(200,169,106,.42)}
-    .shop-band .sec-head .k{color:var(--pink)}
-    .shop-band .sh{border-color:rgba(43,22,27,.10)}
-    .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-    @media(max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.shop-grid{grid-template-columns:1fr}}
-    .sh{background:var(--white);border-radius:2px;padding:30px 28px 30px;display:flex;flex-direction:column;border:1px solid rgba(183,159,150,.28)}
-    .sh h3{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:6px}
-    .sh .price{font-family:var(--serif);font-size:26px;color:var(--pink);margin-bottom:2px}
-    .sh .note{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:16px}
-    .sh p{font-size:15px;line-height:1.62;color:var(--choc-soft);margin-bottom:22px;flex:1}
-    .sh .go{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink-deep)}
-    .sh .aff{display:inline-block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep);border:0;border-bottom:1px solid rgba(200,169,106,.5);border-radius:0;padding:3px 0;margin-bottom:16px;letter-spacing:2.6px}
-    .disclose{max-width:60ch;margin:38px auto 0;text-align:center;font-size:13.5px;line-height:1.7;color:var(--taupe-deep)}
-
-    /* ---------- MEMBERSHIP ---------- */
-    .mem{background:var(--choc);color:var(--cream)}
-    .mem .sec-head h2,.mem .sec-head p{color:var(--cream)}
-    .mem .sec-head .k{color:var(--mauve)}
-    .mem .sec-head p{color:var(--rose)}
-    .tiers{display:grid;grid-template-columns:1.02fr 1.05fr 1.05fr;gap:clamp(20px,2.4vw,34px);max-width:1180px;margin:0 auto;align-items:stretch}
-    @media(max-width:1080px){.tiers{grid-template-columns:1fr 1fr;max-width:820px}}
-    @media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:460px}}
-
-    /* ── editorial image panel — fills the third grid slot ── */
-    .tier-fig{display:flex;flex-direction:column;justify-content:space-between;padding-top:13px}
-    .tf-frame{position:relative;border-radius:2px}
-    .tf-frame::after{content:"";position:absolute;inset:-13px;border:1px solid rgba(200,169,106,.5);border-radius:2px;pointer-events:none}
-    .tf-frame img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;object-position:center 42%;
-      border-radius:2px;position:relative;z-index:1;box-shadow:0 26px 60px -24px rgba(0,0,0,.7)}
-    .tf-cap{margin-top:38px;padding-bottom:6px}
-    .tf-rule{display:block;width:40px;height:1px;background:var(--gold);margin-bottom:17px}
-    .tf-q{font-family:var(--display);font-weight:400;font-size:clamp(20px,1.7vw,24px);line-height:1.28;
-      letter-spacing:-.2px;color:var(--cream);margin:0 0 13px}
-    .tf-s{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mauve);margin:0}
-    @media(max-width:1080px){
-      .tier-fig{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center}
-      .tf-cap{margin-top:0}
-    }
+    /* ============ HERO ============ */
+    .hx{position:relative;overflow:hidden;padding:clamp(40px,7vw,96px) 0 clamp(120px,14vw,170px);
+      background:
+        radial-gradient(60% 55% at 85% 20%,rgba(255,138,194,.30) 0%,transparent 60%),
+        linear-gradient(180deg,#FFF6F9 0%,var(--hp-cream) 100%)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,88px);align-items:center}
+    .hx h1{font-size:clamp(44px,6.4vw,86px);line-height:.98;letter-spacing:-.035em;margin:0 0 26px}
+    .hx h1 .pk{display:block}
+    .hx .hp-lede{font-size:clamp(18px,1.7vw,21px);color:var(--hp-ink-2);margin:0 0 14px;max-width:34em}
+    .hx .hp-lede strong{color:var(--hp-ink);font-weight:600}
+    .hero-proof{font-size:15.5px;line-height:1.6;color:var(--hp-ink-2);margin:0 0 32px;padding-left:16px;border-left:2px solid var(--hp-pink);max-width:36em}
+    .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
+    .hero-fig{position:relative;max-width:440px;margin-left:auto;width:100%}
+    .hero-slab{position:absolute;left:-8%;right:8%;top:14%;bottom:-6%;border-radius:28px;background:var(--hp-grad);box-shadow:var(--hp-shadow)}
+    .hero-slab::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(120deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,0) 38%)}
+    .hero-frame{position:absolute;left:6%;right:-5%;top:6%;bottom:-3%;border:1px solid var(--hp-gold);border-radius:24px}
+    .hero-photo{position:relative;z-index:2;margin:0 0 0 4%;width:92%;border-radius:22px;overflow:hidden;box-shadow:0 34px 60px -26px rgba(26,20,23,.5);aspect-ratio:480/596}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .hero-fig .sticker{right:-18px;bottom:-26px}
+    .hero-tag{position:absolute;z-index:3;left:-6%;top:-14px;background:#fff;border:var(--hp-line);border-radius:999px;padding:8px 16px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hp-pink-2);box-shadow:var(--hp-shadow-sm)}
     @media(max-width:900px){
-      .tier-fig{grid-template-columns:1fr;gap:24px}
-      .tf-frame::after{inset:-9px}
-      .tf-frame img{aspect-ratio:3/2;object-position:center 24%}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-fig{margin:10px auto 0;max-width:340px}
+      .hero-fig .sticker{right:-10px;bottom:-30px;width:104px;height:104px}
+      .hero-cta .pill{width:100%}
     }
-    .tier{position:relative;display:flex;flex-direction:column;padding:36px 32px 34px;border-radius:2px;
-      background:var(--white);border:1px solid rgba(43,22,27,.12);color:var(--choc)}
-    .tier.feat{background:var(--white);border-color:rgba(43,22,27,.10);border-top:2px solid var(--gold);
-      box-shadow:none}
-    .tier .flag{position:absolute;top:-11px;left:30px;background:var(--pink);color:var(--white);
-      font-size:10.5px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;padding:6px 0;border-radius:0;background:transparent!important;color:var(--gold-deep)!important;border-bottom:1px solid rgba(200,169,106,.5)}
-    .tier .nm{font-family:var(--display);font-size:26px;font-weight:400;margin-bottom:10px;color:var(--choc)}
-    .tier .pr{font-family:var(--display);font-weight:300;font-size:44px;line-height:1;color:var(--choc);letter-spacing:-1.5px;margin-bottom:12px}
-    .tier .pr em{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:500;
-      letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta);margin-top:8px}
-    .tier .ln{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5;color:var(--choc-mute);
-      margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid rgba(43,22,27,.12)}
-    .tier ul{list-style:none;margin:0}
-    .tier .btn{margin-top:auto}
-    .tier li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.55;color:var(--choc-soft)}
-    .tier li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;background:var(--pink);transform:rotate(45deg)}
-    .tier .tg + .tg{margin-top:22px}
-    .tier .tgl{font-size:10.5px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;
-      color:var(--gold-deep);margin:0 0 11px}
-    .tier .tg:last-of-type{margin-bottom:30px}
-    .tier .tg ul{margin:0}
-    .tier .inh{font-family:var(--display);font-size:16px;margin:0 0 24px;padding-bottom:19px;
-      border-bottom:1px solid rgba(43,22,27,.12)}
-    .tier .inh em{font-family:var(--serif);font-style:italic;opacity:.6}
 
-    /* Premium reads as the elevated card through treatment, not bullet count */
-    .tier.inv{background:var(--cream);border-color:rgba(200,169,106,.55);border-top:2px solid var(--gold);color:var(--choc);box-shadow:none}
-    .tier.inv .ln{color:var(--choc-soft)}
-    .tier.inv .pr{color:var(--pink)}
-    .tier.inv li{color:var(--choc-soft)}
-    .tier.inv li::before{background:var(--gold-deep)}
-    .tier.inv .tgl{color:var(--gold-deep)}
-    .tier.inv .flag{background:var(--choc);color:var(--gold);border:1px solid var(--gold)}
-    .tier.inv .btn{background:var(--pink);color:var(--white)!important;box-shadow:none}
-    .tier.inv .btn:hover{background:var(--cream);color:var(--choc)!important}
-    .tier .btn{width:100%;justify-content:center;padding:16px 18px;font-size:11.5px;letter-spacing:1.1px;white-space:nowrap}
-    .mem-note{max-width:64ch;margin:48px auto 0;text-align:center;font-size:14px;line-height:1.8;color:var(--taupe)}
-    .mem-note strong{color:var(--rose)}
+    /* ============ PROOF STRIP ============ */
+    .proof{position:relative;z-index:4;margin-top:clamp(-96px,-8vw,-64px)}
+    .proof-grid{display:grid;grid-template-columns:repeat(5,1fr);padding:10px;gap:0}
+    .stat{padding:22px 20px;text-align:center;position:relative}
+    .stat + .stat::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:rgba(200,169,106,.55)}
+    .stat b{display:block;font-family:var(--hp-serif);font-weight:600;font-size:clamp(34px,3.6vw,46px);line-height:1;color:var(--hp-pink);letter-spacing:-.02em;margin-bottom:8px}
+    .stat span{display:block;font-size:13.5px;line-height:1.45;color:var(--hp-ink-2);max-width:18ch;margin:0 auto}
+    @media(max-width:900px){
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .stat + .stat::before{display:none}
+      .stat{border-bottom:1px solid rgba(200,169,106,.35)}
+      .stat:nth-child(odd):not(:last-child){border-right:1px solid rgba(200,169,106,.35)}
+      .stat:last-child{grid-column:1/-1;border-bottom:0}
+    }
 
-    /* ---------- TESTIMONIALS ---------- */
-    .tmz{background:var(--cream-deep);padding:86px 40px;text-align:center}
-    .tmz-in{max-width:700px;margin:0 auto}
-    .tmz .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px}
-    .tmz .btn{margin-top:6px}
-    @media(max-width:640px){.tmz{padding:60px 20px}}
+    /* ============ METHOD ============ */
+    .method-panel{position:relative;padding:clamp(22px,3vw,34px);border-radius:28px}
+    .method-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center;padding:0 6px 20px;margin-bottom:22px;border-bottom:1px solid rgba(200,169,106,.5)}
+    .method-bar strong{font-family:var(--hp-serif);font-weight:600;font-size:22px;color:var(--hp-ink)}
+    .method-bar span{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2)}
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+    .step{position:relative;background:#fff;border-radius:18px;padding:26px 22px 24px;border:1px solid rgba(214,46,115,.22);box-shadow:var(--hp-shadow-sm);display:flex;flex-direction:column}
+    .step:not(:last-child)::after{content:"";position:absolute;right:-15px;top:46px;width:12px;height:12px;border-top:2px solid var(--hp-pink);border-right:2px solid var(--hp-pink);transform:rotate(45deg);z-index:2}
+    .step .num{font-family:var(--hp-serif);font-weight:600;font-size:56px;line-height:.9;color:var(--hp-pink);letter-spacing:-.03em}
+    .step .ord{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-ink-2);margin:12px 0 4px}
+    .step h3{font-size:30px;line-height:1.05;margin:0 0 12px}
+    .step p{font-size:15px;line-height:1.6;color:var(--hp-ink-2);margin:0 0 18px;flex:1}
+    .step .out{font-size:13.5px;font-weight:600;line-height:1.45;color:var(--hp-pink-2);padding-top:14px;border-top:1px dashed rgba(214,46,115,.45)}
+    .method-foot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:26px;padding:0 6px}
+    .method-foot p{margin:0;font-size:16px;color:var(--hp-ink-2);max-width:62ch}
+    .method-foot p strong{color:var(--hp-pink-2);font-weight:600}
+    .tagline{font-family:var(--hp-serif);font-weight:600;font-size:clamp(20px,2.2vw,24px);color:var(--hp-ink)}
+    @media(max-width:980px){
+      .steps{grid-template-columns:1fr 1fr}
+      .step:nth-child(2)::after{display:none}
+    }
+    @media(max-width:620px){
+      .steps{grid-template-columns:1fr;gap:14px;padding-left:22px;border-left:2px solid var(--hp-pink);margin-left:6px}
+      .step::after{display:none}
+      .step::before{content:"";position:absolute;left:-31px;top:34px;width:16px;height:16px;border-radius:50%;background:var(--hp-pink);box-shadow:0 0 0 4px var(--hp-cream)}
+      .step .num{font-size:46px}
+    }
 
-    /* ---------- NEWSLETTER ---------- */
-    .news .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    /* ============ POINT OF VIEW ============ */
+    .pov{background:linear-gradient(180deg,var(--hp-cream) 0%,#FDEFF5 100%)}
+    .pov-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,80px);align-items:start}
+    .pov-fig{position:sticky;top:100px}
+    .pov-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--hp-shadow);border:6px solid #fff;aspect-ratio:640/426}
+    .pov-photo img{width:100%;height:100%;object-fit:cover}
+    .pov-fig .sticker{left:-16px;top:-30px}
+    .pov-note{margin-top:22px;padding:22px 24px;border-radius:18px}
+    .pov-note p{margin:0;font-family:var(--hp-serif);font-weight:600;font-size:21px;line-height:1.35;color:var(--hp-ink)}
+    .pov-note span{display:block;margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hp-pink-2)}
+    .refuse{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+    .refuse li{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:24px 24px 24px 20px;background:#fff;border-radius:18px;border-left:4px solid var(--hp-pink);box-shadow:var(--hp-shadow-sm)}
+    .refuse .x{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--hp-grad);color:#fff;font:700 12px/1 var(--hp-sans);letter-spacing:.06em}
+    .refuse h3{font-size:25px;line-height:1.15;margin:2px 0 8px}
+    .refuse h3 small{display:block;font-family:var(--hp-sans);font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2);margin-bottom:4px}
+    .refuse p{margin:0;font-size:16px;line-height:1.6;color:var(--hp-ink-2)}
+    @media(max-width:900px){.pov-grid{grid-template-columns:1fr;gap:28px}.pov-fig{position:relative;top:0;max-width:520px;order:2;margin-top:24px}}
+
+    /* ============ WALK THE MACHINE ============ */
+    .machine{background:#F7EEE9 url(/images/home/machine-flatlay-800.webp) center/cover no-repeat;isolation:isolate}
+    .machine::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(251,248,245,.93) 0%,rgba(251,248,245,.84) 50%,rgba(251,248,245,.94) 100%)}
+    @media(min-width:900px){.machine{background-image:url(/images/home/machine-flatlay-1116.webp);background-attachment:scroll}}
+    .map{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+    .map li{position:relative}
+    .node{display:flex;flex-direction:column;height:100%;padding:26px 24px 22px;border-radius:20px;transition:transform .25s ease,box-shadow .25s ease}
+    .node:hover{transform:translateY(-4px);box-shadow:0 36px 64px -28px rgba(214,46,115,.5),0 10px 24px -14px rgba(26,20,23,.2)}
+    .node .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .node .n{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1.5px dashed var(--hp-pink);color:var(--hp-pink-2);font-family:var(--hp-serif);font-weight:600;font-size:17px}
+    .node .room{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2)}
+    .node h3{font-size:24px;line-height:1.15;margin:0 0 10px}
+    .node p{font-size:15px;line-height:1.6;color:var(--hp-ink-2);margin:0 0 18px;flex:1}
+    .node .go{font-size:14px;font-weight:700;color:var(--hp-pink-2)}
+    .map li:not(:nth-child(3n))::after{content:"";position:absolute;right:-22px;top:47px;width:22px;border-top:2px dashed var(--hp-pink);opacity:.6}
+    .machine-foot{margin-top:34px;text-align:center;font-size:16px;color:var(--hp-ink-2)}
+    .machine-foot strong{color:var(--hp-pink-2);font-weight:600}
+    @media(max-width:980px){.map{grid-template-columns:1fr 1fr}.map li::after{display:none}}
+    @media(max-width:620px){.map{grid-template-columns:1fr;gap:14px}}
+
+    /* ============ TINA ============ */
+    .review{background:
+        radial-gradient(50% 60% at 50% 0%,rgba(255,138,194,.22) 0%,transparent 70%),var(--hp-cream)}
+    .quote{position:relative;max-width:940px;margin:0 auto;padding:clamp(34px,5vw,64px) clamp(22px,5vw,72px);border-radius:28px;text-align:left}
+    .quote .mark{position:absolute;top:-42px;left:clamp(18px,4vw,56px);width:84px;height:84px;border-radius:50%;background:var(--hp-grad);color:#fff;
+      font-family:var(--hp-serif);font-weight:600;font-size:74px;line-height:1;display:grid;place-items:center;padding-top:22px;box-shadow:var(--hp-shadow-sm)}
+    .quote .tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2);margin:10px 0 18px}
+    .quote blockquote{margin:0 0 28px;font-family:var(--hp-serif);font-weight:600;font-size:clamp(23px,2.7vw,33px);line-height:1.3;letter-spacing:-.015em;color:var(--hp-ink)}
+    .quote figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding-top:22px;border-top:1px solid rgba(200,169,106,.55)}
+    .quote figcaption strong{font-family:var(--hp-serif);font-weight:600;font-size:22px;color:var(--hp-ink)}
+    .quote .src{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hp-ink-2)}
+    .quote .stars{color:var(--hp-pink-2);letter-spacing:4px;font-size:18px}
+
+    /* ============ PATH ============ */
+    .path{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:22px;align-items:stretch}
+    .stop{position:relative;display:flex;flex-direction:column;border-radius:24px;padding:28px 26px}
+    .stop .lvl{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2);margin-bottom:16px;padding:7px 12px;border-radius:999px;border:1px solid rgba(214,46,115,.35);background:#fff}
+    .stop h3{font-size:28px;line-height:1.1;margin:0 0 10px}
+    .stop p{font-size:15.5px;line-height:1.6;color:var(--hp-ink-2);margin:0 0 18px}
+    .stop .act{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .stop .act .pill{width:100%;padding:15px 20px;letter-spacing:.08em;font-size:12.5px}
+    .stop-free .thumb{border-radius:16px;overflow:hidden;margin-bottom:18px;aspect-ratio:4/3;box-shadow:var(--hp-shadow-sm)}
+    .stop-free .thumb img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+    .stop-hero{background:var(--hp-grad);color:#fff;border:1px solid rgba(255,255,255,.35);box-shadow:0 40px 70px -30px rgba(214,46,115,.75),0 12px 26px -16px rgba(26,20,23,.3);overflow:hidden;isolation:isolate}
+    .stop-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.08) 30%,rgba(255,255,255,0) 46%)}
+    .stop-hero .lvl{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.55)}
+    .stop-hero h3{color:#fff;font-size:clamp(30px,3vw,38px)}
+    .stop-hero p{color:rgba(255,255,255,.94)}
+    .stop-hero .price{font-family:var(--hp-serif);font-weight:600;font-size:clamp(40px,4.4vw,54px);line-height:1;color:#fff;margin:4px 0 6px}
+    .stop-hero .price small{font-family:var(--hp-sans);font-size:14px;font-weight:600;letter-spacing:.02em;margin-left:6px;color:rgba(255,255,255,.92)}
+    .stop-hero .plan{font-size:14px;font-weight:600;color:#fff;margin:0 0 18px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.35)}
+    .stop-hero .we-photo{border-radius:16px;overflow:hidden;margin:0 0 20px;aspect-ratio:560/376;border:3px solid rgba(255,255,255,.7)}
+    .stop-hero .we-photo img{width:100%;height:100%;object-fit:cover}
+    .stop-hero .sticker{color:var(--hp-pink-2);right:14px;top:14px;width:98px;height:98px;padding:14px}
+    .stop-hero .sticker b{font-size:26px}
+    .stop-hero .quiet{color:#fff;border-color:rgba(255,255,255,.6)}
+    .stop-mem .mini{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+    .stop-mem .mini li{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid rgba(200,169,106,.45);font-size:14.5px;color:var(--hp-ink-2)}
+    .stop-mem .mini b{font-family:var(--hp-serif);font-weight:600;font-size:19px;color:var(--hp-pink-2)}
+    .path-foot{margin-top:30px;text-align:center}
+    @media(max-width:1020px){.path{grid-template-columns:1fr 1fr}.stop-hero{grid-column:1/-1;order:-1}}
+    @media(max-width:680px){.path{grid-template-columns:1fr}.stop-hero{order:0}}
+
+    /* ============ MEMBERSHIP ============ */
+    .mem{background:linear-gradient(180deg,#FDEFF5 0%,var(--hp-cream) 100%)}
+    .mem-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto;position:relative}
+    .tier{position:relative;display:flex;flex-direction:column;padding:30px 28px 28px;border-radius:24px}
+    .tier.premium{border:2px solid var(--hp-pink);box-shadow:0 0 0 6px rgba(214,46,115,.08),var(--hp-shadow)}
+    .tier .badge{display:inline-flex;align-self:flex-start;padding:7px 14px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+    .tier.standard .badge{background:#FFE3F0;color:var(--hp-pink-2);border:1px solid var(--hp-bubble)}
+    .tier.premium .badge{background:var(--hp-grad);color:#fff}
+    .tier h3{font-size:28px;line-height:1.1;margin:0 0 12px}
+    .tier .pr{font-family:var(--hp-serif);font-weight:600;font-size:52px;line-height:1;color:var(--hp-pink);letter-spacing:-.02em}
+    .tier .pr small{font-family:var(--hp-sans);font-size:15px;font-weight:600;color:var(--hp-ink-2);letter-spacing:0}
+    .tier .alt{font-size:14.5px;font-weight:600;color:var(--hp-ink-2);margin:8px 0 4px}
+    .tier .trial{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--hp-pink-2);margin:0 0 16px}
+    .tier .buys{font-family:var(--hp-serif);font-weight:600;font-size:20px;line-height:1.3;margin:0 0 16px;padding-top:16px;border-top:1px solid rgba(200,169,106,.55)}
+    .tier ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+    .tier li{position:relative;padding-left:26px;font-size:15px;line-height:1.5;color:var(--hp-ink-2)}
+    .tier li::before{content:"";position:absolute;left:0;top:4px;width:15px;height:15px;border-radius:50%;background:var(--hp-grad);box-shadow:inset 0 0 0 4px #fff,0 0 0 1px var(--hp-pink)}
+    .tier .pill{margin-top:auto;width:100%}
+    .mem-grid > .sticker{left:50%;top:-44px;margin-left:-59px}
+    .mem-foot{text-align:center;margin-top:28px;font-size:15px;color:var(--hp-ink-2)}
+    @media(max-width:760px){.mem-grid{grid-template-columns:1fr;margin-top:64px}.mem-grid > .sticker{left:auto;right:6px;margin-left:0;top:-58px;width:100px;height:100px}}
+
+    /* ============ LIBRARY ============ */
+    .shelf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .book{display:flex;flex-direction:column;height:100%;padding:24px 22px;border-radius:18px;background:#fff;border:1px solid rgba(200,169,106,.5);border-top:4px solid var(--hp-pink);box-shadow:var(--hp-shadow-sm);transition:transform .25s ease}
+    .book:hover{transform:translateY(-4px)}
+    .book .cat{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hp-pink-2);margin-bottom:12px}
+    .book h3{font-size:22px;line-height:1.2;margin:0 0 16px;flex:1}
+    .book .rd{font-size:13px;font-weight:600;color:var(--hp-ink-2)}
+    .shelf-foot{margin-top:28px;text-align:center}
+    @media(max-width:980px){.shelf{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.shelf{grid-template-columns:1fr}}
+
+    /* ============ SUNDAY LETTER ============ */
+    .letter{padding:clamp(64px,9vw,110px) 0}
+    .letter-card{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);overflow:hidden;border-radius:28px;padding:0}
+    .letter-photo{position:relative;min-height:320px}
+    .letter-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .letter-body{padding:clamp(28px,4vw,52px)}
+    .letter-body .hp-lede{margin:0 0 6px}
+    .letter-body :global(.freebie-capture){margin:18px 0 0;padding:0;border:0;background:transparent}
+    .letter-body :global(.fc-h){font-family:var(--hp-serif);font-weight:600;font-size:clamp(30px,3.6vw,42px);line-height:1.08;letter-spacing:-.02em;color:var(--hp-ink);margin:0 0 10px}
+    .letter-body :global(.fc-sub){font-size:15px;color:var(--hp-ink-2);margin:0 0 18px}
+    .letter-body :global(.fc-row input){min-height:52px;border-radius:999px;border:1px solid rgba(200,169,106,.8);padding:14px 22px;font-size:16px}
+    .letter-body :global(.fc-row button){min-height:52px;border-radius:999px;background:var(--hp-grad);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;box-shadow:0 14px 30px -12px rgba(214,46,115,.65)}
+    .letter-body :global(.fc-row button:hover){background:var(--hp-grad);filter:brightness(1.05)}
+    .letter-body :global(.fc-done){font-family:var(--hp-serif);font-weight:600;font-style:normal}
+    .letter-fine{font-size:13px;color:var(--hp-ink-2);margin:14px 0 0}
+    @media(max-width:820px){.letter-card{grid-template-columns:1fr}.letter-photo{min-height:220px}.letter-body :global(.fc-row button){width:100%}}
+
+    /* ============ FOOTER ============ */
+    .hp-foot{background:#fff;border-top:1px solid rgba(200,169,106,.55);padding:0;color:var(--hp-ink-2)}
+    .hp-foot .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-top:56px;padding-bottom:44px}
+    .hp-foot .brand{display:inline-flex;align-items:center;min-height:44px;font-family:var(--hp-serif);font-weight:600;font-size:24px;color:var(--hp-ink)}
+    .hp-foot .brand span{color:var(--hp-pink-2)}
+    .hp-foot .tl{margin:10px 0 0;font-size:15px;color:var(--hp-ink-2);max-width:32ch}
+    .hp-foot h2{font-family:var(--hp-sans);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--hp-pink-2);margin:0 0 10px}
+    .hp-foot nav a{display:flex;align-items:center;min-height:44px;font-size:15px;color:var(--hp-ink-2)}
+    .hp-foot nav a:hover{color:var(--hp-pink-2)}
+    .hp-foot-bar{background:var(--hp-grad);color:#fff}
+    .hp-foot-bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding-top:16px;padding-bottom:16px;font-size:13px;font-weight:600;letter-spacing:.04em}
+    @media(max-width:820px){.hp-foot .wrap{grid-template-columns:1fr 1fr}.hp-foot .wrap > div:first-child{grid-column:1/-1}}
+
+    @media(prefers-reduced-motion:reduce){.pill,.node,.book{transition:none}.pill:hover,.node:hover,.book:hover{transform:none}}
   </style>
 </head>
-<body class="no-js">
-  <style>.no-js .reveal{opacity:1;transform:none}</style>
+<body class="hp">
 
-  <nav class="nav">
-    <div class="nav-in">
-      <a class="logo" href="/">The Digital Income <em>Edit™</em></a>
-      <div class="nav-links">
-        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a>
-        <a class="nav-join" href="/community">Community</a>
-      </div>
-      <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <header class="hp-nav">
+    <div class="wrap">
+      <a class="hp-logo" href="/">The Digital Income<span>Edit™</span></a>
+      <nav class="hp-links" aria-label="Main">
+        <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Free resources</a><a href="/membership">Membership</a>
+        <a class="cta" href="/community">Community</a>
+      </nav>
+      <button class="hp-burger" type="button" popovertarget="hp-menu" aria-label="Open menu">Menu</button>
     </div>
-  </nav>
-
-  <div class="drawer" id="drawer">
-    <button class="close" id="close" aria-label="Close">✕</button>
-    <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Resources</a><a href="/membership">Membership</a><a href="/community">Community</a>
+  </header>
+  <div id="hp-menu" class="hp-drawer" popover>
+    <button type="button" popovertarget="hp-menu" popovertargetaction="hide" aria-label="Close menu">Close</button>
+    <nav aria-label="Mobile">
+      <a href="/learn">Learn</a><a href="/shop">Shop</a><a href="/resources">Free resources</a><a href="/membership">Membership</a><a class="cta" href="/community">Community</a>
+    </nav>
   </div>
 
-  <!-- HERO -->
-  <section class="h-hero">
-    <div class="in">
-      <a class="k" href="/">The Digital Income Edit™</a>
-      <h1>Build the whole business <em>before anyone knows your name.</em></h1>
-      <p class="sub">I built this one faceless — the site you're standing on, the classroom behind it, the funnels underneath it. Offer first. Funnel second. Automation third. Audience last.</p>
-      <div class="h-cta">
-        <a class="btn" href="/learn">Start the build <span class="a">→</span></a>
-        <a class="btn quiet" href="/shop/weekend-ecosystem">See how this site was built</a>
-      </div>
-    </div>
-    <div class="bg"></div>
-  </section>
-
-  <!-- PROOF -->
-  <section class="sec">
-    <div class="sec-head">
-      <div class="k">The proof isn't a screenshot</div>
-      <h2>You're inside the case study</h2>
-      <p>Every guide in this library started life as a lesson inside a Skool classroom. The emails send themselves. The offers route themselves. One woman, no face on camera, AI doing the heavy building. Most people tell you what worked for them. I built mine where you can walk through it.</p>
-    </div>
-    <div style="text-align:center">
-      <a class="btn" href="/learn">Walk the machine <span class="a">→</span></a>
-    </div>
-  </section>
-
-  <!-- START HERE -->
-  <!-- WEEKEND ECOSYSTEM -->
-  <section class="we-band">
-    <a class="we-band-in" href="/shop/weekend-ecosystem">
-      <div class="we-band-img">
-        <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem — your website and blog, built from what you already have." loading="lazy" width="1200" height="1490" />
-      </div>
-      <div class="we-band-txt">
-        <div class="we-band-row">
-          <span class="we-band-badge">New</span>
-          <span class="we-band-k" style="margin:0">Open now</span>
+  <main>
+    <!-- HERO -->
+    <section class="hx" aria-labelledby="hero-h">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kick">The AI-built faceless business</p>
+          <h1 id="hero-h">Build the whole business <span class="pk">before anyone knows your name.</span></h1>
+          <p class="hp-lede"><strong>Offer first, funnel second, automation third, audience last.</strong> AI does the building, the architecture does the selling, and your real face is never required.</p>
+          <p class="hero-proof">You are standing in the proof. I built this site, the classroom behind it and every funnel underneath it, faceless and solo, with AI.</p>
+          <div class="hero-cta">
+            <a class="pill" href="/resources/faceless-income-blueprint">Get my free Blueprint for one email <span class="ar" aria-hidden="true">→</span></a>
+            <a class="quiet" href="/weekend-ecosystem/preview">Take your free look inside, no email needed</a>
+          </div>
         </div>
-        <h2>The Weekend Ecosystem™</h2>
-        <p>You already wrote the blog posts — they're sitting in your Skool group. Over one weekend you turn everything you've already made into a real website and blog on a domain you own, with Claude doing the building. Then one prompt turns every article you publish into twenty-four finished assets across six platforms — a month of pins, posts and emails off one piece of writing. It's a live site, not a PDF: one payment, and every future update is yours.</p>
-        <span class="we-band-go">Get the course — $97 <span class="a">→</span></span>
-      </div>
-    </a>
-  </section>
-
-  <section class="sec">
-    <div class="sec-head">
-      <div class="k">Start Here</div>
-      <h2>Two free places to begin</h2>
-      <p>Both are free, both are finished, and neither asks you to decide anything yet.</p>
-    </div>
-    <div class="free-grid">
-      <div class="free-card">
-        <div class="ph" style="background-image:url(/images/library/product-faceless-blueprint-mockup.jpg)"></div>
-        <div class="bd">
-          <div class="tag">Free Guide</div>
-          <h3>The Faceless Income Blueprint™</h3>
-          <p>How to choose a niche you won't abandon, build a first product worth paying for, and turn on traffic that keeps arriving after you stop working.</p>
-          <div><a class="btn" href="/resources/faceless-income-blueprint">Download free <span class="a">→</span></a></div>
+        <div class="hero-fig">
+          <div class="hero-slab" aria-hidden="true"></div>
+          <div class="hero-frame" aria-hidden="true"></div>
+          <span class="hero-tag">The New Faceless</span>
+          <div class="hero-photo">
+            <img src="/images/home/hero-pink-knit-desk-720.webp"
+                 srcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
+                 sizes="(max-width: 900px) 78vw, 440px" width="480" height="596" fetchpriority="high" decoding="async"
+                 alt="The brand's AI persona in an oversized pink knit sweater, sipping a glitter pink iced coffee at a cream farmhouse desk, her laptop open beside sticky notes and wildflowers, an open window onto the garden behind her." />
+          </div>
+          <p class="sticker" aria-label="1,200+ members building"><span><b>1,200+</b>members building</span></p>
         </div>
       </div>
-      <div class="free-card">
-        <div class="ph" style="background-image:url(/images/library/product-starter-map-cover.png)"></div>
-        <div class="bd">
-          <div class="tag">Free Guide</div>
-          <h3>The $10/Day Traffic Machine — Starter Map</h3>
-          <p>Ten pages on buying traffic without gambling: what to spend, what to watch, and the point at which a small daily budget stops being an experiment.</p>
-          <div><a class="btn" href="/resources/starter-map">Download free <span class="a">→</span></a></div>
+    </section>
+
+    <!-- PROOF STRIP -->
+    <section class="proof" aria-label="The machine, by the numbers">
+      <div class="wrap">
+        <div class="glass proof-grid">
+          {proof.map((s) => (
+            <div class="stat"><b>{s.big}</b><span>{s.small}</span></div>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- THE LIBRARY -->
-  <section class="sec" style="padding-top:20px">
-    <div class="sec-head">
-      <div class="k">The Library</div>
-      <h2>Thirteen guides, in the order they matter</h2>
-      <p>Not a blog. A curriculum you can read from the top, or open anywhere.</p>
-    </div>
-    <div class="contents">
-      {pillars.map((p) => (
-        <a class="entry" href={`/learn/${p.slug}`} style={`--ac:${p.ac}`}>
-          <div class="no">{p.n}</div>
-          <div class="ttl"><span>{p.cat}</span>{p.title}</div>
-          <div class="rd">{p.read}</div>
-        </a>
-      ))}
-    </div>
-    <div class="sec-foot">
-      <a class="btn quiet" href="/learn">Every article in the library <span class="a">→</span></a>
-    </div>
-  </section>
-
-  <!-- SHOP -->
-  <section class="shop-band">
-    <div class="sec">
-      <div class="sec-head">
-        <div class="k">Shop the Edit</div>
-        <h2>The things worth buying</h2>
-        <p>Short, specific, and built to be used the same week you buy them.</p>
-      </div>
-      <div class="shop-grid">
-        {shop.map((s) => (
-          <div class="sh">
-            {s.aff && <div class="aff">Affiliate</div>}
-            <h3>{s.name}</h3>
-            <div class="price">{s.price}</div>
-            <div class="note">{s.note}</div>
-            <p>{s.copy}</p>
-            <div>
-              {s.aff
-                ? <a class="go" href={s.url} rel="sponsored nofollow" target="_blank">Shop now →</a>
-                : <a class="go" href={s.url}>Shop now →</a>}
-            </div>
+    <!-- THE METHOD -->
+    <section class="sec" id="method" aria-labelledby="method-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kick">The signature method</p>
+          <h2 class="h2" id="method-h">Built Backwards. <span class="pk">Four rooms, one order.</span></h2>
+          <p class="hp-lede">Most people build forwards: audience first, offer last. That is why most faceless accounts have followers and no business. This method runs the other way, and the order is not negotiable.</p>
+        </div>
+        <div class="glass method-panel">
+          <div class="method-bar">
+            <strong>The Built Backwards Method</strong>
+            <span>Sequence locked · 01 → 04</span>
           </div>
-        ))}
-      </div>
-      <p class="disclose">
-        Products marked <strong>Affiliate</strong> aren't mine. I recommend them because I use them, and I earn a commission if you buy — at no extra cost to you. Prices on those are set by their owners and can change without notice.
-      </p>
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP -->
-  <section class="mem">
-    <div class="sec">
-      <div class="sec-head">
-        <div class="k">The Membership</div>
-        <h2>Where the work actually gets done</h2>
-        <p>The library teaches you the thinking. This is the room where you build it — with the templates, the prompts, the classroom, and other women shipping the same week you are.</p>
-      </div>
-
-      <div class="tiers">
-        <aside class="tier-fig">
-          <div class="tf-frame">
-            <img src="/images/membership-jodie.webp" alt="Building the business from a kitchen counter"
-                 width="460" height="552" loading="lazy" decoding="async" />
-          </div>
-          <div class="tf-cap">
-            <span class="tf-rule"></span>
-            <p class="tf-q">One woman. One laptop.<br />The entire machine.</p>
-            <p class="tf-s">xoxo, Jodie</p>
-          </div>
-        </aside>
-
-        {tiers.map((t) => (
-          <div class={"tier" + (t.feature ? " feat" : "") + (t.invert ? " inv" : "")}>
-            <div class="flag">{t.flag}</div>
-            <div class="nm">{t.name}</div>
-            <div class="pr">{t.price}<em>{t.per}</em></div>
-            <div class="ln">{t.line}</div>
-            {t.inherit && <p class="inh">{t.inherit}<em>, and then</em></p>}
-            {t.groups.map((g) => (
-              <div class="tg">
-                <p class="tgl">{g.label}</p>
-                <ul>
-                  {g.items.map((i) => <li>{i}</li>)}
-                </ul>
-              </div>
+          <ol class="steps">
+            {method.map((m, i) => (
+              <li class="step">
+                <span class="num" aria-hidden="true">{m.n}</span>
+                <p class="ord">{["First", "Second", "Third", "Last"][i]}</p>
+                <h3>{m.name}</h3>
+                <p>{m.line}</p>
+                <p class="out">{m.out}</p>
+              </li>
             ))}
-            <a class="btn" href={t.href}>{t.cta} <span class="a">→</span></a>
+          </ol>
+          <div class="method-foot">
+            <p class="tagline">Build Your Business Backwards. Scale It Forward.™</p>
+            <p><strong>AI + architecture.</strong> AI is the build team. The architecture is what makes it a business.</p>
           </div>
-        ))}
+        </div>
       </div>
+    </section>
 
-      <p class="mem-note">
-        Both paid memberships bill every month and you can leave from inside the app.<br /><br />
-        Three things here have <em>vault</em> in the name and they are not the same thing. <strong>The Value Vault</strong> is the guide collection, and Premium unlocks every one of them. The <strong>Pretty &amp; Paid PLR Vault™</strong> is a separate subscription, $11 a month, that hands you finished products to resell under your own name. It is not part of either membership, and it always carries the full name.
-      </p>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS
-       Real, attributable member reviews only. Quotes live in src/we-reviews.js.
-       Nothing goes in here that a real member did not write under her own name. -->
-  <section class="tmz">
-    <div class="tmz-in">
-      <div class="k">In her own words</div>
-      <Testimonial variant="full" eyebrow="The Weekend Ecosystem™" />
-      <a class="btn" href="/shop/weekend-ecosystem">See The Weekend Ecosystem™ <span class="a">→</span></a>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="news">
-    <div class="news-in">
-      <div class="k">Every Sunday</div>
-      <h3>One idea you can act on before Monday.</h3>
-      <p>Pinterest, AI, digital products and the systems underneath them — written for women building quietly, without a personal brand to maintain.</p>
-      <div class="btnrow">
-        <a class="btn" href="https://links.thedigitalincomeedit.com/page2">Subscribe free <span class="a">→</span></a>
+    <!-- POINT OF VIEW -->
+    <section class="sec pov" aria-labelledby="pov-h">
+      <div class="wrap pov-grid">
+        <div class="pov-fig">
+          <p class="sticker" aria-label="No face required"><span><b>0</b>faces required</span></p>
+          <div class="pov-photo">
+            <img src="/images/home/founder-window-seat-640.webp"
+                 srcset="/images/home/founder-window-seat-640.webp 640w, /images/home/founder-window-seat-1000.webp 1000w"
+                 sizes="(max-width: 900px) 92vw, 520px" width="640" height="426" loading="lazy" decoding="async"
+                 alt="The brand's AI persona in a cream tee and pink sweatpants on a farmhouse window seat, laptop on her knees, a pink tumbler and lavender on the sill and open pasture outside." />
+          </div>
+          <div class="glass pov-note">
+            <p>"Faceless" was never about hiding. It is about building something that does not need you on camera to sell.</p>
+            <span>Jodie, founder</span>
+          </div>
+        </div>
+        <div>
+          <div class="sec-head">
+            <p class="kick">Point of view</p>
+            <h2 class="h2" id="pov-h">Four things I <span class="pk">refuse to teach.</span></h2>
+            <p class="hp-lede">You can find all four of these taught everywhere. You will not find them here, and the reasons are the whole method.</p>
+          </div>
+          <ol class="refuse">
+            {refusals.map((r, i) => (
+              <li>
+                <span class="x" aria-hidden="true">NO.{i + 1}</span>
+                <div>
+                  <h3><small>I don't teach</small>{r.t}</h3>
+                  <p>{r.p}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
-      <div class="fine">No spam. Leave whenever you like.</div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="foot-in">
+    <!-- WALK THE MACHINE -->
+    <section class="sec machine" id="machine" aria-labelledby="machine-h">
+      <div class="wrap">
+        <div class="sec-head c">
+          <p class="kick">Proof by inspection</p>
+          <h2 class="h2" id="machine-h">Walk the machine. <span class="pk">Every room is open.</span></h2>
+          <p class="hp-lede">Every article on this site started as a Skool lesson, and the course is delivered on the very site it teaches you to build. Open any piece and inspect it yourself.</p>
+        </div>
+        <ol class="map">
+          {machine.map((m) => (
+            <li>
+              <a class="glass node" href={m.href}>
+                <span class="top"><span class="n" aria-hidden="true">{m.n}</span><span class="room">{m.room}</span></span>
+                <h3>{m.t}</h3>
+                <p>{m.p}</p>
+                <span class="go">{m.go} <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <p class="machine-foot"><strong>Six rooms, one build.</strong> Pinterest, blogging, email and automation live inside it. None of them is the headline.</p>
+      </div>
+    </section>
+
+    <!-- TINA'S REVIEW -->
+    <section class="sec review" aria-labelledby="review-h">
+      <div class="wrap">
+        <h2 class="kick" id="review-h" style="display:flex;justify-content:center;margin-bottom:64px">In her own words</h2>
+        <figure class="glass quote">
+          <span class="mark" aria-hidden="true">“</span>
+          <p class="tag">The Weekend Ecosystem™</p>
+          <blockquote><p style="margin:0">{tina.quote}</p></blockquote>
+          <figcaption>
+            <strong>{tina.name}</strong>
+            <span class="src">Skool review · public</span>
+            <span class="stars" role="img" aria-label={`${tina.stars} out of 5 stars`}>{"★".repeat(tina.stars)}</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ONE PATH -->
+    <section class="sec" id="start" aria-labelledby="path-h">
+      <div class="wrap">
+        <div class="sec-head c">
+          <p class="kick">Your path</p>
+          <h2 class="h2" id="path-h">Start free. <span class="pk">Build it in a weekend.</span> Then join the room.</h2>
+          <p class="hp-lede">Three steps, in the order the method runs. Take the one that matches where you are today.</p>
+        </div>
+        <div class="path">
+          <article class="glass stop stop-free">
+            <span class="lvl">Step 1 · Free</span>
+            <div class="thumb">
+              <img src="/images/home/blueprint-desk-420.webp" srcset="/images/home/blueprint-desk-420.webp 420w, /images/home/blueprint-desk-720.webp 720w"
+                   sizes="(max-width: 680px) 90vw, 360px" width="420" height="560" loading="lazy" decoding="async"
+                   alt="A printed copy of The Faceless Income Blueprint on a wooden desk beside pink peonies, with a golden retriever asleep underneath." />
+            </div>
+            <h3>The Faceless Income Blueprint™</h3>
+            <p>The niche, the first product and the traffic plan, laid out in the same order this whole method runs.</p>
+            <div class="act">
+              <a class="pill" href="/resources/faceless-income-blueprint">Get my free Blueprint for one email <span class="ar" aria-hidden="true">→</span></a>
+              <a class="quiet" href="/weekend-ecosystem/preview">Or take your free look inside, no email needed</a>
+            </div>
+          </article>
+
+          <article class="stop stop-hero">
+            <p class="sticker" aria-label="22 modules"><span><b>22</b>modules</span></p>
+            <span class="lvl">Step 2 · The flagship</span>
+            <div class="we-photo">
+              <img src="/images/home/build-armchair-laptop-560.webp" srcset="/images/home/build-armchair-laptop-560.webp 560w, /images/home/build-armchair-laptop-900.webp 900w"
+                   sizes="(max-width: 1020px) 90vw, 460px" width="560" height="376" loading="lazy" decoding="async"
+                   alt="Over the shoulder of the brand's AI persona in a pink hoodie, curled in a farmhouse armchair in fuzzy socks, building on her laptop with a pink tumbler at her side." />
+            </div>
+            <h3>The Weekend Ecosystem™</h3>
+            <p class="price">$97<small>one-time</small></p>
+            <p class="plan">or 3 × $33.33 · every future update included</p>
+            <p>Over one weekend you turn what you have already written into a real website and blog on a domain you own, with Claude doing the building. Then one prompt turns every article into 24 finished assets. It is a live website, not a PDF.</p>
+            <div class="act">
+              <a class="pill white" href="/shop/weekend-ecosystem">Get my weekend build for $97 <span class="ar" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass stop stop-mem">
+            <span class="lvl">Step 3 · The room</span>
+            <h3>The membership</h3>
+            <p>Where you build it beside 1,200+ other women, with the classroom, the prompts and the templates in one place.</p>
+            <ul class="mini">
+              <li><span>Membership Standard</span><b>$9/month</b></li>
+              <li><span>Membership Premium</span><b>$35/month</b></li>
+            </ul>
+            <p style="font-size:14px;font-weight:600;color:var(--hp-pink-2);margin:0 0 16px">Both start with a 7-day free trial.</p>
+            <div class="act">
+              <a class="quiet" href="#membership">Compare your two memberships <span aria-hidden="true">↓</span></a>
+            </div>
+          </article>
+        </div>
+        <p class="path-foot"><a class="quiet" href="/shop">See everything in the shop <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section class="sec mem" id="membership" aria-labelledby="mem-h">
+      <div class="wrap">
+        <div class="sec-head c">
+          <p class="kick">The membership</p>
+          <h2 class="h2" id="mem-h">Build it <span class="pk">in the room.</span></h2>
+          <p class="hp-lede">Two memberships, both on Skool, both with seven days free before your first payment.</p>
+        </div>
+        <div class="mem-grid">
+          <p class="sticker pinkfill" aria-label="7 days free"><span><b>7</b>days free</span></p>
+          {tiers.map((t) => (
+            <article class={`glass tier ${t.key}`}>
+              <span class="badge">{t.key === "standard" ? "Standard" : "Premium"}</span>
+              <h3>{t.name}</h3>
+              <p class="pr">{t.price}<small>{t.per}</small></p>
+              <p class="alt">{t.alt}</p>
+              <p class="trial">7-day free trial</p>
+              <p class="buys">{t.buys}</p>
+              <ul>{t.items.map((i) => <li>{i}</li>)}</ul>
+              <a class="pill" href={SKOOL_PLANS}>{t.cta} <span class="ar" aria-hidden="true">→</span></a>
+            </article>
+          ))}
+        </div>
+        <p class="mem-foot"><a class="quiet" href="/membership">See every lesson in your tier <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section class="sec" aria-labelledby="lib-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kick">The library</p>
+          <h2 class="h2" id="lib-h">Thirteen guides. <span class="pk">Start with these four.</span></h2>
+          <p class="hp-lede">Each one began as a lesson inside the classroom. Read them free, in any order.</p>
+        </div>
+        <ul class="shelf">
+          {guides.map((g) => (
+            <li>
+              <a class="book" href={`/learn/${g.slug}`}>
+                <span class="cat">{g.cat}</span>
+                <h3>{g.t}</h3>
+                <span class="rd">{g.read} read <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="shelf-foot"><a class="quiet" href="/learn">Open every article in your library <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- SUNDAY LETTER -->
+    <section class="letter" aria-label="The Sunday letter">
+      <div class="wrap">
+        <div class="glass letter-card">
+          <div class="letter-photo">
+            <img src="/images/home/sunday-journal-640.webp" srcset="/images/home/sunday-journal-640.webp 640w, /images/home/sunday-journal-1100.webp 1100w"
+                 sizes="(max-width: 820px) 92vw, 460px" width="640" height="794" loading="lazy" decoding="async"
+                 alt="Hands writing in a cream journal at a sunlit desk, a pink folder, a gold pen and a small vase of blush flowers beside it." />
+          </div>
+          <div class="letter-body">
+            <p class="kick">Every Sunday</p>
+            <FreebieForm
+              heading="One idea you can build with before Monday."
+              button="Send me my Sunday letter"
+              sub="Offers, funnels, automation and the AI underneath them, written for women building quietly. Trade your email for one letter a week."
+              done="You're in. Your first Sunday letter is on its way." />
+            <p class="letter-fine">No spam. Leave whenever you like.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hp-foot">
+    <div class="wrap">
       <div>
-        <a class="foot-brand" href="/">The Digital Income <em>Edit™</em></a>
-        <div class="foot-tag">Build Your Business Backwards. Scale It Forward.™ — the AI-built faceless business, proven by this one.</div>
+        <a class="brand" href="/">The Digital Income <span>Edit™</span></a>
+        <p class="tl">Build Your Business Backwards. Scale It Forward.™</p>
       </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Learn</h2>
-        <a href="/learn">The Library</a>
-        <a href="/learn/complete-pinterest-marketing-guide">Pinterest</a>
-        <a href="/learn/ultimate-guide-to-ai">AI</a>
-        <a href="/learn/digital-products-guide">Digital Products</a>
+      <div>
+        <h2>Learn</h2>
+        <nav aria-label="Learn"><a href="/learn">The Library</a><a href="/resources">Free Resources</a><a href="/newsletter">Newsletter</a></nav>
       </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Explore</h2>
-        <a href="/shop">Shop</a>
-        <a href="/resources">Free Resources</a>
-        <a href="/membership">Membership</a>
-        <a href="/work-with-me">Work With Me</a>
-        <a href="/about">About</a>
+      <div>
+        <h2>Build</h2>
+        <nav aria-label="Build"><a href="/shop">Shop</a><a href="/membership">Membership</a><a href="/community">Community</a></nav>
       </div>
-      <div class="foot-col">
-        <h2 class="foot-h">Connect</h2>
-        <a href="/community">Community</a>
-        <a href="/newsletter">Newsletter</a>
-        <a href="https://pinterest.com/TheDigitalIncomeEditTDIE">Pinterest</a>
-        <a href="https://instagram.com/the.faceless.homestead.mama">Instagram</a>
+      <div>
+        <h2>Connect</h2>
+        <nav aria-label="Connect"><a href="/about">About</a><a href="/work-with-me">Work With Me</a><a href="https://pinterest.com/TheDigitalIncomeEditTDIE">Pinterest</a><a href="https://instagram.com/the.faceless.homestead.mama">Instagram</a></nav>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 The Digital Income Edit™</span>
-      <span>Curated with intention.</span>
+    <div class="hp-foot-bar">
+      <div class="wrap">
+        <span>© 2026 The Digital Income Edit™</span>
+        <span>The AI-built faceless business, proven by this one.</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    document.body.classList.remove('no-js');
-    const drawer = document.getElementById('drawer');
-    document.getElementById('burger').onclick = () => drawer.classList.add('open');
-    document.getElementById('close').onclick = () => drawer.classList.remove('open');
-    drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
-  </script>
   <Analytics />
 </body>
 </html>

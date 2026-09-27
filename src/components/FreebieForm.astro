@@ -13,9 +13,11 @@
 //              correct where the form IS the delivery. On a page that already
 //              hands over the file, pass a sub that doesn't promise a delivery
 //              that isn't coming.
+//   done     - optional confirmation line shown after submit
 const DEFAULT_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/193994333796435364/subscribe";
 const DEFAULT_SUB = "Drop your email — it lands in your inbox in a minute. No spam, unsubscribe anytime.";
-const { heading = "Get the free guide", button = "Send It to Me", action = DEFAULT_ACTION, sub = DEFAULT_SUB } = Astro.props;
+const DEFAULT_DONE = "You're in. Check your inbox — it's on its way.";
+const { heading = "Get the free guide", button = "Send It to Me", action = DEFAULT_ACTION, sub = DEFAULT_SUB, done = DEFAULT_DONE } = Astro.props;
 const ACTION = action;
 // Each instance posts into its own hidden iframe (never a new tab).
 const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
@@ -39,7 +41,7 @@ const SINK = "fc-sink-" + Math.random().toString(36).slice(2, 9);
     </div>
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
-    <p class="fc-done" role="status" hidden>You're in. Check your inbox — it's on its way.</p>
+    <p class="fc-done" role="status" hidden>{done}</p>
   </form>
 </div>
 
