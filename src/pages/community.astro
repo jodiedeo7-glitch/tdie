@@ -1,88 +1,156 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import "../styles/edit.css";
+import { SKOOL_PLANS, membership, community } from "../data/facts.js";
 
-const SKOOL = "https://www.skool.com/thedigitalincomeedit";
+const { standard: S, premium: P, trialDays } = membership;
+const days = `${trialDays} days`;
 
-const room = [
-  { t: "Daily Prompts", p: "A prompt every day, written for the thing you're actually building — not a generic list you'll scroll past.", ac: "#CBB7F7" },
-  { t: "Start-here trainings", p: "The courses that turn a guide you've read into a thing that exists. Ordered, so you always know what's next.", ac: "#CF80C2" },
-  { t: "The Value Vault", p: "The guide collection, à la carte. Buy guides one at a time, unlock the lot for $49, or take Premium — where it is already unlocked.", ac: "#D4498D" },
-  { t: "Women one step ahead", p: "Not gurus. Women who solved last month what you're stuck on this month, and who are still in the room to ask.", ac: "#D62E73" },
+const title = "Join the Community on Skool";
+const description = `Inside the Skool room: daily prompts, ordered trainings and ${community.members} women building faceless businesses beside you. ${days} free.`;
+
+// What actually happens in the room. Facts already on the site, nothing new.
+const inside = [
+  { n: "01", t: "A prompt every day", p: "Daily Prompts, written for the thing you are actually building, not a generic list you will scroll past." },
+  { n: "02", t: "Trainings, in order", p: "The start-here trainings turn a guide you have read into a thing that exists. Ordered, so you always know which room is next." },
+  { n: "03", t: "A classroom inside the business it teaches", p: "The site, the funnels and the automation you build are the same ones delivering this page to you right now." },
+  { n: "04", t: "Women one step ahead", p: "Not gurus. Women who solved last month what you are stuck on this month, and who are still in the room to ask." },
 ];
 ---
-<PageLayout
-  wide
-  title="Join the Community"
-  description="Join The Digital Income Edit™ — daily AI prompts, start-here trainings, and women exactly one step ahead of you. Free for 7 days."
->
+<PageLayout bare title={title} description={description}>
+
   <section class="cm-hero">
-    <div class="page-eyebrow">The room</div>
-    <h1>Reading it is one thing.<br /><em>Building it is another.</em></h1>
-    <p class="lede">A room full of women exactly one step ahead of you — and the trainings, prompts and templates to actually do the work.</p>
-    <div class="cm-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
-    <p class="cm-microcopy">Seven days free. $9 a month after that, or leave from inside the app.</p>
+    <div class="e-wrap cm-hero-grid">
+      <div class="e-rise">
+        <p class="e-kick">The room</p>
+        <h1 class="cm-h1">Reading it is one thing. <em>Building it is another.</em></h1>
+      </div>
+      <div class="cm-hero-side e-rise e-rise-2">
+        <p class="e-lede">The Digital Income Edit™ community lives on Skool. It is where the build happens: a prompt every day, the trainings in order, and {community.members} women building the same architecture beside you.</p>
+        <div class="e-actions">
+          <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
+          <a class="e-btn e-btn--ghost" href="/membership">Compare the two memberships</a>
+        </div>
+      </div>
+    </div>
+    <figure class="cm-fig e-wrap">
+      <div class="e-figure cm-fig-img">
+        <img src="/images/pages/community-room-1100.webp"
+             srcset="/images/pages/community-room-720.webp 720w, /images/pages/community-room-1100.webp 1100w, /images/pages/community-room-1600.webp 1600w"
+             sizes="(max-width: 1200px) 100vw, 1200px" width="1600" height="1073" decoding="async" fetchpriority="high"
+             alt="A bright home office with built-in cream shelving and tall windows, a woman seen from behind working at a wooden desk" />
+      </div>
+    </figure>
   </section>
 
-  <section class="cm-block cm-thesis">
-    <h2>What's actually in there</h2>
-    <div class="cm-grid">
-      {room.map((r) => (
-        <div class="cm-card" style={`--ac:${r.ac}`}>
-          <h3>{r.t}</h3>
-          <p>{r.p}</p>
-        </div>
-      ))}
+  <section class="e-sec cm-inside" aria-labelledby="inside-h">
+    <div class="e-wrap cm-inside-grid">
+      <div class="cm-inside-head">
+        <p class="e-kick">What happens inside</p>
+        <h2 class="e-d2" id="inside-h">Four things the room does that a course <em>cannot.</em></h2>
+      </div>
+      <ol class="cm-list">
+        {inside.map((i) => (
+          <li>
+            <span class="e-num cm-n" aria-hidden="true">{i.n}</span>
+            <div>
+              <h3>{i.t}</h3>
+              <p>{i.p}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <section class="cm-block">
-    <h2>Why a room and not a course</h2>
-    <p class="cm-lead">Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
-    <p class="cm-hit">It is much harder to quit in front of people who are still going.</p>
+  <section class="e-sec e-dark cm-who" aria-labelledby="who-h">
+    <div class="e-wrap cm-who-grid">
+      <div>
+        <p class="e-kick">Who is in it</p>
+        <h2 class="cm-big" id="who-h"><span class="cm-big-n">{community.members}</span> <span class="cm-big-l">women, building.</span></h2>
+      </div>
+      <div class="cm-who-copy">
+        <p>Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
+        <p class="cm-pull">It is much harder to quit in front of people who are still going.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="cm-block cm-close">
-    <h2>Seven days, free</h2>
-    <p class="cm-sublead">Come in, look around, use the prompts, take a training. If it isn't for you, leave from inside the app before the week is out.</p>
-    <div class="cm-cta-row"><a class="btn" href={SKOOL}>Start your free 7-day trial <span class="a">→</span></a></div>
-    <p class="cm-microcopy cm-microcopy-c">Two paid memberships, $9 and $35 a month. <a href="/membership">See what's in each →</a></p>
+  <section class="e-sec cm-ways" aria-labelledby="ways-h">
+    <div class="e-wrap">
+      <div class="cm-ways-head">
+        <p class="e-kick">Two ways in</p>
+        <h2 class="e-d2" id="ways-h">Same room, <em>two memberships.</em></h2>
+      </div>
+      <div class="cm-ways-grid">
+        <div class="cm-way">
+          <p class="cm-way-name">{S.name}</p>
+          <p class="e-price cm-way-price">{S.perMonth}</p>
+          <p>You build it by hand, with the curriculum and the room.</p>
+        </div>
+        <div class="cm-way cm-way--p">
+          <p class="cm-way-name">{P.name}</p>
+          <p class="e-price cm-way-price">{P.perMonth}</p>
+          <p>More of the content work done for you, including a content calendar written every month.</p>
+        </div>
+        <div class="cm-ways-cta">
+          <p class="e-small">Either one is free for {days}. Leave from inside the app whenever you like.</p>
+          <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
+          <a class="e-link" href="/membership">Compare the two memberships</a>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <p class="cm-back"><a href="/learn">← Back to The Library</a></p>
 
   <style>
-    .cm-hero{text-align:center;padding:10px 0 52px}
-    .cm-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
-    .cm-hero h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(40px,7.2vw,76px);line-height:1.02;letter-spacing:-2px;margin:0 0 26px;color:var(--choc)}
-    .cm-hero h1 em{font-style:italic;color:var(--pink)}
-    .cm-hero .lede{max-width:610px;margin:0 auto 34px;font-family:Newsreader,serif;font-style:italic;font-size:25px;line-height:1.5;color:var(--choc-mute)}
-    .cm-cta-row{display:flex;justify-content:center}
-    .cm-microcopy{font-size:13.5px;color:var(--taupe-deep);margin:18px 0 0}
-    .cm-microcopy-c{text-align:center}
-    .cm-microcopy a{color:var(--pink);font-weight:500}
+    .cm-hero{padding:clamp(48px,7vw,104px) 0 0}
+    .cm-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:end}
+    .cm-h1{font-size:clamp(44px,6.8vw,100px);line-height:.98;letter-spacing:-.035em;margin:0}
+    .cm-hero-side .e-lede{margin-bottom:28px}
+    .cm-fig{margin-top:clamp(48px,6vw,88px)}
+    .cm-fig-img{aspect-ratio:16/8}
+    .cm-fig-img img{object-position:center 40%}
 
-    .cm-block{padding:74px 0;border-top:1px solid rgba(43,22,27,.1)}
-    .cm-thesis{border-top:none;padding-top:0}
-    .cm-block h2{font-family:Newsreader,serif;font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 22px;letter-spacing:-1px;color:var(--choc);text-align:center}
-    .cm-lead{font-size:18.5px;line-height:1.8;max-width:640px;margin:0 auto;color:var(--choc-soft);text-align:center}
-    .cm-sublead{font-size:17px;line-height:1.72;color:var(--choc-mute);max-width:620px;margin:0 auto 32px;text-align:center}
-    .cm-hit{font-family:Newsreader,serif;font-size:26px;font-style:italic;line-height:1.55;color:var(--pink);
-            padding:24px 0 0;margin:30px auto 0;text-align:center;border-top:1px solid rgba(214,46,115,.3);max-width:560px}
+    .cm-inside-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:start}
+    .cm-inside-head{position:sticky;top:110px}
+    .cm-list{list-style:none;margin:0;padding:0}
+    .cm-list li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;padding:28px 0;border-top:1px solid var(--e-line)}
+    .cm-list li:last-child{border-bottom:1px solid var(--e-line)}
+    .cm-n{font-size:40px}
+    .cm-list h3{font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin:0 0 8px}
+    .cm-list p{margin:0;color:var(--e-ink-2);max-width:36em}
 
-    .cm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
-    .cm-card{padding:28px;border-radius:2px;
-             background:var(--white);
-             border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac)}
-    .cm-card h3{font-family:Newsreader,serif;font-weight:400;font-size:21px;margin:0 0 11px;line-height:1.2;color:var(--choc)}
-    .cm-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--choc-mute)}
+    .cm-who-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:end}
+    .cm-big{margin:0;line-height:.9}
+    .cm-big-n{display:block;font-size:clamp(88px,15vw,200px);letter-spacing:-.05em;color:var(--e-pink)}
+    .cm-big-l{display:block;font-size:var(--e-d3);letter-spacing:-.02em;color:#F6EFEA;margin-top:12px}
+    .cm-who-copy p{margin:0 0 24px;font-size:18px}
+    .cm-pull{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px)!important;line-height:1.3;letter-spacing:-.01em;color:#fff!important;padding-top:24px;border-top:1px solid rgba(200,169,106,.55);margin:0!important}
 
-    .cm-close{text-align:center}
-    .cm-back{margin-top:64px;text-align:center}
-    .cm-back a{color:var(--pink);font-weight:500}
+    .cm-ways-head{max-width:760px;margin:0 0 clamp(32px,4vw,56px)}
+    .cm-ways-grid{display:grid;grid-template-columns:1fr 1fr minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:stretch}
+    .cm-way{border-top:1px solid var(--e-ink);padding-top:20px}
+    .cm-way--p{border-top:3px solid var(--e-pink);padding-top:18px}
+    .cm-way-name{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 10px}
+    .cm-way-price{font-size:clamp(34px,3.4vw,44px);margin:0 0 12px}
+    .cm-way p:last-child{margin:0;color:var(--e-ink-2)}
+    .cm-ways-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:24px;background:var(--e-white);border:1px solid var(--e-line);border-radius:6px}
+    .cm-ways-cta .e-small{margin:0 0 4px}
 
-    @media(max-width:860px){
-      .cm-grid{grid-template-columns:1fr}
-      .cm-block{padding:54px 0}
+    @media (max-width:900px){
+      .cm-hero-grid,.cm-inside-grid,.cm-who-grid{grid-template-columns:1fr}
+      .cm-inside-head{position:static}
+      .cm-ways-grid{grid-template-columns:1fr 1fr}
+      .cm-ways-cta{grid-column:1 / -1}
+      .cm-fig-img{aspect-ratio:3/2}
+    }
+    @media (max-width:560px){
+      .cm-ways-grid{grid-template-columns:1fr}
+      .cm-list li{grid-template-columns:48px minmax(0,1fr);gap:12px}
+      .cm-n{font-size:30px}
+      .e-actions .e-btn,.cm-ways-cta .e-btn{width:100%}
+      .cm-fig{padding-left:0;padding-right:0}
+      .cm-fig-img{border-radius:0}
     }
   </style>
 </PageLayout>
