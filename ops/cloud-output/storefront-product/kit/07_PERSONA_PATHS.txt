@@ -1,0 +1,43 @@
+PERSONA PATHS
+Your setup chat picked one of these from your answer to question 4. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+
+====================================================================
+THE PERSONA PATH (pin 2 is your AI persona wearing the look)
+====================================================================
+
+You need: your persona's reference image in your folder (named in MY_RECIPE.txt), a Google Gemini account, and MY_RECIPE.txt's PERSONA WORLD line (the three or four places she lives her life, written by your setup chat).
+
+THE RULES
+P1. Identity comes from the reference image only. Never describe her face, face shape, skin, eye color, hair color, hair length or cut, body shape or age in words. Not even "same face". Words compete with the image and she drifts.
+P2. What you DO describe: how her hair is worn today (claw clip, half up with a bow), nails, every piece she's wearing, jewelry, shoes, what she's doing, where she is.
+P3. Her world, not a stock set. Every scene is one of the places in PERSONA WORLD. Never a generic luxury apartment, hotel, marble office or influencer studio. No recognizable campus, landmark, shop, sign or chain.
+P4. Faces give it away. Read the last three pin 2 formats in storefront-log.md, then pick a different one. Show her full face in at most one shot in three:
+    a mirror selfie with the phone covering her face
+    a chin-down outfit crop
+    an over-the-shoulder walk-away
+    a detail shot of hands, bag and jewelry
+    a candid full shot (shows her face, so it counts toward the one in three)
+  Use a mirror selfie only if a place in PERSONA WORLD has a mirror.
+P5. Phone-photo realism. Never studio perfect.
+P6. No words, signs, logos or labels anywhere in the photo.
+P7. Tool order: Gemini first, with the reference image attached. If Gemini is out of image credits, or the face drifts after two correction rounds, run the same prompt on Nano Banana Pro at 2K on Higgsfield with the reference attached (if your Higgsfield plan includes it).
+P8. Outfit looks only. Theme lists and roundups (home, desk, car, gifts) never use your persona: their pin 2 is the other collage format.
+
+ATTACH, IN THIS ORDER: (1) her reference image, (2) the product sheet from the recipe, Part 3 step 6.
+
+THE PROMPT (fill the brackets, keep every other word)
+Photograph of this exact woman from the attached reference image (the first image). Identity is taken only from the reference. Please make me one single very realistic lifestyle photo, not a collage or grid. I can't use the exact Amazon images, so this is a new photo. She is wearing every wearable piece in the second image, matching each one in color and detail (a beauty item or book goes in her hand or in the scene): [piece by piece: the top, the bottoms or dress, the shoes, the bag and which shoulder it's on, the jewelry, the accessory, how her hair is worn today]. Nails: [color]. Format: [mirror selfie with her phone covering her face / chin-down outfit crop / over-the-shoulder walking away / detail shot of hands, bag and jewelry / candid full shot]. Scene: [one place from PERSONA WORLD and a specific moment, for example her front hallway mirror on a Saturday morning]. Make it look like a good-quality photo taken on a phone: 26mm phone lens, natural light, realistic camera angle, real skin and fabric texture, small real-life imperfections, nothing glossy. Portrait 2:3. No lettering, no signs, no logos, no text anywhere in the frame.
+
+Corrections, same chat, two at most: say exactly what's wrong ("the bag should be the black crescent one from the second image, on her left shoulder").
+
+====================================================================
+THE NO-PERSONA PATH (flat lays and collages only)
+====================================================================
+
+No persona, no Gemini, no faces. Both pins of every look are person-free images made in Seedream 4.5 on Higgsfield:
+  Pin 1: the styled flat lay (Format A in the recipe) or the shoppable collage (Format B), alternating look to look.
+  Pin 2: the other format, on a different surface or background, with a different title.
+
+The 3-day spacing still applies: the two pins are different enough to earn their own spot, and 3 days apart they never look like a repeat.
+
+Theme lists and roundups work beautifully on this path, including home decor: the flat lay shows the pieces styled as a vignette from above, and the collage shows each one clearly.
