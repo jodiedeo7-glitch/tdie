@@ -4,7 +4,7 @@ Account-only steps left by cloud sessions. Each job adds one numbered section wi
 
 ## 1 · One-Sentence Offer tool: link from The Offer Edit's opening lesson (26 Sep 2026)
 
-Cloud session could not reach Skool (network policy blocks skool.com; no signed-in browser). Canon Decision 119.
+Cloud session could not reach Skool (network policy blocks skool.com; no signed-in browser). Canon Decision 120.
 
 1. Open https://www.skool.com/thedigitalincomeedit/classroom/c47c7df7 signed in as Jodie. Open the first lesson of The Offer Edit.
 2. Edit the lesson. At the very end of the body, add this one line as its own paragraph:

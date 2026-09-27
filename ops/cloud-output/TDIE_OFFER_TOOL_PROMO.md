@@ -1,7 +1,7 @@
 # THE ONE-SENTENCE OFFER TOOL: PROMO COPY
 
 Written 26 September 2026 for Jodie to post. Nothing here has been posted.
-Tool: https://www.thedigitalincomeedit.com/resources/one-sentence-offer (canon.json → key_pages.one_sentence_offer, Decision 119).
+Tool: https://www.thedigitalincomeedit.com/resources/one-sentence-offer (canon.json → key_pages.one_sentence_offer, Decision 120).
 
 **Sources and one gap.** Written from `ops/cloud-kit/TDIE_ONE_SENTENCE_OFFER.md` (the approved Threads and Skool voice samples), `ops/cloud-kit/TDIE_SATURDAY_OFFER_AUDIT.md` (format, slot, prompt rotation), canon §7 and the `tdie-skool-post` skill. `claude/TDIE_THREADS_SYSTEM.md`, `claude/TDIE_JODIE_THREADS_VOICE.md` and `claude/TDIE_SKOOL_POSTING_SYSTEM.md` are not in the repo, and this cloud session cannot open the Project, so both posts are matched to the approved samples above, not to those three files. Check the Threads link placement against `TDIE_THREADS_SYSTEM.md` Section 2a before posting (unverified).
 
