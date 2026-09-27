@@ -179,9 +179,9 @@ const jsonLd = {
     /* The order builds as you scroll: each word sets in from outline to solid. */
     @media (prefers-reduced-motion:no-preference){
       @supports (animation-timeline:view()) and (-webkit-text-stroke:1px black){
-        .step h3 .w{-webkit-text-stroke:1.5px currentColor;animation:set-in linear both;animation-timeline:view();animation-range:entry 30% cover 45%}
+        .step h3 .w{-webkit-text-stroke:1.5px currentColor;animation:set-in linear both;animation-timeline:var(--e-tl);animation-range:entry 30% cover 45%}
         @keyframes set-in{from{-webkit-text-fill-color:transparent;transform:translateX(-18px)}to{-webkit-text-fill-color:currentColor;transform:none}}
-        .stair::before{animation:draw linear both;animation-timeline:view();animation-range:entry 20% exit 60%;transform-origin:top}
+        .stair::before{animation:draw linear both;animation-timeline:var(--e-tl);animation-range:entry 20% exit 60%;transform-origin:top}
         @keyframes draw{from{transform:scaleY(.04)}to{transform:scaleY(1)}}
       }
     }
@@ -447,8 +447,8 @@ const jsonLd = {
         </div>
         <ul class="rooms">
           {rooms.map((r, i) => (
-            <li class="e-reveal">
-              <a class="room" href={r.href}>
+            <li>
+              <a class="room e-reveal" href={r.href}>
                 <figure class="e-artifact">
                   <div class="e-art-img">
                     <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}

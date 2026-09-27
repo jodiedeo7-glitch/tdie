@@ -23,6 +23,9 @@
   --e-w:1200px;--e-gut:clamp(16px,4vw,40px);
   --e-d1:clamp(46px,7.6vw,108px);--e-d2:clamp(36px,5.4vw,72px);--e-d3:clamp(26px,3vw,38px);
   --e-lift:0 30px 60px -34px rgba(26,20,23,.35);
+  /* Scroll timeline via a variable so the CSS minifier never folds it into the
+     animation shorthand (browsers drop the shorthand form). */
+  --e-tl:view();
 }
 
 .e-page{font-family:var(--e-sans);color:var(--e-ink);background:var(--e-cream);font-size:17px;line-height:1.65}
@@ -117,9 +120,9 @@ a:hover .e-artifact img,a:focus-visible .e-artifact img{transform:scale(1.035)}
    anyone who prefers reduced motion, simply see the finished state. */
 @media (prefers-reduced-motion:no-preference){
   @supports (animation-timeline:view()){
-    .e-reveal{animation:e-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+    .e-reveal{animation:e-reveal linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 28%}
     @keyframes e-reveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-    .e-unveil{animation:e-unveil linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+    .e-unveil{animation:e-unveil linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 35%}
     @keyframes e-unveil{from{clip-path:inset(12% 0 0 0);transform:scale(1.04)}to{clip-path:inset(0 0 0 0);transform:none}}
   }
 }
