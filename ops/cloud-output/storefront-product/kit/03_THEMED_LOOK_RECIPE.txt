@@ -28,7 +28,7 @@ R12. Never more than 14 days ahead. Never two pins within 1 hour of each other. 
 R13. AI label. If Pinterest's pin builder offers an AI-generated label, turn it on for every pin. If it doesn't, carry on and note "no AI label option" once in the log for that run.
 R14. Signed out = stop. If the Amazon SiteStripe bar is missing on a product page, I'm signed out of Amazon: stop and tell me in one line. Never ship a link without my tag. Never type a password.
 R15. No em dashes in anything you write.
-R16. Browser lock. Before opening Chrome, read browser-lock.txt. If it says "free", write "busy [task name] [YYYY-MM-DD HH:MM]" in my time zone and continue. While you hold it, rewrite that time to now after every look and at least every 20 minutes. If it says busy and that time is less than 45 minutes old, wait 10 minutes and check again, up to 6 times, then end the run and log it. If it's 45 minutes old or more, the task that wrote it has stopped: take it. Write "free" back at the end of the run, even after a failure. Never resize the Chrome window. If every tab stops taking clicks and reads (pages still load but nothing responds), wait 60 seconds and try one fresh tab; still stuck, mark finished work "built" (Part 7 step 3), write "free" and end the run.
+R16. Browser lock. The machine-readable lock is storefront-state.json. Acquire it before any browser work by claiming the lock fields for this run. A live lock is never stolen. Refresh heartbeat at least every 20 minutes and after each completed look. A lock is stale only when the stored expiry/heartbeat rules in 12_MAINTENANCE_RECIPE.txt are satisfied. Release the lock on every exit path. browser-lock.txt may remain as a human-readable compatibility view, but it is not authoritative.
 R17. Pinterest's clock. Pinterest's scheduler shows no time zone; it uses the browser's. Before the first pin of each run, read the browser's time zone in a page tab and check it matches MY_RECIPE.txt. If it doesn't, stop and tell me in one line.
 R18. Amazon, gently. Read Amazon pages as they load in the tab, like a person browsing. Never fetch or scrape Amazon pages in the background.
 
@@ -36,7 +36,7 @@ R18. Amazon, gently. Read Amazon pages as they load in the tab, like a person br
 PART 2. PICK THE LOOKS
 ====================================================================
 
-1. Read storefront-log.md and pin-drafts.md first. Leftovers (Part 7 step 4) go before anything new.
+1. Read storefront-state.json first. storefront-log.md and pin-drafts.md are human-readable/recovery views. Leftovers (Part 7 step 4) go before anything new.
 2. Look dates: the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no look in storefront-log.md (any status except "dropped"). At most 4 looks per run.
 3. Take each look from the THEME CALENDAR window that covers that look's own date. At least one look every week comes from the EVERGREEN BANK.
 4. Mix. If MY_RECIPE.txt says both clothing and home, follow its MIX. Two outfit looks never land on back-to-back days: put a theme list or roundup between them. Outfit of the Day pins don't count toward this.
@@ -99,8 +99,8 @@ PART 6. SCHEDULE AND VERIFY
 
 1. Take the browser lock (R16). Check every board is public (R11). Check Pinterest's time zone (R17).
 2. Associates-only path: never schedule a pin until its page loads (08_STOREFRONT_PATHS.txt). Open the page first.
-3. For each pin, fresh tab (R1): Pinterest > Create Pin. Paste the image into the upload box (Part 4, the capture method). Title, description, link, alt text, board, section. AI label (R13). "Publish at a later date" (move the calendar to the pin's month first: a click on next month's date from this month's view doesn't stick; read the date back): pin 1 at the pin 1 slot on the look's date, pin 2 at the pin 2 slot 3 days later (R7). Never over 14 days ahead (R12). Publish. Straight away, before the next pin, set it to "scheduled, not verified" in storefront-log.md and pin-drafts.md. Close the tab.
-4. Verify: open Pinterest's scheduled pins page (pinterest.com/<your profile name>/scheduled-pins/) in a fresh tab and read it (text, not screenshots). Find each pin by its title and time, then open that pin to confirm the board and link (the link shows only on the pin's own page). Only a pin you've seen there is "verified".
+3. For each pin, create or update its structured Pin record before publishing. Prefer the configured publishing adapter in 08_STOREFRONT_PATHS.txt: Metricool when configured, direct Pinterest API when available, otherwise the browser fallback. Store publisher, deterministic pin_id, scheduled time, board, destination link, media reference and copy in storefront-state.json. Never create a second external Pin when the state already contains an external ID.
+4. Verify through the publishing adapter. For direct Pinterest publishing, read the created Pin by external ID and confirm board, destination and media. For Metricool, confirm the scheduled-post record and its Pinterest fields. Use browser verification only when the selected adapter cannot provide the required verification. Only then mark the Pin VERIFIED in storefront-state.json.
 5. Blank twice? R2. Stop, log, end.
 
 ====================================================================
