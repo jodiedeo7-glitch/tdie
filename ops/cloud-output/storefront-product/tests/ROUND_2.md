@@ -21,3 +21,25 @@ Round 2 found three HIGH and ten MEDIUM/LOW gaps. All were fixed the same day:
 | L1 to L6 | Hands-off wording, sites to allow, pages folder, exactly-1-hour slots, status names, card label | Fixed in 01, 02, 05, 09 and the PDF |
 
 Still unverified (live app behaviour no cloud session can check): attaching a folder to a desktop chat, whether a missed scheduled run waits or is skipped, putting a captured screenshot into a page's file input, the SiteStripe clipboard capture, the Brand Closet™ course name, Pinterest's AI label option and scheduler time zone, Squarespace code blocks on the buyer's plan, and a GitHub default branch named main. The kit gives a fallback for each where one exists.
+
+
+## Continuation audit · 28 Sep 2026
+
+The prior Round 2 report is superseded where it conflicts with the corrected Amazon boundary below.
+
+### New high-severity findings
+| # | Finding | Disposition |
+|---|---|---|
+| A1 | Amazon Agent Terms now explicitly govern autonomous/semi-autonomous access to Program Content and prohibit disguising agent activity as human interaction. | Buyer Amazon browsing/SiteStripe/Idea List automation removed. |
+| A2 | Marketplace screenshots/product sheets were a hidden rights and fidelity dependency. | Replaced with written product attributes and rights-confirmed customer-owned/licensed references. |
+| A3 | Brand Closet™ automation relied on paid third-party content for commercial derivative work without documented commercial permission. | Launch hold; recipe disabled. |
+| A4 | Separate missed-run task depended on local state and was not a reliable off-computer recovery mechanism. | Removed; recovery moved into the weekly task. |
+| A5 | Customer image routing used founder-specific credits/model access. | Provider/model now stored in MY_RECIPE.txt; customer economics are the basis for setup. |
+
+### Remaining artifact gate
+The customer-facing Setup Guide source is corrected, but the committed PDF binary still contains the prior four-task/Brand Closet/Amazon-browser instructions. The binary must be regenerated/replaced before the kit is called internally consistent.
+
+### Current end-to-end architecture
+Customer product intake → downstream scheduled build → image generation → Pin copy → review/queue → scheduled publication → logs/recovery.
+
+No scheduled task is permitted to browse Amazon or operate an Amazon account.
