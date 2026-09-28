@@ -64,7 +64,7 @@ Be honest. I'll go first: too many.
 
 So I stopped.
 
-My Amazon looks go to Pinterest now without me. The look, the pieces, my links, the images, the pin, the schedule. I don't touch any of it. My computer does it while I sleep.
+My prepared Amazon product intake goes to Pinterest on a schedule. The look, the images, the pin copy, the schedule and the log are handled downstream while I sleep.
 
 And I cannot and will not gatekeep this.
 
@@ -92,8 +92,8 @@ So here's the thing I promised on Saturday.
 It's called The While-You-Sleep Storefront™, and it's my exact Amazon pin machine, handed over. You set it up once and scheduled tasks on your computer do the rest:
 
 💗 pick a look for your theme
-🛍️ find the pieces on Amazon and grab YOUR affiliate links
-📋 build your Idea List
+🛍️ use the Amazon product intake you prepared
+📋 use your destination Idea List or shop-the-look page
 📸 make the flat lay and the lifestyle photo
 ✍️ write the pin, with your #ad line
 📌 schedule it, three days apart, and log it
@@ -102,9 +102,7 @@ No more building, no more selling, no more posting.
 
 And it's search, not social. People are searching for you on Pinterest right now, for the exact look you'd pin. This puts something of yours there when they do.
 
-Wait, it gets better: the Brand Closet™ line ✨ If you're in The Brand Closet™ on Rose's $9/month tier, a second automation turns her Outfit of the Day into your own pins, Sunday to Friday nights, with your own Amazon links. Nothing of hers ever gets posted.
-
-It took me 5 minutes to set up. That's once your Amazon and Pinterest are ready, and it runs from your own computer, so it stays on with Chrome signed in.
+The machine deliberately keeps Amazon-side product selection and destination-list/page work in your hands. Once the product intake is ready, the downstream Pin work runs from your own computer on the schedule you choose.
 
 The presale price is $10 for the whole kit until Thursday at 11:59 pm Eastern. After that, the same kit is $27.
 
@@ -166,9 +164,9 @@ Tonight at 11:59 pm Eastern, The While-You-Sleep Storefront™ goes from the $10
 
 Quick recap if you missed the week:
 
-Your Amazon links, turned into Pinterest pins, built and scheduled by tasks on your own computer while you're doing literally anything else.
+Your prepared Amazon product intake, turned into Pinterest Pins by scheduled downstream tasks on your own computer while you're doing anything else.
 
-You paste one setup prompt and answer six questions. It does the rest.
+You paste one setup prompt and answer five questions. Then the scheduled downstream work follows the recipe.
 
 What you need, up front, so nobody's surprised:
 💻 a Claude plan with scheduled tasks and Claude in Chrome
@@ -196,7 +194,7 @@ You're not outside this community.
 
 Your member price is in The Value Vault 👉 [open your member price](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87)
 
-If you missed the week: it's my exact Amazon pin machine. It picks the look, finds the pieces, grabs your links, makes the images, writes and schedules the pins, and logs every single one. The Brand Closet™ line is in there too, for anyone on Rose's $9/month tier.
+If you missed the week: it's my exact Amazon pin machine. It picks the next look, uses the product intake you prepared, makes the images, writes and schedules the Pins, and logs every one. 
 
 No more building, no more selling, no more posting.
 
@@ -222,9 +220,9 @@ On the public shop it's $27. As a member of this community, the same kit is $17.
 
 [Get The While-You-Sleep Storefront™ for $17](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What's inside: the setup prompt, the themed-look recipe, The Brand Closet™ Outfit of the Day recipe (for members of Rose's community on her $9/month tier), four scheduled task prompts, the persona and no-persona paths, the Influencer and Associates-only paths, the blog half for Weekend Ecosystem™ sites, and the setup guide with two worked examples.
+What's inside: the setup prompt, the themed-look recipe, two scheduled-task prompts, the product-intake file, persona and no-persona image paths, Influencer and Associates-only destination paths, the blog half for Weekend Ecosystem™ sites, and the setup guide.
 
-What you need: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app with your computer on during runs, Amazon Associates (plus Influencer approval for Idea Lists), a Pinterest business account with public boards, and Gemini and Higgsfield accounts.
+What you need: a paid Claude plan with the required scheduled-task/browser capabilities, Claude Desktop connected when a run needs your local folder or browser, Amazon Associates or Influencer access appropriate to your path, a Pinterest business account with public boards, and an image provider that supports your selected path.
 
 Premium members get this at half price. Membership Premium is $35/month · $297/year: [see Membership Premium](https://www.skool.com/thedigitalincomeedit/plans).
 
@@ -277,7 +275,7 @@ Here's why it works on Pinterest and not on social: Pinterest is search. Nobody 
 
 What I won't do is tell you it's made me rich. It's new, and I show the machine, not screenshots. Here's the machine, from my own log: 15 looks, 15 Idea Lists, 15 shop-the-look pages, 84 tagged product links, 26 pins built. I didn't make any of them by hand.
 
-What you need before you buy, so nobody is surprised: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app on a computer that's on when the tasks run, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and Gemini and Higgsfield accounts. Setup is about 5 minutes once those are ready.
+What you need before you buy, so nobody is surprised: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app on a computer that's on when the tasks run, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and Gemini and Higgsfield accounts. Setup is designed to be short once those are ready.
 
 $10 until Thursday, 11:59 pm Eastern. Then $27.
 
@@ -296,7 +294,7 @@ Short one, because the clock is doing the talking.
 
 At 11:59 pm Eastern tonight, The While-You-Sleep Storefront™ goes up to $27. Until then it's $10. [Get it for $10 before midnight](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
-If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks do the rest. They build the looks, make the images, write and schedule the pins, and keep a log you can glance at if you ever want to pull one.
+If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer five questions about your theme, boards and storefront, and scheduled downstream tasks follow the recipe. They build the looks, make the images, write and schedule the pins, and keep a log you can glance at if you ever want to pull one.
 
 No more building. No more selling. No more posting. People are searching Pinterest for exactly what you'd pin. This puts it there.
 
@@ -388,11 +386,11 @@ Everyone's on Amazon today for the Prime deals.
 
 Most of them started with a search.
 
-My Amazon looks go to Pinterest on a schedule while I sleep. The looks, the images, the pin copy, the scheduling, the log. None of it by hand.
+My Amazon looks go to Pinterest on a schedule while I sleep. The next look, the images, the Pin copy, the scheduling and the log. The repetitive downstream work is handled for you.
 
 It's called The While-You-Sleep Storefront™ and it's $10 until Thursday night. Then $27.
 
-It took me 5 minutes to set up.
+
 
 **PINNED COMMENT (7:00 PM):** Here it is, $10 until Thursday 11:59 pm Eastern: https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront
 
@@ -431,11 +429,11 @@ Presale: $10. Your kit arrives as a one-page note with the unlock time; the full
 
 Scheduled tasks in the Claude desktop app pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
 
-You'll need: a Claude plan with scheduled tasks and Claude in Chrome; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
+You'll need: a Claude plan with scheduled tasks and Claude in Chrome; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. 
 
 **Description (from Fri 9 Oct, 9:00 am):** the same, with the second paragraph replaced by:
 
-Setup takes about 5 minutes once your accounts are ready: paste one prompt, answer six questions. Includes the setup guide with two worked examples.
+Setup is designed to be short once your accounts are ready: paste one prompt, answer five questions. Includes the setup guide.
 
 ### Private member product · title: The While-You-Sleep Storefront™ · member price
 
