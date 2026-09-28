@@ -3,23 +3,31 @@ Start here
 
 Your Amazon product choices become Pinterest pins that go out on a schedule, pointing people who are already searching for the look straight to your Idea Lists (or your own shop-the-look pages).
 
-You set it up once. After that, scheduled tasks in Claude build the downstream work: they take the products and affiliate links you provide, make the images, write the pin copy, schedule the pins and log everything. Product selection and Amazon-side actions are deliberately kept outside the automated agent path. On the Influencer path, you still create the Idea List yourself, then the machine takes over. On an Associates-only site path, you may also paste a generated page yourself. 08_STOREFRONT_PATHS.txt explains the two paths.
+You set it up once. After that, scheduled work can build the downstream work: it takes the products and affiliate links you provide, makes the images, writes the Pin copy, prepares the queue and, in the approved API path, can publish only Pins you explicitly approve. Product selection and Amazon-side actions are deliberately kept outside the automated agent path. On the Influencer path, you still create the Idea List yourself, then the machine takes over. On an Associates-only site path, you may also paste a generated page yourself. 08_STOREFRONT_PATHS.txt explains the two paths.
 
 Two things you should know before you start, because I'd rather you hear them now than find out on day three:
 
-1. Scheduled tasks are created in Claude and the schedule itself runs in Claude's service. Because this kit works with a local Storefront folder and your browser, the Claude Desktop app must be open and connected when a task needs those local resources or browser controls. The pins themselves are scheduled in Pinterest, so your computer does not need to be on when the Pin goes live.
-2. Every Pin the tasks prepare is written to your pin tab and your log before it is scheduled. You can review the queue and type PULL to remove one before it posts, or delete it yourself in Pinterest. The product keeps this existing pull-before-post workflow.
+1. Scheduled Tasks run in Claude's cloud and can use connected tools. Current Claude documentation says scheduled tasks use files saved to the Claude account and cannot simply be tied to a computer folder. The Time-Saving architecture therefore uses cloud/account state. Local folders are for backup and manual work.
+2. Every Pin is written to the queue before publication. In API mode, you must explicitly APPROVE each Pin. In native Pinterest mode, you create/schedule it yourself. PULL remains a removal/hold control, not API publication approval.
 
 WHAT'S IN THIS KIT
 
   00_START_HERE.txt                You're reading it.
   01_REQUIREMENTS.txt              What you need before you start. Read this first, honestly.
   02_SETUP_PROMPT.txt              Paste once. It interviews you and writes your own recipe and log files.
-  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks (any theme, any season).
-   06_SCHEDULED_TASK_PROMPTS.txt    The two core scheduled tasks (weekly build with recovery, pull sweep).
+  03_THEMED_LOOK_RECIPE.txt        Core themed-look workflow.
+  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Brand Closet™ path, permission-gated and not core launch.
+  05_RECOMMEND_IT_TOO.txt          Optional Brand Closet™ referral card.
+  06_SCHEDULED_TASK_PROMPTS.txt    Time-Saving scheduled tasks only.
+  07_PERSONA_PATHS.txt             Persona or person-free image paths.
   07_PERSONA_PATHS.txt             With your own AI persona, or flat lays and collages only.
-  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only.
+  08_STOREFRONT_PATHS.txt          Amazon Influencer, Associates-only and Amazon Storefront/Pinterest paths.
   09_THE_BLOG_HALF.txt             Adding a shop-the-look section to your own site.
+  10_INSTAGRAM_ADD_ON.txt          Optional Instagram add-on.
+  11_WHATS_NEXT.txt                Next steps.
+  12_OPERATION_MODES.txt            Time-Saving vs Credit-Saving.
+  13_PINTEREST_API_APPLICATION.txt Pinterest API application and demo video.
+  14_AI_PROVIDER_MATRIX.md          Current price, credits, models and Unlimited comparison.
   While-You-Sleep-Storefront-Setup-Guide.pdf   The numbered setup steps, with two real worked examples.
 
 THE ORDER
@@ -32,4 +40,4 @@ HOW LONG IT TAKES
 
 Setup is designed to be short once your accounts are ready. The recurring build is downstream of your product intake: you choose the products and create the destination list or page, then the task handles image creation, copy, scheduling and logging. That boundary is intentional.
 
-What it does NOT promise: sales. Pinterest is search. Pins get found over weeks and months, not hours, and nobody can tell you when a pin will get its first click. This kit builds and runs the machine. What people buy is up to them and Amazon.
+★ Prefer to save credits instead of saving time? Use 12_OPERATION_MODES.txt and the starred manual callouts in the recipes.\n\nWhat it does NOT promise: sales. Pinterest is search. Pins get found over weeks and months, not hours, and nobody can tell you when a pin will get its first click. This kit builds and runs the machine. What people buy is up to them and Amazon.
