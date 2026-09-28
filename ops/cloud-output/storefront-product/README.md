@@ -8,7 +8,7 @@ Cloud session, 27 Sep 2026. the themed-look Amazon-to-Pinterest workflow turned 
 |---|---|
 | `kit/` | The product the buyer gets: the core text kit, a rights-cleared product intake file, two scheduled-task templates, and the Setup Guide PDF |
 | `While-You-Sleep-Storefront-Kit.zip` | The kit, zipped (rebuilt at the finish after the link tokens are filled) |
-| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | 11-page setup guide, numbered steps, two worked examples |
+| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Authoritative generated setup guide source/output; the downloadable binary must match the current 14-page guide |
 | `pdf/While-You-Sleep-Storefront-Presale.pdf` | The one-page presale file ("You're in ...") |
 | `graphics/` | 4 launch graphics (PNG) with photo placeholders; `photos/` takes the generated photos |
 | `IMAGE_PROMPTS.md` | Full prompts for the cover and the 4 graphics |
@@ -59,3 +59,23 @@ Still true and noted: canon's Product Register rule is met by finish step 4 comi
 ## Recommend it too
 
 Referral check result: 27 Sep 2026, YES. Version A kept. Path: profile picture (top right of Skool) > Settings > Affiliates > "Your affiliate links" > The Brand Closet™ > COPY. The Brand Closet™ About page states members earn 50% recurring commissions when they refer members.
+
+
+## Continuation status
+
+### 28 Sep 2026
+The buyer architecture now has three operating modes: Time-Saving, Credit-Saving and Mixed.
+
+The Time-Saving route uses Claude Scheduled Tasks plus supported connectors/APIs, with Pinterest API Standard as the recommended publication integration after approval and an explicit APPROVE gate per Pin.
+
+The Credit-Saving route uses a lower-cost Claude or ChatGPT tier, manual image generation and native Pinterest publication/scheduling. The recipes mark manual equivalents with a starred callout rather than duplicating every instruction.
+
+Amazon product discovery, ASIN selection, Special Link creation and Idea List creation are not autonomous agent actions. Clothing can be the subject of original AI flat lays, but Amazon-hosted clothing images are not treated as a special rights exception.
+
+The Amazon Storefront + Pinterest connection is documented as an additional eligible-creator convenience path, not a replacement for Idea Lists.
+
+The Brand Closet OOTD content does exist daily. Its automation is permission-gated because the issue is commercial use of paid member content, not daily availability.
+
+The Pinterest API application and required demo-video process are now part of the customer kit. Pre-approval browser automation is documented only as a founder warning/survivor-bias note, not as a customer method.
+
+The current image provider matrix distinguishes plan price, credits, model access, manual Unlimited benefits, and connector/MCP credit consumption.
