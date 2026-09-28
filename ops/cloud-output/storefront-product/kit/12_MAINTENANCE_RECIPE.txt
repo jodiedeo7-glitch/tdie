@@ -1,0 +1,43 @@
+# 12_MAINTENANCE_RECIPE.txt
+
+PURPOSE
+This is the single recovery/reconciliation recipe for The While-You-Sleep Storefront™. It owns verification, retries, PULL requests, stale-lock handling and incomplete-work reconciliation. It does not create a second production schedule.
+
+AUTHORITATIVE STATE
+Read storefront-state.json first. It is authoritative. Human-readable files are views/recovery aids only.
+
+STATE MODEL
+- Look IDs and lesson IDs are deterministic.
+- Every Pin has a deterministic pin_id.
+- A Pin record stores: pin_id, look_id/lesson_id, publisher, external_id, status, scheduled_at, board, destination_url, media_ref, title, description, alt_text, created_at, verified_at, pulled_at and last_error.
+- Destination-page state stores page_url, page_status and page_verified_at.
+- Valid Pin statuses are READY, PUBLISHING, SCHEDULED, VERIFIED, PULL_REQUESTED, PULLED, FAILED and ACTION_REQUIRED.
+- A live external_id is authoritative for an already-created external object. Never create another external object for that pin_id while one exists.
+
+LOCK
+Before browser work, acquire the lock in storefront-state.json. Never steal a live lock. Refresh heartbeat at least every 20 minutes and after each completed look. Release the lock on every exit path. A stale lock may be reclaimed only when its recorded expiry/heartbeat rules permit it. browser-lock.txt may be updated as a human-readable compatibility view but is never authoritative.
+
+RECONCILIATION
+1. Read state and identify actionable records.
+2. For SCHEDULED/PUBLISHING records with external_id, verify through the recorded publisher. If verified, set VERIFIED. If missing, retry verification; do not create a second object.
+3. For PULL_REQUESTED records, use publisher + external_id. Delete/cancel through that publisher when supported. If the object is already absent, mark PULLED.
+4. For FAILED records, retry only operations explicitly marked retryable and within the configured retry limit. Preserve the existing deterministic ID.
+5. For Associates-only records, require page_status=VERIFIED before any Pin may be published.
+6. For READY records with a verified destination and no external_id, hand them back to the production recipe for publishing. Maintenance must not invent content or schedule new production cycles.
+7. Synchronize storefront-log.md and pin-tab.md from state after reconciliation.
+8. If no actionable records exist, do not open Chrome.
+
+IDEMPOTENCY
+Before every external create operation, look up the deterministic pin_id in storefront-state.json. If external_id exists, verify/update rather than create. If state says PUBLISHING without an external_id, verify the publisher for an existing object using the available idempotency key or stored request/reference before retrying. If that cannot be established safely, mark ACTION_REQUIRED rather than guessing.
+
+PAGE GATE
+A Pin may enter PUBLISHING only when its destination page is verified. If the URL cannot be opened and verified, keep the Pin READY or ACTION_REQUIRED.
+
+REPORTING
+Report only actionable changes or required customer action. Do not generate a report when there is nothing to reconcile.
+
+BROWSER FALLBACK
+Use browser automation only when the selected publisher cannot perform the operation or verification. If browser interaction cannot be verified, leave the state retryable/action-required.
+
+NO PASSWORDS
+Never write passwords, session tokens or private credentials into storefront files.
