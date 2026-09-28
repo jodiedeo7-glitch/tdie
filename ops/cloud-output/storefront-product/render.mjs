@@ -167,41 +167,42 @@ guide.push(`<section class="pg" style="padding:0">
 guide.push(`<section class="pg">${top(2)}
   <div class="kicker">What you're holding</div>
   <h2>A machine that makes pins <em>while you sleep.</em></h2>
-  <p class="lede">You set it up once. After that, scheduled tasks in the Claude desktop app do the work, on a timetable you pick.</p>
+  <p class="lede">You prepare the products and destination. The scheduled workflow handles the repetitive image, copy, Pinterest and logging work after that.</p>
   <div class="flow">
-    <div class="card"><b>Amazon</b><small>5 to 8 pieces per look, each with your own affiliate link</small></div>
+    <div class="card"><b>Your products</b><small>5 to 8 pieces per look, with your own Amazon Special Links</small></div>
     <div class="arrow">&rarr;</div>
-    <div class="card"><b>Pinterest</b><small>two pins per look, 3 days apart, with your #ad line</small></div>
+    <div class="card"><b>The machine</b><small>images, Pin copy, queue, scheduling and recovery</small></div>
     <div class="arrow">&rarr;</div>
-    <div class="card"><b>Your list</b><small>an Idea List, or a shop-the-look page on your own site</small></div>
+    <div class="card"><b>Pinterest</b><small>two Pins per look, 3 days apart, with your review/PULL control</small></div>
   </div>
   <div class="grid2">
-    <div class="card"><h3>The content engine</h3>
-      <p>On schedule it takes the next ready look from your calendar and PRODUCT_SOURCES.md, makes the images, writes the Pin copy, schedules both Pins and logs everything.</p></div>
-    <div class="hotcard"><h3>The review and recovery layer</h3>
-      <p>Every Pin is logged before it is treated as verified. You can type PULL before it posts, and incomplete work is picked up as leftover work on the next eligible run.</p></div>
+    <div class="card"><h3>What you do</h3>
+      <p>Choose the products, create the Amazon destination you want the Pins to point to, and put the required fields into PRODUCT_SOURCES.md. The automated workflow does not browse Amazon or operate your Amazon account.</p></div>
+    <div class="hotcard"><h3>What runs</h3>
+      <p>The scheduled workflow turns ready product rows into new styling images, Pin copy, scheduled Pins and state/log records. A second task handles your PULL requests and leftovers.</p></div>
   </div>
-  <div class="call"><p><strong>The honest part.</strong> The schedule itself runs in Claude, but this workflow uses your local Storefront folder and browser, so Claude Desktop must be open and connected when a run needs those resources. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
-  <div class="call" style="background:rgba(200,169,106,.12);border-left-color:var(--gold)"><p><strong>What it doesn't promise:</strong> sales. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></div>
+  <div class="call"><p><strong>The honest part.</strong> The schedule runs in Claude. Local files and browser actions require Claude Desktop to be open and connected. Pinterest publishes the scheduled Pins even when your computer is off.</p></div>
+  <div class="call" style="background:rgba(200,169,106,.12);border-left-color:var(--gold)"><p><strong>What it doesn't promise:</strong> sales, Amazon approval, Pinterest approval, or permanent access to any model or platform feature.</p></div>
   ${foot()}
-</section>`);
+</section>);
 
 // 3 requirements
 guide.push(`<section class="pg">${top(3)}
   <div class="kicker">Step 0 &middot; before anything</div>
   <h2>What you need, <em>up front.</em></h2>
-  <p class="lede">If one of these is missing, the machine doesn't run. Get it first. Full detail is in 01_REQUIREMENTS.txt.</p>
+  <p class="lede">Get these pieces ready before you run the setup chat.</p>
   <div class="card"><ul class="ticks">
-    <li>A Claude plan with scheduled tasks and Claude in Chrome<span>Both have to be on your plan. Check claude.ai for which plans include them today.</span></li>
-    <li>The Claude desktop app, with your computer on during runs<span>Chrome open, signed in, the Claude in Chrome extension installed.</span></li>
-    <li>Amazon Associates or Influencer access appropriate to your path<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
-    <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
-    <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>An image-generation provider<span>Use the image provider and model recorded in MY_RECIPE.txt. It must support the selected image path and your current commercial-use requirements.</span></li>
-       </ul></div>
-  <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
-    ${foot()}
-</section>`);
+    <li>A paid Claude plan with Scheduled Tasks and the browser/local capabilities your path needs<span>Check your current Claude plan because features can change.</span></li>
+    <li>Claude Desktop<span>Keep it open and connected whenever the workflow needs your local Storefront folder or browser.</span></li>
+    <li>Amazon access for your path<span>Amazon Associates for the Associates-only path, or Amazon Influencer approval/storefront for the Influencer path.</span></li>
+    <li>A Pinterest business account with public production boards<span>The workflow checks boards before scheduling.</span></li>
+    <li>An image provider with commercial-use rights<span>OpenArt Plus is the current benchmark; other providers are used only when their current rights and reference workflow fit.</span></li>
+    <li>A rights-cleared persona or product reference image, if you use one<span>Use only images you own or are explicitly licensed to transform and publish commercially.</span></li>
+    <li>A backup of your Storefront folder<span>The folder contains your persistent state, drafts and logs.</span></li>
+  </ul></div>
+  <div class="call"><p><strong>You don't need</strong> Amazon browser automation, Canva, a separate missed-run task, or a website on the Influencer path.</p></div>
+  ${foot()}
+</section>);
 
 // 4 steps 1-3
 guide.push(`<section class="pg">${top(4)}
@@ -209,153 +210,127 @@ guide.push(`<section class="pg">${top(4)}
   <h2>Get your computer <em>ready.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">1</div><div class="card"><h3>Make your folder</h3>
-      <p>On your computer, make a new folder called <strong>While-You-Sleep Storefront</strong>. Unzip this kit into it, so the folder holds all twelve .txt files and this PDF. Keep it somewhere you'll find it again, like Documents.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="card"><h3>Sign in, in Chrome</h3>
-      <p>Open Chrome and sign in to <strong>Pinterest</strong> and your chosen image provider. Connect Claude Desktop to the browser as instructed by the current Claude setup. Amazon is used for your own product intake before a look is ready, not by the scheduled agent. The task never types a password.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
-      <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
-      <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
-      <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p></div></div>
+      <p>Make a folder called <strong>While-You-Sleep Storefront</strong> and unzip the kit into it. Keep the folder in one location after setup because the scheduled tasks use that path.</p></div></div>
+    <div class="step"><div class="num">2</div><div class="card"><h3>Sign in to the tools you actually use</h3>
+      <p>In Chrome, sign in to Pinterest and your chosen image provider. Keep the provider account on a plan that permits commercial use. Amazon product research and Amazon link/list creation happen in your own workflow, not in the scheduled agent.</p></div></div>
+    <div class="step"><div class="num">3</div><div class="card"><h3>Connect Claude Desktop</h3>
+      <p>Open Claude Desktop and make sure it can reach the Storefront folder. The schedule itself can run remotely, but local files and browser controls require Desktop to be open and connected.</p></div></div>
   </div>
-  ${strip(["pink-angel-halloween-costume-flatlay.jpg", "pink-bunny-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"], sticker("Made by<br>the tasks,<br>not me", "right:-10px;top:40px;transform:rotate(8deg)", true))}
+  ${strip(["pink-witch-halloween-costume-flatlay.jpg", "pink-witch-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"], sticker("Downstream<br>work,<br>automated", "right:-10px;top:40px;transform:rotate(8deg)", true))}
   ${foot()}
-</section>`);
+</section>);
 
 // 5 steps 4-5
 guide.push(`<section class="pg">${top(5)}
-  <div class="kicker">Steps 4 and 5 &middot; setup</div>
+  <div class="kicker">Steps 4 and 5 &middot; setup chat</div>
   <h2>Paste one prompt. <em>Answer five questions.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a chat with your folder attached</h3>
-      <p>Open the <strong>Claude desktop app</strong> and start a new chat. Attach your While-You-Sleep Storefront folder to it, so Claude can read the kit and write your files there. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask Claude in that chat how to attach a folder.)</p></div></div>
+      <p>Start a new Claude Desktop chat and attach the Storefront folder so the setup prompt can read and write the files it creates.</p></div></div>
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
-      <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. Claude asks you six things, one at a time, with an example each time:</p>
-      <ol><li>your theme</li><li>your boards (and it makes you check each one is public)</li><li>your storefront and your website, if you have one</li><li>whether you have an AI persona</li><li>whether you're in The Brand Closet&trade;</li><li>your time zone and when your computer is on</li></ol>
-      <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>browser-lock.txt</strong> and <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p></div></div>
+      <p>Open <strong>02_SETUP_PROMPT.txt</strong>, copy the prompt between its divider lines, and paste it into the chat. It asks, one at a time:</p>
+      <ol><li>your theme and content mix</li><li>your Pinterest boards</li><li>your Amazon path and website details, if applicable</li><li>whether you use a persona and which provider/model you will use</li><li>your time zone and computer availability</li></ol>
+      <p>It then creates your recipe, product-intake state, logs, queue file and the two core scheduled-task prompts.</p></div></div>
   </div>
-  <div class="call"><p>My own words, because people ask: it took me 5 minutes to set up. That's with Amazon, Pinterest and my image tools already signed in.</p></div>
-    ${foot()}
-</section>`);
+  <div class="call"><p>Do not enter Amazon passwords into Claude. Complete Amazon product selection and link/list setup yourself before a look is marked ready in PRODUCT_SOURCES.md.</p></div>
+  ${foot()}
+</section>);
 
 // 6 steps 6-7
 guide.push(`<section class="pg">${top(6)}
-  <div class="kicker">Steps 6 and 7 &middot; never scheduled a task? start here</div>
-  <h2>Hand it <em>the timetable.</em></h2>
+  <div class="kicker">Steps 6 and 7 &middot; schedule it</div>
+  <h2>Two tasks. <em>That's it.</em></h2>
   <div class="steps" style="margin-top:14px">
-    <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
-      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks: the weekly build and the pull sweep. Each has one line telling you exactly what to type. For each one:</p>
-      <ol><li>In the Claude desktop app, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
-      <li>Type the <strong>name</strong> from the file.</li>
-      <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
-      <li>Give it your <strong>While-You-Sleep Storefront folder</strong>.</li>
-      <li>Paste the <strong>prompt</strong>: everything between that task's two long lines.</li>
-      <li><strong>Save.</strong></li></ol>
-      <p class="small">App menus move as Claude updates. If you can't find Scheduled, ask Claude in any chat: "How do I create a scheduled task in this app?"</p></div></div>
-    <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
+    <div class="step"><div class="num">6</div><div class="card"><h3>Create the weekly build</h3>
+      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. Create the weekly themed-look task using the exact name, schedule and folder line supplied there. At 5 or more looks per week, the setup may create a second weekly build day.</p></div></div>
+    <div class="step"><div class="num">7</div><div class="card"><h3>Create the pull sweep</h3>
+      <p>Create the daily pull-sweep task at the two times in MY_RECIPE.txt. It removes Pins you mark PULL and finishes eligible leftovers. Run both tasks once by hand so access prompts are approved before relying on the schedule.</p></div></div>
   </div>
-    ${foot()}
-</section>`);
+  <div class="call"><p><strong>Important:</strong> the schedule is cloud-run. A task that needs local files or browser access still requires Claude Desktop to be open and connected at execution time.</p></div>
+  ${foot()}
+</section>);
 
 // 7 steps 8-10
 guide.push(`<section class="pg">${top(7)}
   <div class="kicker">Steps 8 to 10 &middot; living with it</div>
   <h2>Then you <em>leave it alone.</em></h2>
   <div class="steps" style="margin-top:14px">
-    <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
-      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If a run is missed, the next eligible weekly run checks the log and finishes incomplete prior work before starting new work. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
-    <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
-      <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
-    <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
-      <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
+    <div class="step"><div class="num">8</div><div class="card"><h3>Prepare product rows</h3>
+      <p>Add the products for your next looks to <strong>PRODUCT_SOURCES.md</strong>. Each row needs the ASIN, your own Special Link, plain-language attributes, the destination URL and rights status for any reference image.</p></div></div>
+    <div class="step"><div class="num">9</div><div class="card"><h3>Use the Pull control</h3>
+      <p>Every scheduled Pin is logged. Type <strong>PULL</strong> in its last column before the next sweep if you want it removed. The existing review behavior stays in place.</p></div></div>
+    <div class="step"><div class="num">10</div><div class="card"><h3>Let recovery happen</h3>
+      <p>The next weekly run checks incomplete prior work before starting new work. Stable IDs prevent the same Pin from being created twice.</p></div></div>
   </div>
   <div class="hotcard" style="margin-top:16px"><h3>What a normal week looks like</h3>
-    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the pull sweep checks for pulls and leftovers, and every morning the missed-run sweep checks nothing was skipped. Both open nothing if there's nothing to do. You get a one-line report when a run finishes.</p></div>
+    <p>You prepare product intake in batches. The weekly build creates ready Pins and schedules them. The pull sweep handles removals and leftovers. If a run stops, the next successful weekly run resumes incomplete work instead of starting duplicates.</p></div>
   ${foot()}
-</section>`);
+</section>);
 
 // 8 worked example 1
 guide.push(`<section class="pg">${top(8)}
-  <div class="kicker">Worked example 1 &middot; automation 1</div>
-  <h2>My Pink Witch <em>Halloween Costume.</em></h2>
+  <div class="kicker">Worked example 1 &middot; no-persona path</div>
+  <h2>A cozy fall <em>outfit look.</em></h2>
   <div style="display:grid;grid-template-columns:330px 1fr;gap:24px">
     <div class="pins">
       <div class="pin" style="left:0;top:0;width:200px;height:300px;transform:rotate(-3deg)"><img src="${lf("pink-witch-halloween-costume-flatlay.jpg")}"></div>
-      <div class="pin" style="left:128px;top:112px;width:200px;height:300px;transform:rotate(4deg)"><img src="${lf("pink-witch-halloween-costume-lifestyle.jpg")}"></div>
+      <div class="pin" style="left:128px;top:112px;width:200px;height:300px;transform:rotate(4deg)"><img src="${lf("pink-halloween-porch-decor-flatlay.jpg")}"></div>
       ${sticker("Pin 1<br>&rarr;<br>3 days<br>&rarr; Pin 2", "left:-6px;top:300px;transform:rotate(-8deg);width:112px;height:112px", true)}
     </div>
     <div>
-      <p class="tag">What the weekly task did</p>
+      <p class="tag">What the workflow used</p>
       <table>
-        <tr><td>Picked the look</td><td>From the Halloween window of my calendar.</td></tr>
-        <tr><td>Sourced 6 pieces</td><td>Soft pink velvet witch hat, black velvet square neck mini dress, black platform Mary Jane pumps, pale pink lace gloves, black crescent shoulder bag, gold moon and star drop earrings. Every one with my own SiteStripe link.</td></tr>
-        <tr><td>Product intake</td><td>One customer-created destination list or page, with the product rows ready in PRODUCT_SOURCES.md.</td></tr>
-        <tr><td>Pin 1</td><td>A styled flat lay made with the provider and model recorded in MY_RECIPE.txt, title set on the image: "PINK WITCH costume". Checked letter by letter.</td></tr>
-        <tr><td>Pin 2</td><td>A mirror selfie of my AI persona wearing every piece, using the selected provider and reference image, face hidden by the phone.</td></tr>
-        <tr><td>Copy and schedule</td><td>Title, 450 to 500 character description with the #ad line, alt text, AI label on. Pin 1 on the look's date, pin 2 three days later.</td></tr>
-        <tr><td>Logged and published</td><td>Written to the log and the pin tab, and a shop-the-look page added to my site and checked live.</td></tr>
+        <tr><td>Product intake</td><td>Six customer-selected products, each with an ASIN, plain-language description, compliant Special Link and destination URL.</td></tr>
+        <tr><td>Image inputs</td><td>Written attributes by default. No Amazon-hosted image or marketplace screenshot is used.</td></tr>
+        <tr><td>Pin 1</td><td>Person-free styled flat lay with the provider/model recorded in MY_RECIPE.txt.</td></tr>
+        <tr><td>Pin 2</td><td>A second person-free format on a different surface, with a different title.</td></tr>
+        <tr><td>Queue</td><td>Both Pins are written to the log and review queue before scheduling. PULL remains available.</td></tr>
+        <tr><td>Verification</td><td>The workflow verifies the scheduled Pins and records their stable IDs.</td></tr>
       </table>
     </div>
   </div>
-  <div class="call"><p>No prices anywhere, no brand names in the list or the pins, and nothing from Amazon's own photos posted: they were only the reference for new images.</p></div>
+  <div class="call"><p>Want to save credits? Generate only the Pin that needs a new image and keep the existing state for everything else.</p></div>
   ${foot()}
-</section>`);
+</section>);
 
 // 9 worked example 2
 guide.push(`<section class="pg">${top(9)}
-  <div class="kicker">Worked example 2 &middot; automation 2</div>
-  <h2>My pink color-block hoodie <em>Outfit of the Day.</em></h2>
+  <div class="kicker">Worked example 2 &middot; persona path</div>
+  <h2>Same products. <em>Different image path.</em></h2>
   <div style="display:grid;grid-template-columns:300px 1fr;gap:24px">
     <div style="position:relative;height:450px">
-      ${photo("hoodie-flatlay.jpg", "left:0;top:0;width:290px;height:435px", "50% 50%", "hoodie-flatlay.jpg (my own generated flat lay, never Rose's image)")}
+      ${photo("pink-witch-halloween-costume-lifestyle.jpg", "left:0;top:0;width:290px;height:435px", "50% 50%", "customer persona lifestyle example")}
     </div>
     <div>
-      <p class="tag">What the nightly task did</p>
+      <p class="tag">What changes</p>
       <table>
-        <tr><td>Found the lesson</td><td>A new outfit in The Brand Closet&trade; Outfit of the Day Closet course, not yet in my log.</td></tr>
-        <tr><td>Looked, didn't take</td><td>One screenshot of Rose's flat lay, for reference only. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
-        <tr><td>Skipped the Benable links</td><td>They pay their owner. Every piece was re-found on Amazon with my own SiteStripe link.</td></tr>
-        <tr><td>Built my own Idea List</td><td>My list is the pin link.</td></tr>
-        <tr><td>Made new images</td><td>A new flat lay (Seedream 4.5) and a lifestyle photo of my persona (Gemini). Rose's lifestyle prompt gave the scene idea only, with every brand and store cue stripped.</td></tr>
-        <tr><td>Scheduled</td><td>Flat lay at 4:30 pm the day after the outfit, lifestyle at 9:30 am three days later, on its own slots.</td></tr>
+        <tr><td>Reference</td><td>The customer's own persona reference image, plus only any additional rights-cleared product reference images listed in PRODUCT_SOURCES.md.</td></tr>
+        <tr><td>Generation</td><td>The provider/model named in MY_RECIPE.txt generates the lifestyle image. The workflow does not assume the founder's model access.</td></tr>
+        <tr><td>Consistency</td><td>Identity comes from the reference image. The prompt describes clothing, pose, setting and activity instead of inventing identity traits.</td></tr>
+        <tr><td>Quality gate</td><td>Check identity consistency, required products, framing, realism, no logos/text and spelling before the Pin is scheduled.</td></tr>
+        <tr><td>Cost control</td><td>If the provider is unavailable or out of credits, the Pin is held instead of silently switching to a different paid model.</td></tr>
       </table>
     </div>
   </div>
-  <div class="call"><p><strong>Where it really stands, 27 Sep 2026:</strong> the flat lay is scheduled and verified. The lifestyle pin is finished and waiting for a slot. And the board it went to was set to secret, so it reached nobody. That's why the recipe you're holding checks every board is public before the first pin. Learn from my mistake, not yours.</p></div>
+  <div class="call"><p>The customer can change providers later by updating MY_RECIPE.txt and re-testing the workflow. The product never treats your personal founder plan as a customer entitlement.</p></div>
   ${foot()}
-</section>`);
+</section>);
 
 // 10 troubleshooting
 guide.push(`<section class="pg">${top(10)}
   <div class="kicker">When something's off</div>
   <h2>What the tasks do <em>when things go wrong.</em></h2>
   <div class="grid2" style="margin-top:10px">
-    <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
-    <div class="card"><h3>You're signed out</h3><p>If a product row is missing its ASIN, Special Link or destination URL, the task skips that look and logs it as needs product intake. Finish the Amazon-side intake yourself, then the next eligible run carries on.</p></div>
-    <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
-    <div class="card"><h3>The computer was off</h3><p>The daily missed-run sweep (9:45 am) spots the missed run and runs it once, taking the same lock so two runs never overlap. Leftovers are logged and scheduled first.</p></div>
-    <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
-    <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
+    <div class="card"><h3>Product intake is incomplete</h3><p>The look is held as needs product intake. No ASIN, Special Link, destination or rights status is invented.</p></div>
+    <div class="card"><h3>Pinterest loads blank</h3><p>One fresh retry is allowed. Two consecutive blank pages stop that run. Finished work stays logged for the next sweep.</p></div>
+    <div class="card"><h3>Your board is secret</h3><p>The workflow checks production boards before scheduling and stops when a board is secret.</p></div>
+    <div class="card"><h3>Image credits run out</h3><p>The Pin is held as waiting: image provider. It is not silently moved to a different model or account.</p></div>
+    <div class="card"><h3>A Pin is duplicated</h3><p>Stable IDs are checked before creation. Existing IDs are verified instead of creating another Pin.</p></div>
+    <div class="card"><h3>You want one removed</h3><p>Type PULL in pin-tab.md. The pull sweep deletes it and updates the logs. You can also remove it directly in Pinterest.</p></div>
   </div>
-  <div class="call"><p>The one-line report after each run tells you if anything needs you, and exactly what to do.</p></div>
+  <div class="call"><p>If Claude Desktop is offline when a task needs local files or browser access, the local part waits for a later successful run. Recovery uses the persistent folder state.</p></div>
   ${foot()}
-</section>`);
-
-// 11 what's next
-guide.push(`<section class="pg">${top(11)}
-  <div class="kicker">What's next</div>
-  <h2>Add the blog half, <em>or hand it to me.</em></h2>
-  <div class="card" style="margin-top:8px"><h3>Have The Weekend Ecosystem&trade;?</h3>
-    <p>09_THE_BLOG_HALF.txt adds a shop-the-look section to your site in one paste, with every look page written for Google. My Pinterest block is on my domain only, so your pins can link to your own pages.</p>
-    <p>Don't have it? The machine runs without a site, straight to your Idea Lists. If you ever want the blog half too, <a href="${WE}">The Weekend Ecosystem&trade;</a> is $97 one-time, or 3 &times; $33.33.</p></div>
-  <div class="card" style="margin-top:16px"><h3>Recommend this kit</h3>
-    <p>Members of The Digital Income Edit&trade; earn 40% on every sale they refer, through Beacons' own affiliate feature. The four steps are in 11_WHATS_NEXT.txt.</p></div>
-  <div class="hotcard" style="margin-top:16px"><h3>Want it done for you?</h3>
-    <p>The DFY Amazon Storefront Launch is $297 for 10 themed looks: each an Idea List in your storefront plus 2 pins with your #ad disclosure, built on the same method you're holding.</p>
-    <p><a href="${DFY}" style="color:#fff">See the DFY Amazon Storefront Launch</a></p></div>
-  <div style="margin-top:34px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
-  ${foot()}
-</section>`);
+</section>);
 
 // ---------------------------------------------------------------- PRESALE PDF
 const presale = [`<section class="pg" style="padding:0">
@@ -368,7 +343,7 @@ const presale = [`<section class="pg" style="padding:0">
       <p style="font-size:21px;line-height:1.45;color:var(--ink)">Your kit unlocks <strong>${LAUNCH}</strong> at <strong>9 am ET</strong>.</p>
       <p style="font-size:21px;line-height:1.45;color:var(--ink);margin-top:10px">Use this same download link then.</p>
     </div>
-    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app, Amazon Associates, a Pinterest business account with public boards, and Gemini and Higgsfield.</p>
+    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with Scheduled Tasks, the Claude Desktop app, Amazon access for your path, a Pinterest business account, and a commercial-use image provider.</p>
     <div style="margin-top:28px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
   </div>
   ${sticker("See you<br>at 9 am", "right:70px;top:420px;transform:rotate(8deg)", true)}
