@@ -2,7 +2,7 @@ name: Friday canon audit
 
 on:
   schedule:
-    - cron: "0 8 * * 5"
+    - cron: "7 8 * * 5"
       timezone: "America/New_York"
   workflow_dispatch:
 
