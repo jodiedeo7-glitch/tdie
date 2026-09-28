@@ -49,7 +49,8 @@ const stats = [
   <section class="fd-hero">
     <a class="page-eyebrow" href="/resources">Free Guide · The Digital Income Edit™</a>
     <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
-    <p class="fd-lede">Most free guides hand you everything, which is the same as handing you nothing. This one asks eleven questions — where you are, what you want, where it stops, and what scares you — and sends you to one place. About three minutes.</p>
+    <p class="fd-lede">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters <em>now</em>.</p>
+    <p class="fd-lede fd-lede-small">Answer eleven questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step — not five more things to buy. About three minutes, and you see the answer on screen.</p>
     <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
     <div class="fd-meta"><span>11 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
   </section>
@@ -75,8 +76,9 @@ const stats = [
 
   <!-- STALLS -->
   <section class="fd-block fd-rv">
-    <h2>A faceless business stalls in exactly five places</h2>
-    <p class="fd-sub">Not fifty. Five. Tap the one that made your stomach drop.</p>
+    <span class="fd-section-kicker">Before the quiz</span>
+    <h2>Which one sounds uncomfortably familiar?</h2>
+    <p class="fd-sub">You don't need to diagnose the whole business. Find the bottleneck that's stealing your attention right now.</p>
     <div class="fd-stalls">
       {stalls.map((s) => (
         <button class="fd-stall" type="button" aria-expanded="false">
@@ -701,5 +703,14 @@ const stats = [
     .fd-door-img{box-shadow:none!important}
     .fd-stats{border-top:1px solid var(--e-ink);border-bottom:1px solid var(--e-ink)}
     @media(max-width:640px){.fd-hero h1{font-size:clamp(48px,14vw,72px)}}
+  .fd-hero{position:relative}
+  .fd-hero::after{content:"01 / ROUTING";position:absolute;right:0;top:clamp(45px,7vw,105px);font:700 10px/1 Inter,sans-serif;letter-spacing:2px;color:var(--gold-deep);writing-mode:vertical-rl}
+  .fd-hero h1{font-size:clamp(52px,6.3vw,90px);line-height:.9;max-width:11ch}
+  .fd-lede{max-width:760px}
+  .fd-lede-small{font-size:16px!important;line-height:1.65!important;max-width:650px;color:var(--choc-mute)!important;margin-top:-6px!important}
+  .fd-section-kicker{display:block;font:700 10px/1.2 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+  .fd-result{border-top-width:4px}
+  .fd-r-btn{min-height:52px;padding-inline:24px}
+  @media(max-width:640px){.fd-hero::after{display:none}.fd-hero h1{font-size:clamp(48px,12.5vw,68px)}}
 </style>
 </PageLayout>
