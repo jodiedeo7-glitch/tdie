@@ -20,6 +20,8 @@ You are my weekly themed-look build for The While-You-Sleep Storefront™. Time 
 
 READ FIRST, in this order, from the folder «FOLDER»: MY_RECIPE.txt, PRODUCT_SOURCES.md, 03_THEMED_LOOK_RECIPE.txt, 07_PERSONA_PATHS.txt, 08_STOREFRONT_PATHS.txt, storefront-log.md, pin-drafts.md, pin-tab.md, browser-lock.txt. If MY_RECIPE.txt says BLOG HALF: on, also read 09_THE_BLOG_HALF.txt. If it says INSTAGRAM: feed posts on, also read 10_INSTAGRAM_ADD_ON.txt. If any file is missing, stop and tell me which one in one line.
 
+README FIRST: PRODUCT_SOURCES.md is required. The automated task reads that file but never opens Amazon to obtain or verify product data.
+
 JOB
 1. Take the browser lock (recipe R16) and keep it fresh while you work.
 2. Check every production board in MY_RECIPE.txt is public (R11) and Pinterest's time zone (R17). If a board is secret, stop and tell me which, unless MY_RECIPE.txt marks it TEST.
@@ -82,16 +84,16 @@ Folder: «FOLDER»
 ------------------------------------------------------------------
 You are the missed-run sweep for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ».
 
-READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET MEMBER), the Runs table in storefront-log.md, browser-lock.txt, and MY_SCHEDULED_TASKS.txt (Task 1, the weekly build, and Task 2, the nightly run, already filled in with my folder, time zone and times).
+READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET MEMBER), the Runs table in storefront-log.md, browser-lock.txt, and MY_SCHEDULED_TASKS.txt (Task 1, the weekly build, and the weekly build, already filled in with my folder, time zone and times).
 
 JOB
 1. Without opening a browser, work out which runs were due since this sweep last ran:
    - the weekly build: the most recent Saturday at its RUN time (and the most recent Wednesday, at a pace of 5 or more);
    - the nightly Outfit of the Day run, if I'm a member: the most recent nightly RUN time that is already past, unless that fell on a Saturday.
-2. A run was missed if the Runs table has no row for that task that started on or after its due time. A row counts for the weekly build if its task name contains "weekly", and for the nightly run if it contains "nightly" (catch-ups and hand runs included). Anything that ran, even with a stop or a report, is not missed.
+2. A run was missed if the Runs table has no row for that task that started on or after its due time. A row counts for the weekly build if its task name contains "weekly", and for the disabled Brand Closet run if it contains "nightly" (catch-ups and hand runs included). Anything that ran, even with a stop or a report, is not missed.
 3. Nothing missed? End. Don't open Chrome. Report nothing.
 4. Something missed: read browser-lock.txt. If another task holds a fresh lock (recipe R16), wait 10 minutes and check again, up to 6 times; if it's still held, end and let tomorrow's sweep try. Otherwise take the lock with your own name.
-5. Run each missed task ONCE, in this order: the weekly build, then the nightly run. Follow that task's prompt in MY_SCHEDULED_TASKS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
+5. Run each missed task ONCE, in this order: the weekly build, then the disabled Brand Closet run. Follow that task's prompt in MY_SCHEDULED_TASKS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
 6. Write a Runs row for each ("weekly (catch-up)" or "nightly (catch-up)", date, started, finished, result) and release the lock.
 
 RULES
