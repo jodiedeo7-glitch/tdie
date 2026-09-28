@@ -18,11 +18,7 @@ WHAT YOU NEED FOR THE CORE MACHINE
    Keep the boards public for production. The task checks the board before scheduling and stops if a production board is secret.
 
 6. An image-generation provider with commercial-use rights for your use case.
-   Recommended single-provider benchmark: OpenArt Plus. Current OpenArt Plus includes commercial-use rights and access to multiple current image models through OpenArt. Use the provider's current model list and credits at the time you set up.
-   Other supported choices can be used when their current commercial rights and reference-image behavior meet the workflow:
-   - Google Gemini API on a paid tier for a lower-cost, API-first path.
-   - Higgsfield for customers who already use it. Higgsfield's MCP path uses standard credits even when the website plan has Unlimited access, so never assume website Unlimited means MCP Unlimited.
-   The kit does not assume the founder's personal plans, discounts or unlimited access.
+   Use an image-generation provider that you already have and that currently supports the required image/reference workflow with commercial-use rights for your use case. Record the exact provider and model in MY_RECIPE.txt during setup. Higgsfield is one supported route and its official MCP can connect to Claude; current Higgsfield documentation says agent generations consume account credits, so the kit never assumes that a website "Unlimited" plan makes agent/MCP generations free. Google Gemini API is another possible route when the buyer is comfortable with API setup and current commercial-use terms. The kit does not assume the founder's personal plans, discounts, free generations or unlimited access.
 
 7. A reference image only when you own it or have explicit permission/license to use it in an AI workflow and in the final commercial content.
    Do not use Amazon product images, retailer images, marketplace screenshots, paid third-party course images, or any other third-party image as an AI input unless you have the rights to do so.
