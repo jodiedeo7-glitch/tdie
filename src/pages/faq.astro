@@ -120,7 +120,10 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)
         <h2 class="e-d2" id="fq-close-h">Still stuck?</h2>
         <p class="fq-sublead">Email me and a person answers.</p>
         <p class="fq-mail"><a class="e-link" href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
-        <p class="fq-back"><a class="e-link" href="/learn"><span aria-hidden="true">←</span> Back to The Library</a></p>
+        <div class="e-actions fq-next">
+          <a class="e-btn" href="/resources/find-your-door">Find Your Door <span aria-hidden="true">→</span></a>
+          <a class="e-link" href="/shop">Browse the Shop</a>
+        </div>
       </div>
     </div>
   </section>
@@ -162,4 +165,6 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)
     .fq-close .fq-label{display:none}
   }
   @media (prefers-reduced-motion:reduce){.fq-toc a{transition:none}}
+  .fq-next{margin-top:22px;align-items:center;flex-wrap:wrap}
+  .fq-next .e-btn{min-height:52px}
 </style>
