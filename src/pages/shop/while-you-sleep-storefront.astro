@@ -282,7 +282,8 @@ const inside = [
   .ws-stat{display:block;font-family:var(--display);font-weight:600;font-size:40px;line-height:1;color:var(--pink)}
   .ws-statlab{display:block;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-mute);margin-top:8px}
 
-  .ws-price-box{background:linear-gradient(160deg,var(--white) 0%,var(--rose) 100%);border:1px solid rgba(200,169,106,.6);border-radius:20px;padding:44px;text-align:center;box-shadow:0 40px 70px -40px rgba(214,46,115,.55);max-width:640px;margin:0 auto}
+  .ws-price-box{background:var(--white);border:2px solid var(--ink);border-radius:2px;padding:44px;text-align:center;box-shadow:none;max-width:640px;margin:0 auto;position:relative}
+.ws-price-box::before{content:"THE EDIT";position:absolute;top:-1px;left:0;background:var(--ink);color:var(--white);padding:7px 10px;font:700 9px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
   .ws-price-fig{font-family:var(--display);font-weight:600;font-size:64px;line-height:1;margin-bottom:8px;color:var(--pink)}
   .ws-price-fig span{font-family:var(--sans);font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-mute)}
   .ws-price-when{font-size:15px;line-height:1.6;color:var(--choc-soft);max-width:44ch;margin:0 auto}
