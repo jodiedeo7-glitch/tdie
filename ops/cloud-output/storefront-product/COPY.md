@@ -171,8 +171,8 @@ Your Amazon links, turned into Pinterest pins, built and scheduled by tasks on y
 You paste one setup prompt and answer six questions. It does the rest.
 
 What you need, up front, so nobody's surprised:
-💻 a Claude plan with scheduled tasks and Claude in Chrome
-🖥️ the Claude desktop app, with your computer on when the tasks run
+💻 a ChatGPT plan with Scheduled Tasks and ChatGPT Work
+🖥️ the ChatGPT desktop app, with your computer on when local Work tasks run
 🛒 Amazon Associates (Influencer approval if you want Idea Lists)
 📌 a Pinterest business account
 🎨 Gemini and Higgsfield
@@ -216,7 +216,7 @@ I cannot and will not gatekeep this. So I didn't 💗
 
 Your Amazon links, turned into Pinterest pins that schedule themselves.
 
-The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
+The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Scheduled Tasks in ChatGPT Work pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
@@ -224,7 +224,7 @@ On the public shop it's $27. As a member of this community, the same kit is $17.
 
 What's inside: the setup prompt, the themed-look recipe, The Brand Closet™ Outfit of the Day recipe (for members of Rose's community on her $9/month tier), four scheduled task prompts, the persona and no-persona paths, the Influencer and Associates-only paths, the blog half for Weekend Ecosystem™ sites, and the setup guide with two worked examples.
 
-What you need: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app with your computer on during runs, Amazon Associates (plus Influencer approval for Idea Lists), a Pinterest business account with public boards, and Gemini and Higgsfield accounts.
+What you need: a ChatGPT plan with Scheduled Tasks and ChatGPT Work, the Claude desktop app with your computer on during runs, Amazon Associates (plus Influencer approval for Idea Lists), a Pinterest business account with public boards, and Gemini and Higgsfield accounts.
 
 Premium members get this at half price. Membership Premium is $35/month · $297/year: [see Membership Premium](https://www.skool.com/thedigitalincomeedit/plans).
 
@@ -248,7 +248,7 @@ Use it at the member checkout and you pay $8.50.
 
 [Open the member checkout and use PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What it is: my own Amazon pin machine. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
+What it is: my own Amazon pin machine. Scheduled Tasks in ChatGPT Work pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
 
 This code is for Premium members only. Please don't share it outside The Premium Vault.
 
@@ -277,7 +277,7 @@ Here's why it works on Pinterest and not on social: Pinterest is search. Nobody 
 
 What I won't do is tell you it's made me rich. It's new, and I show the machine, not screenshots. Here's the machine, from my own log: 15 looks, 15 Idea Lists, 15 shop-the-look pages, 84 tagged product links, 26 pins built. I didn't make any of them by hand.
 
-What you need before you buy, so nobody is surprised: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app on a computer that's on when the tasks run, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and Gemini and Higgsfield accounts. Setup is about 5 minutes once those are ready.
+What you need before you buy, so nobody is surprised: a ChatGPT plan with Scheduled Tasks and ChatGPT Work, the Claude desktop app on a computer that's on when the tasks run, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and Gemini and Higgsfield accounts. Setup is about 5 minutes once those are ready.
 
 $10 until Thursday, 11:59 pm Eastern. Then $27.
 
@@ -429,9 +429,9 @@ Your Amazon links, turned into Pinterest pins that get built and scheduled on th
 
 Presale: $10. Your kit arrives as a one-page note with the unlock time; the full kit unlocks at 9 am Eastern on Fri 9 Oct 2026 at this same download link.
 
-Scheduled tasks in the Claude desktop app pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
+Scheduled Tasks in ChatGPT Work pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
 
-You'll need: a Claude plan with scheduled tasks and Claude in Chrome; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
+You'll need: a ChatGPT plan with Scheduled Tasks and ChatGPT Work; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
 
 **Description (from Fri 9 Oct, 9:00 am):** the same, with the second paragraph replaced by:
 
