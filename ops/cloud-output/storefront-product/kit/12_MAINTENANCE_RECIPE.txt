@@ -25,7 +25,7 @@ RECONCILIATION
 5. For Associates-only records, require page_status=VERIFIED before any Pin may be published.
 6. For READY records with a verified destination and no external_id, hand them back to the production recipe for publishing. Maintenance must not invent content or schedule new production cycles.
 7. Synchronize storefront-log.md and pin-tab.md from state after reconciliation.
-8. If no actionable records exist, do not open Chrome.
+8. If no actionable records exist, do not open the browser.
 
 IDEMPOTENCY
 Before every external create operation, look up the deterministic pin_id in storefront-state.json. If external_id exists, verify/update rather than create. If state says PUBLISHING without an external_id, verify the publisher for an existing object using the available idempotency key or stored request/reference before retrying. If that cannot be established safely, mark ACTION_REQUIRED rather than guessing.
