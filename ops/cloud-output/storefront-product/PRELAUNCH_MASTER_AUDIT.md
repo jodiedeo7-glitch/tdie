@@ -269,3 +269,26 @@ Claude must:
 
 Neither audit is authoritative by default. The final master is created only after comparing both.
 
+
+
+## 2026-09-28 live verification addendum
+
+### Pinterest — verified
+- Pinterest Developer Guidelines explicitly list content-marketing tools such as Pin schedulers and dynamic creative tools as acceptable uses.
+- The same guidelines prohibit apps from automatically initiating actions without users specifically considering each action; for scheduled Pins, the user must choose each Pin to be published. Therefore the product's existing review queue is an architectural compliance control: the customer reviews the generated queue and removes unwanted Pins before the remaining selected Pins proceed.
+- Pinterest API v5 currently supports image/video Pins, product tagging on organic Pins, board/section management, and Pin GET/POST/PATCH/DELETE/SAVE.
+- Pinterest Sandbox currently supports image Pin creation and Pin/board CRUD but explicitly does not support creating video Pins. Sandbox documentation was updated September 8, 2026.
+- Pinterest Standard-access approval requires a demo video showing the OAuth authentication flow and live Pinterest integration. The user's API approval/video work must remain a pre-launch workstream.
+- Pinterest's current help documentation explicitly provides a Mark as AI-Modified toggle for content made completely or partly with AI or containing an AI-generated person. The user's procedure should enable this for every applicable AI-generated Pin.
+
+### Amazon — verified
+- Amazon's current Associates policies were updated April 14, 2026.
+- Special Links may currently be used in solicited/opted-in email, SMS and social-media direct messages, subject to the agreement, trademark/brand rules and applicable marketing law. Therefore any blanket statement that Amazon categorically prohibits affiliate links in email/SMS/DM is too broad and must be corrected.
+- Separately, Amazon's Program Content restrictions remain a distinct issue. The audit must distinguish the permitted use of Special Links from restrictions on Amazon-provided Program Content, including images/data/text.
+- Amazon requires Program Content to be used within the license scope and restricts altering Program Content. Do not assume an Amazon product image can be transformed or fed to a generative model merely because it is publicly visible.
+
+### Gemini image architecture — verified
+- Current Gemini API documentation identifies Nano Banana 2 Lite, Nano Banana 2, Nano Banana Pro, and legacy Nano Banana.
+- Google positions Nano Banana 2 as the general workhorse balancing quality, speed and cost; Nano Banana 2 Lite as the efficiency/low-cost option; Nano Banana Pro as the premium model for complex visual tasks and precise creative control.
+- Current Gemini API pricing lists Nano Banana 2 at approximately $0.067 per 1K image, $0.101 per 2K image and $0.151 per 4K image under standard paid pricing; batch pricing is lower. Nano Banana Pro is approximately $0.134 per 1K/2K image and $0.24 per 4K image under standard paid pricing.
+- The user's existing Claude-connected Gemini 10-free-generations/day workflow should therefore be benchmarked against direct Gemini API/AI Studio availability, Nano Banana 2/2 Lite, and the current Higgsfield/Nano Banana Pro and Seedream 4.5 options. No replacement should be made without quality/consistency/cost testing.
