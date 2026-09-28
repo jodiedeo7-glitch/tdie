@@ -1,12 +1,12 @@
 # The While-You-Sleep Storefront™ (working name)
 
-Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look line and The Brand Closet™ Outfit of the Day line) turned into one standalone, sellable kit, with its funnel, and an audit of Jodie's own running setup. **Nothing is published, listed or registered.** Every account step is in `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4.
+Cloud session, 27 Sep 2026. the themed-look Amazon-to-Pinterest workflow turned into one standalone, sellable kit, with its funnel, and an audit of Jodie's own running setup. **Nothing is published, listed or registered.** Every account step is in `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4.
 
 ## What's here
 
 | Path | What it is |
 |---|---|
-| `kit/` | The product the buyer gets: 12 plain-text files (four scheduled tasks) and the Setup Guide PDF |
+| `kit/` | The product the buyer gets: the core text kit, a rights-cleared product intake file, two scheduled-task templates, a launch-held Brand Closet file, and the Setup Guide PDF |
 | `While-You-Sleep-Storefront-Kit.zip` | The kit, zipped (rebuilt at the finish after the link tokens are filled) |
 | `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | 11-page setup guide, numbered steps, two worked examples |
 | `pdf/While-You-Sleep-Storefront-Presale.pdf` | The one-page presale file ("You're in ...") |
@@ -27,7 +27,20 @@ Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` 
 
 **Not in the repo (copy from the TDIE Website project):** `claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md` (its facts were supplied by Jodie on 27 Sep 2026 and are now in `kit/04`), `claude/TDIE_SKOOL_POSTING_SYSTEM.md` (its rules and four approved posts were supplied by Jodie on 27 Sep 2026; the Skool and Facebook copy is rewritten against them), and `claude/BRAND_CLOSET_PIN_LOG.md` (holds the hoodie lifestyle pin copy the audit schedules).
 
-## Founder decisions (27 Sep 2026), all applied
+## Audit continuation (28 Sep 2026)
+
+This section supersedes any older setup instructions that conflict with the current buyer architecture below.
+
+1. Amazon agent boundary: the buyer workflow no longer uses Claude/browser automation to browse Amazon, read Program Content, click SiteStripe, or create/edit Idea Lists. Amazon product selection, ASINs, Special Links and Idea Lists are handled by the buyer or an eligible approved Amazon API integration. This change follows Amazon's current Agent Terms, which require agents accessing Program Content to identify themselves and prohibit disguising agent activity as human interaction. citeturn121465search1
+2. Product-image rights: the core workflow no longer uses Amazon-hosted product images or marketplace screenshots as AI inputs. Written product attributes are the default; customer-owned/licensed reference images are permitted only when rights are confirmed.
+3. Brand Closet™ automation: launch hold. `kit/04_OUTFIT_OF_THE_DAY_RECIPE.txt` is disabled pending explicit commercial-use permission/license covering the intended derivative commercial workflow.
+4. Recovery architecture: the separate missed-run sweep was removed because it depended on the same local state it was meant to inspect. Recovery is folded into the weekly task, which resumes incomplete work using stable IDs before starting new work.
+5. Customer image stack: the buyer recipe records provider/model in MY_RECIPE.txt and never assumes founder-only Unlimited access. OpenArt Plus is the current benchmark default because its current plan includes commercial-use rights, 12,000 credits/month and OpenArt MCP; Gemini API is the lower-cost API-first benchmark; Higgsfield MCP remains an optional route with standard MCP credit charges.
+6. Pinterest queue: the existing browser-based review/pull behavior remains. Pinterest API/MCP is not made the core scheduler because current API documentation confirms Pin operations but does not establish a publish-at field, and Pinterest's developer guidance requires specific user choice for publishing workflows. The queue is therefore not silently converted to auto-publish.
+7. Associates-only path: no website-free Pinterest-only claim is made for new Associates applicants. The product continues to use the Influencer Idea List path for the no-website route and a website path for Associates-only.
+8. Email wording: removed the obsolete blanket claim that Amazon bans affiliate links in email. Current policy allows Special Links in certain solicited/opted-in communications; this product does not build email campaigns.
+
+## Founder decisions (27 Sep 2026), historical record
 
 1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
 2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
@@ -36,10 +49,10 @@ Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` 
 5. **Join line:** "Affiliate link: I earn a commission if you upgrade, at no extra cost to you." everywhere.
 6. **Vault call:** one member-pricing lesson in BOTH vaults; Premium pays half, not nothing; recorded as its own numbered decision in `CANON_ROWS_DRAFT.md`.
 7. **Canon rows first:** finish step 4, before any Beacons product.
-8. **Amazon search:** the kit reads pages as they load and never fetches in the background (recipe rule R18); the requirements page states the account risk plainly.
-9. **Missed runs:** a fourth task, the daily 9:45 am missed-run sweep, backed by a Runs table every build and nightly run writes.
-10. **Live test** in the buyer's shoes (finish step 9) gates the presale and answers every open item in `tests/ROUND_2.md`.
-11. **Pinterest API:** scheduling stays in the browser.
+8. **Amazon search:** superseded 28 Sep 2026. Customer product research and Special Link creation are outside the scheduled agent path.
+9. **Missed runs:** superseded 28 Sep 2026. Recovery is inside the weekly task; no separate missed-run task ships.
+10. **Live test:** the original round-2 findings are now being re-run against the corrected customer architecture.
+11. **Pinterest API:** remains an optional future optimization; the launch queue keeps the existing review/pull behavior.
 
 Still true and noted: canon's Product Register rule is met by finish step 4 coming before anything goes live. The Value Vault course is Open by design (Decision 95), so the $17 lesson is reachable by non-members; the $17 product itself stays hidden. Buyers' pins use Amazon's own disclosure statement; Jodie's own pins keep canon's wording.
 
