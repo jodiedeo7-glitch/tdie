@@ -167,7 +167,7 @@ guide.push(`<section class="pg" style="padding:0">
 guide.push(`<section class="pg">${top(2)}
   <div class="kicker">What you're holding</div>
   <h2>A machine that makes pins <em>while you sleep.</em></h2>
-  <p class="lede">You set it up once. After that, scheduled tasks in the Claude desktop app do the work, on a timetable you pick.</p>
+  <p class="lede">You set it up once. After that, scheduled tasks in ChatGPT Work do the work, on a timetable you pick.</p>
   <div class="flow">
     <div class="card"><b>Amazon</b><small>5 to 8 pieces per look, each with your own affiliate link</small></div>
     <div class="arrow">&rarr;</div>
@@ -192,8 +192,8 @@ guide.push(`<section class="pg">${top(3)}
   <h2>What you need, <em>up front.</em></h2>
   <p class="lede">If one of these is missing, the machine doesn't run. Get it first. Full detail is in 01_REQUIREMENTS.txt.</p>
   <div class="card"><ul class="ticks">
-    <li>A Claude plan with scheduled tasks and Claude in Chrome<span>Both have to be on your plan. Check claude.ai for which plans include them today.</span></li>
-    <li>The Claude desktop app, with your computer on during runs<span>Chrome open, signed in, the Claude in Chrome extension installed.</span></li>
+    <li>A ChatGPT plan with Scheduled Tasks and ChatGPT Work<span>Work is available on eligible paid plans; Free and Go do not include Work. Check ChatGPT for current availability.</span></li>
+    <li>The ChatGPT desktop app, with your computer on during local Work runs<span>Use ChatGPT's built-in browser for storefront web work. No separate Chrome extension is required.</span></li>
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
@@ -228,7 +228,7 @@ guide.push(`<section class="pg">${top(5)}
   <h2>Paste one prompt. <em>Answer six questions.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a chat with your folder attached</h3>
-      <p>Open the <strong>Claude desktop app</strong> and start a new chat. Attach your While-You-Sleep Storefront folder to it, so Claude can read the kit and write your files there. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask Claude in that chat how to attach a folder.)</p></div></div>
+      <p>Open the <strong>ChatGPT desktop app</strong>, switch to Work, and start a new Work chat. Open your While-You-Sleep Storefront folder so ChatGPT Work can read and write the files. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask Claude in that chat how to attach a folder.)</p></div></div>
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
       <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. Claude asks you six things, one at a time, with an example each time:</p>
       <ol><li>your theme</li><li>your boards (and it makes you check each one is public)</li><li>your storefront and your website, if you have one</li><li>whether you have an AI persona</li><li>whether you're in The Brand Closet&trade;</li><li>your time zone and when your computer is on</li></ol>
