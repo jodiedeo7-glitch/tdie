@@ -77,8 +77,8 @@ If a tab freezes, a site isn't signed in, or a control stops responding, don't s
 ====================================================================
 MAINTENANCE / RECOVERY
 Name: While-You-Sleep: maintenance
-Schedule: daily, «TIME» («TZ»).
-  Fallback: daily at «TIME».
+Schedule: daily at both maintenance times in MY_RECIPE.txt («TZ»).
+  Fallback: create two daily instances at those times.
 Folder: «FOLDER»
 ====================================================================
 
