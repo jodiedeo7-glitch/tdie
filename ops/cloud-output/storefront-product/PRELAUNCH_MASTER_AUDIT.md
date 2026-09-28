@@ -473,3 +473,83 @@ The two highest-value product simplifications to test are:
 
 Do not add Google Drive or Canva merely because they have connectors.
 
+
+
+## CONTINUATION AUDIT 2026-09-28
+
+### Scope
+Independent continuation of the pre-launch audit. Repository files were re-read on the optimized branch and current official platform documentation was checked before making the changes below. The original product branch remains untouched.
+
+### VERIFIED FINDINGS
+
+1. **Amazon Agent Terms materially change the buyer architecture.** Amazon's current Associates Program Policies, updated April 14, 2026, define agents to include autonomous or semi-autonomous software acting on a person's behalf. Agents accessing Program Content must identify themselves in HTTP requests and may not disguise agent activity by mimicking human navigation/interaction. The former buyer workflow explicitly instructed Claude to browse Amazon like a person. That method is not launch-ready under the current rules. citeturn121465search1
+
+2. **The browser should stop at the Amazon boundary.** Product selection, ASIN choice, Special Link creation and Idea List creation are now customer-side actions or optional eligible Amazon Creators API actions. The recurring agent reads a customer-controlled PRODUCT_SOURCES.md instead of operating Amazon.
+
+3. **Amazon product imagery is removed from the AI input path.** Written product attributes are the default input. Only customer-owned or explicitly licensed product reference images may be attached, with rights recorded in PRODUCT_SOURCES.md.
+
+4. **Brand Closet™ is launch-held.** The commercial derivative workflow remains disabled until explicit commercial-use permission/license is obtained and the full path is re-audited.
+
+5. **Claude scheduling is cloud-run, but local execution still needs Desktop connectivity.** The kit now describes the schedule as remotely executed by Claude while recognizing that local files and browser actions require Claude Desktop to be open and connected. This replaces the earlier "tasks run from your computer" wording.
+
+6. **Higgsfield MCP does not inherit website Unlimited.** Current Higgsfield documentation states MCP uses standard credits; Unlimited/free generations on the website do not apply to MCP/CLI. It also requires an active paid subscription and does not use an API key. Therefore customer instructions cannot assume founder-style Unlimited economics.
+
+7. **OpenArt Plus is the cleanest single-provider customer benchmark.** Current OpenArt pricing lists Plus at $34/seat/month list price ($27 currently shown promotional), 12,000 credits/month, OpenArt MCP, multiple premium image models and commercial-use rights. citeturn121465search2
+
+8. **Google Gemini API is a strong low-cost/API-first benchmark.** Current Google pricing lists Nano Banana 2 image outputs at $0.067 for 1K, $0.101 for 2K and $0.151 for 4K standard, with batch approximately half those rates. Nano Banana 2 is the current generalist workhorse; the older Gemini 2.5 Flash Image is deprecated and scheduled to shut down October 2, 2026. citeturn121465search3turn121465search7
+
+9. **OpenAI remains a benchmark, not the default.** Current GPT Image 2.5 pricing is token-based at $8 per million image input tokens and $30 per million image output tokens, so a flat per-image customer cost cannot be responsibly promised without an actual size/token estimate. citeturn121465search0
+
+10. **Pinterest API can create/delete/update Pins, but it is not yet a verified replacement for this product's queue semantics.** Existing product behavior deliberately uses a reviewable queue where a customer can pull a Pin before the scheduled publication. Do not switch to an unreviewed API publisher until Pinterest's current scheduling/consent requirements are verified for the exact app.
+
+### PROBLEMS FIXED ON THIS BRANCH
+
+- Removed Amazon browser-agent sourcing from the customer recipe.
+- Removed Amazon screenshot/product-sheet use as a required AI input.
+- Added PRODUCT_SOURCES.md as the explicit handoff/state boundary.
+- Disabled Brand Closet™ automation for launch.
+- Removed the separate missed-run sweep task and moved recovery into the weekly build.
+- Made provider/model a buyer-specific setting rather than founder routing.
+- Added stable-id language for duplicate prevention.
+- Corrected the obsolete blanket email-affiliate ban statement.
+- Updated the blog half to consume customer Special Links rather than automated SiteStripe capture.
+- Separated founder marketing-image routing from buyer workflow.
+
+### REMAINING LAUNCH BLOCKERS
+
+1. **Customer image-provider workflow must be live-tested end-to-end.** OpenArt Plus is the current benchmark, but the exact customer-facing reference-image path through the provider/MCP must be tested with the actual required inputs before it is made the only prescribed path.
+
+2. **Pinterest publication path must be live-tested with the preserved review/selection semantics.** The current browser workflow remains until the official API/connector route is demonstrated to satisfy both publication timing and the product's review behavior.
+
+3. **Associates-only website path needs a real buyer-site test.** The product should not launch on the assumption that every third-party site builder is equally automatable. The current text correctly falls back to paste-it-yourself.
+
+4. **The Setup Guide PDF is stale until regenerated from the corrected source.** The current repository PDF still contains the previous four-task/Brand Closet/Amazon-browser instructions.
+
+### HIGH-VALUE OPTIMIZATIONS
+
+- Batch product intake: customer prepares multiple looks in PRODUCT_SOURCES.md rather than making one-off decisions during each scheduled run.
+- Keep a single authoritative source row for each product so the image, Pin copy and destination all reuse the same data.
+- Preserve positive state transitions and stable IDs so partial runs resume instead of rebuilding.
+- Prefer API/connector access for non-Amazon systems only after capability and consent requirements are proven.
+- Use an internal conservative launch cadence rather than labeling any fixed Pin volume "Pinterest-safe"; Pinterest currently warns against repetitive/high-volume affiliate behavior and developer guidance emphasizes rate limits and duplicate-content controls.
+
+### OPTIONAL OPTIMIZATIONS
+
+- Test official Higgsfield MCP after documenting exact model/credit behavior for the customer's plan.
+- Test OpenArt MCP for a single-provider Claude workflow, including reference-image attachment.
+- Test eligible Amazon Storefront-to-Pinterest linking for Influencer customers as a convenience path, while keeping Idea Lists because they are already the product's validated destination model.
+- Build a future positive-approval queue if Pinterest's official API workflow permits it. This would be a separate architecture change, not a silent modification of the current negative-selection PULL queue.
+
+### THINGS THE EARLIER AUDIT DID NOT NEED TO CALL OUT
+
+- The separate missed-run task was architecturally weak because the task itself needed the local state it was supposed to inspect.
+- The old “product sheet” was not just a rights problem; it also created a hidden dependency on marketplace-page screenshots, made image fidelity depend on browser capture, and increased failure/recovery complexity.
+- The image provider should be stored in MY_RECIPE.txt because customer access and economics vary.
+- The product needs a rights state for every external reference image, not just a general "don't steal images" paragraph.
+- The customer-facing PDF must be regenerated whenever the core architecture changes, or the text kit and the downloadable guide diverge.
+
+### ARCHITECTURE DECISION
+
+**Customer setup -> customer product intake -> downstream scheduled build -> image generation -> copy -> Pinterest review/queue -> scheduled Pin -> logging**
+
+Amazon remains outside the autonomous agent boundary. The agent consumes customer-controlled product metadata and URLs. This is the launch architecture for the corrected branch.
