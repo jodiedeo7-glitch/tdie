@@ -612,3 +612,10 @@ Amazon-side product research/list creation
 -> persistent logs/recovery
 
 No launch customer path depends on autonomous Amazon browsing or unauthorized Pinterest browser automation.
+
+
+## Additional connector finding: ChatGPT image apps
+
+The current connected-app inventory includes official OpenArt and Higgsfield ChatGPT apps that can generate images from prompts and reference images. These are useful options for the Credit-Saving or Mixed customer path, but they are not the same as Claude MCP integrations and do not justify adding another mandatory connector to the product.
+
+Decision: document them as optional manual/mixed routes in 14_AI_PROVIDER_MATRIX.md; do not make them a core dependency.
