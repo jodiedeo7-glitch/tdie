@@ -1,8 +1,10 @@
-# Image prompts: cover and 4 launch graphics
+# Image prompts: founder launch assets
+
+> FOUNDER ASSET NOTE: This file is for TDIE's own launch graphics, not for customer workflow instructions. Its personal tool routing does not define the customer's required image stack.
 
 Written 27 Sep 2026 per `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md` and `TDIE_DESIGN_RULES.md`. The cloud session cannot run Gemini or Higgsfield, so every photo is prompted here in full and generated at the desktop finish (queue section 4, step 2). Until then each graphic and the PDF cover render with a clean placeholder box.
 
-Tool routing: every photo with Tommy Kate goes to **Google Gemini** first with the seed attached (`public/images/library/avatar-seed-omni-reference.png`), then Nano Banana Pro at 2K on Higgsfield if Gemini is out of credits or the face drifts. Every photo without her goes to **Seedream 4.5 on Higgsfield with Unlimited on**. Garbled or unsatisfactory results re-run on Nano Banana Pro at 2K. Never Canva. No text is generated in any of these photos: the words are set in code by `render.mjs`.
+Founder asset routing only: use the currently chosen founder image tool and available access for these marketing assets. Never copy this routing, Unlimited access, or founder-only credits into customer instructions. Garbled or unsatisfactory results re-run on Nano Banana Pro at 2K. Never Canva. No text is generated in any of these photos: the words are set in code by `render.mjs`.
 
 After generating: save each photo under the file name given, in `ops/cloud-output/storefront-product/graphics/photos/`, then run `node ops/cloud-output/storefront-product/render.mjs` from the repo root and check every output at feed and thumbnail size (face, hands, the pink object, no stray lettering).
 
