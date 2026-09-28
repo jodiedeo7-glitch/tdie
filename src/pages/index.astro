@@ -33,11 +33,11 @@ const method = [
 ];
 
 // What Jodie refuses to teach, and why. Short, because the method already said it.
-const refusals = [
-  { t: "Audience first.", p: "A year of performing for strangers, with nothing to sell them." },
-  { t: "Income screenshots.", p: "A good month proves nothing about a build. Inspect the build instead." },
-  { t: "Showing your face.", p: "Your real face is never required. The face of this brand is an AI persona." },
-  { t: "One-channel expertise.", p: "Pinterest, blogging and email are rooms inside one build, never the whole house." },
+const differences = [
+  { t: "Build the offer before the audience.", p: "Know what you're selling, who it's for and where the money comes from before you spend a year performing for strangers." },
+  { t: "Show the business, not the screenshot.", p: "The site itself is the case study. Open the pages. Inspect the funnel. Look at the actual outputs." },
+  { t: "Use AI as the build team — not the personality.", p: "AI can write, organize and build. It does not need to become the voice of your brand." },
+  { t: "Build traffic into a business.", p: "Pinterest, email, content and social are useful when they lead somewhere. They are not the destination." },
 ];
 
 // Proof by inspection. Every room is a live page, shown as it really looks.
@@ -195,7 +195,21 @@ const jsonLd = {
       .scale{grid-template-columns:40px minmax(0,1fr)}
     }
 
-    /* ============ 3 · FACELESS: the one dark moment ============ */
+    /* ============ 3 · RECOGNITION: the human pause ============ */
+    .recognition{padding:clamp(76px,10vw,150px) 0;background:var(--e-cream);border-top:1px solid rgba(26,20,23,.12);border-bottom:1px solid rgba(26,20,23,.12)}
+    .recognition-inner{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(32px,7vw,110px);align-items:start}
+    .recognition-kicker{padding-top:10px}
+    .recognition-kicker .e-kick{margin:0}
+    .recognition-copy{max-width:900px}
+    .recognition-copy h2{font-size:clamp(40px,6vw,88px);line-height:.94;letter-spacing:-.045em;margin:0 0 34px}
+    .recognition-copy h2 em{color:var(--e-pink)}
+    .recognition-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
+    .recognition-list li{padding:18px 0;border-bottom:1px solid rgba(26,20,23,.15);font-family:var(--e-serif);font-weight:600;font-size:clamp(21px,2vw,30px);line-height:1.18}
+    .recognition-list li::before{content:"“";color:var(--e-pink);margin-right:5px}
+    .recognition-note{margin:26px 0 0;font-size:15px;line-height:1.65;color:var(--e-ink-2);max-width:40em}
+    @media(max-width:760px){.recognition-inner{grid-template-columns:1fr;gap:20px}.recognition-copy h2{margin-bottom:26px}}
+
+    /* ============ 4 · FACELESS: the one dark moment ============ */
     .faceless{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);background:var(--e-ink);color:#F6EFEA}
     .faceless-photo{position:relative;margin:0;min-height:600px;overflow:hidden}
     .faceless-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
@@ -209,8 +223,8 @@ const jsonLd = {
     .faceless .e-lede{color:rgba(246,239,234,.8);margin-bottom:44px;max-width:30em}
     .refuse-h{font-family:var(--e-sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,239,234,.6);margin:0 0 8px}
     .refuse{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.22)}
-    .refuse li{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-    .refuse strong{font-family:var(--e-serif);font-weight:600;font-size:21px;line-height:1.2;color:#fff;text-decoration:line-through;text-decoration-color:var(--e-pink);text-decoration-thickness:2px}
+    .refuse li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+    .refuse strong{font-family:var(--e-serif);font-weight:600;font-size:21px;line-height:1.2;color:#fff}
     .refuse span{font-size:14.5px;line-height:1.55;color:rgba(246,239,234,.74)}
     @media(max-width:900px){
       .faceless{grid-template-columns:1fr}
@@ -415,7 +429,26 @@ const jsonLd = {
       </div>
     </section>
 
-    <!-- 3 · THE FACELESS MOMENT -->
+    <!-- 3 · THE HUMAN RECOGNITION MOMENT -->
+    <section class="recognition" aria-labelledby="recognition-h">
+      <div class="e-wrap recognition-inner">
+        <div class="recognition-kicker">
+          <p class="e-kick">If this sounds familiar</p>
+        </div>
+        <div class="recognition-copy">
+          <h2 id="recognition-h">You don't need another pile of ideas. <em>You need the next useful move.</em></h2>
+          <ul class="recognition-list">
+            <li>You've saved 47 videos about digital products and still haven't built one.</li>
+            <li>You know AI can do more, but everything you've found feels like another pile of prompts.</li>
+            <li>You don't want to become an influencer just to make money online.</li>
+            <li>You have ideas, products, content and tools — but nothing connects them.</li>
+          </ul>
+          <p class="recognition-note">TDIE starts with the part most online-business advice skips: deciding what the business actually is. Then we build the pieces around it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · THE FACELESS MOMENT -->
     <section class="faceless" aria-labelledby="faceless-h">
       <figure class="faceless-photo">
         <img class="e-unveil" src="/images/home/founder-window-seat-1000.webp"
@@ -428,9 +461,9 @@ const jsonLd = {
         <p class="e-kick">The New Faceless</p>
         <h2 id="faceless-h">Faceless doesn't mean <em>nobody's there.</em></h2>
         <p class="e-lede">It means your real face is never required. The business is built first, the brand's face is an AI persona, and everything you need to trust is on the page, open to inspect.</p>
-        <p class="refuse-h">Four things I refuse to teach</p>
+        <p class="refuse-h">What we do differently</p>
         <ul class="refuse">
-          {refusals.map((r) => <li><strong>{r.t}</strong><span>{r.p}</span></li>)}
+          {differences.map((r) => <li><strong>{r.t}</strong><span>{r.p}</span></li>)}
         </ul>
       </div>
     </section>
@@ -441,9 +474,9 @@ const jsonLd = {
         <div class="show-head">
           <div>
             <p class="e-kick">Proof by inspection</p>
-            <h2 class="e-d2" id="show-h">Walk through the build. <em>Every room is open.</em></h2>
+            <h2 class="e-d2" id="show-h">Don't take our word for it. <em>Look inside.</em></h2>
           </div>
-          <p>No income screenshots. Six exhibits from the business itself, each one a live page you can open right now. Every article on this site started as a Skool lesson, and the course is delivered on the very site it teaches you to build.</p>
+          <p>The website is the case study. These are real pages, real workflows and real outputs from the business itself. Open anything that interests you.</p>
         </div>
         <ul class="rooms">
           {rooms.map((r, i) => (
@@ -532,29 +565,29 @@ const jsonLd = {
         <div class="fit-head">
           <div>
             <p class="e-kick">Where to start</p>
-            <h2 class="e-d2" id="fit-h">Three ways in. <em>Pick the one that fits today.</em></h2>
+            <h2 class="e-d2" id="fit-h">Where are you stuck? <em>Start there.</em></h2>
           </div>
-          <p>Free if you want the plan first. {WE.price} if you want it built this weekend. The membership if you want to keep building beside other women.</p>
+          <p>You don't need to know which product you need yet. Find the part that's holding you up, then take the next useful step.</p>
         </div>
         <table class="fit">
           <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Where to start with The Digital Income Edit™</caption>
           <thead><tr><th scope="col">If you are</th><th scope="col">Start with</th><th scope="col">It costs</th><th scope="col"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Go</span></th></tr></thead>
           <tbody>
             <tr>
-              <th scope="row">New, and want the plan before anything else</th>
-              <td>The Faceless Income Blueprint™: the niche, the first product and the traffic plan, in the order this method runs. Not sure? <a href="/resources/find-your-door">Find your door</a>, free, no email.</td>
+              <th scope="row">I don't know what to sell.</th>
+              <td>Start with The Faceless Income Blueprint™ to work through the niche, first product and traffic plan. Still unsure? <a href="/resources/find-your-door">Find your door</a>, free, no email.</td>
               <td><span class="p">Free<small>download</small></span></td>
               <td><a href="/resources/faceless-income-blueprint">Get the Blueprint</a></td>
             </tr>
             <tr class="hl">
-              <th scope="row">Ready to build the site this weekend</th>
-              <td>{WE.name}: your website, blog, email capture and offer routing, built from what you already wrote.</td>
+              <th scope="row">I know what I want to sell, but nobody finds me.</th>
+              <td>Start with the method, then build the home base: {WE.name} turns what you've already written into a website, blog, email capture and offer routing.</td>
               <td><span class="p">{WE.price}<small>or {WE.plan}</small></span></td>
               <td><a href={WE.url}>Build my weekend</a></td>
             </tr>
             <tr>
-              <th scope="row">Building for the long haul, beside other women</th>
-              <td>The membership on Skool. Standard teaches the whole build. Premium writes your content month for you.</td>
+              <th scope="row">People find me, but my business isn't connected.</th>
+              <td>Use the membership to build the missing pieces around what you already have. Standard gives you the system; Premium removes more of the recurring content work.</td>
               <td><span class="p">{M.standard.perMonth}<small>Premium {M.premium.perMonth} · {M.trial}</small></span></td>
               <td><a href="#membership">Choose your room</a></td>
             </tr>
