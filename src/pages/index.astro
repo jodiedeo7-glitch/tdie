@@ -122,6 +122,76 @@ const jsonLd = {
   <style>
     body.e-page::before,body.e-page::after{display:none}
 
+    /* ============ ART DIRECTION · editorial overrides ============ */
+    .e-page{background:var(--e-cream)}
+    .cover{background:var(--e-cream);grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);min-height:calc(100vh - 58px);overflow:clip}
+    .mast{background:var(--e-cream);position:relative;z-index:3}
+    .cover-copy{position:relative;z-index:2;padding-right:clamp(24px,6vw,110px)}
+    .cover h1{font-size:clamp(58px,8.9vw,146px);max-width:8.7ch;line-height:.82}
+    .cover h1 em{margin-left:.22em}
+    .cover .e-lede{max-width:31em;font-size:clamp(17px,1.45vw,20px);line-height:1.55}
+    .cover-photo{min-height:680px;margin:clamp(30px,4vw,64px) max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut))) clamp(30px,4vw,64px) 0;box-shadow:0 0 0 1px rgba(26,20,23,.14)}
+    .cover-photo img{object-position:35% 40%;transform:scale(1.025)}
+    .cover-photo figcaption{right:auto;left:0;padding:10px 18px 10px 14px;background:var(--e-cream);border-right:1px solid rgba(26,20,23,.14);border-bottom:1px solid rgba(26,20,23,.14)}
+    .cover-meta{border-top:1px solid rgba(26,20,23,.22);padding-top:14px;margin-top:30px}
+    .cover-meta li{max-width:13em}
+    .method-head{padding-top:clamp(10px,3vw,34px)}
+    .method-head .e-d2{font-size:clamp(48px,6.2vw,94px);max-width:11ch}
+    .recognition{padding-top:clamp(100px,12vw,180px);padding-bottom:clamp(100px,12vw,180px)}
+    .recognition-copy h2{font-size:clamp(46px,6.6vw,100px);max-width:11ch}
+    .recognition-list li{padding:22px 0;font-size:clamp(22px,2.3vw,34px);max-width:30em}
+    .faceless{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+    .faceless-photo{min-height:720px}
+    .faceless-copy{padding-left:clamp(40px,7vw,120px)}
+    .faceless h2{font-size:clamp(52px,6.4vw,104px);max-width:9ch}
+    .showroom{background:var(--e-white)}
+    .show-head{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+    .show-head .e-d2{font-size:clamp(48px,6.4vw,94px);max-width:10ch}
+    .rooms{gap:clamp(42px,5vw,82px) clamp(22px,3vw,52px)}
+    .rooms li:nth-child(1){grid-column:span 4}
+    .room .e-artifact{background:var(--e-cream);padding:10px}
+    .room .e-art-img{overflow:hidden}
+    .room .e-art-img img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .room:hover .e-art-img img{transform:scale(1.025)}
+    .rooms li:nth-child(1) .room .e-art-img img{aspect-ratio:16/10}
+    .room-body{padding:20px 2px 0}
+    .rooms li:nth-child(1) .room-body h3{font-size:clamp(32px,3.4vw,48px);max-width:13ch}
+    .flag{background:var(--e-paper)}
+    .flag-grid{gap:clamp(52px,8vw,140px)}
+    .flag-visual .photo{box-shadow:18px 18px 0 var(--e-blush)}
+    .flag h2{font-size:clamp(48px,6vw,92px);max-width:10ch}
+    .flag .for{font-size:18px;line-height:1.6}
+    .ba{margin-top:44px}
+    .ba h3{font-size:clamp(34px,3.2vw,48px)}
+    .buy .e-price{font-size:clamp(64px,7vw,100px);line-height:.9}
+    .fit-head .e-d2{font-size:clamp(48px,5.8vw,88px);max-width:11ch}
+    .fit tbody tr{transition:background .2s}
+    .fit tbody tr:not(.hl):hover{background:rgba(255,255,255,.7)}
+    .mem-grid .std{margin-top:clamp(16px,3vw,42px);margin-bottom:clamp(16px,3vw,42px)}
+    .mem-grid .prm{box-shadow:18px 18px 0 var(--e-blush)}
+    .lib-head h2{font-size:clamp(38px,4.8vw,68px);max-width:14ch}
+    .shelf{background:var(--e-paper)}
+    .shelf a{min-height:300px;padding:26px 24px 28px}
+    .shelf h3{font-size:clamp(23px,2.2vw,31px)}
+    .letter{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+    .letter .e-figure{box-shadow:12px 12px 0 var(--e-blush)}
+    @media(max-width:900px){
+      .cover{min-height:0}
+      .cover-photo{margin:0;min-height:0;aspect-ratio:4/3;box-shadow:none}
+      .cover-photo img{transform:none}
+      .faceless-photo{min-height:0}
+      .faceless-copy{padding-left:var(--e-gut)}
+      .show-head{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .cover h1{font-size:clamp(52px,15.5vw,78px)}
+      .cover h1 em{margin-left:0}
+      .recognition-copy h2{font-size:clamp(42px,12vw,64px)}
+      .rooms li:nth-child(1) .room-body h3{font-size:32px}
+      .flag h2{font-size:clamp(44px,12vw,62px)}
+      .mem-grid .prm{box-shadow:10px 10px 0 var(--e-blush)}
+    }
+
     /* ============ 1 · COVER ============ */
     .cover{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);min-height:min(92vh,900px);border-bottom:1px solid rgba(26,20,23,.18)}
     .mast{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut)));border-bottom:1px solid rgba(26,20,23,.14)}
@@ -379,15 +449,15 @@ const jsonLd = {
       <div class="cover-copy">
         <p class="e-kick">For women building without a personal brand</p>
         <h1 id="hero-h">Build the whole business <em>before anyone knows your name.</em></h1>
-        <p class="e-lede"><strong>The AI-built faceless business, in the right order: offer, funnel, automation, then audience.</strong> AI does the building. The order does the selling. Your real face is never required.</p>
+        <p class="e-lede"><strong>Build a faceless digital business around an offer you can actually sell — then connect the website, funnel, email and content that bring it to life.</strong> AI helps build the machinery. You never have to become the face of it.</p>
         <div class="e-actions">
           <a class="e-btn" href="/resources/faceless-income-blueprint">Get the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
           <a class="e-link" href={WE.preview}>See inside the $97 build, no email</a>
         </div>
         <ul class="cover-meta" aria-label="The business, by the numbers">
-          <li><b>{community.members}</b>women in the community</li>
-          <li><b>{library.guides}</b>free pillar guides</li>
-          <li><b>{WE.modules}</b>module flagship</li>
+          <li><b>{community.members}</b>women building inside</li>
+          <li><b>{WE.modules}</b>modules in the flagship</li>
+          <li><b>{library.guides}</b>free guides to start</li>
         </ul>
       </div>
       <figure class="cover-photo">
@@ -469,7 +539,7 @@ const jsonLd = {
     </section>
 
     <!-- 4 · PROOF: the showroom -->
-    <section class="e-sec" id="showroom" aria-labelledby="show-h">
+    <section class="e-sec showroom" id="showroom" aria-labelledby="show-h">
       <div class="e-wrap">
         <div class="show-head">
           <div>
