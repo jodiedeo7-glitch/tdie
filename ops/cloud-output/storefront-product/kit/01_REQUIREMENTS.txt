@@ -1,50 +1,66 @@
 REQUIREMENTS
-Read this before anything else. If one of these is missing, the machine doesn't run, and I'd rather you know now.
+Read this before anything else. This kit automates the downstream image, content and Pinterest work. It does not use an AI agent to browse Amazon or operate your Amazon account.
 
-WHAT YOU NEED FOR BOTH AUTOMATIONS
+WHAT YOU NEED FOR THE CORE MACHINE
 
-1. A Claude plan that includes scheduled tasks and Claude in Chrome.
-   Both have to be on your plan. Plans and what they include change, so check on claude.ai before you buy anything.
+1. A paid Claude plan with Scheduled Tasks and the ability to use browser/local-file capabilities required by your chosen setup. Plans change, so check Claude's current plan and feature page before purchase.
 
-2. The Claude desktop app, on a computer that is switched on when the tasks run.
-   The tasks run from your own computer. It stays on, with Chrome open and signed in, at the times you choose. If it's off at run time, the daily missed-run sweep (9:45 am) runs the missed build once when the computer is back on. You pick run times that suit your life during setup.
+2. Claude Desktop installed and connected when a scheduled task needs your local Storefront folder or browser. Claude's schedule itself can run remotely, but a task that needs your local folder or browser cannot complete that local portion while Desktop is offline.
 
-3. Google Chrome, signed in to everything below, with the Claude in Chrome extension installed.
-   The tasks never type a password. If you're signed out of something, the task stops and tells you in one line.
+3. A local Storefront folder that you will keep in the same location after setup. Do not rename or move it after creating the scheduled tasks. If you do move it, update the folder setting on every affected task.
 
-4. Amazon Associates.
-   You need an approved Associates account so every link carries your tag. You'll see the SiteStripe bar across the top of Amazon when you're signed in: that's how the tasks capture your links.
-   PLUS Amazon Influencer approval if you want Idea Lists (the best link for a pin, and hands-off with no website needed). Amazon approves Influencers from certain social accounts; check its current Influencer page. No Influencer approval? The Associates-only path in 08_STOREFRONT_PATHS.txt needs a website, and on most site builders you'll paste each look's page in by hand.
-   Amazon needs every place your links appear listed in your Associates account (your Pinterest profile, and your website if you have one). New accounts: check Associates Central for Amazon's current first-sales rule, because pins take time.
+4. Amazon Associates or Amazon Influencer access appropriate to your monetization path.
+   The core machine does not log into Amazon, search Amazon, scrape Amazon pages, click SiteStripe, create Idea Lists, or collect Amazon Program Content for you.
+   You choose products yourself and record the information the machine needs in PRODUCT_SOURCES.md.
+   Advanced option: an eligible Amazon Creators API integration can reduce manual product lookup and link collection, but it is not required and eligibility is not universal.
 
-5. A Pinterest business account with public boards.
-   Secret boards reach nobody. The recipe checks every board is public before the first pin, and stops if one isn't. (I learned this one the hard way: one of my own boards sat on secret while pins were scheduled to it.)
+5. A Pinterest business account and the public boards you want to publish to.
+   Keep the boards public for production. The task checks the board before scheduling and stops if a production board is secret.
 
-6. Image tools:
-   Higgsfield, with access to Seedream 4.5. This makes every flat lay and collage (no person in them). I run Seedream with the Unlimited switch on; whether you have that switch depends on your Higgsfield plan.
-   Google Gemini, for the lifestyle photos of your AI persona. Only needed on the persona path (backup: Nano Banana Pro on Higgsfield, if your plan includes it). No persona? You can skip Gemini (see 07_PERSONA_PATHS.txt).
+6. An image-generation provider with commercial-use rights for your use case.
+   Recommended single-provider benchmark: OpenArt Plus. Current OpenArt Plus includes commercial-use rights and access to multiple current image models through OpenArt. Use the provider's current model list and credits at the time you set up.
+   Other supported choices can be used when their current commercial rights and reference-image behavior meet the workflow:
+   - Google Gemini API on a paid tier for a lower-cost, API-first path.
+   - Higgsfield for customers who already use it. Higgsfield's MCP path uses standard credits even when the website plan has Unlimited access, so never assume website Unlimited means MCP Unlimited.
+   The kit does not assume the founder's personal plans, discounts or unlimited access.
 
-7. Only with the blog half (09_THE_BLOG_HALF.txt): Chrome signed in to GitHub, with write access to your site's repository.
+7. A reference image only when you own it or have explicit permission/license to use it in an AI workflow and in the final commercial content.
+   Do not use Amazon product images, retailer images, marketplace screenshots, paid third-party course images, or any other third-party image as an AI input unless you have the rights to do so.
 
-FOR AUTOMATION 2 ONLY (The Brand Closet™ Outfit of the Day)
+8. A backup copy of the Storefront folder before the first scheduled production run.
+   The folder contains your recipe, queue, drafts and logs. Back it up again before changing the configuration.
 
-8. The Brand Closet™ at Rose's $9/month tier or above, with Chrome signed in to Skool.
-   The Outfit of the Day sits on that tier. The Brand Closet™ is Rose's community, not mine: it's free to join, and her paid tiers are $9/month and $19/month (her prices). Not a member and don't want to be? Skip automation 2. Automation 1 runs on its own.
+OPTIONAL WEBSITE PATH
 
-WHAT YOU DON'T NEED
+9. Associates-only buyers need a documented Amazon-approved publishing destination. In this kit that means your own website. If the site is a Weekend Ecosystem site on GitHub, the blog half can publish through the existing site workflow. Other site builders use the generated page file for manual publishing.
 
-  No website on the Influencer path (the Associates-only path and the blog half need one).
-  No Instagram. It isn't part of the core machine.
-  No design skills, no coding, no face on camera.
+WHAT IS NOT REQUIRED
 
-WHAT THIS COSTS YOU IN TIME
+- No Instagram for the core machine.
+- No coding for the core workflow.
+- No face on camera.
+- No Amazon browser automation.
+- No Canva for the core image workflow.
 
-About 5 minutes to start once the accounts above are in place. After that: nothing on the Influencer path. On the Associates-only path with a site the tasks can't publish to, about 10 to 15 minutes a look to paste its page in. The optional glance at your pin tab and log is how you pull a pin you don't like.
+PRODUCT INTAKE
 
-While a build runs, leave the Chrome window it's using alone, and set your computer not to sleep at run times. Each look keeps the task busy for a while (plan on up to an hour a look while it's new), and more looks a week means more of your Claude usage.
+Before a look can run, PRODUCT_SOURCES.md needs:
+- look name and date
+- ASIN for each item
+- plain-language product description, color, material and important visual details
+- the Amazon Special Link you obtained yourself or through an eligible approved API path
+- the destination URL for the look: your Idea List URL or your website page target
+- optional reference image filename only when you own/license that image for AI use
+- a rights confirmation for every uploaded reference image
 
-THE HONEST PART
+TIME-SAVING PATH
+Use a current connector/API or your chosen image provider integration where it is actually supported and authorized. The product does not require those connections.
 
-Automating Amazon and Pinterest carries some account risk. The kit is built to go slow and stop at the first sign of trouble (it reads pages the way a person would, never scrapes in the background, waits between pins, and stops after two blank pages), and you run it on your own accounts, at your own call.
+CREDIT-SAVING PATH
+Do the Amazon product selection and Idea List creation manually, then use the image provider manually for only the images that need regeneration. The same downstream file formats and log state are used.
 
-This kit runs the machine. It does not promise sales. Pinterest is a search engine: pins get found over weeks and months. Every pin carries your #ad disclosure, and no price ever appears on a pin, because Amazon prices change by the hour.
+The HONEST PART
+
+This product automates repetitive downstream work. It does not promise sales, approval by Amazon or Pinterest, or access to a specific platform/model forever. Follow the current terms of the services you connect.
+
+The Pinterest queue remains reviewable: every Pin is logged before scheduling, and you can mark it PULL before its posting deadline.
