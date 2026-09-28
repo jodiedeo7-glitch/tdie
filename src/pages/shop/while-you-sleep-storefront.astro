@@ -75,7 +75,7 @@ const inside = [
   <section class="ws-hero">
     <div class="page-eyebrow">Amazon links to Pinterest pins · on a schedule</div>
     <h1>The <em>While-You-Sleep</em> Storefront™</h1>
-    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
+    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it turns your prepared product intake into Pins, schedules them and logs the work, and people find them the way they find everything on Pinterest. By searching.</p>
     <div class="ws-cta-row">
       <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
@@ -104,26 +104,26 @@ const inside = [
 
   <section class="ws-sec ws-tint">
     <div class="ws-kicker">What the tasks do, on their own</div>
-    <h2>Five jobs you never do again.</h2>
+    <h2>Four downstream jobs you stop repeating.</h2>
     <div class="ws-steps">
       {steps.map((s) => (
         <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
       ))}
     </div>
-    <p class="ws-close">No prices on any pin, no brand names in any listing, and Amazon's own photos never posted: they're only the reference for new images.</p>
+    <p class="ws-close">No prices on any pin, no brand names in any listing, and Amazon product images are not used as AI inputs by the core workflow.</p>
   </section>
 
   <section class="ws-sec">
-    <div class="ws-kicker">Two automations, one machine</div>
-    <h2>Your theme, every week. And the Outfit of the Day, every night.</h2>
+    <div class="ws-kicker">One content engine, one review queue</div>
+    <h2>Prepare the Amazon side once. Let the downstream machine repeat.</h2>
     <div class="ws-grid-2">
       <div class="ws-card">
-        <h3>Themed looks</h3>
-        <p>Once a week, looks for your theme: cozy mom, coastal home, pink everything, dark academia, whatever you'd pin yourself. Holidays until a week before the day, evergreen looks every single week.</p>
+        <h3>The themed-look engine</h3>
+        <p>On your schedule, Claude takes the next ready look from your calendar and PRODUCT_SOURCES.md, creates the images and Pin copy, schedules the Pins and records what happened.</p>
       </div>
       <div class="ws-card ws-card-pink">
-        <h3>The Brand Closet™ Outfit of the Day</h3>
-        <p>If you're a member of The Brand Closet™ on Rose's $9/month tier, a second automation turns each new Outfit of the Day into your own pins, with your own Amazon links, your own list and brand-new images. Nothing of Rose's is ever posted.</p>
+        <h3>The review and recovery layer</h3>
+        <p>Every Pin is logged before it is treated as verified. You can type PULL before it posts, and incomplete work is picked up as leftover work on the next eligible run.</p>
       </div>
     </div>
   </section>
