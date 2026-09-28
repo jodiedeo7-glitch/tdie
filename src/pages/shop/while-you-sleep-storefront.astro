@@ -78,7 +78,7 @@ const inside = [
     <h1>The <em>While-You-Sleep</em> Storefront™</h1>
     <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
     <div class="ws-cta-row">
-      <a class="btn" href="#buy">See the price <span class="a">→</span></a>
+      <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
@@ -319,4 +319,8 @@ const inside = [
   .ws-hero .btn,.ws-buy{min-height:52px}
   .ws-lede{max-width:650px}
   .ws-strip{border-top:2px solid var(--ink);border-bottom:1px solid rgba(26,20,23,.18)}
- </style>
+   .ws-hero .ws-lede{max-width:650px}
+  .ws-hero .btn{min-height:52px}
+  .ws-strip{position:relative}
+  .ws-strip::before{content:"REAL PINTEREST PROOF";display:block;margin-bottom:12px;font:700 10px/1 Inter,sans-serif;letter-spacing:.18em;color:var(--pink)}
+</style>
