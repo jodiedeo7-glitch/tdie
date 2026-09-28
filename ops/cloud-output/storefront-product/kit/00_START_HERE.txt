@@ -7,7 +7,7 @@ You set it up once. After that, scheduled tasks in the Claude desktop app do the
 
 Two things you should know before you start, because I'd rather you hear them now than find out on day three:
 
-1. The tasks run from your own computer. It needs to be switched on, with Chrome open (a minimized window is fine; the tasks handle it) and signed in to Amazon, Pinterest, your image tools and (for the Outfit of the Day) Skool, at the times the tasks run. If the computer was off when a run was due, the daily missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so your computer doesn't need to be on when they go live.
+1. The tasks run from your own computer. It needs to be switched on, with Chrome open (a minimized window is fine; the tasks handle it) and signed in to Amazon, Pinterest, your image tools and (for the Outfit of the Day) Skool, at the times the tasks run. If the computer was off when a run was due, the next production or maintenance run reconciles the structured state and processes eligible unfinished work. There is no separate missed-run sweep. The pins themselves post from Pinterest, so your computer doesn't need to be on when they go live.
 2. Nothing is ever posted without leaving a trail. Every pin the tasks schedule is written to your pin tab and your log. Glancing at them is optional. It's also how you pull anything you don't like before it goes live: type PULL next to it by 11:30 am on its posting day (by 5:30 pm the day before, for a pin that posts before noon), or delete it yourself in the Pinterest app any time.
 
 WHAT'S IN THIS KIT
@@ -18,7 +18,7 @@ WHAT'S IN THIS KIT
   03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks (any theme, any season).
   04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2: The Brand Closet™ Outfit of the Day (members only).
   05_RECOMMEND_IT_TOO.txt          Optional: putting The Brand Closet™ on your own pages.
-  06_SCHEDULED_TASK_PROMPTS.txt    The four scheduled tasks (weekly build, nightly run, pull sweep, missed-run sweep).
+  06_SCHEDULED_TASK_PROMPTS.txt    The storefront scheduled tasks: weekly build, optional nightly run, and maintenance.
   07_PERSONA_PATHS.txt             With your own AI persona, or flat lays and collages only.
   08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only.
   09_THE_BLOG_HALF.txt             Adding a shop-the-look section to your own site.
