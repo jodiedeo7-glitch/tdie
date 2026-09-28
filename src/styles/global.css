@@ -14,11 +14,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--choc);font-size
 /* layered warmth behind everything — real pink presence, not a whisper */
 /* Two whispers, not six. Gold high, rose low, on a warm ivory ground —
    the page should read as paper, not as a pink gradient. */
-body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background:
-    radial-gradient(58% 46% at 88% -8%,rgba(200,169,106,.11) 0%,transparent 60%),
-    radial-gradient(52% 44% at 2% 88%,rgba(248,216,228,.30) 0%,transparent 58%),
-    linear-gradient(180deg,#FDFAF6 0%,var(--cream) 42%,#FAF5EF 100%);}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:var(--cream);}
 /* extremely subtle film grain */
 body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");}
@@ -26,7 +22,7 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 /* floating decorative glyphs */
 .float{position:absolute;font-family:var(--display);font-style:italic;color:var(--gold);opacity:.10;pointer-events:none;z-index:0;user-select:none}
-.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--pink),var(--mauve));z-index:100;transition:width .1s linear}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--pink);z-index:100;transition:width .1s linear}
 /* Fade-up reveal. Fails VISIBLE: a delayed CSS animation restores opacity even
    if the IntersectionObserver never fires, so content is never permanently hidden. */
 .reveal{opacity:0;transform:translateY(8px);transition:opacity .35s ease-out,transform .35s ease-out;animation:reveal-failsafe 0s linear 2.5s forwards}
@@ -53,7 +49,7 @@ a{color:inherit;text-decoration:none}
 .hero-meta{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--taupe-deep)}
 .hero-meta .b{width:3px;height:3px;border-radius:50%;background:var(--gold)}
 .hero-figure{max-width:1120px;margin:64px auto 0;padding:0 40px}
-.hero-figure .img{position:relative;aspect-ratio:3/2;border-radius:2px;overflow:hidden;background:linear-gradient(135deg,#e7dbd3,#d9cabf 50%,#cbb8ad);box-shadow:0 60px 100px -60px rgba(43,22,27,.55)}
+.hero-figure .img{position:relative;aspect-ratio:3/2;border-radius:2px;overflow:hidden;background:linear-gradient(135deg,#e7dbd3,#d9cabf 50%,#cbb8ad);box-shadow:0 28px 55px -42px rgba(43,22,27,.42)}
 .hero-figure .img .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#8a7168;font-family:var(--serif);font-style:italic;font-size:16px;text-align:center;padding:24px}
 .hero-figure .img .ph .ico{font-size:34px;opacity:.6}
 .hero-figure figcaption{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-meta);margin-top:16px;text-align:center}
