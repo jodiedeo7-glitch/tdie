@@ -37,17 +37,16 @@ ASK ME THESE SIX THINGS, IN THIS ORDER
 6. TIMES. "What time zone are you in, and when is your computer usually on?" Write the time zone as a named zone (for example America/Chicago), never a fixed offset. Then propose, in my time zone:
    RUN TIMES (my computer must be on):
      Weekly build: Saturday 1:05 pm. If I choose 5 or more looks a week, also Wednesday 1:05 pm (each run builds at most 4 looks).
-     Pull sweep: 12:00 pm and 6:00 pm daily.
+     Maintenance/recovery: daily, «TIME» (one run; it handles verification, pulls, retries and incomplete work).
      Brand Closet™ members only: nightly Outfit of the Day run, Sunday to Friday, 9:20 pm. Allow about 2 hours per outfit: if one outfit can't finish before my shutdown, move the run earlier and tell me why.
-     Missed-run sweep: daily, 9:45 am (if my computer isn't on by then, the first time it usually is).
    PIN SLOTS (Pinterest posts these itself; my computer does NOT need to be on):
      Themed looks: pin 1 at 1:30 pm, pin 2 at 8:30 pm.
      Outfit of the Day: pin 1 (flat lay) at 4:30 pm, pin 2 (lifestyle) at 9:30 am.
      At 6 or 7 looks a week, add a spare themed-look slot at 10:30 am, for leftovers only.
-   PACE: "How many looks a week? 3 is light, 5 is steady, 7 is one a day. Each look keeps the task busy in Chrome for a while (plan on up to an hour a look while it's new), so more looks means longer runs and more of your ChatGPT usage." Default 4. Then set LOOK DAYS: 3 = Monday, Wednesday, Friday; 4 = Monday, Tuesday, Thursday, Friday; 5 = Monday to Friday; 6 = Monday to Saturday; 7 = every day. On a paste-it-yourself site, the first look day each week is at least two days after the build, so I have time to paste.
+   PACE: "How many looks a week? 3 is light, 5 is steady, 7 is one a day. Each look can keep a local Work run active for a while, so more looks means longer runs and more of your ChatGPT Work usage." Default 4. Then set LOOK DAYS: 3 = Monday, Wednesday, Friday; 4 = Monday, Tuesday, Thursday, Friday; 5 = Monday to Friday; 6 = Monday to Saturday; 7 = every day. On a paste-it-yourself site, the first look day each week is at least two days after the build, so I have time to paste.
    Move any RUN time that falls while my computer is off, or within an hour of when I shut it down. The nightly run must start at least 2 hours before shutdown; the evening sweep at least 1 hour before. Never move a PIN SLOT for that reason, and tell me so in one line.
    Rules you enforce: pin slots are on the hour or half hour; no two pin slots less than 1 hour apart (exactly 1 hour is fine); the two automations never share a pin slot; no run starts before 7:00 am; nothing is ever scheduled more than 14 days ahead.
-   Tell me in one line each: leave the Chrome window the tasks use alone while a run is going; set the computer not to sleep during run times; if other scheduled tasks already use Chrome on this computer, keep these RUN times clear of theirs (ask me their times and move ours, never theirs).
+   Tell me in one line each: do not interrupt the active Work run; set the computer not to sleep during local Work run times; if other scheduled tasks use the same computer resources, keep these RUN times clear of theirs (ask me their times and move ours, never theirs).
 
 THEN WRITE MY FILES
 Write these into the attached folder. If you can't write to the folder, show each file in full in its own code block, with the file name above it, so I can save it myself.
@@ -63,9 +62,9 @@ A. MY_RECIPE.txt. My settings, read by every task. Sections, in this order:
 B. storefront-log.md. Two tables, headers only unless the file already exists.
    Looks: date (pin 1 date), window or category, look name, kind (outfit / theme list / roundup / outfit of the day), board, items (short name + ASIN + short link if captured), list or page link, pin 1 format, pin 2 format or persona shot, status (building / built / scheduled, not verified / verified / pulled / dropped), notes.
    Outfit of the Day lessons (members only): lesson date, lesson title, lesson id, list link, status (new / sourcing / built / scheduled, not verified / verified / skipped), notes.
-   Runs: task (weekly / nightly / pull sweep / catch-up), date, started, finished, result. Every weekly build, nightly run and catch-up writes one row; the missed-run sweep reads it.
+   Runs: task (weekly / nightly / maintenance), date, started, finished, result. Every weekly build, nightly run and maintenance run writes one row.
 
-C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, link, status, PULL. Top line, with my real sweep times filled in: "To pull a pin, type PULL in its last column and save at least 30 minutes before the last sweep ahead of its posting time (the sweeps run at [my two sweep times]; a pin that posts before noon needs PULL by the evening before). Or delete it yourself in the Pinterest app, any time, and type PULLED here so the log stays true."
+C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, link, status, PULL. Top line, with my real sweep times filled in: "To pull a pin, type PULL in its last column and save at least 30 minutes before the last sweep ahead of its posting time (the maintenance run at [my maintenance time]; a pin that posts before noon needs PULL by the evening before). Or delete it yourself in the Pinterest app, any time, and type PULLED here so the log stays true."
 
 D. pin-drafts.md. Headers only: look, pin (1 or 2), board, title, description, alt text, link, image made in (Higgsfield or Gemini), date and time made, first words of the image prompt, status. Every pin's copy is written here the moment it's finished, so a later run can finish a leftover.
 
