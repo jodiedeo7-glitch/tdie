@@ -7,7 +7,7 @@ WHAT YOU NEED FOR THE CORE MACHINE
 
 2. Claude Desktop installed and connected when a scheduled task needs your local Storefront folder or browser. Claude's schedule itself can run remotely, but a task that needs your local folder or browser cannot complete that local portion while Desktop is offline.
 
-3. A local Storefront folder that you will keep in the same location after setup. Do not rename or move it after creating the scheduled tasks. If you do move it, update the folder setting on every affected task.
+3. A local Storefront folder that you will keep in the same location after setup. Do not rename or move it after creating the scheduled tasks. The folder holds the persistent queue and logs used for recovery. If you do move it, update the folder setting on every affected task.
 
 4. Amazon Associates or Amazon Influencer access appropriate to your monetization path.
    The core machine does not log into Amazon, search Amazon, scrape Amazon pages, click SiteStripe, create Idea Lists, or collect Amazon Program Content for you.
@@ -40,6 +40,7 @@ WHAT IS NOT REQUIRED
 - No coding for the core workflow.
 - No face on camera.
 - No Amazon browser automation.
+- No separate missed-run task. The weekly task checks for incomplete prior runs when it runs next.
 - No Canva for the core image workflow.
 
 PRODUCT INTAKE
