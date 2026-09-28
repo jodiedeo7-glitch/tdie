@@ -147,3 +147,48 @@ Higgsfield pricing/help for Unlimited and MCP/CLI
 Google Gemini API Pricing and image-generation documentation
 OpenAI Image Generation pricing
 Anthropic Claude Help Center: Scheduled Tasks / Cowork
+
+
+## G. CHATGPT CONNECTED IMAGE APPS
+
+The current ChatGPT connector inventory includes official Higgsfield and OpenArt apps. They can generate images from prompts and reference images inside ChatGPT, subject to the customer's connected account, plan and current app capabilities.
+
+This is a ChatGPT app path, not a Claude MCP path.
+
+Use it in the CREDIT-SAVING or MIXED path when it reduces tool switching:
+ChatGPT
+-> connected OpenArt or Higgsfield
+-> manual review
+-> Pinterest native tools
+
+Do not tell customers that:
+- a ChatGPT app connector creates unlimited generations
+- a ChatGPT subscription grants the provider's website Unlimited allowance
+- a ChatGPT connector has the same credit behavior as Claude MCP
+
+Always check the connected app's current model list and account credit behavior before production use.
+
+## H. DECISION TREE
+
+1. I want the fewest subscriptions.
+   Start with one manual image provider and native Pinterest.
+
+2. I want the cheapest predictable image spend.
+   Benchmark Gemini API Nano Banana 2 at 2K.
+
+3. I want one paid visual platform with many model choices.
+   Benchmark OpenArt Plus.
+
+4. I already have Higgsfield and prefer its browser workflow.
+   Test Higgsfield manually first. Only use MCP when the customer's plan and credit economics are understood.
+
+5. I want Claude to orchestrate the image generation.
+   Use a supported Claude MCP route and treat connector credits separately from website Unlimited.
+
+6. I want ChatGPT to handle image generation interactively.
+   Test the current OpenArt or Higgsfield ChatGPT app against the exact Storefront job.
+
+7. I do not want API/developer work.
+   Stay on native Pinterest and manual image generation.
+
+No single provider wins every job. The product therefore documents the tradeoffs instead of forcing one vendor.
