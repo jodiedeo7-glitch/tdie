@@ -211,7 +211,7 @@ guide.push(`<section class="pg">${top(4)}
     <div class="step"><div class="num">1</div><div class="card"><h3>Make your folder</h3>
       <p>On your computer, make a new folder called <strong>While-You-Sleep Storefront</strong>. Unzip this kit into it, so the folder holds all twelve .txt files and this PDF. Keep it somewhere you'll find it again, like Documents.</p></div></div>
     <div class="step"><div class="num">2</div><div class="card"><h3>Sign in, in Chrome</h3>
-      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong>, <strong>Higgsfield</strong>, and <strong>Gemini</strong> if you have a persona. Install the <strong>Claude in Chrome</strong> extension and connect it to your Claude account. The tasks never type a password, so everything has to be signed in already.</p></div></div>
+      <p>Open Chrome and sign in to <strong>Pinterest</strong> and your chosen image provider. Connect Claude Desktop to the browser as instructed by the current Claude setup. Amazon is used for your own product intake before a look is ready, not by the scheduled agent. The task never types a password.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
       <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
@@ -223,8 +223,8 @@ guide.push(`<section class="pg">${top(4)}
 
 // 5 steps 4-5
 guide.push(`<section class="pg">${top(5)}
-  <div class="kicker">Steps 4 and 5 &middot; the 5 minutes</div>
-  <h2>Paste one prompt. <em>Answer six questions.</em></h2>
+  <div class="kicker">Steps 4 and 5 &middot; setup</div>
+  <h2>Paste one prompt. <em>Answer five questions.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a chat with your folder attached</h3>
       <p>Open the <strong>Claude desktop app</strong> and start a new chat. Attach your While-You-Sleep Storefront folder to it, so Claude can read the kit and write your files there. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask Claude in that chat how to attach a folder.)</p></div></div>
@@ -263,7 +263,7 @@ guide.push(`<section class="pg">${top(7)}
   <h2>Then you <em>leave it alone.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
-      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
+      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If a run is missed, the next eligible weekly run checks the log and finishes incomplete prior work before starting new work. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
       <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
@@ -289,9 +289,9 @@ guide.push(`<section class="pg">${top(8)}
       <table>
         <tr><td>Picked the look</td><td>From the Halloween window of my calendar.</td></tr>
         <tr><td>Sourced 6 pieces</td><td>Soft pink velvet witch hat, black velvet square neck mini dress, black platform Mary Jane pumps, pale pink lace gloves, black crescent shoulder bag, gold moon and star drop earrings. Every one with my own SiteStripe link.</td></tr>
-        <tr><td>Built the Idea List</td><td>One list in my storefront, every piece on it. Both pins link there.</td></tr>
-        <tr><td>Pin 1</td><td>A styled flat lay on pink satin (Seedream 4.5), title set on the image: "PINK WITCH costume". Checked letter by letter.</td></tr>
-        <tr><td>Pin 2</td><td>A mirror selfie of my AI persona wearing every piece (Gemini, reference image attached), face hidden by the phone.</td></tr>
+        <tr><td>Product intake</td><td>One customer-created destination list or page, with the product rows ready in PRODUCT_SOURCES.md.</td></tr>
+        <tr><td>Pin 1</td><td>A styled flat lay made with the provider and model recorded in MY_RECIPE.txt, title set on the image: "PINK WITCH costume". Checked letter by letter.</td></tr>
+        <tr><td>Pin 2</td><td>A mirror selfie of my AI persona wearing every piece, using the selected provider and reference image, face hidden by the phone.</td></tr>
         <tr><td>Copy and schedule</td><td>Title, 450 to 500 character description with the #ad line, alt text, AI label on. Pin 1 on the look's date, pin 2 three days later.</td></tr>
         <tr><td>Logged and published</td><td>Written to the log and the pin tab, and a shop-the-look page added to my site and checked live.</td></tr>
       </table>
@@ -331,7 +331,7 @@ guide.push(`<section class="pg">${top(10)}
   <h2>What the tasks do <em>when things go wrong.</em></h2>
   <div class="grid2" style="margin-top:10px">
     <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
-    <div class="card"><h3>You're signed out</h3><p>If Amazon's SiteStripe bar is missing, the task stops and tells you in one line. It never ships a link without your tag, and never types a password. Sign back in; the next run carries on.</p></div>
+    <div class="card"><h3>You're signed out</h3><p>If a product row is missing its ASIN, Special Link or destination URL, the task skips that look and logs it as needs product intake. Finish the Amazon-side intake yourself, then the next eligible run carries on.</p></div>
     <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
     <div class="card"><h3>The computer was off</h3><p>The daily missed-run sweep (9:45 am) spots the missed run and runs it once, taking the same lock so two runs never overlap. Leftovers are logged and scheduled first.</p></div>
     <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
