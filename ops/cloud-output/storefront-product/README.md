@@ -37,7 +37,7 @@ Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` 
 6. **Vault call:** one member-pricing lesson in BOTH vaults; Premium pays half, not nothing; recorded as its own numbered decision in `CANON_ROWS_DRAFT.md`.
 7. **Canon rows first:** finish step 4, before any Beacons product.
 8. **Amazon search:** the kit reads pages as they load and never fetches in the background (recipe rule R18); the requirements page states the account risk plainly.
-9. **Missed runs:** a fourth task, the daily 9:45 am missed-run sweep, backed by a Runs table every build and nightly run writes.
+9. **Missed runs:** a fourth task, the daily 9:45 am maintenance/recovery, backed by a Runs table every build and nightly run writes.
 10. **Live test** in the buyer's shoes (finish step 9) gates the presale and answers every open item in `tests/ROUND_2.md`.
 11. **Pinterest API:** scheduling stays in the browser.
 
