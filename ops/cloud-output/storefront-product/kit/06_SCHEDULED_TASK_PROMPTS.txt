@@ -1,11 +1,11 @@
 THE SCHEDULED TASK PROMPTS
-Three core jobs: the weekly themed-look build, the pull sweep and the missed-run sweep. The Brand Closet™ automation is disabled for launch and must not be scheduled. Each prompt is complete on its own. Your setup chat copies these three prompts into MY_SCHEDULED_TASKS.txt with your folder, time zone and times filled in: paste from that file, not this one. This file is the master copy.
+Two core jobs: the weekly themed-look build with built-in recovery, and the pull sweep. The Brand Closet™ automation is disabled for launch and must not be scheduled. Each prompt is complete on its own. Your setup chat copies these three prompts into MY_SCHEDULED_TASKS.txt with your folder, time zone and times filled in: paste from that file, not this one. This file is the master copy.
 
 In the prompts below, «FOLDER» is your While-You-Sleep Storefront folder, «TZ» is your time zone (a named zone such as America/Chicago) and «TIME» is the run time from MY_RECIPE.txt. The setup chat fills them in.
 
 If the app's schedule field won't take a choice below (two days a week, Sunday to Friday, two times a day), use the fallback written under it.
 
-Every task that uses the local Storefront folder needs that folder configured. The schedule itself runs remotely, but a task that needs your local files or browser reaches them only through Claude Desktop while it is open and connected. After creating the three tasks, run each one once by hand and approve the folder/browser access prompts before relying on unattended scheduled runs.
+Every task that uses the local Storefront folder needs that folder configured. The schedule itself runs remotely, but a task that needs your local files or browser reaches them only through Claude Desktop while it is open and connected. After creating the two tasks, run each one once by hand and approve the folder/browser access prompts before relying on scheduled runs.
 
 ====================================================================
 WEEKLY THEMED-LOOK BUILD
@@ -25,8 +25,9 @@ README FIRST: PRODUCT_SOURCES.md is required. The automated task reads that file
 JOB
 1. Take the browser lock (recipe R16) and keep it fresh while you work.
 2. Check every production board in MY_RECIPE.txt is public (R11) and Pinterest's time zone (R17). If a board is secret, stop and tell me which, unless MY_RECIPE.txt marks it TEST.
-3. Leftovers first (recipe Part 7 step 4).
-4. Build at most 4 eligible looks this run, on the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no look in storefront-log.md (any status except "dropped"), following 03_THEMED_LOOK_RECIPE.txt Parts 2 to 7 exactly. Never use Amazon as a browser target.
+3. Check the Runs table and storefront-log.md for an incomplete prior weekly build. If the most recent prior weekly run has no completed result, finish its remaining eligible look work first, using the same idempotency rules, then continue with the current run. Never create a duplicate look or Pin.
+4. Leftovers first (recipe Part 7 step 4).
+5. Build at most 4 eligible looks this run, on the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no look in storefront-log.md (any status except "dropped"), following 03_THEMED_LOOK_RECIPE.txt Parts 2 to 7 exactly. Never use Amazon as a browser target.
 5. Never schedule past the RENEWAL DATE. If today is within 14 days of it, tell me in one line that the calendar needs renewing.
 
 VERIFY
@@ -72,36 +73,4 @@ Nothing to do: no report. Work done: one line, for example "Pulled 1 pin, schedu
 
 BROWSER FALLBACK
 If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, release the browser lock and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
-------------------------------------------------------------------
-
-====================================================================
-MISSED-RUN SWEEP (catches up a run the computer missed)
-Name: While-You-Sleep: missed-run sweep
-Schedule: daily, 9:45 am («TZ»), or the MISSED-RUN SWEEP time in MY_RECIPE.txt.
-Folder: «FOLDER»
-====================================================================
-
-------------------------------------------------------------------
-You are the missed-run sweep for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ».
-
-READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET MEMBER), the Runs table in storefront-log.md, browser-lock.txt, and MY_SCHEDULED_TASKS.txt (Task 1, the weekly build, and the weekly build, already filled in with my folder, time zone and times).
-
-JOB
-1. Without opening a browser, work out which runs were due since this sweep last ran:
-   - the weekly build: the most recent Saturday at its RUN time (and the most recent Wednesday, at a pace of 5 or more);
-   - the nightly Outfit of the Day run, if I'm a member: the most recent nightly RUN time that is already past, unless that fell on a Saturday.
-2. A run was missed if the Runs table has no row for that task that started on or after its due time. A row counts for the weekly build if its task name contains "weekly", and for the disabled Brand Closet run if it contains "nightly" (catch-ups and hand runs included). Anything that ran, even with a stop or a report, is not missed.
-3. Nothing missed? End. Don't open Chrome. Report nothing.
-4. Something missed: read browser-lock.txt. If another task holds a fresh lock (recipe R16), wait 10 minutes and check again, up to 6 times; if it's still held, end and let tomorrow's sweep try. Otherwise take the lock with your own name.
-5. Run each missed task ONCE, in this order: the weekly build, then the disabled Brand Closet run. Follow that task's prompt in MY_SCHEDULED_TASKS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
-6. Write a Runs row for each ("weekly (catch-up)" or "nightly (catch-up)", date, started, finished, result) and release the lock.
-
-RULES
-Never run the same missed task twice. Never run a task that is due within the next 2 hours anyway: leave it to its own schedule. Never type a password. No em dashes.
-
-REPORT
-Nothing missed: no report. A catch-up ran: one line, for example "Caught up Saturday's weekly build: 4 looks, 8 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
-
-BROWSER FALLBACK
-Same as the task you are catching up. The Pinterest blank-page rule always wins.
 ------------------------------------------------------------------
