@@ -318,4 +318,24 @@ const schema = [
     .ab-order li,.ab-order li + li{padding:22px 0 18px;border-left:0}
     .ab-lnum{font-size:28px}
   }
+  /* ── ABOUT · founder/editorial pass ── */
+  .ab-hero{padding-top:clamp(70px,9vw,140px)}
+  .ab-h1{font-size:clamp(54px,7vw,104px);line-height:.9;letter-spacing:-.045em;max-width:11ch}
+  .ab-hero-img{border-radius:0}
+  .ab-hero-img img{box-shadow:14px 14px 0 var(--e-blush)}
+  .ab-built-h{font-size:clamp(64px,10vw,140px)}
+  .ab-built-sub{font-size:clamp(34px,5vw,68px)}
+  .ab-lessons .ab-lead{padding-top:30px;border-top:2px solid var(--e-ink)}
+  .ab-bleed-img{border-top:1px solid var(--e-ink);border-bottom:1px solid var(--e-ink)}
+  .ab-order li{min-height:260px}
+  .ab-rooms li:nth-child(1){grid-column:span 2;background:var(--e-paper)}
+  .ab-rooms li:nth-child(1) .ab-rt{font-size:clamp(28px,3vw,42px)}
+  .ab-rooms li:nth-child(4){grid-column:span 2}
+  @media(max-width:1000px){
+    .ab-rooms li:nth-child(1),.ab-rooms li:nth-child(4){grid-column:auto}
+  }
+  @media(max-width:560px){
+    .ab-h1{font-size:clamp(48px,14vw,72px)}
+    .ab-built-h{font-size:clamp(58px,16vw,84px)}
+  }
 </style>
