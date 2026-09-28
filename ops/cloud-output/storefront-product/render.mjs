@@ -244,7 +244,7 @@ guide.push(`<section class="pg">${top(6)}
   <h2>Hand it <em>the timetable.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
-      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds three tasks (four if you're in The Brand Closet&trade;): the weekly build, the pull sweep, the missed-run sweep and, for members, the nightly Outfit of the Day run. Each has one line telling you exactly what to type. For each one:</p>
+      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks (three if you're in The Brand Closet&trade;): the weekly build and maintenance, plus the nightly Outfit of the Day run for members. Each has one line telling you exactly what to type. For each one:</p>
       <ol><li>In the Claude desktop app, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
       <li>Type the <strong>name</strong> from the file.</li>
       <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
@@ -334,7 +334,7 @@ guide.push(`<section class="pg">${top(10)}
     <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
     <div class="card"><h3>You're signed out</h3><p>If Amazon's SiteStripe bar is missing, the task stops and tells you in one line. It never ships a link without your tag, and never types a password. Sign back in; the next run carries on.</p></div>
     <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
-    <div class="card"><h3>The computer was off</h3><p>The daily missed-run sweep (9:45 am) spots the missed run and runs it once, taking the same lock so two runs never overlap. Leftovers are logged and scheduled first.</p></div>
+    <div class="card"><h3>The computer was off</h3><p>The maintenance task reconciles unfinished work from structured state. It does not create a second production run.</p></div>
     <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
     <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
   </div>
