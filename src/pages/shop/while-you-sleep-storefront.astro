@@ -42,26 +42,25 @@ const proof = [
 ];
 
 const steps = [
-  { n: "01", t: "It picks the look", p: "From a seasonal calendar and an evergreen bank written for your theme, so it's never costumes in March." },
-  { n: "02", t: "It shops Amazon for you", p: "Five to eight pieces per look: in stock, four stars and up, a hundred ratings or more. Every one with your own affiliate link." },
-  { n: "03", t: "It builds the list", p: "An Idea List in your storefront holding every piece, or a shop-the-look page on your own site." },
-  { n: "04", t: "It makes the pins", p: "A styled flat lay or collage, and a lifestyle photo of your AI persona (or a second collage if you don't have one). Title, description, alt text, #ad line." },
-  { n: "05", t: "It schedules and logs", p: "Two pins per look, three days apart, checked on Pinterest's scheduled page and written to your pin tab and log." },
+  { n: "01", t: "It picks the next look", p: "From a seasonal calendar and evergreen bank written for your theme, so the machine always knows what comes next." },
+  { n: "02", t: "You provide the product intake", p: "You choose the Amazon pieces, create the destination Idea List or page, and put the ASINs, attributes, links and destination into PRODUCT_SOURCES.md. The agent never logs into Amazon." },
+  { n: "03", t: "It makes the pins", p: "A styled flat lay or collage, plus a lifestyle photo of your AI persona when you use one. Title, description, alt text and disclosure are written with each Pin." },
+  { n: "04", t: "It schedules and logs", p: "Two Pins per look, three days apart, checked on Pinterest's scheduled page and written to your Pin tab and log." },
 ];
 
 const needs = [
-  "A Claude plan with scheduled tasks and Claude in Chrome",
-  "The Claude desktop app, with your computer on when the tasks run",
-  "Amazon Associates, plus Influencer approval for Idea Lists",
+  "A paid Claude plan with the required scheduled-task and browser/local-file capabilities",
+  "Claude Desktop connected when a run needs your local Storefront folder or browser",
+  "Amazon Associates or Influencer access appropriate to your path",
   "A Pinterest business account with public boards",
-  "Gemini and Higgsfield accounts",
+  "An image provider that supports your chosen path and current commercial-use requirements",
 ];
 
 const inside = [
-  "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
+  "The setup prompt: paste once, answer five questions, it writes your own recipe and log",
   "The themed-look recipe, for any theme and any season",
-  "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
-  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
+  "The complete themed-look workflow and recovery system",
+  "The two core scheduled task prompts, complete and ready to paste",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
   "The setup guide, with two of my own looks worked through step by step",
@@ -82,9 +81,9 @@ const inside = [
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
-      <li>About 5 minutes to start</li>
-      <li>No building, no selling, no posting</li>
-      <li>Runs from your own computer</li>
+      <li>Short setup once your accounts are ready</li>
+      <li>Amazon product intake stays in your hands</li>
+      <li>Downstream Pin work is scheduled</li>
     </ul>
   </section>
 
@@ -139,7 +138,7 @@ const inside = [
       <div><span class="ws-stat">84</span><span class="ws-statlab">Tagged product links</span></div>
       <div><span class="ws-stat">26</span><span class="ws-statlab">Pins built</span></div>
     </div>
-    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work. It took me 5 minutes to set up.</p>
+    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work: the look calendar, the product intake, the generated Pins, the schedule and the recovery log.</p>
     <div class="ws-gallery">
       {proof.slice(4).map((p) => (
         <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
@@ -153,11 +152,11 @@ const inside = [
     <div class="ws-grid-2">
       <div class="ws-card">
         <ul class="ws-yes">{needs.map((n) => (<li>{n}</li>))}</ul>
-        <p class="ws-fine-dark">The Outfit of the Day line also needs The Brand Closet™ at Rose's $9/month tier. It's optional: the themed-look line runs without it.</p>
+        <p class="ws-fine-dark">The Amazon product-selection and destination-list/page step stays outside the automated agent workflow. That is deliberate: the machine never operates your Amazon account.</p>
       </div>
       <div class="ws-card ws-callout">
         <h3>The honest part</h3>
-        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
+        <p>The schedule itself runs in Claude, but this workflow uses your local Storefront folder and browser. Claude Desktop therefore needs to be open and connected when the run needs those local resources. Pinterest publishes scheduled Pins itself.</p>
         <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
       </div>
     </div>
@@ -201,17 +200,17 @@ const inside = [
     <div class="ws-kicker">Questions</div>
     <h2>Asked, answered.</h2>
     <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
-      <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
+      <p>No. You paste one prompt into the Claude desktop app and answer five questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
     <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
-      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
+      <p>For runs that need your local Storefront folder or browser, Claude Desktop needs to be open and connected. The Pin itself does not require your computer to be on after Pinterest has scheduled it.</p></details>
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
-      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
+      <p>Use the no-persona image path: both Pins use person-free styled images. Your setup records the image provider and model you choose.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
-      <p>There's an Associates-only path: each look gets a page on your own site, and the pins link there. It's hands-off if the tasks can publish to your site (a Weekend Ecosystem™ site can). Influencer approval is the easy path, because Idea Lists need no website at all.</p></details>
+      <p>The product supports an Associates-only destination on your own website. You provide the compliant Amazon links and page destination; the automated machine takes over the downstream Pin work. An Influencer storefront is not required for the machine itself.</p></details>
     <details class="ws-faq"><summary>Will it make me money?</summary>
       <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
     <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
-      <p>No. Instagram isn't part of the machine. There's an optional add-on page for feed posts, and it says plainly that stories are posted by hand.</p></details>
+      <p>No. Instagram is not part of the core machine.</p></details>
   </section>
 
   <section class="ws-final">
