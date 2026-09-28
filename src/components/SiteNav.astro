@@ -36,14 +36,14 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   .sn-links a[aria-current="page"]{color:#1A1417;border-bottom-color:#D62E73}
   .sn-links a.sn-cta{padding:0 18px;border-radius:0;background:#1A1417;color:#fff;border:1px solid #1A1417;letter-spacing:.1em}
   .sn-links a.sn-cta:hover,.sn-links a.sn-cta[aria-current="page"]{background:#D62E73;border-color:#D62E73;color:#fff}
-  .sn-menu,.sn-close{display:none;min-width:44px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(26,20,23,.25);background:transparent;
+  .sn-menu,.sn-close{display:none;min-width:44px;min-height:44px;padding:0 16px;border-radius:0;border:1px solid rgba(26,20,23,.25);background:transparent;
     font:600 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1A1417;cursor:pointer}
   .sn-drawer{margin:0;inset:0;width:100%;max-width:none;height:100%;max-height:none;border:0;padding:84px 24px 32px;background:#FBF8F5;color:#1A1417}
   .sn-drawer::backdrop{background:rgba(26,20,23,.35)}
   .sn-drawer .sn-close{display:inline-flex;align-items:center;position:absolute;top:12px;right:16px}
   .sn-drawer a{display:flex;align-items:center;min-height:58px;font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:30px;color:#1A1417;border-bottom:1px solid rgba(200,169,106,.4)}
   .sn-drawer a[aria-current="page"]{color:#B8245F}
-  .sn-drawer a.sn-d-cta{margin-top:24px;justify-content:center;border:0;border-radius:999px;background:#D62E73;color:#fff;font-family:"Inter",system-ui,sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .sn-drawer a.sn-d-cta{margin-top:24px;justify-content:center;border:0;border-radius:0;background:#D62E73;color:#fff;font-family:"Inter",system-ui,sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   .sn a:focus-visible,.sn button:focus-visible,.sn-drawer a:focus-visible,.sn-drawer button:focus-visible{outline:3px solid #D62E73;outline-offset:3px}
   @media(max-width:1020px){.sn-links{display:none}.sn-menu{display:inline-flex;align-items:center}}
   @media(prefers-reduced-motion:reduce){.sn-links a{transition:none}}
