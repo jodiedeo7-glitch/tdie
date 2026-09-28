@@ -564,3 +564,51 @@ REPO STATUS: the optimized While-You-Sleep branch contains no implemented Pinter
 LAUNCH DECISION: keep the current browser-based Pinterest scheduling path for the launch version because it is already implemented and live-tested. Do not add an API integration during this finalization pass merely because the capability exists. The API becomes a post-launch optimization candidate if it can be implemented, OAuth-approved, tested, and integrated without adding customer setup burden.
 
 SOURCE: Pinterest Developers, Share business access, current page checked 2026-09-28. The Publisher role explicitly includes scheduling Pins to publish in the future.
+
+
+## 28 Sep 2026 continuation: two operating modes + API + provider matrix
+
+### VERIFIED
+
+Two customer paths are now explicit. The product supports a Time-Saving path, a Credit-Saving path, and a Mixed mode. The manual path is the same workflow with repetitive operations performed by the customer.
+
+Pinterest API is now a first-class course module. The kit covers Trial vs Standard, OAuth, privacy policy, the Standard approval/demo-video requirement, security rules, and the positive approval gate required for API publication.
+
+Founder pre-approval automation is disclosed but not endorsed. The course says the founder personally succeeded with pre-approval browser automation, identifies that as survivor bias, states that the result does not establish permission, and does not teach bypasses or hidden endpoints.
+
+Amazon clothing clarification: clothing can be the subject of an original AI-generated flat lay. Amazon-hosted product images remain Program Content and do not gain a clothing-specific exception.
+
+Amazon Storefront + Pinterest integration is included. Eligible Influencer customers can connect an Amazon Storefront to Pinterest for product tagging/disclosure convenience. It is documented as supplemental to the Idea List path.
+
+Brand Closet daily cadence is not the blocker. Daily OOTD content exists. The blocker remains commercial use of paid member content. The buyer kit states the exact written permission needed to activate that path.
+
+AI cost/provider comparison is now a core guide component. The guide contains current verified plan pricing, credits, API per-image pricing where published, model/job mapping, and the distinction between website/manual Unlimited and connector/API credit usage.
+
+### HIGH-VALUE OPTIMIZATIONS ADDED
+
+1. 12_OPERATION_MODES.txt gives the customer a mode decision before buying infrastructure.
+2. 13_PINTEREST_API_APPLICATION.txt turns API approval into a concrete mini-course.
+3. 14_AI_PROVIDER_MATRIX.md makes provider selection an evidence-based customer choice.
+4. Starred manual alternatives are placed only where the operation materially benefits from a time-vs-credit choice.
+5. PRODUCT_SOURCES.md remains the authoritative Amazon-side intake boundary.
+6. The queue separates APPROVE from PULL so API consent cannot be inferred from absence of a pull request.
+
+### UPDATED LAUNCH BLOCKERS
+
+1. Replace the binary PDF in GitHub with the newly rendered 14-page guide so the downloadable repository artifact matches the corrected source.
+2. Rebuild the repository ZIP from the full 00-14 kit plus the corrected PDF.
+3. Live end-to-end tests remain required for the chosen image provider reference-image path, Pinterest Trial/OAuth/API smoke test, Pinterest Standard publication with explicit APPROVE, and the Amazon Storefront + Pinterest connection for an eligible Influencer account.
+4. The Associates-only website path remains a site-builder-specific test rather than a universal automation claim.
+
+### CURRENT ARCHITECTURE
+
+Amazon-side product research/list creation
+-> PRODUCT_SOURCES.md
+-> scheduled or manual image/copy build
+-> Pin review state
+-> NATIVE PINTEREST or PINTEREST API STANDARD
+-> explicit approval/publication
+-> verification
+-> persistent logs/recovery
+
+No launch customer path depends on autonomous Amazon browsing or unauthorized Pinterest browser automation.
