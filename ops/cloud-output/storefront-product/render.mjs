@@ -196,8 +196,8 @@ guide.push(`<section class="pg">${top(3)}
     <li>The ChatGPT desktop app, with your computer on during local Work runs<span>Use ChatGPT's built-in browser for storefront web work. No separate Chrome extension is required.</span></li>
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
-    <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>Gemini and Higgsfield accounts<span>Higgsfield (Seedream 4.5) makes every flat lay. Gemini makes persona photos, so no persona means no Gemini.</span></li>
+    <li>Only for the blog half: GitHub access to your site repository<span>With write access to your site's repository.</span></li>
+    <li>Gemini and Higgsfield accounts<span>Higgsfield makes the flat lays using the currently verified image model selected in the setup. Do not rely on a hard-coded legacy model name. Gemini makes persona photos, so no persona means no Gemini.</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
   </ul></div>
   <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
@@ -211,11 +211,11 @@ guide.push(`<section class="pg">${top(4)}
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">1</div><div class="card"><h3>Make your folder</h3>
       <p>On your computer, make a new folder called <strong>While-You-Sleep Storefront</strong>. Unzip this kit into it, so the folder holds all twelve .txt files and this PDF. Keep it somewhere you'll find it again, like Documents.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="card"><h3>Sign in, in Chrome</h3>
-      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong>, <strong>Higgsfield</strong>, and <strong>Gemini</strong> if you have a persona. Use ChatGPT's built-in browser for storefront web work. Sign in through its secure sign-in flow when prompted. The tasks never type a password, so everything has to be signed in already.</p></div></div>
+    <div class="step"><div class="num">2</div><div class="card"><h3>Connect your accounts</h3>
+      <p>Use ChatGPT's built-in browser to sign in securely when prompted for <strong>Amazon</strong>, <strong>Pinterest</strong>, and any other storefront account. Connect <strong>Higgsfield</strong> and <strong>Gemini</strong> as required by their own setup flows. Sign in through its secure sign-in flow when prompted. The tasks never type a password, so everything has to be signed in already.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
-      <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
+      <p><a href="${BC}">Join The Brand Closet&trade;</a> and connect/use Skool when prompted by the storefront workflow.</p>
       <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p></div></div>
   </div>
   ${strip(["pink-angel-halloween-costume-flatlay.jpg", "pink-bunny-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"], sticker("Made by<br>the tasks,<br>not me", "right:-10px;top:40px;transform:rotate(8deg)", true))}
@@ -264,7 +264,7 @@ guide.push(`<section class="pg">${top(7)}
   <h2>Then you <em>leave it alone.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
-      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the next production or maintenance run reconciles eligible unfinished work from structured state. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
+      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave the ChatGPT desktop app available while local Work runs execute, and do not interrupt the active browser task. If it was off when a run was due, the next production or maintenance run reconciles eligible unfinished work from structured state. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
       <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the maintenance task processes it using the stored publisher and external Pin ID; you can also delete it directly in Pinterest at any time. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
