@@ -8,12 +8,13 @@ Required fields
 
 | Look | Date | Kind | Board | ASIN | Product description | Color / material / visual details | Amazon Special Link | Destination URL | Reference image | Rights confirmed | Intake status |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| example look | 2026-10-10 | outfit | My Board | B000000000 | black square-neck dress | black, velvet, fitted, midi | https://... | https://... | none | n/a | ready |
+| EXAMPLE ONLY, REPLACE | 2026-10-10 | outfit | My Board | [ASIN] | black square-neck dress | black, velvet, fitted, midi | [YOUR AMAZON SPECIAL LINK] | [YOUR DESTINATION URL] | none | n/a | ready |
 
 Rules
 
 1. One row per product.
 2. ASIN, product attributes, Special Link and destination URL are customer-supplied or come from an eligible approved API integration. The scheduled agent never browses Amazon to obtain them.
+3. Do not paste Amazon listing copy verbatim. Summarize product attributes in your own words.
 3. A Special Link must be the customer's own compliant Amazon link. Never paste an invented or guessed link.
 4. A reference image is optional. If one is listed, the customer confirms they own it or have explicit permission/license for AI transformation and commercial use.
 5. Amazon product screenshots, Amazon-hosted product images, retailer images and marketplace images are not rights-cleared just because they are publicly viewable.
