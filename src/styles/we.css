@@ -326,3 +326,66 @@ html,body{overflow-x:clip}
 /* preview hero: polaroid only, no laptop peek */
 .pv-collage{padding-bottom:10px}
 .pv-collage .wx-polaroid figcaption{padding-left:6px;text-align:center;min-height:0}
+
+/* ───────── EDITORIAL ART DIRECTION · 28 Sep 2026 ─────────
+   Replace interface-heavy packaging with print/editorial hierarchy.
+*/
+.wx{--glass:#FFFDFB;--shadow:0 18px 38px -28px rgba(26,20,23,.28)}
+.wx-btn{border-radius:0;background:var(--ink);box-shadow:none;letter-spacing:.14em}
+.wx-btn:hover{background:var(--hot);transform:none;box-shadow:none}
+.wx-card{background:#FFFDFB;-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid rgba(26,20,23,.16);border-radius:2px;box-shadow:none}
+.wx-hot{border-radius:0;background:var(--hot);box-shadow:none}
+.wx-hot::before{display:none}
+.wx-sticker{border-radius:0;box-shadow:none}
+.wx-sticker>span{border-style:solid;border-radius:0}
+.wx-sec{padding:clamp(90px,11vw,160px) 0;border-top:1px solid rgba(26,20,23,.16)}
+.wx-sec-h{font-size:clamp(42px,6vw,82px);line-height:.94;letter-spacing:-.035em;max-width:12ch}
+.page-wrap .wx-hero h1{font-size:clamp(56px,7.8vw,112px);line-height:.86;letter-spacing:-.045em;max-width:9ch}
+.wx-hero{gap:clamp(40px,7vw,110px);padding-bottom:clamp(70px,9vw,130px)}
+.wx-lede{font-size:18px;max-width:31em}
+.wx-fs{max-width:1050px;grid-template-columns:1fr 1.35fr;gap:0}
+.wx-fri,.wx-sun{border-radius:0}
+.wx-fri{border:1px solid rgba(26,20,23,.18);border-right:0}
+.wx-sun{border:1px solid var(--hot)}
+.wx-life{gap:0;margin-top:70px}
+.wx-life .wx-card{border-right:0}
+.wx-life .wx-card:last-child{border-right:1px solid rgba(26,20,23,.16)}
+.wx-proof{grid-template-columns:1.5fr 1fr 1fr;gap:0}
+.wx-proof a{min-height:220px;padding:28px;border:1px solid rgba(26,20,23,.16);border-top:3px solid var(--hot)}
+.wx-proof a:first-child{min-height:300px}
+.wx-proof-t{font-size:clamp(24px,2.7vw,36px)}
+.wx-who{gap:0}
+.wx-who .wx-card{border-radius:0}
+.wx-who-ai{border-right:0}
+.wx-who-you{border:0}
+.wx-never-grid span{border-radius:0;background:transparent;border-bottom:1px solid rgba(26,20,23,.2);padding:9px 2px}
+.wx-phase{border-radius:0;border-top-width:3px}
+.wx-phase-hrs{border-radius:0}
+.wx-obj-card{border-radius:0}
+.wx-obj-n{border-radius:0}
+.wx-fit{gap:0}
+.wx-fit .wx-card{border-radius:0}
+.wx-fit .wx-card:first-child{border-right:0}
+.wx-close{border-radius:0}
+.wx-sticky{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+.wx::before{background:
+  radial-gradient(520px 420px at 78% 120px,rgba(255,138,194,.12),transparent 70%),
+  radial-gradient(420px 380px at 8% 60px,rgba(203,183,247,.10),transparent 70%),
+  none}
+.wx-polaroid{border-radius:0;box-shadow:18px 18px 0 var(--bub)}
+.wx-polaroid img{border-radius:0}
+.wx-collage-peek{filter:none}
+.wx-note{border-radius:0;box-shadow:12px 12px 0 var(--bub)}
+@media(max-width:820px){
+  .wx-life,.wx-proof,.wx-who,.wx-phases,.wx-fit,.wx-fs{grid-template-columns:1fr}
+  .wx-life .wx-card,.wx-proof a,.wx-fit .wx-card:first-child{border-right:1px solid rgba(26,20,23,.16)}
+}
+@media(max-width:640px){
+  .page-wrap .wx-hero h1{font-size:clamp(48px,14vw,72px);line-height:.88}
+  .wx-sec{padding:72px 0}
+  .wx-sec-h{font-size:clamp(40px,12vw,62px)}
+  .wx-fri{border-right:1px solid rgba(26,20,23,.18);border-bottom:0}
+  .wx-life{margin-top:42px}
+  .wx-proof a:first-child{min-height:220px}
+  .wx-polaroid{box-shadow:10px 10px 0 var(--bub)}
+}
