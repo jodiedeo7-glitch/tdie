@@ -493,6 +493,11 @@ const jsonLd = {
     .cover-copy .e-actions{align-items:stretch}
     .recognition-list li{gap:12px}
   }
+  .tdie-manifesto{max-width:1180px;margin:0 auto;padding:clamp(72px,9vw,132px) 24px clamp(58px,7vw,96px);display:grid;grid-template-columns:1fr 2fr;border-top:1px solid rgba(26,20,23,.16)}
+  .tdie-manifesto-kicker{font:700 10px/1.35 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);max-width:170px}
+  .tdie-manifesto p{margin:0;font:600 clamp(42px,6vw,88px)/.9 Newsreader,Georgia,serif;letter-spacing:-.035em}
+  .tdie-manifesto em{font-style:italic;color:var(--e-pink)}
+  @media(max-width:700px){.tdie-manifesto{display:block;padding-top:72px}.tdie-manifesto-kicker{display:block;margin-bottom:28px}.tdie-manifesto p{font-size:clamp(48px,14vw,70px)}}
 </style>
 </head>
 <body class="e-page">
@@ -556,7 +561,12 @@ const jsonLd = {
     </section>
 
     <!-- 3 · THE HUMAN RECOGNITION MOMENT -->
-    <section class="recognition" aria-labelledby="recognition-h">
+    <div class="tdie-manifesto" aria-label="TDIE brand philosophy">
+  <span class="tdie-manifesto-kicker">A note from the woman with too many tabs open</span>
+  <p>Organized business.<br /><em>Unfiltered human.</em></p>
+</div>
+
+<section class="recognition" aria-labelledby="recognition-h">
       <div class="e-wrap recognition-inner">
         <div class="recognition-kicker">
           <p class="e-kick">If this sounds familiar</p>
