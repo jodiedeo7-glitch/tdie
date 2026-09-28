@@ -9,7 +9,7 @@ You need: Amazon Influencer approval and a storefront (amazon.com/shop/yourname)
 
 How it works: every look gets its own Idea List in your storefront, holding every piece. Both pins of the look link to that list. Someone taps the pin, lands on a list of exactly the pieces she saw, and a qualifying purchase through it is tracked to your Associates tag.
 
-The recipe builds the list for you (03_THEMED_LOOK_RECIPE.txt, Part 3 step 5) and checks it loads before any pin links to it.
+You create the Idea List yourself and put its public URL in PRODUCT_SOURCES.md. The scheduled task does not open Amazon or create, edit or submit the list.
 
 Fallback: if a list truly can't be made or won't load (a piece won't add, the editor won't save, the list is still in review), the pins link to your storefront home and the log says why. Never a single-product link. Never a list for a different look.
 
@@ -21,7 +21,7 @@ THE ASSOCIATES-ONLY PATH (your own site page)
 
 You need: an approved Amazon Associates account, and a website where a shop-the-look page can live.
 
-How it works: every look gets a page on your own site, with the look's name, a short intro, the two pin images and every piece linked with your SiteStripe short link. Both pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
+How it works: every look gets a page on your own site, with the look's name, a short intro, the two Pin images and every piece linked with the customer's own compliant Amazon Special Link. Both Pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
 
 A pin NEVER links to a page that doesn't load. Before any pin is scheduled, the task opens its page. If the page isn't live yet, the pins wait, logged "built", and the next run or pull sweep schedules them once it loads.
 
@@ -34,7 +34,7 @@ TWO KINDS OF SITE
    - where it goes (a new page or blog post under SITE PAGE BASE)
    - the page title and the URL slug (the look name, lowercase, hyphens, no dates); the page address is SITE PAGE BASE plus the slug, and it's the link on both pins
    - a meta description of 155 characters or fewer
-   - the two images to add and their alt text: open your Higgsfield (and Gemini) history, find the two images by the date and prompt words written in the file, and save them yourself (the tasks never download anything, so this one is yours)
+   - the two images to add and their alt text: open the image provider named in MY_RECIPE.txt, find the two images by the provider/model, date and prompt words written in the file, and add them to the page (the tasks never download anything, so this one is yours)
    - an 80 to 150 word intro in your voice, no prices
    - the numbered item list as ready-to-paste HTML, every link with target="_blank" rel="sponsored nofollow noopener"
    - the line "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
