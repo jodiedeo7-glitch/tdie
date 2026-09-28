@@ -1,0 +1,181 @@
+13. PINTEREST API APPLICATION
+
+This is the recommended Pinterest automation path once Standard access is approved.
+
+This lesson is about the Pinterest developer application and its application demo video. It is NOT a video-generation workflow.
+
+====================================================================
+WHY APPLY
+====================================================================
+
+Native Pinterest publishing is the lowest-setup path.
+
+The API path is the recommended automation path because it gives your own application a supported way to work with Pinterest instead of relying on browser automation.
+
+Do not confuse:
+- Pinterest account
+- Amazon account
+- Pinterest developer app
+- Pinterest API Trial access
+- Pinterest API Standard access
+
+They are separate.
+
+====================================================================
+TRIAL ACCESS
+====================================================================
+
+Pinterest's current access-tier documentation says Trial access creates Sandbox Pins and Boards visible only to their creator.
+
+Use Trial to prove:
+- your OAuth flow works
+- your app can read the intended account data
+- your app can create a test Pin
+- your app can read the created Pin
+- your app can delete the test Pin
+
+Do not describe Trial as production access.
+
+====================================================================
+STANDARD ACCESS
+====================================================================
+
+Pinterest currently requires, for Standard upgrade:
+- an app already approved for Trial access
+- compliance with the Developer Guidelines
+- accurate app/use-case information
+- a publicly accessible privacy policy
+- a video demo showing the application using the Pinterest API
+- the OAuth authentication flow
+- live Pinterest integration
+
+Pinterest specifically warns that demo videos can be rejected when:
+- the authentication flow is missing
+- the approved OAuth authorization flow is not demonstrated
+- the demo does not show live Pinterest integration
+- credentials or session cookies are used instead of the approved OAuth flow
+
+[Source: Pinterest Developers, Access Tiers, checked Sep 28 2026.]
+
+====================================================================
+APPLICATION CHECKLIST
+====================================================================
+
+Before pressing Upgrade:
+[ ] App name is accurate.
+[ ] App description explains the real use case.
+[ ] Your privacy policy is public and loads.
+[ ] Redirect/callback URI is the actual URI used by your application.
+[ ] OAuth is working.
+[ ] Your application never asks users for Pinterest passwords.
+[ ] Your application never asks for Pinterest session cookies.
+[ ] Secrets are not displayed in the demo video.
+[ ] Trial access is already approved.
+[ ] Your test account is connected through OAuth.
+[ ] You can demonstrate live Pinterest API activity.
+
+Do not hard-code a Pinterest scope list in this lesson. Use the scopes currently presented by Pinterest for your application and the operations you actually need. API scopes and requirements can change.
+
+====================================================================
+THE DEMO VIDEO
+====================================================================
+
+Pinterest requires the demo even when you are the only intended user.
+
+Record one continuous walkthrough showing:
+
+1. Your app in the Pinterest developer portal.
+2. The app starting the OAuth authorization flow.
+3. Pinterest's consent screen.
+4. The user approving the requested access.
+5. The redirect/callback returning to your app.
+6. The app showing that the Pinterest account is connected.
+7. The app reading the user's relevant boards.
+8. The app creating a test Pin through the live Pinterest API.
+9. The resulting Pin visible in Pinterest.
+10. The app deleting the test Pin through the API.
+11. The end of the recording showing no API secret, password or session cookie.
+
+The recording should make it obvious that:
+- authentication uses OAuth
+- the integration is real
+- the app is acting on the authenticated user's account
+- no sensitive credential is being collected or stored in the UI
+
+====================================================================
+THE MOST IMPORTANT API PRODUCT RULE
+====================================================================
+
+When a Pinterest app allows scheduled Pin publishing, the user must choose each Pin to be published.
+
+Therefore the API version of The While-You-Sleep Storefront™ uses:
+
+READY FOR APPROVAL
+-> customer explicitly selects APPROVE
+-> API can publish according to the application's supported publication workflow
+
+It does NOT use:
+
+READY
+-> no one clicks anything
+-> API publishes unless the customer finds and pulls the Pin
+
+That negative-only model is not the API approval model.
+
+In pin-tab.md use:
+APPROVE
+PULL
+
+A blank APPROVE field means HOLD.
+
+====================================================================
+API VS NO API
+====================================================================
+
+NO API:
+Customer creates the Pin in Pinterest's native composer and schedules it.
+
+API STANDARD:
+Customer reviews the prepared queue and explicitly approves each Pin. The connected application then performs the supported API action.
+
+API publication and scheduling details must be verified against the exact current Pinterest API capability available to your app before being advertised as a specific endpoint or timing feature.
+
+====================================================================
+WHILE YOU WAIT FOR APPROVAL
+====================================================================
+
+Recommended:
+- Native Pinterest publishing
+- Or build/queue mode
+
+Not recommended:
+- unauthorized browser automation
+
+The founder has successfully used pre-approval browser automation, but Pinterest's current Terms prohibit unauthorized automated access. That personal result is survivor bias, not permission.
+
+====================================================================
+SECURITY
+====================================================================
+
+Never put a Pinterest API secret, access token, refresh token, password or session cookie in:
+- GitHub
+- the customer Storefront folder
+- a Claude prompt
+- a Skool lesson
+- a screenshot/video
+- a public repository
+- a support ticket
+
+Use the credential storage method supported by your application environment.
+
+====================================================================
+APP MAINTENANCE
+====================================================================
+
+Treat the Pinterest API app like software:
+- document the version/date you tested
+- keep a test Pin path
+- monitor API errors/rate limits
+- handle revoked authorization
+- re-run the smoke test after major Pinterest API changes
+- never assume a working endpoint stays unchanged forever
