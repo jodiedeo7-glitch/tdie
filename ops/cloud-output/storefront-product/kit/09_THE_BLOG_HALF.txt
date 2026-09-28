@@ -9,9 +9,9 @@ Then you already have the site this needs: yours, on your own domain, deploying 
 
 A note on Pinterest, because you've heard me say my domain is blocked there: that block is on MY domain only. It has nothing to do with yours. Your pins can link to your own look pages. (Before your first pin, run the quick test in 08_STOREFRONT_PATHS.txt anyway: paste your address into a pin's link field and make sure Pinterest accepts it.)
 
-You also need Chrome signed in to GitHub, with write access to your site's repository, so the weekly task can upload each look.
+You also need GitHub access to your site's repository. Use ChatGPT's GitHub connection for read/search work, and Codex when direct repository edits or commits are required, so the weekly task can upload each look.
 
-STEP 1. Open a Claude session that can work in your website's code folder (in the Claude desktop app, that's Claude Code on your site's folder: the same way you built the site) and paste this:
+STEP 1. Open ChatGPT Work in the desktop app with your website repository/folder available. If the job requires direct repository edits and commits, use Codex from the same ChatGPT desktop app. Paste this:
 
 ------------------------------------------------------------------
 Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same fonts, colors, spacing, header and footer. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
