@@ -292,3 +292,153 @@ Neither audit is authoritative by default. The final master is created only afte
 - Google positions Nano Banana 2 as the general workhorse balancing quality, speed and cost; Nano Banana 2 Lite as the efficiency/low-cost option; Nano Banana Pro as the premium model for complex visual tasks and precise creative control.
 - Current Gemini API pricing lists Nano Banana 2 at approximately $0.067 per 1K image, $0.101 per 2K image and $0.151 per 4K image under standard paid pricing; batch pricing is lower. Nano Banana Pro is approximately $0.134 per 1K/2K image and $0.24 per 4K image under standard paid pricing.
 - The user's existing Claude-connected Gemini 10-free-generations/day workflow should therefore be benchmarked against direct Gemini API/AI Studio availability, Nano Banana 2/2 Lite, and the current Higgsfield/Nano Banana Pro and Seedream 4.5 options. No replacement should be made without quality/consistency/cost testing.
+
+
+## 2026-09-28 audit corrections and launch-level findings
+
+### A. Claude scheduled-task architecture — VERIFIED CURRENT
+Anthropic's current Cowork documentation materially changes the original product instructions:
+- Scheduled tasks can run remotely even when the computer is asleep or the Claude Desktop app is closed.
+- However, a scheduled task that requires local files or local apps runs locally.
+- A local-folder workflow therefore still requires the Claude Desktop app to be open/connected when the task needs that local folder.
+- Browser use through the user's own Chrome and local computer access also require the Claude Desktop app to be open.
+- Current Claude scheduled tasks support hourly/daily/weekly/weekdays/manual cadence, and the task can specify a folder.
+- Current documentation says scheduled tasks are available on Pro/Max for individual users; Claude in Chrome is available on paid plans.
+
+PRODUCT CHANGE REQUIRED:
+The guide must stop saying simply "scheduled tasks run from your own computer" as though all scheduling itself is local. The accurate statement is:
+"Your scheduled task can be scheduled in Claude's cloud, but because this workflow uses your local Storefront folder and your signed-in browser, the computer running Claude Desktop must be online with Claude Desktop open when the task runs."
+
+The current "missed-run sweep" may therefore still be useful for local execution failures, but its rationale must be rewritten. Do not describe it as necessary merely because scheduled tasks cannot run while the computer is off.
+
+Sources: Anthropic Claude Cowork scheduled tasks and Cowork architecture documentation, checked 2026-09-28.
+
+### B. Browser architecture — VERIFIED CURRENT
+Claude now has a built-in browser in Cowork in addition to Claude in Chrome. The built-in browser does not touch the user's existing Chrome tabs/logins. The Storefront currently depends on the customer's signed-in Amazon/Pinterest/Skool sessions, so the Chrome path remains relevant unless the entire workflow is redesigned around authenticated connectors/API access.
+
+Do not replace Chrome simply because a built-in browser exists. The audit must determine, service by service, whether browser-session dependence can actually be removed.
+
+### C. Amazon Creators API — VERIFIED CURRENT, NOT A UNIVERSAL CUSTOMER DEPENDENCY
+Amazon's current Creators API can programmatically search products, retrieve ASIN/product information, variations, browse nodes and image URLs. However, current Amazon documentation says API access requires final Associates acceptance and qualified sales eligibility; the current eligibility criterion documented by Amazon is 10 qualified sales in the trailing 30 days. API access can also be lost after a consecutive 30-day period without qualified referring sales.
+
+PRODUCT CHANGE REQUIRED:
+Do not make Creators API a required setup step for ordinary new Storefront customers. It should be treated as an optional advanced optimization for eligible customers.
+
+Potential future optimization:
+For eligible customers, Creators API could replace browser-based Amazon search/ASIN retrieval and reduce browser work. It does not automatically solve affiliate-link creation, Program Content licensing, or product-image rights, so those must remain separately audited.
+
+Sources: Amazon Creators API onboarding, API rates, resources and troubleshooting, checked 2026-09-28.
+
+### D. Amazon + Pinterest direct-link architecture — VERIFIED CURRENT, REQUIRES REDESIGN REVIEW
+Amazon's current Associates agreement explicitly defines a monetizable "Site" to include social media user-generated content and permits Special Links in qualifying social-media contexts. Pinterest's current affiliate guidelines permit affiliate links when content is original, adds unique value, is transparent, and is used in moderation.
+
+This means the current product statement:
+"Associates only and NO website = the machine cannot run"
+is not established as a current universal Amazon rule and must be re-audited.
+
+Pinterest itself permits affiliate content and separately offers an Amazon Storefront connection for eligible creators. Pinterest's Amazon Storefront integration currently requires Amazon Influencer participation, but that is separate from the broader Associates social-link permission.
+
+PRODUCT CHANGE REQUIRED:
+Re-test an Associates-only/no-website path in which Pins link directly to compliant Amazon Special Links or use Pinterest's supported product-tagging mechanisms where available. Do not retain the website as a mandatory dependency unless the direct-link route fails an actual Amazon/Pinterest policy or technical test.
+
+This could eliminate the largest remaining manual branch for Associates-only customers.
+
+### E. Pinterest native Amazon integration — NEW OPPORTUNITY
+Pinterest currently allows eligible creators who connect an Amazon Storefront to use an Amazon filter when tagging products; affiliate links are applied automatically and Pins with those affiliate links automatically receive an affiliate-link disclosure. Pinterest's current Pin design tools also support up to five product stickers per Pin.
+
+PRODUCT CHANGE REQUIRED:
+Test whether the Storefront should teach Amazon Influencer customers to connect their Amazon Storefront to Pinterest and tag up to five products directly on the Pin. This may complement or partially replace the Idea List workflow, especially for the first five hero products.
+
+Do not replace Idea Lists until the customer journey, click destination, disclosure behavior, and multi-product shopping experience are tested.
+
+### F. Pinterest affiliate-volume risk — VERIFIED CURRENT
+Pinterest's affiliate guidelines state that affiliate content should be original and add unique value, and that affiliate Pins should be used in moderation. They specifically warn against creating affiliate Pins repetitively or in large volumes.
+
+PRODUCT CHANGE REQUIRED:
+The product's current "3 / 5 / 7 looks per week" setting and two Pins per look must be tested against Pinterest's current spam/affiliate enforcement guidance. The existing 60-second spacing and 6-pin pause are operational safeguards, but they are not evidence that a given volume is safe.
+
+The product must not imply that the prescribed volume is "Pinterest-safe" merely because it has delays.
+
+### G. Brand Closet™ automation — LAUNCH BLOCKER PENDING RIGHTS VERIFICATION
+The current kit uses a paid third-party Skool membership as an input source for a commercial affiliate-content automation. The recipe correctly says not to copy, save, upload, or redistribute the third party's paid images/prompts/lesson text, but it still derives commercial content from that paid material.
+
+Skool's current Transaction Terms state that a member's license to restricted Admin content is revocable, limited, non-transferable, non-sublicensable and for private, personal, non-promotional, non-commercial use.
+
+PRODUCT CHANGE REQUIRED:
+Do not ship Automation 2 as a commercial use case unless there is explicit permission/license from the Brand Closet owner covering this use. A rule saying "do not save or repost the paid content" is not enough if the automation is commercially deriving new affiliate content from the paid material.
+
+Until rights are documented, the safest launch architecture is:
+- core product: Automation 1 only;
+- Brand Closet integration: remove from the core automation or replace with a permissioned/public source;
+- if retained, add explicit owner permission and scope to the product's requirements.
+
+This is a launch blocker, not a cosmetic improvement.
+
+### H. Amazon product-image generation — LAUNCH BLOCKER PENDING RIGHTS-SAFE REPLACEMENT
+The current image recipe uses screenshots of Amazon product images as reference inputs to an image generator. It then creates a new image and does not publish the Amazon image itself.
+
+That is better than reposting Amazon's image, but the current Amazon Program Content license does not establish permission to feed Program Content into a generative model or create derivative works from it. Amazon also prohibits altering Program Content and limits its use to the licensed scope.
+
+PRODUCT CHANGE REQUIRED:
+Replace "attach the Amazon product sheet to the image generator" with a rights-safe product-reference method.
+
+Candidates to test:
+1. Text-only product description generated from the Amazon page, with no Amazon image supplied to the model.
+2. A customer-owned photograph of the product.
+3. A manufacturer/seller image for which the customer has a separate license allowing this use.
+4. A rights-cleared product-feed/image source whose terms expressly permit generative transformation.
+5. If Amazon explicitly confirms a permitted API/reference workflow for this use, document that permission before adding it.
+
+The product must not tell customers that Amazon images are safe to use as generative references merely because they are not directly published.
+
+### I. Amazon policy wording in the kit is outdated
+The current recipe says "Amazon's rules ban affiliate links in email." That is too broad under the April 14, 2026 Associates policy. Amazon now permits Special Links in solicited/opted-in email, SMS and social-media direct messages subject to the agreement and applicable marketing/brand requirements.
+
+PRODUCT CHANGE REQUIRED:
+Replace the blanket ban with a precise rule. The core product does not need email affiliate links, so the simplest product wording is:
+"Do not add Amazon affiliate links to this workflow's email copy. If you ever use Special Links in email, SMS or social DMs outside this workflow, follow Amazon's current opted-in communication requirements."
+
+### J. Current AI-model architecture — VERIFIED CURRENT
+Google currently identifies Nano Banana 2 as its general-purpose image-generation workhorse, Nano Banana 2 Lite as the efficiency specialist, and Nano Banana Pro as the premium complex-asset model. The legacy Nano Banana is being deprecated and is scheduled for shutdown October 2, 2026.
+
+PRODUCT CHANGE REQUIRED:
+Do not build a long-lived customer guide around legacy Nano Banana as a required model. Any customer instructions using "Nano Banana" must be clarified as either:
+- the current model actually intended by the platform; or
+- a specific legacy model that is being phased out.
+
+The audit should test whether Nano Banana 2 can replace the current faceless regular Nano Banana/Seedream routing for customers.
+
+### K. OpenAI current image stack — VERIFIED CURRENT
+OpenAI currently offers GPT Image 2.5 Flare for fast everyday image generation and GPT Image 2.5 Sunburst for higher-precision image generation/editing. Both accept text and image inputs and support iterative editing.
+
+PRODUCT CHANGE REQUIRED:
+OpenAI remains a benchmark candidate, but no architecture change should be made from model documentation alone. It requires the same controlled Storefront quality test as Gemini/Higgsfield/OpenArt.
+
+### L. Current customer-plan architecture
+The customer recommendation must be based on the current plans and actual model access available to a new customer, not the founder's personal unlimited access.
+
+The product should separate:
+- "model quality recommendation"
+- "platform access recommendation"
+- "customer subscription recommendation"
+
+An Unlimited model on the founder's account is not evidence that the same model is unlimited for a customer.
+
+### M. Human review remains mandatory
+The existing review/pull queue remains valuable and should be preserved. Pinterest's current developer guidelines explicitly say that if an app schedules Pins, the end user must choose each Pin to be published.
+
+The workflow can automate preparation and scheduling of Pins that the customer has specifically selected, but it should not silently publish an unreviewed generated queue.
+
+### N. Current Pinterest AI transparency requirement
+Pinterest currently provides a Mark as AI-Modified control and separately has AI detection/transparency mechanisms. The product should explicitly enable the user-controlled AI label for every applicable generated Pin rather than treating it as optional.
+
+### O. New highest-priority launch blockers
+Before release, resolve these in this order:
+1. Rights-safe replacement for Amazon product screenshots as AI-generation inputs.
+2. Explicit permission/license for Brand Closet commercial derivative workflow, or remove that automation from the launch product.
+3. Re-test Associates-only/no-website architecture.
+4. Re-test current Pinterest affiliate volume against the moderation requirement.
+5. Update Claude scheduling/local-computer instructions to current Cowork behavior.
+6. Test current image-model routing and customer plan economics.
+7. Then perform the Pinterest API migration test while preserving the human selection/review gate.
+
