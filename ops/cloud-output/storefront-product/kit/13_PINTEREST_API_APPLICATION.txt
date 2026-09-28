@@ -179,3 +179,57 @@ Treat the Pinterest API app like software:
 - handle revoked authorization
 - re-run the smoke test after major Pinterest API changes
 - never assume a working endpoint stays unchanged forever
+
+====================================================================
+DEMO VIDEO SCRIPT
+====================================================================
+
+Keep the recording continuous and simple. The goal is to prove OAuth and real API use, not to make a polished marketing video.
+
+OPENING CAPTION
+"TDIE Auto Pin uses Pinterest OAuth to let the account owner review and publish selected Pins."
+
+SHOT 1
+Show the Pinterest developer app page.
+Show the app name, app ID and use-case description.
+Do not show the app secret.
+
+SHOT 2
+Start the app's login/connect flow.
+Show Pinterest's OAuth consent screen.
+
+SHOT 3
+Show the user approving the requested access.
+Do not enter or display a Pinterest password inside your app.
+
+SHOT 4
+Show the OAuth redirect returning to your app.
+Show "Connected" and the authenticated Pinterest account in the app.
+
+SHOT 5
+Show the app reading the user's boards.
+Do not expose unnecessary private data.
+
+SHOT 6
+Open the app's Pin queue.
+Show one prepared Pin with its image, title, description, destination URL and alt text.
+
+SHOT 7
+Show the customer explicitly selecting that Pin for publication.
+Show the APPROVE state being recorded.
+
+SHOT 8
+Send the supported Pinterest API create/publish request.
+Show the API success response without displaying tokens.
+
+SHOT 9
+Open Pinterest and show the resulting test Pin.
+
+SHOT 10
+Use the app's supported delete operation to remove the test Pin.
+Show the deletion success and confirm the Pin is gone.
+
+CLOSING CAPTION
+"OAuth credentials are handled by the application. No Pinterest password or session cookie is collected or displayed."
+
+Do not add claims in the recording that are not demonstrated. In particular, do not claim a future scheduled-publish capability unless the exact API feature has been tested and is available to the app.
