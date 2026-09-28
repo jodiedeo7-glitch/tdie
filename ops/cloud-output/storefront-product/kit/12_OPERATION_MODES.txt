@@ -1,0 +1,131 @@
+12. OPERATION MODES
+
+This lesson is the map for choosing how much automation you actually want.
+
+====================================================================
+MODE 1: TIME-SAVING
+====================================================================
+
+Typical stack:
+Claude paid plan
++
+Claude Scheduled Tasks
++
+OpenArt MCP or Higgsfield MCP for image generation
++
+Pinterest API Standard after approval
++
+Customer-controlled Amazon product intake
+
+What the machine can do:
+- read your prepared product data
+- make the images
+- write Pin copy
+- place Pins in the approval queue
+- publish only Pins that you explicitly approve in API mode
+- log state and recover incomplete work
+- process PULL/removal state where the approved API workflow supports it
+
+What stays customer-owned:
+- Amazon product selection
+- ASIN choice
+- Special Link/list creation unless an eligible approved Amazon API is being used
+- explicit approval of each Pin in Pinterest API mode
+- rights to any reference images
+
+Current Claude rule:
+Scheduled Tasks run in the cloud and can use connected tools. Current Claude documentation says scheduled tasks use files saved to the Claude account and cannot simply be tied to a local computer folder. Local files/browser/computer access is a separate desktop/local capability. Use the cloud/account-state design for the scheduled path. [Source: Claude Help Center, Schedule recurring tasks in Claude Cowork, checked Sep 28 2026.]
+
+====================================================================
+MODE 2: CREDIT-SAVING / LOWER-COST
+====================================================================
+
+Typical stack:
+Claude Free or a lower-cost paid Claude plan
+or ChatGPT Free / Go / Plus
++
+one image provider used manually
++
+Pinterest native composer/scheduler
++
+Amazon research and Idea Lists done manually
+
+No developer application is required for Pinterest.
+No connector/MCP is required.
+No paid scheduler is required.
+
+The trade:
+You spend more minutes and fewer software dollars/credits.
+
+★ HOW TO USE THE MANUAL CALLOUTS
+Whenever you see:
+"★ SAVE CREDITS INSTEAD OF SAVING TIME?"
+do the same operation yourself in the normal website/app.
+
+Examples:
+- Image generation: open the provider manually, paste the prompt, attach your reference image, generate.
+- Pinterest: upload the image yourself, paste the copy, add the destination, set the native schedule, confirm.
+- Amazon: choose products yourself and enter the ASIN/Special Link/destination in PRODUCT_SOURCES.md.
+- Site page: paste the supplied page file into the site builder.
+
+====================================================================
+MODE 3: MIXED
+====================================================================
+
+This is often the most practical starting point.
+
+Examples:
+- Claude prepares copy and image prompts.
+- You generate images manually.
+- Pinterest publication stays manual.
+- Later, add OpenArt MCP.
+- Later, apply for Pinterest Standard.
+- Later, turn on the API publisher after the positive APPROVE gate is tested.
+
+Nothing requires you to buy the entire automation stack at once.
+
+====================================================================
+PINTEREST: API VS NATIVE
+====================================================================
+
+| | Native Pinterest | Pinterest API Standard |
+|---|---|---|
+| Cost | No developer application | Developer app + approval work |
+| Setup | Low | OAuth, privacy policy, Trial, Standard review |
+| Publishing | You create/schedule in Pinterest | Approved app can act through API |
+| Approval model | You confirm each action in Pinterest | Customer must explicitly choose each Pin |
+| Credentials | Pinterest login | OAuth token, never a password/cookie |
+| Automation | Manual | Automatable where the approved API supports it |
+| Best for | Low-cost/manual users | Customers who want repeatable automation |
+| Main caveat | More hands-on time | Approval, API limits, app maintenance |
+
+Pinterest's Developer Guidelines explicitly require the end user to choose each Pin when an app schedules Pin publishing. A default "publish unless I pull it" behavior is not the API approval model. [Source: Pinterest Developer Guidelines, checked Sep 28 2026.]
+
+====================================================================
+PINTEREST BEFORE STANDARD APPROVAL
+====================================================================
+
+Technical browser automation may be possible, and the founder has personally made it work.
+
+Founder note:
+"I did get Pinterest automation working before API approval. That is survivor bias. It proves I got away with a workflow on my account. It does not prove Pinterest permits the workflow for you, and I do not recommend treating my result as permission."
+
+Pinterest's current Terms prohibit unauthorized automated access. The product does not teach bypasses, hidden endpoints, session-cookie tricks or ways to disguise automation. [Source: Pinterest Terms, checked Sep 28 2026.]
+
+Until Standard approval, choose:
+NATIVE UI
+or
+BUILD/QUEUE ONLY
+
+====================================================================
+COST CONTROL RULE
+====================================================================
+
+Before upgrading:
+1. Calculate how many images you actually make.
+2. Check whether a manual website plan includes a model-specific Unlimited allowance.
+3. Check whether the connector/MCP uses the same Unlimited allowance. It often does not.
+4. Compare the value of your time against the actual plan cost.
+5. Buy only the smallest plan that removes a real bottleneck.
+
+Never treat "Unlimited" as a universal model property. It is a plan/surface-specific entitlement.
