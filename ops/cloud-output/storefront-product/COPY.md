@@ -244,7 +244,7 @@ Use it at the member checkout and you pay $8.50.
 
 [Open the member checkout and use PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What it is: my own Amazon pin machine. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
+What it is: my own Amazon-to-Pinterest downstream machine. You prepare the Amazon product intake and destination. Scheduled tasks in the Claude desktop app pick the next look for your theme, make the images, write the Pin copy with your #ad line, schedule the Pins 3 days apart and log every one. It uses your local folder and browser, so Claude Desktop needs to be open and connected when those resources are required.
 
 This code is for Premium members only. Please don't share it outside The Premium Vault.
 
@@ -273,7 +273,7 @@ Here's why it works on Pinterest and not on social: Pinterest is search. Nobody 
 
 What I won't do is tell you it's made me rich. It's new, and I show the machine, not screenshots. Here's the machine, from my own log: 15 looks, 15 Idea Lists, 15 shop-the-look pages, 84 tagged product links, 26 pins built. I didn't make any of them by hand.
 
-What you need before you buy, so nobody is surprised: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app on a computer that's on when the tasks run, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and Gemini and Higgsfield accounts. Setup is designed to be short once those are ready.
+What you need before you buy, so nobody is surprised: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app connected when local resources are required, Amazon Associates or Influencer access appropriate to your path, a Pinterest business account, and an image provider that supports your selected image path. Setup is designed to be short once those are ready.
 
 $10 until Thursday, 11:59 pm Eastern. Then $27.
 
