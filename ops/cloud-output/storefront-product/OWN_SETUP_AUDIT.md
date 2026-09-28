@@ -197,3 +197,21 @@ Kept on purpose, not waste: the two-correction cap, the product sheet (one scree
 ## What this audit does not change
 
 No settled canon decision. The destination rule (pins link to Idea Lists, never the domain), the disclosure, the generated title overlays (Decision 109), the 3-day spacing, the 14-day scheduling limit, the posting slots, the 31 Mar 2027 renewal, and the Pull button all stay exactly as they are.
+
+
+## CONTINUATION AUDIT 2026-09-28
+
+This continuation re-read the optimized customer kit and verified the largest launch risks against current official platform rules.
+
+### Changes made
+- Replaced autonomous Amazon browsing/SiteStripe/Idea List operations with PRODUCT_SOURCES.md customer intake.
+- Removed marketplace screenshots/product sheets from the required AI-input workflow.
+- Disabled Brand Closet™ automation pending explicit commercial-use permission.
+- Removed the separate missed-run task and folded recovery into the weekly task.
+- Made customer image-provider/model selection explicit.
+- Added stable IDs and rights state to the persistent workflow.
+- Rewrote the obsolete Amazon email-link blanket ban.
+- Updated blog-half link handling.
+
+### Current launch status
+The customer text kit is architecturally corrected, but the Setup Guide PDF and its renderer are still stale and must be regenerated before the downloadable product is considered internally consistent.
