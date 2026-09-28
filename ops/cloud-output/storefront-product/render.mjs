@@ -149,11 +149,11 @@ guide.push(`<section class="pg" style="padding:0">
     <div style="margin-top:auto">
       <div class="kicker">Setup Guide</div>
       <h1 style="font-size:58px;width:470px">The <em style="white-space:nowrap">While-You-Sleep</em> Storefront&trade;</h1>
-      <p class="lede" style="margin-top:18px;font-size:18px">Your Amazon links, turned into Pinterest pins that get built and scheduled on their own.</p>
+      <p class="lede" style="margin-top:18px;font-size:18px">Your prepared Amazon product intake, turned into Pinterest Pins that get built, scheduled and logged on a timetable.</p>
       <div class="card" style="margin-top:6px">
         <ul class="ticks">
-          <li>About 5 minutes to start<span>once your accounts are ready</span></li>
-          <li>Then no building, no selling, no posting<span>on the Influencer path: the scheduled tasks do it</span></li>
+          <li>Short setup<span>once your accounts are ready</span></li>
+          <li>Then the downstream work repeats<span>your Amazon-side intake stays with you</span></li>
           <li>Found through search<span>not the feed</span></li>
         </ul>
       </div>
@@ -176,12 +176,12 @@ guide.push(`<section class="pg">${top(2)}
     <div class="card"><b>Your list</b><small>an Idea List, or a shop-the-look page on your own site</small></div>
   </div>
   <div class="grid2">
-    <div class="card"><h3>Automation 1 &middot; Themed looks</h3>
-      <p>Once a week it picks looks for your theme from a seasonal calendar and an evergreen bank, sources the pieces, builds the list, makes a styled flat lay and a second image, writes the pin copy, schedules both pins and logs everything.</p></div>
-    <div class="hotcard"><h3>Automation 2 &middot; Outfit of the Day</h3>
-      <p>For The Brand Closet&trade; members on Rose's $9/month tier or above: Sunday to Friday nights it turns the new Outfit of the Day into <strong>your own</strong> pins, with your own Amazon links and your own images. Nothing of Rose's is ever posted.</p></div>
+    <div class="card"><h3>The content engine</h3>
+      <p>On schedule it takes the next ready look from your calendar and PRODUCT_SOURCES.md, makes the images, writes the Pin copy, schedules both Pins and logs everything.</p></div>
+    <div class="hotcard"><h3>The review and recovery layer</h3>
+      <p>Every Pin is logged before it is treated as verified. You can type PULL before it posts, and incomplete work is picked up as leftover work on the next eligible run.</p></div>
   </div>
-  <div class="call"><p><strong>The honest part.</strong> The tasks run from your own computer, so it stays on with Chrome open and signed in when they run. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
+  <div class="call"><p><strong>The honest part.</strong> The schedule itself runs in Claude, but this workflow uses your local Storefront folder and browser, so Claude Desktop must be open and connected when a run needs those resources. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
   <div class="call" style="background:rgba(200,169,106,.12);border-left-color:var(--gold)"><p><strong>What it doesn't promise:</strong> sales. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></div>
   ${foot()}
 </section>`);
@@ -194,12 +194,11 @@ guide.push(`<section class="pg">${top(3)}
   <div class="card"><ul class="ticks">
     <li>A Claude plan with scheduled tasks and Claude in Chrome<span>Both have to be on your plan. Check claude.ai for which plans include them today.</span></li>
     <li>The Claude desktop app, with your computer on during runs<span>Chrome open, signed in, the Claude in Chrome extension installed.</span></li>
-    <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
+    <li>Amazon Associates or Influencer access appropriate to your path<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>Gemini and Higgsfield accounts<span>Higgsfield (Seedream 4.5) makes every flat lay. Gemini makes persona photos, so no persona means no Gemini.</span></li>
-    <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
-  </ul></div>
+    <li>An image-generation provider<span>Use the image provider and model recorded in MY_RECIPE.txt. It must support the selected image path and your current commercial-use requirements.</span></li>
+       </ul></div>
   <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
     ${foot()}
 </section>`);
@@ -244,7 +243,7 @@ guide.push(`<section class="pg">${top(6)}
   <h2>Hand it <em>the timetable.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
-      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds three tasks (four if you're in The Brand Closet&trade;): the weekly build, the pull sweep, the missed-run sweep and, for members, the nightly Outfit of the Day run. Each has one line telling you exactly what to type. For each one:</p>
+      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks: the weekly build and the pull sweep. Each has one line telling you exactly what to type. For each one:</p>
       <ol><li>In the Claude desktop app, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
       <li>Type the <strong>name</strong> from the file.</li>
       <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
