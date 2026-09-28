@@ -181,7 +181,7 @@ guide.push(`<section class="pg">${top(2)}
     <div class="hotcard"><h3>Automation 2 &middot; Outfit of the Day</h3>
       <p>For The Brand Closet&trade; members on Rose's $9/month tier or above: Sunday to Friday nights it turns the new Outfit of the Day into <strong>your own</strong> pins, with your own Amazon links and your own images. Nothing of Rose's is ever posted.</p></div>
   </div>
-  <div class="call"><p><strong>The honest part.</strong> The tasks run from your own computer, so it stays on with Chrome open and signed in when they run. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
+  <div class="call"><p><strong>The honest part.</strong> The tasks run from your own computer through local ChatGPT Work when they run. Keep the computer on for local Work runs. And an optional glance at your pin tab and log is how you pull anything you don't like before it posts.</p></div>
   <div class="call" style="background:rgba(200,169,106,.12);border-left-color:var(--gold)"><p><strong>What it doesn't promise:</strong> sales. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></div>
   ${foot()}
 </section>`);
