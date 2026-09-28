@@ -397,6 +397,11 @@ const onPage = [
     .pv-h1{font-size:25px}
     .pv-b{font-size:17px}
   }
+  .pv-hero-cta{margin-top:24px;padding-top:18px;border-top:2px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:520px}
+  .pv-hero-cta span{font:700 12px/1.3 Inter,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
+  .pv-hero-cta a{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:20px;line-height:1.15;color:var(--hot);text-decoration:none}
+  .pv-hero-cta a:hover{text-decoration:underline;text-underline-offset:4px}
+  @media(max-width:640px){.pv-hero-cta{align-items:flex-start;flex-direction:column;gap:8px}}
 </style>
 
 <script>
