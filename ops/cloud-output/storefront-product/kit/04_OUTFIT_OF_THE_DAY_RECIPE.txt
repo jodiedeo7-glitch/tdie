@@ -1,3 +1,6 @@
+STATE REQUIREMENT
+All OOTD work must read and write storefront-state.json. It is authoritative; pin-tab.md and storefront-log.md are views.
+
 AUTOMATION 2: THE BRAND CLOSET™ OUTFIT OF THE DAY RECIPE
 The nightly task reads this file, 03_THEMED_LOOK_RECIPE.txt (Part 1 rules and Parts 3 to 7 methods) and MY_RECIPE.txt at the start of every run. Everything in Part 1 of the themed-look recipe applies here too.
 
@@ -57,7 +60,7 @@ THE NIGHTLY RUN
    NO-PERSONA PATH: the other collage format, as in the themed-look recipe.
 10. Write the pin copy (themed-look recipe, Part 5) into pin-drafts.md. Nothing from Rose's lesson text is copied, and Rose is never named. The Brand Closet™ is never named on a pin unless MY_RECIPE.txt says PIN LINE: on, and then only as the one sentence in 05_RECOMMEND_IT_TOO.txt. Set the lesson's row to "built".
 11. Schedule (themed-look recipe, Part 6; board checked public first, B8): pin 1 at the pin 1 slot on the day after the outfit's date. If that slot has passed, is less than 3 hours away or is taken, use the first free pin 1 slot at least 3 hours from now. Pin 2 goes at the pin 2 slot at least 3 days after pin 1 (B7). If pin 2 would land more than 14 days ahead, schedule pin 1 only and log pin 2 "built"; a later run schedules it. Blank twice? Stop (rule R2) and let the next run pick up the leftovers.
-12. Verify through the configured publishing adapter. For direct Pinterest publishing, read each created Pin by external ID and confirm board, destination and media. For Metricool, confirm the scheduled-post record and its Pinterest fields. Use browser verification only if the selected adapter cannot provide sufficient verification. Then set the lesson row to "verified", update the look row, and add both pins to pin-tab.md.
+12. Verify through the configured publishing adapter. For direct Pinterest publishing, read each created Pin by external ID and confirm board, destination and media. For Metricool, confirm the scheduled-post record and its Pinterest fields. Use browser verification only if the selected adapter cannot provide sufficient verification. Then set the lesson row to "verified", update the look row, and synchronize both Pin records to pin-tab.md.
 13. Write this run into the Runs table in storefront-log.md (task "nightly", date, started, finished, result). Release the browser lock. One-line report.
 
 WHAT THIS AUTOMATION NEVER DOES
