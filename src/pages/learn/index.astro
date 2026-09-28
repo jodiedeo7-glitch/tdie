@@ -69,6 +69,24 @@ const totalPieces = pillars.length + articles.length;
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body.e-page::before,body.e-page::after{display:none}
+    /* ── EDITORIAL PUBLICATION PASS ── */
+    .lib-head{background:var(--e-cream)}
+    .lib-in{min-height:520px}
+    .lib-title h1{font-size:clamp(60px,9vw,138px);max-width:9ch}
+    .lib-count{align-self:end}
+    .start{background:var(--e-paper);padding:30px 24px;border-top:1px solid var(--e-ink);border-bottom:1px solid var(--e-ink)}
+    .start-n{font-size:clamp(76px,9vw,126px)}
+    .sec-head{margin-top:clamp(10px,2vw,28px)}
+    .shelf{border-top:2px solid var(--e-ink)}
+    .pil{padding:clamp(42px,5vw,72px) 0;grid-template-columns:clamp(96px,10vw,150px) 1fr;gap:0 clamp(30px,5vw,76px)}
+    .pil-no{font-size:clamp(48px,5vw,72px)}
+    .pil-main>a.pil-link .pil-t{font-size:clamp(28px,3.4vw,46px);max-width:18ch}
+    .pil-s{font-size:16px;max-width:60ch}
+    .clus{margin-top:28px;padding-left:22px}
+    a.clus-row{padding:15px 12px}
+    .clus-t{font-size:18px}
+    .clus-s{font-size:14px}
+    @media(max-width:860px){.lib-in{min-height:0}.pil{grid-template-columns:78px 1fr}}
     /* ── MASTHEAD ── */
     .lib-head{border-bottom:1px solid var(--e-ink)}
     .lib-in{max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(16px,4vw,40px) clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:32px clamp(32px,6vw,96px);align-items:end}
@@ -171,7 +189,7 @@ const totalPieces = pillars.length + articles.length;
     </div>
 
     <div class="sec-head">
-      <div class="lbl">The {cap(LIB.guidesWord)}</div>
+      <div class="lbl">A publication, not an archive</div>
       <h2>The pillar guides</h2>
       <p class="note">Each one is complete on its own, and each carries its own free kit. Read from the top and they build into a business. The shorter pieces underneath a guide answer one problem inside it.</p>
     </div>
