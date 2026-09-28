@@ -264,14 +264,14 @@ guide.push(`<section class="pg">${top(7)}
   <h2>Then you <em>leave it alone.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
-      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
+      <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the maintenance task (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
       <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the maintenance task (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
       <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
   </div>
   <div class="hotcard" style="margin-top:16px"><h3>What a normal week looks like</h3>
-    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the maintenance task checks for pulls and leftovers, and every morning the missed-run sweep checks nothing was skipped. Both open nothing if there's nothing to do. You get a one-line report when a run finishes.</p></div>
+    <p>Saturday (and Wednesday, at 5 or more looks a week), the weekly task builds the coming looks and schedules them. Sunday to Friday nights (if you're on Rose's $9/month tier or above), the Outfit of the Day run turns in new outfits. Twice a day, the maintenance task checks for pulls and leftovers, and every morning the maintenance task checks nothing was skipped. Both open nothing if there's nothing to do. You get a one-line report when a run finishes.</p></div>
   ${foot()}
 </section>`);
 
