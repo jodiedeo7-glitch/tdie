@@ -1,64 +1,12 @@
-AUTOMATION 2: THE BRAND CLOSET™ OUTFIT OF THE DAY RECIPE
-The nightly task reads this file, 03_THEMED_LOOK_RECIPE.txt (Part 1 rules and Parts 3 to 7 methods) and MY_RECIPE.txt at the start of every run. Everything in Part 1 of the themed-look recipe applies here too.
+THE BRAND CLOSET™ AUTOMATION: LAUNCH HOLD
 
-====================================================================
-STEP 0. JOIN THE BRAND CLOSET™
-====================================================================
+This file is intentionally disabled for the launch version of The While-You-Sleep Storefront™.
 
-This automation needs The Brand Closet™, Rose's community on Skool, at her $9/month tier or above. That's the tier that carries the Outfit of the Day. The Brand Closet™ is free to join, and Rose's paid tiers are $9/month and $19/month (her prices, not mine).
+Reason
+This workflow derives commercial affiliate content from paid third-party Skool material. A rule saying "do not copy or repost" does not by itself establish commercial derivative-use permission.
 
-Join The Brand Closet™ here (it's the same link, on the words, in the Setup Guide PDF):
-https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce
+DO NOT RUN THIS FILE.
 
-Affiliate link: I earn a commission if you upgrade, at no extra cost to you.
+It may return in a future release only after written permission or a license from the content owner explicitly covers the intended commercial use, and after a fresh legal/platform audit of the complete workflow.
 
-Already a member? Check you're on the $9/month tier or above, stay signed in to Skool in Chrome, and carry on.
-
-====================================================================
-HOW ROSE'S OUTFIT OF THE DAY WORKS (the same for every member)
-====================================================================
-
-- The course is "Outfit of the Day Closet", in The Brand Closet™ classroom:
-  https://www.skool.com/the-brand-closet/classroom/272075b5
-- Inside it are month folders (for example "➤ SEPTEMBER"), each holding one lesson per outfit. Lessons are titled by date ("September 24") or by name ("Downtown After Dark"). Some days have more than one lesson.
-- Each lesson holds: the outfit flat lay image; one or two ready-made lifestyle prompts written for "the woman in image 1 wearing the outfit in image 2"; and a "Link to Outfit" button. That button goes to a Benable list owned by someone else, so its links pay THEIR owner. Never use it.
-- Rose usually posts between 7:30 am and 3 pm Eastern on weekdays, and announces each one with a community post in the OOTD category. Saturday outfits are rare; the Sunday run catches them up.
-
-====================================================================
-THE RULES THAT MAKE THIS SAFE (never move)
-====================================================================
-
-B1. Rose's content is a reference only. Her flat lay images, her lifestyle images, her prompts and her lesson text are paid member content. Her flat lay is captured as a screenshot into the working session only: never saved to my computer, never posted, never uploaded anywhere public, never attached to a pin, never attached to an image generator, never resold or shared. You look at it to know what the outfit is.
-B2. Benable links are never used. The "Link to Outfit" button and every Benable link pay their owner. Never open, click or copy them, and never use the product names, brand names or ASINs in them (or anywhere in the lesson text) to search Amazon. Every piece is re-found on Amazon from your own plain-words piece list and linked with MY OWN SiteStripe short link (on this automation, captured for every piece whatever the path, themed-look recipe Part 3 step 3).
-B3. My own list is the pin link. Influencer path: my own Idea List for the outfit. Associates-only path: my own shop page for the outfit (08_STOREFRONT_PATHS.txt).
-B4. Brand cues are stripped from every prompt. Rose's lifestyle prompt may give the scene idea only: the moment and the mood (for example "grabbing a coffee on a crisp fall morning"). Rewrite it in your own words, for my persona, and set it in one of the places in PERSONA WORLD. Strip every brand cue: monograms, store names, red carts, logos, chains, malls, designer references, device brands, cup sizes and menu items, recognizable shops or landmarks, and anything that names or imitates a real business. Take nothing else from her prompt.
-B5. Own posting slots. This automation only uses its own two PIN slots in MY_RECIPE.txt (defaults: pin 1, the flat lay, at 4:30 pm; pin 2, the lifestyle pin, at 9:30 am). They never collide with automation 1, and no two pins on the account sit less than 1 hour apart.
-B6. My images are new images. Every flat lay and lifestyle photo is generated fresh from the Amazon pieces I found, using the product sheet of MY pieces (themed-look recipe, Part 3 step 6).
-B7. The two pins of one outfit are never on the same day. The flat lay goes out the day after the outfit's date; the lifestyle pin at least 3 days after the flat lay; nothing is ever scheduled more than 14 days ahead.
-B8. Public board first. Before the first pin, check the board is public (a lock icon means secret). A secret board gets zero reach: if it's secret, schedule nothing and tell me which board. (The only exception is a board MY_RECIPE.txt marks TEST, for a dry run.)
-
-====================================================================
-THE NIGHTLY RUN
-====================================================================
-
-0. Take the browser lock (R16). Work out when this run must be out: 30 minutes before the next RUN time in MY_RECIPE.txt SLOTS, or 30 minutes before my shutdown time, whichever comes first.
-1. Read storefront-log.md and pin-drafts.md. Schedule any Outfit of the Day pin logged "built" or "scheduled, not verified" first (themed-look recipe, Part 7 step 4).
-2. Open the course in one fresh tab: https://www.skool.com/the-brand-closet/classroom/272075b5
-   Find the lessons by reading the page's __NEXT_DATA__ (the JSON in the script tag with that id): walk pageProps.course and its children; each lesson has metadata.title, id and updatedAt. That's faster and gentler than clicking through the month folders.
-   If the course isn't there, is locked, asks for an upgrade, or Skool asks you to sign in, stop and tell me in one line: "I can't open the Outfit of the Day course in The Brand Closet™: check you're signed in to Skool and still on the $9/month tier."
-3. Pick every outfit lesson from the last 3 days (by its date title or updatedAt) that is not in the "Outfit of the Day lessons" table, plus any lesson logged "sourcing" (a run that stopped part way: finish it, don't restart it). Oldest first. If there are none and nothing is left over, close the tab, release the browser lock and end: "No new outfits tonight." Only say that after you've actually read the lesson list.
-4. Before starting each new outfit, check the clock: allow about 2 hours an outfit. If it can't be finished before the time from step 0, don't start it. It waits for the next run or the missed-run sweep, as long as it's still inside the 3-day window.
-5. For each lesson: add it to the table now, status "sourcing", with its id and title. Open it with the course address plus ?md=<lesson id> and read its page text. Take one screenshot of Rose's flat lay into this session only (B1). Write down each piece in plain words: type, color, cut, material, details. Pieces are what she wears: clothes, shoes, bag, jewelry, hair pieces, sunglasses if worn. Props (drinks, phones, flowers, books, candles) are not pieces. Fewer than 4 pieces? Add shoes, a bag or jewelry in the outfit's colors until there are 4. More than 8? Keep the 8 that define it. Note the lesson's lifestyle prompt only for its moment and mood (B4). Don't touch the "Link to Outfit" button (B2). Close the Skool tab before you open Amazon or any image tool.
-6. Re-find every piece on Amazon with the sourcing rules in the themed-look recipe, Part 3 (reading pages as they load, never fetching in the background): in stock, 4.0 stars or better, 100+ ratings, Prime where possible, closest match in type, color and cut, searched from your plain-words list. Capture my SiteStripe short link for every piece. No close match? Choose the nearest honest alternative and note it in the log. If a look from the last 30 days in storefront-log.md has the same hero piece, still build this outfit, but keep both of its pins at least 3 days from that look's pins.
-7. Build my own list or page (B3). Title it for search: the outfit described in plain words, never Rose's lesson title (for example "Pink Color Block Hoodie Outfit"). Log the list link on the lesson's row.
-8. Make pin 1, the flat lay or collage, in Seedream 4.5 on Higgsfield, from MY Amazon pieces (themed-look recipe, Part 4: Format A with the product sheet attached, Format B from written descriptions with no sheet attached).
-9. Make pin 2:
-   PERSONA PATH: the lifestyle photo in Gemini (07_PERSONA_PATHS.txt prompt), set in a PERSONA WORLD place, with at most the moment and mood from Rose's lifestyle prompt, rewritten and stripped (B4).
-   NO-PERSONA PATH: the other collage format, as in the themed-look recipe.
-10. Write the pin copy (themed-look recipe, Part 5) into pin-drafts.md. Nothing from Rose's lesson text is copied, and Rose is never named. The Brand Closet™ is never named on a pin unless MY_RECIPE.txt says PIN LINE: on, and then only as the one sentence in 05_RECOMMEND_IT_TOO.txt. Set the lesson's row to "built".
-11. Schedule (themed-look recipe, Part 6; board checked public first, B8): pin 1 at the pin 1 slot on the day after the outfit's date. If that slot has passed, is less than 3 hours away or is taken, use the first free pin 1 slot at least 3 hours from now. Pin 2 goes at the pin 2 slot at least 3 days after pin 1 (B7). If pin 2 would land more than 14 days ahead, schedule pin 1 only and log pin 2 "built"; a later run schedules it. Blank twice? Stop (rule R2) and let the next run pick up the leftovers.
-12. Verify on Pinterest's scheduled pins page, then log: set the lesson's row to "verified", update the look row, add both pins to pin-tab.md.
-13. Write this run into the Runs table in storefront-log.md (task "nightly", date, started, finished, result). Release the browser lock. One-line report.
-
-WHAT THIS AUTOMATION NEVER DOES
-Save, post, upload or attach Rose's images. Use the "Link to Outfit" button, or search from Benable links. Copy her prompts or lesson text. Name Rose on a pin. Promise anyone a tier they aren't on.
+The core launch machine does not read The Brand Closet™, does not access its lessons, does not use its images, does not use its prompts, and does not create any automation from its paid content.
