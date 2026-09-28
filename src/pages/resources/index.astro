@@ -186,7 +186,8 @@ const countLine = `${cap(library.guidesWord)} guides in the library, ${word(kits
       <div class="rs-close-body">
         <p class="e-lede">The free pieces get you started. The membership is where the build keeps going: the classroom, the daily prompts and a room to post in before you launch. Membership Standard is {membership.standard.perMonth} after a {membership.trial}.</p>
         <div class="e-actions">
-          <a class="e-btn e-btn--ghost" href="/community">See the community <span class="ar" aria-hidden="true">→</span></a>
+          <a class="e-btn e-btn--ghost" href="/resources/find-your-door">Find Your Door <span class="ar" aria-hidden="true">→</span></a>
+          <a class="e-link" href="/community">See the community <span aria-hidden="true">→</span></a>
           <a class="e-link" href="/learn">Back to The Library</a>
         </div>
       </div>
@@ -278,4 +279,6 @@ const countLine = `${cap(library.guidesWord)} guides in the library, ${word(kits
   @media (prefers-reduced-motion:reduce){
     .rs-card,.rs-card::before,.rs-s,.rs-go .ar,.rs-kit-go{transition:none}
   }
+  .e-actions{flex-wrap:wrap}
+  .e-actions .e-btn{min-height:52px}
 </style>
