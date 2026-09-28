@@ -553,3 +553,14 @@ Independent continuation of the pre-launch audit. Repository files were re-read 
 **Customer setup -> customer product intake -> downstream scheduled build -> image generation -> copy -> Pinterest review/queue -> scheduled Pin -> logging**
 
 Amazon remains outside the autonomous agent boundary. The agent consumes customer-controlled product metadata and URLs. This is the launch architecture for the corrected branch.
+
+
+## 2026-09-28 verification correction: Pinterest API scheduling
+
+Pinterest's current official Business Access documentation explicitly lists **Publisher** permission as allowing a connected app to create and edit organic Pins and **schedule Pins to publish in the future**. This corrects any earlier audit language implying that the Pinterest API cannot schedule organic Pins.
+
+REPO STATUS: the optimized While-You-Sleep branch contains no implemented Pinterest API/OAuth integration or `pins:write` implementation. Therefore this is a VERIFIED PLATFORM CAPABILITY, not a VERIFIED PRODUCT CAPABILITY.
+
+LAUNCH DECISION: keep the current browser-based Pinterest scheduling path for the launch version because it is already implemented and live-tested. Do not add an API integration during this finalization pass merely because the capability exists. The API becomes a post-launch optimization candidate if it can be implemented, OAuth-approved, tested, and integrated without adding customer setup burden.
+
+SOURCE: Pinterest Developers, Share business access, current page checked 2026-09-28. The Publisher role explicitly includes scheduling Pins to publish in the future.
