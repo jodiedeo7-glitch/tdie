@@ -173,6 +173,23 @@ const showKit = kitLive();
     </div>
   </section>
 
+  <!-- SHOW THE MACHINE -->
+  <section class="wx-sec">
+    <span class="wx-kicker" style="text-align:center">Built with this system</span>
+    <h2 class="wx-sec-h">This site is <em>the proof.</em></h2>
+    <p class="wx-sub">I built this site faceless and solo with AI, wrote down every step as I went, and that record became the course. The pages you're on right now, the blog, the checkout and the members' area were all built with the twenty-two modules you'd be buying. Open an article and see what one of my Skool lessons looks like after a Saturday afternoon.</p>
+    <div class="wx-proof">
+      {proof.map((p) => (
+        <a class="wx-card" href={p.u}>
+          <span class="wx-proof-n">{p.n}</span>
+          <span class="wx-proof-t">{p.t}</span>
+          <span class="wx-proof-go">Read it →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+
   <!-- WHAT'S IN THE BOX: the packaging, right after the ideal state -->
   <section class="wx-sec" id="inside">
     <span class="wx-kicker" style="text-align:center">Everything in the box</span>
@@ -201,22 +218,6 @@ const showKit = kitLive();
       <p>You have the opposite problem: years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
       <p class="wx-note-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
       <p class="wx-sign">xoxo, Jodie</p>
-    </div>
-  </section>
-
-  <!-- SHOW THE MACHINE -->
-  <section class="wx-sec">
-    <span class="wx-kicker" style="text-align:center">Built with this system</span>
-    <h2 class="wx-sec-h">This site is <em>the proof.</em></h2>
-    <p class="wx-sub">I built this site faceless and solo with AI, wrote down every step as I went, and that record became the course. The pages you're on right now, the blog, the checkout and the members' area were all built with the twenty-two modules you'd be buying. Open an article and see what one of my Skool lessons looks like after a Saturday afternoon.</p>
-    <div class="wx-proof">
-      {proof.map((p) => (
-        <a class="wx-card" href={p.u}>
-          <span class="wx-proof-n">{p.n}</span>
-          <span class="wx-proof-t">{p.t}</span>
-          <span class="wx-proof-go">Read it →</span>
-        </a>
-      ))}
     </div>
   </section>
 
