@@ -2,11 +2,11 @@
 // every page carries the same labels, in the same order, with the same names.
 
 export const NAV = [
-  { label: "Learn", href: "/learn" },
-  { label: "Free Resources", href: "/resources" },
+  { label: "Start Here", href: "/resources/find-your-door" },
+  { label: "The Method", href: "/#method" },
   { label: "Shop", href: "/shop" },
-  { label: "Lifestyle", href: "/lifestyle" },
-  { label: "About", href: "/about" },
+  { label: "Membership", href: "/membership" },
+  { label: "Community", href: "/community" },
 ];
 
 export const NAV_CTA = { label: "Join the Membership", href: "/membership" };
