@@ -1,58 +1,96 @@
 STOREFRONT PATHS
-Where your pins send people. Your setup chat picked one from your answers to question 3.
 
 ====================================================================
-THE AMAZON INFLUENCER PATH (Idea Lists): the easy one
+PATH A: AMAZON INFLUENCER + IDEA LISTS
 ====================================================================
 
-You need: Amazon Influencer approval and a storefront (amazon.com/shop/yourname). Amazon approves Influencers from certain social accounts; check Amazon's current Influencer page for which ones count.
+Use this when the customer has Amazon Influencer approval and a Storefront.
 
-How it works: every look gets its own Idea List in your storefront, holding every piece. Both pins of the look link to that list. Someone taps the pin, lands on a list of exactly the pieces she saw, and a qualifying purchase through it is tracked to your Associates tag.
+Customer setup:
+1. Create the Idea List in Amazon.
+2. Add the products.
+3. Record the public Idea List URL in PRODUCT_SOURCES.md.
+4. The Storefront workflow never opens Amazon as an autonomous agent.
 
-You create the Idea List yourself and put its public URL in PRODUCT_SOURCES.md. The scheduled task does not open Amazon or create, edit or submit the list.
+No website is required for this core destination path.
 
-Fallback: if a list truly can't be made or won't load (a piece won't add, the editor won't save, the list is still in review), the pins link to your storefront home and the log says why. Never a single-product link. Never a list for a different look.
-
-No website needed. Nothing to paste. This is the path where "no building, no selling, no posting" is exactly true.
+★ SAVE CREDITS INSTEAD OF TIME?
+Create and maintain Idea Lists manually. This is already the required customer-owned step.
 
 ====================================================================
-THE ASSOCIATES-ONLY PATH (your own site page)
+OPTIONAL INFLUENCER ENHANCEMENT: AMAZON STOREFRONT <-> PINTEREST
 ====================================================================
 
-You need: an approved Amazon Associates account, and a website where a shop-the-look page can live.
+Pinterest currently offers an eligible-creator connection between Amazon and Pinterest. When an Amazon Storefront is linked, Pinterest provides an Amazon filter for product tagging, automatically applies affiliate links to tagged Amazon products, and automatically shows an affiliate-link disclosure on Pins with those affiliate links. citeturn959482search2
 
-How it works: every look gets a page on your own site, with the look's name, a short intro, the two Pin images and every piece linked with the customer's own compliant Amazon Special Link. Both Pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
+This is NOT the same thing as an Idea List.
 
-A Pin NEVER links to a page that doesn't load. Before any Pin is scheduled, the task checks the destination URL. If the page isn't live yet, the pins wait, logged "built", and the next run or pull sweep schedules them once it loads.
+Use it as a supplemental shoppable discovery path after checking eligibility.
 
-TWO KINDS OF SITE
+Comparison:
+- Idea List: your look destination, containing the products for that look.
+- Amazon Storefront connection: Pinterest product-tagging workflow for eligible creators.
+- They can serve different purposes. Do not remove the Idea List workflow simply because the connection exists.
 
-1. A site the tasks can publish to (a Weekend Ecosystem™ site on GitHub): hands-off. 09_THE_BLOG_HALF.txt adds the section in one paste, and the weekly task publishes each look's page before its pins.
+★ SAVE CREDITS INSTEAD OF TIME?
+Use Pinterest's native Amazon product-tagging workflow manually after connecting your Storefront.
 
-2. Any other site builder (Squarespace, Wix, WordPress, Shopify and the rest): the task can't publish there, so this is hand-work, and I'd rather you know that before you choose it. For each look the task writes one file into your folder, pages/<pin 1 date>-<slug>.txt, and you paste it in: about 10 to 15 minutes a look. The file holds, in this order:
-   - the deadline to paste it (12:00 pm the day before its pin 1)
-   - where it goes (a new page or blog post under SITE PAGE BASE)
-   - the page title and the URL slug (the look name, lowercase, hyphens, no dates); the page address is SITE PAGE BASE plus the slug, and it's the link on both pins
-   - a meta description of 155 characters or fewer
-   - the two images to add and their alt text: open the image provider named in MY_RECIPE.txt, find the two images by the provider/model, date and prompt words written in the file, and add them to the page (the tasks never download anything, so this one is yours)
-   - an 80 to 150 word intro in your voice, no prices
-   - the numbered item list as ready-to-paste HTML, every link with target="_blank" rel="sponsored nofollow noopener"
-   - the line "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
-   - the disclosure line
-   Paste it, publish it, and the next pull sweep sees the page and schedules the pins.
+====================================================================
+PATH B: AMAZON ASSOCIATES ONLY + WEBSITE
+====================================================================
 
-BEFORE THE FIRST PIN (your setup chat asks you to do both)
-- In Associates Central, Account Settings, your website list includes your site and your Pinterest profile.
-- On Pinterest, start a pin, paste your site's address into the link field, and check Pinterest accepts it. If it refuses, your domain is blocked on Pinterest and this path can't run until that's fixed.
+Use this when the customer does not have Influencer approval but has an approved Associates account and a compliant website destination.
+
+The site page contains:
+- original AI styling images
+- written product descriptions
+- customer-provided compliant Amazon Special Links
+- affiliate disclosure
+- AI-image disclosure
+
+Do not use Amazon-hosted Program Content as a reusable site image library.
+
+A Pin should not point to a page that is not live.
+
+====================================================================
+PINTEREST METHOD
+====================================================================
+
+NATIVE UI
+The customer creates and schedules each Pin in Pinterest's normal composer.
+
+API STANDARD
+The customer's approved Pinterest app uses OAuth and an explicit APPROVE gate. Each Pin must be chosen by the customer before publication. citeturn959482search3
+
+LEGACY BROWSER AUTOMATION
+Not a recommended course path. Pinterest Terms prohibit unauthorized automated access. See 13_PINTEREST_API_APPLICATION.txt.
+
+====================================================================
+AMAZON CLOTHING NOTE
+====================================================================
+
+Clothing can absolutely be the subject of an original AI flat lay.
+
+The distinction is:
+GOOD:
+- written clothing attributes
+- customer-owned clothing photos
+- explicitly licensed manufacturer/seller imagery with transformation rights
+
+NOT ASSUMED TO BE PERMITTED:
+- Amazon-hosted product photos
+- marketplace screenshots
+- retailer screenshots
+
+Amazon's current Program Content policy does not create a clothing-specific exception. citeturn959482search6
 
 ====================================================================
 BOTH PATHS
 ====================================================================
 
-Keep the sites, social profiles and apps used for your Associates activity current in your Amazon account settings as required by Amazon's current program rules for your account.
+Keep Amazon account sites/social profiles current according to the current Associates rules for the customer's account.
 
-For a new Associates application, use a publishing destination that Amazon currently documents as eligible for your application. Amazon's current application guidance lists specific accepted social networks and does not list Pinterest among those examples. Do not teach customers to rely on a Pinterest-only Associates application without account-specific confirmation from Amazon.
+For new Associates applications, use an Amazon-approved publishing destination. Do not market Pinterest-only application eligibility as universal.
 
-Disclosure on every pin, both paths: "#ad" at the start of the description and "#ad As an Amazon Associate I earn from qualifying purchases." at the end.
-
-No prices anywhere. No brand names in list titles, page titles or item names. Amazon product images are not used as AI references by the core workflow. Only customer-owned or explicitly licensed reference images that are rights-confirmed in PRODUCT_SOURCES.md may be attached. Amazon's current Associates policies do permit Special Links in certain solicited/opted-in communications, including compliant email, SMS and social direct messages. This kit does not build those channels, so keep any off-platform promotion compliant with the current Associates rules and your applicable consent requirements.
+Disclosure:
+Use a clear link-level affiliate disclosure such as #ad and the required Amazon Associate statement associated with the account. Amazon's current help guidance requires clear, conspicuous disclosure and the account-level Associate statement. citeturn959482search8
