@@ -87,7 +87,7 @@ const dayThirty = [
   <!-- PROBLEM -->
   <section class="v-sec">
     <div class="v-kicker">The Real Bottleneck</div>
-    <h2>Nobody gets stuck on selling. They get stuck before it.</h2>
+    <h2>The blank-page problem happens <em>before</em> the sale.</h2>
     <div class="v-grid-4">
       {gates.map(g => (
         <div class="v-gate"><span class="v-num">{g.n}</span><h3>{g.t}</h3><p>{g.p}</p></div>
@@ -445,4 +445,7 @@ const dayThirty = [
   .v-peek-done,.v-peek-err{display:none;margin:14px 0 0}
   .v-peek-done a{color:var(--pink);font-weight:500}
   .v-peek-err{color:#b3261e}
-</style>
+  .v-hero .btn,.v-final .btn{min-height:52px}
+  .v-lede{max-width:650px}
+  .v-strip{border-top:2px solid var(--ink);border-bottom:1px solid rgba(26,20,23,.18)}
+ </style>
