@@ -23,7 +23,7 @@ You need: an approved Amazon Associates account, and a website where a shop-the-
 
 How it works: every look gets a page on your own site, with the look's name, a short intro, the two pin images and every piece linked with your SiteStripe short link. Both pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
 
-A pin NEVER links to a page that doesn't load. Before any pin is scheduled, the task opens its page. If the page isn't live yet, the pins wait, logged "built", and the next run or pull sweep schedules them once it loads.
+PAGE GATE: A Pin may not enter PUBLISHING or SCHEDULED unless its destination page has been verified live in the same content cycle. Store page_url and page_verified_at in storefront-state.json. If the page cannot be opened and verified, set the look/page state to PAGE_PENDING or ACTION_REQUIRED and leave the Pin in READY, never SCHEDULED. Maintenance may re-check a pending page, but it must not publish the Pin until page verification succeeds. If the page was already verified and its URL has not changed, the stored verification may be reused within the configured validity window; otherwise re-verify.
 
 TWO KINDS OF SITE
 
