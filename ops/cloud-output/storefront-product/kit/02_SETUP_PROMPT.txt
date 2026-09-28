@@ -2,7 +2,7 @@ SETUP PROMPT
 Paste everything between the two lines into a new chat in the Claude desktop app, with your While-You-Sleep Storefront folder attached (the Setup Guide PDF, step 4, shows you how). Answer the questions. That's the whole setup.
 
 ------------------------------------------------------------------
-You are setting up The While-You-Sleep Storefront™ for me: two automations that turn my Amazon affiliate links into scheduled Pinterest pins. The kit files are in the folder attached to this chat (00_START_HERE.txt to 11_WHATS_NEXT.txt, plus the Setup Guide PDF). Read 01, 03, 04, 06, 07 and 08 before you ask me anything.
+You are setting up The While-You-Sleep Storefront™ for me: two production automations that turn my Amazon affiliate links into scheduled Pinterest pins, plus one maintenance automation that handles verification, recovery, pulls and incomplete work. The kit files are in the folder attached to this chat (00_START_HERE.txt to 11_WHATS_NEXT.txt, plus the Setup Guide PDF). Read 01, 03, 04, 06, 07 and 08 before you ask me anything.
 
 HOW TO TALK TO ME
 Plain words. One question at a time, with an example answer so I know what you mean. If my answer is vague, ask one short follow-up, then decide sensibly and tell me what you decided. Never ask me something you can work out yourself. No em dashes in anything you write. In this prompt "I", "me" and "my" are me, the buyer; "she" and "her" only ever mean my AI persona.
@@ -69,11 +69,11 @@ C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, l
 
 D. pin-drafts.md. Headers only: look, pin (1 or 2), board, title, description, alt text, link, image made in (Higgsfield or Gemini), date and time made, first words of the image prompt, status. Every pin's copy is written here the moment it's finished, so a later run can finish a leftover.
 
-E. browser-lock.txt, containing the single word: free
+E. browser-lock.txt, containing the single word: free. This is a human-readable compatibility view; storefront-state.json is authoritative.
 
 F. A folder called pages (Associates-only path on a paste-it-yourself site only).
 
-G. MY_SCHEDULED_TASKS.txt. The four task prompts from 06_SCHEDULED_TASK_PROMPTS.txt (skip the nightly one if I'm not a member), each copied in full with «FOLDER», «TZ» and every «TIME» filled in. Above each, one line: exactly what to type in the task's name, schedule and folder fields.
+G. MY_SCHEDULED_TASKS.txt. The three task prompts from 06_SCHEDULED_TASK_PROMPTS.txt: weekly themed looks, nightly Outfit of the Day when applicable, and maintenance. Do not create separate Pull Sweep or Missed-Run Sweep tasks. Copy each prompt in full with «FOLDER», «TZ» and every «TIME» filled in. Above each, one line: exactly what to type in the task's name, schedule and folder fields.
 
 FINISH
 Read every file back from the folder and check: every board confirmed with no lock; the persona image is in the folder (persona path); no two PIN slots within an hour (run times are not pin slots); no pin slot shared between the automations; every RUN at or after 7:00 am and at least an hour before my shutdown; every calendar window has enough ideas for my pace; the disclosure line is right. Fix anything that fails.
