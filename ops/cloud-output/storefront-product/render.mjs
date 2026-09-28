@@ -244,7 +244,7 @@ guide.push(`<section class="pg">${top(6)}
   <h2>Hand it <em>the timetable.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
-      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks (three if you're in The Brand Closet&trade;): the weekly build and maintenance, plus the nightly Outfit of the Day run for members. Each has one line telling you exactly what to type. For each one:</p>
+      <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds three task roles: the weekly build, the nightly Outfit of the Day run for members, and maintenance/recovery. Maintenance is scheduled twice daily. Each has one line telling you exactly what to type. For each one:</p>
       <ol><li>In ChatGPT, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
       <li>Type the <strong>name</strong> from the file.</li>
       <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
