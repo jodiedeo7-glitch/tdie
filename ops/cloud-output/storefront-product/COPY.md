@@ -48,8 +48,6 @@ On link count: where the original brief asked for each Skool link twice, the pos
 
 Proof used, and only this: 15 looks, 15 Idea Lists, 15 live /lifestyle pages, 84 tagged product links, 26 pins built (27 Sep 2026 log), and Jodie's own words "it took me 5 minutes to set up." No sales, commissions or income, anywhere.
 
-No Brand Closet™ post on a day with another affiliate post: Skool 2 and Skool 5 name The Brand Closet™ (no link); the finish checks SkoolKit for Mon 5 Oct and Fri 9 Oct.
-
 ### Skool 1 · Tease · Sat 3 Oct, 3:00 pm (value slot)
 
 **Title:** Something's coming Monday 👀
@@ -173,7 +171,7 @@ What you need, up front, so nobody's surprised:
 🖥️ the Claude desktop app, with your computer on when the tasks run
 🛒 Amazon Associates (Influencer approval if you want Idea Lists)
 📌 a Pinterest business account
-🎨 Gemini and Higgsfield
+🎨 an image provider that supports your selected image path
 
 People are searching for you. This makes sure something's there when they do.
 
@@ -214,7 +212,7 @@ I cannot and will not gatekeep this. So I didn't 💗
 
 Your Amazon links, turned into Pinterest pins that schedule themselves.
 
-The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
+The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Scheduled tasks in the Claude desktop app pick the next look for your theme, use the prepared product intake, make the flat lay and lifestyle/no-person image, write the Pin copy with your #ad line, schedule the Pins 3 days apart and log every one. Amazon-side product selection and destination-list/page creation stay outside the agent. The tasks use your local folder and browser, so Claude Desktop needs to be open and connected when those resources are required.
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
@@ -404,7 +402,7 @@ How many hours did you spend this week making content that was gone from the fee
 
 The presale's closed. The machine's live.
 
-The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get built, scheduled and logged on their own. You paste one setup prompt, answer six questions, and the tasks run from your own computer.
+The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get built, scheduled and logged on their own. You paste one setup prompt, answer five questions, and the scheduled downstream work runs from your own computer.
 
 No more building. No more selling. No more posting.
 
@@ -427,7 +425,7 @@ Your Amazon links, turned into Pinterest pins that get built and scheduled on th
 
 Presale: $10. Your kit arrives as a one-page note with the unlock time; the full kit unlocks at 9 am Eastern on Fri 9 Oct 2026 at this same download link.
 
-Scheduled tasks in the Claude desktop app pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
+Scheduled tasks in the Claude desktop app pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. Amazon-side product selection and destination-list/page creation stay outside the scheduled agent workflow. The downstream Pin work is what the machine automates.
 
 You'll need: a Claude plan with scheduled tasks and Claude in Chrome; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. 
 
