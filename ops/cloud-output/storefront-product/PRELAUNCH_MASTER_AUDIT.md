@@ -442,3 +442,34 @@ Before release, resolve these in this order:
 6. Test current image-model routing and customer plan economics.
 7. Then perform the Pinterest API migration test while preserving the human selection/review gate.
 
+
+
+## 2026-09-28 explicit connector/integration audit
+
+| Connector / Integration | Currently connected? | Should be connected? | What it replaces | Benefit / constraint |
+|---|---|---|---|---|
+| GitHub | Yes for the product repo/work | Yes | Browser GitHub work where the customer has a supported site repo | Deterministic file operations and verification; keep for blog-half only |
+| Google Drive | Not core | No for core product | Local state folder | Current Google Drive connector is useful for cloud documents, but it does not solve signed-in Amazon/Pinterest browser work or the product's local state architecture |
+| Canva | Not core | No for core generation workflow | Manual design work | Current Claude Canva connector can create/edit designs, but the Storefront does not require Canva and its image-generation problem is better handled by the chosen image generator |
+| Higgsfield MCP | Not currently required in the buyer kit | YES as an optional/primary image-generation integration candidate | Browser-driving Higgsfield generation | Official Higgsfield MCP connects Claude directly to Higgsfield image models; it can remove browser model-navigation and reduce model-switching. Important: current Higgsfield documentation says MCP usage and Unlimited/credit behavior must be checked against the current plan; do not promise that web Unlimited automatically applies to every automated path |
+| Gemini / Google image generation | Current personal route, not a buyer dependency | YES as a customer image-generation candidate, not necessarily a Claude connector | Higgsfield model access for some image jobs | Direct current Nano Banana 2/Pro access has predictable pay-per-image pricing and avoids depending on a customer's Higgsfield plan |
+| Pinterest API / Pinterest MCP | Approved by user; not yet product-integrated | YES | Browser Pin creation/read/delete/scheduling where policy permits | Pinterest now provides an MCP interface for Pinterest workflows and the API supports Pin/board operations. Must preserve the user-specific Pin selection requirement before publishing |
+| Amazon Creators API | Not connected | CONDITIONAL / advanced only | Browser Amazon search/ASIN retrieval for eligible customers | Programmatic catalog access is powerful, but current eligibility requires qualified sales. Not suitable as a universal setup dependency |
+| Amazon Storefront ↔ Pinterest | Not connected in core workflow | YES for eligible Influencer customers | Some manual product-link/disclosure work | Pinterest can automatically apply affiliate links to Amazon-tagged products after eligible Storefront connection |
+| Amazon Associates browser/SiteStripe | Current | YES as fallback | Nothing | Remains the universal path for customers who do not qualify for Creators API |
+| OpenAI image API | Not connected | Benchmark, not automatic dependency | None until quality test | Current GPT Image 2.5 supports generation/editing; needs empirical Storefront test before architecture change |
+| OpenArt | Not connected | Benchmark, not automatic dependency | None until quality/cost test | Potential multi-model customer platform; must compare actual current plans/model access |
+| Metricool | Not connected | NO for core unless a specific compliance/queue test proves a benefit | Pinterest browser/API scheduling | Adds another vendor and is unnecessary if Pinterest API can provide the required compliant workflow |
+| Third-party Pinterest MCP servers | Not connected | NO unless official Pinterest MCP cannot meet the required operations | Custom API wrapper | Current third-party MCPs exist, but official Pinterest MCP is preferable for authentication, policy and maintenance reasons |
+
+### Connector conclusion
+The two highest-value integration changes to test are:
+1. **Higgsfield MCP** for image generation.
+2. **Official Pinterest MCP/API** for Pin operations after the customer's explicit selection/review.
+
+The two highest-value product simplifications to test are:
+1. **Pinterest + Amazon Storefront integration** for eligible Influencer customers.
+2. **Associates-only direct-link path without a website**, subject to a live Amazon/Pinterest compliance test.
+
+Do not add Google Drive or Canva merely because they have connectors.
+
