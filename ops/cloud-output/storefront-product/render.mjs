@@ -212,7 +212,7 @@ guide.push(`<section class="pg">${top(4)}
     <div class="step"><div class="num">1</div><div class="card"><h3>Make your folder</h3>
       <p>On your computer, make a new folder called <strong>While-You-Sleep Storefront</strong>. Unzip this kit into it, so the folder holds all twelve .txt files and this PDF. Keep it somewhere you'll find it again, like Documents.</p></div></div>
     <div class="step"><div class="num">2</div><div class="card"><h3>Sign in, in Chrome</h3>
-      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong>, <strong>Higgsfield</strong>, and <strong>Gemini</strong> if you have a persona. Install the <strong>Claude in Chrome</strong> extension and connect it to your Claude account. The tasks never type a password, so everything has to be signed in already.</p></div></div>
+      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong>, <strong>Higgsfield</strong>, and <strong>Gemini</strong> if you have a persona. Use ChatGPT's built-in browser for storefront web work. Sign in through its secure sign-in flow when prompted. The tasks never type a password, so everything has to be signed in already.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
       <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
@@ -228,9 +228,9 @@ guide.push(`<section class="pg">${top(5)}
   <h2>Paste one prompt. <em>Answer six questions.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a chat with your folder attached</h3>
-      <p>Open the <strong>ChatGPT desktop app</strong>, switch to Work, and start a new Work chat. Open your While-You-Sleep Storefront folder so ChatGPT Work can read and write the files. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask Claude in that chat how to attach a folder.)</p></div></div>
+      <p>Open the <strong>ChatGPT desktop app</strong>, switch to Work, and start a new Work chat. Open your While-You-Sleep Storefront folder so ChatGPT Work can read and write the files. (Look for the paperclip or the option to add a folder. The button names can shift as the app updates; if yours look different, ask ChatGPT Work how to open the folder.)</p></div></div>
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
-      <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. Claude asks you six things, one at a time, with an example each time:</p>
+      <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. ChatGPT Work asks you six things, one at a time, with an example each time:</p>
       <ol><li>your theme</li><li>your boards (and it makes you check each one is public)</li><li>your storefront and your website, if you have one</li><li>whether you have an AI persona</li><li>whether you're in The Brand Closet&trade;</li><li>your time zone and when your computer is on</li></ol>
       <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>browser-lock.txt</strong> and <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p></div></div>
   </div>
@@ -245,15 +245,15 @@ guide.push(`<section class="pg">${top(6)}
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">6</div><div class="card"><h3>Create your scheduled tasks</h3>
       <p>Open <strong>MY_SCHEDULED_TASKS.txt</strong>. It holds two tasks (three if you're in The Brand Closet&trade;): the weekly build and maintenance, plus the nightly Outfit of the Day run for members. Each has one line telling you exactly what to type. For each one:</p>
-      <ol><li>In the Claude desktop app, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
+      <ol><li>In ChatGPT, open <strong>Scheduled</strong> tasks (in the sidebar) and choose to create a <strong>new task</strong>.</li>
       <li>Type the <strong>name</strong> from the file.</li>
       <li>Set the <strong>schedule</strong> from the file (for example: weekly, Saturday, 1:05 pm).</li>
       <li>Give it your <strong>While-You-Sleep Storefront folder</strong>.</li>
       <li>Paste the <strong>prompt</strong>: everything between that task's two long lines.</li>
       <li><strong>Save.</strong></li></ol>
-      <p class="small">App menus move as Claude updates. If you can't find Scheduled, ask Claude in any chat: "How do I create a scheduled task in this app?"</p></div></div>
+      <p class="small">App menus move as ChatGPT updates. If you can't find Scheduled, ask ChatGPT: "How do I create a scheduled task in this app?"</p></div></div>
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
+      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, ChatGPT may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
   </div>
     ${foot()}
 </section>`);
@@ -369,7 +369,7 @@ const presale = [`<section class="pg" style="padding:0">
       <p style="font-size:21px;line-height:1.45;color:var(--ink)">Your kit unlocks <strong>${LAUNCH}</strong> at <strong>9 am ET</strong>.</p>
       <p style="font-size:21px;line-height:1.45;color:var(--ink);margin-top:10px">Use this same download link then.</p>
     </div>
-    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app, Amazon Associates, a Pinterest business account with public boards, and Gemini and Higgsfield.</p>
+    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a ChatGPT plan with Scheduled Tasks and ChatGPT Work, the ChatGPT desktop app, Amazon Associates, a Pinterest business account with public boards, and Gemini and Higgsfield.</p>
     <div style="margin-top:28px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
   </div>
   ${sticker("See you<br>at 9 am", "right:70px;top:420px;transform:rotate(8deg)", true)}
