@@ -53,21 +53,23 @@ JOB
 10. Generate Pin title, description and alt text.
 11. Validate destination URL.
 12. Create stable PIN_ID values.
-13. Route each Pin to the selected publishing mode.
+13. Apply the per-Pin customer approval gate before routing.
+
+A Pin may enter the publishing queue only after all checks pass: the customer selected that exact finished Pin; the destination resolves and matches the look; the exact public board and any section are verified through a supported path; the required affiliate disclosure is present; title, description and alt text match the image; and the customer explicitly authorized scheduling that Pin. Record the selection and authorization with timestamps. If any check or authorization is missing, keep the Pin in customer_review_required and do not call a publisher or include it in an import file.
 
 TIME-SAVING:
-Use the connected Metricool workflow only if PUBLISHING TEST = passed.
-Create/schedule the Pin with its image, board, title, description, destination URL and scheduled time.
+Use the connected Metricool workflow only if PUBLISHING TEST = passed and the Pin has the required customer selection and schedule authorization.
+Create/schedule only that approved Pin with its final image, verified board, title, description, destination URL and scheduled time.
 If the image is in connected Google Drive and Metricool's Google Drive connection is available, use the supported external-media upload path rather than making the asset public.
-Record the returned publisher post ID.
-If approval is required, set awaiting_approval and stop that Pin there.
+Record the returned publisher post ID. Read the scheduled record back when supported and compare the image, title, board, destination, time and status.
+If Metricool or ChatGPT requires a separate platform approval, set awaiting_approval and stop. Do not call the Pin scheduled until the publisher confirms it.
 
 BATCH FALLBACK:
-If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV import containing the complete Pin queue. Use this only as a batch bridge, not as a claim of unattended publishing. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
+If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV only for individually selected and schedule-authorized Pins. A CSV is a handoff, not proof of scheduling or publication. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
 
 CREDIT-SAVING:
 Do not simulate Pinterest browser actions.
-Prepare the complete Pin package for the customer and set state to queued/customer_scheduling_required.
+After the customer selects and authorizes the exact Pin for scheduling, prepare the complete Pin package and set state to customer_scheduling_required. Before selection, keep it in customer_review_required.
 
 14. Verify the publisher result through the selected supported system.
 15. Update structured state.
