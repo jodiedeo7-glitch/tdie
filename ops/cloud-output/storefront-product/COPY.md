@@ -296,11 +296,11 @@ Short one, because the clock is doing the talking.
 
 At 11:59 pm Eastern tonight, The While-You-Sleep Storefront™ goes up to $27. Until then it's $10. [Get it for $10 before midnight](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
-If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks do the rest. They build the looks, prepare images using your configured image tools, write and schedule the pins, and keep a log you can glance at if you ever want to pull one.
+If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks help with repeat preparation. They help prepare look drafts, images, and Pin copy, then record confirmed publishing status. You review and approve each Pin before scheduling. Pulling a Pin depends on the connected publishing path.
 
-No more building. No more selling. No more posting. People are searching Pinterest for exactly what you'd pin. This puts it there.
+Less repetitive preparation; product choices and scheduling approvals stay with you. People are searching Pinterest for exactly what you'd pin. This puts it there.
 
-Cloud Work can run while your computer is off. Local Work requires your computer during local runs. I'd rather you know that now than on day three.
+ChatGPT Work Cloud can run scheduled tasks while your computer is off when the feature is available in your account. Local execution requires your computer during local runs. I'd rather you know that now than on day three.
 
 [Get The While-You-Sleep Storefront™ for $10](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
@@ -408,7 +408,7 @@ The presale's closed. The machine's live.
 
 The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get prepared as drafts for your review, then tracked through the selected publishing path. You paste one setup prompt, answer six questions, and the tasks run through your configured ChatGPT Work setup.
 
-No more building. No more selling. No more posting.
+Less repetitive preparation; product choices and scheduling approvals stay with you.
 
 $27.
 
