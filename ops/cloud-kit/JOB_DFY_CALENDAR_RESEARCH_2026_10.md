@@ -1,4 +1,4 @@
-# OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - RESEARCH PROMPT
+# OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - FORENSIC RESEARCH PROMPT
 
 Read first:
 - ops/cloud-kit/README_START_HERE.md
@@ -11,294 +11,733 @@ Read first:
 Start the first reply with:
 Sources checked: [exact file names].
 
-## TASK
+## PURPOSE
 
 Run the October 2026 Premium DFY Content Calendar research from scratch.
 
-Do not reuse the failed October calendar as creative evidence.
-Do not reuse old October research as evidence.
+This is not a generic "viral hooks" research task.
+
+The goal is to reconstruct what happens in real creator accounts around breakout Reels so we can answer:
+
+A. WHAT IS HAPPENING MORE OFTEN THAN NOT BEFORE BREAKOUTS?
+B. WHAT SPECIFIC REEL IS THE BREAKOUT?
+C. WHAT IS DIFFERENT ABOUT THAT REEL FROM THE CREATOR'S NORMAL CONTENT?
+D. WHAT HAPPENS AFTERWARD?
+E. WHICH OBSERVED PATTERNS ARE REPEATABLE FOR TDIE?
+
+The research must identify both:
+- the account-level conditions surrounding a breakout
+- the specific Reel that appears to trigger the breakout
+
+Do not claim causation unless the evidence supports it. Correlation, sequence, timing and observed differences must be labeled as such.
+
 Do not write the calendar in this run.
 
-The research goal is to discover what is currently working for the same kind of creator TDIE serves, then convert the evidence into original October build rules.
+## 1. RESEARCH POPULATION
 
-## 1. Define the research population before collecting posts
+Primary population:
+- individual creators
+- small creator-business educators
+- digital-product creators
+- faceless-business educators
+- AI-assisted business/content creators
+- Instagram/content strategy educators
+- online-business educators
+- adjacent small-business creators when the mechanism is directly portable
 
-Qualifying accounts should be individual creators or small creator-business educators in:
-- beginner digital entrepreneurship
-- faceless digital business
-- AI-assisted content creation
-- creator-business education
-- digital products
-- small-business content marketing
+Prefer established creator accounts and mixed-maturity accounts, not only accounts teaching "how to start."
 
-Prefer accounts with a creator profile and audience size where a single unusually strong post can be meaningful.
+Do not build the dataset around celebrities, giant brands, platform accounts or accounts whose normal performance is already uniformly enormous.
 
-Exclude:
-- celebrities
-- major brands
-- Instagram itself or platform accounts
-- media publishers
-- accounts that are already uniformly massive
-- faith-first content
-- gambling, adult, regulated or otherwise unsuitable niches
+Use current research where possible, preferably 2026 material. Older examples are permitted when the account-level data are unusually rich and the underlying mechanism remains relevant.
 
-## 2. Build the viral inspiration corpus
+## 2. DATASET SIZE
 
-This is the primary research objective.
+Build a forensic dataset of at least:
+- 75 breakout/viral/high-performing Reels
+- 40 unique creator accounts
+- at least 30 accounts tightly adjacent to the TDIE audience
+- at least 25 accounts with enough surrounding-post information to perform an account timeline analysis
 
-Collect at least:
-- 60 real high-performing / viral posts
-- 30 unique creator accounts
-- at least 25 accounts in the same or tightly adjacent creator-business ecosystem
+The dataset may contain several evidence classes:
 
-The corpus should include:
-- digital products
-- faceless business
-- AI-assisted business/content
-- creator education
-- Instagram/content growth
-- online business
-- creator tools
-- adjacent small-business education when the mechanism is directly portable
+A. VERIFIED BREAKOUT
+A specific Reel is demonstrably far above that creator's own recent baseline.
 
-Do NOT require every post to have a mathematically proven account-relative baseline.
+B. VIRAL ANALYTICS BREAKOUT
+A reputable analytics dataset explicitly classifies the Reel as viral and supplies creator-level context or distribution information.
 
-Instead classify every row:
+C. STRONG BREAKOUT CANDIDATE
+The Reel is clearly a major high performer for the account from visible data, but the source does not expose enough baseline data to prove the lift.
 
-A. VERIFIED OUTLIER
-- account-relative multiple, ideally 5X+;
-- or directly documented creator baseline;
-- or credible analytics provider supplies a viral/outlier classification with creator-level data.
+D. SUPPORTING EXAMPLE
+Useful for a specific mechanism, format or production detail but not used as a breakout claim.
 
-B. VIRAL ANALYTICS EXAMPLE
-- reputable analytics dataset explicitly classifies the post as viral;
-- post-level views and creator-level context are available.
+Do not silently upgrade C or D into A or B.
 
-C. HIGH-PERFORMER
-- unusually strong visible performance with useful post-level evidence, but no defensible account baseline.
+## 3. SOURCE STRATEGY
 
-D. SUPPORTING PATTERN SOURCE
-- research article or dataset used to validate a mechanism, format or trend rather than as a specific post example.
+Prefer sources that expose one or more of:
+- creator-level analytics
+- many Reels from the same creator
+- median/average views
+- top- and bottom-performing Reels
+- posting dates
+- post duration
+- format labels
+- hook labels
+- content-goal labels
+- follower counts
+- account timelines
+- engagement data
 
-Minimum corpus requirement:
-- 60 total A/B/C post examples
-- 30 unique accounts
-- at least 20 A/B examples
-- at least 25 accounts from the target or tightly adjacent ecosystem
+A creator-level analytics dataset with 100+ Reels from the same creator is more valuable for causal-sequence analysis than a listicle containing 50 generic hooks.
 
-The purpose is creative reverse-engineering, not statistical publication.
+Use primary/current public sources when accessible.
 
-Use current examples when possible, but retain older viral examples when the mechanism is still relevant and explain why.
+When third-party analytics are used, record:
+- provider
+- dataset size
+- analysis period
+- methodology/context when disclosed
+- what the source actually verifies
+- what it does NOT verify
 
-## 3. Research each post
+Do not overstate third-party methodology.
 
-For every row record:
+## 4. ACCOUNT-LEVEL FORENSIC UNIT
+
+The fundamental research unit is NOT "one viral Reel."
+
+It is:
+
+ACCOUNT + PRE-BREAKOUT WINDOW + BREAKOUT REEL + POST-BREAKOUT WINDOW
+
+For every qualifying account, inspect when the source allows:
+
+### BEFORE WINDOW
+Preferred:
+- previous 10 Reels
+- previous 30 days
+- if available, previous 90 days
+
+### BREAKOUT
+- identify the first clear breakout in the window
+- identify the strongest breakout in the window
+- if they are different, analyze both
+
+### AFTER WINDOW
+Preferred:
+- next 10 Reels
+- next 30 days
+- if available, next 90 days
+
+If the source provides fewer posts, use the largest defensible window and mark the limitation.
+
+## 5. COMPLETE ACCOUNT BASELINE
+
+For every account with a usable forensic window, record:
+
+ACCOUNT:
+CREATOR TYPE:
+NICHE:
+FOLLOWERS AT RESEARCH DATE:
+FOLLOWERS AT BREAKOUT DATE IF VERIFIED:
+ANALYTICS SOURCE:
+ANALYSIS PERIOD:
+TOTAL REELS IN SOURCE DATA:
+
+PRE-BREAKOUT POSTING CADENCE:
+PRE-BREAKOUT MEDIAN VIEWS:
+PRE-BREAKOUT MEAN VIEWS:
+PRE-BREAKOUT VIEW DISTRIBUTION:
+PRE-BREAKOUT MEDIAN LIKES:
+PRE-BREAKOUT MEDIAN COMMENTS:
+PRE-BREAKOUT MEDIAN DURATION:
+PRE-BREAKOUT DURATION DISTRIBUTION:
+PRE-BREAKOUT FORMAT MIX:
+PRE-BREAKOUT TOPIC MIX:
+PRE-BREAKOUT HOOK MIX:
+PRE-BREAKOUT CTA MIX:
+PRE-BREAKOUT SALES-CONTENT MIX:
+PRE-BREAKOUT STORY/PERSONAL MIX:
+PRE-BREAKOUT EDUCATION MIX:
+PRE-BREAKOUT TREND/NEWS MIX:
+
+If a metric is unavailable, write NOT VERIFIED.
+
+## 6. REEL-LEVEL FORENSIC SCHEMA
+
+For EVERY breakout or breakout candidate record:
 
 ROW ID:
 ACCOUNT:
-CREATOR TYPE:
 POST URL:
 POST DATE:
+POST TIME IF VERIFIED:
 FOLLOWERS:
-POST VIEWS:
-POST LIKES:
-POST COMMENTS:
-BASELINE:
-BASELINE SOURCE:
-OUTLIER LIFT:
+VIEWS:
+LIKES:
+COMMENTS:
+SHARES:
+SAVES:
+NON-FOLLOWER REACH:
+PROFILE VISITS:
+FOLLOWS ATTRIBUTED:
+AVERAGE WATCH TIME:
+RETENTION:
+COMPLETION:
+POST DURATION - EXACT SECONDS:
+POST DURATION - SOURCE IF RANGE ONLY:
+BASELINE WINDOW:
+BASELINE MEDIAN:
+BASELINE MEAN:
+OUTLIER MULTIPLE:
+GROWTH RATE / VELOCITY:
 EVIDENCE CLASS:
-OUTLIER BASIS:
-FORMAT:
-HOOK:
-OPENING FRAME:
-TOPIC:
-MECHANISM:
-STRUCTURE:
+BREAKOUT CONFIDENCE:
+
+### Creative anatomy
+
+HOOK - STRUCTURAL DESCRIPTION:
+HOOK TYPE:
+EXACT OPENING WORDS IF VERIFIABLE:
+HOOK WORD COUNT:
+TIME TO HOOK:
+TIME TO VALUE:
+FIRST VISUAL:
+FIRST FRAME:
+FIRST MOTION:
+VISUAL PATTERN INTERRUPT:
+FACE / NO FACE:
+DIRECT TO CAMERA:
+SHOT TYPES:
+CAMERA DISTANCE:
+CAMERA MOVEMENT:
+SHOT COUNT:
+SHOT CHANGES:
+CUT RATE:
+EDITING RHYTHM:
+TOTAL DURATION:
+TEXT OVERLAY:
+TEXT DENSITY:
+TEXT CHANGES:
+CAPTIONS / SUBTITLES:
+AUDIO TYPE:
+TRENDING AUDIO:
+ORIGINAL AUDIO:
+VOICEOVER:
+B-ROLL:
+SCREEN RECORDING:
+DEMONSTRATION:
+MONTAGE:
+BEFORE/AFTER:
+COMPARISON:
+LOOP/REWATCH DEVICE:
+ENDING:
 CTA:
-VISUAL TREATMENT:
+CTA LOCATION:
+CAPTION LENGTH:
+CAPTION STRUCTURE:
+HASHTAGS:
+COVER/THUMBNAIL:
+COVER TEXT:
+TOPIC:
+SUBTOPIC:
+AUDIENCE PAIN:
+PROMISE:
+EMOTIONAL DRIVER:
+CURIOSITY GAP:
+SPECIFICITY:
+NOVELTY:
+UTILITY:
+PROOF:
+CREDIBILITY SIGNAL:
+RESULT/NUMBER:
+STORY ELEMENT:
+CONTRARIAN ELEMENT:
+SHAREABILITY:
+SAVEABILITY:
+COMMENTABILITY:
+FOLLOW REASON:
+BUYING INTENT:
+OFFER MENTION:
+TIMELINESS:
+EXTERNAL EVENT:
+COLLABORATION:
 COMPLIANCE NOTES:
 SOURCE QUALITY:
 
-Use NOT VERIFIED whenever the source does not support a field.
+Never invent any exact wording, metric or visual detail. Mark NOT VERIFIED.
 
-Do not calculate an outlier lift from incomparable metrics.
+## 7. DURATION ANALYSIS - MANDATORY
 
-Do not invent performance numbers.
+Duration is not optional.
 
-Do not copy competitor wording. Summarize the mechanism.
+For every Reel where duration can be verified:
+- record exact seconds
+- classify into:
+  0-10
+  11-15
+  16-20
+  21-30
+  31-45
+  46-60
+  61-90
+  91-180
+  180+
 
-## 4. Inspect patterns across the full corpus
+Then compare:
 
-Do NOT simply summarize the top posts.
+A. breakout Reel duration
+B. creator's pre-breakout median duration
+C. creator's pre-breakout duration distribution
 
-For each account, inspect its repeated viral formulas where the source allows it.
+Report:
+- absolute duration difference
+- percent difference where meaningful
+- whether breakout was shorter, similar or longer than normal
+- whether duration changed before the breakout
+- whether duration remained changed after the breakout
 
-Prefer datasets that analyze many reels from one creator. For example, a creator playbook that identifies top reels, median views, viral classifications, hook types and formats is more useful than a generic "10 viral hooks" article.
+At the corpus level report:
+- median breakout duration
+- mean breakout duration only if enough complete duration values exist
+- quartiles
+- duration-bin distribution
+- duration vs baseline delta
+- duration by breakout type
+- duration by creator maturity
 
-Look specifically for:
-- repeated formulas that worked more than once
-- reusable hook structures
-- comparison formats
-- list formats
-- result-first formats
-- contrarian formats
-- curiosity questions
-- story formats
-- tutorials and screen demos
-- before/after
-- text-overlay
-- montage
-- product/process demonstrations
-- comment/follow/link CTAs
-- reach vs. nurture vs. conversion content
+Do not use a generic "ideal Reel length" rule unless the research actually supports it.
 
-### Audience maturity is mandatory
+## 8. ACCOUNT-TIMELINE BREAKOUT DIAGNOSIS
 
-For every useful example, classify the implied audience stage:
-- DISCOVERY / NEW TO CREATOR
-- AWARE / KNOWS CREATOR
-- TRUSTED / REGULAR AUDIENCE
-- BUYING / HIGH INTENT
-- MIXED
+For every account with a usable timeline answer:
 
-Do not assume the calendar is being made for an account's first month.
+### BEFORE
 
-The research must deliberately include content from established creators and accounts with existing audiences, not only "how to start" content.
+1. What was the creator posting immediately before the breakout?
+2. What was normal for the account?
+3. How often were they posting?
+4. What was the normal duration?
+5. What formats dominated?
+6. What topics dominated?
+7. What hook types dominated?
+8. How often were they selling?
+9. How often were they teaching?
+10. How often were they using story/personality?
+11. Were they already testing the same concept or format?
 
-## 5. Build the maintenance-cycle intelligence bank
+### BREAKOUT
 
-Create a dedicated section analyzing how established creators balance:
-- reminders of who they are / what they teach
-- educational content
+12. What exact Reel appears to break the baseline?
+13. Why does it qualify?
+14. What characteristics are unusually different from the prior 10 posts?
+15. What characteristics are NOT different and therefore should not be credited as the likely trigger?
+16. Did the account alter topic, format, duration, hook, visual treatment, editing, CTA, story, proof, timeliness, audience targeting or offer framing?
+
+### AFTER
+
+17. What happened on the next 10 posts?
+18. Did median views remain elevated?
+19. Did posting frequency change?
+20. Did Reel duration change?
+21. Did the creator repeat the breakout format?
+22. Did the creator turn it into a series?
+23. Did later posts use a similar hook family?
+24. Did follower growth accelerate if measurable?
+25. Did sales or offer content increase, decrease or remain stable?
+26. Was the breakout an isolated spike or the beginning of a new baseline?
+
+## 9. BREAKOUT-DELTA ANALYSIS
+
+For each account calculate or describe the DELTA between normal and breakout.
+
+Required comparison fields:
+- duration delta
+- cadence delta
+- hook delta
+- topic delta
+- format delta
+- editing delta
+- visual delta
+- text delta
+- audio delta
+- CTA delta
+- caption delta
+- proof delta
+- novelty delta
+- specificity delta
+- timeliness delta
+- audience-targeting delta
+- sales/offer delta
+
+Classify the strongest observable delta as one or more:
+- HOOK
+- PACKAGING
+- TOPIC
+- FORMAT
+- DURATION
+- EDITING
+- VISUAL
+- STORY
+- PROOF
+- TIMELINESS
+- AUDIENCE POSITIONING
+- CTA
+- OFFER
+- SERIES/FORMAT REFINEMENT
+- UNKNOWN
+
+Again: this is an observational classification, not proof of causation.
+
+## 10. "WHAT WAS HAPPENING MORE OFTEN THAN NOT?"
+
+Across the forensic accounts, aggregate the PRE-BREAKOUT WINDOW.
+
+For each variable report:
+- accounts analyzed
+- count
+- percentage
+- supporting row IDs
+- confidence
+- limitations
+
+Required variables:
+- increased posting frequency
+- decreased posting frequency
+- stable posting frequency
+- duration increasing
+- duration decreasing
+- duration stable
+- new topic introduced
+- existing topic reframed
+- new format introduced
+- existing format refined
+- new hook family
+- stronger version of existing hook
+- more direct opening
+- more visual movement
+- more text
+- less text
+- increased story/personality
+- increased utility/tutorials
+- increased contrarian content
+- increased result/proof content
+- increased timeliness
+- increased series behavior
+- increased audience-specific language
+- increased or decreased sales content
+- repeated testing before breakout
+- breakout preceded by another smaller outlier
+- breakout occurred after a posting gap
+- breakout occurred during higher posting frequency
+- breakout occurred after a content-format change
+
+The output must distinguish:
+- what is common in ordinary account behavior
+- what is disproportionately present immediately before breakouts
+
+That distinction is mandatory.
+
+## 11. "WHAT SPECIFIC REEL SETS OFF THE VIRALITY?"
+
+Create a dedicated BREAKOUT REEL TABLE.
+
+For every forensic account include:
+- account
+- breakout date
+- breakout Reel URL
+- breakout views
+- baseline median
+- breakout multiple
+- duration
+- hook type
+- topic
+- format
+- first-frame type
+- editing rhythm
+- text strategy
+- audio strategy
+- CTA
+- strongest breakout delta
+- whether it was preceded by a smaller test
+- whether it was followed by additional elevated posts
+- breakout classification
+- confidence
+
+Then answer:
+
+### THE BREAKOUT REEL
+What is the single Reel that most clearly changed the trajectory?
+
+### WHY THIS REEL?
+What made it different from the creator's immediate prior content?
+
+### WAS IT REALLY THE TRIGGER?
+What evidence supports the interpretation, and what evidence prevents certainty?
+
+### DID IT CREATE A NEW BASELINE?
+Compare the next 10 posts to the pre-breakout baseline.
+
+This is the central research output.
+
+## 12. REPEATABILITY TEST
+
+Do not stop at identifying a single breakout Reel.
+
+For each account:
+- determine whether the creator repeated the same structure
+- determine whether the repeat also outperformed baseline
+- determine whether the creator built a series
+- determine whether performance stayed elevated
+
+Classify the mechanism:
+
+A. REPEATABLE FORMULA
+The creator reproduced the structure and continued to outperform.
+
+B. SINGLE-SPIKE FORMULA
+The structure appears only once and did not reliably repeat.
+
+C. SERIES BREAKOUT
+The creator created a recurring series and multiple entries broke out.
+
+D. TOPIC BREAKOUT
+The topic itself appears to be the main change.
+
+E. PACKAGING BREAKOUT
+The underlying topic existed already, but packaging changed.
+
+F. UNKNOWN
+
+## 13. VIRALITY VELOCITY
+
+When performance snapshots are available, record:
+- views at first snapshot
+- views at 24h
+- views at 48h
+- views at 7d
+- final/current views
+- growth between snapshots
+
+Calculate a simple velocity profile only when snapshots are comparable.
+
+Do not invent velocity.
+
+Also check whether the creator had a follower spike or profile-visit spike around the breakout when measurable.
+
+## 14. ACCOUNT-MATURITY ANALYSIS
+
+Compare breakout behavior across:
+- newer accounts
+- established small accounts
+- established mid-size accounts
+- large creator accounts
+
+Determine whether the same breakout mechanisms appear across maturity levels.
+
+Do not let a beginner account's pattern become a universal rule for established clients.
+
+## 15. MAINTENANCE-CYCLE ANALYSIS
+
+Separately analyze established accounts.
+
+Measure how they distribute:
+- identity reminders
+- discovery/reach
+- education
 - authority
-- personality / story
-- engagement/community
+- story/personality
+- engagement
 - motivation/relatability
-- objection handling
-- proof/case studies
-- product/service promotion
+- objections
+- proof
 - soft selling
 - direct selling
+- offer reminders
 
-Identify whether these are interleaved throughout the month rather than isolated into beginner week / sales week phases.
+Specifically test whether these are interleaved throughout the account's ongoing posting rather than placed into fixed monthly weeks.
 
-Use the evidence to create a rolling monthly content mix, not a four-week onboarding funnel.
+The output must answer:
+- how often identity reminders recur
+- how frequently sales content appears
+- whether education and selling coexist in the same content cycle
+- whether established accounts periodically reintroduce positioning
+- whether "Week 1 intro, Week 4 sales" is actually observed in mature accounts
 
-## 6. Inspect patterns, not just high numbers
+## 16. CROSS-ACCOUNT SYNTHESIS
 
-Count occurrences across the qualifying outliers:
+Only after completing account-level forensic analysis, calculate aggregate findings.
 
-- hook type
-- opening-frame strategy
-- topic
-- content format
-- structure
-- pacing
-- text-on-screen approach
-- CTA
-- visual pattern
-- audience pain point
-- proof or demonstration mechanism
+Required summary sections:
 
-For each pattern report:
-- COUNT
-- % OF QUALIFYING OUTLIERS
-- supporting ROW IDs
-- confidence
-- whether it is safe to replicate for TDIE
+### A. BREAKOUT CONDITIONS
+What happens before breakouts more often than not?
 
-Separate:
-A. QUALIFYING OUTLIER PATTERNS
-B. OBSERVED HIGH-PERFORMER PATTERNS
-C. NON-REPLICABLE PATTERNS because they violate TDIE rules
+### B. BREAKOUT REEL ANATOMY
+What characteristics are most common in the breakout Reel?
 
-## 5. Build original October rules
+### C. BREAKOUT DELTA
+What changes most often from the creator's baseline to the breakout Reel?
 
-Turn the strongest evidence into a numbered October Replication Rule set.
+### D. DURATION
+What is the distribution of breakout Reel lengths, and how does that compare with each creator's normal length?
 
-Each rule must contain:
+### E. HOOK
+What hook families and first-three-second patterns recur?
+
+### F. FORMAT
+What formats break out most often?
+
+### G. EDITING
+What pacing, shot-change and text-change patterns recur?
+
+### H. TOPIC
+Which topic/angle types break out most often?
+
+### I. AFTERSHOCK
+What happens to the next 10 posts after a breakout?
+
+### J. REPEATABILITY
+Which mechanisms repeat successfully?
+
+### K. MAINTENANCE
+How do established creators actually maintain their content ecosystem month after month?
+
+### L. TDIE APPLICATION
+Translate the evidence into original, model-agnostic creative rules for October.
+
+## 17. NON-REPLICABLE PATTERNS
+
+Separate anything that appears successful but cannot be used for TDIE because it conflicts with canon:
+- Meta income/earnings claims
+- faith content
+- prohibited link mechanics
+- fabricated proof
+- manufactured scarcity
+- third-party IP
+- unsupported algorithm claims
+- competitor copy
+
+Observed success does not override TDIE rules.
+
+## 18. OCTOBER REPLICATION RULES
+
+Each research-derived rule must include:
 - rule
-- why it is supported
-- count
-- supporting row IDs
-- how TDIE should adapt it
-- what TDIE should NOT copy
+- supporting account(s)
+- supporting breakout row IDs
+- pre-breakout evidence
+- breakout evidence
+- after-breakout evidence
+- confidence
+- limitation
+- how October should adapt the mechanism
+- what October must NOT copy
 
-The output must describe mechanisms, not competitor copy.
+Do not create rules from one Reel unless the evidence is unusually strong and the limitation is explicit.
 
-## 6. Run the supporting checks after the outlier analysis
+## 19. REQUIRED OUTPUT FILES
 
-Only after the row-level outlier work and pattern counts are complete, check:
-- current Instagram format/platform guidance
-- relevant benchmark information
-- niche gaps
-- any tool constraints needed for production
-
-Supporting checks can inform production but may not replace the outlier research.
-
-## 7. Explicitly audit the failed October build
-
-Create a DO NOT REPEAT section covering:
-- Jodie's personal Gemini-first and Nano-Banana-second workflow must not be imposed on members
-- vendor lock-in
-- forcing a persona in every image
-- writing the calendar before research
-- relying on platform-wide averages instead of real posts
-- producing only one Reel prompt
-- mixing text-generation instructions into the two-step video prompt
-- failing to deliver the promised 62 Threads posts
-
-## 8. Required research outputs
-
-Save all of these under:
+Save under:
 ops/cloud-output/dfy-calendar-rebuild-2026-10/
 
 1. RESEARCH.md
 2. OUTLIER_LEDGER.md
-3. PATTERN_COUNTS.md
-4. REPLICATION_RULES.md
-5. SOURCES.md
-6. QA.md
+3. ACCOUNT_TIMELINES.md
+4. BREAKOUT_REELS.md
+5. PATTERN_COUNTS.md
+6. REPLICATION_RULES.md
+7. SOURCES.md
+8. QA.md
 
-RESEARCH.md must include at the top:
+RESEARCH.md must contain:
 - research timestamp
-- date range searched
-- sources checked
-- qualifying outlier count
-- qualifying account count
-- candidate count
+- research date range
+- source inventory
+- total Reel examples
+- unique accounts
+- forensic accounts
+- verified breakouts
+- viral analytics breakouts
+- candidates
+- duration statistics
+- major breakout conditions
+- major breakout delta findings
+- maintenance-cycle findings
 - evidence limitations
-- research gate status: PASS or PARTIAL
 
-OUTLIER_LEDGER.md must contain every row.
+OUTLIER_LEDGER.md:
+Every Reel row.
 
-QA.md must test:
-- 60+ inspiration posts
-- 30+ unique accounts
-- 20+ verified-outlier or viral-analytics examples
+ACCOUNT_TIMELINES.md:
+One timeline per forensic account.
+
+BREAKOUT_REELS.md:
+One central record per breakout account, including the specific Reel that appears to set off the breakout.
+
+PATTERN_COUNTS.md:
+All aggregate counts with formulas/denominators shown.
+
+REPLICATION_RULES.md:
+Original October rules tied to actual evidence.
+
+SOURCES.md:
+Every source, provider, URL and what it supports.
+
+QA.md must check:
+- 75+ Reel examples
+- 40+ unique accounts
+- 25+ forensic accounts
 - no duplicate posts
-- no invented metrics
-- every claimed outlier has an evidence basis
-- every rule has supporting row IDs
-- non-replicable competitor tactics are separated
+- no fabricated metrics
+- duration captured wherever available
+- breakout Reel identified where evidence allows
+- pre/post windows inspected where available
+- baseline comparison performed
+- account-relative breakout evidence kept separate from raw high views
+- correlation vs causation distinguished
+- maintenance-cycle analysis completed
+- all aggregate percentages have a denominator
+- all rules have supporting row IDs
+- non-replicable tactics separated
 - no em dashes
 
-## 9. Stop condition
+## 20. RESEARCH COMPLETION GATE
 
-If the 60-post / 30-account inspiration gate is not met, continue researching. Do not stop merely because some posts lack account-level baselines.
+Research status PASS requires:
+- 75+ total Reel examples
+- 40+ unique accounts
+- 25+ forensic accounts
+- a specific breakout Reel identified for the forensic accounts where evidence permits
+- duration analysis completed
+- pre/post account timelines completed for the forensic accounts where sources allow
+- breakout-delta analysis completed
+- repeatability analysis completed
+- maintenance-cycle analysis completed
+- pattern counts and source register complete
 
-If the inspiration gate still cannot be met after reasonable research, mark the run PARTIAL and document the limitation.
+If a source limitation prevents one field, mark that field NOT VERIFIED. Do not downgrade the whole research merely because one metric is unavailable.
 
-Do not create the calendar in this research phase. Hand the finished research package to the creation prompt.
+The objective is a robust forensic research bank, not perfect access to every Instagram metric.
+
+Do not create the calendar in this run.
 
 Report exactly:
 Research status: PASS or PARTIAL.
-Viral inspiration posts: [count].
+Reel examples: [count].
 Unique accounts: [count].
-Verified outliers: [count].
-Viral analytics examples: [count].
-High performers: [count].
-Replication rules: [count].
-Audience-maturity patterns: [count].
+Forensic accounts: [count].
+Verified breakouts: [count].
+Viral analytics breakouts: [count].
+Strong breakout candidates: [count].
+Median breakout duration: [value or NOT VERIFIED].
+Median pre-breakout duration: [value or NOT VERIFIED].
+Most common pre-breakout conditions: [count/list].
+Most common breakout deltas: [count/list].
+Breakout formats: [count/list].
+Repeatable formulas: [count].
 Maintenance-cycle findings: [count].
 Output: [path].
