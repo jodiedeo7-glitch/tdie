@@ -81,11 +81,11 @@ Topic People Search | Amazon Finds
 
 Ask whether each board has sections.
 
-Ask me to confirm every production board is public.
+Ask me to confirm each production board's public status after I check it in Pinterest. Record the exact board name, public URL, sections, how public status was checked, and when it was checked.
 
-A secret TEST board is allowed only for a dry run and must be marked TEST.
+A secret TEST board is allowed only for a dry run and must be marked TEST. A dry run does not create or schedule a Pin.
 
-Store the exact board name and resolve its stable Pinterest board identifier during setup. The setup is not complete until every production board can be resolved by the publishing connector. Store both `board_name` and `board_id` in MY_RECIPE.txt/state. Use the stored numeric `board_id` for production runs; do not repeatedly resolve board names during every Pin.
+Resolve the board's stable identifier only through an authorized, supported publisher path, or have me provide it from Pinterest's official interface. Never guess an ID or use Pinterest scraping, hidden endpoints, or browser automation to simulate publishing. If the selected publisher cannot resolve the board, record BOARD_VERIFICATION = unavailable and do not schedule there. Store `board_name`, `board_url`, `board_id` when available, and verification evidence in MY_RECIPE.txt/state.
 
 STEP 3. AMAZON PATH
 
@@ -120,22 +120,17 @@ TIME-SAVING:
 - confirm a Pinterest profile is connected inside Metricool
 - confirm the correct Metricool brand
 - record the brand ID if available
-- create one TEST Pin record
-- perform one test scheduling action through the connected Metricool workflow
-- do not proceed until the test result is known
+- prepare one TEST Pin draft and show me the complete image, title, description, destination, board, disclosure, and alt text
+- do not schedule a Pin during setup by default
+- schedule a test Pin only after I select that exact Pin, confirm its destination resolves, confirm the exact public board, verify the disclosure and alt text, and explicitly authorize that specific scheduling action
+- if any condition or supported board assignment is unavailable, leave the Pin unscheduled and record the blocker
+- after an authorized test action, read the scheduled record back through a supported publisher path and compare its image, title, destination, board, time, and status
 
-If the test succeeds:
-PUBLISHER = Metricool
-PUBLISHING_TEST = passed
+Set PUBLISHING_TEST = passed only when that customer-authorized Pin is confirmed in the selected publisher. A draft or an unconfirmed request is not a pass.
 
-If the test requires approval:
-PUBLISHER = Metricool
-PUBLISHING_TEST = approval-required
-Tell me what approval is required.
+If the workflow requires a separate platform approval, record PUBLISHING_TEST = approval-required and tell me the exact step. Do not claim it is scheduled or published before evidence confirms that state.
 
-If the test fails:
-PUBLISHING_TEST = failed
-Do not promise unattended publishing. Offer CREDIT-SAVING mode.
+If the workflow cannot safely complete the test, record PUBLISHING_TEST = blocked or failed with the reason. Offer CREDIT-SAVING mode; do not promise unattended publishing.
 
 CREDIT-SAVING:
 PUBLISHER = native Pinterest
