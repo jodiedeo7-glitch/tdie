@@ -58,8 +58,12 @@ JOB
 TIME-SAVING:
 Use the connected Metricool workflow only if PUBLISHING TEST = passed.
 Create/schedule the Pin with its image, board, title, description, destination URL and scheduled time.
+If the image is in connected Google Drive and Metricool's Google Drive connection is available, use the supported external-media upload path rather than making the asset public.
 Record the returned publisher post ID.
 If approval is required, set awaiting_approval and stop that Pin there.
+
+BATCH FALLBACK:
+If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV import containing the complete Pin queue. Use this only as a batch bridge, not as a claim of unattended publishing. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
 
 CREDIT-SAVING:
 Do not simulate Pinterest browser actions.
