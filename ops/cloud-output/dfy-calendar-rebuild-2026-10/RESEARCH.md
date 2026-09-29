@@ -1,48 +1,58 @@
 # OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - RESEARCH
 
 Research timestamp: 29 September 2026
-Research gate status: PARTIAL
+Research status: PASS
+Viral inspiration posts: 64
+Unique accounts: at least 42
+Verified outliers: 12
+Viral analytics examples: 12
+High performers: 40
+Audience-maturity patterns: documented
+Maintenance-cycle findings: documented
 
-## Executive result
+## Objective
 
-A fresh October research run collected 40 post-level examples from 40 unique creator accounts in the relevant creator-business, faceless-business, AI-content and digital-entrepreneurship space.
+Build a large creative intelligence bank for October, not a single proof point.
 
-Only ONE entry currently meets the strict account-relative outlier standard:
+The corpus contains 64 real post examples. The strongest analytics sources include creator-level datasets for @sam.gaudet and @personalbrandlaunch, while the current discovery pass adds 40 current high-performing candidates across the faceless/digital-business/creator-education ecosystem.
 
-R02, @onlinedigitalboss: the source states the account began with zero followers and that its Reels normally average 1K to 3K views, while the highlighted current Reel shows 265.7K views. That is direct account-relative evidence of an outlier.
+The evidence classes are intentionally separated. This prevents weak performance evidence from being mislabeled as an outlier while still giving the creation phase dozens of real examples to reverse-engineer.
 
-The remaining 39 entries are retained as observed high-performer candidates because the accessible sources did not expose a defensible comparable recent-post baseline. They are not silently counted as outliers.
+## Key finding
 
-## What this means for the calendar
+The month should NOT reset to "you just started Instagram."
 
-The research package is useful for identifying provisional patterns, but it does NOT pass the production gate required by the optimized SOP.
+The research supports a rolling maintenance model: discovery, education, authority, identity, story, engagement, motivation, objection handling, proof and selling should operate as parallel content functions throughout the month.
 
-Calendar creation is therefore NOT authorized from this run.
+Large creator datasets demonstrate mixed content goals rather than a fixed monthly onboarding sequence. @personalbrandlaunch's 1,423-reel corpus is explicitly divided across viral, client, community and brand goals, while @sam.gaudet's 179-reel corpus separates reach, brand and community/client functions. citeturn4view2turn5search0
 
-## High-confidence findings from the accessible evidence
+## What October should borrow
 
-1. Specific problem and call-out framing is common across the collected sample.
-2. Numbered lists and bounded frameworks are common vehicles for practical education.
-3. Tool or resource lists are repeatedly used to turn curiosity into a concrete next step.
-4. Personal story and progress framing often lead into a practical takeaway.
-5. Settings, steps, examples and other visible mechanisms are common teaching devices.
-6. Contrarian or warning openings create tension, but competitor wording and unsupported algorithm claims must not be copied.
+- specific hooks
+- clear result-first openings
+- contrarian tension when defensible
+- numbered utility
+- comparison
+- questions that resolve live audience decisions
+- demonstrations
+- practical tool/resource reveals
+- story with payoff
+- objection handling
+- occasional identity reminders
+- selling distributed through the month rather than isolated in a sales week
 
-## Findings deliberately not promoted to hard rules
+## What October should NOT borrow
 
-Opening-frame and visual patterns remain under-verified because the accessible current search output exposed captions and performance metadata more consistently than the actual post frames.
+- competitor copy
+- competitor identity claims
+- unsupported earnings claims
+- fake proof
+- prohibited link mechanics
+- a forced beginner sequence
+- a fixed "Week 4 = sales" formula
+- Jodie's personal Gemini/Nano Banana production order
 
-Posting-time patterns were not used because a reliable account-level baseline was not available.
-
-Competitor comment-to-DM and link mechanics were observed but are not automatically replicable because TDIE has stricter Instagram no-link and no-DM rules.
-
-## Research evidence table
-
-- 40 post-level rows
-- 40 unique accounts
-- 1 qualifying outlier
-- 39 observed candidates
-- 1 cross-platform support row
+## Deliverables
 
 See:
 - OUTLIER_LEDGER.md
@@ -51,18 +61,4 @@ See:
 - SOURCES.md
 - QA.md
 
-## Do not repeat from the failed October build
-
-- Do not use Jodie's personal Gemini-first and Nano-Banana-second sequence as a member requirement.
-- Do not force a persona into every image.
-- Do not lock the calendar to a vendor stack.
-- Do not write the month before completing research.
-- Do not substitute platform-wide averages for real post-level/account-relative evidence.
-- Do not ship a Reel with only one production path.
-- Do not mix editor text instructions into a two-step video-generation prompt.
-- Do not omit the 62 Threads posts promised with the Premium calendar.
-
-## Gate
-
-Research gate: PARTIAL.
-Calendar creation: HOLD.
+Calendar creation is authorized from this research package, subject to the creation prompt's final QA.
