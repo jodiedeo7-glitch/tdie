@@ -16,12 +16,14 @@ Sources checked: [exact file names].
 
 ## PRECONDITION
 
-Do not start creation unless QA.md in the research folder says:
-Research gate: PASS
-Qualifying outliers: 40 or more
-Qualifying accounts: 25 or more
+Do not start creation unless the research package contains:
+- 60 or more viral/high-performing inspiration posts
+- 30 or more unique accounts
+- at least 20 VERIFIED OUTLIER or VIRAL ANALYTICS examples
 
-If the research gate is PARTIAL, stop and report the gate failure. Do not create the calendar.
+A smaller verified-outlier count is acceptable if the full inspiration corpus passes.
+
+If the research package has a large inspiration corpus but fewer than 20 verified/analytics examples, continue research rather than pretending ordinary high performers are outliers.
 
 ## TASK
 
@@ -44,6 +46,53 @@ Never override:
 - current canon pricing and product register
 
 ## 1. Exactly 31 Instagram days
+
+The month is a ROLLING MAINTENANCE CYCLE, not a new-account onboarding sequence.
+
+Do NOT structure October as:
+- Week 1: introduce yourself
+- Week 2: teach beginners
+- Week 3: nurture
+- Week 4: sell
+
+Do NOT assume:
+- the client is new to Instagram
+- the audience has never heard of the client
+- the account needs a beginner introduction every month
+- selling belongs primarily in the fourth week
+
+Every month should operate as a complete ecosystem containing a recurring mix of:
+- identity/positioning reminders
+- education
+- discovery/reach
+- authority
+- story/personality
+- engagement/community
+- motivation/relatability
+- objection handling
+- proof/case studies where legitimately available
+- soft selling
+- direct selling
+- offer reminders
+- audience-building content
+
+These categories should be distributed throughout the month rather than assigned to fixed weeks.
+
+A "who I am / what I do" post is appropriate when the research supports a reminder, reintroduction, positioning refresh, new audience context, or authority moment. It is NOT a mandatory Week 1 ritual.
+
+Sales should appear naturally throughout the rolling cycle according to the current offer-spread rules. Do not save selling for Week 4.
+
+The calendar should make sense if a client has been posting for:
+- 1 month
+- 6 months
+- 2 years
+- 5 years
+
+The difference should be the sophistication of the content, not a forced onboarding sequence.
+
+The month should also contain multiple discovery posts capable of reaching people who have never encountered the creator before, while simultaneously serving existing followers.
+
+For each day include:
 
 Create one primary Instagram content package for every date:
 1 October 2026 through 31 October 2026.
