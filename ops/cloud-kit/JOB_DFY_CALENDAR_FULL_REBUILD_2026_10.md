@@ -26,7 +26,7 @@ The research gate is:
 - pattern counts complete
 - every replication rule tied to research row IDs
 
-If the research gate is PARTIAL, do not proceed to creation.
+If the research gate is PARTIAL, continue researching until the inspiration corpus can be completed. Do not proceed to creation until the 60/30/20 gate passes.
 
 ## PHASE 2: CREATION
 
@@ -65,8 +65,10 @@ If any hard gate fails, fix it before reporting.
 
 Final report must contain:
 Research status
-Qualifying outliers
-Qualifying accounts
+Viral inspiration posts
+Unique accounts
+Verified outliers
+Viral analytics examples
 Instagram days
 Threads posts
 Reels
