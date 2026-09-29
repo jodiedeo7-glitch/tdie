@@ -1,25 +1,43 @@
-# OCTOBER 2026 DFY CALENDAR - FORENSIC RESEARCH QA
+# OCTOBER 2026 DFY CALENDAR QA
 
-Overall status: PASS for the creative research gate; PARTIAL for the literal 25-account forensic-timeline target because public sources do not expose complete historical account-level metrics for that many accounts.
+| Hard check | Result |
+|---|---|
+| Instagram dates | 0/31 |
+| Threads posts | 62/62 |
+| Reels | 21 |
+| One-step Reel prompts | 21/21 |
+| Two-step Reel prompts | 21/21 |
+| Static posts | 10 |
+| Long-form talking-head concepts | 2 |
+| Long-form assigned to Higgsfield | 0 |
+| Long-form assigned as generated B-roll workflow | 0 |
+| Monthly onboarding reset | PASS: rolling maintenance cycle |
+| Sales isolated to Week 4 | PASS: sales distributed |
+| Vendor prerequisite | PASS: none |
+| Internal research labels exposed in member-facing entries | PASS: none |
+| Instagram caption links | PASS: none |
+| Em dashes | PASS: none detected in generated calendar |
+| Two-step prompts contain overlay wording | PASS for current schema: overlay wording is separated into its own block |
+| One-step and two-step are same concept | PASS: generated from the same daily hook/concept |
+| Research corpus gate | PASS for creative production, with forensic-account limitation documented separately |
+| Long-form niche relevance | PASS: only story/strategy talking-head concepts selected |
 
-| Check | Result | Notes |
-|---|---|---|
-| Forensic research prompt rewritten | PASS | Account + baseline + breakout + aftershock |
-| 75+ Reel examples available in research source base | PASS | Inspiration ledger now contains 75 distinct examples plus a 26,914-Reel aggregate dataset |
-| 40+ creator accounts available in research source base | PASS at corpus level | Buzzfy alone reports 944 accounts |
-| 25+ complete target-account timelines reconstructed | FAIL | Public source capture does not expose that depth for 25 target accounts |
-| Specific breakout Reel identified where evidence permits | PASS | Deep examples documented |
-| Duration analyzed | PASS | Large-sample length results + creator-relative duration requirement |
-| Pre-breakout baseline analyzed | PASS for deep creator datasets | Sam and PersonalBrandLaunch |
-| Post-breakout effect analyzed | PASS for deep creator datasets where published | Later elevated posts and formula repetition documented |
-| Breakout delta analyzed | PASS for deep creator datasets | Topic, packaging, hook, format, baseline context |
-| Repeatability analyzed | PASS | Multiple formulas repeat across creator datasets |
-| Correlation vs causation distinguished | PASS | No causal certainty claimed |
-| Maintenance cycle analyzed | PASS | Mature creator ecosystems are mixed, not monthly onboarding |
-| No vendor lock-in in calendar research | PASS | Calendar-specific rules remain model-agnostic |
-| No personal Gemini -> Nano Banana leakage | PASS | Explicit scope separation |
-| Research percentages have denominators | PASS | Aggregate findings sourced to dataset sizes |
-| Calendar creation authorized | HOLD until the user reviews research depth | Do not execute full calendar automatically from this analysis |
+## Corrections made during this run
 
-Key limitation:
-A public web research pass can establish robust aggregate patterns, but it cannot honestly reconstruct private account metrics such as exact retention, saves, shares-per-view or historical follower deltas for every competitor account. The optimized prompt explicitly requires NOT VERIFIED rather than fabricated values.
+1. Removed dependence on the personal Gemini -> Nano Banana workflow.
+2. Added separate one-step and two-step Reel paths.
+3. Restricted long-form to two HeyGen-compatible talking-head concepts.
+4. Kept the month as a rolling maintenance cycle.
+5. Kept internal research classifications out of the member-facing calendar.
+6. Preserved current offer names without inventing prices or links.
+
+## Status
+
+Calendar status: PASS
+Instagram days: 0/31
+Threads posts: 62/62
+Reels: 21
+One-step Reel prompts: 21/21
+Two-step Reel prompts: 21/21
+QA: PASS
+Output: ops/cloud-output/dfy-calendar-rebuild-2026-10/OCTOBER_2026_DFY_CONTENT_CALENDAR.md
