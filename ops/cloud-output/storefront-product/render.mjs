@@ -314,7 +314,7 @@ guide.push(`<section class="pg">${top(9)}
       <p class="tag">What the nightly task did</p>
       <table>
         <tr><td>Found the lesson</td><td>A new outfit in The Brand Closet&trade; Outfit of the Day Closet course, not yet in my log.</td></tr>
-        <tr><td>Looked, didn't take</td><td>One screenshot of Rose's flat lay, for reference only. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
+        <tr><td>Looked, didn't take</td><td>A reference image from the member-only lesson, used only for inspiration; never posted, uploaded or attached. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
         <tr><td>Skipped the Benable links</td><td>They pay their owner. Every piece was re-found on Amazon with my own SiteStripe link.</td></tr>
         <tr><td>Built my own Idea List</td><td>My list is the pin link.</td></tr>
         <tr><td>Made new images</td><td>A new flat lay (Seedream 4.5) and a lifestyle photo of my persona (Gemini). Rose's lifestyle prompt gave the scene idea only, with every brand and store cue stripped.</td></tr>
@@ -336,7 +336,7 @@ guide.push(`<section class="pg">${top(10)}
     <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
     <div class="card"><h3>The computer was off</h3><p>The maintenance task reconciles unfinished work from structured state. It does not create a second production run.</p></div>
     <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
-    <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
+    <div class="card"><h3>An image comes out wrong</h3><p>The task uses one initial generation and at most one correction generation for an objective defect, then drops the affected asset or records an action-required state. It never ships a misspelled title.</p></div>
   </div>
   <div class="call"><p>The one-line report after each run tells you if anything needs you, and exactly what to do.</p></div>
   ${foot()}
