@@ -68,9 +68,15 @@ description
 alt_text
 destination_url
 board_id
+board_name
+board_url
 scheduled_at
 publisher
 publisher_post_id
+customer_selected
+customer_selection_at
+customer_schedule_authorized
+schedule_authorization_at
 status
 last_checked_at
 error_code
@@ -96,6 +102,7 @@ ready
 building
 built
 queued
+customer_review_required
 awaiting_approval
 customer_scheduling_required
 scheduled
@@ -137,16 +144,16 @@ LEGACY LOCAL MODE ONLY. It is not used by cloud execution.
 
 ## Publisher states
 
-TIME-SAVING / Metricool:
-queued → scheduled → published → verified
+Every Pin starts in customer_review_required. Keep it there until the customer selects the exact finished Pin and explicitly authorizes its schedule after destination, public board, disclosure, image and metadata checks pass.
 
-If Metricool/ChatGPT requires an approval:
-queued → awaiting_approval → scheduled
+TIME-SAVING / Metricool:
+customer_review_required → awaiting_approval (when a separate platform review is required) → scheduled → published → verified
+customer_review_required → scheduled → published → verified (only after per-Pin customer selection and schedule authorization are recorded)
 
 CREDIT-SAVING / native Pinterest:
-queued → customer_scheduling_required → customer_scheduled → verified
+customer_review_required → customer_scheduling_required → customer_scheduled → verified
 
-A customer_scheduled state records the customer's confirmation that Pinterest shows the Pin in its scheduled area. Use verified only after the customer's confirmation or supported publisher evidence is recorded.
+A customer_scheduled state records the customer's confirmation that Pinterest shows the Pin in its scheduled area. Use verified only after the customer's confirmation or supported publisher evidence is recorded. A scheduled or published state never substitutes for the recorded per-Pin customer selection and schedule authorization.
 
 ## Pull states
 
