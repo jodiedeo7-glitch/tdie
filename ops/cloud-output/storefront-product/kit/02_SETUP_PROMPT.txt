@@ -312,23 +312,22 @@ If the selected Work mode or connected app cannot perform a required action, lea
 
 STEP 12. TEST
 
-Run exactly one complete test look before scaling.
+Run one complete draft test look before scaling. Keep it unscheduled unless I select the exact finished test Pin and explicitly authorize its schedule after reviewing the image, title, destination, exact public board, disclosure and alt text.
 
-The test must prove:
+The draft test must prove:
 - configuration reads correctly
 - one look gets a stable LOOK_ID
-- products are recorded
-- one image asset is recorded
-- Pin copy is recorded
-- destination resolves
-- one Pin reaches the selected publisher
-- state records the publisher result
-- duplicate prevention works if the task is run again
+- authorized product inputs are recorded
+- one image asset passes the visual acceptance checks
+- Pin copy, disclosure and alt text are recorded
+- the destination resolves
+- the exact board and public status are verified through supported paths
+- state records the complete Pin and review gate
+- a repeated dry run reconciles the existing PIN_ID without creating a duplicate
 
-If TIME-SAVING Metricool is selected:
-the test must prove the actual ChatGPT-to-Metricool action in this customer's account.
+A publisher test may be attempted only after my per-Pin selection and schedule authorization. It must read the scheduled result back through a supported path. A draft-only result, an unconfirmed request, or a test that cannot safely assign the verified board is not a pass. Do not infer publication from scheduling.
 
-If that test cannot be completed, do not label the workflow fully automated.
+If the authorized publisher test cannot be completed, record the blocker, leave the Pin unscheduled, and do not label the workflow fully automated.
 
 STEP 13. FINAL SETUP REPORT
 
