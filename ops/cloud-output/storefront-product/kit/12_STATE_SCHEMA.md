@@ -97,11 +97,14 @@ building
 built
 queued
 awaiting_approval
+customer_scheduling_required
 scheduled
+customer_scheduled
 published
 verified
 pull_requested
 pulled
+pull_failed
 failed
 dropped
 
@@ -141,7 +144,9 @@ If Metricool/ChatGPT requires an approval:
 queued → awaiting_approval → scheduled
 
 CREDIT-SAVING / native Pinterest:
-queued → customer_scheduled → verified
+queued → customer_scheduling_required → customer_scheduled → verified
+
+A customer_scheduled state records the customer's confirmation that Pinterest shows the Pin in its scheduled area. Use verified only after the customer's confirmation or supported publisher evidence is recorded.
 
 ## Pull states
 
