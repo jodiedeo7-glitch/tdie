@@ -139,7 +139,7 @@ A. Frames WITH her in them (full body, hands only, or boots only):
 
 * Her glitter-flecked pink iced coffee tumbler with a lavender straw is always in the frame. Saturated candy pink, never pale, blush or white.
 * The tumbler is a signature prop, and pink clothing, accessories, furnishings and other pink pieces may freely appear in the frame with her.
-* Never write “exactly one pink object” or “no other pink props” in a prompt that has her in it.
+* Never impose a one-pink-item limit. Multiple pink objects, props, clothing pieces and environmental details are allowed whenever they fit the scene.
 
 B. Frames WITHOUT her in them:
 
