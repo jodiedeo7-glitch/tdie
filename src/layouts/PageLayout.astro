@@ -4,6 +4,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/global.css";
 
 import Analytics from '@vercel/analytics/astro';
+import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
   title: string;
   description: string;
@@ -123,6 +124,7 @@ const jsonLd = {
   <script>
     document.body.classList.remove('no-js');
   </script>
+  <MetricoolTracker />
   <Analytics />
 </body>
 </html>
