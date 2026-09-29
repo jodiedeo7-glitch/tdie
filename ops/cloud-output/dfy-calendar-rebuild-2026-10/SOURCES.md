@@ -1,38 +1,77 @@
 # OCTOBER 2026 DFY CALENDAR RESEARCH - SOURCES
 
 Research timestamp: 29 September 2026
-Primary research source type: current public post-level discovery pages and current public creator/profile analytics surfaced by search.
 
-Post-level discovery:
-- turn955779view0 / turn697568view0: current Pictame discovery for faceless digital marketing for beginners.
-- turn548814view0: current Pictame discovery for content creation.
-- turn532347view1: current Pictame discovery for Instagram Reels tips.
-- turn532347view2: current Pictame discovery for AI programs.
-- turn532347view3: current Pictame discovery for content creator tools.
-- turn532347view4: current Pictame discovery for Instagram for business.
-- turn697568view6: current Pictame discovery for digital business.
-- turn697568view5: current Pictame discovery for online business.
-- turn158729view5: current Pictame discovery for small-business marketing.
-- turn158729view7: current Pictame discovery for business marketing.
-- turn158729view8: current Pictame discovery for faceless content creator tools.
-- turn158729view6: current Pictame discovery for faceless creators.
-- turn695879view4: current Pictame discovery for women entrepreneurs in 2026.
-- turn695879view5: current Pictame discovery for female entrepreneurship tips.
+## Primary creator-level analytics datasets
 
-Account-level / baseline support:
-- turn593360search0: SocialBlade data surfaced for @facelessbrandwithjess.
-- turn593360search1: Imginn data surfaced for @buildwealthwjessica.
-- turn593360search5: influData data surfaced for @buildwealthwjessica.
-- turn515537search0: SocialBlade data surfaced for @anonymouslyzara.
-- turn515537search3: creator-site self-report from AnonymouslyZara.
-- turn515537search7: older post-level engagement evidence from AnonymouslyZara.
-- turn194153search0: current Urlebird/TikTok analytics for @asmaldigital. Used only as cross-platform supporting context, never as proof of an Instagram outlier.
+1. Content Copilot - @sam.gaudet
+   - 179 Reels analyzed
+   - Sep 2025 to May 2026
+   - 44.3K followers
+   - 8.6M total views
+   - 18.4K median Reel views
+   - top 12 explicitly labeled viral
+   - useful for creator-relative outlier analysis
 
-Supporting secondary industry source:
-- turn491578search0: MySellSystem 2026 playbook. Treated as a secondary pattern source, not proof of post performance.
+2. Content Copilot - @personalbrandlaunch
+   - 1,423 Reels analyzed
+   - Mar 2023 to Apr 2026
+   - 1.0M followers
+   - 170.8M total views
+   - top reels explicitly labeled viral
+   - useful for repeated formula, audience-maturity and content-goal analysis
 
-Platform check limitation:
-The current search pass did not surface a sufficiently specific current Instagram Creator guidance page that was needed for a substantive Instagram algorithm claim. Adjacent Meta Audience Network material was found (turn317530search0, turn317530search2) but was not used to establish Instagram-specific content rules.
+3. Buzzfy
+   - July 2026 analysis of 26,914 Reels from 944 creator accounts
+   - useful as supporting methodology for creator-relative viral analysis
 
-Source-quality rule:
-No competitor text is copied into TDIE assets. The research extracts mechanisms and structures only.
+## Current 2026 supporting research
+
+4. My Sell System, September 11 2026
+   - faceless Instagram Reels for digital products
+   - useful for current digital-product formats and production mechanisms
+
+5. CreatorHouse, April 28 2026
+   - 60+ hook examples from 26 niches
+   - useful for hook-pattern cross-checking
+
+6. Clout AI, September 27 2026
+   - 25 current faceless Reel concepts
+   - useful for current faceless production formats
+
+7. Trender, September 18 2026
+   - current Reel hook examples and hook-to-continuation structure
+
+## Current post-level discovery corpus
+
+The research ledger also contains 40 current high-performing post candidates surfaced through current public discovery searches across:
+- faceless digital marketing
+- digital products
+- creator education
+- AI tools
+- Instagram/content growth
+- small-business marketing
+
+These are deliberately labeled HIGH-PERFORMER unless account-level evidence supports a stronger class.
+
+## Evidence policy
+
+The research uses four classes:
+- VERIFIED OUTLIER
+- VIRAL ANALYTICS EXAMPLE
+- HIGH-PERFORMER
+- SUPPORTING PATTERN SOURCE
+
+A generic "viral hooks" article does not become evidence that a particular post went viral.
+
+Competitor wording, claims, identity, visuals and proprietary frameworks are not copied into TDIE content.
+
+## Web references
+
+Content Copilot @sam.gaudet: https://www.contentcopilot.so/playbook/sam.gaudet
+Content Copilot @personalbrandlaunch: https://www.contentcopilot.so/playbook/personalbrandlaunch
+Buzzfy: https://buzzfy.co/blog/what-makes-reels-go-viral
+My Sell System: https://mysellsystem.com/faceless-instagram-reels-for-digital-products/
+CreatorHouse: https://creatorhouse.app/blog/instagram-reel-hooks-2026
+Clout AI: https://www.tryclout.ai/blog/faceless-reels-ideas
+Trender: https://www.trndr.app/blog/reels-hooks-without-copying
