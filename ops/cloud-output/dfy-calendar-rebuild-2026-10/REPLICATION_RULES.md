@@ -1,24 +1,22 @@
-# OCTOBER 2026 DFY CALENDAR - REPLICATION RULES
+# OCTOBER 2026 DFY CALENDAR - FORENSIC REPLICATION RULES
 
-Status: PASS for creative inspiration corpus.
-
-1. Build from a large inspiration bank, not one "winner."
-2. Reverse-engineer mechanisms, not wording.
-3. Favor repeated formulas that appear across multiple posts or creators.
-4. Use account-relative performance when available, but do not require it for every inspiration example.
-5. Keep VERIFIED OUTLIER, VIRAL ANALYTICS EXAMPLE and HIGH-PERFORMER labels distinct.
-6. Include both discovery and established-audience content.
-7. Do not assume the audience is new every month.
-8. Do not reserve selling for Week 4.
-9. Interleave education, identity, authority, story, engagement, motivation, objection handling, proof and selling throughout the month.
-10. Use occasional identity reminders rather than a mandatory monthly "introduce yourself" post.
-11. Use current client/member proof only when documented.
-12. Use real, defensible results only.
-13. Translate competitor mechanics into original TDIE concepts.
-14. Do not copy competitor phrases, scripts, visuals or branded frameworks.
-15. Do not copy prohibited tactics even when they appear in viral examples.
-16. Every Reel must have both one-step and two-step production paths.
-17. Every two-step video prompt must be text-free.
-18. Every one-step prompt must contain exact text instructions.
-19. Image prompts remain model-agnostic.
-20. The client's account maturity changes the sophistication of the content, not the existence of a beginner onboarding phase.
+1. Analyze the account before analyzing the Reel.
+2. Define the creator's own baseline, not just a raw view threshold.
+3. Identify the specific breakout Reel.
+4. Inspect the previous and next posts whenever public data permits.
+5. Separate normal account behavior from breakout deltas.
+6. Duration is a required variable.
+7. Test short loopable concepts and long narrative concepts deliberately; do not force a universal length.
+8. Treat 7-12 sec and 60-90 sec as evidence-backed bands from Buzzfy, not guarantees.
+9. Treat 20-45 sec as a weaker observed band, not a hard prohibition.
+10. Put the first text hook on frame one when text is part of the creative.
+11. Use assertive, specific openings rather than generic greetings.
+12. A breakout may be the strongest iteration of a format the creator has already been testing.
+13. Reuse proven structures across different topics and angles.
+14. Build series when repeated evidence supports the structure.
+15. Do not confuse large audience size with a portable viral mechanism.
+16. Do not credit camera style, audio or other constant features as breakout triggers unless they changed relative to baseline.
+17. Examine whether the breakout changed the next 10 posts or simply spiked and disappeared.
+18. Build every month as a maintenance cycle, not monthly onboarding.
+19. Distribute reach, education, identity, authority, story, engagement, objection handling, proof and selling throughout the month.
+20. Translate mechanisms into original client content. Never copy exact hooks, scripts, scenes, claims or assets.
