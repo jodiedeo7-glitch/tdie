@@ -56,7 +56,7 @@ JOB
 12. Create stable PIN_ID values.
 13. Apply the per-Pin customer approval gate before routing.
 
-A Pin may enter the publishing queue only after all checks pass: the customer selected that exact finished Pin; the destination resolves and matches the look; the exact public board and any section are verified through a supported path; the required affiliate disclosure is present; title, description and alt text match the image; and the customer explicitly authorized scheduling that Pin. Record the selection and authorization with timestamps. If any check or authorization is missing, keep the Pin in customer_review_required and do not call a publisher or include it in an import file.
+A Pin may enter the publishing queue only after all checks pass: the customer selected that exact finished Pin; the destination resolves and matches the look; the exact public board and any section are verified through a supported path; the required affiliate disclosure is present; title, description and alt text match the image; and the customer explicitly authorized scheduling that Pin. Record the selection and authorization with timestamps and a fingerprint that binds the approved image, title, description, alt text, destination, board, disclosure and schedule time. If any bound value changes, clear selection/authorization and return the Pin to customer_review_required. If any check or authorization is missing, keep the Pin in customer_review_required and do not call a publisher or include it in an import file.
 
 TIME-SAVING:
 Use the connected Metricool workflow only if PUBLISHING TEST = passed and the Pin has the required customer selection and schedule authorization.
