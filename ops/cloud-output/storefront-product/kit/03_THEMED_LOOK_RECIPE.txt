@@ -120,9 +120,24 @@ If an affiliate link or destination cannot be verified, the look remains queued.
 PART 4. MAKE THE IMAGES
 ====================================================================
 
-The capture method (no downloads): open the finished image in its own tab, show it on the page at exactly 1000 by 1500 pixels, copy it, and paste it straight into the upload box (Pinterest's, a generator's or a site's). Most screens are too short to screenshot 1500 pixels, so a screenshot is only for checking by eye. Where a page won't take a paste, put the copied image into the page's file input through the page itself. Nothing is ever saved to the computer. Hand fixes (a little grain if it looks too glossy, a small crop that keeps 2:3) are made on the page before you copy it, never with another generation.
+IMAGE EXECUTION
 
-Before every image: clear the generator's prompt box and any image still attached from an earlier job, set the model, 2K and portrait 2:3, paste the prompt (never type a long prompt), and read the box back before you generate. Before the run ends, write in pin-drafts.md where each image lives in the generator's history (Higgsfield or Gemini, date and time, first words of the prompt), so a later run can capture it again.
+Use the connected image-generation provider selected in MY_RECIPE.txt. The preferred current path is ChatGPT + Higgsfield when the customer has that integration connected.
+
+Do not require a desktop browser, manual copy/paste, screenshots or a separate image-generation session when the connected provider can return the finished asset directly.
+
+For each final asset:
+1. Build the prompt from the product sheet, persona settings and look requirements.
+2. Generate the asset once.
+3. Inspect the result against the acceptance criteria.
+4. If a correction is needed, use an in-place edit when the selected provider/model supports it.
+5. Regenerate only when an edit cannot produce the required correction.
+6. Record the generation job/asset identifier, provider and model in structured state.
+7. Preserve the approved asset as the canonical IMAGE_ID and reuse it for every downstream Pin that uses that asset.
+
+Do not generate a second image merely to add deterministic text or layout. Use deterministic rendering when that produces the same required final asset with less generation cost and no loss of quality.
+
+Never make the customer copy an image from one application into another as the normal path.
 
 PIN 1: THE FLAT LAY OR COLLAGE (no person, so Seedream 4.5 on Higgsfield, 2K, portrait 2:3)
 Read the last look's pin 1 format in storefront-log.md and use the other one this time. Frames are full and styled edge to edge: never a plain white background with tidy boxes. Format A: attach the product sheet. Format B: never attach it (the generator pastes the Amazon photos in as rectangles); describe each piece in words instead, from the sheet: color, shape, material, details. Write colors as a name plus a shade (for example "soft blush pink, never pale"), never as a color code.
