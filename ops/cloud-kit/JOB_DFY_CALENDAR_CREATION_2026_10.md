@@ -143,7 +143,6 @@ For every Threads post include:
 - hook
 - full post
 - CTA where appropriate
-- research rule ID when research shaped the post
 - offer flag: yes/no
 - affiliate flag: yes/no
 
