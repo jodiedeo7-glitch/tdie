@@ -96,6 +96,7 @@ import "../styles/global.css";
 import FreebieForm from "../components/FreebieForm.astro";
 
 import Analytics from '@vercel/analytics/astro';
+import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
   title: string;             // SEO title tag
   description: string;       // meta description
@@ -907,6 +908,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     ids.forEach(s => s && spy.observe(s));
 
   </script>
+  <MetricoolTracker />
   <Analytics />
 </body>
 </html>
