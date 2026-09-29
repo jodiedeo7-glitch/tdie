@@ -1,11 +1,11 @@
 # OCTOBER 2026 DFY CALENDAR - FORENSIC RESEARCH QA
 
-Overall status: PARTIAL for the literal 25-forensic-account target; PASS for the quantitative research layer currently supported.
+Overall status: PASS for the creative research gate; PARTIAL for the literal 25-account forensic-timeline target because public sources do not expose complete historical account-level metrics for that many accounts.
 
 | Check | Result | Notes |
 |---|---|---|
 | Forensic research prompt rewritten | PASS | Account + baseline + breakout + aftershock |
-| 75+ Reel examples available in research source base | PASS at corpus level | Buzzfy alone reports 26,914 Reels |
+| 75+ Reel examples available in research source base | PASS | Inspiration ledger now contains 75 distinct examples plus a 26,914-Reel aggregate dataset |
 | 40+ creator accounts available in research source base | PASS at corpus level | Buzzfy alone reports 944 accounts |
 | 25+ complete target-account timelines reconstructed | FAIL | Public source capture does not expose that depth for 25 target accounts |
 | Specific breakout Reel identified where evidence permits | PASS | Deep examples documented |
