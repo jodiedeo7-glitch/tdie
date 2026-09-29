@@ -138,14 +138,14 @@ There are two cases. Decide which one the image is before writing the prompt.
 A. Frames WITH her in them (full body, hands only, or boots only):
 
 * Her glitter-flecked pink iced coffee tumbler with a lavender straw is always in the frame. Saturated candy pink, never pale, blush or white.
-* The tumbler is NEVER the only pink item. Her clothes can be candy pink, and other pink pieces can be in the frame with her.
+* The tumbler is a signature prop, and pink clothing, accessories, furnishings and other pink pieces may freely appear in the frame with her.
 * Never write “exactly one pink object” or “no other pink props” in a prompt that has her in it.
 
 B. Frames WITHOUT her in them:
 
 * Pink is welcome throughout the scene. Use saturated candy pink when pink is called for; never pale blush unless intentionally specified.
 * Examples: the Player Two? mug, the glitter tumbler, candy-pink over-ear headphones, candy-pink gardening gloves, a candy-pink velvet throw pillow.
-* Do not add more pink props and do not turn the whole environment pink. The established pink attic environment and incidental RGB light are allowed.
+* Pink props and pink environmental details may be used freely when they fit the scene. Do not turn the entire environment into an undifferentiated pink wash; the farmhouse/gamer setting and visual depth must remain readable.
 * Choose that object BEFORE writing the final prompt.
 
 Scope: Amazon product flat lays and “that girl” shoppable collages with no person in them (Legally Blonde and Brand Closet pins) follow claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 4 instead: full, styled, as pink as the look, with a big two-typeface title set on the image, copied from Jodie's example pins in the Command Centre stylerefs collection. Section 7's “no text in the image” rule has the same scope: those product pins carry their generated title by founder call (Decision 109).
@@ -156,7 +156,7 @@ Read `claude/TDIE_CHATGPT_IMAGE_BRIEF.md` (“Her world”) before writing any p
 
 * Her signature prop, in every frame she appears in (full body, hands only, boots only): a glitter-flecked pink iced coffee tumbler with a lavender straw. Section 4A governs it.
 * The ceramic mug is only ever the bubblegum pink ceramic mug printed Player Two? in black lettering, saturated candy pink, never pale or white. A plain pink mug with no words is never correct. When it is used, the negative line says the only printed words in the frame are Player Two? on the mug.
-* In frames without her, vary the pink object across a set. Rotate the Player Two? mug, the glitter tumbler, candy-pink over-ear headphones, candy-pink gardening gloves and a candy-pink velvet throw pillow, chosen to fit the scene. No single prop in more than about a third of a month’s person-free images.
+* In frames without her, vary pink props and environmental details across the set. The Player Two? mug, glitter tumbler, candy-pink over-ear headphones, candy-pink gardening gloves and candy-pink velvet throw pillow are available recurring brand props when they fit the scene. Avoid making one prop the visual focus of most person-free images, but there is no limit on the number of pink items in any individual image.
 * Why this section exists: the October 2026 DFY calendar was prompted without reading these files, and 75 of 83 images came back with a plain pink mug and had to be regenerated.
 
 5. PHOTOREALISM IS NON-NEGOTIABLE
@@ -269,7 +269,7 @@ Ideal scene density:
 * 2–5 environmental anchors
 * 1 primary action
 * 1 wardrobe concept
-* pink per section 4 (her tumbler plus any pink she wears when she is in the frame; exactly one pink object when she is not)
+* pink per section 4 (her tumbler plus any pink she wears when she is in the frame; multiple pink items are permitted whether or not she is present)
 * 1–2 supporting life cues
 * composition
 * lighting
@@ -329,7 +329,7 @@ Lens + photographic realism language.
 
 J. Negative constraints
 
-No text, logos, watermarks, generic luxury settings. In frames without her only: no extra pink props.
+No text, logos, watermarks, generic luxury settings. Pink props are permitted throughout the scene when they fit the established world.
 
 10. REQUIRED PRE-GENERATION CHECK
 
@@ -343,13 +343,13 @@ Before finalizing a prompt, silently verify:
 
 [ ] Scene does not resemble generic luxury editorial
 
-[ ] If she (or her hands or boots) is in the frame: her glitter-flecked pink iced coffee tumbler with a lavender straw is in it, and the prompt does NOT say it is the only pink item
+[ ] If she (or her hands or boots) is in the frame: her glitter-flecked pink iced coffee tumbler with a lavender straw is in it; additional pink clothing, props and environmental details are permitted
 
-[ ] If she is not in the frame: pink is freely allowed throughout the scene
+[ ] Whether or not she is in the frame: multiple pink items are permitted; there is no one-pink-item limit
 
 [ ] Any mug is the Player Two? mug with black lettering, never a plain pink mug
 
-[ ] In person-free sets, the pink object is not the same one used in most of the other images
+[ ] In person-free sets, vary pink props and environmental details so the month does not visually rely on one recurring prop
 
 [ ] Subject is positioned in the right third
 
