@@ -6,7 +6,7 @@ Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look 
 
 | Path | What it is |
 |---|---|
-| `kit/` | The product the buyer gets: 12 plain-text files (four scheduled tasks) and the Setup Guide PDF |
+| `kit/` | The product the buyer gets: 13 numbered kit files, including three scheduled task prompts and the state schema, plus the Setup Guide PDF |
 | `While-You-Sleep-Storefront-Kit.zip` | The kit, zipped (rebuilt at the finish after the link tokens are filled) |
 | `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | 11-page setup guide, numbered steps, two worked examples |
 | `pdf/While-You-Sleep-Storefront-Presale.pdf` | The one-page presale file ("You're in ...") |
