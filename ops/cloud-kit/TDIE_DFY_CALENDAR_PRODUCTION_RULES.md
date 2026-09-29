@@ -295,9 +295,13 @@ Facebook adaptations:
 ## 11. Research stop gate
 
 Research is complete for creative production when:
-- at least 60 viral/high-performing inspiration posts are represented
-- at least 30 unique accounts are represented
-- at least 20 posts are VERIFIED OUTLIER or VIRAL ANALYTICS EXAMPLES
+- at least 75 viral/high-performing or breakout Reel examples are represented
+- at least 40 unique accounts are represented
+- at least 25 accounts have a usable pre-breakout/post-breakout forensic window
+- a specific breakout Reel is identified for each forensic account where evidence permits
+- duration analysis is completed
+- breakout-delta analysis is completed
+- repeatability analysis is completed
 - audience maturity and maintenance-cycle findings are documented
 - duplicates are removed
 - pattern counts are complete
