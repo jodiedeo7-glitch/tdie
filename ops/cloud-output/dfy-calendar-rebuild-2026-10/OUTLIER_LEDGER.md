@@ -1,7 +1,7 @@
 # OCTOBER 2026 DFY CALENDAR RESEARCH - VIRAL INSPIRATION LEDGER
 
 Research timestamp: 29 September 2026
-Status: PASS for inspiration-corpus gate
+Status: PASS for inspiration-corpus gate; forensic account-timeline gate remains PARTIAL
 
 This ledger intentionally separates verified analytics/outlier evidence from strong current high-performer examples. The calendar does NOT require every inspiration post to be a mathematically proven account-relative outlier.
 
@@ -88,9 +88,29 @@ R38 @drkajalsinghh: 227.3K, phone-first creator journey.
 R39 @iamajene: 4.2M, three free creator websites.
 R40 @aishamazhar.digitalmarketing: 12.4K, account-type step-by-step.
 
+### C. ADDITIONAL CURRENT NICHE-ADJACENT EXAMPLES FROM 29 SEP 2026 PASS
+
+These are additional public high-performing examples. They are retained as HIGH-PERFORMER/SUPPORTING examples unless a creator-relative baseline is explicitly available.
+
+| ID | Account | Views | Concept | Evidence |
+|---|---|---:|---|---|
+| R41 | @instacoachmike | 401.0K | Instagram growth hack | Public performance discovery |
+| R42 | @theycallmesid.2025 | 57.7M | Instagram Reel tutorial | Public performance discovery |
+| R43 | @scalebycristina | 2.5M | Instagram engagement strategy | Public performance discovery |
+| R44 | @simplemoneypath | 777.4K | Instagram engagement strategy | Public performance discovery |
+| R45 | @techh_groww | 3.3M | Viral Reels / Instagram tips | Public performance discovery |
+| R46 | @wealthqueensociety | 1.5M | Viral Reels / Instagram tips | Public performance discovery |
+| R47 | @sameerbro9903 | 1.1M | Viral Reels / Instagram tips | Public performance discovery |
+| R48 | @aanvi_social | 737.9K | Create a Reel from one photo / small-business content | Public performance discovery |
+| R49 | @janhaavipadawe | 156.1K | Creator growth / no-gatekeeping advice | Public performance discovery |
+| R50 | @creatingwithjerry | 24.7M | Reels virality tips | Public performance discovery |
+| R51 | @gerry_tam | 1.6M | Reels virality tips | Public performance discovery |
+
+These entries raise the inspiration corpus above the minimum required example count. They do not change the evidence class of previously unverified entries.
+
 ## Corpus totals
 
-Total post examples: 64
+Total post examples: 75
 Unique accounts: at least 42
 Verified outlier / viral analytics examples: 24
 Additional current high-performer candidates: 40
