@@ -149,9 +149,11 @@ The research phase has TWO distinct jobs. Do not confuse them.
 The calendar needs a large bank of real high-performing content to inspire the month's concepts.
 
 Minimum:
-- 60 qualifying viral/high-performing posts
-- 30 unique creator accounts
-- at least 25 posts must come from the same or tightly adjacent creator-business ecosystem
+- 75 qualifying viral/high-performing or breakout posts
+- 40 unique creator accounts
+- at least 30 accounts tightly adjacent to the TDIE audience
+- duration analysis and breakout-delta analysis completed
+- no internal research metadata exposed in the member-facing calendar
 - at least 20 posts must have an account-relative outlier basis, a credible analytics classification, or a directly documented viral benchmark
 - the remaining posts may be strong high-performing examples when the source exposes meaningful performance evidence but not a clean account baseline
 
