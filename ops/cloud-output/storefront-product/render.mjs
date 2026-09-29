@@ -166,7 +166,7 @@ guide.push(`<section class="pg" style="padding:0">
 // 2 what it is
 guide.push(`<section class="pg">${top(2)}
   <div class="kicker">What you're holding</div>
-  <h2>A machine that makes pins <em>while you sleep.</em></h2>
+  <h2>A workflow that prepares Pins <em>for your review.</em></h2>
   <p class="lede">ChatGPT Work scheduled tasks can prepare reviewable Pin drafts when the feature and connected actions are available in your account. You supply approved product inputs and choose each Pin before scheduling.</p>
   <div class="flow">
     <div class="card"><b>Amazon</b><small>5 to 8 pieces per look, each with your own affiliate link</small></div>
