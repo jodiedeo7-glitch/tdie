@@ -43,8 +43,8 @@ THE NIGHTLY RUN
 
 0. Take the browser lock (R16). Work out when this run must be out: 30 minutes before the next RUN time in MY_RECIPE.txt SLOTS, or 30 minutes before my shutdown time, whichever comes first.
 1. Read storefront-log.md and pin-drafts.md. Schedule any Outfit of the Day pin logged "built" or "scheduled, not verified" first (themed-look recipe, Part 7 step 4).
-2. Open the course in one fresh tab: https://www.skool.com/the-brand-closet/classroom/272075b5
-   Find the lessons by reading the page's __NEXT_DATA__ (the JSON in the script tag with that id): walk pageProps.course and its children; each lesson has metadata.title, id and updatedAt. That's faster and gentler than clicking through the month folders.
+2. Open the course in one fresh supported browser session: https://www.skool.com/the-brand-closet/classroom/272075b5
+   Use the rendered classroom/course interface and the information exposed by the supported browser session to locate the recent lessons. Do not depend on Skool's private JavaScript objects, __NEXT_DATA__, undocumented endpoints, or DOM implementation details.
    If the course isn't there, is locked, asks for an upgrade, or Skool asks you to sign in, stop and tell me in one line: "I can't open the Outfit of the Day course in The Brand Closet™: check you're signed in to Skool and still on the $9/month tier."
 3. Pick every outfit lesson from the last 3 days (by its date title or updatedAt) that is not in the "Outfit of the Day lessons" table, plus any lesson logged "sourcing" (a run that stopped part way: finish it, don't restart it). Oldest first. If there are none and nothing is left over, close the tab, release the browser lock and end: "No new outfits tonight." Only say that after you've actually read the lesson list.
 4. Before starting each new outfit, check the clock: allow about 2 hours an outfit. If it can't be finished before the time from step 0, don't start it. It waits for the next run or the missed-run sweep, as long as it's still inside the 3-day window.
