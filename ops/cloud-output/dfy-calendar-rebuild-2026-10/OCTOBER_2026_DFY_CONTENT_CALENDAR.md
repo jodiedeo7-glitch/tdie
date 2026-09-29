@@ -8,27 +8,66 @@ This is a rolling maintenance cycle. Short-form is the default. Oct 4 and Oct 18
 
 ### Oct 1
 **Content type:** Reel
-**Hook:** You do not need more content ideas. You need a content system.
+**Hook:** If your content calendar is just a list of ideas, that is why it keeps feeling exhausting.
 
 **Cover type:** SEPARATE STATIC COVER
-**Cover text:** Your Content Needs Jobs
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial image of a digital-business creator at a bright desk with a phone, laptop and handwritten content cards arranged into distinct piles, one clear focal point, warm natural light, feminine modern home-office, realistic photography, vertical 9:16, keep all important subject and text-safe space in the center square, no text in image, no logo, no watermark. Add the exact cover headline "Your Content Needs Jobs" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
+**Cover text:** Your Content Needs a Job
+**Cover vs. opening:** DIFFERENT ANGLE. The cover names the core principle in a short grid-facing phrase. The Reel opening creates the problem and tension.
 
-**Caption:** A strong month gives posts different jobs: discovery, teaching, connection, authority, engagement and selling. When every post tries to do everything, content gets muddy.
+**Cover image prompt:** Create a polished editorial 9:16 Instagram Reel cover for a digital-business education brand. Photograph a realistic overhead desk scene showing a clean content-planning workspace: several cream paper cards arranged into distinct visual groups around one open notebook, a laptop partially visible at the edge, one saturated candy-pink iced coffee tumbler with a lavender straw as the single intentional pink object, natural window daylight, believable paper texture, realistic wood surface, subtle imperfections, professional real-world photography, 35mm equivalent overhead lifestyle photography, crisp focal detail, restrained feminine editorial styling. Leave generous negative space around the upper half for typography and keep the complete text block inside the central Instagram grid-safe area. Render the exact headline **"YOUR CONTENT NEEDS A JOB"** directly into the image. Use a high-contrast editorial serif for **YOUR CONTENT NEEDS**, with **JOB** in a heavier clean sans-serif and a saturated hot-pink emphasis, **one word per line**, uppercase, large scale, strong hierarchy, high contrast, clean kerning, no decorative script, no additional headline, no subtitle, no logo, no watermark, no other readable words anywhere in the image. The final cover must look like a deliberately designed editorial Instagram cover, not a screenshot or a paused video frame.
 
-**CTA:** Save this framework.
+**Caption:** A content calendar should not make you ask, “What am I supposed to post today?”
+
+It should make the decision easier.
+
+A strong content system gives each piece of content a job.
+
+One post might bring new people in.
+
+Another might teach them something useful.
+
+Another might show how you think.
+
+Another might answer the objection that has been sitting between your audience and your offer.
+
+And yes, some posts should sell.
+
+The mistake is expecting every Reel to do all of those things at once.
+
+That is how your calendar turns into 31 random ideas instead of a system.
+
+Before you add another idea to your content bank, ask:
+
+What job does this post have?
+
+If you cannot answer that, the idea probably needs an angle before it needs a caption.
+
+**CTA:** Save this before you plan your next batch of content.
 **Offer / swap-in:** None
 
-**Hook / opening text:** You do not need more content ideas. You need a content system.
+**Hook / opening text:** If your content calendar is just a list of ideas, that is why it keeps feeling exhausting.
 
-**Static start-frame image prompt:** Photorealistic vertical 9:16 editorial social-media image for a digital-business creator. Creator hands working at a clean desk with phone, laptop and handwritten content notes, bright natural light, realistic home-office environment, no visible logos. Center the important visual information in the safe area. No words, logos or watermark.
+**Static start-frame image prompt:** Create a photorealistic vertical 9:16 real-world editorial photograph for an Instagram Reel opening. Show a clean overhead content-planning desk with cream paper cards spread loosely across a weathered wood surface, one open notebook, a laptop edge and one saturated candy-pink iced coffee tumbler with a lavender straw as the single intentional pink object. The cards should be blank and contain no readable words. Use soft natural window daylight, realistic paper and wood textures, subtle natural imperfections, 35mm equivalent overhead lifestyle photography, shallow but believable depth of field, crisp detail on the central cards, restrained feminine editorial styling, believable home-office environment, no visible logos, no watermark, no generated text. Compose the visual so the upper-middle area remains clean for later on-screen text.
 
-**Version A, one-step Reel:** Create a 10-18 seconds vertical 9:16 Reel. Show the described creator action with quick purposeful movement, realistic camera motion and no dead time. Open immediately with the hook. Add exactly this on-screen text for 0.0-2.5 seconds: "You do not need more content ideas. You need a content system." Use clean bold sans-serif typography in the upper-middle safe area. Add no other generated words, subtitles, logos or watermarks. Preserve exact spelling and punctuation.
+**Version A, one-step Reel:** Create a 12-second vertical 9:16 Instagram Reel from the supplied start-frame concept. Scene: an overhead editorial view of a real-world content-planning desk. At 0.0 seconds, begin immediately on the scattered blank content cards with no intro or establishing pause. From 0.0 to 2.0 seconds, the camera makes a subtle controlled overhead push-in while one hand enters frame and gathers several cards into a single messy stack. From 2.0 to 5.0 seconds, the hand stops, separates the cards and places them into three visually distinct groups, showing the transformation from random ideas into organized content jobs. From 5.0 to 9.0 seconds, the camera makes a small lateral slide while the hand places one final card beside the groups, leaving a clean central composition. From 9.0 to 12.0 seconds, hold the organized layout long enough to read and save the idea. Natural hand movement, realistic paper physics, restrained camera movement, no jump cuts, no artificial floating objects, no exaggerated motion, believable daylight.
 
-**Version B, two-step Reel video:** Create the same 10-18 seconds vertical 9:16 concept. Use the same visual action and pacing as Version A. Open immediately with the concept. Leave clean negative space in the upper-middle safe area for later text. Do not render text, subtitles, logos or watermarks.
+Render the exact opening text directly into the video from 0.0 to 2.8 seconds: **"If your content calendar is just a list of ideas, that is why it keeps feeling exhausting."** Use a large, highly legible editorial serif headline with the key phrase **"just a list of ideas"** in a heavier contrasting sans-serif treatment. Keep the text in the upper-middle safe area without covering the hands or central cards. Exact spelling, capitalization and punctuation. Use high contrast against the background. The text may animate in with a restrained upward reveal over approximately 0.25 seconds, then remain stable. Do not generate any other words, subtitles, captions, logos, labels, watermarks or interface text.
 
-**Version B, on-screen text:** "You do not need more content ideas. You need a content system." | 0.0-2.5 seconds | upper-middle safe area | bold clean sans-serif, high contrast, subtle entrance. Add in CapCut, Canva, Claude or another editor after generating the clean video.
+**Version B, two-step Reel video:** Create a 12-second vertical 9:16 Instagram Reel using the same concept and visual sequence as Version A. Begin immediately with an overhead editorial view of a real-world content-planning desk containing scattered blank cream cards, an open notebook, the edge of a laptop and one saturated candy-pink iced coffee tumbler with a lavender straw. At 0.0 to 2.0 seconds, use a subtle controlled overhead push-in while one hand gathers several cards into a messy stack. From 2.0 to 5.0 seconds, separate the cards into three visually distinct groups. From 5.0 to 9.0 seconds, use a small lateral camera slide while one final card is placed beside the groups. From 9.0 to 12.0 seconds, hold on the organized composition. Use realistic hand movement, paper physics, natural daylight and restrained editorial camera motion. Leave the upper-middle safe area visually calm and uncluttered for later text placement. Generate absolutely no words, letters, numbers, subtitles, captions, labels, logos, watermarks or readable writing anywhere in the video.
+
+**Version B, on-screen text:** **"If your content calendar is just a list of ideas, that is why it keeps feeling exhausting."**
+- Timing: 0.0 to 2.8 seconds
+- Line breaks:
+  If your content calendar is
+  just a list of ideas,
+  that is why it keeps feeling exhausting.
+- Placement: upper-middle safe area, centered, without covering the hands or primary card arrangement
+- Typography: editorial serif for the main sentence, with **"just a list of ideas"** in a heavier contrasting sans-serif treatment
+- Animation: restrained 0.25-second upward reveal, then static
+- Contrast: high contrast against the background with a subtle separation treatment if needed
+- Editing: add after generating the clean video in CapCut, Canva, Claude or another editor
+- Do not add subtitles or additional text
+
 ### Oct 2
 **Content type:** Static
 **Hook:** Your content should answer one question: Why should I follow you?
