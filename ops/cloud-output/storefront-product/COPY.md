@@ -1,6 +1,6 @@
 # The While-You-Sleep Storefront™: launch copy
 
-Written 27 Sep 2026, rewritten the same day against Jodie's Skool posting system rules and four approved posts. Nothing here is posted, scheduled or listed. The desktop finish (`ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4) does all of that, and only after the live test in its step 9 passes.
+Written 27 Sep 2026, rewritten the same day against Jodie's Skool posting system rules and four approved posts. Nothing here is posted, scheduled or listed. These drafts are not launch-ready until the customer setup path, publishing permissions, destination links, and all rendered package files have been reviewed and verified.
 
 **Prices (write exactly this):** presale $10 for everyone, Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern · $27 one-time on Beacons from Fri 9 Oct 9:00 am · Membership Standard members $17 through a private Beacons product, linked only from the new Value Vault lesson · Membership Premium members use code `PREMIUM50` on that same $17 product ($8.50), shown only in the new Premium Vault lesson · member affiliate program 40% through Beacons' affiliate product feature · zero refunds, stated once (on the sales page).
 
@@ -104,7 +104,7 @@ And it's search, not social. People are searching for you on Pinterest right now
 
 Wait, it gets better: the Brand Closet™ line ✨ If you're in The Brand Closet™ on Rose's $9/month tier, a second automation turns her Outfit of the Day into your own pins, Sunday to Friday nights, with your own Amazon links. Nothing of hers ever gets posted.
 
-It took me 5 minutes to set up. That's once your Amazon and Pinterest are ready, and it runs from your own computer, so it stays on with Chrome signed in.
+It took me 5 minutes to set up. That's once your Amazon and Pinterest are ready, and it runs through your configured ChatGPT Work setup; available tasks and connected actions depend on your account and may request sign-in or approval.
 
 The presale price is $10 for the whole kit until Thursday at 11:59 pm Eastern. After that, the same kit is $27.
 
@@ -166,9 +166,9 @@ Tonight at 11:59 pm Eastern, The While-You-Sleep Storefront™ goes from the $10
 
 Quick recap if you missed the week:
 
-Your Amazon links, turned into Pinterest pins, built and scheduled by tasks on your own computer while you're doing literally anything else.
+Your product inputs turned into Pinterest Pin drafts, with a clear review and approval step before scheduling.
 
-You paste one setup prompt and answer six questions. It does the rest.
+The setup prompt guides configuration. The workflow uses the product details and permissions you provide, and asks for review or sign-in when needed.
 
 What you need, up front, so nobody's surprised:
 💻 a ChatGPT plan with Work and Scheduled Tasks
@@ -214,9 +214,9 @@ I cannot and will not gatekeep this. So I didn't 💗
 
 **Body:**
 
-Your Amazon links, turned into Pinterest pins that schedule themselves.
+Your approved product links, turned into Pinterest Pin drafts you can review and approve before scheduling.
 
-The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. ChatGPT Work scheduled tasks pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
+The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. ChatGPT Work scheduled tasks prepare a look from your approved inputs, use customer-supplied product details and links (or an authorized Amazon Creators API connection when configured), prepare imagery and Pin copy with the required disclosure, and track each Pin through the selected publishing path. You review and approve each Pin before it is scheduled. You set it up once, in about 5 minutes once your accounts are ready. It runs through your configured ChatGPT Work setup; available tasks and connected actions depend on your account and may request sign-in or approval.
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
@@ -406,7 +406,7 @@ How many hours did you spend this week making content that was gone from the fee
 
 The presale's closed. The machine's live.
 
-The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get built, scheduled and logged on their own. You paste one setup prompt, answer six questions, and the tasks run from your own computer.
+The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get prepared as drafts for your review, then tracked through the selected publishing path. You paste one setup prompt, answer six questions, and the tasks run through your configured ChatGPT Work setup.
 
 No more building. No more selling. No more posting.
 
