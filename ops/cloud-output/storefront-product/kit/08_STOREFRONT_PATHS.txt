@@ -74,14 +74,21 @@ Metricool currently supports Pinterest scheduling and publishing and supports:
 
 Metricool's MCP can connect to ChatGPT and can create, schedule, publish and update posts within the customer's Metricool plan limits.
 
+For direct connected publishing, Metricool's current action accepts Pinterest media and can use connected Google Drive media through Metricool's supported external-media path. This avoids requiring public Drive permissions for the normal direct-publishing path.
+
 The customer's Pinterest account must be connected to the correct Metricool brand.
 
 IMPORTANT:
 The exact combination of a recurring ChatGPT Scheduled Task automatically invoking the Metricool action must be tested in the customer's account.
 
+The storefront test must also prove that the customer's production Pinterest boards resolve correctly through the connected Metricool account. A newly created board may require the Pinterest connection to be refreshed and synchronized before it is available to the publishing action.
+
 If the task requires approval, the Pin remains awaiting_approval.
 If the action fails, the Pin remains queued.
 Do not describe the workflow as fully unattended until the end-to-end test passes.
+
+BATCH FALLBACK:
+If direct connected publishing is unavailable but the customer has Metricool, the system can prepare a Metricool CSV batch. Metricool currently recommends up to 50 posts per CSV and supports Pinterest board, Pin title, Pin link, alt text and media fields. CSV media URLs must be publicly accessible. This is a batch handoff, not unattended publishing.
 
 CREDIT-SAVING: NATIVE PINTEREST
 
