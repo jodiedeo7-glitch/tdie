@@ -1,17 +1,31 @@
-import fs from "node:fs";
-import path from "node:path";
-import { check } from "../../api/verify.js";
-import { jsonResponse, methodNotAllowed } from "../http.js";
-
-export async function handle(request, env) {
-  if (request.method !== "POST") return methodNotAllowed();
-  let body={}; try { body=await request.json(); } catch {}
-  const token=body.token||"";
-  const slug=String(body.slug||"");
-  if(!check(token)) return jsonResponse({error:"unauthorized"},401);
-  if(!/^[a-z0-9-]+$/.test(slug)) return jsonResponse({error:"bad slug"},400);
-
-  const file=path.join("/bundle","api","_content",`${slug}.html`);
-  if(!fs.existsSync(file)) return jsonResponse({error:"not found"},404);
-  return jsonResponse({html:fs.readFileSync(file,"utf8")});
-}
+import askForIt from "../../api/_content/ask-for-it-list.html";
+import m1 from "../../api/_content/module-1-what-you-already-own.html";
+import m10 from "../../api/_content/module-10-cluster-building.html";
+import m11 from "../../api/_content/module-11-internal-linking-the-journey-block.html";
+import m12 from "../../api/_content/module-12-email-capture-that-doesn-t-break.html";
+import m13 from "../../api/_content/module-13-free-resource-pages.html";
+import m14 from "../../api/_content/module-14-offer-routing.html";
+import m15 from "../../api/_content/module-15-the-bridge-page.html";
+import m16 from "../../api/_content/module-16-pinterest-as-the-engine.html";
+import m17 from "../../api/_content/module-17-one-article-twenty-four-assets.html";
+import m18 from "../../api/_content/module-18-images-without-your-face.html";
+import m19 from "../../api/_content/module-19-analytics-search-console.html";
+import m2 from "../../api/_content/module-2-build-your-canon-file.html";
+import m20 from "../../api/_content/module-20-publishing-through-claude.html";
+import m21 from "../../api/_content/module-21-your-daily-operating-system.html";
+import m22 from "../../api/_content/module-22-when-claude-says-no.html";
+import m3 from "../../api/_content/module-3-your-pillar-map.html";
+import m4 from "../../api/_content/module-4-the-stack.html";
+import m5 from "../../api/_content/module-5-claude-builds-the-repo.html";
+import m6 from "../../api/_content/module-6-the-two-layout-files.html";
+import m7 from "../../api/_content/module-7-domain-dns-live.html";
+import m8 from "../../api/_content/module-8-one-skool-lesson-one-pillar-article.html";
+import m9 from "../../api/_content/module-9-the-four-seo-passes.html";
+import promptVault from "../../api/_content/prompt-vault.html";
+import quickSheet from "../../api/_content/quick-sheet.html";
+import templateVault from "../../api/_content/template-vault.html";
+import troubleshootingVault from "../../api/_content/troubleshooting-vault.html";
+import { check } from "../auth.js";
+import { json, jsonResponse, methodNotAllowed } from "../http.js";
+const CONTENT={"ask-for-it-list":askForIt,"module-1-what-you-already-own":m1,"module-2-build-your-canon-file":m2,"module-3-your-pillar-map":m3,"module-4-the-stack":m4,"module-5-claude-builds-the-repo":m5,"module-6-the-two-layout-files":m6,"module-7-domain-dns-live":m7,"module-8-one-skool-lesson-one-pillar-article":m8,"module-9-the-four-seo-passes":m9,"module-10-cluster-building":m10,"module-11-internal-linking-the-journey-block":m11,"module-12-email-capture-that-doesn-t-break":m12,"module-13-free-resource-pages":m13,"module-14-offer-routing":m14,"module-15-the-bridge-page":m15,"module-16-pinterest-as-the-engine":m16,"module-17-one-article-twenty-four-assets":m17,"module-18-images-without-your-face":m18,"module-19-analytics-search-console":m19,"module-20-publishing-through-claude":m20,"module-21-your-daily-operating-system":m21,"module-22-when-claude-says-no":m22,"prompt-vault":promptVault,"quick-sheet":quickSheet,"template-vault":templateVault,"troubleshooting-vault":troubleshootingVault};
+export async function handle(request,env){if(request.method!=="POST")return methodNotAllowed();const b=await json(request),slug=String(b.slug||"");if(!(await check(b.token||"",env.ACCESS_SECRET)))return jsonResponse({error:"unauthorized"},401);if(!/^[a-z0-9-]+$/.test(slug))return jsonResponse({error:"bad slug"},400);const html=CONTENT[slug];if(!html)return jsonResponse({error:"not found"},404);return jsonResponse({html});}
