@@ -83,6 +83,7 @@ customer_selected
 customer_selection_at
 customer_schedule_authorized
 schedule_authorization_at
+schedule_authorization_fingerprint
 status
 last_checked_at
 error_code
@@ -150,7 +151,7 @@ LEGACY LOCAL MODE ONLY. It is not used by cloud execution.
 
 ## Publisher states
 
-Every Pin starts in customer_review_required. Keep it there until the customer selects the exact finished Pin and explicitly authorizes its schedule after destination, public board, disclosure, image and metadata checks pass.
+Every Pin starts in customer_review_required. Keep it there until the customer selects the exact finished Pin and explicitly authorizes its schedule after destination, public board, disclosure, image and metadata checks pass. Bind that authorization to a fingerprint of the approved image, title, description, alt text, destination, board, disclosure and scheduled time. If any bound value changes, clear the selection/authorization and return the Pin to customer_review_required.
 
 TIME-SAVING / Metricool:
 customer_review_required → awaiting_approval (when a separate platform review is required) → scheduled → published → verified
