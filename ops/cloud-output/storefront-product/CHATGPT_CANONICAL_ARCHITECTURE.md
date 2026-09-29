@@ -35,13 +35,15 @@ Current verified Metricool capabilities include:
 - alt text
 - CSV bulk scheduling
 - create/update/delete scheduled-post operations through Metricool tooling/API
-- Google Drive media integration on paid plans
+- connected Google Drive media for direct Metricool posting when the customer's Google Drive connection is linked to Metricool
+- CSV media import via publicly accessible direct media URLs
 
 [VERIFIED: Metricool official documentation, 2026-09-28]
 
 IMPORTANT:
 The end-to-end combination "ChatGPT Scheduled Task automatically invokes Metricool to publish a Pinterest Pin without a user approval step" is currently UNVERIFIED.
-DO NOT publish that as a guaranteed customer capability until the end-to-end test passes.
+A live connected-account test on 2026-09-28 also failed to resolve a newly created Pinterest board (`WYS PUBLIC TEST`) to a numeric board ID. This does not prove Metricool publishing is unavailable. Metricool's current documentation supports Pinterest board selection and connection refresh/synchronization. Production-board resolution still requires a successful test in the customer's connected account.
+DO NOT publish fully unattended publishing as a guaranteed customer capability until both the production-board resolution test and the end-to-end scheduled-task test pass.
 
 ### Pinterest
 Owns native Pinterest publishing in the CREDIT-SAVING path.
