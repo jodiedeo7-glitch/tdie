@@ -18,10 +18,11 @@ Execute JOB_DFY_CALENDAR_RESEARCH_2026_10.md exactly.
 The research must be completed and saved before creation starts.
 
 The research gate is:
-- 60 or more viral/high-performing inspiration posts
-- 30 or more unique accounts
-- 20 or more VERIFIED OUTLIER or VIRAL ANALYTICS examples
-- audience-maturity and maintenance-cycle analysis complete
+- 75 or more viral/high-performing or breakout Reel examples
+- 40 or more unique accounts
+- 25 or more forensic accounts with usable before/after windows
+- 20 or more VERIFIED BREAKOUT or VIRAL ANALYTICS examples
+- duration, breakout-delta, repeatability, audience-maturity and maintenance-cycle analysis complete
 - duplicates removed
 - pattern counts complete
 - every replication rule tied to research row IDs
