@@ -197,6 +197,113 @@ GROWTH RATE / VELOCITY:
 EVIDENCE CLASS:
 BREAKOUT CONFIDENCE:
 
+### COVER / THUMBNAIL FORENSIC ANALYSIS - MANDATORY
+
+The Instagram Reel cover is a separate research object from the video's first frame.
+
+For every breakout/high-performing Reel where the cover can be inspected, record:
+
+COVER SOURCE:
+- VIDEO STILL
+- SEPARATE STATIC ASSET
+- UNKNOWN
+
+If VIDEO STILL:
+- COVER FRAME TIMESTAMP IN SECONDS
+- IS IT THE EXACT FIRST FRAME? YES/NO
+- IF NOT, WHY THAT FRAME APPEARS TO HAVE BEEN CHOSEN
+- COVER FRAME VISUAL DESCRIPTION
+- COVER FRAME EXPRESSION/ACTION/OBJECT
+- WHETHER THE COVER FRAME ALSO APPEARS NATURALLY IN THE VIDEO
+- COVER TEXT PRESENT? YES/NO
+- COVER TEXT EXACT WORDING IF VERIFIABLE
+- COVER TEXT WORD COUNT
+- COVER TEXT DIFFERENT FROM ON-SCREEN OPENING? YES/NO
+- COVER TEXT RELATIONSHIP:
+  - IDENTICAL
+  - PARALLEL
+  - COMPLEMENTARY
+  - DIFFERENT ANGLE
+  - NONE
+- TEXT POSITION
+- VISUAL SUBJECT POSITION
+- GRID-CROP SAFETY
+- WHETHER THE FRAME WOULD STILL WORK AS A SMALL GRID TILE
+
+If SEPARATE STATIC ASSET:
+- COVER IMAGE TYPE
+- COVER VISUAL DESCRIPTION
+- COVER TEXT EXACT WORDING IF VERIFIABLE
+- COVER TEXT WORD COUNT
+- COVER TEXT RELATIONSHIP TO SPOKEN HOOK
+- COVER TEXT RELATIONSHIP TO ON-SCREEN HOOK
+- COVER TEXT RELATIONSHIP TO CAPTION
+- WHETHER THE COVER ADDS A NEW INFORMATIONAL ANGLE
+- WHETHER THE COVER IS BRANDED/TEMPLATED
+- WHETHER THE COVER USES A FACE, product, object, screenshot, graphic or environmental image
+- GRID-CROP SAFETY
+- VISUAL DIFFERENCE FROM VIDEO OPENING
+
+For ALL covers:
+- COVER HOOK TYPE:
+  - TOPIC/CLARITY
+  - CURIOSITY
+  - RESULT
+  - PROBLEM
+  - CONTRARIAN
+  - LIST
+  - QUESTION
+  - STORY
+  - OTHER
+- COVER'S JOB:
+  - GET THE PROFILE/GRID TAP
+  - CLARIFY TOPIC
+  - CREATE CURIOSITY
+  - BRAND/GRID CONSISTENCY
+  - OTHER
+- DOES THE COVER PROVIDE INFORMATION NOT PROVIDED BY THE OPENING? YES/NO
+- DOES THE COVER REPEAT THE OPENING VERBATIM? YES/NO
+- COVER/OPENING COMPLEMENTARITY SCORE: HIGH/MEDIUM/LOW, with evidence
+- COVER QUALITY: OBSERVED, NOT A SUBJECTIVE RANKING
+- SOURCE QUALITY
+- CONFIDENCE
+
+Never infer a separate cover asset merely because a cover looks polished. Verify the source where possible. If Instagram or the source does not expose the cover independently, mark UNKNOWN.
+
+### COVER PATTERN ANALYSIS
+
+After row-level analysis, aggregate:
+1. percentage of inspected Reels using video stills vs separate cover assets
+2. percentage using the first frame vs a later video frame
+3. percentage using cover text
+4. percentage where cover text differs from on-screen opening
+5. percentage where cover adds a second hook rather than repeating the opening
+6. cover-hook type distribution
+7. cover visual-type distribution
+8. cover patterns by niche
+9. cover patterns by Reel format
+10. cover patterns by Reel duration
+11. cover patterns for VERIFIED OUTLIERS vs supporting examples
+
+Explicitly distinguish:
+- evidence from inspected covers
+- general platform/design guidance
+- inference
+
+Do not claim that a cover caused virality unless the evidence supports that claim.
+
+### COVER DECISION FOR THE TDIE CALENDAR
+
+After the research, provide a concrete production recommendation for the Premium DFY calendar:
+
+A. when to use a video still as the cover
+B. when to create a separate static cover
+C. when the cover text should differ from the opening text
+D. when the cover should have no text
+E. whether a separate cover should be the default for TDIE educational Reels, visual Reels, story Reels and talking-head Reels
+
+The recommendation must be based on the inspected research corpus plus current platform/design evidence. Do not use a blanket rule such as "always make a custom cover" without evidence.
+
 ### Creative anatomy
 
 HOOK - STRUCTURAL DESCRIPTION:
