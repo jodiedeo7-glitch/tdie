@@ -70,6 +70,12 @@ destination_url
 board_id
 board_name
 board_url
+board_public_verified
+board_assignment_verified
+board_verification_method
+board_verified_at
+disclosure_present
+metadata_reviewed_at
 scheduled_at
 publisher
 publisher_post_id
