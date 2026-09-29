@@ -1,4 +1,4 @@
-# While-You-Sleep Storefront™ — State Schema
+# While-You-Sleep Storefront™ - State Schema
 
 The structured state is authoritative. Markdown files are human-readable views/exports.
 
