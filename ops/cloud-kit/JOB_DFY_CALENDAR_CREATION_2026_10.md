@@ -17,9 +17,11 @@ Sources checked: [exact file names].
 ## PRECONDITION
 
 Do not start creation unless the research package contains:
-- 60 or more viral/high-performing inspiration posts
-- 30 or more unique accounts
-- at least 20 VERIFIED OUTLIER or VIRAL ANALYTICS examples
+- 75 or more viral/high-performing or breakout Reel examples
+- 40 or more unique accounts
+- at least 25 forensic accounts with usable before/after windows
+- duration analysis and breakout-delta analysis completed
+- at least 20 VERIFIED BREAKOUT or VIRAL ANALYTICS BREAKOUT examples
 
 A smaller verified-outlier count is acceptable if the full inspiration corpus passes.
 
