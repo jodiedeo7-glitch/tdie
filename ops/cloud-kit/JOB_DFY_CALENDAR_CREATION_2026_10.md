@@ -149,6 +149,48 @@ Follow the current Threads system and canon. Do not invent links or offers.
 
 ## 3A. Reel cover package
 
+## 3B. COVER IMAGE PROMPT TEXT RENDERING RULE
+
+When COVER TYPE = SEPARATE STATIC COVER, the image-generation prompt MUST contain the exact visible cover text inside the image-generation prompt itself.
+
+Do not provide the cover image prompt separately from the text instruction.
+
+The prompt must explicitly instruct the image generator to:
+- render the exact cover headline as visible typography in the generated image
+- preserve exact spelling, punctuation and capitalization
+- reproduce the specified line breaks
+- reproduce the specified font/style hierarchy
+- reproduce any mixed-font treatment
+- reproduce any emphasized word/phrase
+- reproduce any color change within the headline
+- reproduce weight/size differences
+- reproduce any underline, highlight, shadow, outline, shape or other text treatment
+- keep all text inside the grid-safe area
+- render no additional words
+
+The calendar should provide ONE cover prompt, not separate image/text variants.
+
+If the research does not establish a specific font family, describe the visual font characteristics instead of inventing a font name.
+
+### COVER TEXT QUALITY STANDARD
+
+Before finalizing a cover prompt, inspect the researched pattern and specify, when applicable:
+- font/style count
+- hierarchy
+- capitalization
+- line breaks
+- emphasized words
+- color treatment
+- alignment
+- placement
+- approximate scale
+- contrast treatment
+- relationship to subject
+
+The generated prompt must be self-contained enough that the image model can attempt the complete cover in one generation.
+
+
+
 The cover is a separate deliverable from the Reel opening.
 
 Use the research package's cover decision rules. Do not automatically reuse the first frame.
@@ -190,7 +232,7 @@ Explicitly state:
 If the cover is a video still and contains the opening text because that frame naturally contains it, say so. Do not force a separate cover asset merely to create different wording.
 
 E. COVER IMAGE PROMPT:
-Only required when COVER TYPE = SEPARATE STATIC COVER.
+Required when COVER TYPE = SEPARATE STATIC COVER. The exact cover text must be embedded directly inside the image-generation prompt.
 
 ## 3. Reel package
 
