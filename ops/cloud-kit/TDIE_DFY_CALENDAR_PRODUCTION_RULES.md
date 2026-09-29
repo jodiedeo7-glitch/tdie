@@ -140,55 +140,87 @@ Do not add generator-specific syntax unless the calendar explicitly labels it as
 
 Do not request generated lettering in a photographic image unless the asset itself specifically requires in-image text.
 
-## 6. Research gate
+## 6. Research gate and viral inspiration corpus
 
-Research happens before creative writing.
+The research phase has TWO distinct jobs. Do not confuse them.
 
-The target is at least:
-- 40 qualifying outlier posts
-- from at least 25 qualifying accounts
+### A. Viral inspiration corpus
 
-A qualifying account must be:
-- same or tightly adjacent niche
-- similar creator type to TDIE's audience, such as an individual creator, educator, coach, or small creator-business operator
-- normally not a massive viral account
-- not a celebrity
-- not a major platform or media brand
+The calendar needs a large bank of real high-performing content to inspire the month's concepts.
 
-A qualifying outlier must have account-relative evidence, not just a large view number.
+Minimum:
+- 60 qualifying viral/high-performing posts
+- 30 unique creator accounts
+- at least 25 posts must come from the same or tightly adjacent creator-business ecosystem
+- at least 20 posts must have an account-relative outlier basis, a credible analytics classification, or a directly documented viral benchmark
+- the remaining posts may be strong high-performing examples when the source exposes meaningful performance evidence but not a clean account baseline
 
-Evidence hierarchy:
-1. Creator states a baseline or explicitly identifies the post as unusually high-performing.
-2. Public profile data allow a defensible account-level comparison, such as post views relative to recent-post median or another directly comparable baseline.
-3. An independently accessible source provides comparable account-level performance data.
+The inspiration corpus is NOT required to contain 60 mathematically proven outliers.
 
-A post that is merely high-view but has no account-level baseline is an OBSERVED HIGH-PERFORMER CANDIDATE. It is useful pattern evidence, but it does not count toward the 40 qualifying-outlier gate.
+The research must capture enough real examples that the creation model has dozens of actual structures to study instead of inventing a month from generic advice.
 
-Do not silently convert candidates into outliers.
+### B. Verified outlier subset
 
-For every research row record:
-- row ID
-- account
-- account type
-- post URL
-- post date if visible
-- follower count if reliably visible
-- post views/likes/comments if visible
-- baseline metric or baseline evidence
-- outlier basis
+Separately label posts as VERIFIED OUTLIER when the source supports account-relative or otherwise defensible outlier status.
+
+Useful accepted methods:
+1. creator-relative multiple such as 5X or greater;
+2. analytics provider explicitly classifies the post as viral and supplies creator-level distribution data;
+3. creator explicitly supplies a comparable baseline;
+4. directly comparable profile/post data allow a defensible outlier calculation.
+
+A raw high view count without a baseline is HIGH-PERFORMER, not VERIFIED OUTLIER.
+
+Do not let the verified-outlier threshold block the inspiration corpus if enough strong viral examples are available.
+
+### Research evidence quality
+
+For every post record:
+- creator/account
+- post URL or source
+- date
+- visible performance
 - evidence class
-- format
+- outlier multiple or viral classification when available
+- follower count when available
 - hook
-- opening-frame observation or NOT VERIFIED
+- format
 - topic
 - mechanism
 - structure
 - CTA
-- visual treatment or NOT VERIFIED
-- compliance notes
+- visual/opening-frame notes when directly inspectable
+- audience maturity signal
+- whether the creator is beginner-facing, established, or mixed
 - source quality
 
-If a field cannot be verified, say NOT VERIFIED.
+If a field cannot be verified, mark NOT VERIFIED.
+
+The research output must distinguish:
+- VERIFIED OUTLIER
+- VIRAL ANALYTICS EXAMPLE
+- HIGH-PERFORMER
+- SUPPORTING PATTERN SOURCE
+
+### What the research is for
+
+The objective is not to prove one post is viral.
+
+The objective is to build a reusable creative intelligence bank containing dozens of real examples that can be reverse-engineered into original TDIE concepts.
+
+Do not copy wording, visuals, creator identity, claims, or proprietary assets.
+
+Extract:
+- hook mechanism
+- tension
+- promise
+- topic angle
+- structure
+- pacing
+- visual mechanism
+- CTA mechanism
+- emotional driver
+- audience-awareness level
 
 ## 7. Pattern extraction
 
