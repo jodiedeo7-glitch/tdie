@@ -270,6 +270,70 @@ For ALL covers:
 
 Never infer a separate cover asset merely because a cover looks polished. Verify the source where possible. If Instagram or the source does not expose the cover independently, mark UNKNOWN.
 
+### COVER TYPOGRAPHY / TEXT-TREATMENT FORENSICS - MANDATORY
+
+When a Reel cover contains text, inspect the actual typography as a visual system. Do not reduce the analysis to "bold text."
+
+Record, where visually verifiable:
+
+- number of distinct font families/styles
+- whether one font or multiple fonts are used
+- font category for each style: serif, sans-serif, handwritten/script, display/decorative, monospace, other
+- weight differences: regular, medium, semibold, bold, black, etc.
+- size hierarchy between words/lines
+- capitalization pattern: sentence case, title case, uppercase, lowercase, mixed
+- line count
+- line-break pattern
+- whether individual words are emphasized
+- which words are emphasized and why they are visually distinct
+- emphasis method:
+  - size
+  - weight
+  - color
+  - font/style
+  - underline
+  - highlight/background shape
+  - italics
+  - outline/shadow
+  - spacing
+  - other
+- number of text colors
+- exact color family/approximate visual description where reliably observable
+- whether only one word/phrase changes color
+- whether only one word/phrase changes font
+- whether only one word/phrase changes weight
+- whether text uses mixed serif/sans or script/sans combinations
+- whether text overlaps the subject
+- whether text sits on a solid/transparent shape
+- whether text has shadow, stroke, outline or other separation treatment
+- alignment: left, centered, right, mixed
+- text block width relative to frame
+- approximate percentage of frame occupied by the text block
+- safe-area position
+- relationship between text placement and face/product/object
+- whether the same typography treatment recurs across an account
+- whether the treatment recurs across multiple outlier accounts
+- whether typography changes between cover and opening text
+- whether the cover's typography is materially different from the account's normal branding
+
+Pattern analysis must identify:
+1. most common single-font treatments
+2. most common multi-font treatments
+3. frequency of mixed-color emphasis
+4. frequency of emphasized single words/phrases
+5. frequency of serif + sans combinations
+6. frequency of script/handwritten + sans combinations
+7. common capitalization patterns
+8. common line counts
+9. common text-block placement
+10. recurring emphasis patterns in verified outliers
+11. whether these patterns differ between faceless, talking-head and product/demo Reels
+12. whether these patterns differ between short and long Reels
+
+Do not infer an exact font name unless the source identifies it. Describe visual characteristics when exact identification is not possible.
+
+For the TDIE production recommendation, identify which typography patterns are sufficiently recurring to justify reproducing them and which appear account-specific.
+
 ### COVER PATTERN ANALYSIS
 
 After row-level analysis, aggregate:
