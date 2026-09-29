@@ -1413,7 +1413,16 @@
       "two_step": "Video-only generation prompt followed by separate exact on-screen text instructions for CapCut, Canva, Claude or another editor.",
       "required_on_every_reel": true
     },
-    "image_generator_policy": "Model-agnostic. Do not inherit image_prompts.tool_order into the Premium DFY Content Calendar. Nano Banana Pro is optional, not required."
+    "image_generator_policy": "Model-agnostic. Do not inherit image_prompts.tool_order into the Premium DFY Content Calendar. Nano Banana Pro is optional, not required.",
+    "deliverables": {
+      "instagram_days": 31,
+      "threads_posts": 62,
+      "reel_start_frame_prompt": "every Reel",
+      "reel_production_paths": [
+        "one-step video plus exact on-screen text",
+        "two-step video-only generation plus separate editor text instructions"
+      ]
+    }
   },
   "infrastructure": {
     "site": "Astro on Vercel",
