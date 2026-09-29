@@ -6,17 +6,17 @@ Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look 
 
 | Path | What it is |
 |---|---|
-| `kit/` | The product the buyer gets: 14 numbered kit files, including three scheduled task prompts and the state schema, plus the Setup Guide PDF |
-| `While-You-Sleep-Storefront-Kit.zip` | The kit, zipped (rebuilt at the finish after the link tokens are filled) |
-| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | 11-page setup guide, numbered steps, two worked examples |
-| `pdf/While-You-Sleep-Storefront-Presale.pdf` | The one-page presale file ("You're in ...") |
+| `kit/` | The customer kit source: 14 numbered files, including three scheduled task prompts, the state schema and the approved Pin visual standard |
+| `While-You-Sleep-Storefront-Kit.zip` | Package is stale; rebuild only after current source review and visual QA |
+| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Stale binary; source HTML has newer workflow corrections and requires regeneration/visual inspection |
+| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Stale binary; regenerate and inspect with the rest of the package |
 | `graphics/` | 4 launch graphics (PNG) with photo placeholders; `photos/` takes the generated photos |
 | `IMAGE_PROMPTS.md` | Full prompts for the cover and the 4 graphics |
 | `COPY.md` | Skool (5), emails (2), Facebook (2), Threads (5), both vault lessons, Beacons text, Six M check |
 | `CANON_ROWS_DRAFT.md` | The canon.json and TDIE_CANON.md rows, drafts only |
 | `OWN_SETUP_AUDIT.md` | Jodie's own setup: every problem with its exact fix |
-| `tests/` | Four buyer tests, the round 1 fix table (`TEST_REPORT.md`), round 2 (`ROUND_2.md`) and the PDF thumbnail check |
-| `render.mjs` | Renders both PDFs, the graphics and the thumbnail contact sheet (`node ops/cloud-output/storefront-product/render.mjs`) |
+| `tests/` | Historical buyer simulations and live-run notes; they do not prove the current customer Work/Drive/publisher workflow |
+| `render.mjs` | Source renderer for both PDFs, graphics and thumbnail contact sheet; run and visually inspect outputs before distribution |
 | `run_checks.py` | Runs canon.json `checks` (fail and review) and an em dash check over every file here |
 
 Sales page: branch `storefront-launch`, `src/pages/shop/while-you-sleep-storefront.astro` (never on main until the finish merges it).
