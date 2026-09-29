@@ -595,10 +595,6 @@ This is a rolling maintenance cycle. Short-form is the default. Oct 4 and Oct 18
 ### Oct 1, Slot A
 **Hook:** Your content does not need more ideas. It needs jobs.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Give each post one job: attract, teach, connect, engage, handle an objection or sell.
 
@@ -609,10 +605,6 @@ Give each post one job: attract, teach, connect, engage, handle an objection or 
 ### Oct 1, Slot B
 **Hook:** One clear problem can feed an entire month of content.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 One problem can become a lesson, story, opinion, mistake, objection, example and offer reminder.
 
@@ -623,10 +615,6 @@ One problem can become a lesson, story, opinion, mistake, objection, example and
 ### Oct 2, Slot A
 **Hook:** Specific beats broad when you want to be remembered.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 'Digital products' is a topic. 'Why your first digital product is not selling' is an angle.
 
@@ -637,10 +625,6 @@ One problem can become a lesson, story, opinion, mistake, objection, example and
 ### Oct 2, Slot B
 **Hook:** Your offer should make content easier, not harder.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A clear offer creates a clear problem to talk about. That is a useful content loop.
 
@@ -651,10 +635,6 @@ A clear offer creates a clear problem to talk about. That is a useful content lo
 ### Oct 3, Slot A
 **Hook:** Views are a metric. They are not the whole business.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Also watch saves, replies, profile actions, questions and offer interest.
 
@@ -665,10 +645,6 @@ Also watch saves, replies, profile actions, questions and offer interest.
 ### Oct 3, Slot B
 **Hook:** Stop treating the first of the month like your audience forgot you.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A mature account continues the conversation. It does not reset to beginner mode.
 
@@ -679,10 +655,6 @@ A mature account continues the conversation. It does not reset to beginner mode.
 ### Oct 4, Slot A
 **Hook:** Your audience can hear the difference between advice and experience.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Specific examples and tested lessons make generic advice more useful.
 
@@ -693,10 +665,6 @@ Specific examples and tested lessons make generic advice more useful.
 ### Oct 4, Slot B
 **Hook:** Start with the consequence.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Give the viewer a reason to care before you deliver the lesson.
 
@@ -707,10 +675,6 @@ Give the viewer a reason to care before you deliver the lesson.
 ### Oct 5, Slot A
 **Hook:** Do not build a product before you understand the problem.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Problem, person and outcome come before the deliverable.
 
@@ -721,10 +685,6 @@ Problem, person and outcome come before the deliverable.
 ### Oct 5, Slot B
 **Hook:** Repetition is not automatically boring.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Repeat the message while changing the story, example, objection or application.
 
@@ -735,10 +695,6 @@ Repeat the message while changing the story, example, objection or application.
 ### Oct 6, Slot A
 **Hook:** Your bio should not make people decode what you do.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A new visitor should understand your general lane quickly.
 
@@ -749,10 +705,6 @@ A new visitor should understand your general lane quickly.
 ### Oct 6, Slot B
 **Hook:** Educational content does not have to sound like a textbook.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Teach the decision, not only the checklist.
 
@@ -763,10 +715,6 @@ Teach the decision, not only the checklist.
 ### Oct 7, Slot A
 **Hook:** Buying objections are content prompts.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Every recurring hesitation can become a useful post.
 
@@ -777,10 +725,6 @@ Every recurring hesitation can become a useful post.
 ### Oct 7, Slot B
 **Hook:** Create for the person you actually want to help.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 You do not need to be relevant to everyone.
 
@@ -791,10 +735,6 @@ You do not need to be relevant to everyone.
 ### Oct 8, Slot A
 **Hook:** A content system should make decisions easier.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Purpose first. Format second.
 
@@ -805,10 +745,6 @@ Purpose first. Format second.
 ### Oct 8, Slot B
 **Hook:** One topic can have dozens of angles.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 The angle is what gives the topic tension.
 
@@ -819,10 +755,6 @@ The angle is what gives the topic tension.
 ### Oct 9, Slot A
 **Hook:** Your formats can vary while your positioning stays recognizable.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Variety in format is good. Randomness in message is not.
 
@@ -833,10 +765,6 @@ Variety in format is good. Randomness in message is not.
 ### Oct 9, Slot B
 **Hook:** The easiest content research is the question your audience keeps asking.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Repeated questions belong in your content bank.
 
@@ -847,10 +775,6 @@ Repeated questions belong in your content bank.
 ### Oct 10, Slot A
 **Hook:** Growth without clarity can create a bigger audience for a confusing message.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Audience growth does not automatically fix positioning.
 
@@ -861,10 +785,6 @@ Audience growth does not automatically fix positioning.
 ### Oct 10, Slot B
 **Hook:** A CTA cannot rescue a confusing post.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Make the problem and solution clear first.
 
@@ -875,10 +795,6 @@ Make the problem and solution clear first.
 ### Oct 11, Slot A
 **Hook:** Make the next step obvious.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Save, reply, follow, visit the bio or explore the offer. Give one clear direction.
 
@@ -889,10 +805,6 @@ Save, reply, follow, visit the bio or explore the offer. Give one clear directio
 ### Oct 11, Slot B
 **Hook:** New followers should understand your lane without reading six months of posts.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Build recurring positioning reminders into the normal content mix.
 
@@ -903,10 +815,6 @@ Build recurring positioning reminders into the normal content mix.
 ### Oct 12, Slot A
 **Hook:** Good content earns attention. Great content gives people a reason to return.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Consistency becomes easier when the message is recognizable.
 
@@ -917,10 +825,6 @@ Consistency becomes easier when the message is recognizable.
 ### Oct 12, Slot B
 **Hook:** Sales posts should not feel like a separate personality.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Selling belongs inside the same content ecosystem.
 
@@ -931,10 +835,6 @@ Selling belongs inside the same content ecosystem.
 ### Oct 13, Slot A
 **Hook:** Your offer belongs inside your education.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Teach the problem the offer solves.
 
@@ -945,10 +845,6 @@ Teach the problem the offer solves.
 ### Oct 13, Slot B
 **Hook:** Generic lists are easy to scroll past.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Specific situations create stronger reasons to keep watching.
 
@@ -959,10 +855,6 @@ Specific situations create stronger reasons to keep watching.
 ### Oct 14, Slot A
 **Hook:** 'For creators' is broad.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 'For creators selling their first digital product' is specific.
 
@@ -973,10 +865,6 @@ Specific situations create stronger reasons to keep watching.
 ### Oct 14, Slot B
 **Hook:** Not every post should perform the same job.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A month is a system, not 31 identical prompts.
 
@@ -987,10 +875,6 @@ A month is a system, not 31 identical prompts.
 ### Oct 15, Slot A
 **Hook:** Do not let the calendar become a pile of random ideas.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 The business goal should shape the content mix.
 
@@ -1001,10 +885,6 @@ The business goal should shape the content mix.
 ### Oct 15, Slot B
 **Hook:** Before creating another product, inspect the one you already have.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Your existing offer may contain dozens of unanswered content questions.
 
@@ -1015,10 +895,6 @@ Your existing offer may contain dozens of unanswered content questions.
 ### Oct 16, Slot A
 **Hook:** If a question keeps coming up, you have research.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Your audience is telling you what they need explained.
 
@@ -1029,10 +905,6 @@ Your audience is telling you what they need explained.
 ### Oct 16, Slot B
 **Hook:** Your perspective is part of your differentiation.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Two people can teach the same concept differently.
 
@@ -1043,10 +915,6 @@ Two people can teach the same concept differently.
 ### Oct 17, Slot A
 **Hook:** You can teach what you know without pretending you know everything.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Clarity builds trust.
 
@@ -1057,10 +925,6 @@ Clarity builds trust.
 ### Oct 17, Slot B
 **Hook:** A small audience can contain the exact buyer you need.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Fit matters alongside reach.
 
@@ -1071,10 +935,6 @@ Fit matters alongside reach.
 ### Oct 18, Slot A
 **Hook:** The offer should feel like a logical next step.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 The content and offer should live in the same problem universe.
 
@@ -1085,10 +945,6 @@ The content and offer should live in the same problem universe.
 ### Oct 18, Slot B
 **Hook:** Do not change the whole strategy because one post underperformed.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 One post is one data point.
 
@@ -1099,10 +955,6 @@ One post is one data point.
 ### Oct 19, Slot A
 **Hook:** Change one variable when testing.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Otherwise you cannot tell what caused the change.
 
@@ -1113,10 +965,6 @@ Otherwise you cannot tell what caused the change.
 ### Oct 19, Slot B
 **Hook:** Your first sentence is not a warm-up.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 The opening is part of the value.
 
@@ -1127,10 +975,6 @@ The opening is part of the value.
 ### Oct 20, Slot A
 **Hook:** Content planning is easier when every idea has a purpose.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Purpose removes a lot of chaos.
 
@@ -1141,10 +985,6 @@ Purpose removes a lot of chaos.
 ### Oct 20, Slot B
 **Hook:** Make the problem easy to recognize.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Then the solution has somewhere to land.
 
@@ -1155,10 +995,6 @@ Then the solution has somewhere to land.
 ### Oct 21, Slot A
 **Hook:** Your product solves a problem. That problem should produce content.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 This is one of the simplest content loops.
 
@@ -1169,10 +1005,6 @@ This is one of the simplest content loops.
 ### Oct 21, Slot B
 **Hook:** Your positioning should be repeated from new angles.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 People need multiple encounters with a message.
 
@@ -1183,10 +1015,6 @@ People need multiple encounters with a message.
 ### Oct 22, Slot A
 **Hook:** Features tell people what is inside. The problem explains why it matters.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Lead with relevance.
 
@@ -1197,10 +1025,6 @@ Lead with relevance.
 ### Oct 22, Slot B
 **Hook:** Interest comes before buying intent.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Give people room to learn before asking for the sale.
 
@@ -1211,10 +1035,6 @@ Give people room to learn before asking for the sale.
 ### Oct 23, Slot A
 **Hook:** You need both reach and depth content.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 One brings people in. The other gives them reasons to stay.
 
@@ -1225,10 +1045,6 @@ One brings people in. The other gives them reasons to stay.
 ### Oct 23, Slot B
 **Hook:** The next month should build on the last one.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A calendar should not erase what you learned.
 
@@ -1239,10 +1055,6 @@ A calendar should not erase what you learned.
 ### Oct 24, Slot A
 **Hook:** Repeatable systems create more opportunities to improve.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 You do not need a brand-new strategy every week.
 
@@ -1253,10 +1065,6 @@ You do not need a brand-new strategy every week.
 ### Oct 24, Slot B
 **Hook:** Novelty is useful when it serves the message.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Novelty alone is not strategy.
 
@@ -1267,10 +1075,6 @@ Novelty alone is not strategy.
 ### Oct 25, Slot A
 **Hook:** Take a structure that worked and write a completely new example.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Mechanism can repeat while the content stays original.
 
@@ -1281,10 +1085,6 @@ Mechanism can repeat while the content stays original.
 ### Oct 25, Slot B
 **Hook:** Simple is not the opposite of strategic.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Clarity often looks simple.
 
@@ -1295,10 +1095,6 @@ Clarity often looks simple.
 ### Oct 26, Slot A
 **Hook:** Delete anything that does not help the viewer understand the problem.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 That is a useful editing rule.
 
@@ -1309,10 +1105,6 @@ That is a useful editing rule.
 ### Oct 26, Slot B
 **Hook:** Ask: why this problem, why this solution, why this creator?
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Those three questions sharpen positioning.
 
@@ -1323,10 +1115,6 @@ Those three questions sharpen positioning.
 ### Oct 27, Slot A
 **Hook:** Authority is often clarity plus consistency.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Make confusing things easier to understand.
 
@@ -1337,10 +1125,6 @@ Make confusing things easier to understand.
 ### Oct 27, Slot B
 **Hook:** Your FAQ is a list of future posts.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Questions are content assets.
 
@@ -1351,10 +1135,6 @@ Questions are content assets.
 ### Oct 28, Slot A
 **Hook:** A beautiful post with a vague message is still vague.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Visual polish cannot replace clarity.
 
@@ -1365,10 +1145,6 @@ Visual polish cannot replace clarity.
 ### Oct 28, Slot B
 **Hook:** Think of the month as a path, not a pile.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Discovery, trust, education, engagement and conversion can coexist.
 
@@ -1379,10 +1155,6 @@ Discovery, trust, education, engagement and conversion can coexist.
 ### Oct 29, Slot A
 **Hook:** Keep the parts that work. Improve the parts that do not.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 The calendar should evolve, not restart.
 
@@ -1393,10 +1165,6 @@ The calendar should evolve, not restart.
 ### Oct 29, Slot B
 **Hook:** Your content does not need more ideas. It needs jobs.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Give each post one job: attract, teach, connect, engage, handle an objection or sell.
 
@@ -1407,10 +1175,6 @@ Give each post one job: attract, teach, connect, engage, handle an objection or 
 ### Oct 30, Slot A
 **Hook:** One clear problem can feed an entire month of content.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 One problem can become a lesson, story, opinion, mistake, objection, example and offer reminder.
 
@@ -1421,10 +1185,6 @@ One problem can become a lesson, story, opinion, mistake, objection, example and
 ### Oct 30, Slot B
 **Hook:** Specific beats broad when you want to be remembered.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 'Digital products' is a topic. 'Why your first digital product is not selling' is an angle.
 
@@ -1435,10 +1195,6 @@ One problem can become a lesson, story, opinion, mistake, objection, example and
 ### Oct 31, Slot A
 **Hook:** Your offer should make content easier, not harder.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 A clear offer creates a clear problem to talk about. That is a useful content loop.
 
@@ -1449,10 +1205,6 @@ A clear offer creates a clear problem to talk about. That is a useful content lo
 ### Oct 31, Slot B
 **Hook:** Views are a metric. They are not the whole business.
 
-**Cover type:** SEPARATE STATIC COVER
-**Cover text:** Don't Start November From Scratch
-**Cover vs. opening:** COMPLEMENTARY. The cover text is a short grid-facing hook and is not a verbatim repeat of the Reel opening.
-**Cover image prompt:** Photorealistic editorial desk scene with a completed month of blank content cards being reviewed and organized into a next-month planning notebook, creator hand turning a page, warm natural light, clean realistic home office, vertical 9:16, center-safe composition, no text or watermark. Add the exact cover headline "Don't Start November From Scratch" in large, bold, highly legible sans-serif type, using a clean high-contrast treatment and keeping all typography inside the central grid-safe area. Use the cover as a designed 9:16 source that remains readable when center-cropped for the profile grid. No additional text, logo or watermark.
 
 Also watch saves, replies, profile actions, questions and offer interest.
 
