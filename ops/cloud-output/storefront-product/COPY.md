@@ -64,7 +64,7 @@ Be honest. I'll go first: too many.
 
 So I stopped.
 
-My Amazon looks go to Pinterest now without me. The look, the pieces, my links, the images, the pin, the schedule. I don't touch any of it. My computer does it while I sleep.
+My Amazon look workflow now helps me prepare Pinterest Pin drafts from product details and links I've approved. I choose each finished Pin and review its image, destination, disclosure and copy before I authorize a schedule. Connected actions depend on the account.
 
 And I cannot and will not gatekeep this.
 
@@ -137,7 +137,7 @@ The pink witch costume, flat lay first and the lifestyle photo three days later.
 Pink workwear for a freezing office, because every thermostat is set for penguins.
 The pink cat costume, walking down the porch steps at dusk.
 
-I didn't make a single one of them by hand. My scheduled tasks did.
+My scheduled tasks helped organize approved inputs and prepare Pin drafts. I reviewed each finished Pin and chose what to schedule.
 
 The receipts from my own log: 15 looks. 15 Idea Lists. 15 shop-the-look pages on my site. 84 tagged product links. 26 pins built.
 
@@ -196,7 +196,7 @@ You're not outside this community.
 
 Your member price is in The Value Vault 👉 [open your member price](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87)
 
-If you missed the week: it's my exact Amazon pin machine. It picks the look, finds the pieces, grabs your links, makes the images, writes and schedules the pins, and logs every single one. The Brand Closet™ line is in there too, for anyone on Rose's $9/month tier.
+If you missed the week: this kit helps you prepare Pinterest Pin drafts from your approved product inputs. You choose the products and links, review each image and Pin, and authorize any schedule. The optional Brand Closet™ workflow also requires the relevant membership and connected access.
 
 Save time on repeat steps while keeping product choices and publishing in your hands.
 
@@ -388,7 +388,7 @@ Everyone's on Amazon today for the Prime deals.
 
 Most of them started with a search.
 
-My Amazon looks go to Pinterest on a schedule while I sleep. The looks, the images, the pin copy, the scheduling, the log. None of it by hand.
+My approved outfit and product inputs become Pinterest Pin drafts for me to review. I choose each Pin and approve its schedule; the connected publishing path records only outcomes it can confirm.
 
 It's called The While-You-Sleep Storefront™ and it's $10 until Thursday night. Then $27.
 
