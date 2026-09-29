@@ -149,7 +149,7 @@ guide.push(`<section class="pg" style="padding:0">
     <div style="margin-top:auto">
       <div class="kicker">Setup Guide</div>
       <h1 style="font-size:58px;width:470px">The <em style="white-space:nowrap">While-You-Sleep</em> Storefront&trade;</h1>
-      <p class="lede" style="margin-top:18px;font-size:18px">Your Amazon links, turned into Pinterest pins that get built and scheduled on their own.</p>
+      <p class="lede" style="margin-top:18px;font-size:18px">Your Amazon links, turned into reviewable Pinterest Pin drafts. You choose each Pin and approve scheduling when your connected account supports it.</p>
       <div class="card" style="margin-top:6px">
         <ul class="ticks">
           <li>About 5 minutes to start<span>once your accounts are ready</span></li>
@@ -331,12 +331,12 @@ guide.push(`<section class="pg">${top(10)}
   <div class="kicker">When something's off</div>
   <h2>What the tasks do <em>when things go wrong.</em></h2>
   <div class="grid2" style="margin-top:10px">
-    <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
+    <div class="card"><h3>Pinterest loads blank</h3><p>If a required page or action is unavailable, stop the run, preserve completed drafts, and report what needs attention. Resume only from recorded state; do not promise an automatic retry or catch-up.</p></div>
     <div class="card"><h3>A connection is unavailable</h3><p>If a required connected account or action is unavailable, stop the affected work, preserve completed records, and report what needs attention. Never request or enter passwords in a task.</p></div>
     <div class="card"><h3>A board went secret</h3><p>Verify the exact board through an authorized supported path before scheduling. If public status cannot be verified, schedule nothing.</p></div>
     <div class="card"><h3>A run was missed</h3><p>Check the scheduler and state record. Resume from recorded work, avoid duplicates, and report skipped items. Do not promise automatic recovery until the customer's workflow has demonstrated it.</p></div>
     <div class="card"><h3>You want to remove a Pin</h3><p>Use the removal action supported by the selected publisher. If it is already published and the publisher cannot remove it, remove it in Pinterest and record the confirmed result.</p></div>
-    <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
+    <div class="card"><h3>An image comes out wrong</h3><p>Follow the kit's defined image-attempt limit. If framing, required pieces, or product fidelity still fail, drop the look and record why. Add the headline only after the visual acceptance checks pass.</p></div>
   </div>
   <div class="call"><p>Reports must state what was drafted, approved, scheduled, and verified, and identify any action that still needs you.</p></div>
   ${foot()}
