@@ -122,8 +122,8 @@ If today is Saturday, end without work.
 6. Generate original images only.
 7. Create stable PIN_ID values.
 8. Create Pin copy.
-9. Route through TIME-SAVING Metricool only when PUBLISHING TEST = passed.
-10. Otherwise prepare the complete native-Pinterest package and leave it queued.
+9. Apply the same per-Pin customer gate in 03_THEMED_LOOK_RECIPE.txt, Part 6. Keep each finished OOTD Pin in customer_review_required until the customer selects that exact image and explicitly authorizes its schedule after the destination, public board, disclosure and metadata checks pass.
+10. Route only individually selected and schedule-authorized Pins through TIME-SAVING Metricool when PUBLISHING TEST = passed. Otherwise, after selection and authorization, prepare the native-Pinterest package and set customer_scheduling_required. Never schedule automatically from a task run.
 11. Record every state transition.
 12. Never use a Benable link.
 13. Never use Rose's product links or images.
@@ -156,7 +156,8 @@ pin-drafts.md
 DO NOT open Pinterest through undocumented endpoints or scrape Pinterest.
 
 1. Find:
-- queued Pins
+- customer_review_required Pins awaiting exact per-Pin selection and schedule authorization
+- queued Pins with recorded customer selection and schedule authorization
 - awaiting_approval Pins
 - scheduled-but-unverified Pins
 - retryable failures
@@ -167,17 +168,16 @@ DO NOT open Pinterest through undocumented endpoints or scrape Pinterest.
 2. Reconcile existing publisher records before creating anything.
 
 TIME-SAVING:
-Use Metricool to read scheduled posts and reconcile publisher IDs/statuses.
-If the connection is unavailable, leave the Pin queued and report it.
+Use Metricool to read scheduled posts and reconcile publisher IDs/statuses. Before any create/schedule action, confirm the exact Pin has customer_selected = true and customer_schedule_authorized = true with timestamps. Never create/schedule from customer_review_required or an unapproved queue record.
+If the connection is unavailable, preserve the current state and report it.
 
 CREDIT-SAVING:
-Leave customer_scheduling_required Pins queued.
-Do not pretend they were published.
+Leave customer_review_required Pins untouched. Leave customer_scheduling_required Pins queued for the customer's native Pinterest action. Do not pretend they were published.
 
 3. Pull handling:
-- scheduled/unpublished post: cancel/delete through the publishing layer
+- scheduled/unpublished post: cancel only if the selected publisher exposes a supported cancellation action; otherwise tell the customer to cancel in the publisher and keep the state pending
 - already published Pin: record that Pinterest-side removal is required
-- verify removal before marking pulled
+- verify removal before marking pulled; do not mark pulled if the available connection cannot confirm removal
 
 4. Retry only errors classified as retryable.
 5. Never create a duplicate object during reconciliation.
