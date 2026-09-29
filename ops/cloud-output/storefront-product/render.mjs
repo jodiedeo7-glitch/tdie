@@ -195,7 +195,7 @@ guide.push(`<section class="pg">${top(3)}
     <li>A ChatGPT plan with Work and Scheduled Tasks available<span>Feature availability varies by account and workspace. Confirm Scheduled Tasks and the required connected actions in your own account before setup.</span></li>
     <li>A supported execution mode and an available workspace or folder<span>Use only the connected services and actions the setup confirms are available. Complete sign-in through each service's own sign-in flow.</span></li>
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
-    <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
+    <li>A Pinterest business account and a verified public production board<span>Use a supported authorized path to resolve and confirm the exact board. If it cannot be verified, do not schedule.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
     <li>A connected image provider, if you choose that path<span>Use the provider and model confirmed available in your account. Record commercial-use rights; do not silently switch models or plans.</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
@@ -253,7 +253,7 @@ guide.push(`<section class="pg">${top(6)}
       <li><strong>Save.</strong></li></ol>
       <p class="small">Available menus and actions vary by account. If Scheduled Tasks or a required action is missing, do not claim the automation is active.</p></div></div>
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, the configured image provider, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
+      <p>Run a supported task once only after setup and required permissions are confirmed. Check the result, state record, destination, board, and any approval step. A successful first run does not prove future runs or publishing; monitor the account and report failures.</p></div></div>
   </div>
     ${foot()}
 </section>`);
@@ -369,7 +369,7 @@ const presale = [`<section class="pg" style="padding:0">
       <p style="font-size:21px;line-height:1.45;color:var(--ink)">Your kit unlocks <strong>${LAUNCH}</strong> at <strong>9 am ET</strong>.</p>
       <p style="font-size:21px;line-height:1.45;color:var(--ink);margin-top:10px">Use this same download link then.</p>
     </div>
-    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app, Amazon Associates, a Pinterest business account with public boards, and Gemini and Higgsfield.</p>
+    <p style="margin-top:22px;font-size:15px">Want a head start? Check that your account has ChatGPT Work and Scheduled Tasks, Amazon Associates, a Pinterest business account with a verifiable public board, and the connected storage, publisher, and image-provider actions your chosen setup needs. Availability varies by account; see the setup guide before purchasing subscriptions.</p>
     <div style="margin-top:28px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
   </div>
   ${sticker("See you<br>at 9 am", "right:70px;top:420px;transform:rotate(8deg)", true)}
