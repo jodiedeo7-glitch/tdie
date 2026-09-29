@@ -147,6 +147,51 @@ For every Threads post include:
 
 Follow the current Threads system and canon. Do not invent links or offers.
 
+## 3A. Reel cover package
+
+The cover is a separate deliverable from the Reel opening.
+
+Use the research package's cover decision rules. Do not automatically reuse the first frame.
+
+For EVERY Reel, include:
+
+A. COVER TYPE:
+- VIDEO STILL
+- SEPARATE STATIC COVER
+
+B. COVER SELECTION:
+If VIDEO STILL:
+- exact timestamp in seconds from the generated Reel
+- describe the exact frame/action to use
+- explain why that frame is the cover only in terms of the production requirement, not internal research rationale
+- cover text, if any
+- exact cover text
+- state whether cover text is different from the opening on-screen text
+
+If SEPARATE STATIC COVER:
+- complete standalone image-generation prompt
+- exact cover text
+- line breaks
+- text placement
+- typography treatment
+- grid-safe composition
+- 9:16 source composition with critical information protected for the Instagram grid crop
+- no vendor requirement
+
+C. COVER HOOK:
+The cover headline should not automatically duplicate the Reel's opening hook. Where the research supports complementary packaging, use a short second hook that clarifies the topic, problem, result or curiosity gap.
+
+D. COVER VS OPENING:
+Explicitly state:
+- Cover text: [exact text or NONE]
+- Opening on-screen text: [exact text]
+- Relationship: IDENTICAL / COMPLEMENTARY / DIFFERENT ANGLE / NONE
+
+If the cover is a video still and contains the opening text because that frame naturally contains it, say so. Do not force a separate cover asset merely to create different wording.
+
+E. COVER IMAGE PROMPT:
+Only required when COVER TYPE = SEPARATE STATIC COVER.
+
 ## 3. Reel package
 
 For every Reel include all of the following:
@@ -248,6 +293,8 @@ Must pass:
 - exactly 31 Instagram dates
 - exactly 62 Threads posts
 - every Reel has a start-frame prompt
+- every Reel has a cover decision
+- every Reel has a cover timestamp if using a video still OR a complete separate cover prompt if using a separate asset
 - every Reel has one-step and two-step paths
 - every two-step video prompt contains no actual overlay wording
 - every one-step prompt contains the exact overlay wording
