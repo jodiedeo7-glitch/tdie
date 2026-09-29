@@ -331,3 +331,36 @@ Reject or rewrite any calendar entry where:
 The general image master governs photographic quality and the Tommy Kate persona system.
 
 Its personal tool_order does NOT govern the Premium DFY Content Calendar.
+
+
+### Long-form Reel exception
+
+The Premium DFY Calendar is overwhelmingly short-form.
+
+Do NOT add 60-90 second Reels simply because research shows that long Reels can perform.
+
+A long-form Reel is permitted only when the concept genuinely benefits from sustained explanation, story or narrative.
+
+Approved long-form categories:
+- talking-head personal story
+- talking-head educational explanation
+- talking-head "if I started over" strategy
+- talking-head case study / transformation
+- talking-head authority/opinion where the argument genuinely needs additional time
+
+Production constraint:
+- long-form talking-head Reels are a HeyGen-compatible exception
+- do not assign 60-90 second long-form Reels to Higgsfield or a generative cinematic workflow
+- do not require generated B-roll for a long Reel
+- do not pad a concept to reach a target duration
+- use the shortest duration that delivers the promised payoff
+- normally limit the calendar to approximately 2 long-form talking-head Reels per month unless the research specifically supports more
+
+All other Reels should remain short-form and use the standard two production paths.
+
+Research may identify long-form outliers, but the creation model must additionally classify each as:
+1. TDIE-relevant long-form talking head
+2. TDIE-relevant but better adapted to short-form
+3. not relevant to TDIE production
+
+Only category 1 is eligible for the long-form exception.
