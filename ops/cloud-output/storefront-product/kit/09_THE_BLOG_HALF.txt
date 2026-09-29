@@ -11,7 +11,7 @@ A note on Pinterest, because you've heard me say my domain is blocked there: tha
 
 You also need Chrome signed in to GitHub, with write access to your site's repository, so the weekly task can upload each look.
 
-STEP 1. Open a Claude session that can work in your website's code folder (in the Claude desktop app, that's Claude Code on your site's folder: the same way you built the site) and paste this:
+STEP 1. Open ChatGPT Work with your website repository connected and give it access to the repository. Use the GitHub connected app or the supported repository workflow, then paste this:
 
 ------------------------------------------------------------------
 Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same fonts, colors, spacing, header and footer. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
