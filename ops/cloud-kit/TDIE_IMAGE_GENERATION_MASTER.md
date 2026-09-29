@@ -143,7 +143,7 @@ A. Frames WITH her in them (full body, hands only, or boots only):
 
 B. Frames WITHOUT her in them:
 
-* Exactly ONE intentional saturated candy-pink object. Never pale blush.
+* Pink is welcome throughout the scene. Use saturated candy pink when pink is called for; never pale blush unless intentionally specified.
 * Examples: the Player Two? mug, the glitter tumbler, candy-pink over-ear headphones, candy-pink gardening gloves, a candy-pink velvet throw pillow.
 * Do not add more pink props and do not turn the whole environment pink. The established pink attic environment and incidental RGB light are allowed.
 * Choose that object BEFORE writing the final prompt.
@@ -309,7 +309,7 @@ Changeable styling only.
 
 E. Pink
 
-Section 4. With her: the glitter tumbler, plus candy-pink clothes or other pink pieces as wanted. Without her: exactly one intentional saturated candy-pink object.
+Section 4. With her: the glitter tumbler, plus candy-pink clothes or other pink pieces as wanted. Without her: pink is freely allowed throughout the scene.
 
 F. World/register
 
@@ -345,7 +345,7 @@ Before finalizing a prompt, silently verify:
 
 [ ] If she (or her hands or boots) is in the frame: her glitter-flecked pink iced coffee tumbler with a lavender straw is in it, and the prompt does NOT say it is the only pink item
 
-[ ] If she is not in the frame: exactly one intentional candy-pink object
+[ ] If she is not in the frame: pink is freely allowed throughout the scene
 
 [ ] Any mug is the Player Two? mug with black lettering, never a plain pink mug
 
