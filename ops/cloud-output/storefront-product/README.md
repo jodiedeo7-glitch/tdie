@@ -25,14 +25,14 @@ Sales page: branch `storefront-launch`, `src/pages/shop/while-you-sleep-storefro
 
 Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` (products[] including The Brand Closet™ and Amazon Influencer Storefront, own_affiliate_programs, vault_disambiguation, content_calendar_rules, affiliate_rule, checks, meta.premium_price_increase_2026_09_24, meta.meta_link_rule_2026_09_25), `ops/canon/TDIE_CANON.md`, `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md`, `TDIE_IMAGE_GENERATION_MASTER.md`, `TDIE_SIX_M_FRAMEWORK.md`, `TDIE_DESIGN_RULES.md`, `TDIE_DFY_SERVICES.md`, `TDIE_THREADS_SYSTEM.md`, `TDIE_JODIE_THREADS_VOICE.md`, `TDIE_ONE_SENTENCE_OFFER.md` (Skool voice sample), `src/lifestyle/README.md`, the look JSON files in `src/lifestyle/`, `src/pages/shop/`, `src/components/LifestyleExtras.astro`, `src/components/Testimonial.astro`, `src/we-reviews.js`.
 
-**Not in the repo (copy from the TDIE Website project):** `claude/TDIE_BRAND_CLOSET_PIN_FACTORY.md` (its facts were supplied by Jodie on 27 Sep 2026 and are now in `kit/04`), `claude/TDIE_SKOOL_POSTING_SYSTEM.md` (its rules and four approved posts were supplied by Jodie on 27 Sep 2026; the Skool and Facebook copy is rewritten against them), and `claude/BRAND_CLOSET_PIN_LOG.md` (holds the hoodie lifestyle pin copy the audit schedules).
+Historical Claude folder references are not runtime dependencies. The current customer workflow is defined by the numbered kit files; do not rely on unavailable legacy files or claim their contents are read during a task.
 
 ## Founder decisions (27 Sep 2026), all applied
 
 1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
 2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
 3. **Skool and Facebook posts** rewritten against the posting system rules and four approved posts (see `COPY.md`). The two-link cap wins over "each link twice".
-4. **Brand Closet™ line** now carries the facts from Jodie's real recipe: the course address, month folders, lesson contents, the "Link to Outfit" Benable button (never used), Rose's posting pattern, the `__NEXT_DATA__` read, the 3-day window, the out-by time, Saturday catch-up on Sunday, two pins on different days, and the public-board check.
+4. **Brand Closet™ line** follows the visible, authorized course interface and current recipe. It uses customer-approved product rows and links, does not reuse member-only materials or third-party destinations, uses bounded recovery, and requires public-board verification plus per-Pin customer selection and schedule authorization.
 5. **Join line:** "Affiliate link: I earn a commission if you upgrade, at no extra cost to you." everywhere.
 6. **Vault call:** one member-pricing lesson in BOTH vaults; Premium pays half, not nothing; recorded as its own numbered decision in `CANON_ROWS_DRAFT.md`.
 7. **Canon rows first:** finish step 4, before any Beacons product.
