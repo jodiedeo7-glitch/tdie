@@ -1,90 +1,96 @@
-# OCTOBER 2026 DFY CALENDAR - PATTERN COUNTS AND MAINTENANCE INTELLIGENCE
+# OCTOBER 2026 DFY CALENDAR - FORENSIC PATTERN COUNTS
 
-Status: PASS for creative inspiration corpus.
+Research status: PARTIAL for full forensic account coverage. PASS for quantitative breakout-mechanism analysis supported by current datasets.
 
-## Strong recurring mechanisms
+## Large-sample findings
 
-### 1. Hypothetical / "If I had to..." reframing
-Evidence: P01, P04, P08.
-Use when it lets the viewer mentally insert themselves into a scenario.
-Maintenance role: discovery + authority.
+Buzzfy analyzed 26,914 organic Reels from 944 creator accounts using account-relative 3X-median virality and frame-level content analysis.
 
-### 2. Specific result first
-Evidence: S05, P08, P12, R19, R38.
-Use a real, defensible result or transformation as the entry point.
-Never invent a result for the client.
+| Variable | Finding |
+|---|---|
+| Viral definition | 3X creator median |
+| Top quartile watch-through | 15.7% viral |
+| Bottom quartile watch-through | 5.3% viral |
+| Top quartile shares-per-view | 19.9% viral |
+| Strong hook | 12.6% viral |
+| Weak hook | 5.5% viral |
+| Strong vs moderate hook within same creator | Strong won 67% of the time across 865 creators |
+| Frame-one text overlay | 18.3% viral |
+| 7-12 sec | 11.7% viral |
+| 20-45 sec | 8.6-9.0% viral |
+| 60-90 sec | 10.9% viral |
+| <=12 sec vs longer within accounts | <=12 sec won 59% of the time |
 
-### 3. Contrarian declaration
-Evidence: S02, S08, S11, P09, P11, R24, R27.
-Use only when the statement can be defended.
-Maintenance role: discovery and positioning.
+Source caveat: these are correlational findings. They do not prove that any one feature causes virality.
 
-### 4. Numbered utility list
-Evidence: S01, S03, S06, S12, P07, R13, R17, R23, R28, R30, R34, R39.
-Use when the viewer genuinely benefits from a bounded set.
+## Hook patterns
 
-### 5. Question that resolves a live audience decision
-Evidence: S09, S10, P09, R32.
-Use for engagement and discovery.
+| Hook family | Evidence |
+|---|---|
+| Result with timeframe | 20.0% viral in Buzzfy hook-archetype sample |
+| Warning | 19.8% |
+| "This is why / here's how" | 17.9% |
+| Hyper-specific POV | 17.4% |
+| Curiosity gap | 17.2% |
+| Number/list/money/confident "never" | 14-16% |
+| Question opener | 9.5% |
+| "Did you know" | 4.3% |
 
-### 6. Demonstration / prompt / tool reveal
-Evidence: S03, S06, P02, P03, P06, R17, R28, R31, R33, R39.
-Use for saves and practical utility.
+## Format patterns
 
-### 7. Comparison
-Evidence: P01, P07 and the @personalbrandlaunch dataset's repeated comparison strategy.
-Use for "before/after", "A vs B", "100 views vs 1M views", "old way vs new way" structures where the comparison is real.
+Buzzfy:
+- Story: 15.7% viral
+- Raw unedited footage: 13.3%
+- Tutorial: 12.1%
+- Talking head: 9.3%
+- Montage: 8.0%
+- Showcase: 7.8%
 
-### 8. Story with a practical payoff
-Evidence: S07, P10, P12, R06, R07, R11, R19, R38.
-Do not make story the whole point. Move from story to useful insight.
+PersonalBrandLaunch:
+- talking head: 73% of corpus
+- comparison: 6.6%
+- tutorial: 5.2%
+- screen demo: 4.6%
+- montage: 3.9%
+- text overlay: 3.5%
+- storytime: 3.0%
 
-### 9. Warning / "before you..." structure
-Evidence: P11, R24, R27.
-Use to create tension around a real mistake or overlooked step.
+The two datasets are measuring different classification systems. Do not merge percentages directly.
 
-### 10. Tool/resource roundup
-Evidence: S03, S06, S12, R28, R30, R34-R39.
-Tie every tool to a job. Avoid generic tool dumping.
+## Account-level breakout pattern
 
-## Maintenance-cycle content architecture
+@sam.gaudet:
+- repeated AI-topic testing preceded the Mar 14 2026 1.9M breakout
+- Jan-Feb also contained major elevated posts
+- the breakout did not require a new camera format
+- the key change appears to be topic + aspirational framing + numbered packaging
 
-The calendar should distribute these functions across the entire 31-day month:
+@personalbrandlaunch:
+- 15-20 formulas were recycled repeatedly
+- "If I had to start from scratch" appears 10+ times
+- "100 views vs 1M views" appears 15+ times
+- large hits continued across later iterations
 
-- DISCOVERY: new-audience viral concepts
-- EDUCATION: useful teaching
-- AUTHORITY: expertise and point of view
-- IDENTITY: occasional "what I do / who I help / why this matters" reminders
-- STORY/PERSONALITY: human connection
-- ENGAGEMENT: questions, opinions, prompts, community participation
-- MOTIVATION/RELATABILITY: emotional resonance without empty quotes
-- OBJECTION HANDLING: answer the reasons people hesitate
-- PROOF: real client/member results or documented examples only
-- SOFT SELL: connect a problem to the relevant offer
-- DIRECT SELL: clear offer CTA when appropriate
-- NURTURE: deepen trust with existing followers
+This is evidence for formula refinement and repeatability, not one-off creativity.
 
-There is no fixed weekly phase assignment.
+## Maintenance-cycle signal
 
-## Audience-maturity rule
+The mature account datasets show parallel content functions:
+- reach
+- education
+- authority/brand
+- community/story
+- conversion
 
-Every day's concept should be tagged:
-- Discovery
-- Existing audience
-- Mixed
+They do not support a permanent monthly reset into beginner onboarding.
 
-At least a meaningful portion of the month must serve existing followers. The calendar must not read like 31 beginner lessons.
+## What does NOT explain the breakout by itself
 
-A recurring identity reminder should be occasional and purposeful, not a monthly introduction ritual.
+- talking-head format when it is already the account default
+- presence of a CTA by itself
+- music/voiceover merely being present
+- overlays merely being present
+- repeating spoken hook as text
 
-## Viral-to-conversion relationship
-
-Do not turn every viral concept into a sales post.
-
-Use viral/reach posts to grow attention.
-Use education and authority to build trust.
-Use story and engagement to deepen connection.
-Use proof and objections to reduce friction.
-Use soft/direct selling to monetize.
-
-The month should contain all of these functions continuously.
+The important question is always:
+**Was this feature unusually different in the breakout from the same creator's normal content?**
