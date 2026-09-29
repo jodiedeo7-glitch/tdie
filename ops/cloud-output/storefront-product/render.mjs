@@ -153,7 +153,7 @@ guide.push(`<section class="pg" style="padding:0">
       <div class="card" style="margin-top:6px">
         <ul class="ticks">
           <li>About 5 minutes to start<span>once your accounts are ready</span></li>
-          <li>Then no building, no selling, no posting<span>on the Influencer path: the scheduled tasks do it</span></li>
+          <li>Then no building, no selling, no posting<span>drafts are prepared for your review; you choose and approve each schedule</span></li>
           <li>Found through search<span>not the feed</span></li>
         </ul>
       </div>
@@ -290,7 +290,7 @@ guide.push(`<section class="pg">${top(8)}
       <table>
         <tr><td>Picked the look</td><td>From the Halloween window of my calendar.</td></tr>
         <tr><td>Sourced 6 pieces</td><td>Soft pink velvet witch hat, black velvet square neck mini dress, black platform Mary Jane pumps, pale pink lace gloves, black crescent shoulder bag, gold moon and star drop earrings. Every one from customer-supplied product rows and authorized links.</td></tr>
-        <tr><td>Built the Idea List</td><td>One list in my storefront, every piece on it. Both pins link there.</td></tr>
+        <tr><td>Destination</td><td>Use the customer's selected, verified destination. Its creation and availability depend on the selected Amazon path and connected account.</td></tr>
         <tr><td>Pin 1</td><td>One generated inspiration flat lay with no baked-in text. A separate headline is added only after framing and image checks.</td></tr>
         <tr><td>Pin 2</td><td>A second image made with the configured provider only if the customer has selected that path and the required rights and reference are available.</td></tr>
         <tr><td>Copy and schedule</td><td>Pin copy and disclosure are drafted. The customer checks image, title, destination, board, disclosure, and alt text, then approves any supported scheduling action.</td></tr>
@@ -315,8 +315,8 @@ guide.push(`<section class="pg">${top(9)}
       <table>
         <tr><td>Found the lesson</td><td>A new outfit in The Brand Closet&trade; Outfit of the Day Closet course, not yet in my log.</td></tr>
         <tr><td>Looked, didn't take</td><td>One screenshot of Rose's flat lay, for reference only. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
-        <tr><td>Skipped the Benable links</td><td>They pay their owner. Every piece was re-found on Amazon with my own SiteStripe link.</td></tr>
-        <tr><td>Built my own Idea List</td><td>My list is the pin link.</td></tr>
+        <tr><td>Skipped the Benable links</td><td>Do not use third-party links. Use only customer-supplied product rows and authorized destinations.</td></tr>
+        <tr><td>Destination</td><td>The customer's selected destination must resolve before scheduling.</td></tr>
         <tr><td>Made new images</td><td>New generated imagery uses the configured provider. Any scene inspiration is rewritten; no image is treated as an exact retail depiction without actual linked-product imagery.</td></tr>
         <tr><td>Scheduled</td><td>Scheduling is customer-approved and account-dependent; this example does not establish a live schedule.</td></tr>
       </table>
@@ -332,8 +332,8 @@ guide.push(`<section class="pg">${top(10)}
   <h2>What the tasks do <em>when things go wrong.</em></h2>
   <div class="grid2" style="margin-top:10px">
     <div class="card"><h3>Pinterest loads blank</h3><p>The task closes the tab, waits, and tries once more. Two blanks in a row and it stops for that run. Every finished pin is already saved in pin-drafts.md, and the next sweep picks the leftovers up. You do nothing.</p></div>
-    <div class="card"><h3>You're signed out</h3><p>If Amazon's SiteStripe bar is missing, the task stops and tells you in one line. It never ships a link without your tag, and never types a password. Sign back in; the next run carries on.</p></div>
-    <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
+    <div class="card"><h3>A connection is unavailable</h3><p>If a required connected account or action is unavailable, stop the affected work, preserve completed records, and report what needs attention. Never request or enter passwords in a task.</p></div>
+    <div class="card"><h3>A board went secret</h3><p>Verify the exact board through an authorized supported path before scheduling. If public status cannot be verified, schedule nothing.</p></div>
     <div class="card"><h3>A run was missed</h3><p>Check the scheduler and state record. Resume from recorded work, avoid duplicates, and report skipped items. Do not promise automatic recovery until the customer's workflow has demonstrated it.</p></div>
     <div class="card"><h3>You want to remove a Pin</h3><p>Use the removal action supported by the selected publisher. If it is already published and the publisher cannot remove it, remove it in Pinterest and record the confirmed result.</p></div>
     <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
