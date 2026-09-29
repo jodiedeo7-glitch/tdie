@@ -174,27 +174,24 @@ Write each pin's full copy into pin-drafts.md the moment it's finished.
 PART 6. PUBLISH AND VERIFY
 ====================================================================
 
-1. Confirm the destination URL is live and belongs to the look being published.
-2. Build the final publishing record for each Pin:
-   pin_id, look_id, image_id, title, description, alt_text, destination_url, board, scheduled_at, publisher, status.
-3. TIME-SAVING PATH:
-   Use the connected Metricool workflow recorded in MY_RECIPE.txt.
-   - Confirm the correct Pinterest brand/profile and board.
-   - Create or schedule the Pin with the final image, title, description, destination URL and board.
-   - Record the returned Metricool post identifier when available.
-   - If the connected ChatGPT + Metricool workflow requires an approval or review step, stop at that state and report the exact approval required. Do not claim the Pin is published.
-   - If the workflow cannot perform the action, leave the Pin in "queued" and use the CREDIT-SAVING path instead.
-4. CREDIT-SAVING PATH:
-   Prepare the complete Pin package for the customer.
-   - Pinterest's native business scheduler supports scheduling standard Pins up to 30 days ahead, with up to 10 future Pins at once.
-   - The customer performs the final scheduling action in Pinterest.
-   - The recipe must not simulate that action with browser automation.
-5. Set the state to "scheduled" only after the selected publishing layer confirms the Pin exists. Otherwise use "queued" or "awaiting_approval".
-6. Verification:
-   - TIME-SAVING: read the scheduled post back through Metricool when supported and confirm image, title, board, link, time and status.
+1. Confirm the destination URL is live and belongs to the look. If it does not resolve, stop this Pin.
+2. Build the final draft record for each Pin:
+   pin_id, look_id, image_id, title, description, alt_text, destination_url, board_name, board_url, board_id when available, scheduled_at, publisher, customer_selected, customer_selection_at, customer_schedule_authorized, schedule_authorization_at, status.
+3. Set the Pin to customer_review_required. Show the customer the finished image and complete metadata. Do not route or schedule it until the customer selects this exact Pin, the exact public board is verified through an authorized supported path, the required disclosure is present, the destination resolves, all metadata matches, and the customer explicitly authorizes this Pin's schedule.
+4. TIME-SAVING PATH:
+   Use the connected Metricool workflow recorded in MY_RECIPE.txt only when PUBLISHING TEST = passed and the per-Pin approval gate is recorded.
+   - Confirm the correct Pinterest brand/profile and exact board/section.
+   - Create/schedule only the specifically selected and authorized Pin with the final image, title, description, destination URL, board and approved time.
+   - Record the returned Metricool post identifier and read back the scheduled record when supported.
+   - If the connected ChatGPT + Metricool workflow requires a separate platform approval, set awaiting_approval and report the exact step. Do not claim the Pin is scheduled or published before evidence confirms that state.
+   - If the workflow cannot safely perform the action, leave it unscheduled and report the blocker.
+5. CREDIT-SAVING PATH:
+   Prepare the complete Pin package after customer selection and schedule authorization; set state to customer_scheduling_required. The customer performs the final scheduling action in Pinterest. Do not simulate it with browser automation.
+6. Set state to scheduled only after the selected publishing layer confirms the Pin exists. Otherwise retain customer_review_required, customer_scheduling_required, or awaiting_approval as appropriate.
+7. Verification:
+   - TIME-SAVING: read the scheduled post back through Metricool when supported and compare image, title, board, destination, time and status.
    - CREDIT-SAVING: the customer confirms the Pin appears in Pinterest's scheduled area.
-7. Never use Pinterest's undocumented internal endpoints or automated scraping to verify Pins.
-8. Never report a Pin as "verified" when the publishing layer has only returned an unconfirmed request.
+8. Never use Pinterest's undocumented internal endpoints or automated scraping to verify Pins. Never report a Pin as verified based only on an unconfirmed request.
 
 ====================================================================
 PART 7. STATE, LEFTOVERS AND RECOVERY
