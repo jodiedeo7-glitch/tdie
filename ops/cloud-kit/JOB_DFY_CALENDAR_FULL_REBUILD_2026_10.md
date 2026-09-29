@@ -77,3 +77,19 @@ One-step Reel prompts
 Two-step Reel prompts
 QA status
 Output paths
+
+
+## LONG-FORM PRODUCTION LOCK
+
+Long-form research does not automatically become long-form production.
+
+October creation rules:
+- overwhelmingly short-form
+- approximately 2 long-form talking-head Reels maximum by default
+- long-form only for TDIE-relevant story, education, "if I started over", case study/transformation, or substantive authority/opinion
+- long-form must be HeyGen-compatible
+- never assign long-form to Higgsfield
+- never pad a concept for length
+
+The research output must include a dedicated long-form relevance analysis before creation.
+
