@@ -44,18 +44,78 @@ PART 2. PICK THE LOOKS
 6. If a window has no unused ideas left, fill from the EVERGREEN BANK and tell me in one line to renew the calendar early.
 
 ====================================================================
-PART 3. SOURCE ON AMAZON
+PART 3. AMAZON PRODUCT INTAKE
 ====================================================================
 
-1. For each piece, search amazon.com in the tab and read the results as they load (skip anything marked Sponsored): the ASIN, the title, the star rating and the rating count. Pick products that are: in stock (not "only a few left"), 4.0 stars or better with at least 100 ratings, Prime where possible, clearly photographed, in the look's colors. Skip any piece whose main photo shows more than the one item (a whole set laid out, extra props) or has printed words on it: the image makers copy those photos. If a search has nothing that passes, swap to a different piece that fits the look and note the swap in the log. Every outfit has one easy anchor piece (a plain basic in black, white, cream, denim or camel); if the whole theme is neutral, make one piece the texture or detail that stands out instead.
-2. Color variants: open the product page and read each color's own ASIN.
-3. Your SiteStripe link for every piece, when you need one: on the Associates-only path, or when the blog half is on. Open the product page, wait 3 seconds, click "Get Link" in the SiteStripe bar, choose the short link, copy it. Capture it by replacing the page's clipboard write with a function that stores the text, then read the stored text. Keep collected links in the page's localStorage so a frozen tab loses nothing. On the Influencer path with the blog half off, skip the Get Link clicks, but still confirm the SiteStripe bar is showing on the first product page (R14).
-4. Log every piece before you make anything: short name, ASIN, and the short link if captured. Set the look's status to "building".
-5. The link for the pins:
-   INFLUENCER PATH: build an Idea List. Storefront > Create content > Idea List. Title = the look name. Add every piece: in the Add products box open the Browse history tab (the Idea Lists tab has no search), find each logged ASIN, and tick only those (the tab also shows pieces you looked at and rejected), then Done. If the Idea List search can't find a piece, swap the piece now, before any image is made. Dismiss the suggested AI description. Save, Submit. Amazon may say the list publishes once it's approved: that's fine, carry on and note "list in review" in the log (the pull sweep checks it again before pin 1 posts). Read the list's public address from your storefront page (a link containing /list/). Open it in a fresh tab: if it doesn't load or is missing pieces, wait 10 minutes and try once more; if it still fails, both pins link to your storefront home and the log says "list pending".
-   ASSOCIATES-ONLY PATH: follow 08_STOREFRONT_PATHS.txt, Associates-only section.
-6. Product sheet, for reference only. On an amazon.com tab, lay the look's main product images in one grid over the page and take ONE screenshot. It is attached only to the Format A flat lay and a persona photo. For Format B you read it to write each piece's description in words. Amazon's photos are never posted, never cut into a collage, never uploaded anywhere public.
+The customer, not the automation, controls Amazon product selection unless the customer has a current authorized Amazon Creators API integration.
 
+DEFAULT PATH: CUSTOMER-SUPPLIED PRODUCT ROWS
+
+1. The customer adds product rows to PRODUCT_SOURCES.md or the structured state.
+
+Required fields:
+- ASIN
+- plain-language product description
+- authorized affiliate/Special Link when required by the selected Amazon path
+- optional Amazon product URL
+- optional color/variant
+- optional notes
+
+2. ChatGPT validates the supplied ASIN/link format and checks that the row has enough information to build the look.
+
+3. ChatGPT does NOT:
+- scrape Amazon pages
+- simulate human browsing to collect product data
+- capture SiteStripe through browser automation
+- copy Amazon-hosted product images into the image workflow
+- invent ASINs
+- invent affiliate tags
+- use Amazon customer reviews or ratings as if they were independently sourced data
+
+4. If a supplied row is incomplete:
+Set PRODUCT_STATUS = intake_needed.
+Tell the customer exactly which field is missing.
+Do not silently substitute a different Amazon product.
+
+ADVANCED PATH: AMAZON CREATORS API
+
+If the customer has current, authorized Creators API access, use only the documented API fields and permissions available to that customer.
+
+Record:
+- API access = yes
+- integration method
+- retrieved product fields
+- retrieval timestamp
+
+Do not assume Creators API eligibility.
+Do not build customer instructions around PA-API 5.
+
+PRODUCT SHEET
+
+Before image generation, create a product sheet from the customer's authorized product data:
+- short name
+- ASIN
+- plain-language description
+- color
+- shape/cut
+- material
+- distinctive details
+- authorized affiliate link or destination
+- source method
+
+Amazon-hosted images remain reference material only and are not published as Pin assets.
+
+INFLUENCER PATH
+
+Use the customer's approved Amazon Influencer tools to create the Idea List from the supplied ASINs or the customer's authorized product-selection workflow.
+
+ASSOCIATES-ONLY PATH
+
+Use the customer's authorized Special Links in the customer's own site/page workflow.
+
+If an affiliate link or destination cannot be verified, the look remains queued.
+
+====================================================================
 ====================================================================
 PART 4. MAKE THE IMAGES
 ====================================================================
