@@ -42,22 +42,53 @@ Exclude:
 - faith-first content
 - gambling, adult, regulated or otherwise unsuitable niches
 
-## 2. Collect the outlier dataset
+## 2. Build the viral inspiration corpus
 
-Collect at least 40 QUALIFYING OUTLIER posts from at least 25 UNIQUE QUALIFYING ACCOUNTS.
+This is the primary research objective.
 
-A qualifying outlier must have account-relative evidence.
+Collect at least:
+- 60 real high-performing / viral posts
+- 30 unique creator accounts
+- at least 25 accounts in the same or tightly adjacent creator-business ecosystem
 
-Acceptable bases include:
-- the creator explicitly states a baseline or that the post outperformed normal performance
-- the public profile exposes enough comparable post data to calculate an account-relative lift
-- an independent source provides comparable account-level performance data
+The corpus should include:
+- digital products
+- faceless business
+- AI-assisted business/content
+- creator education
+- Instagram/content growth
+- online business
+- creator tools
+- adjacent small-business education when the mechanism is directly portable
 
-A large view number by itself does NOT establish an outlier.
+Do NOT require every post to have a mathematically proven account-relative baseline.
 
-Also collect additional observed high-performer candidates when they are useful, but label them CANDIDATE and do not count them toward the 40 outlier gate.
+Instead classify every row:
 
-Prefer current posts from the most recent 90 days. Older examples may be retained only when the mechanism remains directly relevant and the reason for inclusion is recorded.
+A. VERIFIED OUTLIER
+- account-relative multiple, ideally 5X+;
+- or directly documented creator baseline;
+- or credible analytics provider supplies a viral/outlier classification with creator-level data.
+
+B. VIRAL ANALYTICS EXAMPLE
+- reputable analytics dataset explicitly classifies the post as viral;
+- post-level views and creator-level context are available.
+
+C. HIGH-PERFORMER
+- unusually strong visible performance with useful post-level evidence, but no defensible account baseline.
+
+D. SUPPORTING PATTERN SOURCE
+- research article or dataset used to validate a mechanism, format or trend rather than as a specific post example.
+
+Minimum corpus requirement:
+- 60 total A/B/C post examples
+- 30 unique accounts
+- at least 20 A/B examples
+- at least 25 accounts from the target or tightly adjacent ecosystem
+
+The purpose is creative reverse-engineering, not statistical publication.
+
+Use current examples when possible, but retain older viral examples when the mechanism is still relevant and explain why.
 
 ## 3. Research each post
 
@@ -96,7 +127,64 @@ Do not invent performance numbers.
 
 Do not copy competitor wording. Summarize the mechanism.
 
-## 4. Inspect patterns, not just high numbers
+## 4. Inspect patterns across the full corpus
+
+Do NOT simply summarize the top posts.
+
+For each account, inspect its repeated viral formulas where the source allows it.
+
+Prefer datasets that analyze many reels from one creator. For example, a creator playbook that identifies top reels, median views, viral classifications, hook types and formats is more useful than a generic "10 viral hooks" article.
+
+Look specifically for:
+- repeated formulas that worked more than once
+- reusable hook structures
+- comparison formats
+- list formats
+- result-first formats
+- contrarian formats
+- curiosity questions
+- story formats
+- tutorials and screen demos
+- before/after
+- text-overlay
+- montage
+- product/process demonstrations
+- comment/follow/link CTAs
+- reach vs. nurture vs. conversion content
+
+### Audience maturity is mandatory
+
+For every useful example, classify the implied audience stage:
+- DISCOVERY / NEW TO CREATOR
+- AWARE / KNOWS CREATOR
+- TRUSTED / REGULAR AUDIENCE
+- BUYING / HIGH INTENT
+- MIXED
+
+Do not assume the calendar is being made for an account's first month.
+
+The research must deliberately include content from established creators and accounts with existing audiences, not only "how to start" content.
+
+## 5. Build the maintenance-cycle intelligence bank
+
+Create a dedicated section analyzing how established creators balance:
+- reminders of who they are / what they teach
+- educational content
+- authority
+- personality / story
+- engagement/community
+- motivation/relatability
+- objection handling
+- proof/case studies
+- product/service promotion
+- soft selling
+- direct selling
+
+Identify whether these are interleaved throughout the month rather than isolated into beginner week / sales week phases.
+
+Use the evidence to create a rolling monthly content mix, not a four-week onboarding funnel.
+
+## 6. Inspect patterns, not just high numbers
 
 Count occurrences across the qualifying outliers:
 
@@ -196,16 +284,20 @@ QA.md must test:
 
 ## 9. Stop condition
 
-If the 40-outlier / 25-account evidence gate is not met, save everything collected, mark the run PARTIAL, document exactly what is missing, and STOP.
+If the 60-post / 30-account inspiration gate is not met, continue researching. Do not stop merely because some posts lack account-level baselines.
 
-Do not write or authorize the October calendar.
+If the inspiration gate still cannot be met after reasonable research, mark the run PARTIAL and document the limitation.
 
-If the gate passes, do not create the calendar here either. Hand the finished research package to the creation prompt.
+Do not create the calendar in this research phase. Hand the finished research package to the creation prompt.
 
 Report exactly:
 Research status: PASS or PARTIAL.
-Qualifying outliers: [count].
-Qualifying accounts: [count].
-Observed candidates: [count].
+Viral inspiration posts: [count].
+Unique accounts: [count].
+Verified outliers: [count].
+Viral analytics examples: [count].
+High performers: [count].
 Replication rules: [count].
+Audience-maturity patterns: [count].
+Maintenance-cycle findings: [count].
 Output: [path].
