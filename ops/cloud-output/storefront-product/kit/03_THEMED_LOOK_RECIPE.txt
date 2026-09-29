@@ -178,7 +178,7 @@ PART 6. PUBLISH AND VERIFY
 
 1. Confirm the destination URL is live and belongs to the look. If it does not resolve, stop this Pin.
 2. Build the final draft record for each Pin:
-   pin_id, look_id, image_id, title, description, alt_text, destination_url, board_name, board_url, board_id when available, scheduled_at, publisher, customer_selected, customer_selection_at, customer_schedule_authorized, schedule_authorization_at, status.
+   pin_id, look_id, image_id, title, description, alt_text, destination_url, board_name, board_url, board_id when available, scheduled_at, publisher, customer_selected, customer_selection_at, customer_schedule_authorized, schedule_authorization_at, schedule_authorization_fingerprint, status.
 3. Set the Pin to customer_review_required. Show the customer the finished image and complete metadata. Do not route or schedule it until the customer selects this exact Pin, the exact public board is verified through an authorized supported path, the required disclosure is present, the destination resolves, all metadata matches, and the customer explicitly authorizes this Pin's schedule.
 4. TIME-SAVING PATH:
    Use the connected Metricool workflow recorded in MY_RECIPE.txt only when PUBLISHING TEST = passed and the per-Pin approval gate is recorded.
