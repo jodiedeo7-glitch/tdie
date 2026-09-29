@@ -294,12 +294,14 @@ Facebook adaptations:
 
 ## 11. Research stop gate
 
-Research is complete only when:
-- at least 40 rows meet the qualifying-outlier evidence rule
-- at least 25 unique qualifying accounts are represented
+Research is complete for creative production when:
+- at least 60 viral/high-performing inspiration posts are represented
+- at least 30 unique accounts are represented
+- at least 20 posts are VERIFIED OUTLIER or VIRAL ANALYTICS EXAMPLES
+- audience maturity and maintenance-cycle findings are documented
 - duplicates are removed
 - pattern counts are complete
-- build rules are tied to row IDs
+- build rules are tied to research row IDs
 - non-replicable competitor tactics are separated
 - evidence limitations are documented
 
