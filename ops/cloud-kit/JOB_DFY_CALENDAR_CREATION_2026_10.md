@@ -19,13 +19,12 @@ Sources checked: [exact file names].
 Do not start creation unless the research package contains:
 - 75 or more viral/high-performing or breakout Reel examples
 - 40 or more unique accounts
-- at least 25 forensic accounts with usable before/after windows
 - duration analysis and breakout-delta analysis completed
-- at least 20 VERIFIED BREAKOUT or VIRAL ANALYTICS BREAKOUT examples
+- at least 20 VERIFIED BREAKOUT or VIRAL ANALYTICS BREAKOUT examples OR a documented aggregate dataset with 75+ verified outlier examples plus deep forensic case studies
 
-A smaller verified-outlier count is acceptable if the full inspiration corpus passes.
+A smaller individually reconstructed account count is acceptable when public data does not expose historical account-level metrics. Do not fabricate private Instagram Insights. Mark unavailable account-level fields NOT VERIFIED.
 
-If the research package has a large inspiration corpus but fewer than 20 verified/analytics examples, continue research rather than pretending ordinary high performers are outliers.
+If the research package has neither a large verified inspiration corpus nor enough breakout examples, continue research rather than pretending ordinary high performers are outliers.
 
 ## TASK
 
@@ -160,7 +159,7 @@ B. STATIC START-FRAME IMAGE PROMPT
 - no vendor requirement
 - no assumption of Jodie's private reference sheet
 
-D. VERSION A - ONE-STEP REEL
+C. VERSION A - ONE-STEP REEL
 Complete copy-paste video prompt containing:
 - scene/action
 - camera/framing
@@ -174,7 +173,7 @@ Complete copy-paste video prompt containing:
 - exact spelling and punctuation
 - no additional generated text, subtitles, logos or watermarks
 
-E. VERSION B - TWO-STEP REEL VIDEO PROMPT
+D. VERSION B - TWO-STEP REEL VIDEO PROMPT
 Complete copy-paste video-only prompt containing:
 - scene/action
 - camera/framing
@@ -262,7 +261,7 @@ Must pass:
 - no Meta income/earnings claims
 - no faith content
 - no em dashes
-- research references are present for every research-derived creative rule
+- internal research traceability is maintained in the research package; do not expose research IDs or internal references in the finished calendar
 - all October dates are present exactly once
 
 Save:
