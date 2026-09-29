@@ -1,77 +1,94 @@
-# OCTOBER 2026 DFY CALENDAR RESEARCH - SOURCES
+# OCTOBER 2026 DFY CALENDAR - FORENSIC RESEARCH SOURCES
 
-Research timestamp: 29 September 2026
+## 1. Buzzfy quantitative study
+What makes a reel go viral? We measured 26,914 reels to find out, 8 July 2026.
+https://buzzfy.co/blog/what-makes-reels-go-viral
 
-## Primary creator-level analytics datasets
+Supports:
+- 26,914 Reels
+- 944 creator accounts
+- account-relative 3X median viral definition
+- watch-through
+- shares
+- hook strength
+- frame-one text timing
+- format
+- Reel duration
+- within-account paired comparison
+- null findings
 
-1. Content Copilot - @sam.gaudet
-   - 179 Reels analyzed
-   - Sep 2025 to May 2026
-   - 44.3K followers
-   - 8.6M total views
-   - 18.4K median Reel views
-   - top 12 explicitly labeled viral
-   - useful for creator-relative outlier analysis
+## 2. Content Copilot - @personalbrandlaunch
+https://www.contentcopilot.so/playbook/personalbrandlaunch
 
-2. Content Copilot - @personalbrandlaunch
-   - 1,423 Reels analyzed
-   - Mar 2023 to Apr 2026
-   - 1.0M followers
-   - 170.8M total views
-   - top reels explicitly labeled viral
-   - useful for repeated formula, audience-maturity and content-goal analysis
+Supports:
+- 1,423 Reels
+- Mar 2023-Apr 2026
+- 1.0M followers in source
+- hook and format distributions
+- top viral Reels
+- repeated formula reuse
+- content-goal mix
+- cadence heatmap
+- established-account content architecture
+- formula repeatability
 
-3. Buzzfy
-   - July 2026 analysis of 26,914 Reels from 944 creator accounts
-   - useful as supporting methodology for creator-relative viral analysis
+## 3. Content Copilot - @sam.gaudet
+https://www.contentcopilot.so/playbook/sam.gaudet
 
-## Current 2026 supporting research
+Supports:
+- 179 Reels
+- Sep 2025-May 2026
+- creator median
+- breakout examples
+- content-goal mix
+- hook and format distributions
+- repeated AI-topic testing
+- established-audience positioning
 
-4. My Sell System, September 11 2026
-   - faceless Instagram Reels for digital products
-   - useful for current digital-product formats and production mechanisms
+## 4. Cullen
+https://trycullen.com/
+Supports methodology examples for:
+- account-relative breakout detection
+- visual/comment evidence
+- distinguishing proven vs unsupported explanations
 
-5. CreatorHouse, April 28 2026
-   - 60+ hook examples from 26 niches
-   - useful for hook-pattern cross-checking
+## 5. Aubrium
+https://aubrium.com/solutions/competitor-analysis
+Supports methodology examples for:
+- ranking a creator's posts against their own baseline
+- first-three-second breakout inspection
+- account-relative multiples
 
-6. Clout AI, September 27 2026
-   - 25 current faceless Reel concepts
-   - useful for current faceless production formats
+## 6. Viralfy case study
+https://www.viralfy.ai/en/blog/en-010k-in-60-days-instagram-analytics-case-study-workflow-mrrvagpz
+Supports a documented account-growth timeline with two later breakout Reels; treated as a case study, not universal evidence.
 
-7. Trender, September 18 2026
-   - current Reel hook examples and hook-to-continuation structure
+## 7. HEPZ Content House - Kashif Anwar case
+https://hepzcontenthouse.com/case-studies/kashif-anwar
+Supports a documented breakout example:
+- 146K views
+- 404 followers
+- comparison-first opening
+- direct on-screen comparison framing
 
-## Current post-level discovery corpus
+## 8. Current relevant account discovery
+Public discovery sources included current examples from:
+- @facelesswealthdiary
+- @facelessbrandwithjess
+- @onlinedigitalboss
+- @jun_yuh
+- @digitalwealthmate
+- @facelessceoera
+- @therealtaylorfrancois
+- @thatjessab
+- @maria.wendt
+- @annettapowell
+- @thesocialbarber
+- @iamemilyhart
+- @ninabomanco
 
-The research ledger also contains 40 current high-performing post candidates surfaced through current public discovery searches across:
-- faceless digital marketing
-- digital products
-- creator education
-- AI tools
-- Instagram/content growth
-- small-business marketing
+These are used only where the source exposes enough evidence for the stated claim.
 
-These are deliberately labeled HIGH-PERFORMER unless account-level evidence supports a stronger class.
+## Limitations
 
-## Evidence policy
-
-The research uses four classes:
-- VERIFIED OUTLIER
-- VIRAL ANALYTICS EXAMPLE
-- HIGH-PERFORMER
-- SUPPORTING PATTERN SOURCE
-
-A generic "viral hooks" article does not become evidence that a particular post went viral.
-
-Competitor wording, claims, identity, visuals and proprietary frameworks are not copied into TDIE content.
-
-## Web references
-
-Content Copilot @sam.gaudet: https://www.contentcopilot.so/playbook/sam.gaudet
-Content Copilot @personalbrandlaunch: https://www.contentcopilot.so/playbook/personalbrandlaunch
-Buzzfy: https://buzzfy.co/blog/what-makes-reels-go-viral
-My Sell System: https://mysellsystem.com/faceless-instagram-reels-for-digital-products/
-CreatorHouse: https://creatorhouse.app/blog/instagram-reel-hooks-2026
-Clout AI: https://www.tryclout.ai/blog/faceless-reels-ideas
-Trender: https://www.trndr.app/blog/reels-hooks-without-copying
+Private Instagram Insights are not available for competitor accounts. Public sources generally cannot expose all historical post-level metrics, exact watch-time curves, saves, shares, profile actions and follower-attribution data. The research therefore keeps verified evidence separate from inferred or missing fields.
