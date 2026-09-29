@@ -63,14 +63,13 @@ You perform the final Pinterest scheduling step.
 
 TIME-SAVING PATH
 
-Choose TIME-SAVING if you want the publishing layer to handle scheduling/publishing through Metricool.
+Choose TIME-SAVING if you want to use the connected Metricool publishing path after you select each finished Pin and explicitly authorize that Pin's schedule. A scheduled task may prepare and route an approved Pin only when the required account actions are available.
 
 IMPORTANT VERIFICATION GATE
 
-Do not describe the following as guaranteed until the customer's test passes:
-"ChatGPT Scheduled Task automatically creates and publishes Pinterest Pins through Metricool without customer approval."
+Never promise publishing without customer approval. A successful setup test can confirm only the exact authorized action and the publisher evidence it returned; it does not prove unattended future runs or publication. Test one Pin only after the customer chooses the final image, confirms the destination resolves, verifies the exact public board and disclosure, reviews the title and alt text, and authorizes that specific scheduling action.
 
-The individual capabilities are supported, but the exact scheduled-task combination must be tested in the customer's account.
+If board assignment, per-Pin approval, or publisher readback cannot be supported in the customer's account, mark the path blocked or manual. Do not claim the end-to-end workflow is verified.
 
 COMPUTER REQUIREMENT
 
