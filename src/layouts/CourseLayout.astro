@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
+import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
   title: string;
   eyebrow?: string;
@@ -190,6 +191,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
   <footer class="we-foot">
     The Weekend Ecosystem™ · The Digital Income Edit™ · For your use only
   </footer>
+  <MetricoolTracker />
   <Analytics />
 </body>
 </html>
