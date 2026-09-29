@@ -1,58 +1,149 @@
 STOREFRONT PATHS
-Where your pins send people. Your setup chat picked one from your answers to question 3.
+
+Your Pins need a destination. Choose the path that matches your Amazon account.
 
 ====================================================================
-THE AMAZON INFLUENCER PATH (Idea Lists): the easy one
+THE AMAZON INFLUENCER PATH: IDEA LISTS
 ====================================================================
 
-You need: Amazon Influencer approval and a storefront (amazon.com/shop/yourname). Amazon approves Influencers from certain social accounts; check Amazon's current Influencer page for which ones count.
+You need:
+- approved Amazon Influencer access
+- an Amazon storefront
 
-How it works: every look gets its own Idea List in your storefront, holding every piece. Both pins of the look link to that list. Someone taps the pin, lands on a list of exactly the pieces she saw, and a qualifying purchase through it is tracked to your Associates tag.
+Each look gets its own Idea List containing the products in that look.
 
-The recipe builds the list for you (03_THEMED_LOOK_RECIPE.txt, Part 3 step 5) and checks it loads before any pin links to it.
+The Pin destination is the look's Idea List.
 
-Fallback: if a list truly can't be made or won't load (a piece won't add, the editor won't save, the list is still in review), the pins link to your storefront home and the log says why. Never a single-product link. Never a list for a different look.
+The automation must verify that the list resolves before the Pin enters the publishing queue.
 
-No website needed. Nothing to paste. This is the path where "no building, no selling, no posting" is exactly true.
+If an Idea List is pending review or unavailable:
+- do not substitute another look
+- keep the Pin queued
+- record the exact state
 
-====================================================================
-THE ASSOCIATES-ONLY PATH (your own site page)
-====================================================================
-
-You need: an approved Amazon Associates account, and a website where a shop-the-look page can live.
-
-How it works: every look gets a page on your own site, with the look's name, a short intro, the two pin images and every piece linked with your SiteStripe short link. Both pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
-
-A pin NEVER links to a page that doesn't load. Before any pin is scheduled, the task opens its page. If the page isn't live yet, the pins wait, logged "built", and the next run or pull sweep schedules them once it loads.
-
-TWO KINDS OF SITE
-
-1. A site the tasks can publish to (a Weekend Ecosystem™ site on GitHub): hands-off. 09_THE_BLOG_HALF.txt adds the section in one paste, and the weekly task publishes each look's page before its pins.
-
-2. Any other site builder (Squarespace, Wix, WordPress, Shopify and the rest): the task can't publish there, so this is hand-work, and I'd rather you know that before you choose it. For each look the task writes one file into your folder, pages/<pin 1 date>-<slug>.txt, and you paste it in: about 10 to 15 minutes a look. The file holds, in this order:
-   - the deadline to paste it (12:00 pm the day before its pin 1)
-   - where it goes (a new page or blog post under SITE PAGE BASE)
-   - the page title and the URL slug (the look name, lowercase, hyphens, no dates); the page address is SITE PAGE BASE plus the slug, and it's the link on both pins
-   - a meta description of 155 characters or fewer
-   - the two images to add and their alt text: open your Higgsfield (and Gemini) history, find the two images by the date and prompt words written in the file, and save them yourself (the tasks never download anything, so this one is yours)
-   - an 80 to 150 word intro in your voice, no prices
-   - the numbered item list as ready-to-paste HTML, every link with target="_blank" rel="sponsored nofollow noopener"
-   - the line "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
-   - the disclosure line
-   Paste it, publish it, and the next pull sweep sees the page and schedules the pins.
-
-BEFORE THE FIRST PIN (your setup chat asks you to do both)
-- In Associates Central, Account Settings, your website list includes your site and your Pinterest profile.
-- On Pinterest, start a pin, paste your site's address into the link field, and check Pinterest accepts it. If it refuses, your domain is blocked on Pinterest and this path can't run until that's fixed.
+No website is required for this path.
 
 ====================================================================
-BOTH PATHS
+THE ASSOCIATES-ONLY PATH: YOUR OWN SITE
 ====================================================================
 
-Amazon needs every place your links appear listed in your Associates account (Account Settings, websites and mobile apps): your Pinterest profile, and your website if you have one.
+You need:
+- approved Amazon Associates
+- a website where a shop-the-look page can live
 
-New Associates accounts: Amazon has had a first-sales requirement for new accounts. Check the current rule in Associates Central. Pinterest is slow, so if your account is new, don't count on pins alone to meet it.
+Each look gets a page containing:
+- look title
+- original Pin images
+- product descriptions
+- your authorized affiliate links
+- required disclosure
 
-Disclosure on every pin, both paths: "#ad" at the start of the description and "#ad As an Amazon Associate I earn from qualifying purchases." at the end.
+The page URL is the destination for both Pins.
 
-No prices anywhere. No brand names in list titles, page titles or item names. Amazon's own product photos are never posted: they're references for the image generators, nothing more. And never an affiliate link in an email (Amazon's rule): if you ever email about a look, link to your own page.
+The page must load before a Pin can be published.
+
+====================================================================
+SITE TYPES
+====================================================================
+
+1. A site the workflow can write to through an authorized supported connection:
+The page can be generated and published as part of the workflow, subject to the exact site integration being available.
+
+2. Any other site builder:
+The workflow prepares the complete page package.
+You publish the page yourself.
+Pins remain queued until the page is live and verified.
+
+Never claim that ChatGPT can publish to a site unless the customer's actual connected integration supports the required write action.
+
+====================================================================
+PUBLISHING PATHS
+====================================================================
+
+TIME-SAVING: METRICOOL
+
+Metricool currently supports Pinterest scheduling and publishing and supports:
+- Pinterest board selection
+- Pin title
+- Pin link
+- alt text
+- image/video media
+- scheduled publication
+- scheduled-post management
+- CSV bulk scheduling
+
+Metricool's MCP can connect to ChatGPT and can create, schedule, publish and update posts within the customer's Metricool plan limits.
+
+The customer's Pinterest account must be connected to the correct Metricool brand.
+
+IMPORTANT:
+The exact combination of a recurring ChatGPT Scheduled Task automatically invoking the Metricool action must be tested in the customer's account.
+
+If the task requires approval, the Pin remains awaiting_approval.
+If the action fails, the Pin remains queued.
+Do not describe the workflow as fully unattended until the end-to-end test passes.
+
+CREDIT-SAVING: NATIVE PINTEREST
+
+Pinterest's business scheduler currently supports standard Pins up to 30 days ahead and up to 10 future Pins.
+
+ChatGPT prepares:
+- image
+- title
+- description
+- alt text
+- board
+- destination URL
+- scheduled date/time
+
+The customer performs the final scheduling action in Pinterest.
+
+No Metricool subscription is required for this path.
+
+====================================================================
+AMAZON API
+====================================================================
+
+Amazon PA-API 5 is deprecated.
+
+Amazon's current successor is Creators API.
+
+Creators API can provide programmatic Amazon catalog access for eligible Associates/influencers, but the product does not require every customer to qualify for it.
+
+Do not build customer instructions around PA-API 5.
+Do not assume Creators API access.
+
+====================================================================
+AMAZON + PINTEREST STOREFRONT CONNECTION
+====================================================================
+
+An eligible Amazon Storefront can connect to Pinterest.
+
+Treat this as a supplemental discovery/product-tagging path.
+
+It does not replace the core Idea List or Associates-only destination architecture.
+
+====================================================================
+AFFILIATE DISCLOSURE
+====================================================================
+
+Every Pin must contain the disclosure required by the customer's current Amazon program terms and the exact disclosure configured in MY_RECIPE.txt.
+
+Never invent disclosure wording.
+Never omit the disclosure from a monetized Pin.
+
+====================================================================
+NO PRICES / NO AMAZON-HOSTED PRODUCT IMAGES
+====================================================================
+
+Do not put Amazon prices in:
+- images
+- titles
+- descriptions
+- alt text
+- pages
+- lists
+
+Do not publish Amazon-hosted product images as the generated Pin asset.
+
+Use original generated imagery or customer-owned/licensed imagery.
