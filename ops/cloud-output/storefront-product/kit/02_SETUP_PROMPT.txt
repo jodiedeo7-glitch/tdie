@@ -85,7 +85,7 @@ Ask me to confirm every production board is public.
 
 A secret TEST board is allowed only for a dry run and must be marked TEST.
 
-Store the board name and, when available, stable Pinterest/Metricool board identifier.
+Store the exact board name and resolve its stable Pinterest board identifier during setup. The setup is not complete until every production board can be resolved by the publishing connector. Store both `board_name` and `board_id` in MY_RECIPE.txt/state. Use the stored numeric `board_id` for production runs; do not repeatedly resolve board names during every Pin.
 
 STEP 3. AMAZON PATH
 
