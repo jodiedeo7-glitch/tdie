@@ -172,10 +172,10 @@ You paste one setup prompt and answer six questions. It does the rest.
 
 What you need, up front, so nobody's surprised:
 💻 a ChatGPT plan with Work and Scheduled Tasks
-🖥️ the Claude desktop app, with your computer on when the tasks run
+☁️ ChatGPT Work Cloud, so your computer can be off during runs
 🛒 Amazon Associates (Influencer approval if you want Idea Lists)
 📌 a Pinterest business account
-🎨 Gemini and Higgsfield
+🎨 a supported connected image provider, such as Higgsfield, if you choose that path
 
 People are searching for you. This makes sure something's there when they do.
 
