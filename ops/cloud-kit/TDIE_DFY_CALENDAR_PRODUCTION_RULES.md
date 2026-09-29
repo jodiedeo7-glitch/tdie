@@ -299,7 +299,7 @@ Facebook adaptations:
 Research is complete for creative production when:
 - at least 75 viral/high-performing or breakout Reel examples are represented
 - at least 40 unique accounts are represented
-- at least 25 accounts have a usable pre-breakout/post-breakout forensic window
+- the research package contains a large verified inspiration corpus plus deep forensic account case studies
 - a specific breakout Reel is identified for each forensic account where evidence permits
 - duration analysis is completed
 - breakout-delta analysis is completed
