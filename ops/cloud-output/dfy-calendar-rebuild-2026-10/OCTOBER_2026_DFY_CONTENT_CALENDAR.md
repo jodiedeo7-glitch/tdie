@@ -317,7 +317,7 @@ This is a rolling maintenance cycle. Short-form is the default. Oct 4 and Oct 18
 **Caption:** You choose topics because they trend instead of because they matter. You measure every post only by views. You cannot explain how content connects to your offer.
 
 **CTA:** Comment STRATEGY.
-**Offer / swap-in:** The Funnel Edit
+**Offer / swap-in:** None
 
 **Hook / opening text:** Three signs your content strategy is too focused on the algorithm.
 
