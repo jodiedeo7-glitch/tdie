@@ -216,7 +216,7 @@ I cannot and will not gatekeep this. So I didn't 💗
 
 Your Amazon links, turned into Pinterest pins that schedule themselves.
 
-The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
+The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. ChatGPT Work scheduled tasks pick a look for your theme, find the pieces on Amazon with your affiliate links, build your Idea List, make the flat lay and the lifestyle photo, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. You set it up once, in about 5 minutes once your accounts are ready. The tasks run from your own computer, so it stays on with Chrome signed in.
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
@@ -248,7 +248,7 @@ Use it at the member checkout and you pay $8.50.
 
 [Open the member checkout and use PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What it is: my own Amazon pin machine. Scheduled tasks in the Claude desktop app pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
+What it is: my own Amazon pin machine. ChatGPT Work scheduled tasks pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
 
 This code is for Premium members only. Please don't share it outside The Premium Vault.
 
@@ -326,7 +326,7 @@ No more building, no more selling, no more posting.
 
 I cannot and will not gatekeep this, so it's yours: The While-You-Sleep Storefront™. The presale price is $10 for the whole kit until Thursday night. After that, the same kit is $27.
 
-Heads up before you grab it: it runs from your own computer (the Claude desktop app, computer on, Chrome signed in).
+Heads up before you grab it: it runs through ChatGPT Work Cloud, so your computer can be off during runs.
 
 Link's in the comments 👇
 
@@ -429,9 +429,9 @@ Your Amazon links, turned into Pinterest pins that get built and scheduled on th
 
 Presale: $10. Your kit arrives as a one-page note with the unlock time; the full kit unlocks at 9 am Eastern on Fri 9 Oct 2026 at this same download link.
 
-Scheduled tasks in the Claude desktop app pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
+ChatGPT Work scheduled tasks pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
 
-You'll need: a ChatGPT plan with Work and Scheduled Tasks; the Claude desktop app on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; Gemini and Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
+You'll need: a ChatGPT plan with Work and Scheduled Tasks; ChatGPT Work Cloud on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; a supported connected image provider such as Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
 
 **Description (from Fri 9 Oct, 9:00 am):** the same, with the second paragraph replaced by:
 
