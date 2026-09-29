@@ -13,24 +13,24 @@ Three kinds of look, all built the same way:
 PART 1. THE RULES THAT NEVER MOVE
 ====================================================================
 
-R1. Fresh tab for every pin, closed when that pin is done (open the next tab before you close the last one, or Chrome drops the task's tab group). Never hammer Pinterest: one Pinterest tab at a time, wait 60 seconds between one pin's Publish and the next pin's new tab, and after 6 pins in a row pause 5 minutes.
-R2. Blank page rule. Blank means the page has no text after 20 seconds, read as text (on some computers a loaded Pinterest page looks empty in a screenshot, so never judge it by the picture). A minimized browser window never finishes drawing Pinterest (Pinterest waits for the window to draw before it shows the page), so every page reads empty. Before counting a blank: take one screenshot of the tab (that makes the window draw), wait 5 seconds and read the text again. Only if it is still empty does it count as a blank. If a Pinterest page loads blank, close the tab, wait 60 seconds, open a fresh one. If it loads blank twice in a row, STOP scheduling for this run. Everything finished is already in pin-drafts.md (Part 7); mark it "built" in storefront-log.md and end the run. The next run or pull sweep picks up the leftovers automatically. Never retry a third time. Before you stop, one more route for reading the scheduled pins list: in the same signed-in Pinterest tab, read Pinterest's own data for it (the page's request /resource/ScheduledPinsResource/get/ with your profile name, paged until it ends; send it with Pinterest's own headers or it answers "Invalid Request": Accept: application/json, X-Requested-With: XMLHttpRequest, X-CSRFToken set to the csrftoken cookie, X-Pinterest-Source-Url: /<profile>/scheduled-pins/, X-Pinterest-PWS-Handler: www/[username]/scheduled-pins.js). It returns every scheduled pin's title, time, board and link, so a pin can still be verified while the page won't draw. Scheduling and deleting still need the page.
-R3. Link and disclosure ship together. Every pin description starts with "#ad" and ends with the DISCLOSURE LINE from MY_RECIPE.txt. A pin with a link and no disclosure, or a disclosure and no link, does not ship.
-R4. No prices, anywhere. Not on the image, not in the title, description or alt text, not on a site page, not in a look idea. Amazon prices change by the hour.
-R5. No third-party IP in any image. No film stills, no character likenesses, no logos, no designer monograms, no team or university crests, no printed brand names, no book titles. Skip any Amazon product whose listing name uses a character, film, toy or designer brand, even if it's perfect.
-R6. No brand names in listings. List titles, pin titles, descriptions, hashtags, alt text and page item names describe the piece ("black velvet square neck mini dress"), never the brand. No real people, films, shows or characters either, even if that's how I describe my theme. One exception: the PIN LINE sentence from 05_RECOMMEND_IT_TOO.txt, when MY_RECIPE.txt says PIN LINE: on.
-R7. The 3-day spacing rule. The two pins of one look never go out on the same day. Pin 1 goes out on the look's date, pin 2 exactly 3 days later. Any two near-identical pins on the account go at least 3 days apart.
-R8. No affiliate links in email. Amazon's rules ban them. If you ever email about a look, link to your own site page, never to Amazon.
-R9. No downloads. Never click a download button, never save anything to the Downloads folder or the computer. Images move by the capture method in Part 4.
-R10. At most 4 images per pin, in total: the first, two fixes in the same chat, and one fresh try from the first prompt with the fix written into it. Still wrong after that: drop the look and log why.
-R11. Every board checked public before the first pin of each run. Open each board in MY_RECIPE.txt. A lock icon next to its name means Secret. If any board is secret, schedule nothing and tell me in one line which board. The only exception is a board MY_RECIPE.txt marks TEST (a dry run on a secret test board).
-R12. Never more than 14 days ahead. Never two pins within 1 hour of each other. Only the PIN slots in MY_RECIPE.txt. Never a pin 1 less than 3 hours from now.
-R13. AI label. If Pinterest's pin builder offers an AI-generated label, turn it on for every pin. If it doesn't, carry on and note "no AI label option" once in the log for that run.
-R14. Signed out = stop. If the Amazon SiteStripe bar is missing on a product page, I'm signed out of Amazon: stop and tell me in one line. Never ship a link without my tag. Never type a password.
-R15. No em dashes in anything you write.
-R16. Browser lock. Before opening Chrome, read browser-lock.txt. If it says "free", write "busy [task name] [YYYY-MM-DD HH:MM]" in my time zone and continue. While you hold it, rewrite that time to now after every look and at least every 20 minutes. If it says busy and that time is less than 45 minutes old, wait 10 minutes and check again, up to 6 times, then end the run and log it. If it's 45 minutes old or more, the task that wrote it has stopped: take it. Write "free" back at the end of the run, even after a failure. Never resize the Chrome window. If every tab stops taking clicks and reads (pages still load but nothing responds), wait 60 seconds and try one fresh tab; still stuck, mark finished work "built" (Part 7 step 3), write "free" and end the run.
-R17. Pinterest's clock. Pinterest's scheduler shows no time zone; it uses the browser's. Before the first pin of each run, read the browser's time zone in a page tab and check it matches MY_RECIPE.txt. If it doesn't, stop and tell me in one line.
-R18. Amazon, gently. Read Amazon pages as they load in the tab, like a person browsing. Never fetch or scrape Amazon pages in the background.
+R1. Publishing is handled by the selected publishing path in MY_RECIPE.txt. The recipe does not use Pinterest scraping, Pinterest internal endpoints, or browser automation to simulate Pinterest publishing.
+R2. The TIME-SAVING path uses the customer's connected Metricool account when the current ChatGPT + Metricool workflow is available and has passed the customer's test publish. The CREDIT-SAVING path prepares the complete Pin package for the customer to schedule through Pinterest's native scheduler.
+R3. Every pin description starts with "#ad" and ends with the DISCLOSURE LINE from MY_RECIPE.txt. A pin with a link and no disclosure, or a disclosure and no link, does not ship.
+R4. No prices, anywhere. Not on the image, title, description, alt text, site page, look idea, or item name.
+R5. No third-party IP in any image. No film stills, character likenesses, logos, designer monograms, team or university crests, printed brand names, book titles, or other protected identifiers.
+R6. No brand names in listings, Pin titles, descriptions, hashtags, alt text or page item names. Describe the item plainly. No real people, films, shows or characters in customer-facing content.
+R7. The two Pins of one look are normally scheduled 3 days apart. Any near-identical Pins should be separated according to the schedule in MY_RECIPE.txt.
+R8. No affiliate links in email. If you ever email about a look, link to your own site page, never directly to Amazon.
+R9. Do not use Amazon-hosted product images as published assets. They are reference material only. Use original generated imagery or customer-owned/licensed imagery.
+R10. At most 4 image-generation attempts per final asset: initial generation, up to two in-place corrections, and one fresh retry with the correction incorporated. If still wrong, drop the look and log why.
+R11. Verify every required destination before a Pin enters the publishing queue. For the Influencer path, the Idea List must resolve. For Associates-only, the site page must resolve before publishing.
+R12. Never schedule more than 14 days ahead in the storefront system, even though Pinterest and Metricool may support longer horizons. The 14-day limit is a product-state safety rule.
+R13. If Pinterest exposes an AI-generated/AI-modified control in the selected publishing path, enable it when appropriate to the actual asset.
+R14. Amazon affiliate links must come from the customer's authorized Amazon workflow. Never invent, alter or substitute a customer's affiliate tag.
+R15. No em dashes in customer-generated copy.
+R16. State is authoritative. Stable LOOK_ID and PIN_ID values prevent duplicate work. Human-readable markdown exports are views of state, not the source of truth.
+R17. Do not silently switch image models, providers, or paid plans when a credit or access limit is reached. Record the waiting state and tell the customer what is required.
+R18. Amazon product research must respect Amazon's current terms and the customer's authorized access. Do not scrape Amazon in the background or bypass access controls.
 
 ====================================================================
 PART 2. PICK THE LOOKS
@@ -94,26 +94,59 @@ No price. No brand. No em dashes. No promise about what the buyer will get or ho
 Write each pin's full copy into pin-drafts.md the moment it's finished.
 
 ====================================================================
-PART 6. SCHEDULE AND VERIFY
+PART 6. PUBLISH AND VERIFY
 ====================================================================
 
-1. Take the browser lock (R16). Check every board is public (R11). Check Pinterest's time zone (R17).
-2. Associates-only path: never schedule a pin until its page loads (08_STOREFRONT_PATHS.txt). Open the page first.
-3. For each pin, fresh tab (R1): Pinterest > Create Pin. Paste the image into the upload box (Part 4, the capture method). Title, description, link, alt text, board, section. AI label (R13). "Publish at a later date" (move the calendar to the pin's month first: a click on next month's date from this month's view doesn't stick; read the date back): pin 1 at the pin 1 slot on the look's date, pin 2 at the pin 2 slot 3 days later (R7). Never over 14 days ahead (R12). Publish. Straight away, before the next pin, set it to "scheduled, not verified" in storefront-log.md and pin-drafts.md. Close the tab.
-4. Verify: open Pinterest's scheduled pins page (pinterest.com/<your profile name>/scheduled-pins/) in a fresh tab and read it (text, not screenshots). Find each pin by its title and time, then open that pin to confirm the board and link (the link shows only on the pin's own page). Only a pin you've seen there is "verified".
-5. Blank twice? R2. Stop, log, end.
+1. Confirm the destination URL is live and belongs to the look being published.
+2. Build the final publishing record for each Pin:
+   pin_id, look_id, image_id, title, description, alt_text, destination_url, board, scheduled_at, publisher, status.
+3. TIME-SAVING PATH:
+   Use the connected Metricool workflow recorded in MY_RECIPE.txt.
+   - Confirm the correct Pinterest brand/profile and board.
+   - Create or schedule the Pin with the final image, title, description, destination URL and board.
+   - Record the returned Metricool post identifier when available.
+   - If the connected ChatGPT + Metricool workflow requires an approval or review step, stop at that state and report the exact approval required. Do not claim the Pin is published.
+   - If the workflow cannot perform the action, leave the Pin in "queued" and use the CREDIT-SAVING path instead.
+4. CREDIT-SAVING PATH:
+   Prepare the complete Pin package for the customer.
+   - Pinterest's native business scheduler supports scheduling standard Pins up to 30 days ahead, with up to 10 future Pins at once.
+   - The customer performs the final scheduling action in Pinterest.
+   - The recipe must not simulate that action with browser automation.
+5. Set the state to "scheduled" only after the selected publishing layer confirms the Pin exists. Otherwise use "queued" or "awaiting_approval".
+6. Verification:
+   - TIME-SAVING: read the scheduled post back through Metricool when supported and confirm image, title, board, link, time and status.
+   - CREDIT-SAVING: the customer confirms the Pin appears in Pinterest's scheduled area.
+7. Never use Pinterest's undocumented internal endpoints or automated scraping to verify Pins.
+8. Never report a Pin as "verified" when the publishing layer has only returned an unconfirmed request.
 
 ====================================================================
-PART 7. LOG, PIN TAB AND LEFTOVERS
+PART 7. STATE, LEFTOVERS AND RECOVERY
 ====================================================================
 
-1. Add each verified pin to pin-tab.md: posting date, time, board, kind, look, title, link, status "scheduled", PULL column empty.
-2. Update storefront-log.md: the look's row, its pin 1 and pin 2 formats, and its status ("verified", or "built" with the reason).
-3. A run that ends early changes its own "building" rows to "built" (if both images and all copy are finished and in pin-drafts.md) or "dropped" (if not). Only the run that wrote "building" may change it, unless browser-lock.txt was "free" or 45 minutes stale when this run started: then any "building" row is from a run that stopped, so mark it "built" if both images and all copy are in pin-drafts.md, otherwise "dropped: run stopped".
-3b. A look dropped after its Idea List was submitted: delete that Idea List from the storefront and log "list removed".
-4. Leftovers: before scheduling any pin logged "built" or "scheduled, not verified", open Pinterest's scheduled pins page and look for its title. Already there? Mark it verified. Otherwise take its copy from pin-drafts.md, open its image from the generator's history (Higgsfield assets or the Gemini chat, found by the date and prompt words in pin-drafts.md), capture it again, and schedule it into the next free slot of its own type (pin 1 slot on a look day; pin 2 slot exactly 3 days after its pin 1, or the next free pin 2 slot if that has passed), before anything new is made. Image gone? Rebuild the product sheet from the look's logged ASINs (Part 3 step 6), regenerate once with Part 4 (and 07_PERSONA_PATHS.txt for a persona photo), check the title letter by letter, update pin-drafts.md with where the new image lives, or log it "dropped: image lost".
-5. Blog half on (09_THE_BLOG_HALF.txt): Influencer path, add the look's page after its pins are verified. Associates-only path, add and verify the page BEFORE scheduling its pins. Either way, open the live page and confirm it loads before logging it live.
-6. Write this run into the Runs table in storefront-log.md (task, date, started, finished, result), then write "free" to browser-lock.txt.
-7. Report to me in one line if everything worked ("Built 4 looks, 8 pins scheduled and verified."). Only add a second line if something needs me, and then say exactly what to do.
-
+1. Every completed Pin is written to structured state immediately. The human-readable pin-tab.md and storefront-log.md are updated from that state.
+2. A run that stops early leaves completed assets and records intact. The next run reconciles existing LOOK_ID and PIN_ID values before creating anything new.
+3. A repeated run must never create a second Pin for the same PIN_ID. If a publisher post ID already exists, reconcile it instead of creating another post.
+4. Leftovers are processed before new looks:
+   - queued or awaiting_approval Pins are resumed first
+   - scheduled but unverified Pins are checked through the selected publishing layer
+   - failed Pins are retried only when the failure is retryable
+   - dropped Pins are never silently resurrected
+5. Pull handling:
+   - A scheduled/unpublished Pin is cancelled through the selected publishing layer.
+   - An already-published Pin must be removed from Pinterest itself. Do not claim that deleting a Metricool record removes an already-published Pinterest Pin.
+   - Record the exact final state: pull_requested, pulled, or pull_failed.
+6. Associates-only path: the destination page must load before publishing. If it does not, the Pin remains queued.
+7. Influencer path: if an Idea List is pending or unavailable, the Pin remains queued and no alternate look/list is substituted.
+8. Image lost: rebuild from the logged product sheet and regenerate once. If the asset cannot be recovered safely, mark the Pin dropped and explain why.
+9. Never silently substitute a new product, destination, board or image after a partial failure.
+10. At the end of every run, write:
+   - run_id
+   - task
+   - started_at
+   - finished_at
+   - result
+   - created IDs
+   - failed IDs
+   - retryable IDs
+11. On renewal date, do not schedule new looks beyond the renewal date. Tell the customer to renew the calendar.
 On the RENEWAL DATE in MY_RECIPE.txt: schedule nothing past it, and tell me in one line that the calendar needs renewing (paste 02_SETUP_PROMPT.txt again and answer "renew").
