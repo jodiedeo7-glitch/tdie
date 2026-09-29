@@ -116,3 +116,89 @@ For a SEPARATE STATIC COVER, the exact headline is embedded directly inside the 
 There is one cover-generation prompt, not a separate image-only prompt plus a separate text-overlay option. If text rendering is imperfect, regenerate the image.
 
 Future research must inspect all observable typography patterns rather than treating every cover as generic bold text.
+
+
+## Updated forensic research pass: 29 Sep 2026
+
+### What is actually verified
+
+The current creator-level analytics sources verify the breakout corpus and Reel-level performance, but they do **not** expose enough cover metadata to calculate a defensible percentage of viral Reels using custom covers versus video stills. That statistic remains NOT VERIFIED.
+
+For example, Content Copilot's current @sam.gaudet dataset contains 179 Reels and identifies the top outliers, but its public breakdown is primarily about hook, format, emotional driver, CTA and cadence rather than cover-source metadata. urlContent Copilot: @sam.gaudethttps://www.contentcopilot.so/playbook/sam.gaudet
+
+Likewise, its @personalbrandlaunch dataset contains 1,423 Reels and extensive Reel-level classifications, but the public dataset does not provide a cover-source/typography field that supports a corpus-level cover calculation. urlContent Copilot: @personalbrandlaunchhttps://www.contentcopilot.so/playbook/personalbrandlaunch
+
+Therefore the system must NOT manufacture a cover statistic from these datasets.
+
+### Observable cover-design patterns from current visual evidence
+
+The current visual search pass does support several recurring design patterns in digital-marketing/personal-brand cover examples:
+
+1. **Short headline blocks rather than paragraph-length copy.**
+2. **Strong type hierarchy** with a dominant headline and smaller supporting text.
+3. **Single dominant focal subject** plus text.
+4. **High contrast between headline and background.**
+5. **Mixed typography is common in designed examples**, including serif + sans combinations and script/display accents. This is observed in visual examples, but is NOT yet a quantified viral-outlier statistic.
+6. **Mixed color emphasis is also used**, often to isolate one keyword or phrase from the rest of the headline. Again, this is an observed design pattern, not a verified causal viral mechanism.
+7. **Text is deliberately composed around the subject**, rather than simply dropped on top of the center of a paused frame.
+8. **Grid-safe central composition is repeatedly emphasized** across current cover guidance.
+9. **Consistent template families** are repeatedly recommended for account-level visual cohesion.
+10. **A custom cover is operationally useful when the natural video frame produces a poor grid tile.**
+
+Examples from current visual search show:
+- serif + script/sans combinations in personal-brand and faceless-business cover templates
+- white headline text over photography with selective italic/script emphasis
+- mixed white/yellow or white/accent-color headline treatments
+- boxed/highlighted individual words
+- large headline + smaller supporting line hierarchy
+- subject offset to create a dedicated text area
+
+These examples establish what should be inspected, not what should automatically be copied.
+
+### Important distinction: cover typography vs Reel overlay typography
+
+Do not assume the typography used on the cover should match the typography inside the Reel.
+
+The research schema now treats them independently because:
+- the cover is a grid/browse asset
+- the opening text is a retention device
+- different jobs can legitimately use different type hierarchy
+- forcing identical typography can reduce clarity
+
+### Current production rule for TDIE
+
+For every custom cover, the calendar must specify the actual researched treatment rather than saying only "bold text."
+
+The single image-generation prompt must specify, when applicable:
+
+- exact words
+- exact capitalization
+- exact line breaks
+- primary font visual category
+- secondary font visual category if present
+- relative size hierarchy
+- relative weight hierarchy
+- emphasized words
+- emphasis method
+- text colors
+- whether a single word/phrase changes color
+- whether a single word/phrase changes style
+- text alignment
+- text block placement
+- relationship to the face/object
+- background contrast
+- grid-safe positioning
+- no extra text
+
+If the source does not let us verify a particular font, use a visual description such as "high-contrast editorial serif" or "clean heavy geometric sans" rather than inventing a font name.
+
+### Research status
+
+- Cover source percentages across the 75-post inspiration corpus: **NOT VERIFIED**
+- Video-still vs custom-cover split: **NOT VERIFIED**
+- First-frame vs later-frame split: **NOT VERIFIED**
+- Cover-text percentage: **NOT VERIFIED**
+- Cover/opening text relationship percentage: **NOT VERIFIED**
+- Typography pattern observations: **VERIFIED as observable design examples, not as corpus statistics**
+- Grid-safe requirement: **VERIFIED as current platform/design guidance**
+- Single-pass embedded text generation rule: **VERIFIED as TDIE production requirement**
