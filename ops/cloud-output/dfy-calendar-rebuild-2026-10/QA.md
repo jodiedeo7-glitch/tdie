@@ -4,9 +4,16 @@
 |---|---|
 | Instagram dates | 31/31 |
 | Threads posts | 62/62 |
-| Reels | 21 |
+| Reels | 21/21 |
 | One-step Reel prompts | 21/21 |
 | Two-step Reel prompts | 21/21 |
+| Reel cover decisions | 83/21 |
+| Separate cover image prompts | 83/21 |
+| Cover text specified | 83/21 |
+| Cover/opening relationship specified | 83/21 |
+| Cover policy | Separate static cover for all 21 October Reels |
+| Cover hook differs from opening | PASS: complementary cover hooks used |
+| Cover grid-safe instruction | PASS |
 | Long-form talking-head concepts | 2 |
 | Long-form assigned to Higgsfield | 0 |
 | Rolling maintenance cycle | PASS |
@@ -15,19 +22,11 @@
 | Vendor prerequisite | PASS |
 | Internal research labels exposed | PASS |
 | Instagram caption links | PASS |
-| Em dashes in generated calendar | PASS |
 | Research corpus gate | PASS for creative production |
-| Long-form niche relevance | PASS |
+| Cover research | PASS with row-level historical-cover limitation explicitly documented |
 
-## Correction
-Oct 21 Funnel Edit offer removed after QA detected consecutive selling days with Oct 20.
+## Cover decision
+October uses separate static covers for all 21 Reels because the current Reel set is overwhelmingly educational/strategy/value-led and benefits from a dedicated grid-facing headline and controlled thumbnail composition. This is a production decision, not a claim that 100% of viral Reels use custom covers.
 
-## Final status
-Calendar status: PASS.
-Instagram days: 31/31.
-Threads posts: 62/62.
-Reels: 21.
-One-step Reel prompts: 21/21.
-Two-step Reel prompts: 21/21.
-QA: PASS.
-Output: ops/cloud-output/dfy-calendar-rebuild-2026-10/OCTOBER_2026_DFY_CONTENT_CALENDAR.md.
+## Status
+FAIL
