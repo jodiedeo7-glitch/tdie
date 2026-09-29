@@ -66,7 +66,7 @@ After generating: save each photo under the file name given, in `ops/cloud-outpu
 ## Pre-generation check (all five)
 
 - Tommy Kate frames open with the reference line, describe no locked feature, and carry her glitter tumbler plus other pink (her knit, hoodie or cardigan). Never "the only pink item".
-- Person-free frames carry exactly one saturated candy-pink object (headphones in 2, the tumbler in 4), each different.
+- Person-free frames carry pink is freely allowed throughout the scene (headphones in 2, the tumbler in 4), each different.
 - Her world only: living room sofa, porch, kitchen island, attic loft, bedroom. No two graphics share a room.
 - Real light, real lens, photorealism language, no text, no logos, no hex codes.
 - Wardrobe from the locked list: oversized knits, hoodie, cardigan over a tee, sweatpants, leggings.
