@@ -107,3 +107,12 @@ The upgraded research prompt now requires row-level cover inspection so future c
 - Position Is Everything, May 17 2026, Reel cover design and grid-safe guidance. citeturn0search2
 - Buzzfy, Jul 8 2026, 26,914-Reel dataset. citeturn0search4
 - Dopameme, Aug 30 2026, same-footage text-hook field test. citeturn0search1
+
+
+## Updated production rule
+
+For a SEPARATE STATIC COVER, the exact headline is embedded directly inside the image-generation prompt. The prompt also specifies the researched typography hierarchy, line breaks, capitalization, emphasis, color treatment, placement and grid-safe composition where applicable.
+
+There is one cover-generation prompt, not a separate image-only prompt plus a separate text-overlay option. If text rendering is imperfect, regenerate the image.
+
+Future research must inspect all observable typography patterns rather than treating every cover as generic bold text.
