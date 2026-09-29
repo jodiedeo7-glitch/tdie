@@ -89,16 +89,16 @@ That's not something that runs while you sleep. That's a second shift.
 
 So here's the thing I promised on Saturday.
 
-It's called The While-You-Sleep Storefront™, and it's my exact Amazon pin machine, handed over. You set it up once and ChatGPT Work handles the recurring workflow:
+It's called The While-You-Sleep Storefront™, and it's a repeatable Pinterest pin workflow, ready for your approved product inputs. You set it up once and ChatGPT Work helps run the recurring workflow:
 
 💗 pick a look for your theme
-🛍️ find the pieces on Amazon and grab YOUR affiliate links
-📋 build your Idea List
-📸 make the flat lay and the lifestyle photo
-✍️ write the pin, with your #ad line
-📌 schedule it, three days apart, and log it
+🛍️ use the product details and affiliate links you provide
+📋 prepare a destination page or Idea List when your account supports it
+📸 prepare images using your configured image tools
+✍️ draft the Pin copy with the required disclosure
+📌 prepare each Pin for your review and approval, then track its confirmed status
 
-No more building, no more selling, no more posting.
+Save time on repeat steps while keeping product choices and publishing in your hands.
 
 And it's search, not social. People are searching for you on Pinterest right now, for the exact look you'd pin. This puts something of yours there when they do.
 
@@ -198,7 +198,7 @@ Your member price is in The Value Vault 👉 [open your member price](https://ww
 
 If you missed the week: it's my exact Amazon pin machine. It picks the look, finds the pieces, grabs your links, makes the images, writes and schedules the pins, and logs every single one. The Brand Closet™ line is in there too, for anyone on Rose's $9/month tier.
 
-No more building, no more selling, no more posting.
+Save time on repeat steps while keeping product choices and publishing in your hands.
 
 If you're in Membership Premium, your half-price code is waiting in The Premium Vault. Premium is $35/month or $297/year, and members-only pricing on new drops is part of what it adds 👉 [see what Premium adds](https://www.skool.com/thedigitalincomeedit/plans)
 
@@ -248,7 +248,7 @@ Use it at the member checkout and you pay $8.50.
 
 [Open the member checkout and use PREMIUM50](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What it is: my own Amazon pin machine. ChatGPT Work scheduled tasks pick a look for your theme, find the pieces with your Amazon affiliate links, build your Idea List, make the images, write the pin copy with your #ad line, schedule the pins 3 days apart and log every one. It runs from your own computer, so it stays on with Chrome signed in.
+What it is: my own Amazon pin machine. ChatGPT Work scheduled tasks pick a look for your theme, use the approved product details and links, prepare a destination page or Idea List when your account supports it, prepare images using your configured image tools, write the pin copy with your #ad line, prepare each Pin for your review and approval, then track its confirmed status. It runs through your configured ChatGPT Work setup; connected actions may require sign-in or your approval.
 
 This code is for Premium members only. Please don't share it outside The Premium Vault.
 
@@ -269,7 +269,7 @@ Everyone told you passive income meant setting something up once and walking awa
 
 Then they handed you a posting schedule.
 
-I got tired of the contradiction, so I built the thing people actually meant. My Amazon looks go to Pinterest on a schedule, and I don't build them. Scheduled tasks on my computer pick the look, find every piece on Amazon with my affiliate links, build the Idea List, make the flat lay and the lifestyle photo, write the pin with its #ad line, schedule it, and log it.
+I got tired of the contradiction, so I built the thing people actually meant. My Amazon looks go to Pinterest on a schedule, and I don't build them. Scheduled tasks on my computer pick the look, find every piece on Amazon with my affiliate links, build the Idea List, prepare images using your configured image tools, write the pin with its #ad line, schedule it, and log it.
 
 It's called The While-You-Sleep Storefront™, and until Thursday night it's $10. [Get the presale for $10](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
@@ -296,7 +296,7 @@ Short one, because the clock is doing the talking.
 
 At 11:59 pm Eastern tonight, The While-You-Sleep Storefront™ goes up to $27. Until then it's $10. [Get it for $10 before midnight](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
-If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks do the rest. They build the looks, make the images, write and schedule the pins, and keep a log you can glance at if you ever want to pull one.
+If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks do the rest. They build the looks, prepare images using your configured image tools, write and schedule the pins, and keep a log you can glance at if you ever want to pull one.
 
 No more building. No more selling. No more posting. People are searching Pinterest for exactly what you'd pin. This puts it there.
 
@@ -320,9 +320,9 @@ BABY you're on your phone working all day for that sale 😩
 
 I got tired of that, so I built the opposite.
 
-My Amazon looks go to Pinterest on a schedule now. Tasks on my computer pick the look, find the pieces, grab my affiliate links, make the images, write the pins, schedule them and log them. While I sleep.
+My Amazon looks go to Pinterest on a schedule now. Tasks on my computer pick the look, find the pieces, grab my affiliate links, prepare images using your configured image tools, write the pins, schedule them and log them. While I sleep.
 
-No more building, no more selling, no more posting.
+Save time on repeat steps while keeping product choices and publishing in your hands.
 
 I cannot and will not gatekeep this, so it's yours: The While-You-Sleep Storefront™. The presale price is $10 for the whole kit until Thursday night. After that, the same kit is $27.
 
@@ -429,7 +429,7 @@ Your Amazon links, turned into Pinterest pins that get built and scheduled on th
 
 Presale: $10. Your kit arrives as a one-page note with the unlock time; the full kit unlocks at 9 am Eastern on Fri 9 Oct 2026 at this same download link.
 
-ChatGPT Work scheduled tasks pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, build your Idea List, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, schedule the pins 3 days apart and log every one. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
+ChatGPT Work scheduled tasks pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, prepare a destination page or Idea List when your account supports it, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, prepare each Pin for your review and approval, then track its confirmed status. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
 
 You'll need: a ChatGPT plan with Work and Scheduled Tasks; ChatGPT Work Cloud on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; a supported connected image provider such as Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
 
