@@ -284,3 +284,23 @@ One-step Reel prompts: [count].
 Two-step Reel prompts: [count].
 QA: PASS or FAIL.
 Output: [path].
+
+
+## LONG-FORM REEL PRODUCTION RULE
+
+Do not treat long-form performance as a reason to generate long cinematic videos.
+
+For October:
+- default to short-form
+- allow approximately 2 long-form talking-head Reels
+- only select them when the researched concept is genuinely stronger as story, educational explanation, "if I started over" strategy, case study/transformation, or substantive authority/opinion
+- those long-form Reels must be designed as HeyGen-compatible talking-head content
+- do not assign them to Higgsfield
+- do not require generated B-roll
+- do not pad the script to hit a duration
+- choose the shortest duration that fully delivers the premise
+
+The research package must identify why each selected long-form Reel is relevant to the TDIE niche.
+
+For all other Reels, prefer short-form structures supported by the research.
+
