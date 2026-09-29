@@ -269,7 +269,7 @@ Everyone told you passive income meant setting something up once and walking awa
 
 Then they handed you a posting schedule.
 
-I got tired of the contradiction, so I built the thing people actually meant. My Amazon looks go to Pinterest on a schedule, and I don't build them. Scheduled tasks on my computer pick the look, find every piece on Amazon with my affiliate links, build the Idea List, prepare images using your configured image tools, write the pin with its #ad line, schedule it, and log it.
+I got tired of the contradiction, so I built the thing people actually meant. My Amazon looks go to Pinterest on a schedule, and I don't build them. Scheduled tasks help organize approved product inputs, prepare a destination page or Idea List when supported, create images and Pin drafts with the required disclosure, and track confirmed status. You review and approve each Pin before scheduling.
 
 It's called The While-You-Sleep Storefront™, and until Thursday night it's $10. [Get the presale for $10](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
@@ -320,7 +320,7 @@ BABY you're on your phone working all day for that sale 😩
 
 I got tired of that, so I built the opposite.
 
-My Amazon looks go to Pinterest on a schedule now. Tasks on my computer pick the look, find the pieces, grab my affiliate links, prepare images using your configured image tools, write the pins, schedule them and log them. While I sleep.
+My approved outfit and product inputs become Pinterest Pin drafts for me to review before scheduling. The configured workflow uses approved product inputs, prepares images and Pin drafts, and tracks confirmed status through the selected publishing path. You review and approve each Pin before scheduling. While I sleep.
 
 Save time on repeat steps while keeping product choices and publishing in your hands.
 
@@ -341,7 +341,7 @@ https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront
 
 Last day for the $10 price 🤍
 
-The While-You-Sleep Storefront™ is my Amazon pin machine. Your links, your theme, your boards, turned into Pinterest pins that get built and scheduled without you.
+The While-You-Sleep Storefront™ is my Amazon pin machine. Your approved product inputs, theme, and board preferences turned into Pinterest Pin drafts for you to review and approve before scheduling.
 
 Pinterest is search. People are searching for you. This makes sure your look is there when they do.
 
@@ -425,13 +425,13 @@ $27.
 
 **Description (presale, until Fri 9 Oct, 9:00 am):**
 
-Your Amazon links, turned into Pinterest pins that get built and scheduled on their own.
+Your approved product links, turned into Pinterest Pin drafts you review before scheduling.
 
 Presale: $10. Your kit arrives as a one-page note with the unlock time; the full kit unlocks at 9 am Eastern on Fri 9 Oct 2026 at this same download link.
 
-ChatGPT Work scheduled tasks pick a look for your theme, find 5 to 8 Amazon pieces with your affiliate links, prepare a destination page or Idea List when your account supports it, make a styled flat lay and a lifestyle photo, write the pin title, description, alt text and #ad line, prepare each Pin for your review and approval, then track its confirmed status. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
+ChatGPT Work scheduled tasks prepare a look from your approved product inputs, use customer-supplied details and links (or an authorized Amazon Creators API integration when configured), prepare images and Pin copy with the required disclosure, and track each Pin through the selected publishing path. You review and approve each Pin before scheduling. An optional second automation turns The Brand Closet™ Outfit of the Day into your own pins, Sunday to Friday nights.
 
-You'll need: a ChatGPT plan with Work and Scheduled Tasks; ChatGPT Work Cloud on a computer that's on during runs, with Chrome signed in; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; a supported connected image provider such as Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
+You'll need: an eligible ChatGPT Work setup with Scheduled Tasks; account access and connected actions may vary and can request sign-in or approval; Amazon Associates (Influencer approval for Idea Lists); a Pinterest business account with public boards; a supported connected image provider such as Higgsfield. The Brand Closet™ line needs Rose's $9/month tier.
 
 **Description (from Fri 9 Oct, 9:00 am):** the same, with the second paragraph replaced by:
 
