@@ -1,64 +1,91 @@
-# OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - RESEARCH
+# OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - FORENSIC RESEARCH
 
 Research timestamp: 29 September 2026
-Research status: PASS
-Viral inspiration posts: 64
-Unique accounts: at least 42
-Verified outliers: 12
-Viral analytics examples: 12
-High performers: 40
-Audience-maturity patterns: documented
-Maintenance-cycle findings: documented
+Research status: PARTIAL
 
-## Objective
+## Current research base
 
-Build a large creative intelligence bank for October, not a single proof point.
+Large quantitative evidence:
+- 26,914 organic Reels
+- 944 creator accounts
+- account-relative viral definition of 3X median
+- frame-level analysis of hooks, structure, overlays and pacing
+- joined with views, watch time, shares and saves
 
-The corpus contains 64 real post examples. The strongest analytics sources include creator-level datasets for @sam.gaudet and @personalbrandlaunch, while the current discovery pass adds 40 current high-performing candidates across the faceless/digital-business/creator-education ecosystem.
+Deep creator-level evidence:
+- @personalbrandlaunch: 1,423 Reels
+- @sam.gaudet: 179 Reels
 
-The evidence classes are intentionally separated. This prevents weak performance evidence from being mislabeled as an outlier while still giving the creation phase dozens of real examples to reverse-engineer.
+Target-niche account evidence:
+- current public discovery examples from faceless digital marketing, digital products, content education and creator-business accounts
 
-## Key finding
+## What happens MORE OFTEN THAN NOT before breakouts?
 
-The month should NOT reset to "you just started Instagram."
+The evidence is not yet strong enough to claim one universal pre-breakout sequence across 25+ target accounts. The deep account datasets do, however, show repeated testing rather than "one magical Reel from nowhere."
 
-The research supports a rolling maintenance model: discovery, education, authority, identity, story, engagement, motivation, objection handling, proof and selling should operate as parallel content functions throughout the month.
+### Sam
+AI-topic testing and list/contrarian structures were already producing elevated posts before the 1.9M breakout.
 
-Large creator datasets demonstrate mixed content goals rather than a fixed monthly onboarding sequence. @personalbrandlaunch's 1,423-reel corpus is explicitly divided across viral, client, community and brand goals, while @sam.gaudet's 179-reel corpus separates reach, brand and community/client functions. citeturn4view2turn5search0
+### PersonalBrandLaunch
+The creator repeatedly recycled and refined the same formula families before and after major hits.
 
-## What October should borrow
+### Large-sample evidence
+Buzzfy's within-account comparisons show that strong hooks beat moderate hooks 67% of the time among 865 creators who posted both, and that first-frame overlay timing is associated with materially higher viral rates.
 
-- specific hooks
-- clear result-first openings
-- contrarian tension when defensible
-- numbered utility
-- comparison
-- questions that resolve live audience decisions
-- demonstrations
-- practical tool/resource reveals
-- story with payoff
-- objection handling
-- occasional identity reminders
-- selling distributed through the month rather than isolated in a sales week
+## What SPECIFIC Reel sets off the breakout?
 
-## What October should NOT borrow
+Examples with strongest evidence:
+- Sam: Mar 14, 2026, 1.9M-view AI + 5-step system Reel.
+- PersonalBrandLaunch: Aug 5, 2024, 7.4M-view "from scratch" Instagram strategy Reel.
+- @onlinedigitalboss: the currently reported 265.7K-view Reel against a stated 1K-3K normal range.
 
-- competitor copy
-- competitor identity claims
-- unsupported earnings claims
-- fake proof
-- prohibited link mechanics
-- a forced beginner sequence
-- a fixed "Week 4 = sales" formula
-- Jodie's personal Gemini/Nano Banana production order
+For Sam, the strongest pre-breakout difference is packaging of an already-tested topic family, not the camera format.
 
-## Deliverables
+For PersonalBrandLaunch, the strongest pattern is formula reuse and refinement, with multiple later breakouts.
 
-See:
-- OUTLIER_LEDGER.md
-- PATTERN_COUNTS.md
-- REPLICATION_RULES.md
-- SOURCES.md
-- QA.md
+## Duration findings
 
-Calendar creation is authorized from this research package, subject to the creation prompt's final QA.
+The 26,914-Reel Buzzfy study reports:
+- 7-12 sec: 11.7% viral
+- 20-45 sec: 8.6-9.0% viral
+- 60-90 sec: 10.9% viral
+- 12 sec or less beat longer Reels 59% of the time within accounts
+
+It does not publish a universal average viral Reel duration.
+
+## Breakout anatomy
+
+Most useful cross-source signals:
+- specific, assertive hook
+- immediate value or tension
+- first-frame text when text is used
+- story/tutorial/utility formats
+- topic-market fit
+- repeatable structure
+- strong watch-through and shares
+- deliberate use of an established formula
+
+## Critical nulls
+
+The large-sample research found:
+- simply having a CTA did not increase virality
+- mirrored spoken-hook text did not increase virality
+- binary presence of music, voiceover or overlays did not materially change virality within accounts
+
+## Maintenance-cycle conclusion
+
+Established creators use content as an ongoing system. Reach, education, authority, story/community and conversion coexist instead of resetting each month.
+
+The October DFY calendar should therefore operate as a rolling maintenance cycle:
+- attract new people
+- remind existing people why to follow
+- teach
+- demonstrate expertise
+- create connection
+- engage
+- handle objections
+- prove when proof exists
+- sell throughout the month
+
+No fixed beginner Week 1.
+No fixed sales Week 4.
