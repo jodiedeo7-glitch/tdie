@@ -100,17 +100,13 @@ Create one primary Instagram content package for every date:
 For each day include:
 - date
 - content type
-- research rule ID(s)
 - hook
-- concept
 - full caption
 - CTA
 - static image prompt when a static image is used
 - Reel package when it is a Reel
 - Story adaptation when appropriate
 - offer/swap-in slot when appropriate
-- production notes
-- research rationale
 
 Use current canon spread rules:
 - at most one selling Instagram post per day
@@ -157,9 +153,7 @@ For every Reel include all of the following:
 
 A. HOOK / OPENING TEXT
 
-B. CREATIVE CONCEPT
-
-C. STATIC START-FRAME IMAGE PROMPT
+B. STATIC START-FRAME IMAGE PROMPT
 - standalone
 - model-agnostic
 - no vendor requirement
@@ -190,7 +184,7 @@ Complete copy-paste video-only prompt containing:
 
 This prompt MUST NOT contain the actual on-screen wording.
 
-F. VERSION B - ON-SCREEN TEXT
+E. VERSION B - ON-SCREEN TEXT
 Separate block containing:
 - exact words
 - line breaks
@@ -200,6 +194,8 @@ Separate block containing:
 - editor notes usable in CapCut, Canva, Claude or another editor
 
 Version A and Version B must be the same concept.
+
+Do not expose internal research references, mechanism labels, replication-rule labels, audience labels, production notes or research rationale in the finished calendar.
 
 Do not make WAN, Grok, Kling, Higgsfield, Gemini or any other named vendor a prerequisite.
 
