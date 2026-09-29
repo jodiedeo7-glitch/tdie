@@ -9,11 +9,11 @@
   "rules": [
     {
       "type": "Text",
-      "globs": ["api/_content/**/*.html"]
+      "globs": ["**/*.html"]
     },
     {
       "type": "Data",
-      "globs": ["api/_content/**/*.pdf"]
+      "globs": ["**/*.pdf"]
     }
   ],
   "assets": {
