@@ -7,10 +7,10 @@
 | Reels | 21/21 |
 | One-step Reel prompts | 21/21 |
 | Two-step Reel prompts | 21/21 |
-| Reel cover decisions | 83/21 |
-| Separate cover image prompts | 83/21 |
-| Cover text specified | 83/21 |
-| Cover/opening relationship specified | 83/21 |
+| Reel cover decisions | 21/21 |
+| Separate cover image prompts | 21/21 |
+| Cover text specified | 21/21 |
+| Cover/opening relationship specified | 21/21 |
 | Cover policy | Separate static cover for all 21 October Reels |
 | Cover hook differs from opening | PASS: complementary cover hooks used |
 | Cover grid-safe instruction | PASS |
@@ -29,4 +29,4 @@
 October uses separate static covers for all 21 Reels because the current Reel set is overwhelmingly educational/strategy/value-led and benefits from a dedicated grid-facing headline and controlled thumbnail composition. This is a production decision, not a claim that 100% of viral Reels use custom covers.
 
 ## Status
-FAIL
+PASS
