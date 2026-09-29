@@ -273,8 +273,9 @@ RESEARCH.md must include at the top:
 OUTLIER_LEDGER.md must contain every row.
 
 QA.md must test:
-- 40 qualifying outliers
-- 25 qualifying accounts
+- 60+ inspiration posts
+- 30+ unique accounts
+- 20+ verified-outlier or viral-analytics examples
 - no duplicate posts
 - no invented metrics
 - every claimed outlier has an evidence basis
