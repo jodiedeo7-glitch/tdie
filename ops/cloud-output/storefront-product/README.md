@@ -1,6 +1,6 @@
 # The While-You-Sleep Storefront™ (working name)
 
-Project sources for turning Jodie's two Amazon Pin workflows into The While-You-Sleep Storefront™ kit and launch funnel. This README began as a 27 Sep 2026 working note and has historical statements that may be stale. Check `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4 and the live account before making claims about product, lesson, or post status.
+Project sources for turning Jodie's two Amazon Pin workflows into The While-You-Sleep Storefront™ kit and launch funnel. This README began as a 27 Sep 2026 working note and has historical statements that may be stale. For current audit and account status, read the latest dated update at the end of `ops/cloud-output/DESKTOP_FINISH_QUEUE.md` and the top of `tests/LIVE_TEST.md`; older entries are historical.
 
 ## What's here
 
@@ -19,7 +19,7 @@ Project sources for turning Jodie's two Amazon Pin workflows into The While-You-
 | `render.mjs` | Source renderer for both PDFs, graphics and thumbnail contact sheet; run and visually inspect outputs before distribution |
 | `run_checks.py` | Runs canon.json `checks` (fail and review) and an em dash check over every file here |
 
-Sales page: branch `storefront-launch`, `src/pages/shop/while-you-sleep-storefront.astro` (never on main until the finish merges it).
+Sales page: source `src/pages/shop/while-you-sleep-storefront.astro` on `while-you-sleep-chatgpt-architecture`; approved copy is live on the Cloudflare `cloudflare-migration` deployment after PR #4. The full storefront branch must not be merged wholesale because it removes Worker configuration.
 
 ## Sources
 
