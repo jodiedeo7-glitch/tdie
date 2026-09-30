@@ -1,3 +1,19 @@
+# New audit readback · 30 Sep 2026 (supersedes older counts/status below)
+
+| Check | Current result |
+|---|---|
+| Metricool account | Read-only brand settings confirm brand 7142540, Pinterest profile TheDigitalIncomeEditTDIE, timezone America/New_York. |
+| Candidate status | Metricool item 384760924 remains draft=true with provider status PENDING. It is not on Pinterest’s scheduled page. The proposed Oct 7, 1:30 pm Eastern time is withdrawn. |
+| Board | Public Pinterest board “Legally Blonde Outfits | Pink Amazon Fashion,” ID 1122311238330934930, matches the board ID on the draft. |
+| Destination | The linked Amazon Influencer list opens publicly as “Pink Workwear for a Freezing Office” and contains six items. |
+| Duplicate check | Pinterest already has Pin 3895549053585431488 scheduled Oct 2, 1:30 pm Eastern on that same board and list. It depicts substantially the same cold-office pink workwear outfit. Do not schedule the current draft unchanged. |
+| Native schedule | Pinterest’s signed-in Scheduled Pins page showed 27 Pins through Oct 6. The candidate was absent. This current count supersedes older counts in the historical sections below. |
+| Release gate | **NOT READY.** Board and destination checks pass. The full customer ChatGPT Work → connected Drive/Metricool → draft/readback/authorization path is still untested in this environment, and this candidate needs a distinct creative before it can be reconsidered. |
+
+No production Pins, schedules, Metricool drafts, or Idea Lists were changed during this readback. Do not reuse the withdrawn Oct 7 time. Older records below remain historical and must not be used as current counts or status.
+
+---
+
 # Live test (DESKTOP_FINISH_QUEUE.md section 4, Step 9)
 
 ## Current storefront release check · 30 Sep 2026
