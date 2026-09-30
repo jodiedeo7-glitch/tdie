@@ -15,7 +15,11 @@ This is a fresh read-only check of the live customer path after the ChatGPT migr
 | ChatGPT Work mode | The current mode selector in the available ChatGPT browser exposes ChatGPT and Codex, not Work. The current Work-composer → publisher end-to-end path could not be exercised from this UI. |
 | Local validations | Astro static build passed with 158 pages. The storefront canon check passed across 65 files with four documented historical `REVIEW` hits in simulated buyer/tester evidence. The first run exposed a Windows default-encoding failure in `run_checks.py`; it now reads UTF-8 explicitly. |
 
-**Release gate remains NOT READY.** The live page must be updated to the current branch and verified after the hosting migration/release, public test artifacts must be cleaned up, and the current customer Work/Drive/publisher path plus production-board verification must pass. No Pin, schedule, Idea List, or Drive document was changed during these checks.
+**Follow-up after migration · 30 Sep 2026.** The user confirmed the Cloudflare migration is complete. The production URL still serves the retired Claude-era page, so the migration has not yet put this branch's storefront copy live. This checkout contains no Wrangler/Cloudflare Pages configuration or deployment workflow; the only GitHub workflow is the Friday canon audit. The local branch is 11 commits ahead of its origin ref. `git ls-remote` could not run because the environment could not initialize Git's HTTPS remote helper; no push or deployment was performed.
+
+Pinterest cleanup verification: signed-in Saved boards shows private `Test: Pink Desk Finds` with 0 Pins. Historical test Pin IDs `3895819637397008064`, `3895828202368103872`, and `3895963182920980160` each open Pinterest's `/?show_error=true` page and none appears on the board. This is consistent with removal, but the error page is not a definitive deletion receipt. No production Pins were touched. Amazon's public storefront still displays both test lists (`Test: Pink Girly Desk Setup`, `Test: Pink Halloween Desk Corner`); the browser is signed out there, so their cleanup remains outstanding.
+
+**Release gate remains NOT READY.** Release and live-page readback, Amazon test-list cleanup, definitive Pinterest test-Pin removal readback, the current customer Work/Drive/publisher path, and production-board verification remain open. No Pin, schedule, Idea List, or Drive document was changed in this follow-up.
 
 Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the throwaway theme "Test: Pink Desk Finds".
 
