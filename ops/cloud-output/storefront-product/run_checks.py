@@ -13,7 +13,7 @@ import json, re, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 HERE = pathlib.Path(__file__).resolve().parent
-canon = json.loads((ROOT / "ops/canon/canon.json").read_text())
+canon = json.loads((ROOT / "ops/canon/canon.json").read_text(encoding="utf-8"))
 checks = canon["checks"]
 
 files = [p for p in HERE.rglob("*") if p.is_file() and p.suffix in {".txt", ".md", ".html", ".astro", ".mjs", ".json"}
@@ -35,7 +35,7 @@ def hits(text, chk):
 
 total = 0
 for f in sorted(files):
-    t = f.read_text(errors="ignore")
+    t = f.read_text(encoding="utf-8", errors="ignore")
     rel = f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
     for level in ("fail", "review"):
         for chk in checks[level]:

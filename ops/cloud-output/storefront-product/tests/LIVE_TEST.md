@@ -1,5 +1,22 @@
 # Live test (DESKTOP_FINISH_QUEUE.md section 4, Step 9)
 
+## Current storefront release check · 30 Sep 2026
+
+This is a fresh read-only check of the live customer path after the ChatGPT migration work. It does not change the historical 27 Sep test results below.
+
+| Check | Result |
+|---|---|
+| Live sales page | **Reached, but stale.** The public page still describes the retired Claude setup, four scheduled task prompts, a computer that must stay on, and automatic posting language. The current branch source instead describes ChatGPT, three canonical recurring task prompts, Cloud/Local account-dependent execution, customer selection of each Pin, and schedule authorization. The live site does not match the current branch and is not ready to sell the migrated kit. |
+| Presale state | Live page displays $10 presale, says it opens Mon 5 Oct 2026 at 7 pm Eastern, and shows checkout closed. This matches the current launch date table; no date or checkout state was changed. |
+| Pinterest schedule | The signed-in native Scheduled Pins page loaded and showed 28 Pins, with existing production Pins scheduled through Tue 6 Oct. This is a native Pinterest read, not proof of the storefront workflow. |
+| Pin destination sample | Existing Pin `3895552140359028032` is scheduled for Mon 5 Oct 2026 at 8:30 pm on `Legally Blonde Outfits | Pink Amazon Fashion` / `Fall`. Its Amazon Influencer list URL opened publicly and showed six items. This verifies that one existing destination resolves; it does not verify the storefront product path. Pinterest had both AI-modified and AI-generated-person disclosures checked for this Pin. |
+| Metricool comparison | Metricool previously returned zero upcoming posts for 30 Sep–3 Oct while Pinterest's native page showed 28 scheduled Pins across its broader queue. Treat Metricool's zero as a connector/query coverage gap, not evidence that Pinterest has no scheduled content. |
+| Public test artifacts | Jodie's Amazon Influencer storefront visibly lists `Test: Pink Girly Desk Setup` and `Test: Pink Halloween Desk Corner`. These test lists remain public. Pinterest test cleanup is still pending; no deletion was performed in this read-only pass. |
+| ChatGPT Work mode | The current mode selector in the available ChatGPT browser exposes ChatGPT and Codex, not Work. The current Work-composer → publisher end-to-end path could not be exercised from this UI. |
+| Local validations | Astro static build passed with 158 pages. The storefront canon check passed across 65 files with four documented historical `REVIEW` hits in simulated buyer/tester evidence. The first run exposed a Windows default-encoding failure in `run_checks.py`; it now reads UTF-8 explicitly. |
+
+**Release gate remains NOT READY.** The live page must be updated to the current branch and verified after the hosting migration/release, public test artifacts must be cleaned up, and the current customer Work/Drive/publisher path plus production-board verification must pass. No Pin, schedule, Idea List, or Drive document was changed during these checks.
+
 Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the throwaway theme "Test: Pink Desk Finds".
 
 ## Progress
