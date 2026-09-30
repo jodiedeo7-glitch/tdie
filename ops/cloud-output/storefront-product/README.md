@@ -6,7 +6,7 @@ Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look 
 
 | Path | What it is |
 |---|---|
-| `kit/` | The customer kit source: 14 numbered files, including three scheduled task prompts, the state schema and the approved Pin visual standard |
+| `kit/` | The customer kit source: 13 numbered files, including three scheduled task prompts, the state schema and the approved Pin visual standard |
 | `While-You-Sleep-Storefront-Kit.zip` | Package is stale; rebuild only after current source review and visual QA |
 | `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Stale binary; source HTML has newer workflow corrections and requires regeneration/visual inspection |
 | `pdf/While-You-Sleep-Storefront-Presale.pdf` | Stale binary; regenerate and inspect with the rest of the package |
