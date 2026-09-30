@@ -7,10 +7,10 @@ Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look 
 | Path | What it is |
 |---|---|
 | `kit/` | The customer kit source: 14 files with numeric prefixes (00 through 13), including three scheduled task prompts, the state schema and the approved Pin visual standard |
-| `While-You-Sleep-Storefront-Kit.zip` | Package is stale; rebuild only after current source review and visual QA |
-| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Stale binary; source HTML has newer workflow corrections and requires regeneration/visual inspection |
-| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Stale binary; regenerate and inspect with the rest of the package |
-| `graphics/` | 4 launch graphics (PNG) with photo placeholders; `photos/` takes the generated photos |
+| `While-You-Sleep-Storefront-Kit.zip` | Current package: 14 numbered kit files plus the setup guide PDF; archive contents and CRC verified |
+| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Regenerated from source HTML and visually checked across all 11 pages |
+| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Regenerated from source HTML and visually checked (1 page) |
+| `graphics/` | 4 launch graphics (PNG); `photos/` holds their source images and the approved outfit-inspiration sample |
 | `IMAGE_PROMPTS.md` | Full prompts for the cover and the 4 graphics |
 | `COPY.md` | Skool (5), emails (2), Facebook (2), Threads (5), both vault lessons, Beacons text, Six M check |
 | `CANON_ROWS_DRAFT.md` | The canon.json and TDIE_CANON.md rows, drafts only |

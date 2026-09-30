@@ -275,54 +275,53 @@ guide.push(`<section class="pg">${top(7)}
   ${foot()}
 </section>`);
 
-// 8 worked example 1
+// 8 approved image example
 guide.push(`<section class="pg">${top(8)}
-  <div class="kicker">Worked example 1 &middot; automation 1</div>
-  <h2>My Pink Witch <em>Halloween Costume.</em></h2>
-  <div style="display:grid;grid-template-columns:330px 1fr;gap:24px">
-    <div class="pins">
-      <div class="pin" style="left:0;top:0;width:200px;height:300px;transform:rotate(-3deg)"><img src="${lf("pink-witch-halloween-costume-flatlay.jpg")}"></div>
-      <div class="pin" style="left:128px;top:112px;width:200px;height:300px;transform:rotate(4deg)"><img src="${lf("pink-witch-halloween-costume-lifestyle.jpg")}"></div>
-      ${sticker("Pin 1<br>&rarr;<br>3 days<br>&rarr; Pin 2", "left:-6px;top:300px;transform:rotate(-8deg);width:112px;height:112px", true)}
+  <div class="kicker">Approved visual example &middot; outfit inspiration</div>
+  <h2>A polished pink outfit <em>inspiration Pin.</em></h2>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start">
+    <div style="position:relative;height:470px;display:flex;justify-content:center">
+      <div class="pin" style="position:relative;width:240px;height:360px"><img src="file://${join(PHOTOS, "pink-outfit-pin-headline-test.png")}" style="object-fit:contain"></div>
+      <p style="position:absolute;left:0;right:0;top:372px;text-align:center;font-size:11px">Approved generated inspiration sample; not a product photo.</p>
     </div>
     <div>
-      <p class="tag">What the weekly task did</p>
+      <p class="tag">What this sample demonstrates</p>
       <table>
-        <tr><td>Picked the look</td><td>From the Halloween window of my calendar.</td></tr>
-        <tr><td>Sourced 6 pieces</td><td>Soft pink velvet witch hat, black velvet square neck mini dress, black platform Mary Jane pumps, pale pink lace gloves, black crescent shoulder bag, gold moon and star drop earrings. Every one from customer-supplied product rows and authorized links.</td></tr>
-        <tr><td>Destination</td><td>Use the customer's selected, verified destination. Its creation and availability depend on the selected Amazon path and connected account.</td></tr>
-        <tr><td>Pin 1</td><td>One generated inspiration flat lay with no baked-in text. A separate headline is added only after framing and image checks.</td></tr>
-        <tr><td>Pin 2</td><td>A second image made with the configured provider only if the customer has selected that path and the required rights and reference are available.</td></tr>
-        <tr><td>Copy and schedule</td><td>Pin copy and disclosure are drafted. The customer checks image, title, destination, board, disclosure, and alt text, then approves any supported scheduling action.</td></tr>
-        <tr><td>Logged and published</td><td>The example illustrates a proposed record only; it is not evidence of a live customer workflow or publication.</td></tr>
+        <tr><td>Composition</td><td>Vertical 2:3 flat lay, complete pieces inside the frame, with comfortable margins and a clean headline band.</td></tr>
+        <tr><td>Headline</td><td>“PINK OUTFIT / ideas” is applied after image generation in a consistent serif-and-script layout.</td></tr>
+        <tr><td>Product fidelity</td><td>Generated outfit inspiration only. The sample does not verify or depict linked retail products.</td></tr>
+        <tr><td>Before scheduling</td><td>Confirm the exact image, destination, public board, disclosure, title, alt text, customer selection, and schedule authorization. Any mismatch keeps it in review.</td></tr>
+        <tr><td>Status</td><td>Visual reference only. This sample was not created or scheduled as a live Pin.</td></tr>
       </table>
     </div>
   </div>
-  <div class="call"><p>No prices anywhere, no brand names in the list or the pins, and nothing from Amazon's own photos posted: they were only the reference for new images.</p></div>
   ${foot()}
 </section>`);
 
-// 9 worked example 2
+// 9 OOTD workflow example
 guide.push(`<section class="pg">${top(9)}
-  <div class="kicker">Worked example 2 &middot; automation 2</div>
-  <h2>My pink color-block hoodie <em>Outfit of the Day.</em></h2>
+  <div class="kicker">Outfit of the Day &middot; workflow example</div>
+  <h2>From lesson to original <em>outfit inspiration.</em></h2>
   <div style="display:grid;grid-template-columns:300px 1fr;gap:24px">
-    <div style="position:relative;height:450px">
-      ${photo("hoodie-flatlay.jpg", "left:0;top:0;width:290px;height:435px", "50% 50%", "hoodie-flatlay.jpg (my own generated flat lay, never Rose's image)")}
+    <div style="height:440px;display:grid;place-items:center">
+      <div class="card" style="width:270px;height:390px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(165deg,#fffdfb,#f8e9ef);border:2px dashed rgba(214,46,115,.55)">
+        <div style="font:800 11px/1.4 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--hot)">Example image omitted</div>
+        <p style="margin-top:16px;color:var(--ink)">Build one original, text-free outfit image from authorized product facts. Inspect it against the visual standard, then add the headline.</p>
+        <p style="margin-top:14px;font-size:12px">Generated outfits are inspiration unless verified item imagery is used.</p>
+      </div>
     </div>
     <div>
-      <p class="tag">What the nightly task did</p>
+      <p class="tag">What the nightly task must do</p>
       <table>
-        <tr><td>Found the lesson</td><td>A new outfit in The Brand Closet&trade; Outfit of the Day Closet course, not yet in my log.</td></tr>
-        <tr><td>Looked, didn't take</td><td>One screenshot of Rose's flat lay, for reference only. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
-        <tr><td>Skipped the Benable links</td><td>Do not use third-party links. Use only customer-supplied product rows and authorized destinations.</td></tr>
-        <tr><td>Destination</td><td>The customer's selected destination must resolve before scheduling.</td></tr>
-        <tr><td>Made new images</td><td>New generated imagery uses the configured provider. Any scene inspiration is rewritten; no image is treated as an exact retail depiction without actual linked-product imagery.</td></tr>
-        <tr><td>Scheduled</td><td>Scheduling is customer-approved and account-dependent; this example does not establish a live schedule.</td></tr>
+        <tr><td>Find lesson</td><td>Read the authorized lesson list and reconcile state before selecting eligible work.</td></tr>
+        <tr><td>Protect member content</td><td>Use lessons only as inspiration. Never copy, save, upload, or publish member-only images, text, or prompts.</td></tr>
+        <tr><td>Use authorized links</td><td>Use the customer's approved product rows and destinations; do not reuse another creator's links or images.</td></tr>
+        <tr><td>Make original art</td><td>Use the configured image provider. Apply the framing and artifact checks in 13_PIN_VISUAL_STANDARD.md.</td></tr>
+        <tr><td>Review and schedule</td><td>The customer selects the exact Pin and authorizes scheduling only after destination, board, disclosure, and metadata checks pass.</td></tr>
+        <tr><td>Report status</td><td>Record only confirmed outcomes. A draft or schedule request is not proof of publication.</td></tr>
       </table>
     </div>
   </div>
-  <div class="call"><p><strong>Example only.</strong> Generated outfit imagery is inspiration unless each pictured item is the actual linked item or a clearly identified customer-owned/licensed product photo. Verify the public board, destination, disclosure, and approval before scheduling.</p></div>
   ${foot()}
 </section>`);
 
