@@ -1,58 +1,49 @@
-STOREFRONT PATHS
-Where your pins send people. Your setup chat picked one from your answers to question 3.
+STOREFRONT AND DESTINATION PATHS
 
-====================================================================
-THE AMAZON INFLUENCER PATH (Idea Lists): the easy one
-====================================================================
+AMAZON ASSOCIATES
+Associates provides the affiliate-link program. Use your own compliant Special Links and an approved publishing destination.
 
-You need: Amazon Influencer approval and a storefront (amazon.com/shop/yourname). Amazon approves Influencers from certain social accounts; check Amazon's current Influencer page for which ones count.
+AMAZON INFLUENCER
+Influencer is part of Associates with additional eligibility and approval. Use the storefront/content features actually enabled on your account. The kit supports your existing eligible public Idea List without requiring a website.
 
-How it works: every look gets its own Idea List in your storefront, holding every piece. Both pins of the look link to that list. Someone taps the pin, lands on a list of exactly the pieces she saw, and a qualifying purchase through it is tracked to your Associates tag.
+CURRENT CAPABILITY, NOT A BLANKET LABEL
+Amazon's April 14, 2026 policy change notice describes Storefront and unique-link features for creators more broadly. Do not claim storefronts can only ever belong to Influencers. Do not promise all Associates can create Influencer content or earn onsite commissions.
+During setup inspect and record: Associates status, Influencer status, Storefront access, Idea List access and onsite eligibility as separate fields. Use UNKNOWN for capabilities that were not observed.
 
-The recipe builds the list for you (03_THEMED_LOOK_RECIPE.txt, Part 3 step 5) and checks it loads before any pin links to it.
+PATH A: EXISTING ELIGIBLE PUBLIC IDEA LIST
+Create/maintain it yourself in Amazon and record its exact URL and selected ASINs.
+Verify list title, contents and destination. An owner-session view does not prove signed-out public visibility; test that separately before marking it passed.
+Low-cost Claude/ChatGPT: ask for a list title/description from your own selected products.
+Manual alternative: write the title/description and maintain the list yourself.
 
-Fallback: if a list truly can't be made or won't load (a piece won't add, the editor won't save, the list is still in review), the pins link to your storefront home and the log says why. Never a single-product link. Never a list for a different look.
+PATH B: YOUR COMPLIANT LIVE WEBSITE
+Create a page with original styling images, plain-language descriptions, your Special Links, affiliate and AI-image disclosure.
+Low-cost Claude/ChatGPT: request one page draft using verified product rows.
+Manual alternative: paste the page and links into your site's editor.
+Time-saving alternative: a supported authorized site connector, followed by live readback.
+Never schedule a Pin to an unpublished page.
 
-No website needed. Nothing to paste. This is the path where "no building, no selling, no posting" is exactly true.
+OPTIONAL AMAZON/PINTEREST CONNECTION
+Use eligible native product tagging only if the connection is visibly available on your account. Read its exact affiliate destination and displayed disclosure. Do not assume it replaces the Idea List, #ad or account disclosure.
+Low-cost/manual: configure and use the native controls yourself.
 
-====================================================================
-THE ASSOCIATES-ONLY PATH (your own site page)
-====================================================================
+DISCLOSURE FOR BOTH PROGRAM PATHS
+Opening affiliate disclosure: #ad.
+Ending kit statement: As an Amazon Associate I earn from qualifying purchases.
+Use that statement prominently on the linked social account/profile as Amazon requires. Being an Influencer does not replace it with an unverified alternate statement.
+Influencer status can be accurately named separately.
 
-You need: an approved Amazon Associates account, and a website where a shop-the-look page can live.
+REGISTER SOURCES
+Keep Amazon's website/social list current. Finish the save and read the registered list back. Never answer factual audience/compliance declarations by guess.
 
-How it works: every look gets a page on your own site, with the look's name, a short intro, the two pin images and every piece linked with your SiteStripe short link. Both pins link to that page. Every link on the page carries rel="sponsored nofollow", and the page carries the disclosure "As an Amazon Associate I earn from qualifying purchases." Link and disclosure ship together.
+LINKS AND IMAGES
+Use your own Special Links, written product attributes and rights-cleared image inputs.
+Amazon-hosted images are not automatically licensed for AI transformation. Explain AI images as styling inspiration and avoid exact-product-photo claims.
+Amazon's current rules permit some opt-in email/SMS/direct messaging use subject to their conditions. The kit may choose website-first email routing as a product convention; do not call all email affiliate links universally banned.
 
-A pin NEVER links to a page that doesn't load. Before any pin is scheduled, the task opens its page. If the page isn't live yet, the pins wait, logged "built", and the next run or pull sweep schedules them once it loads.
+PUBLISHING
+Native Pinterest: customer reviews/schedules the exact finished Pin.
+Approved connector/API: only after account-specific testing and explicit individual approval.
+Metricool records and native scheduled Pins are separate. Reconcile both.
+See SOURCES.md for official references.
 
-TWO KINDS OF SITE
-
-1. A site the tasks can publish to (a Weekend Ecosystem™ site on GitHub): hands-off. 09_THE_BLOG_HALF.txt adds the section in one paste, and the weekly task publishes each look's page before its pins.
-
-2. Any other site builder (Squarespace, Wix, WordPress, Shopify and the rest): the task can't publish there, so this is hand-work, and I'd rather you know that before you choose it. For each look the task writes one file into your folder, pages/<pin 1 date>-<slug>.txt, and you paste it in: about 10 to 15 minutes a look. The file holds, in this order:
-   - the deadline to paste it (12:00 pm the day before its pin 1)
-   - where it goes (a new page or blog post under SITE PAGE BASE)
-   - the page title and the URL slug (the look name, lowercase, hyphens, no dates); the page address is SITE PAGE BASE plus the slug, and it's the link on both pins
-   - a meta description of 155 characters or fewer
-   - the two images to add and their alt text: open your Higgsfield (and Gemini) history, find the two images by the date and prompt words written in the file, and save them yourself (the tasks never download anything, so this one is yours)
-   - an 80 to 150 word intro in your voice, no prices
-   - the numbered item list as ready-to-paste HTML, every link with target="_blank" rel="sponsored nofollow noopener"
-   - the line "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
-   - the disclosure line
-   Paste it, publish it, and the next pull sweep sees the page and schedules the pins.
-
-BEFORE THE FIRST PIN (your setup chat asks you to do both)
-- In Associates Central, Account Settings, your website list includes your site and your Pinterest profile.
-- On Pinterest, start a pin, paste your site's address into the link field, and check Pinterest accepts it. If it refuses, your domain is blocked on Pinterest and this path can't run until that's fixed.
-
-====================================================================
-BOTH PATHS
-====================================================================
-
-Amazon needs every place your links appear listed in your Associates account (Account Settings, websites and mobile apps): your Pinterest profile, and your website if you have one.
-
-New Associates accounts: Amazon has had a first-sales requirement for new accounts. Check the current rule in Associates Central. Pinterest is slow, so if your account is new, don't count on pins alone to meet it.
-
-Disclosure on every pin, both paths: "#ad" at the start of the description and "#ad As an Amazon Associate I earn from qualifying purchases." at the end.
-
-No prices anywhere. No brand names in list titles, page titles or item names. Amazon's own product photos are never posted: they're references for the image generators, nothing more. And never an affiliate link in an email (Amazon's rule): if you ever email about a look, link to your own page.

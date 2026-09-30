@@ -1,70 +1,27 @@
 THE BLOG HALF
-Pins are one half of being found. Google is the other. This file adds a shop-the-look section to your own website, so every look also becomes a page on your own site that Google can find, and your pins can link to your own pages.
+Optional site layer for the Associates-only path or for Influencer customers who want a Google-discoverable shop-the-look library.
 
-====================================================================
-HAVE THE WEEKEND ECOSYSTEM™?
-====================================================================
+TIME-SAVING
+Use the supported site/GitHub connector or authorized site workflow for your site.
 
-Then you already have the site this needs: yours, on your own domain, deploying from GitHub. One paste adds the whole section.
+CREDIT-SAVING
+Paste each page manually into your site builder.
 
-A note on Pinterest, because you've heard me say my domain is blocked there: that block is on MY domain only. It has nothing to do with yours. Your pins can link to your own look pages. (Before your first pin, run the quick test in 08_STOREFRONT_PATHS.txt anyway: paste your address into a pin's link field and make sure Pinterest accepts it.)
+Never make the site depend on automated Amazon Program Content capture.
 
-You also need Chrome signed in to GitHub, with write access to your site's repository, so the weekly task can upload each look.
+Each look page uses:
+- title
+- intro
+- original AI styling images
+- customer-provided compliant Special Links
+- affiliate disclosure
+- AI-generated-image disclosure
+- no prices
 
-STEP 1. Open a Claude session that can work in your website's code folder (in the Claude desktop app, that's Claude Code on your site's folder: the same way you built the site) and paste this:
+The existing page schema is retained. The data source is PRODUCT_SOURCES.md and the generated look record.
 
-------------------------------------------------------------------
-Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same fonts, colors, spacing, header and footer. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
+★ SAVE CREDITS INSTEAD OF TIME?
+Use the supplied page file as a paste-ready package. Do not rebuild the page design by hand each time.
 
-THE DATA
-- A folder src/lifestyle/ holds one JSON file per look plus that look's images, side by side.
-- File names: <slug>.json, <slug>-pin1.jpg and <slug>-pin2.jpg. Images are portrait, roughly 2:3, at least 800 pixels wide. Also accept .jpeg, .png and .webp, and match each JSON image to its file by name without the extension, so "<slug>-pin1.jpg" in the JSON still finds <slug>-pin1.png.
-- JSON fields: slug, title, date (YYYY-MM-DD), category, season (a season or holiday name, or "Evergreen"), intro, images (array of { file, alt }), listLink (the look's Amazon Idea List, or empty on the Associates-only path), items (array of { name, link, note (optional) }).
-- Categories: write a list of 6 to 10 categories that fit my theme (ask me my theme in one question if you can't tell from the site). Each has a slug (lowercase, hyphens only), a name and a one-line blurb in my voice.
-- Be forgiving: an image whose file isn't there is dropped; a look left with no images or no items is skipped; a look whose category isn't in the list is skipped; a JSON file that doesn't parse is skipped with a warning. Only a look slug equal to a category slug, or two looks with the same slug, stops the build, with a clear error naming the slug. Read only the .json files, never the README.
-- Add a README.md inside src/lifestyle/ explaining the format in plain words, with one example JSON.
+The site path does not determine whether Pinterest is API or native UI. Those are separate choices.
 
-THE PAGES
-- /lifestyle: the hub. A headline, one line about the section, a grid of category cards (with a look count or "Coming soon"), then the latest 24 looks as image cards.
-- /lifestyle/<category>: a heading, the blurb, and every look in that category as image cards.
-- /lifestyle/<slug>: one look. Top to bottom: an eyebrow linking back to its category, the title as the H1, the intro, a one-line affiliate notice, the images, then "Shop the look": a numbered list of every item, each name linked to its item link. If the look has a listLink, a button under the list: "Shop every piece on Amazon". Then up to 4 more looks from the same category.
-- Every Amazon link opens in a new tab with rel="sponsored nofollow noopener".
-- Every page in the section ends with this disclosure: "As an Amazon Associate I earn from qualifying purchases. Every link on this page is an affiliate link: if you buy through it, I earn a small commission at no extra cost to you." And this line: "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
-- No prices anywhere. Ever. Amazon prices change by the hour.
-- Add Lifestyle to the site navigation and footer.
-
-WRITTEN FOR GOOGLE
-- Each look page's HTML title is the look's title (the search phrase people type), and its meta description is the intro, cut to 155 characters at a word boundary.
-- One H1 per page. Images carry their alt text from the JSON and use the site's image optimization; the first image loads straight away, the rest lazy-load.
-- Each look page sets its social share image to its first image, and has a canonical link tag with its full address.
-- Add the hub, every category with at least one look, and every look page to the sitemap. A category with no looks yet is left out of the sitemap and marked noindex.
-- Clean, flat URLs with no dates, using the same trailing-slash form as the rest of my site, everywhere (links, canonical tags, sitemap).
-
-FINISH
-Add two example looks built from the README sample, using any two images already in my site as stand-ins, so the section renders. Build the site and fix every error. Show me the hub, one category and one look page running locally. Then delete the two example looks, build again to confirm an empty section still builds and shows "Coming soon", and commit with the message "Add the Lifestyle shop-the-look section". Push. At the very end, print the category slugs on one line starting "LIFESTYLE CATEGORIES:" so I can paste it into MY_RECIPE.txt. Tell me in one line when it's live, with the /lifestyle address. No em dashes in anything you write on the site.
-------------------------------------------------------------------
-
-STEP 2. When the section is live, add these lines to MY_RECIPE.txt (or paste 02_SETUP_PROMPT.txt again, choose "change one answer" and tell it you now have the blog half):
-
-BLOG HALF: on
-CAN PUBLISH TO SITE: yes
-SITE: (your site address, for example https://www.yoursite.com)
-REPO: (your GitHub repo address, for example https://github.com/you/site)
-LIFESTYLE CATEGORIES: (the line the site chat printed)
-
-And check your website is listed in Associates Central (Account Settings, websites and mobile apps). Amazon needs every place your links appear listed there.
-
-STEP 3. That's it. From then on, the weekly task adds each look (after its pins are verified on the Influencer path; before its pins are scheduled on the Associates-only path):
-1. Writes <slug>.json with exactly these fields: slug (the look name, lowercase, hyphens, no dates, 60 characters at most, never equal to a LIFESTYLE CATEGORIES slug or a slug already in storefront-log.md; if it would be, add one describing word), title, date (the look's date), category (one slug from LIFESTYLE CATEGORIES, never a new one), season, intro (80 to 150 words in my voice, no prices), images ([{ "file": "<slug>-pin1.<ext>", "alt": pin 1 alt text }, { "file": "<slug>-pin2.<ext>", "alt": pin 2 alt text }], where <ext> is the real extension of the file uploaded in step 2), listLink, items (every piece: { "name", "link": its SiteStripe short link }). It checks the JSON parses before uploading.
-2. Opens REPO/upload/main/src/lifestyle in a fresh tab and adds both pin images through the file input, straight from the capture method in 03_THEMED_LOOK_RECIPE.txt Part 4 (nothing is downloaded), named <slug>-pin1 and <slug>-pin2. Commit message "Add images: <title>", Commit changes.
-3. Opens REPO/new/main/src/lifestyle?filename=<slug>.json in a fresh tab, pastes the JSON in one paste, checks the file name, commit message "Add look: <title>", Commit changes. Images always go first.
-4. Opens SITE/lifestyle/<slug> after 3 minutes, and again every 3 minutes for up to 15 minutes. Once it loads, the page is logged live. If it still doesn't, the look's notes say "page not live" and the task tells me in one line: "Open Vercel, Deployments, and look at the error on the latest one." It never re-uploads the same files.
-
-====================================================================
-DON'T HAVE THE WEEKEND ECOSYSTEM™?
-====================================================================
-
-You don't need it. The machine runs without a website: on the Amazon Influencer path in 08_STOREFRONT_PATHS.txt, your pins link straight to your Idea Lists. That's the whole thing, working. (Associates only? 08_STOREFRONT_PATHS.txt explains what your path needs.)
-
-If you ever want the blog half too, The Weekend Ecosystem™ is how I'd build the site: $97 one-time, or 3 × $33.33.
-www.thedigitalincomeedit.com/shop/weekend-ecosystem

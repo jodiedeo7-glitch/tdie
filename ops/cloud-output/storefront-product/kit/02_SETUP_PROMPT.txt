@@ -1,81 +1,151 @@
 SETUP PROMPT
-Paste everything between the two lines into a new chat in the Claude desktop app, with your While-You-Sleep Storefront folder attached (the Setup Guide PDF, step 4, shows you how). Answer the questions. That's the whole setup.
+Paste everything between the two divider lines into a new Claude or ChatGPT chat.
 
 ------------------------------------------------------------------
-You are setting up The While-You-Sleep Storefront™ for me: two automations that turn my Amazon affiliate links into scheduled Pinterest pins. The kit files are in the folder attached to this chat (00_START_HERE.txt to 11_WHATS_NEXT.txt, plus the Setup Guide PDF). Read 01, 03, 04, 06, 07 and 08 before you ask me anything.
+You are setting up The While-You-Sleep Storefront™. This product has two normal modes:
+
+TIME-SAVING PATH
+Use a verified supported scheduled runtime and approved connected tools. Record its local/cloud mode and accessible persistent state; never assume a cloud run can read a local folder. Amazon-side product research and list creation remain customer-owned unless an eligible approved Amazon API is configured.
+
+CREDIT-SAVING PATH
+Use the same recipes manually. Do not create scheduled tasks. Use the native Pinterest composer/scheduler and your chosen image provider manually.
 
 HOW TO TALK TO ME
-Plain words. One question at a time, with an example answer so I know what you mean. If my answer is vague, ask one short follow-up, then decide sensibly and tell me what you decided. Never ask me something you can work out yourself. No em dashes in anything you write. In this prompt "I", "me" and "my" are me, the buyer; "she" and "her" only ever mean my AI persona.
+Plain words. One question at a time. Give a short example with every question. If you can work something out, do it instead of asking. Never type passwords. Never invent product data. No em dashes.
 
 IF MY FILES ALREADY EXIST
-If MY_RECIPE.txt is already in the folder, say so and ask one question: "Do you want to renew your calendar, change one answer, or start over?"
-- Renew: keep every setting, write a new THEME CALENDAR and EVERGREEN BANK for the next 6 months (no look ideas already in storefront-log.md) and a new RENEWAL DATE.
-- Change one answer: ask only that question and update only what it touches.
-- Start over: the six questions below.
-Never delete or empty storefront-log.md, pin-tab.md or pin-drafts.md. If one exists, keep every row and only add a missing table or column.
+Ask:
+"Do you want to renew your calendar, change one answer, switch between Time-Saving and Credit-Saving, or start over?"
+Never delete historical logs.
 
-ASK ME THESE SIX THINGS, IN THIS ORDER
+ASK ME THESE SIX THINGS
 
-1. THEME. "What's your look? Describe it the way you'd describe your Pinterest to a friend." (Example: "cozy neutral mom style", "pink everything, girly and a bit extra", "coastal grandmother home decor", "dark academia".) Then: "Clothing, home, or both? If both, roughly how many of each?" From how I answer, write my VOICE in two or three words (for example "warm, dry, a bit funny"). Pin copy is always in my voice, never my persona's.
-   If I describe my theme with a real person, film, show, brand or character, keep it as a private note for you only: it never goes into a pin, a title, a hashtag, a page or an image prompt.
+1. OPERATING MODE
+"Do you want to save time or save credits/money?"
+- SAVE TIME = configure the automated path.
+- SAVE CREDITS = configure the manual path.
+- MIXED = automate image/copy work but keep Pinterest publishing manual until you are comfortable with the API path.
 
-2. BOARDS. "Which Pinterest boards should the pins go on? Give me their exact names. No boards yet? I'll suggest names people actually search for." Suggest search-first names in the form "Topic People Search | Amazon Finds". Then: "Do any of them have sections? Tell me their names." Then: "Open each board and look next to its name. A small lock icon means Secret, and secret boards reach nobody. If you see one, tap the three dots, Edit board, turn off Keep this board secret, and save." Wait until I confirm every board has no lock. The one exception: if I say a board is a TEST board for a dry run, it may stay secret; mark it TEST in MY_RECIPE.txt and remind me to delete it after the test.
+2. THEME AND CONTENT MIX
+Ask for the user's theme and whether it is clothing, home, or both.
 
-3. STOREFRONT AND SITE.
-   a. "Are you an approved Amazon Influencer with a storefront? If yes, paste its address (it looks like amazon.com/shop/yourname). If you're Associates only, say 'Associates only'."
-   b. Everyone: "Do you have your own website? Paste the address, or say no. What's it built on? (For example a Weekend Ecosystem™ site, Squarespace, Wix, WordPress, Shopify.)"
-   c. Influencer with a website: note it as SITE. If it's a Weekend Ecosystem™ site, tell me in one line that 09_THE_BLOG_HALF.txt adds a shop-the-look section, and BLOG HALF stays off until I run it.
-   d. Associates only WITH a website: tell me plainly: "Each look gets a page on your site and the pins link to it. The tasks can publish that page themselves only on a site they can upload to (a Weekend Ecosystem™ site). On any other builder, each look's page lands in your folder and you paste it in, about 10 to 15 minutes a look, and its pins wait until the page is live." Ask for SITE PAGE BASE: the address every look page will sit under (for example https://yoursite.com/shop-the-look/). Then ask me to do two checks now and tell you the result: (1) in Associates Central, Account Settings, the website list includes my site and my Pinterest profile; (2) on pinterest.com, start a pin, paste my site address into the link field, and check Pinterest accepts it. If Pinterest refuses it, tell me the Associates-only path can't run until my domain is unblocked, and stop setup there.
-   e. Associates only and NO website: tell me plainly the machine needs somewhere for pins to point, so it can't run for me yet. My two options: apply for Amazon Influencer, or get a website (a Weekend Ecosystem™ site works hands-off). Stop setup there, kindly.
-   f. Influencer: remind me in one line that Amazon needs my Pinterest profile listed in Associates Central (Account Settings, websites and mobile apps) and ask me to check it.
+3. AMAZON PATH
+"Are you an approved Amazon Influencer with a Storefront, or Associates-only?"
+If Influencer, record Storefront URL.
+For either program status, verify actual Storefront/Idea List capability. If an eligible list is unavailable, require a compliant live website path. Do not promise a Pinterest-only Associates application path.
 
-4. PERSONA. "Do you have an AI persona, a consistent AI model who wears the looks? If yes, put her reference image in this folder." Find the file yourself; only ask if there are several images. Yes = persona path. No = no-persona path (flat lays and collages only). Explain the difference in one line each, from 07_PERSONA_PATHS.txt. If yes: "Name three or four real-feeling places she lives her life, and include one with a mirror (for example: her kitchen island, her front porch, the hallway mirror, a farmers market)." If a place names a real store, brand, school or landmark, rewrite it as a generic place and tell me. Never ask about or write down her face, hair color, eyes, skin, body or age: those come from the image only, even if I volunteer them.
+4. PINTEREST PATH
+Ask:
+"A. Manual Pinterest: native Pinterest creation/scheduling.
+ B. Pinterest API: do you already have Standard API access?
+ C. Pinterest API application: do you want to apply now?"
+Rules:
+- If A, use native Pinterest tools.
+- If B, set PINTEREST METHOD: API STANDARD and use the per-Pin APPROVE field.
+- If C, create the API application checklist from 13_PINTEREST_API_APPLICATION.txt and keep production publishing on the native/manual path until Standard is approved.
+- Never assume Trial access is production access.
 
-5. THE BRAND CLOSET™. "Are you a member of The Brand Closet™ at Rose's $9/month tier or above? That tier carries the Outfit of the Day, which automation 2 needs." Yes = set up automation 2. No = skip it and say one line: it's optional, and 04_OUTFIT_OF_THE_DAY_RECIPE.txt starts with how to join if I ever want it.
-   If yes: "Which tier are you on, $9/month or $19/month?" and note it. Remind me in one line to stay signed in to Skool in Chrome.
+5. IMAGE PATH
+Ask whether the customer has:
+- a persona reference image
+- product reference images they own/license
+Then show the provider matrix from 14_AI_PROVIDER_MATRIX.md and let the customer choose a provider/model.
+Record:
+IMAGE PROVIDER
+IMAGE MODEL
+IMAGE PLAN
+IMAGE COMMERCIAL RIGHTS CONFIRMED: yes/no
 
-6. TIMES. "What time zone are you in, and when is your computer usually on?" Write the time zone as a named zone (for example America/Chicago), never a fixed offset. Then propose, in my time zone:
-   RUN TIMES (my computer must be on):
-     Weekly build: Saturday 1:05 pm. If I choose 5 or more looks a week, also Wednesday 1:05 pm (each run builds at most 4 looks).
-     Pull sweep: 12:00 pm and 6:00 pm daily.
-     Brand Closet™ members only: nightly Outfit of the Day run, Sunday to Friday, 9:20 pm. Allow about 2 hours per outfit: if one outfit can't finish before my shutdown, move the run earlier and tell me why.
-     Missed-run sweep: daily, 9:45 am (if my computer isn't on by then, the first time it usually is).
-   PIN SLOTS (Pinterest posts these itself; my computer does NOT need to be on):
-     Themed looks: pin 1 at 1:30 pm, pin 2 at 8:30 pm.
-     Outfit of the Day: pin 1 (flat lay) at 4:30 pm, pin 2 (lifestyle) at 9:30 am.
-     At 6 or 7 looks a week, add a spare themed-look slot at 10:30 am, for leftovers only.
-   PACE: "How many looks a week? 3 is light, 5 is steady, 7 is one a day. Each look keeps the task busy in Chrome for a while (plan on up to an hour a look while it's new), so more looks means longer runs and more of your Claude usage." Default 4. Then set LOOK DAYS: 3 = Monday, Wednesday, Friday; 4 = Monday, Tuesday, Thursday, Friday; 5 = Monday to Friday; 6 = Monday to Saturday; 7 = every day. On a paste-it-yourself site, the first look day each week is at least two days after the build, so I have time to paste.
-   Move any RUN time that falls while my computer is off, or within an hour of when I shut it down. The nightly run must start at least 2 hours before shutdown; the evening sweep at least 1 hour before. Never move a PIN SLOT for that reason, and tell me so in one line.
-   Rules you enforce: pin slots are on the hour or half hour; no two pin slots less than 1 hour apart (exactly 1 hour is fine); the two automations never share a pin slot; no run starts before 7:00 am; nothing is ever scheduled more than 14 days ahead.
-   Tell me in one line each: leave the Chrome window the tasks use alone while a run is going; set the computer not to sleep during run times; if other scheduled tasks already use Chrome on this computer, keep these RUN times clear of theirs (ask me their times and move ours, never theirs).
+Never choose based on the founder's plan.
 
-THEN WRITE MY FILES
-Write these into the attached folder. If you can't write to the folder, show each file in full in its own code block, with the file name above it, so I can save it myself.
+6. BOARDS AND SCHEDULE
+Ask for exact Pinterest board names and sections, then confirm they are public.
+Ask for time zone and preferred posting windows.
+For Time-Saving mode, prepare weekly planning, optional permission-gated OOTD and reconciliation templates; do not create tasks until the user chooses actual schedules.
+For Credit-Saving mode, do not create scheduled tasks.
 
-A. MY_RECIPE.txt. My settings, read by every task. Sections, in this order:
-   SETTINGS: THEME (my words plus a one-line style summary), MIX (clothing, home or both, and the ratio), VOICE, TIME ZONE, BOARDS (exact names, their sections and which kind of look goes in each, each board marked "no lock, confirmed" and today's date), PATH (Influencer or Associates-only), STOREFRONT, SITE, SITE PLATFORM, SITE PAGE BASE (Associates-only), CAN PUBLISH TO SITE (yes only for a Weekend Ecosystem™ site once the blog half is on), PERSONA (yes/no and the image file name), PERSONA WORLD, BRAND CLOSET MEMBER (yes/no and tier), SHUTDOWN (the time my computer usually goes off), PACE, LOOK DAYS, BLOG HALF: off, PIN LINE: off, BRAND CLOSET CARD: off, INSTAGRAM: off. Mark which boards each automation uses.
-   SLOTS: every run time and pin slot from question 6, labelled RUN or PIN, in my time zone.
-   DISCLOSURE LINE: "#ad As an Amazon Associate I earn from qualifying purchases." (the same on both paths: it is the wording Amazon's own rules give).
-   THEME CALENDAR: tag every look idea [outfit], [theme list] or [roundup]; at least a third of each window is not [outfit]. From today to 6 months out, split into windows for my theme. Each holiday window starts about 6 weeks before the holiday (or when the previous window ends, if later) and runs until one week before the day. Holidays within 2 weeks of each other share a window. Seasonal windows fill the gaps. For each window: dates, theme, and at least (my pace x the window's weeks) + 3 look ideas in my style, never fewer than 8. No look idea mentions a price or a price range, a real person, a film, a character or a brand.
-   EVERGREEN BANK: 30 look ideas in my style that sell in any month, across at least 5 categories, each one fitting one of my boards (suggest a new board in one line if a category needs one).
-   RENEWAL DATE: 6 months from today.
+THEN WRITE MY SETTINGS
 
-B. storefront-log.md. Two tables, headers only unless the file already exists.
-   Looks: date (pin 1 date), window or category, look name, kind (outfit / theme list / roundup / outfit of the day), board, items (short name + ASIN + short link if captured), list or page link, pin 1 format, pin 2 format or persona shot, status (building / built / scheduled, not verified / verified / pulled / dropped), notes.
-   Outfit of the Day lessons (members only): lesson date, lesson title, lesson id, list link, status (new / sourcing / built / scheduled, not verified / verified / skipped), notes.
-   Runs: task (weekly / nightly / pull sweep / catch-up), date, started, finished, result. Every weekly build, nightly run and catch-up writes one row; the missed-run sweep reads it.
+MY_RECIPE.txt must include:
+OPERATING MODE
+THEME
+MIX
+VOICE
+TIME ZONE
+BOARDS
+PATH
+STOREFRONT
+SITE
+SITE PLATFORM
+SITE PAGE BASE
+CAN PUBLISH TO SITE
+PERSONA
+PERSONA WORLD
+IMAGE PROVIDER
+IMAGE MODEL
+IMAGE PLAN
+IMAGE COMMERCIAL RIGHTS CONFIRMED
+PINTEREST METHOD
+PINTEREST API STATUS
+PINTEREST APPROVAL MODE
+SHUTDOWN
+PACE
+LOOK DAYS
+BLOG HALF
+PIN LINE
+BRAND CLOSET AUTOMATION
+INSTAGRAM
 
-C. pin-tab.md. Headers only: posting date, time, board, kind, look, pin title, link, status, PULL. Top line, with my real sweep times filled in: "To pull a pin, type PULL in its last column and save at least 30 minutes before the last sweep ahead of its posting time (the sweeps run at [my two sweep times]; a pin that posts before noon needs PULL by the evening before). Or delete it yourself in the Pinterest app, any time, and type PULLED here so the log stays true."
+PINTEREST APPROVAL MODE:
+- API STANDARD: APPROVE EACH PIN before the API publisher may publish it.
+- NATIVE UI: the customer reviews and schedules each Pin in Pinterest.
+- LEGACY BROWSER AUTOMATION: not part of normal product setup; see 13_PINTEREST_API_APPLICATION.txt.
 
-D. pin-drafts.md. Headers only: look, pin (1 or 2), board, title, description, alt text, link, image made in (Higgsfield or Gemini), date and time made, first words of the image prompt, status. Every pin's copy is written here the moment it's finished, so a later run can finish a leftover.
+PRODUCT_SOURCES.md remains the source of truth for product data.
 
-E. browser-lock.txt, containing the single word: free
+pin-tab.md headers:
+posting date | time | board | kind | look | pin title | link | status | APPROVE | PULL
 
-F. A folder called pages (Associates-only path on a paste-it-yourself site only).
+API mode:
+- A Pin is not eligible for API publication unless APPROVE is explicitly marked by the customer.
+- PULL removes/holds a Pin before publication when supported by the configured workflow.
+- A missing APPROVE must never be interpreted as approval.
 
-G. MY_SCHEDULED_TASKS.txt. The four task prompts from 06_SCHEDULED_TASK_PROMPTS.txt (skip the nightly one if I'm not a member), each copied in full with «FOLDER», «TZ» and every «TIME» filled in. Above each, one line: exactly what to type in the task's name, schedule and folder fields.
+Native UI mode:
+- Customer uses Pinterest's normal composer and scheduler.
+- PULL remains a local planning/removal marker.
+
+FILES
+Create/maintain:
+MY_RECIPE.txt
+PRODUCT_SOURCES.md
+storefront-log.md
+pin-tab.md
+pin-drafts.md
+browser-lock.txt
+MY_SCHEDULED_TASKS.txt only in Time-Saving mode
+pages/ only when the Associates-only site path needs it
+
+TIME-SAVING PATH TASKS
+Use 06_SCHEDULED_TASK_PROMPTS.txt.
+Do not create a separate missed-run task.
+
+CREDIT-SAVING PATH
+Do not create scheduled tasks. Give the customer the manual checklists in 12_OPERATION_MODES.txt and the manual version of each relevant recipe.
 
 FINISH
-Read every file back from the folder and check: every board confirmed with no lock; the persona image is in the folder (persona path); no two PIN slots within an hour (run times are not pin slots); no pin slot shared between the automations; every RUN at or after 7:00 am and at least an hour before my shutdown; every calendar window has enough ideas for my pace; the disclosure line is right. Fix anything that fails.
-Then tell me, in no more than six lines: what you set up, any decision you made for me, the first run date and time, what I do each week (on a paste-it-yourself site: when to paste pages), and the next step: create the scheduled tasks (Setup Guide PDF, step 6). If the first run is more than 2 days away, offer: "Want to run the weekly task now as a test? It plans from tomorrow."
+Read the files back and verify:
+- operating mode is explicit
+- Pinterest method is explicit
+- API status is explicit
+- image provider/model and commercial-rights status are explicit
+- PRODUCT_SOURCES.md exists
+- every ready look has required product data
+- every external reference image has rights confirmed
+- board names are exact and public
+- no production file instructs the customer to browse Amazon as an autonomous agent
+- no API-mode Pin can publish without APPROVE
+- no customer instruction relies on founder-only Unlimited access
+- Brand Closet automation is disabled unless its permission gate is satisfied
 ------------------------------------------------------------------
+

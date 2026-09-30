@@ -1,30 +1,33 @@
 THE WHILE-YOU-SLEEP STOREFRONT™
 Start here
 
-Your Amazon links, turned into Pinterest pins that go out on a schedule, pointing people who are already searching for the look straight to your Idea Lists (or your own shop-the-look pages).
+Your Amazon product choices become Pinterest pins that go out on a schedule, pointing people who are already searching for the look straight to your Idea Lists (or your own shop-the-look pages).
 
-You set it up once. After that, scheduled tasks in the Claude desktop app do the building: they pick the look, find the pieces on Amazon, grab your affiliate links, make the images, write the pin copy, schedule the pins and log everything. On the Amazon Influencer path, you don't build, you don't sell, you don't post. (One path has hand-work: Associates only, on a website the tasks can't publish to, you paste each look's page in yourself, about 10 to 15 minutes a look. 08_STOREFRONT_PATHS.txt explains.)
+You set it up once. After that, scheduled work can build the downstream work: it takes the products and affiliate links you provide, makes the images, writes the Pin copy, prepares the queue and, in the approved API path, can publish only Pins you explicitly approve. Product selection and Amazon-side actions are deliberately kept outside the automated agent path. On the Influencer path, you still create the Idea List yourself, then the machine takes over. On an Associates-only site path, you may also paste a generated page yourself. 08_STOREFRONT_PATHS.txt explains the two paths.
 
 Two things you should know before you start, because I'd rather you hear them now than find out on day three:
 
-1. The tasks run from your own computer. It needs to be switched on, with Chrome open (a minimized window is fine; the tasks handle it) and signed in to Amazon, Pinterest, your image tools and (for the Outfit of the Day) Skool, at the times the tasks run. If the computer was off when a run was due, the daily missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so your computer doesn't need to be on when they go live.
-2. Nothing is ever posted without leaving a trail. Every pin the tasks schedule is written to your pin tab and your log. Glancing at them is optional. It's also how you pull anything you don't like before it goes live: type PULL next to it by 11:30 am on its posting day (by 5:30 pm the day before, for a pin that posts before noon), or delete it yourself in the Pinterest app any time.
+1. Scheduled runs must use the state and tools actually available to their confirmed local or cloud runtime. Test that before enabling automation.
+2. Every Pin is written to the queue before publication. In API mode, you must explicitly APPROVE each Pin. In native Pinterest mode, you create/schedule it yourself. PULL remains a removal/hold control, not API publication approval.
 
 WHAT'S IN THIS KIT
 
   00_START_HERE.txt                You're reading it.
   01_REQUIREMENTS.txt              What you need before you start. Read this first, honestly.
   02_SETUP_PROMPT.txt              Paste once. It interviews you and writes your own recipe and log files.
-  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks (any theme, any season).
-  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2: The Brand Closet™ Outfit of the Day (members only).
-  05_RECOMMEND_IT_TOO.txt          Optional: putting The Brand Closet™ on your own pages.
-  06_SCHEDULED_TASK_PROMPTS.txt    The four scheduled tasks (weekly build, nightly run, pull sweep, missed-run sweep).
-  07_PERSONA_PATHS.txt             With your own AI persona, or flat lays and collages only.
-  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only.
+  03_THEMED_LOOK_RECIPE.txt        Core themed-look workflow.
+  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Brand Closet™ path, permission-gated and not core launch.
+  05_RECOMMEND_IT_TOO.txt          Optional Brand Closet™ referral card.
+  06_SCHEDULED_TASK_PROMPTS.txt    Time-Saving scheduled tasks only.
+  07_PERSONA_PATHS.txt             Persona or person-free image paths.
+  08_STOREFRONT_PATHS.txt          Amazon Influencer, Associates-only and Amazon Storefront/Pinterest paths.
   09_THE_BLOG_HALF.txt             Adding a shop-the-look section to your own site.
-  10_INSTAGRAM_ADD_ON.txt          Optional. Instagram is not part of the core machine.
-  11_WHATS_NEXT.txt                Recommending this kit, and the done-for-you option.
-  While-You-Sleep-Storefront-Setup-Guide.pdf   The numbered setup steps, with two real worked examples.
+  10_INSTAGRAM_ADD_ON.txt          Optional Instagram add-on.
+  11_WHATS_NEXT.txt                Next steps.
+  12_OPERATION_MODES.txt            Time-Saving vs Credit-Saving.
+  13_PINTEREST_API_APPLICATION.txt Pinterest API application and demo video.
+  14_AI_PROVIDER_MATRIX.md          Account capability and budget worksheet.
+  While-You-Sleep-Storefront-Setup-Guide.pdf   The numbered setup steps, with manual alternatives at each step.
 
 THE ORDER
 
@@ -34,6 +37,9 @@ THE ORDER
 
 HOW LONG IT TAKES
 
-Setup is about 5 minutes of your time once your accounts are in place: you paste one prompt and answer six questions (a couple have a quick follow-up). The runs themselves take longer, and a build keeps Chrome busy for a while (plan on up to an hour a look while it's new), but it's the task doing the work, not you.
+Setup is designed to be short once your accounts are ready. The recurring build is downstream of your product intake: you choose the products and create the destination list or page, then the task handles image creation, copy, scheduling and logging. That boundary is intentional.
+
+★ Prefer to save credits instead of saving time? Use 12_OPERATION_MODES.txt and the starred manual callouts in the recipes.
 
 What it does NOT promise: sales. Pinterest is search. Pins get found over weeks and months, not hours, and nobody can tell you when a pin will get its first click. This kit builds and runs the machine. What people buy is up to them and Amazon.
+
