@@ -11,7 +11,7 @@ export const CHECKOUT =
 const STAGES = {
   full:      { cta: "Get my Weekend Ecosystem\u2122", href: "CHECKOUT", eyebrow: "Standalone Course \u00b7 $97 one-time or 3 \u00d7 $33.33",
                note: "$97 one-time, or three payments of $33.33. Both options at checkout. Every future update included.",
-               access: "Access is tied to the email you buy with, so use one you check. I unlock each purchase by hand, usually within the hour during waking hours, but please allow a few hours. You'll get an email the moment you're in." },
+               access: "Access is tied to the email you buy with, so use one you check. Access is added automatically, usually within an hour of purchase. You'll get an email as soon as your course is ready." },
 };
 
 const base = STAGES[STAGE];
