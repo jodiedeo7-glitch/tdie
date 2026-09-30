@@ -70,6 +70,7 @@ Create/schedule only that approved Pin with its final image, verified board, tit
 If the image is in connected Google Drive and Metricool's Google Drive connection is available, use the supported external-media upload path rather than making the asset public.
 Record the returned publisher post ID. Read the scheduled record back when supported and compare the image, title, board, destination, time and status.
 If Metricool or ChatGPT requires a separate platform approval, set awaiting_approval and stop. Do not call the Pin scheduled until the publisher confirms it.
+For Metricool, `PENDING` means the post is scheduled and waiting for its publication time; it does not by itself mean review is required. Keep the Pin in `scheduled`, retain the read-back record, and verify `published` only after Metricool or Pinterest confirms publication. A Metricool-scheduled post need not appear in Pinterest's native Scheduled Pins list before it publishes.
 
 BATCH FALLBACK:
 If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV only for individually selected and schedule-authorized Pins. A CSV is a handoff, not proof of scheduling or publication. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
