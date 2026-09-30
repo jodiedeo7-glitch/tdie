@@ -7,10 +7,10 @@
 - Member receipt preview shows the ZIP and customer portal access.
 - Live member checkout opens. Stripe read-only order summary: live mode, USD 1700 minor units ($17), no recurring/future charge flag.
 
-## Corrected document awaiting final attachment removal
+## Corrected public presale delivery verified
 - Public presale product a2e4f613-9431-4fd0-ad76-84415e14aa39 delivered an old one-page note requiring Claude tasks/Chrome, Gemini and Higgsfield.
 - New 3.15 KB one-page presale PDF includes low-cost existing-Claude/ChatGPT and fully manual paths. No extra paid tools required for manual use. Full release remains planned October 9, 2026 at 9 am Eastern.
-- New note uploaded alongside old 417.88 KB note. Final removal of old attachment requires separate action-time deletion confirmation. Do not mark replacement complete while both remain.
+- After confirmation, refreshed file list shows only the corrected 3.15 KB PDF; old 417.88 KB file is absent. Configured download SHA-256 F302FABCB866FA7FA9BE1185A68DBD18C988C479ACB760EB8F2E221E16EA4480 matches the approved PDF.
 
 ## Unverified
 - Completed buyer payment and actual receipt email: no order placed and no email sent.
@@ -20,4 +20,5 @@
 - Withdrawn October 7 Metricool draft retains its stored date; automatic publishing is disabled.
 
 ## Next actions
-Confirm removal of old presale attachment and re-download new note. Then verify checkout timing and the release switch. Complete a real or supported no-cost test order only with the specific recipient and payment/spending authorization, and inspect receipt/customer portal delivery.
+Public presale file replacement and configured download are verified. Public $10 checkout is already accessible September 30 despite the stated October 5 opening; inspected Coming soon is a manual waitlist switch, with no timed release verified. Follow RELEASE_CHECKLIST.md. Cloudflare build diagnostics redirect to sign-in; Vercel status passed for commit 540d6e90cb561f8347a4eac53bce1658ad442fe0. Complete a real or supported no-cost test order only with the specific recipient and payment/spending authorization, and inspect receipt/customer portal delivery.
+
