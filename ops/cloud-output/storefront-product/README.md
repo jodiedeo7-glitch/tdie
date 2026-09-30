@@ -1,15 +1,15 @@
 # The While-You-Sleep Storefront™ (working name)
 
-Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look line and The Brand Closet™ Outfit of the Day line) turned into one standalone, sellable kit, with its funnel, and an audit of Jodie's own running setup. **Nothing is published, listed or registered.** Every account step is in `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4.
+Project sources for turning Jodie's two Amazon Pin workflows into The While-You-Sleep Storefront™ kit and launch funnel. This README began as a 27 Sep 2026 working note and has historical statements that may be stale. Check `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4 and the live account before making claims about product, lesson, or post status.
 
 ## What's here
 
 | Path | What it is |
 |---|---|
-| `kit/` | The customer kit source: 14 files with numeric prefixes (00 through 13), including three scheduled task prompts, the state schema and the approved Pin visual standard |
-| `While-You-Sleep-Storefront-Kit.zip` | Current package: 14 numbered kit files plus the setup guide PDF; archive contents and CRC verified |
-| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Regenerated from source HTML and visually checked across all 11 pages |
-| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Regenerated from source HTML and visually checked (1 page) |
+| `kit/` | The customer kit source: 14 files with numeric prefixes (00 through 13), including three canonical recurring task prompts, the state schema and approved Pin visual standard |
+| `While-You-Sleep-Storefront-Kit.zip` | Buyer package: 14 numbered kit files plus the setup guide PDF; rebuild and verify after any source or guide change |
+| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Generated from `render.mjs`; verify all pages after each rebuild |
+| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Generated from `render.mjs`; verify after each rebuild |
 | `graphics/` | 4 launch graphics (PNG); `photos/` holds their source images and the approved outfit-inspiration sample |
 | `IMAGE_PROMPTS.md` | Full prompts for the cover and the 4 graphics |
 | `COPY.md` | Skool (5), emails (2), Facebook (2), Threads (5), both vault lessons, Beacons text, Six M check |
@@ -29,7 +29,7 @@ Historical Claude folder references are not runtime dependencies. The current cu
 
 ## Founder decisions (27 Sep 2026), all applied
 
-1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
+1. **Branch scope.** The sales-page source is present in the current storefront architecture branch. Do not rely on the old `storefront-launch` merge instruction; inspect the current branch and deployment state before any release.
 2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
 3. **Skool and Facebook posts** rewritten against the posting system rules and four approved posts (see `COPY.md`). The two-link cap wins over "each link twice".
 4. **Brand Closet™ line** follows the visible, authorized course interface and current recipe. It uses customer-approved product rows and links, does not reuse member-only materials or third-party destinations, uses bounded recovery, and requires public-board verification plus per-Pin customer selection and schedule authorization.
@@ -37,9 +37,9 @@ Historical Claude folder references are not runtime dependencies. The current cu
 6. **Vault call:** one member-pricing lesson in BOTH vaults; Premium pays half, not nothing; recorded as its own numbered decision in `CANON_ROWS_DRAFT.md`.
 7. **Canon rows first:** finish step 4, before any Beacons product.
 8. **Amazon search:** the kit reads pages as they load and never fetches in the background (recipe rule R18); the requirements page states the account risk plainly.
-9. **Missed runs:** a fourth task, the daily 9:45 am missed-run sweep, backed by a Runs table every build and nightly run writes.
-10. **Live test** in the buyer's shoes (finish step 9) gates the presale and answers every open item in `tests/ROUND_2.md`.
-11. **Pinterest API:** scheduling stays in the browser.
+9. **Missed runs:** reconciliation is the current third task and handles missed or stale work from structured state. The separate fourth sweep belongs to the retired legacy architecture and is not a canonical task.
+10. **Live test** in the buyer's shoes (finish step 9) gates launch readiness; historical buyer simulations do not verify the current customer Work/Drive/publisher path.
+11. **Pinterest publishing:** use only the currently documented, supported customer path. The old browser-scheduling decision belongs to the retired local architecture; the current Metricool path and customer authorization gate are documented in `kit/06_SCHEDULED_TASK_PROMPTS.txt`.
 
 Still true and noted: canon's Product Register rule is met by finish step 4 coming before anything goes live. The Value Vault course is Open by design (Decision 95), so the $17 lesson is reachable by non-members; the $17 product itself stays hidden. Buyers' pins use Amazon's own disclosure statement; Jodie's own pins keep canon's wording.
 

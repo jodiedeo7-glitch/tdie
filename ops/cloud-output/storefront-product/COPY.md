@@ -104,7 +104,7 @@ And it's search, not social. People are searching for you on Pinterest right now
 
 Wait, it gets better: the Brand Closet™ line ✨ If you're in The Brand Closet™ on Rose's $9/month tier, a second automation turns her Outfit of the Day into your own pins, Sunday to Friday nights, with your own Amazon links. Nothing of hers ever gets posted.
 
-It took me 5 minutes to set up. That's once your Amazon and Pinterest are ready, and it runs through your configured ChatGPT Work setup; available tasks and connected actions depend on your account and may request sign-in or approval.
+My own initial setup took 5 minutes after my accounts were ready. Your setup time depends on your account access, board checks, connections, task configuration, and first-run review.
 
 The presale price is $10 for the whole kit until Thursday at 11:59 pm Eastern. After that, the same kit is $27.
 
@@ -216,13 +216,13 @@ I cannot and will not gatekeep this. So I didn't 💗
 
 Your approved product links, turned into Pinterest Pin drafts you can review and approve before scheduling.
 
-The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. ChatGPT Work scheduled tasks prepare a look from your approved inputs, use customer-supplied product details and links (or an authorized Amazon Creators API connection when configured), prepare imagery and Pin copy with the required disclosure, and track each Pin through the selected publishing path. You review and approve each Pin before it is scheduled. You set it up once, in about 5 minutes once your accounts are ready. It runs through your configured ChatGPT Work setup; available tasks and connected actions depend on your account and may request sign-in or approval.
+The While-You-Sleep Storefront™ is my own Amazon pin machine, handed over. ChatGPT Work scheduled tasks prepare a look from your approved inputs, use customer-supplied product details and links (or an authorized Amazon Creators API connection when configured), prepare imagery and Pin copy with the required disclosure, and track each Pin through the selected publishing path. You review and approve each Pin before it is scheduled. Your setup time depends on account access, board checks, connected services, task configuration, and first-run review. Available tasks and connected actions depend on your account and may request sign-in or approval.
 
 On the public shop it's $27. As a member of this community, the same kit is $17.
 
 [Get The While-You-Sleep Storefront™ for $17](https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f)
 
-What's inside: the setup prompt, the themed-look recipe, The Brand Closet™ Outfit of the Day recipe (for members of Rose's community on her $9/month tier), four scheduled task prompts, the persona and no-persona paths, the Influencer and Associates-only paths, the blog half for Weekend Ecosystem™ sites, and the setup guide with two worked examples.
+What's inside: the guided setup prompt, the themed-look recipe, The Brand Closet™ Outfit of the Day recipe (for customers with authorized lesson access), three canonical recurring task prompts, the persona and no-persona paths, the Influencer and Associates-only paths, the blog half for Weekend Ecosystem™ sites, and the setup guide with two worked examples.
 
 What you need: a ChatGPT plan with Work and Scheduled Tasks, Amazon Associates (plus Influencer approval for Idea Lists), a Pinterest business account with public boards, and a supported connected image provider such as Higgsfield, if you select that path.
 
@@ -277,7 +277,7 @@ Here's why it works on Pinterest and not on social: Pinterest is search. Nobody 
 
 What I won't do is tell you it's made me rich. It's new, and I show the machine, not screenshots. Here's the machine, from my own log: 15 looks, 15 Idea Lists, 15 shop-the-look pages, 84 tagged product links, 26 pins built. I didn't make any of them by hand.
 
-What you need before you buy, so nobody is surprised: a ChatGPT plan with Work and Scheduled Tasks, an available Work mode and the connected actions your chosen path needs, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and a supported connected image provider such as Higgsfield, if you choose that path. Cloud execution may work while your computer is off when enabled for your account; local runs require your computer and any needed local session. My own setup took about 5 minutes after Amazon and Pinterest were ready.
+What you need before you buy, so nobody is surprised: a ChatGPT plan with Work and Scheduled Tasks, an available Work mode and the connected actions your chosen path needs, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and a supported connected image provider such as Higgsfield, if you choose that path. Cloud execution may work while your computer is off when enabled for your account; local runs require your computer and any needed local session. Setup time varies with account access, board checks, connected services, and first-run review.
 
 $10 until Thursday, 11:59 pm Eastern. Then $27.
 
@@ -296,7 +296,7 @@ Short one, because the clock is doing the talking.
 
 At 11:59 pm Eastern tonight, The While-You-Sleep Storefront™ goes up to $27. Until then it's $10. [Get it for $10 before midnight](https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront)
 
-If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt, answer six questions about your theme, your boards and your storefront, and scheduled tasks help with repeat preparation. They help prepare look drafts, images, and Pin copy, then record confirmed publishing status. You review and approve each Pin before scheduling. Pulling a Pin depends on the connected publishing path.
+If you skipped Monday's email: it's my own Amazon pin machine. You paste one setup prompt and make the choices needed for your theme, boards, storefront, account connections, and schedule. Scheduled tasks help with repeat preparation. They help prepare look drafts, images, and Pin copy, then record confirmed publishing status. You review and approve each Pin before scheduling. Pulling a Pin depends on the connected publishing path.
 
 Less repetitive preparation; product choices and scheduling approvals stay with you. People are searching Pinterest for exactly what you'd pin. This puts it there.
 
@@ -406,7 +406,7 @@ How many hours did you spend this week making content that was gone from the fee
 
 The presale's closed. The machine's live.
 
-The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get prepared as drafts for your review, then tracked through the selected publishing path. You paste one setup prompt, answer six questions, and the tasks run through your configured ChatGPT Work setup.
+The While-You-Sleep Storefront™: your Amazon links turned into Pinterest pins that get prepared as drafts for your review, then tracked through the selected publishing path. You paste one setup prompt, make the choices required for your account, and configure supported tasks in your ChatGPT Work setup.
 
 Less repetitive preparation; product choices and scheduling approvals stay with you.
 
@@ -435,7 +435,7 @@ You'll need: an eligible ChatGPT Work setup with Scheduled Tasks; account access
 
 **Description (from Fri 9 Oct, 9:00 am):** the same, with the second paragraph replaced by:
 
-Setup takes about 5 minutes once your accounts are ready: paste one prompt, answer six questions. Includes the setup guide with two worked examples.
+Setup time varies with your account access, board checks, connected services, task configuration, and first-run review. Includes the setup guide with two worked examples.
 
 ### Private member product · title: The While-You-Sleep Storefront™ · member price
 

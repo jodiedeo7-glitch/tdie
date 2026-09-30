@@ -37,6 +37,19 @@ All files are in `ops/cloud-output/we-creatives/` (see its `README.md`, `AD_COPY
 
 ## 4 · The While-You-Sleep Storefront™: launch and own-setup fixes (27 Sep 2026, founder decisions applied)
 
+### Current audit update · 30 Sep 2026
+
+This section contains older account-work instructions. The customer workflow and sales copy have since moved to the ChatGPT architecture; read this update before acting on any numbered step below.
+
+- The current source kit has three canonical recurring tasks: weekly look preparation, optional Outfit of the Day, and reconciliation. Do not create the retired four-task Claude/browser setup from the old Step 9 or Step 12 instructions.
+- The guide, copy, and sales-page source were corrected on branch `while-you-sleep-chatgpt-architecture` for per-Pin customer selection and scheduling authorization, account-dependent Cloud/Local execution, and truthful setup-time language. PDFs and the 15-entry buyer ZIP were rebuilt and checked. The sales-page source still needs a site build and deployment verification; no live-page change is claimed here.
+- The current account-specific end-to-end ChatGPT Work → connected state → Metricool publishing/readback path has not passed. The prior legacy desktop test is historical evidence only; it does not prove the current customer workflow. Keep launch status **NOT READY** until the current path and production board verification pass.
+- Read-only Metricool inspection on 30 Sep confirmed brand `7142540`, Pinterest profile `TheDigitalIncomeEditTDIE`, and `America/New_York`. Post `384760924` remains a draft (`draft=true`), not a scheduled post. Its Oct 7 time is withdrawn and must not be treated as an approved publishing date or reused as a live Pin. No marketing Pin was scheduled in this audit.
+- The approved pink and fall visuals are inspiration samples, not verified retail product photos. Apply `kit/13_PIN_VISUAL_STANDARD.md`; a shopping Pin must depict the exact linked items or clearly identified licensed/customer-owned photos.
+- The originally named `outputs/AUTOMATION_WORKFLOW_AUDIT.md` is not present in this checkout. The in-repo `OWN_SETUP_AUDIT.md`, `CHATGPT_CANONICAL_ARCHITECTURE.md`, live-test notes, and current source were used instead. Keep the detailed audit local; do not commit its sensitive account/workflow payload.
+
+**Immediate repo follow-up:** the Astro build was not run on 30 Sep: this checkout has no project dependencies or npm executable. Build `src/pages/shop/while-you-sleep-storefront.astro` in the project's supported dependency environment, inspect the built page, then update this queue with the result. Do not deploy or publish account content as part of that check.
+
 Everything is in `ops/cloud-output/storefront-product/` (start with its `README.md`). The sales page is on the branch `storefront-launch` (`src/pages/shop/while-you-sleep-storefront.astro`), unmerged until step 8. The cloud session could not reach Skool, Beacons, Amazon, Pinterest, MailerLite, Facebook, Threads, Gemini or Higgsfield. Publish nothing and list nothing outside these steps. Work the steps in order; each ends with a read-back.
 
 **The gate: the presale does not open until step 9 (the live test) passes.** Step 9 must finish before the tease posts on Sat 3 Oct 2026, 3:00 pm Eastern, and it needs one overnight, so start it no later than Thu 1 Oct.

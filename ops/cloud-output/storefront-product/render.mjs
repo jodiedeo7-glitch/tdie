@@ -17,7 +17,18 @@ import { execSync } from "node:child_process";
 
 let chromium;
 try { ({ chromium } = await import("playwright")); }
-catch { ({ chromium } = createRequire(join(execSync("npm root -g").toString().trim(), "x"))("playwright")); }
+catch {
+  const moduleRoots = (process.env.NODE_PATH || "").split(process.platform === "win32" ? ";" : ":").filter(Boolean);
+  if (!moduleRoots.length) {
+    try { moduleRoots.push(execSync("npm root -g").toString().trim()); } catch { /* bundled runtimes may not include npm */ }
+  }
+  const failures = [];
+  for (const root of moduleRoots) {
+    try { ({ chromium } = createRequire(join(root, "__storefront_renderer__.cjs"))("playwright")); break; }
+    catch (error) { failures.push(error.message); }
+  }
+  if (!chromium) throw new Error(`Playwright is unavailable. Install it or set NODE_PATH to its node_modules folder. ${failures.join("; ")}`);
+}
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, "../../..");
@@ -152,8 +163,8 @@ guide.push(`<section class="pg" style="padding:0">
       <p class="lede" style="margin-top:18px;font-size:18px">Your Amazon links, turned into reviewable Pinterest Pin drafts. You choose each Pin and approve scheduling when your connected account supports it.</p>
       <div class="card" style="margin-top:6px">
         <ul class="ticks">
-          <li>About 5 minutes to start<span>once your accounts are ready</span></li>
-          <li>Then no building, no selling, no posting<span>drafts are prepared for your review; you choose and approve each schedule</span></li>
+          <li>Guided setup and a first-run check<span>time depends on your accounts, choices, and available connections</span></li>
+          <li>Less repetitive preparation<span>you review each Pin and authorize its schedule</span></li>
           <li>Found through search<span>not the feed</span></li>
         </ul>
       </div>
@@ -196,7 +207,7 @@ guide.push(`<section class="pg">${top(3)}
     <li>A supported execution mode and an available workspace or folder<span>Use only the connected services and actions the setup confirms are available. Complete sign-in through each service's own sign-in flow.</span></li>
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account and a verified public production board<span>Use a supported authorized path to resolve and confirm the exact board. If it cannot be verified, do not schedule.</span></li>
-    <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
+    <li>Only for the optional blog half: a supported GitHub connection<span>With write access to your site's repository; availability depends on your setup.</span></li>
     <li>A connected image provider, if you choose that path<span>Use the provider and model confirmed available in your account. Record commercial-use rights; do not silently switch models or plans.</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
   </ul></div>
@@ -215,26 +226,26 @@ guide.push(`<section class="pg">${top(4)}
       <p>Complete sign-in through Amazon, Pinterest, your selected publisher, image provider, and storage service when prompted. Never type passwords into a task. The setup is incomplete if a required action is unavailable; use a supported manual path where the kit describes one.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
-      <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
+      <p><a href="${BC}">Join The Brand Closet&trade;</a> and confirm the selected execution mode can access the authorized lesson list.</p>
       <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p></div></div>
   </div>
-  ${strip(["pink-angel-halloween-costume-flatlay.jpg", "pink-bunny-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"], sticker("Made by<br>the tasks,<br>not me", "right:-10px;top:40px;transform:rotate(8deg)", true))}
+  ${strip(["pink-angel-halloween-costume-flatlay.jpg", "pink-bunny-halloween-costume-lifestyle.jpg", "pink-halloween-porch-decor-flatlay.jpg", "pink-graduation-gown-halloween-costume-lifestyle.jpg"])}
   ${foot()}
 </section>`);
 
 // 5 steps 4-5
 guide.push(`<section class="pg">${top(5)}
-  <div class="kicker">Steps 4 and 5 &middot; the 5 minutes</div>
-  <h2>Paste one prompt. <em>Answer six questions.</em></h2>
+  <div class="kicker">Steps 4 and 5 &middot; guided setup</div>
+  <h2>Paste one prompt. <em>Make your setup choices.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a ChatGPT Work chat</h3>
       <p>Start a new Work chat where the kit is available. Follow the setup prompt to connect the supported storage location and authorize the actions you choose. If Work, Scheduled Tasks, or a required write action is unavailable, stop setup and use only the supported manual path.</p></div></div>
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
       <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. The prompt collects the choices needed for your setup, including:</p>
-      <ol><li>your theme</li><li>your boards and sections, with public status checked and the exact board assignment verified through a supported path</li><li>your storefront and your website, if you have one</li><li>whether you have an AI persona</li><li>whether you're in The Brand Closet&trade;</li><li>your time zone, cadence, and Cloud or Local mode if available</li></ol>
+      <ol><li>your execution and publishing modes, if available</li><li>your theme, boards, sections, and Amazon destination path</li><li>your image provider and persona choices</li><li>optional Brand Closet&trade; access and workflow</li><li>your time zone, pace, and schedule</li><li>connection checks, board verification, and required setup details for your selected path</li></ol>
       <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p></div></div>
   </div>
-  <div class="call"><p>My own words, because people ask: it took me 5 minutes to set up. That's with Amazon, Pinterest and my image tools already signed in.</p></div>
+  <div class="call"><p>Setup time varies. Plan for account and board checks, task configuration, and a first-run review. My own initial setup took 5 minutes after Amazon, Pinterest, and my image tools were already signed in; that is not a general setup-time estimate.</p></div>
     ${foot()}
 </section>`);
 
@@ -429,7 +440,12 @@ const gfx = (g) => {
 };
 
 // ---------------------------------------------------------------- RENDER
-const browser = await chromium.launch({ executablePath: existsSync("/opt/pw-browsers/chromium") ? undefined : undefined });
+const browserExecutable = process.env.CHROME_PATH || [
+  "/opt/pw-browsers/chromium",
+  "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+].find((path) => existsSync(path));
+const browser = await chromium.launch(browserExecutable ? { executablePath: browserExecutable } : {});
 const page = await browser.newPage({ viewport: { width: 816, height: 1056 } });
 const wrap = (pages) => `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>${pages.join("\n")}</body></html>`;
 
