@@ -1,6 +1,6 @@
 ## Audit update · 30 Sep 2026
 
-The production Pinterest board and its linked Amazon list have now passed read-only checks in the connected account. Board: public, ID 1122311238330934930. Destination: public six-item list. A similar Pin is already scheduled for Oct 2, so the current pink cold-office draft must remain unscheduled as a duplicate risk; Oct 7 remains withdrawn. The end-to-end ChatGPT Work → Drive/Metricool path is still unverified from the available interface.
+The production Pinterest board and its linked Amazon list have now passed read-only checks in the connected account. Board: public, ID 1122311238330934930. Destination: public six-item list. A similar Pin is already scheduled for Oct 2, so the current pink cold-office draft must remain unscheduled as a duplicate risk; Oct 7 remains withdrawn. The end-to-end ChatGPT Work → Drive/Metricool path remains untested. Desktop route: select ChatGPT from the top-left menu, select Work in the switcher above the composer, open the storefront project under Projects, then choose Work. Availability can depend on the account plan and workspace.
 
 # While-You-Sleep Storefront™: Canonical ChatGPT Architecture
 ## Verification-first source of truth
