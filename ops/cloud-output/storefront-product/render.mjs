@@ -1,6 +1,7 @@
-// Rebuild the revised guide and kit. Requires Python with reportlab.
-import { spawnSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
-const p=spawnSync(process.env.PYTHON || "python",[fileURLToPath(new URL("./build_guide.py",import.meta.url))],{stdio:"inherit"});
-if(p.error) throw p.error;
-process.exit(p.status ?? 1);
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+const root = dirname(fileURLToPath(import.meta.url));
+const result = spawnSync(process.env.PYTHON || 'python', [join(root, 'build_buyer_package.py')], { cwd: root, stdio: 'inherit' });
+if (result.error) throw result.error;
+process.exit(result.status ?? 1);
