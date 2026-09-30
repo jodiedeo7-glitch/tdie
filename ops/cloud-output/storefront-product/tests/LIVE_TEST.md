@@ -4,6 +4,8 @@
 
 **NOT READY.** The run below is a historical Claude-path test from 27 Sep, not an end-to-end pass for the current ChatGPT Work workflow. Customer use of Work, connected Drive, Metricool, and the production Pinterest board remains unverified. The sales-page redesign is visual-only: the local Astro page is reviewed at desktop and phone widths, and no customer account workflow, publishing, checkout, or scheduling is exercised. The live website remains unchanged. The Oct 7 Pin date was withdrawn and must not be scheduled or reused.
 
+**Price and queue check · 30 Sep 2026.** Metricool's current 30 Sep–31 Dec scheduled-post list contains no While-You-Sleep price promotion. It includes one unrelated Pinterest draft dated 7 Oct and an older WYS board-resolution test draft; the unrelated Pin remains unchanged and needs a separate date decision because 7 Oct was withdrawn. The public page, canon, launch copy, PDFs, and graphics still carry the prior $10 public presale / $27 launch / `PREMIUM50` terms. The requested $17/$10 Premium presale, $27/$17 Premium launch, and $37 regular ladder is not configured. Codes, phase boundaries, post-$37 Premium treatment, and affiliate activation timing remain unconfirmed. Do not open checkout, publish or schedule promotions, or describe the Premium Skool delivery as configured until these terms and the customer workflow gate are verified. Skool's public feed was checked; scheduled Skool drafts/history remain unverified.
+
 Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the throwaway theme "Test: Pink Desk Finds".
 
 ## Progress
@@ -63,3 +65,4 @@ Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the thr
 | Pinterest AI label option and scheduler time zone | Scheduler time zone: not shown anywhere in Pinterest; it follows the browser's time zone (S11). AI label: pending confirmation on the pin pages in my read-back. |
 | Squarespace code block | not tested: no Squarespace site |
 | GitHub default branch | not tested: blog half off |
+
