@@ -96,3 +96,11 @@ Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the thr
 | Pinterest AI label option and scheduler time zone | Scheduler time zone: not shown anywhere in Pinterest; it follows the browser's time zone (S11). AI label: pending confirmation on the pin pages in my read-back. |
 | Squarespace code block | not tested: no Squarespace site |
 | GitHub default branch | not tested: blog half off |
+
+
+## Package consistency check · 30 Sep 2026
+
+- Storefront canon check: passed across 65 files, with four documented historical REVIEW hits in simulated buyer/tester evidence.
+- Buyer ZIP: contains all 14 numbered kit source files byte-for-byte plus the setup-guide PDF; no missing or unexpected files.
+- The Astro build and live Cloudflare readback were already recorded above from the completed deployment. They were not rerun in this documentation-only audit turn.
+- Local checkout remains clean. Remote branch head is being advanced by the audit-note commits; no customer-facing source or account content changed.
