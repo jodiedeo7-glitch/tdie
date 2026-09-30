@@ -26,9 +26,10 @@ const LIVE_LINK = CHECKOUT.startsWith("https://");
 
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
 const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
+const PRESALE_CLOSES = "2026-10-09T03:59:00Z"; // Thu 8 Oct 2026, 11:59 pm ET
 const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
 const now = Date.now();
-const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PRESALE_CLOSES) ? "presale" : now < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
 
 const proof = [
   { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
@@ -67,7 +68,7 @@ const inside = [
   "Three canonical recurring task prompts: weekly planning, optional Outfit of the Day, and reconciliation",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
-  "The setup guide, with two of my own looks worked through step by step",
+  "Reusable prompts, planning sheets, and a pre-publishing checklist",
 ];
 ---
 <PageLayout
@@ -186,14 +187,15 @@ const inside = [
         <div class="ws-price-fig">$10<span> presale</span></div>
         <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Full-kit delivery is planned for Friday 9 October at 9 am Eastern through your Beacons purchase receipt or customer portal.</p>
       </div>
+      <div class="ws-price-state" data-stage="closed" hidden={stage !== "closed"}><p class="ws-price-when">The presale has ended. Full-kit launch is planned for Friday 9 October at 9 am Eastern.</p></div>
       <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
         <div class="ws-price-fig">$27<span> one-time</span></div>
         <p class="ws-price-when">The whole kit, yours to keep. Check the checkout for the current price and available download.</p>
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
-      {LIVE_LINK && stage !== "soon"
+      {LIVE_LINK && (stage === "presale" || stage === "live")
         ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
+        : <span class="btn ws-buy ws-buy-off">{stage === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"}</span>}
       {LIVE_LINK && stage === "soon" && (
         <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
       )}
@@ -227,15 +229,17 @@ const inside = [
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
 
-<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT }}>
+<script is:inline define:vars={{ PRESALE_OPENS, PRESALE_CLOSES, PUBLIC_PRICE_AT }}>
   (() => {
     const t = Date.now();
-    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PRESALE_CLOSES) ? "presale" : t < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
     document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
     // A page built before the presale opens reveals its checkout button once the presale is live.
     const late = document.querySelector(".ws-buy-late");
     const off = document.querySelector(".ws-buy-off");
-    if (late && s !== "soon") { late.hidden = false; if (off) off.hidden = true; }
+    const canBuy = s === "presale" || s === "live";
+    document.querySelectorAll("a.ws-buy").forEach((el) => { el.hidden = !canBuy; });
+    if (off) { off.hidden = canBuy; off.textContent = s === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"; }
   })();
 </script>
 </PageLayout>
