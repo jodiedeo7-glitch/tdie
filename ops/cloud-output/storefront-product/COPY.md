@@ -172,7 +172,7 @@ The setup prompt guides configuration. The workflow uses the product details and
 
 What you need, up front, so nobody's surprised:
 💻 a ChatGPT plan with Work and Scheduled Tasks
-☁️ ChatGPT Work Cloud, so your computer can be off during runs
+☁️ Cloud Work, if available and enabled with the required connected actions, for runs while your computer is off; local runs require your computer and any needed local session
 🛒 Amazon Associates (Influencer approval if you want Idea Lists)
 📌 a Pinterest business account
 🎨 a supported connected image provider, such as Higgsfield, if you choose that path
@@ -277,7 +277,7 @@ Here's why it works on Pinterest and not on social: Pinterest is search. Nobody 
 
 What I won't do is tell you it's made me rich. It's new, and I show the machine, not screenshots. Here's the machine, from my own log: 15 looks, 15 Idea Lists, 15 shop-the-look pages, 84 tagged product links, 26 pins built. I didn't make any of them by hand.
 
-What you need before you buy, so nobody is surprised: a ChatGPT plan with Work and Scheduled Tasks, ChatGPT Work, with Cloud Work preferred so your computer can be off during runs, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and a supported connected image provider such as Higgsfield, if you select that path. Setup is about 5 minutes once those are ready.
+What you need before you buy, so nobody is surprised: a ChatGPT plan with Work and Scheduled Tasks, an available Work mode and the connected actions your chosen path needs, Amazon Associates (Influencer approval for Idea Lists), a Pinterest business account, and a supported connected image provider such as Higgsfield, if you choose that path. Cloud execution may work while your computer is off when enabled for your account; local runs require your computer and any needed local session. My own setup took about 5 minutes after Amazon and Pinterest were ready.
 
 $10 until Thursday, 11:59 pm Eastern. Then $27.
 
@@ -326,7 +326,7 @@ Save time on repeat steps while keeping product choices and publishing in your h
 
 I cannot and will not gatekeep this, so it's yours: The While-You-Sleep Storefront™. The presale price is $10 for the whole kit until Thursday night. After that, the same kit is $27.
 
-Heads up before you grab it: it runs through ChatGPT Work Cloud, so your computer can be off during runs.
+Heads up before you grab it: cloud runs may work while your computer is off when Cloud Work and the required connected actions are enabled for your account. Local runs require your computer and any needed local session during a run.
 
 Link's in the comments 👇
 
