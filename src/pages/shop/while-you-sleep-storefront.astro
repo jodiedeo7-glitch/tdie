@@ -8,7 +8,8 @@ import { Image } from "astro:assets";
 // CANON_ROWS_DRAFT.md and registered at the desktop finish before this merges.
 // Proof is the machine only: never a sales, commission or income claim. This page
 // carries the Meta Pixel, so no earnings figures and no affiliate rate appear on it.
-// Every image below is one of Jodie's own published pins from src/lifestyle/.
+// Published Pins are grouped into a lookbook; generated campaign scene assets add
+// editorial texture and are labeled as inspiration, never as verified retail photos.
 
 import witchFlat from "../../lifestyle/pink-witch-halloween-costume-flatlay.jpg";
 import witchLife from "../../lifestyle/pink-witch-halloween-costume-lifestyle.jpg";
@@ -18,10 +19,16 @@ import angelFlat from "../../lifestyle/pink-angel-halloween-costume-flatlay.jpg"
 import suitLife from "../../lifestyle/pink-suit-law-student-halloween-costume-lifestyle.jpg";
 import porchFlat from "../../lifestyle/pink-halloween-porch-decor-flatlay.jpg";
 import sequinLife from "../../lifestyle/pink-sequin-mini-dress-halloween-costume-lifestyle.jpg";
+import sofaScene from "../../../ops/cloud-output/storefront-product/graphics/photos/cover-sofa-dusk.jpg";
+import porchScene from "../../../ops/cloud-output/storefront-product/graphics/photos/g1-porch-morning.jpg";
+import hoodieScene from "../../../ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg";
+import deskScene from "../../../ops/cloud-output/storefront-product/graphics/photos/g2-loft-night-desk.jpg";
+import kitchenScene from "../../../ops/cloud-output/storefront-product/graphics/photos/g3-kitchen-late.jpg";
+import bedsideScene from "../../../ops/cloud-output/storefront-product/graphics/photos/g4-nightstand-phone.jpg";
 
-// Filled at the desktop finish with the Beacons product address. Until then the
-// button renders as a closed notice instead of a dead link.
-const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39";
+// Checkout stays closed until the new price stages and Premium coupon flow are
+// configured and verified.
+const CHECKOUT = "";
 const LIVE_LINK = CHECKOUT.startsWith("https://");
 
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
@@ -89,10 +96,14 @@ const inside = [
         <li>Setup depends on your accounts</li>
       </ul>
     </div>
-    <figure class="ws-hero-art">
-      <Image src={witchFlat} alt="Generated editorial styling example: a pink velvet witch hat, black dress, pink gloves, platform shoes and accessories arranged as a flat lay." widths={[420, 680, 920]} sizes="(max-width: 760px) 88vw, 43vw" fetchpriority="high" />
-      <figcaption><span>Generated styling example</span><span>Inspiration only · not verified retail product photography</span></figcaption>
-      <div class="ws-art-stamp" aria-hidden="true">THE<br />EDIT</div>
+    <figure class="ws-hero-art ws-hero-board">
+      <div class="ws-board-grid">
+        <div class="ws-board-tile ws-board-feature"><Image src={sofaScene} alt="Generated lifestyle illustration of a person resting on a sofa beside a phone and a sleeping dog; it is not a product photo." widths={[420, 680, 920]} sizes="(max-width: 760px) 57vw, 29vw" fetchpriority="high" /></div>
+        <div class="ws-board-tile"><Image src={porchScene} alt="Generated lifestyle illustration of a person on a porch with a phone; it is not a product photo." widths={[220, 360, 520]} sizes="(max-width: 760px) 27vw, 14vw" loading="lazy" /></div>
+        <div class="ws-board-tile"><Image src={hoodieScene} alt="Generated outfit flat lay used as visual inspiration; the items shown are not verified retail products." widths={[220, 360, 520]} sizes="(max-width: 760px) 27vw, 14vw" loading="lazy" /></div>
+      </div>
+      <figcaption><span>A little Pinterest moodboard</span><span>Generated examples · visual inspiration, not verified retail product photography</span></figcaption>
+      <div class="ws-art-stamp" aria-hidden="true">PIN<br />BOARD</div>
     </figure>
   </section>
 
@@ -118,6 +129,19 @@ const inside = [
     <p class="ws-p">Posting, replying, filming the reel, filming it again because the light changed. The feed forgets you by Wednesday and you start over on Thursday. That's not a business that runs while you sleep. That's a second shift.</p>
     <p class="ws-p">Pinterest works the other way round. Nobody's there to be entertained. They're typing "pink witch costume" or "cozy fall outfit" into a search bar with their wallet already half open. A pin you schedule today can still be found months from now. The only job is making sure something of yours is there when they search.</p>
     <p class="ws-p">So I stopped doing that job myself.</p>
+  </section>
+
+  <section class="ws-photo-break" aria-label="Generated example scene from the visual suite">
+    <figure class="ws-photo-break-image">
+      <Image src={kitchenScene} alt="Generated evening kitchen scene with a person beside a laptop and a dog; this is illustrative imagery, not a retail product photo or customer result." widths={[420, 720, 1040]} sizes="(max-width: 700px) 92vw, 44vw" loading="lazy" />
+      <figcaption>Generated scene · an editorial mood, not product evidence</figcaption>
+    </figure>
+    <div class="ws-photo-break-copy">
+      <div class="ws-kicker">The point is a calmer rhythm</div>
+      <h2>Make the Pin. Review the Pin. <em>Then let it be yours.</em></h2>
+      <p>Use the visual examples for styling inspiration. The workflow still starts with your approved product details, your chosen destination, and your review of each finished draft.</p>
+      <a class="ws-link" href="#proof">Browse the Pin lookbook <span aria-hidden="true">↗</span></a>
+    </div>
   </section>
 
   <section class="ws-sec ws-tint">
@@ -170,6 +194,12 @@ const inside = [
     </div>
   </section>
 
+  <section class="ws-photo-ribbon" aria-label="Generated visual examples from the kit's atmosphere images">
+    <Image src={deskScene} alt="Generated late-night desk scene with a laptop and pink headphones; illustrative atmosphere, not a product photo or result." widths={[360, 640, 900]} sizes="(max-width: 700px) 90vw, 39vw" loading="lazy" />
+    <div class="ws-photo-ribbon-copy"><span class="ws-kicker">Keep the workflow in view</span><p>Drafts first. Your review before every schedule. Account-specific setup throughout.</p></div>
+    <Image src={bedsideScene} alt="Generated bedside scene with a phone, notebook, and pink tumbler; illustrative imagery, not a product photo." widths={[240, 380, 560]} sizes="(max-width: 700px) 40vw, 20vw" loading="lazy" />
+  </section>
+
   <section class="ws-sec">
     <div class="ws-kicker">Up front, so nobody's surprised</div>
     <h2>What you need before you buy.</h2>
@@ -198,25 +228,30 @@ const inside = [
     <div class="ws-kicker">The price</div>
     <div class="ws-price-box">
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
-        <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">The presale opens Monday 5 October, 7:00 pm Eastern, and runs until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27.</p>
+        <div class="ws-price-fig">$17<span> presale</span></div>
+        <p class="ws-price-when">The public presale opens Monday 5 October, 7:00 pm Eastern, and runs until Thursday 8 October, 11:59 pm Eastern. Premium members can use their private code for $10 during this window. From Friday 9 October, the public launch price is $27 and the Premium member price is $17 with a separate code.</p>
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
-        <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
+        <div class="ws-price-fig">$17<span> presale</span></div>
+        <p class="ws-price-when">The public presale ends Thursday 8 October, 11:59 pm Eastern. Premium members can use their private code for $10 while the presale is open. From Friday 9 October, the public launch price is $27 and the Premium member price is $17 with a separate code.</p>
       </div>
       <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
-        <div class="ws-price-fig">$27<span> one-time</span></div>
-        <p class="ws-price-when">The whole kit, yours to keep.</p>
+        <div class="ws-price-fig">$27<span> launch price</span></div>
+        <p class="ws-price-when">From Friday 9 October at 9:00 am Eastern. Premium members can use their private launch code for $17. The regular price will be $37 after the launch window; its start date is still to be confirmed.</p>
+      </div>
+      <div class="ws-price-ladder" aria-label="Planned price stages">
+        <article><span class="ws-price-step">PRESALE · OCT 5–8</span><strong>$17</strong><p>Public price<br /><b>$10 for Premium with a private code</b></p></article>
+        <article><span class="ws-price-step">LAUNCH · FROM OCT 9</span><strong>$27</strong><p>Public price<br /><b>$17 for Premium with a separate code</b></p></article>
+        <article><span class="ws-price-step">REGULAR · DATE PENDING</span><strong>$37</strong><p>Regular price<br /><b>40% affiliate share planned for this stage</b></p></article>
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
       {LIVE_LINK && stage !== "soon"
         ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
+        : <span class="btn ws-buy ws-buy-off">Checkout will open after the new offer is set up</span>}
       {LIVE_LINK && stage === "soon" && (
         <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
       )}
-      <p class="ws-fine">No refunds on digital products. Already a member of The Digital Income Edit™? Your member price is in The Value Vault.</p>
+      <p class="ws-fine">Premium coupon details are intended for Premium members in Skool and are not shown publicly. Coupon delivery and expiry must be verified before this offer opens. No refunds on digital products.</p>
     </div>
   </section>
 
@@ -276,24 +311,45 @@ const inside = [
   .ws-trust li{font-size:10px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--choc-soft);background:var(--blush);border:1px solid rgba(200,169,106,.42);padding:8px 11px;margin:0}
   .ws-hero-art{position:relative;margin:0;padding:12px;background:#fff;border:1px solid rgba(200,169,106,.65);box-shadow:12px 12px 0 var(--rose)}
   .ws-hero-art img{width:100%;aspect-ratio:4/4.7;object-fit:cover;display:block}
+  .ws-hero-art.ws-hero-board{padding:11px;background:linear-gradient(145deg,#fff 0%,#fff8fa 100%);box-shadow:14px 14px 0 #F4D2DF}
+  .ws-board-grid{display:grid;grid-template-columns:1.12fr .88fr;grid-template-rows:1fr 1fr;gap:9px;aspect-ratio:1.02/1}
+  .ws-board-tile{min-width:0;min-height:0;overflow:hidden;background:#F7E8EA;border:1px solid rgba(26,20,23,.12)}
+  .ws-board-tile img{height:100%;width:100%;aspect-ratio:auto;object-fit:cover;display:block}
+  .ws-board-feature{grid-row:1/3}
+  .ws-board-feature img{object-position:62% center}
+  .ws-board-tile:nth-child(2) img{object-position:72% center}
   .ws-hero-art figcaption{display:grid;gap:3px;padding:13px 4px 2px;font-size:10px;line-height:1.4;letter-spacing:.07em;text-transform:uppercase;color:var(--choc-mute)}
   .ws-hero-art figcaption span:first-child{font-weight:700;color:var(--pink-deep)}
-  .ws-art-stamp{position:absolute;top:26px;right:26px;display:grid;place-content:center;width:64px;height:64px;border-radius:50%;background:var(--cream);color:var(--pink-deep);text-align:center;font:600 11px/1.05 var(--display);letter-spacing:.1em}
+  .ws-art-stamp{position:absolute;top:21px;left:21px;display:grid;place-content:center;width:64px;height:64px;border-radius:50%;background:var(--cream);color:var(--pink-deep);text-align:center;font:600 11px/1.05 var(--display);letter-spacing:.1em}
 
   .ws-proof-band{max-width:1180px;margin:12px auto 0;padding:54px 0 82px;border-top:1px solid rgba(200,169,106,.58);border-bottom:1px solid rgba(200,169,106,.58)}
   .ws-proof-heading{display:grid;grid-template-columns:minmax(0,.9fr) minmax(260px,1fr);column-gap:48px;align-items:end;margin:0 0 28px}
   .ws-proof-heading .ws-kicker{grid-column:1/-1;margin-bottom:12px}
   .ws-proof-heading h2{font:400 clamp(28px,3.5vw,43px)/1.08 var(--display);letter-spacing:-.025em;color:var(--choc);max-width:18ch;text-wrap:balance}
   .ws-proof-heading p{max-width:55ch;margin:0;color:var(--choc-soft);font-size:14px;line-height:1.65}
-  .ws-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-  .ws-pin-card{min-width:0;margin:0;background:var(--white);border:1px solid rgba(26,20,23,.12);padding:9px;transition:transform .2s ease,border-color .2s ease}
+  .ws-strip{columns:4;column-gap:18px}
+  .ws-pin-card{display:inline-block;width:100%;break-inside:avoid;min-width:0;margin:0 0 18px;background:var(--white);border:1px solid rgba(26,20,23,.12);padding:9px;transition:transform .2s ease,border-color .2s ease}
   .ws-pin-card:hover{transform:translateY(-3px);border-color:rgba(184,36,95,.45)}
   .ws-pin-image{overflow:hidden;background:var(--blush)}
-  .ws-pin-image img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .ws-pin-image img{width:100%;height:auto;object-fit:cover;display:block}
   .ws-pin-card figcaption{display:grid;gap:6px;padding:12px 4px 5px}
   .ws-pin-index{font-size:9px;line-height:1.3;font-weight:700;letter-spacing:.16em;color:var(--pink-deep)}
   .ws-pin-caption{font:500 18px/1.15 var(--display);color:var(--choc)}
   .ws-kicker{font-size:10px;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:13px;font-weight:700}
+
+  .ws-photo-break{max-width:1180px;margin:8px auto 24px;padding:22px;background:#F7E8EA;border:1px solid rgba(200,169,106,.48);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(24px,5vw,60px)}
+  .ws-photo-break-image{margin:0;padding:10px;background:#fff;box-shadow:9px 9px 0 #F4D2DF}
+  .ws-photo-break-image img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:72% center}
+  .ws-photo-break-image figcaption{padding:10px 3px 0;color:var(--choc-mute);font-size:9px;line-height:1.4;letter-spacing:.1em;text-transform:uppercase}
+  .ws-photo-break-copy h2{font:400 clamp(30px,4vw,46px)/1.05 var(--display);letter-spacing:-.025em;color:var(--choc);max-width:15ch;margin:0 0 17px;text-wrap:balance}
+  .ws-photo-break-copy h2 em{color:var(--pink-deep)}
+  .ws-photo-break-copy p{max-width:42ch;color:var(--choc-soft);font-size:15px;line-height:1.7;margin:0 0 19px}
+  .ws-photo-ribbon{max-width:1180px;margin:0 auto 26px;padding:15px;background:var(--choc);display:grid;grid-template-columns:1.2fr .9fr .55fr;align-items:center;gap:18px}
+  .ws-photo-ribbon>img{display:block;width:100%;height:100%;min-height:165px;object-fit:cover}
+  .ws-photo-ribbon>img:last-child{aspect-ratio:4/5;min-height:0}
+  .ws-photo-ribbon-copy{padding:12px 5px;color:#fff}
+  .ws-photo-ribbon-copy .ws-kicker{color:#F4B8CF}
+  .ws-photo-ribbon-copy p{font:400 clamp(20px,2.7vw,30px)/1.2 var(--display);margin:0;color:#fff}
 
   .ws-sec{max-width:1040px;margin:0 auto;padding:clamp(56px,8vw,88px) 0;border-top:1px solid rgba(200,169,106,.45)}
   .ws-sec.ws-tint{max-width:1180px;background:linear-gradient(125deg,#F8D8E4 0%,#F6E9E7 60%,#FBF8F5 100%);padding:clamp(32px,5vw,58px);margin:24px auto 52px;border:1px solid rgba(200,169,106,.42)}
@@ -337,6 +393,12 @@ const inside = [
   .ws-price-fig{font:400 clamp(54px,8vw,72px)/1 var(--display);margin:14px 0 10px;color:var(--pink-deep)}
   .ws-price-fig span{font:700 11px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--choc-mute)}
   .ws-price-when{font-size:15px;line-height:1.65;color:var(--choc-soft);max-width:48ch;margin:0 auto}
+  .ws-price-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:30px auto 0;max-width:620px;text-align:left}
+  .ws-price-ladder article{min-width:0;padding:16px 14px;background:#FCF7F5;border:1px solid rgba(200,169,106,.48)}
+  .ws-price-step{display:block;min-height:2.8em;font-size:9px;line-height:1.4;font-weight:700;letter-spacing:.11em;color:var(--pink-deep)}
+  .ws-price-ladder strong{display:block;margin:5px 0 8px;font:400 36px/1 var(--display);color:var(--choc)}
+  .ws-price-ladder p{margin:0;font-size:11px;line-height:1.55;color:var(--choc-soft)}
+  .ws-price-ladder b{font-weight:600;color:var(--choc)}
   .ws-price-list{list-style:none;padding:0;margin:26px auto 30px;max-width:500px;text-align:left;columns:2;column-gap:30px}
   .ws-price-list li{break-inside:avoid;font-size:13.5px;line-height:1.5;margin:0 0 12px;padding-left:21px;position:relative;color:var(--choc)}
   .ws-price-list li::before{content:"✓";position:absolute;left:0;color:var(--pink-deep);font-weight:700}
@@ -362,6 +424,8 @@ const inside = [
 
   @media(max-width:980px){
     .ws-hero{grid-template-columns:minmax(0,1fr) minmax(270px,.8fr);gap:36px}
+    .ws-strip{columns:3}
+    .ws-photo-ribbon{grid-template-columns:1fr .9fr .55fr;gap:12px}
     .ws-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
     .ws-kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
@@ -372,7 +436,13 @@ const inside = [
     .ws-proof-band{padding:44px 0 56px}
     .ws-proof-heading{grid-template-columns:1fr;gap:12px}
     .ws-proof-heading .ws-kicker{grid-column:auto;margin-bottom:0}
-    .ws-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .ws-photo-break{grid-template-columns:1fr;gap:25px;padding:16px;margin:0 auto 14px}
+    .ws-photo-break-copy{padding:4px 3px 7px}
+    .ws-photo-break-copy h2{max-width:19ch}
+    .ws-photo-ribbon{grid-template-columns:minmax(0,1.15fr) minmax(110px,.85fr);gap:12px;margin-bottom:12px}
+    .ws-photo-ribbon>img:first-child{grid-column:1/-1;aspect-ratio:16/8;min-height:0}
+    .ws-photo-ribbon-copy{padding:8px 4px}
+    .ws-strip{columns:2;column-gap:10px}
     .ws-pin-card{padding:6px}
     .ws-pin-card figcaption{padding:10px 3px 4px}
     .ws-pin-caption{font-size:17px}
@@ -382,6 +452,11 @@ const inside = [
     .ws-step h3{min-height:0}
     .ws-grid-2{grid-template-columns:1fr}
     .ws-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .ws-price-ladder{grid-template-columns:1fr;max-width:500px}
+    .ws-price-ladder article{display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:center;padding:14px}
+    .ws-price-step{min-height:0}
+    .ws-price-ladder strong{grid-column:2;grid-row:1/3;margin:0;font-size:32px}
+    .ws-price-ladder p{grid-column:1}
     .ws-price-list{columns:1}
     .ws-cta-row{align-items:stretch;gap:10px}
     .ws-cta-row .btn{width:100%}
@@ -394,6 +469,10 @@ const inside = [
     .ws-num{margin-bottom:14px}
     .ws-sec h2{font-size:32px}
     .ws-price-box{padding:32px 18px}
+    .ws-art-stamp{width:54px;height:54px;font-size:10px;top:17px;left:17px}
+    .ws-photo-ribbon{padding:11px;gap:8px}
+    .ws-photo-ribbon-copy .ws-kicker{font-size:8px;letter-spacing:.13em}
+    .ws-photo-ribbon-copy p{font-size:19px}
   }
   @media(prefers-reduced-motion:reduce){
     .ws-pin-card,.ws-hero .btn,.ws-link{transition:none}
