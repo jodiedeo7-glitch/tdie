@@ -26,9 +26,10 @@ const LIVE_LINK = CHECKOUT.startsWith("https://");
 
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
 const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
+const PRESALE_CLOSES = "2026-10-09T03:59:00Z"; // Thu 8 Oct 2026, 11:59 pm ET
 const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
 const now = Date.now();
-const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PRESALE_CLOSES) ? "presale" : now < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
 
 const proof = [
   { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
@@ -50,22 +51,24 @@ const steps = [
 ];
 
 const needs = [
-  "A ChatGPT account with Work and Scheduled Tasks available for the chosen workflow",
-  "A supported Cloud or Local execution mode and the needed connected actions",
-  "Amazon Associates, plus Influencer approval for Idea Lists",
+  "Your existing Claude or ChatGPT plan for the low-cost path, or the manual workbook path without AI",
+  "Work or scheduled tasks and supported connected actions only if you choose automation",
+  "An approved Amazon Associates account for affiliate links; an eligible storefront with Idea Lists for the storefront path",
   "A Pinterest business account and a public board verifiable through a supported path",
   "A connected image provider and supported model if your chosen path requires one",
   "A connected Metricool account only if you choose TIME-SAVING publishing; scheduling remains account-dependent until tested",
 ];
 
 const inside = [
+  "A 19-page buyer guide with low-cost and manual alternatives throughout",
+  "A 15-page prompts and workbook PDF with 36 editable fields",
   "A guided setup prompt that records your choices and account-specific blockers",
   "The themed-look recipe, for any theme and any season",
   "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
   "Three canonical recurring task prompts: weekly planning, optional Outfit of the Day, and reconciliation",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
-  "The setup guide, with two of my own looks worked through step by step",
+  "Reusable prompts, planning sheets, and a pre-publishing checklist",
 ];
 ---
 <PageLayout
@@ -112,7 +115,7 @@ const inside = [
         <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
       ))}
     </div>
-    <p class="ws-close">No prices on any pin, no brand names in any listing, and Amazon's own photos never posted: they're only the reference for new images.</p>
+    <p class="ws-close">No prices on any pin, no brand names in any listing, and use images you own or have permission to use. AI inspiration images must be checked and described accurately; similar items are not an exact product match.</p>
   </section>
 
   <section class="ws-sec">
@@ -157,7 +160,8 @@ const inside = [
         <p class="ws-fine-dark">The Outfit of the Day line also needs authorized access to the relevant Brand Closet™ lesson. It is optional. TIME-SAVING publishing additionally requires a connected Metricool account and a successful account-specific test.</p>
       </div>
       <div class="ws-card ws-callout">
-        <h3>The honest part</h3>
+        <h3>Choose time or credits</h3>
+        <p>Use the low-cost path with your existing Claude or ChatGPT plan, or follow the manual workbook steps. Extra AI tools, scheduled tasks, and Metricool are optional; use them only for the steps you want to automate.</p>
         <p>Cloud execution may work while your computer is off when enabled for your account and required connections. Local runs need your computer and any required local session. Do not assume missed work catches up automatically.</p>
         <p>Every Pin begins as a draft. You choose the exact finished Pin and authorize its schedule after review. Cancellation or removal depends on the connected publisher and may require action in Pinterest.</p>
       </div>
@@ -181,16 +185,17 @@ const inside = [
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
         <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
+        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Full-kit delivery is planned for Friday 9 October at 9 am Eastern through your Beacons purchase receipt or customer portal.</p>
       </div>
+      <div class="ws-price-state" data-stage="closed" hidden={stage !== "closed"}><p class="ws-price-when">The presale has ended. Full-kit launch is planned for Friday 9 October at 9 am Eastern.</p></div>
       <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
         <div class="ws-price-fig">$27<span> one-time</span></div>
-        <p class="ws-price-when">The whole kit, yours to keep.</p>
+        <p class="ws-price-when">The whole kit, yours to keep. Check the checkout for the current price and available download.</p>
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
-      {LIVE_LINK && stage !== "soon"
+      {LIVE_LINK && (stage === "presale" || stage === "live")
         ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
+        : <span class="btn ws-buy ws-buy-off">{stage === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"}</span>}
       {LIVE_LINK && stage === "soon" && (
         <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
       )}
@@ -210,7 +215,7 @@ const inside = [
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
       <p>Take the no-persona path: the workflow uses flat lays and collages. Use an image provider and model confirmed available in your own account.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
-      <p>There's an Associates-only path that uses a page on your own site as the destination. The kit describes supported page-file and site workflows; what can be written or published depends on your site platform and connected actions, and may require your own steps. Influencer approval allows the Idea List path without a website.</p></details>
+      <p>There's an Associates-only path that uses a page on your own site as the destination. The kit describes supported page-file and site workflows; what can be written or published depends on your site platform and connected actions, and may require your own steps. If your account has an eligible storefront and Idea Lists, you can use that path without a website.</p></details>
     <details class="ws-faq"><summary>Will it make me money?</summary>
       <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
     <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
@@ -224,15 +229,17 @@ const inside = [
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
 
-<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT }}>
+<script is:inline define:vars={{ PRESALE_OPENS, PRESALE_CLOSES, PUBLIC_PRICE_AT }}>
   (() => {
     const t = Date.now();
-    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PRESALE_CLOSES) ? "presale" : t < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
     document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
     // A page built before the presale opens reveals its checkout button once the presale is live.
     const late = document.querySelector(".ws-buy-late");
     const off = document.querySelector(".ws-buy-off");
-    if (late && s !== "soon") { late.hidden = false; if (off) off.hidden = true; }
+    const canBuy = s === "presale" || s === "live";
+    document.querySelectorAll("a.ws-buy").forEach((el) => { el.hidden = !canBuy; });
+    if (off) { off.hidden = canBuy; off.textContent = s === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"; }
   })();
 </script>
 </PageLayout>
