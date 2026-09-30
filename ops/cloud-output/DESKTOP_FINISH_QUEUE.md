@@ -2,6 +2,12 @@
 
 Account-only steps left by cloud sessions. Each job adds one numbered section with every file path, piece of copy and exact step written in. The DESKTOP FINISH prompt in `ops/cloud-kit/CLOUD_CREDIT_JOBS.md` works through this file on Jodie's computer and marks each section DONE with the date.
 
+## Current storefront status · 30 Sep 2026
+
+The current product workflow is the ChatGPT Work path with connected Drive and publisher services. The September 27 test below records a prior Claude-based setup; it is historical evidence only and does not pass the current customer workflow gate. The end-to-end customer path through ChatGPT Work, Drive, Metricool, and the production Pinterest board is **NOT READY / UNVERIFIED**. Keep checkout closed and do not schedule launch posts or Pins from this note. The Oct 7 Pin date was withdrawn; do not schedule or reuse it.
+
+The sales-page editorial redesign is a visual review only. It does not verify customer integrations or authorize checkout, Pin publication, or social scheduling. Local Astro build passed (158 pages); the rendered page was reviewed at 1440px desktop and 390px phone widths with no horizontal overflow. Production remains unchanged until separately approved. The theme and image output were checked against the live TDIE homepage and the existing published Pin assets.
+
 ## 1 · One-Sentence Offer tool: link from The Offer Edit's opening lesson (26 Sep 2026)
 
 Cloud session could not reach Skool (network policy blocks skool.com; no signed-in browser). Canon Decision 120.

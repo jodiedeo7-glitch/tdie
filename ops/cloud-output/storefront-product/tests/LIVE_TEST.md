@@ -1,5 +1,9 @@
 # Live test (DESKTOP_FINISH_QUEUE.md section 4, Step 9)
 
+## Current customer path status · 30 Sep 2026
+
+**NOT READY.** The run below is a historical Claude-path test from 27 Sep, not an end-to-end pass for the current ChatGPT Work workflow. Customer use of Work, connected Drive, Metricool, and the production Pinterest board remains unverified. The sales-page redesign is visual-only: the local Astro page is reviewed at desktop and phone widths, and no customer account workflow, publishing, checkout, or scheduling is exercised. The live website remains unchanged. The Oct 7 Pin date was withdrawn and must not be scheduled or reused.
+
 Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the throwaway theme "Test: Pink Desk Finds".
 
 ## Progress
