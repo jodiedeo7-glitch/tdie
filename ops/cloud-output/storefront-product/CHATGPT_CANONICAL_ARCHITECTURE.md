@@ -1,4 +1,4 @@
-# While-You-Sleep Storefront™ — Canonical ChatGPT Architecture
+# While-You-Sleep Storefront™: Canonical ChatGPT Architecture
 ## Verification-first source of truth
 Date: 2026-09-28
 
