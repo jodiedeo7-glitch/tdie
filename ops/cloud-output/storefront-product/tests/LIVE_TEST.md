@@ -6,6 +6,8 @@
 
 **Price and queue check · 30 Sep 2026.** Metricool's current 30 Sep–31 Dec scheduled-post list contains no While-You-Sleep price promotion. It includes one unrelated Pinterest draft dated 7 Oct and an older WYS board-resolution test draft; the unrelated Pin remains unchanged and needs a separate date decision because 7 Oct was withdrawn. The public page, canon, launch copy, PDFs, and graphics still carry the prior $10 public presale / $27 launch / `PREMIUM50` terms. The requested $17/$10 Premium presale, $27/$17 Premium launch, and $37 regular ladder is not configured. Codes, phase boundaries, post-$37 Premium treatment, and affiliate activation timing remain unconfirmed. Do not open checkout, publish or schedule promotions, or describe the Premium Skool delivery as configured until these terms and the customer workflow gate are verified. Skool's public feed was checked; scheduled Skool drafts/history remain unverified.
 
+**Runbook hold:** `DESKTOP_FINISH_QUEUE.md` now marks the previous Oct 2/5/9 scheduling instructions and price steps as superseded. Their old "SCHEDULED" labels are documentation only; active status in any external scheduler was not confirmed here. Do not reuse or run them. No matching WYS promotion appeared in the Metricool read. The separate Oct 7 Pin remains untouched and must not be treated as a replacement date.
+
 Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the throwaway theme "Test: Pink Desk Finds".
 
 ## Progress
