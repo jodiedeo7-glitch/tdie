@@ -104,3 +104,8 @@ Started Sun 27 Sep 2026, 2:34 pm Eastern. Run in Jodie's own accounts on the thr
 - Buyer ZIP: contains all 14 numbered kit source files byte-for-byte plus the setup-guide PDF; no missing or unexpected files.
 - The Astro build and live Cloudflare readback were already recorded above from the completed deployment. They were not rerun in this documentation-only audit turn.
 - Local checkout remains clean. Remote branch head is being advanced by the audit-note commits; no customer-facing source or account content changed.
+
+
+## Connected Drive check · 30 Sep 2026
+
+Read-only Drive searches for “While-You-Sleep Storefront buyer guide” and “STOREFRONT_STATE While You Sleep” found no matching current buyer guide or state file. A broad relevant result was `TDIE AI Operating Manual`, but it is general operations material, not evidence that the storefront workflow has been set up in Drive. The Drive connection can search files, but a current customer state file plus ChatGPT Work scheduled-task run still have not been verified. No Drive file was created or edited.
