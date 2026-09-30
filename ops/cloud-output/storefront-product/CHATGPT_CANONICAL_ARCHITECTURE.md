@@ -1,3 +1,7 @@
+## Audit update · 30 Sep 2026
+
+The production Pinterest board and its linked Amazon list have now passed read-only checks in the connected account. Board: public, ID 1122311238330934930. Destination: public six-item list. A similar Pin is already scheduled for Oct 2, so the current pink cold-office draft must remain unscheduled as a duplicate risk; Oct 7 remains withdrawn. The end-to-end ChatGPT Work → Drive/Metricool path is still unverified from the available interface.
+
 # While-You-Sleep Storefront™: Canonical ChatGPT Architecture
 ## Verification-first source of truth
 Date: 2026-09-28
@@ -42,8 +46,8 @@ Current verified Metricool capabilities include:
 
 IMPORTANT:
 The end-to-end combination "ChatGPT Scheduled Task automatically invokes Metricool to publish a Pinterest Pin without a user approval step" is currently UNVERIFIED.
-A live connected-account test on 2026-09-28 also failed to resolve a newly created Pinterest board (`WYS PUBLIC TEST`) to a numeric board ID. This does not prove Metricool publishing is unavailable. Metricool's current documentation supports Pinterest board selection and connection refresh/synchronization. Production-board resolution still requires a successful test in the customer's connected account.
-DO NOT publish fully unattended publishing as a guaranteed customer capability until both the production-board resolution test and the end-to-end scheduled-task test pass.
+The 2026-09-30 read-only account audit verified production board `Legally Blonde Outfits | Pink Amazon Fashion` as public with ID `1122311238330934930`, matching the Metricool draft's board ID. Its Amazon destination resolved to the public six-item list. This closes the production-board existence/ID check for that board; it does not prove that a connected Work task can create, schedule, and read back a post.
+DO NOT publish fully unattended publishing as a guaranteed customer capability until the end-to-end scheduled-task test passes. Production board existence and ID have been verified read-only; actual authorized create/schedule/readback remains untested.
 
 ### Pinterest
 Owns native Pinterest publishing in the CREDIT-SAVING path.
