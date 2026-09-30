@@ -8,6 +8,10 @@ The current product workflow is the ChatGPT Work path with connected Drive and p
 
 The sales-page editorial redesign is a visual review only. It does not verify customer integrations or authorize checkout, Pin publication, or social scheduling. Local Astro build passed (158 pages); the rendered page was reviewed at 1440px desktop and 390px phone widths with no horizontal overflow. Production remains unchanged until separately approved. The theme and image output were checked against the live TDIE homepage and the existing published Pin assets.
 
+**Pricing and scheduled-post audit · 30 Sep 2026.** Jodie requested a new ladder: $17 public presale, $10 for Premium members with a code; $27 public launch, $17 for Premium members with a code; then $37 regular price with a 40% affiliate offer. Coupon names, the phase end times, the Premium offer after the $37 stage, and affiliate start timing are still awaiting confirmation. Until those are settled, do not edit checkout or publish price claims. The current page, canon Decisions 121–122, `storefront-product/COPY.md`, PDFs, graphics, and old queue instructions still contain the previous $10 public / $27 launch / `PREMIUM50` terms and must be revised before any launch scheduling. `COPY.md` says its campaign pieces are drafts and nothing is posted or scheduled; the queue's post-scheduling step is conditional on the customer live test passing, not evidence it ran.
+
+A fresh Metricool read for 30 Sep–31 Dec found no While-You-Sleep pricing promotions in the scheduled-post list. It did return one unrelated Pinterest draft dated 7 Oct and the older WYS board-resolution test draft. The 7 Oct Pin date remains withdrawn; the unrelated Pin was not changed as part of this price audit. Review it before that date rather than reusing the withdrawn slot. Skool's public feed was checked, but scheduled Skool drafts/history were not independently verified.
+
 ## 1 · One-Sentence Offer tool: link from The Offer Edit's opening lesson (26 Sep 2026)
 
 Cloud session could not reach Skool (network policy blocks skool.com; no signed-in browser). Canon Decision 120.
@@ -188,3 +192,4 @@ Apply `ops/cloud-output/storefront-product/OWN_SETUP_AUDIT.md` in its order, to 
 ### Step 13 · Verify
 
 Before marking any step done, read it back live: Skool (both lessons, logged out for The Value Vault and as a Premium member for The Premium Vault; the five scheduled posts in SkoolKit), Beacons (both products and the code, logged out), Pinterest (the renamed public board; every pin the catch-up task scheduled; no test pins or test board left), the site (the sales page on phone and desktop), MailerLite and Facebook (both scheduled; first comments seen live). Mark this section DONE with the date and one line per step.
+
