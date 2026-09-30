@@ -42,26 +42,27 @@ const proof = [
 ];
 
 const steps = [
-  { n: "01", t: "It picks the look", p: "From a seasonal calendar and an evergreen bank written for your theme, so it's never costumes in March." },
-  { n: "02", t: "It shops Amazon for you", p: "Five to eight pieces per look: in stock, four stars and up, a hundred ratings or more. Every one with your own affiliate link." },
-  { n: "03", t: "It builds the list", p: "An Idea List in your storefront holding every piece, or a shop-the-look page on your own site." },
-  { n: "04", t: "It makes the pins", p: "A styled flat lay or collage, and a lifestyle photo of your AI persona (or a second collage if you don't have one). Title, description, alt text, #ad line." },
-  { n: "05", t: "It schedules and logs", p: "Two pins per look, three days apart, checked on Pinterest's scheduled page and written to your pin tab and log." },
+  { n: "01", t: "Plan a look", p: "Use your configured theme, schedule, and eligible look ideas to prepare a bounded draft." },
+  { n: "02", t: "Use approved product inputs", p: "Work from product details and affiliate links you provide or an authorized integration available to your account. Do not assume Amazon API access." },
+  { n: "03", t: "Prepare a destination", p: "Use your eligible Idea List or website path. A destination must resolve before a Pin can be approved for scheduling." },
+  { n: "04", t: "Prepare Pin drafts", p: "Create images and Pin copy with disclosure and alt text, then check framing, product fidelity, and metadata." },
+  { n: "05", t: "Review, authorize, and track", p: "You select each exact Pin and authorize its schedule. Record only the status the selected publisher confirms." },
 ];
 
 const needs = [
-  "A Claude plan with scheduled tasks and Claude in Chrome",
-  "The Claude desktop app, with your computer on when the tasks run",
+  "A ChatGPT account with Work and Scheduled Tasks available for the chosen workflow",
+  "A supported Cloud or Local execution mode and the needed connected actions",
   "Amazon Associates, plus Influencer approval for Idea Lists",
-  "A Pinterest business account with public boards",
-  "Gemini and Higgsfield accounts",
+  "A Pinterest business account and a public board verifiable through a supported path",
+  "A connected image provider and supported model if your chosen path requires one",
+  "A connected Metricool account only if you choose TIME-SAVING publishing; scheduling remains account-dependent until tested",
 ];
 
 const inside = [
-  "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
+  "A guided setup prompt that records your choices and account-specific blockers",
   "The themed-look recipe, for any theme and any season",
   "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
-  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
+  "Three canonical recurring task prompts: weekly planning, optional Outfit of the Day, and reconciliation",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
   "The setup guide, with two of my own looks worked through step by step",
@@ -71,20 +72,20 @@ const inside = [
   wide
   ogImage={witchFlat.src}
   title="The While-You-Sleep Storefront™ · Amazon Pins on a Schedule"
-  description="Your Amazon affiliate links, turned into Pinterest pins that get built, scheduled and logged by your own Claude scheduled tasks. Found through search, not the feed."
+  description="A guided workflow for turning approved Amazon product inputs into reviewable Pinterest Pin drafts, with customer approval before each schedule."
 >
   <section class="ws-hero">
     <div class="page-eyebrow">Amazon links to Pinterest pins · on a schedule</div>
     <h1>The <em>While-You-Sleep</em> Storefront™</h1>
-    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
+    <p class="lede">Turn your approved Amazon product inputs into Pinterest Pin drafts, with images and copy prepared for your review. You choose each finished Pin and authorize its schedule after checking the destination, board, disclosure, and details.</p>
     <div class="ws-cta-row">
       <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
-      <li>About 5 minutes to start</li>
-      <li>No building, no selling, no posting</li>
-      <li>Runs from your own computer</li>
+      <li>Guided setup; timing depends on your accounts</li>
+      <li>Review and approve each Pin before scheduling</li>
+      <li>Cloud or local execution, when available</li>
     </ul>
   </section>
 
@@ -93,7 +94,7 @@ const inside = [
       <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
     ))}
   </section>
-  <p class="ws-note">Every image, title and schedule above was made by the tasks you're about to copy. Not by me.</p>
+  <p class="ws-note">Examples from Jodie's own workflow. They do not verify the customer account setup or show retail products unless identified as such.</p>
 
   <section class="ws-sec">
     <div class="ws-kicker">The problem nobody says out loud</div>
@@ -104,8 +105,8 @@ const inside = [
   </section>
 
   <section class="ws-sec ws-tint">
-    <div class="ws-kicker">What the tasks do, on their own</div>
-    <h2>Five jobs you never do again.</h2>
+    <div class="ws-kicker">What the tasks can help prepare</div>
+    <h2>Five jobs the workflow can help prepare.</h2>
     <div class="ws-steps">
       {steps.map((s) => (
         <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
@@ -115,16 +116,16 @@ const inside = [
   </section>
 
   <section class="ws-sec">
-    <div class="ws-kicker">Two automations, one machine</div>
-    <h2>Your theme, every week. And the Outfit of the Day, every night.</h2>
+    <div class="ws-kicker">Two content workflows and reconciliation</div>
+  <h2>Your themed workflow, plus an optional Outfit of the Day path.</h2>
     <div class="ws-grid-2">
       <div class="ws-card">
         <h3>Themed looks</h3>
-        <p>Once a week, looks for your theme: cozy mom, coastal home, pink everything, dark academia, whatever you'd pin yourself. Holidays until a week before the day, evergreen looks every single week.</p>
+        <p>On the configured schedule, prepare look drafts for your theme: cozy mom, coastal home, pink everything, dark academia, or another customer-selected direction. Cadence depends on your setup and account.</p>
       </div>
       <div class="ws-card ws-card-pink">
         <h3>The Brand Closet™ Outfit of the Day</h3>
-        <p>If you're a member of The Brand Closet™ on Rose's $9/month tier, a second automation turns each new Outfit of the Day into your own pins, with your own Amazon links, your own list and brand-new images. Nothing of Rose's is ever posted.</p>
+        <p>If you have the required Brand Closet™ access, the optional workflow can use lesson topics as inspiration to prepare original drafts with your approved product inputs. It does not reuse member-only materials. You review each Pin and authorize any schedule.</p>
       </div>
     </div>
   </section>
@@ -139,7 +140,7 @@ const inside = [
       <div><span class="ws-stat">84</span><span class="ws-statlab">Tagged product links</span></div>
       <div><span class="ws-stat">26</span><span class="ws-statlab">Pins built</span></div>
     </div>
-    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work. It took me 5 minutes to set up.</p>
+    <p class="ws-p">These figures describe Jodie's historical workflow records, not customer results or proof that the current customer Work, Drive, and publisher path has passed an end-to-end test. No sales or income claim is being made. Setup time varies with account access, board checks, connections, task configuration, and first-run review.</p>
     <div class="ws-gallery">
       {proof.slice(4).map((p) => (
         <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
@@ -153,12 +154,12 @@ const inside = [
     <div class="ws-grid-2">
       <div class="ws-card">
         <ul class="ws-yes">{needs.map((n) => (<li>{n}</li>))}</ul>
-        <p class="ws-fine-dark">The Outfit of the Day line also needs The Brand Closet™ at Rose's $9/month tier. It's optional: the themed-look line runs without it.</p>
+        <p class="ws-fine-dark">The Outfit of the Day line also needs authorized access to the relevant Brand Closet™ lesson. It is optional. TIME-SAVING publishing additionally requires a connected Metricool account and a successful account-specific test.</p>
       </div>
       <div class="ws-card ws-callout">
         <h3>The honest part</h3>
-        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
-        <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
+        <p>Cloud execution may work while your computer is off when enabled for your account and required connections. Local runs need your computer and any required local session. Do not assume missed work catches up automatically.</p>
+        <p>Every Pin begins as a draft. You choose the exact finished Pin and authorize its schedule after review. Cancellation or removal depends on the connected publisher and may require action in Pinterest.</p>
       </div>
     </div>
   </section>
@@ -201,13 +202,15 @@ const inside = [
     <div class="ws-kicker">Questions</div>
     <h2>Asked, answered.</h2>
     <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
-      <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
-    <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
-      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
+      <p>The guide uses plain language and a guided setup prompt. The number of questions depends on your account path and choices. You configure only the tasks and connected actions available to you.</p></details>
+    <details class="ws-faq"><summary>Does my computer have to stay on?</summary>
+      <p>It depends on the execution mode available to your account. Supported Cloud runs may work with your computer off; Local runs require your computer and any needed local session. Missed-run recovery must be verified in your own setup.</p></details>
+    <details class="ws-faq"><summary>Will Pins publish without my approval?</summary>
+      <p>No. Each Pin stays a draft until you select that exact finished Pin and authorize its schedule after checking the image, destination, public board, disclosure, title, and alt text. A setup test does not prove that future runs or publishing will work unattended.</p></details>
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
-      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
+      <p>Take the no-persona path: the workflow uses flat lays and collages. Use an image provider and model confirmed available in your own account.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
-      <p>There's an Associates-only path: each look gets a page on your own site, and the pins link there. It's hands-off if the tasks can publish to your site (a Weekend Ecosystem™ site can). Influencer approval is the easy path, because Idea Lists need no website at all.</p></details>
+      <p>There's an Associates-only path that uses a page on your own site as the destination. The kit describes supported page-file and site workflows; what can be written or published depends on your site platform and connected actions, and may require your own steps. Influencer approval allows the Idea List path without a website.</p></details>
     <details class="ws-faq"><summary>Will it make me money?</summary>
       <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
     <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
