@@ -2,6 +2,20 @@
 
 Account-only steps left by cloud sessions. Each job adds one numbered section with every file path, piece of copy and exact step written in. The DESKTOP FINISH prompt in `ops/cloud-kit/CLOUD_CREDIT_JOBS.md` works through this file on Jodie's computer and marks each section DONE with the date.
 
+## Current storefront status · 30 Sep 2026
+
+The current product workflow is the ChatGPT Work path with connected Drive and publisher services. The September 27 test below records a prior Claude-based setup; it is historical evidence only and does not pass the current customer workflow gate. The end-to-end customer path through ChatGPT Work, Drive, Metricool, and the production Pinterest board is **NOT READY / UNVERIFIED**. Keep checkout closed and do not schedule launch posts or Pins from this note. The Oct 7 Pin date was withdrawn; do not schedule or reuse it.
+
+**HOLD — old launch runbook below is superseded.** Its campaign copy, scheduled-task labels, Beacons instructions, coupon `PREMIUM50`, $10 public presale, $27 launch, and Oct 5/9 price-change steps describe the withdrawn offer. They are retained as historical audit context only; do not run, publish, schedule, or use those instructions. No old-price promotion was found in the current Metricool schedule read, and no active Codex automation was confirmed from this environment. Skool scheduled drafts/history remain unverified. Restage the campaign only after the new offer and customer workflow gate are verified.
+
+The sales-page editorial redesign is a visual review only. It does not verify customer integrations or authorize checkout, Pin publication, or social scheduling. Local Astro build passed (158 pages); the rendered page was reviewed at 1440px desktop and 390px phone widths with no horizontal overflow. Production remains unchanged until separately approved. The theme and image output were checked against the live TDIE homepage and the existing published Pin assets.
+
+**Visual follow-up · 30 Sep 2026.** The lower page now carries a scrapbook Pin inspiration pair after the FAQ, a tape-and-paper FAQ treatment, and a closing Draft → Review → Authorize graphic. These use existing published Pin examples already described as visual inspiration; generated outfits are not verified retail photos. The local phone-sized browser preview was visually inspected after the additions and the Astro production build passed (158 pages). The browser viewport could not be resized to a desktop width in this session, so the latest lower-page desktop render is not re-verified. Production and checkout remain unchanged. Three requested Nano Banana Pro image jobs were returned with `nano_banana_2` model metadata and were excluded from the page; do not treat them as Pro assets.
+
+**Pricing and scheduled-post audit · 30 Sep 2026.** Jodie requested a new ladder: $17 public presale, $10 for Premium members with a code; $27 public launch, $17 for Premium members with a code; then $37 regular price with a 40% affiliate offer. Coupon names, the phase end times, the Premium offer after the $37 stage, and affiliate start timing are still awaiting confirmation. Until those are settled, do not edit checkout or publish price claims. The current page, canon Decisions 121–122, `storefront-product/COPY.md`, PDFs, graphics, and old queue instructions still contain the previous $10 public / $27 launch / `PREMIUM50` terms and must be revised before any launch scheduling. `COPY.md` says its campaign pieces are drafts and nothing is posted or scheduled; the queue's post-scheduling step is conditional on the customer live test passing, not evidence it ran.
+
+A fresh Metricool read for 30 Sep–31 Dec found no While-You-Sleep pricing promotions in the scheduled-post list. It did return one unrelated Pinterest draft dated 7 Oct and the older WYS board-resolution test draft. The 7 Oct Pin date remains withdrawn; the unrelated Pin was not changed as part of this price audit. Review it before that date rather than reusing the withdrawn slot. Skool's public feed was checked, but scheduled Skool drafts/history were not independently verified.
+
 ## 1 · One-Sentence Offer tool: link from The Offer Edit's opening lesson (26 Sep 2026)
 
 Cloud session could not reach Skool (network policy blocks skool.com; no signed-in browser). Canon Decision 120.
@@ -150,7 +164,7 @@ Run the kit exactly as a new buyer would, in Jodie's own accounts, on a throwawa
 
 ### Step 10 · Scheduling
 
-**SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
+**STALE LABEL — DO NOT RUN.** The old scheduled-task note for "schedule the launch posts" described Fri 2 Oct 12:20 pm and old-price copy. Whether that task is active in an external scheduler is unverified. Do not run or recreate it; replace the campaign only after price terms are finalized and the workflow gate passes.
 
 All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in its date table. Paste it exactly.
 1. **Skool (SkoolKit):** schedule Skool 1 to 5 with their titles, bodies and images (Skool 1: `graphics/g2-tease.png`; Skool 2: `graphics/g1-presale-open.png`; Skool 3: the four `src/lifestyle/` images it names; Skool 4: `graphics/g3-last-call.png`; Skool 5: `graphics/g4-share.png`). Links hyperlinked on their words, at most two per post. "Send email to all members" per step 3 check 1. Read each back in SkoolKit.
@@ -160,7 +174,7 @@ All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in it
 
 ### Step 11 · Presale open and launch morning
 
-**SCHEDULED 27 Sep 2026.** 11.1 by the Mon 5 Oct 7:10 pm task (also lists the product in the link in bio). 11.2 and 11.3 by the Fri 9 Oct 9:00 am task (also turns on the 40% affiliate link).
+**STALE LABEL — DO NOT RUN.** The old Mon 5 Oct and Fri 9 Oct tasks below contain the withdrawn $10/$27 pricing and `PREMIUM50`. Whether those tasks are active in an external scheduler is unverified. Do not run or recreate them; restage the phase changes after confirming offer dates, coupon behavior, and affiliate timing.
 
 1. **Mon 5 Oct, 7:00 pm:** confirm the public Beacons product shows $10 and the sales page shows the open checkout button.
 2. **Fri 9 Oct, 9:00 am:** Beacons public product: replace the file with `ops/cloud-output/storefront-product/While-You-Sleep-Storefront-Kit.zip` (or the PDF and .txt files), change the price to $27, and replace the description with COPY.md's "from Fri 9 Oct" version. Publish both vault lessons.
@@ -182,3 +196,4 @@ Apply `ops/cloud-output/storefront-product/OWN_SETUP_AUDIT.md` in its order, to 
 ### Step 13 · Verify
 
 Before marking any step done, read it back live: Skool (both lessons, logged out for The Value Vault and as a Premium member for The Premium Vault; the five scheduled posts in SkoolKit), Beacons (both products and the code, logged out), Pinterest (the renamed public board; every pin the catch-up task scheduled; no test pins or test board left), the site (the sales page on phone and desktop), MailerLite and Facebook (both scheduled; first comments seen live). Mark this section DONE with the date and one line per step.
+
