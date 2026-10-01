@@ -1,12 +1,10 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
-@font-face{font-family:Newsreader;src:url("file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\ops\cloud-output\storefront-product\fonts/Newsreader.ttf") format("truetype");font-weight:200 800}
-@font-face{font-family:Inter;src:url("file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\ops\cloud-output\storefront-product\fonts/Inter.ttf") format("truetype");font-weight:100 900}
 :root{--ink:#1A1417;--ink-soft:#4A3F44;--hot:#D62E73;--hot-deep:#A81F57;--bub:#FF8AC2;--gold:#C8A96A;--cream:#FBF8F5;
   --glass:rgba(255,253,252,.86);--edge:rgba(200,169,106,.6);
   --shadow:0 34px 60px -32px rgba(214,46,115,.42),0 12px 26px -16px rgba(26,20,23,.16)}
 *{box-sizing:border-box;margin:0;padding:0}
 @page{size:8.5in 11in;margin:0}
-html,body{font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{font-family:Inter,'Segoe UI',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 a{color:var(--hot);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
 .pg{position:relative;width:816px;height:1056px;overflow:hidden;page-break-after:always;padding:64px 64px 70px;
   background:radial-gradient(60% 38% at 100% 0%,rgba(255,138,194,.22),transparent 70%),
@@ -14,17 +12,17 @@ a{color:var(--hot);font-weight:700;text-decoration:underline;text-decoration-thi
              linear-gradient(165deg,#FFFEFC 0%,#FBF8F5 55%,#F5EDE8 100%)}
 .pg:last-child{page-break-after:auto}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.brand{display:inline-flex;align-items:center;gap:10px;font:700 10.5px/1 Inter;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:10px;font:700 10.5px/1 'Segoe UI',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(214,46,115,.16)}
-.pno{font:700 10.5px/1 Inter;letter-spacing:.2em;color:var(--ink-soft)}
+.pno{font:700 10.5px/1 'Segoe UI',sans-serif;letter-spacing:.2em;color:var(--ink-soft)}
 .foot{position:absolute;left:64px;right:64px;bottom:34px;display:flex;justify-content:space-between;padding-top:10px;
-  border-top:1px solid rgba(200,169,106,.6);font:600 10px/1 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.kicker{font:800 11.5px/1.3 Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:12px}
-h1,h2{font-family:Newsreader,serif;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.04;text-wrap:balance}
+  border-top:1px solid rgba(200,169,106,.6);font:600 10px/1 'Segoe UI',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.kicker{font:800 11.5px/1.3 'Segoe UI',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:12px}
+h1,h2{font-family:Newsreader,Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.04;text-wrap:balance}
 h1 em,h2 em{font-style:normal;color:var(--hot)}
 h1{font-size:54px}
 h2{font-size:50px;margin-bottom:18px}
-h3{font:800 14px/1.25 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+h3{font:800 14px/1.25 'Segoe UI',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
 p,li{font-size:15.6px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty}
 p+p{margin-top:9px}
 strong{color:var(--ink)}
@@ -38,19 +36,19 @@ strong{color:var(--ink)}
 .call p{color:var(--ink)}
 .steps{display:grid;gap:14px}
 .step{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start}
-.num{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font:600 26px/1 Newsreader,serif;color:#fff;
+.num{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font:600 26px/1 Newsreader,Georgia,serif;color:#fff;
   background:linear-gradient(140deg,#F0589A,var(--hot) 55%,var(--hot-deep));box-shadow:0 14px 24px -12px rgba(168,31,87,.7)}
 .step ol,.step ul{margin:6px 0 0 18px}
 .step li{margin-top:3px}
 .ticks{list-style:none;display:grid;gap:9px}
 .ticks li{position:relative;padding-left:30px;color:var(--ink)}
 .ticks li::before{content:"\2713";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
-  background:var(--ink);color:#fff;font:800 11px/1 Inter}
+  background:var(--ink);color:#fff;font:800 11px/1 'Segoe UI',sans-serif}
 .ticks li span{display:block;color:var(--ink-soft);font-size:14px}
 .strip{position:absolute;left:64px;right:64px;bottom:78px;height:230px}
 .strip .pin{width:130px;height:195px}
 .sticker{position:absolute;z-index:4;display:grid;place-items:center;width:124px;height:124px;border-radius:50%;
-  font:800 13px/1.2 Inter;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--ink);background:#fff;
+  font:800 13px/1.2 'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--ink);background:#fff;
   box-shadow:0 20px 36px -16px rgba(168,31,87,.55),0 6px 12px -6px rgba(26,20,23,.2)}
 .sticker.bub{background:var(--bub)}
 .sticker>span{display:grid;place-items:center;width:84%;height:84%;border-radius:50%;border:2px dashed currentColor;padding:6px}
@@ -58,24 +56,25 @@ strong{color:var(--ink)}
 .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .pht{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:24px;
   background:repeating-linear-gradient(135deg,#F6ECE8 0 16px,#FBF3F0 16px 32px);border:3px dashed rgba(214,46,115,.45);border-radius:18px;
-  font:800 14px/1.45 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
+  font:800 14px/1.45 'Segoe UI',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
 .pht small{display:block;margin-top:8px;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--ink-soft);font-size:12.5px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center;gap:6px;margin:8px 0 20px}
 .flow .card{padding:14px 14px;text-align:center}
-.flow b{display:block;font:600 19px/1.1 Newsreader,serif;color:var(--ink);margin-bottom:4px}
+.flow b{display:block;font:600 19px/1.1 Newsreader,Georgia,serif;color:var(--ink);margin-bottom:4px}
 .flow small{font-size:12px;color:var(--ink-soft);line-height:1.35;display:block}
-.arrow{font:800 22px/1 Inter;color:var(--hot);text-align:center}
+.arrow{font:800 22px/1 'Segoe UI',sans-serif;color:var(--hot);text-align:center}
 .pins{position:relative;height:430px;margin-top:6px}
 .pin{position:absolute;border-radius:16px;overflow:hidden;border:1px solid var(--edge);box-shadow:var(--shadow);background:#fff}
 .pin img{display:block;width:100%;height:100%;object-fit:cover}
-.tag{font:800 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);margin:14px 0 6px}
+.tag{font:800 10.5px/1 'Segoe UI',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);margin:14px 0 6px}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td{padding:7px 0;border-bottom:1px solid rgba(200,169,106,.45);vertical-align:top;color:var(--ink-soft);line-height:1.45}
 td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
 .small{font-size:12.5px}
+ .step .card{padding:16px 20px}.step p,.step li{font-size:14px;line-height:1.45}.step .small{font-size:12.5px;line-height:1.45}
 </style></head><body><section class="pg" style="padding:0">
-  <div class="ph" style="left:330px;top:0;width:486px;height:1056px;border-radius:0;border:0;border-left:2px solid var(--gold)"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\ops\cloud-output\storefront-product\graphics\photos\cover-sofa-dusk.jpg" style="object-position:62% 50%"></div>
+  <div class="ph" style="left:330px;top:0;width:486px;height:1056px;border-radius:0;border:0;border-left:2px solid var(--gold)"><img src="../graphics/photos/cover-sofa-dusk.jpg" style="object-position:62% 50%"></div>
   <div style="position:absolute;left:0;top:0;width:470px;height:1056px;background:linear-gradient(90deg,#FBF8F5 0%,#FBF8F5 62%,rgba(251,248,245,0) 100%)"></div>
   <div style="position:absolute;left:60px;top:60px;width:420px;display:flex;flex-direction:column;height:936px">
     <div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div>
@@ -91,9 +90,9 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
         </ul>
       </div>
     </div>
-    <div style="margin-top:auto;font:600 22px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
+    <div style="margin-top:auto;font:600 22px/1 Newsreader,Georgia,serif;color:var(--hot)">xoxo, Jodie</div>
   </div>
-  <div class="sticker bub" style="left:392px;top:118px;transform:rotate(-9deg)"><span>Two real<br>worked<br>examples</span></div>
+  <div class="sticker bub" style="left:392px;top:118px;transform:rotate(-9deg)"><span>Two<br>workflow<br>examples</span></div>
 </section>
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">02</div></div>
   <div class="kicker">What you're holding</div>
@@ -119,15 +118,15 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">03</div></div>
   <div class="kicker">Step 0 &middot; before anything</div>
   <h2>What you need, <em>up front.</em></h2>
-  <p class="lede">If one of these is missing, the machine doesn't run. Get it first. Full detail is in 01_REQUIREMENTS.txt.</p>
+  <p class="lede">Choose a connected workflow or a manual workflow. Work and connected actions are optional for manual preparation. Full detail is in 01_REQUIREMENTS.txt.</p>
   <div class="card"><ul class="ticks">
-    <li>A ChatGPT plan with Work and Scheduled Tasks available<span>Feature availability varies by account and workspace. Confirm Scheduled Tasks and the required connected actions in your own account before setup.</span></li>
+    <li>For automated runs: a ChatGPT plan with Work and Scheduled Tasks available<span>Feature availability varies by account and workspace. Confirm Scheduled Tasks and the required connected actions in your own account before setup.</span></li>
     <li>A supported execution mode and an available workspace or folder<span>Use only the connected services and actions the setup confirms are available. Complete sign-in through each service's own sign-in flow.</span></li>
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account and a verified public production board<span>Use a supported authorized path to resolve and confirm the exact board. If it cannot be verified, do not schedule.</span></li>
     <li>Only for the optional blog half: a supported GitHub connection<span>With write access to your site's repository; availability depends on your setup.</span></li>
     <li>A connected image provider, if you choose that path<span>Use the provider and model confirmed available in your account. Record commercial-use rights; do not silently switch models or plans.</span></li>
-    <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
+    <li>Optional: authorized Brand Closet&trade; lesson access<span>Check the current listing and actual classroom entitlement before upgrading.</span></li>
   </ul></div>
   <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
     <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
@@ -137,15 +136,14 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
   <h2>Choose your setup <em>and accounts.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">1</div><div class="card"><h3>Choose a supported workspace</h3>
-      <p>Follow the setup prompt to choose Cloud or Local only if that mode is available in your account. Use the dedicated connected Drive folder or local folder that the setup confirms can store your files. Unzip the kit there if your selected workflow requires it.</p></div></div>
+      <p>Follow the setup prompt to choose Cloud or Local only if that mode is available in your account. Use the dedicated connected Drive folder or local folder that the setup confirms can store your files. Unzip the kit there if your selected workflow requires it.</p><p class="small"><strong>Save credits.</strong> Lower-cost: use ChatGPT or Claude to prepare files as text. Manual: save the kit and state/log files in a folder you control; no connected storage is required.</p></div></div>
     <div class="step"><div class="num">2</div><div class="card"><h3>Connect only the services you choose</h3>
-      <p>Complete sign-in through Amazon, Pinterest, your selected publisher, image provider, and storage service when prompted. Never type passwords into a task. The setup is incomplete if a required action is unavailable; use a supported manual path where the kit describes one.</p></div></div>
+      <p>Complete sign-in through Amazon, Pinterest, your selected publisher, image provider, and storage service when prompted. Never type passwords into a task. The setup is incomplete if a required action is unavailable; use a supported manual path where the kit describes one.</p><p class="small"><strong>Save credits.</strong> Lower-cost: ask ChatGPT or Claude for a checklist. Manual: sign in through each service yourself and copy only authorized inputs into your files.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
-      <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
+      <p>Only if you want the optional Outfit of the Day workflow. Check the current listing and your actual lesson entitlement; a historical price or free membership does not prove lesson access.</p>
       <p><a href="https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce">Join The Brand Closet&trade;</a> and confirm the selected execution mode can access the authorized lesson list.</p>
-      <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p></div></div>
+      <p class="small">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p><p class="small"><strong>Save credits.</strong> Lower-cost: describe the authorized outfit in your own words for ChatGPT or Claude. Manual: inspect your entitled lesson yourself; never upload member images or copy paid prompts.</p></div></div>
   </div>
-  <div class="strip"><div class="pin" style="left:0px;top:0px;transform:rotate(-4deg)"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\src\lifestyle\pink-angel-halloween-costume-flatlay.jpg"></div><div class="pin" style="left:162px;top:14px;transform:rotate(3deg)"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\src\lifestyle\pink-bunny-halloween-costume-lifestyle.jpg"></div><div class="pin" style="left:324px;top:0px;transform:rotate(-2deg)"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\src\lifestyle\pink-halloween-porch-decor-flatlay.jpg"></div><div class="pin" style="left:486px;top:14px;transform:rotate(4deg)"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\src\lifestyle\pink-graduation-gown-halloween-costume-lifestyle.jpg"></div></div>
   <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
 </section>
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">05</div></div>
@@ -153,13 +151,13 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
   <h2>Paste one prompt. <em>Make your setup choices.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">4</div><div class="card"><h3>Open a ChatGPT Work chat</h3>
-      <p>Start a new Work chat where the kit is available. Follow the setup prompt to connect the supported storage location and authorize the actions you choose. If Work, Scheduled Tasks, or a required write action is unavailable, stop setup and use only the supported manual path.</p></div></div>
+      <p>Start a new Work chat where the kit is available. Follow the setup prompt to connect the supported storage location and authorize the actions you choose. If Work, Scheduled Tasks, or a required write action is unavailable, stop setup and use only the supported manual path.</p><p class="small"><strong>Save credits.</strong> Lower-cost: open a standard ChatGPT or Claude chat and choose the manual path. Manual: fill the setup choices in your own recipe file.</p></div></div>
     <div class="step"><div class="num">5</div><div class="card"><h3>Paste the setup prompt</h3>
       <p>Open <strong>02_SETUP_PROMPT.txt</strong>. Copy everything between the two long lines. Paste it into the chat and press Enter. The prompt collects the choices needed for your setup, including:</p>
       <ol><li>your execution and publishing modes, if available</li><li>your theme, boards, sections, and Amazon destination path</li><li>your image provider and persona choices</li><li>optional Brand Closet&trade; access and workflow</li><li>your time zone, pace, and schedule</li><li>connection checks, board verification, and required setup details for your selected path</li></ol>
-      <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p></div></div>
+      <p>Then it writes your files into the folder: <strong>MY_RECIPE.txt</strong>, <strong>storefront-log.md</strong>, <strong>pin-tab.md</strong>, <strong>pin-drafts.md</strong>, <strong>MY_SCHEDULED_TASKS.txt</strong> (plus a pages folder if you paste pages into your site yourself).</p><p class="small"><strong>Save credits.</strong> Lower-cost: ask ChatGPT or Claude to return recipe and logs as text. Manual: copy and save those files yourself; no write connection is required.</p></div></div>
   </div>
-  <div class="call"><p>Setup time varies. Plan for account and board checks, task configuration, and a first-run review. My own initial setup took 5 minutes after Amazon, Pinterest, and my image tools were already signed in; that is not a general setup-time estimate.</p></div>
+  <div class="call"><p>Save your files, then check the actual connections you selected. Setup time depends on your accounts and choices.</p></div>
     <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
 </section>
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">06</div></div>
@@ -174,43 +172,43 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
       <li>Give it access to the configured state location only if the task's supported setup requires it.</li>
       <li>Paste the <strong>prompt</strong>: everything between that task's two long lines.</li>
       <li><strong>Save.</strong></li></ol>
-      <p class="small">Available menus and actions vary by account. If Scheduled Tasks or a required action is missing, do not claim the automation is active.</p></div></div>
+      <p class="small">Available menus and actions vary by account. If Scheduled Tasks or a required action is missing, do not claim the automation is active.</p><p class="small"><strong>Save credits.</strong> Lower-cost: run the recipe on demand in ChatGPT or Claude. Manual: use your own calendar reminder and checklist; leave task installation off.</p></div></div>
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run a supported task once only after setup and required permissions are confirmed. Review the draft image, product fidelity, title, disclosure, alt text, destination, exact public board and state record. A successful first run does not prove future runs or publishing; monitor the account and report failures.</p></div></div>
+      <p>Run a supported task once only after setup and required permissions are confirmed. Review the draft image, product fidelity, title, disclosure, alt text, destination, exact public board and state record. A successful first run does not prove future runs or publishing; monitor the account and report failures.</p><p class="small"><strong>Save credits.</strong> Lower-cost: have ChatGPT or Claude check your copy and checklist. Manual: inspect the actual asset and destination yourself and record the result before authorizing any schedule.</p></div></div>
   </div>
     <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
 </section>
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">07</div></div>
   <div class="kicker">Steps 8 to 10 &middot; living with it</div>
-  <h2>Then you <em>leave it alone.</em></h2>
+  <h2>Keep your <em>review in the loop.</em></h2>
   <div class="steps" style="margin-top:14px">
     <div class="step"><div class="num">8</div><div class="card"><h3>Know what your selected mode requires</h3>
-      <p>Cloud runs may work while your computer is off when Cloud Work and the required connected actions are enabled for your account. Local runs require your computer and any required local session to be available. Do not assume a missed run will catch up automatically; check the run record and report skipped work.</p></div></div>
+      <p>Cloud runs may work while your computer is off when Cloud Work and the required connected actions are enabled for your account. Local runs require your computer and any required local session to be available. Do not assume a missed run will catch up automatically; check the run record and report skipped work.</p><p class="small"><strong>Save credits.</strong> Lower-cost: review recorded state on demand with ChatGPT or Claude. Manual: check your calendar and queue yourself; record and resume only unfinished work.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Select and approve each Pin</h3>
-      <p>Every Pin starts as a draft for your review. You choose the exact finished Pin and authorize its schedule only after the checks below. A scheduled task cannot infer your choice from a prior look or an older approval.</p></div></div>
+      <p>Every Pin starts as a draft for your review. You choose the exact finished Pin and authorize its schedule only after the checks below. A scheduled task cannot infer your choice from a prior look or an older approval.</p><p class="small"><strong>Save credits.</strong> Lower-cost: prepare a review packet in ChatGPT or Claude. Manual: inspect each Pin in your own Pinterest interface, approve the exact asset and schedule it yourself; record scheduling separately from publication.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
-      <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
+      <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p><p class="small"><strong>Save credits.</strong> Lower-cost: draft page sections and captions in ChatGPT or Claude. Manual: paste into your site, create feed posts in your own supported interface and add Stories in the app; review all disclosures.</p></div></div>
   </div>
   <div class="hotcard" style="margin-top:14px"><h3>Before you authorize a schedule</h3>
-    <p style="font-size:13.2px;line-height:1.38">Check the full 2:3 image: every piece is in frame, there are no stray marks or invented details, and the headline is spelled correctly, readable on a phone, and clear of the outfit. Confirm the image shows actual linked items or licensed/customer-owned product photos; otherwise title and describe it as outfit inspiration. Confirm the destination opens, the exact public board and section are verified through a supported path, the required disclosure is present, and title, link, board, disclosure and alt text match. Then select that exact Pin and authorize its schedule. Any later change returns it to review. Mark it scheduled only after publisher confirmation; scheduled does not mean published.</p></div>
+    <p style="font-size:13.2px;line-height:1.38">Check the actual image, product fidelity or inspiration label, headline, destination, exact public board/section, disclosure, title and alt text. Select that exact Pin and authorize its specific schedule. Any change returns it to review. Record scheduling only after confirmation; publication requires separate evidence. Full production alternatives and checks are on pages 12 and 13.</p></div>
   <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
 </section>
 <section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">08</div></div>
-  <div class="kicker">Approved visual example &middot; outfit inspiration</div>
-  <h2>A polished pink outfit <em>inspiration Pin.</em></h2>
+  <div class="kicker">Visual QA &middot; outfit inspiration</div>
+  <h2>Review your outfit <em>inspiration Pin.</em></h2>
   <div style="display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start">
     <div style="position:relative;height:470px;display:flex;justify-content:center">
-      <div class="pin" style="position:relative;width:240px;height:360px"><img src="file://C:\Users\Jodie\Documents\Codex\2026-09-29\you-are-continuing-my-storefront-automation\work\checkout\ops\cloud-output\storefront-product\graphics\photos\pink-outfit-pin-headline-test.png" style="object-fit:contain"></div>
-      <p style="position:absolute;left:0;right:0;top:372px;text-align:center;font-size:11px">Approved generated inspiration sample; not a product photo.</p>
+      <div class="card" style="width:240px;height:360px;display:flex;flex-direction:column;justify-content:center;text-align:center"><h3>Your Pin goes here</h3><p>Inspect the final image you made. Compare it with these checks before approving a schedule.</p><p class="small">No unverified product sample is shown.</p></div>
+      <p style="position:absolute;left:0;right:0;top:372px;text-align:center;font-size:11px">Inspect your actual final asset, not a placeholder.</p>
     </div>
     <div>
-      <p class="tag">What this sample demonstrates</p>
+      <p class="tag">What your Pin must demonstrate</p>
       <table>
         <tr><td>Composition</td><td>Vertical 2:3 flat lay, complete pieces inside the frame, with comfortable margins and a clean headline band.</td></tr>
-        <tr><td>Headline</td><td>“PINK OUTFIT / ideas” is applied after image generation in a consistent serif-and-script layout.</td></tr>
-        <tr><td>Product fidelity</td><td>Generated outfit inspiration only. The sample does not verify or depict linked retail products.</td></tr>
+        <tr><td>Headline</td><td>Add the headline after image generation. Check spelling, phone-size readability and clear spacing.</td></tr>
+        <tr><td>Product fidelity</td><td>Generated outfit inspiration only. Do not claim exact retail fidelity without evidence.</td></tr>
         <tr><td>Before scheduling</td><td>Confirm the exact image, destination, public board, disclosure, title, alt text, customer selection, and schedule authorization. Any mismatch keeps it in review.</td></tr>
-        <tr><td>Status</td><td>Visual reference only. This sample was not created or scheduled as a live Pin.</td></tr>
+        <tr><td>Status</td><td>Review checklist only; a layout is not proof of scheduling or publication.</td></tr>
       </table>
     </div>
   </div>
@@ -222,7 +220,7 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
   <div style="display:grid;grid-template-columns:300px 1fr;gap:24px">
     <div style="height:440px;display:grid;place-items:center">
       <div class="card" style="width:270px;height:390px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(165deg,#fffdfb,#f8e9ef);border:2px dashed rgba(214,46,115,.55)">
-        <div style="font:800 11px/1.4 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--hot)">Example image omitted</div>
+        <div style="font:800 11px/1.4 'Segoe UI',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--hot)">Example image omitted</div>
         <p style="margin-top:16px;color:var(--ink)">Build one original, text-free outfit image from authorized product facts. Inspect it against the visual standard, then add the headline.</p>
         <p style="margin-top:14px;font-size:12px">Generated outfits are inspiration unless verified item imagery is used.</p>
       </div>
@@ -260,12 +258,26 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
   <h2>Add the blog half, <em>or hand it to me.</em></h2>
   <div class="card" style="margin-top:8px"><h3>Have The Weekend Ecosystem&trade;?</h3>
     <p>09_THE_BLOG_HALF.txt adds a shop-the-look section to your site in one paste, with every look page written for Google. My Pinterest block is on my domain only, so your pins can link to your own pages.</p>
-    <p>Don't have it? The machine runs without a site, straight to your Idea Lists. If you ever want the blog half too, <a href="https://www.thedigitalincomeedit.com/shop/weekend-ecosystem">The Weekend Ecosystem&trade;</a> is $97 one-time, or 3 &times; $33.33.</p></div>
+    <p>Don't have it? The machine runs without a site, straight to your Idea Lists. If you ever want the blog half too, <a href="https://www.thedigitalincomeedit.com/shop/weekend-ecosystem">The Weekend Ecosystem&trade;</a> page explains the guide and current offer.</p></div>
   <div class="card" style="margin-top:16px"><h3>Recommend this kit</h3>
-    <p>Members of The Digital Income Edit&trade; earn 40% on every sale they refer, through Beacons' own affiliate feature. The four steps are in 11_WHATS_NEXT.txt.</p></div>
+    <p>The member affiliate launch is scheduled for October 9, 2026. Check the current canon and live Beacons program before enrolling or quoting a rate. See 11_WHATS_NEXT.txt; a planned launch is not proof of activation.</p></div>
   <div class="hotcard" style="margin-top:16px"><h3>Want it done for you?</h3>
-    <p>The DFY Amazon Storefront Launch is $297 for 10 themed looks: each an Idea List in your storefront plus 2 pins with your #ad disclosure, built on the same method you're holding.</p>
+    <p>The separate DFY Amazon Storefront Launch offers assisted setup. Check its current member listing for scope, availability and price. It is separate from this kit, Daily Prompts and the Premium DFY Content Calendar.</p>
     <p><a href="https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=8ec7129809ce4a85a7e0607b8105deec" style="color:#fff">See the DFY Amazon Storefront Launch</a></p></div>
-  <div style="margin-top:34px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
+  <div style="margin-top:34px;font:600 30px/1 Newsreader,Georgia,serif;color:var(--hot)">xoxo, Jodie</div>
   <div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div>
-</section></body></html>
+</section><section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">12</div></div><div class="kicker">Production choices</div><h2>Save credits at <em>every production step.</em></h2><table>
+<tr><td>Product intake</td><td>Connected: use customer-supplied rows or an authorized Amazon integration. Lower-cost: ChatGPT or Claude organizes your own approved facts. Manual: find products yourself, capture your authorized links and record ASIN, facts, date and rights. Never invent links.</td></tr>
+<tr><td>Idea List / shop page</td><td>Connected: only a supported authorized write path. Lower-cost: draft list titles or page copy in ChatGPT or Claude. Manual: edit your Idea List yourself, or paste an Associates shop page into your site.</td></tr>
+<tr><td>Image / persona</td><td>Connected: the configured provider with authorized budget. Lower-cost: prepare prompts in ChatGPT or Claude and run your selected provider directly within its limits. Manual: arrange original or permitted imagery yourself. Only use a persona reference you may use; do not promise identity preservation on an unsupported model.</td></tr>
+<tr><td>Headline / layout</td><td>Connected: an available deterministic layout editor. Lower-cost: ask ChatGPT or Claude for headline text. Manual: add text in an editor you already use, then check spelling, legibility and margins. Do not buy a plan just to follow this step.</td></tr>
+<tr><td>Copy / scheduling</td><td>Connected: selected publisher only after exact per-Pin approval. Lower-cost: prepare title, description and alt text in ChatGPT or Claude. Manual: schedule in your own Pinterest business account within its current limits, or post manually; preserve the kit's spacing and horizon rules. Verify the exact public board and disclosure first.</td></tr>
+<tr><td>Logs / verification</td><td>Connected: supported readback to state. Lower-cost: ChatGPT or Claude organizes recorded evidence. Manual: check Pinterest's scheduled area and later the actual live Pin; record each stage separately. Missing or ambiguous responses require reconciliation before retry.</td></tr>
+</table><div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div></section><section class="pg"><div class="top"><div class="brand"><span class="dot"></span>The Digital Income Edit&trade;</div><div class="pno">13</div></div><div class="kicker">Optional channels and recovery</div><h2>Keep the same checks <em>on the manual path.</em></h2><table>
+<tr><td>Blog / SEO</td><td>Connected: a supported repository write creates a reviewable change. Lower-cost: draft title, description, section copy and internal links with ChatGPT or Claude. Manual: paste into your site editor, check the rendered page and actual links, and publish only when you choose. Never treat source text as live verification.</td></tr>
+<tr><td>Weekend Ecosystem</td><td>Connected: include the optional price-free guide link in a reviewed page section. Lower-cost: draft the soft upsell in ChatGPT or Claude. Manual: add a link through your editor and check the current destination. Do not assume purchase-access automation is active without evidence.</td></tr>
+<tr><td>Instagram</td><td>Connected: use the supported format and account after approval. Lower-cost: draft caption and crop notes in ChatGPT or Claude. Manual: create or schedule the feed post in your own supported interface; add Stories manually. Record affiliate disclosure and any required AI label. No earnings claims.</td></tr>
+<tr><td>Image correction</td><td>Connected: edit only within the approved attempt and spend limits. Lower-cost: use ChatGPT or Claude to identify an exact correction before spending. Manual: fix the layout in your editor or replace it with permitted original imagery. Keep a failed look as a draft; no surprise paid retries.</td></tr>
+<tr><td>Cancellation / removal</td><td>Connected: use a supported cancellation/removal action and read back the result. Lower-cost: ask ChatGPT or Claude to organize the affected IDs and checklist. Manual: cancel the scheduled Pin or remove the live Pin in Pinterest yourself, then record evidence. Deleting a publisher record is not proof that a live Pin was removed.</td></tr>
+<tr><td>Missed or partial run</td><td>Connected: reconcile the existing records before resuming. Lower-cost: have ChatGPT or Claude identify unfinished steps from your log. Manual: complete only the missing steps or sibling Pin. Never repeat an ambiguous publisher create without checking what actually happened.</td></tr>
+</table><div class="call"><p>Every path keeps rights, budget, disclosure, public-board checks and exact approval. Customer confirmation can verify a schedule; publication requires a live result. Review 12_STATE_SCHEMA.md for the evidence fields.</p></div><div class="foot"><span>The While-You-Sleep Storefront&trade; &middot; Setup Guide</span><span>xoxo, Jodie</span></div></section></body></html>
