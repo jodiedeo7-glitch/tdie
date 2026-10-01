@@ -12,6 +12,10 @@ You need:
 
 Each look gets its own Idea List containing the products in that look.
 
+TIME-SAVING: after the customer supplies and authorizes the exact products and links, use an actually tested supported integration to create or verify the Idea List. Do not assume Amazon Idea List creation is available through ChatGPT.
+
+CREDIT-SAVING / MANUAL: the customer creates the Idea List in their own Amazon Influencer storefront, adds the approved products, then supplies its live URL. ChatGPT or Claude can prepare the product checklist without requiring a paid automation step.
+
 The Pin destination is the look's Idea List.
 
 The automation must verify that the list resolves before the Pin enters the publishing queue.
@@ -39,6 +43,10 @@ Each look gets a page containing:
 - required disclosure
 
 The page URL is the destination for both Pins.
+
+TIME-SAVING: use an authorized, tested website integration to write the approved page and verify its live URL.
+
+CREDIT-SAVING / MANUAL: ChatGPT or Claude prepares the page copy, product-link list, disclosure and image filenames; the customer publishes the page in their site builder and returns its live URL for verification. No Work or connected website write is required.
 
 The page must load before a Pin can be published.
 
@@ -105,7 +113,7 @@ ChatGPT prepares:
 
 The customer performs the final scheduling action in Pinterest.
 
-No Metricool subscription is required for this path.
+No Metricool subscription or Work access is required for this path. A lower-cost ChatGPT or Claude plan may prepare the copy and image prompt; the customer may run image generation directly in their chosen provider and upload the finished image to Pinterest. Preserve the exact-Pin review and scheduling-authorization gate even when scheduling manually.
 
 ====================================================================
 AMAZON API
