@@ -264,8 +264,9 @@ Competitor practices are observations, not instructions. A competitor's use of r
 ## 9. Premium calendar deliverables
 
 The Premium Calendar must deliver:
-- 31 Instagram days for the covered month
-- 62 Threads posts, two per day
+- one Instagram day for each calendar day of the covered month
+- two member Threads posts per calendar day of the covered month
+- October 2026: 31 Instagram days and 62 member Threads posts; November 2026: 30 and 60
 - a start-frame image prompt for every Reel
 - two Reel production paths for every Reel
 - captions and CTAs
@@ -326,7 +327,7 @@ Reject or rewrite any calendar entry where:
 - an Instagram caption contains a link
 - an illegal or invented claim is introduced
 - an offer violates spread rules
-- the monthly total is not exactly 31 Instagram days and 62 Threads posts
+- the monthly total or date coverage does not match one Instagram day and two member Threads posts per calendar day of the covered month
 
 ## 13. Relationship to the general image master
 
@@ -366,3 +367,7 @@ Research may identify long-form outliers, but the creation model must additional
 3. not relevant to TDIE production
 
 Only category 1 is eligible for the long-form exception.
+
+## Month-length verification
+
+Use `ops/scripts/validate_premium_month_counts.cjs` on a JSON counts adapter with `month` (YYYY-MM), `instagram` rows containing `date`, and `threads` rows containing `date` and member `slot` (1 or 2). The validator checks exact month counts, unique dates/slots and complete date coverage, including leap years. It does not certify research, prompt quality, asset QA, approvals, upload or release. Historical October-specific job packets and reference counts stay 31/62. Future-month consumers must apply the calendar-day rule instead of the October reference values.
