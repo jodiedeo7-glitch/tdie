@@ -1,3 +1,20 @@
+CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
+AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
+
+During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
+
+AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
+
+REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
+
+In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
+
+Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
+
+Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
+
+END CUSTOMER EXECUTION POLICY
+
 REQUIREMENTS
 
 Read this before anything else.
@@ -70,13 +87,13 @@ Choose MANUAL if you want to minimize automation further. Use the recipes as che
 
 TIME-SAVING PATH
 
-Choose TIME-SAVING if you want to use the connected Metricool publishing path after you select each finished Pin and explicitly authorize that Pin's schedule. A scheduled task may prepare and route an approved Pin only when the required account actions are available.
+Choose TIME-SAVING to use a tested connected Metricool publishing path. Choose AUTOMATIC or REVIEW_FIRST separately during setup: Automatic applies saved authorization; Review First requires exact per-Pin approval.
 
 IMPORTANT VERIFICATION GATE
 
-Never promise publishing without customer approval. A successful setup test can confirm only the exact authorized action and the publisher evidence it returned; it does not prove unattended future runs or publication. Test one Pin only after the customer chooses the final image, confirms the destination resolves, verifies the exact public board and disclosure, reviews the title and alt text, and authorizes that specific scheduling action.
+Publishing always requires recorded authorization and passing QA. AUTOMATIC uses the setup policy; REVIEW_FIRST uses exact customer approval. The initial controlled publisher test follows that same gate. A successful schedule readback proves scheduling only, not future unattended execution or live publication.
 
-If board assignment, per-Pin approval, or publisher readback cannot be supported in the customer's account, mark the path blocked or manual. Do not claim the end-to-end workflow is verified.
+If exact board assignment, mode-specific authorization or publisher readback is unsupported, mark the affected path blocked or manual. Do not claim end-to-end verification.
 
 COMPUTER REQUIREMENT
 
@@ -84,3 +101,4 @@ CLOUD mode: computer can be off during the run.
 LOCAL mode: computer must be available for local work.
 
 Never type passwords into a task prompt. Complete sign-in through the provider's own sign-in flow.
+

@@ -1,12 +1,29 @@
+CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
+AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
+
+During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
+
+AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
+
+REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
+
+In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
+
+Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
+
+Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
+
+END CUSTOMER EXECUTION POLICY
+
 THE WHILE-YOU-SLEEP STOREFRONT™
 Start here
 
-Your approved Amazon product inputs become reviewable Pinterest Pin drafts. You select each Pin and authorize its schedule.
+Your authorized Amazon product inputs become Pinterest Pins. Choose AUTOMATIC for scheduling under your saved setup policy, or REVIEW_FIRST to approve each exact finished Pin.
 
 There are three normal ways to use the storefront:
 
 TIME-SAVING
-Use ChatGPT Work, connected image tools and Metricool where those connections are available and tested. Work handles the repetitive build steps; each Pin still stays behind the customer review and schedule-authorization gate.
+Use the tested connected image tools and publisher recorded during setup. AUTOMATIC performs eligible production and scheduling within your saved authorization; REVIEW_FIRST prepares Pins for your approval.
 
 CREDIT-SAVING
 Use a lower-cost ChatGPT or Claude plan for planning, copy and prompts. Run the image step directly in the image provider you choose, then schedule the finished Pin yourself in Pinterest's native scheduler. No Work task or Metricool subscription is required.
@@ -42,10 +59,10 @@ Fallback when a local folder, local browser session or unsupported site requires
 PUBLISHING
 
 TIME-SAVING:
-ChatGPT Work prepares a Pin draft. The connected Metricool path may schedule it only after the customer selects that exact Pin, confirms the destination and public board, checks disclosure and metadata, and explicitly authorizes that schedule. Connected actions and board assignment must be available and verified for the customer's account.
+Connected Metricool scheduling requires verified account actions, exact public board, live destination, disclosure, metadata and mode-specific authorization. AUTOMATIC uses the saved policy; REVIEW_FIRST uses exact per-Pin customer approval.
 
 IMPORTANT:
-Do not schedule a Pin automatically from a recurring task. A setup test may schedule only the exact Pin the customer selected and explicitly authorized. Record publisher readback when supported; approval requests or unavailable board assignment leave the Pin unscheduled and must be reported.
+Recurring AUTOMATIC tasks may schedule passing Pins within the saved policy. REVIEW_FIRST tasks wait for exact per-Pin approval. Initial controlled publisher tests follow the same mode-specific gate. Read back every schedule; unavailable actions remain unscheduled.
 
 CREDIT-SAVING:
 ChatGPT or Claude prepares the copy, prompts and Pin package. You may run image generation directly in your chosen provider to conserve connected-tool credits. The customer schedules the finished Pin in Pinterest.
@@ -66,4 +83,5 @@ The markdown files are readable views:
 
 DO NOT promise sales, clicks, traffic or earnings.
 
-The system prepares and tracks approved work; the customer chooses each Pin and authorizes scheduling. Pinterest distribution and customer purchases are outside the product's control.
+The system prepares and tracks authorized work. AUTOMATIC schedules passing outputs under your saved policy; REVIEW_FIRST waits for your exact selection. Pinterest distribution and purchases are outside the product’s control.
+

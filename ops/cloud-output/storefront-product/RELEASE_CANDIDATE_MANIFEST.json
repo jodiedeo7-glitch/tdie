@@ -1,76 +1,88 @@
 {
-  "source_commit": "670be454a4d42437dcffc817aad7919ca82e17eb",
+  "version": "WYS-CUSTOMER-candidate-repair-4",
   "release_ready": false,
-  "guide_pages": 13,
-  "archive_entries": 15,
-  "files": [
+  "unattended_execution_verified": false,
+  "end_to_end_verified": false,
+  "pdf_pages": 14,
+  "zip_sha256": "2e302b5c20d25f81cb82933e9ad316ce236c71675722dc552a2bd87eb2bd19f3",
+  "pdf_sha256": "ad7847ddd97c9e4dc282fc9fbdb7b2570bffe3ef162e12d5896b776c2c7d1dda",
+  "html_sha256": "6f6e630b7b02d2ab69691af280f70feceef4496a31797c81f9bd593774a45ae5",
+  "members": [
     {
       "name": "00_START_HERE.txt",
-      "git_blob_sha": "4cd17fb4604f179f73718cb13f13964c6dbeebd6"
+      "sha256": "6819ee5f036f31ec1f4c38f686b0f9a750bcd36c2ff3a3ad0b22796ba8a24fcf",
+      "bytes": 7852
     },
     {
       "name": "01_REQUIREMENTS.txt",
-      "git_blob_sha": "c82eea772ff8a4de4ce518fb95078f0d1e08c8b3"
+      "sha256": "55372b042c297abc91f82489c0375ac941eed0e34ec30b9710403483083a61d5",
+      "bytes": 8856
     },
     {
       "name": "02_SETUP_PROMPT.txt",
-      "git_blob_sha": "15fbc6184b3a57f979d98e763691bd5f14a774a3"
+      "sha256": "eef3c7bb7d22ae811c2320461744c1e819a9c4c2ce839c0d4426452024a614ad",
+      "bytes": 19052
     },
     {
       "name": "03_THEMED_LOOK_RECIPE.txt",
-      "git_blob_sha": "7b3c144d69f0c1bd68fd94409515dab035337441"
+      "sha256": "04442a8deb285c4d6b6ec2463050f0355b761a405974cf90529350f010c72c88",
+      "bytes": 25409
     },
     {
       "name": "04_OUTFIT_OF_THE_DAY_RECIPE.txt",
-      "git_blob_sha": "48b05b2b629f791f54824fcf07477abb3471c023"
+      "sha256": "cb0292409e2d18931817d3a14610bd635b3804c6cb7a52e7f5b41d44ae1c1039",
+      "bytes": 16677
     },
     {
       "name": "05_RECOMMEND_IT_TOO.txt",
-      "git_blob_sha": "5063d3bb5d478c29e2d41eacdc4ba7d8172d1bca"
+      "sha256": "90b10da777e50a4ce99ca263abe3c61edcd5fac10c374b1297f45b673a957bf0",
+      "bytes": 3211
     },
     {
       "name": "06_SCHEDULED_TASK_PROMPTS.txt",
-      "git_blob_sha": "c059f8e6b16033b61477225c4717d37759c45e67"
+      "sha256": "11ab410d50d2825a1f87f4736a87ced61b64bd92a5a167492db96f559ec10bbe",
+      "bytes": 17802
     },
     {
       "name": "07_PERSONA_PATHS.txt",
-      "git_blob_sha": "c14d7c80cae6fffc017c4f4a3bf362bec2927a65"
+      "sha256": "bfab3245fa674c6aded8d42f55aa7915fca1efb0c0210f4a254bbdf27712ce75",
+      "bytes": 6487
     },
     {
       "name": "08_STOREFRONT_PATHS.txt",
-      "git_blob_sha": "f2ca90057d88ae02d171f69d6763271526cdd9ab"
+      "sha256": "a7bf6bf1574cd568e72926f75de7aac66ef411d3245c9e5217eb91361888acca",
+      "bytes": 7172
     },
     {
       "name": "09_THE_BLOG_HALF.txt",
-      "git_blob_sha": "b46c170fb2a2e5eed68dac4a09dc14f98094d505"
+      "sha256": "b64a57a0472e0908adbcdc104383c8393c1e5ad1396db1320b3725468065e27b",
+      "bytes": 14349
     },
     {
       "name": "10_INSTAGRAM_ADD_ON.txt",
-      "git_blob_sha": "f95e86c923ac613f5d7ca9e521d9dcb488c03810"
+      "sha256": "4ec1b411686fd61b085883c60aed7e2fcebb88b68aa8d973383883e890103f0d",
+      "bytes": 7067
     },
     {
       "name": "11_WHATS_NEXT.txt",
-      "git_blob_sha": "43aa62490fcffc6eed38245b7b28cbe2a00aa332"
+      "sha256": "f0d67606109fe2d943a7322f40b332ca957e70fedf881098fcf717b7ff3b3a3e",
+      "bytes": 1327
     },
     {
       "name": "12_STATE_SCHEMA.md",
-      "git_blob_sha": "65cdccf748628e67b2008e2ed2c7abba4ce71604"
+      "sha256": "cbeb77b6c968c67d7b6ebfb5d8a2f953fd96b096d073dd0cd776fe9dc9261092",
+      "bytes": 11551
     },
     {
       "name": "13_PIN_VISUAL_STANDARD.md",
-      "git_blob_sha": "b8dc27d332b3ed6a9eec25768b7b2d766d9222a2"
+      "sha256": "7f648c60a0be603d154e47e512b436bd4ad88a4b4bf99436d7fc19c012c0b541",
+      "bytes": 6555
     },
     {
       "name": "While-You-Sleep-Storefront-Setup-Guide.pdf",
-      "git_blob_sha": "d60f57c57a8e62b2038145dc0c59707c2e67b97d"
+      "sha256": "ad7847ddd97c9e4dc282fc9fbdb7b2570bffe3ef162e12d5896b776c2c7d1dda",
+      "bytes": 2635004
     }
   ],
-  "checks": [
-    "PDF rendered and visually reviewed",
-    "ten setup-step alternatives plus production/manual matrices",
-    "ZIP CRC and exact member bytes",
-    "GitHub tree and local blob hashes",
-    "All 15 ZIP member blob hashes match the final source tree"
-  ],
-  "archive_git_blob_sha": "24879ea8300cd1892a7333e7287d889624bb6c84"
+  "scope": "Customer source candidate only. Production delivery unchanged; future actual Pin publication and Instagram dependency pending."
 }

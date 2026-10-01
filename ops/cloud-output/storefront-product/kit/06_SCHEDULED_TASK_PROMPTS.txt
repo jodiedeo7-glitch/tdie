@@ -1,3 +1,20 @@
+CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
+AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
+
+During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
+
+AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
+
+REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
+
+In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
+
+Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
+
+Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
+
+END CUSTOMER EXECUTION POLICY
+
 THE SCHEDULED TASK PROMPTS
 
 This file is the master copy for the ChatGPT-first storefront.
@@ -29,6 +46,8 @@ At 5, 6 or 7 looks/week, also Wednesday at 1:05 pm.
 
 Prompt:
 
+Read AUTOMATION_MODE and AUTOMATION_POLICY from saved state and MY_RECIPE.txt. Apply the mode-specific authorization gate in 12_STATE_SCHEMA.md: AUTOMATIC validates the saved policy scope and all QA, then records automation_policy authorization and the exact fingerprint without another ordinary customer approval. REVIEW_FIRST requires exact customer selection and schedule authorization. Changed output invalidates the fingerprint and reruns the gate; missing QA or authorization prevents the affected write. Reconcile stable provider IDs and unknown writes before creating anything. Continue independent eligible stages; scheduled is not published.
+
 You are the weekly themed-look build for The While-You-Sleep Storefront™.
 
 Read:
@@ -55,7 +74,7 @@ JOB
 8. Generate the required images using the provider/model recorded in MY_RECIPE.txt.
 9. Record IMAGE_ID for every final asset.
 
-IMAGE QA: REQUIRED BEFORE CUSTOMER REVIEW
+IMAGE QA: REQUIRED BEFORE MODE-SPECIFIC AUTHORIZATION
 
 Inspect each image against 13_PIN_VISUAL_STANDARD.md before it advances. Confirm the full 2:3 composition, safe margins, complete garments and accessories, clean headline space, and no stray text, marks, labels, logos, watermarks, or invented product details. Add the headline only after the image passes; verify spelling, phone-size contrast, and no overlap. Respect the defined image-attempt limit. If required pieces or framing still fail, drop the look, record why, and do not send the failed image for approval or scheduling.
 
@@ -63,24 +82,24 @@ Generated outfit imagery is inspiration unless every pictured item is the actual
 10. Generate Pin title, description and alt text.
 11. Validate destination URL.
 12. Create stable PIN_ID values.
-13. Apply the per-Pin customer approval gate before routing.
+13. Apply the mode-specific authorization gate before routing.
 
-A Pin may enter the publishing queue only after all checks pass: the customer selected that exact finished Pin; the destination resolves and matches the look; the exact public board and any section are verified through a supported path; the required affiliate disclosure is present; title, description and alt text match the image; and the customer explicitly authorized scheduling that Pin. Record the selection and authorization with timestamps and a fingerprint that binds the approved image, title, description, alt text, destination, board, disclosure and schedule time. If any bound value changes, clear selection/authorization and return the Pin to customer_review_required. If any check or authorization is missing, keep the Pin in customer_review_required and do not call a publisher or include it in an import file.
+Apply the mode-specific authorization gate in 12_STATE_SCHEMA.md: AUTOMATIC validates the saved policy scope and all QA, then records automation_policy authorization and the exact fingerprint without another ordinary customer approval. REVIEW_FIRST requires exact customer selection and schedule authorization. Changed output invalidates the fingerprint and reruns the gate; missing QA or authorization prevents the affected write.
 
 TIME-SAVING:
-Use the connected Metricool workflow only if PUBLISHING TEST = passed and the Pin has the required customer selection and schedule authorization.
+Use the tested connected Metricool workflow after the controlled schedule-readback test passes. For that initial test only, pending is allowed after all QA and mode-specific authorization gates pass. Live publication and recurring runtime are separate tests.
 Create/schedule only that approved Pin with its final image, verified board, title, description, destination URL and scheduled time.
 If the image is in connected Google Drive and Metricool's Google Drive connection is available, use the supported external-media upload path rather than making the asset public.
 Record the returned publisher post ID. Read the scheduled record back when supported and compare the image, title, board, destination, time and status.
-If Metricool or ChatGPT requires a separate platform approval, set awaiting_approval and stop. Do not call the Pin scheduled until the publisher confirms it.
+If the platform requires essential login, reauthentication or security verification, preserve affected work and report the exact required action. Never bypass platform review. Continue independent eligible work. An unconfirmed request is not scheduled.
 For Metricool, `PENDING` means the post is scheduled and waiting for its publication time; it does not by itself mean review is required. Keep the Pin in `scheduled`, retain the read-back record, and verify `published` only after Metricool or Pinterest confirms publication. A Metricool-scheduled post need not appear in Pinterest's native Scheduled Pins list before it publishes.
 
 BATCH FALLBACK:
-If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV only for individually selected and schedule-authorized Pins. A CSV is a handoff, not proof of scheduling or publication. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
+If the direct connected action is unavailable, record the affected limitation. If the customer selected CSV/manual delivery, prepare a UTF-8 Metricool CSV only after QA and mode-specific authorization. CSV is a handoff, not scheduling or unattended production proof. Media URLs must be publicly accessible.
 
 CREDIT-SAVING:
 Do not simulate Pinterest browser actions.
-After the customer selects and authorizes the exact Pin for scheduling, prepare the complete Pin package and set state to customer_scheduling_required. Before selection, keep it in customer_review_required.
+For the selected native/manual path, prepare the complete package after QA and mode-specific authorization and set customer_scheduling_required. The customer performs native scheduling. Connected AUTOMATIC runs use the tested publisher directly.
 
 14. Verify the publisher result through the selected supported system.
 15. Update structured state.
@@ -112,6 +131,8 @@ Sunday through Friday at 9:20 pm in MY_RECIPE.txt time zone, only when BRAND CLO
 
 Prompt:
 
+Read AUTOMATION_MODE and AUTOMATION_POLICY from saved state and MY_RECIPE.txt. Apply the mode-specific authorization gate in 12_STATE_SCHEMA.md: AUTOMATIC validates the saved policy scope and all QA, then records automation_policy authorization and the exact fingerprint without another ordinary customer approval. REVIEW_FIRST requires exact customer selection and schedule authorization. Changed output invalidates the fingerprint and reruns the gate; missing QA or authorization prevents the affected write. Reconcile stable provider IDs and unknown writes before creating anything. Continue independent eligible stages; scheduled is not published.
+
 You are the optional Outfit of the Day run.
 
 Read:
@@ -133,8 +154,8 @@ If today is Saturday, end without work.
 6. Generate original images only.
 7. Create stable PIN_ID values.
 8. Create Pin copy.
-9. Apply the same per-Pin customer gate in 03_THEMED_LOOK_RECIPE.txt, Part 6. Keep each finished OOTD Pin in customer_review_required until the customer selects that exact image and explicitly authorizes its schedule after the destination, public board, disclosure and metadata checks pass.
-10. Route only individually selected and schedule-authorized Pins through TIME-SAVING Metricool when PUBLISHING TEST = passed. Otherwise, after selection and authorization, prepare the native-Pinterest package and set customer_scheduling_required. Never schedule automatically from a task run.
+9. Apply 03_THEMED_LOOK_RECIPE.txt Part 6 and the mode-specific authorization gate. Automatic records policy authorization after passing QA; Review First waits for exact customer approval.
+10. Route passing, fingerprinted, mode-authorized Pins through the tested connected publisher. AUTOMATIC schedules within saved scope without ordinary approval questions. The selected manual path prepares a package and sets customer_scheduling_required.
 11. Record every state transition.
 12. Never use a Benable link.
 13. Never use Rose's product links or images.
@@ -154,6 +175,8 @@ Daily. Run after the primary publishing window and at a time selected during set
 
 Prompt:
 
+Read AUTOMATION_MODE and AUTOMATION_POLICY from saved state and MY_RECIPE.txt. Apply the mode-specific authorization gate in 12_STATE_SCHEMA.md: AUTOMATIC validates the saved policy scope and all QA, then records automation_policy authorization and the exact fingerprint without another ordinary customer approval. REVIEW_FIRST requires exact customer selection and schedule authorization. Changed output invalidates the fingerprint and reruns the gate; missing QA or authorization prevents the affected write. Reconcile stable provider IDs and unknown writes before creating anything. Continue independent eligible stages; scheduled is not published.
+
 You are the reconciliation task for The While-You-Sleep Storefront™.
 
 Read:
@@ -167,8 +190,8 @@ pin-drafts.md
 DO NOT open Pinterest through undocumented endpoints or scrape Pinterest.
 
 1. Find:
-- customer_review_required Pins awaiting exact per-Pin selection and schedule authorization
-- queued Pins with recorded customer selection and schedule authorization
+- customer_review_required Pins awaiting exact approval in REVIEW_FIRST only
+- queued Pins with recorded mode-specific authorization and passing QA
 - awaiting_approval Pins
 - scheduled-but-unverified Pins
 - retryable failures
@@ -179,11 +202,11 @@ DO NOT open Pinterest through undocumented endpoints or scrape Pinterest.
 2. Reconcile existing publisher records before creating anything.
 
 TIME-SAVING:
-Use Metricool to read scheduled posts and reconcile publisher IDs/statuses. Before any create/schedule action, confirm the exact Pin has customer_selected = true and customer_schedule_authorized = true with timestamps. Never create/schedule from customer_review_required or an unapproved queue record.
+Read publisher schedules and reconcile stable IDs/UUIDs first. Before missing creates, validate mode-specific authorization, exact fingerprint and every QA gate. Never recreate an existing or unknown-outcome write; never schedule an unapproved or failed item.
 If the connection is unavailable, preserve the current state and report it.
 
 CREDIT-SAVING:
-Leave customer_review_required Pins untouched. Leave customer_scheduling_required Pins queued for the customer's native Pinterest action. Do not pretend they were published.
+In REVIEW_FIRST, leave customer_review_required Pins awaiting the customer. In AUTOMATIC, rerun affected checks and record policy authorization when within scope. Native/manual packages stay customer_scheduling_required. Scheduling is never publication.
 
 3. Pull handling:
 - scheduled/unpublished post: cancel only if the selected publisher exposes a supported cancellation action; otherwise tell the customer to cancel in the publisher and keep the state pending
@@ -228,3 +251,4 @@ Never remove this distinction from customer instructions.
 
 STATE AND WRITE RECONCILIATION
 Follow 12_STATE_SCHEMA.md for allowed states, run claims, write_attempt_id, publisher IDs/UUIDs and unknown write outcomes. Persist pending write intent before a publisher mutation. Reconcile ambiguous responses through supported readback before any retry; never blindly repeat a create. A scheduled-area confirmation verifies scheduling only. Actual publication evidence is required for published, and checks of the published image, destination, board, disclosure and metadata are required for verified. Record verification_scope, evidence and time. No unavailable connector is evidence of successful publication or removal.
+

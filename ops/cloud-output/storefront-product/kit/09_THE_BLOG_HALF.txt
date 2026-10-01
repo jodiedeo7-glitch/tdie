@@ -1,3 +1,20 @@
+CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
+AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
+
+During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
+
+AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
+
+REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
+
+In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
+
+Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
+
+Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
+
+END CUSTOMER EXECUTION POLICY
+
 THE BLOG HALF
 Pins are one half of being found. Google is the other. This file adds a shop-the-look section to your own website, so every look also becomes a page on your own site that Google can find, and your pins can link to your own pages.
 
@@ -23,12 +40,12 @@ CREDIT-SAVING / MANUAL:
 Paste the same prompt into ChatGPT or Claude and use it as the implementation checklist. If your plan cannot write to GitHub directly, have it prepare the exact files and changes, then make the repository changes yourself and run the build/deploy through your normal GitHub workflow.
 
 ------------------------------------------------------------------
-Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same fonts, colors, spacing, header and footer. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
+Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same approved fonts, colors, header and footer, with deliberate editorial scale, photographic depth, responsive spacing and clear shopping hierarchy. Follow 13_PIN_VISUAL_STANDARD.md. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
 
 THE DATA
 - A folder src/lifestyle/ holds one JSON file per look plus that look's images, side by side.
 - File names: <slug>.json, <slug>-pin1.jpg and <slug>-pin2.jpg. Images are portrait, roughly 2:3, at least 800 pixels wide. Also accept .jpeg, .png and .webp, and match each JSON image to its file by name without the extension, so "<slug>-pin1.jpg" in the JSON still finds <slug>-pin1.png.
-- JSON fields: slug, title, date (YYYY-MM-DD), category, season (a season or holiday name, or "Evergreen"), intro, images (array of { file, alt }), ideaList (the look's Amazon Idea List, or empty on the Associates-only path), items (array of { name, link, note (optional) }).
+- JSON fields: slug, title, date (YYYY-MM-DD), category, season (a season or holiday name, or "Evergreen"), intro, images (array of { file, alt, role (optional: product_edit or lifestyle), cleanFile (optional) }), ideaList (the look's Amazon Idea List, or empty on the Associates-only path), items (array of { name, link, note (optional) }).
 - Categories: write a list of 6 to 10 categories that fit my theme (ask me my theme in one question if you can't tell from the site). Each has a slug (lowercase, hyphens only), a name and a one-line blurb in my voice.
 - Be forgiving: an image whose file isn't there is dropped; a look left with no images or no items is skipped; a look whose category isn't in the list is skipped; a JSON file that doesn't parse is skipped with a warning. Only a look slug equal to a category slug, or two looks with the same slug, stops the build, with a clear error naming the slug. Read only the .json files, never the README.
 - Add a README.md inside src/lifestyle/ explaining the format in plain words, with one example JSON.
@@ -36,7 +53,7 @@ THE DATA
 THE PAGES
 - /lifestyle: the hub. A headline, one line about the section, a grid of category cards (with a look count or "Coming soon"), then the latest 24 looks as image cards.
 - /lifestyle/<category>: a heading, the blurb, and every look in that category as image cards.
-- /lifestyle/<slug>: one look. Top to bottom: an eyebrow linking back to its category, the title as the H1, the intro, a one-line affiliate notice, the images, then "Shop the look": a numbered list of every item, each name linked to its item link. If the look has an ideaList, a button under the list: "Shop every piece on Amazon". Then up to 4 more looks from the same category.
+- /lifestyle/<slug>: one designed shopping article. Build a responsive editorial hero with category eyebrow, one H1, a concise desire-led introduction, a visible Shop the edit anchor and clean lifestyle photography. Below, place the 80-150 word introduction and clear affiliate/AI notice, then a clean product edit beside distinct item cards. Give each card its authorized item name, a short factual styling or use note and an individual shopping button. Finish with a deliberate visual next step and up to 4 related looks. Use approved brand fonts, deliberate scale, generous spacing, restrained accent color and real photographic texture. Preserve the site header/footer and existing content. Inspect desktop and phone screenshots; a plain stack of Pin graphics and text links fails visual QA. Follow 13_PIN_VISUAL_STANDARD.md. An Idea List button appears only when an authorized Idea List exists.
 - Every Amazon link opens in a new tab with rel="sponsored nofollow noopener".
 - Every page in the section ends with this disclosure: "As an Amazon Associate I earn from qualifying purchases. Every link on this page is an affiliate link: if you buy through it, I earn a small commission at no extra cost to you." And this line: "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
 - No prices anywhere. Ever. Amazon prices change by the hour.
@@ -63,13 +80,13 @@ LIFESTYLE CATEGORIES: (the line the site chat printed)
 
 And check your website is listed in Associates Central (Account Settings, websites and mobile apps). Amazon needs every place your links appear listed there.
 
-STEP 3. That's it. From then on, each approved look can be added after the destination and image assets are ready. The site step never bypasses the Pin approval gate.
+STEP 3. Each eligible look is added after destination and images are ready and the saved policy authorizes blog deployment in AUTOMATIC, or the customer approves the exact change in REVIEW_FIRST. The blog step preserves all source, rights, disclosure, duplicate and live-readback checks.
 
-1. Write <slug>.json with exactly these fields: slug (the look name, lowercase, hyphens, no dates, 60 characters at most, never equal to a LIFESTYLE CATEGORIES slug or a slug already in state; if it would be, add one describing word), title, date (the look's date), category (one slug from LIFESTYLE CATEGORIES, never a new one), season, intro (80 to 150 words in my voice, no prices), images ([{ "file": "<slug>-pin1.<ext>", "alt": pin 1 alt text }, { "file": "<slug>-pin2.<ext>", "alt": pin 2 alt text }], where <ext> is the real extension), ideaList (the approved Amazon Idea List URL, or empty when that path does not use one), items (every piece: { "name", "link": its authorized affiliate link }). Validate the JSON before any repository write.
+1. Write <slug>.json with exactly these fields: slug (the look name, lowercase, hyphens, no dates, 60 characters at most, never equal to a LIFESTYLE CATEGORIES slug or a slug already in state; if it would be, add one describing word), title, date (the look's date), category (one slug from LIFESTYLE CATEGORIES, never a new one), season, intro (80 to 150 words in my voice, no prices), images (two distinct approved entries with file, alt, role and optional cleanFile; product_edit and lifestyle roles identify the concept. Store clean photographs alongside final Pin graphics, and use cleanFile for blog photography when supplied. Use actual filenames and extensions), ideaList (the approved Amazon Idea List URL, or empty when that path does not use one), items (every piece: { "name", "link": its authorized affiliate link }). Validate the JSON before any repository write.
 
-2. TIME-SAVING GitHub path: use the supported connected repository write action to add the two approved images to src/lifestyle first, then add the JSON file. Use the repository's current default/deployment branch rather than hard-coding main.
+2. TIME-SAVING GitHub path: use the supported connected repository write action to add the two approved images and their clean blog photographs to src/lifestyle first, then add the JSON file. Render the two concepts as clean photography with lifestyle first, not duplicate graphics. Use the repository's current default/deployment branch rather than hard-coding main.
 
-3. CREDIT-SAVING / MANUAL GitHub path: add the two approved images to src/lifestyle through GitHub's normal upload flow, then create <slug>.json with the validated JSON. Commit images before JSON so the first deployed look never references missing image files.
+3. CREDIT-SAVING / MANUAL GitHub path: add the two approved images and their clean blog photographs to src/lifestyle through GitHub's normal upload flow, then create <slug>.json with the validated JSON. Commit images before JSON so the first deployed look never references missing image files.
 
 4. Verify the production page SITE/lifestyle/<slug> after deployment. Re-check for up to 15 minutes without creating duplicate files or commits. If it does not load, record "page not live" and inspect the site's normal deployment logs. Do not claim the page is live until the production URL reads back.
 
@@ -82,3 +99,4 @@ DON'T HAVE THE WEEKEND ECOSYSTEM™?
 You don't need it. The machine runs without a website: on the Amazon Influencer path in 08_STOREFRONT_PATHS.txt, your pins link straight to your Idea Lists. That's the whole thing, working. (Associates only? 08_STOREFRONT_PATHS.txt explains what your path needs.)
 
 If you ever want the blog half too, check the current TDIE shop or member materials for the current Weekend Ecosystem™ offer. Do not rely on a price printed in this file; verify the live listing before quoting it.
+

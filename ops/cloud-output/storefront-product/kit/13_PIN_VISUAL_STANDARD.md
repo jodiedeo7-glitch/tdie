@@ -1,39 +1,54 @@
-# Pinterest Pin Visual Standard
+# Professional Pinterest and Shopping-Page Visual Standard
 
-Use this as the production reference for outfit inspiration Pins. The approved samples are generated inspiration imagery, not verified depictions of retail products.
+Every look needs two different reasons to click. A new headline on the same arrangement is not a second concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
 
-## Approved composition
+## Art direction before generation
 
-- Vertical 2:3 canvas.
-- Editorial flat lay on a soft, lightly textured neutral or blush background.
-- Center the complete outfit; keep every garment and accessory fully inside the frame with comfortable margins.
-- Reserve a moderate, clean band across the top for the headline.
-- Use soft natural light, tactile fabrics, realistic styling, and a restrained palette.
-- Generate the image without text. Apply headline typography afterward with a consistent template.
-- Use one short, centered, high-contrast serif line and a smaller script line. Keep both in the reserved area, clear of the outfit.
+Record customer visual references, actual brand palette/typefaces, authorized persona reference/world, product hero, intended use and two concepts in MY_RECIPE.txt. Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
 
-## Acceptance check before use
+Pin 1: THE PRODUCT EDIT. Complete tactile editorial product/outfit composition, clear hero, deliberate supporting-item hierarchy, dimensional natural light and realistic contact shadows. Frame every required garment, strap and shoe inside generous margins. Do not scatter all pieces at equal size.
 
-1. Every garment and accessory is fully visible. No strap, shoe, sleeve, hem, or trouser leg is cut by the canvas edge.
-2. No stray letters, fake labels, logos, watermarks, brand marks, or invented product details appear.
-3. The background leaves enough negative space for a headline without making the outfit feel tiny.
-4. Headline spelling and contrast are readable at phone size; it does not overlap the outfit.
-5. A shopping Pin depicts the actual linked items or uses clearly identified customer-owned/licensed product photos. Otherwise, label and describe it as outfit inspiration.
-6. The title, destination URL, board, disclosure, and alt text match the finished image before scheduling.
+Pin 2: THE LIFE IT FITS. With an authorized persona, photograph a believable moment showing relevant pieces worn or used in the customer's approved world. Accessories/theme lists can show a morning, work, home or errands moment; home pieces can appear in a naturally used environment. Do not force every item into a cluttered scene. Roundups can show one option in context. Without a persona, use a distinct in-situ scene or perspective, not a second near-identical flat lay.
 
-## Base image prompt
+Compare siblings side by side at 320px wide. Visual story, camera/viewpoint and composition must differ while belonging to the same edit. Record the comparison in QA. Revise a duplicated concept within existing attempt/budget limits.
 
-Create a polished vertical 2:3 Pinterest fashion editorial flat lay for an outfit inspiration Pin. Arrange [describe the outfit pieces] neatly on [background]. Keep the complete garments and every accessory fully inside the canvas with comfortable margins on all sides. Leave a moderate uncluttered band of negative space across the top for a headline to be added later. Use soft natural window light, realistic editorial product photography, tactile detail, refined contemporary styling, and balanced spacing. No text, logos, labels, watermarks, brand marks, extra props, or decorative objects. Do not crop, distort, or invent visible product details.
+## Complete standalone prompts
 
-## Headline template
+Generate portrait photography for a 2:3 final Pin at least 1000×1500, using the configured provider/model/resolution. Record each full prompt, job, model, reference, attempt and charges. No silent substitution.
 
-First line: **[SHORT SEARCH PHRASE]** in a refined high-contrast serif.  
-Second line: **[short supporting word or phrase]** in restrained script.
+Product-edit structure: purpose/hero → exact authorized product descriptions → hierarchy/arrangement → surface/light → camera/lens/realistic materials → headline-safe area → no extras/logos/text/cropping. Include photorealistic, real-world photography, true-to-life textures, natural imperfections and actual camera language.
 
-Use dark espresso on pale backgrounds or white on dark backgrounds. Keep both lines crisp, correctly spelled, and in the reserved top area.
+Lifestyle structure: reference-only identity → approved environment → one natural action involving the hero → changeable wardrobe/styling → brand props → subject/product composition and headline-safe area → physical light/camera → no invented performance, anatomy artifacts, logos or text. Identity reference is mandatory for a named persona. Never describe locked identity traits in words. Current persona canon overrides generic aesthetic language.
 
-## Workflow
+For TDIE/Tommy Kate, begin: “Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.” Read current image master/design rules. Use her farmhouse/pink-loft world, relaxed styling and signature glitter-flecked pink iced coffee tumbler with lavender straw. Distinguish signature props and unlinked clothing from linked retail pieces. Never imply an unlinked prop is in the shopping list.
 
-Generate one image, inspect framing and product fidelity, then add text in the template. Respect the image-attempt limit already defined by the product. If required pieces or framing still fail, drop the look and report why.
+## Professional Pin layout
 
-Do not schedule until the customer has selected the Pin, the destination resolves, the board is verified, and required affiliate disclosure is present.
+Add text after photography with a supported deterministic layout. Use customer-approved display/supporting type; TDIE uses Newsreader SemiBold and Inter. Optional restrained script must remain readable. Do not default all customers to one font pair.
+
+Use a concise search-led headline, clear hierarchy, deliberate accent phrase, generous safe margins and a useful small CTA such as “Shop the edit.” Photography dominates. Use approved cream/near-black/brand accents; avoid brown fills, hairline type, crowded badges, fake ratings, prices, scarcity or guarantees. Text cannot cover the face, hero or important details. Use a scrim or paper panel only where needed, never a full-image color wash.
+
+Distinct sibling layouts: product headline above complete arrangement; lifestyle headline in genuinely clear photo space and CTA away from the subject. A caption change alone fails.
+
+## Acceptance gates
+
+1. Inspect raw image and final Pin at full resolution and 320px phone size.
+2. Complete required pieces, credible hands/anatomy, straps, shapes, scale, light and margins; no artifacts, fake labels, logos or watermarks.
+3. Persona identity compared with actual reference; world, action and props checked. Prompt text is not proof.
+4. Sharp, correctly spelled readable type, no overlaps; visible CTA without clutter.
+5. Siblings pass distinct-story/camera/composition comparison.
+6. Copy/alt/page distinguish inspiration, actual linked products and unlinked props. No invented specs, prices, reviews, guarantees or retail fidelity.
+7. Live destination, exact public board, disclosure, metadata and mode-specific authorization verified. AUTOMATIC records policy authorization after QA; REVIEW_FIRST needs exact customer approval. Changes invalidate the fingerprint and rerun checks.
+
+## Shopping-page design contract
+
+Every look/blog page is visually designed. Lead with lifestyle photography when available, a short editorial headline and useful shopping CTA above the fold. Keep the product edit as a second visual section. Alternate photographs, concise styling commentary and well-spaced product cards with distinct links. Explain each verified reason to consider a piece without invented performance claims.
+
+Use approved site fonts/palette, generous whitespace, intentional scale, visible buttons, subtle depth, responsive images and a clear shopping path. Use clean photography on the blog when available rather than two text-heavy Pin graphics. Disclose affiliate links near first shopping links and inspiration near imagery. Add relevant internal links and optional offers after shopping, not as competing hero CTAs.
+
+Inspect desktop and 390px mobile screenshots: compelling first screen, no horizontal overflow, crisp loaded images, legible type, comfortable tap targets, each product reachable, one H1/canonical/SEO description and working links. Inspect before deployment and independently inspect live. Build success is not visual acceptance.
+
+## Credit-saving and manual equivalents
+
+ChatGPT or Claude can prepare concepts, full prompts, copy and QA. Customers may run their chosen provider directly, use original/licensed photography, add type in an existing editor, build through their site editor and schedule manually. Keep identical rights, facts, disclosure, quality and duplicate checks. No new subscription is required.
+

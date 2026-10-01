@@ -4,7 +4,25 @@ Paste everything between the two lines into a new ChatGPT Work chat with this st
 
 ------------------------------------------------------------------
 
-You are setting up The While-You-Sleep Storefront™ for me.
+CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
+AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
+
+During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
+
+AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
+
+REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
+
+In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
+
+Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
+
+Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
+
+END CUSTOMER EXECUTION POLICY
+
+
+You are setting up The While-You-Sleep Storefrontâ„¢ for me.
 
 This is a ChatGPT-first product. Use the current ChatGPT Work and Scheduled Tasks workflow described in the kit.
 
@@ -125,7 +143,7 @@ TIME-SAVING:
 - record the brand ID if available
 - prepare one TEST Pin draft and show me the complete image, title, description, destination, board, disclosure, and alt text
 - do not schedule a Pin during setup by default
-- schedule a test Pin only after I select that exact Pin, confirm its destination resolves, confirm the exact public board, verify the disclosure and alt text, and explicitly authorize that specific scheduling action
+- schedule the controlled test only after all destination, public-board, disclosure, image and metadata checks pass and mode-specific authorization is recorded: saved policy in AUTOMATIC, exact customer selection in REVIEW_FIRST
 - if any condition or supported board assignment is unavailable, leave the Pin unscheduled and record the blocker
 - after an authorized test action, read the scheduled record back through a supported publisher path and compare its image, title, destination, board, time, and status
 
@@ -141,6 +159,11 @@ No Metricool setup required.
 
 MIXED:
 Use Metricool only where its connected workflow passes the customer's test. Use native Pinterest for the rest.
+
+STEP 4A. AUTHORIZE THE EXECUTION MODE
+
+Ask once during setup: "Choose AUTOMATIC, to generate, check, deploy the selected blog, schedule passing Pins and the selected Instagram add-on within saved settings without ordinary per-post approvals; or REVIEW_FIRST, to approve each finished output. Native/manual steps remain customer-controlled."
+Collect and read back the exact permitted accounts, boards/sections, destinations, image provider/model/resolution, generation budget and period, channels, look pace, schedule/timezone, end date or revocation condition, and authorized product-input method. Ask the customer to authorize that concrete scope once. Do not invent permission or budgets. Save AUTOMATION_MODE and AUTOMATION_POLICY (including authorization text/actor/time, policy_id/version and scope) in MY_RECIPE.txt and structured state before any paid or publishing action. Include the controlled publisher test in that authorization. Later output within the policy needs QA and a fresh fingerprint, not another ordinary approval question. Scope changes require renewed setup authorization; essential external login/security may still require the customer.
 
 STEP 5. IMAGE PROVIDER
 
@@ -182,7 +205,7 @@ If no:
 STEP 7. BRAND CLOSET
 
 Ask:
-"Are you a member of The Brand Closet™ at the tier that includes Outfit of the Day?"
+"Are you a member of The Brand Closetâ„¢ at the tier that includes Outfit of the Day?"
 
 If yes:
 - record membership
@@ -281,6 +304,7 @@ If CLOUD:
 Create STOREFRONT_STATE in Google Sheets if the required action is available.
 
 Create sheets:
+AUTOMATION_POLICY
 LOOKS
 PRODUCTS
 IMAGES
@@ -303,7 +327,9 @@ These are views and notes, not the authoritative state.
 STEP 11. TASKS OR MANUAL RUN CHECKLIST
 
 TIME-SAVING / Work:
-Create the tasks described in 06_SCHEDULED_TASK_PROMPTS.txt.
+Create MY_SCHEDULED_TASKS.txt containing the selected task names, exact schedules/timezone, canonical prompts from 06_SCHEDULED_TASK_PROMPTS.txt, state location, and actual scheduler IDs after creation. Disabled optional tasks must be labeled disabled. Read this file back.
+
+Create the tasks described in 06_SCHEDULED_TASK_PROMPTS.txt only through the current supported in-app scheduler. A desktop local chat may use its supported same-chat recurring automation when available: record that exact interface, verify the saved schedule, and prove a separate execution can read/write the same state before claiming recurring execution passed. A saved schedule alone is not a successful run. Do not claim a cloud runtime from local evidence.
 
 Preferred tasks:
 1. weekly themed looks
@@ -348,7 +374,7 @@ The draft test must prove:
 - state records the complete Pin and review gate
 - a repeated dry run reconciles the existing PIN_ID without creating a duplicate
 
-A publisher test may be attempted only after my per-Pin selection and schedule authorization. It must read the scheduled result back through a supported path. A draft-only result, an unconfirmed request, or a test that cannot safely assign the verified board is not a pass. Do not infer publication from scheduling.
+A publisher test may be attempted only after the mode-specific authorization gate passes: saved policy and QA in AUTOMATIC, exact customer approval in REVIEW_FIRST. It must read the scheduled result back through a supported path. A draft-only result, an unconfirmed request, or a test that cannot safely assign the verified board is not a pass. Do not infer publication from scheduling.
 
 If the authorized publisher test cannot be completed, record the blocker, leave the Pin unscheduled, and do not label the workflow fully automated.
 
@@ -367,3 +393,4 @@ Give me:
 Never say "fully automated" unless the end-to-end test actually passed.
 
 ------------------------------------------------------------------
+
