@@ -34,8 +34,10 @@ Before setup, verify that this account has ChatGPT Work access.
 If Work is unavailable:
 - do not present CLOUD or LOCAL Work as available;
 - explain that recurring Work tasks require Work access and this kit does not promise fully unattended publishing;
-- offer the CREDIT-SAVING/manual preparation path where supported, and state that it is not the same recurring workflow;
+- continue setup in CREDIT-SAVING / MANUAL mode instead of stopping;
+- use this same setup conversation to prepare MY_RECIPE.txt, product/state templates, prompts, QA and the publishing package;
 - do not create Work tasks that the account cannot run.
+- for each automated or credit-heavy step, show the customer both choices: (A) connected/time-saving and (B) lower-cost/manual direct execution.
 
 If Work is available, ask:
 "Do you want the machine to run in the cloud while your computer is off, or locally on your computer?"
@@ -143,14 +145,24 @@ Use Metricool only where its connected workflow passes the customer's test. Use 
 STEP 5. IMAGE PROVIDER
 
 Ask:
-"Do you want Higgsfield for the image generation, or another supported provider you already use?"
+"Do you want the TIME-SAVING connected image path, or the CREDIT-SAVING/MANUAL path where I prepare the prompt and you run the image provider directly?"
 
-If Higgsfield:
-- confirm Higgsfield is connected to ChatGPT
+TIME-SAVING:
+- ask which supported connected provider to use
+- if Higgsfield, confirm Higgsfield is connected to ChatGPT
 - record provider and exact model/plan
 - record commercial-use status
+- before any paid generation, show the selected provider/model and the expected credit/cost information when the connected provider exposes it
+
+CREDIT-SAVING / MANUAL:
+- use ChatGPT or Claude to create the complete image prompt and acceptance checklist
+- the customer runs that prompt directly in the image provider they choose
+- the customer returns or uploads the result for QA
+- alternatively, use customer-owned or properly licensed imagery and record its source/rights
+- do not require a connected image action or an additional paid plan just to continue setup
 
 Never add a second paid generation solely to place text over an approved image.
+Never silently spend image credits or switch providers/models.
 
 STEP 6. PERSONA
 
@@ -288,8 +300,9 @@ pin-drafts.md
 
 These are views and notes, not the authoritative state.
 
-STEP 11. SCHEDULED TASKS
+STEP 11. TASKS OR MANUAL RUN CHECKLIST
 
+TIME-SAVING / Work:
 Create the tasks described in 06_SCHEDULED_TASK_PROMPTS.txt.
 
 Preferred tasks:
@@ -308,11 +321,21 @@ The reconciliation task handles:
 - duplicate reconciliation
 - stale state
 
-If the selected Work mode or connected app cannot perform a required action, leave the state queued and report it.
+CREDIT-SAVING / MANUAL:
+Do not create Work tasks.
+Create or provide a MANUAL_RUN_CHECKLIST with the same three jobs as on-demand checklists:
+1. build the next eligible themed look
+2. build Outfit of the Day only when enabled
+3. reconcile drafts, scheduled items, failures and pull requests
+The customer may paste the matching task prompt into a normal ChatGPT or Claude chat whenever they want to run it. Preserve the same stable IDs, QA, disclosure and approval gates.
+
+If the selected Work mode or connected app cannot perform a required action, leave the state queued and report it. Never force an upgrade when the manual path can complete the same customer-controlled step.
 
 STEP 12. TEST
 
-Run one complete draft test look before scaling. Keep it unscheduled unless I select the exact finished test Pin and explicitly authorize its schedule after reviewing the image, title, destination, exact public board, disclosure and alt text.
+Run one complete draft test look before scaling.
+
+If Work is unavailable, run the same test interactively in this chat using the CREDIT-SAVING / MANUAL sequence. A manual test can prove the configuration, product intake, stable IDs, image QA, copy, destination, board record, review gate and duplicate reconciliation. It does not prove unattended execution. Keep it unscheduled unless I select the exact finished test Pin and explicitly authorize its schedule after reviewing the image, title, destination, exact public board, disclosure and alt text.
 
 The draft test must prove:
 - configuration reads correctly
