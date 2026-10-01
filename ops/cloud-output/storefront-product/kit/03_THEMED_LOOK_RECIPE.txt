@@ -32,6 +32,16 @@ R16. State is authoritative. Stable LOOK_ID and PIN_ID values prevent duplicate 
 R17. Do not silently switch image models, providers, or paid plans when a credit or access limit is reached. Record the waiting state and tell the customer what is required.
 R18. Amazon product research must respect Amazon's current terms and the customer's authorized access. Do not scrape Amazon in the background or bypass access controls.
 
+R19. Every automated or credit-heavy step must have a lower-cost/manual equivalent. The customer may use ChatGPT or Claude for planning/copy, run the selected image provider directly, schedule natively in Pinterest, and update the state/log manually. The approval, disclosure, destination and duplicate-prevention rules are identical in every path.
+
+LOW-COST / MANUAL EQUIVALENTS
+- Product intake: customer supplies the product rows and authorized links directly.
+- Image generation: ChatGPT or Claude writes the prompt; customer runs the chosen image provider directly and returns the asset for QA.
+- Text/layout: add deterministic text/layout without paying for another image generation when possible.
+- Publishing: customer uses Pinterest's native scheduler after exact Pin review and authorization.
+- State: customer records the stable IDs and final status in the provided state/log files.
+Never make a paid connected action mandatory when the manual equivalent can complete the same customer-controlled step.
+
 ====================================================================
 PART 2. PICK THE LOOKS
 ====================================================================
@@ -124,9 +134,11 @@ IMAGE EXECUTION
 
 Read 13_PIN_VISUAL_STANDARD.md before generating an outfit inspiration Pin and apply its composition, headline and acceptance checks. A generated outfit is inspiration unless it depicts the actual linked items or uses clearly identified customer-owned/licensed product photos; match the Pin's title, destination, board, disclosure and alt text to that status.
 
-Use the connected image-generation provider selected in MY_RECIPE.txt. The preferred current path is ChatGPT + Higgsfield when the customer has that integration connected.
+TIME-SAVING: use the connected image-generation provider selected in MY_RECIPE.txt. The preferred connected path is ChatGPT + Higgsfield when the customer has that integration connected.
 
-Do not require a desktop browser, manual copy/paste, screenshots or a separate image-generation session when the connected provider can return the finished asset directly.
+CREDIT-SAVING / MANUAL: ChatGPT or Claude prepares the complete prompt from the product sheet. The customer runs it directly in the selected provider, then returns the finished asset for QA. This path may be used to conserve connected-tool credits or avoid an additional automation plan.
+
+Do not require manual copy/paste when the customer chose the connected path and the provider can return the finished asset directly. Do not require a connected paid action when the customer chose the manual path.
 
 For each final asset:
 1. Build the prompt from the product sheet, persona settings and look requirements.
