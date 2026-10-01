@@ -1,0 +1,128 @@
+{
+  "timezone": "America/New_York",
+  "find_your_door_automated": false,
+  "states": [
+    "DRAFT",
+    "QA_PASSED",
+    "APPROVED",
+    "READY",
+    "RUNNING",
+    "APPLIED",
+    "VERIFIED",
+    "COMPLETE",
+    "BLOCKED",
+    "FAILED",
+    "UNKNOWN",
+    "CANCELLED",
+    "SUPERSEDED"
+  ],
+  "workflows": [
+    {
+      "id": "CORE_PINTEREST",
+      "queue": "ops/queues/PINTEREST_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "PREMIUM_CALENDAR",
+      "queue": "ops/queues/PREMIUM_CALENDAR_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "DAILY_PROMPTS",
+      "queue": "ops/queues/DAILY_PROMPTS_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "PAID_VIRAL_INSTAGRAM",
+      "queue": "ops/queues/PAID_VIRAL_INSTAGRAM_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "THREADS",
+      "queue": "ops/queues/THREADS_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "INTERNAL_AMAZON",
+      "queue": "ops/queues/AMAZON_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "BRAND_CLOSET_OOTD",
+      "queue": "ops/queues/BRAND_CLOSET_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "WYS_CUSTOMER_PRODUCT",
+      "queue": "ops/queues/STOREFRONT_CUSTOMER_PRODUCT_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "EMAIL",
+      "queue": "ops/queues/EMAIL_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "COMMERCE",
+      "queue": "ops/queues/COMMERCE_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "SKOOL",
+      "queue": "ops/queues/SKOOL_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "WEBSITE",
+      "queue": "ops/queues/WEBSITE_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "IMAGES",
+      "queue": "ops/queues/IMAGE_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "VERIFY",
+      "queue": "ops/queues/VERIFY_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    },
+    {
+      "id": "TIKTOK",
+      "queue": "ops/queues/TIKTOK_QUEUE.md",
+      "live_status": "DESTINATION_RESULTS_UNVERIFIED",
+      "activation": "NOT_ACTIVATED_BY_PACKAGE",
+      "inventory_observed": "2026-10-01"
+    }
+  ],
+  "observed_inventory": "ops/ai-router/LIVE_TASK_INVENTORY_2026-10-01.json",
+  "platform_evidence": "ops/ai-router/SOURCE_RECONCILIATION_2026-10-01.md"
+}

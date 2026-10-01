@@ -1,0 +1,28 @@
+{
+  "required": [
+    "task_id",
+    "workflow_id",
+    "account",
+    "packet",
+    "approval",
+    "content_hash",
+    "status",
+    "dependencies",
+    "requested_local_time",
+    "timezone",
+    "observed_state",
+    "platform_id",
+    "evidence",
+    "exception"
+  ],
+  "evidence_required_states": [
+    "VERIFIED",
+    "COMPLETE"
+  ],
+  "identity_fields": [
+    "workflow_id",
+    "account",
+    "task_id"
+  ],
+  "template_is_live_work": false
+}

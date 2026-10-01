@@ -1,0 +1,14 @@
+# Migration sequence
+
+Package complete locally; LIVE ACTIVATION UNVERIFIED and not performed.
+
+1. Verify package checksums and source-base preconditions with `apply_package.py --repo <checkout> --check`. Review the overlay, conflict register and rollback first. If a newer checkout differs, merge against that checkout; never force this dated snapshot over it.
+2. Read current canon and live source exports. Use the recovered 57-task live inventory and lock SOP, then refresh the affected detail pages and shared lock state. Record actual account state read-only. Date-scoped October notes are historical plans; do not schedule or replay them from this package. Verify the current host separately before any deployment.
+3. Preserve purchase/access delivery. Reconcile email triggers, buyer exclusions and checkout paths without pausing. Find Your Door is excluded. Resolve live launch issues separately; this package does not approve a launch, discount, price or delivery change.
+4. Reconcile every legacy crosswalk item against actual state. Recorded DONE steps are no-replay history. UNVERIFIED candidates get no write authorization. Split multi-account sections into stable child operations, each in one queue. Keep source hashes and original history.
+5. Apply the repository overlay to a reviewed branch. Run the package validator, manifest tests and scoped local audit. New cloud jobs now route through `ops/queues/`; source queue history and business canon stay preserved. The GitHub workflow change takes effect only if deployed.
+6. Prepare replacement inputs and quality checks outside the account. Test dry-run contracts and dedupe. Compare proven operator/API capability; reuse existing approvals where sufficient. SOP 15, SOP 16 and lock policy are recovered; unresolved current-source equality, current lock ownership or destination capability holds only the affected live operation.
+7. Cut over ONE workflow: inventory and disable the old writer, confirm it is inactive, then enable one authorized replacement. Never run both. Execute a bounded approved test and read it back independently. If a writer outcome is unknown, reconcile before retry or rollback.
+8. Verify each intended action, including separate replies, lesson/community records, pricing/access and buyer delivery as applicable. A future scheduled record verifies scheduling only. Record actual task IDs and timestamps in the live inventory.
+9. Expand only after the bounded test passes. On failure stop the replacement, reconcile partial effects, and restore one approved old/manual writer. Never restore concurrent writers or replay all historical queue work.
+10. Archive legacy execution instructions only after every candidate is accounted for. Paired canon changes need an approved decision and same-day synchronization. This package supplies migration rules, not a second product register.
