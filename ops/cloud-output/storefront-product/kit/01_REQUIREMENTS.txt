@@ -4,15 +4,16 @@ Read this before anything else.
 
 CORE REQUIREMENTS
 
-1. CHATGPT WORK
-The automated storefront path requires a ChatGPT plan/account with access to Work and Scheduled Tasks. Current OpenAI documentation says Work is not available on Free or Go; availability on other plans can vary by account, region and workspace permissions. Check current Work access before purchase/setup.
+1. CHATGPT / CLAUDE PATH
+The automated storefront path requires ChatGPT Work access. Current OpenAI documentation says Work is available on eligible paid plans and can vary by account, app, region and workspace permissions. Ordinary Scheduled Tasks have broader eligibility than Work, but Scheduled Tasks alone do not turn this kit into the full Work automation.
 
 IMPORTANT PLAN GATE
-- Work automation path = requires Work access.
-- Free/Go customers must not be told that ordinary Scheduled Tasks alone provide the full storefront automation.
-- The lower-cost/manual path can still use ChatGPT for preparation and native Pinterest for final scheduling, but it is not the same unattended Work workflow.
+- TIME-SAVING recurring Work path = requires Work access plus the required connected apps.
+- CREDIT-SAVING / MANUAL path = does not require Work.
+- A customer may use a lower-cost ChatGPT or Claude plan to prepare copy, product sheets and image prompts, then run the image provider and Pinterest steps directly.
+- Do not tell a customer that ordinary Scheduled Tasks alone provide the full storefront automation.
 
-Work Cloud is preferred for the true while-you-sleep path. Work Local is the fallback when the workflow requires a local folder or local browser session.
+Work Cloud is preferred for the true while-you-sleep path. Work Local is the fallback when the workflow requires a local folder or local browser session. If Work is unavailable, continue with the CREDIT-SAVING / MANUAL path instead of stopping setup.
 
 2. AMAZON
 You need an approved Amazon Associates account.
@@ -27,9 +28,12 @@ You need a Pinterest business account with public boards.
 Pinterest's native scheduler supports standard Pins up to 30 days ahead and up to 10 future Pins at a time.
 
 4. IMAGE PROVIDER
-Higgsfield is the preferred connected image provider when the customer selects that path. Higgsfield officially supports ChatGPT integration. A paid Higgsfield subscription is required for its ChatGPT connection.
+Higgsfield is the preferred connected image provider when the customer selects that path. Higgsfield officially supports ChatGPT integration, and its connector requires an active paid Higgsfield subscription.
 
-If the customer uses another supported image provider, record the exact provider, model, plan and commercial-use rights in MY_RECIPE.txt.
+CREDIT-SAVING / MANUAL alternative:
+The customer may run the selected image provider directly instead of through a connected action. ChatGPT or Claude can prepare the prompt and QA checklist, then the customer returns the finished asset for review. If the customer uses customer-owned or properly licensed imagery instead of generated imagery, record that source and its rights.
+
+In every path, record the exact provider, model/plan when applicable, and commercial-use rights in MY_RECIPE.txt. Never silently spend credits or switch providers.
 
 5. METRICOOL
 Only required for TIME-SAVING publishing.
@@ -56,10 +60,13 @@ No Instagram is required for the core storefront.
 
 COST-SAVING PATH
 
-Choose CREDIT-SAVING if you do not want a Metricool subscription.
+Choose CREDIT-SAVING if you want to reduce automation subscriptions or connected-tool usage.
 
-ChatGPT builds the complete Pin package.
+Use a lower-cost ChatGPT or Claude plan for the planning, copy and image-prompt steps you want help with.
+Run image generation directly in your selected provider when that is cheaper than connected execution.
 You perform the final Pinterest scheduling step.
+
+Choose MANUAL if you want to minimize automation further. Use the recipes as checklists, perform each build step directly, and maintain the state/log yourself. No Work task or Metricool subscription is required.
 
 TIME-SAVING PATH
 
