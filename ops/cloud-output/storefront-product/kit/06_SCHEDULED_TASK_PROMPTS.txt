@@ -225,3 +225,6 @@ Until that test passes:
 - not "fully unattended publishing"
 
 Never remove this distinction from customer instructions.
+
+STATE AND WRITE RECONCILIATION
+Follow 12_STATE_SCHEMA.md for allowed states, run claims, write_attempt_id, publisher IDs/UUIDs and unknown write outcomes. Persist pending write intent before a publisher mutation. Reconcile ambiguous responses through supported readback before any retry; never blindly repeat a create. A scheduled-area confirmation verifies scheduling only. Actual publication evidence is required for published, and checks of the published image, destination, board, disclosure and metadata are required for verified. Record verification_scope, evidence and time. No unavailable connector is evidence of successful publication or removal.
