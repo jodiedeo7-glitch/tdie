@@ -84,6 +84,12 @@ customer_selection_at
 customer_schedule_authorized
 schedule_authorization_at
 schedule_authorization_fingerprint
+publisher_post_uuid
+write_attempt_id
+write_outcome
+verification_scope
+verification_evidence
+verified_at
 status
 last_checked_at
 error_code
@@ -94,6 +100,10 @@ notes
 
 run_id
 task
+work_window_key
+claim_owner
+claim_expires_at
+last_heartbeat_at
 started_at
 finished_at
 result
@@ -105,6 +115,9 @@ notes
 ## Allowed states
 
 intake_needed
+sourcing
+missed
+write_outcome_unknown
 ready
 building
 built
@@ -124,7 +137,9 @@ dropped
 
 ## Idempotency
 
-A run must check stable IDs before creating work.
+A run must check stable IDs before creating work. Atomically claim task + work_window_key with an owner and expiry before production. If the state backend cannot atomically claim the window, use one operator at a time and record that manual serialization; do not claim concurrent execution is safe. Reconcile an expired claim before taking over; expiry is not evidence that an external write failed.
+
+Persist write_attempt_id, exact payload fingerprint and pending write_outcome before a publisher mutation. If the response is lost or ambiguous, set write_outcome_unknown and read back through the supported publisher. Never blindly retry a create. Keep the stable publisher_post_uuid as well as publisher_post_id where the publisher exposes both; an edit may replace the numeric ID. Resume only after reconciliation establishes the actual outcome.
 
 Duplicate prevention order:
 1. LOOK_ID
@@ -158,9 +173,9 @@ customer_review_required → awaiting_approval (when a separate platform review 
 customer_review_required → scheduled → published → verified (only after per-Pin customer selection and schedule authorization are recorded)
 
 CREDIT-SAVING / native Pinterest:
-customer_review_required → customer_scheduling_required → customer_scheduled → verified
+customer_review_required → customer_scheduling_required → customer_scheduled → published → verified
 
-A customer_scheduled state records the customer's confirmation that Pinterest shows the Pin in its scheduled area. Use verified only after the customer's confirmation or supported publisher evidence is recorded. A scheduled or published state never substitutes for the recorded per-Pin customer selection and schedule authorization.
+A customer_scheduled state records the customer's confirmation that Pinterest shows the Pin in its scheduled area. This confirms scheduling only. Remain in customer_scheduled until publication is confirmed. Use published only with an actual published Pin URL or equivalent supported evidence, and verified only after the published image, destination, board, disclosure and metadata are checked. Store verification_scope (schedule or publication), verification_evidence and verified_at. Scheduling evidence must never be labeled publication verification. A scheduled or published state never substitutes for the recorded per-Pin customer selection and schedule authorization.
 
 ## Pull states
 
@@ -169,3 +184,7 @@ published → pull_requested → pulled
 pull_requested → pull_failed
 
 Never infer "pulled" merely because a publisher record disappeared.
+
+## Recipe state mapping
+
+Use sourcing while identifying pieces. Use intake_needed when an authorized product row is missing; do not store the compound value sourcing/intake_needed. Use missed for an unstarted lesson outside the documented eligibility window, with its date and reason. queued means internal work awaiting preparation; it does not mean a publisher accepted a schedule. Blockers use error_code and notes with the appropriate allowed status; do not invent new status strings.
