@@ -1,11 +1,17 @@
 PERSONA PATHS
-Your setup chat picked one of these from your answer to question 4. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+Your setup chat recorded your persona choice in MY_RECIPE.txt. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
 
 ====================================================================
 THE PERSONA PATH (pin 2 is your AI persona wearing the look)
 ====================================================================
 
-You need: your persona's reference image in the connected asset location named in MY_RECIPE.txt, a supported connected image provider, and MY_RECIPE.txt's PERSONA WORLD line (the three or four places she lives her life, written by your setup chat).
+You need: a reference image you are authorized to use, approved product descriptions recorded in your product intake, and MY_RECIPE.txt's PERSONA WORLD line.
+
+TIME-SAVING: use the configured connected provider/model only when available, rights are recorded and the generation spend is authorized.
+
+CREDIT-SAVING / MANUAL: use a lower-cost ChatGPT or Claude plan to prepare this prompt from your own approved product descriptions. Run it directly in a provider you choose that supports the required reference-image workflow, then return the result for the same visual QA. If it cannot support the reference, use the no-persona path rather than assuming identity preservation.
+
+DIRECT MANUAL: you may instead prepare the scene yourself using original, permitted imagery. Record its source and rights. No connected image tool or recurring task is required.
 
 THE RULES
 P1. Identity comes from the reference image only. Never describe her face, face shape, skin, eye color, hair color, hair length or cut, body shape or age in words. Not even "same face". Words compete with the image and she drifts.
@@ -23,12 +29,12 @@ P6. No words, signs, logos or labels anywhere in the photo.
 P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt. The current preferred connected path is Higgsfield through ChatGPT. Choose the lowest-cost current model that meets the required identity, realism and editing criteria. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
 P8. Outfit looks only. Theme lists and roundups (home, desk, car, gifts) never use your persona: their pin 2 is the other collage format.
 
-ATTACH, IN THIS ORDER: (1) her reference image, (2) the product sheet from the recipe, Part 3 step 6.
+INPUTS: attach only the authorized persona reference. Supply the approved product descriptions as prompt text. Do not attach a text product sheet as an image. Additional product photographs are optional only when you have documented permission to use them with the selected provider.
 
 THE PROMPT (fill the brackets, keep every other word)
-Photograph of this exact woman from the attached reference image (the first image). Identity is taken only from the reference. Please make me one single very realistic lifestyle photo, not a collage or grid. I can't use the exact Amazon images, so this is a new photo. She is wearing every wearable piece in the second image, matching each one in color and detail (a beauty item or book goes in her hand or in the scene): [piece by piece: the top, the bottoms or dress, the shoes, the bag and which shoulder it's on, the jewelry, the accessory, how her hair is worn today]. Nails: [color]. Format: [mirror selfie with her phone covering her face / chin-down outfit crop / over-the-shoulder walking away / detail shot of hands, bag and jewelry / candid full shot]. Scene: [one place from PERSONA WORLD and a specific moment, for example her front hallway mirror on a Saturday morning]. Make it look like a good-quality photo taken on a phone: 26mm phone lens, natural light, realistic camera angle, real skin and fabric texture, small real-life imperfections, nothing glossy. Portrait 2:3. No lettering, no signs, no logos, no text anywhere in the frame.
+Photograph of this exact woman from the attached reference image (the first image). Identity is taken only from the reference. Please make me one single very realistic lifestyle photo, not a collage or grid. I can't use the exact Amazon images, so this is a new photo. She is wearing the outfit described in the approved product facts below (a beauty item or book goes in her hand or in the scene): [piece by piece: the top, the bottoms or dress, the shoes, the bag and which shoulder it's on, the jewelry, the accessory, how her hair is worn today]. Nails: [color]. Format: [mirror selfie with her phone covering her face / chin-down outfit crop / over-the-shoulder walking away / detail shot of hands, bag and jewelry / candid full shot]. Scene: [one place from PERSONA WORLD and a specific moment, for example her front hallway mirror on a Saturday morning]. Make it look like a good-quality photo taken on a phone: 26mm phone lens, natural light, realistic camera angle, real skin and fabric texture, small real-life imperfections, nothing glossy. Portrait 2:3. No lettering, no signs, no logos, no text anywhere in the frame.
 
-Corrections, same chat, two at most: say exactly what's wrong ("the bag should be the black crescent one from the second image, on her left shoulder").
+Corrections, same chat, two at most: say exactly what's wrong ("the bag should be the black crescent bag described in my approved product facts, on her left shoulder").
 
 ====================================================================
 THE NO-PERSONA PATH (flat lays and collages only)
@@ -41,3 +47,6 @@ No persona, no faces. Both pins of every look are person-free images made with t
 The 3-day spacing still applies: the two pins are different enough to earn their own spot, and 3 days apart they never look like a repeat.
 
 Theme lists and roundups work beautifully on this path, including home decor: the flat lay shows the pieces styled as a vignette from above, and the collage shows each one clearly.
+
+IMAGE QA AND CUSTOMER REVIEW
+Use 13_PIN_VISUAL_STANDARD.md before approval. Record whether the result actually depicts the linked products or is styling inspiration. Use matching copy and alt text; do not claim an exact retail match without evidence. Respect the configured generation-attempt and spend limits. Any paid correction requires authorized budget. Review and scheduling authorization remain separate from image generation.
