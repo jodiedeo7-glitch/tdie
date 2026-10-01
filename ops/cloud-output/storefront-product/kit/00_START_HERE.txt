@@ -3,26 +3,32 @@ Start here
 
 Your approved Amazon product inputs become reviewable Pinterest Pin drafts. You select each Pin and authorize its schedule.
 
-The storefront now has two publishing paths:
+There are three normal ways to use the storefront:
 
 TIME-SAVING
-ChatGPT Work builds the look, images and Pin package, then uses the connected Metricool publishing layer when that connection is available and tested.
+Use ChatGPT Work, connected image tools and Metricool where those connections are available and tested. Work handles the repetitive build steps; each Pin still stays behind the customer review and schedule-authorization gate.
 
 CREDIT-SAVING
-ChatGPT Work builds everything. You perform the final scheduling action through Pinterest's native scheduler.
+Use a lower-cost ChatGPT or Claude plan for planning, copy and prompts. Run the image step directly in the image provider you choose, then schedule the finished Pin yourself in Pinterest's native scheduler. No Work task or Metricool subscription is required.
 
-The product is intentionally built so you do not have to pay for maximum automation if you would rather save money.
+MANUAL
+Follow the same recipes as a checklist. You can prepare product rows, run image generation directly, review the asset, write or paste the Pin package, schedule it in Pinterest and update the state/log yourself. This is slower but avoids paying for maximum automation or extra automation credits.
+
+MIXED
+Automate only the steps that are worth paying for. Example: use ChatGPT or Claude to prepare copy and image prompts, generate the image manually, then review and schedule the Pin yourself.
+
+You can switch paths later. The approval, disclosure, destination and duplicate-prevention rules do not change with the path.
 
 IMPORTANT: the old desktop-browser architecture is retired from the customer instructions. The computer-on/browser workflow is now a LOCAL fallback, not the default.
 
 WHAT YOU NEED
 
-1. An eligible ChatGPT account with access to Work and Scheduled Tasks.
+1. For the automated path: an eligible ChatGPT account with Work access. For CREDIT-SAVING or MANUAL: a ChatGPT or Claude plan that can handle the preparation steps you choose to use.
 2. Amazon Associates, plus Amazon Influencer approval if you want Idea Lists.
 3. A Pinterest business account with public boards.
-4. Higgsfield if you choose the Higgsfield image path.
-5. Metricool if you choose TIME-SAVING publishing.
-6. Google Drive if you choose CLOUD execution/state.
+4. Higgsfield only if you choose the Higgsfield image path. The manual path may use the same provider directly instead of through ChatGPT.
+5. Metricool only if you choose TIME-SAVING publishing.
+6. Google Drive only if you choose CLOUD execution/state.
 7. The Brand Closet™ only if you choose the optional Outfit of the Day automation.
 
 THE TWO MODES
@@ -42,7 +48,10 @@ IMPORTANT:
 Do not schedule a Pin automatically from a recurring task. A setup test may schedule only the exact Pin the customer selected and explicitly authorized. Record publisher readback when supported; approval requests or unavailable board assignment leave the Pin unscheduled and must be reported.
 
 CREDIT-SAVING:
-ChatGPT prepares the complete Pin package and the customer schedules it in Pinterest.
+ChatGPT or Claude prepares the copy, prompts and Pin package. You may run image generation directly in your chosen provider to conserve connected-tool credits. The customer schedules the finished Pin in Pinterest.
+
+MANUAL:
+Use the same recipe and QA checklist without recurring tasks. Prepare each step yourself, then record the finished Pin and its status before moving to the next one.
 
 Pinterest's native business scheduler currently supports standard Pins up to 30 days ahead and up to 10 future Pins at once.
 
