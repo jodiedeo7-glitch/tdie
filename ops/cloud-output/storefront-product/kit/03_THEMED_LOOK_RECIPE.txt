@@ -154,7 +154,7 @@ Do not generate a second image merely to add deterministic text or layout. Use d
 Never make the customer copy an image from one application into another as the normal path.
 
 PIN 1: THE FLAT LAY OR COLLAGE (no person)
-Use the image provider and model configured in MY_RECIPE.txt and confirmed available for this run. Do not hard-code or silently substitute an image provider/model. If the configured model is unavailable, record the blocked/waiting state and report the required action.
+Use the image provider and model configured in MY_RECIPE.txt and confirmed available for this run. Do not hard-code or silently substitute an image provider/model. If the configured model is unavailable, keep the appropriate allowed status from 12_STATE_SCHEMA.md, record the blocker in error_code and notes, and report the required action.
 
 Read the last look's Pin 1 composition in storefront-log.md and use the other composition this time. Favor a calm editorial composition with clear product hierarchy, restrained props, and comfortable background margins. Every garment and accessory must fit completely inside the 2:3 canvas; do not crop straps, hems, sleeves, shoes, or trouser legs. Leave a moderate clean area at the top for a headline.
 
@@ -238,3 +238,6 @@ PART 7. STATE, LEFTOVERS AND RECOVERY
    - retryable IDs
 11. On renewal date, do not schedule new looks beyond the renewal date. Tell the customer to renew the calendar.
 On the RENEWAL DATE in MY_RECIPE.txt: schedule nothing past it, and tell me in one line that the calendar needs renewing (paste 02_SETUP_PROMPT.txt again and answer "renew").
+
+STATE AND WRITE RECONCILIATION
+Follow 12_STATE_SCHEMA.md for allowed states, run claims, write_attempt_id, publisher IDs/UUIDs and unknown write outcomes. Persist pending write intent before a publisher mutation. Reconcile ambiguous responses through supported readback before any retry; never blindly repeat a create. A scheduled-area confirmation verifies scheduling only. Actual publication evidence is required for published, and checks of the published image, destination, board, disclosure and metadata are required for verified. Record verification_scope, evidence and time. No unavailable connector is evidence of successful publication or removal.
