@@ -26,9 +26,10 @@ const LIVE_LINK = CHECKOUT.startsWith("https://");
 
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
 const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
+const PRESALE_CLOSES = "2026-10-09T03:59:00Z"; // Thu 8 Oct 2026, 11:59 pm ET
 const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
 const now = Date.now();
-const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PRESALE_CLOSES) ? "presale" : now < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
 
 const proof = [
   { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
@@ -42,49 +43,52 @@ const proof = [
 ];
 
 const steps = [
-  { n: "01", t: "It picks the look", p: "From a seasonal calendar and an evergreen bank written for your theme, so it's never costumes in March." },
-  { n: "02", t: "It shops Amazon for you", p: "Five to eight pieces per look: in stock, four stars and up, a hundred ratings or more. Every one with your own affiliate link." },
-  { n: "03", t: "It builds the list", p: "An Idea List in your storefront holding every piece, or a shop-the-look page on your own site." },
-  { n: "04", t: "It makes the pins", p: "A styled flat lay or collage, and a lifestyle photo of your AI persona (or a second collage if you don't have one). Title, description, alt text, #ad line." },
-  { n: "05", t: "It schedules and logs", p: "Two pins per look, three days apart, checked on Pinterest's scheduled page and written to your pin tab and log." },
+  { n: "01", t: "Plan a look", p: "Use your configured theme, schedule, and eligible look ideas to prepare a bounded draft." },
+  { n: "02", t: "Use approved product inputs", p: "Work from product details and affiliate links you provide or an authorized integration available to your account. Do not assume Amazon API access." },
+  { n: "03", t: "Prepare a destination", p: "Use your eligible Idea List or website path. A destination must resolve before a Pin can be approved for scheduling." },
+  { n: "04", t: "Prepare Pin drafts", p: "Create images and Pin copy with disclosure and alt text, then check framing, product fidelity, and metadata." },
+  { n: "05", t: "Review, authorize, and track", p: "You select each exact Pin and authorize its schedule. Record only the status the selected publisher confirms." },
 ];
 
 const needs = [
-  "A Claude plan with scheduled tasks and Claude in Chrome",
-  "The Claude desktop app, with your computer on when the tasks run",
-  "Amazon Associates, plus Influencer approval for Idea Lists",
-  "A Pinterest business account with public boards",
-  "Gemini and Higgsfield accounts",
+  "Your existing Claude or ChatGPT plan for the low-cost path, or the manual workbook path without AI",
+  "Work or scheduled tasks and supported connected actions only if you choose automation",
+  "An approved Amazon Associates account for affiliate links; an eligible storefront with Idea Lists for the storefront path",
+  "A Pinterest business account and a public board verifiable through a supported path",
+  "A connected image provider and supported model if your chosen path requires one",
+  "A connected Metricool account only if you choose TIME-SAVING publishing; scheduling remains account-dependent until tested",
 ];
 
 const inside = [
-  "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
+  "A 19-page buyer guide with low-cost and manual alternatives throughout",
+  "A 15-page prompts and workbook PDF with 36 editable fields",
+  "A guided setup prompt that records your choices and account-specific blockers",
   "The themed-look recipe, for any theme and any season",
   "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
-  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
+  "Three canonical recurring task prompts: weekly planning, optional Outfit of the Day, and reconciliation",
   "Persona and no-persona paths, Influencer and Associates-only paths",
   "The blog half, for Weekend Ecosystem™ sites",
-  "The setup guide, with two of my own looks worked through step by step",
+  "Reusable prompts, planning sheets, and a pre-publishing checklist",
 ];
 ---
 <PageLayout
   wide
   ogImage={witchFlat.src}
   title="The While-You-Sleep Storefront™ · Amazon Pins on a Schedule"
-  description="Your Amazon affiliate links, turned into Pinterest pins that get built, scheduled and logged by your own Claude scheduled tasks. Found through search, not the feed."
+  description="A guided workflow for turning approved Amazon product inputs into reviewable Pinterest Pin drafts, with customer approval before each schedule."
 >
   <section class="ws-hero">
     <div class="page-eyebrow">Amazon links to Pinterest pins · on a schedule</div>
     <h1>The <em>While-You-Sleep</em> Storefront™</h1>
-    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
+    <p class="lede">Turn your approved Amazon product inputs into Pinterest Pin drafts, with images and copy prepared for your review. You choose each finished Pin and authorize its schedule after checking the destination, board, disclosure, and details.</p>
     <div class="ws-cta-row">
       <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
-      <li>About 5 minutes to start</li>
-      <li>No building, no selling, no posting</li>
-      <li>Runs from your own computer</li>
+      <li>Guided setup; timing depends on your accounts</li>
+      <li>Review and approve each Pin before scheduling</li>
+      <li>Cloud or local execution, when available</li>
     </ul>
   </section>
 
@@ -93,38 +97,48 @@ const inside = [
       <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
     ))}
   </section>
-  <p class="ws-note">Every image, title and schedule above was made by the tasks you're about to copy. Not by me.</p>
+  <p class="ws-note">Examples from Jodie's own workflow. They do not verify the customer account setup or show retail products unless identified as such.</p>
 
   <section class="ws-sec">
     <div class="ws-kicker">The problem nobody says out loud</div>
     <h2>If the sale depends on you being online, <em>it's not passive yet.</em></h2>
     <p class="ws-p">Posting, replying, filming the reel, filming it again because the light changed. The feed forgets you by Wednesday and you start over on Thursday. That's not a business that runs while you sleep. That's a second shift.</p>
     <p class="ws-p">Pinterest works the other way round. Nobody's there to be entertained. They're typing "pink witch costume" or "cozy fall outfit" into a search bar with their wallet already half open. A pin you schedule today can still be found months from now. The only job is making sure something of yours is there when they search.</p>
-    <p class="ws-p">So I stopped doing that job myself.</p>
+    <p class="ws-p">The guide gives you a repeatable way to prepare the next Pin, with as much hands-on work or AI help as you choose.</p>
+  </section>
+
+  <section class="ws-sec ws-downloads">
+    <div class="ws-kicker">A look inside your download</div>
+    <h2>Two PDFs. One clear place to start.</h2>
+    <p class="ws-p">Read the guide, then use the workbook to plan your first look and keep your own records.</p>
+    <div class="ws-document-grid">
+      <figure class="ws-document"><div class="ws-document-label">01 · START HERE</div><img src="/images/storefront-buyer-guide-preview.png" alt="Actual first page of the Storefront buyer guide, including the manual path and first-session steps." width="638" height="825" loading="lazy" /><figcaption><strong>The buyer guide</strong><span>19 pages · setup, choices, and review</span></figcaption></figure>
+      <figure class="ws-document"><div class="ws-document-label">02 · MAKE IT YOURS</div><img src="/images/storefront-workbook-preview.png" alt="Actual first page of the Storefront prompts and workbook, explaining how to save a copy and use its editable fields." width="638" height="825" loading="lazy" /><figcaption><strong>Prompts + editable workbook</strong><span>15 pages · 36 fields for your own answers</span></figcaption></figure>
+    </div>
   </section>
 
   <section class="ws-sec ws-tint">
-    <div class="ws-kicker">What the tasks do, on their own</div>
-    <h2>Five jobs you never do again.</h2>
+    <div class="ws-kicker">What the tasks can help prepare</div>
+    <h2>Five jobs the workflow can help prepare.</h2>
     <div class="ws-steps">
       {steps.map((s) => (
         <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
       ))}
     </div>
-    <p class="ws-close">No prices on any pin, no brand names in any listing, and Amazon's own photos never posted: they're only the reference for new images.</p>
+    <p class="ws-close">No prices on any pin, no brand names in any listing, and use images you own or have permission to use. AI inspiration images must be checked and described accurately; similar items are not an exact product match.</p>
   </section>
 
   <section class="ws-sec">
-    <div class="ws-kicker">Two automations, one machine</div>
-    <h2>Your theme, every week. And the Outfit of the Day, every night.</h2>
+    <div class="ws-kicker">Two content workflows and reconciliation</div>
+  <h2>Your themed workflow, plus an optional Outfit of the Day path.</h2>
     <div class="ws-grid-2">
       <div class="ws-card">
         <h3>Themed looks</h3>
-        <p>Once a week, looks for your theme: cozy mom, coastal home, pink everything, dark academia, whatever you'd pin yourself. Holidays until a week before the day, evergreen looks every single week.</p>
+        <p>On the configured schedule, prepare look drafts for your theme: cozy mom, coastal home, pink everything, dark academia, or another customer-selected direction. Cadence depends on your setup and account.</p>
       </div>
       <div class="ws-card ws-card-pink">
         <h3>The Brand Closet™ Outfit of the Day</h3>
-        <p>If you're a member of The Brand Closet™ on Rose's $9/month tier, a second automation turns each new Outfit of the Day into your own pins, with your own Amazon links, your own list and brand-new images. Nothing of Rose's is ever posted.</p>
+        <p>If you have the required Brand Closet™ access, the optional workflow can use lesson topics as inspiration to prepare original drafts with your approved product inputs. It does not reuse member-only materials. You review each Pin and authorize any schedule.</p>
       </div>
     </div>
   </section>
@@ -139,7 +153,7 @@ const inside = [
       <div><span class="ws-stat">84</span><span class="ws-statlab">Tagged product links</span></div>
       <div><span class="ws-stat">26</span><span class="ws-statlab">Pins built</span></div>
     </div>
-    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work. It took me 5 minutes to set up.</p>
+    <p class="ws-p">These figures describe Jodie's historical workflow records, not customer results or proof that the current customer Work, Drive, and publisher path has passed an end-to-end test. No sales or income claim is being made. Setup time varies with account access, board checks, connections, task configuration, and first-run review.</p>
     <div class="ws-gallery">
       {proof.slice(4).map((p) => (
         <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
@@ -153,14 +167,29 @@ const inside = [
     <div class="ws-grid-2">
       <div class="ws-card">
         <ul class="ws-yes">{needs.map((n) => (<li>{n}</li>))}</ul>
-        <p class="ws-fine-dark">The Outfit of the Day line also needs The Brand Closet™ at Rose's $9/month tier. It's optional: the themed-look line runs without it.</p>
+        <p class="ws-fine-dark">The Outfit of the Day line also needs authorized access to the relevant Brand Closet™ lesson. It is optional. TIME-SAVING publishing additionally requires a connected Metricool account and a successful account-specific test.</p>
       </div>
       <div class="ws-card ws-callout">
-        <h3>The honest part</h3>
-        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
-        <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
+        <h3>Choose time or credits</h3>
+        <p>Use the low-cost path with your existing Claude or ChatGPT plan, or follow the manual workbook steps. Extra AI tools, scheduled tasks, and Metricool are optional; use them only for the steps you want to automate.</p>
+        <p>Cloud execution may work while your computer is off when enabled for your account and required connections. Local runs need your computer and any required local session. Do not assume missed work catches up automatically.</p>
+        <p>Every Pin begins as a draft. You choose the exact finished Pin and authorize its schedule after review. Cancellation or removal depends on the connected publisher and may require action in Pinterest.</p>
       </div>
     </div>
+  </section>
+
+  <section class="ws-sec ws-workbook-feature">
+    <div class="ws-workbook-copy">
+      <div class="ws-kicker">Your choices, on one page</div>
+      <h2>Start with what you already have.</h2>
+      <p class="ws-p">The manual path uses the same plan and review checklist. Add AI or connected tools when they save you work.</p>
+      <ol class="ws-choice-steps">
+        <li><span>01</span><div><strong>Pick your path</strong><p>Manual, your existing AI plan, or connected automation.</p></div></li>
+        <li><span>02</span><div><strong>Record your setup</strong><p>Your theme, destination, board, and posting window.</p></div></li>
+        <li><span>03</span><div><strong>Review one finished Pin</strong><p>Check the image, links, disclosure, and copy before scheduling.</p></div></li>
+      </ol>
+    </div>
+    <figure class="ws-worksheet"><img src="/images/storefront-editable-worksheet-preview.png" alt="Actual editable account worksheet with spaces for operating mode, Amazon account status, destination, Pinterest board, timezone, and approval process." width="638" height="825" loading="lazy" /><figcaption>An actual worksheet from your download</figcaption></figure>
   </section>
 
   <section class="ws-sec">
@@ -180,16 +209,17 @@ const inside = [
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
         <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
+        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Full-kit delivery is planned for Friday 9 October at 9 am Eastern through your Beacons purchase receipt or customer portal.</p>
       </div>
+      <div class="ws-price-state" data-stage="closed" hidden={stage !== "closed"}><p class="ws-price-when">The presale has ended. Full-kit launch is planned for Friday 9 October at 9 am Eastern.</p></div>
       <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
         <div class="ws-price-fig">$27<span> one-time</span></div>
-        <p class="ws-price-when">The whole kit, yours to keep.</p>
+        <p class="ws-price-when">The whole kit, yours to keep. Check the checkout for the current price and available download.</p>
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
-      {LIVE_LINK && stage !== "soon"
+      {LIVE_LINK && (stage === "presale" || stage === "live")
         ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
+        : <span class="btn ws-buy ws-buy-off">{stage === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"}</span>}
       {LIVE_LINK && stage === "soon" && (
         <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
       )}
@@ -201,13 +231,15 @@ const inside = [
     <div class="ws-kicker">Questions</div>
     <h2>Asked, answered.</h2>
     <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
-      <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
-    <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
-      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
+      <p>The guide uses plain language and a guided setup prompt. The number of questions depends on your account path and choices. You configure only the tasks and connected actions available to you.</p></details>
+    <details class="ws-faq"><summary>Does my computer have to stay on?</summary>
+      <p>It depends on the execution mode available to your account. Supported Cloud runs may work with your computer off; Local runs require your computer and any needed local session. Missed-run recovery must be verified in your own setup.</p></details>
+    <details class="ws-faq"><summary>Will Pins publish without my approval?</summary>
+      <p>No. Each Pin stays a draft until you select that exact finished Pin and authorize its schedule after checking the image, destination, public board, disclosure, title, and alt text. A setup test does not prove that future runs or publishing will work unattended.</p></details>
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
-      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
+      <p>Take the no-persona path: the workflow uses flat lays and collages. Use an image provider and model confirmed available in your own account.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
-      <p>There's an Associates-only path: each look gets a page on your own site, and the pins link there. It's hands-off if the tasks can publish to your site (a Weekend Ecosystem™ site can). Influencer approval is the easy path, because Idea Lists need no website at all.</p></details>
+      <p>There's an Associates-only path that uses a page on your own site as the destination. The kit describes supported page-file and site workflows; what can be written or published depends on your site platform and connected actions, and may require your own steps. If your account has an eligible storefront and Idea Lists, you can use that path without a website.</p></details>
     <details class="ws-faq"><summary>Will it make me money?</summary>
       <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
     <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
@@ -221,20 +253,41 @@ const inside = [
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
 
-<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT }}>
+<script is:inline define:vars={{ PRESALE_OPENS, PRESALE_CLOSES, PUBLIC_PRICE_AT }}>
   (() => {
     const t = Date.now();
-    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PRESALE_CLOSES) ? "presale" : t < Date.parse(PUBLIC_PRICE_AT) ? "closed" : "live";
     document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
     // A page built before the presale opens reveals its checkout button once the presale is live.
     const late = document.querySelector(".ws-buy-late");
     const off = document.querySelector(".ws-buy-off");
-    if (late && s !== "soon") { late.hidden = false; if (off) off.hidden = true; }
+    const canBuy = s === "presale" || s === "live";
+    document.querySelectorAll("a.ws-buy").forEach((el) => { el.hidden = !canBuy; });
+    if (off) { off.hidden = canBuy; off.textContent = s === "closed" ? "Checkout reopens at launch" : "Checkout opens with the presale"; }
   })();
 </script>
 </PageLayout>
 
 <style>
+  .ws-document-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+  .ws-document{margin:0;background:linear-gradient(145deg,#fff0f7,#ffdeee);border:1px solid #f5c7db;border-radius:18px;padding:24px;box-shadow:0 24px 42px -28px rgba(214,46,115,.45)}
+  .ws-document-label{display:inline-block;padding:8px 12px;background:#ff1493;color:#fff;font:700 11px/1 var(--sans);letter-spacing:1.4px;border-radius:999px;margin-bottom:22px}
+  .ws-document img{display:block;width:min(100%,330px);height:auto;margin:0 auto;box-shadow:0 16px 28px rgba(40,20,30,.16);border:1px solid #eee;transform:rotate(-2deg)}
+  .ws-document:nth-child(2) img{transform:rotate(2deg)}
+  .ws-document figcaption{display:flex;flex-direction:column;gap:5px;text-align:center;margin-top:26px;color:var(--ink)}
+  .ws-document figcaption strong{font:600 22px/1.3 var(--display)}
+  .ws-document figcaption span{font-size:14px}
+  .ws-workbook-feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .ws-choice-steps{list-style:none;padding:0;margin:28px 0 0}
+  .ws-choice-steps li{display:flex;gap:16px;margin:0 0 24px;align-items:flex-start}
+  .ws-choice-steps li>span{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:50%;background:#ff1493;color:#fff;font-weight:700}
+  .ws-choice-steps strong{font-size:18px;color:var(--ink)}
+  .ws-choice-steps p{font-size:15px;line-height:1.6;margin:5px 0 0;color:var(--choc-soft)}
+  .ws-worksheet{margin:0;padding:24px;background:#ffe8f2;border-radius:18px;box-shadow:0 24px 44px -30px rgba(214,46,115,.45)}
+  .ws-worksheet img{display:block;width:100%;height:auto;border:1px solid #eee;box-shadow:0 14px 24px rgba(40,20,30,.12)}
+  .ws-worksheet figcaption{text-align:center;font-size:13px;margin-top:16px;color:var(--pink-deep)}
+  @media(max-width:640px){.ws-document-grid,.ws-workbook-feature{grid-template-columns:1fr;gap:28px}.ws-document{padding:20px}.ws-worksheet{padding:16px}}
+
   .ws-hero{max-width:760px;margin:0 auto}
   .ws-hero h1 em{font-style:normal;color:var(--pink)}
   .ws-cta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin:4px 0 26px}
@@ -290,8 +343,9 @@ const inside = [
   .ws-price-list{list-style:none;padding:0;margin:26px auto 30px;max-width:460px;text-align:left}
   .ws-price-list li{font-size:15px;line-height:1.5;margin-bottom:11px;padding-left:24px;position:relative;color:#1A1417}
   .ws-price-list li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:700}
-  .ws-buy{border-radius:999px}
-  .ws-buy-off{background:var(--pink-soft);cursor:default}
+  .ws-buy{border-radius:999px;background:#ff1493;color:#fff;border-color:#ff1493}
+  a.ws-buy:hover,a.ws-buy:focus-visible{background:#d90076;border-color:#d90076;color:#fff}
+  .ws-buy-off{background:#ff1493;color:#fff;cursor:default}
   .ws-buy[hidden]{display:none}
   .ws-fine{font-size:13px;color:var(--choc-mute);margin:18px 0 0}
 

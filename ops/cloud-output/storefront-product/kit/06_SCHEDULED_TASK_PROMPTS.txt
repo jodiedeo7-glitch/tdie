@@ -1,137 +1,44 @@
-THE SCHEDULED TASK PROMPTS
-Four jobs: the weekly themed-look build, the nightly Outfit of the Day run (Brand Closet™ members only), the pull sweep and the missed-run sweep. Each prompt is complete on its own. Your setup chat already copied them into MY_SCHEDULED_TASKS.txt with your folder, time zone and times filled in: paste from that file, not this one. This file is the master copy.
+SCHEDULED TASK PROMPTS
+Use only after a draft-only account test proves persistent state and the selected tools work. No scheduler is needed for the low-cost/manual mode.
+These prompts are templates, not evidence that tasks exist or have run.
 
-In the prompts below, «FOLDER» is your While-You-Sleep Storefront folder, «TZ» is your time zone (a named zone such as America/Chicago) and «TIME» is the run time from MY_RECIPE.txt. The setup chat fills them in.
+REQUIRED CONTEXT IN EACH SAVED TASK
+Project: While-You-Sleep Storefront only.
+Timezone: the confirmed IANA timezone from MY_RECIPE.txt.
+Runtime: confirmed local/cloud mode and state location.
+Read current kit, MY_RECIPE.txt, PRODUCT_SOURCES.md, storefront-log.md, pin-tab.md and pin-drafts.md first.
+Never use general TDIE, SOP-15 or SOP-16 state.
+Missing state/capability: HOLD and give the exact next action. No fabricated success.
+Verify external actions by readback and persist exact external IDs.
 
-If the app's schedule field won't take a choice below (two days a week, Sunday to Friday, two times a day), use the fallback written under it.
+TASK 1: WEEKLY PLANNING / BUILD
+Schedule: the user's confirmed day/time only.
+Read sources and reconcile existing records before generating. Resume by stable ID.
+Use only ready customer-supplied product rows and rights-confirmed references.
+Produce a finished image, title, caption, alt text, destination, exact public board and proposed date/time.
+Follow 03_THEMED_LOOK_RECIPE.txt. Save as draft/HOLD. Stop before publication unless the user has explicitly approved this exact finished Pin and its date/time.
+No automatic Amazon product/list creation. No new dates for withdrawn Pins.
+Read back any created draft and log whether every field matched.
+Low-cost Claude/ChatGPT: run one short batch request manually with verified intake.
+Manual alternative: select the look, make the asset and complete its queue record yourself.
 
-Every task needs its folder: set each task's folder field to your While-You-Sleep folder. The first time each task runs, the app asks you to allow that folder, and an unanswered ask stops the run. So once all four tasks exist, run each one once by hand while you're at the computer (Run now) and allow the folder when asked.
+TASK 2: OPTIONAL OUTFIT OF THE DAY
+Default: disabled.
+Enable only after rights, access and the separate recipe permission gate pass.
+Use original customer-owned styling notes or permitted materials. Never infer commercial reuse rights from paid membership.
+Apply the same draft/approval/state rules as Task 1.
+Low-cost Claude/ChatGPT: supply your own brief in a short chat.
+Manual alternative: create an original look from your own notes; skip paid content entirely.
 
-====================================================================
-WEEKLY THEMED-LOOK BUILD
-Name: While-You-Sleep: weekly themed looks
-Schedule: weekly, Saturday, «TIME» («TZ»). At 5, 6 or 7 looks a week, also Wednesday at the same time.
-  Fallback: make a second copy named "While-You-Sleep: weekly themed looks (Wednesday)".
-Folder: «FOLDER»
-====================================================================
+TASK 3: RECONCILIATION / PULL
+Schedule: user's confirmed time only.
+Read existing native Pinterest and Metricool records separately. Match by exact external ID, then destination/look. A missing result from one service is not absence from the other.
+Update state from observed results. HOLD withdrawn records. Process a requested change only on the identified record in the service that owns it.
+Do not regenerate or create a duplicate after a timeout. Read back first.
+Never treat PULL as automatic publication approval. Never choose a substitute date.
+Report actionable changes, failure or user action; otherwise keep routine results in the log.
+Low-cost Claude/ChatGPT: give chat the latest statuses for a short comparison.
+Manual alternative: inspect scheduler records and update pin-tab.md yourself.
 
-------------------------------------------------------------------
-You are my weekly themed-look build for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ». You normally run on Saturday (and Wednesday at a pace of 5, 6 or 7), but if my computer was off you may be running late: read today's real date and day before you plan anything.
+All publication needs explicit approval of the individual finished Pin. Do not install these templates as recurring tasks without the user's actual schedule.
 
-READ FIRST, in this order, from the folder «FOLDER»: MY_RECIPE.txt, 03_THEMED_LOOK_RECIPE.txt, 07_PERSONA_PATHS.txt, 08_STOREFRONT_PATHS.txt, storefront-log.md, pin-drafts.md, pin-tab.md, browser-lock.txt. If MY_RECIPE.txt says BLOG HALF: on, also read 09_THE_BLOG_HALF.txt. If it says INSTAGRAM: feed posts on, also read 10_INSTAGRAM_ADD_ON.txt. If any file is missing, stop and tell me which one in one line.
-
-JOB
-1. Take the browser lock (recipe R16) and keep it fresh while you work.
-2. Check every board in MY_RECIPE.txt is public (R11) and Pinterest's time zone (R17). If a board is secret, stop and tell me which, unless MY_RECIPE.txt marks it TEST.
-3. Leftovers first (recipe Part 7 step 4).
-4. Build at most 4 looks this run, on the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no look in storefront-log.md (any status except "dropped"), following 03_THEMED_LOOK_RECIPE.txt Parts 2 to 7 exactly, for my path (persona or no persona; Influencer or Associates-only).
-5. Never schedule past the RENEWAL DATE. If today is within 14 days of it, tell me in one line that the calendar needs renewing.
-
-VERIFY
-Read Pinterest's scheduled pins page (pinterest.com/<my profile name>/scheduled-pins/) in a fresh tab and confirm every pin you scheduled this run is there with the right title, time, board and link. If the blog half is on, or I'm on the Associates-only path, open every look page my pins link to and confirm it loads. Nothing is reported as done until you've seen it.
-
-RULES
-No prices. No brand names in listings. No third-party IP in images. #ad first, disclosure last, link and disclosure together. No downloads. Two correction rounds at most. Fresh tab per pin, 60 seconds between pins, and stop after two blank pages in a row. Never more than 14 days ahead. No em dashes. Never type a password.
-
-REPORT
-If everything worked: one line, for example "Built 4 looks, 8 pins scheduled and verified." On the Associates-only path with a site you can't publish to: "Built 3 looks. 6 pins are waiting for their pages." then "Paste the 3 files in the pages folder into your site by [day, time], and the next pull sweep schedules the pins." Only if something else needs me: one more line saying exactly what to do.
-
-BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it, for example: open Chrome, sign in to Pinterest, then run this task again. The Pinterest blank-page rule (two blanks in a row, stop) always wins over this block.
-------------------------------------------------------------------
-
-====================================================================
-NIGHTLY OUTFIT OF THE DAY RUN (Brand Closet™ members only)
-Name: While-You-Sleep: nightly outfit of the day
-Schedule: Sunday to Friday, «TIME» («TZ»).
-  Fallback: daily at «TIME»; the prompt ends Saturday runs by itself.
-Folder: «FOLDER»
-====================================================================
-
-------------------------------------------------------------------
-You are my nightly Outfit of the Day run for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ». If today is Saturday, end now without opening Chrome.
-
-READ FIRST, in this order, from the folder «FOLDER»: MY_RECIPE.txt, 04_OUTFIT_OF_THE_DAY_RECIPE.txt, 03_THEMED_LOOK_RECIPE.txt, 07_PERSONA_PATHS.txt, 08_STOREFRONT_PATHS.txt, storefront-log.md, pin-drafts.md, pin-tab.md, browser-lock.txt. If any file is missing, stop and tell me which one in one line.
-
-JOB
-Follow 04_OUTFIT_OF_THE_DAY_RECIPE.txt, "The nightly run", steps 0 to 13, exactly. Browser lock first, kept fresh. Every board checked public before scheduling (unless MY_RECIPE.txt marks it TEST). Leftovers first. Every outfit lesson from the last 3 days that isn't already in the log (or is logged "sourcing"), oldest first, starting no new outfit that can't finish before the out-by time in step 0. If there's nothing new and nothing left over, end the run after checking the course and say "No new outfits tonight."
-
-THE SAFETY RULES (never break)
-Rose's images, prompts and lesson text are paid member content: never posted, uploaded, saved, attached to a generator or a pin, copied or resold. Look at her outfit only to know what it is. Never open, use or search from the lesson's Benable links. Every piece is re-found on Amazon from your own plain-words list with my own SiteStripe link, and my own list or page is the pin link. Rose's flat lay is a screenshot in this session only, never saved to the computer. Never touch the "Link to Outfit" button. Every scene is a PERSONA WORLD place; from Rose's lifestyle prompt take at most the moment and mood, rewritten, with every brand, store and business cue removed. Only my Outfit of the Day slots from MY_RECIPE.txt.
-
-VERIFY
-Read Pinterest's scheduled pins page (pinterest.com/<my profile name>/scheduled-pins/) in a fresh tab and confirm both pins of each outfit are there with the right title, time, board and link. Nothing is reported as done until you've seen it.
-
-RULES
-No prices. No brand names in listings. No third-party IP in images. #ad first, disclosure last, link and disclosure together. No downloads. Two correction rounds at most. Fresh tab per pin, and stop after two blank pages in a row. Never more than 14 days ahead. No em dashes. Never type a password.
-
-REPORT
-One line if everything worked, for example "1 outfit built, 2 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
-
-BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
-------------------------------------------------------------------
-
-====================================================================
-PULL SWEEP (and leftovers)
-Name: While-You-Sleep: pull sweep
-Schedule: daily, 12:00 pm and 6:00 pm («TZ»), or the two sweep times in MY_RECIPE.txt.
-  Fallback: make it daily at the first time, and a second copy named "While-You-Sleep: pull sweep (evening)" at the second.
-Folder: «FOLDER»
-====================================================================
-
-------------------------------------------------------------------
-You are the pull sweep for The While-You-Sleep Storefront™. Time zone: «TZ».
-
-READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt, pin-tab.md, storefront-log.md, pin-drafts.md, browser-lock.txt, 03_THEMED_LOOK_RECIPE.txt (Part 1, Part 3 step 6, Part 4, Part 6 and Part 7), 07_PERSONA_PATHS.txt and 08_STOREFRONT_PATHS.txt.
-
-JOB
-1. Look for work WITHOUT opening a browser: any row in pin-tab.md with PULL (not PULLED) typed in its last column and a status that isn't "pulled" (a status "delete clicked, not verified" counts: check it first, and if the pin is no longer on the scheduled pins page, mark it "pulled" without deleting anything) (a row where I typed PULLED I already deleted myself: set it to "pulled" in pin-tab.md and storefront-log.md, no browser needed), any pin in storefront-log.md or pin-drafts.md logged "built" or "scheduled, not verified", and any look noted "list in review" whose pin 1 posts within the next 24 hours.
-2. Nothing found? End the run. Don't open Chrome. Report nothing.
-3. Take the browser lock (recipe R16).
-4. Pulls: for each pin marked PULL, read Pinterest's scheduled pins page in a fresh tab, find the pin by its title and time, delete it, reload and confirm it's gone. If it already posted, open it on its board and delete it there. Update pin-tab.md (status "pulled", today's date) and storefront-log.md. If the delete went through but you can't check it's gone this run, set the status to "delete clicked, not verified", keep PULL, and the next sweep checks it first.
-5. Leftovers: check every board is public first (R11, unless MY_RECIPE.txt marks it TEST). Then follow recipe Part 7 step 4 for up to 4 leftover pins. Associates-only path: open each look's page first; if it doesn't load, or loads without every item link, leave that look "built" for the next sweep. Verify each scheduled pin on the scheduled pins page, then add it to pin-tab.md.
-6. Lists in review: open each such look's Idea List address in a signed-out (private) window. Showing? Clear the note. Still hidden? Tell me in one line which look.
-7. Release the browser lock.
-
-RULES
-Fresh tab per pin, 60 seconds between pins. Two blank pages in a row: stop, log, try again next sweep. Never type a password. No em dashes.
-
-REPORT
-Nothing to do: no report. Work done: one line, for example "Pulled 1 pin, scheduled 2 leftovers." Only if something needs me: one more line saying exactly what to do.
-
-BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, release the browser lock and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
-------------------------------------------------------------------
-
-====================================================================
-MISSED-RUN SWEEP (catches up a run the computer missed)
-Name: While-You-Sleep: missed-run sweep
-Schedule: daily, 9:45 am («TZ»), or the MISSED-RUN SWEEP time in MY_RECIPE.txt.
-Folder: «FOLDER»
-====================================================================
-
-------------------------------------------------------------------
-You are the missed-run sweep for The While-You-Sleep Storefront™. Time zone: «TZ». Every time and date you use is in «TZ».
-
-READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET MEMBER), the Runs table in storefront-log.md, browser-lock.txt, and MY_SCHEDULED_TASKS.txt (Task 1, the weekly build, and Task 2, the nightly run, already filled in with my folder, time zone and times).
-
-JOB
-1. Without opening a browser, work out which runs were due since this sweep last ran:
-   - the weekly build: the most recent Saturday at its RUN time (and the most recent Wednesday, at a pace of 5 or more);
-   - the nightly Outfit of the Day run, if I'm a member: the most recent nightly RUN time that is already past, unless that fell on a Saturday.
-2. A run was missed if the Runs table has no row for that task that started on or after its due time. A row counts for the weekly build if its task name contains "weekly", and for the nightly run if it contains "nightly" (catch-ups and hand runs included). Anything that ran, even with a stop or a report, is not missed.
-3. Nothing missed? End. Don't open Chrome. Report nothing.
-4. Something missed: read browser-lock.txt. If another task holds a fresh lock (recipe R16), wait 10 minutes and check again, up to 6 times; if it's still held, end and let tomorrow's sweep try. Otherwise take the lock with your own name.
-5. Run each missed task ONCE, in this order: the weekly build, then the nightly run. Follow that task's prompt in MY_SCHEDULED_TASKS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
-6. Write a Runs row for each ("weekly (catch-up)" or "nightly (catch-up)", date, started, finished, result) and release the lock.
-
-RULES
-Never run the same missed task twice. Never run a task that is due within the next 2 hours anyway: leave it to its own schedule. Never type a password. No em dashes.
-
-REPORT
-Nothing missed: no report. A catch-up ran: one line, for example "Caught up Saturday's weekly build: 4 looks, 8 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
-
-BROWSER FALLBACK
-Same as the task you are catching up. The Pinterest blank-page rule always wins.
-------------------------------------------------------------------
