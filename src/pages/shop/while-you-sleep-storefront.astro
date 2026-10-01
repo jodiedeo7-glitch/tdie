@@ -104,7 +104,17 @@ const inside = [
     <h2>If the sale depends on you being online, <em>it's not passive yet.</em></h2>
     <p class="ws-p">Posting, replying, filming the reel, filming it again because the light changed. The feed forgets you by Wednesday and you start over on Thursday. That's not a business that runs while you sleep. That's a second shift.</p>
     <p class="ws-p">Pinterest works the other way round. Nobody's there to be entertained. They're typing "pink witch costume" or "cozy fall outfit" into a search bar with their wallet already half open. A pin you schedule today can still be found months from now. The only job is making sure something of yours is there when they search.</p>
-    <p class="ws-p">So I stopped doing that job myself.</p>
+    <p class="ws-p">The guide gives you a repeatable way to prepare the next Pin, with as much hands-on work or AI help as you choose.</p>
+  </section>
+
+  <section class="ws-sec ws-downloads">
+    <div class="ws-kicker">A look inside your download</div>
+    <h2>Two PDFs. One clear place to start.</h2>
+    <p class="ws-p">Read the guide, then use the workbook to plan your first look and keep your own records.</p>
+    <div class="ws-document-grid">
+      <figure class="ws-document"><div class="ws-document-label">01 · START HERE</div><img src="/images/storefront-buyer-guide-preview.png" alt="Actual first page of the Storefront buyer guide, including the manual path and first-session steps." width="638" height="825" loading="lazy" /><figcaption><strong>The buyer guide</strong><span>19 pages · setup, choices, and review</span></figcaption></figure>
+      <figure class="ws-document"><div class="ws-document-label">02 · MAKE IT YOURS</div><img src="/images/storefront-workbook-preview.png" alt="Actual first page of the Storefront prompts and workbook, explaining how to save a copy and use its editable fields." width="638" height="825" loading="lazy" /><figcaption><strong>Prompts + editable workbook</strong><span>15 pages · 36 fields for your own answers</span></figcaption></figure>
+    </div>
   </section>
 
   <section class="ws-sec ws-tint">
@@ -166,6 +176,20 @@ const inside = [
         <p>Every Pin begins as a draft. You choose the exact finished Pin and authorize its schedule after review. Cancellation or removal depends on the connected publisher and may require action in Pinterest.</p>
       </div>
     </div>
+  </section>
+
+  <section class="ws-sec ws-workbook-feature">
+    <div class="ws-workbook-copy">
+      <div class="ws-kicker">Your choices, on one page</div>
+      <h2>Start with what you already have.</h2>
+      <p class="ws-p">The manual path uses the same plan and review checklist. Add AI or connected tools when they save you work.</p>
+      <ol class="ws-choice-steps">
+        <li><span>01</span><div><strong>Pick your path</strong><p>Manual, your existing AI plan, or connected automation.</p></div></li>
+        <li><span>02</span><div><strong>Record your setup</strong><p>Your theme, destination, board, and posting window.</p></div></li>
+        <li><span>03</span><div><strong>Review one finished Pin</strong><p>Check the image, links, disclosure, and copy before scheduling.</p></div></li>
+      </ol>
+    </div>
+    <figure class="ws-worksheet"><img src="/images/storefront-editable-worksheet-preview.png" alt="Actual editable account worksheet with spaces for operating mode, Amazon account status, destination, Pinterest board, timezone, and approval process." width="638" height="825" loading="lazy" /><figcaption>An actual worksheet from your download</figcaption></figure>
   </section>
 
   <section class="ws-sec">
@@ -245,6 +269,25 @@ const inside = [
 </PageLayout>
 
 <style>
+  .ws-document-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+  .ws-document{margin:0;background:linear-gradient(145deg,#fff0f7,#ffdeee);border:1px solid #f5c7db;border-radius:18px;padding:24px;box-shadow:0 24px 42px -28px rgba(214,46,115,.45)}
+  .ws-document-label{display:inline-block;padding:8px 12px;background:#ff1493;color:#fff;font:700 11px/1 var(--sans);letter-spacing:1.4px;border-radius:999px;margin-bottom:22px}
+  .ws-document img{display:block;width:min(100%,330px);height:auto;margin:0 auto;box-shadow:0 16px 28px rgba(40,20,30,.16);border:1px solid #eee;transform:rotate(-2deg)}
+  .ws-document:nth-child(2) img{transform:rotate(2deg)}
+  .ws-document figcaption{display:flex;flex-direction:column;gap:5px;text-align:center;margin-top:26px;color:var(--ink)}
+  .ws-document figcaption strong{font:600 22px/1.3 var(--display)}
+  .ws-document figcaption span{font-size:14px}
+  .ws-workbook-feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .ws-choice-steps{list-style:none;padding:0;margin:28px 0 0}
+  .ws-choice-steps li{display:flex;gap:16px;margin:0 0 24px;align-items:flex-start}
+  .ws-choice-steps li>span{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:50%;background:#ff1493;color:#fff;font-weight:700}
+  .ws-choice-steps strong{font-size:18px;color:var(--ink)}
+  .ws-choice-steps p{font-size:15px;line-height:1.6;margin:5px 0 0;color:var(--choc-soft)}
+  .ws-worksheet{margin:0;padding:24px;background:#ffe8f2;border-radius:18px;box-shadow:0 24px 44px -30px rgba(214,46,115,.45)}
+  .ws-worksheet img{display:block;width:100%;height:auto;border:1px solid #eee;box-shadow:0 14px 24px rgba(40,20,30,.12)}
+  .ws-worksheet figcaption{text-align:center;font-size:13px;margin-top:16px;color:var(--pink-deep)}
+  @media(max-width:640px){.ws-document-grid,.ws-workbook-feature{grid-template-columns:1fr;gap:28px}.ws-document{padding:20px}.ws-worksheet{padding:16px}}
+
   .ws-hero{max-width:760px;margin:0 auto}
   .ws-hero h1 em{font-style:normal;color:var(--pink)}
   .ws-cta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin:4px 0 26px}
