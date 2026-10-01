@@ -26,18 +26,24 @@ Never copy internal account state, private logs, private URLs, private task IDs,
 - buyer simulation / QA
 - documentation
 - deciding what should be automated versus manual
+- live Google Drive production-state reads and writes when the connected Drive action supports them
+- live Metricool reconciliation, draft/schedule writes and read-back when the connected Metricool action supports the exact operation
+- Higgsfield generation, cost preflight, deterministic post-processing, media filing and generation read-back
+- Canva asset filing and supported design operations
+- GitHub runbooks, queues and migration state
 
-### Claude owns
-- signed-in Amazon browsing
-- SiteStripe operations
-- Idea List operations
-- Pinterest upload/scheduling
-- Skool/Brand Closet reading
-- live read-back
-- browser-lock execution
-- verifying scheduled pins
-- verifying public boards
-- verifying live links
+### Capability-first live execution
+ChatGPT is the preferred operator for every step exposed by a connected, read-back-capable service. Claude is not the default merely because an older recipe named Claude.
+
+Browser-only actions remain with the currently available authorized browser/computer-use operator until ChatGPT has a supported route to that exact account action:
+- signed-in Amazon product qualification
+- SiteStripe link capture
+- Amazon Idea List creation/editing
+- native Pinterest composer/scheduled-page read-back when Metricool cannot perform the required operation
+- Brand Closet/Skool lesson reads when no connected source exposes the lesson
+- browser-lock operations that exist only in the legacy Command Centre
+
+Do not duplicate a writer across ChatGPT and Claude. Reconcile first, then use exactly one operator for each external write.
 
 ### Gemini / Higgsfield owns
 - product-inspired lifestyle scenes
@@ -66,23 +72,23 @@ Produces a run packet:
 - image-generation prompts
 - date/slot plan
 
-No browser execution.
+Browser execution is used only when the active ChatGPT environment exposes a supported computer-use/browser route. Otherwise the packet stops before the browser-only step without fabricating completion.
 
-## Claude
-Uses the run packet to:
-1. acquire browser lock
-2. verify target boards are public
+## Live operator
+ChatGPT executes every connector-supported step directly. The active browser/computer-use operator handles only the browser-only remainder:
+1. acquire the legacy browser lock when the browser route requires it
+2. verify target boards are public when that cannot be independently read through a connected service
 3. browse Amazon normally
 4. choose qualifying products
 5. obtain affiliate links with SiteStripe
-6. create/update required Amazon list
-7. generate only the required image assets if they cannot be generated outside the browser
-8. schedule Pinterest pins
-9. verify scheduled page
-10. update the run log
-11. release lock
+6. create/update the required Amazon list
+7. hand the verified product packet back to ChatGPT for generation/copy/QA when possible
+8. use Metricool through ChatGPT for Pinterest scheduling when it supports the required board, media, disclosure, approval and read-back behavior; otherwise use native Pinterest
+9. verify the owning service
+10. update the production run log
+11. release the browser lock
 
-Claude does not redesign the strategy during execution.
+The live operator does not redesign strategy during execution.
 
 ---
 
@@ -97,16 +103,14 @@ Owns:
 - prompt design
 - backlog policy
 
-## Claude
-Owns:
+## Live operator
+ChatGPT owns generation, copy, QA, reconciliation and any connected-service writes. The browser-only operator owns only the steps not exposed to ChatGPT:
 - open the correct Brand Closet lesson
 - read the current outfit
 - capture only the allowed source material
 - create Jodie's own Amazon links
-- generate final imagery
-- schedule pins
-- verify
-- log the lesson immediately to prevent duplicates
+
+After source capture, ChatGPT should resume the run, generate/finalize imagery through approved connected image services, schedule through Metricool when it satisfies the exact publishing requirements, verify through the owning service, and log the lesson immediately to prevent duplicates.
 
 Important:
 - never use Rose's affiliate links
@@ -189,9 +193,9 @@ For each:
 
 # Verification ownership
 
-**Claude verifies live account actions.**
+**The owning external service verifies live account actions through independent read-back.**
 
-**ChatGPT verifies logic, documentation, copy, product architecture, and consistency.**
+**ChatGPT executes and verifies logic, documentation, copy, product architecture, consistency, connected-service writes and connected-service read-back. Browser-only actions require a second read-back from the owning service before they are marked complete.**
 
 **Codex/tests verify files, schemas, code and deterministic checks.**
 
