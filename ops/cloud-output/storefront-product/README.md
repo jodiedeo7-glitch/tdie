@@ -8,15 +8,15 @@ Project sources for turning Jodie's two Amazon Pin workflows into The While-You-
 |---|---|
 | `kit/` | The customer kit source: 14 files with numeric prefixes (00 through 13), including three canonical recurring task prompts, the state schema and approved Pin visual standard |
 | `While-You-Sleep-Storefront-Kit.zip` | Buyer package: 14 numbered kit files plus the setup guide PDF; rebuild and verify after any source or guide change |
-| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Generated from `render.mjs`; verify all pages after each rebuild |
-| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Generated from `render.mjs`; verify after each rebuild |
+| `pdf/While-You-Sleep-Storefront-Setup-Guide.pdf` | Rendered from the committed setup-guide HTML by `render.mjs`; verify all pages after each rebuild |
+| `pdf/While-You-Sleep-Storefront-Presale.pdf` | Historical launch artifact; the guide renderer does not refresh it. Revalidate separately before distribution |
 | `graphics/` | 4 launch graphics (PNG); `photos/` holds their source images and the approved outfit-inspiration sample |
 | `IMAGE_PROMPTS.md` | Full prompts for the cover and the 4 graphics |
 | `COPY.md` | Skool (5), emails (2), Facebook (2), Threads (5), both vault lessons, Beacons text, Six M check |
 | `CANON_ROWS_DRAFT.md` | The canon.json and TDIE_CANON.md rows, drafts only |
 | `OWN_SETUP_AUDIT.md` | Jodie's own setup: every problem with its exact fix |
 | `tests/` | Historical buyer simulations and live-run notes; they do not prove the current customer Work/Drive/publisher workflow |
-| `render.mjs` | Source renderer for both PDFs, graphics and thumbnail contact sheet; run and visually inspect outputs before distribution |
+| `render.mjs` | Portable renderer for the canonical setup-guide HTML, PDF and page screenshots. Requires Playwright/Chromium; optional WYS_NODE_MODULES and WYS_CHROMIUM_PATH choose installed dependencies |
 | `run_checks.py` | Runs canon.json `checks` (fail and review) and an em dash check over every file here |
 
 Sales page: source `src/pages/shop/while-you-sleep-storefront.astro` on `while-you-sleep-chatgpt-architecture`; approved copy is live on the Cloudflare `cloudflare-migration` deployment after PR #4. The full storefront branch must not be merged wholesale because it removes Worker configuration.
@@ -46,3 +46,9 @@ Still true and noted: canon's Product Register rule is met by finish step 4 comi
 ## Recommend it too
 
 Referral check result: 27 Sep 2026, YES. Version A kept. Path: profile picture (top right of Skool) > Settings > Affiliates > "Your affiliate links" > The Brand Closet™ > COPY. The Brand Closet™ About page states members earn 50% recurring commissions when they refer members.
+
+## October 1 guide and packaging update
+
+The guide includes lower-cost ChatGPT/Claude preparation and direct manual alternatives for setup and production steps. The renderer now reads the committed HTML instead of overwriting it with an older embedded template. It fails on broken images or content crossing a footer. Legacy presale PDF and launch graphics require a separate current-canon review; rendering the guide is not authorization to refresh or publish launch material.
+
+The rebuilt kit remains a release candidate until actual buyer and live publisher tests pass. A PDF render, source readback or CI build does not prove account automation.
