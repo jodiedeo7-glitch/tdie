@@ -57,3 +57,11 @@ Additional subscription cost: $0/month at current volume. Make Free has 1,000 cr
 ## Unfinished activation workaround
 
 Rechecked after activation: Beacons **Untitled 9/28/2026** Weekend Ecosystem post-purchase sequence remains in Drafts, with no recipients. It was not activated. MailerLite **Weekend Ecosystem - Activate Access** form remains an unlinked emergency fallback; it is not part of this automatic workflow. No competing purchase-activation email was enabled and no dependent assets were deleted.
+
+## Customer copy and checkout audit
+
+Active customer wording is now **Access is added automatically, usually within an hour of purchase**. Updated the course gate, shared purchase-access note, sales FAQ, and shared KitBanner bonus-delivery sentence on main and the actual Cloudflare production branch cloudflare-migration. Beacons product description was found containing only `cl`; it was rebuilt using the existing TDIE sales-page content, not an unverified reconstruction of the original. Its public description and saved success-screen message now use the hourly timing. Default receipt had no conflicting access-delay promise.
+
+Upcoming MailerLite campaigns 199475652083058464 and 199475842981561936 had instant-delivery wording corrected while preserving body markup, links and excluded Buyers group. Saved HTML previews verified. Original schedules restored and verified: 2026-10-01 15:00 UTC and 2026-10-04 15:00 UTC respectively. October 3 campaign was inspected and needed no access-timing change. Already sent emails are historical and were not modified.
+
+Public Beacons Buy opens a checkout drawer on the same product URL. No supported checkout-only link was exposed in the product/link UI or verified in official help. Website purchase links remain the existing Beacons product URL; skipping that product page remains unverified.
