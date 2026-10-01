@@ -21,6 +21,7 @@ Stdlib only. No install step.
 """
 
 import argparse
+from pathlib import Path
 import base64
 import json
 import os
@@ -91,11 +92,63 @@ class Findings:
 
 # ─────────────────────────────────────────────────────── the scanner core
 
+def prompt_scope(text, where):
+    """Return explicit prompt intervals, or None when scope is ambiguous.
+
+    Exclude executable/style markup; preserve length so finding lines match
+    source. Explicit prompt fences/variables/fields are strong evidence.
+    Markdown prose remains REVIEW-only when no exact region is identified.
+    """
+    masked = text
+    def blank(m):
+        return ''.join('\n' if c == '\n' else ' ' for c in m.group(0))
+    masked = re.sub(r'<(?:style|script)\b[^>]*>.*?</(?:style|script)>', blank, masked, flags=re.I|re.S)
+    regions = []
+    for m in re.finditer(r'```(?:image[-_]prompt|generator[-_]prompt|prompt)\s*\n(.*?)```', masked, re.I|re.S):
+        regions.append(m.span(1))
+    # Common JSON/object/variable prompt assignments. Prefix + quoted value.
+    pat = r"(?:[\"']?(?:image[_-]?prompt|generation[_-]?prompt|prompt)[\"']?\s*[:=]\s*)([\"'`])((?:\\.|(?!\1).)*?)\1"
+    for m in re.finditer(pat, text, re.I|re.S):
+        regions.append(m.span(2))
+    # Source photo prompts always identify identity from the reference; retain
+    # only its paragraph, never nearby palette/rendering code.
+    for m in re.finditer(r'Photograph of this exact woman[^\n]*(?:\n(?!\n)[^\n]*)*', masked, re.I):
+        regions.append(m.span())
+    if regions:
+        chars=['\n' if c=='\n' else ' ' for c in masked]
+        for a,b in regions: chars[a:b]=text[a:b]
+        return ''.join(chars)
+    if Path(where.replace('repo:', '').replace('local:', '')).suffix.lower() in {'.css','.js','.ts','.jsx','.tsx'}:
+        return ''
+    return None
+
+
 def scan_text(canon, findings, where, text, published=False):
     """Every string check in one pass over one file or page."""
 
     for rule in canon["checks"]["fail"]:
         if rule.get("scope") == "published" and not published:
+            continue
+        if rule.get("scope") == "generator prompts only":
+            scoped = prompt_scope(text, where)
+            if scoped is not None:
+                for pat in rule["patterns"]:
+                    for m in re.finditer(pat, scoped, re.IGNORECASE):
+                        findings.add("FAIL", rule["id"], where, line_of(text, m.start()),
+                                     excerpt(text, m.start()), rule["why"])
+            else:
+                scan = re.sub(r'<(?:style|script)\b[^>]*>.*?</(?:style|script)>',
+                              lambda m: ''.join('\n' if c == '\n' else ' ' for c in m.group(0)),
+                              text, flags=re.I|re.S)
+                scan = re.sub(r'\bstyle\s*=\s*([\"\'])(.*?)\1',
+                              lambda m: ' ' * len(m.group(0)), scan, flags=re.I|re.S)
+                anchors=[m.start() for a in rule.get('proximity_to', [])
+                         for m in re.finditer(re.escape(a), scan, re.I)]
+                for pat in rule['patterns']:
+                    for m in re.finditer(pat, scan, re.I):
+                        if any(abs(m.start()-a)<=rule.get('window',400) for a in anchors):
+                            findings.add('REVIEW',rule['id'],where,line_of(text,m.start()),
+                                         excerpt(text,m.start()),'Scope uncertain; verify exact generator text. '+rule['why'])
             continue
         for pat in rule["patterns"]:
             for m in re.finditer(pat, text, re.IGNORECASE):
@@ -103,20 +156,34 @@ def scan_text(canon, findings, where, text, published=False):
                              excerpt(text, m.start()), rule["why"])
 
     for rule in canon["checks"]["review"]:
+        scan = text
+        if rule.get("scope") == "generator prompts only":
+            scoped = prompt_scope(text, where)
+            if scoped is None:
+                # No claimed defect: preserve uncertain prose matches as review.
+                scan = re.sub(r'<(?:style|script)\b[^>]*>.*?</(?:style|script)>',
+                              lambda m: ''.join('\n' if c == '\n' else ' ' for c in m.group(0)),
+                              text, flags=re.I|re.S)
+            else:
+                for pat in rule["patterns"]:
+                    for m in re.finditer(pat, scoped, re.IGNORECASE):
+                        findings.add("REVIEW", rule["id"], where, line_of(text, m.start()),
+                                     excerpt(text, m.start()), rule["why"])
+                continue
         prox = rule.get("proximity_to")
         anchors = []
         if prox:
             for a in prox:
-                anchors += [m.start() for m in re.finditer(re.escape(a), text)]
+                anchors += [m.start() for m in re.finditer(re.escape(a), scan, re.IGNORECASE)]
             if not anchors:
                 continue
         window = rule.get("window", 400)
         for pat in rule["patterns"]:
-            for m in re.finditer(pat, text, re.IGNORECASE):
+            for m in re.finditer(pat, scan, re.IGNORECASE):
                 if prox and not any(abs(m.start() - a) <= window for a in anchors):
                     continue
                 findings.add("REVIEW", rule["id"], where, line_of(text, m.start()),
-                             excerpt(text, m.start()), rule["why"])
+                             excerpt(text, m.start()), ("Scope uncertain; verify exact generator text. " if rule.get("scope") == "generator prompts only" else "") + rule["why"])
 
     check_prices(canon, findings, where, text)
     check_affiliates(canon, findings, where, text)
@@ -210,6 +277,25 @@ def audit_repo(canon, findings, token, branch="main"):
         scan_text(canon, findings, f"repo:{path}", text, published=True)
         if i % 25 == 0:
             print(f"    {i}/{len(paths)}")
+    return paths
+
+
+def audit_local(canon, findings, directory):
+    """Offline snapshot scan. It is never live/deployed verification."""
+    root = Path(directory).resolve()
+    paths=[]
+    for p in sorted(root.rglob('*')):
+        if not p.is_file(): continue
+        rel=p.relative_to(root).as_posix()
+        if not rel.endswith(TEXT_EXT): continue
+        if any(rel.startswith(d) or f'/{d}' in rel for d in SKIP_DIRS): continue
+        if p.name in SKIP_FILES: continue
+        if rel.startswith(('ops/ai-router/','ops/jobs/','ops/queues/')) or rel=='ops/TDIE_AI_ROUTER.md': continue
+        text=p.read_text(encoding='utf-8',errors='replace')
+        # Published-only rules apply to site source, not internal job notes.
+        scan_text(canon,findings,'local:'+rel,text,published=rel.startswith(('src/','api/_content/')))
+        paths.append(rel)
+    print(f'  local snapshot: {len(paths)} files; live state NOT checked')
     return paths
 
 
@@ -360,7 +446,7 @@ def report(canon, findings, path=None):
     if path:
         with open(path, "w", encoding="utf-8") as f:
             f.write(text)
-        print(f"\n  report → {path}")
+        print(f"\n  report -> {path}")
     else:
         print("\n" + text)
 
@@ -368,17 +454,21 @@ def report(canon, findings, path=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", action="store_true")
+    ap.add_argument("--local", metavar="DIRECTORY", help="offline snapshot audit")
     ap.add_argument("--live", action="store_true")
     ap.add_argument("--branch", default="main")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--report", default=None)
     a = ap.parse_args()
 
-    if not (a.repo or a.live):
-        ap.error("pick --repo, --live, or both")
+    if not (a.repo or a.live or a.local):
+        ap.error("pick --local DIRECTORY, --repo, or --live")
 
     canon = load_canon()
     findings = Findings()
+
+    if a.local:
+        audit_local(canon, findings, a.local)
 
     if a.repo:
         token = os.environ.get("GH_TOKEN") or os.environ.get("GH")

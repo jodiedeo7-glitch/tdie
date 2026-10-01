@@ -1,3 +1,6 @@
+> Migration routing, 1 October 2026: read `ops/TDIE_AI_ROUTER.md` and `ops/ai-router/EXECUTION_CONTRACT.md` first. This source contains historical job specifications, not active schedules. No blanket commit-to-main, push, listing, campaign, pricing or publication instruction here overrides the current task's authorization. Prepare reviewable work and route account operations separately. Do not restore Find Your Door automation. Read SOURCE_RECONCILIATION_2026-10-01.md and the source register for recovered SOP snapshots and remaining live-verification gates.
+
+
 # START HERE: TDIE rules for cloud sessions
 
 Written 26 September 2026 for Jodie's cloud-credit sessions. Cloud sessions cannot open the claude.ai Project, so everything a session needs lives in this repo:
@@ -26,7 +29,7 @@ Jodie DeOliveira, founder of The Digital Income Edit™ (TDIE), a luxury-editori
 12. Send every finished file to Jodie with the send-file tool. She is often on her phone.
 
 ## Anything that needs Jodie's accounts
-This session is not linked to her computer, so it cannot use her signed-in Skool, Beacons, Amazon, MailerLite, Pinterest, Instagram, Gemini or Higgsfield. **Do not stop because of that.** Finish everything else, then add the account-only steps to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md` (create it if missing): one numbered section per job, with every file path, every piece of copy and every exact step already written in, so a later session on her computer can do them without asking anything.
+This session is not linked to her computer, so it cannot use her signed-in Skool, Beacons, Amazon, MailerLite, Pinterest, Instagram, Gemini or Higgsfield. **Do not stop because of that.** Finish everything else, then add the account-only steps to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)` (create it if missing): one numbered section per job, with every file path, every piece of copy and every exact step already written in, so a later session on her computer can do them without asking anything.
 
 ## Standing facts
 - Site: www.thedigitalincomeedit.com. Flat URLs `/learn/[slug]`, no trailing slash. Repo: jodiedeo7-glitch/tdie.

@@ -1,4 +1,6 @@
-# JOB 13 · THREADS VIRAL RESEARCH + SYSTEM REBUILD + OCTOBER MONTH (Fable)
+> Migration routing, 1 October 2026: read `ops/TDIE_AI_ROUTER.md` and `ops/ai-router/EXECUTION_CONTRACT.md` first. This source contains historical job specifications, not active schedules. No blanket commit-to-main, push, listing, campaign, pricing or publication instruction here overrides the current task's authorization. Prepare reviewable work and route account operations separately. Do not restore Find Your Door automation. Read SOURCE_RECONCILIATION_2026-10-01.md and the source register for recovered SOP snapshots and remaining live-verification gates.
+
+# JOB 13 Â· THREADS VIRAL RESEARCH + SYSTEM REBUILD + OCTOBER MONTH (Fable)
 
 Paste everything between START and END into a new cloud session on the repo jodiedeo7-glitch/tdie.
 
@@ -8,7 +10,7 @@ Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/c
 
 This job has three parts, in order. Do not read the Threads system files until Part 1 is finished and saved. The research has to be done with no preconceived ideas.
 
-## PART 1 · RESEARCH, WITH NO ASSUMPTIONS
+## PART 1 Â· RESEARCH, WITH NO ASSUMPTIONS
 
 Observe, don't assume. Hold no preconceived ideas, rules, "best practices" or options about Threads, any account, any post type, posting times, hooks or formats. Ignore what growth courses and articles say works, unless an observed account shows it. You are only observing and analyzing patterns, and possible causes or triggers, that seem to influence virality for small, new or beginner creators.
 
@@ -18,24 +20,24 @@ Observe, don't assume. Hold no preconceived ideas, rules, "best practices" or op
 4. **Find the patterns.** Count them: how many of the accounts showed each pattern at their transition point. Separate patterns seen in many accounts from one-offs. Rank the possible triggers by how often they appear and how strong the evidence is. Name the counter-examples. Say plainly where the evidence is thin.
 5. Save everything to `ops/cloud-output/threads-research-2026-10/`: `ACCOUNTS.csv` (every account and data point with its label and source link), `REPORT.md` (the findings, counts, ranked triggers, counter-examples, and a plain-English "what this means for a small account" section), and `EVIDENCE.md` (the post-by-post notes). Commit and push before starting Part 2.
 
-## PART 2 · AUDIT AND REBUILD THE THREADS SYSTEM
+## PART 2 Â· AUDIT AND REBUILD THE THREADS SYSTEM
 
 1. Now read `ops/cloud-kit/TDIE_THREADS_SYSTEM.md`, `ops/cloud-kit/TDIE_JODIE_THREADS_VOICE.md`, `ops/canon/canon.json` and `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`.
 2. Go through the Threads system section by section against the research: schedule and slot count, post types and hook styles, the five-layer sales structure, the one offer a day, article replies, the engagement window, the bio, and the weekly build format. For each, write: keep, change or cut, the research evidence (with counts), and the exact new wording.
 3. Jodie has authorised this rebuild, so the research can change the system, including rules that came from The Threads Code, as long as the evidence supports it. These never change, whatever the research says: no em dashes; no AI-sounding language; no faith content; no invented numbers, testimonials or scarcity (income figures only if they are real ones Jodie supplied); every product, price and link from canon.json; no link in a post body; no DMs except the approved ManyChat comment-to-DM flow; no pasted links in comments on other people's posts; never Tommy Kate on this account; one automated session on the account at a time.
 4. Write the rebuilt system as `ops/cloud-output/threads-research-2026-10/TDIE_THREADS_SYSTEM_v-rebuilt.md`, with a change log at the top listing every change and the evidence behind it. Update `TDIE_JODIE_THREADS_VOICE.md` only if the research gives a strong reason to, and log that too. Do not overwrite the originals in `ops/cloud-kit/`.
 
-## PART 3 · WRITE ALL OF OCTOBER 2026
+## PART 3 Â· WRITE ALL OF OCTOBER 2026
 
 1. Write every post for 1 to 31 October 2026 using the rebuilt system: its schedule, its post mix, its hooks, in Jodie's voice.
-2. The daily offer follows the rebuilt system, using canon.json products and links only. Include the Kit window: The Weekend Ecosystem™ with The Keep It Running Kit (six paid guides free with it until Sun 4 Oct 2026, 11:59 pm Eastern) takes the offer slot on Thu 1, Sat 3 and Sun 4 Oct; mark those three posts "SWAP FOR APPROVED KIT TEXT IF YOU HAVE IT". Also use the real dates that fall in October: Amazon Prime Big Deal Days (6 and 7 Oct), the Membership Premium price now being $35/month · $297/year, and Halloween.
+2. The daily offer follows the rebuilt system, using canon.json products and links only. Include the Kit window: The Weekend Ecosystemâ„¢ with The Keep It Running Kit (six paid guides free with it until Sun 4 Oct 2026, 11:59 pm Eastern) takes the offer slot on Thu 1, Sat 3 and Sun 4 Oct; mark those three posts "SWAP FOR APPROVED KIT TEXT IF YOU HAVE IT". Also use the real dates that fall in October: Amazon Prime Big Deal Days (6 and 7 Oct), the Membership Premium price now being $35/month Â· $297/year, and Halloween.
 3. Mark article self-replies (`ARTICLE REPLY:`) only where a live article in `src/pages/learn/` genuinely matches.
 4. Run every post through the voice file's real-person test and the hard rules, and count characters (under 500 unless the rebuilt system says otherwise with evidence).
 5. Save the month in the existing weekly file format as `ops/cloud-output/threads-research-2026-10/threads-week-2026-09-28.md` (covering 1 to 4 Oct), `...-10-05.md`, `...-10-12.md`, `...-10-19.md`, `...-10-26.md` (covering 26 to 31 Oct). Commit and push.
 
 ## FINISH
 
-1. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: copy the rebuilt system, the voice file (if changed) and the five week files into the Project as the new live copies (`claude/TDIE_THREADS_SYSTEM.md`, `claude/threads-week-YYYY-MM-DD.md`), only after Jodie approves them, and update the Sunday Threads-writing and nightly Threads-loading scheduled tasks to read the new files.
+1. Add to the relevant workflow queue under `ops/queues/` (see `ops/TDIE_AI_ROUTER.md`): copy the rebuilt system, the voice file (if changed) and the five week files into the Project as the new live copies (`claude/TDIE_THREADS_SYSTEM.md`, `claude/threads-week-YYYY-MM-DD.md`), only after Jodie approves them, and update the Sunday Threads-writing and nightly Threads-loading scheduled tasks to read the new files.
 2. Send Jodie `REPORT.md`, the rebuilt system's change log and the first week file.
 3. This job hands her research, so report in full: the top five findings with their counts, the biggest changes to the system, and anything the evidence couldn't settle.
 
