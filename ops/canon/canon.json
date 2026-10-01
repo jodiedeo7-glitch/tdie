@@ -1421,7 +1421,18 @@
       "reel_production_paths": [
         "one-step video plus exact on-screen text",
         "two-step video-only generation plus separate editor text instructions"
-      ]
+      ],
+      "count_scope": "instagram_days=31 and threads_posts=62 below are October 2026 reference counts, not universal monthly limits.",
+      "month_length_rule": {
+        "instagram_per_calendar_day": 1,
+        "member_threads_per_calendar_day": 2,
+        "month": "the covered calendar month",
+        "november_2026": {
+          "instagram_days": 30,
+          "threads_posts": 60
+        },
+        "validation": "ops/scripts/validate_premium_month_counts.cjs; counts/date coverage only, not full calendar acceptance"
+      }
     }
   },
   "infrastructure": {
