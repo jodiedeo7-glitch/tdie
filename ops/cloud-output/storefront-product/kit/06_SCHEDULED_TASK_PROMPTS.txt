@@ -9,6 +9,9 @@ There are three core tasks:
 
 The old four-task architecture is retired.
 
+CREDIT-SAVING / MANUAL USE
+Customers without Work do not need recurring tasks. Each task below can also be run on demand in a normal ChatGPT or Claude chat as a checklist. In manual mode, do not call connected paid actions unless the customer chooses them. Prepare the prompt/package, let the customer run the image provider or Pinterest step directly, then reconcile the returned result into state. The same stable-ID, disclosure, QA and per-Pin authorization rules still apply.
+
 Do not create separate browser-based pull and missed-run sweeps unless a later verified test proves they are necessary.
 
 Every task reads the canonical state described in 12_STATE_SCHEMA.md.
