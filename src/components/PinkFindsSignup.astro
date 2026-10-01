@@ -11,7 +11,7 @@
 // never share a label, an error or a response frame. A visually hidden
 // <label for>, an inline error announced through role="alert" and wired
 // with aria-invalid + aria-describedby, 48px field and button, and focus
-// moves to the confirmation after submit. Without JavaScript the browser's
+// moves to an unverified submission notice after submit. Without JavaScript the browser's
 // own required/type=email validation runs. The submit mechanism is
 // unchanged: a plain POST to PF_ACTION into a hidden iframe.
 import { PF_ACTION, PRIME_END, PF } from "../data/pinkfinds.js";
@@ -75,6 +75,10 @@ const primeNow = Date.now() < Date.parse(PRIME_END);
       var sink = document.getElementsByName(f.target)[0];
       var input = f.querySelector('input[type="email"]');
       var err = f.querySelector('.pf-error');
+      var pending = f.querySelector('.pf-done');
+      var button = f.querySelector('button[type="submit"]');
+      var buttonLabel = button.textContent;
+      var retryTimer;
       var sent = false;
       var shown = false;
       function problem() {
@@ -105,16 +109,24 @@ const primeNow = Date.now() < Date.parse(PRIME_END);
         }
         show('');
         sent = true;
-        var b = f.querySelector('button[type="submit"]'); b.disabled = true; b.textContent = 'Sending...';
+        button.disabled = true; button.textContent = 'Sending...';
+        pending.hidden = false;
+        try { pending.focus(); } catch (x) {}
+        // A cross-origin iframe load cannot prove enrollment or delivery.
+        // Leave the form available for a deliberate retry if no email arrives.
+        clearTimeout(retryTimer);
+        retryTimer = setTimeout(function () {
+          button.disabled = false;
+          button.textContent = buttonLabel;
+        }, 15000);
       });
       sink.addEventListener('load', function () {
         if (!sent) return;
-        f.querySelector('.pf-field').hidden = true;
-        f.querySelectorAll('.pf-sub').forEach(function (el) { el.hidden = true; });
-        var d = f.querySelector('.pf-done');
-        d.hidden = false;
-        try { d.focus(); } catch (x) {}
-        if (window.fbq) fbq('track', 'Lead', { content_name: 'Pink Finds' });
+        sent = false;
+        clearTimeout(retryTimer);
+        button.disabled = false;
+        button.textContent = buttonLabel;
+        // Do not emit Lead: this event only means a response frame loaded.
       });
     });
   })();

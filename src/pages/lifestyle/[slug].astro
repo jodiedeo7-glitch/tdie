@@ -7,6 +7,11 @@ import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
 import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 export function getStaticPaths() {
+  const lookSlugs = new Set();
+  for (const look of LOOKS) {
+    if (lookSlugs.has(look.slug)) throw new Error(`Duplicate lifestyle look slug "${look.slug}". Rename the look.`);
+    lookSlugs.add(look.slug);
+  }
   const catSlugs = new Set(CATEGORIES.map((c) => c.slug));
   const clash = LOOKS.find((l) => catSlugs.has(l.slug));
   if (clash) throw new Error(`Lifestyle look slug "${clash.slug}" collides with a category name. Rename the look.`);
@@ -31,6 +36,7 @@ const pad = (n) => String(n).padStart(2, "0");
   <PageLayout
     bare
     title={`${category.name} · Pink Amazon Finds`}
+    noindex={catLooks.length === 0}
     description={`${category.blurb} Every piece linked on Amazon.`}
   >
     <div class="ls">
@@ -48,7 +54,7 @@ const pad = (n) => String(n).padStart(2, "0");
                 <span class="e-figure ls-cover-img">
                   <Image src={catCoverImg.src} alt={catCoverImg.alt || catCover.title} widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 440px" loading="eager" fetchpriority="high" />
                 </span>
-                <figcaption class="e-credit"><span>On the cover · <b>{catCover.title}</b></span><span>Worn by Tommy Kate, our AI model</span></figcaption>
+                <figcaption class="e-credit"><span>On the cover · <b>{catCover.title}</b></span><span>AI styling inspiration with Tommy Kate</span></figcaption>
               </figure>
             </a>
           )}
@@ -113,7 +119,7 @@ const pad = (n) => String(n).padStart(2, "0");
               <span class="e-figure ls-look-img">
                 <Image src={im.src} alt={im.alt || look.title} widths={[480, 720, 1000]} sizes="(max-width: 900px) 50vw, 640px" loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} />
               </span>
-              <figcaption class="e-credit">{isWorn(im) ? <><b>Worn</b> by Tommy Kate, our AI model</> : <><b>The pieces</b> · every one linked</>}</figcaption>
+              <figcaption class="e-credit">{isWorn(im) ? <><b>AI styling inspiration</b> with Tommy Kate · similar pieces linked</> : <><b>Styling inspiration</b> · compare the linked product details</>}</figcaption>
             </figure>
           ))}
         </div>

@@ -21,5 +21,5 @@ export const PF = {
     sub: "The week's new looks in one email, every piece linked. Unsubscribe anytime.",
   },
   button: "Send Me the Finds",
-  done: "You're in. Your first pink finds land in your inbox this Friday.",
+  done: "Signup submitted. Check your inbox for confirmation; if nothing arrives, check spam or try again.",
 };
