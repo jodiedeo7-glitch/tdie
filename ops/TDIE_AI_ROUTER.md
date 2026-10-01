@@ -2,7 +2,7 @@
 
 # TDIE AI router
 
-Consolidated 1 October 2026. Package changes only. No live repo, Claude task, campaign, checkout or account has been changed.
+Consolidated 1 October 2026. Repository implementation is deployed; three Codex preparation schedules are active and the existing Sunday Threads task has guarded intake instructions. Full platform cutover remains unverified. Read ops/ai-router/DEPLOYMENT_STATUS_2026-10-01.md for the actual boundary.
 
 ## Authority and access
 Latest explicit founder corrections govern this migration. Read `ops/canon/canon.json` and `ops/canon/TDIE_CANON.md` for business facts. Live system observations establish actual state; the uploaded repository establishes snapshot evidence only. This router assigns work and does not amend prices, products, images, schedules or business canon.
