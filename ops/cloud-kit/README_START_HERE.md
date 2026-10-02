@@ -29,7 +29,7 @@ Jodie DeOliveira, founder of The Digital Income Edit™ (TDIE), a luxury-editori
 12. Send every finished file to Jodie with the send-file tool. She is often on her phone.
 
 ## Anything that needs Jodie's accounts
-This session is not linked to her computer, so it cannot use her signed-in Skool, Beacons, Amazon, MailerLite, Pinterest, Instagram, Gemini or Higgsfield. **Do not stop because of that.** Finish everything else, then add the account-only steps to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)` (create it if missing): one numbered section per job, with every file path, every piece of copy and every exact step already written in, so a later session on her computer can do them without asking anything.
+This session is not linked to her computer, so it cannot use her signed-in Skool, Beacons, Amazon, Pinterest, Instagram, Gemini or Higgsfield. (MailerLite is never a browser job in any session: it is reached only through the MailerLite plugin, Jodie's rule of 2 Oct 2026.) **Do not stop because of that.** Finish everything else, then add the account-only steps to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)` (create it if missing): one numbered section per job, with every file path, every piece of copy and every exact step already written in, so a later session on her computer can do them without asking anything.
 
 ## Standing facts
 - Site: www.thedigitalincomeedit.com. Flat URLs `/learn/[slug]`, no trailing slash. Repo: jodiedeo7-glitch/tdie.

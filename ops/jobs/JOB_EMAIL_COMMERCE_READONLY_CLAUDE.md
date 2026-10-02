@@ -14,12 +14,14 @@ REPORT: follow `ops/cloud-kit/CLAUDE_SOURCE_CHECK_RULE.md`; one factual success 
 
 **Do not edit, pause, delete, publish, reschedule, buy or send anything.** This is an account-state verification task only.
 
-## Before opening browsers
+**MailerLite access rule (Jodie, 2 October 2026).** MailerLite is connected to Claude as a plugin (`mcp__MailerLite__` tools). Every MailerLite read, count, draft, campaign, test send, schedule, automation edit and report goes through that plugin. **MailerLite is never opened in any browser** (Claude in Chrome, the Claude built-in browser or any other), not to read, not to check, not to upload, not as a fallback, not for a step the plugin cannot do. If the plugin cannot do a MailerLite step, that step stops, the report names the step and why, and it is left for Jodie. Any older line in this repository or the project that opens dashboard.mailerlite.com, says Chrome is signed in to MailerLite, or treats MailerLite as a browser job is superseded by this rule.
+
+## Before opening browsers (Beacons only; MailerLite is read through its plugin)
 Read the current approved `ops/TDIE_AI_ROUTER.md`, `ops/ai-router/TDIE_EMAIL_COMMERCE_ROUTER.md`, `ops/ai-router/EMAIL_COMMERCE_SNAPSHOT.json`, and `ops/canon/canon.json` from the current repo. The snapshot is historical, not proof of current live state. Jodie's 30 September correction overrides old plans: **Find Your Door is no longer automated.**
 
 Acquire the existing browser lock if required. Do not invent a new lock or use private credentials in a report.
 
-## MailerLite read-back
+## MailerLite read-back (plugin only: list_automations, list_campaigns, get_campaign, list_resources, get_subscriber_count; never a browser tab)
 1. List every automation, whether active or inactive, with exact name, trigger, audience/group, purpose and status. Mark any item you cannot verify as UNVERIFIED.
 2. Separately list scheduled regular campaigns relevant to the Weekend Ecosystem and the Storefront launch. Record actual schedule and buyer exclusion settings.
 3. Verify the current Weekend Ecosystem purchase-triggered access email is active, and whether its Keep It Running Kit block is present. Do not pause it to inspect or edit.

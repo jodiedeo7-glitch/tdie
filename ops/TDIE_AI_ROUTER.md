@@ -2,6 +2,8 @@
 
 # TDIE AI router
 
+**MailerLite access rule (Jodie, 2 October 2026).** MailerLite is connected to Claude as a plugin (`mcp__MailerLite__` tools). Every MailerLite read, count, draft, campaign, test send, schedule, automation edit and report goes through that plugin. **MailerLite is never opened in any browser** (Claude in Chrome, the Claude built-in browser or any other), not to read, not to check, not to upload, not as a fallback, not for a step the plugin cannot do. If the plugin cannot do a MailerLite step, that step stops, the report names the step and why, and it is left for Jodie. Any older line in this repository or the project that opens dashboard.mailerlite.com, says Chrome is signed in to MailerLite, or treats MailerLite as a browser job is superseded by this rule.
+
 Consolidated 1 October 2026. Repository implementation is deployed; nine ChatGPT cloud preparation definitions are saved (five active, four paused), the three Codex preparation duplicates are paused, and the existing Sunday Threads task has guarded intake instructions. Full platform cutover remains unverified. Read ops/ai-router/DEPLOYMENT_STATUS_2026-10-01.md for the actual boundary.
 
 ## Authority and access

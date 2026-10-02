@@ -4,6 +4,8 @@
 
 **Find Your Door is no longer automated.** It must not be counted as a MailerLite automation, given a scheduled task, or assigned an automated follow-up sequence. Keep the free on-site routing resource distinct from email automations. Any optional email form or site API integration is a separate technical feature and is not evidence that a quiz email automation is active.
 
+**MailerLite access rule (Jodie, 2 October 2026).** MailerLite is connected to Claude as a plugin (`mcp__MailerLite__` tools). Every MailerLite read, count, draft, campaign, test send, schedule, automation edit and report goes through that plugin. **MailerLite is never opened in any browser** (Claude in Chrome, the Claude built-in browser or any other), not to read, not to check, not to upload, not as a fallback, not for a step the plugin cannot do. If the plugin cannot do a MailerLite step, that step stops, the report names the step and why, and it is left for Jodie. Any older line in this repository or the project that opens dashboard.mailerlite.com, says Chrome is signed in to MailerLite, or treats MailerLite as a browser job is superseded by this rule.
+
 ## Source-of-truth rule
 
 The repository documents MailerLite's active/inactive automation configuration as of 19 September 2026. That is historical evidence, **not live account verification**. Before any migration, Claude must read back the current MailerLite account and Beacons configuration. Never disable, pause, or replace an active delivery automation based solely on the repo.
