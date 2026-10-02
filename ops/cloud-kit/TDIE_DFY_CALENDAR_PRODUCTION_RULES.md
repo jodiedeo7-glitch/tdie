@@ -53,6 +53,8 @@ Nano Banana Pro may be named only as an optional example for difficult reference
 
 ## 3. Persona use
 
+**Tommy Kate's world is the calendar (Jodie, 2 October 2026, Decision 124).** The calendar is Tommy Kate's real life as a pseudo member of TDIE. Her full world, every named object (including the Hello Kitty and Kuromi plushies in her pink attic loft) and the repetition rule are in `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`, which governs every calendar image and video prompt. The Daily Edits (SOP 16) use a different, universal look and never feed this calendar. Prompts stay universal: identity comes only from the attached seed via "this exact woman", locked features are never written, so a member's own seed gives her own face.
+
 Tommy Kate is the TDIE experiment persona, but persona imagery is optional in the calendar.
 
 The calendar should intentionally mix:

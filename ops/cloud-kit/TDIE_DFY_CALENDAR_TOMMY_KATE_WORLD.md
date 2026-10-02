@@ -1,0 +1,97 @@
+# PREMIUM DFY CONTENT CALENDAR · TOMMY KATE'S REAL LIFE
+
+**Product:** the Premium Monthly DFY Content Calendar (SOP 15). Instagram, run on `@the.faceless.homestead.mama`. Membership Premium only.
+**Not this product:** the Daily Edits (the Skool Daily Prompts course, SOP 16). The Daily Edits have their own look in `TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`. Nothing in this file is ever used to write a Daily Edit, and nothing in that file is ever used to write a calendar day.
+**Set by Jodie, 2 October 2026 (Decision 124).** Single live copy, edited in place and dated. Project copy: `claude/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`. Repo copy: `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`.
+
+---
+
+## 1. What the calendar has to feel like
+
+Tommy Kate is a real-feeling member of The Digital Income Edit™. She runs the calendar on her own Instagram the way a member would. Her account has to read like a real woman whose life you follow: the same farmhouse, the same rooms, the same dog, the same mug, the same plushies on the same bed, month after month. That repetition is the product. A calendar that drifts into generic pretty rooms has failed, however good the pictures are.
+
+She is a homesteading gamer girl and mom building a faceless digital business from her farmhouse. She is extremely wealthy and self-made, and you would not know it from looking at her or her house. Quiet wealth, lived in: nice, never showy; real, never run-down; clean and natural, with the evidence of kids, dogs and farm animals in the room rather than the mess of them.
+
+Captions, on-screen words, Threads posts and story slides are written in Tommy Kate's voice (canon: the Premium member calendar and TDIE Instagram use Tommy Kate; Skool never does).
+
+---
+
+## 2. The prompts are still universal
+
+Every image or video prompt with her in it opens with exactly:
+
+> Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.
+
+Her locked features are never written in words, anywhere, in any form: face, facial structure, freckles, skin tone, eye colour, hair colour, hair length and cut, body proportions, age. Not even "same face" or "unchanged". The reference sheet supplies all of it.
+
+This is what makes the calendar work for a member. She attaches her own seed image and gets her own face, her own eye colour, her own hair. Nothing in the prompt can turn brown eyes blue, because the prompt never mentions eyes. What the prompt does carry is Tommy Kate's world. A member who wants her own world swaps it with the ChatGPT project in START HERE ("Make It Yours: Your ChatGPT Calendar Project"), choosing KEEP or SWAP for the props.
+
+Jodie generates every calendar image with Tommy Kate's seed (`public/images/library/avatar-seed-omni-reference.png`), so whenever a woman appears in a calendar image, it is Tommy Kate. Object-only frames in her world (her desk, her porch, her loft with nobody in it) stay allowed under Decision 111 and SOP 15.
+
+---
+
+## 3. Her world, in full. Every item, every month.
+
+Name these exactly as written. Never write one from memory and never swap one for a generic version.
+
+**Her signature prop, in every frame she appears in** (full body, hands only, boots only):
+- A glitter-flecked pink iced coffee tumbler with a lavender straw. Saturated candy pink, never pale, blush or white. It is never the only pink item in her frames.
+
+**Her named objects:**
+- Bubblegum pink ceramic mug printed Player Two? in black lettering. Saturated candy pink, never pale or white. A plain pink mug is never correct. When it is in the frame, the negative line says the only printed words in the frame are Player Two? on the mug.
+- Lavender Xbox controller with a small strawberry charm. Clearly purple-toned, never white or grey.
+- Pink and lavender GameBoys, visibly worn.
+- **Hello Kitty and Kuromi plushies.** Required in her home. They live in the pink attic loft: on the pink gingham bed, on a shelf, or propped at the end of the gaming desk. Whenever the loft is in the frame, the plushies are in the frame.
+- Mason jar of casually gathered wildflowers with irregular stems. When a bouquet is named, it is lilacs or peonies.
+- Worn brown leather farm boots with dried mud in the welt.
+- Scrunchie on the wrist. Gold claw clip. Fine gold chain with a small heart pendant.
+- Pink gingham bedding, slightly rumpled.
+- Candy-pink over-ear headphones. Candy-pink gardening gloves. Candy-pink velvet throw pillow.
+- Her golden retriever, and the dog's rope toy left where a dog would leave it.
+- Her chickens and ducks, the chicken coop.
+
+**Her rooms and land:**
+- **Pink attic loft:** exposed beams wrapped in ivy, plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the pink gingham bed.
+- **Farmhouse kitchen:** blush cabinets, butcher-block island, copper pans with patina.
+- **Farmhouse porch:** weathered rail, chipped paint, folded quilt, potted herbs, rocking chair.
+- **Farmhouse living room:** the candy-pink velvet throw pillow, a quilt someone actually uses.
+- **Outside:** pasture, split rail fencing, red barn, wildflower fields, chicken coop, raised garden beds.
+
+**Her wardrobe:** oversized pink knits, soft tees, hoodies, sweatpants, leggings, fuzzy socks, ribbed tanks, high-waisted vintage denim, a barn coat, worn boots. Colours: blush, cream, sage, rust, lavender, oatmeal, and candy-pink pieces. Never blouses, never blazers, never costume cottagecore. Makeup minimal and the same every day. How her hair is worn, her nails, jewellery and footwear change day to day; that is what makes thirty-one posts read as thirty-one days.
+
+---
+
+## 4. The repetition rule
+
+Every characteristic above is remembered and repeated across the month. Nothing on the list may go missing for a whole month.
+
+- Every frame with her carries the glitter tumbler plus two or three named items from section 3. Not the whole list: a prop inventory clutters the render (image master section 8).
+- Named items go in the first half of the prompt. Anything in the second half comes back missing or generic.
+- Every frame of the pink attic loft carries the Hello Kitty and Kuromi plushies.
+- Across each week, every room in section 3 appears at least once, and each named object appears at least once in the month. The loft carries roughly one day in four.
+- In frames without her, exactly one saturated candy-pink object, rotated across the month (image master section 4).
+- Week files list which section 3 items each day used, so the next week can fill the gaps.
+
+---
+
+## 5. Third-party characters: what is and is not allowed
+
+**Allowed and required:** the Hello Kitty and Kuromi plushies, as her own toys in her own home, in Tommy Kate photography. Write them in the prompt simply as "a Hello Kitty plushie and a Kuromi plushie".
+
+**Still out:** printed logos, wordmarks and brand names in the frame (on clothing, packaging, screens or bags); a character as the subject or headline of a post; any character on a product TDIE sells, in a listing, in a pin title or in a product design example; branded handbags; film or franchise likenesses.
+
+**Correction of record (Jodie, 2 October 2026):** canon used to say third-party IP "has already caused platform deactivations". That was false. No account has been deactivated for imagery. The one deactivation on record is the Tommy Kate Threads account (21 September 2026), caused by several browser tabs auto-posting to Threads at the same time, which set off spam detection (Decisions 92 and 107).
+
+---
+
+## 6. Names and titles for this product only
+
+- Product name: **Premium DFY Content Calendar** (in full on first reference: the Premium Monthly DFY Content Calendar). Never "daily prompts" or "daily edits".
+- SOP: SOP 15. Skool module: the Monthly DFY Content Calendar, Premium only.
+- Lesson title: `Day N - Reel · [the post's hook]`, plain words, under 50 characters.
+- Week files: `claude/dfy-calendar-<month>-<year>-week-N.md`.
+- Scheduled task names start with `PREMIUM DFY CALENDAR ·`.
+
+---
+
+**The Digital Income Edit™ · Premium DFY Content Calendar · Tommy Kate's Real Life · 2 October 2026**

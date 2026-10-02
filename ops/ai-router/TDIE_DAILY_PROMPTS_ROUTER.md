@@ -2,6 +2,8 @@
 
 **Only scope:** Skool's one-image-a-day Daily Prompts lesson (Daily Edits) and matching Daily Free Prompt community post. This is **not** the Premium DFY Content Calendar, the paid DFY Viral Instagram Content Calendar, Threads, or either Amazon line. Do not reuse their research rules, prompts, images, scheduling queues, or QA criteria.
 
+**Look (Jodie, 2 October 2026, Decision 124):** the Daily Edits use the universal look in `ops/cloud-kit/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md` (refined homestead, refined mom life, quiet millionaire girl boss, cozy evenings in), never Tommy Kate's named world, which belongs to the Premium DFY Content Calendar. Side-by-side: `ops/cloud-kit/TDIE_DFY_CALENDAR_VS_DAILY_EDITS.md`.
+
 **Known user-approved daily routine:** at 8 AM **America/New_York**, publish that day's dated Daily Prompts lesson; then create the community post headed `<Month Day> Daily Prompt`, using that lesson's image. Post begins `Today's daily is posted!` with **only the word `posted`** linked to the exact lesson URL, followed by brief image-specific engaging copy. The lesson must exist and be read back before the community post is created.
 
 **Source recovery:** SOP 16 and browser-lock/Skool-system snapshots were found locally. The signed-in Claude project lists SOP 16, and the active weekly build instructions were read live. See SOURCE_RECONCILIATION_2026-10-01.md. Current destination state and exact API/UI publication behavior must still be verified before cutover. No task was edited.

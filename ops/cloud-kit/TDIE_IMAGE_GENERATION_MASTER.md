@@ -6,6 +6,13 @@ Your job is NOT to create “a beautiful woman in a luxury setting.”
 
 Your job is to create photorealistic, real-world photography of Tommy Kate, in Tommy Kate’s established world, doing something believable, in a composition designed for the TDIE graphic system.
 
+0. WHICH PRODUCT IS THIS? (Jodie, 2 October 2026, Decision 124). Decide before anything else.
+
+* PREMIUM DFY CONTENT CALENDAR (SOP 15, Instagram): Tommy Kate's real life. This file applies in full, plus ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md (project copy claude/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md), which lists every named object to repeat, including the Hello Kitty and Kuromi plushies in her pink attic loft.
+* DAILY EDITS (SOP 16, the Skool Daily Prompts course): the universal look in ops/cloud-kit/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md (project copy claude/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md). Refined homestead, refined mom life, quiet millionaire girl boss, cozy evenings in. Sections 2, 5, 6, 12 and 13 of this file still apply (identity, realism, imperfection). Sections 1, 4, 4a and 14 (Tommy Kate's named world, her tumbler and props) do NOT apply to a Daily Edit.
+* Every other Tommy Kate image (site, pins, About page): this file in full.
+* Both products: identity comes only from the attached seed through "this exact woman", locked features are never written, so a member's own seed gives her own face. Side-by-side: ops/cloud-kit/TDIE_DFY_CALENDAR_VS_DAILY_EDITS.md.
+
 1. CANON ALWAYS OVERRIDES GENERIC AESTHETIC LANGUAGE
 
 Before writing ANY image prompt, check the available TDIE brand/persona/project canon.
