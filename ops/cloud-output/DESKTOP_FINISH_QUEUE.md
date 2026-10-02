@@ -152,7 +152,9 @@ Run the kit exactly as a new buyer would, in Jodie's own accounts, on a throwawa
 
 ### Step 10 · Scheduling
 
-**SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
+**DONE 2 Oct 2026 (Skool and Facebook parts; email and Threads were scheduled separately the same day).** Jodie approved the launch and waived the live-test gate. All five Skool posts are in the SkoolKit queue and read back (Sat 3 Oct 3:00 pm, Mon 5 Oct 7:00 pm, Tue 6 Oct 3:00 pm, Thu 8 Oct 7:05 pm, Fri 9 Oct 7:00 pm; "Send email to all members" ON for Skool 2 and 4, OFF for 1, 3 and 5). Both Facebook group posts are in the group's Scheduled posts list with their images (Mon 5 Oct 7:15 pm, Thu 8 Oct 12:00 pm). Facebook cannot schedule comments, so two one-off tasks post the first comments (trig_01ETqHbUTCkqnYGgBhLZDNdu Mon 5 Oct 7:20 pm, trig_01PhNAwUjC6NTLiDx3LWzPFe Thu 8 Oct 12:05 pm). Facebook is not fully done until each first-comment link is seen live (step 13).
+
+Earlier note: **SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
 
 All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in its date table. Paste it exactly.
 1. **Skool (SkoolKit):** schedule Skool 1 to 5 with their titles, bodies and images (Skool 1: `graphics/g2-tease.png`; Skool 2: `graphics/g1-presale-open.png`; Skool 3: the four `src/lifestyle/` images it names; Skool 4: `graphics/g3-last-call.png`; Skool 5: `graphics/g4-share.png`). Links hyperlinked on their words, at most two per post. "Send email to all members" per step 3 check 1. Read each back in SkoolKit.
