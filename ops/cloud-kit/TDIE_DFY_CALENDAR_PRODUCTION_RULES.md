@@ -154,7 +154,7 @@ Minimum:
 - 75 qualifying viral/high-performing or breakout posts
 - 40 unique creator accounts
 - at least 30 accounts tightly adjacent to the TDIE audience
-- duration analysis and breakout-delta analysis completed
+- duration analysis, breakout-delta analysis and posting-time/day analysis completed
 - no internal research metadata exposed in the member-facing calendar
 - at least 20 posts must have an account-relative outlier basis, a credible analytics classification, or a directly documented viral benchmark
 - the remaining posts may be strong high-performing examples when the source exposes meaningful performance evidence but not a clean account baseline
@@ -183,6 +183,7 @@ For every post record:
 - creator/account
 - post URL or source
 - date
+- exact publish timestamp, source timezone, normalized America/New_York time and day of week when verifiable
 - visible performance
 - evidence class
 - outlier multiple or viral classification when available
@@ -225,6 +226,16 @@ Extract:
 - CTA mechanism
 - emotional driver
 - audience-awareness level
+
+
+### Posting-time evidence
+Posting-time research is mandatory for every monthly Premium calendar research cycle.
+- For every qualifying Instagram Reel where the source exposes it, capture the exact publish timestamp, source timezone, normalized America/New_York time, and day of week.
+- If exact time or timezone cannot be verified, write `NOT VERIFIED`; never infer a clock time from the displayed date.
+- Compare VERIFIED OUTLIER / VIRAL ANALYTICS EXAMPLE timing against the creator's own normal posting distribution where the source supports it. Keep HIGH-PERFORMER timing separate when no account-relative baseline exists.
+- Produce a monthly timing analysis with sample sizes, day-of-week counts, time-window counts, and any creator-relative differences. Correlation is not causation.
+- The monthly build rules must include a recommended Instagram posting window only when supported by the current research. If evidence is insufficient, label the research-derived window `UNVERIFIED` and use the member/account's own Instagram audience-activity data when available rather than inventing a universal best time.
+- Every finished Instagram calendar day must include a recommended posting time or window and the evidence basis used for it.
 
 ## 7. Pattern extraction
 
