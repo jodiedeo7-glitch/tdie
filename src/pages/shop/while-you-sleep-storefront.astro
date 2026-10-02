@@ -45,48 +45,49 @@ const proof = [
 
 const steps = [
   { n: "01", t: "It picks the look", p: "From a seasonal calendar and an evergreen bank written for your theme, so it's never costumes in March." },
-  { n: "02", t: "It shops Amazon for you", p: "Five to eight pieces per look: in stock, four stars and up, a hundred ratings or more. Every one with your own affiliate link." },
-  { n: "03", t: "It builds the list", p: "An Idea List in your storefront holding every piece, or a shop-the-look page on your own site." },
+  { n: "02", t: "It finds the pieces", p: "Five to eight pieces per look, each with your own checked affiliate link. Automatic product finding isn't ready yet (see below), so for now you add each look's products yourself." },
+  { n: "03", t: "It builds the destination", p: "A shop-the-look page on your own site, or an Idea List you make yourself from its look plan." },
   { n: "04", t: "It makes the pins", p: "A styled flat lay or collage, and a lifestyle photo of your AI persona (or a second collage if you don't have one). Title, description, alt text, #ad line." },
-  { n: "05", t: "It schedules and logs", p: "Two pins per look, three days apart, checked on Pinterest's scheduled page and written to your pin tab and log." },
+  { n: "05", t: "You choose, it schedules", p: "Every pin waits for your one-tap GO, because Pinterest requires it. Then it's scheduled through Metricool, read back and logged." },
 ];
 
 const needs = [
-  "A Claude plan with scheduled tasks and Claude in Chrome",
-  "The Claude desktop app, with your computer on when the tasks run",
-  "Amazon Associates, plus Influencer approval for Idea Lists",
+  "ChatGPT Work, on an eligible paid ChatGPT plan, for the scheduled tasks",
+  "Amazon Associates and your tracking ID",
+  "Amazon Creators API access (Amazon opens it at 10 qualifying sales in 30 days) for automatic product finding",
   "A Pinterest business account with public boards",
-  "Gemini and Higgsfield accounts",
+  "Metricool, connected to your Pinterest and to ChatGPT",
+  "A paid Higgsfield plan for the images, and Google Drive for your records",
 ];
 
 const inside = [
-  "The setup prompt: paste once, answer six questions, it writes your own recipe and log",
+  "The setup prompt: paste it into ChatGPT Work, answer its questions, and it tests every connection in your own account",
   "The themed-look recipe, for any theme and any season",
   "The Brand Closet™ Outfit of the Day recipe, for members of Rose's community",
-  "The four scheduled task prompts (including a missed-run sweep), complete and ready to paste",
-  "Persona and no-persona paths, Influencer and Associates-only paths",
-  "The blog half, for Weekend Ecosystem™ sites",
-  "The setup guide, with two of my own looks worked through step by step",
+  "The three scheduled task prompts, complete and ready to paste",
+  "Persona and no-persona paths, own-site and Idea List paths",
+  "The blog half, for any site on GitHub",
+  "A Preparation Guide and a Setup Guide, with every prompt printed in full",
 ];
 ---
 <PageLayout
   wide
   ogImage={witchFlat.src}
   title="The While-You-Sleep Storefront™ · Amazon Pins on a Schedule"
-  description="Your Amazon affiliate links, turned into Pinterest pins that get built, scheduled and logged by your own Claude scheduled tasks. Found through search, not the feed."
+  description="Your Amazon affiliate links, turned into Pinterest pins that get built, scheduled and logged by your own ChatGPT Work scheduled tasks, after your one-tap choice on each pin. Found through search, not the feed."
 >
   <section class="ws-hero">
     <div class="page-eyebrow">Amazon links to Pinterest pins · on a schedule</div>
     <h1>The <em>While-You-Sleep</em> Storefront™</h1>
-    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
+    <p class="lede">You want your Amazon links working on the Tuesday you're too tired to post. This is the machine that does it: it builds the looks, makes the pins and, once you tap GO on each one, schedules them, and people find them the way they find everything on Pinterest. By searching.</p>
     <div class="ws-cta-row">
       <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
-      <li>About 5 minutes to start</li>
-      <li>No building, no selling, no posting</li>
-      <li>Runs from your own computer</li>
+      <li>Every connection tested in your account first</li>
+      <li>You choose every pin with one tap</li>
+      <li>Runs in the cloud or on your computer</li>
     </ul>
   </section>
 
@@ -95,7 +96,7 @@ const inside = [
       <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
     ))}
   </section>
-  <p class="ws-note">Every image, title and schedule above was made by the tasks you're about to copy. Not by me.</p>
+  <p class="ws-note">Every image above is one of my own published pins.</p>
 
   <section class="ws-sec">
     <div class="ws-kicker">The problem nobody says out loud</div>
@@ -106,8 +107,8 @@ const inside = [
   </section>
 
   <section class="ws-sec ws-tint">
-    <div class="ws-kicker">What the tasks do, on their own</div>
-    <h2>Five jobs you never do again.</h2>
+    <div class="ws-kicker">What the tasks are built to do</div>
+    <h2>Five jobs, one machine.</h2>
     <div class="ws-steps">
       {steps.map((s) => (
         <div class="ws-step"><span class="ws-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>
@@ -141,7 +142,7 @@ const inside = [
       <div><span class="ws-stat">84</span><span class="ws-statlab">Tagged product links</span></div>
       <div><span class="ws-stat">26</span><span class="ws-statlab">Pins built</span></div>
     </div>
-    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work. It took me 5 minutes to set up.</p>
+    <p class="ws-p">It's new. I'm not going to show you a screenshot of money, because I don't sell with screenshots and because Pinterest takes its time. What I can show you is the thing doing the work.</p>
     <div class="ws-gallery">
       {proof.slice(4).map((p) => (
         <figure><Image src={p.img} alt={p.alt} widths={[240, 360, 480]} sizes="(max-width: 700px) 45vw, 230px" /><figcaption>{p.cap}</figcaption></figure>
@@ -159,8 +160,8 @@ const inside = [
       </div>
       <div class="ws-card ws-callout">
         <h3>The honest part</h3>
-        <p>The tasks run from your own computer, so it stays on with Chrome signed in when they run. If it was off, a daily missed-run sweep catches the run up.</p>
-        <p>An optional glance at your pin tab and log is how you pull anything you don't like before it posts. That's the whole of your job.</p>
+        <p>Automatic product finding isn't ready yet. It needs Amazon's Creators API, which Amazon opens at 10 qualifying sales in 30 days, and a ChatGPT connection to it that hasn't been tested in any account yet, mine included. Being eligible doesn't prove it works. Until a connection passes in your account, you add each look's products yourself.</p>
+        <p>Everything else is tested piece by piece in your own account at setup, and Pinterest requires your one-tap choice on every pin. Nothing gets called fully automatic until it's proven.</p>
       </div>
     </div>
   </section>
@@ -169,7 +170,7 @@ const inside = [
     <div class="ws-kicker">The blog half</div>
     <h2>Have The Weekend Ecosystem™? Your looks become pages Google can find.</h2>
     <p class="ws-p">One paste adds a shop-the-look section to your own site, with every look page written for search. My Pinterest block is on my domain only, so your pins can link to your own pages.</p>
-    <p class="ws-p">No site? You don't need one. The machine runs straight to your Idea Lists. And if you ever want the blog half, <a href="/shop/weekend-ecosystem">The Weekend Ecosystem™</a> is $97 one-time, or 3 × $33.33. Here's what one owner said about building her site with it:</p>
+    <p class="ws-p">No site? You can point your pins at Idea Lists you make yourself from the machine's look plan. And if you ever want the blog half, <a href="/shop/weekend-ecosystem">The Weekend Ecosystem™</a> is $97 one-time, or 3 × $33.33. Here's what one owner said about building her site with it:</p>
     <Testimonial variant="line" />
   </section>
 
@@ -206,13 +207,13 @@ const inside = [
     <div class="ws-kicker">Questions</div>
     <h2>Asked, answered.</h2>
     <details class="ws-faq"><summary>Do I need to be good at tech?</summary>
-      <p>No. You paste one prompt into the Claude desktop app and answer six questions in plain words. The setup guide walks you through creating the scheduled tasks, click by click, for someone who's never made one.</p></details>
-    <details class="ws-faq"><summary>Does my computer really have to stay on?</summary>
-      <p>Yes, at the times the tasks run, with Chrome open and signed in. You choose those times during setup. If it was off when a run was due, a daily missed-run sweep runs it once when you're back.</p></details>
+      <p>No. You paste one prompt into a ChatGPT Work chat and answer its questions in plain words. The Setup Guide walks you through every step, for someone who's never made a scheduled task.</p></details>
+    <details class="ws-faq"><summary>Does my computer have to stay on?</summary>
+      <p>Not in cloud mode: the tasks run on ChatGPT's computers. If you choose to run them on your own computer, it needs to be on at the times they run.</p></details>
     <details class="ws-faq"><summary>What if I don't have an AI persona?</summary>
-      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces, no Gemini.</p></details>
+      <p>Take the no-persona path: both pins of every look are styled flat lays and collages. No faces.</p></details>
     <details class="ws-faq"><summary>I'm an Amazon Associate but not an Influencer yet.</summary>
-      <p>There's an Associates-only path: each look gets a page on your own site, and the pins link there. It's hands-off if the tasks can publish to your site (a Weekend Ecosystem™ site can). Influencer approval is the easy path, because Idea Lists need no website at all.</p></details>
+      <p>That works. Each look gets a page on your own site, and the pins link there, once setup has tested writing to your site (any site on GitHub, a Weekend Ecosystem™ site included). Without a site, you can make each look's Idea List yourself, which needs Influencer approval.</p></details>
     <details class="ws-faq"><summary>Will it make me money?</summary>
       <p>I can't promise that and neither can anyone honest. Pinterest is search, and pins get found over weeks and months. This builds and runs the machine. What people buy is up to them and Amazon.</p></details>
     <details class="ws-faq"><summary>Do I have to post on Instagram?</summary>
