@@ -18,8 +18,8 @@ Rewritten 2 Oct 2026 (just after midnight Eastern) to the founder pricing of 1 O
 | Member product ($17, hidden) | https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f |
 | Value Vault lesson (member price, $17) | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87 |
 | Premium Vault lesson ($10 code) | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=f35c395b0f3d4e0abfd42f064262e012 |
-| Affiliate Launch Kit lesson, Value Vault | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=AFFKIT_VV |
-| Affiliate Launch Kit lesson, Premium Vault | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=AFFKIT_PV |
+| Affiliate Launch Kit lesson, Value Vault | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe |
+| Affiliate Launch Kit lesson, Premium Vault | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a |
 | Plans page (join Skool) | https://www.skool.com/thedigitalincomeedit/plans |
 | Sales page | https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront |
 
@@ -221,7 +221,7 @@ No application. No reply-for-a-link. Beacons does the tracking.
 
 I wrote you the whole launch kit: captions, story slides, Facebook posts, Threads posts, emails and pins, all built around "$27 this weekend, then $37." Copy, paste, add your link.
 
-👉 [Grab your affiliate launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=AFFKIT_VV)
+👉 [Grab your affiliate launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe)
 
 No gatekeeping. Not even on the commission 🤍
 
@@ -246,7 +246,7 @@ Then add your Beacons affiliate link where your link goes.
 
 The price is $27 until Sunday at 11:59 pm Eastern, then $37, and you earn 40% on either.
 
-Every caption, story and post is already written for you in the launch kit 👉 [open the launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=AFFKIT_VV)
+Every caption, story and post is already written for you in the launch kit 👉 [open the launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe)
 
 Drop what you posted below and I'll hype it 👇
 
@@ -273,7 +273,7 @@ Already have it? Tonight's your best night to share it. Anyone you send it to to
 
 One story, one Threads post, one email. It's all written for you.
 
-👉 [Open your launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=AFFKIT_VV)
+👉 [Open your launch kit](https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe)
 
 ---
 
