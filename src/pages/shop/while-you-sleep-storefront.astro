@@ -19,16 +19,18 @@ import suitLife from "../../lifestyle/pink-suit-law-student-halloween-costume-li
 import porchFlat from "../../lifestyle/pink-halloween-porch-decor-flatlay.jpg";
 import sequinLife from "../../lifestyle/pink-sequin-mini-dress-halloween-costume-lifestyle.jpg";
 
-// Filled at the desktop finish with the Beacons product address. Until then the
-// button renders as a closed notice instead of a dead link.
-const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/a2e4f613-9431-4fd0-ad76-84415e14aa39";
-const LIVE_LINK = CHECKOUT.startsWith("https://");
+// The public Beacons product, rebuilt 2 Oct 2026 (Decision 123). Unlisted until launch.
+const CHECKOUT = "https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7";
+const JOIN = "https://www.skool.com/thedigitalincomeedit/plans";
 
-// Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026).
+// Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026). Decision 123, 1 Oct 2026.
+// soon: before the member presale. presale: Skool members only, no public checkout.
+// sale: launch weekend, $27 against the regular $37, with a countdown. regular: $37 for everyone.
 const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
 const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
-const now = Date.now();
-const stage = now < Date.parse(PRESALE_OPENS) ? "soon" : now < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
+const SALE_ENDS = "2026-10-12T04:00:00Z"; // Sun 11 Oct 2026, 11:59 pm ET (midnight)
+const stageAt = (t) => t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : t < Date.parse(SALE_ENDS) ? "sale" : "regular";
+const stage = stageAt(Date.now());
 
 const proof = [
   { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
@@ -176,25 +178,28 @@ const inside = [
     <div class="ws-kicker">The price</div>
     <div class="ws-price-box">
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
-        <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">The presale opens Monday 5 October, 7:00 pm Eastern, and runs until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27.</p>
+        <div class="ws-price-fig">Members first</div>
+        <p class="ws-price-when">The presale is for members of The Digital Income Edit™ community on Skool only. It opens Monday 5 October, 7:00 pm Eastern. It goes public on Friday 9 October.</p>
+        <p class="ws-price-when">Not a member yet? Membership Standard starts with a 7-day free trial, then $9/month, and the member price is waiting inside.</p>
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
-        <div class="ws-price-fig">$10<span> presale</span></div>
-        <p class="ws-price-when">Until Thursday 8 October, 11:59 pm Eastern. From Friday 9 October the same kit is $27. Your kit unlocks Friday 9 October at 9 am Eastern, at the same download link.</p>
+        <div class="ws-price-fig">Members only</div>
+        <p class="ws-price-when">The presale is open now for members of The Digital Income Edit™ community on Skool, until Thursday 8 October, 11:59 pm Eastern. It isn't on the public shop until Friday 9 October.</p>
+        <p class="ws-price-when">Not a member yet? Membership Standard starts with a 7-day free trial, then $9/month, and the member price is waiting inside.</p>
       </div>
-      <div class="ws-price-state" data-stage="live" hidden={stage !== "live"}>
-        <div class="ws-price-fig">$27<span> one-time</span></div>
+      <div class="ws-price-state" data-stage="sale" hidden={stage !== "sale"}>
+        <div class="ws-price-fig"><s class="ws-was">$37</s> $27<span> launch weekend</span></div>
+        <p class="ws-price-when">The launch price ends Sunday 11 October, 11:59 pm Eastern. From Monday it's $37.</p>
+        <p class="ws-count" data-ends={SALE_ENDS} aria-live="polite"></p>
+      </div>
+      <div class="ws-price-state" data-stage="regular" hidden={stage !== "regular"}>
+        <div class="ws-price-fig">$37<span> one-time</span></div>
         <p class="ws-price-when">The whole kit, yours to keep.</p>
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
-      {LIVE_LINK && stage !== "soon"
-        ? <a class="btn ws-buy" href={CHECKOUT} rel="noopener">Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-        : <span class="btn ws-buy ws-buy-off">Checkout opens with the presale</span>}
-      {LIVE_LINK && stage === "soon" && (
-        <a class="btn ws-buy ws-buy-late" href={CHECKOUT} rel="noopener" hidden>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
-      )}
-      <p class="ws-fine">No refunds on digital products. Already a member of The Digital Income Edit™? Your member price is in The Value Vault.</p>
+      <a class="btn ws-buy ws-join" href={JOIN} rel="noopener" hidden={stage === "sale" || stage === "regular"}>Join the community <span class="a">→</span></a>
+      <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
+      <p class="ws-fine">No refunds on digital products.</p>
     </div>
   </section>
 
@@ -224,15 +229,27 @@ const inside = [
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
 
-<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT }}>
+<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT, SALE_ENDS }}>
   (() => {
-    const t = Date.now();
-    const s = t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : "live";
-    document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
-    // A page built before the presale opens reveals its checkout button once the presale is live.
-    const late = document.querySelector(".ws-buy-late");
-    const off = document.querySelector(".ws-buy-off");
-    if (late && s !== "soon") { late.hidden = false; if (off) off.hidden = true; }
+    const stageAt = (t) => t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : t < Date.parse(SALE_ENDS) ? "sale" : "regular";
+    const apply = () => {
+      const s = stageAt(Date.now());
+      document.querySelectorAll(".ws-price-state").forEach((el) => { el.hidden = el.dataset.stage !== s; });
+      const pre = s === "soon" || s === "presale";
+      const join = document.querySelector(".ws-join");
+      const buy = document.querySelector(".ws-checkout");
+      if (join) join.hidden = !pre;
+      if (buy) buy.hidden = pre;
+      const c = document.querySelector(".ws-count");
+      if (c && s === "sale") {
+        const left = Math.max(0, Date.parse(SALE_ENDS) - Date.now());
+        const d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60, sec = Math.floor(left / 1000) % 60;
+        c.textContent = (d ? d + "d " : "") + h + "h " + String(m).padStart(2, "0") + "m " + String(sec).padStart(2, "0") + "s left at $27";
+      }
+      return s;
+    };
+    apply();
+    setInterval(apply, 1000);
   })();
 </script>
 </PageLayout>
@@ -294,7 +311,8 @@ const inside = [
   .ws-price-list li{font-size:15px;line-height:1.5;margin-bottom:11px;padding-left:24px;position:relative;color:#1A1417}
   .ws-price-list li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:700}
   .ws-buy{border-radius:999px}
-  .ws-buy-off{background:var(--pink-soft);cursor:default}
+  .ws-was{color:var(--choc-mute);font-size:.55em;text-decoration-thickness:3px;margin-right:6px}
+  .ws-count{font:700 14px/1.4 Inter,sans-serif;letter-spacing:.06em;color:var(--pink-deep);margin:12px 0 0;min-height:1.4em}
   .ws-buy[hidden]{display:none}
   .ws-fine{font-size:13px;color:var(--choc-mute);margin:18px 0 0}
 
