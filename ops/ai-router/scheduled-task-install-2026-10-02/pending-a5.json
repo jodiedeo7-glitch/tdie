@@ -1,0 +1,286 @@
+{
+ "created": "2026-10-02",
+ "note": "Prompts blocked by needs_device_approval on computer A5. Apply each: prompt = file content exactly, model as listed; keep schedule and on/off state, except switch_on true.",
+ "tasks": [
+  {
+   "id": "trig_01T8Z9qBw5pcL1o8LekoVBob",
+   "name": "Storefront: launch wrap-up, $37 for everyone (Mon 12 Oct, 8:00 am)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01T8Z9qBw5pcL1o8LekoVBob.txt",
+   "prompt_sha256": "51b0f65b44d83664fd2680c18fab028dbf7d53027479c974f90d79c2cd41a748",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01498VVTWA3FcYgtrHZwffRK",
+   "name": "Storefront: last-call check (Sun 11 Oct, 7:00 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01498VVTWA3FcYgtrHZwffRK.txt",
+   "prompt_sha256": "19788bba71e38a7d1537ecd8215e46ffbe29aa08d65047a13b204ae61e0fa593",
+   "switch_on": false
+  },
+  {
+   "id": "trig_0117CciSkW5F211GvHS3Jsqe",
+   "name": "Storefront: sale ends, public product back to $37 (Sun 11 Oct, 11:59 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_0117CciSkW5F211GvHS3Jsqe.txt",
+   "prompt_sha256": "d0c8cb8fb084b4a46292119b9d8b8dbbd0a3549ace2bd247719047bd2116e973",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01XAJ1UHesiEDkb6AHbzfy1x",
+   "name": "Storefront: presale closes, TDIEPREMIUM code off (Thu 8 Oct, 11:59 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01XAJ1UHesiEDkb6AHbzfy1x.txt",
+   "prompt_sha256": "59b6620f52d03e3e6ac5d3c97d43cdbc4f6df57aa71045f706ec090683b3e594",
+   "switch_on": false
+  },
+  {
+   "id": "trig_017XvtHc9j6ZeeyMbqLb84Yy",
+   "name": "Storefront: publish Affiliate Launch Kit + presale-buyer post (Thu 8 Oct, 7:00 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_017XvtHc9j6ZeeyMbqLb84Yy.txt",
+   "prompt_sha256": "5a3e0350eb4d772b2bd92437864b3c39ed45158427564f6a96df7163caf8b76f",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01JvkjNiHqDZ3sbMyyUbw6xx",
+   "name": "Storefront: publish member-price vault lessons (Mon 5 Oct, 6:55 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01JvkjNiHqDZ3sbMyyUbw6xx.txt",
+   "prompt_sha256": "a3a00863ede4742c3a73c51aa3cc1894b39a177abc6edb4da4800387138c4782",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01GGxofzFVdfSZZAgsJiVHM3",
+   "name": "TDIE — Skool full missed-comment sweep (one-off, Sat 3 Oct 11:30 am)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01GGxofzFVdfSZZAgsJiVHM3.txt",
+   "prompt_sha256": "b0507da9769aa944116955f4fd7b307a95457fed298d58a5d2b674b18c24d79e",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01A8maQPy2LywkhVqL4wwx2p",
+   "name": "TDIE — Premium loader + release runner",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01A8maQPy2LywkhVqL4wwx2p.txt",
+   "prompt_sha256": "3d3561db006fdee787a97ae66c64bf417f0c37d1131eacb5c5992e0f76ec723f",
+   "switch_on": false
+  },
+  {
+   "id": "trig_0125Ei6446bSmQsucYeenpHV",
+   "name": "TDIE — Native pin publication check (Mon 5 Oct, 10 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_0125Ei6446bSmQsucYeenpHV.txt",
+   "prompt_sha256": "2e3c12c6e5b7e14abfad18094be9afddad065115fa067dd594c6d235913229c1",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01CdMCs9WEphMWjZuWXBpndH",
+   "name": "Remove Kit block from access email",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01CdMCs9WEphMWjZuWXBpndH.txt",
+   "prompt_sha256": "87f0d5f769cea9f060cdb54bf1e4261cd8a880ad187b3ee3fd5c9099d29d1de7",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01HkToGoa94m6fJ9PgdV1WNn",
+   "name": "TDIE: Weekly warm-member DFY first-client offers (Wed 2:45 pm, drafts only)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01HkToGoa94m6fJ9PgdV1WNn.txt",
+   "prompt_sha256": "a1919a017f0ea40e6321dbb940c6c729f3ac8b0e7067584a1a6a9bd615678ddd",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01QQFUrusBVMJYeSXxh5915i",
+   "name": "Pink Finds: Facebook group posts (Thu 1 Oct and Sun 4 Oct, 12:05 pm)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01QQFUrusBVMJYeSXxh5915i.txt",
+   "prompt_sha256": "486bd6da4d1d24a35ef53683ab1965286d120a021aabc79b67f188f42390d1c8",
+   "switch_on": false
+  },
+  {
+   "id": "trig_018McM3QNfa3aKzvWBGTVS7R",
+   "name": "Pink Finds: \"the sale is live\" email (Tue 6 Oct, 9 am)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_018McM3QNfa3aKzvWBGTVS7R.txt",
+   "prompt_sha256": "795d39071aabdd986e3618e92e8dd515631fccd733cece0c0cf71a56caa27124",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01SWgRtfhndDsaXZXNE8kyBB",
+   "name": "TDIE: Post today's DFY calendar post to @the.faceless.homestead.mama (11:47 AM)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01SWgRtfhndDsaXZXNE8kyBB.txt",
+   "prompt_sha256": "fe96c82a459b6454bddb11aa6ce866b0b8790a8de02f025e88c5d81e0e941628",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01QuCtf4sEP2bs3bugizcGa4",
+   "name": "TDIE: DFY calendar post maker (nightly, 8 days ahead) + weekly Skool teaser",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01QuCtf4sEP2bs3bugizcGa4.txt",
+   "prompt_sha256": "7434d46b8946590765a6c39939c16b4ff9733f594be109f8cb9a7bd8fb29db1a",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01MrbcErkiWpBGnLSdT5zqm9",
+   "name": "TDIE: Weekly DFY calendar test readout (Tommy Kate's Instagram Insights)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01MrbcErkiWpBGnLSdT5zqm9.txt",
+   "prompt_sha256": "eed26a112338f848a1345ffd7b62c74d97c70070cde99b7d4cca421967b6c79c",
+   "switch_on": false
+  },
+  {
+   "id": "trig_014hHX3hrhaMYx2ns3jsVn2N",
+   "name": "TDIE: October DFY calendar, load 2 corrected days into Skool (daily)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_014hHX3hrhaMYx2ns3jsVn2N.txt",
+   "prompt_sha256": "a40d10ca85f2740c974980fc15ef0e815292047ea59ff6f548c72f0c06bc1397",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01XQMTYK5to93VPFxmFQHgnj",
+   "name": "TDIE — All-platforms reply-check + Threads/Instagram engagement (Skool, FB, Threads, IG) — SINGLE trigger, do not duplicate",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01XQMTYK5to93VPFxmFQHgnj.txt",
+   "prompt_sha256": "7838ae338237851d4dc4d6f509bda47b18dc6c8ab82c0bebd6a3a7d73082d187",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01DhtUgZZCkUCSujMmDWJonc",
+   "name": "Weekly Pretty & Paid build",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01DhtUgZZCkUCSujMmDWJonc.txt",
+   "prompt_sha256": "48856ed14cca79f81b1efdbe5fb9fdee7e064692dae041cc881f27a6e9a88584",
+   "switch_on": false
+  },
+  {
+   "id": "trig_017tQcAgu8D9LxjG3MEmNXx3",
+   "name": "Nightly Brand Closet OOTD pins (flat lay + lifestyle, spaced 3 days apart)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_017tQcAgu8D9LxjG3MEmNXx3.txt",
+   "prompt_sha256": "d5e58c6500a757ecb07baa69091202811e4aa9b3073640f67884a1104cbcefc5",
+   "switch_on": true
+  },
+  {
+   "id": "trig_01DnEYVj76LsArcGkp886a8k",
+   "name": "Friday Pink Finds email",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01DnEYVj76LsArcGkp886a8k.txt",
+   "prompt_sha256": "d859787bd80fc9f0f0785994ac40f5255938d2403cd9dabf258f314a1fc2817b",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01JFD28qXDxECtjjFDwLycui",
+   "name": "TDIE: Weekly Daily Prompts build (7 days ahead)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01JFD28qXDxECtjjFDwLycui.txt",
+   "prompt_sha256": "e75f5ab668ff30df01557a5f91693706c5a43d5bc4575db5431e103724021157",
+   "switch_on": false
+  },
+  {
+   "id": "trig_015jA7LTzhHTH4cHKA6HuX5r",
+   "name": "Instagram queue (6 pm)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_015jA7LTzhHTH4cHKA6HuX5r.txt",
+   "prompt_sha256": "df7ee599d2a82e4e0e701bb2e35bf513207c9d5922ea00e1de3792427a351bb6",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01WK6tySP5itdLnFmAiBgnZu",
+   "name": "Weekly Legally Blonde Amazon pin factory (2 pins a day, Oct 2026 to Mar 2027)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01WK6tySP5itdLnFmAiBgnZu.txt",
+   "prompt_sha256": "0aacc85ec9ca4db8b47d496f73478cd39e7e26f88ff92a4943c16d99496954f2",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01SQAtuv2qmuXatDoThdUumX",
+   "name": "Nightly Skool inactive-member sweep",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01SQAtuv2qmuXatDoThdUumX.txt",
+   "prompt_sha256": "61aa7034655beb1f479c9948195ae0b5696d662c41ae0cc12ab321953929a592",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01TMtwX7Ns9RhKwMGSnyVeoX",
+   "name": "TDIE — Due-time dispatcher: approved replies, Threads self-replies, FB first comments",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_01TMtwX7Ns9RhKwMGSnyVeoX.txt",
+   "prompt_sha256": "7362738ba5e1b0292903caef160b96297ebd2bc2b3b38902610ea73d1d3db0d8",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01Ln3ocH2tPi9Dnof6sMehPv",
+   "name": "Weekly Pinterest pin factory",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01Ln3ocH2tPi9Dnof6sMehPv.txt",
+   "prompt_sha256": "d902808aa873b1548461817966674dfb7fe3b2f2f23db7948275965cbd442a85",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01LNwbu7q8GoKfPToBvmTbCE",
+   "name": "TDIE — Etsy listing package (Mon/Wed/Fri 5:12pm)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01LNwbu7q8GoKfPToBvmTbCE.txt",
+   "prompt_sha256": "90f4bec88ea82e9021742d1306d01a68ac48c4816d2811212d5861038e5bed9e",
+   "switch_on": false
+  },
+  {
+   "id": "trig_018rEHG3GRikv8VYD69APbDD",
+   "name": "TDIE — Skool member watch (trials, cancelling, Monday lapsed)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_018rEHG3GRikv8VYD69APbDD.txt",
+   "prompt_sha256": "78a04cc70254508690ddc9e0a92bc734d6ee9819cdb2b096d15194aa2c3099a5",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01KzoPk1SyDWAVPB1929QWig",
+   "name": "TDIE — Friday 4:15pm: build and schedule the Skool week (SkoolKit)",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_01KzoPk1SyDWAVPB1929QWig.txt",
+   "prompt_sha256": "710ce4c8092f65ce063178b3a2c72c66970441f2a837766c1b8044bbee7c960a",
+   "switch_on": false
+  },
+  {
+   "id": "trig_013ZVNZE1uuyeTpcs9LPhy65",
+   "name": "FB daily Skool mirror",
+   "model": "claude-opus-5-5",
+   "prompt_file": "prompts/trig_013ZVNZE1uuyeTpcs9LPhy65.txt",
+   "prompt_sha256": "eaccbb64bb92a85d24d106dc77a3fba2bbffec32ca69556d7f5c3889037e824e",
+   "switch_on": false
+  },
+  {
+   "id": "trig_011siYi2AzBsXpGVwG91j7MH",
+   "name": "TDIE — Nightly: top up Threads scheduler queue (25 cap, 6/day rebuild)",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_011siYi2AzBsXpGVwG91j7MH.txt",
+   "prompt_sha256": "8317a519e62b357991d1f5869ab52552655c0df7667740f2606ffc545e0934b3",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01N4bdGfHheA784EBEwYxRvK",
+   "name": "TDIE: Monthly DFY calendar: viral research, build, images, draft upload",
+   "model": "claude-fable-5-1",
+   "prompt_file": "prompts/trig_01N4bdGfHheA784EBEwYxRvK.txt",
+   "prompt_sha256": "8f0997848dc2d9bb94eeb731d4f51e56482a565939e7c834904825167607614c",
+   "switch_on": false
+  },
+  {
+   "id": "trig_01LTeHzmN4VcA9QYURtAjhb9",
+   "name": "TDIE — Friday 11:30am: numbers (all channels), member read, Threads readout (intelligence only)",
+   "model": "claude-fable-5-1",
+   "prompt_file": "prompts/trig_01LTeHzmN4VcA9QYURtAjhb9.txt",
+   "prompt_sha256": "de1dc8d6b3564d25d6f18f3f47e08994221b0ae6e9918cde931d330d558c2410",
+   "switch_on": false
+  },
+  {
+   "id": "trig_014j2sfXvkNSNNeAk5sLc5Qq",
+   "name": "8am Daily Prompt",
+   "model": "claude-sonnet-5-5",
+   "prompt_file": "prompts/trig_014j2sfXvkNSNNeAk5sLc5Qq.txt",
+   "prompt_sha256": "0dd163dfe6fcc32fe888a7cf26ae04cdc425f1df993340a837e3427d6f7b35a2",
+   "switch_on": false
+  }
+ ]
+}

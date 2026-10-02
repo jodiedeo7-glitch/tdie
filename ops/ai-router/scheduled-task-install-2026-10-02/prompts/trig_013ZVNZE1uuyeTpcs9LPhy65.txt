@@ -1,0 +1,121 @@
+Load the tdie-skool-post skill with the Skill tool before doing anything else.
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: if Jodie has posted nothing in Skool today, the launch pool has nothing due today, and the paid promo group already has today's post, write one receipt line and stop.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING (claude/CLAUDE_SOURCE_CHECK_RULE.md, "Task completion reporting"): if every check passed and nothing needs Jodie, the report is one line, "Task completed successfully", with one factual anchor if there is an obvious one. Notes only for something that failed, looks wrong, a number that does not match, or a call made on her behalf. When she is needed: one direct question, the exact text to paste, or exact numbered steps. Never "let me know" and never "open a new chat and tell Claude". This overrides any longer report format below.
+
+TIME ZONE FIRST (Jodie, 26 Sep 2026; kept in v2): Jodie is in Eastern time (America/New_York). Before anything else, run TZ=America/New_York date and use that Eastern date and time for every "today", "tomorrow", day name and date in this task, including today's tab in the shared log. Never take the date from UTC or the machine clock; late-evening runs are already on the next UTC day. Scheduled runs can start several minutes after their listed time, so work from the actual current time, not the listed one. Write every time in reports and logs in Eastern (ET). Stored machine timestamps (post_after, postedAt, heldAt and similar) stay in ISO 8601 with offset and are compared against the real current time.
+
+SOURCES AND PRECEDENCE (v2, 1 Oct 2026): Jodie's latest explicit instruction wins. After that, the current governing sources for this workflow win: the Claude Project docs this task names, ops/canon/canon.json and TDIE_CANON.md, and, for ownership, the repository router at https://github.com/jodiedeo7-glitch/tdie (AGENTS.md, ops/TDIE_AI_ROUTER.md, the workflow router). No single document overrides everything. Dated records, old reports and older paragraphs are evidence to check, not orders to replay. If two current sources truly conflict and the evidence does not settle it, hold only the affected write, finish the rest, and name the conflict in your report. Never invent data, results, prices, budgets, links, approvals or member facts. Never replay an expired offer, a past campaign or a completed task.
+
+ACCOUNT AND BROWSER LOCK (v2, 1 Oct 2026; replaces the 26 Sep wording; this text wins over claude/TDIE_BROWSER_LOCK.md where they differ). One Claude run at a time may use Jodie's browser or write to any publishing account (Skool, Facebook, Threads, Instagram, Pinterest, MailerLite, SkoolKit, Amazon), whether the write goes through the browser or through a plugin.
+1. Make this run's id: "<this task's trigger id>@<ISO time now>" (use the task name if you have no trigger id).
+2. Before opening any browser tab or making any account write: ArtifactData get, url https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C, collection "locks", doc "browser".
+3. If it is missing, status "free", or already carries this run id: set it, using if_version from your read, to {"status":"held","task":"<task name>","trigger_id":"<trigger id>","run_id":"<run id>","heldAt":"<now>","renewedAt":"<now>"}. On a version conflict, read again and start this step over.
+4. If another run holds it, never take it because of age alone. If its renewedAt (or heldAt when there is no renewedAt) is less than 5 hours old, it is busy. If it is older, check whether the holder actually stopped: call list_triggers (Claude_Code_Remote, include_completed true) and find the holder's trigger_id. The holder has stopped only if (a) that trigger's last_run started at or before the lock's heldAt and has a finished_at, so no later run of the same task exists that could be the real holder, and (b) no lock-retry one-off for that task (a send_later reminder whose message names it) fired after heldAt without finishing. Only then take the lock as in step 3 with if_version and add "takeover_of":"<old run id>". If you cannot prove both (no trigger_id, a later run exists, an unfinished retry, tool unavailable), it is busy. A run that continues after a send_later retry keeps the original task's trigger_id in the lock and renews renewedAt.
+5. Busy: call send_later with delay_minutes 30 and the message "Browser lock retry: the browser was busy. Re-run this task from the top now, starting with the lock check." Then end the run with no message to Jodie. After 6 busy retries in a row, send Jodie one notification naming the task that holds the lock, and stop.
+6. On runs longer than 30 minutes, renew: set renewedAt to now with if_version, only while the lock still carries your run id.
+7. When the run ends, including after a failure or an early stop: read the lock again. Only if its run_id is still yours, set {"status":"free","task":"<task name>","run_id":"<run id>","freedAt":"<now>"} with if_version. If it carries another run id, leave it untouched and note that in your report.
+8. If this run needs no browser and makes no account write, skip the lock entirely.
+
+NO DOWNLOADS (Jodie, 26 Sep 2026): never save anything to Jodie's computer unless this task cannot be done without it. "So Jodie has a copy" is not a reason. Move images with the capture method in claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 3c, never with a download button or the Downloads folder.
+
+Daily Skool→Facebook mirror for Jodie's group "The Digital Income Edit - UGC AI DIGITAL MARKETING HUB" (https://www.facebook.com/groups/thedigitalincomeedit). Jodie is admin of both her Skool community and this Facebook group, logged in in her Chrome.
+
+THE JOB: mirror what Jodie is posting in her Skool community TODAY into the Facebook group — multiple posts a day, each tweaked so it gives the FB audience real value AND shows them what's inside the Skool community, pulling them toward the 7-day free trial or a free resource.
+
+FIRST read the project doc claude/TDIE_FB_GROUP_REVIVAL.md and canon.json (products, prices, links, content_calendar_rules). Use ONLY canon links and prices — never invent a product, price, link, or CTA. The Skool membership CTA is the 7-day free trial (https://www.skool.com/thedigitalincomeedit/plans).
+
+⛔ THE LINK RULE (founder correction, 23 Sep 2026 — this is why reach has been suffering): a link in the post body gets the post throttled by Facebook's own algorithm. THE MAIN POST BODY NEVER CONTAINS A RAW URL. Write the CTA in words only — "link's in the comments 👇" — and post the actual URL as the FIRST COMMENT on the post, right after it publishes. This applies to every post this task creates, no exceptions. Full detail in claude/TDIE_FB_GROUP_REVIVAL.md.
+
+Each run:
+LAUNCH POOL FIRST: read `claude/TDIE_LAUNCH_POOL.md` with project_read. On any day, if Part 2 has a Facebook entry marked READY, it is one of today's posts: use its text as written (link in the first comment, never the body), then mark it POSTED with today's date and write the file back with project_write, starting from a fresh project_read. One pool post a day at most. Any Facebook rotation item in Part 3 due this week runs the same way, rewritten fresh from its facts.
+1. Open Jodie's Skool community (https://www.skool.com/thedigitalincomeedit) in her Chrome. Read today's posts — especially the Daily Free Prompt post and any value / training / offer post she made today. Pull out the main 2-3 pieces of value.
+2. Open the Facebook group.
+3. Create 2-3 Facebook posts for today that MIRROR those Skool posts, each rewritten for the (colder) FB audience:
+   - Give the real value from the Skool post (the actual prompt/tip), not just a tease.
+   - Then show what's inside: "this is the kind of thing we do every day inside The Digital Income Edit™ — come try it free for 7 days" (or point to a free resource).
+   - Which offer to feature (spread rules, Decision 117, 25 Sep 2026; the old day rotation is retired): any offer may run any day. Pick from the 7-day free trial of the Skool membership, The Weekend Build Challenge, Pretty & Paid PLR Vault™, The Weekend Ecosystem™ (free preview link), The Operating Prompts™ ($19) and the Find Your Door quiz. At most one selling post a day in this group, the same offer never two days running and not more than twice a week, and nothing repeats inside 14 days: before choosing, check this group's own posts from the last 14 days.
+   - LINK RULE: name the CTA in words in the post body, never as a URL. The URL for that day's offer goes only in the first comment (step 4 below).
+   - META RULE (critical): Skool posts may contain income or earnings claims — STRIP every one of them out for Facebook. No "make $X", no "I earn", no income screenshots, no money-based before/after — on the post OR the page it links to. Sell by what it teaches or contains, or the free trial, never a payout. Income claims get the group and ad account killed.
+   - Warm, casual, emoji-forward Skool voice, short punchy lines.
+   - ARTICLE LINK (founder decision, 24 Sep 2026): if the Skool post you are mirroring carried a link to a /learn article (thedigitalincomeedit.com/learn/...), the Facebook post that mirrors it ends "long version's in the comments 👇" and its first comment is that article link, exactly as TDIE_RESOURCE_MAP.md Part 6 prints it — instead of an offer link. The day's offer still runs on one of the other posts. One article link per post, only where the Skool source had one. All live articles were checked free of earnings claims on 24 Sep 2026; a slug not in Part 6 must not be linked.
+4. Schedule the posts at the fixed mirror slots 11:00 AM, 3:00 PM and 5:00 PM ET today, one post per slot, using only as many slots as you have posts and skipping any slot already in the past. Fixed slots are what let the dispatcher put each link in its first comment on time. Then open Scheduled posts and VERIFY they are there with correct times/content. Never claim a post is scheduled without checking the Scheduled posts page.
+5. For each post that has already published by the time you check (from earlier in today's run, or from a prior slot), confirm the first-comment link is live under it; if it's missing, post it now. For every post you schedule, write one first-comment item for the dispatcher: ArtifactData "get" then "set", url https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C, collection "engagement", doc_id "fbfc-<YYYYMMDD>-<HHMM of the slot>" (skip if it already exists), data {surface: "facebook", kind: "first_comment", status: "approved", approvedAt: <now ISO>, link: "https://www.facebook.com/groups/thedigitalincomeedit", post_first_line: <the post's first line exactly>, post_after: <slot time plus 5 minutes, ISO 8601 with offset>, draft: <the short CTA line, a line break, then the link exactly as it must appear>, created: <now ISO>, source: "fb-mirror"}. These items carry Jodie's standing first-comment rule (Decision 115), not new copy, so they are written as approved. Read the collection back and confirm each landed. While the dispatcher is paused, say in the recap which link comments are waiting on it.
+6. If Facebook blocks scheduling in a background run (an approval you can't give unattended), do NOT force it — send Jodie the finished posts ready to paste, with intended times, and say which ones need her tap.
+7. Message Jodie a short recap: which Skool posts you mirrored today, which posts carry an article link and which article, what you scheduled vs. what needs her, and confirmation that every published post's link-comment is live (or which ones still need it).
+
+Never say a post is scheduled unless you verified it on the Scheduled posts page. Never say a link-comment is live unless you checked the post itself. Label anything unverified as unverified.
+
+PAID PROMO GROUP (daily, runs after the Skool mirror post is done)
+Group: https://www.facebook.com/share/g/1Jhou1fewh/
+This is someone else's group. I pay monthly to promote in it. The audience is cold, so treat every post as a first introduction to The Digital Income Edit™. Post exactly ONE promo post per day here.
+
+Rotation (by day of year mod 3, so the three types cycle evenly):
+0 = 7-day free trial of the TDIE Skool membership (Membership Standard is the entry offer for cold traffic; Premium can be named as the step up at $35/mo or $297/yr)
+1 = Free download(s) / lead magnets
+2 = One of my own paid products
+
+Rules for what can be promoted:
+- Pull every offer, name, price and link ONLY from canon.json products[] and the Resource Map. If it is not a row in products[], it does not exist. Never invent prices, counts, features or links.
+- Use the exact price and the full trademark name on first reference.
+- Premium is always quoted as $35/mo or $297/yr.
+- Do not promote The Tommy Kate Edit™ as a standalone offer (it is included in both tiers).
+- My own products only. No affiliate products in this group, and never Upside.
+- Never use "Free Community," "free tier," "VIP," or NurseMadeDigital.
+- Do not repeat the same product two rotations in a row; pick the next eligible row of that type.
+
+Before posting:
+- Check the group's pinned post and rules. If promo must go in a specific promo thread or on a specific day, follow that instead of making a standalone post, and log that you did.
+- Check the group for my own posts from the last 24 hours. If one exists, skip today and log it.
+
+Writing the post:
+- Read claude/TDIE_SIX_M_FRAMEWORK.md and run its pre-ship check on the post.
+- Write in my own voice (snarky-ish girls'-girl owner), NOT Tommy Kate voice.
+- This is Meta: NO income or earnings claims of any kind, no dollar results, no "make money fast," no timelines for results. Sell the machine, not a number.
+- Hook line, then 2 to 4 short lines on what they get, then one clear call to action that points to the first comment. Short lines, white space, properly spaced for reading.
+- NEVER put a link in the Facebook post itself. Not in the body, not anywhere in the post.
+- No em dashes anywhere. No faith content.
+- Always attach an image. Use the product's canon image if one exists; otherwise a relevant TDIE graphic. Never post text only.
+
+The link:
+- The link goes ONLY in the first comment, posted 5 minutes after the post goes live.
+- The comment is a short call-to-action line followed by the link, so Facebook shows the link preview card in the comment.
+
+After posting:
+- Re-open the group and confirm the post is live with its image and NO link in it, and that the first comment is live 5 minutes later with the working link. Do not log success until you have seen both live.
+- Log a line in the run log: date, rotation type, product row, post URL. If the post or comment fails or is blocked, log the reason and move on. Retry once at most.
+
+PAID PROMO GROUP UPDATES (added 25 Sep 2026; these override the matching lines in the PAID PROMO GROUP section above)
+- Rotation type 2 is now: one of my own LOW-TICKET paid products, priced $9 or under in canon.json products[]. A cold audience gets a small first yes, never a big ask.
+- Before writing, read the latest "PAID PROMO GROUP WINNER" line in the run log (written by the Friday numbers task). If one exists, lean today's post toward that winning angle or product type, while still following today's rotation.
+- TRACKING: add this tag to the end of every link in this group's first comments so sales from this group can be counted: utm_source=facebook&utm_medium=paid_group&utm_campaign=fb_promo_group (start it with ? if the link has no ? yet, otherwise with &). Open the tagged link once to confirm it still loads the right page before posting the comment. If the tag breaks the page, post the plain link and log that.
+
+═══ HARD VOICE RULE, added 23 September 2026 (brand-wide, read before writing a single word) ═══
+No em dashes. Ever. Anywhere in anything this task writes — use a regular keyboard hyphen, a comma, a period, or restructure the sentence instead. This used to live only in the Threads rules; it is now a brand-wide hard rule across every surface: Skool, Facebook, Etsy, Pinterest, email, DMs, everywhere.
+Also avoid every other "obvious AI" tell: "game-changer," "utilize," "delve," "journey," "elevate," "unlock your potential," "in today's fast-paced world," "let's dive in," "it's important to note," "in conclusion," "whether you're X or Y," empty rhetorical-question transitions, and the "It's not just X, it's Y" construction.
+VOICE (Jodie, corrected 23 Sep 2026, applied here 25 Sep 2026): before writing anything, open `claude/TDIE_SKOOL_POSTING_SYSTEM.md` with project_read and read its written example posts (section 4). Match their tone directly: Jodie's own voice, snarky-ish girls' girl owner, warm, casual, emoji-forward, short punchy lines, lots of white space. Never Tommy Kate's voice: `claude/TDIE_TOMMY_KATE_VOICE.md` governs ONLY the Monthly DFY Content Calendar and Instagram, never Skool, Facebook, DMs, email or the site.
+Read the piece back before shipping it and ask: would a real woman actually type this, or does it read like it came out of a prompt.
+
+CAPTION AND COPY STANDARD (v2, 1 Oct 2026). Drafting aids, applied after the voice rule above:
+- If ChatGPT's sourced caption-pattern bank exists in the research folder (Drive folder 1wVbaR6PHcG_HYpHD2cnGyS8dyHjadRUV, file caption-bank-YYYY-MM.md), read the patterns that fit this surface and use them as references. Record the pattern ID and the supporting source example you leaned on in your internal run receipt or QA notes only. Never print a pattern ID, research row, source handle or "pattern" label in a caption, post, reply, email, DM or member lesson.
+- Concrete checks for every piece: the first line is specific (a detail, a number she really has, a confession, a clear take) with no warm-up sentence; one idea; at least one concrete detail a real person would notice; one clear ask, or none where the format calls for none.
+- Word counts, first-line lengths and pattern quotas are drafting targets, not pass/fail gates, unless this task's own governing source sets them as rules (for example Threads' 500-character limit or the Pinterest copy limits in canon).
+- Task-specific approved copy is used exactly as written and is never rewritten to fit a pattern (for example the Daily Prompt closing line and its two permitted hyperlinks, the Pink Finds forward line and footer, approved launch copy).
+
+═══ LINK RULES, updated by Jodie 25 September 2026 (Decision 115, revised). Read before writing or scheduling anything. ═══
+INSTAGRAM: NO links anywhere on Instagram, ever. Not in a caption, not in a comment, not in a first comment, not in a reply. Links do not work on Instagram. An Instagram call to action points to the link in bio ("it's in my bio", "link in bio") and says in words what they will find there. Instagram Story link stickers are the one exception and stay as they are.
+FACEBOOK (groups, pages, profiles): no link in the main post. The post names the call to action in words and points to the comments ("link's in the comments 👇"). The link goes only in the first comment, 5 minutes after the post goes live, on its own line after a short call-to-action line. Never report a Facebook post as done until that comment has been seen live.
+Skool links are NEVER a raw web address: in Skool posts, comments and lessons, email, the site and PDFs, a link is always hyperlinked on the call-to-action words.
+This overrides any older instruction in this task, or in any document it reads, that puts a link in an Instagram caption or comment, or says a link should appear in a Facebook post body.
+
+Account warnings, unknown lock ownership and writes whose outcome is uncertain still stop the affected write: reconcile against the live account before any retry, never post a second copy blind.
+
+RUN RECEIPT (v2). In the shared log, container {"kind":"project","id":"322aab5d-4c2b-4ab8-ac26-5b02f0fb85a5"}, load the Claude_Docs guide topics "topic.instructions" and "topic.tabs" first. There is ONE tab per day under the "Runs" tab (file id 8e8e734f-fb67), named exactly "<Mon D> · Runs". Append a section headed "## <H:MM AM/PM ET> · FB daily Skool mirror" to today's tab (create today's tab once, nested under Runs with the next order value, only if it does not exist). Under your report add one receipt line: run start and end ET and minutes taken | lock run id | packet file IDs and sha256 if any | what you intended | what you observed live (IDs, URLs) | writes that failed or whose outcome is unknown | anything Jodie must do | next action | for internal QA only, any caption-pattern IDs used. The minutes figure is how usage is being measured; never estimate it. If the doc cannot be edited, say so plainly in your report.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.

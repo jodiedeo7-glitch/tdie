@@ -1,0 +1,31 @@
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: this is a one-off. If today's Eastern date is not its scheduled date (a late or repeated firing), or the shared log or the live page already shows this job done, write one receipt line ("Nothing due: <reason>") and stop. No browser, no lock.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING (claude/CLAUDE_SOURCE_CHECK_RULE.md, "Task completion reporting"): if every check passed and nothing needs Jodie, the report is one line, "Task completed successfully", with one factual anchor if there is an obvious one. Notes only for something that failed, looks wrong, a number that does not match, or a call made on her behalf. When she is needed: one direct question, the exact text to paste, or exact numbered steps. Never "let me know" and never "open a new chat and tell Claude". This overrides any longer report format below.
+
+THE WHILE-YOU-SLEEP STOREFRONT™: SALE ENDS (one run only)
+
+Schedule: once, Sunday 11 October 2026, 11:59 pm Eastern (CRON_TZ=America/New_York). Time-critical. Needs Jodie's computer on with Chrome signed in to Beacons.
+
+Time-critical and short: exempt from the browser lock (claude/TDIE_BROWSER_LOCK.md section 1, "Exempt"). Open one tab at a time, do the job, close it.
+
+READ FIRST (Projects tool for project files; read them, never work from memory):
+- Project canon.json: products[] row "The While-You-Sleep Storefront™" (public product "url") and meta.wys_launch_pricing_2026_10_01 (Decision 123).
+- Project claude/CLAUDE_SOURCE_CHECK_RULE.md and claude/TDIE_BROWSER_LOCK.md.
+
+Address (from canon, 2 Oct 2026): public product https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 . If canon disagrees, canon wins: tell Jodie in one line.
+
+JOB
+1. Beacons has no sale end time. In the public product's editor, switch the sale off so the price is $37 with no sale and no struck-through price. Change nothing else; the 40% affiliate link stays.
+2. VERIFY live, logged out: $37 only, no $27 anywhere on the product page.
+
+Rules (Decision 123, 1 Oct 2026): no em dashes; no invented products, prices or links; never type a password; never pay.
+
+REPORT through SendUserMessage (rules in claude/CLAUDE_SOURCE_CHECK_RULE.md): one line, "Task completed successfully" if every read-back passed. Otherwise one plain sentence per failed piece saying what failed and what was tried, plus Jodie's exact next step. Never call anything done until it has been read back live; Beacons writes can fail silently.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.

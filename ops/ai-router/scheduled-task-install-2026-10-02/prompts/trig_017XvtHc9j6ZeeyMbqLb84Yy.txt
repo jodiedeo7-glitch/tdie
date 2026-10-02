@@ -1,0 +1,49 @@
+Load the tdie-skool-post skill with the Skill tool before doing anything else.
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: this is a one-off. If today's Eastern date is not its scheduled date (a late or repeated firing), or the shared log or the live page already shows this job done, write one receipt line ("Nothing due: <reason>") and stop. No browser, no lock.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING (claude/CLAUDE_SOURCE_CHECK_RULE.md, "Task completion reporting"): if every check passed and nothing needs Jodie, the report is one line, "Task completed successfully", with one factual anchor if there is an obvious one. Notes only for something that failed, looks wrong, a number that does not match, or a call made on her behalf. When she is needed: one direct question, the exact text to paste, or exact numbered steps. Never "let me know" and never "open a new chat and tell Claude". This overrides any longer report format below.
+
+THE WHILE-YOU-SLEEP STOREFRONT™: PUBLISH THE AFFILIATE LAUNCH KIT (one run only)
+
+Schedule: once, Thursday 8 October 2026, 7:00 pm Eastern (CRON_TZ=America/New_York). Needs Jodie's computer on with Chrome signed in to Skool.
+
+BROWSER LOCK FIRST (full rule in project doc claude/TDIE_BROWSER_LOCK.md). Before opening any browser tab: ArtifactData get collection "locks", doc "browser" on https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C. If its status is "held", its task is a different task, and its heldAt is less than 5 hours ago, do not open a browser: call send_later with delay_minutes 30 and the message "Browser lock retry: the browser was busy. Re-run this task from the top now, starting with the lock check.", then end with no message to Jodie (after 6 retries in a row, send Jodie one notification naming the task holding the lock, and stop). Otherwise set locks/browser to {"status":"held","task":"Storefront affiliate kit publish","heldAt":"<ISO now>"} with if_version from your read. Always release it at the end, even after a failure: {"status":"free","task":"Storefront affiliate kit publish","freedAt":"<ISO now>"}.
+
+READ FIRST (Projects tool for project files; clone https://github.com/jodiedeo7-glitch/tdie for repo files; read them, never work from memory):
+- Project canon.json: products[] row "The While-You-Sleep Storefront™" (public product "url", "member_product", "premium_code", both vault lesson addresses, "affiliate_launch_kit_lessons") and meta.wys_launch_pricing_2026_10_01 (Decision 123).
+- Project TDIE_CANON.md, the While-You-Sleep Storefront™ paragraph.
+- Repo ops/cloud-output/storefront-product/COPY.md (Dates table, every piece word for word, Beacons product text).
+- Project claude/CLAUDE_SOURCE_CHECK_RULE.md and claude/TDIE_BROWSER_LOCK.md.
+- Project claude/TDIE_SKOOL_POSTING_SYSTEM.md section 4 (the live approved posts set the voice), and repo ops/cloud-output/storefront-product/AFFILIATE_LAUNCH_KIT.md.
+
+Addresses (from canon, 2 Oct 2026): public product https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 ; member product (hidden, $17) https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f ; Value Vault lesson https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87 ; Premium Vault lesson https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=f35c395b0f3d4e0abfd42f064262e012 ; Affiliate Launch Kit lessons https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe and https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a ; plans page https://www.skool.com/thedigitalincomeedit/plans ; sales page https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront . If canon disagrees with any address here, canon wins: tell Jodie in one line.
+
+JOB
+1. To publish a Skool lesson: from a skool.com tab, PUT https://api2.skool.com/courses/{id}/state?state=published with credentials and no body, then read the lesson back from the classroom page data (state 2 = published). Do not change lesson text. Publish the Affiliate Launch Kit lesson in The Value Vault (id 42edda1f87cb4a379b7de1ed9d748cfe) and in The Premium Vault (id 681d8f3b3bda46f2864c4cc81108883a). Their Skool title is "While-You-Sleep Storefront™ Affiliate Launch Kit" (Skool caps titles at 50 characters; the full name opens the lesson body). Read back: state 2, body complete, five story images attached.
+2. Post this short Skool post now in the Announcements category, "Send email to all members" OFF, title and body exactly, the link hyperlinked on the words "grab your launch kit" pointing to https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe :
+
+Title: Presale crew, your launch kit is here 💗
+Body:
+If you grabbed The While-You-Sleep Storefront™ this week, thank you 🥹
+
+Your full kit lands at the same download link tomorrow at 9:00 am Eastern.
+
+And here's the fun part: launch weekend is $27 (then $37), and you can share it with your own Beacons affiliate link and earn 40% on every sale.
+
+Every caption, story, email and pin is already written for you 👉 grab your launch kit
+
+Your link works from tomorrow at 9:00 am Eastern ✨
+
+3. Read the post back live in the feed: title, body, link on its words, category.
+
+Rules (Decision 123, 1 Oct 2026): no em dashes; no invented products, prices or links; no income or earnings claims on Facebook or Instagram; the 40% rate never on Facebook, Instagram or the sales page; Skool links always hyperlinked on the call-to-action words, never a raw address; no links in Instagram captions; Facebook links only in the first comment, 5 minutes after the post; no pin may point to thedigitalincomeedit.com or any subdomain, including links.thedigitalincomeedit.com; code TDIEPREMIUM only ever appears in The Premium Vault lesson; never type a password; never pay.
+
+REPORT through SendUserMessage (rules in claude/CLAUDE_SOURCE_CHECK_RULE.md): one line, "Task completed successfully" if every read-back passed. Otherwise one plain sentence per failed piece saying what failed and what was tried, plus Jodie's exact next step. Never call anything done until it has been read back live; Skool and Beacons writes can fail silently.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.

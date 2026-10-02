@@ -1,0 +1,41 @@
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: this is a one-off. If today's Eastern date is not its scheduled date (a late or repeated firing), or the shared log or the live page already shows this job done, write one receipt line ("Nothing due: <reason>") and stop. No browser, no lock.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING (claude/CLAUDE_SOURCE_CHECK_RULE.md, "Task completion reporting"): if every check passed and nothing needs Jodie, the report is one line, "Task completed successfully", with one factual anchor if there is an obvious one. Notes only for something that failed, looks wrong, a number that does not match, or a call made on her behalf. When she is needed: one direct question, the exact text to paste, or exact numbered steps. Never "let me know" and never "open a new chat and tell Claude". This overrides any longer report format below.
+
+THE WHILE-YOU-SLEEP STOREFRONT™: LAUNCH WRAP-UP (one run only)
+
+Schedule: once, Monday 12 October 2026, 8:00 am Eastern (CRON_TZ=America/New_York). Needs Jodie's computer on with Chrome signed in to Beacons and Skool.
+
+BROWSER LOCK FIRST (full rule in project doc claude/TDIE_BROWSER_LOCK.md). Before opening any browser tab: ArtifactData get collection "locks", doc "browser" on https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C. If its status is "held", its task is a different task, and its heldAt is less than 5 hours ago, do not open a browser: call send_later with delay_minutes 30 and the message "Browser lock retry: the browser was busy. Re-run this task from the top now, starting with the lock check.", then end with no message to Jodie (after 6 retries in a row, send Jodie one notification naming the task holding the lock, and stop). Otherwise set locks/browser to {"status":"held","task":"Storefront launch wrap-up","heldAt":"<ISO now>"} with if_version from your read. Always release it at the end, even after a failure: {"status":"free","task":"Storefront launch wrap-up","freedAt":"<ISO now>"}.
+
+READ FIRST (Projects tool for project files; clone https://github.com/jodiedeo7-glitch/tdie for repo files; read them, never work from memory):
+- Project canon.json: products[] row "The While-You-Sleep Storefront™" (public product "url", "member_product", "premium_code", both vault lesson addresses, "affiliate_launch_kit_lessons") and meta.wys_launch_pricing_2026_10_01 (Decision 123).
+- Project TDIE_CANON.md, the While-You-Sleep Storefront™ paragraph.
+- Project claude/TDIE_SKOOL_POSTING_SYSTEM.md section 4 (Skool voice).
+- Project claude/CLAUDE_SOURCE_CHECK_RULE.md and claude/TDIE_BROWSER_LOCK.md.
+
+Addresses (from canon, 2 Oct 2026): public product https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 ; member product (hidden, $17) https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f ; Value Vault lesson https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87 ; Premium Vault lesson https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=f35c395b0f3d4e0abfd42f064262e012 ; Affiliate Launch Kit lessons https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe and https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a ; sales page https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront . If canon disagrees with any address here, canon wins: tell Jodie in one line.
+
+JOB
+1. Public product: confirm $37, no sale, logged out. If it still shows $27, set it to $37 with no sale.
+2. Member product: hide it and switch it off so it cannot be bought. Switch off every discount code on both products. No discounts of any kind.
+3. Skool: rewrite both member-price vault lessons (Value Vault id c43ba8257c3c474ba386ba070bb97f87, Premium Vault id f35c395b0f3d4e0abfd42f064262e012). Title in both: "The While-You-Sleep Storefront™". Body in both, exactly, as separate paragraphs:
+"Your Amazon links, turned into Pinterest pins, with your own Claude or ChatGPT doing the heavy lifting."
+"The While-You-Sleep Storefront™ is $37."
+"👉 Get The While-You-Sleep Storefront™ for $37" with the words "Get The While-You-Sleep Storefront™ for $37" linked to https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7
+"Want to share it? Your affiliate launch kit has every caption, story, email and pin ready to go 💗" with the words "affiliate launch kit" linked to the Affiliate Launch Kit lesson in the same vault (Value Vault: https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe ; Premium Vault: https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a).
+No member price, no code anywhere. Use PUT https://api2.skool.com/courses/{id} with {title, desc:'[v2]'+JSON nodes (paragraph nodes; links as text marks of type link with href and target _blank), group_id:'84529be4ccf6404fbd5b7235626ae55d'} and read each back from the server (Skool drops writes silently).
+4. Sales page (?cb=<timestamp>): shows $37 only, no countdown, no struck-through price, no members-only notice.
+5. Update canon in both copies (project canon.json and TDIE_CANON.md, and repo ops/canon/canon.json and ops/canon/TDIE_CANON.md): launch ended Mon 12 Oct 2026; $37 for everyone; member product hidden and off; every code off; vault lessons now link the $37 public product. Read both back. Push to main.
+
+Rules (Decision 123, 1 Oct 2026): no em dashes; no invented products, prices or links; no income or earnings claims on Facebook or Instagram; the 40% rate never on Facebook, Instagram or the sales page; Skool links always hyperlinked on the call-to-action words, never a raw address; never type a password; never pay.
+
+REPORT through SendUserMessage (rules in claude/CLAUDE_SOURCE_CHECK_RULE.md): one line, "Task completed successfully" if every read-back passed. Otherwise one plain sentence per failed piece saying what failed and what was tried, plus Jodie's exact next step. Never call anything done until it has been read back live; Skool and Beacons writes can fail silently.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.

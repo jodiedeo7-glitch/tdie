@@ -1,0 +1,53 @@
+Load the tdie-image-prompt skill with the Skill tool before doing anything else.
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: if the progress line shows all 31 October days fully updated, write one receipt line and stop. No browser, no lock.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING (claude/CLAUDE_SOURCE_CHECK_RULE.md, "Task completion reporting"): if every check passed and nothing needs Jodie, the report is one line, "Task completed successfully", with one factual anchor if there is an obvious one. Notes only for something that failed, looks wrong, a number that does not match, or a call made on her behalf. When she is needed: one direct question, the exact text to paste, or exact numbered steps. Never "let me know" and never "open a new chat and tell Claude". This overrides any longer report format below.
+
+BROWSER LOCK FIRST (Jodie, 26 Sep 2026; full rule in project doc claude/TDIE_BROWSER_LOCK.md). Before opening any browser tab: ArtifactData get collection "locks", doc "browser" on https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C. If its status is "held", its task is a different task, and its heldAt is less than 5 hours ago, do not open a browser: call send_later with delay_minutes 30 and the message "Browser lock retry: the browser was busy. Re-run this task from the top now, starting with the lock check.", then end the run with no message to Jodie (after 6 retries in a row, send Jodie one notification naming the task that holds the lock, and stop). Otherwise set locks/browser to {"status":"held","task":"<this task's name>","heldAt":"<ISO time now>"} using if_version from your read (on a version conflict, read again and repeat this check). When the run ends, including after a failure or an early stop, set locks/browser to {"status":"free","task":"<this task's name>","freedAt":"<ISO time now>"}. If this run turns out to need no browser at all, skip the lock.
+NO DOWNLOADS (Jodie, 26 Sep 2026): never save anything to Jodie's computer unless this task cannot be done without it. "So Jodie has a copy" is not a reason. Move images with the capture method in claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 3c, never with a download button or the Downloads folder.
+
+October 2026 Premium DFY Content Calendar (SOP 15) for The Digital Income Edit™: load TWO corrected day lessons into Skool per run. This is the DFY Content Calendar, not the Daily Prompts (SOP 16).
+
+⛔ NEVER GENERATE ANY IMAGE IN THIS TASK. Not on Higgsfield, not in Gemini, not anywhere. Jodie is running the corrected prompts herself this time to save her Claude usage (her instruction, 26 September 2026). This task only finds the images she made and puts them in the lessons. Keep the run short: two days, then stop.
+
+READ FIRST with the Projects tool (project_read), every run, and do not work from memory:
+1. claude/dfy-calendar-october-2026-REBUILT.md: the 26 September correction section and the "CORRECTED UPLOAD PROGRESS" lines at the bottom. Those lines say which days are done.
+2. claude/dfy-calendar-october-2026-CORRECTED-PROMPTS.md: every image id (d01-reel, d01-s1, d01-s2 and so on), its status (RERUN, PERSONA or KEEP) and its exact prompt.
+3. The week file for the two days you are doing: claude/dfy-calendar-october-2026-week-1.md (days 1 to 7), week-2.md (8 to 14), week-3.md (15 to 21), week-4.md (22 to 28), overflow.md (29 to 31). These were corrected on 26 September and are the lesson text to load.
+4. SOP-16-daily-prompts.md, the Skool constraints section (images must be registered as public files or they show broken).
+5. claude/TDIE_DFY_LESSON_LAYOUT.md (the copy-box and heading layout every day lesson must end up in, and the code that applies it).
+
+WHICH TWO DAYS: the two lowest day numbers not listed as fully updated in the progress lines. A day that is "text updated but still waiting on an image" is re-checked every run for its missing image before moving on, but it does not count toward the two new days.
+
+FOR EACH OF THE TWO DAYS:
+a. Open the October module in Skool in Claude in Chrome: https://www.skool.com/thedigitalincomeedit/classroom/1dbf16be (load the browser tools with ToolSearch in one call; fresh tab; close your tabs at the end). Find that day's existing Draft lesson (title starts "Day N - Reel"). Never create a second copy of a lesson and never create a new module.
+b. Replace the lesson text with that day's section from the corrected week file, copied exactly, not rewritten. The corrected image prompts and the story slide sticker wording ("because words and a poll / question / slider / link sticker will be placed there in the app") must be in the lesson exactly as in the file.
+b2. LAYOUT (Jodie, 26 Sep 2026): once the text is in, convert the lesson to the copy-box layout with the code in claude/TDIE_DFY_LESSON_LAYOUT.md: every copy-and-paste block in its own inset box under a bold Heading 2 (Caption & Hashtags, On-Screen Text, How to Make the Reel, Image Prompt, Reel Prompt, ChatGPT Rewrite Prompt, Threads Posts, Story Slides, Notes). Run layoutLesson on the lesson id; it must return "done" or "already". Never leave a day lesson in the old plain layout.
+c. Find Jodie's new images for that day's three ids (Reel still, story slide one, story slide two). Look in her Higgsfield history first (Seedream 4.5 and Nano Banana Pro generations), then her recent Gemini chats, and match each image to its id by the prompt text it was made from (the prompt's opening sentences). Use the newest match. KEEP ids keep the image already in the lesson.
+d. Look at every image before using it: the one candy-pink object is the one the corrected prompt names (her glitter tumbler with the lavender straw in every frame with her, the mug only ever printed Player Two? in black), no plain pink mug, no stray text or logos, hands right, and on story slides the drawn sticker is fine and wanted. If an image is wrong, do not use it; say which id and what is wrong.
+e. Upload each new image as a public Skool file and swap it into the lesson in place of the old one, in the same spot. Leave the lesson as Draft. Never publish anything, never unpublish the module or the BONUS lesson.
+f. If an image for an id is not found yet, update the text anyway, leave the old image in that spot, and record the day as "text updated but still waiting on an image" with the id.
+g. Re-read the lesson from the live Skool page and confirm the text, the images, and the headings and copy boxes are there before counting it. Never report a count you did not read off the live page. Skool writes fail silently.
+
+THEN update the two progress lines at the bottom of claude/dfy-calendar-october-2026-REBUILT.md (project_read it again, change only those two lines, project_write the full file back to the same path).
+
+No em dashes anywhere. No faith content. No income claims.
+
+REPORT in plain sentences: which two days were loaded, which images went in (by id), which ids are still waiting on Jodie's image, anything wrong with an image she made and exactly what, and what day is next. If Chrome or Skool cannot be reached, say so and stop.
+
+SHARED LOG: append the report to the shared automation doc, container {"kind":"project","id":"322aab5d-4c2b-4ab8-ac26-5b02f0fb85a5"}. Load the Claude_Docs guide topics "topic.instructions" and "topic.tabs" first. Under the "Runs" tab (file id 8e8e734f-fb67) find today's tab named "<Mon D> · Runs" and append a section headed "## <H:MM AM/PM ET> · October calendar upload". If today's tab doesn't exist, create it once under Runs with the next order value, then append.
+
+When all 31 days are listed as fully updated, write "October calendar corrected upload complete" in the shared log and stop.
+
+═══ LINK RULES, updated by Jodie 25 September 2026 (Decision 115, revised). ═══
+INSTAGRAM: NO links anywhere on Instagram, ever. Not in a caption, not in a comment, not in a first comment, not in a reply. An Instagram call to action points to the link in bio and says in words what they will find there. Instagram Story link stickers are the one exception and stay as they are.
+FACEBOOK: no link in the main post; the link goes only in the first comment, 5 minutes after the post goes live, on its own line after a short call-to-action line.
+Skool links are NEVER a raw web address: in Skool posts, comments and lessons, a link is always hyperlinked on the call-to-action words.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.

@@ -1,0 +1,213 @@
+
+AUDIT RULES (Jodie, 2 Oct 2026; apply before everything below):
+SHORT-CIRCUIT: if the shared log already shows today's Friday numbers run completed (a repeated firing), write one receipt line and stop. Otherwise this is a data run: report it in full.
+CONNECTORS FIRST: Metricool connector first for Pinterest, Instagram and Threads scheduling and analytics (load its tools with ToolSearch). If Metricool does not show that account connected, or a call fails, use the browser steps below for that part only. MailerLite connector (mcp__MailerLite__ tools) for every MailerLite read, draft, test send and schedule. Open MailerLite in the browser only for a step the connector cannot do. Shopify and Stripe connectors for any sales numbers they hold, before any dashboard in the browser. Vercel connector for website traffic numbers, before the Vercel dashboard in the browser. Google Drive connector (mcp__Google_Drive__ tools) for every handoff file read or write. Never open Drive in the browser for that. Browser only for Skool and anything with no connector.
+SPEED: if this run needs a browser, load every browser tool it will use in ONE ToolSearch call before the first browser step (Claude in Chrome: "select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__find,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__file_upload,mcp__claude-in-chrome__tabs_close_mcp"; built-in browser: query "mcp__remote-devices__Claude_Browser__" with max_results 64). Batch predictable clicks, typing and reads into one browser_batch call. Read only the files this prompt names.
+REPORTING: this task hands Jodie data, so report the data in full. The wrapper around it stays short: if every check passed, no recap of steps. If something needs her, lead with that one thing as a direct question, the exact text to paste, or exact numbered steps.
+
+TIME ZONE FIRST (Jodie, 26 Sep 2026; kept in v2): Jodie is in Eastern time (America/New_York). Before anything else, run TZ=America/New_York date and use that Eastern date and time for every "today", "tomorrow", day name and date in this task, including today's tab in the shared log. Never take the date from UTC or the machine clock; late-evening runs are already on the next UTC day. Scheduled runs can start several minutes after their listed time, so work from the actual current time, not the listed one. Write every time in reports and logs in Eastern (ET). Stored machine timestamps (post_after, postedAt, heldAt and similar) stay in ISO 8601 with offset and are compared against the real current time.
+
+SOURCES AND PRECEDENCE (v2, 1 Oct 2026): Jodie's latest explicit instruction wins. After that, the current governing sources for this workflow win: the Claude Project docs this task names, ops/canon/canon.json and TDIE_CANON.md, and, for ownership, the repository router at https://github.com/jodiedeo7-glitch/tdie (AGENTS.md, ops/TDIE_AI_ROUTER.md, the workflow router). No single document overrides everything. Dated records, old reports and older paragraphs are evidence to check, not orders to replay. If two current sources truly conflict and the evidence does not settle it, hold only the affected write, finish the rest, and name the conflict in your report. Never invent data, results, prices, budgets, links, approvals or member facts. Never replay an expired offer, a past campaign or a completed task.
+
+ACCOUNT AND BROWSER LOCK (v2, 1 Oct 2026; replaces the 26 Sep wording; this text wins over claude/TDIE_BROWSER_LOCK.md where they differ). One Claude run at a time may use Jodie's browser or write to any publishing account (Skool, Facebook, Threads, Instagram, Pinterest, MailerLite, SkoolKit, Amazon), whether the write goes through the browser or through a plugin.
+1. Make this run's id: "<this task's trigger id>@<ISO time now>" (use the task name if you have no trigger id).
+2. Before opening any browser tab or making any account write: ArtifactData get, url https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C, collection "locks", doc "browser".
+3. If it is missing, status "free", or already carries this run id: set it, using if_version from your read, to {"status":"held","task":"<task name>","trigger_id":"<trigger id>","run_id":"<run id>","heldAt":"<now>","renewedAt":"<now>"}. On a version conflict, read again and start this step over.
+4. If another run holds it, never take it because of age alone. If its renewedAt (or heldAt when there is no renewedAt) is less than 5 hours old, it is busy. If it is older, check whether the holder actually stopped: call list_triggers (Claude_Code_Remote, include_completed true) and find the holder's trigger_id. The holder has stopped only if (a) that trigger's last_run started at or before the lock's heldAt and has a finished_at, so no later run of the same task exists that could be the real holder, and (b) no lock-retry one-off for that task (a send_later reminder whose message names it) fired after heldAt without finishing. Only then take the lock as in step 3 with if_version and add "takeover_of":"<old run id>". If you cannot prove both (no trigger_id, a later run exists, an unfinished retry, tool unavailable), it is busy. A run that continues after a send_later retry keeps the original task's trigger_id in the lock and renews renewedAt.
+5. Busy: call send_later with delay_minutes 30 and the message "Browser lock retry: the browser was busy. Re-run this task from the top now, starting with the lock check." Then end the run with no message to Jodie. After 6 busy retries in a row, send Jodie one notification naming the task that holds the lock, and stop.
+6. On runs longer than 30 minutes, renew: set renewedAt to now with if_version, only while the lock still carries your run id.
+7. When the run ends, including after a failure or an early stop: read the lock again. Only if its run_id is still yours, set {"status":"free","task":"<task name>","run_id":"<run id>","freedAt":"<now>"} with if_version. If it carries another run id, leave it untouched and note that in your report.
+8. If this run needs no browser and makes no account write, skip the lock entirely.
+
+NO DOWNLOADS (Jodie, 26 Sep 2026): never save anything to Jodie's computer unless this task cannot be done without it. "So Jodie has a copy" is not a reason. Move images with the capture method in claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 3c, never with a download button or the Downloads folder.
+
+Friday operations run for Jodie's business, The Digital Income Edit™. This task is INTELLIGENCE ONLY. It reads and measures; ChatGPT's 12:30 PM analysis proposes (v2). It does NOT schedule the Skool week — a separate task, "Weekly SkoolKit load", does that at 4:15 PM ET today and builds its week from the file you write in Part 2. Never schedule Skool posts here.
+
+Use Claude in Chrome — Jodie is logged into Skool, Beacons, MailerLite, Vercel, Etsy, Pinterest, Facebook, and Instagram/Threads. Load the browser tools with ToolSearch in one call before starting.
+
+Read from the project with project_read before writing anything: canon.json for every offer, exact price and link; TDIE_CANON.md for the rules; claude/TDIE_THREADS_SYSTEM.md and claude/TDIE_JODIE_THREADS_VOICE.md for everything Threads and Instagram (Section 5's Instagram engagement trial and the account correction at the top of that file — @the.faceless.homestead.mama's Threads profile is dead, its Instagram profile is not, don't confuse the two); TDIE_RESOURCE_MAP.md Part 6, the article index, for Part 2 below.
+
+ORDER (v2): do Part 1, then Part 4 (the export packet, target 12:15 PM ET), then Parts 2, 2b, 3 and 5.
+
+═══ PART 1 — THE NUMBERS, EVERY CHANNEL ═══
+
+Skool. Visit each and read the "Active N" count. Wait at least 8 seconds after each navigation; the list loads slowly.
+- https://www.skool.com/thedigitalincomeedit/-/members?t=active&tiers=standard
+- https://www.skool.com/thedigitalincomeedit/-/members?t=active&tiers=premium
+- https://www.skool.com/thedigitalincomeedit/-/members?t=active&tiers=vip
+- the same URL with ?t=cancelling and with ?t=churned
+
+On the premium and vip pages collect every per-member price shown ($27/month, $5/month, $55/year and so on) and count how many sit at each. Members are on legacy prices — never assume $9 and $27. Compute MRR from the actual prices, yearly divided by 12.
+
+Reference reading, 21 September 2026: Standard 1,213 · total 1,234. Standard is $9/month today, but the overwhelming majority of members inside it were grandfathered from the retired free tier and pay nothing — so do not count Standard members as paying unless a price shows against them. VIP is a legacy tier name (now Premium) that still has paying members under the old URL.
+
+Beacons. Open her Beacons dashboard and read sales for the last 7 days — product, count, revenue. Set the date range if the view needs one. Also read the bio-link click count for the week if the dashboard shows it.
+
+MailerLite. Read: total subscribers, net change in 7 days, how many joined the group "Challenge — Weekend Build" this week, and the open rate of the most recent campaign.
+
+Vercel Web Analytics for thedigitalincomeedit.com. Read total visitors for the last 7 days and the top 10 pages. Note which /learn/ articles are drawing traffic. Then read the Referrers panel with the path filtered to /learn/ and record visitors to /learn/ articles from skool.com, threads.com / threads.net, and facebook.com (including l.facebook.com and m.facebook.com) — this measures the article-link rule that started 24 Sep 2026 (posts on Skool, Threads and Facebook point to the matching /learn article). Put these three numbers in the report under Website, with the change since last week once there is a previous week to compare.
+
+Etsy — shop TheDigitalIncomeEdit (renamed from MommaMadeDigitalShop, 21 Sep 2026). Open the Etsy Shop Manager / Stats dashboard. Read for the last 7 days: total shop views, total favorites, number of orders, and revenue. List the top 3 listings by views and the top 3 by sales, by name. Note the number of listings currently live (the daily-listing cadence means this should be climbing week over week — flag it if it isn't).
+
+Pinterest — account @TheDigitalIncomeEditTDIE. Read this only for informational tracking, not as a growth lever: the whole domain is blocked (see claude/pinterest-domain-block.md via memory, or claude/TDIE_PINTEREST_PRODUCTION_PACKET.md), so every pin routes to skool.com/thedigitalincomeedit/about, not the site. Open Pinterest Analytics and read for the last 7 days (or the longest window it offers if 7 days isn't available): total impressions, saves, and outbound clicks, plus current follower count. Also check Settings for any change in the domain-block status — this is the one thing worth flagging immediately if it changes.
+
+Facebook — group "The Digital Income Edit - UGC AI DIGITAL MARKETING HUB" (https://www.facebook.com/groups/thedigitalincomeedit). Open Group Insights (Admin tools → Insights, or Meta Business Suite if that's where it lives). Read for the last 7 days: total members and net change, post reach, and engagement (reactions + comments) on the week's posts. Note the group's current total member count for the week-over-week trend (reference: ~4.6K as of Sep 2026).
+
+Instagram — @the.faceless.homestead.mama (the Tommy Kate persona account; this is a DIFFERENT platform state from its Threads profile, which is permanently disabled — see the correction at the top of claude/TDIE_THREADS_SYSTEM.md before touching this account). Confirm the active session is this account using the account-switching steps in claude/TDIE_THREADS_SYSTEM.md Section 7, adapted for this handle — never type a password. If it's not available to switch to, or the account itself (not its dead Threads profile) shows any disabled/suspended/restricted notice, stop Instagram-specific work and say so in the report, but still complete the rest. Open Instagram Insights and read for the last 7 days: accounts reached, profile visits, follower count and net change, and total likes/comments/saves across the week's posts. List the top 2 posts by reach. Also report this week's tallies from the engagement trial that started 23 Sep 2026 (Section 5 of claude/TDIE_THREADS_SYSTEM.md): how many follow suggestions were drafted, how many the Command Centre shows as approved and actually sent, how many reshares were suggested/sent, and the running like count from claude/threads-engagement-drafts.md.
+
+Threads (@nursemadedigital — Jodie's own account). Before opening Insights, confirm the active Instagram/Threads session is @nursemadedigital using the account-switching steps in claude/TDIE_THREADS_SYSTEM.md Section 7 — switch via Instagram's account switcher, never type a password. If @nursemadedigital isn't available, or shows any disabled/suspended/restricted notice, stop Threads-specific work and say so in the report, but still complete the rest. Open Insights. Read for the last 7 days: views, replies, reposts, profile visits, new followers, link clicks. List the top 5 posts by replies and the top 3 by new followers, with their first lines. Note which opener label (HARD TRUTH, Normalize, Let's connect, Dear algo, and so on) appears most among the winners. Then open Settings → Account → Account Status and confirm the account is eligible for recommendation to non-followers. If it is not, say so as the first line of the report.
+
+═══ PART 2 — READ THE MEMBERS, THEN WRITE THE EVIDENCE FILE ═══
+
+This is the part the rest of the system depends on. Do not skip it and do not generalise.
+
+Go through the Skool community feed for the last 7 days and the classroom, and find:
+- What members actually asked. Quote the real questions. Note which went unanswered.
+- What they said in feedback, wins, or frustration — their actual words.
+- Where people are stalling: which lessons have low completion, where the questions cluster.
+- Who is active but has never upgraded, and who has gone quiet.
+- Which posts got replies and which got nothing.
+
+Also read the Threads replies from the week. Any question asked more than once under a Threads post is a post for next week and possibly a lesson. Quote it.
+
+Then write the file the SkoolKit load task reads at 4:15 PM today. Use project_write, path claude/member-evidence-YYYY-MM-DD.md (today's date), containing:
+- THE THREE THINGS MEMBERS NEED RIGHT NOW. Three headings, each with the quoted evidence underneath — the real questions, the real words, the completion gaps. Not what would be nice to teach: what they are visibly stuck on.
+- Under each of the three, the /learn article from TDIE_RESOURCE_MAP.md Part 6 that answers it, with its exact link — or "no article covers this yet" if none genuinely does. The SkoolKit task links teaching posts to these articles (founder decision, 24 Sep 2026). Never force a match.
+- Which lessons or topics the questions cluster around.
+- Any offer that genuinely solves one of the three, named exactly as canon.json names it.
+- What got engagement in the feed this week and what got silence.
+
+Write this file even if the week was quiet — in that case say so plainly in it, so the SkoolKit task knows to fall back on the standard weekly mix rather than waiting on evidence that isn't there.
+
+═══ PART 2b · THE LAUNCH POOL AND THE ROTATION ═══
+
+Read `claude/TDIE_LAUNCH_POOL.md` in full. Two jobs, both writing only to that file:
+- Safety net: compare this week's classroom against the pool. For anything added or significantly changed in the classroom this week that has no pool entry (a new module, section, lesson set, vault guide, rebuilt course, or a price or tier change), write the entry now in Part 2 following Part 1 exactly: a Skool post that upsells the related product, tier or course, and Facebook, Threads and Pinterest posts that show what's inside Skool and point to the 7-day free trial. Names, prices and links from canon.json only. No em dashes.
+- Rotation: using this week's numbers from Part 1, any pool post in the top fifth of its platform's posts this week for comments, clicks or saves, or with a sale, trial start or sign-up traced to it, goes into Part 3 with the numbers that qualified it and a next-repeat date three weeks after it first ran. Remove a rotation item after two repeats in a row below that platform's weekly median.
+Write the file back with project_write, starting from a fresh project_read. Say in your report what you added.
+
+═══ PART 3 — THREADS READOUT ═══
+
+Do NOT load or compose any Threads posts here. A nightly task loads them from the weekly file and a Sunday task writes that file — see claude/TDIE_THREADS_SYSTEM.md Section 11 (THE ONE-SESSION RULE). Your Threads work here is reading only.
+
+Write to the project with project_write, path claude/threads-readout-YYYY-MM-DD.md (today's date), containing:
+- The Part 1 Threads numbers.
+- The top 3 posts by new followers, quoted in full. The Sunday build task rewrites the first line of the best one for next week.
+- The winning opener label and the losing one.
+- Every repeated question from Threads replies, quoted.
+- Account Status result.
+- Which of the daily offers got link clicks, if Beacons or Insights shows it.
+
+Then list, from the Command Centre engagement collection, every Threads offer_reply, teach_reply or article_reply from the last 7 days that is still "approved" after its post_after time, with its date. Report them. Do not post or pin anything here: the 27 Sep Threads rebuild has no pinned comments, and replies belong to the dispatcher.
+
+═══ PART 4 — EXPORT PACKET FOR CHATGPT (v2, due 12:15 PM ET) ═══
+
+Right after Part 1, write to the metrics folder in Google Drive (1K0ls1CYSm3o74usQWGMCyaL5pMnCqhEM), inside a new folder named with today's date YYYY-MM-DD: metrics.json (exactly the Part 5 metrics object, plus not_read, period start and end dates, and for each figure its source), notes.md (top 10 Skool posts by comments plus likes for the last 60 days with links, the Threads numbers and top posts, the paid promo group numbers; add the member-evidence summary later if Part 2 finishes), and manifest.json {workflow: "metrics", account_id: "all", period: <Fri to Thu dates>, producer: "Claude", publisher: "none", packet_version: 1, producer_state: "QA_PASSED", approval_state: "NOT_REQUIRED", payload_sha256: <SHA-256 of metrics.json's exact UTF-8 bytes>, hash_rule: "sha256 of metrics.json bytes as stored", created_at: <now>}. Download metrics.json back and recompute its hash; if it differs, write a new version. Files are never overwritten; a correction is a new file with packet_version + 1. Do not write proposals, emails or strategy; ChatGPT's analysis at 12:30 PM reads this packet. If you cannot finish by 12:15 PM, still write what you have with not_read filled in; the watcher at 12:20 PM alerts on a missing packet.
+
+═══ PART 5 — LOAD THE SCAN INTO THE COMMAND CENTRE ═══
+
+Every numbers scan goes into the Command Centre so the Analytics tab and the Dashboard progress chart stay current. Do this AFTER the report is written, using the exact figures in it — never a rounded or remembered version.
+
+Write ONE document with ArtifactData:
+- url: https://claude.ai/artifact/7sggSqfNcfRDscpy3fsg4C
+- action: set
+- collection: scans
+- doc_id: today's date as YYYY-MM-DD (one document per scan; re-running the same day overwrites that day, which is correct)
+
+The document, exactly these fields:
+
+date          today's date, YYYY-MM-DD, as a string
+label         "Friday ops"
+source        "Friday ops · 11:30 AM ET"
+written_at    the current time, ISO 8601
+report        your full report to Jodie, VERBATIM — the same text you sent her and the same text you appended to the shared log. Markdown is fine: the page renders headings, bold, bullets and rules. Do not shorten it, do not re-summarise it, do not strip the parts that read badly. The Analytics tab exists to keep the write-up whole.
+not_read      an array of plain sentences, one per thing you could not read, each naming the channel and why. Empty array if everything read.
+metrics       an object using EXACTLY these keys, values as plain numbers with no currency symbols, commas or percent signs
+
+  skool_active          Skool active members, all tiers
+  skool_cancelling      Skool members in Cancelling
+  mrr                   monthly recurring revenue in dollars, computed from the real per-member prices
+  mrr_at_risk           dollars per month sitting in Cancelling
+  paying_members        members with a price against them
+  beacons_revenue_7d    Beacons revenue, last 7 days, dollars
+  beacons_free_7d       Beacons free downloads, last 7 days
+  email_subscribers     MailerLite active subscribers
+  email_new_7d          MailerLite new subscribers, last 7 days
+  challenge_group       size of the "Challenge — Weekend Build" group
+  site_visitors_7d      Vercel visitors, last 7 days
+  site_pageviews_7d     Vercel page views, last 7 days
+  pinterest_impr_7d     Pinterest impressions, last 7 days
+  pinterest_out_7d      Pinterest outbound clicks, last 7 days
+  pinterest_followers   Pinterest followers
+  etsy_visits_7d        Etsy visits, last 7 days
+  etsy_listings         Etsy listings currently live
+  fb_members            Facebook group total members
+  ig_followers          Instagram followers, @the.faceless.homestead.mama
+  threads_followers     Threads followers, @nursemadedigital
+  threads_posts_7d      Threads posts published, last 7 days
+  threads_views_7d      Threads views, last 7 days
+
+The keys are what joins this week to last week on the chart. A key you spell differently starts a new line that connects to nothing, so copy them exactly.
+
+**A number you could not read is LEFT OUT of metrics entirely. Never write 0, never write null, never estimate, never carry last week's figure forward.** A missing key draws a gap; a zero draws a crash that did not happen. Say what was missing in not_read instead.
+
+Write the JSON to a local file and pass it as file_path rather than typing a large document inline.
+
+Then verify: read the document back with ArtifactData action get on the same collection and doc_id, and confirm the metrics object came back with the keys you wrote. Say in the report that the scan was loaded, and name the date you wrote it under. If the write fails, say so plainly — do not report it as loaded.
+
+═══ REPORT ═══
+
+One message, no preamble:
+- The numbers, with the change since last week, for EVERY channel: Skool, Beacons, MailerLite, Vercel/website (including the /learn visitors from Skool, Threads and Facebook), Etsy, Pinterest, Facebook, Instagram, Threads
+- Account Status result (Threads)
+- The Instagram engagement-trial tallies (follows drafted/sent, reshares drafted/sent, likes this week)
+- The three things members need, with the evidence and the matching article for each, and confirmation that claude/member-evidence-YYYY-MM-DD.md was written (name the exact path — the 4:15 PM task needs it)
+- The Threads winners and the opener label that won
+- Which Threads reply items were overdue (from Part 3)
+- Anything that failed to read or write, by name — including any account you couldn't reach or that showed a status notice
+- Confirmation that the scan was loaded into the Command Centre (Part 5), with the date it was written under
+- Confirmation that the export packet for ChatGPT was written, with its folder and file IDs and the hash check result
+
+Verify before reporting. Skool, Drive and Command Centre writes fail silently — confirm each one by reading it back. Label anything you could not verify as unverified. A channel you couldn't read (dashboard down, wrong account logged in, no analytics available for the window) gets reported as "not read this week — <why>", never silently dropped from the report.
+
+═══ SHARED LOG ═══
+Container {"kind":"project","id":"322aab5d-4c2b-4ab8-ac26-5b02f0fb85a5"}. Load Claude_Docs guide topics "topic.instructions" and "topic.tabs" first. There is ONE tab per day under the "Runs" tab (file id 8e8e734f-fb67), named exactly "<Mon D> · Runs" (e.g. "Sep 25 · Runs"). Find today's tab and APPEND a section headed "## 11:30 AM ET · Friday ops", with your full report under it, verbatim. Do not create a second tab for today. Only if today's tab does not exist, create it once nested under Runs (subtabOf: 8e8e734f-fb67) with the next order value after the newest day tab, then append your section. This is in addition to your report to Jodie, never instead of it. If the doc can't be edited, say so plainly in the report.
+
+PAID PROMO GROUP READOUT (added 25 Sep 2026)
+Open every post from the past 7 days that the run log shows in the paid Facebook group https://www.facebook.com/share/g/1Jhou1fewh/. Record reactions, comments and link clicks for each one (clicks where Facebook shows them; label anything you can't see as unverified). Also check sales and sign-ups tagged utm_campaign=fb_promo_group wherever my numbers already come from.
+Add a "Paid promo group" section to the Friday report: posts this week, best post and why, total clicks and any tagged sales, and whether the group looks worth what I pay for it (say plainly if there isn't enough data yet).
+Then write ONE line to the run log in exactly this form:
+PAID PROMO GROUP WINNER (week of <date>): <rotation type> / <product> / <the hook angle that worked>
+
+═══ ADDED 25 SEPTEMBER 2026 (founder go, TDIE AI Operating Manual): THE FIVE-NUMBER SCORECARD ═══
+The report opens, before anything else, with these five numbers in this order, each with the change since last week:
+1. New email subscribers (MailerLite, last 7 days, split by group).
+2. Door rate: new joins to the group "Challenge — Weekend Build" this week, shown beside Skool active members and site visitors for the week.
+3. Sales: count per product for the week across Beacons, Etsy, new Membership Premium members and DFY orders (DFY orders from Beacons checkout plus any DFY order words seen in Skool DMs or the Command Centre).
+4. Value per buyer: total revenue divided by the number of buyers.
+5. Revenue by stream: Skool (MRR from real prices), Beacons, Etsy, DFY, plus the five streams nobody was counting:
+   - Amazon Associates / Amazon Influencer: earnings, clicks and ordered items for the last 7 days, from her Associates reports page in her signed-in Chrome.
+   - The Brand Closet™: her affiliate earnings in that Skool group's affiliate panel.
+   - The Anti-Influencer Method™ (AIM): her affiliate dashboard with Meg the Creator.
+   - Shopify: her Shopify affiliate dashboard (the program behind https://shopify.pxf.io/eK3xYz).
+   - Skool tier affiliate earnings (40%) from her Skool affiliate settings.
+   Find each dashboard from her signed-in Chrome. Any one you cannot reach is written "not read this week" with the reason, never estimated and never zero.
+Add these keys to the Part 5 metrics object when read (same rule: leave a key out if not read): revenue_total_7d, buyers_7d, value_per_buyer_7d, sales_count_7d, amazon_earnings_7d, brand_closet_earnings_7d, aim_earnings_7d, shopify_earnings_7d, skool_affiliate_earnings_7d.
+
+THE PAUSE LIST. Each scheduled task moves one of the five numbers: FB daily Skool mirror (door rate, measured by FB group reach and Skool trial starts from Facebook), Weekly Pinterest pin factory (door rate, measured by outbound clicks to the Skool page), Legally Blonde and Brand Closet pin runs and Friday Pink Finds email (revenue: Amazon), Etsy listing package (sales: Etsy orders), Threads tasks (new email subscribers and sales from the daily offer), warm-member DFY offers (sales: DFY orders). Keep a running record in `claude/scorecard-pause-watch.md` (create it if missing; fresh project_read, full file written back): one line per task per Friday with its number. At the bottom of the report add "Pause list": any task whose number has not moved across its last four Friday lines, with one line on what it costs to keep running. Never pause or edit any task yourself; Jodie decides.
+
+═══ LINK RULES, updated by Jodie 25 September 2026 (Decision 115, revised). Read before writing or scheduling anything. ═══
+INSTAGRAM: NO links anywhere on Instagram, ever. Not in a caption, not in a comment, not in a first comment, not in a reply. Links do not work on Instagram. An Instagram call to action points to the link in bio ("it's in my bio", "link in bio") and says in words what they will find there. Instagram Story link stickers are the one exception and stay as they are.
+FACEBOOK (groups, pages, profiles): no link in the main post. The post names the call to action in words and points to the comments ("link's in the comments 👇"). The link goes only in the first comment, 5 minutes after the post goes live, on its own line after a short call-to-action line. Never report a Facebook post as done until that comment has been seen live.
+Skool links are NEVER a raw web address: in Skool posts, comments and lessons, email, the site and PDFs, a link is always hyperlinked on the call-to-action words.
+This overrides any older instruction in this task, or in any document it reads, that puts a link in an Instagram caption or comment, or says a link should appear in a Facebook post body.
+
+Account warnings, unknown lock ownership and writes whose outcome is uncertain still stop the affected write: reconcile against the live account before any retry, never post a second copy blind.
+
+RUN RECEIPT LINE (v2): under your shared-log section add one line: run start and end ET and minutes taken | lock run id | packet file IDs and sha256 if any | intended | observed live (IDs, URLs) | failed or unknown writes | anything Jodie must do | next action | internal QA only: caption-pattern IDs used. The minutes figure is how usage is measured; never estimate it.
+
+BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
+If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
+1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
+2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
+3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.
