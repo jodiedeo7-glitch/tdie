@@ -28,8 +28,18 @@ Follow `ops/canon/canon.json` → `content_calendar_rules` and Decisions 80, 111
 6. Build a replication plan in TDIE's own voice.
 7. Name any standing rule the evidence overrides and cite the proof in the research file.
 
+
+### Posting-time evidence
+Posting-time research is mandatory for every monthly Premium calendar research cycle.
+- For every qualifying Instagram Reel where the source exposes it, capture the exact publish timestamp, source timezone, normalized America/New_York time, and day of week.
+- If exact time or timezone cannot be verified, write `NOT VERIFIED`; never infer a clock time from the displayed date.
+- Compare VERIFIED OUTLIER / VIRAL ANALYTICS EXAMPLE timing against the creator's own normal posting distribution where the source supports it. Keep HIGH-PERFORMER timing separate when no account-relative baseline exists.
+- Produce a monthly timing analysis with sample sizes, day-of-week counts, time-window counts, and any creator-relative differences. Correlation is not causation.
+- The monthly build rules must include a recommended Instagram posting window only when supported by the current research. If evidence is insufficient, label the research-derived window `UNVERIFIED` and use the member/account's own Instagram audience-activity data when available rather than inventing a universal best time.
+- Every finished Instagram calendar day must include a recommended posting time or window and the evidence basis used for it.
+
 OUTPUT:
-- `PREMIUM_CALENDAR_RESEARCH_<YYYY-MM>.md`
+- `PREMIUM_CALENDAR_RESEARCH_<YYYY-MM>.md
 - `PREMIUM_CALENDAR_BUILD_RULES_<YYYY-MM>.md`
 
 ### Stage 2 — Calendar architecture — CHATGPT
