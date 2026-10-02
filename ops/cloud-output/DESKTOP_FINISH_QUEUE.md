@@ -37,6 +37,8 @@ All files are in `ops/cloud-output/we-creatives/` (see its `README.md`, `AD_COPY
 
 ## 4 · The While-You-Sleep Storefront™: launch and own-setup fixes (27 Sep 2026, founder decisions applied)
 
+> **REBUILT 2 Oct 2026 to Decision 123 (founder pricing, 1 Oct 2026).** Member presale for Skool members only (Premium $10 with code TDIEPREMIUM, Standard $17), no public presale; launch weekend public $27 against a regular $37, members $17 through Sun 11 Oct; $37 for everyone from Mon 12 Oct; 40% affiliate from Fri 9 Oct. The 27 Sep public product a2e4f613 was gone and is rebuilt as https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 ($37, unlisted, full kit). PREMIUM50 is dead. COPY.md, both vault lessons, the sales page and canon are rewritten; steps 5, 7, 8, 10 and 11 below describe the 27 Sep plan and are superseded wherever they disagree with COPY.md and canon Decision 123.
+
 Everything is in `ops/cloud-output/storefront-product/` (start with its `README.md`). The sales page is on the branch `storefront-launch` (`src/pages/shop/while-you-sleep-storefront.astro`), unmerged until step 8. The cloud session could not reach Skool, Beacons, Amazon, Pinterest, MailerLite, Facebook, Threads, Gemini or Higgsfield. Publish nothing and list nothing outside these steps. Work the steps in order; each ends with a read-back.
 
 **The gate: the presale does not open until step 9 (the live test) passes.** Step 9 must finish before the tease posts on Sat 3 Oct 2026, 3:00 pm Eastern, and it needs one overnight, so start it no later than Thu 1 Oct.
