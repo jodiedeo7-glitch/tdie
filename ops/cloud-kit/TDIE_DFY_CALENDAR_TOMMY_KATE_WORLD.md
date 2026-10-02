@@ -41,17 +41,19 @@ Name these exactly as written. Never write one from memory and never swap one fo
 - Bubblegum pink ceramic mug printed Player Two? in black lettering. Saturated candy pink, never pale or white. A plain pink mug is never correct. When it is in the frame, the negative line says the only printed words in the frame are Player Two? on the mug.
 - Lavender Xbox controller with a small strawberry charm. Clearly purple-toned, never white or grey.
 - Pink and lavender GameBoys, visibly worn.
-- **Hello Kitty and Kuromi plushies.** Required in her home. They live in the pink attic loft: on the pink gingham bed, on a shelf, or propped at the end of the gaming desk. Whenever the loft is in the frame, the plushies are in the frame.
+- **Hello Kitty and Kuromi plushies.** Required in her home. They live in the pink attic loft: on a shelf, on the shag rug, or propped at the end of the gaming desk. Whenever the loft is in the frame, the plushies are in the frame.
 - Mason jar of casually gathered wildflowers with irregular stems. When a bouquet is named, it is lilacs or peonies.
 - Worn brown leather farm boots with dried mud in the welt.
 - Scrunchie on the wrist. Gold claw clip. Fine gold chain with a small heart pendant.
 - Pink gingham bedding, slightly rumpled.
 - Candy-pink over-ear headphones. Candy-pink gardening gloves. Candy-pink velvet throw pillow.
-- Her golden retriever, and the dog's rope toy left where a dog would leave it.
+- **Her golden retriever** (Jodie, 2 October 2026). In most of the calendar's photos, inside and outside: at her feet, on the porch, in the kitchen, in the pasture, in and out of the bedroom. In the gaming loft he is optional, in the background or not at all. His rope toy is left where a dog would leave it.
+- **Her grey British Shorthair cat** (Jodie, 2 October 2026). Lives in the gaming loft: curled on the shag rug, on the end of the gaming desk, on top of the PC, in a sunny window. She can wander in and out of the bedroom. She is never on the porch, in the kitchen or outside.
 - Her chickens and ducks, the chicken coop.
 
 **Her rooms and land:**
-- **Pink attic loft:** exposed beams wrapped in ivy, plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the pink gingham bed.
+- **Pink attic loft:** exposed beams wrapped in ivy, plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the grey British Shorthair cat, and sometimes the golden retriever in the background.
+- **Bedroom:** the pink gingham bedding, slightly rumpled. The golden retriever and the cat can be in and out of it.
 - **Farmhouse kitchen:** blush cabinets, butcher-block island, copper pans with patina.
 - **Farmhouse porch:** weathered rail, chipped paint, folded quilt, potted herbs, rocking chair.
 - **Farmhouse living room:** the candy-pink velvet throw pillow, a quilt someone actually uses.
@@ -67,7 +69,9 @@ Every characteristic above is remembered and repeated across the month. Nothing 
 
 - Every frame with her carries the glitter tumbler plus two or three named items from section 3. Not the whole list: a prop inventory clutters the render (image master section 8).
 - Named items go in the first half of the prompt. Anything in the second half comes back missing or generic.
-- Every frame of the pink attic loft carries the Hello Kitty and Kuromi plushies.
+- Every frame of the pink attic loft carries the Hello Kitty and Kuromi plushies and, in most loft frames, the grey British Shorthair cat.
+- The golden retriever is in most of the calendar's photos (more than half of each week's images), indoors and out; in the loft he is optional and stays in the background.
+- Animals are written plainly by breed and colour ("a golden retriever", "a grey British Shorthair cat") and counted ("exactly one dog", "exactly one cat") so the model adds no extras.
 - Across each week, every room in section 3 appears at least once, and each named object appears at least once in the month. The loft carries roughly one day in four.
 - In frames without her, exactly one saturated candy-pink object, rotated across the month (image master section 4).
 - Week files list which section 3 items each day used, so the next week can fill the gaps.

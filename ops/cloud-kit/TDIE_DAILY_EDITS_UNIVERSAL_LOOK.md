@@ -45,7 +45,7 @@ Rotate four lanes across the month:
 
 ## 4. Never in a Daily Edit
 
-**Nothing that only Tommy Kate owns.** No Player Two? mug, no glitter tumbler with a lavender straw, no lavender controller with a strawberry charm, no GameBoys, no Hello Kitty or Kuromi plushies, no "pink attic gaming loft", no golden retriever written as hers, no Tommy Kate name anywhere in the prompt. Those belong to the Premium DFY Content Calendar.
+**Nothing that only Tommy Kate owns.** No Player Two? mug, no glitter tumbler with a lavender straw, no lavender controller with a strawberry charm, no GameBoys, no Hello Kitty or Kuromi plushies, no "pink attic gaming loft", no golden retriever or grey British Shorthair cat written as hers, no Tommy Kate name anywhere in the prompt. Those belong to the Premium DFY Content Calendar.
 
 **Nothing from the cookie-cutter rich AI influencer:** supercars or Lamborghinis, private jets, yachts, penthouse skylines, Dubai, mansions, marble, hotel suites, champagne towers, designer logos or branded handbags, cash or credit-card props, nightclubs, pool parties, high-fashion editorial posing.
 
