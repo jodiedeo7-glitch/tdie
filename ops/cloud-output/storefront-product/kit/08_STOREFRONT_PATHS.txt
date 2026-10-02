@@ -1,3 +1,5 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 STOREFRONT PATHS
 
 Your Pins need a destination. Choose the path that matches your Amazon account.
@@ -12,7 +14,8 @@ You need:
 
 Each look gets its own Idea List containing the products in that look.
 
-TIME-SAVING: after the customer supplies and authorizes the exact products and links, use an actually tested supported integration to create or verify the Idea List. Do not assume Amazon Idea List creation is available through ChatGPT.
+CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): the permitted operator tested at setup creates or updates the buyer's own per-look Idea List, names it for the search phrase, adds the verified selected products and reads back its public URL and contents. Record ID and evidence before scheduling. Creators API catalog access alone does not prove Idea List writes. If the account route is unavailable, preserve the automatic destination queue with the exact blocker. No weekly list-making is assigned to the buyer by default.
+
 
 CREDIT-SAVING / MANUAL: the customer creates the Idea List in their own Amazon Influencer storefront, adds the approved products, then supplies its live URL. ChatGPT or Claude can prepare the product checklist without requiring a paid automation step.
 
@@ -44,11 +47,25 @@ Each look gets a page containing:
 
 The page URL is the destination for both Pins.
 
+Amazon needs every website where your links appear listed in Associates Central (Account Settings, then websites and mobile apps). Add yours before your first look.
+
 TIME-SAVING: use an authorized, tested website integration to write the approved page and verify its live URL.
 
 CREDIT-SAVING / MANUAL: ChatGPT or Claude prepares the page copy, product-link list, disclosure and image filenames; the customer publishes the page in their site builder and returns its live URL for verification. No Work or connected website write is required.
 
 The page must load before a Pin can be published.
+
+====================================================================
+QUICK DESTINATION TEST (do this once for every website domain)
+====================================================================
+
+Pinterest blocks some domains. A live site does not prove Pinterest will accept it.
+1. In Pinterest, start creating a Pin (any image).
+2. Paste one of your page addresses into the link field.
+3. If Pinterest accepts it, the domain passes. Close the draft without publishing.
+4. If Pinterest says the site is blocked or the link can't be used, the domain fails. No Pin may point there. Never use a redirect or a different address to get around a block.
+Save the result in MY_RECIPE.txt as DESTINATION TEST (domain, pass or fail, date).
+Amazon Idea List addresses (amazon.com) don't need this test.
 
 ====================================================================
 SITE TYPES
@@ -102,7 +119,7 @@ CREDIT-SAVING: NATIVE PINTEREST
 
 Pinterest's business scheduler currently supports standard Pins up to 30 days ahead and up to 10 future Pins.
 
-ChatGPT prepares:
+The assistant prepares:
 - image
 - title
 - description

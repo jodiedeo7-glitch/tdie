@@ -1,22 +1,7 @@
-CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
-AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
-
-During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
-
-AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
-
-REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
-
-In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
-
-Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
-
-Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
-
-END CUSTOMER EXECUTION POLICY
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
 
 AUTOMATION 1: THE THEMED-LOOK RECIPE
-The weekly task reads this file and MY_RECIPE.txt at the start of every run. You never edit this file. Your theme, boards, times and path live in MY_RECIPE.txt.
+The weekly task reads this file, MY_RECIPE.txt and 12_STATE_SCHEMA.md at the start of every run, and follows the Automation Rules in 12_STATE_SCHEMA.md Part A for every step. You never edit this file. Your theme, boards, times and path live in MY_RECIPE.txt.
 
 WHAT ONE LOOK PRODUCES
 One look = 5 to 8 Amazon pieces that go together (a roundup: 3 or 5), one list or page that links every piece, and two pins that point to it, posted 3 days apart.
@@ -32,16 +17,16 @@ PART 1. THE RULES THAT NEVER MOVE
 
 R1. Publishing is handled by the selected publishing path in MY_RECIPE.txt. The recipe does not use Pinterest scraping, Pinterest internal endpoints, or browser automation to simulate Pinterest publishing.
 R2. The TIME-SAVING path uses the customer's connected Metricool account when the current ChatGPT + Metricool workflow is available and has passed the customer's test publish. The CREDIT-SAVING path prepares the complete Pin package for the customer to schedule through Pinterest's native scheduler.
-R3. Every pin description starts with "#ad" and ends with the DISCLOSURE LINE from MY_RECIPE.txt. A pin with a link and no disclosure, or a disclosure and no link, does not ship.
+R3. Every pin description starts with "#ad " and ends with the DISCLOSURE LINE from MY_RECIPE.txt ("As an Amazon Associate I earn from qualifying purchases."), so #ad appears once, at the start. A pin with a link and no disclosure, or a disclosure and no link, does not ship.
 R4. No prices, anywhere. Not on the image, title, description, alt text, site page, look idea, or item name.
 R5. No third-party IP in any image. No film stills, character likenesses, logos, designer monograms, team or university crests, printed brand names, book titles, or other protected identifiers.
 R6. No brand names in listings, Pin titles, descriptions, hashtags, alt text or page item names. Describe the item plainly. No real people, films, shows or characters in customer-facing content.
 R7. The two Pins of one look are normally scheduled 3 days apart. Any near-identical Pins should be separated according to the schedule in MY_RECIPE.txt.
 R8. No affiliate links in email. If you ever email about a look, link to your own site page, never directly to Amazon.
-R9. Do not use Amazon-hosted product images as published assets. They are reference material only. Use original generated imagery or customer-owned/licensed imagery.
+R9. Do not use Amazon-hosted product images as published assets. They are not uploaded as generator references. Use original generated imagery or customer-owned/licensed imagery.
 R10. At most 4 image-generation attempts per final asset: initial generation, up to two in-place corrections, and one fresh retry with the correction incorporated. If still wrong, drop the look and log why.
-R11. Verify every required destination before a Pin enters the publishing queue. For the Influencer path, the Idea List must resolve. For Associates-only, the site page must resolve before publishing.
-R12. Never schedule more than 14 days ahead in the storefront system, even though Pinterest and Metricool may support longer horizons. The 14-day limit is a product-state safety rule.
+R11. Verify every required destination before a Pin enters the publishing queue. For the Influencer path, the look's own Idea List must open and hold the look's pieces (verified through the tested operator; customer confirmation is reserved for a chosen manual step). For Associates-only, the site page must open before publishing. The destination's domain must have passed the QUICK DESTINATION TEST in 08_STOREFRONT_PATHS.txt. If Pinterest blocks a domain, no Pin may point there, and never disguise or redirect a link to get around a block. Never point a Pin at a general storefront home page while its copy says every piece is linked: the link must hold the pieces the copy names.
+R12. Never schedule more than 14 days ahead in the storefront system, even though Pinterest and Metricool may support longer horizons. On native Pinterest, never hand me more Pins to schedule than fit Pinterest's limit of 10 future Pins; hold the rest as drafts and add them as earlier Pins go live.
 R13. If Pinterest exposes an AI-generated/AI-modified control in the selected publishing path, enable it when appropriate to the actual asset.
 R14. Amazon affiliate links must come from the customer's authorized Amazon workflow. Never invent, alter or substitute a customer's affiliate tag.
 R15. No em dashes in customer-generated copy.
@@ -64,36 +49,45 @@ PART 2. PICK THE LOOKS
 ====================================================================
 
 1. Read storefront-log.md and pin-drafts.md first. Leftovers (Part 7 step 4) go before anything new.
-2. Look dates: the LOOK DAYS in MY_RECIPE.txt, starting with the first look day after today that has no look in storefront-log.md (any status except "dropped"). At most 4 looks per run.
-3. Take each look from the THEME CALENDAR window that covers that look's own date. At least one look every week comes from the EVERGREEN BANK.
+1a. CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): choose look ideas from the THEME CALENDAR and EVERGREEN BANK, then source and record their products yourself through the tested permitted route in Part 3. CUSTOMER-SUPPLIED rows are used only when I chose that manual or mixed step.
+2. Assign the next free LOOK DAYS, at most four looks per run, after reconciling leftovers.
+3. Use the current calendar window and at least one evergreen look each week; prioritize existing valid incomplete work before new sourcing.
+
 4. Mix. If MY_RECIPE.txt says both clothing and home, follow its MIX. Two outfit looks never land on back-to-back days: put a theme list or roundup between them. Outfit of the Day pins don't count toward this.
 5. No repeats. The hero piece (the dress, set, top or statement item the look is built on) never repeats within 30 days, counting both automations' rows in storefront-log.md. Shoes, bags, jewelry and accessories may repeat, at most once a week each.
-6. If a window has no unused ideas left, fill from the EVERGREEN BANK and tell me in one line to renew the calendar early.
+6. If a window has no unused ideas left for the shopping list, use the EVERGREEN BANK and flag calendar renewal in the run report. Rules 4 and 5 apply when you assign dates: if two selected outfit groups would land back to back, or a hero piece repeats within 30 days, move one to a later free look date and tell me.
 
 ====================================================================
 PART 3. AMAZON PRODUCT INTAKE
 ====================================================================
 
-The customer, not the automation, controls Amazon product selection unless the customer has a current authorized Amazon Creators API integration.
+AUTOMATIC PRODUCT SOURCING
 
-DEFAULT PATH: CUSTOMER-SUPPLIED PRODUCT ROWS
+Follow 14_AUTOMATIC_EXECUTION_CONTRACT.txt. The agent selects the products and fills the records. Use current authorized Creators API fields where eligible, or a supported operator for account actions only when the applicable permission permits them. Do not scrape or evade access controls. Qualify the selected variant, check availability and quality signals where the permitted source exposes them, and record timestamps. Never infer unknown ratings, materials or stock. If a requirement cannot be checked, queue that look with the exact reason.
 
-1. The customer adds product rows to PRODUCT_SOURCES.md or the structured state.
+OPTIONAL CREDIT-SAVING / MANUAL
+The buyer supplies the same product rows in PRODUCT_SOURCES.md. This is a chosen alternative, not the automatic default.
+
+
 
 Required fields:
+- look (the look name this piece belongs to, for example "Cozy Fall School Run". Rows with the same look name make one look.)
 - ASIN
-- plain-language product description
-- authorized affiliate/Special Link when required by the selected Amazon path
-- optional Amazon product URL
-- optional color/variant
-- optional notes
+- short name (plain words, no brand)
+- plain-language product description (only facts you checked)
+- color or variant you chose
+- your own affiliate link (SiteStripe Special Link) when your Amazon path needs one
+- date checked
+- idea list (Influencer path: the address of the Idea List created or updated for this look by the saved operator, on every row of the look; see 08_STOREFRONT_PATHS.txt)
+Optional: material or key detail (leave blank if you don't know it), Amazon product page address, notes.
+Leave unknown facts blank. Never guess a material, rating or availability.
 
-2. ChatGPT validates the supplied ASIN/link format and checks that the row has enough information to build the look.
+2. The assistant checks the supplied ASIN and link format and checks that the row has enough information to build the look.
 
-3. ChatGPT does NOT:
+3. The assistant does NOT:
 - scrape Amazon pages
-- simulate human browsing to collect product data
-- capture affiliate links through browser automation
+- use browser actions without a supported route and applicable permission
+- capture affiliate links from any account other than the buyer's authorized account
 - copy Amazon-hosted product images into the image workflow
 - invent ASINs
 - invent affiliate tags
@@ -130,11 +124,11 @@ Before image generation, create a product sheet from the customer's authorized p
 - authorized affiliate link or destination
 - source method
 
-Amazon-hosted images remain reference material only and are not published as Pin assets.
+Amazon-hosted product images are not published as Pin assets or uploaded as generator references. Describe verified facts in original words; use customer-owned/licensed reference images only.
 
 INFLUENCER PATH
 
-Use the customer's approved Amazon Influencer tools to create the Idea List from the supplied ASINs or the customer's authorized product-selection workflow.
+AUTOMATIC: the tested permitted operator creates or updates the buyer's per-look Idea List, adds the selected products and reads back its URL and contents. Reconcile an existing list before creating another. Save the list ID and verification evidence in state. Missing write access keeps the destination queued with its capability blocker. MANUAL, only if chosen: the buyer creates the list and supplies its URL for verification.
 
 ASSOCIATES-ONLY PATH
 
@@ -143,7 +137,6 @@ Use the customer's authorized Special Links in the customer's own site/page work
 If an affiliate link or destination cannot be verified, the look remains queued.
 
 ====================================================================
-====================================================================
 PART 4. MAKE THE IMAGES
 ====================================================================
 
@@ -151,9 +144,9 @@ IMAGE EXECUTION
 
 Read 13_PIN_VISUAL_STANDARD.md before generating an outfit inspiration Pin and apply its composition, headline and acceptance checks. A generated outfit is inspiration unless it depicts the actual linked items or uses clearly identified customer-owned/licensed product photos; match the Pin's title, destination, board, disclosure and alt text to that status.
 
-TIME-SAVING: use the connected image-generation provider selected in MY_RECIPE.txt. The preferred connected path is ChatGPT + Higgsfield when the customer has that integration connected.
+TIME-SAVING: use the connected image provider and model saved in MY_RECIPE.txt (the tested path is Higgsfield connected to ChatGPT). Check the cost against GENERATION BUDGET before each paid generation (12_STATE_SCHEMA.md A4).
 
-CREDIT-SAVING / MANUAL: ChatGPT or Claude prepares the complete prompt from the product sheet. The customer runs it directly in the selected provider, then returns the finished asset for QA. This path may be used to conserve connected-tool credits or avoid an additional automation plan.
+CREDIT-SAVING / MANUAL: the assistant (ChatGPT or Claude) prepares the complete prompt from the product sheet. The customer runs it directly in the selected provider, then returns the finished asset for QA. This path may be used to conserve connected-tool credits or avoid an additional automation plan.
 
 Do not require manual copy/paste when the customer chose the connected path and the provider can return the finished asset directly. Do not require a connected paid action when the customer chose the manual path.
 
@@ -173,29 +166,32 @@ Never make the customer copy an image from one application into another as the n
 PIN 1: THE FLAT LAY OR COLLAGE (no person)
 Use the image provider and model configured in MY_RECIPE.txt and confirmed available for this run. Do not hard-code or silently substitute an image provider/model. If the configured model is unavailable, keep the appropriate allowed status from 12_STATE_SCHEMA.md, record the blocker in error_code and notes, and report the required action.
 
-Read the last look's Pin 1 composition in storefront-log.md and use the other composition this time. Favor a calm editorial composition with clear product hierarchy, restrained props, and comfortable background margins. Every garment and accessory must fit completely inside the 2:3 canvas; do not crop straps, hems, sleeves, shoes, or trouser legs. Leave a moderate clean area at the top for a headline.
+Two Pin 1 compositions, alternating look to look (read the last look's Pin 1 in storefront-log.md and use the other one):
+  FLAT LAY: the pieces styled from directly above on one surface, arranged like a real flat lay.
+  COLLAGE: each piece shown cleanly and separately on a plain background, arranged in a tidy grid, like a shoppable product board.
+ Favor a calm editorial composition with clear product hierarchy, restrained props, and comfortable background margins. Every garment and accessory must fit completely inside the 2:3 canvas; do not crop straps, hems, sleeves, shoes, or trouser legs. Leave a moderate clean area at the top for a headline.
 
 Use the product sheet as text input in the prompt. Do not ask the image model to open or attach a text document. For each item, use customer-authorized product facts and describe only visible, supported attributes such as color, shape, material, and details. Use customer-owned or licensed image references only when the selected provider supports them and the customer has rights to use them. Never use Amazon-hosted product images as published assets or as image-generation references.
 
 IMAGE PROMPT (fill brackets; do not request text):
-Create a polished vertical 2:3 Pinterest [outfit inspiration / themed collection / product roundup] image. Arrange [the selected items, described individually using approved product facts] neatly on [a suitable restrained background]. Keep every item fully inside the canvas with comfortable margins on all sides. Leave a moderate uncluttered band across the top for a headline to be added after image generation. Use [visual style from MY_RECIPE.txt], soft natural light, realistic material detail, and balanced editorial spacing. Use only [zero to two relevant props, if any]. No text, letters, logos, labels, watermarks, brand marks, invented product details, or extra products. Do not crop, distort, or obscure any listed item.
+Create a polished vertical 2:3 Pinterest [outfit inspiration / themed collection / product roundup] image. Arrange [the selected items, described individually using approved product facts] neatly on [a suitable restrained background]. Keep every item fully inside the canvas with comfortable margins on all sides. Leave a moderate uncluttered band across the top for a headline to be added after image generation. Use [VISUAL STYLE from MY_RECIPE.txt], soft natural light, realistic material detail, and balanced editorial spacing. Use only [zero to two relevant props, if any]. No text, letters, logos, labels, watermarks, brand marks, invented product details, or extra products. Do not crop, distort, or obscure any listed item.
 
 TEXT AND LAYOUT:
-Add the approved headline after image generation using the configured deterministic layout/template when available. Use a short search phrase in a high-contrast serif and an optional brief supporting phrase in restrained script. Keep all text inside the reserved top area and check spelling, contrast, and readability at phone size. If deterministic layout is unavailable, return the image without a headline for customer review; do not ask the image model to render exact typography.
+Add the approved headline after image generation using HEADLINE METHOD in MY_RECIPE.txt (assistant layout with your code tool and BRAND FONTS, or Canva steps for me). Use a short search phrase in a sharp, high-contrast display font and an optional brief supporting line. Keep all text inside the reserved top area and check spelling, contrast, and readability at phone size. If the method fails on a run, keep the clean image, record error_code headline_failed, and put the headline text in pin-drafts.md; never ask the image model to render the words.
 
 PIN 2 depends on MY_RECIPE.txt and 07_PERSONA_PATHS.txt:
   PERSONA PATH, OUTFIT LOOKS: use the approved persona reference and the configured available image provider/model. Keep each item visible and consistent with customer-authorized product facts; otherwise make no unsupported exact-product claim.
   PERSONA PATH, THEME LISTS AND ROUNDUPS: show a relevant moment using the hero in the authorized persona world when appropriate, or a distinct in-situ scene. Follow 13_PIN_VISUAL_STANDARD.md; do not default to another collage.
   NO-PERSONA PATH: use a distinct in-situ composition, perspective or product story. A new surface or headline on the same arrangement is insufficient. Follow 13_PIN_VISUAL_STANDARD.md.
 
-Refine, never restart: if something's off (wrong color, a missing piece, something cut off at the edge), say exactly what to change in the same chat. Two rounds at most (R10).
+Refine before you restart: if something's off (wrong color, a missing piece, something cut off at the edge), say exactly what to change. Up to two correction rounds, then one fresh retry with the corrections written in, then stop (R10: 4 attempts in all).
 
 ====================================================================
 PART 5. WRITE THE PIN COPY
 ====================================================================
 
 Title, 60 to 100 characters: the search phrase first, then the hook. Specific, a little flirty. Example: "Cozy Fall Outfit Ideas for Moms: The Sweater and Boots Look for Every School Run".
-Description, 450 to 500 characters including the disclosure: start with "#ad ", then a first sentence that repeats the search phrase naturally. Name what's in the look (by description, never brand). One line of personality in my VOICE from MY_RECIPE.txt. Then "Every piece is linked in my [Idea List / shop page]." Then 3 to 5 keyword hashtags (the #ad doesn't count). Then the DISCLOSURE LINE, last.
+Description, 450 to 500 characters including the disclosure: start with "#ad ", then a first sentence that repeats the search phrase naturally. Name what's in the look (by description, never brand). One line of personality in my VOICE from MY_RECIPE.txt. Then use destination-accurate wording: "Shop the linked edit" for an inspiration image with similar items; "Every featured product is linked" only when all featured products are identified on that destination. Exclude scene props from product claims. A storefront homepage does not qualify as the destination for this look. Keep the look queued until its verified per-look collection or accepted shopping page identifies the selected products. Then 3 to 5 keyword hashtags (the #ad doesn't count). Then the DISCLOSURE LINE, last.
 Alt text, 150 to 200 characters: a plain description of what's literally in the image, including the title words if they're on it.
 Board: the board in MY_RECIPE.txt that fits the look. If the board has sections, use the one MY_RECIPE.txt names for that kind of look; if none fits, no section.
 No price. No brand. No em dashes. No promise about what the buyer will get or how fast.
@@ -206,18 +202,17 @@ PART 6. PUBLISH AND VERIFY
 ====================================================================
 
 1. Confirm the destination URL is live and belongs to the look. If it does not resolve, stop this Pin.
-2. Build the final draft record for each Pin:
-   pin_id, look_id, image_id, title, description, alt_text, destination_url, board_name, board_url, board_id when available, scheduled_at, publisher, AUTOMATION_MODE, approval_actor, approval_basis, policy_version, qa_evidence, approval_fingerprint, customer_selected (REVIEW_FIRST only), customer_selection_at, customer_schedule_authorized, schedule_authorization_at, schedule_authorization_fingerprint, status.
-3. Apply the mode-specific authorization gate in 12_STATE_SCHEMA.md: AUTOMATIC validates the saved policy scope and all QA, then records automation_policy authorization and the exact fingerprint without another ordinary customer approval. REVIEW_FIRST requires exact customer selection and schedule authorization. Changed output invalidates the fingerprint and reruns the gate; missing QA or authorization prevents the affected write.
+2. Build the final draft record for each Pin with every Pin field in 12_STATE_SCHEMA.md Part B (title, description, alt text, destination, board name, address and ID, scheduled time and time zone, publisher, and the approval fields for the saved AUTOMATION_MODE).
+3. Apply the approval gate in 12_STATE_SCHEMA.md A1: AUTOMATIC checks the Pin is inside the saved scope and every check passed, then records automation_policy approval and the fingerprint without asking. REVIEW_FIRST waits until I pick that exact Pin and its time. A changed Pin goes through the gate again. A missing check or approval blocks only that Pin.
 4. TIME-SAVING PATH:
-   Use the connected Metricool workflow recorded in MY_RECIPE.txt after its controlled schedule test passes. The initial test may run while that test is pending, under mode-specific authorization and all account/QA gates. Read it back before enabling ordinary schedules. Separate future live verification is required; a draft test proves neither scheduling nor publication.
+   Use the connected Metricool workflow in MY_RECIPE.txt only after PUBLISHING TEST = passed. Its later live publication still has to be checked separately; a draft proves neither scheduling nor publication.
    - Confirm the correct Pinterest brand/profile and exact board/section.
-   - Create/schedule only the exact fingerprinted Pin with passing QA and mode-specific authorization, final image, metadata, board, destination and time.
+   - Save the write intent first (12_STATE_SCHEMA.md A6). Then create and schedule only the exact approved Pin: its final image, copy, board, link and time.
    - Record the returned Metricool post identifier and read back the scheduled record when supported.
    - If the connected ChatGPT + Metricool workflow requires a separate platform approval, set awaiting_approval and report the exact step. Do not claim the Pin is scheduled or published before evidence confirms that state.
    - If the workflow cannot safely perform the action, leave it unscheduled and report the blocker.
 5. CREDIT-SAVING PATH:
-   Native/manual publishing: prepare the complete package after QA and mode-specific authorization; set customer_scheduling_required. The customer performs the native scheduling action. AUTOMATIC connected publishing does not depend on this manual step.
+   Native publishing: after every check passes (and, in REVIEW_FIRST, my approval), prepare the complete package (image, title, description, alt text, board, link, date and time) in pin-tab.md and set customer_scheduling_required. I schedule it in Pinterest and tell you; then set customer_scheduled.
 6. Set state to scheduled only after the selected publishing layer confirms the Pin exists. Otherwise retain customer_review_required, customer_scheduling_required, or awaiting_approval as appropriate.
 7. Verification:
    - TIME-SAVING: read the scheduled post back through Metricool when supported and compare image, title, board, destination, time and status.
@@ -244,7 +239,7 @@ PART 7. STATE, LEFTOVERS AND RECOVERY
 7. Influencer path: if an Idea List is pending or unavailable, the Pin remains queued and no alternate look/list is substituted.
 8. Image lost: rebuild from the logged product sheet and regenerate once. If the asset cannot be recovered safely, mark the Pin dropped and explain why.
 9. Never silently substitute a new product, destination, board or image after a partial failure.
-10. At the end of every run, write:
+10. At the end of every run, update the agent's NEXT SOURCING QUEUE: for each upcoming look day without complete product records, the look idea from the THEME CALENDAR or EVERGREEN BANK and the pieces it needs (for example: "Tue: Cozy Fall School Run: a chunky cardigan, straight jeans, ankle boots, a tote, small gold hoops"). CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): the agent sources and fills these rows on the next run. MANUAL/MIXED: only assignments I explicitly chose are sent to me. Then write:
    - run_id
    - task
    - started_at
@@ -253,9 +248,8 @@ PART 7. STATE, LEFTOVERS AND RECOVERY
    - created IDs
    - failed IDs
    - retryable IDs
-11. On renewal date, do not schedule new looks beyond the renewal date. Tell the customer to renew the calendar.
-On the RENEWAL DATE in MY_RECIPE.txt: schedule nothing past it, and tell me in one line that the calendar needs renewing (paste 02_SETUP_PROMPT.txt again and answer "renew").
+11. On the RENEWAL DATE in MY_RECIPE.txt: schedule nothing past it, and tell me in one line that the calendar needs renewing (paste 02_SETUP_PROMPT.txt again and answer "renew").
 
-STATE AND WRITE RECONCILIATION
-Follow 12_STATE_SCHEMA.md for allowed states, run claims, write_attempt_id, publisher IDs/UUIDs and unknown write outcomes. Persist pending write intent before a publisher mutation. Reconcile ambiguous responses through supported readback before any retry; never blindly repeat a create. A scheduled-area confirmation verifies scheduling only. Actual publication evidence is required for published, and checks of the published image, destination, board, disclosure and metadata are required for verified. Record verification_scope, evidence and time. No unavailable connector is evidence of successful publication or removal.
+STATE AND NO DUPLICATES
+Follow 12_STATE_SCHEMA.md for status values, run claims, write intents, publisher IDs and UUIDs, and unclear outcomes (A6, A7). Scheduled is not published. A connection that can't be reached is never evidence that something was published or removed.
 

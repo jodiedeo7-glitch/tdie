@@ -1,87 +1,90 @@
-CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
-AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
-
-During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
-
-AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
-
-REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
-
-In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
-
-Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
-
-Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
-
-END CUSTOMER EXECUTION POLICY
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
 
 THE WHILE-YOU-SLEEP STOREFRONT™
 Start here
 
-Your authorized Amazon product inputs become Pinterest Pins. Choose AUTOMATIC for scheduling under your saved setup policy, or REVIEW_FIRST to approve each exact finished Pin.
+Your Amazon picks become Pinterest Pins that point shoppers to your Idea Lists (or your own shop-the-look pages). Pinterest is search: people type "cozy fall outfit" or "pink desk setup" with their wallet half open. This kit makes sure something of yours is there when they do.
 
-There are three normal ways to use the storefront:
+You set it up once. After that, the work is done by scheduled tasks, by you with AI help, or by hand. You choose.
 
-TIME-SAVING
-Use the tested connected image tools and publisher recorded during setup. AUTOMATIC performs eligible production and scheduling within your saved authorization; REVIEW_FIRST prepares Pins for your approval.
+====================================================================
+READ THESE IN THIS ORDER
+====================================================================
+
+1. While-You-Sleep-Storefront-Preparation-Guide.pdf
+   What to get ready before you build: accounts, a public board, your account access, visual direction and budget.
+
+2. While-You-Sleep-Storefront-Setup-Guide.pdf
+   The numbered setup steps, with two example Pins.
+
+3. 02_SETUP_PROMPT.txt
+   The one prompt you paste. It interviews you and writes your own settings and log files.
+
+You never have to read the other files. The setup prompt and your tasks read them for you. They're here so you can.
+
+====================================================================
+WHAT'S IN THE KIT
+====================================================================
+
+  00_START_HERE.txt                You're reading it.
+  01_REQUIREMENTS.txt              What you need, and what you don't.
+  02_SETUP_PROMPT.txt              Paste once. It sets everything up.
+  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks, any theme, any season.
+  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2 (optional): The Brand Closet™ Outfit of the Day.
+  05_RECOMMEND_IT_TOO.txt          Optional: a Brand Closet™ card for your own pages.
+  06_SCHEDULED_TASK_PROMPTS.txt    The three scheduled tasks.
+  07_PERSONA_PATHS.txt             With your own AI persona, or flat lays only.
+  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only (your own site).
+  09_THE_BLOG_HALF.txt             Optional: a shop-the-look section on your own website.
+  10_INSTAGRAM_ADD_ON.txt          Optional: Instagram feed posts.
+  11_WHATS_NEXT.txt                Recommending the kit, and the done-for-you option.
+  12_STATE_SCHEMA.md               The rules every task follows, and how records are kept.
+  13_PIN_VISUAL_STANDARD.md        What a good Pin and a good shop page look like.
+  14_AUTOMATIC_EXECUTION_CONTRACT.txt  Main-path scope, capability tests and activation gates.
+  The two PDFs above.
+
+====================================================================
+THREE WAYS TO RUN IT
+====================================================================
+
+TIME-SAVING (the true while-you-sleep version)
+The agent runs the complete approved workflow. ChatGPT Work handles its connected steps; a permitted, tested browser operator handles browser-only account actions. Cloud can run with your computer off only when every required step works in that runtime. Local browser steps require your computer on. Setup records and tests the exact route before enabling tasks.
 
 CREDIT-SAVING
-Use a lower-cost ChatGPT or Claude plan for planning, copy and prompts. Run the image step directly in the image provider you choose, then schedule the finished Pin yourself in Pinterest's native scheduler. No Work task or Metricool subscription is required.
+Use the ChatGPT or Claude plan you already have to write the copy and the image prompts. You run the image tool yourself and schedule the finished Pin in Pinterest's own scheduler. No Work plan or Metricool needed.
 
 MANUAL
-Follow the same recipes as a checklist. You can prepare product rows, run image generation directly, review the asset, write or paste the Pin package, schedule it in Pinterest and update the state/log yourself. This is slower but avoids paying for maximum automation or extra automation credits.
+Use the recipes as checklists and do each step yourself. Slowest, cheapest.
 
-MIXED
-Automate only the steps that are worth paying for. Example: use ChatGPT or Claude to prepare copy and image prompts, generate the image manually, then review and schedule the Pin yourself.
+You can mix them (for example: AI writes everything, you make the images) and switch any time. The rules on disclosure, links, public boards and duplicates are the same on every path.
 
-You can switch paths later. The approval, disclosure, destination and duplicate-prevention rules do not change with the path.
+====================================================================
+AUTOMATIC OR REVIEW FIRST
+====================================================================
 
-IMPORTANT: the old desktop-browser architecture is retired from the customer instructions. The computer-on/browser workflow is now a LOCAL fallback, not the default.
+On the time-saving path, setup asks one more question.
 
-WHAT YOU NEED
+AUTOMATIC: you approve the rules once (which accounts, boards, links, image tool, budget, pace and channels). After that, Pins that pass every check can be scheduled without another routine approval only when the account, publishing service and platform permit that scope. Setup must test this permission before enabling recurring work. If the platform requires approval for each Pin, record approval-required and retain the queued work; do not claim that account is hands-off.
 
-1. For the automated path: an eligible ChatGPT account with Work access. For CREDIT-SAVING or MANUAL: a ChatGPT or Claude plan that can handle the preparation steps you choose to use.
-2. Amazon Associates, plus Amazon Influencer approval if you want Idea Lists.
-3. A Pinterest business account with public boards.
-4. Higgsfield only if you choose the Higgsfield image path. The manual path may use the same provider directly instead of through ChatGPT.
-5. Metricool only if you choose TIME-SAVING publishing.
-6. Google Drive only if you choose CLOUD execution/state.
-7. The Brand Closet™ only if you choose the optional Outfit of the Day automation.
+REVIEW FIRST: every finished Pin waits for you to say yes before it's scheduled.
 
-THE TWO MODES
+Either way, every Pin is checked first: the image, the link, the public board, the #ad disclosure, the title and the alt text. Nothing with a missing check goes out.
 
-CLOUD
-Preferred for the true while-you-sleep experience. ChatGPT Work runs remotely and uses supported connected apps. Your computer does not need to remain on.
+====================================================================
+YOUR PART AFTER SETUP
+====================================================================
 
-LOCAL
-Fallback when a local folder, local browser session or unsupported site requires your computer. ChatGPT Work runs locally in the desktop app.
+AUTOMATIC: no weekly product-picking, link-copying or Idea List homework. The agent sources products and builds destinations through the account routes tested during setup. You receive a short run report and can request changes or pulls. Re-sign-in, security checks or a revoked connection can interrupt an individual step; the queued work is retained.
 
-PUBLISHING
+CREDIT-SAVING / MANUAL: if you choose this route, you supply product rows and links, create the list or page, run image generation and schedule the finished Pins. MIXED: your saved recipe names exactly which steps you chose to do yourself.
 
-TIME-SAVING:
-Connected Metricool scheduling requires verified account actions, exact public board, live destination, disclosure, metadata and mode-specific authorization. AUTOMATIC uses the saved policy; REVIEW_FIRST uses exact per-Pin customer approval.
+Type PULL in the state sheet's PULL column (cloud) or next to the Pin in pin-tab.md (local/manual). The next reconciliation imports the request into state, cancels through the tested route and verifies removal. An unavailable cancellation route is reported, never described as a successful pull.
 
-IMPORTANT:
-Recurring AUTOMATIC tasks may schedule passing Pins within the saved policy. REVIEW_FIRST tasks wait for exact per-Pin approval. Initial controlled publisher tests follow the same mode-specific gate. Read back every schedule; unavailable actions remain unscheduled.
+====================================================================
 
-CREDIT-SAVING:
-ChatGPT or Claude prepares the copy, prompts and Pin package. You may run image generation directly in your chosen provider to conserve connected-tool credits. The customer schedules the finished Pin in Pinterest.
+WHAT IT DOESN'T PROMISE
+====================================================================
 
-MANUAL:
-Use the same recipe and QA checklist without recurring tasks. Prepare each step yourself, then record the finished Pin and its status before moving to the next one.
+Sales. Pinterest is search, and Pins get found over weeks and months, not hours. This kit builds and runs the machine. What people buy is up to them and Amazon. It also can't promise that every outside service (ChatGPT, Metricool, Pinterest, your image tool) will behave the same in your account as in mine, which is why setup tests each connection before relying on it.
 
-Pinterest's native business scheduler currently supports standard Pins up to 30 days ahead and up to 10 future Pins at once.
-
-STATE
-
-12_STATE_SCHEMA.md defines the authoritative structured state and duplicate-prevention rules.
-
-The markdown files are readable views:
-  storefront-log.md
-  pin-tab.md
-  pin-drafts.md
-
-DO NOT promise sales, clicks, traffic or earnings.
-
-The system prepares and tracks authorized work. AUTOMATIC schedules passing outputs under your saved policy; REVIEW_FIRST waits for your exact selection. Pinterest distribution and purchases are outside the product’s control.
-
+xoxo, Jodie

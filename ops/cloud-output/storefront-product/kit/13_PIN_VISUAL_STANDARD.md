@@ -1,10 +1,12 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 # Professional Pinterest and Shopping-Page Visual Standard
 
 Every look needs two different reasons to click. A new headline on the same arrangement is not a second concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
 
 ## Art direction before generation
 
-Record customer visual references, actual brand palette/typefaces, authorized persona reference/world, product hero, intended use and two concepts in MY_RECIPE.txt. Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
+Record the customer's visual references, brand colors and fonts, persona reference and world, product hero, intended use and the two concepts in MY_RECIPE.txt (setup asks for colors and fonts with the theme; if they were skipped, ask once and save them). Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
 
 Pin 1: THE PRODUCT EDIT. Complete tactile editorial product/outfit composition, clear hero, deliberate supporting-item hierarchy, dimensional natural light and realistic contact shadows. Frame every required garment, strap and shoe inside generous margins. Do not scatter all pieces at equal size.
 
@@ -18,13 +20,13 @@ Generate portrait photography for a 2:3 final Pin at least 1000×1500, using the
 
 Product-edit structure: purpose/hero → exact authorized product descriptions → hierarchy/arrangement → surface/light → camera/lens/realistic materials → headline-safe area → no extras/logos/text/cropping. Include photorealistic, real-world photography, true-to-life textures, natural imperfections and actual camera language.
 
-Lifestyle structure: reference-only identity → approved environment → one natural action involving the hero → changeable wardrobe/styling → brand props → subject/product composition and headline-safe area → physical light/camera → no invented performance, anatomy artifacts, logos or text. Identity reference is mandatory for a named persona. Never describe locked identity traits in words. Current persona canon overrides generic aesthetic language.
+Lifestyle structure: reference-only identity → approved environment → one natural action involving the hero → changeable wardrobe/styling → brand props → subject/product composition and headline-safe area → physical light/camera → no invented performance, anatomy artifacts, logos or text. Identity reference is mandatory for a named persona. Never describe locked identity traits in words. The persona rules in 07_PERSONA_PATHS.txt override generic aesthetic language.
 
-For TDIE/Tommy Kate, begin: “Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.” Read current image master/design rules. Use her farmhouse/pink-loft world, relaxed styling and signature glitter-flecked pink iced coffee tumbler with lavender straw. Distinguish signature props and unlinked clothing from linked retail pieces. Never imply an unlinked prop is in the shopping list.
+Every persona prompt begins: "Photograph of this exact woman from the attached reference image. Identity is taken only from the reference." Use the places in PERSONA WORLD and any PERSONA PROPS from MY_RECIPE.txt. Keep signature props and unlinked clothing clearly separate from linked retail pieces in the copy and alt text. Never imply an unlinked prop is in the shopping list.
 
 ## Professional Pin layout
 
-Add text after photography with a supported deterministic layout. Use customer-approved display/supporting type; TDIE uses Newsreader SemiBold and Inter. Optional restrained script must remain readable. Do not default all customers to one font pair.
+Add text after photography with a supported deterministic layout. Use the customer's own brand fonts recorded at setup (a strong, sharp display font for the headline and a clean sans for small text). Avoid thin hairline or soft italic display fonts for headlines; they blur at phone size. Optional restrained script must remain readable.
 
 Use a concise search-led headline, clear hierarchy, deliberate accent phrase, generous safe margins and a useful small CTA such as “Shop the edit.” Photography dominates. Use approved cream/near-black/brand accents; avoid brown fills, hairline type, crowded badges, fake ratings, prices, scarcity or guarantees. Text cannot cover the face, hero or important details. Use a scrim or paper panel only where needed, never a full-image color wash.
 
@@ -38,7 +40,7 @@ Distinct sibling layouts: product headline above complete arrangement; lifestyle
 4. Sharp, correctly spelled readable type, no overlaps; visible CTA without clutter.
 5. Siblings pass distinct-story/camera/composition comparison.
 6. Copy/alt/page distinguish inspiration, actual linked products and unlinked props. No invented specs, prices, reviews, guarantees or retail fidelity.
-7. Live destination, exact public board, disclosure, metadata and mode-specific authorization verified. AUTOMATIC records policy authorization after QA; REVIEW_FIRST needs exact customer approval. Changes invalidate the fingerprint and rerun checks.
+7. Live destination, exact public board, disclosure and copy verified, then the approval gate in 12_STATE_SCHEMA.md A1 (AUTOMATIC approves inside the saved scope; REVIEW_FIRST waits for the customer). Any change re-runs the checks.
 
 ## Shopping-page design contract
 

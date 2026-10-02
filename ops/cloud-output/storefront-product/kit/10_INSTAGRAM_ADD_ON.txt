@@ -1,19 +1,4 @@
-CUSTOMER EXECUTION POLICY, CANDIDATE REPAIR 4
-AUTOMATIC and REVIEW_FIRST are distinct setup choices. All production instructions below use the matching authorization gate. Historical originals are preserved outside this candidate.
-
-During setup, record AUTOMATION_MODE = AUTOMATIC or REVIEW_FIRST in MY_RECIPE.txt and structured state. AUTOMATIC is available only after the customer explicitly authorizes ongoing creation and scheduling within a recorded policy. Record the authorization text, actor, time, permitted accounts, exact board IDs/sections, destination paths, image provider/model, generation budget and period, look pace, channels, schedule/timezone, end date or revocation condition, and customer-supplied sourcing requirement. Do not invent authorization or a budget. If any required field is missing, finish setup before enabling recurring production.
-
-AUTOMATIC: For each eligible look, execute the connected production recipe through publication without requesting ordinary per-image, copy or post approval. Use only complete authorized product rows. Apply every source, rights, image, copy, destination, public-board, cost, timing and duplicate check. After all checks pass, record approval_actor=automation_policy, approval_basis=the saved customer policy ID, policy_version, QA evidence, approved_at and the exact final asset/copy/destination/account/board/section/format/disclosure/timezone/schedule fingerprint. Customer selection fields are used only in REVIEW_FIRST; AUTOMATIC records policy authorization fields instead. Never mark a gate passed merely because the policy exists. Changed output invalidates its old fingerprint: rerun affected QA and policy checks, then record a new fingerprint automatically if still within the authorized policy. A changed account, model, board, destination scope, budget or authorization requires setup authorization again.
-
-REVIEW_FIRST: Keep the original explicit per-Pin customer selection and scheduling authorization. Manual publishing remains customer-controlled. The customer chooses this mode to review every output or conserve connected-service credits.
-
-In AUTOMATIC mode, preflight paid generation against the saved budget and approved model. Record expected and actual charges. Within that authorization, a preflight display is information, not another approval stop. No subscriptions, upgrades, silent model substitution or new account permissions. If an input, budget or capability is unavailable, record the affected item and continue independent eligible work. Only essential login, reauthentication or security verification needs immediate customer action. Never bypass platform approval/security requirements. Missing customer-supplied product intake is a prerequisite failure, not proof of unattended sourcing.
-
-Persist write intent before mutations. Unknown outcome means reconcile provider IDs before retry, never recreate blindly. Resume only missing work. Reconciliation monitors actual publication, not merely scheduling. An initial controlled publisher test may be scheduled under the saved policy after all publication gates pass; read back the schedule before declaring the publisher configured, and independently verify its live publication. A future schedule is not publication.
-
-Customer instructions alone do not establish runtime reliability. Declare unattended production verified only after a separate actual scheduled execution completes the intended connected stages, persists results, resumes safely and produces independently verified live posts. Account availability and external security challenges can still interrupt a run.
-
-END CUSTOMER EXECUTION POLICY
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
 
 INSTAGRAM ADD-ON (optional)
 Instagram is not part of the core machine. The While-You-Sleep Storefront™ is Pinterest, your Amazon lists and (if you add it) your own site. Everything below is extra, and one part of it is done by hand.
@@ -23,9 +8,12 @@ CREDIT-SAVING / MANUAL ALTERNATIVE
 Do not require connected scheduling or an additional paid plan. ChatGPT or Claude may prepare the caption and a ready-to-post asset from the customer's approved look. The customer can create and schedule the feed post in their own supported Instagram/Meta interface, or publish manually; Stories remain manual. Record account, asset, disclosure, AI label and final publishing confirmation. Do not treat a prepared file as scheduled or published. No earnings or income claims.
 
 WHAT CAN RUN ON ITS OWN
-Feed posts. An already-connected publisher such as Metricool is an alternative only after its actual Instagram account, carousel support, media ordering, AI label, timezone and independent scheduled readback pass an account test. Record the provider and stable external IDs/UUIDs. Bind approval to both ordered images, complete caption, account, format, disclosure, AI label and scheduled time. Persist write intent before creating; reconcile an unknown outcome before retrying. Reopen the live Instagram result before calling publication verified. This alternative does not claim Meta Business Suite access.
+Feed posts. Per look: a carousel with pin 2 first and pin 1 second, and a caption that names the pieces (by description, never brand), carries #ad, and uses destination-accurate wording: "shop the linked edit (link in bio)" for inspiration, or "every featured product is linked" only when the destination identifies all featured products. Clearly exclude unlinked props. Posted only after both of the look's Pins are published and checked.
 
-Feed posts. If your Instagram account is a professional account connected to a Facebook Page you manage, Meta Business Suite can schedule feed posts, and a task can load them for you. Per look: a carousel with pin 2 first and pin 1 second, and a caption that names the pieces (by description, never brand), carries #ad, and ends "every piece is linked in my shop (link in bio)".
+Two ways to schedule them:
+1. Metricool, if your Instagram is connected there. Before relying on it, test it once in your account: the right Instagram account, carousel support, image order, the AI label, the time zone, and a read-back of the scheduled post. Record Metricool's post ID and UUID.
+2. Meta Business Suite, if your Instagram is a professional account connected to a Facebook Page you manage.
+Either way, the approval covers both images in order, the full caption, the account, the format, the disclosure, the AI label and the time. The no-duplicates rules in 12_STATE_SCHEMA.md A6 apply, and the post is checked live before it's marked verified.
 
 WHAT IS DONE BY HAND
 Instagram stories are posted by hand. Instagram's website can't post stories, and link stickers only work from the app. If you want a story per look with a "shop this look" link sticker, the task can save the story image and the link into your folder, and you post it from your phone. That's hand-work, which is exactly why it isn't in the core machine.
@@ -39,5 +27,5 @@ THE RULES
 - Your link in bio: your /lifestyle page if you have the blog half, otherwise your Amazon storefront.
 
 TO TURN IT ON
-Add to MY_RECIPE.txt: INSTAGRAM: feed posts on, account (your handle), posting time (for example 7:00 pm). Then add this line to the end of the JOB section of your weekly task: "If MY_RECIPE.txt says INSTAGRAM: feed posts on, follow 10_INSTAGRAM_ADD_ON.txt for each look after its pins are verified." If Business Suite is unavailable, use the independently tested supported connected publisher recorded in MY_RECIPE.txt. If neither automated path passes, save a ready-to-post package and state the limitation. A manual post is a separate customer-controlled path and does not prove connected automated publishing.
+Paste 02_SETUP_PROMPT.txt again and choose "add Instagram". Have your handle and a posting time ready (for example 7:00 pm). It saves INSTAGRAM: feed posts on, tests your chosen publisher, and (in AUTOMATIC) adds Instagram to your saved scope. The weekly task already knows what to do from there. If neither publisher passes its test, the task saves a ready-to-post package for you instead.
 

@@ -1,15 +1,19 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 PERSONA PATHS
-Your setup chat recorded your persona choice in MY_RECIPE.txt. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+The second Pin of every look is either your AI persona wearing or using the pieces, or (no persona) a person-free scene. Your setup chat saved your choice in MY_RECIPE.txt. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+
+The rest of this file is instructions for your assistant and tasks.
 
 ====================================================================
 THE PERSONA PATH (pin 2 is your AI persona wearing the look)
 ====================================================================
 
-You need: a reference image you are authorized to use, approved product descriptions recorded in your product intake, and MY_RECIPE.txt's PERSONA WORLD line.
+You need: one reference image of your persona that you have the right to use, your product rows, and the PERSONA WORLD line in MY_RECIPE.txt.
 
-TIME-SAVING: use the configured connected provider/model only when available, rights are recorded and the generation spend is authorized.
+TIME-SAVING: the task uses the image tool and model saved in MY_RECIPE.txt, inside your budget, with your rights recorded.
 
-CREDIT-SAVING / MANUAL: use a lower-cost ChatGPT or Claude plan to prepare this prompt from your own approved product descriptions. Run it directly in a provider you choose that supports the required reference-image workflow, then return the result for the same visual QA. If it cannot support the reference, use the no-persona path rather than assuming identity preservation.
+CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat writes this prompt from your product rows. You run it in an image tool that lets you attach a reference photo, then bring the result back for the same checks. If your tool can't keep her looking like herself from a reference photo, use the no-persona path instead.
 
 DIRECT MANUAL: you may instead prepare the scene yourself using original, permitted imagery. Record its source and rights. No connected image tool or recurring task is required.
 
@@ -26,7 +30,8 @@ P4. Faces give it away. Read the last three pin 2 formats in storefront-log.md, 
   Use a mirror selfie only if a place in PERSONA WORLD has a mirror.
 P5. Professional real-world lifestyle photography. Use believable natural light, deliberate composition, tactile materials and camera/lens language. Do not confuse luxury with a staged showroom or an AI influencer set.
 P6. No words, signs, logos or labels anywhere in the photo.
-P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt. The current preferred connected path is Higgsfield through ChatGPT. Choose the lowest-cost current model that meets the required identity, realism and editing criteria. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
+P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt (the tested connected path is Higgsfield through ChatGPT). At setup, pick the lowest-cost model that holds her identity, looks real and can edit in place; after that, never change it without setup. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
+P7a. Signature props: anything in PERSONA PROPS (her usual cup, her dog, her car) can appear in her photos, but it is never a linked product. Say so in the alt text when it could be mistaken for one.
 P8. Persona lifestyle imagery can serve outfit looks and applicable theme lists/roundups. Show a meaningful action involving relevant items in the authorized world. Home objects may be shown in use. Do not force unrelated products into the scene. Compare siblings against 13_PIN_VISUAL_STANDARD.md.
 
 INPUTS: attach only the authorized persona reference. Supply the approved product descriptions as prompt text. Do not attach a text product sheet as an image. Additional product photographs are optional only when you have documented permission to use them with the selected provider.
@@ -41,12 +46,12 @@ THE NO-PERSONA PATH (product edit plus a distinct in-situ story)
 ====================================================================
 
 No persona, no faces. Both pins of every look are person-free images made with the current image provider/model recorded in MY_RECIPE.txt. The production default is not locked to an obsolete model name.
-  Pin 1: the styled flat lay (Format A in the recipe) or the shoppable collage (Format B), alternating look to look.
+  Pin 1: the FLAT LAY or the COLLAGE (03_THEMED_LOOK_RECIPE.txt Part 4), alternating look to look.
   Pin 2: a genuinely distinct in-situ scene or perspective with its own composition and headline. A recolored flat lay or new title on the same arrangement fails sibling QA.
 
 The 3-day spacing still applies: the two pins are different enough to earn their own spot, and 3 days apart they never look like a repeat.
 
-Theme lists and roundups work beautifully on this path, including home decor: the flat lay shows the pieces styled as a vignette from above, and the collage shows each one clearly.
+Theme lists and roundups work beautifully on this path, including home decor: Pin 1 shows the pieces styled from above or as a clean collage, and Pin 2 shows them in use in a real room or moment.
 
 IMAGE QA AND CUSTOMER REVIEW
 Use 13_PIN_VISUAL_STANDARD.md before approval. Record whether the result actually depicts the linked products or is styling inspiration. Use matching copy and alt text; do not claim an exact retail match without evidence. Respect the configured generation-attempt and spend limits. Any paid correction requires authorized budget. Review and scheduling authorization remain separate from image generation.

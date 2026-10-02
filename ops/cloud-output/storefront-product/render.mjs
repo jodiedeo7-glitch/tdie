@@ -1,3 +1,4 @@
+throw new Error('Historical 14-page renderer retired. Current KIT6 PDFs are verified complete source artifacts; read README.md and manifest before rebuilding.');
 // Render committed guide HTML; never regenerate it from an older template.
 import {mkdirSync} from 'node:fs';
 import {dirname,join} from 'node:path';
