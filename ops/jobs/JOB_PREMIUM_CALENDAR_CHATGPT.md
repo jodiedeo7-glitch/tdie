@@ -37,6 +37,7 @@ For every row capture:
 - account size / normal baseline if visible
 - post URL or stable reference
 - post date
+- posting timestamp / source timezone / normalized America/New_York time / day of week when verifiable; otherwise NOT VERIFIED
 - format
 - hook
 - topic
@@ -45,7 +46,7 @@ For every row capture:
 - structural pattern
 - replication note
 
-Then produce pattern counts. Do not jump straight to writing the month.
+Then produce pattern counts, including day-of-week and time-window counts for the verified timing subset. Compare breakout timing to each creator's normal posting distribution where possible. Do not jump straight to writing the month.
 
 ## Phase B — evidence rules
 Turn the pattern counts into explicit build rules.
