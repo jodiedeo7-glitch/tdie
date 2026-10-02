@@ -1,17 +1,19 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 THE SCHEDULED TASK PROMPTS
 
-This file is the master copy for the ChatGPT-first storefront.
+The master copy of your three tasks. Setup creates them PAUSED for you (02_SETUP_PROMPT.txt, STEP 11) and writes their names, times and IDs into MY_SCHEDULED_TASKS.txt.
 
-There are three core tasks:
-1. WEEKLY THEMED-LOOK BUILD
-2. NIGHTLY OUTFIT OF THE DAY RUN, if enabled
-3. RECONCILIATION / PUBLISHING QUEUE MAINTENANCE
+1. WEEKLY THEMED-LOOK BUILD (always)
+2. NIGHTLY OUTFIT OF THE DAY (only if you're a Brand Closet™ member and turned it on)
+3. DAILY RECONCILIATION (always)
 
-The old four-task architecture is retired.
+No separate "pull sweep" or "missed-run sweep" tasks: the daily reconciliation does both jobs.
 
-Do not create separate browser-based pull and missed-run sweeps unless a later verified test proves they are necessary.
+CREDIT-SAVING / MANUAL
+No Work plan? You don't need recurring tasks. Paste any prompt below into a normal ChatGPT or Claude chat (with your kit files and records attached) whenever you want to run that job. It prepares everything; you run the image tool and the Pinterest step yourself and bring the results back so the records stay right. Same IDs, checks and disclosure rules.
 
-Every task reads the canonical state described in 12_STATE_SCHEMA.md.
+Every task follows the Automation Rules in 12_STATE_SCHEMA.md Part A and keeps its records as described in Part B.
 
 ====================================================================
 TASK 1. WEEKLY THEMED-LOOK BUILD
@@ -21,81 +23,60 @@ Name:
 While-You-Sleep: weekly themed looks
 
 Schedule:
-Saturday at 1:05 pm in MY_RECIPE.txt time zone.
-At 5, 6 or 7 looks/week, also Wednesday at 1:05 pm.
+Saturday 1:05 pm in your MY_RECIPE.txt time zone.
+At 5, 6 or 7 looks a week, also Wednesday 1:05 pm.
 
-Prompt:
-
+Prompt (everything between the two long lines):
+------------------------------------------------------------------
 You are the weekly themed-look build for The While-You-Sleep Storefront™.
 
-Read:
+Read, in this order:
+14_AUTOMATIC_EXECUTION_CONTRACT.txt (automatic scope and capability gates)
+12_STATE_SCHEMA.md (Part A is your rule book)
 MY_RECIPE.txt
 13_PIN_VISUAL_STANDARD.md
 03_THEMED_LOOK_RECIPE.txt
 07_PERSONA_PATHS.txt
 08_STOREFRONT_PATHS.txt
-12_STATE_SCHEMA.md
-the authoritative structured state
-the human-readable logs only as supporting views
+09_THE_BLOG_HALF.txt (only if BLOG HALF: on)
+10_INSTAGRAM_ADD_ON.txt (only if INSTAGRAM: feed posts on)
+the state in STATE LOCATION (the source of truth), with the markdown logs as readable views only.
+If a file you need is missing, stop and tell me its name.
 
-If a required source is missing, stop and report the filename.
+Use AUTOMATION_MODE and AUTOMATION_POLICY from the state and MY_RECIPE.txt for every approval.
 
-JOB
+THE JOB
+1. Get today's date and time in my time zone. Claim this run in the state (12_STATE_SCHEMA.md Part B, "Running one task at a time"). Copy any PULL marks into the state (12_STATE_SCHEMA.md, PULL MARKS).
+2. Check the RENEWAL DATE. Schedule nothing past it.
+3. Finish leftovers first: anything queued, awaiting approval, scheduled but not yet checked, or failed with a retryable error. Reconcile every existing ID and every unclear write before creating anything.
+4. Pick up to four looks from my calendar and evergreen bank, matched to LOOK DAYS; prioritize existing unfinished looks (03 Part 2).
+5. Give each a LOOK_ID before building anything.
+6. CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): source and record its products and my authorized links through the tested permitted route (03 Part 3). Use my supplied rows only for a manual step I chose. Missing capability = queued with the exact error.
+7. Create or update and independently verify the look's destination: my own Idea List (Influencer) through the saved permitted operator, or the published page on my site (Associates) through the tested site route. Reconcile existing IDs before writes. It must open and contain the linked products. If write permission is unavailable, keep it queued with the capability error. Do not silently give me list creation as weekly homework.
+8. Make the images with the provider and model in MY_RECIPE.txt, inside the budget (03 Part 4).
+9. Check every image against 13_PIN_VISUAL_STANDARD.md before it moves on: full 2:3 frame, safe margins, every piece complete, room for the headline, no stray text, labels, logos, watermarks or invented details. Add the headline only after the image passes; check spelling, phone-size readability and no overlap. Stay inside the attempt limit (03 R10). If it still fails, drop the look and record why. A generated image is styling inspiration unless it really shows the linked items; the copy must say which.
+10. Record an IMAGE_ID for every final image.
+11. Write each Pin's title, description and alt text (03 Part 5).
+12. Give each Pin a PIN_ID.
+13. Run the approval gate (12_STATE_SCHEMA.md A1).
+14. Publish:
+   TIME-SAVING (Metricool, PUBLISHING TEST = passed): save the write intent, then create and schedule only the approved Pin with its final image, board, title, description, link and time. If the image is in Google Drive and Metricool's Drive connection works, use that instead of making the file public. Record Metricool's post ID and UUID. Read it back and compare image, title, board, link, time and status. PENDING in Metricool means scheduled and waiting; keep the Pin "scheduled". If a sign-in or security check appears, keep the work, tell me the exact step, and carry on with other work. Never get around a platform review. An unconfirmed request is not scheduled.
+   METRICOOL CSV (only if I chose it): after every check and approval, prepare a UTF-8 Metricool CSV. The image addresses must be publicly reachable. A CSV is a hand-off, not a schedule.
+   NATIVE PINTEREST: never fake Pinterest clicks. Put the complete package in pin-tab.md and set customer_scheduling_required. I schedule it.
+15. If BLOG HALF: on, add each finished look to my site (09_THE_BLOG_HALF.txt, STEP 3) under the same approval gate, before its Pins go out, and check the page is live.
+16. If INSTAGRAM: feed posts on, follow 10_INSTAGRAM_ADD_ON.txt for each look only after both of its Pins are published and checked.
+17. Update the state first, then storefront-log.md, pin-tab.md and pin-drafts.md.
+18. Write the run record, release the claim, update shopping-list.md and report the automatic sourcing queue and only any manual assignments I explicitly chose (03 Part 7 step 10).
+19. Report only what actually happened, plus anything I must do.
 
-1. Determine today's date/time in the configured IANA time zone.
-2. Check the renewal date.
-3. Reconcile any existing queued, awaiting_approval, scheduled-but-unverified or retryable work before creating new work.
-4. Select at most four eligible looks using LOOK DAYS and THEME CALENDAR.
-5. Assign a stable LOOK_ID before building.
-6. Source products through the authorized Amazon workflow.
-7. Record product IDs/ASINs before image generation.
-8. Generate the required images using the provider/model recorded in MY_RECIPE.txt.
-9. Record IMAGE_ID for every final asset.
+NO DUPLICATES
+Before creating anything, search the state for its ID. If it exists, reconcile it. Never create a second Pin because an earlier run stopped after creating the first.
 
-IMAGE QA: REQUIRED BEFORE CUSTOMER REVIEW
-
-Inspect each image against 13_PIN_VISUAL_STANDARD.md before it advances. Confirm the full 2:3 composition, safe margins, complete garments and accessories, clean headline space, and no stray text, marks, labels, logos, watermarks, or invented product details. Add the headline only after the image passes; verify spelling, phone-size contrast, and no overlap. Respect the defined image-attempt limit. If required pieces or framing still fail, drop the look, record why, and do not send the failed image for approval or scheduling.
-
-Generated outfit imagery is inspiration unless every pictured item is the actual linked item or the image is clearly identified as customer-owned/licensed product photography. Match the title and description to that distinction.
-10. Generate Pin title, description and alt text.
-11. Validate destination URL.
-12. Create stable PIN_ID values.
-13. Apply the per-Pin customer approval gate before routing.
-
-A Pin may enter the publishing queue only after all checks pass: the customer selected that exact finished Pin; the destination resolves and matches the look; the exact public board and any section are verified through a supported path; the required affiliate disclosure is present; title, description and alt text match the image; and the customer explicitly authorized scheduling that Pin. Record the selection and authorization with timestamps and a fingerprint that binds the approved image, title, description, alt text, destination, board, disclosure and schedule time. If any bound value changes, clear selection/authorization and return the Pin to customer_review_required. If any check or authorization is missing, keep the Pin in customer_review_required and do not call a publisher or include it in an import file.
-
-TIME-SAVING:
-Use the connected Metricool workflow only if PUBLISHING TEST = passed and the Pin has the required customer selection and schedule authorization.
-Create/schedule only that approved Pin with its final image, verified board, title, description, destination URL and scheduled time.
-If the image is in connected Google Drive and Metricool's Google Drive connection is available, use the supported external-media upload path rather than making the asset public.
-Record the returned publisher post ID. Read the scheduled record back when supported and compare the image, title, board, destination, time and status.
-If Metricool or ChatGPT requires a separate platform approval, set awaiting_approval and stop. Do not call the Pin scheduled until the publisher confirms it.
-For Metricool, `PENDING` means the post is scheduled and waiting for its publication time; it does not by itself mean review is required. Keep the Pin in `scheduled`, retain the read-back record, and verify `published` only after Metricool or Pinterest confirms publication. A Metricool-scheduled post need not appear in Pinterest's native Scheduled Pins list before it publishes.
-
-BATCH FALLBACK:
-If the direct ChatGPT → Metricool action cannot be executed but the customer has Metricool, prepare a UTF-8 Metricool CSV only for individually selected and schedule-authorized Pins. A CSV is a handoff, not proof of scheduling or publication. Do not require public Google Drive media solely for CSV unless the customer deliberately chooses that path; Metricool's CSV media URLs must be publicly accessible.
-
-CREDIT-SAVING:
-Do not simulate Pinterest browser actions.
-After the customer selects and authorizes the exact Pin for scheduling, prepare the complete Pin package and set state to customer_scheduling_required. Before selection, keep it in customer_review_required.
-
-14. Verify the publisher result through the selected supported system.
-15. Update structured state.
-16. Update storefront-log.md, pin-tab.md and pin-drafts.md as human-readable views.
-17. Write a RUN record.
-18. Report only what actually completed.
-
-IDEMPOTENCY
-
-Before creating any object, search state for its stable ID.
-If it exists, reconcile it.
-Never create a duplicate Pin because a previous run stopped after creating it.
-
-FAILURE
-
-If an image fails, retry only within the image-generation limit.
-If publishing fails, record the exact error and retry only if the error is retryable.
-Never silently change provider, plan, product, destination or board.
+WHEN SOMETHING FAILS
+Image: retry only within the attempt limit and budget.
+Publishing: record the exact error; retry only if it's retryable.
+Never change provider, plan, product, destination or board on your own.
+------------------------------------------------------------------
 
 ====================================================================
 TASK 2. NIGHTLY OUTFIT OF THE DAY
@@ -105,120 +86,113 @@ Name:
 While-You-Sleep: nightly outfit of the day
 
 Schedule:
-Sunday through Friday at 9:20 pm in MY_RECIPE.txt time zone, only when BRAND CLOSET MEMBER = yes.
+Sunday to Friday, 9:20 pm in your time zone. Only when BRAND CLOSET MEMBER = yes.
 
-Prompt:
+Prompt (everything between the two long lines):
+------------------------------------------------------------------
+You are the optional Outfit of the Day run for The While-You-Sleep Storefront™.
 
-You are the optional Outfit of the Day run.
-
-Read:
+Read, in this order:
+14_AUTOMATIC_EXECUTION_CONTRACT.txt (automatic scope and capability gates)
+12_STATE_SCHEMA.md (Part A is your rule book)
 MY_RECIPE.txt
-04_OUTFIT_OF_THE_DAY_RECIPE.txt
+04_OUTFIT_OF_THE_DAY_RECIPE.txt (your full instructions)
 03_THEMED_LOOK_RECIPE.txt
 07_PERSONA_PATHS.txt
 08_STOREFRONT_PATHS.txt
-12_STATE_SCHEMA.md
-the authoritative structured state
+13_PIN_VISUAL_STANDARD.md
+the state in STATE LOCATION.
 
-If today is Saturday, end without work.
+If today is Saturday, end without doing anything.
 
-1. Reconcile unfinished OOTD records first.
-2. Read the authorized Brand Closet lesson list.
-3. Never copy, save, upload or publish member-only images, prompts or lesson text.
-4. Re-find products through the customer's authorized Amazon workflow.
-5. Create a stable LOOK_ID and lesson record.
-6. Generate original images only.
-7. Create stable PIN_ID values.
-8. Create Pin copy.
-9. Apply the same per-Pin customer gate in 03_THEMED_LOOK_RECIPE.txt, Part 6. Keep each finished OOTD Pin in customer_review_required until the customer selects that exact image and explicitly authorizes its schedule after the destination, public board, disclosure and metadata checks pass.
-10. Route only individually selected and schedule-authorized Pins through TIME-SAVING Metricool when PUBLISHING TEST = passed. Otherwise, after selection and authorization, prepare the native-Pinterest package and set customer_scheduling_required. Never schedule automatically from a task run.
-11. Record every state transition.
-12. Never use a Benable link.
-13. Never use Rose's product links or images.
-14. Never claim an OOTD Pin is published until the publisher confirms it.
+Follow 04_OUTFIT_OF_THE_DAY_RECIPE.txt, THE NIGHTLY RUN, step by step. In short:
+1. Claim the run and copy any PULL marks into the state. Finish unfinished outfits first.
+2. Read the Outfit of the Day lesson list I have access to.
+3. Never copy, save, upload or publish Rose's images, prompts or lesson text. Never open or use a Benable link. Never name Rose on a Pin.
+4. CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): independently source and record my products, links and destination through the tested permitted route in 03 Part 3 and 04. Missing access queues that lesson with a capability blocker. Use customer-supplied rows only for a manual step I chose.
+5. Give each outfit a LOOK_ID and each Pin a PIN_ID.
+6. Make original images only, inside the budget.
+7. Write the Pin copy.
+8. Run the checks and the approval gate (03 Part 6 and 12_STATE_SCHEMA.md A1).
+9. Publish exactly as Task 1 step 14 describes.
+10. Record every status change in the state, then the readable views.
+11. Never call a Pin published until the publisher confirms it.
 
-Report only completed work and exact customer actions required.
+Report only what actually happened, plus anything I must do.
+------------------------------------------------------------------
 
 ====================================================================
-TASK 3. RECONCILIATION / PUBLISHING QUEUE MAINTENANCE
+TASK 3. DAILY RECONCILIATION
 ====================================================================
 
 Name:
-While-You-Sleep: storefront reconciliation
+While-You-Sleep: daily reconciliation
 
 Schedule:
-Daily. Run after the primary publishing window and at a time selected during setup.
+Daily at RECONCILE TIME in MY_RECIPE.txt (default 7:45 am): it checks yesterday's Pins and acts on pulls before the first Pin of the day.
 
-Prompt:
-
-You are the reconciliation task for The While-You-Sleep Storefront™.
+Prompt (everything between the two long lines):
+------------------------------------------------------------------
+You are the daily reconciliation run for The While-You-Sleep Storefront™.
 
 Read:
+14_AUTOMATIC_EXECUTION_CONTRACT.txt (automatic scope and capability gates)
+12_STATE_SCHEMA.md (Part A is your rule book)
 MY_RECIPE.txt
-12_STATE_SCHEMA.md
-the authoritative structured state
-storefront-log.md
-pin-tab.md
-pin-drafts.md
+the state in STATE LOCATION
+storefront-log.md, pin-tab.md, pin-drafts.md
 
-DO NOT open Pinterest through undocumented endpoints or scrape Pinterest.
+Never scrape Pinterest or use hidden Pinterest addresses.
 
-1. Find:
-- customer_review_required Pins awaiting exact per-Pin selection and schedule authorization
-- queued Pins with recorded customer selection and schedule authorization
-- awaiting_approval Pins
-- scheduled-but-unverified Pins
+1. Claim the run and copy any PULL marks into the state. Then find:
+- Pins waiting for my approval (REVIEW_FIRST only)
+- queued Pins with a recorded approval and passing checks
+- Pins awaiting a platform approval
+- Pins scheduled for today or earlier that aren't yet checked as published
 - retryable failures
-- pull_requested Pins
-- stale building records
-- publisher records missing from local state
+- Pins I asked to pull (pull_requested in the state)
+- runs that stopped mid-way (claims past their expiry)
+- publisher posts that aren't in the state
+- a weekly build or nightly run that was due but has no run record (a missed run)
 
-2. Reconcile existing publisher records before creating anything.
+2. Reconcile everything that already exists before creating anything.
+TIME-SAVING: read Metricool's schedule and match IDs and UUIDs first. Before creating anything missing, re-check its approval, fingerprint and every check. Never recreate something that exists or whose outcome is unclear; never schedule anything unapproved or failed. If Metricool can't be reached, change nothing and tell me.
+NATIVE PINTEREST: in REVIEW_FIRST, leave Pins waiting for me. Native packages stay customer_scheduling_required until I confirm them.
 
-TIME-SAVING:
-Use Metricool to read scheduled posts and reconcile publisher IDs/statuses. Before any create/schedule action, confirm the exact Pin has customer_selected = true and customer_schedule_authorized = true with timestamps. Never create/schedule from customer_review_required or an unapproved queue record.
-If the connection is unavailable, preserve the current state and report it.
+3. Published check: for each Pin whose time has passed, confirm through the publisher that it actually published. Set published only with that evidence, and verified only after the live image, link, board, disclosure and text match the approved version. On native Pinterest, ask me to confirm.
 
-CREDIT-SAVING:
-Leave customer_review_required Pins untouched. Leave customer_scheduling_required Pins queued for the customer's native Pinterest action. Do not pretend they were published.
+4. Pulls:
+- scheduled and not yet published: cancel it through the tested supported connector or permitted official service interface. A missing connector action is not proof no cancellation route exists. If every permitted route is unavailable, keep it pull_requested and report the exact blocker.
+- already published: remove it through the tested permitted Pinterest route and read back removal. If access is unavailable, retain pull_requested and report the exact blocker.
+- mark pulled only once the removal is confirmed.
 
-3. Pull handling:
-- scheduled/unpublished post: cancel only if the selected publisher exposes a supported cancellation action; otherwise tell the customer to cancel in the publisher and keep the state pending
-- already published Pin: record that Pinterest-side removal is required
-- verify removal before marking pulled; do not mark pulled if the available connection cannot confirm removal
+5. Missed runs: if the weekly build or nightly run was due and didn't run, and nothing else is running, run it once now by following its prompt in 06_SCHEDULED_TASK_PROMPTS.txt under this same claim. Never run it twice.
 
-4. Retry only errors classified as retryable.
-5. Never create a duplicate object during reconciliation.
-6. Update structured state first.
-7. Refresh markdown views.
-8. Write a RUN record.
-9. Report only if work occurred or the customer must act.
+6. Retry only errors marked retryable. Never create a duplicate.
+7. Update the state first, then the readable views. Write the run record and release the claim.
+8. Message me only if something happened or I need to act.
+------------------------------------------------------------------
 
 ====================================================================
 PUBLISHING SAFETY
+====================================================================
 
 The storefront never:
-- uses Pinterest's undocumented internal endpoints
-- scrapes Pinterest
-- simulates clicks solely to bypass an API/consent restriction
+- uses Pinterest's hidden internal addresses or scrapes Pinterest
+- clicks through a site just to get around an API or consent rule
 - invents an affiliate link
-- claims a Pin is verified without publisher confirmation
-- silently swaps providers or paid plans
+- calls a Pin checked without the publisher confirming it
+- switches provider or paid plan on its own
 
 The storefront always:
 - uses stable IDs
-- records publisher IDs
-- preserves failed work
-- distinguishes queued, awaiting approval, scheduled, published and verified
+- records publisher IDs and UUIDs
+- keeps failed work instead of losing it
+- keeps queued, awaiting approval, scheduled, published and checked separate
 - keeps the credit-saving path available
 
 ====================================================================
-UNVERIFIED GATE
+THE ONE THING TO TEST IN YOUR OWN ACCOUNT
+====================================================================
 
-The exact behavior of a recurring ChatGPT Scheduled Task invoking Metricool's connected publishing action must be tested in the customer's account.
-
-Until that test passes:
-- TIME-SAVING means "ChatGPT + Metricool connected publishing workflow"
-- not "fully unattended publishing"
-
-Never remove this distinction from customer instructions.
+Whether a recurring ChatGPT scheduled task can call Metricool's publishing action on its own has to be tested in your account. Until a separate scheduled run has done it (12_STATE_SCHEMA.md A8), the time-saving path means "ChatGPT plus Metricool, connected", not "fully unattended". Keep that distinction in every report.

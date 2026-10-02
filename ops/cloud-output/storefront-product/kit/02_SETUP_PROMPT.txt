@@ -1,346 +1,278 @@
 SETUP PROMPT
 
-Paste everything between the two lines into a new ChatGPT Work chat with this storefront kit available to Work.
+How to use it:
+- TIME-SAVING: open a new ChatGPT Work chat that can see your kit folder (the Google Drive folder for CLOUD, your computer folder for LOCAL).
+- CREDIT-SAVING or MANUAL: open a new ChatGPT or Claude chat and attach every kit file (or the whole kit zip) first.
+Then copy everything between the two long lines below, paste it in and press Enter.
+
+To renew your theme calendar, change one answer, or add the blog half or Instagram later, paste this same prompt again. It sees your existing settings and asks what you want to change.
 
 ------------------------------------------------------------------
 
 You are setting up The While-You-Sleep Storefront™ for me.
 
-This is a ChatGPT-first product. Use the current ChatGPT Work and Scheduled Tasks workflow described in the kit.
-
-Read these files before asking questions:
+Read these files first, before you ask me anything:
+14_AUTOMATIC_EXECUTION_CONTRACT.txt (main automatic workflow, capability and permission gates)
+12_STATE_SCHEMA.md (Part A is the rule book: follow it for everything you do)
 00_START_HERE.txt
 01_REQUIREMENTS.txt
 13_PIN_VISUAL_STANDARD.md
 03_THEMED_LOOK_RECIPE.txt
 04_OUTFIT_OF_THE_DAY_RECIPE.txt
+05_RECOMMEND_IT_TOO.txt
 06_SCHEDULED_TASK_PROMPTS.txt
 07_PERSONA_PATHS.txt
 08_STOREFRONT_PATHS.txt
-12_STATE_SCHEMA.md
+09_THE_BLOG_HALF.txt
+10_INSTAGRAM_ADD_ON.txt
+If any of them is missing, tell me the file name and stop.
 
 HOW TO TALK TO ME
-
-Plain words. One question at a time. Give one example answer when useful.
-Never ask me for information you can determine from my files or current connected services.
+Plain words. One question at a time. Give one example answer when it helps.
+Never ask me for anything you can find in my files or my connected services, or test yourself.
 If an answer is vague, ask one short follow-up, then decide sensibly and tell me what you decided.
-Never type or request passwords in chat.
-Do not promise a capability marked UNVERIFIED in the source files.
+Never type or ask for a password.
+Never promise something these files say is untested in my account.
 
-STEP 0. VERIFY CHATGPT ACCESS, THEN CHOOSE EXECUTION MODE
+STEP 00. NEW SETUP OR CHANGE?
+If MY_RECIPE.txt already exists, ask: "Do you want to renew your theme calendar, change one answer, add the blog half or Instagram, or start over?"
+- Renew: rebuild THEME CALENDAR and EVERGREEN BANK for the next 6 months from today, set a new RENEWAL DATE, keep everything else. Then STEP 10 and STEP 15.
+- Change one answer: ask which one and run only that step, then re-run every test it affects: a new board needs STEP 2 and the board ID in STEP 4; a new publisher needs STEP 4; a new image tool or model needs STEP 5 and STEP 5A; a new pace needs STEP 8's plan check; anything that changes the AUTOMATIC scope needs STEP 9 again. Then STEP 10 and STEP 15.
+- Add the blog half: STEP 8A, then STEP 9 if I'm on AUTOMATIC, then STEP 10 and STEP 15.
+- Add Instagram: STEP 8B, then STEP 9 if I'm on AUTOMATIC, then STEP 10 and STEP 15.
+- Start over: go to STEP 0, but never delete existing state or scheduled Pins. Reconcile them first.
 
-Before setup, verify that this account has ChatGPT Work access.
+STEP 0. CHECK WHAT THIS ACCOUNT CAN DO, THEN CHOOSE A MODE
+Check whether this chat has ChatGPT Work with Scheduled Tasks.
 
-If Work is unavailable:
-- do not present CLOUD or LOCAL Work as available;
-- explain that recurring Work tasks require Work access and this kit does not promise fully unattended publishing;
-- offer the CREDIT-SAVING/manual preparation path where supported, and state that it is not the same recurring workflow;
-- do not create Work tasks that the account cannot run.
+If it doesn't (or this is Claude, or a normal chat):
+- Report the missing recurring runtime. Preserve AUTOMATIC as the requested main path with its specific capability blocker. Offer the optional CREDIT-SAVING / MANUAL route and switch only if I choose it. Do available preparation and tests without claiming recurring execution.
+- Use this chat to prepare MY_RECIPE.txt, the state file, the product sheet, the prompts and the checklists, and give me each file to save in my folder.
+- Do not create tasks this account can't run.
+- For every automated or paid step, show me both choices: (A) connected, time-saving and (B) lower-cost or by hand.
 
-If Work is available, ask:
-"Do you want the machine to run in the cloud while your computer is off, or locally on your computer?"
+If it does, ask: "Do you want it to run in the cloud while your computer is off, or locally on your computer?"
+CLOUD: ChatGPT Work Cloud plus a connected Google Drive folder for the kit files and records. Only valid for unattended production if every required account action passes in this runtime.
+- Confirm Google Drive is connected.
+- Ask me to choose or create one folder named While-You-Sleep Storefront and use it for everything.
+- Create the state spreadsheet STOREFRONT_STATE there. Write one harmless test row and read it back.
+- If you can't write to Drive, say exactly that, and offer LOCAL.
+LOCAL: ChatGPT Work Local and a folder on my computer. My computer must be on during runs.
+- Ask me to choose the folder.
+- Create storefront-state.json there. Write one harmless test record and read it back.
+- Ask: "What time does your computer usually go off at night?" Save COMPUTER OFF TIME.
+Save STATE LOCATION.
 
-CLOUD:
-Use ChatGPT Work Cloud and connected Google Drive for the storefront files/state. This is the preferred while-you-sleep path.
-
-LOCAL:
-Use ChatGPT Work Local and a local storefront folder. The computer must be available during runs.
-
-If CLOUD is chosen:
-- confirm Google Drive is connected to ChatGPT
-- ask me to choose or create one dedicated folder named While-You-Sleep Storefront
-- use that folder as the source/state location
-- create a structured state spreadsheet named STOREFRONT_STATE if the connected Google Drive actions allow it
-- if the required Google Drive write action is unavailable, stop and say exactly that the cloud state setup is unavailable and offer LOCAL mode
-
-If LOCAL is chosen:
-- ask me to choose the local While-You-Sleep Storefront folder
-- create a structured state file named storefront-state.json
-- keep the markdown logs as human-readable views
-
-STEP 1. THEME
-
-Ask:
-"What's your look? Describe it the way you'd describe your Pinterest to a friend."
-
-Then ask:
-"Clothing, home, or both? If both, roughly how much of each?"
-
-Create:
-THEME
-MIX
-VOICE
-
-Never put a real person, film, show, brand or character into customer-facing content.
+STEP 1. THEME AND LOOK
+Ask: "What's your look? Describe it the way you'd describe your Pinterest to a friend."
+Then: "Clothing, home, or both? If both, roughly how much of each?"
+Then: "Do you have brand colors and fonts? If not, I'll suggest a palette and two fonts that fit your look."
+Save THEME, MIX, VOICE, VISUAL STYLE (a one-line description of the photo style that fits the theme, for example "bright, airy, natural daylight, cream and blush tones"), BRAND COLORS and BRAND FONTS.
+Never put a real person, film, show, brand or character into anything a shopper will see.
 
 STEP 2. BOARDS
-
-Ask for exact Pinterest board names.
-
-If I have no boards, suggest search-first board names in this form:
-Topic People Search | Amazon Finds
-
-Ask whether each board has sections.
-
-Ask me to confirm each production board's public status after I check it in Pinterest. Record the exact board name, public URL, sections, how public status was checked, and when it was checked.
-
-A secret TEST board is allowed only for a dry run and must be marked TEST. A dry run does not create or schedule a Pin.
-
-Resolve the board's stable identifier only through an authorized, supported publisher path, or have me provide it from Pinterest's official interface. Never guess an ID or use Pinterest scraping, hidden endpoints, or browser automation to simulate publishing. If the selected publisher cannot resolve the board, record BOARD_VERIFICATION = unavailable and do not schedule there. Store `board_name`, `board_url`, `board_id` when available, and verification evidence in MY_RECIPE.txt/state.
+Ask for my exact Pinterest board names. If I have none, suggest search-first names like "Cozy Fall Outfits for Moms | Amazon Finds".
+Ask whether each board has sections, and which kind of look goes where.
+Ask me to open each production board in Pinterest and confirm it says Public. Save the exact board name, its public web address, its sections, how public status was checked, and when.
+A secret TEST board is allowed only for a dry run, marked TEST. A dry run never creates or schedules a Pin.
+On native Pinterest, the board's public web address is its identifier. A numeric board ID is needed for Metricool; STEP 4 resolves it through the available supported account route. Never guess an ID, scrape Pinterest or use hidden Pinterest addresses.
 
 STEP 3. AMAZON PATH
+Ask: "Are you an approved Amazon Influencer with a storefront, or Associates only?"
+Influencer: ask for my storefront address. PATH = Influencer. Each look's destination = an Idea List the automatic operator creates or updates in my storefront through a tested permitted route (08_STOREFRONT_PATHS.txt).
+Associates only: ask for my website address, what it's built on (for example Squarespace, Shopify, WordPress, or an Astro site on GitHub), and the page base (for example /lifestyle). PATH = Associates. Remind me that Amazon needs my website listed in Associates Central (08_STOREFRONT_PATHS.txt).
+Associates only and no website: tell me kindly that the Pins need somewhere to send people, either an Influencer storefront or a page on my own site, and that I can paste this prompt again when I have either. Then stop.
+Ask: "Do you have Amazon Creators API access?" Save CREATORS API (yes or no). Never assume API access. Test a permitted alternative operator for product sourcing and authorized account actions. Save sourcing, link capture, Idea List create/update and destination readback as separate CAPABILITIES. Missing API access does not automatically assign weekly sourcing to me.
+Destination check (Associates path, or any website destination): ask me to run 08_STOREFRONT_PATHS.txt, QUICK DESTINATION TEST, and tell you the result. Save DESTINATION TEST. If Pinterest rejects the domain, no Pin may point there.
 
-Ask:
-"Are you an approved Amazon Influencer with a storefront, or Associates only?"
-
-If Influencer:
-- ask for storefront URL
-- PATH = Influencer
-- destination = Idea Lists
-
-If Associates only:
-- ask whether I have a website
-- ask platform
-- ask site page base
-
-If Associates only with no website:
-Stop setup and explain that the storefront needs a destination page or an approved Influencer storefront.
-
-Do not invent Amazon API access.
-Do not require PA-API 5.
-If I have Creators API access, record it as an optional source path.
-Otherwise use customer-supplied product data and authorized affiliate links.
-
-STEP 4. PUBLISHING MODE
-
-Ask:
-"Do you want TIME-SAVING publishing through Metricool, CREDIT-SAVING native Pinterest scheduling, or MIXED?"
-
+STEP 4. PUBLISHING
+Ask: "Do you want Metricool to schedule your Pins (time-saving), schedule them yourself in Pinterest (credit-saving), or a mix?"
 TIME-SAVING:
-- ask me to connect Metricool to ChatGPT
-- confirm a Pinterest profile is connected inside Metricool
-- confirm the correct Metricool brand
-- record the brand ID if available
-- prepare one TEST Pin draft and show me the complete image, title, description, destination, board, disclosure, and alt text
-- do not schedule a Pin during setup by default
-- schedule a test Pin only after I select that exact Pin, confirm its destination resolves, confirm the exact public board, verify the disclosure and alt text, and explicitly authorize that specific scheduling action
-- if any condition or supported board assignment is unavailable, leave the Pin unscheduled and record the blocker
-- after an authorized test action, read the scheduled record back through a supported publisher path and compare its image, title, destination, board, time, and status
+- Ask me to connect Metricool to this chat, with my Pinterest account connected inside Metricool. Confirm the right Metricool brand and save METRICOOL BRAND.
+- Ask which Metricool plan I'm on and save METRICOOL PLAN (STEP 8 checks it fits my pace).
+- Discover the available Metricool tools. If board listing is absent, use its supported official account interface through an authorized browser operator to match each production board to its board ID; do not invent an unavailable API action. Save it with the board. A board Metricool can't see is marked unavailable for Metricool (a new board may need the Pinterest connection refreshed inside Metricool), and nothing is scheduled there through Metricool.
+- Save PUBLISH METHOD = Metricool direct.
+- The test Pin is built and scheduled in STEP 12, not now.
+CREDIT-SAVING: PUBLISHER = native Pinterest. PUBLISH METHOD = native. No Metricool. If I already pay for Metricool and want a batch file instead of scheduling Pins one by one, PUBLISH METHOD = Metricool CSV.
+MIX: Metricool direct where its STEP 12 test passes; native Pinterest for the rest.
 
-Set PUBLISHING_TEST = passed only when that customer-authorized Pin is confirmed in the selected publisher. A draft or an unconfirmed request is not a pass.
+STEP 5. IMAGE TOOL AND BUDGET
+Ask: "Do you want the connected image tool to make your images (time-saving), or do you want me to write the prompts and you run the image tool yourself (credit-saving)?"
+TIME-SAVING:
+- Ask which connected image tool. If Higgsfield, confirm it's connected to this chat.
+- Save IMAGE PROVIDER, IMAGE MODEL, IMAGE PLAN, the RESOLUTION (2K unless I say otherwise) and my commercial-use rights.
+- Look up the model's current cost per image in the tool and save IMAGE COST PER GENERATION.
+- Work out what my pace needs (looks per week x 2 images, plus up to 2 corrections now and then; Outfit of the Day adds 2 per outfit) and show me a suggested monthly amount. Ask: "What's the most you want spent on images per month?" Save GENERATION BUDGET (amount and period) and what happens when it runs out (default: stop making new images and tell me).
+CREDIT-SAVING / MANUAL:
+- You write the full image prompt and the checklist. I run it in the tool I choose and bring the result back for checking.
+- I may use my own photos or licensed images instead. Save their source and rights.
+- GENERATION BUDGET = paid by me directly, outside this setup.
+Never pay for a second image just to add text. Never spend credits or switch tools or models quietly.
 
-If the workflow requires a separate platform approval, record PUBLISHING_TEST = approval-required and tell me the exact step. Do not claim it is scheduled or published before evidence confirms that state.
-
-If the workflow cannot safely complete the test, record PUBLISHING_TEST = blocked or failed with the reason. Offer CREDIT-SAVING mode; do not promise unattended publishing.
-
-CREDIT-SAVING:
-PUBLISHER = native Pinterest
-No Metricool setup required.
-
-MIXED:
-Use Metricool only where its connected workflow passes the customer's test. Use native Pinterest for the rest.
-
-STEP 5. IMAGE PROVIDER
-
-Ask:
-"Do you want Higgsfield for the image generation, or another supported provider you already use?"
-
-If Higgsfield:
-- confirm Higgsfield is connected to ChatGPT
-- record provider and exact model/plan
-- record commercial-use status
-
-Never add a second paid generation solely to place text over an approved image.
+STEP 5A. HEADLINE METHOD
+Every Pin gets its headline added after the image is approved, never generated inside the image.
+TIME-SAVING: add the headline yourself with your built-in code tool (an image library such as Python's PIL), using BRAND FONTS (or the closest free font if a brand font can't be loaded), in the reserved top band, sharp and high-contrast, checked at phone size. Test it on one sample image now and show me. Save HEADLINE METHOD = assistant layout.
+If your code tool can't do it, or on CREDIT-SAVING / MANUAL: HEADLINE METHOD = Canva (free). Give me these steps to keep: open a 1000 x 1500 px design, upload the image to fill the page, add one text box at the top with the headline you wrote, in my brand font, big enough to read on a phone, then Share, Download, PNG. No design skills needed; the headline text comes from you.
 
 STEP 6. PERSONA
+Ask: "Do you have an AI persona who wears the looks?"
+Yes: find her reference image in my folder (ask only if there's more than one), then ask for 3 or 4 everyday places she lives her life, including one with a mirror. Save PERSONA IMAGE and PERSONA WORLD, plus any signature props she always has (PERSONA PROPS; they are never linked products). Never ask for face, hair, eye, skin, body or age details.
+No: PERSONA = no. Pin 1 is a flat lay or collage and Pin 2 is a person-free scene (03 Part 4).
 
-Ask:
-"Do you have an AI persona who wears the looks?"
-
-If yes:
-- find the reference image in the connected folder
-- only ask if there are multiple candidate images
-- ask for 3 or 4 generic places she lives her life, including one mirror location
-- store PERSONA WORLD
-- never ask for face, hair, eye, skin, body or age descriptions
-
-If no:
-- use flat lays and collage paths only
-
-STEP 7. BRAND CLOSET
-
-Ask:
-"Are you a member of The Brand Closet™ at the tier that includes Outfit of the Day?"
-
-If yes:
-- record membership
-- configure Automation 2
-- remind me to keep the authorized Skool connection available when the selected execution mode needs it
-
-If no:
-- skip Automation 2
+STEP 7. THE BRAND CLOSET™
+Ask: "Are you a member of The Brand Closet™ with access to its Outfit of the Day lessons?"
+Yes: save BRAND CLOSET MEMBER = yes and the tier. Then test it yourself: try to open the Outfit of the Day course page (04_OUTFIT_OF_THE_DAY_RECIPE.txt) through this chat's supported tools. If you can see the lesson list, Automation 2 runs as a scheduled task. If you can't, keep optional Automation 2 queued with its access blocker. Offer its credit-saving form, where I open the lesson and describe the outfit, but switch only if I choose it.
+Ask: "Do you want to recommend The Brand Closet™ on your own pages with your own referral link?" If yes, show me how to find it (05_RECOMMEND_IT_TOO.txt, FIND YOUR LINK), save BRAND CLOSET REFERRAL LINK and BRAND CLOSET CARD = on. Then ask: "Do you also want one line about it in your Outfit of the Day Pin descriptions?" Save PIN LINE (on or off).
+No: BRAND CLOSET MEMBER = no, BRAND CLOSET CARD = off, PIN LINE = off. Skip Automation 2.
 
 STEP 8. PACE AND TIMES
-
-Ask:
-"What time zone are you in, and how many looks per week do you want: 3, 4, 5, 6 or 7?"
-
-Use an IANA time zone.
-
-Default:
-4 looks/week
-
-Build schedule:
-Saturday at 1:05 pm
-At 5 or more looks/week, also Wednesday at 1:05 pm
-
-Nightly Outfit of the Day:
-Sunday through Friday at 9:20 pm if enabled
-
-Maintenance/reconciliation:
-daily at a sensible time after the publishing window
-Use a single reconciliation task rather than multiple browser sweeps.
-
-IMPORTANT:
-Pin publishing times are not tied to the customer's computer being on.
-
-Use:
+Ask: "What time zone are you in, and how many looks a week do you want: 3, 4, 5, 6 or 7?" Save an IANA time zone (for example America/New_York). Default 4.
+LOOK DAYS defaults:
+- 3: Tuesday, Thursday, Sunday
+- 4: Tuesday, Thursday, Saturday, Sunday
+- 5: Monday, Tuesday, Thursday, Saturday, Sunday
+- 6: every day except Friday
+- 7: every day
+Build runs: Saturday 1:05 pm. At 5 or more looks a week, also Wednesday 1:05 pm.
+Outfit of the Day run (if on): Sunday to Friday, 9:20 pm.
+Reconciliation run: daily, 7:45 am (it checks yesterday's Pins and acts on pulls before the first Pin of the day). Save RECONCILE TIME.
+Pin times (they don't depend on my computer):
 - Pin 1: 1:30 pm
 - Pin 2: 8:30 pm
-- OOTD flat lay: 4:30 pm
-- OOTD lifestyle: 9:30 am
+- Outfit of the Day flat lay: 4:30 pm
+- Outfit of the Day lifestyle: 9:30 am
+Keep at least 1 hour between any two Pins. Never schedule more than 14 days ahead.
+OUTFIT TIME ESTIMATE: 2 hours per outfit unless I say otherwise.
+PLAN CHECK: count my Pins per month (looks per week x 2 x about 4.3, plus about 2 a day for Outfit of the Day if on). If I chose Metricool, compare it with my METRICOOL PLAN's monthly post limit (the Free plan was 20 a month when the kit was written). If I chose native Pinterest, remind me Pinterest holds only 10 future Pins at once, so the tasks will hand me at most 10 to schedule at a time. If it doesn't fit, suggest a lower pace or a bigger plan, and save my choice.
 
-Keep at least 1 hour between Pins.
+STEP 8A. THE BLOG HALF (optional)
+Ask: "Do you have a website on GitHub, like a Weekend Ecosystem™ site, where you want a shop-the-look section?"
+No: BLOG HALF = off.
+Yes: if 09_THE_BLOG_HALF.txt STEP 1 isn't done yet, tell me to do it first and come back. If it's done, save BLOG HALF = on, CAN PUBLISH TO SITE (yes only after repository write, deployment and live-URL readback pass; otherwise untested/no), SITE, REPO and LIFESTYLE CATEGORIES (the line the site chat printed), and run the QUICK DESTINATION TEST for my site if it isn't saved yet.
 
-Never schedule more than 14 days ahead in the storefront system.
+STEP 8B. INSTAGRAM (optional)
+Ask: "Do you want each look posted to Instagram as a feed carousel too?"
+No: INSTAGRAM = off.
+Yes: ask for my handle and a posting time (default 7:00 pm). Ask which publisher: Metricool (if my Instagram is connected there) or Meta Business Suite. Test it the way 10_INSTAGRAM_ADD_ON.txt describes before relying on it. Save INSTAGRAM = feed posts on, with account, posting time, publisher and test result.
 
-STEP 9. WRITE CONFIGURATION
+STEP 9. AUTOMATIC OR REVIEW FIRST
+(Time-saving and mix only. Credit-saving and manual are always REVIEW_FIRST, because I schedule those myself.)
+Ask once: "Do you want AUTOMATIC, where every Pin (and blog page and Instagram post, if those are on) that passes every check is scheduled within the rules you approve now, without asking you each time? Or REVIEW FIRST, where you approve each finished Pin before it's scheduled?"
+For AUTOMATIC, read back the exact scope, using what I've already answered (12_STATE_SCHEMA.md A2): accounts, board IDs and sections, destinations, image provider, model and resolution, generation budget and period, channels (Pinterest, plus blog and Instagram if on), looks per week, every schedule and the time zone, how products are supplied, and an end date or "until I revoke it" (ask me which). Ask me to authorize that scope in my own words. Save AUTOMATION MODE and AUTOMATION POLICY (my words, who, when, policy_id, version, scope) in MY_RECIPE.txt and the state before any paid or publishing action. Never invent a permission or a budget.
+For REVIEW FIRST, save AUTOMATION MODE = REVIEW_FIRST.
+Either way, the one test Pin in STEP 12 is shown to me and approved by me before it's scheduled, so I see what the machine makes. Record that approval as approval_actor = customer, with my real selection and authorization.
 
-Create or update MY_RECIPE.txt with:
+STEP 10. WRITE MY_RECIPE.txt
+Create or update MY_RECIPE.txt with these lines (write "off", "no" or "not used" rather than leaving a line out):
 
 SETTINGS
 THEME
 MIX
 VOICE
+VISUAL STYLE
+BRAND COLORS
+BRAND FONTS
 TIME ZONE
-BOARDS
+BOARDS (name, public address, Metricool board ID or "not needed", sections, public check method and date)
 PATH
 STOREFRONT
 SITE
 SITE PLATFORM
 SITE PAGE BASE
-EXECUTION MODE
+CREATORS API
+CAPABILITIES (exact operators, account actions, permission and readback evidence)
+PUBLISHING PERMISSION EVIDENCE
+DESTINATION TEST (domain, result, date)
+EXECUTION MODE (CLOUD, LOCAL or CREDIT-SAVING / MANUAL)
+STATE LOCATION
+COMPUTER OFF TIME (LOCAL only)
 PUBLISHER
+PUBLISH METHOD (Metricool direct, Metricool CSV or native)
 PUBLISHING TEST
 METRICOOL BRAND
+METRICOOL PLAN
+AUTOMATION MODE
+AUTOMATION POLICY (policy_id, version, my words, who, when, full scope)
 IMAGE PROVIDER
 IMAGE MODEL
 IMAGE PLAN
+RESOLUTION
+IMAGE COST PER GENERATION
+GENERATION BUDGET (amount, period, and what happens when it runs out)
 COMMERCIAL RIGHTS RECORDED
+HEADLINE METHOD
 PERSONA
 PERSONA IMAGE
 PERSONA WORLD
+PERSONA PROPS
 BRAND CLOSET MEMBER
 BRAND CLOSET TIER
+BRAND CLOSET REFERRAL LINK
+BRAND CLOSET CARD (on or off)
+PIN LINE (on or off)
 PACE
 LOOK DAYS
+RECONCILE TIME
+OUTFIT TIME ESTIMATE
 BLOG HALF
-PIN LINE
-INSTAGRAM
+CAN PUBLISH TO SITE
+REPO
+LIFESTYLE CATEGORIES
+INSTAGRAM (off, or feed posts on, with account, posting time, publisher, test result)
+SLOTS (every run time and every Pin time)
+DISCLOSURE LINE: As an Amazon Associate I earn from qualifying purchases.
+(Every Pin description starts with "#ad " and ends with the DISCLOSURE LINE.)
+THEME CALENDAR: 6 months of look windows from today, each with 4 to 6 look ideas that fit THEME and MIX.
+EVERGREEN BANK: 30 evergreen look ideas.
+RENEWAL DATE: 6 months from today.
 
-SLOTS
-all RUN and PIN times
+STEP 11. THE STATE AND YOUR FILES
+Create the state described in 12_STATE_SCHEMA.md Part B, in STATE LOCATION:
+CLOUD: STOREFRONT_STATE in Google Sheets, with tabs AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. The PINS tab has a PULL column I can type in.
+LOCAL or CREDIT-SAVING: storefront-state.json with the same sections.
+Also create storefront-log.md, pin-tab.md, pin-drafts.md, shopping-list.md and PRODUCT_SOURCES.md (with one row marked EXAMPLE showing every field in 03_THEMED_LOOK_RECIPE.txt Part 3). These are readable views; the state is the source of truth.
+Then the tasks, or a run checklist:
+TIME-SAVING (Work):
+- Create the tasks PAUSED in 06_SCHEDULED_TASK_PROMPTS.txt with this Work chat's scheduler: the weekly build always, Outfit of the Day only if on, reconciliation always. Each task's prompt is everything between its two long lines.
+- Write MY_SCHEDULED_TASKS.txt with each task's name, schedule, time zone, state location, on/off status and the actual task ID the scheduler gave it. Read the file back.
+- A saved schedule is not a successful run. Don't call the automation working until a separate scheduled run has done its job (12_STATE_SCHEMA.md A8).
+CREDIT-SAVING / MANUAL:
+- Don't create tasks. Write MANUAL_RUN_CHECKLIST.md with the same three jobs as on-demand checklists: build the next looks, build Outfit of the Day (if on), reconcile drafts, schedules and pulls. I can paste any task prompt from 06 into a normal chat whenever I want to run that job. Same IDs, checks and disclosure rules.
+If a connected service can't do a step, leave that item queued and tell me. Never push me to upgrade when the manual path can do the same step.
 
-DISCLOSURE LINE
-#ad As an Amazon Associate I earn from qualifying purchases.
+STEP 12. YOUR FIRST LOOK
+CONNECTED TIME-SAVING (AUTOMATIC or REVIEW_FIRST): choose the first look from my calendar, source its products through my tested route, capture my authorized links and create/update the look's Idea List or publish its page. Record and read back the product/destination packet yourself. Missing access keeps the look queued with a capability blocker, not a compulsory shopping list for me. CREDIT-SAVING / MANUAL, if chosen: guide me through the same product-row fields and destination creation. Then build the paired images and confirm:
 
-THEME CALENDAR
-6 months of look windows.
-
-EVERGREEN BANK
-30 evergreen look ideas.
-
-RENEWAL DATE
-6 months from setup.
-
-STEP 10. STRUCTURED STATE
-
-If CLOUD:
-Create STOREFRONT_STATE in Google Sheets if the required action is available.
-
-Create sheets:
-LOOKS
-PRODUCTS
-IMAGES
-PINS
-RUNS
-ERRORS
-
-Use the fields in 12_STATE_SCHEMA.md.
-
-If LOCAL:
-Create storefront-state.json using 12_STATE_SCHEMA.md as the schema.
-
-Create or preserve:
-storefront-log.md
-pin-tab.md
-pin-drafts.md
-
-These are views and notes, not the authoritative state.
-
-STEP 11. SCHEDULED TASKS
-
-Create the tasks described in 06_SCHEDULED_TASK_PROMPTS.txt.
-
-Preferred tasks:
-1. weekly themed looks
-2. nightly Outfit of the Day, if enabled
-3. reconciliation / publishing queue maintenance
-
-Do NOT create separate pull sweep and missed-run sweep tasks unless testing proves they materially improve reliability.
-
-The reconciliation task handles:
-- queued Pins
-- awaiting approval
-- scheduled but unverified Pins
-- retryable failures
-- pull requests
-- duplicate reconciliation
-- stale state
-
-If the selected Work mode or connected app cannot perform a required action, leave the state queued and report it.
-
-STEP 12. TEST
-
-Run one complete draft test look before scaling. Keep it unscheduled unless I select the exact finished test Pin and explicitly authorize its schedule after reviewing the image, title, destination, exact public board, disclosure and alt text.
-
-The draft test must prove:
-- configuration reads correctly
-- one look gets a stable LOOK_ID
-- authorized product inputs are recorded
-- one image asset passes the visual acceptance checks
+- MY_RECIPE.txt reads back correctly
+- the look gets a LOOK_ID and its sourced product records are saved
+- the destination opens and is on a domain that passed the destination test
+- both images pass the checks in 13_PIN_VISUAL_STANDARD.md, with the headline added by HEADLINE METHOD
 - Pin copy, disclosure and alt text are recorded
-- the destination resolves
-- the exact board and public status are verified through supported paths
-- state records the complete Pin and review gate
-- a repeated dry run reconciles the existing PIN_ID without creating a duplicate
+- the board is confirmed public (and matched to its Metricool board ID if using Metricool)
+- the state holds both complete Pins and their approval status
+- running the same build again finds the existing PIN_IDs and creates nothing new
+Show me Pin 1. When I approve that exact Pin and its time, schedule it (through Metricool with the write-intent rule, or by giving me the package to schedule natively). Read it back from Metricool and compare image, title, link, board, time and status; on native Pinterest, ask me to confirm it shows in my scheduled Pins.
+PUBLISHING TEST = passed only when that read-back matches. A draft or an unconfirmed request is not a pass. If Metricool needs a platform approval, PUBLISHING TEST = approval-required and tell me the exact step. If it can't be done safely, PUBLISHING TEST = blocked (or failed) with the reason, offer native Pinterest, and never promise unattended publishing.
+Pin 2 then follows the normal rules (AUTOMATIC: scheduled within my scope; REVIEW FIRST: waits for me).
+Without Work, run this whole test right here in the chat, step by step. It proves the setup, not unattended running.
 
-A publisher test may be attempted only after my per-Pin selection and schedule authorization. It must read the scheduled result back through a supported path. A draft-only result, an unconfirmed request, or a test that cannot safely assign the verified board is not a pass. Do not infer publication from scheduling.
+STEP 13. THE NEXT AUTOMATIC RUN
+Write shopping-list.md as the agent's sourcing queue for the next looks from the theme calendar and evergreen bank. It is not mandatory buyer homework in AUTOMATIC. Record any customer-chosen manual assignments separately. Keep recurring tasks paused until the capability, publishing-permission and first-look gates pass. Then run a controlled scheduled test, reconcile its results and save the evidence. A schedule is not live-publication proof.
 
-If the authorized publisher test cannot be completed, record the blocker, leave the Pin unscheduled, and do not label the workflow fully automated.
+STEP 14. CHECK BACK
+Read MY_RECIPE.txt, the state's AUTOMATION_POLICY and MY_SCHEDULED_TASKS.txt back from STATE LOCATION and confirm each one saved.
 
-STEP 13. FINAL SETUP REPORT
-
-Give me:
-- execution mode
-- publishing mode
-- image provider
-- Amazon path
-- number of weekly looks
-- scheduled tasks created
-- test result
-- anything I must still do
-
-Never say "fully automated" unless the end-to-end test actually passed.
+STEP 15. MY SETUP REPORT
+Tell me, in plain words:
+- where it runs (cloud, local, or by hand) and how it publishes
+- Automatic or Review First, and what I approved
+- image tool, model, cost per image and monthly budget
+- Amazon path and destination test result
+- looks per week and every run and Pin time
+- tasks created, with their IDs
+- the test result
+- automatic capabilities that passed, tasks still paused, and exact blockers; any manual steps I explicitly chose
+- the controlled scheduled-run and live-verification results, separately
+Never say "fully automated" unless a separate scheduled run has passed.
 
 ------------------------------------------------------------------

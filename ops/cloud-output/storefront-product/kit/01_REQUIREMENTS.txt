@@ -1,79 +1,68 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 REQUIREMENTS
 
-Read this before anything else.
+Read this before you buy anything else. Most of it you only need for the time-saving path.
 
-CORE REQUIREMENTS
+====================================================================
+EVERYONE NEEDS
+====================================================================
 
-1. CHATGPT WORK
-The automated storefront path requires a ChatGPT plan/account with access to Work and Scheduled Tasks. Current OpenAI documentation says Work is not available on Free or Go; availability on other plans can vary by account, region and workspace permissions. Check current Work access before purchase/setup.
+1. AMAZON
+An approved Amazon Associates account.
+For the Idea List path, also Amazon Influencer approval and a storefront. No Influencer approval? The Associates-only path uses a page on your own website instead (08_STOREFRONT_PATHS.txt).
+On the connected time-saving route (AUTOMATIC or REVIEW_FIRST), the agent sources products and records links belonging to your account through the permitted route tested at setup. It never invents products, ASINs or tags. Creators API is one eligible catalog route, not a requirement assumed for every buyer. Browser account actions require supported access and applicable permission; see 14_AUTOMATIC_EXECUTION_CONTRACT.txt. On the optional manual route, you supply your own product rows and links.
 
-IMPORTANT PLAN GATE
-- Work automation path = requires Work access.
-- Free/Go customers must not be told that ordinary Scheduled Tasks alone provide the full storefront automation.
-- The lower-cost/manual path can still use ChatGPT for preparation and native Pinterest for final scheduling, but it is not the same unattended Work workflow.
+2. PINTEREST
+A Pinterest business account with at least one PUBLIC board. A secret board gets zero reach.
+Pinterest's own scheduler holds standard Pins up to 30 days ahead, and up to 10 scheduled at once. The kit never schedules more than 14 days ahead.
 
-Work Cloud is preferred for the true while-you-sleep path. Work Local is the fallback when the workflow requires a local folder or local browser session.
+3. AN AI CHAT
+Any ChatGPT or Claude plan for the setup interview, the copy and the image prompts.
 
-2. AMAZON
-You need an approved Amazon Associates account.
+====================================================================
+ONLY FOR THE TIME-SAVING PATH
+====================================================================
 
-If you want the Amazon Influencer Idea List path, you also need Amazon Influencer approval and a storefront.
+4. CHATGPT WORK
+The automated path runs as ChatGPT Work scheduled tasks. Work is available on eligible paid ChatGPT plans, and what's switched on can vary by account, region and workspace. Ordinary Scheduled Tasks on their own are not the full automation.
+Cloud runs with your computer off only if every required account action has passed in that runtime. Local browser execution requires your computer and app available. Test the entire route, including Amazon and destination writes, before choosing.
+No Work or equivalent recurring runtime? Setup reports the unavailable automatic capability and preserves the work. You may choose the optional credit-saving path; it is never substituted silently.
 
-Amazon's PA-API 5 is deprecated. Amazon's current successor is Creators API. Do not assume you have Creators API access. The customer workflow may use customer-supplied Amazon product data and authorized affiliate links instead.
+5. AN IMAGE TOOL
+Higgsfield is the tested connected image tool. Its ChatGPT connection needs an active paid Higgsfield subscription. Setup records the exact model, its cost per image and your commercial-use rights, and never switches model or spends quietly.
+Credit-saving alternative: AI writes the prompt and you run it yourself in the image tool you choose. You can also use your own photos or images you're licensed to use.
 
-3. PINTEREST
-You need a Pinterest business account with public boards.
+6. METRICOOL
+Schedules your Pins for you. Connects to ChatGPT through Metricool's own app.
+Metricool's Free plan has a monthly limit on published posts (20 when this kit was written). The default pace of 4 looks a week is about 34 Pins a month, so plan on a paid Metricool plan for this path, or lower your pace.
 
-Pinterest's native scheduler supports standard Pins up to 30 days ahead and up to 10 future Pins at a time.
+7. GOOGLE DRIVE
+For CLOUD mode, your kit files and records live in one Google Drive folder that ChatGPT can read and write.
 
-4. IMAGE PROVIDER
-Higgsfield is the preferred connected image provider when the customer selects that path. Higgsfield officially supports ChatGPT integration. A paid Higgsfield subscription is required for its ChatGPT connection.
+====================================================================
+ONLY FOR THE OPTIONAL EXTRAS
+====================================================================
 
-If the customer uses another supported image provider, record the exact provider, model, plan and commercial-use rights in MY_RECIPE.txt.
+8. THE BRAND CLOSET™: only for the Outfit of the Day automation. You need access to its Outfit of the Day lessons. Check the current tiers on its page before upgrading. To run it as a scheduled task, your ChatGPT mode must be able to open your signed-in Skool classroom; setup tests this for you. If access fails, keep that optional automation queued. You may choose to describe each lesson yourself as a manual alternative.
+9. YOUR OWN WEBSITE: any website for the Associates-only path. A site on GitHub only for the blog half (09_THE_BLOG_HALF.txt).
+10. INSTAGRAM: only for the Instagram add-on.
 
-5. METRICOOL
-Only required for TIME-SAVING publishing.
+====================================================================
+WHAT YOU DON'T NEED
+====================================================================
 
-Metricool's MCP can connect to ChatGPT and can create, schedule, publish and update posts on connected networks within the customer's Metricool plan limits.
+No single browser-agent brand is mandatory. Automatic browser-only steps do require a supported, permitted operator.
+No Pinterest developer app.
+No Amazon API.
+No website on the Influencer path.
+No Instagram for the core machine.
+No design skills, no code, no face on camera.
 
-Metricool Free has a 20-published-post monthly limit. The storefront does not assume a particular Metricool tier. Customers who exceed the Free limit need a paid plan.
+====================================================================
+TWO HONEST NOTES
+====================================================================
 
-6. GOOGLE DRIVE
-Required for the preferred CLOUD state/asset path when the workflow uses Google Drive.
+Automating Amazon and Pinterest carries some account risk. The kit is built to go slowly, never scrape or fake clicks, and stop at the first sign of trouble. You run it on your own accounts, at your own call.
 
-ChatGPT can connect to Google Drive and, where the required permissions/actions are enabled, read and update supported Drive-family files.
-
-7. THE BRAND CLOSET™
-Only required for the optional Outfit of the Day automation.
-
-WHAT THE CUSTOMER DOES NOT NEED
-
-No separate desktop-browser automation subscription is required by this storefront kit.
-No Pinterest API developer application is required for the normal customer path.
-No Amazon PA-API 5 integration is required.
-No website is required on the Amazon Influencer path.
-No Instagram is required for the core storefront.
-
-COST-SAVING PATH
-
-Choose CREDIT-SAVING if you do not want a Metricool subscription.
-
-ChatGPT builds the complete Pin package.
-You perform the final Pinterest scheduling step.
-
-TIME-SAVING PATH
-
-Choose TIME-SAVING if you want to use the connected Metricool publishing path after you select each finished Pin and explicitly authorize that Pin's schedule. A scheduled task may prepare and route an approved Pin only when the required account actions are available.
-
-IMPORTANT VERIFICATION GATE
-
-Never promise publishing without customer approval. A successful setup test can confirm only the exact authorized action and the publisher evidence it returned; it does not prove unattended future runs or publication. Test one Pin only after the customer chooses the final image, confirms the destination resolves, verifies the exact public board and disclosure, reviews the title and alt text, and authorizes that specific scheduling action.
-
-If board assignment, per-Pin approval, or publisher readback cannot be supported in the customer's account, mark the path blocked or manual. Do not claim the end-to-end workflow is verified.
-
-COMPUTER REQUIREMENT
-
-CLOUD mode: computer can be off during the run.
-LOCAL mode: computer must be available for local work.
-
-Never type passwords into a task prompt. Complete sign-in through the provider's own sign-in flow.
+Never type a password into a task or a chat. Sign in through each service's own sign-in screen.

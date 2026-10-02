@@ -1,3 +1,5 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 THE BLOG HALF
 Pins are one half of being found. Google is the other. This file adds a shop-the-look section to your own website, so every look also becomes a page on your own site that Google can find, and your pins can link to your own pages.
 
@@ -5,21 +7,32 @@ Pins are one half of being found. Google is the other. This file adds a shop-the
 HAVE THE WEEKEND ECOSYSTEM™?
 ====================================================================
 
-Then you already have the site this needs: yours, on your own domain, deploying from GitHub. One paste adds the whole section.
+Then you already have the site this needs: your own site, on your own domain, updated through GitHub. One paste adds the whole section.
 
-A note on Pinterest, because you've heard me say my domain is blocked there: that block is on MY domain only. It has nothing to do with yours. Your pins can link to your own look pages. (Before your first pin, run the quick test in 08_STOREFRONT_PATHS.txt anyway: paste your address into a pin's link field and make sure Pinterest accepts it.)
+The rest of this file is mostly instructions for your AI chat. You copy and paste; it builds.
 
-You need GitHub write access to your site's repository and the GitHub connection available to the selected ChatGPT Work workflow.
+A note on Pinterest: it blocks some website domains, and a live site doesn't prove yours is accepted. (Before your first pin, run the QUICK DESTINATION TEST in 08_STOREFRONT_PATHS.txt anyway: paste your address into a pin's link field and make sure Pinterest accepts it. If it doesn't, your look pages still work for Google. Pins may use a verified per-look Idea List only if your account has tested Influencer and Idea List access. An Associates-only account keeps the Pins queued until an accepted owned shopping-page destination is available. Do not use redirects to evade a domain block.)
 
-STEP 1. Open ChatGPT Work with your website repository connected and give it access to the repository. Use the GitHub connected app or the supported repository workflow, then paste this:
+TIME-SAVING: your ChatGPT Work chat is connected to your site's GitHub, with permission to make changes.
+CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat prepares every file and tells you exactly where to upload it in GitHub. Work is not required.
+
+Do not make a connected GitHub write mandatory when the customer chooses the manual path.
+
+STEP 1.
+
+TIME-SAVING:
+Open ChatGPT Work with your website repository connected and give it access to the repository. Use the supported GitHub connected workflow, then paste the prompt below.
+
+CREDIT-SAVING / MANUAL:
+Paste the same prompt into ChatGPT or Claude and use it as the implementation checklist. If your plan cannot write to GitHub directly, have it prepare the exact files and changes, then make the repository changes yourself and run the build/deploy through your normal GitHub workflow.
 
 ------------------------------------------------------------------
-Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. Read my site's existing layout, styles and components first and match them exactly: same fonts, colors, spacing, header and footer. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
+Add a shop-the-look section called Lifestyle to my website at /lifestyle. It builds itself from data files, so a scheduled task can add a new look by uploading files without touching any code. I've attached 13_PIN_VISUAL_STANDARD.md from my kit. Read my site's existing layout, styles and components first and match them exactly: same approved fonts, colors, header and footer, with deliberate editorial scale, photographic depth, responsive spacing and clear shopping hierarchy. Follow 13_PIN_VISUAL_STANDARD.md. Don't change the content or address of any existing page; you may edit the shared layout to add the navigation and footer links.
 
 THE DATA
 - A folder src/lifestyle/ holds one JSON file per look plus that look's images, side by side.
 - File names: <slug>.json, <slug>-pin1.jpg and <slug>-pin2.jpg. Images are portrait, roughly 2:3, at least 800 pixels wide. Also accept .jpeg, .png and .webp, and match each JSON image to its file by name without the extension, so "<slug>-pin1.jpg" in the JSON still finds <slug>-pin1.png.
-- JSON fields: slug, title, date (YYYY-MM-DD), category, season (a season or holiday name, or "Evergreen"), intro, images (array of { file, alt }), listLink (the look's Amazon Idea List, or empty on the Associates-only path), items (array of { name, link, note (optional) }).
+- JSON fields: slug, title, date (YYYY-MM-DD), category, season (a season or holiday name, or "Evergreen"), intro, images (array of { file, alt, role (optional: product_edit or lifestyle), cleanFile (optional) }), ideaList (the look's Amazon Idea List, or empty on the Associates-only path), items (array of { name, link, note (optional) }).
 - Categories: write a list of 6 to 10 categories that fit my theme (ask me my theme in one question if you can't tell from the site). Each has a slug (lowercase, hyphens only), a name and a one-line blurb in my voice.
 - Be forgiving: an image whose file isn't there is dropped; a look left with no images or no items is skipped; a look whose category isn't in the list is skipped; a JSON file that doesn't parse is skipped with a warning. Only a look slug equal to a category slug, or two looks with the same slug, stops the build, with a clear error naming the slug. Read only the .json files, never the README.
 - Add a README.md inside src/lifestyle/ explaining the format in plain words, with one example JSON.
@@ -27,9 +40,9 @@ THE DATA
 THE PAGES
 - /lifestyle: the hub. A headline, one line about the section, a grid of category cards (with a look count or "Coming soon"), then the latest 24 looks as image cards.
 - /lifestyle/<category>: a heading, the blurb, and every look in that category as image cards.
-- /lifestyle/<slug>: one look. Top to bottom: an eyebrow linking back to its category, the title as the H1, the intro, a one-line affiliate notice, the images, then "Shop the look": a numbered list of every item, each name linked to its item link. If the look has a listLink, a button under the list: "Shop every piece on Amazon". Then up to 4 more looks from the same category.
+- /lifestyle/<slug>: one designed shopping article. Build a responsive editorial hero with category eyebrow, one H1, a concise desire-led introduction, a visible Shop the edit anchor and clean lifestyle photography. Below, place the 80-150 word introduction and clear affiliate/AI notice, then a clean product edit beside distinct item cards. Give each card its authorized item name, a short factual styling or use note and an individual shopping button. Finish with a deliberate visual next step and up to 4 related looks. Use approved brand fonts, deliberate scale, generous spacing, restrained accent color and real photographic texture. Preserve the site header/footer and existing content. Inspect desktop and phone screenshots; a plain stack of Pin graphics and text links fails visual QA. Follow 13_PIN_VISUAL_STANDARD.md. An Idea List button appears only when an authorized Idea List exists.
 - Every Amazon link opens in a new tab with rel="sponsored nofollow noopener".
-- Every page in the section ends with this disclosure: "As an Amazon Associate I earn from qualifying purchases. Every link on this page is an affiliate link: if you buy through it, I earn a small commission at no extra cost to you." And this line: "The images on this page are AI-generated styling photos. The linked pieces may look slightly different in real life."
+- Every page in the section ends with this disclosure: "As an Amazon Associate I earn from qualifying purchases. Amazon shopping links on this page are affiliate links: if you buy through them, I may earn a commission at no extra cost to you." Add "AI-generated styling inspiration; linked products may differ" only for AI-generated inspiration images. For owned/licensed product photography, record the source and omit a false AI notice. Mixed pages label the applicable images individually.
 - No prices anywhere. Ever. Amazon prices change by the hour.
 - Add Lifestyle to the site navigation and footer.
 
@@ -44,21 +57,27 @@ FINISH
 Add two example looks built from the README sample, using any two images already in my site as stand-ins, so the section renders. Build the site and fix every error. Show me the hub, one category and one look page running locally. Then delete the two example looks, build again to confirm an empty section still builds and shows "Coming soon", and commit with the message "Add the Lifestyle shop-the-look section". Push. At the very end, print the category slugs on one line starting "LIFESTYLE CATEGORIES:" so I can paste it into MY_RECIPE.txt. Tell me in one line when it's live, with the /lifestyle address. No em dashes in anything you write on the site.
 ------------------------------------------------------------------
 
-STEP 2. When the section is live, add these lines to MY_RECIPE.txt (or paste 02_SETUP_PROMPT.txt again, choose "change one answer" and tell it you now have the blog half):
+STEP 2. When the section is live, paste 02_SETUP_PROMPT.txt again and choose "add the blog half" (in AUTOMATIC this also adds the blog to your saved scope). Or add these lines to MY_RECIPE.txt yourself (Review First only):
 
 BLOG HALF: on
-CAN PUBLISH TO SITE: yes
+CAN PUBLISH TO SITE: untested until the connected write, deployment and live-URL readback pass
 SITE: (your site address, for example https://www.yoursite.com)
 REPO: (your GitHub repo address, for example https://github.com/you/site)
 LIFESTYLE CATEGORIES: (the line the site chat printed)
 
 And check your website is listed in Associates Central (Account Settings, websites and mobile apps). Amazon needs every place your links appear listed there.
 
-STEP 3. That's it. From then on, the weekly task adds each look (after its pins are verified on the Influencer path; before its pins are scheduled on the Associates-only path):
-1. Writes <slug>.json with exactly these fields: slug (the look name, lowercase, hyphens, no dates, 60 characters at most, never equal to a LIFESTYLE CATEGORIES slug or a slug already in storefront-log.md; if it would be, add one describing word), title, date (the look's date), category (one slug from LIFESTYLE CATEGORIES, never a new one), season, intro (80 to 150 words in my voice, no prices), images ([{ "file": "<slug>-pin1.<ext>", "alt": pin 1 alt text }, { "file": "<slug>-pin2.<ext>", "alt": pin 2 alt text }], where <ext> is the real extension of the file uploaded in step 2), listLink, items (every piece: { "name", "link": its authorized affiliate link }). It checks the JSON parses before uploading.
-2. Opens REPO/upload/main/src/lifestyle in a fresh tab and adds both pin images through the file input, straight from the capture method in 03_THEMED_LOOK_RECIPE.txt Part 4 (nothing is downloaded), named <slug>-pin1 and <slug>-pin2. Commit message "Add images: <title>", Commit changes.
-3. Opens REPO/new/main/src/lifestyle?filename=<slug>.json in a fresh tab, pastes the JSON in one paste, checks the file name, commit message "Add look: <title>", Commit changes. Images always go first.
-4. Opens SITE/lifestyle/<slug> after 3 minutes, and again every 3 minutes for up to 15 minutes. Once it loads, the page is logged live. If it still doesn't, the look's notes say "page not live" and the task tells me in one line: "Open Vercel, Deployments, and look at the error on the latest one." It never re-uploads the same files.
+STEP 3. From now on, the weekly task adds each finished look to your site (06_SCHEDULED_TASK_PROMPTS.txt, Task 1 step 15). It runs under the same approval gate as Pins (AUTOMATIC: inside your saved scope, if you included the blog; REVIEW_FIRST: you approve the exact change) and keeps every source, rights, disclosure, duplicate and live-page check. Here is exactly what it does:
+
+1. Write <slug>.json with exactly these fields: slug (the look name, lowercase, hyphens, no dates, 60 characters at most, never equal to a LIFESTYLE CATEGORIES slug or a slug already in state; if it would be, add one describing word), title, date (the look's date), category (one slug from LIFESTYLE CATEGORIES, never a new one), season, intro (80 to 150 words in my voice, no prices), images (two distinct approved entries with file, alt, role and optional cleanFile; product_edit and lifestyle roles identify the concept. Store clean photographs alongside final Pin graphics, and use cleanFile for blog photography when supplied. Use actual filenames and extensions), ideaList (the approved Amazon Idea List URL, or empty when that path does not use one), items (every piece: { "name", "link": its authorized affiliate link }). Validate the JSON before any repository write.
+
+2. TIME-SAVING GitHub path: use the supported connected repository write action to add the two approved images and their clean blog photographs to src/lifestyle first, then add the JSON file. Render the two concepts as clean photography with lifestyle first, not duplicate graphics. Use the repository's current default/deployment branch rather than hard-coding main.
+
+3. CREDIT-SAVING / MANUAL GitHub path: add the two approved images and their clean blog photographs to src/lifestyle through GitHub's normal upload flow, then create <slug>.json with the validated JSON. Commit images before JSON so the first deployed look never references missing image files.
+
+4. Verify the production page SITE/lifestyle/<slug> after deployment. Re-check for up to 15 minutes without creating duplicate files or commits. If it does not load, keep the look's blog status as queued with error_code page_not_live, and inspect the site's normal deployment logs. Do not claim the page is live until the production URL reads back.
+
+5. Record the repository commit identifier and the live page URL in state/log. A GitHub commit is not proof the deployment succeeded.
 
 ====================================================================
 DON'T HAVE THE WEEKEND ECOSYSTEM™?
@@ -66,5 +85,6 @@ DON'T HAVE THE WEEKEND ECOSYSTEM™?
 
 You don't need it. The machine runs without a website: on the Amazon Influencer path in 08_STOREFRONT_PATHS.txt, your pins link straight to your Idea Lists. That's the whole thing, working. (Associates only? 08_STOREFRONT_PATHS.txt explains what your path needs.)
 
-If you ever want the blog half too, The Weekend Ecosystem™ is how I'd build the site: $97 one-time, or 3 × $33.33.
-www.thedigitalincomeedit.com/shop/weekend-ecosystem
+If you want help building the site, see The Weekend Ecosystem™ for the current offer. Check its live checkout for price and payment terms.
+https://www.thedigitalincomeedit.com/shop/weekend-ecosystem
+

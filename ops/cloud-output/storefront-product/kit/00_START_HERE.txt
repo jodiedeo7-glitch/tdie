@@ -1,60 +1,90 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 THE WHILE-YOU-SLEEP STOREFRONT™
 Start here
 
-Your approved Amazon product inputs become reviewable Pinterest Pin drafts. You select each Pin and authorize its schedule.
+Your Amazon picks become Pinterest Pins that point shoppers to your Idea Lists (or your own shop-the-look pages). Pinterest is search: people type "cozy fall outfit" or "pink desk setup" with their wallet half open. This kit makes sure something of yours is there when they do.
 
-The storefront now has two publishing paths:
+You set it up once. After that, the work is done by scheduled tasks, by you with AI help, or by hand. You choose.
 
-TIME-SAVING
-ChatGPT Work builds the look, images and Pin package, then uses the connected Metricool publishing layer when that connection is available and tested.
+====================================================================
+READ THESE IN THIS ORDER
+====================================================================
+
+1. While-You-Sleep-Storefront-Preparation-Guide.pdf
+   What to get ready before you build: accounts, a public board, your account access, visual direction and budget.
+
+2. While-You-Sleep-Storefront-Setup-Guide.pdf
+   The numbered setup steps, with two example Pins.
+
+3. 02_SETUP_PROMPT.txt
+   The one prompt you paste. It interviews you and writes your own settings and log files.
+
+You never have to read the other files. The setup prompt and your tasks read them for you. They're here so you can.
+
+====================================================================
+WHAT'S IN THE KIT
+====================================================================
+
+  00_START_HERE.txt                You're reading it.
+  01_REQUIREMENTS.txt              What you need, and what you don't.
+  02_SETUP_PROMPT.txt              Paste once. It sets everything up.
+  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks, any theme, any season.
+  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2 (optional): The Brand Closet™ Outfit of the Day.
+  05_RECOMMEND_IT_TOO.txt          Optional: a Brand Closet™ card for your own pages.
+  06_SCHEDULED_TASK_PROMPTS.txt    The three scheduled tasks.
+  07_PERSONA_PATHS.txt             With your own AI persona, or flat lays only.
+  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only (your own site).
+  09_THE_BLOG_HALF.txt             Optional: a shop-the-look section on your own website.
+  10_INSTAGRAM_ADD_ON.txt          Optional: Instagram feed posts.
+  11_WHATS_NEXT.txt                Recommending the kit, and the done-for-you option.
+  12_STATE_SCHEMA.md               The rules every task follows, and how records are kept.
+  13_PIN_VISUAL_STANDARD.md        What a good Pin and a good shop page look like.
+  14_AUTOMATIC_EXECUTION_CONTRACT.txt  Main-path scope, capability tests and activation gates.
+  The two PDFs above.
+
+====================================================================
+THREE WAYS TO RUN IT
+====================================================================
+
+TIME-SAVING (the true while-you-sleep version)
+The agent runs the complete approved workflow. ChatGPT Work handles its connected steps; a permitted, tested browser operator handles browser-only account actions. Cloud can run with your computer off only when every required step works in that runtime. Local browser steps require your computer on. Setup records and tests the exact route before enabling tasks.
 
 CREDIT-SAVING
-ChatGPT Work builds everything. You perform the final scheduling action through Pinterest's native scheduler.
+Use the ChatGPT or Claude plan you already have to write the copy and the image prompts. You run the image tool yourself and schedule the finished Pin in Pinterest's own scheduler. No Work plan or Metricool needed.
 
-The product is intentionally built so you do not have to pay for maximum automation if you would rather save money.
+MANUAL
+Use the recipes as checklists and do each step yourself. Slowest, cheapest.
 
-IMPORTANT: the old desktop-browser architecture is retired from the customer instructions. The computer-on/browser workflow is now a LOCAL fallback, not the default.
+You can mix them (for example: AI writes everything, you make the images) and switch any time. The rules on disclosure, links, public boards and duplicates are the same on every path.
 
-WHAT YOU NEED
+====================================================================
+AUTOMATIC OR REVIEW FIRST
+====================================================================
 
-1. An eligible ChatGPT account with access to Work and Scheduled Tasks.
-2. Amazon Associates, plus Amazon Influencer approval if you want Idea Lists.
-3. A Pinterest business account with public boards.
-4. Higgsfield if you choose the Higgsfield image path.
-5. Metricool if you choose TIME-SAVING publishing.
-6. Google Drive if you choose CLOUD execution/state.
-7. The Brand Closet™ only if you choose the optional Outfit of the Day automation.
+On the time-saving path, setup asks one more question.
 
-THE TWO MODES
+AUTOMATIC: you approve the rules once (which accounts, boards, links, image tool, budget, pace and channels). After that, Pins that pass every check can be scheduled without another routine approval only when the account, publishing service and platform permit that scope. Setup must test this permission before enabling recurring work. If the platform requires approval for each Pin, record approval-required and retain the queued work; do not claim that account is hands-off.
 
-CLOUD
-Preferred for the true while-you-sleep experience. ChatGPT Work runs remotely and uses supported connected apps. Your computer does not need to remain on.
+REVIEW FIRST: every finished Pin waits for you to say yes before it's scheduled.
 
-LOCAL
-Fallback when a local folder, local browser session or unsupported site requires your computer. ChatGPT Work runs locally in the desktop app.
+Either way, every Pin is checked first: the image, the link, the public board, the #ad disclosure, the title and the alt text. Nothing with a missing check goes out.
 
-PUBLISHING
+====================================================================
+YOUR PART AFTER SETUP
+====================================================================
 
-TIME-SAVING:
-ChatGPT Work prepares a Pin draft. The connected Metricool path may schedule it only after the customer selects that exact Pin, confirms the destination and public board, checks disclosure and metadata, and explicitly authorizes that schedule. Connected actions and board assignment must be available and verified for the customer's account.
+AUTOMATIC: no weekly product-picking, link-copying or Idea List homework. The agent sources products and builds destinations through the account routes tested during setup. You receive a short run report and can request changes or pulls. Re-sign-in, security checks or a revoked connection can interrupt an individual step; the queued work is retained.
 
-IMPORTANT:
-Do not schedule a Pin automatically from a recurring task. A setup test may schedule only the exact Pin the customer selected and explicitly authorized. Record publisher readback when supported; approval requests or unavailable board assignment leave the Pin unscheduled and must be reported.
+CREDIT-SAVING / MANUAL: if you choose this route, you supply product rows and links, create the list or page, run image generation and schedule the finished Pins. MIXED: your saved recipe names exactly which steps you chose to do yourself.
 
-CREDIT-SAVING:
-ChatGPT prepares the complete Pin package and the customer schedules it in Pinterest.
+Type PULL in the state sheet's PULL column (cloud) or next to the Pin in pin-tab.md (local/manual). The next reconciliation imports the request into state, cancels through the tested route and verifies removal. An unavailable cancellation route is reported, never described as a successful pull.
 
-Pinterest's native business scheduler currently supports standard Pins up to 30 days ahead and up to 10 future Pins at once.
+====================================================================
 
-STATE
+WHAT IT DOESN'T PROMISE
+====================================================================
 
-12_STATE_SCHEMA.md defines the authoritative structured state and duplicate-prevention rules.
+Sales. Pinterest is search, and Pins get found over weeks and months, not hours. This kit builds and runs the machine. What people buy is up to them and Amazon. It also can't promise that every outside service (ChatGPT, Metricool, Pinterest, your image tool) will behave the same in your account as in mine, which is why setup tests each connection before relying on it.
 
-The markdown files are readable views:
-  storefront-log.md
-  pin-tab.md
-  pin-drafts.md
-
-DO NOT promise sales, clicks, traffic or earnings.
-
-The system prepares and tracks approved work; the customer chooses each Pin and authorizes scheduling. Pinterest distribution and customer purchases are outside the product's control.
+xoxo, Jodie

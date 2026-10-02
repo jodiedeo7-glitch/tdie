@@ -1,11 +1,21 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 PERSONA PATHS
-Your setup chat picked one of these from your answer to question 4. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+The second Pin of every look is either your AI persona wearing or using the pieces, or (no persona) a person-free scene. Your setup chat saved your choice in MY_RECIPE.txt. You can switch any time: paste 02_SETUP_PROMPT.txt again and change that answer.
+
+The rest of this file is instructions for your assistant and tasks.
 
 ====================================================================
 THE PERSONA PATH (pin 2 is your AI persona wearing the look)
 ====================================================================
 
-You need: your persona's reference image in the connected asset location named in MY_RECIPE.txt, a supported connected image provider, and MY_RECIPE.txt's PERSONA WORLD line (the three or four places she lives her life, written by your setup chat).
+You need: one reference image of your persona that you have the right to use, your product rows, and the PERSONA WORLD line in MY_RECIPE.txt.
+
+TIME-SAVING: the task uses the image tool and model saved in MY_RECIPE.txt, inside your budget, with your rights recorded.
+
+CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat writes this prompt from your product rows. You run it in an image tool that lets you attach a reference photo, then bring the result back for the same checks. If your tool can't keep her looking like herself from a reference photo, use the no-persona path instead.
+
+DIRECT MANUAL: you may instead prepare the scene yourself using original, permitted imagery. Record its source and rights. No connected image tool or recurring task is required.
 
 THE RULES
 P1. Identity comes from the reference image only. Never describe her face, face shape, skin, eye color, hair color, hair length or cut, body shape or age in words. Not even "same face". Words compete with the image and she drifts.
@@ -18,26 +28,31 @@ P4. Faces give it away. Read the last three pin 2 formats in storefront-log.md, 
     a detail shot of hands, bag and jewelry
     a candid full shot (shows her face, so it counts toward the one in three)
   Use a mirror selfie only if a place in PERSONA WORLD has a mirror.
-P5. Phone-photo realism. Never studio perfect.
+P5. Professional real-world lifestyle photography. Use believable natural light, deliberate composition, tactile materials and camera/lens language. Do not confuse luxury with a staged showroom or an AI influencer set.
 P6. No words, signs, logos or labels anywhere in the photo.
-P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt. The current preferred connected path is Higgsfield through ChatGPT. Choose the lowest-cost current model that meets the required identity, realism and editing criteria. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
-P8. Outfit looks only. Theme lists and roundups (home, desk, car, gifts) never use your persona: their pin 2 is the other collage format.
+P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt (the tested connected path is Higgsfield through ChatGPT). At setup, pick the lowest-cost model that holds her identity, looks real and can edit in place; after that, never change it without setup. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
+P7a. Signature props: anything in PERSONA PROPS (her usual cup, her dog, her car) can appear in her photos, but it is never a linked product. Say so in the alt text when it could be mistaken for one.
+P8. Persona lifestyle imagery can serve outfit looks and applicable theme lists/roundups. Show a meaningful action involving relevant items in the authorized world. Home objects may be shown in use. Do not force unrelated products into the scene. Compare siblings against 13_PIN_VISUAL_STANDARD.md.
 
-ATTACH, IN THIS ORDER: (1) her reference image, (2) the product sheet from the recipe, Part 3 step 6.
+INPUTS: attach only the authorized persona reference. Supply the approved product descriptions as prompt text. Do not attach a text product sheet as an image. Additional product photographs are optional only when you have documented permission to use them with the selected provider.
 
 THE PROMPT (fill the brackets, keep every other word)
-Photograph of this exact woman from the attached reference image (the first image). Identity is taken only from the reference. Please make me one single very realistic lifestyle photo, not a collage or grid. I can't use the exact Amazon images, so this is a new photo. She is wearing every wearable piece in the second image, matching each one in color and detail (a beauty item or book goes in her hand or in the scene): [piece by piece: the top, the bottoms or dress, the shoes, the bag and which shoulder it's on, the jewelry, the accessory, how her hair is worn today]. Nails: [color]. Format: [mirror selfie with her phone covering her face / chin-down outfit crop / over-the-shoulder walking away / detail shot of hands, bag and jewelry / candid full shot]. Scene: [one place from PERSONA WORLD and a specific moment, for example her front hallway mirror on a Saturday morning]. Make it look like a good-quality photo taken on a phone: 26mm phone lens, natural light, realistic camera angle, real skin and fabric texture, small real-life imperfections, nothing glossy. Portrait 2:3. No lettering, no signs, no logos, no text anywhere in the frame.
+Photograph of this exact woman from the attached reference image (the first image). Identity is taken only from the reference. Please make me one single very realistic lifestyle photo, not a collage or grid. I can't use the exact Amazon images, so this is a new photo. She is wearing the outfit described in the approved product facts below (a beauty item or book goes in her hand or in the scene): [piece by piece: the top, the bottoms or dress, the shoes, the bag and which shoulder it's on, the jewelry, the accessory, how her hair is worn today]. Nails: [color]. Format: [mirror selfie with her phone covering her face / chin-down outfit crop / over-the-shoulder walking away / detail shot of hands, bag and jewelry / candid full shot]. Scene: [one place from PERSONA WORLD and a specific moment, for example her front hallway mirror on a Saturday morning]. Make it look like professional real-world lifestyle photography: 35mm or 50mm lens, natural light, realistic camera angle, real skin and fabric texture, small real-life imperfections, nothing glossy. Portrait 2:3. No lettering, no signs, no logos, no text anywhere in the frame.
 
-Corrections, same chat, two at most: say exactly what's wrong ("the bag should be the black crescent one from the second image, on her left shoulder").
+Corrections, same chat, two at most: say exactly what's wrong ("the bag should be the black crescent bag described in my approved product facts, on her left shoulder").
 
 ====================================================================
-THE NO-PERSONA PATH (flat lays and collages only)
+THE NO-PERSONA PATH (product edit plus a distinct in-situ story)
 ====================================================================
 
 No persona, no faces. Both pins of every look are person-free images made with the current image provider/model recorded in MY_RECIPE.txt. The production default is not locked to an obsolete model name.
-  Pin 1: the styled flat lay (Format A in the recipe) or the shoppable collage (Format B), alternating look to look.
-  Pin 2: the other format, on a different surface or background, with a different title.
+  Pin 1: the FLAT LAY or the COLLAGE (03_THEMED_LOOK_RECIPE.txt Part 4), alternating look to look.
+  Pin 2: a genuinely distinct in-situ scene or perspective with its own composition and headline. A recolored flat lay or new title on the same arrangement fails sibling QA.
 
 The 3-day spacing still applies: the two pins are different enough to earn their own spot, and 3 days apart they never look like a repeat.
 
-Theme lists and roundups work beautifully on this path, including home decor: the flat lay shows the pieces styled as a vignette from above, and the collage shows each one clearly.
+Theme lists and roundups work beautifully on this path, including home decor: Pin 1 shows the pieces styled from above or as a clean collage, and Pin 2 shows them in use in a real room or moment.
+
+IMAGE QA AND CUSTOMER REVIEW
+Use 13_PIN_VISUAL_STANDARD.md before approval. Record whether the result actually depicts the linked products or is styling inspiration. Use matching copy and alt text; do not claim an exact retail match without evidence. Respect the configured generation-attempt and spend limits. Any paid correction requires authorized budget. Review and scheduling authorization remain separate from image generation.
+
