@@ -1,0 +1,61 @@
+---
+// The While-You-Sleep Storefront™ teaser boxes for the Lifestyle section
+// (Decision 126, Jodie, 2 Oct 2026). Small and quiet on purpose: the looks
+// stay the point of the page, the box just answers "how does this get made?".
+// Tommy Kate is the face of the system. Rules: no price (the sales page
+// handles dated pricing), no affiliate rate, no earnings or sales claim,
+// and no "fully hands-off" claim. Proof is the machine only.
+// `seed` picks one of the lines so neighbouring pages don't repeat.
+const SALES = "/shop/while-you-sleep-storefront";
+const LINES = [
+  {
+    k: "Behind the pins",
+    t: "Want these exact pins, made automatically?",
+    d: "Every look here comes out of one system. It picks the theme, shops Amazon, builds the list and makes the pins. It's Tommy Kate's system, and you can copy it.",
+  },
+  {
+    k: "How this shop runs",
+    t: "Ever wonder how a new look lands every day?",
+    d: "Copy-paste prompts and scheduled tasks. The same kit that runs Tommy Kate's storefront, packaged so you can set it up on yours.",
+  },
+  {
+    k: "Plot twist",
+    t: "This whole look came out of a set of prompts.",
+    d: "The look, the Idea List and the pins all come out of Tommy Kate's storefront machine. Here's how to run the same one.",
+  },
+  {
+    k: "Steal the system",
+    t: "Pin like this without designing a single pin.",
+    d: "Tommy Kate's whole Amazon pin routine, written as prompts you paste once. Your theme, your links, your storefront.",
+  },
+];
+const { variant = "box", seed = "" } = Astro.props;
+let h = 0;
+for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+const L = LINES[h % LINES.length];
+---
+<a class={`wys wys--${variant}`} href={SALES}>
+  <span class="wys-k">{L.k}</span>
+  <span class="wys-t">{L.t}</span>
+  <span class="wys-d">{L.d}</span>
+  <span class="wys-go">See The While-You-Sleep Storefront™ <span aria-hidden="true">→</span></span>
+</a>
+
+<style is:global>
+  .wys{display:flex;flex-direction:column;gap:8px;padding:clamp(20px,2.6vw,28px);border-radius:4px;border:1px solid rgba(214,46,115,.28);background:#FFF5F9;color:var(--e-ink);text-decoration:none;transition:border-color .2s}
+  .wys:hover{border-color:var(--e-pink)}
+  .wys:focus-visible{outline:3px solid var(--e-pink);outline-offset:3px}
+  .wys .wys-k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t)}
+  .wys .wys-t{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,2vw,24px);line-height:1.18;letter-spacing:-.015em}
+  .wys .wys-d{font-size:14.5px;line-height:1.6;color:var(--e-ink-2);max-width:38em}
+  .wys .wys-go{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:2px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:rgba(184,36,95,.4)}
+  .wys:hover .wys-go{text-decoration-color:currentColor}
+  .wys--strip{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(20px,4vw,48px);align-items:center}
+  .wys--strip .wys-k,.wys--strip .wys-t,.wys--strip .wys-d{grid-column:1}
+  .wys--strip .wys-go{grid-column:2;grid-row:1 / span 3;white-space:nowrap}
+  @media(max-width:720px){
+    .wys--strip{display:flex}
+    .wys--strip .wys-go{white-space:normal}
+  }
+  @media(prefers-reduced-motion:reduce){.wys{transition:none}}
+</style>

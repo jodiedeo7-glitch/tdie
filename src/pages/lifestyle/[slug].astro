@@ -4,6 +4,7 @@ import "../../styles/edit.css";
 import { Image } from "astro:assets";
 import LifestyleExtras from "../../components/LifestyleExtras.astro";
 import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
+import WysPromo from "../../components/WysPromo.astro";
 import { CATEGORIES, LOOKS, categoryOf, DISCLOSURE } from "../../data/lifestyle.js";
 
 export function getStaticPaths() {
@@ -84,6 +85,10 @@ const pad = (n) => String(n).padStart(2, "0");
         )}
       </section>
 
+      <div class="e-wrap ls-wys">
+        <WysPromo variant="strip" seed={category.slug} />
+      </div>
+
       <div class="e-wrap ls-foot">
         <LifestyleExtras />
         <p class="ls-disclosure"><span class="ls-aff-tag">Disclosure</span> {DISCLOSURE}</p>
@@ -135,6 +140,9 @@ const pad = (n) => String(n).padStart(2, "0");
           {look.ideaList && (
             <a class="e-btn e-btn--ghost ls-all" href={look.ideaList} rel={rel} target="_blank">Shop every piece on Amazon<span class="ls-sr"> (affiliate link, opens in a new tab)</span></a>
           )}
+          <div class="ls-side-wys">
+            <WysPromo seed={look.slug} />
+          </div>
           <div class="ls-side-signup">
             <PinkFindsSignup variant="side" />
           </div>
@@ -239,7 +247,9 @@ const pad = (n) => String(n).padStart(2, "0");
   .ls-look .ls-item-note{font-size:14px;color:var(--e-ink-3);line-height:1.5}
   .ls-look .ls-item-go{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-ink-3);white-space:nowrap}
   .ls-look .ls-all{width:100%}
-  .ls-look .ls-side-signup{margin-top:32px}
+  .ls-look .ls-side-wys{margin-top:28px}
+  .ls-look .ls-side-signup{margin-top:24px}
+  .ls .ls-wys{margin:calc(-1 * clamp(24px,4vw,56px)) auto clamp(40px,6vw,72px)}
   .ls-look .ls-more .ls-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 
   @media(max-width:1100px){
