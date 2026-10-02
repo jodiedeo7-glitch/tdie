@@ -1,39 +1,90 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 THE WHILE-YOU-SLEEP STOREFRONT™
 Start here
 
-Your Amazon links, turned into Pinterest pins that go out on a schedule, pointing people who are already searching for the look straight to your Idea Lists (or your own shop-the-look pages).
+Your Amazon picks become Pinterest Pins that point shoppers to your Idea Lists (or your own shop-the-look pages). Pinterest is search: people type "cozy fall outfit" or "pink desk setup" with their wallet half open. This kit makes sure something of yours is there when they do.
 
-You set it up once. After that, scheduled tasks in the Claude desktop app do the building: they pick the look, find the pieces on Amazon, grab your affiliate links, make the images, write the pin copy, schedule the pins and log everything. On the Amazon Influencer path, you don't build, you don't sell, you don't post. (One path has hand-work: Associates only, on a website the tasks can't publish to, you paste each look's page in yourself, about 10 to 15 minutes a look. 08_STOREFRONT_PATHS.txt explains.)
+You set it up once. After that, the work is done by scheduled tasks, by you with AI help, or by hand. You choose.
 
-Two things you should know before you start, because I'd rather you hear them now than find out on day three:
+====================================================================
+READ THESE IN THIS ORDER
+====================================================================
 
-1. The tasks run from your own computer. It needs to be switched on, with Chrome open (a minimized window is fine; the tasks handle it) and signed in to Amazon, Pinterest, your image tools and (for the Outfit of the Day) Skool, at the times the tasks run. If the computer was off when a run was due, the daily missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so your computer doesn't need to be on when they go live.
-2. Nothing is ever posted without leaving a trail. Every pin the tasks schedule is written to your pin tab and your log. Glancing at them is optional. It's also how you pull anything you don't like before it goes live: type PULL next to it by 11:30 am on its posting day (by 5:30 pm the day before, for a pin that posts before noon), or delete it yourself in the Pinterest app any time.
+1. While-You-Sleep-Storefront-Preparation-Guide.pdf
+   What to get ready before you build: accounts, a public board, your account access, visual direction and budget.
 
-WHAT'S IN THIS KIT
+2. While-You-Sleep-Storefront-Setup-Guide.pdf
+   The numbered setup steps, with two example Pins.
+
+3. 02_SETUP_PROMPT.txt
+   The one prompt you paste. It interviews you and writes your own settings and log files.
+
+You never have to read the other files. The setup prompt and your tasks read them for you. They're here so you can.
+
+====================================================================
+WHAT'S IN THE KIT
+====================================================================
 
   00_START_HERE.txt                You're reading it.
-  01_REQUIREMENTS.txt              What you need before you start. Read this first, honestly.
-  02_SETUP_PROMPT.txt              Paste once. It interviews you and writes your own recipe and log files.
-  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks (any theme, any season).
-  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2: The Brand Closet™ Outfit of the Day (members only).
-  05_RECOMMEND_IT_TOO.txt          Optional: putting The Brand Closet™ on your own pages.
-  06_SCHEDULED_TASK_PROMPTS.txt    The four scheduled tasks (weekly build, nightly run, pull sweep, missed-run sweep).
-  07_PERSONA_PATHS.txt             With your own AI persona, or flat lays and collages only.
-  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only.
-  09_THE_BLOG_HALF.txt             Adding a shop-the-look section to your own site.
-  10_INSTAGRAM_ADD_ON.txt          Optional. Instagram is not part of the core machine.
-  11_WHATS_NEXT.txt                Recommending this kit, and the done-for-you option.
-  While-You-Sleep-Storefront-Setup-Guide.pdf   The numbered setup steps, with two real worked examples.
+  01_REQUIREMENTS.txt              What you need, and what you don't.
+  02_SETUP_PROMPT.txt              Paste once. It sets everything up.
+  03_THEMED_LOOK_RECIPE.txt        Automation 1: themed looks, any theme, any season.
+  04_OUTFIT_OF_THE_DAY_RECIPE.txt  Automation 2 (optional): The Brand Closet™ Outfit of the Day.
+  05_RECOMMEND_IT_TOO.txt          Optional: a Brand Closet™ card for your own pages.
+  06_SCHEDULED_TASK_PROMPTS.txt    The three scheduled tasks.
+  07_PERSONA_PATHS.txt             With your own AI persona, or flat lays only.
+  08_STOREFRONT_PATHS.txt          Amazon Influencer (Idea Lists) or Associates only (your own site).
+  09_THE_BLOG_HALF.txt             Optional: a shop-the-look section on your own website.
+  10_INSTAGRAM_ADD_ON.txt          Optional: Instagram feed posts.
+  11_WHATS_NEXT.txt                Recommending the kit, and the done-for-you option.
+  12_STATE_SCHEMA.md               The rules every task follows, and how records are kept.
+  13_PIN_VISUAL_STANDARD.md        What a good Pin and a good shop page look like.
+  14_AUTOMATIC_EXECUTION_CONTRACT.txt  Main-path scope, capability tests and activation gates.
+  The two PDFs above.
 
-THE ORDER
+====================================================================
+THREE WAYS TO RUN IT
+====================================================================
 
-  1. Read 01_REQUIREMENTS.txt. If something on it is missing, get it first.
-  2. Open the Setup Guide PDF and follow the numbered steps. It tells you exactly when to paste each file.
-  3. That's it. The PDF is written for someone who has never scheduled a task in her life.
+TIME-SAVING (the true while-you-sleep version)
+The agent runs the complete approved workflow. ChatGPT Work handles its connected steps; a permitted, tested browser operator handles browser-only account actions. Cloud can run with your computer off only when every required step works in that runtime. Local browser steps require your computer on. Setup records and tests the exact route before enabling tasks.
 
-HOW LONG IT TAKES
+CREDIT-SAVING
+Use the ChatGPT or Claude plan you already have to write the copy and the image prompts. You run the image tool yourself and schedule the finished Pin in Pinterest's own scheduler. No Work plan or Metricool needed.
 
-Setup is about 5 minutes of your time once your accounts are in place: you paste one prompt and answer six questions (a couple have a quick follow-up). The runs themselves take longer, and a build keeps Chrome busy for a while (plan on up to an hour a look while it's new), but it's the task doing the work, not you.
+MANUAL
+Use the recipes as checklists and do each step yourself. Slowest, cheapest.
 
-What it does NOT promise: sales. Pinterest is search. Pins get found over weeks and months, not hours, and nobody can tell you when a pin will get its first click. This kit builds and runs the machine. What people buy is up to them and Amazon.
+You can mix them (for example: AI writes everything, you make the images) and switch any time. The rules on disclosure, links, public boards and duplicates are the same on every path.
+
+====================================================================
+AUTOMATIC OR REVIEW FIRST
+====================================================================
+
+On the time-saving path, setup asks one more question.
+
+AUTOMATIC: you approve the rules once (which accounts, boards, links, image tool, budget, pace and channels). After that, every Pin that passes every check is scheduled without asking you again. This is the hands-off version.
+
+REVIEW FIRST: every finished Pin waits for you to say yes before it's scheduled.
+
+Either way, every Pin is checked first: the image, the link, the public board, the #ad disclosure, the title and the alt text. Nothing with a missing check goes out.
+
+====================================================================
+YOUR PART AFTER SETUP
+====================================================================
+
+AUTOMATIC: no weekly product-picking, link-copying or Idea List homework. The agent sources products and builds destinations through the account routes tested during setup. You receive a short run report and can request changes or pulls. Re-sign-in, security checks or a revoked connection can interrupt an individual step; the queued work is retained.
+
+CREDIT-SAVING / MANUAL: if you choose this route, you supply product rows and links, create the list or page, run image generation and schedule the finished Pins. MIXED: your saved recipe names exactly which steps you chose to do yourself.
+
+Type PULL in the state sheet's PULL column (cloud) or next to the Pin in pin-tab.md (local/manual). The next reconciliation imports the request into state, cancels through the tested route and verifies removal. An unavailable cancellation route is reported, never described as a successful pull.
+
+====================================================================
+
+WHAT IT DOESN'T PROMISE
+====================================================================
+
+Sales. Pinterest is search, and Pins get found over weeks and months, not hours. This kit builds and runs the machine. What people buy is up to them and Amazon. It also can't promise that every outside service (ChatGPT, Metricool, Pinterest, your image tool) will behave the same in your account as in mine, which is why setup tests each connection before relying on it.
+
+xoxo, Jodie

@@ -1,50 +1,68 @@
+Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rules apply throughout this file.
+
 REQUIREMENTS
-Read this before anything else. If one of these is missing, the machine doesn't run, and I'd rather you know now.
 
-WHAT YOU NEED FOR BOTH AUTOMATIONS
+Read this before you buy anything else. Most of it you only need for the time-saving path.
 
-1. A Claude plan that includes scheduled tasks and Claude in Chrome.
-   Both have to be on your plan. Plans and what they include change, so check on claude.ai before you buy anything.
+====================================================================
+EVERYONE NEEDS
+====================================================================
 
-2. The Claude desktop app, on a computer that is switched on when the tasks run.
-   The tasks run from your own computer. It stays on, with Chrome open and signed in, at the times you choose. If it's off at run time, the daily missed-run sweep (9:45 am) runs the missed build once when the computer is back on. You pick run times that suit your life during setup.
+1. AMAZON
+An approved Amazon Associates account.
+For the Idea List path, also Amazon Influencer approval and a storefront. No Influencer approval? The Associates-only path uses a page on your own website instead (08_STOREFRONT_PATHS.txt).
+On AUTOMATIC, the agent sources products and records links belonging to your account through the permitted route tested at setup. It never invents products, ASINs or tags. Creators API is one eligible catalog route, not a requirement assumed for every buyer. Browser account actions require supported access and applicable permission; see 14_AUTOMATIC_EXECUTION_CONTRACT.txt. On the optional manual route, you supply your own product rows and links.
 
-3. Google Chrome, signed in to everything below, with the Claude in Chrome extension installed.
-   The tasks never type a password. If you're signed out of something, the task stops and tells you in one line.
+2. PINTEREST
+A Pinterest business account with at least one PUBLIC board. A secret board gets zero reach.
+Pinterest's own scheduler holds standard Pins up to 30 days ahead, and up to 10 scheduled at once. The kit never schedules more than 14 days ahead.
 
-4. Amazon Associates.
-   You need an approved Associates account so every link carries your tag. You'll see the SiteStripe bar across the top of Amazon when you're signed in: that's how the tasks capture your links.
-   PLUS Amazon Influencer approval if you want Idea Lists (the best link for a pin, and hands-off with no website needed). Amazon approves Influencers from certain social accounts; check its current Influencer page. No Influencer approval? The Associates-only path in 08_STOREFRONT_PATHS.txt needs a website, and on most site builders you'll paste each look's page in by hand.
-   Amazon needs every place your links appear listed in your Associates account (your Pinterest profile, and your website if you have one). New accounts: check Associates Central for Amazon's current first-sales rule, because pins take time.
+3. AN AI CHAT
+Any ChatGPT or Claude plan for the setup interview, the copy and the image prompts.
 
-5. A Pinterest business account with public boards.
-   Secret boards reach nobody. The recipe checks every board is public before the first pin, and stops if one isn't. (I learned this one the hard way: one of my own boards sat on secret while pins were scheduled to it.)
+====================================================================
+ONLY FOR THE TIME-SAVING PATH
+====================================================================
 
-6. Image tools:
-   Higgsfield, with access to Seedream 4.5. This makes every flat lay and collage (no person in them). I run Seedream with the Unlimited switch on; whether you have that switch depends on your Higgsfield plan.
-   Google Gemini, for the lifestyle photos of your AI persona. Only needed on the persona path (backup: Nano Banana Pro on Higgsfield, if your plan includes it). No persona? You can skip Gemini (see 07_PERSONA_PATHS.txt).
+4. CHATGPT WORK
+The automated path runs as ChatGPT Work scheduled tasks. Work is available on eligible paid ChatGPT plans, and what's switched on can vary by account, region and workspace. Ordinary Scheduled Tasks on their own are not the full automation.
+Cloud runs with your computer off only if every required account action has passed in that runtime. Local browser execution requires your computer and app available. Test the entire route, including Amazon and destination writes, before choosing.
+No Work or equivalent recurring runtime? Setup reports the unavailable automatic capability and preserves the work. You may choose the optional credit-saving path; it is never substituted silently.
 
-7. Only with the blog half (09_THE_BLOG_HALF.txt): Chrome signed in to GitHub, with write access to your site's repository.
+5. AN IMAGE TOOL
+Higgsfield is the tested connected image tool. Its ChatGPT connection needs an active paid Higgsfield subscription. Setup records the exact model, its cost per image and your commercial-use rights, and never switches model or spends quietly.
+Credit-saving alternative: AI writes the prompt and you run it yourself in the image tool you choose. You can also use your own photos or images you're licensed to use.
 
-FOR AUTOMATION 2 ONLY (The Brand Closet™ Outfit of the Day)
+6. METRICOOL
+Schedules your Pins for you. Connects to ChatGPT through Metricool's own app.
+Metricool's Free plan has a monthly limit on published posts (20 when this kit was written). The default pace of 4 looks a week is about 34 Pins a month, so plan on a paid Metricool plan for this path, or lower your pace.
 
-8. The Brand Closet™ at Rose's $9/month tier or above, with Chrome signed in to Skool.
-   The Outfit of the Day sits on that tier. The Brand Closet™ is Rose's community, not mine: it's free to join, and her paid tiers are $9/month and $19/month (her prices). Not a member and don't want to be? Skip automation 2. Automation 1 runs on its own.
+7. GOOGLE DRIVE
+For CLOUD mode, your kit files and records live in one Google Drive folder that ChatGPT can read and write.
 
+====================================================================
+ONLY FOR THE OPTIONAL EXTRAS
+====================================================================
+
+8. THE BRAND CLOSET™: only for the Outfit of the Day automation. You need access to its Outfit of the Day lessons. Check the current tiers on its page before upgrading. To run it as a scheduled task, your ChatGPT mode must be able to open your signed-in Skool classroom; setup tests this for you. If access fails, keep that optional automation queued. You may choose to describe each lesson yourself as a manual alternative.
+9. YOUR OWN WEBSITE: any website for the Associates-only path. A site on GitHub only for the blog half (09_THE_BLOG_HALF.txt).
+10. INSTAGRAM: only for the Instagram add-on.
+
+====================================================================
 WHAT YOU DON'T NEED
+====================================================================
 
-  No website on the Influencer path (the Associates-only path and the blog half need one).
-  No Instagram. It isn't part of the core machine.
-  No design skills, no coding, no face on camera.
+No single browser-agent brand is mandatory. Automatic browser-only steps do require a supported, permitted operator.
+No Pinterest developer app.
+No Amazon API.
+No website on the Influencer path.
+No Instagram for the core machine.
+No design skills, no code, no face on camera.
 
-WHAT THIS COSTS YOU IN TIME
+====================================================================
+TWO HONEST NOTES
+====================================================================
 
-About 5 minutes to start once the accounts above are in place. After that: nothing on the Influencer path. On the Associates-only path with a site the tasks can't publish to, about 10 to 15 minutes a look to paste its page in. The optional glance at your pin tab and log is how you pull a pin you don't like.
+Automating Amazon and Pinterest carries some account risk. The kit is built to go slowly, never scrape or fake clicks, and stop at the first sign of trouble. You run it on your own accounts, at your own call.
 
-While a build runs, leave the Chrome window it's using alone, and set your computer not to sleep at run times. Each look keeps the task busy for a while (plan on up to an hour a look while it's new), and more looks a week means more of your Claude usage.
-
-THE HONEST PART
-
-Automating Amazon and Pinterest carries some account risk. The kit is built to go slow and stop at the first sign of trouble (it reads pages the way a person would, never scrapes in the background, waits between pins, and stops after two blank pages), and you run it on your own accounts, at your own call.
-
-This kit runs the machine. It does not promise sales. Pinterest is a search engine: pins get found over weeks and months. Every pin carries your #ad disclosure, and no price ever appears on a pin, because Amazon prices change by the hour.
+Never type a password into a task or a chat. Sign in through each service's own sign-in screen.
