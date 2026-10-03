@@ -1,0 +1,48 @@
+/* Sales-page typography guardrail. Important declarations intentionally beat
+   legacy scoped editorial rules, including oversized emphasis within headings.
+   Keep this shared scale; changing sales copy must never enlarge it. */
+.sales-page {
+  --sales-h1: clamp(34px, 3.6vw, 52px);
+  --sales-h2: clamp(28px, 2.8vw, 40px);
+  --sales-h3: clamp(23px, 2vw, 30px);
+}
+.sales-page h1 {
+  font-size: var(--sales-h1) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+  max-width: 24ch !important;
+  font-weight: 600 !important;
+  text-wrap: balance;
+}
+.sales-page h2, .sales-page .e-d2, .sales-page .wx-sec-h {
+  font-size: var(--sales-h2) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -.02em !important;
+  max-width: 30ch !important;
+  text-wrap: balance;
+}
+.sales-page h3 {
+  font-size: var(--sales-h3) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.015em !important;
+}
+.sales-page :is(h1, h2, h3) :is(em, span) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+}
+.sales-page .mast-h em, .sales-page .cover h1 em {
+  margin-left: 0 !important;
+}
+.sales-page .step h3 {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .sales-page {
+    --sales-h1: clamp(30px, 8vw, 36px);
+    --sales-h2: clamp(26px, 7vw, 30px);
+    --sales-h3: 24px;
+  }
+  .sales-page h1 { max-width: 100% !important; }
+}

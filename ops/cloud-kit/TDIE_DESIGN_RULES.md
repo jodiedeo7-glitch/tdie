@@ -35,3 +35,7 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - TDIE_CANON.md §8 "Type": replace the Fraunces / Cormorant / Inter line with "Newsreader SemiBold (headlines, prices) · Inter (kickers, body). Fraunces, Cormorant Garamond and Montserrat are retired for headings (24 Sep 2026, founder)."
 - TDIE_CANON.md §8 palette: Dark Chocolate row gets "never a fill, panel, footer or background; text is near-black #1A1417 (24 Sep 2026)."
 - canon.json `typography` and `palette` to match; repo copy `ops/canon/TDIE_CANON.md` the same day.
+
+## Sales-page typography and deployment QA (Jodie, 3 October 2026)
+Do not enlarge page headlines when editing copy. Sales pages use the shared scale in `src/styles/sales-typography.css`: H1 at most 52px on desktop and 36px on mobile; H2 at most 40px desktop and 30px mobile. Emphasis inherits its parent size. Avoid narrow 9ch measures, compressed line heights, clipping, and oversized stacked words. Preserve the Newsreader/Inter brand system.
+For every page change, inspect rendered screenshots of all affected pages on desktop and mobile, including the complete page, images, spacing, heading hierarchy, buttons, navigation, and overflow. After deploying, repeat the visual audit against the actual public deployment and verify the new version is live. A successful build or deployment status alone is not visual QA. Fix visible issues before claiming completion. If live rendering is inaccessible, report the audit as blocked rather than claiming it passed.
