@@ -208,7 +208,7 @@ const inside = [
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
       <a class="btn ws-buy ws-join" href={JOIN} rel="noopener" hidden={stage === "sale" || stage === "regular"}>Join the community <span class="a">→</span></a>
-      <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "held" || stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
+      {!HOLD && <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>}
       <p class="ws-fine">No refunds on digital products.</p>
     </div>
   </section>
