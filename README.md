@@ -1,6 +1,6 @@
 # The Digital Income Edit™ — Website
 
-Live at www.thedigitalincomeedit.com. Astro, deployed on Vercel from this repo's main branch. Every push to main rebuilds and republishes automatically, usually inside a minute.
+Live at www.thedigitalincomeedit.com. Astro, deployed on Cloudflare from this repo's cloudflare-migration branch. Updates to main deploy only the separate Vercel site; they do not publish the custom domain. Verify the public custom domain after every production deployment.
 
 learn.thedigitalincomeedit.com 301-redirects to www., path preserved.
 
