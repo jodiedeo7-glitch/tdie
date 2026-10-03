@@ -200,3 +200,18 @@ For each:
 **Codex/tests verify files, schemas, code and deterministic checks.**
 
 A single tool should never self-approve the same step it both designed and executed when a second verification method is available.
+
+
+---
+
+## Global operator-fit preflight — founder rule, 2 October 2026
+
+Before starting any TDIE task, first determine which available operator can complete that exact task most accurately and completely using the required sources, accounts, browser/computer-use capabilities, connectors, local files and customer-facing workflow.
+
+- If Claude can complete the task better than ChatGPT, STOP before execution and tell Jodie to use Claude. Provide a complete continuation/handoff prompt containing the relevant verified context so she does not have to reconstruct the task.
+- If ChatGPT is the better operator, proceed in ChatGPT.
+- If the task genuinely requires both, state the exact operator split before execution and preserve the documented workflow at each handoff.
+- For customer-product testing, operator fit does not permit substitution: execute each step on the platform/tool the customer-facing material actually instructs. A successful substitute implementation is not valid end-to-end evidence.
+- Never choose an operator from memory or preference when the repo/customer workflow specifies one. Read the governing sources first.
+
+This preflight applies to every TDIE task, not only Amazon/WYS work.
