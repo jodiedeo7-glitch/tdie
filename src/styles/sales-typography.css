@@ -100,3 +100,10 @@
 @media (max-width: 700px) {
   .sales-page .wx-cred-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+.sales-page .ws-price-fig {
+  font-size: var(--sales-h2) !important;
+  line-height: 1.18 !important;
+}
+@media (max-width: 700px) {
+  .sales-page .ws-steps { grid-template-columns: minmax(0, 1fr) !important; }
+}
