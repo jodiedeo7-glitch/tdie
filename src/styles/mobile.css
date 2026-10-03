@@ -80,6 +80,9 @@
   .we-wrap .copy-btn { min-height: 44px; padding: 10px 14px; }
   .we-wrap .wb-prompt-bar { gap: 12px; }
   .we-wrap .wb-prompt-label { line-height: 1.5; }
+  .we-wrap .wb-prompt pre, .we-wrap .wb-prompt pre code { white-space: pre-wrap !important; overflow-wrap: anywhere; }
+  .we-wrap .wb-prompt pre { overflow-x: hidden; }
+  .we-wrap .wb-prompt pre code { font-size: 12.5px !important; line-height: 1.7; }
   .we-wrap input { max-width: 100%; min-width: 0 !important; }
   .we-wrap #gate button { min-height: 48px; }
   .we-wrap .we-foot { line-height: 1.6; }
