@@ -126,7 +126,7 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>Gemini and Higgsfield accounts<span>Higgsfield (Seedream 4.5) makes every flat lay. Gemini makes persona photos, so no persona means no Gemini.</span></li>
+    <li>Gemini and Higgsfield accounts<span>Higgsfield (Seedream 5.0 Lite, Unlimited switched on) makes every flat lay, so no credits per image on a plan that includes it. Gemini makes persona photos, so no persona means no Gemini.</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
   </ul></div>
   <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
@@ -187,7 +187,7 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
     <div class="step"><div class="num">8</div><div class="card"><h3>Keep the computer on at run times</h3>
       <p>Set your computer not to sleep during the run times in MY_RECIPE.txt, leave Chrome open, and leave the window the task is using alone while it works. If it was off when a run was due, the missed-run sweep (9:45 am) runs it once when the computer is back on. The pins themselves post from Pinterest, so the computer can be off when they go live.</p></div></div>
     <div class="step"><div class="num">9</div><div class="card"><h3>Optional: glance at your pin tab</h3>
-      <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
+      <p>Open <strong>pin-tab.md</strong>. Every scheduled pin is there by date. Don't like one? Type <strong>PULL</strong> in its last column and save, by 11:30 am on its posting day (the evening before, for a pin that posts before noon): the pull sweep (noon and 6 pm) removes it from Pinterest and marks it pulled, or, if Claude's safety settings stop it deleting on its own, tells you the exact clicks. Or delete it yourself in the Pinterest app, any time, and type PULLED in its row. <strong>storefront-log.md</strong> has every look and every link.</p></div></div>
     <div class="step"><div class="num">10</div><div class="card"><h3>Optional extras</h3>
       <p><strong>09_THE_BLOG_HALF.txt</strong>: a shop-the-look section on your own site, written for Google. <strong>05_RECOMMEND_IT_TOO.txt</strong>: a Brand Closet&trade; card for your pages. <strong>10_INSTAGRAM_ADD_ON.txt</strong>: feed posts (stories are by hand).</p></div></div>
   </div>
@@ -250,7 +250,7 @@ td:first-child{font-weight:700;color:var(--ink);width:34%;padding-right:12px}
     <div class="card"><h3>You're signed out</h3><p>If Amazon's SiteStripe bar is missing, the task stops and tells you in one line. It never ships a link without your tag, and never types a password. Sign back in; the next run carries on.</p></div>
     <div class="card"><h3>A board went secret</h3><p>The task checks every board before the first pin. If one is secret, it schedules nothing and tells you which board.</p></div>
     <div class="card"><h3>The computer was off</h3><p>The daily missed-run sweep (9:45 am) spots the missed run and runs it once, taking the same lock so two runs never overlap. Leftovers are logged and scheduled first.</p></div>
-    <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm.</p></div>
+    <div class="card"><h3>You hate a pin</h3><p>Type PULL next to it in pin-tab.md. The sweep removes it from Pinterest at noon or 6 pm, or tells you the exact clicks if it isn't allowed to delete on its own.</p></div>
     <div class="card"><h3>An image comes out wrong</h3><p>The task gets two correction rounds, then regenerates once or drops the look and logs why. It never ships a misspelled title.</p></div>
   </div>
   <div class="call"><p>The one-line report after each run tells you if anything needs you, and exactly what to do.</p></div>
