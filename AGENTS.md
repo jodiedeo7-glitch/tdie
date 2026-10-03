@@ -27,3 +27,6 @@ For every page change, inspect rendered screenshots of all affected pages on des
 
 ## Actual production host
 The public www.thedigitalincomeedit.com site deploys from `cloudflare-migration` on Cloudflare. `main` deploys the separate Vercel site. Target the current production branch for public-site changes; verify the new content and CSS on the custom domain after deployment. Do not assume README snapshots or a Vercel success status establish public-site publication.
+
+## Site-wide mobile design
+`src/styles/mobile.css` applies to every page template, including articles, resources, lifestyle, link pages, and the course. Keep H1 at 30–36px, H2 at 26–30px, readable body text, 48px primary actions, wrapping labels, and zero document overflow at 320px and 390px. Grids must use `minmax(0, 1fr)` when a form or other intrinsic content can widen the track. Inspect the complete rendered mobile pages and interactive states; audit gated course content with repository HTML fixtures locally, without altering production access controls. Repeat public-site visual QA after deployment.
