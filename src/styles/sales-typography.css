@@ -46,3 +46,14 @@
   }
   .sales-page h1 { max-width: 100% !important; }
 }
+/* Product summaries stay readable body copy, including on small screens. */
+.sales-page :is(.v-hero, .ws-hero, .bm-hero) > .lede {
+  font-family: var(--sans) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.6 !important;
+}
+@media (max-width: 700px) {
+  .sales-page :is(.v-hero, .ws-hero, .bm-hero) > .lede { font-size: 17px !important; }
+}
