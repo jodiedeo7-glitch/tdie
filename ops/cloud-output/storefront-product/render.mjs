@@ -41,6 +41,7 @@ for (const [name, url] of Object.entries(FONT_SRC)) {
 }
 
 const LAUNCH = process.env.LAUNCH || "Friday 9 October 2026";
+const HF = "https://higgsfield.ai?fpr=jodie-30b092";
 const BC = "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce";
 const DFY = "https://www.skool.com/thedigitalincomeedit/classroom/c83b49d5?md=8ec7129809ce4a85a7e0607b8105deec";
 const WE = "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem";
@@ -197,9 +198,10 @@ guide.push(`<section class="pg">${top(3)}
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>Gemini and Higgsfield accounts<span>Higgsfield (Seedream 5.0 Lite, Unlimited switched on) makes every flat lay, so no credits per image on a plan that includes it. Gemini makes persona photos, so no persona means no Gemini.</span></li>
+    <li>Gemini and Higgsfield accounts<span>Higgsfield makes the flat lays, Gemini the persona photos. <a href="${HF}" rel="sponsored nofollow noopener">Get Higgsfield here</a> (affiliate link: I earn a commission if you subscribe, at no extra cost to you).</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
   </ul></div>
+  <div class="call"><p><strong>Higgsfield, two ways.</strong> <strong>A. Website:</strong> Unlimited switch on, no credits (Seedream 5.0 Lite), but more of your Claude usage. <strong>B. Plugin:</strong> about half a credit an image (Seedream 5.0 Flash), much less Claude usage. Setup asks which. Plans and test results: 01_REQUIREMENTS.txt.</p></div>
   <div class="call"><p><strong>You don't need</strong> a website (unless you choose the Associates-only path or the blog half), Instagram, design skills, code, or your face on camera.</p></div>
     ${foot()}
 </section>`);
