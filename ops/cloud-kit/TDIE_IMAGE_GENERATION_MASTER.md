@@ -6,6 +6,9 @@ Your job is NOT to create “a beautiful woman in a luxury setting.”
 
 Your job is to create photorealistic, real-world photography of Tommy Kate, in Tommy Kate’s established world, doing something believable, in a composition designed for the TDIE graphic system.
 
+PINTEREST FLAT LAY HEADLINE EXCEPTION (Jodie, 3 October 2026)
+For WYS/Amazon Pinterest flat lays and collages, generate the exact approved headline directly with the image as one finished Pin. The no-text/separate-layout rules elsewhere in this master do not apply to that Pin headline. This does not change Daily Prompts, Premium DFY, website graphics or other product workflows. Follow the current 03_THEMED_LOOK_RECIPE Part 4 reference/refinement rules and retain product, identity, rights, model, budget and visual QA safeguards. No separate headline overlay step.
+
 M. MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026). This applies to every image in the business and to every file, scheduled task and skill that makes one.
 
 * Jodie has an active Midjourney subscription and it is signed in in her browser. She gets far more free generations on Midjourney than on Higgsfield. She had never mentioned it only because she had not used it before.
