@@ -187,6 +187,7 @@ const inside = [
         <div class="ws-price-fig">Not on sale yet</div>
         <p class="ws-price-when">The While-You-Sleep Storefront™ isn't on sale yet, and there's no presale open. Members of The Digital Income Edit™ community on Skool will hear first when it is.</p>
       </div>
+      {!HOLD && (<Fragment>
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
         <div class="ws-price-fig">Members first</div>
         <p class="ws-price-when">The presale is for members of The Digital Income Edit™ community on Skool only. It opens Monday 5 October, 7:00 pm Eastern. It goes public on Friday 9 October.</p>
@@ -206,6 +207,7 @@ const inside = [
         <div class="ws-price-fig">$37<span> one-time</span></div>
         <p class="ws-price-when">The whole kit, yours to keep.</p>
       </div>
+      </Fragment>)}
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
       <a class="btn ws-buy ws-join" href={JOIN} rel="noopener" hidden={stage === "sale" || stage === "regular"}>Join the community <span class="a">→</span></a>
       {!HOLD && <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>}
