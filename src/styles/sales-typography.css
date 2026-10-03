@@ -57,3 +57,46 @@
 @media (max-width: 700px) {
   .sales-page :is(.v-hero, .ws-hero, .bm-hero) > .lede { font-size: 17px !important; }
 }
+/* This editorial statement is visually a heading despite using a paragraph. */
+.sales-page .tdie-manifesto p {
+  font-size: var(--sales-h2) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -.02em !important;
+}
+/* The production course uses both div and list markup for this proof row. */
+.sales-page .wx-cred-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+  padding: 20px 0;
+  list-style: none;
+  border-top: 1px solid rgba(200, 169, 106, .5);
+  border-bottom: 1px solid rgba(200, 169, 106, .5);
+}
+.sales-page .wx-cred-strip > :is(div, li) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  padding: 12px 8px;
+  background: rgba(248, 216, 228, .25);
+}
+.sales-page .wx-cred-strip strong {
+  font-family: Newsreader, Georgia, serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  color: #D62E73;
+}
+.sales-page .wx-cred-strip > :is(div, li) > span {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media (max-width: 700px) {
+  .sales-page .wx-cred-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
