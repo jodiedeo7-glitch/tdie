@@ -1,5 +1,8 @@
 # Recovered sources and current live evidence
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 This supplement supersedes earlier package statements that SOP 15, SOP 16, the browser-lock document, Skool posting system and task inventory could not be found. They were outside the two supplied ZIPs and have now been recovered locally. Exact source paths and hashes are in audit/recovered-source-register.json. Copies in ops/source-evidence/recovered are evidence snapshots, not instructions to execute old jobs.
 
 The signed-in Claude Website project lists 167 context files, including SOP 15 (68.7 kB), SOP 16 (20.2 kB), canon.json (121.5 kB), TDIE_CANON.md (118.1 kB), TDIE_DAILY_OS.md and the SOP library. File presence was verified. The UI did not expose full SOP preview content, so no byte-for-byte equality with recovered copies is claimed. The selected live task instructions were read directly. Project link: https://claude.ai/project/019f5db9-3cdf-75bc-b605-1385bbd98ace.

@@ -6,6 +6,15 @@ Your job is NOT to create “a beautiful woman in a luxury setting.”
 
 Your job is to create photorealistic, real-world photography of Tommy Kate, in Tommy Kate’s established world, doing something believable, in a composition designed for the TDIE graphic system.
 
+M. MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026). This applies to every image in the business and to every file, scheduled task and skill that makes one.
+
+* Jodie has an active Midjourney subscription and it is signed in in her browser. She gets far more free generations on Midjourney than on Higgsfield. She had never mentioned it only because she had not used it before.
+* Whenever an image would come out better in Midjourney, use Midjourney. No permission and no flag needed. It covers images with a person and images without one.
+* The tool order is now: Midjourney whenever it would give the better result. Otherwise the existing order stands: any image with the avatar or a person goes to Google Gemini first while it has credits, then Nano Banana Pro at 2K on Higgsfield, reference sheet attached; any image with no person goes to Seedream 4.5 on Higgsfield; garbled text or a bad result re-runs on Nano Banana Pro at 2K, or on Midjourney if it suits that better. Canva is still never an image generator. Wherever another file says "no other image generator", read it as "no other besides Midjourney".
+* How to judge it: Midjourney is the pick for atmospheric and editorial scenes, still life and product scenes, flat lays, food and holiday scenes, textures and backgrounds, illustration and coloring page art, cover art, and anything that came back flat, plastic or generic from the other tools. For a Tommy Kate image where her likeness is the point, attach the reference sheet as Midjourney's reference image and check the face against the reference sheet; if her likeness drifts, use the existing order for that image. When it is a close call, try Midjourney first, because its generations cost Jodie less.
+* Everything else in this file still applies in Midjourney: the identity opening line, locked features never written, no text in the image (text is set afterwards), no third-party IP, and the pre-generation check in section 10.
+* It is a browser job. Run it in her signed-in browser, take the browser lock first (claude/TDIE_BROWSER_LOCK.md), use one tab and do one job at a time, and never type a password. If Midjourney is not signed in or will not load, use the existing order for that image and say so in one line.
+
 0. WHICH PRODUCT IS THIS? (Jodie, 2 October 2026, Decision 124). Decide before anything else.
 
 * PREMIUM DFY CONTENT CALENDAR (SOP 15, Instagram): Tommy Kate's real life. This file applies in full, plus ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md (project copy claude/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md), which lists every named object to repeat, including the Hello Kitty and Kuromi plushies in her pink attic loft.

@@ -1,5 +1,8 @@
 # The Weekend Ecosystem™ creatives · new photo needed
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 One new photo. Every other image in this set is built from photos already in `public/images/we/`.
 
 ## pay-plan-pasture-blanket.jpg (payment plan ad, all four sizes)

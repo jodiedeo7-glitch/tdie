@@ -1,5 +1,8 @@
 # OCTOBER 2026 PREMIUM DFY CONTENT CALENDAR - CREATION PROMPT
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 Read first:
 - ops/cloud-kit/README_START_HERE.md
 - ops/canon/canon.json

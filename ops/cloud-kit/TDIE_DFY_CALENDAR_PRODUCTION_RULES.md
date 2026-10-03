@@ -1,5 +1,8 @@
 # TDIE PREMIUM DFY CONTENT CALENDAR - PRODUCTION RULES
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. This is Jodie's own generation workflow; the member-facing calendar prompts stay model-agnostic (Midjourney is a valid tool for them, never a requirement). Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 Status: AUTHORITATIVE - 29 September 2026
 Scope: Premium Monthly DFY Content Calendar only.
 

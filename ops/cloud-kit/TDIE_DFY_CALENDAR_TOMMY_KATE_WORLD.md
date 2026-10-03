@@ -1,5 +1,8 @@
 # PREMIUM DFY CONTENT CALENDAR · TOMMY KATE'S REAL LIFE
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 **Product:** the Premium Monthly DFY Content Calendar (SOP 15). Instagram, run on `@the.faceless.homestead.mama`. Membership Premium only.
 **Not this product:** the Daily Edits (the Skool Daily Prompts course, SOP 16). The Daily Edits have their own look in `TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`. Nothing in this file is ever used to write a Daily Edit, and nothing in that file is ever used to write a calendar day.
 **Set by Jodie, 2 October 2026 (Decision 124).** Single live copy, edited in place and dated. Project copy: `claude/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`. Repo copy: `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`.

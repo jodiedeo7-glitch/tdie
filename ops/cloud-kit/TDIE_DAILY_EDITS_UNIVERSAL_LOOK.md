@@ -1,5 +1,8 @@
 # DAILY EDITS · THE UNIVERSAL LOOK
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 **Product:** the Daily Edits, one free image prompt a day in the Skool **Daily Prompts** course (SOP 16), with the finished photograph at the top of the lesson. Open to every member.
 **Not this product:** the Premium DFY Content Calendar (SOP 15), which is Tommy Kate's real life on Instagram and has its own world in `TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`. Nothing in that file is ever used to write a Daily Edit, and nothing in this file is ever used to write a calendar day.
 **Set by Jodie, 2 October 2026 (Decision 124).** Single live copy, edited in place and dated. Project copy: `claude/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`. Repo copy: `ops/cloud-kit/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`.

@@ -1,5 +1,8 @@
 # TDIE PINTEREST ROUTER
 
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+
 ## Scope
 This router governs only the core TDIE Pinterest line. It does not govern the Legally Blonde Amazon line, Brand Closet Amazon line, or While-You-Sleep Storefront buyer automations.
 
