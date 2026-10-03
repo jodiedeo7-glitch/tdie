@@ -476,3 +476,10 @@ img,svg,video,iframe{max-width:100%;height:auto}
    Gold carries the hairlines. Rules are structure, not decoration. */
 .rule-gold{height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,106,.55),transparent);border:0;margin:0}
 .smallcaps{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+
+/* Center full-width article sections independently of reveal transforms.
+   .reveal.in and its fallback animation reset transform when scrolling. */
+.article :is(.break, .bigquote, .plate-photo, .filmstrip, .chapter-cover, .photo-quote) {
+  left: calc(50% - 50vw);
+  transform: none;
+}
