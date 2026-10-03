@@ -30,7 +30,11 @@ const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
 const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
 const SALE_ENDS = "2026-10-12T04:00:00Z"; // Sun 11 Oct 2026, 11:59 pm ET (midnight)
 const stageAt = (t) => t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : t < Date.parse(SALE_ENDS) ? "sale" : "regular";
-const stage = stageAt(Date.now());
+// RELEASE HOLD (Jodie, 2 Oct 2026, 8:55 pm ET): the kit is not released. While HOLD is true the
+// page never opens the presale, never shows the checkout and ignores the dates above.
+// Set HOLD to false only when Jodie releases the kit.
+const HOLD = true;
+const stage = HOLD ? "held" : stageAt(Date.now());
 
 const proof = [
   { img: witchFlat, alt: "Overhead flat lay on pink satin of a pink velvet witch hat, black velvet mini dress, pink lace gloves, black platform Mary Janes, gold moon earrings and a black crescent bag.", cap: "Pin 1 · flat lay" },
@@ -179,6 +183,10 @@ const inside = [
   <section class="ws-sec" id="buy">
     <div class="ws-kicker">The price</div>
     <div class="ws-price-box">
+      <div class="ws-price-state" data-stage="held" hidden={stage !== "held"}>
+        <div class="ws-price-fig">Not on sale yet</div>
+        <p class="ws-price-when">The While-You-Sleep Storefront™ isn't on sale yet, and there's no presale open. Members of The Digital Income Edit™ community on Skool will hear first when it is.</p>
+      </div>
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
         <div class="ws-price-fig">Members first</div>
         <p class="ws-price-when">The presale is for members of The Digital Income Edit™ community on Skool only. It opens Monday 5 October, 7:00 pm Eastern. It goes public on Friday 9 October.</p>
@@ -200,7 +208,7 @@ const inside = [
       </div>
       <ul class="ws-price-list">{inside.map((i) => (<li>{i}</li>))}</ul>
       <a class="btn ws-buy ws-join" href={JOIN} rel="noopener" hidden={stage === "sale" || stage === "regular"}>Join the community <span class="a">→</span></a>
-      <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
+      <a class="btn ws-buy ws-checkout" href={CHECKOUT} rel="noopener" hidden={stage === "held" || stage === "soon" || stage === "presale"}>Get The While-You-Sleep Storefront™ <span class="a">→</span></a>
       <p class="ws-fine">No refunds on digital products.</p>
     </div>
   </section>
@@ -231,8 +239,9 @@ const inside = [
 
   <p style="margin-top:60px"><a href="/shop" style="color:var(--pink);font-weight:500">← Back to the Shop</a></p>
 
-<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT, SALE_ENDS }}>
+<script is:inline define:vars={{ PRESALE_OPENS, PUBLIC_PRICE_AT, SALE_ENDS, HOLD }}>
   (() => {
+    if (HOLD) return;
     const stageAt = (t) => t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : t < Date.parse(SALE_ENDS) ? "sale" : "regular";
     const apply = () => {
       const s = stageAt(Date.now());
