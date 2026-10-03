@@ -628,3 +628,8 @@ Shipped the same day into the live *Weekend Ecosystem — Access Granted* email 
 ---
 
 **The Digital Income Edit™ · Canon · 2 October 2026**
+
+
+---
+
+**127.** (2 October 2026) **Global Claude-vs-ChatGPT operator-fit preflight.** Founder standing instruction. Before starting ANY TDIE task, determine whether ChatGPT or Claude can complete that exact task better and end-to-end using the required repo sources, accounts, browser/computer-use capabilities, connectors, local files and documented customer workflow. If Claude is better, ChatGPT stops before execution, tells Jodie to use Claude, and supplies a complete continuation/handoff prompt with the relevant verified context. If ChatGPT is better, ChatGPT proceeds. If both are genuinely required, state the exact operator split before execution. Customer-product tests must use the platform/tool named in the actual customer-facing workflow; a successful substitute implementation does not count as valid end-to-end evidence. Operator choice must be grounded in governing sources rather than memory or preference. Recorded in `ops/ai-router/TDIE_AMAZON_STOREFRONT_ROUTER.md` as a global preflight rule.
