@@ -2,6 +2,17 @@
 import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/global.css";
+import "../styles/sales-typography.css";
+// Self-host brand fonts so external font requests cannot change the layout.
+import "@fontsource/newsreader/latin-600.css";
+import "@fontsource/newsreader/latin-700.css";
+import "@fontsource/newsreader/latin-600-italic.css";
+import "@fontsource/newsreader/latin-700-italic.css";
+import "@fontsource/inter/latin-300.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
 
 import Analytics from '@vercel/analytics/astro';
 import MetricoolTracker from "../components/MetricoolTracker.astro";
@@ -79,12 +90,6 @@ const jsonLd = {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content={ogImageAbsolute} />
   {!noindex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
   <!-- is:global is REQUIRED. Astro scopes component styles with a per-component
        hash, and slotted children carry the *page's* hash, not the layout's.
        Without is:global every selector below compiles to
@@ -110,7 +115,7 @@ const jsonLd = {
     .page-wrap > ul > li{margin-bottom:12px;line-height:1.65}
   </style>
 </head>
-<body class="no-js">
+<body class:list={["no-js", {"sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
   <SiteNav />
