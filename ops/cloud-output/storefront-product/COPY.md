@@ -1,59 +1,62 @@
 # The While-You-Sleep Storefront™: launch copy
 
-Rewritten 2 Oct 2026 (just after midnight Eastern) to the founder pricing of 1 Oct 2026, Decision 123. Approved hooks kept. Replaces the 27 Sep version (the $10 public presale and PREMIUM50 are dead). The scheduled task "Storefront: schedule launch posts, emails, FB and Threads" (trig_01XGkTP8Q6XKbj7CuVKnJVc3, Fri 2 Oct 12:20 pm) schedules everything below except the Skool posts that other tasks own (marked).
+Reconciled 4 Oct 2026 to the founder's amended Decision 123. This supersedes the earlier Mon 5 Oct presale / Fri 9 Oct public-launch timing in this file. Existing dated post bodies below are HISTORICAL DRAFTS until rewritten to this schedule; do not schedule or publish them as written.
 
-**Prices (write exactly this, Decision 123):**
-- **Member presale, Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm Eastern. Skool members only.** Membership Premium $10 (code in The Premium Vault lesson only). Membership Standard $17. There is no public presale: anyone outside Skool who wants the presale price joins Membership Standard (7-day free trial, then $9/month) and buys at $17.
-- **Launch weekend, Fri 9 Oct 9:00 am to Sun 11 Oct 11:59 pm Eastern.** Public $27, a real sale against the regular $37 (struck-through $37 beside $27). Members of both tiers stay at $17.
-- **From Mon 12 Oct:** $37 for everyone. No member price, no codes, no discounts.
-- **Member affiliate program:** 40% through Beacons' affiliate product, live from Fri 9 Oct 9:00 am. The rate is allowed in Skool, Threads, email and the kit. Never on Facebook, Instagram or the sales page.
-- Presale buyers get a one-page "you're in" note at purchase; the full kit is on the product at Fri 9 Oct 9:00 am, same download link.
-- Zero refunds, stated once, on the sales page.
+## Locked launch facts
 
-**Addresses (all live, read back 2 Oct 2026):**
+- **Prelaunch:** Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern. Name The While-You-Sleep Storefront™ from the first announcement. Repeatedly demonstrate the product and remind the audience of the presale opening and Standard scarcity.
+- **Standard member presale:** Thu 8 Oct 4:00 pm through Sat 10 Oct 2:00 pm Eastern. Membership Standard $17. Exactly **20 Standard presale spots**.
+- Remaining-spots claims count **actual Standard presale purchases only**.
+- **Premium member offer:** $10 via TDIEPREMIUM in The Premium Vault only. **Uncapped.** Premium purchases do not consume the 20 Standard spots.
+- Premium purchases may appear in a truthful, clearly labeled total-buyer/social-proof number. They may never be used to lower the Standard spots-remaining counter.
+- No public presale. Non-members who want member presale access must join Membership Standard and then buy under the Standard rules.
+- **Public launch:** Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern: $27 against the regular $37.
+- **Regular price:** Tue 13 Oct onward: $37. Member presale pricing/code off.
+- **Member affiliate program:** 40% through Beacons, no earlier than Sat 10 Oct 2:00 pm Eastern. Never state the rate on Facebook, Instagram or the sales page.
+- No storefront sales, commission or income claims.
+- Customer-facing claims must follow current test/release evidence. Do not describe automatic sourcing, silent fully automatic publishing, or any unverified workflow behavior as working.
+
+## Existing destinations
+
+The addresses below were read back on 2 Oct 2026 and MUST be reverified live before customer-facing use because this file does not establish their 4 Oct live state.
 
 | Name | Address |
 |---|---|
-| Public product ($37, $27 sale launch weekend; unlisted until Fri 9 Oct 9:00 am) | https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 |
-| Member product ($17, hidden) | https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f |
-| Value Vault lesson (member price, $17) | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87 |
-| Premium Vault lesson ($10 code) | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=f35c395b0f3d4e0abfd42f064262e012 |
-| Affiliate Launch Kit lesson, Value Vault | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe |
-| Affiliate Launch Kit lesson, Premium Vault | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a |
-| Plans page (join Skool) | https://www.skool.com/thedigitalincomeedit/plans |
+| Public product | https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 |
+| Member product | https://links.thedigitalincomeedit.com/shop/36b6f2a8-d26b-4e03-9fa5-b4b698fcf84f |
+| Value Vault lesson | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=c43ba8257c3c474ba386ba070bb97f87 |
+| Premium Vault lesson | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=f35c395b0f3d4e0abfd42f064262e012 |
+| Affiliate Launch Kit, Value Vault | https://www.skool.com/thedigitalincomeedit/classroom/3abffc4a?md=42edda1f87cb4a379b7de1ed9d748cfe |
+| Affiliate Launch Kit, Premium Vault | https://www.skool.com/thedigitalincomeedit/classroom/143e0f69?md=681d8f3b3bda46f2864c4cc81108883a |
+| Plans page | https://www.skool.com/thedigitalincomeedit/plans |
 | Sales page | https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront |
 
-Skool posts link to the vault lessons, never straight to the hidden member product. Every Skool link is hyperlinked on its call-to-action words, never a raw address, at most two per post.
+## Current launch timeline
 
-## Dates
-
-| Piece | Date and time (Eastern) | Notes |
+| Phase | Date/time Eastern | Rule |
 |---|---|---|
-| Threads 1 · viral | Sat 3 Oct, 1:00 pm | no product name, no link |
-| Skool 1 · tease | Sat 3 Oct, 3:00 pm | value slot · no price, no link · email off |
-| Threads 2 · teaching | Mon 5 Oct, 11:00 am | no product name, no link |
-| Vault lessons published | Mon 5 Oct, 6:55 pm | own task |
-| **Member presale opens** | **Mon 5 Oct, 7:00 pm** | |
-| Skool 2 · presale open | Mon 5 Oct, 7:00 pm | sell slot · "Send email to all members" ON if the 72-hour rule allows |
-| Facebook 1 · presale open | Mon 5 Oct, 7:15 pm | first comment 7:20 pm |
-| Email 1 · presale (members only) | Mon 5 Oct, 7:30 pm | MailerLite regular campaign |
-| Skool 3 · Prime Big Deal Days | Tue 6 Oct, 3:00 pm | value slot · email off |
-| Threads 3 · product | Tue 6 Oct, 5:00 pm | pinned comment 7:00 pm |
-| Email 2 · last presale day | Thu 8 Oct, 11:00 am | MailerLite regular campaign |
-| Facebook 2 · last presale day | Thu 8 Oct, 12:00 pm | first comment 12:05 pm |
-| Affiliate Launch Kit lessons published + Skool post to presale buyers | Thu 8 Oct, 7:00 pm | own task |
-| Threads 4 · question | Thu 8 Oct, 7:00 pm | no product name, no link |
-| Skool 4 · last call (presale) | Thu 8 Oct, 7:05 pm | sell slot · email ON only if the 72-hour rule allows |
-| **Presale closes, code off** | **Thu 8 Oct, 11:59 pm** | own task |
-| **Public $27 sale (regular $37), members $17, 40% affiliate on** | **Fri 9 Oct, 9:00 am** | launch-morning task |
-| Threads 5 · product | Fri 9 Oct, 5:00 pm | pinned comment 7:00 pm |
-| Skool 5 · launch + affiliate | Fri 9 Oct, 7:00 pm | sell slot · email off |
-| Skool 6 · affiliate value | Sat 10 Oct, 3:00 pm | value slot · email off |
-| Skool 7 · last call (launch weekend) | Sun 11 Oct, 7:00 pm | sell slot · email ON only if the 72-hour rule allows |
-| **Sale ends, $37 for everyone** | **Sun 11 Oct, 11:59 pm** | own task |
-| Wrap-up check | Mon 12 Oct, 8:00 am | own task |
+| Product announcement/reveal begins | Mon 5 Oct | Name product immediately; show it working; announce Thu 4 pm presale and 20 Standard spots |
+| Desire/demo campaign | Mon 5 Oct-Thu 8 Oct before 4 pm | Repeated distinct demonstrations; presale reminder on WYS promo touches |
+| Standard + Premium member presale opens | Thu 8 Oct, 4:00 pm | Standard $17 / 20 spots; Premium $10 / uncapped |
+| Member presale ends; public launch begins | Sat 10 Oct, 2:00 pm | Public $27 against $37 |
+| Launch price ends | Mon 12 Oct, 11:59 pm | Last call at $27 |
+| Regular price begins | Tue 13 Oct | $37; launch member pricing/code off |
+
+## Channel rules
+
+- Skool: link to the appropriate Vault lesson, not the hidden member checkout; hyperlink CTA words rather than displaying raw URLs.
+- Facebook: no link in post body; follow current Meta link rule. No earnings/income claims and no affiliate rate.
+- Instagram / @itstommykate: teaser/demonstration before public launch; no links; CTA to link in bio; #ad on promo posts; no affiliate rate, commission, sale or income figure.
+- Pinterest promo destination remains subject to current verified destination rules.
+- Email: follow current MailerLite/plugin-only rule.
+- Everywhere: no em dash in customer copy; never use NurseMadeDigital as the brand.
+
 
 ---
+
+## HISTORICAL DATED COPY — DO NOT SCHEDULE UNTIL REWRITTEN
+
+The material below predates the 4 Oct founder amendment. It is retained only as copy source material.
 
 ## SKOOL (Jodie's own voice, per claude/TDIE_SKOOL_POSTING_SYSTEM.md section 4)
 
