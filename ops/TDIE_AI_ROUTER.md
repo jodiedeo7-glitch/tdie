@@ -1,3 +1,5 @@
+> Recovery audit, 4 October 2026: read `ops/ai-router/WORKFLOW_RECOVERY_2026-10-04.md`. October 1 inventory and deployment counts below are historical, not current activation or ownership evidence. Current task definitions and scoped transfer receipts must be read before cutover.
+
 > Current reconciliation: read `ops/ai-router/SOURCE_RECONCILIATION_2026-10-01.md` and `LIVE_MIGRATION_ACTIONS_2026-10-01.md` before acting. The recovered source register and live task inventory supersede earlier missing-source assumptions and the uploaded eighteen/day Threads copy.
 
 # TDIE AI router
