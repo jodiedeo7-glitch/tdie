@@ -1,0 +1,96 @@
+/* Mobile rhythm applies to every template. Desktop art direction stays in its
+   page stylesheet. These bounds override old scoped display-type rules. */
+@media (max-width: 700px) {
+  body { --mobile-h1: clamp(30px, 8vw, 36px); --mobile-h2: clamp(26px, 7vw, 30px); }
+  h1 {
+    font-family: Newsreader, Georgia, serif !important;
+    font-size: var(--mobile-h1) !important;
+    font-weight: 600 !important;
+    line-height: 1.14 !important;
+    letter-spacing: -.025em !important;
+    max-width: 24ch !important;
+    text-wrap: balance;
+  }
+  h1 :is(em, span, strong) { font-size: inherit !important; line-height: inherit !important; letter-spacing: inherit !important; }
+  h2 { font-size: var(--mobile-h2) !important; font-weight: 600 !important; line-height: 1.2 !important; letter-spacing: -.02em !important; text-wrap: balance; }
+  h2 :is(em, span, strong) { font-size: inherit !important; line-height: inherit !important; }
+  :is(.journey .head, .news-head, .news, .chapter-cover, .box.action) h3 { font-size: 26px !important; line-height: 1.2 !important; font-weight: 600 !important; }
+  .page-wrap { padding: 40px 22px 64px !important; }
+  .page-wrap h1, .we-wrap > h1 { margin-bottom: 22px !important; }
+  .page-wrap > .lede, .rs-lede, .go-lede { font-size: 20px !important; line-height: 1.55 !important; }
+  .page-eyebrow { margin-bottom: 18px !important; }
+  .hero { padding: 30px 22px 0 !important; }
+  .hero h1 { margin-bottom: 22px !important; }
+  .hero .sub { font-size: 20px !important; line-height: 1.5 !important; }
+  .hero-meta { gap: 10px 16px !important; font-size: 11px !important; letter-spacing: 1px !important; }
+  .masthead { padding: 24px 22px 0 !important; }
+  .masthead .issue { font-family: Inter, sans-serif !important; font-style: normal !important; font-size: 10px !important; letter-spacing: 1.3px !important; }
+  .hero .kicker { margin-bottom: 20px !important; }
+  .hero-figure { margin-top: 32px !important; padding: 0 22px !important; }
+  .shell { padding: 40px 22px !important; }
+  .article > .lede { font-size: 21px !important; line-height: 1.6 !important; }
+  .chapter { margin: 80px 0 30px !important; }
+  .chapter h2 { max-width: 24ch !important; }
+  .article h3 { font-size: 24px !important; margin-top: 32px !important; }
+  .chapter-cover .inner { padding: 36px 22px !important; }
+  .pull { padding: 0 !important; margin: 44px 0 !important; }
+  .pull p, .photo-quote p { font-size: 26px !important; line-height: 1.3 !important; }
+  .photo-quote .inner { max-width: 32ch !important; padding: 32px 22px !important; }
+  .box.action, .j-feature .txt { padding: 30px 22px !important; }
+  .article .index .r { grid-template-columns: auto minmax(0, 1fr) !important; gap: 8px 14px !important; }
+  .article .index .r .p { grid-column: 2 !important; }
+  .article .index .r .t { font-size: 20px !important; line-height: 1.3 !important; }
+  .article .framework .flow { flex-direction: column !important; align-items: center !important; gap: 0 !important; }
+  .article .framework .node { flex: none !important; width: 100% !important; max-width: none !important; padding: 0 12px !important; }
+  .article .framework .arrow { transform: rotate(90deg) !important; padding: 10px 0 !important; }
+  :is(.btn, .e-btn, .e-btn-line, .go-btn, .os-btn, .wx-btn) { min-height: 48px !important; max-width: 100% !important; white-space: normal !important; line-height: 1.45 !important; text-align: center !important; justify-content: center !important; }
+  .go-btn { width: 100% !important; padding: 14px 18px !important; letter-spacing: 1px !important; font-size: 12px !important; }
+  :is(.fc-row, .pf-row, .bm-capture) input, .bm-capture select { font-size: 16px !important; }
+  :is(.fc-row, .pf-row) button { width: 100%; min-height: 48px; white-space: normal !important; }
+  :is(.freebie-capture, .news-form .freebie-capture) { padding: 26px 22px !important; }
+  :is(.rs-back, .go-back) a { display: inline-flex; align-items: center; min-height: 44px; }
+  summary { min-height: 48px; }
+  body:has(.wx-sticky) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .wx-sticky-in { padding-bottom: max(10px, env(safe-area-inset-bottom)) !important; }
+  [id] { scroll-margin-top: 90px; }
+  .ab-hero, .cm-hero, .nw-hero, .fd-hero { padding-top: 40px !important; padding-bottom: 44px !important; }
+  .ab-built-h { font-size: var(--mobile-h2) !important; line-height: 1.15 !important; }
+  .ab-built-sub { font-size: 26px !important; line-height: 1.25 !important; }
+  .ab-order li { min-height: 0 !important; }
+  .ab-pull p { font-size: 27px !important; line-height: 1.3 !important; }
+  .ab-order h3 { font-size: 24px !important; }
+  .nw-meta { flex-wrap: wrap !important; gap: 12px !important; }
+  .lib-in { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .start-go { white-space: normal !important; }
+  .fd-hero h1, .lib-title h1, .nw-hero h1 { max-width: 24ch !important; }
+  .fd .fd-r-name { font-size: var(--mobile-h2) !important; }
+  .ls-look .ls-look-body, .nw-sign, .pfp .pfp-mast-grid, .letter { grid-template-columns: minmax(0, 1fr) !important; }
+  .ls-look .ls-look-body > *, .nw-sign > *, .pfp .pfp-mast-grid > *, .letter > * { min-width: 0; }
+  .v-steps { grid-template-columns: minmax(0, 1fr) !important; }
+  .e-kick { min-width: 0; max-width: 100%; overflow-wrap: anywhere; white-space: normal !important; gap: 8px !important; font-size: 11px !important; letter-spacing: .14em !important; }
+  .e-kick::before { flex-shrink: 0; }
+  .ls-look .ls-look-images.n-2 { grid-template-columns: minmax(0, 1fr) !important; gap: 24px !important; }
+  .ls-look .ls-look-fig figcaption { font-size: 12px !important; line-height: 1.5; letter-spacing: .03em !important; }
+  .ls .ls-mast { padding-top: 40px !important; }
+  .we-nav { flex-wrap: wrap; gap: 10px !important; padding: 14px 20px !important; }
+  .we-nav .navlinks { display: flex !important; gap: 18px !important; }
+  .we-nav .navlinks a { margin: 0 !important; min-height: 44px; display: inline-flex; align-items: center; opacity: .85; }
+  .we-eyebrow { color: #6B5F64 !important; font-size: 10px !important; letter-spacing: 1.5px !important; line-height: 1.6; }
+  .we-foot { color: #6B5F64 !important; font: 11px/1.6 Inter, sans-serif !important; letter-spacing: .08em !important; }
+  .we-wrap { padding: 36px 22px 64px !important; }
+  .we-wrap .copy-btn { min-height: 44px; padding: 10px 14px; }
+  .we-wrap .wb-prompt-bar { gap: 12px; }
+  .we-wrap .wb-prompt-label { line-height: 1.5; }
+  .we-wrap .wb-prompt pre, .we-wrap .wb-prompt pre code { white-space: pre-wrap !important; overflow-wrap: anywhere; }
+  .we-wrap .wb-prompt pre { overflow-x: hidden; }
+  .we-wrap .wb-prompt pre code { font-size: 12.5px !important; line-height: 1.7; }
+  .we-wrap input { max-width: 100%; min-width: 0 !important; }
+  .we-wrap #gate button { min-height: 48px; }
+  .we-wrap .we-foot { line-height: 1.6; }
+}
+@media (max-width: 380px) {
+  .e-wrap { padding-left: 20px; padding-right: 20px; }
+  .ls .ls-grid { gap: 24px 12px; }
+  .ls .ls-card-title { font-size: 16px !important; }
+  .wx-sticky-in { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+}

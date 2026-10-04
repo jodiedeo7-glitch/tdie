@@ -11,7 +11,7 @@ Latest explicit founder corrections govern this migration. Read `ops/canon/canon
 
 Find Your Door is no longer automated. Preserve the routing resource and API code; neither is evidence of an active email automation. Never create, migrate or restore its historical email sequence.
 
-The uploaded canon restricts the tool stack and names Vercel. These staging proposals add ChatGPT/Codex ownership and mention alternative connectors. Treat those as migration proposals within the user's requested audit, not proof the live tool stack or host changed. Confirm actual deployment before release. Never reinstate Vercel from this snapshot or overwrite a newer Cloudflare migration.
+Hosting is Cloudflare (worker `tdie-site`, deployed from the `cloudflare-migration` branch). Vercel is retired: ChatGPT migrated the site after the Vercel free tier ran out of space. The staging proposals below add ChatGPT/Codex ownership and mention alternative connectors; treat those as migration proposals. Never reinstate Vercel or overwrite the Cloudflare setup.
 
 ## Quality-first allocation
 | Layer | Default owner | Required evidence |

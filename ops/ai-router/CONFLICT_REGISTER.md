@@ -18,7 +18,7 @@ Latest explicit user corrections win. No business canon or live account has been
 | Threads job emits NEEDS_APPROVAL absent from enum | BLOCKED with pending approval |
 | Staged photographic tool flexibility conflicts with brand generator restrictions | Canon-approved imagery only; alternatives need an approved update and completed artifact/model evidence |
 | New operator ownership vs canon tool-stack restriction | Ownership proposal only, no live activation/tool-stack amendment |
-| Snapshot says Astro/Vercel | Snapshot fact only, current deployment UNVERIFIED; overlay never changes host configuration |
+| Old snapshot says Astro/Vercel | Stale. Hosting is Cloudflare (worker `tdie-site`); Vercel is retired. Overlay never changes host configuration |
 | Prior 8 AM task, October campaigns, affiliate launch state | Historical documentation only; exact live inventory and current approval required |
 | Canon snapshot and customer desk tests imply product ready | Simulations preserved; release gate not passed by this package |
 | SOP 15 / SOP 16 / browser lock / Skool system outside supplied ZIPs | Recovered locally; live Project presence checked. See SOURCE_RECONCILIATION_2026-10-01.md for version/authority boundaries |

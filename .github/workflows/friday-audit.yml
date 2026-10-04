@@ -2,7 +2,7 @@ name: Friday canon audit
 
 on:
   schedule:
-    - cron: "0 12,13 * * 5"   # Gate below selects 8 AM America/New_York across DST
+    - cron: "0 12 * * 5"   # Fridays, 12:00 UTC (8am ET)
   workflow_dispatch:
 
 permissions:
@@ -16,27 +16,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Select Eastern audit window
-        id: clock
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          python3 - <<'PY'
-          import datetime, os
-          from zoneinfo import ZoneInfo
-          local = datetime.datetime.now(ZoneInfo("America/New_York"))
-          run = os.environ["EVENT_NAME"] == "workflow_dispatch" or local.hour == 8
-          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
-              output.write("run=" + str(run).lower() + "\n")
-          print("Eastern time:", local.isoformat(), "run:", run)
-          PY
       - name: Run tdie_audit.py (repo + live)
-        if: steps.clock.outputs.run == 'true' 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 ops/scripts/tdie_audit.py --repo --live --report audit.md
       - name: Upload report
-        if: always() && steps.clock.outputs.run == 'true'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: friday-audit-report

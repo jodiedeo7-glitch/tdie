@@ -25,6 +25,6 @@ Price stages, one-off announcement, Amazon website-list check, Skool rule mainte
 3. Lock: policy found, current shared lock state/capability unverified. Never deploy multiple platform writers based solely on a Markdown lock file.
 4. Shared run log: existing Claude Docs container and Runs-tab IDs are in inspected task instructions. Mapping those into this repo's execution logs requires an explicit adapter, fresh source read and duplicate-safe writes; this package does not claim such an API is connected.
 5. Buyer access: preserve active Make purchase scenario and active MailerLite delivery. On Oct 4, the Kit bonus-content removal must be narrow, reversible and verified with the automation restored to ACTIVE. There is no reason to migrate buyer delivery merely to move creative production.
-6. Host/config: inspect the current deployed host before any site work. Old task text still says Astro on Vercel; that is not proof of current hosting.
+6. Host/config: hosting is Cloudflare (worker `tdie-site`); Vercel is retired. Old task text that still says Astro on Vercel is stale.
 
 Rollback: stop the replacement writer, reconcile external writes, restore one proven operator and verify the existing delivery path. A local file rollback cannot unsend email, undo a sale or erase live posts.

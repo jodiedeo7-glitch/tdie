@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "tdie-site",
+  "main": "src/worker/index.js",
+  "compatibility_date": "2026-09-28",
+  "find_additional_modules": true,
+  "base_dir": ".",
+  "preserve_file_names": true,
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.html"]
+    },
+    {
+      "type": "Data",
+      "globs": ["**/*.pdf"]
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "previews": {}
+}

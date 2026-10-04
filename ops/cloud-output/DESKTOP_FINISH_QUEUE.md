@@ -1,8 +1,5 @@
 # DESKTOP FINISH QUEUE
 
-> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
-
-
 Account-only steps left by cloud sessions. Each job adds one numbered section with every file path, piece of copy and exact step written in. The DESKTOP FINISH prompt in `ops/cloud-kit/CLOUD_CREDIT_JOBS.md` works through this file on Jodie's computer and marks each section DONE with the date.
 
 ## 1 · One-Sentence Offer tool: link from The Offer Edit's opening lesson (26 Sep 2026)
@@ -40,8 +37,6 @@ All files are in `ops/cloud-output/we-creatives/` (see its `README.md`, `AD_COPY
 
 ## 4 · The While-You-Sleep Storefront™: launch and own-setup fixes (27 Sep 2026, founder decisions applied)
 
-> **REBUILT 2 Oct 2026 to Decision 123 (founder pricing, 1 Oct 2026).** Member presale for Skool members only (Premium $10 with code TDIEPREMIUM, Standard $17), no public presale; launch weekend public $27 against a regular $37, members $17 through Sun 11 Oct; $37 for everyone from Mon 12 Oct; 40% affiliate from Fri 9 Oct. The 27 Sep public product a2e4f613 was gone and is rebuilt as https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7 ($37, unlisted, full kit). PREMIUM50 is dead. COPY.md, both vault lessons, the sales page and canon are rewritten; steps 5, 7, 8, 10 and 11 below describe the 27 Sep plan and are superseded wherever they disagree with COPY.md and canon Decision 123.
-
 Everything is in `ops/cloud-output/storefront-product/` (start with its `README.md`). The sales page is on the branch `storefront-launch` (`src/pages/shop/while-you-sleep-storefront.astro`), unmerged until step 8. The cloud session could not reach Skool, Beacons, Amazon, Pinterest, MailerLite, Facebook, Threads, Gemini or Higgsfield. Publish nothing and list nothing outside these steps. Work the steps in order; each ends with a read-back.
 
 **The gate: the presale does not open until step 9 (the live test) passes.** Step 9 must finish before the tease posts on Sat 3 Oct 2026, 3:00 pm Eastern, and it needs one overnight, so start it no later than Thu 1 Oct.
@@ -66,7 +61,7 @@ Three link tokens are used across the copy and are replaced in steps 5 and 7: `B
 1. Open `ops/cloud-output/storefront-product/IMAGE_PROMPTS.md`. For each of the five photos, in its table order:
    - Tommy Kate photos (`cover-sofa-dusk.jpg`, `g1-porch-morning.jpg`, `g3-kitchen-late.jpg`): Google Gemini, attach `public/images/library/avatar-seed-omni-reference.png`, paste the full prompt. If Gemini has no credits or the face drifts, Nano Banana Pro at 2K on Higgsfield with the same reference.
    - Person-free photos (`g2-loft-night-desk.jpg`, `g4-nightstand-phone.jpg`): Seedream 4.5 on Higgsfield, Unlimited switch on, paste the full prompt.
-   - Check each at feed size: face and hands natural, her glitter pink tumbler with lavender straw in every frame with her, multiple candy-pink objects are permitted in the person-free frames (headphones in g2, tumbler in g4), no lettering or logos, subject on the side the prompt names. Two correction rounds at most; garbled results re-run on Nano Banana Pro at 2K.
+   - Check each at feed size: face and hands natural, her glitter pink tumbler with lavender straw in every frame with her, exactly one candy-pink object in the person-free frames (headphones in g2, tumbler in g4), no lettering or logos, subject on the side the prompt names. Two correction rounds at most; garbled results re-run on Nano Banana Pro at 2K.
    - Save as `ops/cloud-output/storefront-product/graphics/photos/<file name>` using the capture method in `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` section 3c (no downloads).
 2. The hoodie flat lay for the Setup Guide, worked example 2: Jodie's OWN generated flat lay for the pink color-block hoodie outfit (the Seedream image logged in `claude/BRAND_CLOSET_PIN_LOG.md`, hoodie row), never Rose's image. Capture it at 1000 × 1500 and save it as `ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg`.
 3. From the repo root run `node ops/cloud-output/storefront-product/render.mjs`. Open `ops/cloud-output/storefront-product/tests/thumbnails/contact-sheet.png` and every `ops/cloud-output/storefront-product/graphics/*.png`: no placeholder box left, every word crisp at thumbnail size, the presale PDF reads "Friday 9 October 2026 at 9 am ET".
@@ -155,9 +150,7 @@ Run the kit exactly as a new buyer would, in Jodie's own accounts, on a throwawa
 
 ### Step 10 · Scheduling
 
-**DONE 2 Oct 2026 (Skool and Facebook parts; email and Threads were scheduled separately the same day).** Jodie approved the launch and waived the live-test gate. All five Skool posts are in the SkoolKit queue and read back (Sat 3 Oct 3:00 pm, Mon 5 Oct 7:00 pm, Tue 6 Oct 3:00 pm, Thu 8 Oct 7:05 pm, Fri 9 Oct 7:00 pm; "Send email to all members" ON for Skool 2 and 4, OFF for 1, 3 and 5). Both Facebook group posts are in the group's Scheduled posts list with their images (Mon 5 Oct 7:15 pm, Thu 8 Oct 12:00 pm). Facebook cannot schedule comments, so two one-off tasks post the first comments (trig_01ETqHbUTCkqnYGgBhLZDNdu Mon 5 Oct 7:20 pm, trig_01PhNAwUjC6NTLiDx3LWzPFe Thu 8 Oct 12:05 pm). Facebook is not fully done until each first-comment link is seen live (step 13).
-
-Earlier note: **SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
+**SCHEDULED 27 Sep 2026.** Scheduled task "schedule the launch posts" runs Fri 2 Oct 12:20 pm, only if tests/LIVE_TEST.md passes (step 9, Jodie by Thu 1 Oct).
 
 All copy is in `ops/cloud-output/storefront-product/COPY.md`, at the times in its date table. Paste it exactly.
 1. **Skool (SkoolKit):** schedule Skool 1 to 5 with their titles, bodies and images (Skool 1: `graphics/g2-tease.png`; Skool 2: `graphics/g1-presale-open.png`; Skool 3: the four `src/lifestyle/` images it names; Skool 4: `graphics/g3-last-call.png`; Skool 5: `graphics/g4-share.png`). Links hyperlinked on their words, at most two per post. "Send email to all members" per step 3 check 1. Read each back in SkoolKit.

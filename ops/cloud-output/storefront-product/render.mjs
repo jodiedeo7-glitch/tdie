@@ -378,14 +378,14 @@ const presale = [`<section class="pg" style="padding:0">
 // ---------------------------------------------------------------- GRAPHICS
 const G = [
   { name: "g1-presale-open", w: 1600, h: 900, photo: "g1-porch-morning.jpg", pos: "70% 50%",
-    kicker: "Member presale &middot; Skool only", h1: "Your Amazon pins, made <em>while you sleep.</em>",
-    card: `<b>$17</b><span>for members &middot; until Sunday 11:59 pm ET</span>`, sticker: "No more<br>posting" },
+    kicker: "Presale &middot; 4 days only", h1: "Your Amazon pins, made <em>while you sleep.</em>",
+    card: `<b>$10</b><span>until Thursday 11:59 pm ET &middot; then $27</span>`, sticker: "No more<br>posting" },
   { name: "g2-tease", w: 1600, h: 900, photo: "g2-loft-night-desk.jpg", pos: "70% 50%",
     kicker: "Coming Monday", h1: "Something's been running <em>while I sleep.</em>",
     card: `<span style="font-size:24px;letter-spacing:.06em">I cannot and will not gatekeep this.</span>`, sticker: "Coming<br>Monday" },
   { name: "g3-last-call", w: 1080, h: 1350, photo: "g3-kitchen-late.jpg", pos: "65% 70%", vertical: true,
-    kicker: "Last call", h1: "Presale ends <em>at midnight.</em>",
-    card: `<span>The While-You-Sleep Storefront&trade;</span><span>Members keep $17 through Sunday</span>`, sticker: "Thursday<br>11:59 pm<br>ET" },
+    kicker: "Last call", h1: "$10 ends <em>at midnight.</em>",
+    card: `<span>The While-You-Sleep Storefront&trade;</span><span>then $27</span>`, sticker: "Thursday<br>11:59 pm<br>ET" },
   { name: "g4-share", w: 1200, h: 630, photo: "g4-nightstand-phone.jpg", pos: "75% 50%",
     kicker: "The Digital Income Edit&trade;", h1: "The <span style=\"white-space:nowrap\">While-You-Sleep</span> <em>Storefront&trade;</em>",
     card: `<span>Amazon links &rarr; Pinterest pins, on a schedule</span>`, sticker: "Found<br>through<br>search" },

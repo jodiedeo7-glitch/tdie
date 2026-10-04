@@ -1,8 +1,5 @@
 # The Weekend Ecosystem™ creatives · new photo needed
 
-> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
-
-
 One new photo. Every other image in this set is built from photos already in `public/images/we/`.
 
 ## pay-plan-pasture-blanket.jpg (payment plan ad, all four sizes)
@@ -35,7 +32,7 @@ Camera: photorealistic real-world photography, 50mm lens, natural depth of field
 
 Negative: no text, no lettering, no logos, no watermarks, no UI on the laptop screen, no marble, no Paris apartment, no picnic-basket styling, no café, no blazer or blouse, no generic luxury interior.
 
-**Pre-generation check (image master section 10):** reference used ✓ · no locked traits described ✓ · her world (pasture, fence line, red barn, gingham, golden retriever) ✓ · tumbler in frame and not the pink items ✓ · no mug ✓ · right third, left side open ✓ · real light and 50mm ✓ · photorealism language ✓ · no text requested ✓ · not a repeat of any matrix image or any photo in `public/images/we/` (new place: the pasture) ✓
+**Pre-generation check (image master section 10):** reference used ✓ · no locked traits described ✓ · her world (pasture, fence line, red barn, gingham, golden retriever) ✓ · tumbler in frame and not the only pink item ✓ · no mug ✓ · right third, left side open ✓ · real light and 50mm ✓ · photorealism language ✓ · no text requested ✓ · not a repeat of any matrix image or any photo in `public/images/we/` (new place: the pasture) ✓
 
 ---
 
@@ -78,7 +75,7 @@ Camera: 50mm lens at f/1.8, photorealistic real-world photography, natural imper
 
 Negative: no window, no daylight, no plush toys, no cartoon characters, no logos, no text, no screen content, no mug, no legs stretched toward the camera, no posed influencer look.
 
-**Pre-generation check (image master section 10):** reference used ✓ (second image is style only, stated) · no locked traits described ✓ · her world ✓ · not generic luxury ✓ · tumbler in frame, not called the pink items ✓ · no mug ✓ · right third ✓ · left side quiet ✓ · real light ✓ · 50mm ✓ · photorealism language ✓ · no text or logo requested ✓ · two anchors plus two life cues ✓ · not a matrix repeat (night, candid, turned from the desk, no headphones) ✓ · not a twin of photo 2 ✓
+**Pre-generation check (image master section 10):** reference used ✓ (second image is style only, stated) · no locked traits described ✓ · her world ✓ · not generic luxury ✓ · tumbler in frame, not called the only pink item ✓ · no mug ✓ · right third ✓ · left side quiet ✓ · real light ✓ · 50mm ✓ · photorealism language ✓ · no text or logo requested ✓ · two anchors plus two life cues ✓ · not a matrix repeat (night, candid, turned from the desk, no headphones) ✓ · not a twin of photo 2 ✓
 
 ## 2 · preview-working.jpg (closing section, bright morning in the farmhouse kitchen)
 
@@ -108,7 +105,7 @@ Camera: 50mm lens at f/2.0, photorealistic real-world photography, natural imper
 
 Negative: no attic, no gaming chair, no plush toys, no cartoon characters, no logos, no text, no screen content, no mug, no empty white room, no posed influencer look.
 
-**Pre-generation check (image master section 10):** reference used ✓ (second image is style only, stated) · no locked traits described ✓ · her world (farmhouse kitchen, gingham, lilacs, golden retriever) ✓ · not generic luxury ✓ · tumbler in frame, not called the pink items ✓ · no mug ✓ · right third ✓ · left side quiet ✓ · real light ✓ · 50mm ✓ · photorealism language ✓ · no text or logo requested ✓ · three anchors plus the dog ✓ · not a matrix repeat: the matrix BEFORE/AFTER is the kitchen island with the Player Two? mug; this is the table with the tumbler and the dog ✓ · not a twin of photo 1 ✓
+**Pre-generation check (image master section 10):** reference used ✓ (second image is style only, stated) · no locked traits described ✓ · her world (farmhouse kitchen, gingham, lilacs, golden retriever) ✓ · not generic luxury ✓ · tumbler in frame, not called the only pink item ✓ · no mug ✓ · right third ✓ · left side quiet ✓ · real light ✓ · 50mm ✓ · photorealism language ✓ · no text or logo requested ✓ · three anchors plus the dog ✓ · not a matrix repeat: the matrix BEFORE/AFTER is the kitchen island with the Player Two? mug; this is the table with the tumbler and the dog ✓ · not a twin of photo 1 ✓
 
 ## When both photos are made · paste this into a Claude session with the two photos attached
 

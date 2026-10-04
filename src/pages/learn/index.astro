@@ -1,7 +1,6 @@
 ---
 import "../../styles/global.css";
 
-import Analytics from '@vercel/analytics/astro';
 // Pillar guides and supporting articles live in src/data/library.js.
 import { pillars, articles } from "../../data/library.js";
 import { library as LIB, cap } from "../../data/facts.js";
@@ -251,6 +250,5 @@ const totalPieces = pillars.length + articles.length;
   </div>
   </main>
   <SiteFooter />
-  <Analytics />
 </body>
 </html>
