@@ -37,19 +37,19 @@ ChatGPT produces the finished, browser-ready batch:
 - `pins.csv`
 - scheduling manifest
 
-ChatGPT must not schedule pins in Pinterest unless explicitly asked to perform the browser execution task.
+ChatGPT may publish through Metricool only after a scoped owner transfer is verified. Current preparation or account access alone does not establish cutover.
 
 ### Gemini/Higgsfield owns person photography
 Only when a selected layout genuinely requires Tommy Kate. Follow the standing image rules and tool order. The image tool returns only the source photo. It does not create Pinterest text or layout.
 
-### Claude owns Pinterest execution
-Claude receives finished PNGs and a complete scheduling manifest. Claude only:
+### One current operator owns Metricool execution
+The existing reconciled operator receives finished PNGs and a complete scheduling manifest. A proposed ChatGPT cutover is not effective until the prior writer is disabled and ownership is independently read back. The operator only:
 1. checks the current scheduled queue
 2. confirms the proposed slots remain valid
 3. uploads finished PNGs
 4. fills metadata
 5. schedules
-6. verifies from the scheduled-pins view
+6. verifies the exact object through Metricool readback; publication needs actual provider evidence
 7. logs discrepancies
 
 Claude does not research topics, rewrite copy, design pins, or generate new layouts during the browser run. If a finished asset is invalid, Claude skips it and reports the exact issue instead of redesigning it in-browser.
@@ -86,8 +86,10 @@ Valid status values:
 - Never use the phrase `Make Money Online` in pin copy
 - First run of a new visual system requires Jodie to see the contact sheet before scheduling
 
-## Browser rule
-The browser is for Pinterest state and scheduling only. Creative generation does not happen inside the Pinterest browser session.
+## Founder account route, 2 October 2026
+The Metricool-only rule in ops/prompts/WEEKLY_PINTEREST_PIN_FACTORY_BASE.md supersedes this router's former native-Pinterest execution instructions. Never open Pinterest to schedule, edit, verify or delete founder pins. Use the supported Metricool operation and readback. If a required action is unavailable, hold only that action; do not invent a field or silently switch to native Pinterest. This founder-account rule does not rewrite the WYS customer kit or certify that buyer workflow.
+
+An AI-label requirement is an acceptance criterion, not proof the connector exposes an AI-label control. Record actual field support and evidence. Disclosure text and Instagram's isAiGenerated field are not proof of a Pinterest AI label. If the governing requirement cannot be verified, record it UNVERIFIED and hold the affected release rather than mark it ON.
 
 ## Failure rule
 For blank/frozen/session errors, exhaust the browser fallback procedure in the execution job while holding the correct lock. Account warnings, unknown lock ownership and ambiguous write outcomes still hold the operation. Reconcile uncertain saves before retry. Do not change the creative packet. Record unscheduled rows as `READY` with the failure reason.
