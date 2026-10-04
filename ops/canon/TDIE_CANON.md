@@ -1,5 +1,5 @@
 # THE DIGITAL INCOME EDIT™ — CANON
-### Current · 3 October 2026 · Single live copy — no versioned predecessors
+### Current · 4 October 2026 · Single live copy — no versioned predecessors
 
 **Build Your Business Backwards. Scale It Forward.™**
 
@@ -297,7 +297,7 @@ Founder with opinions. Tension, curiosity, specificity. Never *learn how*, *here
 
 **There are no banned words in this brand (Decision 85).** What is constrained is what an asset *asserts*, never which words it uses: no manufactured urgency, no fabricated scarcity, no fabricated social proof, no promises about how fast results arrive, no earnings figures on Meta, no third-party IP, and no misstatement of what a tier includes. Word choice is the founder's.
 
-**Three registers now, never mixed.** Skool community posts: warm, casual, emoji-forward, peer-to-peer, short lines, heavy white space. Site and editorial: luxury editorial mentor. **Threads: Jodie's own real voice — snarky, funny, smart, to the point, an authority, a good seller, not soft, a girls' girl who cheers other women on. Governing document: `claude/TDIE_JODIE_THREADS_VOICE.md` (Decision 92, 21 September 2026) — it overrides this section for Threads specifically, the same way TDIE_TOMMY_KATE_VOICE.md used to for the retired Threads persona.**
+**Three registers now, never mixed.** Skool community posts: warm, casual, emoji-forward, peer-to-peer, short lines, heavy white space. Site and editorial: the founder herself, loud and confident, with strong opinions, curiosity, tension and specificity (Decision 128). **Threads: Jodie's own real voice — snarky, funny, smart, to the point, an authority, a good seller, not soft, a girls' girl who cheers other women on. Governing document: `claude/TDIE_JODIE_THREADS_VOICE.md` (Decision 92, 21 September 2026) — it overrides this section for Threads specifically, the same way TDIE_TOMMY_KATE_VOICE.md used to for the retired Threads persona.**
 
 **Income and earnings claims** are permitted on every surface **except Meta platforms** (Facebook and Instagram). This includes any page a Meta ad can reach. The Shopify affiliate figure Jodie has earned from Facebook replies is never quoted in a Facebook reply, a Facebook group post, or an Instagram post.
 
@@ -324,20 +324,20 @@ Founder with opinions. Tension, curiosity, specificity. Never *learn how*, *here
 |---|---|
 | Signature Hot Pink | `#D62E73` |
 | Luxury Cream | `#FBF8F5` |
-| Dark Chocolate | `#2B161B` |
+| Dark Chocolate | `#2B161B` — never a fill, panel, footer, button or background; text is near-black `#1A1417` (24 September 2026) |
 | Muted Gold | `#C8A96A` |
 | Bubblegum Pink | `#FF8AC2` |
 | Lavender | `#CBB7F7` — never dominant |
 
 Six colours. Magenta, deep plum and antique gold are retired. The ten-colour palette in the old Master Operating Manual — Soft Blush, Soft White, Warm Taupe, Light Rose, Dusty Mauve, Soft Gray — **is retired with it.**
 
-**Type.** Fraunces (display) · Cormorant Garamond (serif; the italic carries the turn line) · Inter (sans; eyebrows and lockups only). One to two families per asset. The old Manual's Canela / Editorial New / Ivy Presto / Manrope alternatives are retired.
+**Type.** Newsreader SemiBold (headlines and prices, upright, the turn phrase in hot pink) · Inter (kickers, body, buttons). Fraunces, Cormorant Garamond, Montserrat and any thin, soft or italic display serif are retired for headings (founder, 24 September 2026). The old Manual's Canela / Editorial New / Ivy Presto / Manrope alternatives are retired.
 
 Variable axis order — wrong order silently applies default weights:
 
-- Fraunces `[opsz, wght, SOFT, WONK]`
-- Cormorant Garamond `[wght]`
 - Inter `[opsz, wght]`
+
+**Site and graphic look (Decision 128, 4 October 2026, founder instruction).** The brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. It must read as LUXURY, never cheap: real-looking glitter, sequins, pearl, chrome and holographic foil with depth and light catching on them, used for the big moments rather than as wallpaper in every section; frosted glass cards with a thin gold border and deep soft pink-tinted shadows; one glossy hot pink hero card per section; round tilted stickers, callout boxes, numbered badges, pull quotes and annotated arrows that break up every block of words so no reader skims past a feature; every clickable card or image visibly labelled with its name and a button. Never minimalist, never clean-and-modern, never beige, never quiet editorial calm, never cookie-cutter, never a wall of words. Applies to the website, every sales page and every designed graphic. Persona photography keeps its own register (Decision 89).
 
 **Tier badges.** Standard `#FF8AC2` · Premium `#D62E73`. The Free badge is retired with the free tier. Gold and Lavender badges for standalones and member rewards are proposed, not canon.
 
@@ -627,6 +627,8 @@ Shipped the same day into the live *Weekend Ecosystem — Access Granted* email 
 
 **127.** (3 October 2026) **Midjourney is a standing image tool.** Founder instruction. Jodie has an active Midjourney subscription, signed in in her browser, and gets far more free generations on it than on Higgsfield; she had not mentioned it before only because she had not used it before. The rule, for every image in the business with or without a person, and in every file, scheduled task and skill: whenever an image would come out better in Midjourney, use Midjourney. It amends the Decision 119 tool order, so the clause "no other image generator" now reads "no other besides Midjourney". Canva is still never an image generator. It is a browser job in her signed-in browser (browser lock first, one tab, never a password); a Tommy Kate image attaches the reference sheet as the reference image and keeps the identity opening line; no text in the image; if Midjourney is not signed in, the existing order is used and Jodie is told in one line. Full rule: `claude/TDIE_IMAGE_GENERATION_MASTER.md` section M (project) and `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md` (repo). `canon.json → meta.midjourney_standing_rule_2026_10_03` and `image_prompts.tool_order.midjourney`. Closed item, never re-raised as a conflict with Decision 119.
 
+**128.** (4 October 2026) **The site and graphic look is written down, and the old quiet-editorial wording is retired.** Founder instruction: "STOP MAKING IT COOKIE CUTTER, STOP MAKING IT MINIMALIST, STOP MAKING IT CLEAN AND MODERN." The look is recorded in §8 (Site and graphic look). The same day the site register in §7 changed from "luxury editorial mentor" to the founder voice, the §8 type line was brought into line with claude/TDIE_DESIGN_RULES.md (Newsreader and Inter; Fraunces, Cormorant Garamond and Montserrat retired for headings, 24 September 2026), and Dark Chocolate was marked never a fill. Persona photography (Decision 89) is unchanged. `canon.json → meta.site_look_2026_10_04`.
+
 ---
 
-**The Digital Income Edit™ · Canon · 3 October 2026**
+**The Digital Income Edit™ · Canon · 4 October 2026**

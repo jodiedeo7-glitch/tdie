@@ -2,9 +2,20 @@
 
 > **🖼️ IMAGE RULES (Jodie, 25 September 2026; pink rule corrected 26 September 2026). Read before any image prompt or generation.** Every image prompt and every generated image follows `claude/TDIE_IMAGE_GENERATION_MASTER.md`, which wins over anything older in this document. Canon beats generic words like "luxury" or "editorial": Tommy Kate is photographed in her own world (farmhouse, pink attic gaming loft, porch, kitchen, living room, pasture, red barn, garden beds, golden retriever), never a Paris apartment, café, marble office, mansion or influencer set. Every prompt with her in it opens: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Her locked features are never written in words, not even as "same face" or "same freckles". **The pink rule:** any frame with her in it (full body, hands or boots) always includes her glitter-flecked pink iced coffee tumbler with a lavender straw, and the tumbler is never the only pink item: her clothes can be candy pink and other pink pieces can be in the frame with her. A frame without her carries pink is freely allowed throughout the scene. Real lens and real light language, photorealism language, no text or logos in the photo. **Tool order (standing rule):** any image with the avatar or a person goes to Google Gemini first, reference sheet attached, while Gemini has credits, then Nano Banana Pro at 2K on Higgsfield, reference sheet attached. Any image with no person goes to Seedream 4.5 on Higgsfield. Garbled text or an unsatisfactory image re-runs on Nano Banana Pro at 2K on Higgsfield. No other image generator besides Midjourney, which is also allowed whenever an image would come out better there (standing rule, Jodie, 3 October 2026, section M of claude/TDIE_IMAGE_GENERATION_MASTER.md); never Canva.
 
+### 4 October 2026 · THE LOOK (founder instruction, Decision 128). This wins over anything softer below.
+
+Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. Loud, pink, sparkly, confident, girly. It has to read LUXURY, never cheap.
+
+- NEVER minimalist, clean-and-modern, beige, neutral, quiet editorial calm, cookie-cutter or a wall of words.
+- Luxury, not cheap: real-looking glitter, sequins, pearl, chrome and holographic foil with depth and light catching on them, used for the big moments. Not a flat glitter texture tiled behind every section, not the same hard offset shadow on every card, not gingham as wallpaper, not clip-art stars.
+- Break up every block of words: stickers, callout boxes, numbered badges, pull quotes, annotated arrows, "don't skip this" boxes, price and feature tags. Any feature a reader might skim past gets a visual.
+- Every clickable card or image shows its name and a button. Nothing is a link without a label.
+- Homestead lives in the photography and small details (weathered wood, lilacs, the red barn, the porch, the retriever, the pink attic loft). Gingham appears once as trim, never as a background.
+- Body text big, near-black and crisp. Never grey body text. Headlines upright, never italic.
+
 ### 25 September 2026 · founder instruction
 
-These override canon §8 "Type" and the Dark Chocolate palette row wherever they disagree. Canon §8 and `canon.json → typography / palette` still carry the old lines and need the same change (see bottom).
+These override canon §8 "Type" and the Dark Chocolate palette row wherever they disagree. Canon §8 and `canon.json → typography / palette` were brought into line on 4 October 2026 (Decision 128).
 
 ## 0. The one rule
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
@@ -31,14 +42,5 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - **CTA:** hot pink gradient pill button, white caps.
 - Render at 1600x900 @2x, export JPG quality 93 for Skool.
 
-## Canon edits still owed
-- TDIE_CANON.md §8 "Type": replace the Fraunces / Cormorant / Inter line with "Newsreader SemiBold (headlines, prices) · Inter (kickers, body). Fraunces, Cormorant Garamond and Montserrat are retired for headings (24 Sep 2026, founder)."
-- TDIE_CANON.md §8 palette: Dark Chocolate row gets "never a fill, panel, footer or background; text is near-black #1A1417 (24 Sep 2026)."
-- canon.json `typography` and `palette` to match; repo copy `ops/canon/TDIE_CANON.md` the same day.
-
-## Sales-page typography and deployment QA (Jodie, 3 October 2026)
-Do not enlarge page headlines when editing copy. Sales pages use the shared scale in `src/styles/sales-typography.css`: H1 at most 52px on desktop and 36px on mobile; H2 at most 40px desktop and 30px mobile. Emphasis inherits its parent size. Avoid narrow 9ch measures, compressed line heights, clipping, and oversized stacked words. Preserve the Newsreader/Inter brand system.
-For every page change, inspect rendered screenshots of all affected pages on desktop and mobile, including the complete page, images, spacing, heading hierarchy, buttons, navigation, and overflow. After deploying, repeat the visual audit against the actual public deployment and verify the new version is live. A successful build or deployment status alone is not visual QA. Fix visible issues before claiming completion. If live rendering is inaccessible, report the audit as blocked rather than claiming it passed.
-
-## Site-wide mobile design
-`src/styles/mobile.css` applies to every page template, including articles, resources, lifestyle, link pages, and the course. Keep H1 at 30–36px, H2 at 26–30px, readable body text, 48px primary actions, wrapping labels, and zero document overflow at 320px and 390px. Grids must use `minmax(0, 1fr)` when a form or other intrinsic content can widen the track. Inspect the complete rendered mobile pages and interactive states; audit gated course content with repository HTML fixtures locally, without altering production access controls. Repeat public-site visual QA after deployment.
+## Canon edits
+Done 4 October 2026 (Decision 128): TDIE_CANON.md §8 type and Dark Chocolate rows, canon.json typography and palette, both copies.
