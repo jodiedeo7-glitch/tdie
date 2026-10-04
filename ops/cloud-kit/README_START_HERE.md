@@ -25,7 +25,7 @@ Jodie DeOliveira, founder of The Digital Income Edit™ (TDIE), a loud, pink, sp
 6. Label anything unverified as unverified.
 7. Never say something can't be done until every route has been tried.
 8. Plain English. No jargon.
-9. NO EM DASHES anywhere, in chat or in anything you produce. Also never: "game-changer", "utilize", "delve", "journey", "elevate", "unlock your potential", "let's dive in", "it's important to note", "in conclusion", "It's not just X, it's Y."
+9. No em dashes. There is no banned vocabulary list (Decision 85, reconfirmed by Jodie 4 October 2026). Audit claims, facts, links and design accuracy, never word choice.
 10. Never mention GitHub tokens.
 11. Reporting: if everything passed and nothing needs Jodie, one line plus the one thing she needs (a link or file). If you truly need her, ask exactly one plain question.
 12. Send every finished file to Jodie with the send-file tool. She is often on her phone.
@@ -62,4 +62,4 @@ Follow `TDIE_IMAGE_GENERATION_MASTER.md` (or the `tdie-image-prompt` skill if av
 
 
 ## Current founder handoff rules and release hold
-Read `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md` and the named current main governing files before TDIE work. The founder's WYS release hold is active: publish nothing for The While-You-Sleep Storefront™. Planned launch dates do not override that hold. The current-rules handoff records the unresolved vocabulary-policy and Decision 126 launch-date conflicts; do not silently reconcile them or alter canon without a resolved founder ruling. Historical archives and receipts are evidence only, never current execution instructions.
+Read `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md` and the named current main governing files before TDIE work. The founder's WYS release hold is active: publish nothing for The While-You-Sleep Storefront™. Planned launch dates do not override that hold. There is no banned vocabulary list. WYS dates follow the founder's amended Decision 123: public launch Saturday 10 October 2026 at 2:00 pm Eastern; launch pricing ends Monday 12 October at 11:59 pm; $37 from Tuesday 13 October. The release hold remains active. Historical archives and receipts are evidence only, never current execution instructions.
