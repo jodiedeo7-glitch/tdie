@@ -3,7 +3,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import "../../styles/edit.css";
 import { membership, weekendEcosystem as we, SKOOL_PLANS } from "../../data/facts.js";
 // Tina's words come from the single verbatim source, unedited.
-import { FEATURED as tina } from "../../we-reviews.js";
+import Testimonial from "../../components/Testimonial.astro";
 
 // Every name, price and URL below is a products[] row in ops/canon/canon.json.
 // Nothing is inferred. Membership and Weekend Ecosystem facts come from
@@ -211,10 +211,7 @@ const schema = [{
           </div>
         </dl>
 
-        <figure class="flag-quote">
-          <blockquote>&ldquo;{tina.pull}&rdquo;</blockquote>
-          <figcaption><strong>{tina.name}</strong> · Skool review · public</figcaption>
-        </figure>
+        <Testimonial variant="pull" />
 
         <p class="flag-ev">{we.modules} modules · {we.prompts} prompts · {we.assetsPerArticle} assets from every article</p>
 

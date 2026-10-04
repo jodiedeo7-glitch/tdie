@@ -8,23 +8,23 @@ export interface Props {
   eyebrow?: string;
 }
 const { variant = "full", review = FEATURED, eyebrow } = Astro.props;
-const stars = "★".repeat(review.stars);
+const stars = "★".repeat(review.stars ?? 0);
 ---
 
 {variant === "line" && (
   <p class="tm-line">
-    <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    {review.stars && <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>}
     <span class="tm-line-q">&ldquo;{review.line}&rdquo;</span>
-    <span class="tm-line-n">{review.name}</span>
+    <span class="tm-line-n">{review.url ? <a class="tm-name-link" href={review.url} target="_blank" rel="noopener">{review.name}</a> : review.name}</span>
   </p>
 )}
 
 {variant === "pull" && (
   <figure class="tm-pull">
-    <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    {review.stars && <span class="tm-stars" aria-label={`${review.stars} out of 5`}>{stars}</span>}
     <blockquote>{review.pull}</blockquote>
     <figcaption>
-      <strong>{review.name}</strong>
+      <strong>{review.url ? <a class="tm-name-link" href={review.url} target="_blank" rel="noopener">{review.name}</a> : review.name}</strong>
       <span>{review.tenure}</span>
     </figcaption>
   </figure>
@@ -33,17 +33,21 @@ const stars = "★".repeat(review.stars);
 {variant === "full" && (
   <figure class="tm-card">
     {eyebrow && <span class="tm-tag">{eyebrow}</span>}
-    <span class="tm-stars tm-stars-lg" aria-label={`${review.stars} out of 5`}>{stars}</span>
+    {review.stars && <span class="tm-stars tm-stars-lg" aria-label={`${review.stars} out of 5`}>{stars}</span>}
     <blockquote>{review.quote}</blockquote>
     <figcaption>
-      <strong>{review.name}</strong>
+      <strong>{review.url ? <a class="tm-name-link" href={review.url} target="_blank" rel="noopener">{review.name}</a> : review.name}</strong>
       <span>{review.source}</span>
       <span>{review.tenure}</span>
     </figcaption>
+    {review.url && <p class="tm-blog"><a href={review.url} target="_blank" rel="noopener">Visit {review.name.split(" ")[0]}'s blog → {review.linkLabel}</a></p>}
   </figure>
 )}
 
 <style>
+  .tm-name-link{color:inherit;text-decoration:underline;text-underline-offset:3px}
+  .tm-blog{margin:10px 0 0;font-size:12.5px;line-height:1.6}
+  .tm-blog a{color:var(--pink-deep);text-underline-offset:3px}
   .tm-stars{color:var(--pink);letter-spacing:3px;font-size:14px;line-height:1;display:inline-block}
   .tm-stars-lg{font-size:17px;letter-spacing:4px;margin-bottom:16px;display:block}
 
@@ -59,6 +63,8 @@ const stars = "★".repeat(review.stars);
                       line-height:1.45;color:var(--choc);margin:10px 0 12px}
   .tm-pull figcaption{font-size:13px;line-height:1.6;color:var(--taupe-deep);display:flex;flex-wrap:wrap;gap:10px}
   .tm-pull figcaption strong{color:var(--choc);font-weight:600}
+  :global(.e-dark) .tm-pull blockquote,:global(.e-dark) .tm-pull figcaption strong{color:#fff}
+  :global(.e-dark) .tm-pull figcaption{color:rgba(246,239,234,.82)}
 
   /* ── full card ── */
   .tm-card{background:var(--white);border:1px solid rgba(43,22,27,.13);border-top:2px solid var(--pink);
@@ -71,6 +77,7 @@ const stars = "★".repeat(review.stars);
   .tm-card blockquote::after{content:"\201D"}
   .tm-card figcaption{display:flex;flex-direction:column;gap:3px;font-size:13.5px;line-height:1.6;color:var(--taupe-deep)}
   .tm-card figcaption strong{font-size:15px;color:var(--choc);font-weight:600;letter-spacing:.2px}
+  :global(.wx-obj-card) .tm-card{margin:26px auto 12px}
   @media(max-width:640px){
     .tm-card{padding:26px 22px 24px;margin:34px auto}
     .tm-line{gap:6px}
