@@ -2,6 +2,10 @@
 
 Updated 4 Oct 2026. Read current canon and verify live checkout/listing state before using prices, links, capabilities or release claims in customer-facing material.
 
+## Release hold
+
+Release is on hold. Publish nothing for this product. Dates below are planning facts only and do not authorize posting, launch, checkout activation, delivery release or affiliate activation.
+
 ## Campaign structure
 
 - Name The While-You-Sleep Storefront™ in the first Mon 5 Oct announcement. Do not run an unnamed mystery campaign.
