@@ -101,3 +101,17 @@ Claude must export its CURRENT full inventory including exact prompts, stable ID
 Use the current private TDIE Handoffs installation receipts and THREADS_AUTOMATIC_HANDOFF_2026-10-03.md as comparison evidence, not blanket replacement prompts. Save an immutable before snapshot and per-field diff privately. Map replacement IDs by workflow, account and prompt, not name alone. Re-read each edited task and verify one bounded authorized destination result before declaring its workflow healthy.
 
 Do not upload private task prompts, account payloads, tokens, customer data or detailed private receipts to this public repository.
+
+## Follow-up at 12:31 Eastern, 4 October 2026
+
+Jodie supplied Claude's follow-up and explicitly authorized overnight long jobs because the computer stays on 24/7. The pre-07:00 restriction is superseded in this PR's root instructions and execution contract. No live Claude schedule was independently read or changed here.
+
+Claude REPORTED six schedule changes: core Pinterest Sunday 02:12; themed Amazon Saturday 02:12; Pretty & Paid Tuesday/Thursday 02:12; Etsy Monday/Wednesday/Friday 02:12; Skool weekly build Friday 03:12; Premium-test Instagram insights monthly 11th 03:12. These are UNVERIFIED here pending the exported definitions/readback. Distinct start times do not establish non-overlap. In particular the 11 October Sunday insights job can overlap the weekly Pinterest run, and Friday Etsy can overlap Skool production. Check measured durations and safe deadline priority before claiming daytime protection.
+
+Claude also REPORTED its seven prompt repairs were rejected by its safety check, despite schedule changes later succeeding. Do not infer prompt-write permission from schedule-write success; do not bypass device approval. Request the exact rejection/action if the scoped authorized repair still fails.
+
+The proposed dispatcher change from :06 to :03 is not accepted as a verified timing fix. It shortens the wait for operations due before :03, but can delay an operation becoming due between :03 and :06 until the next dispatcher run. Current Threads router requires an immediate OFFER reply and TEACH +60 minutes; Facebook requires +5 after actual publication. Read actual due records and supported scheduler behavior, then verify the resulting mechanism. Do not silently redefine immediate as 13:02, or claim exact timing from a coarse periodic run.
+
+Immediate Threads repair remains with Claude: locate the correct period/account/versioned manifest, verify its payload and authorization, reconcile already loaded/scheduled rows, and consume the canonical QA-passed bank. An existing Claude week file must not outrank a superseding authorized packet. Do not choose by filename alone or simply newest modified time; validate period, version, source, claim generation and explicit supersession. Routine established founder batches require no manual approval. Missing files alone do not authorize fallback authorship.
+
+The reported private export claude-task-export-2026-10-04.json was not attached to this ChatGPT conversation or read here. Claude's seven findings and six schedule changes remain reported evidence, not independent verification. Main still has the old pre-07:00 sentence until this PR is merged or an authorized current instruction supersedes it during execution; Jodie's explicit instruction already takes precedence.
