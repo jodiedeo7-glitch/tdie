@@ -45,3 +45,7 @@ The public www.thedigitalincomeedit.com site is hosted on Cloudflare (worker `td
 
 ## Site-wide mobile design
 `src/styles/mobile.css` applies to every page template, including articles, resources, lifestyle, link pages, and the course. Keep H1 at 30–36px, H2 at 26–30px, readable body text, 48px primary actions, wrapping labels, and zero document overflow at 320px and 390px. Grids must use `minmax(0, 1fr)` when a form or other intrinsic content can widen the track. Inspect the complete rendered mobile pages and interactive states; audit gated course content with repository HTML fixtures locally, without altering production access controls. Repeat public-site visual QA after deployment.
+
+
+## Current founder handoff rules and release hold
+Read `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md` and the named current main governing files before TDIE work. The founder's WYS release hold is active: publish nothing for The While-You-Sleep Storefront™. Planned launch dates do not override that hold. The current-rules handoff records the unresolved vocabulary-policy and Decision 126 launch-date conflicts; do not silently reconcile them or alter canon without a resolved founder ruling. Historical archives and receipts are evidence only, never current execution instructions.
