@@ -13,6 +13,7 @@ Updated 4 Oct 2026. Read current canon and verify live checkout/listing state be
 
 - Standard member presale: Thu 8 Oct 4:00 pm to Sat 10 Oct 2:00 pm Eastern. $17. Exactly 20 Standard presale spots.
 - Standard spots remaining = 20 minus actual Standard presale purchases. Do not count Premium purchases against this cap.
+- No Beacons counter or sales limit (Jodie, 4 Oct 2026). Jodie keeps the Standard spots count herself and updates it by hand in Skool. Never set a Beacons sales limit for this, and never post a spots number she hasn't given.
 - Premium member offer: $10 via TDIEPREMIUM in The Premium Vault only. Uncapped.
 - Premium purchases may be used in truthful, clearly labeled total-buyer/social-proof counts. They may never be used to create or reduce a Standard spots-remaining number.
 - No public presale.
