@@ -9,7 +9,7 @@ WHAT YOU NEED FOR BOTH AUTOMATIONS
 2. The Claude desktop app, on a computer that is switched on when the tasks run.
    The tasks run from your own computer. It stays on, with Chrome open and signed in, at the times you choose. If it's off at run time, the daily missed-run sweep (9:45 am) runs the missed build once when the computer is back on. You pick run times that suit your life during setup.
 
-3. Google Chrome, signed in to everything below, with the Claude in Chrome extension installed.
+3. Google Chrome, signed in to everything below, with the Claude in Chrome extension installed in that one browser only. If the extension is connected in two browsers (say Chrome and Edge), a scheduled task can't choose between them and falls back to the Claude desktop app's own browser, which may not be signed in. Remove it from the other browser, or also sign in to Amazon, Pinterest, Higgsfield and Skool in the Claude desktop app's browser.
    The tasks never type a password. If you're signed out of something, the task stops and tells you in one line.
 
 4. Amazon Associates.
@@ -21,15 +21,22 @@ WHAT YOU NEED FOR BOTH AUTOMATIONS
    Secret boards reach nobody. The recipe checks every board is public before the first pin, and stops if one isn't. (I learned this one the hard way: one of my own boards sat on secret while pins were scheduled to it.)
 
 6. Image tools:
-   Higgsfield, with access to Seedream 4.5. This makes every flat lay and collage (no person in them). I run Seedream with the Unlimited switch on; whether you have that switch depends on your Higgsfield plan.
-   Google Gemini, for the lifestyle photos of your AI persona. Only needed on the persona path (backup: Nano Banana Pro on Higgsfield, if your plan includes it). No persona? You can skip Gemini (see 07_PERSONA_PATHS.txt).
+   Higgsfield makes every flat lay and collage (no person in them). There are two ways to run it, and it's a real trade-off. Your setup chat asks which one you want.
+   A. FREE IMAGES, MORE CLAUDE USAGE (the website). The tasks open the Higgsfield website in Chrome and use a model on your plan's Unlimited list, with the Unlimited switch on (next to Generate). Images cost no Higgsfield credits. But driving a website in Chrome uses noticeably more of your Claude usage and keeps Chrome busy longer. Best free model in my tests: Seedream 5.0 Lite (backup: Seedream 4.5). On 3 Oct 2026 the Unlimited list came with Higgsfield's Plus plan, $49/month (Higgsfield's price, not mine; plans change, so check their page).
+   B. LESS CLAUDE USAGE, A SMALL CREDIT COST (the plugin). The tasks use the Higgsfield plugin inside Claude instead of the website. It's faster and much lighter on your Claude usage, but the plugin can't use the Unlimited switch, so every image costs credits. Best value in my tests: Seedream 5.0 Flash, half a credit an image at full size, so about 1 credit a look (two pins). Close second: GPT Image 2.5 Flare on low quality, also half a credit, slightly smaller. Skip the cheapest model, Soul 2.0 (about an eighth of a credit): it's made for people and can't spell a title.
+   How I tested: the same flat lay prompt and the same product sheet through every model, judged on four things: every piece there and right, the title spelled right, nothing invented (no stray computer monitor), nothing cut off at the edge. Seedream 4.5 doubled one piece and added a monitor; GPT Image (the original) cut a piece off the edge and doubled the latte; FLUX.2 Pro left pieces out; Nano Banana and Nano Banana 2 came out too small; Kling O1 Image swapped in things that weren't on the list. Nano Banana Pro was the best of all, at 2 credits an image.
+   Get Higgsfield through my link: https://higgsfield.ai?fpr=jodie-30b092
+   Affiliate link: I earn a commission if you subscribe, at no extra cost to you. Higgsfield's own offer for people who join through a link was, when I wrote this, up to 50% off for three hours after you log in through it (their terms, check them on the page).
+   Persona photos (persona path only) are made on Higgsfield too: Nano Banana Pro, about 2 credits a photo, from her image saved in Higgsfield once at setup. A scheduled task can't upload a file from your computer, which is why it's saved there first. No persona? Skip this (see 07_PERSONA_PATHS.txt).
 
 7. Only with the blog half (09_THE_BLOG_HALF.txt): Chrome signed in to GitHub, with write access to your site's repository.
 
 FOR AUTOMATION 2 ONLY (The Brand Closet™ Outfit of the Day)
 
 8. The Brand Closet™ at Rose's $9/month tier or above, with Chrome signed in to Skool.
-   The Outfit of the Day sits on that tier. The Brand Closet™ is Rose's community, not mine: it's free to join, and her paid tiers are $9/month and $19/month (her prices). Not a member and don't want to be? Skip automation 2. Automation 1 runs on its own.
+   The Outfit of the Day sits on that tier. The Brand Closet™ is Rose's community, not mine: it's free to join, and her paid tiers are $9/month and $19/month (her prices). Join here: https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce
+   Affiliate link: I earn a commission if you upgrade, at no extra cost to you.
+   Not a member and don't want to be? Skip automation 2. Automation 1 runs on its own.
 
 WHAT YOU DON'T NEED
 

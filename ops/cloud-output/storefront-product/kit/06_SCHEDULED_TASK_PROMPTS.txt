@@ -7,6 +7,11 @@ If the app's schedule field won't take a choice below (two days a week, Sunday t
 
 Every task needs its folder: set each task's folder field to your While-You-Sleep folder. The first time each task runs, the app asks you to allow that folder, and an unanswered ask stops the run. So once all four tasks exist, run each one once by hand while you're at the computer (Run now) and allow the folder when asked.
 
+MAKE THEM HANDS-OFF (do this once, then nothing waits for you)
+1. Approval setting: open each task's settings and turn on "Automatically approve" (if your organization allows it). With it off, a run stops and waits for a person at every Submit and Schedule click, and nobody is there at night.
+2. One browser: keep just one Chrome browser connected to Claude (the one signed in to Amazon, Pinterest and, for Brand Closet™ members, Skool), and write its name on the BROWSER line in MY_RECIPE.txt. With two connected and none named, a scheduled run can't choose and stops.
+3. Every prompt below carries a STANDING APPROVAL block. It is your one-time approval for the routine steps (submit the Idea List, schedule the pins, make her photos from your saved persona), so the tasks never stop to ask. Don't remove it.
+
 ====================================================================
 WEEKLY THEMED-LOOK BUILD
 Name: While-You-Sleep: weekly themed looks
@@ -30,6 +35,9 @@ JOB
 VERIFY
 Read Pinterest's scheduled pins page (pinterest.com/<my profile name>/scheduled-pins/) in a fresh tab and confirm every pin you scheduled this run is there with the right title, time, board and link. If the blog half is on, or I'm on the Associates-only path, open every look page my pins link to and confirm it loads. Nothing is reported as done until you've seen it.
 
+STANDING APPROVAL (mine, given once, covers every run of this task, including catch-ups)
+I approve in advance, for every run, without asking me again: submitting each look's Idea List to my storefront (or publishing its page on my own site when MY_RECIPE.txt says CAN PUBLISH TO SITE: yes), creating and scheduling every pin this task makes on the boards in MY_RECIPE.txt at their PIN slots, turning on Pinterest's AI label, using my persona saved in Higgsfield (the PERSONA HIGGSFIELD line in MY_RECIPE.txt) to make her photos, and using the Chrome browser named on the BROWSER line in MY_RECIPE.txt. These are routine, reversible steps of my own automation: do them, don't stop to ask, and don't report them as needing me. This approval does not cover deleting anything, typing a password, spending money, or anything the RULES below forbid.
+
 RULES
 No prices. No brand names in listings. No third-party IP in images. #ad first, disclosure last, link and disclosure together. No downloads. Two correction rounds at most. Fresh tab per pin, 60 seconds between pins, and stop after two blank pages in a row. Never more than 14 days ahead. No em dashes. Never type a password.
 
@@ -37,7 +45,7 @@ REPORT
 If everything worked: one line, for example "Built 4 looks, 8 pins scheduled and verified." On the Associates-only path with a site you can't publish to: "Built 3 looks. 6 pins are waiting for their pages." then "Paste the 3 files in the pages folder into your site by [day, time], and the next pull sweep schedules the pins." Only if something else needs me: one more line saying exactly what to do.
 
 BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it, for example: open Chrome, sign in to Pinterest, then run this task again. The Pinterest blank-page rule (two blanks in a row, stop) always wins over this block.
+If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it, for example: open Chrome, sign in to Pinterest, then run this task again. The Pinterest blank-page rule (two blanks in a row, stop) always wins over this block. Browser choice: if more than one Chrome browser is connected, use the one named on the BROWSER line in MY_RECIPE.txt (my standing choice, made at setup); never stop to ask me which.
 ------------------------------------------------------------------
 
 ====================================================================
@@ -62,6 +70,9 @@ Rose's images, prompts and lesson text are paid member content: never posted, up
 VERIFY
 Read Pinterest's scheduled pins page (pinterest.com/<my profile name>/scheduled-pins/) in a fresh tab and confirm both pins of each outfit are there with the right title, time, board and link. Nothing is reported as done until you've seen it.
 
+STANDING APPROVAL (mine, given once, covers every run of this task, including catch-ups)
+I approve in advance, for every run, without asking me again: submitting each look's Idea List to my storefront (or publishing its page on my own site when MY_RECIPE.txt says CAN PUBLISH TO SITE: yes), creating and scheduling every pin this task makes on the boards in MY_RECIPE.txt at their PIN slots, turning on Pinterest's AI label, using my persona saved in Higgsfield (the PERSONA HIGGSFIELD line in MY_RECIPE.txt) to make her photos, and using the Chrome browser named on the BROWSER line in MY_RECIPE.txt. These are routine, reversible steps of my own automation: do them, don't stop to ask, and don't report them as needing me. This approval does not cover deleting anything, typing a password, spending money, or anything the RULES below forbid.
+
 RULES
 No prices. No brand names in listings. No third-party IP in images. #ad first, disclosure last, link and disclosure together. No downloads. Two correction rounds at most. Fresh tab per pin, and stop after two blank pages in a row. Never more than 14 days ahead. No em dashes. Never type a password.
 
@@ -69,7 +80,7 @@ REPORT
 One line if everything worked, for example "1 outfit built, 2 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
 
 BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
+If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up, and discard only drafts this run created. Never resize the Chrome window. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, end the run cleanly (everything finished is in pin-drafts.md; log it, release the browser lock) and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block. Browser choice: if more than one Chrome browser is connected, use the one named on the BROWSER line in MY_RECIPE.txt (my standing choice, made at setup); never stop to ask me which.
 ------------------------------------------------------------------
 
 ====================================================================
@@ -86,13 +97,16 @@ You are the pull sweep for The While-You-Sleep Storefront™. Time zone: «TZ».
 READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt, pin-tab.md, storefront-log.md, pin-drafts.md, browser-lock.txt, 03_THEMED_LOOK_RECIPE.txt (Part 1, Part 3 step 6, Part 4, Part 6 and Part 7), 07_PERSONA_PATHS.txt and 08_STOREFRONT_PATHS.txt.
 
 JOB
-1. Look for work WITHOUT opening a browser: any row in pin-tab.md with PULL (not PULLED) typed in its last column and a status that isn't "pulled" (a status "delete clicked, not verified" counts: check it first, and if the pin is no longer on the scheduled pins page, mark it "pulled" without deleting anything) (a row where I typed PULLED I already deleted myself: set it to "pulled" in pin-tab.md and storefront-log.md, no browser needed), any pin in storefront-log.md or pin-drafts.md logged "built" or "scheduled, not verified", and any look noted "list in review" whose pin 1 posts within the next 24 hours.
+1. Look for work WITHOUT opening a browser: any row in pin-tab.md with PULL (not PULLED) typed in its last column and a status that isn't "pulled" (a status "delete clicked, not verified" or "waiting for you to delete" counts: check it first, and if the pin is no longer on the scheduled pins page, mark it "pulled" without deleting anything) (a row where I typed PULLED I already deleted myself: set it to "pulled" in pin-tab.md and storefront-log.md, no browser needed), any pin in storefront-log.md or pin-drafts.md logged "built" or "scheduled, not verified", and any look noted "list in review" whose pin 1 posts within the next 24 hours.
 2. Nothing found? End the run. Don't open Chrome. Report nothing.
 3. Take the browser lock (recipe R16).
-4. Pulls: for each pin marked PULL, read Pinterest's scheduled pins page in a fresh tab, find the pin by its title and time, delete it, reload and confirm it's gone. If it already posted, open it on its board and delete it there. Update pin-tab.md (status "pulled", today's date) and storefront-log.md. If the delete went through but you can't check it's gone this run, set the status to "delete clicked, not verified", keep PULL, and the next sweep checks it first.
+4. Pulls: for each pin marked PULL, read Pinterest's scheduled pins page in a fresh tab and find the pin by its title and time. Already gone? Set it to "pulled". Still there? Try to delete it (its three dots, Delete), reload and confirm it's gone; if it already posted, do the same on its board. Claude's own safety rules may block a scheduled task from deleting anything with no person there to approve it. If the delete is blocked or doesn't stick, delete nothing else, keep PULL, set the status to "waiting for you to delete", and tell me in one line: "Delete this pin yourself: open pinterest.com/<my profile name>/scheduled-pins/, find "<pin title>" (<date, time>), click its three dots, choose Delete, then type PULLED in its row in pin-tab.md." Once it's gone, update pin-tab.md (status "pulled", today's date) and storefront-log.md. If the delete went through but you can't check it's gone this run, set the status to "delete clicked, not verified", keep PULL, and the next sweep checks it first.
 5. Leftovers: check every board is public first (R11, unless MY_RECIPE.txt marks it TEST). Then follow recipe Part 7 step 4 for up to 4 leftover pins. Associates-only path: open each look's page first; if it doesn't load, or loads without every item link, leave that look "built" for the next sweep. Verify each scheduled pin on the scheduled pins page, then add it to pin-tab.md.
-6. Lists in review: open each such look's Idea List address in a signed-out (private) window. Showing? Clear the note. Still hidden? Tell me in one line which look.
+6. Lists in review: open my STOREFRONT address (MY_RECIPE.txt) in a fresh tab, click "Manage content", and read the Status column next to each such look's Idea List (10 lists a page: click Next for more). "Published"? Clear the note. Anything else? Keep the note and tell me in one line which look and what its status says. Don't try a signed-out or private window: a task can't open one, and the Status column is Amazon's own answer.
 7. Release the browser lock.
+
+STANDING APPROVAL (mine, given once, covers every run of this task, including catch-ups)
+I approve in advance, for every run, without asking me again: submitting each look's Idea List to my storefront (or publishing its page on my own site when MY_RECIPE.txt says CAN PUBLISH TO SITE: yes), creating and scheduling every pin this task makes on the boards in MY_RECIPE.txt at their PIN slots, turning on Pinterest's AI label, using my persona saved in Higgsfield (the PERSONA HIGGSFIELD line in MY_RECIPE.txt) to make her photos, and using the Chrome browser named on the BROWSER line in MY_RECIPE.txt. These are routine, reversible steps of my own automation: do them, don't stop to ask, and don't report them as needing me. This approval does not cover deleting anything, typing a password, spending money, or anything the RULES below forbid.
 
 RULES
 Fresh tab per pin, 60 seconds between pins. Two blank pages in a row: stop, log, try again next sweep. Never type a password. No em dashes.
@@ -101,7 +115,7 @@ REPORT
 Nothing to do: no report. Work done: one line, for example "Pulled 1 pin, scheduled 2 leftovers." Only if something needs me: one more line saying exactly what to do.
 
 BROWSER FALLBACK
-If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, release the browser lock and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block.
+If a tab freezes, a site isn't signed in, or a control stops responding, don't stop yet. Open a fresh tab, reload, wait 30 to 60 seconds and retry, close any stuck pop-up. Never type a password. If Pinterest pages read empty, the browser window is probably minimized: take one screenshot of the tab, wait 5 seconds and read again before calling it blank. Only if all of that fails, release the browser lock and tell me what failed and the exact steps to fix it. The Pinterest blank-page rule always wins over this block. Browser choice: if more than one Chrome browser is connected, use the one named on the BROWSER line in MY_RECIPE.txt (my standing choice, made at setup); never stop to ask me which.
 ------------------------------------------------------------------
 
 ====================================================================
@@ -119,12 +133,15 @@ READ FIRST, from the folder «FOLDER»: MY_RECIPE.txt (SLOTS, PACE, BRAND CLOSET
 JOB
 1. Without opening a browser, work out which runs were due since this sweep last ran:
    - the weekly build: the most recent Saturday at its RUN time (and the most recent Wednesday, at a pace of 5 or more);
-   - the nightly Outfit of the Day run, if I'm a member: the most recent nightly RUN time that is already past, unless that fell on a Saturday.
+   - the nightly Outfit of the Day run, if I'm a member: the most recent nightly RUN time that is already past, unless that fell on a Saturday or today is Saturday (the nightly ends Saturday runs itself, and Sunday's nightly picks up Friday's lessons inside its 3-day window).
 2. A run was missed if the Runs table has no row for that task that started on or after its due time. A row counts for the weekly build if its task name contains "weekly", and for the nightly run if it contains "nightly" (catch-ups and hand runs included). Anything that ran, even with a stop or a report, is not missed.
 3. Nothing missed? End. Don't open Chrome. Report nothing.
 4. Something missed: read browser-lock.txt. If another task holds a fresh lock (recipe R16), wait 10 minutes and check again, up to 6 times; if it's still held, end and let tomorrow's sweep try. Otherwise take the lock with your own name.
 5. Run each missed task ONCE, in this order: the weekly build, then the nightly run. Follow that task's prompt in MY_SCHEDULED_TASKS.txt exactly, as if it were that task, from READ FIRST to REPORT, with one change: it is running late, so it plans from today's real date. The nightly run's 3-day window and out-by time still apply.
 6. Write a Runs row for each ("weekly (catch-up)" or "nightly (catch-up)", date, started, finished, result) and release the lock.
+
+STANDING APPROVAL (mine, given once, covers every run of this task, including catch-ups)
+I approve in advance, for every run, without asking me again: submitting each look's Idea List to my storefront (or publishing its page on my own site when MY_RECIPE.txt says CAN PUBLISH TO SITE: yes), creating and scheduling every pin this task makes on the boards in MY_RECIPE.txt at their PIN slots, turning on Pinterest's AI label, using my persona saved in Higgsfield (the PERSONA HIGGSFIELD line in MY_RECIPE.txt) to make her photos, and using the Chrome browser named on the BROWSER line in MY_RECIPE.txt. These are routine, reversible steps of my own automation: do them, don't stop to ask, and don't report them as needing me. This approval does not cover deleting anything, typing a password, spending money, or anything the RULES below forbid.
 
 RULES
 Never run the same missed task twice. Never run a task that is due within the next 2 hours anyway: leave it to its own schedule. Never type a password. No em dashes.
@@ -133,5 +150,5 @@ REPORT
 Nothing missed: no report. A catch-up ran: one line, for example "Caught up Saturday's weekly build: 4 looks, 8 pins scheduled and verified." Only if something needs me: one more line saying exactly what to do.
 
 BROWSER FALLBACK
-Same as the task you are catching up. The Pinterest blank-page rule always wins.
+Same as the task you are catching up. The Pinterest blank-page rule always wins. Browser choice: if more than one Chrome browser is connected, use the one named on the BROWSER line in MY_RECIPE.txt (my standing choice, made at setup); never stop to ask me which.
 ------------------------------------------------------------------
