@@ -1,6 +1,6 @@
 # TDIE website / repo router V2
 
-The uploaded snapshot records Astro on Vercel. Confirm the current host and deployment configuration before any release; do not overwrite a newer migration. No browser task should be used for bulk code or content edits that belong in the repo.
+Hosting is Cloudflare (worker `tdie-site`), deployed from the `cloudflare-migration` branch. Vercel is retired (ChatGPT migrated the site after the Vercel free tier ran out of space). Do not overwrite the Cloudflare setup. No browser task should be used for bulk code or content edits that belong in the repo.
 
 ## ChatGPT
 CRO, information architecture, copy, QA criteria, release packet.

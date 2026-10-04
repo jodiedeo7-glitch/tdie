@@ -1,6 +1,6 @@
 # The Digital Income Edit™ — Website
 
-Live at www.thedigitalincomeedit.com. Astro, deployed on Cloudflare from this repo's cloudflare-migration branch. Updates to main deploy only the separate Vercel site; they do not publish the custom domain. Verify the public custom domain after every production deployment.
+Live at www.thedigitalincomeedit.com. Astro, hosted on Cloudflare (worker `tdie-site`) and deployed from this repo's `cloudflare-migration` branch. Vercel is retired: ChatGPT migrated the site to Cloudflare after the Vercel free tier ran out of space. Verify the public custom domain after every production deployment.
 
 learn.thedigitalincomeedit.com 301-redirects to www., path preserved.
 

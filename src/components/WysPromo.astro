@@ -29,17 +29,20 @@ const LINES = [
     d: "Tommy Kate's whole Amazon pin routine, written as prompts you paste once. Your theme, your links, your storefront.",
   },
 ];
+// RELEASE HOLD (Jodie, 2 Oct 2026, 8:55 pm ET): the kit is not released, so these
+// boxes render nothing. Text kept as is. Set HOLD to false only when Jodie releases it.
+const HOLD = true;
 const { variant = "box", seed = "" } = Astro.props;
 let h = 0;
 for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
 const L = LINES[h % LINES.length];
 ---
-<a class={`wys wys--${variant}`} href={SALES}>
+{!HOLD && <a class={`wys wys--${variant}`} href={SALES}>
   <span class="wys-k">{L.k}</span>
   <span class="wys-t">{L.t}</span>
   <span class="wys-d">{L.d}</span>
   <span class="wys-go">See The While-You-Sleep Storefront™ <span aria-hidden="true">→</span></span>
-</a>
+</a>}
 
 <style is:global>
   .wys{display:flex;flex-direction:column;gap:8px;padding:clamp(20px,2.6vw,28px);border-radius:4px;border:1px solid rgba(214,46,115,.28);background:#FFF5F9;color:var(--e-ink);text-decoration:none;transition:border-color .2s}

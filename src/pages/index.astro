@@ -11,7 +11,6 @@ import "@fontsource/inter/latin-700.css";
 import newsreader600 from "@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 
-import Analytics from "@vercel/analytics/astro";
 import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import FreebieForm from "../components/FreebieForm.astro";
@@ -244,8 +243,11 @@ const jsonLd = {
     .cover h1 em{display:block}
     .cover .e-lede{font-size:clamp(17px,1.35vw,19px);max-width:31em;margin-bottom:30px;color:var(--e-ink-2)}
     .cover .e-lede strong{color:var(--e-ink);font-weight:600}
-    .cover-meta{display:flex;flex-wrap:wrap;gap:6px 26px;margin:30px 0 0;padding:0;list-style:none;font-size:13px;color:var(--e-ink-3)}
-    .cover-meta b{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-ink);margin-right:7px;letter-spacing:-.02em}
+    .cover-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:26px 0 0;padding:20px 0 0;list-style:none;border-top:1px solid rgba(26,20,23,.16);color:var(--e-ink-3)}
+    .cover-meta li{max-width:none;text-align:center;padding:0 12px;line-height:1.4}
+    .cover-meta li+li{border-left:1px solid rgba(26,20,23,.12)}
+    .cover-meta b{display:block;font-family:var(--e-serif);font-weight:600;font-size:26px;line-height:1.1;color:var(--e-ink);margin:0 0 7px;letter-spacing:-.02em}
+    .cover-meta span{display:block;font-size:12px;line-height:1.45}
     .cover-photo{position:relative;margin:0;min-height:460px;background:var(--e-paper);overflow:hidden}
     .cover-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:32% 40%}
     .cover-photo figcaption{position:absolute;right:0;top:0;background:var(--e-cream);padding:0 max(var(--e-gut),calc((100vw - var(--e-w))/2 + var(--e-gut))) 12px 18px;line-height:1.5}
@@ -260,6 +262,14 @@ const jsonLd = {
       .cover-photo img{object-position:30% 38%}
       .cover .e-actions .e-btn{width:100%}
       .cover-photo figcaption{display:none}
+      .cover-copy{padding-bottom:26px}
+      .cover-copy .e-actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+      .cover-copy .e-actions .e-btn{min-height:48px;padding:13px 16px;font-size:12px;letter-spacing:.09em;border-radius:8px}
+      .cover-copy .e-actions .e-link{align-self:center;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;padding:5px 0}
+      .cover-copy .e-actions .e-link:hover{text-decoration:underline;text-underline-offset:4px}
+      .cover-meta{margin-top:20px;padding-top:18px}
+      .cover-meta li{padding:0 7px}
+      .cover-meta span{font-size:11.5px}
     }
 
     /* ============ 2 · BUILT BACKWARDS: the staircase ============ */
@@ -479,8 +489,6 @@ const jsonLd = {
     @media(prefers-reduced-motion:reduce){.shelf a,.room-body h3,.room-body .go .ar{transition:none}}
     /* ============ HOMEPAGE CONVERSION PASS · 28 Sep 2026 ============ */
   .cover-copy .e-actions{gap:14px 20px}
-  .cover-copy .e-actions .e-btn{min-height:52px}
-  .cover-copy .e-link{font-weight:650}
   .recognition{position:relative}
   .recognition::before{content:"YOU ARE NOT BEHIND";display:block;margin-bottom:22px;font:700 10px/1 Inter,sans-serif;letter-spacing:.2em;color:var(--e-pink-t)}
   .recognition-list{border-top:1px solid rgba(26,20,23,.2)}
@@ -517,9 +525,9 @@ const jsonLd = {
           <a class="e-link" href={WE.preview}>Preview the $97 website course</a>
         </div>
         <ul class="cover-meta" aria-label="The business, by the numbers">
-          <li><b>{community.members}</b>women building inside</li>
-          <li><b>{WE.modules}</b>modules in the flagship</li>
-          <li><b>{library.guides}</b>free guides to start</li>
+          <li><b>{community.members}</b><span>women<br />building inside</span></li>
+          <li><b>{WE.modules}</b><span>course<br />modules</span></li>
+          <li><b>{library.guides}</b><span>free guides<br />to get started</span></li>
         </ul>
       </div>
       <figure class="cover-photo">
@@ -823,6 +831,5 @@ const jsonLd = {
   </main>
 
   <SiteFooter />
-  <Analytics />
 </body>
 </html>
