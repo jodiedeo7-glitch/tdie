@@ -55,7 +55,7 @@ Name these exactly as written. Never write one from memory and never swap one fo
 - Her chickens and ducks, the chicken coop.
 
 **Her rooms and land:**
-- **Pink attic loft:** exposed beams wrapped in ivy, plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the grey British Shorthair cat, and sometimes the golden retriever in the background.
+- **Pink attic loft:** exposed wooden beams on the ceiling only, wrapped in ivy (Jodie, 4 Oct 2026: no wooden beams, posts or braces anywhere else, never running down the walls or to the floor), plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the grey British Shorthair cat, and sometimes the golden retriever in the background.
 - **Bedroom:** the pink gingham bedding, slightly rumpled. The golden retriever and the cat can be in and out of it.
 - **Farmhouse kitchen:** blush cabinets, butcher-block island, copper pans with patina.
 - **Farmhouse porch:** weathered rail, chipped paint, folded quilt, potted herbs, rocking chair.

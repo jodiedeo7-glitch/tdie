@@ -61,7 +61,7 @@ Her world includes:
 * subtle gamer details
 * golden retriever
 
-Every room and object is copied word for word from the Tommy Kate world file (ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md, section 3), for every Tommy Kate image, not only the calendar. Never write a room from memory. (Jodie, 4 October 2026: a test kitchen came out as a generic white modern kitchen and a test loft had a bed and round window that are not hers; her kitchen has blush cabinets, a butcher-block island and copper pans, and her loft has ivy-wrapped beams, a pink shag rug, a pastel pink gaming desk, a glass-panel PC glowing pink, the plushies and her grey British Shorthair cat.)
+Every room and object is copied word for word from the Tommy Kate world file (ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md, section 3), for every Tommy Kate image, not only the calendar. Never write a room from memory. Wooden beams appear only overhead on a ceiling; every prompt that names beams says "on the ceiling only" and its negative line says "no wooden beams, posts or braces on the walls or floor" (Jodie, 4 October 2026). (Jodie, 4 October 2026: a test kitchen came out as a generic white modern kitchen and a test loft had a bed and round window that are not hers; her kitchen has blush cabinets, a butcher-block island and copper pans, and her loft has ivy-wrapped wooden beams on the ceiling only, with no beams, posts or braces anywhere else in any room or scene, a pink shag rug, a pastel pink gaming desk, a glass-panel PC glowing pink, the plushies and her grey British Shorthair cat.)
 
 The aesthetic is:
 
