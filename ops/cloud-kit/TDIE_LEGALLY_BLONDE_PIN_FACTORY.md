@@ -79,19 +79,32 @@ These rules sit on top of sections 4 and 5 and win where they differ.
 - **Hand fixes in the cloud workspace:** grain (add light noise, sigma about 5), small crops that keep 2:3, and removing a tiny stray mark with an inpaint over a tight mask. These never need another generation.
 - **Uploads out:** GitHub upload page (`/upload/main/src/lifestyle`) takes all files from `/mnt/user-data/outputs/...` in one `file_upload`; set the commit summary with form_input and click "Commit changes" by script. Pinterest takes the pin image the same way.
 
-## 4. PIN ONE: THE FLAT LAY OR "THAT GIRL" COLLAGE (rewritten 26 Sep 2026 from Jodie's example pins)
+## 4. PIN ONE: THE STYLED PERSON-FREE FLAT LAY (Jodie, 4 October 2026)
 
-Jodie's verdict on the 26 Sep collage ("pink for a cold office", white background, six items in two neat boxes, small title): **"WAY too plain."** Plain white or empty backgrounds, lots of empty space, items sitting in tidy boxes, and a small title on a cream band are all out. The target is her example pins in Command Centre `stylerefs` (section 3b.2). What they share: the frame is full and abundant, edge to edge; the items overlap and touch; the outfit is surrounded by styling extras that make it feel like a real girl's things; the background has colour or texture; and the title is big, sits on the image itself, and mixes a bold serif with a thick script.
+This founder correction applies to every person-free Amazon look: Legally Blonde, Brand Closet, and any lifestyle look, including decor, car, desk and party lists. It supersedes older catalog grids, folded products, isolated cut-outs, seamless paper backgrounds, muted dusty palettes and empty-space instructions for these images. It changes product styling only. Preserve the existing title lettering, title lockup and title instructions below exactly.
+
+Rejected references: the "Pink Outfit Ideas" office flat lay and the site's "Office Commute" look. Jodie's 26 September verdict was "WAY too plain."
 
 Tool routing (no person in frame): **Seedream 4.5 on Higgsfield, Unlimited toggle ON, 2K, portrait 2:3** (changed from 4K on 27 Sep 2026: the pin is saved at 1000 by 1500, so 4K detail was discarded), with a `stylerefs` image and the product sheet attached. Refinements stay on Higgsfield (Seedream 4.5 re-run with the exact correction, or Nano Banana Pro 2K). A person-free image is never taken into Gemini. Garbled or soft text is always a re-run on Nano Banana Pro 2K.
 
-**Colour:** these product pins are as pink as the look, like the examples. The one-saturated-candy-pink-object rule does not apply to these (scoped by Jodie's 26 Sep examples).
+**Required styling, every run:**
+1. Outfit laid out as if worn: top above bottom, shoes at the hem, bag at the hip, jewelry at the neckline. Pieces overlap and touch. Nothing folded into a square or floating alone.
+2. Real textured surface suited to the look: rumpled satin, fluffy faux fur, crumpled linen, chunky knit throw, velvet or warm wood floorboards. Never flat seamless paper.
+3. Tuck 4 to 8 styling extras around the outfit: fresh tulips, peonies or roses, iced latte, sunglasses, unlabelled perfume bottle, lip gloss, satin hair bow or claw clip, candle, small instant camera or plain book with no title. Select counts to make 10 to 16 objects total including the 5 to 8 products.
+4. Full frame, edge to edge, almost no empty background. Every product remains fully inside the frame and recognizable; overlap must not hide defining product details.
+5. As pink as the look: rich saturated pink where the look is pink, never washed-out dusty mauve. Name shades in words, for example "saturated candy pink, never pale". Never hex codes. The general one-pink-object rule does not apply.
+6. Straight-down phone-photo realism, portrait 2:3. Soft natural window light, gentle real shadows, visible fabric texture and small real-life imperfections such as wrinkles or a slightly crooked bow. Never studio product lighting.
+7. Match each Amazon product reference in color, shape and detail. Generate a new photo; never paste or cut out Amazon images.
+8. No logos, brand names, product labels, book titles, prices, watermark or person. The existing title lettering remains the permitted title overlay.
 
-### Format A: the styled flat lay (style refs `sr-pink-dress-flatlay`, `sr-flatlay-grid`)
-A real overhead photo. The outfit is laid out as if worn (top above bottom, shoes at the hem, bag at the hip, jewellery at the neckline), pieces overlapping and touching. It sits on a textured surface that suits the look: fluffy pink faux fur, rumpled pink satin, crumpled white linen, a chunky knit throw, warm wood floorboards or velvet. Styling extras are tucked in around it: a small bunch of fresh flowers (tulips, peonies, roses), a latte or iced coffee, sunglasses, an unlabelled perfume bottle, a lip gloss, a hair bow or claw clip, a candle, a small instant camera or a book. 10 to 16 objects in total, including the 5 to 8 products. Almost no empty background. Soft natural window light with real shadows.
+### Format A: the styled flat lay
+Use the rules above and the exact base prompt below. Fill only the brackets, then append the existing Format A title instruction unchanged. Use style references for title lettering only when their product layout conflicts with this correction.
 
-### Format B: the "that girl" shoppable collage (style refs `sr-that-girl-amazon-finds-blush`, `sr-that-girl-amazon-finds-script`, `sr-amazon-fashion-looks-expensive`, `sr-soft-pink-collage`)
-Each product as a clean cut-out with a soft drop shadow, packed around the title on a soft coloured background (blush pink, dusty blue, cream, pale lilac, or softly textured paper or fabric). Items overlap slightly and fill the canvas edge to edge, with extra matching finds tucked in: a beauty item or two, rings, a hair bow. A few tiny accents: small hearts, sparkles, a little bow, a hand-drawn arrow, or one small circular inset detail photo.
+### Format B: the alternate title composition
+Use the same real photographed flat lay and all the same rules. The alternate title composition remains available, but clean cut-out catalog collages, paper backdrops and dusty muted colors are superseded. Fill only the brackets in the exact base prompt, then append the existing Format B title instruction unchanged.
+
+### Theme lists: decor, car, desk and party
+Use the same rules, object counts, textured surfaces, fullness, product fidelity, lighting and exclusions. Style the pieces together as a real vignette seen from above on a suitable porch step, table, desk or vanity, overlapping and touching. Adapt only the outfit-specific wording to describe that vignette; append the existing title instruction unchanged.
 
 ### THE TEXT (both formats, copy the examples)
 - The title sits **on the image**, across the middle or the upper third. No separate band or box.
@@ -101,11 +114,21 @@ Each product as a clean cut-out with a soft drop shadow, packed around the title
 - **Crisp rule still applies (Jodie's standing preference):** the serif is bold or semibold, never a hairline or thin display serif; the script is a thick brush script, never a thin wedding script. Every letter checked at feed size.
 - Title lockup examples: "PINK WITCH / costume", "that girl / office edit", "AMAZON FINDS / cold office", "the pink cat / costume", "3 PINK COATS / for Boston".
 
-### Prompt, Format A (one complete standalone prompt, no hex codes)
-> Using the first image as a style reference for the styling, the fullness and the title lettering, not an exact copy, please make me a very realistic overhead flat lay photo of the outfit in the second image. I can't use the exact Amazon images outside of Amazon, so this needs to be a new photo. Shot straight down, portrait 2:3, like a good-quality photo taken on a phone. The outfit is laid out as if worn, pieces overlapping and touching, on [surface: fluffy pink faux fur / rumpled pink satin / crumpled white linen / chunky cream knit / warm wood floorboards]: [item 1, described exactly as in its screenshot], [item 2], [...]. Each item matches its screenshot in colour, shape and detail. Tucked in around the outfit, filling the frame edge to edge with almost no empty background: [4 to 8 styling extras suited to the look, e.g. a small bunch of pink tulips, an iced latte, heart sunglasses, an unlabelled perfume bottle, a satin hair bow, a lip gloss]. Every product sits fully inside the frame. Soft natural window light, gentle real shadows, visible fabric texture, small real-life imperfections, photorealistic. Across the upper third, set directly on the photo, a large two-style title: "[SERIF WORDS]" in a bold high-contrast serif in capitals, with "[script words]" beneath it in a thick flowing brush script, both in [near-black / deep plum / white], perfectly spelled, sharp edges, high contrast, filling about two thirds of the width. No logos, no brand names, no labels on products, no watermark, no person, no other text.
+### Exact base prompt (Jodie, 4 October 2026)
+Fill the brackets and keep every other word. Then add the title instruction exactly as below.
 
-### Prompt, Format B (one complete standalone prompt)
-> Using the first image as a style reference for the layout, the fullness and the title lettering, not an exact copy, please make me a "that girl" shoppable Amazon finds collage for Pinterest, portrait 2:3, on a soft [blush pink / dusty blue / cream / pale lilac] background with a faint paper texture. I can't use the exact Amazon images outside of Amazon, so please create a new clean cut-out product photo of each item in the second image, each with a soft drop shadow: [item-by-item list]. Add [3 to 5 matching extras, e.g. a pink lip gloss, stacked gold rings, a satin hair bow, a small plush bunny]. Pack them around a central title so the whole canvas is full edge to edge, items overlapping slightly, every product fully inside the frame. Add a few tiny accents: small hearts, little sparkles and one small bow. In the middle, set directly on the background, a large two-style title: "[serif words]" in a bold high-contrast serif with "[script words]" in a thick flowing brush script, [near-black / deep plum], perfectly spelled, crisp and fully legible, filling about half the width. Each item matches its screenshot in colour, shape and detail and looks like a real photo, not a render. No logos, no brand names, no labels on products, no prices, no other text.
+> Please make me a very realistic overhead flat lay photo of the outfit in the attached image. I can't use the exact Amazon images outside of Amazon, so this needs to be a new photo. Shot straight down, portrait 2:3, like a good-quality photo taken on a phone. The outfit is laid out as if worn, pieces overlapping and touching, on [rumpled pink satin / fluffy pink faux fur / crumpled white linen / chunky cream knit / warm wood floorboards / velvet]: [each product described exactly as in its screenshot, one by one]. Each item matches its screenshot in color, shape and detail. Tucked in around the outfit, filling the frame edge to edge with almost no empty background: [4 to 8 styling extras suited to the look]. Every product sits fully inside the frame. Soft natural window light, gentle real shadows, visible fabric texture, small real-life imperfections, photorealistic. No logos, no brand names, no labels on products, no book titles, no prices, no watermark, no person.
+
+### Existing title instruction, Format A (unchanged)
+> Across the upper third, set directly on the photo, a large two-style title: "[SERIF WORDS]" in a bold high-contrast serif in capitals, with "[script words]" beneath it in a thick flowing brush script, both in [near-black / deep plum / white], perfectly spelled, sharp edges, high contrast, filling about two thirds of the width.
+
+### Existing title instruction, Format B (unchanged)
+> In the middle, set directly on the background, a large two-style title: "[serif words]" in a bold high-contrast serif with "[script words]" in a thick flowing brush script, [near-black / deep plum], perfectly spelled, crisp and fully legible, filling about half the width.
+
+### Required visual check before shipping
+Inspect the actual finished image at phone size. Verify the frame is full; pieces overlap like a worn outfit (or a real theme vignette); the surface has real texture; styling extras are present; pinks are rich where the look is pink; and window light with gentle real shadows is visible. Also verify product fidelity, every product fully inside the frame, 4 to 8 extras, 10 to 16 total objects, portrait 2:3, no prohibited marks and crisp correctly spelled title lettering.
+
+Any "no" requires a re-run with that exact failed check written into the prompt. Repeat the visual check on the new render. A correction-round limit never permits a failing image to ship; if generation is unavailable, hold the image as unfinished and report the blocker. No image is passed from its prompt alone.
 
 ## 5. PIN TWO: THE LIFESTYLE PHOTO
 
