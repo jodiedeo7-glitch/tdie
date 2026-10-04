@@ -1,3 +1,5 @@
+> Current TDIE handoff rules: read `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md` and its named current main sources before executing this handoff. The WYS customer release is on hold: publish nothing for that product. Historical dates below do not authorize execution. Source conflicts are explicitly recorded in the current-rules file.
+
 > Historical dates only: compare with the actual run date and live state. Do not replay a past campaign or assume a planned launch/cutoff is still approved.
 
 # Email + Commerce Handoff
