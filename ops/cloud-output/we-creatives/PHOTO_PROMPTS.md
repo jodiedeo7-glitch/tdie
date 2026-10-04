@@ -25,7 +25,7 @@ Wardrobe: an oversized candy-pink knit sweater with the sleeves pushed up, soft 
 
 Pink: her glitter-flecked pink iced coffee tumbler with a lavender straw sits on the blanket beside her knee, saturated candy pink, never pale. Her candy-pink sweater is in the frame with it.
 
-Register: quiet wealth, lived in. Real farm ground: uneven grass, a little dew, a dog-worn corner of the blanket.
+Register: confident self-made luxury, lived in, one sparkle moment. Real farm ground: uneven grass, a little dew, a dog-worn corner of the blanket.
 
 Composition: vertical 4:5 frame. She sits in the right third of the frame, face unobstructed. The left side of the frame is open, calm pasture and sky with no important objects, because copy will be placed there later.
 
@@ -68,7 +68,7 @@ Wardrobe: an oversized candy-pink chunky knit sweater, cream lounge shorts, slou
 
 Pink: her glitter-flecked pink iced coffee tumbler with a lavender straw in her hand, saturated candy pink. Her pink sweater and chair are in the frame with it.
 
-Register: quiet wealth, lived in. A throw blanket bunched on the chair arm, a mason jar of wildflowers on the desk.
+Register: confident self-made luxury, lived in, one sparkle moment. A throw blanket bunched on the chair arm, a mason jar of wildflowers on the desk.
 
 Composition: vertical 4:5, framed from her knees up, camera at seated eye level about five feet away. She sits in the right third with her face in the upper half. The left side is calm beams and wall.
 
@@ -98,7 +98,7 @@ Wardrobe: an oversized oatmeal hoodie with the cuffs pushed up, grey lounge shor
 
 Pink: her glitter-flecked pink iced coffee tumbler with a lavender straw on the table beside the laptop, saturated candy pink. Her pink socks are in the frame with it.
 
-Register: quiet wealth, lived in, a real family kitchen, not a staged rental.
+Register: confident self-made luxury, lived in, one sparkle moment, a real family kitchen, not a staged rental.
 
 Composition: vertical 4:5, framed from mid-thigh up, camera at seated eye level about five feet away, so her face and her hands on the keyboard are both large in the middle band. She sits in the right third. The left side is a calm stretch of table and shelving.
 
