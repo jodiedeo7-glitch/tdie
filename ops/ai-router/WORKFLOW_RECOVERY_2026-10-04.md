@@ -32,6 +32,10 @@ Status: PARTIAL. Repository and ChatGPT definitions inspected directly. Claude's
 
 No routine task was activated, paused, rescheduled or run. These are instruction repairs, not successful production runs.
 
+## Deployment finding
+
+The current .github/workflows/publish-cloudflare.yml triggers on EVERY push to main and fast-forwards cloudflare-migration to main. Therefore these repository repairs are staged on codex/workflow-recovery-2026-10-04 for review, not merged or deployed by this audit. A future merge must account for that production side effect. The three ChatGPT prompt repairs above are already live.
+
 ## Required owner/tool boundaries
 
 | System | Preparation | Execution and verification |
@@ -67,7 +71,7 @@ All Claude enabled states below are from the user's pasted list, not independent
 | DFY post maker 00:40 | Inspect whether October member work or a separate Instagram adaptation. No second monthly calendar creator; no computer-dependent execution before 07:00 |
 | Threads queue top-up; Sunday Threads writer 06:00 | Sunday should consume ChatGPT's bank under current split, not independently rewrite it. Six/day, no routine approval gate. 06:00 must be cloud-only if preparatory; browser work obeys 07:00 limit |
 | Skool member watch; inactive-member sweep | Different purposes; retain paused state. Do not restore removed nudges or perform member removals from this audit |
-| Paused @the.faceless.homestead.mama poster; monthly insights; weekly test readout | Reconcile old handle with current @itstommykate source/account before any activation; data must retain actual account identity |
+| Paused @the.faceless.homestead.mama poster; monthly insights; weekly test readout | Canon Decision 112 keeps @the.faceless.homestead.mama as the Premium test account and @itstommykate as the separate affiliate/WYS account. Do not rename or migrate one into the other. Reconcile the shared task wording with this boundary; data retains actual account identity |
 | October DFY load; Premium loader; October 19 loader switch-on | Keep October correction work separate from next-month production. Recheck complete draft-review contract, approval and dates before enabling/releasing |
 | Weekly Pinterest factory | Metricool-only founder account; check cutover and finished-packet intake. Existing older body still creates its own batch; do not enable ChatGPT publisher alongside it |
 | Brand Closet OOTD; Legally Blonde factory | Separate source queues and own links. No same-look duplicate; preserve flat lay/lifestyle spacing and source readback |
