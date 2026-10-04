@@ -316,6 +316,8 @@ Founder with opinions. Tension, curiosity, specificity. Never *learn how*, *here
 
 ## 8 · DESIGN
 
+**Latest founder clarification, 4 October 2026, 11:30 am Eastern.** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Newsreader SemiBold, upright, never italic; everything else is Inter, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
+
 **Palette.** Six colours. The hex is the authority for set type, Canva design work and rendered pins.
 
 **Hex codes are never written inside a generator prompt.** They render as visible characters in the picture — a defect that cost a full day of rework in September 2026. Inside a prompt, colour is written as name plus shade, plus what it is *not* wherever it has rendered wrong before: *saturated candy pink, never pale* · *lavender, clearly purple-toned, never white or grey*. An unqualified colour word defaults pale — "pink" produces near-white — so every colour named in a prompt is qualified. Settled 21 September 2026 — Decision 89. This replaces the former rule that a colour name without a hex was a fail.
@@ -324,14 +326,14 @@ Founder with opinions. Tension, curiosity, specificity. Never *learn how*, *here
 |---|---|
 | Signature Hot Pink | `#D62E73` |
 | Luxury Cream | `#FBF8F5` |
-| Dark Chocolate | `#2B161B` — never a fill, panel, footer, button or background; text is near-black `#1A1417` (24 September 2026) |
+| Near-black text | `#1A1417` — text; brown and Dark Chocolate are prohibited as fills, panels, footers, buttons and backgrounds |
 | Muted Gold | `#C8A96A` |
 | Bubblegum Pink | `#FF8AC2` |
 | Lavender | `#CBB7F7` — never dominant |
 
 Six colours. Magenta, deep plum and antique gold are retired. The ten-colour palette in the old Master Operating Manual — Soft Blush, Soft White, Warm Taupe, Light Rose, Dusty Mauve, Soft Gray — **is retired with it.**
 
-**Type.** Newsreader SemiBold (headlines and prices, upright, the turn phrase in hot pink) · Inter (kickers, body, buttons). Fraunces, Cormorant Garamond, Montserrat and any thin, soft or italic display serif are retired for headings (founder, 24 September 2026). The old Manual's Canela / Editorial New / Ivy Presto / Manrope alternatives are retired.
+**Type.** Newsreader SemiBold for headlines, upright, never italic; Inter for everything else, including prices, kickers, body, labels and buttons. Fraunces, Cormorant Garamond and Montserrat are prohibited everywhere. The old Manual’s Canela / Editorial New / Ivy Presto / Manrope alternatives are retired.
 
 Variable axis order — wrong order silently applies default weights:
 
