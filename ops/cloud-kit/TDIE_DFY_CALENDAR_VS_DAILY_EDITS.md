@@ -1,3 +1,5 @@
+> Current TDIE handoff rules: read `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md` and its named current main sources before executing this handoff. The WYS customer release is on hold: publish nothing for that product. Historical dates below do not authorize execution. Source conflicts are explicitly recorded in the current-rules file.
+
 # TWO PRODUCTS, NEVER MIXED: PREMIUM DFY CONTENT CALENDAR vs DAILY EDITS
 
 > **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
