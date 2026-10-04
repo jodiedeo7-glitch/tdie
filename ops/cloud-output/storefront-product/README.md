@@ -1,5 +1,7 @@
 # The While-You-Sleep Storefront™ (working name)
 
+Current launch authority: amended Decision 123 and claude/WYS_PROMO_FACTS.md. Release remains on hold; publish nothing. The original build inventory below is historical and does not establish current live state.
+
 Cloud session, 27 Sep 2026. Jodie's two Amazon pin automations (the themed-look line and The Brand Closet™ Outfit of the Day line) turned into one standalone, sellable kit, with its funnel, and an audit of Jodie's own running setup. **Nothing is published, listed or registered.** Every account step is in `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`, section 4.
 
 ## What's here
@@ -30,7 +32,7 @@ Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` 
 ## Founder decisions (27 Sep 2026), all applied
 
 1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
-2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
+2. **Dates, amended by Jodie 4 Oct 2026.** Name publicly from Mon 5 Oct after clearance. Standard Skool-member presale Thu 8 Oct 4:00 pm to Sat 10 Oct 2:00 pm Eastern: $17, exactly 20 Standard spots. Premium $10, uncapped, private Vault code only. No public presale. Public launch Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern at $27 against regular $37. From Tue 13 Oct: $37 for everyone, member pricing and code off. Affiliate activation no earlier than Sat 10 Oct 2:00 pm. Release is held; publish nothing. Earlier post and email schedules are superseded, not moved or reactivated by this document.
 3. **Skool and Facebook posts** rewritten against the posting system rules and four approved posts (see `COPY.md`). The two-link cap wins over "each link twice".
 4. **Brand Closet™ line** now carries the facts from Jodie's real recipe: the course address, month folders, lesson contents, the "Link to Outfit" Benable button (never used), Rose's posting pattern, the `__NEXT_DATA__` read, the 3-day window, the out-by time, Saturday catch-up on Sunday, two pins on different days, and the public-board check.
 5. **Join line:** "Affiliate link: I earn a commission if you upgrade, at no extra cost to you." everywhere.
