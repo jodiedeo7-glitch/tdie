@@ -2,6 +2,10 @@
 
 Reconciled 4 Oct 2026 to the founder's amended Decision 123. This supersedes the earlier Mon 5 Oct presale / Fri 9 Oct public-launch timing in this file. Existing dated post bodies below are HISTORICAL DRAFTS until rewritten to this schedule; do not schedule or publish them as written.
 
+## Release hold
+
+Release is on hold. Publish nothing for this product. Current dates below are planning facts only; historical copy below is not authorized for scheduling or publication.
+
 ## Locked launch facts
 
 - **Prelaunch:** Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern. Name The While-You-Sleep Storefront™ from the first announcement. Repeatedly demonstrate the product and remind the audience of the presale opening and Standard scarcity.
