@@ -26,9 +26,9 @@ const JOIN = "https://www.skool.com/thedigitalincomeedit/plans";
 // Eastern times as UTC (EDT is UTC-4 until 1 Nov 2026). Decision 123, 1 Oct 2026.
 // soon: before the member presale. presale: Skool members only, no public checkout.
 // sale: launch weekend, $27 against the regular $37, with a countdown. regular: $37 for everyone.
-const PRESALE_OPENS = "2026-10-05T23:00:00Z"; // Mon 5 Oct 2026, 7:00 pm ET
-const PUBLIC_PRICE_AT = "2026-10-09T13:00:00Z"; // Fri 9 Oct 2026, 9:00 am ET
-const SALE_ENDS = "2026-10-12T04:00:00Z"; // Sun 11 Oct 2026, 11:59 pm ET (midnight)
+const PRESALE_OPENS = "2026-10-08T20:00:00Z"; // Thu 8 Oct 2026, 4:00 pm ET (amended Decision 123, 4 Oct 2026)
+const PUBLIC_PRICE_AT = "2026-10-10T18:00:00Z"; // Sat 10 Oct 2026, 2:00 pm ET
+const SALE_ENDS = "2026-10-13T04:00:00Z"; // Mon 12 Oct 2026, 11:59 pm ET (midnight)
 const stageAt = (t) => t < Date.parse(PRESALE_OPENS) ? "soon" : t < Date.parse(PUBLIC_PRICE_AT) ? "presale" : t < Date.parse(SALE_ENDS) ? "sale" : "regular";
 // RELEASE HOLD (Jodie, 2 Oct 2026, 8:55 pm ET): the kit is not released. While HOLD is true the
 // page never opens the presale, never shows the checkout and ignores the dates above.
@@ -190,17 +190,17 @@ const inside = [
       {!HOLD && (<Fragment>
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
         <div class="ws-price-fig">Members first</div>
-        <p class="ws-price-when">The presale is for members of The Digital Income Edit™ community on Skool only. It opens Monday 5 October, 7:00 pm Eastern. It goes public on Friday 9 October.</p>
+        <p class="ws-price-when">The presale is for members of The Digital Income Edit™ community on Skool only. It opens Thursday 8 October, 4:00 pm Eastern. It goes public on Saturday 10 October, 2:00 pm Eastern.</p>
         <p class="ws-price-when">Not a member yet? Membership Standard starts with a 7-day free trial, then $9/month, and the member price is waiting inside.</p>
       </div>
       <div class="ws-price-state" data-stage="presale" hidden={stage !== "presale"}>
         <div class="ws-price-fig">Members only</div>
-        <p class="ws-price-when">The presale is open now for members of The Digital Income Edit™ community on Skool, until Thursday 8 October, 11:59 pm Eastern. It isn't on the public shop until Friday 9 October.</p>
+        <p class="ws-price-when">The presale is open now for members of The Digital Income Edit™ community on Skool, until Saturday 10 October, 2:00 pm Eastern. It isn't on the public shop until then.</p>
         <p class="ws-price-when">Not a member yet? Membership Standard starts with a 7-day free trial, then $9/month, and the member price is waiting inside.</p>
       </div>
       <div class="ws-price-state" data-stage="sale" hidden={stage !== "sale"}>
         <div class="ws-price-fig"><s class="ws-was">$37</s> $27<span> launch weekend</span></div>
-        <p class="ws-price-when">The launch price ends Sunday 11 October, 11:59 pm Eastern. From Monday it's $37.</p>
+        <p class="ws-price-when">The launch price ends Monday 12 October, 11:59 pm Eastern. From Tuesday it's $37.</p>
         <p class="ws-count" data-ends={SALE_ENDS} aria-live="polite"></p>
       </div>
       <div class="ws-price-state" data-stage="regular" hidden={stage !== "regular"}>
