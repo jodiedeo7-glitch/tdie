@@ -4,14 +4,15 @@ Reconciled 4 Oct 2026 to the founder's amended Decision 123. This supersedes the
 
 ## Locked launch facts
 
-- **Prelaunch:** Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern. Name The While-You-Sleep Storefront™ from the first announcement. Repeatedly demonstrate the product and remind the audience of the presale opening and Standard scarcity.
+- **Prelaunch:** Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern. Product reveal Mon 5 Oct at 11:00 am Eastern (locked by Jodie, 4 Oct 2026). Name The While-You-Sleep Storefront™ from the first announcement. Repeatedly demonstrate the product and remind the audience of the presale opening and Standard scarcity.
 - **Standard member presale:** Thu 8 Oct 4:00 pm through Sat 10 Oct 2:00 pm Eastern. Membership Standard $17. Exactly **20 Standard presale spots**.
 - Remaining-spots claims count **actual Standard presale purchases only**.
 - **Premium member offer:** $10 via TDIEPREMIUM in The Premium Vault only. **Uncapped.** Premium purchases do not consume the 20 Standard spots.
 - Premium purchases may appear in a truthful, clearly labeled total-buyer/social-proof number. They may never be used to lower the Standard spots-remaining counter.
 - No public presale. Non-members who want member presale access must join Membership Standard and then buy under the Standard rules.
-- **Public launch:** Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern: $27 against the regular $37.
-- **Regular price:** Tue 13 Oct onward: $37. Member presale pricing/code off.
+- **Member pricing ends:** Sat 10 Oct 2:00 pm Eastern for both tiers (Jodie, 4 Oct 2026). Standard $17 and Premium $10 / TDIEPREMIUM stop when the public launch begins.
+- **Public launch:** Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern: $27 against the regular $37, for everyone, members included.
+- **Regular price:** Tue 13 Oct onward: $37 for everyone.
 - **Member affiliate program:** 40% through Beacons, no earlier than Sat 10 Oct 2:00 pm Eastern. Never state the rate on Facebook, Instagram or the sales page.
 - No storefront sales, commission or income claims.
 - Customer-facing claims must follow current test/release evidence. Do not describe automatic sourcing, silent fully automatic publishing, or any unverified workflow behavior as working.
@@ -35,12 +36,12 @@ The addresses below were read back on 2 Oct 2026 and MUST be reverified live bef
 
 | Phase | Date/time Eastern | Rule |
 |---|---|---|
-| Product announcement/reveal begins | Mon 5 Oct | Name product immediately; show it working; announce Thu 4 pm presale and 20 Standard spots |
+| Product announcement/reveal begins | Mon 5 Oct, 11:00 am | Name product immediately; show it working; announce Thu 4 pm presale and 20 Standard spots |
 | Desire/demo campaign | Mon 5 Oct-Thu 8 Oct before 4 pm | Repeated distinct demonstrations; presale reminder on WYS promo touches |
 | Standard + Premium member presale opens | Thu 8 Oct, 4:00 pm | Standard $17 / 20 spots; Premium $10 / uncapped |
-| Member presale ends; public launch begins | Sat 10 Oct, 2:00 pm | Public $27 against $37 |
+| Member presale ends; public launch begins | Sat 10 Oct, 2:00 pm | Standard $17 and Premium $10 / TDIEPREMIUM end; everyone $27 against $37 |
 | Launch price ends | Mon 12 Oct, 11:59 pm | Last call at $27 |
-| Regular price begins | Tue 13 Oct | $37; launch member pricing/code off |
+| Regular price begins | Tue 13 Oct | $37 for everyone |
 
 ## Channel rules
 

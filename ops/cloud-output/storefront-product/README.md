@@ -30,7 +30,7 @@ Read for this job: `ops/cloud-kit/README_START_HERE.md`, `ops/canon/canon.json` 
 ## Founder decisions (27 Sep 2026), all applied
 
 1. **Main.** This work is merged into main so the desktop finish can read the queue; `storefront-launch` stays separate and merges at finish step 8.
-2. **Dates.** Tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
+2. **Dates.** SUPERSEDED by Decision 123 as amended 4 Oct 2026 (see `COPY.md` top section and `canon.json → meta.wys_launch_pricing_2026_10_01`). Historical record: tease Sat 3 Oct 3:00 pm; presale Mon 5 Oct 7:00 pm to Thu 8 Oct 11:59 pm; public $27 and member $17 from Fri 9 Oct 9:00 am; launch post Fri 9 Oct 7:00 pm; emails Mon 5 Oct 7:30 pm and Thu 8 Oct 11:00 am. They clear the Premium flash sale and the Keep It Running Kit window, and remove the two-emails-in-one-day problem.
 3. **Skool and Facebook posts** rewritten against the posting system rules and four approved posts (see `COPY.md`). The two-link cap wins over "each link twice".
 4. **Brand Closet™ line** now carries the facts from Jodie's real recipe: the course address, month folders, lesson contents, the "Link to Outfit" Benable button (never used), Rose's posting pattern, the `__NEXT_DATA__` read, the 3-day window, the out-by time, Saturday catch-up on Sunday, two pins on different days, and the public-board check.
 5. **Join line:** "Affiliate link: I earn a commission if you upgrade, at no extra cost to you." everywhere.

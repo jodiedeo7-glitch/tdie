@@ -4,7 +4,7 @@ Updated 4 Oct 2026. Read current canon and verify live checkout/listing state be
 
 ## Campaign structure
 
-- Name The While-You-Sleep Storefront™ in the first Mon 5 Oct announcement. Do not run an unnamed mystery campaign.
+- Name The While-You-Sleep Storefront™ in the first Mon 5 Oct announcement. The product reveal is locked for **Mon 5 Oct at 11:00 am Eastern** (Jodie, 4 Oct 2026). Do not run an unnamed mystery campaign.
 - Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern is the prelaunch desire/demo period.
 - WYS prelaunch promotion repeatedly reminds the audience: **Standard presale opens Thu 8 Oct at 4:00 pm Eastern; 20 Standard presale spots.**
 - Demonstrations should create desire by showing real verified outputs and workflow behavior, not unsupported promises.
@@ -18,7 +18,8 @@ Updated 4 Oct 2026. Read current canon and verify live checkout/listing state be
 - Premium purchases may be used in truthful, clearly labeled total-buyer/social-proof counts. They may never be used to create or reduce a Standard spots-remaining number.
 - No public presale.
 - Public launch: Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern at $27 against regular $37.
-- Regular price: Tue 13 Oct onward, $37. Launch member pricing/code off.
+- Member pricing ends **Sat 10 Oct 2:00 pm Eastern** for both tiers (Jodie, 4 Oct 2026): Standard $17 and Premium $10 / TDIEPREMIUM stop when the public launch begins. From then through Mon 12 Oct 11:59 pm everyone, members included, pays $27.
+- Regular price: Tue 13 Oct onward, $37 for everyone.
 - Member affiliate program: 40% through Beacons no earlier than public launch Sat 10 Oct 2:00 pm. Never state the rate on Facebook, Instagram or the sales page.
 
 ## Claims
