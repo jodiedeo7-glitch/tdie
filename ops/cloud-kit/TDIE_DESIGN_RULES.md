@@ -4,9 +4,11 @@
 
 ### 4 October 2026 · THE LOOK (founder instruction, Decision 128). This wins over anything softer below.
 
+**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Newsreader SemiBold, upright, never italic; everything else is Inter, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
+
 Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. Loud, pink, sparkly, confident, girly. It has to read LUXURY, never cheap.
 
-- NEVER minimalist, clean-and-modern, beige, neutral, quiet editorial calm, cookie-cutter or a wall of words.
+- NEVER minimalist, clean-and-modern, beige, neutral, quiet, editorial calm, "luxury editorial", cookie-cutter or a wall of words.
 - Luxury, not cheap: real-looking glitter, sequins, pearl, chrome and holographic foil with depth and light catching on them, used for the big moments. Not a flat glitter texture tiled behind every section, not the same hard offset shadow on every card, not gingham as wallpaper, not clip-art stars.
 - Break up every block of words: stickers, callout boxes, numbered badges, pull quotes, annotated arrows, "don't skip this" boxes, price and feature tags. Any feature a reader might skim past gets a visual.
 - Every clickable card or image shows its name and a button. Nothing is a link without a label.
@@ -21,8 +23,7 @@ These override canon §8 "Type" and the Dark Chocolate palette row wherever they
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
-- Fraunces, Cormorant Garamond, or any thin-hairline, soft, wonky or italic display serif for headings ("weird, blurred, hard to read").
-- Montserrat or any generic geometric sans for headings ("very AI").
+- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Newsreader SemiBold; everything else is Inter. No italic headlines.
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
 - Flat colour-block layouts ("plain, flat, boring").
 - Solid stone or single-colour backgrounds with no photo ("no depth, no visuals, nothing popping, plain, ugly, looks AI").
