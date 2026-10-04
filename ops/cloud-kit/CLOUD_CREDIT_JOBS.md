@@ -1,3 +1,8 @@
+> **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
+
+> Migration routing, 1 October 2026: read `ops/TDIE_AI_ROUTER.md` and `ops/ai-router/EXECUTION_CONTRACT.md` first. This source contains historical job specifications, not active schedules. No blanket commit-to-main, push, listing, campaign, pricing or publication instruction here overrides the current task's authorization. Prepare reviewable work and route account operations separately. Do not restore Find Your Door automation. Read SOURCE_RECONCILIATION_2026-10-01.md and the source register for recovered SOP snapshots and remaining live-verification gates.
+
+
 # CLOUD CREDIT JOBS: FINAL LIST
 
 26 September 2026. $250 cloud credit, expires 2:59 am ET, 5 November 2026. Cloud sessions only (not Projects, not scheduled routines). The holiday gift guides are already running and are not on this list.
@@ -5,7 +10,7 @@
 ## How every job works
 - Start a new cloud session from the Code section (phone, desktop app or claude.ai/code). Pick the repo **jodiedeo7-glitch/tdie**.
 - Paste one prompt, everything between START and END. Nothing to fill in, nothing to attach: every file it needs is in the repo at `ops/cloud-kit/` and `ops/canon/`.
-- Anything that needs your accounts (Skool, Beacons, Amazon, Gemini, Higgsfield) gets written into `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`. Run the DESKTOP FINISH prompt at the bottom once, on your computer, after your weekly usage resets. That one uses your normal plan, not the credit.
+- Anything that needs your accounts (Skool, Beacons, Amazon, Gemini, Higgsfield) gets written into `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)`. Run the DESKTOP FINISH prompt at the bottom once, on your computer, after your weekly usage resets. That one uses your normal plan, not the credit.
 
 | # | Job | Model | Credit (estimate, unverified) | Why it's worth it |
 |---|---|---|---|---|
@@ -61,7 +66,7 @@ PDFs follow TDIE_DESIGN_RULES.md exactly. For each cover, write the full Tommy K
 
 Also write for each bot: a Beacons product description in the site voice, a Value Vault lesson body (à la carte buy link placeholder), a Premium Vault lesson body (file attached, no extra cost), and three Skool launch posts in Jodie's Skool voice.
 
-Commit everything to `ops/cloud-output/bots/` and push. Send Jodie both kits zipped. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: generate the two cover photos (exact prompts written in), drop them into the PDFs, then, after Jodie sets prices, add both products to canon.json and TDIE_CANON.md, list them on Beacons, add the two vault lessons in Skool and schedule the launch posts, reading every listing back live.
+Commit everything to `ops/cloud-output/bots/` and push. Send Jodie both kits zipped. Add to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)`: generate the two cover photos (exact prompts written in), drop them into the PDFs, then, after Jodie sets prices, add both products to canon.json and TDIE_CANON.md, list them on Beacons, add the two vault lessons in Skool and schedule the launch posts, reading every listing back live.
 
 Then ask Jodie exactly one question: "What price do you want for Pin Writer Bot and for Product Builder Bot?" Nothing gets listed anywhere until she answers.
 
@@ -107,7 +112,7 @@ Design per TDIE_DESIGN_RULES.md, perfect on a phone. Page title and description 
 
 Run npm run build, commit, push to main. Wait for the deploy, then load the live page with the headless browser at phone and desktop width, test three sentences from the bank, and confirm every link resolves. Only then report.
 
-Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: add a one-line link to the tool at the end of The Offer Edit's opening lesson in Skool (exact line written in), add the same key_pages row to the Project copy of canon.json, and a Skool post announcing it for the next Saturday Offer Audit (written in full, in Jodie's Skool voice).
+Add to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)`: add a one-line link to the tool at the end of The Offer Edit's opening lesson in Skool (exact line written in), add the same key_pages row to the Project copy of canon.json, and a Skool post announcing it for the next Saturday Offer Audit (written in full, in Jodie's Skool voice).
 
 Report in one line with the live link.
 
@@ -149,7 +154,7 @@ What each holds, big enough to judge: the full first week of the Threads calenda
 
 Build each as a designed PDF following TDIE_DESIGN_RULES.md exactly, checked at thumbnail size. Where a photo belongs, write the complete image prompt per the image master and leave a clean placeholder.
 
-Commit all eleven PDFs and their image prompts to `ops/cloud-output/dfy-samples/`, push, and send Jodie the PDFs. Add to `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`: generate the photos (every prompt written in), drop them into the PDFs, then attach each PDF to its own DFY lesson in Skool with this line added above the "Ready to order?" block: "See the whole thing first: [sample name] (sample built for a fictional client)." Include the Skool writing mechanics from TDIE_DFY_SERVICES.md.
+Commit all eleven PDFs and their image prompts to `ops/cloud-output/dfy-samples/`, push, and send Jodie the PDFs. Add to `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)`: generate the photos (every prompt written in), drop them into the PDFs, then attach each PDF to its own DFY lesson in Skool with this line added above the "Ready to order?" block: "See the whole thing first: [sample name] (sample built for a fictional client)." Include the Skool writing mechanics from TDIE_DFY_SERVICES.md.
 
 Report in one line.
 
@@ -163,6 +168,10 @@ Open the Claude desktop app on your computer, with Claude in Chrome connected an
 
 ----- START -----
 
-Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md`, `claude/CLAUDE_SOURCE_CHECK_RULE.md` from the project, and `ops/cloud-output/DESKTOP_FINISH_QUEUE.md`. Start your first reply with "Sources checked: [file names]." Work through every section of the finish queue in order, using Chrome on this computer. Take the browser lock in `claude/TDIE_BROWSER_LOCK.md` first. Generate images per `claude/TDIE_IMAGE_GENERATION_MASTER.md` (Gemini first for anything with Tommy Kate, Seedream 4.5 with Unlimited on for anything without her). Read back every Skool, Beacons and site change live before marking it done; Skool drops writes silently. Skip anything waiting on Jodie (for example bot prices she hasn't set) and say so. Update canon.json and TDIE_CANON.md in both the project and the repo the same day if anything in them changed. Mark each queue section DONE with the date. Report "Task completed successfully" in one line if everything passed; otherwise ask me exactly one plain question.
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md`, `claude/CLAUDE_SOURCE_CHECK_RULE.md` from the project, and `the relevant workflow queue under ops/queues/ (see ops/TDIE_AI_ROUTER.md)`. Start your first reply with "Sources checked: [file names]." Work through every section of the finish queue in order, using Chrome on this computer. Take the browser lock in `claude/TDIE_BROWSER_LOCK.md` first. Generate images per the governing source for the job. For the Premium DFY Content Calendar specifically, follow `ops/cloud-kit/TDIE_DFY_CALENDAR_PRODUCTION_RULES.md` and do NOT inherit the personal Gemini-first / Nano-Banana-second workflow from the general image master. Read back every Skool, Beacons and site change live before marking it done; Skool drops writes silently. Skip anything waiting on Jodie (for example bot prices she hasn't set) and say so. Update canon.json and TDIE_CANON.md in both the project and the repo the same day if anything in them changed. Mark each queue section DONE with the date. Report "Task completed successfully" in one line if everything passed; otherwise ask me exactly one plain question.
 
 ----- END -----
+## Desktop finish migration
+
+The prior monolithic execution prompt is retired in this package. Preserve the original queue as reconciliation evidence. Run `ops/jobs/JOB_LEGACY_QUEUE_RECONCILIATION_CLAUDE.md` read-only first, then route approved operations to one workflow queue. Do not execute every historical section or enable two account writers.
+
