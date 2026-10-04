@@ -198,7 +198,7 @@ guide.push(`<section class="pg">${top(3)}
     <li>Amazon Associates, plus Influencer approval for Idea Lists<span>No Influencer approval? The Associates-only path uses a page on your own site, and on most site builders you paste it in yourself.</span></li>
     <li>A Pinterest business account with public boards<span>Secret boards reach nobody. The setup checks every one.</span></li>
     <li>Only for the blog half: Chrome signed in to GitHub<span>With write access to your site's repository.</span></li>
-    <li>Gemini and Higgsfield accounts<span>Higgsfield makes the flat lays, Gemini the persona photos. <a href="${HF}" rel="sponsored nofollow noopener">Get Higgsfield here</a> (affiliate link: I earn a commission if you subscribe, at no extra cost to you).</span></li>
+    <li>A Higgsfield account<span>Higgsfield makes the flat lays and, on the persona path, the persona photos (about 2 credits each). <a href="${HF}" rel="sponsored nofollow noopener">Get Higgsfield here</a> (affiliate link: I earn a commission if you subscribe, at no extra cost to you).</span></li>
     <li>The Brand Closet&trade; at Rose's $9/month tier or above<span>For automation 2 only. It carries the Outfit of the Day.</span></li>
   </ul></div>
   <div class="call"><p><strong>Higgsfield, two ways.</strong> <strong>A. Website:</strong> Unlimited switch on, no credits (Seedream 5.0 Lite), but more of your Claude usage. <strong>B. Plugin:</strong> about half a credit an image (Seedream 5.0 Flash), much less Claude usage. Setup asks which. Plans and test results: 01_REQUIREMENTS.txt.</p></div>
@@ -214,7 +214,7 @@ guide.push(`<section class="pg">${top(4)}
     <div class="step"><div class="num">1</div><div class="card"><h3>Make your folder</h3>
       <p>On your computer, make a new folder called <strong>While-You-Sleep Storefront</strong>. Unzip this kit into it, so the folder holds all twelve .txt files and this PDF. Keep it somewhere you'll find it again, like Documents.</p></div></div>
     <div class="step"><div class="num">2</div><div class="card"><h3>Sign in, in Chrome</h3>
-      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong>, <strong>Higgsfield</strong>, and <strong>Gemini</strong> if you have a persona. Install the <strong>Claude in Chrome</strong> extension and connect it to your Claude account. The tasks never type a password, so everything has to be signed in already.</p></div></div>
+      <p>Open Chrome and sign in to: <strong>Amazon</strong> (you'll see the SiteStripe bar across the top of any product page), <strong>Pinterest</strong> and <strong>Higgsfield</strong>. Install and connect <strong>Claude in Chrome</strong> in this browser only. The tasks never type a password, so everything must be signed in already.</p></div></div>
     <div class="step"><div class="num">3</div><div class="card"><h3>Optional: join The Brand Closet&trade;</h3>
       <p>Only if you want automation 2. It's Rose's community: free to join, and her paid tiers are $9/month and $19/month (her prices). The Outfit of the Day is on her $9/month tier.</p>
       <p><a href="${BC}">Join The Brand Closet&trade;</a> and stay signed in to Skool in Chrome.</p>
@@ -255,7 +255,7 @@ guide.push(`<section class="pg">${top(6)}
       <li><strong>Save.</strong></li></ol>
       <p class="small">App menus move as Claude updates. If you can't find Scheduled, ask Claude in any chat: "How do I create a scheduled task in this app?"</p></div></div>
     <div class="step"><div class="num">7</div><div class="card"><h3>Watch the first run</h3>
-      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, Gemini, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
+      <p>Run the weekly task once by hand (use the task's run-now option) and stay nearby. The first time, Chrome and Claude may ask you to allow each site (Amazon, Pinterest, Higgsfield, and Skool or GitHub if you use them). Allow them. After that, it runs on its own.</p></div></div>
   </div>
     ${foot()}
 </section>`);
@@ -294,7 +294,7 @@ guide.push(`<section class="pg">${top(8)}
         <tr><td>Sourced 6 pieces</td><td>Soft pink velvet witch hat, black velvet square neck mini dress, black platform Mary Jane pumps, pale pink lace gloves, black crescent shoulder bag, gold moon and star drop earrings. Every one with my own SiteStripe link.</td></tr>
         <tr><td>Built the Idea List</td><td>One list in my storefront, every piece on it. Both pins link there.</td></tr>
         <tr><td>Pin 1</td><td>A styled flat lay on pink satin (Seedream 4.5), title set on the image: "PINK WITCH costume". Checked letter by letter.</td></tr>
-        <tr><td>Pin 2</td><td>A mirror selfie of my AI persona wearing every piece (Gemini, reference image attached), face hidden by the phone.</td></tr>
+        <tr><td>Pin 2</td><td>A mirror selfie of my AI persona wearing every piece (Higgsfield, her saved reference image), face hidden by the phone.</td></tr>
         <tr><td>Copy and schedule</td><td>Title, 450 to 500 character description with the #ad line, alt text, AI label on. Pin 1 on the look's date, pin 2 three days later.</td></tr>
         <tr><td>Logged and published</td><td>Written to the log and the pin tab, and a shop-the-look page added to my site and checked live.</td></tr>
       </table>
@@ -319,7 +319,7 @@ guide.push(`<section class="pg">${top(9)}
         <tr><td>Looked, didn't take</td><td>One screenshot of Rose's flat lay, for reference only. Her images and prompts are paid member content: never posted, uploaded or attached anywhere.</td></tr>
         <tr><td>Skipped the Benable links</td><td>They pay their owner. Every piece was re-found on Amazon with my own SiteStripe link.</td></tr>
         <tr><td>Built my own Idea List</td><td>My list is the pin link.</td></tr>
-        <tr><td>Made new images</td><td>A new flat lay (Seedream 4.5) and a lifestyle photo of my persona (Gemini). Rose's lifestyle prompt gave the scene idea only, with every brand and store cue stripped.</td></tr>
+        <tr><td>Made new images</td><td>A new flat lay (Seedream 4.5) and a lifestyle photo of my persona (Higgsfield). Rose's lifestyle prompt gave the scene idea only, with every brand and store cue stripped.</td></tr>
         <tr><td>Scheduled</td><td>Flat lay at 4:30 pm the day after the outfit, lifestyle at 9:30 am three days later, on its own slots.</td></tr>
       </table>
     </div>
@@ -371,7 +371,7 @@ const presale = [`<section class="pg" style="padding:0">
       <p style="font-size:21px;line-height:1.45;color:var(--ink)">Your kit unlocks <strong>${LAUNCH}</strong> at <strong>9 am ET</strong>.</p>
       <p style="font-size:21px;line-height:1.45;color:var(--ink);margin-top:10px">Use this same download link then.</p>
     </div>
-    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app, Amazon Associates, a Pinterest business account with public boards, and Gemini and Higgsfield.</p>
+    <p style="margin-top:22px;font-size:15px">Want a head start? Get your accounts ready now: a Claude plan with scheduled tasks and Claude in Chrome, the Claude desktop app, Amazon Associates, a Pinterest business account with public boards, and Higgsfield.</p>
     <div style="margin-top:28px;font:600 30px/1 Newsreader,serif;color:var(--hot)">xoxo, Jodie</div>
   </div>
   ${sticker("See you<br>at 9 am", "right:70px;top:420px;transform:rotate(8deg)", true)}
