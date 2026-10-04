@@ -7,6 +7,8 @@ export const REVIEWS = [
   {
     id: "tina-alexander",
     name: "Tina Alexander",
+    url: "https://digitalblogtips.com",
+    linkLabel: "digitalblogtips.com",
     stars: 5,
     source: "Skool review \u00b7 public, posted with her name and photo",
     tenure: "Paying member, 4 months",
@@ -19,6 +21,17 @@ export const REVIEWS = [
       "In 3 days I had a beautiful website/blog set up and everything connected and looks way better than the word press site would have looked.",
     // The shortest true cut, for a one-line strip.
     line: "In 3 days I had a beautiful website/blog set up and everything connected.",
+  },
+  {
+    id: "tina-alexander-community",
+    name: "Tina Alexander",
+    url: "https://digitalblogtips.com",
+    linkLabel: "digitalblogtips.com",
+    source: "said in The Digital Income Edit™ community, unprompted",
+    tenure: "Membership Premium member",
+    // An unprompted community comment, not a star-rated platform review.
+    quote:
+      "I ordered your The weekend Ecosystem and I finished it yesterday and love how my website turned out. I struggled with Wordpress for a few months and in 3 days I have something that is way better than that would ever be!",
   },
 ];
 

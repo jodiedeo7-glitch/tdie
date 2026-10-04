@@ -7,6 +7,7 @@ import { KIT_DEADLINE, kitLive } from "../../we-kit.js";
 import SaleBanner from "../../components/SaleBanner.astro";
 import KitBanner from "../../components/KitBanner.astro";
 import Testimonial from "../../components/Testimonial.astro";
+import { REVIEWS } from "../../we-reviews.js";
 import WePrice from "../../components/WePrice.astro";
 import WeBundle from "../../components/WeBundle.astro";
 import WeRibbon from "../../components/WeRibbon.astro";
@@ -112,6 +113,7 @@ const faqs = [
 ];
 
 const showKit = kitLive();
+const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-community");
 ---
 <PageLayout
   ogImage="/og/weekend-ecosystem-2026-09.jpg"
@@ -284,6 +286,7 @@ const showKit = kitLive();
             <span class="wx-obj-n">{String(o.n).padStart(2, "0")}</span>
             <p class="wx-obj-q">{o.q}</p>
             {o.a.map((para) => <p>{para}</p>)}
+            {o.id === "no-refunds" && <Testimonial variant="full" review={tinaCommunity} eyebrow="What a member said, without being asked" />}
             {o.id === "no-refunds" && (
               <p><a class="wx-link" href="/weekend-ecosystem/preview">Look inside first →</a></p>
             )}

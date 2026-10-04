@@ -15,7 +15,7 @@ import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import FreebieForm from "../components/FreebieForm.astro";
 // Tina's words come from the single verbatim source, unedited.
-import { FEATURED as tina } from "../we-reviews.js";
+import Testimonial from "../components/Testimonial.astro";
 import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -696,10 +696,7 @@ const jsonLd = {
             <a class="e-btn" href={WE.url}>Build my site this weekend <span class="ar" aria-hidden="true">→</span></a>
             <a class="e-link" href={WE.preview}>See inside first, no email</a>
           </div>
-          <figure class="quote">
-            <blockquote>{tina.quote}</blockquote>
-            <figcaption><strong>{tina.name}</strong>Skool review · public<span class="stars" role="img" aria-label={`${tina.stars} out of 5 stars`}>{"★".repeat(tina.stars)}</span></figcaption>
-          </figure>
+          <Testimonial variant="full" />
         </div>
       </div>
     </section>
