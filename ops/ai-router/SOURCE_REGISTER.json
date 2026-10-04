@@ -1,0 +1,136 @@
+[
+  {
+    "id": "canon",
+    "path": "ops/canon/canon.json",
+    "source_kind": "snapshot",
+    "present_in_upload": true,
+    "sha256": "c7aa60c03647e3b903b76b99ae468333ebac9683a9f6af1ff2cac924d4bfbe06",
+    "live_status": "UNVERIFIED",
+    "note": "Re-read current canon before live operations"
+  },
+  {
+    "id": "canon-prose",
+    "path": "ops/canon/TDIE_CANON.md",
+    "source_kind": "snapshot",
+    "present_in_upload": true,
+    "sha256": "a15457be29fb11b846c1f72b40b376a325199b25b2afdacc48992661dfac1752",
+    "live_status": "UNVERIFIED",
+    "note": "Preserve paired canon; record migration correction separately"
+  },
+  {
+    "id": "image-master",
+    "path": "ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md",
+    "source_kind": "snapshot-copy",
+    "present_in_upload": true,
+    "sha256": "bc3d979934fa9991a39f5398f5be3336584d7fd05c217968ee8cc82b55e01fbc",
+    "live_status": "UNVERIFIED",
+    "note": "Verify latest approved master before generation"
+  },
+  {
+    "id": "threads-system",
+    "path": "ops/cloud-kit/TDIE_THREADS_SYSTEM.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": true,
+    "sha256": "fc1e82b039a2dc493113533d7765483da14c44b7e85afb3405f45d4673ce6ac2",
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/TDIE_THREADS_SYSTEM.md",
+    "recovered_sha256": "8873366975e4ee779dc2dbf5730fa080f0aa8ecc30b3dbb25e452d50cc7e34a4",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "threads-voice",
+    "path": "ops/cloud-kit/TDIE_JODIE_THREADS_VOICE.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": true,
+    "sha256": "fca0dc0ee38827daad4164259af60ef4dafac0fac77be992cdf6b1b1e6e7a753",
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/TDIE_JODIE_THREADS_VOICE.md",
+    "recovered_sha256": "3d677b0fe2eb5f50464e0341ab199ab566ac1f777f169aee843d7938eeeecf77",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "dfy-services",
+    "path": "ops/cloud-kit/TDIE_DFY_SERVICES.md",
+    "source_kind": "snapshot-copy",
+    "present_in_upload": true,
+    "sha256": "9d1d4505271083bc34087641cd8b39edc76a102d7dff1b29be9a379a736bf87c",
+    "live_status": "UNVERIFIED",
+    "note": "Prices/links remain canon-owned"
+  },
+  {
+    "id": "source-check",
+    "path": "ops/cloud-kit/CLAUDE_SOURCE_CHECK_RULE.md",
+    "source_kind": "snapshot-copy",
+    "present_in_upload": true,
+    "sha256": "fae73918b35738e45ab328b08db0b23b95e25d1b35f281eabe44e8f34d5b0d58",
+    "live_status": "UNVERIFIED",
+    "note": "Do not claim live changes from files"
+  },
+  {
+    "id": "SOP-15",
+    "path": "SOP-15-dfy-content-calendar.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": false,
+    "sha256": null,
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/SOP-15-current-user-paste.txt",
+    "recovered_sha256": "70c77b31a75402872b728ca6b5da451e2f6bd0b404c54baae7ab97872798ef74",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "SOP-16",
+    "path": "SOP-16-daily-prompts.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": false,
+    "sha256": null,
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/SOP-16-daily-prompts.md",
+    "recovered_sha256": "84b88a61f38c9f499148f7f323df24ada7ffe18ca1e6413b1b1a00c6f65891d8",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "browser-lock",
+    "path": "claude/TDIE_BROWSER_LOCK.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": false,
+    "sha256": null,
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/TDIE_BROWSER_LOCK.md",
+    "recovered_sha256": "3902d7a0d3cabfc5165a31946bab5e797875893b0288de959380a15e4b2d4c21",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "skool-system",
+    "path": "claude/TDIE_SKOOL_POSTING_SYSTEM.md",
+    "source_kind": "recovered-local-source",
+    "present_in_upload": false,
+    "sha256": null,
+    "live_status": "LOCAL_CONTENT_RECOVERED",
+    "note": "Source found locally; live SOP15/16 also listed in signed-in Claude Project. Full live-content equality is not established. See source reconciliation.",
+    "recovered_path": "ops/source-evidence/recovered/TDIE_SKOOL_POSTING_SYSTEM.md",
+    "recovered_sha256": "70c744752748994d7aa9e329744fc867298ba00dad88185cb72f0e07d7c1ec68",
+    "private_evidence_location": "Internal implementation ZIP and authorized operator local workspace; not included in public GitHub tree"
+  },
+  {
+    "id": "live-task-inventory",
+    "path": "ops/ai-router/LIVE_TASK_INVENTORY_2026-10-01.json",
+    "source_kind": "live-ui-observation",
+    "present_in_upload": false,
+    "sha256": "4ae1733a15f4d49f42ed9e25a38bc44aba0f731173621603c98c505267f82f9f",
+    "live_status": "INVENTORY_OBSERVED",
+    "note": "57 UI tasks found, including paused/completed; only selected details and two failure outcomes inspected. No task edits."
+  },
+  {
+    "id": "premium-production-rules",
+    "path": "ops/cloud-kit/TDIE_DFY_CALENDAR_PRODUCTION_RULES.md",
+    "source_kind": "current-repository-authoritative",
+    "ref": "0703c6fa21636de97f7c9b1facae1c3377c8c797",
+    "git_blob_sha": "4e5e1b8e6f6c1916fad5a22be7088ab26a409139",
+    "note": "Authoritative 29 September Premium rules supersede historical source thresholds and fixed vendor pipeline."
+  }
+]
