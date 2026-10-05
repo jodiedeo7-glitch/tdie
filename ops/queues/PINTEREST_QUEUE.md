@@ -28,3 +28,19 @@ Read the current router and reconciliation, then follow its Metricool procedure 
 - layout design
 - new product claims
 - pricing decisions
+
+## Live batches
+
+### Batch: core-pinterest-2026-10-05-recovery-v1
+- Packet: `ops/cloud-output/core-pinterest-2026-10-05-recovery-v1/README.md`
+- Exact manifest: `ops/cloud-output/core-pinterest-2026-10-05-recovery-v1/pins.csv`
+- Contact sheet: `ops/cloud-output/core-pinterest-2026-10-05-recovery-v1/contact-sheet.png`
+- Created by: ChatGPT
+- Contact sheet approved: NOT REQUIRED — existing layout system; standing weekly creative authorization, not individual contact-sheet approval.
+- Pins READY: 2 (POOL 3 and POOL 5, new dated variants)
+- Persona images still required: 0
+- Earliest proposed slot: 2026-10-05 11:00 America/New_York; if elapsed use next permitted future core slot and record actual time.
+- Status: WAITING — creative packet complete; no scheduling performed by ChatGPT.
+- Publisher: Claude, after re-verifying the private owner file. Metricool only.
+- Scope: Two-pin recovery packet, not a full weekly batch. Amazon unchanged; WYS held.
+- Execution receipt: pending; record platform IDs, final times and readback here.
