@@ -56,3 +56,7 @@ See `MISSING-SOURCE-FOLLOWUP.md` and `found-source-map.json` for 25 recovered Ca
 ## Claude export addendum — 5 October 2026
 
 Latest recovery: [CLAUDE-EXPORT-RECOVERY.md](CLAUDE-EXPORT-RECOVERY.md) supersedes earlier missing-status statements for the three originals, four memory files and 58 Windows files. Full private originals and exact file maps are retained. Overall collection remains incomplete because native documents and transcripts remain unread.
+
+## Native addendum — 5 October 2026
+
+[NATIVE-PROJECT-ADDENDUM.md](NATIVE-PROJECT-ADDENDUM.md) closes the five additional named native-document gaps. Eight native text exports are captured; 152 listing entries still lack full native contents. Exact private replacements: native-addendum-member-map.json. Reattached files verified against prior originals: reattached-source-map.json.

@@ -38,3 +38,7 @@ Reviewed: both October 2 original reports in full; full Legally Blonde factory e
 The recovered listing contains 160 native Claude Project documents: three full originals are exported, **157 are metadata only**, including shared and sibling-project material. `claude-project-listed-source-map.json` records every path without claiming its contents were read. Five relevant native versions are still unexported: `WYS_LAUNCH_STATUS.md`, `WYS_PROMO_FACTS.md`, `LB_PIN_LOG.md`, `WYS_PRODUCT_OF_RECORD_2026-10-03.md`, and `storefront-launch-morning-prompt-2026-10-02.md`, all under `claude/`. Previously captured repository counterparts do not establish native-version equivalence.
 
 Full conversation transcripts, ChatGPT audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`, complete Project settings/edit history, live Command Centre and live account state remain inaccessible in this session. A separately named continuation file was not supplied; CLEAN_RUN_EVIDENCE.md and storefront-log.md are available records, not proof that no other continuation exists. Earlier native Canva/checkout/entitled delivery and affiliate-media gaps remain scoped as in MISSING-SOURCES.md. Overall collection is not claimed complete.
+
+## Native addendum — 5 October 2026
+
+The five missing native documents listed above are now supplied in a separate private addendum; previous 157-missing count is historical. Current count: 152 metadata-only documents. See NATIVE-PROJECT-ADDENDUM.md for exact recoveries and stronger native evidence of the unresolved Premium cutoff conflict.

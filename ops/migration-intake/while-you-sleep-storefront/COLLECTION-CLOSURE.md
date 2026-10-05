@@ -27,3 +27,7 @@ Remaining hard gaps are listed in MISSING-SOURCES.md: the two exact October 2 fi
 ## Claude export addendum — 5 October 2026
 
 Historical gap status superseded: three Project originals, four memory snapshots and 58 Windows files were supplied on 5 October and verified as exported bytes. See CLAUDE-EXPORT-RECOVERY.md. This does not resolve full transcripts, native settings or 157 unexported native documents.
+
+## Native addendum — 5 October 2026
+
+Five further native documents recovered and reviewed; prior 157-unexported count superseded by 152. Overall collection remains incomplete; see NATIVE-PROJECT-ADDENDUM.md and current MISSING-SOURCES.md.

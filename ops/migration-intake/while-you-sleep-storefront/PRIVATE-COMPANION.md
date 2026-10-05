@@ -18,3 +18,7 @@ Private artifact: `libfile_b0177461c9f08191b9738f77aa20c1d1`, version 0, file ID
 ## Claude export addendum — 5 October 2026
 
 Additional private source: WYS-Missing-Sources-Claude-Export.zip, Library libfile_a39c077b80508191b06e78bcdda6b953; 25,639,580 bytes; SHA-256 537b983afaf0ca6792a9a9b907f5c463cdf0aa0355db5ee43dc03f7febfe3973. 87 independently verified manifest rows, 88 files including manifest; nested kit 13 files. Exact replacements: claude-export-member-map.json and claude-export-nested-member-map.json. Original export remains private and unchanged.
+
+## Native addendum — 5 October 2026
+
+Additional private archive WYS-Native-Project-Files-Addendum-1.zip: libfile_9c3ed0cbf48c8191a6685c8e572cfa42, 67,778 bytes, SHA-256 814ff132bc5c341ad72d813eec0dfa25daf25512f7e33886cdae12f42b718561. Twelve manifest entries verified; 13 files including manifest. All full texts/diffs stay private; native-addendum-member-map.json supplies exact replacement references.

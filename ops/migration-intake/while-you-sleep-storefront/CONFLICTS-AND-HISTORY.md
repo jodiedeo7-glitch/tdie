@@ -98,3 +98,7 @@ See MISSING-SOURCE-FOLLOWUP.md for Canva workflow/branding conflicts, unverified
 ## Claude export addendum — 5 October 2026
 
 Additional conflicts and dated history are recorded in CLAUDE-EXPORT-RECOVERY.md: instruction-field precedence, initial versus patched kit, browser versus API delivery, manual PULL versus automatic deletion, Premium cutoff ambiguity, and limited conversation-summary fidelity.
+
+## Native addendum — 5 October 2026
+
+See NATIVE-PROJECT-ADDENDUM.md for native/main promo differences, stale equality/canon-state assertions, complete historical pin log versus substantive repo recovery entry, product-boundary limitations and inactive launch-task exceptions. Premium cutoff disagreement remains recorded, not silently resolved.

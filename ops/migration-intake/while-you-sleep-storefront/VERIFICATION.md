@@ -21,3 +21,7 @@ The recovered maps retain hashes, byte sizes and exact replacement paths. All ni
 ## Claude export addendum — 5 October 2026
 
 Claude recovery verification: outer ZIP CRC, all 87 manifest sizes/SHA-256 hashes, inner 13-file kit CRC/hashes and factory export-to-repository byte equality checked. 40 listed members match prior companion hashes. Repository update is restricted to this intake folder; no runtime verification or live operations.
+
+## Native addendum — 5 October 2026
+
+Native addendum outer CRC passed; all 12 manifest sizes/hashes match; total 13 files including manifest. Three exported repository counterparts match main exactly. Seven reattachments match prior private originals. Only migration intake files are committed; source fidelity/live-state limitations remain explicit.

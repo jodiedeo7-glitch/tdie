@@ -73,3 +73,7 @@ Latest inspected main AGENTS/handoff retains the release hold and founder brand 
 ## Claude export addendum — 5 October 2026
 
 New source snapshots: TDIE Website Claude Project instruction field and four memory files are preserved in full in the private Claude export, mapped in claude-export-member-map.json. Snapshot status does not imply every embedded direction is current. Repository precedence, dated conflicts and historical-task separation are recorded in CLAUDE-EXPORT-RECOVERY.md.
+
+## Native addendum — 5 October 2026
+
+Additional native promo/status snapshots are fully preserved privately. Their explicit both-tier Saturday cutoff conflicts with current main fields. Keep source/version precedence and release hold; this collection does not change shared canon or authorize promotions. See NATIVE-PROJECT-ADDENDUM.md.

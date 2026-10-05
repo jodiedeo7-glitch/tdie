@@ -58,3 +58,7 @@ See recovered maps and private `recovered-sources/capture/`: Drive D001 live-tes
 ## Claude export addendum — 5 October 2026
 
 Full additional procedures: the three Project originals, parent Windows recipes, CLEAN RUN recipes/evidence/logs and first-tested 13-file kit are preserved at exact private ZIP members in the two claude-export maps. Keep versions distinct; patched procedures do not replace the original first-tested kit. Consult CLAUDE-EXPORT-RECOVERY.md for review scope and exceptions.
+
+## Native addendum — 5 October 2026
+
+Full five native texts now mapped in native-addendum-member-map.json, including the 433-line pin log, product-of-record decision, promo/status records and historical launch-morning procedure. Preserve historical exceptions/examples without task activation.
