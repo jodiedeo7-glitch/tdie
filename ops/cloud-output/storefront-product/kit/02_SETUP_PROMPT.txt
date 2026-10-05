@@ -36,7 +36,7 @@ Never promise something these files say is untested in my account.
 
 STEP 00. NEW SETUP OR CHANGE?
 If MY_RECIPE.txt already exists, ask: "Do you want to renew your theme calendar, change one answer, add the blog half or Instagram, or start over?"
-- Renew: rebuild THEME CALENDAR and EVERGREEN BANK for the next 6 months from today, set a new RENEWAL DATE, keep everything else. Then STEP 10 and STEP 15.
+- Renew: keep the confirmed CURATION PROFILE unless I ask to change it. Rebuild THEME CALENDAR and EVERGREEN BANK for the next 6 months from today using current category/color/theme history so the renewal does not simply repeat prior looks. Set a new RENEWAL DATE. Then STEP 10 and STEP 15.
 - Change one answer: ask which one and run only that step, then re-run every test it affects: a new board needs STEP 2 and the board ID in STEP 4; a new publisher needs STEP 4; a new image tool or model needs STEP 5 and STEP 5A; a new pace needs STEP 8's plan check; anything that changes the AUTOMATIC scope needs STEP 9 again. Then STEP 10 and STEP 15.
 - Add the blog half: STEP 8A, then STEP 9 if I'm on AUTOMATIC, then STEP 10 and STEP 15.
 - Add Instagram: STEP 8B, then STEP 9 if I'm on AUTOMATIC, then STEP 10 and STEP 15.
@@ -63,12 +63,84 @@ LOCAL: ChatGPT Work Local and a folder on my computer. My computer must be on du
 - Ask: "What time does your computer usually go off at night?" Save COMPUTER OFF TIME.
 Save STATE LOCATION.
 
-STEP 1. THEME AND LOOK
-Ask: "What's your look? Describe it the way you'd describe your Pinterest to a friend."
-Then: "Clothing, home, or both? If both, roughly how much of each?"
-Then: "Do you have brand colors and fonts? If not, I'll suggest a palette and two fonts that fit your look."
-Save THEME, MIX, VOICE, VISUAL STYLE (a one-line description of the photo style that fits the theme, for example "bright, airy, natural daylight, cream and blush tones"), BRAND COLORS and BRAND FONTS.
-Never put a real person, film, show, brand or character into anything a shopper will see.
+STEP 1. CREATOR CURATION PROFILE
+The goal is not to create a generic "aesthetic." Build a taste profile detailed enough that the storefront can choose themes and products the creator would plausibly save to Pinterest herself.
+
+Before asking questions, inspect any connected Pinterest boards, existing brand files, site categories, persona notes and saved storefront settings you are allowed to read. Use them only to prefill likely answers. Never treat inference as confirmed preference. Ask me to confirm or correct what you found.
+
+Ask ONE question at a time, in this order. Give a short selectable list when useful and allow "other."
+
+1A. PERSONAL PINTEREST TEST
+Ask: "If I opened your personal Pinterest or Amazon saves, what kinds of things would I keep seeing?"
+Use my answer to capture the overall taste in plain language. Save CURATION SUMMARY.
+
+1B. PRODUCT CATEGORIES
+Ask which categories I genuinely browse, save or buy. Offer a broad list that includes at least:
+women's fashion; shoes; handbags; jewelry/accessories; beauty; hair; home decor; kitchen; organization/storage; desk/office; tech accessories; travel; car; gifts; seasonal/holiday; party/hosting; books/reading; fitness/wellness; outdoor/porch/patio; pets; kids; baby/toddler; gaming; school/homeschool; other.
+Then ask:
+- "Which 5 matter most?"
+- "Which are occasional?"
+- "Anything you never want sourced?"
+Save CATEGORY PRIORITIES, CATEGORY MIX and CATEGORY EXCLUSIONS. Do not collapse this to only "clothing/home."
+
+1C. AESTHETIC DNA
+Ask: "Which words feel like your taste? Pick as many as fit, and add your own."
+Offer examples such as feminine, colorful, preppy, romantic, cozy, farmhouse, modern, maximalist, vintage, coastal, sporty, western, whimsical, glamorous, practical, classic, trendy, bookish, eclectic, minimalist.
+Then ask for 2 to 5 "always feels like me" details and 2 to 5 "that is not me" details.
+Save AESTHETIC DNA and AESTHETIC AVOIDS.
+
+1D. COLOR PROFILE
+Ask separately:
+- colors I buy/save constantly
+- colors I like sometimes
+- colors I rarely or never want
+- whether I prefer neutrals plus accents, lots of color, monochromatic edits, seasonal palettes, or a mix
+Save SIGNATURE COLORS, OCCASIONAL COLORS, COLOR AVOIDS and COLOR BEHAVIOR.
+Important: a signature color is a preference, not a requirement. Never force every look into the same palette. Color should fit the products, category, season and theme.
+
+1E. SHOPPING INSTINCTS
+Ask: "What usually makes you stop and save or buy something?"
+Offer examples: unusual color; solves a problem; looks expensive; cute version of something boring; trend; seasonal; giftable; cozy; nostalgic; organizational; statement piece; practical; playful; hard-to-find combination.
+Then ask:
+- trend-forward, timeless, or mixed?
+- more basics, more novelty, or balanced?
+- tightly themed collections or looser edits, or both?
+Save SHOPPING TRIGGERS, TREND PROFILE, NOVELTY BALANCE and COLLECTION STYLE.
+
+1F. REAL LIFE AND OCCASIONS
+Ask which parts of real life should influence the storefront. Offer examples such as work, work-from-home, school dropoff, family life, hosting, travel, date night, holidays, reading, gaming, gardening, pool/beach, sports seasons, concerts, church, errands, pets, kids, homeschooling and other.
+Ask for the 5 to 10 most relevant. Save LIFESTYLE/OCCASIONS.
+
+1G. SEASONALITY
+Ask which holidays, seasons or recurring moments I actually care about and which to skip. Save SEASONAL INTERESTS and SEASONAL EXCLUSIONS. Do not assume every holiday belongs in the calendar.
+
+1H. CURATION RULES
+Read back a short profile in this form:
+- "This feels like you"
+- "This should appear often"
+- "Use sometimes"
+- "Avoid"
+- "Color behavior"
+- "Category balance"
+- "What makes an item worth saving"
+Ask me to correct it once. Then save CURATION PROFILE = confirmed.
+
+1I. VOICE AND BRAND SYSTEM
+Ask: "How should the captions sound?" If existing brand voice is available, summarize it and ask me to confirm.
+Ask: "Do you already have brand colors and fonts for the graphics? If not, I'll suggest them."
+Save VOICE, BRAND COLORS and BRAND FONTS.
+
+1J. VISUAL CREATIVE PREFERENCES
+Do NOT reduce the photo direction to one fixed surface, palette or lighting recipe. Ask:
+"What do you want the images to feel like overall, and what visual habits do you hate?"
+Save VISUAL CREATIVE PREFERENCES and VISUAL AVOIDS.
+The image system must choose surfaces, lighting, camera/viewpoint, styling density and props based on the actual products and theme, while staying inside the creator's taste profile. A home-decor collection, fashion edit and Halloween porch collection should not receive the same visual treatment merely because they belong to the same creator.
+
+Create legacy compatibility fields from the confirmed profile:
+THEME = a concise private summary of the creator's taste.
+MIX = the category weighting derived from CATEGORY MIX.
+VISUAL STYLE = "adaptive to product/category/season; follow CURATION PROFILE and VISUAL CREATIVE PREFERENCES."
+Never put a real person, film, show, brand or character into anything a shopper will see. If I use one as private shorthand for my taste, save it only as PRIVATE INSPIRATION and translate it into non-infringing traits for production.
 
 STEP 2. BOARDS
 Ask for my exact Pinterest board names. If I have none, suggest search-first names like "Cozy Fall Outfits for Moms | Amazon Finds".
@@ -102,7 +174,7 @@ TIME-SAVING:
 - Ask which connected image tool. If Higgsfield, confirm it's connected to this chat.
 - Save IMAGE PROVIDER, IMAGE MODEL, IMAGE PLAN, the RESOLUTION (2K unless I say otherwise) and my commercial-use rights.
 - Look up the model's current cost per image in the tool and save IMAGE COST PER GENERATION.
-- Work out what my pace needs (looks per week x 2 images, plus up to 2 corrections now and then; Outfit of the Day adds 2 per outfit) and show me a suggested monthly amount. Ask: "What's the most you want spent on images per month?" Save GENERATION BUDGET (amount and period) and what happens when it runs out (default: stop making new images and tell me).
+- Work out what my pace needs using the current number of generated assets per look required by 13_PIN_VISUAL_STANDARD.md and 03_THEMED_LOOK_RECIPE.txt, plus realistic correction allowance; include Outfit of the Day if enabled. Do not hard-code an obsolete image count. Show me a suggested monthly amount. Ask: "What's the most you want spent on images per month?" Save GENERATION BUDGET (amount and period) and what happens when it runs out (default: stop making new images and tell me).
 CREDIT-SAVING / MANUAL:
 - You write the full image prompt and the checklist. I run it in the tool I choose and bring the result back for checking.
 - I may use my own photos or licensed images instead. Save their source and rights.
@@ -111,8 +183,8 @@ Never pay for a second image just to add text. Never spend credits or switch too
 
 STEP 5A. HEADLINE METHOD
 Every Pin gets its headline added after the image is approved, never generated inside the image.
-TIME-SAVING: add the headline yourself with your built-in code tool (an image library such as Python's PIL), using BRAND FONTS (or the closest free font if a brand font can't be loaded), in the reserved top band, sharp and high-contrast, checked at phone size. Test it on one sample image now and show me. Save HEADLINE METHOD = assistant layout.
-If your code tool can't do it, or on CREDIT-SAVING / MANUAL: HEADLINE METHOD = Canva (free). Give me these steps to keep: open a 1000 x 1500 px design, upload the image to fill the page, add one text box at the top with the headline you wrote, in my brand font, big enough to read on a phone, then Share, Download, PNG. No design skills needed; the headline text comes from you.
+TIME-SAVING: add the headline yourself with your built-in code tool (an image library such as Python's PIL), using BRAND FONTS (or the closest free font if a brand font can't be loaded), in the safest intentional headline zone created by that image's composition. Do not force every image to reserve the top band. Keep the type sharp, high-contrast and checked at phone size. Test it on one sample image now and show me. Save HEADLINE METHOD = assistant layout.
+If your code tool can't do it, or on CREDIT-SAVING / MANUAL: HEADLINE METHOD = Canva (free). Give me these steps to keep: open a 1000 x 1500 px design, upload the image to fill the page, place the headline in the clean negative-space area intentionally left by the composition, use my brand font and make it large enough to read on a phone, then Share, Download, PNG. The headline position follows the photograph; it is not always at the top.
 
 STEP 6. PERSONA
 Ask: "Do you have an AI persona who wears the looks?"
@@ -166,6 +238,27 @@ STEP 10. WRITE MY_RECIPE.txt
 Create or update MY_RECIPE.txt with these lines (write "off", "no" or "not used" rather than leaving a line out):
 
 SETTINGS
+CURATION PROFILE (confirmed)
+CURATION SUMMARY
+CATEGORY PRIORITIES
+CATEGORY MIX
+CATEGORY EXCLUSIONS
+AESTHETIC DNA
+AESTHETIC AVOIDS
+SIGNATURE COLORS
+OCCASIONAL COLORS
+COLOR AVOIDS
+COLOR BEHAVIOR
+SHOPPING TRIGGERS
+TREND PROFILE
+NOVELTY BALANCE
+COLLECTION STYLE
+LIFESTYLE/OCCASIONS
+SEASONAL INTERESTS
+SEASONAL EXCLUSIONS
+VISUAL CREATIVE PREFERENCES
+VISUAL AVOIDS
+PRIVATE INSPIRATION (private only; never shopper-facing)
 THEME
 MIX
 VOICE
@@ -222,8 +315,9 @@ INSTAGRAM (off, or feed posts on, with account, posting time, publisher, test re
 SLOTS (every run time and every Pin time)
 DISCLOSURE LINE: As an Amazon Associate I earn from qualifying purchases.
 (Every Pin description starts with "#ad " and ends with the DISCLOSURE LINE.)
-THEME CALENDAR: 6 months of look windows from today, each with 4 to 6 look ideas that fit THEME and MIX.
-EVERGREEN BANK: 30 evergreen look ideas.
+THEME CALENDAR: 6 months of look windows from today. Build it from the confirmed CURATION PROFILE, current season, CATEGORY MIX and SEASONAL INTERESTS. Each window gets 4 to 6 candidate look directions, not rigid repeated palettes. Balance categories, occasions and colors; do not make a signature color mandatory.
+EVERGREEN BANK: 30 evergreen look directions derived from the confirmed CURATION PROFILE. Cover multiple categories and use cases, not 30 variations of one aesthetic.
+CURATION ROTATION RULES: prevent repetitive categories, hero-product types, palettes, themes and visual treatments. Prefer believable variety that still feels like the same creator personally curated it.
 RENEWAL DATE: 6 months from today.
 
 STEP 11. THE STATE AND YOUR FILES
