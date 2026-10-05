@@ -47,3 +47,26 @@ September launch dates, four/three recurring task plans, Halloween/catch-up task
 ## Questions left for later reconciliation, not user blockers for collection
 
 Which exact artifact/runtime will be the buyer release? Which live delivered bytes match it? Which source resolves the image-attempt cap? Which exact actions/permissions pass in the recurring buyer runtime? Are all manual alternatives and optional appendices present in that exact build? What is the approved retention destination for future flat lays? Which Canva master remains editable? Are the logo and old-example reuse requests approved? Have missing source originals changed since the excerpts? None is answered by a filename or historical PASS.
+
+## Additional conflicts established by complete source review
+
+All findings below are collection observations, not repairs or authorizations.
+
+| ID | Source and date where available | Detail / disposition |
+|---|---|---|
+| C27 | Main kit 03/07; inspected baseline 4 Oct | Persona path imports Amazon photo references while the themed recipe requires authorized image inputs. Preserve the contradictory routes; do not infer image rights. |
+| C28 | Main kit 03/06/07 and historical tests | Four-attempt, two-correction and regeneration wording differs. Attempt totals depend on route and definition; do not silently harmonize the cap. |
+| C29 | Main kit 04/06/08 versus later private revisions | Three-day versus fourteen-day OOTD lookback; missing Pin treated as pulled versus evidence-based reconciliation; general storefront fallback versus verified per-look destination. Retain each full procedure. |
+| C30 | Main kit 02/06/09 | Task BROWSER field is not clearly produced by setup; listLink differs from later ideaList; hard-coded main/Vercel route is obsolete. Credit-bearing image route has no inferred spending amount. |
+| C31 | Later kit 10 and 09 | Universal Instagram website/Story capability wording reappears after removal in another variant; clean photography alongside final Pin needs scope reconciliation with the later single-final headline rule. No present platform capability certified. |
+| C32 | Affiliate checkpoint/review copy; 4 Oct captures | Checkpoint Instagram DM/link replies conflict with standing TDIE channel rules; review captions improve CTAs but scripts/response templates retain DM wording. Facebook body links also need reconciliation with first-comment practice. Scope the founder rule before applying to third-party affiliates; held drafts remain inactive. |
+| C33 | Affiliate checkpoint and review manifests | Source copy exists without the originally requested full 34-media export set. The later six-raster edition is a different deliverable, not proof the original pack is finished. Illustrative covers/type are not verified delivered-kit screenshots or editable Canva. |
+| C34 | Canva draft record and build scripts | saved:false and reported zero instruction differences are historical record fields, not live saved-design/readback evidence. Absolute local browser paths, fonts and sibling dependencies make renderer portability unresolved. |
+| C35 | Main render.mjs, graphics g1/g3 and presale PDF | Embedded old Sunday/Thursday deadlines and Friday 9 Oct unlock conflict with amended dates. LAUNCH override does not update every embedded graphic deadline. Historical files stay untouched. |
+| C36 | Main CANON_ROWS_DRAFT.md and run_checks.py | Registration draft is stale after reported canon registration; do not paste again. Lint counts pattern hits but does not return a failing process status; a successful exit is not semantic compliance or release clearance. |
+| C37 | Four buyer simulations, September test records | Invented accounts/products/calendars and simulated paid-content fixtures are test data, never actual customer results or task authorization. Findings include lock expiry, schedule capacity, exhausted calendars, missing fields, board verification, hero repetition and disclosure placement. Preserve full findings and later repair reports separately. |
+| C38 | Main WysPromo.astro and sales page | Both HOLD flags remain true. Hidden promo text claims automatic operation; sales copy describes per-Pin approval and a different runtime. Neither clears the product-of-record/automatic-primary conflict. Historical numeric proof is not buyer-runtime certification. |
+| C39 | Final Content and Visual Audit, 2 Oct; later private checks | Earlier audit rejected manual-primary behavior, mismatched sample pair and missing exact actions/paused setup. Later source repairs and reported page checks address parts, but no fresh unattended live proof is established. Keep original FAIL and later PARTIAL/report scope. |
+| C40 | Computer-use diagnostic, 3 Oct | Local shell recovery, missing browser controls and retracted install advice are dated observations. Installed skills or connection UI do not establish callable actions; unresolved root cause is not a present migration access blocker. |
+
+The full detailed continuation notes, comparisons and findings remain in the restricted companion. Approval mode, labor mode and runtime capability are separate questions. No held test calendar, marketing sequence, historical launch instruction or recovery task was activated.

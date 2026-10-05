@@ -42,3 +42,11 @@ The original ZIP is retained byte-for-byte in `originals/attachments/`. All 14 n
 `source-inventory.json` maps all 108 project files to the private replacement or retained original. `archive-member-map.json` maps every member inside all nine ZIPs. The private companion adds exact Library identities, full extracted text index, original bytes for textual/PDF sources and lossless original-ZIP references. Images not duplicated into the companion remain at their existing original Library identities. No originals are deleted, moved, shared or overwritten.
 
 Repository sources remain at the immutable commit URLs in `repository-source-map.json`; paid or private contents already present in that repository are not republished by this intake. This package does not decide whether existing repository exposure should be remediated.
+
+## Distinct procedures confirmed during continuation
+
+The 110-page `WYS-System-Guide.pdf` contains complete maintenance/renewal and troubleshooting/recovery prompts in addition to its main prompt sections. Preserve these with the full PDF extraction; the 105-page kit guide and 63-page private revision are distinct variants, not replacement names for the same text. The private revision's paused-activation, permissions, provider-cost preflight, exact-action verification and reconciliation sections remain in full in its original files and extracted text.
+
+The repository's twelve-file Claude kit, setup/presale PDFs, render sources, four simulated buyer interviews/calendars/task files, desk runs, findings, blog-half review and test reports remain mapped by immutable original reference. Test fixture paid-content examples are not republished into this intake. The repository ZIP's 13 members exactly match those mapped originals.
+
+The affiliate checkpoint preserves 20 captions with six platform variants each, ten scripts, three emails, twelve response templates, a seven-day plan and build source. Its absent requested media exports remain absent. The later review edition's six raster assets and revised copy remain a separate held edition. Neither edition grants distribution permission.

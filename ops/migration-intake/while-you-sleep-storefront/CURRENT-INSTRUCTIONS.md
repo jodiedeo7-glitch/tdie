@@ -61,3 +61,7 @@ Source: AGENTS.md 2 Oct MailerLite rule; injected founder requirements; current 
 MailerLite operations use the approved plugin only, never a browser fallback. A missing required action is reported rather than routed through the browser. This collection makes no MailerLite access attempt.
 
 Verify the exact account/action/runtime instead of inferring from a connected service or installed skill. Never request/store passwords in task prompts. Keep restricted paid content and private operational records out of the public repository. Be concise; finish authorized work; ask only for an indispensable missing input. There is no banned vocabulary list. The no-em-dash writing rule and factual/claim/design constraints remain separate.
+
+## Channel rules requiring reconciliation with held affiliate copy
+
+Source: captured standing Project instructions; original edit date unavailable. For TDIE's own channel use, preserve the no-DM Instagram direction and Facebook first-comment link practice. Historical affiliate scripts and response templates have contrary CTA wording; they remain held drafts. Do not silently generalize a founder-channel restriction into a universal third-party platform restriction. Full original standing wording and all draft variants remain private.

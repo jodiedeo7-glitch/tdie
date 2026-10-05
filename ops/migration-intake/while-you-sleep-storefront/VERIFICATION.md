@@ -1,15 +1,15 @@
 # Verification record
 
-Collection date: 4 October 2026. This is source intake verification, not product approval.
+Collection and continuation: 4 October 2026. Source intake verification only, not product approval.
 
-- Matched all 108 scoped project file sizes against the returned inventory and computed SHA-256 for every file. The listing ended without a next cursor.
-- Verified CRC integrity for nine source ZIPs and inventoried 184 non-directory members individually. Preserved every variant and exact duplicate group.
-- Captured 184 complete text-source/extraction records; reviewed the seven attachments fully and applied explicitly recorded, narrower review scopes to later sources. No claim of exhaustive semantic review of every captured byte.
-- Inspected 67 standalone raster assets on six contact sheets. No full-resolution visual or OCR certification.
-- Saved the private companion, materialized saved version 1 separately, matched its 35,162,740 bytes and SHA-256, checked its 235 ZIP entries and verified every CHECKSUMS.json row. Version 0 was damaged and replaced.
-- Read the root repository instructions and recorded immutable sources and review depth. Additional project subtree sources have a separate inventory and are explicitly not fully reviewed.
-- Public files contain source locators, hashes, captured nonrestricted rules and conflict records. Restricted kit bodies, private records and private commercial code payloads remain outside this new public folder.
+- All 108 scoped project file sizes matched their returned inventory; SHA-256 computed for each. No listing cursor remained.
+- Nine source ZIPs passed CRC; 184 non-directory members mapped. Exact duplicate groups and nonidentical variants preserved.
+- All 184 text capture records reviewed directly or through full differential comparison, with shared canon restricted to relevant sections. The additional repository text/code/tests are also reviewed. See REVIEW-COVERAGE.md for the method and limits.
+- Visual intake: 67 standalone source rasters, 26 nested source rasters and 31 repository rasters inspected through contact sheets. No all-page or full-resolution OCR certification.
+- Additional repository map now contains 102 entries (94 initial sources plus eight directly referenced images). All three PDFs fully text-read; the repository ZIP passed CRC and all 13 members exactly match mapped tracked originals.
+- Restricted originals, full extracted procedures, examples, exceptions, source identities, review comparisons and notes are saved privately. PRIVATE-COMPANION.md records saved version and exact integrity results.
+- Public files contain safe source locators, hashes, captured nonrestricted rules and conflict records. Restricted kit bodies, private operational records and private commercial code payloads are excluded from this new public folder.
 
-The public package is committed only to a separate migration branch. Remote commit content is read back before delivery. No shared canon, other project, source original, setting, automation or live workflow is changed. No historical task is activated and no source is deleted.
+The safe package is committed only on the separate migration branch and all committed package files are read back and compared with local bytes before delivery. No shared canon, other project, original source, setting, automation or live workflow is changed. No historical task is activated and no source is deleted.
 
-Outstanding: full conversation/settings exports and referenced external originals, plus the explicit semantic review gaps in MISSING-SOURCES.md. This intake is not labelled complete.
+Outstanding: full conversation/settings exports, referenced external originals and bounded visual/shared-canon review described in MISSING-SOURCES.md. The overall migration remains incomplete.

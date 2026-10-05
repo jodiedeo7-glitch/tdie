@@ -10,7 +10,7 @@ COLLECTION ONLY. This folder is evidence, not a new canon, task loader, customer
 
 The package has two parts: this public-safe index and an access-controlled private companion. Restricted procedures are preserved in full in the companion or retained original files, not replaced by the public summaries. The public folder must not be used alone to reconstruct or distribute the paid product.
 
-Seven supplied attachments were fully opened, including all 14 numbered text/Markdown kit members and the 11-page guide text. The scoped project folder returned 108 files with no pagination remaining; all were materialized or reused from the supplied local attachments, byte-read and fingerprinted. All nine source ZIPs passed CRC checks and all members are mapped. The 67 standalone raster assets received contact-sheet intake review. Later PDFs were text-extracted; later guides, code and archives received structural/targeted review, not an exhaustive line-by-line or all-page visual audit. Review depth is explicit per file. Full procedure text and original bytes remain available.
+Seven supplied attachments were fully opened, including all 14 numbered text/Markdown kit members and the 11-page guide text. The scoped project folder returned 108 files with no pagination remaining; all were materialized or reused from the supplied local attachments, byte-read and fingerprinted. All nine source ZIPs passed CRC checks and all members are mapped. The 67 standalone raster assets received contact-sheet intake review. All captured project text, guide extractions, code, tests and archive variants now have full-text or differential text review. Shared canon snapshots were reviewed in project-relevant sections only. The continuation also reviewed 94 additional repository files and eight referenced sales-page images; 26 nested archive rasters and 31 repository rasters received contact-sheet inspection. This is not an all-page visual or live-product audit. Review method and limits are recorded in REVIEW-COVERAGE.md; full procedure text and original bytes remain available.
 
 **Not globally complete:** full project conversation transcripts and a settings export are not exposed. Additional referenced sources and review limitations are in `MISSING-SOURCES.md`. A retrieved excerpt or historical report does not establish current live behavior. No commerce, publishing, automation, workflow or project-setting change was performed.
 
@@ -25,7 +25,9 @@ Seven supplied attachments were fully opened, including all 14 numbered text/Mar
 - `repository-source-map.json`: exact repository baseline and governing files actually reviewed.
 - `duplicate-groups.json`: exact duplicate project files by SHA-256. Nonidentical audits remain separate.
 - `CONTEXT-SOURCE-MAP.md`: standing-instruction and conversation provenance.
-- `repository-additional-source-map.json`: additional accessible project sources and unfinished review scope.
+- `repository-additional-source-map.json`: additional reviewed project sources, including the eight referenced sales-page images.
+- `REVIEW-COVERAGE.md`: completed continuation review, comparison method and precise limits.
+- `repository-archive-member-map.json`: all 13 repository ZIP members and exact matching tracked sources.
 - `PRIVATE-COMPANION.md`: restricted evidence location and access boundary.
 - `VERIFICATION.md`: actual collection checks and their limits.
 
