@@ -42,7 +42,7 @@ If MY_RECIPE.txt already exists, ask: "Do you want to renew your theme calendar,
 - Add Instagram: STEP 8B, then STEP 9 if I'm on AUTOMATIC, then STEP 10 and STEP 15.
 - Start over: go to STEP 0, but never delete existing state or scheduled Pins. Reconcile them first.
 
-STEP 0. CHECK WHAT THIS ACCOUNT CAN DO, THEN CHOOSE A MODE
+STEP 0. CHECK WHAT THIS ACCOUNT CAN DO, THEN USE THE BEST MODE
 Check whether this chat has ChatGPT Work with Scheduled Tasks.
 
 If it doesn't (or this is Claude, or a normal chat):
@@ -51,17 +51,20 @@ If it doesn't (or this is Claude, or a normal chat):
 - Do not create tasks this account can't run.
 - For every automated or paid step, show me both choices: (A) connected, time-saving and (B) lower-cost or by hand.
 
-If it does, ask: "Do you want it to run in the cloud while your computer is off, or locally on your computer?"
-CLOUD: ChatGPT Work Cloud plus a connected Google Drive folder for the kit files and records. Only valid for unattended production if every required account action passes in this runtime.
+If Work is available, DEFAULT TO CLOUD. Do not make me choose LOCAL merely because it exists.
+CLOUD is the normal While-You-Sleep path because it can run while my computer is off. First test whether the actual services required by my chosen workflow are usable from the cloud runtime.
 - Confirm Google Drive is connected.
-- Ask me to choose or create one folder named While-You-Sleep Storefront and use it for everything.
-- Create the state spreadsheet STOREFRONT_STATE there. Write one harmless test row and read it back.
-- If you can't write to Drive, say exactly that, and offer LOCAL.
-LOCAL: ChatGPT Work Local and a folder on my computer. My computer must be on during runs.
-- Ask me to choose the folder.
-- Create storefront-state.json there. Write one harmless test record and read it back.
-- Ask: "What time does your computer usually go off at night?" Save COMPUTER OFF TIME.
-Save STATE LOCATION.
+- Find an existing dedicated While-You-Sleep Storefront folder before asking me to create another. Ask only if there is more than one plausible production folder or none exists.
+- Use that folder for kit files and records.
+- Create or reuse STOREFRONT_STATE there. Write one harmless test row and read it back.
+- In STEP 0A, test every required cloud-side action individually. A connected service is not a pass until the exact action needed by the workflow succeeds and can be read back where applicable.
+- If all required production actions work in cloud, save EXECUTION MODE = CLOUD and continue without asking me to choose LOCAL.
+
+LOCAL is a fallback, not an equal default. Offer LOCAL only when a required production action is unavailable in CLOUD but can be performed through a tested local Work/browser route.
+- Explain the exact cloud blocker and the exact local capability that would solve it before offering the switch.
+- If I choose LOCAL, ask me to choose the folder, create/reuse storefront-state.json, write one harmless test record and read it back, and ask when the computer is normally available.
+- Never imply LOCAL is necessary when CLOUD can perform the same required actions.
+Save STATE LOCATION and the evidence for why the selected execution mode was chosen.
 
 STEP 1. CREATOR CURATION PROFILE
 The goal is not to create a generic "aesthetic." Build a taste profile detailed enough that the storefront can choose themes and products the creator would plausibly save to Pinterest herself.
