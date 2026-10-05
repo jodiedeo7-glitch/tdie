@@ -48,3 +48,7 @@ The additional Drive, branch and PR recovery is now included. See `RECOVERED-SOU
 ## Missing-source follow-up
 
 See `MISSING-SOURCE-FOLLOWUP.md` and `found-source-map.json` for 25 recovered Canva text sources, three private Drive copies and one repository counterpart. These later findings supersede earlier access-gap statements only for the identified sources. Remaining gaps persist.
+
+## Final collection check
+
+`COLLECTION-CLOSURE.md` records the newly retrieved corrected sales-copy original, exact private preservation, reattached-file checks and remaining hard gaps. Collection is not globally complete.
