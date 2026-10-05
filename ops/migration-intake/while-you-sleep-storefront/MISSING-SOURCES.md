@@ -1,17 +1,17 @@
 # Remaining missing sources and review limits
 
-Updated 5 October 2026 UTC after verification of both user-provided Claude exports. See CLAUDE-EXPORT-RECOVERY.md and the three new maps for exact recovery scope.
+Updated 5 October 2026 UTC after verification of all three user-provided Claude recovery archives. See CLAUDE-EXPORT-RECOVERY.md and the three new maps for exact recovery scope.
 
 ## Recovered, no longer missing
 
-Both October 2 audit/handoff originals, the Legally Blonde factory text, five additional native documents, four memory snapshots, Project instruction field and 58 exported Windows files are preserved in the private export. Factory text matches the inspected repository copy independently. Eleven conversations are excerpt summaries only. This session accessed exported files, not their live source systems.
+Both October 2 audit/handoff originals, the Legally Blonde factory text, five additional native documents, four memory snapshots, Project instruction field and 58 exported Windows files are preserved in the private export. Factory text matches the inspected repository copy independently. Eleven reader-returned transcripts are now preserved in addition to the earlier summaries; tool/attachment fidelity limits remain. This session accessed exported files, not their live source systems.
 
 ## Native sources not exposed
 
-- Full conversation transcripts and ChatGPT archived audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`.
+- ChatGPT archived audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`, other unsearched Claude chats and native completeness of attachments/tool outputs within the eleven captured reader transcripts.
 - Complete Project settings/source-membership export and edit history. TDIE Website Claude instruction-field snapshot is not WYS ChatGPT settings.
-- Live Command Centre records/lock and live account/runtime/scheduler state.
-- Full contents of 152 documents named in the native Claude Project listing, including shared/sibling sources. Eight full native-text exports are now captured. See claude-project-listed-source-map.json and NATIVE-PROJECT-ADDENDUM.md. Direct native-storage fidelity and equivalence of unexported versions remain unverified.
+- Complete Command Centre: pins, stylerefs, replies, Instagram queue page 3 and unknown additional collections. A private snapshot of 2 locks, 24 queue records and 300 engagement records is captured; current live ownership/runtime remains unverified.
+- The 152 remaining native text exports are now captured: all 160 named native documents have replacements. Direct native-byte fidelity, original values behind 15 redactions and exhaustive semantic review of large captured task/sibling/record archives remain unverified or incomplete. See REMAINING-NATIVE-RECOVERY.md and per-source maps.
 
 ## Searched or referenced, not supplied
 

@@ -31,3 +31,7 @@ Historical gap status superseded: three Project originals, four memory snapshots
 ## Native addendum — 5 October 2026
 
 Five further native documents recovered and reviewed; prior 157-unexported count superseded by 152. Overall collection remains incomplete; see NATIVE-PROJECT-ADDENDUM.md and current MISSING-SOURCES.md.
+
+## Remaining native recovery — 5 October 2026
+
+Historical 152-native-missing count superseded: all 160 named native documents now have captured replacements. The 11 Claude reader transcripts and partial Command Centre snapshot are also captured. Remaining access, redaction and review limits prevent an overall completeness claim.

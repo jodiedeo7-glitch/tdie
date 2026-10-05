@@ -60,3 +60,7 @@ Latest recovery: [CLAUDE-EXPORT-RECOVERY.md](CLAUDE-EXPORT-RECOVERY.md) supersed
 ## Native addendum — 5 October 2026
 
 [NATIVE-PROJECT-ADDENDUM.md](NATIVE-PROJECT-ADDENDUM.md) closes the five additional named native-document gaps. Eight native text exports are captured; 152 listing entries still lack full native contents. Exact private replacements: native-addendum-member-map.json. Reattached files verified against prior originals: reattached-source-map.json.
+
+## Remaining native recovery — 5 October 2026
+
+Latest recovery: [REMAINING-NATIVE-RECOVERY.md](REMAINING-NATIVE-RECOVERY.md). All 160 named native documents now have private captured replacements, including the remaining 152. Public maps expose safe provenance only. The 11 reader transcripts and 326 private Command Centre records are captured with explicit fidelity/review limits. Current gaps: MISSING-SOURCES.md.

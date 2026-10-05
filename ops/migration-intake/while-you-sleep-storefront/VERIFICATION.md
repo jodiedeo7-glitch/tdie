@@ -25,3 +25,7 @@ Claude recovery verification: outer ZIP CRC, all 87 manifest sizes/SHA-256 hashe
 ## Native addendum — 5 October 2026
 
 Native addendum outer CRC passed; all 12 manifest sizes/hashes match; total 13 files including manifest. Three exported repository counterparts match main exactly. Seven reattachments match prior private originals. Only migration intake files are committed; source fidelity/live-state limitations remain explicit.
+
+## Remaining native recovery — 5 October 2026
+
+Third recovery archive: CRC, exact 512-file inventory, all 511 manifest size/SHA-256 values, 152-to-152 requested-path equality, parsed JSON record counts, 147 continuous transcript turn blocks and 21 counterpart byte comparisons verified. Only intake files are updated; release/runtime not tested or changed.

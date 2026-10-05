@@ -77,3 +77,7 @@ New source snapshots: TDIE Website Claude Project instruction field and four mem
 ## Native addendum — 5 October 2026
 
 Additional native promo/status snapshots are fully preserved privately. Their explicit both-tier Saturday cutoff conflicts with current main fields. Keep source/version precedence and release hold; this collection does not change shared canon or authorize promotions. See NATIVE-PROJECT-ADDENDUM.md.
+
+## Remaining native recovery — 5 October 2026
+
+Recovered Human turn 5 in chat a04dc7bb establishes the Saturday both-tier cutoff and Monday 11 am reveal. Main/source alignment remains a collection conflict; no shared canon change or release clearance. See REMAINING-NATIVE-RECOVERY.md for evidence and Edge/Chrome, lock scope, render-cap and instruction precedence distinctions.

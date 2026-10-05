@@ -34,3 +34,7 @@ All five exported native texts were reviewed; the full pin log is 433 lines, 68,
 The seven additional project attachments all independently hash-match originals already retained in the main private companion. `reattached-source-map.json` records their supplied private IDs, sizes, hashes and existing exact replacement paths. The two workflow reports remain distinct, not duplicates of each other, and are not a full archived conversation transcript. The old September price/reference and audit-queue dates remain historical.
 
 The native listing now has **8 full document text exports and 152 metadata-only documents**, including shared and sibling-project sources. `claude-project-listed-source-map.json` updates the five recovered paths individually. Full transcripts, archived ChatGPT audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`, complete settings/history, live Command Centre, other unread native documents and earlier scoped media/delivery gaps remain unresolved. Overall collection is not claimed complete. This addendum closes the five named native-text gaps only.
+
+## Remaining native recovery — 5 October 2026
+
+The remaining 152 native-text capture gaps are now closed by REMAINING-NATIVE-RECOVERY.md. Exact founder pricing decision is in recovered transcript Human turn 5; decision uncertainty is superseded, repo alignment conflict remains. Overall completeness and direct native-byte fidelity are not claimed.

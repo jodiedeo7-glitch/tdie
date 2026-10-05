@@ -22,3 +22,7 @@ Additional private source: WYS-Missing-Sources-Claude-Export.zip, Library libfil
 ## Native addendum — 5 October 2026
 
 Additional private archive WYS-Native-Project-Files-Addendum-1.zip: libfile_9c3ed0cbf48c8191a6685c8e572cfa42, 67,778 bytes, SHA-256 814ff132bc5c341ad72d813eec0dfa25daf25512f7e33886cdae12f42b718561. Twelve manifest entries verified; 13 files including manifest. All full texts/diffs stay private; native-addendum-member-map.json supplies exact replacement references.
+
+## Remaining native recovery — 5 October 2026
+
+New unchanged private archive WYS-Remaining-Native-Project-Sources.zip: libfile_7efc1a53f4488191a8e370a86cc2eed7; 6,498,253 bytes; SHA-256 85197b4f854e0091189a38685ef9cec8c84e603abe7e5a54bb290a5f1fb6e797. All 511 manifest entries verified; 512 files including manifest. Member/outreach records and private strings remain private. Exact safe replacements: remaining-native-member-map.json, with sensitive original paths retained only in the private manifest.

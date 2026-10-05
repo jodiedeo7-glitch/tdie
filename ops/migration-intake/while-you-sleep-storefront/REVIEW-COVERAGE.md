@@ -33,3 +33,7 @@ Additional review coverage: see CLAUDE-EXPORT-RECOVERY.md and per-file maps. 88 
 ## Native addendum — 5 October 2026
 
 Five additional native-document text exports reviewed; all 12 addendum manifest rows and three repository counterparts independently verified. All seven reattachments hash-match earlier captured originals; prior review scope retained. Native listing is now 8 full exports plus 152 metadata-only entries.
+
+## Remaining native recovery — 5 October 2026
+
+See REMAINING-NATIVE-RECOVERY.md and per-member review fields. All 512 file byte streams verified; all 152 requested native paths match the prior missing list. Semantic review is scoped, not asserted exhaustive for large task/sibling/record archives. All human transcript turns and selected context reviewed; 21 counterpart comparisons independently checked.

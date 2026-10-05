@@ -62,3 +62,7 @@ Full additional procedures: the three Project originals, parent Windows recipes,
 ## Native addendum — 5 October 2026
 
 Full five native texts now mapped in native-addendum-member-map.json, including the 433-line pin log, product-of-record decision, promo/status records and historical launch-morning procedure. Preserve historical exceptions/examples without task activation.
+
+## Remaining native recovery — 5 October 2026
+
+Full additional native instructions, 11 transcript texts, prompt banks, historical task procedures/code/examples and exceptions are retained in the private remaining-native archive. Safe per-file mappings: remaining-native-member-map.json. Preserve complete originals and redaction limits; historical jobs remain inactive.

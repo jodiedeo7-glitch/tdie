@@ -102,3 +102,7 @@ Additional conflicts and dated history are recorded in CLAUDE-EXPORT-RECOVERY.md
 ## Native addendum — 5 October 2026
 
 See NATIVE-PROJECT-ADDENDUM.md for native/main promo differences, stale equality/canon-state assertions, complete historical pin log versus substantive repo recovery entry, product-boundary limitations and inactive launch-task exceptions. Premium cutoff disagreement remains recorded, not silently resolved.
+
+## Remaining native recovery — 5 October 2026
+
+The exact founder pricing decision is now captured, superseding earlier decision-evidence uncertainty. Repo alignment remains unresolved. Independently verified 21 native/repo counterparts: 5 equal, 16 different. Native task archives, paid/reference content and snapshot records retain historical scope. All detailed conflicts and omissions: REMAINING-NATIVE-RECOVERY.md.
