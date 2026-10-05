@@ -53,3 +53,24 @@ Read the current router and reconciliation, then follow its Metricool procedure 
   - Readback of both: title, description, alt text, destination https://www.skool.com/thedigitalincomeedit/about, media and time all match pins.csv exactly. Count of core pins in 5 Oct 10:00-15:00 window: 2.
   - AI disclosure: Metricool has no native AI-label field for Pinterest. The manifest's ai_label ON is intent only; the AI-generated photo disclosure is carried in the copy and alt text. A native label is NOT claimed.
   - SCHEDULED is not PUBLISHED. Publication to be checked after the slots pass.
+
+
+### Batch: core-pinterest-2026-10-06--11-catchup-v1
+- Packet: `ops/cloud-output/core-pinterest-2026-10-06--11-catchup-v1/README.md`
+- Exact copy/slots/hashes: `ops/cloud-output/core-pinterest-2026-10-06--11-catchup-v1/pins.csv`
+- Contract: `ops/cloud-output/core-pinterest-2026-10-06--11-catchup-v1/manifest.json`
+- Contact sheet: `ops/cloud-output/core-pinterest-2026-10-06--11-catchup-v1/contact-sheet.png`
+- Private packet folder: https://drive.google.com/drive/folders/1053LTR3S69x-cPEPkbml5fmJ9T5pVHVO
+- Private ZIP ID: `1n_kdLgHSizm8WFBVrCGcRIU73633Cece`; SHA-256 `d1d698c412b4773f472c9cf2aa4378c43a004367a51f63080ec481baf6f705a6` (Drive raw readback identical to local ZIP).
+- Exact pins.csv SHA-256: `d2d96f4774900e962b05f347f60fc18bdd4d6322d6355e18a491749986db0134`.
+- Created by: ChatGPT. Verified publisher: Claude for CORE_PINTEREST only, re-read before account writes.
+- Contact sheet approved: NOT REQUIRED, established canon ten-layout system under standing weekly creative authorization; no claim of individual contact-sheet approval. First-new-visual-system review still applies.
+- Pins READY: 24, four per day October6–11, 2026. Persona images still required: 0. New photo generations/spend: 0.
+- Status: READY / QA_PASSED. Prepared is not SCHEDULED or PUBLISHED. Provider IDs remain null until Claude executes and verifies.
+- Earliest proposed slot: 2026-10-06 08:00 America/New_York. Load the catch-up before that slot; do not wait for the Sunday Oct11 weekly run. If any slot has elapsed, use a permitted future slot and revalidate family spacing/rotation.
+- Scheduling: sort by date/time. Thursday and Sunday email/automation times are intentionally swapped. Five boards, no adjacent repeat, cousins >=72h; first email >=75h from preserved Monday freebie route.
+- Preserve Monday rows 388146134/8097789177337630272 (Oct5 11:00) and 388146190/4524484013037537713 (Oct5 14:00). Latest live read sees those two core rows only. Full-week28-pin coverage is not claimed; this batch fills Tuesday–Sunday.
+- Source/QA: current validator 0 errors; all24 full-size/thumbnail images reviewed; every public URL HTTP200 and exact SHA-256 verified against assets commit `e91744b88a21031a5390cfe6920bbf2a872b1bc3`. Exact asset IDs/hashes and source IDs are in manifest.json. Native AI label is intent only; truthful AI disclosure is in each description and alt.
+- Legacy backlog: POOL6 actual comparison recovered. Checklist05/07 angles rebuilt with new dated sourced copy. Four additional complete new copy variants06/08/09/10 remain HOLD in checklist-copy-holds.csv for current-brand PNGs and spacing; historical missing approved copy was not invented.
+- Claude action: re-read owner and current live Metricool7142540, resolve all five board IDs from current evidence, reconcile duplicates, schedule future exact READY rows through Metricool only, read back each result, then append actual IDs/times/boards/asset matches and any failures here. No Pinterest browser. Account lock/concurrency still applies.
+- Errors for READY rows: none. Execution remains pending. Amazon, Brand Closet, Legally Blonde, Premium and Daily Prompts are separate; WYS hold remains ACTIVE.
