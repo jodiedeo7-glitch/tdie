@@ -51,3 +51,8 @@ All eleven transcripts have continuous turn indices (147 turn blocks total). The
 4. Other Claude conversations beyond the eleven selected hits, unreturned transcript attachments/tool outputs, omitted strings, and exhaustive semantic review of large captured archives remain unverified or incomplete.
 
 Earlier scoped Canva visual/export, missing affiliate-media set, delivery/checkout and separately named continuation gaps remain in MISSING-SOURCES.md. The export's statement that no continuation file exists is not adopted as proof across all sources. Overall collection/review is not claimed complete despite closure of the 152 native-text capture gaps.
+
+
+## Native content review continuation — 5 October 2026
+
+See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.

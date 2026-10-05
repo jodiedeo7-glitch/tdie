@@ -66,3 +66,8 @@ Full five native texts now mapped in native-addendum-member-map.json, including 
 ## Remaining native recovery — 5 October 2026
 
 Full additional native instructions, 11 transcript texts, prompt banks, historical task procedures/code/examples and exceptions are retained in the private remaining-native archive. Safe per-file mappings: remaining-native-member-map.json. Preserve complete originals and redaction limits; historical jobs remain inactive.
+
+
+## Native content review continuation — 5 October 2026
+
+See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.

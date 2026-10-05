@@ -64,3 +64,8 @@ Latest recovery: [CLAUDE-EXPORT-RECOVERY.md](CLAUDE-EXPORT-RECOVERY.md) supersed
 ## Remaining native recovery — 5 October 2026
 
 Latest recovery: [REMAINING-NATIVE-RECOVERY.md](REMAINING-NATIVE-RECOVERY.md). All 160 named native documents now have private captured replacements, including the remaining 152. Public maps expose safe provenance only. The 11 reader transcripts and 326 private Command Centre records are captured with explicit fidelity/review limits. Current gaps: MISSING-SOURCES.md.
+
+
+## Native content review continuation — 5 October 2026
+
+See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.

@@ -106,3 +106,8 @@ See NATIVE-PROJECT-ADDENDUM.md for native/main promo differences, stale equality
 ## Remaining native recovery — 5 October 2026
 
 The exact founder pricing decision is now captured, superseding earlier decision-evidence uncertainty. Repo alignment remains unresolved. Independently verified 21 native/repo counterparts: 5 equal, 16 different. Native task archives, paid/reference content and snapshot records retain historical scope. All detailed conflicts and omissions: REMAINING-NATIVE-RECOVERY.md.
+
+
+## Native content review continuation — 5 October 2026
+
+See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.

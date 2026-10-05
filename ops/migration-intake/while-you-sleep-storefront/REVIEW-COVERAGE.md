@@ -37,3 +37,8 @@ Five additional native-document text exports reviewed; all 12 addendum manifest 
 ## Remaining native recovery — 5 October 2026
 
 See REMAINING-NATIVE-RECOVERY.md and per-member review fields. All 512 file byte streams verified; all 152 requested native paths match the prior missing list. Semantic review is scoped, not asserted exhaustive for large task/sibling/record archives. All human transcript turns and selected context reviewed; 21 counterpart comparisons independently checked.
+
+
+## Native content review continuation — 5 October 2026
+
+See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.
