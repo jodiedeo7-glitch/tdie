@@ -74,3 +74,7 @@ See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scop
 ## Additional Claude chats — 5 October 2026
 
 See [ADDITIONAL-CLAUDE-CHATS.md](ADDITIONAL-CLAUDE-CHATS.md) and [additional-claude-chat-map.json](additional-claude-chat-map.json): two complete supplied reader-text exports preserved privately, hashes/turn numbering verified, exact review limits and historical decisions recorded. Other/unsearched chats and original-platform fidelity remain open; current release hold and scope are unchanged.
+
+## Command Centre recovery — 5 October 2026
+
+See COMMAND-CENTRE-RECOVERY.md and command-centre-recovery-map.json: 131 verified private JSON records, 133 mapped archive files. Known pins/style/queue/live/traffic capture gaps are recovered; replies is reported empty. Of 24 earlier queue records, 23 are exact duplicates and one differs; both versions retained. September 20 metrics remain historical. Unknown collections, exhaustive prose/image review and current live state remain unverified. The full archive remains private at `libfile_1320c252d3508191819dba283426cb9a`. This addendum supersedes earlier missing-known-collection statements, not governing release instructions.

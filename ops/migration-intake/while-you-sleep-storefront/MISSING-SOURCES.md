@@ -10,7 +10,7 @@ Both October 2 audit/handoff originals, the Legally Blonde factory text, five ad
 
 - ChatGPT archived audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`, other unsearched Claude chats and native completeness of attachments/tool outputs within the thirteen captured reader transcripts.
 - Complete Project settings/source-membership export and edit history. TDIE Website Claude instruction-field snapshot is not WYS ChatGPT settings.
-- Complete Command Centre: pins, stylerefs, replies, Instagram queue page 3, historical `live/numbers` and `traffic` records, and unknown additional collections. A private snapshot of 2 locks, 24 queue records and 300 engagement records is captured; current live ownership/runtime remains unverified.
+- Unknown additional Command Centre collections and present live ownership/runtime remain unverified. The private exports now capture 70 pins, 7 style references, 52 queue records, historical live/numbers and traffic, plus the earlier 2 locks and 300 engagement records. Empty replies is exporter-reported. See COMMAND-CENTRE-RECOVERY.md; the previously blocked named collections are no longer missing from the supplied exports.
 - The 152 remaining native text exports are now captured: all 160 named native documents have replacements. Direct native-byte fidelity, original values behind 15 redactions and exhaustive semantic review of large captured task/sibling/record archives remain unverified or incomplete. See REMAINING-NATIVE-RECOVERY.md and per-source maps.
 
 ## Searched or referenced, not supplied
@@ -30,3 +30,7 @@ All useful captured procedures remain in full private originals. Differential te
 ## Two additional chats — 5 October 2026
 
 ADDITIONAL-CLAUDE-CHATS.md and additional-claude-chat-map.json capture the Amazon group-post and Command Centre build chats. Search completeness remains open. Dashboard tool parameters identify historical live/numbers and traffic/2026-09-20 references; these are not full current snapshots. Redaction and review limits are recorded per file.
+
+## Command Centre recovery — 5 October 2026
+
+The new private archive and all 131 manifest records are independently hash/size verified and mapped. Exhaustive record prose and embedded-image visual review remain uncertified. Known collection capture gaps are closed for this reported snapshot, not for unknown collections or current live state.
