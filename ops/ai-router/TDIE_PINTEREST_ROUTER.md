@@ -1,3 +1,5 @@
+> **Current core Pinterest reconciliation (4 October 2026):** Read `ops/ai-router/CORE_PINTEREST_RECONCILIATION_2026-10-04.md` first. It supersedes conflicting legacy browser, ownership-fallback, missing-source and vocabulary instructions below. This repository edit does not change live tasks or prove a publishing cutover.
+
 # TDIE PINTEREST ROUTER
 
 > **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
@@ -19,7 +21,7 @@ If these sources conflict, canon and the live business state win.
 ## Ownership
 
 ### ChatGPT owns creation
-ChatGPT produces the finished, browser-ready batch:
+ChatGPT produces the finished, Metricool-ready batch:
 - source selection
 - search-first topic angles
 - overlays
@@ -37,22 +39,13 @@ ChatGPT produces the finished, browser-ready batch:
 - `pins.csv`
 - scheduling manifest
 
-ChatGPT must not schedule pins in Pinterest unless explicitly asked to perform the browser execution task.
+Publishing ownership is established by the reconciliation's live owner check, not by the creative role.
 
 ### Gemini/Higgsfield owns person photography
 Only when a selected layout genuinely requires Tommy Kate. Follow the standing image rules and tool order. The image tool returns only the source photo. It does not create Pinterest text or layout.
 
-### Claude owns Pinterest execution
-Claude receives finished PNGs and a complete scheduling manifest. Claude only:
-1. checks the current scheduled queue
-2. confirms the proposed slots remain valid
-3. uploads finished PNGs
-4. fills metadata
-5. schedules
-6. verifies from the scheduled-pins view
-7. logs discrepancies
-
-Claude does not research topics, rewrite copy, design pins, or generate new layouts during the browser run. If a finished asset is invalid, Claude skips it and reports the exact issue instead of redesigning it in-browser.
+### Verified operator owns Metricool execution
+The verified publisher receives finished PNGs and a complete manifest, reconciles live Metricool state, schedules, reads back each result and logs discrepancies. Follow the reconciliation's execution procedure. No research, copy rewriting or creative generation during scheduling.
 
 ## Standard batch contract
 Each production packet contains:
@@ -83,14 +76,11 @@ Valid status values:
 - Lockup on every TDIE pin
 - Five approved boards rotate with no consecutive repeat
 - Close cousins at least 3 days apart
-- Never use the phrase `Make Money Online` in pin copy
+- No banned vocabulary list; verify claims and facts.
 - First run of a new visual system requires Jodie to see the contact sheet before scheduling
 
-## Browser rule
-The browser is for Pinterest state and scheduling only. Creative generation does not happen inside the Pinterest browser session.
-
-## Failure rule
-For blank/frozen/session errors, exhaust the browser fallback procedure in the execution job while holding the correct lock. Account warnings, unknown lock ownership and ambiguous write outcomes still hold the operation. Reconcile uncertain saves before retry. Do not change the creative packet. Record unscheduled rows as `READY` with the failure reason.
+## Execution and recovery
+Use Metricool only for scheduling, editing, deleting and scheduled-state verification. Follow the reconciliation for ownership, concurrency, partial results and unsupported AI-label behavior. Never retry ambiguous writes blindly.
 
 ## Final manifest gate
 Run `ops/scripts/validate_pins_manifest.py` on pins.csv before handing it to the operator. Use America/New_York, approval=PENDING/APPROVED/REJECTED, persona_required=YES/NO, ai_label=ON, and exact SHA-256 of the PNG. READY requires approved finished assets. A 1000x1500 header/hash check is not decoding or visual QA; inspect the image, overlay, claims, board rotation, lockup and approved fonts separately. Never use a core manifest to operate Amazon pins.

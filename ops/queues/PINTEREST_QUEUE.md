@@ -1,9 +1,11 @@
+> **Current core Pinterest reconciliation (4 October 2026):** Read `ops/ai-router/CORE_PINTEREST_RECONCILIATION_2026-10-04.md` first. It supersedes conflicting legacy browser, ownership-fallback, missing-source and vocabulary instructions below. This repository edit does not change live tasks or prove a publishing cutover.
+
 # PINTEREST EXECUTION QUEUE
 
 > **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
 
 
-This queue contains browser-only Pinterest work.
+This queue contains core Pinterest Metricool execution work for the verified publisher.
 
 ## Entry template
 
@@ -16,15 +18,8 @@ This queue contains browser-only Pinterest work.
 - Earliest proposed slot: <date time ET>
 - Status: WAITING / RUNNING / PARTIAL / VERIFIED / BLOCKED
 
-### Claude execution
-1. Read `ops/ai-router/TDIE_PINTEREST_ROUTER.md`.
-2. Open Pinterest scheduled pins and count the next 7 days.
-3. Reconcile proposed slots against what is actually scheduled.
-4. Schedule only rows marked `READY`.
-5. Use one fresh composer tab per pin.
-6. Verify every scheduled pin from the scheduled-pins view.
-7. Update the packet CSV statuses to `VERIFIED` or `FAILED`.
-8. Report only exceptions plus verified count.
+### Verified publisher execution
+Read the current router and reconciliation, then follow its Metricool procedure against the exact packet. Verify ownership before writes. Record per-row platform IDs, observed scheduling state, readback evidence and failures. Do not open Pinterest to schedule or verify scheduled state.
 
 ### Never do in this queue
 - topic research

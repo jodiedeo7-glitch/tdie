@@ -1,3 +1,5 @@
+> **Current core Pinterest reconciliation (4 October 2026):** Read `ops/ai-router/CORE_PINTEREST_RECONCILIATION_2026-10-04.md` first. It supersedes conflicting legacy browser, ownership-fallback, missing-source and vocabulary instructions below. This repository edit does not change live tasks or prove a publishing cutover.
+
 ## Migration preflight
 
 NOT ACTIVATED. This file is an instruction packet, not a created or edited scheduled task.
@@ -10,50 +12,10 @@ Voice: Jodie except Premium member calendar and TDIE Instagram, which use Tommy 
 VERIFY: re-read the live object before claiming any account operation complete. For research/files, inspect the saved result and all required QA. Keep scheduled, published and delivered evidence separate.
 REPORT: follow `ops/cloud-kit/CLAUDE_SOURCE_CHECK_RULE.md`; one factual success line when all checks passed, material exceptions only. Full deliverables are not shortened.
 
-# JOB: TDIE PINTEREST SCHEDULING, CLAUDE
+# JOB: CORE PINTEREST METRICOOL EXECUTION
 
-## Purpose
-Schedule a finished TDIE Pinterest packet. This is a browser execution job, not a creative job.
+Read the current router, reconciliation, queue and exact packet. This job filename does not establish Claude as the live publisher.
 
-## Read first
-- `ops/ai-router/TDIE_PINTEREST_ROUTER.md`
-- `ops/queues/PINTEREST_QUEUE.md`
-- the packet `manifest.md` and `pins.csv`
+Follow all seven Metricool execution steps in the reconciliation. Execute only if the live ownership check establishes this operator. Preserve packet metadata and approval evidence. Do not research, rewrite, regenerate or redesign during scheduling. An occupied slot or topic collision holds the row for reconciliation; do not silently change approved timestamps.
 
-## Hard boundary
-Do not research, rewrite, redesign, regenerate, or improvise creative during this run.
-
-If a pin is invalid, skip it, mark it failed, and state the exact problem.
-
-## Run
-1. Take the current TDIE browser lock before opening Pinterest.
-2. Open the scheduled-pins view in a fresh tab.
-3. Apply the current Pinterest blank-page/wall safety rule.
-4. Count scheduled pins for the relevant period.
-5. Reconcile proposed slots in `pins.csv` with actual open slots. Preserve cadence and topic spacing.
-6. Schedule rows marked `READY` only. One fresh composer tab per pin.
-7. Upload the provided PNG.
-8. Copy title, description, alt, link, board, date, and time exactly from the manifest, with no silent date/time change. An occupied slot or topic collision holds the row until a replacement slot is approved.
-9. Turn the AI-generated label on.
-10. Close the composer tab after each pin.
-11. Verify the finished schedule from a fresh scheduled-pins tab.
-12. Update each row to `VERIFIED` or `FAILED`.
-13. Release the browser lock even after failure.
-
-## Report
-Report only:
-- number verified
-- dates covered
-- failed/skipped rows and why
-- whether Pinterest was walled or unstable
-
-Do not give a long narrative.
-
-## Browser recovery boundary
-Do not bypass an account warning, approval, unknown lock owner or unsupported platform action. Recover UI/session failures within the held lock. The following legacy fallback applies to an operator with those tools; it does not assert those browsers or SendUserMessage exist in another runtime. Use the verified equivalent route and ordinary failure report when unavailable. Never claim unavailable tools were tried.
-
-BROWSER FALLBACK RULE (standing instruction from Jodie, added 27 Sep 2026; overrides any earlier line in this prompt that says to stop the moment a browser, tab or sign-in problem appears):
-If a tab freezes, a site isn't signed in, a control stops responding, or the browser otherwise won't cooperate, do not stop or report yet.
-1. Try every other route first: switch browsers (her Chrome via Claude in Chrome <-> the built-in browser in the Claude desktop app, in either direction, whichever this prompt named first), open a fresh tab, and check whether the other browser is already signed in to the site. Never type a password.
-2. If every route is exhausted, try all likely fixes and resets: reload the page, close and reopen the tab, wait 30 to 60 seconds and retry, clear the stuck state (close any open composer or modal, discard only drafts this run created), and reconnect or re-select the browser.
-3. Only then give Jodie a fail notice through SendUserMessage: what failed, what you tried, and her exact numbered next steps (for example: open Chrome, sign in to X, then re-run this task). Keep the browser lock and reporting rules above.
+Report verified scheduling count, dates covered, failed/held rows and precise reasons. Record platform IDs and readback evidence in the packet. Never report published based on scheduled state. No Pinterest browser fallback.
