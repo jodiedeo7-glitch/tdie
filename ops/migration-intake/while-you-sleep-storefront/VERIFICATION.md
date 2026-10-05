@@ -17,3 +17,7 @@ Outstanding: full conversation/settings exports, referenced external originals a
 ## Additional recovery verification
 
 The recovered maps retain hashes, byte sizes and exact replacement paths. All nine additional ZIPs passed CRC checks; selected full prompt and native document text captures are preserved privately. Additional coverage and compiled/visual/shared-document limits are explicit in RECOVERED-SOURCES.md. Final saved companion and public commit readback are recorded in PRIVATE-COMPANION.md and the completion report.
+
+## Claude export addendum — 5 October 2026
+
+Claude recovery verification: outer ZIP CRC, all 87 manifest sizes/SHA-256 hashes, inner 13-file kit CRC/hashes and factory export-to-repository byte equality checked. 40 listed members match prior companion hashes. Repository update is restricted to this intake folder; no runtime verification or live operations.

@@ -54,3 +54,7 @@ The affiliate checkpoint preserves 20 captions with six platform variants each, 
 ## Recovered complete variants
 
 See recovered maps and private `recovered-sources/capture/`: Drive D001 live-test report, D007 multi-tab state, D009 management packet, D015 owner handoff, D031/D054/D063 recipe variants, D030 tasks, D032 setup and D036 repaired setup; D040/D041 full PDF extractions; D042–D056 complete numbered kit/audit sources; D064 KIT6, D065 management archive, D066 KIT5 test input. All full procedures, examples and exceptions remain in exact originals or native text captures, with dates where available. Git variants, their source HTML/renderers/PDFs/ZIPs, PR evidence and full selected task prompts are preserved independently. No variant is silently promoted into the release.
+
+## Claude export addendum — 5 October 2026
+
+Full additional procedures: the three Project originals, parent Windows recipes, CLEAN RUN recipes/evidence/logs and first-tested 13-file kit are preserved at exact private ZIP members in the two claude-export maps. Keep versions distinct; patched procedures do not replace the original first-tested kit. Consult CLAUDE-EXPORT-RECOVERY.md for review scope and exceptions.

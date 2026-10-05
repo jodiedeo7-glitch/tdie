@@ -25,3 +25,7 @@ Historical PASS/FAIL reports are recorded as their authors' dated conclusions. N
 ## Additional recovery
 
 RECOVERED-SOURCES.md is the controlling scope statement for the 66 Drive objects, 314 branch blobs plus three governing files, 277 additional archive member mappings, selected task-export prompts and nine PR discussions. Earlier review counts describe the earlier phase and are not deduplicated totals.
+
+## Claude export addendum — 5 October 2026
+
+Additional review coverage: see CLAUDE-EXPORT-RECOVERY.md and per-file maps. 88 exported files retained; manifest sizes/hashes verified; Windows procedures reviewed directly/differentially; 160 native Project listing records reviewed as metadata, only three full original documents provided.

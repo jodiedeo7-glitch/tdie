@@ -27,3 +27,7 @@ A retrieved context reference mentioned another original Claude-copy filename an
 ## Review and preservation limits
 
 All returned Canva text was captured and compared with prior captures; substantive novel passages were reviewed. The comparison was heuristic, not a proof of exhaustive line-by-line review. General shared factory code was not fully semantically audited. The recovered memory and repository counterpart were read in full. No source-side edits, publishing, settings changes or automation execution occurred.
+
+## Claude export addendum — 5 October 2026
+
+Historical gap status superseded by CLAUDE-EXPORT-RECOVERY.md: exported Legally Blonde original now independently matches the repository text; October 2 originals and exported Windows files are recovered. Native source raw-byte fidelity and remaining access limits are still explicit.

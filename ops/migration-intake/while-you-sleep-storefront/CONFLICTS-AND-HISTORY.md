@@ -94,3 +94,7 @@ The private source text preserves the exact operational details and commercial v
 ## Further recovered variants
 
 See MISSING-SOURCE-FOLLOWUP.md for Canva workflow/branding conflicts, unverified draft claims, scoped factory exceptions, defective-copy status and historical teaser plans. None has been promoted into current canon.
+
+## Claude export addendum — 5 October 2026
+
+Additional conflicts and dated history are recorded in CLAUDE-EXPORT-RECOVERY.md: instruction-field precedence, initial versus patched kit, browser versus API delivery, manual PULL versus automatic deletion, Premium cutoff ambiguity, and limited conversation-summary fidelity.

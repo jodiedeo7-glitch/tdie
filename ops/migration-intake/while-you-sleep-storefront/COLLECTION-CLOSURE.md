@@ -23,3 +23,7 @@ Current main inspected at `2f2c573af26ac684e54799618e1e3397913a718b`. AGENTS and
 A targeted context search for both exact October 2 files and archived conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9` returned path references, not file contents or a retrievable original link. Older October 1 sandbox artifact paths appeared only as prior assistant claims and remain unverified references, not newly recovered files. No full transcript or settings export became accessible.
 
 Remaining hard gaps are listed in MISSING-SOURCES.md: the two exact October 2 files; original Claude project-only sources including the exact Legally Blonde factory; full conversations/settings; referenced local Windows and other unexposed originals. Native Canva visual/export and live buyer-delivery verification limits remain. Further repetition of the same searches cannot certify those sources. Nothing in this intake activates historical work or changes shared canon, project settings, schedules, publishing or production workflows.
+
+## Claude export addendum — 5 October 2026
+
+Historical gap status superseded: three Project originals, four memory snapshots and 58 Windows files were supplied on 5 October and verified as exported bytes. See CLAUDE-EXPORT-RECOVERY.md. This does not resolve full transcripts, native settings or 157 unexported native documents.

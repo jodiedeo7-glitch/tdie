@@ -1,28 +1,27 @@
 # Remaining missing sources and review limits
 
-Updated 5 October 2026 UTC. Earlier Drive/branch/PR gaps are resolved only to the precise extent in RECOVERED-SOURCES.md.
+Updated 5 October 2026 UTC after user-provided Claude export verification. See CLAUDE-EXPORT-RECOVERY.md and the three new maps for exact recovery scope.
 
-## Not exposed
+## Recovered, no longer missing
 
-- Full Project conversation transcripts and archived audit conversation; only visible conversation, injected standing instructions and scoped Personal Context retrieval were accessible. No hidden transcript access claimed.
-- Fresh Project settings/source-membership export; injected instructions are not a settings export.
-- Live Claude project-only originals, Command Centre records/lock, local Windows CLEAN RUN and continuation files, and project memory `/projects/019f5db9-3cdf-75bc-b605-1385bbd98ace/preferences.md`. References in exports are preserved, not proof those originals were read.
+Both October 2 audit/handoff originals, the Legally Blonde Project text, four memory snapshots, Project instruction field and 58 exported Windows files are preserved in the private export. Factory text matches the inspected repository copy independently. Eleven conversations are excerpt summaries only. This session accessed exported files, not their live source systems.
 
-## Searched, not found
+## Native sources not exposed
 
-- `WYS_AUDIT_2026-10-02.md` and `HANDOFF_WYS_THREAD_2026-10-02.md`: no exact matches in scoped Library and Drive searches, branch-tip searches or full unshallowed Git historical filename search.
-- `claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` is referenced by the recovered full task/base prompt but absent from inspected main. The repository factory counterpart is now captured in the private supplement; it does not establish byte equivalence to the Claude original.
-- Referenced FlatLay archive folder returned an empty listing; this does not prove deletion or recover prior images from other conversations.
+- Full conversation transcripts and ChatGPT archived audit conversation `6abae4e3-d318-83ea-a008-9926c3e9e1d9`.
+- Complete Project settings/source-membership export and edit history. TDIE Website Claude instruction-field snapshot is not WYS ChatGPT settings.
+- Live Command Centre records/lock and live account/runtime/scheduler state.
+- Full contents of 157 documents named in the native Claude Project listing. See claude-project-listed-source-map.json. Five relevant native documents are WYS_LAUNCH_STATUS.md, WYS_PROMO_FACTS.md, LB_PIN_LOG.md, WYS_PRODUCT_OF_RECORD_2026-10-03.md and storefront-launch-morning-prompt-2026-10-02.md, all under claude/. Existing repo counterparts do not prove native-version equivalence.
 
-## Referenced but not retrieved/certified
+## Searched or referenced, not supplied
 
-- Native Canva design exports and full visual/source-side editable-state certification: 25 live design richtext captures are now preserved, including the exact archived 43-page design ID. See MISSING-SOURCE-FOLLOWUP.md. Original project-only Claude guide, actual Beacons checkout/entitled buyer delivery, member/Premium delivery and affiliate enrollment remain unretrieved.
-- Current scheduler/account state, Amazon destinations, current posted content, browser lock and production runtime. Drive state/scheduler documents and a 57-record Claude task export were retrieved as dated snapshots, not live operations.
-- Ambiguous Pasted text files, external room/voice/style references or files in other conversations without an established source identity. External fonts/browser installations and full sibling build dependencies are not a captured reproducible runtime.
-- Original affiliate media export set missing from the prior checkpoint; later smaller review edition is not its completion.
+- A separately named continuation file; the exported evidence/log files are available but do not prove no other file exists.
+- Referenced FlatLay archive folder returned an empty listing; this does not prove deletion.
+- Original affiliate media export set absent from the earlier checkpoint; later smaller review edition does not complete it.
+- Ambiguous pasted-text references and files in other conversations without established identity.
 
-## Review scope, not access claims
+## Access or review certification limits
 
-Full useful project instructions/procedures/examples/exceptions are retained and reviewed directly or differentially. Shared multi-project documents and task export are reviewed only for WYS and applicable standing instructions. Branch-tip blobs are captured, not every intermediate historical commit. Structured records received field/prose inspection; compiled asset bundle bytes are retained with source generator, not independently audited. Contact sheets are intake review, not full-resolution OCR or all-page PDF layout certification. See per-source maps and RECOVERED-SOURCES.md.
+Native Canva visual/editable exports remain unprovided: 25 richtext captures, including the exact archived 43-page design ID, are retained (MISSING-SOURCE-FOLLOWUP.md). Actual Beacons checkout, entitled buyer/member/Premium delivery and affiliate enrollment are not certified. External style/room references and installed runtime dependencies are not a reproducible environment. Source model/platform claims are historical, not independently current-verified.
 
-No source is labelled inaccessible merely because it was not opened. These distinctions remain part of the package; the overall migration is not claimed complete.
+All useful captured procedures remain in full private originals. Differential text review and reused byte-identical asset review are labelled; not every intermediate Git commit, PDF layout, compiled bundle or native document was semantically audited. No overall completeness claim while these sources remain unread.

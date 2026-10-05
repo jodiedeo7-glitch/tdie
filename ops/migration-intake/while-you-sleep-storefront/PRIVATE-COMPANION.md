@@ -14,3 +14,7 @@ No private operational record, credential or paid-kit payload is copied into the
 ## Recovered-source supplement — 5 October 2026 UTC
 
 Private artifact: `libfile_b0177461c9f08191b9738f77aa20c1d1`, version 0, file ID `file_000000005a7c81f5b747761c1754c2a6`. Filename: `While-You-Sleep-Storefront-Recovered-Sources-Supplement.zip`. Size: 464,122 bytes. SHA-256: `9bbf507723753bc1a9ba52b8eb2e3641a9a232b5ac86c51020cff2d109c8d816`. Independently materialized saved version matched that hash, passed ZIP CRC, and verified all 33 manifest entries (34 ZIP members including manifest). See `found-source-map.json` for exact replacement members. The original companion remains intact.
+
+## Claude export addendum — 5 October 2026
+
+Additional private source: WYS-Missing-Sources-Claude-Export.zip, Library libfile_a39c077b80508191b06e78bcdda6b953; 25,639,580 bytes; SHA-256 537b983afaf0ca6792a9a9b907f5c463cdf0aa0355db5ee43dc03f7febfe3973. 87 independently verified manifest rows, 88 files including manifest; nested kit 13 files. Exact replacements: claude-export-member-map.json and claude-export-nested-member-map.json. Original export remains private and unchanged.

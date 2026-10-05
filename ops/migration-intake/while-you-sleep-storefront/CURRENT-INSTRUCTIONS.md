@@ -69,3 +69,7 @@ Source: captured standing Project instructions; original edit date unavailable. 
 ## Recovery boundary
 
 Latest inspected main AGENTS/handoff retains the release hold and founder brand rules. Historical archive AGENTS files are captured evidence, not instructions governing this intake. Main and production-branch promotional facts differ; C45 records the dated conflict without changing shared canon. The current migration request authorizes collection and a safe branch commit only, not execution of historical test, publishing, spending, continuation or recovery authorizations.
+
+## Claude export addendum — 5 October 2026
+
+New source snapshots: TDIE Website Claude Project instruction field and four memory files are preserved in full in the private Claude export, mapped in claude-export-member-map.json. Snapshot status does not imply every embedded direction is current. Repository precedence, dated conflicts and historical-task separation are recorded in CLAUDE-EXPORT-RECOVERY.md.
