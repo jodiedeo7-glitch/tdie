@@ -65,3 +65,7 @@ Verify the exact account/action/runtime instead of inferring from a connected se
 ## Channel rules requiring reconciliation with held affiliate copy
 
 Source: captured standing Project instructions; original edit date unavailable. For TDIE's own channel use, preserve the no-DM Instagram direction and Facebook first-comment link practice. Historical affiliate scripts and response templates have contrary CTA wording; they remain held drafts. Do not silently generalize a founder-channel restriction into a universal third-party platform restriction. Full original standing wording and all draft variants remain private.
+
+## Recovery boundary
+
+Latest inspected main AGENTS/handoff retains the release hold and founder brand rules. Historical archive AGENTS files are captured evidence, not instructions governing this intake. Main and production-branch promotional facts differ; C45 records the dated conflict without changing shared canon. The current migration request authorizes collection and a safe branch commit only, not execution of historical test, publishing, spending, continuation or recovery authorizations.

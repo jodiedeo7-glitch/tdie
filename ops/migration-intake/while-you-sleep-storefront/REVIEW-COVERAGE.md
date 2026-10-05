@@ -21,3 +21,7 @@ The remaining review used 12-token exact-match shingles against already reviewed
 The private companion includes the review script, complete differential map and chunks, source notes, kit diffs and binary review maps. Shared canon snapshots were limited to WYS-related records and applicable surrounding rules; other-project text remains preserved privately but is outside this project's semantic review. All 67 standalone project rasters were inspected previously; the continuation added 26 nested rasters and 31 repository rasters. Contact sheets are intake evidence, not full-resolution OCR or typography certification.
 
 Historical PASS/FAIL reports are recorded as their authors' dated conclusions. No renderer, captured task, scheduled workflow or source prompt was executed. Source code review and ZIP integrity do not prove live behavior. Missing exports and external originals remain listed in MISSING-SOURCES.md.
+
+## Additional recovery
+
+RECOVERED-SOURCES.md is the controlling scope statement for the 66 Drive objects, 314 branch blobs plus three governing files, 277 additional archive member mappings, selected task-export prompts and nine PR discussions. Earlier review counts describe the earlier phase and are not deduplicated totals.

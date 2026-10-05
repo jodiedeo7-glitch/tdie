@@ -1,15 +1,12 @@
 # Restricted source companion
 
-Saved privately on 4 October 2026 as `While-You-Sleep-Storefront-Private-Migration-Companion.zip`, version 2.
-Authorized private source identity: `libfile_a318e43257e88191813ac3f67ef40d1c`.
-This is an opaque access-controlled reference, not a public download link or an access grant.
+Saved privately as `While-You-Sleep-Storefront-Private-Migration-Companion.zip`, version 3. Authorized private identity: `libfile_a318e43257e88191813ac3f67ef40d1c`. Opaque reference only; this is not a public access grant.
 
-Verified archive: 36,894,740 bytes, 371 entries.
-SHA-256: `c113593471b0030aad2e9bfb96c60ed22d0398bbe9cb848c962271c6dcc29e92`.
-The saved version was materialized separately and its bytes, ZIP CRCs and every manifest checksum verified. Version 2 adds the completed continuation review and supersedes the initial intake companion.
+Verified saved archive: 219,913,808 bytes, 1061 entries.
+SHA-256: `cbbf5ae3cc5e210d5949f4e0db2dfa7c61affd36a9df583f4f091c237ad0bc4c`.
 
-Contents: exact seven attachment originals; standalone textual/PDF sources; complete extracted archive and PDF text; full standing instructions supplied in context; relevant conversation decisions and scoped retrieved excerpts; private source identities; visual intake sheets; complete differential review, kit comparisons, continuation notes and repository PDF extractions; integrity manifest. Full procedures, examples and exceptions remain verbatim, including historical and contradictory variants.
+Version 3 was independently materialized. Full archive SHA-256, CRCs and all 1060 manifest checksums matched. It supersedes version 2 while retaining the earlier captures. It adds 66 Drive source objects, captured branch variants and original ZIPs, exact extracted archive members, selected complete task-export prompts, PR evidence and review artifacts. See RECOVERED-SOURCES.md for precise overlaps and review limits.
 
-Original later ZIPs and standalone raster images remain in their existing private source objects. Resolve the public L-number through `source-inventory-private.json` inside the companion. It records exact source identity, path, byte size and SHA-256. `archive-member-map.json` in the public package maps each member to its retained original archive; extracted text is additional reading material, not a substitute for the original binary.
+Full useful instructions, procedures, examples and exceptions remain verbatim in original files or native text captures, including conflicting and historical editions. Public replacement paths resolve relative to the companion archive root. Original private source IDs/dates resolve through its maps. Earlier standalone raster/ZIP originals also remain at their authorized original source references.
 
-No private code, credential, operational account record or paid customer kit is intentionally included in the public intake. Access-controlled originals and this companion must not be committed, made public or executed. Existing repository sources are retained by immutable reference without copying their private contents here. Source exposure already present elsewhere in the repository was not changed by this collection.
+No private operational record, credential or paid-kit payload is copied into the public intake. Do not publish, execute or install the companion. Historical authorizations and task prompts are collection evidence only.

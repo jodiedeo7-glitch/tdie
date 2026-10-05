@@ -70,3 +70,23 @@ All findings below are collection observations, not repairs or authorizations.
 | C40 | Computer-use diagnostic, 3 Oct | Local shell recovery, missing browser controls and retracted install advice are dated observations. Installed skills or connection UI do not establish callable actions; unresolved root cause is not a present migration access blocker. |
 
 The full detailed continuation notes, comparisons and findings remain in the restricted companion. Approval mode, labor mode and runtime capability are separate questions. No held test calendar, marketing sequence, historical launch instruction or recovery task was activated.
+
+## Recovered conflicts and evidence (5 October continuation)
+
+| ID | Source/date | Finding and disposition |
+|---|---|---|
+| C41 | D001 updated 3 Oct; D065 Oct 1–2 snapshots | Later report says native Pin destinations were corrected to the exact Idea List and Instagram went live; older provider records retain storefront-home links. Provider storage can lag native edits. No fresh live readback or inferred reversion. |
+| C42 | D001, D009, owner handoffs | Original kit FAIL; repaired system PARTIAL; fresh unattended source-to-publication run not established. Accelerated 11:15/11:30 test does not prove ordinary three-day spacing. Delivery remains a separate unverified gate. |
+| C43 | D015/D064 and branch versions | KIT6 has a 61-page guide plus 15-page prep PDF; KIT5 has an 81-page guide; manual edition has 19+15-page PDFs and 36 fields; Claude original has twelve text files plus PDF; other candidates have 14-page guides. Distinct products/versions, not interchangeable release evidence. |
+| C44 | Branch PRODUCT_OF_RECORD, 3 Oct | Claude original is designated product of record while ChatGPT architecture and automatic KIT6 remain uncertified variants. Preserve scope and branch provenance; release hold remains. |
+| C45 | cloudflare-migration WYS_PROMO_FACTS/COPY, 4 Oct; main handoff | Branch amendment says reveal 5 Oct 11 am ET and member prices end 10 Oct 2 pm; main handoff has other member-code timing. Planned public launch 10 Oct 2 pm, launch price through 12 Oct, regular price 13 Oct. Do not resolve by rewriting canon; all promotional execution remains held. |
+| C46 | Historical guides, audits and image rules | Seedream/Gemini routes, Pro 2K-only controlled-test exception and later Midjourney allowance have different dates/scopes. Zero additional credits belongs to the spent test policy, not a universal budget. Preserve full wording. |
+| C47 | Task export, 4 Oct | Duplicate Facebook first-comment and launch-morning tasks exist. WYS last-call and test-cancellation records are enabled in this export; other WYS-named records are paused. Seven CLEAN RUN/LB records are enabled. Historical schedules and enabled flags are not current authorization or live status. No tasks changed. |
+| C48 | CLEAN RUN task 4 versus task 6, updated 3 Oct | Check task expects signed-out Idea List review; newer pull sweep says use Amazon Manage content Status instead because that task cannot open signed-out windows. Preserve the unresolved task-to-check mismatch. Secret-board TEST exception belongs to isolated test, not ordinary public publishing. |
+| C49 | D065 actual archive versus historical report | Retrieved archive is 43,908,521 bytes, SHA-256 2f48914b3ab6a6f971d722c37277c8d1fbca0741b758013caf7f95ddc8918dd7; historical reported byte/hash differs. Preserve as actual retrieved variant, never silently equate. D064 is byte-identical to branch KIT6. |
+| C50 | D006 on-demand test | Native text is empty; independent plain export is BOM only. No runnable prompt recovered. Do not fabricate it from surrounding reports. |
+| C51 | Older legal/model-price audits | Citation tokens and dated claims are preserved as reported research, not independently verified present law, pricing or tool capabilities. |
+| C52 | LB task/base and current founder rules | Overnight Oct 4 amendment overrides older pre-7-am prohibition; Metricool overrides Pinterest-browser scheduling; ownership/hold checks remain. Shared browser fallback does not override AGENTS MailerLite plugin-only rule. Historical instruction to run/publish is inactive in this intake. |
+| C53 | D065 recovery code/state | Planner fixtures prove only simulated guard behavior. Single-writer lease file and generated worker bytes do not establish unattended customer operation. Old logs, provider numeric IDs and master records differ; stable UUID reconciliation is required before any future separately authorized execution. |
+
+The private source text preserves the exact operational details and commercial values. Collection makes no launch, source-of-truth merge or workflow repair.

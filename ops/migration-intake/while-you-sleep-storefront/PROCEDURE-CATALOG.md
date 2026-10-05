@@ -50,3 +50,7 @@ The 110-page `WYS-System-Guide.pdf` contains complete maintenance/renewal and tr
 The repository's twelve-file Claude kit, setup/presale PDFs, render sources, four simulated buyer interviews/calendars/task files, desk runs, findings, blog-half review and test reports remain mapped by immutable original reference. Test fixture paid-content examples are not republished into this intake. The repository ZIP's 13 members exactly match those mapped originals.
 
 The affiliate checkpoint preserves 20 captions with six platform variants each, ten scripts, three emails, twelve response templates, a seven-day plan and build source. Its absent requested media exports remain absent. The later review edition's six raster assets and revised copy remain a separate held edition. Neither edition grants distribution permission.
+
+## Recovered complete variants
+
+See recovered maps and private `recovered-sources/capture/`: Drive D001 live-test report, D007 multi-tab state, D009 management packet, D015 owner handoff, D031/D054/D063 recipe variants, D030 tasks, D032 setup and D036 repaired setup; D040/D041 full PDF extractions; D042–D056 complete numbered kit/audit sources; D064 KIT6, D065 management archive, D066 KIT5 test input. All full procedures, examples and exceptions remain in exact originals or native text captures, with dates where available. Git variants, their source HTML/renderers/PDFs/ZIPs, PR evidence and full selected task prompts are preserved independently. No variant is silently promoted into the release.
