@@ -90,3 +90,7 @@ The full detailed continuation notes, comparisons and findings remain in the res
 | C53 | D065 recovery code/state | Planner fixtures prove only simulated guard behavior. Single-writer lease file and generated worker bytes do not establish unattended customer operation. Old logs, provider numeric IDs and master records differ; stable UUID reconciliation is required before any future separately authorized execution. |
 
 The private source text preserves the exact operational details and commercial values. Collection makes no launch, source-of-truth merge or workflow repair.
+
+## Further recovered variants
+
+See MISSING-SOURCE-FOLLOWUP.md for Canva workflow/branding conflicts, unverified draft claims, scoped factory exceptions, defective-copy status and historical teaser plans. None has been promoted into current canon.

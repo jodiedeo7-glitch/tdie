@@ -44,3 +44,7 @@ See `CONTINUATION-SOURCE-CHECK.md` and `continuation-source-check.json` for the 
 ## Recovered sources, 5 October 2026 UTC
 
 The additional Drive, branch and PR recovery is now included. See `RECOVERED-SOURCES.md` and the four `recovered-*-map.json` files for precise coverage, original-to-replacement mapping and review limits. This supersedes earlier not-retrieved status for those specific sources; it does not erase remaining gaps. The actual project remains **While-You-Sleep Storefront** (product: **The While-You-Sleep Storefront™**).
+
+## Missing-source follow-up
+
+See `MISSING-SOURCE-FOLLOWUP.md` and `found-source-map.json` for 25 recovered Canva text sources, three private Drive copies and one repository counterpart. These later findings supersede earlier access-gap statements only for the identified sources. Remaining gaps persist.

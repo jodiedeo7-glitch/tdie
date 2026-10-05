@@ -10,3 +10,7 @@ Version 3 was independently materialized. Full archive SHA-256, CRCs and all 106
 Full useful instructions, procedures, examples and exceptions remain verbatim in original files or native text captures, including conflicting and historical editions. Public replacement paths resolve relative to the companion archive root. Original private source IDs/dates resolve through its maps. Earlier standalone raster/ZIP originals also remain at their authorized original source references.
 
 No private operational record, credential or paid-kit payload is copied into the public intake. Do not publish, execute or install the companion. Historical authorizations and task prompts are collection evidence only.
+
+## Recovered-source supplement — 5 October 2026 UTC
+
+Private artifact: `libfile_b0177461c9f08191b9738f77aa20c1d1`, version 0, file ID `file_000000005a7c81f5b747761c1754c2a6`. Filename: `While-You-Sleep-Storefront-Recovered-Sources-Supplement.zip`. Size: 464,122 bytes. SHA-256: `9bbf507723753bc1a9ba52b8eb2e3641a9a232b5ac86c51020cff2d109c8d816`. Independently materialized saved version matched that hash, passed ZIP CRC, and verified all 33 manifest entries (34 ZIP members including manifest). See `found-source-map.json` for exact replacement members. The original companion remains intact.

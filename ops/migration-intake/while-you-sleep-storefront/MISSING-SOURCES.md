@@ -11,12 +11,12 @@ Updated 5 October 2026 UTC. Earlier Drive/branch/PR gaps are resolved only to th
 ## Searched, not found
 
 - `WYS_AUDIT_2026-10-02.md` and `HANDOFF_WYS_THREAD_2026-10-02.md`: no exact matches in scoped Library and Drive searches, branch-tip searches or full unshallowed Git historical filename search.
-- `claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` is referenced by the recovered full task/base prompt but absent from inspected main. A repository log counterpart is captured; it expressly does not reconstruct the original Claude log.
+- `claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` is referenced by the recovered full task/base prompt but absent from inspected main. The repository factory counterpart is now captured in the private supplement; it does not establish byte equivalence to the Claude original.
 - Referenced FlatLay archive folder returned an empty listing; this does not prove deletion or recover prior images from other conversations.
 
 ## Referenced but not retrieved/certified
 
-- Live Canva design/source-side editable state, original project-only Claude guide, actual Beacons checkout/entitled buyer delivery, member/Premium delivery and affiliate enrollment. Archived descriptions are not live evidence.
+- Native Canva design exports and full visual/source-side editable-state certification: 25 live design richtext captures are now preserved, including the exact archived 43-page design ID. See MISSING-SOURCE-FOLLOWUP.md. Original project-only Claude guide, actual Beacons checkout/entitled buyer delivery, member/Premium delivery and affiliate enrollment remain unretrieved.
 - Current scheduler/account state, Amazon destinations, current posted content, browser lock and production runtime. Drive state/scheduler documents and a 57-record Claude task export were retrieved as dated snapshots, not live operations.
 - Ambiguous Pasted text files, external room/voice/style references or files in other conversations without an established source identity. External fonts/browser installations and full sibling build dependencies are not a captured reproducible runtime.
 - Original affiliate media export set missing from the prior checkpoint; later smaller review edition is not its completion.
