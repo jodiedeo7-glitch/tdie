@@ -27,3 +27,7 @@ Shared canon snapshots and shared governing files remain intentionally scoped to
 Source renderers reference local Windows/browser installations, absolute local paths, external fonts and sibling build dependencies not all present in the captured source archives. These dependencies were read as references, not fetched or executed. Canva's saved-state record is not a live Canva readback. Original requested affiliate media exports absent from the checkpoint are not made complete by the smaller six-raster review edition.
 
 No source is called inaccessible simply because it was not opened. The categories above distinguish not exposed, not found, not retrieved and bounded review. Full conversation/settings exports and referenced external originals remain missing; the overall migration is not called complete.
+
+## Further source check
+
+See `CONTINUATION-SOURCE-CHECK.md` and `continuation-source-check.json` for the newer main instruction delta and exact missing-file checks across 15 branch tips. The original baseline remains preserved; the missing sources were not recovered.

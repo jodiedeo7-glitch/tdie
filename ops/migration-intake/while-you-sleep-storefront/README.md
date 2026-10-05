@@ -36,3 +36,7 @@ Seven supplied attachments were fully opened, including all 14 numbered text/Mar
 The root `CLAUDE.md` resolves to `AGENTS.md`; no subordinate AGENTS file was found in the cloned tracked tree. Existing governing structure is `ops/canon/` for business facts, `ops/cloud-kit/` for shared source rules, `ops/ai-router/` for routing/contracts, `ops/queues/` for operational queues and `ops/cloud-output/storefront-product/` for product sources. Current named handoff is `ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md`. No new routing or shared instruction is installed.
 
 The existing main-push workflow syncs main to the production branch. Therefore this intake is committed on a separate migration branch, not merged into main or production. Collection does not authorize deployment.
+
+## Further source check
+
+See `CONTINUATION-SOURCE-CHECK.md` and `continuation-source-check.json` for the newer main instruction delta and exact missing-file checks across 15 branch tips. The original baseline remains preserved; the missing sources were not recovered.
