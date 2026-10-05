@@ -26,3 +26,8 @@ Additional private archive WYS-Native-Project-Files-Addendum-1.zip: libfile_9c3e
 ## Remaining native recovery — 5 October 2026
 
 New unchanged private archive WYS-Remaining-Native-Project-Sources.zip: libfile_7efc1a53f4488191a8e370a86cc2eed7; 6,498,253 bytes; SHA-256 85197b4f854e0091189a38685ef9cec8c84e603abe7e5a54bb290a5f1fb6e797. All 511 manifest entries verified; 512 files including manifest. Member/outreach records and private strings remain private. Exact safe replacements: remaining-native-member-map.json, with sensitive original paths retained only in the private manifest.
+
+
+## Additional Claude chats — 5 October 2026
+
+See [ADDITIONAL-CLAUDE-CHATS.md](ADDITIONAL-CLAUDE-CHATS.md) and [additional-claude-chat-map.json](additional-claude-chat-map.json): two complete supplied reader-text exports preserved privately, hashes/turn numbering verified, exact review limits and historical decisions recorded. Other/unsearched chats and original-platform fidelity remain open; current release hold and scope are unchanged.

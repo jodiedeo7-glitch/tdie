@@ -111,3 +111,8 @@ The exact founder pricing decision is now captured, superseding earlier decision
 ## Native content review continuation — 5 October 2026
 
 See [NATIVE-CONTENT-REVIEW.md](NATIVE-CONTENT-REVIEW.md) for the additional scoped content/task review, full-procedure locations and version conflicts. [native-content-review-map.json](native-content-review-map.json) records each of the 152 native documents with provenance, exact replacement and actual review limitations. Capture completeness is distinct from semantic review and unavailable original sources. No release, task or shared-canon change is authorized by this receipt.
+
+
+## Additional Claude chats — 5 October 2026
+
+See [ADDITIONAL-CLAUDE-CHATS.md](ADDITIONAL-CLAUDE-CHATS.md) and [additional-claude-chat-map.json](additional-claude-chat-map.json): two complete supplied reader-text exports preserved privately, hashes/turn numbering verified, exact review limits and historical decisions recorded. Other/unsearched chats and original-platform fidelity remain open; current release hold and scope are unchanged.
