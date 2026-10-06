@@ -22,7 +22,7 @@ REVIEW_FIRST. Nothing is scheduled until the customer picks the exact finished P
 
 ## A2. What an Automatic scope must contain
 
-The customer's own authorization words, who gave them, when, the permitted accounts, exact board IDs and sections, destination types and paths, image provider, model and resolution, generation budget and its period, looks per week, channels (Pinterest, blog, Instagram), schedule and time zone, an end date or "until I revoke it", and how products are supplied. If any item is missing, finish setup before turning on recurring production. Never invent permission or a budget. Save it as AUTOMATION_POLICY with a policy_id and version.
+The customer's own authorization words, who gave them, when, the permitted accounts, exact board IDs and sections, destination types and paths, image provider, model and resolution, generation budget and its period, pace (looks per day/week as applicable), looks per run, build-run cadence, channels (Pinterest, blog, Instagram), publishing slot map and time zone, an end date or "until I revoke it", and how products are supplied. If any item is missing, finish setup before turning on recurring production. Never invent permission or a budget. Save it as AUTOMATION_POLICY with a policy_id and version.
 
 ## A3. When something changes
 
