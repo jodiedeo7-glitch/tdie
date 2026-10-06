@@ -16,7 +16,7 @@ Pin 2: THE LIFE IT FITS. A believable lifestyle/in-use moment in the approved pe
 
 EXPANDED package:
 Pin 1: CLEAN PRODUCT EDIT. Product-first composition with strong hierarchy, minimal supporting styling and clear item readability.
-Pin 2: STYLED EDITORIAL FLAT LAY. A more dressed, layered, mood-rich composition using a different surface, arrangement, camera treatment and scene logic from Pin 1.
+Pin 2: STYLED EDITORIAL FLAT LAY. For outfits, clothing has natural volume and a wearable silhouette as if worn, with no visible person, anatomy, mannequin or support. A basic outfit flat lay has the garments attractively arranged or folded on the surface. Extra props alone do not establish the styled treatment. Follow the category base for non-clothing objects; do not apply clothing volume rules to desk products.
 Pin 3: THE LIFE IT FITS. A believable lifestyle/in-use moment with the authorized persona, or a distinct person-free in-situ scene.
 
 Clean and BASIC assets receive the same art direction and desirability checks as styled and EXPANDED assets. Clean means a disciplined, deliberately styled product story with fewer distractions. It does not authorize empty products, a generic beige window scene, an arbitrary product lineup or a weaker prompt. Minimal supporting styling must still serve the use, palette and composition. Record the specific surface, arrangement, camera/viewpoint, light direction, material texture and visual reason someone would save this image before generation; adjectives such as "photorealistic" or "editorial" alone are not a brief.
@@ -38,6 +38,8 @@ Every persona prompt begins: "Photograph of this exact woman from the attached r
 ## Professional Pin layout
 
 Add text after photography with a supported deterministic layout. Use the customer's own brand fonts recorded at setup (a strong, sharp display font for the headline and a clean sans for small text). Avoid thin hairline or soft italic display fonts for headlines; they blur at phone size. Optional restrained script must remain readable.
+
+For an outfit basic/styled flat-lay pair, at least one finished image includes a headline. Default to a modest headline above the basic arrangement; use an overlay only in genuine quiet space without obscuring any featured piece. Record the selected image and placement. Raw generated photographs remain text-free.
 
 Use a concise search-led headline, clear hierarchy, deliberate accent phrase, generous safe margins and a useful small CTA such as “Shop the edit.” Photography dominates. Use approved cream/near-black/brand accents; avoid brown fills, hairline type, crowded badges, fake ratings, prices, scarcity or guarantees. Text cannot cover the face, hero or important details. Use a scrim or paper panel only where needed, never a full-image color wash.
 

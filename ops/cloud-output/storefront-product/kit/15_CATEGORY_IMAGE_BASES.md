@@ -25,11 +25,13 @@ Clean means considered, product-first and fewer distractions. It does not mean e
 
 Lifestyle personalization is required, not a palette swap. Resolve the client's niche, one specific routine or task, an approved place, their selected aesthetic and scene-appropriate personal details. Express those through the action, useful props and environment. Preserve avatar identity through the authorized reference, not a written face/body description. Show enough of the person and environment to tell the story, while keeping the featured products recognizable. Choose the framing under 07_PERSONA_PATHS.txt rather than making every image face-forward. Inspiration screenshots guide style only; their pictured people, logos and licensed character decor do not become the client's avatar or automatic scene requirements.
 
-## A. Womens fashion | base v0.2
+## A. Womens fashion | base v0.3
 
-CLEAN BASE
+BASIC PHOTOGRAPHED FLAT LAY (CLEAN BASE)
 
 A coordinated, complete outfit photographed directly overhead on one continuous {{SURFACE}}. Establish a garment-led focal point, then arrange the complementary pieces around it as a believable outfit rather than an inventory grid. Use relaxed diagonals, soft folds, small overlaps and comfortable gaps. Choose the garment treatment deliberately: lay open a dress, skirt or statement blouse when silhouette matters; neatly fold a knit or jeans when the fold makes the composition more appealing and leaves identifying details visible. Do not require every garment to be unfolded. Pair shoes naturally, curve the bag strap without tangling, and place jewelry in small useful groups. Keep materials tactile and relative scale believable, with one coherent light direction and soft contact shadows. Preserve verified garment cut, color, fastening and pattern. No mannequin, body, hanger or invented outfit piece.
+
+Basic clothing rests naturally on the surface, attractively laid out or folded. Do not fill it into an invisible worn form. Basic describes this clothing treatment, not the BASIC publishing package, and does not imply lower quality.
 
 CLEAN COLLAGE ALTERNATIVE
 
@@ -37,7 +39,11 @@ When the selected format is a collage, replace the photographic opening and surf
 
 STYLED SIBLING
 
-Photograph a distinct, more layered outfit story directly overhead on an approved tactile surface, such as rumpled linen, a quilt or a soft rug selected for this client's aesthetic. Anchor the scene with the garment combination, then arrange the bag, paired shoes and accessories along a gentle visual path. Use considered folds and light overlaps to connect the pieces while keeping each recognizable. Add a small scene-appropriate group of approved styling details, such as flowers, a book or a cup, only where they strengthen the chosen occasion. Build desirability through fabric texture, tonal contrast, natural light and coordinated styling. Do not add every prop seen in the references or force pink/coquette styling on all clients. A seasonal accent belongs only to a selected seasonal look.
+Photograph a dimensional outfit flat lay directly overhead on {{SURFACE}}. Shape the clothing as if it were being worn, while keeping every person, body part and mannequin completely absent. Give the bodice natural torso volume, the waist a believable contour and sleeves softly rounded fullness. Layer an outer garment over its top with plausible shoulder alignment, openings and fabric drape. Shape the lower garment into a coherent wearable silhouette, preserving its actual cut and proportions. Concealed support must never be visible. The garments still rest on the surface with coherent contact shadows: no floating outfit, hollow neck skin or human anatomy. Arrange the matching shoes, bag and jewelry aesthetically around the outfit. Use tactile texture, natural light and restrained approved props selected for the client's aesthetic. Extra flowers or a different background alone do not make a basic flat lay styled. Do not change garment construction or add every prop from the references.
+
+TEXT TREATMENT FOR THE OUTFIT FLAT-LAY PAIR
+
+At least one of the basic/styled flat lays must carry a concise, readable headline in the finished design. Default: headline above the basic outfit arrangement in a modest coordinated header area. An overlay is an alternative only when the photograph has genuine clear space and the words do not cover clothing or accessories. Preserve the raw image without lettering, then add the text in the deterministic layout step. The styled image may stay photo-led; do not force giant type onto both. Record which image receives the headline and its placement before final rendering.
 
 LIFESTYLE SIBLING
 
@@ -45,7 +51,9 @@ Show the approved avatar wearing the complete outfit during a specific niche- an
 
 Reference interpretation: five customer-supplied outfit screenshots on October 6, 2026 include clean outfit collages, seasonal casual styling, romantic/coquette textile flat lays and a cozy folded-knit outfit. Their shared qualities are a coordinated complete look, deliberate accessory placement and clear visual hierarchy. Photographic examples add soft fabric texture, believable folds and natural light. Image five also includes playful handwritten annotations; those are optional later design overlays if selected, not instructions to generate lettering or cartoon faces onto the products. Do not reproduce reference logos, branded packaging, interface overlays, text or exact layouts. Reference garment prints are not automatically authorized products or designs.
 
-Validation: v0.2 is reference-grounded and UNTESTED. No generated result or customer visual acceptance has been recorded. Record the returned images and observed results before promoting this base.
+October 6 clarification: the customer supplied eight further screenshots (one duplicates another) and defined basic as aesthetically arranged clothing, styled as clothing filled out as if worn with no person present. This definition supersedes the earlier prop-led styled distinction. Some reference panels only lightly suggest volume; a generated styled image must visibly satisfy the filled-out requirement. Hanger displays and clean collages are separate formats, not literal photographed flat lays.
+
+Validation: v0.3 is reference-grounded and UNTESTED. No generated result or customer visual acceptance has been recorded. Record the returned images and observed results before promoting this base.
 
 ## B. Shoes | base v0.1
 
