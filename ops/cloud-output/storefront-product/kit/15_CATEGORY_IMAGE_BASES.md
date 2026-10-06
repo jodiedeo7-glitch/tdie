@@ -167,11 +167,11 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.1
+## J. Desk and office | base v0.2
 
 CLEAN BASE
 
-A deliberate desk-stationery edit photographed from EXACTLY 90 degrees directly above, with the entire frame filled by one continuous {{SURFACE}} and no wall or horizon. Place the main organizer upper-left and the compact organizer lower-right in a relaxed diagonal, leaving generous space between their real footprints. Show only the openings and details physically visible from above; do not tilt the camera to display all tiers. Use a small approved notebook/paper/pencil grouping as a secondary rhythm, not scattered filler. Preserve low-wide versus tall organizer proportions and correct compartments. Keep the palette coherent, with tactile paper, finely drawn mesh shadows and crisp controlled light.
+A curated desk-stationery composition photographed directly overhead on one continuous {{SURFACE}}, without a wall or horizon. Build an intentional workday story from the verified pieces and approved styling, not two enlarged storage objects surrounded by blank paper. Give the primary organizer roughly one fifth of the image area and the compact holder less; maintain believable relative scale. Use the client's confirmed accent color, tactile desk material and a purposeful notebook/pen/paper relationship to produce color balance, contrast and personality. Distribute the pieces across an asymmetrical triangle, with clean breathing room between them rather than isolated objects in opposite corners. Show only details physically visible from above. Preserve low-wide versus tall construction and fixed retail colors. Record any newly proposed styling props for client review; do not invent additional linked products.
 
 STYLED SIBLING
 
@@ -181,7 +181,7 @@ LIFESTYLE SIBLING
 
 Show the actual organizers used on an approved working desk from seated desk height, with a plausible workspace and clear separation from unlinked computer/stationery props.
 
-Validation: UNTESTED. Record the returned images and observed results before promoting this base.
+Validation: v0.1 rejected by the customer after a manual/free test. Observed defects: mesh organizer dominance, weak color/material contrast, generic blank stationery and insufficient visual personality. v0.2 is a proposed revision, not a proven pass. The manual test model was not supplied. Ask for an admired category-specific visual reference when the desired standard is not yet grounded.
 
 ## K. Tech accessories | base v0.1
 
