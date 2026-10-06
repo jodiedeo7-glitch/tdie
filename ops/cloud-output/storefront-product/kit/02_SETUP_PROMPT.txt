@@ -457,8 +457,26 @@ If your code tool can't do it, or on CREDIT-SAVING / MANUAL: HEADLINE METHOD = C
 
 STEP 6. PERSONA
 Ask: "Do you have an AI persona who wears the looks?"
-Yes: find her reference image in my folder (ask only if there's more than one), then ask for 3 or 4 everyday places she lives her life, including one with a mirror. Save PERSONA IMAGE and PERSONA WORLD, plus any signature props she always has (PERSONA PROPS; they are never linked products). Never ask for face, hair, eye, skin, body or age details.
-No: PERSONA = no. Pin 1 is a flat lay or collage and Pin 2 is a person-free scene (03 Part 4).
+
+If YES:
+1. First inspect the connected files/canon for an existing persona definition, persona world, recurring scene rules and prop rules.
+2. If a complete persona definition already exists, summarize what you found and ask only:
+   A KEEP
+   B CHANGE
+   Do not make the customer restate known persona-world rules.
+3. If no persona-world definition exists, find the reference image in my folder (ask only if there is more than one), then ask me to choose 3 or 4 everyday places she naturally exists, including one mirror location.
+4. Save PERSONA IMAGE and PERSONA WORLD.
+5. Do NOT force a static PERSONA PROPS list. Save PERSONA PROP LOGIC instead:
+   - recurring props are scene-dependent unless the customer's existing persona canon explicitly defines an always-present item
+   - use only props that naturally belong in the chosen scene
+   - recurring brand cues may rotate
+   - unlinked props are never presented as products
+   - avoid stuffing every signature object into every frame
+6. If the existing persona canon has a stricter rule, that canon wins.
+7. Never ask for face, hair, eye, skin, body or age descriptions when identity comes from the reference image.
+
+If NO:
+PERSONA = no. Use the no-persona image path in 03 Part 4 and 07_PERSONA_PATHS.txt.
 
 STEP 7. THE BRAND CLOSET™
 Ask: "Are you a member of The Brand Closet™ with access to its Outfit of the Day lessons?"
@@ -569,7 +587,7 @@ HEADLINE METHOD
 PERSONA
 PERSONA IMAGE
 PERSONA WORLD
-PERSONA PROPS
+PERSONA PROP LOGIC
 BRAND CLOSET MEMBER
 BRAND CLOSET TIER
 BRAND CLOSET REFERRAL LINK
