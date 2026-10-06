@@ -610,9 +610,30 @@ Calculate projected monthly Pinterest posts from the CURRENT visual recipe, sele
 SCALING RULE:
 After the controlled first-look test and first successful scheduled production run, the customer may scale up. A pace increase changes the saved automation scope, generation budget and slot map, so recalculate those fields before increasing production.
 STEP 8A. THE BLOG HALF (optional)
-Ask: "Do you have a website on GitHub, like a Weekend Ecosystem™ site, where you want a shop-the-look section?"
-No: BLOG HALF = off.
-Yes: if 09_THE_BLOG_HALF.txt STEP 1 isn't done yet, tell me to do it first and come back. If it's done, save BLOG HALF = on, CAN PUBLISH TO SITE (yes only after repository write, deployment and live-URL readback pass; otherwise untested/no), SITE, REPO and LIFESTYLE CATEGORIES (the line the site chat printed), and run the QUICK DESTINATION TEST for my site if it isn't saved yet.
+First inspect connected files/services for an existing site and repository. Do not ask the customer whether they have a website if you can already verify one.
+
+If an existing compatible site is found, ask:
+"Do you want the WYS system to also create/update shop-the-look pages on this site?"
+A YES
+B NO
+
+If YES:
+- if 09_THE_BLOG_HALF.txt STEP 1 is not done yet, run/prepare that setup path first
+- save BLOG HALF = on
+- save CAN PUBLISH TO SITE = yes only after repository write, deployment and live-URL readback pass; otherwise untested/no
+- save SITE, REPO and LIFESTYLE CATEGORIES
+- run the QUICK DESTINATION TEST if not already saved
+
+If NO:
+- save BLOG HALF = off
+
+If no compatible site exists:
+- explain that the core WYS system can still run without the blog half on the Influencer path
+- then give ONE soft optional mention:
+  "If you want the website/shop-the-look half too, The Weekend Ecosystem™ is the TDIE site system this add-on is designed to plug into. You can add it later; it isn't required for the core Storefront."
+- if the customer asks for the offer, link or price, verify the current live Weekend Ecosystem listing before answering
+- do not hard-sell, repeat the pitch, or imply Weekend Ecosystem is required
+- then ask whether they want to continue without the blog half or add a site first.
 
 STEP 8B. INSTAGRAM (optional)
 Ask: "Do you want each look posted to Instagram as a feed carousel too?"
