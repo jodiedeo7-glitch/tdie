@@ -6,6 +6,10 @@ This file has two parts. Part A is the rule book every task and every chat follo
 
 # PART A. THE AUTOMATION RULES
 
+## A0. Setup owns its next action
+
+Follow the setup driver in 02_SETUP_PROMPT.txt and 14_AUTOMATIC_EXECUTION_CONTRACT.txt. Persist SETUP_CHECKPOINT at the selected state location, with current_step, confirmed_answers (including their evidence), completed_tests (scope, result and readback), waiting_dependencies (reason and retry condition), next_action, pending_question (exact decision or required approval and its proposed action), updated_at and completion_status. Use a dedicated SETUP_CHECKPOINT tab for a cloud Sheet or setup_checkpoint object for local JSON. Never put credentials in this record. Check existing state before creating or replacing it; merge new evidence without losing confirmed answers or external IDs. Read it on every setup resume, reconcile uncertain writes, act on the customer's reply and continue the remaining authorized steps. A passed subtest or source commit does not set completion_status to complete.
+
 ## A1. Two modes, chosen once at setup
 
 Setup saves AUTOMATION_MODE in MY_RECIPE.txt and in the state. It is one of:
@@ -52,7 +56,7 @@ Never call a setup fully automated or unattended until one separate scheduled ru
 
 The structured state is the source of truth. The markdown files (storefront-log.md, pin-tab.md, pin-drafts.md) are readable views made from it.
 
-CLOUD mode: a Google Sheet named STOREFRONT_STATE with tabs AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. The PINS tab has a PULL column the customer can type in.
+CLOUD mode: a Google Sheet named STOREFRONT_STATE with tabs SETUP_CHECKPOINT, AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. The PINS tab has a PULL column the customer can type in.
 LOCAL or CREDIT-SAVING mode: a file named storefront-state.json with the same sections.
 
 ## Capability record
