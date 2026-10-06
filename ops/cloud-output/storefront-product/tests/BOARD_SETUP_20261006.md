@@ -12,15 +12,17 @@ Scope: Steps 2 and 4 of `kit/02_SETUP_PROMPT.txt`, starting from branch `fix/wys
 - Seven other missing approved names below 50 characters were created through that documented Metricool route. Each returned an exact numeric ID in the selected Board field, and all seven appeared in the board dropdown afterward. No post content or media was supplied, and Schedule remained disabled.
 - Existing WYS board IDs were resolved by matching selected names to the actual numeric Board field. No test Pin was created to obtain an ID.
 - Discarded the unsaved editor. Complete before/after scheduled-post readbacks for 6–20 October in America/New_York matched exactly: 42 returned records, including all returned copy, media, destination boards, dates and flags. No scheduled-post mutation was attempted. This comparison does not claim coverage outside that date range.
+- Follow-up after the customer's explicit shorter-name approval: reconciled the live selector, then created and read back the three shorter equivalents. All ten approved core names now have exact Metricool IDs. The family-board first result was unclear; discarded the empty editor, reloaded the official planner and confirmed the exact name absent before one retry. The selector then listed all three new names, including one matching family name. The follow-up schedule comparison again matched all 42 complete returned records.
 
 ## Blockers and unverified work
 
-- Three approved names are at or above the provider's stated safe limit. The 53-character name failed live; the 52- and 50-character names were held without a write. The customer was asked about shorter equivalents. Do not treat unanswered name changes as approved.
+- Resolved name-limit issue: the original 53-character name failed live; the 52- and 50-character names were initially held. The customer subsequently approved exact shorter equivalents, and all three were created with matching ID readbacks. No unapproved truncation or rename was used.
 - Description and section editing were not exposed by Metricool's tested Add board form. Agreed sections remain pending. A name-only creation is not complete board setup.
 - Newly created boards' public URLs and independent owning-service Public indicators have not yet been read back through a proven permitted route. Publisher availability is recorded separately.
 - Direct Pinterest browser automation permission is unverified. The current Pinterest guidelines require explicit approval for automation; a working authenticated official UI is not sufficient evidence. The existing observations are recorded accurately, without certifying a permitted recurring native-browser route.
 - The local interactive Metricool test does not prove cloud access or a separate scheduled run.
 - The planner displayed a 20-post monthly allowance. This conflicts with the earlier customer intake answer of a paid plan; capacity must be reconciled before enabling the requested pace. No account upgrade or plan change was attempted.
+- Prepared an account-specific completion packet with the ten exact names/IDs, copy-ready descriptions, unchanged section lists and current official Pinterest instructions. The next customer action is to complete details on one already-created board and return its actual URL. Prepared instructions and customer reports do not themselves pass the remaining live tests.
 
 ## Flow defects repaired in source
 
