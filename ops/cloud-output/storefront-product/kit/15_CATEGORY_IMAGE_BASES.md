@@ -189,7 +189,7 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.5
+## J. Desk and office | base v0.6
 
 CLEAN BASE
 
@@ -210,6 +210,8 @@ The customer then supplied three additional references specifically for the styl
 Tommy Kate client layer, confirmed by the customer: her pink mug whenever coffee is shown, signature pink desk, girly/glittery personal styling rather than a clean-modern default. Her flowers are lilacs and wildflowers only, with hydrangeas explicitly excluded. Her dog is a golden retriever; the name remains undecided and naming is paused. Styled workspace includes the flowers and a framed photograph of her dog when the approved pet reference is available. These are client-specific choices, not universal defaults. Make sparkle tangible through a selected glitter-finish accessory or surface detail; do not add a synthetic sparkle filter over the whole photo.
 
 Color correction, confirmed after the next manual return: do not put pink accessories directly against an all-pink scene. Retain her signature pink desk but create substantial luxury-cream relief with a desk pad, paper and cream surrounding wall. Include unmistakable saturated hot-pink pops in selected incidental props, with clearly purple-toned lavender as a smaller TDIE accent. Gold stays restrained in realistic hardware details. A pink wall, pink desktop, pink mat, pink keyboard and pink stationery at the same pale value fails this client's brief. Keep the retail organizers' actual pink unchanged. The result must feel girly and personal with visible contrast, not muted blush monochrome.
+
+Realism correction after v0.5 manual return: the customer accepted the color direction as better but rejected the AI/fake appearance. Keep the approved contrast while replacing showroom staging with plausible use. Trays contain a few papers lying flat; the holder contains pens and notes. Choose one window as the light source, neutral exposure, restrained reflections and natural focus falloff. Use a few small, specific signs of use and distinct material responses, not a blanket glow or cosmetic noise filter. Keep the cloud display subdued so it does not turn the room into a fantasy set. The framed dog image should look like a small informal photographic print, not a perfect studio portrait. v0.6 is a proposed manual revision, not a realism pass.
 
 Validation: v0.1 rejected after a manual/free test; no v0.2 result supplied. Customer returned four v0.3 images: Seedream 4.5 basic/styled, then Seedream 5.0 Flash basic/styled, and expressed a preference for 5.0 Flash. This establishes a provisional desk-model preference, not full visual acceptance or repeatability. Both basic results use an angled tabletop view rather than true overhead. Product construction also varies; the 4.5 styled result introduces separate holders and visible lettering/watermark. All four retain generic cups and surfaces instead of the newly specified personal signature. v0.4 incorporates that clarification and is untested. Keep the free/manual route and paid-generation pause in effect.
 
