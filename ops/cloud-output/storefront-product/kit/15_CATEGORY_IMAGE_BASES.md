@@ -6,6 +6,8 @@ Status: DRAFT FOR MANUAL VALIDATION. The category geometry and composition diffe
 
 ## Assemble one complete prompt
 
+Hard prompt-length limit: every complete delivered/submitted image prompt must be UNDER 3,000 characters (maximum 2,999), counting spaces, punctuation and line breaks. Measure the final saved text after all client inputs, exclusions and references are resolved. Do not deliver an over-limit prompt or split it into add-ons that exceed the limit when combined. Shorten redundant prose while preserving selected products, concept separation, personal styling, construction, scene plausibility and exclusions. Record actual character counts in preflight; use a practical buffer for pasted newline differences.
+
 Use one category and one concept. Resolve every field from the confirmed client curation profile and verified product packet. Do not send placeholders, alternative camera instructions, sourcing notes, affiliate links or client-flow explanations to the image model.
 
 1. Opening: "Original photorealistic editorial product photography, portrait 2:3, with {{AESTHETIC}} art direction and a coordinated {{PALETTE}} palette. Photograph {{PRODUCTS}} for {{USE}}."
