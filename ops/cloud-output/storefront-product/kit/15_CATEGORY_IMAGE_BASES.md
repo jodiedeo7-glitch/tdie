@@ -25,21 +25,27 @@ Clean means considered, product-first and fewer distractions. It does not mean e
 
 Lifestyle personalization is required, not a palette swap. Resolve the client's niche, one specific routine or task, an approved place, their selected aesthetic and scene-appropriate personal details. Express those through the action, useful props and environment. Preserve avatar identity through the authorized reference, not a written face/body description. Show enough of the person and environment to tell the story, while keeping the featured products recognizable. Choose the framing under 07_PERSONA_PATHS.txt rather than making every image face-forward. Inspiration screenshots guide style only; their pictured people, logos and licensed character decor do not become the client's avatar or automatic scene requirements.
 
-## A. Womens fashion | base v0.1
+## A. Womens fashion | base v0.2
 
 CLEAN BASE
 
-A complete outfit arranged directly below a camera pointing vertically down, on one continuous {{SURFACE}}. Lay the main garment in a natural wearable silhouette, not folded into a rectangle. Place shoes together near the lower edge, bag beside the outfit with its strap fully visible, and jewelry/accessories in small intentional groups. Use relaxed diagonals and small fabric overlaps, keeping every linked piece recognizable. Show weave, seams, folds and believable contact shadows. No mannequin, body, hanger, invented extra garment or cropped hem.
+A coordinated, complete outfit photographed directly overhead on one continuous {{SURFACE}}. Establish a garment-led focal point, then arrange the complementary pieces around it as a believable outfit rather than an inventory grid. Use relaxed diagonals, soft folds, small overlaps and comfortable gaps. Choose the garment treatment deliberately: lay open a dress, skirt or statement blouse when silhouette matters; neatly fold a knit or jeans when the fold makes the composition more appealing and leaves identifying details visible. Do not require every garment to be unfolded. Pair shoes naturally, curve the bag strap without tangling, and place jewelry in small useful groups. Keep materials tactile and relative scale believable, with one coherent light direction and soft contact shadows. Preserve verified garment cut, color, fastening and pattern. No mannequin, body, hanger or invented outfit piece.
+
+CLEAN COLLAGE ALTERNATIVE
+
+When the selected format is a collage, replace the photographic opening and surface instructions with a polished outfit-board composition on a softly colored plain background. Arrange clearly separated product cutouts with deliberate hierarchy: main garments largest, footwear and bag secondary, small accessories supporting. Use balanced spacing and a coherent outfit palette without changing retail colors. Do not add bedding, cast sunlight, physical overlaps or a room horizon to this graphic format. Use only authorized product assets or clearly labeled generated styling inspiration under the product-fidelity rules. Headline and disclosure are added in the later layout step, not generated into the raw image.
 
 STYLED SIBLING
 
-Rearrange the outfit on a different approved textile surface with a looser diagonal silhouette, one considered fabric fold and jewelry nested beside the bag. Keep the full outfit readable.
+Photograph a distinct, more layered outfit story directly overhead on an approved tactile surface, such as rumpled linen, a quilt or a soft rug selected for this client's aesthetic. Anchor the scene with the garment combination, then arrange the bag, paired shoes and accessories along a gentle visual path. Use considered folds and light overlaps to connect the pieces while keeping each recognizable. Add a small scene-appropriate group of approved styling details, such as flowers, a book or a cup, only where they strengthen the chosen occasion. Build desirability through fabric texture, tonal contrast, natural light and coordinated styling. Do not add every prop seen in the references or force pink/coquette styling on all clients. A seasonal accent belongs only to a selected seasonal look.
 
 LIFESTYLE SIBLING
 
-Use the authorized persona wearing the complete outfit in one approved place during a specific ordinary action. Follow the identity-reference rules; otherwise show an approved face-free clothing-use detail.
+Show the approved avatar wearing the complete outfit during a specific niche- and occasion-relevant moment in her approved world. Resolve the action, place and appropriate personal details from the client profile. Keep garment fit, material, accessories and footwear recognizable. Follow the reference-only identity and framing rules in 07_PERSONA_PATHS.txt. Do not replace the avatar with an empty scene on the persona path.
 
-Validation: UNTESTED. Record the returned images and observed results before promoting this base.
+Reference interpretation: five customer-supplied outfit screenshots on October 6, 2026 include clean outfit collages, seasonal casual styling, romantic/coquette textile flat lays and a cozy folded-knit outfit. Their shared qualities are a coordinated complete look, deliberate accessory placement and clear visual hierarchy. Photographic examples add soft fabric texture, believable folds and natural light. Image five also includes playful handwritten annotations; those are optional later design overlays if selected, not instructions to generate lettering or cartoon faces onto the products. Do not reproduce reference logos, branded packaging, interface overlays, text or exact layouts. Reference garment prints are not automatically authorized products or designs.
+
+Validation: v0.2 is reference-grounded and UNTESTED. No generated result or customer visual acceptance has been recorded. Record the returned images and observed results before promoting this base.
 
 ## B. Shoes | base v0.1
 
