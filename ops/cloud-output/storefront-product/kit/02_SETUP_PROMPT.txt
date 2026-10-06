@@ -418,10 +418,16 @@ Do not mix Unlimited claims into the automatic connected route. Connected automa
 
 If the customer chose or later asks for the CREDIT-SAVING / MANUAL image route:
 - inspect the customer's CURRENT Higgsfield account and actual Unlimited options available to that account
-- recommend the strongest suitable Unlimited option for that specific asset type and quality need
+- recommend the strongest suitable Unlimited options for each asset type and quality need
 - do not assume a model is free for the customer merely because the catalog says the model supports an Unlimited feature
 - do not default to Seedream 5.0 Lite or any other Unlimited model merely because it is available
-- let the customer choose the manual model when multiple suitable Unlimited options exist
+- if the customer is unsure which Unlimited model to use, run a CONSISTENCY TEST before choosing:
+  1. FLAT LAY TEST: write two deliberately different flat-lay prompts that stress different strengths, for example one fashion/product edit and one home/seasonal product scene. Run BOTH prompts in EACH candidate Unlimited generator under the same aspect ratio and comparable settings.
+  2. FACE-FORWARD LIFESTYLE TEST: write two deliberately different face-forward persona/lifestyle prompts that stress different strengths, for example one candid natural-light close portrait and one fuller environmental lifestyle shot. Run BOTH prompts in EACH candidate Unlimited generator using the same persona reference and comparable settings.
+  3. Judge each generator on product fidelity, composition, realism, artifact rate, prompt adherence and, for face-forward tests, identity fidelity.
+  4. Pick one MANUAL FLAT-LAY MODEL and one MANUAL FACE-FORWARD MODEL. They may be different generators.
+  5. Save the winning models and the four test prompts/results so the choice is reproducible.
+- let the customer choose the winner when quality is subjective or close
 - the assistant still writes the exact production prompt and runs the same QA after the customer returns the image
 - manual generation may save Higgsfield credits but costs the customer the manual step
 - never silently replace the saved automatic models with a manual Unlimited model
@@ -556,7 +562,7 @@ AUTOMATIC FACE-FORWARD MODEL
 OPTIONAL FACE-FORWARD ALTERNATIVE
 RESOLUTION
 CURRENT CONNECTED COSTS (verified by saved automatic model, with checked date)
-MANUAL CREDIT-SAVING ROUTE (off unless explicitly chosen; if on, save the buyer's actual verified manual model choice separately)
+MANUAL CREDIT-SAVING ROUTE (off unless explicitly chosen; if on, save MANUAL FLAT-LAY MODEL, MANUAL FACE-FORWARD MODEL, candidate generators tested, the two flat-lay test prompts, the two face-forward lifestyle test prompts, and the customer's winning selections)
 GENERATION BUDGET (amount, period, and what happens when it runs out)
 COMMERCIAL RIGHTS RECORDED
 HEADLINE METHOD
