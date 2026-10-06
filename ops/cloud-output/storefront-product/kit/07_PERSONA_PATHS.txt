@@ -6,14 +6,16 @@ The second Pin of every look is either your AI persona wearing or using the piec
 The rest of this file is instructions for your assistant and tasks.
 
 ====================================================================
-THE PERSONA PATH (pin 2 is your AI persona wearing the look)
+THE PERSONA PATH (lifestyle images include your AI persona wearing or using the products)
 ====================================================================
 
 You need: one reference image of your persona that you have the right to use, your product rows, and the PERSONA WORLD line in MY_RECIPE.txt.
 
+For every category, include the approved avatar in the lifestyle image. Build a specific use moment from the client's confirmed niche, routine, approved place and taste. A desk image shows her doing a relevant task in her own workspace; a home image shows her naturally using the featured pieces. An empty room or generic anonymous hand does not fulfill the persona path. If her reference is unavailable, prepare the prompt and retrieve or request that reference before generation. Do not silently switch to the no-persona path.
+
 TIME-SAVING: the task uses IMAGE PLATFORM and the saved routing rules in MY_RECIPE.txt, inside your budget, with your rights recorded. Face-forward/identity-critical persona images use FACE-FORWARD MODEL. Back-facing, face-obscured and detail-only lifestyle concepts use NO-FACE MODEL when identity fidelity is not the point.
 
-CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat writes this prompt from your product rows. You run it in an image tool that lets you attach a reference photo, then bring the result back for the same checks. If your tool can't keep her looking like herself from a reference photo, use the no-persona path instead.
+CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat writes this prompt from your product rows. You run it in an image tool that lets you attach a reference photo, then bring the result back for the same checks. If that tool cannot preserve the avatar from her reference, offer a suitable reference-capable manual tool or ask whether the customer wants to change to the no-persona path. Do not remove the avatar without that choice.
 
 DIRECT MANUAL: you may instead prepare the scene yourself using original, permitted imagery. Record its source and rights. No connected image tool or recurring task is required.
 
