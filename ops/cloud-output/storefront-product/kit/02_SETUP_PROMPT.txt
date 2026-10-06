@@ -495,14 +495,17 @@ If YES:
 - offer the manual/credit-saving version only as an optional fallback
 - ask: "Do you want to recommend The Brand Closet™ on your own pages with your own referral link?"
   - if yes, follow 05_RECOMMEND_IT_TOO.txt, save BRAND CLOSET REFERRAL LINK and BRAND CLOSET CARD = on
-  - save BRAND CLOSET IMAGE RULE = "Brand Closet mentions only with authorized Brand Closet-originated imagery"
-  - do not ask for a generated-Pin Brand Closet line; generated Outfit of the Day Pins must not mention The Brand Closet™
-  - if no, BRAND CLOSET CARD = off
+  - save BRAND CLOSET IMAGE RULE = "Brand Closet mentions only on Brand Closet-derived looks; generated flat lays and Tommy Kate/persona lifestyle images qualify when their LOOK_ID comes from a Brand Closet OOTD lesson"
+  - ask: "Do you also want a Brand Closet mention/referral line on your Brand Closet-derived Outfit of the Day Pins?"
+    - if yes, save PIN LINE = on
+    - if no, save PIN LINE = off
+  - if no, BRAND CLOSET CARD = off and PIN LINE = off
 
 If NO:
 - save BRAND CLOSET MEMBER = no
 - save BRAND CLOSET OOTD ACCESS = no
 - BRAND CLOSET CARD = off
+- PIN LINE = off
 - BRAND CLOSET IMAGE RULE = not used
 - skip Automation 2.
 
@@ -614,6 +617,7 @@ BRAND CLOSET MEMBER
 BRAND CLOSET OOTD ACCESS
 BRAND CLOSET REFERRAL LINK
 BRAND CLOSET CARD (on or off)
+PIN LINE (on or off; applies only to Brand Closet-derived OOTD Pins)
 BRAND CLOSET IMAGE RULE
 PACE
 LOOK DAYS
