@@ -15,4 +15,6 @@ The two-product packet came from an earlier Amazon capability test. It was then 
 - Choose typography from the photograph's hierarchy; bold is not a fixed oversized headline template.
 - Keep capability samples separate from the complete first-look test. Retire a rejected approval request and fix the overall brief before additional detail corrections.
 
-A new visual brief and prompt are prepared privately for review. No replacement generation has been submitted under this repair. Source changes and proposed prompts are not evidence that the replacement passes. Image quality, a complete first look and scheduling remain to be tested with their own current evidence and authorization.
+A new visual brief and prompt were prepared privately. After the customer approved one additional generation with a one-credit ceiling, one fresh Seedream 5.0 Flash 2K result completed. The operator rejected it: the beige wall/horizon and angled product-display treatment remained, contrary to the intended art direction. Completion is a generation pass, not a visual pass. No text was added to that rejected replacement and no Pin was scheduled.
+
+A strict 90-degree overhead prompt and a cost-only Nano Banana Pro comparison preflight are prepared. The saved route has not been switched and the proposed comparison has not been submitted. It requires the customer's exact model/spend choice. Source changes and proposed prompts are not evidence that image quality is repaired. A complete first look and scheduling still require their own current evidence and authorization.
