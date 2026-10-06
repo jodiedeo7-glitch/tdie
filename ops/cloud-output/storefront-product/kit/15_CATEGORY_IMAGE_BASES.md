@@ -167,21 +167,25 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.2
+## J. Desk and office | base v0.3
 
 CLEAN BASE
 
-A curated desk-stationery composition photographed directly overhead on one continuous {{SURFACE}}, without a wall or horizon. Build an intentional workday story from the verified pieces and approved styling, not two enlarged storage objects surrounded by blank paper. Give the primary organizer roughly one fifth of the image area and the compact holder less; maintain believable relative scale. Use the client's confirmed accent color, tactile desk material and a purposeful notebook/pen/paper relationship to produce color balance, contrast and personality. Distribute the pieces across an asymmetrical triangle, with clean breathing room between them rather than isolated objects in opposite corners. Show only details physically visible from above. Preserve low-wide versus tall construction and fixed retail colors. Record any newly proposed styling props for client review; do not invent additional linked products.
+A desirable personal workspace photographed directly overhead on {{SURFACE}}. Anchor the composition with the verified desk products and a purposeful stationery relationship: a notebook, writing tool and small daily-use detail selected from {{APPROVED_PROPS}}. Arrange them as one connected workday vignette, with gentle overlaps, varied orientations and natural gaps. Match the client's reference through specific materials, accent colors and light rather than merely adding the word aesthetic. Keep organizers at believable working-desk scale, stocked appropriately, with their shape readable; they must not overwhelm the frame. Clean means an edited, inviting scene with fewer props, while retaining texture, personality and visual hierarchy. Preserve retail geometry and fixed colors. Keep incidental styling separate from linked products.
 
 STYLED SIBLING
 
-Make a distinct more layered overhead stationery edit using a second approved surface, purposeful notebook/paper overlaps and a changed organizer arrangement. Keep the hero easy to read.
+Build a complete, inviting styled workspace with the same verified products. For this client's second reference set, use a gentle elevated three-quarter view looking across the desktop, so the computer, flowers and organizers retain natural depth. Do not combine this with a directly overhead camera instruction. Select a coherent group of approved supporting details, such as a coordinated keyboard, notebook, drink and flowers. Layer the foreground stationery, middle working area and quiet background intentionally. Keep the linked products clearly recognizable at realistic scale. Use tactile contrast, natural gaps and one consistent light direction. Styled need not always be a literal flat lay: select the category's reference-supported camera treatment and record it explicitly.
 
 LIFESTYLE SIBLING
 
-Show the actual organizers used on an approved working desk from seated desk height, with a plausible workspace and clear separation from unlinked computer/stationery props.
+Show a distinct workday moment with the actual organizers being used: for example, an approved cropped hand placing stationery into the holder or working beside the organized notebook. Choose an appropriate oblique or seated view with plausible reach and natural action. Do not invent an identifiable client or reuse the styled image with a changed caption. Computer screens, logos and incidental props must not introduce unsupported branding, product claims or linked items.
 
-Validation: v0.1 rejected by the customer after a manual/free test. Observed defects: mesh organizer dominance, weak color/material contrast, generic blank stationery and insufficient visual personality. v0.2 is a proposed revision, not a proven pass. The manual test model was not supplied. Ask for an admired category-specific visual reference when the desired standard is not yet grounded.
+Reference interpretation: the customer supplied three admired desk images on October 6, 2026. Shared qualities are layered stationery, blush/cream/gold with botanical accents, mixed tactile materials, natural light and a personal workday story. Two use overhead layouts; one uses an oblique workspace view. These guide this client's style layer only. Do not copy their exact arrangement, branding, screen content or interface overlays, or impose this palette and props on other clients or categories.
+
+The customer then supplied three additional references specifically for the styled treatment: complete feminine workspaces with coordinated devices, flowers, warm lighting and optional shelf details. Use an angled workspace composition for this variant. The simpler treatment remains an overhead stationery composition; a lifestyle variant requires a distinct use moment. Do not force identical camera geometry across all three variants.
+
+Validation: v0.1 rejected by the customer after a manual/free test. Observed defects: mesh organizer dominance, weak color/material contrast, generic blank stationery and insufficient visual personality. No v0.2 result was supplied. v0.3 is reference-grounded but untested; neither acceptance nor repeatability is established. The manual test model was not supplied. Keep the free/manual route and paid-generation pause in effect.
 
 ## K. Tech accessories | base v0.1
 
