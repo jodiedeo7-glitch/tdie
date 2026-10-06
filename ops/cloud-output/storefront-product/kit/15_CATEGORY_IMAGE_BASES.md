@@ -34,7 +34,7 @@ Clean means considered, product-first and fewer distractions. It does not mean e
 
 Lifestyle personalization is required, not a palette swap. Resolve the client's niche, one specific routine or task, an approved place, their selected aesthetic and scene-appropriate personal details. Express those through the action, useful props and environment. Preserve avatar identity through the authorized reference, not a written face/body description. Show enough of the person and environment to tell the story, while keeping the featured products recognizable. Choose the framing under 07_PERSONA_PATHS.txt rather than making every image face-forward. Inspiration screenshots guide style only; their pictured people, logos and licensed character decor do not become the client's avatar or automatic scene requirements.
 
-## A. Womens fashion | base v0.4
+## A. Womens fashion | base v0.5
 
 BASIC PHOTOGRAPHED FLAT LAY (CLEAN BASE)
 
@@ -52,9 +52,13 @@ STYLED SIBLING
 
 Photograph a dimensional outfit flat lay directly overhead on {{SURFACE}}. Shape the clothing as if it were being worn, while keeping every person, body part and mannequin completely absent. Give the bodice natural torso volume, the waist a believable contour and sleeves softly rounded fullness. Layer an outer garment over its top with plausible shoulder alignment, openings and fabric drape. Shape the lower garment into a coherent wearable silhouette, preserving its actual cut and proportions. Concealed support must never be visible. The garments still rest on the surface with coherent contact shadows: no floating outfit, hollow neck skin or human anatomy. Arrange the matching shoes, bag and jewelry aesthetically around the outfit. Use tactile texture, natural light and restrained approved props selected for the client's aesthetic. Extra flowers or a different background alone do not make a basic flat lay styled. Do not change garment construction or add every prop from the references.
 
+Visible-volume acceptance: connected garment placement alone fails. For a layered blazer/trouser outfit, the returned photograph must show rounded sleeve tubes, space and depth inside the neck opening, lapels standing naturally off the layered top, and rounded trouser legs with distinct upper fabric and underside contact shadows. Preserve the actual relaxed/straight cut; do not impose an hourglass figure or slim trouser fit. Support remains concealed and the clothing remains horizontal. If those cues are absent, record STYLED_VOLUME_FAILED regardless of product completeness or attractive bedding. Do not approve a second basic arrangement as styled.
+
 TEXT TREATMENT FOR THE OUTFIT FLAT-LAY PAIR
 
 At least one of the basic/styled flat lays must carry a concise, readable headline in the finished design. Default: headline above the basic outfit arrangement in a modest coordinated header area. An overlay is an alternative only when the photograph has genuine clear space and the words do not cover clothing or accessories. Preserve the raw image without lettering, then add the text in the deterministic layout step. The styled image may stay photo-led; do not force giant type onto both. Record which image receives the headline and its placement before final rendering.
+
+Founder manual test exception: when preparing the complete free/manual prompt comparison the customer requested, include the approved headline directly in the designated test prompt so the customer sees the finished composition in one test. Save that test-specific exception; do not silently defer the customer's requested headline to another application. Production still preserves clean photography and adds deterministic typography. A manual model-rendered headline needs spelling/readability QA and does not establish a production typography pass.
 
 LIFESTYLE SIBLING
 
@@ -64,7 +68,7 @@ Reference interpretation: five customer-supplied outfit screenshots on October 6
 
 October 6 clarification: the customer supplied eight further screenshots (one duplicates another) and defined basic as aesthetically arranged clothing, styled as clothing filled out as if worn with no person present. This definition supersedes the earlier prop-led styled distinction. Some reference panels only lightly suggest volume; a generated styled image must visibly satisfy the filled-out requirement. Hanger displays and clean collages are separate formats, not literal photographed flat lays.
 
-Validation: the first v0.3 manual outfit pair was rejected. v0.4 is a proposed correction and UNTESTED. Record returned images and observed results before promoting this base.
+Validation: v0.3 and subsequent description-only Pink Pumpkin tests were rejected. The October 6 sourced Pink Blazer reference pair was also rejected: connected clothing remained flat, client signature was reduced to flowers/ribbon, and the customer-facing test omitted the headline. v0.5 is a proposed correction and UNTESTED. Item references do not replace the refined composition/personalization/text rules. Record returned images and observed results before promoting this base.
 
 Pink Pumpkin Patch first manual pair, October 6: customer rejected both before testing lifestyle. Observed defects include hot-pink boots/bag becoming pale pink, rhinestones reading as generic glitter and insufficient basic/styled separation. Preserve material distinctions explicitly: faceted raised rhinestones on the boots, fine glitter only on the tumbler, quilted material on the bag. Qualify hot pink as vivid and saturated rather than accepting a coordinated pastel wash. A whole-image palette match is not a product-color pass. The next v0.4 pair uses a folded basic arrangement and a connected, naturally filled-out styled silhouette. It is untested; lifestyle testing has not occurred.
 

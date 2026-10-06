@@ -49,6 +49,8 @@ Add text after photography with a supported deterministic layout. Use the custom
 
 For an outfit basic/styled flat-lay pair, at least one finished image includes a headline. Default to a modest headline above the basic arrangement; use an overlay only in genuine quiet space without obscuring any featured piece. Record the selected image and placement. Raw generated photographs remain text-free.
 
+For the founder's explicitly requested complete free/manual prompt comparison, the designated test prompt may render the approved headline directly under the test exception in category base A. Deliver the finished-design test rather than making the customer add the omitted headline elsewhere. This bounded manual-preview exception does not change the production clean-photo/deterministic-type route or its QA.
+
 Use a concise search-led headline, clear hierarchy, deliberate accent phrase, generous safe margins and a useful small CTA such as “Shop the edit.” Photography dominates. Use approved cream/near-black/brand accents; avoid brown fills, hairline type, crowded badges, fake ratings, prices, scarcity or guarantees. Text cannot cover the face, hero or important details. Use a scrim or paper panel only where needed, never a full-image color wash.
 
 Choose type scale from the actual photograph and intended hierarchy, not a fixed oversized template. Bold does not mean enormous. Compare the image with and without type: the headline must support the product story instead of overpowering it or compensating for a weak photograph. A large empty wall plus giant type and a generic boxed CTA is not automatically a professional layout merely because it is legible.
