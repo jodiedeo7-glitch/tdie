@@ -59,6 +59,8 @@ Distinct sibling layouts: product headline above complete arrangement; lifestyle
 
 ## Acceptance gates
 
+Before delivering any assembled prompt or submitting generation, reconcile the client's saved exclusions, front/back product construction, selected treatment and approved typography direction. No reference screenshot or generic category aesthetic overrides the client's avoids. Record this preflight separately from output QA. A prompt that adds an excluded decoration must be corrected before the customer spends a test. In output QA, compare distinctive detail location against the source: back pockets on a front-fly panel fail product fidelity. Giant single-line serif lettering above a large blank band is not a substitute for the customer's selected Pinterest-style type treatment.
+
 1. Inspect raw image and final Pin at full resolution and 320px phone size. Separately judge photographic desirability, adherence to the selected format, composition and typography. Legibility, correct dimensions, a completed generation and a working link cannot substitute for those visual checks. Record observed strengths and defects, not just PASS. Reject a generic placeholder composition or an image the customer has rejected; retire its pending approval and fix the brief before further paid attempts. Do not keep correcting a minor product detail while preserving the rejected overall art direction.
 2. Complete required pieces, credible hands/anatomy, straps, shapes, scale, light and margins; no artifacts, fake labels, logos or watermarks.
 3. Persona identity compared with actual reference; world, action and props checked. Prompt text is not proof.
