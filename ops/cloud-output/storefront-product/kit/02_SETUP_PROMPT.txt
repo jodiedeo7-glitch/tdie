@@ -591,7 +591,16 @@ Save the actual slot map in SLOTS.
 OUTFIT TIME ESTIMATE: 2 hours per outfit unless I say otherwise.
 
 IMAGE BUDGET CHECK:
-Now that persona, pace and optional Outfit of the Day are known, calculate expected automatic image-generation usage from the CURRENT number of generated assets per look, the saved model routing, expected face-forward share, current verified connected costs, a reasonable correction allowance and Outfit of the Day volume if enabled. Show the estimate plainly, then ask:
+Now that persona, pace and optional Outfit of the Day are known, calculate expected automatic image-generation usage from the CURRENT number of generated assets per look, the saved model routing, expected face-forward share, current verified connected costs, a reasonable correction allowance and Outfit of the Day volume if enabled.
+
+IMPORTANT BILLING RULE:
+- Distinguish the provider's quoted/exact model cost from the amount the connected automatic route actually deducts.
+- If the automatic connector/account cannot charge fractional credits, round each fractional generation UP to the next whole credit for budgeting.
+- If the live estimator reports a fractional exact cost but actual connected billing granularity has not been verified by a completed generation/readback, use the conservative whole-credit figure in the budget and label the fractional quote separately as ESTIMATED MODEL COST.
+- Replace the conservative assumption only after an actual automatic generation confirms the billed amount in account/job evidence.
+- Budget from actual billed/chargeable units, not merely the model's theoretical fractional rate.
+
+Show the estimate plainly, then ask:
 "What's the most you want spent on automatic image generation per month?"
 Save GENERATION BUDGET (amount, period and what happens when it runs out; default = stop paid generation and tell me).
 
