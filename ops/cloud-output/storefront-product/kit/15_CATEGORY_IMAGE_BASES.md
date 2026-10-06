@@ -17,6 +17,10 @@ Use one category and one concept. Resolve every field from the confirmed client 
 
 ## Stable structure and controlled variation
 
+Client personalization is required for every category and every concept, including basic. Resolve PERSONAL VISUAL SIGNATURE alongside the aesthetic and product facts: exact preferred items, drink/vessel, flowers, pets or meaningful decor, signature surfaces, textures, finishes, colors and niche-specific use. Convert these into concrete visible choices in the assembled prompt. Do not reduce a rich personal profile to a generic palette or use clean/modern as an automatic default. Fewer props must still feel like this client. Maintain scene-dependent relevance and the client's explicit contextual must-haves; do not stuff every signature item into every frame. Unknown favorites and pet identity need saved evidence or a focused question, not invention. A recognizable photograph of a particular pet needs its approved reference. Keep personal props separate from linked-product claims.
+
+Personalization QA: can the reviewer point to concrete choices from this client's profile, beyond color? Did a generic cup, surface, flower or decor replace a known preference? Does the niche shape the actual action or arrangement? Is the same identity coherent across basic, styled and avatar lifestyle treatments? A polished but interchangeable scene fails personalization QA.
+
 Keep the category's camera, physical arrangement logic and fidelity rules stable. Change only the client's style layer, verified product substitutions, use/season, restrained styling and the selected sibling concept. Save BASE_ID, BASE_VERSION, CONCEPT, resolved inputs, full assembled prompt, model/settings, returned job/image and observed QA. Change one major variable per comparison and preserve failures. Use the same recipe for both automatic and manual/free runs; the execution route does not downgrade quality.
 
 A board is a destination, not always an image category. Cute finds is an umbrella: route to the actual product category. Gifts and seasonal/holiday inherit their objects' physical-category geometry. A mixed look gets one primary category with a deliberate hierarchy, not a concatenation of several incompatible bases. OTHER requires a short new geometry-specific base before generation.
@@ -183,7 +187,7 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.3
+## J. Desk and office | base v0.4
 
 CLEAN BASE
 
@@ -201,7 +205,9 @@ Reference interpretation: the customer supplied three admired desk images on Oct
 
 The customer then supplied three additional references specifically for the styled treatment: complete feminine workspaces with coordinated devices, flowers, warm lighting and optional shelf details. Use an angled workspace composition for this variant. The simpler treatment remains an overhead stationery composition; a lifestyle variant requires a distinct use moment. Do not force identical camera geometry across all three variants.
 
-Validation: v0.1 rejected by the customer after a manual/free test. Observed defects: mesh organizer dominance, weak color/material contrast, generic blank stationery and insufficient visual personality. No v0.2 result was supplied. v0.3 is reference-grounded but untested; neither acceptance nor repeatability is established. The manual test model was not supplied. Keep the free/manual route and paid-generation pause in effect.
+Tommy Kate client layer, confirmed by the customer: her pink mug whenever coffee is shown, signature pink desk, girly/glittery personal styling rather than a clean-modern default. Styled workspace also includes a framed photograph of her dog and her favorite flowers once their exact details/references are resolved. These are client-specific choices, not universal defaults. Make sparkle tangible through a selected glitter-finish accessory or surface detail; do not add a synthetic sparkle filter over the whole photo.
+
+Validation: v0.1 rejected after a manual/free test; no v0.2 result supplied. Customer returned four v0.3 images: Seedream 4.5 basic/styled, then Seedream 5.0 Flash basic/styled, and expressed a preference for 5.0 Flash. This establishes a provisional desk-model preference, not full visual acceptance or repeatability. Both basic results use an angled tabletop view rather than true overhead. Product construction also varies; the 4.5 styled result introduces separate holders and visible lettering/watermark. All four retain generic cups and surfaces instead of the newly specified personal signature. v0.4 incorporates that clarification and is untested. Keep the free/manual route and paid-generation pause in effect.
 
 ## K. Tech accessories | base v0.1
 

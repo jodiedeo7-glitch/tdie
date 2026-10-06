@@ -4,6 +4,8 @@ Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rul
 
 Every look needs the number of distinct visual concepts required by PIN PACKAGE. A new headline on the same arrangement is not a new concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
 
+Every concept must visibly reflect the client's PERSONAL VISUAL SIGNATURE as well as their niche and aesthetic. Basic simplicity does not permit generic substitutions for a known favorite mug, flower, signature surface or meaningful decor. Check specific profile-to-image matches separately from photographic craft and model preference. Do not pass a polished but interchangeable image as fully personalized.
+
 ## Art direction before generation
 
 Record the customer's visual references, brand colors and fonts, persona reference and world, product hero, intended use and the two concepts in MY_RECIPE.txt (setup asks for colors and fonts with the theme; if they were skipped, ask once and save them). Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
