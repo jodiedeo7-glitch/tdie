@@ -11,7 +11,7 @@ THE PERSONA PATH (pin 2 is your AI persona wearing the look)
 
 You need: one reference image of your persona that you have the right to use, your product rows, and the PERSONA WORLD line in MY_RECIPE.txt.
 
-TIME-SAVING: the task uses the image tool and model saved in MY_RECIPE.txt, inside your budget, with your rights recorded.
+TIME-SAVING: the task uses IMAGE PLATFORM and the saved routing rules in MY_RECIPE.txt, inside your budget, with your rights recorded. Face-forward/identity-critical persona images use FACE-FORWARD MODEL. Back-facing, face-obscured and detail-only lifestyle concepts use NO-FACE MODEL when identity fidelity is not the point.
 
 CREDIT-SAVING / MANUAL: your ChatGPT or Claude chat writes this prompt from your product rows. You run it in an image tool that lets you attach a reference photo, then bring the result back for the same checks. If your tool can't keep her looking like herself from a reference photo, use the no-persona path instead.
 
@@ -30,7 +30,7 @@ P4. Faces give it away. Read the last three pin 2 formats in storefront-log.md, 
   Use a mirror selfie only if a place in PERSONA WORLD has a mirror.
 P5. Professional real-world lifestyle photography. Use believable natural light, deliberate composition, tactile materials and camera/lens language. Do not confuse luxury with a staged showroom or an AI influencer set.
 P6. No words, signs, logos or labels anywhere in the photo.
-P7. Tool routing: use the image provider and model recorded in MY_RECIPE.txt (the tested connected path is Higgsfield through ChatGPT). At setup, pick the lowest-cost model that holds her identity, looks real and can edit in place; after that, never change it without setup. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation. Do not silently switch to another paid provider or model when credits are unavailable.
+P7. Tool routing: follow IMAGE PLATFORM, NO-FACE MODEL, FACE-FORWARD MODEL and FACE-FORWARD ALTERNATIVE exactly as saved in MY_RECIPE.txt. A visible face that must match the persona is FACE-FORWARD / IDENTITY-CRITICAL. A back-facing, phone-covered, chin-down, hands/detail or other concept where facial identity is not visible enough to matter is NO-FACE / IDENTITY-NOT-CRITICAL. On the founder Higgsfield signature setup, these route to Seedream 5.0 Flash 2K and Nano Banana Pro 2K respectively; Grok Image Standard 2K is only an explicitly selected lower-cost face-forward alternative. Never silently switch models to save credits. If a correction is supported as an in-place edit, edit the approved asset rather than starting a new generation.
 P7a. Signature props: anything in PERSONA PROPS (her usual cup, her dog, her car) can appear in her photos, but it is never a linked product. Say so in the alt text when it could be mistaken for one.
 P8. Persona lifestyle imagery can serve outfit looks and applicable theme lists/roundups. Show a meaningful action involving relevant items in the authorized world. Home objects may be shown in use. Do not force unrelated products into the scene. Compare siblings against 13_PIN_VISUAL_STANDARD.md.
 
@@ -45,7 +45,7 @@ Corrections, same chat, two at most: say exactly what's wrong ("the bag should b
 THE NO-PERSONA PATH (product edit plus a distinct in-situ story)
 ====================================================================
 
-No persona, no faces. Both pins of every look are person-free images made with the current image provider/model recorded in MY_RECIPE.txt. The production default is not locked to an obsolete model name.
+No persona, no faces. Both pins of every look use IMAGE PLATFORM + NO-FACE MODEL from MY_RECIPE.txt.
   Pin 1: the FLAT LAY or the COLLAGE (03_THEMED_LOOK_RECIPE.txt Part 4), alternating look to look.
   Pin 2: a genuinely distinct in-situ scene or perspective with its own composition and headline. A recolored flat lay or new title on the same arrangement fails sibling QA.
 
