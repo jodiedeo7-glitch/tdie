@@ -17,13 +17,17 @@ Pin 1: CLEAN PRODUCT EDIT. Product-first composition with strong hierarchy, mini
 Pin 2: STYLED EDITORIAL FLAT LAY. A more dressed, layered, mood-rich composition using a different surface, arrangement, camera treatment and scene logic from Pin 1.
 Pin 3: THE LIFE IT FITS. A believable lifestyle/in-use moment with the authorized persona, or a distinct person-free in-situ scene.
 
+Clean and BASIC assets receive the same art direction and desirability checks as styled and EXPANDED assets. Clean means a disciplined, deliberately styled product story with fewer distractions. It does not authorize empty products, a generic beige window scene, an arbitrary product lineup or a weaker prompt. Minimal supporting styling must still serve the use, palette and composition. Record the specific surface, arrangement, camera/viewpoint, light direction, material texture and visual reason someone would save this image before generation; adjectives such as "photorealistic" or "editorial" alone are not a brief.
+
+Honor the selected format in the actual result. A flat lay has an overhead arrangement; a collage separates products into a composed product board; a front-facing tabletop lineup is neither. For dimensional home/desk objects, choose a deliberate product-board treatment or record a suitable overhead scene that preserves their recognizable construction. Do not rename a generic tabletop shot a flat lay to pass QA. Keep unlinked styling props separate from linked-product claims.
+
 Compare all siblings side by side at 320px wide. Visual story, camera/viewpoint and composition must differ while belonging to the same edit. Record the comparison in QA. Revise a duplicated concept within existing attempt/budget limits.
 
 ## Complete standalone prompts
 
 Generate portrait photography for a 2:3 final Pin at least 1000×1500, using the IMAGE PLATFORM and saved routing class/model/resolution from MY_RECIPE.txt. Classify the concept before generation: NO-FACE / IDENTITY-NOT-CRITICAL or FACE-FORWARD / IDENTITY-CRITICAL. Record each full prompt, routing class, job, model, reference, attempt and charges. No silent substitution.
 
-Product-edit structure: purpose/hero → exact authorized product descriptions → hierarchy/arrangement → surface/light → camera/lens/realistic materials → headline-safe area → no extras/logos/text/cropping. Include photorealistic, real-world photography, true-to-life textures, natural imperfections and actual camera language.
+Product-edit structure: purpose/hero → exact authorized product descriptions → hierarchy/arrangement → specific surface/light → camera/viewpoint/lens/realistic materials → restrained approved styling props and their unlinked status → proportionate headline-safe area → no extra featured products/logos/text/cropping. Include photorealistic, real-world photography, true-to-life textures, natural imperfections and actual camera language. "No extra featured products" does not prohibit the approved scene styling that makes the composition desirable.
 
 Lifestyle structure: reference-only identity → approved environment → one natural action involving the hero → changeable wardrobe/styling → brand props → subject/product composition and headline-safe area → physical light/camera → no invented performance, anatomy artifacts, logos or text. Identity reference is mandatory for a named persona. Never describe locked identity traits in words. The persona rules in 07_PERSONA_PATHS.txt override generic aesthetic language.
 
@@ -35,11 +39,13 @@ Add text after photography with a supported deterministic layout. Use the custom
 
 Use a concise search-led headline, clear hierarchy, deliberate accent phrase, generous safe margins and a useful small CTA such as “Shop the edit.” Photography dominates. Use approved cream/near-black/brand accents; avoid brown fills, hairline type, crowded badges, fake ratings, prices, scarcity or guarantees. Text cannot cover the face, hero or important details. Use a scrim or paper panel only where needed, never a full-image color wash.
 
+Choose type scale from the actual photograph and intended hierarchy, not a fixed oversized template. Bold does not mean enormous. Compare the image with and without type: the headline must support the product story instead of overpowering it or compensating for a weak photograph. A large empty wall plus giant type and a generic boxed CTA is not automatically a professional layout merely because it is legible.
+
 Distinct sibling layouts: product headline above complete arrangement; lifestyle headline in genuinely clear photo space and CTA away from the subject. A caption change alone fails.
 
 ## Acceptance gates
 
-1. Inspect raw image and final Pin at full resolution and 320px phone size.
+1. Inspect raw image and final Pin at full resolution and 320px phone size. Separately judge photographic desirability, adherence to the selected format, composition and typography. Legibility, correct dimensions, a completed generation and a working link cannot substitute for those visual checks. Record observed strengths and defects, not just PASS. Reject a generic placeholder composition or an image the customer has rejected; retire its pending approval and fix the brief before further paid attempts. Do not keep correcting a minor product detail while preserving the rejected overall art direction.
 2. Complete required pieces, credible hands/anatomy, straps, shapes, scale, light and margins; no artifacts, fake labels, logos or watermarks.
 3. Persona identity compared with actual reference; world, action and props checked. Prompt text is not proof.
 4. Sharp, correctly spelled readable type, no overlaps; visible CTA without clutter.
