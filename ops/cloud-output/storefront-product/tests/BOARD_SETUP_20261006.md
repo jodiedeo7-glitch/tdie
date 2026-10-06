@@ -26,6 +26,7 @@ Scope: Steps 2 and 4 of `kit/02_SETUP_PROMPT.txt`, starting from branch `fix/wys
 
 1. Board-name validation must precede submission, and an approved over-limit name needs a specific shorter-name decision.
 2. Board setup must check the connected publisher's documented creation route before assigning manual work. It must record name creation, description editing, sections, public evidence and ID mapping independently, preserving completed writes when another capability is blocked.
+3. The client-flow response ended with unresolved setup status instead of a concrete resolution. The customer explicitly rejected that behavior. The setup prompt and execution contract now require an authorized repair, an exact permission/choice question, or precise customer instructions, while independent work continues. This is a communication-flow repair; it is not evidence that the remaining board capabilities passed.
 
 Source changes do not certify PDFs, ZIP delivery, unattended operation or release readiness. This test does not rebuild or replace delivery artifacts.
 
