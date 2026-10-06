@@ -45,9 +45,17 @@ Connected-generation verification on 5 Oct 2026:
 These are dated connected-account costs, not permanent prices. Setup re-checks them before quoting them.
 
 MANUAL CREDIT-SAVING ROUTE
-This is separate from the automatic route. If the buyer wants to save Higgsfield credits by generating manually, setup checks the buyer's actual CURRENT Unlimited options and recommends the strongest suitable Unlimited model for the specific asset. Do not infer that a model is free for that customer because the catalog says it can support Unlimited. Do not default to Seedream 5.0 Lite or any other Unlimited model unless it is both actually available to that customer and the customer wants it. The buyer may choose another stronger Unlimited option instead.
+This is separate from the automatic route. If the buyer wants to save Higgsfield credits by generating manually, setup checks the buyer's actual CURRENT Unlimited options and recommends the strongest suitable Unlimited models by asset type. Do not infer that a model is free for that customer because the catalog says it can support Unlimited. Do not default to Seedream 5.0 Lite or any other Unlimited model unless it is both actually available to that customer and the customer wants it.
 
-Manual and automatic images use the same prompts, rights rules and visual QA. The difference is who presses Generate and which balance is used.
+If the buyer is unsure which Unlimited generator to use, compare candidates consistently:
+- use two very different flat-lay prompts in every candidate generator
+- use two very different face-forward lifestyle/persona prompts in every candidate generator
+- keep reference inputs, aspect ratio and comparable settings consistent across candidates
+- score product fidelity, realism, composition, artifacts and prompt adherence; add identity fidelity for face-forward tests
+- choose a separate favorite for flat lays and face-forward lifestyle if different generators win
+- save the prompts and winning choices so future manual generations are consistent
+
+Manual and automatic images use the same rights rules and visual QA. The difference is who presses Generate, which model is selected and which balance is used.
 
 If the buyer needs Higgsfield:
 https://higgsfield.ai?fpr=jodie-30b092
