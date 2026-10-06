@@ -33,13 +33,15 @@ Clean means considered, product-first and fewer distractions. It does not mean e
 
 Lifestyle personalization is required, not a palette swap. Resolve the client's niche, one specific routine or task, an approved place, their selected aesthetic and scene-appropriate personal details. Express those through the action, useful props and environment. Preserve avatar identity through the authorized reference, not a written face/body description. Show enough of the person and environment to tell the story, while keeping the featured products recognizable. Choose the framing under 07_PERSONA_PATHS.txt rather than making every image face-forward. Inspiration screenshots guide style only; their pictured people, logos and licensed character decor do not become the client's avatar or automatic scene requirements.
 
-## A. Womens fashion | base v0.3
+## A. Womens fashion | base v0.4
 
 BASIC PHOTOGRAPHED FLAT LAY (CLEAN BASE)
 
 A coordinated, complete outfit photographed directly overhead on one continuous {{SURFACE}}. Establish a garment-led focal point, then arrange the complementary pieces around it as a believable outfit rather than an inventory grid. Use relaxed diagonals, soft folds, small overlaps and comfortable gaps. Choose the garment treatment deliberately: lay open a dress, skirt or statement blouse when silhouette matters; neatly fold a knit or jeans when the fold makes the composition more appealing and leaves identifying details visible. Do not require every garment to be unfolded. Pair shoes naturally, curve the bag strap without tangling, and place jewelry in small useful groups. Keep materials tactile and relative scale believable, with one coherent light direction and soft contact shadows. Preserve verified garment cut, color, fastening and pattern. No mannequin, body, hanger or invented outfit piece.
 
 Basic clothing rests naturally on the surface, attractively laid out or folded. Do not fill it into an invisible worn form. Basic describes this clothing treatment, not the BASIC publishing package, and does not imply lower quality.
+
+Make the basic/styled distinction visible before generating the pair. For a knit-and-jeans basic edit, a deliberate folded-knit arrangement with separated jeans/accessories can establish the basic treatment; reserve connected, filled-out garment shaping for styled. Use a distinct surface and arrangement without changing the outfit. Do not rely on the headline alone to distinguish siblings.
 
 CLEAN COLLAGE ALTERNATIVE
 
@@ -61,7 +63,9 @@ Reference interpretation: five customer-supplied outfit screenshots on October 6
 
 October 6 clarification: the customer supplied eight further screenshots (one duplicates another) and defined basic as aesthetically arranged clothing, styled as clothing filled out as if worn with no person present. This definition supersedes the earlier prop-led styled distinction. Some reference panels only lightly suggest volume; a generated styled image must visibly satisfy the filled-out requirement. Hanger displays and clean collages are separate formats, not literal photographed flat lays.
 
-Validation: v0.3 is reference-grounded and UNTESTED. No generated result or customer visual acceptance has been recorded. Record the returned images and observed results before promoting this base.
+Validation: the first v0.3 manual outfit pair was rejected. v0.4 is a proposed correction and UNTESTED. Record returned images and observed results before promoting this base.
+
+Pink Pumpkin Patch first manual pair, October 6: customer rejected both before testing lifestyle. Observed defects include hot-pink boots/bag becoming pale pink, rhinestones reading as generic glitter and insufficient basic/styled separation. Preserve material distinctions explicitly: faceted raised rhinestones on the boots, fine glitter only on the tumbler, quilted material on the bag. Qualify hot pink as vivid and saturated rather than accepting a coordinated pastel wash. A whole-image palette match is not a product-color pass. The next v0.4 pair uses a folded basic arrangement and a connected, naturally filled-out styled silhouette. It is untested; lifestyle testing has not occurred.
 
 ## B. Shoes | base v0.1
 
