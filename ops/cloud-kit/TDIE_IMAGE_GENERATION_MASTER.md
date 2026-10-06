@@ -155,7 +155,7 @@ Scope: Amazon product flat lays and “that girl” shoppable collages with no p
 Read `claude/TDIE_CHATGPT_IMAGE_BRIEF.md` (“Her world”) before writing any prompt. Never write one of her props from memory.
 
 * Her signature prop, in every frame she appears in (full body, hands only, boots only): a glitter-flecked pink iced coffee tumbler with a lavender straw. Section 4A governs it.
-* The ceramic mug is only ever the bubblegum pink ceramic mug printed Player Two? in black lettering, saturated candy pink, never pale or white. A plain pink mug with no words is never correct. When it is used, the negative line says the only printed words in the frame are Player Two? on the mug.
+* The ceramic mug is only ever the bubblegum pink ceramic mug printed Player Two? in black lettering, saturated candy pink, never pale or white. Use clear, readable black lettering prominently across the visible front of the mug, preserving the exact words and question mark. Never prompt this inscription as small or tiny lettering. A plain pink mug with no words is never correct. When it is used, the negative line says the only printed words in the frame are Player Two? on the mug.
 * In frames without her, vary pink props and environmental details across the set. The Player Two? mug, glitter tumbler, candy-pink over-ear headphones, candy-pink gardening gloves and candy-pink velvet throw pillow are available recurring brand props when they fit the scene. Avoid making one prop the visual focus of most person-free images, but there is no limit on the number of pink items in any individual image.
 * Why this section exists: the October 2026 DFY calendar was prompted without reading these files, and 75 of 83 images came back with a plain pink mug and had to be regenerated.
 
