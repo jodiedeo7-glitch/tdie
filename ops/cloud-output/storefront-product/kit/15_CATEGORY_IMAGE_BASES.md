@@ -21,6 +21,8 @@ Client personalization is required for every category and every concept, includi
 
 Personalization QA: can the reviewer point to concrete choices from this client's profile, beyond color? Did a generic cup, surface, flower or decor replace a known preference? Does the niche shape the actual action or arrangement? Is the same identity coherent across basic, styled and avatar lifestyle treatments? A polished but interchangeable scene fails personalization QA.
 
+Color separation QA: signature color does not mean matching every surface and object. Resolve a light/neutral relief surface, the signature hue, secondary client-approved accents and a small stronger focal accent. Separate similarly colored products from their background through value, material and spacing. Use exact retail colors unchanged, adapting incidental props instead. Avoid a pastel monochrome wash unless explicitly selected. Write color names with specific shade/saturation, never hex codes in image-generation prompts.
+
 Keep the category's camera, physical arrangement logic and fidelity rules stable. Change only the client's style layer, verified product substitutions, use/season, restrained styling and the selected sibling concept. Save BASE_ID, BASE_VERSION, CONCEPT, resolved inputs, full assembled prompt, model/settings, returned job/image and observed QA. Change one major variable per comparison and preserve failures. Use the same recipe for both automatic and manual/free runs; the execution route does not downgrade quality.
 
 A board is a destination, not always an image category. Cute finds is an umbrella: route to the actual product category. Gifts and seasonal/holiday inherit their objects' physical-category geometry. A mixed look gets one primary category with a deliberate hierarchy, not a concatenation of several incompatible bases. OTHER requires a short new geometry-specific base before generation.
@@ -187,7 +189,7 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.4
+## J. Desk and office | base v0.5
 
 CLEAN BASE
 
@@ -206,6 +208,8 @@ Reference interpretation: the customer supplied three admired desk images on Oct
 The customer then supplied three additional references specifically for the styled treatment: complete feminine workspaces with coordinated devices, flowers, warm lighting and optional shelf details. Use an angled workspace composition for this variant. The simpler treatment remains an overhead stationery composition; a lifestyle variant requires a distinct use moment. Do not force identical camera geometry across all three variants.
 
 Tommy Kate client layer, confirmed by the customer: her pink mug whenever coffee is shown, signature pink desk, girly/glittery personal styling rather than a clean-modern default. Her flowers are lilacs and wildflowers only, with hydrangeas explicitly excluded. Her dog is a golden retriever; the name remains undecided and naming is paused. Styled workspace includes the flowers and a framed photograph of her dog when the approved pet reference is available. These are client-specific choices, not universal defaults. Make sparkle tangible through a selected glitter-finish accessory or surface detail; do not add a synthetic sparkle filter over the whole photo.
+
+Color correction, confirmed after the next manual return: do not put pink accessories directly against an all-pink scene. Retain her signature pink desk but create substantial luxury-cream relief with a desk pad, paper and cream surrounding wall. Include unmistakable saturated hot-pink pops in selected incidental props, with clearly purple-toned lavender as a smaller TDIE accent. Gold stays restrained in realistic hardware details. A pink wall, pink desktop, pink mat, pink keyboard and pink stationery at the same pale value fails this client's brief. Keep the retail organizers' actual pink unchanged. The result must feel girly and personal with visible contrast, not muted blush monochrome.
 
 Validation: v0.1 rejected after a manual/free test; no v0.2 result supplied. Customer returned four v0.3 images: Seedream 4.5 basic/styled, then Seedream 5.0 Flash basic/styled, and expressed a preference for 5.0 Flash. This establishes a provisional desk-model preference, not full visual acceptance or repeatability. Both basic results use an angled tabletop view rather than true overhead. Product construction also varies; the 4.5 styled result introduces separate holders and visible lettering/watermark. All four retain generic cups and surfaces instead of the newly specified personal signature. v0.4 incorporates that clarification and is untested. Keep the free/manual route and paid-generation pause in effect.
 
