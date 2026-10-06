@@ -395,7 +395,7 @@ STEP 4. PUBLISHING
 Ask: "Do you want Metricool to schedule your Pins (time-saving), schedule them yourself in Pinterest (credit-saving), or a mix?"
 TIME-SAVING:
 - Ask me to connect Metricool to this chat, with my Pinterest account connected inside Metricool. Confirm the right Metricool brand and save METRICOOL BRAND.
-- Ask which Metricool plan I'm on and save METRICOOL PLAN (STEP 8 checks it fits my pace).
+- Read the current Metricool plan through the connected account or official interface when available; ask only when it cannot be verified. Save METRICOOL PLAN with the evidence date (STEP 8 checks it fits my pace).
 - Discover the available Metricool tools. If board listing is absent, use its supported official account interface through an authorized browser operator to match each production board to its board ID; do not invent an unavailable API action. Save it with the board. A board Metricool can't see is marked unavailable for Metricool (a new board may need the Pinterest connection refreshed inside Metricool), and nothing is scheduled there through Metricool.
 - Save PUBLISH METHOD = Metricool direct.
 - The test Pin is built and scheduled in STEP 12, not now.
@@ -632,6 +632,8 @@ Save GENERATION BUDGET (amount, period and what happens when it runs out; defaul
 PLAN / CAPACITY CHECK:
 Calculate projected monthly Pinterest posts from the CURRENT visual recipe, selected look pace and OOTD volume. Compare that with the customer's verified publisher capacity when available. If exact capacity is not verifiable, mark it UNVERIFIED instead of quoting an old limit. If the selected pace does not fit, offer a lower pace, a different run pattern or a publisher change; never silently reduce output.
 
+If I choose to upgrade after the client run-through, save the verified CURRENT PLAN separately from the intended PLAN CHANGE and when I will make it. Continue preparation and tests that fit the current account without buying an upgrade or reducing my intended production pace. Any test that writes a post still needs its own verified available capacity and exact approval. Full production capacity remains pending until I complete the upgrade and you read back the actual new plan, quota and slot fit. An intention to upgrade is not a capacity pass. Ask about browser help or manual steps only when the upgrade is due; do not repeatedly interrupt the run-through to request it.
+
 SCALING RULE:
 After the controlled first-look test and first successful scheduled production run, the customer may scale up. A pace increase changes the saved automation scope, generation budget and slot map, so recalculate those fields before increasing production.
 STEP 8A. THE BLOG HALF (optional)
@@ -776,7 +778,7 @@ RENEWAL DATE: 6 months from today.
 
 STEP 11. THE STATE AND YOUR FILES
 Create the state described in 12_STATE_SCHEMA.md Part B, in STATE LOCATION:
-CLOUD: STOREFRONT_STATE in Google Sheets, with tabs AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. The PINS tab has a PULL column I can type in.
+CLOUD: STOREFRONT_STATE in Google Sheets, with tabs SETUP_CHECKPOINT, AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. The PINS tab has a PULL column I can type in.
 LOCAL or CREDIT-SAVING: storefront-state.json with the same sections.
 Also create storefront-log.md, pin-tab.md, pin-drafts.md, shopping-list.md and PRODUCT_SOURCES.md (with one row marked EXAMPLE showing every field in 03_THEMED_LOOK_RECIPE.txt Part 3). These are readable views; the state is the source of truth.
 Then the tasks, or a run checklist:
