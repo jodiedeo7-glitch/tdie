@@ -153,7 +153,7 @@ PART 4. MAKE THE IMAGES
 
 IMAGE EXECUTION
 
-Read 13_PIN_VISUAL_STANDARD.md before generating every product, theme-list, roundup or outfit Pin and apply its art direction, composition, headline and acceptance checks. BASIC and clean assets require the same photographic craft as expanded/editorial assets. A generated image is inspiration unless it depicts the actual linked items or uses clearly identified customer-owned/licensed product photos; match the Pin's title, destination, board, disclosure and alt text to that status.
+Read 13_PIN_VISUAL_STANDARD.md and 15_CATEGORY_IMAGE_BASES.md before generating every product, theme-list, roundup or outfit Pin and apply their category-specific composition, art direction, headline and acceptance checks. Save BASE_ID, BASE_VERSION, CONCEPT and resolved client inputs with the full prompt. BASIC and clean assets require the same photographic craft as expanded/editorial assets. A generated image is inspiration unless it depicts the actual linked items or uses clearly identified customer-owned/licensed product photos; match the Pin's title, destination, board, disclosure and alt text to that status.
 
 TIME-SAVING: use IMAGE PLATFORM and the saved model-routing rules in MY_RECIPE.txt. Choose the model by the asset's routing class, not by habit. On the current founder Higgsfield signature setup: use NO-FACE MODEL for flat lays, collages, product scenes and lifestyle concepts where face-forward identity is not critical; use FACE-FORWARD MODEL whenever the persona's visible face makes identity fidelity important. Use FACE-FORWARD ALTERNATIVE only if the customer explicitly chose it. Check the current cost against GENERATION BUDGET before each paid generation (12_STATE_SCHEMA.md A4).
 
@@ -178,6 +178,7 @@ PIN 1: THE FLAT LAY OR COLLAGE (no person)
 Use IMAGE PLATFORM plus the NO-FACE MODEL saved in MY_RECIPE.txt for this no-person asset and confirm it is available for this run. Do not silently substitute another model, even an Unlimited model. If the saved model is unavailable, keep the appropriate allowed status from 12_STATE_SCHEMA.md, record the blocker in error_code and notes, and report the required action.
 
 Two Pin 1 compositions, alternating look to look (read the last look's Pin 1 in storefront-log.md and use the other one):
+Apply the actual physical category's base first. Alternate only between formats suited to those objects. Do not force dimensional objects into garment geometry or relabel a tabletop display a flat lay. Gifts, seasonal edits and umbrella boards inherit the underlying product category's geometry.
   FLAT LAY: the pieces styled from directly above on one surface, arranged like a real flat lay.
   COLLAGE: each piece shown cleanly and separately on a plain background, arranged in a tidy grid, like a shoppable product board.
  Favor a calm editorial composition with clear product hierarchy, restrained props, and comfortable background margins. Every garment and accessory must fit completely inside the 2:3 canvas; do not crop straps, hems, sleeves, shoes, or trouser legs. Leave a moderate clean area at the top for a headline.

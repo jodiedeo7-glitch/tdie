@@ -8,6 +8,8 @@ Every look needs the number of distinct visual concepts required by PIN PACKAGE.
 
 Record the customer's visual references, brand colors and fonts, persona reference and world, product hero, intended use and the two concepts in MY_RECIPE.txt (setup asks for colors and fonts with the theme; if they were skipped, ask once and save them). Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
 
+Use 15_CATEGORY_IMAGE_BASES.md to select product geometry and composition before applying the client's aesthetic. Save the base/version, concept and resolved palette/surface/light/props. These draft bases are not validated by provider connectivity or by a different category's successful image. Keep client style adaptation separate from fixed retail facts. Manual/free prompt development receives the same quality checks and pauses paid runs until explicitly resumed.
+
 BASIC package:
 Pin 1: THE PRODUCT EDIT. Complete product/outfit composition with a clear hero, deliberate hierarchy, dimensional natural light and realistic contact shadows.
 Pin 2: THE LIFE IT FITS. A believable lifestyle/in-use moment in the approved persona world, or a distinct person-free in-situ scene.
