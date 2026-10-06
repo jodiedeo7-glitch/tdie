@@ -479,10 +479,31 @@ If NO:
 PERSONA = no. Use the no-persona image path in 03 Part 4 and 07_PERSONA_PATHS.txt.
 
 STEP 7. THE BRAND CLOSET™
-Ask: "Are you a member of The Brand Closet™ with access to its Outfit of the Day lessons?"
-Yes: save BRAND CLOSET MEMBER = yes and the tier. Then test it yourself: try to open the Outfit of the Day course page (04_OUTFIT_OF_THE_DAY_RECIPE.txt) through this chat's supported tools. If you can see the lesson list, Automation 2 runs as a scheduled task. If you can't, keep optional Automation 2 queued with its access blocker. Offer its credit-saving form, where I open the lesson and describe the outfit, but switch only if I choose it.
-Ask: "Do you want to recommend The Brand Closet™ on your own pages with your own referral link?" If yes, show me how to find it (05_RECOMMEND_IT_TOO.txt, FIND YOUR LINK), save BRAND CLOSET REFERRAL LINK and BRAND CLOSET CARD = on. Then ask: "Do you also want one line about it in your Outfit of the Day Pin descriptions?" Save PIN LINE (on or off).
-No: BRAND CLOSET MEMBER = no, BRAND CLOSET CARD = off, PIN LINE = off. Skip Automation 2.
+Ask only:
+"Do you currently have access to The Brand Closet™ Outfit of the Day lessons?"
+A YES
+B NO
+
+Do not ask the membership tier. Outfit of the Day access is the only setup fact this automation needs.
+
+If YES:
+- save BRAND CLOSET MEMBER = yes
+- save BRAND CLOSET OOTD ACCESS = yes
+- test the Outfit of the Day course page yourself through this chat's supported tools
+- if the lesson list is visible, Automation 2 is eligible to run as a scheduled task
+- if it is not visible, keep Automation 2 queued with the exact access blocker
+- offer the manual/credit-saving version only as an optional fallback
+- ask: "Do you want to recommend The Brand Closet™ on your own pages with your own referral link?"
+  - if yes, follow 05_RECOMMEND_IT_TOO.txt, save BRAND CLOSET REFERRAL LINK and BRAND CLOSET CARD = on
+  - then ask whether one line about it should appear in Outfit of the Day Pin descriptions; save PIN LINE on/off
+  - if no, BRAND CLOSET CARD = off and PIN LINE = off
+
+If NO:
+- save BRAND CLOSET MEMBER = no
+- save BRAND CLOSET OOTD ACCESS = no
+- BRAND CLOSET CARD = off
+- PIN LINE = off
+- skip Automation 2.
 
 STEP 8. PACE AND TIMES
 Ask: "What time zone are you in, and how many looks a week do you want: 3, 4, 5, 6 or 7?" Save an IANA time zone (for example America/New_York). Default 4.
@@ -589,7 +610,7 @@ PERSONA IMAGE
 PERSONA WORLD
 PERSONA PROP LOGIC
 BRAND CLOSET MEMBER
-BRAND CLOSET TIER
+BRAND CLOSET OOTD ACCESS
 BRAND CLOSET REFERRAL LINK
 BRAND CLOSET CARD (on or off)
 PIN LINE (on or off)
