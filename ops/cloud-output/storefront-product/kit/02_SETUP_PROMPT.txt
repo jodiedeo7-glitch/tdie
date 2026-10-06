@@ -352,11 +352,19 @@ MIX = category weighting derived from CATEGORY MIX.
 VISUAL STYLE = "adaptive to product/category/season; follow CURATION PROFILE and VISUAL CREATIVE PREFERENCES."
 Never put a real person, film, show, brand or character into anything a shopper will see. If I use one as private shorthand for taste, save it only as PRIVATE INSPIRATION and translate it into non-infringing traits for production.
 STEP 2. BOARDS
-Ask for my exact Pinterest board names. If I have none, suggest search-first names like "Cozy Fall Outfits for Moms | Amazon Finds".
-Ask whether each board has sections, and which kind of look goes where.
-Ask me to open each production board in Pinterest and confirm it says Public. Save the exact board name, its public web address, its sections, how public status was checked, and when.
-A secret TEST board is allowed only for a dry run, marked TEST. A dry run never creates or schedules a Pin.
-On native Pinterest, the board's public web address is its identifier. A numeric board ID is needed for Metricool; STEP 4 resolves it through the available supported account route. Never guess an ID, scrape Pinterest or use hidden Pinterest addresses.
+First inspect the customer's connected Pinterest/Metricool state and saved storefront records for existing production boards. Do not ask the customer to retype board names you can already read.
+
+If there are no suitable boards, suggest search-first board names based on the confirmed CURATION PROFILE and ask the customer to approve/change the proposed set.
+
+For every approved production board:
+1. Reuse an existing matching PUBLIC board when one exists.
+2. If the board is missing and the selected runtime has a tested, permitted official Pinterest/browser route for board creation, create the missing board yourself with a useful description and any agreed sections. Then read it back and verify public status.
+3. If no permitted board-creation route is available, keep that board as SETUP_BLOCKED and ask the customer only for the specific manual action that cannot be completed automatically. Do not make manual board creation the default.
+4. Save exact board name, public URL, sections, public-status evidence and checked date.
+5. STEP 4 must resolve and save the numeric Metricool board ID before Metricool scheduling is considered ready.
+
+A secret TEST board is allowed only for a dry run, marked TEST. A dry run never creates or schedules a live Pin.
+Never guess board IDs, scrape Pinterest, use hidden endpoints, or treat a successful page load as permission for account actions.
 
 STEP 3. AMAZON PATH
 Ask: "Are you an approved Amazon Influencer with a storefront, or Associates only?"
