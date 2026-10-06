@@ -16,7 +16,7 @@ Compare siblings side by side at 320px wide. Visual story, camera/viewpoint and 
 
 ## Complete standalone prompts
 
-Generate portrait photography for a 2:3 final Pin at least 1000×1500, using the configured provider/model/resolution. Record each full prompt, job, model, reference, attempt and charges. No silent substitution.
+Generate portrait photography for a 2:3 final Pin at least 1000×1500, using the IMAGE PLATFORM and saved routing class/model/resolution from MY_RECIPE.txt. Classify the concept before generation: NO-FACE / IDENTITY-NOT-CRITICAL or FACE-FORWARD / IDENTITY-CRITICAL. Record each full prompt, routing class, job, model, reference, attempt and charges. No silent substitution.
 
 Product-edit structure: purpose/hero → exact authorized product descriptions → hierarchy/arrangement → surface/light → camera/lens/realistic materials → headline-safe area → no extras/logos/text/cropping. Include photorealistic, real-world photography, true-to-life textures, natural imperfections and actual camera language.
 
