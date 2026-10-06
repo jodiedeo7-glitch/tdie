@@ -36,7 +36,11 @@ Clean means considered, product-first and fewer distractions. It does not mean e
 
 Lifestyle personalization is required, not a palette swap. Resolve the client's niche, one specific routine or task, an approved place, their selected aesthetic and scene-appropriate personal details. Express those through the action, useful props and environment. Preserve avatar identity through the authorized reference, not a written face/body description. Show enough of the person and environment to tell the story, while keeping the featured products recognizable. Choose the framing under 07_PERSONA_PATHS.txt rather than making every image face-forward. Inspiration screenshots guide style only; their pictured people, logos and licensed character decor do not become the client's avatar or automatic scene requirements.
 
-## A. Womens fashion | base v0.6
+## A. Womens fashion | base v0.7
+
+Customer-defined treatment contract: BASIC is an attractive arrangement of unfilled clothes lying flat or folded. STYLED is dimensional clothing shaped as if worn, with no visible person. Both can be overhead, personalized, well lit and beautifully accessorized. Props, headlines, garment layering and connected outfit placement do not establish the distinction. Use product references for appearance only; a flat reference must not dictate the styled garment treatment.
+
+For a deliberate comparison, basic uses separately arranged/folded upper garments; styled uses supported upper layers with obvious tubular sleeves and lifted fabric. A rear-detail fold remains permitted in either sibling, but the styled denim needs rounded, supported volume in its visible upper section rather than merely a thicker folded stack. Preserve rear-only construction. Review the pair with text/props ignored: if garment volume is not immediately different, reject the styled image. Save actual output evidence before claiming this contract works.
 
 BASIC PHOTOGRAPHED FLAT LAY (CLEAN BASE)
 
