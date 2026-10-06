@@ -377,53 +377,54 @@ TIME-SAVING:
 CREDIT-SAVING: PUBLISHER = native Pinterest. PUBLISH METHOD = native. No Metricool. If I already pay for Metricool and want a batch file instead of scheduling Pins one by one, PUBLISH METHOD = Metricool CSV.
 MIX: Metricool direct where its STEP 12 test passes; native Pinterest for the rest.
 
-STEP 5. IMAGE PLATFORM, ROUTING AND BUDGET
+STEP 5. IMAGE PLATFORM, AUTOMATIC ROUTING AND BUDGET
 Ask FIRST:
 "Which image platform do you want to use?"
 A Higgsfield
 B another platform I already use
 C I am not sure; compare my available options
 
-Do not apply Higgsfield model names, credit costs or Unlimited assumptions to another platform. If B or C, inspect the current connected platform/account first, then recommend models from that platform's actual capabilities, quality, reference-image support and current cost. Mark anything you cannot verify as UNVERIFIED.
+Do not apply Higgsfield model names, credit costs or manual/Unlimited assumptions to another platform. If B or C, inspect that platform's current connected capabilities, model quality, reference-image support and current cost before recommending an automatic route. Mark anything you cannot verify as UNVERIFIED.
 
-If HIGGSFIELD is chosen:
-- confirm Higgsfield is connected to this chat for the time-saving path
-- verify the current Higgsfield model catalog and current credit estimate before saving a routing rule
+IF HIGGSFIELD IS CHOSEN FOR THE AUTOMATIC PATH:
+- confirm Higgsfield is connected to this chat
+- verify the current Higgsfield catalog and paid credit estimates before saving the route
 - save IMAGE PLATFORM = Higgsfield
-- save the following SIGNATURE HIGGSFIELD ROUTING unless I explicitly change it:
+- save the following AUTOMATIC HIGGSFIELD ROUTING unless I explicitly change it:
 
   NO-FACE / IDENTITY-NOT-CRITICAL:
   Seedream 5.0 Flash, 2K.
-  Use for flat lays, collages, product edits, room/home scenes, in-situ product scenes, and lifestyle images where no face-forward persona identity must be preserved. This includes back-facing, face-obscured or detail-only lifestyle concepts when identity fidelity is not the point.
+  Use for every flat lay, collage, product edit, room/home scene, in-situ product scene, and lifestyle image where no face-forward persona identity must be preserved. Back-facing, face-obscured and detail-only lifestyle concepts stay on this route when identity fidelity is not the point.
 
   FACE-FORWARD / IDENTITY-CRITICAL:
   Nano Banana Pro, 2K.
-  Use whenever the persona's face is visible enough that identity fidelity matters.
+  Use whenever the persona's visible face makes identity fidelity important.
 
-  LOWER-COST FACE-FORWARD ALTERNATIVE:
-  Grok Image, Standard mode, 2K, only if the customer chooses it instead of Nano Banana Pro after seeing the current verified cost/quality tradeoff.
+  OPTIONAL LOWER-COST FACE-FORWARD SUBSTITUTE:
+  Grok Image, Standard mode, 2K.
+  Offer it only if the buyer wants to trade some founder-preferred identity quality for lower connected-generation cost.
 
-Current Higgsfield verification for setup must be refreshed when this prompt runs. As of 5 Oct 2026 in the connected Higgsfield catalog:
-- Seedream 5.0 Flash supports 2K and 2:3; current connected credit estimate: 0.5 credit/image.
-- Nano Banana Pro supports 2K and 2:3; current connected credit estimate: 2 credits/image.
-- Grok Image supports Standard mode, 2K and 2:3; current connected credit estimate: 1 credit/image.
-These are provider/account-specific current observations, not permanent prices. Re-check before presenting them to a future buyer.
+Current Higgsfield verification for setup must be refreshed when this prompt runs. On 5 Oct 2026 in the connected Higgsfield account:
+- Seedream 5.0 Flash, 2K, 2:3 = 0.5 credit/image
+- Nano Banana Pro, 2K, 2:3 = 2 credits/image
+- Grok Image, Standard, 2K, 2:3 = 1 credit/image
+These are dated connected-generation costs, not permanent prices. Re-check before quoting them.
 
-Tell the customer in plain words:
-"My recommended Higgsfield balance is Seedream 5.0 Flash for images that do not need a face-forward persona, and Nano Banana Pro 2K when the persona's face is visible. If you want a cheaper face-forward option, Grok Image Standard 2K is currently lower-cost, but the founder preference is Nano Banana Pro for identity quality."
+Tell the customer:
+"For automatic Higgsfield generation, my recommended balance is Seedream 5.0 Flash 2K for images that do not need a face-forward persona, and Nano Banana Pro 2K for face-forward identity-critical images. Grok Image Standard 2K is a lower-cost face-forward alternative if you prefer it."
 
-Then ask:
-"Do you want the connected tool to generate automatically, or do you want to use any Unlimited generations manually when that saves credits?"
-A AUTOMATIC CONNECTED: use the routing above through the connected Higgsfield tool; credits are charged according to the current account/model.
-B HYBRID CREDIT-SAVER: the assistant builds the exact prompt and routing decision, but when the selected model is available to me under Higgsfield Unlimited, I run that generation manually on Higgsfield and return the result for QA; connected generation handles the rest.
-C MANUAL IMAGE PATH: the assistant writes every prompt; I run every generation myself.
+IMPORTANT: AUTOMATIC AND MANUAL CREDIT-SAVING ARE SEPARATE ROUTES.
+Do not mix Unlimited claims into the automatic connected route. Connected automatic generation uses the saved paid model routing above and its current connected-generation cost.
 
-IMPORTANT:
-- Check the buyer's CURRENT Higgsfield Unlimited-eligible model list before saying a specific model is free/unlimited.
-- Do not claim Seedream 5.0 Flash is Unlimited unless the current account/catalog actually says so. In the connected catalog checked 5 Oct 2026, Seedream 5.0 Flash itself was not marked Unlimited, while Nano Banana Pro was marked supports_unlim and other Seedream models such as 5.0 Lite/Pro were present on the Unlimited list. This can change.
-- If the buyer has an Unlimited allowance for a suitable model, explain that manually running that eligible generation can save Higgsfield credits at the cost of the manual step.
-- Never silently swap from the saved signature model to an Unlimited model. The buyer chooses the tradeoff and the exact routing is saved.
-- Manual or hybrid output must pass the identical visual QA, rights, disclosure and state rules as connected output.
+If the customer chose or later asks for the CREDIT-SAVING / MANUAL image route:
+- inspect the customer's CURRENT Higgsfield account and actual Unlimited options available to that account
+- recommend the strongest suitable Unlimited option for that specific asset type and quality need
+- do not assume a model is free for the customer merely because the catalog says the model supports an Unlimited feature
+- do not default to Seedream 5.0 Lite or any other Unlimited model merely because it is available
+- let the customer choose the manual model when multiple suitable Unlimited options exist
+- the assistant still writes the exact production prompt and runs the same QA after the customer returns the image
+- manual generation may save Higgsfield credits but costs the customer the manual step
+- never silently replace the saved automatic models with a manual Unlimited model
 
 If the customer needs Higgsfield or asks where to get it, provide:
 https://higgsfield.ai?fpr=jodie-30b092
@@ -431,10 +432,15 @@ Disclosure: "Affiliate link: I earn a commission if you subscribe, at no extra c
 Do not quote a discount, plan price or referral offer without verifying Higgsfield's current terms at that time.
 
 For any image platform:
-- save IMAGE PLATFORM, IMAGE ROUTE, NO-FACE MODEL, FACE-FORWARD MODEL, FACE-FORWARD ALTERNATIVE, RESOLUTION and COMMERCIAL RIGHTS RECORDED
-- look up the CURRENT cost for each saved paid route and save it by model; do not use a single IMAGE COST PER GENERATION when routing uses multiple models
-- work out the monthly estimate from the current asset count per look, the actual routing mix, expected correction allowance and Outfit of the Day if enabled
-- ask: "What's the most you want spent on image generation per month?"
+- save IMAGE PLATFORM
+- save AUTOMATIC NO-FACE MODEL
+- save AUTOMATIC FACE-FORWARD MODEL
+- save OPTIONAL FACE-FORWARD ALTERNATIVE
+- save RESOLUTION and COMMERCIAL RIGHTS RECORDED
+- save CURRENT CONNECTED COSTS by model with the checked date
+- if the customer explicitly chooses manual credit-saving, save MANUAL CREDIT-SAVING ROUTE separately from the automatic routing
+- work out the monthly automatic-generation estimate from the current asset count per look, actual routing mix, expected correction allowance and Outfit of the Day if enabled
+- ask: "What's the most you want spent on automatic image generation per month?"
 - save GENERATION BUDGET (amount, period and what happens when it runs out; default = stop paid generation and tell me)
 - never buy a subscription, spend beyond the saved budget, or switch models/platforms silently
 
@@ -544,14 +550,13 @@ METRICOOL PLAN
 AUTOMATION MODE
 AUTOMATION POLICY (policy_id, version, my words, who, when, full scope)
 IMAGE PLATFORM
-IMAGE ROUTE (AUTOMATIC CONNECTED, HYBRID CREDIT-SAVER or MANUAL IMAGE PATH)
 IMAGE PLAN
-NO-FACE MODEL
-FACE-FORWARD MODEL
-FACE-FORWARD ALTERNATIVE
+AUTOMATIC NO-FACE MODEL
+AUTOMATIC FACE-FORWARD MODEL
+OPTIONAL FACE-FORWARD ALTERNATIVE
 RESOLUTION
-IMAGE COSTS (current verified cost by saved model/route, with checked date)
-UNLIMITED ELIGIBILITY (current verified eligible models or none/unknown)
+CURRENT CONNECTED COSTS (verified by saved automatic model, with checked date)
+MANUAL CREDIT-SAVING ROUTE (off unless explicitly chosen; if on, save the buyer's actual verified manual model choice separately)
 GENERATION BUDGET (amount, period, and what happens when it runs out)
 COMMERCIAL RIGHTS RECORDED
 HEADLINE METHOD
@@ -621,7 +626,7 @@ STEP 15. MY SETUP REPORT
 Tell me, in plain words:
 - where it runs (cloud, local, or by hand) and how it publishes
 - Automatic or Review First, and what I approved
-- image platform, saved model-routing rules, current cost by route, Unlimited/manual option and monthly budget
+- image platform, saved automatic model-routing rules, current connected cost by route, any separately chosen manual credit-saving route, and monthly automatic-generation budget
 - Amazon path and destination test result
 - looks per week and every run and Pin time
 - tasks created, with their IDs
