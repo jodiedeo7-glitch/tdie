@@ -2,17 +2,22 @@ Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rul
 
 # Professional Pinterest and Shopping-Page Visual Standard
 
-Every look needs two different reasons to click. A new headline on the same arrangement is not a second concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
+Every look needs the number of distinct visual concepts required by PIN PACKAGE. A new headline on the same arrangement is not a new concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
 
 ## Art direction before generation
 
 Record the customer's visual references, brand colors and fonts, persona reference and world, product hero, intended use and the two concepts in MY_RECIPE.txt (setup asks for colors and fonts with the theme; if they were skipped, ask once and save them). Never invent a persona or generic luxury setting. Luxury means photographic craft, desirable styling, deliberate composition and polished typography.
 
-Pin 1: THE PRODUCT EDIT. Complete tactile editorial product/outfit composition, clear hero, deliberate supporting-item hierarchy, dimensional natural light and realistic contact shadows. Frame every required garment, strap and shoe inside generous margins. Do not scatter all pieces at equal size.
+BASIC package:
+Pin 1: THE PRODUCT EDIT. Complete product/outfit composition with a clear hero, deliberate hierarchy, dimensional natural light and realistic contact shadows.
+Pin 2: THE LIFE IT FITS. A believable lifestyle/in-use moment in the approved persona world, or a distinct person-free in-situ scene.
 
-Pin 2: THE LIFE IT FITS. With an authorized persona, photograph a believable moment showing relevant pieces worn or used in the customer's approved world. Accessories/theme lists can show a morning, work, home or errands moment; home pieces can appear in a naturally used environment. Do not force every item into a cluttered scene. Roundups can show one option in context. Without a persona, use a distinct in-situ scene or perspective, not a second near-identical flat lay.
+EXPANDED package:
+Pin 1: CLEAN PRODUCT EDIT. Product-first composition with strong hierarchy, minimal supporting styling and clear item readability.
+Pin 2: STYLED EDITORIAL FLAT LAY. A more dressed, layered, mood-rich composition using a different surface, arrangement, camera treatment and scene logic from Pin 1.
+Pin 3: THE LIFE IT FITS. A believable lifestyle/in-use moment with the authorized persona, or a distinct person-free in-situ scene.
 
-Compare siblings side by side at 320px wide. Visual story, camera/viewpoint and composition must differ while belonging to the same edit. Record the comparison in QA. Revise a duplicated concept within existing attempt/budget limits.
+Compare all siblings side by side at 320px wide. Visual story, camera/viewpoint and composition must differ while belonging to the same edit. Record the comparison in QA. Revise a duplicated concept within existing attempt/budget limits.
 
 ## Complete standalone prompts
 
