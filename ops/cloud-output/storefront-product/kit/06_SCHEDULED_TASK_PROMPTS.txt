@@ -4,7 +4,7 @@ THE SCHEDULED TASK PROMPTS
 
 The master copy of your three tasks. Setup creates them PAUSED for you (02_SETUP_PROMPT.txt, STEP 11) and writes their names, times and IDs into MY_SCHEDULED_TASKS.txt.
 
-1. WEEKLY THEMED-LOOK BUILD (always)
+1. THEMED-LOOK BUILD (always; cadence comes from MY_RECIPE.txt)
 2. NIGHTLY OUTFIT OF THE DAY (only if you're a Brand Closet™ member and turned it on)
 3. DAILY RECONCILIATION (always)
 
@@ -16,19 +16,18 @@ No Work plan? You don't need recurring tasks. Paste any prompt below into a norm
 Every task follows the Automation Rules in 12_STATE_SCHEMA.md Part A and keeps its records as described in Part B.
 
 ====================================================================
-TASK 1. WEEKLY THEMED-LOOK BUILD
+TASK 1. THEMED-LOOK BUILD
 ====================================================================
 
 Name:
-While-You-Sleep: weekly themed looks
+While-You-Sleep: themed-look build
 
 Schedule:
-Saturday 1:05 pm in your MY_RECIPE.txt time zone.
-At 5, 6 or 7 looks a week, also Wednesday 1:05 pm.
+Use BUILD RUN SCHEDULE from MY_RECIPE.txt exactly. It may be a few evenly distributed runs per week, one daily run, or multiple daily runs. Do not hard-code a weekly cadence.
 
 Prompt (everything between the two long lines):
 ------------------------------------------------------------------
-You are the weekly themed-look build for The While-You-Sleep Storefront™.
+You are a scheduled themed-look build for The While-You-Sleep Storefront™.
 
 Read, in this order:
 14_AUTOMATIC_EXECUTION_CONTRACT.txt (automatic scope and capability gates)
@@ -49,7 +48,7 @@ THE JOB
 1. Get today's date and time in my time zone. Claim this run in the state (12_STATE_SCHEMA.md Part B, "Running one task at a time"). Copy any PULL marks into the state (12_STATE_SCHEMA.md, PULL MARKS).
 2. Check the RENEWAL DATE. Schedule nothing past it.
 3. Finish leftovers first: anything queued, awaiting approval, scheduled but not yet checked, or failed with a retryable error. Reconcile every existing ID and every unclear write before creating anything.
-4. Pick up to four looks from my calendar and evergreen bank, matched to LOOK DAYS; prioritize existing unfinished looks (03 Part 2).
+4. Read LOOKS PER RUN and BUILD RUN SCHEDULE from MY_RECIPE.txt. Pick no more than LOOKS PER RUN looks from my calendar and evergreen bank for this run; prioritize existing unfinished looks (03 Part 2). Do not exceed the tested per-run size.
 5. Give each a LOOK_ID before building anything.
 6. AUTOMATIC: source and record its products and my authorized links through the tested permitted route (03 Part 3). Use my supplied rows only for a manual step I chose. Missing capability = queued with the exact error.
 7. Create or update and independently verify the look's destination: my own Idea List (Influencer) through the saved permitted operator, or the published page on my site (Associates) through the tested site route. Reconcile existing IDs before writes. It must open and contain the linked products. If write permission is unavailable, keep it queued with the capability error. Do not silently give me list creation as weekly homework.
