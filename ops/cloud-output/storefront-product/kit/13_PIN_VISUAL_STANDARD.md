@@ -4,7 +4,7 @@ Read 14_AUTOMATIC_EXECUTION_CONTRACT.txt first. Its main-path and capability rul
 
 Every look needs the number of distinct visual concepts required by PIN PACKAGE. A new headline on the same arrangement is not a new concept. Generated imagery is styling inspiration unless exact retail fidelity is independently established.
 
-Every concept must visibly reflect the client's PERSONAL VISUAL SIGNATURE as well as their niche and aesthetic. Basic simplicity does not permit generic substitutions for a known favorite mug, flower, signature surface or meaningful decor. Check specific profile-to-image matches separately from photographic craft and model preference. Do not pass a polished but interchangeable image as fully personalized.
+Every concept must reflect the client's niche and aesthetic within its content and setting rules. BASIC physical contents are exactly the selected shopping list; personalize through product choice, an appropriate simple surface, arrangement, light and typography, without incidental signature props. STYLED may add relevant approved personal extras and a category-appropriate signature surface. A known signature object or surface is not automatically appropriate to every category: a work desk belongs in a workspace concept, not an outfit display. Check specific profile-to-image matches separately from photographic craft and model preference.
 
 ## Art direction before generation
 
@@ -17,7 +17,7 @@ Pin 1: THE PRODUCT EDIT. Complete product/outfit composition with a clear hero, 
 Pin 2: THE LIFE IT FITS. A believable lifestyle/in-use moment in the approved persona world, or a distinct person-free in-situ scene.
 
 EXPANDED package:
-Pin 1: CLEAN PRODUCT EDIT. Product-first composition with strong hierarchy, minimal supporting styling and clear item readability.
+Pin 1: CLEAN PRODUCT EDIT. Only the selected shopping products, with strong hierarchy and clear item readability on the simple survey-matched surface. No incidental supporting props.
 Pin 2: STYLED EDITORIAL FLAT LAY. For outfits, clothing has natural volume and a wearable silhouette as if worn, with no visible person, anatomy, mannequin or support. A basic outfit flat lay has the garments attractively arranged or folded on the surface. Extra props alone do not establish the styled treatment. Follow the category base for non-clothing objects; do not apply clothing volume rules to desk products.
 Pin 3: THE LIFE IT FITS. A believable lifestyle/in-use moment with the authorized persona, or a distinct person-free in-situ scene.
 
