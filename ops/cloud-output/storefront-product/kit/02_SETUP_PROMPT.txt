@@ -495,14 +495,15 @@ If YES:
 - offer the manual/credit-saving version only as an optional fallback
 - ask: "Do you want to recommend The Brand Closet™ on your own pages with your own referral link?"
   - if yes, follow 05_RECOMMEND_IT_TOO.txt, save BRAND CLOSET REFERRAL LINK and BRAND CLOSET CARD = on
-  - then ask whether one line about it should appear in Outfit of the Day Pin descriptions; save PIN LINE on/off
-  - if no, BRAND CLOSET CARD = off and PIN LINE = off
+  - save BRAND CLOSET IMAGE RULE = "Brand Closet mentions only with authorized Brand Closet-originated imagery"
+  - do not ask for a generated-Pin Brand Closet line; generated Outfit of the Day Pins must not mention The Brand Closet™
+  - if no, BRAND CLOSET CARD = off
 
 If NO:
 - save BRAND CLOSET MEMBER = no
 - save BRAND CLOSET OOTD ACCESS = no
 - BRAND CLOSET CARD = off
-- PIN LINE = off
+- BRAND CLOSET IMAGE RULE = not used
 - skip Automation 2.
 
 STEP 8. PACE AND TIMES
@@ -613,7 +614,7 @@ BRAND CLOSET MEMBER
 BRAND CLOSET OOTD ACCESS
 BRAND CLOSET REFERRAL LINK
 BRAND CLOSET CARD (on or off)
-PIN LINE (on or off)
+BRAND CLOSET IMAGE RULE
 PACE
 LOOK DAYS
 RECONCILE TIME
