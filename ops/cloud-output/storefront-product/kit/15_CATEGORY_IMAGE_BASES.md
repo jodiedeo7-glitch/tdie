@@ -189,7 +189,7 @@ Show the verified system in the intended approved drawer, shelf or storage area,
 
 Validation: UNTESTED. Record the returned images and observed results before promoting this base.
 
-## J. Desk and office | base v0.6
+## J. Desk and office | base v0.7
 
 CLEAN BASE
 
@@ -214,6 +214,8 @@ Color correction, confirmed after the next manual return: do not put pink access
 Realism correction after v0.5 manual return: the customer accepted the color direction as better but rejected the AI/fake appearance. Keep the approved contrast while replacing showroom staging with plausible use. Trays contain a few papers lying flat; the holder contains pens and notes. Choose one window as the light source, neutral exposure, restrained reflections and natural focus falloff. Use a few small, specific signs of use and distinct material responses, not a blanket glow or cosmetic noise filter. Keep the cloud display subdued so it does not turn the room into a fantasy set. The framed dog image should look like a small informal photographic print, not a perfect studio portrait. v0.6 is a proposed manual revision, not a realism pass.
 
 v0.6 was also rejected by the customer. Observed regression: dated-looking computer, artificially distressed desk, exaggerated lifted page, large blank wall and isolated product arrangement. Remove forced scuffs/wear/page-curl cues. Next direction is a fresh, inviting contemporary workspace grounded in the admired desk references, with a more connected composition and camera exposure that retains color. Resolve the preferred reference direction before another manual generation. No accepted styled base or repeatability result exists yet.
+
+Founder steering after v0.6: make the routine art-direction choice from the supplied references rather than asking the customer to direct each iteration. Selected next treatment: sunny window workspace, tight desk-led crop, connected foreground/middle/background arrangement and secondary computer/pet-photo detail. Keep the confirmed palette and personal cues, remove forced aging and the giant isolated cloud screen. Prepare the concrete manual prompt and continue image review; no new paid authorization is implied. v0.7 remains untested.
 
 Validation: v0.1 rejected after a manual/free test; no v0.2 result supplied. Customer returned four v0.3 images: Seedream 4.5 basic/styled, then Seedream 5.0 Flash basic/styled, and expressed a preference for 5.0 Flash. This establishes a provisional desk-model preference, not full visual acceptance or repeatability. Both basic results use an angled tabletop view rather than true overhead. Product construction also varies; the 4.5 styled result introduces separate holders and visible lettering/watermark. All four retain generic cups and surfaces instead of the newly specified personal signature. v0.4 incorporates that clarification and is untested. Keep the free/manual route and paid-generation pause in effect.
 
