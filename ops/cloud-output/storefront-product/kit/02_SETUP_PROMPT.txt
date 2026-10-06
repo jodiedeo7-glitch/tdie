@@ -643,7 +643,13 @@ Yes: ask for my handle and a posting time (default 7:00 pm). Ask which publisher
 STEP 9. AUTOMATIC OR REVIEW FIRST
 (Time-saving and mix only. Credit-saving and manual are always REVIEW_FIRST, because I schedule those myself.)
 Ask once: "Do you want AUTOMATIC, where every Pin (and blog page and Instagram post, if those are on) that passes every check is scheduled within the rules you approve now, without asking you each time? Or REVIEW FIRST, where you approve each finished Pin before it's scheduled?"
-For AUTOMATIC, read back the exact scope, using what I've already answered (12_STATE_SCHEMA.md A2): accounts, board IDs and sections, destinations, image platform, saved model-routing rules and resolution, generation budget and period, channels (Pinterest, plus blog and Instagram if on), look pace, looks per run, build-run schedule, every publishing slot and the time zone, how products are supplied, and an end date or "until I revoke it" (ask me which). Ask me to authorize that scope in my own words. Save AUTOMATION MODE and AUTOMATION POLICY (my words, who, when, policy_id, version, scope) in MY_RECIPE.txt and the state before any paid or publishing action. Never invent a permission or a budget.
+For AUTOMATIC:
+1. Ask for the end condition: a specific date or "until I revoke it."
+2. Before asking for final authorization, verify that every field required by 12_STATE_SCHEMA.md A2 is concrete: permitted accounts, exact board IDs/sections, destination type/path, image platform and routing, resolution, generation budget/period, channels, pace, looks per run, build-run schedule, publishing slot map, time zone, sourcing method and end condition.
+3. If any required field is still missing or unverified, do NOT ask the customer to authorize a placeholder scope. Finish the relevant setup/test step first and report the exact missing item.
+4. Once the scope is complete, read it back compactly and ask the customer to authorize that exact scope in their own words.
+5. Save AUTOMATION MODE and AUTOMATION POLICY (their words, who, when, policy_id, version, exact scope) in MY_RECIPE.txt and state before any paid production or publishing action.
+Never invent a permission, board ID, capability result or budget.
 For REVIEW FIRST, save AUTOMATION MODE = REVIEW_FIRST.
 Either way, the one test Pin in STEP 12 is shown to me and approved by me before it's scheduled, so I see what the machine makes. Record that approval as approval_actor = customer, with my real selection and authorization.
 
