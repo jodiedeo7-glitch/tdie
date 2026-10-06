@@ -144,7 +144,7 @@ IMAGE EXECUTION
 
 Read 13_PIN_VISUAL_STANDARD.md before generating an outfit inspiration Pin and apply its composition, headline and acceptance checks. A generated outfit is inspiration unless it depicts the actual linked items or uses clearly identified customer-owned/licensed product photos; match the Pin's title, destination, board, disclosure and alt text to that status.
 
-TIME-SAVING: use the connected image provider and model saved in MY_RECIPE.txt (the tested path is Higgsfield connected to ChatGPT). Check the cost against GENERATION BUDGET before each paid generation (12_STATE_SCHEMA.md A4).
+TIME-SAVING: use IMAGE PLATFORM and the saved model-routing rules in MY_RECIPE.txt. Choose the model by the asset's routing class, not by habit. On the current founder Higgsfield signature setup: use NO-FACE MODEL for flat lays, collages, product scenes and lifestyle concepts where face-forward identity is not critical; use FACE-FORWARD MODEL whenever the persona's visible face makes identity fidelity important. Use FACE-FORWARD ALTERNATIVE only if the customer explicitly chose it. Check the current cost against GENERATION BUDGET before each paid generation (12_STATE_SCHEMA.md A4).
 
 CREDIT-SAVING / MANUAL: the assistant (ChatGPT or Claude) prepares the complete prompt from the product sheet. The customer runs it directly in the selected provider, then returns the finished asset for QA. This path may be used to conserve connected-tool credits or avoid an additional automation plan.
 
@@ -164,7 +164,7 @@ Do not generate a second image merely to add deterministic text or layout. Use d
 Never make the customer copy an image from one application into another as the normal path.
 
 PIN 1: THE FLAT LAY OR COLLAGE (no person)
-Use the image provider and model configured in MY_RECIPE.txt and confirmed available for this run. Do not hard-code or silently substitute an image provider/model. If the configured model is unavailable, keep the appropriate allowed status from 12_STATE_SCHEMA.md, record the blocker in error_code and notes, and report the required action.
+Use IMAGE PLATFORM plus the NO-FACE MODEL saved in MY_RECIPE.txt for this no-person asset and confirm it is available for this run. Do not silently substitute another model, even an Unlimited model. If the saved model is unavailable, keep the appropriate allowed status from 12_STATE_SCHEMA.md, record the blocker in error_code and notes, and report the required action.
 
 Two Pin 1 compositions, alternating look to look (read the last look's Pin 1 in storefront-log.md and use the other one):
   FLAT LAY: the pieces styled from directly above on one surface, arranged like a real flat lay.
@@ -180,7 +180,7 @@ TEXT AND LAYOUT:
 Add the approved headline after image generation using HEADLINE METHOD in MY_RECIPE.txt (assistant layout with your code tool and BRAND FONTS, or Canva steps for me). Use a short search phrase in a sharp, high-contrast display font and an optional brief supporting line. Keep all text inside the reserved top area and check spelling, contrast, and readability at phone size. If the method fails on a run, keep the clean image, record error_code headline_failed, and put the headline text in pin-drafts.md; never ask the image model to render the words.
 
 PIN 2 depends on MY_RECIPE.txt and 07_PERSONA_PATHS.txt:
-  PERSONA PATH, OUTFIT LOOKS: use the approved persona reference and the configured available image provider/model. Keep each item visible and consistent with customer-authorized product facts; otherwise make no unsupported exact-product claim.
+  PERSONA PATH, OUTFIT LOOKS: route by framing. If the persona is face-forward/identity-critical, use FACE-FORWARD MODEL with the approved persona reference. If she is back-facing, face-obscured or shown only in a detail crop where identity fidelity is not the point, use NO-FACE MODEL. Keep each item visible and consistent with customer-authorized product facts; otherwise make no unsupported exact-product claim.
   PERSONA PATH, THEME LISTS AND ROUNDUPS: show a relevant moment using the hero in the authorized persona world when appropriate, or a distinct in-situ scene. Follow 13_PIN_VISUAL_STANDARD.md; do not default to another collage.
   NO-PERSONA PATH: use a distinct in-situ composition, perspective or product story. A new surface or headline on the same arrangement is insufficient. Follow 13_PIN_VISUAL_STANDARD.md.
 
