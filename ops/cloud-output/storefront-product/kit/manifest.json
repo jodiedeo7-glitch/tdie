@@ -1,7 +1,7 @@
 {
   "product": "The While-You-Sleep Storefront",
-  "revision": "2026-10-02-automatic-audit-repair",
-  "release_status": "repaired_revision_live_automation_gate_open",
+  "revision": "2026-10-07-current-setup-addendum",
+  "release_status": "PRIVATE_REVISION_PARTIAL_VERIFICATION_NOT_RELEASE_CERTIFICATION",
   "guides": {
     "While-You-Sleep-Storefront-Preparation-Guide.pdf": {
       "pages": 15,
@@ -14,12 +14,16 @@
       "bad_bounds": [],
       "links": 15,
       "bookmarks": 23
+    },
+    "Current-Setup-Addendum.pdf": {
+      "pages": 2,
+      "visual_review": "PASS_BOTH_RENDERED_PAGES",
+      "checked_at": "2026-10-07T04:42:50.905074+00:00"
     }
   },
   "complete_source_lines_verified": true,
   "files": {
-    "While-You-Sleep-Storefront-Preparation-Guide.pdf": "fca804beace836d3fd3fd33f9474b01f7eccca8b695ee4b66d611bcd461d7f9d",
-    "00_START_HERE.txt": "90984de160066da193929080f0eddebd34e06ac9a9a509e1ee5998913b5e3bbf",
+    "00_START_HERE.txt": "55cf1f1e9e722909879265ed7e60db39a2168ad442b3d336d9f660c938e8facc",
     "01_REQUIREMENTS.txt": "7aa147323e254a4d787b7b89808af163b7c87cee939951e09fe0f839ae562bf5",
     "02_SETUP_PROMPT.txt": "857ac2664a491189a4c0df94770d661ba0648d81ebf8a1b65cc77e5e9e0203e4",
     "03_THEMED_LOOK_RECIPE.txt": "9b0364fb26a6a850e4ab5debba5acea603d852c7bd73f85d233825684e2d7e02",
@@ -35,11 +39,13 @@
     "13_PIN_VISUAL_STANDARD.md": "3dbd65b53e6899292467852d5050bfde0eb783c1548f6328c10b3af6a7ad6685",
     "14_AUTOMATIC_EXECUTION_CONTRACT.txt": "228cc3e25af41b996d90dce9248d0af303c64ecc0af491fc4f252940d68a5eb7",
     "15_CATEGORY_IMAGE_BASES.md": "2ceb463b254803f4fa1e097450913f052c5659acc96a53691e777122586e162e",
-    "16_AMAZON_CREATORS_API_CHECK.txt": "2f42e5c05aaf9499b36658d124afa8e5cbfd76286a7b5bbecc219f541d89e69d",
+    "16_AMAZON_CREATORS_API_CHECK.txt": "35916a9031623a1387e8738b8f672c8f405f57689ee043006a3bbbee6ff341a0",
+    "Current-Setup-Addendum.pdf": "9f656a2af2115e01275f98bbfea22509a634cb059327204d8909c0bf6466cee1",
     "REVISION_CHECKS.txt": "7c9445549fd6aa4f526a2219e9f2e7ab0c5909e79cff2021f7790e7f73d62606",
     "While-You-Sleep-Storefront-Setup-Guide.pdf": "849aa246e6aaa268e7a12f6940d47ab4c47df9cdeb0e16cd135d023d3399b1bb"
   },
   "supplement_revision": "2026-10-06-amazon-policy-client-design",
-  "supplement_status": "source_and_zip_updated_pdf_guides_not_regenerated_live_release_unverified",
-  "cancellation_supplement": "2026-10-07-source-update-manual-route-required-when-cancel-action-absent"
+  "supplement_status": "CURRENT_TEXT_AND_RENDERED_PDF_ADDENDUM_INCLUDED_BASE_GUIDES_NOT_REGENERATED_LIVE_RELEASE_UNVERIFIED",
+  "cancellation_supplement": "2026-10-07-source-update-manual-route-required-when-cancel-action-absent",
+  "historical_guide_checks": "Existing base PDF metadata and complete_source_lines_verified refer to the older revision, not current update coverage."
 }
