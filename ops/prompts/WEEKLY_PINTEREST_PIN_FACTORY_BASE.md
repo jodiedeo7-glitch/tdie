@@ -12,7 +12,7 @@ ACCOUNT AND BROWSER LOCK (v2, 1 Oct 2026; replaces the 26 Sep wording; this text
 7. When the run ends, including after a failure or an early stop: read the lock again. Only if its run_id is still yours, set {"status":"free","task":"<task name>","run_id":"<run id>","freedAt":"<now>"} with if_version. If it carries another run id, leave it untouched and note that in your report.
 8. If this run needs no browser and makes no account write, skip the lock entirely.
 
-NO DOWNLOADS (Jodie, 26 Sep 2026): never save anything to Jodie's computer unless this task cannot be done without it. "So Jodie has a copy" is not a reason. Move images with the capture method in claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 3c, never with a download button or the Downloads folder.
+NO DOWNLOADS (Jodie, 26 Sep 2026): never save anything to Jodie's computer unless this task cannot be done without it. Capture authorized source images only in the cloud workspace; never use a download button or Jodie's Downloads folder.
 
 PINTEREST OWNER CHECK (v2, 1 Oct 2026). Before anything else, read pinterest-owner.json in the pinterest Drive folder (1LHjvMqFwuWjMQivZ1gU39iSIo0TBaglM). If it names "ChatGPT" as owner, create and schedule nothing on Pinterest: report 'Pinterest is owned by ChatGPT since <date>; this task should be paused' and stop. If the file is missing or names Claude, continue.
 

@@ -1,3 +1,5 @@
+> **WYS authority, 7 October 2026:** [Read the complete WYS master](https://github.com/jodiedeo7-glitch/tdie/blob/main/claude/WYS_REFERENCE_PACK_2026-10-07.md). It is the sole active WYS workflow. This shared document cannot supply WYS generation defaults or override its current three-image prompts, pause or release hold. SOP-15/SOP-16 and unrelated systems retain their own authority.
+
 # TDIE website / repo router V2
 
 Hosting is Cloudflare (worker `tdie-site`), deployed from the `cloudflare-migration` branch. Vercel is retired (ChatGPT migrated the site after the Vercel free tier ran out of space). Do not overwrite the Cloudflare setup. No browser task should be used for bulk code or content edits that belong in the repo.

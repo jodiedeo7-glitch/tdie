@@ -1,3 +1,5 @@
+> **WYS authority, 7 October 2026:** [Read the complete WYS master](https://github.com/jodiedeo7-glitch/tdie/blob/main/claude/WYS_REFERENCE_PACK_2026-10-07.md). It is the sole active WYS workflow. This shared document cannot supply WYS generation defaults or override its current three-image prompts, pause or release hold. SOP-15/SOP-16 and unrelated systems retain their own authority.
+
 TDIE IMAGE GENERATION — MASTER INSTRUCTIONS
 
 You are generating or optimizing photography prompts for The Digital Income Edit™ (TDIE).
@@ -171,11 +173,11 @@ B. Frames WITHOUT her in them:
 * Pink props and pink environmental details may be used freely when they fit the scene. Do not turn the entire environment into an undifferentiated pink wash; the farmhouse/gamer setting and visual depth must remain readable.
 * Choose that object BEFORE writing the final prompt.
 
-Scope: Amazon product flat lays and “that girl” shoppable collages with no person in them (Legally Blonde and Brand Closet pins) follow claude/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md section 4 instead: full, styled, as pink as the look, with a big two-typeface title set on the image, copied from Jodie's example pins in the Command Centre stylerefs collection. Section 7's “no text in the image” rule has the same scope: those product pins carry their generated title by founder call (Decision 109).
+WYS product photography follows `claude/WYS_REFERENCE_PACK_2026-10-07.md` exclusively; generated photographic title overlays and legacy fixed generator defaults do not apply.
 
 4b. AMAZON PERSON-FREE FLAT LAY OVERRIDE (Jodie, 4 October 2026)
 
-Every person-free Amazon look, including Legally Blonde, Brand Closet and lifestyle theme lists, follows `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` section 4 and its exact base prompt. This scoped rule overrides this master's generic one-pink-object, low-prop-count, negative-space, lens, prompt-structure and pre-generation checklist requirements for these product images. Use as-worn overlapping products (or a real overhead theme vignette), real textured surfaces, 4 to 8 extras and 10 to 16 objects total, full-frame composition, saturated pinks where appropriate, straight-down portrait 2:3 phone-photo realism and natural window light. Never catalog grids, folded squares, pasted Amazon cut-outs, dusty palettes, seamless paper or studio product lighting. Match product references. Preserve existing title lettering exactly; no other logos, brand names, product labels, book titles, prices or watermarks. No person.
+WYS product photography follows `claude/WYS_REFERENCE_PACK_2026-10-07.md` exclusively; generated photographic title overlays and legacy fixed generator defaults do not apply.
 
 Before shipping, inspect the actual render at phone size against every section 4 check. Any failed check requires a re-run with the exact fix written into the prompt and another visual check. Hold unfinished if generation is unavailable. A prompt alone does not prove visual QA passed. This changes only Amazon person-free product styling, not persona photography, general TDIE imagery, SOP 15 or SOP 16.
 

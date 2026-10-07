@@ -1,3 +1,5 @@
+> **WYS authority, 7 October 2026:** [Read the complete WYS master](https://github.com/jodiedeo7-glitch/tdie/blob/main/claude/WYS_REFERENCE_PACK_2026-10-07.md). It is the sole active WYS workflow. This shared document cannot supply WYS generation defaults or override its current three-image prompts, pause or release hold. SOP-15/SOP-16 and unrelated systems retain their own authority.
+
 > **MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026).** Jodie has an active Midjourney subscription, signed in in her browser, with far more free generations than Higgsfield. Whenever an image would come out better in Midjourney, use Midjourney, with or without a person. This amends every tool-order line in this file that says no other image generator is used. Canva is still never an image generator. Full rule: section M of claude/TDIE_IMAGE_GENERATION_MASTER.md.
 
 > Migration routing, 1 October 2026: read `ops/TDIE_AI_ROUTER.md` and `ops/ai-router/EXECUTION_CONTRACT.md` first. This source contains historical job specifications, not active schedules. No blanket commit-to-main, push, listing, campaign, pricing or publication instruction here overrides the current task's authorization. Prepare reviewable work and route account operations separately. Do not restore Find Your Door automation. Read SOURCE_RECONCILIATION_2026-10-01.md and the source register for recovered SOP snapshots and remaining live-verification gates.
@@ -58,7 +60,7 @@ THE JOB. Find and fix every conversion leak on the live site, then push the fixe
 
 ----- START -----
 
-Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_PINK_FINDS_GROWTH_PLAN.md`, `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` (sections 8c, 8d, 10 and 12), `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, and in the repo `src/data/pinkfinds.js`, `src/components/PinkFindsSignup.astro`, `src/pages/lifestyle/pink-finds.astro` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_PINK_FINDS_GROWTH_PLAN.md`, `claude/WYS_REFERENCE_PACK_2026-10-07.md` (sections 8c, 8d, 10 and 12), `ops/cloud-kit/TDIE_SIX_M_FRAMEWORK.md`, and in the repo `src/data/pinkfinds.js`, `src/components/PinkFindsSignup.astro`, `src/pages/lifestyle/pink-finds.astro` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
 
 THE JOB. Build the whole Q4 Pink Finds push so it runs on real dates with nothing left to write.
 
@@ -79,7 +81,7 @@ Report in one line.
 
 ----- START -----
 
-Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` (all of it), `ops/cloud-kit/TDIE_LIFESTYLE_LIST_MAP.md`, `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md`, and in the repo `src/lifestyle/README.md` plus three existing look JSON files in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+Attach the repo jodiedeo7-glitch/tdie with push access and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `claude/WYS_REFERENCE_PACK_2026-10-07.md` (all of it), `ops/cloud-kit/TDIE_LIFESTYLE_LIST_MAP.md`, `ops/cloud-kit/TDIE_IMAGE_GENERATION_MASTER.md`, and in the repo `src/lifestyle/README.md` plus three existing look JSON files in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
 
 THE JOB. Every holiday look stops earning after about three weeks. Prepare 16 evergreen looks (two a week for 8 weeks, from 5 Oct 2026) from the Lifestyle List Map so the desktop session only has to do what needs Jodie's sign-ins.
 
@@ -141,7 +143,7 @@ Report in one line with both live links.
 
 ----- START -----
 
-Attach the repo jodiedeo7-glitch/tdie and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `ops/cloud-kit/TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
+Attach the repo jodiedeo7-glitch/tdie and clone it. Read `ops/cloud-kit/README_START_HERE.md` and follow it for this whole session. Then read `claude/WYS_REFERENCE_PACK_2026-10-07.md` and the looks in `src/lifestyle/`. Start your first reply with "Sources checked: [file names]."
 
 THE JOB. Jodie's Amazon Creator Hub shows 0 of 3 videos, so onsite commissions are locked. She wants to learn the process before making any. Build her a starter kit.
 
