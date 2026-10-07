@@ -1,3 +1,5 @@
+> **WYS authority, 7 October 2026:** [Read the complete WYS master](https://github.com/jodiedeo7-glitch/tdie/blob/main/claude/WYS_REFERENCE_PACK_2026-10-07.md). It is the sole active WYS workflow. This shared document cannot supply WYS generation defaults or override its current three-image prompts, pause or release hold. SOP-15/SOP-16 and unrelated systems retain their own authority.
+
 > Current reconciliation: read `ops/ai-router/SOURCE_RECONCILIATION_2026-10-01.md` and `LIVE_MIGRATION_ACTIONS_2026-10-01.md` before acting. The recovered source register and live task inventory supersede earlier missing-source assumptions and the uploaded eighteen/day Threads copy.
 
 # TDIE AI router
@@ -32,9 +34,9 @@ Prefer the verified API/native route when it provides the required behavior and 
 | DAILY_PROMPTS | `ops/ai-router/TDIE_DAILY_PROMPTS_ROUTER.md` | `ops/queues/DAILY_PROMPTS_QUEUE.md` |
 | PAID_VIRAL_INSTAGRAM | `ops/ai-router/TDIE_PAID_VIRAL_INSTAGRAM_ROUTER.md` | `ops/queues/PAID_VIRAL_INSTAGRAM_QUEUE.md` |
 | THREADS | `ops/ai-router/TDIE_THREADS_ROUTER.md` | `ops/queues/THREADS_QUEUE.md` |
-| INTERNAL_AMAZON | `ops/ai-router/TDIE_AMAZON_STOREFRONT_ROUTER.md` | `ops/queues/AMAZON_QUEUE.md` |
-| BRAND_CLOSET_OOTD | `ops/ai-router/TDIE_AMAZON_STOREFRONT_ROUTER.md` | `ops/queues/BRAND_CLOSET_QUEUE.md` |
-| WYS_CUSTOMER_PRODUCT | `ops/ai-router/storefront-product/WYS_V2_AUTOMATION_ARCHITECTURE.md` | `ops/queues/STOREFRONT_CUSTOMER_PRODUCT_QUEUE.md` |
+| INTERNAL_AMAZON | `claude/WYS_REFERENCE_PACK_2026-10-07.md` | `ops/queues/AMAZON_QUEUE.md` |
+| BRAND_CLOSET_OOTD | `claude/WYS_REFERENCE_PACK_2026-10-07.md` | `ops/queues/BRAND_CLOSET_QUEUE.md` |
+| WYS_CUSTOMER_PRODUCT | `claude/WYS_REFERENCE_PACK_2026-10-07.md` | `ops/queues/STOREFRONT_CUSTOMER_PRODUCT_QUEUE.md` |
 | EMAIL | `ops/ai-router/TDIE_EMAIL_COMMERCE_ROUTER.md` | `ops/queues/EMAIL_QUEUE.md` |
 | COMMERCE | `ops/ai-router/TDIE_EMAIL_COMMERCE_ROUTER.md` | `ops/queues/COMMERCE_QUEUE.md` |
 | SKOOL | `ops/ai-router/TDIE_SKOOL_ROUTER.md` | `ops/queues/SKOOL_QUEUE.md` |
