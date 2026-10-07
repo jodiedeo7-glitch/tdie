@@ -1,4 +1,6 @@
-# WYS reference pack: Tommy Kate Halloween (approved styling examples, 7 Oct 2026)
+# WYS master: workflow and Tommy Kate Halloween approved reference (7 Oct 2026)
+
+> SINGLE ACTIVE WYS AUTHORITY. Read this entire file before WYS work. Generation is PAUSED; provider/model are unverified. The reference export and complete operating rules are consolidated here.
 
 Source: Jodie's upload Tommy-Kate-Halloween-Cloud-Handoff.zip, prepared 2026-10-07T18:20:03.097205+00:00 (UTC). Two looks: Pretty Wicked entryway (home-decor) and Ghoul Fuel coffee bar. Jodie, 7 Oct 2026: this pack is the current WYS reference example for sourcing, prompts and content preparation. The photos are approved styling examples. Affiliate destinations and publication are still pending. This is not evidence that the whole automated workflow passed. Nothing in the pack is live.
 
@@ -93,15 +95,9 @@ Use the avatar reference image only for the person. Create a NEW photorealistic 
 Edit image 1, the finished pink Halloween coffee nook. Keep the room, camera, lighting, all five products, flowers, black mirror, framed original floral ghost art, coffee machine, styling and colors unchanged. Correct ONLY the two-tier pink ceramic stand using image 2 as its precise shape reference: both plates are HEART SHAPED, each has two lobes, an inward notch and a distinct pointed tip; 9-inch bottom heart, 7-inch top heart, pierced heart rim holes, gold center rod and gold heart handle. Orient both pointed tips toward camera so their actual hearts are visible despite perspective; no round or oval top tier. Keep small mirrored disco balls on top and tiny blush, coral, peach and ivory velvet pumpkins with gold stems below. The three short pink tea lights are LED, with solid white plastic flame-shaped tips and a gentle warm glow, no live flames. Photorealistic 2:3 portrait, sharp realistic ceramic and metal textures. No people, bows, ribbons, hydrangeas, fur, shag, added text or logos.
 ```
 
-### avatar-lifestyle-prompt.txt (superseded by the porch-door lifestyle)
+### Removed superseded prompt
 
-```text
-Use the avatar reference image only for the person. Use the entryway reference only for the room, selected decor and colour palette. Create a NEW photorealistic vertical 2:3 LIFESTYLE photograph of Tommy Kate actively decorating that entryway; not a person-free scene or a posed portrait.
-Preserve the black console, oval black mirror, warm ivory wall, pink open-weave gauze, three plain matte hot-pink ribbed pumpkins with dark gold-flecked stems, small pink jack-o-lantern string lights with crisp black faces, pink miniature plastic LED tea lights with white flame tips, black PVC bat silhouettes, black urn of pink roses and lavender asters, ghost painting, checker cotton blanket basket and silver lantern. Keep the plain large pumpkins without faces; the faces are on small light bulbs. Props and room remain believable at human scale.
-Tommy Kate stands to the LEFT of the console in a three-quarter side view, pressing one black PVC bat onto the ivory wall at comfortable shoulder height. Her right hand makes light fingertip contact with the bat centre; her left holds one spare bat at waist level. Natural slightly bent elbow, relaxed shoulders, attention on what she is placing, no looking at the camera. Make hands anatomically plausible and wings visibly supported against the wall. Her body does not block the pumpkin cluster or pink lights. Camera steps back enough to show her from head to shoes plus the complete console, with a clear walking path.
-Scene-appropriate attire: open cropped bubblegum-pink knit cardigan, white ribbed tank, medium-blue straight wide-leg jeans with plain pockets, pink low-top sneakers with plain dark side panels and gum soles, small gold stud earrings. No bag or tumbler because she is decorating at home; no costume. Her hair is loosely clipped back with a simple pink claw clip. Do not add bows or ribbons to her clothing or decor. Do not carry over the outside garden, dog, gate or text from the avatar reference. Use the avatar reference as identity authority without inventing facial traits.
-Soft neutral window fill from the doorway at left, cozy warm local lights, real skin and knit textures, crisp black bat silhouettes and true saturated hot-pink pumpkins. Rich collected cottage atmosphere, engaging candid action, no pink colour wash, shag/fur, hydrangeas, logos, text overlays, watermark, extra people or copied layout. Preserve the selected decor's identity while reframing the scene naturally around the action.
-```
+The earlier bat-on-the-wall prompt has been removed from the active document. Use the approved porch-door prompt in section 4. Its original text remains in Git history only.
 
 ## 6. Sourcing records
 
@@ -173,6 +169,174 @@ Image provider, model and settings: NOT RECORDED in the pack (section 1). Do not
 
 ## 12. Source coverage of this document
 
-Copied from: Claude Project document claude/WYS_REFERENCE_PACK_2026-10-07.md (sections 1 to 8, unchanged). That document was checked word for word on 7 Oct 2026 against the pack's pack-manifest.json, prompts/REFERENCE-MAP.txt and all 12 prompt files.
+Source export: Claude Project document claude/WYS_REFERENCE_PACK_2026-10-07.md. The current approved prompts remain unchanged; the superseded bat-placement prompt was removed during consolidation. That document was checked word for word on 7 Oct 2026 against the pack's pack-manifest.json, prompts/REFERENCE-MAP.txt and all 12 prompt files.
 
 Pack files whose full text is NOT reproduced here because the original zip was not reachable in this session: START-HERE.txt, pack-manifest.json (full), sourcing-evidence.json (full), pretty-wicked-entryway/blog-source-staged.json and the matching Ghoul Fuel record (full), the two blog drafts, and the text on the Pinterest graphics and carousel slides. Their recorded values used above are in sections 1, 6 and 7.
+
+## 13. Sole WYS authority and execution status
+
+This file is the single active WYS operating document for founder sourcing, imagery, content preparation, website handoff and workflow design. Read it in full before executing a WYS task. The six prompts in section 4 and the stand correction in section 5 are the current worked examples. The superseded bat-placement prompt is not an executable recipe. Older two-image instructions, generated lettering inside photographs, fixed generator routing and old website writers cannot be revived from Git history, receipts, logs, customer PDFs or scheduled-task snapshots.
+
+The approved examples establish styling and the three-image dependency chain. They do not identify a generator. Provider, model, generation parameters beyond the recorded output, current account capability, budget, live affiliate destinations and publication remain unverified until separately recorded. WYS generation remains PAUSED. Never replace missing configuration with a remembered or older default, use an arbitrary test image as a reference, or spend credits to discover the configuration. Continue independent documentation and code work.
+
+General TDIE rules still govern other systems, including SOP-15 and SOP-16. For WYS the specific approved prompt wins over generic visual defaults: do not insert a mandatory tumbler, change the approved coffee cabinetry, force a generic identity preamble, hide the face by default, or convert this pack into the old two-image format. The Pretty Wicked lifestyle prompt expressly includes one partly visible trick-or-treater; its prohibition on additional people does not remove that approved foreground figure. Wardrobe varies by the exact prompt: Pretty Wicked uses pink cardigan and black jeans; Ghoul Fuel uses lavender cardigan, blue jeans and pink slippers.
+
+Source coverage: sections 1–8 preserve the submitted current reference and approved prompts, with the superseded bat-placement prompt removed; sections 9–12 preserve the additional repo reference details already present. Operating rules below consolidate the founder safeguards, customer setup/state/recovery requirements and website migration requirements. They are instructions, not evidence that their execution or the end-to-end customer product has passed. The original zip and private images have not been independently inspected in this consolidation. Unknowns remain unknown.
+
+## 14. Operators, accounts and founder boundaries
+
+Maintain exactly one writer for each external action. Codex owns repository implementation and /lifestyle publication. Claude prepares sourcing, prompts and staged content; it does not independently upload old-style website files or publish the pages. Use an available supported connector for its exact authorized operation; check capability and readback before claiming it can perform that operation. An installed app does not prove access to the relevant account, board, media field, AI label, schedule, cancellation or live deletion.
+
+Founder Amazon destination of record is https://www.amazon.com/shop/thedigitalincomeedit with tracking tag jodiedeo0c-20. Confirm live destinations before use. Reuse an existing list for the same look rather than creating a duplicate. Never use the retired influencer-adc3fcaa address. Canonical /dp/ASIN URLs are sourcing records only. Do not substitute the storefront home or an unrelated affiliate link for a pending per-look destination just to finish a run.
+
+Founder Pinterest scheduling uses the authorized Metricool route, with recorded account identifier 7142540 and America/New_York timezone. Read the active connector schema: field names and live permissions are not established by this document. Read schedules before writing and read every result back afterward. Do not switch to native Pinterest scheduling or a different board because Metricool rejects an operation. Current founder policy prohibits Pinterest-browser schedule/edit/delete/verification; public-board checks are a separate read-only capability. Missing required section or AI-label support is a visible blocked step, not a successful publication.
+
+Recorded founder boards: outfit looks use Legally Blonde Outfits | Pink Amazon Fashion; home/dorm/car/desk/book looks use Pink Home, Dorm and Car Finds | Amazon. Brand Closet uses Pink Outfit of the Day | Amazon Fashion Finds, numeric ID 1122311238331286804, recorded public on 4 October. Recheck current public visibility and account access. TK Outfits stays private and is never used or changed. Do not infer other board IDs from names or substitute them.
+
+The affiliate Instagram account is @itstommykate. Confirm the actual posting identity in the composer or owning service before sharing. @the.faceless.homestead.mama belongs to the separate TDIE/calendar system. Instagram captions and comments use a verbal link-in-bio CTA, no raw links; approved Story link stickers are a separate operation. Do not change account type, linked Facebook Page, auto-post settings or credentials to repair a missing capability without existing authority. Historical Meta access reports are not current capability checks.
+
+MailerLite operations use Claude's MailerLite connector only, never a browser. This workflow does not create a new welcome automation or send campaigns as a side effect of the website rebuild. Preserve founder publishing/spending restrictions and the customer-product release HOLD. A planned launch date is not clearance. Do not publish a WYS product promotion, checkout, customer delivery or release merely because a staged affiliate look is prepared.
+
+## 15. Intake and sourcing procedure
+
+1. Read the current state and unfinished checkpoint first. Resume completed products, assets and verified destinations; do not rebuild from zero. Assign a stable LOOK_ID and source record. Intake records the theme, date/season, category, authorized mood/reference inputs, desired channel set, destination path and product requirements. These two worked examples contain five product types per look.
+2. Use only authorized sources and assets. Read Amazon through the supported authorized account route; no background scraping, broad history extraction or paid scraper substitution. Normal browsing does not by itself establish permission for commercial automation. Do not probe unrelated account history.
+3. Match the exact ASIN and selected variant. Record shape, color, materials, measurements and pack count from the listing, plus canonical URL, observed stock, verification method and timestamp. Stock in the table is a historical observation, not a current promise. Recheck changed or stale listings before publication. If an item is unavailable, record the failure; any replacement must update the source record and all affected imagery/copy before it is used.
+4. For affiliate capture, confirm the authorized Associates/Influencer identity and SiteStripe/account route. Capture the actual link; resolve it and match the destination ASIN and selected variant plus the expected tracking attribution. A copied link can be stale even when it has the right short-link domain. Leave affiliate_url null and affiliate_link_verified false until checked.
+5. Build or reuse the exact look's Idea List using exact-ASIN selection. Confirm its product membership and live URL after submission. Do not treat a five-product editor draft as submitted. Where the service requires action-time terms confirmation, leave submission pending until that requirement is satisfied.
+6. Reference product images remain private source material. Do not republish retailer images, paste catalog cutouts into the finished photo, or publish paid member screenshots. Use named styling extras only as extras, never silently add them to the shopping list.
+7. Save each verified product and destination immediately. Do not wait until the end of a long run to persist links. Check for repeated hero items in the founder history; avoid repeats within 30 days unless explicitly selected for reuse. Source quality preferences from the earlier founder operation (clear photographs, in-stock listings, Prime when available, normally at least 4 stars/100 ratings) are selection preferences, not evidence or mandatory properties of the approved pack's existing products.
+
+## 16. Generation preflight, dependency chain and acceptance
+
+Before a generation write, the saved configuration must identify provider, exact model/version, supported reference mechanism, output settings, account, cost per attempt, authorized budget and source of authorization. Record prompt version/hash, actual attachments and their roles, request/job ID, timestamp, actual output metadata and debit. No silent provider/model switch, resolution change, subscription purchase or unlimited reruns. Budget includes corrections, failed submissions and uncertain outcomes. Reserve expected cost before submission; reconcile uncertain jobs before retrying. Stop the affected image when configuration, references or budget is missing.
+
+The pack's PNG 1024x1536 output is verified only as a recorded asset format; it does not prove which generation UI setting produced it. Retain the correct source output and make separately named derived graphics. Do not stretch, repaint or overwrite the source photograph to fit social dimensions.
+
+Execute BASIC → inspect → STYLED with matching accepted BASIC → inspect/correct → LIFESTYLE with identity plus matching accepted STYLED → inspect. Verify reference attachments actually reached the selected tool before submission. One look's room reference cannot be used for another look. Attach no reference that changes Tommy Kate's identity. Approved example prompts are verbatim; new looks require prompts derived from their actual source products and scene, with all changes recorded.
+
+Acceptance requires all three roles, no photographic text/logos/watermarks/collages, visible recognizable product types, correct distinguishing geometry/color and physically plausible scale/light/contact. BASIC is truly overhead on a real surface; STYLED has no person; LIFESTYLE shows Tommy Kate performing an appropriate action with a genuinely different viewpoint/framing from STYLED. Review the actual image, not only the prompt or tool response. Check hands, duplicate objects, product placement and room continuity. Inspect full size and phone/feed size. Reject missing products, wrong stand geometry, altered pumpkin faces, hidden reference-dependent shapes, identity drift, or avatar insertion into the styled frame.
+
+Corrections must identify the specific defect and preserve accepted elements. The Ghoul Fuel correction is the worked example. No new open-ended correction allowance is implied by older recipes. Record each attempt against the current budget and stop at its authorized limit. A failing image never ships because time or corrections ran out. Both failed 7 October test images remain excluded.
+
+## 17. Graphics, copy and disclosure
+
+Create exactly three separate Pinterest graphics per look at 1000x1500 and three separate Instagram carousel slides at 1080x1350, from the accepted photographs. Keep role → photograph → graphic/slide associations explicit in state. Photography carries no lettering; add all graphic typography deterministically after generation and inspect every word at phone size. Use the TDIE brand: loud confident pink with a polished luxury feel, Newsreader SemiBold upright for headlines and Inter for other type. Preserve legibility, contrast, safe margins and product visibility. Never render generated text into the source photo.
+
+Founder copy conventions: overlay normally 3–5 words, title 60–100 characters, description 450–500 characters including disclosure, alt text 150–200 characters describing the actual image. These are founder editorial targets, not asserted current platform limits; validate current fields before posting. No prices, earnings promises, em dashes, copied brand/logo cues or unsupported product/performance claims. Brand names in the approved sourcing/prompts do not belong in public titles, pages or pins. Write specific plain copy in the founder's voice. Do not claim generated photos are exact retailer product photographs.
+
+Founder Amazon pin disclosure: "#ad As an Amazon Influencer I earn from qualifying purchases." Customer disclosure must match the customer's actual account/path and current applicable requirements; never copy the founder's account status. Required AI labels and affiliate disclosures must be supported and verified on the exact publication route. Lack of a field does not waive a requirement.
+
+Brand Closet credit remains founder copy: "Outfit inspiration from The Brand Closet™: https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce" before the Amazon disclosure, within the complete description target. Customer exports use the customer's authorized attribution/destination, not the founder's private configuration.
+
+## 18. Website implementation and full /lifestyle replacement
+
+Codex must implement the new system for the hub, category pages, individual looks and direct legacy URLs. No old two-image generator/template may continue to display old content or recreate it after cutover. Use one reusable template and explicit records with the three roles. Extend section 7 records with a schema version, stable LOOK_ID, role-specific asset IDs/checksums, staging status, source version and verification evidence as needed; adapters must not silently declare an old two-image record complete.
+
+Keep new records STAGED_NOT_PUBLIC while image files, destination verification or approval are missing. Do not manufacture a third image, hotlink private pack assets, publish those private references, replace them with stock imagery or expose a half-migrated look as complete. Public media requires separate authorization. The pack's approved styling status does not make its private files public.
+
+Before cutover inventory all existing look JSON, image references, routes, feeds, sitemap entries, internal links and old writer paths. Preserve rollback in Git. Retire all old look displays; choose explicit tested redirects where a genuine new equivalent exists, otherwise a deliberate retired route. No redirect may lead to a broken product or old template. Separate verified reusable product data from rejected imagery. The reported Pink Angel clutch link is a known issue requiring verification; do not publish it as a verified clutch destination without a new check.
+
+The public deployment is Cloudflare worker tdie-site from cloudflare-migration. main is not proof of deployment; Vercel is retired. Incorporate the parked rebuild only after review against this document. Stop competing /lifestyle writers before cutover. Validate schemas, required three-role images, alt text, links, affiliate verification and stage/public gating. Run the appropriate build and route checks, inspect complete desktop and mobile pages at 320px/390px, then independently inspect the actual custom-domain deployment. No claim of completion from a build alone. Keep h1 30–36px mobile, h2 26–30px, wrapping labels, 48px primary actions and zero overflow. Preserve the Newsreader/Inter brand and site signup integrations without reintroducing old visual layouts.
+
+Show section 7's exact AI styling notice and the appropriate affiliate disclosure. Styling extras stay separate from shoppable items. Make product and Idea List links understandable and accessible; never present an unverified canonical URL as an affiliate destination. Product-release promotions remain held. This documentation change does not itself rebuild or deploy /lifestyle.
+
+## 19. Publication and scheduling
+
+Use section 8's order: verified affiliate destinations and submitted list → Codex implementation and independent live blog verification → Pinterest publication → Instagram after confirmed Pinterest publication. Scheduled Pinterest posts do not count as published. Prepare drafts independently, but do not schedule downstream publication as if an upstream dependency already passed. Record the exact approved assets, copy, destination, board/account, timezone and time for each write.
+
+The reference pack specifies three graphics, but does NOT specify a three-pin timetable. Do not fill the third slot by inventing a default or applying the deleted two-pin timetable. Save an authorized three-role posting plan before scheduling; preserve already-confirmed schedules and resolve collisions against live state. Founder related pins remain separated rather than all posted the same day; respect the saved pacing policy and a maximum 14-day forward planning window unless the founder changes it. Dates, timezone and policy revision belong in state, not inferred from machine local time.
+
+Read existing schedules/publications first. Write one exact payload once, persist its external ID/UUID immediately, and read it back through the owning service. Compare time/timezone, actual board/account, media, title, description, alt, destination, disclosure and required labels. A successful API response is only submitted evidence; scheduled, published and verified are separate states. Instagram uses three finished carousel slides; no old two-photo carousel ordering rule survives. Verify account, asset order, caption, labels and live result. Missing Story support leaves the Story pending and does not cause an unauthorized account-setting change.
+
+## 20. State schema and durable records
+
+Use one durable production truth: an authorized spreadsheet/database or equivalent local JSON store. Markdown logs and Command Centre tabs are views, not independent sources of truth. Founder existing LB_PIN_LOG and Brand Closet history must be reconciled/imported rather than discarded; preserve completed links and external IDs. Read pending pull requests before rebuilding a view so a refresh cannot erase them.
+
+Required tables/collections: AUTOMATION_POLICY, CAPABILITIES, LOOKS, PRODUCTS, IMAGES, PINS, BLOG, INSTAGRAM, LESSONS, RUNS, ERRORS. Stable keys include LOOK_ID, IMAGE_ID, PIN_ID, ASIN, lesson ID, run ID, external post ID/UUID and policy revision. Store timestamps in ISO form with schedule timezone. Record source/asset hashes and payload fingerprint so changed copy, media, time or destination invalidates prior verification/approval.
+
+LOOKS: theme, date, season, category, source, destination, status, next_action, owner, policy_version. PRODUCTS: complete section 6 fields plus affiliate verification evidence. IMAGES: role, prompt version/hash, references, provider/model/configuration, request ID, cost, private/public asset location, dimensions/checksum, QA outcome/reason. PINS/INSTAGRAM: exact copy/alt/disclosure, media IDs, account/board, intended timezone/time, external ID, payload fingerprint, approval evidence, submitted/readback/live timestamps, status. BLOG: section 7 data, schema version, staged/public status, build/deployment ID, public URL and live audit. RUNS: claim/heartbeat/checkpoint, write intents, reservations/debits, start/end, completion evidence. ERRORS: affected ID, operation, exact error, attempts, outcome certainty and next action.
+
+Operational statuses include intake_needed, sourcing, ready, building, built, queued, customer_review_required, awaiting_approval, customer_scheduling_required, scheduled, customer_scheduled, published, verified, missed, write_outcome_unknown, pull_requested, pulled, pull_failed, failed and dropped. STAGED_NOT_PUBLIC is the website publication gate, not an accidental substitute for the operational status. Distinguish omitted steps from completed ones. Persist each actual result immediately and verify the state write.
+
+## 21. Permissions, budgets, claims and recovery
+
+Save an AUTOMATION_POLICY before unattended operation. It records who authorized what and when, selected mode, accounts, boards/destinations, source/asset rights, provider/model/settings, per-run and period budget, cadence, timezone, channel scope, approval boundaries, expiration/revocation and pause controls. AUTOMATIC mode executes within that policy; REVIEW_FIRST requires approval of the exact asset/copy/destination/schedule fingerprint. Changed payloads invalidate the approval. Account consent and platform capability are separately checked. Automation does not invent a spending allowance.
+
+Acquire a run claim before side effects. Use an atomic conditional/versioned write where available, record owner and heartbeat, and release after checkpointing on every exit. A lock's age alone does not prove its holder stopped. Reconcile holder status and uncertain external writes before reclaiming. Keep a pending write_intent with stable write_attempt_id, exact payload fingerprint and expected cost before submitting. If a response is lost, mark write_outcome_unknown, inspect the external service and match payload/IDs before any retry. Never create a second post/list/job merely because the first response was missing.
+
+Resume only the failed or unfinished step. Reuse accepted images, sourced products, verified links and committed state. Complete independent authorized work while a dependency is blocked; keep a precise checkpoint including the next operation and unresolved evidence. Retry transient failures only within the recorded policy, with bounded attempts. Never silently change tools, accounts, boards, prompts, rights, cost or publication route. Save a visible failure when all supported routes are exhausted.
+
+Pull requests are durable state. Cancellation of a scheduled external post and removal of a live platform post are distinct operations. Use the exact supported authorized capability, verify the owning service result and record pulled/pull_failed. Deleting a Metricool record is not proof that a live Pinterest pin disappeared. Do not erase historical evidence or unrelated live posts during documentation cleanup.
+
+## 22. Customer setup and manual/mixed equivalents
+
+This founder reference is NOT a customer delivery package. Before release derive a sanitized buyer edition from this one authority and validate every path. Never copy founder task triggers, account identifiers, board IDs, tracking tags, private lesson URLs, Command Centre IDs/logs, private references or paid member materials into customer output. Customer state and authorization belong to the customer.
+
+Setup captures: actual Amazon account path (Influencer list, Associates-only or owned site), owned destinations and verified links, disclosure, persona/no-persona choice, authorized reference assets, product categories, selected channels, timezone/cadence, provider/model and budget, chosen automation/review mode, connected capabilities and durable state location. Produce the customer's recipe and schedule as parameterized runtime configuration pointing to this workflow, not another freestanding competing instruction manual. Never claim all buyers have the same signed-in accounts or browser runtime.
+
+Time-saving, credit-saving/manual and mixed paths complete the same steps and have the same acceptance criteria. Manual equivalents: buyer supplies products/listing facts and source rights; captures/verifies their own links/list in the native service; generates using their selected provider and correct role references; prepares graphics with deterministic type; creates their own site page or selected destination; uses native publishing/scheduling where permitted; reads back actual results and records state. Mixed mode assigns each operation to either the buyer or agent explicitly. Planning/copy can use the buyer's chosen capable chat tool. Do not require a subscription, paid scraper, persona service or automation tool solely because the founder used one historically.
+
+No-persona buyers must receive a deliberately validated no-persona variant of the third image, not an undisclosed substitution or a claim that the founder's Tommy Kate pack demonstrates that path. Persona buyers need authorized identity inputs. Associates-only buyers do not get a fictitious Influencer Idea List. Own-site buyers need a real authorized page and correct destination verification. Where an automatic capability is missing, block and name that step; do not quietly turn the promised automatic path into customer homework. Manual mode is a buyer choice, not proof that automatic mode works.
+
+## 23. Scheduled jobs and Brand Closet intake
+
+The reusable customer design has three jobs: weekly themed-look build, optional Outfit of the Day intake/build, and daily reconciliation/recovery/pull handling. Save them paused first. Enable only after the first real publication and a separate scheduled execution have been independently verified for the chosen customer path. Manual customers receive the same operations as a checklist, without fictitious trigger IDs. Task payloads identify this canonical file, its reviewed version/hash, the saved policy and state; they must not embed stale generation defaults.
+
+Founder known task times from the prior active override are historical configuration to reconcile before editing runtime: weekly build Saturday 1:05pm Eastern; Brand Closet Sunday–Friday 9:20pm Eastern. The Brand Closet overnight checkpoint stops new items at 6:45am, saves/releases by 7:30am Eastern. Continuation must read the checkpoint and existing schedule, never start the outfit over. A previously saved task or a clock time is not evidence that its embedded prompt now matches this document. Runtime task/skill/project copies must be inspected and updated by an operator with that access before generation resumes.
+
+Brand Closet: read the authorized Outfit of the Day Closet lesson source, state first, latest 14 days oldest unfinished first. Finish partly sourced/built lessons using existing work before starting new ones, ordinarily up to two per run. Mark older unstarted lessons missed/skipped with a reason, rather than silently rescheduling a logged lesson. Paid member photos/prompts are private references only; never publish them or another creator's affiliate links. Source the buyer/founder's own matching products and destinations. Close unrelated source tabs after intake. If no unprocessed lessons or unfinished work exist, end without opening generation or publishing tools. The new three-role image workflow applies to WYS outputs; the removed Brand Closet two-image generator defaults do not.
+
+## 24. Seasonal planning and surrounding integrations
+
+Carry the founder's source calendar forward without its old image/cadence rules: Halloween through 23 October 2026; pink fall 24 October–6 November; Thanksgiving/Friendsgiving 7–19 November; Christmas/gift guides 20 November–18 December; New Year's Eve 19–30 December; winter 31 December–24 January 2027; Valentine/Galentine 25 January–7 February; transition to spring 8 February–6 March; Easter/pink-and-green seasonal looks 7–21 March; spring 22–31 March. Do not schedule past the recorded 31 March end without renewal. Dress evergreen looks for the current season; include at least one a week and normally two where the saved plan allows. Use the separate current lifestyle idea bank as product ideas only, never as a competing image recipe.
+
+Pink Finds signup, membership/Brand Closet cards and Friday newsletter are surrounding integrations, not permission to release WYS. Preserve their verified account/source boundaries while rebuilding the page styling. Any applicable Weekend Ecosystem mention is a soft, authorized next step, not an invented deliverable or activation. Newsletter links go to independently verified owned lifestyle pages, not unverified affiliate destinations. Email send/test/schedule operations require their existing authority and owning-service readback. Do not represent historical subscriber counts, campaign status, price, plan capacity or tier facts as current without checking.
+
+## 25. Validation, release gate and cleanup completion
+
+Documentation checks: six current approved prompts and REFERENCE-MAP match the supplied export word for word; active stand correction matches; three role/reference chains are present; no executable legacy generator/default or two-image recipe remains; all active WYS references point here; old packaged instructions/compiled copies cannot recreate the old recipes. This is a source check, not an image, affiliate, live publication or automation pass.
+
+Image/website checks: inspect actual current private inputs and approved outputs through authorized access; verify links/list; schema and route tests; complete desktop/mobile and actual deployment audits; downstream publication readback. Never restore failed private tests, label a staged page live, or distribute private pack images.
+
+Customer release requires evidence for all six buyer paths: Influencer+persona, Associates-only+no persona, own site, Brand Closet member, manual and mixed. For each verify setup, sourcing/rights, correct destination/disclosure, actual three-image variant, graphics/copy, public board/account, duplicate prevention/locks, budget behavior, uncertain-write recovery, missed-run reconciliation, pull/cancel behavior, first real publication and separate scheduled run. Validate rendered guides, no founder/private leakage, and every manual equivalent. Simulations and documentation edits do not pass live tests. Do not promise guaranteed sales, earnings, universal automation or Pinterest distribution. The founder's explicit release hold remains until she changes it.
+
+Old instructions belong only to Git history for rollback/evidence, not live instruction files. Delete superseded WYS recipes, task prompt files, architecture/release duplicates and old instruction kit/PDF/ZIP builds. Update shared entrypoints to this file without deleting unrelated TDIE systems, production logs, source product data, approved private assets or published posts. Remove obsolete code that regenerates deleted instruction kits. Runtime Claude Project documents, skills and scheduled tasks are separate copies: repository cleanup alone does not prove they were removed. Keep generation paused until their source coverage and migration are checked. Record the exact remaining inaccessible surface rather than claiming global deletion.
+
+## 26. Product campaign facts and release hold
+
+Updated 4 Oct 2026. Read current canon and verify live checkout/listing state before using prices, links, capabilities or release claims in customer-facing material.
+
+## Release hold
+
+Release is on hold. Publish nothing for this product. Dates below are planning facts only and do not authorize posting, launch, checkout activation, delivery release or affiliate activation.
+
+## Campaign structure
+
+- Name The While-You-Sleep Storefront™ in the first Mon 5 Oct announcement. Do not run an unnamed mystery campaign.
+- Mon 5 Oct through Thu 8 Oct before 4:00 pm Eastern is the prelaunch desire/demo period.
+- WYS prelaunch promotion repeatedly reminds the audience: **Standard presale opens Thu 8 Oct at 4:00 pm Eastern; 20 Standard presale spots.**
+- Demonstrations should create desire by showing real verified outputs and workflow behavior, not unsupported promises.
+
+## Pricing and scarcity
+
+- Standard member presale: Thu 8 Oct 4:00 pm to Sat 10 Oct 2:00 pm Eastern. $17. Exactly 20 Standard presale spots.
+- Standard spots remaining = 20 minus actual Standard presale purchases. Do not count Premium purchases against this cap.
+- No Beacons counter or sales limit (Jodie, 4 Oct 2026). Jodie keeps the Standard spots count herself and updates it by hand in Skool. Never set a Beacons sales limit for this, and never post a spots number she hasn't given.
+- Premium member offer: $10 via TDIEPREMIUM in The Premium Vault only. Uncapped.
+- Premium purchases may be used in truthful, clearly labeled total-buyer/social-proof counts. They may never be used to create or reduce a Standard spots-remaining number.
+- No public presale.
+- Public launch: Sat 10 Oct 2:00 pm through Mon 12 Oct 11:59 pm Eastern at $27 against regular $37.
+- Regular price: Tue 13 Oct onward, $37. Launch member pricing/code off.
+- Member affiliate program: 40% through Beacons no earlier than public launch Sat 10 Oct 2:00 pm. Never state the rate on Facebook, Instagram or the sales page.
+
+## Claims
+
+- No sales, commission or income claims about this storefront.
+- Do not claim automatic sourcing, silent fully automatic publishing, or any capability not supported by current live test/release evidence.
+- Historical audits are evidence of their date only. Current release status must be reverified.
+- Sep 28 founder requirement remains: every automated or credit-heavy customer-guide step must offer both a lower-cost Claude/ChatGPT path and a manual alternative. This requirement does not itself prove the current guide implements it.
+
+## Live-state boundary
+
+Product IDs, checkout links, Vault lessons, affiliate setup, sales-page copy, delivery behavior and scheduled tasks must be checked live before publication or activation. The dated 27 Sep project reference and Sep 30 audits are historical, not current authority.

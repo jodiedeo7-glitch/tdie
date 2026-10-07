@@ -1,6 +1,6 @@
 # LIFESTYLE LIST MAP (copy for cloud sessions)
 
-Copy of the project doc `claude/TDIE_LIFESTYLE_LIST_MAP.md` (25 Sep 2026), placed here 26 Sep 2026. The evergreen look bank behind the Legally Blonde Amazon pin factory (`TDIE_LEGALLY_BLONDE_PIN_FACTORY.md` in this folder).
+Copy of the project doc `claude/TDIE_LIFESTYLE_LIST_MAP.md` (25 Sep 2026), placed here 26 Sep 2026. The evergreen look bank behind the Legally Blonde Amazon pin factory (`WYS_REFERENCE_PACK_2026-10-07.md` in this folder).
 
 **What this is:** the standing bank of look ideas NOT tied to a holiday. The factory runs at least one evergreen look a week, two outside the Halloween windows. Every holiday look earns for about three weeks and then stops; these lines still sell in March, and they make the storefront read as a shop rather than a costume box (which matters when Amazon reviews the account for tier status and onsite eligibility).
 
