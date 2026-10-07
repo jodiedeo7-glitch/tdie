@@ -1,3 +1,23 @@
+## WYS source correction and consolidation hold (Jodie, 7 October 2026)
+
+For WYS founder storefront work, the old Legally Blonde/Brand Closet generation instructions, two-image recipes, generated-text instructions, and fixed Seedream/Gemini fallback routing are superseded. Do not execute them or infer an image model from the general TDIE image master. This is scoped to WYS; SOP-15 and SOP-16 remain separate.
+
+Current founder reference is Jodie's Tommy-Kate-Halloween-Cloud-Handoff.zip and Claude Project document claude/WYS_REFERENCE_PACK_2026-10-07.md. Retrieve the full pack, including REFERENCE-MAP.txt, exact prompts and authorized reference assets. A summary is not the full source. Do not invent the missing provider/model, settings, prompts or asset references.
+
+The current look has THREE photorealistic, vertical 2:3 photographs, with no text:
+1. BASIC: overhead product flat lay on a real surface, retail products distinguishable; named styling extras separate.
+2. STYLED: a lived-in room vignette, no person; attach its matching BASIC photograph to preserve product shapes.
+3. LIFESTYLE: Tommy Kate performing a relevant action in a separately composed photograph with a different angle/framing/viewpoint from STYLED; attach avatar identity reference and matching STYLED photograph. Never paste her into the styled frame.
+
+Pinterest graphics are three separate 1000x1500 assets; Instagram carousel slides are three separate 1080x1350 assets. Add text to graphics/slides after photography, never inside generated photographs. Record sourced products with ASIN, variant, observed visual facts, canonical URL, verification time/method, stock observed, and affiliate_url null until verified. Canonical product URLs are not verified affiliate links.
+
+Publication sequence: complete and verify affiliate destinations and Amazon list submission; implement and independently verify the live blog through Codex; then publish Pinterest; Instagram follows confirmed Pinterest publication. Source-only changes do not prove publication. The founder's customer-product release hold is unchanged.
+
+Consolidation requirement: create ONE thorough, self-contained WYS master from the full current source, including sourcing, locked generation configuration, exact prompts, three-image dependency chain, product records, website records, typography/graphics, publication, state, recovery, spending, permissions, manual/mixed buyer paths, and test/release gates. Update every active task, skill, project instruction, router and entrypoint to it, then delete superseded WYS instruction files and stale instruction packages. Do not leave old instructions merely marked deprecated. Do not delete unrelated systems, current product inputs, approved private reference assets or live posts.
+
+Until that consolidation is complete and its source coverage is checked, WYS image generation remains PAUSED. Continue independent code preparation. No silent fallback to the old generation files and no second publishing writer. Do not describe consolidation or old-file deletion as complete without readback evidence.
+
+
 ## Development
 
 When starting the dev server, use background mode:
