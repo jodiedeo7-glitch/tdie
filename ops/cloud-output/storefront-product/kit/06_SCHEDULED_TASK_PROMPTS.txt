@@ -58,12 +58,12 @@ THE JOB
 11. Write each Pin's title, description and alt text (03 Part 5).
 12. Give each Pin a PIN_ID.
 13. Run the approval gate (12_STATE_SCHEMA.md A1).
-14. Publish:
+14. Before scheduling, if BLOG HALF: on, add each finished look to my site (09_THE_BLOG_HALF.txt, STEP 3) under the same approval gate and verify the destination is live with the correct linked items. If the destination is missing or not live, keep affected Pins queued; never schedule them against a placeholder. Then publish:
    TIME-SAVING (Metricool, PUBLISHING TEST = passed): save the write intent, then create and schedule only the approved Pin with its final image, board, title, description, link and time. If the image is in Google Drive and Metricool's Drive connection works, use that instead of making the file public. Record Metricool's post ID and UUID. Read it back and compare image, title, board, link, time and status. PENDING in Metricool means scheduled and waiting; keep the Pin "scheduled". If a sign-in or security check appears, keep the work, tell me the exact step, and carry on with other work. Never get around a platform review. An unconfirmed request is not scheduled.
    METRICOOL CSV (only if I chose it): after every check and approval, prepare a UTF-8 Metricool CSV. The image addresses must be publicly reachable. A CSV is a hand-off, not a schedule.
    NATIVE PINTEREST: never fake Pinterest clicks. Put the complete package in pin-tab.md and set customer_scheduling_required. I schedule it.
-15. If BLOG HALF: on, add each finished look to my site (09_THE_BLOG_HALF.txt, STEP 3) under the same approval gate, before its Pins go out, and check the page is live.
-16. If INSTAGRAM: feed posts on, follow 10_INSTAGRAM_ADD_ON.txt for each look only after both of its Pins are published and checked.
+15. If BLOG HALF: on, retain the verified page URL and deployment evidence from step 14. Reconcile an existing deployment instead of repeating the write.
+16. If INSTAGRAM: feed posts on, follow 10_INSTAGRAM_ADD_ON.txt only after every expected PIN_ID for that LOOK_ID and its saved PIN PACKAGE is published and verified: two Pins for BASIC, three for EXPANDED. A missing, failed, queued, scheduled or merely published-but-unverified sibling blocks the Instagram handoff. Persist the ordered carousel payload and write intent before submission; reconcile any existing ID or unknown write outcome before retrying.
 17. Update the state first, then storefront-log.md, pin-tab.md and pin-drafts.md.
 18. Write the run record, release the claim, update shopping-list.md and report the automatic sourcing queue and only any manual assignments I explicitly chose (03 Part 7 step 10).
 19. Report only what actually happened, plus anything I must do.
