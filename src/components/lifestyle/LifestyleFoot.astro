@@ -1,0 +1,14 @@
+---
+// Closing disclosures on every Lifestyle page: the Amazon Associates line and
+// the AI-styling line (WYS founder output structure).
+import { DISCLOSURE, AI_LINE } from "../../data/lifestyle.js";
+const { affiliate = true } = Astro.props;
+---
+<div class="lsx-foot">
+  <div class="lsx-wrap">
+    <div class="lsx-disclosure">
+      {affiliate && <p><span class="lsx-tag">Disclosure</span> <b>Affiliate links.</b> {DISCLOSURE}</p>}
+      <p><span class="lsx-tag">AI styling</span> {AI_LINE}</p>
+    </div>
+  </div>
+</div>

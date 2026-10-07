@@ -1,0 +1,36 @@
+---
+// The two offers on every Lifestyle page (replaces LifestyleExtras, 7 Oct 2026).
+// 1. TDIE's own offer, the glossy hot pink hero card: Membership Standard
+//    (price from src/data/facts.js, which mirrors canon.json).
+// 2. The Brand Closet™, an affiliate (canon.json products[]): rel=sponsored and
+//    its disclosure ship together (Standing Rule 18). Copy names only what The
+//    Brand Closet™ about page lists. No income or earnings claims anywhere.
+import { membership as M } from "../../data/facts.js";
+const BC = "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce";
+---
+<section class="lsx-sec" aria-labelledby="h-offers">
+  <div class="lsx-wrap">
+    <div class="lsx-head">
+      <div>
+        <span class="lsx-kick">Plot twist</span>
+        <h2 id="h-offers">The girl in these photos <em>isn't real.</em> The shop is.</h2>
+      </div>
+      <p>Tommy Kate is my AI model. Every look on this page is styled on her, and every link goes to a real piece on Amazon.</p>
+    </div>
+    <div class="lsx-offers">
+      <a class="lsx-offer lsx-hot" href="/membership">
+        <span class="lsx-kick">Build your own</span>
+        <h3>Create your own AI model, then give her a job</h3>
+        <p>Inside The Digital Income Edit™ you build an AI twin with a look that stays consistent, then learn the Pinterest, email and shop side of putting her to work. Your own face is never required.</p>
+        <span class="lsx-btn">Start Membership Standard · {M.standard.perMonth} <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="lsx-offer lsx-card" href={BC} rel="sponsored nofollow noopener" target="_blank">
+        <span class="lsx-kick">Already have a twin? · Affiliate</span>
+        <h3>Dress her in what's trending</h3>
+        <p>The Brand Closet™ hands you trending Amazon looks, done-for-you Pinterest pins and 600+ fashion prompts ready to copy and paste for your AI twin.</p>
+        <span class="lsx-btn lsx-btn--soft">Join The Brand Closet™ free<span class="lsx-sr"> (opens in a new tab)</span></span>
+        <p class="lsx-disc-mini">Affiliate link: I earn a commission if you upgrade, at no extra cost to you.</p>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,22 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
+
+// Lifestyle departments with no looks yet are noindex (src/pages/lifestyle/[slug].astro),
+// so they stay out of the sitemap. A look counts only in the founder schema with
+// both pin images present, the same rule src/data/lifestyle.js builds from.
+const LS_DIR = new URL('./src/lifestyle/', import.meta.url);
+const LS_CATS = ['clothing', 'accessories', 'jewelry', 'beauty', 'perfume', 'home-decor', 'dorm', 'car', 'books', 'gifts'];
+const lsLive = new Set();
+for (const f of readdirSync(LS_DIR).filter((n) => n.endsWith('.json'))) {
+  try {
+    const l = JSON.parse(readFileSync(new URL(f, LS_DIR), 'utf8'));
+    const imgs = (l.images || []).map((im) => im.file);
+    if (l.schema === 'wys-founder-1' && imgs.length === 2 && imgs.every((n) => existsSync(new URL(n, LS_DIR)))) lsLive.add(l.category);
+  } catch { /* the build's own loader reports bad files */ }
+}
+const lsEmpty = new Set(LS_CATS.filter((c) => !lsLive.has(c)).map((c) => `/lifestyle/${c}`));
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +36,10 @@ export default defineConfig({
   // condition covers the index, the modules and the waitlist, and leaves
   // /shop/weekend-ecosystem alone.
   integrations: [sitemap({
-    filter: (page) => !new URL(page).pathname.startsWith('/weekend-ecosystem'),
+    filter: (page) => {
+      const path = new URL(page).pathname.replace(/\/+$/, '');
+      return !path.startsWith('/weekend-ecosystem') && !lsEmpty.has(path);
+    },
   })],
   redirects: {
     '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault',

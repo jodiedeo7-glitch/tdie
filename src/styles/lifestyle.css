@@ -1,0 +1,260 @@
+/* ==========================================================================
+   LIFESTYLE · the founder Amazon storefront section (rebuilt 7 Oct 2026).
+   Decision 128 look (ops/cloud-kit/TDIE_DESIGN_RULES.md, "THE LOOK"):
+   loud, pink, sparkly, girly, luxury. Cream room, Signature Hot Pink,
+   Bubblegum, Muted Gold as a thin line only, near-black text. Newsreader
+   SemiBold upright headlines, Inter for everything else. Frosted glass cards
+   with a thin gold border and deep soft pink-tinted shadows, one glossy hot
+   pink hero card per section, tilted stickers, numbered badges, pull quotes.
+   Real sparkle only at the big moment (the masthead), never as wallpaper.
+   No brown fills. No italic headlines. No hard offset shadows.
+   Headline sizes follow src/styles/sales-typography.css limits.
+   ========================================================================== */
+
+.lsx{--ink:#1A1417;--ink-2:#40363B;--ink-3:#5E5257;--hot:#D62E73;--hot-t:#B8245F;--bub:#FF8AC2;--gold:#C8A96A;--lav:#CBB7F7;
+  --cream:#FBF8F5;--blush:#FDEFF5;--glass:rgba(255,253,252,.82);--edge:rgba(200,169,106,.6);
+  --shadow:0 34px 64px -38px rgba(214,46,115,.42),0 12px 26px -18px rgba(26,20,23,.16);
+  --serif:"Newsreader",Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --w:1200px;--gut:clamp(16px,4vw,40px);
+  font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:17px;line-height:1.65;overflow-wrap:break-word;overflow-x:clip}
+.lsx *,.lsx *::before,.lsx *::after{box-sizing:border-box}
+.lsx h1,.lsx h2,.lsx h3{font-family:var(--serif);font-weight:600;font-style:normal;color:var(--ink);letter-spacing:-.02em;margin:0}
+.lsx h1 em,.lsx h2 em,.lsx h3 em{font-style:normal;color:var(--hot)}
+.lsx p{margin:0}
+.lsx img{max-width:100%}
+.lsx a:focus-visible,.lsx button:focus-visible{outline:3px solid rgba(214,46,115,.5);outline-offset:3px}
+.lsx .lsx-wrap{max-width:var(--w);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.lsx .lsx-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* kicker + brand line */
+.lsx .lsx-brand{display:inline-flex;align-items:center;gap:10px;font:700 12px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin:0 0 18px}
+.lsx .lsx-dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(214,46,115,.16)}
+.lsx .lsx-kick{display:block;font:700 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--hot-t);margin:0 0 12px}
+
+/* breadcrumb */
+.lsx .lsx-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;margin:0 0 10px;font:700 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.lsx .lsx-crumb a{display:inline-flex;align-items:center;min-height:44px;color:var(--hot-t);text-decoration:none}
+.lsx .lsx-crumb a:hover{text-decoration:underline;text-underline-offset:4px}
+.lsx .lsx-crumb i{font-style:normal;color:var(--gold)}
+
+/* buttons */
+.lsx .lsx-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:15px 28px;border-radius:999px;border:0;
+  font:700 13px/1.25 var(--sans);letter-spacing:.12em;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer;
+  color:#fff!important;background:linear-gradient(135deg,#EC4D90 0%,var(--hot) 55%,var(--hot-t) 100%);
+  box-shadow:0 14px 28px -12px rgba(214,46,115,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
+.lsx .lsx-btn:hover{transform:translateY(-1px);box-shadow:0 18px 32px -12px rgba(214,46,115,.82),inset 0 1px 0 rgba(255,255,255,.35)}
+.lsx .lsx-btn--soft{color:var(--hot-t)!important;background:#fff;border:1.5px solid rgba(214,46,115,.45);box-shadow:0 12px 24px -16px rgba(214,46,115,.5)}
+.lsx .lsx-btn--soft:hover{border-color:var(--hot)}
+.lsx .lsx-btn--block{width:100%}
+
+/* frosted card + glossy hot card */
+.lsx .lsx-card{position:relative;background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  border:1px solid var(--edge);border-radius:20px;box-shadow:var(--shadow)}
+.lsx .lsx-hot{position:relative;overflow:hidden;border-radius:22px;color:#fff;
+  background:linear-gradient(140deg,#F25FA0 0%,var(--hot) 46%,#A61E55 100%);
+  box-shadow:0 38px 64px -32px rgba(214,46,115,.78),inset 0 1px 0 rgba(255,255,255,.42)}
+.lsx .lsx-hot::before{content:"";position:absolute;top:-60%;left:-30%;width:90%;height:160%;transform:rotate(18deg);pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.2),rgba(255,255,255,0))}
+.lsx .lsx-hot>*{position:relative}
+.lsx .lsx-hot h2,.lsx .lsx-hot h3{color:#fff}
+
+/* stickers */
+.lsx .lsx-sticker{position:absolute;z-index:3;display:grid;place-items:center;width:112px;height:112px;border-radius:50%;
+  font:800 11.5px/1.25 var(--sans);letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--hot);
+  box-shadow:0 16px 28px -12px rgba(214,46,115,.55)}
+.lsx .lsx-sticker>span{display:grid;place-items:center;width:94px;height:94px;padding:6px;border-radius:50%;border:1.5px dashed currentColor}
+.lsx .lsx-sticker--a{background:#fff;transform:rotate(-10deg)}
+.lsx .lsx-sticker--b{background:var(--bub);color:#fff;transform:rotate(8deg)}
+.lsx .lsx-sticker--b>span{border-color:rgba(255,255,255,.92)}
+
+/* tags and badges */
+.lsx .lsx-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font:700 11px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--hot-t);background:#fff;border:1px solid rgba(214,46,115,.3)}
+.lsx .lsx-tag--hot{color:#fff;background:var(--hot);border-color:var(--hot)}
+.lsx .lsx-n{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:800 14px/1 var(--sans);color:#fff;
+  background:linear-gradient(140deg,#F25FA0,var(--hot) 60%,#A61E55);box-shadow:0 8px 16px -8px rgba(214,46,115,.7),inset 0 1px 0 rgba(255,255,255,.4)}
+
+/* ── MASTHEAD: the one sparkle moment ─────────────────────────────── */
+.lsx .lsx-mast{position:relative;isolation:isolate;padding:clamp(40px,6vw,88px) 0 clamp(56px,7vw,96px);
+  background:
+    radial-gradient(1200px 520px at 85% -10%,rgba(255,138,194,.42),transparent 62%),
+    radial-gradient(900px 480px at -10% 110%,rgba(203,183,247,.34),transparent 60%),
+    linear-gradient(180deg,#FFF6FA 0%,var(--cream) 100%)}
+.lsx .lsx-mast::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.9;
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 22%,rgba(255,255,255,.95),transparent 60%),
+    radial-gradient(1.4px 1.4px at 27% 64%,rgba(255,255,255,.85),transparent 60%),
+    radial-gradient(2px 2px at 44% 18%,rgba(255,255,255,.9),transparent 60%),
+    radial-gradient(1.2px 1.2px at 63% 78%,rgba(255,255,255,.8),transparent 60%),
+    radial-gradient(1.8px 1.8px at 78% 34%,rgba(255,255,255,.95),transparent 60%),
+    radial-gradient(1.3px 1.3px at 91% 70%,rgba(255,255,255,.85),transparent 60%),
+    radial-gradient(1.5px 1.5px at 6% 84%,rgba(255,255,255,.85),transparent 60%),
+    radial-gradient(1.7px 1.7px at 55% 46%,rgba(255,255,255,.75),transparent 60%)}
+.lsx .lsx-mast-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,6vw,80px);align-items:center}
+.lsx .lsx-mast h1{font-size:clamp(36px,4.6vw,52px);line-height:1.06;letter-spacing:-.03em;margin:0 0 18px;max-width:15ch}
+.lsx .lsx-lede{font-size:clamp(17px,1.5vw,19px);line-height:1.65;color:var(--ink-2);max-width:34em;margin:0 0 26px}
+.lsx .lsx-mast-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.lsx .lsx-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:22px;font:700 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.lsx .lsx-meta i{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.lsx .lsx-mast-fig{position:relative;margin:0;justify-self:end;width:100%;max-width:470px}
+.lsx .lsx-mast-fig .lsx-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 35%;border-radius:26px;border:1px solid var(--edge);
+  box-shadow:0 44px 80px -40px rgba(214,46,115,.6),0 16px 34px -20px rgba(26,20,23,.28)}
+.lsx .lsx-mast-fig .lsx-sticker--a{top:-20px;left:-24px}
+.lsx .lsx-mast-fig .lsx-sticker--b{bottom:76px;right:-20px}
+.lsx .lsx-mast-fig figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:12px 16px;border-radius:14px;font-size:14px;line-height:1.45;color:var(--ink);
+  background:rgba(255,253,252,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--edge)}
+.lsx .lsx-mast-fig figcaption b{color:var(--hot-t)}
+.lsx .lsx-mast--solo .lsx-mast-grid{grid-template-columns:minmax(0,1fr)}
+
+/* sections */
+.lsx .lsx-sec{padding:clamp(56px,7vw,96px) 0}
+.lsx .lsx-sec + .lsx-sec{border-top:1px solid rgba(200,169,106,.45)}
+.lsx .lsx-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px 32px;margin-bottom:clamp(24px,3vw,36px)}
+.lsx .lsx-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+.lsx .lsx-head p{max-width:30em;color:var(--ink-2);font-size:16px}
+
+/* callout box (disclosure up top, "how it works" notes) */
+.lsx .lsx-callout{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;border:1px dashed rgba(214,46,115,.5);
+  font-size:15px;line-height:1.55;color:var(--ink-2)}
+.lsx .lsx-callout b{color:var(--ink)}
+.lsx .lsx-callout .lsx-tag{flex:none;margin-top:1px}
+
+/* ── DEPARTMENT CARDS ─────────────────────────────── */
+.lsx .lsx-cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.lsx .lsx-cat{display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 18px 18px;text-decoration:none;color:var(--ink);transition:transform .2s,border-color .2s}
+.lsx .lsx-cat:hover{transform:translateY(-2px);border-color:var(--hot)}
+.lsx .lsx-cat-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.lsx .lsx-cat-name{font:600 23px/1.15 var(--serif);letter-spacing:-.015em}
+.lsx .lsx-cat-blurb{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.lsx .lsx-cat .lsx-go{margin-top:auto;padding-top:8px}
+.lsx .lsx-cat.is-soon{background:rgba(255,253,252,.55)}
+.lsx .lsx-go{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:700 12.5px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--hot-t)}
+.lsx .lsx-go span{transition:transform .2s}
+.lsx a:hover .lsx-go span{transform:translateX(3px)}
+
+/* ── LOOK CARDS: name + button always visible ─────────────────────── */
+.lsx .lsx-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.2vw,28px)}
+.lsx .lsx-look{display:flex;flex-direction:column;height:100%;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .25s,box-shadow .25s}
+.lsx .lsx-look:hover{transform:translateY(-3px);box-shadow:0 40px 70px -38px rgba(214,46,115,.55),0 14px 28px -18px rgba(26,20,23,.18)}
+.lsx .lsx-look-img{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;background:var(--blush);border-bottom:1px solid var(--edge)}
+.lsx .lsx-look-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.lsx .lsx-look:hover .lsx-look-img img{transform:scale(1.035)}
+.lsx .lsx-look-img .lsx-tag{position:absolute;top:12px;left:12px}
+.lsx .lsx-look-body{display:flex;flex-direction:column;gap:8px;flex:1;padding:16px 16px 18px}
+.lsx .lsx-look-cat{font:700 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.lsx .lsx-look-title{font:600 20px/1.2 var(--serif);letter-spacing:-.015em;margin:0}
+.lsx .lsx-look-n{font-size:14px;color:var(--ink-3)}
+.lsx .lsx-look .lsx-btn{margin-top:auto;min-height:48px;padding:12px 16px;font-size:12px;width:100%}
+.lsx .lsx-empty{padding:28px;text-align:center}
+.lsx .lsx-empty p{font:600 22px/1.35 var(--serif);color:var(--ink)}
+
+/* pull quote */
+.lsx .lsx-pull{position:relative;margin:0;padding:clamp(28px,4vw,44px) clamp(24px,4vw,48px)}
+.lsx .lsx-pull p{font:600 clamp(24px,2.8vw,34px)/1.25 var(--serif);letter-spacing:-.015em;color:#fff;max-width:28ch}
+.lsx .lsx-pull cite{display:block;margin-top:14px;font:700 12px/1.4 var(--sans);font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+
+/* ── OFFERS (TDIE membership + Brand Closet affiliate) ───────────────── */
+.lsx .lsx-offers{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(16px,2vw,24px);align-items:stretch}
+.lsx .lsx-offer{display:flex;flex-direction:column;gap:12px;padding:clamp(24px,3.4vw,40px);text-decoration:none}
+.lsx .lsx-offer .lsx-kick{margin:0}
+.lsx .lsx-offer h3{font-size:clamp(24px,2.6vw,32px);line-height:1.12;max-width:16em}
+.lsx .lsx-offer p{font-size:16px;line-height:1.6}
+.lsx .lsx-offer .lsx-btn{align-self:flex-start;margin-top:auto}
+.lsx .lsx-offer.lsx-hot .lsx-kick{color:#FFE3F0}
+.lsx .lsx-offer.lsx-hot p{color:rgba(255,255,255,.94)}
+.lsx .lsx-offer.lsx-hot .lsx-btn{color:var(--hot-t)!important;background:#fff;box-shadow:0 14px 28px -14px rgba(26,20,23,.45)}
+.lsx .lsx-offer.lsx-card{color:var(--ink)}
+.lsx .lsx-offer.lsx-card p{color:var(--ink-2)}
+.lsx .lsx-disc-mini{font-size:13px!important;color:var(--ink-3)!important;padding-top:12px;border-top:1px solid rgba(200,169,106,.45)}
+
+/* ── LOOK PAGE ─────────────────────────────── */
+.lsx .lsx-lookhead{padding:clamp(28px,4vw,56px) 0 clamp(24px,3vw,40px);
+  background:radial-gradient(900px 420px at 90% -20%,rgba(255,138,194,.32),transparent 62%),linear-gradient(180deg,#FFF6FA,var(--cream))}
+.lsx .lsx-lookhead h1{font-size:clamp(32px,4.2vw,52px);line-height:1.08;letter-spacing:-.03em;max-width:20ch;margin:0 0 16px}
+.lsx .lsx-lookhead .lsx-lede{margin-bottom:18px}
+.lsx .lsx-lookhead .lsx-callout{max-width:44em}
+.lsx .lsx-lookbody{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4.4vw,64px);align-items:start;padding:clamp(28px,4vw,48px) 0 clamp(56px,7vw,96px)}
+.lsx .lsx-pins{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,1.8vw,22px)}
+.lsx .lsx-pin{position:relative;margin:0}
+.lsx .lsx-pin .lsx-pin-img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:18px;border:1px solid var(--edge);box-shadow:var(--shadow);background:var(--blush)}
+.lsx .lsx-pin figcaption{margin-top:10px;font-size:13px;line-height:1.45;color:var(--ink-3)}
+.lsx .lsx-pin figcaption b{color:var(--ink)}
+.lsx .lsx-pin .lsx-tag{position:absolute;top:12px;left:12px}
+.lsx .lsx-shop{position:sticky;top:96px;padding:clamp(22px,2.6vw,30px)}
+.lsx .lsx-shop h2{font-size:clamp(28px,3vw,36px);line-height:1.08;margin:0 0 6px}
+.lsx .lsx-shop-sub{font-size:14.5px;color:var(--ink-3);margin:0 0 18px!important}
+.lsx .lsx-items{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.lsx .lsx-item{position:relative;display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid rgba(214,46,115,.18);transition:border-color .2s,transform .2s}
+.lsx .lsx-item:hover{border-color:var(--hot);transform:translateX(2px)}
+.lsx .lsx-item-main{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.lsx .lsx-item a{font-size:16px;font-weight:600;line-height:1.35;color:var(--ink);text-decoration:none}
+.lsx .lsx-item a::after{content:"";position:absolute;inset:0;border-radius:14px}
+.lsx .lsx-item a:focus-visible{outline:none}
+.lsx .lsx-item a:focus-visible::after{outline:3px solid rgba(214,46,115,.55);outline-offset:2px}
+.lsx .lsx-item-note{font-size:13.5px;color:var(--ink-3);line-height:1.45}
+.lsx .lsx-item-go{flex:none;font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--hot-t);padding:8px 10px;border-radius:999px;background:var(--blush)}
+.lsx .lsx-shop .lsx-btn{width:100%}
+.lsx .lsx-shop-note{margin-top:14px!important;font-size:13px;line-height:1.5;color:var(--ink-3)}
+.lsx .lsx-side{margin-top:18px}
+
+/* signup frame */
+.lsx .lsx-signup{padding:clamp(24px,3.4vw,40px)}
+.lsx .lsx-signup .pf-h{font-size:clamp(24px,2.6vw,32px)}
+.lsx .lsx-signup .pf-row input{border-radius:999px;padding-left:20px}
+.lsx .lsx-signup .pf-strip,.lsx .lsx-signup .pf-box{background:none;border:0;padding:0;box-shadow:none}
+.lsx .lsx-signup .pf-form>*{min-width:0}
+@media (max-width:900px){.lsx .lsx-signup .pf-form{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:640px){.lsx .lsx-signup{padding:20px 16px}.lsx .lsx-signup .pf-row button{width:100%}}
+
+/* disclosure foot */
+.lsx .lsx-foot{padding:0 0 clamp(56px,8vw,96px)}
+.lsx .lsx-disclosure{display:grid;gap:8px;padding:20px 22px;border-radius:16px;background:#fff;border:1px solid rgba(200,169,106,.5);font-size:14px;line-height:1.6;color:var(--ink-2)}
+.lsx .lsx-disclosure b{color:var(--ink)}
+
+/* pink-finds page bits */
+.lsx .lsx-gets{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lsx .lsx-get{display:flex;flex-direction:column;gap:10px;padding:24px}
+.lsx .lsx-get h3{font-size:24px;line-height:1.15}
+.lsx .lsx-get p{font-size:15.5px;color:var(--ink-2)}
+
+@media (max-width:1100px){
+  .lsx .lsx-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lsx .lsx-cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .lsx .lsx-mast-grid,.lsx .lsx-lookbody,.lsx .lsx-offers{grid-template-columns:minmax(0,1fr)}
+  .lsx .lsx-mast-fig{justify-self:center;max-width:440px;margin-top:8px}
+  .lsx .lsx-shop{position:static}
+  .lsx .lsx-gets{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .lsx{font-size:16px}
+  .lsx .lsx-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .lsx .lsx-cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .lsx .lsx-cat{padding:16px 14px}
+  .lsx .lsx-cat-name{font-size:20px}
+  .lsx .lsx-cat-blurb{font-size:13.5px}
+  .lsx .lsx-look-body{padding:12px 12px 14px;gap:6px}
+  .lsx .lsx-look-title{font-size:17px}
+  .lsx .lsx-look-n{font-size:13px}
+  .lsx .lsx-look .lsx-btn{min-height:48px;padding:10px 8px;font-size:11px;letter-spacing:.08em}
+  .lsx .lsx-mast h1{font-size:clamp(30px,8.6vw,36px)}
+  .lsx .lsx-lookhead h1{font-size:clamp(30px,8.4vw,36px)}
+  .lsx .lsx-head h2,.lsx .lsx-shop h2{font-size:clamp(26px,7.4vw,30px)}
+  .lsx .lsx-sticker{width:92px;height:92px;font-size:10px}
+  .lsx .lsx-sticker>span{width:78px;height:78px}
+  .lsx .lsx-mast-fig .lsx-sticker--a{top:-14px;left:-6px}
+  .lsx .lsx-mast-fig .lsx-sticker--b{right:-6px}
+  .lsx .lsx-pins{grid-template-columns:minmax(0,1fr)}
+  .lsx .lsx-mast-ctas .lsx-btn{width:100%}
+  .lsx .lsx-item-go{display:none}
+}
+@media (max-width:380px){
+  .lsx .lsx-grid{grid-template-columns:minmax(0,1fr)}
+  .lsx .lsx-cats{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  .lsx .lsx-look,.lsx .lsx-look-img img,.lsx .lsx-cat,.lsx .lsx-btn,.lsx .lsx-item{transition:none}
+  .lsx .lsx-look:hover,.lsx .lsx-cat:hover,.lsx .lsx-btn:hover,.lsx .lsx-item:hover{transform:none}
+  .lsx .lsx-look:hover .lsx-look-img img{transform:none}
+}

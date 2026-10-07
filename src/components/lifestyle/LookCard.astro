@@ -1,0 +1,20 @@
+---
+// One look as a clickable card. Name and button always visible (Decision 128).
+import { Image } from "astro:assets";
+import { categoryOf } from "../../data/lifestyle.js";
+const { look, showCat = true, eager = false } = Astro.props;
+const img = look.images[0];
+const cat = categoryOf(look.category);
+---
+<a class="lsx-look lsx-card" href={`/lifestyle/${look.slug}`}>
+  <span class="lsx-look-img">
+    <Image src={img.src} alt={img.alt || look.title} widths={[320, 480, 640]} sizes="(max-width: 380px) 92vw, (max-width: 640px) 46vw, (max-width: 1100px) 31vw, 280px" loading={eager ? "eager" : "lazy"} />
+    <span class="lsx-tag">{look.season}</span>
+  </span>
+  <span class="lsx-look-body">
+    {showCat && <span class="lsx-look-cat">{cat?.name}</span>}
+    <h3 class="lsx-look-title">{look.title}</h3>
+    <span class="lsx-look-n">{look.items.length} pieces, every one linked</span>
+    <span class="lsx-btn">Shop the look</span>
+  </span>
+</a>
