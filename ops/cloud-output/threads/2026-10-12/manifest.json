@@ -1,0 +1,801 @@
+{
+  "workflow": "FOUNDER_THREADS",
+  "account_id": "@nursemadedigital",
+  "period": "2026-10-12/2026-10-18",
+  "producer": "ChatGPT",
+  "publisher": "Claude",
+  "packet_version": 1,
+  "source_cutoff": "2026-10-07T17:58:48-04:00",
+  "created_at": "2026-10-07T18:04:36.100750-04:00",
+  "updated_at": "2026-10-07T18:04:36.100750-04:00",
+  "due_at": "2026-10-11T04:00:00-04:00",
+  "producer_state": "QA_PASSED",
+  "approval_state": "NOT_REQUIRED",
+  "approval_basis": "Jodie, October 3, 2026 at 18:25 Eastern: routine founder Threads batches under the established system, including the first pilot, schedule automatically after QA without manual per-batch approval. Current main TDIE_THREADS_ROUTER.md and Drive THREADS_NO_APPROVAL_2026-10-03.json confirm this. Legacy CSV APPROVED denotes standing publishing authorization only; no per-batch review occurred.",
+  "asset_ids": [],
+  "source_ids": [
+    "1eErIKNlIGy2SQIUVEPusH3_c51fkKIhB",
+    "1cEoLVW9IYTOKnEmHlMUl2m3ee9eD0x-S",
+    "11El91qg_CS1d_647-aW0tSw56Upoep7-",
+    "1FN7I-shB7cgCMUKAxL-V348RxSn5pPzU",
+    "10eNPidilKovB7bUDrTLdN39uWD009b50"
+  ],
+  "payload_sha256": "a4677dfabcd78fe2b01ff55937924f853949bda76af3f48e9f40a7a2e81ed092",
+  "hash_rule": "SHA-256 over exact UTF-8 bytes of threads-week-2026-10-12.md stored in Drive; consumer downloads and recomputes before loading. Also verify exact CSV byte hash and individual body/reply hashes.",
+  "claim_owner": "ChatGPT",
+  "claim_generation": 1,
+  "claim_expiry": null,
+  "release_date": null,
+  "destination_ids": [],
+  "errors": [],
+  "queue_state": "READY",
+  "timezone": "America/New_York",
+  "packet_folder_id": "1rdD7jTzFDXMHdLB6CyiElnwJIPV4siQ8",
+  "status_folder_id": "1_5FreWDxb-n32STmclKDLOEB54pm_9Il",
+  "main_content_drive_id": "1mjow28c-oYSTA7Ui8LCNaQUStNPkw-1X",
+  "parent_csv_drive_id": "1RJTjMIZkvHg3n6AVO-luMXUU39Mycf8n",
+  "parent_csv_sha256": "daac291b66c69f85ab3ce685f2e449144cb6a20cc9ea27573e669642528f7063",
+  "reply_csv_drive_id": "1zjsckourllWqPGOxPKytAgsPZZ9fPibW",
+  "reply_csv_sha256": "4fb63cbfa2b93127372a883b56ac277632d8425be83ca8e639242bdcaf4b09e3",
+  "file_receipts": [
+    {
+      "file": "threads-week-2026-10-12.md",
+      "drive_id": "1mjow28c-oYSTA7Ui8LCNaQUStNPkw-1X",
+      "sha256": "a4677dfabcd78fe2b01ff55937924f853949bda76af3f48e9f40a7a2e81ed092",
+      "match": true
+    },
+    {
+      "file": "threads-manifest.csv",
+      "drive_id": "1RJTjMIZkvHg3n6AVO-luMXUU39Mycf8n",
+      "sha256": "daac291b66c69f85ab3ce685f2e449144cb6a20cc9ea27573e669642528f7063",
+      "match": true
+    },
+    {
+      "file": "replies-manifest.csv",
+      "drive_id": "1zjsckourllWqPGOxPKytAgsPZZ9fPibW",
+      "sha256": "4fb63cbfa2b93127372a883b56ac277632d8425be83ca8e639242bdcaf4b09e3",
+      "match": true
+    },
+    {
+      "file": "qa.md",
+      "drive_id": "13pGLT7C36eCt1XB4JKOteLuP_Ei5mskO",
+      "sha256": "bed9437960ab02a0db78387bc03972d9b8df30db58fd259ef9906197036c3c99",
+      "match": true
+    },
+    {
+      "file": "PROPOSED_THREADS_RULE_CHANGES.md",
+      "drive_id": "1dfTZ-5xdR2ZlXafaVD3B2GeWMqZVle9j",
+      "sha256": "1ee48ea0ae3f8b2dacd255fe91d2c9eb79bfc118f0f627043a15a0161ba11ff1",
+      "match": true
+    },
+    {
+      "file": "sources/ACCOUNTS.csv",
+      "drive_id": "1fbtJzI9U2jj3odc9HqtPAam1fTiofBY8",
+      "sha256": "6d6e27bc000e60d4aa0a1f66aa829af5eb9c962f69ec34f6d50c906b58fd93a8",
+      "match": true
+    },
+    {
+      "file": "sources/EVIDENCE.md",
+      "drive_id": "1jXOZWlA9Gx0iy4DCwen2_VtSq_KGFEkt",
+      "sha256": "99f7c8e617d7dc62e09eae552704300d49d81959efce20f88642cf1b7e2ca025",
+      "match": true
+    },
+    {
+      "file": "sources/REPORT.md",
+      "drive_id": "1LAeplwKMUAugB_d-a8FY7i2i0hg2LNNK",
+      "sha256": "071b435f86d02be09947569999628961a7e02e51c27d2652bed013c1dfa7fe26",
+      "match": true
+    },
+    {
+      "file": "sources/live-checks.json",
+      "drive_id": "13IKJytQqUybvrEW2sqUmlq_mqaWW-PvJ",
+      "sha256": "7094b6abd805897be31539387411a0a80ed1094eaff05a5f459b0f7eb7e4e11c",
+      "match": true
+    },
+    {
+      "file": "sources/governing-sources.json",
+      "drive_id": "1iS6i4ZuAwlf95oJwNNEVaMTZKsbtz6eA",
+      "sha256": "5d5b6fc89487e53ab8b2af7da1b46a8383540b339f1b05af2a4ff7efcbe7047f",
+      "match": true
+    }
+  ],
+  "parent_count": 42,
+  "reply_count": 35,
+  "parent_records": [
+    {
+      "post_id": "2026-10-12_0700",
+      "date": "2026-10-12",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "82fa86337fef51a0d4bc3d71b3b1cf7cc2a3c56390d828baf24ea7416c237155"
+    },
+    {
+      "post_id": "2026-10-12_0900",
+      "date": "2026-10-12",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "ac3ec8a26466bf793fc8a3244b62e799eb3496a314b75dfa8fb54614d664c3ec"
+    },
+    {
+      "post_id": "2026-10-12_1100",
+      "date": "2026-10-12",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "85c7f1aff16a1c322f7bc3dee1119472040a8ea8a9dca3a3294af33568c271e8"
+    },
+    {
+      "post_id": "2026-10-12_1300",
+      "date": "2026-10-12",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "b8212eeb408f94bd51d11973c3bbaf911aab887b30b80f638302097e08b304aa"
+    },
+    {
+      "post_id": "2026-10-12_1500",
+      "date": "2026-10-12",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "9bafbd1cf3423d4af967117c61da4c11b4d608ccb52169bcd97faf39d5724105"
+    },
+    {
+      "post_id": "2026-10-12_1700",
+      "date": "2026-10-12",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "8cb21a1a5fc568c8f77ca9435f775bdfaf12d8ed754bc638f0b38bb3ac343f64"
+    },
+    {
+      "post_id": "2026-10-13_0700",
+      "date": "2026-10-13",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "8bba984937e0ff81dd8962eeb2a217aea0e6cf5e0959bf3a02bc0b3a5ead5e45"
+    },
+    {
+      "post_id": "2026-10-13_0900",
+      "date": "2026-10-13",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "15cc83d8944a4e25f37d0a93584423742d24da9d00f9e03f7178d6437a402b5b"
+    },
+    {
+      "post_id": "2026-10-13_1100",
+      "date": "2026-10-13",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "98704ef57b63e22b7b7c0db7caa5fb912bd367a8b97141092b507896c675cfb4"
+    },
+    {
+      "post_id": "2026-10-13_1300",
+      "date": "2026-10-13",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "6105894a2153898ed9271a7bc97ed7c32db0629902fb6ceaa2873583789493a4"
+    },
+    {
+      "post_id": "2026-10-13_1500",
+      "date": "2026-10-13",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "2541e4d8f39d41abd765f1b6cf980114857466638de952b6f5d742f3259b3e58"
+    },
+    {
+      "post_id": "2026-10-13_1700",
+      "date": "2026-10-13",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "2c6485675fc708aff58eb10fd18d147a44616237234619df7081a1e8daba995e"
+    },
+    {
+      "post_id": "2026-10-14_0700",
+      "date": "2026-10-14",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "eaf6c86a82ccec1ba6531c0baf8bcb27c98704dde3da9a0d579a0d6815289c32"
+    },
+    {
+      "post_id": "2026-10-14_0900",
+      "date": "2026-10-14",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "7482abe598795aa34a48d1e85fb94959f4d14abad0d2bb4ef58e85b974fd9f91"
+    },
+    {
+      "post_id": "2026-10-14_1100",
+      "date": "2026-10-14",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "d138da1afc6532c1052c60bb6bfff52d1f25653737007a4d131113cb4aa64c9f"
+    },
+    {
+      "post_id": "2026-10-14_1300",
+      "date": "2026-10-14",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "d4f02776be0b5463afa0d759a748d664588db9ad72c2ce8ab660179503152c81"
+    },
+    {
+      "post_id": "2026-10-14_1500",
+      "date": "2026-10-14",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "02ab9ded62ccd0af5644e0a16d5a01580a849a3e9810c1877ca10c039af02db0"
+    },
+    {
+      "post_id": "2026-10-14_1700",
+      "date": "2026-10-14",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "588f9380f9caa020ea5e288925193985f21d36c3ce1b581f6bf6b9383ae1af99"
+    },
+    {
+      "post_id": "2026-10-15_0700",
+      "date": "2026-10-15",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "3202a3ff40141a4a705705ab94cbd83c9505eddea936b6ead9932a9f4b51a871"
+    },
+    {
+      "post_id": "2026-10-15_0900",
+      "date": "2026-10-15",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "781fd71bb79d89381d2b3b28250ddc9174e5461ede917c6eb86fb2fb4def3a96"
+    },
+    {
+      "post_id": "2026-10-15_1100",
+      "date": "2026-10-15",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "86f1b3d6831b5ffa7c6f322d56d5b600e1f5c91b4e2ad20743c7d33168121786"
+    },
+    {
+      "post_id": "2026-10-15_1300",
+      "date": "2026-10-15",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "96cb231e2d95dd6fd9561290ae71684230a25c6d213f6b175079d808b103869b"
+    },
+    {
+      "post_id": "2026-10-15_1500",
+      "date": "2026-10-15",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "5876dafde3b7088bfecba1225356d846ef13d4ceaeea693d95670f6f082df6cc"
+    },
+    {
+      "post_id": "2026-10-15_1700",
+      "date": "2026-10-15",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "77d50160ed5312ceb260e8ad22e40e2e56035663b11f58a33bbc5169d12bd123"
+    },
+    {
+      "post_id": "2026-10-16_0700",
+      "date": "2026-10-16",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "1c79a60a9a620b146a8ccf9aeef14c2599df600d628d31b2c4d200ecb60401fe"
+    },
+    {
+      "post_id": "2026-10-16_0900",
+      "date": "2026-10-16",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "04d551a9f30f6eef58e75e2e2cdafc01afdacc0927dcd68801aa8093253ed798"
+    },
+    {
+      "post_id": "2026-10-16_1100",
+      "date": "2026-10-16",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "9367cafc8fa441202051689985ad1f511b1baef67819ab73662e89db78ca393d"
+    },
+    {
+      "post_id": "2026-10-16_1300",
+      "date": "2026-10-16",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "6b3e0e30778990abbc2aa0f0a73850d471b6aeed68d6cc4744a2cf8d09f5bdb9"
+    },
+    {
+      "post_id": "2026-10-16_1500",
+      "date": "2026-10-16",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "fd3347710c136672b7d3839568b24bce385f4c2238a81a9de5d8a18d19cf97b7"
+    },
+    {
+      "post_id": "2026-10-16_1700",
+      "date": "2026-10-16",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "5d5d4769805633aa0893ec07ecd36ae4959af5832654280c45aeabd8dedd044e"
+    },
+    {
+      "post_id": "2026-10-17_0700",
+      "date": "2026-10-17",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "50a074776dc8e4c0e1a63a569ea9f3f0ddad66b4850844098b4fec09d1656855"
+    },
+    {
+      "post_id": "2026-10-17_0900",
+      "date": "2026-10-17",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "cd1b1d09794a213452747baa625daed15ee0316aa82d51c456869eacee2110d5"
+    },
+    {
+      "post_id": "2026-10-17_1100",
+      "date": "2026-10-17",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "6aa502f6d7899000fbf7f93b466a82525284fdde7757d3c0b4c0167a63962cb0"
+    },
+    {
+      "post_id": "2026-10-17_1300",
+      "date": "2026-10-17",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "15201799f9f0654789469be94e43efab225f477851165d0c7d2e1f7ba4b7dfbd"
+    },
+    {
+      "post_id": "2026-10-17_1500",
+      "date": "2026-10-17",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "72bf80c0d183478a6ac0bd512cbfef73b2fd908199aad2c88640dfa0afe99600"
+    },
+    {
+      "post_id": "2026-10-17_1700",
+      "date": "2026-10-17",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "8a6045f66ae7aff9481297639b673f0493390f4f637f89ae22c8ed4cb9a4c147"
+    },
+    {
+      "post_id": "2026-10-18_0700",
+      "date": "2026-10-18",
+      "time": "07:00",
+      "slot_type": "OPEN",
+      "state": "READY",
+      "content_hash": "9a83b748e4be581696dd0297c1cfbbfe93b3ae51856bffcc8c6129e2d709a27e"
+    },
+    {
+      "post_id": "2026-10-18_0900",
+      "date": "2026-10-18",
+      "time": "09:00",
+      "slot_type": "ASK",
+      "state": "READY",
+      "content_hash": "d7100c4fff60049302d02098882170ebf341c7398a8e21a3faaa441fb33990a3"
+    },
+    {
+      "post_id": "2026-10-18_1100",
+      "date": "2026-10-18",
+      "time": "11:00",
+      "slot_type": "TEACH",
+      "state": "READY",
+      "content_hash": "5191cbfd62e9c83648a049d71b5a4e21e7c6834c2562e507b2825d70f23bf5b4"
+    },
+    {
+      "post_id": "2026-10-18_1300",
+      "date": "2026-10-18",
+      "time": "13:00",
+      "slot_type": "OFFER",
+      "state": "READY",
+      "content_hash": "a342004e9ee116bc04005292f86339fa0fa0ae121ba7200e55bb64c341765363"
+    },
+    {
+      "post_id": "2026-10-18_1500",
+      "date": "2026-10-18",
+      "time": "15:00",
+      "slot_type": "TAKE",
+      "state": "READY",
+      "content_hash": "fe1219244c0c246642b2262e639e4fbbbe8e3adf79734274966be5887e44947b"
+    },
+    {
+      "post_id": "2026-10-18_1700",
+      "date": "2026-10-18",
+      "time": "17:00",
+      "slot_type": "UPDATE",
+      "state": "READY",
+      "content_hash": "28b80163268d0f6263f634fd8e2ae4adadc82b493e39120a2a314e2b85123c06"
+    }
+  ],
+  "reply_records": [
+    {
+      "record_id": "2026-10-12_1100_TEACH_1",
+      "parent_post_id": "2026-10-12_1100",
+      "kind": "TEACH",
+      "date": "2026-10-12",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "4a9bb7e78d7182722812290960d074a716d7a6b4755958e5d62559af35935207"
+    },
+    {
+      "record_id": "2026-10-12_1100_TEACH_2",
+      "parent_post_id": "2026-10-12_1100",
+      "kind": "TEACH",
+      "date": "2026-10-12",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "195feecf1bd65eceb1df5989649a73b0267799e297a9120a0aeb5b792abd67f1"
+    },
+    {
+      "record_id": "2026-10-12_1100_TEACH_3",
+      "parent_post_id": "2026-10-12_1100",
+      "kind": "TEACH",
+      "date": "2026-10-12",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "ff817812e84e66bd48d9de6cf532c5f19ff2c59837663a1f5353d10d583986fd"
+    },
+    {
+      "record_id": "2026-10-12_1100_ARTICLE",
+      "parent_post_id": "2026-10-12_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-12",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "cd0bf42a52b02864777987a13d674017f17035a9ca47dfc7b1768be2cc3884ff"
+    },
+    {
+      "record_id": "2026-10-12_1300_LINK",
+      "parent_post_id": "2026-10-12_1300",
+      "kind": "LINK",
+      "date": "2026-10-12",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "cee3cea178cbd0666ba415ad752a9f1faab9ba4958df7356e93faada4a8a3f40"
+    },
+    {
+      "record_id": "2026-10-13_1100_TEACH_1",
+      "parent_post_id": "2026-10-13_1100",
+      "kind": "TEACH",
+      "date": "2026-10-13",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "160201f9bdd6a7b7038a0f272a002f81c92b372cf2febf88aef9a058cad2f9e8"
+    },
+    {
+      "record_id": "2026-10-13_1100_TEACH_2",
+      "parent_post_id": "2026-10-13_1100",
+      "kind": "TEACH",
+      "date": "2026-10-13",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "cc8f936147a8e3754a23406adbe5c6089aa3973d68b084decabcdb286afd74ee"
+    },
+    {
+      "record_id": "2026-10-13_1100_TEACH_3",
+      "parent_post_id": "2026-10-13_1100",
+      "kind": "TEACH",
+      "date": "2026-10-13",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "557daaf693816315bb9fc3fc0afae50f7c433753964212df09f22638588b2bd6"
+    },
+    {
+      "record_id": "2026-10-13_1100_ARTICLE",
+      "parent_post_id": "2026-10-13_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-13",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "8206afee0728840e904d64a4ffbd656fa18bc3660039183f8ae2f0ca6fe6530c"
+    },
+    {
+      "record_id": "2026-10-13_1300_LINK",
+      "parent_post_id": "2026-10-13_1300",
+      "kind": "LINK",
+      "date": "2026-10-13",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "070dbf211763fe2bf387f424a8213d6942d101200a848fb2c7f4fd0eaf329ee9"
+    },
+    {
+      "record_id": "2026-10-14_1100_TEACH_1",
+      "parent_post_id": "2026-10-14_1100",
+      "kind": "TEACH",
+      "date": "2026-10-14",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "a3178a404ebb18db988951564ba849fbdad898873c997cb940e52d9808d57f89"
+    },
+    {
+      "record_id": "2026-10-14_1100_TEACH_2",
+      "parent_post_id": "2026-10-14_1100",
+      "kind": "TEACH",
+      "date": "2026-10-14",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "08e50aace8bd0bc4a7c8f414d31bb6a5224a9a64c52ad8d877aedfc879ac0211"
+    },
+    {
+      "record_id": "2026-10-14_1100_TEACH_3",
+      "parent_post_id": "2026-10-14_1100",
+      "kind": "TEACH",
+      "date": "2026-10-14",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "8a3ee3ab6ad2e31a036a8c6e43707b0bb921cd118b015be9e2a43d8684e9d9bc"
+    },
+    {
+      "record_id": "2026-10-14_1100_ARTICLE",
+      "parent_post_id": "2026-10-14_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-14",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "a3ae3c40a6c155433625b035494968ec85da4f6bb89cdbe9d5403619a61ffe0b"
+    },
+    {
+      "record_id": "2026-10-14_1300_LINK",
+      "parent_post_id": "2026-10-14_1300",
+      "kind": "LINK",
+      "date": "2026-10-14",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "850243db504d2c024ba592604060fb00097cc827bed156bd63604de6b935afa9"
+    },
+    {
+      "record_id": "2026-10-15_1100_TEACH_1",
+      "parent_post_id": "2026-10-15_1100",
+      "kind": "TEACH",
+      "date": "2026-10-15",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "a2b386cee15c90bacf0007961b90fb0ed9f290c98f9fb6d4fa67f67fdc3cf0ef"
+    },
+    {
+      "record_id": "2026-10-15_1100_TEACH_2",
+      "parent_post_id": "2026-10-15_1100",
+      "kind": "TEACH",
+      "date": "2026-10-15",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "3f81d34fb972cbfeae390a7a898c58fd979844785d8da0ea6c8d24c0b9640434"
+    },
+    {
+      "record_id": "2026-10-15_1100_TEACH_3",
+      "parent_post_id": "2026-10-15_1100",
+      "kind": "TEACH",
+      "date": "2026-10-15",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "1acac2afbb4935d4113fbe069f289aa78631c69fd1089ba90af9b55efc8467f4"
+    },
+    {
+      "record_id": "2026-10-15_1100_ARTICLE",
+      "parent_post_id": "2026-10-15_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-15",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "902fb3827ab1477f6ddf8a8a23c4ddc6c1d307ecc3b24a5ade299761c4cb5814"
+    },
+    {
+      "record_id": "2026-10-15_1300_LINK",
+      "parent_post_id": "2026-10-15_1300",
+      "kind": "LINK",
+      "date": "2026-10-15",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "6a22b4ffa25e277eef601b8b92804f27ca7f3cb787ce717e142c18ca85ef17c8"
+    },
+    {
+      "record_id": "2026-10-16_1100_TEACH_1",
+      "parent_post_id": "2026-10-16_1100",
+      "kind": "TEACH",
+      "date": "2026-10-16",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "58465fc46f2e7d09fbe422a37f274b5af3f28a9fafb85e3d9ef19e5f7abd4d98"
+    },
+    {
+      "record_id": "2026-10-16_1100_TEACH_2",
+      "parent_post_id": "2026-10-16_1100",
+      "kind": "TEACH",
+      "date": "2026-10-16",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "d16b96fef269cb2a4e8bb66d1e1b438642712764da279ce970510a4e0d736b8a"
+    },
+    {
+      "record_id": "2026-10-16_1100_TEACH_3",
+      "parent_post_id": "2026-10-16_1100",
+      "kind": "TEACH",
+      "date": "2026-10-16",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "de97ab041efb852ca24845a8a9738759a64eb9aef86abfdf4aabad8da1ba8369"
+    },
+    {
+      "record_id": "2026-10-16_1100_ARTICLE",
+      "parent_post_id": "2026-10-16_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-16",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "ccf2e663ab1a82b86ec07bc8c23d0229717544efc131beafe6f247c7f2579e84"
+    },
+    {
+      "record_id": "2026-10-16_1300_LINK",
+      "parent_post_id": "2026-10-16_1300",
+      "kind": "LINK",
+      "date": "2026-10-16",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "07c5e0fcc9d8a4f72590b8620109186363cc06a38a348ecc1e9ee82b31c2134f"
+    },
+    {
+      "record_id": "2026-10-17_1100_TEACH_1",
+      "parent_post_id": "2026-10-17_1100",
+      "kind": "TEACH",
+      "date": "2026-10-17",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "d4c76420b513e1184e59d355e8285be64440f7d73202ccb6f3ab003f71117aad"
+    },
+    {
+      "record_id": "2026-10-17_1100_TEACH_2",
+      "parent_post_id": "2026-10-17_1100",
+      "kind": "TEACH",
+      "date": "2026-10-17",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "7e1bbc274a0965276aa59789eadceefca4a7ec690a16c1a5aa26438fe4b89998"
+    },
+    {
+      "record_id": "2026-10-17_1100_TEACH_3",
+      "parent_post_id": "2026-10-17_1100",
+      "kind": "TEACH",
+      "date": "2026-10-17",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "63ed27e6b347375803a4b165eae00989ce7d90113349cb3c304b684be6cd5dd9"
+    },
+    {
+      "record_id": "2026-10-17_1100_ARTICLE",
+      "parent_post_id": "2026-10-17_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-17",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "626d325cf26c6760316f45c0ac926fb208ad2d97e5b4ceb4da3f04c913c774ed"
+    },
+    {
+      "record_id": "2026-10-17_1300_LINK",
+      "parent_post_id": "2026-10-17_1300",
+      "kind": "LINK",
+      "date": "2026-10-17",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "01fe26b372b6e2ac24a28fec1efd71bdc7b745af373cbd05503e6e0756546f89"
+    },
+    {
+      "record_id": "2026-10-18_1100_TEACH_1",
+      "parent_post_id": "2026-10-18_1100",
+      "kind": "TEACH",
+      "date": "2026-10-18",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "ee19d14153881d36149a5332ad44ad0dd71a19e3d748d783e05ace25c75f983b"
+    },
+    {
+      "record_id": "2026-10-18_1100_TEACH_2",
+      "parent_post_id": "2026-10-18_1100",
+      "kind": "TEACH",
+      "date": "2026-10-18",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "d19d0d55f8476b2c2fb0f5c987ab0866d957b49d388506b3bbb1237a27f9e788"
+    },
+    {
+      "record_id": "2026-10-18_1100_TEACH_3",
+      "parent_post_id": "2026-10-18_1100",
+      "kind": "TEACH",
+      "date": "2026-10-18",
+      "due_time": "11:00",
+      "due_rule": "After verified parent; in numbered sequence",
+      "status": "READY",
+      "content_hash": "391fa4262ff8a5eddee0415b54824893b2722c67ea75b9ac4d3a60f8eb081256"
+    },
+    {
+      "record_id": "2026-10-18_1100_ARTICLE",
+      "parent_post_id": "2026-10-18_1100",
+      "kind": "ARTICLE",
+      "date": "2026-10-18",
+      "due_time": "12:00",
+      "due_rule": "60 minutes after actual TEACH parent publication",
+      "status": "READY",
+      "content_hash": "3888b57bff03847ec15363d84dd0f03c97809df00280bbbd1e560b204db25eab"
+    },
+    {
+      "record_id": "2026-10-18_1300_LINK",
+      "parent_post_id": "2026-10-18_1300",
+      "kind": "LINK",
+      "date": "2026-10-18",
+      "due_time": "13:00",
+      "due_rule": "Immediately after verified parent is live",
+      "status": "READY",
+      "content_hash": "ed05a9c29a6e8eee2dcd0b0403fabeb0df8e2fc3366c20cba5263776be9f862e"
+    }
+  ],
+  "research_state": "PARTIAL_DATED_REUSE",
+  "research_limits": "30 historical small-start attempts reused as authorized; reported growth is not independently verified; six relevant refresh attempts unavailable. No account metrics, optimal timing, causality or publication inferred.",
+  "account_state": "CLAUDE_PREFLIGHT_REQUIRED",
+  "mutation_count": 0,
+  "consumer_due_at": "2026-10-11T06:00:00-04:00",
+  "consumer_instructions": "Use immutable exact Drive versions. Download and hash main content plus both CSVs. Read current account/lock and queued objects; deduplicate by account, local date, local time and body hash. Never duplicate an unknown write. Verify parent is live before replies; link immediately, ARTICLE actual TEACH+60 minutes, TEACH replies in sequence. Keep parent/reply provider IDs and observed URLs separately. No strategy change authorized.",
+  "source_repository_commit": "a51c2ef1d764b0bac0d0acc332ea82c06162f921"
+}
