@@ -56,3 +56,6 @@ The public www.thedigitalincomeedit.com site is hosted on Cloudflare (worker `td
 
 ## Founder decoration preference (8 October 2026)
 No bows on any design, page, graphic or other work for Jodie unless she explicitly requests a bow. Do not infer bow permission from reference images. Remove existing decorative bows when editing the affected work.
+
+## WYS website corrections (8 October 2026)
+Typography corrections mean restyling the visible words, not deleting the heading, description, example names or photo captions. Public Instagram examples are mockups with captions and blog destinations, not a slide-download giveaway. Preserve named Pretty Wicked and Ghoul Fuel examples with three equal-sized photographs apiece and broad colored mats without nested outlines.

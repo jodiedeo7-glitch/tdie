@@ -3,7 +3,7 @@
 // The mobile menu is a native popover: no script, keyboard and Escape work.
 const {boutique=false}=Astro.props;
 import {getImage} from "astro:assets";
-import icingSource from "../assets/wys/pink-icing-border.png";
+import icingSource from "../assets/wys/pink-icing-continuous.png";
 const icing=boutique ? await getImage({src:icingSource,format:"webp",quality:90}) : null;
 import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
@@ -94,4 +94,22 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   @media(max-width:1020px){.sn-boutique .sn-in{grid-template-columns:minmax(0,1fr) 64px;gap:16px}.sn-boutique .sn-logo{font-size:27px;white-space:nowrap;margin:10px 0 16px;padding:15px 12px}.sn-boutique .sn-logo .sn-brand-sparkle{margin:0 4px}.sn-boutique .sn-menu{background:#ead8f8;box-shadow:0 3px 0 #d998bc}}
   @media(max-width:700px){.sn.sn-boutique{padding-top:95px}.sn-header-icing{height:95px;background-size:285px 95px}.sn-boutique .sn-logo{font-size:23px;gap:4px}.sn-boutique .sn-logo .sn-brand-sparkle{display:none}}
   @media(max-width:480px){.sn-boutique .sn-in{padding:5px 10px;gap:8px;grid-template-columns:minmax(0,1fr) 52px}.sn-boutique .sn-logo{font-size:clamp(16px,4.7vw,20px);padding:12px 6px}.sn-boutique .sn-menu{font-size:9px;min-height:48px}}
+</style>
+
+<style>
+ /* The reference storefronts use a compact masthead, not a large logo plaque. */
+ .sn.sn-boutique{padding-top:0;background:#fff8fd;border-bottom:0;overflow:visible}
+ .sn-header-icing{top:100%;height:95px;background-size:285px 95px;z-index:3;opacity:1}
+ .sn-boutique .sn-in{max-width:1240px}
+ .sn-boutique .sn-logo{background:none;border:0;border-radius:0;box-shadow:none;margin:0;padding:15px 0;font-size:27px}
+ .sn-boutique .sn-links{min-height:48px;padding-block:0}
+ .sn.sn-boutique:after{height:48px;background:#ffc6df;border-top:0}
+ .sn-boutique .sn-logo .sn-brand-sparkle{font-size:17px}
+ @media(max-width:1020px){.sn-boutique .sn-logo{font-size:25px}.sn-boutique .sn-menu{box-shadow:none}}
+ @media(max-width:700px){.sn-boutique .sn-logo{font-size:20px;padding:12px 0}.sn-header-icing{height:78px;background-size:234px 78px}}
+</style>
+
+<style>
+ .sn-header-icing{background-repeat:no-repeat;background-size:100% auto;background-position:center top;height:clamp(120px,12vw,240px)}
+ @media(max-width:700px){.sn-header-icing{background-size:900px auto;height:110px;background-position:center top}}
 </style>

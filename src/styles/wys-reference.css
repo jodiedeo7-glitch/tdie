@@ -123,17 +123,37 @@
 .wz-hero-band{padding-top:48px}
 @media(max-width:700px){.wz-hero-band{padding-top:32px}}
 
-/* Remove the rejected hero copy and captions; the photographs lead. */
-.wz-accessible-heading{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
-.wz-hero-two-looks{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:100px;max-width:1040px;padding-block:0 32px}
-.wz-polaroid-stack{align-self:start;height:650px}.wz-polaroid{padding-bottom:24px}.wz-hero-copy{grid-column:1/-1;grid-row:2;order:3;text-align:center;margin-top:0}.wz-hero-copy .wys-actions{flex-direction:row;align-items:center;justify-content:center;gap:24px}.wz-hero-copy .wys-text-link{font-size:14px}.wz-stack-flower{top:90px}
-@media(min-width:701px){.wz-stack-pink .wz-polaroid-0{top:80px}.wz-stack-pink .wz-polaroid-1{top:0}.wz-stack-pink .wz-polaroid-2{top:340px}.wz-stack-lavender .wz-polaroid-0{top:12px}.wz-stack-lavender .wz-polaroid-1{top:180px}.wz-stack-lavender .wz-polaroid-2{top:330px}}
-@media(max-width:700px){.wz-hero-two-looks{column-gap:18px;padding-block:0 30px}.wz-polaroid-stack{height:720px}.wz-hero-copy{display:block;margin:0}.wz-hero-copy .wys-actions{flex-direction:column;gap:10px}.wz-polaroid{padding-bottom:18px}}
-@media(max-width:360px){.wz-polaroid-stack{height:610px}}
-/* A single photographic mat, without nested outlines or colored inner frames. */
-.wz-polaroid,.wz-stack-lavender .wz-polaroid{padding:10px 10px 28px;border:0;background:#fff;box-shadow:0 8px 18px #92245724}
-.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:0;border:0;background:transparent}
-.wz-polaroid img{border:0;display:block}
-@media(max-width:700px){.wz-polaroid,.wz-stack-lavender .wz-polaroid{padding:7px 7px 22px}}
 
-@media(min-width:701px){.wz-polaroid-stack{height:740px}}
+/* Reference-led hero typography, three photos per named example, and broad colored photo mats. */
+.wz-hero-two-looks{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr);gap:40px;max-width:1240px;padding-block:15px 30px}
+.wz-hero-copy{grid-column:2;grid-row:1;order:0;align-self:center;text-align:center;min-width:0}
+.wys-world .wz-hero h1{font-family:Inter,sans-serif!important;font-weight:850!important;font-size:42px!important;line-height:1.1!important;letter-spacing:-.045em!important;text-transform:uppercase;color:#c21f68;text-shadow:0 2px 0 #fff4fb;margin-block:22px}
+.wys-world .wz-hero h1 em{display:block;font-style:normal;font-weight:850;color:#9a59bb;text-shadow:0 2px 0 #fff4fb}
+.wz-hero-copy .wys-ribbon{font-size:10px;letter-spacing:.045em;padding:10px 12px;background:#fff8fd;border:0;border-radius:0;box-shadow:0 3px 0 #e6add0}
+.wz-hero-copy .wys-lede{font-size:17px!important;line-height:1.6!important;color:#692744!important;font-weight:600!important}
+.wz-hero-copy>p:not(.wys-ribbon):not(.wys-lede){font-size:15px!important;line-height:1.65!important;color:#692744!important}
+.wz-hero-copy .wys-actions{align-items:center;justify-content:center;gap:12px;flex-direction:column}
+.wz-polaroid-stack{height:655px;align-self:start;padding-top:45px}
+.wys-world .wz-stack-label{position:absolute;top:0;left:0;right:0;margin:0;font:600 23px/1.2 Newsreader,serif!important;letter-spacing:0;text-transform:none;text-align:center;color:#b8245f}
+.wz-polaroid,.wz-stack-lavender .wz-polaroid{width:47%;padding:9px 9px 0;border:0;background:#fff;box-shadow:0 9px 18px #92245724}
+.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:12px;border:0;background:#f7b9d5;box-shadow:inset 2px 2px 5px #fff5fa80,inset -2px -2px 5px #cd87ac40}
+.wz-stack-lavender .wz-polaroid-mat{background:#ddc8f2;box-shadow:inset 2px 2px 5px #fffaff90,inset -2px -2px 5px #ae8cc640}
+.wz-polaroid img{border:0;display:block;width:100%;height:auto}
+.wz-polaroid figcaption{height:39px;min-height:39px;padding:5px 0;font:600 11px/1.25 Inter,sans-serif;color:#a52258}
+@media(min-width:701px){.wz-stack-pink .wz-polaroid-0{top:150px;left:0;transform:rotate(-7deg)}.wz-stack-pink .wz-polaroid-1{top:55px;right:0;transform:rotate(5deg)}.wz-stack-pink .wz-polaroid-2{top:385px;left:27%;transform:rotate(-3deg)}.wz-stack-lavender .wz-polaroid-0{top:65px;left:0;transform:rotate(4deg)}.wz-stack-lavender .wz-polaroid-1{top:230px;right:0;transform:rotate(-5deg)}.wz-stack-lavender .wz-polaroid-2{top:395px;left:0;transform:rotate(3deg)}.wz-stack-flower{top:140px;left:-10px;width:54px}}
+@media(max-width:1000px) and (min-width:701px){.wz-hero-two-looks{gap:22px}.wys-world .wz-hero h1{font-size:34px!important}.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:8px}.wz-polaroid figcaption{font-size:9px}}
+@media(max-width:700px){.wz-hero-two-looks{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px;padding-block:0 25px}.wz-hero-copy{display:block;grid-column:1/-1;grid-row:1;order:0;margin:0}.wys-world .wz-hero h1{font-size:34px!important;line-height:1.12!important;margin-block:20px}.wz-polaroid-stack{order:2;height:740px;grid-row:2}.wz-polaroid,.wz-stack-lavender .wz-polaroid{width:76%;padding:7px 7px 0}.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:10px}.wz-polaroid figcaption{font-size:10px;height:36px;min-height:36px}.wys-world .wz-stack-label{font-size:20px!important}.wz-stack-pink .wz-polaroid-0{top:60px;left:16%}.wz-stack-pink .wz-polaroid-1{top:280px;left:3%}.wz-stack-pink .wz-polaroid-2{top:500px;left:17%}.wz-stack-lavender .wz-polaroid-0{top:80px;left:3%}.wz-stack-lavender .wz-polaroid-1{top:300px;left:18%}.wz-stack-lavender .wz-polaroid-2{top:520px;left:2%}.wz-stack-flower{top:55px;left:10px;width:38px}}
+@media(max-width:360px){.wz-polaroid-stack{height:680px}.wz-polaroid figcaption{font-size:9px}.wz-stack-pink .wz-polaroid-1{top:260px}.wz-stack-pink .wz-polaroid-2{top:450px}.wz-stack-lavender .wz-polaroid-1{top:270px}.wz-stack-lavender .wz-polaroid-2{top:470px}}
+
+.wys-world .wz-hero h1{font-size:34px!important;text-shadow:0 3px 0 #f6c0dc;letter-spacing:-.04em!important}.wys-world .wz-hero h1 em{text-shadow:0 3px 0 #e8d5f5}
+.wx-instagram .wx-caption{background:#fff8fd;border:0;border-left:6px solid #d9bce9;padding:28px;box-shadow:0 8px 18px #92245712}.wx-instagram .wx-caption h4{font:750 25px/1.2 Inter,sans-serif;color:#b8245f;letter-spacing:-.025em}.wx-instagram .wx-caption>p{font:400 16px/1.75 Inter,sans-serif;color:#542139}
+@media(max-width:700px){.wys-world .wz-hero h1{font-size:32px!important}.wx-instagram .wx-caption{padding:22px}}
+
+/* The icing flows from the masthead into the photographed banner. */
+.wb-shopbar{position:relative;z-index:4;margin-top:100px;background:#fff6fb;border-bottom:0}
+.wz-hero-band{padding-top:24px;background:linear-gradient(115deg,#ffd0e4 0%,#ffe5f1 48%,#e5cef6 100%)}
+.wz-hero-band:before{border:0}
+@media(max-width:700px){.wb-shopbar{margin-top:82px}.wz-hero-band{padding-top:20px}}
+
+.wb-shopbar{margin-top:0;padding-top:clamp(120px,12vw,240px);background:linear-gradient(115deg,#ffd0e4 0%,#ffe5f1 48%,#e5cef6 100%)}
+@media(max-width:700px){.wb-shopbar{margin-top:0;padding-top:110px}}

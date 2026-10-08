@@ -13,7 +13,7 @@ import {packages} from '../../../data/wys-packages.js';
 import {WYS_ROOT} from '../../../data/wys.js';
 ---
 <WysFrame current="inside" title="Look Inside WYS | Two Complete Content Examples" description="Explore two complete WYS content examples: three photographs, three Pins, three Instagram slides, a full article, product records and copy for each look." ogImage={packages[0].photos[1].src.src}>
- <WysHero><h1 class="wz-accessible-heading">Look Inside the While-You-Sleep Storefront</h1><a class="wys-button" href="#choose-package">View both looks ↓</a></WysHero>
+ <WysHero><p class="wys-ribbon">Inside the While-You-Sleep Storefront™</p><h1>Five finds.<br/><em>Meet the whole edit.</em></h1><p class="wys-lede">Pretty Wicked is the pink Halloween entryway. Ghoul Fuel is the pink Halloween coffee bar. See the photos, Pins, Instagram carousel and full blog story for each.</p><p>The captions, Pin copy and product notes are here too.</p><a class="wys-button" href="#choose-package">Explore Pretty Wicked &amp; Ghoul Fuel ↓</a></WysHero>
  <WysShelf inside/><div class="wx-ticker"><span>SELECT THE PIECES</span><span>STYLE THE LOOK</span><span>MAKE THE CONTENT</span><span>CHECK THE DESTINATIONS</span></div>
  <WysStories inside/>
  <div class="wys-wrap wx-packages">{packages.map((e,i)=><WysPackage example={e} number={i+1}/>)}</div>
