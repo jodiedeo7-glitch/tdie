@@ -131,8 +131,6 @@ const stats = [
       <span class="fd-r-l">Your first three moves</span>
       <ol class="fd-r-list" id="fd-r-list"></ol>
       <p class="fd-r-time" id="fd-r-time"></p>
-
-      <p class="fd-r-disc" id="fd-r-disc" hidden>Affiliate link — this one isn't mine. I earn a commission if you buy through it, at no cost to you. The owner sets the price and can change it without notice.</p>
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
       <p class="fd-r-alt" id="fd-r-alt" hidden></p>
       <p class="fd-r-later" id="fd-r-later"></p>
@@ -158,80 +156,77 @@ const stats = [
   <!-- ALL DOORS -->
   <section class="fd-block fd-rv" id="doors">
     <h2>Every door, in plain sight</h2>
-    <p class="fd-sub">Skipped the quiz? Fine. Here's who each one is for — and who should walk past it.</p>
+    <p class="fd-sub">Skipped the quiz? Here's each one in ten seconds.</p>
 
     <!-- Membership: two ways in, each priced with what it buys (Standing Rule 32) -->
-    <div class="fd-door">
-      <span class="fd-door-k">The Membership · on Skool · both start with a {M.trial}</span>
-      <div class="fd-duo">
-        <article class="fd-card">
-          <h3>Membership Standard</h3>
-          <div class="fd-price"><b>{M.standard.monthly}</b> per month after {M.trialDays} free days · or {M.standard.annual} a year</div>
-          <p class="fd-card-line">Everything you need to build the thing and start selling it.</p>
-          <p><strong>Inside:</strong> AI Twin / Influencer Creation, Brand Building, The Content Edit, The Monetization Edit, The Email Edit, The Pinterest Edit, Pinterest Foundations™, The Tommy Kate Edit, Canva Crash Course and Daily Prompts.</p>
-          <p class="fd-for"><strong>For you if</strong> you have the idea and not the order of operations.</p>
-          <p class="fd-not"><strong>Walk past if</strong> you already know what to build and just can't keep up with posting.</p>
-          <a class="btn" href={SKOOL}>Start Standard — 7 days free <span class="a">→</span></a>
-        </article>
-        <article class="fd-card fd-card-dark">
-          <h3>Membership Premium</h3>
-          <div class="fd-price"><b>{M.premium.monthly}</b> per month after {M.trialDays} free days · or {M.premium.annual} a year</div>
-          <p class="fd-card-line">Everything in Standard — and your content month, written for you.</p>
-          <p><strong>Adds:</strong> the Monthly DFY Content Calendar (31 days, released a week at a time around the 1st, 62 Threads posts, a start-frame and motion prompt for every Reel), The Ads Edit™, The Offer Edit, The Funnel Edit and Scaling &amp; Systems.</p>
-          <p class="fd-for"><strong>For you if</strong> the blank caption box is the reason you go quiet.</p>
-          <p class="fd-not"><strong>Walk past if</strong> you don't have an offer to point the content at yet.</p>
-          <a class="btn btn-onmid" href={SKOOL}>Start Premium — 7 days free <span class="a">→</span></a>
-        </article>
-      </div>
-      <p class="fd-fine">Cancel from inside the Skool app whenever you like. Cancelling stops the next payment.</p>
+    <span class="fd-door-k">The Membership · on Skool · both start with a {M.trial}</span>
+    <div class="fd-duo">
+      <article class="fd-tile">
+        <h3>Membership Standard</h3>
+        <p class="fd-tp"><b>{M.standard.monthly}</b>/month · or {M.standard.annual} a year</p>
+        <p class="fd-tl">Build the thing and start selling it.</p>
+        <ul class="fd-chips">
+          <li>AI Twin / Influencer Creation</li><li>Brand Building</li><li>The Content Edit</li><li>The Monetization Edit</li><li>The Email Edit</li><li>The Pinterest Edit</li><li>Pinterest Foundations™</li><li>The Tommy Kate Edit</li><li>Canva Crash Course</li><li>Daily Prompts</li>
+        </ul>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>you have the idea, not the order of operations.</dd><dt>Skip if</dt><dd>you just can't keep up with posting.</dd></dl>
+        <a class="btn" href={SKOOL}>Start Standard — 7 days free <span class="a">→</span></a>
+      </article>
+      <article class="fd-tile fd-tile-p">
+        <h3>Membership Premium</h3>
+        <p class="fd-tp"><b>{M.premium.monthly}</b>/month · or {M.premium.annual} a year</p>
+        <p class="fd-tl">Everything in Standard, plus your content month written for you.</p>
+        <ul class="fd-chips">
+          <li class="hot">Monthly DFY Content Calendar</li><li>The Ads Edit™</li><li>The Offer Edit</li><li>The Funnel Edit</li><li>Scaling &amp; Systems</li>
+        </ul>
+        <p class="fd-tn">31 days of posts, 62 Threads posts and a prompt for every Reel, released a week at a time around the 1st.</p>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>the blank caption box is why you go quiet.</dd><dt>Skip if</dt><dd>you don't have an offer to point it at yet.</dd></dl>
+        <a class="btn" href={SKOOL}>Start Premium — 7 days free <span class="a">→</span></a>
+      </article>
     </div>
+    <p class="fd-fine">Cancel from inside the Skool app whenever you like. Cancelling stops the next payment.</p>
 
-    <div class="fd-door fd-door-img">
-      <img src="/images/we/cover-sofa.jpg" alt="The Weekend Ecosystem™ — your website and blog, built from what you already have" width="1400" height="1737" loading="lazy" />
-      <article class="fd-card">
+    <article class="fd-tile fd-tile-img">
+      <img src="/images/we/friday-sunday.jpg" alt="The Weekend Ecosystem™: Friday, content scattered on a platform you don't own. Sunday, a site on your own domain, a blog Google can find, an email list and a system that runs without you." width="1200" height="1490" loading="lazy" />
+      <div>
         <span class="fd-door-k">Standalone course · yours for good</span>
         <h3>The Weekend Ecosystem™</h3>
-        <div class="fd-price"><b>$97</b> one-time, or 3 × $33.33 · every future update included</div>
-        <p class="fd-card-line">You're not short on content. You're short on a place to put it.</p>
-        <p>Twenty-two modules that turn what you've already made — Skool lessons, calls, PDFs, posts — into a website on a domain you own and a blog a stranger can find on Google, with email capture and your offers routed from every article. Claude writes every file. You paste the prompt, read what came back, and say yes. Sixteen hours in six chunks; spread it over three weekends if you need to.</p>
-        <p class="fd-for"><strong>For you if</strong> you run a Skool group, sell courses or guides, or have simply been creating for years and all of it lives on platforms you rent.</p>
-        <p class="fd-not"><strong>Walk past if</strong> you haven't made anything yet. Build first, then give it a home.</p>
-        <Testimonial variant="pull" />
+        <p class="fd-tp"><b>$97</b> one-time · or 3 × $33.33 · every future update included</p>
+        <p class="fd-tl">You're not short on content. You're short on a place to put it.</p>
+        <p class="fd-tn">22 modules turn what you've already made into a website on your own domain and a blog Google can find. Claude writes every file. You paste, read, say yes. Sixteen hours, one weekend or three.</p>
+        <Testimonial variant="line" />
+        <dl class="fd-fit"><dt>Yes if</dt><dd>your work lives on platforms you rent.</dd><dt>Skip if</dt><dd>you haven't made anything yet.</dd></dl>
         <div class="fd-row fd-row-left">
           <a class="btn" href={WE}>See The Weekend Ecosystem™ <span class="a">→</span></a>
           <a class="fd-link" href="/weekend-ecosystem/preview">Look inside first →</a>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
 
-    <div class="fd-door fd-door-img fd-door-flip">
+    <article class="fd-tile fd-tile-img">
       <img src="/images/vault/canva-templates.jpg" alt="Canva template preview from Pretty & Paid PLR Vault™" width="1000" height="536" loading="lazy" />
-      <article class="fd-card">
+      <div>
         <span class="fd-door-k">Its own subscription · on Beacons · separate from the membership</span>
         <h3>Pretty &amp; Paid PLR Vault™</h3>
-        <div class="fd-price"><b>$11</b> per month · what you download stays yours</div>
-        <p class="fd-card-line">Stop designing products from a blank page. Rebrand finished ones and sell them as your own.</p>
-        <p>Planners, journals, guides, eBooks, printables and coloring sets, Canva-editable with a full PLR license. Faceless Reel packs, stock photo sets, AI influencer image packs, Pinterest and carousel templates. Training for Etsy, Stan Store, Beacons and Canva rebranding. PLR Glow Studio writes your mockup prompts, SEO title, description and tags. Twenty new products land every month, and your license survives if you ever cancel.</p>
-        <p class="fd-for"><strong>For you if</strong> you have a digital store — or want one this month — and the shelf is the bottleneck.</p>
-        <p class="fd-not"><strong>Walk past if</strong> you'd rather sell only things you designed yourself.</p>
+        <p class="fd-tp"><b>$11</b>/month · what you download stays yours</p>
+        <p class="fd-tl">Stop designing from a blank page. Rebrand finished products and sell them as yours.</p>
+        <ul class="fd-chips">
+          <li>Planners &amp; journals</li><li>Guides &amp; eBooks</li><li>Printables</li><li>Faceless Reel packs</li><li>AI influencer image packs</li><li>Pinterest &amp; carousel templates</li><li>PLR Glow Studio</li>
+        </ul>
+        <p class="fd-tn">Canva-editable, full PLR license, 20 new products every month. Your license survives if you cancel.</p>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>the empty shelf is your bottleneck.</dd><dt>Skip if</dt><dd>you only sell things you designed yourself.</dd></dl>
         <a class="btn" href={VAULT}>Open Pretty &amp; Paid PLR Vault™ <span class="a">→</span></a>
-      </article>
-    </div>
+      </div>
+    </article>
 
-    <div class="fd-door">
-      <article class="fd-card fd-card-aff">
-        <span class="fd-door-k">Recommended · not mine</span>
-        <h3>Earn With Skool (SCC)</h3>
-        <div class="fd-price"><b>$97</b> one-time</div>
-        <p class="fd-card-line">For the woman who keeps answering questions in other people's groups.</p>
-        <p>This is the course I point you to for building and earning from a Skool community of your own.</p>
-        <p>Here's my opinion, free: you do not need to feel ready. Nobody who runs a room felt qualified the week they opened it. Authority isn't a credential you wait for — it's what people call you after you've been useful in public for long enough. And "not enough material" is almost never true; it's usually "not enough material I'm proud of yet," which is a different problem with a much faster fix.</p>
-        <p class="fd-for"><strong>For you if</strong> you want your own group and keep talking yourself out of it — or you're ready and just don't know where to start.</p>
-        <p class="fd-not"><strong>Walk past if</strong> you'd rather learn inside someone else's room than run your own.</p>
-        <p class="fd-disc">Affiliate link — I earn a commission if you buy through it, at no cost to you. The owner sets the price and can change it without notice.</p>
-        <a class="btn" href={SCC} rel="sponsored nofollow">See Earn With Skool (SCC) <span class="a">→</span></a>
-      </article>
-    </div>
+    <article class="fd-tile fd-tile-aff">
+      <span class="fd-door-k">Recommended · not mine</span>
+      <h3>Earn With Skool (SCC)</h3>
+      <p class="fd-tp"><b>$97</b> one-time</p>
+      <p class="fd-tl">For the woman who keeps answering questions in other people's groups.</p>
+      <p class="fd-tn">The course I point you to for building and earning from a Skool community of your own. You don't need to feel ready. Nobody who runs a room felt qualified the week they opened it.</p>
+      <dl class="fd-fit"><dt>Yes if</dt><dd>you want your own group and keep talking yourself out of it.</dd><dt>Skip if</dt><dd>you'd rather learn in someone else's room.</dd></dl>
+      <a class="btn" href={SCC} rel="sponsored nofollow">See Earn With Skool (SCC) <span class="a">→</span></a>
+    </article>
   </section>
 
   <!-- CLOSE -->
@@ -458,7 +453,6 @@ const stats = [
       var btn = $("fd-r-btn");
       btn.href = D.href; $("fd-r-cta").textContent = D.cta;
       if (D.aff) btn.setAttribute("rel", "sponsored nofollow"); else btn.removeAttribute("rel");
-      $("fd-r-disc").hidden = !D.aff;
       $("fd-r-later").textContent = D.later;
       var alt = $("fd-r-alt"); alt.innerHTML = "";
       if (D.alt) {
@@ -712,5 +706,49 @@ const stats = [
   .fd-result{border-top-width:4px}
   .fd-r-btn{min-height:52px;padding-inline:24px}
   @media(max-width:640px){.fd-hero::after{display:none}.fd-hero h1{font-size:clamp(48px,12.5vw,68px)}}
+  /* ── 8 Oct 2026: compact stall strip + scannable door tiles ── */
+  .fd .fd-stalls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:2px solid #E891B6!important;border-radius:24px 8px 24px 8px;background:var(--white);overflow:hidden;box-shadow:var(--tdie-shadow)}
+  .fd .fd-stall{border:0!important;border-radius:0!important;box-shadow:none!important;border-left:1px solid rgba(232,145,182,.45)!important;padding:20px 18px;gap:6px;background:transparent}
+  .fd .fd-stall:first-child{border-left:0!important}
+  .fd .fd-stall-t{font-size:19px}
+  .fd .fd-stall-p{font-size:13.5px;line-height:1.5}
+  .fd .fd-stall.open{background:rgba(255,215,233,.35)}
+  .fd .fd-door-k{margin:34px 0 12px}
+  .fd .fd-duo{gap:16px}
+  .fd .fd-tile{display:flex;flex-direction:column;background:var(--white);border:2px solid #E891B6;border-radius:24px 8px 24px 8px;padding:24px 26px;box-shadow:var(--tdie-shadow)}
+  .fd .fd-tile-p{background:linear-gradient(125deg,#FFD7E9,#F1EAFB)}
+  .fd .fd-tile h3{font-family:Newsreader,serif;font-weight:500;font-size:26px;line-height:1.1;margin:0 0 6px;color:var(--choc)}
+  .fd .fd-tp{font-size:13.5px;color:var(--choc-meta);margin:0 0 10px}
+  .fd .fd-tp b{font-family:Newsreader,serif;font-size:30px;font-weight:400;color:var(--pink-deep,#C2185B);margin-right:2px}
+  .fd .fd-tl{font-size:17px;line-height:1.4;font-weight:500;color:var(--choc);margin:0 0 14px}
+  .fd .fd-tn{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 14px}
+  .fd .fd-chips{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px}
+  .fd .fd-chips li{font-size:12.5px;line-height:1;padding:7px 10px;border-radius:99px;background:rgba(255,215,233,.55);color:var(--choc);border:1px solid rgba(232,145,182,.5)}
+  .fd .fd-tile-p .fd-chips li{background:rgba(255,255,255,.7)}
+  .fd .fd-chips li.hot{background:var(--pink);color:#fff;border-color:var(--pink);font-weight:600}
+  .fd .fd-fit{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:0 0 18px;font-size:14px;line-height:1.45}
+  .fd .fd-fit dt{font-weight:700;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink);padding-top:2px}
+  .fd .fd-fit dt:nth-of-type(2){color:var(--choc-meta)}
+  .fd .fd-fit dd{margin:0;color:var(--choc-soft)}
+  .fd .fd-tile .btn{align-self:flex-start;margin-top:auto}
+  .fd .fd-tile .fd-row .btn{margin-top:0}
+  .fd .fd-tile-img{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start;margin-top:22px}
+  .fd .fd-tile-img img{width:100%;height:auto;border-radius:14px 4px 14px 4px;display:block}
+  .fd .fd-tile-img .fd-door-k{margin:0 0 8px}
+  .fd .fd-quote{font-family:Newsreader,serif;font-style:italic;font-size:17px;line-height:1.4;color:var(--choc);border-left:2px solid var(--pink);padding-left:12px;margin:0 0 14px}
+  .fd .fd-quote span{display:block;font-family:Inter,sans-serif;font-style:normal;font-size:12px;color:var(--choc-meta);margin-top:4px}
+  .fd .fd-tile-aff{margin-top:22px;max-width:none}
+  .fd .fd-tile-aff .fd-door-k{margin:0 0 8px}
+  @media(max-width:980px){.fd .fd-stalls{grid-template-columns:repeat(3,minmax(0,1fr))}.fd .fd-stall:nth-child(4){border-left:0!important}.fd .fd-stall:nth-child(n+4){border-top:1px solid rgba(232,145,182,.45)!important}}
+  @media(max-width:860px){.fd .fd-duo{grid-template-columns:1fr}.fd .fd-tile-img{grid-template-columns:150px minmax(0,1fr);gap:18px}}
+  @media(max-width:600px){
+    .fd .fd-stalls{grid-template-columns:1fr}
+    .fd .fd-stall{border-left:0!important;border-top:1px solid rgba(232,145,182,.45)!important;padding:16px 18px}
+    .fd .fd-stall:first-child{border-top:0!important}
+    .fd .fd-tile{padding:20px 18px}
+    .fd .fd-tile-img{grid-template-columns:1fr}
+    .fd .fd-tile-img img{max-width:240px}
+    .fd .fd-tile .btn{align-self:stretch}
+  }
 </style>
 </PageLayout>

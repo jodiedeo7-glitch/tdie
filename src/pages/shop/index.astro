@@ -360,19 +360,18 @@ const schema = [{
     </div>
   </section>
 
-  <!-- 08 RECOMMENDED: affiliate links, rel sponsored, disclosure in this section -->
+  <!-- 08 RECOMMENDED: affiliate links, rel sponsored -->
   <section class="e-sec-sm e-paper sec rec" id="recommended" aria-labelledby="h-rec">
     <div class="e-wrap rec-grid">
       <div class="head">
         <p class="e-kick">08 · Recommended, not mine</p>
         <h2 class="rec-h" id="h-rec">Things Jodie recommends</h2>
-        <p class="rec-disclose"><strong>These are affiliate links.</strong> Other people built these products. I use them and rate them, and I earn a commission if you buy, at no extra cost to you. Their owners set the prices and can change them without telling me.</p>
       </div>
       <ul class="rows rows--quiet">
         {recommended.map((r) => (
           <li class="row">
             <div class="row-main">
-              <h3><a href={r.url} rel="sponsored nofollow noopener" target="_blank">{r.name}<span class="sr"> (affiliate link, opens in a new tab)</span></a></h3>
+              <h3><a href={r.url} rel="sponsored nofollow noopener" target="_blank">{r.name}<span class="sr"> (opens in a new tab)</span></a></h3>
               <p>{r.copy}</p>
             </div>
             <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
