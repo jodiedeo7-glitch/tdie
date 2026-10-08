@@ -48,10 +48,12 @@ for file in pages:
 for record in public:
  file=DIST/'lifestyle'/record['slug']/'index.html';text=file.read_text();page=Page(text)
  if record.get('shoppingStatus')=='pending':
-  assert len([im for im in page.images if record['slug'] in unquote(im['src']) and 'data-life-header-photo' not in im])==3,record['slug']
+  article_images=[im for im in page.images if record['slug'] in unquote(im['src']) and 'data-life-header-photo' not in im]
+  assert len(article_images)==5,record['slug']  # One hero plus four illustrated chapters.
+  assert all(any(Path(source['file']).stem in unquote(im['src']) for im in article_images) for source in record['images']),record['slug']
   assert text.count('Product links are still being verified.')==1,record['slug']
   assert 'Shopping destination pending verification.' not in text,record['slug']
-  assert text.count('class="life-story-row"')==2,record['slug']
+  assert text.count('class="life-story-row"')==4,record['slug']
   assert not any('amazon.com' in a.get('href','') or 'amzn.to' in a.get('href','') for a in page.linkAttrs),record['slug']
   assert '/lifestyle/'+record['slug'] in (DIST/'sitemap-0.xml').read_text(),record['slug']
   continue

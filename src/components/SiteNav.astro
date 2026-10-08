@@ -1,7 +1,6 @@
 ---
 // One nav for every page. Labels and order live in src/data/site.js.
 // The mobile menu is a native popover: no script, keyboard and Escape work.
-import WysDecor from './WysDecor.astro';
 const {boutique=false}=Astro.props;
 import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
@@ -9,9 +8,9 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
 ---
 <header class:list={["sn",boutique && "sn-boutique"]}>
   <div class="sn-in">
-    {boutique && <div class="sn-masthead-flower" aria-hidden="true"><WysDecor/></div>}
+    {boutique && <nav class="sn-masthead-utility" aria-label="Browse TDIE"><a href="/">Home</a><a href="/lifestyle">Lifestyle</a></nav>}
     <a class="sn-logo" href="/">The Digital Income <span>Edit™</span></a>
-    {boutique && <span class="sn-masthead-note">Your next chapter<br/>looks good on you.</span>}
+    {boutique && <a class="sn-masthead-note" href="/newsletter">The Weekly Edit →</a>}
     <nav class="sn-links" aria-label="Main">
       {NAV.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? "page" : undefined}>{l.label}</a>)}
       <a class="sn-cta" href={NAV_CTA.href} aria-current={isCurrent(NAV_CTA.href) ? "page" : undefined}>{NAV_CTA.label}</a>
@@ -66,4 +65,14 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   .sn-boutique .sn-links a.sn-cta{border-radius:99px;background:#b8245f;border-color:#b8245f;color:#fff;min-height:42px;padding:0 20px}
   @media(max-width:1020px){.sn-boutique .sn-in{padding:12px 18px;grid-template-columns:50px minmax(0,1fr) 65px;gap:12px}.sn-boutique .sn-logo{font-size:30px;padding:12px 0}.sn-boutique .sn-links,.sn-boutique .sn-masthead-note{display:none}.sn-boutique .sn-menu{grid-column:3;grid-row:1;padding:0 10px;min-height:48px;border-radius:99px;background:#f1ddfa;border-color:#ba96d2;letter-spacing:.03em}.sn-masthead-flower{width:45px}}
   @media(max-width:480px){.sn-boutique .sn-in{padding:10px 12px;grid-template-columns:32px minmax(0,1fr) 55px;gap:8px}.sn-boutique .sn-logo{font-size:25px}.sn-masthead-flower{width:34px}.sn-boutique .sn-menu{padding:0 7px;font-size:10px}}
+
+  /* Compact boutique header: utility links, centered wordmark, full-width pink nav. */
+  .sn.sn-boutique{background:#fff9fd;border-top:3px solid #ee91bc;border-bottom:1px solid #da8bb2;box-shadow:0 4px 12px #b8245f10;isolation:isolate}
+  .sn.sn-boutique:after{content:'';position:absolute;inset:auto 0 0;height:56px;background:#ffbfdc;border-top:1px solid #e59fc0;z-index:-1}
+  .sn-boutique .sn-in{padding:0 24px;grid-template-columns:1fr minmax(0,2.5fr) 1fr}
+  .sn-boutique .sn-logo{font-size:28px;padding:17px 0 15px;line-height:1.2;color:#872049;white-space:nowrap}.sn-boutique .sn-logo span{display:inline;margin-left:.15em;color:#d62e73}
+  .sn-masthead-utility{display:flex;align-items:center;gap:18px}.sn-masthead-utility a,.sn-boutique .sn-masthead-note{font:500 11px/1.5 Inter,sans-serif;color:#872049;min-height:48px;display:flex;align-items:center}.sn-boutique .sn-masthead-note{justify-content:end;letter-spacing:0}
+  .sn-boutique .sn-links{margin:0 -24px;padding:4px 20px;background:transparent;border-top:0;gap:34px;min-height:56px}.sn-boutique .sn-links a.sn-cta{min-height:40px;box-shadow:0 2px 0 #9d2356}
+  @media(max-width:1020px){.sn.sn-boutique:after{display:none}.sn-boutique .sn-in{padding:6px 16px;grid-template-columns:minmax(0,1fr) 64px;gap:12px}.sn-boutique .sn-logo{grid-column:1;text-align:left;font-size:25px;padding:14px 0;white-space:normal}.sn-boutique .sn-masthead-utility,.sn-boutique .sn-masthead-note{display:none}.sn-boutique .sn-menu{grid-column:2;background:#ffe1ef;border-color:#db98b9}.sn-boutique .sn-links{display:none}}
+  @media(max-width:480px){.sn-boutique .sn-logo{font-size:21px;line-height:1.2}.sn-boutique .sn-in{padding:5px 14px;grid-template-columns:minmax(0,1fr) 55px;gap:10px}.sn-boutique .sn-logo span{white-space:nowrap}}
 </style>

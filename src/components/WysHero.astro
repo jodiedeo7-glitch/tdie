@@ -1,14 +1,16 @@
 ---
-import {Image} from 'astro:assets';
+import {Image,getImage} from 'astro:assets';
+import icingSource from '../assets/wys/pink-icing-border.png';
+const icing=await getImage({src:icingSource,format:'webp',quality:90});
 import WysDecor from './WysDecor.astro';
 import {packages} from '../data/wys-packages.js';
-const roles=['The finds','The styled setting','The lifestyle moment'];
+const captions=[['Little pink pieces','A wicked welcome','Trick-or-treat!'],['Coffee & ghosts','A sweet little haunt','Morning magic']];
 ---
 <section class="wz-hero-band">
- <WysDecor kind="drip"/>
+ <div class="wz-icing-border" style={`--wz-icing:url('${icing.src}')`} aria-hidden="true"/>
  <header class="wys-wrap wz-hero wz-hero-two-looks">
-  <div class="wz-polaroid-stack wz-stack-pink" aria-label="Pretty Wicked: all three styling views"><span class="wz-stack-label">{packages[0].name}</span>{packages[0].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{roles[i]}</figcaption></figure>)}<WysDecor class="wz-stack-flower"/></div>
+  <div class="wz-polaroid-stack wz-stack-pink" aria-label="Pretty Wicked: all three styling views"><span class="wz-stack-label">{packages[0].name}</span>{packages[0].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{captions[0][i]}</figcaption></figure>)}<WysDecor class="wz-stack-flower"/></div>
   <div class="wz-hero-copy"><slot/></div>
-  <div class="wz-polaroid-stack wz-stack-lavender" aria-label="Ghoul Fuel: all three styling views"><span class="wz-stack-label">{packages[1].name}</span>{packages[1].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{roles[i]}</figcaption></figure>)}<svg class="wz-stack-bow" viewBox="0 0 120 75" aria-hidden="true"><path d="M55 35C35 0 0 3 11 36C19 61 42 50 55 35M65 35C85 0 120 3 109 36C101 61 78 50 65 35M55 40L31 70L50 65L60 48L70 65L89 70L65 40" fill="#ff8ac2" stroke="#d62e73" stroke-width="2"/><ellipse cx="60" cy="36" rx="12" ry="11" fill="#ffc5df" stroke="#d62e73" stroke-width="2"/><path d="M15 25Q35 15 45 30M77 28Q90 15 104 24" fill="none" stroke="#ffeaf5" stroke-width="4"/></svg></div>
+  <div class="wz-polaroid-stack wz-stack-lavender" aria-label="Ghoul Fuel: all three styling views"><span class="wz-stack-label">{packages[1].name}</span>{packages[1].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{captions[1][i]}</figcaption></figure>)}<svg class="wz-stack-bow" viewBox="0 0 120 75" aria-hidden="true"><path d="M55 35C35 0 0 3 11 36C19 61 42 50 55 35M65 35C85 0 120 3 109 36C101 61 78 50 65 35M55 40L31 70L50 65L60 48L70 65L89 70L65 40" fill="#ff8ac2" stroke="#d62e73" stroke-width="2"/><ellipse cx="60" cy="36" rx="12" ry="11" fill="#ffc5df" stroke="#d62e73" stroke-width="2"/><path d="M15 25Q35 15 45 30M77 28Q90 15 104 24" fill="none" stroke="#ffeaf5" stroke-width="4"/></svg></div>
  </header>
 </section>

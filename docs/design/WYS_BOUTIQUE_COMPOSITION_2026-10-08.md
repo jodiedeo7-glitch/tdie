@@ -41,3 +41,21 @@ Removed public production-status footers, automation-run implementation notes, �
 The shared TDIE SiteNav has a WYS-only boutique variant: centered, two-line Newsreader masthead with a dimensional daisy and separate lavender main-navigation ribbon. The three WYS routes opt into it through PageLayout; other page families keep their existing navigation. The product navigation remains a distinct local row. The hero now displays all three approved photographs for each of the two looks in separate scattered, matted Polaroid groups, with a central headline. Mobile keeps both groups after the headline and before the body copy. Glossy icing remains native SVG.
 
 Removed the hero's release-status sentence and slogan strip. Product access stays held in the actual commerce state and accurate FAQs/newsletter copy. The four output cards now have four distinct treatments, including a striped paper frame for the blog article. Each is a single anchor with an obvious button appearance; down arrows indicate same-page jumps, right arrows indicate another page. Unique output anchors select the correct panel before scrolling, including cross-page links.
+
+
+## Complete styling stories and visual finale
+
+The two source articles have been rewritten as substantive styling stories (782 and 812 words), grounded in the same five selected-product records and three approved views. They explain visual decisions, placement, smaller-space adaptations and the distinction between selected finds and optional extras. No price, tested-product claim, invented product or activated shopping destination has been added. WYS article panels and the linked Lifestyle articles share the same source copy and now present four illustrated chapters with alternating pink/lavender mats. Product notes remain complete; disclosures and verification state are preserved. The build audit now verifies the intentional hero-plus-four-chapter layout and all three source images.
+
+The Look Inside finale now shows both actual three-photo sequences and explicit full-package actions, instead of a text-only “Imagine” box. Returning to a package opens its complete overview.
+
+
+## Founder’s typography and proportion corrections
+
+The masthead is now compact, with a centered one-line TDIE wordmark, real utility links and a full-width pink navigation ribbon. Removed the oversized two-line logo, floating tagline and repeated WYS wordmark row; product browsing remains one slim local navigation. Hero copy is shorter and more direct, with berry/lavender upright Newsreader display type and concise Inter supporting text. Six Polaroids use equal sizes and consistent mats/caption typography; slight rotations and placement provide the scatter. Photo captions use look-specific reader language. Bows/daisies and translucent paper-tape details continue across picture frames, example headers, kit covers, article chapters and the photographic finale.
+
+
+The thin SVG hero trim has been replaced with an original generated transparent glossy pink icing asset (src/assets/wys/pink-icing-border.png). This is a decorative website asset, not WYS styling-image generation; the approved six photographs remain unchanged and WYS provider selection remains paused. CSS repeats the dimensional material at its original aspect ratio, with long rounded drips and specular highlights.
+
+
+Final icing direction follows the founder’s fourth reference strip: straight top band, uneven elongated rounded drips, the retained milky bubblegum color and chunky reflective silver glitter replacing colored sprinkles. The header uses one continuous asset on desktop, with no repeated seam. Mobile shows an intact crop at the asset’s original proportions.
