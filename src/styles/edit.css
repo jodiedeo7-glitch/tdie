@@ -116,14 +116,6 @@
 .e-artifact figcaption b{font-weight:700;color:var(--e-ink);letter-spacing:.14em;text-transform:uppercase;font-size:11px}
 a:hover .e-artifact img,a:focus-visible .e-artifact img{transform:scale(1.035)}
 
-/* Scroll-linked reveals, CSS only. Browsers without scroll timelines, and
-   anyone who prefers reduced motion, simply see the finished state. */
-@media (prefers-reduced-motion:no-preference){
-  @supports (animation-timeline:view()){
-    .e-reveal{animation:e-reveal linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 28%}
-    @keyframes e-reveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-    .e-unveil{animation:e-unveil linear both;animation-timeline:var(--e-tl);animation-range:entry 0% cover 35%}
-    @keyframes e-unveil{from{clip-path:inset(14% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
-  }
-}
+/* Scroll-linked reveals removed 8 Oct 2026: content near the page bottom never
+   finished fading in and showed as blank. Everything renders visible. */
 @media (prefers-reduced-motion:reduce){.e-artifact img{transition:none}a:hover .e-artifact img{transform:none}}
