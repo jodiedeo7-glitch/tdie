@@ -56,6 +56,14 @@ const dfy = [
   { t: "Built on what is working", p: "Every month starts with hundreds of viral Reels in this niche, read before a word gets written." },
 ];
 
+// The room: what happens inside (merged from the old /community page).
+const inside = [
+  { n: "01", t: "A prompt every day", p: "Daily Prompts, written for the thing you are actually building, not a generic list you will scroll past." },
+  { n: "02", t: "Trainings, in order", p: "The start-here trainings turn a guide you have read into a thing that exists. Ordered, so you always know which room is next." },
+  { n: "03", t: "A classroom inside the business it teaches", p: "The site, the funnels and the automation you build are the same ones delivering this page to you right now." },
+  { n: "04", t: "Women one step ahead", p: "Not gurus. Women who solved last month what you are stuck on this month, and who are still in the room to ask." },
+];
+
 const faq = [
   { q: "How does the free trial work?", a: `Both memberships start with ${days} free on Skool. Come in, look around, use the prompts, take a training. If it isn't for you, leave from inside the app before the week is out.` },
   { q: "How am I billed?", a: `Both are subscriptions on Skool. Monthly, Standard is ${S.perMonth} and Premium is ${P.perMonth}, billed every month until you leave.` },
@@ -96,6 +104,47 @@ const schema = [{
         </div>
         <figcaption class="e-credit mb-hero-credit">The classroom sits inside <b>the business it teaches</b></figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- 1b. The room (merged from /community) -->
+  <section class="e-sec mb-room" id="room" aria-labelledby="inside-h">
+    <div class="e-wrap mb-room-grid">
+      <div class="mb-room-head">
+        <p class="e-kick">What happens inside</p>
+        <h2 class="e-d2" id="inside-h">Four things the room does that a course <em>cannot.</em></h2>
+        <figure class="mb-room-fig">
+          <img src="/images/pages/community-dog-560.webp"
+               srcset="/images/pages/community-dog-360.webp 360w, /images/pages/community-dog-560.webp 560w, /images/pages/community-dog-800.webp 800w"
+               sizes="(max-width: 900px) 60vw, 280px" width="560" height="700" loading="lazy" decoding="async"
+               alt="A golden retriever asleep on a jute rug beneath the round wooden desk, a blush velvet chair and black-framed windows behind" />
+          <figcaption class="e-credit">The TDIE studio, floor level</figcaption>
+        </figure>
+      </div>
+      <ol class="mb-room-list">
+        {inside.map((i) => (
+          <li class="e-reveal">
+            <span class="e-num mb-room-n" aria-hidden="true">{i.n}</span>
+            <div>
+              <h3>{i.t}</h3>
+              <p>{i.p}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="e-sec e-dark mb-who" aria-labelledby="who-h">
+    <div class="e-wrap mb-who-grid">
+      <div>
+        <p class="e-kick">Who is in it</p>
+        <h2 class="mb-big" id="who-h"><span class="e-giant mb-big-n">{community.members}</span> <span class="mb-big-l">women, building <em>the same architecture.</em></span></h2>
+      </div>
+      <div class="mb-who-copy">
+        <p>Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
+        <p class="mb-pull">It is much harder to quit in front of people who are still going.</p>
+      </div>
     </div>
   </section>
 
@@ -261,7 +310,7 @@ const schema = [{
           <p class="e-lede">Not before. Start with the membership that fits the build you are in now. Either one is free for {days}, and both leave from inside the app whenever you like.</p>
           <div class="e-actions">
             <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
-            <a class="e-link" href="/community">See what happens inside the room</a>
+            <a class="e-link" href="#room">See what happens inside the room</a>
           </div>
         </div>
       </div>
@@ -458,5 +507,34 @@ const schema = [{
     .mb-lede strong{font-weight:650;color:var(--e-ink)}
   .mb-plan-claim{max-width:12ch}
   .mb-plan-cta{min-height:52px}
+    /* The room (merged from /community) */
+    .mb-room-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:start}
+    .mb-room-head{position:sticky;top:110px}
+    .mb-room-fig{margin:clamp(36px,5vw,64px) 0 0 clamp(0px,5vw,72px);width:min(280px,60%)}
+    .mb-room-fig img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+    .mb-room-fig figcaption{margin-top:10px}
+    .mb-room-list{list-style:none;margin:0;padding:0}
+    .mb-room-list li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;padding:28px 0;border-top:1px solid var(--e-line)}
+    .mb-room-list li:last-child{border-bottom:1px solid var(--e-line)}
+    .mb-room-n{font-size:40px}
+    .mb-room-list h3{font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin:0 0 8px}
+    .mb-room-list p{margin:0;color:var(--e-ink-2);max-width:36em}
+    .mb-who{padding-top:clamp(88px,12vw,176px);padding-bottom:clamp(88px,12vw,176px)}
+    .mb-who-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(32px,5vw,80px);align-items:end}
+    .mb-big{margin:0;line-height:.9}
+    .mb-big-n{display:block;font-size:clamp(96px,19vw,272px);color:var(--e-pink);margin-left:-.04em}
+    .mb-big-l{display:block;font-size:var(--e-d3);letter-spacing:-.02em;color:#F6EFEA;margin-top:22px;max-width:14em;line-height:1.1}
+    .mb-who-copy{padding-bottom:10px}
+    .mb-who-copy p{margin:0 0 24px;font-size:18px}
+    .mb-pull{font-family:var(--e-serif);font-weight:600;font-size:clamp(24px,2.4vw,30px)!important;line-height:1.3;letter-spacing:-.01em;color:#fff!important;padding-top:24px;border-top:1px solid rgba(200,169,106,.55);margin:0!important}
+    @media (max-width:900px){
+      .mb-room-grid,.mb-who-grid{grid-template-columns:1fr}
+      .mb-room-head{position:static}
+      .mb-room-fig{margin-left:0}
+    }
+    @media (max-width:560px){
+      .mb-room-list li{grid-template-columns:48px minmax(0,1fr);gap:12px}
+      .mb-room-n{font-size:30px}
+    }
 </style>
 </PageLayout>

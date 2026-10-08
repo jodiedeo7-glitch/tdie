@@ -6,7 +6,6 @@ export const NAV = [
   { label: "The Method", href: "/#method" },
   { label: "Shop", href: "/shop" },
   { label: "Membership", href: "/membership" },
-  { label: "Community", href: "/community" },
 ];
 
 export const NAV_CTA = { label: "Join the Membership", href: "/membership" };
@@ -21,8 +20,7 @@ export const FOOTER = [
   { h: "Build", links: [
     { label: "The Weekend Ecosystem™", href: "/shop/weekend-ecosystem" },
     { label: "Membership", href: "/membership" },
-    { label: "Community", href: "/community" },
-    { label: "Shop", href: "/shop" },
+      { label: "Shop", href: "/shop" },
     { label: "Lifestyle", href: "/lifestyle" },
   ] },
   { h: "Studio", links: [
