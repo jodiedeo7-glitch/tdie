@@ -121,3 +121,5 @@
 .life-story-copy p:last-child{margin-bottom:0}
 @media(max-width:760px){.life-story{gap:32px;padding-top:32px}.life-story-row,.life-story-row:nth-child(even){grid-template-columns:minmax(0,1fr);gap:24px}.life-story-row:nth-child(even)>:is(.life-photo,.life-story-copy){grid-column:auto;grid-row:auto}.life-story-row>.life-photo{max-width:520px}.life-story-copy{max-width:none}}
 @media(max-width:640px){.life-grid-pair{grid-template-columns:minmax(0,1fr)}.life .life-story-copy h2{font-size:28px}.life-story-copy{line-height:1.7}}
+/* Keep section links clear of the shared sticky navigation on every screen. */
+.life [id]{scroll-margin-top:90px}
