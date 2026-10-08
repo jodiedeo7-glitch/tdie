@@ -28,8 +28,9 @@ export interface Props {
   schema?: object[];
   /** Opt into the reference-led facelift after this page family passes QA. */
   visualRefresh?: boolean;
+  boutiqueHeader?: boolean;
 }
-const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = true } = Astro.props;
+const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = true, boutiqueHeader = false } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", SITE).href;
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
@@ -121,7 +122,7 @@ const jsonLd = {
 <body class:list={["no-js", {"sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
-  <SiteNav />
+  <SiteNav boutique={boutiqueHeader} />
 
   <main class={bare ? "e-page" : wide ? "page-wrap wide" : "page-wrap"}>
     <slot />

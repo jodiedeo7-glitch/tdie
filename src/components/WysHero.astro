@@ -2,15 +2,13 @@
 import {Image} from 'astro:assets';
 import WysDecor from './WysDecor.astro';
 import {packages} from '../data/wys-packages.js';
-const {look=0}=Astro.props;
-const e=packages[look];
+const roles=['The finds','The styled setting','The lifestyle moment'];
 ---
 <section class="wz-hero-band">
  <WysDecor kind="drip"/>
- <header class="wys-wrap wz-hero">
-  <figure class="wz-portrait wz-portrait-left"><div class="wz-portrait-mat"><Image src={e.photos[1].src} alt={e.photos[1].alt} widths={[320,480,720]} sizes="(max-width:700px) 43vw, 300px" loading="eager" fetchpriority="high"/></div><figcaption>{e.name}<span>The styled setting</span></figcaption><WysDecor class="wz-photo-flower"/></figure>
+ <header class="wys-wrap wz-hero wz-hero-two-looks">
+  <div class="wz-polaroid-stack wz-stack-pink" aria-label="Pretty Wicked: all three styling views"><span class="wz-stack-label">{packages[0].name}</span>{packages[0].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{roles[i]}</figcaption></figure>)}<WysDecor class="wz-stack-flower"/></div>
   <div class="wz-hero-copy"><slot/></div>
-  <figure class="wz-portrait wz-portrait-right"><div class="wz-portrait-mat"><Image src={e.photos[2].src} alt={e.photos[2].alt} widths={[320,480,720]} sizes="(max-width:700px) 43vw, 300px" loading="eager"/></div><figcaption>The lifestyle moment<span>Same idea. A new viewpoint.</span></figcaption><svg class="wz-bow" viewBox="0 0 120 75" aria-hidden="true"><path d="M55 35C35 0 0 3 11 36C19 61 42 50 55 35M65 35C85 0 120 3 109 36C101 61 78 50 65 35M55 40L31 70L50 65L60 48L70 65L89 70L65 40" fill="#ff8ac2" stroke="#d62e73" stroke-width="2"/><ellipse cx="60" cy="36" rx="12" ry="11" fill="#ffc5df" stroke="#d62e73" stroke-width="2"/><path d="M15 25Q35 15 45 30M77 28Q90 15 104 24" fill="none" stroke="#ffeaf5" stroke-width="4"/></svg></figure>
+  <div class="wz-polaroid-stack wz-stack-lavender" aria-label="Ghoul Fuel: all three styling views"><span class="wz-stack-label">{packages[1].name}</span>{packages[1].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{roles[i]}</figcaption></figure>)}<svg class="wz-stack-bow" viewBox="0 0 120 75" aria-hidden="true"><path d="M55 35C35 0 0 3 11 36C19 61 42 50 55 35M65 35C85 0 120 3 109 36C101 61 78 50 65 35M55 40L31 70L50 65L60 48L70 65L89 70L65 40" fill="#ff8ac2" stroke="#d62e73" stroke-width="2"/><ellipse cx="60" cy="36" rx="12" ry="11" fill="#ffc5df" stroke="#d62e73" stroke-width="2"/><path d="M15 25Q35 15 45 30M77 28Q90 15 104 24" fill="none" stroke="#ffeaf5" stroke-width="4"/></svg></div>
  </header>
- <div class="wz-hero-foot"><span>YOUR PRODUCTS</span><b>✦</b><span>YOUR CONTENT</span><b>✦</b><span>YOUR NEXT IDEA</span></div>
 </section>

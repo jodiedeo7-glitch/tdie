@@ -1,0 +1,21 @@
+---
+import {Image} from 'astro:assets';
+const {example:e}=Astro.props;
+---
+<div class="wz-pinterest-set" aria-label={`${e.name} Pinterest Pin mockups`}>
+ {e.pins.map((p,i)=><article class="wz-pinterest-mockup">
+ <header class="wz-pinterest-brand"><span class="wz-pinterest-mark" aria-hidden="true">P</span><b>Pinterest</b><span>Pin preview / {i+1} of 3</span></header>
+ <div class="wz-pinterest-detail">
+  <div class="wz-pinterest-image"><Image src={p.src} alt={p.alt} widths={[320,480,720,1000]} sizes="(max-width:700px) 85vw, 440px"/></div>
+  <div class="wz-pinterest-copy">
+   <div class="wz-pinterest-toolbar"><div class="wz-pinterest-icons" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21S2 14 2 7a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 7-10 14-10 14Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9 11 11 0 0 1-5-1L2 22l1-7a9 9 0 1 1 18-4Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 16V2m-5 5 5-5 5 5M3 14v8h18v-8"/></svg><span>•••</span></div><span class="wz-pinterest-save" aria-hidden="true">Save</span></div>
+   <div class="wz-pinterest-creator"><span class="wz-profile-mark" aria-hidden="true">TDIE</span><b>The Digital Income Edit™</b></div>
+   <h4>{p.title}</h4><strong class="wz-pin-field">Description</strong><p>{p.description}</p>
+   <a class="wz-pin-destination" href={p.destination}>thedigitalincomeedit.com <span aria-hidden="true">→</span><span>{e.article.title}</span></a>
+   <strong class="wz-pin-field">Alt text</strong><p class="wz-pin-alt">{p.alt}</p>
+   <a class="wys-button" href={p.src.src} download={`${e.slug}-pin-${i+1}.png`}>Download Pin {i+1} / 1000 × 1500 ↓</a>
+   <div class="wz-pinterest-comment" aria-hidden="true">Add a comment <span>♡</span></div>
+  </div>
+ </div>
+ </article>)}
+</div>

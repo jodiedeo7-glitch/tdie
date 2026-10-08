@@ -1,13 +1,17 @@
 ---
 // One nav for every page. Labels and order live in src/data/site.js.
 // The mobile menu is a native popover: no script, keyboard and Escape work.
+import WysDecor from './WysDecor.astro';
+const {boutique=false}=Astro.props;
 import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
 const isCurrent = (href) => path === href || path.startsWith(href + "/");
 ---
-<header class="sn">
+<header class:list={["sn",boutique && "sn-boutique"]}>
   <div class="sn-in">
+    {boutique && <div class="sn-masthead-flower" aria-hidden="true"><WysDecor/></div>}
     <a class="sn-logo" href="/">The Digital Income <span>Edit™</span></a>
+    {boutique && <span class="sn-masthead-note">Your next chapter<br/>looks good on you.</span>}
     <nav class="sn-links" aria-label="Main">
       {NAV.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? "page" : undefined}>{l.label}</a>)}
       <a class="sn-cta" href={NAV_CTA.href} aria-current={isCurrent(NAV_CTA.href) ? "page" : undefined}>{NAV_CTA.label}</a>
@@ -48,4 +52,18 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   @media(max-width:1020px){.sn-links{display:none}.sn-menu{display:inline-flex;align-items:center}}
   @media(max-width:480px){.sn-in{gap:12px}.sn-logo{font-size:clamp(16px,4.8vw,19px)}.sn-menu{flex-shrink:0;padding:0 12px}}
   @media(prefers-reduced-motion:reduce){.sn-links a{transition:none}}
+
+  /* A centered boutique masthead and a separate lavender navigation ribbon. */
+  .sn.sn-boutique{position:relative;background:radial-gradient(ellipse at 50% 0,#fffafd,#ffe8f3);border-top:5px solid #ef8bb9;border-bottom:5px double #dc91b6;box-shadow:0 5px 16px #b8245f12}
+  .sn-boutique .sn-in{display:grid;grid-template-columns:1fr minmax(0,3fr) 1fr;gap:0;padding:20px 30px 0;max-width:1240px;position:relative}
+  .sn-boutique .sn-logo{grid-column:2;text-align:center;font-size:38px;padding:15px 0 24px;white-space:normal;line-height:1.1;color:#872049}
+  .sn-boutique .sn-logo span{color:#d62e73;display:block;margin:2px 0 0}
+  .sn-masthead-flower{width:67px;justify-self:center;transform:rotate(-15deg);filter:drop-shadow(0 5px 3px #b8245f20)}
+  .sn-masthead-flower :global(svg){width:100%;height:auto}
+  .sn-masthead-note{text-align:center;font:500 11px/1.6 Inter,sans-serif;color:#872049;letter-spacing:.03em}
+  .sn-boutique .sn-links{display:flex;grid-column:1/-1;justify-content:center;gap:30px;background:#ead8f8;border-top:1px solid #cba7de;padding:5px 22px;margin:0 -30px;position:relative}
+  .sn-boutique .sn-links a{font-size:11px;letter-spacing:.06em;min-height:48px;color:#872049}
+  .sn-boutique .sn-links a.sn-cta{border-radius:99px;background:#b8245f;border-color:#b8245f;color:#fff;min-height:42px;padding:0 20px}
+  @media(max-width:1020px){.sn-boutique .sn-in{padding:12px 18px;grid-template-columns:50px minmax(0,1fr) 65px;gap:12px}.sn-boutique .sn-logo{font-size:30px;padding:12px 0}.sn-boutique .sn-links,.sn-boutique .sn-masthead-note{display:none}.sn-boutique .sn-menu{grid-column:3;grid-row:1;padding:0 10px;min-height:48px;border-radius:99px;background:#f1ddfa;border-color:#ba96d2;letter-spacing:.03em}.sn-masthead-flower{width:45px}}
+  @media(max-width:480px){.sn-boutique .sn-in{padding:10px 12px;grid-template-columns:32px minmax(0,1fr) 55px;gap:8px}.sn-boutique .sn-logo{font-size:25px}.sn-masthead-flower{width:34px}.sn-boutique .sn-menu{padding:0 7px;font-size:10px}}
 </style>

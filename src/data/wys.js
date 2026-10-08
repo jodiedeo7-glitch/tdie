@@ -23,8 +23,8 @@ export const examples = [
 export const imageNotice='AI-generated styling inspiration. Retail products may differ; check the actual listing photographs, contents and measurements. Flowers, furniture, artwork, clothing and other props are styling extras.';
 export const contents=[
  {n:'01',title:'Preparation Guide',text:'Work through the account requirements and choose the path that fits your setup.'},
- {n:'02',title:'Setup Guide',text:'A guided setup prompt records your choices, available connections and account-specific blockers.'},
- {n:'03',title:'Themed look recipe',text:'The sourcing, three-image preparation and review sequence for your chosen theme and season.'},
+ {n:'02',title:'Setup Guide',text:'Record your business choices, connect the tools you have and see which setup steps still need attention.'},
+ {n:'03',title:'Themed look recipe',text:'Follow the selected products through three styling views, an article and social content for your chosen theme and season.'},
  {n:'04',title:'Recurring task prompts',text:'Weekly planning, optional Outfit of the Day, and reconciliation prompts. Tasks stay paused until the required tests pass.'},
  {n:'05',title:'Your destination path',text:'Influencer Idea Lists or an Associates-only page on your own site, according to your actual account access.'},
  {n:'06',title:'Optional Brand Closet path',text:'For customers with the required membership and authorized lesson access. Member-only material stays private.'}

@@ -1,0 +1,20 @@
+---
+import {Image} from 'astro:assets';
+const {example:e}=Astro.props;
+---
+<div class="wx-instagram" data-instagram-preview>
+ <div class="wz-instagram-post">
+  <header class="wz-instagram-profile"><span class="wz-profile-mark" aria-hidden="true">TDIE</span><div><b>The Digital Income Edit™</b><span>Instagram carousel preview</span></div><span class="wz-post-menu" aria-hidden="true">•••</span></header>
+  <div class="wx-carousel" tabindex="0" aria-label={`${e.name} Instagram carousel`}>{e.slides.map((s,i)=><figure class="wx-graphic"><Image src={s.src} alt={s.alt} widths={[320,540,810,1080]} sizes="(max-width:700px) 85vw, 430px"/><figcaption>Slide {i+1} / {s.role}</figcaption></figure>)}</div>
+  <div class="wz-instagram-icons" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21S2 14 2 7a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 7-10 14-10 14Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9 11 11 0 0 1-5-1L2 22l1-7a9 9 0 1 1 18-4Z"/></svg><svg viewBox="0 0 24 24"><path d="m2 3 20 8-20 11 5-10L2 3Zm5 9 15-1"/></svg><svg class="wz-bookmark" viewBox="0 0 24 24"><path d="M5 2h14v20l-7-5-7 5Z"/></svg></div>
+  <div class="wx-slide-controls"><button type="button" data-slide-step="-1" aria-label={`Previous ${e.name} Instagram slide`}>← Previous</button><span aria-live="polite" data-slide-count>1 / 3</span><button type="button" data-slide-step="1" aria-label={`Next ${e.name} Instagram slide`}>Next →</button></div>
+ </div>
+ <div class="wx-caption"><span class="wys-label">The complete Instagram caption</span><h4>{e.name}</h4><p>{e.caption}</p><a class="wys-button" href={`/lifestyle/${e.slug}`}>Read the linked blog article →</a><div class="wz-slide-downloads"><span class="wys-label">The three slide files / 1080 × 1350</span>{e.slides.map((s,i)=><a href={s.src.src} download={`${e.slug}-instagram-${i+1}.png`}>Download slide {i+1} ↓</a>)}</div></div>
+</div>
+<script>
+ document.querySelectorAll<HTMLElement>('[data-instagram-preview]').forEach(root=>{
+ const rail=root.querySelector<HTMLElement>('.wx-carousel')!;const count=root.querySelector<HTMLElement>('[data-slide-count]')!;
+ const update=()=>{const slides=[...rail.children] as HTMLElement[];const i=slides.reduce((best,s,n)=>Math.abs(s.offsetLeft-rail.offsetLeft-rail.scrollLeft)<Math.abs(slides[best].offsetLeft-rail.offsetLeft-rail.scrollLeft)?n:best,0);count.textContent=`${i+1} / 3`;return i;};
+ root.querySelectorAll<HTMLButtonElement>('[data-slide-step]').forEach(b=>b.addEventListener('click',()=>{const n=Math.max(0,Math.min(2,update()+Number(b.dataset.slideStep)));const s=rail.children[n] as HTMLElement;rail.scrollTo({left:s.offsetLeft-rail.offsetLeft,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}));rail.addEventListener('scroll',update,{passive:true});
+ });
+</script>

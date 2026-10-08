@@ -8,7 +8,7 @@ import { WYS_ROOT } from '../data/wys.js';
 const {title,description,current='overview',ogImage,noindex=false}=Astro.props;
 const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Stay in the loop',href:WYS_ROOT+'/waitlist'}];
 ---
-<PageLayout bare visualRefresh title={title} description={description} ogImage={ogImage} noindex={noindex}>
+<PageLayout bare visualRefresh boutiqueHeader title={title} description={description} ogImage={ogImage} noindex={noindex}>
  <div class="wys-world">
   <a class="wys-skip" href="#wys-content">Skip to content</a>
   <div class="wb-shopbar"><div class="wys-wrap wb-shopbar-inner"><a class="wys-wordmark" href={WYS_ROOT}>The While-You-Sleep <span>Storefront™</span></a><nav aria-label="While-You-Sleep Storefront">{links.map(link=><a href={link.href} aria-current={current===link.key?'page':undefined}>{link.name}</a>)}</nav></div></div>
