@@ -623,7 +623,7 @@ const jsonLd = {
                 <figure class="e-artifact">
                   <div class="e-art-img">
                     <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
-                         loading="lazy" decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
+                         decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
                   </div>
                   <figcaption><b>Exhibit {String(i + 1).padStart(2, "0")} · {r.room}</b><span>{r.path}</span></figcaption>
                 </figure>
