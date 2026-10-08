@@ -137,3 +137,18 @@
 .life-halloween .life-gallery-section,.life-halloween .life-article>.life-section{background:#FFFCFA;padding:28px;margin-top:32px;border:1px solid #B8245F40;border-radius:20px}
 .life-halloween .life-close>.life-text-link{background:#FFFCFA;padding:8px 18px;border-radius:999px}
 @media(max-width:640px){.life-halloween{--ghost-tile-width:360px}.life-halloween .life-article{padding-top:20px}.life-halloween .life-article-head{padding:22px 20px}.life-halloween .life-story-copy,.life-halloween .life-prose,.life-halloween .life-gallery-section,.life-halloween .life-article>.life-section{padding:22px 20px}.life-halloween .life-breadcrumb{font-size:13px}.life-halloween .life-article-head .life-intro{font-size:17px}}
+
+/* Halloween title card: a ribbon, pink trim and the article's own approved image. */
+.life-halloween .life-article-head{border:2px solid #ECA0BE;border-top:7px solid #D62E73;background:linear-gradient(125deg,#FFFCFA 60%,#FFE8F2);box-shadow:0 9px 0 #F4C8DF,0 14px 30px #B8245F18}
+.life-heading-layout{min-width:0}
+.life-heading-with-photo{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:center}
+.life-heading-copy{min-width:0}
+.life .life-title-banner{display:inline-flex;align-items:center;gap:12px;margin:0 0 20px;padding:9px 18px;border:1px solid #B8245F;border-radius:7px 20px 7px 20px;background:linear-gradient(115deg,#B8245F,#D62E73);color:#fff;font:700 12px/1.5 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:3px 3px 0 #F1D4EC}
+.life-heading-photo{width:240px;margin:0;padding:10px 10px 0;background:#fff;border:1px solid #ECA0BE;box-shadow:0 10px 22px #B8245F22;transform:rotate(3deg);justify-self:center}
+.life-heading-photo img{display:block;width:100%;height:auto}
+.life-heading-photo figcaption{padding:11px 4px;text-align:center;color:var(--life-pink);font:600 12px/1.5 Inter,system-ui,sans-serif}
+@media(max-width:900px){.life-heading-with-photo{grid-template-columns:minmax(0,1fr) 200px;gap:24px}.life-heading-photo{width:200px}}
+@media(max-width:760px){.life-heading-with-photo{grid-template-columns:minmax(0,1fr);gap:24px}.life-heading-photo{width:200px;transform:rotate(2deg)}.life-halloween .life-article-head{padding-bottom:26px}.life .life-title-banner{font-size:11px;padding:8px 12px;gap:9px}.life-heading-copy .life-article-actions{gap:12px}}
+
+.life-heading-art{height:300px;background:#FFDCDD url('/images/lifestyle/pink-halloween-ghosts.jpg') center/220px auto no-repeat}
+@media(max-width:900px){.life-heading-art{height:245px;background-size:180px auto}}

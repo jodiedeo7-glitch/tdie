@@ -7,6 +7,9 @@ import { LOOKS, categoryOf } from '../../data/lifestyle.js';
 const { look } = Astro.props;
 const cat = categoryOf(look.category);
 const hero = look.hero;
+const halloween = look.season?.toLowerCase() === 'halloween';
+const headerImage = halloween ? look.images.find(image => image.role === 'lifestyle') || look.images.find(image => image.role === 'styled') : null;
+const banner = look.slug === 'pretty-wicked-entryway' ? 'Pretty Wicked' : look.slug === 'ghoul-fuel-coffee-bar' ? 'Ghoul Fuel' : 'The Pink Halloween Edit';
 const gallery = look.images.filter(image => image !== hero);
 const relatedCandidates = LOOKS.filter(other => other.images.some(image => ['styled', 'lifestyle'].includes(image.role)));
 const related = [...relatedCandidates.filter(other => other.slug !== look.slug && other.category === look.category), ...relatedCandidates.filter(other => other.slug !== look.slug && other.category !== look.category && look.season && look.season !== 'Evergreen' && other.season === look.season && (['home-decor', 'dorm'].includes(look.category) ? ['home-decor', 'dorm'].includes(other.category) : ['clothing', 'accessories', 'jewelry'].includes(look.category) && ['clothing', 'accessories', 'jewelry'].includes(other.category)))].slice(0, 2);
@@ -17,14 +20,20 @@ const shoppingPending = look.shoppingStatus === 'pending';
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type': 'Article', headline: look.title, description: look.description, image: hero ? new URL(hero.src.src, 'https://www.thedigitalincomeedit.com').href : undefined, ...(dateIsPast ? { datePublished: look.date } : {}), mainEntityOfPage: `https://www.thedigitalincomeedit.com/lifestyle/${look.slug}`, publisher: { '@type': 'Organization', name: 'The Digital Income Edit™' } }];
 ---
-<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} disclosure={false} halloween={look.season?.toLowerCase() === 'halloween'}>
+<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} disclosure={false} halloween={halloween}>
   <article class="life-wrap life-article">
     <header class="life-article-head">
       <nav class="life-breadcrumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>
+      <div class:list={["life-heading-layout", { "life-heading-with-photo": halloween }]}>
+      <div class="life-heading-copy">
+      {halloween && <p class="life-title-banner"><span aria-hidden="true">✦</span> {banner} <span aria-hidden="true">✦</span></p>}
       <p class="life-kicker">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</p>
       <h1>{look.title}</h1>
       {look.intro && <p class="life-intro">{look.intro}</p>}
       <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a>{look.sections?.length > 0 && <a class="life-text-link" href="#styling">The styling details</a>}</div>
+      </div>
+      {halloween && <figure class="life-heading-photo">{headerImage ? <Image src={headerImage.src} alt={headerImage.alt} widths={[180, 240, 360, 480]} sizes="(max-width: 760px) 180px, 220px" loading="eager" data-life-header-photo /> : <div class="life-heading-art" aria-hidden="true" />}<figcaption>A little Halloween magic</figcaption></figure>}
+      </div>
     </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
     <div class="life-article-top">

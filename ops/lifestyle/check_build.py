@@ -48,7 +48,7 @@ for file in pages:
 for record in public:
  file=DIST/'lifestyle'/record['slug']/'index.html';text=file.read_text();page=Page(text)
  if record.get('shoppingStatus')=='pending':
-  assert len([im for im in page.images if record['slug'] in unquote(im['src'])])==3,record['slug']
+  assert len([im for im in page.images if record['slug'] in unquote(im['src']) and 'data-life-header-photo' not in im])==3,record['slug']
   assert text.count('Product links are still being verified.')==1,record['slug']
   assert 'Shopping destination pending verification.' not in text,record['slug']
   assert text.count('class="life-story-row"')==2,record['slug']
