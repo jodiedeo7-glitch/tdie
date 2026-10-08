@@ -578,6 +578,10 @@ const jsonLd = {
 .pick-btn:hover{background:var(--e-pink-t)}
 .pick-alt{margin-top:12px;font-size:13.5px;color:var(--e-pink-t);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){.pick{grid-template-columns:minmax(0,1fr)}.pick-img{aspect-ratio:16/9}.pick-btn{align-self:stretch;justify-content:center}}
+#membership .mem-grid h3 em{font-style:normal!important;color:var(--e-pink-t)!important;display:block}
+#membership .e-price small{color:inherit!important;opacity:.75}
+.lib-head{background:none!important;border:0!important;box-shadow:none!important}
+.lib-explain{max-width:44em;font-size:16px;line-height:1.6;color:#4A3A40;margin:12px 0 0}
 @media(max-width:760px){#method .step{grid-template-columns:minmax(0,1fr)!important;padding:20px!important}#method .step p{grid-column:1!important}#method .step h3{font-size:26px!important}}
 </style>
 </head>
@@ -833,14 +837,14 @@ const jsonLd = {
         <div class="mem-head">
           <div>
             <p class="e-kick">The membership</p>
-            <h2 class="e-d2" id="mem-h">Build it yourself. <em>Or remove more of the work.</em></h2>
+            <h2 class="e-d2" id="mem-h">Build your faceless business with us. <em>Pick how much help you want.</em></h2>
           </div>
-          <p>Both memberships give you the system and the community. Premium changes the workload: more of the recurring content gets handled before it reaches your desk.</p>
+          <p>Both memberships put you inside the Skool classroom: step-by-step trainings that walk you from zero to a working faceless business (your brand, your first product, your email list and your traffic), a new prompt every day, and {community.members} women building the same thing beside you. Premium adds more training and writes your social content for you every month.</p>
         </div>
         <div class="mem-grid">
           <article class="std">
             <p class="who">{M.standard.short}</p>
-            <h3>You build it.</h3>
+            <h3>Learn it step by step. <em>Build it yourself.</em></h3>
             <p class="name">{M.standard.name}: foundations, AI, branding, content and traffic training, with a community beside you.</p>
             <p class="e-price">{M.standard.monthly}<small>/month</small></p>
             <p class="alt">or {M.standard.perYear} · {M.trial}</p>
@@ -854,7 +858,7 @@ const jsonLd = {
           </article>
           <article class="prm">
             <p class="who">{M.premium.short}</p>
-            <h3>It's written <em>for you.</em></h3>
+            <h3>Everything in Standard. <em>Your posts written for you.</em></h3>
             <p class="name">{M.premium.name}: everything in Standard, with your content month written before you sit down.</p>
             <p class="e-price">{M.premium.monthly}<small>/month</small></p>
             <p class="alt">or {M.premium.perYear} · {M.trial}</p>
@@ -877,7 +881,8 @@ const jsonLd = {
         <div class="lib-head">
           <div>
             <p class="e-kick">The library</p>
-            <h2 id="lib-h">{cap(library.guidesWord)} pillar guides, free. <em>Start with these four.</em></h2>
+            <h2 id="lib-h">Free step-by-step guides. <em>Start with these four.</em></h2>
+            <p class="lib-explain">New to this? Each guide is a free, start-to-finish walkthrough of one part of an online business, written for beginners. Read them in order and you go from "I have no idea where to start" to a niche, a first product and a way for people to find it. No sign-up needed.</p>
           </div>
           <a class="e-link" href="/learn">Explore the Library <span aria-hidden="true">→</span></a>
         </div>
