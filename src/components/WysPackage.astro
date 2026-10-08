@@ -9,7 +9,7 @@ const {example:e,number,tour=false}=Astro.props;
 const panels=['Everything for this look','Styling images','Pinterest Pins','Instagram carousel','Blog article','Product notes'];
 ---
 <section class:list={['wx-package',number===2&&'wx-package-lav',tour&&'wx-package-tour']} id={e.slug} data-package data-package-tour={tour || undefined}>
- <WysDecor kind={number===2?"bow":"flower"} class="wz-package-charm"/>
+
  <div class="wx-folder-tab">{tour ? "ONE SHOPPING IDEA / THE FULL EXAMPLE" : `THE COMPLETE LOOK`}</div>
  <header class="wx-package-heading"><div><p class="wys-label">{e.category}</p><h2>{e.name}</h2><p>Five selected products. See the styling images, full article, Pinterest Pins, Instagram carousel and the words that go with them.</p></div><a class="wys-text-link" href={`/lifestyle/${e.slug}`}>Read the live styling article →</a></header>
  {tour && <nav class="wx-tour-nav" aria-label="Explore the full example">{panels.slice(1).map((p,i)=><a href={`#${e.slug}-output-${i+1}`}>{p} ↓</a>)}</nav>}

@@ -118,3 +118,22 @@
 .wz-icing-border{height:260px;background-size:100% 250px;background-position:center top}.wz-hero-band{padding-top:230px}.wz-icing-border:before{display:none}
 @media(max-width:1199px){.wz-icing-border{background-size:1200px 250px;background-position:-35px top}}
 @media(max-width:700px){.wz-icing-border{height:240px;background-size:700px 233px;background-position:-25px top}.wz-hero-band{padding-top:215px}}
+
+/* Header owns the icing; restore the hero’s normal spacing. */
+.wz-hero-band{padding-top:48px}
+@media(max-width:700px){.wz-hero-band{padding-top:32px}}
+
+/* Remove the rejected hero copy and captions; the photographs lead. */
+.wz-accessible-heading{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+.wz-hero-two-looks{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:100px;max-width:1040px;padding-block:0 32px}
+.wz-polaroid-stack{align-self:start;height:650px}.wz-polaroid{padding-bottom:24px}.wz-hero-copy{grid-column:1/-1;grid-row:2;order:3;text-align:center;margin-top:0}.wz-hero-copy .wys-actions{flex-direction:row;align-items:center;justify-content:center;gap:24px}.wz-hero-copy .wys-text-link{font-size:14px}.wz-stack-flower{top:90px}
+@media(min-width:701px){.wz-stack-pink .wz-polaroid-0{top:80px}.wz-stack-pink .wz-polaroid-1{top:0}.wz-stack-pink .wz-polaroid-2{top:340px}.wz-stack-lavender .wz-polaroid-0{top:12px}.wz-stack-lavender .wz-polaroid-1{top:180px}.wz-stack-lavender .wz-polaroid-2{top:330px}}
+@media(max-width:700px){.wz-hero-two-looks{column-gap:18px;padding-block:0 30px}.wz-polaroid-stack{height:720px}.wz-hero-copy{display:block;margin:0}.wz-hero-copy .wys-actions{flex-direction:column;gap:10px}.wz-polaroid{padding-bottom:18px}}
+@media(max-width:360px){.wz-polaroid-stack{height:610px}}
+/* A single photographic mat, without nested outlines or colored inner frames. */
+.wz-polaroid,.wz-stack-lavender .wz-polaroid{padding:10px 10px 28px;border:0;background:#fff;box-shadow:0 8px 18px #92245724}
+.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:0;border:0;background:transparent}
+.wz-polaroid img{border:0;display:block}
+@media(max-width:700px){.wz-polaroid,.wz-stack-lavender .wz-polaroid{padding:7px 7px 22px}}
+
+@media(min-width:701px){.wz-polaroid-stack{height:740px}}

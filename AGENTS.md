@@ -53,3 +53,6 @@ The public www.thedigitalincomeedit.com site is hosted on Cloudflare (worker `td
 
 ## Site-wide mobile design
 `src/styles/mobile.css` applies to every page template, including articles, resources, lifestyle, link pages, and the course. Keep H1 at 30–36px, H2 at 26–30px, readable body text, 48px primary actions, wrapping labels, and zero document overflow at 320px and 390px. Grids must use `minmax(0, 1fr)` when a form or other intrinsic content can widen the track. Inspect the complete rendered mobile pages and interactive states; audit gated course content with repository HTML fixtures locally, without altering production access controls. Repeat public-site visual QA after deployment.
+
+## Founder decoration preference (8 October 2026)
+No bows on any design, page, graphic or other work for Jodie unless she explicitly requests a bow. Do not infer bow permission from reference images. Remove existing decorative bows when editing the affected work.

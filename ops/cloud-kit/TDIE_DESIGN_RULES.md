@@ -45,3 +45,6 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 
 ## Canon edits
 Done 4 October 2026 (Decision 128): TDIE_CANON.md §8 type and Dark Chocolate rows, canon.json typography and palette, both copies.
+
+### Explicit decoration rule — 8 October 2026
+Jodie hates bows. Never add a bow to her pages, graphics or other designs unless she explicitly requests one. Reference-image bows do not grant permission.

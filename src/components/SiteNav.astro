@@ -2,14 +2,18 @@
 // One nav for every page. Labels and order live in src/data/site.js.
 // The mobile menu is a native popover: no script, keyboard and Escape work.
 const {boutique=false}=Astro.props;
+import {getImage} from "astro:assets";
+import icingSource from "../assets/wys/pink-icing-border.png";
+const icing=boutique ? await getImage({src:icingSource,format:"webp",quality:90}) : null;
 import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
 const isCurrent = (href) => path === href || path.startsWith(href + "/");
 ---
 <header class:list={["sn",boutique && "sn-boutique"]}>
+  {boutique && <div class="sn-header-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true"/>}
   <div class="sn-in">
     {boutique && <nav class="sn-masthead-utility" aria-label="Browse TDIE"><a href="/">Home</a><a href="/lifestyle">Lifestyle</a></nav>}
-    <a class="sn-logo" href="/">The Digital Income <span>Edit™</span></a>
+    <a class="sn-logo" href="/">{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}The Digital Income <span>Edit™</span>{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}</a>
     {boutique && <a class="sn-masthead-note" href="/newsletter">The Weekly Edit →</a>}
     <nav class="sn-links" aria-label="Main">
       {NAV.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? "page" : undefined}>{l.label}</a>)}
@@ -75,4 +79,19 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   .sn-boutique .sn-links{margin:0 -24px;padding:4px 20px;background:transparent;border-top:0;gap:34px;min-height:56px}.sn-boutique .sn-links a.sn-cta{min-height:40px;box-shadow:0 2px 0 #9d2356}
   @media(max-width:1020px){.sn.sn-boutique:after{display:none}.sn-boutique .sn-in{padding:6px 16px;grid-template-columns:minmax(0,1fr) 64px;gap:12px}.sn-boutique .sn-logo{grid-column:1;text-align:left;font-size:25px;padding:14px 0;white-space:normal}.sn-boutique .sn-masthead-utility,.sn-boutique .sn-masthead-note{display:none}.sn-boutique .sn-menu{grid-column:2;background:#ffe1ef;border-color:#db98b9}.sn-boutique .sn-links{display:none}}
   @media(max-width:480px){.sn-boutique .sn-logo{font-size:21px;line-height:1.2}.sn-boutique .sn-in{padding:5px 14px;grid-template-columns:minmax(0,1fr) 55px;gap:10px}.sn-boutique .sn-logo span{white-space:nowrap}}
+  /* Icing belongs to the masthead. Preserve the artwork’s native 3:1 ratio. */
+  .sn.sn-boutique{padding-top:140px;border-top:0;background:#fff1f8}
+  .sn-header-icing{position:absolute;inset:0 0 auto;height:140px;background-repeat:repeat-x;background-size:420px 140px;background-position:-55px top;pointer-events:none}
+  @media(max-width:700px){.sn.sn-boutique{padding-top:100px}.sn-header-icing{height:100px;background-size:300px 100px;background-position:-25px top}}
+  /* Boutique brand lockup and ribbon form one decorated header. */
+  .sn.sn-boutique{background:linear-gradient(115deg,#ffdced,#fff4fb 48%,#ead8f8);padding-top:110px;border-bottom:4px double #d98eb6}
+  .sn-header-icing{height:110px;background-size:330px 110px}
+  .sn-boutique .sn-in{max-width:1320px}
+  .sn-boutique .sn-logo{font-size:32px;display:flex;align-items:center;justify-content:center;gap:7px;padding:16px 24px;margin:10px 0 15px;background:#fff8fd;border:4px double #e592bd;border-radius:60px;box-shadow:0 4px 0 #cfafe4,0 8px 14px #b8245f12}
+  .sn-boutique .sn-logo span{margin:0}.sn-boutique .sn-logo .sn-brand-sparkle{font-family:Inter,sans-serif;font-size:22px;color:#b392ca;text-shadow:1px 1px #fff;margin:0 8px}
+  .sn.sn-boutique:after{height:58px;background:linear-gradient(90deg,#f0dffa,#e4cdf5,#f0dffa);border-top:4px double #d19abe}
+  .sn-boutique .sn-links{min-height:58px;gap:30px}.sn-boutique .sn-links a{font-size:11px;font-weight:600}
+  @media(max-width:1020px){.sn-boutique .sn-in{grid-template-columns:minmax(0,1fr) 64px;gap:16px}.sn-boutique .sn-logo{font-size:27px;white-space:nowrap;margin:10px 0 16px;padding:15px 12px}.sn-boutique .sn-logo .sn-brand-sparkle{margin:0 4px}.sn-boutique .sn-menu{background:#ead8f8;box-shadow:0 3px 0 #d998bc}}
+  @media(max-width:700px){.sn.sn-boutique{padding-top:95px}.sn-header-icing{height:95px;background-size:285px 95px}.sn-boutique .sn-logo{font-size:23px;gap:4px}.sn-boutique .sn-logo .sn-brand-sparkle{display:none}}
+  @media(max-width:480px){.sn-boutique .sn-in{padding:5px 10px;gap:8px;grid-template-columns:minmax(0,1fr) 52px}.sn-boutique .sn-logo{font-size:clamp(16px,4.7vw,20px);padding:12px 6px}.sn-boutique .sn-menu{font-size:9px;min-height:48px}}
 </style>
