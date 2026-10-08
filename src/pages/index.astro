@@ -47,7 +47,7 @@ const rooms = [
   { key: "offer", room: "The offer", t: "The One-Sentence Offer tool", p: "Step one of the method, as a free tool. No email.", href: "/resources/one-sentence-offer", path: "/resources/one-sentence-offer", go: "Test your offer" },
   { key: "funnel", room: "The funnel", t: "The Weekend Build Challenge", p: "Five free days by email, walking a stranger in order from nothing to an offer.", href: "/resources/weekend-build-challenge", path: "/resources/weekend-build-challenge", go: "Inspect the funnel" },
   { key: "library", room: "The library", t: "Every article started as a lesson", p: "Each guide began as a Skool lesson and was turned into a page by the method it teaches.", href: "/learn/turn-skool-content-into-a-blog", path: "/learn/turn-skool-content-into-a-blog", go: "Read one, lesson to article" },
-  { key: "classroom", room: "The classroom", t: "The Skool room behind it", p: `Where ${community.members} women build the same thing, beside each other.`, href: "/community", path: "/community", go: "See the room" },
+  { key: "classroom", room: "The classroom", t: "The Skool room behind it", p: `Where ${community.members} women build the same thing, beside each other.`, href: "/membership#room", path: "/membership", go: "See the room" },
   { key: "email", room: "The email", t: "The Weekly Edit, every Sunday", p: "Written once a week and delivered by the automation underneath this site.", href: "/newsletter", path: "/newsletter", go: "Read the letter" },
 ];
 
@@ -297,15 +297,6 @@ const jsonLd = {
     .scale .tl{font-family:var(--e-serif);font-weight:600;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em;color:var(--e-ink)}
     .scale .ai{font-size:15px;color:var(--e-ink-2)}
     .scale .ai b{color:var(--e-ink);font-weight:600}
-    /* The order builds as you scroll: each word sets in from outline to solid. */
-    @media (prefers-reduced-motion:no-preference){
-      @supports (animation-timeline:view()) and (-webkit-text-stroke:1px black){
-        .step h3 .w{-webkit-text-stroke:1.5px currentColor;animation:set-in linear both;animation-timeline:var(--e-tl);animation-range:entry 30% cover 45%}
-        @keyframes set-in{from{-webkit-text-fill-color:transparent;transform:translateX(-18px)}to{-webkit-text-fill-color:currentColor;transform:none}}
-        .stair::before{animation:draw linear both;animation-timeline:var(--e-tl);animation-range:entry 20% exit 60%;transform-origin:top}
-        @keyframes draw{from{transform:scaleY(.04)}to{transform:scaleY(1)}}
-      }
-    }
     @media(max-width:760px){
       .method-head{grid-template-columns:1fr}
       .step{grid-template-columns:40px minmax(0,1fr);align-items:start}
@@ -632,7 +623,7 @@ const jsonLd = {
                 <figure class="e-artifact">
                   <div class="e-art-img">
                     <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
-                         loading="lazy" decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
+                         decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
                   </div>
                   <figcaption><b>Exhibit {String(i + 1).padStart(2, "0")} · {r.room}</b><span>{r.path}</span></figcaption>
                 </figure>

@@ -35,7 +35,7 @@ a{color:inherit;text-decoration:none}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--pink);z-index:100;transition:width .1s linear}
 /* Fade-up reveal. Fails VISIBLE: a delayed CSS animation restores opacity even
    if the IntersectionObserver never fires, so content is never permanently hidden. */
-.reveal{opacity:0;transform:translateY(8px);transition:opacity .35s ease-out,transform .35s ease-out;animation:reveal-failsafe 0s linear 2.5s forwards}
+.reveal{opacity:1;transform:none}
 .reveal.in{opacity:1;transform:none;animation:none}
 @keyframes reveal-failsafe{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;animation:none}*{scroll-behavior:auto!important}}
