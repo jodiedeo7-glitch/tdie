@@ -33,7 +33,7 @@
 
 - The former Threads account was disabled after concurrent automations, per the repo. Enforce **one writer per live account**, not merely one writer per task. Do not let an unrelated task bypass the lock. If ownership is unknown, STOP.
 - **Idempotency:** `account + local_date + local_time + content_hash` identifies a post. On retry, inspect the account before creating anything. Do not post a second copy because an earlier action timed out.
-- **Status is evidence-based:** routine founder batches use `DRAFT -> QA_PASSED + approval_state NOT_REQUIRED -> READY -> SCHEDULED -> VERIFIED`, with `BLOCKED` for exceptions. Only Claude may assert `SCHEDULED/VERIFIED`, and only after observing live state. A post and its reply have distinct statuses.
+- **Status is evidence-based:** routine founder batches use `DRAFT -> QA_PASSED + approval_state NOT_REQUIRED -> READY -> SCHEDULED -> VERIFIED`, with `BLOCKED` for exceptions. Whichever assistant did the work (Claude, ChatGPT, Codex or any other) may assert `SCHEDULED/VERIFIED`, and only after observing live state. A post and its reply have distinct statuses.
 - Source-of-truth: live account for actual posting state; live Claude Project for current Threads workflow until migrated; canon for product facts; this router governs task ownership only. If these disagree, flag and pause the affected action.
 
 ## Output contract
