@@ -9,3 +9,7 @@ The recovery contains the complete non-heartbeat user-message archive returned f
 ## Packet 1 V9 repair — 8 October 2026
 
 The governing recovered record remains authoritative. Latest prompt repair: `../private/wys-board-test-2026-10-06/halloween-sprint-restart-20261007/v9-source-backed-repair/`. Read its count reconciliation, known issues, matrix and validation. Nine active looks / 27 prompts; no visual or release pass. Selected bow conflict, short lists, missing affiliate/list records and merged-look approval remain unresolved. Original approvals and historical failures are retained.
+
+## Packet 1 V10 corrective repair — 8 October 2026
+
+The governing recovered record remains authoritative. Latest prompt repair: `../private/wys-board-test-2026-10-06/halloween-sprint-restart-20261007/v10-complete-looks-creative-repair/`. Read its count reconciliation, known issues, matrix and validation. Nine active looks / 27 prompts; no visual or release pass. V10 completes short shopping lists and replaces conflicting bows. Latest direct corrections reject sparse white scenes, rigid grids and ghost-body arrangements. Missing affiliate/list records and merged-look approval remain unresolved. Original approvals and historical failures are retained.

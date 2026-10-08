@@ -1,0 +1,370 @@
+{
+  "updatedAt": "2026-10-06T18:02:35.2002558Z",
+  "mode": "CUSTOMER_MANUAL_FREE",
+  "paidGeneration": "PAUSED",
+  "pendingPaidModelComparison": "CANCELED_UNSUBMITTED",
+  "currentTest": {
+    "baseId": "A",
+    "baseVersion": "0.4",
+    "category": "Womens fashion",
+    "prompt": "pink-pumpkin-basic-v04.txt; pink-pumpkin-styled-v04.txt",
+    "scope": "Pink Pumpkin Patch Look: basic, filled-out styled and reference-based avatar lifestyle",
+    "status": "FIRST_OUTFIT_PAIR_REJECTED_REVISED_PAIR_PREPARED_LIFESTYLE_NOT_RUN"
+  },
+  "categories": [
+    {
+      "baseId": "A",
+      "name": "Womens fashion",
+      "baseVersion": "0.4",
+      "clean": "FIRST_MANUAL_PAIR_CUSTOMER_REJECTED; V04_UNTESTED",
+      "styled": "FIRST_MANUAL_PAIR_CUSTOMER_REJECTED; V04_UNTESTED",
+      "lifestyle": "NOT_RUN",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "B",
+      "name": "Shoes",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "C",
+      "name": "Handbags",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "D",
+      "name": "Jewelry and accessories",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "E",
+      "name": "Beauty",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "F",
+      "name": "Hair",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "G",
+      "name": "Home decor",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "H",
+      "name": "Kitchen",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "I",
+      "name": "Organization and storage",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "J",
+      "name": "Desk and office",
+      "baseVersion": "0.6",
+      "clean": "V03_TESTED_CAMERA_AND_PERSONALIZATION_NEED_REVISION; V04_UNTESTED",
+      "styled": "V06_CUSTOMER_REJECTED; NEXT_DIRECTION_PENDING",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "K",
+      "name": "Tech accessories",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "L",
+      "name": "Travel",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "M",
+      "name": "Car accessories",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "N",
+      "name": "Gifts",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "O",
+      "name": "Seasonal and holiday",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "P",
+      "name": "Party and hosting",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "Q",
+      "name": "Books and reading",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "R",
+      "name": "Fitness and wellness",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "S",
+      "name": "Outdoor porch and patio",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "T",
+      "name": "Pets",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "U",
+      "name": "Kids",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "V",
+      "name": "Baby and toddler",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "W",
+      "name": "Gaming",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "X",
+      "name": "School and homeschool",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "HOBBY_CRAFT",
+      "name": "Crafts crochet and creative hobbies",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    },
+    {
+      "baseId": "HOBBY_GARDEN",
+      "name": "Gardening",
+      "baseVersion": "0.1",
+      "clean": "UNTESTED",
+      "styled": "UNTESTED",
+      "lifestyle": "UNTESTED",
+      "repeatability": "UNPROVEN"
+    }
+  ],
+  "promotionRule": "Observed pass across category concepts and two distinct client aesthetics/product packets; record actual returned images and owner visual acceptance",
+  "manual_desk_v01_failure": {
+    "at": "2026-10-06T14:44:40.9848176Z",
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-9cbc653a-4996-4962-b85f-5f73b250f03f.webp",
+    "result": "CUSTOMER_REJECTED",
+    "model": "NOT_SUPPLIED",
+    "defects": [
+      "Mesh organizers dominate",
+      "Muted generic styling",
+      "No sufficient visual personality"
+    ],
+    "next_change": "Object scale, material/color contrast and coordinated desk styling",
+    "desired_reference": "Not yet supplied"
+  },
+  "referenceInterpretation": "Six customer-supplied admired desk references. First set guides simple stationery composition; second set explicitly guides styled angled complete workspace. Styling references received, not generated test results. Paid generation remains paused.",
+  "lifestyleRequirement": "Customer requires deeply personalized niche-specific lifestyle scenes including the approved avatar. Seventh visual reference guides room atmosphere only. Reuse confirmed persona world and niche; do not infer character branding or avatar identity from screenshot. No lifestyle generation or visual validation performed.",
+  "outfitReferences": "Five customer outfit-reference screenshots received. Separate clean collage from photographed flat lay; allow intentional garment folding; layered styled textile scene; optional handwritten graphics only in later layout if selected. No generation performed. Category A v0.2 remains untested.",
+  "outfitTreatmentClarification": "Basic: attractive laid-out/folded clothing. Styled: clothing filled out as if worn, without a person. At least one flat lay includes finished headline; above basic default, overlay only in clear space. Reference classifications are closest visual matches, not generated validation passes.",
+  "deskTestPair": [
+    "Basic: directly overhead stationery flat lay",
+    "Styled: angled complete workspace; not a literal overhead flat lay",
+    "Both untested; two organizer quality sample, incidental props not added linked products"
+  ],
+  "manualDeskComparison": {
+    "images": [
+      {
+        "order": 1,
+        "findings": "Angled tabletop instead of overhead; wire tray construction differs; generic cream mug/white surface",
+        "model": "Seedream 4.5",
+        "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-2fc484e3-7a0f-41f1-8caf-dc4a4873eb91.png",
+        "concept": "basic"
+      },
+      {
+        "order": 2,
+        "findings": "Angled workspace; additional separate holders; visible lettering/watermark; generic white surface/iced drink",
+        "model": "Seedream 4.5",
+        "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-09a56e36-1fa3-4d7a-914f-2490a272d94d.png",
+        "concept": "styled"
+      },
+      {
+        "order": 3,
+        "findings": "Angled tabletop with wall rather than overhead; product shape differs; generic cream mug/white surface",
+        "model": "Seedream 5.0 Flash",
+        "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-ba68e7bb-850b-469a-8549-f7621f30a945.webp",
+        "concept": "basic"
+      },
+      {
+        "order": 4,
+        "findings": "Angled workspace; generic white surface/iced drink; needs exact product fidelity and personal signature review",
+        "model": "Seedream 5.0 Flash",
+        "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-a34f65a8-3375-48e9-92bd-36ce860cb884.webp",
+        "concept": "styled"
+      }
+    ],
+    "customerPreference": "Seedream 5.0 Flash",
+    "preferenceStatus": "PROVISIONAL_DESK_PAIR_PREFERENCE",
+    "fullVisualAcceptance": "NOT_ESTABLISHED",
+    "repeatability": "UNPROVEN",
+    "paidGeneration": "PAUSED"
+  },
+  "personalSignature": {
+    "scope": "All concepts and categories, client-specific",
+    "tommyKate": {
+      "styling": "Girly/glittery/HER rather than clean/modern",
+      "workspace": "Her signature pink desk",
+      "coffeeVessel": "Saturated candy/bubblegum-pink ceramic Player Two? mug with clear readable black front lettering; never small/tiny lettering",
+      "flowers": "Lilacs and wildflowers only. Customer explicitly excluded hydrangeas.",
+      "styledPersonalDecor": "Framed photo of her dog",
+      "petReference": "Exact approved pet photo/reference needed for faithful framed photo",
+      "dogBreed": "Golden retriever; confirmed by customer",
+      "dogName": "UNDECIDED; naming paused at customer request",
+      "colorSeparation": "Pink desk with substantial cream relief; vivid hot-pink incidental accents; secondary lavender; no muted pink-on-pink wash"
+    },
+    "pendingQuestion": null,
+    "retailProductColors": "Preserve actual retail colors"
+  },
+  "petPortraitScope": "Generic golden-retriever portrait for fictional persona scene styling; exact likeness of a particular pet is not claimed without approved pet reference.",
+  "deskV04Review": {
+    "requested": "TDIE accent colors with hot-pink pops; retain personality with cream relief and secondary lavender",
+    "model": "NOT_RESTATED_IN_THIS_RETURN",
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-d3ffbadd-e8ad-4b68-b195-d5312be2a80d.png",
+    "result": "CUSTOMER_REQUIRES_COLOR_REVISION",
+    "defects": "Pastel pink on pink; insufficient value/saturation contrast",
+    "v05": "UNTESTED"
+  },
+  "deskV05Review": {
+    "revision": "0.6 UNTESTED",
+    "next": "Keep contrast and personal signature; controlled photographic light, actual useful contents, restrained signs of use",
+    "customerRealismReview": "REJECTED_AI_FAKE",
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-ad16b122-c933-484f-b830-7168462aab84.png",
+    "customerColorReview": "BETTER",
+    "model": "NOT_RESTATED_IN_THIS_RETURN",
+    "observed": "Empty organizers, pristine staging, uniform glow, weak material differentiation"
+  },
+  "deskV06Review": {
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-556a2e3c-99c9-48d5-9bab-ce9c4825d2ca.png",
+    "operatorObservedRegression": "Distressed desk, dated monitor, exaggerated page curl, disconnected arrangement and large blank wall",
+    "result": "CUSTOMER_REJECTED_NOT_RIGHT",
+    "next": "Remove forced aging; anchor fresh contemporary composition to customer selected admired reference",
+    "model": "NOT_RESTATED",
+    "noAdditionalGenerationRequestedYet": true
+  },
+  "v07ArtDirection": "Operator selected sunny window reference; tight desk-led composition, coherent layers, smaller secondary monitor and dog photo; no customer art-direction selection needed.",
+  "deskV07Audit": "desk-v07-final-aesthetic-realism-audit.json",
+  "v08ReturnedImage": {
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-eb9ff945-852b-41a2-97a7-8c029b716a5a.webp",
+    "acceptance": "NOT_APPROVED",
+    "inscription": "Player Two? readable",
+    "correction": "Complete standalone styled prompt; do not carry mug-only success over to composition or realism",
+    "exactCause": "UNKNOWN; edit/reference input not independently verified",
+    "styledScene": "FAILED: empty organizers, missing personal flowers/pet photo, white desk"
+  },
+  "styledDeskApproval": {
+    "human": "yes",
+    "existingIncidentalText": "Visible screen/planner markings; approval does not certify every technical criterion",
+    "scope": "This styled desk visual direction",
+    "repeatability": "UNPROVEN",
+    "retailFidelity": "NOT_INDEPENDENTLY_VERIFIED",
+    "image": "C:/Users/Jodie/AppData/Local/Temp/codex-clipboard-a72f7fab-ade8-4af8-ba59-903cfcc1c6d8.png"
+  }
+}

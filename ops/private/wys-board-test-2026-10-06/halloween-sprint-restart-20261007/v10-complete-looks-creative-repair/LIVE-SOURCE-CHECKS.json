@@ -1,0 +1,31 @@
+{
+  "checked_date": "2026-10-08",
+  "route": "Read-only web retrieval; no browser automation, spending, account writes or new affiliate capture",
+  "checks": [
+    {
+      "url": "https://www.amazon.com/dp/B085MBGX9J",
+      "result": "Returned Amazon HTML identifies currentAsin B085MBGX9J and selected colour Beige Short; selected-variant candidate only, no size/stock claim."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B085MBGM2Q",
+      "result": "Cache miss; preserved historical URL not verified."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DQ6YTL7R",
+      "result": "Returned Amazon title and selected variation identify two hot-pink satin clips, 5.5in. Does not resolve customer no-bows conflict."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FP91B1MB",
+      "result": "Cache miss; follow-up exact-ASIN search returned no results; current facts unresolved."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0G9M56X8R",
+      "result": "Cache miss; follow-up exact-ASIN search returned no results; current facts unresolved."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DNF5KFCL",
+      "result": "Cache miss; follow-up exact-ASIN search returned no results; current facts unresolved."
+    }
+  ],
+  "affiliate_route": "No Amazon account connector available in this task. Missing affiliate values remain missing; existing links preserved."
+}

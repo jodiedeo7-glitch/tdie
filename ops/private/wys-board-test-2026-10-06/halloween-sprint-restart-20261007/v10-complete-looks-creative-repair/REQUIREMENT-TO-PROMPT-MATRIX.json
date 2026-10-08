@@ -1,0 +1,2879 @@
+[
+  {
+    "id": "C01",
+    "requirement": "Only selected shopping items. No unlinked accessories or scene props. Aesthetic flat/folded arrangement tailored to survey; no supported worn silhouette.",
+    "source_evidence": [
+      {
+        "message_id": "01a11362-bca5-7df2-a551-01a4c11daadb",
+        "turn_id": "01a11362-bb37-7f20-95b2-346858acc46d",
+        "quote": "ONLY THE ITEMS WE'RE GOING TO LINK SHOULD BE IN THE BASIC FLATLAY PHOTO. COME THE FUCK ON!!!!!! like i said i know the example i gave you isnt good but you need to PICK THE NUMBER OF ITEMS THAT OUR SYSTEM PICKS!!!!! anything outside of whats linked goes in the styled flatlay."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"case closed\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK LAWYER EDIT\" be",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"sparkle plans\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK PARTY EDIT\" b",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"campus crush\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK CAMPUS EDIT\" b",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"she did it\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK GRADUATION EDIT\"",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"dinner in pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE DATE NIGHT EDIT\" ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink on pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE MATCHING SET EDIT\" ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink at work\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE WORKDAY EDIT\" below",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"cardigan & plaid\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PREPPY PINK EDI",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": "frame at true relative scale. Exactly the shopping products, no extras, pen, flowers, phone, watch or unselected jewellery.\n\nFinished readable label above products: exactly \"on my way\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK COMMUTE EDIT\" bel",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C02",
+    "requirement": "Filled out as though worn, no visible person. Supported bodice/shoulders/sleeves/cuffs and garment volume are required; generic extras or layering alone do not establish the distinction.",
+    "source_evidence": [
+      {
+        "message_id": "01a111c1-4d46-7cf0-a9e4-8c96a9393ffd",
+        "turn_id": "01a111c1-4c5e-78d3-89df-f40e2d212de3",
+        "quote": "ok of all the last group of flatlays and this group of flatlays separate them into the 'basic' flatlays and 'styled' flatlays. the basic one should have have the clothes laid out aethetically and the styled one the clothes should filled out as if someone was wearing them (but no person is in the photo). one of the flatlays should definitely have text either above it or overlayed, im not sure which"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ulders-waist-hips alignment.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "dinated preparation details.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "e and matte cotton contrast.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": " or human-shaped silhouette.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "s surrounded by blank linen.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": " room to identify each item.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "g and grounded local volume.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "d shoes into a ghost figure.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "usters fill remaining space.\n\nConcealed support gives LOCAL rounded fabric, tubular empty sleeves and deep hollow neck/cuffs; horizontal fabric compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breas",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C03",
+    "requirement": "Same selected clothing plus fuller personally coherent unlinked extras and signature background.",
+    "source_evidence": [
+      {
+        "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+        "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+        "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with en",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone showing a generic playlist without logos, silver watch, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with pink st",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller cha",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter claw clip, keys with pink heart charm, cream scalloped jewellery dish. ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, silver watch, one capped berry gloss, one heart compact, one hot-pink fine-glitter hair comb, keys with pink heart charm, cream scalloped jewellery dis",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, silver watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter barrette, keys with lavender star charm, cream scalloped jewellery di",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller cha",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of plain gold stud earrings, one capped berry gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controll",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C04",
+    "requirement": "Readable Pinterest-style label on at least one flatlay. Current accepted manual BASIC treatment: prominent hot-pink brush script with crisp near-black uppercase subtitle, above products.",
+    "source_evidence": [
+      {
+        "message_id": "01a111c1-4d46-7cf0-a9e4-8c96a9393ffd",
+        "turn_id": "01a111c1-4c5e-78d3-89df-f40e2d212de3",
+        "quote": "ok of all the last group of flatlays and this group of flatlays separate them into the 'basic' flatlays and 'styled' flatlays. the basic one should have have the clothes laid out aethetically and the styled one the clothes should filled out as if someone was wearing them (but no person is in the photo). one of the flatlays should definitely have text either above it or overlayed, im not sure which"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"case closed\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK LAWYER EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPres",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"sparkle plans\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK PARTY EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPre",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"campus crush\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK CAMPUS EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPre",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"she did it\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK GRADUATION EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nP",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"dinner in pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE DATE NIGHT EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPr",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink on pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE MATCHING SET EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPr",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink at work\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE WORKDAY EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPreserv",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"cardigan & plaid\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PREPPY PINK EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"on my way\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK COMMUTE EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPrese",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C05",
+    "requirement": "No office desk/worktable as outfit surface. This was explicitly rejected, not authorized as signature personalization.",
+    "source_evidence": [
+      {
+        "message_id": "01a1136f-c5a5-7161-81cb-8a9e47f17ebb",
+        "turn_id": "01a1136f-c4c2-7e91-971d-d2166243a2cb",
+        "quote": "WHY THE FUCK IS A CLOTHING OUTLAY ON A GODDAMN DESK!!!!!!! COME ON I CANT SELL THIS TRASH TO PEOPLE!!!!!!!!! WHAT THE FUCK ARE YOU TRYING TO DO TO ME????????????? GODDAMITTT!!!!!! we;ve already gone over. and THIS is a 'styled' flatlay?????TRHE SCENE MUST MAKE SENSE so all youre telling me is that this system is going to COMPLETELY ignore any of my and the clients instructions. so i have a eguide of fucking trash right now."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": " logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C06",
+    "requirement": "Do not repeat every outfit arrangement or the same child-looking bed. Approved cardigan bedding is one-look precedent, not compulsory series location.",
+    "source_evidence": [
+      {
+        "message_id": "01a11890-de0b-7d91-92ee-0463c7d370cb",
+        "turn_id": "01a1187d-eb40-7992-ae64-3148478e7ab8",
+        "quote": "thats better. now stop laying every set of clothers exactly the same way on the same CHILD LOOKING BED \n\n\nyes, that last one was much better. now please redo the packet again"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "A saturated lavender cotton cover with an irregular cream linen fold crossing the lower third, not white bedding. Frame closely: products occupy about 80% below the label. Blazer loosely folded across upper left with lapel and button exposed; skirt folded sideways at lower right, tee loosely folded separately. Pumps form an angled pair at left; sleeve/pouch overlap gently at right, headband curves beside them. Strong unequal group sizes, tactile rumpled edges, no rows or equal cells. / Photograph a CLOSE overhead outfit still life across a generous cream quilted dressing bench. Broad saturated lavender woven fabric drapes across a third; hot-pink embroidered cushion corner behind, no bows or fluffy trim. Jacket lies separately upper left, one sleeve bent back and the other softly curved; tee is placed beside it, NEVER shaped into a chest inside it. Skirt is sideways at lower right, separated from jacket by an accessory group. Local soft fullness in jacket sleeves/lapels and skirt folds; show hollow openings and resting fabric. Pumps nestled lower left; sleeve/pouch angled right, headband with hair accessories. Clothes occupy most of frame; no shoulders-waist-hips alignment.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "Rich lavender matte linen, with a broad cream fabric fold sweeping beneath the hem. Dress dominates centre on a loose curved diagonal; bodice stays unfilled, collapsed sheer sleeves bent differently, skirt softly fan-folded with ruffled hem visible. Silver heels angle together lower left; pink rosette clutch right. Earrings and bracelet rest clearly apart near clutch at real jewellery scale. Fill the frame with the five selected purchases; no tiny central outfit in a sea of blank fabric. / Close overhead view of an adult lavender upholstered chaise, cream cotton loosely draped diagonally and a hot-pink embroidered cushion corner. Dress arcs from upper left toward centre with gently rounded fabric folds, sheer sleeves curved inward at unequal angles, bodice softly lifted ONLY enough for fabric depth, never moulded breasts or rigid torso. Ruffled skirt gathers sideways into deep natural folds, not a straight invisible-person pose. Heels and clutch sit in opposing clusters; teardrop pair and bracelet clearly visible near clutch. Strong saturated/cream contrast and abundant coordinated preparation details.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "Cream-and-lavender broad woven stripes, photographed closely with cloth texture and soft window shadows. Polo folded loosely upper left to show cable texture and V opening; front-up denim skirt folded lengthwise at right, real pockets and hem evident. Offset both sneakers at bottom, tote nestled upper right, headband beside polo. Unequal diagonals and deliberate overlaps of bag/cloth only; no shopping grid. / Close overhead on a broad cream upholstered dressing bench with saturated lavender folded cover and hot-pink woven cushion corner. Polo angled upper left, its curved sleeves and lifted cable-knit folds rounded but visibly resting. Denim skirt is folded lengthwise front-up at right; waistband gets gentle depth, no shaped empty hips. Shoes together lower left, tote lower right and headband by accessories. Clothing pieces separated by personal clusters; no contiguous ghost outfit. Rich fabric, shiny hardware and matte cotton contrast.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "Saturated lavender cotton with an expansive cream fold, no pillow scene. Gown loosely folded twice across the frame while preserving long-length cues, flat sleeves and real neckline. Square cap and tassel rest separately upper right; satin heel pair below. Rosette clutch, pearl-drop pair and one tennis bracelet make a clear accessory cluster left. Substantial product coverage, no bows or diploma. / Overhead graduation getting-ready still life on a full adult bed: cream quilt, broad lavender cotton fold and one hot-pink woven cushion at the edge. Gown loosely folded into a sweeping diagonal; tubular empty sleeves curved beside it, chest fabric gently rounded without a rigid torso; full-length folds gather sideways. Separate square cap/tassel upper right. Heels and clutch lower left, selected pearl drops and silver bracelet nearby. No bows, ribbons, diploma or human-shaped silhouette.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "Lavender washed linen with a cream sweep under the silver shoes. Dress lies unfilled in a broad diagonal, pleated skirt folded into a loose fan without shortening its calf-length identity. Both heels nestle at right; rosette clutch left; silver teardrop pair and bracelet beside it. Close, lush textile detail and asymmetrical grouping; no catalogue cells. / Close overhead on a broad lavender woven dressing ottoman with a cream cotton fold and hot-pink embroidered cushion corner. Knit dress gently curved, deep pleats gathered sideways into an asymmetrical fan; neckline has natural depth, upper knit rounded softly without moulded torso or empty-person pose. Calf-length proportions preserved. Silver heels left, rosette clutch right, selected teardrop pair and bracelet beside it. Full coordinated dinner preparation still life, not three objects surrounded by blank linen.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "Cream cotton over a broad lavender woven cover; the two fabrics form unequal areas. Ribbed top loosely folded upper right, separate long skirt curved across lower left in a relaxed fan fold. Shoe pair staggered at base; clutch upper left, teardrop pair and bracelet below clutch. Long skirt leads the eye across a densely composed frame. Keep top and skirt separated, no waist-to-waist body arrangement. / Overhead adult bedroom still life on cream quilted cotton, a broad lavender cover folded diagonally and hot-pink embroidered cushion corner. Top upper left with rounded knit folds and curved hollow sleeves; skirt SIDEWAYS at right with gently lifted waistband and deep fan folds. A hand-width gap and accessory cluster separate both waists. No invisible body connecting them. Shoes paired below, clutch left, selected earrings/bracelet clear. Dense rhythmic grouping with room to identify each item.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "Adult wide lavender-and-cream striped cotton, not a thin lavender border on a white sheet. Fold blazer diagonally at upper left showing double-breasted buttons; tee separately lower right. Trousers lengthwise-folded front-up through middle, actual pleats clear. Loafers counter-angle at base; sleeve and pouch overlap upper right. Product-first close framing, relaxed fabric and unequal group spacing. / Overhead outfit still life on cream upholstered dressing bench; broad lavender woven cover and saturated hot-pink embroidered cushion corner. Blazer upper left with rounded fabric through lapels and empty curved sleeves; tee separately folded right. Trousers folded lengthwise FRONT-UP across bottom with actual front pleats and soft waistband depth. No two hollow legs aimed beneath a jacket. Loafers paired beside sleeve/pouch at right. Accessories separate the garments; full personal styling and grounded local volume.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "Cream cotton with a broad deep-lavender woven fold across one corner. Loosely fold cardigan upper left showing cables/buttons; tee folded separately to right. Skort opens as a flat fan at lower right; sock pair follows one edge, shoes sit together lower left, headband near tee. Playful asymmetry, substantial frame coverage, readable plaid and selected hot-pink sock stripes; no six equal compartments. / Close overhead adult dressing nook: lavender upholstered bench, cream quilted throw folded across it, hot-pink embroidered cushion edge. Cardigan upper left with curved empty sleeves and rounded cable-knit folds; tee separately at right. Skort sideways lower right with lifted pleats and gentle waistband depth. Socks curl separately with hollow tops; loafers together left, headband near getting-ready cluster. Never line up shoulders, skirt waist and shoes into a ghost figure.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "Lavender matte cotton broken by a large cream fold. Trench loosely folded at upper left with belt/buttons visible; long ribbed dress folded lengthwise on a separate opposing diagonal, flared cuff/hem exposed. Pump pair together lower right; tote rests on its side upper right, necklace follows a loose curve beside tote. Close texture-rich arrangement, no miniature garments, rows or human-body outline. / Close overhead on a generous cream quilted dressing platform with broad lavender woven fold and hot-pink embroidered cushion corner. Trench separately upper left, sleeves softly curved, lapels/belt readable; long dress lengthwise-folded on opposite diagonal right, flared cuffs/hem and rounded ribbed folds visible. Preserve separate garments, not coat around an invisible person in a dress. Pumps together lower left, tote right and selected necklace beside it. Clothes dominate, rich preparation clusters fill remaining space.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C07",
+    "requirement": "Phone and watch belong in styled when relevant, not basic. Earlier criticism rejected generic phone/watch/sunglasses-only styling, not these items themselves.",
+    "source_evidence": [
+      {
+        "message_id": "01a113a7-450b-7d03-a19e-a049e9336ee6",
+        "turn_id": "01a113a7-4445-7d42-b556-21c1d09412ae",
+        "quote": "what happened to thew phone and the watch?? i said they didnt belong in basic... they belong in styled!"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with enamel controller charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "laylist without logos, silver watch, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with pink star charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling rema",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter claw clip, keys with pink heart charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. N",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "med: pink-cased phone, silver watch, one capped berry gloss, one heart compact, one hot-pink fine-glitter hair comb, keys with pink heart charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "med: pink-cased phone, silver watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter barrette, keys with lavender star charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal grou",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling rema",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "named: pink-cased phone, gold watch, one pair of plain gold stud earrings, one capped berry gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller charm, cream scalloped jewellery dish. Cluster near accessories in two abundant unequal groups fillin",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C08",
+    "requirement": "Sunglasses/watch/phone alone fail Tommy Kate personalization.",
+    "source_evidence": [
+      {
+        "message_id": "01a11388-0ff4-7ed3-a846-4829a12979fe",
+        "turn_id": "01a11388-0f11-7803-8a7c-15709359b9d1",
+        "quote": "why are there no accessories in the styled one???\ncould you tell this is TOMMY KATES outfit or any randome girl in the world? WHY ARE THE ACCESSORIES NOT MATHCING THE VIBE????? a pair of sunglasses, a watch, and a phone IS NOT A STYLED FLATLAY!!!!"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "eam scalloped jewellery dish. Cluster near accessories in two abundant unequal groups filling remaining space; dish holds jewellery. No lonely row of miniature props, duplicate cosmetics or extra shopping products.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware ",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C09",
+    "requirement": "Gaming headset does not belong in everyday outfit. Interest/niche alone does not justify an accessory.",
+    "source_evidence": [
+      {
+        "message_id": "01a1138b-f529-72a0-a6a1-11fca5df8f34",
+        "turn_id": "01a1138b-f44e-7600-946b-6b9b16bb9847",
+        "quote": "why the FUCK IS HER GAMING HEADSET PART OF AN EVERYDAY OUTFIT??????????????????? WHY IS THIS SO FUCKING HARD FOR HARD?????????????????? CAN YOU MAKE THE ITEMS, THE STYLE, THE AESTHETIC, AND THE SCENERY ALL MAKE SENSE????? IS THIS STEP TOO MUCH FOR YOU?????????????"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": " rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C10",
+    "requirement": "Maximalist extra examples are illustrative, not exhaustive. Exercise judgment and build a fuller coordinated story per outfit.",
+    "source_evidence": [
+      {
+        "message_id": "01a113d3-e0c5-7532-83cc-57c636cf34b6",
+        "turn_id": "01a113d3-de4b-7623-8e7f-4e65aa0c5b58",
+        "quote": "you took what i said about the extras too literal. tommy is a maximalist. dont ONLY list the xtras i gave you, i was just giving examples. lets go back to this one. give me a final SUPER KUTE TOMMY STYLE styled flatlay prompt. then optimize the lifestyle prompt. you cant just repeat the same scene every time. and it also needs to be spefic and repeatiable... a niche doormat, cute shutters, YOU NEED TO BE DETAILED AND MAKE IT REAL.\n\nbasic is good.\ngive me one final styled and lifestyle prompt each"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with en",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone showing a generic playlist without logos, silver watch, one hot-pink fine-glitter claw clip, one capped pink gloss, one heart compact, keys with pink st",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller cha",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter claw clip, keys with pink heart charm, cream scalloped jewellery dish. ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, silver watch, one capped berry gloss, one heart compact, one hot-pink fine-glitter hair comb, keys with pink heart charm, cream scalloped jewellery dis",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, silver watch, one capped pink gloss, one heart compact, one hot-pink fine-glitter barrette, keys with lavender star charm, cream scalloped jewellery di",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of gold knot earrings, pearl bracelet, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of pearl stud earrings, one capped pink gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controller cha",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "ted fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one each unless a pair is named: pink-cased phone, gold watch, one pair of plain gold stud earrings, one capped berry gloss, one heart compact, hot-pink fine-glitter claw clip, keys with enamel controll",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C11",
+    "requirement": "Preserve correct rear-pocket location, embroidery, front/back orientation, actual leg lengths and real folds; no rear pockets on front fly.",
+    "source_evidence": [
+      {
+        "message_id": "01a112eb-8f7f-75b3-a234-636cbd4b7444",
+        "turn_id": "01a112eb-8d63-79c1-b0f4-ebecfa0d8c2f",
+        "quote": "the pant lengths look weird. might just be the generator. but you have the POCKET detail on the FRONT of the jeans. thanks cant happen. if the detail is on the back fold the pants to show back detail like the 3rd photo. i dont like the text, its DEFINITELY not even close to pinterest-y vibes. and also... i said in intake NO BOWS OR RIBBONS. this is absolutely unnacceptable for the client facing version."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": " obstruction.\n\nPreserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset,",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C12",
+    "requirement": "An outfit must plausibly suit Tommy Kate; replacing a rejected outfit does not replace the approved presentation rules.",
+    "source_evidence": [
+      {
+        "message_id": "01a112d3-7d7d-7fd3-9da5-e790d5da0690",
+        "turn_id": "01a112d3-7c75-7941-90e3-f1b6b515626b",
+        "quote": "she would never wear that. use this instead, give me 2 flatlays and a lifestyle prompt please"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One selected Hot Pink suit: photograph-matched cool magenta-pink single-button fitted blazer with narrow notched lapels, one matching knee-length pencil skirt, a separate white fitted crew-neck short-s",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One hot-pink shimmer-fabric dress with a square neckline, gathered waist, sheer balloon sleeves and a ruffled above-knee hem; one pair of silver-glitter low kitten heels with the photographed crossed s",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One rose-pink short-sleeve cable-knit polo with its open V collar; one light-wash below-knee denim skirt with actual pockets and back walking slit; one pair of white/light-grey Reebok low-top sneakers ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One full-length pink graduation gown with matching square cap and tassel, one pair of pink satin ankle-strap heels, one pair of gold-tone pearl-drop earrings, one silver-tone 3mm CZ tennis bracelet and",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One pink sleeveless crew-neck pleated knit midi dress, fitted through the bodice with a defined waist and an A-line calf-length pleated skirt; one pair of silver-glitter low kitten heels; one blush sat",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One dusty-pink ribbed two-piece set: short-sleeve crew-neck cropped top with photographed side ruching and a separate long flared midi skirt; one pair of silver-glitter low kitten heels; one blush sati",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One relaxed pink double-breasted blazer; one white fitted crew-neck tee; one pair of light beige high-waist wide-leg trousers with front pleats and a flat-front closure; one pair of plain black leather",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One light-pink button-front cable-knit cardigan over the separately linked white fitted crew-neck tee; one pink/black/white plaid pleated tennis skort with its photographed fine accent lines; one pair ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "re models and other styling.\n\nShe wears and carries only this shopping outfit: One camel belted double-breasted trench with dark buttons; one pink long-sleeve ribbed long sweater dress with its photographed flared sleeves and hem; one pair of blush patent pointed pumps; one pink ",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C13",
+    "requirement": "Choose the system's intended list before prompts; include only selected shopping products in BASIC, rather than all objects in an inspiration image.",
+    "source_evidence": [
+      {
+        "message_id": "01a11362-bca5-7df2-a551-01a4c11daadb",
+        "turn_id": "01a11362-bb37-7f20-95b2-346858acc46d",
+        "quote": "ONLY THE ITEMS WE'RE GOING TO LINK SHOULD BE IN THE BASIC FLATLAY PHOTO. COME THE FUCK ON!!!!!! like i said i know the example i gave you isnt good but you need to PICK THE NUMBER OF ITEMS THAT OUR SYSTEM PICKS!!!!! anything outside of whats linked goes in the styled flatlay."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One selected Hot Pink suit: photograph-matched cool magenta-pink single-button fitted blazer with narrow notched lapels, one matching knee-length pencil skirt, a separate white fitted crew-neck short-sleeve tee, one pair of blush ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One hot-pink shimmer-fabric dress with a square neckline, gathered waist, sheer balloon sleeves and a ruffled above-knee hem; one pair of silver-glitter low kitten heels with the photographed crossed straps and slingback; one blus",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One rose-pink short-sleeve cable-knit polo with its open V collar; one light-wash below-knee denim skirt with actual pockets and back walking slit; one pair of white/light-grey Reebok low-top sneakers with gum soles; one off-white",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One full-length pink graduation gown with matching square cap and tassel, one pair of pink satin ankle-strap heels, one pair of gold-tone pearl-drop earrings, one silver-tone 3mm CZ tennis bracelet and one pink rosette clutch. Sto",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One pink sleeveless crew-neck pleated knit midi dress, fitted through the bodice with a defined waist and an A-line calf-length pleated skirt; one pair of silver-glitter low kitten heels; one blush satin rosette clutch with silver",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One dusty-pink ribbed two-piece set: short-sleeve crew-neck cropped top with photographed side ruching and a separate long flared midi skirt; one pair of silver-glitter low kitten heels; one blush satin rosette clutch with silver ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One relaxed pink double-breasted blazer; one white fitted crew-neck tee; one pair of light beige high-waist wide-leg trousers with front pleats and a flat-front closure; one pair of plain black leather penny loafers; one baby-pink",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One light-pink button-front cable-knit cardigan over the separately linked white fitted crew-neck tee; one pink/black/white plaid pleated tennis skort with its photographed fine accent lines; one pair of HOT-PINK knee socks with W",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": "models and unlisted styling.\n\nShopping allowlist: One camel belted double-breasted trench with dark buttons; one pink long-sleeve ribbed long sweater dress with its photographed flared sleeves and hem; one pair of blush patent pointed pumps; one pink structured laptop tote; one y",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C14",
+    "requirement": "Basic and styled must be immediately noticeably different; do not use type or props as the sole difference.",
+    "source_evidence": [
+      {
+        "message_id": "01a11398-9939-79b1-997b-f8473701bdf8",
+        "turn_id": "01a11398-97c9-7170-8162-569f57f54bfa",
+        "quote": "at this point my brain is mush. these are all the ones weve run.... can you please anazlyze them and create a noticiable difference for the 2 flatlays? i dont care how you do each as long as one is obviouisly basic and one is obviously styles."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "c compresses against surface. Volume must distinguish it from BASIC without extras. No connected body outline, ghost wearer, moulded breasts, rigid torso, person, mannequin, stuffing, floating/inflated fabric or altered seams.\n\nUnlinked personal getting-ready extras, exactly one ",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C15",
+    "requirement": "Every complete prompt must be under 3000 characters, counted after assembly; no overflowing add-ons.",
+    "source_evidence": [
+      {
+        "message_id": "01a113a5-c74e-7900-8c8d-95c67be0b233",
+        "turn_id": "01a113a5-c695-73b0-b07b-c9394d9011cc",
+        "quote": "youre fogetting all prompts must be under 3000 characters"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": "{'look': 1, 'role': 'BASIC', 'file': 'prompts/01-basic.txt', 'unicode_characters': 2173, 'utf16_characters': 2173, 'bytes': 2173, 'sha256': '76e3bc83e7071c84f5d86dcd82ee949438ff1424a99b0111afac3fb986b6b36c', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": "{'look': 2, 'role': 'BASIC', 'file': 'prompts/02-basic.txt', 'unicode_characters': 2214, 'utf16_characters': 2214, 'bytes': 2214, 'sha256': '639510771b497997b3e6b6a7a600ad7c67d93a67e243efda4deb0c89468439c3', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": "{'look': 3, 'role': 'BASIC', 'file': 'prompts/03-basic.txt', 'unicode_characters': 2020, 'utf16_characters': 2020, 'bytes': 2020, 'sha256': 'be37e81572b00b8c061dc8235c3ee8c0e6fe3e051cac0234aa262dee06a60e07', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": "{'look': 5, 'role': 'BASIC', 'file': 'prompts/05-basic.txt', 'unicode_characters': 1906, 'utf16_characters': 1906, 'bytes': 1906, 'sha256': '82f0b7a376b03ee70d5e46abe60421a94d2e3a5fb9c9f398340eec2e8c356044', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": "{'look': 6, 'role': 'BASIC', 'file': 'prompts/06-basic.txt', 'unicode_characters': 1996, 'utf16_characters': 1996, 'bytes': 1996, 'sha256': '170c8e893181004747b0232fd799f8409c42693518862840f483ee851576f3e8', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": "{'look': 7, 'role': 'BASIC', 'file': 'prompts/07-basic.txt', 'unicode_characters': 2056, 'utf16_characters': 2056, 'bytes': 2056, 'sha256': '7bd9e3b2217072de7075275ddbd246fba1c77a2b89d981abbb638f2ef18fba65', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": "{'look': 8, 'role': 'BASIC', 'file': 'prompts/08-basic.txt', 'unicode_characters': 2018, 'utf16_characters': 2018, 'bytes': 2018, 'sha256': '0f209b390393152206b0ac7f0c17272d87ab8043972bfc013110a5a5f3907962', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": "{'look': 9, 'role': 'BASIC', 'file': 'prompts/09-basic.txt', 'unicode_characters': 2014, 'utf16_characters': 2014, 'bytes': 2014, 'sha256': 'b504441a07533887283860c749a3d25a2f5ee0fd8127d4e9b9d60fdbc6d81ba0', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": "{'look': 10, 'role': 'BASIC', 'file': 'prompts/10-basic.txt', 'unicode_characters': 1964, 'utf16_characters': 1964, 'bytes': 1964, 'sha256': '2d5d86e0ec354972939744ca55766c4116167d03aa254b78cc14dc80f7cd77f1', 'attachments_present': True, 'image_status': 'NOT_RUN'}",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C16",
+    "requirement": "Every object, piece of furniture and accessory must have a physically plausible purpose and placement; no staging table in front yard.",
+    "source_evidence": [
+      {
+        "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+        "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+        "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "She steps down the level brick farmhouse path carrying her selected laptop sleeve under her arm, pouch inside; one hand adjusts headband, other holds glitter pink tumbler with lavender straw. Suit, tee and pumps clearly worn. Cream clapboard, candy-pink door, lavender shutters, rooted lilacs and retriever at fence. Full-body candid front-three-quarter shot from garden at hip height, 35mm; real stride and face readable. Personal vibrant home, not corporate lawyer stock photo.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "At her farmhouse French doors before a Halloween dance party, she laughs toward a friend off camera while choosing music on her pink-cased phone. Clutch hangs by handle from other wrist; wear selected silver teardrops and bracelet. Cream timber walls, saturated lavender curtain, hot-pink embroidered cushions, lilacs in water on real sideboard, warm party lights in doorway. Full-body side-three-quarter shot from adjoining hall at waist height, 50mm; dress hem, sheer sleeves, earrings and both heels clear. No drink in hand, curtain-pulling pose or luxury hotel.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "She puts the selected grid tote over one shoulder while stepping through her farmhouse garden gate for a campus-themed outing; adjusts selected headband with free hand. Cream clapboard, pink door/lavender shutters behind, rooted wildflowers and retriever safely in fenced garden. Full-body candid side view from inside garden at chest height, 35mm. Show polo collar, real denim skirt length and both sneakers. No tumbler or gate-pose copy from benchmark.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "On her level farmhouse brick terrace she adjusts the square graduation cap with one hand while laughing toward the photographer; selected clutch held by handle in other hand. Wear pearl drops and tennis bracelet, gown with satin heels visible beneath parted hem. Cream clapboard, lavender shutter, candy-pink door and rooted lilacs; retriever sits to side. Full-body front view from across terrace at chest height, 50mm. No bows, diploma, cap toss, year text or drink.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "She sets her rosette clutch on a real lavender-painted dining chair before dinner, glancing toward someone beside the camera. Wear silver teardrops and bracelet. Farmhouse dining room with cream timber walls, hot-pink woven napkins, lilacs in water on table and lavender curtain; warm evening window light. Full-body candid side-three-quarter view from hall at hip height, 50mm; knit texture, calf hem and both silver heels clear. No satin slip, added coat, drink or generic restaurant.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "She walks down the level paved farmhouse side path toward her ride for a night out, smiling over shoulder toward camera. Carry clutch in one hand, selected bracelet on wrist; wear teardrop earrings. Pink Dutch door, lavender shutters, cream clapboard and rooted wildflowers behind; warm lights inside. Full-body rear-three-quarter view with face turned visible from path corner at waist height, 35mm. Separate cropped top and long skirt, real ribs and shoes readable. No tumbler, anonymous city or luxury venue.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "She lifts the selected sleeve from her farmhouse mudroom bench as she leaves for work; matching pouch inside, free hand holding glitter pink tumbler with lavender straw. Cream beadboard, lavender cupboard, pink door, useful controller-motif mat clear of walkway, lilacs in water on wall shelf. Full-body front view from hall at eye level, 35mm. Relaxed blazer, white tee, beige wide legs and both black loafers clear. No desk outfit display or generic corporate office.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "She bends slightly to check her headband in a full-height farmhouse entry mirror before a preppy costume outing, phone lowered in other hand. Cream beadboard, broad lavender runner, hot-pink embroidered cushion on real bench, lilacs in water on shelf and pink door behind. Full-body side view from doorway at hip height, 50mm; directly visible face and entire outfit, mirror secondary with plausible reflection. Plaid skort, hot-pink socks with white stripes and both loafers clear. No drink, book stack or pearl necklace.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "She opens her parked car door on the level farmhouse driveway, selected pink tote over shoulder; other hand steadies tote strap. Coat open over long pink ribbed dress, selected paperclip necklace at neckline. Cream clapboard, pink door, lavender shutters and rooted lilacs behind, retriever safely inside fence. Full-body front-three-quarter view from beyond bonnet at waist height, 50mm; flared cuffs/hem, face and both pumps clear. No tumbler or generic luxury city.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C17",
+    "requirement": "No furry rugs, shag, sheepskin or fluffy backgrounds. A furry inspiration reference does not cancel this dislike.",
+    "source_evidence": [
+      {
+        "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+        "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+        "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "ded bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C18",
+    "requirement": "No added decorative bows or ribbons. Preserve an explicitly selected product's own details; cardigan jeans' rear embroidery was scoped exception, not blanket bow permission.",
+    "source_evidence": [
+      {
+        "message_id": "01a112eb-8f7f-75b3-a234-636cbd4b7444",
+        "turn_id": "01a112eb-8d63-79c1-b0f4-ebecfa0d8c2f",
+        "quote": "the pant lengths look weird. might just be the generator. but you have the POCKET detail on the FRONT of the jeans. thanks cant happen. if the detail is on the back fold the pants to show back detail like the 3rd photo. i dont like the text, its DEFINITELY not even close to pinterest-y vibes. and also... i said in intake NO BOWS OR RIBBONS. this is absolutely unnacceptable for the client facing version."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C19",
+    "requirement": "Lilacs and wildflowers; no hydrangeas.",
+    "source_evidence": [
+      {
+        "message_id": "01a11217-0294-76a1-8579-263f419ddc8f",
+        "turn_id": "01a11217-012c-7fd1-85dd-4c070ef4af01",
+        "quote": "pause on the name. no idea. no to the hydrangeas, just lilacs and wildflowers"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "trast. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No added editorial lettering, generic corporate luxury or indoor staging table on lawn.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C20",
+    "requirement": "Golden retriever. Dog name undecided; naming paused. Exact actual-pet likeness requires evidence.",
+    "source_evidence": [
+      {
+        "message_id": "01a1120a-0e92-7d82-8a3f-05dd1e078d5a",
+        "turn_id": "01a1120a-0dcc-76b3-8a23-de7bc8442dce",
+        "quote": "golden retriever. give a couple good tommy kate dog names... something cute but also 'accomplishment' related or TDIE related... but idk? lol"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C21",
+    "requirement": "Do not select a name while naming is paused.",
+    "source_evidence": [
+      {
+        "message_id": "01a11217-0294-76a1-8579-263f419ddc8f",
+        "turn_id": "01a11217-012c-7fd1-85dd-4c070ef4af01",
+        "quote": "pause on the name. no idea. no to the hydrangeas, just lilacs and wildflowers"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "erified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkle filter. Tommy Kate hot-pink accents, cream relief ",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C22",
+    "requirement": "Every category/concept must reflect client niche, signature, preferred items, choices and colors, beyond generic palette.",
+    "source_evidence": [
+      {
+        "message_id": "01a11204-94b7-79e1-a389-97096c51a258",
+        "turn_id": "01a11204-8ded-7bc3-80bc-cdad59fd2c06",
+        "quote": "in order seedream 4.5 basic, seedream 4.5 styled, seedream5.0 flash basic, seedream 5.0 basic styled. i think i like the seedream 5.0 flash better. now also keep in mind i want the prompts to be specialized towards whatever the clients preferences are. so for tommy kate her coffee cup would be her pink mug, and her flatlay would be a llittle more girly/glittery/HER instead of clean/modern. everything should be super customized to the clients niche/signature/preferred items/choices/colors. i meant REALLY blow their mind... like tommy kates styled setup there would have a photo of her dog on the wall and her favorite flowers, her signature pink desk, etc"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "ecolouring or sparkle filter. Tommy Kate: playful girly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C23",
+    "requirement": "Tommy Kate pink desk, her pink coffee mug, girly/glittery HER styling, flowers and framed dog photo in appropriate desk setting.",
+    "source_evidence": [
+      {
+        "message_id": "01a11204-94b7-79e1-a389-97096c51a258",
+        "turn_id": "01a11204-8ded-7bc3-80bc-cdad59fd2c06",
+        "quote": "in order seedream 4.5 basic, seedream 4.5 styled, seedream5.0 flash basic, seedream 5.0 basic styled. i think i like the seedream 5.0 flash better. now also keep in mind i want the prompts to be specialized towards whatever the clients preferences are. so for tommy kate her coffee cup would be her pink mug, and her flatlay would be a llittle more girly/glittery/HER instead of clean/modern. everything should be super customized to the clients niche/signature/preferred items/choices/colors. i meant REALLY blow their mind... like tommy kates styled setup there would have a photo of her dog on the wall and her favorite flowers, her signature pink desk, etc"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Workspace-only signature desk is out of scope: no workspace concepts or outfit staging on desks."
+  },
+  {
+    "id": "C24",
+    "requirement": "Player Two? pink mug with visible readable front lettering and question mark; never tiny/small lettering.",
+    "source_evidence": [
+      {
+        "message_id": "01a1123e-4454-7f63-aaa9-19f4a00dddf4",
+        "turn_id": "01a1123e-433a-7973-9b4b-d8a10c01f841",
+        "quote": "you should definitely have my player two? pink mug. dont say 'small letters' though, it makes them tiny. change that in th erepo too please. anyway, getting there"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Player Two? ceramic mug belongs to workspace concepts, not these outfits; no mug text shrunk or substituted."
+  },
+  {
+    "id": "C25",
+    "requirement": "Avoid pink-on-pink pastel wash. TDIE accent colors, hot-pink pops, cream relief and lavender contrast; actual product colors stay fixed.",
+    "source_evidence": [
+      {
+        "message_id": "01a11224-d609-78a3-9f4b-5f2c022f2b9d",
+        "turn_id": "01a11224-d531-7440-8242-51473450bbc4",
+        "quote": "dont put pink on pink, its too much, add some TDIE accent colors. definitely add hot pink pops in the photos... its too much pastel/muted/light pink on light pink"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "ly maximalism, hot-pink pops, cream relief, lavender contrast; glitter only physical flecks. No added bows/ribbons, hydrangeas, furry rugs, shag, fluffy surfaces, headset, office stationery, invented logos, watermark or collage. No desks, worktables, hanging wardrobe or text.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C26",
+    "requirement": "Real photographic material, skin, light, scale and contact; no AI/fake sheen, fantasy glow or artificial distressing as a substitute for realism.",
+    "source_evidence": [
+      {
+        "message_id": "01a1122c-0c37-7010-8c56-4ca42abb7f77",
+        "turn_id": "01a1122c-0a63-7012-8171-fa37c0969d0c",
+        "quote": "**better but its super ai looking. per my settings it shouldnt look ai/fake**"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "lausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich ta",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C27",
+    "requirement": "Deeply niche-personalized avatar use moment. Do not substitute anonymous person or empty room.",
+    "source_evidence": [
+      {
+        "message_id": "01a111b5-5391-7a50-8386-977746dab030",
+        "turn_id": "01a111b1-c155-7822-89e7-3d47516dd07f",
+        "quote": "then really presonalized/niched down for lifestyle images. add the avatar in the photo for lifestyle images"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.\n\nCreate one candid real photograph, portrait 2:3. Attachment 1 is identity only; ignore its outfit, dog, pose and location. Attachment 2 is t",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C28",
+    "requirement": "Personalize home architecture and surroundings, not only outfit/avatar/held prop; plain generic house was rejected.",
+    "source_evidence": [
+      {
+        "message_id": "01a11371-cf99-7b41-ae48-36eddbd39bb1",
+        "turn_id": "01a1136f-c4c2-7e91-971d-d2166243a2cb",
+        "quote": "and for the lifestyle image, you REALLY think that looks like the outside of her house? absolutely plain? WHERE THE FUCK IS THE PERSONALIZATION WEVE BEEN TALKING ABOUT THE ENTIRE TIME"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "he steps down the level brick farmhouse path carrying her selected laptop sleeve under her arm, pouch inside; one hand adjusts headband, other holds glitter pink tumbler with lavender straw. Suit, tee and pumps clearly worn. Cream clapboard, candy-pink door, lavender shutters, ro",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "m CZ tennis bracelet.\n\nAt her farmhouse French doors before a Halloween dance party, she laughs toward a friend off camera while choosing music on her pink-cased phone. Clutch hangs by handle from other wrist; wear selected silver teardrops and bracelet. Cream timber walls, satur",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "er while stepping through her farmhouse garden gate for a campus-themed outing; adjusts selected headband with free hand. Cream clapboard, pink door/lavender shutters behind, rooted wildflowers and retriever safely in fenced garden. Full-body candid side view from inside garden a",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "ploma or stole.\n\nOn her level farmhouse brick terrace she adjusts the square graduation cap with one hand while laughing toward the photographer; selected clutch held by handle in other hand. Wear pearl drops and tennis bracelet, gown with satin heels visible beneath parted hem. ",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "e. Architecture is a proposed farmhouse scene, not verified actual-home likeness. Dog remains unnamed. Preserve exact reference hues, seams, fabric, lengths, hardware and quantities. Directional window light, rich tactile detail and grounded shadows; no CGI, recolouring or sparkl",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "he walks down the level paved farmhouse side path toward her ride for a night out, smiling over shoulder toward camera. Carry clutch in one hand, selected bracelet on wrist; wear teardrop earrings. Pink Dutch door, lavender shutters, cream clapboard and rooted wildflowers behind;",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": " the selected sleeve from her farmhouse mudroom bench as she leaves for work; matching pouch inside, free hand holding glitter pink tumbler with lavender straw. Cream beadboard, lavender cupboard, pink door, useful controller-motif mat clear of walkway, lilacs in water on wall sh",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "her headband in a full-height farmhouse entry mirror before a preppy costume outing, phone lowered in other hand. Cream beadboard, broad lavender runner, hot-pink embroidered cushion on real bench, lilacs in water on shelf and pink door behind. Full-body side view from doorway at",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": " parked car door on the level farmhouse driveway, selected pink tote over shoulder; other hand steadies tote strap. Coat open over long pink ribbed dress, selected paperclip necklace at neckline. Cream clapboard, pink door, lavender shutters and rooted lilacs behind, retriever sa",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C29",
+    "requirement": "Specific reproducible details such as useful doormat, shutters and physical architecture; vary scene/action rather than repeating porch.",
+    "source_evidence": [
+      {
+        "message_id": "01a113d3-e0c5-7532-83cc-57c636cf34b6",
+        "turn_id": "01a113d3-de4b-7623-8e7f-4e65aa0c5b58",
+        "quote": "you took what i said about the extras too literal. tommy is a maximalist. dont ONLY list the xtras i gave you, i was just giving examples. lets go back to this one. give me a final SUPER KUTE TOMMY STYLE styled flatlay prompt. then optimize the lifestyle prompt. you cant just repeat the same scene every time. and it also needs to be spefic and repeatiable... a niche doormat, cute shutters, YOU NEED TO BE DETAILED AND MAKE IT REAL.\n\nbasic is good.\ngive me one final styled and lifestyle prompt each"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "She steps down the level brick farmhouse path carrying her selected laptop sleeve under her arm, pouch inside; one hand adjusts headband, other holds glitter pink tumbler with lavender straw. Suit, tee and pumps clearly worn. Cream clapboard, candy-pink door, lavender shutters, rooted lilacs and retriever at fence. Full-body candid front-three-quarter shot from garden at hip height, 35mm; real stride and face readable. Personal vibrant home, not corporate lawyer stock photo.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": "At her farmhouse French doors before a Halloween dance party, she laughs toward a friend off camera while choosing music on her pink-cased phone. Clutch hangs by handle from other wrist; wear selected silver teardrops and bracelet. Cream timber walls, saturated lavender curtain, hot-pink embroidered cushions, lilacs in water on real sideboard, warm party lights in doorway. Full-body side-three-quarter shot from adjoining hall at waist height, 50mm; dress hem, sheer sleeves, earrings and both heels clear. No drink in hand, curtain-pulling pose or luxury hotel.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "She puts the selected grid tote over one shoulder while stepping through her farmhouse garden gate for a campus-themed outing; adjusts selected headband with free hand. Cream clapboard, pink door/lavender shutters behind, rooted wildflowers and retriever safely in fenced garden. Full-body candid side view from inside garden at chest height, 35mm. Show polo collar, real denim skirt length and both sneakers. No tumbler or gate-pose copy from benchmark.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "On her level farmhouse brick terrace she adjusts the square graduation cap with one hand while laughing toward the photographer; selected clutch held by handle in other hand. Wear pearl drops and tennis bracelet, gown with satin heels visible beneath parted hem. Cream clapboard, lavender shutter, candy-pink door and rooted lilacs; retriever sits to side. Full-body front view from across terrace at chest height, 50mm. No bows, diploma, cap toss, year text or drink.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "She sets her rosette clutch on a real lavender-painted dining chair before dinner, glancing toward someone beside the camera. Wear silver teardrops and bracelet. Farmhouse dining room with cream timber walls, hot-pink woven napkins, lilacs in water on table and lavender curtain; warm evening window light. Full-body candid side-three-quarter view from hall at hip height, 50mm; knit texture, calf hem and both silver heels clear. No satin slip, added coat, drink or generic restaurant.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": "She walks down the level paved farmhouse side path toward her ride for a night out, smiling over shoulder toward camera. Carry clutch in one hand, selected bracelet on wrist; wear teardrop earrings. Pink Dutch door, lavender shutters, cream clapboard and rooted wildflowers behind; warm lights inside. Full-body rear-three-quarter view with face turned visible from path corner at waist height, 35mm. Separate cropped top and long skirt, real ribs and shoes readable. No tumbler, anonymous city or luxury venue.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "She lifts the selected sleeve from her farmhouse mudroom bench as she leaves for work; matching pouch inside, free hand holding glitter pink tumbler with lavender straw. Cream beadboard, lavender cupboard, pink door, useful controller-motif mat clear of walkway, lilacs in water on wall shelf. Full-body front view from hall at eye level, 35mm. Relaxed blazer, white tee, beige wide legs and both black loafers clear. No desk outfit display or generic corporate office.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "She bends slightly to check her headband in a full-height farmhouse entry mirror before a preppy costume outing, phone lowered in other hand. Cream beadboard, broad lavender runner, hot-pink embroidered cushion on real bench, lilacs in water on shelf and pink door behind. Full-body side view from doorway at hip height, 50mm; directly visible face and entire outfit, mirror secondary with plausible reflection. Plaid skort, hot-pink socks with white stripes and both loafers clear. No drink, book stack or pearl necklace.",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "She opens her parked car door on the level farmhouse driveway, selected pink tote over shoulder; other hand steadies tote strap. Coat open over long pink ribbed dress, selected paperclip necklace at neckline. Cream clapboard, pink door, lavender shutters and rooted lilacs behind, retriever safely inside fence. Full-body front-three-quarter view from beyond bonnet at waist height, 50mm; flared cuffs/hem, face and both pumps clear. No tumbler or generic luxury city.",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C30",
+    "requirement": "Change angle/framing/POV materially from styled; adding avatar to same photo fails.",
+    "source_evidence": [
+      {
+        "message_id": "01a11792-7256-77e3-aa9d-76c16f4042f3",
+        "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+        "quote": "for the pretty wicked styled and lifestyle all you did was add my avatar... its literally the same phtoo otherwsie. its needs to be different angle, different framing, different pov, something"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/01-lifestyle.txt",
+        "evidence": "te lawyer stock photo.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/02-lifestyle.txt",
+        "evidence": " pose or luxury hotel.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/03-lifestyle.txt",
+        "evidence": "e copy from benchmark.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/05-lifestyle.txt",
+        "evidence": "s, year text or drink.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/06-lifestyle.txt",
+        "evidence": "or generic restaurant.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/07-lifestyle.txt",
+        "evidence": " city or luxury venue.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/08-lifestyle.txt",
+        "evidence": "eric corporate office.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/09-lifestyle.txt",
+        "evidence": "ack or pearl necklace.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "LIFESTYLE",
+        "prompt": "prompts/10-lifestyle.txt",
+        "evidence": "r generic luxury city.\n\nUse a new action, camera position and framing, not an avatar pasted into STYLED. Keep face, complete outfit, shoes and product details readable; plausible hands, contact, fit, grounded feet and real fabric drape. Architecture is a proposed farmhouse scene,",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C31",
+    "requirement": "Objects/decor/car BASIC is inviting curated contextual flatlay; STYLED actual use setting without avatar; LIFESTYLE avatar engaged naturally. Does not override clothing.",
+    "source_evidence": [
+      {
+        "message_id": "01a11763-4b23-7f41-857d-c7374b55757f",
+        "turn_id": "01a1175e-4a53-7c80-bc51-86099156ce76",
+        "quote": "ok so i actually dont like the 'basic' flatlays weve been doing for decor/car/items/etc... i really like the 'styled' halloween flatlay as the basic one, then the 'lifestyle' flaylat is actually the styled image and then the lifestyle image actually has an avatar."
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Non-fashion object/decor/car recipe is out of scope; every active look is clothing."
+  },
+  {
+    "id": "C32",
+    "requirement": "Scene-appropriate attire and activity, e.g. arrival/departure, trick-or-treat door interaction, decorating entryway.",
+    "source_evidence": [
+      {
+        "message_id": "01a11764-2848-70a1-9297-448ba6984c7b",
+        "turn_id": "01a1175e-4a53-7c80-bc51-86099156ce76",
+        "quote": "so these 2 would be your basic flatlay and styled flatlay, then there would be a lifestyle one with tommy kate in it naturally... either leaving or coming (in scene appropirate attire) or maybe answering the door for trick or treaters, or actively decorating the entryway"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Non-fashion installation activities are out of scope; use each clothing lifestyle action instead."
+  },
+  {
+    "id": "C33",
+    "requirement": "Separate category geometry and input-specific bases; clothing is not office items. Client answers tune the appropriate base.",
+    "source_evidence": [
+      {
+        "message_id": "01a1119b-f841-7672-857d-9c16672ed9fb",
+        "turn_id": "01a1119b-f6ee-7993-913b-cd47df0a8ce7",
+        "quote": "give me the prompt. im going to run it on free until you get it right. we know this part of automatiuon works, we need to fix your prompts now. we need a repeatable one for each category (because a flatlay for clothes doesnt work for a flat lay for office items). we need a set of base prompts that get tweaked slightly based on the client's answer/aestheic."
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0F5GP8LRG; 3=B0CYC5GDYP; 4=B077XR7BPC; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0G9M56X8R; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0D2TDCYGC; 3=B0DQ9SZP5J; 4=B06XW1JQ1L; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B01HZCRRHE; 3=B07X3RHT9N; 4=B087WTKJ9V; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0DNF5KFCL; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0CSJYGW3P; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0FP91B1MB; 3=B0CYC5GDYP; 4=B085MBGX9J; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0GCFLJWZC; 3=B0CYC5GDYP; 4=B0D4YH97WZ; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0946Z9745; 3=B0F6T19M8S; 4=B077XR7BPC; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C34",
+    "requirement": "Do not apply object treatment instructions across clothing.",
+    "source_evidence": [
+      {
+        "message_id": "01a118fe-4004-7ee1-8036-faae0a5609b5",
+        "turn_id": "01a118fe-3f14-7023-905d-775f33e7f89d",
+        "quote": "why are you confusing the object instructions with the clothing instructions? IS THAT WHY YOUVE BEEN LAYING EVERY OUTFIT ON A GODDAMN BED LIKE SOMEONES MOM???????????? I SAID OBJECTS ONLY!!!!!!!!!!!!!!!!!!! IM SO FUCKING SICK OF YOU TAKING HALKF OF MY MOTHERFUCKING DIRECTONS AND APPLYING THEM ACOSS THE BOARD. WHAT THE FUCK IS WRONG WITH YOU!!!!!!!!!!!!!!!!!!!!!!"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "STYLED",
+        "prompt": "prompts/01-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0F5GP8LRG; 3=B0CYC5GDYP; 4=B077XR7BPC; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "STYLED",
+        "prompt": "prompts/02-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0G9M56X8R; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "STYLED",
+        "prompt": "prompts/03-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0D2TDCYGC; 3=B0DQ9SZP5J; 4=B06XW1JQ1L; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "STYLED",
+        "prompt": "prompts/05-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B01HZCRRHE; 3=B07X3RHT9N; 4=B087WTKJ9V; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "STYLED",
+        "prompt": "prompts/06-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0DNF5KFCL; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "STYLED",
+        "prompt": "prompts/07-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0CSJYGW3P; 3=B07TG9Q6JB; 4=B0DG2DVJVK; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "STYLED",
+        "prompt": "prompts/08-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0FP91B1MB; 3=B0CYC5GDYP; 4=B085MBGX9J; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "STYLED",
+        "prompt": "prompts/09-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0GCFLJWZC; 3=B0CYC5GDYP; 4=B0D4YH97WZ; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "STYLED",
+        "prompt": "prompts/10-styled.txt",
+        "evidence": "stic directly overhead STYLED clothing outfit flatlay, portrait 2:3, person-free and unlabelled.\n\nAttachment 1: STYLED richness/fabric only. Ignore its products, bed, bow earrings, duplicate gloss and oblique view. Retail attachments 2=B0946Z9745; 3=B0F6T19M8S; 4=B077XR7BPC; 5=B0",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C35",
+    "requirement": "Choose pieces that look good together, have good reviews and make sense for use; do not select just because pink or expensive.",
+    "source_evidence": [
+      {
+        "message_id": "01a118b1-f4f9-72e0-a91e-c11151a372b4",
+        "turn_id": "01a118b1-f439-7da0-9fc8-991e30b62d47",
+        "quote": "omgggg stop taking every direction to the most literal extreme!!!! if it doesnt have good reveiws dont inlcude it. dont pick just because its expensive. LIKE CAN YOU PLEASE JUST BE FUCKING MINDFUL OF WHAT YOURE PUTTING TOGETHER FOR EACH LOOK AND STOP JUST TRYING TO CHECK ONE SINGLE FUCKING BOX AT A TIME!!!!"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Per-product dated review/quality notes preserved; current quality, wear testing and stock NOT established."
+  },
+  {
+    "id": "C36",
+    "requirement": "Do not satisfy one box at a time; evaluate look cohesion, product quality, price/value, reviews, material and occasion together.",
+    "source_evidence": [
+      {
+        "message_id": "01a118b1-f4f9-72e0-a91e-c11151a372b4",
+        "turn_id": "01a118b1-f439-7da0-9fc8-991e30b62d47",
+        "quote": "omgggg stop taking every direction to the most literal extreme!!!! if it doesnt have good reveiws dont inlcude it. dont pick just because its expensive. LIKE CAN YOU PLEASE JUST BE FUCKING MINDFUL OF WHAT YOURE PUTTING TOGETHER FOR EACH LOOK AND STOP JUST TRYING TO CHECK ONE SINGLE FUCKING BOX AT A TIME!!!!"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Per-product fit, fabric, durability and occasion caveats retained; no arbitrary rating threshold."
+  },
+  {
+    "id": "C37",
+    "requirement": "Use real selected products and records when sourcing test requested; do not substitute another fake list.",
+    "source_evidence": [
+      {
+        "message_id": "01a11712-832f-7f71-8155-e8271d15210b",
+        "turn_id": "01a11712-8202-7481-b0fe-7e67d59b2b81",
+        "quote": "well you said we needed to do a full sourcing test correct? as well as make sure the prompts are good and the blog is good and everything is published, correct? and i just recommended the 3 options for the client inputting their visual guide. we need to test that. SO WHY ARE YOU MAKING A FAKE LIST???? WE LITERALLY DID THAT LAST NIGHT!!!!!"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Original selections retained except conflicting graduation bows, explicitly replaced. Short lists completed using sourced jewellery/headband with actual included reference photos and separate links; inventory changes logged."
+  },
+  {
+    "id": "C38",
+    "requirement": "Keep product links; full packet, not prompts-only with missing destinations.",
+    "source_evidence": [
+      {
+        "message_id": "01a1187f-c0da-78d1-9f0e-9dc34bbdc392",
+        "turn_id": "01a1187d-eb40-7992-ae64-3148478e7ab8",
+        "quote": "i need the full packet,,,,, where tf did my product links go???? come the fuck ON!!!"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Every look has product, affiliate and recorded Idea List destinations in HTML/text; missing values explicitly recorded."
+  },
+  {
+    "id": "C39",
+    "requirement": "Photos must be supplied through usable local files and clickable links, not inaccessible cloud paths/filenames only.",
+    "source_evidence": [
+      {
+        "message_id": "01a11925-748c-7940-b5b8-8e375a599a24",
+        "turn_id": "01a11925-73a7-7253-8e20-2f64d39dc78c",
+        "quote": "[https://drive.google.com/file/d/142BjIqjHd-GXAe0Ht0LD89O3AOrHzcms/view](https://drive.google.com/file/d/142BjIqjHd-GXAe0Ht0LD89O3AOrHzcms/view)\n\nIT GAVE IT TO ME LIKE THIS. DOES THIS LOOK LIKE IT HAS LINKS FOR ME TO GET THE PHOTOS???? WHAT THE FUCK ARE YOU DOING"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Individual source photos included unchanged, downloadable from standalone HTML and supplied ZIP."
+  },
+  {
+    "id": "C40",
+    "requirement": "Easy-to-find local files and minimum handoff steps; do not offload correction to customer.",
+    "source_evidence": [
+      {
+        "message_id": "01a11945-5bb8-7cf0-8b75-159edeb2f228",
+        "turn_id": "01a1193e-8b6f-7181-b3b8-d4ac0e0b6a15",
+        "quote": "STOP GIVING ME SHIT I CANT FIND ON MY COMPUTER OR HAVE TO GO THRPUGHT A THOUSAND STEPS"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "One standalone HTML, ZIP and copy-paste text delivered in outputs."
+  },
+  {
+    "id": "C41",
+    "requirement": "Do not ask customer to edit repair prompt you should correct yourself.",
+    "source_evidence": [
+      {
+        "message_id": "01a11902-39ad-7b70-ae9c-6a727d23a685",
+        "turn_id": "01a11902-3856-7d20-b5e6-7bcb535d3d89",
+        "quote": "OH I KNOW YOU DIDNT JUST TELL  ME TO EDIT YOUR GODDAMN PROMPT"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Repair performed directly; no customer handoff editing."
+  },
+  {
+    "id": "C42",
+    "requirement": "Current sprint request is updated packet and prompts only; do not spend/generate unless newly requested.",
+    "source_evidence": [
+      {
+        "message_id": "01a11831-6bb0-7cc0-b0cf-a2e81acf7bd5",
+        "turn_id": "01a1182b-9358-7fd1-9399-abb619debe94",
+        "quote": "<send_user_message_question_reply>\n[{\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_sjwwyjyADjtihFPgrjYk1zJE\\\",0]\",\"question\":\"For the sprint, do you want the updated packet with sourced products and ready-to-run prompts, or finished images generated here too? I’m checking duplicates and preparing the packet either way.\",\"answer\":\"Updated packet and prompts only\"}]\n</send_user_message_question_reply>"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "No image generation, paid jobs, publishing, scheduling, messaging or automation actions."
+  },
+  {
+    "id": "C43",
+    "requirement": "Proactively disclose and use simpler suitable available routes; native in-chat generation preferred over unnecessary Higgsfield/browser credits.",
+    "source_evidence": [
+      {
+        "message_id": "01a1173b-abea-71d0-8d6e-00a34436f8e8",
+        "turn_id": "01a1173b-aae2-7d32-9a48-6a8cf36ed751",
+        "quote": "better... but wait a second... WHY are we using higgsfield instead of chatgpt just making them inside the chat?"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Only prompt repair executed. Native ChatGPT remains preferred if generation is separately requested."
+  },
+  {
+    "id": "C44",
+    "requirement": "Recommend better tool/plugin when materially more efficient, not merely list tools.",
+    "source_evidence": [
+      {
+        "message_id": "01a11410-716b-74f2-a97f-db8097af4944",
+        "turn_id": "01a11410-7098-70b2-b001-913d83708e44",
+        "quote": "right, but im saying if theres an obviously better tool or plugin than what we're using i want you to tell me"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Local file processing and read-only sourcing route used; no paid browser-heavy tooling."
+  },
+  {
+    "id": "C45",
+    "requirement": "Ask browser-vs-manual choice for credit-heavy client setup operations; user can choose manual and return.",
+    "source_evidence": [
+      {
+        "message_id": "01a10fbe-b920-77a2-b52a-b058d1bcc293",
+        "turn_id": "01a10fbe-b84e-7693-bbe6-d9d85d773ec1",
+        "quote": "so for anything like this you need to ask if theyd like you to do it for them through the browser or have them do it manually. normally id have you do it but im low on credits so ill do it and come back"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Credit-heavy client setup is out of scope; no setup browser route executed."
+  },
+  {
+    "id": "C46",
+    "requirement": "Three visual-guide routes: thorough mock lists, vibe images used to curate, quick start with fewer questions and greatest uncertainty. Validate rather than claiming all routes tested.",
+    "source_evidence": [
+      {
+        "message_id": "01a1170a-dd5d-7cd3-980e-fe07a511f6c5",
+        "turn_id": "01a1170a-da0b-7682-9a05-a2976f7f2b9b",
+        "quote": "ok lets do something different.... have the client either create a couple different mock lists in different categories (most thorough, but most hands on and choices... not for people like me), or they can show you pictures of their vibes (like below) and you create similar lists/looks/vibes, and maybe also have a 'quick start' option that asks a shorter set of questions and then just takes off running (the fastest, but MOST unreliable).\n\nhere are sample images. cresate 2 separate halloween lists and their prompts"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Three intake paths retained in governing record; no claim of tested intake generalization."
+  },
+  {
+    "id": "C47",
+    "requirement": "Curate relevant options to client vibe instead of blind Amazon searching and transferring every choice back to client.",
+    "source_evidence": [
+      {
+        "message_id": "01a116b2-2f93-7090-8c5f-6b512b220cf2",
+        "turn_id": "01a116b2-2cf2-7d90-9fb7-aa3a54731168",
+        "quote": "is there a way to scroll/search my vibe only? i cant just blindly search on amazon, that was the whole point of this automation- to remove the choices that prevent me from ever actually posting. can you find me some influencer lists or something relevelnt to me i can go through>?"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "All active looks have 5–8 curated shopping purchases. Coherent jewellery/headband additions complete the outfit; quantities and changed selections are explicit."
+  },
+  {
+    "id": "C48",
+    "requirement": "Continue authorized setup autonomously; do not require customer to prompt every step.",
+    "source_evidence": [
+      {
+        "message_id": "01a11006-af51-7f40-b53f-a720d8b6ef4e",
+        "turn_id": "01a11006-ae64-7ee1-8eb3-94604ebcd067",
+        "quote": "ok. now what?? this is a setup, IM NOT SUPPOSED TO BE PROMPTING YOU! CHANGE IT, BOW"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Authorized packet repair carried through delivery and commit."
+  },
+  {
+    "id": "C49",
+    "requirement": "Fix, seek actual necessary permission, or give exact recoverable action; do not end at 'setup remains blocked'.",
+    "source_evidence": [
+      {
+        "message_id": "01a10fb2-9367-7d82-ace5-506f133c1439",
+        "turn_id": "01a10fb2-928f-7372-ba5d-4169ebbdb1ca",
+        "quote": "dont ever answer the client like that. either fix it and contionue on, ask for permission to fix it, or tell me how to fix it. do not ever say setup remains blocked and end your response there."
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Local bundle supplies missing history/photos; no private-cloud-file blocker imposed."
+  },
+  {
+    "id": "C50",
+    "requirement": "Questions must be explicit and visible; do not bury in working output.",
+    "source_evidence": [
+      {
+        "message_id": "01a11208-f412-7f60-906a-24e0eb06c670",
+        "turn_id": "01a11208-f357-7981-af68-4ada95399c80",
+        "quote": "i just noticed youre question about the dog got buried in the minized command/working text. if you ever have a question it MUST BE BLATENLTLY ASKED AT THE END"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "No new clarification needed for repair; unresolved evidence plainly displayed."
+  },
+  {
+    "id": "C51",
+    "requirement": "Cardigan visual set explicitly approved, but approval is one look's visual direction, not product fidelity, all categories or unattended capability.",
+    "source_evidence": [
+      {
+        "message_id": "01a113f4-300c-7611-87c2-517bfd06bf7b",
+        "turn_id": "01a113f4-2e31-7bc3-89a3-5f1b29c44417",
+        "quote": "YESSSSS I LOVE IT!!!!! ok what next>>"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Historical approval is one cardigan mock visual direction; no product fidelity, client or release pass claimed."
+  },
+  {
+    "id": "C52",
+    "requirement": "Small bow-earring defect did not require regeneration for that historical mock; user's scoped acceptance did not authorize future bows.",
+    "source_evidence": [
+      {
+        "message_id": "01a1149c-d53f-7313-8f67-e41ce40de4be",
+        "turn_id": "01a1149c-d440-7db1-b017-f75a8b785547",
+        "quote": "its not a big enough deal to regenerate. thank you for noticing and adjusting accordingly. next step please"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Bow-earring exception is historical cardigan output only; future benchmarks explicitly exclude it."
+  },
+  {
+    "id": "C53",
+    "requirement": "Mock publisher test only, no live release; historical test permission does not authorize production.",
+    "source_evidence": [
+      {
+        "message_id": "01a1149e-6b4f-7660-b57a-1fea6541cfaf",
+        "turn_id": "01a1149e-6a82-7502-904c-d8e6c97c59bd",
+        "quote": "2 but ONLY if its for testing and doesnt go live anywhere"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "No private publisher test or live release run."
+  },
+  {
+    "id": "C54",
+    "requirement": "Read all requirements and trace results; do not call incomplete work done or static rule text a functioning visual guard.",
+    "source_evidence": [
+      {
+        "message_id": "01a1186c-38a5-78e3-8928-3a85f9da64fd",
+        "turn_id": "01a11869-7f73-7b22-8854-6fee6a1bc0fc",
+        "quote": "ok so let me rephrase- HOW THE FUCK CAN YOU TELL ME THE WORKFLOW WILL CATCH IT??????? WE HAVE THE GODDAMN WORK FLOW AND ITS NOT FUCKNG CATCHING IT!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Saved-length, hash, attachment, inventory and matrix checks are static only; no functioning visual guard claimed."
+  },
+  {
+    "id": "C55",
+    "requirement": "Sourcing, prompt output quality, blog behavior and publishing all need real verification; visual intake options also need tests.",
+    "source_evidence": [
+      {
+        "message_id": "01a11712-832f-7f71-8155-e8271d15210b",
+        "turn_id": "01a11712-8202-7481-b0fe-7e67d59b2b81",
+        "quote": "well you said we needed to do a full sourcing test correct? as well as make sure the prompts are good and the blog is good and everything is published, correct? and i just recommended the 3 options for the client inputting their visual guide. we need to test that. SO WHY ARE YOU MAKING A FAKE LIST???? WE LITERALLY DID THAT LAST NIGHT!!!!!"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Full workflow/blog/publishing test is outside current prompt-only scope and remains unverified."
+  },
+  {
+    "id": "C56",
+    "requirement": "Need a contrasting client (plain Jane office girl) and category-specific adaptation; Tommy Kate approval alone is insufficient.",
+    "source_evidence": [
+      {
+        "message_id": "01a113fa-0f75-7f13-a5de-82aaf9c5ecfb",
+        "turn_id": "01a113fa-0eb3-7792-83e6-dfe8c251f407",
+        "quote": "i'll do that after we finish tommy kate, we'll do a plain jane office girl mock client. i want to continue with the tommy kate test run to work out all the kinks from start to finish.\n\nhave you done any of the jobs claude was supposed to do in this? what exactly are claudes jobs in the wys storefront workflow? can a client do this entire thing in chatgpt OR claude OR a customized ,ix of box?"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Contrasting-client test is outside Packet 1 scope; no cross-client pass claimed."
+  },
+  {
+    "id": "C57",
+    "requirement": "Offer was announced for presale; need accurate deliverable, not unsupported assurance or speculation that sale-ready.",
+    "source_evidence": [
+      {
+        "message_id": "01a1192c-6996-7022-9268-58a471256a73",
+        "turn_id": "01a1192c-68b6-7762-884d-9e6fd83d7414",
+        "quote": "and then as soon as a client has different catergories than me youre going to FUCK THAT UP JUST AS BAD, like i cannot possibly work through every single inclsuion and exclusion for every single category. im literally having a fucking panic attack right now because i announced something that I CANNOT SELL AND I DONT EVER SEE ME TRUSTING YOU AND THIS PROCESS TO BE ABLE TO SELL IT, SO NOW WHAT THE FUCK DO I DO????????????????"
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "No sale-ready or launch-readiness claim."
+  },
+  {
+    "id": "C58",
+    "requirement": "Actual coded website with inserted photos; shared landing/categories/templates and future pages; no image-generated webpage.",
+    "source_evidence": [
+      {
+        "message_id": "01a11798-2729-73a1-8376-30c8062d6fd8",
+        "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+        "quote": "are those titles just examples? they look ai as heck. i want the website to be made like a WEBSITE, with you rphotos added. i dont an ai generated webpage, i want an ai created webspage. should codex/work do it or claude/code"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Live blog/site construction is out of scope; full staged article copy retained."
+  },
+  {
+    "id": "C59",
+    "requirement": "Main Lifestyle plus existing/future pages explicitly requested; preserve meaningful page copy and shopping destinations.",
+    "source_evidence": [
+      {
+        "message_id": "01a1179e-339e-7411-9311-9beb727b52b1",
+        "turn_id": "01a1179e-32f4-7d53-8b7d-21fe404a0175",
+        "quote": "is this going to set the MAIN lifestyle page AND all the existing/future pages?"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Existing slugs and copy retained; main Lifestyle and future page changes out of scope."
+  },
+  {
+    "id": "C60",
+    "requirement": "Avoid AI-sounding invented headline formula; use tasteful concise natural copy. Historical approved label text is preserved for its original look.",
+    "source_evidence": [
+      {
+        "message_id": "01a11798-2729-73a1-8376-30c8062d6fd8",
+        "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+        "quote": "are those titles just examples? they look ai as heck. i want the website to be made like a WEBSITE, with you rphotos added. i dont an ai generated webpage, i want an ai created webspage. should codex/work do it or claude/code"
+      }
+    ],
+    "status": "STATIC_COVERAGE_ONLY",
+    "per_look": [
+      {
+        "look": 1,
+        "role": "BASIC",
+        "prompt": "prompts/01-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"case closed\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK LAWYER EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPres",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 2,
+        "role": "BASIC",
+        "prompt": "prompts/02-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"sparkle plans\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK PARTY EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPre",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 3,
+        "role": "BASIC",
+        "prompt": "prompts/03-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"campus crush\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK CAMPUS EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPre",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 5,
+        "role": "BASIC",
+        "prompt": "prompts/05-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"she did it\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK GRADUATION EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nP",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 6,
+        "role": "BASIC",
+        "prompt": "prompts/06-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"dinner in pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE DATE NIGHT EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPr",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 7,
+        "role": "BASIC",
+        "prompt": "prompts/07-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink on pink\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE MATCHING SET EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPr",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 8,
+        "role": "BASIC",
+        "prompt": "prompts/08-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"pink at work\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE WORKDAY EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPreserv",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 9,
+        "role": "BASIC",
+        "prompt": "prompts/09-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"cardigan & plaid\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PREPPY PINK EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n",
+        "status": "STATIC_TEXT_PRESENT"
+      },
+      {
+        "look": 10,
+        "role": "BASIC",
+        "prompt": "prompts/10-basic.txt",
+        "evidence": "tch or unselected jewellery.\n\nFinished readable label above products: exactly \"on my way\" in thick hot-pink brush script spanning about 75% of width; exactly \"THE PINK COMMUTE EDIT\" below in crisp black uppercase sans serif. Reserve top 15%, phone-readable, no obstruction.\n\nPrese",
+        "status": "STATIC_TEXT_PRESENT"
+      }
+    ]
+  },
+  {
+    "id": "C61",
+    "requirement": "Do not export old rejected launch images. Select newly improved approved work appropriate to new offer.",
+    "source_evidence": [
+      {
+        "message_id": "01a118c4-a682-7392-991f-6fef0a2fb7d4",
+        "turn_id": "01a118c0-9e3f-7202-8d50-941babd06178",
+        "quote": "no, not the EXISTING LAUNCH IMAGES"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Launch-image export is out of scope; original approved cardigan references preserved."
+  },
+  {
+    "id": "C62",
+    "requirement": "WYS promotion represents category breadth, not only six Halloween decor photos.",
+    "source_evidence": [
+      {
+        "message_id": "01a1193c-15f2-7763-80ea-605087cd90ea",
+        "turn_id": "01a1193c-0fae-7ea3-89e8-fe1d21c8d7cc",
+        "quote": "did you ONLY give it the fucking halloween images???????????????????????????? IM GOING TO LOSE MY FUCKING SHIT ON YOU WHY ARE YOU DOING THIS TO ME????????????????? FUCKING ANSWER ME!!!! WHY!!!! WHY ME??? WHY THE FUCK ARE YOU DOING THIS TO ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Launch campaign category breadth is out of scope, not reduced to this packet."
+  },
+  {
+    "id": "C63",
+    "requirement": "Save assets non-destructively under assets/wys-launch-promo with manifest, roles, filenames, dimensions, rights; do not alter images or create designs in export task.",
+    "source_evidence": [
+      {
+        "message_id": "01a118c0-9f1a-7521-aa30-3cbc6f936082",
+        "turn_id": "01a118c0-9e3f-7202-8d50-941babd06178",
+        "quote": "For the While-You-Sleep Storefront™ launch campaign, select the strongest optimized images for premium Canva promotional designs.\n\nSave the selected images in the TDIE GitHub repository under `assets/wys-launch-promo/`, without overwriting existing files.\n\nInclude a manifest identifying:\n\n- The best hero image for the presale announcement\n- Supporting images for additional promotional flyers\n- Images suitable for the free preview guide\n- Original filenames, dimensions, and any usage restrictions\n\nCommit the assets and return the branch name, commit SHA, and folder path.\n\nDo not alter the images or create new promotional designs. The Canva designer will handle layout, typography, and compositing."
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Separate launch export task out of scope; references unchanged and hashes recorded."
+  },
+  {
+    "id": "C64",
+    "requirement": "Actual new landing page linked from flyers with Join the Waitlist and Look Inside; visual brief needed and approved image scope must be accurate.",
+    "source_evidence": [
+      {
+        "message_id": "01a1193e-8f8d-70d1-9192-8ff081ef72f6",
+        "turn_id": "01a1193e-8b6f-7181-b3b8-d4ac0e0b6a15",
+        "quote": "Got it. You want a brand-new landing page, the one the flyers send people to, with **Join the waitlist** and **Look inside** on it. I'm building that now with your six approved photos and will show you screenshots before anything goes live.\n\nSources checked: `ops/cloud-kit/TDIE_DESIGN_RULES.md` (THE LOOK), `src/styles/sales-typography.css` and `mobile.css` limits, the photo handoff notes for the six approved photos (README.md), `ops/canon/canon.json` Decision 123, and MailerLite (the waitlist form, which already passed a test signup).\n\nThat's the new landing page, the one the flyers send people to: **thedigitalincomeedit.com/while-you-sleep**. The screenshots are phone-1-top, phone-2-middle, phone-3-waitlist, and desktop-full.\n\n**What's on it:**\n\n- **Hot pink hero:** \"You pick the vibe. The system builds the look.\" Your doorway photo sits in a silver arch, with the coffee bar shot tucked in front and a lavender \"1 look, 3 photos\" sticker. A \"Presale opens Sunday · Oct 11 · 2 PM ET\" badge sits at the top, then the **Join the Waitlist** and **Look Inside** buttons.\n- **\"From a pile of picks to a room people want to shop\":** both looks shown as The picks → Styled → Lifestyle.\n- **Three numbered steps:** You pick the vibe → The system builds the look → You approve, it's scheduled.\n- **Pink waitlist section:** the signup box plus a \"Want to see more first? Look inside\" link.\n\n**What's left out on purpose:** no prices, no income claims, no \"posts by itself\" claims. A small line says the photos are styling illustrations, as the photo rules require.\n\nI checked it at three phone and desktop widths. Nothing spills off the side. The dark menu bar crossing the middle of the desktop screenshot is the site's sticky menu caught mid-scroll by the screenshot tool, not part of the page.\n\n**Not live yet.** The **Look Inside** button points to a page I haven't built yet, so the landing page can't go live until that exists. I'll build that next.\n\nThis matches `TDIE_DESIGN_RULES.md` (Newsreader upright headlines, Inter everywhere else, no bows, no brown, no beige) and Decision 123 (members-only presale, no prices).\n\n**My one question:** Is this the look you want for the landing page?\n\n\n\n\n\n\n\n\n\nGIVE ME A PROMPT AND SOME GODDAMN VISUAL DIRECTION BECUASE YOU KNOW EXACTLY WHAT THE FUCK I WANT BUT FOR SOME REASON YOU WANT TO FUCKING RUIN ME"
+      }
+    ],
+    "status": "OUT_OF_SCOPE",
+    "per_look": [],
+    "document_evidence": "Landing-page build is out of scope."
+  },
+  {
+    "id": "C65",
+    "requirement": "Preserve complete specifications in memory/repo and handoff; do not summarize away categorical differences.",
+    "source_evidence": [
+      {
+        "message_id": "current-recovery-request",
+        "turn_id": "current-recovery-request",
+        "quote": "good, now go BACK THROUGH and FIND EVERY MOTHER FUCKING INSTRUCTION/CLARIFICATION/DETAIL/DIRECTION/VIBE LITERALLY ANYTHING. LIKES AND DISLIKES, YES'S AND NO'S, COMMIT IT TO THE MEMORY AND REPO AND EVERYFUCKNIG WHERE ELSE I DONT KNOW ABOUT AND GIVE ME AN ACCURATE MOTHERFUCKING HANDOFF AND PROMPT TO FIX THE LEGALLY BLONDE SPRINT PROMPTS."
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "Governing records retained and AGENTS/WYS memory entrypoints link to them."
+  },
+  {
+    "id": "C66",
+    "requirement": "Customer chose free/manual while prompt calibration fails; paid jobs paused, old comparisons not resumed.",
+    "source_evidence": [
+      {
+        "message_id": "01a1119b-f841-7672-857d-9c16672ed9fb",
+        "turn_id": "01a1119b-f6ee-7993-913b-cd47df0a8ce7",
+        "quote": "give me the prompt. im going to run it on free until you get it right. we know this part of automatiuon works, we need to fix your prompts now. we need a repeatable one for each category (because a flatlay for clothes doesnt work for a flat lay for office items). we need a set of base prompts that get tweaked slightly based on the client's answer/aestheic."
+      }
+    ],
+    "status": "DOCUMENTED",
+    "per_look": [],
+    "document_evidence": "No paid generation or old comparison resumed; prompts only."
+  }
+]

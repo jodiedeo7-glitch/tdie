@@ -35,3 +35,5 @@ Verify each actual write by supported readback and each live claim against curre
 Handle small failures quietly. Report only verified completion or one genuine blocker requiring Jodie, with the exact action needed. Do not tell her to perform anything that available authorized tools can complete.
 
 Packet 1 V9 document repair: follow `ops/wys-memory/README.md` and `ops/wys-memory/2026-10-07-recovered-spec/GOVERNING-SPEC.md` first. Latest repair and evidence: `ops/private/wys-board-test-2026-10-06/halloween-sprint-restart-20261007/v9-source-backed-repair/`. Static prompt/document coverage is not generated-image or client-release approval.
+
+Packet 1 V10 corrective repair: read `ops/private/wys-board-test-2026-10-06/halloween-sprint-restart-20261007/v10-complete-looks-creative-repair/LATEST-DIRECT-CORRECTIONS.txt` alongside the governing record. V9 was rejected for three-item lists, sparse styling and ghost-body composition. Latest packet completes 5–8 shopping selections, removes conflicting bows and uses separate dimensional garments. No new visual approval.
