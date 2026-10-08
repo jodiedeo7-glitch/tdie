@@ -1,0 +1,85 @@
+---
+// WYS launch landing page: PRIVATE PREVIEW (Jodie, 7 Oct 2026). Not linked anywhere and
+// noindex until Jodie clears publication; the release hold still stands.
+// Clothing leads, one decor look follows; the second decor look lives on Look Inside.
+// No prices, codes, income, scarcity or unverified automation claims.
+import PageLayout from "../layouts/PageLayout.astro";
+import PinkFindsSignup from "../components/PinkFindsSignup.astro";
+import WysLook from "../components/WysLook.astro";
+import { Image } from "astro:assets";
+import "../styles/wys-landing.css";
+import { PRODUCT, INSIDE, PRESALE_LINE, WAITLIST_ACTION, WAITLIST, PHOTOS, CLOTHING, DECOR_A, OUTPUTS } from "../data/wys-landing.js";
+const { clLife, clBasic, clStyled, pwLife } = PHOTOS;
+---
+<PageLayout wide noindex ogImage={clLife.src}
+  title="The While-You-Sleep Storefront™ · Join the Waitlist"
+  description="A storefront built around your taste: Amazon picks turned into styled photographs, Pinterest pins, Instagram slides and a shop-the-look page. Member presale Sunday, October 11.">
+<div class="wl">
+
+  <section class="wl-hero">
+    <div>
+      <p class="wl-date"><i aria-hidden="true"></i>{PRESALE_LINE}</p>
+      <h1><span class="wl-name"><small>Introducing</small>The While-You-Sleep Storefront™<span class="wl-spark" aria-hidden="true"></span></span></h1>
+      <p class="wl-tag">A storefront built around your taste.</p>
+      <p class="wl-lede">Pick the vibe and the Amazon products. The system turns each look into styled photographs, Pinterest pins, Instagram slides and a page people can shop.</p>
+      <div class="wl-btns">
+        <a class="wl-btn wl-btn-main" href="#waitlist">Join the Waitlist <span aria-hidden="true">→</span></a>
+        <a class="wl-btn wl-btn-alt" href={INSIDE}>Look Inside <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="wl-who">Presale is for members of The Digital Income Edit™ community on Skool. The full launch follows next week.</p>
+    </div>
+    <div class="wl-comp">
+      <figure class="wl-c-main">
+        <Image src={clLife} alt={CLOTHING.shots[2].alt} widths={[360, 520, 760]} sizes="(max-width: 900px) 56vw, 330px" loading="eager" />
+      </figure>
+      <figure class="wl-c-side">
+        <Image src={clBasic} alt={CLOTHING.shots[0].alt} widths={[240, 360, 480]} sizes="(max-width: 900px) 40vw, 240px" loading="eager" />
+        <figcaption>The outfit edit</figcaption>
+      </figure>
+      <figure class="wl-c-side">
+        <Image src={pwLife} alt={DECOR_A.shots[2].alt} widths={[240, 360, 480]} sizes="(max-width: 900px) 40vw, 240px" loading="eager" />
+        <figcaption>The decor look</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wl-sec" aria-labelledby="looks-h">
+    <p class="wl-eyebrow">One look, three photographs</p>
+    <h2 class="wl-h2" id="looks-h">Built for what you're selling.</h2>
+    <p class="wl-intro">An outfit gets worn. A room gets lived in. Every look comes back as a basic flat lay, a styled shot and a lifestyle photograph made for its category.</p>
+    <WysLook look={CLOTHING} tone="cream" />
+    <WysLook look={DECOR_A} tone="lav" />
+  </section>
+
+  <section class="wl-sec wl-out" aria-labelledby="out-h">
+    <div>
+      <p class="wl-eyebrow">What one look becomes</p>
+      <h2 class="wl-h2" id="out-h">Not three pictures. A whole storefront post.</h2>
+      <p class="wl-intro">You choose the theme, the season and the products. Optional vibe photos set the mood.</p>
+      <p class="wl-callout"><b>Your call on control.</b> Run it on recurring tasks, on a lower-cost route, or by hand. You set how much you review before anything is scheduled.</p>
+    </div>
+    <ol class="wl-ledger">
+      {OUTPUTS.map((o) => (
+        <li><span class="n">{o.n}</span><div><h3>{o.t}</h3><p>{o.p}</p></div></li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wl-wait" id="waitlist" aria-labelledby="wait-h">
+    <div class="wl-wait-copy">
+      <p class="wl-date"><i aria-hidden="true"></i>{PRESALE_LINE}</p>
+      <h2 id="wait-h">Be first through the door.</h2>
+      <p>Join the waitlist and the presale link comes straight to your inbox.</p>
+      <div class="wl-wait-form">
+        <PinkFindsSignup variant="side" id="waitlist-form" action={WAITLIST_ACTION} custom={WAITLIST} lead="WYS Waitlist" />
+      </div>
+      <a class="wl-wait-more" href={INSIDE}>Want the full tour first? Look Inside <span aria-hidden="true">→</span></a>
+    </div>
+    <figure class="wl-wait-art">
+      <Image src={clStyled} alt={CLOTHING.shots[1].alt} widths={[420, 640, 900]} sizes="(max-width: 900px) 100vw, 480px" />
+      <figcaption>The styled flat lay from the Off Duty look.</figcaption>
+    </figure>
+  </section>
+
+</div>
+</PageLayout>

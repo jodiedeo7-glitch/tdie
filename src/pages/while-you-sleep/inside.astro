@@ -1,0 +1,139 @@
+---
+// WYS "Look Inside": PRIVATE PREVIEW (Jodie, 7 Oct 2026). noindex; release hold stands.
+// Every inclusion, step and limit here traces to claude/WYS_REFERENCE_PACK_2026-10-07.md
+// (sections 15-25) or the live shop page's verified limits. No guide screenshots invented.
+import PageLayout from "../../layouts/PageLayout.astro";
+import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
+import { Image } from "astro:assets";
+import "../../styles/wys-landing.css";
+import { PRODUCT, LANDING, PRESALE_LINE, WAITLIST_ACTION, WAITLIST, CLOTHING, DECOR_A, DECOR_B, PATHS } from "../../data/wys-landing.js";
+
+const looks = [
+  { id: "clothing", look: CLOTHING, how: "Clothing is about the outfit, so the styled shot stays a flat lay: fuller, layered and unlabelled. The lifestyle photo shows the outfit worn in its own scene." },
+  { id: "entryway", look: DECOR_A, how: "Decor is about the space, so the styled shot puts the products where they belong, and the lifestyle photo shows someone using that space." },
+  { id: "coffee-bar", look: DECOR_B, how: "Same decor recipe, a different room: picks, the bar set up, then the first cup of the morning." },
+];
+
+const steps = [
+  { t: "Set up once", p: "Record your Amazon path (Influencer Idea Lists, Associates-only, or your own site), persona or no persona, channels, timezone and cadence, image tool and budget, and how much you want to review." },
+  { t: "Start a look", p: "Choose the theme, season and category. Add vibe photos if you want a mood to follow." },
+  { t: "Pick the products", p: "You select the Amazon products. Each one's details are recorded so the photos and copy stay true to it." },
+  { t: "Build the shopping destination", p: "An Idea List for the look, or a page on your own site, checked so the link actually works." },
+  { t: "Make the three photographs", p: "Basic, styled and lifestyle, using the recipe for that category. No-persona buyers get their own version of the third photo." },
+  { t: "Finish the graphics and copy", p: "Three Pinterest graphics and three Instagram slides, with typography added after the photos, plus titles, descriptions, alt text and your disclosure." },
+  { t: "Add the blog page", p: "A shop-the-look page on your own site, written to be found in search." },
+  { t: "Schedule in order", p: "Destination and page first, then Pinterest, then Instagram. Each result is read back so you know what really went out." },
+];
+
+const covers = [
+  "A guided setup that records your choices and the steps your accounts can and can't do yet",
+  "The three-photograph recipe, written per category (clothing and decor)",
+  "Graphic, copy and disclosure rules for pins and Instagram slides",
+  "Three recurring tasks: the weekly look, an optional Outfit of the Day, and a daily check-up that catches missed or uncertain posts",
+  "Persona and no-persona paths; Influencer, Associates-only and own-site paths",
+  "The Brand Closet™ Outfit of the Day path, for members of that community",
+  "A lower-cost route and a manual checklist for every step that costs credits",
+];
+
+const needs = [
+  "Amazon Associates. Influencer approval unlocks Idea Lists; without it, you use a page on your own site",
+  "A Pinterest business account and a public board",
+  "An image tool you choose, on your own budget",
+  "Reference photos of your persona, or the no-persona path",
+  "A website for the blog page and the Associates-only path",
+  "Metricool, only if you want scheduling to run through it",
+];
+
+const limits = [
+  "Automatic product finding isn't ready. It needs Amazon's Creators API, which Amazon opens at 10 qualifying sales in 30 days, and a tested connection.",
+  "What runs on its own depends on your accounts and is tested in your setup. A missing capability shows up as a named step, never a silent skip.",
+  "The photographs here are styling illustrations. Product shapes are approximate, not retailer photos.",
+  "No income, sales or traffic promises. What people buy is up to them.",
+];
+---
+<PageLayout wide noindex ogImage={CLOTHING.shots[2].img.src}
+  title="Look Inside · The While-You-Sleep Storefront™"
+  description="The looks, the workflow, the three routes, what you need and the honest limits of The While-You-Sleep Storefront™.">
+<div class="wl">
+
+  <a class="wl-back" href={LANDING}><span aria-hidden="true">←</span> Back to the storefront page</a>
+
+  <section class="wl-in-hero">
+    <p class="wl-date"><i aria-hidden="true"></i>{PRESALE_LINE}</p>
+    <h1>Look inside <span>The While-You-Sleep Storefront™</span></h1>
+    <p class="wl-intro">The real looks, every step from picking products to scheduling, the three ways to run it, and exactly what you need before you start.</p>
+    <nav class="wl-jump" aria-label="On this page">
+      <a href="#looks">The looks</a><a href="#workflow">The workflow</a><a href="#covers">What it covers</a><a href="#routes">Three routes</a><a href="#needs">What you need</a><a href="#join">Waitlist</a>
+    </nav>
+  </section>
+
+  <section class="wl-sec" id="looks" aria-labelledby="looks-h">
+    <p class="wl-eyebrow">The looks, up close</p>
+    <h2 class="wl-h2" id="looks-h">Each category gets its own recipe.</h2>
+    {looks.map((l, k) => (
+      <article class={`wl-look ${k === 1 ? "wl-look-lav" : "wl-look-cream"}`} id={l.id}>
+        <div class="wl-look-head"><span class="wl-cat">{l.look.label}</span><h3 class="wl-look-name">{l.look.name}</h3></div>
+        <p class="wl-intro" style="margin:0 0 18px">{l.how}</p>
+        <p class="wl-swipe" aria-hidden="true">Swipe to see all three →</p>
+        <ol class="wl-look-row" aria-label={`${l.look.name}: basic, styled and lifestyle photographs`}>
+          {l.look.shots.map((s, i) => (
+            <li class="wl-look-item">
+              <div class="wl-frame"><Image src={s.img} alt={s.alt} widths={[340, 480, 680]} sizes="(max-width: 700px) 80vw, (max-width: 1100px) 31vw, 340px" /></div>
+              <p class="wl-cap"><span class="wl-role">{String(i + 1).padStart(2, "0")} · {s.role}</span><b>{s.title}</b>{s.text}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="wl-look-note">{l.look.note}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="wl-sec" id="workflow" aria-labelledby="flow-h">
+    <p class="wl-eyebrow">The workflow</p>
+    <h2 class="wl-h2" id="flow-h">From a product pick to a scheduled pin.</h2>
+    <ol class="wl-steps">
+      {steps.map((s) => (<li><h3>{s.t}</h3><p>{s.p}</p></li>))}
+    </ol>
+  </section>
+
+  <section class="wl-sec" id="covers" aria-labelledby="covers-h">
+    <p class="wl-eyebrow">What it covers</p>
+    <h2 class="wl-h2" id="covers-h">Everything one look needs, written down.</h2>
+    <div class="wl-two">
+      <div class="wl-panel"><h3>In the kit</h3><ul class="wl-check">{covers.map((c) => (<li>{c}</li>))}</ul></div>
+      <div class="wl-panel wl-panel-hot"><h3>Good to know</h3><ul class="wl-check">{limits.map((c) => (<li>{c}</li>))}</ul></div>
+    </div>
+  </section>
+
+  <section class="wl-sec" id="routes" aria-labelledby="routes-h">
+    <p class="wl-eyebrow">Three routes, one finish line</p>
+    <h2 class="wl-h2" id="routes-h">Run it the way your budget likes.</h2>
+    <div class="wl-paths">
+      {PATHS.map((p) => (<div class="wl-path"><h3>{p.t}</h3><p>{p.p}</p></div>))}
+    </div>
+  </section>
+
+  <section class="wl-sec" id="needs" aria-labelledby="needs-h">
+    <p class="wl-eyebrow">Before you buy</p>
+    <h2 class="wl-h2" id="needs-h">What you'll need.</h2>
+    <div class="wl-panel" style="margin-top:22px"><ul class="wl-check">{needs.map((c) => (<li>{c}</li>))}</ul></div>
+  </section>
+
+  <section class="wl-wait" id="join" aria-labelledby="join-h">
+    <div class="wl-wait-copy">
+      <p class="wl-date"><i aria-hidden="true"></i>{PRESALE_LINE}</p>
+      <h2 id="join-h">Seen enough? Save your spot.</h2>
+      <p>The presale link comes straight to your inbox the moment it opens.</p>
+      <div class="wl-wait-form">
+        <PinkFindsSignup variant="side" id="inside-waitlist-form" action={WAITLIST_ACTION} custom={WAITLIST} lead="WYS Waitlist" />
+      </div>
+      <a class="wl-wait-more" href={LANDING}><span aria-hidden="true">←</span> Back to the storefront page</a>
+    </div>
+    <figure class="wl-wait-art">
+      <Image src={DECOR_B.shots[1].img} alt={DECOR_B.shots[1].alt} widths={[420, 640, 900]} sizes="(max-width: 900px) 100vw, 480px" />
+      <figcaption>The styled coffee bar from the Ghoul Fuel look.</figcaption>
+    </figure>
+  </section>
+
+</div>
+</PageLayout>

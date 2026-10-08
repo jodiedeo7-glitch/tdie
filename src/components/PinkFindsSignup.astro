@@ -44,7 +44,7 @@ const primeNow = custom ? false : Date.now() < Date.parse(PRIME_END);
     </div>
     <div class="pf-field">
       <div class="pf-row">
-        <label class="pf-label" for={EMAIL_ID}>Email address for Pink Finds</label>
+        <label class="pf-label" for={EMAIL_ID}>{custom ? "Email address for the waitlist" : "Email address for Pink Finds"}</label>
         <input
           id={EMAIL_ID}
           type="email"
