@@ -13,10 +13,10 @@ const {example:e}=Astro.props;
    <button class="ig-arrow ig-next" type="button" data-slide-step="1" aria-label={`Next ${e.name} Instagram slide`}>›</button>
   </div>
   <div class="ig-caption"><p><b>The Digital Income Edit™</b> {e.caption}</p><a class="ig-story-link" href={`/lifestyle/${e.slug}`}>Read the {e.name} styling story <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a></div>
-  <footer class="ig-footer">
+  <div class="ig-footer">
    <div class="ig-toolbar"><span class="ig-actions" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21S2 14 2 7a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 7-10 14-10 14Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9 11 11 0 0 1-5-1L2 22l1-7a9 9 0 1 1 18-4Z"/></svg><svg viewBox="0 0 24 24"><path d="m2 3 20 8-20 11 5-10L2 3Zm5 9 15-1"/></svg></span><span class="ig-save" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 2h14v20l-7-5-7 5Z"/></svg></span></div>
    <nav class="ig-dots" aria-label={`${e.name} carousel slides`}>{e.slides.map((s,i)=><button type="button" data-slide-to={i} aria-label={`Show ${e.name} slide ${i+1}`} aria-current={i===0?'true':undefined}><span/></button>)}</nav>
-  </footer>
+  </div>
  </article>
 </div>
 <script>
