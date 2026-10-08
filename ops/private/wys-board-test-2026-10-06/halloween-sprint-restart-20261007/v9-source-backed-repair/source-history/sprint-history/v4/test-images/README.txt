@@ -1,0 +1,1 @@
+Earlier Sparkle Plans composition test only. Screenshot-based product continuity, not a retail-fidelity pass. The new V4 prompt replaces gingham/pillow styling with an adult tufted-headboard setting; that variant is not yet generated. Do not mistake these examples for approved final assets.

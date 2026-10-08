@@ -1,0 +1,857 @@
+{
+  "status": "SOURCE_RECOVERY_NOT_VISUAL_VALIDATION",
+  "rules": [
+    {
+      "id": "C01",
+      "scope": "Clothing BASIC",
+      "requirement": "Only selected shopping items. No unlinked accessories or scene props. Aesthetic flat/folded arrangement tailored to survey; no supported worn silhouette.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11362-bca5-7df2-a551-01a4c11daadb",
+          "turn_id": "01a11362-bb37-7f20-95b2-346858acc46d",
+          "quote": "ONLY THE ITEMS WE'RE GOING TO LINK SHOULD BE IN THE BASIC FLATLAY PHOTO. COME THE FUCK ON!!!!!! like i said i know the example i gave you isnt good but you need to PICK THE NUMBER OF ITEMS THAT OUR SYSTEM PICKS!!!!! anything outside of whats linked goes in the styled flatlay."
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "scope": "Clothing STYLED",
+      "requirement": "Filled out as though worn, no visible person. Supported bodice/shoulders/sleeves/cuffs and garment volume are required; generic extras or layering alone do not establish the distinction.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a111c1-4d46-7cf0-a9e4-8c96a9393ffd",
+          "turn_id": "01a111c1-4c5e-78d3-89df-f40e2d212de3",
+          "quote": "ok of all the last group of flatlays and this group of flatlays separate them into the 'basic' flatlays and 'styled' flatlays. the basic one should have have the clothes laid out aethetically and the styled one the clothes should filled out as if someone was wearing them (but no person is in the photo). one of the flatlays should definitely have text either above it or overlayed, im not sure which"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "scope": "Clothing STYLED",
+      "requirement": "Same selected clothing plus fuller personally coherent unlinked extras and signature background.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+          "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+          "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "scope": "Clothing typography",
+      "requirement": "Readable Pinterest-style label on at least one flatlay. Current accepted manual BASIC treatment: prominent hot-pink brush script with crisp near-black uppercase subtitle, above products.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a111c1-4d46-7cf0-a9e4-8c96a9393ffd",
+          "turn_id": "01a111c1-4c5e-78d3-89df-f40e2d212de3",
+          "quote": "ok of all the last group of flatlays and this group of flatlays separate them into the 'basic' flatlays and 'styled' flatlays. the basic one should have have the clothes laid out aethetically and the styled one the clothes should filled out as if someone was wearing them (but no person is in the photo). one of the flatlays should definitely have text either above it or overlayed, im not sure which"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "scope": "Clothing scene",
+      "requirement": "No office desk/worktable as outfit surface. This was explicitly rejected, not authorized as signature personalization.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1136f-c5a5-7161-81cb-8a9e47f17ebb",
+          "turn_id": "01a1136f-c4c2-7e91-971d-d2166243a2cb",
+          "quote": "WHY THE FUCK IS A CLOTHING OUTLAY ON A GODDAMN DESK!!!!!!! COME ON I CANT SELL THIS TRASH TO PEOPLE!!!!!!!!! WHAT THE FUCK ARE YOU TRYING TO DO TO ME????????????? GODDAMITTT!!!!!! we;ve already gone over. and THIS is a 'styled' flatlay?????TRHE SCENE MUST MAKE SENSE so all youre telling me is that this system is going to COMPLETELY ignore any of my and the clients instructions. so i have a eguide of fucking trash right now."
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "scope": "Clothing series",
+      "requirement": "Do not repeat every outfit arrangement or the same child-looking bed. Approved cardigan bedding is one-look precedent, not compulsory series location.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11890-de0b-7d91-92ee-0463c7d370cb",
+          "turn_id": "01a1187d-eb40-7992-ae64-3148478e7ab8",
+          "quote": "thats better. now stop laying every set of clothers exactly the same way on the same CHILD LOOKING BED \n\n\nyes, that last one was much better. now please redo the packet again"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "scope": "Clothing STYLED",
+      "requirement": "Phone and watch belong in styled when relevant, not basic. Earlier criticism rejected generic phone/watch/sunglasses-only styling, not these items themselves.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113a7-450b-7d03-a19e-a049e9336ee6",
+          "turn_id": "01a113a7-4445-7d42-b556-21c1d09412ae",
+          "quote": "what happened to thew phone and the watch?? i said they didnt belong in basic... they belong in styled!"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "scope": "Clothing STYLED",
+      "requirement": "Sunglasses/watch/phone alone fail Tommy Kate personalization.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11388-0ff4-7ed3-a846-4829a12979fe",
+          "turn_id": "01a11388-0f11-7803-8a7c-15709359b9d1",
+          "quote": "why are there no accessories in the styled one???\ncould you tell this is TOMMY KATES outfit or any randome girl in the world? WHY ARE THE ACCESSORIES NOT MATHCING THE VIBE????? a pair of sunglasses, a watch, and a phone IS NOT A STYLED FLATLAY!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "scope": "Clothing STYLED",
+      "requirement": "Gaming headset does not belong in everyday outfit. Interest/niche alone does not justify an accessory.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1138b-f529-72a0-a6a1-11fca5df8f34",
+          "turn_id": "01a1138b-f44e-7600-946b-6b9b16bb9847",
+          "quote": "why the FUCK IS HER GAMING HEADSET PART OF AN EVERYDAY OUTFIT??????????????????? WHY IS THIS SO FUCKING HARD FOR HARD?????????????????? CAN YOU MAKE THE ITEMS, THE STYLE, THE AESTHETIC, AND THE SCENERY ALL MAKE SENSE????? IS THIS STEP TOO MUCH FOR YOU?????????????"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "scope": "Clothing styling",
+      "requirement": "Maximalist extra examples are illustrative, not exhaustive. Exercise judgment and build a fuller coordinated story per outfit.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113d3-e0c5-7532-83cc-57c636cf34b6",
+          "turn_id": "01a113d3-de4b-7623-8e7f-4e65aa0c5b58",
+          "quote": "you took what i said about the extras too literal. tommy is a maximalist. dont ONLY list the xtras i gave you, i was just giving examples. lets go back to this one. give me a final SUPER KUTE TOMMY STYLE styled flatlay prompt. then optimize the lifestyle prompt. you cant just repeat the same scene every time. and it also needs to be spefic and repeatiable... a niche doormat, cute shutters, YOU NEED TO BE DETAILED AND MAKE IT REAL.\n\nbasic is good.\ngive me one final styled and lifestyle prompt each"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "scope": "Product fidelity",
+      "requirement": "Preserve correct rear-pocket location, embroidery, front/back orientation, actual leg lengths and real folds; no rear pockets on front fly.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a112eb-8f7f-75b3-a234-636cbd4b7444",
+          "turn_id": "01a112eb-8d63-79c1-b0f4-ebecfa0d8c2f",
+          "quote": "the pant lengths look weird. might just be the generator. but you have the POCKET detail on the FRONT of the jeans. thanks cant happen. if the detail is on the back fold the pants to show back detail like the 3rd photo. i dont like the text, its DEFINITELY not even close to pinterest-y vibes. and also... i said in intake NO BOWS OR RIBBONS. this is absolutely unnacceptable for the client facing version."
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "scope": "Product selection",
+      "requirement": "An outfit must plausibly suit Tommy Kate; replacing a rejected outfit does not replace the approved presentation rules.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a112d3-7d7d-7fd3-9da5-e790d5da0690",
+          "turn_id": "01a112d3-7c75-7941-90e3-f1b6b515626b",
+          "quote": "she would never wear that. use this instead, give me 2 flatlays and a lifestyle prompt please"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "scope": "List scope",
+      "requirement": "Choose the system's intended list before prompts; include only selected shopping products in BASIC, rather than all objects in an inspiration image.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11362-bca5-7df2-a551-01a4c11daadb",
+          "turn_id": "01a11362-bb37-7f20-95b2-346858acc46d",
+          "quote": "ONLY THE ITEMS WE'RE GOING TO LINK SHOULD BE IN THE BASIC FLATLAY PHOTO. COME THE FUCK ON!!!!!! like i said i know the example i gave you isnt good but you need to PICK THE NUMBER OF ITEMS THAT OUR SYSTEM PICKS!!!!! anything outside of whats linked goes in the styled flatlay."
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "scope": "Image pair",
+      "requirement": "Basic and styled must be immediately noticeably different; do not use type or props as the sole difference.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11398-9939-79b1-997b-f8473701bdf8",
+          "turn_id": "01a11398-97c9-7170-8162-569f57f54bfa",
+          "quote": "at this point my brain is mush. these are all the ones weve run.... can you please anazlyze them and create a noticiable difference for the 2 flatlays? i dont care how you do each as long as one is obviouisly basic and one is obviously styles."
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "scope": "Image prompts",
+      "requirement": "Every complete prompt must be under 3000 characters, counted after assembly; no overflowing add-ons.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113a5-c74e-7900-8c8d-95c67be0b233",
+          "turn_id": "01a113a5-c695-73b0-b07b-c9394d9011cc",
+          "quote": "youre fogetting all prompts must be under 3000 characters"
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "scope": "Scene logic",
+      "requirement": "Every object, piece of furniture and accessory must have a physically plausible purpose and placement; no staging table in front yard.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+          "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+          "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "scope": "Tommy Kate exclusions",
+      "requirement": "No furry rugs, shag, sheepskin or fluffy backgrounds. A furry inspiration reference does not cancel this dislike.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11338-70e2-7183-b4a9-5a9f98bee5e1",
+          "turn_id": "01a11338-6f85-7c03-9172-e0584d4d4372",
+          "quote": "the text is not big enough. and theres STILL no difference. my example probably wasnt that great beacuse it already had extras in it. the basic flatlay should ONLY be the linked items on a 'basic' (tailored to the clients survey) flatlay. then all the 'extras' are in the styled flatlay, along with a more signature backkground. also, why is there a table in her front yard? i ran it twice, it wasnt an accident. please dont do that to a client. all items in the image MUST MAKE SENSE IN THE SCENERY. also, dont ever give me a furry rug background, i dont like it lol"
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "scope": "Tommy Kate exclusions",
+      "requirement": "No added decorative bows or ribbons. Preserve an explicitly selected product's own details; cardigan jeans' rear embroidery was scoped exception, not blanket bow permission.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a112eb-8f7f-75b3-a234-636cbd4b7444",
+          "turn_id": "01a112eb-8d63-79c1-b0f4-ebecfa0d8c2f",
+          "quote": "the pant lengths look weird. might just be the generator. but you have the POCKET detail on the FRONT of the jeans. thanks cant happen. if the detail is on the back fold the pants to show back detail like the 3rd photo. i dont like the text, its DEFINITELY not even close to pinterest-y vibes. and also... i said in intake NO BOWS OR RIBBONS. this is absolutely unnacceptable for the client facing version."
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "scope": "Tommy Kate flowers",
+      "requirement": "Lilacs and wildflowers; no hydrangeas.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11217-0294-76a1-8579-263f419ddc8f",
+          "turn_id": "01a11217-012c-7fd1-85dd-4c070ef4af01",
+          "quote": "pause on the name. no idea. no to the hydrangeas, just lilacs and wildflowers"
+        }
+      ]
+    },
+    {
+      "id": "C20",
+      "scope": "Tommy Kate pet",
+      "requirement": "Golden retriever. Dog name undecided; naming paused. Exact actual-pet likeness requires evidence.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1120a-0e92-7d82-8a3f-05dd1e078d5a",
+          "turn_id": "01a1120a-0dcc-76b3-8a23-de7bc8442dce",
+          "quote": "golden retriever. give a couple good tommy kate dog names... something cute but also 'accomplishment' related or TDIE related... but idk? lol"
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "scope": "Tommy Kate pet name",
+      "requirement": "Do not select a name while naming is paused.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11217-0294-76a1-8579-263f419ddc8f",
+          "turn_id": "01a11217-012c-7fd1-85dd-4c070ef4af01",
+          "quote": "pause on the name. no idea. no to the hydrangeas, just lilacs and wildflowers"
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "scope": "Personalization",
+      "requirement": "Every category/concept must reflect client niche, signature, preferred items, choices and colors, beyond generic palette.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11204-94b7-79e1-a389-97096c51a258",
+          "turn_id": "01a11204-8ded-7bc3-80bc-cdad59fd2c06",
+          "quote": "in order seedream 4.5 basic, seedream 4.5 styled, seedream5.0 flash basic, seedream 5.0 basic styled. i think i like the seedream 5.0 flash better. now also keep in mind i want the prompts to be specialized towards whatever the clients preferences are. so for tommy kate her coffee cup would be her pink mug, and her flatlay would be a llittle more girly/glittery/HER instead of clean/modern. everything should be super customized to the clients niche/signature/preferred items/choices/colors. i meant REALLY blow their mind... like tommy kates styled setup there would have a photo of her dog on the wall and her favorite flowers, her signature pink desk, etc"
+        }
+      ]
+    },
+    {
+      "id": "C23",
+      "scope": "Workspace signature",
+      "requirement": "Tommy Kate pink desk, her pink coffee mug, girly/glittery HER styling, flowers and framed dog photo in appropriate desk setting.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11204-94b7-79e1-a389-97096c51a258",
+          "turn_id": "01a11204-8ded-7bc3-80bc-cdad59fd2c06",
+          "quote": "in order seedream 4.5 basic, seedream 4.5 styled, seedream5.0 flash basic, seedream 5.0 basic styled. i think i like the seedream 5.0 flash better. now also keep in mind i want the prompts to be specialized towards whatever the clients preferences are. so for tommy kate her coffee cup would be her pink mug, and her flatlay would be a llittle more girly/glittery/HER instead of clean/modern. everything should be super customized to the clients niche/signature/preferred items/choices/colors. i meant REALLY blow their mind... like tommy kates styled setup there would have a photo of her dog on the wall and her favorite flowers, her signature pink desk, etc"
+        }
+      ]
+    },
+    {
+      "id": "C24",
+      "scope": "Signature inscription",
+      "requirement": "Player Two? pink mug with visible readable front lettering and question mark; never tiny/small lettering.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1123e-4454-7f63-aaa9-19f4a00dddf4",
+          "turn_id": "01a1123e-433a-7973-9b4b-d8a10c01f841",
+          "quote": "you should definitely have my player two? pink mug. dont say 'small letters' though, it makes them tiny. change that in th erepo too please. anyway, getting there"
+        }
+      ]
+    },
+    {
+      "id": "C25",
+      "scope": "Color",
+      "requirement": "Avoid pink-on-pink pastel wash. TDIE accent colors, hot-pink pops, cream relief and lavender contrast; actual product colors stay fixed.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11224-d609-78a3-9f4b-5f2c022f2b9d",
+          "turn_id": "01a11224-d531-7440-8242-51473450bbc4",
+          "quote": "dont put pink on pink, its too much, add some TDIE accent colors. definitely add hot pink pops in the photos... its too much pastel/muted/light pink on light pink"
+        }
+      ]
+    },
+    {
+      "id": "C26",
+      "scope": "Realism",
+      "requirement": "Real photographic material, skin, light, scale and contact; no AI/fake sheen, fantasy glow or artificial distressing as a substitute for realism.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1122c-0c37-7010-8c56-4ca42abb7f77",
+          "turn_id": "01a1122c-0a63-7012-8171-fa37c0969d0c",
+          "quote": "**better but its super ai looking. per my settings it shouldnt look ai/fake**"
+        }
+      ]
+    },
+    {
+      "id": "C27",
+      "scope": "Lifestyle",
+      "requirement": "Deeply niche-personalized avatar use moment. Do not substitute anonymous person or empty room.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a111b5-5391-7a50-8386-977746dab030",
+          "turn_id": "01a111b1-c155-7822-89e7-3d47516dd07f",
+          "quote": "then really presonalized/niched down for lifestyle images. add the avatar in the photo for lifestyle images"
+        }
+      ]
+    },
+    {
+      "id": "C28",
+      "scope": "Lifestyle environment",
+      "requirement": "Personalize home architecture and surroundings, not only outfit/avatar/held prop; plain generic house was rejected.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11371-cf99-7b41-ae48-36eddbd39bb1",
+          "turn_id": "01a1136f-c4c2-7e91-971d-d2166243a2cb",
+          "quote": "and for the lifestyle image, you REALLY think that looks like the outside of her house? absolutely plain? WHERE THE FUCK IS THE PERSONALIZATION WEVE BEEN TALKING ABOUT THE ENTIRE TIME"
+        }
+      ]
+    },
+    {
+      "id": "C29",
+      "scope": "Lifestyle variation",
+      "requirement": "Specific reproducible details such as useful doormat, shutters and physical architecture; vary scene/action rather than repeating porch.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113d3-e0c5-7532-83cc-57c636cf34b6",
+          "turn_id": "01a113d3-de4b-7623-8e7f-4e65aa0c5b58",
+          "quote": "you took what i said about the extras too literal. tommy is a maximalist. dont ONLY list the xtras i gave you, i was just giving examples. lets go back to this one. give me a final SUPER KUTE TOMMY STYLE styled flatlay prompt. then optimize the lifestyle prompt. you cant just repeat the same scene every time. and it also needs to be spefic and repeatiable... a niche doormat, cute shutters, YOU NEED TO BE DETAILED AND MAKE IT REAL.\n\nbasic is good.\ngive me one final styled and lifestyle prompt each"
+        }
+      ]
+    },
+    {
+      "id": "C30",
+      "scope": "Lifestyle camera",
+      "requirement": "Change angle/framing/POV materially from styled; adding avatar to same photo fails.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11792-7256-77e3-aa9d-76c16f4042f3",
+          "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+          "quote": "for the pretty wicked styled and lifestyle all you did was add my avatar... its literally the same phtoo otherwsie. its needs to be different angle, different framing, different pov, something"
+        }
+      ]
+    },
+    {
+      "id": "C31",
+      "scope": "Non-fashion only",
+      "requirement": "Objects/decor/car BASIC is inviting curated contextual flatlay; STYLED actual use setting without avatar; LIFESTYLE avatar engaged naturally. Does not override clothing.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11763-4b23-7f41-857d-c7374b55757f",
+          "turn_id": "01a1175e-4a53-7c80-bc51-86099156ce76",
+          "quote": "ok so i actually dont like the 'basic' flatlays weve been doing for decor/car/items/etc... i really like the 'styled' halloween flatlay as the basic one, then the 'lifestyle' flaylat is actually the styled image and then the lifestyle image actually has an avatar."
+        }
+      ]
+    },
+    {
+      "id": "C32",
+      "scope": "Non-fashion activities",
+      "requirement": "Scene-appropriate attire and activity, e.g. arrival/departure, trick-or-treat door interaction, decorating entryway.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11764-2848-70a1-9297-448ba6984c7b",
+          "turn_id": "01a1175e-4a53-7c80-bc51-86099156ce76",
+          "quote": "so these 2 would be your basic flatlay and styled flatlay, then there would be a lifestyle one with tommy kate in it naturally... either leaving or coming (in scene appropirate attire) or maybe answering the door for trick or treaters, or actively decorating the entryway"
+        }
+      ]
+    },
+    {
+      "id": "C33",
+      "scope": "Category architecture",
+      "requirement": "Separate category geometry and input-specific bases; clothing is not office items. Client answers tune the appropriate base.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1119b-f841-7672-857d-9c16672ed9fb",
+          "turn_id": "01a1119b-f6ee-7993-913b-cd47df0a8ce7",
+          "quote": "give me the prompt. im going to run it on free until you get it right. we know this part of automatiuon works, we need to fix your prompts now. we need a repeatable one for each category (because a flatlay for clothes doesnt work for a flat lay for office items). we need a set of base prompts that get tweaked slightly based on the client's answer/aestheic."
+        }
+      ]
+    },
+    {
+      "id": "C34",
+      "scope": "Category boundary",
+      "requirement": "Do not apply object treatment instructions across clothing.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a118fe-4004-7ee1-8036-faae0a5609b5",
+          "turn_id": "01a118fe-3f14-7023-905d-775f33e7f89d",
+          "quote": "why are you confusing the object instructions with the clothing instructions? IS THAT WHY YOUVE BEEN LAYING EVERY OUTFIT ON A GODDAMN BED LIKE SOMEONES MOM???????????? I SAID OBJECTS ONLY!!!!!!!!!!!!!!!!!!! IM SO FUCKING SICK OF YOU TAKING HALKF OF MY MOTHERFUCKING DIRECTONS AND APPLYING THEM ACOSS THE BOARD. WHAT THE FUCK IS WRONG WITH YOU!!!!!!!!!!!!!!!!!!!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C35",
+      "scope": "Sourcing quality",
+      "requirement": "Choose pieces that look good together, have good reviews and make sense for use; do not select just because pink or expensive.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a118b1-f4f9-72e0-a91e-c11151a372b4",
+          "turn_id": "01a118b1-f439-7da0-9fc8-991e30b62d47",
+          "quote": "omgggg stop taking every direction to the most literal extreme!!!! if it doesnt have good reveiws dont inlcude it. dont pick just because its expensive. LIKE CAN YOU PLEASE JUST BE FUCKING MINDFUL OF WHAT YOURE PUTTING TOGETHER FOR EACH LOOK AND STOP JUST TRYING TO CHECK ONE SINGLE FUCKING BOX AT A TIME!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C36",
+      "scope": "Sourcing judgment",
+      "requirement": "Do not satisfy one box at a time; evaluate look cohesion, product quality, price/value, reviews, material and occasion together.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a118b1-f4f9-72e0-a91e-c11151a372b4",
+          "turn_id": "01a118b1-f439-7da0-9fc8-991e30b62d47",
+          "quote": "omgggg stop taking every direction to the most literal extreme!!!! if it doesnt have good reveiws dont inlcude it. dont pick just because its expensive. LIKE CAN YOU PLEASE JUST BE FUCKING MINDFUL OF WHAT YOURE PUTTING TOGETHER FOR EACH LOOK AND STOP JUST TRYING TO CHECK ONE SINGLE FUCKING BOX AT A TIME!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C37",
+      "scope": "Sourcing actual",
+      "requirement": "Use real selected products and records when sourcing test requested; do not substitute another fake list.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11712-832f-7f71-8155-e8271d15210b",
+          "turn_id": "01a11712-8202-7481-b0fe-7e67d59b2b81",
+          "quote": "well you said we needed to do a full sourcing test correct? as well as make sure the prompts are good and the blog is good and everything is published, correct? and i just recommended the 3 options for the client inputting their visual guide. we need to test that. SO WHY ARE YOU MAKING A FAKE LIST???? WE LITERALLY DID THAT LAST NIGHT!!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C38",
+      "scope": "Packet completeness",
+      "requirement": "Keep product links; full packet, not prompts-only with missing destinations.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1187f-c0da-78d1-9f0e-9dc34bbdc392",
+          "turn_id": "01a1187d-eb40-7992-ae64-3148478e7ab8",
+          "quote": "i need the full packet,,,,, where tf did my product links go???? come the fuck ON!!!"
+        }
+      ]
+    },
+    {
+      "id": "C39",
+      "scope": "Attachments accessibility",
+      "requirement": "Photos must be supplied through usable local files and clickable links, not inaccessible cloud paths/filenames only.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11925-748c-7940-b5b8-8e375a599a24",
+          "turn_id": "01a11925-73a7-7253-8e20-2f64d39dc78c",
+          "quote": "[https://drive.google.com/file/d/142BjIqjHd-GXAe0Ht0LD89O3AOrHzcms/view](https://drive.google.com/file/d/142BjIqjHd-GXAe0Ht0LD89O3AOrHzcms/view)\n\nIT GAVE IT TO ME LIKE THIS. DOES THIS LOOK LIKE IT HAS LINKS FOR ME TO GET THE PHOTOS???? WHAT THE FUCK ARE YOU DOING"
+        }
+      ]
+    },
+    {
+      "id": "C40",
+      "scope": "Delivery",
+      "requirement": "Easy-to-find local files and minimum handoff steps; do not offload correction to customer.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11945-5bb8-7cf0-8b75-159edeb2f228",
+          "turn_id": "01a1193e-8b6f-7181-b3b8-d4ac0e0b6a15",
+          "quote": "STOP GIVING ME SHIT I CANT FIND ON MY COMPUTER OR HAVE TO GO THRPUGHT A THOUSAND STEPS"
+        }
+      ]
+    },
+    {
+      "id": "C41",
+      "scope": "Operator responsibility",
+      "requirement": "Do not ask customer to edit repair prompt you should correct yourself.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11902-39ad-7b70-ae9c-6a727d23a685",
+          "turn_id": "01a11902-3856-7d20-b5e6-7bcb535d3d89",
+          "quote": "OH I KNOW YOU DIDNT JUST TELL  ME TO EDIT YOUR GODDAMN PROMPT"
+        }
+      ]
+    },
+    {
+      "id": "C42",
+      "scope": "Generation scope",
+      "requirement": "Current sprint request is updated packet and prompts only; do not spend/generate unless newly requested.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11831-6bb0-7cc0-b0cf-a2e81acf7bd5",
+          "turn_id": "01a1182b-9358-7fd1-9399-abb619debe94",
+          "quote": "<send_user_message_question_reply>\n[{\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_sjwwyjyADjtihFPgrjYk1zJE\\\",0]\",\"question\":\"For the sprint, do you want the updated packet with sourced products and ready-to-run prompts, or finished images generated here too? I’m checking duplicates and preparing the packet either way.\",\"answer\":\"Updated packet and prompts only\"}]\n</send_user_message_question_reply>"
+        }
+      ]
+    },
+    {
+      "id": "C43",
+      "scope": "Tool efficiency",
+      "requirement": "Proactively disclose and use simpler suitable available routes; native in-chat generation preferred over unnecessary Higgsfield/browser credits.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1173b-abea-71d0-8d6e-00a34436f8e8",
+          "turn_id": "01a1173b-aae2-7d32-9a48-6a8cf36ed751",
+          "quote": "better... but wait a second... WHY are we using higgsfield instead of chatgpt just making them inside the chat?"
+        }
+      ]
+    },
+    {
+      "id": "C44",
+      "scope": "Tool judgment",
+      "requirement": "Recommend better tool/plugin when materially more efficient, not merely list tools.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11410-716b-74f2-a97f-db8097af4944",
+          "turn_id": "01a11410-7098-70b2-b001-913d83708e44",
+          "quote": "right, but im saying if theres an obviously better tool or plugin than what we're using i want you to tell me"
+        }
+      ]
+    },
+    {
+      "id": "C45",
+      "scope": "Client manual route",
+      "requirement": "Ask browser-vs-manual choice for credit-heavy client setup operations; user can choose manual and return.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a10fbe-b920-77a2-b52a-b058d1bcc293",
+          "turn_id": "01a10fbe-b84e-7693-bbe6-d9d85d773ec1",
+          "quote": "so for anything like this you need to ask if theyd like you to do it for them through the browser or have them do it manually. normally id have you do it but im low on credits so ill do it and come back"
+        }
+      ]
+    },
+    {
+      "id": "C46",
+      "scope": "Intake options",
+      "requirement": "Three visual-guide routes: thorough mock lists, vibe images used to curate, quick start with fewer questions and greatest uncertainty. Validate rather than claiming all routes tested.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1170a-dd5d-7cd3-980e-fe07a511f6c5",
+          "turn_id": "01a1170a-da0b-7682-9a05-a2976f7f2b9b",
+          "quote": "ok lets do something different.... have the client either create a couple different mock lists in different categories (most thorough, but most hands on and choices... not for people like me), or they can show you pictures of their vibes (like below) and you create similar lists/looks/vibes, and maybe also have a 'quick start' option that asks a shorter set of questions and then just takes off running (the fastest, but MOST unreliable).\n\nhere are sample images. cresate 2 separate halloween lists and their prompts"
+        }
+      ]
+    },
+    {
+      "id": "C47",
+      "scope": "Reduce decision burden",
+      "requirement": "Curate relevant options to client vibe instead of blind Amazon searching and transferring every choice back to client.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a116b2-2f93-7090-8c5f-6b512b220cf2",
+          "turn_id": "01a116b2-2cf2-7d90-9fb7-aa3a54731168",
+          "quote": "is there a way to scroll/search my vibe only? i cant just blindly search on amazon, that was the whole point of this automation- to remove the choices that prevent me from ever actually posting. can you find me some influencer lists or something relevelnt to me i can go through>?"
+        }
+      ]
+    },
+    {
+      "id": "C48",
+      "scope": "Continue work",
+      "requirement": "Continue authorized setup autonomously; do not require customer to prompt every step.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11006-af51-7f40-b53f-a720d8b6ef4e",
+          "turn_id": "01a11006-ae64-7ee1-8eb3-94604ebcd067",
+          "quote": "ok. now what?? this is a setup, IM NOT SUPPOSED TO BE PROMPTING YOU! CHANGE IT, BOW"
+        }
+      ]
+    },
+    {
+      "id": "C49",
+      "scope": "Client blockers",
+      "requirement": "Fix, seek actual necessary permission, or give exact recoverable action; do not end at 'setup remains blocked'.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a10fb2-9367-7d82-ace5-506f133c1439",
+          "turn_id": "01a10fb2-928f-7372-ba5d-4169ebbdb1ca",
+          "quote": "dont ever answer the client like that. either fix it and contionue on, ask for permission to fix it, or tell me how to fix it. do not ever say setup remains blocked and end your response there."
+        }
+      ]
+    },
+    {
+      "id": "C50",
+      "scope": "Question visibility",
+      "requirement": "Questions must be explicit and visible; do not bury in working output.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11208-f412-7f60-906a-24e0eb06c670",
+          "turn_id": "01a11208-f357-7981-af68-4ada95399c80",
+          "quote": "i just noticed youre question about the dog got buried in the minized command/working text. if you ever have a question it MUST BE BLATENLTLY ASKED AT THE END"
+        }
+      ]
+    },
+    {
+      "id": "C51",
+      "scope": "Approval scope",
+      "requirement": "Cardigan visual set explicitly approved, but approval is one look's visual direction, not product fidelity, all categories or unattended capability.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113f4-300c-7611-87c2-517bfd06bf7b",
+          "turn_id": "01a113f4-2e31-7bc3-89a3-5f1b29c44417",
+          "quote": "YESSSSS I LOVE IT!!!!! ok what next>>"
+        }
+      ]
+    },
+    {
+      "id": "C52",
+      "scope": "Approved exception",
+      "requirement": "Small bow-earring defect did not require regeneration for that historical mock; user's scoped acceptance did not authorize future bows.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1149c-d53f-7313-8f67-e41ce40de4be",
+          "turn_id": "01a1149c-d440-7db1-b017-f75a8b785547",
+          "quote": "its not a big enough deal to regenerate. thank you for noticing and adjusting accordingly. next step please"
+        }
+      ]
+    },
+    {
+      "id": "C53",
+      "scope": "Private testing",
+      "requirement": "Mock publisher test only, no live release; historical test permission does not authorize production.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1149e-6b4f-7660-b57a-1fea6541cfaf",
+          "turn_id": "01a1149e-6a82-7502-904c-d8e6c97c59bd",
+          "quote": "2 but ONLY if its for testing and doesnt go live anywhere"
+        }
+      ]
+    },
+    {
+      "id": "C54",
+      "scope": "Testing honesty",
+      "requirement": "Read all requirements and trace results; do not call incomplete work done or static rule text a functioning visual guard.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1186c-38a5-78e3-8928-3a85f9da64fd",
+          "turn_id": "01a11869-7f73-7b22-8854-6fee6a1bc0fc",
+          "quote": "ok so let me rephrase- HOW THE FUCK CAN YOU TELL ME THE WORKFLOW WILL CATCH IT??????? WE HAVE THE GODDAMN WORK FLOW AND ITS NOT FUCKNG CATCHING IT!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C55",
+      "scope": "Full test scope",
+      "requirement": "Sourcing, prompt output quality, blog behavior and publishing all need real verification; visual intake options also need tests.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11712-832f-7f71-8155-e8271d15210b",
+          "turn_id": "01a11712-8202-7481-b0fe-7e67d59b2b81",
+          "quote": "well you said we needed to do a full sourcing test correct? as well as make sure the prompts are good and the blog is good and everything is published, correct? and i just recommended the 3 options for the client inputting their visual guide. we need to test that. SO WHY ARE YOU MAKING A FAKE LIST???? WE LITERALLY DID THAT LAST NIGHT!!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C56",
+      "scope": "Client generalization",
+      "requirement": "Need a contrasting client (plain Jane office girl) and category-specific adaptation; Tommy Kate approval alone is insufficient.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a113fa-0f75-7f13-a5de-82aaf9c5ecfb",
+          "turn_id": "01a113fa-0eb3-7792-83e6-dfe8c251f407",
+          "quote": "i'll do that after we finish tommy kate, we'll do a plain jane office girl mock client. i want to continue with the tommy kate test run to work out all the kinks from start to finish.\n\nhave you done any of the jobs claude was supposed to do in this? what exactly are claudes jobs in the wys storefront workflow? can a client do this entire thing in chatgpt OR claude OR a customized ,ix of box?"
+        }
+      ]
+    },
+    {
+      "id": "C57",
+      "scope": "Business expectation",
+      "requirement": "Offer was announced for presale; need accurate deliverable, not unsupported assurance or speculation that sale-ready.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1192c-6996-7022-9268-58a471256a73",
+          "turn_id": "01a1192c-68b6-7762-884d-9e6fd83d7414",
+          "quote": "and then as soon as a client has different catergories than me youre going to FUCK THAT UP JUST AS BAD, like i cannot possibly work through every single inclsuion and exclusion for every single category. im literally having a fucking panic attack right now because i announced something that I CANNOT SELL AND I DONT EVER SEE ME TRUSTING YOU AND THIS PROCESS TO BE ABLE TO SELL IT, SO NOW WHAT THE FUCK DO I DO????????????????"
+        }
+      ]
+    },
+    {
+      "id": "C58",
+      "scope": "Blog architecture",
+      "requirement": "Actual coded website with inserted photos; shared landing/categories/templates and future pages; no image-generated webpage.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11798-2729-73a1-8376-30c8062d6fd8",
+          "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+          "quote": "are those titles just examples? they look ai as heck. i want the website to be made like a WEBSITE, with you rphotos added. i dont an ai generated webpage, i want an ai created webspage. should codex/work do it or claude/code"
+        }
+      ]
+    },
+    {
+      "id": "C59",
+      "scope": "Blog scope",
+      "requirement": "Main Lifestyle plus existing/future pages explicitly requested; preserve meaningful page copy and shopping destinations.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1179e-339e-7411-9311-9beb727b52b1",
+          "turn_id": "01a1179e-32f4-7d53-8b7d-21fe404a0175",
+          "quote": "is this going to set the MAIN lifestyle page AND all the existing/future pages?"
+        }
+      ]
+    },
+    {
+      "id": "C60",
+      "scope": "Titles",
+      "requirement": "Avoid AI-sounding invented headline formula; use tasteful concise natural copy. Historical approved label text is preserved for its original look.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a11798-2729-73a1-8376-30c8062d6fd8",
+          "turn_id": "01a11792-7196-7c42-8fa9-45ae4722c9f2",
+          "quote": "are those titles just examples? they look ai as heck. i want the website to be made like a WEBSITE, with you rphotos added. i dont an ai generated webpage, i want an ai created webspage. should codex/work do it or claude/code"
+        }
+      ]
+    },
+    {
+      "id": "C61",
+      "scope": "Launch imagery",
+      "requirement": "Do not export old rejected launch images. Select newly improved approved work appropriate to new offer.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a118c4-a682-7392-991f-6fef0a2fb7d4",
+          "turn_id": "01a118c0-9e3f-7202-8d50-941babd06178",
+          "quote": "no, not the EXISTING LAUNCH IMAGES"
+        }
+      ]
+    },
+    {
+      "id": "C62",
+      "scope": "Launch coverage",
+      "requirement": "WYS promotion represents category breadth, not only six Halloween decor photos.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1193c-15f2-7763-80ea-605087cd90ea",
+          "turn_id": "01a1193c-0fae-7ea3-89e8-fe1d21c8d7cc",
+          "quote": "did you ONLY give it the fucking halloween images???????????????????????????? IM GOING TO LOSE MY FUCKING SHIT ON YOU WHY ARE YOU DOING THIS TO ME????????????????? FUCKING ANSWER ME!!!! WHY!!!! WHY ME??? WHY THE FUCK ARE YOU DOING THIS TO ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        }
+      ]
+    },
+    {
+      "id": "C63",
+      "scope": "Launch task",
+      "requirement": "Save assets non-destructively under assets/wys-launch-promo with manifest, roles, filenames, dimensions, rights; do not alter images or create designs in export task.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a118c0-9f1a-7521-aa30-3cbc6f936082",
+          "turn_id": "01a118c0-9e3f-7202-8d50-941babd06178",
+          "quote": "For the While-You-Sleep Storefront™ launch campaign, select the strongest optimized images for premium Canva promotional designs.\n\nSave the selected images in the TDIE GitHub repository under `assets/wys-launch-promo/`, without overwriting existing files.\n\nInclude a manifest identifying:\n\n- The best hero image for the presale announcement\n- Supporting images for additional promotional flyers\n- Images suitable for the free preview guide\n- Original filenames, dimensions, and any usage restrictions\n\nCommit the assets and return the branch name, commit SHA, and folder path.\n\nDo not alter the images or create new promotional designs. The Canva designer will handle layout, typography, and compositing."
+        }
+      ]
+    },
+    {
+      "id": "C64",
+      "scope": "Landing page",
+      "requirement": "Actual new landing page linked from flyers with Join the Waitlist and Look Inside; visual brief needed and approved image scope must be accurate.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1193e-8f8d-70d1-9192-8ff081ef72f6",
+          "turn_id": "01a1193e-8b6f-7181-b3b8-d4ac0e0b6a15",
+          "quote": "Got it. You want a brand-new landing page, the one the flyers send people to, with **Join the waitlist** and **Look inside** on it. I'm building that now with your six approved photos and will show you screenshots before anything goes live.\n\nSources checked: `ops/cloud-kit/TDIE_DESIGN_RULES.md` (THE LOOK), `src/styles/sales-typography.css` and `mobile.css` limits, the photo handoff notes for the six approved photos (README.md), `ops/canon/canon.json` Decision 123, and MailerLite (the waitlist form, which already passed a test signup).\n\nThat's the new landing page, the one the flyers send people to: **thedigitalincomeedit.com/while-you-sleep**. The screenshots are phone-1-top, phone-2-middle, phone-3-waitlist, and desktop-full.\n\n**What's on it:**\n\n- **Hot pink hero:** \"You pick the vibe. The system builds the look.\" Your doorway photo sits in a silver arch, with the coffee bar shot tucked in front and a lavender \"1 look, 3 photos\" sticker. A \"Presale opens Sunday · Oct 11 · 2 PM ET\" badge sits at the top, then the **Join the Waitlist** and **Look Inside** buttons.\n- **\"From a pile of picks to a room people want to shop\":** both looks shown as The picks → Styled → Lifestyle.\n- **Three numbered steps:** You pick the vibe → The system builds the look → You approve, it's scheduled.\n- **Pink waitlist section:** the signup box plus a \"Want to see more first? Look inside\" link.\n\n**What's left out on purpose:** no prices, no income claims, no \"posts by itself\" claims. A small line says the photos are styling illustrations, as the photo rules require.\n\nI checked it at three phone and desktop widths. Nothing spills off the side. The dark menu bar crossing the middle of the desktop screenshot is the site's sticky menu caught mid-scroll by the screenshot tool, not part of the page.\n\n**Not live yet.** The **Look Inside** button points to a page I haven't built yet, so the landing page can't go live until that exists. I'll build that next.\n\nThis matches `TDIE_DESIGN_RULES.md` (Newsreader upright headlines, Inter everywhere else, no bows, no brown, no beige) and Decision 123 (members-only presale, no prices).\n\n**My one question:** Is this the look you want for the landing page?\n\n\n\n\n\n\n\n\n\nGIVE ME A PROMPT AND SOME GODDAMN VISUAL DIRECTION BECUASE YOU KNOW EXACTLY WHAT THE FUCK I WANT BUT FOR SOME REASON YOU WANT TO FUCKING RUIN ME"
+        }
+      ]
+    },
+    {
+      "id": "C65",
+      "scope": "Prompt source preservation",
+      "requirement": "Preserve complete specifications in memory/repo and handoff; do not summarize away categorical differences.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [{"message_id":"current-recovery-request","turn_id":"current-recovery-request","quote":"good, now go BACK THROUGH and FIND EVERY MOTHER FUCKING INSTRUCTION/CLARIFICATION/DETAIL/DIRECTION/VIBE LITERALLY ANYTHING. LIKES AND DISLIKES, YES'S AND NO'S, COMMIT IT TO THE MEMORY AND REPO AND EVERYFUCKNIG WHERE ELSE I DONT KNOW ABOUT AND GIVE ME AN ACCURATE MOTHERFUCKING HANDOFF AND PROMPT TO FIX THE LEGALLY BLONDE SPRINT PROMPTS."}]
+    },
+    {
+      "id": "C66",
+      "scope": "Manual/free testing",
+      "requirement": "Customer chose free/manual while prompt calibration fails; paid jobs paused, old comparisons not resumed.",
+      "source_status": "DIRECT_USER_QUOTE",
+      "evidence": [
+        {
+          "message_id": "01a1119b-f841-7672-857d-9c16672ed9fb",
+          "turn_id": "01a1119b-f6ee-7993-913b-cd47df0a8ce7",
+          "quote": "give me the prompt. im going to run it on free until you get it right. we know this part of automatiuon works, we need to fix your prompts now. we need a repeatable one for each category (because a flatlay for clothes doesnt work for a flat lay for office items). we need a set of base prompts that get tweaked slightly based on the client's answer/aestheic."
+        }
+      ]
+    }
+  ]
+}

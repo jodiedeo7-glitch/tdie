@@ -33,3 +33,5 @@ Use existing approvals and authorizations without asking again. Do not add discr
 Keep founder automation, the customer kit, Daily Prompts and Premium DFY Calendar separate. Maintain one publishing writer and reconcile legacy ownership before cutover. Never substitute manual customer alternatives for completion of the founder's automatic workflow.
 Verify each actual write by supported readback and each live claim against current evidence. Distinguish prepared, scheduled, published and delivered. Keep failures UNVERIFIED until tested; instruction edits are not evidence that the pipeline works.
 Handle small failures quietly. Report only verified completion or one genuine blocker requiring Jodie, with the exact action needed. Do not tell her to perform anything that available authorized tools can complete.
+
+Packet 1 V9 document repair: follow `ops/wys-memory/README.md` and `ops/wys-memory/2026-10-07-recovered-spec/GOVERNING-SPEC.md` first. Latest repair and evidence: `ops/private/wys-board-test-2026-10-06/halloween-sprint-restart-20261007/v9-source-backed-repair/`. Static prompt/document coverage is not generated-image or client-release approval.
