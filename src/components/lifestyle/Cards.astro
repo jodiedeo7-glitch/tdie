@@ -1,0 +1,5 @@
+---
+import Card from './Card.astro';
+const { looks } = Astro.props;
+---
+<ul class="life-grid">{looks.map(look => <li><Card look={look} /></li>)}</ul>

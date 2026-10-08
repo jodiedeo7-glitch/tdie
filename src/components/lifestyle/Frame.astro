@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PinkFindsSignup from '../PinkFindsSignup.astro';
+import Disclosure from './Disclosure.astro';
+import '../../styles/edit.css';
+import '../../styles/lifestyle.css';
+const { title, description, ogImage, draft = false, schema = [], signup = true } = Astro.props;
+---
+<PageLayout bare title={title} description={description} ogImage={ogImage} noindex={draft} schema={schema}>
+  <div class="life">
+    <a class="life-skip" href="#life-content">Skip to Lifestyle content</a>
+    {draft && <aside class="life-draft"><strong>Local draft preview.</strong> Release prerequisites remain pending. This article is excluded from production builds.</aside>}
+    <div id="life-content"><slot /></div>
+    {signup && <section class="life-wrap life-signup" aria-label="Pink Finds email"><PinkFindsSignup variant="box" /></section>}
+    <div class="life-wrap life-close"><Disclosure /><a class="life-text-link" href="/lifestyle">Browse all Lifestyle articles <span aria-hidden="true">→</span></a></div>
+  </div>
+</PageLayout>

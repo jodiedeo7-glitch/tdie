@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import { categoryOf } from '../../data/lifestyle.js';
+const { look, featured = false } = Astro.props;
+const image = look.hero;
+---
+<a class:list={['life-card', { 'life-card-featured': featured }]} href={`/lifestyle/${look.slug}`}>
+  <span class="life-card-photo"><Image src={image.src} alt={image.alt} widths={[320, 480, 720, 960]} sizes={featured ? '(max-width: 760px) 100vw, 42vw' : '(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw'} loading={featured ? 'eager' : 'lazy'} fetchpriority={featured ? 'high' : 'auto'} /></span>
+  <span class="life-card-copy">
+    <span class="life-kicker">{categoryOf(look.category)?.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</span>
+    <h3>{look.title}</h3>
+    {featured && <span class="life-card-intro">{look.intro}</span>}
+    <span class="life-card-count">{look.items.length} listed products</span>
+    <span class="life-button life-button-small">Read &amp; shop <span aria-hidden="true">→</span></span>
+  </span>
+</a>
