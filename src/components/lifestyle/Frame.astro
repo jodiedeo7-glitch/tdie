@@ -4,10 +4,11 @@ import PinkFindsSignup from '../PinkFindsSignup.astro';
 import Disclosure from './Disclosure.astro';
 import '../../styles/edit.css';
 import '../../styles/lifestyle.css';
-const { title, description, ogImage, draft = false, schema = [], signup = true, disclosure = true } = Astro.props;
+const { title, description, ogImage, draft = false, schema = [], signup = true, disclosure = true, halloween = false } = Astro.props;
 ---
 <PageLayout bare title={title} description={description} ogImage={ogImage} noindex={draft} schema={schema}>
-  <div class="life">
+  <div class:list={["life", { "life-halloween": halloween }]} >
+    {halloween && <div class="life-halloween-background" aria-hidden="true">{Array.from({ length: 40 }, () => <div class="life-halloween-tile" />)}</div>}
     <a class="life-skip" href="#life-content">Skip to Lifestyle content</a>
     {draft && <aside class="life-draft"><strong>Local draft preview.</strong> Release prerequisites remain pending. This article is excluded from production builds.</aside>}
     <div id="life-content"><slot /></div>

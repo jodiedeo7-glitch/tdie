@@ -17,7 +17,7 @@ const shoppingPending = look.shoppingStatus === 'pending';
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type': 'Article', headline: look.title, description: look.description, image: hero ? new URL(hero.src.src, 'https://www.thedigitalincomeedit.com').href : undefined, ...(dateIsPast ? { datePublished: look.date } : {}), mainEntityOfPage: `https://www.thedigitalincomeedit.com/lifestyle/${look.slug}`, publisher: { '@type': 'Organization', name: 'The Digital Income Edit™' } }];
 ---
-<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} disclosure={false}>
+<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} disclosure={false} halloween={look.season?.toLowerCase() === 'halloween'}>
   <article class="life-wrap life-article">
     <header class="life-article-head">
       <nav class="life-breadcrumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>

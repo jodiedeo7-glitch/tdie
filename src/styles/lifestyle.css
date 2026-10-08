@@ -123,3 +123,17 @@
 @media(max-width:640px){.life-grid-pair{grid-template-columns:minmax(0,1fr)}.life .life-story-copy h2{font-size:28px}.life-story-copy{line-height:1.7}}
 /* Keep section links clear of the shared sticky navigation on every screen. */
 .life [id]{scroll-margin-top:90px}
+
+/* Use the supplied screenshot unchanged. Each CSS tile clips its app controls
+   and bottom instruction, displaying source rows 80–1170 as the wallpaper. */
+.life-halloween{position:relative;background:#FFDCDF;--ghost-tile-width:540px;--ghost-source-ratio:1.7816411683}
+.life-halloween-background{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;display:grid;grid-auto-rows:calc(var(--ghost-tile-width)*1090/719);align-content:start}
+.life-halloween-tile{background-image:url('/images/lifestyle/pink-halloween-ghosts.jpg');background-repeat:repeat-x;background-size:var(--ghost-tile-width) calc(var(--ghost-tile-width)*var(--ghost-source-ratio));background-position:center calc(var(--ghost-tile-width)*-80/719)}
+.life-halloween>:is(#life-content,.life-signup,.life-close,.life-draft){position:relative;z-index:1}
+.life-halloween .life-article{padding-top:32px}
+.life-halloween .life-article-head{max-width:none;background:#FFFCFA;padding:28px 32px;margin-bottom:28px;border:1px solid #B8245F40;border-radius:20px;box-shadow:0 8px 28px #B8245F0C}
+.life-halloween .life-story-copy{background:#FFFCFA;padding:28px;border:1px solid #B8245F40;border-radius:20px}
+.life-halloween .life-prose{background:#FFFCFA;padding:28px;border:1px solid #B8245F40;border-radius:20px}
+.life-halloween .life-gallery-section,.life-halloween .life-article>.life-section{background:#FFFCFA;padding:28px;margin-top:32px;border:1px solid #B8245F40;border-radius:20px}
+.life-halloween .life-close>.life-text-link{background:#FFFCFA;padding:8px 18px;border-radius:999px}
+@media(max-width:640px){.life-halloween{--ghost-tile-width:360px}.life-halloween .life-article{padding-top:20px}.life-halloween .life-article-head{padding:22px 20px}.life-halloween .life-story-copy,.life-halloween .life-prose,.life-halloween .life-gallery-section,.life-halloween .life-article>.life-section{padding:22px 20px}.life-halloween .life-breadcrumb{font-size:13px}.life-halloween .life-article-head .life-intro{font-size:17px}}
