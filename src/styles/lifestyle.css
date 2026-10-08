@@ -65,7 +65,7 @@
 .life-article{padding-top:24px}
 .life-article-head{max-width:850px;padding-bottom:30px}
 .life-article-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.life-article-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:30px;align-items:start}
+.life-article-top{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;align-items:start}
 .life-photo{margin:0;background:white;border:1px solid #1A14173B;border-radius:16px;overflow:hidden;min-width:0}
 .life-photo img{display:block;width:100%;height:auto}
 .life-photo figcaption{padding:18px 20px;font-size:15px;line-height:1.6}
@@ -73,11 +73,11 @@
 .life-shop{border:1px solid #1A141740;border-top:5px solid #D62E73;border-radius:16px;padding:26px;background:#fff;min-width:0}
 .life-shop h2{font-size:30px}
 .life-shop .life-notice{font-size:14px;padding:16px}
-.life-products{list-style:none;counter-reset:product;padding:0;margin:22px 0;display:grid;gap:20px}
-.life-products li{counter-increment:product;padding:0 0 18px 38px;border-bottom:1px solid #1A141725;position:relative;overflow-wrap:anywhere}
+.life-products{list-style:none;counter-reset:product;padding:0;margin:22px 0;display:grid;gap:14px}
+.life-products li{counter-increment:product;padding:0 0 12px 38px;border-bottom:1px solid #1A141725;position:relative;overflow-wrap:anywhere}
 .life-products li::before{content:counter(product,decimal-leading-zero);position:absolute;left:0;top:0;display:grid;place-items:center;width:27px;height:27px;border:1px solid #1A141744;border-radius:50%;background:#FFDBED;font-size:12px;font-weight:700}
 .life-products h3{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;margin:0 0 5px;letter-spacing:0}
-.life-products p{font-size:14px;margin:0 0 7px}
+.life-products p{font-size:15px;margin:0 0 7px}
 .life-product-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:15px;font-weight:600;text-decoration:underline!important;text-underline-offset:4px;color:var(--life-pink)!important}
 .life-prose{max-width:740px;margin:44px auto;font-size:18px;line-height:1.8}
 .life-prose section+section{margin-top:32px}
@@ -104,3 +104,20 @@
 .life-article-top:has(>.life-shop:only-child){grid-template-columns:minmax(0,1fr);max-width:740px;margin-inline:auto}
 /* Keep product names at a readable list scale when mobile card headings grow. */
 .life .life-products h3{font-family:Inter,system-ui,sans-serif;font-size:16px}
+
+/* Pair the photographs with their advice, retaining the complete portrait frame. */
+.life-grid-pair{grid-template-columns:repeat(2,minmax(0,1fr));max-width:860px}
+.life-shopping-status{margin:18px 0!important;padding:12px 16px;border-left:3px solid var(--life-pink);background:#FFF0F7;font-size:15px;line-height:1.6}
+.life-product-status{color:var(--life-pink)!important;font-size:14px}
+.life-story{display:grid;gap:44px;padding-top:44px}
+.life-story-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px;align-items:center}
+.life-story-row>.life-photo{max-width:420px;width:100%;justify-self:center}
+.life-story-row:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.life-story-row:nth-child(even)>.life-photo{grid-column:2;grid-row:1}
+.life-story-row:nth-child(even)>.life-story-copy{grid-column:1;grid-row:1}
+.life-story-copy{font-size:17px;line-height:1.7;max-width:60ch}
+.life-story-copy section+section{margin-top:28px}
+.life .life-story-copy h2{font-size:30px}
+.life-story-copy p:last-child{margin-bottom:0}
+@media(max-width:760px){.life-story{gap:32px;padding-top:32px}.life-story-row,.life-story-row:nth-child(even){grid-template-columns:minmax(0,1fr);gap:24px}.life-story-row:nth-child(even)>:is(.life-photo,.life-story-copy){grid-column:auto;grid-row:auto}.life-story-row>.life-photo{max-width:520px}.life-story-copy{max-width:none}}
+@media(max-width:640px){.life-grid-pair{grid-template-columns:minmax(0,1fr)}.life .life-story-copy h2{font-size:28px}.life-story-copy{line-height:1.7}}

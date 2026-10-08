@@ -37,6 +37,8 @@ Each image needs `file` and meaningful `alt`. Recommended optional fields:
 
 One or two images work without empty slots. Legacy `-flatlay`/`-lifestyle` filenames get role fallbacks; decor and car images never inherit clothing captions. Unrecognized old filenames get a neutral styled-scene caption. Images keep their proportions in articles; cards use contain within a consistent frame.
 
+Articles with enough styling sections pair the remaining photographs with successive groups of advice. Shorter records retain the plain prose and gallery layout. Keep sections concise; the template shows one complete disclosure and one article-level notice when all shopping destinations are pending. Related cards use articles with styled or lifestyle imagery, while the full browse grid retains legacy image records.
+
 ## 4. Verify shopping destinations
 
 Products use the existing `items` array. Required public fields: `name`, `link`. Optional: `asin`, `variant`, `note`, `affiliateStatus`, `verifiedAt`.
@@ -63,11 +65,11 @@ Preview the article, category and hub at desktop, 390px and 320px. Inspect compl
 
 After photo and link review, set `status: "published"` only when the article is ready for a public build. Local implementation does not authorize publishing, pushing, deploying or submitting Idea Lists. Follow current founder release restrictions separately. Navigation, signup, footer, analytics, canonicals and the sitemap remain provided by the existing site. Never restore private publishing tests.
 
-## Current Halloween drafts
+## Historical private Halloween checkpoint
 
 `pretty-wicked-entryway.json` and `ghoul-fuel-coffee-bar.json` contain the complete copy, three role/caption/alt records and five source-matched products each. Their affiliate states remain pending and their Idea Lists are unsubmitted; no list URLs are invented.
 
-All six approved PNGs were transferred from the two article-specific approved-photo ZIPs, visually inspected and copied unchanged to `drafts/<slug>-<role>.png`. The entryway lifestyle image is the approved porch-door replacement. SHA-256 hashes and original dimensions are recorded in `ops/lifestyle/APPROVED_PHOTOS.json`. Both complete three-photo articles passed desktop/mobile review. Affiliate links and Idea Lists remain pending; neither article is published. Before any later authorized publication, move approved images out of `drafts/`, update the six paths, complete destination verification and follow release restrictions.
+All six approved PNGs were transferred from the two article-specific approved-photo ZIPs, visually inspected and copied unchanged to `drafts/<slug>-<role>.png`. The entryway lifestyle image is the approved porch-door replacement. SHA-256 hashes and original dimensions are recorded in `ops/lifestyle/APPROVED_PHOTOS.json`. Both complete three-photo articles passed the original technical desktop/mobile checks. Affiliate links and Idea Lists remain pending; neither article is published. Before any later authorized publication, move approved images out of `drafts/`, update the six paths, complete destination verification and follow release restrictions.
 
 ## Authorized public inspiration pages
 

@@ -11,3 +11,11 @@ Release commit `5bd3dc9ad9f5f043fb8264b87f6fa9176504ce0a` was pushed to `cloudfl
 A production-only cascade override on product-name font families was identified in live visual review and corrected with a more specific Lifestyle rule. Cards for the two pending-shopping articles now say Read the article. Final release readback is recorded under /workspace/work/lifestyle-qa/release-live. These website writes do not release the customer WYS product or authorize social publication.
 
 The original /workspace/tdie working branch retains the earlier private-draft checkpoint. The published worktree is /workspace/work/lifestyle-release. Publication targets the existing production branch only; main was not overwritten or force-pushed. Future main-to-production synchronization must preserve this release.
+
+## Layout correction, 8 October 2026 UTC
+
+The initial audit established technical rendering, but the first published design was inadequate: six repeated pending boxes, duplicate disclosures, separated photographs and long prose. Those were introduced by the Lifestyle implementation, not pre-existing canon issues. The correction uses one pending-link notice, one full disclosure, concise styling copy beside the two additional photographs and two related photographic cards. The hub features the two approved new articles. All 22 legacy records and their destinations are preserved; approved PNGs are unchanged. Pending affiliate links and unsubmitted Amazon lists stay suppressed.
+
+The earlier repository-wide canon audit failures concern existing source/runtime records and superseded instructions, not a failed website build. The comparison before and after the approved-photo integration recorded 168 FAIL / 803 REVIEW in tracked baseline versus 170 FAIL / 804 REVIEW with the existing untracked CLAUDE file included; the two additional failures and review came from that file, not the photographs or article changes. The audit was not silently waived or reported as passing. Evidence: /workspace/work/lifestyle-qa/canon-audit-comparison.json and canon-audit-distribution.json.
+
+Correction validation and public readback: /workspace/work/lifestyle-qa/fix/. All 36 Lifestyle routes are reviewed at desktop and mobile; the two new articles also at 320px. Capture and HTTP receipts distinguish local validation from production readback. No forms are submitted.

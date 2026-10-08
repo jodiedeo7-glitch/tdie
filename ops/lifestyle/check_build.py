@@ -31,7 +31,7 @@ for file in pages:
  assert len(page.ids)==len(set(page.ids)),file
  assert page.ld,file
  for block in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',text,re.S):json.loads(block)
- assert 'As an Amazon Associate I earn from qualifying purchases.' in text,file
+ assert text.count('As an Amazon Associate I earn from qualifying purchases.')==1,file
  assert 'Retail products may differ' in text,file
  assert 'Every link on this page is an affiliate link' not in text,file
  for img in page.images:
@@ -49,7 +49,9 @@ for record in public:
  file=DIST/'lifestyle'/record['slug']/'index.html';text=file.read_text();page=Page(text)
  if record.get('shoppingStatus')=='pending':
   assert len([im for im in page.images if record['slug'] in unquote(im['src'])])==3,record['slug']
-  assert 'Product links are still being verified.' in text,record['slug']
+  assert text.count('Product links are still being verified.')==1,record['slug']
+  assert 'Shopping destination pending verification.' not in text,record['slug']
+  assert text.count('class="life-story-row"')==2,record['slug']
   assert not any('amazon.com' in a.get('href','') or 'amzn.to' in a.get('href','') for a in page.linkAttrs),record['slug']
   assert '/lifestyle/'+record['slug'] in (DIST/'sitemap-0.xml').read_text(),record['slug']
   continue

@@ -5,7 +5,7 @@ import Cards from '../../components/lifestyle/Cards.astro';
 import Categories from '../../components/lifestyle/Categories.astro';
 import { LOOKS } from '../../data/lifestyle.js';
 // Explicit editorial selection, independent of imported file order or future dates.
-const featured = ['pink-halloween-porch-decor', 'pink-car-interior-accessories', 'pink-witch-halloween-costume'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
+const featured = ['pretty-wicked-entryway', 'ghoul-fuel-coffee-bar', 'pink-witch-halloween-costume'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
 ---
 <Frame title="Lifestyle · Pink Outfits, Home Decor & Everyday Finds" description="Browse pink outfit ideas, seasonal home decor and car accessories, with generated styling inspiration and clearly listed shopping finds.">
   <header class="life-hero">
@@ -21,7 +21,7 @@ const featured = ['pink-halloween-porch-decor', 'pink-car-interior-accessories',
     </div>
   </header>
   <section class="life-wrap life-section" aria-labelledby="life-featured">
-    <div class="life-section-heading"><div><p class="life-kicker">A few favorites</p><h2 id="life-featured">Start here</h2></div><p>One for your home, one for the coffee run, one for dressing up.</p></div>
+    <div class="life-section-heading"><div><p class="life-kicker">A few favorites</p><h2 id="life-featured">Start here</h2></div><p>One for your home, one for your coffee corner, one for dressing up.</p></div>
     <Cards looks={featured} />
   </section>
   <section class="life-band" aria-labelledby="life-categories-title"><div class="life-wrap life-section"><p class="life-kicker">Follow your curiosity</p><h2 id="life-categories-title">Find your corner</h2><Categories /></div></section>
