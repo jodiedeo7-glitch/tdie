@@ -1,0 +1,16 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import '../styles/wys.css';
+import { WYS_ROOT } from '../data/wys.js';
+const {title,description,current='overview',ogImage,noindex=false}=Astro.props;
+const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Stay in the loop',href:WYS_ROOT+'/waitlist'}];
+---
+<PageLayout bare visualRefresh title={title} description={description} ogImage={ogImage} noindex={noindex}>
+ <div class="wys-world">
+  <a class="wys-skip" href="#wys-content">Skip to content</a>
+  <div class="wys-mast"><div class="wys-wrap wys-mast-inner"><a class="wys-wordmark" href={WYS_ROOT}>The While-You-Sleep <span>Storefront™</span></a><span class="wys-mast-note">A little less busy. A lot more possibility.</span></div></div>
+  <nav class="wys-nav wys-wrap" aria-label="While-You-Sleep Storefront"><span class="wys-label">The TDIE workflow edit</span><div>{links.map(link=><a href={link.href} aria-current={current===link.key?'page':undefined}>{link.name}</a>)}</div></nav>
+  <div id="wys-content"><slot /></div>
+  <div class="wys-wrap wys-foot"><a href="/lifestyle">Explore the Lifestyle edit <span aria-hidden="true">→</span></a><a href="/shop">Back to the TDIE shop <span aria-hidden="true">→</span></a></div>
+ </div>
+</PageLayout>

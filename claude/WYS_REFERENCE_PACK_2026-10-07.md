@@ -311,6 +311,8 @@ Updated 4 Oct 2026. Read current canon and verify live checkout/listing state be
 
 Release is on hold. Publish nothing for this product. Dates below are planning facts only and do not authorize posting, launch, checkout activation, delivery release or affiliate activation.
 
+**Website-only exception, Jodie, 8 October 2026:** "Publish the website redesign only; keep the product on hold." This authorizes publication of the redesigned WYS landing page, Look Inside and updates/waitlist page using the existing Weekly Edit signup, clearly labeled. It does not release the customer product or authorize checkout activation, customer delivery, generation, discounts/countdowns, affiliate activation or scheduled promotion. Keep all customer release gates and generation pauses in force.
+
 ## Campaign structure
 
 - Name The While-You-Sleep Storefront™ in the first Mon 5 Oct announcement. Do not run an unnamed mystery campaign.
