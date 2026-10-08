@@ -1,6 +1,20 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import Testimonial from "../../components/Testimonial.astro";
+import PinkFindsSignup from "../../components/PinkFindsSignup.astro";
+
+// WYS Waitlist (Jodie, 7 Oct 2026): MailerLite form "WYS Waitlist (storefront page)"
+// feeds group "WYS Waitlist" (200719393549715350 / 200719389134161712). Double opt-in.
+// Founder dates 7 Oct 2026: member presale Sun 11 Oct 2:00 pm ET; full launch the
+// following week (Thu 15 Oct target, not announced publicly until customer testing passes).
+const WAITLIST_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/200719393549715350/subscribe";
+const WAITLIST = {
+  kicker: "The waitlist",
+  heading: "Be first when the doors open.",
+  sub: "The member presale opens Sunday, October 11 at 2:00 pm Eastern. Join the waitlist and I'll email you the moment it opens, and again on launch day. Check your inbox to confirm your spot. Unsubscribe anytime.",
+  button: "Save My Spot",
+  done: "You're on the list. Confirm the email in your inbox and you'll hear from me the minute the presale opens.",
+};
 import { Image } from "astro:assets";
 
 // The While-You-Sleep Storefront(TM). Standalone Beacons product, never included
@@ -86,7 +100,7 @@ const inside = [
     <h1>Pinterest pins for your Amazon links. <em>Less work on your plate.</em></h1>
     <p class="lede">A guided kit for turning your approved Amazon products into Pinterest pin drafts, with images and copy prepared for your review. Spend less time rebuilding the same routine. <strong>You choose each finished pin and authorize its schedule after checking the destination, board, disclosure and details.</strong></p>
     <div class="ws-cta-row">
-      <a class="btn" href="#buy">See exactly what you get <span class="a">→</span></a>
+      <a class="btn" href="#waitlist">Join the waitlist <span class="a">→</span></a>
       <a class="ws-link" href="#proof">See the real pins first →</a>
     </div>
     <ul class="ws-trust">
@@ -184,8 +198,9 @@ const inside = [
     <div class="ws-kicker">The price</div>
     <div class="ws-price-box">
       <div class="ws-price-state" data-stage="held" hidden={stage !== "held"}>
-        <div class="ws-price-fig">Not on sale yet</div>
-        <p class="ws-price-when">The While-You-Sleep Storefront™ isn't on sale yet, and there's no presale open. Members of The Digital Income Edit™ community on Skool will hear first when it is.</p>
+        <div class="ws-price-fig">Presale Sunday</div>
+        <p class="ws-price-when">The member presale opens Sunday, October 11 at 2:00 pm Eastern, for members of The Digital Income Edit™ community on Skool. The full launch follows next week.</p>
+        <div class="ws-wait"><PinkFindsSignup variant="side" id="waitlist" action={WAITLIST_ACTION} custom={WAITLIST} lead="WYS Waitlist" /></div>
       </div>
       {!HOLD && (<Fragment>
       <div class="ws-price-state" data-stage="soon" hidden={stage !== "soon"}>
@@ -327,6 +342,7 @@ const inside = [
   .ws-was{color:var(--choc-mute);font-size:.55em;text-decoration-thickness:3px;margin-right:6px}
   .ws-count{font:700 14px/1.4 Inter,sans-serif;letter-spacing:.06em;color:var(--pink-deep);margin:12px 0 0;min-height:1.4em}
   .ws-buy[hidden]{display:none}
+  .ws-wait{margin:26px auto 0;max-width:460px;text-align:left}
   .ws-fine{font-size:13px;color:var(--choc-mute);margin:18px 0 0}
 
   .ws-faq{border-bottom:1px solid rgba(214,46,115,.2);padding:18px 0}

@@ -15,23 +15,32 @@
 // own required/type=email validation runs. The submit mechanism is
 // unchanged: a plain POST to PF_ACTION into a hidden iframe.
 import { PF_ACTION, PRIME_END, PF } from "../data/pinkfinds.js";
-const { variant = "strip", id } = Astro.props;
+const { variant = "strip", id, action, custom, lead = "Pink Finds" } = Astro.props;
+// custom = { kicker, heading, sub, button, done } swaps in a one-off signup
+// (WYS Waitlist, 7 Oct 2026) without touching the Pink Finds copy.
+const ACTION = action || PF_ACTION;
 const UID = Math.random().toString(36).slice(2, 9);
 const SINK = "pf-sink-" + UID;
 const EMAIL_ID = "pf-email-" + UID;
 const ERR_ID = "pf-err-" + UID;
 const PRIV_ID = "pf-priv-" + UID;
-const primeNow = Date.now() < Date.parse(PRIME_END);
+const primeNow = custom ? false : Date.now() < Date.parse(PRIME_END);
 ---
-<div class={`pf pf-${variant}`} data-pf-end={PRIME_END} id={id}>
+<div class={`pf pf-${variant}`} data-pf-end={custom ? undefined : PRIME_END} id={id}>
   <iframe name={SINK} class="pf-sink" title="Signup response" tabindex="-1" aria-hidden="true"></iframe>
-  <form class="pf-form" action={PF_ACTION} method="post" target={SINK} data-pf>
+  <form class="pf-form" action={ACTION} method="post" target={SINK} data-pf data-pf-lead={lead}>
     <div class="pf-copy">
+      {custom ? (<Fragment>
+      <p class="pf-k">{custom.kicker}</p>
+      <p class="pf-h">{custom.heading}</p>
+      <p class="pf-sub">{custom.sub}</p>
+      </Fragment>) : (<Fragment>
       <p class="pf-k">The Friday email</p>
       <p class="pf-h" data-pf-prime hidden={!primeNow}>{PF.prime.heading}</p>
       <p class="pf-h" data-pf-ever hidden={primeNow}>{PF.evergreen.heading}</p>
       <p class="pf-sub" data-pf-prime hidden={!primeNow}>{PF.prime.sub}</p>
       <p class="pf-sub" data-pf-ever hidden={primeNow}>{PF.evergreen.sub}</p>
+      </Fragment>)}
     </div>
     <div class="pf-field">
       <div class="pf-row">
@@ -48,14 +57,14 @@ const primeNow = Date.now() < Date.parse(PRIME_END);
           autocapitalize="off"
           aria-describedby={`${ERR_ID} ${PRIV_ID}`}
         />
-        <button type="submit">{PF.button}</button>
+        <button type="submit">{custom ? custom.button : PF.button}</button>
       </div>
       <p class="pf-error" id={ERR_ID} role="alert"></p>
       <p class="pf-privacy" id={PRIV_ID}>See the <a href="/privacy">privacy policy</a>.</p>
     </div>
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
-    <p class="pf-done" role="status" tabindex="-1" hidden>{PF.done}</p>
+    <p class="pf-done" role="status" tabindex="-1" hidden>{custom ? custom.done : PF.done}</p>
   </form>
 </div>
 
@@ -114,7 +123,7 @@ const primeNow = Date.now() < Date.parse(PRIME_END);
         var d = f.querySelector('.pf-done');
         d.hidden = false;
         try { d.focus(); } catch (x) {}
-        if (window.fbq) fbq('track', 'Lead', { content_name: 'Pink Finds' });
+        if (window.fbq) fbq('track', 'Lead', { content_name: f.getAttribute('data-pf-lead') || 'Pink Finds' });
       });
     });
   })();
