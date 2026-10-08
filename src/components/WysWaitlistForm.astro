@@ -1,0 +1,66 @@
+---
+// WYS waitlist form (8 Oct 2026). Same destination as before: MailerLite embedded form
+// "WYS Waitlist (storefront page)" 200719393549715350 -> group "WYS Waitlist"
+// 200719389134161712, double opt-in (set in MailerLite, unchanged here).
+// MailerLite's subscribe endpoint allows cross-origin reads, so the page shows the
+// real reply: success only on {"success":true}, the service's own error otherwise.
+// Without JavaScript the form posts normally to the same endpoint.
+// Tracking kept from the earlier form: Meta Pixel "Lead" on confirmed success.
+import { WAITLIST_ACTION } from "../data/wys-landing.js";
+const { id = "wy-wait" } = Astro.props;
+---
+<form class="wy-form" id={id} action={WAITLIST_ACTION} method="post" data-wy-form data-state="idle" novalidate>
+  <div class="wy-form-fields">
+    <label class="wy-field-label" for={`${id}-email`}>Your email address</label>
+    <div class="wy-field">
+      <input class="wy-input" id={`${id}-email`} type="email" name="fields[email]" placeholder="you@example.com" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off" aria-describedby={`${id}-msg ${id}-consent`} />
+      <button class="wy-btn wy-btn-hot" type="submit"><span class="wy-spin" aria-hidden="true"></span><span data-label>Join the Waitlist</span></button>
+    </div>
+    <input type="hidden" name="ml-submit" value="1" />
+    <input type="hidden" name="anticsrf" value="true" />
+    <p class="wy-msg" id={`${id}-msg`} role="alert" aria-live="assertive"></p>
+    <p class="wy-consent" id={`${id}-consent`}>We'll send a quick email to confirm it's you. Unsubscribe anytime. See the <a href="/privacy">privacy policy</a>.</p>
+  </div>
+  <div class="wy-done" role="status" tabindex="-1">
+    <span class="wy-spark" aria-hidden="true"></span>
+    <h2>Almost there. Check your inbox.</h2>
+    <p>Your spot is saved once you confirm.</p>
+    <ol>
+      <li>Open the confirmation email from The Digital Income Edit™.</li>
+      <li>Tap the confirm button inside it.</li>
+      <li>Watch for the presale email Sunday, October 11 at 2 PM Eastern.</li>
+    </ol>
+  </div>
+</form>
+
+<script is:inline>
+(function(){
+  document.querySelectorAll('form[data-wy-form]:not([data-ready])').forEach(function(f){
+    f.setAttribute('data-ready','');
+    var input=f.querySelector('input[type="email"]'), msg=f.querySelector('.wy-msg'), btn=f.querySelector('button[type="submit"]'), label=btn.querySelector('[data-label]'), done=f.querySelector('.wy-done');
+    var IDLE=label.textContent;
+    function err(t){msg.textContent=t;msg.className='wy-msg'+(t?' wy-msg-err':'');if(t){input.setAttribute('aria-invalid','true');}else{input.removeAttribute('aria-invalid');}}
+    function state(s){f.setAttribute('data-state',s);var busy=s==='loading';btn.disabled=busy;btn.setAttribute('aria-busy',busy?'true':'false');label.textContent=busy?'Saving your spot...':IDLE;}
+    function check(){var v=(input.value||'').trim();input.value=v;if(!v)return 'Add your email address first.';if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))return 'That email looks incomplete. Check it reads like name@example.com.';return '';}
+    input.addEventListener('input',function(){if(msg.textContent&&!check())err('');});
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(f.getAttribute('data-state')==='loading')return;
+      var problem=check(); if(problem){err(problem);input.focus();return;}
+      err(''); state('loading');
+      var body=new URLSearchParams(new FormData(f));
+      var ctl=('AbortController' in window)?new AbortController():null; var timer=setTimeout(function(){ctl&&ctl.abort();},15000);
+      fetch(f.action,{method:'POST',body:body,signal:ctl?ctl.signal:undefined})
+        .then(function(r){return r.json();})
+        .then(function(j){
+          clearTimeout(timer);
+          if(j&&j.success){state('done');try{done.focus();}catch(x){} if(window.fbq)fbq('track','Lead',{content_name:'WYS Waitlist'});return;}
+          state('idle');
+          var m=j&&j.errors&&j.errors.fields&&j.errors.fields.email&&j.errors.fields.email[0];
+          err(m||'That didn’t go through. Please check your email address and try again.');input.focus();
+        })
+        .catch(function(){clearTimeout(timer);state('idle');err('We couldn’t reach the signup service. Check your connection and try again in a moment.');});
+    });
+  });
+})();
+</script>

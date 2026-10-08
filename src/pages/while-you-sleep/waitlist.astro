@@ -1,0 +1,42 @@
+---
+// WYS waitlist: PRIVATE PREVIEW (8 Oct 2026). noindex; release hold stands.
+// One job: a focused signup with a clear reason to join. Destination and double
+// opt-in are unchanged (see WysWaitlistForm.astro). No prices, codes or scarcity.
+import PageLayout from "../../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import WysWaitlistForm from "../../components/WysWaitlistForm.astro";
+import "../../styles/wys.css";
+import { LANDING, INSIDE, PRESALE_LINE, CLOTHING } from "../../data/wys-landing.js";
+---
+<PageLayout wide noindex ogImage={CLOTHING.shots[1].img.src}
+  title="Join the Waitlist · The While-You-Sleep Storefront™"
+  description="Get the member presale link for The While-You-Sleep Storefront™ the moment it opens: Sunday, October 11 at 2 PM Eastern.">
+<div class="wy">
+
+  <a class="wy-back" href={LANDING}><span aria-hidden="true">←</span> The While-You-Sleep Storefront™</a>
+
+  <section class="wy-wl" style="margin-top:12px" aria-labelledby="wl-h">
+    <figure class="wy-wl-art">
+      <p class="wy-badge"><span class="wy-pearl" aria-hidden="true"></span>{PRESALE_LINE}</p>
+      <Image src={CLOTHING.shots[1].img} alt={CLOTHING.shots[1].alt} widths={[480, 720, 1000]} sizes="(max-width: 960px) 100vw, 540px" loading="eager" />
+      <figcaption>The styled flat lay from the Off Duty look. A styling illustration, not a retailer photo.</figcaption>
+    </figure>
+    <div class="wy-wl-body">
+      <p class="wy-kicker">The waitlist</p>
+      <h1 class="wy-h1" id="wl-h">Be first through <span>the door.</span></h1>
+      <p class="wy-lede">The While-You-Sleep Storefront™ member presale opens Sunday, October 11 at 2 PM Eastern. Get the link the moment it does.</p>
+      <ul class="wy-why">
+        <li>An email the second the member presale opens</li>
+        <li>A heads-up on launch day next week</li>
+        <li>Unsubscribe anytime, one click</li>
+      </ul>
+      <WysWaitlistForm id="wy-wait" />
+      <div class="wy-wl-more">
+        <a href={INSIDE}>Take the full tour first <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="wy-small" style="margin-top:10px">The presale is for members of The Digital Income Edit™ community on Skool.</p>
+    </div>
+  </section>
+
+</div>
+</PageLayout>

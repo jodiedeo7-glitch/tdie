@@ -19,6 +19,7 @@ import gfLife from "../assets/wys-private/ghoul-fuel-coffee-bar-lifestyle.png";
 export const PRODUCT = "The While-You-Sleep Storefront™";
 export const LANDING = "/while-you-sleep";
 export const INSIDE = "/while-you-sleep/inside";
+export const WAITLIST_PAGE = "/while-you-sleep/waitlist";
 export const PRESALE_LINE = "Member presale · Sunday, October 11 · 2 PM ET";
 
 export const WAITLIST_ACTION = "https://assets.mailerlite.com/jsonp/2532349/forms/200719393549715350/subscribe";
@@ -78,4 +79,56 @@ export const PATHS = [
   { t: "Time-saving", p: "Recurring tasks and connected tools do the steps your accounts support. You choose how much you review before anything is scheduled." },
   { t: "Credit-saving", p: "Lower-cost Claude or ChatGPT routes for the steps that would otherwise eat credits." },
   { t: "Manual", p: "Every step as a checklist you run yourself, with the same finish line." },
+];
+
+// Look Inside: how each category's recipe differs (master file section 2 roles).
+export const HOW = {
+  clothing: "Clothing is about the outfit, so the styled shot stays a flat lay: fuller, layered, unlabelled. The lifestyle photo shows it worn in its own scene.",
+  entryway: "Decor is about the space, so the styled shot puts the products where they belong, and the lifestyle photo shows someone using that space.",
+  coffee: "Same decor recipe, a different corner of the house: the picks, the bar set up, then the first cup.",
+};
+
+// Workflow in three chapters (master file sections 15-23).
+export const CHAPTERS = [
+  { t: "Set it up once", steps: [
+    { b: "Your accounts", p: "Influencer Idea Lists, Associates-only, or your own site." },
+    { b: "Your look", p: "Persona or no persona, channels, timezone and cadence." },
+    { b: "Your control", p: "Image tool and budget, and how much you review." },
+  ]},
+  { t: "Build each look", steps: [
+    { b: "Theme and picks", p: "Choose the theme, season and Amazon products. Vibe photos optional." },
+    { b: "Three photographs", p: "Basic, styled and lifestyle, using that category's recipe." },
+    { b: "Graphics and copy", p: "Three pins and three Instagram slides, with alt text and your disclosure." },
+  ]},
+  { t: "Publish and keep it running", steps: [
+    { b: "In order", p: "Shopping destination and blog page, then Pinterest, then Instagram." },
+    { b: "Read back", p: "Each result is checked, so you know what really went out." },
+    { b: "On repeat", p: "A weekly look, an optional Outfit of the Day, and a daily check-up." },
+  ]},
+];
+
+export const COVERS = [
+  "A guided setup that records your choices and what your accounts can and can't do yet",
+  "The three-photograph recipe, per category: clothing and decor",
+  "Graphic, copy and disclosure rules for pins and Instagram slides",
+  "Three recurring tasks: weekly look, optional Outfit of the Day, daily check-up",
+  "Persona and no-persona paths; Influencer, Associates-only and own-site paths",
+  "The Brand Closet™ Outfit of the Day path, for members of that community",
+  "A lower-cost route and a manual checklist for every step that costs credits",
+];
+
+export const NEEDS = [
+  "Amazon Associates (Influencer approval unlocks Idea Lists)",
+  "A Pinterest business account and a public board",
+  "An image tool you choose, on your own budget",
+  "Persona reference photos, or the no-persona path",
+  "A website, for the blog page and the Associates-only path",
+  "Metricool, only if you schedule through it",
+];
+
+export const LIMITS = [
+  "Automatic product finding isn't ready. It needs Amazon's Creators API, which opens at 10 qualifying sales in 30 days.",
+  "What runs on its own depends on your accounts and is tested in your setup. A missing step is named, never skipped.",
+  "The photographs are styling illustrations. Product shapes are approximate, not retailer photos.",
+  "No income, sales or traffic promises.",
 ];
