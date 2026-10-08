@@ -1,4 +1,5 @@
 ---
+import visualStyles from "../../styles/tdie-visual.css?inline";
 import "../../styles/global.css";
 
 // Pillar guides and supporting articles live in src/data/library.js.
@@ -165,6 +166,7 @@ const totalPieces = pillars.length + articles.length;
   @media(max-width:760px){.lib-next{grid-template-columns:1fr}.lib-next-actions{width:100%}.lib-next-primary{width:100%;justify-content:center}}
 </style>
   <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
+<style is:inline set:html={visualStyles} />
 </head>
 <body class="e-page">
   <SiteNav />
@@ -176,11 +178,12 @@ const totalPieces = pillars.length + articles.length;
         <h1>The Library. <em>Read it in order.</em></h1>
         <p class="lib-lede">Every guide on this site started as a lesson inside the classroom. Read from the top and they build into a business. Open any one and it stands on its own.</p>
       </div>
+      <div class="lib-hero-side"><figure class="lib-hero-art"><img src="/images/library/detail-shelf-styling-02.jpg" width="1280" height="1280" alt="Pink and cream books, a blush handbag and gold accents on a home-office shelf" decoding="async" /><figcaption>The TDIE library · a pretty place to build your next idea</figcaption></figure>
       <dl class="lib-count">
         <div><dt>Pillar guides</dt><dd>{pillars.length}</dd></div>
         <div><dt>Supporting articles</dt><dd>{articles.length}</dd></div>
         <div><dt>Pieces, all free</dt><dd>{totalPieces}</dd></div>
-      </dl>
+      </dl></div>
     </div>
   </section>
 

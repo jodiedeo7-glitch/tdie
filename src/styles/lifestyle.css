@@ -152,3 +152,62 @@
 
 .life-heading-art{height:300px;background:#FFDCDD url('/images/lifestyle/pink-halloween-ghosts.jpg') center/220px auto no-repeat}
 @media(max-width:900px){.life-heading-art{height:245px;background-size:180px auto}}
+
+/* TDIE boutique frames: colored mats surround photographs, never alter them. */
+.life{--life-mat:#FFD7E9;--life-rim:#E891B6;--life-lift:0 12px 28px #B8245F18}
+.life-hero{position:relative;background:radial-gradient(ellipse at 15% 0,#FFC6E1,transparent 60%),linear-gradient(125deg,#FFF5F9 40%,#EAE0FB);border-bottom:6px solid #FF8AC2}
+.life-hero-copy::before{content:'';width:64px;height:12px;margin-bottom:24px;border-radius:999px;background:linear-gradient(110deg,#D62E73,#FF8AC2,#CBB7F7);box-shadow:0 3px 0 #fff}
+.life-hero-copy .life-kicker{display:inline-flex;padding:8px 15px;border:1px solid #E891B6;background:#fff;border-radius:999px;box-shadow:0 4px 12px #B8245F12}
+.life-card{padding:10px;border:2px solid #E891B6;border-radius:24px;background:linear-gradient(145deg,#FFE2EE,#F1EAFB);box-shadow:var(--life-lift);transition:box-shadow .2s,border-color .2s}
+.life-card:hover{box-shadow:0 15px 30px #B8245F28}
+.life-card-photo,.life-card-featured .life-card-photo{padding:8px;background:#fff;border:1px solid #F1BDD4;border-radius:16px}
+.life-card-copy{margin-top:8px;padding:20px 16px;background:#FFFCFE;border-radius:16px}
+.life-grid>li:nth-child(even) .life-card{border-color:#BEA2E7;background:linear-gradient(145deg,#F1EAFB,#F8E7F4)}
+.life-photo{padding:14px 14px 0;border:2px solid #E891B6;border-radius:24px;background:linear-gradient(135deg,#FFCAE1,#FFE6F0);box-shadow:var(--life-lift)}
+.life-photo img{border:6px solid #fff;border-radius:14px}
+.life-photo figcaption{margin-top:12px;margin-inline:-14px;background:#FFFCFE;border-top:1px solid #EFB2CF;padding:18px 22px}
+.life-story-row:nth-child(even) .life-photo,.life-gallery>.life-photo:nth-child(even){border-color:#B79ADD;background:linear-gradient(135deg,#DACAF2,#F1EAFB)}
+.life-heading-photo{padding:12px 12px 0;border:2px solid #E891B6;background:linear-gradient(145deg,#FFD1E5,#F1EAFB);border-radius:14px}
+.life-heading-photo img{border:5px solid white;border-radius:7px}
+.life-heading-photo figcaption{color:#87204A}
+.life :is(.life-shop,.life-empty,.life-email-details>div,.life-story-copy,.life-prose){border:2px solid #E891B6;border-radius:22px;box-shadow:var(--life-lift);background:#FFFCFE}
+.life-shop{border-top:8px solid #D62E73;background:linear-gradient(160deg,#fff 75%,#FFF0F7)}
+.life-notice{border:2px solid #C5AFE7;border-radius:16px;background:#F1EAFB}
+.life-signup .pf-box{border:2px solid #E891B6;border-top:8px solid #D62E73;border-radius:24px;box-shadow:var(--life-lift)}
+.life-band{position:relative;background:linear-gradient(135deg,#F1EAFB,#FDE6F2);border-block:2px solid #D6BDEB}
+.life-categories a.life-category-card{padding:8px 8px 12px;gap:7px;justify-content:flex-start;min-width:0;border:2px solid #EAA2C0;border-radius:20px;background:#fff;box-shadow:0 7px 16px #B8245F0E}
+.life-categories a:nth-child(even){border-color:#C4AFE4}
+.life-category-image{display:block;padding:6px;border-radius:13px;background:#FFD7E9;aspect-ratio:4/3;overflow:hidden}
+.life-categories a:nth-child(even) .life-category-image{background:#E5DAF6}
+.life-category-image img{width:100%;height:100%;object-fit:contain;border:3px solid #fff;border-radius:8px}
+.life-category-preview img{object-fit:cover}
+.life-category-name{padding:3px 7px 0;font-size:16px;line-height:1.4}
+.life-category-count{padding-inline:7px;font-size:12px;color:#87204A}
+.life-category-go{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;margin-top:auto;padding:8px;border-radius:10px;background:#FFF0F7;color:#9A1D50;font-size:12px;font-weight:700}
+.life-categories a:hover,.life-categories a[aria-current]{background:#FFEBF4;border-color:#B8245F}
+.life-picks-band{background:linear-gradient(130deg,#FFE1EE,#FFF5FA);border-block:2px solid #EAA2C0}
+.life-shelf-tools{display:flex;align-items:center;gap:22px}
+.life-shelf-tools p{font-size:15px;max-width:30ch;margin:0}
+.life-shelf-controls{display:flex;gap:8px;flex-shrink:0}
+.life-shelf-controls[hidden]{display:none}
+.life-shelf-controls button{width:48px;height:48px;border:2px solid #C56B99;border-radius:50%;background:#fff;color:#9A1D50;cursor:pointer;font:600 22px/1 Inter,system-ui,sans-serif;box-shadow:0 4px 10px #B8245F12}
+.life-shelf-controls button:hover:not(:disabled){background:#FFD7E9}
+.life-shelf-controls button:disabled{opacity:.4;cursor:default}
+.life-shelf-controls button:focus-visible,.life-shelf-track:focus-visible{outline:3px solid #B8245F;outline-offset:4px}
+.life-shelf-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;list-style:none;margin:0;padding:4px 2px 20px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:2px;scrollbar-width:thin;scrollbar-color:#B8245F #F1EAFB}
+.life-shelf-track>li{min-width:0;scroll-snap-align:start}
+.life-shelf-track .life-card-photo{aspect-ratio:4/5}
+.life-shelf-note{font-size:13px;color:#87204A!important;margin:8px 0 0!important}
+.life-lookbook-card{display:flex;flex-direction:column;align-items:flex-start;height:100%;gap:12px;padding:14px;border:2px solid #C4AFE4;border-radius:24px;background:linear-gradient(150deg,#F1EAFB,#FFEBF4);box-shadow:var(--life-lift)}
+.life-lookbook-image{display:block;width:100%;aspect-ratio:2/3;padding:7px;border:1px solid #E891B6;border-radius:16px;background:#FFD7E9}
+.life-lookbook-image img{width:100%;height:100%;object-fit:contain;border:4px solid #fff;border-radius:10px}
+.life-lookbook-card .life-kicker{margin:0!important;font-size:11px}
+.life-lookbook-card h3{font-size:23px;margin:0}
+.life-lookbook .life-shelf-track{grid-auto-columns:calc((100% - 60px)/4)}
+.life-story-copy,.life-prose{padding:26px}
+.life-category-hero{border-bottom:6px solid #FF8AC2}
+@media(max-width:1000px){.life-shelf-track,.life-lookbook .life-shelf-track{grid-auto-columns:calc((100% - 20px)/2)}}
+@media(max-width:640px){.life-categories a.life-category-card{padding:6px 6px 10px;border-radius:16px}.life-category-name{font-size:15px;padding-inline:3px}.life-category-count{padding-inline:3px}.life-category-go{font-size:11px;padding:7px;gap:4px}.life-category-image{padding:4px}.life-photo{padding:10px 10px 0;border-radius:20px}.life-photo img{border-width:4px}.life-photo figcaption{margin-inline:-10px;padding:16px 18px}.life-card{padding:8px}.life-shelf-track,.life-lookbook .life-shelf-track{grid-auto-columns:83%;gap:16px}.life-shelf-tools{justify-content:space-between;margin-top:14px;gap:12px}.life-shelf-tools p{font-size:14px}.life-story-copy,.life-prose{padding:20px}}
+@media(prefers-reduced-motion:reduce){.life-card{transition:none}}
+.life .life-products h3{font-family:Inter,system-ui,sans-serif!important;font-size:16px!important;line-height:1.5!important}
+.life-story-row:nth-child(even) .life-photo,.life-gallery .life-photo:nth-child(even){border-color:#C4AFE4;background:linear-gradient(145deg,#DFD0F4,#F1EAFB);border-radius:44px 44px 14px 14px}.life-story-row:nth-child(even) .life-photo img{border-radius:30px 30px 8px 8px}.life-story-row:nth-child(odd) .life-story-copy{border-radius:8px 24px 8px 24px;border-style:double;border-width:3px}.life-lookbook-card{border-radius:36px 36px 10px 10px}.life-lookbook-image{border-radius:26px 26px 8px 8px}

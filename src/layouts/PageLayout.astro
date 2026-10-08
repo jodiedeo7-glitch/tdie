@@ -29,7 +29,7 @@ export interface Props {
   /** Opt into the reference-led facelift after this page family passes QA. */
   visualRefresh?: boolean;
 }
-const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = false } = Astro.props;
+const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = true } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", SITE).href;
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;

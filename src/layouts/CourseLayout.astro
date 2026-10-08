@@ -1,4 +1,5 @@
 ---
+import visualStyles from "../styles/tdie-visual.css?inline";
 import "../styles/global.css";
 import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
@@ -169,6 +170,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 
     @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
   </style>
+<style is:inline set:html={visualStyles} />
 </head>
 <body style={`--ac:${accent}`}>
   <div class="we-prog" style={`width:${progress}%`}></div>
