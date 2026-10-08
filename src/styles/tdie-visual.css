@@ -127,3 +127,12 @@ h3{font-size:clamp(22px,2.2vw,28px)!important}
 .we-wrap img{border:10px solid #DFD0F4;outline:1px solid #C4AFE4;border-radius:24px 8px 24px 8px;box-shadow:var(--tdie-shadow);box-sizing:border-box;max-width:100%;height:auto}
 .rs-hero aside.rs-door :is(p,li,span),.e-dark.flag :is(h2,p,dt,dd,blockquote,figcaption,small,strong,span){color:#1A1417!important}.rs-hero aside.rs-door :is(.rs-door-k,.rs-door-t span),.e-dark.flag .e-kick{color:#B8245F!important}.e-dark.flag .e-btn,.e-dark.flag .e-btn span{color:white!important}
 @media(max-width:700px){.wbc .hero-x,.wbc .close-in{grid-template-columns:minmax(0,1fr)!important}.wbc .hero-pic{width:100%;max-width:100%;min-width:0}}
+
+/* 8 Oct 2026: dark sections are pink now, so every bit of text inside them must be dark */
+:is(.v-price-box,.v-nothing,.e-dark,.journey,.box.action,.bigquote,.mb-dfy,.faceless) :is(dt,dd,div,blockquote,figcaption,small,em,b,label,td,th,cite,q){color:#1A1417!important}
+:is(.v-price-box,.v-nothing,.e-dark,.journey,.box.action,.bigquote,.mb-dfy,.faceless) :is(em,.e-kick,.k,.lbl,.v-kicker){color:#B8245F!important}
+:is(.v-price-box,.v-nothing,.e-dark,.journey,.box.action,.bigquote,.mb-dfy,.faceless) :is(.btn,.e-btn,.wx-btn,.pick-btn,.we-cta) *{color:#fff!important}
+:is(.e-btn,.btn) small{color:inherit!important}
+.mb-plan--premium :is(em,dd,dt,small,.e-credit,.mb-strip-cap,.mb-price-p,.mb-price-alt,.mb-plan-if,.mb-plan-name),.mb-plan--premium .e-list li{color:#1A1417!important}
+.mb-plan--premium em{color:#B8245F!important}
+.ab-quote,.ab-quote *{color:#1A1417!important;border-color:#E891B6!important}
