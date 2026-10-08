@@ -2,19 +2,51 @@
 import {Image} from 'astro:assets';
 const {example:e}=Astro.props;
 ---
-<div class="wx-instagram" data-instagram-preview>
- <div class="wz-instagram-post">
-  <header class="wz-instagram-profile"><span class="wz-profile-mark" aria-hidden="true">TDIE</span><div><b>The Digital Income Edit™</b><span>Instagram carousel preview</span></div><span class="wz-post-menu" aria-hidden="true">•••</span></header>
-  <div class="wx-carousel" tabindex="0" aria-label={`${e.name} Instagram carousel`}>{e.slides.map((s,i)=><figure class="wx-graphic"><Image src={s.src} alt={s.alt} widths={[320,540,810,1080]} sizes="(max-width:700px) 85vw, 430px"/><figcaption>Slide {i+1} / {s.role}</figcaption></figure>)}</div>
-  <div class="wz-instagram-icons" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21S2 14 2 7a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 7-10 14-10 14Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9 11 11 0 0 1-5-1L2 22l1-7a9 9 0 1 1 18-4Z"/></svg><svg viewBox="0 0 24 24"><path d="m2 3 20 8-20 11 5-10L2 3Zm5 9 15-1"/></svg><svg class="wz-bookmark" viewBox="0 0 24 24"><path d="M5 2h14v20l-7-5-7 5Z"/></svg></div>
-  <div class="wx-slide-controls"><button type="button" data-slide-step="-1" aria-label={`Previous ${e.name} Instagram slide`}>← Previous</button><span aria-live="polite" data-slide-count>1 / 3</span><button type="button" data-slide-step="1" aria-label={`Next ${e.name} Instagram slide`}>Next →</button></div>
- </div>
- <div class="wx-caption"><span class="wys-label">Instagram caption</span><h4>{e.name}</h4><p>{e.caption}</p><a class="wys-button" href={`/lifestyle/${e.slug}`}>Read the linked blog article →</a></div>
+<div class="wx-instagram ig-preview" data-instagram-preview>
+ <div class="ig-appbar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span><small>Post preview</small></div>
+ <article class="ig-post" aria-label={`${e.name} Instagram carousel preview`}>
+  <header class="ig-profile"><span class="ig-avatar" aria-hidden="true"><span>EDIT</span></span><div><b>The Digital Income Edit™</b><span>{e.name}</span></div><span class="ig-menu" aria-hidden="true">•••</span></header>
+  <div class="ig-media">
+   <div class="wx-carousel" tabindex="0" aria-label={`${e.name} carousel. Use left and right arrow keys to browse.`}>{e.slides.map(s=><figure class="wx-graphic"><Image src={s.src} alt={s.alt} widths={[320,540,810,1080]} sizes="(max-width:700px) 88vw, 540px"/></figure>)}</div>
+   <span class="ig-counter" data-slide-count aria-live="polite">1 / 3</span>
+   <button class="ig-arrow ig-previous" type="button" data-slide-step="-1" aria-label={`Previous ${e.name} Instagram slide`} hidden>‹</button>
+   <button class="ig-arrow ig-next" type="button" data-slide-step="1" aria-label={`Next ${e.name} Instagram slide`}>›</button>
+  </div>
+  <div class="ig-caption"><p><b>The Digital Income Edit™</b> {e.caption}</p><a class="ig-story-link" href={`/lifestyle/${e.slug}`}>Read the {e.name} styling story <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a></div>
+  <footer class="ig-footer">
+   <div class="ig-toolbar"><span class="ig-actions" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21S2 14 2 7a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 7-10 14-10 14Z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9 11 11 0 0 1-5-1L2 22l1-7a9 9 0 1 1 18-4Z"/></svg><svg viewBox="0 0 24 24"><path d="m2 3 20 8-20 11 5-10L2 3Zm5 9 15-1"/></svg></span><span class="ig-save" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 2h14v20l-7-5-7 5Z"/></svg></span></div>
+   <nav class="ig-dots" aria-label={`${e.name} carousel slides`}>{e.slides.map((s,i)=><button type="button" data-slide-to={i} aria-label={`Show ${e.name} slide ${i+1}`} aria-current={i===0?'true':undefined}><span/></button>)}</nav>
+  </footer>
+ </article>
 </div>
 <script>
  document.querySelectorAll<HTMLElement>('[data-instagram-preview]').forEach(root=>{
- const rail=root.querySelector<HTMLElement>('.wx-carousel')!;const count=root.querySelector<HTMLElement>('[data-slide-count]')!;
- const update=()=>{const slides=[...rail.children] as HTMLElement[];const i=slides.reduce((best,s,n)=>Math.abs(s.offsetLeft-rail.offsetLeft-rail.scrollLeft)<Math.abs(slides[best].offsetLeft-rail.offsetLeft-rail.scrollLeft)?n:best,0);count.textContent=`${i+1} / 3`;return i;};
- root.querySelectorAll<HTMLButtonElement>('[data-slide-step]').forEach(b=>b.addEventListener('click',()=>{const n=Math.max(0,Math.min(2,update()+Number(b.dataset.slideStep)));const s=rail.children[n] as HTMLElement;rail.scrollTo({left:s.offsetLeft-rail.offsetLeft,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}));rail.addEventListener('scroll',update,{passive:true});
+  const rail=root.querySelector<HTMLElement>('.wx-carousel')!;
+  const slides=[...rail.children] as HTMLElement[];
+  const previous=root.querySelector<HTMLButtonElement>('[data-slide-step="-1"]')!;
+  const next=root.querySelector<HTMLButtonElement>('[data-slide-step="1"]')!;
+  const dots=[...root.querySelectorAll<HTMLButtonElement>('[data-slide-to]')];
+  const current=()=>slides.reduce((best,s,n)=>Math.abs(s.offsetLeft-rail.offsetLeft-rail.scrollLeft)<Math.abs(slides[best].offsetLeft-rail.offsetLeft-rail.scrollLeft)?n:best,0);
+  const update=()=>{const i=current();root.querySelector<HTMLElement>('[data-slide-count]')!.textContent=`${i+1} / ${slides.length}`;previous.hidden=i===0;next.hidden=i===slides.length-1;dots.forEach((d,n)=>n===i?d.setAttribute('aria-current','true'):d.removeAttribute('aria-current'));};
+  const go=(n:number)=>{const s=slides[Math.max(0,Math.min(slides.length-1,n))];rail.scrollTo({left:s.offsetLeft-rail.offsetLeft,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});};
+  root.querySelectorAll<HTMLButtonElement>('[data-slide-step]').forEach(b=>b.addEventListener('click',()=>go(current()+Number(b.dataset.slideStep))));
+  dots.forEach(d=>d.addEventListener('click',()=>go(Number(d.dataset.slideTo))));
+  rail.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();go(current()+(event.key==='ArrowRight'?1:-1));}});
+  rail.addEventListener('scroll',update,{passive:true});new ResizeObserver(update).observe(rail);update();
  });
 </script>
+<style>
+ .wx-instagram.ig-preview{display:block;max-width:940px;margin:0 auto;border:1px solid #dbdbdb;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 28px #71254716;color:#121212;font-family:Inter,sans-serif}
+ .ig-appbar{display:flex;align-items:center;gap:9px;padding:14px 20px;border-bottom:1px solid #dbdbdb;background:#fff}.ig-appbar>svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8}.ig-appbar>span{font:italic 600 28px/1 Newsreader,serif;letter-spacing:-1px}.ig-appbar small{margin-left:auto;color:#737373;font-size:11px}
+ .ig-post{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;min-width:0}
+ .ig-profile{grid-column:2;grid-row:1;display:flex;gap:10px;align-items:center;padding:16px;border-bottom:1px solid #efefef;font-size:13px;min-width:0}.ig-profile b{font-size:13px}.ig-profile div>span{display:block;color:#737373;font-size:12px;margin-top:4px}.ig-menu{margin-left:auto;font-size:17px}.ig-avatar{padding:3px;background:linear-gradient(35deg,#ffc95a,#fb3478,#b440d0);border-radius:50%;flex-shrink:0}.ig-avatar>span{display:grid;place-items:center;width:34px;height:34px;background:#ffe9f4;border:2px solid white;border-radius:50%;font-size:9px;font-weight:700;color:#bd2367}
+ .ig-media{grid-column:1;grid-row:1/4;position:relative;min-width:0;background:#fff;border-right:1px solid #dbdbdb;align-self:start}
+ .ig-preview .wx-carousel{display:flex;position:relative;gap:0;padding:0;scroll-snap-type:x mandatory;scroll-padding:0;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain}.ig-preview .wx-carousel::-webkit-scrollbar{display:none}.ig-preview .wx-carousel .wx-graphic{flex:0 0 100%;margin:0;padding:0;border:0;border-radius:0;background:#fff;box-shadow:none;scroll-snap-align:start}.ig-preview .wx-graphic>img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;border:0;outline:0}
+ .ig-counter{position:absolute;top:14px;right:14px;padding:5px 10px;background:#0009;color:#fff;border-radius:20px;font:500 12px/1.4 Inter,sans-serif}.ig-arrow{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:48px;height:48px;border:0;border-radius:50%;background:#fffffff2;box-shadow:0 2px 7px #0003;color:#333;font:400 32px/1 Inter,sans-serif;cursor:pointer}.ig-arrow[hidden]{display:none}.ig-previous{left:10px}.ig-next{right:10px}
+ .ig-caption{grid-column:2;grid-row:2;padding:22px 18px;min-width:0}.ig-preview .ig-caption p{margin:0;font:400 14px/1.65 Inter,sans-serif;color:#161616;overflow-wrap:anywhere}.ig-caption p b{font-weight:650}.ig-story-link{display:inline-block;padding-block:16px;color:#00376b;text-decoration:none;font:600 13px/1.5 Inter,sans-serif;min-height:48px}
+ .ig-footer{grid-column:2;grid-row:3;border-top:1px solid #efefef;padding:10px 16px}.ig-toolbar{display:flex;align-items:center;justify-content:space-between}.ig-actions{display:flex;gap:16px}.ig-toolbar svg{width:25px;height:25px;fill:none;stroke:#121212;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.ig-dots{display:flex;justify-content:center;gap:0}.ig-dots button{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;cursor:pointer;padding:0}.ig-dots button>span{width:6px;height:6px;border-radius:50%;background:#c7c7c7}.ig-dots button[aria-current]>span{background:#0095f6}.ig-preview button:focus-visible,.ig-story-link:focus-visible,.ig-preview .wx-carousel:focus-visible{outline:3px solid #0095f6;outline-offset:-3px}
+ @media(max-width:700px){.ig-appbar{padding:13px 15px}.ig-post{display:flex;flex-direction:column}.ig-profile{order:0;padding:12px 14px}.ig-media{order:1;border-right:0;width:100%}.ig-footer{order:2;border:0;padding:12px 14px 0}.ig-caption{order:3;padding:0 14px 16px}.ig-preview .ig-caption p{font-size:14px;line-height:1.6}.ig-toolbar{position:relative}.ig-dots{margin-top:-30px;margin-inline:90px;height:44px}.ig-dots button{min-width:30px;width:30px}.ig-arrow{width:44px;height:44px}.ig-appbar>span{font-size:26px}}
+ .ig-preview .ig-footer{background:#fff;border-top:1px solid #efefef;box-shadow:none;color:#121212}
+ .ig-story-link svg{width:13px;height:13px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.6}
+ @media(max-width:700px){.ig-preview .ig-footer{border:0}.ig-dots{margin:0;height:36px}.ig-caption{padding-top:6px}}
+</style>
