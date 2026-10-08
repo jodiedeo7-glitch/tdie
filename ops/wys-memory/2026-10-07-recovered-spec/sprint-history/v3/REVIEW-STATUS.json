@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "status": "BLOCKED_NOT_CLIENT_READY",
+  "scope": "Private local packet only. Not connected to publisher or customer guide.",
+  "founder_approved": false,
+  "all_product_references_verified": false,
+  "all_nine_looks_visually_tested": false,
+  "unresolved_findings": [
+    "Other linked products still lack complete side-by-side verification.",
+    "BASIC hue corrected toward retail reference; exact reproduction remains a review item, not an acceptance pass.",
+    "No founder approval for corrected trio.",
+    "Other eight looks have not been generated and visually tested."
+  ],
+  "first_look": {
+    "suit_reference": "references/suit-retail.png",
+    "basic": "test-images/01-basic-labelled.png",
+    "styled": "test-images/01-styled.png",
+    "lifestyle": "test-images/01-lifestyle.png",
+    "headline": "case closed / THE PINK LAWYER EDIT",
+    "review": "Corrected one-button fitted silhouette and skirt, removed phantom pink garment and invented chest pockets. BASIC title spells correctly and black subtitle edges are visually clean at displayed size. Precise garment reproduction and full inventory match remain unapproved."
+  },
+  "history": [
+    {
+      "result": "REJECTED",
+      "reason": "Prior descriptions did not preserve actual suit photograph; omitted BASIC label."
+    },
+    {
+      "result": "REJECTED",
+      "reason": "First reference-based styled correction invented second button and chest pocket."
+    },
+    {
+      "result": "CORRECTED_PRIVATE_EXAMPLES",
+      "reason": "Removed invented details. Not a client acceptance pass."
+    }
+  ]
+}

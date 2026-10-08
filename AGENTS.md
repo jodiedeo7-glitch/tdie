@@ -1,5 +1,9 @@
 ## Development
 
+## WYS recovered instruction memory — read before WYS work
+
+For WYS sourcing, images, sprint packets, guides, client tests or launch assets, first read `ops/wys-memory/README.md` and `ops/wys-memory/2026-10-07-recovered-spec/GOVERNING-SPEC.md`. Inspect its source-quoted ledger and approved visual benchmark before changing image roles. These recovered direct user directions override conflicting old assistant summaries and packet templates. Clothing BASIC contains only shopping products; clothing STYLED requires visible as-if-worn volume without a person plus meaningful personal extras; object/decor in-situ rules do not apply to clothing. Preserve scoped approvals and later corrections. A written/static check is not a visual or release pass. Do not claim account memory was updated without an actual available memory write.
+
 When starting the dev server, use background mode:
 
 ```

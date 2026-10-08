@@ -1,0 +1,36 @@
+{
+  "status": "PREPARED_NOT_VISUALLY_TESTED",
+  "scope": "This Tommy Kate clothing packet only",
+  "category": "clothing",
+  "aesthetic_references": [
+    "clothing-benchmark/basic.webp",
+    "clothing-benchmark/styled.webp"
+  ],
+  "roles": {
+    "basic": "labelled editorial outfit flatlay",
+    "styled": "richer person-free getting-ready outfit flatlay",
+    "lifestyle": "Tommy Kate wearing products during a separately composed action"
+  },
+  "source_precedence": [
+    "current explicit human correction",
+    "role-specific aesthetic images for style only",
+    "retail references for product facts only",
+    "identity for person only"
+  ],
+  "category_boundary": "Do not apply clothing scenes/props to decor, car or other categories. A new category needs its own evidence-derived role recipe; do not infer it from a colour preference.",
+  "client_intake_routes": [
+    "client mock lists by category",
+    "client vibe images",
+    "short quick-start questions; least reliable and not proof of validated preference"
+  ],
+  "new_category_status": "UNTESTED until actual results are inspected; ask only for a genuinely missing critical visual decision, not an exhaustive exclusion list",
+  "release_status": "No client generalization or automated release pass",
+  "checks": [
+    "style-reference present",
+    "retail references complete",
+    "label present for BASIC",
+    "linked products and contextual extras separated",
+    "different compositions",
+    "actual output review required"
+  ]
+}
