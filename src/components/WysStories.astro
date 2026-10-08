@@ -1,0 +1,14 @@
+---
+import {Image} from 'astro:assets';
+import {packages} from '../data/wys-packages.js';
+import {WYS_ROOT} from '../data/wys.js';
+const {inside=false}=Astro.props;
+const stories=[
+ {tag:'A pink welcome at the front door',text:'Pink pumpkins, tiny lights and a trail of bats turn an everyday entryway into a Halloween welcome. Explore the styling images, Pinterest Pins, Instagram carousel and blog post created around these five finds.'},
+ {tag:'A little haunt for your coffee corner',text:'A pink ghost mug, a heart-shaped stand and a little sparkle make the morning coffee corner feel ready for Halloween. Explore the images, Pins, carousel and blog post created around these five finds.'}
+];
+---
+<section class="wys-wrap wys-section wb-featured" id={inside?'choose-package':'wys-stories'}>
+ <div class="wx-centered"><p class="wys-label">Two Halloween looks to explore</p><h2>A little spooky.<br/><em>A lot of content.</em></h2><p>Start with five Amazon finds. See the styling images, Pinterest Pins, Instagram carousel and blog article built around them.</p></div>
+ <div class="wx-look-pair">{packages.map((e,i)=><a href={`${inside?'':WYS_ROOT+'/look-inside'}#${e.slug}`} class={`wx-look-cover mat-${i}`}><div class="wx-cover-images"><Image src={e.photos[2].src} alt={e.photos[2].alt} widths={[320,480]} sizes="(max-width:700px) 235px, 280px"/><Image src={e.pins[1].src} alt={`${e.name} Pinterest graphic`} widths={[240,400]} sizes="(max-width:700px) 120px, 170px"/></div><div><p class="wb-story-kicker">{stories[i].tag}</p><h3>{e.name}</h3><p class="wb-story-description">{stories[i].text}</p><span class="wys-button">See this look come together <span aria-hidden="true">→</span></span></div></a>)}</div>
+</section>
