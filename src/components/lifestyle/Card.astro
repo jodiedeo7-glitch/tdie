@@ -11,6 +11,6 @@ const image = look.hero;
     <h3>{look.title}</h3>
     {featured && <span class="life-card-intro">{look.intro}</span>}
     <span class="life-card-count">{look.items.length} listed products</span>
-    <span class="life-button life-button-small">Read &amp; shop <span aria-hidden="true">→</span></span>
+    <span class="life-button life-button-small">{look.shoppingStatus === 'pending' ? 'Read the article' : 'Read & shop'} <span aria-hidden="true">→</span></span>
   </span>
 </a>
