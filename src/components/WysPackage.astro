@@ -1,4 +1,5 @@
 ---
+import WysDecor from './WysDecor.astro';
 import {Image} from 'astro:assets';
 import WysPhoto from './WysPhoto.astro';
 import {imageNotice} from '../data/wys.js';
@@ -9,8 +10,8 @@ const panels=['The whole package','Photographs','Pinterest','Instagram','Article
  <div class="wx-folder-tab">WORKED EXAMPLE / 0{number}</div>
  <header class="wx-package-heading"><div><p class="wys-label">{e.category}</p><h2>{e.name}</h2><p>Follow one idea from the selected pieces to a complete content package.</p></div><a class="wys-text-link" href={`/lifestyle/${e.slug}`}>Read the live styling article →</a></header>
  <div class="wx-tabs" aria-label={`${e.name} package contents`}>{panels.map((p,i)=><button type="button" aria-pressed={i===0?'true':'false'} data-panel-button={i}>{p}</button>)}</div>
- <div data-panel="0" class="wx-panel"><div class="wx-output-label"><h3>Open the files. See the whole idea.</h3><p>3 photographs · 3 Pins · 3 carousel slides · 1 article · 5 product records + copy</p></div>
-  <div class="wx-contact">{e.photos.map((p,i)=><figure class={`wx-mini mat-${i}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>PHOTO / 0{i+1}</b><span>{p.role}</span></figcaption></figure>)}{e.pins.map((p,i)=><figure class={`wx-mini mat-${(i+1)%3}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>PINTEREST / 0{i+1}</b><span>{p.role} graphic</span></figcaption></figure>)}{e.slides.map((p,i)=><figure class={`wx-mini mat-${(i+2)%3}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>INSTAGRAM / 0{i+1}</b><span>Carousel slide</span></figcaption></figure>)}</div>
+ <div data-panel="0" class="wx-panel"><div class="wx-output-label"><WysDecor class="wb-package-flower"/><h3>Open the files. See the whole idea.</h3><p>3 photographs · 3 Pins · 3 carousel slides · 1 article · 5 product records + copy</p></div>
+  <div class="wx-contact">{e.photos.map((p,i)=><figure class={`wx-mini wb-photo-file mat-${i}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>PHOTO / 0{i+1}</b><span>{p.role}</span></figcaption></figure>)}{e.pins.map((p,i)=><figure class={`wx-mini wb-pin-file mat-${(i+1)%3}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>PINTEREST / 0{i+1}</b><span>{p.role} graphic</span></figcaption></figure>)}{e.slides.map((p,i)=><figure class={`wx-mini wb-slide-file mat-${(i+2)%3}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>INSTAGRAM / 0{i+1}</b><span>Carousel slide</span></figcaption></figure>)}</div>
   <div class="wx-paper-strip"><div><span class="wys-label">The written side, too</span><h3>{e.article.title}</h3><p>{e.article.intro}</p></div><div><b>Every piece has a job.</b><p>The product records, full article, Pin metadata and Instagram caption are in the tabs above. The same look stays connected across formats.</p></div></div>
  </div>
  <div data-panel="1" class="wx-panel"><div class="wx-output-label"><h3>Three views, three different jobs.</h3><p>The approved photographs, preserved at their original proportions.</p></div><div class="wx-three">{e.photos.map((p,i)=><WysPhoto photo={p} treatment={['double','lavender','polaroid'][i]} label={`${i+1} / ${p.role}`}/>)}</div><p class="wx-fine">{imageNotice}</p></div>
@@ -24,7 +25,7 @@ const panels=['The whole package','Photographs','Pinterest','Instagram','Article
  document.querySelectorAll<HTMLElement>('[data-package]').forEach(root=>{
  const buttons=[...root.querySelectorAll<HTMLButtonElement>('[data-panel-button]')];
  const panels=[...root.querySelectorAll<HTMLElement>('[data-panel]')];
- const select=(n:string)=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.panelButton===n)));panels.forEach(p=>p.hidden=p.dataset.panel!==n);};select('0');
+ const select=(n:string)=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.panelButton===n)));panels.forEach(p=>p.hidden=p.dataset.panel!==n);};const initial=new URLSearchParams(location.search).get('view');select(location.hash==='#'+root.id&&initial&&/^[0-5]$/.test(initial)?initial:'0');
  buttons.forEach(b=>b.addEventListener('click',()=>select(b.dataset.panelButton!)));
  const rail=root.querySelector<HTMLElement>('.wx-carousel')!;const count=root.querySelector<HTMLElement>('[data-slide-count]')!;
  const update=()=>{const slides=[...rail.children] as HTMLElement[];const i=slides.reduce((best,s,n)=>Math.abs(s.offsetLeft-rail.offsetLeft-rail.scrollLeft)<Math.abs(slides[best].offsetLeft-rail.offsetLeft-rail.scrollLeft)?n:best,0);count.textContent=`${i+1} / 3`;return i;};

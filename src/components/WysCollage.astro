@@ -1,11 +1,12 @@
 ---
+import WysDecor from './WysDecor.astro';
 import {Image} from 'astro:assets';
 import {packages} from '../data/wys-packages.js';
 const {look=0}=Astro.props;const e=packages[look];
 ---
 <div class="wx-collage" aria-label={`${e.name}: a photo, Pinterest graphic and Instagram slide from the worked example`}>
- <div class="wx-collage-main"><Image src={e.photos[1].src} alt={e.photos[1].alt} widths={[320,480,720]} sizes="(max-width:700px) 70vw, 340px" loading="eager"/><span>{e.name} / styled photograph</span></div>
+ <div class="wx-collage-main"><Image src={e.photos[2].src} alt={e.photos[2].alt} widths={[320,480,720]} sizes="(max-width:700px) 70vw, 340px" loading="eager"/><span>{e.name} / lifestyle photograph</span></div>
  <div class="wx-collage-pin"><Image src={e.pins[0].src} alt={`${e.name} Pinterest graphic`} widths={[240,400]} sizes="180px" loading="eager"/><span>PIN / 01</span></div>
- <div class="wx-collage-slide"><Image src={e.slides[2].src} alt={`${e.name} Instagram slide 3`} widths={[240,400]} sizes="200px" loading="eager"/><span>CAROUSEL / 03</span></div>
- <span class="wx-seal">One look.<br/><strong>A whole<br/>package.</strong></span>
+ <div class="wx-collage-slide"><Image src={e.slides[1].src} alt={`${e.name} Instagram slide 3`} widths={[240,400]} sizes="200px" loading="eager"/><span>CAROUSEL / 02</span></div>
+ <WysDecor class="wb-hero-flower"/><span class="wx-seal">One look.<br/><strong>A whole<br/>package.</strong></span>
 </div>

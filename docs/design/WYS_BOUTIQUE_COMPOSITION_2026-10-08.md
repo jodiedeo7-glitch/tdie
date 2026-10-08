@@ -1,0 +1,9 @@
+# WYS storefront composition correction
+
+The previous framed-gallery design did not carry over the supplied storefront references' composition. This revision changes the WYS page structure: a compact product navigation strip, photograph-and-social-output hero with custom daisy and pink drip details, four illustrated collection links, feature covers, compact nine-output shelves, varied pink/lavender section bands, striped process trim and photographed kit contents previews. Original native SVG decoration avoids copying the reference brands' assets. Source photos are unchanged, with their full content retained and responsive Astro optimization.
+
+The complete worked packages, actual article text, five selected product records, Pin metadata, Instagram caption, carousel, worksheet, buyer FAQs, existing Weekly Edit form and release hold remain intact. New collection links select the corresponding package view. Kit cover photographs are relevant example imagery, not fake PDF screenshots or new product claims.
+
+WysShelf and WysDecor implement the collection navigation and original native decoration. The composition is scoped in wys-boutique.css. Changes affect the landing, Look Inside and Weekly Edit pages only; broader page families continue to use their existing styling. Keep the supplied reference compositions as the target when continuing the wider facelift; do not describe the whole site as matching those references.
+
+Validate the three complete pages and every package panel at 1440, 390 and 320px, including collection-to-panel links, browser history targets, keyboard controls, forms and all prior package behaviors. Repeat actual custom-domain screenshots and checks after the Cloudflare deployment. Product generation, release, checkout, delivery and unresolved affiliate/list steps remain held.
