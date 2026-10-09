@@ -1,515 +1,735 @@
 {
-  "schema": 1,
+  "schema_version": 2,
+  "title": "While-You-Sleep Storefront — Customer Questionnaire",
+  "status": "Replacement design; original founder questionnaire unrecovered",
   "authority": "claude/WYS_REFERENCE_PACK_2026-10-07.md",
-  "original_questionnaire": "UNRECOVERED",
-  "answer_storage": "Private profile; never public git",
-  "procedure": [
-    "Present one guided-choice question at a time, with optional specific custom text. Never ask an open-ended-only question. Do not ask Tommy Kate to restate the recovered identity/visual contract.",
-    "Do not treat a refusal, objection, or No selection as a preference answer. Do not call recovered visual directions original questionnaire answers.",
-    "Persist each individual answer immediately using profile.save; read back exact value and revision.",
-    "Recovered direct instructions use source_kind=recovered_direct_instruction, answered_at=null, recorded_at=ingestion timestamp and explicit source evidence.",
-    "Ask only unresolved user preferences; inspect technical capabilities and files yourself. Never ask the founder to guess them.",
-    "Every step reads the current saved profile and records every answer disposition with concrete request/output evidence.",
-    "Use visual_pilot scope only for private BASIC/STYLED/LIFESTYLE/graphics. Production retains complete setup gate.",
-    "One three-role mini test per actual category; inspect each role before proceeding; preserve defects and failures.",
-    "No customer release until actual end-to-end evidence passes."
-  ],
   "questions": [
     {
+      "id": "business_direction",
       "field": "curation_profile",
-      "prompt": "After business direction and categories are established: what product-selection preferences, occasions, price ranges, and exclusions apply? Do not assume clothing is selected.",
-      "affected_steps": [
-        "sourcing",
-        "basic",
-        "styled",
-        "lifestyle",
-        "blog"
+      "prompt": "What should shoppers come to your storefront to find?",
+      "options": [
+        "Complete outfits they can recreate",
+        "Coordinated spaces they can style",
+        "Useful everyday finds with a distinctive look",
+        "Thoughtful gifts and reading recommendations",
+        "A consistent mix of these"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "categories_and_curation",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+      "use": "Sets the purpose of each edit, its product combinations, headlines and shopper benefit.",
+      "multi": false,
+      "detail": null
     },
     {
+      "id": "categories",
       "field": "product_categories",
-      "prompt": "Which categories are selected? Founder audit covers all ten registered categories.",
-      "affected_steps": [
-        "sourcing",
-        "basic",
-        "styled",
-        "lifestyle"
+      "prompt": "Which categories belong in your storefront?",
+      "options": [
+        "clothing",
+        "accessories",
+        "jewelry",
+        "beauty",
+        "perfume",
+        "home-decor",
+        "dorm",
+        "car",
+        "books",
+        "gifts"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "categories_and_curation",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+      "use": "Activates only the chosen category questions, sourcing and category-specific image tests.",
+      "multi": true,
+      "detail": null
     },
     {
-      "field": "personal_visual_signature",
-      "prompt": "What additional visual details or exclusions are missing from the recovered direct instructions?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle",
-        "graphics"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "visual_signature",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "persona",
-      "prompt": "Who may appear, in which categories, using which authorized identity reference?",
-      "affected_steps": [
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "persona",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "amazon_path",
-      "prompt": "Which authorized Amazon storefront/list/product source supplies exact items and variants?",
-      "affected_steps": [
-        "sourcing",
-        "blog",
-        "pinterest",
-        "instagram"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "account_and_destination_path",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "destinations",
-      "prompt": "Which exact live destination belongs to each deliverable?",
-      "affected_steps": [
-        "blog",
-        "pinterest",
-        "instagram"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "account_and_destination_path",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "provider_model",
-      "prompt": "Which verified provider/model is permitted for this execution path?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "channels_and_execution",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "channels",
-      "prompt": "Which channels are enabled, draft-only, or disabled?",
-      "affected_steps": [
-        "blog",
-        "pinterest",
-        "instagram"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "channels_and_execution",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "execution_mode",
-      "prompt": "Is the path manual, assisted, or verified unattended?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "channels_and_execution",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "budget",
-      "prompt": "What finite attempts and verified spend allowance apply before submission?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "cadence_and_budget",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "timezone",
-      "prompt": "Which timezone governs scheduled execution?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "cadence_and_budget",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "cadence",
-      "prompt": "What exact schedule and output quantity is authorized?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "cadence_and_budget",
-      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
-    },
-    {
-      "field": "reference_assets",
-      "prompt": "Which exact authorized product and identity files are attached for this look?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "operator_capability_checks",
-      "resolve_by": "operator inspection first; ask only if still unavailable"
-    },
-    {
-      "field": "state_location",
-      "prompt": "Where is the private durable profile stored, and can the next process read it?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "operator_capability_checks",
-      "resolve_by": "operator inspection first; ask only if still unavailable"
-    },
-    {
-      "field": "disclosure",
-      "prompt": "What required disclosure text and placement applies?",
-      "affected_steps": [
-        "blog",
-        "pinterest",
-        "instagram"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "operator_capability_checks",
-      "resolve_by": "operator inspection first; ask only if still unavailable"
-    },
-    {
-      "field": "connected_capabilities",
-      "prompt": "Which connections have been actually exercised successfully?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
-      "phase": "operator_capability_checks",
-      "resolve_by": "operator inspection first; ask only if still unavailable"
-    }
-  ],
-  "recovered_visual_instructions": {
-    "source": "October 8 handoff GOVERNING-SPEC.md; SHA256 00b1b279c9b420987a48744823830976f760b512562c4006ebc5759fe996d9e6",
-    "status": "DIRECT_INSTRUCTIONS_NOT_ORIGINAL_QUESTIONNAIRE",
-    "values": {
-      "palette": "hot pink and cream relief; lavender secondary",
-      "style": "girly, playful, maximalist; material glitter",
-      "meaningful_details": [
-        "lilacs",
-        "wildflowers",
-        "golden retriever"
-      ],
-      "exclusions": [
-        "added bows/ribbons",
-        "hydrangeas",
-        "furry/shag/fluffy backgrounds",
-        "generic repeated prop kits"
-      ],
-      "clothing_roles": "Follow section 27 specific BASIC/STYLED/LIFESTYLE distinctions",
-      "label": "Finished BASIC: hot-pink brush script plus dark uppercase sans subtitle; label follows actual look"
-    }
-  },
-  "customer_intake_order": [
-    "business_direction",
-    "categories_and_curation",
-    "visual_signature",
-    "persona",
-    "account_and_destination_path",
-    "channels_and_execution",
-    "cadence_and_budget",
-    "operator_capability_checks",
-    "saved_profile_readback",
-    "category_mini_tests"
-  ],
-  "first_customer_question": {
-    "field": "curation_profile.business_direction",
-    "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?",
-    "status": "ASK_ONLY_IF_NOT_ALREADY_VERIFIED_FROM_CUSTOMER_SOURCE",
-    "example": "Affordable girly home finds for women furnishing their first apartment.",
-    "options": [
-      "Home and decor shoppers",
-      "Fashion and accessories shoppers",
-      "Mixed lifestyle shoppers"
-    ],
-    "type": "single_select",
-    "free_text_placeholder": "Add a different audience and niche"
-  },
-  "founder_repair_boundary": "Use existing founder sources for known facts. Original completed questionnaire is UNRECOVERED. Recovered direct instructions are separate evidence, not original questionnaire answers. The prior three questions received no curation preferences; do not save the objections as choices.",
-  "executable_interview": "ops/wys-runtime/intake.py",
-  "ordered_customer_questions": [
-    {
-      "question_id": "business_direction",
+      "id": "selection_route",
       "field": "curation_profile",
-      "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?",
+      "prompt": "How would you like to give us direction for each new edit?",
       "options": [
-        "Home and decor shoppers",
-        "Fashion and accessories shoppers",
-        "Mixed lifestyle shoppers"
+        "Exact products or a detailed mock shopping list",
+        "Vibe photos: find products that fit the look",
+        "A guided theme brief: suggest products for my review"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific business direction"
+      "use": "Determines whether to preserve supplied products, interpret references, or propose a product shortlist. References are not permission to publish someone else’s images.",
+      "multi": false,
+      "detail": "Optional: name the existing list or reference files. The operator retrieves and inspects them; missing files remain pending."
     },
     {
-      "question_id": "categories",
-      "field": "product_categories",
-      "prompt": "Which product categories do you want to cover?",
-      "options": [
-        "Clothing and accessories",
-        "Home, dorm and car",
-        "Beauty and perfume",
-        "Books and gifts"
-      ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific categories"
-    },
-    {
-      "question_id": "selection_route",
-      "field": "curation_profile",
-      "prompt": "Would you rather supply detailed product examples, share vibe pictures, or start with a short description?",
-      "options": [
-        "Detailed product examples",
-        "Vibe/reference images",
-        "Quick start description"
-      ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific selection route"
-    },
-    {
-      "question_id": "aesthetic",
+      "id": "aesthetic",
       "field": "personal_visual_signature",
-      "prompt": "Describe the overall look you want, including how simple or detailed it should feel.",
+      "prompt": "Which visual styles should define your storefront?",
       "options": [
-        "Simple and understated",
-        "Layered and detailed",
-        "Playful and maximalist"
+        "Playful, colorful maximalism",
+        "Romantic and feminine",
+        "Classic and polished",
+        "Cozy cottage or collected vintage",
+        "Clean and contemporary",
+        "Sporty and casual",
+        "Bold and edgy",
+        "Coastal and relaxed"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific aesthetic"
+      "use": "Directs product styling, scene density, surfaces, lighting and graphics together.",
+      "multi": true,
+      "detail": "Optional: combine styles and say which leads. Include an existing approved example if you have one."
     },
     {
-      "question_id": "palette_materials",
+      "id": "palette_materials",
       "field": "personal_visual_signature",
-      "prompt": "Which colors, materials and textures should appear, and which should be avoided?",
+      "prompt": "Which palette and finishes should we use?",
       "options": [
-        "Soft colors",
-        "Bold colors",
-        "Neutrals",
-        "Mixed colors"
+        "Hot pink",
+        "Soft pink",
+        "Lavender or purple",
+        "Cream or ivory",
+        "Black",
+        "White",
+        "Blue",
+        "Green",
+        "Warm neutrals",
+        "Silver or mirror",
+        "Gold or brass",
+        "Glitter accents",
+        "Matte finishes",
+        "Natural woven textures",
+        "Glass or translucent details"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific palette materials"
+      "use": "Binds exact palette and material contrast to sourcing and all visual prompts.",
+      "multi": true,
+      "detail": "Optional: name the dominant color, accent colors and colors/finishes to avoid. “Pink” alone does not mean a full pink room."
     },
     {
-      "question_id": "personal_details",
+      "id": "personal_details",
       "field": "personal_visual_signature",
-      "prompt": "What interests, places or signature details should make these images feel like your brand?",
+      "prompt": "Which personal details genuinely belong in your brand’s world?",
       "options": [
-        "Home and family",
-        "Hobbies and interests",
-        "Places and activities",
+        "Pets or animals",
+        "Flowers or gardening",
+        "Gaming or technology",
+        "Coffee or cooking",
+        "Books or reading",
+        "Travel or outings",
+        "School or study",
+        "Family or home life",
+        "Sports or fitness",
         "No recurring personal details"
       ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific personal details"
+      "use": "Provides meaningful contextual extras and activities; never adds every selected interest to every image.",
+      "multi": true,
+      "detail": "If selected, specify the actual detail: for example the pet, flower, hobby or activity. Do not invent these from a broad checkbox."
     },
     {
-      "question_id": "visual_exclusions",
+      "id": "visual_exclusions",
       "field": "personal_visual_signature",
-      "prompt": "What must never appear in your images?",
+      "prompt": "Which visual details should we exclude?",
       "options": [
-        "People",
-        "Decorative props",
-        "Lettering in photos",
+        "Decorative bows or ribbons",
+        "Fur, shag or fluffy surfaces",
+        "Busy patterns",
+        "Glitter",
+        "Visible decorative lettering",
+        "Extra people",
+        "Repeated generic prop sets",
         "No additional exclusions"
       ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific visual exclusions"
+      "use": "Creates explicit image rejection rules. Product features and styling extras are distinguished; fixed product details need a recorded exception.",
+      "multi": true,
+      "detail": "Optional: add particular flowers, surfaces, settings, motifs or other exclusions. A rejected example stays rejected."
     },
     {
-      "question_id": "category_preferences",
+      "id": "category_preferences",
       "field": "curation_profile",
-      "prompt": "For your selected categories, what styles, uses, seasons or occasions should guide the products?",
-      "options": [
-        "Everyday use",
-        "Special occasions",
-        "Seasonal or holiday",
-        "Mixed uses"
-      ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific category preferences"
+      "prompt": "What should guide the products in each category you selected?",
+      "options": [],
+      "use": "Builds a separate shopper context, style/use brief and practical requirements for every selected category. Answer the category cards below.",
+      "multi": false,
+      "detail": "Only selected categories appear. Each card uses choices, with optional precise requirements."
     },
     {
-      "question_id": "product_exclusions",
+      "id": "product_exclusions",
       "field": "curation_profile",
-      "prompt": "Are there product types, materials, brands or features you want excluded?",
+      "prompt": "Which shopping rules should we apply across your finds?",
       "options": [
-        "No additional exclusions",
-        "Avoid selected materials",
+        "Avoid selected materials or ingredients",
         "Avoid selected brands",
-        "Avoid selected product types"
+        "Avoid selected product types",
+        "Avoid fragile or difficult-care items",
+        "Avoid strong scents",
+        "Avoid battery-powered items",
+        "Avoid disposable or single-use items",
+        "No additional product exclusions"
       ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific product exclusions"
+      "use": "Filters the product shortlist before generation, rather than trying to remove wrong items from finished images.",
+      "multi": true,
+      "detail": "Name the material, ingredient, brand or product type when choosing “selected”. For category-specific exceptions, state the category."
     },
     {
-      "question_id": "shopping_price",
+      "id": "shopping_price",
       "field": "curation_profile",
-      "prompt": "What price range or value priorities apply to the selected categories?",
+      "prompt": "What shopping budget fits your audience?",
       "options": [
-        "Mostly under $25",
-        "Mostly under $50",
-        "Mostly under $100",
-        "Mixed prices based on value"
+        "Mostly under $25 per item",
+        "Mostly under $50 per item",
+        "Mostly under $100 per item",
+        "Different limits by category",
+        "Value matters more than one price ceiling"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific shopping price"
+      "use": "Filters retail prices and total edit costs. This is the shopper budget, separate from image-generation spending.",
+      "multi": false,
+      "detail": "For category limits, enter each category and ceiling. Optional: total outfit/room/gift budget and exceptions for investment pieces."
     },
     {
-      "question_id": "persona_choice",
+      "id": "persona_choice",
       "field": "persona",
-      "prompt": "Do you want an authorized AI persona appearing in lifestyle images, or the no-persona path?",
+      "prompt": "Who should appear in lifestyle images?",
       "options": [
-        "Use an authorized persona",
-        "no_persona"
+        "An existing authorized AI persona",
+        "Me, using my authorized reference images",
+        "No person: use the separately tested no-persona version"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific persona choice"
+      "use": "Selects the identity/reference path or the distinct no-persona test. Never invents identity from written hair/age descriptions.",
+      "multi": false,
+      "detail": "For a person, identify the existing reference file and confirm you have permission to use it. Do not ask again if these are already verified."
     },
     {
-      "question_id": "persona_world",
+      "id": "persona_world",
       "field": "personal_visual_signature",
-      "prompt": "If using a persona, which real-life settings and activities fit your brand?",
+      "prompt": "Where would your persona naturally use or wear these finds?",
       "options": [
-        "Home and garden",
+        "Home and everyday routines",
+        "Garden, porch or outdoor home spaces",
         "Work or school",
-        "Outings and activities",
-        "Mixed settings"
+        "Errands and casual outings",
+        "Social events and celebrations",
+        "Travel and day trips",
+        "Hobbies and recreation"
       ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific persona world"
+      "use": "Produces plausible activities and different lifestyle viewpoints, rather than inserting a person into the styled image.",
+      "multi": true,
+      "detail": "Optional: identify recurring real settings and activities. Skip this question for the no-persona path."
     },
     {
-      "question_id": "voice",
+      "id": "voice",
       "field": "curation_profile",
-      "prompt": "How should your writing sound, and what wording should it avoid?",
+      "prompt": "How should your recommendations sound?",
       "options": [
         "Friendly and conversational",
-        "Direct and practical",
-        "Playful and expressive"
+        "Playful and expressive",
+        "Practical and specific",
+        "Warm and cozy",
+        "Polished and editorial"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific voice"
+      "use": "Guides blog copy, titles, Pinterest descriptions and Instagram captions without inventing product claims.",
+      "multi": true,
+      "detail": "Optional: approved phrases, words to avoid, and an existing writing sample."
     },
     {
-      "question_id": "amazon_path",
+      "id": "amazon_path",
       "field": "amazon_path",
-      "prompt": "Are you an approved Influencer with a storefront, Associates-only, or still setting up?",
+      "prompt": "Which Amazon path do you actually have?",
       "options": [
-        "Approved Influencer storefront",
-        "Associates-only",
-        "Still setting up"
+        "Approved Influencer with a storefront",
+        "Associates only",
+        "Not approved yet / still setting up"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific amazon path"
+      "use": "Determines Idea List versus product-link handling and what can be completed. Approval is verified rather than inferred.",
+      "multi": false,
+      "detail": "Optional: provide your owned storefront URL or existing account record. Never supply passwords here."
     },
     {
-      "question_id": "destinations",
+      "id": "destinations",
       "field": "destinations",
-      "prompt": "Which owned storefront, list or website should the content send shoppers to?",
+      "prompt": "Where should shoppers go from this content?",
       "options": [
-        "Amazon storefront or Idea Lists",
-        "My own website",
-        "Both"
+        "The exact Amazon Idea List for each edit",
+        "Verified individual Amazon affiliate links",
+        "My own website page for each edit",
+        "My website plus the relevant Amazon destination"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific destinations"
+      "use": "Sets the destination chain and account ownership checks; never substitutes a storefront homepage for a missing per-edit link.",
+      "multi": false,
+      "detail": "Identify existing owned URLs if available. Idea Lists require the Influencer path; website pages require a verified publishing path."
     },
     {
-      "question_id": "channels",
+      "id": "channels",
       "field": "channels",
-      "prompt": "Which channels do you want included?",
+      "prompt": "Which outputs do you want included?",
       "options": [
         "Pinterest",
         "Instagram",
         "Blog/website"
       ],
-      "type": "multi_select",
-      "free_text_placeholder": "Add your specific channels"
+      "use": "Creates only requested channel assets, copy and publication checks. A channel choice is not publishing authorization.",
+      "multi": true,
+      "detail": null
     },
     {
-      "question_id": "execution_mode",
+      "id": "execution_mode",
       "field": "execution_mode",
-      "prompt": "Which parts should the agent handle and which parts do you prefer to do manually?",
+      "prompt": "How do you want to operate the workflow?",
       "options": [
-        "Agent handles supported steps",
-        "I perform steps manually",
-        "Mixed responsibilities"
+        "Review first: prepare work, then I approve exact content and schedules",
+        "Automatic within a saved policy, only where supported and tested",
+        "Manual: I complete the steps using the prepared materials",
+        "Mixed: assign each step to me or the agent"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific execution mode"
+      "use": "Sets ownership and approval boundaries for sourcing, generation, links, website and scheduling.",
+      "multi": false,
+      "detail": "For mixed mode, assign those steps explicitly. Unsupported automatic steps are blocked, not silently handed back to you."
     },
     {
-      "question_id": "provider_choice",
+      "id": "provider_choice",
       "field": "provider_model",
-      "prompt": "Which image provider do you want to use? The operator will verify its exact model and supported execution path.",
+      "prompt": "Which image-generation route do you want to use?",
       "options": [
         "Native in-chat generation",
-        "Higgsfield",
-        "Another provider I use"
+        "My existing Higgsfield account",
+        "Another provider I already use",
+        "Help me compare routes before choosing"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific provider choice"
+      "use": "Selects a route to verify for actual model, references, output settings and cost. No automatic provider switch.",
+      "multi": false,
+      "detail": "No subscription or paid generation is authorized by this selection. Exact capabilities and cost must be verified separately."
     },
     {
-      "question_id": "cadence",
+      "id": "cadence",
       "field": "cadence",
-      "prompt": "How many looks do you want, and on which days?",
+      "prompt": "What publishing pace and planning approach do you want?",
       "options": [
-        "3 looks per week",
-        "4 looks per week",
-        "5 looks per week",
-        "6\u20137 looks per week"
+        "1–2 edits per week",
+        "3 edits per week",
+        "4–5 edits per week",
+        "6–7 edits per week",
+        "A custom finite schedule"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific cadence"
+      "use": "Sets the look count and channel workload after tests and verified capacity.",
+      "multi": false,
+      "detail": "Choose evergreen, seasonal/holiday, or a mix; give any campaign dates. Exact posting days/times and spacing for the three graphics must be recorded before scheduling; no default timetable is assumed."
     },
     {
-      "question_id": "timezone",
+      "id": "timezone",
       "field": "timezone",
-      "prompt": "Which timezone should govern the schedule?",
+      "prompt": "Which timezone should control your schedule?",
       "options": [
         "America/New_York",
         "America/Chicago",
         "America/Denver",
-        "America/Los_Angeles"
+        "America/Los_Angeles",
+        "Another timezone"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific timezone"
+      "use": "Controls scheduling and recovery timestamps; never uses the operator computer’s timezone.",
+      "multi": false,
+      "detail": "For another timezone, give a city or timezone name."
     },
     {
-      "question_id": "generation_budget",
+      "id": "generation_budget",
       "field": "budget",
-      "prompt": "What finite generation budget and retry allowance do you authorize?",
+      "prompt": "What image-generation spending are you authorizing?",
       "options": [
-        "Choose a per-look ceiling",
-        "Choose a weekly ceiling",
-        "Choose both ceilings"
+        "No paid generation",
+        "A finite credit allowance",
+        "A finite money allowance"
       ],
-      "type": "single_select",
-      "free_text_placeholder": "Add your specific generation budget"
+      "use": "Creates an enforceable spending and retry ceiling before any submission, including failed and uncertain attempts.",
+      "multi": false,
+      "detail": "For a paid allowance: enter amount, unit/currency, per-look ceiling and period ceiling. For every route: enter maximum attempts per image role, including corrections. Missing numbers block generation."
     }
-  ]
+  ],
+  "category_branches": {
+    "clothing": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Everyday casual outfits",
+          "Work or professional outfits",
+          "School or campus outfits",
+          "Going out or celebrations",
+          "Travel or weekends",
+          "Seasonal or holiday outfits"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Feminine or romantic",
+          "Classic or tailored",
+          "Relaxed or oversized",
+          "Sporty or athleisure",
+          "Statement pieces",
+          "Comfort-first basics"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Coverage or modesty",
+          "Size range",
+          "Preferred lengths or silhouettes",
+          "Fabric or stretch",
+          "Climate or season",
+          "Footwear comfort",
+          "Care requirements",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "accessories": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Everyday carry",
+          "Work or school",
+          "Travel",
+          "Events or evenings",
+          "Seasonal finishing touches"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Bags",
+          "Hair accessories",
+          "Belts",
+          "Hats or scarves",
+          "Practical organizers",
+          "Statement accessories"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Capacity or dimensions",
+          "Strap length or carrying style",
+          "Closures or security",
+          "Weight",
+          "Material or care",
+          "Compatibility with the outfit",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "jewelry": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Everyday wear",
+          "Work",
+          "Occasions",
+          "Layering",
+          "Gifting"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Delicate",
+          "Statement",
+          "Classic",
+          "Playful motifs",
+          "Mixed metals",
+          "Coordinated sets"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Metal or finish",
+          "Verified material preference",
+          "Pierced versus non-pierced",
+          "Chain length or ring sizing",
+          "Closure",
+          "Quantity or set contents",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "beauty": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Daily routine",
+          "Travel",
+          "Getting ready",
+          "At-home care",
+          "Gifting"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Makeup",
+          "Skincare",
+          "Haircare",
+          "Tools",
+          "Storage or organization"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Skin or hair needs",
+          "Ingredient exclusions",
+          "Shade or finish",
+          "Scent preference",
+          "Routine simplicity",
+          "Verified cruelty-free/other listing facts",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "perfume": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Everyday fragrance",
+          "Evening or events",
+          "Travel",
+          "Gifting",
+          "Seasonal rotation"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Fresh or clean",
+          "Floral",
+          "Fruity",
+          "Sweet or gourmand",
+          "Woody",
+          "Amber or warm",
+          "Explore verified scent families"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Strength preference",
+          "Bottle size",
+          "Spray versus roll-on",
+          "Budget per bottle",
+          "Ingredient or scent exclusions",
+          "Exact version or concentration",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "home-decor": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Entryway",
+          "Living room",
+          "Bedroom",
+          "Kitchen or coffee corner",
+          "Bathroom",
+          "Porch or outdoor area",
+          "Seasonal decorating"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Decorative accents",
+          "Storage with style",
+          "Lighting",
+          "Textiles",
+          "Wall decor",
+          "Coordinated small-space edit"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Dimensions or room size",
+          "Renter-safe installation",
+          "Washability or care",
+          "Pet or child considerations",
+          "Power source",
+          "Existing furniture/palette to work with",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "dorm": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Dorm room",
+          "Shared bedroom",
+          "Study area",
+          "Move-in",
+          "Storage",
+          "Shared bathroom"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Space-saving",
+          "Study setup",
+          "Cozy bedding",
+          "Decorative accents",
+          "Organization",
+          "Convenient everyday tools"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Residence restrictions",
+          "No drilling or damage",
+          "Bed/desk dimensions",
+          "Shared-space limits",
+          "Electrical restrictions",
+          "Easy pack-up or washing",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "car": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Daily commute",
+          "Road trips",
+          "Organization",
+          "Comfort",
+          "Personalizing the interior",
+          "Gifting"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Storage",
+          "Interior accents",
+          "Cleaning tools",
+          "Convenience accessories",
+          "Emergency organization"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Vehicle make/model/year or fit dimensions",
+          "Mount/support compatibility",
+          "No obstruction of controls or airbags",
+          "Heat resistance",
+          "Power connections",
+          "Ease of installation",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "books": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "My own reading",
+          "Book-club picks",
+          "Seasonal reading",
+          "Gifting",
+          "Reading-corner accessories"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Romance",
+          "Mystery or thriller",
+          "Fantasy or science fiction",
+          "Contemporary fiction",
+          "Nonfiction",
+          "Children’s or YA with a stated reader context"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Format or edition",
+          "Content boundaries",
+          "Standalone versus series",
+          "Language",
+          "Exact cover/edition",
+          "Reader interests or age appropriateness",
+          "No additional requirements"
+        ]
+      }
+    ],
+    "gifts": [
+      {
+        "id": "shopper_use",
+        "prompt": "Who or what are these finds for?",
+        "options": [
+          "Birthday",
+          "Thank-you",
+          "Host or housewarming",
+          "Graduation",
+          "Holiday",
+          "Just because"
+        ]
+      },
+      {
+        "id": "style_function",
+        "prompt": "Which styles or functions should lead?",
+        "options": [
+          "Useful",
+          "Sentimental",
+          "Hobby-related",
+          "Self-care",
+          "Decorative",
+          "A coordinated bundle"
+        ]
+      },
+      {
+        "id": "requirements",
+        "prompt": "Which practical requirements matter?",
+        "options": [
+          "Recipient interests",
+          "Relationship to recipient",
+          "Age appropriateness where relevant",
+          "Delivery deadline",
+          "Individual gift versus bundle",
+          "Gift budget and exclusions",
+          "No additional requirements"
+        ]
+      }
+    ]
+  },
+  "operator_checks": [
+    "Retrieve existing answers first; preserve exact source, timestamps and revision. Ask only for missing/conflicting preferences.",
+    "Verify asset rights, actual references and persona identity inputs.",
+    "Verify Amazon path, affiliate attribution, exact destinations and disclosure.",
+    "Verify owned accounts, board IDs/visibility, channel permissions and publisher readback.",
+    "Verify provider/model, reference support, actual cost and finite budget.",
+    "Verify durable profile write/readback, schedule capacity, paused task payloads and resume behavior.",
+    "Compile answer application for sourcing and all nine workflow steps; no unanswered field may be defaulted.",
+    "Run one inspected BASIC → STYLED → LIFESTYLE mini test per selected category and selected buyer path before scaling. Reject actual defects; preserve failures.",
+    "Keep publication and customer release subject to separate live evidence and authorization."
+  ],
+  "answer_contract": "Persist each exact answer immediately in the same private profile, with question ID, question version, source, timestamp, revision and readback. Record a new answer as new; do not label it recovered. Corrections retain history and invalidate affected prepared inputs/tests."
 }

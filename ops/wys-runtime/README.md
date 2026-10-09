@@ -33,3 +33,10 @@ Raw question answers and aggregate curation/visual fields are written in the sam
 ## Recorded image rejections
 
 `mini_test.py` reads `rejected-assets.json` before accepting a record. It rejects both failed Tommy Kate STYLED image checksums even if a later record contains PASS checkboxes. A missing or malformed rejection registry blocks acceptance. This is protection against reusing known rejected images; it does not independently judge garment volume, product fidelity or aesthetic quality, and it does not establish provider/caller integration. Both STYLED versions in the first private clothing test were rejected.
+
+
+### Product-specific guided intake (9 October)
+
+`intake-question-bank.json` is the questionnaire data consumed by `intake.py`, not a separate workflow authority. It defines 21 guided topics with a separate three-part shopper/use, style/function and practical-requirements branch for each of the ten categories. Every topic identifies its downstream use. Operator capability checks are separate from customer preferences. Existing source-backed answers are resolved first; the original founder questionnaire remains unrecovered.
+
+The standalone questionnaire presents one topic at a time and can export a portable draft answer file. Import that customer-supplied file with `intake.py import-form --profile PRIVATE_PATH --customer CUSTOMER_ID --answer-file ANSWERS_PATH --expected-revision N`. Import retains exact values and timestamps, saves through the existing revision/readback path, skips blank drafts, rejects overwrites requiring explicit correction, and reports remaining questions. A browser draft is not a confirmed or live-connected customer profile. Paid allowances and attempt limits require actual finite values. The operator must inspect specific details, conflicts, rights and account capabilities before preparing any operation. This does not install the guards in cloud agents or establish image, publication or scheduled-run acceptance.

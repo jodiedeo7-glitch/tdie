@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 import intake
 import profile
+import json
 
 
 class IntakeTests(unittest.TestCase):
@@ -48,6 +49,55 @@ class IntakeTests(unittest.TestCase):
             with self.assertRaisesRegex(profile.Blocked, 'QUESTION_UNANSWERED'):
                 self.record('business_direction', value, 0)
         self.assertFalse(self.path.exists())
+
+    def form_file(self, answers):
+        file = self.path.parent / 'form.json'
+        file.write_text(json.dumps({'schema_version': 2, 'questionnaire_version': 2,
+                                    'answers': answers}))
+        return file
+
+    def form_answer(self, selected=None, detail='', **extra):
+        return {'value': {'selected': selected or [], 'detail': detail, **extra},
+                'answered_at': '2026-10-09T14:00:00+00:00'}
+
+    def test_form_import_preserves_exact_answer_and_does_not_record_blank(self):
+        answer = self.form_answer(['Complete outfits they can recreate'], 'My exact words')
+        file = self.form_file({'business_direction': answer,
+                              'aesthetic': self.form_answer()})
+        result = intake.import_form(self.path, 'fixture', file, 0, 'fixture')
+        self.assertEqual(result['imported'], 1)
+        self.assertEqual(profile.load(self.path)['answers']['intake.business_direction']['value'], answer['value'])
+        self.assertEqual(intake.next_question(self.path)['question_id'], 'categories')
+
+    def test_form_import_refuses_overwriting_existing_answer_before_any_save(self):
+        self.record('business_direction', 'Existing exact answer', 0)
+        file = self.form_file({'business_direction': self.form_answer(['Complete outfits they can recreate'])})
+        with self.assertRaisesRegex(profile.Blocked, 'EXPLICIT_CORRECTION_REQUIRED'):
+            intake.import_form(self.path, 'fixture', file, 1, 'fixture')
+        self.assertEqual(profile.load(self.path)['revision'], 1)
+
+    def test_selected_category_requires_its_complete_branch(self):
+        file = self.form_file({'categories': self.form_answer(['car']),
+                              'category_preferences': self.form_answer(categories={'car': {'shopper_use': ['Daily commute']}})})
+        with self.assertRaisesRegex(profile.Blocked, 'CATEGORY_BRIEF_INCOMPLETE:car:style_function'):
+            intake.import_form(self.path, 'fixture', file, 0, 'fixture')
+        self.assertFalse(self.path.exists())
+
+    def test_guided_no_persona_answer_skips_persona_world(self):
+        self.record('persona_choice', {'selected': ['No person: use the separately tested no-persona version'], 'detail': ''}, 0)
+        self.assertNotIn('persona_world', intake.missing_questions(profile.load(self.path)['answers']))
+
+    def test_paid_budget_checkbox_without_amounts_cannot_be_imported(self):
+        file = self.form_file({'generation_budget': self.form_answer(
+            ['A finite credit allowance'], max_attempts_per_role=2, period='one mini test')})
+        with self.assertRaisesRegex(profile.Blocked, 'FINITE_PAID_ALLOWANCE_REQUIRED'):
+            intake.import_form(self.path, 'fixture', file, 0, 'fixture')
+        self.assertFalse(self.path.exists())
+
+    def test_no_paid_generation_still_requires_a_finite_attempt_limit(self):
+        file = self.form_file({'generation_budget': self.form_answer(['No paid generation'])})
+        with self.assertRaisesRegex(profile.Blocked, 'FINITE_ATTEMPT_ALLOWANCE_REQUIRED'):
+            intake.import_form(self.path, 'fixture', file, 0, 'fixture')
 
     def test_no_persona_skips_only_persona_world(self):
         revision = 0
