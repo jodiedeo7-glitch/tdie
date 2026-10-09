@@ -25,7 +25,7 @@ function database(){
  if(sql.includes('FROM wys_customers'))return customers.has(args[0])?{id:customers.get(args[0])}:null;
  if(sql.includes('FROM wys_preferences'))return preferences.has(args[0])?{preferences_json:preferences.get(args[0]),updated_at:'2026-10-09'}:null;
  throw Error('Unexpected SQL');
- },async run(){if(!sql.startsWith('INSERT INTO wys_preferences'))throw Error('Unexpected SQL');preferences.set(args[0],args[1]);return {success:true}}}}}};
+ },async run(){if(!sql.startsWith('INSERT INTO wys_preferences'))throw Error('Unexpected SQL');preferences.set(args[0],args[1]);return {success:true}}}}};
 }
 const secret='test-only-not-for-production';
 async function request(method,token,body,db){
