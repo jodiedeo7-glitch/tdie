@@ -10,12 +10,13 @@
   "actual_work": [
     "Fetched 16 governing/runtime files and 7 plugin files from pinned GitHub commits.",
     "Prepared raw requirements, implementation and historical-kit source text for external review, separate from earlier assistant audit verdicts.",
-    "Inspected Claude browser: sign-in page visible; no authenticated Claude session verified."
+    "Inspected Claude browser: sign-in page visible; no authenticated Claude session verified.",
+    "Offered manual control of the existing Claude tab at the human-verification challenge; no CAPTCHA attempted by the assistant."
   ],
   "external_review": {
     "provider": "Claude",
     "status": "NOT_SUBMITTED",
-    "reason": "Sign-in required in the available browser"
+    "reason": "Claude sign-in reached an interactive hCaptcha human-verification challenge after the secure Google method selection. Review remains unsubmitted; no authenticated session verified."
   },
   "restrictions": {
     "generation": "PAUSED",
