@@ -1,8 +1,15 @@
 ---
-const {icing,variant=1}=Astro.props;
+const {icing}=Astro.props;
 ---
-<div class={`designed-banner composition-${variant}`}>
- <div class="banner-materials" aria-hidden="true"><span class="pink-foil"></span><span class="chrome-disc"></span><span class="pearl-disc"></span><span class="foil-edge"></span></div>
- <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home"><span class="banner-the">The</span><span class="banner-name">Digital Income</span><span class="banner-edit">Edit<sup>™</sup></span></a>
+<div class="designed-banner tdie-founder-banner">
  <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
+ <div class="banner-composition">
+  <figure class="brand-photo brand-photo-loft"><img src="/images/home/flagship-attic-560.webp" alt="Tommy Kate at her pink attic desk with her glitter tumbler" width="560" height="695" loading="eager"/></figure>
+  <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home">
+   <span class="banner-the">The</span>
+   <span class="banner-name">Digital Income</span>
+   <span class="banner-edit">Edit<sup>™</sup></span>
+  </a>
+  <figure class="brand-photo brand-photo-desk"><img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate building her business at her farmhouse window desk" width="720" height="893" loading="eager"/></figure>
+ </div>
 </div>
