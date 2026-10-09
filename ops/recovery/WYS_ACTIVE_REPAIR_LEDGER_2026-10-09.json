@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T18:51:38.993Z",
+  "updated_at": "2026-10-09T18:56:11.825Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -24,11 +24,28 @@
       "Live orchestration and customer delivery NOT TESTED"
     ],
     "repair_recheck": {
-      "status": "SUBMITTED_EXISTING_GEMINI_REVIEW_RESPONSE_IN_PROGRESS",
-      "runtime_commit": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
-      "plugin_commit": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
+      "status": "COMPLETED_STATIC_RECHECK_TWO_FOLLOWUP_GAPS_REPAIRED_NOT_EXTERNALLY_RECHECKED",
+      "reviewed_runtime_commit": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
+      "reviewed_plugin_commit": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
+      "latest_runtime_commit": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
+      "latest_plugin_commit": "46684ebb4d6e92d38d671b6c6f90996dd85e7c6a",
       "source_files": 23,
-      "evidence": "Rendered source attachment and new recheck prompt are visible in the same review; Stop response confirms active response."
+      "static_supported": [
+        "Blank structured intake rejection",
+        "POSIX live-writer exclusion and crash recovery",
+        "Legacy marker reconciliation",
+        "Exact answer/correction/source retention",
+        "Read-only session bridge and hash invalidation"
+      ],
+      "followup_repairs": [
+        "Separate answer-hash-bound operator verification records in original session; customer corrections invalidate and retain historical evidence",
+        "Partial category brief import resolves saved category selection"
+      ],
+      "limits": [
+        "Reviewer did not execute tests or inspect live production",
+        "Latest two followup repairs require external recheck",
+        "Gemini showed usage limit reset 4:43 PM and switched picker to Flash-Lite"
+      ]
     }
   },
   "repairs": [
@@ -36,7 +53,7 @@
       "id": "INTAKE-EMPTY-STRUCTURED",
       "status": "IMPLEMENTED_LOCAL_TESTS_PASS_UNMERGED",
       "pull_request": 31,
-      "head": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
+      "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
       "tests": 59,
       "external_recheck": "PENDING"
     },
@@ -45,7 +62,7 @@
       "status": "IMPLEMENTED_POSIX_TESTS_PASS_UNMERGED",
       "requirement": "Recover after writer process death without deleting locks solely by age; retain live-writer exclusion.",
       "pull_request": 31,
-      "head": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
+      "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
       "validation": "Live subprocess blocks concurrent writes; SIGKILL releases OS lease; subsequent save succeeds. 59 runtime tests passed. GitHub source readback matched.",
       "limits": "Legacy marker migration, Windows and network filesystems remain unverified. No lock deleted by age."
     },
@@ -53,7 +70,7 @@
       "id": "CALLER-INTEGRATION",
       "status": "PLUGIN_SESSION_RUNTIME_READER_TESTED_LIVE_ADAPTERS_NOT_IMPLEMENTED",
       "pull_request": 31,
-      "head": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
+      "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
       "validation": "Same file is reloaded; exact answers and evidence retained; corrections invalidate old input hashes; runtime writer cannot overwrite plugin state. Six bridge regressions passed; 65 combined runtime tests passed.",
       "remaining": "Verified operator configuration, actual provider/publisher/scheduler callers and durable remote state."
     },
@@ -61,13 +78,26 @@
       "id": "CUSTOMER-INSTALL-DELIVERY",
       "status": "PACKAGED_CLI_TESTED_CHATGPT_INSTALL_AND_REAL_DELIVERY_NOT_VERIFIED",
       "pull_request": 30,
-      "head": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
+      "head": "46684ebb4d6e92d38d671b6c6f90996dd85e7c6a",
       "validation": "Six relocated package CLI tests passed; 21 answers and ten category briefs retained; resume/correction/crash recovery verified on POSIX."
     },
     {
       "id": "CATEGORY-AND-PATH-E2E",
       "status": "NOT_TESTED",
       "requirement": "Real category images and customer workflow through posting/scheduling; no passing result inferred from fixtures."
+    },
+    {
+      "id": "SESSION-OPERATOR-VERIFICATION",
+      "status": "IMPLEMENTED_TESTS_PASS_UNMERGED_EXTERNAL_RECHECK_PENDING",
+      "runtime_head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
+      "plugin_head": "46684ebb4d6e92d38d671b6c6f90996dd85e7c6a",
+      "validation": "Verified record binding checked; preparation succeeds with synthetic operator evidence; customer correction invalidates evidence and retains history."
+    },
+    {
+      "id": "PARTIAL-FORM-CATEGORY-RESUME",
+      "status": "IMPLEMENTED_TESTS_PASS_UNMERGED_EXTERNAL_RECHECK_PENDING",
+      "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
+      "validation": "Saved category selection supports a later category-brief-only import."
     }
   ],
   "disproved_claims": [
@@ -80,5 +110,14 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "Read completed external repair recheck, retain its exact findings, and implement source-confirmed defects. Live generation/publishing/scheduling and customer installation/delivery remain separate unfinished work."
+  "next_action": "Externally recheck the latest two followup repairs; then implement and verify actual account/provider/publishing/scheduler adapters and durable customer installation/delivery. Current source repairs do not certify release.",
+  "local_validation": {
+    "combined_runtime_tests_passed": 68,
+    "packaged_session_tests_passed": 6,
+    "git_source_readback": "Eight changed files matched",
+    "live_generation": "NOT_RUN",
+    "publication": "NOT_RUN",
+    "customer_installation": "NOT_VERIFIED",
+    "delivery": "NOT_VERIFIED"
+  }
 }
