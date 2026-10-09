@@ -11,13 +11,6 @@ QUESTIONS = tuple((q['id'], q['field'], q['prompt']) for q in BANK['questions'])
 CHOICES = {q['id']: q['options'] for q in BANK['questions']}
 MULTI_SELECT = {q['id'] for q in BANK['questions'] if q['multi']}
 CATEGORY_BRANCHES = BANK['category_branches']
-CUSTOM_CATEGORY_FIELDS = ('shopper_use', 'style_function', 'requirements')
-
-
-def valid_category(value):
-    return (isinstance(value, str) and bool(value.strip()) and len(value) <= 80
-            and value not in ('__proto__', 'constructor', 'prototype'))
-
 GROUPED = {'curation_profile', 'personal_visual_signature'}
 OPERATOR_FIELDS = ('reference_assets', 'disclosure', 'connected_capabilities', 'state_location')
 
@@ -53,7 +46,6 @@ def next_question(path):
                 'questionnaire_version': BANK['schema_version'],
                 'use': next(q['use'] for q in BANK['questions'] if q['id'] == question_id),
                 'category_branches': CATEGORY_BRANCHES if question_id == 'category_preferences' else None,
-                'custom_category_branch': BANK['custom_category_branch'] if question_id == 'category_preferences' else None,
                 'type': 'multi_select' if question_id in MULTI_SELECT else 'single_select',
                 'free_text_placeholder': 'Add your specific ' + question_id.replace('_', ' '),
                 'operator_rule': 'Resolve existing exact customer evidence first. Ask only if still missing. Present guided choices; custom text is optional, never an open-ended-only question.'}
@@ -124,10 +116,7 @@ def import_form(path, customer_id, answer_file, expected_revision, kind='custome
     if current['revision'] != expected_revision:
         raise state.Blocked('REVISION_CONFLICT')
     prepared = []
-    category_answer = incoming.get('categories', current['answers'].get('intake.categories', {}))
-    categories = category_answer.get('value', {}).get('selected', [])
-    if not isinstance(categories, list) or any(not valid_category(c) for c in categories):
-        raise state.Blocked('CATEGORY_SELECTION_INVALID')
+    categories = incoming.get('categories', {}).get('value', {}).get('selected', [])
     for question_id, field, prompt in QUESTIONS:
         if question_id not in incoming:
             continue
@@ -140,21 +129,16 @@ def import_form(path, customer_id, answer_file, expected_revision, kind='custome
             raise state.Blocked('FORM_ANSWER_INVALID:' + question_id)
         if question_id == 'category_preferences':
             responses = value.get('categories', {})
-            if not categories:
+            if not categories or any(category not in CATEGORY_BRANCHES for category in categories):
                 raise state.Blocked('CATEGORY_SELECTION_INVALID')
             for category in categories:
-                response = responses.get(category, {})
-                fields = ([item['id'] for item in CATEGORY_BRANCHES[category]]
-                          if category in CATEGORY_BRANCHES else CUSTOM_CATEGORY_FIELDS)
-                for field_id in fields:
-                    content = response.get(field_id)
-                    if (not content or (isinstance(content, str) and not content.strip())
-                            or (category not in CATEGORY_BRANCHES and not isinstance(content, str))):
-                        raise state.Blocked('CATEGORY_BRIEF_INCOMPLETE:' + category + ':' + field_id)
+                for item in CATEGORY_BRANCHES[category]:
+                    if not responses.get(category, {}).get(item['id']):
+                        raise state.Blocked('CATEGORY_BRIEF_INCOMPLETE:' + category + ':' + item['id'])
         elif not selected and not detail.strip():
             # A blank browser draft is never a recorded answer.
             continue
-        if question_id != 'categories' and any(choice not in CHOICES[question_id] for choice in selected):
+        if any(choice not in CHOICES[question_id] for choice in selected):
             raise state.Blocked('FORM_CHOICE_INVALID:' + question_id)
         if question_id not in MULTI_SELECT and len(selected) > 1:
             raise state.Blocked('FORM_SINGLE_CHOICE_REQUIRED:' + question_id)
