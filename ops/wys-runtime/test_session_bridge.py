@@ -88,6 +88,44 @@ class SessionBridgeTests(unittest.TestCase):
         with self.assertRaisesRegex(profile.Blocked, 'PROFILE_IDENTITY_MISMATCH'):
             self.prepare(self.writer.load(self.path)['sha256'], customer='another-customer')
 
+    def test_operator_evidence_unblocks_preparation_and_corrections_invalidate_it(self):
+        for field in self.writer.OPERATOR_FIELDS:
+            raw = self.writer.load(self.path)
+            self.writer.mutate(self.path, 'operator', qid=field,
+                revision=raw['revision'], data={
+                    'value': 'synthetic verified ' + field, 'evidence': 'synthetic readback only',
+                    'answered_at': '2026-10-09T13:00:00+00:00',
+                    'source_kind': 'operator_verified', 'verification_status': 'VERIFIED',
+                    'answers_sha256': profile.digest(raw['answers'])})
+        raw = self.writer.load(self.path)
+        compiled = profile.load(self.path)
+        master = self.path.with_name('synthetic-master.txt')
+        master.write_text('synthetic governing instructions')
+        import hashlib
+        payload = profile.prepare(self.path, 'synthetic-customer', 'basic', 'fixture-edit',
+            master, raw['sha256'], hashlib.sha256(master.read_bytes()).hexdigest())
+        self.assertEqual(payload['configuration']['state_location'], 'synthetic verified state_location')
+        self.assertEqual(compiled['answers']['reference_assets']['evidence'], 'synthetic readback only')
+        self.writer.mutate(self.path, 'answer', qid='business_direction', correction=True,
+            revision=raw['revision'], data={'value': {'selected': [], 'detail': 'explicit new direction'},
+                'evidence': 'synthetic correction', 'answered_at': '2026-10-09T14:00:00+00:00'})
+        updated = self.writer.load(self.path)
+        self.assertNotIn('operator_verifications', updated)
+        self.assertEqual(len(updated['history'][-1]['invalidated_operator_verifications']), 4)
+        with self.assertRaisesRegex(profile.Blocked, 'SETUP_INCOMPLETE'):
+            self.prepare(updated['sha256'])
+
+    def test_operator_record_with_wrong_answer_binding_preserves_bytes(self):
+        raw = self.writer.load(self.path)
+        before = self.path.read_bytes()
+        with self.assertRaisesRegex(ValueError, 'OPERATOR_VERIFICATION_BINDING_REQUIRED'):
+            self.writer.mutate(self.path, 'operator', qid='state_location', revision=raw['revision'],
+                data={'value': 'synthetic location', 'evidence': 'synthetic source',
+                      'answered_at': '2026-10-09T13:00:00+00:00',
+                      'source_kind': 'operator_verified', 'verification_status': 'VERIFIED',
+                      'answers_sha256': 'stale-answer-hash'})
+        self.assertEqual(self.path.read_bytes(), before)
+
     def test_hashed_blank_answer_still_fails_semantic_validation(self):
         document = self.writer.load(self.path)
         document['answers']['business_direction']['value'] = {'selected': [], 'detail': ''}
