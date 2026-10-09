@@ -16,13 +16,20 @@
   ],
   "external_review": {
     "provider": "Claude",
-    "status": "NOT_SUBMITTED",
-    "reason": "Claude Google sign-in popup was located after the CAPTCHA disappeared. User selected the existing Jodie account and passkey through secure browserAuth. Google visibly remains at Complete sign-in using your passkey. The existing Google popup is preserved for manual approval; no authenticated Claude session or audit submission verified."
+    "status": "DUPLICATE_ATTEMPT_STOPPED",
+    "reason": "Another project conversation reports successful source-document and nine-image submission to Gemini at 2026-10-09T16:02:55Z. This is a retrieved conversation status, not an independently verified final audit verdict. This thread will not start an additional audit or sign-in."
   },
   "restrictions": {
     "generation": "PAUSED",
     "customer_release": "HELD",
     "private_sources": "Not committed to this public repository"
   },
-  "next_action": "Complete secure Claude sign-in, submit the prepared raw source snapshot in a fresh conversation, retain the review, implement substantiated defects and request external recheck. Do not substitute an OpenAI agent review for this requested external review."
+  "next_action": "Use the existing external review result when available; do not launch another reviewer or restart authentication. Preserve independent implementation work separately from external review conclusions.",
+  "coordination": {
+    "active_review_owner": "Existing review in Questionnaire Recovery Failure conversation",
+    "reported_provider": "Gemini",
+    "reported_state": "Sources received; review ongoing",
+    "this_thread": "No further authentication, audit submission or browser interaction",
+    "duplicate_tab_cleanup": "Automatic approval review rejected closing in-progress authentication tabs because it would discard browser state without explicit cleanup authorization. Safer action: leave those tabs untouched and stop using them."
+  }
 }
