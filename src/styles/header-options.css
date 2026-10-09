@@ -21,3 +21,14 @@ body:has(.designed-banner) .sn-logo,body:has(.designed-banner) .sn-drip{display:
 /* Complete photo cards remain visible without the wordmark covering them. */
 .composition-1 .banner-photo{top:70px;width:132px;height:198px}
 @media(max-width:760px){.composition-1{height:345px}.composition-1 .banner-photo{top:180px;width:86px;height:129px}.composition-1 .photo-a{left:calc(50% - 113px)}.composition-1 .photo-b{right:calc(50% - 113px)}}
+/* The brand masthead is evergreen. WYS and seasonal photographs never define it. */
+.banner-brand-art{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.composition-1{background:#fff}
+.composition-2{background:#242124}
+.composition-3{background:#fff}
+.composition-4{background:#242124}
+.composition-5{background:#242124}
+.composition-6{background:#fff}
+@media(max-width:760px){.composition-1{height:290px}.composition-3 .banner-brand-art{width:180%;left:-50%}.composition-4 .banner-brand-art{width:230%;left:-120%}.composition-4 .banner-wordmark{position:relative;z-index:3}.composition-6 .banner-brand-art{height:285px}}
+
+@media(max-width:760px){.composition-1 .banner-wordmark{align-self:center;margin-top:0;background:transparent;border-radius:0}.composition-3 .banner-brand-art,.composition-4 .banner-brand-art{width:100%;left:0}}

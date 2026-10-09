@@ -1,15 +1,15 @@
 ---
-import {getImage} from 'astro:assets';
-import pieces from '../../lifestyle/ghoul-fuel-coffee-bar-basic.png';
-import room from '../../lifestyle/pretty-wicked-entryway-styled.png';
 const {icing,variant=1}=Astro.props;
-const photos=await Promise.all([pieces,room].map(src=>getImage({src,width:700,format:'webp',quality:88})));
 ---
 <div class={`designed-banner composition-${variant}`}>
- <div class="banner-art" aria-hidden="true">
-  <figure class="banner-photo photo-a"><img src={photos[0].src} width="700" height="1050" alt="" loading="eager"/></figure>
-  <figure class="banner-photo photo-b"><img src={photos[1].src} width="700" height="1050" alt="" loading="eager"/></figure>
- </div>
+ <svg class="banner-brand-art" viewBox="0 0 1440 330" preserveAspectRatio="none" aria-hidden="true">
+  {variant===1 && <><path d="M0 330V110C125 100 180 166 210 240L245 330Z" fill="#242124"/><path d="M1440 330V80C1270 96 1260 188 1195 330Z" fill="#242124"/></>}
+  {variant===2 && <><path d="M-40 325C95 75 186 335 325 222" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M1160 88C1250 192 1415 105 1490 280" fill="none" stroke="#ffffff" stroke-width="2"/></>}
+  {variant===3 && <><path d="M940 42H1440V330H820Z" fill="#242124"/><path d="M1060 45C1210 80 1250 240 1390 295" fill="none" stroke="#fff" stroke-width="2"/></>}
+  {variant===4 && <><path d="M1440 95C1230 28 1020 155 1040 330H1440Z" fill="#4b474a"/><path d="M1440 174C1300 80 1160 208 1190 330" fill="none" stroke="#fff" stroke-width="2"/></>}
+  {variant===5 && <><path d="M0 42H1440V330H0Z" fill="#242124"/><path d="M0 132C295 25 340 340 590 274S890 20 1440 204" fill="none" stroke="#777176" stroke-width="2"/></>}
+  {variant===6 && <><path d="M0 198C245 128 340 335 610 239S990 173 1440 278V330H0Z" fill="#242124"/><path d="M0 262C255 183 348 368 642 277S995 202 1440 306" fill="none" stroke="#fff" stroke-width="2"/></>}
+ </svg>
  <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home"><span class="banner-the">The</span><span class="banner-name">Digital Income</span><span class="banner-edit">Edit<sup>™</sup></span></a>
  <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
 </div>
