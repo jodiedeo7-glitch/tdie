@@ -1,15 +1,18 @@
 ---
 const {icing}=Astro.props;
 ---
-<div class="designed-banner tdie-founder-banner">
+<div class="designed-banner tdie-repo-banner">
  <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
  <div class="banner-composition">
-  <figure class="brand-photo brand-photo-loft"><img src="/images/home/flagship-attic-560.webp" alt="Tommy Kate at her pink attic desk with her glitter tumbler" width="560" height="695" loading="eager"/></figure>
-  <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home">
-   <span class="banner-the">The</span>
-   <span class="banner-name">Digital Income</span>
-   <span class="banner-edit">Edit<sup>™</sup></span>
-  </a>
-  <figure class="brand-photo brand-photo-desk"><img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate building her business at her farmhouse window desk" width="720" height="893" loading="eager"/></figure>
+  <div class="brand-lockup">
+   <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home">
+    <span class="banner-the"><img class="banner-repo-icon" src="/icon-512.png" width="28" height="28" alt="" aria-hidden="true"/>The</span><span class="banner-name">Digital Income</span><span class="banner-edit">Edit<sup>™</sup></span>
+   </a>
+   <p class="banner-tagline">Build Your Business Backwards.<br/>Scale It Forward.™</p>
+  </div>
+  <div class="brand-scenes">
+   <figure class="brand-photo brand-photo-studio"><img src="/images/home/flagship-attic-900.webp" alt="Tommy Kate in her pink attic studio with her glitter iced-coffee tumbler" width="900" height="1117" loading="eager"/></figure>
+   <figure class="brand-photo brand-photo-work"><img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate working at her farmhouse window desk" width="720" height="893" loading="eager"/></figure>
+  </div>
  </div>
 </div>
