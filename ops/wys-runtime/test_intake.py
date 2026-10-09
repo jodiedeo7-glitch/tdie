@@ -56,6 +56,28 @@ class IntakeTests(unittest.TestCase):
                                     'answers': answers}))
         return file
 
+    def test_direct_blank_structured_answer_never_creates_a_profile(self):
+        for value in ({}, {'selected': [], 'detail': ''},
+                      {'selected': [], 'detail': '   '}):
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(profile.Blocked, 'QUESTION_UNANSWERED'):
+                    self.record('business_direction', value, 0)
+                self.assertFalse(self.path.exists())
+                self.assertEqual(intake.next_question(self.path)['question_id'], 'business_direction')
+
+    def test_direct_blank_answer_leaves_existing_profile_and_resume_point_unchanged(self):
+        self.record('business_direction', 'Existing exact answer', 0)
+        before = self.path.read_bytes()
+        with self.assertRaisesRegex(profile.Blocked, 'QUESTION_UNANSWERED'):
+            self.record('categories', {'selected': [], 'detail': ''}, 1)
+        self.assertEqual(self.path.read_bytes(), before)
+        self.assertEqual(intake.next_question(self.path)['question_id'], 'categories')
+
+    def test_direct_custom_text_is_preserved_without_a_selection(self):
+        value = {'selected': [], 'detail': 'My exact custom niche'}
+        self.record('business_direction', value, 0)
+        self.assertEqual(profile.load(self.path)['answers']['intake.business_direction']['value'], value)
+
     def form_answer(self, selected=None, detail='', **extra):
         return {'value': {'selected': selected or [], 'detail': detail, **extra},
                 'answered_at': '2026-10-09T14:00:00+00:00'}
