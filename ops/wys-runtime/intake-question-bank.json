@@ -4,6 +4,7 @@
   "original_questionnaire": "UNRECOVERED",
   "answer_storage": "Private profile; never public git",
   "procedure": [
+    "Do not treat a refusal, objection, or No selection as a preference answer. Do not call recovered visual directions original questionnaire answers.",
     "Persist each individual answer immediately using profile.save; read back exact value and revision.",
     "Recovered direct instructions use source_kind=recovered_direct_instruction, answered_at=null, recorded_at=ingestion timestamp and explicit source evidence.",
     "Ask only unresolved user preferences; inspect technical capabilities and files yourself. Never ask the founder to guess them.",
@@ -15,7 +16,7 @@
   "questions": [
     {
       "field": "curation_profile",
-      "prompt": "What price range, real-life occasions and product dealbreakers should govern your test profile?",
+      "prompt": "After business direction and categories are established: what product-selection preferences, occasions, price ranges, and exclusions apply? Do not assume clothing is selected.",
       "affected_steps": [
         "sourcing",
         "basic",
@@ -23,36 +24,9 @@
         "lifestyle",
         "blog"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "personal_visual_signature",
-      "prompt": "What additional visual details or exclusions are missing from the recovered direct instructions?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle",
-        "graphics"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "persona",
-      "prompt": "Who may appear, in which categories, using which authorized identity reference?",
-      "affected_steps": [
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "reference_assets",
-      "prompt": "Which exact authorized product and identity files are attached for this look?",
-      "affected_steps": [
-        "basic",
-        "styled",
-        "lifestyle"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "categories_and_curation",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
       "field": "product_categories",
@@ -63,35 +37,32 @@
         "styled",
         "lifestyle"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "categories_and_curation",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
-      "field": "provider_model",
-      "prompt": "Which verified provider/model is permitted for this execution path?",
+      "field": "personal_visual_signature",
+      "prompt": "What additional visual details or exclusions are missing from the recovered direct instructions?",
       "affected_steps": [
         "basic",
         "styled",
-        "lifestyle"
+        "lifestyle",
+        "graphics"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "visual_signature",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
-      "field": "budget",
-      "prompt": "What finite attempts and verified spend allowance apply before submission?",
+      "field": "persona",
+      "prompt": "Who may appear, in which categories, using which authorized identity reference?",
       "affected_steps": [
-        "basic",
-        "styled",
         "lifestyle"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "state_location",
-      "prompt": "Where is the private durable profile stored, and can the next process read it?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "persona",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
       "field": "amazon_path",
@@ -102,7 +73,9 @@
         "pinterest",
         "instagram"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "account_and_destination_path",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
       "field": "destinations",
@@ -112,17 +85,21 @@
         "pinterest",
         "instagram"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "account_and_destination_path",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
-      "field": "disclosure",
-      "prompt": "What required disclosure text and placement applies?",
+      "field": "provider_model",
+      "prompt": "Which verified provider/model is permitted for this execution path?",
       "affected_steps": [
-        "blog",
-        "pinterest",
-        "instagram"
+        "basic",
+        "styled",
+        "lifestyle"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "channels_and_execution",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
       "field": "channels",
@@ -132,23 +109,9 @@
         "pinterest",
         "instagram"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "timezone",
-      "prompt": "Which timezone governs scheduled execution?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
-    },
-    {
-      "field": "cadence",
-      "prompt": "What exact schedule and output quantity is authorized?",
-      "affected_steps": [
-        "reconciliation"
-      ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "channels_and_execution",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
     },
     {
       "field": "execution_mode",
@@ -156,7 +119,75 @@
       "affected_steps": [
         "reconciliation"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "channels_and_execution",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+    },
+    {
+      "field": "budget",
+      "prompt": "What finite attempts and verified spend allowance apply before submission?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "cadence_and_budget",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+    },
+    {
+      "field": "timezone",
+      "prompt": "Which timezone governs scheduled execution?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "cadence_and_budget",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+    },
+    {
+      "field": "cadence",
+      "prompt": "What exact schedule and output quantity is authorized?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "cadence_and_budget",
+      "resolve_by": "verified existing customer evidence first; otherwise focused customer question"
+    },
+    {
+      "field": "reference_assets",
+      "prompt": "Which exact authorized product and identity files are attached for this look?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "operator_capability_checks",
+      "resolve_by": "operator inspection first; ask only if still unavailable"
+    },
+    {
+      "field": "state_location",
+      "prompt": "Where is the private durable profile stored, and can the next process read it?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "operator_capability_checks",
+      "resolve_by": "operator inspection first; ask only if still unavailable"
+    },
+    {
+      "field": "disclosure",
+      "prompt": "What required disclosure text and placement applies?",
+      "affected_steps": [
+        "blog",
+        "pinterest",
+        "instagram"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "operator_capability_checks",
+      "resolve_by": "operator inspection first; ask only if still unavailable"
     },
     {
       "field": "connected_capabilities",
@@ -164,7 +195,9 @@
       "affected_steps": [
         "reconciliation"
       ],
-      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER",
+      "phase": "operator_capability_checks",
+      "resolve_by": "operator inspection first; ask only if still unavailable"
     }
   ],
   "recovered_visual_instructions": {
@@ -187,5 +220,24 @@
       "clothing_roles": "Follow section 27 specific BASIC/STYLED/LIFESTYLE distinctions",
       "label": "Finished BASIC: hot-pink brush script plus dark uppercase sans subtitle; label follows actual look"
     }
-  }
+  },
+  "customer_intake_order": [
+    "business_direction",
+    "categories_and_curation",
+    "visual_signature",
+    "persona",
+    "account_and_destination_path",
+    "channels_and_execution",
+    "cadence_and_budget",
+    "operator_capability_checks",
+    "saved_profile_readback",
+    "category_mini_tests"
+  ],
+  "first_customer_question": {
+    "field": "curation_profile.business_direction",
+    "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?",
+    "status": "ASK_ONLY_IF_NOT_ALREADY_VERIFIED_FROM_CUSTOMER_SOURCE",
+    "example": "Affordable girly home finds for women furnishing their first apartment."
+  },
+  "founder_repair_boundary": "Use existing founder sources for known facts. Original completed questionnaire is UNRECOVERED. Recovered direct instructions are separate evidence, not original questionnaire answers. The prior three questions received no curation preferences; do not save the objections as choices."
 }
