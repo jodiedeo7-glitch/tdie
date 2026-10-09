@@ -291,17 +291,14 @@
     {
       "id": "cadence",
       "field": "cadence",
-      "prompt": "What publishing pace and planning approach do you want?",
+      "prompt": "Should we use an existing posting plan or configure a new one?",
       "options": [
-        "1–2 edits per week",
-        "3 edits per week",
-        "4–5 edits per week",
-        "6–7 edits per week",
-        "A custom finite schedule"
+        "Use my existing confirmed posting plan",
+        "Configure a new posting plan"
       ],
-      "use": "Sets the look count and channel workload after tests and verified capacity.",
+      "use": "Loads the recorded look count, channel-specific output count, spacing, dates and seasonal calendar. A saved plan is carried forward without asking again.",
       "multi": false,
-      "detail": "Choose evergreen, seasonal/holiday, or a mix; give any campaign dates. Exact posting days/times and spacing for the three graphics must be recorded before scheduling; no default timetable is assumed."
+      "detail": "Show this question only when the plan is missing or the client explicitly wants to change it. For a new plan, configure actual counts, days, times and spacing against the selected channels and verified capacity. No invented frequency tiers. The operator retrieves existing schedules and reconciles them before any change."
     },
     {
       "id": "timezone",

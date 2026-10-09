@@ -99,6 +99,14 @@ class IntakeTests(unittest.TestCase):
         with self.assertRaisesRegex(profile.Blocked, 'FINITE_ATTEMPT_ALLOWANCE_REQUIRED'):
             intake.import_form(self.path, 'fixture', file, 0, 'fixture')
 
+    def test_cadence_has_no_invented_frequency_tiers(self):
+        self.assertEqual(intake.CHOICES['cadence'],
+                         ['Use my existing confirmed posting plan', 'Configure a new posting plan'])
+        self.record('cadence', {'source': 'synthetic confirmed schedule',
+                               'looks_per_week': 11, 'spacing_days': 3}, 0)
+        self.assertNotIn('cadence', intake.missing_questions(profile.load(self.path)['answers']))
+        self.assertEqual(profile.load(self.path)['answers']['cadence']['value']['looks_per_week'], 11)
+
     def test_no_persona_skips_only_persona_world(self):
         revision = 0
         for question, field, prompt in intake.QUESTIONS:
