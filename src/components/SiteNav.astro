@@ -2,16 +2,12 @@
 // One nav for every page. Labels and order live in src/data/site.js.
 // The mobile menu is a native popover: no script, keyboard and Escape work.
 const {boutique=false}=Astro.props;
-import {getImage} from "astro:assets";
-import icingSource from "../assets/wys/pink-icing-continuous.png";
-const icing=boutique ? await getImage({src:icingSource,format:"webp",quality:90}) : null;
 import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
 const isCurrent = (href) => path === href || path.startsWith(href + "/");
 ---
 <header class:list={["sn",boutique && "sn-boutique"]}>
-  {boutique && <div class="sn-header-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true"/>}
-  <div class="sn-in">
+    <div class="sn-in">
     {boutique && <nav class="sn-masthead-utility" aria-label="Browse TDIE"><a href="/">Home</a><a href="/lifestyle">Lifestyle</a></nav>}
     <a class="sn-logo" href="/">{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}The Digital Income <span>Edit™</span>{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}</a>
     {boutique && <a class="sn-masthead-note" href="/newsletter">The Weekly Edit →</a>}
@@ -112,4 +108,7 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
 <style>
  .sn-header-icing{background-repeat:no-repeat;background-size:100% auto;background-position:center top;height:clamp(120px,12vw,240px)}
  @media(max-width:700px){.sn-header-icing{background-size:900px auto;height:110px;background-position:center top}}
+</style>
+<style>
+ @media(min-width:1441px){.sn-header-icing{background-size:1440px auto;height:180px}.sn-header-icing:before{content:'';position:absolute;inset:0 0 auto;height:16px;background:#ffc5de;z-index:-1}}
 </style>

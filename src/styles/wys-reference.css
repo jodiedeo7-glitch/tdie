@@ -157,3 +157,50 @@
 
 .wb-shopbar{margin-top:0;padding-top:clamp(120px,12vw,240px);background:linear-gradient(115deg,#ffd0e4 0%,#ffe5f1 48%,#e5cef6 100%)}
 @media(max-width:700px){.wb-shopbar{margin-top:0;padding-top:110px}}
+/* Restore the brand type and give the photographs room in the banner. */
+.wz-hero-two-looks{max-width:1440px;grid-template-columns:minmax(0,1.2fr) minmax(0,1.25fr) minmax(0,1.2fr);gap:32px}
+.wys-world .wz-hero h1{font-family:Newsreader,Georgia,serif!important;font-size:46px!important;font-weight:600!important;line-height:1.12!important;letter-spacing:-.025em!important;text-transform:none;text-shadow:none}
+.wys-world .wz-hero h1 em{font-weight:600;text-shadow:none}
+.wz-hero-copy{text-align:left}.wz-hero-copy .wys-actions{align-items:flex-start}.wz-hero-copy .wys-ribbon{background:none;box-shadow:none;padding:0;font-size:10px}.wz-hero-copy .wys-lede{font-size:18px!important;font-weight:500!important}.wz-hero-copy>p:not(.wys-ribbon):not(.wys-lede){font-size:16px!important;line-height:1.7!important}
+@media(min-width:701px){.wz-polaroid-stack{height:800px}.wz-stack-pink .wz-polaroid-0{top:170px}.wz-stack-pink .wz-polaroid-1{top:55px}.wz-stack-pink .wz-polaroid-2{top:430px;left:51%;transform:rotate(-3deg)}.wz-stack-lavender .wz-polaroid-0{top:65px}.wz-stack-lavender .wz-polaroid-1{top:260px}.wz-stack-lavender .wz-polaroid-2{top:450px}.wz-stack-flower{top:160px}}
+@media(max-width:1000px) and (min-width:701px){.wys-world .wz-hero h1{font-size:36px!important}.wz-hero-two-looks{gap:22px}.wz-polaroid-stack{height:720px}}
+@media(max-width:700px){.wz-hero-two-looks{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px}.wys-world .wz-hero h1{font-size:34px!important}.wz-hero-copy{text-align:center}.wz-hero-copy .wys-actions{align-items:center}.wz-polaroid-stack{height:740px}}
+@media(max-width:360px){.wz-polaroid-stack{height:680px}}
+@media(min-width:1441px){.wb-shopbar{padding-top:180px}}
+
+/* One complete storefront header: title, photo groups, shapes and icing. */
+.wb-shopbar{margin:0;padding-top:0;background:#fff1f8;border-bottom:0}
+.wz-complete-header{position:relative;isolation:isolate;padding-top:170px;background:linear-gradient(105deg,#ffaed1 0%,#ffcfe3 30%,#fff0f8 49%,#e3c7f6 75%,#c9a8e9 100%);overflow:hidden}
+.wz-complete-header:before{content:'';position:absolute;inset:0;z-index:-1;border:0;background:radial-gradient(ellipse 24% 50% at 8% 75%,#f9f0ff99 0 70%,transparent 71%),radial-gradient(ellipse 26% 47% at 91% 40%,#fff7fcaa 0 70%,transparent 71%);pointer-events:none}
+.wz-header-icing{position:absolute;inset:0 0 auto;height:180px;background-repeat:no-repeat;background-position:center top;background-size:min(100%,1440px) auto;pointer-events:none}
+.wz-complete-header .wz-hero-two-looks{padding-block:22px 34px;max-width:1440px;grid-template-columns:minmax(0,1.15fr) minmax(0,1.35fr) minmax(0,1.15fr);gap:36px}
+.wz-complete-header .wz-hero-copy{text-align:center;align-self:center;margin:0;background:none}
+.wys-world .wz-complete-header h1{font:600 48px/1.1 Newsreader,Georgia,serif!important;letter-spacing:-.025em!important;color:#a91357;text-transform:none;margin:18px 0 24px;text-shadow:0 2px 0 #fff5fc}
+.wys-world .wz-complete-header h1 em{color:#914cb5;font-style:normal;text-shadow:0 2px 0 #fbf5ff}
+.wz-complete-header .wz-hero-copy .wz-header-tagline{font:600 25px/1.22 Newsreader,Georgia,serif!important;color:#a91357!important;margin:0 0 22px}
+.wz-complete-header .wz-hero-copy .wys-lede{font:500 16px/1.7 Inter,sans-serif!important;color:#602041!important;max-width:34ch;margin:0 auto 24px}
+.wz-complete-header .wz-hero-copy .wys-ribbon{font:650 11px/1.5 Inter,sans-serif;letter-spacing:.12em;background:none;border:0;padding:0;box-shadow:none;color:#a91357}
+.wz-complete-header .wz-hero-copy .wys-actions{align-items:center;justify-content:center}
+.wz-stack-right-flower{position:absolute;right:-15px;top:520px;width:56px;z-index:5;transform:rotate(12deg)}
+@media(max-width:1000px) and (min-width:701px){.wz-complete-header .wz-hero-two-looks{gap:22px}.wys-world .wz-complete-header h1{font-size:36px!important}}
+@media(max-width:700px){.wz-complete-header{padding-top:110px}.wz-header-icing{height:110px;background-size:900px auto}.wz-complete-header .wz-hero-two-looks{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 18px;padding-top:16px}.wys-world .wz-complete-header h1{font-size:34px!important}.wz-complete-header .wz-hero-copy .wz-header-tagline{font-size:24px!important}.wz-stack-right-flower{right:0;top:515px;width:36px}}
+@media(min-width:1441px){.wb-shopbar{padding-top:0}}
+/* The colored mat backs the entire white Polaroid, never the image opening. */
+.wz-polaroid,.wz-stack-lavender .wz-polaroid{background:transparent;isolation:isolate;box-shadow:none}
+.wz-polaroid:before{content:'';position:absolute;inset:-12px -14px -12px -14px;background:#f49bc3;transform:rotate(4deg);box-shadow:0 9px 18px #92245724;z-index:-2}
+.wz-stack-lavender .wz-polaroid:before{background:#c5a4e4;transform:rotate(-4deg)}
+.wz-polaroid:after{content:'';position:absolute;inset:0;background:#fff;box-shadow:0 3px 8px #92245716;z-index:-1}
+.wz-polaroid-mat,.wz-stack-lavender .wz-polaroid-mat{padding:0;border:0;background:transparent;box-shadow:none}
+.wz-polaroid img{border:0;outline:0}
+@media(max-width:700px){.wz-polaroid:before{inset:-8px -9px -8px -9px}}
+/* Keep the six equally sized photographs within the complete desktop banner. */
+@media(min-width:701px){.wz-complete-header .wz-polaroid-stack{height:675px}.wz-complete-header .wz-stack-pink .wz-polaroid-0{top:135px}.wz-complete-header .wz-stack-pink .wz-polaroid-1{top:50px}.wz-complete-header .wz-stack-pink .wz-polaroid-2{top:340px;left:45%}.wz-complete-header .wz-stack-lavender .wz-polaroid-0{top:55px}.wz-complete-header .wz-stack-lavender .wz-polaroid-1{top:215px}.wz-complete-header .wz-stack-lavender .wz-polaroid-2{top:345px}.wz-complete-header .wz-stack-right-flower{top:480px}}
+/* Social previews use a contained scale rather than filling the page. */
+.wz-pinterest-set{max-width:780px;margin-inline:auto;gap:24px}.wz-pinterest-mockup{border-width:5px;border-radius:18px}.wz-pinterest-detail{grid-template-columns:minmax(0,300px) minmax(0,1fr)}.wz-pinterest-brand{padding:10px 14px}.wz-pinterest-image{padding:9px}.wz-pinterest-copy{padding:16px 18px}.wz-pinterest-copy h4{font-size:19px!important;margin-bottom:16px!important}.wz-pinterest-copy p{font-size:14px!important;line-height:1.55!important;margin-bottom:14px}.wz-pinterest-toolbar{margin-bottom:16px}.wz-pinterest-creator{margin-bottom:14px}.wz-pinterest-save{font-size:13px;padding:10px 16px}.wz-pin-field{font-size:12px;margin:14px 0 6px}.wz-pin-alt-details{margin:15px 0;font:400 12px/1.5 Inter,sans-serif}.wz-pin-alt-details summary{cursor:pointer;color:#a52258;min-height:28px}.wz-pinterest-comment{margin-top:16px}.wz-complete-header{padding-top:105px}.wz-header-icing{height:105px;background-size:900px auto;background-repeat:repeat-x}
+@media(max-width:700px){.wz-pinterest-detail{grid-template-columns:minmax(0,1fr)}.wz-pinterest-image{max-width:260px;width:100%;margin:auto;border:0}.wz-pinterest-copy p{font-size:16px!important}.wz-pinterest-copy h4{font-size:19px!important}.wz-complete-header{padding-top:80px}.wz-header-icing{height:80px;background-size:650px auto}}
+/* Show all three Pins at a glance; open their complete post details on demand. */
+.wz-pinterest-set{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:18px;max-width:780px}.wz-pin-preview{min-width:0}.wz-pin-preview>summary{list-style:none;cursor:pointer;background:#fff;padding:10px;border-radius:12px;border:1px solid #dfb5ce;text-align:center}.wz-pin-preview>summary::-webkit-details-marker{display:none}.wz-pin-preview>summary img{display:block;width:100%;height:auto}.wz-pin-preview>summary strong{display:block;font:600 14px/1.4 Inter,sans-serif;color:#a52258;margin-top:10px}.wz-pin-preview>summary span{display:block;font:500 12px/1.4 Inter,sans-serif;text-decoration:underline;color:#a52258;padding:8px 0}.wz-pin-preview[open]{grid-column:1/-1}.wz-pin-preview[open]>summary{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px}.wz-pin-preview[open]>summary img{width:70px}.wz-pin-preview[open]>summary strong{margin:0}.wz-pin-preview>summary:hover,.wz-pin-preview>summary:focus-visible{outline:2px solid #b8245f;outline-offset:3px}
+@media(max-width:700px){.wz-pinterest-set{gap:8px}.wz-pin-preview>summary{padding:5px;border-radius:8px}.wz-pin-preview>summary span{font-size:11px}.wz-pin-preview[open]>summary{gap:12px}}
+.wz-pin-cover{width:100%}.wz-pin-preview[open]>summary .wz-pin-cover{width:70px;flex-shrink:0}.wz-pinterest-set{max-width:720px}.wz-pinterest-detail{grid-template-columns:minmax(0,270px) minmax(0,1fr)}
+@media(min-width:701px){.wz-complete-header .wz-hero-two-looks{max-width:1280px;gap:28px}.wz-complete-header .wz-polaroid-stack{height:580px}.wz-complete-header .wz-stack-pink .wz-polaroid-2{top:285px}.wz-complete-header .wz-stack-lavender .wz-polaroid-1{top:175px}.wz-complete-header .wz-stack-lavender .wz-polaroid-2{top:290px}.wz-complete-header .wz-stack-right-flower{top:410px}.wz-complete-header h1{font-size:44px!important}}
+@media(max-width:700px){.wz-pinterest-detail{grid-template-columns:minmax(0,1fr)}}

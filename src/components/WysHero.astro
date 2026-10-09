@@ -1,13 +1,16 @@
 ---
-import {Image} from 'astro:assets';
+import {Image,getImage} from 'astro:assets';
+import icingSource from '../assets/wys/pink-icing-continuous.png';
+const icing=await getImage({src:icingSource,format:'webp',quality:90});
 import WysDecor from './WysDecor.astro';
 import {packages} from '../data/wys-packages.js';
 const captions=[['Little pink pieces','A wicked welcome','Trick-or-treat!'],['Coffee & ghosts','A sweet little haunt','Morning magic']];
 ---
-<section class="wz-hero-band">
- <header class="wys-wrap wz-hero wz-hero-two-looks">
+<header class="wz-hero-band wz-complete-header">
+ <div class="wz-header-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true"/>
+ <div class="wys-wrap wz-hero wz-hero-two-looks">
   <div class="wz-polaroid-stack wz-stack-pink" aria-label="Pretty Wicked: all three styling views"><h2 class="wz-stack-label">Pretty Wicked</h2>{packages[0].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{captions[0][i]}</figcaption></figure>)}<WysDecor class="wz-stack-flower"/></div>
   <div class="wz-hero-copy"><slot/></div>
-  <div class="wz-polaroid-stack wz-stack-lavender" aria-label="Ghoul Fuel: all three styling views"><h2 class="wz-stack-label">Ghoul Fuel</h2>{packages[1].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{captions[1][i]}</figcaption></figure>)}</div>
- </header>
-</section>
+  <div class="wz-polaroid-stack wz-stack-lavender" aria-label="Ghoul Fuel: all three styling views"><h2 class="wz-stack-label">Ghoul Fuel</h2>{packages[1].photos.map((p,i)=><figure class={`wz-polaroid wz-polaroid-${i}`}><div class="wz-polaroid-mat"><Image src={p.src} alt={p.alt} widths={[240,360,540]} sizes="(max-width:700px) 35vw, 210px" loading="eager"/></div><figcaption>{captions[1][i]}</figcaption></figure>)}<WysDecor class="wz-stack-right-flower"/></div>
+ </div>
+</header>
