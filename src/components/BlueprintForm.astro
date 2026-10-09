@@ -1,0 +1,68 @@
+---
+// The free Blueprint sign-up. Posts to /api/blueprint, which adds the email to
+// the MailerLite group "Faceless Income Blueprint", then hands the guide over on
+// screen immediately (no waiting on an email, no second site).
+const {
+  heading = "Get The Faceless Income Blueprint™ free",
+  sub = "Fifteen pages: the whole machine on one page, the one engine holding you back, and a seven-day build order.",
+  button = "Send me the Blueprint",
+  kit = "blueprint",
+  file = "/downloads/the-faceless-income-blueprint.pdf",
+  doneSub = "Your Blueprint is ready. Open it now, or save it for tonight.",
+  doneButton = "Download the Blueprint",
+} = Astro.props;
+const UID = Math.random().toString(36).slice(2, 9);
+---
+<div class="bpf" data-bpf data-kit={kit}>
+  <form class="bpf-form" novalidate>
+    {heading && <h2 class="bpf-h">{heading}</h2>}
+    {sub && <p class="bpf-sub">{sub}</p>}
+    <div class="bpf-row">
+      <label class="bpf-label" for={`bpf-${UID}`}>Email address</label>
+      <input id={`bpf-${UID}`} type="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off" />
+      <button class="btn" type="submit">{button}</button>
+    </div>
+    <p class="bpf-err" role="alert"></p>
+    <p class="bpf-fine">Free. No spam, unsubscribe anytime. See the <a href="/privacy">privacy policy</a>.</p>
+  </form>
+  <div class="bpf-done" hidden tabindex="-1">
+    <p class="bpf-h">It's yours.</p>
+    <p class="bpf-sub">{doneSub}</p>
+    <a class="btn bpf-dl" href={file} target="_blank" rel="noopener" download>{doneButton} <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+<style>
+  .bpf{max-width:560px}
+  .bpf-h{margin:0 0 8px;font-family:Newsreader,Georgia,serif!important;font-weight:600;font-size:28px;line-height:1.15;color:#1A1417}
+  .bpf-sub{margin:0 0 16px;font:500 16px/1.5 Inter,system-ui,sans-serif;color:#4A3640}
+  .bpf-row{display:flex;gap:10px;flex-wrap:wrap}
+  .bpf-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .bpf input{flex:1 1 220px;min-width:0;min-height:52px;border-radius:999px;border:1.5px solid #E891B6;padding:0 20px;font:500 16px Inter,system-ui,sans-serif;background:#fff;color:#1A1417}
+  .bpf .btn{min-height:52px;cursor:pointer}
+  .bpf-err{margin:8px 0 0;font:600 14px Inter,system-ui,sans-serif;color:#B8245F;min-height:0}
+  .bpf-err:empty{display:none}
+  .bpf-fine{margin:10px 0 0;font:500 13px/1.4 Inter,system-ui,sans-serif;color:#6B5560}
+  .bpf-fine a{color:inherit}
+  .bpf-done .bpf-h{font-size:30px}
+  @media (max-width:600px){.bpf-h{font-size:24px}.bpf .btn{flex:1 1 100%;justify-content:center}}
+</style>
+<script>
+  for (const root of document.querySelectorAll("[data-bpf]")) {
+    const form = root.querySelector("form");
+    const err = root.querySelector(".bpf-err");
+    const done = root.querySelector(".bpf-done");
+    const btn = form.querySelector("button");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Enter a valid email address."; form.email.focus(); return; }
+      err.textContent = ""; btn.disabled = true;
+      try {
+        const r = await fetch("/api/blueprint", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, kit: root.dataset.kit }) });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) { err.textContent = j.error || "Something went wrong. Try again."; btn.disabled = false; return; }
+        form.hidden = true; done.hidden = false; done.focus();
+      } catch { err.textContent = "Something went wrong. Try again."; btn.disabled = false; }
+    });
+  }
+</script>

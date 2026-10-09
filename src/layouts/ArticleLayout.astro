@@ -94,7 +94,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 // never a guessed route.
 // ============================================================
 import "../styles/global.css";
-import FreebieForm from "../components/FreebieForm.astro";
+import BlueprintForm from "../components/BlueprintForm.astro";
 
 import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
@@ -819,17 +819,10 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
   <section class="news">
     <div class="news-in reveal">
-      <div class="k">The Weekly Edit</div>
-      <h3>Continue learning every week</h3>
-      <p>{pillar.newsletter}</p>
-      {/*
-        The live MailerLite capture, not a link out. The earlier `onsubmit="return
-        false"` form collected nothing; the link that replaced it pointed at the
-        Beacons link-in-bio hub, which collects nothing either. This posts to the
-        shared freebie form and lands the address on the list.
-      */}
-      <div class="news-form"><FreebieForm heading="Get The Weekly Edit" button="Subscribe" /></div>
-      <div class="fine">One idea a week for women building on their own terms. Unsubscribe anytime.</div>
+      <div class="k">Free guide</div>
+      <h3>Finished reading? Start building.</h3>
+      <p>The Faceless Income Blueprint™ puts this whole system on one page and tells you which piece to build first.</p>
+      <div class="news-form"><BlueprintForm heading="" sub="" button="Send me the Blueprint" /></div>
     </div>
   </section>
 

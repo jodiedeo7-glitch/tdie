@@ -1,6 +1,5 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import FreebieForm from "../../components/FreebieForm.astro";
 import "../../styles/edit.css";
 import { membership } from "../../data/facts.js";
 
@@ -79,13 +78,7 @@ const steps = [
           <a class="e-btn" href={PDF} download>Download the PDF <span class="ar" aria-hidden="true">→</span></a>
         </div>
 
-        <div class="kp-letter">
-          <FreebieForm
-            heading="Want the thinking behind it?"
-            button="Send Me the Edit"
-            sub="The planner is yours above, no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
-          />
-        </div>
+
 
         <div class="kp-chapter">
           <p class="e-kick">How to use it</p>
@@ -139,13 +132,12 @@ const steps = [
   <section class="e-sec e-dark kp-news" aria-labelledby="kp-news-h">
     <div class="e-wrap kp-news-grid">
       <div>
-        <p class="e-kick">The Weekly Edit</p>
-        <h2 class="e-d2" id="kp-news-h">Continue learning <em>every week.</em></h2>
+        <p class="e-kick">Free guide</p>
+        <h2 class="e-d2" id="kp-news-h">See the whole machine <em>on one page.</em></h2>
       </div>
       <div>
-        <p class="kp-news-p">Pinterest isn't social media. Treating it like Instagram is why yours is flat. Weekly, what it actually is.</p>
-        <a class="e-btn e-btn--light" href="https://links.thedigitalincomeedit.com/page2" rel="noopener">Subscribe to The Weekly Edit <span class="ar" aria-hidden="true">→</span></a>
-        <p class="kp-fine">Written for women building quietly, without a personal brand to maintain. Unsubscribe anytime.</p>
+        <p class="kp-news-p">Pinterest is the traffic. The Faceless Income Blueprint™ shows where that traffic goes and what to build first. Fifteen pages, free.</p>
+        <a class="e-btn e-btn--light" href="/resources/faceless-income-blueprint">Get the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>

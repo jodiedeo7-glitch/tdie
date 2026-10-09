@@ -1,6 +1,6 @@
 ---
 import ResourceLayout from "../../layouts/ResourceLayout.astro";
-import FreebieForm from "../../components/FreebieForm.astro";
+import BlueprintForm from "../../components/BlueprintForm.astro";
 ---
 <ResourceLayout
   title="The AI Starter Kit — Free Download"
@@ -20,7 +20,7 @@ import FreebieForm from "../../components/FreebieForm.astro";
     <li>One plug-and-play prompt you can paste in today, swap your details into, and reuse every week</li>
   </ul>
 
-  <FreebieForm heading="Send me the AI Starter Kit" button="Get the Kit" />
+  <BlueprintForm kit="ai-starter-kit" file="/downloads/the-ai-starter-kit.pdf" heading="Send me the AI Starter Kit" sub="Drop your email and the kit opens right here. Free, three pages, yours to keep." button="Get the Kit" doneSub="Your AI Starter Kit is ready. Open it now, or save it for tonight." doneButton="Download the kit" />
 
   <div class="freebie-next">
     <p><strong>Then keep going:</strong></p>

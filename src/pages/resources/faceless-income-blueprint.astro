@@ -1,14 +1,13 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import FreebieForm from "../../components/FreebieForm.astro";
+import BlueprintForm from "../../components/BlueprintForm.astro";
 import "../../styles/edit.css";
 import { membership } from "../../data/facts.js";
 
-// The Faceless Income Blueprint™: canon products[] row, $0, delivered by Beacons.
-// ONE primary route: the Beacons download (it is the only thing that delivers
-// the Blueprint). The FreebieForm below is secondary on purpose: it signs her
-// up for the Sunday letter on the shared list and does not deliver the file.
-const BEACONS = "https://links.thedigitalincomeedit.com/shop/9c346682-1dbb-4063-8276-d7af8e2e8f47";
+// The Faceless Income Blueprint™: canon products[] row, $0.
+// Delivered right here (9 Oct 2026): the email goes to the MailerLite group
+// "Faceless Income Blueprint" through /api/blueprint and the PDF is handed over
+// on screen. The Beacons $0 product stays live for existing links.
 
 const outcomes = [
   "A clear picture of how the pieces of a faceless business connect, so the saved reels and bookmarked guides finally have somewhere to go.",
@@ -44,9 +43,8 @@ const forYou = [
         <ul class="e-list bp-out">
           {outcomes.map((o) => <li>{o}</li>)}
         </ul>
-        <div class="bp-cta">
-          <a class="e-btn" href={BEACONS}>Download the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
-          <p class="bp-cta-note">Opens the Blueprint's download page on Beacons, the shop that delivers the file.</p>
+        <div class="bp-cta" id="get">
+          <BlueprintForm heading="" sub="" button="Get the free Blueprint" />
         </div>
         <ul class="bp-meta" aria-label="At a glance">
           <li>15 pages</li><li>Free</li><li>No face required</li>
@@ -54,11 +52,10 @@ const forYou = [
       </div>
       <figure class="e-figure bp-hero-fig e-rise e-rise-2">
         <img
-          src="/images/pages/blueprint-cover-desk-560.webp"
-          srcset="/images/pages/blueprint-cover-desk-560.webp 560w, /images/pages/blueprint-cover-desk-960.webp 960w"
+          src="/images/covers/blueprint-real-cover.webp"
           sizes="(max-width: 900px) 92vw, 480px"
-          width="560" height="747" fetchpriority="high" decoding="async"
-          alt="A printed copy of The Faceless Income Blueprint on a sunlit wooden desk beside a vase of pink peonies and a cup of tea, with a golden retriever asleep underneath."
+          width="480" height="621" fetchpriority="high" decoding="async"
+          alt="The cover of The Faceless Income Blueprint™"
         />
       </figure>
     </div>
@@ -105,23 +102,8 @@ const forYou = [
             </li>
           ))}
         </ol>
-        <div class="e-actions">
-          <a class="e-btn" href={BEACONS}>Download the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
-        </div>
+        <BlueprintForm heading="Get it now, free." sub="Drop your email and the download opens on this page." />
       </div>
-    </div>
-  </section>
-
-  <!-- SECONDARY: the Sunday letter -->
-  <section class="e-sec-sm" aria-label="The Sunday letter">
-    <div class="e-wrap bp-letter">
-      <p class="e-kick">Optional, and separate</p>
-      <FreebieForm
-        heading="Want the thinking behind it?"
-        button="Send me the Sunday letter"
-        sub="This does not send the Blueprint; the download above does that. This is the Sunday letter: one idea a week about building faceless income, written the way I'd explain it to a friend."
-        done="You're in. Your first Sunday letter is on its way."
-      />
     </div>
   </section>
 
@@ -164,7 +146,7 @@ const forYou = [
   .bp-cta-note{font-size:14px;color:var(--e-ink-3);margin:12px 0 0}
   .bp-meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0}
   .bp-meta li{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--e-pink-t);border:1px solid rgba(184,36,95,.35);border-radius:999px;padding:6px 12px;background:#fff}
-  .bp-hero-fig{aspect-ratio:560/747;box-shadow:var(--e-lift)}
+  .bp-hero-fig{aspect-ratio:480/621;box-shadow:var(--e-lift)}
 
   .bp-who{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,96px);align-items:start}
   .bp-who-body p{color:var(--e-ink-2);margin:0 0 18px;max-width:36em}

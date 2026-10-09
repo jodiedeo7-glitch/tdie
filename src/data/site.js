@@ -16,7 +16,7 @@ export const FOOTER = [
     { label: "The Library", href: "/learn" },
     { label: "Free Resources", href: "/resources" },
     { label: "Find Your Door", href: "/resources/find-your-door" },
-    { label: "The Weekly Edit", href: "/newsletter" },
+    { label: "The Free Blueprint", href: "/resources/faceless-income-blueprint" },
   ] },
   { h: "Build", links: [
     { label: "The Weekend Ecosystem™", href: "/shop/weekend-ecosystem" },

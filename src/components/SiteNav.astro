@@ -11,7 +11,7 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     <div class="sn-in">
     {boutique && <nav class="sn-masthead-utility" aria-label="Browse TDIE"><a href="/">Home</a><a href="/lifestyle">Lifestyle</a></nav>}
     <a class="sn-logo" href="/">{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}The Digital Income <span>Edit™</span>{boutique && <span class="sn-brand-sparkle" aria-hidden="true">✦</span>}</a>
-    {boutique && <a class="sn-masthead-note" href="/newsletter">The Weekly Edit →</a>}
+    {boutique && <a class="sn-masthead-note" href="/resources/faceless-income-blueprint">The free Blueprint →</a>}
     <nav class="sn-links" aria-label="Main">
       {NAV.map((l) => <a href={l.href} aria-current={isCurrent(l.href) ? "page" : undefined}>{l.label}</a>)}
       <a class="sn-cta" href={NAV_CTA.href} aria-current={isCurrent(NAV_CTA.href) ? "page" : undefined}>{NAV_CTA.label}</a>

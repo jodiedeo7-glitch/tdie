@@ -1,4 +1,5 @@
 import { handle as bamiWaitlist } from "./api/bami-waitlist.js";
+import { handle as blueprint } from "./api/blueprint.js";
 import { handle as complete } from "./api/complete.js";
 import { handle as dashboardStats } from "./api/dashboard-stats.js";
 import { handle as moduleContent } from "./api/module.js";
@@ -9,6 +10,7 @@ import { handle as waitlist } from "./api/waitlist.js";
 
 const API = {
   "/api/bami-waitlist": bamiWaitlist,
+  "/api/blueprint": blueprint,
   "/api/complete": complete,
   "/api/dashboard-stats": dashboardStats,
   "/api/module": moduleContent,

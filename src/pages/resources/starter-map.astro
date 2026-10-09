@@ -1,6 +1,5 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import FreebieForm from "../../components/FreebieForm.astro";
 import "../../styles/edit.css";
 import { membership } from "../../data/facts.js";
 
@@ -69,18 +68,6 @@ const inside = [
           <a class="e-btn" href={BEACONS}>Get the free Starter Map <span class="ar" aria-hidden="true">→</span></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- SECONDARY: the weekly letter -->
-  <section class="e-sec-sm" aria-label="The weekly edit">
-    <div class="e-wrap sm-letter">
-      <p class="e-kick">Optional, and separate</p>
-      <FreebieForm
-        heading="Want the thinking behind it?"
-        button="Send Me the Edit"
-        sub="The Starter Map is yours above, no email needed. This is the weekly edit: one idea about building faceless income, written the way I'd explain it to a friend. Unsubscribe anytime."
-      />
     </div>
   </section>
 
