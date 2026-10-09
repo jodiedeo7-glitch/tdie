@@ -52,3 +52,31 @@ body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-r
 @media(max-width:1050px) and (min-width:761px){.blush-paper-banner .banner-composition{max-width:940px;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr);gap:23px;padding-inline:28px}.blush-paper-banner .brand-photo{width:144px;height:180px}.blush-paper-banner .banner-name,.blush-paper-banner .banner-edit{font-size:46px}.blush-paper-banner .brand-photo figcaption{font-size:14px}}
 @media(max-width:760px){.blush-paper-banner .banner-composition{height:349px;padding:55px 19px 20px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:112px 136px;gap:9px}.blush-paper-banner .brand-photo{width:113px;height:136px;padding:5px 5px 0}.blush-paper-banner .brand-photo::before{inset:-4px}.blush-paper-banner .brand-photo-studio{margin-top:0;transform:rotate(-9deg)}.blush-paper-banner .brand-photo-desk{margin-top:10px;transform:rotate(9deg)}.blush-paper-banner .brand-photo figcaption{font-size:12px}.blush-paper-banner .banner-tagline{margin-top:7px}.blush-paper-banner .glint-one{left:8%;top:112px;width:12px;height:18px}.blush-paper-banner .glint-two{right:8%;top:105px;width:12px;height:18px}.blush-paper-banner .glint-three{left:49%;bottom:48px}.blush-paper-banner .glint-four,.blush-paper-banner .glint-five,.blush-paper-banner .glint-six{display:none}}
 @media(max-width:360px){.blush-paper-banner .banner-composition{height:340px;grid-template-rows:125px 132px;gap:7px;padding-inline:16px}.blush-paper-banner .brand-photo{width:105px;height:132px}.blush-paper-banner .brand-photo figcaption{font-size:12px}.blush-paper-banner .banner-the{margin-bottom:5px}}
+/* Banner display lettering follows the user's repeated cute-lettering correction.
+   Site headings and navigation retain their existing type. */
+.boutique-lettering-banner .banner-composition{max-width:1080px;height:346px;grid-template-columns:minmax(0,1fr) 384px minmax(0,1fr);gap:20px;padding-top:71px;padding-bottom:34px}
+.boutique-lettering-banner .banner-name,.boutique-lettering-banner .banner-edit{font-family:"TDIE Banner Lettering",serif;font-weight:400;font-size:50px;line-height:1.06;letter-spacing:-.045em;background:none;-webkit-text-fill-color:initial;color:#dd528d;filter:none;text-shadow:0 1px 0 #fff}
+.boutique-lettering-banner .banner-edit{font-size:49px;letter-spacing:-.035em;margin-top:0}
+.boutique-lettering-banner .banner-the{margin-bottom:4px;font-size:10px;letter-spacing:.2em;color:#a52e60}
+.boutique-lettering-banner .banner-repo-icon{width:20px;height:20px}
+.boutique-lettering-banner .banner-tagline{font-family:Caveat,cursive;font-size:22px;line-height:1.05;margin-top:11px;transform:rotate(-2deg)}
+.boutique-lettering-banner .brand-photo{width:161px;height:185px;box-shadow:0 10px 20px #9b4e7629}
+.boutique-lettering-banner .brand-photo-studio{transform:rotate(-12deg);margin-top:7px}
+.boutique-lettering-banner .brand-photo-desk{transform:rotate(11deg);margin-top:46px}
+.boutique-lettering-banner .optical-glint{background:linear-gradient(135deg,#f083b6 0%,#fff 38%,#ffd1e5 48%,#fff 55%,#e272a4 71%,#fff 85%);opacity:1}
+.boutique-lettering-banner .glint-one{left:29%;top:85px;width:28px;height:38px;transform:rotate(13deg)}
+.boutique-lettering-banner .glint-two{right:28%;bottom:36px;width:26px;height:36px;transform:rotate(-14deg)}
+.boutique-lettering-banner .glint-three{left:11%;bottom:22px;width:17px;height:22px}
+.boutique-lettering-banner .glint-four{right:12%;top:94px;width:18px;height:24px}
+.boutique-lettering-banner .glint-five{left:37%;bottom:36px;width:12px;height:18px}
+.boutique-lettering-banner .glint-six{right:37%;top:80px;width:12px;height:18px}
+@media(max-width:1050px) and (min-width:761px){.boutique-lettering-banner .banner-composition{grid-template-columns:minmax(0,1fr) 340px minmax(0,1fr);gap:10px;padding-inline:24px}.boutique-lettering-banner .banner-name,.boutique-lettering-banner .banner-edit{font-size:44px}.boutique-lettering-banner .brand-photo{width:139px;height:174px}.boutique-lettering-banner .banner-tagline{font-size:20px}}
+@media(max-width:760px){.boutique-lettering-banner .banner-composition{height:342px;padding:54px 21px 20px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:121px 136px;gap:7px}.boutique-lettering-banner .banner-name,.boutique-lettering-banner .banner-edit{font-size:34px;line-height:1.05;letter-spacing:-.04em}.boutique-lettering-banner .banner-name{display:block}.boutique-lettering-banner .banner-edit{display:block;margin:0}.boutique-lettering-banner .banner-the{font-size:8px;margin-bottom:3px}.boutique-lettering-banner .banner-repo-icon{width:17px;height:17px}.boutique-lettering-banner .banner-tagline{font-size:17px;line-height:1;margin-top:6px}.boutique-lettering-banner .brand-photo{width:108px;height:129px}.boutique-lettering-banner .brand-photo-studio{margin-top:0;transform:rotate(-10deg)}.boutique-lettering-banner .brand-photo-desk{margin-top:9px;transform:rotate(10deg)}.boutique-lettering-banner .glint-one{left:8%;top:111px;width:18px;height:25px}.boutique-lettering-banner .glint-two{right:9%;top:95px;width:16px;height:22px}.boutique-lettering-banner .glint-three{left:49%;bottom:43px;width:16px;height:23px}}
+@media(max-width:360px){.boutique-lettering-banner .banner-composition{height:340px;padding-inline:18px;grid-template-rows:122px 134px}.boutique-lettering-banner .brand-photo{width:101px;height:129px}.boutique-lettering-banner .banner-name,.boutique-lettering-banner .banner-edit{font-size:32px}}
+
+.boutique-lettering-banner .banner-tagline sup{font:400 8px/1 Inter,sans-serif;vertical-align:super;margin-left:1px}
+@media(max-width:760px){.boutique-lettering-banner .banner-composition{height:364px;grid-template-rows:135px 136px;gap:10px}.boutique-lettering-banner .banner-tagline sup{font-size:7px}}
+@media(max-width:360px){.boutique-lettering-banner .banner-composition{height:364px;grid-template-rows:135px 134px}}
+.boutique-lettering-banner .banner-tagline{display:inline-block}
+@media(max-width:760px){.boutique-lettering-banner .banner-composition{height:370px;gap:16px}}
+@media(max-width:360px){.boutique-lettering-banner .banner-composition{height:370px}}
