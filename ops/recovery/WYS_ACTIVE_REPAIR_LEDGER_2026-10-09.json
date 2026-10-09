@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T18:56:11.825Z",
+  "updated_at": "2026-10-09T19:49:51.973Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -98,6 +98,12 @@
       "status": "IMPLEMENTED_TESTS_PASS_UNMERGED_EXTERNAL_RECHECK_PENDING",
       "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
       "validation": "Saved category selection supports a later category-brief-only import."
+    },
+    {
+      "id": "STALE-FOUNDER-TASK-SOURCE",
+      "status": "EXISTING_TASK_UPDATED_PAUSE_AND_EXACT_READBACK_VERIFIED",
+      "evidence": "ops/recovery/WYS_FOUNDER_TASK_REPAIR_2026-10-09.json",
+      "validation": "Existing task prompt now points to pinned current authority, category-specific roles and input checks. Obsolete two-image generation and two-pin schedule removed. Task remains paused; actual runtime execution is not verified."
     }
   ],
   "disproved_claims": [
@@ -119,5 +125,15 @@
     "publication": "NOT_RUN",
     "customer_installation": "NOT_VERIFIED",
     "delivery": "NOT_VERIFIED"
+  },
+  "live_execution_inspection": {
+    "metricool_read": "SUCCEEDED_WITH_EXISTING_CONNECTION_NO_SIGN_IN",
+    "named_wys_tasks_found": 6,
+    "named_wys_tasks_enabled": 0,
+    "queue_window": "2026-10-09 through 2026-11-01 America/New_York",
+    "queue_records_returned": 22,
+    "queue_writes": 0,
+    "scope": "This connected task inventory only; other conversation or Claude runtime not controlled.",
+    "missing_customer_execution": "No customer ChatGPT installation or live provider/publisher/scheduler integration established."
   }
 }
