@@ -224,7 +224,7 @@ main :is(.e-lede,.lede,.lib-lede,.fd-lede,.rs-lede){font-size:clamp(16px,1.3vw,1
 .mb-row-sub{font-size:13px!important;margin-top:2px!important}
 .mb-table-sec{padding-top:40px!important;padding-bottom:40px!important}
 .mb-head{margin-bottom:22px!important}
-section.cover,main>section.cover:first-child,main>section:first-child{padding-top:0!important}
+section.cover,main>section.cover:first-child{padding-top:0!important}main>section:first-child:not(.cover){padding-top:28px!important}
 .fd-hero{padding-top:40px!important;padding-bottom:40px!important}
 .fd-hero::after{display:none!important}
 .fd-hero .page-eyebrow,.fd-hero .e-kick,.fd-hero .kicker{margin-left:auto!important;margin-right:auto!important;display:table!important}.fd-hero{padding-top:24px!important}
@@ -373,3 +373,16 @@ body:has(.life) .sn-drip{display:none!important}
 .ww-bleed::before,.ww-bleed::after{display:none!important}
 .ww-bleed img{position:static!important;display:block}
 .ww-bleed{border:0!important;outline:0!important;padding:0!important;max-width:1072px!important}.ww-bleed img{margin:0!important}.ww-how-body{margin-top:16px!important}
+.bm-block>h2{text-align:center!important;margin-left:auto!important;margin-right:auto!important;max-width:22ch!important}.bm-block{padding-top:36px!important;padding-bottom:36px!important}
+/* Vault page: no solid hot-pink panels; even gallery */
+.v-sec.v-tint{background:#FFF0F7!important;border:2px solid #E891B6!important;color:#1A1417!important;padding:32px 32px!important;margin:40px auto!important}
+.v-sec.v-tint *{color:#1A1417!important}
+.v-sec.v-tint .v-kicker{color:#B8245F!important}
+.v-sec.v-tint .v-faq{border-bottom-color:#F2C6DA!important}
+.v-strip{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;margin:24px 0 0!important}
+.v-strip>*{grid-column:auto!important;grid-row:auto!important;margin:0!important;transform:none!important}
+.v-strip>:first-child:not(figure){grid-column:1 / -1!important}
+.v-strip::before{grid-column:1 / -1!important;width:auto!important;margin-bottom:4px}
+body:not(:has(.life))::before{background:#FFFBF8!important}
+.rs-kit-img{display:block;width:100%;max-width:560px;margin:22px auto 0;border-radius:20px 6px 20px 6px;border:6px solid #FFE3F0;aspect-ratio:10/7;object-fit:cover}
+.rs-hero .page-eyebrow{margin-left:auto!important;margin-right:auto!important;display:table!important}.rs-hero{padding-top:28px!important}
