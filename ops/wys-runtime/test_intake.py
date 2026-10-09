@@ -50,6 +50,24 @@ class IntakeTests(unittest.TestCase):
                 self.record('business_direction', value, 0)
         self.assertFalse(self.path.exists())
 
+    def test_blank_structured_answer_does_not_advance_or_mutate_profile(self):
+        self.record('aesthetic', 'Existing exact style', 0)
+        before = self.path.read_bytes()
+        for value in ({}, [], {'selected': [], 'detail': ''},
+                      {'selected': [], 'detail': '   '}):
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(profile.Blocked, 'QUESTION_UNANSWERED'):
+                    self.record('business_direction', value, 1)
+                self.assertEqual(self.path.read_bytes(), before)
+                self.assertEqual(intake.next_question(self.path)['question_id'], 'business_direction')
+
+    def test_custom_structured_answer_and_false_persona_are_preserved(self):
+        answer = {'selected': [], 'detail': 'Exact custom audience'}
+        saved = self.record('business_direction', answer, 0)
+        self.assertEqual(saved['answers']['intake.business_direction']['value'], answer)
+        saved = self.record('persona_choice', False, 1)
+        self.assertNotIn('persona_world', intake.missing_questions(saved['answers']))
+
     def form_file(self, answers):
         file = self.path.parent / 'form.json'
         file.write_text(json.dumps({'schema_version': 2, 'questionnaire_version': 2,
@@ -156,3 +174,4 @@ class IntakeTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
