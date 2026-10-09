@@ -16,6 +16,7 @@ import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import FreebieForm from "../components/FreebieForm.astro";
 // Tina's words come from the single verbatim source, unedited.
+import { FEATURED } from "../we-reviews.js";
 import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -557,6 +558,11 @@ const jsonLd = {
 .fam-note{grid-column:1 / -1;margin:6px 0 0;padding-top:14px;border-top:1px solid #EAA2C0;font-size:15px;line-height:1.55;color:#3B2A31}
 .fam-note strong{color:#B8245F}
 @media(max-width:760px){.fam-in{grid-template-columns:minmax(0,1fr)}.fam-list{grid-template-columns:minmax(0,1fr)}}
+.we-review{margin:0 0 18px;padding:16px 18px;background:#FFF5FA;border:1.5px solid #F2C6DA;border-radius:16px 5px 16px 5px}
+.we-stars{color:#D62E73;letter-spacing:3px;font-size:15px}
+.we-review blockquote{margin:6px 0 8px;font:600 17px/1.45 Newsreader,Georgia,serif;color:#1A1417}
+.we-review figcaption{font-size:13px;color:#4A3A40}
+.we-review figcaption a{color:#B8245F;font-weight:700}
 @media(max-width:980px){#method .stair{grid-template-columns:repeat(2,minmax(0,1fr))!important}#method .stair::before{display:none!important}}
 @media(max-width:600px){#method .stair{grid-template-columns:minmax(0,1fr)!important}}
 .tdie-manifesto{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;max-width:none!important;margin:0!important;padding:22px 24px!important;border:0!important;background:linear-gradient(110deg,#FFD7E9,#F1EAFB);text-align:center}
@@ -797,6 +803,11 @@ const jsonLd = {
               <li><b>An email list that grows</b></li>
               <li><b>No code. No camera.</b></li>
             </ul>
+            <figure class="we-review">
+              <span class="we-stars">★★★★★</span>
+              <blockquote>"{FEATURED.quote}"</blockquote>
+              <figcaption><a href={FEATURED.url} target="_blank" rel="noopener">{FEATURED.name}</a> · {FEATURED.tenure}</figcaption>
+            </figure>
             <a class="we-cta" href={WE.url}>Get {WE.name} <span aria-hidden="true">→</span></a>
           </div>
           <p class="for"><strong>For you if</strong> your best writing is sitting in a Skool group, a notes app or a feed you don't own, and you want it working for you on a domain that is yours.</p>
