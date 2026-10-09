@@ -15,3 +15,9 @@ Private state belongs outside this public repository. `profile.py save` merges e
 `spend.py reserve` persists a write intent and conservative cost reservation before submission. Existing or uncertain attempts block resubmission; failed attempts still count. Results require service evidence. Changing a provider/model/policy requires reconciliation. Zero provider credits per attempt still requires a finite attempt limit. This component does not call a generation provider.
 
 Integration status: local components tested; no production adapter or scheduled task has been shown to invoke them. Native in-chat generation is the founder's requested mini-test route. No Higgsfield call or credit spend occurred in this repair. The original completed founder questionnaire remains unrecovered; actual category image tests have not run. Do not label the system working from these component results.
+
+## Authorized replacement intake
+
+`intake-question-bank.json` maps required fields to their downstream steps. It contains no completed original questionnaire. Persist newly received answers immediately and retain their exact source. Recovered direct instructions use `source_kind: recovered_direct_instruction`, `answered_at: null`, and an accurate `recorded_at`; do not invent the historical answer time.
+
+`prepare --scope visual_pilot` permits only private basic/styled/lifestyle/graphics inputs with all visual fields present. Publishing and sourcing cannot use that scope. The default production scope still requires complete setup. These guards require caller integration; they are not proof of live execution.

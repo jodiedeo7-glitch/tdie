@@ -61,6 +61,32 @@ class ProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(runtime.Blocked, 'SETUP_INCOMPLETE'):
             self.prepare()
 
+    def test_private_visual_pilot_does_not_require_publication_setup(self):
+        saved = self.save({key: self.answers[key] for key in runtime.VISUAL_REQUIRED})
+        payload = runtime.prepare(self.path, 'synthetic-buyer', 'basic', 'pilot',
+                                  self.master, saved['sha256'], self.master_hash,
+                                  'fixture', 'visual_pilot')
+        receipt = runtime.verify_handoff(self.path, self.master, payload, self.coverage(payload))
+        self.assertEqual(receipt['result'], 'INPUT_BINDING_VERIFIED')
+        with self.assertRaisesRegex(runtime.Blocked, 'SETUP_INCOMPLETE'):
+            self.prepare(saved)
+        for step in ('sourcing', 'blog', 'pinterest', 'instagram', 'reconciliation'):
+            with self.assertRaisesRegex(runtime.Blocked, 'PILOT_CANNOT'):
+                runtime.prepare(self.path, 'synthetic-buyer', step, 'pilot',
+                                self.master, saved['sha256'], self.master_hash,
+                                'fixture', 'visual_pilot')
+
+    def test_recovered_instruction_preserves_unknown_original_timestamp(self):
+        answer = {'value': 'literal recovered instruction',
+                  'evidence': 'fixture archive, not founder data',
+                  'source_kind': 'recovered_direct_instruction',
+                  'answered_at': None, 'recorded_at': '2026-10-09T12:00:00+00:00'}
+        saved = self.save({'personal_visual_signature': answer})
+        self.assertEqual(saved['answers']['personal_visual_signature'], answer)
+        answer['answered_at'] = answer['recorded_at']
+        with self.assertRaisesRegex(runtime.Blocked, 'TIMESTAMP_INVALID'):
+            self.save({'personal_visual_signature': answer}, 1)
+
     def test_missing_profile_blocks(self):
         with self.assertRaisesRegex(runtime.Blocked, 'PROFILE_MISSING'):
             runtime.load(self.path)

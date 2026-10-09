@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "authority": "claude/WYS_REFERENCE_PACK_2026-10-07.md",
+  "original_questionnaire": "UNRECOVERED",
+  "answer_storage": "Private profile; never public git",
+  "procedure": [
+    "Persist each individual answer immediately using profile.save; read back exact value and revision.",
+    "Recovered direct instructions use source_kind=recovered_direct_instruction, answered_at=null, recorded_at=ingestion timestamp and explicit source evidence.",
+    "Ask only unresolved user preferences; inspect technical capabilities and files yourself. Never ask the founder to guess them.",
+    "Every step reads the current saved profile and records every answer disposition with concrete request/output evidence.",
+    "Use visual_pilot scope only for private BASIC/STYLED/LIFESTYLE/graphics. Production retains complete setup gate.",
+    "One three-role mini test per actual category; inspect each role before proceeding; preserve defects and failures.",
+    "No customer release until actual end-to-end evidence passes."
+  ],
+  "questions": [
+    {
+      "field": "curation_profile",
+      "prompt": "What price range, real-life occasions and product dealbreakers should govern your test profile?",
+      "affected_steps": [
+        "sourcing",
+        "basic",
+        "styled",
+        "lifestyle",
+        "blog"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "personal_visual_signature",
+      "prompt": "What additional visual details or exclusions are missing from the recovered direct instructions?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle",
+        "graphics"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "persona",
+      "prompt": "Who may appear, in which categories, using which authorized identity reference?",
+      "affected_steps": [
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "reference_assets",
+      "prompt": "Which exact authorized product and identity files are attached for this look?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "product_categories",
+      "prompt": "Which categories are selected? Founder audit covers all ten registered categories.",
+      "affected_steps": [
+        "sourcing",
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "provider_model",
+      "prompt": "Which verified provider/model is permitted for this execution path?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "budget",
+      "prompt": "What finite attempts and verified spend allowance apply before submission?",
+      "affected_steps": [
+        "basic",
+        "styled",
+        "lifestyle"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "state_location",
+      "prompt": "Where is the private durable profile stored, and can the next process read it?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "amazon_path",
+      "prompt": "Which authorized Amazon storefront/list/product source supplies exact items and variants?",
+      "affected_steps": [
+        "sourcing",
+        "blog",
+        "pinterest",
+        "instagram"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "destinations",
+      "prompt": "Which exact live destination belongs to each deliverable?",
+      "affected_steps": [
+        "blog",
+        "pinterest",
+        "instagram"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "disclosure",
+      "prompt": "What required disclosure text and placement applies?",
+      "affected_steps": [
+        "blog",
+        "pinterest",
+        "instagram"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "channels",
+      "prompt": "Which channels are enabled, draft-only, or disabled?",
+      "affected_steps": [
+        "blog",
+        "pinterest",
+        "instagram"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "timezone",
+      "prompt": "Which timezone governs scheduled execution?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "cadence",
+      "prompt": "What exact schedule and output quantity is authorized?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "execution_mode",
+      "prompt": "Is the path manual, assisted, or verified unattended?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    },
+    {
+      "field": "connected_capabilities",
+      "prompt": "Which connections have been actually exercised successfully?",
+      "affected_steps": [
+        "reconciliation"
+      ],
+      "status": "RESOLVE_FROM_SOURCE_OR_NEW_ANSWER"
+    }
+  ],
+  "recovered_visual_instructions": {
+    "source": "October 8 handoff GOVERNING-SPEC.md; SHA256 00b1b279c9b420987a48744823830976f760b512562c4006ebc5759fe996d9e6",
+    "status": "DIRECT_INSTRUCTIONS_NOT_ORIGINAL_QUESTIONNAIRE",
+    "values": {
+      "palette": "hot pink and cream relief; lavender secondary",
+      "style": "girly, playful, maximalist; material glitter",
+      "meaningful_details": [
+        "lilacs",
+        "wildflowers",
+        "golden retriever"
+      ],
+      "exclusions": [
+        "added bows/ribbons",
+        "hydrangeas",
+        "furry/shag/fluffy backgrounds",
+        "generic repeated prop kits"
+      ],
+      "clothing_roles": "Follow section 27 specific BASIC/STYLED/LIFESTYLE distinctions",
+      "label": "Finished BASIC: hot-pink brush script plus dark uppercase sans subtitle; label follows actual look"
+    }
+  }
+}

@@ -21,6 +21,10 @@ REQUIRED = ('amazon_path', 'destinations', 'disclosure', 'persona',
             'cadence', 'provider_model', 'budget', 'execution_mode',
             'connected_capabilities', 'state_location', 'curation_profile',
             'personal_visual_signature')
+VISUAL_REQUIRED = ('persona', 'reference_assets', 'product_categories',
+                   'provider_model', 'budget', 'state_location',
+                   'curation_profile', 'personal_visual_signature')
+VISUAL_STEPS = ('basic', 'styled', 'lifestyle', 'graphics')
 
 
 class Blocked(ValueError):
@@ -94,7 +98,13 @@ def save(path, customer_id, answers, expected_revision, kind='customer'):
         if not isinstance(answer.get('evidence'), str) or not answer['evidence'].strip():
             raise Blocked('ANSWER_EVIDENCE_MISSING:' + key)
         try:
-            timestamp = datetime.fromisoformat(answer['answered_at'])
+            # Recovery preserves missing historical timestamps instead of
+            # presenting today's ingestion time as the original answer time.
+            recovered = answer.get('source_kind') == 'recovered_direct_instruction'
+            timestamp_key = 'recorded_at' if recovered else 'answered_at'
+            if recovered and answer.get('answered_at') is not None:
+                raise ValueError()
+            timestamp = datetime.fromisoformat(answer[timestamp_key])
             if timestamp.tzinfo is None:
                 raise ValueError()
         except (ValueError, KeyError, TypeError) as error:
@@ -130,7 +140,7 @@ def save(path, customer_id, answers, expected_revision, kind='customer'):
 
 
 def prepare(path, customer_id, step, look_id, master_path, expected_profile_hash,
-            expected_master_hash, run_kind='customer'):
+            expected_master_hash, run_kind='customer', scope='production'):
     """Read current answers from disk for EACH operation, never from chat memory."""
     profile = load(path)
     if profile['customer_id'] != customer_id or profile['kind'] != run_kind:
@@ -139,12 +149,18 @@ def prepare(path, customer_id, step, look_id, master_path, expected_profile_hash
         raise Blocked('PROFILE_CHANGED_REBUILD_INPUTS')
     if step not in STEPS or not look_id.strip():
         raise Blocked('STEP_OR_LOOK_INVALID')
-    missing = [key for key in REQUIRED if key not in profile['answers']
+    if scope not in ('production', 'visual_pilot'):
+        raise Blocked('SCOPE_INVALID')
+    if scope == 'visual_pilot' and step not in VISUAL_STEPS:
+        raise Blocked('PILOT_CANNOT_PUBLISH_OR_SOURCE')
+    required = VISUAL_REQUIRED if scope == 'visual_pilot' else REQUIRED
+    missing = [key for key in required if key not in profile['answers']
                or profile['answers'][key]['value'] is None]
     if missing:
         raise Blocked('SETUP_INCOMPLETE:' + ','.join(missing))
     unresolved = [key for key, answer in profile['answers'].items()
-                  if isinstance(answer['value'], str) and answer['value'].strip().lower()
+                  if key in required
+                  and isinstance(answer['value'], str) and answer['value'].strip().lower()
                   in ('unknown', 'unverified', 'not verified', 'tbd', '')]
     if unresolved:
         raise Blocked('SETUP_UNRESOLVED:' + ','.join(unresolved))
@@ -155,7 +171,7 @@ def prepare(path, customer_id, step, look_id, master_path, expected_profile_hash
     # All answers reach each step, including custom questionnaire keys. An empty
     # string, false or [] is an explicit answer and is never replaced by defaults.
     payload = {'schema': SCHEMA, 'customer_id': customer_id,
-               'run_kind': run_kind, 'look_id': look_id, 'step': step,
+               'run_kind': run_kind, 'scope': scope, 'look_id': look_id, 'step': step,
                'profile_revision': profile['revision'],
                'profile_sha256': profile['sha256'], 'master_sha256': master_hash,
                'configuration': {key: copy.deepcopy(answer['value'])
@@ -173,7 +189,7 @@ def verify_handoff(path, master_path, payload, coverage):
     """
     expected = prepare(path, payload['customer_id'], payload['step'], payload['look_id'],
                        master_path, payload['profile_sha256'], payload['master_sha256'],
-                       payload['run_kind'])
+                       payload['run_kind'], payload['scope'])
     if payload != expected:
         raise Blocked('INPUT_PAYLOAD_MISMATCH')
     if set(coverage) != set(payload['configuration']):
@@ -210,6 +226,7 @@ def main():
     build.add_argument('--profile-hash', required=True)
     build.add_argument('--master-hash', required=True)
     build.add_argument('--kind', choices=('customer', 'founder', 'fixture'), default='customer')
+    build.add_argument('--scope', choices=('production', 'visual_pilot'), default='production')
     build.add_argument('--output', required=True)
     check = commands.add_parser('verify')
     check.add_argument('--profile', required=True)
@@ -225,7 +242,7 @@ def main():
                               'sha256': result['sha256']}))
         elif args.command == 'prepare':
             result = prepare(args.profile, args.customer, args.step, args.look, args.master,
-                             args.profile_hash, args.master_hash, args.kind)
+                             args.profile_hash, args.master_hash, args.kind, args.scope)
             atomic_write(args.output, result)
             print(json.dumps({'result': 'INPUT_PREPARED', 'sha256': result['sha256']}))
         else:
