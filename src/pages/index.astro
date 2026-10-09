@@ -752,7 +752,7 @@ const jsonLd = {
               <a class="room e-reveal" href={r.href}>
                 <figure class="e-artifact">
                   <div class="e-art-img">
-                    <img src={r.key === "course" ? "/images/we/module-list.jpg" : `/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
+                    <img src={r.key === "course" ? "/images/we/the-numbers.jpg" : `/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
                          decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
                   </div>
                   <figcaption><b>Exhibit {String(i + 1).padStart(2, "0")} · {r.room}</b><span>{r.path}</span></figcaption>
@@ -774,7 +774,7 @@ const jsonLd = {
       <div class="e-wrap flag-grid">
         <div class="flag-visual">
           <figure class="photo">
-            <img src="/images/we/module-list.jpg" width="1100" height="1191" decoding="async" alt="The real module list inside The Weekend Ecosystem™" />
+            <img src="/images/we/hook-blog-posts.jpg" width="1200" height="1490" decoding="async" alt="The Weekend Ecosystem™: you already wrote the blog posts. They're just sitting in your Skool group." />
           </figure>
           <figure class="e-artifact">
             <div class="e-art-img">
@@ -792,12 +792,11 @@ const jsonLd = {
             <h2 id="flag-h" class="we-name">{WE.name}</h2>
             <p class="we-sub">Your content, turned into <em>a website you own.</em></p>
             <ul class="we-results">
-              <li><b>A website on your own domain</b>, live by Sunday</li>
-              <li><b>A blog Google can find</b>, built from posts you already wrote</li>
-              <li><b>An email list that grows</b>, with your offer wired into every page</li>
-              <li><b>No code, no camera.</b> Claude writes every file</li>
+              <li><b>Your own website</b>, live by Sunday</li>
+              <li><b>A blog Google can find</b></li>
+              <li><b>An email list that grows</b></li>
+              <li><b>No code. No camera.</b></li>
             </ul>
-            <p class="we-proof"><span>★★★★★</span> "In 3 days I had a beautiful website/blog set up." <b>Tina Alexander, paying member</b></p>
             <a class="we-cta" href={WE.url}>Get {WE.name} <span aria-hidden="true">→</span></a>
           </div>
           <p class="for"><strong>For you if</strong> your best writing is sitting in a Skool group, a notes app or a feed you don't own, and you want it working for you on a domain that is yours.</p>
