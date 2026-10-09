@@ -200,7 +200,7 @@ const schema = [{
         <p class="e-small mb-head-note">Course names sit under each row. The difference lives in the bottom three groups.</p>
       </div>
 
-      <table class="mb-table">
+      <div class="mb-table-scroll" role="region" aria-label="Membership comparison; scroll horizontally" tabindex="0"><table class="mb-table">
         <caption class="sr">Membership Standard compared with Membership Premium</caption>
         <thead>
           <tr>
@@ -229,7 +229,7 @@ const schema = [{
             ))}
           </tbody>
         ))}
-      </table>
+      </table></div>
     </div>
   </section>
 
@@ -543,5 +543,8 @@ const schema = [{
     .mb-feed figcaption{font-size:13px;line-height:1.5;color:#4A3A40!important;margin-top:12px;text-align:center}
     .mb-dfy-lead{font-size:19px!important;line-height:1.45!important}
     @media(max-width:560px){.mb-feed-sticker{right:6px}}
+    .mb-table-scroll{max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#b8245f #f1eafb}
+    .mb-table-scroll:focus-visible{outline:2px solid #b8245f;outline-offset:3px}
+    @media(max-width:700px){.mb-hero-grid{grid-template-columns:minmax(0,1fr)!important}.mb-hero-fig{max-width:300px!important;width:100%;justify-self:center}.mb-table-scroll .mb-table{min-width:330px}}
   </style>
 </PageLayout>

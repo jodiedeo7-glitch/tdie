@@ -271,3 +271,9 @@
 .life .life-article .life-story-row>.life-photo{grid-column:2;grid-row:1;align-self:start;margin-top:22px;transform:none}
 .life .life-article .life-story-copy p{max-width:65ch}
 @media(max-width:760px){.life .life-article .life-story-row,.life .life-article .life-story-row:nth-child(even){grid-template-columns:minmax(0,1fr);gap:18px;padding:12px 0}.life .life-article .life-story-row>.life-photo{grid-column:1;grid-row:1;margin-top:0}.life .life-article .life-story-row>.life-story-copy{grid-column:1;grid-row:2;padding:20px}}
+
+.life .life-close{background:#fff8fc;padding:20px;margin-bottom:24px}
+.life .life-close>.life-text-link{background:transparent;padding:0;border-radius:0}
+.life .pf .pf-row button,.life .life-button,.life .life-product-controls button{background:#fff!important;background-image:none!important;color:#1A1417!important;border:1px solid #e891b6!important;border-radius:8px!important;box-shadow:none!important}
+
+.life .life-article .life-photo figcaption,.life .life-article .life-heading-photo figcaption{font:500 22px/1.2 Caveat,cursive!important}
