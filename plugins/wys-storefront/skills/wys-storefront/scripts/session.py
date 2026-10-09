@@ -17,6 +17,7 @@ except ImportError:
 
 BANK = json.loads((Path(__file__).parents[1] / 'references/question-bank.json').read_text())
 QUESTIONS = {q['id']: q for q in BANK['questions']}
+OPERATOR_FIELDS = ('reference_assets', 'disclosure', 'connected_capabilities', 'state_location')
 
 
 def digest(value):
@@ -179,6 +180,7 @@ def mutate(path, command, customer=None, qid=None, data=None, revision=None, cor
         envelope(data)
         previous = state['sha256']
         invalidated = None
+        invalidated_verifications = None
         if command == 'answer':
             validate(state, qid, data)
             if qid in state['answers'] and not correction:
@@ -187,13 +189,28 @@ def mutate(path, command, customer=None, qid=None, data=None, revision=None, cor
                 if state['answers']['categories']['value']['selected'] != data['value']['selected']:
                     invalidated = state['answers'].pop('category_preferences')
             state['answers'][qid] = copy.deepcopy(data)
+            invalidated_verifications = state.pop('operator_verifications', None)
+        elif command == 'operator':
+            if qid not in OPERATOR_FIELDS:
+                raise ValueError('OPERATOR_FIELD_UNKNOWN')
+            if (data.get('source_kind') != 'operator_verified'
+                    or data.get('verification_status') != 'VERIFIED'
+                    or data.get('answers_sha256') != digest(state['answers'])):
+                raise ValueError('OPERATOR_VERIFICATION_BINDING_REQUIRED')
+            if data['value'] is None or data['value'] == '' or data['value'] == {} or data['value'] == []:
+                raise ValueError('OPERATOR_VALUE_REQUIRED')
+            verified = state.setdefault('operator_verifications', {})
+            if qid in verified and not correction:
+                raise ValueError('EXPLICIT_CORRECTION_REQUIRED')
+            verified[qid] = copy.deepcopy(data)
         else:
             state['events'].append(copy.deepcopy(data))
         state['revision'] += 1
         state['history'].append({'type': command, 'question_id': qid,
                                  'correction': correction, 'revision': state['revision'],
                                  'previous_sha256': previous, 'record': copy.deepcopy(data),
-                                 'invalidated_category_brief': invalidated})
+                                 'invalidated_category_brief': invalidated,
+                                 'invalidated_operator_verifications': invalidated_verifications})
         return write(path, state)
 
 
@@ -201,6 +218,8 @@ def status(state):
     q = next_question(state)
     return {'customer_id': state['customer_id'], 'revision': state['revision'],
             'sha256': state['sha256'], 'answers_recorded': len(state['answers']),
+            'answers_sha256': digest(state['answers']),
+            'operator_fields_recorded': sorted(state.get('operator_verifications', {})),
             'events_recorded': len(state['events']), 'next': q,
             'intake_status': 'RECORDED' if q is None else 'INCOMPLETE',
             'capabilities': 'NOT_VERIFIED', 'generation': 'NOT_RUN', 'publication': 'NOT_RUN'}
@@ -208,7 +227,7 @@ def status(state):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('command', choices=('init', 'next', 'answer', 'event', 'status'))
+    p.add_argument('command', choices=('init', 'next', 'answer', 'event', 'operator', 'status'))
     p.add_argument('--state', required=True)
     p.add_argument('--customer')
     p.add_argument('--question')
