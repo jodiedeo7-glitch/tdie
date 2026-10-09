@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "record_type": "recovery_source_location",
+  "date": "2026-10-09",
+  "sources": [
+    {
+      "name": "WYS-Remaining-Native-Project-Sources.zip",
+      "bytes": 6498253,
+      "sha256": "85197b4f854e0091189a38685ef9cec8c84e603abe7e5a54bb290a5f1fb6e797",
+      "zip_entries": 524,
+      "crc_passed": true,
+      "transcript_files": [
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/a04dc7bb-841d-45eb-9305-0a5ca9b8b0bb.transcript.md",
+          "bytes": 100874,
+          "sha256": "2967433d7ddfc42056460fc9d60d13e8bf63f82609b47859864d53524b1ed35b"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/59c13cf4-358b-4d29-aea0-2f8e174a3983.transcript.md",
+          "bytes": 1339426,
+          "sha256": "9369300611012a9a48cdaf61fad53573ebeff82c009e10957eb06c9deb84b3ec"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/637c4e54-a01d-45be-aded-0754cdc7a958.transcript.md",
+          "bytes": 487780,
+          "sha256": "76505d7c986c07ece6eb273cdcd7091edd349fad90ccaab190efcd21456e38c4"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/bba690be-6d90-4808-bba5-57644080a2a3.transcript.md",
+          "bytes": 109021,
+          "sha256": "463876f9672a6b0fe8f5ba279433aec1b4f660ad93c124b9b6ca5c52cf663900"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/9bbcd8f1-722f-44f2-8f1b-8bc9776cf563.transcript.md",
+          "bytes": 84775,
+          "sha256": "6e90d40ed91e8b51345e9a71b6563e0fa75d29b2d5c405bfcb50a007b9778a6f"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/55472475-0654-4dc1-adcf-87d8de6dd3c8.transcript.md",
+          "bytes": 103583,
+          "sha256": "68b1f63137cabbb559deb6add50a14c9bfcc555392bdb7c28341c6f1c7147a15"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/62194e06-74f1-4d27-b271-c15262bb5257.transcript.md",
+          "bytes": 30311,
+          "sha256": "fdf3ea29270358305960cc265c16ac149dee1d82e50a1bf1050cb880b986c54f"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/e46858db-d267-4ea7-b37e-221bab57ebc8.transcript.md",
+          "bytes": 45113,
+          "sha256": "a90c4836e6633f2138658865042f742999e4630c0c7fca3d0a813ab475ffb6a0"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/b3a3b720-9f71-4138-b1d7-34b1eac8d908.transcript.md",
+          "bytes": 56261,
+          "sha256": "b7d3a5c76053847f812c25432338014b521b6b458b042704941e5e40cdda1a80"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/fd5aee32-ef04-476d-a180-307baf08b37f.transcript.md",
+          "bytes": 140218,
+          "sha256": "a331a0e66b502d77514cbea7081300238c4e0d1ba14530e12ef8d7a2aa19b54a"
+        },
+        {
+          "path": "WYS-Remaining-Native-Project-Sources/5_conversations-full/ad9469ae-88ca-40df-9389-d638146cb563.transcript.md",
+          "bytes": 148936,
+          "sha256": "10b2b06163bb6a74256d2dd5f4045ea3c5c293180a80d8c691b5c349641bbe2d"
+        }
+      ]
+    },
+    {
+      "name": "WYS-Command-Centre-Remaining-Collections.zip",
+      "bytes": 10720412,
+      "sha256": "554f7e59ede3a9ce5fc4ebcb435675bf815c658f988431bba9edb817fb39bd9d",
+      "zip_entries": 140,
+      "crc_passed": true,
+      "transcript_files": []
+    }
+  ],
+  "evidence_limit": "Archives located and CRC-checked. Transcript contents are chat-reader captures with possible abbreviated tool outputs and documented omissions; not complete project history.",
+  "still_missing": [
+    "Original ChatGPT audit conversation 6abae4e3-d318-83ea-a008-9926c3e9e1d9 absent from this capture.",
+    "Original questionnaire has not been located.",
+    "Exact historical all-conversation persistence rule has not been located."
+  ],
+  "privacy": "Source README explicitly marks archives private and prohibits public-repository upload. This record contains only filenames, hashes, byte counts and coverage; originals remain private.",
+  "status": "Recovery in progress; no audit verdict or repair completion."
+}
