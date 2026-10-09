@@ -33,6 +33,7 @@ const pages=[
 const tokenInput=document.querySelector('#wys-token');
 const loadButton=document.querySelector('#wys-load');
 const saveButton=document.querySelector('#wys-save-server');
+let values={};try{values=JSON.parse(sessionStorage.getItem('wys-preview-preferences')||'{}')}catch{}
 const api=async(method)=>{
   const token=tokenInput?.value.trim();
   if(!token)throw Error('A verified WYS test session is required.');
@@ -43,7 +44,7 @@ const api=async(method)=>{
 };
 const fields=document.querySelector('#wys-fields');const progress=document.querySelector('#wys-progress');const back=document.querySelector('#wys-back');const next=document.querySelector('#wys-next');const status=document.querySelector('#wys-status');
 if(fields&&progress&&back&&next&&status){
-let step=0;let values={};try{values=JSON.parse(sessionStorage.getItem('wys-preview-preferences')||'{}')}catch{}
+let step=0;
 function draw(){fields.replaceChildren();progress.value=step+1;back.disabled=step===0;next.textContent=step===pages.length-1?'Save preview':'Save and continue';for(const [name,label,type,options] of pages[step]){const l=document.createElement('label');l.textContent=label;l.htmlFor='wys-'+name;const input=document.createElement(type==='select'?'select':'input');input.id='wys-'+name;if(type==='select'){for(const v of options){const opt=document.createElement('option');opt.value=v;opt.textContent=v;input.append(opt)}}else{input.type=type;if(type==='number'){input.min='0';input.step='0.01'}}input.value=values[name]||'';input.addEventListener('input',()=>{values[name]=input.value;sessionStorage.setItem('wys-preview-preferences',JSON.stringify(values))});fields.append(l,input)}status.textContent='Step '+(step+1)+' of '+pages.length+'. Saved in this browser tab only.'}
 loadButton?.addEventListener('click',async()=>{try{status.textContent='Loading...';const data=await api('GET');values=data.preferences||{};sessionStorage.setItem('wys-preview-preferences',JSON.stringify(values));draw();status.textContent='Saved workspace loaded.'}catch(e){status.textContent=e.message}});
 saveButton?.addEventListener('click',async()=>{try{status.textContent='Saving...';await api('PUT');status.textContent='Workspace preferences saved.'}catch(e){status.textContent=e.message}});
