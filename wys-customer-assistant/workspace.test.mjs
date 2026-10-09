@@ -53,3 +53,13 @@ test('rejects unknown fields and non-string values',async()=>{
  assert.equal((await request('PUT',token,{preferences:{isAdmin:true}},db)).status,400);
  assert.equal((await request('PUT',token,{preferences:{niche:5}},db)).status,400);
 });
+
+test('rejects wrong content type without writing',async()=>{
+ const db=database(),token=await sign('buyer@example.test',secret);
+ const result=await handle(new Request('https://example.test/api/wys-workspace',{method:'PUT',headers:{Authorization:'Bearer '+token,'Content-Type':'text/plain'},body:'{"preferences":{"niche":"Home"}}'}),{WYS_DB:db,WYS_ACCESS_SECRET:secret});
+ assert.equal(result.status,415);
+});
+test('does not accept unsupported methods',async()=>{
+ const db=database(),token=await sign('buyer@example.test',secret);
+ assert.equal((await request('DELETE',token,null,db)).status,405);
+});
