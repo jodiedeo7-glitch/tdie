@@ -16,10 +16,10 @@ const SITE = "https://www.thedigitalincomeedit.com";
 
 // 01 START HERE: $0 only (journey_slot_rules.free).
 const free = [
-  { name: "The Faceless Income Blueprint™", url: "/resources/faceless-income-blueprint", go: "Get the Blueprint",
+  { name: "The Faceless Income Blueprint™", img: "/images/covers/faceless-income-blueprint.webp", url: "/resources/faceless-income-blueprint", go: "Get the Blueprint",
     copy: "Niche, first product, first traffic source: the whole shape of the business in one document." },
   // Canon name: "$10/Day Traffic Machine" + "Starter Map", set on two lines so the page carries no dash.
-  { name: "$10/Day Traffic Machine", sub: "Starter Map", url: "/resources/starter-map", go: "Get the Starter Map",
+  { name: "$10/Day Traffic Machine", sub: "Starter Map", img: "/images/pages/starter-map-cover-480.webp", url: "/resources/starter-map", go: "Get the Starter Map",
     copy: "Ten pages on buying traffic without gambling: what to spend, what to watch, when to stop." },
   { name: "FREE GUIDE - One & Done Money Stream", url: "/go/free-guide-one-done-money-stream", go: "Read the free guide",
     copy: "The short version of the one-product, one-system approach." },
@@ -37,11 +37,11 @@ const tiers = [
 
 // 04 GUIDES. The Value Vault: ledger-confirmed items only.
 const vault = [
-  { name: "Build Your First Freebie in One Afternoon", price: "$7", url: "/vault/freebie-in-an-afternoon", go: "Build my freebie",
+  { name: "Build Your First Freebie in One Afternoon", img: "/images/covers/first-freebie.webp", price: "$7", url: "/vault/freebie-in-an-afternoon", go: "Build my freebie",
     copy: "The lead magnet and the paid offer behind it, both finished before dinner." },
   { name: "The Operating Prompts™", price: "$19", url: "/go/the-operating-prompts", go: "Get The Operating Prompts™",
     copy: "The thirty-four prompts that actually run my business. Strict on purpose, built on your own Brand Card." },
-  { name: "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", price: "$9", url: "/go/how-i-batch-schedule-a-month-of-pinterest-in-one-3-hour-bloc", go: "Get the batching guide",
+  { name: "How I Batch & Schedule a Month of Pinterest in One 3-Hour Block", img: "/images/covers/pinterest-batch.webp", price: "$9", url: "/go/how-i-batch-schedule-a-month-of-pinterest-in-one-3-hour-bloc", go: "Get the batching guide",
     copy: "A month of pins queued in a single sitting. The exact order I work in." },
 ];
 
@@ -169,6 +169,7 @@ const schema = [{
       <ul class="free e-reveal">
         {free.map((f) => (
           <li>
+            {f.img && <a class="shop-cover" href={f.url} tabindex="-1" aria-hidden="true"><img src={f.img} alt="" loading="lazy" /></a>}
             <span class="free-tag">Free</span>
             <h3>{f.name}{f.sub && <span class="sub">{f.sub}</span>}</h3>
             <p>{f.copy}</p>
@@ -186,7 +187,7 @@ const schema = [{
         <div class="flag-img e-unveil">
           <img src="/images/we/module-list.jpg" width="1100" height="1191" loading="lazy" alt="The real module list inside The Weekend Ecosystem™" />
         </div>
-        <figcaption class="e-credit flag-cap"><b>Pictured</b> Tommy Kate, the brand's AI persona</figcaption>
+        <figcaption class="e-credit flag-cap"><b>Inside</b> the real 22-module list</figcaption>
       </figure>
       <div class="flag-body">
         <p class="e-kick">02 · The course</p>
@@ -260,6 +261,7 @@ const schema = [{
       <ul class="trio e-reveal">
         {vault.map((v) => (
           <li>
+            {v.img && <a class="shop-cover" href={v.url} tabindex="-1" aria-hidden="true"><img src={v.img} alt="" loading="lazy" /></a>}
             <p class="trio-price"><span class="e-price">{v.price}</span> one-time</p>
             <h4>{v.name}</h4>
             <p>{v.copy}</p>
