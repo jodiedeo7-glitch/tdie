@@ -18,6 +18,21 @@ class IntakeTests(unittest.TestCase):
                                     'synthetic test only', '2026-10-09T13:30:00+00:00',
                                     revision, 'fixture')
 
+    def test_partial_category_brief_import_uses_saved_category_selection(self):
+        self.record('categories', {'selected': ['clothing'], 'detail': ''}, 0)
+        value = {'categories': {'clothing': {branch['id']: {
+            'selected': [branch['options'][0]], 'detail': 'precise saved branch'}
+            for branch in intake.CATEGORY_BRANCHES['clothing']}}}
+        form = self.path.with_name('partial-form.json')
+        form.write_text(json.dumps({'schema_version': 2, 'questionnaire_version': 2,
+            'answers': {'category_preferences': {'value': value,
+                'answered_at': '2026-10-09T13:30:00+00:00'}}}))
+        result = intake.import_form(self.path, 'fixture', form, 1, 'fixture')
+        self.assertEqual(result['imported'], 1)
+        saved = profile.load(self.path)['answers']
+        self.assertEqual(saved['intake.category_preferences']['value'], value)
+        self.assertEqual(saved['intake.categories']['value']['selected'], ['clothing'])
+
     def test_resume_survives_disk_reload_and_preserves_literal_answer(self):
         self.assertEqual(intake.next_question(self.path)['question_id'], 'business_direction')
         self.record('business_direction', 'Book finds for readers; NOT fashion', 0)
