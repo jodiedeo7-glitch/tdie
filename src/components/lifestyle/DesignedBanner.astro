@@ -1,32 +1,27 @@
 ---
-const {icing,showDrip=true}=Astro.props;
+const {icing}=Astro.props;
+const sparkles=[{x:9,y:23,s:27},{x:22,y:9,s:20},{x:31,y:73,s:23},{x:14,y:85,s:16},{x:71,y:12,s:25},{x:90,y:30,s:20},{x:80,y:83,s:25},{x:62,y:88,s:16},{x:46,y:8,s:12},{x:5,y:62,s:13},{x:95,y:73,s:14},{x:38,y:92,s:11}];
 ---
-<div class="designed-banner tdie-repo-banner centered-boutique-banner blush-paper-banner boutique-lettering-banner">
- {showDrip && <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>}
- <div class="banner-composition">
-  <figure class="brand-photo brand-photo-studio">
-   <img src="/images/home/flagship-attic-900.webp" alt="Tommy Kate in her pink attic studio with her laptop and glitter tumbler" width="900" height="1117" loading="eager"/>
-   <figcaption>The pink attic studio</figcaption>
+<section class="boutique-reference-banner" aria-label="The Digital Income Edit brand banner">
+ <svg class="reference-sparkles" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+  <defs><linearGradient id="chrome-pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#ffd1e7"/><stop offset=".48" stop-color="#fff"/><stop offset=".64" stop-color="#d97bac"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#f5c3de"/></linearGradient></defs>
+  {sparkles.map(p=><path transform={`translate(${p.x*10} ${p.y*4.4}) scale(${p.s/24})`} d="M0 -16 C2 -4 4 -2 13 0 C4 2 2 4 0 16 C-2 4 -4 2 -13 0 C-4 -2 -2 -4 0 -16Z" fill="url(#chrome-pink)"/>)}
+  {[{x:160,y:59},{x:330,y:45},{x:815,y:68},{x:78,y:320},{x:278,y:345},{x:744,y:367},{x:924,y:246},{x:537,y:404},{x:618,y:42}].map(p=><g><circle cx={p.x} cy={p.y} r="3.5" fill="#f0a8ca"/><circle cx={p.x-1} cy={p.y-1} r="1.5" fill="#fff"/></g>)}
+ </svg>
+ <div class="reference-banner-content">
+  <figure class="reference-photo reference-photo-left">
+   <img src="/images/pages/community-studio-720.webp" alt="Tommy Kate working in her bright farmhouse studio" width="720" height="893" loading="eager"/>
+   <figcaption>The farmhouse studio</figcaption>
   </figure>
-  <div class="brand-lockup">
-   <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home">
-    <span class="banner-the"><img class="banner-repo-icon" src="/icon-512.png" width="25" height="25" alt="" aria-hidden="true"/>The</span>
-    <svg class="banner-title-art" viewBox="0 0 360 104" aria-hidden="true">
-     <defs><pattern id="banner-letter-foil" width="650" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><image href={icing} width="650" height="216.6667"/></pattern></defs>
-     <text class="banner-name" x="180" y="42" text-anchor="middle">Digital</text>
-     <text class="banner-edit" x="180" y="91" text-anchor="middle">Income Edit</text>
-     <g class="banner-letter-sheen"><text x="180" y="42" text-anchor="middle">Digital</text><text x="180" y="91" text-anchor="middle">Income Edit</text></g>
-     <text class="banner-trademark" x="310" y="70">™</text>
-    </svg>
-   </a>
-   <p class="banner-tagline">Build Your Business Backwards.<br/>Scale It Forward.<sup>™</sup></p>
+  <div class="reference-message">
+   <svg class="reference-arc" viewBox="0 0 310 51" aria-hidden="true"><defs><path id="reference-arc-path" d="M35 47 Q155 -23 275 47"/></defs><text><textPath href="#reference-arc-path" startOffset="50%" text-anchor="middle">YOUR BUSINESS · YOUR WAY</textPath></text></svg>
+   <h1><span>Build Your Business</span><strong>Backwards.</strong></h1>
+   <p class="reference-handwriting">Scale It Forward.<sup>™</sup></p>
+   <a class="reference-start" href="/resources/find-your-door">Find your starting point <span aria-hidden="true">→</span></a>
   </div>
-  <figure class="brand-photo brand-photo-desk">
-   <img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate working at her farmhouse window desk" width="720" height="893" loading="eager"/>
+  <figure class="reference-photo reference-photo-right">
+   <img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate with her pink tumbler and laptop at her farmhouse window desk" width="720" height="893" loading="eager"/>
    <figcaption>The farmhouse desk</figcaption>
   </figure>
-  <span class="optical-glint glint-one" aria-hidden="true"></span><span class="optical-glint glint-two" aria-hidden="true"></span><span class="optical-glint glint-three" aria-hidden="true"></span><span class="optical-glint glint-four" aria-hidden="true"></span><span class="optical-glint glint-five" aria-hidden="true"></span><span class="optical-glint glint-six" aria-hidden="true"></span>
-  <span class="banner-pearl pearl-one" aria-hidden="true"></span><span class="banner-pearl pearl-two" aria-hidden="true"></span><span class="banner-pearl pearl-three" aria-hidden="true"></span><span class="banner-pearl pearl-four" aria-hidden="true"></span><span class="banner-pearl pearl-five" aria-hidden="true"></span><span class="banner-pearl pearl-six" aria-hidden="true"></span>
  </div>
- <div class="banner-rounded-edge" aria-hidden="true"></div>
-</div>
+</section>
