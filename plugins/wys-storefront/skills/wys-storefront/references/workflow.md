@@ -25,6 +25,10 @@ Production needs relevant-category visual evidence, real account/destination ver
 
 ## Session writer upgrade and checks
 
+Record actual operator verification through `python scripts/session.py operator --state PRIVATE_PATH --question FIELD --input PRIVATE_EVIDENCE_FILE --revision REVISION`, from the skill directory. Allowed fields are `reference_assets`, `disclosure`, `connected_capabilities` and `state_location`. The envelope needs exact value, source evidence, timezone-aware `answered_at`, `source_kind: operator_verified`, `verification_status: VERIFIED`, and `answers_sha256` matching the current status output. This records actual verification evidence; it does not perform account reads or confer permissions. Never fabricate a verified record to unblock execution.
+
+Operator evidence stays separate from customer preferences in the same session and uses the same writer lease/revision/history. A preference answer or correction invalidates previous operator evidence, retains it in history, and requires fresh verification. The runtime reader consumes those records; runtime `save` still cannot overwrite a plugin session.
+
 The session writer uses a POSIX OS lease. A live writer excludes another writer; process death releases the lease. The persistent `.write-lease` file is retained to keep every writer on the same inode. Platforms without `fcntl` fail closed. Windows and network-filesystem locking are unverified.
 
 Stop all older session writers before upgrading. If an old `.lock` marker remains, the new writer reports `LEGACY_LOCK_RECONCILE_REQUIRED`. Reconcile the prior writer and saved state before removing that marker; never remove a lock just because it is old.
