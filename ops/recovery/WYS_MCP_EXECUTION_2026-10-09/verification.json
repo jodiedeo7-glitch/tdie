@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-09T20:40:32.804072+00:00",
+  "status": "IMPLEMENTED_LOCAL_TESTS_PASS_CUSTOMER_RELEASE_HELD",
+  "combined_sources": {
+    "main": "3a80919e5ef83dcac4919343969ec1c0feabadde",
+    "plugin_parent": "5e73d40ee0baeadd2a3cb17b8f916cb95f6b086e",
+    "runtime_parent": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f"
+  },
+  "implementation": [
+    "Eight actual MCP tools using official mcp 2.3.0 SDK",
+    "Same-file private session persistence, customer binding under write lease, revision conflict rejection and correction history",
+    "Trusted-config runtime preparation and per-answer verification through real runtime subprocess",
+    "Protected HTTP JWT resource server with customer identity from verified issuer and subject",
+    "Explicit 14-file reproducible ZIP allowlist including four runtime files from the same checkout",
+    "Onboarding instructions use MCP tools when connected"
+  ],
+  "validation": {
+    "plugin_tests_passed": 13,
+    "runtime_tests_passed": 68,
+    "skill_schema_validation": "PASS",
+    "relocated_zip_mcp": "PASS_ALL_NINE_PREPARATION_STEPS_AND_CORRECTION_INVALIDATION",
+    "authentication": "SYNTHETIC_HTTP_TWO_TENANTS_AND_RSA_SIGNED_TOKENS",
+    "development_zip_sha256": "740249a85dc09822e9435ab00e28e6022522ccfc92e2acbc7457ee97681fbdd8",
+    "git_diff_check": "PASS"
+  },
+  "limits": [
+    "Tests use synthetic answers and account verification; no founder/customer private answers or credentials committed",
+    "No live OAuth issuer/JWKS, HTTPS host or durable host volume configured or verified",
+    "No ChatGPT installation or actual customer delivery verified",
+    "No live image/provider/publisher/scheduler service executed",
+    "No automatic archive of conversation messages the server has not received",
+    "Latest implementation has not been independently reviewed"
+  ],
+  "holds": {
+    "customer_release": "HELD",
+    "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED"
+  },
+  "continuation": "Configure and verify an actual authorized private MCP host, OAuth issuer/resource and durable customer storage; register the real server mapping before connecting a customer. Then verify actual installation and live authorized service execution. These fixture results do not clear release.",
+  "logs": {
+    "plugin-tests.log": "e2661edb15e2dbe01e8887c54c2db5ce578890cd33ace9734d30001add83db88",
+    "runtime-tests.log": "9a07251b848643625825dc87b35adf9792e9ff6e6199bab55915129c07fd4182"
+  }
+}

@@ -175,6 +175,8 @@ def mutate(path, command, customer=None, qid=None, data=None, revision=None, cor
                                 'customer_id': customer, 'revision': 0,
                                 'answers': {}, 'events': [], 'history': []})
         state = load(path)
+        if customer is not None and state['customer_id'] != customer:
+            raise ValueError('CUSTOMER_ID_MISMATCH')
         if state['revision'] != revision:
             raise ValueError('REVISION_CONFLICT')
         envelope(data)

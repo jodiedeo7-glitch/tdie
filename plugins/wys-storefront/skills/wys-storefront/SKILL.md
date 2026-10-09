@@ -19,6 +19,10 @@ Use existing exact answers and evidence first. The bundled question bank is a re
 
 Use scripts/session.py and references/question-bank.json. Present one missing topic, its guided choices and downstream use. Allow specific custom detail. Show category branches only for selected categories. Resolve existing exact evidence before asking.
 
+When the WYS MCP tools are connected, use wys_start_session once, then wys_get_session and wys_next_topic to resume the authenticated customer's existing record. Save each answer with wys_save_answer using the returned current revision; read it back with wys_get_session. Use wys_record_event for consequential decisions and results. Do not create a second CLI state file, choose a customer identity, or change a storage path through model arguments. Authentication and private storage binding belong to the configured server. A failed read must not trigger initialization of a replacement profile.
+
+Record independently verified account/reference evidence with wys_record_operator_evidence, bound to the current answers_sha256. Do not turn a customer's selection into operator proof. Before each operation, call wys_prepare_operation with the latest session and authority hashes. Apply its exact configuration, then check coverage with wys_verify_input_application. Preparation and input verification do not execute a provider, publisher or scheduler; use an actually connected authorized service for that separate action and record its actual result. A correction invalidates previous preparation and operator evidence.
+
 Run commands relative to this skill directory. Create PRIVATE_PATH outside public repositories:
 
 ```bash

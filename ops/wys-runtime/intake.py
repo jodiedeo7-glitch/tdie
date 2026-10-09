@@ -63,6 +63,19 @@ def record_answer(path, customer_id, question_id, value, evidence, answered_at,
         raise state.Blocked('QUESTION_UNANSWERED')
     if isinstance(value, str) and value.strip().lower() == 'no selection':
         raise state.Blocked('QUESTION_UNANSWERED')
+    if isinstance(value, dict):
+        if not value:
+            raise state.Blocked('QUESTION_UNANSWERED')
+        if 'selected' in value or 'detail' in value:
+            selected = value.get('selected', [])
+            detail = value.get('detail', '')
+            if not isinstance(selected, list) or not isinstance(detail, str):
+                raise state.Blocked('FORM_ANSWER_INVALID:' + question_id)
+            # Category briefs have their answers in the category branches.
+            # Other guided answers require a selection or explicit custom text.
+            category_answers = value.get('categories') if question_id == 'category_preferences' else None
+            if not selected and not detail.strip() and not category_answers:
+                raise state.Blocked('QUESTION_UNANSWERED')
     question_id, field, prompt = matching[0]
     current = state.load(path) if Path(path).exists() else {'answers': {}}
     envelope = {'value': copy.deepcopy(value), 'evidence': evidence,
@@ -108,7 +121,8 @@ def import_form(path, customer_id, answer_file, expected_revision, kind='custome
     if current['revision'] != expected_revision:
         raise state.Blocked('REVISION_CONFLICT')
     prepared = []
-    categories = incoming.get('categories', {}).get('value', {}).get('selected', [])
+    category_answer = incoming.get('categories', current['answers'].get('intake.categories', {}))
+    categories = category_answer.get('value', {}).get('selected', [])
     for question_id, field, prompt in QUESTIONS:
         if question_id not in incoming:
             continue

@@ -16,6 +16,12 @@ Private state belongs outside this public repository. `profile.py save` merges e
 
 Integration status: local components tested; no production adapter or scheduled task has been shown to invoke them. Native in-chat generation is the founder's requested mini-test route. No Higgsfield call or credit spend occurred in this repair. The original completed founder questionnaire remains unrecovered; actual category image tests have not run. Do not label the system working from these component results.
 
+## Runtime write leases and upgrade boundary
+
+Profile saves, spend reservations and spend-result writes share a nonblocking OS-held lease on `PRIVATE_PATH.write-lease`. The file remains on disk; its presence is not ownership. The OS releases ownership when a writer closes its descriptor or exits, including abnormal termination. Never delete that file while writers can run: removing it can split ownership across different inodes.
+
+This backend uses POSIX `fcntl.flock`; an unavailable backend blocks with `*_OS_LOCK_UNAVAILABLE`. Windows and network-filesystem behavior are not certified by the Linux component tests. Stop old-version writers before upgrading. Any existing legacy `PRIVATE_PATH.lock` marker blocks with `*_WRITE_IN_PROGRESS_LEGACY_LOCK_RECONCILE_REQUIRED`; reconcile its owner and any uncertain write before manually removing it. No lock is removed merely because it is old. The killed-subprocess regression proves new-lease recovery on this test filesystem; it does not certify migration of an unknown existing lock or a live service.
+
 ## Authorized replacement intake
 
 `intake-question-bank.json` maps required fields to their downstream steps. It contains no completed original questionnaire. Persist newly received answers immediately and retain their exact source. Recovered direct instructions use `source_kind: recovered_direct_instruction`, `answered_at: null`, and an accurate `recorded_at`; do not invent the historical answer time.
@@ -29,6 +35,14 @@ Integration status: local components tested; no production adapter or scheduled 
 `intake.py answer --profile PRIVATE_PATH --customer CUSTOMER_ID --question QUESTION_ID --answer-file PRIVATE_ANSWER_JSON --expected-revision REVISION` saves an answer immediately, reads it back, and returns the next question. Answer JSON contains the exact `value`, original `evidence`, and timezone-aware `answered_at`. Use `--kind founder` for an authorized founder replacement profile and `--kind fixture` only for explicitly synthetic tests. Customer data never goes in this public repo.
 
 Raw question answers and aggregate curation/visual fields are written in the same atomic profile revision. Grouped answers retain per-component source evidence and all previous history. Blank answers and the interface's `No selection` are unanswered. No-persona skips only the persona-world question; it does not establish that the no-persona generation variant works. Completed preference intake reports `live_setup: NOT_VERIFIED`, not operational readiness.
+
+## Customer plugin session integration
+
+The runtime reader accepts the private session file written by `plugins/wys-storefront/skills/wys-storefront/scripts/session.py`. It verifies the original file hash and questionnaire version, validates guided answers and category branches, and constructs a read-only view of the raw answers and grouped fields. Exact wording, source evidence, timestamps and history remain in that same authoritative session file. No second customer profile is created.
+
+Use that session path as `--profile` with the existing `prepare` and `verify` commands, and bind the expected profile hash to the session's original `sha256`. A subsequent session correction changes the hash and blocks reuse of old prepared input. Runtime `save` refuses to overwrite a plugin session with `SESSION_REQUIRES_PLUGIN_WRITER`; use the plugin's revisioned answer/event commands for those writes.
+
+This bridge does not convert preferences into verified accounts, asset rights, disclosure or remote state. Record actual operator evidence with the plugin's `operator` command, separately from preferences in the same session; bind it to the current answer hash. Preference changes invalidate those records and retain the old evidence in history. Missing evidence still blocks preparation with `SETUP_INCOMPLETE`. Actual provider/publishing adapters and remote durable storage remain unfinished. The eight bridge regressions require the customer plugin from PR30 in the repository layout; the combined checkout runs 68 runtime tests. A checkout without that plugin explicitly skips the bridge tests and does not establish integration success.
 
 ## Recorded image rejections
 

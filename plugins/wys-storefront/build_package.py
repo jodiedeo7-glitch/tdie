@@ -13,7 +13,10 @@ FILES = (
     'skills/wys-storefront/references/question-bank.json',
     'skills/wys-storefront/references/workflow.md',
     'skills/wys-storefront/scripts/session.py',
+    'server/session_server.py', 'server/requirements.txt',
+    'server/remote_server.py',
 )
+RUNTIME_FILES = ('profile.py', 'intake.py', 'session_bridge.py', 'intake-question-bank.json')
 
 
 def build(output):
@@ -28,6 +31,16 @@ def build(output):
         if not path.resolve().is_relative_to(ROOT):
             raise ValueError('PACKAGE_SOURCE_OUTSIDE_ROOT:' + name)
         entries[name] = path.read_bytes()
+    # Bundle guards from the SAME checkout, not a separately maintained copy.
+    runtime = ROOT.parents[1] / 'ops/wys-runtime'
+    for name in RUNTIME_FILES:
+        source = runtime / name
+        if source.is_symlink() or not source.is_file() or not source.resolve().is_relative_to(runtime.resolve()):
+            raise ValueError('PACKAGE_RUNTIME_SOURCE_INVALID:' + name)
+        entries['server/runtime/' + name] = source.read_bytes()
+    if json.loads(entries['server/runtime/intake-question-bank.json']) != json.loads(
+            entries['skills/wys-storefront/references/question-bank.json']):
+        raise ValueError('PACKAGE_QUESTION_BANK_MISMATCH')
     manifest = json.loads(entries['plugin.json'])
     if manifest['name'] != 'wys-storefront':
         raise ValueError('PACKAGE_IDENTITY_INVALID')
