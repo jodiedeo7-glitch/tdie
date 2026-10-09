@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T19:49:51.973Z",
+  "updated_at": "2026-10-09T19:52:28.324Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -28,7 +28,7 @@
       "reviewed_runtime_commit": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
       "reviewed_plugin_commit": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
       "latest_runtime_commit": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
-      "latest_plugin_commit": "46684ebb4d6e92d38d671b6c6f90996dd85e7c6a",
+      "latest_plugin_commit": "5e73d40ee0baeadd2a3cb17b8f916cb95f6b086e",
       "source_files": 23,
       "static_supported": [
         "Blank structured intake rejection",
@@ -104,6 +104,35 @@
       "status": "EXISTING_TASK_UPDATED_PAUSE_AND_EXACT_READBACK_VERIFIED",
       "evidence": "ops/recovery/WYS_FOUNDER_TASK_REPAIR_2026-10-09.json",
       "validation": "Existing task prompt now points to pinned current authority, category-specific roles and input checks. Obsolete two-image generation and two-pin schedule removed. Task remains paused; actual runtime execution is not verified."
+    },
+    {
+      "id": "PLUGIN-INSTALL-CATALOG-AND-BUILD",
+      "status": "DEVELOPMENT_SOURCE_COMMITTED_READBACK_MATCHED_INSTALLATION_DISABLED",
+      "pull_request": 30,
+      "head": "5e73d40ee0baeadd2a3cb17b8f916cb95f6b086e",
+      "files": [
+        ".agents/plugins/marketplace.json",
+        "plugins/wys-storefront/build_package.py",
+        "plugins/wys-storefront/README.md"
+      ],
+      "validation": {
+        "reproducible_development_zip_sha256": "f529af74f9b161fdbb79588b54d4fd5eb62ee14dc0aa44dd948e6cb8b4c9212c",
+        "checks": [
+          "Two builds identical",
+          "Archive entries read back",
+          "Current packaged source hashes verified",
+          "Private-file contamination excluded",
+          "Existing output preserved",
+          "Symlinked source rejected",
+          "Three GitHub source readbacks matched"
+        ]
+      },
+      "limits": [
+        "NOT_AVAILABLE catalog policy preserves release hold",
+        "Not installed or submitted",
+        "No MCP server or live execution adapters",
+        "Not independently rechecked"
+      ]
     }
   ],
   "disproved_claims": [
@@ -116,7 +145,7 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "Externally recheck the latest two followup repairs; then implement and verify actual account/provider/publishing/scheduler adapters and durable customer installation/delivery. Current source repairs do not certify release.",
+  "next_action": "Implement the real customer execution/server and durable-state architecture before any directory submission; complete actual host installation/onboarding and live path verification. Preserve release hold, generation pause and historical affiliate publications. Latest source changes require independent recheck; no test or task-source edit certifies customer release.",
   "local_validation": {
     "combined_runtime_tests_passed": 68,
     "packaged_session_tests_passed": 6,
@@ -135,5 +164,9 @@
     "queue_writes": 0,
     "scope": "This connected task inventory only; other conversation or Claude runtime not controlled.",
     "missing_customer_execution": "No customer ChatGPT installation or live provider/publisher/scheduler integration established."
-  }
+  },
+  "platform_sources": [
+    "https://developers.openai.com/plugins/build/plugins",
+    "https://developers.openai.com/plugins/deploy/submission"
+  ]
 }
