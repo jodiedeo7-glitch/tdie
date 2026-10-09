@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T21:35:15.943Z",
+  "updated_at": "2026-10-09T21:53:50.472Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -211,5 +211,17 @@
   "platform_sources": [
     "https://developers.openai.com/plugins/build/plugins",
     "https://developers.openai.com/plugins/deploy/submission"
-  ]
+  ],
+  "deployment_access": {
+    "status": "CLOUDFLARE_BROWSER_SIGN_IN_VERIFICATION_BLOCKED",
+    "observed_page": "https://dash.cloudflare.com/login",
+    "visible_error": "There was a problem with verification. Please reload and try again.",
+    "recovery": "One reload attempted; same verification error remains.",
+    "account_authenticated": false,
+    "cloudflare_plugin_search": "No Cloudflare plugin returned",
+    "cli_configuration": "No Cloudflare token/key/account/email environment configuration or installed wrangler observed; no secret values read",
+    "production_source": "Cloudflare worker tdie-site; actual cloudflare-migration wrangler source read",
+    "scope": "This browser and execution environment only; does not assert the user's own browser is signed out.",
+    "continuation": "Complete Cloudflare verification/sign-in in the offered same-tab handoff, then inspect actual hosting/account resources before configuring the private MCP deployment. Do not request another GitHub login."
+  }
 }
