@@ -23,3 +23,8 @@ body:has(.designed-banner) .sn-logo,body:has(.designed-banner) .sn-drip{display:
 /* No filled banner plate, black fills, ivory, lavender gradients, new logo artwork or generated images. */
 
 @media(max-width:760px){.banner-repo-icon{width:23px;height:23px}.banner-the{gap:7px}}
+/* The masthead's mobile navigation follows the same current brand rules. */
+body:has(.designed-banner) .sn-drawer{background:#fff!important}
+body:has(.designed-banner) .sn-drawer a{font-family:Inter,sans-serif!important;font-size:18px!important;min-height:48px!important;border-bottom-color:#edb4d0!important}
+body:has(.designed-banner) .sn-drawer a.sn-d-cta{background:#fff!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important;font-size:13px!important}
+body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-radius:999px!important;background:#fff!important}
