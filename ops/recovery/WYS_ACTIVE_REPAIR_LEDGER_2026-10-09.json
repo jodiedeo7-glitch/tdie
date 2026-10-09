@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T20:41:52.044Z",
+  "updated_at": "2026-10-09T20:43:09.707Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -69,18 +69,18 @@
     },
     {
       "id": "CALLER-INTEGRATION",
-      "status": "PLUGIN_SESSION_RUNTIME_READER_TESTED_LIVE_ADAPTERS_NOT_IMPLEMENTED",
-      "pull_request": 31,
-      "head": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
-      "validation": "Same file is reloaded; exact answers and evidence retained; corrections invalidate old input hashes; runtime writer cannot overwrite plugin state. Six bridge regressions passed; 65 combined runtime tests passed.",
-      "remaining": "Verified operator configuration, actual provider/publisher/scheduler callers and durable remote state."
+      "status": "MCP_CALLERS_IMPLEMENTED_AND_TESTED_LIVE_SERVICE_ADAPTERS_UNVERIFIED",
+      "pull_request": 30,
+      "head": "4f6cebf9bc4712813f75dc3acded6eba01b62fa8",
+      "validation": "Actual MCP tools call the same-file runtime guards; all nine operation preparations and correction invalidation passed in both checkout and extracted ZIP.",
+      "remaining": "Real OAuth/HTTPS/durable host configuration, installation, and live provider/publisher/scheduler execution."
     },
     {
       "id": "CUSTOMER-INSTALL-DELIVERY",
-      "status": "PACKAGED_CLI_TESTED_CHATGPT_INSTALL_AND_REAL_DELIVERY_NOT_VERIFIED",
+      "status": "MCP_AND_RELOCATED_ZIP_TESTED_CHATGPT_INSTALL_AND_REAL_DELIVERY_NOT_VERIFIED",
       "pull_request": 30,
-      "head": "46684ebb4d6e92d38d671b6c6f90996dd85e7c6a",
-      "validation": "Six relocated package CLI tests passed; 21 answers and ten category briefs retained; resume/correction/crash recovery verified on POSIX."
+      "head": "4f6cebf9bc4712813f75dc3acded6eba01b62fa8",
+      "validation": "13 plugin tests and 68 runtime tests passed; exact source tree readback matched. Installation and customer delivery remain unverified."
     },
     {
       "id": "CATEGORY-AND-PATH-E2E",
@@ -131,7 +131,7 @@
       "limits": [
         "NOT_AVAILABLE catalog policy preserves release hold",
         "Not installed or submitted",
-        "No MCP server or live execution adapters",
+        "Historical seven-file build had no MCP server; superseded by PRIVATE-MCP-SESSION-EXECUTION. Live service execution remains unverified.",
         "Not independently rechecked"
       ]
     },
