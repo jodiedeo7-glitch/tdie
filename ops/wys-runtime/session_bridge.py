@@ -93,6 +93,26 @@ def compile_session(session):
             group['component_evidence'][qid] = copy.deepcopy(envelope)
         else:
             compiled[field] = copy.deepcopy(envelope)
+    verifications = session.get('operator_verifications', {})
+    allowed = {'reference_assets', 'disclosure', 'connected_capabilities', 'state_location'}
+    if not isinstance(verifications, dict) or set(verifications) - allowed:
+        raise Blocked('SESSION_OPERATOR_FIELDS_INVALID')
+    from profile import digest
+    for field, verification in verifications.items():
+        if (not isinstance(verification, dict)
+                or verification.get('source_kind') != 'operator_verified'
+                or verification.get('verification_status') != 'VERIFIED'
+                or verification.get('answers_sha256') != digest(answers)
+                or not isinstance(verification.get('evidence'), str)
+                or not verification['evidence'].strip()
+                or verification.get('value') is None):
+            raise Blocked('SESSION_OPERATOR_VERIFICATION_INVALID')
+        try:
+            if datetime.fromisoformat(verification.get('answered_at')).tzinfo is None:
+                raise ValueError()
+        except (TypeError, ValueError) as error:
+            raise Blocked('SESSION_OPERATOR_TIMESTAMP_INVALID') from error
+        compiled[field] = copy.deepcopy(verification)
     return {'schema': 1, 'kind': 'customer', 'customer_id': session['customer_id'],
             'revision': session['revision'], 'sha256': session['sha256'],
             'answers': compiled, 'history': copy.deepcopy(session.get('history', [])),
