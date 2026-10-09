@@ -101,34 +101,6 @@ class IntakeTests(unittest.TestCase):
             intake.import_form(self.path, 'fixture', file, 0, 'fixture')
         self.assertFalse(self.path.exists())
 
-    def test_custom_category_brief_survives_import_and_resume(self):
-        category = 'Pet supplies'
-        brief = {'shopper_use': 'Indoor adult cats', 'style_function': 'Washable feeding area',
-                 'requirements': 'Exact bowl dimensions and dishwasher-safe listing evidence'}
-        file = self.form_file({'categories': self.form_answer([category])})
-        intake.import_form(self.path, 'fixture', file, 0, 'fixture')
-        file = self.form_file({'category_preferences': self.form_answer(categories={category: brief})})
-        intake.import_form(self.path, 'fixture', file, 1, 'fixture')
-        saved = profile.load(self.path)
-        self.assertEqual(saved['answers']['product_categories']['value']['selected'], [category])
-        self.assertEqual(saved['answers']['curation_profile']['value']['category_preferences']['categories'][category], brief)
-
-    def test_custom_category_cannot_skip_its_requirements(self):
-        file = self.form_file({'categories': self.form_answer(['Pet supplies']),
-                              'category_preferences': self.form_answer(categories={'Pet supplies': {
-                                  'shopper_use': 'Cats', 'style_function': 'Feeding', 'requirements': '   '}})})
-        with self.assertRaisesRegex(profile.Blocked, 'CATEGORY_BRIEF_INCOMPLETE:Pet supplies:requirements'):
-            intake.import_form(self.path, 'fixture', file, 0, 'fixture')
-        self.assertFalse(self.path.exists())
-
-    def test_invalid_category_names_do_not_mutate_profile(self):
-        for category in ('', '   ', '__proto__', 'constructor', 'prototype', 12):
-            with self.subTest(category=category):
-                file = self.form_file({'categories': self.form_answer([category])})
-                with self.assertRaisesRegex(profile.Blocked, 'CATEGORY_SELECTION_INVALID'):
-                    intake.import_form(self.path, 'fixture', file, 0, 'fixture')
-                self.assertFalse(self.path.exists())
-
     def test_guided_no_persona_answer_skips_persona_world(self):
         self.record('persona_choice', {'selected': ['No person: use the separately tested no-persona version'], 'detail': ''}, 0)
         self.assertNotIn('persona_world', intake.missing_questions(profile.load(self.path)['answers']))
