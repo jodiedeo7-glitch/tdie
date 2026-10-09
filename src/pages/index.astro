@@ -42,12 +42,12 @@ const differences = [
 
 // Proof by inspection. Every room is a live page, shown as it really looks.
 const rooms = [
-  { key: "course", room: "The course", t: "The Weekend Ecosystem™", p: "22 modules that turn what you already wrote into a website you own. It lives on the very site it teaches you to build.", href: WE.url, path: "/shop/weekend-ecosystem", go: "See The Weekend Ecosystem™" },
-  { key: "offer", room: "The offer", t: "The One-Sentence Offer tool", p: "Step one of the method, as a free tool. No email.", href: "/resources/one-sentence-offer", path: "/resources/one-sentence-offer", go: "Test your offer" },
-  { key: "funnel", room: "The funnel", t: "The Weekend Build Challenge", p: "Five free days by email, walking a stranger in order from nothing to an offer.", href: "/resources/weekend-build-challenge", path: "/resources/weekend-build-challenge", go: "Inspect the funnel" },
-  { key: "library", room: "The library", t: "Every article started as a lesson", p: "Each guide began as a Skool lesson and was turned into a page by the method it teaches.", href: "/learn/turn-skool-content-into-a-blog", path: "/learn/turn-skool-content-into-a-blog", go: "Read one, lesson to article" },
-  { key: "classroom", room: "The classroom", t: "The Skool room behind it", p: `Where ${community.members} women build the same thing, beside each other.`, href: "/membership#room", path: "/membership", go: "See the room" },
-  { key: "email", room: "The email", t: "The Weekly Edit, every Sunday", p: "Written once a week and delivered by the automation underneath this site.", href: "/newsletter", path: "/newsletter", go: "Read the letter" },
+  { key: "course", room: "The course", t: "The Weekend Ecosystem™", p: "Look inside the course before you buy: the full module list and a real lesson. Free, no email.", href: WE.preview, path: "/weekend-ecosystem/preview", go: "Look inside the course" },
+  { key: "offer", room: "Free tool", t: "The One-Sentence Offer tool", p: "Type what you sell and get it down to one clear sentence a buyer understands. Free.", href: "/resources/one-sentence-offer", path: "/resources/one-sentence-offer", go: "Try the free tool" },
+  { key: "funnel", room: "Free email challenge", t: "The Weekend Build Challenge", p: "Five free emails, one small build a day, from no idea to your first offer.", href: "/resources/weekend-build-challenge", path: "/resources/weekend-build-challenge", go: "See the challenge" },
+  { key: "library", room: "Free blog article", t: "Turn your Skool lessons into a blog", p: "A real article on this site that started as a Skool lesson. Read it free.", href: "/learn/turn-skool-content-into-a-blog", path: "/learn/turn-skool-content-into-a-blog", go: "Read the article" },
+  { key: "classroom", room: "The membership", t: "The Skool classroom", p: `See what's inside the membership, where ${community.members} women build their faceless businesses.`, href: "/membership#room", path: "/membership", go: "See the membership" },
+  { key: "email", room: "Free newsletter", t: "The Weekly Edit", p: "One useful idea every Sunday, sent by the same automation you'll learn to build.", href: "/newsletter", path: "/newsletter", go: "Read the newsletter" },
 ];
 
 // A curated few of the pillar guides. The full library lives at /learn.
@@ -515,11 +515,11 @@ const jsonLd = {
 #method .step p{padding:0 20px!important;margin:0!important;font-size:14.5px!important;line-height:1.55!important;color:#4A3A40!important}
 #method .step p b{display:block;margin-top:12px!important;padding-top:12px;border-top:1px dashed #E891B6;font-size:14.5px;color:#B8245F!important}
 #method .scale .dot{display:none!important}
-#method .scale{display:block!important;margin:26px 0 0!important;padding:22px 28px!important;border-radius:999px;background:linear-gradient(110deg,#E8418A,#B8245F);border:0;text-align:center;box-shadow:0 18px 40px -26px rgba(194,24,91,.7)}
+#method .scale{display:block!important;margin:30px 0 0!important;padding:22px 0 0!important;border:0;border-top:1px solid #C8A96A;border-radius:0;background:none;box-shadow:none;text-align:center}
 #method .scale p{margin:0!important;padding:0!important}
-#method .scale .tl{display:block;font:600 clamp(22px,2.4vw,30px)/1.2 Newsreader,Georgia,serif!important;color:#fff!important}
-#method .scale .ai,#method .scale .ai b{display:block;margin-top:6px;font-size:14.5px;color:#FFE3F0!important}
-#method .scale .ai b{display:inline;color:#fff!important}
+#method .scale .tl{display:block;font:600 clamp(22px,2.4vw,30px)/1.2 Newsreader,Georgia,serif!important;color:#1A1417!important}
+#method .scale .ai,#method .scale .ai b{display:block;margin-top:6px;font-size:14.5px;color:#4A3A40!important}
+#method .scale .ai b{display:inline;color:#1A1417!important}
 #method .scale,#method .scale *{text-align:center!important}
 .faceless{display:grid!important;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;gap:clamp(28px,4vw,56px);align-items:center;max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 24px!important;background:none!important;border:0!important}
 .faceless-photo{min-height:0!important;height:auto!important;aspect-ratio:4/5;max-height:560px;border:8px solid #FFD7E9!important;outline:0!important;border-radius:24px 8px 24px 8px!important;overflow:hidden;box-shadow:0 22px 48px -30px rgba(194,24,91,.55)}
@@ -532,8 +532,23 @@ const jsonLd = {
 .faceless .refuse strong{font-size:18px!important}
 .faceless .refuse span{font-size:14px!important}
 @media(max-width:860px){.faceless{grid-template-columns:minmax(0,1fr)!important}.faceless-photo{aspect-ratio:4/3;max-height:none}.faceless .refuse{grid-template-columns:minmax(0,1fr)}}
+.flag .for,.flag .ba,.flag .evidence,.flag .buy,.flag .e-actions,.flag-visual .e-artifact,.flag-visual .credit{display:none!important}
+.flag{padding:clamp(48px,6vw,80px) 0!important}
+.flag-grid{display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)!important;gap:clamp(24px,4vw,48px)!important;align-items:center!important}
+.flag-visual{position:relative!important;min-height:0!important}
+.flag-visual .photo{margin:0!important;aspect-ratio:4/5;max-height:520px;overflow:hidden;border-radius:24px 8px 24px 8px!important}
+.flag-visual .photo img{width:100%!important;height:100%!important;object-fit:cover!important}
+.we-callout{margin:0!important}
+@media(max-width:860px){.flag-grid{grid-template-columns:minmax(0,1fr)!important}.flag-visual .photo{aspect-ratio:16/10}}
+.letter{display:grid!important;grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr)!important;gap:clamp(24px,4vw,48px)!important;align-items:center!important;max-width:1000px!important;margin:0 auto!important;border:0!important}
+.letter .e-figure{max-height:360px;aspect-ratio:4/5;overflow:hidden;border-radius:24px 8px 24px 8px!important}
+.letter .e-figure img{width:100%;height:100%;object-fit:cover}
+.letter form,.letter .ff,.letter [class*="freebie"]{padding:24px 26px!important;box-sizing:border-box}
+@media(max-width:760px){.letter{grid-template-columns:minmax(0,1fr)!important}.letter .e-figure{aspect-ratio:16/9;max-height:none}}
+.pick-card--hot .pick-img img{object-position:center top!important}
+.letter .e-kick{display:none!important}
 @media(max-width:980px){#method .stair{grid-template-columns:repeat(2,minmax(0,1fr))!important}#method .stair::before{display:none!important}}
-@media(max-width:600px){#method .stair{grid-template-columns:minmax(0,1fr)!important}#method .scale{border-radius:24px}}
+@media(max-width:600px){#method .stair{grid-template-columns:minmax(0,1fr)!important}}
 .tdie-manifesto{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;max-width:none!important;margin:0!important;padding:22px 24px!important;border:0!important;background:linear-gradient(110deg,#FFD7E9,#F1EAFB);text-align:center}
 .tdie-manifesto-kicker{display:block!important;max-width:none!important;margin:0!important}
 .tdie-manifesto p{margin:0!important;font:600 clamp(22px,2.4vw,30px)/1.2 Newsreader,Georgia,serif!important;letter-spacing:-.01em!important;color:#1A1417}
@@ -721,10 +736,10 @@ const jsonLd = {
       <div class="e-wrap">
         <div class="show-head">
           <div>
-            <p class="e-kick">Real pages. Real outputs. Open the evidence.</p>
-            <h2 class="e-d2" id="show-h">Don't take our word for it. <em>Look inside.</em></h2>
+            <p class="e-kick">Free to look</p>
+            <h2 class="e-d2" id="show-h">See the real business <em>before you buy anything.</em></h2>
           </div>
-          <p>The website is the case study. These are real pages, real workflows and real outputs from the business itself. Open anything that interests you.</p>
+          <p>Six real pages from this site: the course, a free tool, the free email challenge, a blog article, the membership and the newsletter. Open any one and see exactly what you'd be building.</p>
         </div>
         <ul class="rooms">
           {rooms.map((r, i) => (
@@ -836,7 +851,7 @@ const jsonLd = {
             </div>
           </article>
           <article class="pick-card pick-card--hot">
-            <a class="pick-img" href={WE.url} tabindex="-1" aria-hidden="true"><img src="/images/we/module-list.jpg" alt="" width="1100" height="1191" decoding="async" /><span class="pick-price">{WE.price}</span></a>
+            <a class="pick-img" href={WE.url} tabindex="-1" aria-hidden="true"><img src="/images/we/hook-blog-posts.jpg" alt="" width="1200" height="1490" decoding="async" /><span class="pick-price">{WE.price}</span></a>
             <div class="pick-body">
               <p class="pick-if">"I know what to sell, but nobody finds me."</p>
               <h3>{WE.name}</h3>
