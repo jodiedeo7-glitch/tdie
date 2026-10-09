@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T16:30:00Z",
+  "updated_at": "2026-10-09T16:33:00Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation on isolated repair branches; no external audit submission or account interaction.",
@@ -18,14 +18,18 @@
       "id": "INTAKE-EMPTY-STRUCTURED",
       "status": "IMPLEMENTED_LOCAL_TESTS_PASS_UNMERGED",
       "pull_request": 31,
-      "head": "ee83e369761f719b2325c22f14c8041d5ee36924",
-      "tests": 57,
+      "head": "dc9df092d50dfc0c4eeb3a78131adb5ffb5a7398",
+      "tests": 59,
       "external_recheck": "PENDING"
     },
     {
       "id": "PROFILE-ORPHAN-LOCK",
-      "status": "IMPLEMENTATION_IN_PROGRESS",
-      "requirement": "Recover after writer process death without deleting locks solely by age; retain live-writer exclusion."
+      "status": "IMPLEMENTED_POSIX_TESTS_PASS_UNMERGED",
+      "requirement": "Recover after writer process death without deleting locks solely by age; retain live-writer exclusion.",
+      "pull_request": 31,
+      "head": "dc9df092d50dfc0c4eeb3a78131adb5ffb5a7398",
+      "validation": "Live subprocess blocks concurrent writes; SIGKILL releases OS lease; subsequent save succeeds. 59 runtime tests passed. GitHub source readback matched.",
+      "limits": "Legacy marker migration, Windows and network filesystems remain unverified. No lock deleted by age."
     },
     {
       "id": "CALLER-INTEGRATION",
@@ -53,5 +57,5 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "Finish safe profile-lock recovery on the existing code-repair branch, validate active-writer exclusion and abnormal-process-exit recovery, commit/read back. Keep external review separate; never treat local tests as an independent verdict."
+  "next_action": "Complete the stopped correction in the existing Gemini review; recheck PR 31 and include the new plugin snapshot from PR 30. Finish actual caller/customer installation integration and prove full customer paths before lifting release hold. No second audit or new sign-in flow."
 }
