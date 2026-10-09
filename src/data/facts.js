@@ -45,7 +45,7 @@ export const weekendEcosystem = {
 };
 
 export const community = {
-  members: "1,200+",
+  members: "955",
 };
 
 // Counts resolve from the library data itself, so the homepage, About,

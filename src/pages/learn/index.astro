@@ -193,6 +193,23 @@ const totalPieces = pillars.length + articles.length;
   .bl-q-go{margin-top:auto;padding-top:6px;font:700 11px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--e-pink)}
   @media(max-width:1000px){.bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bl-quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:600px){.bl-grid,.bl-quick{grid-template-columns:minmax(0,1fr)}.bl-btn{align-self:stretch;justify-content:center;min-height:48px}}
+  .start2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:center;margin:0 0 56px;padding:18px;background:linear-gradient(125deg,#FFE3F0,#F3ECFC);border:2px solid #E891B6;border-radius:24px 8px 24px 8px}
+  .start2-img{position:relative;display:block;aspect-ratio:10/7;border-radius:16px 4px 16px 4px;overflow:hidden}
+  .start2-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .start2-badge{position:absolute;left:14px;top:14px;transform:rotate(-6deg);background:#fff;color:var(--e-pink-t);border:2px dashed #E891B6;border-radius:999px;padding:8px 14px;font:700 11px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  .start2-body{padding:6px 10px}
+  .start2-k{font:700 11px/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--e-pink-t);margin:0 0 8px}
+  .start2 h2{font:600 30px/1.12 Newsreader,Georgia,serif!important;margin:0 0 14px!important;color:#1A1417}
+  .start2-list{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+  .start2-list li{position:relative;padding-left:28px;font-size:15.5px;color:#1A1417}
+  .start2-list li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--e-pink);color:#fff;font:700 12px/20px Inter,sans-serif;text-align:center}
+  .start2-meta{font-size:13.5px;color:#4A3A40;margin:0 0 16px}
+  @media(max-width:760px){.start2{grid-template-columns:minmax(0,1fr)}}
+  .lib-hero-art{display:none!important}
+  .lib-in{align-items:center!important}
+  .sec-head{grid-template-columns:minmax(0,1fr)!important;gap:8px!important}
+  .sec-head .note{max-width:52em!important}
+  .bl-start{position:absolute;right:14px;top:16px;transform:rotate(5deg);background:#fff;color:var(--e-pink-t);border:2px dashed #E891B6;border-radius:999px;padding:7px 12px;font:700 10.5px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 </style>
   <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
 <style is:inline set:html={visualStyles} />
@@ -217,20 +234,10 @@ const totalPieces = pillars.length + articles.length;
   </section>
 
   <div class="wrap">
-    <div class="start">
-      <span class="start-n" aria-hidden="true">01</span>
-      <div>
-        <span class="start-k">New here</span>
-        <h2>Start with number one.</h2>
-        <p>It's the widest of the {LIB.guidesWord}, and everything below it assumes you've read it. Twenty minutes, and you leave with a niche, an offer and a traffic source.</p>
-      </div>
-      <a class="start-go" href={`/learn/${pillars[0].slug}`}>Read guide 01 <span aria-hidden="true">→</span></a>
-    </div>
-
     <div class="sec-head">
       <div class="lbl">Fourteen free guides</div>
       <h2>The step-by-step guides</h2>
-      <p class="note">New to this? Each guide is a free, start-to-finish walkthrough of one part of an online business, written for beginners. Read them in order and they build into a working business. Each one comes with a free kit of templates and checklists.</p>
+      <p class="note">Free, written for beginners, and numbered in order: start with 01 and each guide builds on the last. Every guide comes with a free kit of templates and checklists.</p>
     </div>
 
     <div class="bl-grid">
@@ -238,7 +245,7 @@ const totalPieces = pillars.length + articles.length;
         <article class="bl-card">
           <a class="bl-img" href={`/learn/${p.slug}`} tabindex="-1" aria-hidden="true">
             <img src={p.img} alt="" decoding="async" width="600" height="420" />
-            <span class="bl-no">{p.n}</span>
+            <span class="bl-no">{p.n}</span>{p.n === "01" && <span class="bl-start">Start here</span>}
           </a>
           <div class="bl-body">
             <p class="bl-meta"><span class="bl-cat">{p.category}</span><span>{p.readTime}</span></p>

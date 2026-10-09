@@ -234,8 +234,57 @@
 .wz-complete-header{padding-top:0}
 @media(max-width:700px){.wz-page-top-icing{height:80px;background-size:650px auto}.wz-complete-header{padding-top:0}}
 
+/* Readable Polaroid captions. */
+.wys-world .wz-polaroid figcaption{font:600 15px/1.2 Inter,sans-serif!important;letter-spacing:.01em;color:#B8245F;height:auto;min-height:48px;padding:9px 3px;text-align:center;text-wrap:balance}
+.wys-world .wys-photo figcaption,.wys-world .wx-collage-main>span{font:600 15px/1.35 Inter,sans-serif!important;color:#B8245F;text-align:center}
+@media(max-width:700px){.wys-world .wz-polaroid figcaption{font-size:13px!important;min-height:46px;padding:8px 2px}}
+
+/* One image treatment per output: the artwork sits directly on the shelf. */
+.wys-world .wb-category{background:transparent!important;padding:0!important;border-radius:0!important}
+.wys-world .wb-category-photo{background:transparent!important;border-radius:0!important;padding:0!important}
+.wys-world .wb-category-photo img{border-radius:0!important;transform:none!important}
+.wys-world .wz-social-graphic .wz-social-photo{background:transparent;padding:0;border:0;border-radius:0}
+.wys-world .wb-category h3{font-size:22px!important;line-height:1.25!important;text-wrap:balance}
+.wys-world .wz-category-action{justify-content:center;gap:12px}
+.wys-world .wz-category-action b{margin-left:0}
+
+/* Toolkit copy and titles use readable, consistent type without nested mats. */
+.wys-world .wx-kit-band{background:#F1EAFB}
+.wys-world .wz-kit-heading h2{font:600 36px/1.18 Inter,sans-serif!important;color:#B8245F;margin:0 auto 12px;max-width:none}
+.wys-world .wz-kit-heading>p:not(.wys-label){font:400 16px/1.65 Inter,sans-serif;color:#1A1417;max-width:60ch}
+.wys-world .wx-kit-grid{align-items:stretch}
+.wys-world .wx-guide{background:#fff!important;min-width:0}
+.wys-world .wx-guide summary{height:100%;padding:20px;display:flex;flex-direction:column}
+.wys-world .wz-guide-visual{background:transparent!important;padding:0;margin-bottom:18px;gap:10px}
+.wys-world .wx-guide .wb-guide-image{width:100%;height:240px;max-width:100%;object-fit:contain;border:0;outline:0;box-shadow:none;transform:none;background:transparent}
+.wys-world .wx-guide-number{position:static!important;align-self:flex-start;width:auto!important;height:auto!important;padding:0!important;background:transparent!important;box-shadow:none!important}
+.wys-world .wx-guide-title{font:600 21px/1.3 Inter,sans-serif;color:#1A1417;margin-bottom:12px;text-wrap:balance}
+.wys-world .wz-guide-benefit{font:400 15px/1.65 Inter,sans-serif;min-height:0;margin-bottom:20px}
+.wys-world .wx-guide .wx-guide-tag{margin-top:auto;background:white!important;border:1px solid #D62E73!important;color:#1A1417!important}
+.wys-world .wx-guide h3{font:600 20px/1.35 Inter,sans-serif!important;color:#B8245F}
+.wys-world .wx-guide[open] summary{height:auto}
+@media(max-width:700px){.wys-world .wz-kit-heading h2{font-size:29px!important}.wys-world .wx-kit-grid{grid-template-columns:minmax(0,1fr)}.wys-world .wx-guide summary{padding:20px}.wys-world .wx-guide .wb-guide-image{height:240px}.wys-world .wx-guide-title{font-size:21px}.wys-world .wz-guide-benefit{font-size:16px}}
+
+/* White photograph paper needs a visible pink or lavender setting. */
+.wys-world .wx-package{background:#ffe3f0!important}
+.wys-world .wx-package-lav{background:#e7d5f7!important}
+.wys-world .wx-package-tour{background:transparent!important}
+.wys-world .wx-article-preview{background:#e7d5f7;padding:22px!important}
+.wys-world .wx-article-cover{gap:24px;align-items:start;grid-template-columns:minmax(0,.65fr) minmax(0,1fr)}
+.wys-world .wx-article-cover>.wys-photo{max-width:300px;margin:0;justify-self:center}
+.wys-world .wx-article-cover>div{padding-top:12px}
+.wys-world .wz-article-story,.wys-world .wz-article-story:nth-of-type(even){background:transparent;padding:22px 0!important;gap:24px;margin:18px 0}
+.wys-world .wx-guide{background:#ffe3f0!important}
+.wys-world .wx-guide.guide-1{background:#e6d3f7!important}
+.wys-world .wx-guide.guide-2{background:#ffd5e8!important}
+.wys-world .wz-finale-photos figcaption{font:600 13px/1.3 Inter,sans-serif!important;text-align:center}
+@media(max-width:700px){.wys-world .wx-article-preview{padding:16px!important}.wys-world .wx-article-cover{grid-template-columns:minmax(0,1fr);gap:18px}.wys-world .wx-article-cover>div{padding-top:0}.wys-world .wx-article-cover>.wys-photo{max-width:260px}.wys-world .wz-finale-photos figcaption{font-size:11px}}
+@media(min-width:701px){.wz-complete-header .wz-polaroid-stack{height:675px}.wz-complete-header .wz-stack-pink .wz-polaroid-0{left:0;top:105px}.wz-complete-header .wz-stack-pink .wz-polaroid-1{right:0;top:35px}.wz-complete-header .wz-stack-pink .wz-polaroid-2{left:50%;top:350px}.wz-complete-header .wz-stack-lavender .wz-polaroid-0{left:0;top:40px}.wz-complete-header .wz-stack-lavender .wz-polaroid-1{right:0;top:210px}.wz-complete-header .wz-stack-lavender .wz-polaroid-2{left:0;top:370px}}
+.wys-world .wx-kit-band>.wys-section{padding-block:32px}
+
 /* Lighter heading lettering; no heavy rounded display font. */
 .wys-world h1,.wys-world h2,.wys-world h3,.wys-world h1 em,.wys-world h2 em,.wys-world h3 em{font-family:Inter,sans-serif!important;font-weight:600!important;font-style:normal!important;letter-spacing:-.02em!important}
 .wys-world .wz-complete-header .wz-hero-copy h1{font-family:Inter,sans-serif!important;font-weight:600!important;font-size:38px!important;line-height:1.16!important;text-shadow:none;max-width:18ch;margin-inline:auto}
 .wys-world .wz-stack-label{font-family:Inter,sans-serif!important;font-weight:600!important;font-size:22px!important}
 @media(max-width:700px){.wys-world .wz-complete-header .wz-hero-copy h1{font-size:30px!important;max-width:21ch}.wys-world .wz-stack-label{font-size:19px!important}}
+

@@ -99,10 +99,10 @@ const schema = [{
       </div>
       <figure class="mb-hero-fig e-rise e-rise-2">
         <div class="mb-hero-frame">
-          <img src="/images/membership-jodie.webp" width="460" height="552" fetchpriority="high" decoding="async"
-               alt="A woman in a coral sweater working on a laptop at a sunlit kitchen counter, pink roses on the windowsill behind her" />
+          <img class="mb-skool" src="/images/pages/skool-group.webp" fetchpriority="high" decoding="async"
+               alt="The Digital Income Edit™ group on Skool: build your online business without becoming an influencer, with step-by-step lessons, AI tools for your brand and a supportive community" />
         </div>
-        <figcaption class="e-credit mb-hero-credit">The classroom sits inside <b>the business it teaches</b></figcaption>
+        <figcaption class="e-credit mb-hero-credit">The real group <b>on Skool</b></figcaption>
       </figure>
     </div>
   </section>
@@ -247,31 +247,17 @@ const schema = [{
       </div>
 
       <div class="mb-dfy-side">
-        <figure class="mb-cal e-unveil" aria-labelledby="cal-cap">
-          <div class="mb-cal-head" aria-hidden="true">
-            <span class="e-giant mb-cal-big">31</span>
-            <span class="mb-cal-hl">
-              <span class="mb-cal-title">Your month</span>
-              <span class="mb-cal-count">31 of 31 days written</span>
-            </span>
+        <figure class="mb-feed">
+          <div class="mb-feed-phone">
+            <div class="mb-feed-top"><span class="mb-feed-av"></span><b>Your account</b><span>31 posts this month</span></div>
+            <div class="mb-feed-grid">
+              {["/images/home/flagship-attic-560.webp","/images/home/hero-pink-knit-desk-480.webp","/images/we/hook-blog-posts-480.webp","/images/home/founder-window-seat-640.webp","/images/we/cover-kitchen-480.webp","/images/home/build-armchair-laptop-560.webp"].map((src, i) => (
+                <span class="mb-feed-tile"><img src={src} alt="" decoding="async" /><em>Day {i + 1}</em></span>
+              ))}
+            </div>
           </div>
-          <div class="mb-cal-body" aria-hidden="true">
-            {weeks.map((wk, i) => (
-              <div class="mb-cal-row">
-                <span class="mb-cal-wk">Week {i + 1}</span>
-                <div class="mb-cal-days">
-                  {wk.map((n) => (
-                    <span class="mb-cal-day"><span class="mb-cal-n">{n}</span><span class="mb-cal-post"></span><span class="mb-cal-thr"></span></span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <figcaption id="cal-cap" class="mb-cal-cap">
-            <span class="mb-key"><span class="mb-key-post" aria-hidden="true"></span>Finished post</span>
-            <span class="mb-key"><span class="mb-key-thr" aria-hidden="true"></span>Two Threads posts</span>
-            <span class="mb-key-note">One month, 31 days, released a week at a time around the 1st.</span>
-          </figcaption>
+          <span class="mb-feed-sticker">31 of 31 days written</span>
+          <figcaption>Every day comes with the caption, the hook, the image prompt and two Threads posts. Photos shown are Tommy Kate, the brand's AI persona.</figcaption>
         </figure>
 
         <dl class="mb-dfy-facts">
@@ -310,7 +296,7 @@ const schema = [{
           <p class="e-lede">Not before. Start with the membership that fits the build you are in now. Either one is free for {days}, and both leave from inside the app whenever you like.</p>
           <div class="e-actions">
             <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
-            <a class="e-link" href="#room">See what happens inside the room</a>
+            <a class="e-link" href="https://www.skool.com/thedigitalincomeedit/about">Peek inside the Skool group first, free</a>
           </div>
         </div>
       </div>
@@ -536,5 +522,26 @@ const schema = [{
       .mb-room-list li{grid-template-columns:48px minmax(0,1fr);gap:12px}
       .mb-room-n{font-size:30px}
     }
-</style>
+    /* 8 Oct 2026: real-photo feed instead of the drawn calendar */
+    .mb-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important}
+    .mb-hero-fig{max-width:640px!important;margin-top:0!important}
+    .mb-hero-frame{padding:0!important}.mb-hero-frame::before{display:none!important}
+    .mb-hero-frame img.mb-skool{aspect-ratio:auto!important;height:auto!important;border-radius:16px!important;border:2px solid #E891B6}
+    .mb-close{padding-top:32px!important;padding-bottom:32px!important}
+    .mb-close-rule{display:none!important}
+    .mb-close-grid{align-items:center!important}
+    .mb-feed{position:relative;margin:0;max-width:440px;justify-self:center}
+    .mb-feed-phone{background:#fff;border:2px solid #E891B6;border-radius:28px;padding:14px;box-shadow:0 26px 54px -30px rgba(194,24,91,.55)}
+    .mb-feed-top{display:flex;align-items:center;gap:10px;padding:4px 6px 12px;font-size:13px;color:#1A1417}
+    .mb-feed-top span:last-child{margin-left:auto;color:#B8245F;font-weight:600}
+    .mb-feed-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FF8AC2,#D62E73)}
+    .mb-feed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;border-radius:14px;overflow:hidden}
+    .mb-feed-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:#FFD7E9}
+    .mb-feed-tile img{width:100%;height:100%;object-fit:cover;display:block}
+    .mb-feed-tile em{position:absolute;left:6px;bottom:6px;font:700 10px/1 Inter,sans-serif;font-style:normal;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#B8245F;padding:5px 7px;border-radius:999px}
+    .mb-feed-sticker{position:absolute;right:-14px;top:-16px;transform:rotate(6deg);background:#D62E73;color:#fff;font:700 11px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:999px;box-shadow:0 0 0 4px #fff,0 10px 20px -8px rgba(194,24,91,.6)}
+    .mb-feed figcaption{font-size:13px;line-height:1.5;color:#4A3A40!important;margin-top:12px;text-align:center}
+    .mb-dfy-lead{font-size:19px!important;line-height:1.45!important}
+    @media(max-width:560px){.mb-feed-sticker{right:6px}}
+  </style>
 </PageLayout>

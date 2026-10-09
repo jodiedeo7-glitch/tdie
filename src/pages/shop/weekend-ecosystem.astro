@@ -51,9 +51,9 @@ const life = [
 ];
 
 const proof = [
-  { t: "How to Build a Faceless Digital Business", u: "/learn/how-to-build-a-faceless-digital-business", n: "3,000+ words" },
-  { t: "The Complete Pinterest Marketing Guide", u: "/learn/complete-pinterest-marketing-guide", n: "Pillar + cluster" },
-  { t: "Automating Your Online Business", u: "/learn/automating-your-online-business", n: "Built from a lesson" },
+  { t: "How to Build a Faceless Digital Business", u: "/learn/how-to-build-a-faceless-digital-business", n: "3,000+ words", img: "/images/library-cards/hero-office-wide-01.webp" },
+  { t: "The Complete Pinterest Marketing Guide", u: "/learn/complete-pinterest-marketing-guide", n: "Pillar + cluster", img: "/images/library-cards/detail-phone-pinterest-grid-01.webp" },
+  { t: "Automating Your Online Business", u: "/learn/automating-your-online-business", n: "Built from a lesson", img: "/images/library-cards/flatlay-automation-systems.webp" },
 ];
 
 const claudeDoes = [
@@ -135,8 +135,8 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
     <div class="wx-collage">
       <figure class="wx-polaroid">
         <span class="wx-tape wx-tape-l" aria-hidden="true"></span>
-        <img src="/images/we/cover-sofa.jpg" alt="A woman on a farmhouse porch at sunrise holding a pink mug, the red barn and pasture behind her." loading="eager" width="1200" height="1490" />
-        <figcaption>Your work has a home beyond the feed.</figcaption>
+        <img src="/images/we/hook-blog-posts.jpg" alt="The Weekend Ecosystem™: you already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
+        <figcaption>You already wrote the blog posts.</figcaption>
       </figure>
       <div class="wx-collage-peek"><WeBundle variant="peek" /></div>
       <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>No code<br />no camera</span></span>
@@ -190,7 +190,7 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
     <div class="wx-proof">
       {proof.map((p) => (
         <a class="wx-card" href={p.u}>
-          <span class="wx-proof-n">{p.n}</span>
+          {p.img && <img class="wx-proof-img" src={p.img} alt="" decoding="async" />}<span class="wx-proof-n">{p.n}</span>
           <span class="wx-proof-t">{p.t}</span>
           <span class="wx-proof-go">Read it →</span>
         </a>
@@ -286,17 +286,15 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
             <span class="wx-obj-n">{String(o.n).padStart(2, "0")}</span>
             <p class="wx-obj-q">{o.q}</p>
             {o.a.map((para) => <p>{para}</p>)}
-            {o.id === "no-refunds" && <Testimonial variant="full" review={tinaCommunity} eyebrow="What a member said, without being asked" />}
-            {o.id === "no-refunds" && (
-              <p><a class="wx-link" href="/weekend-ecosystem/preview">Look inside first →</a></p>
-            )}
             {o.kit && showKit && (
               <p data-kit-deadline={KIT_DEADLINE}><strong>One real deadline:</strong> buy by Sunday, October 4, 11:59 pm Eastern, on one payment or three, and The Keep It Running Kit comes with it. That's six of my paid guides. After that it's gone.</p>
             )}
           </div>
-          {o.id === "cant-build" && <Testimonial variant="full" eyebrow="What a member built with it" />}
         </>
       ))}
+    </div>
+    <div class="wx-obj-proof">
+      <Testimonial variant="line" />
     </div>
 
     <div class="wx-card wx-mid">
@@ -336,7 +334,7 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
   <!-- CLOSE -->
   <section class="wx-card wx-close">
     <div class="wx-close-img">
-      <img src="/images/pages/we-close-kitchen-1200.webp" srcset="/images/pages/we-close-kitchen-800.webp 800w, /images/pages/we-close-kitchen-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Tommy Kate, the brand's AI persona, typing at a farmhouse kitchen table in a cream hoodie, a pink tumbler beside her laptop and a golden retriever at her feet." loading="lazy" width="1200" height="1489" style="object-position:50% 40%" />
+      <img src="/images/we/module-list.jpg" alt="The real module list inside The Weekend Ecosystem™" width="1100" height="1191" loading="lazy" />
     </div>
     <div class="wx-close-body">
       <span class="wx-kicker">One weekend from here</span>
@@ -367,7 +365,7 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
         "description": "A 22-module course that turns content you have already made into a website and blog on a domain you own, over one weekend, with Claude AI doing the building.",
         "brand": { "@type": "Brand", "name": "The Digital Income Edit™" },
         "url": "https://www.thedigitalincomeedit.com/shop/weekend-ecosystem",
-        "image": "https://www.thedigitalincomeedit.com/images/we/cover-sofa.jpg",
+        "image": "https://www.thedigitalincomeedit.com/images/we/hook-blog-posts.jpg",
         "offers": {
           "@type": "Offer",
           "price": "97.00",

@@ -1,5 +1,4 @@
 ---
-import WysDecor from './WysDecor.astro';
 import WysSocialGraphic from './WysSocialGraphic.astro';
 import {Image} from 'astro:assets';
 import {packages} from '../data/wys-packages.js';
@@ -9,5 +8,4 @@ const {look=0}=Astro.props;const e=packages[look];
  <div class="wx-collage-main"><Image src={e.photos[2].src} alt={e.photos[2].alt} widths={[320,480,720]} sizes="(max-width:700px) 70vw, 340px" loading="eager"/><span>{e.name} / lifestyle photograph</span></div>
  <div class="wx-collage-pin"><WysSocialGraphic photo={e.photos[0]} title={e.pins[0].headline} example={e.name} index={0} format="pin"/><span>PIN / 01</span></div>
  <div class="wx-collage-slide"><WysSocialGraphic photo={e.photos[1]} title={e.slides[1].headline} example={e.name} index={1}/><span>CAROUSEL / 02</span></div>
- <WysDecor class="wb-hero-flower"/><span class="wx-seal">Pretty Wicked<br/><strong>Photos &<br/>posts</strong></span>
 </div>

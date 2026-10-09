@@ -48,3 +48,6 @@ Done 4 October 2026 (Decision 128): TDIE_CANON.md §8 type and Dark Chocolate ro
 
 ### Explicit decoration rule — 8 October 2026
 Jodie hates bows. Never add a bow to her pages, graphics or other designs unless she explicitly requests one. Reference-image bows do not grant permission.
+
+### Buttons and gradients — 8 October 2026 (founder, standing)
+Never use a filled hot-pink pill button, and never use pink/lavender gradient or ombre backgrounds, on anything made for Jodie. Black boxes and black buttons are also rejected. Current site buttons: white pill, thin pink outline, near-black text, small pink sparkle. Backgrounds are flat (cream, white, soft blush). Product sections show the real product (course covers, module list, real Skool group), never an unrelated Tommy Kate photo. Keep sections compact; no oversized text or empty space.

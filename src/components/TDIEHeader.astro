@@ -1,0 +1,31 @@
+---
+import {getImage} from 'astro:assets';
+import icingSource from '../assets/wys/pink-icing-continuous.png';
+import '../styles/wys-fonts.css';
+const icing=await getImage({src:icingSource,format:'webp',quality:90});
+---
+<div class="tdie-masthead" aria-label="The Digital Income Edit decorative brand header">
+ <div class="tdie-masthead-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true" />
+ <div class="tdie-masthead-inner">
+  <figure class="tdie-masthead-photo tdie-masthead-left"><img src="/images/home/flagship-attic-560.webp" alt="Tommy Kate in the pink attic workspace" width="560" height="840" loading="eager" /></figure>
+  <a class="tdie-masthead-brand" href="/" aria-label="The Digital Income Edit home"><span class="tdie-masthead-small">Welcome to your next chapter</span><span class="tdie-masthead-name">The Digital<br/>Income <span>Edit™</span></span><span class="tdie-masthead-tagline">Build Your Business Backwards.<br/>Scale It Forwards.</span></a>
+  <figure class="tdie-masthead-photo tdie-masthead-right"><img src="/images/pages/about-porch-red-barn-560.webp" alt="Tommy Kate on the farmhouse porch" width="560" height="840" loading="eager" /></figure>
+ </div>
+</div>
+<style>
+ .tdie-masthead{position:relative;isolation:isolate;overflow:hidden;background:#ffd5e8;border-bottom:3px solid #f08bb9;padding:65px 22px 22px}
+ .tdie-masthead:before,.tdie-masthead:after{content:'';position:absolute;z-index:-1;width:380px;height:380px;border-radius:50%;background:#e2c9f3;top:25px;pointer-events:none}
+ .tdie-masthead:before{left:-110px}.tdie-masthead:after{right:-110px}
+ .tdie-masthead-icing{position:absolute;inset:0 0 auto;height:76px;background-size:650px auto;background-repeat:repeat-x;background-position:center top;pointer-events:none}
+ .tdie-masthead-inner{display:grid;grid-template-columns:160px minmax(0,530px) 160px;justify-content:center;align-items:center;gap:46px;max-width:1120px;margin:auto}
+ .tdie-masthead-photo{margin:0;padding:7px;background:white;border:0;box-shadow:0 9px 18px #96285425;overflow:hidden}
+ .tdie-masthead-photo img{display:block;width:100%;height:166px;object-fit:cover;object-position:center 25%;border:0;border-radius:0}
+ .tdie-masthead-left{transform:rotate(-6deg)}.tdie-masthead-right{transform:rotate(5deg)}
+ .tdie-masthead-brand{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;color:#a71957;text-align:center;padding:0 4px}
+ .tdie-masthead-small{font:600 11px/1.4 Inter,sans-serif!important;letter-spacing:.12em;text-transform:uppercase}
+ .tdie-masthead-name{font:600 39px/1.04 Inter,sans-serif!important;letter-spacing:-.015em;text-shadow:0 2px #fff3fa}
+ .tdie-masthead-name>span{color:#8d49ac}
+ .tdie-masthead-tagline{font:500 13px/1.5 Inter,sans-serif!important;color:#632144}
+ .tdie-masthead-brand:focus-visible{outline:3px solid #b8245f;outline-offset:5px}
+ @media(max-width:700px){.tdie-masthead{padding:48px 14px 18px}.tdie-masthead-icing{height:54px;background-size:470px auto}.tdie-masthead-inner{grid-template-columns:65px minmax(0,1fr) 65px;gap:12px}.tdie-masthead-photo{padding:4px}.tdie-masthead-photo img{height:105px}.tdie-masthead-name{font-size:26px!important}.tdie-masthead-small{font-size:8px!important;letter-spacing:.08em}.tdie-masthead-tagline{font-size:10px!important}.tdie-masthead-brand{gap:7px}.tdie-masthead:before,.tdie-masthead:after{width:160px;height:220px;top:40px}.tdie-masthead:before{left:-65px}.tdie-masthead:after{right:-65px}}
+</style>
