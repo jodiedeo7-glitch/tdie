@@ -84,7 +84,7 @@
 .life-prose h2{font-size:30px}
 .life-gallery-section{padding-top:40px}
 .life-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
-.life-gallery>.life-photo:only-child{max-width:650px;grid-column:1/-1;margin-inline:auto;width:100%}
+.life-gallery>.life-photo:only-child{max-width:280px;grid-column:1/-1;margin-inline:auto;width:100%}
 .life-pending,.life-draft{border:1px dashed #B8245F;padding:18px;background:#FFF0F7;border-radius:12px;font-size:15px}
 .life-draft{max-width:1120px;margin:20px auto}
 .life-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
@@ -219,3 +219,48 @@
 .life-wys-story .life-photo{position:relative}.life-wys-story .life-chapter-charm{position:absolute;right:-12px;bottom:25px;width:65px;height:65px;filter:drop-shadow(0 4px 3px #b8245f20);pointer-events:none}.life-wys-story .life-story-copy>.life-kicker{color:#b8245f;font:600 11px/1.5 Inter,sans-serif;letter-spacing:.12em}@media(max-width:760px){.life-wys-story .life-chapter-charm{width:50px;height:50px;right:-8px}}
 
 .life-complete-look h1,.life-complete-look h2,.life-complete-look h3{color:#b8245f}.life-complete-look .life-intro{color:#872049}.life-complete-look .life-story-copy p{color:#5e2a48}.life-complete-look .life-story-copy>.life-kicker{color:#b8245f}
+
+/* Article photographs are compact, complete frames that fit a laptop viewport. */
+.life.life-halloween{--ghost-tile-width:280px}
+.life .life-article{max-width:1040px;padding-top:20px}
+.life .life-article h1{font-size:36px!important;line-height:1.16!important}
+.life .life-article h2{font-size:28px!important;line-height:1.25!important}
+.life .life-article .life-intro,.life .life-article .life-story-copy p{font-size:16px!important;line-height:1.65!important}
+.life .life-article .life-article-head{padding:20px 24px;margin-bottom:20px}
+.life .life-article .life-heading-photo{max-width:160px;width:100%;justify-self:center}
+.life .life-article .life-article-top{grid-template-columns:minmax(0,.65fr) minmax(0,1fr);gap:24px}
+.life .life-article .life-photo{max-width:280px!important;width:100%;justify-self:center;margin-inline:auto;padding:8px 8px 0!important;border:0!important;outline:0!important;border-radius:10px!important;background:#fff!important}
+.life .life-article .life-photo img{width:100%;height:auto;max-height:min(360px,50svh);object-fit:contain;border:0!important;outline:0!important;border-radius:0!important}
+.life .life-article .life-photo figcaption{padding:10px 12px!important;margin:0 -8px!important;font-size:13px!important;line-height:1.5!important;border:0!important}
+.life .life-article .life-shop{padding:20px}
+.life .life-article .life-gallery-section,.life .life-article>.life-section{padding:20px;margin-top:22px;background:#F1EAFB}
+.life .life-article .life-gallery-section h2{margin-bottom:18px}
+.life .life-article .life-story,.life .life-article .life-gallery{gap:22px;padding-top:0}
+.life .life-article .life-story-row{gap:24px;margin-block:20px;padding:20px}
+.life .life-article .life-card-photo{height:240px;aspect-ratio:auto;background:transparent!important}
+.life .life-article .life-card-photo img{height:100%;width:100%;object-fit:contain;border:0!important}
+.life .life-article .life-card h3{font-size:22px!important;line-height:1.25!important}
+@media(max-width:760px){.life.life-halloween{--ghost-tile-width:200px}.life .life-article h1{font-size:32px!important}.life .life-article h2{font-size:26px!important}.life .life-article .life-article-top{grid-template-columns:minmax(0,1fr)}.life .life-article .life-article-head{padding:18px}.life .life-article .life-gallery-section,.life .life-article>.life-section{padding:18px}.life .life-article .life-photo img{max-height:min(340px,50svh)}}
+
+/* Founder rule: every article uses a horizontal product shelf near the top. */
+.life .life-article .life-article-top{grid-template-columns:minmax(0,1fr);max-width:none}
+.life .life-article .life-shop{order:-1;min-width:0;max-width:100%;padding:20px!important;background:#f8e5f1;border:0;border-radius:12px;box-shadow:none}
+.life .life-article .life-shop>.life-kicker{margin-top:0}
+.life .life-article .life-photo figcaption,.life .life-article .life-heading-photo figcaption{font-family:Fredoka,Inter,sans-serif!important}
+.life-product-carousel{min-width:0}
+.life-product-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.life-product-tools>p{margin:0;font-size:13px;color:#87204a}
+.life-product-controls{display:flex;gap:8px;flex-shrink:0}
+.life-product-controls button{width:44px;height:44px;border:1px solid #be7ba7;border-radius:8px;background:#e9d8f5;color:#87204a;font-size:22px;cursor:pointer}
+.life-product-controls button:disabled{opacity:.35;cursor:default}
+.life .life-article .life-products{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#b8245f #e9d8f5;margin:12px 0 16px;padding:0 0 12px}
+.life .life-article .life-products>li{min-width:0;scroll-snap-align:start;padding:48px 16px 16px;border:0;border-radius:8px;background:#efdef7}
+.life .life-article .life-products>li:before{top:12px;left:16px}
+.life .life-article .life-products>li:nth-child(even){background:#ffd9eb}
+.life .life-article .life-products h3{font-size:15px!important;line-height:1.4!important}
+.life .life-article .life-products p{font-size:14px;line-height:1.55}
+.life-products:focus-visible,.life-product-controls button:focus-visible{outline:3px solid #b8245f;outline-offset:3px}
+.life .life-article .life-shop .life-notice{padding:12px 16px;font-size:13px;line-height:1.55}
+.life .life-article .life-shop .life-notice p{font-size:13px;line-height:1.55;margin:0 0 6px}
+.life .life-article .life-shop .life-shopping-status{padding:10px 14px;font-size:13px;margin:12px 0}
+@media(max-width:760px){.life .life-article .life-products{grid-auto-columns:85%}.life .life-article .life-shop{padding:16px}.life-product-tools>p{max-width:20ch}}
