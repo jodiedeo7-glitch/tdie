@@ -685,6 +685,16 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"
     rel="stylesheet"
   />
+<style>
+  .bp-band{padding:0 24px;margin:28px auto 8px;max-width:1080px}
+  .bp-band-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;background:#fff;border:2px solid #F3BFD5;border-radius:20px;padding:16px 22px;box-shadow:0 18px 34px -26px rgba(184,36,95,.55)}
+  .bp-band img{width:72px;height:90px;object-fit:cover;border-radius:6px;box-shadow:0 10px 18px -10px rgba(120,10,50,.5)}
+  .bp-band-kick{margin:0 0 4px;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F}
+  .bp-band-h{margin:0 0 4px;font:600 22px/1.15 Newsreader,Georgia,serif;font-family:Newsreader,Georgia,serif!important;color:#1A1417}
+  .bp-band-p{margin:0;font:500 15px/1.45 Inter,system-ui,sans-serif;color:#4A3640}
+  .bp-band-btn{white-space:nowrap}
+  @media (max-width:720px){.bp-band{padding:0 18px}.bp-band-in{grid-template-columns:64px minmax(0,1fr);gap:14px;padding:16px}.bp-band img{width:64px;height:80px}.bp-band-btn{grid-column:1 / -1;width:100%;justify-content:center;white-space:normal}.bp-band-h{font-size:20px}}
+</style>
 <style is:inline set:html={visualStyles} />
 </head>
 <body class="no-js">
@@ -701,6 +711,19 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   </div>
 
   <slot name="hero" />
+
+  {/* Cold-reader lead capture: the one free guide that delivers, shown before the article so phone readers see it (the side rail is hidden on phones). */}
+  <aside class="bp-band" aria-label="Free guide">
+    <div class="bp-band-in">
+      <img src="/images/covers/blueprint-real-cover.webp" alt="The Faceless Income Blueprint cover" width="96" height="124" loading="lazy" decoding="async" />
+      <div class="bp-band-copy">
+        <p class="bp-band-kick">Free guide</p>
+        <p class="bp-band-h">The Faceless Income Blueprint™</p>
+        <p class="bp-band-p">See the whole machine on one page, and the one thing to build first.</p>
+      </div>
+      <a class="btn outline bp-band-btn" href="/resources/faceless-income-blueprint">Get the free Blueprint <span class="a">→</span></a>
+    </div>
+  </aside>
 
   <div class="shell">
     <aside class="rail-left">
