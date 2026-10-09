@@ -29,3 +29,7 @@ Integration status: local components tested; no production adapter or scheduled 
 `intake.py answer --profile PRIVATE_PATH --customer CUSTOMER_ID --question QUESTION_ID --answer-file PRIVATE_ANSWER_JSON --expected-revision REVISION` saves an answer immediately, reads it back, and returns the next question. Answer JSON contains the exact `value`, original `evidence`, and timezone-aware `answered_at`. Use `--kind founder` for an authorized founder replacement profile and `--kind fixture` only for explicitly synthetic tests. Customer data never goes in this public repo.
 
 Raw question answers and aggregate curation/visual fields are written in the same atomic profile revision. Grouped answers retain per-component source evidence and all previous history. Blank answers and the interface's `No selection` are unanswered. No-persona skips only the persona-world question; it does not establish that the no-persona generation variant works. Completed preference intake reports `live_setup: NOT_VERIFIED`, not operational readiness.
+
+## Recorded image rejections
+
+`mini_test.py` reads `rejected-assets.json` before accepting a record. It rejects both failed Tommy Kate STYLED image checksums even if a later record contains PASS checkboxes. A missing or malformed rejection registry blocks acceptance. This is protection against reusing known rejected images; it does not independently judge garment volume, product fidelity or aesthetic quality, and it does not establish provider/caller integration. Both STYLED versions in the first private clothing test were rejected.

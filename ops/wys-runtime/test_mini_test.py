@@ -1,5 +1,6 @@
 import copy
 import hashlib
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -59,6 +60,19 @@ class MiniTestTests(unittest.TestCase):
         record['checks']['visual_inspection']['result'] = 'FAIL'
         with self.assertRaisesRegex(Blocked, 'FAILED_OR_UNVERIFIED'):
             validate_category(record, 'profile', 'master', fixture=True)
+
+    def test_recorded_rejection_overrides_later_pass_checkboxes(self):
+        record = self.record()
+        registry = self.root / 'rejected.json'
+        registry.write_text(json.dumps({'schema': 1, 'assets': {
+            record['assets'][1]['sha256']: {'reason': 'synthetic rejection evidence'}}}))
+        with self.assertRaisesRegex(Blocked, 'ASSET_REJECTED:styled'):
+            validate_category(record, 'profile', 'master', fixture=True, rejection_path=registry)
+
+    def test_missing_rejection_registry_cannot_silently_pass(self):
+        with self.assertRaisesRegex(Blocked, 'REJECTION_REGISTRY_UNAVAILABLE'):
+            validate_category(self.record(), 'profile', 'master', fixture=True,
+                              rejection_path=self.root / 'missing.json')
 
     def test_missing_and_duplicate_images_block(self):
         record = self.record()

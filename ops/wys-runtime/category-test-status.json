@@ -5,18 +5,18 @@
   "master_sha256": "467b8bbfffcfd581a7ae1e5864a734227aa719a9af7639ca34620fca8fc110dd",
   "categories": {
     "clothing": {
-      "status": "PRIVATE_VISUAL_DRAFT_EXECUTED_NOT_CATEGORY_PASS",
+      "status": "FAILED_STYLED_AND_MISSING_PROFILE",
       "look_id": "tommy-kate-clothing-native-20261009",
       "checks": {
         "three_actual_images": "EXECUTED",
         "visual_inspection": "EXECUTED; full-size and phone-size",
-        "styled_role_distinction": "Initial failure recorded; targeted correction visually improved hollow openings",
+        "styled_role_distinction": "REJECTED: founder rejected the first and corrected STYLED outputs",
         "product_fidelity": "PROVISIONAL; exact lettering/details not passed",
         "original_questionnaire": "UNRECOVERED",
         "end_to_end_customer_path": "NOT_RUN"
       },
       "assets": [],
-      "next_action": "Finish exact fidelity, answer binding, copy/destination and resume checks before claiming category PASS."
+      "next_action": "Rebuild exact profile provenance and stronger garment-only role distinction; no category or batch PASS."
     },
     "accessories": {
       "status": "BLOCKED",
@@ -82,8 +82,8 @@
       "next_action": "Persist source-backed instructions plus newly authorized curation answers; bind inputs; execute and inspect one native image trio."
     }
   },
-  "result": "CLOTHING_PRIVATE_VISUAL_DRAFT_EXECUTED_OTHER_CATEGORIES_NOT_RUN",
-  "component_tests": "45 passed; synthetic component cases only; actual image/category tests NOT_RUN",
+  "result": "CLOTHING_VISUAL_TEST_FAILED_OTHER_CATEGORIES_NOT_RUN",
+  "component_tests": "47 passed; synthetic component cases plus exact rejected-asset checksum checks; no category PASS",
   "native_calls_completed": 4,
   "higgsfield_calls": 0
 }

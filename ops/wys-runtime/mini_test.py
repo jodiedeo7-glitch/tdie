@@ -1,5 +1,6 @@
 """One-look category acceptance records. Never treat static QA as visual QA."""
 import hashlib
+import json
 import re
 from pathlib import Path
 
@@ -36,7 +37,8 @@ def blank_suite(source_path, profile_hash, master_hash):
                            for category in category_inventory(source_path)}}
 
 
-def validate_category(record, profile_hash, master_hash, fixture=False, expected_category=None):
+def validate_category(record, profile_hash, master_hash, fixture=False, expected_category=None,
+                      rejection_path=None):
     if not record.get('category') or (expected_category is not None and record['category'] != expected_category):
         raise Blocked('MINI_TEST_CATEGORY_MISMATCH')
     if record.get('fixture', False) != fixture:
@@ -47,6 +49,17 @@ def validate_category(record, profile_hash, master_hash, fixture=False, expected
         raise Blocked('MINI_TEST_MASTER_CHANGED')
     if not record.get('look_id'):
         raise Blocked('MINI_TEST_LOOK_MISSING')
+    # A later PASS checkbox cannot erase a recorded rejection of the same bytes.
+    registry = Path(rejection_path) if rejection_path else Path(__file__).with_name('rejected-assets.json')
+    try:
+        rejected = json.loads(registry.read_text())
+        if rejected.get('schema') != 1 or not isinstance(rejected.get('assets'), dict):
+            raise ValueError('invalid registry')
+    except (OSError, ValueError, TypeError) as error:
+        raise Blocked('REJECTION_REGISTRY_UNAVAILABLE') from error
+    for asset in record.get('assets', []):
+        if asset.get('sha256') in rejected['assets']:
+            raise Blocked('MINI_TEST_ASSET_REJECTED:' + str(asset.get('role')))
     if set(record.get('checks', {})) != set(CHECKS):
         raise Blocked('MINI_TEST_CHECKS_INCOMPLETE')
     for key, item in record['checks'].items():
