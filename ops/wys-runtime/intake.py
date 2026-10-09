@@ -121,7 +121,8 @@ def import_form(path, customer_id, answer_file, expected_revision, kind='custome
     if current['revision'] != expected_revision:
         raise state.Blocked('REVISION_CONFLICT')
     prepared = []
-    categories = incoming.get('categories', {}).get('value', {}).get('selected', [])
+    category_answer = incoming.get('categories', current['answers'].get('intake.categories', {}))
+    categories = category_answer.get('value', {}).get('selected', [])
     for question_id, field, prompt in QUESTIONS:
         if question_id not in incoming:
             continue
