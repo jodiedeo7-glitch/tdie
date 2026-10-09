@@ -1,27 +1,29 @@
 ---
 const {icing}=Astro.props;
-const sparkles=[{x:9,y:23,s:27},{x:22,y:9,s:20},{x:31,y:73,s:23},{x:14,y:85,s:16},{x:71,y:12,s:25},{x:90,y:30,s:20},{x:80,y:83,s:25},{x:62,y:88,s:16},{x:46,y:8,s:12},{x:5,y:62,s:13},{x:95,y:73,s:14},{x:38,y:92,s:11}];
+const glints=[{x:'4%',y:'76%',size:21},{x:'38%',y:'28%',size:26},{x:'44%',y:'83%',size:19},{x:'92%',y:'22%',size:20}];
 ---
-<section class="boutique-reference-banner" aria-label="The Digital Income Edit brand banner">
- <svg class="reference-sparkles" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
-  <defs><linearGradient id="chrome-pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#ffd1e7"/><stop offset=".48" stop-color="#fff"/><stop offset=".64" stop-color="#d97bac"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#f5c3de"/></linearGradient></defs>
-  {sparkles.map(p=><path transform={`translate(${p.x*10} ${p.y*4.4}) scale(${p.s/24})`} d="M0 -16 C2 -4 4 -2 13 0 C4 2 2 4 0 16 C-2 4 -4 2 -13 0 C-4 -2 -2 -4 0 -16Z" fill="url(#chrome-pink)"/>)}
-  {[{x:160,y:59},{x:330,y:45},{x:815,y:68},{x:78,y:320},{x:278,y:345},{x:744,y:367},{x:924,y:246},{x:537,y:404},{x:618,y:42}].map(p=><g><circle cx={p.x} cy={p.y} r="3.5" fill="#f0a8ca"/><circle cx={p.x-1} cy={p.y-1} r="1.5" fill="#fff"/></g>)}
- </svg>
- <div class="reference-banner-content">
-  <figure class="reference-photo reference-photo-left">
-   <img src="/images/pages/community-studio-720.webp" alt="Tommy Kate working in her bright farmhouse studio" width="720" height="893" loading="eager"/>
-   <figcaption>The farmhouse studio</figcaption>
-  </figure>
-  <div class="reference-message">
-   <svg class="reference-arc" viewBox="0 0 310 51" aria-hidden="true"><defs><path id="reference-arc-path" d="M35 47 Q155 -23 275 47"/></defs><text><textPath href="#reference-arc-path" startOffset="50%" text-anchor="middle">YOUR BUSINESS · YOUR WAY</textPath></text></svg>
-   <h1><span>Build Your Business</span><strong>Backwards.</strong></h1>
-   <p class="reference-handwriting">Scale It Forward.<sup>™</sup></p>
-   <a class="reference-start" href="/resources/find-your-door">Find your starting point <span aria-hidden="true">→</span></a>
+<header class="tdie-brand-banner" aria-label="The Digital Income Edit brand banner">
+ <div class="tdie-full-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
+ <div class="tdie-banner-inner">
+  <div class="tdie-brand-copy">
+   <div class="tdie-brand-signature"><img src="/icon-512.png" width="512" height="512" alt=""/><span>The</span></div>
+   <a class="tdie-banner-logo" href="/" aria-label="The Digital Income Edit — Home"><span>Digital Income</span><span>Edit<sup>™</sup></span></a>
+   <p class="tdie-banner-promise">Build Your Business Backwards.<br/>Scale It Forward.<sup>™</sup></p>
   </div>
-  <figure class="reference-photo reference-photo-right">
-   <img src="/images/home/hero-pink-knit-desk-720.webp" alt="Tommy Kate with her pink tumbler and laptop at her farmhouse window desk" width="720" height="893" loading="eager"/>
-   <figcaption>The farmhouse desk</figcaption>
-  </figure>
+  <div class="tdie-world-collage" aria-label="Tommy Kate’s studio and farmhouse life">
+   <figure class="tdie-world-photo tdie-world-studio">
+    <img src="/images/home/flagship-attic-900.webp" width="900" height="1117" alt="Tommy Kate laughing with her pink glitter tumbler in her attic studio" loading="eager"/>
+    <figcaption>The pink attic studio</figcaption>
+   </figure>
+   <figure class="tdie-world-photo tdie-world-desk">
+    <img src="/images/home/hero-pink-knit-desk-720.webp" width="720" height="893" alt="Tommy Kate at her farmhouse desk with her pink tumbler and laptop" loading="eager"/>
+    <figcaption>The farmhouse desk</figcaption>
+   </figure>
+   <figure class="tdie-world-photo tdie-world-farm">
+    <img src="/images/pages/about-porch-red-barn-840.webp" width="840" height="1042" alt="Tommy Kate on her porch with a pink mug, with the red barn behind her" loading="eager"/>
+    <figcaption>Life on the farm</figcaption>
+   </figure>
+  </div>
  </div>
-</section>
+ {glints.map(p=><svg class="tdie-chrome-glint" style={`left:${p.x};top:${p.y};width:${p.size}px`} viewBox="0 0 30 40" aria-hidden="true"><defs><linearGradient id={`glint-${p.size}`} x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".35" stop-color="#ff8ac2"/><stop offset=".5" stop-color="#fff"/><stop offset=".7" stop-color="#b4bbc4"/><stop offset="1" stop-color="#fff"/></linearGradient></defs><path d="M15 0 C17 14 19 17 30 20 C19 23 17 26 15 40 C13 26 11 23 0 20 C11 17 13 14 15 0Z" fill={`url(#glint-${p.size})`}/></svg>)}
+</header>

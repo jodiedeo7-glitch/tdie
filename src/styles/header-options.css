@@ -1,54 +1,62 @@
-/* Reference study: a small brand masthead, a navigation ribbon, then a decorated campaign hero. */
-.reference-masthead{position:relative;isolation:isolate;overflow:hidden;height:127px;background:white;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;box-sizing:border-box}
-.banner-top-drip{position:absolute;z-index:2;inset:0 0 auto;--drip-tile-width:650px;height:calc(var(--drip-tile-width)/3);background-size:var(--drip-tile-width) auto;background-repeat:repeat-x;background-position:center top;pointer-events:none}
-.reference-brand{position:relative;z-index:3;display:flex;align-items:center;gap:6px;font:600 22px/1.2 Newsreader,Georgia,serif;text-decoration:none;color:#1a1417}
-.reference-brand img{width:20px;height:20px;border-radius:5px;margin-right:4px}.reference-brand span{color:#d62e73}
-body:has(.reference-masthead) .sn-logo,body:has(.reference-masthead) .sn-drip,body:has(.reference-masthead) .sf{display:none!important}
-body:has(.reference-masthead) .sn{position:relative!important;background:#fbd4e6!important;border:0!important}
-body:has(.reference-masthead) .sn-in{justify-content:center!important;min-height:50px!important}
-body:has(.reference-masthead) .sn-links a{font:500 10px Inter,sans-serif;letter-spacing:.08em;color:#1a1417}
-body:has(.reference-masthead) .sn-links a.sn-cta,body:has(.reference-masthead) .sn-menu{background:white!important;color:#1a1417!important;border:1px solid #e4a1c0!important;border-radius:5px!important;box-shadow:none!important}
-body:has(.reference-masthead) .sn-drawer{background:white!important}
-body:has(.reference-masthead) .sn-drawer a{font-family:Inter,sans-serif!important;min-height:48px!important;border-bottom-color:#f0c4d8!important}
-body:has(.reference-masthead) .sn-drawer .sn-d-cta{background:white!important;color:#1a1417!important;border:1px solid #e4a1c0!important;border-radius:5px!important}
-body:has(.reference-masthead) .e-page{padding:0!important;margin:0!important;max-width:none!important}
-.reference-hero{position:relative;overflow:hidden;background:#fff1f7}
-.reference-hero:before{content:'';position:absolute;z-index:3;left:0;right:0;top:0;height:16px;background:radial-gradient(ellipse 23px 16px at 23px 0,#fbd4e6 98%,transparent 100%) 0 0/46px 16px repeat-x;pointer-events:none}
-.boutique-reference-banner{position:relative;overflow:hidden;background:#fff1f7;color:#1a1417}
-.reference-sparkles{position:absolute;width:100%;height:100%;inset:0;pointer-events:none}
-.reference-banner-content{position:relative;max-width:1040px;min-height:430px;margin:auto;padding:45px 38px;box-sizing:border-box;display:grid;grid-template-columns:180px minmax(0,1fr) 180px;gap:31px;align-items:center}
-.reference-message{position:relative;z-index:1;text-align:center;min-width:0}
-.reference-arc{display:block;width:240px;height:40px;margin:0 auto 5px;overflow:visible}
-.reference-arc text{font:400 10px Inter,sans-serif;letter-spacing:2px;fill:#bb6391}
-.reference-message h1{margin:0;color:#e68eb7;font-family:'TDIE Banner Lettering',serif!important;font-weight:400!important;line-height:1.12!important;text-shadow:0 1px 0 white}
-.reference-message h1 span{display:block;font-size:33px!important;white-space:nowrap;letter-spacing:-.025em}
-.reference-message h1 strong{display:block;font-size:52px!important;font-weight:400!important;letter-spacing:-.025em}
-.reference-handwriting{font:400 31px/1.05 Caveat,cursive;margin:4px 0 0;transform:rotate(-3deg);color:#1a1417}
-.reference-handwriting sup{font:400 8px Inter,sans-serif;vertical-align:super;margin-left:2px}
-.reference-start{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 16px;box-sizing:border-box;margin-top:18px;background:white;border:1px solid #e4a1c0;border-radius:4px;color:#a9346c;font:500 11px Inter,sans-serif;text-decoration:none}
-.reference-start:hover{border-color:#d62e73;color:#d62e73}.reference-start:focus-visible,.reference-brand:focus-visible{outline:2px solid #d62e73;outline-offset:4px}
-.reference-photo{position:relative;z-index:1;width:175px;height:205px;box-sizing:border-box;padding:8px 8px 0;margin:0;justify-self:center;isolation:isolate;box-shadow:0 7px 15px #bc75a323}
-.reference-photo:after{content:'';position:absolute;z-index:-1;inset:0;background:white}
-.reference-photo:before{content:'';position:absolute;z-index:-2;inset:-3px;background:#f7c4dc;transform:translate(1px,1px)}
-.reference-photo img{display:block;width:100%;height:calc(100% - 29px);object-fit:cover;object-position:center}
-.reference-photo figcaption{height:29px;display:flex;align-items:center;justify-content:center;white-space:nowrap;font:400 16px/1 Caveat,cursive;color:#b94e7c}
-.reference-photo-left{transform:rotate(-7deg) translateY(-24px)}
-.reference-photo-right{transform:rotate(7deg) translateY(23px)}
-@media(max-width:1050px) and (min-width:761px){.reference-banner-content{grid-template-columns:150px minmax(0,1fr) 150px;gap:18px;padding-inline:24px;min-height:385px}.reference-photo{width:145px;height:182px}.reference-message h1 span{font-size:27px!important}.reference-message h1 strong{font-size:46px!important}}
+/* TDIE: upright brand lettering, glossy signature pink, dimensional paper and her own world. */
+.tdie-brand-banner{padding:0!important;margin:0!important;box-sizing:border-box;position:relative;isolation:isolate;overflow:hidden;background:#fff;color:#1a1417;border-bottom:1px solid #f1b5d1}
+.tdie-full-drip{position:absolute;z-index:4;inset:0 0 auto;--tile:650px;height:calc(var(--tile)/3);background-size:var(--tile) auto;background-repeat:repeat-x;background-position:center top;pointer-events:none}
+.tdie-banner-inner{position:relative;z-index:1;max-width:1100px;min-height:443px;margin:auto;padding:92px 42px 27px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 425px;gap:65px;align-items:center}
+.tdie-brand-copy{min-width:0;padding:9px 0 18px}
+.tdie-brand-signature{display:flex;align-items:center;gap:12px;margin-bottom:8px;font:500 12px/1.2 Inter,sans-serif;text-transform:uppercase;letter-spacing:.17em}
+.tdie-brand-signature img{display:block;width:32px;height:32px;border-radius:8px;box-shadow:0 5px 12px #d62e7330}
+.tdie-banner-logo{display:block;width:max-content;max-width:100%;text-decoration:none;font:600 52px/1.04 Newsreader,Georgia,serif!important;letter-spacing:-.025em;color:#d62e73}
+.tdie-banner-logo>span{display:block;background:linear-gradient(155deg,#d62e73 10%,#f378af 28%,#d62e73 43%,#bb2264 65%,#ef78af 82%,#d62e73);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 #ffc3df)}
+.tdie-banner-logo sup{font:400 10px Inter,sans-serif;vertical-align:super;letter-spacing:0;margin-left:3px;-webkit-text-fill-color:#d62e73}
+.tdie-banner-promise{font:400 14px/1.6 Inter,sans-serif;margin:19px 0 0;color:#1a1417}
+.tdie-banner-promise sup{font-size:8px;vertical-align:super;margin-left:2px}
+.tdie-world-collage{display:grid;grid-template-columns:180px 190px;grid-template-rows:149px 149px;gap:22px 33px;align-items:center;justify-content:center;padding:9px 0 8px;min-width:0}
+.tdie-world-photo{position:relative;isolation:isolate;width:100%;height:100%;box-sizing:border-box;padding:7px 7px 0;margin:0;box-shadow:0 9px 20px #7f355c27}
+.tdie-world-photo:after{content:'';position:absolute;z-index:-1;inset:0;background:white}
+.tdie-world-photo:before{content:'';position:absolute;z-index:-2;inset:-5px;background:linear-gradient(130deg,#ff8ac2 3%,#ffd2e8 28%,#d62e73 50%,#ff8ac2 70%,#f8b8d7 90%);box-shadow:0 2px 4px #d62e7320}
+.tdie-world-photo img{display:block;object-fit:cover;width:100%;height:calc(100% - 26px)}
+.tdie-world-photo figcaption{height:26px;display:flex;align-items:center;justify-content:center;white-space:nowrap;font:400 16px/1 Caveat,cursive;color:#b62764}
+.tdie-world-studio{grid-column:1;grid-row:1;transform:rotate(-7deg)}.tdie-world-studio img{object-position:50% 31%}
+.tdie-world-desk{grid-column:2;grid-row:1/3;height:271px;transform:rotate(6deg);align-self:center}.tdie-world-desk img{object-position:45% 42%}
+.tdie-world-farm{grid-column:1;grid-row:2;transform:rotate(3deg)}.tdie-world-farm img{object-position:50% 21%}
+.tdie-chrome-glint{position:absolute;z-index:2;height:auto;pointer-events:none;filter:drop-shadow(0 1px 2px #d62e731c)}
+body:has(.tdie-brand-banner) .sn-logo,body:has(.tdie-brand-banner) .sn-drip,body:has(.tdie-brand-banner) .sf{display:none!important}
+body:has(.tdie-brand-banner) .sn{position:relative!important;background:white!important;border-bottom:1px solid #f1b5d1!important}
+body:has(.tdie-brand-banner) .sn-in{justify-content:center!important;min-height:58px!important}
+body:has(.tdie-brand-banner) .sn-links a.sn-cta,body:has(.tdie-brand-banner) .sn-menu{background:white!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important;box-shadow:none!important}
+body:has(.tdie-brand-banner) .sn-drawer{background:white!important}
+body:has(.tdie-brand-banner) .sn-drawer a{font-family:Inter,sans-serif!important;min-height:48px!important;border-bottom-color:#f0c4d8!important}
+body:has(.tdie-brand-banner) .sn-drawer .sn-d-cta{background:white!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important}
+body:has(.tdie-brand-banner) .e-page{padding:0!important;margin:0!important;max-width:none!important}
+.tdie-banner-logo:focus-visible{outline:2px solid #d62e73;outline-offset:6px}
+@media(max-width:1050px) and (min-width:761px){.tdie-banner-inner{padding-inline:32px;grid-template-columns:minmax(0,1fr) 365px;gap:30px}.tdie-banner-logo{font-size:45px!important}.tdie-world-collage{grid-template-columns:155px 166px;grid-template-rows:139px 139px;gap:19px 27px}.tdie-world-desk{height:252px}.tdie-world-photo figcaption{font-size:14px}}
 @media(max-width:760px){
- .banner-top-drip{--drip-tile-width:470px}
- .reference-masthead{height:99px;padding-bottom:12px}.reference-brand{font-size:17px;gap:4px}.reference-brand img{width:16px;height:16px;margin-right:2px}
- body:has(.reference-masthead) .sn-in{justify-content:flex-end!important;min-height:50px!important}
- body:has(.reference-masthead) .sn-menu{font-size:11px;min-height:40px!important}
- .reference-banner-content{min-height:384px;max-width:430px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:187px 124px;gap:13px;padding:27px 25px 26px;align-content:start}
- .reference-message{grid-row:1;grid-column:1/-1;align-self:start}
- .reference-arc{width:180px;height:30px;margin-bottom:2px}.reference-arc text{font-size:10px}
- .reference-message h1 span{font-size:24px!important}.reference-message h1 strong{font-size:36px!important}
- .reference-handwriting{font-size:24px;margin-top:3px}
- .reference-start{min-height:48px;margin-top:10px;font-size:10px;padding-inline:12px}
- .reference-photo{grid-row:2;width:106px;height:126px;padding:5px 5px 0}
- .reference-photo-left{grid-column:1;transform:rotate(-7deg)}.reference-photo-right{grid-column:2;transform:rotate(7deg) translateY(7px)}
- .reference-photo img{height:calc(100% - 23px)}.reference-photo figcaption{height:23px;font-size:11px}
- .reference-photo:before{inset:-2px}
+ .tdie-full-drip{--tile:470px}
+ .tdie-banner-inner{max-width:450px;min-height:0;padding:74px 28px 25px;grid-template-columns:minmax(0,1fr);gap:25px}
+ .tdie-brand-copy{padding:0}
+ .tdie-brand-signature{font-size:10px;gap:9px;margin-bottom:7px}.tdie-brand-signature img{width:24px;height:24px;border-radius:6px}
+ .tdie-banner-logo{font-size:36px!important;line-height:1.03!important}
+ .tdie-banner-logo sup{font-size:8px}
+ .tdie-banner-promise{font-size:12px;line-height:1.5;margin-top:12px}
+ .tdie-world-collage{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:134px;gap:12px;align-items:start;padding:0 0 6px;justify-content:stretch}
+ .tdie-world-photo{height:127px;padding:4px 4px 0;box-shadow:0 6px 12px #7f355c24}
+ .tdie-world-photo:before{inset:-3px}
+ .tdie-world-photo img{height:calc(100% - 23px);object-position:50% 35%}
+ .tdie-world-photo figcaption{height:23px;font-size:9px;white-space:normal;text-align:center;line-height:1}
+ .tdie-world-studio{grid-column:1;grid-row:1;transform:rotate(-5deg)}
+ .tdie-world-desk{grid-column:2;grid-row:1;height:134px;transform:rotate(3deg);align-self:start;margin-top:4px}
+ .tdie-world-farm{grid-column:3;grid-row:1;transform:rotate(-3deg);margin-top:1px}.tdie-world-farm img{object-position:50% 20%}
+ .tdie-chrome-glint:nth-last-child(4){left:88%!important;top:31%!important;width:16px!important}
+ .tdie-chrome-glint:nth-last-child(3){left:73%!important;top:48%!important;width:19px!important}
+ .tdie-chrome-glint:nth-last-child(2){left:3%!important;top:70%!important;width:13px!important}
+ .tdie-chrome-glint:last-child{display:none}
+ body:has(.tdie-brand-banner) .sn-in{justify-content:flex-end!important;min-height:54px!important}
 }
-@media(max-width:360px){.reference-brand{font-size:15px}.reference-banner-content{padding-inline:20px;grid-template-rows:187px 119px;min-height:379px}.reference-message h1 span{font-size:22px!important}.reference-message h1 strong{font-size:34px!important}.reference-photo{width:97px;height:119px}.reference-photo figcaption{font-size:10px}}
+@media(max-width:360px){.tdie-banner-inner{padding-inline:22px;gap:24px}.tdie-banner-logo{font-size:34px!important}.tdie-world-collage{gap:10px;grid-template-rows:124px}.tdie-world-photo{height:117px}.tdie-world-desk{height:124px}.tdie-world-photo figcaption{font-size:10px}}
+
+body:has(.tdie-brand-banner) .sn-links a.sn-cta{min-height:48px!important}
+
+body:has(.tdie-brand-banner) .sn-drawer a{font-size:18px!important;font-weight:500!important}
+body:has(.tdie-brand-banner) .sn-drawer .sn-d-cta{font-size:12px!important}
+body:has(.tdie-brand-banner) .sn-close{background:white!important;border:1px solid #e891b6!important;border-radius:999px!important}
+body:has(.tdie-brand-banner) .sn-menu{min-height:48px!important}
