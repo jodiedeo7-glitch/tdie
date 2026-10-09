@@ -1,11 +1,12 @@
 ---
 import {Image} from 'astro:assets';
+import WysSocialGraphic from './WysSocialGraphic.astro';
 import {packages} from '../data/wys-packages.js';
 import {WYS_ROOT} from '../data/wys.js';
 const {inside=false}=Astro.props;
 const links=[{name:'Styling images',sub:'See the pieces and finished scenes',src:packages[0].photos[0].src,alt:packages[0].photos[0].alt,panel:1},{name:'Pinterest Pins',sub:'Three graphics, with words to post',src:packages[1].pins[1].src,alt:'Ghoul Fuel styled Pinterest graphic',panel:2},{name:'Instagram carousel',sub:'Three slides and a full caption',src:packages[0].slides[2].src,alt:'Pretty Wicked lifestyle Instagram slide',panel:3},{name:'Blog article',sub:'The styling story and product list',src:packages[1].photos[1].src,alt:packages[1].photos[1].alt,panel:4}];
 ---
-<section class="wb-shelf-band"><div class="wys-wrap wb-shelf"><p class="wys-label">See what one shopping idea becomes</p><div class="wb-shelf-grid">{links.map((l,i)=><a class={`wb-category wb-category-${i}`} href={`${inside?'':WYS_ROOT+'/look-inside?view='+l.panel}#${i%2?'ghoul-fuel-coffee-bar':'pretty-wicked-entryway'}-output-${l.panel}`} data-open-package={inside?l.panel:undefined}><div class="wb-category-photo"><Image src={l.src} alt={l.alt} widths={[240,400]} sizes="(max-width:700px) 40vw, 220px"/></div><h3>{l.name}</h3><p>{l.sub}</p><span class="wz-category-action">View {l.name} <b aria-hidden="true">{inside?"↓":"→"}</b></span></a>)}</div></div></section>
+<section class="wb-shelf-band"><div class="wys-wrap wb-shelf"><p class="wys-label">Photos, Pins, Instagram & blog</p><div class="wb-shelf-grid">{links.map((l,i)=><a class={`wb-category wb-category-${i}`} href={`${inside?'':WYS_ROOT+'/look-inside?view='+l.panel}#${i%2?'ghoul-fuel-coffee-bar':'pretty-wicked-entryway'}-output-${l.panel}`} data-open-package={inside?l.panel:undefined}><div class="wb-category-photo">{i===1?<WysSocialGraphic photo={packages[1].photos[1]} title={packages[1].pins[1].headline} example="Ghoul Fuel" index={1} format="pin"/>:i===2?<WysSocialGraphic photo={packages[0].photos[2]} title={packages[0].slides[2].headline} example="Pretty Wicked" index={2}/>:<Image src={l.src} alt={l.alt} widths={[240,400]} sizes="(max-width:700px) 40vw, 220px"/>}</div><h3>{l.name}</h3><p>{l.sub}</p><span class="wz-category-action">Open {l.name} <b aria-hidden="true">{inside?"↓":"→"}</b></span></a>)}</div></div></section>
 <script>
  document.querySelectorAll<HTMLAnchorElement>('[data-open-package]').forEach(a=>a.addEventListener('click',()=>{document.getElementById(a.hash.slice(1))?.closest('[data-package]')?.querySelector<HTMLButtonElement>(`[data-panel-button="${a.dataset.openPackage}"]`)?.click();}));
 </script>

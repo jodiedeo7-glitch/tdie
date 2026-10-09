@@ -59,3 +59,6 @@ No bows on any design, page, graphic or other work for Jodie unless she explicit
 
 ## WYS website corrections (8 October 2026)
 Typography corrections mean restyling the visible words, not deleting the heading, description, example names or photo captions. Public Instagram examples are mockups with captions and blog destinations, not a slide-download giveaway. Preserve named Pretty Wicked and Ghoul Fuel examples with three equal-sized photographs apiece and colored backing mats behind the entire white Polaroid, offset beyond its outside edges. Never place the colored mat inside the photograph opening or add nested outlines.
+
+## WYS visual corrections (8 October 2026, latest founder instructions)
+No stripes, decorative double lines, mismatched category tile designs, or dark-pink pill buttons on WYS pages. Product selections must include an actual visible photograph of the selection, not a text-only records list. Avoid generic filler headings and internal workflow language in customer-facing content. Preview photos and fonts must load in the actual embedded preview, not merely on the production host.

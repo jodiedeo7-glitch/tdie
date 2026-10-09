@@ -12,8 +12,8 @@ import {Image} from 'astro:assets';
 import {packages} from '../../../data/wys-packages.js';
 import {WYS_ROOT} from '../../../data/wys.js';
 ---
-<WysFrame current="inside" title="Look Inside WYS | Two Complete Content Examples" description="Explore two complete WYS content examples: three photographs, three Pins, three Instagram slides, a full article, product records and copy for each look." ogImage={packages[0].photos[1].src.src}>
- <WysHero><p class="wys-ribbon">Look inside</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Two ideas.<br/>The whole content edit.</p><p class="wys-lede">Pretty Wicked: a pink Halloween entryway.<br/>Ghoul Fuel: a pink Halloween coffee bar.<br/>See the photos, Pins, Instagram carousel and full blog story for each.</p><a class="wys-button" href="#choose-package">Explore the complete examples ↓</a></WysHero>
+<WysFrame current="inside" title="Look Inside WYS | Two Complete Content Examples" description="Explore two complete WYS content examples: three photographs, three Pins, three Instagram slides, a full article, five finds and copy for each look." ogImage={packages[0].photos[1].src.src}>
+ <WysHero><p class="wys-ribbon">Look inside</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Two pink Halloween examples</p><p class="wys-lede">Pretty Wicked: a pink Halloween entryway.<br/>Ghoul Fuel: a pink Halloween coffee bar.<br/>See the photos, Pins, Instagram carousel and full blog story for each.</p><a class="wys-button" href="#choose-package">Explore the complete examples ↓</a></WysHero>
  <WysShelf inside/><div class="wx-ticker"><span>SELECT THE PIECES</span><span>STYLE THE LOOK</span><span>MAKE THE CONTENT</span><span>CHECK THE DESTINATIONS</span></div>
  <WysStories inside/>
  <div class="wys-wrap wx-packages">{packages.map((e,i)=><WysPackage example={e} number={i+1}/>)}</div>
