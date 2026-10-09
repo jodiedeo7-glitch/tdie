@@ -16,8 +16,10 @@ export async function handle(request,env){
     return reply({schemaVersion:1,preferences:saved?JSON.parse(saved.preferences_json):{},updatedAt:saved?.updated_at||null});
   }
   if(request.method!=="PUT")return reply({error:"Method not allowed"},405);
+  if(request.headers.get("Content-Type")?.split(";")[0].trim().toLowerCase()!=="application/json")return reply({error:"JSON content type required"},415);
   let data;try{data=await request.json()}catch{return reply({error:"Invalid JSON"},400)}
   if(!data||typeof data!=="object"||Array.isArray(data)||!data.preferences||typeof data.preferences!=="object"||Array.isArray(data.preferences))return reply({error:"Invalid preferences"},400);
+  if(Object.keys(data.preferences).length>fields.size)return reply({error:"Too many fields"},400);
   const clean={};
   for(const [name,value] of Object.entries(data.preferences)){
     if(!fields.has(name)||typeof value!=="string"||value.length>2000)return reply({error:"Invalid field"},400);
