@@ -1,0 +1,36 @@
+/* Coded banner layout. */
+.tdie-brand-banner{position:relative;isolation:isolate;overflow:hidden;min-height:215px;display:flex;justify-content:center;align-items:center;background:#fff;padding:66px 100px 22px}
+.tdie-banner-drip{position:absolute;inset:0 0 auto;height:63px;background-position:top center;background-size:650px auto;background-repeat:repeat-x;pointer-events:none}
+.tdie-banner-brand{position:relative;display:flex;flex-direction:column;align-items:center;color:#262322!important;text-decoration:none!important;line-height:1}
+.tdie-banner-the{font:500 28px/.85 Caveat,cursive;transform:rotate(-8deg);margin-bottom:2px}
+.tdie-banner-name{font:500 clamp(52px,6vw,84px)/1 Caveat,cursive;letter-spacing:-.025em;white-space:nowrap}
+.tdie-banner-edit{font:400 23px/1.3 Inter,sans-serif;letter-spacing:.38em;margin-top:8px;padding-left:.38em}
+.tdie-banner-edit sup{font-size:9px;letter-spacing:0;position:relative;top:-8px;margin-left:3px}
+body:has(.tdie-brand-banner) .sn-logo{display:none!important}body:has(.tdie-brand-banner) .sn-in{justify-content:center!important;min-height:57px!important}body:has(.tdie-brand-banner) .sn{border-bottom:1px solid #e5e5e5!important;background:#fff!important}body:has(.tdie-brand-banner) .sn-drip{display:none!important}
+@media(max-width:760px){.tdie-brand-banner{min-height:170px;padding:50px 20px 24px}.tdie-banner-drip{height:46px;background-size:470px auto}.tdie-banner-name{font-size:clamp(39px,10vw,60px)}.tdie-banner-the{font-size:23px}.tdie-banner-edit{font-size:17px;margin-top:7px}body:has(.tdie-brand-banner) .sn-in{justify-content:flex-end!important;min-height:54px!important}}
+
+/* Six typography studies. No generated artwork or decorative stock motifs. */
+.header-study .tdie-brand-banner{min-height:220px}
+.header-study-2 .tdie-banner-brand{display:grid;grid-template-columns:auto auto;column-gap:15px;align-items:baseline}
+.header-study-2 .tdie-banner-the{grid-column:1/-1;justify-self:center;font:400 12px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.24em;transform:none;margin-bottom:14px}
+.header-study-2 .tdie-banner-name{font:600 clamp(38px,5vw,64px)/1.1 Newsreader,Georgia,serif;letter-spacing:-.045em}
+.header-study-2 .tdie-banner-edit{font:500 clamp(38px,5vw,64px)/1 Caveat,cursive;letter-spacing:0;text-transform:lowercase;padding:0;margin:0}
+.header-study-3 .tdie-banner-brand{flex-direction:row;gap:14px;align-items:center}
+.header-study-3 .tdie-banner-the{font:600 italic 23px/1 Newsreader,Georgia,serif;transform:none}
+.header-study-3 .tdie-banner-name{font:300 clamp(32px,4.4vw,58px)/1.15 Inter,sans-serif;letter-spacing:-.06em}
+.header-study-3 .tdie-banner-edit{border-left:1px solid #aaa;padding-left:22px;margin:0;font:500 40px/1 Caveat,cursive;letter-spacing:0;text-transform:lowercase}
+.header-study-4 .tdie-banner-the{font:500 24px/1 Caveat,cursive}
+.header-study-4 .tdie-banner-name{font:300 clamp(29px,4.4vw,58px)/1.2 Inter,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+.header-study-4 .tdie-banner-edit{font:500 39px/1 Caveat,cursive;letter-spacing:0;text-transform:lowercase;margin-top:4px;padding:0}
+.header-study-5 .tdie-banner-brand{display:grid;grid-template-columns:auto auto;column-gap:22px;align-items:center}
+.header-study-5 .tdie-banner-the{grid-column:1;justify-self:start;transform:none;font:400 12px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.18em;margin:0}
+.header-study-5 .tdie-banner-name{grid-column:1;font:500 clamp(42px,5vw,72px)/1 Caveat,cursive}
+.header-study-5 .tdie-banner-edit{grid-column:2;grid-row:1/3;font:300 34px/1 Inter,sans-serif;letter-spacing:.12em;writing-mode:vertical-rl;margin:0;padding:0}
+.header-study-5 .tdie-banner-edit sup{writing-mode:horizontal-tb;top:0;margin-top:3px}
+.header-study-6 .tdie-banner-the{font:400 12px/1 Inter,sans-serif;transform:none;letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px}
+.header-study-6 .tdie-banner-name{font:600 italic clamp(40px,5vw,68px)/1 Newsreader,Georgia,serif;letter-spacing:-.045em}
+.header-study-6 .tdie-banner-edit{font:400 14px/1.5 Inter,sans-serif;letter-spacing:.55em;margin-top:12px;padding-left:.55em}
+@media(max-width:760px){.header-study .tdie-brand-banner{min-height:185px;padding:54px 14px 20px}.header-study-2 .tdie-banner-brand{gap:6px}.header-study-2 .tdie-banner-name,.header-study-2 .tdie-banner-edit{font-size:clamp(27px,7.3vw,42px)}.header-study-2 .tdie-banner-the{margin-bottom:7px}.header-study-3 .tdie-banner-brand{gap:8px;flex-wrap:wrap;justify-content:center}.header-study-3 .tdie-banner-the{font-size:18px}.header-study-3 .tdie-banner-name{font-size:clamp(24px,6.4vw,38px)}.header-study-3 .tdie-banner-edit{font-size:29px;padding-left:8px}.header-study-4 .tdie-banner-name{font-size:clamp(23px,6.2vw,38px)}.header-study-4 .tdie-banner-edit{font-size:31px}.header-study-5 .tdie-banner-brand{column-gap:10px}.header-study-5 .tdie-banner-name{font-size:clamp(35px,9vw,56px)}.header-study-5 .tdie-banner-edit{font-size:22px}.header-study-6 .tdie-banner-name{font-size:clamp(34px,9vw,52px)}}
+body:has(.header-study) .sn-links a.sn-cta{background:#fff!important;color:#262322!important;border:1px solid #d8d8d8!important;border-radius:4px!important;box-shadow:none!important}
+body:has(.header-study) .sn-menu{background:#fff!important;border:1px solid #d8d8d8!important;border-radius:4px!important;color:#262322!important}
+body:has(.header-study) .sn-drawer{background:#fff!important}
