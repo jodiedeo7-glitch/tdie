@@ -10,7 +10,12 @@ import json
 import os
 from pathlib import Path
 import tempfile
+from contextlib import contextmanager
 from datetime import datetime, timezone
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
 
 SCHEMA = 1
 STEPS = ('sourcing', 'basic', 'styled', 'lifestyle', 'graphics', 'blog',
@@ -82,6 +87,31 @@ def load(path):
     return value
 
 
+@contextmanager
+def write_lease(path, error_prefix='PROFILE'):
+    """Use an OS-held lease that is released if a writer exits or is killed.
+
+    The lease file is persistent: unlinking it would let writers lock different
+    inodes. Legacy marker locks remain blocked until an operator reconciles the
+    old writer; their age is never authority to remove them.
+    """
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if fcntl is None:
+        raise Blocked(error_prefix + '_OS_LOCK_UNAVAILABLE')
+    descriptor = os.open(str(path) + '.write-lease', os.O_CREAT | os.O_RDWR, 0o600)
+    try:
+        try:
+            fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as error:
+            raise Blocked(error_prefix + '_WRITE_IN_PROGRESS') from error
+        if Path(str(path) + '.lock').exists():
+            raise Blocked(error_prefix + '_WRITE_IN_PROGRESS_LEGACY_LOCK_RECONCILE_REQUIRED')
+        yield
+    finally:
+        os.close(descriptor)
+
+
 def save(path, customer_id, answers, expected_revision, kind='customer'):
     """Merge exact answers immediately; no inferred/default answer is permitted.
 
@@ -111,13 +141,7 @@ def save(path, customer_id, answers, expected_revision, kind='customer'):
             raise Blocked('ANSWER_TIMESTAMP_INVALID:' + key) from error
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    lock = Path(str(path) + '.lock')
-    try:
-        fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as error:
-        raise Blocked('PROFILE_WRITE_IN_PROGRESS') from error
-    try:
-        os.close(fd)
+    with write_lease(path):
         current = load(path) if path.exists() else {
             'schema': SCHEMA, 'customer_id': customer_id, 'kind': kind,
             'revision': 0, 'answers': {}, 'history': []}
@@ -135,8 +159,6 @@ def save(path, customer_id, answers, expected_revision, kind='customer'):
         current['sha256'] = digest(current)
         atomic_write(path, current)
         return load(path)
-    finally:
-        lock.unlink()
 
 
 def prepare(path, customer_id, step, look_id, master_path, expected_profile_hash,
