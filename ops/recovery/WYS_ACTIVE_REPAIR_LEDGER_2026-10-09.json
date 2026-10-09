@@ -1,17 +1,28 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T16:33:00Z",
+  "updated_at": "2026-10-09T16:37:33.685Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
-    "this_conversation": "Code implementation on isolated repair branches; no external audit submission or account interaction.",
+    "this_conversation": "Code implementation on isolated repair branches; read-only retrieval of existing Gemini result; no external audit submission.",
     "existing_external_review": "Questionnaire Recovery Failure conversation retains the already-created Gemini review.",
     "cross_conversation_control": "This record does not start, stop or synchronize another conversation automatically."
   },
   "review": {
-    "source": "WYS-Audit-Verified-Findings.txt version 1",
-    "status": "EXTERNAL_REVIEW_INCOMPLETE_NOT_ACCEPTED",
-    "focused_correction": "Stopped; completed corrected result unavailable",
-    "visual_review": "NOT_TESTED_IMAGE_ACCESS_FAILURE"
+    "source": "Existing Gemini conversation rendered corrected response, captured 2026-10-09",
+    "status": "CORRECTED_LIMITED_EXTERNAL_REVIEW_COMPLETED_RELEASE_NOT_CERTIFIED",
+    "model": "Flash Extended",
+    "focused_correction": "Retrieved without new submission or new sign-in",
+    "confirmed": [
+      "Blank structured intake answer accepted in old source",
+      "Crash can orphan old O_EXCL marker",
+      "STYLED image fails garment 3D volume contract"
+    ],
+    "visual_review": "STYLED_FAIL",
+    "scope_limits": [
+      "Reviewed source predates PR31 repairs",
+      "PR30 customer plugin not certified",
+      "Live orchestration and customer delivery NOT TESTED"
+    ]
   },
   "repairs": [
     {
@@ -57,5 +68,5 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "Complete the stopped correction in the existing Gemini review; recheck PR 31 and include the new plugin snapshot from PR 30. Finish actual caller/customer installation integration and prove full customer paths before lifting release hold. No second audit or new sign-in flow."
+  "next_action": "Finish customer session crash recovery, verify saved-answer resume and packaging, and connect actual execution gates. Existing corrected review retrieved. New repair revisions still require external recheck; live customer execution and release remain held."
 }
