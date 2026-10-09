@@ -84,6 +84,9 @@ def load(path):
     check.pop('sha256', None)
     if original_hash != digest(check):
         raise Blocked('PROFILE_HASH_MISMATCH')
+    if 'questionnaire_version' in value and 'kind' not in value:
+        from session_bridge import compile_session
+        return compile_session(value)
     return value
 
 
@@ -145,6 +148,8 @@ def save(path, customer_id, answers, expected_revision, kind='customer'):
         current = load(path) if path.exists() else {
             'schema': SCHEMA, 'customer_id': customer_id, 'kind': kind,
             'revision': 0, 'answers': {}, 'history': []}
+        if current.get('source_format') == 'customer_plugin_session_read_only':
+            raise Blocked('SESSION_REQUIRES_PLUGIN_WRITER')
         if current['customer_id'] != customer_id or current['kind'] != kind:
             raise Blocked('PROFILE_IDENTITY_MISMATCH')
         if current['revision'] != expected_revision:
