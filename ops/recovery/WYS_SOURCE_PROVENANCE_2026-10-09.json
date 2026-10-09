@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "date": "2026-10-09",
+  "purpose": "Source provenance and persistence accounting only. Not an audit verdict or operating authority.",
+  "repository_visibility_verified": "public",
+  "private_material_rule": "Full conversations, answers, private image references and access information are not copied into this public index. This manifest is not a replacement for their source records.",
+  "complete_project_archive": "NOT_ESTABLISHED",
+  "complete_original_questionnaire": "NOT_RECOVERED",
+  "sources": [
+    {
+      "name": "01-While-You-Sleep-Current-Product-Reference-Sep-27-2026.txt",
+      "sha256": "446e4fc5c2c315d2a802427dbd4efe10fba1aa7ea05f01951ffa88560dcc8944",
+      "bytes": 1525,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "02-While-You-Sleep-Storefront-Kit-2026-09-29.zip",
+      "sha256": "442f9481011f7d020be9d6750205d2174b2cbbbba660ffa9eb917e322e1b89fa",
+      "bytes": 4598912,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "03-While-You-Sleep-Storefront-Kit-Audit-Queue-Review-Only-Sep-30-2026-.txt",
+      "sha256": "933e6397eb755dd4b615c9c65caa8440aea52c7ed1fc32e9899b57641b6a6a5c",
+      "bytes": 1550,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "04-AUTOMATION_WORKFLOW_AUDIT-ROOT-OUTPUTS.md",
+      "sha256": "95d91726a17e57f170b7d103c3ad808c3cd5ffaa4631405ebbad87eee55e68d2",
+      "bytes": 31596,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "05-AUTOMATION_WORKFLOW_AUDIT-WYS-PROJECT-OUTPUTS.md",
+      "sha256": "30653525aeb43e5298be5fc68c8eb61d90e76d42ebcf3ee751341517af763b8a",
+      "bytes": 22983,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "06-WYS_WORKFLOW_AUDIT_FILES_README.md",
+      "sha256": "6b1fb379ea0562f05436382e76e5052f8e8f1fc373dfb1c9dd2a19aa1cc00d87",
+      "bytes": 907,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "07-WYS_PROJECT_SOURCE_INDEX.md",
+      "sha256": "78f76c224688a37fc641bf2410d54085982ff8e2493537e4c446d6c4a14eaabb",
+      "bytes": 962,
+      "source": "attached source copy",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "recovered-spec/GOVERNING-SPEC.md",
+      "sha256": "fabf184f4568b7c457ada0b3874524a062ad1e590d42b5686e68bba5aa070b82",
+      "bytes": 16208,
+      "source": "preserved recovery archive",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "recovered-spec/REQUIREMENTS-LEDGER.json",
+      "sha256": "456d2f90644f0024c9aec136a1d62a25b190abaa42ea1018e88816d6f0c9ed55",
+      "bytes": 49566,
+      "source": "preserved recovery archive",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "recovered-spec/USER-INSTRUCTION-ARCHIVE.json",
+      "sha256": "6063338ffecc8141392aa3f3c758c93105790c83fc457da415642cd1dafdc0e8",
+      "bytes": 146965,
+      "source": "preserved recovery archive",
+      "raw_content_in_this_manifest": false,
+      "record_count": 175,
+      "reported_turns_read": 152,
+      "coverage": "Recovered user-message records only; not a complete verbatim project conversation archive."
+    },
+    {
+      "name": "WYS-Audit-Review-Source-20261009.zip",
+      "sha256": "d1b4a6df9f2592b5138cb73ff1a9447543ed80a01309518df635b8c93a799d64",
+      "bytes": 46770996,
+      "source": "saved private handoff",
+      "raw_content_in_this_manifest": false
+    },
+    {
+      "name": "WYS-Source-Only-Handoff.txt",
+      "sha256": "a1a7b56267fa5cbcc661de2db7e245e7ccd46ca176292e448700293f0cdcc24a",
+      "bytes": 445676,
+      "source": "saved private handoff",
+      "raw_content_in_this_manifest": false
+    }
+  ],
+  "missing_records": [
+    "Complete original assistant conversation turns",
+    "Original plugin refusal rationale",
+    "Full numbered 86-problem / 12-fix ledger"
+  ],
+  "current_session_restrictions": [
+    "Do not resume self-audit or OpenAI-subagent audit.",
+    "Do not proceed in Claude.",
+    "Preserve founder instructions and decisions rather than treating them as casual conversation."
+  ]
+}
