@@ -6,16 +6,11 @@ import { LOOKS, categoryOf } from '../../data/lifestyle.js';
 const { look } = Astro.props;
 const cat = categoryOf(look.category);
 const hero = look.hero;
-const selectionPhoto = look.images.find(image => image.role === 'basic');
 const halloween = look.season?.toLowerCase() === 'halloween';
 const banner = look.slug === 'pretty-wicked-entryway' ? 'Pretty Wicked' : look.slug === 'ghoul-fuel-coffee-bar' ? 'Ghoul Fuel' : 'The Pink Halloween Edit';
-const gallery = look.images.filter(image => image !== hero);
 const relatedCandidates = LOOKS.filter(other => other.images.some(image => ['styled', 'lifestyle'].includes(image.role)));
 const related = [...relatedCandidates.filter(other => other.slug !== look.slug && other.category === look.category), ...relatedCandidates.filter(other => other.slug !== look.slug && other.category !== look.category && look.season && look.season !== 'Evergreen' && other.season === look.season && (['home-decor', 'dorm'].includes(look.category) ? ['home-decor', 'dorm'].includes(other.category) : ['clothing', 'accessories', 'jewelry'].includes(look.category) && ['clothing', 'accessories', 'jewelry'].includes(other.category)))].slice(0, 2);
 const sections = look.sections || [];
-// Each approved photo appears once, in the reading flow rather than a repeated side panel.
-const storyPhotos = (hero ? [hero, ...gallery] : gallery).filter(image => image !== selectionPhoto);
-const photoAtSection = (index) => storyPhotos.filter((_, photoIndex) => Math.floor(photoIndex * sections.length / storyPhotos.length) === index);
 const draft = look.status === 'draft';
 const completeExample = ['pretty-wicked-entryway','ghoul-fuel-coffee-bar'].includes(look.slug);
 const photoCaption = (image) => {
@@ -37,31 +32,46 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
       <p class="life-kicker">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</p>
       <h1>{look.title}</h1>
       {look.intro && <p class="life-intro">{look.intro}</p>}
-      <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a></div>
+
       </div>
 
       </div>
     </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
+    <div class="life-photos-first" id="photos" data-photo-gallery>
+      <div class="life-photo-controls"><button type="button" data-photo-prev aria-label="Previous photograph">←</button><button type="button" data-photo-next aria-label="Next photograph">→</button></div>
+      <div class="life-photo-track" tabindex="0" aria-label="Styling photographs — swipe to see all photos">{look.images.map(image => <figure class="life-photo"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 260px, 300px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption></figure>)}</div>
+    </div>
+      <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a></div>
     <div class="life-article-top">
 
       <section class="life-shop" id="shopping" aria-labelledby="life-shop-title">
         <p class="life-kicker">The shopping edit</p><h2 id="life-shop-title">{shoppingPending ? 'The selected finds' : look.category === 'clothing' ? 'Shop the outfit' : 'Shop the listed finds'}</h2>
         {shoppingPending && <p class="life-shopping-status">Product links are still being verified. Shopping links will be added once those checks are complete.</p>}
-        {look.items.length ? <div class="life-product-layout">{selectionPhoto && <figure class="life-photo life-selection-photo"><Image src={selectionPhoto.src} alt={selectionPhoto.alt} widths={[240,360,480,720]} sizes="(max-width:760px) 220px, 180px" loading="eager" /><figcaption>{photoCaption(selectionPhoto)}</figcaption></figure>}<div class="life-product-carousel" data-product-carousel><div class="life-product-tools"><p>Scroll side to side to see all {look.items.length} finds</p><div class="life-product-controls"><button type="button" data-product-prev aria-label="Previous products">←</button><button type="button" data-product-next aria-label="Next products">→</button></div></div><ol class="life-products" tabindex="0" aria-label="Selected products — scroll horizontally">{look.items.map(item => <li><h3>{item.name}</h3>{item.variant && <p>{item.variant}</p>}{item.note && <p>{item.note}</p>}{item.link && item.affiliateStatus !== 'pending' ? <a class="life-product-link" href={item.link} target="_blank" rel={['verified', 'legacy'].includes(item.affiliateStatus) ? 'sponsored nofollow noopener' : 'noopener nofollow'}>View on Amazon <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab{item.affiliateStatus === 'verified' ? ', affiliate link' : ''})</span></a> : !shoppingPending && <p class="life-product-status">Link pending verification.</p>}</li>)}</ol></div></div> : <p class="life-pending">Shopping links are pending source verification. No product destinations have been added to this draft.</p>}
+        {look.items.length ? <div class="life-product-layout"><div class="life-product-carousel" data-product-carousel><div class="life-product-tools"><p>Scroll side to side to see all {look.items.length} finds</p><div class="life-product-controls"><button type="button" data-product-prev aria-label="Previous products">←</button><button type="button" data-product-next aria-label="Next products">→</button></div></div><ol class="life-products" tabindex="0" aria-label="Selected products — scroll horizontally">{look.items.map(item => <li><h3>{item.name}</h3>{item.variant && <p>{item.variant}</p>}{item.note && <p>{item.note}</p>}{item.link && item.affiliateStatus !== 'pending' ? <a class="life-product-link" href={item.link} target="_blank" rel={['verified', 'legacy'].includes(item.affiliateStatus) ? 'sponsored nofollow noopener' : 'noopener nofollow'}>View on Amazon <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab{item.affiliateStatus === 'verified' ? ', affiliate link' : ''})</span></a> : !shoppingPending && <p class="life-product-status">Link pending verification.</p>}</li>)}</ol></div></div> : <p class="life-pending">Shopping links are pending source verification. No product destinations have been added to this draft.</p>}
         {look.ideaList && look.ideaListStatus !== 'pending' && <a class="life-button life-button-outline" href={look.ideaList} rel="sponsored nofollow noopener" target="_blank">Open the Amazon Idea List <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab)</span></a>}
       </section>
 
     </div>
-    {sections.length > 0 && <section class="life-article-story" id="styling" aria-label="Styling details">{sections.map((section,index) => <section class="life-reading-chapter">
-      {photoAtSection(index).map(image => <figure class="life-photo life-inline-photo"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 80vw, 320px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption></figure>)}
+    {sections.length > 0 && <section class="life-article-story" id="styling" aria-label="Styling details">{sections.map(section => <section class="life-reading-chapter">
+
       <h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
     </section>)}</section>}
-    {sections.length === 0 && storyPhotos.length > 0 && <section class="life-gallery-section" aria-label="Styling photographs"><div class="life-gallery">{storyPhotos.map(image => <figure class="life-photo"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 80vw, 320px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption></figure>)}</div></section>}
+
     {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} /></section>}
   </article>
 </Frame>
 <script>
+  document.querySelectorAll<HTMLElement>('[data-photo-gallery]').forEach(gallery => {
+    const track = gallery.querySelector<HTMLElement>('.life-photo-track');
+    const prev = gallery.querySelector<HTMLButtonElement>('[data-photo-prev]');
+    const next = gallery.querySelector<HTMLButtonElement>('[data-photo-next]');
+    if (!track || !prev || !next) return;
+    const update = () => { prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2; };
+    const move = (direction:number) => track.scrollBy({left:direction * ((track.firstElementChild?.getBoundingClientRect().width || track.clientWidth) + 24),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    prev.addEventListener('click',()=>move(-1)); next.addEventListener('click',()=>move(1));
+    track.addEventListener('scroll',update,{passive:true});new ResizeObserver(update).observe(track);update();
+  });
   document.querySelectorAll<HTMLElement>('[data-product-carousel]').forEach(carousel => {
     const track = carousel.querySelector<HTMLOListElement>('.life-products');
     const prev = carousel.querySelector<HTMLButtonElement>('[data-product-prev]');

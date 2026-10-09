@@ -346,3 +346,15 @@ body:has(.life-article-world) .sf{background:#f0e5f8!important;background-image:
 .life .life-reading-sheet .life-gallery-section{padding:20px 0!important;background:transparent;border:0;border-radius:0;box-shadow:none}
 body:has(.life-article-world) .sf-in{padding-block:32px 20px!important;gap:24px}
 body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!important;letter-spacing:.12em;margin-bottom:8px!important}
+
+/* Photos precede every shopping action and product list. */
+.life .life-reading-sheet .life-photos-first{margin:0 0 24px;min-width:0}
+.life .life-reading-sheet .life-photo-track{display:flex;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#b8245f #f0e5f8;padding:14px 12px 20px}
+.life .life-reading-sheet .life-photo-track>.life-photo{flex:0 0 calc((100% - 48px)/3);max-width:300px!important;scroll-snap-align:start;align-self:start;margin:0;min-width:0}
+.life .life-reading-sheet .life-photo-controls{display:flex;justify-content:flex-end;gap:8px;margin-bottom:4px}
+.life .life-reading-sheet .life-photo-controls button{width:44px;height:44px;border:1px solid #e891b6;border-radius:8px;background:#fff;color:#1a1417;font-size:22px;cursor:pointer}
+.life .life-reading-sheet .life-photo-controls button:disabled{opacity:.35;cursor:default}
+.life .life-reading-sheet .life-photo-track:focus-visible,.life .life-reading-sheet .life-photo-controls button:focus-visible{outline:2px solid #b8245f;outline-offset:3px}
+.life .life-reading-sheet .life-product-layout{display:block;margin-top:16px}
+.life .life-reading-sheet>.life-article-actions{margin-bottom:16px}
+@media(max-width:760px){.life .life-reading-sheet .life-photo-track>.life-photo{flex-basis:260px;max-width:260px!important}.life .life-reading-sheet .life-photo-track{gap:24px;padding-inline:12px}.life .life-reading-sheet .life-photo-track>.life-photo img{max-height:370px!important}}
