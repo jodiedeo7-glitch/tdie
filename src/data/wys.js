@@ -10,14 +10,14 @@ export const WYS_ROOT = '/shop/while-you-sleep-storefront';
 export const WYS_HOLD = true;
 export const examples = [
  {slug:'pretty-wicked-entryway',name:'Pretty Wicked',category:'Pink Halloween entryway',photos:[
-  {role:'Basic',src:entryBasic,alt:'Hot-pink pumpkins, pink gauze, bat shapes and small pink lights arranged on a dark tabletop',caption:'Start with the selected pieces, photographed as a complete flat lay.'},
-  {role:'Styled',src:entryStyled,alt:'A Halloween console with pink pumpkins and lights, black bats and a large oval mirror',caption:'See how those pieces come together in a styled entryway.'},
-  {role:'Lifestyle',src:entryLife,alt:'Tommy Kate answers the open front door from the porch viewpoint, with the Halloween console receding inside',caption:'A new viewpoint and a natural moment: answering the door on Halloween.'}
+  {role:'The finds',src:entryBasic,alt:'Hot-pink pumpkins, pink gauze, bat shapes and small pink lights arranged on a dark tabletop',caption:'Start with the selected pieces, photographed as a complete flat lay.'},
+  {role:'Pink Halloween entryway',src:entryStyled,alt:'A Halloween console with pink pumpkins and lights, black bats and a large oval mirror',caption:'See how those pieces come together in a styled entryway.'},
+  {role:'Tommy Kate at the door',src:entryLife,alt:'Tommy Kate answers the open front door from the porch viewpoint, with the Halloween console receding inside',caption:'A new viewpoint and a natural moment: answering the door on Halloween.'}
  ]},
  {slug:'ghoul-fuel-coffee-bar',name:'Ghoul Fuel',category:'Pink Halloween coffee bar',photos:[
-  {role:'Basic',src:coffeeBasic,alt:'A pink ghost mug, heart serving stand, small velvet pumpkins, mirrored balls and LED tea lights in an overhead flat lay',caption:'The five selected product types, with styling extras kept separate.'},
-  {role:'Styled',src:coffeeStyled,alt:'Pink Halloween coffee nook with a ghost mug, two-tier heart stand, small pumpkins and silver mirror balls',caption:'The no-person styled scene shows the coffee corner in use.'},
-  {role:'Lifestyle',src:coffeeLife,alt:'Tommy Kate in a lavender cardigan holds and stirs one pink ghost mug beside the styled coffee counter',caption:'A separately composed moment: stirring one mug beside the coffee nook.'}
+  {role:'The finds',src:coffeeBasic,alt:'A pink ghost mug, heart serving stand, small velvet pumpkins, mirrored balls and LED tea lights in an overhead flat lay',caption:'The five selected product types, with styling extras kept separate.'},
+  {role:'Pink Halloween coffee bar',src:coffeeStyled,alt:'Pink Halloween coffee nook with a ghost mug, two-tier heart stand, small pumpkins and silver mirror balls',caption:'The no-person styled scene shows the coffee corner in use.'},
+  {role:'Coffee with Tommy Kate',src:coffeeLife,alt:'Tommy Kate in a lavender cardigan holds and stirs one pink ghost mug beside the styled coffee counter',caption:'A separately composed moment: stirring one mug beside the coffee nook.'}
  ]}
 ];
 export const imageNotice='AI-generated styling inspiration. Retail products may differ; check the actual listing photographs, contents and measurements. Flowers, furniture, artwork, clothing and other props are styling extras.';

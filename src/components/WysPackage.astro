@@ -2,37 +2,17 @@
 import WysPinterest from './WysPinterest.astro';
 import WysProductSelection from './WysProductSelection.astro';
 import WysInstagram from './WysInstagram.astro';
-import WysDecor from './WysDecor.astro';
-import {Image} from 'astro:assets';
 import WysPhoto from './WysPhoto.astro';
 import {imageNotice} from '../data/wys.js';
 const {example:e,number,tour=false}=Astro.props;
-const panels=['Everything for this look','Styling images','Pinterest Pins','Instagram carousel','Blog article','Product notes'];
 ---
 <section class:list={['wx-package',number===2&&'wx-package-lav',tour&&'wx-package-tour']} id={e.slug} data-package data-package-tour={tour || undefined}>
 
  <div class="wx-folder-tab">{tour ? "ONE SHOPPING IDEA / THE FULL EXAMPLE" : `THE HALLOWEEN LOOK`}</div>
  <header class="wx-package-heading"><div><p class="wys-label">{e.category}</p><h2>{e.name}</h2><p>Three styling photographs, three Pins, an Instagram carousel and a blog article.</p></div><a class="wys-text-link" href={`/lifestyle/${e.slug}`}>Read the styling article →</a></header>
- {tour && <nav class="wx-tour-nav" aria-label="Explore the full example">{panels.slice(1).map((p,i)=><a href={`#${e.slug}-output-${i+1}`}>{p} ↓</a>)}</nav>}
- {!tour && <div class="wx-tabs" aria-label={`${e.name} package contents`}>{panels.map((p,i)=><button type="button" aria-pressed={i===0?'true':'false'} data-panel-button={i}>{p}</button>)}</div>}
- {!tour && <div data-panel="0" class="wx-panel"><div class="wx-output-label"><WysDecor class="wb-package-flower"/><h3>Photos, Pins, carousel and article</h3><p>3 photographs · 3 Pins · 3 carousel slides · 1 article · 5 finds + captions</p></div>
-  <div class="wx-contact">{e.photos.map((p,i)=><figure class={`wx-mini wb-photo-file mat-${i}`}><Image src={p.src} alt={p.alt} widths={[240,400]} sizes="(max-width:700px) 26vw, 280px"/><figcaption><b>PHOTO / 0{i+1}</b><span>{p.role}</span></figcaption></figure>)}</div>
-  <div class="wz-overview-pinterest"><h3>The Pinterest Pins</h3><WysPinterest example={e}/></div>
-  <div class="wz-overview-instagram"><h3>The Instagram post</h3><WysInstagram example={e}/></div>
-  <div class="wx-paper-strip wz-article-teaser"><WysPhoto photo={e.photos[1]} treatment={number===2?'lavender':'double'} caption={e.category}/><div><span class="wys-label">The blog article / opening excerpt</span><h3>{e.article.title}</h3><blockquote>{e.article.intro}</blockquote><button type="button" class="wys-button" data-show-panel="4">Read the full article →</button><a class="wys-text-link wz-live-article" href={`/lifestyle/${e.slug}`}>Open the blog page →</a></div></div>
- </div>}
  <div id={`${e.slug}-output-1`} data-panel="1" class="wx-panel"><div class="wx-output-label"><h3>The styling images</h3><p>The five finds, the decorated setting and Tommy Kate.</p></div><div class="wx-three">{e.photos.map((p,i)=><WysPhoto photo={p} treatment={['double','lavender','polaroid'][i]} label={`${i+1} / ${p.role}`}/>)}</div><p class="wx-fine">{imageNotice}</p></div>
  <div id={`${e.slug}-output-2`} data-panel="2" class="wx-panel"><div class="wx-output-label"><h3>The Pinterest content</h3><p>Three Pins with titles, descriptions and the article link.</p></div><WysPinterest example={e}/></div>
  <div id={`${e.slug}-output-3`} data-panel="3" class="wx-panel"><div class="wx-output-label"><h3>The Instagram carousel</h3><p>@itstommykate: swipe through the three slides.</p></div><WysInstagram example={e}/></div>
  <div id={`${e.slug}-output-4`} data-panel="4" class="wx-panel"><div class="wx-output-label"><h3>The blog article</h3><p>Read the full styling story, placement ideas and selected-product notes.</p></div><article class="wx-article-preview"><div class="wx-article-cover"><WysPhoto photo={e.photos[1]} treatment="double" caption={e.category}/><div><span class="wys-label">The full blog article</span><h3>{e.article.title}</h3><p>{e.article.intro}</p><a class="wys-button" href={`/lifestyle/${e.slug}`}>Open the complete styling page →</a></div></div>{e.article.sections.map((s,i)=><section class="wz-article-story"><WysPhoto photo={e.photos[[0,1,2,0][i]]} treatment={["polaroid","double","lavender","double"][i]} caption={e.photos[[0,1,2,0][i]].role}/><div><span class="wys-label">0{i+1} / The styling story</span><h4>{s.heading}</h4>{s.paragraphs.map(p=><p>{p}</p>)}</div></section>)}<div class="wx-article-end"><b>The five selected finds</b><ol>{e.article.items.map(item=><li><h4>{item.name}</h4><p>{item.variant}</p><p>{item.note}</p></li>)}</ol><p class="wx-fine">As an Amazon Associate I earn from qualifying purchases. Shopping links and Amazon lists are pending. {imageNotice}</p></div></article></div>
  <div id={`${e.slug}-output-5`} data-panel="5" class="wx-panel"><div class="wx-output-label"><h3>The five finds</h3><p>{e.category}: selected items and variants.</p></div><WysProductSelection example={e}/><p class="wx-fine">Styling illustrations; shopping links are pending. Check retailer photographs and measurements before buying.</p></div>
 </section>
-<script>
- document.querySelectorAll<HTMLElement>('[data-package]').forEach(root=>{
- const buttons=[...root.querySelectorAll<HTMLButtonElement>('[data-panel-button]')];
- const panels=[...root.querySelectorAll<HTMLElement>('[data-panel]')];
- const select=(n:string)=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.panelButton===n)));panels.forEach(p=>p.hidden=p.dataset.panel!==n);};const initial=new URLSearchParams(location.search).get('view');const target=panels.find(p=>'#'+p.id===location.hash);if(!root.hasAttribute('data-package-tour')){select(target?.dataset.panel||(location.hash==='#'+root.id&&initial&&/^[0-5]$/.test(initial)?initial:'0'));if(target)requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));}
- buttons.forEach(b=>b.addEventListener('click',()=>select(b.dataset.panelButton!)));root.querySelectorAll<HTMLButtonElement>('[data-show-panel]').forEach(b=>b.addEventListener('click',()=>{select(b.dataset.showPanel!);root.scrollIntoView({block:'start',behavior:'instant'});}));
-
- });
-</script>

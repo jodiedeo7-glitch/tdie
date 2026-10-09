@@ -198,10 +198,6 @@
 /* Social previews use a contained scale rather than filling the page. */
 .wz-pinterest-set{max-width:780px;margin-inline:auto;gap:24px}.wz-pinterest-mockup{border-width:5px;border-radius:18px}.wz-pinterest-detail{grid-template-columns:minmax(0,300px) minmax(0,1fr)}.wz-pinterest-brand{padding:10px 14px}.wz-pinterest-image{padding:9px}.wz-pinterest-copy{padding:16px 18px}.wz-pinterest-copy h4{font-size:19px!important;margin-bottom:16px!important}.wz-pinterest-copy p{font-size:14px!important;line-height:1.55!important;margin-bottom:14px}.wz-pinterest-toolbar{margin-bottom:16px}.wz-pinterest-creator{margin-bottom:14px}.wz-pinterest-save{font-size:13px;padding:10px 16px}.wz-pin-field{font-size:12px;margin:14px 0 6px}.wz-pin-alt-details{margin:15px 0;font:400 12px/1.5 Inter,sans-serif}.wz-pin-alt-details summary{cursor:pointer;color:#a52258;min-height:28px}.wz-pinterest-comment{margin-top:16px}.wz-complete-header{padding-top:105px}.wz-header-icing{height:105px;background-size:900px auto;background-repeat:repeat-x}
 @media(max-width:700px){.wz-pinterest-detail{grid-template-columns:minmax(0,1fr)}.wz-pinterest-image{max-width:260px;width:100%;margin:auto;border:0}.wz-pinterest-copy p{font-size:16px!important}.wz-pinterest-copy h4{font-size:19px!important}.wz-complete-header{padding-top:80px}.wz-header-icing{height:80px;background-size:650px auto}}
-/* Show all three Pins at a glance; open their complete post details on demand. */
-.wz-pinterest-set{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:18px;max-width:780px}.wz-pin-preview{min-width:0}.wz-pin-preview>summary{list-style:none;cursor:pointer;background:#fff;padding:10px;border-radius:12px;border:1px solid #dfb5ce;text-align:center}.wz-pin-preview>summary::-webkit-details-marker{display:none}.wz-pin-preview>summary img{display:block;width:100%;height:auto}.wz-pin-preview>summary strong{display:block;font:600 14px/1.4 Inter,sans-serif;color:#a52258;margin-top:10px}.wz-pin-preview>summary span{display:block;font:500 12px/1.4 Inter,sans-serif;text-decoration:underline;color:#a52258;padding:8px 0}.wz-pin-preview[open]{grid-column:1/-1}.wz-pin-preview[open]>summary{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px}.wz-pin-preview[open]>summary img{width:70px}.wz-pin-preview[open]>summary strong{margin:0}.wz-pin-preview>summary:hover,.wz-pin-preview>summary:focus-visible{outline:2px solid #b8245f;outline-offset:3px}
-@media(max-width:700px){.wz-pinterest-set{gap:8px}.wz-pin-preview>summary{padding:5px;border-radius:8px}.wz-pin-preview>summary span{font-size:11px}.wz-pin-preview[open]>summary{gap:12px}}
-.wz-pin-cover{width:100%}.wz-pin-preview[open]>summary .wz-pin-cover{width:70px;flex-shrink:0}.wz-pinterest-set{max-width:720px}.wz-pinterest-detail{grid-template-columns:minmax(0,270px) minmax(0,1fr)}
 @media(min-width:701px){.wz-complete-header .wz-hero-two-looks{max-width:1280px;gap:28px}.wz-complete-header .wz-polaroid-stack{height:580px}.wz-complete-header .wz-stack-pink .wz-polaroid-2{top:285px}.wz-complete-header .wz-stack-lavender .wz-polaroid-1{top:175px}.wz-complete-header .wz-stack-lavender .wz-polaroid-2{top:290px}.wz-complete-header .wz-stack-right-flower{top:410px}.wz-complete-header h1{font-size:44px!important}}
 @media(max-width:700px){.wz-pinterest-detail{grid-template-columns:minmax(0,1fr)}}
 /* Founder corrections: no stripes, double outlines or mismatched category tiles. */
@@ -223,3 +219,17 @@
 /* Apply the same corrections to the kit, brief and newsletter sections. */
 .wys-world :is(.wz-brief-heading,.wx-checkpoint,.wx-guide-number,.wz-guide-visual,.wx-waitlist,.freebie-capture,.wx-collage-main,.wx-seal,.wys-browse-card){border:0!important;outline:0!important}
 .wys-world .wz-guide-visual{background:#f2e6fb!important;background-image:none!important}.wys-world .wx-guide-tag,.wys-world button[type=submit],.wys-world input[type=submit]{background:#edddf8!important;color:#71234a!important;border:0!important;border-radius:12px!important;box-shadow:none!important}.wys-world .wys-browse-card{border-radius:18px!important;background:#fff7fc!important;box-shadow:none!important}.wys-world .wx-collage-main{box-shadow:0 10px 20px #8c326822}.wys-world .wx-seal{background:#f2e6fb!important}
+
+/* Native Pinterest posts, without a second thumbnail menu. */
+.wz-pinterest-set{display:grid;grid-template-columns:minmax(0,1fr);max-width:720px;gap:28px}
+.wz-pinterest-detail{grid-template-columns:minmax(0,270px) minmax(0,1fr)}
+.wys-world .wz-social-graphic .wz-social-foot span{display:inline;font:inherit;text-decoration:none;padding:0;color:inherit}
+.wys-world .wz-social-graphic>p{font:500 2.2cqw/1.3 Inter,sans-serif!important;margin:0 0 3%!important}
+.wys-world .wz-social-graphic h4{font-size:6.2cqw!important;line-height:1.08!important}
+.wys-world .wz-social-pin h4{font-size:7cqw!important}
+@media(max-width:700px){.wz-pinterest-detail{grid-template-columns:minmax(0,1fr)}}
+
+/* Icing is the first visible element, above the TDIE masthead and menus. */
+.wz-page-top-icing{height:105px;background-color:#fff1f8;background-repeat:repeat-x;background-position:center top;background-size:900px auto;flex-shrink:0}
+.wz-complete-header{padding-top:0}
+@media(max-width:700px){.wz-page-top-icing{height:80px;background-size:650px auto}.wz-complete-header{padding-top:0}}

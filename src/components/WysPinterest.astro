@@ -3,7 +3,7 @@ import WysSocialGraphic from './WysSocialGraphic.astro';
 const {example:e}=Astro.props;
 ---
 <div class="wz-pinterest-set" aria-label={`${e.name} Pinterest Pin mockups`}>
- {e.pins.map((p,i)=><details class="wz-pin-preview"><summary><div class="wz-pin-cover"><WysSocialGraphic photo={p.photo} title={p.headline} example={e.name} index={i} format="pin"/></div><strong>Pin {i+1}</strong><span>View Pin details</span></summary><article class="wz-pinterest-mockup">
+ {e.pins.map((p,i)=><article class="wz-pinterest-mockup">
  <header class="wz-pinterest-brand"><span class="wz-pinterest-mark" aria-hidden="true">P</span><b>Pinterest</b><span>Pin preview / {i+1} of 3</span></header>
  <div class="wz-pinterest-detail">
   <div class="wz-pinterest-image"><WysSocialGraphic photo={p.photo} title={p.headline} example={e.name} index={i} format="pin"/></div>
@@ -16,5 +16,5 @@ const {example:e}=Astro.props;
    <div class="wz-pinterest-comment" aria-hidden="true">Add a comment <span>♡</span></div>
   </div>
  </div>
- </article></details>)}
+ </article>)}
 </div>

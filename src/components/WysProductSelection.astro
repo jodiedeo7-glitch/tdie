@@ -1,10 +1,9 @@
 ---
 import {Image} from 'astro:assets';
 const {example:e}=Astro.props;
-const positions=e.slug==='pretty-wicked-entryway'?[[21,12],[45,53],[56,70],[72,18],[10,64]]:[[74,59],[31,15],[48,34],[10,37],[10,50]];
 ---
 <div class="wz-find-selection">
- <figure class="wz-find-photo"><Image src={e.photos[0].src} alt={e.photos[0].alt} widths={[320,480,720]} sizes="(max-width:700px) 85vw, 300px"/>{positions.map(([x,y],i)=><a class="wz-find-marker" href={`#${e.slug}-find-${i}`} style={`left:${x}%;top:${y}%`} aria-label={e.article.items[i].name}>{i+1}</a>)}<figcaption>Styling illustration of the five finds</figcaption></figure>
+ <figure class="wz-find-photo"><Image src={e.photos[0].src} alt={e.photos[0].alt} widths={[320,480,720]} sizes="(max-width:700px) 85vw, 300px"/><figcaption>Styling illustration of the five finds</figcaption></figure>
  <ol class="wz-find-list">{e.article.items.map((p,i)=><li id={`${e.slug}-find-${i}`}><span class="wz-find-number">{i+1}</span><div><h4>{p.name}</h4><p>{p.variant}</p><details><summary>Product details</summary><p>{p.note}</p></details></div></li>)}</ol>
 </div>
 <style>
