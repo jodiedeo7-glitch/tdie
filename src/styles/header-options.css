@@ -101,3 +101,50 @@ body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-r
 .banner-trademark{font:400 8px Inter,sans-serif;fill:#a52e60}
 @media(max-width:760px){.banner-title-art{width:265px}.boutique-lettering-banner .banner-composition{height:392px;grid-template-rows:142px 136px}}
 @media(max-width:360px){.banner-title-art{width:252px}}
+
+/* Match the supplied boutique hero proportions, including the phone composition. */
+.boutique-lettering-banner .banner-composition{max-width:680px;height:284px;padding:88px 28px 30px;grid-template-columns:145px minmax(0,1fr) 145px;gap:18px;align-items:center}
+.boutique-lettering-banner .banner-title-art{width:276px}
+.boutique-lettering-banner .banner-the{font-size:8px;gap:6px;margin-bottom:3px}
+.boutique-lettering-banner .banner-repo-icon{width:15px;height:15px}
+.boutique-lettering-banner .banner-tagline{font-size:18px;line-height:1.04;margin-top:4px}
+.boutique-lettering-banner .brand-photo{width:125px;height:144px;padding:6px 6px 0;box-shadow:0 7px 13px #9b4e7620}
+.boutique-lettering-banner .brand-photo img{height:calc(100% - 22px)}
+.boutique-lettering-banner .brand-photo figcaption{height:22px;font-size:12px}
+.boutique-lettering-banner .brand-photo::before{inset:-3px}
+.boutique-lettering-banner .brand-photo-studio{margin-top:0;transform:rotate(-8deg)}
+.boutique-lettering-banner .brand-photo-desk{margin-top:20px;transform:rotate(8deg)}
+.banner-rounded-edge{position:absolute;bottom:0;left:0;right:0;height:18px;background-color:white;background-image:radial-gradient(ellipse 24px 18px at 24px 0,#fff0f6 98%,transparent 100%);background-size:48px 18px;background-repeat:repeat-x}
+.boutique-lettering-banner .glint-one{left:25%;top:89px;width:13px;height:18px}
+.boutique-lettering-banner .glint-two{right:27%;bottom:28px;width:13px;height:18px}
+.boutique-lettering-banner .glint-three{left:8%;bottom:34px;width:10px;height:14px}
+.boutique-lettering-banner .glint-four{right:8%;top:105px;width:10px;height:14px}
+.boutique-lettering-banner .glint-five{left:39%;bottom:26px;width:8px;height:11px}
+.boutique-lettering-banner .glint-six{right:39%;top:86px;width:8px;height:11px}
+@media(max-width:760px){
+ .boutique-lettering-banner .banner-composition{height:242px;padding:69px 16px 26px;grid-template-columns:minmax(0,1fr) 170px minmax(0,1fr);grid-template-rows:auto;gap:8px;align-content:center}
+ .boutique-lettering-banner .brand-lockup{grid-column:2;grid-row:1;align-self:center}
+ .boutique-lettering-banner .banner-title-art{width:170px}
+ .boutique-lettering-banner .banner-the{font-size:6px;letter-spacing:.12em;margin-bottom:3px}
+ .boutique-lettering-banner .banner-repo-icon{width:11px;height:11px}
+ .boutique-lettering-banner .banner-tagline{font-size:12px;line-height:1.05;margin-top:4px}
+ .boutique-lettering-banner .banner-tagline sup{font-size:5px}
+ .boutique-lettering-banner .brand-photo{grid-row:1;width:77px;height:98px;padding:4px 4px 0}
+ .boutique-lettering-banner .brand-photo img{height:calc(100% - 20px)}
+ .boutique-lettering-banner .brand-photo figcaption{font-size:8px;height:20px;white-space:normal;text-align:center;line-height:.95}
+ .boutique-lettering-banner .brand-photo-studio{grid-column:1;margin-top:0;transform:rotate(-8deg)}
+ .boutique-lettering-banner .brand-photo-desk{grid-column:3;margin-top:20px;transform:rotate(8deg)}
+ .boutique-lettering-banner .brand-photo::before{inset:-2px}
+ .boutique-lettering-banner .glint-one{left:24%;top:76px;width:10px;height:14px}
+ .boutique-lettering-banner .glint-two{right:26%;top:auto;bottom:27px;width:10px;height:14px}
+ .boutique-lettering-banner .glint-three{left:10%;bottom:27px;width:8px;height:11px}
+ .boutique-lettering-banner .glint-four{display:block;right:11%;top:77px;width:8px;height:11px}
+ .boutique-lettering-banner .glint-five,.boutique-lettering-banner .glint-six{display:none}
+}
+@media(max-width:360px){
+ .boutique-lettering-banner .banner-composition{grid-template-columns:minmax(0,1fr) 145px minmax(0,1fr);gap:5px;padding-inline:13px;height:232px}
+ .boutique-lettering-banner .banner-title-art{width:145px}
+ .boutique-lettering-banner .brand-photo{width:64px;height:87px}
+ .boutique-lettering-banner .brand-photo figcaption{font-size:7.5px}
+ .boutique-lettering-banner .banner-tagline{font-size:10.5px}
+}
