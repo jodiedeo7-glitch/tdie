@@ -383,3 +383,6 @@ body:has(.life) .sn-drip{display:none!important}
 .v-strip>*{grid-column:auto!important;grid-row:auto!important;margin:0!important;transform:none!important}
 .v-strip>:first-child:not(figure){grid-column:1 / -1!important}
 .v-strip::before{grid-column:1 / -1!important;width:auto!important;margin-bottom:4px}
+body:not(:has(.life))::before{background:#FFFBF8!important}
+.rs-kit-img{display:block;width:100%;max-width:560px;margin:22px auto 0;border-radius:20px 6px 20px 6px;border:6px solid #FFE3F0;aspect-ratio:10/7;object-fit:cover}
+.rs-hero .page-eyebrow{margin-left:auto!important;margin-right:auto!important;display:table!important}.rs-hero{padding-top:28px!important}

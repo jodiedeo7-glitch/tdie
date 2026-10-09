@@ -17,12 +17,15 @@ export interface Props {
   guideLabel?: string;
 }
 const { title, description, ogImage, eyebrow, heading, lede, meta = [], guideHref, guideLabel } = Astro.props;
+import { pillars } from "../data/library.js";
+const kitImg = guideHref ? (pillars.find((p) => guideHref.endsWith("/" + p.slug)) || {}).img : undefined;
 ---
 <PageLayout wide title={title} description={description} ogImage={ogImage}>
   <section class="rs-hero">
     <div class="page-eyebrow">{eyebrow}</div>
     <h1>{heading}</h1>
     <p class="rs-lede">{lede}</p>
+    {kitImg && <img class="rs-kit-img" src={kitImg} alt="" width="720" height="504" decoding="async" />}
     {meta.length > 0 && (
       <div class="rs-meta">
         {meta.map((m, i) => (
