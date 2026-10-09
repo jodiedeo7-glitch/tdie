@@ -1,30 +1,44 @@
-/* Repo authority: THE LOOK, current founder corrections, existing brand wordmark and photographs. */
+/* A photographic masthead with layered paper, rear mats and dimensional brand lettering. */
 .designed-banner{position:relative;isolation:isolate;overflow:hidden;background:#fff;color:#1a1417;box-sizing:border-box}
-.banner-top-drip{position:absolute;z-index:5;inset:0 0 auto;height:62px;background-position:top center;background-size:650px auto;background-repeat:repeat-x;pointer-events:none}
-.banner-composition{position:relative;max-width:1030px;height:315px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:30px;padding:65px 32px 20px;box-sizing:border-box}
-.brand-lockup{position:relative;z-index:3;justify-self:center;text-align:left}
-.banner-wordmark{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none!important;color:#d62e73!important;line-height:1;min-width:0;position:relative}
-.banner-repo-icon{width:28px;height:28px;display:block;border-radius:5px;box-shadow:0 3px 7px #d62e7325}.banner-the{display:flex;align-items:center;gap:9px;font:400 12px/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1a1417;margin-bottom:8px}
-.banner-name,.banner-edit{font:600 52px/1.02 Newsreader,Georgia,serif;letter-spacing:-.025em;color:#d62e73}
-.banner-name{background:linear-gradient(166deg,#d62e73 12%,#f577ad 26%,#d62e73 38%,#b92462 57%,#e9468a 71%,#d62e73 85%);background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 #ff8ac259)}
-.banner-edit{margin-top:1px;text-shadow:0 1px 0 #ff8ac280}
+.banner-world{position:absolute;inset:0 0 0 39%;background:#fff}
+.banner-world img{width:100%;height:100%;object-fit:cover;object-position:70% 44%;display:block}
+.banner-top-drip{position:absolute;z-index:8;inset:0 0 auto;height:62px;background-position:top center;background-size:650px auto;background-repeat:repeat-x;pointer-events:none}
+.banner-composition{position:relative;max-width:1400px;height:370px;margin:auto;box-sizing:border-box;padding:78px 6% 28px}
+.brand-lockup{position:relative;z-index:3;width:455px;padding:23px 32px 25px;box-sizing:border-box;background:#fff;box-shadow:0 12px 26px #54233824;isolation:isolate}
+.brand-lockup::before{content:'';position:absolute;z-index:-2;inset:-9px -7px;background:linear-gradient(125deg,#ff8ac2 0%,#f5c9df 25%,#d62e73 48%,#ffbadd 65%,#d62e73 100%);transform:rotate(-2deg)}
+.brand-lockup::after{content:'';position:absolute;z-index:-1;inset:0;background:#fff}
+.banner-wordmark{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none!important;color:#d62e73!important;line-height:1;position:relative}
+.banner-repo-icon{width:25px;height:25px;display:block;border-radius:5px;box-shadow:0 3px 6px #d62e7325}
+.banner-the{display:flex;align-items:center;gap:10px;font:400 11px/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1a1417;margin-bottom:8px}
+.banner-name,.banner-edit{font:600 52px/1.03 Newsreader,Georgia,serif;letter-spacing:-.025em;color:#d62e73;background:linear-gradient(168deg,#cf226c 15%,#ef78af 25%,#cf226c 37%,#b72060 58%,#eb589a 72%,#d62e73 85%);background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 #ffcce2)}
 .banner-edit sup{font:400 11px/1 Inter,sans-serif;vertical-align:super;letter-spacing:0;margin-left:3px}
-.banner-tagline{font:400 12px/1.55 Inter,sans-serif;letter-spacing:.01em;margin:16px 0 0;color:#1a1417}
-.brand-scenes{position:relative;align-self:stretch;min-width:0;isolation:isolate}
-.brand-photo{position:absolute;margin:0;padding:7px;background:transparent;box-sizing:border-box;isolation:isolate;box-shadow:0 8px 18px #6b214128}
+.banner-tagline{font:400 12px/1.65 Inter,sans-serif;margin:15px 0 0;color:#1a1417}
+.brand-photo{position:absolute;z-index:4;margin:0;padding:7px 7px 0;background:transparent;box-sizing:border-box;isolation:isolate;box-shadow:0 9px 20px #34182535}
 .brand-photo::after{content:'';position:absolute;z-index:-1;inset:0;background:#fff}
 .brand-photo::before{content:'';position:absolute;z-index:-2;inset:-6px;background:#ff8ac2;transform:rotate(3deg)}
-.brand-photo img{display:block;width:100%;height:100%;object-fit:cover}
-.brand-photo-studio{width:185px;height:225px;top:0;left:15px;transform:rotate(-5deg);z-index:2}.brand-photo-studio img{object-position:50% 40%}
-.brand-photo-work{width:179px;height:208px;top:18px;right:11px;transform:rotate(7deg);z-index:1}.brand-photo-work::before{background:#d62e73;transform:rotate(-3deg)}.brand-photo-work img{object-position:43% 47%}
+.brand-photo img{display:block;width:100%;height:calc(100% - 29px);object-fit:cover;object-position:50% 38%}
+.brand-photo figcaption{height:29px;display:flex;align-items:center;justify-content:center;white-space:nowrap;font:400 16px/1 Caveat,cursive;color:#a52058}
+.brand-photo-studio{width:149px;height:207px;left:43%;bottom:25px;transform:rotate(7deg)}
+.paper-glint{position:absolute;z-index:5;width:19px;height:25px;background:linear-gradient(135deg,#f8fcff,#df84b0 35%,#fff 49%,#a0a6ad 60%,#fff);clip-path:polygon(50% 0,58% 40%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 40%);filter:drop-shadow(0 0 3px #fff)}
+.glint-one{right:-12px;top:26px;width:24px;height:34px}.glint-two{left:38px;bottom:-16px}
+.banner-foil-edge{position:absolute;z-index:6;inset:auto 0 0;height:3px;background:linear-gradient(100deg,#d62e73,#ffbada 12%,#faf5fa 24%,#c084a4 33%,#fff 45%,#ff8ac2 70%,#d62e73 100%)}
 body:has(.designed-banner) .sn-logo,body:has(.designed-banner) .sn-drip{display:none!important}body:has(.designed-banner) .sn-in{justify-content:center!important;min-height:58px!important}body:has(.designed-banner) .sn{background:#fff!important;border-bottom:1px solid #edb4d0!important}body:has(.designed-banner) .sn-links a.sn-cta,body:has(.designed-banner) .sn-menu{background:#fff!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important;box-shadow:none!important}body:has(.header-study) .sf{display:none!important}
-@media(max-width:760px){.banner-top-drip{height:46px;background-size:470px auto}.banner-composition{height:258px;padding:54px 20px 18px;grid-template-columns:minmax(0,1fr) 128px;gap:9px}.brand-lockup{justify-self:start}.banner-name,.banner-edit{font-size:34px}.banner-name{max-width:190px}.banner-the{font-size:10px;margin-bottom:7px}.banner-edit sup{font-size:9px}.banner-tagline{font-size:10px;line-height:1.5;margin-top:13px}.brand-photo{padding:4px}.brand-photo::before{inset:-4px}.brand-photo-studio{width:91px;height:135px;top:10px;left:0}.brand-photo-studio img{object-position:47% 40%}.brand-photo-work{width:77px;height:108px;top:83px;right:0;z-index:3;transform:rotate(7deg)}.brand-photo-work img{object-position:36% 45%}body:has(.designed-banner) .sn-in{justify-content:flex-end!important;min-height:54px!important}}
-@media(max-width:360px){.banner-composition{padding-inline:16px;grid-template-columns:minmax(0,1fr) 98px;gap:8px}.banner-name,.banner-edit{font-size:32px}.brand-photo-studio{width:76px;height:120px;left:0}.brand-photo-work{width:63px;height:98px;right:0;top:96px}.banner-tagline{font-size:9px}}
-/* No filled banner plate, black fills, ivory, lavender gradients, new logo artwork or generated images. */
 
-@media(max-width:760px){.banner-repo-icon{width:23px;height:23px}.banner-the{gap:7px}}
+@media(min-width:1700px){.banner-world{left:42%}.banner-world img{object-position:65% 44%}.banner-composition{max-width:1550px}.brand-photo-studio{left:44%}}
+@media(max-width:1100px) and (min-width:761px){.brand-lockup{width:400px;padding-inline:25px}.banner-name,.banner-edit{font-size:46px}.brand-photo-studio{left:46%;width:126px;height:177px}.banner-world{left:35%}}
+@media(max-width:760px){.banner-top-drip{height:46px;background-size:470px auto}.banner-composition{height:400px;padding:66px 18px 20px}.banner-world{inset:0}.banner-world img{object-position:65% 50%}.brand-lockup{width:235px;padding:17px 19px 18px}.banner-name,.banner-edit{font-size:34px}.banner-the{font-size:9px;margin-bottom:7px}.banner-repo-icon{width:21px;height:21px}.banner-edit sup{font-size:9px}.banner-tagline{font-size:10px;line-height:1.5;margin-top:10px}.brand-photo-studio{width:107px;height:150px;left:23px;bottom:19px;transform:rotate(-7deg)}.brand-photo{padding:5px 5px 0}.brand-photo img{height:calc(100% - 24px)}.brand-photo figcaption{font-size:12px;height:24px}.brand-photo::before{inset:-4px}.glint-one{width:17px;height:24px;right:-10px;top:16px}.glint-two{left:25px;bottom:-13px;width:13px;height:18px}body:has(.designed-banner) .sn-in{justify-content:flex-end!important;min-height:54px!important}}
+@media(max-width:360px){.banner-composition{height:380px;padding:61px 14px 16px}.brand-lockup{width:210px;padding-inline:16px}.banner-name,.banner-edit{font-size:32px}.brand-photo-studio{left:21px;width:97px;height:139px}.banner-world img{object-position:63% 50%}}
 /* The masthead's mobile navigation follows the same current brand rules. */
 body:has(.designed-banner) .sn-drawer{background:#fff!important}
 body:has(.designed-banner) .sn-drawer a{font-family:Inter,sans-serif!important;font-size:18px!important;min-height:48px!important;border-bottom-color:#edb4d0!important}
 body:has(.designed-banner) .sn-drawer a.sn-d-cta{background:#fff!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important;font-size:13px!important}
 body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-radius:999px!important;background:#fff!important}
+/* Keep the portrait clear of the drip; phone composition gives lettering its own space. */
+.banner-world{top:62px}.banner-world img{object-position:70% 0}
+@media(min-width:1700px){.banner-world img{object-position:65% 0}}
+@media(max-width:760px){.banner-composition{height:450px;padding:63px 20px 18px}.banner-world{inset:216px 0 0 19%}.banner-world img{object-position:80% 0}.brand-lockup{width:100%;padding:14px 19px 16px}.banner-wordmark{display:block}.banner-the{display:flex;margin-bottom:5px}.banner-name{display:block;font-size:34px}.banner-edit{display:block;font-size:34px}.banner-tagline{font-size:10px;margin-top:8px;line-height:1.45}.brand-photo-studio{left:20px;bottom:22px;width:119px;height:170px;transform:rotate(-6deg)}.brand-photo figcaption{font-size:13px}.glint-two{left:25px;bottom:-10px}}
+@media(max-width:360px){.banner-composition{height:430px;padding:61px 17px 16px}.brand-lockup{width:100%;padding:13px 17px 15px}.banner-name,.banner-edit{font-size:32px}.banner-world{top:214px;left:18%}.brand-photo-studio{left:18px;width:105px;height:151px;bottom:20px}}
+
+@media(min-width:761px){.banner-world{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px}.banner-world img{min-width:0;object-position:66% 12%}.banner-world .banner-world-work{object-position:61% 35%}}
+@media(max-width:760px){.banner-world-work{display:none!important}}
+@media(min-width:761px){.brand-photo-studio{left:calc(70% - 65px);width:125px;height:180px;bottom:18px}}
