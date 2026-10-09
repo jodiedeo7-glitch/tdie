@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-09T16:30:00Z",
+  "purpose": "Single continuation record for WYS repairs; not release certification.",
+  "ownership": {
+    "this_conversation": "Code implementation on isolated repair branches; no external audit submission or account interaction.",
+    "existing_external_review": "Questionnaire Recovery Failure conversation retains the already-created Gemini review.",
+    "cross_conversation_control": "This record does not start, stop or synchronize another conversation automatically."
+  },
+  "review": {
+    "source": "WYS-Audit-Verified-Findings.txt version 1",
+    "status": "EXTERNAL_REVIEW_INCOMPLETE_NOT_ACCEPTED",
+    "focused_correction": "Stopped; completed corrected result unavailable",
+    "visual_review": "NOT_TESTED_IMAGE_ACCESS_FAILURE"
+  },
+  "repairs": [
+    {
+      "id": "INTAKE-EMPTY-STRUCTURED",
+      "status": "IMPLEMENTED_LOCAL_TESTS_PASS_UNMERGED",
+      "pull_request": 31,
+      "head": "ee83e369761f719b2325c22f14c8041d5ee36924",
+      "tests": 57,
+      "external_recheck": "PENDING"
+    },
+    {
+      "id": "PROFILE-ORPHAN-LOCK",
+      "status": "IMPLEMENTATION_IN_PROGRESS",
+      "requirement": "Recover after writer process death without deleting locks solely by age; retain live-writer exclusion."
+    },
+    {
+      "id": "CALLER-INTEGRATION",
+      "status": "NOT_VERIFIED",
+      "requirement": "Actual generation and publication callers must invoke profile, spend and category gates."
+    },
+    {
+      "id": "CUSTOMER-INSTALL-DELIVERY",
+      "status": "NOT_VERIFIED",
+      "pull_request": 30
+    },
+    {
+      "id": "CATEGORY-AND-PATH-E2E",
+      "status": "NOT_TESTED",
+      "requirement": "Real category images and customer workflow through posting/scheduling; no passing result inferred from fixtures."
+    }
+  ],
+  "disproved_claims": [
+    "Lock is removed before atomic_write",
+    "Missing categories bypass the import category gate",
+    "An empty three-role asset list passes mini_test",
+    "profile.py enforces an outside-repository storage boundary"
+  ],
+  "holds": {
+    "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
+    "customer_release": "HELD"
+  },
+  "next_action": "Finish safe profile-lock recovery on the existing code-repair branch, validate active-writer exclusion and abnormal-process-exit recovery, commit/read back. Keep external review separate; never treat local tests as an independent verdict."
+}
