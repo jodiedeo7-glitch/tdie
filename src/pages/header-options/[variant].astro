@@ -1,15 +1,6 @@
 ---
-import { getImage } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
-import DesignedBanner from '../../components/lifestyle/DesignedBanner.astro';
-import icingSource from '../../assets/wys/pink-icing-continuous.png';
-import '../../styles/wys-fonts.css';
-import '../../styles/lifestyle.css';
-import '../../styles/header-options.css';
 export function getStaticPaths(){return [1,2,3,4,5,6].map(variant=>({params:{variant:String(variant)}}));}
 const variant=Number(Astro.params.variant);
-const icing=await getImage({src:icingSource,format:'webp',quality:90});
 ---
-<PageLayout title={`Header option ${variant}`} description="Coded TDIE header design study" noindex={true} bare={true} visualRefresh={false}>
- <div slot="before-nav" class={`header-study header-study-${variant}`}><DesignedBanner icing={icing.src}/></div>
-</PageLayout>
+<PageLayout title={`Header preview ${variant}`} description="TDIE navigation preview" noindex={true} bare={true} visualRefresh={false} />
