@@ -19,7 +19,12 @@
     "skills/wys-storefront/SKILL.md": "fdbf13f46e3f8af1dac97337d2f575f1f998ac8ab560b5106b8a0a5c399d1557",
     "skills/wys-storefront/agents/openai.yaml": "ddffdda73a65ffd77e522ba4a802a4f841b50650c37341c0eb058366bf956f0c",
     "skills/wys-storefront/references/question-bank.json": "be33789f1103f2f9f6b858961d8ebd999ed93baaa8baeef4635fa05ae9478d7d",
-    "skills/wys-storefront/references/workflow.md": "af65b1f47f6be5db671761c76996e3898b46372d31a02d162521e07d30d9091d",
-    "skills/wys-storefront/scripts/session.py": "d8f373aa18a95a5107c5cbb44f0f174a47282b1511e5e2348a12c392ff4b3c1d"
-  }
+    "skills/wys-storefront/references/workflow.md": "61f32c505fa7824c8dfbd81981a05926d4c054497580382ddf2267ee3c73e3dc",
+    "skills/wys-storefront/scripts/session.py": "69e9a43cb7a15335ad6e126b535f928539f69502ca1b795ad082af91ba6a0a72",
+    "tests/test_session.py": "dcd362594309c8be4baf7b51f02b962504c197d6fe48e1222c37b120748c68bc"
+  },
+  "packaged_session_regression_tests": 6,
+  "packaged_session_regression_result": "PASS_ON_POSIX_SYNTHETIC_CLI",
+  "locking": "POSIX_OS_LEASE; legacy markers require reconciliation; Windows/network filesystems unverified",
+  "external_review_scope": "Existing corrected Gemini review covers earlier runtime source and rejected STYLED image; this customer plugin remains unreviewed"
 }
