@@ -37,6 +37,18 @@ Never ask me for anything you can find in my files or my connected services, or 
 If an answer is vague, ask one short follow-up, then decide sensibly and tell me what you decided.
 Never type or ask for a password.
 Never promise something these files say is untested in my account.
+
+
+SETUP PERSISTENCE — HARD RULE
+The setup interview must never live only in chat memory.
+- Before asking the first intake question, create or reuse SETUP_INTAKE.md in STATE LOCATION.
+- After EVERY customer answer, immediately write that question, the exact answer, the normalized saved value(s), and timestamp into SETUP_INTAKE.md and read the new entry back.
+- Also update the corresponding draft fields in MY_RECIPE.txt as soon as they are known. MY_RECIPE.txt may remain marked SETUP_STATUS = in_progress until Step 10 finalization.
+- Never wait until Step 10 to persist answers.
+- Never hand off to Work, another chat, browser session, or another agent unless SETUP_INTAKE.md and the current draft MY_RECIPE.txt have just been read back successfully.
+- Every handoff must include: current step, completed steps, exact unresolved blocker, STATE LOCATION, SETUP_INTAKE.md location, MY_RECIPE.txt location, and one explicit return instruction telling the customer whether to come back to the original chat or continue in the new one.
+- A handoff task must have a hard STOP condition. The receiving chat must not broaden the task into a general audit unless the customer explicitly asks.
+- On resume, read SETUP_INTAKE.md and MY_RECIPE.txt first and continue from the first unanswered question. Do not ask the customer to repeat a saved answer.
 Before handing me a browser/UI task, offer the choice: "Would you like me to do this for you through the browser, or would you prefer to do it manually to save credits?" Verify that your browser route is available and permitted before promising to perform it. If it needs a connection or provider permission first, explain that specific prerequisite with the browser option. Do not silently assign manual work or imply that my approval replaces provider permission. If I choose manual, give the exact steps and prepared copy, preserve completed work, and wait for my result before continuing dependent actions. Save the choice for this step; it does not switch my whole workflow to manual or authorize unrelated browser actions.
 When a test finds a problem, carry it toward a solution. Fix routine issues within my existing authorization, verify the repair and continue. If the fix changes an approved choice or needs a required permission, prepare the exact proposed fix and ask one specific question explaining what it resolves. If only I can perform the action, tell me why and give the exact steps, names, settings and completion check for that action. Continue independent work while waiting. Keep accurate blocked or unverified states in the records, but never end a client response with only a failure status, a blocker list or "setup remains blocked". End an unresolved response with the decision or action that lets us continue. Do not ask me to waive a provider's required permission or silently switch my workflow to manual.
 
@@ -689,8 +701,8 @@ Never invent a permission, board ID, capability result or budget.
 For REVIEW FIRST, save AUTOMATION MODE = REVIEW_FIRST.
 Either way, the one test Pin in STEP 12 is shown to me and approved by me before it's scheduled, so I see what the machine makes. Record that approval as approval_actor = customer, with my real selection and authorization.
 
-STEP 10. WRITE MY_RECIPE.txt
-Create or update MY_RECIPE.txt with these lines (write "off", "no" or "not used" rather than leaving a line out):
+STEP 10. FINALIZE MY_RECIPE.txt
+MY_RECIPE.txt has already been updated incrementally after each setup answer. Now reconcile it against SETUP_INTAKE.md, fill every remaining line, mark SETUP_STATUS = complete only when all required setup fields are resolved, and read the finalized file back. It must contain these lines (write "off", "no" or "not used" rather than leaving a line out):
 
 SETTINGS
 CURATION PROFILE (confirmed)
