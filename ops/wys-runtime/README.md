@@ -21,3 +21,11 @@ Integration status: local components tested; no production adapter or scheduled 
 `intake-question-bank.json` maps required fields to their downstream steps. It contains no completed original questionnaire. Persist newly received answers immediately and retain their exact source. Recovered direct instructions use `source_kind: recovered_direct_instruction`, `answered_at: null`, and an accurate `recorded_at`; do not invent the historical answer time.
 
 `prepare --scope visual_pilot` permits only private basic/styled/lifestyle/graphics inputs with all visual fields present. Publishing and sourcing cannot use that scope. The default production scope still requires complete setup. These guards require caller integration; they are not proof of live execution.
+
+## Executable interview and resume
+
+`intake.py next --profile PRIVATE_PATH` returns the first unanswered question. It starts with business direction and audience, then categories and sourcing route, visual signature, category-specific curation, persona, account/destination, channels, execution preferences, cadence and finite budget. Operator verification remains separate. Resolve existing exact customer evidence before asking each question; never prefill one customer's answers from another customer's brand.
+
+`intake.py answer --profile PRIVATE_PATH --customer CUSTOMER_ID --question QUESTION_ID --answer-file PRIVATE_ANSWER_JSON --expected-revision REVISION` saves an answer immediately, reads it back, and returns the next question. Answer JSON contains the exact `value`, original `evidence`, and timezone-aware `answered_at`. Use `--kind founder` for an authorized founder replacement profile and `--kind fixture` only for explicitly synthetic tests. Customer data never goes in this public repo.
+
+Raw question answers and aggregate curation/visual fields are written in the same atomic profile revision. Grouped answers retain per-component source evidence and all previous history. Blank answers and the interface's `No selection` are unanswered. No-persona skips only the persona-world question; it does not establish that the no-persona generation variant works. Completed preference intake reports `live_setup: NOT_VERIFIED`, not operational readiness.

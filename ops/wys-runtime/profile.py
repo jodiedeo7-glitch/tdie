@@ -153,6 +153,11 @@ def prepare(path, customer_id, step, look_id, master_path, expected_profile_hash
         raise Blocked('SCOPE_INVALID')
     if scope == 'visual_pilot' and step not in VISUAL_STEPS:
         raise Blocked('PILOT_CANNOT_PUBLISH_OR_SOURCE')
+    if any(key.startswith('intake.') for key in profile['answers']):
+        from intake import missing_questions
+        unanswered = missing_questions(profile['answers'], scope)
+        if unanswered:
+            raise Blocked('INTERVIEW_INCOMPLETE:' + ','.join(unanswered))
     required = VISUAL_REQUIRED if scope == 'visual_pilot' else REQUIRED
     missing = [key for key in required if key not in profile['answers']
                or profile['answers'][key]['value'] is None]

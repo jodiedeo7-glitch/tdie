@@ -239,5 +239,113 @@
     "status": "ASK_ONLY_IF_NOT_ALREADY_VERIFIED_FROM_CUSTOMER_SOURCE",
     "example": "Affordable girly home finds for women furnishing their first apartment."
   },
-  "founder_repair_boundary": "Use existing founder sources for known facts. Original completed questionnaire is UNRECOVERED. Recovered direct instructions are separate evidence, not original questionnaire answers. The prior three questions received no curation preferences; do not save the objections as choices."
+  "founder_repair_boundary": "Use existing founder sources for known facts. Original completed questionnaire is UNRECOVERED. Recovered direct instructions are separate evidence, not original questionnaire answers. The prior three questions received no curation preferences; do not save the objections as choices.",
+  "executable_interview": "ops/wys-runtime/intake.py",
+  "ordered_customer_questions": [
+    {
+      "question_id": "business_direction",
+      "field": "curation_profile",
+      "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?"
+    },
+    {
+      "question_id": "categories",
+      "field": "product_categories",
+      "prompt": "Which product categories do you want to cover?"
+    },
+    {
+      "question_id": "selection_route",
+      "field": "curation_profile",
+      "prompt": "Would you rather supply detailed product examples, share vibe pictures, or start with a short description?"
+    },
+    {
+      "question_id": "aesthetic",
+      "field": "personal_visual_signature",
+      "prompt": "Describe the overall look you want, including how simple or detailed it should feel."
+    },
+    {
+      "question_id": "palette_materials",
+      "field": "personal_visual_signature",
+      "prompt": "Which colors, materials and textures should appear, and which should be avoided?"
+    },
+    {
+      "question_id": "personal_details",
+      "field": "personal_visual_signature",
+      "prompt": "What interests, places or signature details should make these images feel like your brand?"
+    },
+    {
+      "question_id": "visual_exclusions",
+      "field": "personal_visual_signature",
+      "prompt": "What must never appear in your images?"
+    },
+    {
+      "question_id": "category_preferences",
+      "field": "curation_profile",
+      "prompt": "For your selected categories, what styles, uses, seasons or occasions should guide the products?"
+    },
+    {
+      "question_id": "product_exclusions",
+      "field": "curation_profile",
+      "prompt": "Are there product types, materials, brands or features you want excluded?"
+    },
+    {
+      "question_id": "shopping_price",
+      "field": "curation_profile",
+      "prompt": "What price range or value priorities apply to the selected categories?"
+    },
+    {
+      "question_id": "persona_choice",
+      "field": "persona",
+      "prompt": "Do you want an authorized AI persona appearing in lifestyle images, or the no-persona path?"
+    },
+    {
+      "question_id": "persona_world",
+      "field": "personal_visual_signature",
+      "prompt": "If using a persona, which real-life settings and activities fit your brand?"
+    },
+    {
+      "question_id": "voice",
+      "field": "curation_profile",
+      "prompt": "How should your writing sound, and what wording should it avoid?"
+    },
+    {
+      "question_id": "amazon_path",
+      "field": "amazon_path",
+      "prompt": "Are you an approved Influencer with a storefront, Associates-only, or still setting up?"
+    },
+    {
+      "question_id": "destinations",
+      "field": "destinations",
+      "prompt": "Which owned storefront, list or website should the content send shoppers to?"
+    },
+    {
+      "question_id": "channels",
+      "field": "channels",
+      "prompt": "Which channels do you want included?"
+    },
+    {
+      "question_id": "execution_mode",
+      "field": "execution_mode",
+      "prompt": "Which parts should the agent handle and which parts do you prefer to do manually?"
+    },
+    {
+      "question_id": "provider_choice",
+      "field": "provider_model",
+      "prompt": "Which image provider do you want to use? The operator will verify its exact model and supported execution path."
+    },
+    {
+      "question_id": "cadence",
+      "field": "cadence",
+      "prompt": "How many looks do you want, and on which days?"
+    },
+    {
+      "question_id": "timezone",
+      "field": "timezone",
+      "prompt": "Which timezone should govern the schedule?"
+    },
+    {
+      "question_id": "generation_budget",
+      "field": "budget",
+      "prompt": "What finite generation budget and retry allowance do you authorize?"
+    }
+  ]
 }
