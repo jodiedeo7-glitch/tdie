@@ -148,3 +148,41 @@ body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-r
  .boutique-lettering-banner .brand-photo figcaption{font-size:7.5px}
  .boutique-lettering-banner .banner-tagline{font-size:10.5px}
 }
+
+/* The reference uses round, substantial serif lettering and a stacked phone hero. */
+.boutique-lettering-banner .banner-title-art .banner-name,.boutique-lettering-banner .banner-title-art .banner-edit,.banner-letter-sheen text{letter-spacing:-.02em!important;fill:#e489b0}
+.banner-letter-sheen text{fill:url(#banner-letter-foil)}
+.boutique-lettering-banner .banner-the{transform:rotate(-5deg)}
+.boutique-lettering-banner .optical-glint{opacity:1;filter:drop-shadow(0 1px 1px #ec9abd30)}
+.boutique-lettering-banner .glint-one{width:18px;height:24px}
+.boutique-lettering-banner .glint-two{width:17px;height:24px}
+.boutique-lettering-banner .glint-three,.boutique-lettering-banner .glint-four{width:13px;height:18px}
+.banner-pearl{position:absolute;z-index:1;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 32% 26%,white 8%,#ffe1ed 34%,#eca7c7 67%,#fff 93%);box-shadow:0 1px 3px #dd82ad40}
+.pearl-one{left:21%;top:82px}.pearl-two{right:22%;top:108px;width:5px;height:5px}.pearl-three{left:31%;bottom:37px;width:5px;height:5px}.pearl-four{right:32%;bottom:29px}.pearl-five{left:8%;top:134px;width:4px;height:4px}.pearl-six{right:8%;bottom:46px;width:4px;height:4px}
+@media(max-width:760px){
+ .boutique-lettering-banner .banner-composition{height:342px;max-width:430px;padding:65px 26px 25px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:117px 119px;gap:12px;align-content:start}
+ .boutique-lettering-banner .brand-lockup{grid-column:1/-1;grid-row:1;align-self:start}
+ .boutique-lettering-banner .banner-title-art{width:232px}
+ .boutique-lettering-banner .banner-the{font-size:7px;margin-bottom:3px}
+ .boutique-lettering-banner .banner-repo-icon{width:12px;height:12px}
+ .boutique-lettering-banner .banner-tagline{font-size:15px;margin-top:2px;line-height:1.03}
+ .boutique-lettering-banner .brand-photo{grid-row:2;width:96px;height:113px;padding:5px 5px 0}
+ .boutique-lettering-banner .brand-photo-studio{grid-column:1;transform:rotate(-8deg);margin-top:0}
+ .boutique-lettering-banner .brand-photo-desk{grid-column:2;transform:rotate(8deg);margin-top:9px}
+ .boutique-lettering-banner .brand-photo figcaption{height:22px;font-size:10px;white-space:nowrap}
+ .boutique-lettering-banner .brand-photo img{height:calc(100% - 22px)}
+ .boutique-lettering-banner .glint-one{left:12%;top:100px;width:14px;height:19px}
+ .boutique-lettering-banner .glint-two{right:10%;top:111px;bottom:auto;width:14px;height:19px}
+ .boutique-lettering-banner .glint-three{left:48%;bottom:62px;width:13px;height:18px}
+ .boutique-lettering-banner .glint-four{right:12%;top:183px;width:10px;height:14px}
+ .boutique-lettering-banner .glint-five{display:block;left:17%;bottom:32px;width:10px;height:14px}
+ .boutique-lettering-banner .glint-six{display:block;right:38%;top:68px;width:8px;height:11px}
+ .pearl-one{left:22%;top:79px}.pearl-two{right:22%;top:159px}.pearl-three{left:9%;bottom:62px}.pearl-four{right:38%;bottom:39px}.pearl-five{left:39%;top:174px}.pearl-six{right:8%;bottom:87px}
+}
+@media(max-width:360px){
+ .boutique-lettering-banner .banner-composition{height:336px;padding-inline:20px;grid-template-rows:117px 115px;gap:10px}
+ .boutique-lettering-banner .banner-title-art{width:218px}
+ .boutique-lettering-banner .banner-tagline{font-size:14px}
+ .boutique-lettering-banner .brand-photo{width:90px;height:108px}
+ .boutique-lettering-banner .brand-photo figcaption{font-size:9px}
+}
