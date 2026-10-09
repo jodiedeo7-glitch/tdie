@@ -1,6 +1,6 @@
 # WYS Customer Setup Assistant (internal, unreleased)
 
-Status: DESIGN ONLY. WYS customer release HOLD remains active. This does not authorize publication.
+Status: DEVELOPMENT PROTOTYPE ONLY. Workspace API and simulated customer tests exist; live purchase integration, authenticated customer sessions, production persistence and complete workflow execution remain unverified. WYS customer release HOLD remains active. This does not authorize publication.
 
 ## Authority
 Read AGENTS.md and claude/WYS_REFERENCE_PACK_2026-10-07.md before changing this workflow. Founder example is not a customer default. Image generation provider/model UNVERIFIED.
