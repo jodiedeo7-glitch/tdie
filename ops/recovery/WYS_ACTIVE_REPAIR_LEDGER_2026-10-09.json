@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T20:43:09.707Z",
+  "updated_at": "2026-10-09T21:35:15.943Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -157,6 +157,23 @@
         "Independent recheck and founder release clearance"
       ],
       "automatic_conversation_capture": "NOT_INCLUDED"
+    },
+    {
+      "id": "AUTOMATIC-PLUGIN-CI",
+      "status": "GITHUB_RUN_PASSED_EXACT_ARTIFACT_FILES_COMMITTED_READBACK_MATCHED",
+      "pull_request": 30,
+      "head": "ddef5f56ef7659450239bc7ea3ec3808c9b0c5e4",
+      "workflow": ".github/workflows/wys-plugin-check.yml",
+      "tested_source": "a10558e3e01817f6992062041ffe7fbe177e77d2",
+      "run_id": 37994035493,
+      "job_id": 114035327000,
+      "plugin_tests": 13,
+      "runtime_tests": 68,
+      "artifact_id": 11647000064,
+      "zip_sha256": "740249a85dc09822e9435ab00e28e6022522ccfc92e2acbc7457ee97681fbdd8",
+      "files": "ops/recovery/WYS_MCP_EXECUTION_2026-10-09/github-ci/",
+      "scope": "Actual GitHub Actions execution with synthetic fixtures. Not independent product review, live customer execution, or release clearance.",
+      "activation": "Repair branch push and PR executed automatically; workflow applies to relevant future main/PR changes after merge."
     }
   ],
   "disproved_claims": [
