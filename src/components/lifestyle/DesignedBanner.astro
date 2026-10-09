@@ -11,7 +11,13 @@ const {icing}=Astro.props;
   <div class="brand-lockup">
    <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home">
     <span class="banner-the"><img class="banner-repo-icon" src="/icon-512.png" width="25" height="25" alt="" aria-hidden="true"/>The</span>
-    <span class="banner-name">Digital Income</span><span class="banner-edit">Edit<sup>™</sup></span>
+    <svg class="banner-title-art" viewBox="0 0 360 104" aria-hidden="true">
+     <defs><pattern id="banner-letter-foil" width="650" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><image href={icing} width="650" height="216.6667"/></pattern></defs>
+     <text class="banner-name" x="180" y="42" text-anchor="middle">Digital</text>
+     <text class="banner-edit" x="180" y="91" text-anchor="middle">Income Edit</text>
+     <g class="banner-letter-sheen"><text x="180" y="42" text-anchor="middle">Digital</text><text x="180" y="91" text-anchor="middle">Income Edit</text></g>
+     <text class="banner-trademark" x="310" y="70">™</text>
+    </svg>
    </a>
    <p class="banner-tagline">Build Your Business Backwards.<br/>Scale It Forward.<sup>™</sup></p>
   </div>
