@@ -16,6 +16,12 @@ Private state belongs outside this public repository. `profile.py save` merges e
 
 Integration status: local components tested; no production adapter or scheduled task has been shown to invoke them. Native in-chat generation is the founder's requested mini-test route. No Higgsfield call or credit spend occurred in this repair. The original completed founder questionnaire remains unrecovered; actual category image tests have not run. Do not label the system working from these component results.
 
+## Runtime write leases and upgrade boundary
+
+Profile saves, spend reservations and spend-result writes share a nonblocking OS-held lease on `PRIVATE_PATH.write-lease`. The file remains on disk; its presence is not ownership. The OS releases ownership when a writer closes its descriptor or exits, including abnormal termination. Never delete that file while writers can run: removing it can split ownership across different inodes.
+
+This backend uses POSIX `fcntl.flock`; an unavailable backend blocks with `*_OS_LOCK_UNAVAILABLE`. Windows and network-filesystem behavior are not certified by the Linux component tests. Stop old-version writers before upgrading. Any existing legacy `PRIVATE_PATH.lock` marker blocks with `*_WRITE_IN_PROGRESS_LEGACY_LOCK_RECONCILE_REQUIRED`; reconcile its owner and any uncertain write before manually removing it. No lock is removed merely because it is old. The killed-subprocess regression proves new-lease recovery on this test filesystem; it does not certify migration of an unknown existing lock or a live service.
+
 ## Authorized replacement intake
 
 `intake-question-bank.json` maps required fields to their downstream steps. It contains no completed original questionnaire. Persist newly received answers immediately and retain their exact source. Recovered direct instructions use `source_kind: recovered_direct_instruction`, `answered_at: null`, and an accurate `recorded_at`; do not invent the historical answer time.
