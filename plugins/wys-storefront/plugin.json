@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "wys-storefront",
+  "version": "0.1.0",
+  "description": "Guided WYS customer setup and resumable private preference records. Development version; generation and publishing require separately verified integrations.",
+  "author": {
+    "name": "The Digital Income Edit"
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/wys-storefront/SKILL.md",
+      "interface": {
+        "displayName": "While-You-Sleep Storefront",
+        "shortDescription": "Guided setup with saved customer preferences",
+        "developerName": "The Digital Income Edit",
+        "defaultPrompt": [
+          "Resume my saved WYS setup and continue the next authorized step."
+        ]
+      }
+    }
+  }
+}
