@@ -403,3 +403,16 @@ body.sales-page .tdie-manifesto p:not(#zq),.tdie-manifesto p:not(#zq) em{font-si
 .triptych.offset .photo{transform:none!important}
 h3 em{color:#B8245F!important;font-style:normal!important}
 .wb-stk-b:not(#zq){background:#fff!important;border:1.5px solid #E891B6!important}.wb-stk-b:not(#zq) *{color:#872049!important}
+@media(max-width:700px){
+  .notebook .h{font-size:22px!important;line-height:1.2!important}
+  .article table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+  .article h4{font-size:22px!important}
+}
+/* every button everywhere (beats page-level rules): white, thin pink outline, dark text */
+body:not(:has(.life)) :is(a,button):is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-cta,.sn-d-cta,.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.tk-cert-open,.tk-resume,.go):not(#zq):not(#zq2),
+body:not(:has(.life)) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,.freebie-capture,.v-capture,form) button:not(#zq):not(#zq2),
+body:not(:has(.life)) :is(.weekend-ecosystem,main) a[style*="background:#D62E73"]:not(#zq),body:not(:has(.life)) button[style*="background:#D62E73"]:not(#zq){background:#fff!important;background-image:none!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important}
+body:not(:has(.life)) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,form) button:not(#zq):not(#zq2) *{color:#1A1417!important}
+.mb-feed-sticker{background:#fff!important;color:#B8245F!important;border:1.5px solid #E891B6;box-shadow:0 8px 16px -10px rgba(194,24,91,.5)!important}
+.bl-no{background:#fff!important;color:#B8245F!important;border:1.5px solid #E891B6}
+.pick-card--hot .pick-img{background:#FFF0F7!important}
