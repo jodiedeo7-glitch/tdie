@@ -2,6 +2,7 @@
 import {getImage} from 'astro:assets';
 import icingSource from '../assets/wys/pink-icing-continuous.png';
 const icing=await getImage({src:icingSource,format:'webp',quality:90});
+import Disclosure from './lifestyle/Disclosure.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 import '../styles/wys.css';
 import '../styles/wys-fonts.css';
@@ -19,5 +20,6 @@ const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',
   <div class="wb-shopbar"><div class="wys-wrap wb-shopbar-inner"><nav aria-label="While-You-Sleep Storefront">{links.map(link=><a href={link.href} aria-current={current===link.key?'page':undefined}>{link.name}</a>)}</nav></div></div>
   <div id="wys-content"><slot /></div>
   <div class="wys-wrap wys-foot"><a href="/lifestyle">Explore the Lifestyle edit <span aria-hidden="true">→</span></a><a href="/shop">Back to the TDIE shop <span aria-hidden="true">→</span></a></div>
+  <div class="wys-wrap"><Disclosure /></div>
  </div>
 </PageLayout>

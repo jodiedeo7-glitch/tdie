@@ -13,6 +13,6 @@ const { title, description, ogImage, draft = false, schema = [], signup = true, 
     {draft && <aside class="life-draft"><strong>Local draft preview.</strong> Release prerequisites remain pending. This article is excluded from production builds.</aside>}
     <div id="life-content"><slot /></div>
     {signup && <section class="life-wrap life-signup" aria-label="Pink Finds email"><PinkFindsSignup variant="box" /></section>}
-    <div class="life-wrap life-close">{disclosure && <Disclosure />}<a class="life-text-link" href="/lifestyle">Browse all Lifestyle articles <span aria-hidden="true">→</span></a></div>
+    <div class="life-wrap life-close"><a class="life-text-link" href="/lifestyle">Browse all Lifestyle articles <span aria-hidden="true">→</span></a>{disclosure && <Disclosure />}</div>
   </div>
 </PageLayout>

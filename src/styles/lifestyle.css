@@ -264,3 +264,10 @@
 .life .life-article .life-shop .life-notice p{font-size:13px;line-height:1.55;margin:0 0 6px}
 .life .life-article .life-shop .life-shopping-status{padding:10px 14px;font-size:13px;margin:12px 0}
 @media(max-width:760px){.life .life-article .life-products{grid-auto-columns:85%}.life .life-article .life-shop{padding:16px}.life-product-tools>p{max-width:20ch}}
+
+/* Article prose gets the wider column; photo paper never fills an empty panel. */
+.life .life-article .life-story-row,.life .life-article .life-story-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,300px);align-items:start;gap:28px;padding:20px 0;border:0;outline:0;border-radius:0;box-shadow:none;background:transparent}
+.life .life-article .life-story-row>.life-story-copy{grid-column:1;grid-row:1;min-width:0;max-width:none;padding:22px 24px;border:0;outline:0;border-radius:12px;box-shadow:none;background:#fff8fc}
+.life .life-article .life-story-row>.life-photo{grid-column:2;grid-row:1;align-self:start;margin-top:22px;transform:none}
+.life .life-article .life-story-copy p{max-width:65ch}
+@media(max-width:760px){.life .life-article .life-story-row,.life .life-article .life-story-row:nth-child(even){grid-template-columns:minmax(0,1fr);gap:18px;padding:12px 0}.life .life-article .life-story-row>.life-photo{grid-column:1;grid-row:1;margin-top:0}.life .life-article .life-story-row>.life-story-copy{grid-column:1;grid-row:2;padding:20px}}
