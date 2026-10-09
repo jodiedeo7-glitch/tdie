@@ -1,6 +1,7 @@
 """Private preference and decision state. No network or generation calls."""
 import argparse
 import copy
+from contextlib import contextmanager
 from datetime import datetime
 import hashlib
 import json
@@ -9,6 +10,10 @@ import os
 from pathlib import Path
 import tempfile
 from zoneinfo import ZoneInfo
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
 
 BANK = json.loads((Path(__file__).parents[1] / 'references/question-bank.json').read_text())
 QUESTIONS = {q['id']: q for q in BANK['questions']}
@@ -17,6 +22,24 @@ QUESTIONS = {q['id']: q for q in BANK['questions']}
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
                                     separators=(',', ':'), allow_nan=False).encode()).hexdigest()
+
+
+@contextmanager
+def write_lease(path):
+    """Kernel-released lease; retain the inode so concurrent writers share it."""
+    if fcntl is None:
+        raise ValueError('OS_LOCK_UNAVAILABLE')
+    fd = os.open(str(path) + '.write-lease', os.O_CREAT | os.O_RDWR, 0o600)
+    try:
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as error:
+            raise ValueError('WRITE_IN_PROGRESS') from error
+        if Path(str(path) + '.lock').exists():
+            raise ValueError('LEGACY_LOCK_RECONCILE_REQUIRED')
+        yield
+    finally:
+        os.close(fd)
 
 
 def load(path):
@@ -138,10 +161,7 @@ def validate(state, qid, data):
 def mutate(path, command, customer=None, qid=None, data=None, revision=None, correction=False):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    lock = Path(str(path) + '.lock')
-    fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    os.close(fd)
-    try:
+    with write_lease(path):
         if command == 'init':
             if not isinstance(customer, str) or not customer.strip():
                 raise ValueError('CUSTOMER_ID_REQUIRED')
@@ -175,8 +195,6 @@ def mutate(path, command, customer=None, qid=None, data=None, revision=None, cor
                                  'previous_sha256': previous, 'record': copy.deepcopy(data),
                                  'invalidated_category_brief': invalidated})
         return write(path, state)
-    finally:
-        lock.unlink()
 
 
 def status(state):
