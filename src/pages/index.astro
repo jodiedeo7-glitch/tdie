@@ -547,6 +547,16 @@ const jsonLd = {
 @media(max-width:760px){.letter{grid-template-columns:minmax(0,1fr)!important}.letter .e-figure{aspect-ratio:16/9;max-height:none}}
 .pick-card--hot .pick-img img{object-position:center top!important}
 .letter .e-kick{display:none!important}
+.fam{padding:36px 24px!important;background:linear-gradient(110deg,#FFF2F8,#F6F0FD)}
+.fam-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px 32px;align-items:center}
+.fam h2{margin:0!important;font:600 28px/1.15 Newsreader,Georgia,serif!important;color:#1A1417}
+.fam h2 em{font-style:normal;color:#D62E73}
+.fam-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+.fam-list li{position:relative;padding-left:26px;font:500 14.5px/1.45 Inter,sans-serif;color:#1A1417}
+.fam-list li::before{content:"✓";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:#D62E73;color:#fff;font:700 11px/18px Inter,sans-serif;text-align:center}
+.fam-note{grid-column:1 / -1;margin:6px 0 0;padding-top:14px;border-top:1px solid #EAA2C0;font-size:15px;line-height:1.55;color:#3B2A31}
+.fam-note strong{color:#B8245F}
+@media(max-width:760px){.fam-in{grid-template-columns:minmax(0,1fr)}.fam-list{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:980px){#method .stair{grid-template-columns:repeat(2,minmax(0,1fr))!important}#method .stair::before{display:none!important}}
 @media(max-width:600px){#method .stair{grid-template-columns:minmax(0,1fr)!important}}
 .tdie-manifesto{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;max-width:none!important;margin:0!important;padding:22px 24px!important;border:0!important;background:linear-gradient(110deg,#FFD7E9,#F1EAFB);text-align:center}
@@ -554,18 +564,18 @@ const jsonLd = {
 .tdie-manifesto p{margin:0!important;font:600 clamp(22px,2.4vw,30px)/1.2 Newsreader,Georgia,serif!important;letter-spacing:-.01em!important;color:#1A1417}
 .tdie-manifesto p br{display:none}
 .tdie-manifesto em{font-style:normal!important;color:var(--e-pink)!important;margin-left:.25em}
-.recognition{padding:clamp(56px,7vw,88px) 0!important}
+.recognition{padding:36px 0!important}
 .recognition::before{display:none!important}
-.recognition-inner{display:block!important;max-width:1120px;margin:0 auto;text-align:center}
-.recognition-kicker{padding:0!important;margin:0 0 14px;display:flex;justify-content:center}
-.recognition-copy{max-width:none!important}
-.recognition-copy h2{max-width:none!important;margin:0 auto 30px!important}
-.recognition-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;border-top:0!important;text-align:left;counter-reset:rc}
-.recognition-list li{counter-increment:rc;display:flex!important;align-items:center;gap:16px!important;margin:0!important;padding:20px 22px!important;border:2px solid #E891B6!important;border-radius:24px 8px 24px 8px!important;background:#fff!important;box-shadow:0 16px 36px -28px rgba(194,24,91,.5);font:600 17px/1.4 Inter,sans-serif!important;color:#1A1417}
-.recognition-list li:nth-child(2),.recognition-list li:nth-child(3){background:#FBF7FF!important;border-color:#C4AFE4!important}
-.recognition-list li::before{content:counter(rc)!important;flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#E8418A,#B8245F);color:#fff!important;font:600 20px/1 Newsreader,Georgia,serif!important;margin:0!important}
-.recognition-note{margin:26px auto 0!important;max-width:40em;font-size:16px!important;color:#3B2A31!important}
-@media(max-width:760px){.recognition-list{grid-template-columns:minmax(0,1fr)}}
+.recognition-inner{display:grid!important;grid-template-columns:minmax(0,.45fr) minmax(0,1.55fr);grid-template-rows:auto auto;align-content:start;gap:10px 40px;align-items:start;max-width:1120px;margin:0 auto;text-align:left}
+.recognition-kicker{display:none!important}
+.recognition-copy{display:contents!important}
+.recognition .recognition-copy h2{grid-column:1;grid-row:1;margin:0!important;font-size:28px!important;line-height:1.15!important}
+.recognition-list{grid-column:2;grid-row:1;align-self:center;display:grid!important;grid-template-columns:1fr 1fr;gap:6px 20px;border:0!important;margin:0!important;padding:0!important}
+.recognition-list li{display:flex!important;gap:8px!important;align-items:flex-start;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;font:500 14px/1.45 Inter,sans-serif!important;color:#1A1417}
+.recognition-list li::before{content:"✓"!important;flex:none;width:18px;height:18px;margin-top:1px!important;border-radius:50%;display:grid;place-items:center;background:#D62E73;color:#fff!important;font:700 11px/18px Inter,sans-serif!important}
+.recognition-note{grid-column:1 / -1;grid-row:2;margin:8px 0 0!important;padding-top:14px;border-top:1px solid #EAA2C0;font-size:15px!important;color:#3B2A31!important;max-width:none}
+.recognition-note strong{color:#B8245F}
+@media(max-width:760px){.recognition-inner{grid-template-columns:minmax(0,1fr)}.recognition-list{grid-column:1;grid-row:auto;grid-template-columns:minmax(0,1fr)}}
 .faceless .e-kick,.faceless .refuse-h{color:var(--e-pink-t)!important}
 .faceless h2{color:#1A1417!important}
 .faceless h2 em{color:var(--e-pink)!important}
@@ -693,21 +703,16 @@ const jsonLd = {
   <p>Organized business.<br /><em>Unfiltered human.</em></p>
 </div>
 
-<section class="recognition" aria-labelledby="recognition-h">
-      <div class="e-wrap recognition-inner">
-        <div class="recognition-kicker">
-          <p class="e-kick">If this sounds familiar</p>
-        </div>
-        <div class="recognition-copy">
-          <h2 id="recognition-h">You don't need another pile of ideas. <em>You need the next useful move.</em></h2>
-          <ul class="recognition-list">
-            <li>You've saved 47 videos about digital products and still haven't built one.</li>
-            <li>You know AI can do more, but everything you've found feels like another pile of prompts.</li>
-            <li>You don't want to become an influencer just to make money online.</li>
-            <li>You have ideas, products, content and tools — but nothing connects them.</li>
-          </ul>
-          <p class="recognition-note">TDIE starts with the part most online-business advice skips: deciding what the business actually is. Then we build the pieces around it.</p>
-        </div>
+<section class="fam" aria-labelledby="fam-h">
+      <div class="fam-in">
+        <h2 id="fam-h">Sound <em>familiar?</em></h2>
+        <ul class="fam-list">
+          <li>You've saved 47 videos about digital products and still haven't built one.</li>
+          <li>You know AI can do more, but everything you've found feels like another pile of prompts.</li>
+          <li>You don't want to become an influencer just to make money online.</li>
+          <li>You have ideas, products, content and tools, but nothing connects them.</li>
+        </ul>
+        <p class="fam-note"><strong>You don't need another pile of ideas. You need the next useful move.</strong> TDIE starts with the part most online-business advice skips: deciding what the business actually is. Then we build the pieces around it.</p>
       </div>
     </section>
 

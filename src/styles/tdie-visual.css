@@ -225,12 +225,29 @@ main :is(.e-lede,.lede,.lib-lede,.fd-lede,.rs-lede){font-size:clamp(16px,1.3vw,1
 .mb-table-sec{padding-top:40px!important;padding-bottom:40px!important}
 .mb-head{margin-bottom:22px!important}
 section.cover,main>section.cover:first-child,main>section:first-child{padding-top:0!important}
-/* 8 Oct 2026, founder: no more pink pill buttons. Buttons are sleek black with white text. */
-body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.r-btn,.fd-r-btn):not(.e-link){background:#1A1417!important;background-image:none!important;color:#fff!important;border:1px solid #1A1417!important;border-radius:6px!important;box-shadow:none!important}
-body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.fc-row button):hover{background:#D62E73!important;border-color:#D62E73!important}
-body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn) *{color:#fff!important}
-body .e-btn--ghost,body .btn-ghost{background:#fff!important;color:#1A1417!important;border:1px solid #1A1417!important}
-body .e-btn--ghost *{color:#1A1417!important}
 .fd-hero{padding-top:40px!important;padding-bottom:40px!important}
 .fd-hero::after{display:none!important}
 .fd-hero .page-eyebrow,.fd-hero .e-kick,.fd-hero .kicker{margin-left:auto!important;margin-right:auto!important;display:table!important}.fd-hero{padding-top:24px!important}
+/* body copy never oversized */
+main p,main li{font-size:min(16px,1em)}
+.fd-thesis p{font-size:15.5px!important;line-height:1.6!important}
+.fd-thesis .fd-hit{font-size:18px!important}
+.fd-thesis-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important}
+.fd-fig img{aspect-ratio:auto!important;height:auto!important}
+/* membership plan cards: compact */
+.mb-choose{padding-top:40px!important;padding-bottom:40px!important}
+.mb-plans{gap:16px!important;align-items:start!important}
+.mb-plan,.mb-plan--premium{margin-top:0!important;padding:22px 24px!important;border:2px solid #E891B6!important;border-radius:20px 6px 20px 6px!important}
+.mb-plan--premium{border-color:#C4AFE4!important}
+.mb-strip,.mb-strip-cap{display:none!important}
+.mb-plan-claim,.mb-plan--premium .mb-plan-claim{font-size:24px!important;line-height:1.15!important;margin:0 0 10px!important;max-width:none!important}
+.mb-plan-word{display:inline!important}
+.mb-plan-name{margin:0 0 8px!important}
+.mb-plan-line{font-size:15px!important;margin:0 0 14px!important}
+.mb-plan-if{padding-top:12px!important;margin:0 0 8px!important}
+.mb-plan .e-list{margin-bottom:14px!important;font-size:14.5px!important}
+.mb-plan .e-list li{margin-bottom:4px!important}
+.mb-plan-price{padding-top:12px!important;margin-bottom:14px!important}
+.mb-price-n{font-size:40px!important}
+.mb-head{max-width:none!important}
+.mb-choose .e-d2{font-size:30px!important}
