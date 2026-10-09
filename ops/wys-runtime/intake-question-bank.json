@@ -37,7 +37,7 @@
       ],
       "use": "Activates only the chosen category questions, sourcing and category-specific image tests.",
       "multi": true,
-      "detail": null
+      "detail": "These are starter categories, not a complete catalogue. Add any other category you want to curate; it needs its own brief and tests."
     },
     {
       "id": "selection_route",
@@ -728,5 +728,19 @@
     "Run one inspected BASIC → STYLED → LIFESTYLE mini test per selected category and selected buyer path before scaling. Reject actual defects; preserve failures.",
     "Keep publication and customer release subject to separate live evidence and authorization."
   ],
-  "answer_contract": "Persist each exact answer immediately in the same private profile, with question ID, question version, source, timestamp, revision and readback. Record a new answer as new; do not label it recovered. Corrections retain history and invalidate affected prepared inputs/tests."
+  "answer_contract": "Persist each exact answer immediately in the same private profile, with question ID, question version, source, timestamp, revision and readback. Record a new answer as new; do not label it recovered. Corrections retain history and invalidate affected prepared inputs/tests.",
+  "custom_category_branch": [
+    {
+      "id": "shopper_use",
+      "prompt": "Who are these products for, and how will they use them?"
+    },
+    {
+      "id": "style_function",
+      "prompt": "Which product types, functions and styles should lead?"
+    },
+    {
+      "id": "requirements",
+      "prompt": "Which fit, compatibility, material, care or other requirements matter? Write “No additional requirements” if none."
+    }
+  ]
 }
