@@ -545,7 +545,7 @@ const jsonLd = {
 .letter .e-figure img{width:100%;height:100%;object-fit:cover}
 .letter form,.letter .ff,.letter [class*="freebie"]{padding:24px 26px!important;box-sizing:border-box}
 @media(max-width:760px){.letter{grid-template-columns:minmax(0,1fr)!important}.letter .e-figure{aspect-ratio:16/9;max-height:none}}
-.pick-card--hot .pick-img img{object-position:center top!important}
+.pick-card--hot .pick-img img{object-position:center top!important;object-fit:contain!important;background:#fff}
 .letter .e-kick{display:none!important}
 .fam{padding:36px 24px!important;background:linear-gradient(110deg,#FFF2F8,#F6F0FD)}
 .fam-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px 32px;align-items:center}
@@ -598,7 +598,7 @@ const jsonLd = {
 #showroom .room-body::before{content:attr(data-room);font:700 10.5px/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--e-pink-t);margin-bottom:8px}
 #showroom .room-body h3{font:600 23px/1.15 Newsreader,Georgia,serif!important;margin:0 0 8px!important;color:#1A1417!important;max-width:none!important}
 #showroom .room-body p{font-size:15px!important;line-height:1.55!important;margin:0 0 16px!important;color:#4A3A40!important}
-#showroom .room-body .go{margin-top:auto!important;align-self:flex-start;display:inline-flex!important;align-items:center;gap:8px;min-height:46px;padding:12px 20px!important;border-radius:999px!important;background:var(--e-pink)!important;color:#fff!important;border:0!important;font:700 12px/1 Inter,sans-serif!important;letter-spacing:.1em;text-transform:uppercase;width:auto!important}
+#showroom .room-body .go{margin-top:auto!important;align-self:flex-start;display:inline-flex!important;align-items:center;gap:8px;min-height:46px;padding:12px 20px!important;border-radius:999px!important;background:#fff!important;color:#1A1417!important;border:1.5px solid #E891B6!important;font:700 12px/1 Inter,sans-serif!important;letter-spacing:.1em;text-transform:uppercase;width:auto!important}
 #showroom .room:first-child{border-width:3px!important}
 @media(max-width:1000px){#showroom .rooms{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){#showroom .rooms{grid-template-columns:minmax(0,1fr)!important}#showroom .room-body .go{align-self:stretch;justify-content:center}}
@@ -752,7 +752,7 @@ const jsonLd = {
               <a class="room e-reveal" href={r.href}>
                 <figure class="e-artifact">
                   <div class="e-art-img">
-                    <img src={`/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
+                    <img src={r.key === "course" ? "/images/we/module-list.jpg" : `/images/home/room-${r.key}-${i === 0 ? 1100 : 640}.webp`} width={i === 0 ? 1100 : 640} height={i === 0 ? 756 : 400}
                          decoding="async" alt={`The live ${r.t} page on this site, as it looks today.`} />
                   </div>
                   <figcaption><b>Exhibit {String(i + 1).padStart(2, "0")} · {r.room}</b><span>{r.path}</span></figcaption>
