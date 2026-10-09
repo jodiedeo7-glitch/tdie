@@ -4,6 +4,7 @@
   "original_questionnaire": "UNRECOVERED",
   "answer_storage": "Private profile; never public git",
   "procedure": [
+    "Present one guided-choice question at a time, with optional specific custom text. Never ask an open-ended-only question. Do not ask Tommy Kate to restate the recovered identity/visual contract.",
     "Do not treat a refusal, objection, or No selection as a preference answer. Do not call recovered visual directions original questionnaire answers.",
     "Persist each individual answer immediately using profile.save; read back exact value and revision.",
     "Recovered direct instructions use source_kind=recovered_direct_instruction, answered_at=null, recorded_at=ingestion timestamp and explicit source evidence.",
@@ -237,7 +238,14 @@
     "field": "curation_profile.business_direction",
     "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?",
     "status": "ASK_ONLY_IF_NOT_ALREADY_VERIFIED_FROM_CUSTOMER_SOURCE",
-    "example": "Affordable girly home finds for women furnishing their first apartment."
+    "example": "Affordable girly home finds for women furnishing their first apartment.",
+    "options": [
+      "Home and decor shoppers",
+      "Fashion and accessories shoppers",
+      "Mixed lifestyle shoppers"
+    ],
+    "type": "single_select",
+    "free_text_placeholder": "Add a different audience and niche"
   },
   "founder_repair_boundary": "Use existing founder sources for known facts. Original completed questionnaire is UNRECOVERED. Recovered direct instructions are separate evidence, not original questionnaire answers. The prior three questions received no curation preferences; do not save the objections as choices.",
   "executable_interview": "ops/wys-runtime/intake.py",
@@ -245,107 +253,263 @@
     {
       "question_id": "business_direction",
       "field": "curation_profile",
-      "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?"
+      "prompt": "What kind of Amazon finds business are you building, and who do you want to reach?",
+      "options": [
+        "Home and decor shoppers",
+        "Fashion and accessories shoppers",
+        "Mixed lifestyle shoppers"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific business direction"
     },
     {
       "question_id": "categories",
       "field": "product_categories",
-      "prompt": "Which product categories do you want to cover?"
+      "prompt": "Which product categories do you want to cover?",
+      "options": [
+        "Clothing and accessories",
+        "Home, dorm and car",
+        "Beauty and perfume",
+        "Books and gifts"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific categories"
     },
     {
       "question_id": "selection_route",
       "field": "curation_profile",
-      "prompt": "Would you rather supply detailed product examples, share vibe pictures, or start with a short description?"
+      "prompt": "Would you rather supply detailed product examples, share vibe pictures, or start with a short description?",
+      "options": [
+        "Detailed product examples",
+        "Vibe/reference images",
+        "Quick start description"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific selection route"
     },
     {
       "question_id": "aesthetic",
       "field": "personal_visual_signature",
-      "prompt": "Describe the overall look you want, including how simple or detailed it should feel."
+      "prompt": "Describe the overall look you want, including how simple or detailed it should feel.",
+      "options": [
+        "Simple and understated",
+        "Layered and detailed",
+        "Playful and maximalist"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific aesthetic"
     },
     {
       "question_id": "palette_materials",
       "field": "personal_visual_signature",
-      "prompt": "Which colors, materials and textures should appear, and which should be avoided?"
+      "prompt": "Which colors, materials and textures should appear, and which should be avoided?",
+      "options": [
+        "Soft colors",
+        "Bold colors",
+        "Neutrals",
+        "Mixed colors"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific palette materials"
     },
     {
       "question_id": "personal_details",
       "field": "personal_visual_signature",
-      "prompt": "What interests, places or signature details should make these images feel like your brand?"
+      "prompt": "What interests, places or signature details should make these images feel like your brand?",
+      "options": [
+        "Home and family",
+        "Hobbies and interests",
+        "Places and activities",
+        "No recurring personal details"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific personal details"
     },
     {
       "question_id": "visual_exclusions",
       "field": "personal_visual_signature",
-      "prompt": "What must never appear in your images?"
+      "prompt": "What must never appear in your images?",
+      "options": [
+        "People",
+        "Decorative props",
+        "Lettering in photos",
+        "No additional exclusions"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific visual exclusions"
     },
     {
       "question_id": "category_preferences",
       "field": "curation_profile",
-      "prompt": "For your selected categories, what styles, uses, seasons or occasions should guide the products?"
+      "prompt": "For your selected categories, what styles, uses, seasons or occasions should guide the products?",
+      "options": [
+        "Everyday use",
+        "Special occasions",
+        "Seasonal or holiday",
+        "Mixed uses"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific category preferences"
     },
     {
       "question_id": "product_exclusions",
       "field": "curation_profile",
-      "prompt": "Are there product types, materials, brands or features you want excluded?"
+      "prompt": "Are there product types, materials, brands or features you want excluded?",
+      "options": [
+        "No additional exclusions",
+        "Avoid selected materials",
+        "Avoid selected brands",
+        "Avoid selected product types"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific product exclusions"
     },
     {
       "question_id": "shopping_price",
       "field": "curation_profile",
-      "prompt": "What price range or value priorities apply to the selected categories?"
+      "prompt": "What price range or value priorities apply to the selected categories?",
+      "options": [
+        "Mostly under $25",
+        "Mostly under $50",
+        "Mostly under $100",
+        "Mixed prices based on value"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific shopping price"
     },
     {
       "question_id": "persona_choice",
       "field": "persona",
-      "prompt": "Do you want an authorized AI persona appearing in lifestyle images, or the no-persona path?"
+      "prompt": "Do you want an authorized AI persona appearing in lifestyle images, or the no-persona path?",
+      "options": [
+        "Use an authorized persona",
+        "no_persona"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific persona choice"
     },
     {
       "question_id": "persona_world",
       "field": "personal_visual_signature",
-      "prompt": "If using a persona, which real-life settings and activities fit your brand?"
+      "prompt": "If using a persona, which real-life settings and activities fit your brand?",
+      "options": [
+        "Home and garden",
+        "Work or school",
+        "Outings and activities",
+        "Mixed settings"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific persona world"
     },
     {
       "question_id": "voice",
       "field": "curation_profile",
-      "prompt": "How should your writing sound, and what wording should it avoid?"
+      "prompt": "How should your writing sound, and what wording should it avoid?",
+      "options": [
+        "Friendly and conversational",
+        "Direct and practical",
+        "Playful and expressive"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific voice"
     },
     {
       "question_id": "amazon_path",
       "field": "amazon_path",
-      "prompt": "Are you an approved Influencer with a storefront, Associates-only, or still setting up?"
+      "prompt": "Are you an approved Influencer with a storefront, Associates-only, or still setting up?",
+      "options": [
+        "Approved Influencer storefront",
+        "Associates-only",
+        "Still setting up"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific amazon path"
     },
     {
       "question_id": "destinations",
       "field": "destinations",
-      "prompt": "Which owned storefront, list or website should the content send shoppers to?"
+      "prompt": "Which owned storefront, list or website should the content send shoppers to?",
+      "options": [
+        "Amazon storefront or Idea Lists",
+        "My own website",
+        "Both"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific destinations"
     },
     {
       "question_id": "channels",
       "field": "channels",
-      "prompt": "Which channels do you want included?"
+      "prompt": "Which channels do you want included?",
+      "options": [
+        "Pinterest",
+        "Instagram",
+        "Blog/website"
+      ],
+      "type": "multi_select",
+      "free_text_placeholder": "Add your specific channels"
     },
     {
       "question_id": "execution_mode",
       "field": "execution_mode",
-      "prompt": "Which parts should the agent handle and which parts do you prefer to do manually?"
+      "prompt": "Which parts should the agent handle and which parts do you prefer to do manually?",
+      "options": [
+        "Agent handles supported steps",
+        "I perform steps manually",
+        "Mixed responsibilities"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific execution mode"
     },
     {
       "question_id": "provider_choice",
       "field": "provider_model",
-      "prompt": "Which image provider do you want to use? The operator will verify its exact model and supported execution path."
+      "prompt": "Which image provider do you want to use? The operator will verify its exact model and supported execution path.",
+      "options": [
+        "Native in-chat generation",
+        "Higgsfield",
+        "Another provider I use"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific provider choice"
     },
     {
       "question_id": "cadence",
       "field": "cadence",
-      "prompt": "How many looks do you want, and on which days?"
+      "prompt": "How many looks do you want, and on which days?",
+      "options": [
+        "3 looks per week",
+        "4 looks per week",
+        "5 looks per week",
+        "6\u20137 looks per week"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific cadence"
     },
     {
       "question_id": "timezone",
       "field": "timezone",
-      "prompt": "Which timezone should govern the schedule?"
+      "prompt": "Which timezone should govern the schedule?",
+      "options": [
+        "America/New_York",
+        "America/Chicago",
+        "America/Denver",
+        "America/Los_Angeles"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific timezone"
     },
     {
       "question_id": "generation_budget",
       "field": "budget",
-      "prompt": "What finite generation budget and retry allowance do you authorize?"
+      "prompt": "What finite generation budget and retry allowance do you authorize?",
+      "options": [
+        "Choose a per-look ceiling",
+        "Choose a weekly ceiling",
+        "Choose both ceilings"
+      ],
+      "type": "single_select",
+      "free_text_placeholder": "Add your specific generation budget"
     }
   ]
 }

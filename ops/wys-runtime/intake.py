@@ -29,6 +29,8 @@ QUESTIONS = (
     ('timezone', 'timezone', 'Which timezone should govern the schedule?'),
     ('generation_budget', 'budget', 'What finite generation budget and retry allowance do you authorize?'),
 )
+CHOICES = {'business_direction': ['Home and decor shoppers', 'Fashion and accessories shoppers', 'Mixed lifestyle shoppers'], 'categories': ['Clothing and accessories', 'Home, dorm and car', 'Beauty and perfume', 'Books and gifts'], 'selection_route': ['Detailed product examples', 'Vibe/reference images', 'Quick start description'], 'aesthetic': ['Simple and understated', 'Layered and detailed', 'Playful and maximalist'], 'palette_materials': ['Soft colors', 'Bold colors', 'Neutrals', 'Mixed colors'], 'personal_details': ['Home and family', 'Hobbies and interests', 'Places and activities', 'No recurring personal details'], 'visual_exclusions': ['People', 'Decorative props', 'Lettering in photos', 'No additional exclusions'], 'category_preferences': ['Everyday use', 'Special occasions', 'Seasonal or holiday', 'Mixed uses'], 'product_exclusions': ['No additional exclusions', 'Avoid selected materials', 'Avoid selected brands', 'Avoid selected product types'], 'shopping_price': ['Mostly under $25', 'Mostly under $50', 'Mostly under $100', 'Mixed prices based on value'], 'persona_choice': ['Use an authorized persona', 'no_persona'], 'persona_world': ['Home and garden', 'Work or school', 'Outings and activities', 'Mixed settings'], 'voice': ['Friendly and conversational', 'Direct and practical', 'Playful and expressive'], 'amazon_path': ['Approved Influencer storefront', 'Associates-only', 'Still setting up'], 'destinations': ['Amazon storefront or Idea Lists', 'My own website', 'Both'], 'channels': ['Pinterest', 'Instagram', 'Blog/website'], 'execution_mode': ['Agent handles supported steps', 'I perform steps manually', 'Mixed responsibilities'], 'provider_choice': ['Native in-chat generation', 'Higgsfield', 'Another provider I use'], 'cadence': ['3 looks per week', '4 looks per week', '5 looks per week', '6–7 looks per week'], 'timezone': ['America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles'], 'generation_budget': ['Choose a per-look ceiling', 'Choose a weekly ceiling', 'Choose both ceilings']}
+MULTI_SELECT = {'categories', 'category_preferences', 'channels', 'personal_details', 'product_exclusions', 'persona_world', 'visual_exclusions'}
 GROUPED = {'curation_profile', 'personal_visual_signature'}
 OPERATOR_FIELDS = ('reference_assets', 'disclosure', 'connected_capabilities', 'state_location')
 
@@ -54,7 +56,10 @@ def next_question(path):
             if persona is False or persona == 'no_persona':
                 continue
         return {'question_id': question_id, 'field': field, 'prompt': prompt,
-                'operator_rule': 'Resolve existing exact customer evidence first. Ask only if still missing.'}
+                'options': CHOICES[question_id],
+                'type': 'multi_select' if question_id in MULTI_SELECT else 'single_select',
+                'free_text_placeholder': 'Add your specific ' + question_id.replace('_', ' '),
+                'operator_rule': 'Resolve existing exact customer evidence first. Ask only if still missing. Present guided choices; custom text is optional, never an open-ended-only question.'}
     return {'result': 'PREFERENCE_INTAKE_RECORDED',
             'operator_fields_to_verify': list(OPERATOR_FIELDS),
             'live_setup': 'NOT_VERIFIED'}

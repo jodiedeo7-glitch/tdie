@@ -5,11 +5,18 @@
   "master_sha256": "467b8bbfffcfd581a7ae1e5864a734227aa719a9af7639ca34620fca8fc110dd",
   "categories": {
     "clothing": {
-      "status": "BLOCKED",
-      "look_id": null,
-      "checks": {},
+      "status": "PRIVATE_VISUAL_DRAFT_EXECUTED_NOT_CATEGORY_PASS",
+      "look_id": "tommy-kate-clothing-native-20261009",
+      "checks": {
+        "three_actual_images": "EXECUTED",
+        "visual_inspection": "EXECUTED; full-size and phone-size",
+        "styled_role_distinction": "Initial failure recorded; targeted correction visually improved hollow openings",
+        "product_fidelity": "PROVISIONAL; exact lettering/details not passed",
+        "original_questionnaire": "UNRECOVERED",
+        "end_to_end_customer_path": "NOT_RUN"
+      },
       "assets": [],
-      "next_action": "Persist source-backed instructions plus newly authorized curation answers; bind inputs; execute and inspect one native image trio."
+      "next_action": "Finish exact fidelity, answer binding, copy/destination and resume checks before claiming category PASS."
     },
     "accessories": {
       "status": "BLOCKED",
@@ -75,6 +82,8 @@
       "next_action": "Persist source-backed instructions plus newly authorized curation answers; bind inputs; execute and inspect one native image trio."
     }
   },
-  "result": "AWAITING_NEW_CURATION_ANSWERS",
-  "component_tests": "45 passed; synthetic component cases only; actual image/category tests NOT_RUN"
+  "result": "CLOTHING_PRIVATE_VISUAL_DRAFT_EXECUTED_OTHER_CATEGORIES_NOT_RUN",
+  "component_tests": "45 passed; synthetic component cases only; actual image/category tests NOT_RUN",
+  "native_calls_completed": 4,
+  "higgsfield_calls": 0
 }
