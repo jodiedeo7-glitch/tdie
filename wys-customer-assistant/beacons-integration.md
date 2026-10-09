@@ -15,3 +15,8 @@ Observed: Store Settings supports email/push alerts for new downloads and sales.
 **Integration decision pending verification:** Inspect whether the payment processor offers a verified signed order event containing exact Beacons product IDs. If unavailable, use an operator-confirmed entitlement flow with independent transaction verification. Never auto-grant access on unverified input.
 
 **Customer test gate:** Confirm buyer order for the matching WYS product, verify payment status, provision scoped access, complete wizard, resume saved preferences, deny nonbuyers, and validate isolation. No production credentials or customer personal data in repository.
+
+## Verified order inspection
+Beacons displayed a completed/fulfilled WYS member-price order dated September 30, 2026 with total **$0.00**. Its internal payment status says "paid" but the charged amount is zero. This **does not establish a paid purchase** and must not grant paid-buyer access by default. The zero-dollar order may reflect a promotion or internal process; reason UNVERIFIED. Do not include buyer identity or order reference in source control.
+
+Beacons Payments settings show connected Stripe and PayPal Express. No accessible test mode or webhook settings were observed in the creator dashboard. Do not infer that Stripe events contain Beacons product UUIDs or that direct Stripe API access exists. A real paid purchase-to-access test cannot be claimed from the observed zero-dollar order.
