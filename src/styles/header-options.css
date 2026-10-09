@@ -186,3 +186,48 @@ body:has(.designed-banner) .sn-close{border:1px solid #e891b6!important;border-r
  .boutique-lettering-banner .brand-photo{width:90px;height:108px}
  .boutique-lettering-banner .brand-photo figcaption{font-size:9px}
 }
+
+/* Rebuild the reference hierarchy: masthead, navigation, scalloped hero. */
+.reference-masthead{position:relative;overflow:hidden;height:130px;background:#fff;display:flex;justify-content:center;align-items:flex-end;padding-bottom:13px;box-sizing:border-box}
+.reference-brand{position:relative;z-index:9;display:flex;align-items:center;gap:7px;font:600 23px/1.2 Newsreader,Georgia,serif;color:#1a1417;text-decoration:none}
+.reference-brand img{width:21px;height:21px;border-radius:5px;margin-right:3px}
+.reference-brand span{color:#d62e73}
+body:has(.reference-masthead) .sn{position:relative!important;background:#ffdaea!important;border:0!important}
+body:has(.reference-masthead) .sn-in{min-height:46px!important}
+body:has(.reference-masthead) .sn-links a{font-size:10px;letter-spacing:.08em}
+body:has(.reference-masthead) .sn-links a.sn-cta{min-height:32px!important}
+body:has(.reference-masthead) .e-page{padding:0!important;margin:0!important;max-width:none!important}
+.reference-hero{position:relative;overflow:hidden;background:#fff0f6}
+.reference-hero:before{content:'';position:absolute;z-index:10;top:0;left:0;right:0;height:14px;background-image:radial-gradient(ellipse 18px 14px at 18px 0,#ffdaea 98%,transparent 100%);background-size:36px 14px;pointer-events:none}
+.reference-hero .banner-rounded-edge{display:none}
+.reference-hero .banner-the{display:none}
+.reference-hero .banner-composition{max-width:820px;height:276px;padding:38px 35px 30px;grid-template-columns:150px minmax(0,1fr) 150px;gap:21px}
+.reference-hero .banner-title-art{width:300px}
+.reference-hero .banner-tagline{font-size:20px;margin-top:6px}
+.reference-hero .brand-photo{width:133px;height:155px;background:#fff;box-shadow:0 7px 14px #bc75a326}
+.reference-hero .brand-photo:before{inset:-2px;background:#f8c6dc;transform:rotate(0)}
+.reference-hero .brand-photo-studio{transform:rotate(-6deg);margin-top:-6px}
+.reference-hero .brand-photo-desk{transform:rotate(7deg);margin-top:27px}
+.reference-hero .glint-one{left:29%;top:30px;width:23px;height:30px}
+.reference-hero .glint-two{right:30%;bottom:26px;width:20px;height:28px}
+.reference-hero .glint-three{left:11%;bottom:27px;width:17px;height:22px}
+.reference-hero .glint-four{right:11%;top:38px;width:17px;height:22px}
+.reference-hero .glint-five{left:36%;bottom:37px;width:13px;height:18px}
+.reference-hero .glint-six{right:36%;top:24px;width:13px;height:18px}
+.reference-hero .pearl-one{left:21%;top:28px}.reference-hero .pearl-two{right:25%;top:31px}.reference-hero .pearl-three{left:29%;bottom:58px}.reference-hero .pearl-four{right:19%;bottom:29px}.reference-hero .pearl-five{left:9%;top:83px}.reference-hero .pearl-six{right:9%;bottom:90px}
+@media(max-width:760px){
+ .reference-masthead{height:101px;padding-bottom:11px}
+ .reference-brand{font-size:18px;gap:4px}.reference-brand img{width:17px;height:17px}
+ body:has(.reference-masthead) .sn-in{min-height:50px!important}
+ body:has(.reference-masthead) .sn-menu{font-size:10px;min-height:34px!important}
+ .reference-hero .banner-composition{height:290px;max-width:430px;padding:28px 26px 27px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:105px 118px;gap:12px}
+ .reference-hero .banner-title-art{width:239px}.reference-hero .banner-tagline{font-size:15px;margin-top:3px}
+ .reference-hero .brand-photo{width:97px;height:113px}
+ .reference-hero .brand-photo-studio{grid-column:1;margin-top:0;transform:rotate(-6deg)}
+ .reference-hero .brand-photo-desk{grid-column:2;margin-top:8px;transform:rotate(7deg)}
+ .reference-hero .glint-one{left:12%;top:46px;width:17px;height:22px}.reference-hero .glint-two{right:10%;top:65px;bottom:auto;width:16px;height:23px}
+ .reference-hero .glint-three{left:47%;bottom:51px;width:17px;height:23px}.reference-hero .glint-four{right:9%;top:138px;width:11px;height:15px}
+ .reference-hero .glint-five{left:17%;bottom:16px;width:11px;height:15px}.reference-hero .glint-six{right:32%;top:16px;width:10px;height:14px}
+ .reference-hero .pearl-one{left:23%;top:20px}.reference-hero .pearl-two{right:19%;top:119px}.reference-hero .pearl-three{left:9%;bottom:57px}.reference-hero .pearl-four{right:39%;bottom:20px}.reference-hero .pearl-five{left:40%;top:134px}.reference-hero .pearl-six{right:8%;bottom:65px}
+}
+@media(max-width:360px){.reference-brand{font-size:16px}.reference-hero .banner-composition{height:284px;padding-inline:20px;grid-template-rows:105px 112px}.reference-hero .banner-title-art{width:222px}.reference-hero .banner-tagline{font-size:14px}.reference-hero .brand-photo{width:91px;height:108px}}

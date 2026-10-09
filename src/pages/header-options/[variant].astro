@@ -12,5 +12,9 @@ const variant=Number(Astro.params.variant);
 const icing=await getImage({src:icingSource,format:'webp',quality:90});
 ---
 <PageLayout title={`Header option ${variant}`} description="Coded TDIE header design study" noindex={true} bare={true} visualRefresh={false}>
- <div slot="before-nav" class={`header-study header-study-${variant}`}><DesignedBanner icing={icing.src} variant={variant}/></div>
+ <div slot="before-nav" class="reference-masthead">
+  <div class="banner-top-drip" style={`background-image:url('${icing.src}')`} aria-hidden="true"></div>
+  <a class="reference-brand" href="/"><img src="/icon-512.png" width="24" height="24" alt=""/>The Digital Income <span>Edit™</span></a>
+ </div>
+ <div class={`header-study reference-hero header-study-${variant}`}><DesignedBanner icing={icing.src} showDrip={false}/></div>
 </PageLayout>

@@ -1,8 +1,8 @@
 ---
-const {icing}=Astro.props;
+const {icing,showDrip=true}=Astro.props;
 ---
 <div class="designed-banner tdie-repo-banner centered-boutique-banner blush-paper-banner boutique-lettering-banner">
- <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
+ {showDrip && <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>}
  <div class="banner-composition">
   <figure class="brand-photo brand-photo-studio">
    <img src="/images/home/flagship-attic-900.webp" alt="Tommy Kate in her pink attic studio with her laptop and glitter tumbler" width="900" height="1117" loading="eager"/>
