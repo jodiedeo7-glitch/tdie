@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T19:52:28.324Z",
+  "updated_at": "2026-10-09T20:41:52.044Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation and existing Gemini repair recheck; no new review conversation or sign-in.",
@@ -28,7 +28,7 @@
       "reviewed_runtime_commit": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
       "reviewed_plugin_commit": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
       "latest_runtime_commit": "481bd2c09f30d76b2b6d34cc37f4889c13489e7f",
-      "latest_plugin_commit": "5e73d40ee0baeadd2a3cb17b8f916cb95f6b086e",
+      "latest_plugin_commit": "4f6cebf9bc4712813f75dc3acded6eba01b62fa8",
       "source_files": 23,
       "static_supported": [
         "Blank structured intake rejection",
@@ -44,7 +44,8 @@
       "limits": [
         "Reviewer did not execute tests or inspect live production",
         "Latest two followup repairs require external recheck",
-        "Gemini showed usage limit reset 4:43 PM and switched picker to Flash-Lite"
+        "Gemini showed usage limit reset 4:43 PM and switched picker to Flash-Lite",
+        "MCP implementation at 4f6cebf9bc4712813f75dc3acded6eba01b62fa8 is locally tested but not independently rechecked."
       ]
     }
   },
@@ -133,6 +134,29 @@
         "No MCP server or live execution adapters",
         "Not independently rechecked"
       ]
+    },
+    {
+      "id": "PRIVATE-MCP-SESSION-EXECUTION",
+      "status": "IMPLEMENTED_COMBINED_BRANCH_TESTS_PASS_REMOTE_TREE_READBACK_MATCHED",
+      "pull_request": 30,
+      "head": "4f6cebf9bc4712813f75dc3acded6eba01b62fa8",
+      "includes_runtime_pr": 31,
+      "validation": {
+        "plugin_tests": 13,
+        "runtime_tests": 68,
+        "skill_schema": "PASS",
+        "relocated_zip": "PASS_ACTUAL_SDK_ALL_NINE_PREPARATION_STEPS_CORRECTION_INVALIDATION",
+        "development_zip_sha256": "740249a85dc09822e9435ab00e28e6022522ccfc92e2acbc7457ee97681fbdd8",
+        "authentication": "SYNTHETIC_HTTP_TENANT_ISOLATION_AND_RSA_SIGNED_TOKENS"
+      },
+      "evidence": "ops/recovery/WYS_MCP_EXECUTION_2026-10-09/verification.json",
+      "remaining": [
+        "Real authorized HTTPS host, OAuth issuer/JWKS/resource, and durable private storage",
+        "Registered MCP mapping and actual ChatGPT installation",
+        "Live provider, publisher and scheduler execution",
+        "Independent recheck and founder release clearance"
+      ],
+      "automatic_conversation_capture": "NOT_INCLUDED"
     }
   ],
   "disproved_claims": [
@@ -145,15 +169,17 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "Implement the real customer execution/server and durable-state architecture before any directory submission; complete actual host installation/onboarding and live path verification. Preserve release hold, generation pause and historical affiliate publications. Latest source changes require independent recheck; no test or task-source edit certifies customer release.",
+  "next_action": "Configure and verify the actual authorized private MCP host, OAuth issuer/resource and durable customer storage, then register the real server mapping and verify installation. Live service execution and all six buyer paths remain unverified. Preserve customer release hold and generation pause. No new audit or sign-in was started.",
   "local_validation": {
     "combined_runtime_tests_passed": 68,
     "packaged_session_tests_passed": 6,
-    "git_source_readback": "Eight changed files matched",
+    "git_source_readback": "Remote combined branch tree 4f71a91ddef21d4fa4aab2525934d2bedc6447bf exactly matches tested checkout tree; no diff.",
     "live_generation": "NOT_RUN",
     "publication": "NOT_RUN",
     "customer_installation": "NOT_VERIFIED",
-    "delivery": "NOT_VERIFIED"
+    "delivery": "NOT_VERIFIED",
+    "plugin_tests_passed": 13,
+    "relocated_zip_mcp": "PASS_ALL_NINE_PREPARATION_STEPS_CORRECTION_INVALIDATION"
   },
   "live_execution_inspection": {
     "metricool_read": "SUCCEEDED_WITH_EXISTING_CONNECTION_NO_SIGN_IN",
