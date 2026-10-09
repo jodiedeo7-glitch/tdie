@@ -214,5 +214,9 @@
 @media(max-width:700px){.wys-world .wb-category-photo{height:160px}.wys-world .wb-category h3{font-size:22px!important}.wys-world .wb-category p{font-size:13px!important}.wys-world .wb-category{padding:12px!important}.wb-shelf-grid{gap:12px}.wys-world .wz-category-action{font-size:12px!important;padding:10px 12px!important}}
 .wb-category-photo>.wz-social-graphic{height:100%;width:auto;max-width:100%;margin:auto;container-type:inline-size}.wys-world .wz-social-graphic .wz-social-photo img{width:auto!important;height:100%!important}.wz-complete-header .wz-hero-copy h1{font-size:42px!important;line-height:1.12!important}.wys-world .wz-hero-copy h1 em{font-weight:600!important}.wys-world .wz-hero-copy .wz-header-tagline{font-family:Inter,sans-serif!important;font-size:14px!important;font-weight:500!important}.wys-world .wz-polaroid figcaption{font-size:11px;font-weight:500}
 @media(max-width:700px){.wz-complete-header .wz-hero-copy h1{font-size:32px!important}}
-.wys-world *{border-style:solid!important}.wys-world .wys-photo-window{outline:0!important}.sn-boutique *{border-style:solid!important}.wys-world .wx-tour-nav{border:0!important}.wys-world .wb-category-photo>.wz-social-graphic{max-height:100%;aspect-ratio:4/5}
+.wys-world .wys-photo-window{outline:0!important}.wys-world .wx-tour-nav{border:0!important}.wys-world .wb-category-photo>.wz-social-graphic{max-height:100%;aspect-ratio:4/5}
 .sn-boutique .sn-links a.sn-cta{background:#edddf8!important;color:#71234a!important;border:0!important;border-radius:12px!important;box-shadow:none!important}
+.wys-world :is(.wz-overview-pinterest,.wz-overview-instagram,.wz-profile-mark){border:0!important}
+.wz-pinterest-toolbar{flex-wrap:wrap;gap:10px}.wz-pinterest-copy{overflow-wrap:anywhere}.wz-pinterest-brand{flex-wrap:wrap;gap:6px}.wz-pinterest-icons{gap:12px}
+@media(max-width:360px){.wz-pinterest-copy{padding-inline:12px}.wz-pinterest-icons{gap:10px}.wz-pinterest-icons svg{width:20px;height:20px}.wz-pinterest-save{padding:10px 14px}}
+.wys-world{overflow-x:clip}
