@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-09T21:34:27.091023+00:00",
+  "status": "GITHUB_ACTIONS_COMPLETED_SUCCESS",
+  "source_head": "a10558e3e01817f6992062041ffe7fbe177e77d2",
+  "pull_request_merge_checkout": "d3c950cd85077d6a32b78326213e8f9c8adf8bee",
+  "workflow": ".github/workflows/wys-plugin-check.yml",
+  "run_id": 37994035493,
+  "job_id": 114035327000,
+  "run_url": "https://github.com/jodiedeo7-glitch/tdie/actions/runs/37994035493",
+  "artifact_id": 11647000064,
+  "plugin_tests": 13,
+  "runtime_tests": 68,
+  "package_builds": "TWO_BYTE_IDENTICAL",
+  "development_zip_sha256": "740249a85dc09822e9435ab00e28e6022522ccfc92e2acbc7457ee97681fbdd8",
+  "artifact_download": "EXTRACTED_EXACT_FIVE_ALLOWLISTED_FILES",
+  "files": {
+    "plugin-tests.log": "36adfd3f5636108df4eb7dcb84c0dacba535a043af9eacd20bcf824f595d862c",
+    "runtime-tests.log": "fcc70f09be98c421be5c778327d4e7d7792ffb6f85d9c936cddc6eee1e29f2b2",
+    "build.json": "22005ea830b591d3310233e632737fae11ca99eb995b10587a587510dbfab718",
+    "package.sha256": "6022428ada49b6ea6989daf48b0b010093027f54db5a3de11f9c59fb70eba229",
+    "wys-development.zip": "740249a85dc09822e9435ab00e28e6022522ccfc92e2acbc7457ee97681fbdd8"
+  },
+  "release": "HELD",
+  "live_execution": "NOT_RUN",
+  "independent_review": "NOT_PERFORMED_BY_THIS_WORKFLOW",
+  "activation": "Workflow exists on the repair branch and ran for push and PR; future relevant main/PR changes use it after merge."
+}
