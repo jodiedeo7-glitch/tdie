@@ -288,3 +288,28 @@
 .wys-world .wz-stack-label{font-family:Inter,sans-serif!important;font-weight:600!important;font-size:22px!important}
 @media(max-width:700px){.wys-world .wz-complete-header .wz-hero-copy h1{font-size:30px!important;max-width:21ch}.wys-world .wz-stack-label{font-size:19px!important}}
 
+
+/* Three complete Pinterest posts share one swipeable viewport. */
+.wz-pinterest-carousel{max-width:720px;margin-inline:auto;min-width:0}
+.wz-pinterest-carousel .wz-pinterest-set{position:relative;display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:none;margin:0;border-radius:18px;overscroll-behavior-x:contain}
+.wz-pinterest-carousel .wz-pinterest-set::-webkit-scrollbar{display:none}
+.wz-pinterest-carousel .wz-pinterest-mockup{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box}
+.wz-pin-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;font:500 13px/1.4 Inter,sans-serif}
+.wz-pin-controls button{display:grid;place-items:center;min-width:48px;min-height:48px;background:white;color:#71234a;border:1px solid #dba7c2;border-radius:8px;box-shadow:none;font:500 22px/1 Inter,sans-serif;cursor:pointer;padding:0}
+.wz-pin-controls button:disabled{opacity:.35;cursor:default}
+.wz-pin-dots{display:flex;gap:0}
+.wz-pin-dots button{min-width:44px;border:0;background:transparent}
+.wz-pin-dots span{width:7px;height:7px;background:#cabbd0;border-radius:50%}
+.wz-pin-dots button[aria-current] span{background:#71234a}
+.wz-pin-controls button:focus-visible,.wz-pinterest-set:focus-visible{outline:2px solid #71234a;outline-offset:-2px}
+
+/* Light handwritten captions on photographs and Polaroids. */
+.wys-world .wz-polaroid figcaption,.wys-world .wys-photo figcaption,.wys-world .wx-collage-main>span,.wys-world .wz-finale-photos figcaption{font-family:Caveat,cursive!important;font-weight:500!important;font-size:22px!important;line-height:1.15!important;letter-spacing:0!important;text-transform:none!important}
+.wys-world .wys-photo-label{font:500 12px/1.4 Inter,sans-serif!important;display:block;margin-bottom:4px}
+@media(max-width:700px){.wys-world .wz-polaroid figcaption,.wys-world .wz-finale-photos figcaption{font-size:18px!important}.wys-world .wys-photo figcaption{font-size:22px!important}}
+
+.wys-world .wys-skip{top:-200px!important;transform:none!important}.wys-world .wys-skip:focus{top:10px!important}
+
+.wz-pinterest-carousel .wz-pinterest-set{touch-action:pan-x pan-y}
+@media(max-width:700px){.wz-complete-header .wz-polaroid-stack{height:890px}.wz-stack-pink .wz-polaroid-1{top:330px}.wz-stack-pink .wz-polaroid-2{top:600px}.wz-stack-lavender .wz-polaroid-1{top:350px}.wz-stack-lavender .wz-polaroid-2{top:620px}}
+@media(max-width:360px){.wz-complete-header .wz-polaroid-stack{height:810px}.wz-stack-pink .wz-polaroid-1{top:300px}.wz-stack-pink .wz-polaroid-2{top:540px}.wz-stack-lavender .wz-polaroid-1{top:320px}.wz-stack-lavender .wz-polaroid-2{top:560px}}
