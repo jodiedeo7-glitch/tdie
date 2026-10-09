@@ -1,58 +1,63 @@
 ---
 import { Image } from 'astro:assets';
-import WysDecor from '../WysDecor.astro';
 import Frame from './Frame.astro';
 import Cards from './Cards.astro';
 import { LOOKS, categoryOf } from '../../data/lifestyle.js';
 const { look } = Astro.props;
 const cat = categoryOf(look.category);
 const hero = look.hero;
+const selectionPhoto = look.images.find(image => image.role === 'basic');
 const halloween = look.season?.toLowerCase() === 'halloween';
-const headerImage = halloween ? look.images.find(image => image.role === 'lifestyle') || look.images.find(image => image.role === 'styled') : null;
 const banner = look.slug === 'pretty-wicked-entryway' ? 'Pretty Wicked' : look.slug === 'ghoul-fuel-coffee-bar' ? 'Ghoul Fuel' : 'The Pink Halloween Edit';
 const gallery = look.images.filter(image => image !== hero);
 const relatedCandidates = LOOKS.filter(other => other.images.some(image => ['styled', 'lifestyle'].includes(image.role)));
 const related = [...relatedCandidates.filter(other => other.slug !== look.slug && other.category === look.category), ...relatedCandidates.filter(other => other.slug !== look.slug && other.category !== look.category && look.season && look.season !== 'Evergreen' && other.season === look.season && (['home-decor', 'dorm'].includes(look.category) ? ['home-decor', 'dorm'].includes(other.category) : ['clothing', 'accessories', 'jewelry'].includes(look.category) && ['clothing', 'accessories', 'jewelry'].includes(other.category)))].slice(0, 2);
-const story = look.sections?.length > 0 && gallery.length > 0 && gallery.length <= look.sections.length;
-const sectionsPerPhoto = story ? Math.ceil(look.sections.length / gallery.length) : 0;
+const sections = look.sections || [];
+// Each approved photo appears once, in the reading flow rather than a repeated side panel.
+const storyPhotos = (hero ? [hero, ...gallery] : gallery).filter(image => image !== selectionPhoto);
+const photoAtSection = (index) => storyPhotos.filter((_, photoIndex) => Math.floor(photoIndex * sections.length / storyPhotos.length) === index);
 const draft = look.status === 'draft';
 const completeExample = ['pretty-wicked-entryway','ghoul-fuel-coffee-bar'].includes(look.slug);
+const photoCaption = (image) => {
+  if (completeExample) return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' ? look.slug === 'ghoul-fuel-coffee-bar' ? 'Coffee with Tommy Kate' : 'Tommy Kate at the door' : 'The styled scene';
+  if (image.caption && !/generated inspiration|AI model|styling extras|contextual styling|shop the listed/i.test(image.caption)) return image.caption;
+  return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' && look.category === 'clothing' ? 'Tommy Kate wearing the look' : 'The styled scene';
+};
 const shoppingPending = look.shoppingStatus === 'pending';
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type': 'Article', headline: look.title, description: look.description, image: hero ? new URL(hero.src.src, 'https://www.thedigitalincomeedit.com').href : undefined, ...(dateIsPast ? { datePublished: look.date } : {}), mainEntityOfPage: `https://www.thedigitalincomeedit.com/lifestyle/${look.slug}`, publisher: { '@type': 'Organization', name: 'The Digital Income Edit™' } }];
 ---
-<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} halloween={halloween}>
-  <article class:list={["life-wrap life-article", completeExample && "life-complete-look"]}>
+<Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} halloween={halloween} article>
+  <article class:list={["life-wrap life-article life-reading-sheet", completeExample && "life-complete-look"]}>
     <header class="life-article-head">
       <nav class="life-breadcrumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>
-      <div class:list={["life-heading-layout", { "life-heading-with-photo": halloween }]}>
+      <div class="life-heading-layout">
       <div class="life-heading-copy">
       {halloween && <p class="life-title-banner"><span aria-hidden="true">✦</span> {banner} <span aria-hidden="true">✦</span></p>}
       <p class="life-kicker">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</p>
       <h1>{look.title}</h1>
       {look.intro && <p class="life-intro">{look.intro}</p>}
-      <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a>{look.sections?.length > 0 && <a class="life-text-link" href="#styling">The styling details</a>}</div>
+      <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a></div>
       </div>
-      {halloween && <figure class="life-heading-photo">{headerImage ? <Image src={headerImage.src} alt={headerImage.alt} widths={[180, 240, 360, 480]} sizes="(max-width: 760px) 180px, 220px" loading="eager" data-life-header-photo /> : <div class="life-heading-art" aria-hidden="true" />}<figcaption>A little Halloween magic</figcaption></figure>}
+
       </div>
     </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
     <div class="life-article-top">
-      {hero && <figure class="life-photo life-hero-photo"><Image src={hero.src} alt={hero.alt} widths={[480, 720, 1000, 1400]} sizes="(max-width: 900px) 100vw, 480px" loading="eager" fetchpriority="high" /><figcaption><span class="life-photo-role">{hero.role === 'basic' ? 'The arrangement' : hero.role === 'styled' ? 'The styled scene' : 'The lifestyle view'}</span>{hero.caption}</figcaption></figure>}
+
       <section class="life-shop" id="shopping" aria-labelledby="life-shop-title">
         <p class="life-kicker">The shopping edit</p><h2 id="life-shop-title">{shoppingPending ? 'The selected finds' : look.category === 'clothing' ? 'Shop the outfit' : 'Shop the listed finds'}</h2>
         {shoppingPending && <p class="life-shopping-status">Product links are still being verified. Shopping links will be added once those checks are complete.</p>}
-        {look.items.length ? <div class="life-product-carousel" data-product-carousel><div class="life-product-tools"><p>Scroll side to side to see all {look.items.length} finds</p><div class="life-product-controls"><button type="button" data-product-prev aria-label="Previous products">←</button><button type="button" data-product-next aria-label="Next products">→</button></div></div><ol class="life-products" tabindex="0" aria-label="Selected products — scroll horizontally">{look.items.map(item => <li><h3>{item.name}</h3>{item.variant && <p>{item.variant}</p>}{item.note && <p>{item.note}</p>}{item.link && item.affiliateStatus !== 'pending' ? <a class="life-product-link" href={item.link} target="_blank" rel={['verified', 'legacy'].includes(item.affiliateStatus) ? 'sponsored nofollow noopener' : 'noopener nofollow'}>View on Amazon <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab{item.affiliateStatus === 'verified' ? ', affiliate link' : ''})</span></a> : !shoppingPending && <p class="life-product-status">Link pending verification.</p>}</li>)}</ol></div> : <p class="life-pending">Shopping links are pending source verification. No product destinations have been added to this draft.</p>}
+        {look.items.length ? <div class="life-product-layout">{selectionPhoto && <figure class="life-photo life-selection-photo"><Image src={selectionPhoto.src} alt={selectionPhoto.alt} widths={[240,360,480,720]} sizes="(max-width:760px) 220px, 180px" loading="eager" /><figcaption>{photoCaption(selectionPhoto)}</figcaption></figure>}<div class="life-product-carousel" data-product-carousel><div class="life-product-tools"><p>Scroll side to side to see all {look.items.length} finds</p><div class="life-product-controls"><button type="button" data-product-prev aria-label="Previous products">←</button><button type="button" data-product-next aria-label="Next products">→</button></div></div><ol class="life-products" tabindex="0" aria-label="Selected products — scroll horizontally">{look.items.map(item => <li><h3>{item.name}</h3>{item.variant && <p>{item.variant}</p>}{item.note && <p>{item.note}</p>}{item.link && item.affiliateStatus !== 'pending' ? <a class="life-product-link" href={item.link} target="_blank" rel={['verified', 'legacy'].includes(item.affiliateStatus) ? 'sponsored nofollow noopener' : 'noopener nofollow'}>View on Amazon <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab{item.affiliateStatus === 'verified' ? ', affiliate link' : ''})</span></a> : !shoppingPending && <p class="life-product-status">Link pending verification.</p>}</li>)}</ol></div></div> : <p class="life-pending">Shopping links are pending source verification. No product destinations have been added to this draft.</p>}
         {look.ideaList && look.ideaListStatus !== 'pending' && <a class="life-button life-button-outline" href={look.ideaList} rel="sponsored nofollow noopener" target="_blank">Open the Amazon Idea List <span aria-hidden="true">→</span><span class="life-sr"> (opens in a new tab)</span></a>}
       </section>
+
     </div>
-    {!story && look.sections?.length > 0 && <section class="life-prose" id="styling" aria-label="Styling details">{look.sections.map(section => <section><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}</section>}
-    {!story && gallery.length > 0 && <section class="life-gallery-section" aria-labelledby="life-gallery-title"><p class="life-kicker">Another perspective</p><h2 id="life-gallery-title">The details in the scene</h2><div class="life-gallery">{gallery.map(image => <figure class="life-photo"><Image src={image.src} alt={image.alt} widths={[480, 720, 1000]} sizes="(max-width: 760px) 100vw, 45vw" loading="lazy" /><figcaption><span class="life-photo-role">{image.role === 'basic' ? 'The arrangement' : image.role === 'styled' ? 'The styled scene' : 'The lifestyle view'}</span>{image.caption}</figcaption></figure>)}</div></section>}
-    {story && !completeExample && <section class="life-story" id="styling" aria-label="Styling details">{gallery.map((image, index) => <div class="life-story-row">
-      <figure class="life-photo"><Image src={image.src} alt={image.alt} widths={[480, 720, 1000]} sizes="(max-width: 760px) 100vw, 420px" loading="lazy" /><figcaption><span class="life-photo-role">{image.role === 'basic' ? 'The arrangement' : image.role === 'styled' ? 'The styled scene' : 'The lifestyle view'}</span>{image.caption}</figcaption></figure>
-      <div class="life-story-copy">{look.sections.slice(index * sectionsPerPhoto, (index + 1) * sectionsPerPhoto).map(section => <section><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}</div>
-    </div>)}</section>}
-    {completeExample && <section class="life-story life-wys-story" id="styling" aria-label="Styling details">{look.sections.map((section,index)=><div class="life-story-row"><figure class="life-photo"><Image src={look.images.find(p=>p.role===['basic','styled','lifestyle','basic'][index]).src} alt={look.images.find(p=>p.role===['basic','styled','lifestyle','basic'][index]).alt} widths={[480,720,1000]} sizes="(max-width:760px) 85vw, 340px" loading="lazy"/><figcaption>{['The five finds','The styled setting',look.slug==='ghoul-fuel-coffee-bar'?'The coffee moment':'The doorway moment','Start with your selected pieces'][index]}</figcaption></figure><div class="life-story-copy"><p class="life-kicker">0{index+1} / {banner}</p><section><h2>{section.heading}</h2>{section.paragraphs.map(paragraph=><p>{paragraph}</p>)}</section></div></div>)}</section>}
+    {sections.length > 0 && <section class="life-article-story" id="styling" aria-label="Styling details">{sections.map((section,index) => <section class="life-reading-chapter">
+      {photoAtSection(index).map(image => <figure class="life-photo life-inline-photo"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 80vw, 320px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption></figure>)}
+      <h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+    </section>)}</section>}
+    {sections.length === 0 && storyPhotos.length > 0 && <section class="life-gallery-section" aria-label="Styling photographs"><div class="life-gallery">{storyPhotos.map(image => <figure class="life-photo"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 80vw, 320px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption></figure>)}</div></section>}
     {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} /></section>}
   </article>
 </Frame>

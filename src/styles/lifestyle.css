@@ -277,3 +277,72 @@
 .life .pf .pf-row button,.life .life-button,.life .life-product-controls button{background:#fff!important;background-image:none!important;color:#1A1417!important;border:1px solid #e891b6!important;border-radius:8px!important;box-shadow:none!important}
 
 .life .life-article .life-photo figcaption,.life .life-article .life-heading-photo figcaption{font:500 22px/1.2 Caveat,cursive!important}
+
+/* Article composition: one continuous reading sheet and one appearance per photo. */
+.life-page-icing{height:105px;background-position:top center;background-repeat:repeat-x;background-size:900px auto}
+.life.life-article-world{background:#ffe5ef;padding-top:24px}
+.life .life-reading-sheet{width:calc(100% - 48px);max-width:1100px;margin:0 auto;padding:28px 36px 32px;background:#fff8fc;border:0;border-radius:16px;box-shadow:none}
+.life .life-reading-sheet .life-article-head{padding:0 0 24px;margin:0;max-width:none;border:0;border-radius:0;box-shadow:none;background:transparent}
+.life .life-reading-sheet .life-heading-layout{display:block}
+.life .life-reading-sheet .life-heading-copy{max-width:850px}
+.life .life-reading-sheet .life-breadcrumb{margin-bottom:12px;font-size:12px}
+.life .life-reading-sheet .life-kicker{margin:12px 0 8px}
+.life .life-reading-sheet h1{margin:8px 0 14px;font-size:36px!important;max-width:26ch;line-height:1.18!important}
+.life .life-reading-sheet .life-intro{margin:0 0 14px;max-width:80ch;font-size:16px!important;line-height:1.65!important;color:#1a1417}
+.life .life-reading-sheet .life-title-banner{display:inline-flex;padding:7px 12px;margin:0 0 8px;background:#f4dcef;color:#9a1d50;border:0;border-radius:6px;box-shadow:none;max-width:100%}
+.life .life-reading-sheet .life-article-actions{gap:12px}
+.life .life-reading-sheet .life-article-top{display:flex;flex-direction:column;align-items:stretch;gap:28px}
+.life .life-reading-sheet .life-shop{order:0;padding:20px!important;margin:0;background:#f0e5f8;border:0;border-radius:10px}
+.life .life-reading-sheet .life-shop h2{font-size:26px!important;margin:0}
+.life .life-reading-sheet .life-products{margin-bottom:0}
+.life .life-reading-sheet .life-products>li{background:#fff8fc}
+.life .life-reading-sheet .life-products>li:nth-child(even){background:#fff8fc}
+.life .life-reading-sheet .life-photo{isolation:isolate;overflow:visible;position:relative;max-width:320px!important;width:100%;padding:10px 10px 0!important;margin:0;background:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 8px 18px #9a1d5010;outline:0!important}
+.life .life-reading-sheet .life-photo::before{content:"";position:absolute;inset:-8px -8px -8px -8px;background:#eda0c7;transform:rotate(-3deg);z-index:-1}
+.life .life-reading-sheet .life-photo img{position:relative;width:100%;height:auto;max-height:460px!important;object-fit:contain;border:0!important;border-radius:0!important;outline:0!important}
+.life .life-reading-sheet .life-photo figcaption{position:relative;margin:0!important;padding:10px 4px 12px!important;background:#fff;color:#87204a;font:500 22px/1.2 Caveat,cursive!important;text-align:center}
+.life .life-reading-sheet .life-hero-photo{align-self:center;margin:10px 0 16px;transform:rotate(1deg)}
+.life .life-reading-sheet .life-hero-photo::before{background:#c6ade7;transform:rotate(-3deg)}
+.life .life-reading-sheet .life-article-story{margin-top:24px;padding:0!important}
+.life .life-reading-sheet .life-reading-chapter{display:flow-root;margin:0;padding:20px 0!important;border:0;background:transparent;box-shadow:none}
+.life .life-reading-sheet .life-reading-chapter+ .life-reading-chapter{border-top:1px solid #efcfe0}
+.life .life-reading-sheet .life-reading-chapter h2{font-size:28px!important;line-height:1.25!important;margin:0 0 16px;color:#9a1d50}
+.life .life-reading-sheet .life-reading-chapter p{font:400 16px/1.65 Inter,sans-serif;margin:0 0 16px;color:#1a1417}
+.life .life-reading-sheet .life-inline-photo{float:right;margin:8px 8px 24px 32px;transform:rotate(1deg)}
+.life .life-reading-sheet>.life-section{padding:24px 0 0!important;margin-top:18px;border:0;border-radius:0;background:transparent;box-shadow:none}
+.life .life-reading-sheet .life-card{padding:12px;background:#f0e5f8!important;border:0;outline:0;border-radius:10px;box-shadow:none}
+.life .life-reading-sheet .life-card-photo{padding:0;background:transparent;border:0;border-radius:0}
+.life .life-reading-sheet .life-card-copy{padding:12px 0 0;background:transparent;border:0;border-radius:0}
+.life .life-reading-sheet .life-card h3{font-size:22px!important}
+.life.life-article-world .life-signup{padding-block:24px}
+.life.life-article-world .life-close{max-width:1100px;border-radius:12px}
+@media(max-width:760px){
+ .life-page-icing{height:80px;background-size:650px auto}
+ .life.life-article-world{padding-top:16px}
+ .life .life-reading-sheet{width:calc(100% - 24px);padding:20px 18px 24px;border-radius:12px}
+ .life .life-reading-sheet h1{font-size:32px!important}
+ .life .life-reading-sheet .life-shop{padding:16px!important}
+ .life .life-reading-sheet .life-article-top{gap:24px}
+ .life .life-reading-sheet .life-photo{max-width:280px!important;width:calc(100% - 20px);margin-inline:auto}
+ .life .life-reading-sheet .life-photo img{max-height:400px!important}
+ .life .life-reading-sheet .life-inline-photo{float:none;margin:8px auto 28px}
+ .life .life-reading-sheet .life-reading-chapter{padding:20px 0!important}
+ .life .life-reading-sheet .life-reading-chapter h2{font-size:26px!important}
+ .life .life-reading-sheet .life-article-story{margin-top:12px}
+ .life.life-article-world .life-close{width:calc(100% - 24px)}
+}
+
+.life.life-article-world .life-signup{padding-block:24px!important}
+
+.life .life-reading-sheet .life-product-layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:start;margin-top:22px}
+.life .life-reading-sheet .life-selection-photo{max-width:180px!important;margin:4px 0 12px;padding:8px 8px 0!important}
+.life .life-reading-sheet .life-selection-photo figcaption{font-size:19px!important}
+.life .life-reading-sheet .life-product-tools{margin-top:0}
+@media(max-width:760px){.life .life-reading-sheet .life-product-layout{grid-template-columns:minmax(0,1fr);gap:18px}.life .life-reading-sheet .life-selection-photo{max-width:180px!important;margin-inline:auto}.life .life-reading-sheet .life-products{grid-auto-columns:90%}}
+
+body:has(.life) :is(.sn-links a.sn-cta,.sn-drawer a.sn-d-cta){background:#fff!important;background-image:none!important;color:#1a1417!important;border:1px solid #e891b6!important;box-shadow:none!important}
+body:has(.life-article-world) .sf{background:#f0e5f8!important;background-image:none!important}
+
+.life .life-reading-sheet .life-gallery-section{padding:20px 0!important;background:transparent;border:0;border-radius:0;box-shadow:none}
+body:has(.life-article-world) .sf-in{padding-block:32px 20px!important;gap:24px}
+body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!important;letter-spacing:.12em;margin-bottom:8px!important}
