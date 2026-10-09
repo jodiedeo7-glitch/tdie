@@ -36,6 +36,14 @@ This backend uses POSIX `fcntl.flock`; an unavailable backend blocks with `*_OS_
 
 Raw question answers and aggregate curation/visual fields are written in the same atomic profile revision. Grouped answers retain per-component source evidence and all previous history. Blank answers and the interface's `No selection` are unanswered. No-persona skips only the persona-world question; it does not establish that the no-persona generation variant works. Completed preference intake reports `live_setup: NOT_VERIFIED`, not operational readiness.
 
+## Customer plugin session integration
+
+The runtime reader accepts the private session file written by `plugins/wys-storefront/skills/wys-storefront/scripts/session.py`. It verifies the original file hash and questionnaire version, validates guided answers and category branches, and constructs a read-only view of the raw answers and grouped fields. Exact wording, source evidence, timestamps and history remain in that same authoritative session file. No second customer profile is created.
+
+Use that session path as `--profile` with the existing `prepare` and `verify` commands, and bind the expected profile hash to the session's original `sha256`. A subsequent session correction changes the hash and blocks reuse of old prepared input. Runtime `save` refuses to overwrite a plugin session with `SESSION_REQUIRES_PLUGIN_WRITER`; use the plugin's revisioned answer/event commands for those writes.
+
+This bridge does not convert preferences into verified accounts, asset rights, disclosure or remote state. The current plugin session lacks those operator-verified fields, so production preparation remains blocked with `SETUP_INCOMPLETE`. Actual provider/publishing adapters and remote durable storage remain unfinished. The six bridge regressions require the customer plugin from PR30 in the repository layout; the combined checkout runs 65 runtime tests. A checkout without that plugin explicitly skips the bridge tests and does not establish integration success.
+
 ## Recorded image rejections
 
 `mini_test.py` reads `rejected-assets.json` before accepting a record. It rejects both failed Tommy Kate STYLED image checksums even if a later record contains PASS checkboxes. A missing or malformed rejection registry blocks acceptance. This is protection against reusing known rejected images; it does not independently judge garment volume, product fidelity or aesthetic quality, and it does not establish provider/caller integration. Both STYLED versions in the first private clothing test were rejected.
