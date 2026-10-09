@@ -23,7 +23,7 @@ const SITE = "https://www.thedigitalincomeedit.com";
 const OG_IMAGE = `${SITE}/og/home-built-backwards-2026-09.jpg`;
 
 const title = "Faceless Digital Business Built With AI | The Digital Income Edit™";
-const description = `Build a faceless business with AI in the right order: offer, funnel, automation, then audience. ${community.members} women are building it inside The Digital Income Edit™.`;
+const description = `Build a faceless business with AI in the right order: offer, funnel, automation, then audience. Women are building it inside The Digital Income Edit™.`;
 
 // The Built Backwards Method. The order is the method.
 const method = [
@@ -47,7 +47,7 @@ const rooms = [
   { key: "offer", room: "Free tool", t: "The One-Sentence Offer tool", p: "Type what you sell and get it down to one clear sentence a buyer understands. Free.", href: "/resources/one-sentence-offer", path: "/resources/one-sentence-offer", go: "Try the free tool" },
   { key: "funnel", room: "Free email challenge", t: "The Weekend Build Challenge", p: "Five free emails, one small build a day, from no idea to your first offer.", href: "/resources/weekend-build-challenge", path: "/resources/weekend-build-challenge", go: "See the challenge" },
   { key: "library", room: "Free blog article", t: "Turn your Skool lessons into a blog", p: "A real article on this site that started as a Skool lesson. Read it free.", href: "/learn/turn-skool-content-into-a-blog", path: "/learn/turn-skool-content-into-a-blog", go: "Read the article" },
-  { key: "classroom", room: "The membership", t: "The Skool classroom", p: `See what's inside the membership, where ${community.members} women build their faceless businesses.`, href: "/membership#room", path: "/membership", go: "See the membership" },
+  { key: "classroom", room: "The membership", t: "The Skool classroom", p: `See what's inside the membership, where women build their faceless businesses together.`, href: "/membership#room", path: "/membership", go: "See the membership" },
   { key: "email", room: "Free newsletter", t: "The Weekly Edit", p: "One useful idea every Sunday, sent by the same automation you'll learn to build.", href: "/newsletter", path: "/newsletter", go: "Read the newsletter" },
 ];
 
@@ -502,6 +502,32 @@ const jsonLd = {
 </style>
 <style is:inline set:html={visualStyles} />
 <style is:inline>
+@font-face{font-family:Caveat;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/caveat.woff2) format('woff2')}
+.bq-hero{background:#FFE4F1;border-bottom:1px solid #E88FBA;padding:0!important}
+.bq-in{max-width:1240px;margin:0 auto;padding:30px 24px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr);gap:30px;align-items:center}
+.bq-copy{text-align:center}
+.bq-kick{font:800 11px/1.3 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B8245F;margin:0 0 14px}
+.bq-copy h1{font-size:44px!important;line-height:1.12!important;margin:0 0 16px!important;color:#1A1417}
+.bq-copy h1 em{font-style:normal;color:#D62E73;display:block}
+.bq-lede{font:400 16.5px/1.65 Inter,sans-serif;margin:0 auto 22px;max-width:30em;color:#1A1417}
+.bq-note{margin:14px 0 0;font-size:13.5px;color:#4A3A40}.bq-note b{color:#B8245F}
+.bq-stack{position:relative;height:600px}
+.bq-label{position:absolute;top:0;left:0;right:0;text-align:center;font:600 20px/1.3 Newsreader,Georgia,serif;color:#B8245F;margin:0}
+.bq-pol{position:absolute;margin:0;padding:7px 7px 0;background:#FFFAFD;border:1px solid #DC95B9;box-shadow:0 10px 20px rgba(184,36,95,.14)}
+.bq-mat{padding:5px;background:#FFD2E5;border:1px solid #E5A9C5;aspect-ratio:4/5;overflow:hidden}
+.bq-mat img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;border:3px solid #FFF8FC}
+.bq-pol figcaption{padding:9px 2px 10px;font:500 19px/1.1 Caveat,cursive;color:#872049;text-align:center}
+.bq-lav .bq-pol{border-color:#B393D0;background:#FCF7FF}.bq-lav .bq-mat{background:#E6D1F6;border-color:#BDA0D7}
+.bq-p0{width:48%;left:0;top:60px;transform:rotate(-8deg);z-index:1}
+.bq-p1{width:48%;right:0;top:40px;transform:rotate(7deg);z-index:2}
+.bq-p2{width:60%;left:20%;top:330px;transform:rotate(-3deg);z-index:3}
+.bq-lav .bq-p0{transform:rotate(7deg);top:44px}.bq-lav .bq-p1{transform:rotate(-6deg);top:78px}.bq-lav .bq-p2{transform:rotate(4deg)}
+.bq-foot{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px 20px;background:#E989B7;color:#742041;font:600 12px/1.5 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.bq-foot b{color:#fff;font-size:17px;margin-right:4px}
+@media(max-width:1000px){.bq-in{grid-template-columns:1fr 1fr}.bq-copy{grid-column:1/-1;grid-row:1}.bq-stack{height:440px}}
+@media(max-width:600px){.bq-copy h1{font-size:32px!important}.bq-stack{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:30px}.bq-stack .bq-pol{position:relative;left:auto;right:auto;top:auto;width:auto;transform:rotate(-2deg)}.bq-stack .bq-pol:nth-of-type(even){transform:rotate(2deg)}.bq-stack .bq-p2{grid-column:1/-1;width:62%;justify-self:center}.bq-in{grid-template-columns:1fr}.bq-label{font-size:16px}.bq-pol figcaption{font-size:15px}.bq-foot{gap:8px;font-size:10px}}
+</style>
+<style is:inline>
 /* 8 Oct 2026 homepage repair: method steps compact, no stray dots, readable faceless list, tidy note + familiar sections */
 #method .stair{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important;counter-reset:st;position:relative}
 #method .stair::before{content:""!important;display:block!important;position:absolute!important;left:12%!important;right:12%!important;top:34px!important;bottom:auto!important;height:3px!important;width:auto!important;background:repeating-linear-gradient(90deg,#E891B6 0 10px,transparent 10px 18px)!important;opacity:1!important;z-index:0}
@@ -648,29 +674,28 @@ const jsonLd = {
 
   <main>
     <!-- 1 · HOOK: the cover -->
-    <section class="cover" aria-labelledby="hero-h">
-      <div class="mast" aria-hidden="true"><span>The New Faceless</span><i></i><span>Build Your Business Backwards. Scale It Forward.™</span></div>
-      <div class="cover-copy">
-        <p class="e-kick">For women building without a personal brand</p>
-        <h1 id="hero-h">Build a faceless business. <em>Keep your life off camera.</em></h1>
-        <p class="e-lede"><strong>A product to sell. A website to send people to. Emails and content that connect the two.</strong> Build them in that order, with AI helping with the work and your real face never required.</p>
-        <div class="e-actions">
-          <a class="e-btn" href="/resources/faceless-income-blueprint">Get the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
-          <a class="e-link" href={WE.preview}>Preview the $97 website course</a>
+    <section class="bq-hero" aria-labelledby="hero-h">
+      <div class="bq-in">
+        <div class="bq-stack bq-pink" aria-hidden="true">
+          <p class="bq-label">The brand</p>
+          <figure class="bq-pol bq-p0"><div class="bq-mat"><img src="/images/home/hero-pink-knit-desk-480.webp" alt="" /></div><figcaption>Her desk</figcaption></figure>
+          <figure class="bq-pol bq-p1"><div class="bq-mat"><img src="/images/home/founder-window-seat-640.webp" alt="" /></div><figcaption>Brand face</figcaption></figure>
+          <figure class="bq-pol bq-p2"><div class="bq-mat"><img src="/images/home/flagship-attic-560.webp" alt="" /></div><figcaption>No camera required</figcaption></figure>
         </div>
-        <ul class="cover-meta" aria-label="The business, by the numbers">
-          <li><b>{community.members}</b><span>women<br />building inside</span></li>
-          <li><b>{WE.modules}</b><span>course<br />modules</span></li>
-          <li><b>{library.guides}</b><span>free guides<br />to get started</span></li>
-        </ul>
+        <div class="bq-copy">
+          <p class="bq-kick">For women building without a personal brand</p>
+          <h1 id="hero-h">Build a faceless business. <em>Keep your life off camera.</em></h1>
+          <p class="bq-lede">A product to sell, a website to send people to, and emails that connect the two. Built in that order, with AI doing the heavy lifting.</p>
+          <a class="e-btn" href="/resources/faceless-income-blueprint">Get the free Blueprint <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+        <div class="bq-stack bq-lav" aria-hidden="true">
+          <p class="bq-label">What you can buy</p>
+          <figure class="bq-pol bq-p0"><div class="bq-mat"><img src="/images/covers/faceless-income-blueprint.webp" alt="" /></div><figcaption>Free guide</figcaption></figure>
+          <figure class="bq-pol bq-p1"><div class="bq-mat"><img src="/images/pages/skool-group.webp" alt="" style="object-position:right center" /></div><figcaption>The membership</figcaption></figure>
+          <figure class="bq-pol bq-p2"><div class="bq-mat"><img src="/images/we/hook-blog-posts.jpg" alt="" /></div><figcaption>The $97 website course</figcaption></figure>
+        </div>
       </div>
-      <figure class="cover-photo">
-        <img src="/images/home/hero-pink-knit-desk-720.webp"
-             srcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
-             sizes="(max-width: 900px) 100vw, 44vw" width="480" height="596" fetchpriority="high" decoding="async"
-             alt="Tommy Kate, the brand's AI persona, in an oversized pink knit sweater, sipping a glitter pink iced coffee at a cream farmhouse desk, her laptop open beside sticky notes and wildflowers, an open window onto the garden behind her." />
-        <figcaption><span class="e-credit"><b>On the cover</b> · Tommy Kate, the brand's AI persona</span></figcaption>
-      </figure>
+      <div class="bq-foot"><span><b>{WE.modules}</b> course modules</span><span>·</span><span><b>{library.guides}</b> free guides</span><span>·</span><span><b>7 days</b> free</span></div>
     </section>
 
     <!-- 2 · DIFFERENTIATION + METHOD: the staircase -->
@@ -892,7 +917,7 @@ const jsonLd = {
             <p class="e-kick">The membership</p>
             <h2 class="e-d2" id="mem-h">Build your faceless business with us. <em>Pick how much help you want.</em></h2>
           </div>
-          <p>Both memberships put you inside the Skool classroom: step-by-step trainings that walk you from zero to a working faceless business (your brand, your first product, your email list and your traffic), a new prompt every day, and {community.members} women building the same thing beside you. Premium adds more training and writes your social content for you every month.</p>
+          <p>Both memberships put you inside the Skool classroom: step-by-step trainings that walk you from zero to a working faceless business (your brand, your first product, your email list and your traffic), a new prompt every day, and women building the same thing beside you. Premium adds more training and writes your social content for you every month.</p>
         </div>
         <div class="mem-grid">
           <article class="std">
