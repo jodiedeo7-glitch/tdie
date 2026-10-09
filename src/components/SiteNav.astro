@@ -6,6 +6,7 @@ import { NAV, NAV_CTA } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
 const isCurrent = (href) => path === href || path.startsWith(href + "/");
 ---
+{!boutique && <div class="sn-drip" aria-hidden="true"></div>}
 <header class:list={["sn",boutique && "sn-boutique"]}>
     <div class="sn-in">
     {boutique && <nav class="sn-masthead-utility" aria-label="Browse TDIE"><a href="/">Home</a><a href="/lifestyle">Lifestyle</a></nav>}
@@ -28,6 +29,8 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
 </div>
 
 <style>
+  .sn-drip{height:74px;position:relative;z-index:70;pointer-events:none;background:url(/images/drip-top.webp) repeat-x left top/592px 74px,#FFFAFC}
+  @media(max-width:700px){.sn-drip{height:46px;background-size:368px 46px,auto}}
   .sn{position:sticky;top:0;z-index:60;background:#FBF8F5;border-bottom:1px solid rgba(200,169,106,.45)}
   .sn-in{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px);min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
   .sn-logo{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.01em;color:#1A1417;display:inline-block;padding:11px 0;white-space:nowrap}

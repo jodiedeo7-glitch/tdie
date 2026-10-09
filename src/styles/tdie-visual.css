@@ -217,3 +217,20 @@ main :is(.e-lede,.lede,.lib-lede,.fd-lede,.rs-lede){font-size:clamp(16px,1.3vw,1
 /* recommended reading list */
 .related,.rr,.recommended{padding:40px 24px!important}
 .related em,.related i,[class*="rel"] em{font-style:normal!important}
+/* membership comparison table: compact */
+.mb-table th,.mb-table td{padding:10px 14px!important}
+.mb-table thead th{padding-bottom:10px!important;font-size:19px!important}
+.mb-table .mb-group th{padding:18px 14px 6px!important}
+.mb-row-sub{font-size:13px!important;margin-top:2px!important}
+.mb-table-sec{padding-top:40px!important;padding-bottom:40px!important}
+.mb-head{margin-bottom:22px!important}
+section.cover,main>section.cover:first-child,main>section:first-child{padding-top:0!important}
+/* 8 Oct 2026, founder: no more pink pill buttons. Buttons are sleek black with white text. */
+body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.r-btn,.fd-r-btn):not(.e-link){background:#1A1417!important;background-image:none!important;color:#fff!important;border:1px solid #1A1417!important;border-radius:6px!important;box-shadow:none!important}
+body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.fc-row button):hover{background:#D62E73!important;border-color:#D62E73!important}
+body :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn) *{color:#fff!important}
+body .e-btn--ghost,body .btn-ghost{background:#fff!important;color:#1A1417!important;border:1px solid #1A1417!important}
+body .e-btn--ghost *{color:#1A1417!important}
+.fd-hero{padding-top:40px!important;padding-bottom:40px!important}
+.fd-hero::after{display:none!important}
+.fd-hero .page-eyebrow,.fd-hero .e-kick,.fd-hero .kicker{margin-left:auto!important;margin-right:auto!important;display:table!important}.fd-hero{padding-top:24px!important}

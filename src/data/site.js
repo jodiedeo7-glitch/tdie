@@ -8,7 +8,8 @@ export const NAV = [
   { label: "Membership", href: "/membership" },
 ];
 
-export const NAV_CTA = { label: "Join the Membership", href: "/membership" };
+import { SKOOL_PLANS } from "./facts.js";
+export const NAV_CTA = { label: "Start free for 7 days", href: SKOOL_PLANS };
 
 export const FOOTER = [
   { h: "Read", links: [
