@@ -1,0 +1,15 @@
+---
+import {getImage} from 'astro:assets';
+import pieces from '../../lifestyle/ghoul-fuel-coffee-bar-basic.png';
+import room from '../../lifestyle/pretty-wicked-entryway-styled.png';
+const {icing,variant=1}=Astro.props;
+const photos=await Promise.all([pieces,room].map(src=>getImage({src,width:700,format:'webp',quality:88})));
+---
+<div class={`designed-banner composition-${variant}`}>
+ <div class="banner-art" aria-hidden="true">
+  <figure class="banner-photo photo-a"><img src={photos[0].src} width="700" height="1050" alt="" loading="eager"/></figure>
+  <figure class="banner-photo photo-b"><img src={photos[1].src} width="700" height="1050" alt="" loading="eager"/></figure>
+ </div>
+ <a class="banner-wordmark" href="/" aria-label="The Digital Income Edit — Home"><span class="banner-the">The</span><span class="banner-name">Digital Income</span><span class="banner-edit">Edit<sup>™</sup></span></a>
+ <div class="banner-top-drip" style={`background-image:url('${icing}')`} aria-hidden="true"></div>
+</div>
