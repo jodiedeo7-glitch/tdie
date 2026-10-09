@@ -63,6 +63,14 @@ def record_answer(path, customer_id, question_id, value, evidence, answered_at,
         raise state.Blocked('QUESTION_UNANSWERED')
     if isinstance(value, str) and value.strip().lower() == 'no selection':
         raise state.Blocked('QUESTION_UNANSWERED')
+    if isinstance(value, (dict, list)) and not value:
+        raise state.Blocked('QUESTION_UNANSWERED')
+    if isinstance(value, dict) and ('selected' in value or 'detail' in value):
+        selected, detail = value.get('selected', []), value.get('detail', '')
+        if not isinstance(selected, list) or not isinstance(detail, str):
+            raise state.Blocked('FORM_ANSWER_INVALID:' + question_id)
+        if not selected and not detail.strip() and not value.get('categories'):
+            raise state.Blocked('QUESTION_UNANSWERED')
     question_id, field, prompt = matching[0]
     current = state.load(path) if Path(path).exists() else {'answers': {}}
     envelope = {'value': copy.deepcopy(value), 'evidence': evidence,
@@ -199,3 +207,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
