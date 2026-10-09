@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09T16:46:29.767Z",
+  "updated_at": "2026-10-09T17:23:40.465Z",
   "purpose": "Single continuation record for WYS repairs; not release certification.",
   "ownership": {
     "this_conversation": "Code implementation on isolated repair branches; read-only retrieval of existing Gemini result; no external audit submission.",
@@ -22,7 +22,14 @@
       "Reviewed source predates PR31 repairs",
       "PR30 customer plugin not certified",
       "Live orchestration and customer delivery NOT TESTED"
-    ]
+    ],
+    "repair_recheck": {
+      "status": "NOT_SUBMITTED_UPLOAD_CALL_INTERRUPTED",
+      "runtime_commit": "2da31d39268d8619ebf7fb7aedeeac5c6e8dd39f",
+      "plugin_commit": "caf918d0e3270e877880e2b4fd35bb765c7e7f0a",
+      "source_files": 23,
+      "evidence": "Browser readback after interruption shows existing completed corrected response, empty prompt, and upload menu. No updated source attachment or new prompt was observed."
+    }
   },
   "repairs": [
     {
@@ -73,5 +80,5 @@
     "generation": "PAUSED_PROVIDER_MODEL_UNVERIFIED",
     "customer_release": "HELD"
   },
-  "next_action": "External recheck of pinned PR30/PR31 code in the existing Gemini review, followed by verified operator configuration and actual production adapters. No release acceptance inferred from local tests."
+  "next_action": "Submit pinned updated source for recheck in existing Gemini conversation; recheck has not begun. Live configuration, remote durable storage and production adapters remain unfinished. No customer release is certified."
 }
