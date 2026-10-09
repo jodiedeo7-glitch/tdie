@@ -220,3 +220,6 @@
 .wz-pinterest-toolbar{flex-wrap:wrap;gap:10px}.wz-pinterest-copy{overflow-wrap:anywhere}.wz-pinterest-brand{flex-wrap:wrap;gap:6px}.wz-pinterest-icons{gap:12px}
 @media(max-width:360px){.wz-pinterest-copy{padding-inline:12px}.wz-pinterest-icons{gap:10px}.wz-pinterest-icons svg{width:20px;height:20px}.wz-pinterest-save{padding:10px 14px}}
 .wys-world{overflow-x:clip}
+/* Apply the same corrections to the kit, brief and newsletter sections. */
+.wys-world :is(.wz-brief-heading,.wx-checkpoint,.wx-guide-number,.wz-guide-visual,.wx-waitlist,.freebie-capture,.wx-collage-main,.wx-seal,.wys-browse-card){border:0!important;outline:0!important}
+.wys-world .wz-guide-visual{background:#f2e6fb!important;background-image:none!important}.wys-world .wx-guide-tag,.wys-world button[type=submit],.wys-world input[type=submit]{background:#edddf8!important;color:#71234a!important;border:0!important;border-radius:12px!important;box-shadow:none!important}.wys-world .wys-browse-card{border-radius:18px!important;background:#fff7fc!important;box-shadow:none!important}.wys-world .wx-collage-main{box-shadow:0 10px 20px #8c326822}.wys-world .wx-seal{background:#f2e6fb!important}
