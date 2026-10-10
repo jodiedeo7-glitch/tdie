@@ -16,6 +16,7 @@ const FREEBIES={
  "passive-income-kit":{group:"200894955250517958",file:"/downloads/the-passive-income-kit.pdf"},
  "pinterest-traffic-kit":{group:"200894957651756422",file:"/downloads/the-pinterest-traffic-kit.pdf"},
  "business-systems-kit":{group:"200894959714305898",file:"/downloads/the-business-systems-kit.pdf"},
+ "wys-waitlist":{group:"200719389134161712",file:null},
 };
 export async function handle(request,env){
  if(request.method!=="POST")return methodNotAllowed();

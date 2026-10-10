@@ -4,28 +4,44 @@ import WysPackage from '../../components/WysPackage.astro';
 import WysStories from '../../components/WysStories.astro';
 import WysFrame from '../../components/WysFrame.astro';
 import WysHero from '../../components/WysHero.astro';
-import WysWorksheet from '../../components/WysWorksheet.astro';
-import WysKit from '../../components/WysKit.astro';
 import WysFaq from '../../components/WysFaq.astro';
+import BlueprintForm from '../../components/BlueprintForm.astro';
 import {packages} from '../../data/wys-packages.js';
-import {WYS_ROOT} from '../../data/wys.js';
+// Written for a buyer who knows nothing about affiliate marketing.
+// Every claim comes from claude/WYS_FOUNDER_INTAKE.md and Jodie's stated
+// decisions. No price, date or checkout on this page while the release hold
+// is active; the launch list is the only action.
+const plain = [
+ ['You have an Amazon storefront.','It\'s your own page on Amazon, with lists of things you\'d actually recommend. Amazon Influencers get one.'],
+ ['People shop from Pinterest and Google.','They search for things like "pink Halloween decor". A pin or a blog post that answers that search keeps showing up for months, not hours.'],
+ ['Every pin leads back to your list.','Someone clicks, lands on your Amazon list and buys. That\'s how Amazon affiliate links work.'],
+ ['The hard part is the content.','Photos, pins, captions and a blog post, over and over, forever. That\'s the part WYS does for you.'],
+];
+const makes = [
+ ['01 / The basic photo','Your finds from one Amazon list, laid out together, with a headline on it.'],
+ ['02 / The styled photo','The same finds fully styled in a real, lived-in room. Nothing bare, nothing beige.'],
+ ['03 / The lifestyle photo','Your AI persona using them in real life, if you choose to have one.'],
+ ['04 / Three Pinterest pins','One for each photo, with titles and descriptions written for Pinterest search.'],
+ ['05 / An Instagram post','The three photos as a swipeable carousel, with the caption written.'],
+ ['06 / A blog post','The look as an article on your website, so Google can find it too.'],
+];
 ---
-<WysFrame title="The While-You-Sleep Storefront™ | TDIE" description="Build Amazon affiliate content around your shopping ideas. Explore complete WYS examples with styling images, articles, Pinterest Pins and Instagram content." ogImage={packages[1].photos[1].src.src}>
- <WysHero><p class="wys-ribbon">The Digital Income Edit™ presents</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Amazon affiliate content</p><p class="wys-lede">Create styling photos, blog stories, Pinterest Pins and Instagram posts around your Amazon finds.</p><div class="wys-actions"><a class="wys-button" href="#full-example">See the full example ↓</a></div></WysHero>
- <div id="kit"><WysKit/></div>
- <WysShelf/><div class="wx-ticker"><span>3 STYLING IMAGES</span><span>3 PINTEREST GRAPHICS</span><span>3 INSTAGRAM SLIDES</span><span>ARTICLE + PRODUCTS + COPY</span></div>
+<WysFrame title="The While-You-Sleep Storefront™ | TDIE" description="Set it up once. It turns the finds on your Amazon storefront into photos, Pinterest pins, an Instagram post and a blog post, and schedules them for you." ogImage={packages[1].photos[1].src.src}>
+ <WysHero><p class="wys-ribbon">The Digital Income Edit™ presents</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Planned. Pinned. Posted. Blogged. You slept.</p><p class="wys-lede">Set it up once. After that, it takes the finds on your Amazon storefront and turns them into photos, Pinterest pins, an Instagram post and a blog post, then schedules every one of them. You stop making content. Your storefront keeps working.</p><div class="wys-actions"><a class="wys-button" href="#launch-list">Join the launch list</a><a class="wys-button" href="#full-example">See a real example ↓</a></div></WysHero>
+
+ <section class="wx-process-band"><div class="wys-wrap wys-section"><div class="wx-centered"><p class="wys-label">New to all of this?</p><h2>Here's the whole idea,<br/>in plain English.</h2></div><div class="wx-process wx-four">{plain.map(([t,p])=><div><h3>{t}</h3><p>{p}</p></div>)}</div></div></section>
+
+ <section class="wys-wrap wys-section"><div class="wx-centered"><p class="wys-label">What it makes for every look</p><h2>One look. Six pieces.<br/><em>All of them scheduled.</em></h2><p>A look is a handful of products from one of your Amazon lists, styled together: a pink Halloween coffee bar, a pumpkin patch outfit, a cozy reading corner.</p></div><div class="wx-process">{makes.map(([t,p])=><div><h3>{t}</h3><p>{p}</p></div>)}</div><p class="wx-centered" style="margin-top:22px">Every pin links to the Amazon list its products came from.</p></section>
+
+ <WysShelf/>
  <section class="wys-wrap wys-section" id="full-example"><WysPackage example={packages[0]} number={1} tour/></section>
  <WysStories/>
- <section class="wx-process-band"><div class="wys-wrap wys-section"><div class="wx-centered"><p class="wys-label">From “I could make something with these”</p><h2>To a repeatable<br/>content routine.</h2></div><div class="wx-process">{[
- ['01 / Set up your business','Choose your niche, product categories, account path, channels, schedule and budget. Decide whether you want an AI persona and how much of the process you want to handle yourself.'],
- ['02 / Build your shopping idea','Choose the actual products. Record the right variants, details and affiliate links. Give the look a clear direction.'],
- ['03 / Create the visuals and content','Use the same selected pieces to guide your styling images, article, Pinterest content and Instagram content.'],
- ['04 / Connect it to a shopping destination','Prepare the destination supported by your account, then check the products, links and disclosures before publishing.'],
- ['05 / Publish, track and repeat','Follow the workflow for your next look. Keep the work you’ve completed and see what still needs attention, so the next step is easier to find.']
- ].map(([title,text])=><div><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
- <section class="wys-wrap wys-section"><div class="wx-paper-strip"><div><h2>Your preferences belong in the setup, not in every new prompt.</h2><p>WYS is being built around reusable instructions for your business: what you feature, where your content goes, how often you post and what you’re comfortable spending.</p><p>That means a clearer starting point for the next outfit, room refresh, seasonal edit or shopping idea.</p></div><div><h2>Choose where AI helps and where you stay hands-on.</h2><p>Use a manual process, a mix of manual and automated steps, or supported automation after your setup has been tested.</p><p>Want to save credits? Handle more steps yourself.</p><p>Want help with recurring work? Use the connections your accounts support, within your chosen budget and approval settings.</p><p>An AI persona is optional. The workflow starts with your business choices.</p></div></div></section>
- <WysWorksheet/>
- <section class="wys-wrap wys-section"><div class="wx-paths"><div><p class="wys-label">Made to fit your actual setup</p><h2>Build around<br/><em>your business.</em></h2><p>Choose the Amazon route, tools and level of involvement that fit your setup. Your budget, channels and preferences shape the process.</p></div><div class="wx-path-list"><div><b>Influencer route</b><p>Use eligible Amazon Idea Lists as the shopping destination for your content.</p></div><div><b>Associates-only route</b><p>Send readers to your own approved website page with the selected products and affiliate links.</p></div><div><b>Manual or mixed</b><p>Keep the steps you want to handle yourself, and add supported automation after testing your setup.</p></div><div><b>Optional persona & closet</b><p>Create with or without an AI persona. An optional Brand Closet path requires your own authorized membership.</p></div></div></div></section>
+
+ <section class="wys-wrap wys-section"><div class="wx-paper-strip"><div><h2>What "automatic" really means.</h2><p><b>It's automatic by default.</b> Once it's set up, it runs on the schedule you choose. No making lists, no writing captions, no thinking about it.</p><p><b>Want to check things first?</b> Turn on approvals and nothing posts until you say yes. For your first few days, leave approvals on.</p><p><b>Keep your computer on.</b> Amazon lists are made in your browser, so your computer needs to be awake for that step.</p></div><div><h2>What you'll need.</h2><p><b>An Amazon Influencer storefront.</b> Your pins link to the lists on it.</p><p><b>Claude or ChatGPT</b> to run it.</p><p><b>Higgsfield</b> for the photos. Every photo uses credits, so you set a monthly budget and it stops when the budget is spent.</p><p><b>Metricool</b> to schedule your Pinterest and Instagram posts.</p><p><b>A website for the blog posts.</b> No website yet? The Weekend Ecosystem™ builds one in a weekend.</p><p>These tools have their own costs. WYS doesn't include them.</p></div></div></section>
+
+ <section class="wys-wrap wys-section"><div class="wx-paths"><div><p class="wys-label">How you get it</p><h2>Not a PDF.<br/><em>A website.</em></h2><p>Every step, every prompt and every setting lives on one interactive website, and it's kept up to date when the tools change.</p></div><div class="wx-path-list"><div><b>Set up once</b><p>It asks about your style, your categories, how often to post and your budget, one question at a time.</p></div><div><b>Your look, not mine</b><p>Your style, your categories, your persona. Tommy Kate's pink farmhouse is just the example.</p></div><div><b>You decide how hands-off</b><p>Fully automatic, or approve every pin before it posts.</p></div><div><b>No gatekeeping</b><p>Every option at every step, including the cheaper ones.</p></div></div></div></section>
+
  <WysFaq/>
- <section class="wys-wrap wys-section"><div class="wx-last-call"><p class="wys-label">A little less to keep checking</p><h2>See what your next<br/>shopping idea could become.</h2><p>Open the complete examples and follow the products through the images, article, Pins and carousel. Want the launch email the moment it opens?</p><a class="wys-button" href={WYS_ROOT+'/waitlist'}>Join the waitlist →</a></div></section>
+
+ <section class="wys-wrap wys-section" id="launch-list"><div class="wx-last-call"><p class="wys-label">Not on sale yet</p><h2>Be first<br/>when it opens.</h2><p>WYS is in final testing. Join the launch list and you'll hear the moment it opens.</p><BlueprintForm kit="wys-waitlist" file="" heading="" sub="" button="Put me on the list" doneTitle="You're on the list." doneSub="You'll hear the moment The While-You-Sleep Storefront™ opens." fine="Just the launch email. Unsubscribe anytime." /></div></section>
 </WysFrame>

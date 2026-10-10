@@ -13,7 +13,7 @@ const {example:e}=Astro.props;
    <div class="wz-pinterest-creator"><span class="wz-profile-mark" aria-hidden="true">TDIE</span><b>The Digital Income Edit™</b></div>
    <h4>{p.title}</h4><strong class="wz-pin-field">Description</strong><p>{p.description}</p>
    <a class="wz-pin-destination" href={p.destination}>thedigitalincomeedit.com <span aria-hidden="true">→</span><span>{e.article.title}</span></a>
-   <details class="wz-pin-alt-details"><summary>Image alt text</summary><p class="wz-pin-alt">{p.alt}</p></details>
+   <details class="wz-pin-alt-details"><summary>Image description (helps Pinterest search)</summary><p class="wz-pin-alt">{p.alt}</p></details>
    <div class="wz-pinterest-comment" aria-hidden="true">Add a comment <span>♡</span></div>
   </div>
  </div>

@@ -10,6 +10,8 @@ const {
   file = "/downloads/the-faceless-income-blueprint.pdf",
   doneSub = "Your Blueprint is ready. Open it now, or save it for tonight.",
   doneButton = "Download the Blueprint",
+  doneTitle = "It's yours.",
+  fine = "Free. No spam, unsubscribe anytime.",
 } = Astro.props;
 const UID = Math.random().toString(36).slice(2, 9);
 ---
@@ -23,12 +25,12 @@ const UID = Math.random().toString(36).slice(2, 9);
       <button class="btn" type="submit">{button}</button>
     </div>
     <p class="bpf-err" role="alert"></p>
-    <p class="bpf-fine">Free. No spam, unsubscribe anytime. See the <a href="/privacy">privacy policy</a>.</p>
+    <p class="bpf-fine">{fine} See the <a href="/privacy">privacy policy</a>.</p>
   </form>
   <div class="bpf-done" hidden tabindex="-1">
-    <p class="bpf-h">It's yours.</p>
+    <p class="bpf-h">{doneTitle}</p>
     <p class="bpf-sub">{doneSub}</p>
-    <a class="btn bpf-dl" href={file} target="_blank" rel="noopener" download>{doneButton} <span aria-hidden="true">→</span></a>
+    {file && <a class="btn bpf-dl" href={file} target="_blank" rel="noopener" download>{doneButton} <span aria-hidden="true">→</span></a>}
   </div>
 </div>
 <style>
