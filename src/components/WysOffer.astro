@@ -1,8 +1,11 @@
 ---
 // Offer and dates. No end dates, countdowns or spot counts.
+import { NAV_CTA } from '../data/site.js';
+import { membership as M } from '../data/facts.js';
 ---
 <div class="wc-offer">
- <div class="wc-price">
+ <div class="wc-price wh-price-best">
+  <span class="wh-pill"><span>Best price</span></span>
   <p class="wc-price-who">TDIE Skool Premium members</p>
   <p class="wc-price-num">$10</p>
   <p class="wc-price-when">Member presale opens<br/>Tuesday 13 October 2026</p>
@@ -13,8 +16,13 @@
   <p class="wc-price-when">Member presale opens<br/>Tuesday 13 October 2026</p>
  </div>
  <div class="wc-price wc-price-launch">
+  <span class="wh-pill"><span>Open to all</span></span>
   <p class="wc-price-who">Everyone</p>
   <p class="wc-price-num">$37</p>
   <p class="wc-price-when">Full launch<br/>Friday 16 October 2026</p>
  </div>
+</div>
+<div class="wh-trial">
+ <div><p class="wc-kicker">Not a member yet?</p><p class="wh-trial-h">Start free for {M.trialDays} days. <em>Get the member price.</em></p><p class="wh-trial-p">Both TDIE memberships start with {M.trialDays} days free, and members get first access at the presale price.</p></div>
+ <a class="wc-button" href={NAV_CTA.href}>Start free for {M.trialDays} days</a>
 </div>

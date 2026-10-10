@@ -5,7 +5,7 @@ import {liveLooks} from '../data/wys-live.js';
 ---
 <div class="wc-proof">{liveLooks.map((look) => <article class="wc-proof-card">
  <span class="wc-live-tag">Live now</span>
- <a class="wc-proof-shot" href={look.url} target="_blank" rel="noopener"><Image src={look.blogDesk} alt={`Screenshot of the live blog post ${look.name}`} widths={[480, 760, 1100]} sizes="(max-width:800px) 92vw, 540px"/></a>
+ <a class="wc-proof-shot wh-browser" href={look.url} target="_blank" rel="noopener"><span class="wh-bar"><i></i><i></i><i></i><span>{look.url.replace('https://www.', '')}</span></span><span class="wh-crop"><Image src={look.blogDesk} alt={`Screenshot of the live blog post ${look.name}`} widths={[480, 760, 1100]} sizes="(max-width:800px) 92vw, 620px"/></span></a>
  <p class="wc-proof-cat">{look.category}</p>
  <h3>{look.name}</h3>
  <p>{look.blogLine}</p>
