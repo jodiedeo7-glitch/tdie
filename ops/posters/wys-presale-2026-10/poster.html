@@ -325,6 +325,87 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
 .pin-top { padding-left:12px !important; }
 .skool .pin-bot { padding-left:26px !important; }
 .skool .pin-top { padding-left:24px !important; }
+
+/* ===== ad compositions ===== */
+.comps { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:12px; }
+.comp { position:relative; width:486px; height:500px; }
+.c-head { position:absolute; left:0; top:0; font-weight:700; font-size:13px; letter-spacing:0.16em; white-space:nowrap; }
+.c-head .n { color:var(--hot); }
+.c-head .t { letter-spacing:0.02em; font-weight:600; }
+.ctag { position:absolute; z-index:40; background:var(--hot); color:#fff; font-weight:700; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; padding:5px 9px; border-radius:4px; box-shadow:0 6px 14px rgba(214,46,115,0.3); white-space:nowrap; }
+.cpin { position:absolute; width:118px; top:62px; }
+.cpin .pin { width:118px; }
+.cpin .cap { font-size:10px; margin-top:6px; }
+.cpin.p1 { left:0; transform:rotate(-7deg); z-index:3; }
+.cpin.p2 { left:86px; top:56px; transform:rotate(-1deg); z-index:2; }
+.cpin.p3 { left:172px; transform:rotate(5deg); z-index:1; }
+.comp .pin .pt { font-size:11px; }
+.comp .pin .k { font-size:5.5px; }
+.comp .pin-basic .lockup .serif { font-size:18px; }
+.comp .pin-basic .lockup .script { font-size:24px; }
+.igphone { position:absolute; right:22px; top:62px; width:196px; z-index:10; background:var(--ink); border-radius:28px; padding:8px; transform:rotate(3deg);
+  box-shadow:0 30px 56px rgba(214,46,115,0.34), 0 8px 18px rgba(26,20,23,0.2); }
+.igphone .scr { background:#fff; border-radius:21px; overflow:hidden; padding:10px 0 12px; }
+.igphone .ig-top { padding:0 10px; margin-bottom:8px; font-size:10px; }
+.ig-main { position:relative; aspect-ratio:4/5; }
+.ig-main img { width:100%; height:100%; object-fit:cover; display:block; }
+.ig-main .no { position:absolute; right:7px; top:7px; background:rgba(26,20,23,0.72); color:#fff; font-size:9px; font-weight:600; padding:2px 7px; border-radius:8px; }
+.igphone .ig-dots { margin-top:7px; }
+.ig-lines { padding:7px 10px 0; }
+.ig-lines i { display:block; height:5px; border-radius:3px; background:#eadde3; margin-top:5px; }
+.peek { position:absolute; width:150px; aspect-ratio:4/5; overflow:hidden; border-radius:8px; border:4px solid #fff; box-shadow:0 14px 28px rgba(214,46,115,0.25); }
+.peek img { width:100%; height:100%; object-fit:cover; display:block; }
+.pk2 { right:-4px; top:120px; transform:rotate(9deg); z-index:6; }
+.pk3 { right:-14px; top:150px; transform:rotate(15deg); z-index:5; }
+.cidea { position:absolute; left:0; top:300px; width:186px; z-index:12; background:#fff; border:1px solid var(--gold); border-radius:14px; padding:11px 12px 10px; transform:rotate(-3deg); box-shadow:var(--pinkshadow); }
+.cidea .ih { font-family:"Gloock",serif; font-size:17px; line-height:1; }
+.cidea .is { font-weight:700; font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--hot); margin:3px 0 5px; }
+.cidea ul { list-style:none; }
+.cidea li { font-size:11.5px; line-height:1.35; padding-left:10px; position:relative; }
+.cidea li::before { content:""; position:absolute; left:0; top:0.5em; width:5px; height:5px; border-radius:50%; background:var(--hot); }
+.cblog { position:absolute; left:196px; top:280px; z-index:20; transform:rotate(-5deg); }
+.cblog .phone { position:relative; left:auto; top:auto; width:116px; padding:6px; border-radius:18px; }
+.cblog .phone img { border-radius:13px; }
+.fb .cblog .phone { width:116px; }
+.skool .comps { grid-template-columns:1fr; gap:40px; justify-items:center; margin-top:30px; }
+.skool .comp { zoom:2; }
+
+/* ===== no hot pink boxes ===== */
+.badge { background:transparent; color:var(--hot); box-shadow:none; border-radius:0; padding:4px 0; border-bottom:2px solid var(--hot); }
+.who-for { background:transparent; color:var(--hot); box-shadow:none; padding:0; transform:none; border-radius:0; font-size:14px; }
+.price { background:rgba(255,255,255,0.96); color:var(--ink); border:1px solid var(--gold); box-shadow:0 26px 50px rgba(214,46,115,0.22), 0 6px 14px rgba(26,20,23,0.10); }
+.price::before { display:none; }
+.price-label { color:var(--hot); }
+.price-row .amt { color:var(--hot); text-shadow:none; }
+.price-and, .price-reg { color:#5a4d53; }
+.price-reg { border-top-color:var(--gold); }
+.step .num { background:#fff; color:var(--hot); border:1.5px solid var(--gold); box-shadow:0 10px 20px rgba(214,46,115,0.22); }
+.ctag { background:rgba(255,255,255,0.92); color:var(--ink); box-shadow:0 4px 10px rgba(26,20,23,0.08); border-radius:3px; border-left:3px solid var(--hot); padding:4px 8px; }
+.bar { background:var(--ink); }
+.bar::before { display:none; }
+.bar .j { color:var(--bubble); }
+.ig-top .av { background:var(--bubble); }
+
+.ctag { background:none; box-shadow:none; border:0; padding:0 0 0 18px; font-size:10.5px; color:var(--ink); }
+.ctag::before { content:""; position:absolute; left:0; top:50%; width:12px; height:2px; background:var(--hot); }
+.cpin, .cpin .pin { width:106px; }
+.cpin { top:64px; }
+.cpin.p1 { left:2px; transform:rotate(-5deg); }
+.cpin.p2 { left:98px; top:58px; transform:rotate(-0.5deg); }
+.cpin.p3 { left:194px; transform:rotate(4deg); }
+.comp .pin .pt { font-size:10px; }
+.comp .pin-basic .lockup .serif { font-size:16px; }
+.comp .pin-basic .lockup .script { font-size:22px; }
+.igphone { width:172px; right:28px; top:60px; }
+.peek { width:120px; }
+.pk2 { right:6px; top:130px; }
+.pk3 { right:0px; top:160px; transform:rotate(13deg); }
+.cblog { left:206px; top:288px; }
+.cblog { top:284px; }
+.skool .hero-st { display:none; }
+.comp .pin .k { letter-spacing:0.04em; font-size:5px; }
+.cpin.p2 { left:92px; } .cpin.p3 { left:180px; }
+.pin-bot { padding-right:12px !important; }
 </style>
 </head>
 <body>
@@ -354,11 +435,6 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
       </div>
     </section>
 
-    <section class="steps">
-      <div class="step"><div class="num">1</div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div>
-      <div class="step"><div class="num">2</div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div>
-      <div class="step"><div class="num">3</div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div>
-    </section>
 
     <div class="panel">
       <div class="sticker white hero-st"><span>Works with Claude + ChatGPT</span></div>
@@ -371,66 +447,54 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
         <div class="tag"><b>12</b><span>products linked</span></div>
       </div>
 
-      <div class="nights">
-        <div class="nl">
-          <div class="nl-head"><span class="n">01</span> LOOK <span class="t">· The Pink Plaid Pumpkin Patch Outfit</span></div>
-          <div class="nl-label">Pinterest · 3 pins</div>
-          <div class="pins">
-            <div><div class="pin pin-basic"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
-            <div><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">Pink plaid for the pumpkin patch</span></div><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
-            <div><div class="pin"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"><div class="pin-bot"><span class="pt">The pumpkin patch outfit</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
-          </div>
-          <div class="nl-row">
-            <div class="ig">
-              <div class="nl-label">Instagram · 3-slide carousel</div>
-              <div class="ig-card">
-                <div class="ig-top"><span class="av"></span>itstommykate</div>
-                <div class="ig-slides">
-                  <div class="sl"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><span class="no">1/3</span></div>
-                  <div class="sl"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""><span class="no">2/3</span></div>
-                  <div class="sl"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"><span class="no">3/3</span></div>
-                </div>
-                <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="bl">
-              <div class="nl-label">Blog post</div>
-              <div class="phone"><img src="img/blog-pink-plaid-pumpkin-patch-outfit.png" alt=""></div>
-            </div>
-          </div>
-          <div class="il"><div class="nl-label">Amazon Idea List · 6 products linked</div><ul><li>Pink plaid shacket</li><li>Black ribbed crop top</li><li>Straight leg jeans</li><li>White platform sneakers</li><li>Purple corduroy tote</li><li>Green pom beanie</li></ul></div>
+      <div class="comps">
+        <div class="comp">
+          <div class="c-head"><span class="n">01</span> LOOK <span class="t">· The Pink Plaid Pumpkin Patch Outfit</span></div>
+          <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
+          <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
+          <div class="cpin p2"><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">Pink plaid for the pumpkin patch</span></div><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
+          <div class="cpin p3"><div class="pin"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"><div class="pin-bot"><span class="pt">The pumpkin patch outfit</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
+          <div class="peek pk2"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div>
+          <div class="peek pk3"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"></div>
+          <span class="ctag" style="right:0;top:30px">Instagram · 3-slide carousel</span>
+          <div class="igphone"><div class="scr">
+            <div class="ig-top"><span class="av"></span>itstommykate</div>
+            <div class="ig-main"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><span class="no">1/3</span></div>
+            <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
+            <div class="ig-lines"><i style="width:80%"></i><i style="width:55%"></i></div>
+          </div></div>
+          <div class="cidea"><div class="ih">Amazon Idea List</div><div class="is">6 products linked</div><ul><li>Pink plaid shacket</li><li>Black ribbed crop top</li><li>Straight leg jeans</li><li>White platform sneakers</li><li>Purple corduroy tote</li><li>Green pom beanie</li></ul></div>
+          <div class="cblog"><div class="phone"><img src="img/blog-pink-plaid-pumpkin-patch-outfit.png" alt=""></div></div>
+          <span class="ctag" style="left:120px;top:266px">Blog post</span>
         </div>
-        <div class="nl">
-          <div class="nl-head"><span class="n">02</span> LOOK <span class="t">· The Pink Ghost Coffee Bar</span></div>
-          <div class="nl-label">Pinterest · 3 pins</div>
-          <div class="pins">
-            <div><div class="pin pin-basic"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
-            <div><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">A pink ghost coffee bar</span></div><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
-            <div><div class="pin"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"><div class="pin-bot"><span class="pt">Halloween in pink</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
-          </div>
-          <div class="nl-row">
-            <div class="ig">
-              <div class="nl-label">Instagram · 3-slide carousel</div>
-              <div class="ig-card">
-                <div class="ig-top"><span class="av"></span>itstommykate</div>
-                <div class="ig-slides">
-                  <div class="sl"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><span class="no">1/3</span></div>
-                  <div class="sl"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""><span class="no">2/3</span></div>
-                  <div class="sl"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"><span class="no">3/3</span></div>
-                </div>
-                <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="bl">
-              <div class="nl-label">Blog post</div>
-              <div class="phone"><img src="img/blog-pink-ghost-coffee-bar.png" alt=""></div>
-            </div>
-          </div>
-          <div class="il"><div class="nl-label">Amazon Idea List · 6 products linked</div><ul><li>Ghost pillar candles</li><li>Pink creepy gauze</li><li>BOO ghost figurines</li><li>Pink ghost figurines</li><li>Pink jack-o-lanterns</li><li>Paper bat stickers</li></ul></div>
+        <div class="comp">
+          <div class="c-head"><span class="n">02</span> LOOK <span class="t">· The Pink Ghost Coffee Bar</span></div>
+          <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
+          <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
+          <div class="cpin p2"><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">A pink ghost coffee bar</span></div><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
+          <div class="cpin p3"><div class="pin"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"><div class="pin-bot"><span class="pt">Halloween in pink</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
+          <div class="peek pk2"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div>
+          <div class="peek pk3"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"></div>
+          <span class="ctag" style="right:0;top:30px">Instagram · 3-slide carousel</span>
+          <div class="igphone"><div class="scr">
+            <div class="ig-top"><span class="av"></span>itstommykate</div>
+            <div class="ig-main"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><span class="no">1/3</span></div>
+            <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
+            <div class="ig-lines"><i style="width:80%"></i><i style="width:55%"></i></div>
+          </div></div>
+          <div class="cidea"><div class="ih">Amazon Idea List</div><div class="is">6 products linked</div><ul><li>Ghost pillar candles</li><li>Pink creepy gauze</li><li>BOO ghost figurines</li><li>Pink ghost figurines</li><li>Pink jack-o-lanterns</li><li>Paper bat stickers</li></ul></div>
+          <div class="cblog"><div class="phone"><img src="img/blog-pink-ghost-coffee-bar.png" alt=""></div></div>
+          <span class="ctag" style="left:120px;top:266px">Blog post</span>
         </div>
       </div>
       <div class="blogline"><b>Plus a blog post for every look.</b> Written in your voice, with every product linked to your storefront.</div>
     </div>
+
+    <section class="steps">
+      <div class="step"><div class="num">1</div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div>
+      <div class="step"><div class="num">2</div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div>
+      <div class="step"><div class="num">3</div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div>
+    </section>
 
     <section class="phrase"><span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s"><span class="amp">&amp;</span>you slept.</span></section>
   </div>
