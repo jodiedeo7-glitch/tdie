@@ -163,6 +163,84 @@ h1 em { display:block; }
 .skool .phrase .s { font-size:56px; }
 .skool .phrase .amp { font-size:42px; }
 .skool .bar { margin-top:44px; padding:30px var(--pad); font-size:28px; }
+
+/* ===== depth pass ===== */
+.panel { background:#F3ECE6; margin:0 calc(-1 * var(--pad)); padding:0 var(--pad) 18px; position:relative; }
+.price { background:#fff; border-left:0; border-top:5px solid var(--hot); padding:16px 22px 14px; box-shadow:0 22px 44px rgba(26,20,23,0.16), 0 4px 10px rgba(26,20,23,0.08); transform:rotate(1.2deg); }
+.steps .num { font-size:54px; }
+.tally { border-color:rgba(200,169,106,0.9); }
+.tally b { font-size:40px; }
+
+.trio { display:flex; gap:0; padding:6px 4px 0; }
+.trio > div { flex:1 1 0; min-width:0; position:relative; }
+.trio .shot { background:#fff; padding:7px; aspect-ratio:auto; box-shadow:0 18px 34px rgba(26,20,23,0.22), 0 3px 8px rgba(26,20,23,0.12); }
+.trio .shot img { aspect-ratio:2/3; height:auto; }
+.trio .shot .lockup { inset:7px 7px auto 7px; }
+.trio > div:nth-child(1) { transform:rotate(-3deg); z-index:3; margin-right:-14px; }
+.trio > div:nth-child(2) { transform:rotate(1deg) translateY(10px); z-index:2; margin-right:-14px; }
+.trio > div:nth-child(3) { transform:rotate(3.5deg); z-index:1; }
+.cap { margin-top:9px; }
+
+.phones { position:relative; display:block; height:auto; }
+.phone { box-shadow:0 26px 50px rgba(26,20,23,0.32), 0 6px 14px rgba(26,20,23,0.16); }
+.lists { background:#fff; border-top:0; padding:16px 18px 14px; box-shadow:0 18px 36px rgba(26,20,23,0.14), 0 3px 8px rgba(26,20,23,0.08); position:relative; z-index:5; transform:rotate(-1deg); }
+
+.fb .phones { width:auto; height:318px; margin-top:12px; }
+.fb .phone { position:absolute; width:178px; }
+.fb .phone:nth-child(1) { left:22px; top:6px; transform:rotate(-6deg); z-index:2; }
+.fb .phone:nth-child(2) { left:206px; top:0; transform:rotate(5deg); z-index:1; }
+.fb .lists { margin-top:-24px; }
+.fb .lockup .serif { font-size:28px; }
+.fb .lockup .script { font-size:38px; }
+
+.skool .panel { padding-bottom:40px; }
+.skool .trio > div:nth-child(1), .skool .trio > div:nth-child(2) { margin-right:-18px; }
+.skool .trio .shot { padding:10px; }
+.skool .trio .shot .lockup { inset:10px 10px auto 10px; }
+.skool .phones { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.skool .phone:nth-child(1) { transform:rotate(-5deg); z-index:2; }
+.skool .phone:nth-child(2) { transform:rotate(4deg) translateY(50px); }
+.skool .lists { margin-top:30px; transform:rotate(-0.6deg); }
+.skool .price { transform:rotate(1deg); }
+.fb .grid { grid-template-columns:minmax(0,1fr) 466px; gap:30px; }
+.fb .look + .look { margin-top:26px; }
+.fb .tally b { font-size:32px; }
+.fb .steps .num { font-size:48px; }
+.fb .panel { padding-bottom:10px; }
+.fb .phones { height:292px; }
+.fb .phone { width:160px; }
+.fb .phone:nth-child(1) { left:40px; }
+.fb .phone:nth-child(2) { left:228px; }
+.fb .lists { margin-top:-14px; padding:12px 16px 10px; }
+.fb .lists li { font-size:13px; line-height:1.3; }
+.fb .blog h3 { font-size:28px; }
+.fb .lockup .serif { font-size:25px; }
+.fb .lockup .script { font-size:34px; }
+.fb .hero { padding:10px 0 12px; }
+.fb .grid { grid-template-columns:minmax(0,1fr) 500px; }
+.fb .phone:nth-child(1) { left:60px; }
+.fb .phone:nth-child(2) { left:258px; }
+.fb .price-row .amt { font-size:42px; }
+.fb h1 { font-size:55px; }
+.fb .steps { padding:8px 0; }
+.fb .tally { padding:5px 0; margin-top:6px; }
+.fb .sec { padding:8px 0 8px; }
+.fb .look + .look { margin-top:22px; }
+.fb .grid { grid-template-columns:minmax(0,1fr) 516px; }
+.fb .phone:nth-child(1) { left:70px; }
+.fb .phone:nth-child(2) { left:270px; }
+.fb .look + .look { margin-top:16px; }
+.fb .phrase { padding:8px 0 6px; margin-top:8px; }
+.fb .phrase .p { font-size:30px; }
+.fb .phrase .s { font-size:42px; }
+.fb .bar { padding:16px var(--pad); }
+.fb .panel { padding-bottom:6px; }
+.fb .grid { grid-template-columns:minmax(0,1fr) 470px; }
+.fb .phone:nth-child(1) { left:52px; }
+.fb .phone:nth-child(2) { left:248px; }
+.becomes { white-space:nowrap; }
+.skool .hero { grid-template-columns:minmax(0,1fr) 350px; }
+.price-row .who { white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -200,6 +278,7 @@ h1 em { display:block; }
     </section>
     <div class="gold-rule"></div>
 
+    <div class="panel">
     <section class="sec">
       <div class="sec-top"><h2>Every night, while you sleep.</h2><span class="label pink">2 LOOKS · 6 PINS</span></div>
       <div class="tally">
@@ -214,7 +293,7 @@ h1 em { display:block; }
     <div class="grid">
       <section>
         <div class="look">
-          <div class="look-name"><span class="n">01</span> Look <span class="becomes">· its 3 photos = 3 Pinterest pins + a 3-slide Instagram carousel</span></div>
+          <div class="look-name"><span class="n">01</span> Look <span class="becomes">· 3 photos = 3 pins + a 3-slide carousel</span></div>
           <div class="trio">
             <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
             <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
@@ -222,7 +301,7 @@ h1 em { display:block; }
           </div>
         </div>
         <div class="look">
-          <div class="look-name"><span class="n">02</span> Look <span class="becomes">· its 3 photos = 3 Pinterest pins + a 3-slide Instagram carousel</span></div>
+          <div class="look-name"><span class="n">02</span> Look <span class="becomes">· 3 photos = 3 pins + a 3-slide carousel</span></div>
           <div class="trio">
             <div><div class="shot"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
             <div><div class="shot"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
@@ -249,6 +328,8 @@ h1 em { display:block; }
           </div>
         </div>
       </section>
+    </div>
+
     </div>
 
     <section class="phrase"><span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s"><span class="amp">&amp;</span>you slept.</span></section>
