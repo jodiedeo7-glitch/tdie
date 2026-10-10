@@ -108,3 +108,14 @@ Jodie asked for the guide to match her website. Every page now uses the live hom
 - a gold rule above the footer.
 
 Glitter stays in the photo frame borders and the number circles. Lavender is the alternate card, frame and number colour. The copy and photos are unchanged. These styles use the site's soft shadows and the gradient number circles, which goes against the original brief's no-gradient rule for Canva import.
+
+## Built from the website itself (10 October 2026)
+
+Jodie rejected the drip and asked for the PDF to look like her website. The guide is now rendered from the live site's own home page: its compiled stylesheets and its real components (cover, masthead, kicker pills, cover-meta stats, the "Sound familiar?" list, the "Faceless" two-part section with the refuse list, showroom cards, method staircase cards, manifesto line, e-btn). Pages are laid out at the site's 720px tablet width and exported at 1080 x 1440 (PNG) and 720 x 960 pt (PDF).
+
+- No drip.
+- Photo frames copy the site's cover frame (14px pink border, 28px corners, pink outline, white caption strip), with fine glitter in the border.
+- All of the site's scripts, its Meta Pixel and analytics, and its meta tags are stripped from the guide.
+- Copy and photos are unchanged. I removed three short card descriptions I had drafted that are not in the approved copy.
+- To rebuild: build the site (`npx astro build` on cloudflare-migration), serve `dist/`, copy `img/*.jpg` to `dist/_wysguide-img/`, then run `python3 site-build/site_build.py dist dist/_wysguide.html site-build/glitter.txt` and `node site-build/site_render.mjs out`.
+- `index.html` and `render.cjs` are the earlier standalone version, kept for reference only.
