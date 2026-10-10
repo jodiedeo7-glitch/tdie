@@ -480,6 +480,16 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
 .skool .hero { grid-template-columns:minmax(0,1fr) 430px; }
 .skool .perks { flex-direction:column; gap:6px; }
 .skool .blogline { font-size:19px; text-wrap:balance; }
+
+/* ===== visual separation ===== */
+.panel { background:#FBEAF1; border-top:1px solid var(--gold); border-bottom:1px solid var(--gold); }
+.lookcard { background:rgba(255,255,255,0.78); border:1px solid var(--gold); border-radius:22px; padding:12px 10px 8px;
+  box-shadow:0 24px 48px rgba(214,46,115,0.16), 0 4px 10px rgba(26,20,23,0.06), inset 0 1px 0 #fff; }
+.fb .comps { gap:16px; margin-top:10px; }
+.fb .lookcard { padding:10px 8px 4px; }
+.fb .comp { zoom:0.95; }
+.skool .lookcard { padding:26px 22px 18px; }
+.blogline { padding-top:4px; }
 </style>
 </head>
 <body>
@@ -526,7 +536,7 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
 
       <div class="example">Example of one night's output</div>
       <div class="comps">
-        <div class="comp">
+        <div class="lookcard"><div class="comp">
           <div class="c-head"><span class="n">01 Look</span><span class="t">The Pink Plaid Pumpkin Patch Outfit</span></div>
           <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
           <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
@@ -543,9 +553,9 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
           </div></div>
           <div class="cidea"><div class="ih">Shop the look</div><div class="is">6 products linked</div><ul><li>Pink plaid shacket</li><li>Black ribbed crop top</li><li>Straight leg jeans</li><li>White platform sneakers</li><li>Purple corduroy tote</li><li>Green pom beanie</li></ul></div>
           <div class="cblog"><div class="phone"><img src="img/blog-pink-plaid-pumpkin-patch-outfit.png" alt=""></div></div>
-          <span class="ctag" style="left:120px;top:266px">Blog post</span>
-        </div>
-        <div class="comp">
+          <span class="ctag" style="left:390px;top:440px">Blog post</span>
+        </div></div>
+        <div class="lookcard"><div class="comp">
           <div class="c-head"><span class="n">02 Look</span><span class="t">The Pink Ghost Coffee Bar</span></div>
           <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
           <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
@@ -562,8 +572,8 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
           </div></div>
           <div class="cidea"><div class="ih">Shop the look</div><div class="is">6 products linked</div><ul><li>Ghost pillar candles</li><li>Pink creepy gauze</li><li>BOO ghost figurines</li><li>Pink ghost figurines</li><li>Pink jack-o-lanterns</li><li>Paper bat stickers</li></ul></div>
           <div class="cblog"><div class="phone"><img src="img/blog-pink-ghost-coffee-bar.png" alt=""></div></div>
-          <span class="ctag" style="left:120px;top:266px">Blog post</span>
-        </div>
+          <span class="ctag" style="left:390px;top:440px">Blog post</span>
+        </div></div>
       </div>
       <div class="blogline"><b>Plus a blog post for every look.</b> Written in your voice, with every product linked to your storefront.</div>
     </div>
