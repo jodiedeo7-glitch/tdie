@@ -5,7 +5,7 @@ CSS='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="vi
 @font-face{font-family:"Inter";src:url("type/inter-latin-600-normal.woff2") format("woff2");font-weight:600}
 @font-face{font-family:"Inter";src:url("type/inter-latin-700-normal.woff2") format("woff2");font-weight:700}
 @font-face{font-family:"Inter";src:url("type/inter-latin-800-normal.woff2") format("woff2");font-weight:800}
-:root{--pink:#D62E73;--deep:#B8245F;--bub:#FF8AC2;--ink:#1A1417;--ink2:#4A3640;--gold:#C8A96A;
+:root{--pink:#D62E73;--deep:#B8245F;--bub:#FF8AC2;--ink:#1A1417;--ink2:#1A1417;--gold:#C8A96A;
 --spark:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);
 --burst:polygon(50% 0%,57% 9%,68% 3%,71% 14%,83% 12%,82% 24%,94% 27%,88% 38%,98% 46%,89% 54%,96% 65%,85% 69%,87% 81%,75% 81%,72% 93%,61% 88%,52% 98%,44% 89%,33% 95%,29% 84%,17% 86%,17% 74%,5% 70%,11% 59%,2% 51%,11% 43%,4% 32%,16% 28%,14% 16%,26% 16%,30% 4%,41% 10%)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -101,7 +101,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .trio figcaption{margin-top:10px;text-align:center;font:700 18px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
 .g{background:#fff;border-radius:26px;box-shadow:0 36px 60px -40px rgba(110,10,50,.6);overflow:hidden;display:flex;flex-direction:column}
 .g .top{height:16px;background:url(img/brand/gl-hot.webp) 0 0/260px}
-.g .tp{font:700 18px/1 Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:34px 36px 14px}
+.g .tp{font:700 18px/1 Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--deep);margin:34px 36px 14px}
 .g h3{margin:0 36px 14px}
 .g p{margin:0 36px 36px;font:400 24px/1.55 Inter;color:var(--ink2)}
 .line{font:600 46px/1.15 Newsreader;color:var(--ink);text-align:center}
@@ -122,14 +122,13 @@ def trio(keys): return '<div class="trio">'+''.join(f'<figure>{img(k)}<figcaptio
 P=[]
 P.append(page(1,'blush glow',f'''
 <p class="kick">The While-You-Sleep Storefront™ · Free preview</p>
-<h1>Your taste.<br>A repeatable <em>system.</em></h1>
+<div style="position:relative"><h1>Your taste.<br>A repeatable <em>system.</em></h1><div class="sticker" style="right:-10px;top:-40px;transform:rotate(10deg)"><i></i><span>Free<b>preview</b></span></div></div>
 <p class="lede"><b>Planned. Pinned. Posted. Blogged. You Slept.</b></p>
-<div style="position:relative;height:740px;margin-top:6px">
- <div class="prod" style="left:0;top:70px;width:300px;transform:rotate(-4deg)">{img('pb')}<span class="tag" style="left:-14px;bottom:40px">01 · Basic<b>See the pieces</b></span></div>
- <div class="prod" style="left:313px;top:10px;width:300px;z-index:2">{img('ps')}<span class="tag" style="left:20px;bottom:30px">02 · Styled<b>Feel the style</b></span></div>
- <div class="prod" style="left:626px;top:80px;width:300px;transform:rotate(4deg);z-index:3">{img('pl')}<span class="tag" style="right:-12px;bottom:44px">03 · Lifestyle<b>Picture it</b></span></div>
- <div class="sticker" style="right:-30px;top:-40px"><i></i><span>Free<b>preview</b></span></div>
-</div>
+<div style="position:relative;height:800px;margin-top:6px">
+ <div class="prod" style="left:-6px;top:60px;width:320px;transform:rotate(-4deg)">{img('pb')}<span class="tag" style="left:-14px;bottom:40px">01 · Basic<b>See the pieces</b></span></div>
+ <div class="prod" style="left:304px;top:0;width:320px;z-index:2">{img('ps')}<span class="tag" style="left:20px;bottom:30px">02 · Styled<b>Feel the style</b></span></div>
+ <div class="prod" style="left:614px;top:70px;width:320px;transform:rotate(4deg);z-index:3">{img('pl')}<span class="tag" style="right:-12px;bottom:44px">03 · Lifestyle<b>Picture it</b></span></div>
+ </div>
 <div class="sp"></div>
 <div class="pts"><span>Customized</span><span>Guided setup</span><span>Automatic after setup</span></div>'''))
 P.append(page(2,'blush glow',f'''
@@ -148,24 +147,24 @@ P.append(page(3,'white sweep',f'''
 <h2 class="c">What if the treadmill ran <em>without you?</em></h2>
 <div class="frame" style="height:560px">{img('cs','object-position:50% 55%')}</div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center">
- <p class="lede">The While-You-Sleep Storefront™ does the jobs for you. Set it up once. Then no constantly making lists.</p>
- <figure class="quote"><span class="stars">★ ★ ★ ★ ★</span><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
+ <p class="lede" style="text-wrap:balance">The While-You-Sleep Storefront™ does the jobs for you. Set it up once. Then no constantly making lists.</p>
+ <figure class="quote"><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
 </div>'''))
 P.append(page(4,'tile',f'''
 <div class="plate" style="text-align:center;flex:1;display:flex;flex-direction:column">
  <p class="kick">Show, don't tell</p><h2 style="margin:16px 0 30px">One look. <em>Three photos.</em></h2>
  <div class="steps eq" style="grid-template-columns:repeat(3,minmax(0,1fr))">
- <div class="step"><img src="img/coffee-basic.jpg" alt="{A['cb'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">1</span><h3>See the pieces</h3><p>Every piece, laid out.</p></div>
- <div class="step"><img src="img/coffee-styled.jpg" alt="{A['cs'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">2</span><h3>Feel the style</h3><p>Fully styled, never bare.</p></div>
- <div class="step"><img src="img/coffee-lifestyle.jpg" alt="{A['cl'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">3</span><h3>Picture it in your life</h3><p>Tommy Kate around her real farmhouse.</p></div>
+ <div class="step"><img src="img/coffee-basic.jpg" alt="{A['cb'][1]}" style="width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">1</span><h3>See the pieces</h3><p>Every piece, laid out.</p></div>
+ <div class="step"><img src="img/coffee-styled.jpg" alt="{A['cs'][1]}" style="width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">2</span><h3>Feel the style</h3><p>Fully styled, never bare.</p></div>
+ <div class="step"><img src="img/coffee-lifestyle.jpg" alt="{A['cl'][1]}" style="width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">3</span><h3>Picture it in your life</h3><p>Tommy Kate around her real farmhouse.</p></div>
  </div>
  <div class="sp"></div>
  <p class="small">Styling examples. AI-generated images can differ from the linked products.</p>
 </div>'''))
 P.append(page(5,'white',f'''
 <div style="display:grid;grid-template-columns:400px minmax(0,1fr);gap:54px;align-items:center;flex:1">
- <div style="position:relative"><div class="frame" style="height:720px"><div class="bar"><i></i><i></i><i></i><span>Home decor · Basic</span></div>{img('cb','height:calc(100% - 46px);border-radius:0')}</div>
-  <div class="sticker" style="right:-50px;bottom:-40px;width:160px;height:160px"><i></i><span>Every<b>look</b></span></div></div>
+ <div style="position:relative"><div class="frame" style="height:900px"><div class="bar"><i></i><i></i><i></i><span>Home decor · Basic</span></div>{img('cb','height:calc(100% - 46px);border-radius:0')}</div>
+  </div>
  <div style="display:flex;flex-direction:column;gap:26px"><p class="kick">What comes with every look</p>
   <h2>The photos open the door. The words get the <em>save.</em></h2>
   <div class="nums"><div><b>3</b>Pins</div><div><b>1</b>Carousel</div><div><b>1</b>Blog post</div></div>
@@ -183,17 +182,16 @@ P.append(page(6,'bub glow',f'''
  <div class="step"><span class="n" style="font-size:64px">3</span><h3 style="font-size:32px">Your storefront path</h3></div></div></div>
 <div class="card" style="text-align:center;padding:30px 36px"><p style="color:var(--ink)"><b>Picture your first look:</b> a weekend outfit, a seasonal shelf, a gift guide your people would save.</p></div>'''))
 P.append(page(7,'tile',f'''
-<div class="plate" style="text-align:center"><p class="kick">How it runs</p><h2 style="margin:16px 0 40px">Three steps. Then it <em>keeps going.</em></h2>
+<div class="plate" style="text-align:center;padding:64px 50px 60px"><p class="kick">How it runs</p><h2 style="margin:20px 0 54px">Three steps. Then it <em>keeps going.</em></h2>
 <div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><span class="n">1</span><h3>Set it up once</h3></div>
  <div class="step"><span class="n">2</span><h3>It builds 2 looks a day</h3></div>
  <div class="step"><span class="n">3</span><h3>It posts, pins and blogs</h3></div></div>
-<div class="nums" style="margin-top:44px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Photos per look</div></div></div>
-<div class="sp"></div>
-<div class="card gcard"><span class="nm">You choose</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
+<div class="nums" style="margin-top:60px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Photos per look</div></div></div>
+<div class="sp"></div><div class="card gcard"><span class="nm">You choose</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
 <div class="sp"></div>'''))
 P.append(page(8,'blush',f'''
-<div style="display:flex;flex-direction:column;gap:18px"><p class="kick">What's inside the kit</p><h2>The pieces behind the <em>pretty.</em></h2></div>
+<div style="position:relative;display:flex;flex-direction:column;gap:18px;padding-right:230px"><p class="kick">What's inside the kit</p><h2>The pieces behind the <em>pretty.</em></h2><div class="sticker" style="right:0;top:-20px;transform:rotate(-8deg)"><i></i><span>4 parts<b>1 system</b></span></div></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;flex:1;margin-top:10px">
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">1</span>01 · First</p><h3>Set it up</h3><p>A guided setup that records your choices.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">2</span>02 · Second</p><h3>Build the looks</h3><p>The themed-look recipe for any theme or season.</p></div>
@@ -208,13 +206,13 @@ P.append(page(9,'bub glow p9',f'''
 </div>
 <div class="card"><span class="nm">Your setup</span><p style="margin-top:14px">Your own accounts. The computer needs to be on when the tasks run, and the Amazon list step uses the browser on that computer. Tool costs are separate.</p></div>
 <div class="card gcard"><span class="nm">How it runs</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default, with the option to approve everything yourself. We recommend turning approvals on for your first few days.</p></div>
-<div class="card" style="text-align:center;padding:18px"><p class="line" style="font-size:30px">The kit does not promise sales or income.</p></div>'''))
+<div class="card" style="text-align:center;padding:20px"><p style="font:700 26px/1.3 Inter;color:var(--ink)">The kit does not promise sales or income.</p></div>'''))
 P.append(page(10,'blush glow',f'''
 <div class="c" style="display:flex;flex-direction:column;align-items:center;gap:18px"><p class="kick">Your next step</p><h1>Ready to build around <em>your taste?</em></h1></div>
 <div style="position:relative;align-self:center;width:760px">
  <div class="frame" style="height:560px">{img('pl','object-position:50% 30%')}</div>
  <span class="tag" style="left:-40px;bottom:60px">Planned. Pinned. Posted.<b>Blogged. You Slept.</b></span>
- <div class="sticker" style="right:-60px;top:-50px"><i></i><span>Your<b>taste</b></span></div>
+ 
 </div>
 <div class="sp"></div>
 <div style="display:flex;justify-content:center"><a class="btn" href="https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront">Explore The While-You-Sleep Storefront™</a></div>
