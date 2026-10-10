@@ -169,7 +169,7 @@ const schema = [{
       <ul class="free e-reveal">
         {free.map((f) => (
           <li>
-            {f.img && <a class="shop-cover" href={f.url} tabindex="-1" aria-hidden="true"><img src={f.img} alt="" loading="lazy" /></a>}
+            {f.img ? <a class="shop-cover" href={f.url} tabindex="-1" aria-hidden="true"><img src={f.img} alt="" loading="lazy" /></a> : <a class="shop-cover shop-cover--type" href={f.url} tabindex="-1" aria-hidden="true"><span>{f.name.replace(/^FREE GUIDE - /, "")}</span></a>}
             <span class="free-tag">Free</span>
             <h3>{f.name}{f.sub && <span class="sub">{f.sub}</span>}</h3>
             <p>{f.copy}</p>
@@ -261,7 +261,7 @@ const schema = [{
       <ul class="trio e-reveal">
         {vault.map((v) => (
           <li>
-            {v.img && <a class="shop-cover" href={v.url} tabindex="-1" aria-hidden="true"><img src={v.img} alt="" loading="lazy" /></a>}
+            {v.img ? <a class="shop-cover" href={v.url} tabindex="-1" aria-hidden="true"><img src={v.img} alt="" loading="lazy" /></a> : <a class="shop-cover shop-cover--type" href={v.url} tabindex="-1" aria-hidden="true"><span>{v.name}</span></a>}
             <p class="trio-price"><span class="e-price">{v.price}</span> one-time</p>
             <h4>{v.name}</h4>
             <p>{v.copy}</p>
@@ -277,7 +277,7 @@ const schema = [{
         {guides.map((r) => (
           <li class="row">
             <div class="row-main"><h4><a href={r.url}>{r.name}</a></h4><p>{r.copy}</p></div>
-            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span><span class="go-pill" aria-hidden="true">See it →</span></p>
           </li>
         ))}
       </ul>
@@ -303,6 +303,7 @@ const schema = [{
             <h4><a href={s.url}>{s.name}</a></h4>
             <p>{s.copy}</p>
             <p class="step-price"><span class="e-price">{s.price}</span> one-time</p>
+            <span class="go-pill" aria-hidden="true">See it →</span>
           </li>
         ))}
       </ol>
@@ -314,7 +315,7 @@ const schema = [{
         {creator.map((r) => (
           <li class="row">
             <div class="row-main"><h4><a href={r.url}>{r.name}</a></h4><p>{r.copy}</p></div>
-            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span><span class="go-pill" aria-hidden="true">See it →</span></p>
           </li>
         ))}
       </ul>
@@ -349,7 +350,7 @@ const schema = [{
         {dfy.map((r) => (
           <li class="row">
             <div class="row-main"><h3><a href={r.url}>{r.name}</a></h3><p>{r.copy}</p></div>
-            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span><span class="go-pill" aria-hidden="true">See it →</span></p>
           </li>
         ))}
       </ul>
@@ -370,7 +371,7 @@ const schema = [{
               <h3><a href={r.url} rel="sponsored nofollow noopener" target="_blank">{r.name}<span class="sr"> (opens in a new tab)</span></a></h3>
               <p>{r.copy}</p>
             </div>
-            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span></p>
+            <p class="row-price"><span class="e-price">{r.price}</span><span class="row-terms">{r.terms}</span><span class="go-pill" aria-hidden="true">Visit →</span></p>
           </li>
         ))}
       </ul>
@@ -596,4 +597,38 @@ const schema = [{
   .mast-lede{max-width:680px}
   .flag .e-btn,.flag .e-btn--ghost{min-height:52px}
   .rec .e-wrap.outro{padding-top:18px}
+  /* ── SHOP FIX 10 Oct: even cards, pink outlines, a button on everything clickable ── */
+  .mast{padding-top:clamp(40px,5vw,72px)}
+  .free{gap:24px;border-top:0}
+  .free li,.free li + li,.free li:first-child,.free li:nth-child(2),.free li:nth-child(3){margin-left:0;min-height:0;padding:20px;background:#fff;border:2px solid #E85A9B;border-radius:14px;box-shadow:0 8px 22px rgba(184,36,95,.10)}
+  .free .shop-cover,.trio .shop-cover{display:block;aspect-ratio:3/2;overflow:hidden;border-radius:10px;border:1px solid rgba(232,90,155,.45);margin-bottom:16px;background:#FFE6F1}
+  .free .shop-cover img,.trio .shop-cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .shop-cover--type{display:flex!important;align-items:center;justify-content:center;padding:18px;text-align:center;text-decoration:none;background-color:#FFD6E7!important}
+  .shop-cover--type span{font-family:var(--e-serif);font-weight:600;font-size:22px;line-height:1.2;color:#B8245F;max-width:14em}
+  body.sales-page .free li h3 span.sub{display:block;font-family:var(--e-sans)!important;font-size:12px!important;font-weight:700;letter-spacing:.14em!important;line-height:1.4!important;text-transform:uppercase;color:var(--e-pink-t);margin-top:6px}
+  .trio{gap:24px;border-top:0}
+  .trio li,.trio li + li{padding:20px;background:#fff;border:2px solid #E85A9B;border-radius:14px;box-shadow:0 8px 22px rgba(184,36,95,.10)}
+  .free .e-link,.trio .e-link{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border:2px solid #D62E73;border-radius:999px;background:#fff;color:#B8245F;font-weight:600;text-decoration:none;margin-top:6px}
+  .free .e-link:hover,.trio .e-link:hover{background:#FFE6F1}
+  .flag-grid{align-items:start}
+  body.sales-page .flag-fig{align-self:start!important;padding:clamp(40px,6vw,96px) 24px 0!important}
+  .flag-body{padding-top:clamp(40px,6vw,96px)}
+  .tier--premium{box-shadow:none}
+  .go-pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;margin-top:12px;border:2px solid #D62E73;border-radius:999px;background:#fff;color:#B8245F;font-family:var(--e-sans);font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;white-space:nowrap}
+  .row:hover .go-pill,.steps li:hover .go-pill{background:#FFE6F1}
+  .row .row-price .go-pill{display:inline-flex}
+  .rows .row{padding:24px 20px;margin-bottom:14px;background:#fff;border:2px solid #E85A9B;border-radius:14px}
+  .rows{border-top:0}
+  .rows--quiet .row{padding:16px 20px}
+  .steps{gap:18px;border-top:0}
+  .steps li,.steps li + li,.steps li:nth-child(3){padding:20px;background:#fff;border:2px solid #E85A9B!important;border-radius:14px!important}
+  .steps .go-pill{align-self:flex-start;margin-top:4px}
+  @media (max-width:860px){
+    .free,.trio{gap:18px}
+    body.sales-page .flag-fig{padding:32px var(--e-gut) 0!important}
+  }
+  @media (max-width:620px){
+    .row .row-price{flex-wrap:wrap}
+    .row .row-price .go-pill{margin-top:4px}
+  }
 </style>
