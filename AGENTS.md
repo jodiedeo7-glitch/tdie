@@ -1,3 +1,12 @@
+## NOTHING OVERSIZED (Jodie, 10 October 2026, HARD RULE, applies to every page, section, card, photo, graphic and button)
+Jodie has said this many times: stop making everything so big. Default to compact, in-proportion sizing, and when in doubt go smaller.
+- A whole component (card plus its photo, text and buttons) must fit inside one desktop screen (about 1440x800) without scrolling. A single photo card is never taller than about 640px total on desktop.
+- Feature/card photos on desktop: at most about 360px wide and 480px tall. Do not use full 2:3 portrait photos at 400px+ wide.
+- Section headlines (H2) at most 34px desktop and 28px mobile; card titles at most 20px; body text 15 to 16px; kickers/labels 11 to 12px.
+- Icons, round buttons and badges stay small: icon circles about 32 to 36px, action buttons about 52 to 56px (44px minimum tap target).
+- Section padding at most about 56px top and bottom on desktop; no big empty white gaps inside a box.
+- Before calling any page work done, check the screenshot at 1440 wide and 390 wide and ask: is anything bigger than it needs to be? If yes, shrink it.
+
 ## LOOK BEFORE YOU SEND (Jodie, 10 October 2026, standing rule, applies to every visual)
 Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG, graphic, screenshot, banner, guide, website change):
 1. Render it and open EVERY page or screen at full size yourself. A contact sheet or thumbnail alone is not looking.
