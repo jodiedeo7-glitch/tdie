@@ -109,12 +109,39 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .lines{display:grid;gap:12px;font:500 26px/1.5 Inter;color:var(--ink);text-align:center}
 .small{font:400 20px/1.5 Inter;color:var(--ink2)}
 .sp{flex:1}
+.pin{background:#fff;border-radius:30px;padding:14px 14px 22px;box-shadow:0 40px 70px -40px rgba(110,10,50,.6)}
+.pin .pi{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:2/3}
+.pin .pi img{display:block;width:100%;height:100%;object-fit:cover}
+.pin .ov{position:absolute;left:0;right:0;top:9%;text-align:center;padding:16px 10px;background:rgba(255,255,255,.88)}
+.pin .ov b{display:block;font:600 40px/1 Newsreader;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+.pin .ov span{display:block;margin-top:6px;font:600 30px/1 Newsreader;color:var(--pink)}
+.pin h4{margin:16px 6px 6px;font:700 21px/1.3 Inter;color:var(--ink)}
+.pin .ln{margin:0 6px;font:600 18px/1.3 Inter;color:var(--deep)}
+.pin .rl{display:inline-block;margin:0 6px 8px;padding:6px 12px;border-radius:999px;background:#FFE4EF;font:700 18px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
+.phone{width:440px;border-radius:56px;background:#fff;padding:18px;box-shadow:0 60px 90px -44px rgba(110,10,50,.75);border:2px solid #F3D3E0}
+.ig-top{display:flex;align-items:center;gap:12px;padding:8px 8px 14px;font:700 20px/1 Inter}
+.ig-top i{width:40px;height:40px;border-radius:50%;background:url(img/brand/gl-hot.webp) 0 0/120px;border:3px solid #fff;box-shadow:0 0 0 2px var(--pink)}
+.ig-img{aspect-ratio:4/5;border-radius:10px;overflow:hidden}.ig-img img{width:100%;height:100%;object-fit:cover;display:block}
+.dots{display:flex;justify-content:center;gap:8px;padding:14px 0 8px}.dots i{width:9px;height:9px;border-radius:50%;background:#F3D3E0}.dots i:first-child{background:var(--pink)}
+.ig-cap{padding:4px 8px 10px;font:400 19px/1.45 Inter;color:var(--ink)}.ig-cap b{font-weight:700}
+.slides{display:grid;gap:18px}
+.slide{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:center;background:#fff;border-radius:22px;padding:12px;box-shadow:0 30px 50px -36px rgba(110,10,50,.6)}
+.slide img{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
+.slide b{display:block;font:700 18px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--deep)}
+.slide h3{font-size:32px;margin-top:8px}
+.browser{flex:none;width:650px;align-self:center;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 60px 90px -44px rgba(110,10,50,.7);border:2px solid #F3D3E0}
+.browser .bar{display:flex;align-items:center;gap:10px;padding:14px 18px;background:#FFF2F7;border-bottom:1px solid #F6D3E1;font:600 18px/1 Inter;color:var(--ink)}
+.browser .bar i{width:13px;height:13px;border-radius:50%;background:#F4A9C8}.browser .bar span{margin-left:12px;padding:8px 16px;background:#fff;border-radius:999px;flex:1}
+.browser img{display:block;width:100%;height:auto}
+.alist{list-style:none;display:grid;gap:12px;counter-reset:a}
+.alist li{display:flex;gap:14px;align-items:flex-start;font:600 21px/1.35 Inter;color:var(--ink);counter-increment:a}
+.card .alist li::before{clip-path:none;margin-top:0;content:counter(a,decimal-leading-zero);flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#FFE4EF;font:700 17px/1 Inter;color:var(--deep)}
 .p9{gap:22px}.p9 .card{padding:30px 38px}
 </style></head><body>
 '''
 LOGO='<div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div>'
 def page(n,cls,body):
-    return f'<section class="page" id="p{n}">{LOGO}<div class="main {cls}">{body}</div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>{n:02d} / 10</b></div></section>\n'
+    return f'<section class="page" id="p{n}">{LOGO}<div class="main {cls}">{body}</div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>{n:02d} / 12</b></div></section>\n'
 A={'pb':('plaid-basic.jpg','Basic: pink plaid shacket outfit laid out on wood floorboards'),'ps':('plaid-styled.jpg','Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples'),'pl':('plaid-lifestyle.jpg','Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit'),
    'cb':('coffee-basic.jpg','Basic: pink ghost and pumpkin decor pieces on a wood sideboard'),'cs':('coffee-styled.jpg','Styled: the pink ghost coffee bar fully set up on a chippy sideboard'),'cl':('coffee-lifestyle.jpg','Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall')}
 def img(k,style=''): return f'<img src="img/{A[k][0]}" alt="{A[k][1]}" style="{style}">'
@@ -161,16 +188,34 @@ P.append(page(4,'tile',f'''
  <div class="sp"></div>
  <p class="small">Styling examples. AI-generated images can differ from the linked products.</p>
 </div>'''))
-P.append(page(5,'white',f'''
-<div style="display:grid;grid-template-columns:400px minmax(0,1fr);gap:54px;align-items:center;flex:1">
- <div style="position:relative"><div class="frame" style="height:900px"><div class="bar"><i></i><i></i><i></i><span>Home decor · Basic</span></div>{img('cb','height:calc(100% - 46px);border-radius:0')}</div>
-  </div>
- <div style="display:flex;flex-direction:column;gap:26px"><p class="kick">What comes with every look</p>
-  <h2>The photos open the door. The words get the <em>save.</em></h2>
-  <div class="nums"><div><b>3</b>Pins</div><div><b>1</b>Carousel</div><div><b>1</b>Blog post</div></div>
-  <ul class="res"><li>Pinterest Pin copy: three Pins per look.</li><li>The Instagram post: carousel of lifestyle, styled, clean.</li><li>Shop-the-look blog post: one page for the whole look.</li><li>Each Pin links to the Amazon list its products came from.</li></ul></div>
-</div>'''))
-P.append(page(6,'bub glow',f'''
+P.append(page(5,'blush glow',f'''
+<div style="display:flex;flex-direction:column;gap:16px"><p class="kick">What one look makes · 01 Pinterest</p><h2>Three Pins. <em>Every look.</em></h2></div>
+<p class="lede">One Pin for each photo, in order. Each Pin links to the Amazon list its products came from.</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:6px">
+ <div class="pin"><span class="rl">Pin 1 · Basic</span><div class="pi">{img('cb')}<div class="ov"><b>Pink Ghost</b><span>coffee bar</span></div></div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 2 · Styled</span><div class="pi">{img('cs')}</div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 3 · Lifestyle</span><div class="pi">{img('cl')}</div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
+</div>
+<div class="nums" style="margin-top:10px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Pins per look</div></div>'''))
+P.append(page(6,'white sweep',f'''
+<div style="display:flex;flex-direction:column;gap:16px"><p class="kick">What one look makes · 02 Instagram</p><h2>One carousel. <em>Three slides.</em></h2></div>
+<div style="display:grid;grid-template-columns:440px minmax(0,1fr);gap:48px;align-items:center;margin-top:10px">
+ <div class="phone"><div class="ig-top"><i></i>your account</div><div class="ig-img">{img('cl','object-position:50% 40%')}</div><div class="dots"><i></i><i></i><i></i></div>
+ <p class="ig-cap"><b>your account</b> I wanted Halloween in the kitchen without anything that would scare the kids at breakfast.</p></div>
+ <div class="slides">
+  <div class="slide">{img('cl')}<div><b>Slide 1</b><h3>Lifestyle</h3></div></div>
+  <div class="slide">{img('cs')}<div><b>Slide 2</b><h3>Styled</h3></div></div>
+  <div class="slide">{img('cb')}<div><b>Slide 3</b><h3>Clean</h3></div></div>
+ </div>
+</div>
+<div class="sp"></div><p class="small">Instagram is optional. The caption shown is the start of this look's real post intro.</p>'''))
+P.append(page(7,'blush glow',f'''
+<div style="display:flex;flex-direction:column;gap:16px"><p class="kick">What one look makes · 03 Blog + Amazon list</p><h2 style="font-size:56px">A shop-the-look post. <em>On your site.</em></h2></div>
+<div class="browser"><div class="bar"><i></i><i></i><i></i><span>yoursite.com/lifestyle/pink-ghost-coffee-bar</span></div><img src="img/out-blog.jpg" alt="The real Pink Ghost Coffee Bar post on The Digital Income Edit website, with its three photos and shopping shelf"></div>
+<div class="card" style="padding:24px 32px"><span class="nm">The Amazon list for this look · 6 finds</span>
+<ul class="alist" style="margin-top:14px;padding-top:14px;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px">
+<li>Pink and black flameless LED pillar candles, set of 3</li><li>Pink creepy gauze cloth</li><li>Pink resin ghost figurines with BOO sign, set of 5</li><li>Pink ghost figurines, set of 3</li><li>Pink and white carved jack-o-lanterns, set of 3</li><li>Pink and black 3D paper bat wall stickers</li></ul></div>'''))
+P.append(page(8,'bub glow',f'''
 <div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:34px 40px"><p class="kick">Your taste runs it</p><h2>My pink. Your <em>recipe.</em></h2></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px">
  <div class="card"><span class="nm">An outfit</span>{trio(['pb','ps','pl'])}</div>
@@ -181,7 +226,7 @@ P.append(page(6,'bub glow',f'''
  <div class="step"><span class="n" style="font-size:64px">2</span><h3 style="font-size:32px">Your visuals</h3><p>Your own persona, or flat lays only.</p></div>
  <div class="step"><span class="n" style="font-size:64px">3</span><h3 style="font-size:32px">Your storefront path</h3></div></div></div>
 <div class="card" style="text-align:center;padding:30px 36px"><p style="color:var(--ink)"><b>Picture your first look:</b> a weekend outfit, a seasonal shelf, a gift guide your people would save.</p></div>'''))
-P.append(page(7,'tile',f'''
+P.append(page(9,'tile',f'''
 <div class="plate" style="text-align:center;padding:64px 50px 60px"><p class="kick">How it runs</p><h2 style="margin:20px 0 54px">Three steps. Then it <em>keeps going.</em></h2>
 <div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><span class="n">1</span><h3>Set it up once</h3></div>
@@ -190,7 +235,7 @@ P.append(page(7,'tile',f'''
 <div class="nums" style="margin-top:60px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Photos per look</div></div></div>
 <div class="sp"></div><div class="card gcard"><span class="nm">You choose</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
 <div class="sp"></div>'''))
-P.append(page(8,'blush',f'''
+P.append(page(10,'blush',f'''
 <div style="position:relative;display:flex;flex-direction:column;gap:18px;padding-right:230px"><p class="kick">What's inside the kit</p><h2>The pieces behind the <em>pretty.</em></h2><div class="sticker" style="right:0;top:-20px;transform:rotate(-8deg)"><i></i><span>4 parts<b>1 system</b></span></div></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;flex:1;margin-top:10px">
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">1</span>01 · First</p><h3>Set it up</h3><p>A guided setup that records your choices.</p></div>
@@ -198,7 +243,7 @@ P.append(page(8,'blush',f'''
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">3</span>03 · Third</p><h3>Keep it running</h3><p>Scheduled tasks, plus a missed-run check.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">4</span>04 · Last</p><h3>Extend it</h3><p>Optional blog and Instagram. Outfit of the Day recipe for Brand Closet™ members.</p></div>
 </div>'''))
-P.append(page(9,'bub glow p9',f'''
+P.append(page(11,'bub glow p9',f'''
 <div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 40px"><p class="kick">Honest, up front</p><h2 style="font-size:56px">A quick fit check. Then your <em>first look.</em></h2></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px">
  <div class="card"><span class="nm">Your tools</span><p style="margin-top:14px">Claude desktop and Chrome, Amazon Associates or Influencer, Pinterest, image tools.</p></div>
@@ -207,7 +252,7 @@ P.append(page(9,'bub glow p9',f'''
 <div class="card"><span class="nm">Your setup</span><p style="margin-top:14px">Your own accounts. The computer needs to be on when the tasks run, and the Amazon list step uses the browser on that computer. Tool costs are separate.</p></div>
 <div class="card gcard"><span class="nm">How it runs</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default, with the option to approve everything yourself. We recommend turning approvals on for your first few days.</p></div>
 <div class="card" style="text-align:center;padding:20px"><p style="font:700 26px/1.3 Inter;color:var(--ink)">The kit does not promise sales or income.</p></div>'''))
-P.append(page(10,'blush glow',f'''
+P.append(page(12,'blush glow',f'''
 <div class="c" style="display:flex;flex-direction:column;align-items:center;gap:18px"><p class="kick">Your next step</p><h1>Ready to build around <em>your taste?</em></h1></div>
 <div style="position:relative;align-self:center;width:760px">
  <div class="frame" style="height:560px">{img('pl','object-position:50% 30%')}</div>
