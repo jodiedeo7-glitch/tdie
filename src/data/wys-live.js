@@ -63,7 +63,6 @@ export const roles = [
 
 export const objections = [
  ['Do I need to be techy?', 'No. The Quick Start takes about 15 minutes. If you want to customize it, give it about an hour.'],
- ['How many pins should I post a day?', 'You don’t have to work it out. It makes 2 looks and 6 Pinterest pins every night.'],
  ['Claude or ChatGPT?', 'Either one, or both. Use whichever you already have.'],
  ['Does my computer need to be on?', 'Yes. Leave your computer on and signed into Amazon overnight.'],
  ['Can I approve things first?', 'Yes. It runs automatically by default, and you can switch on approvals to OK each look before it goes out. I recommend approvals on for your first few days.'],
