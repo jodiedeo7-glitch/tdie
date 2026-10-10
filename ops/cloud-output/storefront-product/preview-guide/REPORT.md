@@ -93,3 +93,18 @@ The automated check covered every page: exact 1080 x 1440, no overflow, nothing 
 Page headlines are 74 to 104px at 1080px wide, which is about 27 to 38px on a phone. The 52px headline cap applies to site sales pages, not to a 1080px graphic.
 
 This matches CLAUDE.md, claude/WYS_REFERENCE_PACK_2026-10-07.md and ops/cloud-kit/TDIE_DESIGN_RULES.md, with conflicts 1 to 6 above. It could not be checked against claude/WYS_FOUNDER_INTAKE.md, WYS_LOOK_RULES.md or WYS_PROMO_FACTS.md (not reachable).
+
+## Website-match rebuild (10 October 2026)
+
+Jodie asked for the guide to match her website. Every page now uses the live home page's own design pieces, with values read from the site's rendered styles:
+- the glitter drip strip (`public/images/drip-top.webp`, copied to `img/`), the brand band and the masthead line;
+- the cream #FFFBF8 page;
+- outlined pink kicker pills with a gold rule;
+- Newsreader headlines in near-black with hot pink on the key words;
+- glossy numbered circles with a halo;
+- method-style cards with 36/12 corners that alternate pink and lavender borders;
+- the rounded pink cover frame with a caption bar;
+- white outline pill buttons;
+- a gold rule above the footer.
+
+Glitter stays in the photo frame borders and the number circles. Lavender is the alternate card, frame and number colour. The copy and photos are unchanged. These styles use the site's soft shadows and the gradient number circles, which goes against the original brief's no-gradient rule for Canva import.
