@@ -8,7 +8,7 @@ const { standard: S, premium: P, trialDays } = membership;
 const days = `${trialDays} days`;
 
 const title = "Membership Plans: Standard vs Premium";
-const description = `Build your faceless business with training and community from ${S.perMonth}. Premium (${P.perMonth}) adds offer and funnel training and monthly content. Both start with ${days} free.`;
+const description = `Membership Standard is ${S.perMonth} or ${S.perYear}; Membership Premium is ${P.perMonth} or ${P.perYear} and adds offer and funnel training plus a monthly content calendar. Both start with ${days} free.`;
 
 // Which one is for me: outcomes, not syllabus.
 const forStandard = [
@@ -53,7 +53,7 @@ const dfy = [
   { t: "31 days written", p: "Every caption, hook, carousel slide and Story frame. Finished posts you copy and publish." },
   { t: "62 Threads posts", p: "Two a day, written for the platform, not captions pasted over from somewhere else." },
   { t: "A start-frame and motion prompt for every Reel", p: "Generate the still, drop it into your video tool, post it. You never film anything. Not your face, not your hands, not your desk." },
-  { t: "Built on what is working", p: "Every month starts with hundreds of viral Reels in this niche, read before a word gets written." },
+  { t: "Built on what is working", p: "Every month starts with real research: 40+ breakout posts from same-niche accounts that are normally not viral, read before a word gets written." },
 ];
 
 // The room: what happens inside (merged from the old /community page).
@@ -89,11 +89,11 @@ const schema = [{
         <p class="e-lede">Training, daily prompts and a community of women building the same thing, so you can build without figuring out every step alone. <strong>Standard covers the foundations, AI, branding, content and traffic. Premium adds offer, funnel and systems training, plus a monthly content calendar with the copy already written.</strong></p>
         <div class="e-actions">
           <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
-          <a class="e-link" href="#compare">Compare the two memberships</a>
+          <a class="e-link" href="#compare">See what each membership includes →</a>
         </div>
         <dl class="mb-hero-facts">
-          <div><dt>Standard</dt><dd>{S.perMonth}</dd></div>
-          <div><dt>Premium</dt><dd>{P.perMonth}</dd></div>
+          <div><dt>Standard</dt><dd>{S.perMonth} or {S.perYear}</dd></div>
+          <div><dt>Premium</dt><dd>{P.perMonth} or {P.perYear}</dd></div>
           <div><dt>Either one</dt><dd>{days} free</dd></div>
         </dl>
       </div>
@@ -139,7 +139,7 @@ const schema = [{
     <div class="e-wrap mb-who-grid">
       <div>
         <p class="e-kick">Who is in it</p>
-        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Women women, building <em>the same architecture.</em></span></h2>
+        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Women building <em>the same architecture.</em></span></h2>
       </div>
       <div class="mb-who-copy">
         <p>Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
@@ -175,7 +175,7 @@ const schema = [{
           <p class="mb-plan-name">{P.name}</p>
           <h3 class="mb-plan-claim">More of it is <span class="mb-plan-word"><em>done for you.</em></span></h3>
           <div class="mb-strip mb-strip--done" aria-hidden="true">{Array.from({ length: 31 }, () => <span></span>)}</div>
-          <p class="e-credit mb-strip-cap">Your month: 31 days, already written</p>
+          <p class="e-credit mb-strip-cap">Your content month, written for you, released a week at a time</p>
           <p class="mb-plan-line">Everything in Standard, plus The Offer Edit, The Funnel Edit, Scaling &amp; Systems and The Ads Edit™, and a month of content written for you, every month.</p>
           <p class="mb-plan-if">Choose Premium if</p>
           <ul class="e-list">{forPremium.map((i) => <li>{i}</li>)}</ul>

@@ -19,7 +19,7 @@ export const FOOTER = [
     { label: "The Free Blueprint", href: "/resources/faceless-income-blueprint" },
   ] },
   { h: "Build", links: [
-    { label: "The Weekend Ecosystem™", href: "/shop/weekend-ecosystem" },
+    { label: "The Weekend Ecosystem™ · $97", href: "/shop/weekend-ecosystem" },
     { label: "Membership", href: "/membership" },
       { label: "Shop", href: "/shop" },
     { label: "Lifestyle", href: "/lifestyle" },
@@ -27,7 +27,7 @@ export const FOOTER = [
   { h: "Studio", links: [
     { label: "About", href: "/about" },
     { label: "Work With Me", href: "/work-with-me" },
-    { label: "Questions", href: "/faq" },
+    { label: "Questions & billing", href: "/faq" },
     { label: "Privacy", href: "/privacy" },
     { label: "Contact", href: "mailto:hello@thedigitalincomeedit.com" },
   ] },
