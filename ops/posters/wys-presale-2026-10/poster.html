@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYS Presale Poster</title>
+<style>
+@font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); font-display: block; }
+@font-face { font-family: "Yellowtail"; src: url("fonts/Yellowtail-Regular.ttf"); font-display: block; }
+@font-face { font-family: "Jost"; src: url("fonts/Jost.ttf"); font-weight: 100 900; font-display: block; }
+
+:root {
+  --cream: #FBF8F5;
+  --ink: #1A1417;
+  --hot: #D62E73;
+  --bubble: #FF8AC2;
+  --gold: #C8A96A;
+  --pad: 44px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--cream); }
+body { width: 1080px; color: var(--ink); font-family: "Jost", sans-serif; -webkit-font-smoothing: antialiased; }
+.poster { width: 1080px; background: var(--cream); position: relative; }
+.fb .poster { height: 1350px; overflow: hidden; display: flex; flex-direction: column; }
+.inner { padding: 0 var(--pad); }
+.fb .inner { flex: 1; display: flex; flex-direction: column; }
+
+.gold-rule { height: 1px; background: var(--gold); }
+
+/* ---------- top line ---------- */
+.topline { display: flex; justify-content: space-between; align-items: center; padding-top: 38px; padding-bottom: 14px; }
+.kicker { font-weight: 600; font-size: 15px; letter-spacing: 0.24em; }
+.badge { background: var(--hot); color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.16em; padding: 9px 14px; border-radius: 2px; }
+
+/* ---------- hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 40px; padding: 26px 0 26px; align-items: start; }
+h1 { font-family: "Gloock", serif; font-weight: 400; font-size: 66px; line-height: 1.02; letter-spacing: -0.01em; }
+h1 em { font-style: normal; color: var(--hot); }
+.sub { font-size: 21px; line-height: 1.42; margin-top: 18px; max-width: 30em; }
+
+.price { border: 1px solid var(--gold); background: #fff; padding: 20px 24px 18px; }
+.price-label { font-weight: 600; font-size: 13px; letter-spacing: 0.22em; color: var(--hot); }
+.price-row { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
+.price-row .amt { font-weight: 600; font-size: 50px; line-height: 1; letter-spacing: -0.01em; }
+.price-row .who { font-size: 19px; font-weight: 500; }
+.price-and { font-size: 15px; color: #6b5f64; margin: 4px 0 0 2px; }
+.price-reg { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--gold); font-size: 17px; text-decoration: line-through; text-decoration-thickness: 1.5px; color: #6b5f64; }
+.sidenote { font-size: 14.5px; line-height: 1.5; margin-top: 12px; color: #3d3438; }
+
+/* ---------- section heads ---------- */
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0 14px; }
+h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 36px; line-height: 1.1; }
+.count { font-weight: 600; font-size: 14px; letter-spacing: 0.22em; color: var(--hot); }
+
+/* ---------- looks ---------- */
+.body-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 34px; }
+.look { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px; margin-bottom: 18px; }
+.look-label { padding-top: 2px; }
+.look-label .n { font-family: "Gloock", serif; font-size: 40px; line-height: 1; color: var(--hot); display: block; }
+.look-label .w { font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.shot { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #eee; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cap { font-weight: 600; font-size: 13px; letter-spacing: 0.2em; margin-top: 8px; text-align: center; }
+
+/* Basic overlay: layered magazine lockup */
+.lockup { position: absolute; inset: 0 0 auto 0; height: 62%; padding: 18px 12px 0;
+  background: linear-gradient(180deg, rgba(20,12,16,0.72) 0%, rgba(20,12,16,0.5) 45%, rgba(20,12,16,0) 100%);
+  text-align: center; }
+.lockup .serif { font-family: "Gloock", serif; color: #fff; font-size: 40px; line-height: 0.95; letter-spacing: -0.01em; display: block; text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+.lockup .script { font-family: "Yellowtail", cursive; color: var(--bubble); font-size: 50px; line-height: 1; display: block;
+  transform: rotate(-7deg); margin-top: -18px; position: relative; text-shadow: 0 2px 6px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.6); }
+
+/* ---------- blog ---------- */
+.blog h2 { font-size: 32px; }
+.blog p { font-size: 17px; line-height: 1.45; margin-top: 10px; }
+.phones { position: relative; height: 470px; margin-top: 22px; }
+.phone { position: absolute; width: 196px; background: var(--ink); border-radius: 30px; padding: 9px; box-shadow: 0 18px 40px rgba(26,20,23,0.22); }
+.phone img { display: block; width: 100%; border-radius: 22px; }
+.phone.p1 { left: 0; top: 0; }
+.phone.p2 { right: 0; top: 112px; }
+
+/* ---------- phrase ---------- */
+.phrase { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); text-align: center; padding: 14px 0 12px; margin: 6px 0 0; }
+.phrase .p { font-family: "Gloock", serif; font-size: 34px; }
+.phrase .s { font-family: "Yellowtail", cursive; color: var(--hot); font-size: 46px; margin-left: 10px; position: relative; top: 3px; }
+
+/* ---------- steps ---------- */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 22px 0 22px; }
+.step { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; }
+.step .num { font-family: "Gloock", serif; font-size: 40px; line-height: 0.9; color: var(--hot); }
+.step b { display: block; font-weight: 600; font-size: 19px; }
+.step span { display: block; font-size: 15.5px; line-height: 1.4; margin-top: 3px; color: #3d3438; }
+
+/* ---------- final bar ---------- */
+.bar { background: var(--ink); color: var(--cream); text-align: center; padding: 26px var(--pad); font-size: 24px; font-weight: 500; letter-spacing: 0.02em; }
+.bar .j { color: var(--bubble); font-weight: 600; }
+.fb .bar { margin-top: auto; }
+
+/* ---------- Skool (tall) variant ---------- */
+.skool .hero { padding: 40px 0 40px; }
+.skool h1 { font-size: 72px; }
+.skool .body-grid { display: block; }
+.skool .look { grid-template-columns: 80px minmax(0, 1fr); gap: 14px; margin-bottom: 30px; }
+.skool .look-label .n { font-size: 52px; }
+.skool .trio { gap: 14px; }
+.skool .lockup { padding-top: 26px; }
+.skool .lockup .serif { font-size: 54px; }
+.skool .lockup .script { font-size: 66px; margin-top: -24px; }
+.skool .cap { font-size: 15px; }
+.skool .blog { display: grid; grid-template-columns: minmax(0, 1fr) 540px; gap: 36px; align-items: center; padding: 30px 0 40px; border-top: 1px solid var(--gold); }
+.skool .blog h2 { font-size: 40px; }
+.skool .blog p { font-size: 20px; }
+.skool .phones { height: auto; margin: 0; position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.skool .phone { position: static; width: auto; }
+.skool .phone.p2 { margin-top: 70px; }
+.skool .phrase { padding: 22px 0 18px; }
+.skool .phrase .p { font-size: 40px; }
+.skool .phrase .s { font-size: 54px; }
+.skool .steps { padding: 34px 0 40px; }
+.skool .step b { font-size: 21px; }
+.skool .step span { font-size: 17px; }
+
+/* ---- fit pass ---- */
+.lockup { padding: 14px 8px 0; height: 66%; background: linear-gradient(180deg, rgba(20,12,16,0.78) 0%, rgba(20,12,16,0.55) 50%, rgba(20,12,16,0) 100%); }
+.lockup .serif { font-size: 31px; line-height: 0.98; }
+.lockup .script { font-size: 41px; margin-top: -12px; }
+.fb h1 { font-size: 58px; }
+.fb .hero { padding: 22px 0 22px; }
+.fb .sub { font-size: 20px; margin-top: 14px; }
+.fb .price { padding: 16px 20px 14px; }
+.fb .price-row .amt { font-size: 44px; }
+.fb .price-row { margin-top: 8px; }
+.fb .sec-head { padding: 14px 0 10px; }
+.fb h2 { font-size: 32px; }
+.fb .blog h2 { font-size: 29px; margin-top: 10px; }
+.fb .look { margin-bottom: 10px; grid-template-columns: 56px minmax(0,1fr); }
+.fb .cap { margin-top: 6px; font-size: 12px; }
+.fb .phrase { padding: 10px 0 8px; }
+.fb .phrase .p { font-size: 31px; }
+.fb .phrase .s { font-size: 42px; }
+.fb .steps { padding: 16px 0 18px; }
+.fb .step b { font-size: 18px; }
+.fb .step span { font-size: 15px; }
+.fb .bar { padding: 20px var(--pad); font-size: 23px; }
+.fb .phones { height: 430px; margin-top: 18px; }
+.fb .phone { width: 180px; }
+.fb .phone.p2 { top: 100px; }
+.skool .lockup { padding-top: 22px; }
+.skool .lockup .serif { font-size: 50px; }
+.skool .lockup .script { font-size: 64px; margin-top: -18px; }
+.who-for { font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hot); margin-top: 16px; }
+.fb .sub { font-size: 18.5px; margin-top: 8px; }
+.fb .who-for { margin-top: 12px; font-size: 14px; }
+.fb h1 { font-size: 54px; }
+.fb .lockup .serif { font-size: 29px; }
+.fb .phones { height: 400px; }
+.fb .phone { width: 170px; }
+.fb .body-grid { grid-template-columns: minmax(0,1fr) 330px; }
+.fb .hero { padding: 18px 0 16px; grid-template-columns: minmax(0,1fr) 320px; }
+.fb .price-and { margin: 0 0 0 2px; font-size: 14px; }
+.fb .price-reg { margin-top: 8px; padding-top: 8px; }
+.fb .sidenote { margin-top: 8px; font-size: 14px; }
+.fb .topline { padding-top: 32px; padding-bottom: 12px; }
+.fb .steps { padding: 14px 0 16px; }
+.lockup .script { margin-top: -2px; transform: rotate(-6deg); }
+.skool .lockup .script { margin-top: -4px; }
+.fb .steps { padding: 22px 0 22px; }
+.skool .phones { align-items: start; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="inner">
+    <div class="topline">
+      <div class="kicker">THE WHILE-YOU-SLEEP STOREFRONT™</div>
+      <div class="badge">PRESALE · Tue 10/13 · TDIE MEMBERS</div>
+    </div>
+    <div class="gold-rule"></div>
+
+    <section class="hero">
+      <div>
+        <h1>Your Amazon storefront <em>posts itself.</em></h1>
+        <p class="who-for">For Amazon storefront owners with no time to post.</p>
+        <p class="sub">Set it up once in Claude or ChatGPT. Then every night it plans a look from your finds, makes the Pinterest pins, writes the blog post and posts the Instagram carousel, all linked back to your storefront.</p>
+      </div>
+      <div>
+        <div class="price">
+          <div class="price-label">MEMBER PRESALE PRICE</div>
+          <div class="price-row"><span class="amt">$10</span><span class="who">Premium members</span></div>
+          <div class="price-and">and</div>
+          <div class="price-row" style="margin-top:2px"><span class="amt">$17</span><span class="who">Standard members</span></div>
+          <div class="price-reg">Regular price $37</div>
+        </div>
+        <p class="sidenote">Presale opens Tue, Oct 13 · Full launch Friday · Works with Claude, ChatGPT, or both</p>
+      </div>
+    </section>
+    <div class="gold-rule"></div>
+
+    <div class="body-grid">
+      <section class="looks">
+        <div class="sec-head">
+          <h2>What it makes every night.</h2>
+          <span class="count">3 PINS PER LOOK</span>
+        </div>
+
+        <div class="look">
+          <div class="look-label"><span class="n">01</span><span class="w">Look</span></div>
+          <div class="trio">
+            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt="">
+              <div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div>
+              <div class="cap">BASIC</div></div>
+            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
+            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position: 62% 50%"></div><div class="cap">LIFESTYLE</div></div>
+          </div>
+        </div>
+
+        <div class="look">
+          <div class="look-label"><span class="n">02</span><span class="w">Look</span></div>
+          <div class="trio">
+            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt="">
+              <div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div>
+              <div class="cap">BASIC</div></div>
+            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
+            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position: 60% 50%"></div><div class="cap">LIFESTYLE</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog">
+        <div>
+          <h2>Plus a blog post for every look.</h2>
+          <p>Written in your voice, with every product linked to your storefront.</p>
+        </div>
+        <div class="phones">
+          <div class="phone p1"><img src="img/blog-pink-plaid-pumpkin-patch-outfit.png" alt=""></div>
+          <div class="phone p2"><img src="img/blog-pink-ghost-coffee-bar.png" alt=""></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="phrase">
+      <span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s">&amp; you slept.</span>
+    </section>
+
+    <section class="steps">
+      <div class="step"><div class="num">1</div><div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div></div>
+      <div class="step"><div class="num">2</div><div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div></div>
+      <div class="step"><div class="num">3</div><div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div></div>
+    </section>
+  </div>
+  <div class="bar"><span class="j">Join the waitlist</span> · www.thedigitalincomeedit.com</div>
+</div>
+</body>
+</html>
