@@ -11,7 +11,7 @@ import '../styles/wys-boutique.css';
 import '../styles/wys-reference.css';
 import { WYS_ROOT } from '../data/wys.js';
 const {title,description,current='overview',ogImage,noindex=false}=Astro.props;
-const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Stay in the loop',href:WYS_ROOT+'/waitlist'}];
+const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Waitlist',href:WYS_ROOT+'/waitlist'}];
 ---
 <PageLayout bare visualRefresh boutiqueHeader title={title} description={description} ogImage={ogImage} noindex={noindex}>
  <div slot="before-nav" class="wz-page-top-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true"/>
