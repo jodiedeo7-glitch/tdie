@@ -9,7 +9,11 @@ const hero = look.hero;
 const halloween = look.season?.toLowerCase() === 'halloween';
 const banner = look.slug === 'pretty-wicked-entryway' ? 'Pretty Wicked' : look.slug === 'ghoul-fuel-coffee-bar' ? 'Ghoul Fuel' : 'The Pink Halloween Edit';
 const relatedCandidates = LOOKS.filter(other => other.images.some(image => ['styled', 'lifestyle'].includes(image.role)));
-const related = [...relatedCandidates.filter(other => other.slug !== look.slug && other.category === look.category), ...relatedCandidates.filter(other => other.slug !== look.slug && other.category !== look.category && look.season && look.season !== 'Evergreen' && other.season === look.season && (['home-decor', 'dorm'].includes(look.category) ? ['home-decor', 'dorm'].includes(other.category) : ['clothing', 'accessories', 'jewelry'].includes(look.category) && ['clothing', 'accessories', 'jewelry'].includes(other.category)))].slice(0, 2);
+const sameCat = relatedCandidates.filter(other => other.slug !== look.slug && other.category === look.category);
+const sameSeason = relatedCandidates.filter(other => other.slug !== look.slug && other.category !== look.category && look.season && other.season === look.season);
+const rest = relatedCandidates.filter(other => other.slug !== look.slug && !sameCat.includes(other) && !sameSeason.includes(other));
+// More posts in a sideways swipe row (Jodie, 10 Oct 2026).
+const related = [...sameCat, ...sameSeason, ...rest].slice(0, 12);
 const sections = look.sections || [];
 const draft = look.status === 'draft';
 const completeExample = ['pretty-wicked-entryway','ghoul-fuel-coffee-bar'].includes(look.slug);
@@ -84,7 +88,7 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
       <h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
     </section>)}</section>}
 
-    {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} polaroid /></section>}
+    {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} polaroid label="More looks" /></section>}
   </article>
 </Frame>
 <script>

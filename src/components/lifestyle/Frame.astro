@@ -20,3 +20,26 @@ const icing = article ? await getImage({src:icingSource,format:"webp",quality:90
     <div class="life-wrap life-close"><a class="life-text-link" href="/lifestyle">Browse all Lifestyle articles <span aria-hidden="true">→</span></a>{disclosure && <Disclosure />}</div>
   </div>
 </PageLayout>
+<script>
+  // Arrow buttons for every sideways swipe row on Lifestyle.
+  document.querySelectorAll<HTMLElement>('[data-life-scroll]').forEach(wrap => {
+    const track = wrap.querySelector<HTMLElement>('.life-scroll-track');
+    const controls = wrap.querySelector<HTMLElement>('.life-scroll-controls');
+    if (!track || !controls) return;
+    const buttons = Array.from(controls.querySelectorAll<HTMLButtonElement>('button'));
+    const update = () => {
+      const scrollable = track.scrollWidth > track.clientWidth + 4;
+      controls.hidden = !scrollable;
+      wrap.classList.toggle('is-scrollable', scrollable);
+      buttons.forEach(b => { b.disabled = b.dataset.dir === '-1' ? track.scrollLeft < 2 : track.scrollLeft + track.clientWidth >= track.scrollWidth - 2; });
+    };
+    buttons.forEach(b => b.addEventListener('click', () => {
+      const item = track.firstElementChild as HTMLElement | null;
+      const step = ((item?.getBoundingClientRect().width || track.clientWidth) + 20) * (track.clientWidth > 700 ? 2 : 1);
+      track.scrollBy({ left: Number(b.dataset.dir) * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    }));
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(track);
+    update();
+  });
+</script>

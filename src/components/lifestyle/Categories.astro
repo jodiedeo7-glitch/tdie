@@ -16,7 +16,9 @@ const categories = CATEGORIES.map(category => {
   return { ...category, count: articles.length, image, preview: !selected };
 }).sort((a, b) => Number(b.count > 0) - Number(a.count > 0));
 ---
-<nav class="life-categories" aria-label="Lifestyle categories">
+<div class="life-scroll life-scroll-cats" data-life-scroll>
+<div class="life-scroll-controls" hidden><button type="button" data-dir="-1" aria-label="Previous categories">←</button><button type="button" data-dir="1" aria-label="Next categories">→</button></div>
+<nav class="life-categories life-scroll-track" aria-label="Lifestyle categories" tabindex="0">
   {categories.map(category => <a class="life-category-card" href={`/lifestyle/${category.slug}`} aria-current={current === category.slug ? 'page' : undefined}>
     <span class:list={['life-category-image', { 'life-category-preview': category.preview }]}><Image src={category.image.src} alt={category.image.alt} widths={[160, 240, 360, 480]} sizes="(max-width: 640px) 42vw, (max-width: 1000px) 28vw, 190px" loading="lazy" /></span>
     <span class="life-category-name">{category.name}</span>
@@ -24,3 +26,4 @@ const categories = CATEGORIES.map(category => {
     <span class="life-category-go">{category.count ? 'Browse the edit' : 'Explore this corner'} <span aria-hidden="true">→</span></span>
   </a>)}
 </nav>
+</div>

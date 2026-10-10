@@ -4,6 +4,7 @@ import Card from '../../components/lifestyle/Card.astro';
 import Cards from '../../components/lifestyle/Cards.astro';
 import Categories from '../../components/lifestyle/Categories.astro';
 import Shelf from '../../components/lifestyle/Shelf.astro';
+import ClosetSwipe from '../../components/lifestyle/ClosetSwipe.astro';
 import { LOOKS } from '../../data/lifestyle.js';
 // Explicit editorial selection, independent of imported file order or future dates.
 const featured = ['pretty-wicked-entryway', 'ghoul-fuel-coffee-bar', 'pink-witch-halloween-costume'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
@@ -23,11 +24,12 @@ const closet = ['pink-suit-law-student-halloween-costume', 'pink-witch-halloween
     </div>
   </header>
   <section class="life-band" aria-labelledby="life-categories-title"><div class="life-wrap life-section"><p class="life-kicker">Your very own pretty corner</p><h2 id="life-categories-title">Step into the edit</h2><Categories /></div></section>
+  <ClosetSwipe />
   <Shelf id="life-new" title="New in the edit" kicker="The latest looks" description="Fresh styling ideas, with the finds listed inside." looks={LOOKS.slice(0, 8)} />
-  <section class="life-picks-band"><div class="life-wrap life-section" aria-labelledby="life-featured"><div class="life-section-heading"><div><p class="life-kicker">Handpicked for this season</p><h2 id="life-featured">A few favorites</h2></div><p>One for your home, one for your coffee corner, one for dressing up.</p></div><Cards looks={featured} /></div></section>
+  <section class="life-picks-band"><div class="life-wrap life-section" aria-labelledby="life-featured"><div class="life-section-heading"><div><p class="life-kicker">Handpicked for this season</p><h2 id="life-featured">A few favorites</h2></div><p>One for your home, one for your coffee corner, one for dressing up.</p></div><Cards looks={featured} label="Favorites" /></div></section>
   <Shelf id="life-closet" title="The pink closet" kicker="The TDIE lookbook" description="Swipe the outfits. Open the look. Make it yours." looks={closet} lookbook />
   <section class="life-wrap life-section" id="browse" aria-labelledby="life-browse">
     <div class="life-section-heading"><div><p class="life-kicker">Browse the edit</p><h2 id="life-browse">All the pretty possibilities</h2></div><p>{LOOKS.length} articles, ordered by their recorded date.</p></div>
-    <Cards looks={LOOKS} />
+    <Cards looks={LOOKS} label="All looks" />
   </section>
 </Frame>

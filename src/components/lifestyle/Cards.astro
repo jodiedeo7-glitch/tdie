@@ -1,5 +1,9 @@
 ---
 import Card from './Card.astro';
-const { looks, polaroid = false } = Astro.props;
+// Every card list on Lifestyle is a sideways swipe row (Jodie, 10 Oct 2026).
+const { looks, polaroid = false, label = 'Looks' } = Astro.props;
 ---
-<ul class:list={["life-grid", { "life-grid-pair": looks.length === 2 }]}>{looks.map((look, index) => <li><Card look={look} stickers={polaroid ? (index === 0 ? 'cluster' : 'single') : undefined} /></li>)}</ul>
+<div class:list={["life-scroll", { "life-scroll-polaroid": polaroid }]} data-life-scroll>
+  <div class="life-scroll-controls" hidden><button type="button" data-dir="-1" aria-label={`Previous ${label.toLowerCase()}`}>←</button><button type="button" data-dir="1" aria-label={`Next ${label.toLowerCase()}`}>→</button></div>
+  <ul class="life-grid life-scroll-track" tabindex="0" aria-label={`${label}; swipe or use the arrow buttons to browse`}>{looks.map((look, index) => <li><Card look={look} stickers={polaroid ? (index === 0 ? 'cluster' : 'single') : undefined} /></li>)}</ul>
+</div>
