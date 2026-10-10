@@ -2,7 +2,7 @@
 
 Sources checked: CLAUDE.md; claude/WYS_REFERENCE_PACK_2026-10-07.md (full); ops/cloud-kit/TDIE_DESIGN_RULES.md; ops/canon/canon.json (claims and locked-feature rules); ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md; src/pages/shop/while-you-sleep-storefront.astro (kit contents list); ops/wys-runtime/README.md and rejected-assets.json; src/lifestyle/README.md.
 
-NOT FOUND in the repo: claude/WYS_FOUNDER_INTAKE.md, claude/WYS_LOOK_RULES.md, claude/WYS_PROMO_FACTS.md, claude/TDIE_DESIGN_RULES.md. They are claude.ai Project documents, and this cloud session cannot open the "TDIE Website" project. Every line that depends on the intake is marked UNVERIFIED below.
+NOT FOUND in the repo: claude/WYS_FOUNDER_INTAKE.md, claude/WYS_LOOK_RULES.md, claude/WYS_PROMO_FACTS.md, claude/TDIE_DESIGN_RULES.md. They are claude.ai Project documents, and this cloud session cannot open the "TDIE Website" project. Intake answers relayed on 10 October 2026 are listed under "Confirmed" below.
 
 Status: prepared file only. Nothing posted, published, scheduled or uploaded. The WYS release hold is unchanged.
 
@@ -17,8 +17,8 @@ Status: prepared file only. Nothing posted, published, scheduled or uploaded. Th
 
 ## Conflicts between files (one line each, with the fix)
 
-1. The sales page (`src/pages/shop/while-you-sleep-storefront.astro`, 4 Oct) says ChatGPT plus approval of every Pin before scheduling, but the brief says Claude desktop plus automatic by default. Fix: once Jodie confirms the intake wording, Codex updates the sales page to match. The guide follows the brief.
-2. The reference pack (section 19) says no three-pin timetable is set, but the brief says 2 looks a day = 6 Pins a day. Fix: save the 2-looks-a-day pace in the intake/state record. The guide uses Jodie's pace.
+1. The sales page (`src/pages/shop/while-you-sleep-storefront.astro`, 4 Oct) says ChatGPT plus approval of every Pin before scheduling, but the brief says Claude desktop plus automatic by default. Fix: not part of this guide. The sales page is left untouched.
+2. The reference pack (section 19) says no three-pin timetable is set, but the brief says 2 looks a day = 6 Pins a day. Fix: resolved. Jodie's intake confirms 2 looks a day = 6 Pins a day.
 3. The design rules call for gradient pill buttons and soft pink shadows, but the brief bans gradients and soft shadows so the file imports into Canva. Fix: none needed. The guide uses solid fills and solid offset blocks.
 4. The handoff rules put Hello Kitty and Kuromi plushies in the attic loft, but the brief bans anything branded in a photo. Fix: the only loft photo used (`g2-loft-night-desk`) has no plushies.
 5. The reference pack's visual direction lists black and silver. Fix: per the skill, the guide never describes her palette in words.
@@ -26,24 +26,28 @@ Status: prepared file only. Nothing posted, published, scheduled or uploaded. Th
 
 ## Photos (every placed photo, path, why it passes)
 
-No repo look has an approved Styled photo. The three-role approved WYS sets (Pretty Wicked, Ghoul Fuel) are private, so they are not in the repo and were not used. Every Styled slot is a labelled empty frame: "PHOTO NEEDED / Styled, not on a bed" (pages 1 and 4).
+Photo order is always Basic, Styled, Lifestyle. Both former "PHOTO NEEDED / Styled" slots are filled with Jodie's approved, publish-ready styled photos from `cloudflare-migration`.
 
-| Page | Repo path | Role | Why it passes |
+| Page | Repo path (branch cloudflare-migration) | Role | Why it passes |
 |---|---|---|---|
-| 1, 4 | src/lifestyle/last-minute-legally-blonde-costume-flatlay.jpg | Basic | Overhead on weathered white porch boards: not a bed, no upholstery. Real-looking, nothing branded readable, with its text overlay. The guide never names Legally Blonde. |
-| 1, 4 | src/lifestyle/last-minute-legally-blonde-costume-lifestyle.jpg | Lifestyle (same look) | Tommy Kate with brown hair on her porch steps, wearing the same sweater, jeans and scrunchie. Real, not staged-rich, no logos. |
-| 2 | ops/cloud-output/storefront-product/graphics/photos/g3-kitchen-late.jpg | Scene | Farmhouse kitchen at night with laptop and retriever. Brown hair, real, no branding. |
-| 3 | ops/cloud-output/storefront-product/graphics/photos/g4-nightstand-phone.jpg | Scene | Nightstand and bed at night with no outfit on the bed, nothing branded. Chosen instead of the sofa photo, which shows a closed laptop that could suggest it runs with the laptop closed. |
-| 5, 6 | src/lifestyle/pink-halloween-porch-decor-flatlay.jpg | Basic, home decor (non-clothing) | Weathered porch boards, generic ghost and pumpkin decor, no licensed characters, real-looking. |
-| 6 | ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg | Basic, clothing | Whitewashed wood floor, not a bed, no logos. |
-| 6 | src/lifestyle/pink-halloween-trick-or-treat-porch-essentials-lifestyle.jpg | Lifestyle, home/holiday (non-clothing) | Brown hair, real porch, generic jack-o-lantern bucket. |
-| 6 | src/lifestyle/pink-cat-halloween-costume-lifestyle.jpg | Lifestyle, costume | Brown hair, farmhouse porch and red barn, no branding. |
-| 7 | ops/cloud-output/storefront-product/graphics/photos/g2-loft-night-desk.jpg | Scene | Laptop on at night, which matches "computer on when tasks run". No plushies or logos. |
-| 10 | ops/cloud-output/storefront-product/graphics/photos/g1-porch-morning.jpg | Scene | Porch morning with lilacs and barn. Brown hair, real, nothing branded. |
+| 1 | src/lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg | Basic, clothing | Approved set named by Jodie. Laid out on wood floorboards, not a bed. |
+| 1 | src/lifestyle/pink-plaid-pumpkin-patch-outfit-styled.jpg | Styled, clothing | Approved styled photo named by Jodie. Hung by a farmhouse window, fully styled. |
+| 1 | src/lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.png | Lifestyle, clothing | Approved set. Tommy Kate, brown hair, at the pumpkin patch in the same outfit. |
+| 4 | src/lifestyle/pink-ghost-coffee-bar-basic.jpg | Basic, home decor | Approved set named by Jodie. Decor pieces on a wood sideboard. |
+| 4 | src/lifestyle/pink-ghost-coffee-bar-styled.jpg | Styled, home decor | Approved styled photo named by Jodie. |
+| 4 | src/lifestyle/pink-ghost-coffee-bar-lifestyle.png | Lifestyle, home decor | Approved set. Tommy Kate, brown hair, in her kitchen with the same decor. |
+| 2 | ops/cloud-output/storefront-product/graphics/photos/g3-kitchen-late.jpg | Scene | Unchanged from the first build. |
+| 3 | ops/cloud-output/storefront-product/graphics/photos/g4-nightstand-phone.jpg | Scene | Unchanged. |
+| 5, 6 | src/lifestyle/pink-halloween-porch-decor-flatlay.jpg | Basic, home decor | Unchanged. |
+| 6 | ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg | Basic, clothing | Unchanged. |
+| 6 | src/lifestyle/pink-halloween-trick-or-treat-porch-essentials-lifestyle.jpg | Lifestyle | Unchanged. |
+| 6 | src/lifestyle/pink-cat-halloween-costume-lifestyle.jpg | Lifestyle, costume | Unchanged. |
+| 7 | ops/cloud-output/storefront-product/graphics/photos/g2-loft-night-desk.jpg | Scene | Unchanged. |
+| 10 | ops/cloud-output/storefront-product/graphics/photos/g1-porch-morning.jpg | Scene | Unchanged. It shows a real potted lilac on the porch; the decorative daisies were removed. |
 
-Rejected as failing a hard rule: every flat lay on pink satin, fluffy fabric or bedding (angel, ballerina, bunny, car, cat, dog, dorm, fairy, flamingo, pageant, porch-essentials basic, sorority, witch, cowgirl). Also rejected: the cut-out collages that look fake (graduation, sequin, workwear, which also shows a branded-style ring), the sofa photo (closed laptop), and any loft image with plushies.
+The Legally Blonde knit set is no longer used, and its two resized copies were removed from `img/`.
 
-UNVERIFIED: whether Jodie approved these repo images for WYS use. The src/lifestyle images are legacy two-image /lifestyle data, and the graphics/photos set was made for the presale graphics. Four different looks appear across the guide, including two non-clothing ones.
+UNVERIFIED: whether Jodie approved the unchanged images on pages 2, 3, 5, 6, 7 and 10 for WYS use.
 
 ## Psychology map
 
@@ -59,13 +63,27 @@ UNVERIFIED: whether Jodie approved these repo images for WYS use. The src/lifest
 - Single CTA: p10 (one pill button)
 - None used: fake scarcity, testimonials, prices, dates, spot counts, codes, affiliate rate or income claims.
 
+## Confirmed from Jodie's founder intake (relayed 10 October 2026)
+
+- Automatic by default; 2 looks a day = 6 Pins a day; Instagram carousel order lifestyle, styled, clean; each Pin links to the Amazon list its products came from. CONFIRMED.
+- Tools line: kept as "Claude desktop and Chrome, Amazon Associates or Influencer, Pinterest, image tools" because those words are in the brief Jodie gave the build session (session_01L4FEsrrVUy6uBJZPpTHnrw). Her intake adds that publishing runs through Metricool and the browser is only for Amazon Idea Lists.
+- "NO THINKING." credited to Jodie: kept because the brief Jodie gave says 'Pull quote in her words: "NO THINKING."'.
+- Buyers get an interactive website, not a PDF guide. Page 8 names no PDF or file format.
+
 ## Lines I could not verify (UNVERIFIED)
 
-- Every intake-based line (Claude desktop and Chrome; automatic by default; 2 looks a day; Instagram carousel order lifestyle, styled, clean; "NO THINKING."; the persona-or-flat-lays choice). The intake file was not reachable. These lines are copied from the brief, not from the intake.
-- "Each Pin links to the Amazon list its products came from": per the reference pack, Associates-only buyers have no Idea List.
-- Page 8 kit contents come from the 4 Oct sales-page list (setup, themed-look recipe, persona/no-persona, scheduled task prompts plus reconciliation, optional blog, Instagram add-on, Brand Closet Outfit of the Day). They are not checked against a delivered kit build. "Missed-run check" maps to the reconciliation job in reference pack sections 21 and 23.
+- Page 8 kit contents come from the 4 Oct sales-page list, not a delivered kit build.
 - The p10 button links to /shop/while-you-sleep-storefront. Whether that page is live is not checked.
-- The "NO THINKING." attribution ("Jodie, on why she built it") is not checked against the intake.
+- Page 4 Basic caption changed from "every piece, plus its text overlay" to "every piece, laid out", because the approved Basic photo has no text overlay.
+
+## Design fixes (10 October 2026)
+
+- No lavender anywhere in the design: every lavender page, panel and empty-photo fill is now blush, white or white with a hot pink outline. No gradients or ombre backgrounds.
+- Decorative daisies removed from page 10, replaced with a glitter "Your taste" sticker. No flowers, butterflies or bows in the design.
+- The page 10 button is now white with a hot pink outline and hot pink text and arrow. There are no filled pink buttons.
+- Glitter: fine multi-size flecks (white, pale pink, soft gold, a few four-point glints) built in code as hand-placed solid SVG circles. They sit only on the offset frame blocks behind each polaroid, the round stickers and the numbered badges. There is no glitter over any photo or across a page. The flecks use solid colours with no transparency, so the file still imports into Canva.
+- The page 9 callout label now reads "How it runs".
+- The sales page was not touched.
 
 ## QA done
 
