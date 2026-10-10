@@ -1,0 +1,16 @@
+---
+// The home page header (logo, nav, glitter drip), shared so Lifestyle matches the home page exactly.
+import { NAV, NAV_CTA } from "../data/site.js";
+import "@fontsource/newsreader/latin-600.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
+import "../styles/home-chrome.css";
+---
+<header class="hc-nav"><div class="hc-wrap">
+  <ul class="hc-lft">{NAV.slice(0,3).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  <a class="hc-logo" href="/" aria-label="The Digital Income Edit home"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b></b><i></i></span></a>
+  <div class="hc-r"><ul><li><a href="/membership">Membership</a></li></ul><a class="hc-btn" href={NAV_CTA.href}>7 days free</a>
+    <details class="hc-mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href="/lifestyle">Lifestyle</a></nav></details>
+  </div>
+</div><div class="hc-drip" aria-hidden="true"></div></header>

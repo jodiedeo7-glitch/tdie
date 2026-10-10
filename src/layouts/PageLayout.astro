@@ -2,6 +2,8 @@
 import visualStyles from "../styles/tdie-visual.css?inline";
 import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import HomeChromeHeader from "../components/HomeChromeHeader.astro";
+import HomeChromeFooter from "../components/HomeChromeFooter.astro";
 import "../styles/global.css";
 import "../styles/sales-typography.css";
 // Self-host brand fonts so external font requests cannot change the layout.
@@ -24,13 +26,14 @@ export interface Props {
   noindex?: boolean;
   /** Full-bleed page built on src/styles/edit.css: no .page-wrap column. */
   bare?: boolean;
+  homeChrome?: boolean;
   /** Extra JSON-LD objects for this page (Product, FAQPage...). */
   schema?: object[];
   /** Opt into the reference-led facelift after this page family passes QA. */
   visualRefresh?: boolean;
   boutiqueHeader?: boolean;
 }
-const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = true, boutiqueHeader = false } = Astro.props;
+const { title, description, wide = false, ogImage = "/og/default.jpg", noindex = false, bare = false, schema = [], visualRefresh = true, boutiqueHeader = false, homeChrome = false } = Astro.props;
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = new URL(Astro.url.pathname.replace(/\/+$/, "") || "/", SITE).href;
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
@@ -123,13 +126,13 @@ const jsonLd = {
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
   <slot name="before-nav" />
-  <SiteNav boutique={boutiqueHeader} />
+  {homeChrome ? <HomeChromeHeader /> : <SiteNav boutique={boutiqueHeader} />}
 
   <main class={bare ? "e-page" : wide ? "page-wrap wide" : "page-wrap"}>
     <slot />
   </main>
 
-  <SiteFooter />
+  {homeChrome ? <HomeChromeFooter /> : <SiteFooter />}
 
   <script>
     document.body.classList.remove('no-js');
