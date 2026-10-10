@@ -165,7 +165,7 @@ const primeNow = Date.now() < Date.parse(PRIME_END);
   .pf-box .pf-h{font-size:clamp(28px,3.2vw,40px)}
   .pf-box .pf-done,.pf-strip .pf-done{grid-column:1 / -1}
   @media(max-width:760px){
-    .pf-strip .pf-form,.pf-box .pf-form{grid-template-columns:1fr;gap:18px}
+    .pf-strip .pf-form,.pf-box .pf-form{grid-template-columns:minmax(0,1fr);gap:18px}
     .pf-strip{padding:24px 20px}
   }
   @media(max-width:480px){.pf .pf-row button{flex:1 1 100%;white-space:normal}}
