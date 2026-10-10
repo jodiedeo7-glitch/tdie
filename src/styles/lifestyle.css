@@ -581,3 +581,19 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
   .life .life-post-hero .life-button{width:100%}
   .life .life-post-photo{display:none}
 }
+
+/* The Look row (Jodie, 10 October 2026): a headline over the three photo Polaroids, no stacked back
+   sheets, no overlapping, three equal frames spread evenly across the sheet. */
+.life .life-reading-sheet .life-look-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 6px}
+.life .life-reading-sheet .life-look-head h2{margin:0}
+.life .life-reading-sheet .life-look-head .life-photo-controls{margin:0}
+.life .life-gp-back{display:none!important}
+.life .life-reading-sheet .life-photo-track{justify-content:space-between;gap:36px;padding:58px 22px 30px}
+.life .life-reading-sheet .life-photo-track>.life-gp{flex:1 1 0;max-width:290px;min-width:0}
+.life .life-gp-front{transform:rotate(-1.5deg)}
+.life .life-gp:nth-child(2) .life-gp-front{transform:rotate(1.5deg)}
+.life .life-gp:nth-child(3) .life-gp-front{transform:rotate(-1deg)}
+@media(max-width:760px){
+ .life .life-reading-sheet .life-photo-track{justify-content:flex-start;gap:30px;padding:54px 18px 30px}
+ .life .life-reading-sheet .life-photo-track>.life-gp{flex:0 0 236px;max-width:236px}
+}
