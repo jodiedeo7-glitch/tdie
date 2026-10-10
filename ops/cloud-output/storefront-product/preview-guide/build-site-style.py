@@ -16,11 +16,11 @@ body{font-family:Inter,sans-serif;color:var(--ink)}
 .page:last-child{break-after:auto;page-break-after:auto}
 .blush{background:url(img/brand/sh-blush.webp) 0 0/600px 600px}
 .bub{background:url(img/brand/sh-bub.webp) 0 0/600px 600px}
-.tile{background:url(img/brand/gl-tile.webp) 0 0/450px 450px}
+.tile{background:none 0 0/450px 450px}
 .white{background:#fff}
 .glow::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 600px at 50% 46%,rgba(255,255,255,.92),rgba(255,255,255,0) 72%)}
 .bub.glow::before{background:radial-gradient(760px 260px at 50% 90px,rgba(255,255,255,.9),rgba(255,255,255,0) 75%)}
-.sweep::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(img/brand/gl-tile.webp) 0 0/450px 450px;-webkit-mask:url(img/brand/sweep-r.webp) right bottom/1400px 790px no-repeat;mask:url(img/brand/sweep-r.webp) right bottom/1400px 790px no-repeat}
+.sweep::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:none 0 0/450px 450px;-webkit-mask:url(img/brand/sweep-r.webp) right bottom/1400px 790px no-repeat;mask:url(img/brand/sweep-r.webp) right bottom/1400px 790px no-repeat}
 /* header: the site's centred logo */
 .hdr{flex:none;display:flex;justify-content:center;padding:34px 0 22px;background:url(img/brand/sh-blush.webp) 0 0/600px 600px}
 .logo{display:inline-flex;flex-direction:column;align-items:center;line-height:1}
@@ -30,10 +30,10 @@ body{font-family:Inter,sans-serif;color:var(--ink)}
 .logo .sp{position:absolute;width:20px;height:20px;right:-20px;top:-6px;background:var(--gold);clip-path:var(--spark)}
 .logo .rule{display:flex;align-items:center;gap:10px;margin-top:8px}
 .logo .rule i{width:48px;height:1.5px;background:var(--gold)}.logo .rule b{width:10px;height:10px;background:var(--gold);clip-path:var(--spark)}
-.strip{flex:none;height:16px;background:url(img/brand/gl-tile.webp) 0 0/380px}
+.strip{flex:none;height:16px;background:none 0 0/380px}
 .main{flex:1;min-height:0;padding:56px 76px 40px;display:flex;flex-direction:column;gap:30px;position:relative}
 .foot{flex:none;position:relative;background:url(img/brand/sh-bub.webp) 0 0/600px 600px;padding:34px 76px 30px;display:flex;justify-content:space-between;font:700 18px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
-.foot::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:url(img/brand/gl-tile.webp) 0 0/380px}
+.foot::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:none 0 0/380px}
 .foot b{color:var(--ink)}
 .foot span,.foot b{background:rgba(255,255,255,.85);padding:8px 14px;border-radius:999px}
 .kick,.card p.kick{font:700 19px/1.2 Inter;letter-spacing:.24em;text-transform:uppercase;color:var(--deep)}
@@ -110,9 +110,9 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .small{font:400 20px/1.5 Inter;color:var(--ink2)}
 .sp{flex:1}
 .pin{background:#fff;border-radius:30px;padding:14px 14px 22px;box-shadow:0 40px 70px -40px rgba(110,10,50,.6)}
-.pin .pi{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:2/3}
+.pin .pi{position:relative;border-radius:20px;overflow:hidden;isolation:isolate;aspect-ratio:2/3}
 .pin .pi img{display:block;width:100%;height:100%;object-fit:cover}
-.pin .ov{position:absolute;left:0;right:0;top:0;padding-top:22px!important;background:#fff!important;border-bottom:2px solid #D62E73;text-align:center;padding:16px 10px;background:rgba(255,255,255,.88)}
+.pin .ov{position:absolute;left:0;right:0;top:0;border-radius:20px 20px 0 0;padding-top:22px!important;background:#fff!important;border-bottom:2px solid #D62E73;text-align:center;padding:16px 10px;background:rgba(255,255,255,.88)}
 .pin .ov b{display:block;font:600 40px/1 Newsreader;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
 .pin .ov span{display:block;margin-top:6px;font:600 30px/1 Newsreader;color:var(--pink)}
 .pin h4{margin:16px 6px 6px;font:700 21px/1.3 Inter;color:var(--ink)}
@@ -136,7 +136,8 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .alist{list-style:none;display:grid;gap:12px;counter-reset:a}
 .alist li{display:flex;gap:14px;align-items:flex-start;font:600 21px/1.35 Inter;color:var(--ink);counter-increment:a}
 .card .alist li::before{clip-path:none;margin-top:0;content:counter(a,decimal-leading-zero);flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#FFE4EF;font:700 17px/1 Inter;color:var(--deep)}
-.p9{gap:18px}.p9 .card{padding:30px 38px}
+.p9{gap:18px}
+.p8{justify-content:space-between}.p9 .card{padding:30px 38px}
 
 /* premium pass (matches the site's 10 Oct premium pass): no tiled glitter pages.
    Clean solid blush and white, hot pink outlines, glitter only as small accents. */
@@ -158,7 +159,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .star{position:absolute;width:30px;height:30px;background:url(img/brand/gl-hot.webp) 0 0/120px;clip-path:var(--spark)}
 
 /* accent pass: stickers, glitter-edged callouts, sparkle stars, two glitter statement pages */
-.tile{background:url(img/brand/gl-tile.webp) 0 0/450px 450px!important}
+.tile{background:#FFE4EF!important}
 .gcard,.gx{border:5px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(img/brand/gl-hot.webp) 0 0/260px border-box!important;position:relative}
 .stk{position:absolute;z-index:6;width:170px;height:170px;filter:drop-shadow(0 16px 18px rgba(120,10,50,.4))}
 .stk::before{content:"";position:absolute;inset:0;background:#fff;clip-path:var(--burst)}
@@ -182,7 +183,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .nw{white-space:nowrap}
 #p10 .g{justify-content:flex-start;padding-top:20px}#p10 .g h3{font-size:42px}#p10 .g p{font-size:27px}
 .ig6 .phone{width:500px}.ig6 .slides{grid-template-rows:repeat(3,minmax(0,1fr))}.ig6 .slide{grid-template-columns:200px minmax(0,1fr)}.ig6 .slide img{width:200px;height:220px;aspect-ratio:auto}
-.pins5 .pi{aspect-ratio:9/16}
+.pins5 .pi{aspect-ratio:3/5}
 .pin .ln{font-size:20px!important}
 .eq4 .step,.eq4 .step:first-child{padding:0 16px}.eq4 .step h3{font-size:32px}
 </style></head><body>
@@ -214,13 +215,13 @@ P.append(page(2,'blush glow',f'''
  <div class="step"><span class="n">1</span><h3 class="nw">The photos</h3></div><div class="step"><span class="n">2</span><h3 class="nw">The words</h3></div>
  <div class="step"><span class="n">3</span><h3>Where people shop it</h3></div><div class="step"><span class="n">4</span><h3>Doing it all again tomorrow</h3></div></div></div>
 <div style="display:grid;grid-template-columns:360px minmax(0,1fr);gap:46px;align-items:center;margin-top:16px">
-<div class="frame" style="height:440px">{img('pb')}</div>
+<div class="frame" style="height:440px">{img('cl','object-position:40% 50%')}</div>
 <div style="display:flex;flex-direction:column;gap:18px"><div style="position:relative;padding-right:150px"><p class="line" style="text-align:left">6 Pins a day.<br><em>By hand?</em></p><div class="stk" style="right:-10px;top:-60px;width:150px;height:150px;transform:rotate(10deg)"><i></i><span>Every<b>look</b></span></div></div>
 <div class="pull"><span class="qm">“</span><p>Passive income isn't passive when you are the one doing every job.</p></div></div></div>'''))
 P.append(page(3,'white sweep',f'''
 <p class="kick c">Here's the shift</p>
 <h2 class="c">What if the treadmill ran <em>without you?</em></h2>
-<div class="frame" style="height:640px">{img('cs','object-position:50% 55%')}</div>
+<div class="frame" style="height:640px">{img('ps','object-position:50% 45%')}</div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center">
  <p class="lede"><b>The While&#8209;You&#8209;Sleep Storefront™</b> does the jobs for you. Set it up once. Then no constantly <span class="nw">making lists.</span></p>
  <figure class="quote gx" style="position:relative"><i class="star" style="left:-4px;top:-4px"></i><i class="star" style="right:-4px;bottom:-4px"></i><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
@@ -240,9 +241,9 @@ P.append(page(5,'blush glow',f'''
 <div style="position:relative;display:flex;flex-direction:column;gap:16px;padding-right:180px"><p class="kick">What one look makes · 01 Pinterest</p><div class="stk" style="right:-10px;top:-20px;transform:rotate(-8deg)"><i></i><span>3 Pins<b>a look</b></span></div><h2>Three Pins. <em>Every look.</em></h2></div>
 <p class="lede" style="max-width:760px">One Pin for each photo, in order. Each Pin links to the Amazon list its products came&nbsp;from.</p>
 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:6px" class="pins5">
- <div class="pin"><span class="rl">Pin 1 · Basic</span><div class="pi">{img('cb')}<div class="ov"><b>Pink Ghost</b><span>coffee bar</span></div></div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
- <div class="pin"><span class="rl">Pin 2 · Styled</span><div class="pi">{img('cs')}</div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
- <div class="pin"><span class="rl">Pin 3 · Lifestyle</span><div class="pi">{img('cl')}</div><h4>Pink Ghost Coffee Bar</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 1 · Basic</span><div class="pi">{img('pb','object-position:50% 70%')}<div class="ov"><b>Pink Plaid</b><span>pumpkin patch</span></div></div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 2 · Styled</span><div class="pi">{img('ps')}</div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 3 · Lifestyle</span><div class="pi">{img('pl')}</div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
 </div>
 <div class="card gx" style="padding:10px 20px;margin-top:6px"><i class="star" style="left:-4px;top:-4px"></i><i class="star" style="right:-4px;bottom:-4px"></i><div class="nums" style="border:0!important"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Pins per look</div></div></div>'''))
 P.append(page(6,'white sweep',f'''
@@ -259,16 +260,13 @@ P.append(page(6,'white sweep',f'''
 <div class="sp"></div><p class="small c">Instagram is optional. The caption shown is the start of this look's real post intro.</p>'''))
 P.append(page(7,'blush glow',f'''
 <div style="display:flex;flex-direction:column;gap:16px"><p class="kick">What one look makes · 03 Blog + Amazon list</p><h2 style="font-size:56px">A shop-the-look post. <em>On your site.</em></h2></div>
-<div class="browser"><div class="bar"><i></i><i></i><i></i><span>yoursite.com/lifestyle/pink-ghost-coffee-bar</span></div><img src="img/out-blog.jpg" alt="The real Pink Ghost Coffee Bar post on The Digital Income Edit website, with its three photos and shopping shelf"></div>
+<div class="browser"><div class="bar"><i></i><i></i><i></i><span>yoursite.com/lifestyle/pink-plaid-pumpkin-patch-outfit</span></div><img src="img/out-blog-plaid.jpg" alt="The real Pink Plaid Pumpkin Patch Outfit post on The Digital Income Edit website, with its three photos"></div>
 <div class="card gx" style="padding:24px 32px"><i class="star" style="left:-4px;top:-4px"></i><i class="star" style="right:-4px;bottom:-4px"></i><span class="nm">The Amazon list for this look · 6 finds</span>
 <ul class="alist" style="margin-top:14px;padding-top:14px;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px">
-<li>Pink and black flameless LED pillar candles, set of 3</li><li>Pink creepy gauze cloth</li><li>Pink resin ghost figurines with BOO sign, set of 5</li><li>Pink ghost figurines, set of 3</li><li><span>Pink and white carved jack&#8209;o&#8209;lanterns, set of 3</span></li><li>Pink and black 3D paper bat wall stickers</li></ul></div>'''))
-P.append(page(8,'bub glow',f'''
-<div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:34px 40px"><p class="kick">Your taste runs it</p><div class="stk" style="right:-6px;top:-44px;width:150px;height:150px;transform:rotate(10deg)"><i></i><span>Your<b>recipe</b></span></div><h2>My pink. Your <em>recipe.</em></h2></div>
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px">
- <div class="card"><span class="nm">An outfit</span>{trio(['pb','ps','pl'])}</div>
- <div class="card"><span class="nm">Home decor</span>{trio(['cb','cs','cl'])}</div>
-</div>
+<li>Pink plaid button down shacket</li><li>Black square neck ribbed crop top</li><li>Light wash high waisted straight leg jeans</li><li>White platform sneakers</li><li>Purple corduroy tote bag</li><li>Dark green cable knit pom beanie</li></ul></div>'''))
+P.append(page(8,'bub glow p8',f'''
+<div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:34px 40px"><p class="kick">Make it yours</p><div class="stk" style="right:-6px;top:-44px;width:150px;height:150px;transform:rotate(10deg)"><i></i><span>Your<b>recipe</b></span></div><h2>Your taste. Your <em>recipe.</em></h2></div>
+<div class="card" style="padding:40px 44px"><span class="nm">Any category you love</span><div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:22px"><span class="chip">Outfits</span><span class="chip">Home decor</span><span class="chip">Seasonal shelves</span><span class="chip">Gift guides</span><span class="chip">Beauty</span><span class="chip">Costumes</span></div></div>
 <div class="plate" style="padding:40px 44px"><p class="kick" style="text-align:center;margin-bottom:24px">Three choices you make once</p><div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><span class="n" style="font-size:64px">1</span><h3 style="font-size:32px">Your theme</h3></div>
  <div class="step"><span class="n" style="font-size:64px">2</span><h3 style="font-size:32px">Your visuals</h3><p>Your own persona, or flat lays only.</p></div>
