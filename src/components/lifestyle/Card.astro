@@ -1,11 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import { categoryOf } from '../../data/lifestyle.js';
-const { look, featured = false } = Astro.props;
+const { look, featured = false, stickers } = Astro.props;
+// Pearl star stickers for the fuzzy related-look polaroids; positions keep them on the frame corners, off the photo.
+const pearls = stickers === 'cluster' ? [{ x: '1%', y: '1%', s: '46px', r: '-12deg', tone: 'pink' }, { x: '19%', y: '-2%', s: '30px', r: '14deg', tone: 'blue' }, { x: '-2%', y: '15%', s: '24px', r: '6deg', tone: 'pink' }] : stickers === 'single' ? [{ x: '96%', y: '95%', s: '48px', r: '10deg', tone: 'blue' }] : [];
 const image = look.hero;
 ---
-<a class:list={['life-card', { 'life-card-featured': featured }]} href={`/lifestyle/${look.slug}`}>
-  <span class="life-card-photo"><Image src={image.src} alt={image.alt} widths={[320, 480, 720, 960]} sizes={featured ? '(max-width: 760px) 100vw, 42vw' : '(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw'} loading={featured ? 'eager' : 'lazy'} fetchpriority={featured ? 'high' : 'auto'} /></span>
+<a class:list={['life-card', { 'life-card-featured': featured, 'life-card-fuzzy': stickers }]} href={`/lifestyle/${look.slug}`}>
+  <span class="life-card-photo">{pearls.map(p => <svg class="life-pearl" style={`--x:${p.x};--y:${p.y};--s:${p.s};--r:${p.r}`} viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#life-pearl-star" fill={`url(#life-pearl-${p.tone})`} /></svg>)}<Image src={image.src} alt={image.alt} widths={[320, 480, 720, 960]} sizes={featured ? '(max-width: 760px) 100vw, 42vw' : '(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw'} loading={featured ? 'eager' : 'lazy'} fetchpriority={featured ? 'high' : 'auto'} /></span>
   <span class="life-card-copy">
     <span class="life-kicker">{categoryOf(look.category)?.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</span>
     <h3>{look.title}</h3>

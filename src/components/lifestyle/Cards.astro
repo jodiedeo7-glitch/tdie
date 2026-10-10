@@ -1,5 +1,5 @@
 ---
 import Card from './Card.astro';
-const { looks } = Astro.props;
+const { looks, polaroid = false } = Astro.props;
 ---
-<ul class:list={["life-grid", { "life-grid-pair": looks.length === 2 }]}>{looks.map(look => <li><Card look={look} /></li>)}</ul>
+<ul class:list={["life-grid", { "life-grid-pair": looks.length === 2 }]}>{looks.map((look, index) => <li><Card look={look} stickers={polaroid ? (index === 0 ? 'cluster' : 'single') : undefined} /></li>)}</ul>

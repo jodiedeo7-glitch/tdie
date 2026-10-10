@@ -18,6 +18,12 @@ const photoCaption = (image) => {
   if (image.caption && !/generated inspiration|AI model|styling extras|contextual styling|shop the listed/i.test(image.caption)) return image.caption;
   return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' && look.category === 'clothing' ? 'Tommy Kate wearing the look' : image.role === 'lifestyle' ? 'Tommy Kate at home' : 'The styled scene';
 };
+// Jodie's standing rule: photos always run Basic, then Styled, then Lifestyle.
+const roleOrder = ['basic', 'styled', 'lifestyle'];
+const rank = (image) => { const i = roleOrder.indexOf(image.role); return i < 0 ? roleOrder.length : i; };
+const photos = look.images.map((image, i) => ({ image, i })).sort((a, b) => rank(a.image) - rank(b.image) || a.i - b.i).map(({ image }) => image);
+// Twinkle stars sit on the frame border and bottom strip only, never on the photo.
+const twinkles = [{ x: '3.5%', y: '28%', s: '11px' }, { x: '96.5%', y: '52%', s: '10px', blue: true }, { x: '84%', y: '2.4%', s: '9px' }, { x: '3.5%', y: '87%', s: '9px', blue: true }, { x: '93%', y: '83%', s: '13px' }, { x: '62%', y: '97%', s: '9px', blue: true }];
 const shoppingPending = look.shoppingStatus === 'pending';
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type': 'Article', headline: look.title, description: look.description, image: hero ? new URL(hero.src.src, 'https://www.thedigitalincomeedit.com').href : undefined, ...(dateIsPast ? { datePublished: look.date } : {}), mainEntityOfPage: `https://www.thedigitalincomeedit.com/lifestyle/${look.slug}`, publisher: { '@type': 'Organization', name: 'The Digital Income Edit™' } }];
@@ -38,9 +44,29 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
       </div>
     </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
+    <svg class="life-svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="life-clip-gold" gradientUnits="userSpaceOnUse" x1="3" y1="0" x2="27" y2="0"><stop offset="0" stop-color="#8f5c12"/><stop offset=".28" stop-color="#e9c46a"/><stop offset=".46" stop-color="#fff1c2"/><stop offset=".62" stop-color="#d6a443"/><stop offset=".84" stop-color="#f5d98c"/><stop offset="1" stop-color="#9a6516"/></linearGradient>
+        <radialGradient id="life-pearl-pink" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#fff0f6"/><stop offset=".55" stop-color="#f9c3d8"/><stop offset=".85" stop-color="#ee9dbf"/><stop offset="1" stop-color="#e18ab0"/></radialGradient>
+        <radialGradient id="life-pearl-blue" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#f3f9ff"/><stop offset=".55" stop-color="#d2e6f8"/><stop offset=".85" stop-color="#a9c8e8"/><stop offset="1" stop-color="#97b8dc"/></radialGradient>
+        <filter id="life-fur" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter>
+        <symbol id="life-twinkle" viewBox="0 0 24 24"><path d="M12 0C12.7 7.6 15.6 11 24 12 15.6 13 12.7 16.4 12 24 11.3 16.4 8.4 13 0 12 8.4 11 11.3 7.6 12 0Z" fill="currentColor"/></symbol>
+        <symbol id="life-paperclip" viewBox="0 0 30 90"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 64V22a4.6 4.6 0 0 1 9.2 0v50a8.6 8.6 0 0 1-17.2 0V12a12 12 0 0 1 24 0v52" stroke="#5e3b08" stroke-width="4.8" opacity=".4" transform="translate(.7 1)"/><path d="M11 64V22a4.6 4.6 0 0 1 9.2 0v50a8.6 8.6 0 0 1-17.2 0V12a12 12 0 0 1 24 0v52" stroke="#9a6516" stroke-width="4"/><path d="M11 64V22a4.6 4.6 0 0 1 9.2 0v50a8.6 8.6 0 0 1-17.2 0V12a12 12 0 0 1 24 0v52" stroke="url(#life-clip-gold)" stroke-width="3"/><path d="M3.6 66V13a11.4 11.4 0 0 1 9-11.1M11.6 60V22.5a4 4 0 0 1 3-3.8" stroke="#fffbe8" stroke-width=".8" opacity=".85"/></g></symbol>
+        <symbol id="life-pearl-star" viewBox="0 0 40 40"><path d="M20 2.5c1.3 0 2 3.6 4.5 9.4 6.3.6 10 .9 10.4 2.2.4 1.2-2.5 3.6-7.2 7.8 1.4 6.2 2.2 9.8 1.1 10.6-1.1.8-4.2-1.1-8.8-4.3-4.6 3.2-7.7 5.1-8.8 4.3-1.1-.8-.3-4.4 1.1-10.6C7.6 17.7 4.7 15.3 5.1 14.1c.4-1.3 4.1-1.6 10.4-2.2C18 6.1 18.7 2.5 20 2.5Z" stroke="#fff" stroke-opacity=".9" stroke-width="1.2" stroke-linejoin="round"/><ellipse cx="15.2" cy="13.6" rx="3.4" ry="1.7" fill="#fff" opacity=".95" transform="rotate(-32 15.2 13.6)"/><circle cx="12.6" cy="18" r="1" fill="#fff" opacity=".9"/><path d="M24 26.5c2-.6 3.4-1.8 4.1-3.4" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1" stroke-linecap="round"/></symbol>
+      </defs>
+    </svg>
     <div class="life-photos-first" id="photos" data-photo-gallery>
       <div class="life-photo-controls"><button type="button" data-photo-prev aria-label="Previous photograph">←</button><button type="button" data-photo-next aria-label="Next photograph">→</button></div>
-      <div class="life-photo-track" tabindex="0" aria-label="Styling photographs, swipe to see all photos">{look.images.map((image, index) => <figure class="life-photo life-clip-photo"><svg class="life-clip" viewBox="0 0 28 78" aria-hidden="true" focusable="false"><defs><linearGradient id={`clip-gold-${index}`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a8701c"/><stop offset=".45" stop-color="#f7dc92"/><stop offset=".7" stop-color="#d9a441"/><stop offset="1" stop-color="#9c6516"/></linearGradient></defs><path d="M11 56V20a4.5 4.5 0 0 1 9 0v42a8 8 0 0 1-16 0V11a9.5 9.5 0 0 1 19 0v41" fill="none" stroke="#7a4d10" stroke-width="4.2" stroke-linecap="round" opacity=".35"/><path d="M11 56V20a4.5 4.5 0 0 1 9 0v42a8 8 0 0 1-16 0V11a9.5 9.5 0 0 1 19 0v41" fill="none" stroke={`url(#clip-gold-${index})`} stroke-width="2.8" stroke-linecap="round"/></svg><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 260px, 300px" loading="eager" /><figcaption>{photoCaption(image)}</figcaption><span class="life-photo-count"><span class="life-sr">Photo </span>{index + 1}<span aria-hidden="true">/</span><span class="life-sr"> of </span>{look.images.length}</span></figure>)}</div>
+      <div class="life-photo-track" tabindex="0" aria-label="Styling photographs, swipe to see all photos">{photos.map((image, index) => <div class="life-gp">
+        <span class="life-gp-sheet life-gp-back" aria-hidden="true"></span>
+        <figure class="life-gp-sheet life-gp-front">
+          <span class="life-gp-window"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 220px, 260px" loading="eager" /></span>
+          {twinkles.map(t => <svg class:list={["life-gp-twinkle", t.blue && "is-blue"]} style={`--x:${t.x};--y:${t.y};--s:${t.s}`} viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#life-twinkle" /></svg>)}
+          <svg class="life-gp-clip" viewBox="0 0 30 90" aria-hidden="true" focusable="false"><use href="#life-paperclip" /></svg>
+          <span class="life-photo-count"><span aria-hidden="true">{index + 1}/{photos.length}</span><span class="life-sr">Photo {index + 1} of {photos.length}</span></span>
+          <figcaption><span>{photoCaption(image)}</span></figcaption>
+        </figure>
+      </div>)}</div>
     </div>
       <div class="life-article-actions"><a class="life-button" href="#shopping">{shoppingPending ? 'See the product list' : draft ? 'Preview the product list' : `Shop ${look.items.length} listed products`} <span aria-hidden="true">↓</span></a></div>
     <div class="life-article-top">
@@ -58,7 +84,7 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
       <h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
     </section>)}</section>}
 
-    {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} /></section>}
+    {related.length > 0 && <section class="life-section" aria-labelledby="life-related-title"><p class="life-kicker">Keep browsing</p><h2 id="life-related-title">A little more inspiration</h2><Cards looks={related} polaroid /></section>}
   </article>
 </Frame>
 <script>
