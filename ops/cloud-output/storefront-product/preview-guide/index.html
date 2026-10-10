@@ -75,12 +75,58 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 #p8 .card{min-height:330px}
 #p9 .card p:not(.ord){font-size:27px}
 .sp{flex:1}
+
+/* ===== WEBSITE LOOK (from src/styles/home.css on cloudflare-migration) ===== */
+:root{--pink:#D62E73;--deep:#B8245F;--bub:#FF8AC2;--ink2:#4A3640;--star:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.page.b{background:url(img/brand/sh-blush.webp) 0 0/560px 560px}
+.page.g{background:url(img/brand/gl-tile.webp) 0 0/420px 420px}
+.band{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:132px;padding:0 64px;background:url(img/brand/sh-blush.webp) 0 0/560px 560px;border-bottom:0;box-shadow:0 10px 24px -14px rgba(110,10,50,.35);position:relative;z-index:2}
+.band .bl,.band .br{font:600 18px/1.2 "Inter";letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.band .br{justify-self:end;text-align:right}
+.band .logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+.band .l1{font:700 14px/1 "Inter";letter-spacing:.42em;margin-right:-.42em;color:var(--ink);text-transform:uppercase}
+.band .l2{position:relative;font:600 72px/.9 "Newsreader";letter-spacing:-.015em;margin-top:6px;color:var(--pink)}
+.band .l2 sup{font:700 13px/1 "Inter";vertical-align:top;position:relative;top:8px;margin-left:2px;color:var(--deep)}
+.band .spark{position:absolute;width:16px;height:16px;right:-18px;top:-4px;background:var(--gold);clip-path:var(--star)}
+.mast{display:none}
+.page.g .main{margin:44px 48px 0;padding:48px 48px 44px;background:#fff;border-radius:30px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7)}
+.page.b .main{padding-top:52px}
+.foot{margin:0;padding:22px 72px 30px;border-top:0;background:url(img/brand/sh-blush.webp) 0 0/560px 560px;color:var(--ink);font-weight:600;font-size:18px;letter-spacing:.14em}
+.page.g .foot{margin-top:40px}
+.foot b{color:var(--pink)}
+/* kicker: + LABEL + in deep pink, gold-free, no pill */
+.kick{padding:0;border:0;background:none;gap:14px;font:700 18px/1.2 "Inter";letter-spacing:.24em;color:var(--deep)}
+.kick::before,.kick::after{content:"";width:13px;height:13px;border-radius:0;background:var(--pink);clip-path:var(--star)}
+h1 em,h2 em{color:var(--pink)}
+.lede{color:var(--ink2)}
+/* cards: white, rounded, deep soft shadow; the featured ones get the hot-pink glitter border */
+.card{background:#fff;border:0;border-radius:24px;box-shadow:0 30px 56px -34px rgba(110,10,50,.6)}
+.card.lav{border:5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(img/brand/gl-hot.webp) 0 0/200px border-box}
+.page.g .card{box-shadow:0 0 0 1.5px #F3D3E0,0 24px 40px -30px rgba(110,10,50,.45)}
+.page.g .card.lav{box-shadow:0 24px 40px -30px rgba(110,10,50,.45)}
+.card .ord,.ord{color:var(--deep)}
+/* glossy glitter number badges */
+.num{background:url(img/brand/gl-hot.webp) 0 0/160px;box-shadow:0 0 0 7px #fff,0 14px 24px -10px rgba(150,20,70,.55);text-shadow:0 1px 3px rgba(110,10,50,.6)}
+/* photos: white polaroids, slightly tilted, deep shadow */
+.frame,.frame.lav{padding:12px 12px 0;border-radius:6px;background:#fff;outline:0;box-shadow:0 40px 50px -30px rgba(110,10,50,.55),0 2px 4px rgba(110,10,50,.2)}
+.frame .ph{border-radius:2px}
+.frame figcaption{background:#fff;padding:14px 10px 16px;font:600 26px/1.15 "Newsreader";letter-spacing:0;text-transform:none;color:var(--pink)}
+.frame figcaption b{color:var(--pink);font-weight:600}
+.row>.frame:nth-child(odd),.frame.tl{transform:rotate(-1.6deg)}
+.row>.frame:nth-child(even),.frame.tr{transform:rotate(1.6deg)}
+#p6 .frame{transform:none}
+#p6 .frame figcaption{font:600 21px/1.1 "Newsreader";letter-spacing:0;padding:10px 2px 12px}
+/* buttons and chips: white pill, pink line, pink star */
+.btn{height:104px;background:#fff;border:3px solid #E891B6;box-shadow:0 18px 30px -18px rgba(184,36,95,.75);color:var(--ink);font:700 24px/1.1 "Inter";letter-spacing:.12em}
+.btn>span:first-child{color:var(--pink)}
+.pill{border:2px solid #E891B6;box-shadow:0 12px 22px -16px rgba(184,36,95,.7);color:var(--ink)}
+.pill::before{color:var(--pink)}
+.quote,.card .quote{color:var(--pink)}
 </style>
 </head>
 <body>
-<section class="page" id="p1">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>Planned. Pinned. Posted.</span></div>
+<section class="page b" id="p1">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">Planned. Pinned. Posted.</span></div>
   <div class="main">
 
     <p class="kick">Free preview</p>
@@ -97,9 +143,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>01 / 10</b></div>
 </section>
-<section class="page" id="p2">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>The problem</span></div>
+<section class="page g" id="p2">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">The problem</span></div>
   <div class="main">
 
     <p class="kick">The part nobody tells you</p>
@@ -121,9 +166,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>02 / 10</b></div>
 </section>
-<section class="page" id="p3">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>The shift</span></div>
+<section class="page b" id="p3">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">The shift</span></div>
   <div class="main">
 
     <p class="kick">Here's the shift</p>
@@ -136,9 +180,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>03 / 10</b></div>
 </section>
-<section class="page" id="p4">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>Show, don't tell</span></div>
+<section class="page g" id="p4">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">Show, don't tell</span></div>
   <div class="main">
 
     <p class="kick">Show, don't tell</p>
@@ -157,9 +200,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>04 / 10</b></div>
 </section>
-<section class="page" id="p5">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>What comes with every look</span></div>
+<section class="page b" id="p5">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">What comes with every look</span></div>
   <div class="main">
 
     <p class="kick">What comes with every look</p>
@@ -176,9 +218,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>05 / 10</b></div>
 </section>
-<section class="page" id="p6">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>Your taste runs it</span></div>
+<section class="page g" id="p6">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">Your taste runs it</span></div>
   <div class="main">
 
     <p class="kick">Your taste runs it</p>
@@ -194,9 +235,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>06 / 10</b></div>
 </section>
-<section class="page" id="p7">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>How it runs</span></div>
+<section class="page b" id="p7">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">How it runs</span></div>
   <div class="main">
 
     <p class="kick">How it runs</p>
@@ -214,9 +254,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>07 / 10</b></div>
 </section>
-<section class="page" id="p8">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>What's inside the kit</span></div>
+<section class="page g" id="p8">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">What's inside the kit</span></div>
   <div class="main">
 
     <p class="kick">What's inside the kit</p>
@@ -231,9 +270,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>08 / 10</b></div>
 </section>
-<section class="page" id="p9">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>Honest, up front</span></div>
+<section class="page b" id="p9">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">Honest, up front</span></div>
   <div class="main">
 
     <p class="kick">Honest, up front</p>
@@ -248,9 +286,8 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>09 / 10</b></div>
 </section>
-<section class="page" id="p10">
-  <div class="band"><span class="logo">The Digital Income <em>Edit™</em></span><span>Free preview guide</span></div>
-  <div class="mast"><span>The While-You-Sleep Storefront™</span><i></i><span>Your next step</span></div>
+<section class="page g" id="p10">
+  <div class="band"><span class="bl">Free preview guide</span><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span></span><span class="br">Your next step</span></div>
   <div class="main">
 
     <p class="kick">Your next step</p>
