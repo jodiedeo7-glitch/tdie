@@ -344,3 +344,25 @@ img{max-width:100%;height:auto}
 .we .sp,.fs h2,.fs .kick,.we h2,.we .kick,.we .sub,.we .res li{text-shadow:none!important}
 @media (max-width:900px){.honest .wrap{margin:0 14px;padding:32px 20px;width:auto}}
 h1,h2{text-wrap:balance}
+
+/* hot pink outlines on every box, 10 Oct */
+.plate,.frame,.quote,.day,.tier:not(.prem),.lib .g,.tag,.prod img,.group img,.nums,
+.fc:not(.you),.look,.box:not(.g),.browser,.qs details,.pc img,.pc .blog,.ph,.label,.opts div:not(.on){border:2px solid #D62E73!important}
+.nums div+div{border-left-color:#D62E73!important}
+.lib .g .top{border-radius:inherit}
+/* premium pass, 10 Oct: no tiled glitter backgrounds. Clean solid blush,
+   glitter only as accents (the drip, stickers, stars, the thin footer strip). */
+body,.nav,.hero,.honest,.bp,.lib,.we,.fs{background:#FFF7FA!important}
+.hero{background:radial-gradient(700px 520px at 75% 45%,#FFFFFF 0%,rgba(255,255,255,0) 70%),#FFF7FA!important}
+.honest{background:#FFFFFF!important;border-top:1px solid #F7D3E2;border-bottom:1px solid #F7D3E2}
+.method{background:#FFE4EF!important}.method::before{display:none}
+.mem{background:#FFE4EF!important}
+.lib{background:#FFFFFF!important}
+.bp{background:#FFF7FA!important}
+footer{background:#FFE4EF!important}
+.sp::before{display:none!important}
+.sp h2,.sp .kick,.sp p,.sp .lines span,.sp .sub,.sp .res li{text-shadow:none!important}
+.plate,.tier,.day,.quote,.frame,.lib .g{box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
+
+.honest{background:#FFF7FA!important}.honest .wrap{border:2px solid #D62E73!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
+.we,.fs{background:#FFF7FA!important}
