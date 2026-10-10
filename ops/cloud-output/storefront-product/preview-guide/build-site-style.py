@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1080"><title>WYS Free Preview Guide</title><style>
+# WYS preview guide built from the live home page's own styles and glitter textures (src/styles/home.css), scaled for 1080x1440 pages. No drip.
+CSS='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1080"><title>WYS Free Preview Guide</title><style>
 @font-face{font-family:"Newsreader";src:url("type/newsreader-latin-600-normal.woff2") format("woff2");font-weight:600}
 @font-face{font-family:"Inter";src:url("type/inter-latin-400-normal.woff2") format("woff2");font-weight:400}
 @font-face{font-family:"Inter";src:url("type/inter-latin-600-normal.woff2") format("woff2");font-weight:600}
@@ -110,19 +111,28 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .sp{flex:1}
 .p9{gap:22px}.p9 .card{padding:30px 38px}
 </style></head><body>
-<section class="page" id="p1"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main blush glow">
+'''
+LOGO='<div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div>'
+def page(n,cls,body):
+    return f'<section class="page" id="p{n}">{LOGO}<div class="main {cls}">{body}</div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>{n:02d} / 10</b></div></section>\n'
+A={'pb':('plaid-basic.jpg','Basic: pink plaid shacket outfit laid out on wood floorboards'),'ps':('plaid-styled.jpg','Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples'),'pl':('plaid-lifestyle.jpg','Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit'),
+   'cb':('coffee-basic.jpg','Basic: pink ghost and pumpkin decor pieces on a wood sideboard'),'cs':('coffee-styled.jpg','Styled: the pink ghost coffee bar fully set up on a chippy sideboard'),'cl':('coffee-lifestyle.jpg','Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall')}
+def img(k,style=''): return f'<img src="img/{A[k][0]}" alt="{A[k][1]}" style="{style}">'
+def trio(keys): return '<div class="trio">'+''.join(f'<figure>{img(k)}<figcaption>{c}</figcaption></figure>' for k,c in zip(keys,['Basic','Styled','Lifestyle']))+'</div>'
+P=[]
+P.append(page(1,'blush glow',f'''
 <p class="kick">The While-You-Sleep Storefront™ · Free preview</p>
 <h1>Your taste.<br>A repeatable <em>system.</em></h1>
 <p class="lede"><b>Planned. Pinned. Posted. Blogged. You Slept.</b></p>
 <div style="position:relative;height:740px;margin-top:6px">
- <div class="prod" style="left:0;top:70px;width:300px;transform:rotate(-4deg)"><img src="img/plaid-basic.jpg" alt="Basic: pink plaid shacket outfit laid out on wood floorboards" style=""><span class="tag" style="left:-14px;bottom:40px">01 · Basic<b>See the pieces</b></span></div>
- <div class="prod" style="left:313px;top:10px;width:300px;z-index:2"><img src="img/plaid-styled.jpg" alt="Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples" style=""><span class="tag" style="left:20px;bottom:30px">02 · Styled<b>Feel the style</b></span></div>
- <div class="prod" style="left:626px;top:80px;width:300px;transform:rotate(4deg);z-index:3"><img src="img/plaid-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit" style=""><span class="tag" style="right:-12px;bottom:44px">03 · Lifestyle<b>Picture it</b></span></div>
+ <div class="prod" style="left:0;top:70px;width:300px;transform:rotate(-4deg)">{img('pb')}<span class="tag" style="left:-14px;bottom:40px">01 · Basic<b>See the pieces</b></span></div>
+ <div class="prod" style="left:313px;top:10px;width:300px;z-index:2">{img('ps')}<span class="tag" style="left:20px;bottom:30px">02 · Styled<b>Feel the style</b></span></div>
+ <div class="prod" style="left:626px;top:80px;width:300px;transform:rotate(4deg);z-index:3">{img('pl')}<span class="tag" style="right:-12px;bottom:44px">03 · Lifestyle<b>Picture it</b></span></div>
  <div class="sticker" style="right:-30px;top:-40px"><i></i><span>Free<b>preview</b></span></div>
 </div>
 <div class="sp"></div>
-<div class="pts"><span>Customized</span><span>Guided setup</span><span>Automatic after setup</span></div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>01 / 10</b></div></section>
-<section class="page" id="p2"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main blush glow">
+<div class="pts"><span>Customized</span><span>Guided setup</span><span>Automatic after setup</span></div>'''))
+P.append(page(2,'blush glow',f'''
 <div class="c" style="display:flex;flex-direction:column;align-items:center;gap:22px"><p class="kick">The part nobody tells you</p>
 <h2>You found the look. <em>Now what?</em></h2>
 <p class="lede" style="max-width:780px">Every single look comes with four jobs. Tomorrow brings a new look and the same four jobs.</p></div>
@@ -130,49 +140,49 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
  <div class="step"><span class="n">1</span><h3>The photos</h3></div><div class="step"><span class="n">2</span><h3>The words</h3></div>
  <div class="step"><span class="n">3</span><h3>Where people shop it</h3></div><div class="step"><span class="n">4</span><h3>Doing it all again tomorrow</h3></div></div></div>
 <div style="display:grid;grid-template-columns:330px minmax(0,1fr);gap:46px;align-items:center;margin-top:16px">
-<div class="frame" style="height:420px"><img src="img/plaid-basic.jpg" alt="Basic: pink plaid shacket outfit laid out on wood floorboards" style=""></div>
+<div class="frame" style="height:420px">{img('pb')}</div>
 <div style="display:flex;flex-direction:column;gap:18px"><p class="line" style="text-align:left">6 Pins a day. <em>By hand?</em></p>
-<p class="lede">Passive income isn't passive when you are the one doing every job.</p></div></div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>02 / 10</b></div></section>
-<section class="page" id="p3"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main white sweep">
+<p class="lede">Passive income isn't passive when you are the one doing every job.</p></div></div>'''))
+P.append(page(3,'white sweep',f'''
 <p class="kick c">Here's the shift</p>
 <h2 class="c">What if the treadmill ran <em>without you?</em></h2>
-<div class="frame" style="height:560px"><img src="img/coffee-styled.jpg" alt="Styled: the pink ghost coffee bar fully set up on a chippy sideboard" style="object-position:50% 55%"></div>
+<div class="frame" style="height:560px">{img('cs','object-position:50% 55%')}</div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center">
  <p class="lede">The While-You-Sleep Storefront™ does the jobs for you. Set it up once. Then no constantly making lists.</p>
  <figure class="quote"><span class="stars">★ ★ ★ ★ ★</span><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
-</div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>03 / 10</b></div></section>
-<section class="page" id="p4"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main tile">
+</div>'''))
+P.append(page(4,'tile',f'''
 <div class="plate" style="text-align:center;flex:1;display:flex;flex-direction:column">
  <p class="kick">Show, don't tell</p><h2 style="margin:16px 0 30px">One look. <em>Three photos.</em></h2>
  <div class="steps eq" style="grid-template-columns:repeat(3,minmax(0,1fr))">
- <div class="step"><img src="img/coffee-basic.jpg" alt="Basic: pink ghost and pumpkin decor pieces on a wood sideboard" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">1</span><h3>See the pieces</h3><p>Every piece, laid out.</p></div>
- <div class="step"><img src="img/coffee-styled.jpg" alt="Styled: the pink ghost coffee bar fully set up on a chippy sideboard" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">2</span><h3>Feel the style</h3><p>Fully styled, never bare.</p></div>
- <div class="step"><img src="img/coffee-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">3</span><h3>Picture it in your life</h3><p>Tommy Kate around her real farmhouse.</p></div>
+ <div class="step"><img src="img/coffee-basic.jpg" alt="{A['cb'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">1</span><h3>See the pieces</h3><p>Every piece, laid out.</p></div>
+ <div class="step"><img src="img/coffee-styled.jpg" alt="{A['cs'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">2</span><h3>Feel the style</h3><p>Fully styled, never bare.</p></div>
+ <div class="step"><img src="img/coffee-lifestyle.jpg" alt="{A['cl'][1]}" style="width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">3</span><h3>Picture it in your life</h3><p>Tommy Kate around her real farmhouse.</p></div>
  </div>
  <div class="sp"></div>
  <p class="small">Styling examples. AI-generated images can differ from the linked products.</p>
-</div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>04 / 10</b></div></section>
-<section class="page" id="p5"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main white">
+</div>'''))
+P.append(page(5,'white',f'''
 <div style="display:grid;grid-template-columns:400px minmax(0,1fr);gap:54px;align-items:center;flex:1">
- <div style="position:relative"><div class="frame" style="height:720px"><div class="bar"><i></i><i></i><i></i><span>Home decor · Basic</span></div><img src="img/coffee-basic.jpg" alt="Basic: pink ghost and pumpkin decor pieces on a wood sideboard" style="height:calc(100% - 46px);border-radius:0"></div>
+ <div style="position:relative"><div class="frame" style="height:720px"><div class="bar"><i></i><i></i><i></i><span>Home decor · Basic</span></div>{img('cb','height:calc(100% - 46px);border-radius:0')}</div>
   <div class="sticker" style="right:-50px;bottom:-40px;width:160px;height:160px"><i></i><span>Every<b>look</b></span></div></div>
  <div style="display:flex;flex-direction:column;gap:26px"><p class="kick">What comes with every look</p>
   <h2>The photos open the door. The words get the <em>save.</em></h2>
   <div class="nums"><div><b>3</b>Pins</div><div><b>1</b>Carousel</div><div><b>1</b>Blog post</div></div>
   <ul class="res"><li>Pinterest Pin copy: three Pins per look.</li><li>The Instagram post: carousel of lifestyle, styled, clean.</li><li>Shop-the-look blog post: one page for the whole look.</li><li>Each Pin links to the Amazon list its products came from.</li></ul></div>
-</div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>05 / 10</b></div></section>
-<section class="page" id="p6"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main bub glow">
+</div>'''))
+P.append(page(6,'bub glow',f'''
 <div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:34px 40px"><p class="kick">Your taste runs it</p><h2>My pink. Your <em>recipe.</em></h2></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px">
- <div class="card"><span class="nm">An outfit</span><div class="trio"><figure><img src="img/plaid-basic.jpg" alt="Basic: pink plaid shacket outfit laid out on wood floorboards" style=""><figcaption>Basic</figcaption></figure><figure><img src="img/plaid-styled.jpg" alt="Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples" style=""><figcaption>Styled</figcaption></figure><figure><img src="img/plaid-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit" style=""><figcaption>Lifestyle</figcaption></figure></div></div>
- <div class="card gcard"><span class="nm">Home decor</span><div class="trio"><figure><img src="img/coffee-basic.jpg" alt="Basic: pink ghost and pumpkin decor pieces on a wood sideboard" style=""><figcaption>Basic</figcaption></figure><figure><img src="img/coffee-styled.jpg" alt="Styled: the pink ghost coffee bar fully set up on a chippy sideboard" style=""><figcaption>Styled</figcaption></figure><figure><img src="img/coffee-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall" style=""><figcaption>Lifestyle</figcaption></figure></div></div>
+ <div class="card"><span class="nm">An outfit</span>{trio(['pb','ps','pl'])}</div>
+ <div class="card gcard"><span class="nm">Home decor</span>{trio(['cb','cs','cl'])}</div>
 </div>
 <div class="plate" style="padding:40px 44px"><p class="kick" style="text-align:center;margin-bottom:24px">Three choices you make once</p><div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><span class="n" style="font-size:64px">1</span><h3 style="font-size:32px">Your theme</h3></div>
  <div class="step"><span class="n" style="font-size:64px">2</span><h3 style="font-size:32px">Your visuals</h3><p>Your own persona, or flat lays only.</p></div>
  <div class="step"><span class="n" style="font-size:64px">3</span><h3 style="font-size:32px">Your storefront path</h3></div></div></div>
-<div class="card" style="text-align:center;padding:30px 36px"><p style="color:var(--ink)"><b>Picture your first look:</b> a weekend outfit, a seasonal shelf, a gift guide your people would save.</p></div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>06 / 10</b></div></section>
-<section class="page" id="p7"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main tile">
+<div class="card" style="text-align:center;padding:30px 36px"><p style="color:var(--ink)"><b>Picture your first look:</b> a weekend outfit, a seasonal shelf, a gift guide your people would save.</p></div>'''))
+P.append(page(7,'tile',f'''
 <div class="plate" style="text-align:center"><p class="kick">How it runs</p><h2 style="margin:16px 0 40px">Three steps. Then it <em>keeps going.</em></h2>
 <div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><span class="n">1</span><h3>Set it up once</h3></div>
@@ -181,16 +191,16 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 <div class="nums" style="margin-top:44px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Photos per look</div></div></div>
 <div class="sp"></div>
 <div class="card gcard"><span class="nm">You choose</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
-<div class="sp"></div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>07 / 10</b></div></section>
-<section class="page" id="p8"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main blush">
+<div class="sp"></div>'''))
+P.append(page(8,'blush',f'''
 <div style="display:flex;flex-direction:column;gap:18px"><p class="kick">What's inside the kit</p><h2>The pieces behind the <em>pretty.</em></h2></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;flex:1;margin-top:10px">
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">1</span>01 · First</p><h3>Set it up</h3><p>A guided setup that records your choices.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">2</span>02 · Second</p><h3>Build the looks</h3><p>The themed-look recipe for any theme or season.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">3</span>03 · Third</p><h3>Keep it running</h3><p>Scheduled tasks, plus a missed-run check.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">4</span>04 · Last</p><h3>Extend it</h3><p>Optional blog and Instagram. Outfit of the Day recipe for Brand Closet™ members.</p></div>
-</div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>08 / 10</b></div></section>
-<section class="page" id="p9"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main bub glow p9">
+</div>'''))
+P.append(page(9,'bub glow p9',f'''
 <div class="card c" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 40px"><p class="kick">Honest, up front</p><h2 style="font-size:56px">A quick fit check. Then your <em>first look.</em></h2></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px">
  <div class="card"><span class="nm">Your tools</span><p style="margin-top:14px">Claude desktop and Chrome, Amazon Associates or Influencer, Pinterest, image tools.</p></div>
@@ -198,15 +208,15 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 </div>
 <div class="card"><span class="nm">Your setup</span><p style="margin-top:14px">Your own accounts. The computer needs to be on when the tasks run, and the Amazon list step uses the browser on that computer. Tool costs are separate.</p></div>
 <div class="card gcard"><span class="nm">How it runs</span><p style="margin-top:14px;font-weight:600;color:var(--ink)">Automatic by default, with the option to approve everything yourself. We recommend turning approvals on for your first few days.</p></div>
-<div class="card" style="text-align:center;padding:18px"><p class="line" style="font-size:30px">The kit does not promise sales or income.</p></div></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>09 / 10</b></div></section>
-<section class="page" id="p10"><div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div><div class="main blush glow">
+<div class="card" style="text-align:center;padding:18px"><p class="line" style="font-size:30px">The kit does not promise sales or income.</p></div>'''))
+P.append(page(10,'blush glow',f'''
 <div class="c" style="display:flex;flex-direction:column;align-items:center;gap:18px"><p class="kick">Your next step</p><h1>Ready to build around <em>your taste?</em></h1></div>
 <div style="position:relative;align-self:center;width:760px">
- <div class="frame" style="height:560px"><img src="img/plaid-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit" style="object-position:50% 30%"></div>
+ <div class="frame" style="height:560px">{img('pl','object-position:50% 30%')}</div>
  <span class="tag" style="left:-40px;bottom:60px">Planned. Pinned. Posted.<b>Blogged. You Slept.</b></span>
  <div class="sticker" style="right:-60px;top:-50px"><i></i><span>Your<b>taste</b></span></div>
 </div>
 <div class="sp"></div>
 <div style="display:flex;justify-content:center"><a class="btn" href="https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront">Explore The While-You-Sleep Storefront™</a></div>
-<p class="small c">The kit does not promise sales or income.</p></div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>10 / 10</b></div></section>
-</body></html>
+<p class="small c">The kit does not promise sales or income.</p>'''))
+open('index.html','w').write(CSS+''.join(P)+'</body></html>\n')
