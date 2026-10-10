@@ -2,7 +2,7 @@
    composition, mat depth, scallops, paper tabs and photo silhouettes. */
 .wys-world{--wys-pink:#B8245F;--wys-hot:#D62E73;--wys-mat:#FFD4E6;--wys-lav:#F1EAFB;--wys-ink:#1A1417;--wys-shadow:0 16px 35px #B8245F1C;background:#FFF0F6;color:var(--wys-ink);font:400 17px/1.7 Jost,system-ui,sans-serif}
 .wys-world *{box-sizing:border-box}
-.wys-world :is(h1,h2,h3){margin:0 0 18px;font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;line-height:1.16;letter-spacing:-.02em}
+.wys-world :is(h1,h2,h3){margin:0 0 18px;font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;line-height:1.16;letter-spacing:0}
 .wys-world h1{font-size:52px;max-width:21ch}.wys-world h2{font-size:40px;max-width:28ch}.wys-world h3{font-size:26px}.wys-world :is(h1,h2,h3) em{font-style:normal;color:var(--wys-pink)}
 .wys-world p{margin:0 0 18px}.wys-world a{text-decoration:none}.wys-world [id]{scroll-margin-top:100px}
 .wys-wrap{max-width:1200px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}

@@ -25,7 +25,7 @@
 .wc-hero{padding-block:44px 54px;background:radial-gradient(ellipse at 80% 30%,#ffe1ef 0,transparent 60%),#fff5fa}
 .wc-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"copy phone";gap:40px;align-items:center}
 .wc-hero-copy{grid-area:copy;min-width:0}
-.wys-world .wc-hero h1{font:600 38px/1.16 Jost,sans-serif;letter-spacing:-.025em;color:#a91357;margin:0 0 20px}
+.wys-world .wc-hero h1{font:600 38px/1.16 Jost,sans-serif;letter-spacing:0;color:#a91357;margin:0 0 20px}
 .wys-world .wc-hero h1 em{color:#914cb5}
 .wys-world .wc-hero-line{font:500 19px/1.6 Jost,sans-serif;color:var(--wc-ink);letter-spacing:0;text-transform:none;margin:0 0 6px;max-width:34ch}
 .wc-hero-line b{color:var(--wc-hot-ink)}
@@ -237,15 +237,15 @@
 @media (min-width:701px){.wc-hero-cta-mobile{display:none!important}}
 
 /* Headline lock: same sizes as the section h2s and waitlist h1 these replace */
-.wys-world :is(.wc-section,.wc-final,.wc-hero) h2{font-size:40px;line-height:1.18;letter-spacing:-.02em;color:#b8245f;max-width:none}
+.wys-world :is(.wc-section,.wc-final,.wc-hero) h2{font-size:40px;line-height:1.18;letter-spacing:0;color:#b8245f;max-width:none}
 .wys-world :is(.wc-section,.wc-final,.wc-hero) h2 em{color:#a15dba}
-.wys-world .wc-hero h1.wc-h1-wait{font-size:51.84px;line-height:1.12;letter-spacing:-.025em;color:#1a1417}
+.wys-world .wc-hero h1.wc-h1-wait{font-size:51.84px;line-height:1.12;letter-spacing:0;color:#1a1417}
 .wys-world .wc-hero h1.wc-h1-wait em{color:#b8245f}
 @media (max-width:700px){
  .wys-world :is(.wc-section,.wc-final,.wc-hero) h2{font-size:27.3px}
  .wys-world .wc-hero h1.wc-h1-wait{font-size:31.2px}
 }
-.wys-world .wc-hero h1:not(.wc-h1-wait){font-size:38px!important;line-height:44.08px!important;letter-spacing:-.025em!important}
+.wys-world .wc-hero h1:not(.wc-h1-wait){font-size:38px!important;line-height:44.08px!important;letter-spacing:0!important}
 @media (max-width:700px){.wys-world .wc-hero h1:not(.wc-h1-wait){font-size:30px!important;line-height:34.8px!important}}
 
 .wys-world :is(.wc-section,.wc-final) h3{text-wrap:balance}
