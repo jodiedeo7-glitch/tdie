@@ -118,15 +118,15 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .pin h4{margin:16px 6px 6px;font:700 21px/1.3 Inter;color:var(--ink)}
 .pin .ln{margin:0 6px;font:600 18px/1.3 Inter;color:var(--deep)}
 .pin .rl{display:inline-block;margin:0 6px 8px;padding:6px 12px;border-radius:999px;background:#FFE4EF;font:700 18px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
-.phone{width:440px;border-radius:56px;background:#fff;padding:18px;box-shadow:0 60px 90px -44px rgba(110,10,50,.75);border:2px solid #F3D3E0}
+.phone{width:470px;border-radius:56px;background:#fff;padding:18px;box-shadow:0 60px 90px -44px rgba(110,10,50,.75);border:2px solid #F3D3E0}
 .ig-top{display:flex;align-items:center;gap:12px;padding:8px 8px 14px;font:700 20px/1 Inter}
 .ig-top i{width:40px;height:40px;border-radius:50%;background:url(img/brand/gl-hot.webp) 0 0/120px;border:3px solid #fff;box-shadow:0 0 0 2px var(--pink)}
 .ig-img{aspect-ratio:4/5;border-radius:10px;overflow:hidden}.ig-img img{width:100%;height:100%;object-fit:cover;display:block}
 .dots{display:flex;justify-content:center;gap:8px;padding:14px 0 8px}.dots i{width:9px;height:9px;border-radius:50%;background:#F3D3E0}.dots i:first-child{background:var(--pink)}
 .ig-cap{padding:4px 8px 10px;font:400 19px/1.45 Inter;color:var(--ink)}.ig-cap b{font-weight:700}
 .slides{display:grid;gap:18px}
-.slide{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:center;background:#fff;border-radius:22px;padding:12px;box-shadow:0 30px 50px -36px rgba(110,10,50,.6)}
-.slide img{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
+.slide{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;align-items:center;background:#fff;border-radius:22px;padding:12px;box-shadow:0 30px 50px -36px rgba(110,10,50,.6)}
+.slide img{width:170px;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
 .slide b{display:block;font:700 18px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--deep)}
 .slide h3{font-size:32px;margin-top:8px}
 .browser{flex:none;width:650px;align-self:center;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 60px 90px -44px rgba(110,10,50,.7);border:2px solid #F3D3E0}
@@ -179,7 +179,7 @@ P.append(page(3,'white sweep',f'''
 </div>'''))
 P.append(page(4,'tile',f'''
 <div class="plate" style="text-align:center;flex:1;display:flex;flex-direction:column">
- <p class="kick">Show, don't tell</p><h2 style="margin:16px 0 30px">One look. <em>Three photos.</em></h2>
+ <p class="kick">One look, start to finish</p><h2 style="margin:16px 0 30px">One look. <em>Three photos.</em></h2>
  <div class="steps eq" style="grid-template-columns:repeat(3,minmax(0,1fr))">
  <div class="step"><img src="img/coffee-basic.jpg" alt="{A['cb'][1]}" style="width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">1</span><h3>See the pieces</h3><p>Every piece, laid out.</p></div>
  <div class="step"><img src="img/coffee-styled.jpg" alt="{A['cs'][1]}" style="width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px"><span class="n" style="display:block;margin-top:16px;font-size:64px">2</span><h3>Feel the style</h3><p>Fully styled, never bare.</p></div>
@@ -199,9 +199,9 @@ P.append(page(5,'blush glow',f'''
 <div class="nums" style="margin-top:10px"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Pins per look</div></div>'''))
 P.append(page(6,'white sweep',f'''
 <div style="display:flex;flex-direction:column;gap:16px"><p class="kick">What one look makes · 02 Instagram</p><h2>One carousel. <em>Three slides.</em></h2></div>
-<div style="display:grid;grid-template-columns:440px minmax(0,1fr);gap:48px;align-items:center;margin-top:10px">
- <div class="phone"><div class="ig-top"><i></i>your account</div><div class="ig-img">{img('cl','object-position:50% 40%')}</div><div class="dots"><i></i><i></i><i></i></div>
- <p class="ig-cap"><b>your account</b> I wanted Halloween in the kitchen without anything that would scare the kids at breakfast.</p></div>
+<div style="display:grid;grid-template-columns:470px minmax(0,1fr);gap:40px;align-items:center;margin-top:20px">
+ <div class="phone"><div class="ig-top"><i></i>yourstorefront</div><div class="ig-img">{img('cl','object-position:50% 40%')}</div><div class="dots"><i></i><i></i><i></i></div>
+ <p class="ig-cap"><b>yourstorefront</b> I wanted Halloween in the kitchen without anything that would scare the kids at breakfast.</p></div>
  <div class="slides">
   <div class="slide">{img('cl')}<div><b>Slide 1</b><h3>Lifestyle</h3></div></div>
   <div class="slide">{img('cs')}<div><b>Slide 2</b><h3>Styled</h3></div></div>
@@ -255,10 +255,11 @@ P.append(page(11,'bub glow p9',f'''
 P.append(page(12,'blush glow',f'''
 <div class="c" style="display:flex;flex-direction:column;align-items:center;gap:18px"><p class="kick">Your next step</p><h1>Ready to build around <em>your taste?</em></h1></div>
 <div style="position:relative;align-self:center;width:760px">
- <div class="frame" style="height:560px">{img('pl','object-position:50% 30%')}</div>
- <span class="tag" style="left:-40px;bottom:60px">Planned. Pinned. Posted.<b>Blogged. You Slept.</b></span>
+ <div class="frame" style="height:500px">{img('pl','object-position:50% 30%')}</div>
+ 
  
 </div>
+<p class="line" style="font-size:40px">Planned. Pinned. Posted. Blogged. <em>You Slept.</em></p>
 <div class="sp"></div>
 <div style="display:flex;justify-content:center"><a class="btn" href="https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront">Explore The While-You-Sleep Storefront™</a></div>
 <p class="small c">The kit does not promise sales or income.</p>'''))
