@@ -358,3 +358,32 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life .life-reading-sheet .life-product-layout{display:block;margin-top:16px}
 .life .life-reading-sheet>.life-article-actions{margin-bottom:16px}
 @media(max-width:760px){.life .life-reading-sheet .life-photo-track>.life-photo{flex-basis:260px;max-width:260px!important}.life .life-reading-sheet .life-photo-track{gap:24px;padding-inline:12px}.life .life-reading-sheet .life-photo-track>.life-photo img{max-height:370px!important}}
+
+/* Paper-clip polaroids for the top photo set (Jodie, 10 October 2026). */
+.life .life-reading-sheet .life-photo-track{padding:40px 22px 30px}
+.life .life-reading-sheet .life-clip-photo{--pf:#f2a6c8;--pf-light:#fbd2e3;--pf-edge:#c96b97;position:relative;isolation:isolate;padding:12px 12px 0!important;background:linear-gradient(180deg,var(--pf) 0%,#f5b4d1 82%,var(--pf-light) 100%)!important;border:1.5px solid var(--pf-edge)!important;border-radius:3px!important;box-shadow:0 10px 18px #9a1d5022,inset 0 0 0 2px #fde3ee!important;transform:rotate(-1.5deg)}
+.life .life-reading-sheet .life-clip-photo:nth-child(even){transform:rotate(1.5deg)}
+.life .life-reading-sheet .life-clip-photo::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#eb98bd,#f3b3cf);border:1.5px solid var(--pf-edge);border-radius:3px;transform:rotate(4deg) translate(6px,4px);box-shadow:0 6px 12px #9a1d501a}
+.life .life-reading-sheet .life-clip-photo:nth-child(even)::before{transform:rotate(-4deg) translate(-6px,4px)}
+.life .life-reading-sheet .life-clip-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 88%,#fff 0 1px,transparent 1.6px),radial-gradient(circle at 74% 93%,#fff 0 1.2px,transparent 1.8px),radial-gradient(circle at 92% 30%,#fff 0 1px,transparent 1.6px),radial-gradient(circle at 6% 42%,#fff 0 1px,transparent 1.5px),radial-gradient(circle at 45% 97%,#fff8 0 1px,transparent 1.5px);opacity:.9}
+.life .life-reading-sheet .life-clip-photo img{position:relative;display:block;width:100%;height:auto;background:#fff;border:2px solid #fde3ee!important;outline:1px solid var(--pf-edge)!important;box-shadow:inset 0 0 0 1px #0000}
+.life .life-reading-sheet .life-clip-photo figcaption{position:relative;margin:0!important;padding:12px 52px 16px 6px!important;background:transparent!important;color:#7d1a45;font:500 25px/1.15 Caveat,cursive!important;text-align:left;border:0!important}
+.life .life-reading-sheet .life-photo-count{position:absolute;right:10px;bottom:10px;z-index:1;padding:3px 8px;border-radius:999px;background:#fff6fa;border:1px solid var(--pf-edge);color:#9a1d50;font:600 11px/1.2 Inter,sans-serif;letter-spacing:.06em}
+.life .life-reading-sheet .life-clip{position:absolute;top:-30px;left:50%;z-index:3;width:24px;height:66px;transform:translateX(-50%) rotate(4deg);filter:drop-shadow(1px 2px 1.5px #6b3d0c40);pointer-events:none}
+.life .life-reading-sheet .life-clip-photo:nth-child(even) .life-clip{transform:translateX(-50%) rotate(-5deg)}
+
+/* Related looks: loose, tilted pink polaroids laid out on the page. */
+.life .life-reading-sheet .life-grid-pair{gap:40px}
+.life .life-reading-sheet .life-card{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible}
+.life .life-reading-sheet .life-card-photo{position:relative;height:auto!important;aspect-ratio:auto!important;max-width:260px;margin:14px auto 0;padding:12px 12px 44px!important;background:linear-gradient(180deg,#f4b0cf,#f8c4dc)!important;border:1.5px solid #c96b97!important;border-radius:3px!important;box-shadow:0 10px 18px #9a1d5022,inset 0 0 0 2px #fde3ee;transform:rotate(-3deg)}
+.life .life-reading-sheet .life-grid>li:nth-child(even) .life-card-photo{transform:rotate(3deg)}
+.life .life-reading-sheet .life-card-photo img{height:300px!important;width:100%;object-fit:cover!important;background:#fff;border:2px solid #fde3ee!important;outline:1px solid #c96b97}
+.life .life-reading-sheet .life-card-photo::after{content:"";position:absolute;right:-14px;bottom:-12px;width:42px;height:42px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.35' stop-color='%23ffd6e8'/%3E%3Cstop offset='.8' stop-color='%23f08ab8'/%3E%3Cstop offset='1' stop-color='%23d4669a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath d='M20 3l4.6 10.2 11 1.2-8.2 7.5 2.3 10.9L20 27.3l-9.7 5.5 2.3-10.9-8.2-7.5 11-1.2z' fill='url(%23g)' stroke='%23c95a8e' stroke-width='1' stroke-linejoin='round'/%3E%3Cellipse cx='15' cy='13' rx='3' ry='1.6' fill='%23fff' opacity='.85' transform='rotate(-30 15 13)'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 3px #9a1d5030);transform:rotate(12deg)}
+.life .life-reading-sheet .life-card-copy{padding:22px 4px 0!important;align-items:center;text-align:center}
+@media(max-width:760px){.life .life-reading-sheet .life-photo-track{padding:40px 18px 28px}.life .life-reading-sheet .life-clip-photo figcaption{font-size:23px!important}.life .life-reading-sheet .life-card-photo{max-width:230px}.life .life-reading-sheet .life-card-photo img{height:260px!important}}
+.life .life-reading-sheet .life-card-photo img{border-radius:0!important}
+.life .life-reading-sheet .life-card-copy .life-button{align-self:center}
+.life .life-reading-sheet .life-clip{width:28px;height:76px;top:-36px}
+.life .life-reading-sheet .life-photo-track{padding-top:46px}
+.life .life-reading-sheet .life-clip-photo figcaption{font-size:23px!important;padding-right:44px!important}
+.life .life-reading-sheet .life-clip-photo figcaption{padding:10px 24px 30px 6px!important}.life .life-reading-sheet .life-photo-count{right:8px;bottom:7px;padding:2px 7px;font-size:10px}
