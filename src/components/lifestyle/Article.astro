@@ -16,7 +16,7 @@ const completeExample = ['pretty-wicked-entryway','ghoul-fuel-coffee-bar'].inclu
 const photoCaption = (image) => {
   if (completeExample) return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' ? look.slug === 'ghoul-fuel-coffee-bar' ? 'Coffee with Tommy Kate' : 'Tommy Kate at the door' : 'The styled scene';
   if (image.caption && !/generated inspiration|AI model|styling extras|contextual styling|shop the listed/i.test(image.caption)) return image.caption;
-  return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' && look.category === 'clothing' ? 'Tommy Kate wearing the look' : 'The styled scene';
+  return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' && look.category === 'clothing' ? 'Tommy Kate wearing the look' : image.role === 'lifestyle' ? 'Tommy Kate at home' : 'The styled scene';
 };
 const shoppingPending = look.shoppingStatus === 'pending';
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
