@@ -1,0 +1,13 @@
+---
+// Hero visual: one night's output on a phone. 2 looks x 3 pins = 6 pins.
+import WysPhone from './WysPhone.astro';
+import WysPin from './WysPin.astro';
+import {liveLooks} from '../data/wys-live.js';
+const [ghost, plaid] = liveLooks;
+const cols = [[[ghost, 'basic'], [plaid, 'styled'], [ghost, 'lifestyle']], [[plaid, 'basic'], [ghost, 'styled'], [plaid, 'lifestyle']]];
+---
+<div class="wc-night">
+ <WysPhone label="Example: one night, 6 pins" app="Pinterest" class="wc-phone-hero">
+  <div class="wc-feed">{cols.map((col) => <div class="wc-feed-col">{col.map(([look, role], i) => <WysPin look={look} role={role} sizes="(max-width:700px) 90px, 120px" eager={i < 2}/>)}</div>)}</div>
+ </WysPhone>
+</div>

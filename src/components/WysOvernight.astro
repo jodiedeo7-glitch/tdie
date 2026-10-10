@@ -1,0 +1,15 @@
+---
+// The overnight strip: 11 pm you log off, 7 am it’s posted. Each stop shows
+// the actual output, not a label.
+import {Image} from 'astro:assets';
+import WysPin from './WysPin.astro';
+import {liveLooks} from '../data/wys-live.js';
+const [ghost, plaid] = liveLooks;
+---
+<ol class="wc-overnight" aria-label="What happens overnight">
+ <li class="wc-night-stop wc-stop-off"><span class="wc-time">11 pm</span><h3>You log off</h3><p>Computer on, signed into Amazon. You go to bed.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 looks planned</h3><div class="wc-stop-art wc-stop-two"><Image src={ghost.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/><Image src={plaid.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/></div><p>Each with a Basic, Styled and Lifestyle photo.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>6 pins made</h3><div class="wc-stop-art wc-stop-six">{[ghost, plaid].flatMap((l) => ['basic', 'styled', 'lifestyle'].map((r) => <WysPin look={l} role={r} sizes="50px"/>))}</div><p>3 per look, each linked to its Idea List.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 blog posts written</h3><div class="wc-stop-art wc-stop-blog"><Image src={ghost.blogPhone} alt="" widths={[200, 400]} sizes="100px"/></div><p>One for each look, with the finds.</p></li>
+ <li class="wc-night-stop wc-stop-on"><span class="wc-time" style="background-image:url(/images/brand/sh-bub.webp)">7 am</span><h3>It’s posted</h3><p>Pins, blog posts and an Instagram carousel, out in the world before your coffee.</p></li>
+</ol>

@@ -1,0 +1,9 @@
+---
+// The one call to action. Reads WYS_CTA so presale day is a one-line swap.
+import {WYS_CTA} from '../data/wys-live.js';
+const {note, align = 'center'} = Astro.props;
+---
+<div class={`wc-cta wc-cta-${align}`}>
+ <a class="wc-button" href={WYS_CTA.href}>{WYS_CTA.label} <span aria-hidden="true">→</span></a>
+ {note && <p class="wc-cta-note">{note}</p>}
+</div>

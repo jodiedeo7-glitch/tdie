@@ -1,12 +1,52 @@
 ---
 import WysFrame from '../../../components/WysFrame.astro';
-import WysPhoto from '../../../components/WysPhoto.astro';
-import WysCollage from '../../../components/WysCollage.astro';
 import FreebieForm from '../../../components/FreebieForm.astro';
-import {WYS_ROOT,examples} from '../../../data/wys.js';
+import WysNightFeed from '../../../components/WysNightFeed.astro';
+import WysYouDo from '../../../components/WysYouDo.astro';
+import WysOffer from '../../../components/WysOffer.astro';
+import {WYS_ROOT} from '../../../data/wys.js';
+import {liveLooks} from '../../../data/wys-live.js';
 ---
-<WysFrame current="waitlist" title="While-You-Sleep Storefront™ Waitlist" description="Join the While-You-Sleep Storefront™ waitlist and get the launch email the moment it opens." ogImage={examples[1].photos[2].src.src}>
- <header class="wys-wrap wys-section wys-waitlist-hero wx-waitlist"><div class="wys-waitlist-copy"><p class="wys-ribbon">The While-You-Sleep Storefront™</p><h1>Your next idea<br/><em>starts here.</em></h1><p class="wys-lede">Join the waitlist and you’ll get the launch email the moment it opens.</p><p>While you wait, explore the looks it makes below.</p><div class="wys-waitlist-form"><span class="wys-file-tab">THE WHILE-YOU-SLEEP STOREFRONT™ / WAITLIST</span><FreebieForm action="/api/wys-waitlist" heading="Get the launch email" button="Join the waitlist" sub="You’ll get one email when it opens, plus updates from The Digital Income Edit™. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the launch email."/></div><div class="wys-waitlist-fine"><span class="wys-status">Not open yet</span><p>Joining the waitlist doesn’t place an order. It just makes sure you hear first.</p></div></div><div class="wys-waitlist-art"><WysCollage look={1}/></div></header>
- <section class="wys-example-band"><div class="wys-wrap wys-section"><div class="wys-section-head"><div><p class="wys-label">Plenty of pretty to explore now</p><h2>See the idea in action<br/><em>while you’re here.</em></h2></div><p>Five selected products. Three styling images. Three Pinterest graphics. An Instagram carousel. A full article.</p></div><div class="wys-browse-pair">{examples.map((example,i)=><a class="wys-browse-card" href={`${WYS_ROOT}/look-inside#${example.slug}`}><WysPhoto photo={example.photos[1]} treatment={i?'lavender':'double'} caption={example.category}/><span class="wys-label">The Lifestyle edit</span><h3>{example.name}</h3><span class="wys-button">Explore the complete example <span aria-hidden="true">→</span></span></a>)}</div></div></section>
- <section class="wys-wrap wys-section"><div class="wys-ticket wys-waitlist-ticket"><div><p class="wys-label">Curious about the process?</p><h2>The photographs are only<br/><em>one part of the story.</em></h2></div><div><p>Open the two Halloween examples and see how one shopping idea carries through every piece.</p><a class="wys-button" href={WYS_ROOT+'/look-inside'}>Take a look inside <span aria-hidden="true">→</span></a></div></div></section>
+<WysFrame focus current="waitlist" title="The While-You-Sleep Storefront™ Waitlist" description="Join the waitlist for The While-You-Sleep Storefront™ and get the email the moment it opens. Member presale opens Tuesday 13 October 2026." ogImage={liveLooks[0].photos.lifestyle.src.src}>
+ <header class="wc-hero">
+  <div class="wys-wrap wc-wait-grid">
+   <div class="wc-hero-copy">
+    <h1 class="wc-h1-wait">Be first in<br/><em>when it opens.</em></h1>
+    <p class="wc-hero-line">The While-You-Sleep Storefront™ plans <b>2&nbsp;looks</b>, makes <b>6&nbsp;Pinterest pins</b>, writes the blog posts and posts to Instagram. Every night, while you sleep.</p>
+    <div class="wc-wait-form">
+     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Not open yet</span>
+     <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist" button="Join the waitlist" sub="You’ll get the email the moment it opens, plus updates from The Digital Income Edit™. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the email when it opens."/>
+    </div>
+    <p class="wc-wait-fine">Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026. Full launch Friday 16 October 2026.</p>
+   </div>
+   <div class="wc-hero-phone"><WysNightFeed/></div>
+  </div>
+ </header>
+
+ <section class="wc-section" style="background:#fff">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">You do / It does</p>
+    <h2>Set it up once.<br/><em>It does the rest.</em></h2>
+   </div>
+   <WysYouDo/>
+  </div>
+ </section>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">The dates</p>
+   <h2>Members first.<br/><em>Then everyone.</em></h2>
+  </div>
+  <WysOffer/>
+ </section>
+
+ <div class="wc-final" style="background-image:url(/images/brand/gl-tile.webp)">
+  <div class="wc-final-card">
+   <p class="wc-kicker">While you wait</p>
+   <h2>See every piece of<br/><em>one night’s work.</em></h2>
+   <p class="wc-body">Two real looks, start to finish: the photos, the pins, the live blog posts and the carousels.</p>
+   <div class="wc-cta"><a class="wc-button" href={WYS_ROOT + '/look-inside'}>Look inside <span aria-hidden="true">→</span></a></div>
+  </div>
+ </div>
 </WysFrame>

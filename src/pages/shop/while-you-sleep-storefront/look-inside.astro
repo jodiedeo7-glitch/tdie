@@ -1,24 +1,68 @@
 ---
-import WysDecor from '../../../components/WysDecor.astro';
-import WysShelf from '../../../components/WysShelf.astro';
-import WysStories from '../../../components/WysStories.astro';
-import WysFrame from '../../../components/WysFrame.astro';
-import WysHero from '../../../components/WysHero.astro';
-import WysPackage from '../../../components/WysPackage.astro';
-import WysWorksheet from '../../../components/WysWorksheet.astro';
-import WysKit from '../../../components/WysKit.astro';
-import WysFaq from '../../../components/WysFaq.astro';
 import {Image} from 'astro:assets';
-import {packages} from '../../../data/wys-packages.js';
-import {WYS_ROOT} from '../../../data/wys.js';
+import WysFrame from '../../../components/WysFrame.astro';
+import WysCta from '../../../components/WysCta.astro';
+import WysPin from '../../../components/WysPin.astro';
+import WysLookFlow from '../../../components/WysLookFlow.astro';
+import WysOffer from '../../../components/WysOffer.astro';
+import {liveLooks, roles} from '../../../data/wys-live.js';
+const [ghost, plaid] = liveLooks;
 ---
-<WysFrame current="inside" title="Look Inside WYS | Two Complete Content Examples" description="Explore two complete WYS content examples: three photographs, three Pins, three Instagram slides, a full article, five finds and copy for each look." ogImage={packages[0].photos[1].src.src}>
- <WysHero><p class="wys-ribbon">Look inside</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Two pink Halloween examples</p><p class="wys-lede">Pretty Wicked: a pink Halloween entryway.<br/>Ghoul Fuel: a pink Halloween coffee bar.<br/>See the photos, Pins, Instagram carousel and full blog story for each.</p><a class="wys-button" href="#choose-package">Explore the complete examples ↓</a></WysHero>
- <WysShelf inside/><div class="wx-ticker"><span>SELECT THE PIECES</span><span>STYLE THE LOOK</span><span>MAKE THE CONTENT</span><span>CHECK THE DESTINATIONS</span></div>
- <WysStories inside/>
- <div class="wys-wrap wx-packages">{packages.map((e,i)=><WysPackage example={e} number={i+1}/>)}</div>
- <section class="wx-process-band"><div class="wys-wrap wys-section"><div class="wx-centered"><p class="wys-label">One product selection does more of the work.</p><h2>This is the part you shouldn’t have to reinvent for every post.</h2><p>The products give the visuals their direction. The visuals help tell the story. The article explains the look. The Pins and carousel introduce it.</p><p>WYS is designed to give you a repeatable way to create those pieces around your own shopping ideas.</p><p>Your theme changes. Your products change. You still have a process to follow.</p></div></div></section>
+<WysFrame focus current="inside" title="Look Inside The While-You-Sleep Storefront™ | One night’s work" description="See every piece of two looks The While-You-Sleep Storefront™ built: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel for each." ogImage={plaid.photos.styled.src.src}>
+ <header class="wc-hero">
+  <div class="wys-wrap">
+   <div class="wc-head" style="margin-bottom:0">
+    <h1>Look inside<br/><em>one night’s work.</em></h1>
+    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Two looks The While-You-Sleep Storefront™ built, every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
+    <WysCta note="Member presale opens Tuesday 13 October."/>
+   </div>
+   <div class="wc-six">{[ghost, plaid].flatMap((look) => roles.map((r) => <figure>{r.key === 'basic' ? <WysPin look={look} role="basic" sizes="(max-width:900px) 30vw, 180px" eager/> : <Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 180px" loading="eager"/>}<figcaption>{r.name}</figcaption></figure>))}</div>
+  </div>
+ </header>
 
- <section class="wys-wrap wys-section"><div class="wx-last-call wz-example-finale"><WysDecor class="wz-finale-flower"/><p class="wys-label">Two looks. The complete content.</p><h2>Start with the finds.<br/><em>See where the idea goes.</em></h2><div class="wz-finale-looks">{packages.map(e=><article class="wz-finale-look"><h3>{e.name}</h3><p>{e.category}</p><div class="wz-finale-photos">{e.photos.map((photo,i)=><figure><Image src={photo.src} alt={photo.alt} widths={[240,400]} sizes="(max-width:700px) 23vw, 130px"/><figcaption>{['The finds','The setting','The moment'][i]}</figcaption></figure>)}</div><p>3 styling images · 3 Pinterest Pins · 1 Instagram carousel · a full article + copy</p><a class="wys-button" href={`#${e.slug}`} data-return-example={e.slug}>See the complete {e.name} package ↑</a></article>)}</div><p>Your own products and theme give the next look its direction. WYS gives you a process for building the images, article and social content around them.</p><div class="wys-actions"><a href={WYS_ROOT} class="wys-button">Explore the WYS system →</a><a href={WYS_ROOT+'/waitlist'} class="wys-text-link">Join the waitlist →</a></div></div></section>
- <script>document.querySelectorAll<HTMLAnchorElement>('[data-return-example]').forEach(a=>a.addEventListener('click',()=>document.getElementById(a.dataset.returnExample!)?.querySelector<HTMLButtonElement>('[data-panel-button="0"]')?.click()));</script>
+ {liveLooks.map((look, i) => <section class={`wc-section ${i ? '' : 'wc-flow-band'}`} id={look.slug}>
+  <div class="wys-wrap">
+   <div class="wc-look-head">
+    <p class="wc-kicker">Look {i + 1} of 2 · {look.category}</p>
+    <h2>{look.name}</h2>
+    <p>The blog post is live on The Digital Income Edit™. The pins and carousel are built from the same three photos and shown here as examples.</p>
+    <a class="wc-button wc-button-small" href={look.url} target="_blank" rel="noopener">Open the live blog post <span aria-hidden="true">↗</span></a>
+   </div>
+   <WysLookFlow look={look}/>
+  </div>
+ </section>)}
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">What you’re getting</p>
+   <h2>The setup, in plain words</h2>
+  </div>
+  <div class="wc-facts">
+   <div><h3>A website, not a PDF</h3><p>You get access to a website, so it can be updated as things change.</p></div>
+   <div><h3>15 minutes to start</h3><p>The Quick Start takes about 15 minutes. Customizing it takes about an hour.</p></div>
+   <div><h3>Claude, ChatGPT or both</h3><p>Use the one you already have, or both.</p></div>
+   <div><h3>Automatic, or approve first</h3><p>It runs automatically by default. Switch on approvals to OK each look first. I recommend approvals on for the first few days.</p></div>
+   <div><h3>Themed Idea Lists</h3><p>Each pin links to the themed Amazon Idea List its products came from. Many looks live in each list.</p></div>
+   <div class="wc-fact-must"><h3>Your computer stays on</h3><p>Your computer needs to be on and signed into Amazon while it works overnight.</p></div>
+  </div>
+  <WysCta note="Joining the waitlist doesn’t place an order."/>
+ </section>
+
+ <section class="wc-section" style="background:#fff">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">The offer</p>
+    <h2>Members first.<br/><em>Then everyone.</em></h2>
+   </div>
+   <WysOffer/>
+  </div>
+ </section>
+
+ <div class="wc-final" style="background-image:url(/images/brand/gl-tile.webp)">
+  <div class="wc-final-card">
+   <p class="wc-kicker">The While-You-Sleep Storefront™</p>
+   <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
+   <WysCta note="Get the email the moment it opens."/>
+  </div>
+ </div>
 </WysFrame>

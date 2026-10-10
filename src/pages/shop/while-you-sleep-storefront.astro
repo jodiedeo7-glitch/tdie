@@ -1,31 +1,139 @@
 ---
-import WysShelf from '../../components/WysShelf.astro';
-import WysPackage from '../../components/WysPackage.astro';
-import WysStories from '../../components/WysStories.astro';
 import WysFrame from '../../components/WysFrame.astro';
-import WysHero from '../../components/WysHero.astro';
-import WysWorksheet from '../../components/WysWorksheet.astro';
-import WysKit from '../../components/WysKit.astro';
-import WysFaq from '../../components/WysFaq.astro';
-import {packages} from '../../data/wys-packages.js';
-import {WYS_ROOT} from '../../data/wys.js';
+import WysNightFeed from '../../components/WysNightFeed.astro';
+import WysCta from '../../components/WysCta.astro';
+import WysOvernight from '../../components/WysOvernight.astro';
+import WysLookFlow from '../../components/WysLookFlow.astro';
+import WysProof from '../../components/WysProof.astro';
+import WysYouDo from '../../components/WysYouDo.astro';
+import WysObjections from '../../components/WysObjections.astro';
+import WysOffer from '../../components/WysOffer.astro';
+import {liveLooks} from '../../data/wys-live.js';
+const [ghost] = liveLooks;
 ---
-<WysFrame title="The While-You-Sleep Storefront™ | TDIE" description="Build Amazon affiliate content around your shopping ideas. Explore complete WYS examples with styling images, articles, Pinterest Pins and Instagram content." ogImage={packages[1].photos[1].src.src}>
- <WysHero><p class="wys-ribbon">The Digital Income Edit™ presents</p><h1>The While-You-Sleep<br/><em>Storefront™</em></h1><p class="wz-header-tagline">Amazon affiliate content</p><p class="wys-lede">Create styling photos, blog stories, Pinterest Pins and Instagram posts around your Amazon finds.</p><div class="wys-actions"><a class="wys-button" href="#full-example">See the full example ↓</a></div></WysHero>
- <div id="kit"><WysKit/></div>
- <WysShelf/><div class="wx-ticker"><span>3 STYLING IMAGES</span><span>3 PINTEREST GRAPHICS</span><span>3 INSTAGRAM SLIDES</span><span>ARTICLE + PRODUCTS + COPY</span></div>
- <section class="wys-wrap wys-section" id="full-example"><WysPackage example={packages[0]} number={1} tour/></section>
- <WysStories/>
- <section class="wx-process-band"><div class="wys-wrap wys-section"><div class="wx-centered"><p class="wys-label">From “I could make something with these”</p><h2>To a repeatable<br/>content routine.</h2></div><div class="wx-process">{[
- ['01 / Set up your business','Choose your niche, product categories, account path, channels, schedule and budget. Decide whether you want an AI persona and how much of the process you want to handle yourself.'],
- ['02 / Build your shopping idea','Choose the actual products. Record the right variants, details and affiliate links. Give the look a clear direction.'],
- ['03 / Create the visuals and content','Use the same selected pieces to guide your styling images, article, Pinterest content and Instagram content.'],
- ['04 / Connect it to a shopping destination','Prepare the destination supported by your account, then check the products, links and disclosures before publishing.'],
- ['05 / Publish, track and repeat','Follow the workflow for your next look. Keep the work you’ve completed and see what still needs attention, so the next step is easier to find.']
- ].map(([title,text])=><div><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
- <section class="wys-wrap wys-section"><div class="wx-paper-strip"><div><h2>Your preferences belong in the setup, not in every new prompt.</h2><p>WYS is being built around reusable instructions for your business: what you feature, where your content goes, how often you post and what you’re comfortable spending.</p><p>That means a clearer starting point for the next outfit, room refresh, seasonal edit or shopping idea.</p></div><div><h2>Choose where AI helps and where you stay hands-on.</h2><p>Use a manual process, a mix of manual and automated steps, or supported automation after your setup has been tested.</p><p>Want to save credits? Handle more steps yourself.</p><p>Want help with recurring work? Use the connections your accounts support, within your chosen budget and approval settings.</p><p>An AI persona is optional. The workflow starts with your business choices.</p></div></div></section>
- <WysWorksheet/>
- <section class="wys-wrap wys-section"><div class="wx-paths"><div><p class="wys-label">Made to fit your actual setup</p><h2>Build around<br/><em>your business.</em></h2><p>Choose the Amazon route, tools and level of involvement that fit your setup. Your budget, channels and preferences shape the process.</p></div><div class="wx-path-list"><div><b>Influencer route</b><p>Use eligible Amazon Idea Lists as the shopping destination for your content.</p></div><div><b>Associates-only route</b><p>Send readers to your own approved website page with the selected products and affiliate links.</p></div><div><b>Manual or mixed</b><p>Keep the steps you want to handle yourself, and add supported automation after testing your setup.</p></div><div><b>Optional persona & closet</b><p>Create with or without an AI persona. An optional Brand Closet path requires your own authorized membership.</p></div></div></div></section>
- <WysFaq/>
- <section class="wys-wrap wys-section"><div class="wx-last-call"><p class="wys-label">A little less to keep checking</p><h2>See what your next<br/>shopping idea could become.</h2><p>Open the complete examples and follow the products through the images, article, Pins and carousel. Want the launch email the moment it opens?</p><a class="wys-button" href={WYS_ROOT+'/waitlist'}>Join the waitlist →</a></div></section>
+<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, while you sleep, The While-You-Sleep Storefront™ plans 2 looks, makes 6 Pinterest pins, writes the blog posts and posts an Instagram carousel. Join the waitlist." ogImage={ghost.photos.styled.src.src}>
+ <header class="wc-hero">
+  <div class="wys-wrap wc-hero-grid">
+   <div class="wc-hero-copy">
+    <h1>Your Amazon storefront<br/><em>posts itself.</em></h1>
+    <p class="wc-hero-line">The While-You-Sleep Storefront™ plans <b>2&nbsp;looks</b>, makes <b>6&nbsp;Pinterest pins</b>, writes the blog posts and posts to Instagram. Every night, while you sleep.</p>
+    <WysCta align="left" note="Member presale opens Tuesday 13 October."/>
+   </div>
+   <div class="wc-hero-phone"><WysNightFeed/></div>
+   <div class="wc-hero-cta-mobile"><WysCta note="Member presale opens Tuesday 13 October."/></div>
+  </div>
+ </header>
+
+ <div class="wc-tagband" style="background-image:url(/images/brand/gl-tile.webp)"><p class="wc-tagline">Planned. Pinned. Posted. Blogged. <span>& you slept.</span><small>The Digital Income Edit™ presents The While-You-Sleep Storefront™</small></p></div>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-pain-grid">
+   <div class="wc-head">
+    <p class="wc-kicker">Sound familiar?</p>
+    <h2>You built the storefront.<br/><em>Then: crickets.</em></h2>
+    <p class="wc-body">You made the Idea Lists. You put your storefront link everywhere you could. And the clicks never came, because the clicks only come if you post. Every single day.</p>
+    <p class="wc-body">Pinterest wants fresh pins. The blog wants a post. Instagram wants a carousel. And every morning you wake up asking the same thing: what do I post today?</p>
+    <ul class="wc-checks">
+     <li>Making pins feels endless</li>
+     <li>The storefront sits there with zero clicks</li>
+     <li>You’re burned out, and you haven’t even started today’s post</li>
+    </ul>
+   </div>
+   <figure class="wc-pullquote">
+    <blockquote>Passive income isn’t passive.</blockquote>
+    <p>Not the way most of us were sold it. This is the truly hands-off version. Set it up once. Then no more building, selling or posting. No constantly building lists.</p>
+   </figure>
+  </div>
+ </section>
+
+ <section class="wc-section" style="background:#fff">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">Every night, while you sleep</p>
+    <h2>You go to bed.<br/><em>It goes to work.</em></h2>
+    <p>In the morning a finished, shoppable look is already out in the world. People find you by searching Pinterest and Google, instead of you chasing social media every day.</p>
+   </div>
+   <WysOvernight/>
+  </div>
+ </section>
+
+ <section class="wc-section wc-flow-band" id="one-look">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">One look, start to finish</p>
+    <h2>Here’s one look it built,<br/><em>piece by piece.</em></h2>
+    <p>This is {ghost.name}, a real look the system made. Three photos become three Pinterest pins, a blog post and an Instagram carousel. Then it does the same for a second look.</p>
+   </div>
+   <WysLookFlow look={ghost}/>
+   <p class="wc-flow-note">Idea Lists are themed collections with many looks in each one. Every pin goes to the list its products came from, never a one-off list per look.</p>
+   <WysCta note="Member presale opens Tuesday 13 October."/>
+  </div>
+ </section>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">Proof, not promises</p>
+   <h2>Two blog posts it built.<br/><em>Both live right now.</em></h2>
+   <p>Open them. These are the real pages on The Digital Income Edit™ Lifestyle blog, with the finds linked and the photos in order.</p>
+  </div>
+  <WysProof/>
+ </section>
+
+ <section class="wys-wrap wc-section" style="padding-top:0">
+  <figure class="wc-founder">
+   <blockquote><span>I built this to run my own storefront.</span> <span>I refuse to gatekeep it.</span></blockquote>
+   <p>It’s the system behind the looks on my own Lifestyle blog. Now it can run yours.</p>
+   <cite>Jodie, founder of The Digital Income Edit™</cite>
+  </figure>
+ </section>
+
+ <section class="wc-section" style="background:#fff">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">You do / It does</p>
+    <h2>Set it up once.<br/><em>It does the rest.</em></h2>
+   </div>
+   <WysYouDo/>
+  </div>
+ </section>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">Made for</p>
+   <h2>Who it’s for</h2>
+  </div>
+  <div class="wc-who">
+   <div><h3>Amazon Influencers and storefront owners</h3><p>You know you should be on Pinterest, a blog and Instagram. You don’t have the time or the energy to post every day.</p></div>
+   <div><h3>Owners of The Weekend Ecosystem™</h3><p>You want steady traffic to your Amazon links and pins without adding another daily job.</p></div>
+   <div><h3>TDIE Skool members</h3><p>Premium and Standard members get the first look at member prices. The affiliate program starts at the regular $37 price.</p></div>
+  </div>
+ </section>
+
+ <section class="wc-section" style="background:#fff">
+  <div class="wys-wrap">
+   <div class="wc-head">
+    <p class="wc-kicker">Questions</p>
+    <h2>Before you join</h2>
+   </div>
+   <WysObjections/>
+   <WysCta note="Joining the waitlist doesn’t place an order."/>
+  </div>
+ </section>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">The offer</p>
+   <h2>Members first.<br/><em>Then everyone.</em></h2>
+   <p>It’s a website you get access to, not a PDF, so it can be updated as things change.</p>
+  </div>
+  <WysOffer/>
+ </section>
+
+ <div class="wc-final" style="background-image:url(/images/brand/gl-tile.webp)">
+  <div class="wc-final-card">
+   <p class="wc-kicker">The While-You-Sleep Storefront™</p>
+   <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
+   <WysCta note="Get the email the moment it opens."/>
+  </div>
+ </div>
 </WysFrame>

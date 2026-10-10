@@ -1,0 +1,11 @@
+---
+// One Pinterest pin built from an approved photo. Only the Basic pin carries
+// words (the text overlay); Styled and Lifestyle pins are the photo alone.
+import {Image} from 'astro:assets';
+const {look, role, sizes = '200px', eager = false} = Astro.props;
+const photo = look.photos[role];
+---
+<figure class={`wc-pin wc-pin-${role}`}>
+ <Image src={photo.src} alt={photo.alt} widths={[220, 360, 520]} sizes={sizes} loading={eager ? 'eager' : 'lazy'}/>
+ {role === 'basic' && <figcaption class="wc-pin-overlay" aria-hidden="true"><span>{look.overlay[0]}</span><span>{look.overlay[1]}</span><small>thedigitalincomeedit.com</small></figcaption>}
+</figure>
