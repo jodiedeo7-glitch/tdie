@@ -328,3 +328,19 @@ img{max-width:100%;height:auto}
 .method .drip2{height:112px!important;bottom:-110px!important;background-size:930px 112px!important}
 .hero{padding-top:140px!important}.we{padding-top:160px!important}
 @media (max-width:900px){.drip{height:64px!important;background-size:530px 64px!important}.method .drip2{height:64px!important;bottom:-62px!important;background-size:530px 64px!important}.hero{padding-top:104px!important}.we{padding-top:96px!important}}
+/* fixes 10 Oct (Jodie's screenshots) */
+/* Built Backwards: square gold "Start here" becomes the site's pink-star pill button */
+.step a.st{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:1.5px solid #E891B6;border-radius:999px;background:#fff;color:var(--ink);font:700 11.5px/1.2 Inter;letter-spacing:.12em;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)}
+.step a.st::before{content:"";width:10px;height:10px;flex:none;background:var(--pink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+/* Be honest: the words sit on a white card instead of floating on the glitter */
+.honest .wrap{max-width:980px;background:#fff;border-radius:26px;padding:52px 48px 50px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7)}
+.honest .sp,.honest h2,.honest .kick,.honest .lines span,.honest .next{text-shadow:none!important}
+.honest::before{display:none}
+/* Weekend Ecosystem and Friday/Sunday: blush glitter instead of plain white, no stray glitter smudge */
+.we,.fs{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important;--bgc:#FFE8F2}
+.we.sp::before,.fs.sp::before{display:none!important}
+.we .quote,.fs .fri{background:#fff}
+.fs .sun{background:linear-gradient(#fff,#fff) padding-box,url(/images/brand/gl-hot.webp) 0 0/200px border-box}
+.we .sp,.fs h2,.fs .kick,.we h2,.we .kick,.we .sub,.we .res li{text-shadow:none!important}
+@media (max-width:900px){.honest .wrap{margin:0 14px;padding:32px 20px;width:auto}}
+h1,h2{text-wrap:balance}
