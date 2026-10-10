@@ -15,10 +15,10 @@
    ========================================================================== */
 
 :root{
-  --e-cream:#FBF8F5;--e-paper:#F4EDE6;--e-white:#FFFFFF;--e-blush:#FBE8F0;
+  --e-cream:#FFF0F6;--e-paper:#F4EDE6;--e-white:#FFFFFF;--e-blush:#FBE8F0;
   --e-ink:#1A1417;--e-ink-2:#4A3F44;--e-ink-3:#6B5F64;
-  --e-pink:#D62E73;--e-pink-t:#B8245F;--e-bubble:#FF8AC2;--e-gold:#C8A96A;--e-lav:#CBB7F7;
-  --e-line:rgba(26,20,23,.12);--e-hair:1px solid rgba(200,169,106,.55);
+  --e-pink:#D62E73;--e-pink-t:#B8245F;--e-bubble:#FF8AC2;--e-gold:#E85A9B;--e-lav:#CBB7F7;
+  --e-line:rgba(26,20,23,.12);--e-hair:1px solid rgba(232,90,155,.55);
   --e-serif:"Gloock",Georgia,serif;--e-sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --e-w:1200px;--e-gut:clamp(16px,4vw,40px);
   --e-d1:clamp(46px,7.6vw,108px);--e-d2:clamp(36px,5.4vw,72px);--e-d3:clamp(26px,3vw,38px);
@@ -53,7 +53,7 @@
 .e-center{text-align:center}
 .e-center .e-kick{justify-content:center}
 .e-center .e-lede{margin-left:auto;margin-right:auto}
-.e-rule{height:1px;background:rgba(200,169,106,.55);border:0;margin:0}
+.e-rule{height:1px;background:rgba(232,90,155,.55);border:0;margin:0}
 
 /* CTA hierarchy: one primary, one secondary, then text links. */
 .e-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:12px;

@@ -3,7 +3,7 @@
    by their existing components. Explicit selectors avoid framing tracking pixels. */
 :root{--tdie-pink:#D62E73;--tdie-deep:#B8245F;--tdie-bubble:#FF8AC2;--tdie-lav:#F1EAFB;--tdie-rim:#E891B6;--tdie-lav-rim:#C4AFE4;--tdie-mat:#FFD7E9;--tdie-ink:#1A1417;--tdie-shadow:0 12px 30px #B8245F18;--choc:#1A1417;--choc-soft:#1A1417;--choc-mute:#3C3037;--choc-meta:#5B3E4D;--cream-deep:#FFF0F7;--r:18px;--e-paper:#FFF0F7}
 body{color:var(--tdie-ink)}
-body::before{background:linear-gradient(140deg,#FFF0F7,#FBF8F5 48%,#F1EAFB)!important}
+body::before{background:linear-gradient(140deg,#FFF0F7,#FFF0F6 48%,#F1EAFB)!important}
 :where(h1,h2,h3,h4){font-family:Gloock,Georgia,serif!important;font-style:normal!important;font-weight:600!important;line-height:1.18!important;letter-spacing:-.02em!important}
 h1{font-size:clamp(36px,4.8vw,52px)!important;max-width:28ch!important}
 h2{font-size:clamp(28px,3.3vw,40px)!important;max-width:34ch!important}

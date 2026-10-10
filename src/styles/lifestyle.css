@@ -1,5 +1,5 @@
 /* Lifestyle only. Existing layouts, analytics and other site sections remain shared. */
-.life{--life-pink:#B8245F;--life-lavender:#F1EAFB;--life-cream:#FBF8F5;--life-ink:#1A1417;color:var(--life-ink);font-family:Jost,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--life-cream)}
+.life{--life-pink:#B8245F;--life-lavender:#F1EAFB;--life-cream:#FFF0F6;--life-ink:#1A1417;color:var(--life-ink);font-family:Jost,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--life-cream)}
 .life *{box-sizing:border-box}
 .life :is(h1,h2,h3){font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;letter-spacing:-.02em;line-height:1.16;margin:0 0 18px;color:var(--life-ink)}
 .life h1{font-size:clamp(36px,4.7vw,52px);max-width:23ch;line-height:1.12}
@@ -12,7 +12,7 @@
 .life-wrap{max-width:1200px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
 .life-kicker{display:block;color:var(--life-pink)!important;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0 0 14px!important;line-height:1.5}
 .life-intro{font-size:19px;line-height:1.65;max-width:62ch}
-.life-hero{padding:48px 0;background:radial-gradient(ellipse at top left,#FFE3F0,transparent 65%),linear-gradient(130deg,#FBF8F5 55%,#F1EAFB);border-bottom:1px solid #1A141730}
+.life-hero{padding:48px 0;background:radial-gradient(ellipse at top left,#FFE3F0,transparent 65%),linear-gradient(130deg,#FFF0F6 55%,#F1EAFB);border-bottom:1px solid #1A141730}
 .life-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px}
 .life-hero-copy{position:relative;padding-block:20px}
 .life-hero-copy::before{content:'✿';font-size:64px;color:var(--life-pink);display:block;line-height:1;margin-bottom:20px}
@@ -422,7 +422,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 
 /* ===== HOME PAGE LOOK FOR ALL LIFESTYLE PAGES (Jodie, 10 Oct 2026) =====
    Same textures, cards, buttons, kickers and type as src/styles/home.css. */
-.life,.life.life-article-world{--hp-pink:#D62E73;--hp-deep:#B8245F;--hp-ink2:#4A3640;--hp-gold:#C8A96A;--hp-star:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);--hp-lift:0 30px 56px -34px rgba(110,10,50,.6);background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important;padding-top:0!important}
+.life,.life.life-article-world{--hp-pink:#D62E73;--hp-deep:#B8245F;--hp-ink2:#4A3640;--hp-gold:#E85A9B;--hp-star:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);--hp-lift:0 30px 56px -34px rgba(110,10,50,.6);background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important;padding-top:0!important}
 .life.life-article-world::before,.life-halloween-background{display:none!important}
 .life h1 span,.life h2 span{color:var(--hp-pink)}
 .life p,.life .life-intro{color:var(--hp-ink2)}
