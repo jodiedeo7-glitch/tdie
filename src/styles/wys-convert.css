@@ -252,8 +252,8 @@
 /* Carousel order strip under the slide */
 .wc-order{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:4px 10px 10px}
 .wc-order figure{margin:0;text-align:center}
-.wc-order img,.wc-order .wc-pin{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:6px}
-.wc-order .wc-pin img{aspect-ratio:1}
+.wc-order img,.wc-order .wc-pin{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:6px}
+.wc-order .wc-pin img{aspect-ratio:2/3}
 .wc-order .wc-pin-overlay{display:none}
 .wc-order figure>figcaption{margin-top:3px;font:700 9px/1.2 Inter,sans-serif;color:var(--wc-ink);letter-spacing:.04em;text-transform:uppercase}
 
@@ -302,3 +302,8 @@
 /* Disclosure clears the footer line */
 .wys-world .tdie-page-disclaimer{padding-bottom:28px!important}
 .wc-faq summary{text-wrap:balance}
+
+.wys-world .wc-offer-note{max-width:620px;margin:22px auto 0;text-align:center;font:400 16px/1.6 Inter,sans-serif;color:var(--wc-ink)}
+.wys-world .wc-pin-overlay small{color:var(--wc-ink)}
+.wc-slide-n{background:#fff!important;color:var(--wc-hot-ink)!important;border:1.5px solid var(--wc-hot)}
+.wys-world .tdie-page-disclaimer small{color:var(--wc-ink)!important}
