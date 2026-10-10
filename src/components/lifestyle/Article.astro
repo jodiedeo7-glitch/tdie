@@ -34,17 +34,23 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
 ---
 <Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} halloween={halloween} article>
   <article class:list={["life-wrap life-article life-reading-sheet", completeExample && "life-complete-look"]}>
-    <header class="life-article-head">
+    <header class="life-article-head life-mast">
       <nav class="life-breadcrumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>
-      <div class="life-heading-layout">
-      <div class="life-heading-copy">
-      {halloween && <p class="life-title-banner"><span aria-hidden="true">✦</span> {banner} <span aria-hidden="true">✦</span></p>}
-      <p class="life-kicker">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</p>
-      <h1>{look.title}</h1>
-      {look.intro && <p class="life-intro">{look.intro}</p>}
-
-      </div>
-
+      <div class="life-mast-card">
+        <span class="life-mast-tape" aria-hidden="true"></span>
+        {look.items.length > 0 && <span class="life-mast-sticker" aria-hidden="true"><b>{look.items.length}</b><span>pink finds</span></span>}
+        <div class="life-mast-tags">
+          {halloween && <span class="life-mast-series">✦ {banner} ✦</span>}
+          <span class="life-mast-cat">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</span>
+        </div>
+        <h1>{look.title}</h1>
+        <span class="life-mast-rule" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="#life-twinkle" /></svg></span>
+        {look.intro && <p class="life-intro">{look.intro}</p>}
+        <ul class="life-mast-meta">
+          <li>{photos.length} photo{photos.length === 1 ? '' : 's'}</li>
+          {look.items.length > 0 && <li>{look.items.length} {shoppingPending ? 'finds listed' : 'finds linked'}</li>}
+          {look.items.length > 0 && <li><a href="#shopping">Jump to the shopping list <span aria-hidden="true">↓</span></a></li>}
+        </ul>
       </div>
     </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
