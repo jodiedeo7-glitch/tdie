@@ -23,6 +23,7 @@ These override canon §8 "Type" and the Dark Chocolate palette row wherever they
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
+- The flat, monochrome, AI-looking hot pink box or button: a solid hot pink rectangle, tag, label, badge, card or button with white text, used as a design element (Jodie, 10 October 2026: "hot pink boxes are fine in canva and stuff but NEVER that ugly monochromatic ... ai fucking pink box OR button"). In coded and generated graphics, labels and callouts are plain type with a thin pink rule or a white card; prices sit on white or frosted cards in pink type. This overrides the "glossy hot pink gradient hero card" and "hot pink gradient pill button" lines in section 2.
 - Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Newsreader SemiBold; everything else is Inter. No italic headlines.
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
 - Flat colour-block layouts ("plain, flat, boring").
@@ -45,3 +46,9 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 
 ## Canon edits
 Done 4 October 2026 (Decision 128): TDIE_CANON.md §8 type and Dark Chocolate rows, canon.json typography and palette, both copies.
+
+### Explicit decoration rule — 8 October 2026
+Jodie hates bows. Never add a bow to her pages, graphics or other designs unless she explicitly requests one. Reference-image bows do not grant permission.
+
+### Buttons and gradients — 8 October 2026 (founder, standing)
+Never use a filled hot-pink pill button, and never use pink/lavender gradient or ombre backgrounds, on anything made for Jodie. Black boxes and black buttons are also rejected. Current site buttons: white pill, thin pink outline, near-black text, small pink sparkle. Backgrounds are flat (cream, white, soft blush). Product sections show the real product (course covers, module list, real Skool group), never an unrelated Tommy Kate photo. Keep sections compact; no oversized text or empty space.
