@@ -1,7 +1,7 @@
 /* Lifestyle only. Existing layouts, analytics and other site sections remain shared. */
 .life{--life-pink:#B8245F;--life-lavender:#F1EAFB;--life-cream:#FFF0F6;--life-ink:#1A1417;color:var(--life-ink);font-family:Jost,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--life-cream)}
 .life *{box-sizing:border-box}
-.life :is(h1,h2,h3){font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;letter-spacing:-.02em;line-height:1.16;margin:0 0 18px;color:var(--life-ink)}
+.life :is(h1,h2,h3){font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;letter-spacing:0;line-height:1.16;margin:0 0 18px;color:var(--life-ink)}
 .life h1{font-size:clamp(36px,4.7vw,52px);max-width:23ch;line-height:1.12}
 .life h1 span{color:var(--life-pink)}
 .life h2{font-size:clamp(28px,3.1vw,38px)}

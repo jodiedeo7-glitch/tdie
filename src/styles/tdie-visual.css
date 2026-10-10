@@ -4,7 +4,7 @@
 :root{--tdie-pink:#D62E73;--tdie-deep:#B8245F;--tdie-bubble:#FF8AC2;--tdie-lav:#F1EAFB;--tdie-rim:#E891B6;--tdie-lav-rim:#C4AFE4;--tdie-mat:#FFD7E9;--tdie-ink:#1A1417;--tdie-shadow:0 12px 30px #B8245F18;--choc:#1A1417;--choc-soft:#1A1417;--choc-mute:#3C3037;--choc-meta:#5B3E4D;--cream-deep:#FFF0F7;--r:18px;--e-paper:#FFF0F7}
 body{color:var(--tdie-ink)}
 body::before{background:linear-gradient(140deg,#FFF0F7,#FFF0F6 48%,#F1EAFB)!important}
-:where(h1,h2,h3,h4){font-family:Gloock,Georgia,serif!important;font-style:normal!important;font-weight:600!important;line-height:1.18!important;letter-spacing:-.02em!important}
+:where(h1,h2,h3,h4){font-family:Gloock,Georgia,serif!important;font-style:normal!important;font-weight:600!important;line-height:1.18!important;letter-spacing:0!important}
 h1{font-size:clamp(36px,4.8vw,52px)!important;max-width:28ch!important}
 h2{font-size:clamp(28px,3.3vw,40px)!important;max-width:34ch!important}
 h3{font-size:clamp(22px,2.2vw,28px)!important}
@@ -148,8 +148,8 @@ main section,main>div>section,body>section{padding-top:clamp(40px,5vw,72px)!impo
 main section>div:not(figure):not([class*="photo"]):not([class*="fig"]):not([class*="img"]){min-height:0!important}
 .lib-in,.rs-hero-grid,.mb-hero-grid,.cm-hero-grid,.cover,.hero,.ws-hero,.v-hero,.bm-hero{min-height:0!important}
 .lib-in{padding-top:clamp(36px,4vw,56px)!important;padding-bottom:clamp(32px,4vw,48px)!important}
-main h1,body>section h1{font-size:clamp(32px,4vw,52px)!important;line-height:1.08!important;letter-spacing:-.02em!important;max-width:none!important}
-main h2,body>section h2{font-size:clamp(26px,2.8vw,40px)!important;line-height:1.12!important;letter-spacing:-.015em!important}
+main h1,body>section h1{font-size:clamp(32px,4vw,52px)!important;line-height:1.08!important;letter-spacing:0!important;max-width:none!important}
+main h2,body>section h2{font-size:clamp(26px,2.8vw,40px)!important;line-height:1.12!important;letter-spacing:0!important}
 main h3{line-height:1.2!important}
 main :is(.e-lede,.lede,.lib-lede,.fd-lede,.rs-lede){font-size:clamp(16px,1.3vw,18px)!important;line-height:1.6!important}
 .lib-hero-art img{max-height:300px;object-fit:cover;width:100%}
