@@ -29,24 +29,29 @@ const photos = look.images.map((image, i) => ({ image, i })).sort((a, b) => rank
 // Twinkle stars sit on the frame border and bottom strip only, never on the photo.
 const twinkles = [{ x: '3.5%', y: '28%', s: '11px' }, { x: '96.5%', y: '52%', s: '10px', blue: true }, { x: '84%', y: '2.4%', s: '9px' }, { x: '3.5%', y: '87%', s: '9px', blue: true }, { x: '93%', y: '83%', s: '13px' }, { x: '62%', y: '97%', s: '9px', blue: true }];
 const shoppingPending = look.shoppingStatus === 'pending';
+const titleLead = /^Pink\b/.test(look.title) ? 'Pink' : '';
+const titleRest = titleLead ? look.title.slice(4) : look.title;
+const heroShot = photos.find(image => image.role === 'lifestyle') || hero;
 const dateIsPast = look.date && look.date <= new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type': 'Article', headline: look.title, description: look.description, image: hero ? new URL(hero.src.src, 'https://www.thedigitalincomeedit.com').href : undefined, ...(dateIsPast ? { datePublished: look.date } : {}), mainEntityOfPage: `https://www.thedigitalincomeedit.com/lifestyle/${look.slug}`, publisher: { '@type': 'Organization', name: 'The Digital Income Edit™' } }];
 ---
 <Frame title={look.title} description={look.description.slice(0, 160)} ogImage={hero?.src.src} draft={draft} schema={articleSchema} halloween={halloween} article>
+  <header class="life-hero life-post-hero">
+    <div class="life-wrap">
+      <nav class="life-breadcrumb life-post-crumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>
+      <div class:list={["life-hero-grid life-post-grid", !heroShot && "is-solo"]}>
+        <div class="life-hero-copy">
+          <p class="life-kicker">{halloween ? banner : 'The Lifestyle Edit'}</p>
+          <h1>{titleLead && <span>{titleLead}</span>}{titleRest}</h1>
+          <p class="life-post-meta">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}{look.items.length > 0 && <> · <b>{look.items.length} {shoppingPending ? 'finds listed' : 'finds linked'}</b></>}</p>
+          {look.intro && <p class="life-intro">{look.intro}</p>}
+          {look.items.length > 0 && <a class="life-button" href="#shopping">{shoppingPending ? 'See the finds' : `Shop the ${look.items.length} finds`} <span aria-hidden="true">↓</span></a>}
+        </div>
+        {heroShot && <figure class="life-post-photo"><span class="life-post-label"><span>{look.season && look.season !== 'Evergreen' ? `${look.season} look` : 'The look'}</span></span><Image src={heroShot.src} alt={heroShot.alt} widths={[360,480,720,960]} sizes="(max-width:760px) 90vw, 400px" loading="eager" fetchpriority="high" /></figure>}
+      </div>
+    </div>
+  </header>
   <article class:list={["life-wrap life-article life-reading-sheet", completeExample && "life-complete-look"]}>
-    <header class="life-article-head">
-      <nav class="life-breadcrumb" aria-label="Breadcrumb"><a href="/lifestyle">Lifestyle</a><span aria-hidden="true">/</span><a href={`/lifestyle/${cat.slug}`}>{cat.name}</a><span aria-hidden="true">/</span><span aria-current="page">{look.title}</span></nav>
-      <div class="life-heading-layout">
-      <div class="life-heading-copy">
-      {halloween && <p class="life-title-banner"><span aria-hidden="true">✦</span> {banner} <span aria-hidden="true">✦</span></p>}
-      <p class="life-kicker">{cat.name}{look.season && look.season !== 'Evergreen' ? ` · ${look.season}` : ''}</p>
-      <h1>{look.title}</h1>
-      {look.intro && <p class="life-intro">{look.intro}</p>}
-
-      </div>
-
-      </div>
-    </header>
     {draft && !hero && <p class="life-pending">The approved photographs are awaiting transfer. No substitute images are shown in this local draft.</p>}
     <svg class="life-svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
       <defs>

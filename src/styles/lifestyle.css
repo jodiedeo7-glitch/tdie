@@ -552,3 +552,32 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 .life .life-shelf-note{margin-top:-24px!important}
 .life #browse{padding-bottom:24px!important}
 .life .life-disclosure,.life .life-close p{color:#1A1417!important}
+
+/* POST HEADING (Jodie, 10 October 2026). Every Lifestyle post opens with the same hero as the
+   Lifestyle home page: blush page, sparkle in the corner, copy on the left, the look's own photo
+   in a hot pink frame on the right with a glitter-ring label. The white reading sheet starts after it. */
+.life.life-article-world .life-post-hero{padding:56px 0 52px!important}
+.life.life-article-world .life-article.life-reading-sheet{padding-top:28px}
+.life .life-post-crumb{margin:0 0 26px;font:500 13px/1.5 Jost,system-ui,sans-serif;gap:4px 10px}
+.life .life-post-crumb a{min-height:0;color:#B8245F!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.life .life-post-crumb>[aria-hidden]{color:#E85A9B}
+.life .life-post-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,72px)}
+.life .life-post-grid.is-solo{grid-template-columns:minmax(0,1fr)}
+.life .life-post-hero .life-hero-copy{padding-block:0}
+.life .life-post-hero h1{margin:0 0 14px;font-size:clamp(36px,3.7vw,50px)!important;line-height:1.1!important;font-weight:400;max-width:17ch;text-wrap:balance;word-break:normal;overflow-wrap:normal;hyphens:none}
+.life .life-post-hero h1 span{color:#D62E73}
+.life .life-post-meta{margin:0 0 18px!important;font:600 13px/1.5 Jost,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#1A1417}
+.life .life-post-meta b{color:#B8245F}
+.life .life-post-hero .life-intro{max-width:52ch;margin:0 0 26px}
+.life .life-post-photo{position:relative;justify-self:center;width:100%;max-width:340px;margin:0;padding:10px;background:#fff;border:2px solid #D62E73;border-radius:22px;box-shadow:0 24px 48px -26px rgba(184,36,95,.55)}
+.life .life-post-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:14px}
+.life .life-post-label{position:absolute;z-index:1;top:-18px;right:22px;padding:3px;border-radius:999px;background:url(/images/brand/gl-hot.webp) 0 0/200px;box-shadow:0 14px 24px -12px rgba(120,10,50,.6)}
+.life .life-post-label>span{display:block;padding:10px 18px 9px;border-radius:999px;background:#fff;color:#B8245F;font:800 11.5px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:760px){
+  .life.life-article-world .life-post-hero{padding:36px 0 36px!important}
+  .life .life-post-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+  .life .life-post-hero h1{font-size:34px!important;max-width:none}
+  .life .life-post-meta{font-size:12px;letter-spacing:.1em}
+  .life .life-post-hero .life-button{width:100%}
+  .life .life-post-photo{display:none}
+}
