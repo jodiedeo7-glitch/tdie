@@ -7,6 +7,9 @@ Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG
 5. When she asks to change or remove one thing, change only that thing. Do not redesign anything she did not ask to change.
 6. Send Jodie the actual files (PDF, PNGs) directly, never just links.
 
+## BRAND FONTS (Jodie, 10 October 2026, replaces every Newsreader/Inter line below)
+Headlines are Gloock, upright. Everything else is Jost: body, prices, labels, buttons, kickers. These replace Newsreader and Inter everywhere on the site, in graphics and in posters; any older line in this file or any project document that names Newsreader or Inter is superseded. Fonts load from `src/styles/brand-fonts.css`. No script font on website headlines (Jodie rejected Yellowtail on the homepage headline). Caveat stays only as the scoped photograph-caption font. Never put a white text box/label over a WYS example pin photo (Jodie: "the text box is a HARD NO. If it doesn't LOOK GOOD, remove it.").
+
 ## WYS authority (Jodie, 7 October 2026)
 
 Read `claude/WYS_REFERENCE_PACK_2026-10-07.md` in full before WYS founder or customer-product work. It is the sole complete WYS operating document: current source, exact approved prompts, reference roles, sourcing, state, permissions/spending, manual/mixed paths, website migration, publication and test/release gates. Superseded recipes and instruction packages must not be restored from history or runtime snapshots. General TDIE image defaults do not select a WYS generator. SOP-15 and SOP-16 remain separate.

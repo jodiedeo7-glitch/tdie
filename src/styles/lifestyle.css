@@ -1,7 +1,7 @@
 /* Lifestyle only. Existing layouts, analytics and other site sections remain shared. */
-.life{--life-pink:#B8245F;--life-lavender:#F1EAFB;--life-cream:#FBF8F5;--life-ink:#1A1417;color:var(--life-ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--life-cream)}
+.life{--life-pink:#B8245F;--life-lavender:#F1EAFB;--life-cream:#FBF8F5;--life-ink:#1A1417;color:var(--life-ink);font-family:Jost,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--life-cream)}
 .life *{box-sizing:border-box}
-.life :is(h1,h2,h3){font-family:Newsreader,Georgia,serif;font-weight:600;font-style:normal;letter-spacing:-.02em;line-height:1.16;margin:0 0 18px;color:var(--life-ink)}
+.life :is(h1,h2,h3){font-family:Gloock,Georgia,serif;font-weight:600;font-style:normal;letter-spacing:-.02em;line-height:1.16;margin:0 0 18px;color:var(--life-ink)}
 .life h1{font-size:clamp(36px,4.7vw,52px);max-width:23ch;line-height:1.12}
 .life h1 span{color:var(--life-pink)}
 .life h2{font-size:clamp(28px,3.1vw,38px)}
@@ -16,7 +16,7 @@
 .life-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px}
 .life-hero-copy{position:relative;padding-block:20px}
 .life-hero-copy::before{content:'✿';font-size:64px;color:var(--life-pink);display:block;line-height:1;margin-bottom:20px}
-.life-button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 22px;border-radius:999px;background:linear-gradient(120deg,#B8245F,#CC2869);border:1px solid #B8245F;color:white!important;font:600 15px/1.4 Inter,system-ui,sans-serif;text-align:center;max-width:100%;box-shadow:0 6px 18px #B8245F1A}
+.life-button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 22px;border-radius:999px;background:linear-gradient(120deg,#B8245F,#CC2869);border:1px solid #B8245F;color:white!important;font:600 15px/1.4 Jost,system-ui,sans-serif;text-align:center;max-width:100%;box-shadow:0 6px 18px #B8245F1A}
 .life-button:hover{background:#A51D54}
 .life-button-outline{background:white;color:var(--life-pink)!important;box-shadow:none}
 .life-button-outline:hover{background:#FBE8F0}
@@ -76,7 +76,7 @@
 .life-products{list-style:none;counter-reset:product;padding:0;margin:22px 0;display:grid;gap:14px}
 .life-products li{counter-increment:product;padding:0 0 12px 38px;border-bottom:1px solid #1A141725;position:relative;overflow-wrap:anywhere}
 .life-products li::before{content:counter(product,decimal-leading-zero);position:absolute;left:0;top:0;display:grid;place-items:center;width:27px;height:27px;border:1px solid #1A141744;border-radius:50%;background:#FFDBED;font-size:12px;font-weight:700}
-.life-products h3{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;margin:0 0 5px;letter-spacing:0}
+.life-products h3{font-family:Jost,system-ui,sans-serif;font-size:16px;line-height:1.5;margin:0 0 5px;letter-spacing:0}
 .life-products p{font-size:15px;margin:0 0 7px}
 .life-product-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:15px;font-weight:600;text-decoration:underline!important;text-underline-offset:4px;color:var(--life-pink)!important}
 .life-prose{max-width:740px;margin:44px auto;font-size:18px;line-height:1.8}
@@ -103,7 +103,7 @@
 
 .life-article-top:has(>.life-shop:only-child){grid-template-columns:minmax(0,1fr);max-width:740px;margin-inline:auto}
 /* Keep product names at a readable list scale when mobile card headings grow. */
-.life .life-products h3{font-family:Inter,system-ui,sans-serif;font-size:16px}
+.life .life-products h3{font-family:Jost,system-ui,sans-serif;font-size:16px}
 
 /* Pair the photographs with their advice, retaining the complete portrait frame. */
 .life-grid-pair{grid-template-columns:repeat(2,minmax(0,1fr));max-width:860px}
@@ -143,10 +143,10 @@
 .life-heading-layout{min-width:0}
 .life-heading-with-photo{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:center}
 .life-heading-copy{min-width:0}
-.life .life-title-banner{display:inline-flex;align-items:center;gap:12px;margin:0 0 20px;padding:9px 18px;border:1px solid #B8245F;border-radius:7px 20px 7px 20px;background:linear-gradient(115deg,#B8245F,#D62E73);color:#fff;font:700 12px/1.5 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:3px 3px 0 #F1D4EC}
+.life .life-title-banner{display:inline-flex;align-items:center;gap:12px;margin:0 0 20px;padding:9px 18px;border:1px solid #B8245F;border-radius:7px 20px 7px 20px;background:linear-gradient(115deg,#B8245F,#D62E73);color:#fff;font:700 12px/1.5 Jost,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:3px 3px 0 #F1D4EC}
 .life-heading-photo{width:240px;margin:0;padding:10px 10px 0;background:#fff;border:1px solid #ECA0BE;box-shadow:0 10px 22px #B8245F22;transform:rotate(3deg);justify-self:center}
 .life-heading-photo img{display:block;width:100%;height:auto}
-.life-heading-photo figcaption{padding:11px 4px;text-align:center;color:var(--life-pink);font:600 12px/1.5 Inter,system-ui,sans-serif}
+.life-heading-photo figcaption{padding:11px 4px;text-align:center;color:var(--life-pink);font:600 12px/1.5 Jost,system-ui,sans-serif}
 @media(max-width:900px){.life-heading-with-photo{grid-template-columns:minmax(0,1fr) 200px;gap:24px}.life-heading-photo{width:200px}}
 @media(max-width:760px){.life-heading-with-photo{grid-template-columns:minmax(0,1fr);gap:24px}.life-heading-photo{width:200px;transform:rotate(2deg)}.life-halloween .life-article-head{padding-bottom:26px}.life .life-title-banner{font-size:11px;padding:8px 12px;gap:9px}.life-heading-copy .life-article-actions{gap:12px}}
 
@@ -190,7 +190,7 @@
 .life-shelf-tools p{font-size:15px;max-width:30ch;margin:0}
 .life-shelf-controls{display:flex;gap:8px;flex-shrink:0}
 .life-shelf-controls[hidden]{display:none}
-.life-shelf-controls button{width:48px;height:48px;border:2px solid #C56B99;border-radius:50%;background:#fff;color:#9A1D50;cursor:pointer;font:600 22px/1 Inter,system-ui,sans-serif;box-shadow:0 4px 10px #B8245F12}
+.life-shelf-controls button{width:48px;height:48px;border:2px solid #C56B99;border-radius:50%;background:#fff;color:#9A1D50;cursor:pointer;font:600 22px/1 Jost,system-ui,sans-serif;box-shadow:0 4px 10px #B8245F12}
 .life-shelf-controls button:hover:not(:disabled){background:#FFD7E9}
 .life-shelf-controls button:disabled{opacity:.4;cursor:default}
 .life-shelf-controls button:focus-visible,.life-shelf-track:focus-visible{outline:3px solid #B8245F;outline-offset:4px}
@@ -209,14 +209,14 @@
 @media(max-width:1000px){.life-shelf-track,.life-lookbook .life-shelf-track{grid-auto-columns:calc((100% - 20px)/2)}}
 @media(max-width:640px){.life-categories a.life-category-card{padding:6px 6px 10px;border-radius:16px}.life-category-name{font-size:15px;padding-inline:3px}.life-category-count{padding-inline:3px}.life-category-go{font-size:11px;padding:7px;gap:4px}.life-category-image{padding:4px}.life-photo{padding:10px 10px 0;border-radius:20px}.life-photo img{border-width:4px}.life-photo figcaption{margin-inline:-10px;padding:16px 18px}.life-card{padding:8px}.life-shelf-track,.life-lookbook .life-shelf-track{grid-auto-columns:83%;gap:16px}.life-shelf-tools{justify-content:space-between;margin-top:14px;gap:12px}.life-shelf-tools p{font-size:14px}.life-story-copy,.life-prose{padding:20px}}
 @media(prefers-reduced-motion:reduce){.life-card{transition:none}}
-.life .life-products h3{font-family:Inter,system-ui,sans-serif!important;font-size:16px!important;line-height:1.5!important}
+.life .life-products h3{font-family:Jost,system-ui,sans-serif!important;font-size:16px!important;line-height:1.5!important}
 .life-story-row:nth-child(even) .life-photo,.life-gallery .life-photo:nth-child(even){border-color:#C4AFE4;background:linear-gradient(145deg,#DFD0F4,#F1EAFB);border-radius:44px 44px 14px 14px}.life-story-row:nth-child(even) .life-photo img{border-radius:30px 30px 8px 8px}.life-story-row:nth-child(odd) .life-story-copy{border-radius:8px 24px 8px 24px;border-style:double;border-width:3px}.life-lookbook-card{border-radius:36px 36px 10px 10px}.life-lookbook-image{border-radius:26px 26px 8px 8px}
 
 /* WYS's two full styling articles: illustrated chapters with alternate mats. */
-.life-wys-story .life-story-row{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:40px;padding:35px;border:5px double #df9fbe;background:#fff1f8;border-radius:5px 40px 5px 5px;box-shadow:0 12px 25px #b8245f0e;margin:36px 0;align-items:center}.life-wys-story .life-story-row:nth-child(even){background:#f1e5fb;border-color:#bd99d7}.life-wys-story .life-story-row .life-photo{border:5px double #d898b8;background:#ffe0ef;transform:rotate(-2deg);margin:0}.life-wys-story .life-story-row:nth-child(even) .life-photo{border-color:#b694d1;background:#e9d6f7;transform:rotate(2deg)}.life-wys-story .life-story-copy h2{font-size:32px;line-height:1.2}.life-wys-story .life-story-copy p{font:400 16px/1.8 Inter,sans-serif}.life-wys-story .life-story-copy>section{padding:0;border:0}
+.life-wys-story .life-story-row{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:40px;padding:35px;border:5px double #df9fbe;background:#fff1f8;border-radius:5px 40px 5px 5px;box-shadow:0 12px 25px #b8245f0e;margin:36px 0;align-items:center}.life-wys-story .life-story-row:nth-child(even){background:#f1e5fb;border-color:#bd99d7}.life-wys-story .life-story-row .life-photo{border:5px double #d898b8;background:#ffe0ef;transform:rotate(-2deg);margin:0}.life-wys-story .life-story-row:nth-child(even) .life-photo{border-color:#b694d1;background:#e9d6f7;transform:rotate(2deg)}.life-wys-story .life-story-copy h2{font-size:32px;line-height:1.2}.life-wys-story .life-story-copy p{font:400 16px/1.8 Jost,sans-serif}.life-wys-story .life-story-copy>section{padding:0;border:0}
 @media(max-width:760px){.life-wys-story .life-story-row{grid-template-columns:1fr;gap:30px;padding:24px 18px}.life-wys-story .life-story-row .life-photo{max-width:290px;width:100%;justify-self:center;order:0}.life-wys-story .life-story-row .life-story-copy{order:1}.life-wys-story .life-story-copy h2{font-size:28px}}
 
-.life-wys-story .life-photo{position:relative}.life-wys-story .life-chapter-charm{position:absolute;right:-12px;bottom:25px;width:65px;height:65px;filter:drop-shadow(0 4px 3px #b8245f20);pointer-events:none}.life-wys-story .life-story-copy>.life-kicker{color:#b8245f;font:600 11px/1.5 Inter,sans-serif;letter-spacing:.12em}@media(max-width:760px){.life-wys-story .life-chapter-charm{width:50px;height:50px;right:-8px}}
+.life-wys-story .life-photo{position:relative}.life-wys-story .life-chapter-charm{position:absolute;right:-12px;bottom:25px;width:65px;height:65px;filter:drop-shadow(0 4px 3px #b8245f20);pointer-events:none}.life-wys-story .life-story-copy>.life-kicker{color:#b8245f;font:600 11px/1.5 Jost,sans-serif;letter-spacing:.12em}@media(max-width:760px){.life-wys-story .life-chapter-charm{width:50px;height:50px;right:-8px}}
 
 .life-complete-look h1,.life-complete-look h2,.life-complete-look h3{color:#b8245f}.life-complete-look .life-intro{color:#872049}.life-complete-look .life-story-copy p{color:#5e2a48}.life-complete-look .life-story-copy>.life-kicker{color:#b8245f}
 
@@ -246,7 +246,7 @@
 .life .life-article .life-article-top{grid-template-columns:minmax(0,1fr);max-width:none}
 .life .life-article .life-shop{order:-1;min-width:0;max-width:100%;padding:20px!important;background:#f8e5f1;border:0;border-radius:12px;box-shadow:none}
 .life .life-article .life-shop>.life-kicker{margin-top:0}
-.life .life-article .life-photo figcaption,.life .life-article .life-heading-photo figcaption{font-family:Inter,sans-serif!important}
+.life .life-article .life-photo figcaption,.life .life-article .life-heading-photo figcaption{font-family:Jost,sans-serif!important}
 .life-product-carousel{min-width:0}
 .life-product-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
 .life-product-tools>p{margin:0;font-size:13px;color:#87204a}
@@ -307,7 +307,7 @@
 .life .life-reading-sheet .life-reading-chapter{display:flow-root;margin:0;padding:20px 0!important;border:0;background:transparent;box-shadow:none}
 .life .life-reading-sheet .life-reading-chapter+ .life-reading-chapter{border-top:1px solid #efcfe0}
 .life .life-reading-sheet .life-reading-chapter h2{font-size:28px!important;line-height:1.25!important;margin:0 0 16px;color:#9a1d50}
-.life .life-reading-sheet .life-reading-chapter p{font:400 16px/1.65 Inter,sans-serif;margin:0 0 16px;color:#1a1417}
+.life .life-reading-sheet .life-reading-chapter p{font:400 16px/1.65 Jost,sans-serif;margin:0 0 16px;color:#1a1417}
 .life .life-reading-sheet .life-inline-photo{float:right;margin:8px 8px 24px 32px;transform:rotate(1deg)}
 .life .life-reading-sheet>.life-section{padding:24px 0 0!important;margin-top:18px;border:0;border-radius:0;background:transparent;box-shadow:none}
 .life .life-reading-sheet .life-card{padding:12px;background:#f0e5f8!important;border:0;outline:0;border-radius:10px;box-shadow:none}
@@ -345,7 +345,7 @@ body:has(.life-article-world) .sf{background:#f0e5f8!important;background-image:
 
 .life .life-reading-sheet .life-gallery-section{padding:20px 0!important;background:transparent;border:0;border-radius:0;box-shadow:none}
 body:has(.life-article-world) .sf-in{padding-block:32px 20px!important;gap:24px}
-body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!important;letter-spacing:.12em;margin-bottom:8px!important}
+body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!important;letter-spacing:.12em;margin-bottom:8px!important}
 
 /* Photos precede every shopping action and product list. */
 .life .life-reading-sheet .life-photos-first{margin:0 0 24px;min-width:0}
@@ -374,7 +374,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life .life-reading-sheet .life-gp-window img{display:block;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;border:0!important;outline:0!important;border-radius:0!important}
 .life .life-reading-sheet .life-gp figcaption{position:relative;z-index:2;display:block;aspect-ratio:86/28;margin:0!important;padding:4.5% 44px 0 0!important;background:none!important;border:0!important;text-align:left;font:600 23px/1.05 Caveat,cursive!important;color:#86244f!important;letter-spacing:0}
 .life .life-gp figcaption>span{padding:0 6px 1px;border-radius:9px;background:#ffe4efd9;box-shadow:0 0 7px 3px #ffe4efb8;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.life .life-reading-sheet .life-gp .life-photo-count{position:absolute;right:6%;bottom:3%;z-index:2;padding:2px 7px;border-radius:999px;background:#fff;border:1px solid #b85a83;color:#86244f;font:600 10px/1.3 Inter,sans-serif;letter-spacing:.06em}
+.life .life-reading-sheet .life-gp .life-photo-count{position:absolute;right:6%;bottom:3%;z-index:2;padding:2px 7px;border-radius:999px;background:#fff;border:1px solid #b85a83;color:#86244f;font:600 10px/1.3 Jost,sans-serif;letter-spacing:.06em}
 .life .life-gp-twinkle{position:absolute;left:var(--x);top:var(--y);z-index:2;width:var(--s,11px);height:var(--s,11px);transform:translate(-50%,-50%);color:#fff;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #ffffffb0);pointer-events:none}
 .life .life-gp-twinkle.is-blue{color:#d7ecff;filter:drop-shadow(0 0 2px #e8f4ff) drop-shadow(0 0 4px #cfe6ffcc)}
 .life .life-gp-clip{position:absolute;left:58%;top:-10%;z-index:3;height:23%;width:auto;aspect-ratio:30/90;transform:rotate(5deg);filter:drop-shadow(1px 2px 1.5px #5a380a59);pointer-events:none}
@@ -427,12 +427,12 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life h1 span,.life h2 span{color:var(--hp-pink)}
 .life p,.life .life-intro{color:var(--hp-ink2)}
 /* kickers: + LABEL + */
-.life .life-kicker{border:0!important;background:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important;display:inline-flex!important;align-items:center;gap:10px;color:var(--hp-deep)!important;font:700 12px/1.5 Inter,sans-serif!important;letter-spacing:.24em!important}
+.life .life-kicker{border:0!important;background:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important;display:inline-flex!important;align-items:center;gap:10px;color:var(--hp-deep)!important;font:700 12px/1.5 Jost,sans-serif!important;letter-spacing:.24em!important}
 .life .life-kicker::before,.life .life-kicker::after{content:"";flex:none;width:10px;height:10px;background:var(--hp-pink);clip-path:var(--hp-star)}
 .life .life-card-copy .life-kicker,.life .life-lookbook-card .life-kicker{font-size:11px!important;letter-spacing:.18em!important}
 .life .life-card-copy .life-kicker::before,.life .life-card-copy .life-kicker::after,.life .life-lookbook-card .life-kicker::before,.life .life-lookbook-card .life-kicker::after{display:none}
 /* buttons: white pill, pink line, pink star */
-.life .life-button,.life .life-button-outline{min-height:48px;padding:0 26px;border-radius:999px;background:#fff!important;border:1.5px solid #E891B6!important;color:#1A1417!important;font:700 12.5px/1.2 Inter,sans-serif!important;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)!important;gap:9px}
+.life .life-button,.life .life-button-outline{min-height:48px;padding:0 26px;border-radius:999px;background:#fff!important;border:1.5px solid #E891B6!important;color:#1A1417!important;font:700 12.5px/1.2 Jost,sans-serif!important;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)!important;gap:9px}
 .life .life-button::before{content:"";width:11px;height:11px;flex:none;background:var(--hp-pink);clip-path:var(--hp-star)}
 .life .life-button>span[aria-hidden]{display:none}
 .life .life-button:hover{background:#FFF1F7!important}
@@ -443,7 +443,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life-hero-note{color:var(--hp-ink2)}
 .life .life-sticker{display:none}
 .life-feature-label{background:#fff!important;border:0!important;padding:3px!important;border-radius:999px!important;transform:none!important;top:-16px!important;right:22px!important;font-size:0!important;background:url(/images/brand/gl-hot.webp) 0 0/200px!important;box-shadow:0 14px 24px -12px rgba(120,10,50,.6)}
-.life-feature-label::after{content:"Seasonal pick";display:block;background:#fff;border-radius:999px;padding:10px 18px 9px;color:var(--hp-deep);font:800 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.life-feature-label::after{content:"Seasonal pick";display:block;background:#fff;border-radius:999px;padding:10px 18px 9px;color:var(--hp-deep);font:800 11.5px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
 /* glitter bands hold a white plate, like the home page method section */
 .life-band,.life-picks-band{background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important;border:0!important;padding:80px 0!important}
 .life-band>.life-section,.life-picks-band>.life-section{background:#fff;border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7);padding:52px clamp(20px,4vw,52px)!important;max-width:1180px}
@@ -457,8 +457,8 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life .life-card h3,.life .life-lookbook-card h3{color:#1A1417}
 .life .life-card-count,.life .life-category-count{color:var(--hp-ink2)!important}
 .life .life-pearl{display:none}
-.life .life-category-name{font:600 19px/1.2 Newsreader,Georgia,serif!important;color:#1A1417}
-.life .life-category-go{color:var(--hp-deep)!important;background:none!important;border:0!important;border-top:1px solid #F3D3E0!important;border-radius:0!important;font:700 11px/1.2 Inter,sans-serif!important;letter-spacing:.14em;text-transform:uppercase}
+.life .life-category-name{font:600 19px/1.2 Gloock,Georgia,serif!important;color:#1A1417}
+.life .life-category-go{color:var(--hp-deep)!important;background:none!important;border:0!important;border-top:1px solid #F3D3E0!important;border-radius:0!important;font:700 11px/1.2 Jost,sans-serif!important;letter-spacing:.14em;text-transform:uppercase}
 .life .life-categories a[aria-current]{box-shadow:0 0 0 3px var(--hp-pink),0 24px 40px -30px rgba(110,10,50,.45)!important}
 /* section edges */
 .life-shelf,.life #browse{background:none!important;border:0!important}
@@ -470,9 +470,9 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 /* Friday email: white card on glitter, home-page type and button */
 .life>.life-signup,.life.life-article-world>.life-signup{max-width:none!important;margin:60px 0 0!important;padding:80px max(20px,calc((100% - 1100px)/2))!important;background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important}
 .life .life-signup .pf-box{max-width:1100px;margin-inline:auto;background:#fff!important;border:0!important;border-radius:26px!important;box-shadow:0 40px 70px -36px rgba(110,10,50,.7)!important}
-.life .pf .pf-k{color:var(--hp-deep)!important;font:700 12px/1.5 Inter,sans-serif!important;letter-spacing:.24em!important;text-transform:uppercase}
+.life .pf .pf-k{color:var(--hp-deep)!important;font:700 12px/1.5 Jost,sans-serif!important;letter-spacing:.24em!important;text-transform:uppercase}
 .life .pf .pf-k::before{display:none!important}
-.life .pf .pf-h{font-family:Newsreader,Georgia,serif!important;font-weight:600!important;color:#1A1417!important}
+.life .pf .pf-h{font-family:Gloock,Georgia,serif!important;font-weight:600!important;color:#1A1417!important}
 .life .pf input{border:1.5px solid #E891B6!important;border-radius:999px!important;background:#fff!important}
 .life .pf .pf-row button,.life .pf button[type=submit]{background:#fff!important;border:1.5px solid #E891B6!important;color:#1A1417!important;border-radius:999px!important;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)!important;font-weight:700!important;letter-spacing:.12em}
 .life>.life-close,.life.life-article-world>.life-close{max-width:none!important;margin:0!important;background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important;border-radius:0!important;padding:34px max(20px,calc((100% - 1100px)/2)) 40px!important}
@@ -491,7 +491,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life-scroll{position:relative;min-width:0}
 .life-scroll-controls{display:flex;justify-content:flex-end;gap:10px;margin:0 0 14px}
 .life-scroll-controls[hidden]{display:none}
-.life-scroll-controls button{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #E891B6;color:#B8245F;font:600 22px/1 Inter,sans-serif;cursor:pointer;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)}
+.life-scroll-controls button{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #E891B6;color:#B8245F;font:600 22px/1 Jost,sans-serif;cursor:pointer;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)}
 .life-scroll-controls button:hover:not(:disabled){background:#FFF1F7}
 .life-scroll-controls button:disabled{opacity:.35;cursor:default}
 .life-scroll-controls button:focus-visible,.life-scroll-track:focus-visible{outline:3px solid #B8245F;outline-offset:4px}
@@ -543,8 +543,8 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life p,.life .life-intro,.life .life-hero-note,.life .life-card-count,.life .life-category-count,.life .life-shelf-note,.life .life-section-heading>p,.life .life-shelf-tools p{color:#1A1417!important}
 /* 4. Shopping box: white with a pink outline instead of a lavender panel */
 .life .life-reading-sheet .life-shop{background:#FFF1F7!important;border:2px solid #D62E73!important;border-radius:20px!important}
-/* 5. Photo captions in Inter, not handwriting */
-.life .life-article .life-photo figcaption,.life .life-reading-sheet .life-photo figcaption,.life .life-reading-sheet .life-gp figcaption,.life .life-reading-sheet .life-gp figcaption *{font-family:Inter,sans-serif!important;font-weight:700!important;font-size:12px!important;letter-spacing:.12em!important;text-transform:uppercase;color:#B8245F!important;line-height:1.3!important}
+/* 5. Photo captions in Jost, not handwriting */
+.life .life-article .life-photo figcaption,.life .life-reading-sheet .life-photo figcaption,.life .life-reading-sheet .life-gp figcaption,.life .life-reading-sheet .life-gp figcaption *{font-family:Jost,sans-serif!important;font-weight:700!important;font-size:12px!important;letter-spacing:.12em!important;text-transform:uppercase;color:#B8245F!important;line-height:1.3!important}
 /* keep pink labels pink after the near-black body text rule */
 .life p.cs-kicker,.life p.cs-count,.life p.cs-saved-title{color:#B8245F!important}
 /* room under swipe rows so card shadows are not cut off; no big empty gaps */

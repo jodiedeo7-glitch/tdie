@@ -3,12 +3,12 @@
 .tdie-full-drip{position:absolute;z-index:5;inset:0 0 auto;--tile:650px;height:calc(var(--tile)/3);background-size:var(--tile) auto;background-repeat:repeat-x;background-position:center top;pointer-events:none}
 .tdie-banner-inner{position:relative;z-index:2;width:min(100%,1120px)!important;max-width:1120px!important;min-height:443px;margin:0 auto!important;padding:100px 42px 32px!important;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:64px;align-items:center}
 .tdie-brand-copy{min-width:0;padding:0}
-.tdie-brand-signature{display:flex;align-items:center;gap:11px;margin-bottom:10px;font:500 11px/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.tdie-brand-signature{display:flex;align-items:center;gap:11px;margin-bottom:10px;font:500 11px/1.2 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase}
 .tdie-brand-signature img{width:29px;height:29px;display:block;border-radius:7px;box-shadow:0 4px 9px #d62e7330}
-.tdie-banner-logo{display:block;width:max-content;max-width:100%;text-decoration:none;font:600 52px/1.04 Newsreader,Georgia,serif!important;letter-spacing:-.025em;color:#d62e73}
+.tdie-banner-logo{display:block;width:max-content;max-width:100%;text-decoration:none;font:600 52px/1.04 Gloock,Georgia,serif!important;letter-spacing:-.025em;color:#d62e73}
 .tdie-banner-logo>span{display:block;background:linear-gradient(155deg,#d62e73 12%,#f378af 29%,#d62e73 44%,#b8245f 66%,#f182b5 83%,#d62e73);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 #ffd7ea)}
-.tdie-banner-logo sup{font:400 10px Inter,sans-serif;vertical-align:super;letter-spacing:0;margin-left:3px;-webkit-text-fill-color:#d62e73}
-.tdie-banner-promise{font:400 15px/1.6 Inter,sans-serif;margin:18px 0 0;color:#1a1417}
+.tdie-banner-logo sup{font:400 10px Jost,sans-serif;vertical-align:super;letter-spacing:0;margin-left:3px;-webkit-text-fill-color:#d62e73}
+.tdie-banner-promise{font:400 15px/1.6 Jost,sans-serif;margin:18px 0 0;color:#1a1417}
 .tdie-banner-promise sup{font-size:8px;vertical-align:super;margin-left:2px}
 .tdie-world-collage{position:relative;height:319px;min-width:0}
 .tdie-world-photo{position:absolute;isolation:isolate;box-sizing:border-box;margin:0;background:white;box-shadow:0 10px 22px #9f477425}
@@ -27,7 +27,7 @@ body:has(.tdie-brand-banner) .sn{position:relative!important;background:white!im
 body:has(.tdie-brand-banner) .sn-in{justify-content:center!important;min-height:58px!important}
 body:has(.tdie-brand-banner) .sn-links a.sn-cta,body:has(.tdie-brand-banner) .sn-menu{background:white!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important;box-shadow:none!important}
 body:has(.tdie-brand-banner) .sn-drawer{background:white!important}
-body:has(.tdie-brand-banner) .sn-drawer a{font-family:Inter,sans-serif!important;min-height:48px!important;border-bottom-color:#f0c4d8!important}
+body:has(.tdie-brand-banner) .sn-drawer a{font-family:Jost,sans-serif!important;min-height:48px!important;border-bottom-color:#f0c4d8!important}
 body:has(.tdie-brand-banner) .sn-drawer .sn-d-cta{background:white!important;color:#1a1417!important;border:1px solid #e891b6!important;border-radius:999px!important}
 body:has(.tdie-brand-banner) .e-page{padding:0!important;margin:0!important;max-width:none!important}
 .tdie-banner-logo:focus-visible{outline:2px solid #d62e73;outline-offset:6px}

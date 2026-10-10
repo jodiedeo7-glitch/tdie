@@ -7,15 +7,7 @@ import HomeChromeFooter from "../components/HomeChromeFooter.astro";
 import "../styles/global.css";
 import "../styles/sales-typography.css";
 // Self-host brand fonts so external font requests cannot change the layout.
-import "@fontsource/newsreader/latin-600.css";
-import "@fontsource/newsreader/latin-700.css";
-import "@fontsource/newsreader/latin-600-italic.css";
-import "@fontsource/newsreader/latin-700-italic.css";
-import "@fontsource/inter/latin-300.css";
-import "@fontsource/inter/latin-400.css";
-import "@fontsource/inter/latin-500.css";
-import "@fontsource/inter/latin-600.css";
-import "@fontsource/inter/latin-700.css";
+import "../styles/brand-fonts.css";
 
 import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
@@ -100,7 +92,7 @@ const jsonLd = {
        hash, and slotted children carry the *page's* hash, not the layout's.
        Without is:global every selector below compiles to
        `.page-wrap[cid-layout] h1[cid-layout]` and matches nothing, so page
-       headers fall back to browser defaults (bold Inter h1, unstyled eyebrow).
+       headers fall back to browser defaults (bold Jost h1, unstyled eyebrow).
        ResourceLayout and CourseLayout already do this correctly.
 
        Selectors are deliberately low-specificity so the 36 pages that style
@@ -113,9 +105,9 @@ const jsonLd = {
     .page-eyebrow{display:block;font-size:11px;font-weight:500;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px}
     a.page-eyebrow{transition:color .3s}
     a.page-eyebrow:hover{color:var(--pink)}
-    .page-wrap h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(34px,6vw,56px);line-height:1.06;letter-spacing:-.5px;margin-bottom:24px}
+    .page-wrap h1{font-family:Gloock,serif;font-weight:300;font-size:clamp(34px,6vw,56px);line-height:1.06;letter-spacing:-.5px;margin-bottom:24px}
     .page-wrap h1 em{font-style:italic;color:var(--pink)}
-    .page-wrap > .lede{font-family:Newsreader,serif;font-style:italic;font-size:22px;line-height:1.55;color:var(--taupe-deep);margin-bottom:40px;max-width:60ch}
+    .page-wrap > .lede{font-family:Gloock,serif;font-style:italic;font-size:22px;line-height:1.55;color:var(--taupe-deep);margin-bottom:40px;max-width:60ch}
     .page-wrap > p{font-size:17px;line-height:1.75;margin-bottom:24px}
     .page-wrap > ul{margin:0 0 32px;padding-left:20px}
     .page-wrap > ul > li{margin-bottom:12px;line-height:1.65}

@@ -82,22 +82,22 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 .cs-saved-empty{margin:0!important;font-size:15px;color:#1A1417!important}
 .cs-saved-empty[hidden],.cs-clear[hidden]{display:none}
 .cs-plate{max-width:1180px;margin:0 auto;background:#fff;border:2px solid #D62E73;border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7);padding:52px clamp(20px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);column-gap:56px;row-gap:0;align-items:start}
-.cs-intro h2{font:600 clamp(30px,3.4vw,40px)/1.1 Newsreader,Georgia,serif;margin:6px 0 16px;color:#1A1417;text-wrap:balance}
+.cs-intro h2{font:600 clamp(30px,3.4vw,40px)/1.1 Gloock,Georgia,serif;margin:6px 0 16px;color:#1A1417;text-wrap:balance}
 .cs-intro h2 span{color:#D62E73}
 .cs-how{font-size:18px;line-height:1.6;color:#1A1417;max-width:38ch}
 .cs-note{font-size:13px;color:#1A1417;margin-top:22px!important}
 .cs-saved{margin-top:26px;padding:20px;border-radius:20px;background:#FFF1F7;box-shadow:0 0 0 2px #D62E73}
-.cs-saved-title{font:700 12px/1.4 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F;margin:0 0 12px!important}
+.cs-saved-title{font:700 12px/1.4 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F;margin:0 0 12px!important}
 .cs-saved-title b{display:inline-grid;place-items:center;min-width:24px;height:24px;margin-left:6px;border-radius:999px;background:#D62E73;color:#fff;letter-spacing:0;font-size:12px}
 .cs-saved-list{list-style:none;margin:0;padding:0 0 6px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory}
 .cs-saved-list li{flex:0 0 112px;scroll-snap-align:start}
 .cs-saved-list a{display:block;text-decoration:none;color:#1A1417}
 .cs-saved-list img{display:block;width:112px;height:168px;object-fit:cover;border-radius:12px;box-shadow:0 10px 18px -12px rgba(110,10,50,.6)}
-.cs-saved-list span{display:block;margin-top:6px;font:600 13px/1.25 Inter,sans-serif}
-.cs-saved-list em{display:inline-block;margin-top:6px;font:700 11px/1 Inter,sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#B8245F}
-.cs-clear{margin-top:10px;background:none;border:0;padding:8px 0;min-height:44px;font:600 13px Inter,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cs-saved-list span{display:block;margin-top:6px;font:600 13px/1.25 Jost,sans-serif}
+.cs-saved-list em{display:inline-block;margin-top:6px;font:700 11px/1 Jost,sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#B8245F}
+.cs-clear{margin-top:10px;background:none;border:0;padding:8px 0;min-height:44px;font:600 13px Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .cs-stage{position:relative;width:100%;max-width:440px;justify-self:center}
-.cs-count{margin:0 0 12px!important;text-align:center;font:700 12px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F}
+.cs-count{margin:0 0 12px!important;text-align:center;font:700 12px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F}
 .cs-deck{display:grid;position:relative}
 .cs-card,.cs-end{grid-area:1/1;min-width:0}
 .cs-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 0 0 2px #D62E73,0 30px 50px -30px rgba(110,10,50,.65);transition:transform .32s ease,opacity .32s ease;will-change:transform}
@@ -110,14 +110,14 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 .cs-photo{position:relative;aspect-ratio:2/3;background:#FFE4EF;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .cs-card.is-dragging .cs-photo{cursor:grabbing}
 .cs-photo img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.cs-stamp{position:absolute;top:22px;padding:8px 16px;border:4px solid;border-radius:12px;background:#fff;font:800 22px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .1s}
+.cs-stamp{position:absolute;top:22px;padding:8px 16px;border:4px solid;border-radius:12px;background:#fff;font:800 22px/1 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .1s}
 .cs-stamp-love{left:20px;color:#D62E73;border-color:#D62E73;transform:rotate(-12deg)}
 .cs-stamp-skip{right:20px;color:#1A1417;border-color:#1A1417;transform:rotate(12deg)}
 .cs-info{padding:20px 20px 22px}
-.cs-kicker{margin:0 0 6px!important;font:700 11px/1.4 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F!important}
-.cs-info h3{margin:0 0 14px!important;font:600 24px/1.15 Newsreader,Georgia,serif}
+.cs-kicker{margin:0 0 6px!important;font:700 11px/1.4 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F!important}
+.cs-info h3{margin:0 0 14px!important;font:600 24px/1.15 Gloock,Georgia,serif}
 .cs-info h3 a{color:#1A1417;text-decoration:none}
-.cs-items-label{margin:0 0 10px!important;font:700 12px/1.4 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1A1417!important}
+.cs-items-label{margin:0 0 10px!important;font:700 12px/1.4 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1A1417!important}
 .cs-items-label span{color:#B8245F}
 .cs-items{list-style:none;margin:0 -20px;padding:0 20px 8px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:20px;scrollbar-width:thin;scrollbar-color:#D62E73 #FFE4EF}
 .cs-items li{flex:0 0 132px;scroll-snap-align:start}
@@ -125,12 +125,12 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 .cs-items a:hover{box-shadow:0 0 0 2px #D62E73}
 .cs-item-img{display:block;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#fff}
 .cs-item-img img{display:block;width:100%;height:100%;object-fit:contain}
-.cs-item-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:8px 0 6px;font:600 13px/1.3 Inter,sans-serif;flex:1}
-.cs-item-go{font:700 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F}
-.cs-open{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font:700 12px/1.2 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F;text-decoration:none;border-bottom:1.5px solid #FF8AC2}
+.cs-item-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:8px 0 6px;font:600 13px/1.3 Jost,sans-serif;flex:1}
+.cs-item-go{font:700 11px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F}
+.cs-open{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font:700 12px/1.2 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F;text-decoration:none;border-bottom:1.5px solid #FF8AC2}
 .cs-end{z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:40px 24px;border-radius:24px;background:#FFF1F7;box-shadow:0 0 0 2px #D62E73;min-height:420px}
 .cs-end[hidden]{display:none}
-.cs-end-big{font:600 30px/1.1 Newsreader,Georgia,serif;color:#1A1417!important}
+.cs-end-big{font:600 30px/1.1 Gloock,Georgia,serif;color:#1A1417!important}
 .cs-actions{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:22px}
 .cs-btn{display:grid;place-items:center;border-radius:50%;cursor:pointer;border:0;background:#fff;box-shadow:0 0 0 2px #E891B6,0 14px 24px -12px rgba(110,10,50,.6);transition:transform .15s}
 .cs-btn:hover:not(:disabled){transform:scale(1.07)}

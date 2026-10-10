@@ -3,7 +3,7 @@
 @media (max-width: 700px) {
   body { --mobile-h1: clamp(30px, 8vw, 36px); --mobile-h2: clamp(26px, 7vw, 30px); }
   h1 {
-    font-family: Newsreader, Georgia, serif !important;
+    font-family: Gloock, Georgia, serif !important;
     font-size: var(--mobile-h1) !important;
     font-weight: 600 !important;
     line-height: 1.14 !important;
@@ -24,7 +24,7 @@
   .hero .sub { font-size: 20px !important; line-height: 1.5 !important; }
   .hero-meta { gap: 10px 16px !important; font-size: 11px !important; letter-spacing: 1px !important; }
   .masthead { padding: 24px 22px 0 !important; }
-  .masthead .issue { font-family: Inter, sans-serif !important; font-style: normal !important; font-size: 10px !important; letter-spacing: 1.3px !important; }
+  .masthead .issue { font-family: Jost, sans-serif !important; font-style: normal !important; font-size: 10px !important; letter-spacing: 1.3px !important; }
   .hero .kicker { margin-bottom: 20px !important; }
   .hero-figure { margin-top: 32px !important; padding: 0 22px !important; }
   .shell { padding: 40px 22px !important; }
@@ -76,7 +76,7 @@
   .we-nav .navlinks { display: flex !important; gap: 18px !important; }
   .we-nav .navlinks a { margin: 0 !important; min-height: 44px; display: inline-flex; align-items: center; opacity: .85; }
   .we-eyebrow { color: #6B5F64 !important; font-size: 10px !important; letter-spacing: 1.5px !important; line-height: 1.6; }
-  .we-foot { color: #6B5F64 !important; font: 11px/1.6 Inter, sans-serif !important; letter-spacing: .08em !important; }
+  .we-foot { color: #6B5F64 !important; font: 11px/1.6 Jost, sans-serif !important; letter-spacing: .08em !important; }
   .we-wrap { padding: 36px 22px 64px !important; }
   .we-wrap .copy-btn { min-height: 44px; padding: 10px 14px; }
   .we-wrap .wb-prompt-bar { gap: 12px; }

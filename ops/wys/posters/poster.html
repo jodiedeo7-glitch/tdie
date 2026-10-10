@@ -6,44 +6,48 @@
      Never put the computer-on requirement or any rate, count or income claim here. -->
 <html><head><meta charset="utf-8">
 <style>
-@font-face{font-family:Inter;src:url(../../../src/assets/wys/fonts/inter.woff2) format('woff2');font-weight:100 900}
-@font-face{font-family:Newsreader;src:url(../../../src/assets/wys/fonts/newsreader.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Jost;src:url(../../../src/assets/fonts/jost-latin-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Jost;src:url(../../../src/assets/fonts/jost-latin-600-normal.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Jost;src:url(../../../src/assets/fonts/jost-latin-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:Jost;src:url(../../../src/assets/fonts/jost-latin-800-normal.woff2) format('woff2');font-weight:800}
+@font-face{font-family:Jost;src:url(../../../src/assets/fonts/jost-latin-900-normal.woff2) format('woff2');font-weight:900}
+@font-face{font-family:Gloock;src:url(../../../src/assets/fonts/gloock-latin-400-normal.woff2) format('woff2');font-weight:100 900}
 :root{--hot:#d62e73;--hot-ink:#d62e73;--bub:#ff8ac2;--lav:#b393d0;--lav-soft:#f1eafb;--gold:#c8a96a;--ink:#1a1417}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff5fa}
 [hidden]{display:none!important}
-.poster{position:relative;overflow:hidden;background:#fff5fa;font-family:Inter,sans-serif;color:var(--ink)}
+.poster{position:relative;overflow:hidden;background:#fff5fa;font-family:Jost,sans-serif;color:var(--ink)}
 .glit{position:absolute;left:0;right:0;height:26px;background:url(../../../public/images/brand/gl-tile.webp) center/220px repeat}
 .glit.top{top:0;border-bottom:2px solid var(--gold)}
 .glit.bot{bottom:0;border-top:2px solid var(--gold)}
-.name{font:900 34px/1.1 Inter;letter-spacing:-.01em;color:var(--hot-ink)}
-.brand{display:flex;align-items:center;gap:12px;font:800 19px/1 Inter;letter-spacing:.22em;text-transform:uppercase;color:var(--hot-ink)}
+.name{font:900 34px/1.1 Jost;letter-spacing:-.01em;color:var(--hot-ink)}
+.brand{display:flex;align-items:center;gap:12px;font:800 19px/1 Jost;letter-spacing:.22em;text-transform:uppercase;color:var(--hot-ink)}
 .brand i{font-style:normal;color:var(--hot);font-size:22px;letter-spacing:0}
-h1{font:600 92px/1.02 Newsreader,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+h1{font:600 92px/1.02 Gloock,Georgia,serif;letter-spacing:0;color:var(--ink)}
 h1 span{color:var(--hot);display:block}
-.tag{font:800 34px/1.2 Inter;letter-spacing:-.01em;color:var(--ink)}
+.tag{font:800 34px/1.2 Jost;letter-spacing:-.01em;color:var(--ink)}
 .tag b{color:var(--hot)}
-.kicker{font:800 18px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--hot-ink)}
+.kicker{font:800 18px/1 Jost;letter-spacing:.16em;text-transform:uppercase;color:var(--hot-ink)}
 .stats{display:grid;gap:14px}
-.stat{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:18px;background:#fff;border:2px solid var(--hot);box-shadow:0 10px 22px #d62e7322;font:700 26px/1.15 Inter}
+.stat{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:18px;background:#fff;border:2px solid var(--hot);box-shadow:0 10px 22px #d62e7322;font:700 26px/1.15 Jost}
 .stat b{font-weight:900;color:var(--hot-ink);min-width:44px;text-align:center;font-size:34px}
 .stat.lav{border-color:var(--lav);background:var(--lav-soft)}
-.offer{display:flex;flex-direction:column;gap:6px;font:600 25px/1.35 Inter}
+.offer{display:flex;flex-direction:column;gap:6px;font:600 25px/1.35 Jost}
 .offer strong{font-weight:900;color:var(--hot-ink)}
-.cta{white-space:nowrap;display:inline-flex;align-items:center;gap:14px;padding:20px 40px;border:3px solid var(--hot);border-radius:999px;background:#fff;color:var(--hot-ink);font:800 32px/1 Inter;box-shadow:0 10px 24px #d62e7333}
-.url{font:600 19px/1.3 Inter;color:var(--ink)}
+.cta{white-space:nowrap;display:inline-flex;align-items:center;gap:14px;padding:20px 40px;border:3px solid var(--hot);border-radius:999px;background:#fff;color:var(--hot-ink);font:800 32px/1 Jost;box-shadow:0 10px 24px #d62e7333}
+.url{font:600 19px/1.3 Jost;color:var(--ink)}
 /* phone */
 .phone{position:relative;border:12px solid #ffd3e8;border-radius:52px;background:#fff;box-shadow:0 30px 60px #b8245f40,inset 0 0 0 1px #f3b6d3}
 .screen{position:relative;border-radius:40px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
-.bar{flex:none;height:54px;padding-bottom:10px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #f6dbe8;font:800 17px/1 Inter}
+.bar{flex:none;height:54px;padding-bottom:10px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #f6dbe8;font:800 17px/1 Jost}
 .feed{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:8px;align-content:start;overflow:hidden}
 .pin{position:relative;border-radius:14px;overflow:hidden;container-type:inline-size}
 .pin img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}
 .ov{position:absolute;left:7%;right:7%;top:6%;padding:7cqw 5cqw 6cqw;border-radius:8cqw;background:#fffffff0;box-shadow:0 2cqw 6cqw #00000026;text-align:center;display:flex;flex-direction:column;gap:2px}
-.ov span{font:600 11.5cqw/1.05 Newsreader,serif;color:var(--ink)}
+.ov span{font:600 11.5cqw/1.05 Gloock,serif;color:var(--ink)}
 .ov span+span{color:var(--hot)}
-.ov small{margin-top:3cqw;font:600 4.6cqw/1 Inter;color:var(--ink)}
-.example{position:absolute;z-index:3;top:-20px;left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap;background:#fff;border:2px solid var(--hot);border-radius:999px;padding:8px 18px;font:900 16px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--hot-ink);box-shadow:0 6px 14px #d62e7333}
+.ov small{margin-top:3cqw;font:600 4.6cqw/1 Jost;color:var(--ink)}
+.example{position:absolute;z-index:3;top:-20px;left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap;background:#fff;border:2px solid var(--hot);border-radius:999px;padding:8px 18px;font:900 16px/1 Jost;letter-spacing:.12em;text-transform:uppercase;color:var(--hot-ink);box-shadow:0 6px 14px #d62e7333}
 
 /* Facebook 1080x1350 */
 .fb{width:1080px;height:1350px;padding:70px 64px 64px;display:flex;flex-direction:column}
@@ -51,7 +55,7 @@ h1 span{color:var(--hot);display:block}
 .fb .name{margin-bottom:26px}
 .fb h1{font-size:96px;margin-bottom:22px}
 .fb .tag{margin-bottom:0}
-.who{margin-top:14px;font:600 26px/1.3 Inter;color:var(--ink)}
+.who{margin-top:14px;font:600 26px/1.3 Jost;color:var(--ink)}
 .fb .stat{font-size:24px;padding:12px 18px}
 .fb .mid{margin-block:auto}
 .fb .mid{display:grid;grid-template-columns:500px 1fr;gap:36px;align-items:center}
@@ -76,10 +80,10 @@ h1 span{color:var(--hot);display:block}
 <template id="phone">
  <div class="phone"><span class="example">Example: one night, 6 pins</span><div class="screen"><div class="bar">Pinterest</div>
   <div class="feed">
-    <div class="pin"><img src="../../../src/lifestyle/pink-ghost-coffee-bar-basic.jpg"><div class="ov"><span>Pink Ghost</span><span>Coffee Bar</span><small>thedigitalincomeedit.com</small></div></div>
+    <div class="pin"><img src="../../../src/lifestyle/pink-ghost-coffee-bar-basic.jpg"></div>
     <div class="pin"><img src="../../../src/lifestyle/pink-ghost-coffee-bar-styled.jpg"></div>
     <div class="pin"><img src="../../../src/lifestyle/pink-ghost-coffee-bar-lifestyle.png"></div>
-    <div class="pin"><img src="../../../src/lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg"><div class="ov"><span>Pink Plaid</span><span>Pumpkin Patch</span><small>thedigitalincomeedit.com</small></div></div>
+    <div class="pin"><img src="../../../src/lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg"></div>
     <div class="pin"><img src="../../../src/lifestyle/pink-plaid-pumpkin-patch-outfit-styled.jpg"></div>
     <div class="pin"><img src="../../../src/lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.png"></div>
   </div></div></div>

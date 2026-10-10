@@ -47,21 +47,21 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
       --wink:var(--choc-soft); --wpaper:var(--white);
     }
     html{scroll-behavior:smooth}
-    body{background:var(--wc);color:var(--wd);margin:0;font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+    body{background:var(--wc);color:var(--wd);margin:0;font-family:"Jost",sans-serif;-webkit-font-smoothing:antialiased}
 
     /* ── progress ── */
     .we-prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#CBB7F7,var(--ac,var(--pink)));z-index:60;transition:width .4s ease}
 
     /* ── chrome ── */
     .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27,.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-    .we-nav a.brand{font-family:Newsreader,serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
+    .we-nav a.brand{font-family:Gloock,serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
     .we-nav a.brand em{color:var(--wp);font-style:italic}
     .we-nav .navlinks a{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wd);text-decoration:none;margin-left:22px;opacity:.55;transition:opacity .2s,color .2s}
     .we-nav .navlinks a:hover{opacity:1;color:var(--wp)}
 
     .we-wrap{max-width:768px;margin:0 auto;padding:78px 40px 140px}
     .we-eyebrow{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ac,var(--gold));margin-bottom:22px}
-    .we-wrap>h1{font-family:Newsreader,serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
+    .we-wrap>h1{font-family:Gloock,serif;font-weight:300;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.2px;margin:0 0 52px;max-width:15ch}
 
     /* ── the document ── */
     #we-body{font-size:17px;line-height:1.78}
@@ -72,16 +72,16 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     #we-body ul,#we-body ol{margin:0 0 22px;padding-left:20px}
     #we-body li{margin-bottom:9px;line-height:1.7}
     #we-body li::marker{color:var(--wp)}
-    #we-body h3{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:.1px;margin:28px 0 10px}
+    #we-body h3{font-family:"Jost",sans-serif;font-weight:600;font-size:15px;letter-spacing:.1px;margin:28px 0 10px}
     #we-body hr{display:none}
     #we-body>*:last-child{margin-bottom:0}
 
     .wb{margin:0 0 40px}
-    .wb-h{font-family:Newsreader,serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
+    .wb-h{font-family:Gloock,serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
     .wb-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 
     /* lead — the opening idea, set apart by type not by box */
-    .wb-lead p{font-family:Newsreader,serif;font-size:22px;line-height:1.62;margin-bottom:18px}
+    .wb-lead p{font-family:Gloock,serif;font-size:22px;line-height:1.62;margin-bottom:18px}
     .wb-lead{margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(43,22,27,.13)}
 
     .wb-sect{margin-bottom:46px}
@@ -113,7 +113,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 
     /* deliverable — the end cap */
     .wb-deliv{background:linear-gradient(180deg,color-mix(in srgb,var(--ac,var(--pink)) 18%,transparent),color-mix(in srgb,var(--ac,var(--pink)) 5%,transparent));border-top:2px solid var(--ac,var(--pink));border-radius:0 0 2px 2px;padding:30px 32px;margin-bottom:0}
-    .wb-deliv p{margin:0;font-family:Newsreader,serif;font-size:21px;line-height:1.55;color:var(--wd)}
+    .wb-deliv p{margin:0;font-family:Gloock,serif;font-size:21px;line-height:1.55;color:var(--wd)}
     .wb-deliv strong{color:var(--wp);font-weight:600}
     .wb-tag-deliv{color:var(--wp)}
 
@@ -136,7 +136,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     #we-body td{border-bottom:1px solid rgba(43,22,27,.1);padding:12px 14px 12px 0;vertical-align:top;line-height:1.6}
 
     /* blockquote */
-    #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:Newsreader,serif;font-style:italic;font-size:20px;line-height:1.6}
+    #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:Gloock,serif;font-style:italic;font-size:20px;line-height:1.6}
     #we-body blockquote p{margin:0}
 
     .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:32px 40px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27,.4);text-align:center}

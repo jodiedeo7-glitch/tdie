@@ -56,7 +56,7 @@ export const liveLooks = [
 ];
 
 export const roles = [
- {key: 'basic', name: 'Basic', note: 'Clean flat lay with a text overlay. The only image with words on it.'},
+ {key: 'basic', name: 'Basic', note: 'Clean flat lay of the pieces. The only pin that gets a headline.'},
  {key: 'styled', name: 'Styled', note: 'The pieces in a real setting. No text.'},
  {key: 'lifestyle', name: 'Lifestyle', note: 'Tommy Kate using the pieces in her real rooms. No text.'}
 ];

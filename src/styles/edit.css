@@ -9,7 +9,7 @@
    - Signature Hot Pink #D62E73 for large type and solid fills only.
      Small pink text uses #B8245F (4.5:1 on cream).
    - Muted Gold is a hairline, never a fill.
-   - Newsreader SemiBold, upright, for display. Inter for everything else.
+   - Gloock SemiBold, upright, for display. Jost for everything else.
    - Depth comes from scale, crop and contrast. No glass, no glow,
      no gradients on buttons, shadows only where something lifts.
    ========================================================================== */
@@ -19,7 +19,7 @@
   --e-ink:#1A1417;--e-ink-2:#4A3F44;--e-ink-3:#6B5F64;
   --e-pink:#D62E73;--e-pink-t:#B8245F;--e-bubble:#FF8AC2;--e-gold:#C8A96A;--e-lav:#CBB7F7;
   --e-line:rgba(26,20,23,.12);--e-hair:1px solid rgba(200,169,106,.55);
-  --e-serif:"Newsreader",Georgia,serif;--e-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --e-serif:"Gloock",Georgia,serif;--e-sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --e-w:1200px;--e-gut:clamp(16px,4vw,40px);
   --e-d1:clamp(46px,7.6vw,108px);--e-d2:clamp(36px,5.4vw,72px);--e-d3:clamp(26px,3vw,38px);
   --e-lift:0 30px 60px -34px rgba(26,20,23,.35);
