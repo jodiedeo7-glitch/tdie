@@ -137,6 +137,25 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--pink)}
 .alist li{display:flex;gap:14px;align-items:flex-start;font:600 21px/1.35 Inter;color:var(--ink);counter-increment:a}
 .card .alist li::before{clip-path:none;margin-top:0;content:counter(a,decimal-leading-zero);flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#FFE4EF;font:700 17px/1 Inter;color:var(--deep)}
 .p9{gap:22px}.p9 .card{padding:30px 38px}
+
+/* premium pass (matches the site's 10 Oct premium pass): no tiled glitter pages.
+   Clean solid blush and white, hot pink outlines, glitter only as small accents. */
+.blush{background:#FFF7FA}
+.bub,.tile{background:#FFE4EF}
+.glow::before,.sweep::after,.bub.glow::before{display:none}
+.hdr{background:#FFF7FA}
+.strip,.foot::before{height:6px}
+.foot{background:#FFE4EF}
+.foot span,.foot b{background:none;padding:0}
+.plate,.card,.g,.frame,.pin,.phone,.slide,.browser,.quote,.prod{border:2px solid #D62E73!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
+.gcard{background:#fff!important}
+.card p,.g p,.step p{text-wrap:pretty}
+.g .top{display:none}
+.nums,.nums div+div{border-color:#D62E73!important}
+.prod{border-radius:8px}
+.tag{border:2px solid #D62E73;box-shadow:none}
+.hero-glow{position:absolute;z-index:-1;pointer-events:none;width:560px;height:340px;background:url(img/brand/gl-hot.webp) 0 0/220px;opacity:.5;-webkit-mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%);mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
+.star{position:absolute;width:30px;height:30px;background:url(img/brand/gl-hot.webp) 0 0/120px;clip-path:var(--spark)}
 </style></head><body>
 '''
 LOGO='<div class="hdr"><span class="logo"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="sp"></i></span><span class="rule"><i></i><b></b><i></i></span></span></div><div class="strip"></div>'
@@ -175,7 +194,7 @@ P.append(page(3,'white sweep',f'''
 <div class="frame" style="height:560px">{img('cs','object-position:50% 55%')}</div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center">
  <p class="lede" style="text-wrap:balance">The While-You-Sleep Storefront™ does the jobs for you. Set it up once. Then no constantly making lists.</p>
- <figure class="quote"><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
+ <figure class="quote" style="position:relative"><i class="star" style="left:-15px;top:-15px"></i><i class="star" style="right:-15px;bottom:-15px"></i><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
 </div>'''))
 P.append(page(4,'tile',f'''
 <div class="plate" style="text-align:center;flex:1;display:flex;flex-direction:column">
@@ -240,7 +259,7 @@ P.append(page(10,'blush',f'''
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;flex:1;margin-top:10px">
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">1</span>01 · First</p><h3>Set it up</h3><p>A guided setup that records your choices.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">2</span>02 · Second</p><h3>Build the looks</h3><p>The themed-look recipe for any theme or season.</p></div>
- <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">3</span>03 · Third</p><h3>Keep it running</h3><p>Scheduled tasks, plus a missed-run check.</p></div>
+ <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">3</span>03 · Third</p><h3>Keep it running</h3><p>Scheduled tasks, plus a missed‑run check.</p></div>
  <div class="g"><div class="top"></div><p class="tp"><span class="n" style="font-size:72px;display:block;margin-bottom:10px">4</span>04 · Last</p><h3>Extend it</h3><p>Optional blog and Instagram. Outfit of the Day recipe for Brand Closet™ members.</p></div>
 </div>'''))
 P.append(page(11,'bub glow p9',f'''
