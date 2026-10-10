@@ -10,6 +10,7 @@ Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a
 
 - NEVER minimalist, clean-and-modern, beige, neutral, quiet, editorial calm, "luxury editorial", cookie-cutter or a wall of words.
 - Add little callouts and graphics and other visually appealing effects that break up the words on the page and highlight the features people might glaze over (Jodie, 4 Oct 2026, in her words).
+- Important words go hot pink (Jodie, 25 Sep 2026; reaffirmed 10 Oct 2026).
 - Every clickable card or image shows its name and a button. Nothing is a link without a label.
 - Body text big, near-black and crisp. Never grey body text. Headlines upright, never italic.
 
@@ -45,4 +46,4 @@ Jodie hates bows. Never add a bow to her pages, graphics or other designs unless
 ### Buttons and gradients — 8 October 2026 (founder, standing)
 Never use a filled hot-pink pill button, and never use pink/lavender gradient or ombre backgrounds, on anything made for Jodie. Black boxes and black buttons are also rejected. Current site buttons: white pill, thin pink outline, near-black text, small pink sparkle. Product sections show the real product (course covers, module list, real Skool group), never an unrelated Tommy Kate photo. Keep sections compact; no oversized text or empty space.
 
-**Correction, Jodie, 10 October 2026:** Jodie never asked for flat backgrounds. Flat cream, white or soft blush backgrounds are exactly what she has been trying to get away from ("the background is too flat, plain and ugly"). That line was added in error on 8 October and is removed, along with other AI-written specs she never gave (cream base, frosted white cards, gradient pill buttons, "one sparkle moment", Newsreader/Inter as required fonts).
+**Correction, Jodie, 10 October 2026:** Jodie never asked for flat backgrounds. Flat cream, white or soft blush backgrounds are exactly what she has been trying to get away from ("the background is too flat, plain and ugly"). That line was added in error on 8 October and is removed, along with other AI-written specs she never gave (cream base, frosted white cards, gradient pill buttons, "one sparkle moment", Newsreader/Inter as required fonts). Jodie, 10 Oct 2026: "Our text is not newsreader and inter"; the fonts and the colour palette are being changed everywhere.
