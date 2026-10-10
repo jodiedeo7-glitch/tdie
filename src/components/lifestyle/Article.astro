@@ -72,8 +72,7 @@ const articleSchema = draft ? [] : [{ '@context': 'https://schema.org', '@type':
           <span class="life-gp-window"><Image src={image.src} alt={image.alt} widths={[360,480,720,1000]} sizes="(max-width:760px) 220px, 260px" loading="eager" /></span>
           {twinkles.map(t => <svg class:list={["life-gp-twinkle", t.blue && "is-blue"]} style={`--x:${t.x};--y:${t.y};--s:${t.s}`} viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#life-twinkle" /></svg>)}
           <svg class="life-gp-clip" viewBox="0 0 30 90" aria-hidden="true" focusable="false"><use href="#life-paperclip" /></svg>
-          <span class="life-photo-count"><span aria-hidden="true">{index + 1}/{photos.length}</span><span class="life-sr">Photo {index + 1} of {photos.length}</span></span>
-          <figcaption><span>{photoCaption(image)}</span></figcaption>
+          <figcaption><span class="life-gp-caption">{photoCaption(image)}</span><span class="life-photo-count"><span aria-hidden="true">{index + 1}/{photos.length}</span><span class="life-sr">Photo {index + 1} of {photos.length}</span></span></figcaption>
         </figure>
       </div>)}</div>
     </div>
