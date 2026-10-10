@@ -36,22 +36,18 @@ Photo order is always Basic, Styled, Lifestyle. Both former "PHOTO NEEDED / Styl
 | 4 | src/lifestyle/pink-ghost-coffee-bar-basic.jpg | Basic, home decor | Approved set named by Jodie. Decor pieces on a wood sideboard. |
 | 4 | src/lifestyle/pink-ghost-coffee-bar-styled.jpg | Styled, home decor | Approved styled photo named by Jodie. |
 | 4 | src/lifestyle/pink-ghost-coffee-bar-lifestyle.png | Lifestyle, home decor | Approved set. Tommy Kate, brown hair, in her kitchen with the same decor. |
-| 2 | ops/cloud-output/storefront-product/graphics/photos/g3-kitchen-late.jpg | Scene | Unchanged from the first build. |
-| 3 | ops/cloud-output/storefront-product/graphics/photos/g4-nightstand-phone.jpg | Scene | Unchanged. |
-| 5, 6 | src/lifestyle/pink-halloween-porch-decor-flatlay.jpg | Basic, home decor | Unchanged. |
-| 6 | ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg | Basic, clothing | Unchanged. |
-| 6 | src/lifestyle/pink-halloween-trick-or-treat-porch-essentials-lifestyle.jpg | Lifestyle | Unchanged. |
-| 6 | src/lifestyle/pink-cat-halloween-costume-lifestyle.jpg | Lifestyle, costume | Unchanged. |
-| 7 | ops/cloud-output/storefront-product/graphics/photos/g2-loft-night-desk.jpg | Scene | Unchanged. |
-| 10 | ops/cloud-output/storefront-product/graphics/photos/g1-porch-morning.jpg | Scene | Unchanged. It shows a real potted lilac on the porch; the decorative daisies were removed. |
+| 2 | src/lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg | Basic | One of the six approved photos. |
+| 3 | src/lifestyle/pink-ghost-coffee-bar-styled.jpg | Styled | One of the six approved photos. |
+| 5 | src/lifestyle/pink-ghost-coffee-bar-basic.jpg | Basic | One of the six approved photos. |
+| 6 | all six approved photos, once each | Basic, Styled, Lifestyle per look | Two full sets in order. |
+| 7 | src/lifestyle/pink-ghost-coffee-bar-basic.jpg | Basic | One of the six approved photos. |
+| 10 | src/lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.png | Lifestyle | One of the six approved photos. |
 
-The Legally Blonde knit set is no longer used, and its two resized copies were removed from `img/`.
-
-UNVERIFIED: whether Jodie approved the unchanged images on pages 2, 3, 5, 6, 7 and 10 for WYS use.
+Only Jodie's six approved photos appear anywhere in the guide. No photo repeats on a page. Every other photo copy was deleted from `img/` (10 October 2026, after Jodie flagged that off-list photos had come back).
 
 ## Psychology map
 
-- Curiosity gap: p1 ("Your taste. / A repeatable system." with an empty Styled frame and "Free preview")
+- Curiosity gap: p1 ("Your taste. / A repeatable system." with the full Basic, Styled, Lifestyle set and "Free preview")
 - Problem agitation: p2 (four jobs, "6 Pins a day. By hand?", "Passive income isn't passive")
 - Reframe: p3 ("What if the treadmill ran without you?", "NO THINKING.")
 - Visual proof: p4 (one look across the three roles)
