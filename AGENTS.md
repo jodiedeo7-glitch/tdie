@@ -1,3 +1,12 @@
+## LOOK BEFORE YOU SEND (Jodie, 10 October 2026, standing rule, applies to every visual)
+Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG, graphic, screenshot, banner, guide, website change):
+1. Render it and open EVERY page or screen at full size yourself. A contact sheet or thumbnail alone is not looking.
+2. Write down every defect you see: empty gaps, words alone on a line, cropped text or photos, overlaps, things touching or running into the footer or edges, wrong or missing photos, wrong fonts or colours, anything she has already banned.
+3. Fix every defect, re-render, and look at every page at full size again. Repeat until nothing is wrong.
+4. Only then send. Never send unchecked files and never make Jodie point out what is wrong.
+5. When she asks to change or remove one thing, change only that thing. Do not redesign anything she did not ask to change.
+6. Send Jodie the actual files (PDF, PNGs) directly, never just links.
+
 ## WYS authority (Jodie, 7 October 2026)
 
 Read `claude/WYS_REFERENCE_PACK_2026-10-07.md` in full before WYS founder or customer-product work. It is the sole complete WYS operating document: current source, exact approved prompts, reference roles, sourcing, state, permissions/spending, manual/mixed paths, website migration, publication and test/release gates. Superseded recipes and instruction packages must not be restored from history or runtime snapshots. General TDIE image defaults do not select a WYS generator. SOP-15 and SOP-16 remain separate.
