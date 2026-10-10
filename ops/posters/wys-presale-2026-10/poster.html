@@ -8,164 +8,150 @@
 @font-face { font-family: "Yellowtail"; src: url("fonts/Yellowtail-Regular.ttf"); font-display: block; }
 @font-face { font-family: "Jost"; src: url("fonts/Jost.ttf"); font-weight: 100 900; font-display: block; }
 
-:root {
-  --cream: #FBF8F5;
-  --ink: #1A1417;
-  --hot: #D62E73;
-  --bubble: #FF8AC2;
-  --gold: #C8A96A;
-  --pad: 44px;
-}
+:root { --cream: #FBF8F5; --ink: #1A1417; --hot: #D62E73; --bubble: #FF8AC2; --gold: #C8A96A; --muted: #4a3f44; --pad: 44px; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: var(--cream); }
 body { width: 1080px; color: var(--ink); font-family: "Jost", sans-serif; -webkit-font-smoothing: antialiased; }
-.poster { width: 1080px; background: var(--cream); position: relative; }
+.poster { width: 1080px; background: var(--cream); }
 .fb .poster { height: 1350px; overflow: hidden; display: flex; flex-direction: column; }
 .inner { padding: 0 var(--pad); }
 .fb .inner { flex: 1; display: flex; flex-direction: column; }
-
 .gold-rule { height: 1px; background: var(--gold); }
+.label { font-weight: 600; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
+.pink { color: var(--hot); }
 
-/* ---------- top line ---------- */
-.topline { display: flex; justify-content: space-between; align-items: center; padding-top: 38px; padding-bottom: 14px; }
+/* top line */
+.topline { display: flex; justify-content: space-between; align-items: center; padding: 30px 0 12px; }
 .kicker { font-weight: 600; font-size: 15px; letter-spacing: 0.24em; }
 .badge { background: var(--hot); color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.16em; padding: 9px 14px; border-radius: 2px; }
 
-/* ---------- hero ---------- */
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 40px; padding: 26px 0 26px; align-items: start; }
-h1 { font-family: "Gloock", serif; font-weight: 400; font-size: 66px; line-height: 1.02; letter-spacing: -0.01em; }
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 318px; gap: 36px; padding: 18px 0 18px; align-items: start; }
+h1 { font-family: "Gloock", serif; font-weight: 400; font-size: 56px; line-height: 1.02; letter-spacing: -0.01em; }
 h1 em { font-style: normal; color: var(--hot); }
-.sub { font-size: 21px; line-height: 1.42; margin-top: 18px; max-width: 30em; }
+.who-for { font-weight: 600; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hot); margin-top: 12px; }
+.sub { font-size: 18.5px; line-height: 1.42; margin-top: 8px; }
+.price { border: 1px solid var(--gold); background: #fff; padding: 15px 20px 13px; }
+.price-row { display: flex; align-items: baseline; gap: 12px; margin-top: 6px; }
+.price-row .amt { font-weight: 600; font-size: 44px; line-height: 1; }
+.price-row .who { font-size: 18px; font-weight: 500; }
+.price-and { font-size: 14px; color: var(--muted); margin-left: 2px; }
+.price-reg { margin-top: 8px; padding-top: 7px; border-top: 1px solid var(--gold); font-size: 16px; text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--muted); }
+.sidenote { font-size: 14px; line-height: 1.45; margin-top: 8px; color: var(--muted); }
 
-.price { border: 1px solid var(--gold); background: #fff; padding: 20px 24px 18px; }
-.price-label { font-weight: 600; font-size: 13px; letter-spacing: 0.22em; color: var(--hot); }
-.price-row { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
-.price-row .amt { font-weight: 600; font-size: 50px; line-height: 1; letter-spacing: -0.01em; }
-.price-row .who { font-size: 19px; font-weight: 500; }
-.price-and { font-size: 15px; color: #6b5f64; margin: 4px 0 0 2px; }
-.price-reg { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--gold); font-size: 17px; text-decoration: line-through; text-decoration-thickness: 1.5px; color: #6b5f64; }
-.sidenote { font-size: 14.5px; line-height: 1.5; margin-top: 12px; color: #3d3438; }
+/* system: 3 steps as a flow */
+.sys-head { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 10px; }
+h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 32px; line-height: 1.1; }
+.flow { display: grid; grid-template-columns: minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr); align-items: stretch; }
+.stage { border: 1px solid var(--gold); background: #fff; padding: 12px 14px 12px; display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 6px; }
+.stage .num { font-family: "Gloock", serif; font-size: 36px; line-height: 0.9; color: var(--hot); }
+.stage .when { font-weight: 600; font-size: 11.5px; letter-spacing: 0.18em; color: var(--hot); display: block; }
+.stage b { display: block; font-weight: 600; font-size: 18px; margin-top: 1px; }
+.stage span.t { display: block; font-size: 14.5px; line-height: 1.35; margin-top: 2px; color: var(--muted); }
+.stage.night { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.stage.night .num, .stage.night .when { color: var(--bubble); }
+.stage.night span.t { color: #e9dfe3; }
+.arrow { display: flex; align-items: center; justify-content: center; }
+.arrow::before { content: ""; width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 12px solid var(--hot); }
 
-/* ---------- section heads ---------- */
-.sec-head { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0 14px; }
-h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 36px; line-height: 1.1; }
-.count { font-weight: 600; font-size: 14px; letter-spacing: 0.22em; color: var(--hot); }
-
-/* ---------- looks ---------- */
-.body-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 34px; }
-.look { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px; margin-bottom: 18px; }
-.look-label { padding-top: 2px; }
-.look-label .n { font-family: "Gloock", serif; font-size: 40px; line-height: 1; color: var(--hot); display: block; }
-.look-label .w { font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
-.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+/* outputs */
+.makes { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 10px; }
+.out-grid { display: grid; grid-template-columns: minmax(0, 1fr) 292px; gap: 24px; }
+.channel { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 12px; margin-bottom: 10px; }
+.ch-name { padding-top: 2px; }
+.ch-name .p { font-weight: 600; font-size: 15px; display: block; line-height: 1.15; }
+.ch-name .look { display: block; margin-top: 8px; font-family: "Gloock", serif; font-size: 30px; line-height: 1; color: var(--hot); }
+.ch-name .lw { font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .shot { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #eee; }
 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cap { font-weight: 600; font-size: 13px; letter-spacing: 0.2em; margin-top: 8px; text-align: center; }
+.cap { font-weight: 600; font-size: 11.5px; letter-spacing: 0.2em; margin-top: 5px; text-align: center; }
 
-/* Basic overlay: layered magazine lockup */
-.lockup { position: absolute; inset: 0 0 auto 0; height: 62%; padding: 18px 12px 0;
-  background: linear-gradient(180deg, rgba(20,12,16,0.72) 0%, rgba(20,12,16,0.5) 45%, rgba(20,12,16,0) 100%);
-  text-align: center; }
-.lockup .serif { font-family: "Gloock", serif; color: #fff; font-size: 40px; line-height: 0.95; letter-spacing: -0.01em; display: block; text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
-.lockup .script { font-family: "Yellowtail", cursive; color: var(--bubble); font-size: 50px; line-height: 1; display: block;
-  transform: rotate(-7deg); margin-top: -18px; position: relative; text-shadow: 0 2px 6px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.6); }
+.lockup { position: absolute; inset: 0 0 auto 0; height: 68%; padding: 12px 6px 0; text-align: center;
+  background: linear-gradient(180deg, rgba(20,12,16,0.8) 0%, rgba(20,12,16,0.56) 50%, rgba(20,12,16,0) 100%); }
+.lockup .serif { font-family: "Gloock", serif; color: #fff; font-size: 27px; line-height: 0.98; display: block; text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+.lockup .script { font-family: "Yellowtail", cursive; color: var(--bubble); font-size: 36px; line-height: 1; display: block; transform: rotate(-6deg); margin-top: -2px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.6); }
 
-/* ---------- blog ---------- */
-.blog h2 { font-size: 32px; }
-.blog p { font-size: 17px; line-height: 1.45; margin-top: 10px; }
-.phones { position: relative; height: 470px; margin-top: 22px; }
-.phone { position: absolute; width: 196px; background: var(--ink); border-radius: 30px; padding: 9px; box-shadow: 0 18px 40px rgba(26,20,23,0.22); }
-.phone img { display: block; width: 100%; border-radius: 22px; }
+.blog .p { font-weight: 600; font-size: 15px; }
+.blog h3 { font-family: "Gloock", serif; font-weight: 400; font-size: 24px; line-height: 1.12; margin-top: 4px; }
+.blog p { font-size: 15px; line-height: 1.4; margin-top: 6px; color: var(--muted); }
+.phones { position: relative; height: 330px; margin-top: 12px; }
+.phone { position: absolute; width: 150px; background: var(--ink); border-radius: 26px; padding: 7px; box-shadow: 0 14px 30px rgba(26,20,23,0.22); }
+.phone img { display: block; width: 100%; border-radius: 20px; }
 .phone.p1 { left: 0; top: 0; }
-.phone.p2 { right: 0; top: 112px; }
+.phone.p2 { right: 0; top: 70px; }
 
-/* ---------- phrase ---------- */
-.phrase { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); text-align: center; padding: 14px 0 12px; margin: 6px 0 0; }
-.phrase .p { font-family: "Gloock", serif; font-size: 34px; }
-.phrase .s { font-family: "Yellowtail", cursive; color: var(--hot); font-size: 46px; margin-left: 10px; position: relative; top: 3px; }
+/* destination + week */
+.dest { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 20px; align-items: center; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 10px 0; margin-top: 4px; }
+.dest .to { font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
+.dest .to b { color: var(--hot); font-weight: 600; }
+.week { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 6px; }
+.day { text-align: center; border: 1px solid var(--gold); padding: 4px 0 3px; background: #fff; }
+.day .d { font-weight: 600; font-size: 11px; letter-spacing: 0.16em; display: block; }
+.day .c { font-size: 11px; color: var(--hot); font-weight: 600; display: block; }
 
-/* ---------- steps ---------- */
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 22px 0 22px; }
-.step { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; }
-.step .num { font-family: "Gloock", serif; font-size: 40px; line-height: 0.9; color: var(--hot); }
-.step b { display: block; font-weight: 600; font-size: 19px; }
-.step span { display: block; font-size: 15.5px; line-height: 1.4; margin-top: 3px; color: #3d3438; }
+/* phrase */
+.phrase { text-align: center; padding: 14px 0 10px; }
+.phrase .p { font-family: "Gloock", serif; font-size: 30px; }
+.phrase .s { font-family: "Yellowtail", cursive; color: var(--hot); font-size: 42px; margin-left: 10px; position: relative; top: 3px; }
+.phrase-wrap { border-bottom: 1px solid var(--ink); }
 
-/* ---------- final bar ---------- */
-.bar { background: var(--ink); color: var(--cream); text-align: center; padding: 26px var(--pad); font-size: 24px; font-weight: 500; letter-spacing: 0.02em; }
+/* bar */
+.bar { background: var(--ink); color: var(--cream); text-align: center; padding: 20px var(--pad); font-size: 23px; font-weight: 500; letter-spacing: 0.02em; }
 .bar .j { color: var(--bubble); font-weight: 600; }
 .fb .bar { margin-top: auto; }
 
-/* ---------- Skool (tall) variant ---------- */
-.skool .hero { padding: 40px 0 40px; }
-.skool h1 { font-size: 72px; }
-.skool .body-grid { display: block; }
-.skool .look { grid-template-columns: 80px minmax(0, 1fr); gap: 14px; margin-bottom: 30px; }
-.skool .look-label .n { font-size: 52px; }
-.skool .trio { gap: 14px; }
-.skool .lockup { padding-top: 26px; }
-.skool .lockup .serif { font-size: 54px; }
-.skool .lockup .script { font-size: 66px; margin-top: -24px; }
-.skool .cap { font-size: 15px; }
-.skool .blog { display: grid; grid-template-columns: minmax(0, 1fr) 540px; gap: 36px; align-items: center; padding: 30px 0 40px; border-top: 1px solid var(--gold); }
-.skool .blog h2 { font-size: 40px; }
-.skool .blog p { font-size: 20px; }
-.skool .phones { height: auto; margin: 0; position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.skool .phone { position: static; width: auto; }
-.skool .phone.p2 { margin-top: 70px; }
-.skool .phrase { padding: 22px 0 18px; }
-.skool .phrase .p { font-size: 40px; }
-.skool .phrase .s { font-size: 54px; }
-.skool .steps { padding: 34px 0 40px; }
-.skool .step b { font-size: 21px; }
-.skool .step span { font-size: 17px; }
+/* fb fit */
+.fb .out-grid { grid-template-columns: minmax(0,1fr) 372px; gap: 26px; }
+.fb .phones { height: 300px; }
+.fb .phone { width: 168px; }
+.fb .phone.p2 { top: 64px; }
+.fb .blog h3 { font-size: 27px; }
+.fb .blog p { font-size: 16px; }
+.fb .sys-head, .fb .makes { padding: 12px 0 8px; }
+.fb .stage { padding: 10px 12px; }
+.fb .price-row .amt { font-size: 40px; }
+.fb .hero { padding: 16px 0 14px; }
+.fb .lockup .serif { font-size: 24px; }
+.fb .lockup .script { font-size: 32px; }
+.fb .channel { margin-bottom: 6px; }
 
-/* ---- fit pass ---- */
-.lockup { padding: 14px 8px 0; height: 66%; background: linear-gradient(180deg, rgba(20,12,16,0.78) 0%, rgba(20,12,16,0.55) 50%, rgba(20,12,16,0) 100%); }
-.lockup .serif { font-size: 31px; line-height: 0.98; }
-.lockup .script { font-size: 41px; margin-top: -12px; }
-.fb h1 { font-size: 58px; }
-.fb .hero { padding: 22px 0 22px; }
-.fb .sub { font-size: 20px; margin-top: 14px; }
-.fb .price { padding: 16px 20px 14px; }
-.fb .price-row .amt { font-size: 44px; }
-.fb .price-row { margin-top: 8px; }
-.fb .sec-head { padding: 14px 0 10px; }
-.fb h2 { font-size: 32px; }
-.fb .blog h2 { font-size: 29px; margin-top: 10px; }
-.fb .look { margin-bottom: 10px; grid-template-columns: 56px minmax(0,1fr); }
-.fb .cap { margin-top: 6px; font-size: 12px; }
-.fb .phrase { padding: 10px 0 8px; }
-.fb .phrase .p { font-size: 31px; }
-.fb .phrase .s { font-size: 42px; }
-.fb .steps { padding: 16px 0 18px; }
-.fb .step b { font-size: 18px; }
-.fb .step span { font-size: 15px; }
-.fb .bar { padding: 20px var(--pad); font-size: 23px; }
-.fb .phones { height: 430px; margin-top: 18px; }
-.fb .phone { width: 180px; }
-.fb .phone.p2 { top: 100px; }
+/* Skool (tall) */
+.skool .hero { padding: 34px 0 34px; }
+.skool h1 { font-size: 68px; }
+.skool .sub { font-size: 20px; }
+.skool .sys-head, .skool .makes { padding: 28px 0 16px; }
+.skool h2 { font-size: 40px; }
+.skool .stage { padding: 18px 18px; }
+.skool .stage b { font-size: 21px; }
+.skool .stage span.t { font-size: 16px; }
+.skool .out-grid { display: block; }
+.skool .channel { grid-template-columns: 96px minmax(0,1fr); gap: 16px; margin-bottom: 26px; }
+.skool .ch-name .p { font-size: 18px; }
+.skool .ch-name .look { font-size: 44px; }
+.skool .trio { gap: 14px; }
 .skool .lockup { padding-top: 22px; }
 .skool .lockup .serif { font-size: 50px; }
-.skool .lockup .script { font-size: 64px; margin-top: -18px; }
-.who-for { font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hot); margin-top: 16px; }
-.fb .sub { font-size: 18.5px; margin-top: 8px; }
-.fb .who-for { margin-top: 12px; font-size: 14px; }
-.fb h1 { font-size: 54px; }
-.fb .lockup .serif { font-size: 29px; }
-.fb .phones { height: 400px; }
-.fb .phone { width: 170px; }
-.fb .body-grid { grid-template-columns: minmax(0,1fr) 330px; }
-.fb .hero { padding: 18px 0 16px; grid-template-columns: minmax(0,1fr) 320px; }
-.fb .price-and { margin: 0 0 0 2px; font-size: 14px; }
-.fb .price-reg { margin-top: 8px; padding-top: 8px; }
-.fb .sidenote { margin-top: 8px; font-size: 14px; }
-.fb .topline { padding-top: 32px; padding-bottom: 12px; }
-.fb .steps { padding: 14px 0 16px; }
-.lockup .script { margin-top: -2px; transform: rotate(-6deg); }
-.skool .lockup .script { margin-top: -4px; }
-.fb .steps { padding: 22px 0 22px; }
-.skool .phones { align-items: start; }
+.skool .lockup .script { font-size: 64px; margin-top: -4px; }
+.skool .cap { font-size: 14px; margin-top: 8px; }
+.skool .blog { display: grid; grid-template-columns: minmax(0,1fr) 520px; gap: 36px; align-items: center; padding: 10px 0 30px; }
+.skool .blog h3 { font-size: 38px; }
+.skool .blog p { font-size: 19px; }
+.skool .blog .p { font-size: 18px; }
+.skool .phones { position: static; height: auto; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.skool .phone { position: static; width: auto; padding: 9px; border-radius: 30px; }
+.skool .phone img { border-radius: 22px; }
+.skool .phone.p2 { margin-top: 60px; }
+.skool .dest { padding: 18px 0; }
+.skool .dest .to { font-size: 16px; }
+.skool .day { padding: 8px 0 6px; }
+.skool .day .d, .skool .day .c { font-size: 13px; }
+.skool .phrase { padding: 24px 0 20px; }
+.skool .phrase .p { font-size: 38px; }
+.skool .phrase .s { font-size: 52px; }
+.skool .bar { padding: 28px var(--pad); font-size: 26px; }
+.skool .phrase-wrap { margin-bottom: 36px; }
 </style>
 </head>
 <body>
@@ -181,14 +167,14 @@ h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 36px; line-heigh
       <div>
         <h1>Your Amazon storefront <em>posts itself.</em></h1>
         <p class="who-for">For Amazon storefront owners with no time to post.</p>
-        <p class="sub">Set it up once in Claude or ChatGPT. Then every night it plans a look from your finds, makes the Pinterest pins, writes the blog post and posts the Instagram carousel, all linked back to your storefront.</p>
+        <p class="sub">Set it up once. Every night it plans the looks, makes your Pinterest pins, writes your blog post and posts your Instagram carousel.</p>
       </div>
       <div>
         <div class="price">
-          <div class="price-label">MEMBER PRESALE PRICE</div>
+          <div class="label pink">MEMBER PRESALE PRICE</div>
           <div class="price-row"><span class="amt">$10</span><span class="who">Premium members</span></div>
           <div class="price-and">and</div>
-          <div class="price-row" style="margin-top:2px"><span class="amt">$17</span><span class="who">Standard members</span></div>
+          <div class="price-row" style="margin-top:0"><span class="amt">$17</span><span class="who">Standard members</span></div>
           <div class="price-reg">Regular price $37</div>
         </div>
         <p class="sidenote">Presale opens Tue, Oct 13 · Full launch Friday · Works with Claude, ChatGPT, or both</p>
@@ -196,39 +182,45 @@ h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 36px; line-heigh
     </section>
     <div class="gold-rule"></div>
 
-    <div class="body-grid">
-      <section class="looks">
-        <div class="sec-head">
-          <h2>What it makes every night.</h2>
-          <span class="count">3 PINS PER LOOK</span>
-        </div>
+    <div class="sys-head">
+      <h2>How it works</h2>
+      <span class="label pink">You do step 1. It does the rest.</span>
+    </div>
+    <section class="flow">
+      <div class="stage"><div class="num">1</div><div><span class="when">YOU, ONCE</span><b>Set it up once.</b><span class="t">15-min Quick Start, or customize it in about an hour.</span></div></div>
+      <div class="arrow"></div>
+      <div class="stage night"><div class="num">2</div><div><span class="when">EVERY NIGHT</span><b>Go to bed.</b><span class="t">It plans, makes and posts every look overnight.</span></div></div>
+      <div class="arrow"></div>
+      <div class="stage"><div class="num">3</div><div><span class="when">EVERY MORNING</span><b>Wake up to it live.</b><span class="t">Approvals on for the first few days, then off.</span></div></div>
+    </section>
 
-        <div class="look">
-          <div class="look-label"><span class="n">01</span><span class="w">Look</span></div>
+    <div class="makes">
+      <h2>Every night, while you sleep.</h2>
+      <span class="label pink">2 LOOKS · 6 PINS</span>
+    </div>
+    <div class="out-grid">
+      <section>
+        <div class="channel">
+          <div class="ch-name"><span class="p">Pinterest pins</span><span class="look">01</span><span class="lw">Look</span></div>
           <div class="trio">
-            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt="">
-              <div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div>
-              <div class="cap">BASIC</div></div>
+            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
             <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
-            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position: 62% 50%"></div><div class="cap">LIFESTYLE</div></div>
+            <div><div class="shot"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"></div><div class="cap">LIFESTYLE</div></div>
           </div>
         </div>
-
-        <div class="look">
-          <div class="look-label"><span class="n">02</span><span class="w">Look</span></div>
+        <div class="channel">
+          <div class="ch-name"><span class="p">Pinterest pins</span><span class="look">02</span><span class="lw">Look</span></div>
           <div class="trio">
-            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt="">
-              <div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div>
-              <div class="cap">BASIC</div></div>
+            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
             <div><div class="shot"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
-            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position: 60% 50%"></div><div class="cap">LIFESTYLE</div></div>
+            <div><div class="shot"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"></div><div class="cap">LIFESTYLE</div></div>
           </div>
         </div>
       </section>
-
       <section class="blog">
         <div>
-          <h2>Plus a blog post for every look.</h2>
+          <span class="p">Blog post</span>
+          <h3>Plus a blog post for every look.</h3>
           <p>Written in your voice, with every product linked to your storefront.</p>
         </div>
         <div class="phones">
@@ -238,15 +230,22 @@ h2 { font-family: "Gloock", serif; font-weight: 400; font-size: 36px; line-heigh
       </section>
     </div>
 
-    <section class="phrase">
-      <span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s">&amp; you slept.</span>
+    <section class="dest">
+      <div class="to">Then again <b>tomorrow night</b></div>
+      <div class="week">
+        <div class="day"><span class="d">MON</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">TUE</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">WED</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">THU</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">FRI</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">SAT</span><span class="c">✓ posted</span></div>
+        <div class="day"><span class="d">SUN</span><span class="c">✓ posted</span></div>
+      </div>
     </section>
 
-    <section class="steps">
-      <div class="step"><div class="num">1</div><div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div></div>
-      <div class="step"><div class="num">2</div><div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div></div>
-      <div class="step"><div class="num">3</div><div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div></div>
-    </section>
+    <div class="phrase-wrap">
+      <section class="phrase"><span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s">&amp; you slept.</span></section>
+    </div>
   </div>
   <div class="bar"><span class="j">Join the waitlist</span> · www.thedigitalincomeedit.com</div>
 </div>
