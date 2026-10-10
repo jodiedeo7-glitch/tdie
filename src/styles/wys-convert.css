@@ -180,7 +180,7 @@
 .wc-six{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:34px}
 .wc-six figure{margin:0;position:relative}
 .wc-six img,.wc-six .wc-pin{display:block;width:100%;height:auto;border-radius:12px;aspect-ratio:2/3;object-fit:cover}
-.wc-six figure>figcaption{margin-top:6px;text-align:center;font:700 12px/1.3 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--wc-hot-ink)}
+.wc-six>figure>figcaption{margin-top:6px;text-align:center;font:700 12px/1.3 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--wc-hot-ink)}
 .wc-look-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;margin-bottom:30px}
 .wys-world .wc-look-head p:not(.wc-kicker){margin:0;font:400 17px/1.55 Inter,sans-serif;color:var(--wc-ink);letter-spacing:0;text-transform:none;max-width:60ch}
 .wc-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -270,3 +270,35 @@
  .wc-hero-cta-mobile .wc-cta{width:100%;margin-top:0}
  .wc-hero-grid{gap:14px}
 }
+
+/* Brand alignment (canon §8, TDIE_DESIGN_RULES, 10 Oct 2026 audit).
+   Headlines Newsreader SemiBold upright, near-black with the turn phrase in
+   Signature Hot Pink. Body and labels near-black; accents #D62E73 only.
+   Sizes, weight, spacing and line breaks stay exactly as locked. */
+.wys-world{--wc-hot-ink:#d62e73}
+.wys-world :is(.wc-hero,.wc-section,.wc-final,.wc-wait-grid) :is(h1,h2,h3),
+.wys-world :is(.wc-pullquote,.wc-founder) blockquote{font-family:Newsreader,Georgia,serif!important;font-weight:600!important;font-style:normal!important;color:var(--wc-ink)!important}
+.wys-world :is(.wc-hero,.wc-section,.wc-final) :is(h1,h2) em,
+.wys-world .wc-hero h1.wc-h1-wait em{color:var(--wc-hot)!important;font-family:inherit!important;font-style:normal!important}
+.wys-world .wc-founder blockquote span+span{color:var(--wc-hot)}
+.wys-world .wc-pullquote blockquote{color:var(--wc-hot)!important}
+.wys-world :is(.wc-cta-note,.wc-wait-fine,.wc-night-stop p,.wc-tagline small,.wc-pin-overlay small,.wc-live-tag,.wc-split-kicker span,.wc-founder p){color:var(--wc-ink)!important}
+.wys-world .wc-founder cite,.wys-world .wc-split-it .wc-split-kicker span{color:var(--wc-hot)!important}
+.wc-stop-off .wc-time{color:var(--wc-ink)}
+.wc-live-tag{border-color:var(--wc-hot)}
+.wc-founder{border-left-color:var(--wc-hot)}
+/* No nested frames: the proof screenshot sits straight in its card */
+.wc-proof-shot{border:0}
+/* Instagram previews show the photo slides only, no added lettering */
+.wc-carousel .wc-pin-overlay{display:none}
+/* Hero sparkle moment: one real-glitter sticker beside the phone (desktop) */
+.wc-night{gap:0;align-items:center}
+.wc-sticker{align-self:center;margin-right:-18px;z-index:2;transform:rotate(-6deg);padding:16px 20px;border-radius:20px;border:2px solid var(--wc-hot);background-size:140px;box-shadow:0 12px 24px #d62e7333;text-align:center;font:800 15px/1.25 Inter,sans-serif;color:var(--wc-ink);letter-spacing:.02em}
+.wc-sticker b{display:block;font:600 34px/1 Newsreader,Georgia,serif;color:var(--wc-ink);margin-bottom:4px}
+@media (max-width:700px){.wc-sticker{display:none}}
+/* Lavender is an accent, never a dominant fill */
+.wys-world .wc-flow-band{background:#ffeef6;border-block:1px solid var(--wc-gold)}
+.wys-world .wc-founder{background:#fff;border:2px solid var(--wc-hot);border-left-width:6px;box-shadow:0 16px 32px #d62e731f}
+/* Disclosure clears the footer line */
+.wys-world .tdie-page-disclaimer{padding-bottom:28px!important}
+.wc-faq summary{text-wrap:balance}

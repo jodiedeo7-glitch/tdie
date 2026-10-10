@@ -7,6 +7,7 @@ const [ghost, plaid] = liveLooks;
 const cols = [[[ghost, 'basic'], [plaid, 'styled'], [ghost, 'lifestyle']], [[plaid, 'basic'], [ghost, 'styled'], [plaid, 'lifestyle']]];
 ---
 <div class="wc-night">
+ <p class="wc-sticker" style="background-image:url(/images/brand/sh-bub.webp)"><b>6 pins</b>every night,<br/>while you sleep</p>
  <WysPhone label="Example: one night, 6 pins" app="Pinterest" class="wc-phone-hero">
   <div class="wc-feed">{cols.map((col) => <div class="wc-feed-col">{col.map(([look, role], i) => <WysPin look={look} role={role} sizes="(max-width:700px) 90px, 120px" eager={i < 2}/>)}</div>)}</div>
  </WysPhone>
