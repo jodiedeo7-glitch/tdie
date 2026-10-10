@@ -1,76 +1,63 @@
-# WYS Free Preview Guide: build report (10 October 2026)
+# WYS Free Preview Guide: build report, revision 2 (10 October 2026)
 
-Sources checked: CLAUDE.md; claude/WYS_REFERENCE_PACK_2026-10-07.md (full); ops/cloud-kit/TDIE_DESIGN_RULES.md; ops/canon/canon.json (claims and locked-feature rules); ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md; src/pages/shop/while-you-sleep-storefront.astro (kit contents list); ops/wys-runtime/README.md and rejected-assets.json; src/lifestyle/README.md.
+Sources checked: CLAUDE.md; claude/WYS_REFERENCE_PACK_2026-10-07.md; ops/cloud-kit/TDIE_DESIGN_RULES.md; ops/canon/canon.json; ops/ai-router/TDIE_CURRENT_HANDOFF_RULES_2026-10-04.md; src/lifestyle/pink-plaid-pumpkin-patch-outfit.json and src/lifestyle/pink-ghost-coffee-bar.json on origin/cloudflare-migration; Jodie's revision instructions of 10 October 2026.
 
-NOT FOUND in the repo: claude/WYS_FOUNDER_INTAKE.md, claude/WYS_LOOK_RULES.md, claude/WYS_PROMO_FACTS.md, claude/TDIE_DESIGN_RULES.md. They are claude.ai Project documents, and this cloud session cannot open the "TDIE Website" project. Every line that depends on the intake is marked UNVERIFIED below.
+Status: prepared file only. Nothing posted, published, scheduled or uploaded. The WYS release hold is unchanged. The photos were read from origin/cloudflare-migration. Nothing was committed to that branch.
 
-Status: prepared file only. Nothing posted, published, scheduled or uploaded. The WYS release hold is unchanged.
+## Revision 2 changes (Jodie, 10 October)
+
+- Photos: only the six approved photos from src/lifestyle on cloudflare-migration. Every other photo and both PHOTO NEEDED boxes are removed. Order is always Basic, Styled, Lifestyle. No photo repeats within a page.
+- Text overlay: only on Basic photos (a cream band with a Yellowtail script title, plus a Jost uppercase subtitle where it fits at 18px or larger). Styled and Lifestyle carry no text.
+- No flowers, butterflies, bows, stripes or double outlines. The left edge stripe, the dashed sticker rings and the sparkles are gone.
+- Every page background is cream #FBF8F5. Hot pink #D62E73 is used only for headline turn lines, numbers and small labels. Bubblegum #FF8AC2 appears once, on the button arrow. Text is near-black #1A1417. Frames, rules and cards use thin gold #C8A96A lines. Nothing has a shadow block, gradient or transparency. The CTA pill is near-black with cream text.
+- Fonts: Gloock for headlines, Yellowtail for the pink script accent, Jost for everything else. All three come from the google/fonts GitHub repository (ofl/gloock, apache/yellowtail, ofl/jost). Licences are in `type/`. The PDF embeds only these three.
+- Pace and approvals are founder-confirmed: 2 looks a day = 6 Pins a day; automatic by default with the option to approve, with approvals recommended for the first few days.
 
 ## Files
 
-- `index.html`: source, ten 1080 x 1440 pages, Newsreader SemiBold and Inter self-hosted in `type/` (OFL licences included)
-- `out/WYS-Free-Preview-Guide.pdf`: 10 pages at 1080 x 1440 px, embedded fonts are only Inter and Newsreader
-- `out/wys-preview-guide-p01.png` to `p10.png`: one PNG per page
-- `out/wys-preview-guide-contact-sheet.png`: all pages, checked by eye
+- `index.html` (source), `type/` (fonts and licences), `img/` (resized copies of the six photos)
+- `out/WYS-Free-Preview-Guide.pdf`: 10 pages at 1080 x 1440 px
+- `out/wys-preview-guide-p01.png` to `p10.png`
+- `out/wys-preview-guide-contact-sheet.png`
 - `render.cjs`: to rebuild, run `NODE_PATH=$(npm root -g) node render.cjs . out`
-- `img/`: resized copies of repo photos (originals untouched)
 
-## Conflicts between files (one line each, with the fix)
+## Photo placement
 
-1. The sales page (`src/pages/shop/while-you-sleep-storefront.astro`, 4 Oct) says ChatGPT plus approval of every Pin before scheduling, but the brief says Claude desktop plus automatic by default. Fix: once Jodie confirms the intake wording, Codex updates the sales page to match. The guide follows the brief.
-2. The reference pack (section 19) says no three-pin timetable is set, but the brief says 2 looks a day = 6 Pins a day. Fix: save the 2-looks-a-day pace in the intake/state record. The guide uses Jodie's pace.
-3. The design rules call for gradient pill buttons and soft pink shadows, but the brief bans gradients and soft shadows so the file imports into Canva. Fix: none needed. The guide uses solid fills and solid offset blocks.
-4. The handoff rules put Hello Kitty and Kuromi plushies in the attic loft, but the brief bans anything branded in a photo. Fix: the only loft photo used (`g2-loft-night-desk`) has no plushies.
-5. The reference pack's visual direction lists black and silver. Fix: per the skill, the guide never describes her palette in words.
-6. The sales-page kit list includes "A Preparation Guide and a Setup Guide" (PDFs), but the skill says buyer delivery is an interactive website, not a PDF. Fix: page 8 says "a guided setup" and names no format.
+| Page | Photos (in order) |
+|---|---|
+| 1 | Plaid outfit Basic, Styled, Lifestyle (fanned stack) |
+| 2 | Ghost coffee bar Lifestyle |
+| 3 | Plaid outfit Lifestyle |
+| 4 | Plaid outfit Basic, Styled, Lifestyle |
+| 5 | Ghost coffee bar Basic |
+| 6 | Plaid outfit Basic, Plaid outfit Lifestyle, Coffee bar Basic, Coffee bar Lifestyle |
+| 7 | Ghost coffee bar Styled |
+| 10 | Ghost coffee bar Lifestyle |
 
-## Photos (every placed photo, path, why it passes)
+Pages 8 and 9 have no photos, as before.
 
-No repo look has an approved Styled photo. The three-role approved WYS sets (Pretty Wicked, Ghoul Fuel) are private, so they are not in the repo and were not used. Every Styled slot is a labelled empty frame: "PHOTO NEEDED / Styled, not on a bed" (pages 1 and 4).
+## Copy changes forced by the photo swap
 
-| Page | Repo path | Role | Why it passes |
-|---|---|---|---|
-| 1, 4 | src/lifestyle/last-minute-legally-blonde-costume-flatlay.jpg | Basic | Overhead on weathered white porch boards: not a bed, no upholstery. Real-looking, nothing branded readable, with its text overlay. The guide never names Legally Blonde. |
-| 1, 4 | src/lifestyle/last-minute-legally-blonde-costume-lifestyle.jpg | Lifestyle (same look) | Tommy Kate with brown hair on her porch steps, wearing the same sweater, jeans and scrunchie. Real, not staged-rich, no logos. |
-| 2 | ops/cloud-output/storefront-product/graphics/photos/g3-kitchen-late.jpg | Scene | Farmhouse kitchen at night with laptop and retriever. Brown hair, real, no branding. |
-| 3 | ops/cloud-output/storefront-product/graphics/photos/g4-nightstand-phone.jpg | Scene | Nightstand and bed at night with no outfit on the bed, nothing branded. Chosen instead of the sofa photo, which shows a closed laptop that could suggest it runs with the laptop closed. |
-| 5, 6 | src/lifestyle/pink-halloween-porch-decor-flatlay.jpg | Basic, home decor (non-clothing) | Weathered porch boards, generic ghost and pumpkin decor, no licensed characters, real-looking. |
-| 6 | ops/cloud-output/storefront-product/graphics/photos/hoodie-flatlay.jpg | Basic, clothing | Whitewashed wood floor, not a bed, no logos. |
-| 6 | src/lifestyle/pink-halloween-trick-or-treat-porch-essentials-lifestyle.jpg | Lifestyle, home/holiday (non-clothing) | Brown hair, real porch, generic jack-o-lantern bucket. |
-| 6 | src/lifestyle/pink-cat-halloween-costume-lifestyle.jpg | Lifestyle, costume | Brown hair, farmhouse porch and red barn, no branding. |
-| 7 | ops/cloud-output/storefront-product/graphics/photos/g2-loft-night-desk.jpg | Scene | Laptop on at night, which matches "computer on when tasks run". No plushies or logos. |
-| 10 | ops/cloud-output/storefront-product/graphics/photos/g1-porch-morning.jpg | Scene | Porch morning with lilacs and barn. Brown hair, real, nothing branded. |
+- Page 3: the caption "Lights out. The list is not on you." is removed because it no longer matched the daytime pumpkin patch photo. The frame has no caption.
+- Page 6: the old tile captions (Campus outfit, Porch decor, Treat night, Costume) are now "Outfit · Basic", "Outfit · Lifestyle", "Decor · Basic", "Decor · Lifestyle". Only two looks exist, so the grid shows two looks instead of four.
+- Basic overlay titles: "Pumpkin Patch / The pink plaid outfit" and "Ghost Coffee Bar / Pink Halloween finds", taken from the two look records.
 
-Rejected as failing a hard rule: every flat lay on pink satin, fluffy fabric or bedding (angel, ballerina, bunny, car, cat, dog, dorm, fairy, flamingo, pageant, porch-essentials basic, sorority, witch, cowgirl). Also rejected: the cut-out collages that look fake (graduation, sequin, workwear, which also shows a branded-style ring), the sofa photo (closed laptop), and any loft image with plushies.
+All other copy is unchanged.
 
-UNVERIFIED: whether Jodie approved these repo images for WYS use. The src/lifestyle images are legacy two-image /lifestyle data, and the graphics/photos set was made for the presale graphics. Four different looks appear across the guide, including two non-clothing ones.
+## Conflicts with standing files
 
-## Psychology map
+1. CLAUDE.md and the design rules set Newsreader and Inter as the brand fonts, and the louder pink look. Fix: this guide follows Jodie's 10 October instruction (Gloock, Yellowtail and Jost on cream). If this becomes the brand standard, update CLAUDE.md and ops/cloud-kit/TDIE_DESIGN_RULES.md.
+2. The live sales page still describes ChatGPT and approval of every Pin. Fix: Codex updates it to match the founder-confirmed automatic-by-default rule.
 
-- Curiosity gap: p1 ("Your taste. / A repeatable system." with an empty Styled frame and "Free preview")
-- Problem agitation: p2 (four jobs, "6 Pins a day. By hand?", "Passive income isn't passive")
-- Reframe: p3 ("What if the treadmill ran without you?", "NO THINKING.")
-- Visual proof: p4 (one look across the three roles)
-- Concrete specifics: p4 (3 photos), p5 (3 Pins per look), p7 (2 looks a day = 6 Pins)
-- Value stacking: p5 (Pin copy, Instagram carousel, blog post), p8 (four kit parts)
-- Ownership language and future pacing: p6 ("My pink. Your recipe.", "Picture your first look")
-- Ease, low effort: p7 (three steps with arrows, automatic by default)
-- Honest objection handling: p9 (tools, computer on, browser step, separate costs, optional paths, no sales promise)
-- Single CTA: p10 (one pill button)
-- None used: fake scarcity, testimonials, prices, dates, spot counts, codes, affiliate rate or income claims.
+## Still UNVERIFIED
 
-## Lines I could not verify (UNVERIFIED)
-
-- Every intake-based line (Claude desktop and Chrome; automatic by default; 2 looks a day; Instagram carousel order lifestyle, styled, clean; "NO THINKING."; the persona-or-flat-lays choice). The intake file was not reachable. These lines are copied from the brief, not from the intake.
-- "Each Pin links to the Amazon list its products came from": per the reference pack, Associates-only buyers have no Idea List.
-- Page 8 kit contents come from the 4 Oct sales-page list (setup, themed-look recipe, persona/no-persona, scheduled task prompts plus reconciliation, optional blog, Instagram add-on, Brand Closet Outfit of the Day). They are not checked against a delivered kit build. "Missed-run check" maps to the reconciliation job in reference pack sections 21 and 23.
-- The p10 button links to /shop/while-you-sleep-storefront. Whether that page is live is not checked.
-- The "NO THINKING." attribution ("Jodie, on why she built it") is not checked against the intake.
+- Page 8 kit contents. They come from the 4 Oct sales-page list, not a checked kit build.
+- "Each Pin links to the Amazon list its products came from." This holds for Idea List buyers. Associates-only buyers have no Idea List.
+- Whether the sales page linked from the page 10 button is live.
+- The "NO THINKING." attribution.
 
 ## QA done
 
-The automated check covered every page: exact 1080 x 1440, no overflow, nothing outside the page, nothing over the footer, no text under 18px, no em or en dashes, no "$", "spots" or "Warmly". Headline lines fit without widow words. The remaining overlap flags come from the rotated callout boxes, and inspection showed no real text overlap. I checked the contact sheet and a 390px phone-width version by eye. Body copy is 45 words or fewer on every page except p9 (about 75), because the required lines are long.
+The automated check covered all 10 pages: exact size, no overflow, nothing outside the page, nothing over the footer, no text under 18px, no dashes, no prices or spot counts, and no repeated photo within a page. I looked at every page at full size and on the contact sheet. One defect was fixed: the "Ghost Coffee Bar" overlay script on page 5 was clipped and is now smaller.
 
-Page headlines are 74 to 104px at 1080px wide, which is about 27 to 38px on a phone. The 52px headline cap applies to site sales pages, not to a 1080px graphic.
-
-This matches CLAUDE.md, claude/WYS_REFERENCE_PACK_2026-10-07.md and ops/cloud-kit/TDIE_DESIGN_RULES.md, with conflicts 1 to 6 above. It could not be checked against claude/WYS_FOUNDER_INTAKE.md, WYS_LOOK_RULES.md or WYS_PROMO_FACTS.md (not reachable).
+This matches Jodie's 10 October revision instructions, claude/WYS_REFERENCE_PACK_2026-10-07.md (three roles, order, no text on Styled or Lifestyle) and the claims rules. It differs from CLAUDE.md and ops/cloud-kit/TDIE_DESIGN_RULES.md on fonts and palette, per conflict 1.
