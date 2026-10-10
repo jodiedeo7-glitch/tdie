@@ -48,13 +48,13 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 .frame.lav{background:var(--glitter),var(--glitter2),#E6DAF8;outline-color:var(--lavline)}
 .frame .ph{flex:1;min-height:0;border-radius:16px 16px 0 0;overflow:hidden;background:var(--kickbg)}
 .frame img{display:block;width:100%;height:100%;object-fit:cover}
-.frame figcaption{flex:none;background:var(--paper);border-radius:0 0 16px 16px;padding:14px 18px;text-align:center;font:600 19px/1.3 "Inter";letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.frame figcaption{flex:none;text-wrap:balance;background:var(--paper);border-radius:0 0 16px 16px;padding:14px 18px;text-align:center;font:600 19px/1.3 "Inter";letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .frame figcaption b{color:var(--pinkt);font-weight:700}
 /* cards: the site's method cards, pink and lavender alternating */
 .card{position:relative;background:#fff;border:3px solid var(--line);border-radius:36px 12px;box-shadow:0 28px 50px -38px rgba(194,24,91,.55);padding:30px 32px}
 .card.lav{background:var(--lav);border-color:var(--lavline)}
-.card h3{font:600 42px/1.1 "Newsreader";letter-spacing:-.015em;color:var(--ink)}
-.card p{font:400 26px/1.5 "Inter";color:var(--body)}
+.card h3{text-wrap:balance;font:600 42px/1.1 "Newsreader";letter-spacing:-.015em;color:var(--ink)}
+.card p{text-wrap:pretty;font:400 26px/1.5 "Inter";color:var(--body)}
 .card .out{display:block;margin-top:16px;padding-top:16px;border-top:2px dashed #F3A9C8;font:600 24px/1.4 "Inter";color:var(--pinkt)}
 .card.lav .out{border-top-color:var(--lavline)}
 /* glossy number circle with halo, as on the site, plus fine glitter */
@@ -71,6 +71,10 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 .quote,.card .quote{font:600 64px/1 "Newsreader";color:var(--hot)}
 .btn{display:flex;align-items:center;justify-content:center;gap:18px;height:118px;border-radius:999px;background:#fff;border:4px solid var(--hot);box-shadow:0 4px 0 #F6C9DD;font:800 26px/1.1 "Inter";letter-spacing:.05em;text-transform:uppercase;color:var(--hot);text-decoration:none;white-space:nowrap;text-align:center;padding:0 40px}
 .row{display:grid;gap:30px}
+#p6 .frame figcaption{white-space:nowrap;letter-spacing:.04em;font-size:18px;padding:12px 4px}
+#p6 .frame img{object-position:50% 0}
+#p8 .card{min-height:330px}
+#p9 .card p:not(.ord){font-size:27px}
 .sp{flex:1}
 </style>
 </head>
@@ -84,9 +88,9 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
     <h1>Your taste.<br>A repeatable <em>system.</em></h1>
     <p class="tag">Planned. Pinned. Posted. Blogged. You Slept.</p>
     <div class="row" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px">
-      <figure class="frame" style="height:540px;"><div class="ph"><img src="img/plaid-basic.jpg" alt="Basic: pink plaid shacket outfit laid out on wood floorboards"></div><figcaption><b>1</b> · Basic</figcaption></figure>
-      <figure class="frame lav" style="height:540px;"><div class="ph"><img src="img/plaid-styled.jpg" alt="Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples"></div><figcaption><b>2</b> · Styled</figcaption></figure>
-      <figure class="frame" style="height:540px;"><div class="ph"><img src="img/plaid-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit"></div><figcaption><b>3</b> · Lifestyle</figcaption></figure>
+      <figure class="frame" style="height:640px;"><div class="ph"><img src="img/plaid-basic.jpg" alt="Basic: pink plaid shacket outfit laid out on wood floorboards"></div><figcaption><b>1</b> · Basic</figcaption></figure>
+      <figure class="frame lav" style="height:640px;"><div class="ph"><img src="img/plaid-styled.jpg" alt="Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples"></div><figcaption><b>2</b> · Styled</figcaption></figure>
+      <figure class="frame" style="height:640px;"><div class="ph"><img src="img/plaid-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit"></div><figcaption><b>3</b> · Lifestyle</figcaption></figure>
     </div>
     <div class="sp"></div>
     <div><span class="pill">Customized</span><span class="pill">Guided setup</span><span class="pill">Automatic after setup</span></div>
@@ -103,13 +107,13 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
     <div style="display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:40px;align-items:start">
       <div style="display:flex;flex-direction:column;gap:26px"><h2>You found the look.<br><em>Now what?</em></h2>
       <p class="lede">Every single look comes with four jobs. Tomorrow brings a new look and the same four jobs.</p></div>
-      <figure class="frame" style="height:440px;"><div class="ph"><img src="img/kitchen-late.jpg" alt="Late night at the kitchen island with a laptop" style="object-position:60% 50%"></div><figcaption>Another late one</figcaption></figure>
+      <figure class="frame" style="height:400px;"><div class="ph"><img src="img/kitchen-late.jpg" alt="Late night at the kitchen island with a laptop" style="object-position:60% 50%"></div><figcaption>Another late one</figcaption></figure>
     </div>
-    <div class="row" style="grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:48px">
-      <div class="card" style="padding:26px 20px;text-align:center"><span class="num">1</span><h3 style="font-size:32px">The photos</h3></div>
-      <div class="card lav" style="padding:26px 20px;text-align:center"><span class="num lav">2</span><h3 style="font-size:32px">The words</h3></div>
-      <div class="card" style="padding:26px 20px;text-align:center"><span class="num">3</span><h3 style="font-size:32px">Where people shop it</h3></div>
-      <div class="card lav" style="padding:26px 20px;text-align:center"><span class="num lav">4</span><h3 style="font-size:32px">Doing it all again tomorrow</h3></div>
+    <div class="row" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:78px 26px;margin-top:40px">
+      <div class="card" style="padding:20px 20px 22px;text-align:center"><span class="num">1</span><h3 style="font-size:34px">The photos</h3></div>
+      <div class="card lav" style="padding:20px 20px 22px;text-align:center"><span class="num lav">2</span><h3 style="font-size:34px">The words</h3></div>
+      <div class="card" style="padding:20px 20px 22px;text-align:center"><span class="num">3</span><h3 style="font-size:34px">Where people shop it</h3></div>
+      <div class="card lav" style="padding:20px 20px 22px;text-align:center"><span class="num lav">4</span><h3 style="font-size:34px">Doing it all again tomorrow</h3></div>
     </div>
     <div class="row" style="grid-template-columns:minmax(0,1fr) 300px;gap:30px;align-items:stretch">
       <div class="card"><p class="ord">Real talk</p><p style="margin-top:12px;font-weight:600;color:var(--ink)">Passive income isn't passive when you are the one doing every job.</p></div>
@@ -125,7 +129,7 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">Here's the shift</p>
     <h2>What if the treadmill<br>ran <em>without you?</em></h2>
-    <figure class="frame" style="height:560px;"><div class="ph"><img src="img/nightstand.jpg" alt="Nightstand at night with a phone, a book and a pink tumbler beside the bed"></div><figcaption>Lights out. <b>The list is not on you.</b></figcaption></figure>
+    <figure class="frame" style="height:650px;"><div class="ph"><img src="img/nightstand.jpg" alt="Nightstand at night with a phone, a book and a pink tumbler beside the bed"></div><figcaption>Lights out. <b>The list is not on you.</b></figcaption></figure>
     <div class="row" style="grid-template-columns:minmax(0,1fr) 440px;gap:34px;align-items:center">
       <p class="lede">The While-You-Sleep Storefront™ does the jobs for you. Set it up once. Then no constantly making lists.</p>
       <div class="card lav" style="text-align:center;padding:30px 20px"><p class="quote" style="font-size:46px;white-space:nowrap">“NO THINKING.”</p><p class="small" style="margin-top:12px">Jodie, on why she built it</p></div>
@@ -141,14 +145,14 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
     <p class="kick">Show, don't tell</p>
     <h2>One look.<br><em>Three photos.</em></h2>
     <div class="row" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-      <figure class="frame" style="height:460px;"><div class="ph"><img src="img/coffee-basic.jpg" alt="Basic: pink ghost and pumpkin decor pieces on a wood sideboard"></div><figcaption><b>1</b> · Basic</figcaption></figure>
-      <figure class="frame lav" style="height:460px;"><div class="ph"><img src="img/coffee-styled.jpg" alt="Styled: the pink ghost coffee bar fully set up on a chippy sideboard"></div><figcaption><b>2</b> · Styled</figcaption></figure>
-      <figure class="frame" style="height:460px;"><div class="ph"><img src="img/coffee-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall"></div><figcaption><b>3</b> · Lifestyle</figcaption></figure>
+      <figure class="frame" style="height:520px;"><div class="ph"><img src="img/coffee-basic.jpg" alt="Basic: pink ghost and pumpkin decor pieces on a wood sideboard"></div><figcaption><b>1</b> · Basic</figcaption></figure>
+      <figure class="frame lav" style="height:520px;"><div class="ph"><img src="img/coffee-styled.jpg" alt="Styled: the pink ghost coffee bar fully set up on a chippy sideboard"></div><figcaption><b>2</b> · Styled</figcaption></figure>
+      <figure class="frame" style="height:520px;"><div class="ph"><img src="img/coffee-lifestyle.jpg" alt="Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall"></div><figcaption><b>3</b> · Lifestyle</figcaption></figure>
     </div>
     <div class="row" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px">
       <div class="card" style="text-align:center;padding:24px 18px"><span class="num">1</span><h3 style="font-size:32px">See the pieces</h3><p style="font-size:22px">every piece, laid out</p></div>
       <div class="card lav" style="text-align:center;padding:24px 18px"><span class="num lav">2</span><h3 style="font-size:32px">Feel the style</h3><p style="font-size:22px">fully styled, never bare</p></div>
-      <div class="card" style="text-align:center;padding:24px 18px"><span class="num">3</span><h3 style="font-size:32px">Picture it in your life</h3><p style="font-size:22px">Tommy Kate around her real farmhouse</p></div>
+      <div class="card" style="text-align:center;padding:24px 18px"><span class="num">3</span><h3 style="font-size:32px">Picture it in<br>your life</h3><p style="font-size:22px">Tommy Kate around her real farmhouse</p></div>
     </div>
     <p class="small">Styling examples. AI-generated images can differ from the linked products.</p>
   </div>
@@ -161,13 +165,13 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">What comes with every look</p>
     <h2>The photos open the door.<br>The words get the <em>save.</em></h2>
-    <div class="row" style="grid-template-columns:minmax(0,1fr) 400px;gap:40px;align-items:start;margin-top:10px">
+    <div class="row" style="grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start;margin-top:10px">
       <div style="display:flex;flex-direction:column;gap:22px">
-        <div class="card" style="display:flex;gap:26px;align-items:center;padding:24px 28px"><span class="num" style="margin:0">1</span><div><h3 style="font-size:34px">Pinterest Pin copy</h3><p>Three Pins per look.</p></div></div>
-        <div class="card lav" style="display:flex;gap:26px;align-items:center;padding:24px 28px"><span class="num lav" style="margin:0">2</span><div><h3 style="font-size:34px">The Instagram post</h3><p>Carousel: lifestyle, styled, clean.</p></div></div>
-        <div class="card" style="display:flex;gap:26px;align-items:center;padding:24px 28px"><span class="num" style="margin:0">3</span><div><h3 style="font-size:34px">Shop-the-look blog post</h3><p>One page for the whole look.</p></div></div>
+        <div class="card" style="display:flex;gap:24px;align-items:center;padding:34px 24px"><span class="num" style="margin:0">1</span><div><h3 style="font-size:33px;white-space:nowrap">Pinterest Pin copy</h3><p>Three Pins per look.</p></div></div>
+        <div class="card lav" style="display:flex;gap:24px;align-items:center;padding:34px 24px"><span class="num lav" style="margin:0">2</span><div><h3 style="font-size:33px;white-space:nowrap">The Instagram post</h3><p>Carousel: lifestyle,<br>styled, clean.</p></div></div>
+        <div class="card" style="display:flex;gap:24px;align-items:center;padding:34px 24px"><span class="num" style="margin:0">3</span><div><h3 style="font-size:33px;white-space:nowrap">Shop-the-look blog post</h3><p>One page for the whole look.</p></div></div>
       </div>
-      <figure class="frame" style="height:620px;"><div class="ph"><img src="img/porch-decor-basic.jpg" alt="Pink Halloween porch flat lay on weathered white boards"></div><figcaption>Home decor · <b>Basic</b></figcaption></figure>
+      <figure class="frame" style="height:680px;"><div class="ph"><img src="img/porch-decor-basic.jpg" alt="Pink Halloween porch flat lay on weathered white boards"></div><figcaption>Home decor · <b>Basic</b></figcaption></figure>
     </div>
     <div class="card lav"><p style="font-weight:600;color:var(--ink)"><span class="ord" style="display:block;margin-bottom:10px">Where it links</span>Each Pin links to the Amazon list its products came from.</p></div>
   </div>
@@ -181,10 +185,10 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
     <p class="kick">Your taste runs it</p>
     <h2>My pink.<br>Your <em>recipe.</em></h2>
     <div class="row" style="grid-template-columns:repeat(4,minmax(0,1fr));gap:20px">
-      <figure class="frame" style="height:290px;padding:12px;border-radius:24px"><div class="ph"><img src="img/hoodie-basic.jpg" alt="Hoodie outfit flat lay"></div><figcaption>Campus outfit</figcaption></figure>
-      <figure class="frame lav" style="height:290px;padding:12px;border-radius:24px"><div class="ph"><img src="img/porch-decor-basic.jpg" alt="Porch decor flat lay"></div><figcaption>Porch decor</figcaption></figure>
-      <figure class="frame" style="height:290px;padding:12px;border-radius:24px"><div class="ph"><img src="img/porch-essentials-lifestyle.jpg" alt="Trick-or-treat porch lifestyle photo"></div><figcaption>Treat night</figcaption></figure>
-      <figure class="frame lav" style="height:290px;padding:12px;border-radius:24px"><div class="ph"><img src="img/cat-lifestyle.jpg" alt="Costume lifestyle photo on the farmhouse porch" style="object-position:50% 40%"></div><figcaption>Costume</figcaption></figure>
+      <figure class="frame" style="height:380px;padding:12px;border-radius:24px"><div class="ph"><img src="img/hoodie-basic.jpg" alt="Hoodie outfit flat lay"></div><figcaption>Campus outfit</figcaption></figure>
+      <figure class="frame lav" style="height:380px;padding:12px;border-radius:24px"><div class="ph"><img src="img/porch-decor-basic.jpg" alt="Porch decor flat lay"></div><figcaption>Porch decor</figcaption></figure>
+      <figure class="frame" style="height:380px;padding:12px;border-radius:24px"><div class="ph"><img src="img/porch-essentials-lifestyle.jpg" alt="Trick-or-treat porch lifestyle photo"></div><figcaption>Treat night</figcaption></figure>
+      <figure class="frame lav" style="height:380px;padding:12px;border-radius:24px"><div class="ph"><img src="img/cat-lifestyle.jpg" alt="Costume lifestyle photo on the farmhouse porch" style="object-position:50% 40%"></div><figcaption>Costume</figcaption></figure>
     </div>
     <p class="ord" style="margin-top:6px">Three choices you make once</p>
     <div class="row" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:34px">
@@ -203,16 +207,16 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">How it runs</p>
     <h2>Three steps.<br>Then it <em>keeps going.</em></h2>
-    <div class="row" style="grid-template-columns:minmax(0,1fr) 300px;gap:34px;align-items:center">
-      <figure class="frame" style="height:330px;"><div class="ph"><img src="img/loft-desk.jpg" alt="Laptop left on in the attic loft at night"></div><figcaption>The computer stays on. <b>You don't have to.</b></figcaption></figure>
-      <div class="card lav" style="text-align:center;padding:30px 20px"><b style="display:block;font:600 110px/1 Newsreader;color:var(--hot)">2</b><p style="font-weight:700;color:var(--ink)">looks a day<br>= 6 Pins</p></div>
-    </div>
+    <figure class="frame" style="height:350px;"><div class="ph"><img src="img/loft-desk.jpg" alt="Laptop left on in the attic loft at night"></div><figcaption>The computer stays on. <b>You don't have to.</b></figcaption></figure>
     <div class="row" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px">
       <div class="card" style="text-align:center;padding:24px 18px"><span class="num">1</span><p class="ord">First</p><h3 style="font-size:32px;margin-top:6px">Set it up once</h3></div>
-      <div class="card lav" style="text-align:center;padding:24px 18px"><span class="num lav">2</span><p class="ord">Then</p><h3 style="font-size:32px;margin-top:6px">It builds 2 looks a day</h3></div>
-      <div class="card" style="text-align:center;padding:24px 18px"><span class="num">3</span><p class="ord">Every day</p><h3 style="font-size:32px;margin-top:6px">It posts, pins and blogs</h3></div>
+      <div class="card lav" style="text-align:center;padding:24px 18px"><span class="num lav">2</span><p class="ord">Then</p><h3 style="font-size:32px;margin-top:6px">It builds<br>2 looks a day</h3></div>
+      <div class="card" style="text-align:center;padding:24px 18px"><span class="num">3</span><p class="ord">Every day</p><h3 style="font-size:32px;margin-top:6px">It posts, pins<br>and blogs</h3></div>
     </div>
-    <div class="card"><p class="ord">You choose</p><p style="margin-top:10px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
+    <div class="row" style="grid-template-columns:minmax(0,1fr) 260px;gap:26px;align-items:stretch">
+      <div class="card"><p class="ord">You choose</p><p style="margin-top:10px;font-weight:600;color:var(--ink)">Automatic by default. Turn approvals on for your first few days if you like to check everything.</p></div>
+      <div class="card lav" style="text-align:center;padding:22px 16px"><b style="display:block;font:600 84px/1 Newsreader;color:var(--hot)">2</b><p style="font-weight:700;color:var(--ink);font-size:24px">looks a day<br>= 6 Pins</p></div>
+    </div>
   </div>
   <div class="foot"><span>The While-You-Sleep Storefront™</span><b>07 / 10</b></div>
 </section>
@@ -223,7 +227,7 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">What's inside the kit</p>
     <h2>The pieces behind<br>the <em>pretty.</em></h2>
-    <div class="row" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 34px;margin-top:44px">
+    <div class="row" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:80px 34px;margin-top:56px">
       <div class="card" style="padding:28px 32px 34px"><span class="num">1</span><p class="ord" style="text-align:center">01 · First</p><h3 style="text-align:center;margin:8px 0 14px">Set it up</h3><p>A guided setup that records your choices.</p></div>
       <div class="card lav" style="padding:28px 32px 34px"><span class="num lav">2</span><p class="ord" style="text-align:center">02 · Second</p><h3 style="text-align:center;margin:8px 0 14px">Build the looks</h3><p>The themed-look recipe for any theme or season.</p></div>
       <div class="card lav" style="padding:28px 32px 34px"><span class="num lav">3</span><p class="ord" style="text-align:center">03 · Third</p><h3 style="text-align:center;margin:8px 0 14px">Keep it running</h3><p>Scheduled tasks, plus a missed-run check.</p></div>
@@ -240,10 +244,10 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">Honest, up front</p>
     <h2>A quick fit check.<br>Then your <em>first look.</em></h2>
-    <div style="display:flex;flex-direction:column;gap:20px;margin-top:6px">
-      <div class="card" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:26px 30px"><h3 style="font-size:36px;color:var(--hot)">Your tools</h3><p>Claude desktop and Chrome, Amazon Associates or Influencer, Pinterest, image tools.</p></div>
-      <div class="card lav" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:26px 30px"><h3 style="font-size:36px;color:var(--hot)">Your setup</h3><p>Your own accounts. The computer needs to be on when the tasks run, and the Amazon list step uses the browser on that computer. Tool costs are separate.</p></div>
-      <div class="card" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:26px 30px"><h3 style="font-size:36px;color:var(--hot)">Your path</h3><p>Blog and Instagram are optional.</p></div>
+    <div style="display:flex;flex-direction:column;gap:22px;margin-top:6px">
+      <div class="card" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:28px 30px"><h3 style="font-size:36px;color:var(--hot)">Your tools</h3><p>Claude desktop and Chrome, Amazon Associates or Influencer, Pinterest, image tools.</p></div>
+      <div class="card lav" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:28px 30px"><h3 style="font-size:36px;color:var(--hot)">Your setup</h3><p>Your own accounts. The computer needs to be on when the tasks run, and the Amazon list step uses the browser on that computer. Tool costs are separate.</p></div>
+      <div class="card" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;padding:28px 30px"><h3 style="font-size:36px;color:var(--hot)">Your path</h3><p>Blog and Instagram are optional.</p></div>
     </div>
     <div class="card lav"><p class="ord">How it runs</p><p style="margin-top:10px;font-weight:600;color:var(--ink)">Automatic by default, with the option to approve everything yourself. We recommend turning approvals on for your first few days.</p></div>
     <p style="font:700 28px/1.3 Inter;color:var(--ink);padding-top:16px;border-top:2px dashed #F3A9C8">The kit does not promise sales or income.</p>
@@ -257,7 +261,7 @@ h1 em,h2 em{font-style:normal;color:var(--hot)}
 
     <p class="kick">Your next step</p>
     <h1>Ready to build<br>around <em>your taste?</em></h1>
-    <figure class="frame" style="height:560px;"><div class="ph"><img src="img/porch-morning.jpg" alt="Tommy Kate on the farmhouse porch in the morning with her phone and pink tumbler"></div><figcaption>Planned. Pinned. Posted. Blogged. <b>You Slept.</b></figcaption></figure>
+    <figure class="frame" style="height:620px;"><div class="ph"><img src="img/porch-morning.jpg" alt="Tommy Kate on the farmhouse porch in the morning with her phone and pink tumbler"></div><figcaption>Planned. Pinned. Posted. Blogged. <b>You Slept.</b></figcaption></figure>
     <a class="btn" href="https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront"><span style="color:var(--hot)">✦</span>Explore The While-You-Sleep Storefront™<span>→</span></a>
     <p class="small" style="text-align:center">The kit does not promise sales or income.</p>
   </div>

@@ -21,6 +21,7 @@ const path=require('path'), fs=require('fs');
         if(!el.closest('.foot') && el.children.length===0 && el.textContent.trim() && r.bottom>foot.top-4 && r.top<foot.bottom) res.push(pg.id+' overlaps footer: '+el.textContent.trim().slice(0,40));
         const fs=parseFloat(getComputedStyle(el).fontSize); if(el.children.length===0&&el.textContent.trim()&&fs<18) res.push(pg.id+' small font '+fs+' '+el.textContent.trim().slice(0,30));
       });
+      pg.querySelectorAll('.main .card,.main .frame,.main .callout,.main p,.main .btn').forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom>foot.top-12)res.push(pg.id+' BOX NEAR FOOTER: '+el.className+' '+el.textContent.trim().slice(0,30)+' gap='+Math.round(foot.top-r.bottom));});
       // headline widows
       pg.querySelectorAll('h1 span, h2 span').forEach(s=>{
         const rg=document.createRange(); rg.selectNodeContents(s);
