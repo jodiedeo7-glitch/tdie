@@ -78,7 +78,8 @@ UNVERIFIED: whether Jodie approved the unchanged images on pages 2, 3, 5, 6, 7 a
 
 ## Design fixes (10 October 2026)
 
-- No lavender anywhere in the design: every lavender page, panel and empty-photo fill is now blush, white or white with a hot pink outline. No gradients or ombre backgrounds.
+- Lavender is back as a signature accent (Jodie's correction, 10 October 2026; her intake lists pink, green, blue, purple/lavender, multicolor/prints). Light lavender #EAE5F8 is the background on pages 3 and 9. The panels on pages 6 and 8 and the lavender glitter frames on pages 4 and 6 use it, and the number badges on pages 2, 4, 5, 6 and 8 and the page 7 sticker use the deeper #7E66C4. No page is washed in pink and lavender together, and there are no gradients or ombre backgrounds.
+- Text: headlines are near-black Newsreader SemiBold with hot pink only on the key words. Body text is near-black Inter. The page 1 tagline and the page 9 "does not promise" line are now near-black. There is no bubble or rounded cartoon lettering.
 - Decorative daisies removed from page 10, replaced with a glitter "Your taste" sticker. No flowers, butterflies or bows in the design.
 - The page 10 button is now white with a hot pink outline and hot pink text and arrow. There are no filled pink buttons.
 - Glitter: fine multi-size flecks (white, pale pink, soft gold, a few four-point glints) built in code as hand-placed solid SVG circles. They sit only on the offset frame blocks behind each polaroid, the round stickers and the numbered badges. There is no glitter over any photo or across a page. The flecks use solid colours with no transparency, so the file still imports into Canva.
