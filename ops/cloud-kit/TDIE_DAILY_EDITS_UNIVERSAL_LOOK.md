@@ -29,18 +29,17 @@ Locked features are never written in words, anywhere, in any form: face, facial 
 
 ## 3. The look: refined, real, quietly rich
 
-The Daily Edits are the opposite of the cookie-cutter AI influencer. No flash. The money shows in calm, quality and space, never in labels or toys.
+The Daily Edits are the opposite of the cookie-cutter AI influencer.
 
 Rotate four lanes across the month:
 
 1. **Refined homestead.** A pretty working home in the country: a farmhouse kitchen with bread rising, a porch at golden hour, an orchard, a kitchen garden, a farmers' market, an apron and a basket, wellies by the door, hens in the yard.
 2. **Refined mom life.** A calm, put-together mother's day: the quiet hour before the house wakes, the school-run morning, a tidied playroom, a kitchen table after homework. Children appear only as evidence (a small backpack, a crayon drawing, two small boots by the door), never as a child in the frame.
-3. **Quiet millionaire girl boss.** Running her business from a beautiful, lived-in home, a calm café corner or a sunny window seat: laptop, notebook, planner, phone, coffee. Self-made and relaxed, not performing success.
+3. **Millionaire girl boss.** Running her business from a beautiful, lived-in home, a calm café corner or a sunny window seat: laptop, notebook, planner, phone, coffee. Self-made and relaxed, not performing success.
 4. **Cozy evenings in** (about one day in seven). A reading nook, a couch with a blanket, a bath, a plain unbranded game controller or a book.
 
-**Wardrobe:** quality over trend. Fine-gauge knits, cashmere, linen sets, soft quality tees, tailored trousers, wide-leg denim, slip skirts, trench and wool coats, aprons, clean boots, simple gold jewellery. Neutral, warm and soft colours. No logos.
+**Wardrobe:** quality over trend. Fine-gauge knits, cashmere, linen sets, soft quality tees, tailored trousers, wide-leg denim, slip skirts, trench and wool coats, aprons, clean boots, simple gold jewellery. No logos.
 
-**Register:** quiet wealth, lived in. Nice, never showy. Real, never run-down. Clean and natural, never staged and never messy. Not AI-perfect.
 
 **Pink:** one saturated candy-pink accent per photo, written as something any woman could own (a pink knit, a pink ceramic mug with no words, peonies, a pink notebook). Never pale.
 

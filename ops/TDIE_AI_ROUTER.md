@@ -13,18 +13,8 @@ Latest explicit founder corrections govern this migration. Read `ops/canon/canon
 
 Find Your Door is no longer automated. Preserve the routing resource and API code; neither is evidence of an active email automation. Never create, migrate or restore its historical email sequence.
 
-Hosting is Cloudflare (worker `tdie-site`, deployed from the `cloudflare-migration` branch). Vercel is retired: ChatGPT migrated the site after the Vercel free tier ran out of space. The staging proposals below add ChatGPT/Codex ownership and mention alternative connectors; treat those as migration proposals. Never reinstate Vercel or overwrite the Cloudflare setup.
+Hosting is Cloudflare (worker `tdie-site`, deployed from the `cloudflare-migration` branch). Vercel is retired: ChatGPT migrated the site after the Vercel free tier ran out of space. Never reinstate Vercel or overwrite the Cloudflare setup.
 
-## Quality-first allocation
-| Layer | Default owner | Required evidence |
-|---|---|---|
-| Research, strategy, copy and creative preparation | ChatGPT | Sources, complete packet and editorial QA |
-| Repository implementation and deterministic checks | Codex | Reviewable diff, tests and rollback |
-| Signed-in account operation | Existing approved operator, often Claude | Actual access, permission, capability and read-back |
-| Person/photo generation | Canon-approved image provider | Exact approved model, reference and inspected artifact |
-| Mechanical monitoring | Existing GitHub Actions | Scoped findings, complete report and dated evidence |
-
-Prefer the verified API/native route when it provides the required behavior and evidence. The names in job filenames identify a proposed handoff, not a claim that a platform is always best. Do not introduce a connector or scheduler merely because a draft mentions it. Pricing and usage cost do not decide creative ownership. Strategy and creative are finished before account execution.
 
 ## Separate workflows
 | Workflow ID | Router | Queue |

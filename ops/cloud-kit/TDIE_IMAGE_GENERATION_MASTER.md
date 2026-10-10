@@ -67,11 +67,11 @@ Every room and object is copied word for word from the Tommy Kate world file (op
 
 The aesthetic is:
 
-**Confident self-made luxury, lived in (Decision 128, 4 October 2026; replaces "quiet wealth, lived in" from Decision 89).** She is a loud, happy, self-made millionaire who chose the farm on purpose: a grown-up pop-star princess turned homestead mom, and the photo lets you see it. In daylight the frame is bright and high-key with true, saturated colour; at night it glows with rich, warm practical light, never murky. Her farmhouse and pink attic loft look their best, with good materials and a little real sparkle, and she looks glowing, confident and pleased with herself, never shy and never hiding. Premium, never gaudy: ONE sparkle moment per photo (glitter or rhinestone boots, a rhinestone claw clip, pearl and chrome jewellery, or the glitter tumbler catching the light), never glitter everywhere, never crowded, never a pile of props, never costume, never a mansion or a generic rich-girl set. Real, never run-down, never messy, never AI-perfect. No clashing: the photo is a loud element, so it sits in a calm, roomy part of the page or graphic, and a loud designed background gets a calmer photo. Loud plus loud is the one thing this register forbids.
+**Confident self-made luxury, lived in (Decision 128, 4 October 2026; replaces "quiet wealth, lived in" from Decision 89).** She is a loud, happy, self-made millionaire who chose the farm on purpose: a grown-up pop-star princess turned homestead mom, and the photo lets you see it. In daylight the frame is bright and high-key with true, saturated colour; at night it glows with rich, warm practical light, never murky. Her farmhouse and pink attic loft look their best, with good materials and a little real sparkle, and she looks glowing, confident and pleased with herself, never shy and never hiding. Premium, never gaudy: never glitter everywhere, never crowded, never a pile of props, never costume, never a mansion or a generic rich-girl set. Real, never run-down, never messy, never AI-perfect. Don't make it clash: no super loud flashy photo on top of a super flashy background (Jodie, 4 Oct 2026: "its not gaudey its nots crowded"). Loud plus loud is the one thing this register forbids.
 
 That means premium but never gaudy, polished but not staged, bright but not cartoonish, and believable rather than perfect.
 
-Dress-up layer (Decision 128): one statement piece on top of the comfy base when the scene calls for it: glitter or rhinestone cowboy boots, pearl and chrome jewellery, a rhinestone claw clip, a glossy hot pink manicure. One statement piece per photo, never more. Blouses, blazers and sequin jackets stay out (Jodie, 4 Oct 2026: the sequin-jacket kitchen test was a no).
+Dress-up layer (Decision 128): one statement piece on top of the comfy base when the scene calls for it: glitter or rhinestone cowboy boots, pearl and chrome jewellery, a rhinestone claw clip, a glossy hot pink manicure. Blouses, blazers and sequin jackets stay out (Jodie, 4 Oct 2026: the sequin-jacket kitchen test was a no).
 
 Do NOT invent:
 
@@ -344,7 +344,7 @@ Section 4. With her: the glitter tumbler, plus candy-pink clothes or other pink 
 
 F. World/register
 
-Confident self-made luxury, lived in (section 1): one sparkle moment, never crowded, never clashing with the page.
+Confident self-made luxury, lived in (section 1): never crowded, never clashing with the page.
 
 G. Composition
 
@@ -438,7 +438,6 @@ Instead improve:
 * natural hand positioning
 * realistic fabric behavior
 * environmental imperfections
-* one statement piece, not five
 * simpler composition
 
 “Photorealistic” works best when the scene itself is physically plausible.
