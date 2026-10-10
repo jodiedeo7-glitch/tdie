@@ -15,7 +15,7 @@ for (const [mode, file] of [['fb', 'WYS_Presale_Poster_Facebook.png'], ['skool',
   await page.waitForTimeout(300);
   const info = await page.evaluate(() => {
     const poster = document.querySelector('.poster');
-    const last = document.querySelector('.phrase-wrap').getBoundingClientRect();
+    const last = document.querySelector('.phrase').getBoundingClientRect();
     const bar = document.querySelector('.bar').getBoundingClientRect();
     const clipped = [];
     document.querySelectorAll('.poster *').forEach((e) => {
