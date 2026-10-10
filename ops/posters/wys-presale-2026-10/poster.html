@@ -426,6 +426,60 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
 .fb .tag { padding-right:13px; margin-right:13px; }
 .skool .tag b { font-size:44px; }
 .skool .tag span { font-size:19px; }
+
+/* ===== audit fixes ===== */
+.drip { height:90px; background:url("img/drip-top.png") left top / 760px 92px repeat-x; }
+.topline { padding-top:92px; }
+.fb .topline { padding-top:88px; }
+.perks { display:flex; gap:22px; margin-top:12px; }
+.perks span { font-weight:600; font-size:16px; padding-left:16px; position:relative; }
+.perks span::before { content:""; position:absolute; left:0; top:0.45em; width:8px; height:8px; border-radius:50%; background:var(--gold); }
+.price .and { font-size:15px; color:#5a4d53; font-weight:500; margin-right:-2px; }
+.price-row .amt { font-size:56px; }
+.price-reg { display:inline-block; border:1px solid var(--gold); border-radius:6px; padding:3px 10px; margin-top:12px; font-weight:600; }
+.price-label { font-size:13px; }
+.steps { padding:16px 0 18px; }
+.panel { background:#FDF4F7; }
+.example { font-weight:600; font-size:13px; color:#5a4d53; margin-top:8px; }
+.c-head { font-family:"Gloock",serif; font-weight:400; font-size:21px; letter-spacing:0; }
+.c-head .n { color:var(--hot); margin-right:8px; }
+.c-head .t { font-weight:400; font-size:21px; letter-spacing:0; }
+.ctag { font-size:13px; letter-spacing:0.02em; text-transform:none; font-weight:700; }
+.cpin.p1 .cap { transform:rotate(7deg); } .cpin.p2 .cap { transform:rotate(1deg); } .cpin.p3 .cap { transform:rotate(-5deg); }
+.cpin.p1 { transform:rotate(-5deg); } .cpin.p2 { transform:rotate(-0.5deg); } .cpin.p3 { transform:rotate(4deg); }
+.cpin.p1 .cap { transform:rotate(5deg); } .cpin.p2 .cap { transform:rotate(0.5deg); } .cpin.p3 .cap { transform:rotate(-4deg); }
+.cidea li { font-size:13px; }
+.cidea .is { font-size:10.5px; }
+.pk2 { right:12px; } .pk3 { right:6px; transform:rotate(12deg); }
+.tag { white-space:nowrap; }
+.blogline { font-size:16px; }
+.fb .tag b { font-size:30px; }
+.fb .tag span { font-size:16px; }
+.fb .perks span { font-size:15px; }
+.fb .price-row .amt { font-size:48px; }
+.fb .hero { padding:4px 0 8px; }
+.skool .tags { flex-wrap:nowrap; }
+.skool .tag b { font-size:40px; } .skool .tag span { font-size:18px; }
+.skool .hero { grid-template-columns:minmax(0,1fr) 400px; }
+.skool .price { padding:28px 32px 22px; }
+.skool .price-row .amt { font-size:72px; }
+.skool .price-row .who { font-size:24px; }
+.skool .price-label { font-size:15px; }
+.skool .price-reg { font-size:20px; }
+.skool .sidenote { font-size:17px; }
+.skool .perks span { font-size:19px; }
+.skool .step { padding:22px 22px 20px 78px; }
+.skool .step .num { width:70px; height:70px; font-size:38px; }
+.skool .step b { font-size:24px; }
+.skool .step span { font-size:18px; }
+.skool .blogline { font-size:21px; } .skool .blogline b { font-size:32px; }
+.skool .example { font-size:16px; margin-top:14px; }
+.skool .sub { font-size:21px; }
+.pk2 { right:20px; } .pk3 { right:16px; }
+.price-row .who { white-space:nowrap; }
+.skool .hero { grid-template-columns:minmax(0,1fr) 430px; }
+.skool .perks { flex-direction:column; gap:6px; }
+.skool .blogline { font-size:19px; text-wrap:balance; }
 </style>
 </head>
 <body>
@@ -442,43 +496,49 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
         <h1>Your Amazon storefront <em>posts itself.</em></h1>
         <p class="who-for">For Amazon storefront owners with no time to post</p>
         <p class="sub">Set it up once. Every night it plans the looks, makes your Pinterest pins, writes your blog post and posts your Instagram carousel.</p>
+        <div class="perks"><span>Fresh looks on your storefront every day</span><span>Works with Claude, ChatGPT, or both</span></div>
       </div>
       <div class="price-wrap">
         <div class="price">
           <div class="price-label">MEMBER PRESALE PRICE</div>
           <div class="price-row"><span class="amt">$10</span><span class="who">Premium members</span></div>
-          <div class="price-and">and</div>
-          <div class="price-row" style="margin-top:0"><span class="amt">$17</span><span class="who">Standard members</span></div>
+          <div class="price-row"><span class="and">and</span><span class="amt">$17</span><span class="who">Standard members</span></div>
           <div class="price-reg">Regular price $37</div>
         </div>
-        <p class="sidenote">Presale opens Tue, Oct 13 · Full launch Friday · Works with Claude, ChatGPT, or both</p>
+        <p class="sidenote">Presale opens Tue, Oct 13 · Full launch Fri, Oct 16 · Works with Claude, ChatGPT, or both</p>
       </div>
     </section>
 
 
+    <section class="steps">
+      <div class="step"><div class="num">1</div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div>
+      <div class="step"><div class="num">2</div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div>
+      <div class="step"><div class="num">3</div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div>
+    </section>
+
     <div class="panel">
       <div class="sec-top"><h2>Every night, while you sleep.</h2><span class="label">2 LOOKS · 6 PINS</span></div>
       <div class="tags">
-        <div class="tag"><b>6</b><span>Pinterest pins</span></div>
         <div class="tag"><b>2</b><span>Instagram carousels</span></div>
         <div class="tag"><b>2</b><span>blog posts</span></div>
         <div class="tag"><b>2</b><span>Amazon Idea Lists</span></div>
         <div class="tag"><b>12</b><span>products linked</span></div>
       </div>
 
+      <div class="example">Example of one night's output</div>
       <div class="comps">
         <div class="comp">
-          <div class="c-head"><span class="n">01</span> LOOK <span class="t">· The Pink Plaid Pumpkin Patch Outfit</span></div>
+          <div class="c-head"><span class="n">01 Look</span><span class="t">The Pink Plaid Pumpkin Patch Outfit</span></div>
           <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
           <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><div class="lockup"><span class="serif">Pumpkin<br>Patch</span><span class="script">pink plaid</span></div></div><div class="cap">BASIC</div></div>
           <div class="cpin p2"><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">Pink plaid for the pumpkin patch</span></div><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
           <div class="cpin p3"><div class="pin"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"><div class="pin-bot"><span class="pt">The pumpkin patch outfit</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
           <div class="peek pk2"><img src="img/pink-plaid-pumpkin-patch-outfit-styled.jpg" alt=""></div>
-          <div class="peek pk3"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"></div>
+          <div class="peek pk3"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""></div>
           <span class="ctag" style="right:0;top:30px">Instagram · 3-slide carousel</span>
           <div class="igphone"><div class="scr">
-            <div class="ig-top"><span class="av"></span>itstommykate</div>
-            <div class="ig-main"><img src="img/pink-plaid-pumpkin-patch-outfit-basic.jpg" alt=""><span class="no">1/3</span></div>
+            <div class="ig-top"><span class="av"></span>your_account</div>
+            <div class="ig-main"><img src="img/pink-plaid-pumpkin-patch-outfit-lifestyle.png" alt="" style="object-position:62% 50%"><span class="no">1/3</span></div>
             <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
             <div class="ig-lines"><i style="width:80%"></i><i style="width:55%"></i></div>
           </div></div>
@@ -487,17 +547,17 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
           <span class="ctag" style="left:120px;top:266px">Blog post</span>
         </div>
         <div class="comp">
-          <div class="c-head"><span class="n">02</span> LOOK <span class="t">· The Pink Ghost Coffee Bar</span></div>
+          <div class="c-head"><span class="n">02 Look</span><span class="t">The Pink Ghost Coffee Bar</span></div>
           <span class="ctag" style="left:4px;top:30px">Pinterest · 3 pins</span>
           <div class="cpin p1"><div class="pin pin-basic"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><div class="lockup"><span class="serif">Pink<br>Halloween</span><span class="script">ghost girl</span></div></div><div class="cap">BASIC</div></div>
           <div class="cpin p2"><div class="pin"><div class="pin-top"><span class="k">THE DIGITAL INCOME EDIT™</span><span class="pt">A pink ghost coffee bar</span></div><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div><div class="cap">STYLED</div></div>
           <div class="cpin p3"><div class="pin"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"><div class="pin-bot"><span class="pt">Halloween in pink</span><span class="k">Shop the look →</span></div></div><div class="cap">LIFESTYLE</div></div>
           <div class="peek pk2"><img src="img/pink-ghost-coffee-bar-styled.jpg" alt=""></div>
-          <div class="peek pk3"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"></div>
+          <div class="peek pk3"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""></div>
           <span class="ctag" style="right:0;top:30px">Instagram · 3-slide carousel</span>
           <div class="igphone"><div class="scr">
-            <div class="ig-top"><span class="av"></span>itstommykate</div>
-            <div class="ig-main"><img src="img/pink-ghost-coffee-bar-basic.jpg" alt=""><span class="no">1/3</span></div>
+            <div class="ig-top"><span class="av"></span>your_account</div>
+            <div class="ig-main"><img src="img/pink-ghost-coffee-bar-lifestyle.png" alt="" style="object-position:60% 50%"><span class="no">1/3</span></div>
             <div class="ig-dots"><i class="on"></i><i></i><i></i></div>
             <div class="ig-lines"><i style="width:80%"></i><i style="width:55%"></i></div>
           </div></div>
@@ -509,11 +569,6 @@ h2 { font-family:"Gloock",serif; font-weight:400; font-size:38px; line-height:1.
       <div class="blogline"><b>Plus a blog post for every look.</b> Written in your voice, with every product linked to your storefront.</div>
     </div>
 
-    <section class="steps">
-      <div class="step"><div class="num">1</div><b>Set it up once.</b><span>15-min Quick Start, or customize it in about an hour.</span></div>
-      <div class="step"><div class="num">2</div><b>Go to bed.</b><span>It plans, makes and posts every look overnight.</span></div>
-      <div class="step"><div class="num">3</div><b>Wake up to it live.</b><span>Approvals on for the first few days, then off.</span></div>
-    </section>
 
     <section class="phrase"><span class="p">Planned. Pinned. Posted. Blogged.</span><span class="s"><span class="amp">&amp;</span>you slept.</span></section>
   </div>
