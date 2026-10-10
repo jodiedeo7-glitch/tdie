@@ -4,8 +4,8 @@
   "scope": "Publish only the two supplied Lifestyle looks with exact approved copy, media and Amazon destinations",
   "target_branch": "cloudflare-migration",
   "source_commit": "b64974af72296c527f4c0986338c1f79ee8b57f7",
-  "status": "READY_FOR_DEPLOYMENT",
-  "verified_at": "2026-10-10T03:27:31.365003+00:00",
+  "status": "PUBLISHED_VERIFIED",
+  "verified_at": "2026-10-10T03:33:45.590161+00:00",
   "source_assets": [
     {
       "file": "pink-ghost-coffee-bar-lifestyle.png",
@@ -378,6 +378,342 @@
     "visual_qa": "Full-page desktop and mobile review; signup intrinsic track overflow at 320px fixed with minmax(0,1fr)"
   },
   "live_audit": {
-    "status": "PENDING"
+    "status": "PASS",
+    "release_commit": "13af6cb200ea2ac92060e4d9916eecd716896a8a",
+    "pull_request": "https://github.com/jodiedeo7-glitch/tdie/pull/33",
+    "host": "Cloudflare worker tdie-site",
+    "build_id": "c1d6d6d4-a2f8-4723-a3b3-0a53d8cc5777",
+    "build_status": "success",
+    "urls": [
+      "https://www.thedigitalincomeedit.com/lifestyle/pink-ghost-coffee-bar",
+      "https://www.thedigitalincomeedit.com/lifestyle/pink-plaid-pumpkin-patch-outfit"
+    ],
+    "article_checks": [
+      {
+        "slug": "pink-ghost-coffee-bar",
+        "width": 1440,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "36px",
+        "caption_font": "Caveat, cursive"
+      },
+      {
+        "slug": "pink-ghost-coffee-bar",
+        "width": 390,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "32px",
+        "caption_font": "Caveat, cursive"
+      },
+      {
+        "slug": "pink-ghost-coffee-bar",
+        "width": 320,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "32px",
+        "caption_font": "Caveat, cursive"
+      },
+      {
+        "slug": "pink-plaid-pumpkin-patch-outfit",
+        "width": 1440,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "36px",
+        "caption_font": "Caveat, cursive"
+      },
+      {
+        "slug": "pink-plaid-pumpkin-patch-outfit",
+        "width": 390,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "32px",
+        "caption_font": "Caveat, cursive"
+      },
+      {
+        "slug": "pink-plaid-pumpkin-patch-outfit",
+        "width": 320,
+        "http_status": 200,
+        "gallery": 3,
+        "products": 6,
+        "overflow": false,
+        "h1": "32px",
+        "caption_font": "Caveat, cursive"
+      }
+    ],
+    "browse_checks": [
+      {
+        "route": "/lifestyle",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle",
+        "width": 390,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/home-decor",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/home-decor",
+        "width": 390,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/home-decor",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/clothing",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/clothing",
+        "width": 390,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/clothing",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/pink-finds",
+        "width": 1440,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/pink-finds",
+        "width": 390,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      },
+      {
+        "route": "/lifestyle/pink-finds",
+        "width": 320,
+        "status": 200,
+        "overflow": false,
+        "images_loaded": true,
+        "signup_contained": true
+      }
+    ],
+    "product_links": [
+      {
+        "url": "https://www.amazon.com/dp/B0H5K7MLMM?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0H5K7MLMM?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Ropoloogy 3 Pcs Pink Halloween Decor Flameless LED Candle Ghost Pumpkin Bat | Pink Pillar Candle Flameless, Ghost Pumpkin Bat Patterns, 2.99 x 5.87\", Battery Operated LED Lights for Tabletop Mantel Party : Tools &amp; Home Improvement",
+        "checked_at": "2026-10-10T03:32:13.577516+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B09LLZ4PG5?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B09LLZ4PG5?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Set of 5 Pink Halloween Gauze Creepy Cloth Fabric Tapestry Decor Decoration | 72 x 30 inch Pink Halloween Decor, Indoor Outdoor Halloween Spooky Decorations for Home Wall Table Yard Haunted House Party : Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:13.539041+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0H261KPLK?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0H261KPLK?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Pinkunn 5pcs Pink Halloween Resin Ghost Figurines Decor with Pumpkin Boo | Pastel Resin Set with Ghosts, Pumpkins, and Boo for Mantels, Shelves, Desks, Tiered Trays, and Halloween Table Centerpiece : Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:13.571939+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0H1DHH8C3?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0H1DHH8C3?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: LocusArs Halloween Ghost Decorations Indoor Pink Ghost Figurines Set of 3 Halloween Table Decor for Tiered Tray Mantel Shelf Desk Dining Table Window Sill Pastel Centerpieces Decor (Pink) : Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:13.588202+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0H1WQMMT9?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0H1WQMMT9?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Woanger 3 Pcs Halloween Pink Pumpkin Decoration Resin Jack O Lanterns Decor | Cute White Pink Resin Carved Spooky Tabletop Decor for Mantel Bookshelf Shelf Home Halloween Party Display Indoor : Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:13.754401+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0FLCQBL29?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0FLCQBL29?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: 72 Pcs Bats Pink Halloween Decoration, 3D Bat Wall Decor Stickers | 4 Size, Realistic PVC Black and Pink Bats, DIY Home Decor Wall Decal, Bathroom Indoor Outdoor Window Décor Party Supplies : Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:13.812666+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0C61QMJ4C?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0C61QMJ4C?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Beaully Women's Button Down Plaid Shacket Jacket 6017 B-Pink S | Women's shacket with pockets, Warm feel, Brushed, Casual Jacket shirt for daily wear,Fall winter clothes, Fashion coats : Clothing, Shoes &amp; Jewelry",
+        "checked_at": "2026-10-10T03:32:13.896653+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B09YTSN7MT?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B09YTSN7MT?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Artfish Women's Square Neck Long Sleeve Ribbed Slim Fitted Casual Basic Crop Top (Black, S) at Amazon Women’s Clothing store",
+        "checked_at": "2026-10-10T03:32:13.888931+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0D9N5GP5B?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0D9N5GP5B?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Sidefeel Women's Wide Leg High Waisted Stretchy Jeans Iceland Blue Size 12 | Soft Stretchy Denim, Dual Button Closure, Full Length, Relaxed Fit Wide Leg Jeans with Pockets, Dressy Casual Wear, Size 2-18 at Amazon Women's Jeans store",
+        "checked_at": "2026-10-10T03:32:13.933667+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0BW89XFCF?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0BW89XFCF?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com | SERNIAL Womens White Platform Sneakers PU Leather Shoes(White,US6) | Platform,Water Resistant,Slip Resistant,Easy Clean,All Match | Fashion Sneakers",
+        "checked_at": "2026-10-10T03:32:14.246304+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0CHRM3C3P?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B0CHRM3C3P?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: Corduroy Tote Bag Cute Tote Bags for Women Shoulder Bag with Inner Pocket for Work Beach Travel and Shopping Grocery (Purple): Home &amp; Kitchen",
+        "checked_at": "2026-10-10T03:32:14.141559+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B08H531XXS?tag=jodiedeo0c-20",
+        "final_url": "https://www.amazon.com/dp/B08H531XXS?tag=jodiedeo0c-20",
+        "status": 200,
+        "title": "Amazon.com: PAGE ONE Womens Winter Ribbed Beanie Crossed Cap Chunky Cable Knit Pompom Soft Warm Hat Dark Green",
+        "checked_at": "2026-10-10T03:32:14.073540+00:00"
+      }
+    ],
+    "idea_lists": {
+      "checked_at": "2026-10-10 03:31:34 UTC",
+      "results": [
+        {
+          "url": "https://www.amazon.com/shop/thedigitalincomeedit/list/2W5ZDB3L2JV09",
+          "final_url": "https://www.amazon.com/shop/thedigitalincomeedit/list/2W5ZDB3L2JV09",
+          "title": "Jodie's Amazon Page - Pink Halloween Home Decor",
+          "products": [
+            {
+              "asin": "B0H5K7MLMM",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B09LLZ4PG5",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0H261KPLK",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0H1DHH8C3",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0H1WQMMT9",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0FLCQBL29",
+              "tag": "jodiedeo0c-20"
+            }
+          ]
+        },
+        {
+          "url": "https://www.amazon.com/shop/thedigitalincomeedit/list/7Z4KAIR4LBCO",
+          "final_url": "https://www.amazon.com/shop/thedigitalincomeedit/list/7Z4KAIR4LBCO",
+          "title": "Jodie's Amazon Page - Cute Fall Outfits",
+          "products": [
+            {
+              "asin": "B0BW89XFCF",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B08H531XXS",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0CHRM3C3P",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0D9N5GP5B",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B09YTSN7MT",
+              "tag": "jodiedeo0c-20"
+            },
+            {
+              "asin": "B0C61QMJ4C",
+              "tag": "jodiedeo0c-20"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "rendering": "Actual custom-domain HTML, CSS, images and fonts rendered in Chromium. TLS-verified requests through the session proxy supplied original responses to the browser; no source substitution or certificate bypass. External analytics blocked.",
+    "responses": {
+      "article_assets": 27,
+      "browse_assets": 87,
+      "all_statuses": 200
+    },
+    "screenshots": "18 full-page screenshots reviewed at 1440px, 390px and 320px: both articles, hub, both categories and Pink Finds. Saved in /tmp/tdie-live.",
+    "sitemap": "Both new canonical routes found in the actual public sitemap",
+    "signup": "Contained at 320px; local empty-email validation checked; no signup submitted",
+    "disclosures": "Existing AI styling and Amazon affiliate notices preserved",
+    "exact_copy_media_order_and_links": "PASS",
+    "em_dashes": "None in either deployed HTML document",
+    "scope": "Website publication only; customer-product release hold and social publishing boundaries unchanged"
   }
 }
