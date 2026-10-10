@@ -523,3 +523,32 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 /* let the photo itself set the frame height, so padding never crops it */
 .life .life-card-photo,.life .life-card-featured .life-card-photo,.life .life-shelf-track .life-card-photo,.life .life-article .life-card-photo,.life .life-category-image,.life .life-lookbook-image,.life .life-gp-window{aspect-ratio:auto!important;height:auto!important}
 .life .life-card-photo img,.life .life-category-image img,.life .life-lookbook-image img,.life .life-gp-window img{display:block;width:100%!important;height:auto!important;aspect-ratio:2/3!important;object-fit:cover!important}
+
+/* ===== BRAND ALIGNMENT PASS (10 Oct 2026, against TDIE_DESIGN_RULES "THE LOOK" + 8 Oct buttons/backgrounds rule + the current home page) ===== */
+/* 1. Flat backgrounds like the home page: blush base, white and soft pink bands. Glitter only for the one statement band (Swipe the Closet). */
+.life,.life.life-article-world{background:#FFF7FA!important}
+.life-hero{background:#FFF7FA!important;padding:110px 0 56px!important;position:relative;isolation:isolate;overflow:hidden}
+.life-category-hero{background:#FFF7FA!important;padding:120px 0 34px!important}
+.life-band,.life-picks-band{background:#FFE4EF!important;padding:64px 0!important}
+.life>.life-signup,.life.life-article-world>.life-signup{background:#FFE4EF!important;padding:64px max(20px,calc((100% - 1100px)/2))!important}
+.life>.life-close,.life.life-article-world>.life-close{background:#FFF7FA!important}
+/* sparkle accent, same as the home page hero */
+.life-hero::after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-140px;bottom:-60px;width:520px;height:300px;background:url(/images/brand/gl-hot.webp) 0 0/220px;opacity:.55;-webkit-mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%);mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
+/* 2. Hot pink outline on every box, like the home page */
+.life .life-card,.life .life-lookbook-card,.life .life-categories a,.life-band>.life-section,.life-picks-band>.life-section,.life .life-signup .pf-box,.life .life-reading-sheet{border:2px solid #D62E73!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
+.life .life-reading-sheet .life-card.life-card-fuzzy{border:0!important;box-shadow:none!important}
+.life .life-card:hover,.life .life-lookbook-card:hover,.life .life-categories a:hover{box-shadow:0 0 0 2px #FF8AC2,0 24px 48px -30px rgba(184,36,95,.55)!important}
+.life .life-categories a[aria-current]{background:#FFF1F7!important}
+/* 3. Body text near-black and crisp, never grey */
+.life p,.life .life-intro,.life .life-hero-note,.life .life-card-count,.life .life-category-count,.life .life-shelf-note,.life .life-section-heading>p,.life .life-shelf-tools p{color:#1A1417!important}
+/* 4. Shopping box: white with a pink outline instead of a lavender panel */
+.life .life-reading-sheet .life-shop{background:#FFF1F7!important;border:2px solid #D62E73!important;border-radius:20px!important}
+/* 5. Photo captions in Inter, not handwriting */
+.life .life-article .life-photo figcaption,.life .life-reading-sheet .life-photo figcaption,.life .life-reading-sheet .life-gp figcaption,.life .life-reading-sheet .life-gp figcaption *{font-family:Inter,sans-serif!important;font-weight:700!important;font-size:12px!important;letter-spacing:.12em!important;text-transform:uppercase;color:#B8245F!important;line-height:1.3!important}
+/* keep pink labels pink after the near-black body text rule */
+.life p.cs-kicker,.life p.cs-count,.life p.cs-saved-title{color:#B8245F!important}
+/* room under swipe rows so card shadows are not cut off; no big empty gaps */
+.life .life-scroll-track,.life .life-shelf-track{padding-bottom:44px!important}
+.life .life-shelf-note{margin-top:-24px!important}
+.life #browse{padding-bottom:24px!important}
+.life .life-disclosure,.life .life-close p{color:#1A1417!important}
