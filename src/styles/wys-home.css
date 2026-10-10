@@ -1,0 +1,145 @@
+/* WYS pages dressed exactly like the homepage (Jodie, 10 Oct 2026: "make them match my main page").
+   Same header, same drip, same blush background, Gloock headlines, Jost everything else,
+   same white pill buttons with the pink star, same kickers, same white cards. Values copied from src/styles/home.css. */
+
+/* ---------- header and drip: same size as the homepage ---------- */
+body:has(.wys-world){background:#FFF7FA}
+body:has(.wys-world) .hc-nav .hc-wrap{height:104px}
+body:has(.wys-world) .hc-logo .l2{font-size:60px}
+body:has(.wys-world) .hc-drip{height:181px;background:url(/images/brand/drip-gloss.webp) repeat-x left top/1500px 181px}
+body:has(.wys-world) .e-page{background:transparent}
+
+/* ---------- page base ---------- */
+.wys-world{background:transparent!important;color:#1A1417;font-family:Jost,sans-serif}
+.wys-world h1,.wys-world h2,.wys-world h3{font-family:Gloock,Georgia,serif;font-weight:600;letter-spacing:0}
+.wys-world h1 em,.wys-world h2 em,.wys-world h3 em{font-style:normal;color:#D62E73}
+.wys-world .wc-head h2,.wys-world .wc-look-head h2{font-size:40px;line-height:1.08}
+.wys-world .wc-kicker{font:700 12px/1.3 Jost,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#B8245F;margin:0 0 16px}
+
+/* ---------- hero: product name is the headline ---------- */
+.wys-world .wc-hero{padding:230px 0 90px;background:radial-gradient(700px 520px at 75% 45%,#fff 0%,rgba(255,255,255,0) 70%),#FFF7FA}
+.wys-world .wc-hero h1.wh-name{font:600 52px/1.08 Gloock,Georgia,serif;color:#1A1417;margin:0 0 16px;max-width:15ch;text-wrap:balance}
+.wh-nb{white-space:nowrap}
+.wys-world .wc-hero .wc-head h1.wh-name{margin-inline:auto;max-width:none}
+.wys-world .wh-sub{font:600 30px/1.15 Gloock,Georgia,serif;color:#1A1417;margin:0 0 20px}
+.wys-world .wh-sub em{font-style:normal;color:#D62E73}
+.wys-world .wc-hero-line{font:400 18px/1.6 Jost,sans-serif;color:#1A1417;max-width:40ch}
+.wys-world .wc-hero-line b{color:#B8245F;font-weight:700}
+
+/* ---------- buttons: the homepage pill with the pink star ---------- */
+.wys-world .wc-button{gap:9px;min-height:52px;padding:0 30px;border:1.5px solid #E891B6;background:#fff;color:#1A1417;font:700 13px/1.2 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)}
+.wys-world .wc-button::before{content:"";width:11px;height:11px;flex:none;background:#D62E73;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.wys-world .wc-button>span[aria-hidden]{display:none}
+.wys-world .wc-button:hover{background:#FFF1F7}
+.wys-world .wc-button-small{min-height:46px;padding:0 22px;font-size:12px}
+.wys-world .wc-cta-note{font:400 14px/1.5 Jost,sans-serif;margin-top:4px}
+
+/* ---------- sticker: the homepage glitter pill ---------- */
+.wh-sticker{position:absolute;z-index:6;left:50%;top:-6px;transform:translateX(-50%);margin:0;padding:3px;border-radius:999px;background:url(/images/brand/gl-hot.webp) 0 0/200px;box-shadow:0 14px 24px -12px rgba(120,10,50,.6)}
+.wh-sticker span{display:block;background:#fff;border-radius:999px;padding:10px 18px 9px;color:#B8245F;font:800 11.5px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.wys-world .wc-night{padding-top:58px}
+.wys-world .wc-night .wc-example-tag{top:-14px}
+.wys-world .wc-example-tag,.wys-world .wc-live-tag{border:1px solid #E85A9B;border-radius:3px;transform:translateX(-50%);color:#1A1417;letter-spacing:.16em;box-shadow:0 10px 20px -12px rgba(110,10,50,.6)}
+.wys-world .wc-wait-form .wc-example-tag{transform:none}
+
+/* ---------- glitter bands and white plates, like the homepage method section ---------- */
+.wys-world .wc-tagband,.wys-world .wc-final{background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important;border:0;padding:70px 16px}
+.wys-world .wc-tagline,.wys-world .wc-final-card{border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7)}
+.wys-world .wc-tagline{font:600 36px/1.15 Gloock,Georgia,serif;padding:30px 28px}
+.wys-world .wc-tagline span{color:#D62E73}
+.wys-world .wc-tagline small{font:700 12px/1.4 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F!important;margin-top:12px}
+
+/* ---------- cards: white, soft shadow, gold-pink hairline ---------- */
+.wys-world :is(.wc-pullquote,.wc-proof-card,.wc-split>div,.wc-who>div,.wc-faq details,.wc-price,.wc-facts>div,.wc-founder){border:1px solid #F3D3E0;border-radius:22px;background:#fff;box-shadow:0 30px 56px -34px rgba(110,10,50,.6)}
+.wys-world :is(.wc-pullquote,.wc-split>div:last-child,.wc-price:last-child,.wc-facts>div.wc-fact-must){border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/images/brand/gl-hot.webp) 0 0/200px border-box}
+.wys-world .wc-pullquote::before,.wys-world .wc-split>div:last-child::before{display:none}
+.wys-world .wc-pullquote blockquote{font:600 36px/1.1 Gloock,Georgia,serif;color:#D62E73}
+.wys-world .wc-founder blockquote{font:600 28px/1.2 Gloock,Georgia,serif;color:#1A1417}
+.wys-world .wc-founder blockquote em{color:#D62E73}
+.wys-world .wc-who h3{font-size:22px;color:#1A1417}
+.wys-world .wc-proof-card h3{font-size:24px}
+.wys-world .wc-price-num{font:600 50px/1 Gloock,Georgia,serif!important;letter-spacing:0!important}
+.wys-world .wc-price-who{font:700 12px/1.4 Jost,sans-serif!important;letter-spacing:.22em!important;color:#B8245F!important}
+.wys-world .wc-split-kicker{font:600 26px/1.2 Gloock,Georgia,serif}
+.wys-world .wc-split-kicker span{font:800 10.5px/1 Jost,sans-serif;letter-spacing:.18em;border:1px solid #E85A9B;border-radius:3px;color:#B8245F;vertical-align:middle}
+.wys-world .wc-time{border:1px solid #E85A9B;border-radius:3px;color:#1A1417;letter-spacing:.16em}
+.wys-world .wc-step-tag b{border:1px solid #E85A9B;border-radius:3px}
+
+@media (max-width:900px){
+ body:has(.wys-world) .hc-nav .hc-wrap{height:80px}
+ body:has(.wys-world) .hc-logo .l2{font-size:36px}
+ body:has(.wys-world) .hc-drip{height:109px;background-size:900px 109px}
+ .wys-world .wc-hero{padding:140px 0 50px}
+ .wys-world .wc-hero h1.wh-name{font-size:36px;max-width:none;margin-inline:auto}
+ .wys-world .wh-sub{font-size:24px}
+ .wys-world .wc-hero-line{font-size:17px;margin-inline:auto}
+ .wys-world .wc-head h2,.wys-world .wc-look-head h2{font-size:30px}
+ .wys-world .wc-tagline{font-size:26px;padding:22px 18px}
+ .wys-world .wc-tagband,.wys-world .wc-final{padding:44px 16px}
+ .wys-world .wc-pullquote blockquote{font-size:28px}
+ .wys-world .wc-founder blockquote{font-size:23px}
+ .wh-sticker span{font-size:10px;letter-spacing:.12em;padding:8px 14px 7px}
+}
+
+/* ---------- overnight strip: 5 stops + the example-day bracket ---------- */
+.wys-world .wh-overnight{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.wys-world .wh-overnight .wc-stop-art{max-width:170px}
+.wh-stop-photo img{aspect-ratio:4/5!important;border-radius:8px;object-position:50% 30%}
+.wh-stop-blogs{position:relative;height:190px;max-width:170px!important}
+.wh-stop-blogs img{position:absolute;width:108px!important;aspect-ratio:auto!important;height:172px!important;object-fit:cover;object-position:top;border:1px solid #F3D3E0;border-radius:10px!important;background:#fff;box-shadow:0 14px 24px -14px rgba(110,10,50,.6)}
+.wh-stop-blogs .wh-blog-back{right:2px;top:0;transform:rotate(6deg)}
+.wh-stop-blogs .wh-blog-front{left:8px;top:14px;transform:rotate(-3deg)}
+.wh-stop-ig{position:relative;height:190px;max-width:170px!important}
+.wh-stop-ig img{position:absolute;width:104px!important;height:130px!important;aspect-ratio:auto!important;object-fit:cover;border:4px solid #fff;border-radius:10px!important;box-shadow:0 14px 24px -14px rgba(110,10,50,.6)}
+.wh-stop-ig .wh-ig-3{right:0;top:0;transform:rotate(8deg)}
+.wh-stop-ig .wh-ig-2{right:28px;top:22px;transform:rotate(2deg)}
+.wh-stop-ig .wh-ig-1{left:4px;top:48px;transform:rotate(-5deg);z-index:2}
+
+.wh-day{margin:56px auto 0;max-width:1100px;background:#fff;border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/images/brand/gl-hot.webp) 0 0/200px border-box;border-radius:26px;padding:34px 34px 30px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7)}
+.wh-day-head{text-align:center}
+.wys-world .wh-day-head h3{font-size:34px;margin:16px 0 8px;color:#1A1417}
+.wys-world .wh-day-head p{font:400 16px/1.5 Jost,sans-serif;margin:0}
+.wh-day-ex{display:inline-block;margin-left:8px;padding:5px 9px;border:1px solid #E85A9B;border-radius:3px;font:800 10.5px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F;vertical-align:2px}
+.wh-day-time{background:url(/images/brand/sh-bub.webp) center/120px!important}
+.wh-bracket{list-style:none;margin:30px 0 0;padding:26px 0 0;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px;position:relative}
+/* the bracket: a line across the top with a tick down to every slot and a point up to the heading */
+.wh-bracket::before{content:"";position:absolute;left:5.5%;right:5.5%;top:0;height:14px;border:2px solid #E85A9B;border-bottom:0;border-radius:12px 12px 0 0}
+.wh-bracket::after{content:"";position:absolute;left:50%;top:-12px;width:2px;height:12px;background:#E85A9B}
+.wh-slot{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;min-width:0}
+.wh-slot::before{content:"";position:absolute;top:-12px;left:50%;width:2px;height:10px;background:#E85A9B}
+.wh-slot-t{font:800 12px/1 Jost,sans-serif;letter-spacing:.06em;color:#1A1417;white-space:nowrap}
+.wh-slot-img{display:block;width:100%;max-width:84px}
+.wh-slot-img img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:8px;border:1px solid #F3D3E0}
+.is-blog .wh-slot-img img{object-position:top}
+.wh-slot-kind{font:800 10px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B8245F;padding:4px 6px;border:1px solid #F3D3E0;border-radius:3px;background:#FFF1F7}
+.is-ig .wh-slot-kind{background:#F1EAFB;border-color:#D9C6F0;color:#5D3480}
+.is-blog .wh-slot-kind{background:#fff;border-color:#E85A9B}
+.wh-slot-what{font:500 12.5px/1.35 Jost,sans-serif;color:#1A1417}
+
+@media (max-width:1100px){.wys-world .wh-overnight{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:34px}.wys-world .wh-overnight::before{display:none}.wh-bracket{grid-template-columns:repeat(5,minmax(0,1fr));row-gap:24px}.wh-bracket::before,.wh-bracket::after,.wh-slot::before{display:none}}
+@media (max-width:900px){
+ .wys-world .wh-overnight{grid-template-columns:minmax(0,1fr);max-width:460px;margin-inline:auto}
+ .wys-world .wh-overnight::before{display:block}
+ .wh-day{padding:26px 16px 22px;margin-top:40px}
+ .wys-world .wh-day-head h3{font-size:26px}
+ .wh-bracket{grid-template-columns:minmax(0,1fr);gap:0;padding:0 0 0 22px;margin-top:22px}
+ .wh-bracket::before{display:block;left:0;right:auto;top:8px;bottom:8px;width:14px;height:auto;border:2px solid #E85A9B;border-right:0;border-radius:12px 0 0 12px}
+ .wh-slot{display:grid;grid-template-columns:62px 48px minmax(0,1fr);grid-template-areas:"t img kind" "t img what";align-items:center;justify-items:start;text-align:left;column-gap:12px;row-gap:4px;padding:8px 0;border-bottom:1px solid #F3D3E0}
+ .wh-slot:last-child{border-bottom:0}
+ .wh-slot::before{display:block;left:-22px;top:50%;width:14px;height:2px}
+ .wh-slot-t{grid-area:t}.wh-slot-img{grid-area:img;width:48px}.wh-slot-kind{grid-area:kind;align-self:end}.wh-slot-what{grid-area:what;align-self:start;font-size:14px}
+}
+.wys-world .wc-section{padding-block:96px}
+@media (max-width:900px){.wys-world .wc-section{padding-block:56px}}
+.wh-slot-kind{white-space:nowrap;letter-spacing:.1em;font-size:9.5px}
+.wys-world .wc-price-who{letter-spacing:.14em!important;font-size:11.5px!important}
+.wys-world .wc-proof-card .wc-live-tag{left:18px;transform:rotate(-2deg)}
+.wys-world .wc-head p.wh-sub{font:600 30px/1.15 Gloock,Georgia,serif;margin:0 0 16px}
+@media (max-width:900px){.wys-world .wc-head p.wh-sub{font-size:24px}}
+/* waitlist form: homepage Blueprint form look */
+.wys-world .wc-wait-form .freebie-capture{background:#fff!important;border:1px solid #F3D3E0!important;border-radius:22px!important;box-shadow:0 30px 56px -34px rgba(110,10,50,.6);padding:30px 26px 22px!important}
+.wys-world .wc-wait-form .fc-h{font:600 26px/1.15 Gloock,Georgia,serif!important}
+.wys-world .wc-wait-form .fc-row{display:flex;gap:12px;flex-wrap:wrap}
+.wys-world .wc-wait-form input[type=email]{flex:1 1 220px;min-height:52px;border-radius:999px!important;border:1.5px solid #E891B6!important;padding:0 22px!important;font:500 16px Jost,sans-serif!important;background:#fff!important}
+.wys-world .wc-wait-form button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 26px!important;border-radius:999px!important;background:#fff!important;border:1.5px solid #E891B6!important;color:#1A1417!important;font:700 13px/1.2 Jost,sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;box-shadow:0 12px 24px -14px rgba(184,36,95,.7)!important;white-space:nowrap}
+.wys-world .wc-wait-form button::before{content:"";width:11px;height:11px;flex:none;background:#D62E73;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}

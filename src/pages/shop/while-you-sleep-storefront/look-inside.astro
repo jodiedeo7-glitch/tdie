@@ -12,8 +12,10 @@ const [ghost, plaid] = liveLooks;
  <header class="wc-hero">
   <div class="wys-wrap">
    <div class="wc-head" style="margin-bottom:0">
-    <h1>Look inside<br/><em>one night’s work.</em></h1>
-    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Two looks The While-You-Sleep Storefront™ built, every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
+    <p class="wc-kicker">Look inside</p>
+    <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
+    <p class="wh-sub">Every piece of <em>one night’s work.</em></p>
+    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Two looks it built on its own, every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
     <WysCta note="Member presale opens Tuesday 13 October."/>
    </div>
    <div class="wc-six">{[ghost, plaid].flatMap((look) => roles.map((r) => <figure>{r.key === 'basic' ? <WysPin look={look} role="basic" sizes="(max-width:900px) 30vw, 180px" eager/> : <Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 180px" loading="eager"/>}<figcaption>{r.name}</figcaption></figure>))}</div>

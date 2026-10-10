@@ -1,15 +1,53 @@
 ---
-// The overnight strip: 11 pm you log off, 7 am it’s posted. Each stop shows
-// the actual output, not a label.
+// The overnight strip. Every stop shows the actual output, not a label.
+// Jodie, 10 Oct 2026: a photo on every stop (Tommy Kate logging off), the
+// Instagram carousel shown, both blog posts shown (the second peeking out),
+// and the last stop is a bracket of times showing everything that goes out.
+// The times in the bracket are an EXAMPLE day and are labelled as one.
 import {Image} from 'astro:assets';
 import WysPin from './WysPin.astro';
 import {liveLooks} from '../data/wys-live.js';
 const [ghost, plaid] = liveLooks;
+
+// Example day. Order follows the workflow: blog live first, then pins, then Instagram.
+const day = [
+ {t: '7:00 am', kind: 'Blog post', what: ghost.short, img: ghost.blogPhone, blog: true},
+ {t: '7:30 am', kind: 'Blog post', what: plaid.short, img: plaid.blogPhone, blog: true},
+ {t: '9:00 am', kind: 'Basic pin', what: ghost.short, look: ghost, role: 'basic'},
+ {t: '11:00 am', kind: 'Basic pin', what: plaid.short, look: plaid, role: 'basic'},
+ {t: '1:00 pm', kind: 'Styled pin', what: ghost.short, look: ghost, role: 'styled'},
+ {t: '3:00 pm', kind: 'Styled pin', what: plaid.short, look: plaid, role: 'styled'},
+ {t: '5:00 pm', kind: 'Lifestyle pin', what: ghost.short, look: ghost, role: 'lifestyle'},
+ {t: '7:00 pm', kind: 'Lifestyle pin', what: plaid.short, look: plaid, role: 'lifestyle'},
+ {t: '8:00 pm', kind: 'IG carousel', what: ghost.short, look: ghost, role: 'lifestyle', ig: true}
+];
 ---
-<ol class="wc-overnight" aria-label="What happens overnight">
- <li class="wc-night-stop wc-stop-off"><span class="wc-time">11 pm</span><h3>You log off</h3><p>Computer on, signed into Amazon. You go to bed.</p></li>
+<ol class="wc-overnight wh-overnight" aria-label="What happens overnight">
+ <li class="wc-night-stop wc-stop-off"><span class="wc-time">11 pm</span><h3>You log off</h3>
+  <div class="wc-stop-art wh-stop-photo"><img src="/images/home/flagship-attic-560.webp" alt="Tommy Kate laughing in her pink gaming chair in the attic, lamp on, laptop open" width="560" height="700" loading="lazy"/></div>
+  <p>Computer on, signed into Amazon. Go play, go to bed.</p></li>
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 looks planned</h3><div class="wc-stop-art wc-stop-two"><Image src={ghost.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/><Image src={plaid.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/></div><p>Each with a Basic, Styled and Lifestyle photo.</p></li>
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>6 pins made</h3><div class="wc-stop-art wc-stop-six">{[ghost, plaid].flatMap((l) => ['basic', 'styled', 'lifestyle'].map((r) => <WysPin look={l} role={r} sizes="50px"/>))}</div><p>3 per look, each linked to its Idea List.</p></li>
- <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 blog posts written</h3><div class="wc-stop-art wc-stop-blog"><Image src={ghost.blogPhone} alt="" widths={[200, 400]} sizes="100px"/></div><p>One for each look, with the finds.</p></li>
- <li class="wc-night-stop wc-stop-on"><span class="wc-time" style="background-image:url(/images/brand/sh-bub.webp)">7 am</span><h3>It’s posted</h3><p>Pins, blog posts and an Instagram carousel, out in the world before your coffee.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 blog posts written</h3>
+  <div class="wc-stop-art wh-stop-blogs"><Image class="wh-blog-back" src={plaid.blogPhone} alt="" widths={[200, 400]} sizes="100px"/><Image class="wh-blog-front" src={ghost.blogPhone} alt="" widths={[200, 400]} sizes="100px"/></div>
+  <p>One for each look, with the finds.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>Instagram carousel made</h3>
+  <div class="wc-stop-art wh-stop-ig"><Image class="wh-ig-3" src={ghost.photos.basic.src} alt="" widths={[160, 320]} sizes="80px"/><Image class="wh-ig-2" src={ghost.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/><Image class="wh-ig-1" src={ghost.photos.lifestyle.src} alt="" widths={[160, 320]} sizes="80px"/></div>
+  <p>Lifestyle, Styled and Basic, in that order, with the caption.</p></li>
 </ol>
+
+<div class="wh-day">
+ <div class="wh-day-head">
+  <span class="wc-time wh-day-time">7 am onward</span>
+  <h3>Then it all goes out.</h3>
+  <p>Everything it made overnight, spaced out through the day. <span class="wh-day-ex">Example day</span></p>
+ </div>
+ <ol class="wh-bracket" aria-label="Example day of posts">
+  {day.map((d) => <li class={`wh-slot ${d.blog ? 'is-blog' : d.ig ? 'is-ig' : 'is-pin'}`}>
+   <span class="wh-slot-t">{d.t}</span>
+   <span class="wh-slot-img">{d.blog ? <Image src={d.img} alt="" widths={[120, 240]} sizes="60px"/> : <Image src={d.look.photos[d.role].src} alt="" widths={[120, 240]} sizes="60px"/>}</span>
+   <span class="wh-slot-kind">{d.kind}</span>
+   <span class="wh-slot-what">{d.what}</span>
+  </li>)}
+ </ol>
+</div>

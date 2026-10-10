@@ -1,7 +1,4 @@
 ---
-import {getImage} from 'astro:assets';
-import icingSource from '../assets/wys/pink-icing-continuous.png';
-const icing=await getImage({src:icingSource,format:'webp',quality:90});
 import Disclosure from './lifestyle/Disclosure.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 import '../styles/wys.css';
@@ -10,12 +7,12 @@ import '../styles/wys-showcase.css';
 import '../styles/wys-boutique.css';
 import '../styles/wys-reference.css';
 import '../styles/wys-convert.css';
+import '../styles/wys-home.css';
 import { WYS_ROOT } from '../data/wys.js';
 const {title,description,current='overview',ogImage,noindex=false,focus=false}=Astro.props;
 const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Waitlist',href:WYS_ROOT+'/waitlist'}];
 ---
-<PageLayout bare visualRefresh boutiqueHeader title={title} description={description} ogImage={ogImage} noindex={noindex}>
- <div slot="before-nav" class="wz-page-top-icing" style={`background-image:url('${icing.src}')`} aria-hidden="true"/>
+<PageLayout bare visualRefresh={false} homeChrome title={title} description={description} ogImage={ogImage} noindex={noindex}>
  <div class="wys-world">
   <a class="wys-skip" href="#wys-content">Skip to content</a>
   {!focus && <div class="wb-shopbar"><div class="wys-wrap wb-shopbar-inner"><nav aria-label="While-You-Sleep Storefront">{links.map(link=><a href={link.href} aria-current={current===link.key?'page':undefined}>{link.name}</a>)}</nav></div></div>}
