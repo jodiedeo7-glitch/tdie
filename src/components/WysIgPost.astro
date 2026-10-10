@@ -6,7 +6,7 @@ const {look, small = false} = Astro.props;
 const side = small ? '70px' : '170px';
 ---
 <div class={`wh-ig ${small ? 'wh-ig-sm' : ''}`}>
- <figure class="wh-ig-side wh-ig-prev"><Image src={look.photos.lifestyle.src} alt="" widths={[200, 360]} sizes={side}/><figcaption>1. Lifestyle</figcaption></figure>
+ <figure class="wh-ig-side wh-ig-prev"><Image src={look.photos.basic.src} alt="" widths={[200, 360]} sizes={side}/><figcaption>1. Basic</figcaption></figure>
  <div class="wh-ig-card">
   <div class="wh-ig-top"><span class="wh-ig-logo">Instagram</span><span class="wh-ig-icons" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-8.6C1 9 3 5.5 6.5 5.5c2 0 3.2 1.2 5.5 3.4 2.3-2.2 3.5-3.4 5.5-3.4C21 5.5 23 9 21.3 12.4 19 16.6 12 21 12 21z"/></svg><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></span></div>
   <div class="wh-ig-user"><i class="wh-ig-av"></i><b>itstommykate</b><span>⋯</span></div>
@@ -14,5 +14,5 @@ const side = small ? '70px' : '170px';
   <div class="wh-ig-acts" aria-hidden="true"><svg viewBox="0 0 24 24" class="on"><path d="M12 21s-7-4.4-9.3-8.6C1 9 3 5.5 6.5 5.5c2 0 3.2 1.2 5.5 3.4 2.3-2.2 3.5-3.4 5.5-3.4C21 5.5 23 9 21.3 12.4 19 16.6 12 21 12 21z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg><span class="wh-ig-dots"><i></i><i class="on"></i><i></i></span><svg viewBox="0 0 24 24" class="bm"><path d="M6 3h12v18l-6-4-6 4z"/></svg></div>
   {!small && <p class="wh-ig-cap"><b>itstommykate</b> {look.name}. Every find is linked on the blog.</p>}
  </div>
- <figure class="wh-ig-side wh-ig-next"><Image src={look.photos.basic.src} alt="" widths={[200, 360]} sizes={side}/><figcaption>3. Basic</figcaption></figure>
+ <figure class="wh-ig-side wh-ig-next"><Image src={look.photos.lifestyle.src} alt="" widths={[200, 360]} sizes={side}/><figcaption>3. Lifestyle</figcaption></figure>
 </div>

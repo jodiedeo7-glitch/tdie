@@ -17,12 +17,17 @@ import { membership as M } from '../data/facts.js';
  </div>
  <div class="wc-price wc-price-launch">
   <span class="wh-pill"><span>Open to all</span></span>
-  <p class="wc-price-who">Everyone</p>
-  <p class="wc-price-num">$37</p>
+  <p class="wc-price-who">Everyone, launch weekend</p>
+  <p class="wc-price-num">$27 <s class="wc-price-was">$37</s></p>
   <p class="wc-price-when">Full launch<br/>Friday 16 October 2026</p>
+  <p class="wc-price-after">$37 after launch weekend</p>
  </div>
 </div>
 <div class="wh-trial">
  <div><p class="wc-kicker">Not a member yet?</p><p class="wh-trial-h">Start free for {M.trialDays} days. <em>Get the member price.</em></p><p class="wh-trial-p">Both TDIE memberships start with {M.trialDays} days free, and members get first access at the presale price.</p></div>
  <a class="wc-button" href={NAV_CTA.href}>Start free for {M.trialDays} days</a>
 </div>
+<style>
+ .wc-price-was{font-size:.5em;font-weight:400;color:#1A1417;margin-left:6px;text-decoration-thickness:2px}
+ .wc-price-after{margin:8px 0 0;font:600 14px/1.35 Jost,sans-serif;color:#1A1417}
+</style>

@@ -3,7 +3,7 @@ import WysFrame from '../../components/WysFrame.astro';
 import WysNightFeed from '../../components/WysNightFeed.astro';
 import WysCta from '../../components/WysCta.astro';
 import WysOvernight from '../../components/WysOvernight.astro';
-import WysLookFlow from '../../components/WysLookFlow.astro';
+import FreebieForm from '../../components/FreebieForm.astro';
 import WysProof from '../../components/WysProof.astro';
 import WysYouDo from '../../components/WysYouDo.astro';
 import WysObjections from '../../components/WysObjections.astro';
@@ -13,20 +13,22 @@ const [ghost] = liveLooks;
 ---
 <WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, while you sleep, The While-You-Sleep Storefront™ plans 2 looks, makes 6 Pinterest pins, writes the blog posts and posts an Instagram carousel. Join the waitlist." ogImage={ghost.photos.styled.src.src}>
  <header class="wc-hero">
-  <div class="wys-wrap wc-hero-grid">
+  <div class="wys-wrap wc-wait-grid">
    <div class="wc-hero-copy">
     <p class="wc-kicker">For Amazon storefront owners</p>
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s an automation you set up once. Then every night it plans <b>2&nbsp;looks</b>, makes the Pinterest pins, writes the blog posts and posts to Instagram, while you sleep.</p>
-    <WysCta align="left" note="Member presale opens Tuesday 13 October."/>
+    <div class="wc-wait-form" id="join-top">
+     <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist" button="Join the waitlist" sub="Get the email the moment it opens, plus updates from The Digital Income Edit™. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the email when it opens."/>
+    </div>
+    <p class="wc-wait-fine">Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026. Full launch Friday 16 October 2026.</p>
    </div>
    <div class="wc-hero-phone"><WysNightFeed/></div>
-   <div class="wc-hero-cta-mobile"><WysCta note="Member presale opens Tuesday 13 October."/></div>
   </div>
  </header>
 
- <div class="wc-tagband" style="background-image:url(/images/brand/gl-tile.webp)"><p class="wc-tagline">Planned. Pinned. Posted. Blogged. <span>& you slept.</span><small>The Digital Income Edit™ presents The While-You-Sleep Storefront™</small></p></div>
+ <div class="wc-tagband" style="background-image:url(/images/brand/gl-tile.webp)"><p class="wc-tagline">Planned. Pinned. Posted. Blogged. <span>You Slept.</span><small>The Digital Income Edit™ presents The While-You-Sleep Storefront™</small></p></div>
 
  <section class="wys-wrap wc-section">
   <div class="wc-pain-grid">
@@ -59,19 +61,6 @@ const [ghost] = liveLooks;
   </div>
  </section>
 
- <section class="wc-section wc-flow-band" id="one-look">
-  <div class="wys-wrap">
-   <div class="wc-head">
-    <p class="wc-kicker">One look, start to finish</p>
-    <h2>Here’s one look it built,<br/><em>piece by piece.</em></h2>
-    <p>This is {ghost.name}, a real look the system made. Three photos become three Pinterest pins, a blog post and an Instagram carousel. Then it does the same for a second look.</p>
-   </div>
-   <WysLookFlow look={ghost}/>
-   <p class="wc-flow-note">Idea Lists are themed collections with many looks in each one. Every pin goes to the list its products came from, never a one-off list per look.</p>
-   <WysCta note="Member presale opens Tuesday 13 October."/>
-  </div>
- </section>
-
  <section class="wys-wrap wc-section">
   <div class="wc-head">
    <p class="wc-kicker">The proof</p>
@@ -79,6 +68,8 @@ const [ghost] = liveLooks;
    <p>Open them. These are the real pages on The Digital Income Edit™ Lifestyle blog, with the finds linked and the photos in order.</p>
   </div>
   <WysProof/>
+  <p class="wc-flow-note wc-look-link"><a href="/shop/while-you-sleep-storefront/look-inside">See every piece of both looks: the photos, the pins and the carousels →</a></p>
+  <WysCta href="#join" note="Member presale opens Tuesday 13 October."/>
  </section>
 
  <section class="wys-wrap wc-section" style="padding-top:0">
@@ -118,7 +109,7 @@ const [ghost] = liveLooks;
     <h2>Your questions,<br/><em>answered straight.</em></h2>
    </div>
    <WysObjections/>
-   <WysCta note="Joining the waitlist doesn’t place an order."/>
+   <WysCta href="#join" note="Joining the waitlist doesn’t place an order."/>
   </div>
  </section>
 
@@ -135,7 +126,14 @@ const [ghost] = liveLooks;
   <div class="wc-final-card">
    <p class="wc-kicker">The While-You-Sleep Storefront™</p>
    <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
-   <WysCta note="Get the email the moment it opens."/>
+   <div class="wc-wait-form" id="join">
+    <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist" button="Join the waitlist" sub="Get the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the email when it opens."/>
+   </div>
   </div>
  </div>
 </WysFrame>
+<style is:global>
+ .wys-world .wc-final-card .wc-wait-form .freebie-capture{border:0!important;box-shadow:none!important;padding:6px 0 0!important}
+ .wys-world .wc-look-link{text-align:center;margin:28px 0 0}
+ .wys-world .wc-look-link a{font:700 16px/1.4 Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+</style>

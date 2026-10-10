@@ -1,0 +1,30 @@
+---
+// Launch strip for The While-You-Sleep Storefront™ waitlist (Jodie, 10 Oct 2026).
+// Sits on the homepage and the Shop so visitors who land there find the launch.
+// Placed inside each page's hero copy column, below the header drip.
+// White card, pink outline, near-black text, no pink fill.
+import {WYS_CTA} from '../data/wys-live.js';
+---
+<aside class="wys-ann" aria-label="New: The While-You-Sleep Storefront">
+ <a class="wys-ann-card" href={WYS_CTA.href}>
+  <span class="wys-ann-new">New</span>
+  <span class="wys-ann-copy"><b class="wys-ann-name">The While-You-Sleep Storefront™</b><span class="wys-ann-line">Your Amazon storefront posts itself, every night while you sleep.</span></span>
+  <span class="wys-ann-btn">{WYS_CTA.label} <span aria-hidden="true">→</span></span>
+ </a>
+</aside>
+<style>
+ .wys-ann{margin:0 0 26px;max-width:640px}
+ .wys-ann-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 16px;background:#fff;border:1.5px solid #E891B6;border-radius:18px;box-shadow:0 18px 34px -22px rgba(110,10,50,.7);color:#1A1417;text-decoration:none}
+ .wys-ann-new{flex:none;font:700 11px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F;border:1.5px solid #B8245F;border-radius:999px;padding:7px 11px}
+ .wys-ann-copy{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 260px}
+ .wys-ann-name{font:400 21px/1.15 Gloock,Georgia,serif;color:#1A1417}
+ .wys-ann-line{font:400 15px/1.4 Jost,sans-serif;color:#1A1417}
+ .wys-ann-btn{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border:1.5px solid #D62E73;border-radius:999px;background:#fff;font:700 12px/1.2 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#1A1417}
+ .wys-ann-card:hover .wys-ann-btn,.wys-ann-card:focus-visible .wys-ann-btn{border-color:#1A1417}
+ .wys-ann-card:focus-visible{outline:3px solid #1A1417;outline-offset:3px}
+ @media (max-width:700px){
+  .wys-ann-card{flex-wrap:wrap;gap:10px 12px;padding:14px}
+  .wys-ann-name{font-size:19px}
+  .wys-ann-btn{width:100%;justify-content:center}
+ }
+</style>

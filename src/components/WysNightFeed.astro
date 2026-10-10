@@ -3,7 +3,8 @@
 import WysPin from './WysPin.astro';
 import {liveLooks} from '../data/wys-live.js';
 const [ghost, plaid] = liveLooks;
-const cols = [[[ghost, 'basic'], [plaid, 'lifestyle']], [[plaid, 'basic'], [ghost, 'styled']], [[ghost, 'lifestyle'], [plaid, 'styled']]];
+// Each row is one look, left to right Basic, Styled, Lifestyle (Jodie, 10 Oct 2026: always that order).
+const cols = ['basic', 'styled', 'lifestyle'].map((role) => [[ghost, role], [plaid, role]]);
 ---
 <div class="wc-night wh-board-wrap">
  <p class="wh-sticker"><span>Not a guide · It runs itself</span></p>
