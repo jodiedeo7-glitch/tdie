@@ -304,3 +304,15 @@ footer .fcopy{margin-top:18px;font-size:13px;color:var(--ink2)}
 @media (max-width:900px){.mnav{display:block}.nav .r{gap:8px}}
 img{max-width:100%;height:auto}
 @media (max-width:900px){.feature .pic .sticker{bottom:auto!important;top:-18px!important;right:12px!important;width:auto!important;height:auto!important}.hero{padding-top:150px!important}.hero .kick{line-height:1.5}}
+/* audit fixes 10 Oct */
+.tag .go{display:block;margin-top:8px;font:700 10.5px/1.2 Inter;letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--deep);border-top:1px solid #F3D3E0;padding-top:7px}
+.prod.pbp{width:210px;right:300px}
+.prod.pbp .tag{max-width:190px}
+.link{display:inline-flex;align-items:center;min-height:44px}
+.step a.st{display:inline-flex;align-items:center;min-height:44px;padding:0 14px}
+.mnav summary{min-height:48px}
+.lib .g .btn{min-height:48px}
+.feature .pic .sticker{top:-40px!important}
+@media (max-width:900px){.btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25}.buy .btn{width:100%}.feature .pic .sticker{top:-40px!important}.prod.pbp{width:140px}.prod.pbp .tag{max-width:150px;font-size:9.5px}}
+@media (max-width:360px){.logo .spark{display:none}.logo .l2{font-size:30px}.nav .btn{padding:0 10px;font-size:10px}.prod.pwe{width:170px}.prod.pbp{width:120px}.prod.pwe .tag,.prod.pbp .tag{font-size:9px;padding:7px 9px}}
+.nav .btn{white-space:nowrap!important}
