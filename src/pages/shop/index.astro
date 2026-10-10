@@ -135,6 +135,7 @@ const schema = [{
 ---
 <PageLayout
   bare
+  homeChrome
   title="Shop"
   description="The Digital Income Edit™ shop, in order: free guides first, then The Weekend Ecosystem™, the membership, single guides and done-for-you services."
   schema={schema}
@@ -146,15 +147,13 @@ const schema = [{
         <p class="e-kick">The shop</p>
         <h1 class="mast-h">Something to sell. Somewhere to send them. <em>Less work to repeat.</em></h1>
         <p class="e-lede">Find the next piece your business needs: ready-made products to rebrand, a course to build your own website, training and monthly content, or a private service. Start with the free resources if you are still deciding what to sell.</p>
+        <nav class="chips" aria-label="On this page">{index.map((x) => <a href={`#${x.id}`}><span>{x.n}</span>{x.t}</a>)}</nav>
       </div>
-      <nav class="idx e-rise e-rise-2" aria-label="On this page">
-        <p class="idx-h">On this page</p>
-        <ol>
-          {index.map((s) => (
-            <li><a href={`#${s.id}`}><span class="idx-n">{s.n}</span>{s.t}</a></li>
-          ))}
-        </ol>
-      </nav>
+      <div class="mast-art" aria-hidden="true">
+        <a class="ma-card ma-we" href="#flagship" tabindex="-1"><img src="/images/we/hook-blog-posts.jpg" alt="" width="1200" height="1490" /><span>{we.name}</span></a>
+        <a class="ma-card ma-bp" href="#start-here" tabindex="-1"><img src="/images/brand/blueprint-cover.webp" alt="" width="900" height="1165" /><span>The Blueprint · Free</span></a>
+        <span class="ma-sticker"><b>Free</b> guides first</span>
+      </div>
     </div>
   </header>
 
@@ -181,7 +180,7 @@ const schema = [{
   </section>
 
   <!-- 02 THE FLAGSHIP -->
-  <section class="e-dark flag" id="flagship" aria-labelledby="h-flag">
+  <section class="e-dark flag" id="flagship" style="background-image:url(/images/brand/gl-tile.webp);background-size:360px 360px" aria-labelledby="h-flag">
     <div class="flag-grid">
       <figure class="flag-fig">
         <div class="flag-img e-unveil">
@@ -630,5 +629,71 @@ const schema = [{
   @media (max-width:620px){
     .row .row-price{flex-wrap:wrap}
     .row .row-price .go-pill{margin-top:4px}
+  }
+  /* ── SHOP BRAND PASS 10 Oct: home-page look. Flat cream/white/blush, one glitter band, pink outlines, stickers ── */
+  .e-page{background:#FBF8F5}
+  .mast{background:#FFE4EF!important;border-bottom:2px solid #E85A9B;padding:clamp(36px,4vw,56px) 0 clamp(36px,4vw,56px)!important}
+  .mast-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;align-items:center!important;gap:clamp(28px,4vw,56px)!important}
+  .mast .e-lede{color:#1A1417;font-size:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chips a{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;background:#fff;border:2px solid #E85A9B;border-radius:999px;font:600 13.5px/1.2 Inter,sans-serif;color:#1A1417;text-decoration:none}
+  .chips a span{font-weight:700;color:#D62E73}
+  .chips a:hover{background:#FFF0F6}
+  .mast-art{position:relative;height:420px}
+  .ma-card{position:absolute;display:block;background:#fff;padding:8px 8px 0;border:2px solid #E85A9B;border-radius:12px;box-shadow:0 14px 30px rgba(184,36,95,.18);text-decoration:none}
+  .ma-card img{display:block;width:100%;height:auto;border-radius:6px}
+  .ma-card span{display:block;padding:10px 4px 12px;text-align:center;font:700 11.5px/1.3 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#B8245F}
+  .ma-we{width:52%;left:4%;top:0;transform:rotate(-4deg)}
+  .ma-bp{width:44%;right:2%;top:70px;transform:rotate(5deg)}
+  .ma-sticker{position:absolute;left:40%;bottom:6px;width:112px;height:112px;border-radius:50%;background:#fff;border:2px solid #E85A9B;box-shadow:inset 0 0 0 5px #fff,inset 0 0 0 7px #FFB3D3,0 8px 18px rgba(184,36,95,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-10deg);font:700 11px/1.25 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#B8245F}
+  .ma-sticker b{font:600 30px/1 Newsreader,Georgia,serif;letter-spacing:0;text-transform:none;color:#D62E73}
+  #start-here{background:#fff}
+  #guides,#done-for-you{background:#FBF8F5}
+  #ai-creator,#membership{background:#fff}
+  #plr-vault{background:#FFE4EF!important;border-top:2px solid #E85A9B!important;border-bottom:2px solid #E85A9B!important}
+  #plr-vault .plr-grid{border-top:0!important;background:#fff;border:2px solid #E85A9B;border-radius:18px;padding:clamp(24px,3vw,40px)!important}
+  #recommended{background:#FFF0F6}
+  .flag{padding:clamp(40px,5vw,72px) 16px!important}
+  .flag-grid{max-width:1120px;margin:0 auto;background:#fff;border:2px solid #E85A9B;border-radius:22px;box-shadow:0 18px 40px rgba(184,36,95,.18);overflow:hidden}
+  body.sales-page .flag-fig{padding:clamp(24px,3vw,40px)!important;max-width:none!important}
+  .flag-body{padding:clamp(24px,3vw,40px) clamp(24px,3vw,44px) clamp(28px,3vw,44px) 0!important;color:#1A1417}
+  .flag .flag-h,.flag .flag-name,.flag .flag-price,.flag-price .e-price{color:#1A1417!important}
+  .flag .e-lede,.flag-dl dd,.flag-terms{color:#1A1417!important}
+  .flag-dl dt{color:#D62E73!important}
+  .flag .flag-ev{color:#4A3640!important}
+  .flag-dl,.flag-buy{border-color:rgba(232,90,155,.45)!important}
+  .flag-quote blockquote,.flag-quote strong{color:#1A1417!important}
+  .flag-quote figcaption{color:#4A3640!important}
+  .e-sec,.e-sec-sm{padding-top:clamp(44px,5vw,72px)!important;padding-bottom:clamp(44px,5vw,72px)!important}
+  .outro{background:#FFE4EF;border:2px solid #E85A9B;border-radius:16px;padding:20px 24px!important;margin-top:28px;margin-bottom:56px;font-weight:600;color:#1A1417!important}
+  @media (max-width:860px){
+    .mast-grid{grid-template-columns:1fr!important}
+    .mast-art{height:340px;max-width:420px;margin:8px auto 0;width:100%}
+    .flag-body{padding:4px 22px 28px!important}
+    body.sales-page .flag-fig{padding:22px 22px 8px!important}
+  }
+  @media (max-width:420px){
+    .mast-art{height:290px}
+    .ma-sticker{width:92px;height:92px;font-size:10px}
+    .ma-sticker b{font-size:24px}
+    .chips a{font-size:12.5px;min-height:38px;padding:0 12px}
+  }
+  .ma-sticker{left:auto;right:44%;bottom:-6px}
+  .rec{border-top:2px solid #E85A9B!important}
+  @media (max-width:860px){.ma-sticker{display:none}}
+</style>
+<style is:global>
+  /* glitter + drip survive the site-wide background strip (needs id-level weight) */
+  body.sales-page :is(.hc-drip,#n#n){background-image:url(/images/brand/drip-gloss.webp)!important}
+  body.sales-page :is(.flag,#n#n){background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important}
+  body.sales-page .hc-nav{z-index:30!important}
+  .mast:has(.mast-art){padding-top:clamp(110px,9vw,140px)!important}
+  @media (max-width:900px){.mast:has(.mast-art){padding-top:96px!important}}
+  @media (max-width:360px){
+    body.sales-page .hc-logo .l2{font-size:26px}
+    body.sales-page .hc-logo .l1{font-size:8px;letter-spacing:.2em}
+    body.sales-page .hc-btn{padding:0 9px;font-size:9.5px;letter-spacing:.04em}
+    body.sales-page .hc-mnav summary{padding:0 10px;letter-spacing:.06em}
+    body.sales-page .hc-wrap{padding:0 12px}
   }
 </style>
