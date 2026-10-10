@@ -119,3 +119,21 @@ Jodie rejected the drip and asked for the PDF to look like her website. The guid
 - Copy and photos are unchanged. I removed three short card descriptions I had drafted that are not in the approved copy.
 - To rebuild: build the site (`npx astro build` on cloudflare-migration), serve `dist/`, copy `img/*.jpg` to `dist/_wysguide-img/`, then run `python3 site-build/site_build.py dist dist/_wysguide.html site-build/glitter.txt` and `node site-build/site_render.mjs out`.
 - `index.html` and `render.cjs` are the earlier standalone version, kept for reference only.
+
+## Page-by-page visual audit (10 October 2026)
+
+Every page was checked on its own at full size, fixed, re-rendered and checked again.
+
+- All pages: the header and footer glitter lines were greyish and looked dirty, so they now use the hot pink glitter. Sticker words spilled past the white centre, so they were resized. The corner sparkle stars floated off the rounded corners, so they now sit on them.
+- p1: "Planned. Pinned..." was a different font from page 12 (now Newsreader with "You Slept." in pink). The photo tags covered the shoes in the Basic photo (tags moved to hang below the photos). There was a large gap above the chips (photos are larger).
+- p2: "The photos" and "The words" wrapped unevenly. "6 Pins a day. By / hand?" broke badly. The sticker collided with the card corner and the headline.
+- p3: "Storefront™" was split from its name, "lists." sat alone on a line, and there was empty space at the bottom (larger photo).
+- p4: there was a big empty gap above the disclaimer (taller photos).
+- p5: the Pin 1 title band looked see-through and cheap (now a solid white band with a pink line under it). "from." sat alone on a line.
+- p6: "3 slides" overflowed the sticker, there was a big empty gap above the note, and the slide cards were unevenly sized.
+- p7: "jack-o-" broke across a line and item 05 was badly broken up. The browser frame was too small.
+- p8: one photo card had a glitter edge and the other didn't (they now match). The sticker overlapped the header card edge.
+- p9: "Then" sat alone at the end of a headline line, and "2 / looks" was split.
+- p10: "01 · First" repeated the big number, the cards had big empty bottoms, and cards in the same row didn't line up.
+- p11: the "Your path" card was mostly empty and "image tools." sat alone on a line (the boxes are now full width).
+- p12: the sticker word overflowed, and the closing line was small and close to the footer.
