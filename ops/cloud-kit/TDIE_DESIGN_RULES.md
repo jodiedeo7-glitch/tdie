@@ -4,15 +4,14 @@
 
 ### 4 October 2026 · THE LOOK (founder instruction, Decision 128). This wins over anything softer below.
 
-**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Newsreader SemiBold, upright, never italic; everything else is Inter, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
+**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are upright, never italic. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
 
 Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. Loud, pink, sparkly, confident, girly. It has to read LUXURY, never cheap.
 
 - NEVER minimalist, clean-and-modern, beige, neutral, quiet, editorial calm, "luxury editorial", cookie-cutter or a wall of words.
-- Luxury, not cheap: real-looking glitter, sequins, pearl, chrome and holographic foil with depth and light catching on them, used for the big moments. Not a flat glitter texture tiled behind every section, not the same hard offset shadow on every card, not gingham as wallpaper, not clip-art stars.
-- Break up every block of words: stickers, callout boxes, numbered badges, pull quotes, annotated arrows, "don't skip this" boxes, price and feature tags. Any feature a reader might skim past gets a visual.
+- Add little callouts and graphics and other visually appealing effects that break up the words on the page and highlight the features people might glaze over (Jodie, 4 Oct 2026, in her words).
+- Important words go hot pink (Jodie, 25 Sep 2026; reaffirmed 10 Oct 2026).
 - Every clickable card or image shows its name and a button. Nothing is a link without a label.
-- Homestead lives in the photography and small details (weathered wood, lilacs, the red barn, the porch, the retriever, the pink attic loft). Gingham appears once as trim, never as a background.
 - Body text big, near-black and crisp. Never grey body text. Headlines upright, never italic.
 
 ### 25 September 2026 · founder instruction
@@ -20,10 +19,10 @@ Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a
 These override canon §8 "Type" and the Dark Chocolate palette row wherever they disagree. Canon §8 and `canon.json → typography / palette` were brought into line on 4 October 2026 (Decision 128).
 
 ## 0. The one rule
-Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
+Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
-- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Newsreader SemiBold; everything else is Inter. No italic headlines.
+- Fraunces, Cormorant Garamond and Montserrat anywhere. No italic headlines.
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
 - Flat colour-block layouts ("plain, flat, boring").
 - Solid stone or single-colour backgrounds with no photo ("no depth, no visuals, nothing popping, plain, ugly, looks AI").
@@ -34,13 +33,8 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - Describing her locked features (face, hair colour, eyes, skin, age) in words in an image prompt. Identity comes from the seed alone (canon Decision 89).
 
 ## 2. The approved build (Skool About gallery, 25 Sep 2026)
-- **Photography:** every image is Tommy Kate in her own world, a different place and outfit each time: the pink attic gaming loft with the retriever, the farmhouse kitchen island, the porch rocking chair with lilacs, the white living room sofa, the garden beds by the red barn. Generated from the avatar seed (`/images/library/avatar-seed-omni-reference.png`) with only the changeable layer written. Her glitter-flecked pink iced coffee tumbler with a lavender straw is in every photo of her, and it is never the only pink item: her clothes and other pieces can be candy pink. No lettering. Confident self-made luxury, lived in (Decision 128): bright and glowing, one sparkle moment, and a loud photo always sits on a calm part of the layout so photo and design never fight. Sharp and full-bleed, not blurred.
-- **Palette:** Luxury Cream #FBF8F5 base, Signature Hot Pink #D62E73, Bubblegum Pink #FF8AC2, Muted Gold #C8A96A as a thin line only, near-black #1A1417 text.
-- **Layout:** cream gradient scrim from the left holding the copy; Tommy Kate on the right. Brand line top-left: small pink dot plus "THE DIGITAL INCOME EDIT™" in wide-tracked caps.
-- **Cards:** frosted white glass with a thin gold border and deep soft pink-tinted shadows. One glossy hot pink gradient hero card per image with a light sheen.
+- **Photography:** every image is Tommy Kate in her own world, a different place and outfit each time: the pink attic gaming loft with the retriever, the farmhouse kitchen island, the porch rocking chair with lilacs, the white living room sofa, the garden beds by the red barn. Generated from the avatar seed (`/images/library/avatar-seed-omni-reference.png`) with only the changeable layer written. Her glitter-flecked pink iced coffee tumbler with a lavender straw is in every photo of her, and it is never the only pink item: her clothes and other pieces can be candy pink. No lettering. Confident self-made luxury, lived in (Decision 128): bright and glowing, and photo and design never clash: no super loud flashy photo on top of a super flashy background. Sharp and full-bleed, not blurred.
 - **Stickers:** round white or bubblegum badges, tilted, dashed inner ring, pink type ("7 DAYS FREE", "1,200+ MEMBERS BUILDING"). Never over her face or body.
-- **Type:** Newsreader SemiBold headlines in near-black with the turn phrase in hot pink; Inter for everything else; kickers Inter Bold uppercase, wide tracking, pink.
-- **CTA:** hot pink gradient pill button, white caps.
 - Render at 1600x900 @2x, export JPG quality 93 for Skool.
 
 ## Canon edits
@@ -50,4 +44,6 @@ Done 4 October 2026 (Decision 128): TDIE_CANON.md §8 type and Dark Chocolate ro
 Jodie hates bows. Never add a bow to her pages, graphics or other designs unless she explicitly requests one. Reference-image bows do not grant permission.
 
 ### Buttons and gradients — 8 October 2026 (founder, standing)
-Never use a filled hot-pink pill button, and never use pink/lavender gradient or ombre backgrounds, on anything made for Jodie. Black boxes and black buttons are also rejected. Current site buttons: white pill, thin pink outline, near-black text, small pink sparkle. Backgrounds are flat (cream, white, soft blush). Product sections show the real product (course covers, module list, real Skool group), never an unrelated Tommy Kate photo. Keep sections compact; no oversized text or empty space.
+Never use a filled hot-pink pill button, and never use pink/lavender gradient or ombre backgrounds, on anything made for Jodie. Black boxes and black buttons are also rejected. Current site buttons: white pill, thin pink outline, near-black text, small pink sparkle. Product sections show the real product (course covers, module list, real Skool group), never an unrelated Tommy Kate photo. Keep sections compact; no oversized text or empty space.
+
+**Correction, Jodie, 10 October 2026:** Jodie never asked for flat backgrounds. Flat cream, white or soft blush backgrounds are exactly what she has been trying to get away from ("the background is too flat, plain and ugly"). That line was added in error on 8 October and is removed, along with other AI-written specs she never gave (cream base, frosted white cards, gradient pill buttons, "one sparkle moment", Newsreader/Inter as required fonts). Jodie, 10 Oct 2026: "Our text is not newsreader and inter"; the fonts and the colour palette are being changed everywhere.
