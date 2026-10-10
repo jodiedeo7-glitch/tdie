@@ -509,3 +509,17 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Inter,sans-serif!impo
 .life .life-scroll-track,.life .life-shelf-track{background:none!important;box-shadow:none!important}
 @media(max-width:640px){.life-scroll-controls{display:none!important}}
 .life .life-skip:not(:focus){position:absolute!important;width:1px!important;height:1px!important;padding:0!important;border:0!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+
+/* ===== PHOTO FRAMES MATCH THE PHOTOS (Jodie, 10 Oct 2026) =====
+   Every Lifestyle photo is portrait 2:3, so every frame that holds one is 2:3 too. Nothing is cropped square. */
+.life .life-card-photo,.life .life-card-featured .life-card-photo,.life .life-shelf-track .life-card-photo,.life .life-article .life-card-photo{aspect-ratio:2/3!important;height:auto!important;max-height:none!important}
+.life .life-card-photo img{width:100%!important;height:100%!important;object-fit:cover!important}
+.life .life-gp-window{aspect-ratio:2/3!important}
+.life .life-gp-window img{width:100%;height:100%;object-fit:cover}
+.life .life-reading-sheet .life-card-fuzzy .life-card-photo img{aspect-ratio:2/3!important}
+.life .life-category-image{aspect-ratio:2/3!important}
+.life .life-lookbook-image{aspect-ratio:2/3!important}
+@media(max-width:640px){.life .life-card-photo{aspect-ratio:2/3!important;max-height:none!important}}
+/* let the photo itself set the frame height, so padding never crops it */
+.life .life-card-photo,.life .life-card-featured .life-card-photo,.life .life-shelf-track .life-card-photo,.life .life-article .life-card-photo,.life .life-category-image,.life .life-lookbook-image,.life .life-gp-window{aspect-ratio:auto!important;height:auto!important}
+.life .life-card-photo img,.life .life-category-image img,.life .life-lookbook-image img,.life .life-gp-window img{display:block;width:100%!important;height:auto!important;aspect-ratio:2/3!important;object-fit:cover!important}
