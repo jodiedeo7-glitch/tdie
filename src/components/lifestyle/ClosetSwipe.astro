@@ -24,6 +24,15 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 {deck.length > 0 && <section class="cs-band" aria-labelledby="cs-title">
   <div class="cs-plate">
     <p class="cs-tab" aria-hidden="true"><span>✦</span> The Outfit Selector <span>✦</span></p>
+    <div class="cs-intro cs-head">
+      <p class="life-kicker">Swipe the closet</p>
+      <h2 id="cs-title">Swipe right on <span><i class="stress">your</i> next look.</span></h2>
+      <ol class="cs-steps">
+        <li><span class="cs-step-icon cs-step-love" aria-hidden="true">♥</span><span><b>Swipe right</b> to save a look you love</span></li>
+        <li><span class="cs-step-icon" aria-hidden="true">✕</span><span><b>Swipe left</b> to skip to the next outfit</span></li>
+        <li><span class="cs-step-icon" aria-hidden="true">↗</span><span><b>Tap a piece</b> under the photo to shop it on Amazon</span></li>
+      </ol>
+    </div>
     <div class="cs-picker" data-cs-picker>
       <p class="cs-picker-sticker" aria-hidden="true">Tap one ↓</p>
       <p class="cs-picker-title">Pick your <span>outfit.</span></p>
@@ -35,18 +44,8 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
         {deck.map(d => <li data-season={d.season}><button type="button" data-cs-jump={d.slug} aria-label={`Show ${d.title}`} title={d.title}><span class="cs-strip-img"><img src={d.thumb} alt="" width="160" height="240" loading="lazy" decoding="async" /></span><span class="cs-strip-name">{shortName(d.title)}</span><span class="cs-strip-heart" aria-hidden="true">♥</span></button></li>)}
       </ul>
     </div>
-    <div class="cs-intro cs-head">
-      <figure class="cs-dream"><blockquote>Be the girl everyone asks, <span>“Where did you get <i class="stress">that?</i>”</span></blockquote><figcaption>Every piece is linked. Now you can tell them.</figcaption></figure>
-      <p class="life-kicker">Swipe the closet</p>
-      <h2 id="cs-title">Swipe right on <span><i class="stress">your</i> next look.</span></h2>
-      <p class="cs-how">Love it? Swipe right and it's saved. Not your vibe? Swipe left. Every piece is right under the photo, with its own shop link.</p>
-    </div>
     <div class="cs-intro cs-extra">
-      <ol class="cs-steps">
-        <li><span class="cs-step-icon cs-step-love" aria-hidden="true">♥</span><span><b>Swipe right</b> to save a look you love</span></li>
-        <li><span class="cs-step-icon" aria-hidden="true">✕</span><span><b>Swipe left</b> to skip to the next outfit</span></li>
-        <li><span class="cs-step-icon" aria-hidden="true">↗</span><span><b>Tap a piece</b> under the photo to shop it on Amazon</span></li>
-      </ol>
+      <figure class="cs-dream"><blockquote>Be the girl everyone asks, <span>“Where did you get <i class="stress">that?</i>”</span></blockquote><figcaption>Every piece is linked. Now you can tell them.</figcaption></figure>
       <div class="cs-saved" data-cs-saved>
         <p class="cs-saved-sticker" aria-hidden="true">♥ Wishlist</p>
         <p class="cs-saved-title">Your saved looks <b data-cs-saved-count>0</b></p>
@@ -88,13 +87,13 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 </section>}
 <style is:global>
 .cs-band{padding:48px 0}
-.cs-picker{position:relative;grid-column:1;grid-row:2;min-width:0;margin:0 0 16px;padding:14px 16px 6px;border-radius:20px;border:4px solid transparent;background:url(/images/brand/sparkle-glow.webp) right -150px top -110px/420px 280px no-repeat padding-box,linear-gradient(#FFF1F7,#FFF1F7) padding-box,url(/images/brand/gl-hot.webp) 0 0/160px border-box;box-shadow:0 20px 34px -22px rgba(150,20,70,.7)}
+.cs-picker{position:relative;grid-column:1;grid-row:3;min-width:0;margin:0 0 16px;padding:14px 16px 6px;border-radius:20px;border:4px solid transparent;background:url(/images/brand/sparkle-glow.webp) right -150px top -110px/420px 280px no-repeat padding-box,linear-gradient(#FFF1F7,#FFF1F7) padding-box,url(/images/brand/gl-hot.webp) 0 0/160px border-box;box-shadow:0 20px 34px -22px rgba(150,20,70,.7)}
 .life .cs-band .cs-picker-title{margin:0 0 10px;font:600 24px/1.1 Gloock,Georgia,serif;font-family:Gloock,Georgia,serif!important;font-size:24px!important;color:#1A1417}
 .cs-picker-title span{color:#D62E73}
 .life .cs-band .cs-picker-sticker{position:absolute;top:14px;right:14px;margin:0;padding:6px 12px;border-radius:999px;background:#fff;box-shadow:0 0 0 2px #D62E73,0 8px 14px -8px rgba(110,10,50,.6);color:#D62E73;font:700 11px/1.2 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;transform:rotate(4deg);animation:cs-bob 2.4s ease-in-out infinite}
 @keyframes cs-bob{50%{transform:rotate(4deg) translateY(-3px)}}
-.cs-head{grid-column:1;grid-row:3;align-self:start}
-.cs-dream{position:relative;margin:0 0 14px;padding:10px 16px 9px;background:#fff;border:2px solid #D62E73;border-radius:18px}
+.cs-head{grid-column:1;grid-row:2;align-self:start;margin-bottom:18px}
+.cs-dream{position:relative;margin:0 0 4px;padding:10px 16px 9px;background:#fff;border:2px solid #D62E73;border-radius:18px}
 .cs-dream::before{content:"";position:absolute;left:-10px;top:-10px;width:22px;height:22px;background:url(/images/brand/gl-hot.webp) 0 0/120px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 .cs-dream blockquote{margin:0;font-family:Gloock,Georgia,serif!important;font-weight:400;font-size:19px!important;line-height:1.2;color:#1A1417;text-wrap:balance}
 .cs-dream blockquote span{color:#D62E73}
@@ -199,9 +198,9 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
  .cs-band{padding:36px 0}
  .cs-plate{grid-template-columns:minmax(0,1fr);grid-template-rows:none;gap:22px;margin:0 12px;padding:36px 14px 26px;border-radius:20px}
  .cs-head,.cs-extra,.cs-stage{grid-column:1;grid-row:auto;align-self:start}
- .cs-picker{grid-row:auto;order:0;margin:0}
+ .cs-picker{grid-row:auto;order:1;margin:0}
  .life .cs-band .cs-picker-sticker{top:-16px;right:12px}
- .cs-head{order:1}.cs-stage{order:3}.cs-extra{order:4}
+ .cs-head{order:0;margin-bottom:0}.cs-steps{text-align:left;max-width:340px;margin-inline:auto}.cs-stage{order:3}.cs-extra{order:4}
  .life .cs-band .cs-tab{left:50%;transform:translateX(-50%) rotate(-2deg);font-size:11px;letter-spacing:.14em;padding:7px 14px}
  .cs-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.cs-chip{justify-content:center}.cs-chip:last-child:nth-child(odd){grid-column:1/-1}.cs-picker{padding:16px 12px 10px}.cs-strip{margin:0 -12px;padding:8px 12px 10px;scroll-padding:12px}
  .cs-chip{font-size:13px;padding:0 11px;gap:6px}
