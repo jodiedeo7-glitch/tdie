@@ -1,5 +1,5 @@
 ## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). THESE OVERRIDE EVERYTHING BELOW AND IN ANY OTHER FILE.
-- Fonts: **Gloock** for headlines, **Yellowtail** for the pink script accent (the pink turn phrase), **Jost** for everything else. Newsreader and Inter are retired. Never use them.
+- Fonts: **Gloock** for headlines, **Yellowtail** ONLY for the one stressed word in a headline (mark it class="stress"), never every pink word, **Jost** for everything else. Newsreader and Inter are retired. Never use them.
 - Backgrounds: NEVER flat or plain, and HARD STOP: NEVER a full glitter background (no glitter texture tiled behind a whole section). Use soft brand colour (blush #FFF7FA, pink #FFE4EF, lavender #EAE5F8) with a white glow and soft-edged sparkle accents in the corners (/images/brand/sparkle-glow.webp). Full glitter only on the drip and small accents (stickers, badges, thin strips).
 - Lavender (#EAE5F8) IS an allowed background colour.
 - Any older line below that says "flat backgrounds", "solid blush", "glitter only as accents", "no lavender", "Newsreader" or "Inter" is superseded.

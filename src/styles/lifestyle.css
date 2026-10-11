@@ -619,7 +619,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 /* section headings that sit straight on glitter get a white label so they stay crisp */
 .life-shelf>.life-section-heading,.life #browse>.life-section-heading{background:#fff;border:2px solid #D62E73;border-radius:22px;padding:18px 22px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
 /* pink script accent: the pink turn phrase in headlines is Yellowtail (10 Oct) */
-.life h1 span,.life h2 span,.life h1 em,.life h2 em,.cs-intro h2 span{font-family:Yellowtail,cursive!important;font-weight:400!important;font-size:1.12em;letter-spacing:0!important;color:#D62E73}
+.life h1 span,.life h2 span,.life h1 em,.life h2 em,.cs-intro h2 span{color:#D62E73}
 /* lavender is a brand background colour: the shopping box goes back to lavender */
 .life .life-reading-sheet .life-shop{background:#EAE5F8!important}
 .life .life-shelf-note{display:none!important}
@@ -642,3 +642,6 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 .life #life-new,.life #browse{background:url(/images/brand/sparkle-glow.webp) left -260px top 40px/640px 420px no-repeat!important}
 .life-lookbook{background:url(/images/brand/sparkle-glow.webp) right -260px top 40px/640px 420px no-repeat!important}
 .life>.life-signup,.life.life-article-world>.life-signup{background:url(/images/brand/sparkle-glow.webp) left -200px top -60px/640px 420px no-repeat,url(/images/brand/sparkle-glow.webp) right -220px bottom -80px/640px 420px no-repeat,#EAE5F8!important}
+
+/* Yellowtail script ONLY on the one stressed word (class="stress"), never on every pink word (Jodie, 10 Oct, 8:46 pm) */
+.life h1 .stress,.life h2 .stress,.cs-intro h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal!important;font-weight:400!important;font-size:1.15em;letter-spacing:0!important;color:#D62E73}
