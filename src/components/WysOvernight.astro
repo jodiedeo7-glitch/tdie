@@ -1,5 +1,7 @@
 ---
 // The overnight strip. Every stop shows the actual output, not a label.
+// Jodie, 10 Oct 2026 (8:07 pm): Amazon list first, even row, bigger IG
+// side slides, example day split above and below a line with platform icons.
 // Jodie, 10 Oct 2026: a photo on every stop (Tommy Kate logging off), the
 // Instagram carousel shown, both blog posts shown (the second peeking out),
 // and the last stop is a bracket of times showing everything that goes out.
@@ -9,7 +11,16 @@ import WysPin from './WysPin.astro';
 import WysBlogCard from './WysBlogCard.astro';
 import WysIgPost from './WysIgPost.astro';
 import {liveLooks} from '../data/wys-live.js';
+import ghostData from '../lifestyle/pink-ghost-coffee-bar.json';
 const [ghost, plaid] = liveLooks;
+// The real products on the Pink Halloween Idea List (Amazon's own product photos).
+const listItems = ghostData.items.map((i) => ({img: i.image, name: i.name}));
+// Platform marks for the example-day slots.
+const icons = {
+ blog: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 8.5h18" stroke="currentColor" stroke-width="2"/><path d="M7 12.5h10M7 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+ pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#E60023"/><path d="M12.6 5.5c-3.7 0-5.6 2.6-5.6 4.8 0 1.3.5 2.5 1.6 2.9.2.1.3 0 .4-.2l.2-.6c0-.2 0-.3-.1-.5-.3-.4-.5-.9-.5-1.6 0-2.1 1.6-3.9 4.1-3.9 2.2 0 3.5 1.4 3.5 3.2 0 2.4-1.1 4.4-2.6 4.4-.9 0-1.5-.7-1.3-1.6.2-1 .7-2.2.7-2.9 0-.7-.4-1.2-1.1-1.2-.9 0-1.6.9-1.6 2.1 0 .8.3 1.3.3 1.3l-1 4.3c-.3 1.3 0 2.8 0 3 0 .1.1.1.2 0 .1-.1 1-1.3 1.4-2.6l.5-2.1c.3.5 1.1.9 1.9.9 2.5 0 4.2-2.3 4.2-5.3 0-2.3-2-4.5-5-4.5z" fill="#fff"/></svg>',
+ ig: '<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#igg)"/><rect x="6" y="6" width="12" height="12" rx="3.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg>'
+};
 
 // Example day. Order follows the workflow: blog live first, then pins, then Instagram.
 const day = [
@@ -24,10 +35,13 @@ const day = [
  {t: '8:00 pm', kind: 'IG carousel', what: ghost.short, look: ghost, role: 'styled', ig: true}
 ];
 ---
-<ol class="wc-overnight wh-overnight" aria-label="What happens overnight">
+<ol class="wc-overnight wh-overnight wh-six" aria-label="What happens overnight">
  <li class="wc-night-stop wc-stop-off"><span class="wc-time">11 pm</span><h3>You log off</h3>
   <div class="wc-stop-art wh-stop-photo"><img src="/images/home/flagship-attic-560.webp" alt="Tommy Kate laughing in her pink gaming chair in the attic, lamp on, laptop open" width="560" height="700" loading="lazy"/></div>
   <p>Computer on, signed into Amazon. Go play, go to bed.</p></li>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>Amazon list made</h3>
+  <div class="wc-stop-art wh-stop-list"><div class="wh-list"><div class="wh-list-top"><span>Idea List</span><b>Pink Halloween</b></div><div class="wh-list-grid">{listItems.map((i) => <img src={i.img} alt={i.name} loading="lazy" width="120" height="120"/>)}</div><div class="wh-list-foot">6 items · on your storefront</div></div></div>
+  <p>The finds saved to a themed Idea List on your storefront.</p></li>
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 looks planned</h3><div class="wc-stop-art wc-stop-two"><Image src={ghost.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/><Image src={plaid.photos.styled.src} alt="" widths={[160, 320]} sizes="80px"/></div><p>Each with a Basic, Styled and Lifestyle photo.</p></li>
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>6 pins made</h3><div class="wc-stop-art wc-stop-six">{[ghost, plaid].flatMap((l) => ['basic', 'styled', 'lifestyle'].map((r) => <WysPin look={l} role={r} sizes="50px"/>))}</div><p>3 per look, each linked to its Idea List.</p></li>
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 blog posts written</h3>
@@ -45,10 +59,11 @@ const day = [
   <p>Everything it made overnight, spaced out through the day. <span class="wh-day-ex">Example day</span></p>
  </div>
  <ol class="wh-bracket" aria-label="Example day of posts">
+  <span class="wh-line" aria-hidden="true"></span>
   {day.map((d) => <li class={`wh-slot ${d.blog ? 'is-blog' : d.ig ? 'is-ig' : 'is-pin'}`}>
    <span class="wh-slot-t">{d.t}</span>
    <span class="wh-slot-img">{d.blog ? <Image src={d.look.photos.styled.src} alt="" widths={[120, 240]} sizes="60px"/> : <Image src={d.look.photos[d.role].src} alt="" widths={[120, 240]} sizes="60px"/>}</span>
-   <span class="wh-slot-kind">{d.kind}</span>
+   <span class="wh-slot-kind"><i class="wh-slot-ico" set:html={icons[d.blog ? 'blog' : d.ig ? 'ig' : 'pin']}/>{d.kind}</span>
    <span class="wh-slot-what">{d.what}</span>
   </li>)}
  </ol>

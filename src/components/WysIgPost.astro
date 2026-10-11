@@ -3,7 +3,7 @@
 // slides before and after sit either side, unframed, like a swipe carousel.
 import {Image} from 'astro:assets';
 const {look, small = false} = Astro.props;
-const side = small ? '70px' : '170px';
+const side = small ? '90px' : '170px';
 ---
 <div class={`wh-ig ${small ? 'wh-ig-sm' : ''}`}>
  <figure class="wh-ig-side wh-ig-prev"><Image src={look.photos.basic.src} alt="" widths={[200, 360]} sizes={side}/><figcaption>1. Basic</figcaption></figure>
