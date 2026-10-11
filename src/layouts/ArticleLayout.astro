@@ -97,6 +97,7 @@ import "../styles/global.css";
 import BlueprintForm from "../components/BlueprintForm.astro";
 
 import MetricoolTracker from "../components/MetricoolTracker.astro";
+import WysPromo from "../components/WysPromo.astro";
 export interface Props {
   title: string;             // SEO title tag
   description: string;       // meta description
@@ -745,6 +746,10 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
       )}
     </aside>
   </div>
+
+  <section class="art-wys" aria-label="The While-You-Sleep Storefront" style="max-width:1000px;margin:24px auto 0;padding:0 24px">
+    <WysPromo variant="strip" seed={title} />
+  </section>
 
   {/*
     THE JOURNEY BLOCK — routed by category, per Resource Map v2.0.

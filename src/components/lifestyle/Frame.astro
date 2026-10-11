@@ -4,10 +4,11 @@ import icingSource from '../../assets/wys/pink-icing-continuous.png';
 import PageLayout from '../../layouts/PageLayout.astro';
 import PinkFindsSignup from '../PinkFindsSignup.astro';
 import Disclosure from './Disclosure.astro';
+import WysPromo from '../WysPromo.astro';
 import '../../styles/edit.css';
 import '../../styles/wys-fonts.css';
 import '../../styles/lifestyle.css';
-const { title, description, ogImage, draft = false, schema = [], signup = true, disclosure = true, halloween = false, article = false } = Astro.props;
+const { title, description, ogImage, draft = false, schema = [], signup = true, disclosure = true, halloween = false, article = false, wys = true } = Astro.props;
 const icing = article ? await getImage({src:icingSource,format:"webp",quality:90}) : null;
 ---
 <PageLayout bare homeChrome title={title} description={description} ogImage={ogImage} noindex={draft} schema={schema}>
@@ -16,6 +17,7 @@ const icing = article ? await getImage({src:icingSource,format:"webp",quality:90
     <a class="life-skip" href="#life-content">Skip to Lifestyle content</a>
     {draft && <aside class="life-draft"><strong>Local draft preview.</strong> Release prerequisites remain pending. This article is excluded from production builds.</aside>}
     <div id="life-content"><slot /></div>
+    {wys && <section class="life-wrap life-wys" aria-label="The While-You-Sleep Storefront"><WysPromo variant="strip" seed={title} /></section>}
     {signup && <section class="life-wrap life-signup" aria-label="Pink Finds email"><PinkFindsSignup variant="box" /></section>}
     <div class="life-wrap life-close"><a class="life-text-link" href="/lifestyle">Browse all Lifestyle articles <span aria-hidden="true">→</span></a>{disclosure && <Disclosure />}</div>
   </div>

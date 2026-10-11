@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import "../../styles/edit.css";
+import WysAnnounce from "../../components/WysAnnounce.astro";
 import { library, membership, word, cap } from "../../data/facts.js";
 import { pillars } from "../../data/library.js";
 
@@ -100,6 +101,7 @@ const countLine = `${cap(library.guidesWord)} guides in the library, ${word(kits
   <section class="rs-hero" aria-labelledby="rs-h">
     <div class="e-wrap rs-hero-grid">
       <div class="rs-hero-copy e-rise">
+        <WysAnnounce />
         <p class="e-kick">Free resources</p>
         <h1 class="e-d1" id="rs-h">Start with the right one. <em>Not all of them.</em></h1>
         <p class="e-lede">Everything on this page is free. The quickest way to the piece you need is Find Your Door: eleven questions about where you are and where it stops, then one answer, on screen. No email.</p>
