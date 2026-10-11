@@ -192,6 +192,7 @@ LOGO='<div class="hdr"><span class="logo"><span class="l1">The Digital Income</s
 def page(n,cls,body):
     return f'<section class="page" id="p{n}">{LOGO}<div class="main {cls}">{body}</div><div class="foot"><span>The While-You-Sleep Storefront™</span><b>{n:02d} / 12</b></div></section>\n'
 A={'pb':('plaid-basic.jpg','Basic: pink plaid shacket outfit laid out on wood floorboards'),'ps':('plaid-styled.jpg','Styled: the plaid outfit hung by a farmhouse window with pumpkins and apples'),'pl':('plaid-lifestyle.jpg','Lifestyle: Tommy Kate laughing at the pumpkin patch in the plaid outfit'),
+   'sb':('sequin-basic.jpg','Basic: pink sequin mini dress, silver heels, pink tassel earrings, heart sunglasses and a glitter clutch on a checkered floor'),'ss':('sequin-styled.jpg','Styled: the pink sequin dress on a rail in the pink attic dressing room with the vanity mirror'),'sl':('sequin-lifestyle.jpg','Lifestyle: Tommy Kate laughing in the pink sequin dress in the attic'),
    'cb':('coffee-basic.jpg','Basic: pink ghost and pumpkin decor pieces on a wood sideboard'),'cs':('coffee-styled.jpg','Styled: the pink ghost coffee bar fully set up on a chippy sideboard'),'cl':('coffee-lifestyle.jpg','Lifestyle: Tommy Kate laughing as she sticks paper bats on her kitchen wall')}
 def img(k,style=''): return f'<img src="img/{A[k][0]}" alt="{A[k][1]}" style="{style}">'
 def trio(keys): return '<div class="trio">'+''.join(f'<figure>{img(k)}<figcaption>{c}</figcaption></figure>' for k,c in zip(keys,['Basic','Styled','Lifestyle']))+'</div>'
@@ -221,7 +222,7 @@ P.append(page(2,'blush glow',f'''
 P.append(page(3,'white sweep',f'''
 <p class="kick c">Here's the shift</p>
 <h2 class="c">What if the treadmill ran <em>without you?</em></h2>
-<div class="frame" style="height:640px">{img('ps','object-position:50% 45%')}</div>
+<div class="frame" style="height:640px">{img('ss','object-position:50% 40%')}</div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center">
  <p class="lede"><b>The While&#8209;You&#8209;Sleep Storefront™</b> does the jobs for you. Set it up once. Then no constantly <span class="nw">making lists.</span></p>
  <figure class="quote gx" style="position:relative"><i class="star" style="left:-4px;top:-4px"></i><i class="star" style="right:-4px;bottom:-4px"></i><blockquote style="font-size:40px;color:var(--pink);white-space:nowrap">“NO THINKING.”</blockquote><figcaption>Jodie, on why she built it</figcaption></figure>
@@ -241,9 +242,9 @@ P.append(page(5,'blush glow',f'''
 <div style="position:relative;display:flex;flex-direction:column;gap:16px;padding-right:180px"><p class="kick">What one look makes · 01 Pinterest</p><div class="stk" style="right:-10px;top:-20px;transform:rotate(-8deg)"><i></i><span>3 Pins<b>a look</b></span></div><h2>Three Pins. <em>Every look.</em></h2></div>
 <p class="lede" style="max-width:760px">One Pin for each photo, in order. Each Pin links to the Amazon list its products came&nbsp;from.</p>
 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:6px" class="pins5">
- <div class="pin"><span class="rl">Pin 1 · Basic</span><div class="pi">{img('pb','object-position:50% 70%')}<div class="ov"><b>Pink Plaid</b><span>pumpkin patch</span></div></div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
- <div class="pin"><span class="rl">Pin 2 · Styled</span><div class="pi">{img('ps')}</div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
- <div class="pin"><span class="rl">Pin 3 · Lifestyle</span><div class="pi">{img('pl')}</div><h4>Pumpkin Patch Outfit</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 1 · Basic</span><div class="pi">{img('sb','object-position:50% 75%')}<div class="ov"><b>Pink Sequin</b><span>mini dress</span></div></div><h4>Pink Sequin Mini Dress</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 2 · Styled</span><div class="pi">{img('ss')}</div><h4>Pink Sequin Mini Dress</h4><p class="ln">→ Amazon Idea List</p></div>
+ <div class="pin"><span class="rl">Pin 3 · Lifestyle</span><div class="pi">{img('sl')}</div><h4>Pink Sequin Mini Dress</h4><p class="ln">→ Amazon Idea List</p></div>
 </div>
 <div class="card gx" style="padding:10px 20px;margin-top:6px"><i class="star" style="left:-4px;top:-4px"></i><i class="star" style="right:-4px;bottom:-4px"></i><div class="nums" style="border:0!important"><div><b>2</b>Looks a day</div><div><b>6</b>Pins a day</div><div><b>3</b>Pins per look</div></div></div>'''))
 P.append(page(6,'white sweep',f'''
@@ -299,7 +300,7 @@ P.append(page(11,'bub glow p9',f'''
 P.append(page(12,'blush glow',f'''
 <div class="c" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:18px"><div class="stk" style="right:-10px;top:-30px;width:150px;height:150px;transform:rotate(10deg)"><i></i><span>Free<b>preview</b></span></div><p class="kick">Your next step</p><h1 style="position:relative">Ready to build around <em>your taste?</em></h1></div>
 <div style="position:relative;align-self:center;width:760px">
- <div class="frame" style="height:560px">{img('pl','object-position:50% 30%')}</div>
+ <div class="frame" style="height:560px">{img('sl','object-position:50% 25%')}</div>
  
  
 </div>
