@@ -4,7 +4,7 @@
 <hr />
 <h2>CONTENTS</h2>
 <p><strong>A — Setup</strong> · A0 Chrome inventory (4 runs) · A1 Canon File · A2 Standing instruction · A3 Live-facts block
-<strong>B — Building the site</strong> · B1 Scaffold · B2 ArticleLayout · B3 Journey block · B4 Resource landing page · B5 Bridge page · B6 Analytics · B7 Homepage
+<strong>B — Building the site</strong> · B1 Scaffold · B2 ArticleLayout · B3 Journey block · B4 Resource landing page · B5 Bridge page · B6 Analytics · B7 Homepage · B8 Meta Pixel
 <strong>C — Writing</strong> · C1 Pillar article · C2 Convert to page · C3 Supporting article · C4 Cluster topics · C5 Lead magnet
 <strong>D — SEO</strong> · D1 Google · D2 Pinterest · D3 AI search · D4 Human
 <strong>E — Distribution</strong> · E1 Repurposing pack
@@ -162,7 +162,7 @@ Where the Canon File and this block conflict, this block wins.
 knowledge as the source of truth for everything.
 
 LIVE FACTS — these override anything that disagrees:
-- Domain: [yourdomain.com]
+- Domain: [yourdomain.com or learn.yourdomain.com]
 - URL pattern: /learn/[slug] — flat, no category folders
 - Deploying to Vercel from GitHub
 - Colors and fonts: as specified in the Canon File
@@ -173,7 +173,10 @@ What I need:
 3. A base layout at src/layouts/PageLayout.astro — nav, footer,
    fonts loaded, brand colors as CSS variables
 4. A homepage at src/pages/index.astro
-5. A /learn index page listing articles
+5. A /learn index page that lists articles AUTOMATICALLY using
+   Astro's glob import over src/pages/learn/ — reading each
+   article's title, description and category from its frontmatter.
+   I don't want to hand-maintain a list.
 6. tsconfig.json, .gitignore, robots.txt
 
 Rules:
@@ -199,8 +202,12 @@ It must include:
 3. Nav and footer matching PageLayout
 4. Article body slot with brand typography
 5. An email capture block — as a LINK to [your opt-in URL],
-   not an inline form
-6. A related-articles block rendered from the `related` prop
+   not an inline form. If I don't have that URL yet, use the
+   constant NEWSLETTER_URL with the value &quot;#&quot; so it's a single
+   line to change later.
+6. A related-articles block rendered from the `related` prop.
+   Module 11 expands this into a full journey block — build it
+   as one section so it can be replaced cleanly.
 
 Rules:
 - If publishDate is missing, omit it from the schema. Never
@@ -209,8 +216,12 @@ Rules:
 - Complete file, ready to paste.
 </code></pre></div>
 <h2>B3 · Journey block</h2>
-<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add a journey block to ArticleLayout.astro that renders after the
-article body. It takes props:
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>REPLACE the existing related-articles block in ArticleLayout.astro
+with a full journey block that renders after the article body.
+Do not leave the old block in place — there should be exactly one
+block at the end of an article.
+
+It takes props:
 
 - related: array of {title, url}
 - freeResource: {name, url} — optional
@@ -268,7 +279,8 @@ Four sections only:
    fluff, a plain sentence a stranger understands
 2. A short paragraph on what this site is for
 3. The pillar topics as links to /learn — use my actual pillars
-4. One email signup link to [your opt-in URL]
+4. One email signup link to [your opt-in URL or PLACEHOLDER
+   for now — Module 12 fills it]
 
 Rules:
 - No invented products, prices, testimonials, or credentials
@@ -280,6 +292,15 @@ Rules:
 package.json and include the Analytics component in every layout
 that renders its own &lt;html&gt; tag — check all of them, not just
 the main one. Give me each changed file complete.
+</code></pre></div>
+<h2>B8 · Meta Pixel</h2>
+<p>Only if you run Meta ads. Use the same pixel ID your checkout already uses.</p>
+<div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Add the Meta Pixel base code to my Astro site. My pixel ID is
+PASTE_YOUR_ID. Put it in the head of every layout file that renders
+its own &lt;html&gt; tag — check all of them, not just the main one.
+Use &lt;script is:inline&gt; so Astro ships the snippet exactly as
+written instead of bundling it. Include the noscript fallback.
+Give me each changed file complete.
 </code></pre></div>
 <hr />
 <h1>C — WRITING</h1>
@@ -320,6 +341,10 @@ Rules:
 <div class="wb-prompt"><div class="wb-prompt-bar"><span class="wb-prompt-label">Copy this prompt</span></div><pre><code>Convert that article into a complete .astro file at
 src/pages/learn/[slug].astro, using ArticleLayout with all props
 filled — title, description, category, publishDate, related.
+
+Export the same title, description and category from the file's
+frontmatter as well, so the /learn index picks it up automatically.
+
 Complete file, ready to paste.
 </code></pre></div>
 <h2>C3 · Supporting article</h2>

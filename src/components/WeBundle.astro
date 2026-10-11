@@ -2,7 +2,7 @@
 // "What's in the box" for The Weekend Ecosystem™. A digital product can't be picked up,
 // so this is its packaging: the real module index on a laptop, and a mini cover for every
 // piece that comes with it, laid out like a desk flat-lay. Labels are canon-true only
-// (22 modules, 36 prompts, three vaults, the Ask-For-It List, the certificate, updates free).
+// (22 modules, 37 prompts, three vaults, the Ask-For-It List, the certificate, updates free).
 import { MODULES } from "../we-manifest.js";
 
 export interface Props {
@@ -22,7 +22,7 @@ const phases = [...new Set(MODULES.map((m) => m.phase))].map((p) => {
 });
 
 const covers = [
-  { k: "36 prompts", t: "The Quick Sheet", s: "Every prompt on one page, in running order", c: "wb-c-hot", tape: true },
+  { k: "37 prompts", t: "The Quick Sheet", s: "Every prompt on one page, in running order", c: "wb-c-hot", tape: true },
   { k: "Vault 01", t: "The Prompt Vault", s: "Every prompt, verbatim, sorted by tool", c: "wb-c-white" },
   { k: "Vault 02", t: "The Troubleshooting Vault", s: "Every roadblock, paired with the fix", c: "wb-c-bub", tape: true },
   { k: "Vault 03", t: "The Template Vault", s: "Canon File, pillar map, cadence. Fill in and keep", c: "wb-c-lav" },

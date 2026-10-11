@@ -5,16 +5,16 @@
 
 export const UPDATES = [
   {
-    date: "2026-08-31",
-    module: "New — The Ask-For-It List",
-    slug: "ask-for-it-list",
-    what: "A fourth vault. 51 real asks written out as exact sentences — design changes, new pages, fixes, mobile, SEO, images, selling, legal. Everything I've actually asked Claude for while building this site.",
-  },
-  {
     date: "2026-09-07",
     module: "Module 19 — Analytics & Search Console",
     slug: "module-19-analytics-search-console",
     what: "New section on the Meta Pixel, for anyone running ads. Your sales page and your checkout sit on two different domains, and the checkout host quietly installs the pixel for you — so Meta sees the purchase and never sees the page in front of it. Covers the one-ID rule, the Astro is:inline trap, double-counted checkout events, and why verification happens on the root domain.",
+  },
+  {
+    date: "2026-08-31",
+    module: "New — The Ask-For-It List",
+    slug: "ask-for-it-list",
+    what: "A fourth vault. 51 real asks written out as exact sentences — design changes, new pages, fixes, mobile, SEO, images, selling, legal. Everything I've actually asked Claude for while building this site.",
   },
   {
     date: "2026-08-30",

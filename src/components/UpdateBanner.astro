@@ -10,6 +10,7 @@ const show = latest && since <= 30;
 const label = new Date(latest?.date ?? Date.now()).toLocaleDateString(undefined, {
   day: "numeric",
   month: "long",
+  timeZone: "UTC",
 });
 ---
 

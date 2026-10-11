@@ -38,7 +38,7 @@ export const weekendEcosystem = {
   price: "$97",
   plan: "3 × $33.33",
   modules: 22,
-  prompts: 36,
+  prompts: 37,
   assetsPerArticle: 24,
   url: "/shop/weekend-ecosystem",
   preview: "/weekend-ecosystem/preview",
