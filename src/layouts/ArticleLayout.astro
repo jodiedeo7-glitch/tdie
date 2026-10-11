@@ -1,7 +1,7 @@
 ---
 import visualStyles from "../styles/tdie-visual.css?inline";
-import HomeChromeHeader from "../components/HomeChromeHeader.astro";
-import HomeChromeFooter from "../components/HomeChromeFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 // ============================================================
 // THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
 // Every article page wraps its content in this layout.
@@ -703,7 +703,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
   <div class="progress" id="progress"></div>
 
-  <HomeChromeHeader />
+  <SiteNav />
 
   <div class="masthead reveal">
     <span class="line"></span>
@@ -862,7 +862,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     </div>
   </section>
 
-  <HomeChromeFooter />
+  <SiteFooter />
 
   <script>
     document.body.classList.remove('no-js');

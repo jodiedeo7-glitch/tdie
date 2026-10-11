@@ -1,5 +1,7 @@
 ---
 import visualStyles from "../styles/tdie-visual.css?inline";
+import SiteNav from "../components/SiteNav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import HomeChromeHeader from "../components/HomeChromeHeader.astro";
 import HomeChromeFooter from "../components/HomeChromeFooter.astro";
 import "../styles/global.css";
@@ -114,17 +116,17 @@ const jsonLd = {
   </style>
 {visualRefresh && <style is:inline set:html={visualStyles} />}
 </head>
-<body data-path={Astro.url.pathname.replace(/\/+$/, "") || "/"} class:list={["no-js", {"sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
+<body class:list={["no-js", {"sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
   <slot name="before-nav" />
-  <HomeChromeHeader />
+  {homeChrome ? <HomeChromeHeader /> : <SiteNav boutique={boutiqueHeader} />}
 
   <main class={bare ? "e-page" : wide ? "page-wrap wide" : "page-wrap"}>
     <slot />
   </main>
 
-  <HomeChromeFooter />
+  {homeChrome ? <HomeChromeFooter /> : <SiteFooter />}
 
   <script>
     document.body.classList.remove('no-js');

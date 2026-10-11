@@ -180,7 +180,7 @@ const schema = [{
   </section>
 
   <!-- 02 THE FLAGSHIP -->
-  <section class="e-dark flag" id="flagship" aria-labelledby="h-flag">
+  <section class="e-dark flag" id="flagship" style="background-image:url(/images/brand/gl-tile.webp);background-size:360px 360px" aria-labelledby="h-flag">
     <div class="flag-grid">
       <figure class="flag-fig">
         <div class="flag-img e-unveil">
@@ -686,7 +686,15 @@ const schema = [{
 <style is:global>
   /* glitter + drip survive the site-wide background strip (needs id-level weight) */
   body.sales-page :is(.hc-drip,#n#n){background-image:url(/images/brand/drip-gloss.webp)!important}
+  body.sales-page :is(.flag,#n#n){background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important}
   body.sales-page .hc-nav{z-index:30!important}
   .mast:has(.mast-art){padding-top:clamp(110px,9vw,140px)!important}
   @media (max-width:900px){.mast:has(.mast-art){padding-top:96px!important}}
+  @media (max-width:360px){
+    body.sales-page .hc-logo .l2{font-size:26px}
+    body.sales-page .hc-logo .l1{font-size:8px;letter-spacing:.2em}
+    body.sales-page .hc-btn{padding:0 9px;font-size:9.5px;letter-spacing:.04em}
+    body.sales-page .hc-mnav summary{padding:0 10px;letter-spacing:.06em}
+    body.sales-page .hc-wrap{padding:0 12px}
+  }
 </style>
