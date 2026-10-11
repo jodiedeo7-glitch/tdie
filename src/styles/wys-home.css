@@ -4,9 +4,9 @@
 
 /* ---------- header and drip: same size as the homepage ---------- */
 body:has(.wys-world){background:#FFF7FA}
-body:has(.wys-world) .hc-nav .hc-wrap{height:104px}
-body:has(.wys-world) .hc-logo .l2{font-size:60px}
-body:has(.wys-world) .hc-drip{height:181px;background:url(/images/brand/drip-gloss.webp) repeat-x left top/1500px 181px}
+/* header height unified with every other page (Jodie, 11 Oct 2026) */
+
+
 body:has(.wys-world) .e-page{background:transparent}
 
 /* ---------- page base ---------- */
@@ -66,9 +66,9 @@ body:has(.wys-world) .e-page{background:transparent}
 .wys-world .wc-step-tag b{border:1px solid #E85A9B;border-radius:3px}
 
 @media (max-width:900px){
- body:has(.wys-world) .hc-nav .hc-wrap{height:80px}
- body:has(.wys-world) .hc-logo .l2{font-size:36px}
- body:has(.wys-world) .hc-drip{height:109px;background-size:900px 109px}
+
+
+
  .wys-world .wc-hero{padding:140px 0 50px}
  .wys-world .wc-hero h1.wh-name{font-size:36px;max-width:none;margin-inline:auto}
  .wys-world .wh-sub{font-size:24px}

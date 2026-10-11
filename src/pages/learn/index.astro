@@ -18,8 +18,8 @@ const libLd = {
   ],
 };
 import "../../styles/edit.css";
-import SiteNav from "../../components/SiteNav.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
+import HomeChromeHeader from "../../components/HomeChromeHeader.astro";
+import HomeChromeFooter from "../../components/HomeChromeFooter.astro";
 
 // Attach each supporting article to the pillar that carries its category.
 const shelf = pillars.map((p) => ({
@@ -214,8 +214,8 @@ const totalPieces = pillars.length + articles.length;
   <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
 <style is:inline set:html={visualStyles} />
 </head>
-<body class="e-page">
-  <SiteNav />
+<body class="e-page" data-path="/learn">
+  <HomeChromeHeader />
   <main>
   <section class="lib-head">
     <div class="lib-in">
@@ -286,6 +286,6 @@ const totalPieces = pillars.length + articles.length;
     </section>
   </div>
   </main>
-  <SiteFooter />
+  <HomeChromeFooter />
 </body>
 </html>
