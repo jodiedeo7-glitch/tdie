@@ -2,6 +2,8 @@
 const WYS_GUIDE='/api/wys-guide?k=VOk-I7sWghoIWzYBxc6wLgYw';
 import WysFrame from '../../../components/WysFrame.astro';
 import WysLinks from '../../../components/WysLinks.astro';
+import WysWhen from '../../../components/WysWhen.astro';
+import WysCta from '../../../components/WysCta.astro';
 import FreebieForm from '../../../components/FreebieForm.astro';
 import WysNightFeed from '../../../components/WysNightFeed.astro';
 import WysYouDo from '../../../components/WysYouDo.astro';
@@ -18,11 +20,18 @@ import {liveLooks} from '../../../data/wys-live.js';
     <p class="wh-sub">Be first in <em>when it opens.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 6 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep.</p>
     <WysLinks current="waitlist"/>
-    <div class="wc-wait-form">
+    <div class="wc-wait-form" data-wys-when="wait presale">
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Not open yet</span>
      <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
     </div>
-    <p class="wc-wait-fine">Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026. Full launch Friday 16 October 2026.</p>
+    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch">
+     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Launch weekend</span>
+     <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
+     <p class="wc-buy-price">$27 <s>$37</s></p>
+     <p class="wc-buy-p">Launch weekend price. $37 after launch weekend.</p>
+     <WysCta align="left"/>
+    </div>
+    <p class="wc-wait-fine" data-wys-when="wait presale"><WysWhen wait="Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026 at 12 pm ET. Full launch Friday 16 October 2026." presale="Joining the waitlist doesn’t place an order. Member presale is open now inside the TDIE Skool community. Full launch Friday 16 October 2026 at 12 pm ET."/></p>
    </div>
    <div class="wc-hero-phone"><WysNightFeed/></div>
   </div>
@@ -51,7 +60,7 @@ import {liveLooks} from '../../../data/wys-live.js';
    <p class="wc-kicker">While you wait</p>
    <h2>See every piece of<br/><em>one night’s work.</em></h2>
    <p class="wc-body">Two real looks, start to finish: the photos, the pins, the live blog posts and the carousels.</p>
-   <div class="wc-cta"><a class="wc-button" href={WYS_ROOT + '/real-examples'}>See the real examples <span aria-hidden="true">→</span></a></div>
+   <div class="wc-cta"><a class="wc-button" href={WYS_ROOT + '/real-results'}>See my real results <span aria-hidden="true">→</span></a></div>
   </div>
  </div>
 </WysFrame>

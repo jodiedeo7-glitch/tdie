@@ -29,7 +29,8 @@ const PATH_REDIRECTS = new Map([
   ["/resources/shopify-store-kit","/resources/shopify-starter-kit"],
   ["/go/8-claude-prompts-that-save-me-12-hours-a-week","/go/the-operating-prompts"],
   ["/downloads/wys-sneak-peek-guide.pdf","/shop/while-you-sleep-storefront/waitlist"],
-  ["/shop/while-you-sleep-storefront/look-inside","/shop/while-you-sleep-storefront/real-examples"],
+  ["/shop/while-you-sleep-storefront/look-inside","/shop/while-you-sleep-storefront/real-results"],
+  ["/shop/while-you-sleep-storefront/real-examples","/shop/while-you-sleep-storefront/real-results"],
 ]);
 
 export default {

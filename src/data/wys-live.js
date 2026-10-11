@@ -18,14 +18,27 @@ import {WYS_ROOT} from './wys.js';
 // reads from here.
 export const WYS_CTA = {href: WYS_ROOT + '/waitlist', label: 'Join the waitlist'};
 
+// The switch times (Jodie, 11 October 2026: member presale Tuesday at noon). The site
+// changes itself at these times in the visitor's browser, no rebuild needed:
+//  - before WYS_PRESALE_AT: waitlist wording ("member presale opens Tuesday at 12 pm ET")
+//  - from WYS_PRESALE_AT: "member presale is open now inside the Skool community"
+//  - from WYS_LAUNCH_AT, ONLY once WYS_CHECKOUT holds the real public checkout link: every
+//    "Join the waitlist" button becomes "Get the Storefront" to the checkout, the waitlist
+//    links and the waitlist page go to the sales page, and the hero waitlist box becomes the
+//    $27 launch-weekend box. With WYS_CHECKOUT empty the site stays on the presale wording,
+//    so it never shows a dead buy button.
+// Preview any stage by adding ?wysphase=wait, ?wysphase=presale or ?wysphase=launch to a page.
+export const WYS_PRESALE_AT = '2026-10-13T12:00:00-04:00';
+export const WYS_LAUNCH_AT = '2026-10-16T12:00:00-04:00';
+export const WYS_CHECKOUT = '';
+
 // The link row under the intro on every storefront page (Jodie, 11 October 2026):
-// waitlist, look inside (the free sneak peek: Real Examples) and see it live (the
-// Lifestyle blog the system posts to). On launch day set WYS_OPEN to true: the
-// waitlist link flips to the sales page. Each page leaves out its own link.
-export const WYS_OPEN = false;
+// waitlist, a free look inside the system (the Real Results page) and see it live (the
+// Lifestyle blog the system posts to). The waitlist link flips to the sales page at
+// launch on its own (see WYS_LAUNCH_AT). Each page leaves out its own link.
 export const WYS_LINKS = [
- WYS_OPEN ? {key: 'waitlist', label: 'See the storefront', href: WYS_ROOT} : {key: 'waitlist', label: 'Join the waitlist', href: WYS_ROOT + '/waitlist'},
- {key: 'inside', label: 'Free sneak peek', href: WYS_ROOT + '/real-examples'},
+ {key: 'waitlist', label: 'Join the waitlist', href: WYS_ROOT + '/waitlist', waitlist: true},
+ {key: 'inside', label: 'Free look inside the system', href: WYS_ROOT + '/real-results'},
  {key: 'live', label: 'See it live', href: '/lifestyle'}
 ];
 

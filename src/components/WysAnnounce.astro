@@ -4,12 +4,14 @@
 // Placed inside each page's hero copy column, below the header drip.
 // White card, pink outline, near-black text, no pink fill.
 import {WYS_CTA} from '../data/wys-live.js';
+import WysClock from './WysClock.astro';
 ---
+<WysClock/>
 <aside class="wys-ann" aria-label="New: The While-You-Sleep Storefront">
- <a class="wys-ann-card" href={WYS_CTA.href}>
+ <a class="wys-ann-card" href={WYS_CTA.href} data-wys-cta>
   <span class="wys-ann-new">New</span>
   <span class="wys-ann-copy"><b class="wys-ann-name">The While-You-Sleep Storefront™</b><span class="wys-ann-line">Set it up once. Every night it plans and sources 2 looks, then posts 6 Pinterest pins, 2 blog posts and 2 Instagram carousels while you sleep.</span></span>
-  <span class="wys-ann-btn">{WYS_CTA.label} <span aria-hidden="true">→</span></span>
+  <span class="wys-ann-btn"><span data-wys-cta-label>{WYS_CTA.label}</span> <span aria-hidden="true">→</span></span>
  </a>
 </aside>
 <style>

@@ -1,12 +1,15 @@
 ---
 // The storefront link row: every page shows the other pages' links (see WYS_LINKS).
 import {WYS_LINKS, WYS_CTA} from '../data/wys-live.js';
+import WysClock from './WysClock.astro';
 // besideCta: the big button sits right under this row, so a link to the same place is left out.
 const {current, hide = [], align = 'left', besideCta = false} = Astro.props;
-const links = WYS_LINKS.filter((l) => l.key !== current && !hide.includes(l.key) && !(besideCta && l.href === WYS_CTA.href));
+// A link to the same place as the big button below is shown only at launch, when it has become "See the storefront".
+const links = WYS_LINKS.filter((l) => l.key !== current && !hide.includes(l.key)).map((l) => ({...l, launchOnly: besideCta && l.href === WYS_CTA.href}));
 ---
+<WysClock/>
 <nav class={`wc-links wc-links-${align}`} aria-label="More from The While-You-Sleep Storefront™">
- {links.map((l) => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}
+ {links.map((l) => <a href={l.href} data-wys-waitlist={l.waitlist ? '' : undefined} data-wys-when={l.launchOnly ? 'launch' : undefined}><span data-wys-cta-label>{l.label}</span> <span aria-hidden="true">→</span></a>)}
 </nav>
 <style is:global>
 .wys-world .wc-links{display:flex;flex-wrap:wrap;gap:10px 12px;margin:22px 0 26px}

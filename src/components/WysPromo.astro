@@ -7,6 +7,7 @@
 // claim. Prices live on the sales page; this box only names the presale date.
 // `seed` picks one of the lines so neighbouring pages don't repeat.
 import { WYS_CTA } from '../data/wys-live.js';
+import WysWhen from './WysWhen.astro';
 const LINES = [
   {
     k: "Behind the pins",
@@ -34,14 +35,14 @@ let h = 0;
 for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
 const L = LINES[h % LINES.length];
 ---
-<a class={`wys wys--${variant}`} href={WYS_CTA.href}>
+<a class={`wys wys--${variant}`} href={WYS_CTA.href} data-wys-cta>
   <span class="wys-copy">
     <span class="wys-k"><span class="wys-new">New</span>The While-You-Sleep Storefront™</span>
     <span class="wys-t">{L.t}</span>
     <span class="wys-d">{L.d}</span>
-    <span class="wys-when">Waitlist open now. Member presale opens Tuesday 13 October.</span>
+    <span class="wys-when"><WysWhen wait="Waitlist open now. Member presale opens Tuesday 13 October at 12 pm ET." presale="Member presale open now inside the TDIE Skool community." launch="Launch weekend: $27, then $37."/></span>
   </span>
-  <span class="wys-go">{WYS_CTA.label} <span aria-hidden="true">→</span></span>
+  <span class="wys-go"><span data-wys-cta-label>{WYS_CTA.label}</span> <span aria-hidden="true">→</span></span>
 </a>
 
 <style is:global>

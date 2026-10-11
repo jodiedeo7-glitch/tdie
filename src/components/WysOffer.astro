@@ -2,24 +2,25 @@
 // Offer and dates. No end dates, countdowns or spot counts.
 import { NAV_CTA } from '../data/site.js';
 import { membership as M } from '../data/facts.js';
+import WysWhen from './WysWhen.astro';
 ---
 <div class="wc-offer">
  <div class="wc-price wh-price-best">
   <span class="wh-pill"><span>Best price</span></span>
   <p class="wc-price-who">TDIE Skool Premium members</p>
   <p class="wc-price-num">$10</p>
-  <p class="wc-price-when">Member presale opens<br/>Tuesday 13 October 2026</p>
+  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool" launch="Member price<br/>inside Skool"/></p>
  </div>
  <div class="wc-price">
   <p class="wc-price-who">TDIE Skool Standard members</p>
   <p class="wc-price-num">$17</p>
-  <p class="wc-price-when">Member presale opens<br/>Tuesday 13 October 2026</p>
+  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool" launch="Member price<br/>inside Skool"/></p>
  </div>
  <div class="wc-price wc-price-launch">
   <span class="wh-pill"><span>Open to all</span></span>
   <p class="wc-price-who">Everyone, launch weekend</p>
   <p class="wc-price-num">$27 <s class="wc-price-was">$37</s></p>
-  <p class="wc-price-when">Full launch<br/>Friday 16 October 2026</p>
+  <p class="wc-price-when"><WysWhen wait="Full launch<br/>Friday 16 October, 12 pm ET" launch="Launch weekend<br/>on now"/></p>
   <p class="wc-price-after">$37 after launch weekend</p>
  </div>
 </div>
