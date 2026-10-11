@@ -1,3 +1,6 @@
+## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). Override every older line in this file.
+Fonts: Gloock headlines, Yellowtail only on the one stressed word in a headline (not every pink word), Jost everything else. Newsreader and Inter are retired. Backgrounds: never flat, and HARD STOP never a full glitter background. Soft blush/pink/lavender with a white glow and soft sparkle accents in the corners; full glitter only on the drip and small accents. Lavender (#EAE5F8) is an allowed background colour. See ops/cloud-kit/TDIE_DESIGN_RULES.md.
+
 ## NOTHING OVERSIZED (Jodie, 10 October 2026, HARD RULE, applies to every page, section, card, photo, graphic and button)
 Jodie has said this many times: stop making everything so big. Default to compact, in-proportion sizing, and when in doubt go smaller.
 - A whole component (card plus its photo, text and buttons) must fit inside one desktop screen (about 1440x800) without scrolling. A single photo card is never taller than about 640px total on desktop.

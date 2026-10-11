@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import WysAnnounce from "../../components/WysAnnounce.astro";
 import "../../styles/edit.css";
 import { membership, weekendEcosystem as we, SKOOL_PLANS } from "../../data/facts.js";
 // Tina's words come from the single verbatim source, unedited.
@@ -140,10 +141,11 @@ const schema = [{
   description="The Digital Income Edit™ shop, in order: free guides first, then The Weekend Ecosystem™, the membership, single guides and done-for-you services."
   schema={schema}
 >
-  <!-- MASTHEAD -->
+    <!-- MASTHEAD -->
   <header class="mast">
     <div class="e-wrap mast-grid">
       <div class="e-rise">
+    <WysAnnounce/>
         <p class="e-kick">The shop</p>
         <h1 class="mast-h">Something to sell. Somewhere to send them. <em>Less work to repeat.</em></h1>
         <p class="e-lede">Find the next piece your business needs: ready-made products to rebrand, a course to build your own website, training and monthly content, or a private service. Start with the free resources if you are still deciding what to sell.</p>

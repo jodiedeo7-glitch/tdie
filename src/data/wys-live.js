@@ -67,5 +67,5 @@ export const objections = [
  ['Does my computer need to be on?', 'Yes. Leave your computer on and signed into Amazon overnight.'],
  ['Can I approve things first?', 'Yes. It runs automatically by default, and you can switch on approvals to OK each look before it goes out. I recommend approvals on for your first few days.'],
  ['What if I only have a few minutes?', 'Do the 15-minute Quick Start and go to bed. That’s the whole job.'],
- ['Is this a PDF?', 'No. It’s a website you get access to, so it can be updated as things change.']
+ ['Is this a PDF?', 'No. It’s a website that gets updated regularly, so it never goes stale. New affiliate brand automations are on the way.']
 ];

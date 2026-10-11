@@ -12,8 +12,10 @@ const [ghost, plaid] = liveLooks;
  <header class="wc-hero">
   <div class="wys-wrap">
    <div class="wc-head" style="margin-bottom:0">
-    <h1>Look inside<br/><em>one night’s work.</em></h1>
-    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Two looks The While-You-Sleep Storefront™ built, every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
+    <p class="wc-kicker">Look inside</p>
+    <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
+    <p class="wh-sub">Every piece of <em>one night’s work.</em></p>
+    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Two looks it built on its own, every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
     <WysCta note="Member presale opens Tuesday 13 October."/>
    </div>
    <div class="wc-six">{[ghost, plaid].flatMap((look) => roles.map((r) => <figure>{r.key === 'basic' ? <WysPin look={look} role="basic" sizes="(max-width:900px) 30vw, 180px" eager/> : <Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 180px" loading="eager"/>}<figcaption>{r.name}</figcaption></figure>))}</div>
@@ -38,7 +40,7 @@ const [ghost, plaid] = liveLooks;
    <h2>Fifteen minutes tonight.<br/><em>Hands off after that.</em></h2>
   </div>
   <div class="wc-facts">
-   <div><h3>A website, not a PDF</h3><p>You get access to a website, so it can be updated as things change.</p></div>
+   <div><h3>A website, not a PDF</h3><p>A website that gets regular updates and never goes stale, with new affiliate brand automations on the way.</p></div>
    <div><h3>15 minutes to start</h3><p>The Quick Start takes about 15 minutes. Customizing it takes about an hour.</p></div>
    <div><h3>Claude, ChatGPT or both</h3><p>Use the one you already have, or both.</p></div>
    <div><h3>Automatic, or approve first</h3><p>It runs automatically by default. Switch on approvals to OK each look first. I recommend approvals on for the first few days.</p></div>

@@ -1,0 +1,15 @@
+---
+// The blog post shown with its own photo, in a browser-window frame like the homepage.
+import {Image} from 'astro:assets';
+const {look, small = false} = Astro.props;
+const path = look.url.replace('https://www.', '');
+---
+<div class={`wh-blog ${small ? 'wh-blog-sm' : ''}`}>
+ {!small && <div class="wh-bar"><i></i><i></i><i></i><span>{path}</span></div>}
+ <Image class="wh-blog-photo" src={look.photos.styled.src} alt={look.photos.styled.alt} widths={[240, 420, 640]} sizes={small ? '110px' : '320px'}/>
+ <div class="wh-blog-txt">
+  <span class="wh-blog-cat">{look.category}</span>
+  <b class="wh-blog-title">{look.name}</b>
+  {!small && <span class="wh-blog-line">{look.blogLine}</span>}
+ </div>
+</div>
