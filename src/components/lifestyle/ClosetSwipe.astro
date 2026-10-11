@@ -7,7 +7,7 @@ const looks = LOOKS.filter(look => look.category === 'clothing' && look.items.so
 const deck = await Promise.all(looks.map(async (look, index) => {
   const photo = look.images.find(image => image.role === 'lifestyle') || look.images.find(image => image.role === 'styled') || look.hero;
   const big = await getImage({ src: photo.src, width: 720, format: 'webp', quality: 82 });
-  const thumb = await getImage({ src: photo.src, width: 160, format: 'webp', quality: 75 });
+  const thumb = await getImage({ src: photo.src, width: 240, format: 'webp', quality: 75 });
   const items = look.items.filter(item => item.image && item.link && item.affiliateStatus !== 'pending').map(item => ({
     name: item.name, image: item.image, link: item.link,
     rel: ['verified', 'legacy'].includes(item.affiliateStatus) ? 'sponsored nofollow noopener' : 'noopener nofollow',
@@ -20,6 +20,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 {deck.length > 0 && <section class="cs-band" aria-labelledby="cs-title">
   <div class="cs-plate">
     <div class="cs-intro cs-head">
+      <figure class="cs-dream"><blockquote>Be the girl everyone asks, <span>“Where did you get <i class="stress">that?</i>”</span></blockquote><figcaption>Every piece is linked. Now you can tell them.</figcaption></figure>
       <p class="life-kicker">Swipe the closet</p>
       <h2 id="cs-title">Swipe right on <span><i class="stress">your</i> next look.</span></h2>
       <p class="cs-how">Love it? Swipe right and it's saved. Not your vibe? Swipe left. Every piece is right under the photo, with its own shop link.</p>
@@ -36,6 +37,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
         <ul class="cs-saved-list" data-cs-saved-list></ul>
         <button type="button" class="cs-clear" data-cs-clear hidden>Clear saved looks</button>
       </div>
+      <div class="cs-next"><p class="cs-next-title">Up next in the closet</p><ul>{deck.slice(1,5).map(d => <li><a href={`/lifestyle/${d.slug}`}><img src={d.thumb} alt="" width="160" height="240" loading="lazy" /><span>{d.title}</span></a></li>)}</ul></div>
       <p class="cs-note">Links go to Amazon. As an Amazon Associate I earn from qualifying purchases.</p>
     </div>
     <div class="cs-stage" data-cs data-cs-looks={saveData}>
@@ -71,7 +73,19 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 </section>}
 <style is:global>
 .cs-band{background:url(/images/brand/gl-tile.webp) 0 0/360px 360px;padding:80px 0}
-.cs-head{grid-column:1;grid-row:1;align-self:end}
+.cs-head{grid-column:1;grid-row:1;align-self:start}
+.cs-dream{margin:0 0 30px;padding:26px 28px 22px;background:#FFF1F7;border:2px solid #D62E73;border-radius:22px;position:relative}
+.cs-dream::before{content:"";position:absolute;left:-12px;top:-12px;width:26px;height:26px;background:url(/images/brand/gl-hot.webp) 0 0/120px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.cs-dream blockquote{margin:0;font-family:Gloock,Georgia,serif!important;font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.2;color:#1A1417;text-wrap:balance}
+.cs-dream blockquote span{color:#D62E73}
+.cs-dream blockquote .stress{font-family:Yellowtail,cursive!important;font-style:normal;font-size:1.15em;color:#D62E73}
+.cs-dream figcaption{margin-top:12px;font:700 12px/1.4 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B8245F}
+.cs-next{margin-top:24px}
+.cs-next-title{margin:0 0 10px!important;font:700 12px/1.4 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B8245F!important}
+.cs-next ul{list-style:none;margin:0;padding:0 0 6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cs-next a{display:block;text-decoration:none;color:#1A1417}
+.cs-next img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:12px;border:2px solid #D62E73}
+.cs-next span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:6px;font:600 12.5px/1.25 Jost,sans-serif}
 .cs-extra{grid-column:1;grid-row:2;align-self:start}
 .cs-stage{grid-column:2;grid-row:1/span 2}
 .cs-steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
@@ -81,7 +95,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: d
 .cs-step-love{color:#D62E73;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/images/brand/gl-hot.webp) 0 0/120px border-box;box-shadow:none}
 .cs-saved-empty{margin:0!important;font-size:15px;color:#1A1417!important}
 .cs-saved-empty[hidden],.cs-clear[hidden]{display:none}
-.cs-plate{max-width:1180px;margin:0 auto;background:#fff;border:2px solid #D62E73;border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7);padding:52px clamp(20px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);column-gap:56px;row-gap:0;align-items:start}
+.cs-plate{max-width:1180px;margin:0 auto;background:#fff;border:2px solid #D62E73;border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7);padding:52px clamp(20px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);column-gap:56px;row-gap:0;align-items:start;grid-template-rows:auto 1fr}
 .cs-intro h2{font:600 clamp(30px,3.4vw,40px)/1.1 Gloock,Georgia,serif;margin:6px 0 16px;color:#1A1417;text-wrap:balance}
 .cs-intro h2 span{color:#D62E73}
 .cs-how{font-size:18px;line-height:1.6;color:#1A1417;max-width:38ch}
