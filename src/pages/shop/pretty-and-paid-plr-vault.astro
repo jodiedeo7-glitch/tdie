@@ -5,7 +5,7 @@ const CHECKOUT = "/go/pretty-and-paid-plr-vault";
 
 const gates = [
   { n: "01", t: "No product",  p: "Designing one from a blank Canva page is the job that eats the month." },
-  { n: "02", t: "No shop",     p: "Etsy, Stan, Beacons — forty-seven half-relevant tutorials, still not live." },
+  { n: "02", t: "No shop",     p: "Etsy, Stan, Beacons. Forty-seven half-relevant tutorials saved, and still not live." },
   { n: "03", t: "Nothing to post", p: "The shop exists. Now it needs reels, Pins, carousels, stories." },
   { n: "04", t: "Listings that don't sell", p: "Titles, tags, descriptions, mockups. Where good products die quietly." },
 ];
@@ -36,38 +36,38 @@ const timeline = [
   { w: "Week One",   t: "You pick a lane and open the files.",
     p: "Nine vaults, ninety-two products. Pick the three that fit your niche, swap the colors and fonts and logo, and they're finished and sitting on your desktop." },
   { w: "Week Two",   t: "Your shop exists.",
-    p: "Etsy, Stan, or Beacons — the training walks you through opening it. Your first listings go up with real products behind them, not placeholders." },
+    p: "Etsy, Stan or Beacons. The training walks you through opening it, so your first listings can go up with real products behind them, not placeholders." },
   { w: "Week Three", t: "You stop scrambling for content.",
-    p: "A month of faceless reels and templates queued up, so posting takes twenty minutes on a Sunday instead of your whole week." },
+    p: "Faceless reels and templates ready to queue, so Sunday posting means picking from a folder instead of starting from nothing." },
   { w: "Week Four",  t: "The next drop lands.",
-    p: "Twenty brand-new products, a fresh theme, waiting for you. Your shelf refills before it ever looks empty." },
+    p: "Twenty brand-new products waiting for you. Your shelf refills before it ever looks empty." },
 ];
 
 const dayThirty = [
   "A storefront with real, finished products in it",
   "A content bank deep enough to post from for months",
   "Ninety-two rebrandable products no one can take back",
-  "A system that restocks itself on the first of every month",
+  "A shelf that restocks itself with twenty new products every month",
 ];
 ---
 <PageLayout
   wide
   ogImage="/og/pretty-and-paid-plr-vault.jpg"
   title="Pretty & Paid PLR Vault™"
-  description="Pretty & Paid PLR Vault™ — a stocked library of done-for-you digital products, licensed to rebrand and sell as your own. $11/month, its own subscription. What you download is yours permanently."
+  description="Pretty & Paid PLR Vault™: finished planners, guides, printables and templates to rebrand in Canva and sell as your own. $11/month. What you download stays yours, even after you cancel."
 >
   <!-- HERO -->
   <section class="v-hero">
     <div class="page-eyebrow">Pretty &amp; Paid PLR Vault™ · $11/month</div>
     <h1>Stock your shop. <em>Skip the blank Canva page.</em></h1>
-    <p class="lede">Finished planners, guides, printables and templates you can put your name on and sell. <strong>Choose a product, rebrand it in Canva and create your listing, with marketing content and rebranding training in the same subscription.</strong> What you download stays yours after you cancel.</p>
+    <p class="lede">Finished planners, guides, printables and templates you can put your name on and sell. <strong>Pick a finished product, put your colors and your name on it in Canva, and list it. The posts to sell it, the shop training and the listing tool come in the same $11.</strong> What you download stays yours after you cancel.</p>
     <div class="v-cta-row">
-      <a class="btn" href={CHECKOUT}>Open the Vault — $11/month <span class="a">→</span></a>
+      <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ · $11/month <span class="a">→</span></a>
       <a class="v-link" href="#preview">See inside first →</a>
     </div>
     <div class="v-stats">
       <div><span class="v-stat">150+</span><span class="v-statlab">Downloads inside</span></div>
-      <div><span class="v-stat">20+</span><span class="v-statlab">New every month</span></div>
+      <div><span class="v-stat">20</span><span class="v-statlab">New every month</span></div>
       <div><span class="v-stat">$11</span><span class="v-statlab">A month</span></div>
     </div>
     <ul class="v-trust">
@@ -80,7 +80,7 @@ const dayThirty = [
   <!-- PREVIEW STRIP — visual proof, above the fold-ish -->
   <section class="v-strip">
     {previews.slice(0,4).map(p => (
-      <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
+      <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault™`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
     ))}
   </section>
 
@@ -93,7 +93,7 @@ const dayThirty = [
         <div class="v-gate"><span class="v-num">{g.n}</span><h3>{g.t}</h3><p>{g.p}</p></div>
       ))}
     </div>
-    <p class="v-close">Get the product files, marketing content, shop training and listing tool in one place. You rebrand the files and publish the listings.</p>
+    <p class="v-close">One subscription covers all four: the products, the posts that sell them, the shop training and the tool that writes your listings. Your part is the rebrand and the publish button.</p>
   </section>
 
   <!-- WHAT'S INSIDE -->
@@ -104,7 +104,7 @@ const dayThirty = [
       <div class="v-card">
         <h3>The Products</h3>
         <p>Planners, journals, guides, eBooks, printables, coloring pages. Canva-editable. Full PLR license.</p>
-        <p class="v-fine-dark">One download is a bundle, not a file — 30-page guides, 50+ template sets, 100+ reel packs.</p>
+        <p class="v-fine-dark">One download is a bundle, not a file: 30-page guides, 50+ template sets, 100+ reel packs.</p>
       </div>
       <div class="v-card">
         <h3>The Content</h3>
@@ -160,7 +160,7 @@ const dayThirty = [
     <p class="v-note">Each one is a single example. The sets they come from run thirty, fifty, a hundred pieces deep.</p>
     <div class="v-gallery">
       {previews.map(p => (
-        <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
+        <figure><img src={`/images/vault/${p.img}`} alt={`${p.label} preview from Pretty & Paid PLR Vault™`} loading="lazy" /><figcaption>{p.label}</figcaption></figure>
       ))}
     </div>
 
@@ -198,7 +198,7 @@ const dayThirty = [
   <!-- FIT -->
   <section class="v-sec">
     <div class="v-kicker">Fit</div>
-    <h2>Who it's for — and who it isn't.</h2>
+    <h2>Who it's for, and who it isn't.</h2>
     <div class="v-grid-2">
       <div class="v-fit">
         <h3>For you if</h3>
@@ -212,7 +212,7 @@ const dayThirty = [
       <div class="v-fit">
         <h3>Not for you if</h3>
         <ul class="v-no">
-          <li>You want to learn to design from scratch — the Vault doesn't teach that</li>
+          <li>You want to learn to design from scratch. The Vault doesn't teach that</li>
           <li>You want personal coaching. The Vault includes rebranding and shop training, but not individual coaching</li>
           <li>You expect exclusive files. PLR means others download the same source. Your rebrand is what makes it yours.</li>
         </ul>
@@ -227,8 +227,8 @@ const dayThirty = [
       <div class="v-price-fig">$11<span>/month</span></div>
       <div class="v-clarity">
         <p><strong>$11/month. A separate subscription.</strong></p>
-        <p>Pretty &amp; Paid PLR Vault™ bills on its own. It is not included in Standard or Premium membership — and membership is not included in this.</p>
-        <p><strong>Yes, the membership is $9 and this is $11. No, this is not a bigger version of it.</strong> They're unrelated products that happen to land two dollars apart. The membership teaches you to build. The Vault hands you the stock. You can have either, both, or neither, in any order.</p>
+        <p>Pretty &amp; Paid PLR Vault™ bills on its own, through Beacons. One price, nothing else to buy before you can use it.</p>
+        <p><strong>You're paying for stock, not lessons.</strong> Finished products to rebrand, the posts to sell them, and twenty new ones every month. Cancel whenever you like and every file you downloaded is still yours.</p>
       </div>
       <ul class="v-price-list">
         <li>The full product library</li>
@@ -236,7 +236,7 @@ const dayThirty = [
         <li>Etsy, Stan, Beacons &amp; Canva training</li>
         <li>PLR Glow Studio</li>
         <li>20 new products monthly</li>
-        <li>Full PLR license — permanently</li>
+        <li>Full PLR license, permanently</li>
       </ul>
       <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ <span class="a">→</span></a>
       <p class="v-fine">All ninety-two products, every training inside, and twenty brand-new ones each month.</p>
@@ -244,7 +244,7 @@ const dayThirty = [
 
     <div class="v-nothing">
       <div class="v-kicker">Nothing to lose, by design</div>
-      <p>Join for one month. Download every last file. Cancel the next morning if you want to — <em>and all of it is still yours.</em> Permanently, fully licensed to edit, rebrand, and sell for as long as you like. Cancelling closes the door to what comes next; it never reaches back for what you've already saved. You are paying for the doorway and the new work that arrives each month — never renting the work already sitting on your desktop. Stay because it keeps handing you more. Not because leaving would cost you something.</p>
+      <p>Join for one month. Download every last file. Cancel the next morning if you want to, <em>and all of it is still yours.</em> Permanently, fully licensed to edit, rebrand and sell for as long as you like. Cancelling closes the door to what comes next. It never reaches back for what you've already saved. You pay for the doorway and the new work that arrives each month, never rent for what's already on your desktop. Stay because it keeps handing you more, not because leaving would cost you something.</p>
     </div>
   </section>
 
@@ -253,11 +253,11 @@ const dayThirty = [
     <div class="v-kicker">Questions</div>
     <h2>Frequently asked</h2>
     <details class="v-faq"><summary>What happens to my downloads if I cancel?</summary>
-      <p>Nothing. They're yours permanently, license included. Canceling closes the door on new downloads — it never takes back what's on your computer.</p></details>
+      <p>Nothing. They're yours permanently, license included. Canceling closes the door on new downloads. It never takes back what's on your computer.</p></details>
     <details class="v-faq"><summary>What does the PLR license let me do?</summary>
       <p>Rebrand, customize and sell the products as your own, keeping what you earn. Full private label rights.</p></details>
-    <details class="v-faq"><summary>$9 and $11 — is this the bigger membership?</summary>
-      <p>No. Membership Standard is $9 a month and teaches you to build. Pretty &amp; Paid PLR Vault™ is $11 a month and hands you the stock. They are unrelated products that happen to land two dollars apart — neither one includes the other, and neither one comes first.</p></details>
+    <details class="v-faq"><summary>Is this its own subscription?</summary>
+      <p>Yes. Pretty &amp; Paid PLR Vault™ is $11 a month, billed on its own through Beacons. It doesn't need anything else to work, and nothing else is needed to use it.</p></details>
     <details class="v-faq"><summary>Do I need design skills?</summary>
       <p>No. Everything opens in Canva as an editable template, and the rebranding training covers the workflow.</p></details>
   </section>
@@ -265,7 +265,7 @@ const dayThirty = [
   <!-- FINAL -->
   <section class="v-final">
     <h2>Your next product can start with a finished file.</h2>
-    <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ — $11/month <span class="a">→</span></a>
+    <a class="btn" href={CHECKOUT}>Open Pretty &amp; Paid PLR Vault™ · $11/month <span class="a">→</span></a>
     <p class="v-fine"><a href="#preview">Still deciding? Look through the previews →</a></p>
   </section>
 

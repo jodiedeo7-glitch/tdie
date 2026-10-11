@@ -276,7 +276,7 @@ paid: {
     newsletter:
       "Pinterest isn't social media. Treating it like Instagram is why yours is flat. Weekly, what it actually is.",
     community:
-      "Drop your Pinterest URL. Someone will tell you within a day which of your boards is doing nothing.",
+      "Drop your Pinterest URL. Someone will tell you which of your boards is doing nothing.",
   },
   // --- 3. Content Creation ------------------------------------
   // free:  Canva Crash Course — /resources/canva-crash-course — DOES NOT EXIST. Omitted.
@@ -369,7 +369,7 @@ paid: {
     paid: {
       label: "Affiliate Marketing — Membership Standard",
       blurb:
-        "The affiliate module, the templates, and a room that reads your first recommendation before you publish it. $9/month.",
+        "The trainings, the templates, and a room that reads your first recommendation before you publish it. $9/month.",
       href: "/membership",
     },
     newsletter:
@@ -435,7 +435,7 @@ paid: {
         "The link-in-bio and lead-magnet delivery layer this business runs on. Recommended because it's used, not because it pays.",
     },
     paid: {
-      label: "The Email Edit™ — Membership Standard",
+      label: "The Email Edit · Membership Standard",
       blurb:
         "Welcome and nurture sequences, ready to adapt — the highest-leverage emails in your business, drafted. $9/month.",
       href: "/membership",
@@ -492,7 +492,7 @@ paid: {
     paid: {
       label: "The Weekend Ecosystem™",
       blurb:
-        "Turn everything you've already written into a website and blog that works while you sleep. One weekend, 22 modules. Open now.",
+        "Turn everything you've already written into a website and blog that works while you sleep. One weekend, 22 modules, $97 one-time.",
       href: "/shop/weekend-ecosystem",
     },
     newsletter:
@@ -519,7 +519,7 @@ paid: {
     paid: {
       label: "Membership Standard",
       blurb:
-        "The community and the systems behind a business that earns while you're not looking — the entry rung, not The Weekend Ecosystem™. $9/month.",
+        "The trainings, Daily Prompts and a room of women building the same thing, so the stream you start actually gets finished. 7 days free, then $9/month.",
       href: "/membership",
     },
     newsletter:
@@ -568,11 +568,11 @@ paid: {
     paid: {
       label: "The Weekend Ecosystem™",
       blurb:
-        "Your website and blog, built from the content you already have — in one weekend, with Claude doing the building. Open now.",
+        "Your website and blog, built from the content you already have — in one weekend, with Claude doing the building. $97 one-time.",
       href: "/shop/weekend-ecosystem",
     },
     newsletter:
-      "Everyone says blogging is dead. My oldest post is still bringing in leads it wrote three years ago. Weekly, why.",
+      "Everyone says blogging is dead. A post written once keeps getting found for years. Weekly, why.",
     community:
       "Post the URL of the one article you're proudest of. The community will find the three links you forgot to add.",
   },
@@ -735,12 +735,14 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     </article>
 
     <aside class="rail-right">
+      {slug !== "stuck-four-steps-earlier" && (
       <div class="rail-card">
         <div class="eye">The Membership</div>
         <h3>Build it with women one step ahead</h3>
-        <p>Daily prompts, start-here trainings, and the room that turns reading into building.</p>
-        <a class="btn" href="/membership" style="padding:13px 22px;font-size:11px">Explore <span class="a">→</span></a>
+        <p>Daily Prompts, start-here trainings, and the room that turns reading into building. 7 days free.</p>
+        <a class="btn" href="/membership" style="padding:13px 22px;font-size:11px">See what's inside <span class="a">→</span></a>
       </div>
+      )}
     </aside>
   </div>
 

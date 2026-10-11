@@ -40,14 +40,14 @@ const stats = [
 ---
 <PageLayout
   wide
-  title="Find Your Door — Free Guide"
-  description="A free eleven-question guide. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
+  title="Find Your Door: Free Three-Minute Quiz"
+  description="A free eleven-question quiz. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
 >
   <div class="fd">
 
   <!-- HERO -->
   <section class="fd-hero">
-    <a class="page-eyebrow" href="/resources">Free Guide · The Digital Income Edit™</a>
+    <a class="page-eyebrow" href="/resources">Free quiz · The Digital Income Edit™</a>
     <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
     <p class="fd-lede">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters <em>now</em>.</p>
     <p class="fd-lede fd-lede-small">Answer eleven questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step — not five more things to buy. About three minutes, and you see the answer on screen.</p>
@@ -139,12 +139,12 @@ const stats = [
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
         <h3 id="fd-send-h">Weekly emails, pointed at your door</h3>
-        <p>Your result lives on this screen — screenshot it before you go. The list is where the rest of it happens: one idea a week, written for the door you just landed on. Unsubscribe anytime.</p>
+        <p>Your result lives on this screen only, so screenshot it before you go. Then get one idea a week by email, written for the door you just landed on. Unsubscribe anytime.</p>
         <div class="fd-send-row">
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required />
           <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="fd-hp" />
-          <button class="btn" type="submit">Subscribe <span class="a">→</span></button>
+          <button class="btn" type="submit">Send me the weekly email <span class="a">→</span></button>
         </div>
         <p class="fd-send-msg" id="fd-send-msg" role="status"></p>
       </form>
@@ -490,7 +490,7 @@ const stats = [
       fetch("/api/quiz-result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(x){
-          msg.textContent = x.ok ? "You're on the list. This screen is the only copy of your result — screenshot it before you go." : (x.j.error || "Couldn't add you to the list just now. Try again in a moment.");
+          msg.textContent = x.ok ? "You're on the list. This screen is still the only copy of your result, so screenshot it now." : (x.j.error || "Couldn't add you to the list just now. Try again in a moment.");
           if (!x.ok) btn.disabled = false;
         })
         .catch(function(){ msg.textContent = "Couldn't add you to the list just now. Try again in a moment."; btn.disabled = false; });

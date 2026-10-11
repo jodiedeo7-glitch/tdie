@@ -1,14 +1,14 @@
 // One JSON record per article in src/lifestyle. See src/lifestyle/README.md.
 import { normalizeLook, byEditorialDate, isDraft } from './lifestyle-model.js';
 export const CATEGORIES = [
-  { slug: 'clothing', name: 'Clothing', blurb: 'Pink outfit ideas, costume details and everyday pieces to mix with what you already own.' },
+  { slug: 'clothing', name: 'Clothing', blurb: 'Halloween costumes you can wear again in November and everyday pink outfits, with every piece listed underneath.' },
   { slug: 'accessories', name: 'Accessories', blurb: 'Bags, bows and little finishing touches, plus playful finds for your four-legged sidekick.' },
   { slug: 'jewelry', name: 'Jewelry', blurb: 'A place for pearls, stacks and small sparkling details.' },
   { slug: 'beauty', name: 'Beauty', blurb: 'Pretty touches for your vanity and getting-ready routine.' },
   { slug: 'perfume', name: 'Perfume', blurb: 'A collection for fragrance finds and pretty bottles.' },
-  { slug: 'home-decor', name: 'Home Decor', blurb: 'Pink corners, welcoming porches and seasonal details for a home with personality.' },
-  { slug: 'dorm', name: 'Dorm', blurb: 'Small-space styling and seasonal touches that leave room for everyday life.' },
-  { slug: 'car', name: 'Car Accessories', blurb: 'Pink details for your car, with practical places for the everyday little things.' },
+  { slug: 'home-decor', name: 'Home Decor', blurb: 'Pink porches, coffee bars and entryways that still say Halloween. Copy the whole look or just one corner.' },
+  { slug: 'dorm', name: 'Dorm', blurb: 'Pink Halloween decor that fits one small room and the housing rules: no flames, no nails, packs flat in November.' },
+  { slug: 'car', name: 'Car Accessories', blurb: 'A pink steering wheel, matching seat belt covers and a real spot for your phone, your iced coffee and the trash.' },
   { slug: 'books', name: 'Books', blurb: 'A place for reading lists and books worth making space for.' },
   { slug: 'gifts', name: 'Gift Guides', blurb: 'Thoughtful finds for the people who love a little pink.' },
 ];

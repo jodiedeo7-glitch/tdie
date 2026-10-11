@@ -18,7 +18,7 @@ export const PF = {
   },
   evergreen: {
     heading: "New pink finds, every Friday",
-    sub: "Pink styling ideas and clearly listed finds in one email. Unsubscribe anytime.",
+    sub: "The newest pink outfits and corners, every piece listed, in your inbox on Friday. Unsubscribe anytime.",
   },
   button: "Send Me the Finds",
   done: "You're in. Your first pink finds land in your inbox this Friday.",

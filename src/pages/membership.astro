@@ -38,7 +38,7 @@ const groups = [
     { t: "The Offer Edit, The Funnel Edit and Scaling & Systems", sub: "What you sell, the road a stranger walks to it, and the systems that keep it running", s: false, p: true },
   ] },
   { h: "Done for you", rows: [
-    { t: "The monthly done-for-you content calendar", sub: "31 days written, released a week at a time around the 1st", s: false, p: true },
+    { t: "The monthly done-for-you content calendar", sub: "Every day of the month written, released a week at a time around the 1st", s: false, p: true },
     { t: "The Ads Edit™", sub: "Paid traffic, pointed at a build that is ready for it", s: false, p: true },
   ] },
   { h: "The guides", rows: [
@@ -50,15 +50,15 @@ const groups = [
 const weeks = [0, 1, 2, 3, 4].map((w) => Array.from({ length: 7 }, (_, d) => w * 7 + d + 1).filter((n) => n <= 31));
 
 const dfy = [
-  { t: "31 days written", p: "Every caption, hook, carousel slide and Story frame. Finished posts you copy and publish." },
-  { t: "62 Threads posts", p: "Two a day, written for the platform, not captions pasted over from somewhere else." },
+  { t: "Every day, written", p: "Every caption, hook, carousel slide and Story frame. Finished posts you copy and publish." },
+  { t: "Two Threads posts a day", p: "Two a day, written for the platform, not captions pasted over from somewhere else." },
   { t: "A start-frame and motion prompt for every Reel", p: "Generate the still, drop it into your video tool, post it. You never film anything. Not your face, not your hands, not your desk." },
-  { t: "Built on what is working", p: "Every month starts with hundreds of viral Reels in this niche, read before a word gets written." },
+  { t: "Built on what is working", p: "Every month starts with real research: at least 40 breakout posts from creators in this niche, read before a word gets written." },
 ];
 
 // The room: what happens inside (merged from the old /community page).
 const inside = [
-  { n: "01", t: "A prompt every day", p: "Daily Prompts, written for the thing you are actually building, not a generic list you will scroll past." },
+  { n: "01", t: "A prompt every day", p: "A new photo prompt every day for your AI persona, written so it works with your own reference photo." },
   { n: "02", t: "Trainings, in order", p: "The start-here trainings turn a guide you have read into a thing that exists. Ordered, so you always know which room is next." },
   { n: "03", t: "A classroom inside the business it teaches", p: "The site, the funnels and the automation you build are the same ones delivering this page to you right now." },
   { n: "04", t: "Women one step ahead", p: "Not gurus. Women who solved last month what you are stuck on this month, and who are still in the room to ask." },
@@ -139,7 +139,7 @@ const schema = [{
     <div class="e-wrap mb-who-grid">
       <div>
         <p class="e-kick">Who is in it</p>
-        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Women women, building <em>the same architecture.</em></span></h2>
+        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Women, building <em>the same architecture.</em></span></h2>
       </div>
       <div class="mb-who-copy">
         <p>Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>

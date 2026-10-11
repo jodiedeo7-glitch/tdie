@@ -67,5 +67,7 @@ export const objections = [
  ['Does my computer need to be on?', 'Yes. Leave your computer on and signed into Amazon overnight.'],
  ['Can I approve things first?', 'Yes. It runs automatically by default, and you can switch on approvals to OK each look before it goes out. I recommend approvals on for your first few days.'],
  ['What if I only have a few minutes?', 'Do the 15-minute Quick Start and go to bed. That’s the whole job.'],
- ['Is this a PDF?', 'No. It’s a website that gets updated regularly, so it never goes stale. New affiliate brand automations are on the way.']
+ ['Is this a PDF?', 'No. It’s a website that gets updated regularly, so it never goes stale. New affiliate brand automations are on the way.'],
+ ['What else will I pay for?', 'Your own AI accounts: Claude or ChatGPT, plus an image tool. The setup tells you which plan to pick. The Storefront itself is one payment.'],
+ ['I tried Pinterest before and quit. Why is this different?', 'Because the part you quit was the daily making. This does the making. Turn approvals on for the first few days if you want, and you OK each look before it goes out.']
 ];
