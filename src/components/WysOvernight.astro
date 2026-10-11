@@ -23,6 +23,8 @@ const icons = {
 };
 
 // Example day. Order follows the workflow: blog live first, then pins, then Instagram.
+// Both looks get every output, including their own Instagram carousel (Jodie, 10 Oct 2026).
+// The carousel slot shows its first slide, the Basic photo.
 const day = [
  {t: '7:00 am', kind: 'Blog post', what: ghost.short, look: ghost, blog: true},
  {t: '7:30 am', kind: 'Blog post', what: plaid.short, look: plaid, blog: true},
@@ -32,7 +34,8 @@ const day = [
  {t: '3:00 pm', kind: 'Styled pin', what: plaid.short, look: plaid, role: 'styled'},
  {t: '5:00 pm', kind: 'Lifestyle pin', what: ghost.short, look: ghost, role: 'lifestyle'},
  {t: '7:00 pm', kind: 'Lifestyle pin', what: plaid.short, look: plaid, role: 'lifestyle'},
- {t: '8:00 pm', kind: 'IG carousel', what: ghost.short, look: ghost, role: 'styled', ig: true}
+ {t: '8:00 pm', kind: 'IG carousel', what: ghost.short, look: ghost, role: 'basic', ig: true},
+ {t: '8:30 pm', kind: 'IG carousel', what: plaid.short, look: plaid, role: 'basic', ig: true}
 ];
 ---
 <ol class="wc-overnight wh-overnight wh-six" aria-label="What happens overnight">
@@ -47,9 +50,9 @@ const day = [
  <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 blog posts written</h3>
   <div class="wc-stop-art wh-stop-blogs"><div class="wh-blog-back"><WysBlogCard look={plaid} small/></div><div class="wh-blog-front"><WysBlogCard look={ghost} small/></div></div>
   <p>One for each look, with the finds.</p></li>
- <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>Instagram carousel made</h3>
+ <li class="wc-night-stop"><span class="wc-time">Overnight</span><h3>2 IG carousels made</h3>
   <div class="wc-stop-art wh-stop-ig"><WysIgPost look={ghost} small/></div>
-  <p>Basic, Styled and Lifestyle, in that order, with the caption.</p></li>
+  <p>One for each look: Basic, Styled and Lifestyle, in that order, with the caption.</p></li>
 </ol>
 
 <div class="wh-day">
@@ -60,7 +63,7 @@ const day = [
  </div>
  <ol class="wh-bracket" aria-label="Example day of posts">
   <span class="wh-line" aria-hidden="true"></span>
-  {day.map((d) => <li class={`wh-slot ${d.blog ? 'is-blog' : d.ig ? 'is-ig' : 'is-pin'}`}>
+  {day.map((d, i) => <li class={`wh-slot ${d.blog ? 'is-blog' : d.ig ? 'is-ig' : 'is-pin'}`} style={`--col:${i + 1}`}>
    <span class="wh-slot-t">{d.t}</span>
    <span class="wh-slot-img">{d.blog ? <Image src={d.look.photos.styled.src} alt="" widths={[120, 240]} sizes="60px"/> : <Image src={d.look.photos[d.role].src} alt="" widths={[120, 240]} sizes="60px"/>}</span>
    <span class="wh-slot-kind"><i class="wh-slot-ico" set:html={icons[d.blog ? 'blog' : d.ig ? 'ig' : 'pin']}/>{d.kind}</span>

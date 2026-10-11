@@ -307,16 +307,13 @@ body:has(.wys-world) .e-page{background:transparent}
 
 /* ---------- example day: slots alternate above and below one line ---------- */
 @media (min-width:901px){
- .wh-bracket{grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
- /* bracket from the heading, its arms dropping down to the line */
- .wh-bracket::before{left:0;right:0;top:0;height:auto;bottom:calc(50% - 10px);border:2px solid #E85A9B;border-bottom:0;border-radius:14px 14px 0 0;background:none}
- .wh-bracket::after{top:-12px}
+ .wh-bracket{grid-template-columns:repeat(11,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
+ /* one timeline through the middle: no box around either row */
+ .wh-bracket::before,.wh-bracket::after{display:none!important}
  .wh-bracket .wh-line{position:absolute;left:0;right:0;top:calc(50% + 10px);height:2px;background:#E85A9B;border-radius:2px;display:block}
- .wh-slot{grid-column:span 2;padding:0 6px}
+ .wh-slot{grid-column:var(--col) / span 2;padding:0 6px}
  .wh-slot:nth-of-type(odd){grid-row:1;flex-direction:column-reverse;justify-content:flex-start}
  .wh-slot:nth-of-type(even){grid-row:2}
- .wh-slot:nth-of-type(2){grid-column:2 / span 2}
- .wh-slot:nth-of-type(1){grid-column:1 / span 2}
  .wh-slot::before{display:none}
  .wh-slot::after{content:"";position:absolute;left:calc(50% - 6px);width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #E85A9B;box-sizing:border-box;z-index:1}
  .wh-slot:nth-of-type(odd)::after{bottom:-28px}
@@ -334,7 +331,6 @@ body:has(.wys-world) .e-page{background:transparent}
  .wys-world .wh-overnight.wh-six{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,auto auto 212px auto);row-gap:12px}
  .wys-world .wh-six .wc-night-stop:nth-child(n+4){margin-top:26px}
  .wys-world .wh-six .wh-stop-ig{width:100%;max-width:250px!important;margin-inline:auto}
- .wh-bracket::before,.wh-bracket::after{display:block}
 }
 @media (max-width:900px){
  .wys-world .wh-overnight.wh-six{grid-template-columns:minmax(0,1fr)}
@@ -347,3 +343,15 @@ body:has(.wys-world) .e-page{background:transparent}
  .wys-world .wh-six .wc-stop-art{height:auto;justify-content:flex-start}
  .wys-world .wh-six .wh-stop-photo img{height:180px!important}
 }
+
+/* "7 am onward" tag: crisp, no texture behind the words (Jodie, 10 Oct 2026) */
+.wys-world .wh-day-time,.wh-day-time{background:#fff!important;background-image:none!important;border:2px solid #D62E73!important;color:#1A1417!important;font:800 13px/1 Jost,sans-serif!important;letter-spacing:.18em!important;text-shadow:none!important;filter:none!important;opacity:1!important;padding:9px 14px!important;box-shadow:none!important}
+@media (min-width:901px){
+ .wh-bracket{padding-top:0!important;margin-top:22px!important}
+ .wh-slot-what{white-space:nowrap}
+}
+@media (min-width:901px) and (max-width:1199px){
+ .wh-slot{padding:0 2px!important}
+ .wh-slot-what{font-size:12px!important}
+}
+@media (min-width:901px){.wh-bracket .wh-line{top:calc(50% - 1px)!important}}
