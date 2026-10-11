@@ -2,6 +2,9 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import Testimonial from "../../components/Testimonial.astro";
 import { membership as M } from "../../data/facts.js";
+import { Image } from "astro:assets";
+import WysAnnounce from "../../components/WysAnnounce.astro";
+import wysStyled from "../../lifestyle/pink-ghost-coffee-bar-styled.jpg";
 
 // ─────────────────────────────────────────────────────────────
 // FIND YOUR DOOR — the central free routing guide.
@@ -22,12 +25,13 @@ const SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_source=site&
 const WE = "/shop/weekend-ecosystem";
 const VAULT = "/shop/pretty-and-paid-plr-vault";
 const SCC = "/go/earn-with-skool-scc";
+const WYS = "/shop/while-you-sleep-storefront";
 
 const stalls = [
   { n: "01", t: "No map", p: "You know a hundred things about online business and can't say which one comes first. That isn't a knowledge problem. It's a sequence problem.", d: "Membership Standard", k: "S" },
   { n: "02", t: "Nothing to post", p: "The business works. The calendar doesn't. You are one missed Tuesday away from going quiet for a month.", d: "Membership Premium", k: "P" },
   { n: "03", t: "Nothing on the shelf", p: "The shop is open and half-empty, and every new product starts on a blank Canva page.", d: "Pretty & Paid PLR Vault™", k: "V" },
-  { n: "04", t: "No front door", p: "Years of lessons, calls and guides — all of it behind a login. A stranger can't find a word of it.", d: "The Weekend Ecosystem™", k: "W" },
+  { n: "04", t: "No front door", p: "Years of lessons, calls and guides, all of it behind a login. A stranger can't find a word of it.", d: "The Weekend Ecosystem™", k: "W" },
   { n: "05", t: "No room of your own", p: "You're the one answering questions in other people's groups. You've just never opened your own.", d: "Earn With Skool (SCC)", k: "K" },
 ];
 
@@ -40,17 +44,18 @@ const stats = [
 ---
 <PageLayout
   wide
-  title="Find Your Door — Free Guide"
+  title="Find Your Door: Free Starting-Point Quiz"
   description="A free eleven-question guide. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
 >
   <div class="fd">
 
   <!-- HERO -->
   <section class="fd-hero">
+    <WysAnnounce />
     <a class="page-eyebrow" href="/resources">Free Guide · The Digital Income Edit™</a>
     <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
     <p class="fd-lede">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters <em>now</em>.</p>
-    <p class="fd-lede fd-lede-small">Answer eleven questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step — not five more things to buy. About three minutes, and you see the answer on screen.</p>
+    <p class="fd-lede fd-lede-small">Answer eleven questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step, not five more things to buy. About three minutes, and you see the answer on screen.</p>
     <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
     <div class="fd-meta"><span>11 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
   </section>
@@ -65,7 +70,7 @@ const stats = [
       <div>
         <h2>I don't sell courses <em>about</em> a business. I sell the parts of mine.</h2>
         <p>Every door on this page is a piece of the machine that is running this page. The site you're reading was built with the course I sell for building it. The articles in The Library started life as lessons in a Skool classroom. The content calendar Premium members get is the one I write and roll out a week at a time around the 1st.</p>
-        <p>And it's faceless the way I mean it: <strong>my real face is never required.</strong> Not that nobody appears — the brand's face is its AI persona. That's the New Faceless, and it's the only version I teach.</p>
+        <p>And it's faceless the way I mean it: <strong>my real face is never required.</strong> Not that nobody appears. The brand's face is its AI persona. That's the New Faceless, and it's the only version I teach.</p>
         <p class="fd-hit">So when I tell you which door is yours, I'm not guessing. I've stood in every one of these rooms.</p>
       </div>
     </div>
@@ -96,7 +101,7 @@ const stats = [
   <section class="fd-block fd-quiz-wrap" id="quiz">
     <div class="fd-quiz-intro">
       <h2>Eleven questions. <em>Answer them honestly.</em></h2>
-      <p class="fd-sub">Where you are, where you want to be, where it stops moving, and the fear underneath it. About three minutes. Your result appears on this screen — no email needed to see it.</p>
+      <p class="fd-sub">Where you are, where you want to be, where it stops moving, and the fear underneath it. About three minutes. Your result appears on this screen. No email needed to see it.</p>
     </div>
     <div class="fd-quiz" id="fd-quiz">
       <div class="fd-q-top">
@@ -139,7 +144,7 @@ const stats = [
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
         <h3 id="fd-send-h">Weekly emails, pointed at your door</h3>
-        <p>Your result lives on this screen — screenshot it before you go. The list is where the rest of it happens: one idea a week, written for the door you just landed on. Unsubscribe anytime.</p>
+        <p>Your result lives on this screen. Screenshot it before you go. The list is where the rest of it happens: one idea a week, written for the door you just landed on. Unsubscribe anytime.</p>
         <div class="fd-send-row">
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required />
@@ -169,7 +174,7 @@ const stats = [
           <li>AI Twin / Influencer Creation</li><li>Brand Building</li><li>The Content Edit</li><li>The Monetization Edit</li><li>The Email Edit</li><li>The Pinterest Edit</li><li>Pinterest Foundations™</li><li>The Tommy Kate Edit</li><li>Canva Crash Course</li><li>Daily Prompts</li>
         </ul>
         <dl class="fd-fit"><dt>Yes if</dt><dd>you have the idea, not the order of operations.</dd><dt>Skip if</dt><dd>you just can't keep up with posting.</dd></dl>
-        <a class="btn" href={SKOOL}>Start Standard — 7 days free <span class="a">→</span></a>
+        <a class="btn" href={SKOOL}>Start Standard, 7 days free <span class="a">→</span></a>
       </article>
       <article class="fd-tile fd-tile-p">
         <h3>Membership Premium</h3>
@@ -180,7 +185,7 @@ const stats = [
         </ul>
         <p class="fd-tn">31 days of posts, 62 Threads posts and a prompt for every Reel, released a week at a time around the 1st.</p>
         <dl class="fd-fit"><dt>Yes if</dt><dd>the blank caption box is why you go quiet.</dd><dt>Skip if</dt><dd>you don't have an offer to point it at yet.</dd></dl>
-        <a class="btn" href={SKOOL}>Start Premium — 7 days free <span class="a">→</span></a>
+        <a class="btn" href={SKOOL}>Start Premium, 7 days free <span class="a">→</span></a>
       </article>
     </div>
     <p class="fd-fine">Cancel from inside the Skool app whenever you like. Cancelling stops the next payment.</p>
@@ -218,6 +223,22 @@ const stats = [
       </div>
     </article>
 
+    <article class="fd-tile fd-tile-img">
+      <Image src={wysStyled} alt="A pink Halloween coffee bar with ghosts, a BOO sign and paper bats, one of the looks the While-You-Sleep system built" widths={[320, 480]} sizes="240px" loading="lazy" />
+      <div>
+        <span class="fd-door-k">New · standalone product · waitlist open</span>
+        <h3>The While-You-Sleep Storefront™</h3>
+        <p class="fd-tp"><b>$27</b> launch weekend, then $37 · member presale opens Tuesday 13 October</p>
+        <p class="fd-tl">Your Amazon storefront posts itself, every night while you sleep.</p>
+        <p class="fd-tn">Tommy Kate's system: it plans the look, builds the Amazon list, makes the pins and writes the blog post. Set it up once. The Pink Ghost Coffee Bar in this photo is one of the looks it built.</p>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>you have an Amazon storefront and no time to keep feeding it.</dd><dt>Skip if</dt><dd>you're not an Amazon Associate or Influencer yet.</dd></dl>
+        <div class="fd-row fd-row-left">
+          <a class="btn" href={WYS + "/waitlist"}>Join the waitlist <span class="a">→</span></a>
+          <a class="fd-link" href={WYS}>See how it works →</a>
+        </div>
+      </div>
+    </article>
+
     <article class="fd-tile fd-tile-aff">
       <span class="fd-door-k">Recommended · not mine</span>
       <h3>Earn With Skool (SCC)</h3>
@@ -231,7 +252,7 @@ const stats = [
 
   <!-- CLOSE -->
   <section class="fd-block fd-close fd-rv">
-    <h2>Pick one. <em>Not all five.</em></h2>
+    <h2>Pick one. <em>Not all six.</em></h2>
     <p class="fd-lede">The fastest way to stall is to buy the whole ecosystem on a Tuesday night and open none of it. Walk through the door that fixes this month's bottleneck. The next one will be obvious when you get there.</p>
     <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
     <p class="fd-fine">Questions about billing or refunds? <a href="/faq">They're all answered in one place.</a></p>
@@ -245,53 +266,59 @@ const stats = [
   (function(){
     var SKOOL = "https://www.skool.com/thedigitalincomeedit/plans?utm_source=site&utm_medium=quiz&utm_campaign=find-your-door";
 
-    // ── The five doors. Names, prices and routes match the live pages. ──
+    // ── The six doors. Names, prices and routes match the live pages. ──
     var DOORS = {
       S: { name: "Membership Standard", price: "$9 per month after a free 7-day trial",
-           why: "You don't need more information. You need the order it goes in. Standard is the build curriculum — brand, offer, content, email and Pinterest — laid out in the sequence I'd do it again.",
+           why: "You don't need more information. You need the order it goes in. Standard is the build curriculum (brand, offer, content, email and Pinterest), laid out in the sequence I'd do it again.",
            moves: ["Start the trial and open the start-here trainings before anything else", "Build your AI twin and brand first, so everything after it looks like one business", "Shape one offer inside The Monetization Edit before you make a single product"],
-           cta: "Start Standard — 7 days free", href: SKOOL, aff: false,
-           alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: " — free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge",
-             more: { pre: " Or grab ", label: "The First Product Cheat Sheet", post: " — free, four pages, eight lessons, one small move each.", href: "https://links.thedigitalincomeedit.com/shop/53d07da4-31ac-4720-beb8-c6498ac40eea" } },
+           cta: "Start Standard, 7 days free", href: SKOOL, aff: false,
+           alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: ", free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge",
+             more: { pre: " Or grab ", label: "The First Product Cheat Sheet", post: ", free, four pages, eight lessons, one small move each.", href: "https://links.thedigitalincomeedit.com/shop/53d07da4-31ac-4720-beb8-c6498ac40eea" } },
            later: "When content becomes the thing that stops you, Membership Premium writes the month for you." },
       P: { name: "Membership Premium", price: "$35 per month after a free 7-day trial",
            why: "Your business isn't the problem. The daily writing is. Premium hands you the month already written, so the blank caption box stops deciding whether you show up.",
            moves: ["Start the trial and open this month's DFY Content Calendar", "Point the calendar's offer days at the one thing you sell", "Schedule the first week in a single sitting, then stop thinking about it"],
-           cta: "Start Premium — 7 days free", href: SKOOL, aff: false,
+           cta: "Start Premium, 7 days free", href: SKOOL, aff: false,
            later: "When you want those posts to outlive the feed, The Weekend Ecosystem™ turns them into a site that ranks." },
       V: { name: "Pretty & Paid PLR Vault™", price: "$11 per month · its own subscription",
            why: "Your shop isn't failing because you can't sell. It's failing because the shelf is empty. Stock it with finished products you rebrand in Canva and list the same week.",
-           moves: ["Pick the three products that fit your niche — not ten", "Rebrand them in Canva: your colours, your fonts, your name", "Let PLR Glow Studio write the titles, descriptions and tags, then list all three"],
+           moves: ["Pick the three products that fit your niche, not ten", "Rebrand them in Canva: your colours, your fonts, your name", "Let PLR Glow Studio write the titles, descriptions and tags, then list all three"],
            cta: "Open Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault", aff: false,
            later: "When the shop deserves a home that Google can find, The Weekend Ecosystem™ builds it." },
       W: { name: "The Weekend Ecosystem™", price: "$97 one-time, or 3 payments of $33.33 · every future update included",
-           why: "You wrote the blog posts years ago. They're sitting behind a login. This turns what you've already made into a website and blog on a domain you own — built by Claude, approved by you.",
-           moves: ["Friday night: list everything you've already made — you'll find more than you expect", "Saturday: your site goes live and your best lessons become articles", "Sunday: email capture, offers on every article, and the system that keeps it running"],
+           why: "You wrote the blog posts years ago. They're sitting behind a login. This turns what you've already made into a website and blog on a domain you own, built by Claude, approved by you.",
+           moves: ["Friday night: list everything you've already made. You'll find more than you expect", "Saturday: your site goes live and your best lessons become articles", "Sunday: email capture, offers on every article, and the system that keeps it running"],
            cta: "See The Weekend Ecosystem™", href: "/shop/weekend-ecosystem", aff: false,
-           alt: { pre: "Want to see it before you decide? ", label: "Look inside the course first", post: " — a proper look inside, no email needed.", href: "/weekend-ecosystem/preview" },
+           alt: { pre: "Want to see it before you decide? ", label: "Look inside the course first", post: ", a proper look inside, no email needed.", href: "/weekend-ecosystem/preview" },
            later: "When the site needs feeding every month, Membership Premium writes the content." },
+      A: { name: "The While-You-Sleep Storefront™", price: "Waitlist open now · member presale Tuesday 13 October · launch weekend $27, then $37",
+           why: "You already have the Amazon storefront. What you don't have is time to style a look, build the list and make the pins every single day. This is Tommy Kate's system for exactly that: set it up once and it plans, pins, posts and blogs while you sleep.",
+           moves: ["Join the waitlist so the launch email reaches you first", "Look through the Lifestyle pages on this site: every look there is the system's own work", "Pick the theme your storefront should run first, so you're ready the day it opens"],
+           cta: "Join the waitlist", href: "/shop/while-you-sleep-storefront/waitlist", aff: false,
+           alt: { pre: "Want to see it first? ", label: "See how the system works", post: ", step by step, with real pins and posts.", href: "/shop/while-you-sleep-storefront" },
+           later: "When you want your looks on a site you own, The Weekend Ecosystem™ builds it." },
       K: { name: "Earn With Skool (SCC)", price: "$97 one-time · recommended, not mine",
-           why: "You're already the one answering questions in other people's groups. That isn't a sign you aren't ready — it's the job description. This is the course I point you to for opening your own.",
-           moves: ["Write down the ten questions people already ask you — that's your first curriculum", "Stop waiting to feel qualified; decide the one result your group is for", "Open the room, then learn to earn from it"],
+           why: "You're already the one answering questions in other people's groups. That isn't a sign you aren't ready. It's the job description. This is the course I point you to for opening your own.",
+           moves: ["Write down the ten questions people already ask you. That's your first curriculum", "Stop waiting to feel qualified; decide the one result your group is for", "Open the room, then learn to earn from it"],
            cta: "See Earn With Skool (SCC)", href: "/go/earn-with-skool-scc", aff: true,
-           alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: " — Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true },
+           alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: ". Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true },
            later: "Once the group exists, The Weekend Ecosystem™ gives it a front door on Google." }
     };
     // Vault is never paired with a membership door (comparison-frame rule).
     var NO_PAIR = { V: ["S","P"], S: ["V"], P: ["V"] };
 
     var FEARS = {
-      expert: "Nobody in a niche asks for credentials. They ask whether you're one step ahead of them. Be useful in public, specifically, for long enough — authority is just what people call that afterwards.",
+      expert: "Nobody in a niche asks for credentials. They ask whether you're one step ahead of them. Be useful in public, specifically, for long enough. Authority is just what people call that afterwards.",
       nobody: "Nobody comes to an announcement. People come to a door that's been open a while. Build the thing that keeps working after you publish it, and \u201cnobody came\u201d stops being a one-day verdict.",
-      tech: "You won't write code or wrestle a page builder. The work is reading what came back and saying yes or no. That's judgement, not tech — and you already have it.",
+      tech: "You won't write code or wrestle a page builder. The work is reading what came back and saying yes or no. That's judgement, not tech, and you already have it.",
       money: "The course you didn't finish wasn't too hard. It asked for everything at once. Walk through the one door that fixes this month's bottleneck and ignore the rest until it stops being one.",
-      face: "You never have to. Faceless here means your real face is never required — the brand's face is an AI persona. Nothing on your path asks you to film yourself.",
-      material: "You have more than you think — old posts, voice notes, answers you've typed in other people's comments. And where you genuinely don't, finished material can be licensed, not invented.",
+      face: "You never have to. Faceless here means your real face is never required. The brand's face is an AI persona. Nothing on your path asks you to film yourself.",
+      material: "You have more than you think: old posts, voice notes, answers you've typed in other people's comments. And where you genuinely don't, finished material can be licensed, not invented.",
       quit: "Week three is when the blank page wins. Take the blank page away and week three is just another week. That's the whole design behind the door I'm pointing you to."
     };
 
     var TIME = {
-      t1: "At under three hours a week, protect one fixed block — same day, same hour — and give it to move one only. Momentum beats volume at your pace.",
+      t1: "At under three hours a week, protect one fixed block, same day, same hour, and give it to move one only. Momentum beats volume at your pace.",
       t2: "At three to seven hours a week, give each move its own week. You'll be through all three inside a month.",
       t3: "At seven to fifteen hours a week, you can do moves one and two this week. Leave the third for next week so it gets your full attention.",
       t4: "With fifteen-plus hours or a clear weekend, do all three before Monday. Then spend next week fixing only what broke."
@@ -300,10 +327,10 @@ const stats = [
     // [label, value (what we store), weights]
     var QS = [
       { sec: "Where you are", q: "Where are you, honestly?", k: "stage", o: [
-        ["Nothing built yet — I'm still circling an idea", "Circling an idea, nothing built yet", {S:3,W:-2}],
+        ["Nothing built yet. I'm still circling an idea", "Circling an idea, nothing built yet", {S:3,W:-2}],
         ["I've made something, but I haven't sold it", "Built something, not selling yet", {S:2,V:1}],
         ["I'm selling, just not consistently", "Selling, but not consistently", {P:2,V:1}],
-        ["I have a real body of work — lessons, guides, years of posts", "Sitting on a real body of work", {W:3}],
+        ["I have a real body of work: lessons, guides, years of posts", "Sitting on a real body of work", {W:3}],
         ["I already run a community or a course", "Already running a room of my own", {W:3,P:1}],
         ["I help in other people's communities, but haven't opened my own", "Helping in other people's rooms", {K:3}] ] },
       { sec: "What you want", q: "Twelve months from now, what has to be true?", k: "goal", o: [
@@ -312,11 +339,13 @@ const stats = [
         ["My shop is full and new listings take minutes", "A full shop that's quick to restock", {V:3}],
         ["Strangers find my work on Google and join my list", "Strangers finding my work on Google", {W:3}],
         ["I run my own paid community", "Running my own paid community", {K:3}],
-        ["One system that runs whether I post or not", "A system that runs whether I post or not", {W:1,P:1,S:1}] ] },
+        ["One system that runs whether I post or not", "A system that runs whether I post or not", {W:1,P:1,S:1}],
+        ["My Amazon storefront gets new looks and pins every day without me", "An Amazon storefront that keeps itself fed", {A:4}] ] },
       { sec: "Where you are", q: "What do you already have?", sub: "Pick everything that applies.", k: "have", multi: true, o: [
         ["A Skool group or course platform", "Skool group or course platform", {W:2,K:-1}],
         ["Lessons, guides, PDFs or recordings", "Lessons, guides or recordings", {W:2}],
-        ["A digital shop — Etsy, Stan or Beacons", "A digital shop", {V:2}],
+        ["A digital shop: Etsy, Stan or Beacons", "A digital shop", {V:2}],
+        ["An Amazon storefront (Associates or Influencer)", "An Amazon storefront", {A:5}],
         ["Products of my own for sale", "Own products", {P:1,V:1}],
         ["A social following", "A social following", {P:1}],
         ["An email list", "An email list", {W:1}],
@@ -328,7 +357,8 @@ const stats = [
         ["My listings exist, but they don't move", "Listings that sit there", {V:2,S:1}],
         ["My best work is behind a login no stranger can see", "My best work hidden behind a login", {W:3}],
         ["I keep putting off opening my own group", "Putting off opening my own group", {K:3}],
-        ["I don't have an offer to point anything at", "No offer to point anything at", {S:3}] ] },
+        ["I don't have an offer to point anything at", "No offer to point anything at", {S:3}],
+        ["My Amazon storefront sits there because I don't have time to keep feeding it", "An Amazon storefront I don't have time to feed", {A:4}] ] },
       { sec: "What's underneath", q: "What's the fear under it?", sub: "Pick the one that's truest, not the one that sounds best.", k: "fear", o: [
         ["I'm not expert enough to be taken seriously", "Not being expert enough", {K:1,S:1}, "expert"],
         ["I'll build it and nobody will come", "Building it and nobody coming", {K:1,S:1}, "nobody"],
@@ -347,7 +377,7 @@ const stats = [
         ["Nothing yet", "Nothing yet", {S:1}, "none"] ] },
       { sec: "How you work", q: "How do you want help to arrive?", k: "style", o: [
         ["Teach me the whole thing, in order", "Taught in order", {S:3}],
-        ["Write it for me — I'll press publish", "Written for me", {P:3}],
+        ["Write it for me. I'll press publish", "Written for me", {P:3}],
         ["Hand me finished pieces I can rebrand", "Finished pieces to rebrand", {V:3}],
         ["Walk me through one build, once, and I own it", "One build I own", {W:3}],
         ["Show me how to build the exact thing I want", "The exact thing I want, shown", {K:2}] ] },
@@ -355,13 +385,13 @@ const stats = [
         ["Under 3", "Under 3 hours a week", {P:2,V:1,S:-1}, "t1"],
         ["3 to 7", "3–7 hours a week", {V:1,S:1}, "t2"],
         ["7 to 15", "7–15 hours a week", {S:1,K:1}, "t3"],
-        ["15 or more — or one clear weekend", "15+ hours, or a clear weekend", {W:2}, "t4"] ] },
+        ["15 or more, or one clear weekend", "15+ hours, or a clear weekend", {W:2}, "t4"] ] },
       { sec: "How you work", q: "How do you prefer to pay for help?", k: "pay", o: [
-        ["Monthly — and I want to try it free first", "Monthly, with a free trial", {S:2,P:2}],
+        ["Monthly, and I want to try it free first", "Monthly, with a free trial", {S:2,P:2}],
         ["Once, and then it's mine", "Once, and it's mine", {W:2,K:2}],
         ["A small monthly fee for fresh stock", "Small monthly, for fresh stock", {V:3}] ] },
       { sec: "Where it stops", q: "A stranger Googles the exact thing you know. What do they find?", k: "google", o: [
-        ["Nothing — I don't have a thing to be found for yet", "Nothing yet", {S:2}],
+        ["Nothing. I don't have a thing to be found for yet", "Nothing yet", {S:2}],
         ["Someone else, explaining what I already taught", "Someone else", {W:3}],
         ["A listing of mine, maybe", "A listing, maybe", {V:2}],
         ["Someone else's community", "Someone else's community", {K:2}],
@@ -371,7 +401,8 @@ const stats = [
         ["Stare at an empty caption box", "Stare at an empty caption box", {P:3}, null, "P"],
         ["Wonder whether I'm \u201cready\u201d to lead", "Wonder whether I'm ready to lead", {K:3}, null, "K"],
         ["Figure out the order of operations alone", "Figure out the order alone", {S:3}, null, "S"],
-        ["Start from zero every time the algorithm moves", "Start from zero every algorithm change", {W:3}, null, "W"] ] }
+        ["Start from zero every time the algorithm moves", "Start from zero every algorithm change", {W:3}, null, "W"],
+        ["Style another look and make the pins by hand", "Style looks and make pins by hand", {A:3}, null, "A"] ] }
     ];
 
     var i = 0, ans = [], cur = null;
@@ -421,11 +452,11 @@ const stats = [
     function pick(k){ var q = QS.filter(function(x){ return x.k === k; })[0]; var idx = QS.indexOf(q); return q.o[(ans[idx] || [0])[0]]; }
 
     function finish(){
-      var score = {S:0,P:0,V:0,W:0,K:0};
+      var score = {S:0,P:0,V:0,W:0,K:0,A:0};
       ans.forEach(function(sel, qi){ (sel || []).forEach(function(n){
         var w = QS[qi].o[n][2]; for (var d in w) score[d] += w[d];
       }); });
-      var order = ["S","P","W","V","K"];
+      var order = ["S","P","W","V","K","A"];
       var top = Math.max.apply(null, order.map(function(d){ return score[d]; }));
       var tied = order.filter(function(d){ return score[d] === top; });
       var neverDoor = pick("never")[4];
@@ -490,7 +521,7 @@ const stats = [
       fetch("/api/quiz-result", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
         .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(x){
-          msg.textContent = x.ok ? "You're on the list. This screen is the only copy of your result — screenshot it before you go." : (x.j.error || "Couldn't add you to the list just now. Try again in a moment.");
+          msg.textContent = x.ok ? "You're on the list. This screen is the only copy of your result. Screenshot it before you go." : (x.j.error || "Couldn't add you to the list just now. Try again in a moment.");
           if (!x.ok) btn.disabled = false;
         })
         .catch(function(){ msg.textContent = "Couldn't add you to the list just now. Try again in a moment."; btn.disabled = false; });
@@ -732,6 +763,7 @@ const stats = [
   .fd .fd-fit dd{margin:0;color:var(--choc-soft)}
   .fd .fd-tile .btn{align-self:flex-start;margin-top:auto}
   .fd .fd-tile .fd-row .btn{margin-top:0}
+  .fd .fd-hero .wys-ann{margin:0 auto 26px;text-align:left}
   .fd .fd-tile-img{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start;margin-top:22px}
   .fd .fd-tile-img img{width:100%;height:auto;border-radius:14px 4px 14px 4px;display:block}
   .fd .fd-tile-img .fd-door-k{margin:0 0 8px}

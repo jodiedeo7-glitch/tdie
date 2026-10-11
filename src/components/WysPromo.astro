@@ -1,64 +1,66 @@
 ---
-// The While-You-Sleep Storefront™ teaser boxes for the Lifestyle section
-// (Decision 126, Jodie, 2 Oct 2026). Small and quiet on purpose: the looks
-// stay the point of the page, the box just answers "how does this get made?".
-// Tommy Kate is the face of the system. Rules: no price (the sales page
-// handles dated pricing), no affiliate rate, no earnings or sales claim,
-// and no "fully hands-off" claim. Proof is the machine only.
+// The While-You-Sleep Storefront™ teaser box (Decision 126, Jodie, 2 Oct 2026;
+// switched on for the waitlist by Jodie, 10 Oct 2026: "the wys waitlist is live...
+// especially the lifestyle and blog pages because thats all literally proof of concept").
+// Sits on every Lifestyle page except /lifestyle/pink-finds, on Find Your Door and in
+// the /learn articles. Product name always visible. No affiliate rate, no earnings
+// claim. Prices live on the sales page; this box only names the presale date.
 // `seed` picks one of the lines so neighbouring pages don't repeat.
-const SALES = "/shop/while-you-sleep-storefront";
+import { WYS_CTA } from '../data/wys-live.js';
 const LINES = [
   {
     k: "Behind the pins",
     t: "Want these exact pins, made automatically?",
-    d: "Every look here comes out of one system. It picks the theme, shops Amazon, builds the list and makes the pins. It's Tommy Kate's system, and you can copy it.",
+    d: "The looks on these pages come out of an automated system. It plans the look, builds the Amazon list, makes the pins and writes the post. It's Tommy Kate's system, and you can run it on your own storefront.",
   },
   {
-    k: "How this shop runs",
-    t: "Ever wonder how a new look lands every day?",
-    d: "Copy-paste prompts and scheduled tasks. The same kit that runs Tommy Kate's storefront, packaged so you can set it up on yours.",
+    k: "How this page got made",
+    t: "Planned. Pinned. Posted. Blogged. You slept.",
+    d: "The looks on these pages come out of Tommy Kate's storefront system, not late nights in Canva. Set it up once on your Amazon storefront and let it run.",
   },
   {
     k: "Plot twist",
-    t: "This whole look came out of a set of prompts.",
-    d: "The look, the Idea List and the pins all come out of Tommy Kate's storefront machine. Here's how to run the same one.",
+    t: "Looks like these, made automatically.",
+    d: "Tommy Kate's storefront system plans the look, builds the Amazon list and makes the pins. Here's how to run the same one.",
   },
   {
     k: "Steal the system",
     t: "Pin like this without designing a single pin.",
-    d: "Tommy Kate's whole Amazon pin routine, written as prompts you paste once. Your theme, your links, your storefront.",
+    d: "Tommy Kate's whole Amazon pin routine, set up once on your storefront. Your theme, your links, your pins.",
   },
 ];
-// RELEASE HOLD (Jodie, 2 Oct 2026, 8:55 pm ET): the kit is not released, so these
-// boxes render nothing. Text kept as is. Set HOLD to false only when Jodie releases it.
-const HOLD = true;
 const { variant = "box", seed = "" } = Astro.props;
 let h = 0;
 for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
 const L = LINES[h % LINES.length];
 ---
-{!HOLD && <a class={`wys wys--${variant}`} href={SALES}>
-  <span class="wys-k">{L.k}</span>
-  <span class="wys-t">{L.t}</span>
-  <span class="wys-d">{L.d}</span>
-  <span class="wys-go">See The While-You-Sleep Storefront™ <span aria-hidden="true">→</span></span>
-</a>}
+<a class={`wys wys--${variant}`} href={WYS_CTA.href}>
+  <span class="wys-copy">
+    <span class="wys-k"><span class="wys-new">New</span>The While-You-Sleep Storefront™</span>
+    <span class="wys-t">{L.t}</span>
+    <span class="wys-d">{L.d}</span>
+    <span class="wys-when">Waitlist open now. Member presale opens Tuesday 13 October.</span>
+  </span>
+  <span class="wys-go">{WYS_CTA.label} <span aria-hidden="true">→</span></span>
+</a>
 
 <style is:global>
-  .wys{display:flex;flex-direction:column;gap:8px;padding:clamp(20px,2.6vw,28px);border-radius:4px;border:1px solid rgba(214,46,115,.28);background:#FFF5F9;color:var(--e-ink);text-decoration:none;transition:border-color .2s}
-  .wys:hover{border-color:var(--e-pink)}
-  .wys:focus-visible{outline:3px solid var(--e-pink);outline-offset:3px}
-  .wys .wys-k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t)}
-  .wys .wys-t{font-family:var(--e-serif);font-weight:600;font-size:clamp(20px,2vw,24px);line-height:1.18;letter-spacing:-.015em}
-  .wys .wys-d{font-size:14.5px;line-height:1.6;color:var(--e-ink-2);max-width:38em}
-  .wys .wys-go{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:2px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--e-pink-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:rgba(184,36,95,.4)}
-  .wys:hover .wys-go{text-decoration-color:currentColor}
-  .wys--strip{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(20px,4vw,48px);align-items:center}
-  .wys--strip .wys-k,.wys--strip .wys-t,.wys--strip .wys-d{grid-column:1}
-  .wys--strip .wys-go{grid-column:2;grid-row:1 / span 3;white-space:nowrap}
+  .wys{display:flex;flex-direction:column;gap:14px;padding:clamp(18px,2.4vw,26px);border-radius:18px;border:1.5px solid #E891B6;background:#fff;box-shadow:0 18px 34px -22px rgba(110,10,50,.6);color:#1A1417;text-decoration:none;transition:border-color .2s}
+  .wys:hover{border-color:#D62E73}
+  .wys:focus-visible{outline:3px solid #1A1417;outline-offset:3px}
+  .wys .wys-copy{display:flex;flex-direction:column;gap:7px;min-width:0}
+  .wys .wys-k{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font:700 11px/1.3 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B8245F}
+  .wys .wys-new{border:1.5px solid #B8245F;border-radius:999px;padding:5px 9px;letter-spacing:.18em}
+  .wys .wys-t{font:400 clamp(21px,2.1vw,26px)/1.18 Gloock,Georgia,serif;color:#1A1417}
+  .wys .wys-d{font:400 15px/1.55 Jost,sans-serif;color:#1A1417;max-width:40em}
+  .wys .wys-when{font:600 13px/1.4 Jost,sans-serif;color:#B8245F}
+  .wys .wys-go{flex:none;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:1.5px solid #D62E73;border-radius:999px;background:#fff;font:700 12px/1.2 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#1A1417}
+  .wys:hover .wys-go{border-color:#1A1417}
+  .wys--strip{flex-direction:row;align-items:center;justify-content:space-between;gap:clamp(18px,4vw,44px)}
+  .wys--strip .wys-go{align-self:center}
   @media(max-width:720px){
-    .wys--strip{display:flex}
-    .wys--strip .wys-go{white-space:normal}
+    .wys--strip{flex-direction:column;align-items:stretch}
+    .wys .wys-go{align-self:stretch;width:100%}
   }
   @media(prefers-reduced-motion:reduce){.wys{transition:none}}
 </style>
