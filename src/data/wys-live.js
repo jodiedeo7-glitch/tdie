@@ -18,6 +18,17 @@ import {WYS_ROOT} from './wys.js';
 // reads from here.
 export const WYS_CTA = {href: WYS_ROOT + '/waitlist', label: 'Join the waitlist'};
 
+// The link row under the intro on every storefront page (Jodie, 11 October 2026):
+// waitlist, look inside (the free sneak peek: Real Examples) and see it live (the
+// Lifestyle blog the system posts to). On launch day set WYS_OPEN to true: the
+// waitlist link flips to the sales page. Each page leaves out its own link.
+export const WYS_OPEN = false;
+export const WYS_LINKS = [
+ WYS_OPEN ? {key: 'waitlist', label: 'See the storefront', href: WYS_ROOT} : {key: 'waitlist', label: 'Join the waitlist', href: WYS_ROOT + '/waitlist'},
+ {key: 'inside', label: 'Free sneak peek', href: WYS_ROOT + '/real-examples'},
+ {key: 'live', label: 'See it live', href: '/lifestyle'}
+];
+
 const SITE = 'https://www.thedigitalincomeedit.com';
 
 export const liveLooks = [

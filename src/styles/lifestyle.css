@@ -591,7 +591,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 .life .life-reading-sheet .life-look-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 6px}
 .life .life-reading-sheet .life-look-head h2{margin:0}
 .life .life-reading-sheet .life-look-head .life-photo-controls{margin:0}
-.life .life-gp-back{display:none!important}
+
 .life .life-reading-sheet .life-photo-track{justify-content:center;gap:4%;padding:48px 8px 28px;overflow-y:visible}
 .life .life-reading-sheet .life-photo-track>.life-gp{flex:0 0 29%;max-width:290px;min-width:0}
 .life .life-gp-front,.life .life-gp:nth-child(n) .life-gp-front{transform:none!important}
@@ -646,3 +646,18 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 
 /* Yellowtail script ONLY on the one stressed word (class="stress"), never on every pink word (Jodie, 10 Oct, 8:46 pm) */
 .life h1 .stress,.life h2 .stress,.cs-intro h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal!important;font-weight:400!important;font-size:1.15em;letter-spacing:0!important;color:#D62E73}
+
+/* Stacked look back on (Jodie, 11 October 2026): each photo Polaroid in a set has a second glitter sheet
+   tucked behind it. "No overlapping" means the frames side by side never touch each other, so every back
+   sheet leans the same way and the gaps are wide enough that a back sheet never reaches the next frame. */
+.life .life-gp{position:relative}
+.life .life-gp-back,.life .life-gp:nth-child(n) .life-gp-back{display:block!important;position:absolute;inset:0;z-index:0;transform:translate(-5%,3.5%) rotate(-5deg)!important}
+.life .life-gp-front,.life .life-gp:nth-child(n) .life-gp-front{transform:rotate(1.5deg)!important}
+.life .life-gp:nth-child(even) .life-gp-front{transform:rotate(-1deg)!important}
+@media(min-width:821px){
+ .life .life-reading-sheet .life-photo-track{gap:7%;padding:48px 20px 40px 34px}
+ .life .life-reading-sheet .life-photo-track>.life-gp{flex:0 0 26%}
+}
+@media(max-width:820px){
+ .life .life-reading-sheet .life-photo-track{gap:44px;padding:44px 16px 34px 30px}
+}

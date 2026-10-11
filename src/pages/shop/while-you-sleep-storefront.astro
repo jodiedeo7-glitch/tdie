@@ -4,6 +4,7 @@ import WysFrame from '../../components/WysFrame.astro';
 import WysNightFeed from '../../components/WysNightFeed.astro';
 import WysCta from '../../components/WysCta.astro';
 import WysOvernight from '../../components/WysOvernight.astro';
+import WysLinks from '../../components/WysLinks.astro';
 import FreebieForm from '../../components/FreebieForm.astro';
 import WysProof from '../../components/WysProof.astro';
 import WysYouDo from '../../components/WysYouDo.astro';
@@ -20,6 +21,7 @@ const [ghost] = liveLooks;
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 6 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep.</p>
+    <WysLinks current="overview" hide={["waitlist"]}/>
     <div class="wc-wait-form" id="join-top">
      <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
     </div>

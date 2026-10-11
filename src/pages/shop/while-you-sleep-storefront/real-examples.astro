@@ -1,6 +1,7 @@
 ---
 import {Image} from 'astro:assets';
 import WysFrame from '../../../components/WysFrame.astro';
+import WysLinks from '../../../components/WysLinks.astro';
 import WysCta from '../../../components/WysCta.astro';
 import WysPin from '../../../components/WysPin.astro';
 import WysLookFlow from '../../../components/WysLookFlow.astro';
@@ -16,6 +17,7 @@ const [ghost, plaid] = liveLooks;
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Real examples. <em>One real night’s work.</em></p>
     <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Not mockups. Two real looks it built on its own for my storefront, and every piece of each: 3 photos, 3 Pinterest pins, a blog post and an Instagram carousel.</p>
+    <WysLinks current="inside" align="center" besideCta/>
     <WysCta note="Member presale opens Tuesday 13 October."/>
    </div>
    <div class="wc-six">{[ghost, plaid].flatMap((look) => roles.map((r) => <figure>{r.key === 'basic' ? <WysPin look={look} role="basic" sizes="(max-width:900px) 30vw, 180px" eager/> : <Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 180px" loading="eager"/>}<figcaption>{r.name}</figcaption></figure>))}</div>

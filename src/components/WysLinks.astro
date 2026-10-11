@@ -1,0 +1,17 @@
+---
+// The storefront link row: every page shows the other pages' links (see WYS_LINKS).
+import {WYS_LINKS, WYS_CTA} from '../data/wys-live.js';
+// besideCta: the big button sits right under this row, so a link to the same place is left out.
+const {current, hide = [], align = 'left', besideCta = false} = Astro.props;
+const links = WYS_LINKS.filter((l) => l.key !== current && !hide.includes(l.key) && !(besideCta && l.href === WYS_CTA.href));
+---
+<nav class={`wc-links wc-links-${align}`} aria-label="More from The While-You-Sleep Storefront™">
+ {links.map((l) => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}
+</nav>
+<style is:global>
+.wys-world .wc-links{display:flex;flex-wrap:wrap;gap:10px 12px;margin:22px 0 26px}
+.wys-world .wc-links-center{justify-content:center}
+.wys-world .wc-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:1.5px solid #E891B6;border-radius:999px;background:#fff;color:#B8245F;font:700 12px/1.2 Jost,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 18px -12px rgba(184,36,95,.6)}
+.wys-world .wc-links a:hover{background:#FFE4EF}
+@media(max-width:700px){.wys-world .wc-links a{flex:1 1 auto;justify-content:center}}
+</style>
