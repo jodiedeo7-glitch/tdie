@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import subprocess
+import sys
 from unittest.mock import patch
 
 import profile as runtime
@@ -190,6 +192,46 @@ class ProfileTests(unittest.TestCase):
                 self.save({'persona': self.answer(True)}, 1)
         self.assertEqual(runtime.load(self.path), saved)
         self.assertFalse(Path(str(self.path) + '.lock').exists())
+
+    @unittest.skipIf(runtime.fcntl is None, 'POSIX lease backend unavailable')
+    def test_live_process_blocks_write_and_killed_process_releases_lease(self):
+        saved = self.save()
+        before = self.path.read_bytes()
+        code = ("import profile, signal, sys\n"
+                "with profile.write_lease(sys.argv[1]):\n"
+                " print('READY', flush=True)\n"
+                " signal.pause()\n")
+        child = subprocess.Popen([sys.executable, '-c', code, str(self.path)],
+                                 cwd=Path(__file__).parent, stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE, text=True)
+        try:
+            self.assertEqual(child.stdout.readline().strip(), 'READY')
+            with self.assertRaisesRegex(runtime.Blocked, 'WRITE_IN_PROGRESS'):
+                self.save({'persona': self.answer(True)}, saved['revision'])
+            self.assertEqual(self.path.read_bytes(), before)
+            child.kill()
+            child.wait(timeout=5)
+            updated = self.save({'persona': self.answer(True)}, saved['revision'])
+            self.assertTrue(updated['answers']['persona']['value'])
+            self.assertEqual(updated['revision'], saved['revision'] + 1)
+            self.assertTrue(Path(str(self.path) + '.write-lease').exists())
+        finally:
+            if child.poll() is None:
+                child.kill()
+                child.wait(timeout=5)
+            child.stdout.close()
+            child.stderr.close()
+
+    def test_legacy_lock_is_never_deleted_based_on_age(self):
+        saved = self.save()
+        lock = Path(str(self.path) + '.lock')
+        lock.write_text('legacy owner must be reconciled')
+        import os
+        os.utime(lock, (0, 0))
+        with self.assertRaisesRegex(runtime.Blocked, 'LEGACY_LOCK_RECONCILE_REQUIRED'):
+            self.save({'persona': self.answer(True)}, saved['revision'])
+        self.assertEqual(lock.read_text(), 'legacy owner must be reconciled')
+        self.assertEqual(runtime.load(self.path), saved)
 
     def test_binding_receipt_never_claims_execution_or_output_pass(self):
         self.save()
