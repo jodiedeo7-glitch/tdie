@@ -1,6 +1,6 @@
 ## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). THESE OVERRIDE EVERYTHING BELOW AND IN ANY OTHER FILE.
 - Fonts: **Gloock** for headlines, **Yellowtail** for the pink script accent (the pink turn phrase), **Jost** for everything else. Newsreader and Inter are retired. Never use them.
-- Backgrounds are NEVER flat, plain or solid. Every section sits on a real, crisp glitter texture (blush glitter, pink glitter or bubblegum glitter). White cards and panels with a hot pink outline sit on top. Text that would sit on busy glitter goes on a white panel.
+- Backgrounds: NEVER flat or plain, and HARD STOP: NEVER a full glitter background (no glitter texture tiled behind a whole section). Use soft brand colour (blush #FFF7FA, pink #FFE4EF, lavender #EAE5F8) with a white glow and soft-edged sparkle accents in the corners (/images/brand/sparkle-glow.webp). Full glitter only on the drip and small accents (stickers, badges, thin strips).
 - Lavender (#EAE5F8) IS an allowed background colour.
 - Any older line below that says "flat backgrounds", "solid blush", "glitter only as accents", "no lavender", "Newsreader" or "Inter" is superseded.
 

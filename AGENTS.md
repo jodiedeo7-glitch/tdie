@@ -1,5 +1,5 @@
 ## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). Override every older line in this file.
-Fonts: Gloock headlines, Yellowtail pink script accent, Jost everything else. Newsreader and Inter are retired. Backgrounds are never flat: crisp glitter behind every section, white outlined panels on top. Lavender (#EAE5F8) is an allowed background colour. See ops/cloud-kit/TDIE_DESIGN_RULES.md.
+Fonts: Gloock headlines, Yellowtail pink script accent, Jost everything else. Newsreader and Inter are retired. Backgrounds: never flat, and HARD STOP never a full glitter background. Soft blush/pink/lavender with a white glow and soft sparkle accents in the corners; full glitter only on the drip and small accents. Lavender (#EAE5F8) is an allowed background colour. See ops/cloud-kit/TDIE_DESIGN_RULES.md.
 
 ## LOOK BEFORE YOU SEND (Jodie, 10 October 2026, standing rule, applies to every visual)
 Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG, graphic, screenshot, banner, guide, website change):

@@ -629,3 +629,16 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 .life>.life-close,.life.life-article-world>.life-close{max-width:1100px!important;margin:40px auto!important;background:#fff!important;border:2px solid #D62E73!important;border-radius:22px!important;padding:22px 26px!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
 @media(max-width:900px){.life>.life-close,.life.life-article-world>.life-close{margin:28px 12px!important}}
 .life>.life-close p,.life>.life-close aside{color:#1A1417!important}
+
+/* ===== NOT FLAT, NOT FULL GLITTER (Jodie, 10 Oct 2026, 8:40 pm) — replaces the full glitter backgrounds above ===== */
+.life,.life.life-article-world,.life>.life-close,.life.life-article-world>.life-close{background:#FFF7FA!important}
+.life>.life-close,.life.life-article-world>.life-close{background:#fff!important}
+.life-hero::after{display:none!important}
+.life-hero{background:url(/images/brand/sparkle-glow.webp) right -120px bottom -60px/640px 420px no-repeat,radial-gradient(620px 480px at 74% 45%,rgba(255,255,255,.95),rgba(255,255,255,0) 70%),#FFF7FA!important}
+.life-category-hero{background:url(/images/brand/sparkle-glow.webp) right -200px top -40px/640px 420px no-repeat,#FFF7FA!important}
+.life-band{background:url(/images/brand/sparkle-glow.webp) left -200px top -60px/640px 420px no-repeat,url(/images/brand/sparkle-glow.webp) right -220px bottom -80px/640px 420px no-repeat,#FFE4EF!important}
+.cs-band{background:url(/images/brand/sparkle-glow.webp) left -200px top -60px/640px 420px no-repeat,url(/images/brand/sparkle-glow.webp) right -200px bottom -60px/640px 420px no-repeat,#EAE5F8!important}
+.life-picks-band{background:url(/images/brand/sparkle-glow.webp) right -200px top -40px/640px 420px no-repeat,url(/images/brand/sparkle-glow.webp) left -220px bottom -80px/640px 420px no-repeat,#FFE4EF!important}
+.life #life-new,.life #browse{background:url(/images/brand/sparkle-glow.webp) left -260px top 40px/640px 420px no-repeat!important}
+.life-lookbook{background:url(/images/brand/sparkle-glow.webp) right -260px top 40px/640px 420px no-repeat!important}
+.life>.life-signup,.life.life-article-world>.life-signup{background:url(/images/brand/sparkle-glow.webp) left -200px top -60px/640px 420px no-repeat,url(/images/brand/sparkle-glow.webp) right -220px bottom -80px/640px 420px no-repeat,#EAE5F8!important}
