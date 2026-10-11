@@ -1,4 +1,5 @@
 import {jsonResponse,methodNotAllowed} from "../http.js";
+import {WYS_GUIDE_PATH} from "./wys-guide.js";
 // The While-You-Sleep Storefront™ waitlist. MailerLite group "WYS Waitlist".
 const WYS_WAITLIST_GROUP_ID="200719389134161712";
 export async function handle(request,env){
@@ -14,6 +15,6 @@ export async function handle(request,env){
  try{
   const r=await fetch("https://connect.mailerlite.com/api/subscribers",{method:"POST",headers:{Authorization:`Bearer ${env.MAILERLITE_API_KEY}`,"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email,groups:[WYS_WAITLIST_GROUP_ID]})});
   if(!r.ok)return jsonResponse({error:"Couldn't add you just now. Try again in a moment."},500);
-  return jsonResponse({ok:true});
+  return jsonResponse({ok:true,guide:WYS_GUIDE_PATH});
  }catch{return jsonResponse({error:"Couldn't add you just now. Try again in a moment."},500);}
 }

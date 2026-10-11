@@ -1,4 +1,5 @@
 ---
+const WYS_GUIDE='/api/wys-guide?k=VOk-I7sWghoIWzYBxc6wLgYw';
 import WysFrame from '../../components/WysFrame.astro';
 import WysNightFeed from '../../components/WysNightFeed.astro';
 import WysCta from '../../components/WysCta.astro';
@@ -20,7 +21,7 @@ const [ghost] = liveLooks;
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 6 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep.</p>
     <div class="wc-wait-form" id="join-top">
-     <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist" button="Join the waitlist" sub="Get the email the moment it opens, plus updates from The Digital Income Edit™. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the email when it opens."/>
+     <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
     </div>
     <p class="wc-wait-fine">Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026. Full launch Friday 16 October 2026.</p>
    </div>
@@ -68,8 +69,7 @@ const [ghost] = liveLooks;
    <p>Open them. These are the real pages on The Digital Income Edit™ Lifestyle blog, with the finds linked and the photos in order.</p>
   </div>
   <WysProof/>
-  <p class="wc-flow-note wc-look-link"><a href="/shop/while-you-sleep-storefront/look-inside">See every piece of both looks: the photos, the pins and the carousels →</a></p>
-  <p class="wc-flow-note wc-look-link wc-peek-link"><a href="/downloads/wys-sneak-peek-guide.pdf" target="_blank" rel="noopener">Get the free Sneak Peek Guide&nbsp;(PDF)&nbsp;→</a></p>
+  <p class="wc-flow-note wc-look-link"><a href="/shop/while-you-sleep-storefront/real-examples">See the real examples: every photo, pin and carousel it made for both looks →</a></p>
   <WysCta href="#join" note="Member presale opens Tuesday 13 October."/>
  </section>
 
@@ -128,7 +128,7 @@ const [ghost] = liveLooks;
    <p class="wc-kicker">The While-You-Sleep Storefront™</p>
    <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
    <div class="wc-wait-form" id="join">
-    <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist" button="Join the waitlist" sub="Get the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist. Watch your inbox for the email when it opens."/>
+    <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
    </div>
   </div>
  </div>
@@ -136,6 +136,5 @@ const [ghost] = liveLooks;
 <style is:global>
  .wys-world .wc-final-card .wc-wait-form .freebie-capture{border:0!important;box-shadow:none!important;padding:6px 0 0!important}
  .wys-world .wc-look-link{text-align:center;margin:28px auto 0}
- .wys-world .wc-peek-link{margin-top:12px}
  .wys-world .wc-look-link a{font:700 16px/1.4 Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 </style>

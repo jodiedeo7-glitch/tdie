@@ -10,7 +10,7 @@ import '../styles/wys-convert.css';
 import '../styles/wys-home.css';
 import { WYS_ROOT } from '../data/wys.js';
 const {title,description,current='overview',ogImage,noindex=false,focus=false}=Astro.props;
-const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Look Inside',href:WYS_ROOT+'/look-inside'},{key:'waitlist',name:'Waitlist',href:WYS_ROOT+'/waitlist'}];
+const links=[{key:'overview',name:'The Storefront',href:WYS_ROOT},{key:'inside',name:'Real Examples',href:WYS_ROOT+'/real-examples'},{key:'waitlist',name:'Waitlist',href:WYS_ROOT+'/waitlist'}];
 ---
 <PageLayout bare visualRefresh={false} homeChrome title={title} description={description} ogImage={ogImage} noindex={noindex}>
  <div class="wys-world">

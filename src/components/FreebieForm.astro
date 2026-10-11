@@ -20,6 +20,9 @@
 //              when `sub` already says unsubscribe). Pass privacy="" on a page
 //              that prints its own fine print, so nothing is said twice.
 //   emailLabel - optional accessible name for the field (visually hidden).
+//   doneLink / doneLinkLabel - optional link shown inside the confirmation
+//              after signup (e.g. the free WYS guide). Only appears once the
+//              signup has gone through.
 //
 // Accessibility: a real <label for> tied to a per-instance id, an inline error
 // announced through role="alert" and wired with aria-invalid/aria-describedby,
@@ -36,6 +39,8 @@ const {
   done = DEFAULT_DONE,
   privacy,
   emailLabel = "Email address",
+  doneLink,
+  doneLinkLabel = "Open it now",
 } = Astro.props;
 const ACTION = action;
 // Each instance posts into its own hidden iframe (never a new tab) and owns
@@ -77,7 +82,7 @@ const privacyLead = privacy === undefined ? (subSaysUnsubscribe ? "" : "No spam.
     )}
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
-    <p class="fc-done" role="status" tabindex="-1" hidden>{done}</p>
+    <p class="fc-done" role="status" tabindex="-1" hidden>{done}{doneLink && <> <a class="fc-done-link" href={doneLink} target="_blank" rel="noopener">{doneLinkLabel} <span aria-hidden="true">→</span></a></>}</p>
   </form>
 </div>
 
@@ -144,6 +149,7 @@ const privacyLead = privacy === undefined ? (subSaysUnsubscribe ? "" : "No spam.
   .fc-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
   .fc-done{font-family:Gloock,serif;font-size:22px;line-height:1.35;color:var(--pink);margin-top:6px}
   .fc-done:focus{outline:none}
+  .fc-done-link{display:inline-block;margin-top:10px;font-family:Jost,sans-serif;font-size:17px;font-weight:600;color:var(--pink);text-decoration:underline;text-underline-offset:4px}
   .fc-done:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
   .fc-row[hidden],.fc-sub[hidden],.fc-privacy[hidden]{display:none}
   .freebie-capture {

@@ -8,6 +8,7 @@ import { handle as sneakPeek } from "./api/sneak-peek.js";
 import { handle as verify } from "./api/verify.js";
 import { handle as waitlist } from "./api/waitlist.js";
 import { handle as wysWaitlist } from "./api/wys-waitlist.js";
+import { handle as wysGuide } from "./api/wys-guide.js";
 
 const API = {
   "/api/bami-waitlist": bamiWaitlist,
@@ -20,12 +21,15 @@ const API = {
   "/api/verify": verify,
   "/api/waitlist": waitlist,
   "/api/wys-waitlist": wysWaitlist,
+  "/api/wys-guide": wysGuide,
 };
 
 const PATH_REDIRECTS = new Map([
   ["/weekend-ecosystem/module-17-one-article-thirty-assets","/weekend-ecosystem/module-17-one-article-twenty-four-assets"],
   ["/resources/shopify-store-kit","/resources/shopify-starter-kit"],
   ["/go/8-claude-prompts-that-save-me-12-hours-a-week","/go/the-operating-prompts"],
+  ["/downloads/wys-sneak-peek-guide.pdf","/shop/while-you-sleep-storefront/waitlist"],
+  ["/shop/while-you-sleep-storefront/look-inside","/shop/while-you-sleep-storefront/real-examples"],
 ]);
 
 export default {
