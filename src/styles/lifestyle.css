@@ -607,3 +607,25 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 }
 .life .life-reading-sheet .life-gp figcaption>.life-gp-caption{color:#4a0b26!important}
 .life .life-gp-twinkle{display:none!important}
+
+/* ===== NEVER FLAT (Jodie, 10 Oct 2026, 7:53 pm) — replaces the flat backgrounds above =====
+   Base: crisp blush glitter. Statement bands: pink glitter or bubblegum glitter, holding white outlined panels. */
+.life,.life.life-article-world,.life>.life-close,.life.life-article-world>.life-close{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+.life-hero{background:radial-gradient(620px 480px at 74% 45%,rgba(255,255,255,.85),rgba(255,255,255,0) 70%),url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+.life-category-hero{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+.life-band{background:url(/images/brand/sh-bub.webp) 0 0/480px 480px!important}
+.life-picks-band{background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important}
+.life>.life-signup,.life.life-article-world>.life-signup{background:url(/images/brand/sh-bub.webp) 0 0/480px 480px!important}
+/* section headings that sit straight on glitter get a white label so they stay crisp */
+.life-shelf>.life-section-heading,.life #browse>.life-section-heading{background:#fff;border:2px solid #D62E73;border-radius:22px;padding:18px 22px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+/* pink script accent: the pink turn phrase in headlines is Yellowtail (10 Oct) */
+.life h1 span,.life h2 span,.life h1 em,.life h2 em,.cs-intro h2 span{font-family:Yellowtail,cursive!important;font-weight:400!important;font-size:1.12em;letter-spacing:0!important;color:#D62E73}
+/* lavender is a brand background colour: the shopping box goes back to lavender */
+.life .life-reading-sheet .life-shop{background:#EAE5F8!important}
+.life .life-shelf-note{display:none!important}
+.life>.life-close>*,.life.life-article-world>.life-close>*{background:#fff;border:2px solid #D62E73;border-radius:20px;padding:18px 22px!important;margin-bottom:12px!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+.life>.life-close .life-text-link{display:inline-flex}
+.life>.life-close>*,.life.life-article-world>.life-close>*{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;margin-bottom:10px!important}
+.life>.life-close,.life.life-article-world>.life-close{max-width:1100px!important;margin:40px auto!important;background:#fff!important;border:2px solid #D62E73!important;border-radius:22px!important;padding:22px 26px!important;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)!important}
+@media(max-width:900px){.life>.life-close,.life.life-article-world>.life-close{margin:28px 12px!important}}
+.life>.life-close p,.life>.life-close aside{color:#1A1417!important}

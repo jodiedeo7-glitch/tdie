@@ -383,3 +383,21 @@ footer{background:url(/images/brand/sh-bub.webp) 0 0/480px 480px!important}
 .mem::after{content:"";position:absolute;z-index:-1;pointer-events:none;left:-120px;top:-60px;width:560px;height:340px;background:url(/images/brand/gl-hot.webp) 0 0/220px;opacity:.6;-webkit-mask:radial-gradient(closest-side,#000,rgba(0,0,0,.5) 45%,transparent);mask:radial-gradient(closest-side,#000,rgba(0,0,0,.5) 45%,transparent)}
 footer{background:#FFE4EF!important}
 .group h3,.group p,.mem .head p{color:var(--ink)}
+
+/* ===== NEVER FLAT (Jodie, 10 Oct 2026, 7:53 pm: "BACKGROUNDS ARE NOT FLAT") =====
+   Every section sits on a real, crisp glitter texture. Light sections: blush glitter.
+   Statement sections: full pink glitter or bubblegum glitter. White cards with hot pink outlines on top. */
+body,.nav{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+.hero{background:radial-gradient(620px 480px at 75% 45%,rgba(255,255,255,.85) 0%,rgba(255,255,255,0) 70%),url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+.honest,.we,.fs,.bp{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important;border:0!important}
+.method,.lib{background:url(/images/brand/gl-tile.webp) 0 0/360px 360px!important}
+.mem,footer{background:url(/images/brand/sh-bub.webp) 0 0/480px 480px!important}
+.lib .head h2,.lib .head .kick{background:#fff;border-radius:14px;padding:4px 14px;display:inline-block}
+/* pink script accent: the pink turn phrase in headlines is Yellowtail (10 Oct) */
+h1 em,h2 em{font-family:Yellowtail,cursive!important;font-weight:400!important;font-size:1.12em;letter-spacing:0!important}
+/* text that sits on busy glitter gets a white outlined panel */
+.lib .head h2,.lib .head .kick{background:none!important;padding:0!important;border-radius:0!important}
+.lib .head{background:#fff;border:2px solid #D62E73;border-radius:22px;padding:22px 26px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+.group>div:last-child{background:#fff;border:2px solid #D62E73;border-radius:22px;padding:26px 28px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+footer .wrap{background:#fff;border:2px solid #D62E73;border-radius:26px;padding:34px 24px 28px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+@media (max-width:900px){footer .wrap{margin:0 12px;width:auto}.lib .head{padding:18px}}

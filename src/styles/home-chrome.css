@@ -60,3 +60,8 @@ html body footer.hc-foot .hc-fcols h4{font:800 12px/1 Jost,sans-serif!important;
 html body footer.hc-foot:not(#zq){background:#FFE4EF!important;background-image:none!important}
 html body footer.hc-foot:not(#zq)::before{background:url(/images/brand/gl-tile.webp) 0 0/300px!important}
 html body footer.hc-foot:not(#zq) .hc-fcopy{color:#1A1417!important}
+/* never flat (10 Oct, 7:53 pm): glitter header and footer, same as the home page */
+.hc-nav{background:url(/images/brand/sh-blush.webp) 0 0/480px 480px!important}
+html body footer.hc-foot:not(#zq){background:url(/images/brand/sh-bub.webp) 0 0/480px 480px!important;background-image:url(/images/brand/sh-bub.webp)!important}
+html body footer.hc-foot:not(#zq) .hc-wrap{background:#fff;border:2px solid #D62E73;border-radius:26px;padding:34px 24px 28px;box-shadow:0 24px 48px -30px rgba(184,36,95,.45)}
+@media (max-width:900px){html body footer.hc-foot:not(#zq) .hc-wrap{margin:0 12px}}

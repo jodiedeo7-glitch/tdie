@@ -1,3 +1,9 @@
+## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). THESE OVERRIDE EVERYTHING BELOW AND IN ANY OTHER FILE.
+- Fonts: **Gloock** for headlines, **Yellowtail** for the pink script accent (the pink turn phrase), **Jost** for everything else. Newsreader and Inter are retired. Never use them.
+- Backgrounds are NEVER flat, plain or solid. Every section sits on a real, crisp glitter texture (blush glitter, pink glitter or bubblegum glitter). White cards and panels with a hot pink outline sit on top. Text that would sit on busy glitter goes on a white panel.
+- Lavender (#EAE5F8) IS an allowed background colour.
+- Any older line below that says "flat backgrounds", "solid blush", "glitter only as accents", "no lavender", "Newsreader" or "Inter" is superseded.
+
 # TDIE Design Rules (standing)
 
 > **FONTS, 10 October 2026 (Jodie):** headlines Gloock, everything else Jost. This replaces every Newsreader and Inter line below. No script on website headlines. No white text box over WYS example pin photos.
