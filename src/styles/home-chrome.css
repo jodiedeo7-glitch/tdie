@@ -33,16 +33,16 @@
 .hc-fcopy{margin:18px 0 0;font-size:13px;color:var(--ink2)}.hc-fcopy a{color:inherit}
 @media (max-width:900px){
  .hc-wrap{padding:0 18px}
- .hc-nav .hc-wrap{grid-template-columns:auto 1fr;height:74px}
+ .hc-nav .hc-wrap{grid-template-columns:auto minmax(0,1fr);column-gap:12px;height:74px}
  .hc-lft,.hc-r ul{display:none!important}
  .hc-nav .hc-logo{justify-self:start;order:-1;align-items:flex-start}
  .hc-logo .l1{font-size:9.5px;letter-spacing:.3em}.hc-logo .l2{font-size:34px}.hc-logo .rule{display:none}.hc-logo .spark{width:12px;height:12px;right:-12px}
- .hc-r{gap:8px}.hc-btn{min-height:48px;padding:0 14px;font-size:11px;letter-spacing:.08em}
+ .hc-r{gap:6px}.hc-btn{min-height:48px;padding:0 12px;font-size:11px;letter-spacing:.06em}.hc-mnav summary{padding:0 13px}
  .hc-mnav{display:block}
  .hc-drip{height:64px;background-size:530px 64px}
  .hc-fcols{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.hc-fcols a{padding:9px 0}
 }
-@media (max-width:360px){.hc-logo .spark{display:none}.hc-logo .l2{font-size:30px}.hc-btn{padding:0 10px;font-size:10px}}
+@media (max-width:360px){.hc-logo .spark{display:none}.hc-logo .l2{font-size:28px}.hc-logo .l1{font-size:8.5px;letter-spacing:.16em}.hc-wrap{padding:0 12px}.hc-r{gap:6px}.hc-btn{padding:0 9px;font-size:10px;letter-spacing:.04em}.hc-mnav summary{padding:0 10px;letter-spacing:.06em}}
 /* guard against site-wide rules that reuse the same class names */
 .hc-logo .rule{margin:6px 0 0!important;padding:0!important;border:0!important;width:auto!important;height:auto!important;background:none!important}
 .hc-nav li{margin:0;padding:0}
