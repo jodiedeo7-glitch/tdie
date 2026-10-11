@@ -25,21 +25,28 @@ They break standing rules in `ops/cloud-kit/TDIE_DESIGN_RULES.md`:
 
 None of these four files exist in the repo; they were not made from this folder.
 
-## How this set follows the rules
+## How this set follows the rules (rebuilt 11 October 2026, second pass)
 
-- **Approved build (design rules §2):** cream base, Tommy Kate on the right in a different place in her world each time, cream scrim on the left holding the copy, frosted white cards with a thin gold line, one glossy hot pink hero card per graphic, round tilted stickers, hot pink pill CTA.
-- **THE LOOK (Decision 128):** Newsreader SemiBold upright headlines, Inter for everything else, no italics, no brown, no full pink wash, sparkle on the hero card and the foil callout only.
-- **Photos:** Nano Banana Pro at 2K on Higgsfield, avatar seed attached, "this exact woman" opening, no locked feature written. Every photo has her glitter-flecked candy pink tumbler with the lavender straw, visible and not covered by copy. No logos, no plushies (sales graphic), no text in the photos.
-- **Copy:** from `ops/cloud-output/SKOOL_ABOUT_CONVERSION_AUDIT.md`. Pinterest Foundations™ (live course), never The Pinterest Edit (draft). The Ads Edit™ has no price. The Value Vault is "guides à la carte" for Standard. $171 = $37 + $37 + $97. No price-increase line (it ended 30 September).
-- **Look-before-you-send:** every graphic was rendered and checked at full size; defects found and fixed are listed below.
+The first pass of this set was rejected by Jodie the same day: hot pink gradient cards, glass and glow effects, and photos that were not Tommy Kate enough (white modern kitchen and living room, a beam down the loft wall, a clean new porch, none of her named props). This pass fixes both.
 
-### Defects found and fixed before sending
+- **No gradients, no glass, no glow.** Follows the site's own system in `src/styles/edit.css` ("No glass, no glow, no gradients on buttons. Depth comes from scale, crop and contrast."): solid Signature Hot Pink cards and buttons, white paper cards with a Muted Gold hairline and a plain lift shadow, gold-hairline kickers. The only gradient left is the cream fade from the copy into the photo, which is the approved 25 September layout. No fake sparkle in the design; the one sparkle moment is in each photo.
+- **Type:** Newsreader SemiBold upright headlines, Inter for everything else, no italics, no brown.
+- **Photos copied from her world file** (`ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md` and the 4 Oct handoff rules), Nano Banana Pro 2K on Higgsfield, avatar seed attached, "this exact woman" opening, no locked feature written:
+  - **Hero, pink attic loft:** ivy-wrapped ceiling beams, plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, Hello Kitty and Kuromi plushies, the grey British Shorthair cat, lavender controller with the strawberry charm, candy-pink headphones, scrunchie, fuzzy socks.
+  - **Same effort, farmhouse kitchen:** blush cabinets, butcher-block island, copper pans with patina, the Player Two? mug, lilacs in a mason jar, gold claw clip, heart necklace, the retriever with his rope toy.
+  - **Roadmap, outside:** raised garden beds, split rail fencing, chicken coop with hens, wildflower field, sage barn coat, ribbed tank, vintage denim, worn brown farm boots, candy-pink gardening gloves, the retriever.
+  - **Member wins, living room:** candy-pink velvet pillow, a patchwork quilt someone uses, peonies, rhinestone claw clip (the sparkle), hot pink manicure, fuzzy socks, the retriever.
+  - **Tiers, porch:** chipped white paint, rocking chair with a patchwork quilt, potted herbs, lilacs, pasture and split rail fence, glitter pink cowboy boots (the sparkle), the retriever.
+  - Her glitter-flecked candy-pink tumbler with the lavender straw is in every photo and never hidden by copy. No logos, no text in any photo except Player Two? on the mug.
+- **Plushies note:** the world file requires the Hello Kitty and Kuromi plushies whenever the loft is in frame, and allows them as her home plushies; they are background props in the hero, not a product or a subject.
+- **Copy:** unchanged from the first pass (audit + Jodie's Roadmap copy word for word).
 
-- Headline running over her face (Same effort) → two-line headline.
-- Stickers over her body or over copy (Hero, Same effort, Member wins) → moved into clear space.
-- Words alone on a line ("alone", "to sell.", "AI / Twin") → wrapping fixed.
-- "Start here" tag in the headline font → Inter.
-- Photos rejected and re-generated: tumbler clear and pale (hero, kitchen); tumbler hidden under the copy (living room, porch twice, kitchen); brand logo on headphones (hero); logo on laptop (porch). Rejected files are in `rejected/` (not committed).
+### Defects found at full size and fixed before sending (second pass)
+
+- Photos rejected and regenerated: pale or see-through tumbler (loft, living room twice), Xbox logo on the controller, Apple logo on the laptop (porch twice), her leg and boots under the tier cards (porch).
+- Cream fade had hard vertical edges (gradient stops out of order) → fixed.
+- Words alone on a line ("a sale", "Audience / first", "Your / offer", third chip) → fixed.
+- Cards touching the Player Two? mug, her basket and gloves, the dog's head → photos repositioned or cards narrowed.
 
 ## Skool description (paste into the About text box)
 
