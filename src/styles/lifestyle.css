@@ -458,6 +458,7 @@ body:has(.life-article-world) .sf-col h2{font:600 14px/1.4 Jost,sans-serif!impor
 .life .life-card-count,.life .life-category-count{color:var(--hp-ink2)!important}
 .life .life-pearl{display:none}
 .life .life-category-name{font:600 19px/1.2 Gloock,Georgia,serif!important;color:#1A1417}
+@media(max-width:640px){.life .life-category-name{font-size:16px!important;overflow-wrap:normal;word-break:normal;hyphens:none}}
 .life .life-category-go{color:var(--hp-deep)!important;background:none!important;border:0!important;border-top:1px solid #F3D3E0!important;border-radius:0!important;font:700 11px/1.2 Jost,sans-serif!important;letter-spacing:.14em;text-transform:uppercase}
 .life .life-categories a[aria-current]{box-shadow:0 0 0 3px var(--hp-pink),0 24px 40px -30px rgba(110,10,50,.45)!important}
 /* section edges */
