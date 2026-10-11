@@ -59,24 +59,26 @@ body{text-wrap:pretty;font-family:Inter,sans-serif;color:var(--ink);-webkit-font
 .kicker{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:#B8245F}
 .kicker:before{content:"";width:34px;height:1.5px;background:var(--gold)}
 h1{font-family:Newsreader,serif;font-weight:600;font-style:normal;color:var(--ink);letter-spacing:-2px;line-height:.98}
-h1 .t{color:var(--pink)}
+h1 .t,.gl{color:var(--pink);background-image:linear-gradient(rgba(236,64,140,.62),rgba(236,64,140,.62)),url(${photo("tex-glitter.jpg")});background-blend-mode:multiply;background-size:auto,620px auto;background-position:0 0,30% 40%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6)) drop-shadow(0 6px 10px rgba(214,46,115,.18))}
+.gl2{background-image:linear-gradient(rgba(236,64,140,.6),rgba(236,64,140,.6)),url(${photo("tex-glitter.jpg")});background-blend-mode:multiply;background-size:auto,420px auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--pink)}
 .sub{font-weight:600;color:var(--ink)}
 .sub .t{color:var(--pink)}
-.glass{background:#fff;border:1px solid rgba(200,169,106,.7);border-radius:18px;box-shadow:0 30px 60px -34px rgba(26,20,23,.35)}
-.hero{position:relative;border-radius:18px;color:var(--ink);background:#fff;border:1.5px solid rgba(200,169,106,.9);box-shadow:0 30px 60px -34px rgba(26,20,23,.35)}
+.glass{background:#fff;border:1px solid rgba(200,169,106,.75);border-radius:18px;box-shadow:0 28px 56px -30px rgba(214,46,115,.42),0 6px 16px -10px rgba(214,46,115,.2)}
+.hero{position:relative;border-radius:18px;color:var(--ink);background:#fff;border:2.5px solid var(--pink);box-shadow:0 34px 64px -30px rgba(214,46,115,.55),0 8px 18px -10px rgba(214,46,115,.3)}
 .foil{background:#fff;}
 .sticker{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  background:#fff;color:var(--pink);border:1px solid rgba(200,169,106,.7);box-shadow:0 18px 34px -20px rgba(26,20,23,.45)}
-.sticker:after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed rgba(214,46,115,.6)}
+  background:url(${photo("tex-foil.jpg")}) center/cover;color:var(--pink);border:1.5px solid rgba(255,255,255,.9);box-shadow:0 22px 40px -16px rgba(214,46,115,.5),inset 0 0 0 1px rgba(200,169,106,.6)}
+.sticker:after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed rgba(214,46,115,.75)}
+.sticker .big,.sticker .sm{position:relative;z-index:1;text-shadow:0 1px 0 rgba(255,255,255,.7)}
 .sticker .big{font-family:Inter;font-weight:800;line-height:1}
 .sticker .sm{font-weight:800;letter-spacing:2px;text-transform:uppercase}
-.cta{display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 34px;border-radius:12px;color:var(--ink);font-weight:700;font-size:18px;letter-spacing:2.6px;text-transform:uppercase;
-  background:#fff;border:1.5px solid var(--ink);box-shadow:0 22px 40px -28px rgba(26,20,23,.45)}
+.cta{display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 34px;border-radius:14px;color:var(--ink);font-weight:800;font-size:18px;letter-spacing:2.6px;text-transform:uppercase;
+  background:linear-gradient(#fff,#fff) padding-box,url(${photo("tex-foil.jpg")}) center/cover border-box;border:4px solid transparent;box-shadow:0 22px 40px -22px rgba(214,46,115,.55)}
 .cta span{color:var(--pink)}
 .ctaline{font-weight:700;font-size:21px;color:var(--ink)}
 .ctaline .t{color:var(--pink)}
 .tag{display:inline-block;font-weight:800;font-size:12.5px;letter-spacing:2.6px;text-transform:uppercase;padding:6px 13px;border-radius:999px;background:transparent!important;color:#B8245F!important;border:1px solid rgba(214,46,115,.55)}
-.num{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;background:#fff!important;color:var(--pink)!important;border:1.5px solid var(--pink)!important}
+.num{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;background:#fff!important;color:var(--pink)!important;border:2px solid var(--pink)!important;box-shadow:0 8px 16px -8px rgba(214,46,115,.45)}
 `;
 
 const page = (body, photoFile, pos, scrim) => `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>
@@ -146,7 +148,7 @@ G["03-roadmap"] = page(`
       <div style="font-weight:600;font-size:${i === 3 ? 16.5 : 18}px;line-height:1.42;margin-top:9px">${p.split(" · ").join("&nbsp;· ").replace(" / ", "&nbsp;/&nbsp;").replace("AI Twin", "AI&nbsp;Twin")}</div></div></div>`).join("")}
   </div>
   <div class="hero" style="display:flex;width:808px;margin-top:20px;padding:18px 10px">
-    ${[["20+", "courses"], ["31", "days of content monthly"], ["7", "days free"]].map(([n, l], i) => `<div style="flex:1;text-align:center;${i ? "border-left:1.5px dashed rgba(200,169,106,.9)" : ""}"><div style="font-family:Newsreader;font-weight:600;font-size:50px;line-height:1;color:var(--pink)">${n}</div><div style="font-weight:800;font-size:13.5px;letter-spacing:1.8px;text-transform:uppercase;margin-top:6px">${l}</div></div>`).join("")}
+    ${[["20+", "courses"], ["31", "days of content monthly"], ["7", "days free"]].map(([n, l], i) => `<div style="flex:1;text-align:center;${i ? "border-left:1.5px dashed rgba(200,169,106,.9)" : ""}"><div style="font-family:Newsreader;font-weight:600;font-size:54px;line-height:1" class="gl2">${n}</div><div style="font-weight:800;font-size:13.5px;letter-spacing:1.8px;text-transform:uppercase;margin-top:6px">${l}</div></div>`).join("")}
   </div>
   <div style="display:flex;align-items:center;gap:28px;margin-top:24px"><span class="cta" style="height:60px;font-size:17px">Start your 7 days free <span>→</span></span><span class="ctaline">Start at step 1. <span class="t">We go in order.</span></span></div>
 `, "03-roadmap.jpg", "60px 50%;background-size:105% auto", SCRIM(48, 58));
@@ -162,7 +164,7 @@ G["04-member-wins"] = page(`
   <h1 style="font-size:84px;margin-top:22px">Real members.<br><span class="t">Real wins.</span></h1>
   <p class="sub" style="font-size:24px;margin-top:16px">Straight from the community feed, <span class="t">word for word.</span></p>
   <div style="display:flex;flex-direction:column;gap:12px;width:660px;margin-top:22px">
-    ${quotes.map(([i, n, q, h]) => `<div class="${h ? "hero" : "glass"}" style="display:flex;gap:16px;padding:16px 22px;align-items:flex-start">
+    ${quotes.map(([i, n, q, h]) => `<div class="${h ? "hero" : "glass"}" style="display:flex;gap:16px;padding:16px 22px;align-items:flex-start">${h ? `<span class="gl2" style="position:absolute;right:20px;top:-14px;font-family:Newsreader;font-weight:600;font-size:120px;line-height:1">”</span>` : ""}
       <span class="num" style="width:46px;height:46px;font-size:16px;${h ? "background:#fff;color:var(--pink)" : "border:2px solid var(--pink)"}">${i}</span>
       <div><div style="font-weight:800;font-size:17px">${n} <span style="font-size:11.5px;letter-spacing:2.4px;margin-left:6px;color:#B8245F">MEMBER</span></div>
       <div style="font-weight:600;font-size:${h ? 21 : 18.5}px;line-height:1.36;margin-top:3px">${q}</div></div></div>`).join("")}
@@ -185,17 +187,17 @@ G["05-tiers"] = page(`
     <div class="glass" style="width:372px;padding:22px 26px 20px">
       <span class="tag" style="">Start building</span>
       <div style="font-weight:800;font-size:14px;letter-spacing:3px;color:var(--pink);margin-top:14px">MEMBERSHIP STANDARD</div>
-      <div style="display:flex;align-items:baseline;gap:8px;margin-top:2px"><span style="font-weight:800;font-size:60px;letter-spacing:-2px;line-height:1">$9</span><span style="font-weight:700;font-size:20px">/month</span><span style="font-weight:700;font-size:17px;margin-left:8px">or $99/year</span></div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-top:2px"><span class="gl2" style="font-weight:800;font-size:62px;letter-spacing:-2px;line-height:1.05">$9</span><span style="font-weight:700;font-size:20px">/month</span><span style="font-weight:700;font-size:17px;margin-left:8px">or $99/year</span></div>
       <div style="margin-top:10px">${std.map((t) => `<div style="display:flex;align-items:center;gap:11px;font-weight:600;font-size:17.5px;padding:6px 0">${check()}${t}</div>`).join("")}</div>
       <div style="display:flex;align-items:center;gap:11px;font-weight:700;font-size:16.5px;padding:7px 0 0;color:var(--pink)"><svg width="24" height="24" viewBox="0 0 24 24" style="flex:none"><circle cx="12" cy="12" r="11" fill="none" stroke="#D62E73" stroke-width="2"/><path d="M12 7v10M7 12h10" stroke="#D62E73" stroke-width="2.4" stroke-linecap="round"/></svg>The Value Vault, guides à la carte</div>
     </div>
     <div class="hero" style="width:420px;padding:22px 26px 20px">
       <span class="tag" style="background:#fff;color:var(--pink)">Everything + done for you</span>
       <div style="font-weight:800;font-size:14px;letter-spacing:3px;margin-top:14px">MEMBERSHIP PREMIUM</div>
-      <div style="display:flex;align-items:baseline;gap:8px;margin-top:2px"><span style="font-weight:800;font-size:60px;letter-spacing:-2px;line-height:1">$35</span><span style="font-weight:700;font-size:20px">/month</span><span style="font-weight:700;font-size:17px;margin-left:8px">or $297/year</span></div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-top:2px"><span class="gl2" style="font-weight:800;font-size:62px;letter-spacing:-2px;line-height:1.05">$35</span><span style="font-weight:700;font-size:20px">/month</span><span style="font-weight:700;font-size:17px;margin-left:8px">or $297/year</span></div>
       <div style="display:inline-block;font-weight:800;font-size:15.5px;padding:5px 12px;border:1.5px dashed rgba(200,169,106,.9);border-radius:10px;margin:10px 0 2px">Everything in Standard, plus:</div>
       ${prem.map(([t, p]) => `<div style="display:flex;align-items:center;gap:11px;font-weight:700;font-size:16.5px;padding:4px 0">${checkW}<span style="flex:1">${t}</span>${p ? `<span style="flex:none;background:#fff;color:#B8245F;font-weight:800;font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid rgba(214,46,115,.55)">${p}</span>` : ""}</div>`).join("")}
-      <div style="display:flex;align-items:center;gap:12px;margin-top:10px;padding:9px 14px;border-radius:12px;background:#fff;color:var(--pink);border:1px solid rgba(200,169,106,.8)"><span style="font-weight:800;font-size:30px;letter-spacing:-1px">$171</span><span style="font-weight:800;font-size:14.5px;line-height:1.25;color:var(--ink)">in modules sold separately,<br>included in Premium</span></div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:10px;padding:9px 14px;border-radius:12px;background:#fff;color:var(--pink);border:1px solid rgba(200,169,106,.8)"><span class="gl2" style="font-weight:800;font-size:32px;letter-spacing:-1px">$171</span><span style="font-weight:800;font-size:14.5px;line-height:1.25;color:var(--ink)">in modules sold separately,<br>included in Premium</span></div>
     </div>
   </div>
   <div style="display:flex;align-items:center;gap:26px;margin-top:22px"><span class="cta" style="height:58px;font-size:16.5px">Start your 7 days free <span>→</span></span><span class="ctaline">Pick either one. <span class="t">Both start free.</span></span></div>
