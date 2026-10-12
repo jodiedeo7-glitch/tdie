@@ -508,3 +508,15 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 @media (max-width:1180px){.hero-v10 .hx-tag{top:auto!important;bottom:26px!important;right:-34px!important}}
 @media (max-width:1180px){.hero-v10 .hx-pol{padding-bottom:70px!important}.hero-v10 .hx-cap{font-size:14px!important}}
 @media (max-width:1180px){.hero-v10 .hx-tag{top:-26px!important;bottom:auto!important;right:-44px!important}}
+.hero-v10 .hx-tag{white-space:nowrap}
+/* Storefront product polaroid in hero: landscape photo, landscape frame (12 Oct 2026) */
+.hero-v10 .hx-pol{width:clamp(300px,24vw,420px)!important;left:calc(59% - 200px)!important;bottom:170px!important;padding-bottom:54px!important;transform:rotate(-4deg)!important}
+.hero-v10 .hx-pol img{height:auto!important}
+.hero-v10 .hx-tape{left:50%!important;margin-left:-56px}
+.hero-v10 .hx-tag{top:-30px!important;bottom:auto!important;right:-30px!important;transform:rotate(9deg)!important}
+.hero-v10 .hx-cap{font-size:19px!important}
+.hero-v10>.wrap{padding-right:clamp(230px,16vw,320px)!important}
+@media (max-width:1180px){.hero-v10>.wrap{padding-right:40px!important}.hero-v10 .hx-pol{left:calc(59% + 10px)!important;width:260px!important;bottom:170px!important}.hero-v10 .hx-tag{right:-20px!important}.hero-v10 .hx-cap{font-size:15px!important}}
+@media (max-width:900px){.hero-v10>.wrap{padding:0 20px!important}.hero-v10 .hx-pol{left:18px!important;width:250px!important;bottom:auto!important;padding-bottom:42px!important}.hero-v10 .hx-cap{font-size:13px!important}.hero-v10 .hx-tag{top:-24px!important;right:-50px!important}}
+.hero-v10 .hx-tag{right:auto!important;left:-34px!important;top:-34px!important;transform:rotate(-9deg)!important}@media (max-width:900px){.hero-v10 .hx-tag{left:auto!important;right:-14px!important;top:auto!important;bottom:6px!important;transform:rotate(7deg)!important}}
+@media (max-width:900px){.hero-v10 .hx-tag{right:auto!important;bottom:auto!important;left:-10px!important;top:-26px!important;transform:rotate(-8deg)!important}}

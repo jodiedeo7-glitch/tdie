@@ -1,5 +1,6 @@
 ---
 import WysAnnounce from "../components/WysAnnounce.astro";
+import {WYS_CTA} from "../data/wys-live.js";
 import "../styles/home.css";
 import "../styles/review-bubble.css";
 // Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
@@ -132,7 +133,7 @@ const jsonLd = {
     <p class="lede">Pick one thing to sell, build the website that sells it, and let emails bring buyers back. AI writes, builds and schedules. Your face never has to show up.</p>
     <div class="ctas"><a class="btn" href="#blueprint">Get the free Blueprint</a><a class="link" href={WE.url}>See the {WE.price} course</a></div>
   </div></div>
-  <a class="hx-pol" href="#blueprint"><i class="hx-tape"></i><img src="/images/brand/blueprint-cover.webp" alt="The Faceless Income Blueprint" width="900" height="1165"><span class="hx-cap">The Faceless Income Blueprint™</span><span class="hx-tag"><b>Free</b>Get it today</span></a>
+  <a class="hx-pol" href={WYS_CTA.href} data-wys-cta><i class="hx-tape"></i><img src="/images/brand/wys-storefront-promo.webp" alt="The While-You-Sleep Storefront: your Amazon storefront posts itself while you sleep" width="1122" height="522"><span class="hx-cap">The While-You-Sleep Storefront™</span><span class="hx-tag"><b>New</b><span data-wys-cta-label>{WYS_CTA.label}</span></span></a>
   <div class="hx-tick" aria-label="No camera, no code, step by step"><div class="hx-row">{[0,1,2].map(() => <><span>No camera</span><i></i><span>No code</span><i></i><span>Step by step</span><i></i><span>Built in one weekend</span><i></i><span>AI does the repeat work</span><i></i></>)}</div></div>
 </section>
 <div class="hx-wys"><div class="wrap"><WysAnnounce/></div></div>
