@@ -461,3 +461,32 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 .hx-gborder{position:absolute;left:0;right:0;top:100%;height:10px;background:#c9ccd2 url(/images/brand/silver-glitter-tile.webp) center/600px auto;box-shadow:0 4px 10px rgba(90,0,40,.12);pointer-events:none}
 .hero.hero-v10{padding-top:96px!important}
 @media (max-width:900px){.hero.hero-v10{padding-top:40px!important}.hero-v10 .hx-photo{margin-top:30px}}
+/* hero v10b: match the approved mockup exactly, no empty space (Jodie, 12 Oct 2026) */
+.hero.hero-v10{height:780px;padding:86px 0 0!important}
+.hero-v10 .copy{max-width:640px!important}
+.hero-v10 h1{max-width:640px!important;font-size:80px!important;line-height:.98!important;letter-spacing:-.015em;margin:22px 0 0!important}
+.hero-v10 h1 .stress{font-size:92px!important;display:inline-block;line-height:1}
+.hero-v10 .kick{display:inline-block;padding:8px 18px;border:1.5px solid #D62E73;border-radius:999px;background:#fff;font:600 16px/1.2 Jost,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#D62E73}
+.hero-v10 .lede{font-size:22px!important;line-height:1.5;max-width:520px;margin:22px 0 30px!important}
+.hero-v10 .ctas .btn{padding:18px 30px;border-radius:14px;font:600 18px/1 Jost,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#D62E73;background:#fff;border:1.5px solid #D62E73}
+.hero-v10 .ctas .btn::before{display:none!important;content:none!important}
+.hero-v10 .ctas .link{font:600 18px/1 Jost,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#1A1417;border-bottom:2px solid #D62E73;padding-bottom:3px}
+.hero-v10 .hx-pol{left:calc(59% - 150px)!important;top:330px!important;bottom:auto!important;width:250px!important}
+.hero-v10 .hx-cap{font-size:18px}
+.hero-v10 .hx-tick{bottom:30px}
+.hx-wys{background:#FFF0F6;padding:44px 0 10px}
+.hx-wys .wys-ann{max-width:900px;margin:0 auto}
+@media (max-width:900px){
+ .hero.hero-v10{height:auto;padding:40px 0 0!important}
+ .hero-v10 h1{font-size:36px!important}.hero-v10 h1 .stress{font-size:42px!important}
+ .hero-v10 .lede{font-size:17px!important}
+ .hero-v10 .hx-pol{left:18px!important;top:auto!important;width:150px!important}
+ .hero-v10 .hx-cap{font-size:11px}
+ .hx-wys{padding:30px 0 0}
+}
+.hero-v10 h1 em{display:inline!important;font-style:normal}
+.hero-v10 h1{text-wrap:wrap!important}
+.hx-wys .wys-ann{max-width:none!important;margin:0!important}
+.hx-wys .wys-ann-card{flex-wrap:nowrap;padding:18px 24px}
+.hx-wys .wys-ann-copy{flex:1 1 auto}
+@media (max-width:900px){.hx-wys .wys-ann-card{flex-wrap:wrap}.hero-v10 .kick{font-size:13px!important;padding:7px 14px}}
