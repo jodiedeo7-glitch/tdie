@@ -10,7 +10,8 @@ import inter400 from "../assets/fonts/jost-latin-400-normal.woff2?url";
 import { NAV, NAV_CTA, FOOTER, SOCIAL } from "../data/site.js";
 import BlueprintForm from "../components/BlueprintForm.astro";
 // Tina's words come from the single verbatim source, unedited.
-import { FEATURED } from "../we-reviews.js";
+import { FEATURED, MEMBER_REVIEWS } from "../we-reviews.js";
+import ReviewBubble from "../components/ReviewBubble.astro";
 import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -185,7 +186,9 @@ const jsonLd = {
     <div class="tier prem"><div class="sticker"><i class="in"></i><span>Most help</span></div><span class="nm">{M.premium.short}</span><h3>{M.premium.name}</h3><p class="price">{M.premium.monthly}<small>/month</small></p><p class="yr">or {M.premium.perYear}</p>
       <ul><li>Everything in Standard</li><li>A month of Instagram and Threads posts, written for you</li><li>Every Value Vault guide, already unlocked</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Premium free</span><span class="sm">Start free</span></a></div>
   </div>
+  <div class="rv-row">{MEMBER_REVIEWS.filter((r) => r.about !== "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
   <div class="group"><img src="/images/brand/skool-group.webp" alt="The Digital Income Edit group on Skool" width="975" height="674" loading="lazy"><div><span class="kick">Inside the members' group</span><h3>This is the real group.</h3><p>It lives on Skool, a private members' app. Lessons, weekly threads and the women building beside you.</p><a class="btn" href="/membership">See the membership</a></div></div>
+  {MEMBER_REVIEWS.filter((r) => r.about === "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} center />)}
 </div><div class="drip3"></div></section>
 
 <section class="bp" id="blueprint"><div class="wrap grid">

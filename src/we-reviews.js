@@ -36,3 +36,38 @@ export const REVIEWS = [
 ];
 
 export const FEATURED = REVIEWS[0];
+
+// Member reviews and community wall posts (pulled from the Skool group 12 Oct 2026).
+// Verbatim, typos and all. `about` says which product the words are about, so each
+// bubble sits beside that product.
+export const MEMBER_REVIEWS = [
+  {
+    id: "brittany-miller-skool",
+    name: "Brittany Miller",
+    stars: 5,
+    about: "membership",
+    source: "Skool review",
+    quote: "Amazing guidance, content is super easy to follow, super supportive group! This is the best plan to follow BY FAR!",
+  },
+  {
+    id: "cristal-vancarson-brand-bible",
+    name: "Cristal Vancarson",
+    about: "membership",
+    source: "on the Brand Bible lesson",
+    quote: "Today I completed my Brand Bible lesson, and wow... this exercise gave me so much clarity.",
+  },
+  {
+    id: "suriya-taylor-prompts",
+    name: "Suriya Taylor",
+    about: "daily-prompts",
+    source: "on the daily prompts",
+    quote: "Why do I love these so much?? Thank you for the prompts, Jodie.",
+  },
+  {
+    id: "dee-free-tier",
+    name: "Dee MamaswithMissions",
+    about: "free",
+    source: "free member",
+    quote: "For a free community, there's a surprising amount of value here. ❤️",
+  },
+];

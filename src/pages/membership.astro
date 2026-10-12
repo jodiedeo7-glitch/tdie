@@ -3,6 +3,8 @@ import PageLayout from "../layouts/PageLayout.astro";
 import "../styles/edit.css";
 import WysAnnounce from "../components/WysAnnounce.astro";
 import { SKOOL_PLANS, membership, community } from "../data/facts.js";
+import { MEMBER_REVIEWS } from "../we-reviews.js";
+import ReviewBubble from "../components/ReviewBubble.astro";
 
 // Every price, trial length and count on this page reads from facts.js.
 const { standard: S, premium: P, trialDays } = membership;
@@ -148,6 +150,10 @@ const schema = [{
         <p class="mb-pull">It is much harder to quit in front of people who are still going.</p>
       </div>
     </div>
+  </section>
+
+  <section class="e-sec mb-reviews" aria-label="What members say">
+    <div class="e-wrap"><div class="rv-row">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div></div>
   </section>
 
   <!-- 2. Which one is for me -->

@@ -490,3 +490,21 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 .hx-wys .wys-ann-card{flex-wrap:nowrap;padding:18px 24px}
 .hx-wys .wys-ann-copy{flex:1 1 auto}
 @media (max-width:900px){.hx-wys .wys-ann-card{flex-wrap:wrap}.hero-v10 .kick{font-size:13px!important;padding:7px 14px}}
+/* hero v10c: copy fills the left side at every screen width, no empty space (12 Oct 2026) */
+.hero.hero-v10{height:auto!important;min-height:clamp(660px,calc(100vh - 84px),860px);padding:56px 0 150px!important;display:flex;align-items:center}
+.hero-v10>.wrap{width:59%!important;max-width:none!important;margin:0!important;padding:0 clamp(28px,4vw,90px) 0 clamp(28px,5vw,110px)!important;display:flex;justify-content:flex-end}
+.hero-v10 .copy{width:100%;max-width:clamp(520px,38vw,800px)!important}
+.hero-v10 h1{max-width:none!important;font-size:clamp(58px,4.7vw,100px)!important}
+.hero-v10 h1 .stress{font-size:1.15em!important}
+.hero-v10 .lede{max-width:34em!important;font-size:clamp(18px,1.3vw,24px)!important}
+.hero-v10 .hx-pol{top:auto!important;bottom:150px!important;left:calc(59% - 110px)!important;width:clamp(190px,15vw,280px)!important}
+.hx-wys{padding:26px 0 6px!important}
+@media (max-width:1180px){.hero-v10 .hx-pol{left:calc(59% - 40px)!important;width:180px!important;bottom:160px!important}.hero-v10 .hx-tag{right:-40px}}
+@media (max-width:900px){.hero.hero-v10{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding:40px 0 0!important}.hero-v10>.wrap{width:auto!important;padding:0 20px!important;display:block}.hero-v10 .copy{max-width:none!important}.hero-v10 h1{font-size:36px!important}.hero-v10 .lede{font-size:17px!important}.hero-v10 .hx-pol{left:18px!important;width:150px!important;bottom:auto!important}}
+.hero-v10>.wrap{padding-right:clamp(130px,9.5vw,200px)!important}
+.hero-v10 .hx-pol{left:calc(59% - 95px)!important}
+@media (max-width:1180px){.hero-v10>.wrap{padding-right:60px!important}.hero-v10 .hx-pol{left:calc(59% + 24px)!important;width:170px!important;bottom:150px!important}.hero-v10 .hx-tag{right:-30px!important;bottom:auto!important;top:24px!important}}
+@media (max-width:900px){.hero-v10>.wrap{padding:0 20px!important}.hero-v10 .hx-pol{left:18px!important;width:150px!important}}
+@media (max-width:1180px){.hero-v10 .hx-tag{top:auto!important;bottom:26px!important;right:-34px!important}}
+@media (max-width:1180px){.hero-v10 .hx-pol{padding-bottom:70px!important}.hero-v10 .hx-cap{font-size:14px!important}}
+@media (max-width:1180px){.hero-v10 .hx-tag{top:-26px!important;bottom:auto!important;right:-44px!important}}
