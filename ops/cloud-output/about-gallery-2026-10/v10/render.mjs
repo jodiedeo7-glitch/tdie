@@ -76,7 +76,7 @@ const G = {};
 G["01-hero"] = page({ photo: P("01-hero.jpg"), pos: "68% center", body: (px) => `
   <div class="copy" style="left:84px;top:0;bottom:110px;width:${px - 150}px">
     <span class="kick">For women building without a personal brand</span>
-    <h1 style="margin-top:30px;font-size:96px"><span class="stress">Faceless</span> income,<br>built with <span class="p">AI.</span></h1>
+    <h1 style="margin-top:30px;font-size:96px"><span class="p">Faceless</span> income,<br>built with <span class="p">AI.</span></h1>
     <p class="lede" style="margin-top:28px;width:640px;font-size:25px">Build the <b>whole business</b> before anyone knows your name. Offer first, audience last.</p>
     <div style="display:flex;gap:10px;margin-top:26px">${["No filming", "No audience first", "No performing"].map(t => `<span class="chip">${chk}${t}</span>`).join("")}</div>
     <div style="display:flex;align-items:center;gap:30px;margin-top:34px"><span class="btn">Start your 7 days free <span>→</span></span><span class="link">Free look inside</span></div>
@@ -90,7 +90,7 @@ G["01-hero"] = page({ photo: P("01-hero.jpg"), pos: "68% center", body: (px) => 
 G["02-same-effort"] = page({ photo: P("02-same-effort.jpg"), pos: "78% center", body: (px) => `
   <div class="copy" style="left:84px;top:0;bottom:0;width:${px - 130}px">
     <span class="kick">Why this works</span>
-    <h1 style="margin-top:26px">Same effort.<br><span class="p">Opposite</span> <span class="stress">order.</span></h1>
+    <h1 style="margin-top:26px">Same effort.<br><span class="p">Opposite</span> <span class="p">order.</span></h1>
     <p class="lede" style="margin-top:18px;width:640px">Most people post for months, then try to make an offer. <b style="white-space:nowrap">We build it backwards.</b></p>
     <div style="display:flex;align-items:center;margin-top:30px">
       <div class="card" style="width:318px;padding:24px 24px 22px">
@@ -121,7 +121,7 @@ const nb = (t) => t.split(" · ").map(x => x.length > 40 ? x : `<span style="whi
 G["03-roadmap"] = page({ photo: P("03-roadmap.jpg"), pos: "64% center", panel: 38, body: (px) => `
   <div class="copy" style="left:84px;top:0;bottom:100px;width:${px - 120}px">
     <span class="kick">Your roadmap</span>
-    <h1 style="margin-top:22px">Four steps. <span class="p">One</span> <span class="stress">build.</span></h1>
+    <h1 style="margin-top:22px">Four steps. <span class="p">One</span> <span class="p">build.</span></h1>
     <div style="display:grid;grid-template-columns:418px 418px;gap:16px;margin-top:26px">
       ${steps.map(([h, p], i) => `<div class="card${i === 0 ? " feat" : ""}" style="padding:18px 20px;display:flex;gap:14px;align-items:flex-start;min-height:${i < 2 ? 136 : 168}px">
         <span class="num">${i + 1}</span>
@@ -142,7 +142,7 @@ const quotes = [
 G["04-member-wins"] = page({ photo: P("04-member-wins.jpg"), pos: "72% center", body: (px) => `
   <div class="copy" style="left:84px;top:0;bottom:0;width:${px - 130}px">
     <span class="kick">Inside the community</span>
-    <h1 style="margin-top:22px">Real members.<br><span class="p">Real</span> <span class="stress">wins.</span></h1>
+    <h1 style="margin-top:22px">Real members.<br><span class="p">Real</span> <span class="p">wins.</span></h1>
     <p class="lede" style="margin-top:12px;font-size:21px">Straight from the community feed, <b>word for word.</b></p>
     <div style="display:flex;flex-direction:column;gap:12px;width:720px;margin-top:22px">
       ${quotes.map(([i, n, q, f]) => `<div class="card${f ? " feat" : ""}" style="position:relative;display:flex;gap:16px;padding:16px 22px;align-items:flex-start">
@@ -165,7 +165,7 @@ const price = (n, y) => `<div style="display:flex;align-items:baseline;gap:8px;m
 G["05-tiers"] = page({ photo: P("05-tiers.jpg"), pos: "100% 30%", panel: 38, body: (px) => `
   <div class="copy" style="left:84px;top:0;bottom:0;width:${px - 110}px">
     <span class="kick">Choose your membership</span>
-    <h1 style="margin-top:20px;font-size:68px">Two ways in. Both <span class="stress">free</span><br><span class="p">for 7 days.</span></h1>
+    <h1 style="margin-top:20px;font-size:68px">Two ways in. Both <span class="p">free</span><br><span class="p">for 7 days.</span></h1>
     <div style="display:flex;gap:18px;margin-top:24px;align-items:stretch">
       <div class="card" style="width:380px;padding:20px 24px">
         <div class="small">Start building</div>
