@@ -549,3 +549,12 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 @media (max-width:1180px){.hero-v10{--pw:210px}.hero-v10 .copy{max-width:none!important}.hero-v10 .hx-pol{top:auto!important;bottom:22px!important;left:calc(59% - 190px)!important;z-index:7!important}.hero-v10 .ctas{flex-direction:column;align-items:flex-start;gap:14px}.hero-v10 .hx-tag{left:auto!important;right:-30px!important;top:-40px!important;bottom:auto!important}}@media (max-width:900px){.hero-v10 .hx-pol{left:18px!important;bottom:auto!important;z-index:4!important}.hero-v10 .ctas{flex-direction:row}.hero-v10 .hx-tag{right:-6px!important;top:-44px!important}}
 @media (max-width:1180px) and (min-width:901px){.hero-v10 .hx-pol{bottom:120px!important}.hero-v10 .hx-tag{right:auto!important;left:-70px!important;top:auto!important;bottom:-36px!important}}
 @media (max-width:1180px) and (min-width:901px){.hero-v10 .hx-tag{bottom:auto!important;top:-46px!important;left:-60px!important}}
+/* bigger promo filling the pink gap (Jodie, 12 Oct 2026) */
+@media (min-width:1181px){
+.hero-v10{--pw:clamp(300px,24vw,480px)}
+.hero-v10 .hx-pol{left:calc(59vw - var(--pw) - 28px)!important;top:290px!important}
+.hero-v10 .lede{max-width:calc(59vw - var(--pw) - 70px - clamp(28px,5vw,110px))!important}
+.hero-v10 .hx-cap{font-size:clamp(17px,1.15vw,22px)!important}
+.hero-v10 .hx-tag{left:auto!important;right:6px!important;bottom:-60px!important;top:auto!important;transform:rotate(5deg)!important}
+}
+@media (min-width:1181px) and (max-width:1500px){.hero-v10 .ctas{flex-direction:column;align-items:flex-start;gap:14px}}
