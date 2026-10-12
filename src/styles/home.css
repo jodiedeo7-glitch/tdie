@@ -420,3 +420,39 @@ footer{background:url(/images/brand/sparkle-glow.webp) right -220px top -80px/56
 /* Yellowtail script ONLY on the one stressed word (class="stress"), never on every pink word (Jodie, 10 Oct, 8:46 pm) */
 h1 em,h2 em{font-family:inherit!important;font-size:1em!important}
 h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal!important;font-weight:400!important;font-size:1.15em;letter-spacing:0!important;color:#D62E73}
+
+/* ===== HOMEPAGE HERO v10 (Jodie approved and said ship it, 11 Oct 2026, 11:36 pm) =====
+   Layered background: blush + real photo panel edged in silver glitter + loose silver glitter
+   scattered off the photo seam (kept off the words). Header, headline size and copy unchanged. */
+.hero.hero-v10{position:relative;overflow:hidden;isolation:isolate;padding:140px 0 150px!important;background:#FFF0F6!important}
+.hero-v10 .hx-photo{position:absolute;right:0;top:0;bottom:0;width:41%;z-index:0;background:url(/images/brand/hero-tk-car.webp) 30% 35%/cover no-repeat}
+.hero-v10 .hx-photo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:#c9ccd2 url(/images/brand/silver-glitter-tile.webp) center/420px auto;box-shadow:4px 0 10px rgba(0,0,0,.15)}
+.hero-v10 .hx-sparkle{position:absolute;right:38%;top:0;height:100%;width:auto;z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 80%,#000 93%);mask-image:linear-gradient(90deg,transparent 0,transparent 80%,#000 93%)}
+.hero-v10 .wrap{position:relative;z-index:3}
+.hero-v10 .copy{max-width:540px;padding:0!important}
+.hero-v10 h1{max-width:540px}
+.hero-v10 .lede{font-size:19px}
+.hero-v10 .hx-pol{position:absolute;z-index:4;left:calc(59% - 95px);bottom:150px;width:220px;background:#fff;padding:11px 11px 58px;border-radius:3px;transform:rotate(-6deg);color:#1A1417;text-decoration:none;box-shadow:0 2px 4px rgba(90,0,40,.08),0 14px 24px -14px rgba(90,0,40,.35),0 40px 70px -34px rgba(90,0,40,.55)}
+.hero-v10 .hx-pol img{display:block;width:100%;height:auto}
+.hero-v10 .hx-cap{position:absolute;left:13px;right:13px;bottom:12px;font:400 17px/1.1 Gloock,Georgia,serif}
+.hero-v10 .hx-tape{position:absolute;top:-12px;left:58px;width:112px;height:26px;transform:rotate(-4deg);background:#c9ccd2 url(/images/brand/silver-glitter-tile.webp) center/340px auto;box-shadow:0 2px 5px rgba(90,0,40,.2)}
+.hero-v10 .hx-tag{position:absolute;right:-60px;bottom:30px;transform:rotate(13deg);background:#fff;border:1.5px solid #D62E73;border-radius:14px;padding:9px 16px 11px;text-align:center;font:700 11px/1 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 14px 24px -14px rgba(90,0,40,.45)}
+.hero-v10 .hx-tag b{display:block;font:400 32px/1 Gloock,Georgia,serif;color:#D62E73;letter-spacing:0;text-transform:none;margin-bottom:5px}
+.hero-v10 .hx-tick{position:absolute;z-index:5;left:-40px;right:-40px;bottom:40px;background:#fff;border-top:1.5px solid #D62E73;border-bottom:1.5px solid #D62E73;padding:13px 0;white-space:nowrap;overflow:hidden;transform:rotate(-1.5deg);box-shadow:0 14px 24px -14px rgba(90,0,40,.35)}
+.hero-v10 .hx-row{display:inline-flex;align-items:center;gap:28px;font:400 26px/1 Gloock,Georgia,serif;color:#D62E73}
+.hero-v10 .hx-row i{flex:none;display:inline-block;width:17px;height:17px;border-radius:50%;background:#c9ccd2 url(/images/brand/silver-glitter-tile.webp) center/180px auto;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.hero-v10::after{display:none!important}
+@media (max-width:900px){
+ .hero.hero-v10{padding:80px 0 0!important;display:flex;flex-direction:column}
+ .hero-v10>.wrap{order:1}.hero-v10 .hx-photo{order:2}.hero-v10 .hx-pol{order:3}.hero-v10 .hx-tick{order:4}
+ .hero-v10 .copy{max-width:none}
+ .hero-v10 .hx-photo{position:relative;display:block;width:auto;height:440px;margin-top:34px}
+ .hero-v10 .hx-photo::before{left:0;right:0;top:0;bottom:auto;width:auto;height:12px;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+ .hero-v10 .hx-sparkle{display:none}
+ .hero-v10 .hx-pol{left:18px;bottom:auto;top:auto;width:150px;padding:8px 8px 40px;margin-top:-200px;position:relative;display:block}
+ .hero-v10 .hx-cap{font-size:11px;left:9px;right:9px;bottom:9px}
+ .hero-v10 .hx-tape{width:80px;height:20px;left:35px}
+ .hero-v10 .hx-tag{right:-58px;bottom:auto;top:30px;padding:7px 11px 8px;font-size:9px}.hero-v10 .hx-tag b{font-size:22px}
+ .hero-v10 .hx-tick{position:relative;bottom:auto;margin:26px -40px 0;transform:rotate(-1.5deg)}
+ .hero-v10 .hx-row{font-size:20px;gap:20px}
+}
