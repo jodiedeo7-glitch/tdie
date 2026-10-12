@@ -30,7 +30,7 @@ export const WYS_CTA = {href: WYS_ROOT + '/waitlist', label: 'Join the waitlist'
 // Preview any stage by adding ?wysphase=wait, ?wysphase=presale or ?wysphase=launch to a page.
 export const WYS_PRESALE_AT = '2026-10-13T12:00:00-04:00';
 export const WYS_LAUNCH_AT = '2026-10-16T12:00:00-04:00';
-export const WYS_CHECKOUT = '';
+export const WYS_CHECKOUT = 'https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7';
 
 // The link row under the intro on every storefront page (Jodie, 11 October 2026):
 // waitlist, a free look inside the system (the Real Results page) and see it live (the
