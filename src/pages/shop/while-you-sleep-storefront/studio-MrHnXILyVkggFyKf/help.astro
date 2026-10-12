@@ -1,0 +1,33 @@
+---
+import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
+import {WYS_BUYER_ROOT} from '../../../../data/wys-buyer.js';
+const faq = [
+ ['Nothing ran last night', 'The run happens on your computer. Check three things: the computer was on and awake, the Claude desktop app was open, and the task is still switched on. Then ask Claude: "Run my While-You-Sleep nightly run now." Turn off sleep mode in your computer\'s power settings so it stays awake overnight.'],
+ ['It says Amazon is signed out', 'Open the browser inside the Claude desktop app, go to amazon.com and sign in again. Claude never types your password, so it stops and tells you instead. Then ask Claude to run the nightly run now.'],
+ ['A photo looks wrong', 'Tell Claude exactly what you don\'t like, in your own words: "The styled photos are too empty" or "never put the outfit on a bed". Ask it to write that under My Corrections in your While-You-Sleep Log. Every night reads My Corrections first, so you only say it once.'],
+ ['Her face doesn\'t look like her', 'Use one clear, well-lit reference photo where her face is easy to see, with nobody else in it. Change the link on Set It Up, copy the new nightly run and ask Claude to replace the task\'s prompt with it.'],
+ ['It stopped making photos', 'You reached your monthly credit limit, or Higgsfield is out of credits. Add credits or raise your limit on Set It Up and update the task. It stops on purpose instead of switching to a different model.'],
+ ['A pin or carousel isn\'t in Metricool', 'If approvals are on, look in Metricool\'s posts waiting for review, not the calendar. If it\'s really missing, check the log for that night: it records every post and any step it skipped and why.'],
+ ['The Idea List didn\'t update', 'Amazon sometimes holds new Idea Lists in review before they show publicly. Check your storefront\'s Idea Lists while signed in. If it\'s missing, ask Claude: "Check tonight\'s Idea List and add any pieces that aren\'t on it."'],
+ ['The blog post didn\'t publish', 'Check the GitHub connector is still connected in Claude, then ask Claude: "Publish tonight\'s blog post and check it live." It needs the blog post format it found during setup, so if you changed your site, ask it to look again.'],
+ ['I want to pause it', 'Ask Claude: "Pause my While-You-Sleep nightly run task." Ask it to turn it back on when you\'re ready. Nothing already scheduled in Metricool is touched.'],
+ ['I want to change my answers', 'Change them on Set It Up, copy Your nightly run, and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this." Paste it underneath.'],
+ ['I want approvals off now', 'Switch Approvals to Off on Set It Up and update the task the same way. Anything already waiting for review in Metricool still needs your OK.'],
+ ['It uses too much of my Claude usage', 'Switch to one look a night on Set It Up and update the task. That halves the work.']
+];
+---
+<WysBuyerFrame title="If Something Breaks" current="help">
+ <header class="wb2-hero">
+  <div class="wys-wrap">
+   <p class="wb2-kicker">If something breaks</p>
+   <h1>Fix it in one message</h1>
+   <p>Almost everything is fixed by telling Claude what you want in plain words. Here's what to say.</p>
+  </div>
+ </header>
+ <section class="wb2-sec" style="padding-top:8px">
+  <div class="wys-wrap wb2-faq">
+   {faq.map(([q, a]) => <details><summary>{q}</summary><div>{a}</div></details>)}
+   <p class="wb2-note">Still stuck? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a> with what Claude said in its last report. <a href={WYS_BUYER_ROOT + '/set-it-up'}>Back to Set It Up</a>.</p>
+  </div>
+ </section>
+</WysBuyerFrame>

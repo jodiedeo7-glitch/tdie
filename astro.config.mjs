@@ -20,7 +20,8 @@ export default defineConfig({
   // condition covers the index, the modules and the waitlist, and leaves
   // /shop/weekend-ecosystem alone.
   integrations: [sitemap({
-    filter: (page) => !new URL(page).pathname.startsWith('/weekend-ecosystem'),
+    // The While-You-Sleep Storefront™ buyer website is private (studio-<key>): never in the sitemap.
+    filter: (page) => {const p = new URL(page).pathname; return !p.startsWith('/weekend-ecosystem') && !p.includes('/while-you-sleep-storefront/studio-');},
   })],
   redirects: {
     '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault',

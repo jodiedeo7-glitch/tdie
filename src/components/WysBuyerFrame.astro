@@ -1,0 +1,17 @@
+---
+// Frame for the private buyer website of The While-You-Sleep Storefront™.
+import WysFrame from './WysFrame.astro';
+import {BUYER_PAGES} from '../data/wys-buyer.js';
+import '../styles/wys-buyer.css';
+const {title, current = 'start'} = Astro.props;
+---
+<WysFrame focus noindex title={`${title} · The While-You-Sleep Storefront™`} description="Your While-You-Sleep Storefront™: setup, nightly run and help.">
+ <div class="wb2-bar">
+  <div class="wys-wrap wb2-bar-in">
+   <p class="wb2-name">The <span>While-You-Sleep</span> Storefront™</p>
+   <nav aria-label="Your Storefront">{BUYER_PAGES.map((p, i) => <a href={p.href} aria-current={current === p.key ? 'page' : undefined}><b>{i + 1}</b>{p.name}</a>)}</nav>
+  </div>
+ </div>
+ <slot />
+ <div class="wys-wrap wb2-foot"><p>Questions? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a>. This page is just for buyers, so please don't share the link.</p></div>
+</WysFrame>

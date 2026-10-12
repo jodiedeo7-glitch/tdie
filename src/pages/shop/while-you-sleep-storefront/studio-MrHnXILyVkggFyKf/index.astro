@@ -1,0 +1,77 @@
+---
+import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
+import {WYS_BUYER_ROOT, AFF, UPDATES} from '../../../../data/wys-buyer.js';
+---
+<WysBuyerFrame title="Start Here" current="start">
+ <header class="wb2-hero">
+  <div class="wys-wrap">
+   <p class="wb2-kicker">You're in · Start here</p>
+   <h1>The While-You-Sleep Storefront™</h1>
+   <p>Set it up once. Every night after that it plans the looks, sources them on Amazon, makes the photos, writes the posts and schedules everything. You sleep.</p>
+  </div>
+ </header>
+
+ <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>What it makes every night</h2>
+   <p>This is my own storefront's nightly output on the default settings. You can run one look a night instead to halve the credits.</p>
+   <div class="wb2-night">
+    <div><strong>2</strong><span>complete looks, sourced and listed</span></div>
+    <div><strong>6</strong><span>Pinterest pins, scheduled</span></div>
+    <div><strong>2</strong><span>blog posts on your site</span></div>
+    <div><strong>2</strong><span>Instagram carousels</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="wb2-sec" style="background:#fff">
+  <div class="wys-wrap">
+   <h2>Three steps, then hands off</h2>
+   <div class="wb2-grid">
+    <div class="wb2-card"><span class="wb2-n">1</span><h3>Answer the questions</h3><p>On the Set It Up page. Quick Start is about 15 minutes. Making it fully yours is about an hour. Your answers build your own setup and nightly prompts, ready to copy.</p></div>
+    <div class="wb2-card"><span class="wb2-n">2</span><h3>Paste one prompt</h3><p>Paste your setup prompt into a new Claude chat. It checks every connection, then makes your first look with you watching so you can correct it.</p></div>
+    <div class="wb2-card"><span class="wb2-n">3</span><h3>It turns itself on</h3><p>When you say it's right, it creates the nightly scheduled task. From then on it runs at the time you picked, every night.</p></div>
+   </div>
+   <p class="wb2-note"><b>My advice:</b> keep approvals on for your first few days. Every pin and carousel waits in Metricool for your OK. Turn approvals off once you trust it.</p>
+   <p style="margin-top:18px"><a class="wb2-btn" href={WYS_BUYER_ROOT + '/set-it-up'}>Go to Set It Up <span class="arr" aria-hidden="true">→</span></a></p>
+  </div>
+ </section>
+
+ <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>What you need</h2>
+   <p>Get these ready before you paste anything. Prices are each company's own and can change, so check them on their sites.</p>
+   <div class="wb2-grid">
+    <div class="wb2-card must"><span class="wb2-tag">Runs it</span><h3>Claude</h3><p>A paid Claude plan with scheduled tasks, and the Claude desktop app on your computer. The nightly run happens on your computer, so it stays on and the app stays open overnight.</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">Shops it</span><h3>Amazon</h3><p>Amazon Influencer (your storefront and Idea Lists) or Amazon Associates. Sign in to Amazon once in the browser inside the Claude desktop app and stay signed in.</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">Schedules it</span><h3>Metricool</h3><p>A Metricool account with your Pinterest business account connected (and Instagram, if you want carousels). Add the Metricool connector in Claude.</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">Makes the photos</span><h3>Higgsfield</h3><p>A Higgsfield plan with credits, and the Higgsfield connector in Claude. Each look uses about 3 credits on the default models. <a href={AFF.higgsfield} target="_blank" rel="sponsored noopener">Get Higgsfield here</a> (my affiliate link).</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">Remembers it</span><h3>Google Drive</h3><p>Free. Add the Google Drive connector in Claude. Your log lives here, so it never repeats a look and always remembers your corrections.</p></div>
+    <div class="wb2-card"><span class="wb2-tag">Optional</span><h3>Your own site</h3><p>For the blog half: a website that lives on GitHub, plus the GitHub connector in Claude. No site like that? <a href={AFF.weekendEcosystem}>The Weekend Ecosystem™</a> builds one.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="wb2-sec" style="background:#fff">
+  <div class="wys-wrap">
+   <h2>Every option is yours</h2>
+   <p>The main path is fully automatic. Every one of these is a switch on the Set It Up page.</p>
+   <div class="wb2-grid">
+    <div class="wb2-card"><h3>Approvals</h3><p>On: every pin and carousel waits in Metricool for your OK. Off: fully automatic.</p></div>
+    <div class="wb2-card"><h3>One look a night</h3><p>Half the credits and half the Claude usage. Three pins a night instead of six.</p></div>
+    <div class="wb2-card"><h3>No face</h3><p>No persona? Lifestyle photos show hands and the products in use.</p></div>
+    <div class="wb2-card"><h3>Blog on or off</h3><p>Off by default. Turn it on if your site lives on GitHub.</p></div>
+    <div class="wb2-card"><h3>Instagram on or off</h3><p>One carousel per look at the time you pick, in the photo order you pick.</p></div>
+    <div class="wb2-card"><h3>Credit limit</h3><p>Set a monthly cap. When it's reached, it stops making photos and tells you. It never switches models behind your back.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>What's new</h2>
+   <p>This site gets updated as things change, and new affiliate platforms are on the way. Check back here.</p>
+   <ul class="wb2-updates">{UPDATES.map((u) => <li><b>{u.date}</b>{u.text}</li>)}</ul>
+  </div>
+ </section>
+</WysBuyerFrame>

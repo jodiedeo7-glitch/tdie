@@ -1,0 +1,133 @@
+---
+import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
+import {WYS_BUYER_ROOT} from '../../../../data/wys-buyer.js';
+import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
+---
+<WysBuyerFrame title="Set It Up" current="setup">
+ <header class="wb2-hero">
+  <div class="wys-wrap">
+   <p class="wb2-kicker">Step 1 of 3 · Set it up</p>
+   <h1>Your answers write your prompts</h1>
+   <p>Fill in Quick Start and you can paste tonight. Open the other sections to make it fully yours. Your prompts update as you type, and this page remembers your answers on this device.</p>
+  </div>
+ </header>
+
+ <section class="wb2-sec" style="padding-top:8px">
+  <div class="wys-wrap">
+   <div class="wb2-card" style="margin-bottom:22px">
+    <h3>Before you paste</h3>
+    <ol class="wb2-steps">
+     <li>Open the Claude desktop app on the computer that will stay on overnight.</li>
+     <li>Add these connectors in Claude (search each one by name in Claude's connectors): <b>Higgsfield</b>, <b>Metricool</b>, <b>Google Drive</b>, and <b>GitHub</b> if the blog is on.</li>
+     <li>Open the browser inside the Claude desktop app, go to amazon.com and sign in. Stay signed in.</li>
+     <li>In Metricool, connect your Pinterest business account (and Instagram, if it's on).</li>
+     <li>Start a new chat in Claude, paste <b>Your setup prompt</b> from this page and send it. Stay with it for the first look.</li>
+    </ol>
+   </div>
+
+   <div class="wb2-build">
+    <form class="wb2-form" id="wb2-form" autocomplete="off" onsubmit="return false">
+     {SECTIONS.map((s) => (
+      <details open={s.open}>
+       <summary>{s.title}</summary>
+       <p class="wb2-sec-note">{s.note}</p>
+       {s.fields.map((f) => (
+        <div class="wb2-field" data-show={f.show}>
+         {f.type === 'radio' || f.type === 'checks' ? (
+          <fieldset>
+           <legend>{f.label}</legend>
+           {f.type === 'radio'
+            ? f.options.map(([val, lab]) => <label class="wb2-opt"><input type="radio" name={f.id} value={val} checked={f.def === val}/>{lab}</label>)
+            : f.options.map((lab) => <label class="wb2-opt"><input type="checkbox" name={f.id} value={lab} checked={f.def.includes(lab)}/>{lab}</label>)}
+          </fieldset>
+         ) : (
+          <>
+           <label for={'f-' + f.id}>{f.label}</label>
+           {f.type === 'select' ? (
+            <select id={'f-' + f.id} name={f.id}>{f.options.map(([val, lab]) => <option value={val} selected={f.def === val}>{lab}</option>)}</select>
+           ) : f.type === 'textarea' ? (
+            <textarea id={'f-' + f.id} name={f.id}>{f.def}</textarea>
+           ) : (
+            <input type="text" id={'f-' + f.id} name={f.id} value={f.def ?? ''} placeholder={f.ph ?? ''}/>
+           )}
+          </>
+         )}
+         {f.help && <p class="wb2-help">{f.help}</p>}
+        </div>
+       ))}
+      </details>
+     ))}
+     <p class="wb2-small">Changed your mind later? Change your answers here, copy the new nightly run, and tell Claude: "Replace my While-You-Sleep nightly run task's prompt with this." Small fixes don't need this page: just tell Claude what to change and it writes it into your log.</p>
+    </form>
+
+    <div class="wb2-out">
+     <div class="wb2-missing" id="wb2-missing" role="status"></div>
+     <div class="wb2-box">
+      <div class="wb2-box-head"><h3>Your setup prompt</h3><button type="button" class="wb2-btn wb2-copy" data-copy="setup">Copy <span class="arr" aria-hidden="true">→</span></button></div>
+      <pre id="out-setup"></pre>
+     </div>
+     <div class="wb2-box">
+      <div class="wb2-box-head"><h3>Your nightly run</h3><button type="button" class="wb2-btn wb2-copy" data-copy="nightly">Copy <span class="arr" aria-hidden="true">→</span></button></div>
+      <pre id="out-nightly"></pre>
+     </div>
+     <p class="wb2-small">The setup prompt already contains your nightly run, so you only paste the setup prompt. The nightly run is here for when you change your answers later.</p>
+     <p><a class="wb2-btn" href={WYS_BUYER_ROOT + '/help'}>Stuck? If Something Breaks <span class="arr" aria-hidden="true">→</span></a></p>
+    </div>
+   </div>
+  </div>
+ </section>
+</WysBuyerFrame>
+
+<script>
+ import {SECTIONS, defaults, setup, nightly, missing} from '../../../../scripts/wys-buyer-prompts.js';
+ const KEY = 'wys-buyer-answers-v1';
+ const form = document.getElementById('wb2-form');
+ const outs = {setup: document.getElementById('out-setup'), nightly: document.getElementById('out-nightly')};
+ const miss = document.getElementById('wb2-missing');
+ const fields = SECTIONS.flatMap((s) => s.fields);
+ let texts = {setup: '', nightly: ''};
+
+ function load() {
+  let saved = null;
+  try {saved = JSON.parse(localStorage.getItem(KEY) || 'null');} catch (e) {}
+  if (!saved) return;
+  for (const f of fields) {
+   if (!(f.id in saved)) continue;
+   const val = saved[f.id];
+   if (f.type === 'radio' || f.type === 'checks') {
+    form.querySelectorAll(`[name="${f.id}"]`).forEach((el) => {el.checked = f.type === 'radio' ? el.value === val : (val || []).includes(el.value);});
+   } else {const el = form.elements[f.id]; if (el) el.value = val;}
+  }
+ }
+ function read() {
+  const a = defaults();
+  for (const f of fields) {
+   if (f.type === 'checks') a[f.id] = [...form.querySelectorAll(`[name="${f.id}"]:checked`)].map((el) => el.value);
+   else if (f.type === 'radio') {const el = form.querySelector(`[name="${f.id}"]:checked`); a[f.id] = el ? el.value : f.def;}
+   else a[f.id] = form.elements[f.id].value;
+  }
+  return a;
+ }
+ function update() {
+  const a = read();
+  form.querySelectorAll('[data-show]').forEach((el) => {const [k, v] = el.dataset.show.split('='); el.hidden = a[k] !== v;});
+  try {localStorage.setItem(KEY, JSON.stringify(a));} catch (e) {}
+  texts = {setup: setup(a), nightly: nightly(a)};
+  outs.setup.textContent = texts.setup;
+  outs.nightly.textContent = texts.nightly;
+  const m = missing(a);
+  miss.hidden = !m.length;
+  miss.textContent = m.length ? `Still needed in Quick Start: ${m.join(', ')}.` : '';
+ }
+ document.querySelectorAll('.wb2-copy').forEach((b) => b.addEventListener('click', async () => {
+  const t = texts[b.dataset.copy];
+  try {await navigator.clipboard.writeText(t);} catch (e) {
+   const r = document.createRange(); r.selectNodeContents(outs[b.dataset.copy]); const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy');
+  }
+  const old = b.innerHTML; b.textContent = 'Copied'; setTimeout(() => {b.innerHTML = old;}, 1600);
+ }));
+ form.addEventListener('input', update);
+ form.addEventListener('change', update);
+ load();
+ update();
+</script>
