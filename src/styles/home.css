@@ -537,3 +537,15 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 /* headline wording/wrap stays as approved; copy column ends before the promo spot (12 Oct 2026) */
 .hero-v10 .copy{max-width:calc(59vw - var(--pw) - clamp(28px,5vw,110px) - 20px)!important}
 @media (max-width:1180px){.hero-v10 .copy{max-width:none!important}}
+/* Promo in Jodie's circled middle spot: inside the empty pink gap beside the headline,
+   not touching the words, not crossing onto the photo; sticker hangs below over pink (12 Oct 2026) */
+.hero-v10{--pw:clamp(220px,16vw,340px)}
+.hero-v10 .hx-pol{width:var(--pw)!important;left:calc(59vw - var(--pw) - 36px)!important;top:260px!important;bottom:auto!important}
+.hero-v10 .copy{max-width:none!important}
+.hero-v10 .lede{max-width:calc(43vw - 76px - clamp(28px,5vw,110px))!important}
+.hero-v10 .hx-tag{right:auto!important;left:-26px!important;top:auto!important;bottom:-62px!important;transform:rotate(-6deg)!important}
+@media (max-width:1180px){.hero-v10 .lede{max-width:none!important}.hero-v10 .copy{max-width:calc(59vw - 250px)!important}.hero-v10 .hx-pol{top:auto!important;bottom:150px!important}}
+@media (max-width:900px){.hero-v10 .copy{max-width:none!important}.hero-v10 .hx-pol{left:18px!important;bottom:auto!important}.hero-v10 .hx-tag{left:auto!important;right:-6px!important;bottom:auto!important;top:-44px!important}}
+@media (max-width:1180px){.hero-v10{--pw:210px}.hero-v10 .copy{max-width:none!important}.hero-v10 .hx-pol{top:auto!important;bottom:22px!important;left:calc(59% - 190px)!important;z-index:7!important}.hero-v10 .ctas{flex-direction:column;align-items:flex-start;gap:14px}.hero-v10 .hx-tag{left:auto!important;right:-30px!important;top:-40px!important;bottom:auto!important}}@media (max-width:900px){.hero-v10 .hx-pol{left:18px!important;bottom:auto!important;z-index:4!important}.hero-v10 .ctas{flex-direction:row}.hero-v10 .hx-tag{right:-6px!important;top:-44px!important}}
+@media (max-width:1180px) and (min-width:901px){.hero-v10 .hx-pol{bottom:120px!important}.hero-v10 .hx-tag{right:auto!important;left:-70px!important;top:auto!important;bottom:-36px!important}}
+@media (max-width:1180px) and (min-width:901px){.hero-v10 .hx-tag{bottom:auto!important;top:-46px!important;left:-60px!important}}
