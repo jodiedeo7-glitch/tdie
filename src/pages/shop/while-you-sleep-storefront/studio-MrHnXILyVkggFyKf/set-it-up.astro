@@ -18,9 +18,9 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
     <h3>Before you paste</h3>
     <ol class="wb2-steps">
      <li>Open the Claude desktop app on the computer that will stay on overnight.</li>
-     <li>Add these connectors in Claude (search each one by name in Claude's connectors): <b>Higgsfield</b>, <b>Metricool</b>, <b>Google Drive</b>, and <b>GitHub</b> if the blog is on.</li>
+     <li>Add the connectors your answers need in Claude (search each one by name in Claude's connectors): <b>Google Drive</b> always; <b>Higgsfield</b> for automatic photos or a persona; <b>Metricool</b> for automatic pins or carousels; <b>GitHub</b> for automatic blog posts.</li>
      <li>Open the browser inside the Claude desktop app, go to amazon.com and sign in. Stay signed in.</li>
-     <li>In Metricool, connect your Pinterest business account (and Instagram, if it's on).</li>
+     <li>Using Metricool? Connect your Pinterest business account there (and Instagram, if it's on).</li>
      <li>Start a new chat in Claude, paste <b>Your setup prompt</b> from this page and send it. Stay with it for the first look.</li>
     </ol>
    </div>
@@ -79,7 +79,7 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
 </WysBuyerFrame>
 
 <script>
- import {SECTIONS, defaults, setup, nightly, missing} from '../../../../scripts/wys-buyer-prompts.js';
+ import {SECTIONS, defaults, setup, nightly, missing, shown} from '../../../../scripts/wys-buyer-prompts.js';
  const KEY = 'wys-buyer-answers-v1';
  const form = document.getElementById('wb2-form');
  const outs = {setup: document.getElementById('out-setup'), nightly: document.getElementById('out-nightly')};
@@ -110,7 +110,7 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
  }
  function update() {
   const a = read();
-  form.querySelectorAll('[data-show]').forEach((el) => {const [k, v] = el.dataset.show.split('='); el.hidden = a[k] !== v;});
+  form.querySelectorAll('[data-show]').forEach((el) => {el.hidden = !shown(el.dataset.show, a);});
   try {localStorage.setItem(KEY, JSON.stringify(a));} catch (e) {}
   texts = {setup: setup(a), nightly: nightly(a)};
   outs.setup.textContent = texts.setup;

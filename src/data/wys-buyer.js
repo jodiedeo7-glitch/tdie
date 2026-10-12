@@ -24,5 +24,5 @@ export const AFF = {
 
 // Dated change notes shown on Start Here. Newest first.
 export const UPDATES = [
- {date: '12 October 2026', text: 'The Storefront opens for members. Claude version: setup, nightly run, approvals mode and every option below.'}
+ {date: '12 October 2026', text: 'The Storefront opens for members: setup, the nightly run, approvals, a by-hand option for every step, and the affiliate promo kit.'}
 ];

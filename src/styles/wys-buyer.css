@@ -72,3 +72,10 @@
  .wb2-bar nav a{padding:0 10px;font-size:12px}
 }
 .wb2-note a,.wb2-card a,.wb2-small a{color:var(--wys-pink);text-decoration:underline;text-underline-offset:3px}
+.wb2-photos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:16px}
+.wb2-photos figure{margin:0;padding:6px 6px 0;border:1px solid #E9B4CF;border-radius:12px;background:#fff}
+.wb2-photos img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:8px}
+.wb2-photos figcaption{padding:6px 2px 8px;font-size:12px;line-height:1.4}
+.wb2-photos figcaption b{color:var(--wys-pink);font-weight:600}
+.wb2-box .wb2-small{color:#5b4a52}
+@media (max-width:900px){.wb2-photos{grid-template-columns:repeat(3,minmax(0,1fr))}}
