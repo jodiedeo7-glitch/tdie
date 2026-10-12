@@ -4,6 +4,7 @@ import Testimonial from "../../components/Testimonial.astro";
 import { membership as M } from "../../data/facts.js";
 import { Image } from "astro:assets";
 import WysAnnounce from "../../components/WysAnnounce.astro";
+import WysWhen from "../../components/WysWhen.astro";
 import wysStyled from "../../lifestyle/pink-ghost-coffee-bar-styled.jpg";
 
 // ─────────────────────────────────────────────────────────────
@@ -226,14 +227,14 @@ const stats = [
     <article class="fd-tile fd-tile-img">
       <Image src={wysStyled} alt="A pink Halloween coffee bar with ghosts, a BOO sign and paper bats, one of the looks the While-You-Sleep system built" widths={[320, 480]} sizes="240px" loading="lazy" />
       <div>
-        <span class="fd-door-k">New · standalone product · waitlist open</span>
+        <span class="fd-door-k"><WysWhen wait="New · standalone product · waitlist open" presale="New · standalone product · member presale open" launch="New · standalone product · open now"/></span>
         <h3>The While-You-Sleep Storefront™</h3>
-        <p class="fd-tp"><b>$27</b> launch weekend, then $37 · member presale opens Tuesday 13 October</p>
+        <p class="fd-tp"><WysWhen wait="<b>$27</b> launch weekend, then $37 · member presale opens Tuesday 13 October" presale="<b>$27</b> launch weekend from Friday 16 October, then $37 · member presale open now in Skool" launch="<b>$27</b> launch weekend, then $37 · open to everyone now" regular="<b>$37</b> · one payment"/></p>
         <p class="fd-tl">Your Amazon storefront posts itself, every night while you sleep.</p>
         <p class="fd-tn">Tommy Kate's system: it plans the look, builds the Amazon list, makes the pins and writes the blog post. Set it up once. The Pink Ghost Coffee Bar in this photo is one of the looks it built.</p>
         <dl class="fd-fit"><dt>Yes if</dt><dd>you have an Amazon storefront and no time to keep feeding it.</dd><dt>Skip if</dt><dd>you're not an Amazon Associate or Influencer yet.</dd></dl>
         <div class="fd-row fd-row-left">
-          <a class="btn" href={WYS + "/waitlist"}>Join the waitlist <span class="a">→</span></a>
+          <a class="btn" href={WYS + "/waitlist"} data-wys-cta><span data-wys-cta-label>Join the waitlist</span> <span class="a">→</span></a>
           <a class="fd-link" href={WYS}>See how it works →</a>
         </div>
       </div>
@@ -304,6 +305,16 @@ const stats = [
            alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: ". Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true },
            later: "Once the group exists, The Weekend Ecosystem™ gives it a front door on Google." }
     };
+    // The While-You-Sleep Storefront™ wording follows the launch stage set by WysClock (src/data/wys-live.js).
+    (function(){
+      var ph = document.documentElement.getAttribute("data-wys-phase"), A = DOORS.A;
+      if (ph === "presale") A.price = "Member presale open now in Skool · launch weekend $27 from Friday 16 October, then $37";
+      if (ph === "launch" || ph === "regular") {
+        A.price = ph === "launch" ? "Open now · launch weekend $27, then $37" : "$37 one-time";
+        A.moves[0] = "Get it today and do the 15-minute Quick Start tonight, so your first looks post while you sleep";
+        A.cta = "Get the Storefront"; A.href = "/shop/while-you-sleep-storefront";
+      }
+    })();
     // Vault is never paired with a membership door (comparison-frame rule).
     var NO_PAIR = { V: ["S","P"], S: ["V"], P: ["V"] };
 

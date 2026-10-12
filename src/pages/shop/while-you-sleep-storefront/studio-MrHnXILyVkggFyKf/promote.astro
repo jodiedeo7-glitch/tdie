@@ -1,6 +1,8 @@
 ---
 import {Image, getImage} from 'astro:assets';
 import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
+import WysClock from '../../../../components/WysClock.astro';
+import WysWhen from '../../../../components/WysWhen.astro';
 import {liveLooks, roles} from '../../../../data/wys-live.js';
 
 const L = '[YOUR AFFILIATE LINK]';
@@ -62,29 +64,40 @@ Get it here: ${L}
 (That's my affiliate link. I earn a commission if you buy through it, at no extra cost to you.)`}
 ];
 
+// After launch weekend (WYS_REGULAR_AT) the same copy shows the regular price.
+const REG = [
+ ['Launch weekend it\'s $27 (then $37).', 'It\'s $37, one payment.'],
+ ['It\'s called The While-You-Sleep Storefront™. Launch weekend only, it\'s $27.', 'It\'s called The While-You-Sleep Storefront™. One payment of $37.'],
+ ['Frame 3: The While-You-Sleep Storefront™. $27 launch weekend only 👇 (affiliate link sticker)', 'Frame 3: The While-You-Sleep Storefront™. One payment of $37 👇 (affiliate link sticker)'],
+ ['It\'s $27 for launch weekend, then $37.', 'It\'s $37, one payment.']
+];
+const regular = (t) => REG.reduce((acc, [a, b]) => acc.split(a).join(b), t);
+const postsReg = posts.map((q) => ({...q, text: regular(q.text)}));
+
 const photos = await Promise.all(liveLooks.flatMap((look) => roles.map(async (r) => {
  const full = await getImage({src: look.photos[r.key].src, format: 'jpg', width: 1080});
  return {look, role: r, full: full.src};
 })));
 ---
 <WysBuyerFrame title="Promote It" current="promote">
+ <WysClock/>
  <header class="wb2-hero">
   <div class="wys-wrap">
    <p class="wb2-kicker">Promote it</p>
    <h1>Love it? Share it and earn</h1>
-   <p>You can promote The While-You-Sleep Storefront™ as an affiliate. Your link opens at the full launch. Everything you need to share it is on this page.</p>
+   <p>You can promote The While-You-Sleep Storefront™ as an affiliate. <WysWhen wait="Your link opens at the full launch." launch="The affiliate program is open now."/> Everything you need to share it is on this page.</p>
   </div>
  </header>
 
  <section class="wb2-sec" style="padding-top:8px">
   <div class="wys-wrap">
    <div class="wb2-grid">
-    <div class="wb2-card"><span class="wb2-n">1</span><h3>When</h3><p>The affiliate program opens at the full launch on Friday 16 October 2026. Nothing to sign up for before then.</p></div>
+    <div class="wb2-card"><span class="wb2-n">1</span><h3>When</h3><p><WysWhen wait="The affiliate program opens at the full launch on Friday 16 October 2026. Nothing to sign up for before then." launch="The affiliate program is open now. Get your link from Beacons (below)."/></p></div>
     <div class="wb2-card"><span class="wb2-n">2</span><h3>What you earn</h3><p>40% of each sale through your link, paid through Beacons.</p></div>
-    <div class="wb2-card"><span class="wb2-n">3</span><h3>The prices</h3><p>Launch weekend it's $27 (regular $37). After launch weekend it's $37 for everyone.</p></div>
+    <div class="wb2-card"><span class="wb2-n">3</span><h3>The prices</h3><p><WysWhen wait="Launch weekend it&#39;s $27 (regular $37). After launch weekend it&#39;s $37 for everyone." regular="$37 for everyone, one payment."/></p></div>
    </div>
    <div class="wb2-grid two">
-    <div class="wb2-card must"><h3>Get your link on Friday</h3><p>When the program opens, your affiliate link comes from Beacons. Paste it wherever these posts say {L}.</p></div>
+    <div class="wb2-card must"><h3><WysWhen wait="Get your link on Friday" launch="Get your link"/></h3><p>Your affiliate link comes from Beacons: add The While-You-Sleep Storefront™ as an affiliate product in your own Beacons. Paste the link wherever these posts say {L}.</p></div>
     <div class="wb2-card"><h3>The rules</h3><ul><li>Never promise anyone money or results. Show what it makes for you.</li><li>Always say it's an affiliate link.</li><li>Facebook: link in the first comment. Instagram: link in bio. Threads: link in a reply.</li><li>Never mention the commission rate on Facebook or Instagram.</li></ul></div>
    </div>
   </div>
@@ -95,13 +108,13 @@ const photos = await Promise.all(liveLooks.flatMap((look) => roles.map(async (r)
    <h2>Ready-to-post copy</h2>
    <p class="wb2-lede">Copy, swap in your link, post. Change the wording to sound like you if you like.</p>
    <div class="wb2-grid two">
-    {posts.map((p, i) => (
-     <div class="wb2-box" style="margin:0">
-      <div class="wb2-box-head"><h3>{p.where}</h3><button type="button" class="wb2-btn wb2-copy" data-copy={'p' + i}>Copy <span class="arr" aria-hidden="true">→</span></button></div>
+    {[['wait presale launch', posts, 'p'], ['regular', postsReg, 'r']].map(([when, list, pre]) => list.map((p, i) => (
+     <div class="wb2-box" style="margin:0" data-wys-when={when}>
+      <div class="wb2-box-head"><h3>{p.where}</h3><button type="button" class="wb2-btn wb2-copy" data-copy={pre + i}>Copy <span class="arr" aria-hidden="true">→</span></button></div>
       <p class="wb2-small" style="margin:10px 14px 0">{p.note}</p>
-      <pre id={'p' + i}>{p.text}</pre>
+      <pre id={pre + i}>{p.text}</pre>
      </div>
-    ))}
+    )))}
    </div>
   </div>
  </section>
