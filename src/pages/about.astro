@@ -54,6 +54,7 @@ const schema = [
     url: `${SITE}/about`,
   },
 ];
+import "../styles/review-bubble.css";
 ---
 <PageLayout
   bare
@@ -200,11 +201,11 @@ const schema = [
         </div>
         <p class="ab-sign">xoxo, Jodie</p>
       </div>
-      <figure class="ab-quote">
-        <blockquote>
-          <p>“{FEATURED.line}”</p>
-        </blockquote>
-        <figcaption>{FEATURED.name}, on {weekendEcosystem.name}</figcaption>
+      <figure class="rv-bubble">
+        <span class="rv-q o" aria-hidden="true">&ldquo;</span>
+        <blockquote>{FEATURED.line}</blockquote>
+        <figcaption><b>{FEATURED.name}</b>, on {weekendEcosystem.name}</figcaption>
+        <span class="rv-q c" aria-hidden="true">&rdquo;</span>
       </figure>
     </div>
   </section>

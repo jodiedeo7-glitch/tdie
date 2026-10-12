@@ -1,6 +1,7 @@
 ---
 import WysAnnounce from "../components/WysAnnounce.astro";
 import "../styles/home.css";
+import "../styles/review-bubble.css";
 // Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
 import "../styles/brand-fonts.css";
 import newsreader600 from "../assets/fonts/gloock-latin-400-normal.woff2?url";
@@ -156,7 +157,7 @@ const jsonLd = {
 </div><div class="drip2"></div></section>
 
 <section class="we sp"><div class="wrap feature">
-  <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy"></div><figure class="quote"><div class="stars">★★★★★</div><blockquote>"{FEATURED.pull}"</blockquote><figcaption><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a> · {FEATURED.tenure}</figcaption></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
+  <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy"></div><figure class="rv-bubble"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>{FEATURED.pull}</blockquote><figcaption><b><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a></b>, {FEATURED.tenure}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
   <div>
     <span class="kick">The course · {WE.price}</span>
     <h2>The Weekend <em>Ecosystem™</em></h2>

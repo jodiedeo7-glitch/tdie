@@ -1,0 +1,22 @@
+/* Review bubble: soft glossy pink speech bubble with gold quote marks (Jodie's reference, 12 Oct 2026).
+   Every review on the site uses this, placed beside the product it is about. */
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble){position:relative!important;display:block!important;max-width:560px!important;margin:34px 0 46px!important;padding:34px 40px 30px 44px!important;border-radius:26px!important;
+  background:linear-gradient(180deg,#FDE8F1 0%,#F9D7E6 55%,#F5CBDD 100%)!important;
+  box-shadow:inset 0 3px 5px rgba(255,255,255,.9),inset 0 -8px 14px rgba(214,46,115,.10),0 30px 44px -26px rgba(120,20,60,.40),0 6px 10px -6px rgba(120,20,60,.18)!important;
+  color:#1A1417!important;text-align:left!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble)::after{content:""!important;position:absolute!important;left:64px!important;bottom:-30px!important;width:46px!important;height:34px!important;
+  background:linear-gradient(180deg,#F6CEDF,#F3C6D9)!important;clip-path:polygon(0 0,100% 0,8% 100%)!important;filter:drop-shadow(0 8px 6px rgba(120,20,60,.18))!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q{position:absolute!important;font:400 92px/1 Gloock,Georgia,serif!important;letter-spacing:-6px!important;pointer-events:none!important;
+  background:linear-gradient(140deg,#FFF1C2 0%,#E7C068 30%,#B8862E 55%,#8A611A 72%,#E9C873 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+  filter:drop-shadow(0 3px 2px rgba(110,70,10,.35))!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q.o{display:block!important;left:-10px!important;top:-30px!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q.c{right:4px!important;bottom:-62px!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-stars{display:block!important;color:#D62E73!important;letter-spacing:4px!important;font-size:14px!important;line-height:1!important;margin-bottom:10px!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) blockquote{margin:0!important;font:400 19px/1.45 Gloock,Georgia,serif!important;color:#1A1417!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) figcaption,figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-by{display:block!important;margin-top:12px!important;font:500 13.5px/1.5 Jost,sans-serif!important;color:#4A3640!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) figcaption b,figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-by b{color:#B8245F!important;font-weight:700!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) a{color:inherit!important;text-decoration:underline!important;text-underline-offset:3px!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble).rv-center{margin-left:auto!important;margin-right:auto!important}
+@media (max-width:700px){figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble){padding:28px 24px 24px 28px!important;margin:30px 0 44px!important}figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) blockquote{font-size:17px!important}figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q{font-size:70px!important}figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q.c{bottom:-48px!important}}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) blockquote::before,figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) blockquote::after{content:none!important;display:none!important}
+figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) *{text-shadow:none!important;font-style:normal!important}
