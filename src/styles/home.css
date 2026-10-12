@@ -528,12 +528,12 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 /* Promo sits on the pink side, never over the avatar; sticker kept, off the dress (Jodie, 12 Oct 2026) */
 .hero-v10{--pw:clamp(250px,17.4vw,360px)}
 .hero-v10 .hx-pol{width:var(--pw)!important;left:calc(59% - var(--pw) + 40px)!important}
-.hero-v10 .copy{max-width:calc(54vw - var(--pw))!important}
-.hero-v10 h1{font-size:clamp(44px,4.3vw,100px)!important}
-.hero-v10 .lede{max-width:none!important}
 .hero-v10 .hx-tag{right:-26px!important;bottom:-34px!important;left:auto!important;top:auto!important}
 .hero-v10 .hx-cap{right:14px!important;font-size:clamp(15px,1vw,19px)!important}
 @media (max-width:1180px){.hero-v10{--pw:210px}.hero-v10 .copy{max-width:none!important}.hero-v10 .hx-pol{left:calc(59% - 190px)!important;bottom:22px!important;top:auto!important;z-index:7!important}.hero-v10 .ctas{flex-direction:column;align-items:flex-start;gap:14px}.hero-v10 .hx-cap{font-size:13px!important}}
 @media (max-width:900px){.hero-v10{--pw:250px}.hero-v10 .hx-pol{left:18px!important;bottom:auto!important;z-index:4!important}.hero-v10 .ctas{flex-direction:row}}
 .hero-v10 .hx-tag{bottom:-64px!important;right:-18px!important}.hero-v10 .hx-cap{right:14px!important}
 @media (max-width:900px){.hero-v10 .hx-tag{bottom:auto!important;top:-44px!important;right:-6px!important;left:auto!important}}
+/* headline wording/wrap stays as approved; copy column ends before the promo spot (12 Oct 2026) */
+.hero-v10 .copy{max-width:calc(59vw - var(--pw) - clamp(28px,5vw,110px) - 20px)!important}
+@media (max-width:1180px){.hero-v10 .copy{max-width:none!important}}
