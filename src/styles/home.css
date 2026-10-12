@@ -558,3 +558,5 @@ h1 .stress,h2 .stress{font-family:Yellowtail,cursive!important;font-style:normal
 .hero-v10 .hx-tag{left:auto!important;right:6px!important;bottom:-60px!important;top:auto!important;transform:rotate(5deg)!important}
 }
 @media (min-width:1181px) and (max-width:1500px){.hero-v10 .ctas{flex-direction:column;align-items:flex-start;gap:14px}}
+/* Jodie's own placement from arrange mode (12 Oct 2026): left 32.5%, top 322px, width 30.5% */
+@media (min-width:1181px){.hero-v10 .hx-pol{left:32.5vw!important;top:322px!important;bottom:auto!important;width:30.5vw!important}}
