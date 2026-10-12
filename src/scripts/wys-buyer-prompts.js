@@ -23,11 +23,19 @@ export const SECTIONS = [
    {id: 'personaRef', label: 'Link to her reference photo', type: 'text', ph: 'A public image link to one clear photo of her face', show: 'persona=yes', help: 'One clear, well-lit photo where her face is easy to see. This is the only place her look comes from.'},
    {id: 'ig', label: 'Instagram carousels', type: 'radio', options: [['on', 'On'], ['off', 'Off']], def: 'on'},
    {id: 'igAccount', label: 'Instagram account', type: 'text', ph: '@youraccount', show: 'ig=on'},
-   {id: 'blog', label: 'Blog posts on your own site', type: 'radio', options: [
-    ['on', 'Automatic: my site lives on GitHub, so it publishes them itself'],
-    ['hand', 'By hand: any website. It writes each post, I paste it in'],
-    ['off', 'Off']], def: 'off',
-    help: 'No website yet? The Weekend Ecosystem™ builds one that works with the automatic option.'},
+   {id: 'blog', label: 'Do you have a blog or website for your looks?', type: 'radio', options: [
+    ['on', 'Yes, and it lives on GitHub: it publishes each post itself'],
+    ['hand', 'Yes, on another website: it writes each post, I paste it in'],
+    ['off', 'No blog yet']], def: '',
+    help: 'With a blog, every look also gets its own post, so people find your looks on Google as well as Pinterest.'},
+   {id: 'blogUpsellOff', type: 'note', show: 'blog=off',
+    title: 'Want a blog that fills itself?',
+    text: 'The Weekend Ecosystem™ builds your own website and blog in one weekend, set up so this system publishes a post for every look, automatically. Your Storefront works fine without it, and you can add it any time.',
+    link: '/weekend-ecosystem/preview', linkText: 'See inside The Weekend Ecosystem™'},
+   {id: 'blogUpsellHand', type: 'note', show: 'blog=hand',
+    title: 'Rather not paste every post?',
+    text: 'The Weekend Ecosystem™ builds a website on GitHub, so this system publishes each blog post for you instead of handing it to you to paste.',
+    link: '/weekend-ecosystem/preview', linkText: 'See inside The Weekend Ecosystem™'},
    {id: 'repo', label: 'Your GitHub site', type: 'text', ph: 'yourname/yoursite', show: 'blog=on'},
    {id: 'siteUrl', label: 'Your website address', type: 'text', ph: 'https://www.yoursite.com', show: 'blog=on|blog=hand'},
    {id: 'metricool', label: 'Your Metricool brand name', type: 'text', ph: 'The brand name exactly as Metricool shows it', show: 'pinMode=auto|igMode=auto',
@@ -98,7 +106,7 @@ export const SECTIONS = [
  {
   id: 'run', title: 'How it runs', note: 'Defaults are the ones I run on my own storefront.',
   fields: [
-   {id: 'looks', label: 'Looks per night', type: 'radio', options: [['2', '2 looks (6 pins, 2 carousels, 2 blog posts)'], ['1', '1 look (uses half the credits and Claude usage)']], def: '2'},
+   {id: 'looks', label: 'Looks per night', type: 'radio', options: [['2', '2 looks (6 pins, 2 carousels, and 2 blog posts if you have a blog)'], ['1', '1 look (uses half the credits and Claude usage)']], def: '2'},
    {id: 'time', label: 'Run time', type: 'select', options: [['01:05', '1:05 am'], ['02:05', '2:05 am'], ['03:05', '3:05 am'], ['23:05', '11:05 pm']], def: '01:05'},
    {id: 'igTime', label: 'Instagram posting time', type: 'select', show: 'ig=on', options: [['09:00', '9:00 am'], ['10:00', '10:00 am'], ['12:00', '12:00 pm'], ['19:00', '7:00 pm']], def: '10:00'},
    {id: 'order', label: 'Carousel photo order', type: 'radio', show: 'ig=on', options: [['Basic, Styled, Lifestyle', 'Basic, Styled, Lifestyle'], ['Lifestyle, Styled, Basic', 'Lifestyle first']], def: 'Basic, Styled, Lifestyle'},
@@ -111,7 +119,7 @@ export const SECTIONS = [
 
 export function defaults() {
  const a = {};
- for (const s of SECTIONS) for (const f of s.fields) a[f.id] = Array.isArray(f.def) ? [...f.def] : (f.def ?? '');
+ for (const s of SECTIONS) for (const f of s.fields) if (f.type !== 'note') a[f.id] = Array.isArray(f.def) ? [...f.def] : (f.def ?? '');
  return a;
 }
 
@@ -151,6 +159,7 @@ function modes(a) {
 export function missing(a) {
  const m = modes(a);
  const need = [['tag', 'Amazon tracking ID']];
+
  if (m.metricool) need.push(['metricool', 'Metricool brand name']);
  if (m.inf) need.push(['storefront', 'Amazon storefront address']);
  if (a.persona === 'yes') need.push(['personaName', 'her name'], ['personaRef', 'her reference photo link']);
@@ -158,6 +167,7 @@ export function missing(a) {
  if (m.blogAuto) need.push(['repo', 'GitHub site']);
  if (m.blog) need.push(['siteUrl', 'website address']);
  const out = need.filter(([k]) => !String(a[k] ?? '').trim()).map(([, n]) => n);
+ if (!a.blog) out.unshift('whether you have a blog');
  if (!m.inf && !m.blog) out.push('blog posts switched on, automatic or by hand (Associates only needs them)');
  return out;
 }
@@ -207,8 +217,8 @@ export function nightly(a) {
  const n = v(a.looks, '2');
  const face = a.persona === 'yes';
  const lifestyle = face
-  ? `Lifestyle: Nano Banana Pro at 2K. Attach her reference photo FIRST and the product sheet SECOND. The prompt opens with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body anywhere in the prompt. Her face is visible. She is doing something real with the products in one of HER WORLD places (putting it up, wearing it out, using it), mid-moment, not posing. No text on the photo.`
-  : `Lifestyle: Seedream 5.0 Flash at 2K with the product sheet attached. Hands and the products in use in one of HER WORLD places, mid-moment. No face anywhere in the frame. No text on the photo.`;
+  ? `Lifestyle: Nano Banana Pro at 2K. Attach her reference photo FIRST (identity only) and the look's accepted Styled photo SECOND (room and products only). The prompt opens with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body anywhere in the prompt. Her face is visible. She is doing something real with the products in one of HER WORLD places (putting it up, wearing it out, using it), mid-moment, not posing. Use a clearly different camera angle, framing or viewpoint from the Styled photo: a new photograph, never her pasted into the Styled frame. No text on the photo.`
+  : `Lifestyle: Seedream 5.0 Flash at 2K with the look's accepted Styled photo attached (room and products only). Hands and the products in use in one of HER WORLD places, mid-moment, from a clearly different camera angle or framing than the Styled photo. No face anywhere in the frame. No text on the photo.`;
  const dest = m.listAuto ? 'the themed Idea List the look\'s products are on'
   : m.listHand ? `my storefront (${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')})`
   : 'the look\'s blog post';
@@ -221,7 +231,8 @@ Make ${n} complete look${n === '1' ? '' : 's'} tonight. Follow every step in ord
 
 FIRST
 1. Get today's date and time in ${a.tz}. Use that time zone for every date and time below.
-2. Open my Google Doc "While-You-Sleep Log" with the Google Drive connector. Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand. My Corrections override everything in this prompt except the NEVER list.${m.photoAuto ? `
+2. Open my Google Doc "While-You-Sleep Log" with the Google Drive connector. Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. My Corrections override everything in this prompt except the NEVER list.
+   Under Runs: if an earlier run is marked "started" but not "finished", it stopped partway. Finish that run's missing steps first, using what the log already records, and never redo a step the log shows as done. Then write "Run [today's date] started" under Runs before you do anything else.${m.photoAuto ? `
 3. Higgsfield connector: read my credit balance. Add up this month's credits in the log. Tonight needs about ${n === '1' ? '3' : '6'} credits plus fixes. If tonight would go past ${v(a.credits, '350')} credits for the month, make no images, write it in the log and tell me in one line.` : `
 3. Finish waiting looks first: for every look in the log marked "Waiting for photos", look in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>". If its Basic, Styled and Lifestyle photos are all there, check them: right pieces in the right colors, words spelled right and only on the Basic, ${face ? 'she matches her reference, ' : ''}nothing from PHOTOS I HATE (if one fails, tell me which and why, and leave that look waiting). Then do every step after PHOTOS for that look tonight and mark it done. Looks still missing photos stay waiting; don't remind me more than once a day.`}`);
 
@@ -243,16 +254,18 @@ Styled: completely styled in one of HER WORLD places, layered with props and tex
 Every photo: portrait 2:3. It must look REAL and lived-in, in bright natural light. Never rich-looking, staged, fake, plastic or CGI. Nothing branded and no characters or logos anywhere in the frame. Follow PHOTOS I HATE. Don't use the same surface or room as the last look in the log.`;
 
  if (m.photoAuto) {
-  parts.push(`${step('PRODUCT SHEET')}
-Download each piece's main Amazon photo in the exact color you chose and put all of them on one plain white sheet. If a product photo shows a person's face, cover the face. Upload the sheet to Higgsfield (media upload, then confirm). If you can't make one sheet, upload each photo and attach them all.`);
-  parts.push(`${step('PHOTOS (Higgsfield connector, 2K, three per look)')}
-Basic and Styled: Seedream 5.0 Flash at 2K, product sheet attached.
+  parts.push(`${step('PRODUCT NOTES')}
+Look closely at each piece's Amazon photos in the exact color you chose and write one precise line per piece: what it is, exact color, material, pattern or print, shape and size next to the other pieces. These words are how the photos get the products right. Never attach Amazon product photos to an image prompt: the image tool pastes them in as flat rectangles.`);
+  parts.push(`${step('PHOTOS (Higgsfield connector, 2K, three per look, in this order)')}
+Basic: Seedream 5.0 Flash at 2K, no attachment. Describe every piece from PRODUCT NOTES.
+Styled: Seedream 5.0 Flash at 2K with the look's accepted Basic photo attached so the products keep their shapes and colors. A new scene, not the Basic re-shot.
 ${lifestyle}
+Make each photo only after the one before it passes its check.
 ${photoRules}
 CHECK each photo before using it: right pieces in the right colors, words spelled right and only on the Basic, ${face ? 'she matches her reference, ' : ''}nothing from PHOTOS I HATE. Re-run a failed photo once with the fix written into the prompt. If it still fails, skip that look, log why, and move on.`);
  } else {
   parts.push(`${step('PHOTOS · BY HAND')}
-Under To Do By Hand write, for each look: its name, the product photo links (each piece's main Amazon photo in the exact color), and three complete, separate, ready-to-paste prompts, one each for Basic, Styled and Lifestyle. Every prompt stands on its own with nothing to fill in. Basic and Styled: for Seedream on the Higgsfield website, with "attach the product photos" at the top. Lifestyle: ${face ? `for Nano Banana Pro, with "attach her reference photo first, then the product photos" at the top, and the prompt itself opening with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body. Her face is visible, doing something real with the products in one of HER WORLD places, mid-moment.` : 'for Seedream, hands and the products in use in one of HER WORLD places, no face.'}
+Under To Do By Hand write, for each look: its name, the product photo links (each piece's main Amazon photo in the exact color), and three complete, separate, ready-to-paste prompts, one each for Basic, Styled and Lifestyle. Every prompt stands on its own with nothing to fill in. Basic: for Seedream on the Higgsfield website, no attachment, describing every piece in words (what it is, exact color, material, pattern, shape). Styled: for Seedream, with "attach your finished Basic photo" at the top. Make them in order: Basic, then Styled, then Lifestyle. Lifestyle: ${face ? `for Nano Banana Pro, with "attach her reference photo first, then your finished Styled photo" at the top, from a different camera angle than Styled, and the prompt itself opening with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body. Her face is visible, doing something real with the products in one of HER WORLD places, mid-moment.` : 'for Seedream, with "attach your finished Styled photo" at the top, hands and the products in use in one of HER WORLD places from a different angle than Styled, no face.'}
 Write these rules into the prompts themselves: ${photoRules.replace(/\n/g, ' ')}
 Tell me to save the three finished photos as Basic, Styled and Lifestyle in "While-You-Sleep Storefront/Photos/<look name>" in my Google Drive. Mark the look "Waiting for photos" in the log and stop work on that look tonight. The steps below run for it on the night the photos are there.`);
  }
@@ -264,18 +277,18 @@ Under To Do By Hand write the full post, ready to paste: the look's name as the 
 
  const pinText = `Three pins per look, one per photo. Each goes to the most specific board in my PINTEREST BOARDS. Pin title: the search phrase first, under 100 characters. Description: two or three natural sentences with the words people search for, no hashtags. Link: ${dest}. Alt text: a plain description of the photo. A look's three pins go on three separate days that aren't next to each other, different looks are mixed together, and no day gets more than ${v(a.slots, '8')} pins.`;
  if (m.pinAuto) parts.push(`${step(`PINS (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
-${pinText} Read Metricool's schedule first and use open days. Set the date, time and time zone (${a.tz}) on every post. ${m.approve ? 'APPROVALS ARE ON: send every pin to Metricool for review instead of scheduling it.' : 'Schedule them.'} Read each one back from Metricool and confirm it is there with the right photo, board and link.`);
+${pinText} Read Metricool's schedule first and use open days. If Metricool already holds a pin with the same photo and link (from a run that stopped partway), don't make it again. Set the date, time and time zone (${a.tz}) on every post. ${m.approve ? 'APPROVALS ARE ON: send every pin to Metricool for review instead of scheduling it.' : 'Schedule them.'} Read each one back from Metricool and confirm it is there with the right photo, board and link.`);
  else parts.push(`${step('PINS · BY HAND')}
 ${pinText} Under To Do By Hand write each pin: which photo, board, title, description, link, alt text and the date to schedule it. I schedule them in Pinterest's own scheduler.`);
 
  if (m.igAuto) parts.push(`${step(`INSTAGRAM (Metricool connector, ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')})`)}
-One carousel per look on the next day that has no carousel, at ${hm(a.igTime)}: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
+One carousel per look on the next day that has no carousel, at ${hm(a.igTime)}: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption. If Metricool already holds this look's carousel, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
  else if (m.igHand) parts.push(`${step('INSTAGRAM · BY HAND')}
 Under To Do By Hand write one carousel per look for ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}: the photo order (${a.order}), the day to post it at ${hm(a.igTime)}, and the caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption.`);
 
  const pinsWord = `${Number(n) * 3} pins`;
  parts.push(`LAST · LOG
-Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.photoAuto ? 'the photo links, credits used tonight, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Read the log back to confirm it saved.
+Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.photoAuto ? 'the photo links, credits used tonight, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Last, write "Run [today's date] finished" under Runs. Read the log back to confirm it saved.
 
 REPORT
 One line if everything worked: "Tonight: ${n} look${n === '1' ? '' : 's'}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.

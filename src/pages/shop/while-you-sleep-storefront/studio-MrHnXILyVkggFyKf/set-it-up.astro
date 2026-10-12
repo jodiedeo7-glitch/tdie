@@ -33,7 +33,13 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
        <p class="wb2-sec-note">{s.note}</p>
        {s.fields.map((f) => (
         <div class="wb2-field" data-show={f.show}>
-         {f.type === 'radio' || f.type === 'checks' ? (
+         {f.type === 'note' ? (
+          <div class="wb2-upsell">
+           <p class="wb2-upsell-t">{f.title}</p>
+           <p>{f.text}</p>
+           <a href={f.link} target="_blank" rel="noopener">{f.linkText} <span aria-hidden="true">→</span></a>
+          </div>
+         ) : f.type === 'radio' || f.type === 'checks' ? (
           <fieldset>
            <legend>{f.label}</legend>
            {f.type === 'radio'
@@ -78,13 +84,20 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
  </section>
 </WysBuyerFrame>
 
+<style>
+ .wb2-upsell{margin-top:4px;padding:12px 14px;border-radius:12px;background:#F6F1FF;border:1px solid #E2D6FB}
+ .wb2-upsell p{margin:0 0 6px;font-size:15px;line-height:1.5}
+ .wb2-upsell .wb2-upsell-t{font-weight:600;color:#B8245F}
+ .wb2-upsell a{font-weight:600;font-size:15px;color:#B8245F}
+</style>
+
 <script>
  import {SECTIONS, defaults, setup, nightly, missing, shown} from '../../../../scripts/wys-buyer-prompts.js';
  const KEY = 'wys-buyer-answers-v1';
  const form = document.getElementById('wb2-form');
  const outs = {setup: document.getElementById('out-setup'), nightly: document.getElementById('out-nightly')};
  const miss = document.getElementById('wb2-missing');
- const fields = SECTIONS.flatMap((s) => s.fields);
+ const fields = SECTIONS.flatMap((s) => s.fields).filter((f) => f.type !== 'note');
  let texts = {setup: '', nightly: ''};
 
  function load() {
