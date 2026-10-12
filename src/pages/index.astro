@@ -13,6 +13,7 @@ import BlueprintForm from "../components/BlueprintForm.astro";
 // Tina's words come from the single verbatim source, unedited.
 import { FEATURED, MEMBER_REVIEWS } from "../we-reviews.js";
 import ReviewBubble from "../components/ReviewBubble.astro";
+import HeroArrange from "../components/HeroArrange.astro";
 import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -213,6 +214,7 @@ const jsonLd = {
 <p class="fsoc">{SOCIAL.map((s) => <a href={s.href} rel="noopener" target="_blank">{s.label}</a>)}</p>
 <p class="fcopy">© 2026 The Digital Income Edit™ · <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
 </div></footer>
+<HeroArrange/>
 </body>
 
 </html>
