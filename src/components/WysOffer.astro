@@ -5,27 +5,28 @@ import { membership as M } from '../data/facts.js';
 import WysWhen from './WysWhen.astro';
 ---
 <div class="wc-offer">
- <div class="wc-price wh-price-best">
+ <div class="wc-price wh-price-best" data-wys-when="wait presale">
   <span class="wh-pill"><span>Best price</span></span>
   <p class="wc-price-who">TDIE Skool Premium members</p>
   <p class="wc-price-num">$10</p>
-  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool" launch="Member price<br/>inside Skool"/></p>
+  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool"/></p>
  </div>
- <div class="wc-price">
-  <p class="wc-price-who">TDIE Skool Standard members</p>
+ <div class="wc-price" data-wys-when="wait presale launch">
+  <p class="wc-price-who"><WysWhen wait="TDIE Skool Standard members" launch="TDIE Skool members"/></p>
   <p class="wc-price-num">$17</p>
-  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool" launch="Member price<br/>inside Skool"/></p>
+  <p class="wc-price-when"><WysWhen wait="Member presale opens<br/>Tuesday 13 October, 12 pm ET" presale="Member presale<br/>open now in Skool" launch="Last-chance member code<br/>inside Skool, launch weekend only"/></p>
  </div>
  <div class="wc-price wc-price-launch">
   <span class="wh-pill"><span>Open to all</span></span>
-  <p class="wc-price-who">Everyone, launch weekend</p>
-  <p class="wc-price-num">$27 <s class="wc-price-was">$37</s></p>
-  <p class="wc-price-when"><WysWhen wait="Full launch<br/>Friday 16 October, 12 pm ET" launch="Launch weekend<br/>on now"/></p>
-  <p class="wc-price-after">$37 after launch weekend</p>
+  <p class="wc-price-who"><WysWhen wait="Everyone, launch weekend" regular="Everyone"/></p>
+  <p class="wc-price-num" data-wys-when="wait presale launch">$27 <s class="wc-price-was">$37</s></p>
+  <p class="wc-price-num" data-wys-when="regular">$37</p>
+  <p class="wc-price-when"><WysWhen wait="Full launch<br/>Friday 16 October, 12 pm ET" launch="Launch weekend<br/>on now" regular="One payment"/></p>
+  <p class="wc-price-after" data-wys-when="wait presale launch">$37 after launch weekend</p>
  </div>
 </div>
-<div class="wh-trial">
- <div><p class="wc-kicker">Not a member yet?</p><p class="wh-trial-h">Start free for {M.trialDays} days. <em>Get the member price.</em></p><p class="wh-trial-p">Both TDIE memberships start with {M.trialDays} days free, and members get first access at the presale price.</p></div>
+<div class="wh-trial" data-wys-when="wait presale launch">
+ <div><p class="wc-kicker">Not a member yet?</p><p class="wh-trial-h">Start free for {M.trialDays} days. <em>Get the member price.</em></p><p class="wh-trial-p"><WysWhen wait={`Both TDIE memberships start with ${M.trialDays} days free, and members get first access at the presale price.`} launch={`Both TDIE memberships start with ${M.trialDays} days free, and members get a last-chance $17 code for launch weekend.`}/></p></div>
  <a class="wc-button" href={NAV_CTA.href}>Start free for {M.trialDays} days</a>
 </div>
 <style>

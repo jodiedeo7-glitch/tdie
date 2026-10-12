@@ -8,5 +8,5 @@ const {note, timedNote = false, align = 'center', href = WYS_CTA.href} = Astro.p
 <WysClock/>
 <div class={`wc-cta wc-cta-${align}`}>
  <a class="wc-button" href={href} data-wys-cta><span data-wys-cta-label>{WYS_CTA.label}</span> <span aria-hidden="true">→</span></a>
- {timedNote ? <p class="wc-cta-note"><WysWhen wait="Member presale opens Tuesday 13 October at 12 pm ET." presale="Member presale is open now inside the TDIE Skool community." launch="Launch weekend: $27, then $37."/></p> : note && <p class="wc-cta-note">{note}</p>}
+ {timedNote ? <p class="wc-cta-note"><WysWhen wait="Member presale opens Tuesday 13 October at 12 pm ET." presale="Member presale is open now inside the TDIE Skool community." launch="Launch weekend: $27, then $37." regular="$37, one payment."/></p> : note && <p class="wc-cta-note" data-wys-when={/waitlist/i.test(note) ? 'wait presale' : undefined}>{note}</p>}
 </div>

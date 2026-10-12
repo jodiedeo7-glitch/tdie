@@ -307,3 +307,7 @@
 .wys-world .wc-pin-overlay small{color:var(--wc-ink)}
 .wc-slide-n{background:#fff!important;color:var(--wc-hot-ink)!important;border:1.5px solid var(--wc-hot)}
 .wys-world .tdie-page-disclaimer small{color:var(--wc-ink)!important}
+/* Fewer price cards after the presale: launch shows 2 (member code + launch weekend), after launch weekend 1 ($37). */
+html[data-wys-phase="launch"] .wc-offer{grid-template-columns:repeat(2,minmax(0,1fr));max-width:660px}
+html[data-wys-phase="regular"] .wc-offer{grid-template-columns:minmax(0,1fr);max-width:340px}
+@media (max-width:760px){html[data-wys-phase="launch"] .wc-offer,html[data-wys-phase="regular"] .wc-offer{grid-template-columns:minmax(0,1fr)}}

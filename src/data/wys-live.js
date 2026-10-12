@@ -30,6 +30,10 @@ export const WYS_CTA = {href: WYS_ROOT + '/waitlist', label: 'Join the waitlist'
 // Preview any stage by adding ?wysphase=wait, ?wysphase=presale or ?wysphase=launch to a page.
 export const WYS_PRESALE_AT = '2026-10-13T12:00:00-04:00';
 export const WYS_LAUNCH_AT = '2026-10-16T12:00:00-04:00';
+// Launch weekend ends Sunday 18 Oct at midnight (Jodie's approved launch posts: "Tonight's the last
+// night it's $27. From tomorrow ... $37"). From WYS_REGULAR_AT the site shows $37 and drops the
+// launch-weekend wording (stage "regular"; preview with ?wysphase=regular).
+export const WYS_REGULAR_AT = '2026-10-19T00:00:00-04:00';
 export const WYS_CHECKOUT = 'https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7';
 
 // The link row under the intro on every storefront page (Jodie, 11 October 2026):

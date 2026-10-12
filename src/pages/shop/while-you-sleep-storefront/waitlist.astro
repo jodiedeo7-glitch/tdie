@@ -24,11 +24,13 @@ import {liveLooks} from '../../../data/wys-live.js';
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Not open yet</span>
      <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
     </div>
-    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch">
-     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Launch weekend</span>
+    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
+     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
      <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
-     <p class="wc-buy-price">$27 <s>$37</s></p>
-     <p class="wc-buy-p">Launch weekend price. $37 after launch weekend.</p>
+     <p class="wc-buy-price" data-wys-when="launch">$27 <s>$37</s></p>
+     <p class="wc-buy-price" data-wys-when="regular">$37</p>
+     <p class="wc-buy-p" data-wys-when="launch">Launch weekend price. $37 after launch weekend.</p>
+     <p class="wc-buy-p" data-wys-when="regular">One payment.</p>
      <WysCta align="left"/>
     </div>
     <p class="wc-wait-fine" data-wys-when="wait presale"><WysWhen wait="Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026 at 12 pm ET. Full launch Friday 16 October 2026." presale="Joining the waitlist doesn’t place an order. Member presale is open now inside the TDIE Skool community. Full launch Friday 16 October 2026 at 12 pm ET."/></p>

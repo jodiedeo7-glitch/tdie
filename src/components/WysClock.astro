@@ -1,18 +1,18 @@
 ---
-// Sets the storefront stage on the page (wait, presale, launch) from the switch times in
+// Sets the storefront stage on the page (wait, presale, launch, regular) from the switch times in
 // src/data/wys-live.js, then swaps the buttons and links at launch. Safe to include more
 // than once: it only runs the first time.
-import {WYS_PRESALE_AT, WYS_LAUNCH_AT, WYS_CHECKOUT} from '../data/wys-live.js';
+import {WYS_PRESALE_AT, WYS_LAUNCH_AT, WYS_REGULAR_AT, WYS_CHECKOUT} from '../data/wys-live.js';
 import {WYS_ROOT} from '../data/wys.js';
-const P = WYS_PRESALE_AT, L = WYS_LAUNCH_AT, C = WYS_CHECKOUT, R = WYS_ROOT;
+const P = WYS_PRESALE_AT, L = WYS_LAUNCH_AT, G = WYS_REGULAR_AT, C = WYS_CHECKOUT, R = WYS_ROOT;
 ---
-<script is:inline define:vars={{P, L, C, R}}>
+<script is:inline define:vars={{P, L, G, C, R}}>
 (function(){
  var d=document.documentElement; if(d.getAttribute('data-wys-phase'))return;
- var n=Date.now(), p=n>=Date.parse(L)&&C?'launch':n>=Date.parse(P)?'presale':'wait';
- try{var q=new URLSearchParams(location.search).get('wysphase');if(q==='wait'||q==='presale'||q==='launch')p=q;}catch(e){}
+ var n=Date.now(), p=n>=Date.parse(G)&&C?'regular':n>=Date.parse(L)&&C?'launch':n>=Date.parse(P)?'presale':'wait';
+ try{var q=new URLSearchParams(location.search).get('wysphase');if(q==='wait'||q==='presale'||q==='launch'||q==='regular')p=q;}catch(e){}
  d.setAttribute('data-wys-phase',p);
- if(p!=='launch')return;
+ if(p!=='launch'&&p!=='regular')return;
  var buy=C||(R+'#buy');
  if(/\/while-you-sleep-storefront\/waitlist\/?$/.test(location.pathname)&&!/wysphase=/.test(location.search)){location.replace(R);return;}
  function swap(){
@@ -26,7 +26,8 @@ const P = WYS_PRESALE_AT, L = WYS_LAUNCH_AT, C = WYS_CHECKOUT, R = WYS_ROOT;
  html:not([data-wys-phase]) [data-wys-when]:not([data-wys-when~="wait"]),
  html[data-wys-phase="wait"] [data-wys-when]:not([data-wys-when~="wait"]),
  html[data-wys-phase="presale"] [data-wys-when]:not([data-wys-when~="presale"]),
- html[data-wys-phase="launch"] [data-wys-when]:not([data-wys-when~="launch"]){display:none!important}
+ html[data-wys-phase="launch"] [data-wys-when]:not([data-wys-when~="launch"]),
+ html[data-wys-phase="regular"] [data-wys-when]:not([data-wys-when~="regular"]){display:none!important}
 </style>
 <style is:global>
  .wys-world .wc-buy-box{padding:34px 26px 26px;background:#fff;border:1px solid #F3D3E0;border-radius:22px;box-shadow:0 30px 56px -34px rgba(110,10,50,.6)}

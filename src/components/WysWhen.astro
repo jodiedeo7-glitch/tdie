@@ -1,8 +1,8 @@
 ---
 // One line of storefront wording that changes with the stage (see WysClock).
-// presale falls back to wait; launch falls back to presale.
+// presale falls back to wait; launch falls back to presale; regular (after launch weekend) falls back to launch.
 import WysClock from './WysClock.astro';
-const {wait, presale = wait, launch = presale} = Astro.props;
+const {wait, presale = wait, launch = presale, regular = launch} = Astro.props;
 ---
-<WysClock/>{wait === presale && presale === launch ? <span set:html={wait}/> : <>
-<span data-wys-when="wait" set:html={wait}/><span data-wys-when="presale" set:html={presale}/><span data-wys-when="launch" set:html={launch}/></>}
+<WysClock/>{wait === presale && presale === launch && launch === regular ? <span set:html={wait}/> : <>
+<span data-wys-when="wait" set:html={wait}/><span data-wys-when="presale" set:html={presale}/>{launch === regular ? <span data-wys-when="launch regular" set:html={launch}/> : <><span data-wys-when="launch" set:html={launch}/><span data-wys-when="regular" set:html={regular}/></>}</>}

@@ -26,11 +26,13 @@ const [ghost] = liveLooks;
     <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
      <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
     </div>
-    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch">
-     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)">Launch weekend</span>
+    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
+     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
      <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
-     <p class="wc-buy-price">$27 <s>$37</s></p>
-     <p class="wc-buy-p">Launch weekend price. $37 after launch weekend.</p>
+     <p class="wc-buy-price" data-wys-when="launch">$27 <s>$37</s></p>
+     <p class="wc-buy-price" data-wys-when="regular">$37</p>
+     <p class="wc-buy-p" data-wys-when="launch">Launch weekend price. $37 after launch weekend.</p>
+     <p class="wc-buy-p" data-wys-when="regular">One payment.</p>
      <WysCta align="left"/>
     </div>
     <p class="wc-wait-fine" data-wys-when="wait presale"><WysWhen wait="Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026 at 12 pm ET. Full launch Friday 16 October 2026." presale="Joining the waitlist doesn’t place an order. Member presale is open now inside the TDIE Skool community. Full launch Friday 16 October 2026 at 12 pm ET."/></p>
@@ -109,7 +111,7 @@ const [ghost] = liveLooks;
   <div class="wc-who">
    <div><h3>Amazon Influencers and storefront owners</h3><p>You know you should be on Pinterest, a blog and Instagram. You don’t have the time or the energy to post every day.</p></div>
    <div><h3>Owners of The Weekend Ecosystem™</h3><p>Your site is already built. This fills its blog with shoppable posts without adding another daily job.</p></div>
-   <div><h3>TDIE Skool members</h3><p>Members buy first, from Tuesday 13 October: $10 for Premium, $17 for Standard. The affiliate program opens at the regular $37 price.</p></div>
+   <div><h3>TDIE Skool members</h3><p><WysWhen wait="Members buy first, from Tuesday 13 October: $10 for Premium, $17 for Standard." launch="Members bought first at $10 and $17. Missed it? Members get a last-chance $17 code inside Skool, launch weekend only." regular="Members bought first, at $10 for Premium and $17 for Standard."/> The affiliate program opens at the regular $37 price.</p></div>
   </div>
  </section>
 
