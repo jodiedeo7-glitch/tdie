@@ -78,4 +78,9 @@
 .wb2-photos figcaption{padding:6px 2px 8px;font-size:12px;line-height:1.4}
 .wb2-photos figcaption b{color:var(--wys-pink);font-weight:600}
 .wb2-box .wb2-small{color:#5b4a52}
+.wb2-promos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.wb2-promos figure{margin:0;padding:6px 6px 0;border:1px solid #E9B4CF;border-radius:12px;background:#fff}
+.wb2-promos img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px}
+.wb2-promos figcaption{padding:6px 2px 8px;font-size:13px}
+@media (max-width:900px){.wb2-promos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.wb2-photos{grid-template-columns:repeat(3,minmax(0,1fr))}}

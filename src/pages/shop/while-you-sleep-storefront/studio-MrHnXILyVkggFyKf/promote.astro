@@ -119,6 +119,21 @@ const photos = await Promise.all(liveLooks.flatMap((look) => roles.map(async (r)
   </div>
  </section>
 
+ <section class="wb2-sec" style="background:#fff">
+  <div class="wys-wrap">
+   <h2>Promo images to post</h2>
+   <p class="wb2-lede">Ready-made images for your posts. They are safe for Facebook and Instagram. Tap an image to open the full-size file, then save it and post it with the copy above.</p>
+   <div class="wb2-promos">
+    {[1,2,3,4,5,6,7].map((n) => (
+     <figure data-wys-when={n === 6 ? 'wait presale launch' : n === 7 ? 'regular' : undefined}>
+      <a href={`/images/wys-promo/wys-affiliate-promo-${n}.jpg`} target="_blank" rel="noopener" download><img src={`/images/wys-promo/wys-affiliate-promo-${n}.jpg`} alt={`Promo image ${n}: The While-You-Sleep Storefront`} width="1080" height="1350" loading="lazy"/></a>
+      <figcaption>Image {n}{n === 6 ? ' · launch weekend $27' : n === 7 ? ' · $37 price' : ''}</figcaption>
+     </figure>
+    ))}
+   </div>
+  </div>
+ </section>
+
  <section class="wb2-sec">
   <div class="wys-wrap">
    <h2>Photos you can use</h2>
