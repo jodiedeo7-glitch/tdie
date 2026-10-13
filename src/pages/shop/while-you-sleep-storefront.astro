@@ -1,6 +1,7 @@
 ---
 import WysFrame from '../../components/WysFrame.astro';
 import WysNightFeed from '../../components/WysNightFeed.astro';
+import FreebieForm from '../../components/FreebieForm.astro';
 import WysCta from '../../components/WysCta.astro';
 import WysOvernight from '../../components/WysOvernight.astro';
 import WysLinks from '../../components/WysLinks.astro';
@@ -24,7 +25,7 @@ const [ghost] = liveLooks;
     <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
      <p class="wc-buy-h">Member presale is open now.</p>
      <p class="wc-buy-p">TDIE Skool members get first access at the presale price, inside the community. Full launch is Friday 16 October at 12 pm ET.</p>
-     <WysCta align="left" href="#offer" label="See the member price"/>
+     <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
     </div>
     <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
@@ -138,12 +139,16 @@ const [ghost] = liveLooks;
   <div class="wc-final-card">
    <p class="wc-kicker">The While-You-Sleep Storefront™</p>
    <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
-   <div class="wc-cta" id="join"><WysCta href="#offer" label="See the member price" timedNote/></div>
+   <div class="wc-wait-form" id="join" data-wys-when="wait presale">
+    <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
+   </div>
+   <div class="wc-cta" data-wys-when="launch regular"><WysCta timedNote/></div>
   </div>
  </div>
 </WysFrame>
 <style is:global>
  .wys-world .wc-final-card .wc-wait-form .freebie-capture{border:0!important;box-shadow:none!important;padding:6px 0 0!important}
+ .wys-world .wc-final-card .wc-wait-form .fc-h,.wys-world .wc-final-card .wc-wait-form .fc-sub{text-align:center;margin-left:auto;margin-right:auto}
  .wys-world .wc-look-link{text-align:center;margin:28px auto 0}
  .wys-world .wc-look-link a{font:700 16px/1.4 Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 </style>
