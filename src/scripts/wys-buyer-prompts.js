@@ -65,23 +65,23 @@ export const SECTIONS = [
  {
   id: 'style', title: 'Your look', note: 'This is what makes the looks yours. The more honest you are, the less you will correct later.',
   fields: [
-   {id: 'leads', label: 'The words that describe your style most', type: 'text', def: 'feminine, cozy, colorful, trendy'},
-   {id: 'alsoStyle', label: 'Also true of your style', type: 'text', def: 'playful, practical, whimsical'},
-   {id: 'avoidStyle', label: 'Styles you never want', type: 'text', def: 'minimalist, beige everything, cold modern'},
-   {id: 'colors', label: 'Your signature colors', type: 'text', def: 'pink, green, blue, lavender, prints'},
-   {id: 'colorsSome', label: 'Colors you use sometimes', type: 'text', def: 'rust, gold, navy, camel, black, cream'},
-   {id: 'colorsNever', label: 'Colors you never want', type: 'text', def: 'none'},
-   {id: 'cue', label: 'Your signature touch (optional)', type: 'text', def: '', ph: 'e.g. a little sparkle in every look'},
-   {id: 'visualYes', label: 'Photos you love', type: 'text', def: 'styled and layered, bold and colorful, real and lived-in, bright natural light, full of detail'},
-   {id: 'visualNo', label: 'Photos you hate', type: 'text', def: 'beige and neutral everything, generic AI flat lays, too empty, the same surface every time, plastic or CGI looking, rich or staged looking'},
-   {id: 'voice', label: 'How you sound', type: 'text', def: 'warm, funny, first person, like texting a friend about something I just bought'}
+   {id: 'leads', label: 'The words that describe your style most', type: 'pick', options: ["feminine", "cozy", "colorful", "trendy", "farmhouse", "maximalist", "playful", "whimsical", "practical", "girly", "glam", "boho", "vintage", "cottagecore", "classic", "preppy", "western", "edgy", "sporty", "coastal", "modern", "minimalist"], def: ["feminine", "cozy", "colorful", "trendy"]},
+   {id: 'alsoStyle', label: 'Also true of your style', type: 'pick', options: ["feminine", "cozy", "colorful", "trendy", "farmhouse", "maximalist", "playful", "whimsical", "practical", "girly", "glam", "boho", "vintage", "cottagecore", "classic", "preppy", "western", "edgy", "sporty", "coastal", "modern", "minimalist"], def: ["playful", "practical", "whimsical"]},
+   {id: 'avoidStyle', label: 'Styles you never want', type: 'pick', options: ["minimalist", "beige everything", "cold modern", "rich or luxury looking", "coastal", "sporty", "preppy", "western", "gothic", "boho", "too girly"], def: ["minimalist", "beige everything", "cold modern"], none: 'none'},
+   {id: 'colors', label: 'Your signature colors', type: 'pick', options: ["pink", "red", "orange", "rust", "yellow", "gold", "green", "blue", "navy", "lavender", "purple", "camel", "brown", "black", "white", "cream", "gray", "silver", "beige", "pastels", "brights", "prints", "sparkle"], def: ["pink", "green", "blue", "lavender", "prints"]},
+   {id: 'colorsSome', label: 'Colors you use sometimes', type: 'pick', options: ["pink", "red", "orange", "rust", "yellow", "gold", "green", "blue", "navy", "lavender", "purple", "camel", "brown", "black", "white", "cream", "gray", "silver", "beige", "pastels", "brights", "prints", "sparkle"], def: ["rust", "gold", "navy", "camel", "black", "cream"]},
+   {id: 'colorsNever', label: 'Colors you never want', type: 'pick', options: ["pink", "red", "orange", "rust", "yellow", "gold", "green", "blue", "navy", "lavender", "purple", "camel", "brown", "black", "white", "cream", "gray", "silver", "beige", "pastels", "brights", "prints", "sparkle"], def: [], none: 'none', help: 'Leave them all unticked if no color is off limits.'},
+   {id: 'cue', label: 'Your signature touch (optional)', type: 'pick', options: ["a little sparkle", "something pink", "a fun print", "something vintage", "a cozy texture", "a pop of bright color", "something handmade"], def: []},
+   {id: 'visualYes', label: 'Photos you love', type: 'pick', options: ["styled and layered", "bold and colorful", "real and lived-in", "bright natural light", "full of detail", "soft and dreamy", "cozy and warm", "clean and simple", "moody and dark"], def: ["styled and layered", "bold and colorful", "real and lived-in", "bright natural light", "full of detail"]},
+   {id: 'visualNo', label: 'Photos you hate', type: 'pick', options: ["beige and neutral everything", "generic AI flat lays", "too empty", "the same surface every time", "plastic or CGI looking", "rich or staged looking", "too cluttered", "too dark", "flowers and bows everywhere"], def: ["beige and neutral everything", "generic AI flat lays", "too empty", "the same surface every time", "plastic or CGI looking", "rich or staged looking"], none: 'none'},
+   {id: 'voice', label: 'How you sound', type: 'pick', options: ["warm", "funny", "first person", "like texting a friend about something I just bought", "chatty", "short and sweet", "sassy", "calm", "excited", "helpful expert"], def: ["warm", "funny", "first person", "like texting a friend about something I just bought"]}
   ]
  },
  {
   id: 'world', title: 'Her world', note: 'Where the lifestyle photos happen. Real rooms, real errands.',
   fields: [
-   {id: 'rooms', label: 'Her rooms and places', type: 'textarea', def: 'kitchen and kitchen island\nhallway or bedroom mirror\nliving room\nlocal outings and errands'},
-   {id: 'props', label: 'Things that belong in her world (optional)', type: 'text', def: '', ph: 'e.g. her coffee mug, a dog, kids\' crafts'}
+   {id: 'rooms', label: 'Her rooms and places', type: 'pick', options: ["kitchen and kitchen island", "hallway or bedroom mirror", "living room", "local outings and errands", "bedroom", "home office", "bathroom vanity", "porch or patio", "backyard or garden", "kids' playroom", "craft room", "gaming room", "in the car", "coffee shop"], def: ["kitchen and kitchen island", "hallway or bedroom mirror", "living room", "local outings and errands"], sep: '\n'},
+   {id: 'props', label: 'Things that belong in her world (optional)', type: 'pick', options: ["her coffee mug", "a water tumbler", "a dog", "a cat", "kids' crafts", "plants", "books", "candles", "a laptop", "a cozy blanket"], def: []}
   ]
  },
  {
@@ -117,9 +117,18 @@ export const SECTIONS = [
  }
 ];
 
+// A 'pick' question: tick boxes plus an optional "anything else" box. The prompts get one plain answer.
+export function pickValue(f, picked, more) {
+ const sep = f.sep || ', ';
+ const extra = String(more ?? '').split(f.sep ? /\n|,/ : /,/).map((x) => x.trim()).filter(Boolean);
+ const all = [...picked, ...extra.filter((x) => !picked.includes(x))];
+ return all.join(sep) || f.none || '';
+}
+
 export function defaults() {
  const a = {};
- for (const s of SECTIONS) for (const f of s.fields) if (f.type !== 'note') a[f.id] = Array.isArray(f.def) ? [...f.def] : (f.def ?? '');
+ for (const s of SECTIONS) for (const f of s.fields) if (f.type === 'pick') a[f.id] = pickValue(f, f.def, '');
+ else if (f.type !== 'note') a[f.id] = Array.isArray(f.def) ? [...f.def] : (f.def ?? '');
  return a;
 }
 
