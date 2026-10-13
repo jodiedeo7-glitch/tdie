@@ -21,7 +21,7 @@ export default defineConfig({
   // /shop/weekend-ecosystem alone.
   integrations: [sitemap({
     // The While-You-Sleep Storefront™ buyer website is private (studio-<key>): never in the sitemap.
-    filter: (page) => {const p = new URL(page).pathname; return !p.startsWith('/weekend-ecosystem') && !p.includes('/while-you-sleep-storefront/studio-');},
+    filter: (page) => {const p = new URL(page).pathname; return !p.startsWith('/weekend-ecosystem') && !p.includes('/while-you-sleep-storefront/studio-') && !p.includes('/while-you-sleep-storefront/jodie-inbox-');},
   })],
   redirects: {
     '/shop/plr-vault': '/shop/pretty-and-paid-plr-vault',

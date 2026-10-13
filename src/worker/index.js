@@ -10,6 +10,7 @@ import { handle as waitlist } from "./api/waitlist.js";
 import { handle as wysWaitlist } from "./api/wys-waitlist.js";
 import { handle as wysGuide } from "./api/wys-guide.js";
 import { handle as wysFeedback } from "./api/wys-feedback.js";
+import { handle as wysInbox } from "./api/wys-inbox.js";
 
 const API = {
   "/api/bami-waitlist": bamiWaitlist,
@@ -24,6 +25,7 @@ const API = {
   "/api/wys-waitlist": wysWaitlist,
   "/api/wys-guide": wysGuide,
   "/api/wys-feedback": wysFeedback,
+  "/api/wys-inbox": wysInbox,
 };
 
 const PATH_REDIRECTS = new Map([
