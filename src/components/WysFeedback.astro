@@ -11,25 +11,28 @@ const {page = ''} = Astro.props;
    <form class="wbf-form" data-page={page} novalidate>
     <label class="wbf-hp" aria-hidden="true">Leave this empty<input name="hp" tabindex="-1" autocomplete="off"></label>
     <div class="wbf-row">
-     <label>Your name <span>(optional)</span><input name="name" autocomplete="name" maxlength="80"></label>
-     <label>Your email <span>(so I can reply)</span><input name="email" type="email" autocomplete="email" maxlength="200"></label>
+     <label><b>Your name <span>(optional)</span></b><input name="name" autocomplete="name" maxlength="80"></label>
+     <label><b>Your email <span>(so I can reply)</span></b><input name="email" type="email" autocomplete="email" maxlength="200"></label>
     </div>
-    <label>What happened?<textarea name="message" rows="5" maxlength="5000" placeholder="What you did, what came back, and what you expected instead"></textarea></label>
-    <label class="wbf-file">Add a photo or screenshot <span>(optional)</span><input name="photo" type="file" accept="image/*"></label>
+    <label><b>What happened?</b><textarea name="message" rows="5" maxlength="5000" placeholder="What you did, what came back, and what you expected instead"></textarea></label>
+    <label class="wbf-file"><b>Add a photo or screenshot <span>(optional)</span></b><input name="photo" type="file" accept="image/*"></label>
     <img class="wbf-preview" alt="Your photo" hidden>
-    <button class="wb2-btn" type="submit">Send it to Jodie <span class="arr" aria-hidden="true">→</span></button>
+    <button class="wb2-btn wbf-send" type="submit">Send it to Jodie <span class="arr" aria-hidden="true">→</span></button>
     <p class="wbf-status" role="status" aria-live="polite"></p>
    </form>
   </div>
  </div>
 </section>
 <style>
- .wbf-card{padding:22px 20px;border:1.5px solid var(--wys-pink);border-radius:18px;background:#fff}
- .wys-world .wbf h2{font-size:28px;margin:0 0 6px}
+ .wbf-card{max-width:760px;margin:0 auto;padding:22px 20px;border:1.5px solid var(--wys-pink);border-radius:18px;background:#fff}
+ .wys-world .wbf h2{font:400 28px/1.15 Gloock,Georgia,serif;color:var(--wys-ink);margin:0 0 6px}
  .wbf-lede{margin:0 0 14px;font-size:16px;max-width:60ch}
  .wbf-form{display:grid;gap:12px}
  .wbf-form label{display:grid;gap:6px;font:600 14px/1.3 Jost,sans-serif;color:var(--wys-ink)}
- .wbf-form label span{font-weight:400;color:#7a5a6c}
+ .wbf-form label b{font-weight:600}.wbf-form label span{font-weight:400;color:#7a5a6c}
+ .wbf [hidden]{display:none!important}
+ .wbf .wbf-send{appearance:none;justify-self:start;border:1.5px solid var(--wys-pink);border-radius:999px;background:#fff;color:var(--wys-ink);padding:0 22px;min-height:48px;font:700 15px/1.2 Jost,sans-serif;box-shadow:none}
+ .wbf .wbf-send:hover{background:#FFF5FA}.wbf .wbf-send:disabled{opacity:.6;cursor:wait}
  .wbf-form input,.wbf-form textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E9B4CF;border-radius:12px;font:400 16px/1.4 Jost,sans-serif;background:#fff;color:var(--wys-ink)}
  .wbf-form input:focus,.wbf-form textarea:focus{outline:3px solid #C4AFE4;outline-offset:1px}
  .wbf-form input[type=file]{padding:10px;border-style:dashed}
@@ -37,7 +40,6 @@ const {page = ''} = Astro.props;
  @media (min-width:640px){.wbf-row{grid-template-columns:1fr 1fr}}
  .wbf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
  .wbf-preview{max-width:220px;max-height:220px;width:auto;height:auto;border-radius:12px;border:1px solid #E9B4CF}
- .wbf-form .wb2-btn{justify-self:start}
  .wbf-status{margin:0;font-size:15px;min-height:1.4em}
  .wbf-status.ok{color:#1d7a4b}.wbf-status.err{color:#b3261e}
 </style>
