@@ -32,7 +32,8 @@ const PATH_REDIRECTS = new Map([
   ["/weekend-ecosystem/module-17-one-article-thirty-assets","/weekend-ecosystem/module-17-one-article-twenty-four-assets"],
   ["/resources/shopify-store-kit","/resources/shopify-starter-kit"],
   ["/go/8-claude-prompts-that-save-me-12-hours-a-week","/go/the-operating-prompts"],
-  ["/downloads/wys-sneak-peek-guide.pdf","/shop/while-you-sleep-storefront/waitlist"],
+  ["/downloads/wys-sneak-peek-guide.pdf","/shop/while-you-sleep-storefront"],
+  ["/shop/while-you-sleep-storefront/waitlist","/shop/while-you-sleep-storefront"],
   ["/shop/while-you-sleep-storefront/look-inside","/shop/while-you-sleep-storefront/real-results"],
   ["/shop/while-you-sleep-storefront/real-examples","/shop/while-you-sleep-storefront/real-results"],
 ]);

@@ -13,10 +13,9 @@ import ghostBlogPhone from '../assets/wys/convert/blog-pink-ghost-coffee-bar-pho
 import ghostBlogDesk from '../assets/wys/convert/blog-pink-ghost-coffee-bar-desktop.jpg';
 import {WYS_ROOT} from './wys.js';
 
-// One place to change the call to action. On presale day, swap href and
-// label for the checkout link and "Buy now"; every button on the three pages
-// reads from here.
-export const WYS_CTA = {href: WYS_ROOT + '/waitlist', label: 'Join the waitlist'};
+// One place to change the call to action. The waitlist is closed (Jodie, 13 Oct 2026): every
+// button points at the sales page. At launch the site swaps it for the checkout link on its own.
+export const WYS_CTA = {href: WYS_ROOT, label: 'See the storefront'};
 
 // The switch times (Jodie, 11 October 2026: member presale Tuesday at noon). The site
 // changes itself at these times in the visitor's browser, no rebuild needed:
@@ -41,7 +40,7 @@ export const WYS_CHECKOUT = 'https://links.thedigitalincomeedit.com/shop/66271fb
 // Lifestyle blog the system posts to). The waitlist link flips to the sales page at
 // launch on its own (see WYS_LAUNCH_AT). Each page leaves out its own link.
 export const WYS_LINKS = [
- {key: 'waitlist', label: 'Join the waitlist', href: WYS_ROOT + '/waitlist', waitlist: true},
+ {key: 'overview', label: 'See the storefront', href: WYS_ROOT},
  {key: 'inside', label: 'Free look inside the system', href: WYS_ROOT + '/real-results'},
  {key: 'live', label: 'See it live', href: '/lifestyle'}
 ];

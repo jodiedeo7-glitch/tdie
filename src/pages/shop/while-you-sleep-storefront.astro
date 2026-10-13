@@ -1,12 +1,10 @@
 ---
-const WYS_GUIDE='/api/wys-guide?k=VOk-I7sWghoIWzYBxc6wLgYw';
 import WysFrame from '../../components/WysFrame.astro';
 import WysNightFeed from '../../components/WysNightFeed.astro';
 import WysCta from '../../components/WysCta.astro';
 import WysOvernight from '../../components/WysOvernight.astro';
 import WysLinks from '../../components/WysLinks.astro';
 import WysWhen from '../../components/WysWhen.astro';
-import FreebieForm from '../../components/FreebieForm.astro';
 import WysProof from '../../components/WysProof.astro';
 import WysYouDo from '../../components/WysYouDo.astro';
 import WysObjections from '../../components/WysObjections.astro';
@@ -14,7 +12,7 @@ import WysOffer from '../../components/WysOffer.astro';
 import {liveLooks} from '../../data/wys-live.js';
 const [ghost] = liveLooks;
 ---
-<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, The While-You-Sleep Storefront™ plans and sources 2 looks, posts 6 Pinterest pins, 2 blog posts and 2 Instagram carousels. Join the waitlist." ogImage={ghost.photos.styled.src.src}>
+<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, The While-You-Sleep Storefront™ plans and sources 2 looks, posts 6 Pinterest pins, 2 blog posts and 2 Instagram carousels. Member presale is open now." ogImage={ghost.photos.styled.src.src}>
  <header class="wc-hero">
   <div class="wys-wrap wc-wait-grid">
    <div class="wc-hero-copy">
@@ -22,9 +20,11 @@ const [ghost] = liveLooks;
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 6 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep.</p>
-    <WysLinks current="overview" hide={["waitlist"]}/>
+    <WysLinks current="overview"/>
     <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
-     <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
+     <p class="wc-buy-h">Member presale is open now.</p>
+     <p class="wc-buy-p">TDIE Skool members get first access at the presale price, inside the community. Full launch is Friday 16 October at 12 pm ET.</p>
+     <WysCta align="left" href="#offer" label="See the member price"/>
     </div>
     <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
@@ -35,7 +35,6 @@ const [ghost] = liveLooks;
      <p class="wc-buy-p" data-wys-when="regular">One payment.</p>
      <WysCta align="left"/>
     </div>
-    <p class="wc-wait-fine" data-wys-when="wait presale"><WysWhen wait="Joining the waitlist doesn’t place an order. Member presale opens Tuesday 13 October 2026 at 12 pm ET. Full launch Friday 16 October 2026." presale="Joining the waitlist doesn’t place an order. Member presale is open now inside the TDIE Skool community. Full launch Friday 16 October 2026 at 12 pm ET."/></p>
    </div>
    <div class="wc-hero-phone"><WysNightFeed/></div>
   </div>
@@ -122,13 +121,13 @@ const [ghost] = liveLooks;
     <h2>Your questions,<br/><em>answered straight.</em></h2>
    </div>
    <WysObjections/>
-   <WysCta href="#join" note="Joining the waitlist doesn’t place an order."/>
+   <WysCta href="#offer" label="See the member price" timedNote/>
   </div>
  </section>
 
  <section class="wys-wrap wc-section">
   <div class="wc-head">
-   <p class="wc-kicker">The offer</p>
+   <p class="wc-kicker" id="offer">The offer</p>
    <h2>Members first.<br/><em>Then everyone.</em></h2>
    <p>It’s a website, not a PDF, so it never goes stale. Regular updates, with new affiliate brand automations on the way.</p>
   </div>
@@ -139,9 +138,7 @@ const [ghost] = liveLooks;
   <div class="wc-final-card">
    <p class="wc-kicker">The While-You-Sleep Storefront™</p>
    <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
-   <div class="wc-wait-form" id="join">
-    <FreebieForm action="/api/wys-waitlist" heading="Join the waitlist + get the free guide" button="Join the waitlist" sub="Your free guide opens the second you join (a copy goes to your inbox too), plus the email the moment it opens. Unsubscribe anytime." done="You’re on the waitlist, and your free guide is ready." doneLink={WYS_GUIDE} doneLinkLabel="Open your free guide"/>
-   </div>
+   <div class="wc-cta" id="join"><WysCta href="#offer" label="See the member price" timedNote/></div>
   </div>
  </div>
 </WysFrame>
