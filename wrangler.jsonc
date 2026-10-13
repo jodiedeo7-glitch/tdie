@@ -23,5 +23,12 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tdie-site-data",
+      "database_id": "a3e4289e-80c5-40fe-9f53-0c8855040829"
+    }
+  ],
   "previews": {}
 }

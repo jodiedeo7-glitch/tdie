@@ -2,6 +2,7 @@
 // Frame for the private buyer website of The While-You-Sleep Storefront™.
 import WysFrame from './WysFrame.astro';
 import {BUYER_PAGES} from '../data/wys-buyer.js';
+import WysFeedback from './WysFeedback.astro';
 import '../styles/wys-buyer.css';
 const {title, current = 'start'} = Astro.props;
 ---
@@ -13,5 +14,6 @@ const {title, current = 'start'} = Astro.props;
   </div>
  </div>
  <slot />
+ <WysFeedback page={title} />
  <div class="wys-wrap wb2-foot"><p>Questions? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a>. This page is just for buyers, so please don't share the link.</p></div>
 </WysFrame>
