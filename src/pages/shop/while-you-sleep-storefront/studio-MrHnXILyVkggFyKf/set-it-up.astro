@@ -22,7 +22,17 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
      <li><b>Your prompt writes itself as you go.</b> Nothing is sent anywhere, and this page remembers your answers on this device, so you can stop and come back.</li>
     </ul>
    </div>
-   <div class="wb2-card" style="margin-bottom:22px">
+   <div class="wb2-card" style="margin-bottom:22px" data-platform="chatgpt" hidden>
+    <h3>Before you paste (ChatGPT, being tested)</h3>
+    <ol class="wb2-steps">
+     <li>Open ChatGPT. This version is still being tested, so expect to stay with it for the first look.</li>
+     <li>Connect what your answers need in ChatGPT: <b>Google Drive</b> always; <b>Metricool</b> for automatic pins or carousels; <b>GitHub</b> for automatic blog posts; <b>Higgsfield</b> only if you chose it for your photos.</li>
+     <li>Connect a browser tool that can sign in to Amazon. In it, go to amazon.com and sign in with your own account. Stay signed in.</li>
+     <li>Using Metricool? Connect your Pinterest business account there (and Instagram, if it's on).</li>
+     <li>Start a new chat in ChatGPT, paste <b>Your setup prompt</b> from this page and send it.</li>
+    </ol>
+   </div>
+   <div class="wb2-card" style="margin-bottom:22px" data-platform="claude">
     <h3>Before you paste</h3>
     <ol class="wb2-steps">
      <li>Open the Claude desktop app on the computer that will stay on overnight.</li>
@@ -40,7 +50,7 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
        <summary>{s.title}</summary>
        <p class="wb2-sec-note">{s.note}</p>
        {s.fields.map((f) => (
-        <div class="wb2-field" data-show={f.show}>
+        <div class="wb2-field" data-show={f.show} data-private={f.private ? '1' : undefined}>
          {f.type === 'note' ? (
           <div class="wb2-upsell">
            <p class="wb2-upsell-t">{f.title}</p>
@@ -124,6 +134,8 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
  const miss = document.getElementById('wb2-missing');
  const fields = SECTIONS.flatMap((s) => s.fields).filter((f) => f.type !== 'note');
  let texts = {setup: '', nightly: ''};
+ // The ChatGPT version is private while it is tested: it only appears with ?chatgpt=1 on the link.
+ const unlocked = new URLSearchParams(location.search).has('chatgpt');
 
  function load() {
   let saved = null;
@@ -166,7 +178,10 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
  }
  function update() {
   const a = read();
+  if (!unlocked) a.platform = 'claude';
   form.querySelectorAll('[data-show]').forEach((el) => {el.hidden = !shown(el.dataset.show, a);});
+  form.querySelectorAll('[data-private]').forEach((el) => {el.hidden = !unlocked;});
+  document.querySelectorAll("[data-platform]").forEach((el) => {el.hidden = el.dataset.platform !== a.platform;});
   try {localStorage.setItem(KEY, JSON.stringify(a));} catch (e) {}
   texts = {setup: setup(a), nightly: nightly(a)};
   outs.setup.textContent = texts.setup;

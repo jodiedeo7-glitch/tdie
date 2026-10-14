@@ -8,6 +8,12 @@ export const SECTIONS = [
  {
   id: 'quick', title: 'Quick Start', note: 'Fill in these and you can start tonight. Everything else has a sensible default.', open: true,
   fields: [
+   {id: 'platform', label: 'Which AI runs it?', type: 'radio', private: true, options: [['claude', 'Claude'], ['chatgpt', 'ChatGPT (being tested, not proven yet)']], def: 'claude',
+    help: 'Only you can see this choice while the ChatGPT version is tested.'},
+   {id: 'imgWhere', label: 'Where do your photos get made?', type: 'radio', show: 'platform=chatgpt', options: [
+    ['chatgpt', 'Right in ChatGPT, with its own image maker (no Higgsfield needed)'],
+    ['higgsfield', 'Connect Higgsfield and run them there (uses Higgsfield credits)']], def: 'chatgpt',
+    help: 'ChatGPT\u2019s image maker comes with your ChatGPT plan, and your plan sets how many images you get. Higgsfield is its own paid plan with credits.'},
    {id: 'tz', label: 'Your time zone', type: 'select', options: [
     ['America/New_York', 'Eastern'], ['America/Chicago', 'Central'], ['America/Denver', 'Mountain'], ['America/Phoenix', 'Arizona'], ['America/Los_Angeles', 'Pacific'], ['America/Anchorage', 'Alaska'], ['Pacific/Honolulu', 'Hawaii']], def: 'America/New_York'},
    {id: 'amazon', label: 'Your Amazon account', type: 'radio', options: [
@@ -110,7 +116,7 @@ export const SECTIONS = [
    {id: 'time', label: 'Run time', type: 'select', options: [['01:05', '1:05 am'], ['02:05', '2:05 am'], ['03:05', '3:05 am'], ['23:05', '11:05 pm']], def: '01:05'},
    {id: 'igTime', label: 'Instagram posting time', type: 'select', show: 'ig=on', options: [['09:00', '9:00 am'], ['10:00', '10:00 am'], ['12:00', '12:00 pm'], ['19:00', '7:00 pm']], def: '10:00'},
    {id: 'order', label: 'Carousel photo order', type: 'radio', show: 'ig=on', options: [['Basic, Styled, Lifestyle', 'Basic, Styled, Lifestyle'], ['Lifestyle, Styled, Basic', 'Lifestyle first']], def: 'Basic, Styled, Lifestyle'},
-   {id: 'credits', label: 'Most image credits per month', type: 'text', def: '350', show: 'photoMode=auto', help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'},
+   {id: 'credits', label: 'Most image credits per month', type: 'text', def: '350', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'},
    {id: 'approve', label: 'Approvals', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['on', 'On: every pin and carousel waits in Metricool for my OK'], ['off', 'Off: fully automatic']], def: 'on',
     help: 'I recommend approvals on for your first few days. Turn them off when you trust it.'}
   ]
@@ -135,11 +141,11 @@ export function defaults() {
 // "k=v|k2=v2" shows a field when any one of the conditions is true.
 export function shown(cond, a) {
  if (!cond) return true;
- return cond.split('|').some((c) => {const [k, val] = c.split('='); return a[k] === val;});
+ return cond.split('|').some((group) => group.split('&').every((c) => {const [k, val] = c.split('='); return a[k] === val;}));
 }
 
 const v = (x, fb = '') => (Array.isArray(x) ? x.join(', ') : String(x ?? '').trim()) || fb;
-const tzName = (tz) => (SECTIONS[0].fields[0].options.find((o) => o[0] === tz) || [tz, tz])[1];
+const tzName = (tz) => (SECTIONS[0].fields.find((f) => f.id === 'tz').options.find((o) => o[0] === tz) || [tz, tz])[1];
 const hm = (t) => {const [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'pm' : 'am'; return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${ap}`;};
 
 // What each mode works out to for this buyer.
@@ -148,6 +154,7 @@ function modes(a) {
  const ig = a.ig === 'on';
  const m = {
   inf, ig,
+  gpt: a.platform === 'chatgpt',
   srcHand: a.srcMode === 'hand',
   listAuto: inf && a.listMode !== 'hand',
   listHand: inf && a.listMode === 'hand',
@@ -159,6 +166,8 @@ function modes(a) {
   blogHand: a.blog === 'hand',
   blog: a.blog === 'on' || a.blog === 'hand'
  };
+ m.imgGpt = m.gpt && m.photoAuto && a.imgWhere !== 'higgsfield';
+ m.credits = m.photoAuto && !m.imgGpt;
  m.metricool = m.pinAuto || m.igAuto;
  m.approve = m.metricool && a.approve === 'on';
  m.anyHand = m.srcHand || m.listHand || !m.photoAuto || !m.pinAuto || m.igHand || m.blogHand;
@@ -189,7 +198,7 @@ export function recipe(a) {
  const how = (auto) => (auto ? 'automatic' : 'by hand');
  return `MY STOREFRONT RECIPE
 TIME ZONE: ${a.tz} (${tzName(a.tz)})
-AMAZON: ${m.inf ? `Amazon Influencer. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates only (no storefront). Pins link to my blog posts.'}
+${m.gpt ? `AI THAT RUNS IT: ChatGPT\n${m.photoAuto ? `PHOTOS MADE WITH: ${m.imgGpt ? 'ChatGPT\u2019s own image maker' : 'Higgsfield (connected)'}\n` : ''}` : ''}AMAZON: ${m.inf ? `Amazon Influencer. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates only (no storefront). Pins link to my blog posts.'}
 TRACKING ID: ${v(a.tag, '[YOUR TRACKING ID]')}
 ${m.metricool ? `METRICOOL BRAND: ${v(a.metricool, '[YOUR METRICOOL BRAND]')}\n` : ''}${persona}
 HER WORLD: ${v(a.rooms).split('\n').map((x) => x.trim()).filter(Boolean).join('; ')}${v(a.props) ? `\nTHINGS IN HER WORLD: ${v(a.props)}` : ''}
@@ -218,16 +227,19 @@ PHOTOS: ${how(m.photoAuto)}
 PINS: ${how(m.pinAuto)}
 INSTAGRAM: ${m.ig ? `on (${how(m.igAuto)}), ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}, posts at ${hm(a.igTime)}, photo order ${a.order}` : 'off'}
 BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
-${m.photoAuto ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? `APPROVALS: ${m.approve ? 'on (every pin and carousel waits in Metricool for my OK)' : 'off (fully automatic)'}` : 'APPROVALS: not needed (I post by hand)'}`;
+${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? `APPROVALS: ${m.approve ? 'on (every pin and carousel waits in Metricool for my OK)' : 'off (fully automatic)'}` : 'APPROVALS: not needed (I post by hand)'}`;
 }
 
 export function nightly(a) {
  const m = modes(a);
  const n = v(a.looks, '2');
+ const br = m.gpt ? 'the browser tool connected to this chat, signed in to amazon.com' : 'the built-in browser in the Claude desktop app';
+ const nb = m.imgGpt ? 'ChatGPT\u2019s image maker' : 'Nano Banana Pro at 2K';
+ const sd = m.imgGpt ? 'ChatGPT\u2019s image maker' : 'Seedream 5.0 Flash at 2K';
  const face = a.persona === 'yes';
  const lifestyle = face
-  ? `Lifestyle: Nano Banana Pro at 2K. Attach her reference photo FIRST (identity only) and the look's accepted Styled photo SECOND (room and products only). The prompt opens with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body anywhere in the prompt. Her face is visible. She is doing something real with the products in one of HER WORLD places (putting it up, wearing it out, using it), mid-moment, not posing. Use a clearly different camera angle, framing or viewpoint from the Styled photo: a new photograph, never her pasted into the Styled frame. No text on the photo.`
-  : `Lifestyle: Seedream 5.0 Flash at 2K with the look's accepted Styled photo attached (room and products only). Hands and the products in use in one of HER WORLD places, mid-moment, from a clearly different camera angle or framing than the Styled photo. No face anywhere in the frame. No text on the photo.`;
+  ? `Lifestyle: ${nb}. Attach her reference photo FIRST (identity only) and the look's accepted Styled photo SECOND (room and products only). The prompt opens with exactly: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Never describe her face, hair, skin or body anywhere in the prompt. Her face is visible. She is doing something real with the products in one of HER WORLD places (putting it up, wearing it out, using it), mid-moment, not posing. Use a clearly different camera angle, framing or viewpoint from the Styled photo: a new photograph, never her pasted into the Styled frame. No text on the photo.`
+  : `Lifestyle: ${sd} with the look's accepted Styled photo attached (room and products only). Hands and the products in use in one of HER WORLD places, mid-moment, from a clearly different camera angle or framing than the Styled photo. No face anywhere in the frame. No text on the photo.`;
  const dest = m.listAuto ? 'the themed Idea List the look\'s products are on'
   : m.listHand ? `my storefront (${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')})`
   : 'the look\'s blog post';
@@ -236,23 +248,24 @@ export function nightly(a) {
  const parts = [];
 
  parts.push(`WHILE-YOU-SLEEP STOREFRONT: NIGHTLY RUN
-Make ${n} complete look${n === '1' ? '' : 's'} tonight. Follow every step in order. My recipe is at the bottom and governs every choice.${m.anyHand ? ' Steps marked BY HAND are mine: for those, write exactly what I need under "To Do By Hand" in the log, newest first, and never do them yourself.' : ''}
+Make ${n} complete look${n === '1' ? '' : 's'} tonight. Follow every step in order. My recipe is at the bottom and governs every choice.${m.gpt ? ' Use only the tools connected to this chat. Never say a step worked until you have read the result back.' : ''}${m.anyHand ? ' Steps marked BY HAND are mine: for those, write exactly what I need under "To Do By Hand" in the log, newest first, and never do them yourself.' : ''}
 
 FIRST
 1. Get today's date and time in ${a.tz}. Use that time zone for every date and time below.
 2. Open my Google Doc "While-You-Sleep Log" with the Google Drive connector. Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. My Corrections override everything in this prompt except the NEVER list.
-   Under Runs: if an earlier run is marked "started" but not "finished", it stopped partway. Finish that run's missing steps first, using what the log already records, and never redo a step the log shows as done. Then write "Run [today's date] started" under Runs before you do anything else.${m.photoAuto ? `
+   Under Runs: if an earlier run is marked "started" but not "finished", it stopped partway. Finish that run's missing steps first, using what the log already records, and never redo a step the log shows as done. Then write "Run [today's date] started" under Runs before you do anything else.${m.imgGpt ? `
+3. My photos are made with ChatGPT's own image maker, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named Basic, Styled and Lifestyle. If the image maker stops or says I've hit my limit, make no more photos, write it in the log and tell me in one line.` : m.credits ? `
 3. Higgsfield connector: read my credit balance. Add up this month's credits in the log. Tonight needs about ${n === '1' ? '3' : '6'} credits plus fixes. If tonight would go past ${v(a.credits, '350')} credits for the month, make no images, write it in the log and tell me in one line.` : `
 3. Finish waiting looks first: for every look in the log marked "Waiting for photos", look in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>". If its Basic, Styled and Lifestyle photos are all there, check them: right pieces in the right colors, words spelled right and only on the Basic, ${face ? 'she matches her reference, ' : ''}nothing from PHOTOS I HATE (if one fails, tell me which and why, and leave that look waiting). Then do every step after PHOTOS for that look tonight and mark it done. Looks still missing photos stay waiting; don't remind me more than once a day.`}`);
 
  parts.push(`${step('PLAN')}
 ${m.srcHand ? `Build tonight's looks from the products under My Picks in the log that haven't been used yet. Group them into looks that make sense together. If there aren't enough picks for ${n} look${n === '1' ? '' : 's'}, make fewer and tell me in the report how many more picks you need.` : 'For each look choose a theme from my CATEGORIES and LOOKS ARE FOR that fits what people are shopping for in the next six weeks (season, holidays, occasions), skipping anything in my NEVER lists. Spread categories across the week.'} Never repeat a look in the log. Each look is one of: an outfit (5 to 8 pieces), a themed collection (5 to 8 pieces) or a roundup (3 or 5 pieces). Give it a name people would search for, like "The Pink Plaid Pumpkin Patch Outfit".${m.inf ? '\nIdea Lists are themed collections, not one list per look. Many looks come from one list. Use an existing themed list from the log when the theme fits and it holds fewer than 30 items; otherwise start a new themed list named for the theme (for example "Pink Halloween Decor").' : ''}`);
 
- parts.push(`${step(m.srcHand ? 'CHECK MY PICKS (the built-in browser in the Claude desktop app, on amazon.com)' : 'SOURCE (the built-in browser in the Claude desktop app, on amazon.com)')}
+ parts.push(`${step(m.srcHand ? `CHECK MY PICKS (${br}, on amazon.com)` : `SOURCE (${br}, on amazon.com)`)}
 Open one new tab. ${m.srcHand ? 'Open each of my picks and check it is in stock and record its ASIN, a short plain name and the exact color or variant. If one is out of stock, leave it out and say so in the report.' : 'Search Amazon for each piece. Open every candidate and check: in stock, at least 4 stars with real reviews, the exact color or variant fits my recipe, no logos and no licensed characters. Pick the piece and record its ASIN, a short plain name and the exact color or variant. Don\'t reuse a product used in the last 30 days (Products Used in the log).'} Never add anything to a cart, never buy, never type a password. If Amazon is signed out, stop and tell me in one line.`);
 
  if (m.listAuto) parts.push(`${step('IDEA LIST')}
-In the same tab go to my storefront (${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}), Create content, Idea List. Add every piece of the look to tonight's themed list (create the list if it is new). Open the list's public page and confirm every piece shows. Record the list address. This is public: it is part of the run I set up and approved. Close the tab.`);
+In the same tab go to my storefront (${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}), Create content, Idea List. Add every piece of the look to tonight's themed list (create the list if it is new). Open the list's public page and confirm every piece shows. Record the list address. This is public: it is part of the run I set up and approved. Close the tab.${m.gpt ? ' If you can\'t find Create content, Idea List, or can\'t finish adding the products, stop trying: switch Idea Lists to BY HAND for tonight (write the list name and every product link under To Do By Hand) and tell me in one line.' : ''}`);
  else if (m.listHand) parts.push(`${step('IDEA LIST · BY HAND')}
 Close the Amazon tab. Under To Do By Hand write: the themed list name, and every product's name with its link https://www.amazon.com/dp/ASIN. I add them to my Idea List myself.`);
  else parts.push(`${step('LINKS')}
@@ -265,9 +278,9 @@ Every photo: portrait 2:3. It must look REAL and lived-in, in bright natural lig
  if (m.photoAuto) {
   parts.push(`${step('PRODUCT NOTES')}
 Look closely at each piece's Amazon photos in the exact color you chose and write one precise line per piece: what it is, exact color, material, pattern or print, shape and size next to the other pieces. These words are how the photos get the products right. Never attach Amazon product photos to an image prompt: the image tool pastes them in as flat rectangles.`);
-  parts.push(`${step('PHOTOS (Higgsfield connector, 2K, three per look, in this order)')}
-Basic: Seedream 5.0 Flash at 2K, no attachment. Describe every piece from PRODUCT NOTES.
-Styled: Seedream 5.0 Flash at 2K with the look's accepted Basic photo attached so the products keep their shapes and colors. A new scene, not the Basic re-shot.
+  parts.push(`${step(m.imgGpt ? 'PHOTOS (ChatGPT\u2019s own image maker, three per look, in this order)' : 'PHOTOS (Higgsfield connector, 2K, three per look, in this order)')}
+Basic: ${sd}, no attachment. Describe every piece from PRODUCT NOTES.
+Styled: ${sd} with the look's accepted Basic photo attached so the products keep their shapes and colors. A new scene, not the Basic re-shot.
 ${lifestyle}
 Make each photo only after the one before it passes its check.
 ${photoRules}
@@ -280,29 +293,29 @@ Tell me to save the three finished photos as Basic, Styled and Lifestyle in "Whi
  }
 
  if (m.blogAuto) parts.push(`${step(`BLOG POST (GitHub connector, site ${v(a.repo, '[YOUR GITHUB SITE]')})`)}
-Find the newest blog post in the site and copy its format exactly. Add a post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and an affiliate disclosure and an AI-generated images note. Publish it, wait for the site to update, open the live page at ${site} and confirm all three photos and every link load. Record the address.`);
+Find the newest blog post in the site and copy its format exactly. Add a post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and an affiliate disclosure and an AI-generated images note. ${m.imgGpt ? 'The photos are files in my Drive folder: add them to the site\'s images folder in the same change and use those paths. ' : ''}Publish it, wait for the site to update, open the live page at ${site} and confirm all three photos and every link load. Record the address.`);
  else if (m.blogHand) parts.push(`${step('BLOG POST · BY HAND')}
 Under To Do By Hand write the full post, ready to paste: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), where each of the three photos goes (Basic, Styled, Lifestyle) with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and the Idea List link' : ''}, and this note at the end: "As an Amazon Associate I earn from qualifying purchases. Photos are AI-generated styling ideas; check each listing for the exact item." Ask me to paste the post's address under the look in the log once it's live on ${site}.${!m.inf ? ' The pins for this look wait until that address is in the log.' : ''}`);
 
  const pinText = `Three pins per look, one per photo. Each goes to the most specific board in my PINTEREST BOARDS. Pin title: the search phrase first, under 100 characters. Description: two or three natural sentences with the words people search for, no hashtags. Link: ${dest}. Alt text: a plain description of the photo. A look's three pins go on three separate days that aren't next to each other, different looks are mixed together, and no day gets more than ${v(a.slots, '8')} pins.`;
  if (m.pinAuto) parts.push(`${step(`PINS (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
-${pinText} Read Metricool's schedule first and use open days. If Metricool already holds a pin with the same photo and link (from a run that stopped partway), don't make it again. Set the date, time and time zone (${a.tz}) on every post. ${m.approve ? 'APPROVALS ARE ON: send every pin to Metricool for review instead of scheduling it.' : 'Schedule them.'} Read each one back from Metricool and confirm it is there with the right photo, board and link.`);
+${pinText} Read Metricool's schedule first and use open days. If Metricool already holds a pin with the same photo and link (from a run that stopped partway), don't make it again. Set the date, time and time zone (${a.tz}) on every post.${m.gpt ? ' Write every date with its offset (for example 2026-10-20T12:00:00-04:00): Metricool rejects a date without one.' : ''}${m.imgGpt ? ' The photos are files in my Drive folder: give Metricool each photo\'s link. If Metricool won\'t accept a Drive link, don\'t invent another route: put that look\'s pins under To Do By Hand with the photos and say why.' : ''} ${m.approve ? 'APPROVALS ARE ON: send every pin to Metricool for review instead of scheduling it.' : 'Schedule them.'} Read each one back from Metricool and confirm it is there with the right photo, board and link.`);
  else parts.push(`${step('PINS · BY HAND')}
 ${pinText} Under To Do By Hand write each pin: which photo, board, title, description, link, alt text and the date to schedule it. I schedule them in Pinterest's own scheduler.`);
 
  if (m.igAuto) parts.push(`${step(`INSTAGRAM (Metricool connector, ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')})`)}
-One carousel per look on the next day that has no carousel, at ${hm(a.igTime)}: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption. If Metricool already holds this look's carousel, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
+One carousel per look on the next day that has no carousel, at ${hm(a.igTime)}: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption.${m.imgGpt ? ' The photos are files in my Drive folder: give Metricool each photo\'s link, and if it won\'t accept one, put the carousel under To Do By Hand and say why.' : ''} If Metricool already holds this look's carousel, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
  else if (m.igHand) parts.push(`${step('INSTAGRAM · BY HAND')}
 Under To Do By Hand write one carousel per look for ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}: the photo order (${a.order}), the day to post it at ${hm(a.igTime)}, and the caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio" and three to five hashtags. No links in the caption.`);
 
  const pinsWord = `${Number(n) * 3} pins`;
  parts.push(`LAST · LOG
-Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.photoAuto ? 'the photo links, credits used tonight, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Last, write "Run [today's date] finished" under Runs. Read the log back to confirm it saved.
+Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.credits ? 'the photo links, credits used tonight, ' : m.photoAuto ? 'the photo links, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Last, write "Run [today's date] finished" under Runs. Read the log back to confirm it saved.
 
 REPORT
 One line if everything worked: "Tonight: ${n} look${n === '1' ? '' : 's'}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.
 
-NEVER: type a password. Buy or add anything to a cart. Post to any account that isn't in my recipe. Do a step marked BY HAND. ${m.photoAuto ? 'Go past my monthly credit limit. Switch image models without telling me. ' : ''}Make any claim about how much money anyone will make.
+NEVER: type a password. Buy or add anything to a cart. Post to any account that isn't in my recipe. Do a step marked BY HAND. ${m.credits ? 'Go past my monthly credit limit. Switch image models without telling me. ' : ''}Make any claim about how much money anyone will make.
 
 ${recipe(a)}`);
 
@@ -313,18 +326,21 @@ export function setup(a) {
  const m = modes(a);
  const L = 'abcdefgh'.split(''); let i = 0; const c = () => L[i++];
  const conn = [];
- if (m.photoAuto) conn.push(`${c()}. Higgsfield: read my credit balance.`);
+ if (m.credits) conn.push(`${c()}. Higgsfield: read my credit balance.`);
+ else if (m.imgGpt) conn.push(`${c()}. ChatGPT image maker: make one small test image (a plain mug on a table) to confirm it works in this chat, and tell me if it says I've hit a limit.`);
  if (m.metricool) conn.push(`${c()}. Metricool: find my brand "${v(a.metricool, '[YOUR METRICOOL BRAND]')}". ${m.pinAuto ? 'Confirm Pinterest is connected and list my Pinterest boards. ' : ''}${m.igAuto ? `Confirm Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is connected.` : ''}`);
- conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto ? '' : ' with a folder "Photos" inside it'}, and inside it a Google Doc "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
+ conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and inside it a Google Doc "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
  if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built. Tell me in two lines.`);
- conn.push(`${c()}. Built-in browser (the browser inside the Claude desktop app): open amazon.com in a new tab. ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").` : 'Confirm I\'m signed in (my name shows at the top).'} If I'm signed out, tell me and wait while I sign in. Close the tab.`);
+ conn.push(`${c()}. ${m.gpt ? 'Browser: use the browser tool connected to this chat and tell me exactly which one it is. Open amazon.com in a new tab.' : 'Built-in browser (the browser inside the Claude desktop app): open amazon.com in a new tab.'} ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").${m.gpt ? ' Then open Create content, Idea List once to check it is there. Create nothing yet.' : ''}` : 'Confirm I\'m signed in (my name shows at the top).'} ${m.gpt ? 'If I\'m signed out, tell me exactly how to sign in to my own Amazon account in that tool and wait. Never use anyone else\'s saved sign-in.' : 'If I\'m signed out, tell me and wait while I sign in.'} Close the tab.`);
 
  const boards = m.pinAuto
-  ? 'Compare my PINTEREST BOARDS with the boards Metricool lists. If any are missing, list them and ask me whether to create them in Pinterest in the built-in browser. Boards are public, so create them only after I say yes. Then write every board\'s name in the log.'
-  : 'List my PINTEREST BOARDS and ask me whether they all exist in Pinterest yet. If any are missing, tell me to create them in Pinterest (or offer to create them in the built-in browser, only after I say yes, because boards are public). Write every board\'s name in the log.';
+  ? `Compare my PINTEREST BOARDS with the boards Metricool lists. If any are missing, list them and ask me whether to create them in Pinterest in ${m.gpt ? 'the connected browser' : 'the built-in browser'}. Boards are public, so create them only after I say yes. Then write every board's name in the log.`
+  : `List my PINTEREST BOARDS and ask me whether they all exist in Pinterest yet. If any are missing, tell me to create them in Pinterest (or offer to create them in ${m.gpt ? 'the connected browser' : 'the built-in browser'}, only after I say yes, because boards are public). Write every board's name in the log.`;
 
  const ref = a.persona === 'yes'
-  ? (m.photoAuto
+  ? (m.imgGpt
+   ? `HER REFERENCE\nRecord her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) in the log. Make one test photo of her with ChatGPT\u2019s image maker, reference attached, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Show it to me and ask if she looks right.`
+   : m.photoAuto
    ? `HER REFERENCE\nBring her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) into Higgsfield and record its media ID in the log. Make one test photo of her with Nano Banana Pro at 2K, reference attached, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Show it to me and ask if she looks right.`
    : `HER REFERENCE\nRecord her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) in the log. Write me one test prompt for Nano Banana Pro, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.", for me to try on the Higgsfield website with her reference attached.`)
   : 'NO FACE\nMy lifestyle photos have no face: hands and products in use only. Write that at the top of My Corrections.';
@@ -332,7 +348,7 @@ export function setup(a) {
  const picks = m.srcHand ? `\n\nSTEP 4 · MY PICKS\nAsk me for my first product picks (Amazon links or ASINs, at least ${Number(v(a.looks, '2')) * 5}) and write them under My Picks in the log. Tell me I can add more there any time.` : '';
  const firstN = m.srcHand ? 5 : 4;
  return `WHILE-YOU-SLEEP STOREFRONT: SETUP
-You are setting up my While-You-Sleep Storefront. Do these steps in order. After each step tell me in one line whether it passed. If one fails, tell me the exact fix in plain words and wait for me before going on. Never type a password.
+You are setting up my While-You-Sleep Storefront.${m.gpt ? ' I am using ChatGPT: use only the tools connected to this chat.' : ''} Do these steps in order. After each step tell me in one line whether it passed. If one fails, tell me the exact fix in plain words and wait for me before going on. Never type a password.
 
 STEP 1 · CONNECTIONS
 ${conn.join('\n')}
@@ -346,7 +362,7 @@ STEP ${firstN} · FIRST LOOK, WITH ME WATCHING
 Make one look using the NIGHTLY RUN below exactly${m.metricool ? ', with one change: approvals are ON for this look whatever my recipe says, so every pin and carousel goes to Metricool for review' : ''}. Then show me ${m.photoAuto ? 'all three photos' : 'the photo prompts'}, ${m.inf ? 'the Idea List, ' : ''}${m.blog ? 'the blog post, ' : ''}the pin text${m.ig ? ' and the caption' : ''}${m.anyHand ? ' and my To Do By Hand list' : ''}, and ask what I'd change. Write every change I give you under My Corrections in the log, in my words. Redo anything I ask, then check it again.
 
 STEP ${firstN + 1} · TURN IT ON
-When I say it's right, create a scheduled task named "While-You-Sleep nightly run" that runs every day at ${hm(a.time)} ${tzName(a.tz)} with the full NIGHTLY RUN below as its prompt. Read the task back and tell me when it runs next. If you can't create scheduled tasks here, tell me in one line.
+When I say it's right, create a scheduled task named "While-You-Sleep nightly run" that runs every day at ${hm(a.time)} ${tzName(a.tz)} with the full NIGHTLY RUN below as its prompt.${m.gpt ? ' ChatGPT can\'t create a task that starts paused, so create it only now.' : ''} Read the task back and tell me when it runs next. If you can't create scheduled tasks here, tell me in one line.
 
 === NIGHTLY RUN ===
 ${nightly(a)}`;
