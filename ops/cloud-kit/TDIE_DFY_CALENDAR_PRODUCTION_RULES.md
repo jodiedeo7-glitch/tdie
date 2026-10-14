@@ -262,6 +262,28 @@ Every proposed build rule must cite the supporting research row IDs.
 
 Do not copy competitors' wording. Extract mechanisms and structures, then write original TDIE concepts.
 
+### Mandatory source-to-draft gate (Jodie, 14 October 2026)
+
+Before writing image prompts or generating assets, each proposed Reel must have an internal source-to-draft record containing:
+
+1. The primary source Reel's direct link and research row ID.
+2. Verified performance evidence, its evidence class and explicitly stated limitations.
+3. The directly observed opening hook, visual action, duration, sequence, payoff and CTA. Mark unobserved elements NOT VERIFIED; do not reconstruct them from a thumbnail, caption or related post.
+4. A side-by-side comparison showing exactly how the proposed TDIE Reel adapts those elements.
+5. The complete proposed viewer-facing text and caption.
+
+Broad similarities such as "same topic", "educational", "saves time" or "short B-roll with a caption" are insufficient adaptation evidence. Research references must establish the creative derivation before drafting, not be attached afterward to justify an unrelated concept.
+
+For the first three founder tests, use one primary source per concept. Do not blend sources into an unrelated idea.
+
+Preserve the source's observable hook mechanism, tension, information sequence and payoff. Use original wording and relevant, verified TDIE examples. Never copy exact competitor hooks, scripts, scenes, claims or assets. Never invent personal results or claim that an observed feature caused success. Document any justified adaptation of format, duration or pacing under the existing production constraints.
+
+Choose the scene after the script. The visual must support the content as well as satisfy Tommy Kate's world and brand requirements.
+
+If the comparison does not demonstrate a concrete adaptation, reject the draft and rebuild it yourself before image prompting, asset generation or submission. Do not make the founder diagnose the failure. Missing observation requires further source inspection or selection of a verifiable source, not invented evidence.
+
+Keep the comparison in the internal production record, outside the member-facing calendar. For founder review, supply the source link and concise comparison alongside the proposed test. This is an agent-enforced QA gate, not an additional discretionary permission step. It does not replace or waive the monthly research stop gate.
+
 ## 8. Research exceptions
 
 Research can override standing creative conventions when evidence supports it.
@@ -340,6 +362,7 @@ Reject or rewrite any calendar entry where:
 - the one-step prompt lacks exact overlay text
 - a static prompt assumes Jodie's private reference files
 - the creative decision lacks research support where research is claimed
+- the mandatory source-to-draft record is missing, unobserved source elements are invented, or the proposed adaptation is supported only by broad thematic similarities
 - an Instagram caption contains a link
 - an illegal or invented claim is introduced
 - an offer violates spread rules
