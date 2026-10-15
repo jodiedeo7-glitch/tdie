@@ -56,7 +56,7 @@ This session is not linked to her computer, so it cannot use her signed-in Skool
 - **Tommy Kate voice** is only for the Premium DFY Content Calendar and Instagram. Never for Skool.
 
 ## Design (any graphic, cover or PDF)
-Follow `TDIE_DESIGN_RULES.md`. Short version: Luxury Cream #FBF8F5 base, Signature Hot Pink #D62E73, Bubblegum #FF8AC2, gold #C8A96A as a thin line only, near-black #1A1417 text. Newsreader SemiBold headlines with the key words in hot pink, Inter for everything else. Depth, frosted cards, tilted sticker badges, callout boxes, big crisp headlines. Never Fraunces, Cormorant Garamond or Montserrat. Never brown fills. Never a flat plain background. Never a full pink wash. Jodie is not minimalist. The full look is in TDIE_DESIGN_RULES.md, section "THE LOOK" (Decision 128).
+Follow `TDIE_DESIGN_RULES.md`. Short version: loud, pink, sparkly, luxury never cheap. Stickers and callout boxes. Hot pink outlines on boxes; every clickable card shows its name and a button. Never Fraunces, Cormorant Garamond or Montserrat. Never brown fills. Never a flat plain background. Never a full pink wash. Jodie is not minimalist. The full look is in TDIE_DESIGN_RULES.md, section "THE LOOK" (Decision 128).
 
 ## Images
 For Premium member calendar prompts, the current TDIE_DFY_CALENDAR_PRODUCTION_RULES.md governs tool-neutral member usability and optional persona references.
