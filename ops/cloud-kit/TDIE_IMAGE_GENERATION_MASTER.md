@@ -20,12 +20,12 @@ M. MIDJOURNEY, STANDING RULE (Jodie, 3 October 2026). This applies to every imag
 * Everything else in this file still applies in Midjourney: the identity opening line, locked features never written, no text in the image (text is set afterwards), no third-party IP, and the pre-generation check in section 10.
 * It is a browser job. Run it in her signed-in browser, take the browser lock first (claude/TDIE_BROWSER_LOCK.md), use one tab and do one job at a time, and never type a password. If Midjourney is not signed in or will not load, use the existing order for that image and say so in one line.
 
-L. 2,500-CHARACTER LIMIT, STANDING RULE (Jodie, 14 October 2026). This applies to every image prompt in the business and to every file, scheduled task and skill that writes one.
+L. 2,500-CHARACTER LIMIT, STANDING RULE (Jodie, 14 October 2026). This applies to every image prompt and every video prompt in the business and to every file, scheduled task and skill that writes one.
 
-* Every image prompt is 2,500 characters or fewer, spaces included. That covers still frames, Reel covers (the cover-title text block and the "The text reads exactly" line count as part of the prompt), story slides, carousel slides, pins and every other image. Video prompts are not image prompts and are not covered by this limit.
+* Every image prompt is 2,500 characters or fewer, spaces included. That covers still frames, Reel covers (the cover-title text block and the "The text reads exactly" line count as part of the prompt), story slides, carousel slides, pins and every other image. Every video prompt (Reel Version A with the words built in, Version B video only, and any other clip) is also 2,500 characters or fewer, timed on-screen text lines included (Jodie, 14 October 2026: a 3,700-character Version A could not be run).
 * Count the whole text a member would paste, exactly as it is delivered. Check the count before the prompt ships, and again after any edit.
 * When a prompt runs long, cut in this order: repeated wording, the micro-details line, then the long realism sentence (keep "photorealistic, true-to-life textures, never glossy or AI-perfect"). Never cut the identity opening line, the tumbler, the named world items, the animal counts, the composition line or the negative lines.
-* First applied 14 October 2026 to the 17 "Day N NEW" October calendar lessons (Days 15 to 31): every cover prompt was over the limit (2,892 to 3,375 characters) and was cut to 2,500 or under; every still frame and story slide was already under it.
+* First applied 14 October 2026 to the 17 "Day N NEW" October calendar lessons (Days 15 to 31): every cover prompt was over the limit (2,892 to 3,375 characters) and was cut to 2,500 or under; every still frame and story slide was already under it. The same day every Version A video prompt (2,645 to 2,859 characters) was cut to 2,500 or under.
 
 0. WHICH PRODUCT IS THIS? (Jodie, 2 October 2026, Decision 124). Decide before anything else.
 
