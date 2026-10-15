@@ -55,7 +55,7 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
           <div class="wb2-upsell">
            <p class="wb2-upsell-t">{f.title}</p>
            <p>{f.text}</p>
-           <a href={f.link} target="_blank" rel="noopener">{f.linkText} <span aria-hidden="true">→</span></a>
+           {f.link && <a href={f.link} target="_blank" rel="noopener">{f.linkText} <span aria-hidden="true">→</span></a>}
           </div>
          ) : f.type === 'pick' ? (
           <fieldset>
@@ -110,6 +110,7 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
 </WysBuyerFrame>
 
 <style>
+ .wb2-copy[disabled]{opacity:.45;cursor:not-allowed}
  .wb2-pick-hint{margin:-2px 0 8px;font-size:13px;color:#7a5a6c}
  .wb2-chips{display:flex;flex-wrap:wrap;gap:8px}
  .wb2-chip{position:relative;display:inline-flex;cursor:pointer}
@@ -179,6 +180,13 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
  function update() {
   const a = read();
   if (!unlocked) a.platform = 'claude';
+  // ChatGPT cannot make Idea Lists yet (Amazon refuses its browser), so that choice is locked to by hand.
+  if (a.platform === 'chatgpt') a.listMode = 'hand';
+  form.querySelectorAll('[name="listMode"]').forEach((el) => {
+   const lock = a.platform === 'chatgpt';
+   el.disabled = lock && el.value === 'auto';
+   if (lock) el.checked = el.value === 'hand';
+  });
   form.querySelectorAll('[data-show]').forEach((el) => {el.hidden = !shown(el.dataset.show, a);});
   form.querySelectorAll('[data-private]').forEach((el) => {el.hidden = !unlocked;});
   document.querySelectorAll("[data-platform]").forEach((el) => {el.hidden = el.dataset.platform !== a.platform;});
@@ -188,9 +196,11 @@ import {SECTIONS} from '../../../../scripts/wys-buyer-prompts.js';
   outs.nightly.textContent = texts.nightly;
   const m = missing(a);
   miss.hidden = !m.length;
-  miss.textContent = m.length ? `Still needed in Quick Start: ${m.join(', ')}.` : '';
+  miss.textContent = m.length ? `Your prompts are locked until you finish: ${m.join('; ')}.` : '';
+  document.querySelectorAll('.wb2-copy').forEach((b) => {b.disabled = m.length > 0; b.title = m.length ? 'Finish the list above first' : '';});
  }
  document.querySelectorAll('.wb2-copy').forEach((b) => b.addEventListener('click', async () => {
+  if (b.disabled) return;
   const t = texts[b.dataset.copy];
   try {await navigator.clipboard.writeText(t);} catch (e) {
    const r = document.createRange(); r.selectNodeContents(outs[b.dataset.copy]); const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy');

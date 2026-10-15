@@ -49,6 +49,16 @@ export const SECTIONS = [
   ]
  },
  {
+  id: 'connect', title: 'Check your connections', note: 'Automatic steps only work when the tool behind them is connected and signed in. Your prompts stay locked until every box that applies to you says Yes. If one says Not yet, connect it first, or switch that step to by hand in the next section.', open: true,
+  fields: [
+   {id: 'okDrive', label: 'Google Drive is connected to the AI that runs this', type: 'radio', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: ''},
+   {id: 'okMetricool', label: 'Metricool is connected, and your Pinterest business account (and Instagram, if it is on) is connected inside Metricool', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['yes', 'Yes, they are connected'], ['no', 'Not yet']], def: ''},
+   {id: 'okHiggs', label: 'Higgsfield is connected and has credits', type: 'radio', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', options: [['yes', 'Yes, it is connected and has credits'], ['no', 'Not yet']], def: ''},
+   {id: 'okGithub', label: 'GitHub is connected', type: 'radio', show: 'blog=on', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: ''},
+   {id: 'okAmazon', label: 'You opened amazon.com in the browser the AI will use, the page loaded normally, and you are signed in', type: 'radio', show: 'srcMode=auto|amazon=influencer&listMode=auto', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet, or Amazon refused the browser']], def: ''}
+  ]
+ },
+ {
   id: 'hand', title: 'Do any step by hand', note: 'The main path is fully automatic. Any step can be done by hand instead, to save money, credits or Claude usage, or just because you want control. Mix and match.',
   fields: [
    {id: 'srcMode', label: 'Finding the products', type: 'radio', options: [
@@ -57,6 +67,9 @@ export const SECTIONS = [
    {id: 'listMode', label: 'Idea Lists', type: 'radio', show: 'amazon=influencer', options: [
     ['auto', 'Automatic: it adds each look to a themed Idea List on my storefront'],
     ['hand', 'By hand: it writes the list name and product links in my log, I add them; pins link to my storefront']], def: 'auto'},
+   {id: 'listGptNote', type: 'note', show: 'platform=chatgpt&amazon=influencer',
+    title: 'Idea Lists are by hand on ChatGPT for now',
+    text: 'In testing, Amazon refused ChatGPT\u2019s browser ("We do not support your session or client"), so ChatGPT cannot make Idea Lists on its own yet. This stays by hand until it is proven.'},
    {id: 'photoMode', label: 'Photos', type: 'radio', options: [
     ['auto', 'Automatic: it makes all 3 photos with the Higgsfield connector (uses credits)'],
     ['hand', 'By hand: it writes the 3 photo prompts, I make them on the Higgsfield website (on plans with Unlimited models, those don’t use credits) and drop them in my Drive folder. It finishes the look the next night']], def: 'auto'},
@@ -156,8 +169,8 @@ function modes(a) {
   inf, ig,
   gpt: a.platform === 'chatgpt',
   srcHand: a.srcMode === 'hand',
-  listAuto: inf && a.listMode !== 'hand',
-  listHand: inf && a.listMode === 'hand',
+  listAuto: inf && a.listMode !== 'hand' && a.platform !== 'chatgpt',
+  listHand: inf && (a.listMode === 'hand' || a.platform === 'chatgpt'),
   photoAuto: a.photoMode !== 'hand',
   pinAuto: a.pinMode !== 'hand',
   igAuto: ig && a.igMode !== 'hand',
@@ -185,6 +198,12 @@ export function missing(a) {
  if (m.blogAuto) need.push(['repo', 'GitHub site']);
  if (m.blog) need.push(['siteUrl', 'website address']);
  const out = need.filter(([k]) => !String(a[k] ?? '').trim()).map(([, n]) => n);
+ const conn = [['okDrive', 'Check your connections: Google Drive connected', true],
+  ['okMetricool', 'Check your connections: Metricool connected', m.metricool],
+  ['okHiggs', 'Check your connections: Higgsfield connected', m.credits],
+  ['okGithub', 'Check your connections: GitHub connected', m.blogAuto],
+  ['okAmazon', 'Check your connections: Amazon opens and you are signed in', !m.srcHand || m.listAuto]];
+ for (const [k, n, on] of conn) if (on && a[k] !== 'yes') out.push(n);
  if (!a.blog) out.unshift('whether you have a blog');
  if (!m.inf && !m.blog) out.push('blog posts switched on, automatic or by hand (Associates only needs them)');
  return out;
