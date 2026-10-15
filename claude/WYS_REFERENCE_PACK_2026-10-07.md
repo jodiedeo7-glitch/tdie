@@ -30,8 +30,10 @@ Cute adult pink maximalism: hot pink with black, cream, lavender and silver, wit
 ## 3. REFERENCE-MAP.txt (verbatim)
 
 ```text
-Each prompt is 2,500 characters or fewer. For basic: use supplied mood images only if desired. For styled: attach the matching basic.png to preserve product shapes. For lifestyle: attach avatar-reference.png as person identity and the matching styled.png as room/decor reference. Lifestyle must be a separately composed photograph with a different camera angle, framing or POV from styled, plus natural human activity; never simply insert the avatar into the styled frame. Retail product shapes remain approximate in generated images. The stand-only correction used for Ghoul Fuel is retained separately as coffee-styled-prompt.txt at pack root.
+Each prompt is under 3000 characters. For basic: use supplied mood images only if desired. For styled: attach the matching basic.png to preserve product shapes. For lifestyle: attach avatar-reference.png as person identity and the matching styled.png as room/decor reference. Lifestyle must be a separately composed photograph with a different camera angle, framing or POV from styled, plus natural human activity; never simply insert the avatar into the styled frame. Retail product shapes remain approximate in generated images. The stand-only correction used for Ghoul Fuel is retained separately as coffee-styled-prompt.txt at pack root.
 ```
+
+Current rule (Jodie, 14 October 2026, section L of claude/TDIE_IMAGE_GENERATION_MASTER.md): every image prompt is 2,500 characters or fewer. The file above is quoted as it was in the pack; its under-3000 line is superseded.
 
 ## 4. The approved prompts (verbatim, from the pack's prompts folder)
 
