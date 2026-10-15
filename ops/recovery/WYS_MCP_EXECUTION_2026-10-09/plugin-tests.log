@@ -1,0 +1,77 @@
+test_actual_mcp_to_runtime_prepares_all_steps_and_invalidates_corrected_input (test_mcp_session.MCPIntegration.test_actual_mcp_to_runtime_prepares_all_steps_and_invalidates_corrected_input) ... ok
+test_actual_tools_persist_resume_and_reject_stale_blank_cross_customer (test_mcp_session.MCPIntegration.test_actual_tools_persist_resume_and_reject_stale_blank_cross_customer) ... ok
+test_launch_blocks_repo_storage_and_symlinked_state (test_mcp_session.MCPIntegration.test_launch_blocks_repo_storage_and_symlinked_state) ... ok
+test_operator_binding_and_preference_change_invalidate_real_tool_records (test_mcp_session.MCPIntegration.test_operator_binding_and_preference_change_invalidate_real_tool_records) ... ok
+test_reproducible_allowlist_and_relocated_mcp_runtime (test_package.RelocatedPackage.test_reproducible_allowlist_and_relocated_mcp_runtime) ... ok
+test_http_authorization_and_two_customer_isolation (test_remote_mcp.ProtectedHTTPTests.test_http_authorization_and_two_customer_isolation) ... StreamableHTTP session manager started
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 401 Unauthorized"
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 401 Unauthorized"
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 401 Unauthorized"
+Bearer token resource 'https://wrong.test/mcp' is not resource_server_url https://mcp.test/mcp
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 401 Unauthorized"
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 403 Forbidden"
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Tool 'wys_verify_input_application' raised an unexpected exception
+Traceback (most recent call last):
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/utilities/func_metadata.py", line 164, in call_fn
+    return await anyio.to_thread.run_sync(functools.partial(fn, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/anyio/_backends/_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-plugin-merge/plugins/wys-storefront/server/session_server.py", line 194, in wys_verify_input_application
+    raise ValueError('INPUT_CUSTOMER_OR_SCOPE_MISMATCH')
+ValueError: INPUT_CUSTOMER_OR_SCOPE_MISMATCH
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ccbfe757901c/wys-mcp-deps/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool wys_verify_input_application
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 200 OK"
+Invalid Host header: attacker.test
+Terminating session: None
+HTTP Request: POST https://mcp.test/mcp "HTTP/1.1 421 Misdirected Request"
+StreamableHTTP session manager shutting down
+ok
+test_real_signed_jwt_rejects_bad_signature_issuer_audience_expiry_and_missing_subject (test_remote_mcp.ProtectedHTTPTests.test_real_signed_jwt_rejects_bad_signature_issuer_audience_expiry_and_missing_subject) ... ok
+test_blank_stale_and_unapproved_correction_preserve_saved_bytes (test_session.CustomerSessionTests.test_blank_stale_and_unapproved_correction_preserve_saved_bytes) ... ok
+test_category_correction_preserves_old_brief_and_requests_new_one (test_session.CustomerSessionTests.test_category_correction_preserves_old_brief_and_requests_new_one) ... ok
+test_legacy_marker_is_never_removed_by_age (test_session.CustomerSessionTests.test_legacy_marker_is_never_removed_by_age) ... ok
+test_live_writer_blocks_and_killed_writer_releases_lease (test_session.CustomerSessionTests.test_live_writer_blocks_and_killed_writer_releases_lease) ... ok
+test_no_person_resume_skips_only_persona_world (test_session.CustomerSessionTests.test_no_person_resume_skips_only_persona_world) ... ok
+test_relocated_cli_retains_all_answers_and_all_ten_category_briefs (test_session.CustomerSessionTests.test_relocated_cli_retains_all_answers_and_all_ten_category_briefs) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 13.396s
+
+OK
