@@ -58,7 +58,7 @@ Rotate four lanes across the month:
 
 ## 5. Prompt shape
 
-SOP 16's eleven blocks, in order, 2,500 to 3,000 characters, one complete standalone prompt per day. Block 11 ends with:
+SOP 16's eleven blocks, in order, 2,500 characters or fewer (Jodie, 14 October 2026, section L of the image master), one complete standalone prompt per day. Block 11 ends with:
 
 > Cinematic lived-in realism: [three words for the mood].
 

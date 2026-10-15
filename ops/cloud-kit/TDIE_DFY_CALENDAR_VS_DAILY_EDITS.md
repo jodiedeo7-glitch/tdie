@@ -55,7 +55,7 @@ The look: THE UNIVERSAL LOOK. A member must be able to attach her own seed image
 - Wardrobe: fine-gauge knits, cashmere, linen sets, quality tees, tailored trousers, wide-leg denim, slip skirts, trench and wool coats, aprons, clean boots, simple gold jewellery. No logos.
 - One saturated candy-pink accent per photo, written as something anyone could own (a pink knit, a pink mug with no words, peonies, a pink notebook).
 - Never: anything only Tommy Kate owns (Player Two? mug, glitter tumbler with lavender straw, lavender controller with strawberry charm, GameBoys, Hello Kitty or Kuromi plushies, the pink attic gaming loft, her golden retriever or grey British Shorthair cat, her name). Never the cookie-cutter rich AI influencer: supercars, Lamborghinis, private jets, yachts, penthouses, Dubai, mansions, marble, hotel suites, champagne towers, designer logos, branded handbags, cash or card props, nightclubs, pool parties, high-fashion editorial posing.
-- Eleven blocks per prompt, 2,500 to 3,000 characters, one complete standalone prompt per day, ending with: Cinematic lived-in realism: [three words for the mood].
+- Eleven blocks per prompt, 2,500 characters or fewer (Jodie, 14 October 2026), one complete standalone prompt per day, ending with: Cinematic lived-in realism: [three words for the mood].
 - Lesson titles: [M]/[D] [Scene Name], two to four evocative words, never a camera setup. Example: 10/14 Orchard Before Breakfast.
 
 RULES FOR BOTH
