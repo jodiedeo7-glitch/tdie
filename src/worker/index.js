@@ -1,3 +1,4 @@
+import { handle as wysWorkspace } from "./api/wys-workspace.js";
 import { handle as bamiWaitlist } from "./api/bami-waitlist.js";
 import { handle as complete } from "./api/complete.js";
 import { handle as dashboardStats } from "./api/dashboard-stats.js";
@@ -8,6 +9,7 @@ import { handle as verify } from "./api/verify.js";
 import { handle as waitlist } from "./api/waitlist.js";
 
 const API = {
+  "/api/wys-workspace": wysWorkspace,
   "/api/bami-waitlist": bamiWaitlist,
   "/api/complete": complete,
   "/api/dashboard-stats": dashboardStats,
