@@ -20,8 +20,8 @@ export const SECTIONS = [
     ['influencer', 'Amazon Influencer (I have a storefront and can make Idea Lists)'],
     ['associates', 'Amazon Associates only (no storefront yet)']], def: 'influencer',
     help: 'Associates only? Each pin links to a blog post on your own site instead of an Idea List, so blog posts have to be on (automatic or by hand).'},
-   {id: 'storefront', label: 'Your Amazon storefront address', type: 'text', ph: 'https://www.amazon.com/shop/yourname', show: 'amazon=influencer'},
-   {id: 'tag', label: 'Your Amazon tracking ID', type: 'text', ph: 'yourname-20', help: 'Find it in the SiteStripe bar at the top of any Amazon page while you are signed in.'},
+   {id: 'storefront', label: 'Your Amazon storefront address', type: 'text', ph: 'https://www.amazon.com/shop/yourname', show: 'amazon=influencer', help: 'Or press Do it for me and it finds it for you.'},
+   {id: 'tag', label: 'Your Amazon tracking ID', type: 'text', ph: 'yourname-20', help: 'It ends in -20 and shows in the SiteStripe bar at the top of any Amazon page while you are signed in. Or press Do it for me.'},
    {id: 'persona', label: 'Does your storefront have a face?', type: 'radio', options: [
     ['yes', 'Yes, my AI persona (or me) is in the lifestyle photos'],
     ['no', 'No face. Lifestyle photos show hands and the products in use']], def: 'yes'},
@@ -30,10 +30,10 @@ export const SECTIONS = [
    {id: 'ig', label: 'Instagram carousels', type: 'radio', options: [['on', 'On'], ['off', 'Off']], def: 'on'},
    {id: 'igAccount', label: 'Instagram account', type: 'text', ph: '@youraccount', show: 'ig=on'},
    {id: 'blog', label: 'Do you have a blog or website for your looks?', type: 'radio', options: [
-    ['on', 'Yes, and it lives on GitHub: it publishes each post itself'],
-    ['hand', 'Yes, on another website: it writes each post, I paste it in'],
+    ['on', 'Yes, and my site\u2019s files are kept on GitHub: it publishes each post itself'],
+    ['hand', 'Yes, on a website builder (WordPress, Shopify, Squarespace, Wix or similar): it writes each post, I paste it in'],
     ['off', 'No blog yet']], def: '',
-    help: 'With a blog, every look also gets its own post, so people find your looks on Google as well as Pinterest.'},
+    help: 'With a blog, every look also gets its own post, so people find your looks on Google as well as Pinterest. Sites hosted on Cloudflare, Vercel, Netlify or GitHub Pages almost always keep their files on GitHub, so pick the first one. Not sure? Pick the first one, then press Do it for me under the GitHub question.'},
    {id: 'blogUpsellOff', type: 'note', show: 'blog=off',
     title: 'Want a blog that fills itself?',
     text: 'The Weekend Ecosystem™ builds your own website and blog in one weekend, set up so this system publishes a post for every look, automatically. Your Storefront works fine without it, and you can add it any time.',
@@ -42,20 +42,32 @@ export const SECTIONS = [
     title: 'Rather not paste every post?',
     text: 'The Weekend Ecosystem™ builds a website on GitHub, so this system publishes each blog post for you instead of handing it to you to paste.',
     link: '/weekend-ecosystem/preview', linkText: 'See inside The Weekend Ecosystem™'},
-   {id: 'repo', label: 'Your GitHub site', type: 'text', ph: 'yourname/yoursite', show: 'blog=on'},
+   {id: 'repo', label: 'Your GitHub site (the place on GitHub where your website\u2019s files are kept)', type: 'text', ph: 'yourname/yoursite', show: 'blog=on'},
+   {id: 'branch', label: 'Which version of your site goes live? (the branch name, usually main)', type: 'text', ph: 'main', show: 'blog=on', help: 'GitHub keeps versions of your site called branches. Your host publishes one of them. Posts have to go into that one or they never appear.'},
+   {id: 'host', label: 'Where your site is hosted', type: 'select', show: 'blog=on', options: [['', 'Choose one'], ['Cloudflare', 'Cloudflare'], ['Vercel', 'Vercel'], ['Netlify', 'Netlify'], ['GitHub Pages', 'GitHub Pages'], ['other', 'Somewhere else'], ['unsure', 'I am not sure']], def: ''},
    {id: 'siteUrl', label: 'Your website address', type: 'text', ph: 'https://www.yoursite.com', show: 'blog=on|blog=hand'},
    {id: 'metricool', label: 'Your Metricool brand name', type: 'text', ph: 'The brand name exactly as Metricool shows it', show: 'pinMode=auto|igMode=auto',
-    help: 'Metricool loads and schedules your pins and posts automatically. Its free plan is fine to start; you’ll want to upgrade once you scale up. Doing pins and posts by hand? You don’t need it.'}
+    help: 'Metricool loads and schedules your pins and posts automatically. Its free plan is fine to start; you’ll want to upgrade once you scale up. Doing pins and posts by hand? You don’t need it. Connect it first (see Check your connections), then press Do it for me to read your brand name.'}
   ]
  },
  {
-  id: 'connect', title: 'Check your connections', note: 'Automatic steps only work when the tool behind them is connected and signed in. Your prompts stay locked until every box that applies to you says Yes. If one says Not yet, connect it first, or switch that step to by hand in the next section.', open: true,
+  id: 'connect', title: 'Check your connections', note: 'Automatic steps only work when the tool behind them is connected and signed in. Each one below says exactly how to connect it, and the button does the checking for you. Your prompts stay locked until every box that applies says Yes. If one says Not yet, connect it first, or switch that step to by hand in the next section.', open: true,
   fields: [
-   {id: 'okDrive', label: 'Google Drive is connected to the AI that runs this', type: 'radio', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: ''},
-   {id: 'okMetricool', label: 'Metricool is connected, and your Pinterest business account (and Instagram, if it is on) is connected inside Metricool', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['yes', 'Yes, they are connected'], ['no', 'Not yet']], def: ''},
-   {id: 'okHiggs', label: 'Higgsfield is connected and has credits', type: 'radio', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', options: [['yes', 'Yes, it is connected and has credits'], ['no', 'Not yet']], def: ''},
-   {id: 'okGithub', label: 'GitHub is connected', type: 'radio', show: 'blog=on', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: ''},
-   {id: 'okAmazon', label: 'You opened amazon.com in the browser the AI will use, the page loaded normally, and you are signed in', type: 'radio', show: 'srcMode=auto|amazon=influencer&listMode=auto', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet, or Amazon refused the browser']], def: ''}
+   {id: 'okDrive', label: 'Google Drive is connected', type: 'radio', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: '',
+    how: {claude: ['Open Claude and click <b>Settings</b>, then <b>Connectors</b>.', 'Search for <b>Google Drive</b> and click <b>Connect</b>.', 'Sign in to Google when it asks and click <b>Allow</b>.', 'Press <b>Check it for me</b> below and pick Yes when it works.'],
+     chatgpt: ['Open ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b> (earlier called Connectors).', 'Find <b>Google Drive</b> and click <b>Connect</b>.', 'Sign in to Google when it asks and click <b>Allow</b>.', 'Press <b>Check it for me</b> below and pick Yes when it works.']}},
+   {id: 'okMetricool', label: 'Metricool is connected, and your Pinterest business account (and Instagram, if it is on) is connected inside Metricool', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['yes', 'Yes, they are connected'], ['no', 'Not yet']], def: '',
+    how: {claude: ['You need a Metricool account first (its free plan is fine to start). Sign up at metricool.com if you do not have one.', 'In Claude, click <b>Settings</b>, then <b>Connectors</b>, search for <b>Metricool</b> and click <b>Connect</b>. Sign in to Metricool when it asks.', 'Now log in to Metricool itself, open your brand’s <b>Connections</b>, and connect your <b>Pinterest business account</b> (and <b>Instagram</b>, if carousels are on).', 'Press <b>Check it for me</b> below and pick Yes when it shows them.'],
+     chatgpt: ['You need a Metricool account first (its free plan is fine to start). Sign up at metricool.com if you do not have one.', 'In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>Metricool</b> and click <b>Connect</b>. Sign in to Metricool when it asks.', 'Now log in to Metricool itself, open your brand’s <b>Connections</b>, and connect your <b>Pinterest business account</b> (and <b>Instagram</b>, if carousels are on).', 'Press <b>Check it for me</b> below and pick Yes when it shows them.']}},
+   {id: 'okHiggs', label: 'Higgsfield is connected and has credits', type: 'radio', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', options: [['yes', 'Yes, it is connected and has credits'], ['no', 'Not yet']], def: '',
+    how: {claude: ['Higgsfield is its own paid plan with credits. Sign up at higgsfield.ai and make sure you have credits.', 'In Claude, click <b>Settings</b>, then <b>Connectors</b>, search for <b>Higgsfield</b> and click <b>Connect</b>. Sign in when it asks.', 'Press <b>Check it for me</b> below. It shows your credit balance. Pick Yes only if the balance is above zero.'],
+     chatgpt: ['Higgsfield is its own paid plan with credits. Sign up at higgsfield.ai and make sure you have credits.', 'In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>Higgsfield</b> and click <b>Connect</b>. Sign in when it asks.', 'Press <b>Check it for me</b> below. It shows your credit balance. Pick Yes only if the balance is above zero.']}},
+   {id: 'okGithub', label: 'GitHub is connected', type: 'radio', show: 'blog=on', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: '',
+    how: {claude: ['In Claude, click <b>Settings</b>, then <b>Connectors</b>, search for <b>GitHub</b> and click <b>Connect</b>.', 'Sign in to GitHub. When it asks which sites (repositories) it may open, choose your website’s.', 'Press <b>Check it for me</b> below and pick Yes when it lists your site.'],
+     chatgpt: ['In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>GitHub</b> and click <b>Connect</b>.', 'Sign in to GitHub. When it asks which sites (repositories) it may open, choose your website’s.', 'Press <b>Check it for me</b> below and pick Yes when it lists your site.']}},
+   {id: 'okAmazon', label: 'You opened amazon.com in the browser the AI will use, the page loaded normally, and you are signed in', type: 'radio', show: 'srcMode=auto|amazon=influencer&listMode=auto', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet, or Amazon refused the browser']], def: '',
+    how: {claude: ['In the Claude desktop app, open the browser inside it and go to <b>amazon.com</b>.', 'Sign in with your own Amazon account. Type your own password yourself. The AI never types it.', 'Tick <b>Keep me signed in</b> so it stays signed in overnight.', 'Press <b>Check it for me</b> below. If Amazon says it does not support the browser, pick Not yet: Amazon steps must stay by hand until that works.'],
+     chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>amazon.com</b> in it.', 'Sign in with your own Amazon account. Type your own password yourself. The AI never types it.', 'Tick <b>Keep me signed in</b>.', 'Press <b>Check it for me</b> below. If Amazon says it does not support the browser, pick Not yet: Amazon steps must stay by hand until that works.']}}
   ]
  },
  {
@@ -136,6 +148,29 @@ export const SECTIONS = [
  }
 ];
 
+// "Do it for me" requests: each one is a complete message the buyer sends to their AI with one click.
+const who = (p) => (p === 'chatgpt' ? 'ChatGPT' : 'Claude');
+const browserOf = (p) => (p === 'chatgpt' ? 'the browser tool connected to this chat' : 'the browser inside the Claude desktop app');
+const NC = ' Change nothing.';
+export const ASKS = {
+ connectAll: (a, p) => {
+  const m = modes(a);
+  const tools = ['Google Drive', ...(m.metricool ? ['Metricool'] : []), ...(m.credits ? ['Higgsfield'] : []), ...(m.blogAuto ? ['GitHub'] : [])];
+  const where = p === 'chatgpt' ? 'Tell me exactly where to click in ChatGPT (Settings, then Apps) to connect each one.' : 'Search the connector directory for each one that is not connected and show me its Connect button.';
+  return `Help me connect the tools for my While-You-Sleep Storefront. I need: ${tools.join(', ')}. For each one, check whether it is already connected in ${who(p)}. ${where} After I connect each one, test it with one harmless read-only request and tell me in one line whether it worked. Do not create, change or delete anything.`;
+ },
+ okDrive: (a, p) => `Check that Google Drive is connected in ${who(p)}: list the names of my 3 most recent files (names only) and tell me in one line yes or no.${NC}`,
+ okMetricool: () => `Check that Metricool is connected: list my brands exactly as Metricool names them, and for each brand which networks are connected (Pinterest, Instagram and so on). Tell me which brand is mine for pins.${NC}`,
+ okHiggs: () => `Check that Higgsfield is connected: show my credit balance and tell me in one line whether I have credits.${NC}`,
+ okGithub: () => `Check that GitHub is connected: list the names of the repositories you can see (names only) and tell me in one line yes or no.${NC}`,
+ okAmazon: (a, p) => `Use ${browserOf(p)} to open https://www.amazon.com in a new tab. Tell me exactly what you see: did the page load normally, and am I signed in (my name shows near the top)? If Amazon says it does not support the browser, tell me those exact words. Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
+ tag: (a, p) => `Use ${browserOf(p)} to open my Amazon Associates account (affiliate-program.amazon.com). Tell me my tracking IDs exactly as written (they end in -20), and which one my Amazon Influencer storefront uses. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
+ storefront: (a, p) => `Use ${browserOf(p)} to find my Amazon Influencer storefront and tell me its exact web address (it looks like https://www.amazon.com/shop/name). Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
+ metricool: () => `Using the Metricool connection, list my brands exactly as Metricool names them. For each, say which networks are connected (Pinterest, Instagram and so on). Tell me which brand name to type into my setup.${NC}`,
+ igAccount: () => `Using the Metricool connection, tell me which Instagram account is connected to my brand, written like @name.${NC}`,
+ repo: () => `Using the GitHub connection, list the repositories you can see (names only) and tell me which one holds my website. For that one tell me: its exact name written owner/name; the branch my live site is published from (look for Cloudflare, Vercel, Netlify or GitHub Pages settings in its files); where it is hosted if you can tell; and the live website address if you can find it.${NC}`
+};
+
 // A 'pick' question: tick boxes plus an optional "anything else" box. The prompts get one plain answer.
 export function pickValue(f, picked, more) {
  const sep = f.sep || ', ';
@@ -157,6 +192,7 @@ export function shown(cond, a) {
  return cond.split('|').some((group) => group.split('&').every((c) => {const [k, val] = c.split('='); return a[k] === val;}));
 }
 
+const hostOf = (a) => (a.host && a.host !== 'unsure' && a.host !== 'other' ? a.host : '');
 const v = (x, fb = '') => (Array.isArray(x) ? x.join(', ') : String(x ?? '').trim()) || fb;
 const tzName = (tz) => (SECTIONS[0].fields.find((f) => f.id === 'tz').options.find((o) => o[0] === tz) || [tz, tz])[1];
 const hm = (t) => {const [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'pm' : 'am'; return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${ap}`;};
@@ -195,14 +231,14 @@ export function missing(a) {
  if (m.inf) need.push(['storefront', 'Amazon storefront address']);
  if (a.persona === 'yes') need.push(['personaName', 'her name'], ['personaRef', 'her reference photo link']);
  if (m.ig) need.push(['igAccount', 'Instagram account']);
- if (m.blogAuto) need.push(['repo', 'GitHub site']);
+ if (m.blogAuto) need.push(['repo', 'GitHub site'], ['branch', 'which version of your site goes live (the branch)'], ['host', 'where your site is hosted']);
  if (m.blog) need.push(['siteUrl', 'website address']);
  const out = need.filter(([k]) => !String(a[k] ?? '').trim()).map(([, n]) => n);
- const conn = [['okDrive', 'Check your connections: Google Drive connected', true],
-  ['okMetricool', 'Check your connections: Metricool connected', m.metricool],
-  ['okHiggs', 'Check your connections: Higgsfield connected', m.credits],
-  ['okGithub', 'Check your connections: GitHub connected', m.blogAuto],
-  ['okAmazon', 'Check your connections: Amazon opens and you are signed in', !m.srcHand || m.listAuto]];
+ const conn = [['okDrive', 'connect Google Drive', true],
+  ['okMetricool', 'connect Metricool', m.metricool],
+  ['okHiggs', 'connect Higgsfield', m.credits],
+  ['okGithub', 'connect GitHub', m.blogAuto],
+  ['okAmazon', 'sign in to Amazon in the AI\u2019s browser', !m.srcHand || m.listAuto]];
  for (const [k, n, on] of conn) if (on && a[k] !== 'yes') out.push(n);
  if (!a.blog) out.unshift('whether you have a blog');
  if (!m.inf && !m.blog) out.push('blog posts switched on, automatic or by hand (Associates only needs them)');
@@ -245,7 +281,7 @@ FINDING PRODUCTS: ${how(!m.srcHand)}${m.inf ? `\nIDEA LISTS: ${how(m.listAuto)}`
 PHOTOS: ${how(m.photoAuto)}
 PINS: ${how(m.pinAuto)}
 INSTAGRAM: ${m.ig ? `on (${how(m.igAuto)}), ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}, posts at ${hm(a.igTime)}, photo order ${a.order}` : 'off'}
-BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
+BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).length ? ` (${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).join(', ')})` : ''}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
 ${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? `APPROVALS: ${m.approve ? 'on (every pin and carousel waits in Metricool for my OK)' : 'off (fully automatic)'}` : 'APPROVALS: not needed (I post by hand)'}`;
 }
 
@@ -312,7 +348,7 @@ Tell me to save the three finished photos as Basic, Styled and Lifestyle in "Whi
  }
 
  if (m.blogAuto) parts.push(`${step(`BLOG POST (GitHub connector, site ${v(a.repo, '[YOUR GITHUB SITE]')})`)}
-Find the newest blog post in the site and copy its format exactly. Add a post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and an affiliate disclosure and an AI-generated images note. ${m.imgGpt ? 'The photos are files in my Drive folder: add them to the site\'s images folder in the same change and use those paths. ' : ''}Publish it, wait for the site to update, open the live page at ${site} and confirm all three photos and every link load. Record the address.`);
+Find the newest blog post in the site and copy its format exactly. Add a post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and an affiliate disclosure and an AI-generated images note. ${m.imgGpt ? 'The photos are files in my Drive folder: add them to the site\'s images folder in the same change and use those paths. ' : ''}Publish it${v(a.branch) ? ` on the "${v(a.branch)}" branch` : ''}, wait for the site to update${hostOf(a) ? ` (${hostOf(a)} rebuilds it by itself)` : ''}, open the live page at ${site} and confirm all three photos and every link load. Record the address.`);
  else if (m.blogHand) parts.push(`${step('BLOG POST · BY HAND')}
 Under To Do By Hand write the full post, ready to paste: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), where each of the three photos goes (Basic, Styled, Lifestyle) with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and the Idea List link' : ''}, and this note at the end: "As an Amazon Associate I earn from qualifying purchases. Photos are AI-generated styling ideas; check each listing for the exact item." Ask me to paste the post's address under the look in the log once it's live on ${site}.${!m.inf ? ' The pins for this look wait until that address is in the log.' : ''}`);
 
@@ -349,7 +385,7 @@ export function setup(a) {
  else if (m.imgGpt) conn.push(`${c()}. ChatGPT image maker: make one small test image (a plain mug on a table) to confirm it works in this chat, and tell me if it says I've hit a limit.`);
  if (m.metricool) conn.push(`${c()}. Metricool: find my brand "${v(a.metricool, '[YOUR METRICOOL BRAND]')}". ${m.pinAuto ? 'Confirm Pinterest is connected and list my Pinterest boards. ' : ''}${m.igAuto ? `Confirm Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is connected.` : ''}`);
  conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and inside it a Google Doc "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
- if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built. Tell me in two lines.`);
+ if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built.${v(a.branch) ? ` Confirm the "${v(a.branch)}" branch exists.` : ''} Tell me in two lines.`);
  conn.push(`${c()}. ${m.gpt ? 'Browser: use the browser tool connected to this chat and tell me exactly which one it is. Open amazon.com in a new tab.' : 'Built-in browser (the browser inside the Claude desktop app): open amazon.com in a new tab.'} ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").${m.gpt ? ' Then open Create content, Idea List once to check it is there. Create nothing yet.' : ''}` : 'Confirm I\'m signed in (my name shows at the top).'} ${m.gpt ? 'If I\'m signed out, tell me exactly how to sign in to my own Amazon account in that tool and wait. Never use anyone else\'s saved sign-in.' : 'If I\'m signed out, tell me and wait while I sign in.'} Close the tab.`);
 
  const boards = m.pinAuto
