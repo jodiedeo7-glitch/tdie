@@ -15,7 +15,8 @@ import BlueprintForm from "../components/BlueprintForm.astro";
 import { FEATURED, MEMBER_REVIEWS } from "../we-reviews.js";
 import ReviewBubble from "../components/ReviewBubble.astro";
 import HeroArrange from "../components/HeroArrange.astro";
-import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
+import MembershipPlans from "../components/MembershipPlans.astro";
+import { weekendEcosystem as WE, community, library, cap } from "../data/facts.js";
 import { pillars } from "../data/library.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
@@ -244,17 +245,12 @@ const jsonLd = {
 
 
 <section class="mem" id="membership"><div class="wrap">
-  <div class="head"><span class="kick">The membership</span><h2>Build it with us. <em>Pick <i class="stress">your</i> help.</em></h2><p>Both start with {M.trialDays} days free.</p></div>
-  <p class="home-membership-fit">You can begin with either plan. Choose the training, resources and amount of content preparation you want help with.</p>
-  <div class="tiers">
-    <div class="tier"><span class="nm">{M.standard.short}</span><h3>{M.standard.name}</h3><p class="price">{M.standard.monthly}<small>/month</small></p><p class="yr">or {M.standard.perYear}</p>
-      <ul><li>Step-by-step trainings, in build order</li><li>A new AI photo prompt every day</li><li>Women building beside you</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Standard free</span><span class="sm">Start free</span></a></div>
-    <div class="tier prem"><div class="sticker"><i class="in"></i><span>Most help</span></div><span class="nm">{M.premium.short}</span><h3>{M.premium.name}</h3><p class="price">{M.premium.monthly}<small>/month</small></p><p class="yr">or {M.premium.perYear}</p>
-      <ul><li>Everything in Standard</li><li>Instagram and Threads posts written for you, every month</li><li>Every Value Vault guide, already unlocked</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Premium free</span><span class="sm">Start free</span></a></div>
-  </div>
-  <p class="home-premium-note"><b>New to all of this?</b> Premium includes the foundations and unlocked guides you can use now. Adapt the calendar's promotional details to your offer, generate the visuals, then publish.</p>
+  <div class="head"><span class="kick">The membership · on Skool</span><h2>Build the business.<br><em>Keep your life off <i class="stress">camera.</i></em></h2></div>
+  <p class="home-membership-fit">An AI persona can front your brand. You can learn to create, market and sell behind it. Standard teaches the build. Premium adds the sales training, unlocked guides and content written for you, every month.</p>
+  <MembershipPlans />
+  <p class="home-premium-note"><b>Starting from scratch? You can choose either.</b> Use Premium’s training and guides now, then adapt its promotional content when you have an offer to put in it. <a href="/membership#compare">See the full membership comparison →</a></p>
   <div class="rv-row">{MEMBER_REVIEWS.filter((r) => r.about !== "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-  <div class="group"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ current Skool About gallery: faceless income built with AI" width="1440" height="979" loading="lazy"><div><span class="kick">Inside the members' group</span><h3>This is the real group.</h3><p>It lives on Skool, an app for the community. Lessons, weekly threads and the women building beside you.</p><a class="btn" href="/membership">See the membership</a></div></div>
+  <div class="group"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ current Skool About gallery: faceless income built with AI" width="1440" height="979" loading="lazy"><div><span class="kick">Look inside before you join</span><h3>See the classroom. Meet the women building.</h3><p>Open the public Community and Classroom tabs to explore the group, browse the lesson titles and read what members say.</p><a class="btn" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside</a></div></div>
   {MEMBER_REVIEWS.filter((r) => r.about === "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} center />)}
 </div><div class="drip3"></div></section>
 
