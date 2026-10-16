@@ -1,0 +1,100 @@
+{
+  "status": "reviewed_mapping_specification_not_runtime_routing",
+  "reviewedOn": "2026-10-16",
+  "productionBaseline": "6406c49e5408814e3e036ebba0c1f1c74b98ac63",
+  "scope": "Recommendation fit only. No public API, purchase gate or entitlement changes.",
+  "principles": {
+    "visiblePaths": true,
+    "quizRequired": false,
+    "methodIsPurchaseSequence": false,
+    "preferencesOverrideEligibility": false,
+    "unknownPrerequisiteMeansEligible": false,
+    "automaticLaterPurchaseSuggestions": false,
+    "articleReadingRequiresSubscription": false
+  },
+  "destinations": {
+    "foundations": "/resources/faceless-income-blueprint",
+    "membership": "/membership",
+    "membershipPlans": "https://www.skool.com/thedigitalincomeedit/plans",
+    "coursePreview": "/weekend-ecosystem/preview",
+    "courseSales": "/shop/weekend-ecosystem",
+    "courseAccess": "/weekend-ecosystem/",
+    "plr": "/shop/pretty-and-paid-plr-vault",
+    "physicalProducts": "/resources/shopify-starter-kit",
+    "wysInformation": "/shop/while-you-sleep-storefront",
+    "lifestyle": "/lifestyle",
+    "services": "/work-with-me",
+    "bami": "/bami",
+    "learning": "/learn",
+    "communityAccess": "https://www.skool.com/thedigitalincomeedit",
+    "support": "/faq",
+    "supportEmail": "mailto:hello@thedigitalincomeedit.com"
+  },
+  "courseRecommendation": {
+    "allRequired": ["hasReusableMaterial", "wantsOwnedWebsiteBuild"],
+    "allowedStates": [true, false, "unknown"],
+    "materialExamples": ["lessons", "guides", "recordings", "newsletters", "posts", "reusable teaching material within a product"],
+    "notSufficientAlone": ["ownsOneProduct", "hasShop", "hasCommunityAccount", "hasEmailList", "downloadedBlueprint", "membershipPurchase", "wantsAutomation", "hasFreeWeekend", "prefersOneTimePayment", "articleCategory"],
+    "notRequired": ["paidOffer", "technicalExperience", "SkoolOwnership", "minimumYears", "minimumMaterialCount"],
+    "trueTrueOutcome": "Offer qualified preview and sales-page exploration, not forced checkout.",
+    "falseOutcome": "Do not recommend course. Offer learning matched to missing need.",
+    "unknownOutcome": "Clarify starting material or website need; allow public information browsing without declaring eligibility."
+  },
+  "membership": {
+    "beginnerMayChoose": ["Standard", "Premium"],
+    "premiumImmediateUse": ["Standard foundations", "additional training", "unlocked Premium Vault guides"],
+    "premiumRemainingWork": ["adapt promotional offer slots", "generate relevant visuals", "review and publish"],
+    "ownOfferNeededForOwnOfferCalendarPromotion": true,
+    "permittedTdieAffiliateUseIsSeparate": true,
+    "includesStandaloneCourse": false,
+    "includesPlrSubscription": false
+  },
+  "plr": {
+    "existingShopRequired": false,
+    "membershipRequired": false,
+    "isMembershipTier": false,
+    "remainingWork": ["select", "customize", "follow license", "list", "market"]
+  },
+  "wys": {
+    "recommendationRequires": ["supportedAmazonAffiliateConfiguration", "relevantContentProductionNeed"],
+    "informationPath": "conditional",
+    "releaseAuthorityReconciled": false,
+    "activateCheckoutOrPromotion": false,
+    "influencerStorefrontUniversallyRequired": false
+  },
+  "lifestyle": {
+    "businessEducationRequired": false,
+    "shoppingOrder": ["introduction", "photographs", "horizontalProductShelf", "articleText"],
+    "businessEducationOptionalAndSeparatelyIdentified": true,
+    "preserveVerifiedProductsAndDestinations": true
+  },
+  "otherPaths": {
+    "physicalProducts": "Shopify education and Starter Kit; relevant membership training optional. Store intent does not qualify for course.",
+    "services": "Explain existing engagement before its application.",
+    "bami": "Current information and waitlist only; no invented price, cohort date or open enrolment.",
+    "topicLearning": "Answer first, topic-matched free next step, qualify any paid recommendation.",
+    "returningCustomer": "Direct access or support using existing authentication."
+  },
+  "email": {
+    "actualSequencesInspected": false,
+    "permittedConnectionAvailable": false,
+    "browserFallbackPermitted": false,
+    "state": "intended_continuation_only_unverified_service_behavior"
+  },
+  "reviewScenarios": [
+    { "id": "A1", "visitor": "Complete beginner", "facts": { "hasReusableMaterial": false, "wantsOwnedWebsiteBuild": "unknown" }, "expect": "Useful foundation help, optional Standard or Premium; no course recommendation." },
+    { "id": "A2", "visitor": "One product with no reusable material", "facts": { "ownsOneProduct": true, "hasReusableMaterial": false, "wantsOwnedWebsiteBuild": true }, "expect": "Owning the product does not qualify her for the course." },
+    { "id": "A3", "visitor": "Reusable teaching archive, no paid product", "facts": { "hasReusableMaterial": true, "wantsOwnedWebsiteBuild": true, "paidOffer": false }, "expect": "Can explore qualified course preview and sales page." },
+    { "id": "A4", "visitor": "Beginner choosing Premium", "facts": { "beginner": true, "paidOffer": false, "prefersPremium": true }, "expect": "Premium allowed; explain immediate training and guide use plus promotional adaptation." },
+    { "id": "A5", "visitor": "PLR buyer without a shop", "facts": { "wantsFinishedProducts": true, "hasShop": false }, "expect": "Independent PLR information/sample/checkout; no compulsory membership." },
+    { "id": "A6", "visitor": "Lifestyle shopper", "facts": { "wantsToShopLook": true }, "expect": "Photographs, shelf and relevant verified Amazon destination without training detour." },
+    { "id": "A7", "visitor": "Direct article entrant", "facts": { "visitedHomepage": false, "wantsSpecificAnswer": true }, "expect": "Answer and coherent topic-matched next step; no homepage or opt-in prerequisite." },
+    { "id": "A8", "visitor": "Existing customer", "facts": { "alreadyPurchasedOrJoined": true }, "expect": "Direct course/community access or support, retaining authentication." },
+    { "id": "E1", "visitor": "Automation and one-time-payment preference without material", "facts": { "hasReusableMaterial": false, "wantsOwnedWebsiteBuild": true, "wantsAutomation": true, "hasFreeWeekend": true, "prefersOneTimePayment": true }, "expect": "Course remains unsuitable regardless of preference scores." },
+    { "id": "E2", "visitor": "Archive, no website-building need", "facts": { "hasReusableMaterial": true, "wantsOwnedWebsiteBuild": false }, "expect": "No course recommendation; follow actual need." },
+    { "id": "E3", "visitor": "Unclear material", "facts": { "hasReusableMaterial": "unknown", "wantsOwnedWebsiteBuild": true }, "expect": "Clarify assets; do not infer readiness or force beginner label." },
+    { "id": "E4", "visitor": "Amazon affiliate content need during hold", "facts": { "supportedAmazonAffiliateConfiguration": true, "relevantContentProductionNeed": true }, "expect": "Conditional WYS information; no new activation or release claim." },
+    { "id": "E5", "visitor": "Physical-product store beginner", "facts": { "wantsPhysicalStore": true, "hasReusableMaterial": false }, "expect": "Shopify education and Starter Kit; no automatic digital-course route." },
+    { "id": "E6", "visitor": "Several suitable paths", "facts": { "hasReusableMaterial": true, "wantsOwnedWebsiteBuild": true, "needsRecurringContentHelp": true }, "expect": "Let actual current need rank suitable course/Premium explanations; neither becomes a compulsory next purchase." }
+  ]
+}
