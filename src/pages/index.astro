@@ -1,7 +1,7 @@
 ---
-import WysAnnounce from "../components/WysAnnounce.astro";
 import {WYS_CTA} from "../data/wys-live.js";
 import "../styles/home.css";
+import "../styles/home-sections.css";
 import "../styles/review-bubble.css";
 // Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
 import "../styles/brand-fonts.css";
@@ -124,7 +124,8 @@ const jsonLd = {
   </div>
 </div><div class="hx-gborder" aria-hidden="true"></div></header>
 
-<main>
+<a class="home-skip" href="#home-content">Skip to content</a>
+<main id="home-content">
 <section class="hero hero-v10">
   <div class="hx-photo" role="img" aria-label="Tommy Kate laughing in her pink car"></div>
   <img class="hx-sparkle" src="/images/brand/sparkle-scatter.webp" alt="" aria-hidden="true">
@@ -135,29 +136,74 @@ const jsonLd = {
     <div class="ctas"><a class="btn" href="#blueprint">Get the free Blueprint</a><a class="link" href={WE.url}>See the {WE.price} course</a></div>
   </div></div>
   <a class="hx-pol" href={WYS_CTA.href} data-wys-cta><i class="hx-tape"></i><img src="/images/brand/wys-storefront-promo.webp" alt="The While-You-Sleep Storefront: your Amazon storefront posts itself while you sleep" width="1122" height="522"><span class="hx-cap">The While-You-Sleep Storefront™</span><span class="hx-tag"><b>New</b><span data-wys-cta-label>{WYS_CTA.label}</span></span></a>
-  <div class="hx-tick" aria-label="No camera, no code, step by step"><div class="hx-row">{[0,1,2].map(() => <><span>No camera</span><i></i><span>No code</span><i></i><span>Step by step</span><i></i><span>Built in one weekend</span><i></i><span>AI does the repeat work</span><i></i></>)}</div></div>
+  <div class="hx-tick" aria-label="No camera, no code, step by step"><div class="hx-row" aria-hidden="true">{[0,1,2].map(() => <><span>No camera</span><i></i><span>No code</span><i></i><span>Step by step</span><i></i><span>Built in one weekend</span><i></i><span>AI does the repeat work</span><i></i></>)}</div></div>
 </section>
-<div class="hx-wys"><div class="wrap"><WysAnnounce/></div></div>
 
-<section class="honest sp"><div class="wrap">
-  <span class="kick">Be honest</span>
-  <h2>47 saved videos. <em><i class="stress">Zero</i> products.</em></h2>
-  <div class="lines"><span>Prompts everywhere. Nothing built.</span><span>No interest in being an influencer.</span><span>Ideas everywhere. Nothing connected.</span></div>
-  <p class="next">You don't need more ideas. <em>You need the next step.</em></p>
-</div></section>
 
-<section class="method" id="method"><div class="wrap">
-  <div class="plate">
-    <span class="kick">The Built Backwards Method</span>
-    <h2>Built backwards. <em>The <i class="stress">order</i> is the method.</em></h2>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Offer</h3><p>Decide what you sell before you post a thing.</p><a class="st" href="/resources/find-your-door">Start here</a></div>
-      <div class="step"><div class="n">2</div><h3>Funnel</h3><p>Build the page and emails that sell it for you.</p></div>
-      <div class="step"><div class="n">3</div><h3>Automation</h3><p>AI takes the daily repeat work off your plate.</p></div>
-      <div class="step"><div class="n">4</div><h3>Audience</h3><p>Then send traffic somewhere already built to sell.</p></div>
+<section class="home-honest" aria-labelledby="honest-title">
+  <div class="home-sheet">
+    <i class="home-tape" aria-hidden="true"></i>
+    <span class="home-kicker">Be honest</span>
+    <h2 id="honest-title">47 saved videos. <em><i class="stress">Zero</i> products.</em></h2>
+    <ul class="home-crossed">
+      <li>Prompts everywhere. Nothing built.</li>
+      <li>No interest in being an influencer.</li>
+      <li>Ideas everywhere. Nothing connected.</li>
+    </ul>
+    <p class="home-next">You don't need more ideas. <em>You need the next step.</em></p>
+  </div>
+</section>
+
+<section class="home-method" id="method" aria-labelledby="method-title">
+  <div class="home-inner home-method-layout">
+    <div class="home-method-copy">
+      <span class="home-kicker">The Built Backwards Method</span>
+      <h2 id="method-title">Built backwards. <em>The <i class="stress">order</i> is the method.</em></h2>
+      <p>Most people start at the bottom of this pile. Read it top to bottom and build it in that order.</p>
+      <a class="btn home-action" href="#blueprint">Start with step 1 <span aria-hidden="true">→</span></a>
+    </div>
+    <ol class="home-pile">
+      {[{name:'Offer',line:'Decide what you sell before you post a thing.'},
+        {name:'Funnel',line:'Build the page and emails that sell it for you.'},
+        {name:'Automation',line:'AI takes the daily repeat work off your plate.'},
+        {name:'Audience',line:'Then send traffic somewhere already built to sell.'}].map((step,i) =>
+        <li class="home-method-card">
+          {i === 0 && <i class="home-tape" aria-hidden="true"></i>}
+          <span class="home-step-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
+          <div><h3>{step.name}</h3><p>{step.line}</p></div>
+        </li>)}
+    </ol>
+  </div>
+</section>
+
+<section class="home-blueprint" id="blueprint" aria-labelledby="blueprint-title">
+  <div class="home-inner">
+    <div class="home-blueprint-head">
+      <span class="home-kicker">Free download · 15 pages</span>
+      <h2 id="blueprint-title">Don't know what to <i class="stress">sell</i>? <em>Start with the Blueprint.</em></h2>
+      <p class="home-product-name">The Faceless Income Blueprint™</p>
+    </div>
+    <div class="home-fan" aria-label="The Blueprint cover and three inside pages">
+      <img class="home-page home-page-one" src="/images/brand/bp-page-3.webp" width="260" height="368" alt="A page from The Faceless Income Blueprint" loading="lazy" decoding="async">
+      <img class="home-page home-page-two" src="/images/brand/bp-page-4.webp" width="260" height="368" alt="Another page from the Blueprint" loading="lazy" decoding="async">
+      <img class="home-page home-page-three" src="/images/brand/bp-page-5.webp" width="260" height="368" alt="The Blueprint's third preview page" loading="lazy" decoding="async">
+      <div class="home-cover"><i class="home-tape" aria-hidden="true"></i><img src="/images/brand/blueprint-cover.webp" width="300" height="424" alt="The Faceless Income Blueprint cover" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="home-signup-card">
+      <ul class="home-checklist"><li>Your whole business on one map</li><li>The one thing to build first</li><li>A seven-day plan to build it</li></ul>
+      <BlueprintForm heading="" sub="" button="Send me the Blueprint" />
     </div>
   </div>
-</div><div class="drip2"></div></section>
+</section>
+
+<section class="fs sp r"><div class="wrap">
+  <div class="head"><span class="kick">The weekend</span><h2>Friday night to Sunday. <em>Here's what <i class="stress">changes.</i></em></h2></div>
+  <div class="days">
+    <div class="day fri"><h3>Friday</h3><ul><li><span>No website</span></li><li><span>No blog</span></li><li><span>Nobody finds you</span></li></ul></div>
+    <div class="arrow">→</div>
+    <div class="day sun"><h3>Sunday</h3><ul><li>Your own website</li><li>A blog ready to publish</li><li>Email sign-ups connected</li></ul></div>
+  </div>
+</div></section>
 
 <section class="we sp"><div class="wrap feature">
   <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy"></div><figure class="rv-bubble"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>{FEATURED.pull}</blockquote><figcaption><b><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a></b>, {FEATURED.tenure}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
@@ -171,14 +217,7 @@ const jsonLd = {
   </div>
 </div></section>
 
-<section class="fs sp r"><div class="wrap">
-  <div class="head"><span class="kick">The weekend</span><h2>Friday night to Sunday. <em>Here's what <i class="stress">changes.</i></em></h2></div>
-  <div class="days">
-    <div class="day fri"><h3>Friday</h3><ul><li><span>No website</span></li><li><span>No blog</span></li><li><span>Nobody finds you</span></li></ul></div>
-    <div class="arrow">→</div>
-    <div class="day sun"><h3>Sunday</h3><ul><li>Your own website</li><li>A blog Google finds</li><li>An email list that grows</li></ul></div>
-  </div>
-</div></section>
+
 
 <section class="mem" id="membership"><div class="wrap">
   <div class="head"><span class="kick">The membership</span><h2>Build it with us. <em>Pick <i class="stress">your</i> help.</em></h2><p>Both start with {M.trialDays} days free.</p></div>
@@ -189,15 +228,11 @@ const jsonLd = {
       <ul><li>Everything in Standard</li><li>A month of Instagram and Threads posts, written for you</li><li>Every Value Vault guide, already unlocked</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Premium free</span><span class="sm">Start free</span></a></div>
   </div>
   <div class="rv-row">{MEMBER_REVIEWS.filter((r) => r.about !== "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-  <div class="group"><img src="/images/brand/skool-group.webp" alt="The Digital Income Edit group on Skool" width="975" height="674" loading="lazy"><div><span class="kick">Inside the members' group</span><h3>This is the real group.</h3><p>It lives on Skool, a private members' app. Lessons, weekly threads and the women building beside you.</p><a class="btn" href="/membership">See the membership</a></div></div>
+  <div class="group"><img src="/images/brand/skool-group.webp" alt="The Digital Income Edit group on Skool" width="975" height="674" loading="lazy"><div><span class="kick">Inside the members' group</span><h3>This is the real group.</h3><p>It lives on Skool, an app for the community. Lessons, weekly threads and the women building beside you.</p><a class="btn" href="/membership">See the membership</a></div></div>
   {MEMBER_REVIEWS.filter((r) => r.about === "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} center />)}
 </div><div class="drip3"></div></section>
 
-<section class="bp" id="blueprint"><div class="wrap grid">
-  <div class="bpstage"><div class="prod pg p3"><img src="/images/brand/bp-page-5.webp" alt="" loading="lazy"></div><div class="prod pg p2"><img src="/images/brand/bp-page-4.webp" alt="" loading="lazy"></div><div class="prod pg p1"><img src="/images/brand/bp-page-3.webp" alt="Inside The Faceless Income Blueprint" loading="lazy"></div></div>
-  <div class="txt"><span class="kick">Free download</span><h2>Don't know what to sell? <em>Start with the Blueprint.</em></h2><p>Fifteen pages: the whole business on one map, the one thing to build first, and a seven-day plan.</p>
-    <BlueprintForm heading="" sub="" button="Send me the Blueprint" /></div>
-</div><div class="surface"></div></section>
+
 
 <section class="lib sp r t"><div class="wrap">
   <div class="head"><div><span class="kick">The free library</span><h2>Free guides. <em>Start with these.</em></h2></div><a class="btn" href="/learn">See every guide</a></div>
