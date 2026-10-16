@@ -55,6 +55,6 @@ Only two explicit true answers establish recommendation fit. Public information 
 
 ## Verification record
 
-Read back the three specification files, parsed `journey-rules.json`, checked all listed internal destination files, checked required and edge-case scenario coverage and reviewed the nine course decisions. Inspected public homepage and course through the browser, alongside refreshed production source. No forms submitted, purchases made, email sequences inspected, affiliate destinations exhaustively checked or buyer accounts tested.
+Read back the three specification files, parsed `journey-rules.json`, checked its 13 internal destination files, checked required and edge-case scenario coverage and reviewed the nine course decisions. Rendered the Mermaid diagram and inspected the full diagram, including every branch, label and terminal destination. Inspected public homepage and course through the browser, alongside refreshed production source. No forms submitted, purchases made, email sequences inspected, affiliate destinations exhaustively checked or buyer accounts tested.
 
 No application build is necessary for documentation-only changes. Runtime quiz behavior, desktop/mobile presentation and service delivery must be checked after the later implementation. Passing this mapping review is not a claim that the existing website passes these scenarios.
