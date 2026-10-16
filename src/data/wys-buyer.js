@@ -24,5 +24,6 @@ export const AFF = {
 
 // Dated change notes shown on Start Here. Newest first.
 export const UPDATES = [
+ {date: '16 October 2026', text: 'Size check added: every look now records each product\u2019s real size, every photo prompt ends with a scale line, and a photo fails if a piece looks too big or too small next to the others.'},
  {date: '12 October 2026', text: 'The Storefront opens for members: setup, the nightly run, approvals, a by-hand option for every step, and the affiliate promo kit.'}
 ];
