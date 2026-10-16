@@ -2,9 +2,10 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import "../styles/edit.css";
 import WysAnnounce from "../components/WysAnnounce.astro";
-import { SKOOL_PLANS, membership, community } from "../data/facts.js";
+import { SKOOL_PLANS, membership } from "../data/facts.js";
 import { MEMBER_REVIEWS } from "../we-reviews.js";
 import ReviewBubble from "../components/ReviewBubble.astro";
+import MembershipPlans from "../components/MembershipPlans.astro";
 
 // Every price, trial length and count on this page reads from facts.js.
 const { standard: S, premium: P, trialDays } = membership;
@@ -13,61 +14,50 @@ const days = `${trialDays} days`;
 const title = "Membership Plans: Standard vs Premium";
 const description = `Build your faceless business with training and community from ${S.perMonth}. Premium (${P.perMonth}) adds offer and funnel training and monthly content. Both start with ${days} free.`;
 
-// Which one is for me: outcomes, not syllabus.
-const forStandard = [
-  "You want to learn each step and build it with your own hands.",
-  "You are happy to write your own posts once you know what to write.",
-  "You would rather buy only the Value Vault guides you need.",
-];
-const forPremium = [
-  "You want dedicated offer, funnel and scaling training alongside the foundations.",
-  "You would rather open a finished month of content than write one.",
-  "You want every Value Vault guide already unlocked.",
-];
-
 // Side by side. Full course names stay, set quietly under each row.
 // s / p: true = included, false = not included, string = shown as written.
 const groups = [
-  { h: "The room", rows: [
+  { h: "Community and daily photo prompts", rows: [
     { t: "The Skool community and Daily Prompts", sub: "A prompt every day, and women one step ahead of you to ask", s: true, p: true },
   ] },
-  { h: "Build it by hand", rows: [
+  { h: "Training included in both plans", rows: [
     { t: "Foundations", sub: "The Essentials Edit · AI Foundations for Creators · Canva Crash Course", s: true, p: true },
     { t: "The brand", sub: "AI Twin / Influencer Creation · Brand Building · The Content Edit · The Tommy Kate Edit", s: true, p: true },
     { t: "Traffic and selling", sub: "The Monetization Edit · The Email Edit · The Pinterest Edit · Pinterest Foundations™ · The Shopify Edit (physical products, print on demand and dropshipping)", s: true, p: true },
-    { t: "Bonuses", sub: "Vacation & Luxe Babe Vault bonuses", s: true, p: true },
+    { t: "Bonuses", sub: "Vacation Vault at level 2 · Luxe Babe Prompt Pack at level 4", s: true, p: true },
   ] },
-  { h: "The full build", rows: [
+  { h: "Additional sales and systems training", rows: [
     { t: "The Offer Edit, The Funnel Edit and Scaling & Systems", sub: "What you sell, the road a stranger walks to it, and the systems that keep it running", s: false, p: true },
   ] },
-  { h: "Done for you", rows: [
-    { t: "The monthly done-for-you content calendar", sub: "Every day of the month written, released a week at a time around the 1st", s: false, p: true },
+  { h: "Monthly content and paid-traffic training", rows: [
+    { t: "The monthly done-for-you content calendar", sub: "A new calendar every month: daily Instagram content and two Threads posts a day, released in weekly batches across month-end", s: false, p: true },
     { t: "The Ads Edit™", sub: "Paid traffic, pointed at a build that is ready for it", s: false, p: true },
   ] },
   { h: "The guides", rows: [
     { t: "The Value Vault guides", sub: "In Premium they sit in The Premium Vault, every one already unlocked", s: "À la carte", p: "All unlocked" },
+    { t: "Daily Edits of the Past", sub: "The separate Premium resource for past Daily Edits", s: false, p: true },
   ] },
 ];
 
-// The calendar, drawn: 31 days in weeks of seven.
-const weeks = [0, 1, 2, 3, 4].map((w) => Array.from({ length: 7 }, (_, d) => w * 7 + d + 1).filter((n) => n <= 31));
-
 const dfy = [
-  { t: "Every day, written", p: "Every caption, hook, carousel slide and Story frame. Finished posts you copy and publish." },
+  { t: "Every day, written", p: "Hooks, captions, carousel slides and Story frames supplied. Adapt the offer details instead of writing each post from scratch." },
   { t: "Two Threads posts a day", p: "Two a day, written for the platform, not captions pasted over from somewhere else." },
-  { t: "A start-frame and motion prompt for every Reel", p: "Generate the still, drop it into your video tool, post it. You never film anything. Not your face, not your hands, not your desk." },
-  { t: "Built on what is working", p: "Every month starts with real research: at least 40 breakout posts from creators in this niche, read before a word gets written." },
+  { t: "A start-frame and motion prompt for every Reel", p: "Use the image and video prompts to make your visuals in your chosen tools. No footage of you is required." },
+  { t: "Built on what is working", p: "Each month starts with research into posts and Reels that outperform a creator’s usual results in this niche. Those patterns shape the content." },
 ];
 
 // The room: what happens inside (merged from the old /community page).
 const inside = [
   { n: "01", t: "A prompt every day", p: "A new photo prompt every day for your AI persona, written so it works with your own reference photo." },
-  { n: "02", t: "Trainings, in order", p: "The start-here trainings turn a guide you have read into a thing that exists. Ordered, so you always know which room is next." },
-  { n: "03", t: "A classroom inside the business it teaches", p: "The site, the funnels and the automation you build are the same ones delivering this page to you right now." },
-  { n: "04", t: "Women one step ahead", p: "Not gurus. Women who solved last month what you are stuck on this month, and who are still in the room to ask." },
+  { n: "02", t: "Skills you can use on your own brand", p: "Work through AI, branding, content and marketing lessons, then apply them to what you are building." },
+  { n: "03", t: "Learn from the business you can see", p: "Explore the brand, content and systems behind The Digital Income Edit™ as you learn to build your own." },
+  { n: "04", t: "A community to build alongside", p: "Bring your questions into the Skool group and learn alongside other women working through their own builds." },
 ];
 
 const faq = [
+  { q: "Can I choose Premium as a beginner?", a: "Yes. Premium includes all the Standard foundations, plus the extra training and unlocked guides. You can use those now. The calendar is written for faceless digital-business content; adapt its promotional details when you have an offer to put in them." },
+  { q: "Does Premium write a new calendar every month?", a: "Yes. Each month covers one Instagram content day and two Threads posts per day of that month. Hooks, captions, carousel copy, Story frames and Reel prompts are supplied. Weekly batches roll out across the end of the preceding month and the start of the covered month." },
+  { q: "What do I still do with the Premium content?", a: "Adapt offer mentions and brand details, generate your images and videos with the supplied prompts in your chosen tools, then publish. The membership supplies the training, written content and prompts; it does not manage or post to your accounts for you." },
   { q: "How does the free trial work?", a: `Both memberships start with ${days} free on Skool. Come in, look around, use the prompts, take a training. If it isn't for you, leave from inside the app before the week is out.` },
   { q: "How am I billed?", a: `Both are subscriptions on Skool. Monthly, Standard is ${S.perMonth} and Premium is ${P.perMonth}, billed every month until you leave.` },
   { q: "Is there an annual price?", a: `Yes. Standard is ${S.perYear} and Premium is ${P.perYear}. Paying for the year costs less than twelve monthly payments.` },
@@ -89,8 +79,8 @@ const schema = [{
       <div class="mb-hero-copy e-rise">
         <WysAnnounce />
         <p class="e-kick">The Membership</p>
-        <h1 class="mb-h1">Build your faceless business <em>with your next steps in reach.</em></h1>
-        <p class="e-lede">Training, daily prompts and a community of women building the same thing, so you can build without figuring out every step alone. <strong>Standard covers the foundations, AI, branding, content and traffic. Premium adds offer, funnel and systems training, plus a monthly content calendar with the copy already written.</strong></p>
+        <h1 class="mb-h1">Build the business.<br /><em>Keep your life off camera.</em></h1>
+        <p class="e-lede">You do not have to turn your life into content to build a brand. Learn to use AI for the persona, the content and the work behind the business. <strong>Choose Standard for the training and community. Choose Premium for everything in Standard, extra sales and systems training, unlocked guides and content written for you, every month.</strong></p>
         <div class="e-actions">
           <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
           <a class="e-link" href="#compare">Compare the two memberships</a>
@@ -116,7 +106,7 @@ const schema = [{
     <div class="e-wrap mb-room-grid">
       <div class="mb-room-head">
         <p class="e-kick">What happens inside</p>
-        <h2 class="e-d2" id="inside-h">Four things the room does that a course <em>cannot.</em></h2>
+        <h2 class="e-d2" id="inside-h">Open the lesson.<br /><em>Put it to work.</em></h2>
         <figure class="mb-room-fig">
           <img src="/images/pages/community-dog-560.webp"
                srcset="/images/pages/community-dog-360.webp 360w, /images/pages/community-dog-560.webp 560w, /images/pages/community-dog-800.webp 800w"
@@ -142,12 +132,12 @@ const schema = [{
   <section class="e-sec e-dark mb-who" aria-labelledby="who-h">
     <div class="e-wrap mb-who-grid">
       <div>
-        <p class="e-kick">Who is in it</p>
-        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Women, building <em>the same architecture.</em></span></h2>
+        <p class="e-kick">What faceless means</p>
+        <h2 class="mb-big" id="who-h"><span class="mb-big-l">Your face can stay <em>off camera.</em></span></h2>
       </div>
       <div class="mb-who-copy">
-        <p>Most people don't stall because the instructions were unclear. They stall on a Tuesday, alone, at the exact point where the thing stops being fun and starts being work.</p>
-        <p class="mb-pull">It is much harder to quit in front of people who are still going.</p>
+        <p>Faceless does not mean every image is empty. Your AI persona can front the brand while you stay behind it. AI Twin / Influencer Creation teaches that part in both memberships.</p>
+        <p class="mb-pull">Learn the skills. Build the brand. Keep your private life yours.</p>
       </div>
     </div>
   </section>
@@ -161,39 +151,10 @@ const schema = [{
     <div class="e-wrap">
       <div class="mb-head">
         <p class="e-kick">Which one is for me?</p>
-        <h2 class="e-d2" id="choose-h">Same business. <em>A different amount of the work on your plate.</em></h2>
+        <h2 class="e-d2" id="choose-h">Learn to build it.<br /><em>Or have more of the work prepared.</em></h2>
       </div>
-      <div class="mb-plans">
-        <article class="mb-plan e-reveal">
-          <p class="mb-plan-name">{S.name}</p>
-          <h3 class="mb-plan-claim">You build it <span class="mb-plan-word">by hand.</span></h3>
-          <div class="mb-strip" aria-hidden="true">{Array.from({ length: 31 }, () => <span></span>)}</div>
-          <p class="e-credit mb-strip-cap">Your month: you write it, with the system</p>
-          <p class="mb-plan-line">The curriculum and the room. You learn each step, then do it yourself, with women one step ahead of you in the same classroom.</p>
-          <p class="mb-plan-if">Choose Standard if</p>
-          <ul class="e-list">{forStandard.map((i) => <li>{i}</li>)}</ul>
-          <div class="mb-plan-price">
-            <span class="e-price mb-price-n">{S.monthly}</span><span class="mb-price-p">/month</span>
-            <span class="mb-price-alt">or {S.perYear}</span>
-          </div>
-          <a class="e-btn e-btn--ghost mb-plan-cta" href={SKOOL_PLANS}>Start Standard free for {days}</a>
-        </article>
-
-        <article class="mb-plan mb-plan--premium e-reveal">
-          <p class="mb-plan-name">{P.name}</p>
-          <h3 class="mb-plan-claim">More of it is <span class="mb-plan-word"><em>done for you.</em></span></h3>
-          <div class="mb-strip mb-strip--done" aria-hidden="true">{Array.from({ length: 31 }, () => <span></span>)}</div>
-          <p class="e-credit mb-strip-cap">Your month: 31 days, already written</p>
-          <p class="mb-plan-line">Everything in Standard, plus The Offer Edit, The Funnel Edit, Scaling &amp; Systems and The Ads Edit™, and a month of content written for you, every month.</p>
-          <p class="mb-plan-if">Choose Premium if</p>
-          <ul class="e-list">{forPremium.map((i) => <li>{i}</li>)}</ul>
-          <div class="mb-plan-price">
-            <span class="e-price mb-price-n">{P.monthly}</span><span class="mb-price-p">/month</span>
-            <span class="mb-price-alt">or {P.perYear}</span>
-          </div>
-          <a class="e-btn mb-plan-cta" href={SKOOL_PLANS}>Start Premium free for {days} <span class="ar" aria-hidden="true">→</span></a>
-        </article>
-      </div>
+      <MembershipPlans />
+      <p class="mb-beginner-note"><strong>New to all of this? Either plan is open to you.</strong> Start with the foundations and guides. In Premium, use the promotional content when you have an offer to adapt it to.</p>
     </div>
   </section>
 
@@ -205,7 +166,7 @@ const schema = [{
           <p class="e-kick">Side by side</p>
           <h2 class="e-d3 mb-h2-md" id="side-h">What is in each, grouped by what it does for you.</h2>
         </div>
-        <p class="e-small mb-head-note">Course names sit under each row. The difference lives in the bottom three groups.</p>
+        <p class="e-small mb-head-note">Both include the foundations. Premium adds the offer, funnel, ads and systems training, the monthly content and the unlocked guides.</p>
       </div>
 
       <div class="mb-table-scroll" role="region" aria-label="Membership comparison; scroll horizontally" tabindex="0"><table class="mb-table">
@@ -245,10 +206,10 @@ const schema = [{
   <section class="e-sec e-dark mb-dfy" aria-labelledby="dfy-h">
     <div class="e-wrap mb-dfy-grid">
       <div class="mb-dfy-copy">
-        <p class="e-kick">Why people upgrade</p>
-        <h2 class="e-d2" id="dfy-h">The month arrives <em>already written.</em></h2>
-        <p class="mb-dfy-lead">Most people don't quit because the business is hard. They quit on a Tuesday night, staring at a blank caption box, deciding they'll post tomorrow instead.</p>
-        <p>Premium gives you a monthly calendar with captions, hooks, carousel copy, Story frames and Threads posts already written. Adapt the offer details to your business, generate the Reel visuals from the included prompts, then publish. Less time at a blank caption box; more time putting your business to work.</p>
+        <p class="e-kick">The Premium difference</p>
+        <h2 class="e-d2" id="dfy-h">“What do I post?”<br /><em>Already answered. Every month.</em></h2>
+        <p class="mb-dfy-lead">The hook. The caption. The carousel slides. The Story frames. Two Threads posts a day. Premium gives you the writing and the visual prompts, so you can stop planning each post from zero.</p>
+        <p>The Premium DFY Content Calendar covers every day of the month, every month. Content is written for the faceless digital-business niche, with offer mentions you can swap for your own. Adapt those details, generate the visuals in your chosen tools, then publish. Weeks roll out across the end of the preceding month and the start of the month they cover.</p>
         <div class="e-actions mb-dfy-cta">
           <a class="e-btn" href={SKOOL_PLANS}>Start Premium free for {days} <span class="ar" aria-hidden="true">→</span></a>
         </div>
@@ -257,14 +218,14 @@ const schema = [{
       <div class="mb-dfy-side">
         <figure class="mb-feed">
           <div class="mb-feed-phone">
-            <div class="mb-feed-top"><span class="mb-feed-av"></span><b>Your account</b><span>31 posts this month</span></div>
+            <div class="mb-feed-top"><span class="mb-feed-av"></span><b>Your account</b><span>Content for every day</span></div>
             <div class="mb-feed-grid">
               {["/images/home/flagship-attic-560.webp","/images/home/hero-pink-knit-desk-480.webp","/images/we/hook-blog-posts-480.webp","/images/home/founder-window-seat-640.webp","/images/we/cover-kitchen-480.webp","/images/home/build-armchair-laptop-560.webp"].map((src, i) => (
                 <span class="mb-feed-tile"><img src={src} alt="" decoding="async" /><em>Day {i + 1}</em></span>
               ))}
             </div>
           </div>
-          <span class="mb-feed-sticker">31 of 31 days written</span>
+          <span class="mb-feed-sticker">A fresh calendar every month</span>
           <figcaption>Every day comes with the caption, the hook, the image prompt and two Threads posts. Photos shown are Tommy Kate, the brand's AI persona.</figcaption>
         </figure>
 
@@ -299,9 +260,9 @@ const schema = [{
     <div class="e-wrap">
       <hr class="e-rule mb-close-rule" />
       <div class="mb-close-grid">
-        <h2 class="e-d2" id="close-h">You climb when the current step stops being <em>your bottleneck.</em></h2>
+        <h2 class="e-d2" id="close-h">You have seen what is inside.<br /><em>Come try it.</em></h2>
         <div>
-          <p class="e-lede">Not before. Start with the membership that fits the build you are in now. Either one is free for {days}, and both leave from inside the app whenever you like.</p>
+          <p class="e-lede">Choose the help you want and use your {days} free to explore the classroom, try a prompt and start a lesson. Keep the plan that fits. Cancel in Skool before the trial ends to avoid the charge.</p>
           <div class="e-actions">
             <a class="e-btn" href={SKOOL_PLANS}>Start free for {days} <span class="ar" aria-hidden="true">→</span></a>
             <a class="e-link" href="https://www.skool.com/thedigitalincomeedit/about">Peek inside the Skool group first, free</a>
@@ -312,7 +273,7 @@ const schema = [{
   </section>
 
   <style>
-    .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .sr{position:absolute;left:0;top:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .mb-head{max-width:820px;margin:0 0 clamp(36px,5vw,64px)}
     .mb-head--split{max-width:none;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 64px;align-items:end}
     .mb-head--split .e-d3{margin:0}
@@ -335,6 +296,7 @@ const schema = [{
     .mb-hero-frame img{position:relative;width:100%;height:auto;aspect-ratio:460/552;object-fit:cover;border-radius:4px;box-shadow:var(--e-lift)}
     .mb-hero-credit{display:block;margin:16px 0 0 18px;max-width:28em}
 
+    .mb-beginner-note{max-width:730px;font-size:14px;line-height:1.6;margin:20px auto 0}
     /* Plans */
     /* Standard is an open plan on paper; Premium is the finished room.
        The difference is carried by weight, scale and the month strip. */
@@ -555,5 +517,16 @@ const schema = [{
     .mb-table-scroll{max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#b8245f #f1eafb}
     .mb-table-scroll:focus-visible{outline:2px solid #b8245f;outline-offset:3px}
     @media(max-width:700px){.mb-hero-grid{grid-template-columns:minmax(0,1fr)!important}.mb-hero-fig{max-width:300px!important;width:100%;justify-self:center}.mb-table-scroll .mb-table{min-width:330px}}
+    @media(max-width:700px){
+      .mb-table{table-layout:fixed}
+      .mb-table thead th:first-child{width:60%}
+      .mb-table thead th:not(:first-child),.mb-table td{width:20%;padding:12px 5px!important}
+      .mb-table thead th:not(:first-child){font:600 13px/1.5 Jost,sans-serif!important;white-space:nowrap}
+      .mb-table .mb-th-p{font-size:11px;white-space:nowrap}
+      .mb-table tbody th{padding:12px 8px!important}
+      .mb-table .mb-group th{padding:22px 8px 9px!important}
+      .mb-table .mb-row-sub{font-size:13px}
+      .mb-table .mb-word{font-size:12px}
+    }
   </style>
 </PageLayout>
