@@ -10,6 +10,7 @@ import "../styles/sales-typography.css";
 import "../styles/brand-fonts.css";
 // True Polaroid frames on every page (Jodie, 10 Oct 2026).
 import "../styles/polaroid.css";
+import "../styles/brand-finish.css";
 
 import MetricoolTracker from "../components/MetricoolTracker.astro";
 export interface Props {
@@ -116,17 +117,17 @@ const jsonLd = {
   </style>
 {visualRefresh && <style is:inline set:html={visualStyles} />}
 </head>
-<body class:list={["no-js", {"sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
+<body class:list={["no-js", {"tdie-finished": visualRefresh, "sales-page": Astro.url.pathname.startsWith("/shop") || ["/membership", "/bami", "/work-with-me", "/weekend-ecosystem/preview"].includes(Astro.url.pathname.replace(/\/+$/, ""))}]}>
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
   <slot name="before-nav" />
-  {homeChrome ? <HomeChromeHeader /> : <SiteNav boutique={boutiqueHeader} />}
+  {homeChrome || (visualRefresh && !boutiqueHeader) ? <HomeChromeHeader /> : <SiteNav boutique={boutiqueHeader} />}
 
   <main class={bare ? "e-page" : wide ? "page-wrap wide" : "page-wrap"}>
     <slot />
   </main>
 
-  {homeChrome ? <HomeChromeFooter /> : <SiteFooter />}
+  {homeChrome || visualRefresh ? <HomeChromeFooter /> : <SiteFooter />}
 
   <script>
     document.body.classList.remove('no-js');

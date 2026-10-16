@@ -1,7 +1,8 @@
 ---
 import visualStyles from "../styles/tdie-visual.css?inline";
-import SiteNav from "../components/SiteNav.astro";
-import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/HomeChromeHeader.astro";
+import SiteFooter from "../components/HomeChromeFooter.astro";
+import "../styles/brand-finish.css";
 // ============================================================
 // THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
 // Every article page wraps its content in this layout.
@@ -698,7 +699,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 </style>
 <style is:inline set:html={visualStyles} />
 </head>
-<body class="no-js">
+<body class="no-js tdie-finished">
   <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>
 
   <div class="progress" id="progress"></div>
@@ -779,6 +780,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
               <div class="journey-kind">Go deeper</div>
               <h3>{paid.label}</h3>
               <p>{paid.blurb}</p>
+              {paid.href.replace(/\/$/, '') === '/shop/weekend-ecosystem' && <p class="article-course-fit"><strong>Is this your next step?</strong> The course fits if you have reusable lessons, guides, recordings, newsletters or posts and want to build an owned website around them. A paid product is not required. If you need to create your starting material, continue with the free learning first.</p>}
               <a class="btn" href={paid.href}>See what's inside <span class="a">→</span></a>
             </div>
           )}

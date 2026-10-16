@@ -30,9 +30,9 @@ const WYS = "/shop/while-you-sleep-storefront";
 
 const stalls = [
   { n: "01", t: "No map", p: "You know a hundred things about online business and can't say which one comes first. That isn't a knowledge problem. It's a sequence problem.", d: "Membership Standard", k: "S" },
-  { n: "02", t: "Nothing to post", p: "The business works. The calendar doesn't. You are one missed Tuesday away from going quiet for a month.", d: "Membership Premium", k: "P" },
-  { n: "03", t: "Nothing on the shelf", p: "The shop is open and half-empty, and every new product starts on a blank Canva page.", d: "Pretty & Paid PLR Vault™", k: "V" },
-  { n: "04", t: "No front door", p: "Years of lessons, calls and guides, all of it behind a login. A stranger can't find a word of it.", d: "The Weekend Ecosystem™", k: "W" },
+  { n: "02", t: "More content help", p: "You want extra training, unlocked guides or help preparing the content you publish each month.", d: "Membership Premium", k: "P" },
+  { n: "03", t: "Products to customize", p: "You want finished digital products to make your own, with shop training included if you need it.", d: "Pretty & Paid PLR Vault™", k: "V" },
+  { n: "04", t: "A home for your material", p: "You already have reusable lessons, guides, recordings or posts and want a website of your own around them.", d: "The Weekend Ecosystem™", k: "W" },
   { n: "05", t: "No room of your own", p: "You're the one answering questions in other people's groups. You've just never opened your own.", d: "Earn With Skool (SCC)", k: "K" },
 ];
 
@@ -46,7 +46,7 @@ const stats = [
 <PageLayout
   wide
   title="Find Your Door: Free Three-Minute Quiz"
-  description="A free eleven-question quiz. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
+  description="A free thirteen-question quiz. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
 >
   <div class="fd">
 
@@ -56,9 +56,9 @@ const stats = [
     <a class="page-eyebrow" href="/resources">Free quiz · The Digital Income Edit™</a>
     <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
     <p class="fd-lede">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters <em>now</em>.</p>
-    <p class="fd-lede fd-lede-small">Answer eleven questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step, not five more things to buy. About three minutes, and you see the answer on screen.</p>
+    <p class="fd-lede fd-lede-small">Answer thirteen questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step, not five more things to buy. About three minutes, and you see the answer on screen.</p>
     <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
-    <div class="fd-meta"><span>11 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
+    <div class="fd-meta"><span>13 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
   </section>
 
   <!-- THESIS -->
@@ -101,7 +101,7 @@ const stats = [
   <!-- QUIZ -->
   <section class="fd-block fd-quiz-wrap" id="quiz">
     <div class="fd-quiz-intro">
-      <h2>Eleven questions. <em>Answer them honestly.</em></h2>
+      <h2>Thirteen questions. <em>Answer them honestly.</em></h2>
       <p class="fd-sub">Where you are, where you want to be, where it stops moving, and the fear underneath it. About three minutes. Your result appears on this screen. No email needed to see it.</p>
     </div>
     <div class="fd-quiz" id="fd-quiz">
@@ -139,8 +139,7 @@ const stats = [
       <p class="fd-r-time" id="fd-r-time"></p>
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
       <p class="fd-r-alt" id="fd-r-alt" hidden></p>
-      <p class="fd-r-later" id="fd-r-later"></p>
-      <p class="fd-r-tool">Whichever door it is, the offer comes first. <a href="/resources/one-sentence-offer">Get what you sell down to one sentence</a>: free, two minutes, results on screen.</p>
+      <p class="fd-r-tool">Working on an offer? <a href="/resources/one-sentence-offer">Get what you sell down to one sentence</a>: free, two minutes, results on screen.</p>
 
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
@@ -180,12 +179,12 @@ const stats = [
       <article class="fd-tile fd-tile-p">
         <h3>Membership Premium</h3>
         <p class="fd-tp"><b>{M.premium.monthly}</b>/month · or {M.premium.annual} a year</p>
-        <p class="fd-tl">Everything in Standard, plus your content month written for you.</p>
+        <p class="fd-tl">Everything in Standard, plus prepared content every month.</p>
         <ul class="fd-chips">
           <li class="hot">Monthly DFY Content Calendar</li><li>The Ads Edit™</li><li>The Offer Edit</li><li>The Funnel Edit</li><li>Scaling &amp; Systems</li>
         </ul>
-        <p class="fd-tn">31 days of posts, 62 Threads posts and a prompt for every Reel, released a week at a time around the 1st.</p>
-        <dl class="fd-fit"><dt>Yes if</dt><dd>the blank caption box is why you go quiet.</dd><dt>Skip if</dt><dd>you don't have an offer to point it at yet.</dd></dl>
+        <p class="fd-tn">Content for each day of the month, two Threads posts per day and prompts for the Reels, released a week at a time around the 1st.</p>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>you want added training, unlocked guides or help preparing content, at any stage.</dd><dt>Know before joining</dt><dd>Use the training and guides now. Adapt promotional calendar slots to your offer, generate the visuals and publish.</dd></dl>
         <a class="btn" href={SKOOL}>Start Premium, 7 days free <span class="a">→</span></a>
       </article>
     </div>
@@ -200,7 +199,7 @@ const stats = [
         <p class="fd-tl">You're not short on content. You're short on a place to put it.</p>
         <p class="fd-tn">22 modules turn what you've already made into a website on your own domain and a blog Google can find. Claude writes every file. You paste, read, say yes. Sixteen hours, one weekend or three.</p>
         <Testimonial variant="line" />
-        <dl class="fd-fit"><dt>Yes if</dt><dd>your work lives on platforms you rent.</dd><dt>Skip if</dt><dd>you haven't made anything yet.</dd></dl>
+        <dl class="fd-fit"><dt>Yes if</dt><dd>you have reusable material and want to build an owned website around it.</dd><dt>Skip if</dt><dd>you need to create your starting material or do not need a website build.</dd></dl>
         <div class="fd-row fd-row-left">
           <a class="btn" href={WE}>See The Weekend Ecosystem™ <span class="a">→</span></a>
           <a class="fd-link" href="/weekend-ecosystem/preview">Look inside first →</a>
@@ -274,36 +273,30 @@ const stats = [
            moves: ["Start the trial and open the start-here trainings before anything else", "Build your AI twin and brand first, so everything after it looks like one business", "Shape one offer inside The Monetization Edit before you make a single product"],
            cta: "Start Standard, 7 days free", href: SKOOL, aff: false,
            alt: { pre: "Not ready for a trial yet? ", label: "Start The Weekend Build Challenge", post: ", free, five days, one small build a day, straight to your inbox.", href: "/resources/weekend-build-challenge",
-             more: { pre: " Or grab ", label: "The First Product Cheat Sheet", post: ", free, four pages, eight lessons, one small move each.", href: "https://links.thedigitalincomeedit.com/shop/53d07da4-31ac-4720-beb8-c6498ac40eea" } },
-           later: "When content becomes the thing that stops you, Membership Premium writes the month for you." },
+             more: { pre: " Or grab ", label: "The First Product Cheat Sheet", post: ", free, four pages, eight lessons, one small move each.", href: "https://links.thedigitalincomeedit.com/shop/53d07da4-31ac-4720-beb8-c6498ac40eea" } } },
       P: { name: "Membership Premium", price: "$35 per month after a free 7-day trial",
-           why: "Your business isn't the problem. The daily writing is. Premium hands you the month already written, so the blank caption box stops deciding whether you show up.",
-           moves: ["Start the trial and open this month's DFY Content Calendar", "Point the calendar's offer days at the one thing you sell", "Schedule the first week in a single sitting, then stop thinking about it"],
-           cta: "Start Premium, 7 days free", href: SKOOL, aff: false,
-           later: "When you want those posts to outlive the feed, The Weekend Ecosystem™ turns them into a site that ranks." },
+           why: "You want more training, prepared content or unlocked guides. Premium includes the foundations too, so you can choose it as a beginner. Your offer details, visuals and publishing still need your input.",
+           moves: ["Choose the training or unlocked guide that matches your current need", "Review the current DFY Content Calendar and identify the promotional details to adapt", "When your offer is ready, adapt those slots, generate the visuals and publish"],
+           cta: "Start Premium, 7 days free", href: SKOOL, aff: false },
       V: { name: "Pretty & Paid PLR Vault™", price: "$11 per month · its own subscription",
-           why: "Your shop isn't failing because you can't sell. It's failing because the shelf is empty. Stock it with finished products you rebrand in Canva and list the same week.",
+           why: "You want finished digital products to customize and sell. The PLR Vault is its own subscription, with shop training included. You do not need an existing shop or a membership first.",
            moves: ["Pick the three products that fit your niche, not ten", "Rebrand them in Canva: your colours, your fonts, your name", "Let PLR Glow Studio write the titles, descriptions and tags, then list all three"],
-           cta: "Open Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault", aff: false,
-           later: "When the shop deserves a home that Google can find, The Weekend Ecosystem™ builds it." },
+           cta: "Open Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault", aff: false },
       W: { name: "The Weekend Ecosystem™", price: "$97 one-time, or 3 payments of $33.33 · every future update included",
-           why: "You wrote the blog posts years ago. They're sitting behind a login. This turns what you've already made into a website and blog on a domain you own, built by Claude, approved by you.",
-           moves: ["Friday night: list everything you've already made. You'll find more than you expect", "Saturday: your site goes live and your best lessons become articles", "Sunday: email capture, offers on every article, and the system that keeps it running"],
+           why: "You have reusable material and want to build an owned website around it. The course helps you turn that material into your site and blog. A paid product and technical experience are not prerequisites. Skip it if you need someone to create your starting content.",
+           moves: ["List the lessons, guides, recordings, newsletters or posts you want to reuse", "Explore the free preview and check the build against your website needs", "Follow the course, review what is built and connect the site and email capture"],
            cta: "See The Weekend Ecosystem™", href: "/shop/weekend-ecosystem", aff: false,
-           alt: { pre: "Want to see it before you decide? ", label: "Look inside the course first", post: ", a proper look inside, no email needed.", href: "/weekend-ecosystem/preview" },
-           later: "When the site needs feeding every month, Membership Premium writes the content." },
+           alt: { pre: "Want to see it before you decide? ", label: "Look inside the course first", post: ", a proper look inside, no email needed.", href: "/weekend-ecosystem/preview" } },
       A: { name: "The While-You-Sleep Storefront™", price: "Waitlist open now · member presale Tuesday 13 October · launch weekend $27, then $37",
            why: "You already have the Amazon storefront. What you don't have is time to style a look, build the list and make the pins every single day. This is Tommy Kate's system for exactly that: set it up once and it plans, pins, posts and blogs while you sleep.",
            moves: ["Join the waitlist so the launch email reaches you first", "Look through the Lifestyle pages on this site: every look there is the system's own work", "Pick the theme your storefront should run first, so you're ready the day it opens"],
            cta: "Join the waitlist", href: "/shop/while-you-sleep-storefront/waitlist", aff: false,
-           alt: { pre: "Want to see it first? ", label: "See how the system works", post: ", step by step, with real pins and posts.", href: "/shop/while-you-sleep-storefront" },
-           later: "When you want your looks on a site you own, The Weekend Ecosystem™ builds it." },
+           alt: { pre: "Want to see it first? ", label: "See how the system works", post: ", step by step, with real pins and posts.", href: "/shop/while-you-sleep-storefront" } },
       K: { name: "Earn With Skool (SCC)", price: "$97 one-time · recommended, not mine",
            why: "You're already the one answering questions in other people's groups. That isn't a sign you aren't ready. It's the job description. This is the course I point you to for opening your own.",
            moves: ["Write down the ten questions people already ask you. That's your first curriculum", "Stop waiting to feel qualified; decide the one result your group is for", "Open the room, then learn to earn from it"],
            cta: "See Earn With Skool (SCC)", href: "/go/earn-with-skool-scc", aff: true,
-           alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: ". Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true },
-           later: "Once the group exists, The Weekend Ecosystem™ gives it a front door on Google." }
+           alt: { pre: "Already know how you'd run it? ", label: "Open your own group on Skool", post: ". Skool sets its own plan prices. That link is a referral too; same disclosure as above.", href: "https://www.skool.com/signup?ref=97643519c9b448d0a683ab33b6cc68ce", aff: true } }
     };
     // The While-You-Sleep Storefront™ wording follows the launch stage set by WysClock (src/data/wys-live.js).
     (function(){
@@ -332,11 +325,19 @@ const stats = [
       t1: "At under three hours a week, protect one fixed block, same day, same hour, and give it to move one only. Momentum beats volume at your pace.",
       t2: "At three to seven hours a week, give each move its own week. You'll be through all three inside a month.",
       t3: "At seven to fifteen hours a week, you can do moves one and two this week. Leave the third for next week so it gets your full attention.",
-      t4: "With fifteen-plus hours or a clear weekend, do all three before Monday. Then spend next week fixing only what broke."
+      t4: "Use your clear work block for the first useful step, then follow the remaining steps at a pace you can keep."
     };
 
     // [label, value (what we store), weights]
     var QS = [
+      { sec: "Your starting material", q: "Do you have existing material you can reuse?", sub: "Lessons, guides, recordings, newsletters or posts count. Owning a product alone is not the test.", k: "material", o: [
+        ["Yes, I have material I want to reuse", "Existing reusable material", {}, "yes"],
+        ["No, I need to create my starting material", "No reusable material yet", {}, "no"],
+        ["I'm not sure what I could reuse", "Reusable material unclear", {}, "unknown"] ] },
+      { sec: "What you need", q: "Do you want to build a website you own around that material?", k: "website", o: [
+        ["Yes, that is the build I want help with", "Wants an owned website build", {}, "yes"],
+        ["No, I need a different kind of help", "Needs different help", {}, "no"],
+        ["I'm still deciding", "Website need unclear", {}, "unknown"] ] },
       { sec: "Where you are", q: "Where are you, honestly?", k: "stage", o: [
         ["Nothing built yet. I'm still circling an idea", "Circling an idea, nothing built yet", {S:3,W:-2}],
         ["I've made something, but I haven't sold it", "Built something, not selling yet", {S:2,V:1}],
@@ -467,7 +468,10 @@ const stats = [
       ans.forEach(function(sel, qi){ (sel || []).forEach(function(n){
         var w = QS[qi].o[n][2]; for (var d in w) score[d] += w[d];
       }); });
-      var order = ["S","P","W","V","K","A"];
+      // Prerequisites apply before preferences and tie-breakers. Missing or
+      // uncertain material/site intent never becomes course eligibility.
+      var courseFits = pick("material")[3] === "yes" && pick("website")[3] === "yes";
+      var order = ["S","P","W","V","K","A"].filter(function(d){ return d !== "W" || courseFits; });
       var top = Math.max.apply(null, order.map(function(d){ return score[d]; }));
       var tied = order.filter(function(d){ return score[d] === top; });
       var neverDoor = pick("never")[4];
@@ -495,7 +499,6 @@ const stats = [
       var btn = $("fd-r-btn");
       btn.href = D.href; $("fd-r-cta").textContent = D.cta;
       if (D.aff) btn.setAttribute("rel", "sponsored nofollow"); else btn.removeAttribute("rel");
-      $("fd-r-later").textContent = D.later;
       var alt = $("fd-r-alt"); alt.innerHTML = "";
       if (D.alt) {
         alt.appendChild(document.createTextNode(D.alt.pre));
@@ -641,7 +644,6 @@ const stats = [
     .fd-r-alt{margin:18px 0 0;font-size:15px;line-height:1.6;color:var(--choc-soft)}
     .fd-r-alt[hidden]{display:none}
     .fd-r-alt a{color:var(--pink);text-decoration:underline;font-weight:500}
-    .fd-r-later{margin:22px 0 0;font-size:14.5px;line-height:1.6;color:var(--choc-mute)}
 
 
     .fd-quiz-intro{text-align:center;max-width:680px;margin:0 auto 34px}

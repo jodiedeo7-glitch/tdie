@@ -2,6 +2,7 @@
 import {WYS_CTA} from "../data/wys-live.js";
 import "../styles/home.css";
 import "../styles/home-sections.css";
+import "../styles/home-finish.css";
 import "../styles/review-bubble.css";
 // Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
 import "../styles/brand-fonts.css";
@@ -15,6 +16,7 @@ import { FEATURED, MEMBER_REVIEWS } from "../we-reviews.js";
 import ReviewBubble from "../components/ReviewBubble.astro";
 import HeroArrange from "../components/HeroArrange.astro";
 import { membership as M, weekendEcosystem as WE, community, library, SKOOL_PLANS, cap } from "../data/facts.js";
+import { pillars } from "../data/library.js";
 
 const SITE = "https://www.thedigitalincomeedit.com";
 const OG_IMAGE = `${SITE}/og/home-built-backwards-2026-09.jpg`;
@@ -54,6 +56,18 @@ const guides = [
   { cat: "AI", t: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", read: "18 min" },
   { cat: "Blogging", t: "How to Turn Your Skool Content Into a Blog", slug: "turn-skool-content-into-a-blog", read: "14 min" },
   { cat: "Automation & Paid Traffic", t: "How to Automate Your Online Business", slug: "automating-your-online-business", read: "15 min" },
+];
+
+const paths = [
+  { n: '01', label: 'Build my foundations', title: 'I need a place to start.', detail: 'Understand how the pieces fit, then choose the first thing to build.', href: '#blueprint', action: 'Start with the free Blueprint', note: 'Free foundation help' },
+  { n: '02', label: 'Choose my support', title: 'I want training or content help.', detail: 'Compare Standard and Premium by the help you want, at any stage.', href: '#membership', action: 'Compare the membership', note: 'Two levels of support' },
+  { n: '03', label: 'Build my own website', title: 'I have material to put to work.', detail: 'Already have lessons, guides, recordings or posts, and want an owned website?', href: '#owned-website', action: 'Explore the website course', note: 'Existing material + a website need' },
+];
+
+const otherPaths = [
+  { label: 'Digital product stock', title: 'Pretty & Paid PLR Vault™', detail: 'Finished products to customize and sell. Its own subscription, with shop training included.', href: '/shop/pretty-and-paid-plr-vault', action: 'Explore the PLR Vault' },
+  { label: 'Physical products', title: 'The Shopify Starter Kit', detail: 'A free starting point for choosing products and building your physical-product store.', href: '/resources/shopify-starter-kit', action: 'Get the free kit' },
+  { label: 'Shop the looks', title: 'The Lifestyle Edit', detail: 'Outfits, home details and the finds behind the photographs. Come in and shop.', href: '/lifestyle', action: 'Browse the looks' },
 ];
 
 const jsonLd = {
@@ -132,18 +146,25 @@ const jsonLd = {
   <div class="wrap"><div class="copy">
     <span class="kick">For women building without a personal brand</span>
     <h1>Build a faceless business. <em>Keep your life <i class="stress">off camera.</i></em></h1>
-    <p class="lede">Pick one thing to sell, build the website that sells it, and let emails bring buyers back. AI writes, builds and schedules. Your face never has to show up.</p>
-    <div class="ctas"><a class="btn" href="#blueprint">Get the free Blueprint</a><a class="link" href={WE.url}>See the {WE.price} course</a></div>
+    <p class="lede">Foundations, AI, content and the systems behind a faceless business. Find the help that fits what you're building now.</p>
+    <div class="ctas"><a class="btn" href="#your-next-step">Find your next step</a><a class="link" href="/learn">Explore the free library</a></div>
   </div></div>
   <a class="hx-pol" href={WYS_CTA.href} data-wys-cta><i class="hx-tape"></i><img src="/images/brand/wys-storefront-promo.webp" alt="The While-You-Sleep Storefront: your Amazon storefront posts itself while you sleep" width="1122" height="522"><span class="hx-cap">The While-You-Sleep Storefront™</span><span class="hx-tag"><b>New</b><span data-wys-cta-label>{WYS_CTA.label}</span></span></a>
-  <div class="hx-tick" aria-label="No camera, no code, step by step"><div class="hx-row" aria-hidden="true">{[0,1,2].map(() => <><span>No camera</span><i></i><span>No code</span><i></i><span>Step by step</span><i></i><span>Built in one weekend</span><i></i><span>AI does the repeat work</span><i></i></>)}</div></div>
+  <div class="hx-tick" aria-label="Faceless business, offer first, audience last"><div class="hx-row" aria-hidden="true">{[0,1,2].map(() => <><span>Keep your life off camera</span><i></i><span>Offer first</span><i></i><span>Audience last</span><i></i><span>Build with AI</span><i></i></>)}</div></div>
 </section>
 
+<section class="home-paths" id="your-next-step" aria-labelledby="paths-title">
+  <div class="home-inner">
+    <header class="home-section-heading"><div><span class="home-kicker">Your business. Your next step.</span><h2 id="paths-title">Where are <em>you</em> right now?</h2></div><p>Choose what you need today. There is no sequence of things you have to buy.</p></header>
+    <div class="home-path-grid">{paths.map(path => <article class="home-path"><span class="home-path-number" aria-hidden="true">{path.n}</span><span class="home-path-label">{path.label}</span><h3>{path.title}</h3><p>{path.detail}</p><span class="home-path-note">{path.note}</span><a href={path.href} class="home-path-link">{path.action}<span aria-hidden="true">↗</span></a></article>)}</div>
+    <p class="home-path-help">Want a hand choosing? <a href="/resources/find-your-door">Find Your Door</a> is optional. Already joined? <a href="https://www.skool.com/thedigitalincomeedit">Open the community</a> or <a href="/weekend-ecosystem/">access your course</a>.</p>
+  </div>
+</section>
 
 <section class="home-honest" aria-labelledby="honest-title">
   <div class="home-sheet">
     <i class="home-tape" aria-hidden="true"></i>
-    <span class="home-kicker">Be honest</span>
+    <span class="home-kicker">Starting from scratch?</span>
     <h2 id="honest-title">47 saved videos. <em><i class="stress">Zero</i> products.</em></h2>
     <ul class="home-crossed">
       <li>Prompts everywhere. Nothing built.</li>
@@ -159,7 +180,7 @@ const jsonLd = {
     <div class="home-method-copy">
       <span class="home-kicker">The Built Backwards Method</span>
       <h2 id="method-title">Built backwards. <em>The <i class="stress">order</i> is the method.</em></h2>
-      <p>Most people start at the bottom of this pile. Read it top to bottom and build it in that order.</p>
+      <p>The order to build a business, not a list of things to buy. Start with the piece your business needs now.</p>
       <a class="btn home-action" href="#blueprint">Start with step 1 <span aria-hidden="true">→</span></a>
     </div>
     <ol class="home-pile">
@@ -196,10 +217,12 @@ const jsonLd = {
   </div>
 </section>
 
-<section class="fs sp r"><div class="wrap">
-  <div class="head"><span class="kick">The weekend</span><h2>Friday night to Sunday. <em>Here's what <i class="stress">changes.</i></em></h2></div>
+<section class="home-course-zone" id="owned-website" aria-labelledby="owned-title">
+<header class="home-course-heading home-inner"><span class="home-kicker">For your existing body of work</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Lessons, guides, recordings, newsletters or posts already made, and a website you want to build around them. That is the starting point for this course.</p><div class="home-fit-note"><span>A paid product is not required.</span><span>No reusable material yet? <a href="#blueprint">Start with foundation help.</a></span></div></header>
+<section class="fs sp r" aria-labelledby="weekend-build-title"><div class="wrap">
+  <div class="head"><span class="kick">Inside the course</span><h3 id="weekend-build-title">Your weekend <em>website build</em></h3></div>
   <div class="days">
-    <div class="day fri"><h3>Friday</h3><ul><li><span>No website</span></li><li><span>No blog</span></li><li><span>Nobody finds you</span></li></ul></div>
+    <div class="day fri"><h3>Friday</h3><ul><li><span>Material in different places</span></li><li><span>No website to send readers</span></li><li><span>No connected email sign-up</span></li></ul></div>
     <div class="arrow">→</div>
     <div class="day sun"><h3>Sunday</h3><ul><li>Your own website</li><li>A blog ready to publish</li><li>Email sign-ups connected</li></ul></div>
   </div>
@@ -209,24 +232,27 @@ const jsonLd = {
   <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy"></div><figure class="rv-bubble"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>{FEATURED.pull}</blockquote><figcaption><b><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a></b>, {FEATURED.tenure}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
   <div>
     <span class="kick">The course · {WE.price}</span>
-    <h2>The Weekend <em>Ecosystem™</em></h2>
+    <h3 class="home-course-subhead">Give your work <em>a home of its own.</em></h3>
     <p class="sub">Your website and blog, built in one weekend.</p>
     <div class="nums"><div><b>{WE.modules}</b>Modules</div><div><b>{WE.prompts}</b>Prompts</div><div><b>{WE.assetsPerArticle}</b>Posts per article</div></div>
-    <ul class="res"><li>A live website on your own domain</li><li>Email sign-ups and your offer, connected</li><li>One prompt turns each article into {WE.assetsPerArticle} posts</li></ul>
+    <ul class="res"><li>A live website on your own domain</li><li>Email sign-ups connected to your site</li><li>One prompt turns each article into {WE.assetsPerArticle} posts</li></ul>
     <div class="buy"><a class="btn" href={WE.url}>Get {WE.name}</a><small>Or {WE.plan}. Yours for good, every future update included.<br><a class="link" href={WE.preview}>See inside first</a></small></div>
   </div>
 </div></section>
+</section>
 
 
 
 <section class="mem" id="membership"><div class="wrap">
   <div class="head"><span class="kick">The membership</span><h2>Build it with us. <em>Pick <i class="stress">your</i> help.</em></h2><p>Both start with {M.trialDays} days free.</p></div>
+  <p class="home-membership-fit">You can begin with either plan. Choose the training, resources and amount of content preparation you want help with.</p>
   <div class="tiers">
     <div class="tier"><span class="nm">{M.standard.short}</span><h3>{M.standard.name}</h3><p class="price">{M.standard.monthly}<small>/month</small></p><p class="yr">or {M.standard.perYear}</p>
       <ul><li>Step-by-step trainings, in build order</li><li>A new AI photo prompt every day</li><li>Women building beside you</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Standard free</span><span class="sm">Start free</span></a></div>
     <div class="tier prem"><div class="sticker"><i class="in"></i><span>Most help</span></div><span class="nm">{M.premium.short}</span><h3>{M.premium.name}</h3><p class="price">{M.premium.monthly}<small>/month</small></p><p class="yr">or {M.premium.perYear}</p>
       <ul><li>Everything in Standard</li><li>Instagram and Threads posts written for you, every month</li><li>Every Value Vault guide, already unlocked</li></ul><a class="btn" href={SKOOL_PLANS}><span class="lg">Start Premium free</span><span class="sm">Start free</span></a></div>
   </div>
+  <p class="home-premium-note"><b>New to all of this?</b> Premium includes the foundations and unlocked guides you can use now. Adapt the calendar's promotional details to your offer, generate the visuals, then publish.</p>
   <div class="rv-row">{MEMBER_REVIEWS.filter((r) => r.about !== "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
   <div class="group"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ current Skool About gallery: faceless income built with AI" width="1440" height="979" loading="lazy"><div><span class="kick">Inside the members' group</span><h3>This is the real group.</h3><p>It lives on Skool, an app for the community. Lessons, weekly threads and the women building beside you.</p><a class="btn" href="/membership">See the membership</a></div></div>
   {MEMBER_REVIEWS.filter((r) => r.about === "free").map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} center />)}
@@ -237,9 +263,11 @@ const jsonLd = {
 <section class="lib sp r t"><div class="wrap">
   <div class="head"><div><span class="kick">The free library</span><h2>Free guides. <em>Start with these.</em></h2></div><a class="btn" href="/learn">See every guide</a></div>
   <div class="guides">
-    {guides.map((g, i) => <a class="g" href={`/learn/${g.slug}`}><div class="top"></div><span class="tp">{["Start here","AI basics","Skool","Automation"][i]}</span><h3>{g.t}</h3><span class="btn">Read the guide</span></a>)}
+    {guides.map((g, i) => <a class="g" href={`/learn/${g.slug}`}><div class="top"><img src={pillars.find(p => p.slug === g.slug)?.img ?? (g.cat.startsWith('Automation') ? '/images/library-cards/path-automation.webp' : '/images/library-cards/path-blogging.webp')} alt="" width="720" height="504" loading="lazy" decoding="async" /></div><span class="tp">{["Start here","AI basics","Skool","Automation"][i]}</span><h3>{g.t}</h3><span class="btn">Read the guide</span></a>)}
   </div>
 </div></section>
+
+<section class="home-more" aria-labelledby="more-title"><div class="home-inner"><header class="home-section-heading"><div><span class="home-kicker">More from The Digital Income Edit™</span><h2 id="more-title">A different kind of <em>next step.</em></h2></div></header><div class="home-more-grid">{otherPaths.map(path => <article class="home-more-item"><span class="home-path-label">{path.label}</span><h3>{path.title}</h3><p>{path.detail}</p><a class="home-path-link" href={path.href}>{path.action}<span aria-hidden="true">↗</span></a></article>)}</div><p class="home-path-help">Looking for personal help? <a href="/work-with-me">Explore the engagements</a>. Interested in BAMI? <a href="/bami">Read about the mentorship and waitlist</a>.</p></div></section>
 </main>
 
 <footer><div class="wrap"><a class="logo" href="/"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>

@@ -18,8 +18,9 @@ const libLd = {
   ],
 };
 import "../../styles/edit.css";
-import SiteNav from "../../components/SiteNav.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
+import SiteNav from "../../components/HomeChromeHeader.astro";
+import SiteFooter from "../../components/HomeChromeFooter.astro";
+import "../../styles/brand-finish.css";
 
 // Attach each supporting article to the pillar that carries its category.
 const shelf = pillars.map((p) => ({
@@ -214,15 +215,15 @@ const totalPieces = pillars.length + articles.length;
   <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
 <style is:inline set:html={visualStyles} />
 </head>
-<body class="e-page">
+<body class="e-page tdie-finished">
   <SiteNav />
   <main>
   <section class="lib-head">
     <div class="lib-in">
       <div class="lib-title">
         <p class="e-kick">The Library · free to read</p>
-        <h1>The Library. <em>Read it in order.</em></h1>
-        <p class="lib-lede">You have saved the videos and built nothing. This is the order that fixes that: every guide here started as a lesson inside the classroom, and read from the top they build into an actual business. Open any one and it stands on its own.</p>
+        <h1>The Library. <em>Find your next answer.</em></h1>
+        <p class="lib-lede">Choose the topic you are working on now, from your first foundations to content, stores and business systems. Every article stands on its own, and everything here is free to read.</p>
       </div>
       <div class="lib-hero-side"><figure class="lib-hero-art"><img src="/images/library/detail-shelf-styling-02.jpg" width="1280" height="1280" alt="Pink and cream books, a blush handbag and gold accents on a home-office shelf" decoding="async" /><figcaption>The TDIE library · a pretty place to build your next idea</figcaption></figure>
       <dl class="lib-count">
@@ -237,7 +238,7 @@ const totalPieces = pillars.length + articles.length;
     <div class="sec-head">
       <div class="lbl">Fourteen free guides</div>
       <h2>The step-by-step guides</h2>
-      <p class="note">Free, written for beginners, and numbered in order: start with 01 and each guide builds on the last. Every guide comes with a free kit of templates and checklists.</p>
+      <p class="note">Choose the guide that matches your question. New to the foundations? Begin with 01. Each guide also points to its relevant free kit.</p>
     </div>
 
     <div class="bl-grid">
