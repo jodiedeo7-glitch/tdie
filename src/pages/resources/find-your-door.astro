@@ -471,7 +471,16 @@ const stats = [
       // Prerequisites apply before preferences and tie-breakers. Missing or
       // uncertain material/site intent never becomes course eligibility.
       var courseFits = pick("material")[3] === "yes" && pick("website")[3] === "yes";
-      var order = ["S","P","W","V","K","A"].filter(function(d){ return d !== "W" || courseFits; });
+      // A missing course prerequisite must not send someone into an unrelated
+      // stock, community or affiliate offer just because those scores remain.
+      var plrNeed = pick("goal")[2].V === 3 || pick("stuck")[2].V === 3 || pick("style")[2].V === 3 || pick("never")[4] === "V";
+      var communityNeed = pick("goal")[2].K === 3 || pick("stage")[2].K === 3 || pick("stuck")[2].K === 3 || pick("never")[4] === "K";
+      var haveIndex = QS.findIndex(function(q){ return q.k === "have"; });
+      var hasAmazon = (ans[haveIndex] || []).some(function(n){ return QS[haveIndex].o[n][2].A === 5; });
+      var amazonNeed = hasAmazon && (pick("goal")[2].A === 4 || pick("stuck")[2].A === 4);
+      var order = ["S","P","W","V","K","A"].filter(function(d){
+        return (d !== "W" || courseFits) && (d !== "V" || plrNeed) && (d !== "K" || communityNeed) && (d !== "A" || amazonNeed);
+      });
       var top = Math.max.apply(null, order.map(function(d){ return score[d]; }));
       var tied = order.filter(function(d){ return score[d] === top; });
       var neverDoor = pick("never")[4];

@@ -46,3 +46,9 @@ MailerLite behavior remains unverified because the permitted connector is unavai
 - New internal route targets and image files checked against the generated site. Direct course access retains the existing authentication flow.
 
 No purchases, subscriber submissions, email delivery, buyer accounts or customer release paths were tested. Public deployment requires a separate live check after the merge; local rendering and a successful build alone are not publication evidence.
+
+## Recommendation fallback follow-up
+
+The final one-product scenario exposed a stock-offer fallback without a stated stock need. The quiz now limits PLR, community-building and Amazon-specific recommendations to relevant stated needs before comparing preference scores. Product ownership alone does not establish a PLR need.
+
+Browser checks confirmed that a one-product visitor without reusable material receives foundation support, a visitor seeking finished product stock can receive PLR without an existing shop, and a teaching archive plus owned-website intent still receives the course. The static build passed again. The visual update was independently confirmed on the public homepage after deployment of `c117abbf8fee4ecb9c0d3324e4ece7b2496e119f`; the routing follow-up requires its own public check after deployment.
