@@ -68,3 +68,14 @@ html body footer.hc-foot:not(#zq) .hc-wrap{background:#fff;border:2px solid #D62
 /* not flat, not full glitter (10 Oct, 8:40 pm) */
 .hc-nav{background:#FFF7FA!important}
 html body footer.hc-foot:not(#zq){background:url(/images/brand/sparkle-glow.webp) right -220px top -80px/560px 370px no-repeat,#FFE4EF!important;background-image:url(/images/brand/sparkle-glow.webp)!important}
+/* The shared header uses the approved thin glitter edge, never a tall overlay. */
+.hc-drip{height:7px;background:url(/images/brand/silver-glitter-tile.webp) center/360px auto;filter:drop-shadow(0 3px 4px #9B406533)}
+@media(max-width:700px){
+ .hc-nav .hc-wrap{grid-template-columns:minmax(0,1fr) auto;gap:10px}
+ .hc-nav .hc-logo{align-items:flex-start;min-width:0;max-width:105px}
+ .hc-nav .hc-logo .l1{font:700 8px/1.15 Jost,sans-serif;letter-spacing:.22em;white-space:normal;max-width:100px}
+ .hc-nav .hc-logo .l2{font-size:34px;margin-top:3px}
+ .hc-nav .hc-r{gap:8px;min-width:0}
+ .hc-nav .hc-btn{padding-inline:13px;font-size:10px;letter-spacing:.06em;min-height:46px}
+ .hc-nav .hc-mnav summary{padding-inline:12px;min-height:46px;font-size:10px}
+}

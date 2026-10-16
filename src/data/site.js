@@ -28,6 +28,8 @@ export const FOOTER = [
     { label: "About", href: "/about" },
     { label: "Work With Me", href: "/work-with-me" },
     { label: "Questions & billing", href: "/faq" },
+    { label: "Course access", href: "/weekend-ecosystem/" },
+    { label: "Community access", href: "https://www.skool.com/thedigitalincomeedit" },
     { label: "Privacy", href: "/privacy" },
     { label: "Contact", href: "mailto:hello@thedigitalincomeedit.com" },
   ] },
