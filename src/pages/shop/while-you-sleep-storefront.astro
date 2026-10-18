@@ -21,12 +21,6 @@ const [ghost] = liveLooks;
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
     <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 6 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep.</p>
-    <WysLinks current="overview"/>
-    <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
-     <p class="wc-buy-h">Member presale is open now.</p>
-     <p class="wc-buy-p">TDIE Skool members get first access at the presale price, inside the community. Full launch is Friday 16 October at 12 pm ET.</p>
-     <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
-    </div>
     <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
      <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
@@ -35,6 +29,12 @@ const [ghost] = liveLooks;
      <p class="wc-buy-p" data-wys-when="launch">Launch weekend price. $37 after launch weekend.</p>
      <p class="wc-buy-p" data-wys-when="regular">One payment.</p>
      <WysCta align="left"/>
+    </div>
+    <WysLinks current="overview" buy/>
+    <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
+     <p class="wc-buy-h">Member presale is open now.</p>
+     <p class="wc-buy-p">TDIE Skool members get first access at the presale price, inside the community. Full launch is Friday 16 October at 12 pm ET.</p>
+     <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
     </div>
    </div>
    <div class="wc-hero-phone"><WysNightFeed/></div>
