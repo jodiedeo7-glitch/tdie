@@ -24,6 +24,7 @@ export const AFF = {
 
 // Dated change notes shown on Start Here. Newest first.
 export const UPDATES = [
+ {date: '19 October 2026', text: 'New: one storefront promo pin per look. Each look now also gets a pin of its Lifestyle photo that links to your storefront home page instead of the Idea List, on its own day, so people find your whole storefront, not just one list.'},
  {date: '19 October 2026', text: 'Every piece in a look now has to be on that look’s Idea List. Your system adds any missing piece to the list before the look is written, so every product in your photos is shoppable from the list your pin links to.'},
  {date: '19 October 2026', text: 'Licensed characters are in: a new Licensed characters and fandom favorites category, plus a setup question for your favorite characters (Hello Kitty, Kuromi, Barbie and more). Anything sold on Amazon is allowed, and your system now builds looks and themed lists around the characters you love.'},
  {date: '19 October 2026', text: 'Products now appear exactly as they are: every photo keeps each product\u2019s own logo, tags, patches, stitching and details just like its Amazon listing photo. The no-logos rule now only covers props and anything that is not a product.'},
