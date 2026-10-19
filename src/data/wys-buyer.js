@@ -24,6 +24,7 @@ export const AFF = {
 
 // Dated change notes shown on Start Here. Newest first.
 export const UPDATES = [
+ {date: '19 October 2026', text: 'Products now appear exactly as they are: every photo keeps each product\u2019s own logo, tags, patches, stitching and details just like its Amazon listing photo. The no-logos rule now only covers props and anything that is not a product.'},
  {date: '18 October 2026', text: 'Better products and no repeats: every look has 5 or 6 pieces judged on style and quality, every look goes into your log the moment it is chosen so it is never repeated even before its photos are made, and photo prompts open with “Highest quality finished photograph”, give exact piece counts, and make the Styled photo a brand-new picture with no lettering. Every photo is now made from a Product Sheet, one white page holding each piece’s real Amazon photo, so the products look exactly like the listings instead of being described in words.'},
  {date: '16 October 2026', text: 'Size check added: every look now records each product\u2019s real size, every photo prompt ends with a scale line, and a photo fails if a piece looks too big or too small next to the others.'},
  {date: '12 October 2026', text: 'The Storefront opens for members: setup, the nightly run, approvals, a by-hand option for every step, and the affiliate promo kit.'}
