@@ -4,9 +4,8 @@ No tool is called here. Actual generation adapters must call this guard and
 record owning-service evidence. A reservation is not an executed generation.
 """
 import math
-import os
 from pathlib import Path
-from profile import Blocked, atomic_write, digest, read
+from profile import Blocked, atomic_write, digest, read, write_lease
 
 
 def reserve(path, policy, attempt_id, payload_hash, expected_revision):
@@ -29,13 +28,7 @@ def reserve(path, policy, attempt_id, payload_hash, expected_revision):
         raise Blocked('WRITE_INTENT_MISSING')
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    lock = Path(str(path) + '.lock')
-    try:
-        fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as error:
-        raise Blocked('SPEND_WRITE_IN_PROGRESS') from error
-    try:
-        os.close(fd)
+    with write_lease(path, 'SPEND'):
         policy_hash = digest(policy)
         state = read(path) if path.exists() else {'revision': 0, 'policy_sha256': policy_hash, 'attempts': {}}
         if state['policy_sha256'] != policy_hash:
@@ -59,21 +52,13 @@ def reserve(path, policy, attempt_id, payload_hash, expected_revision):
         state['revision'] += 1
         atomic_write(path, state)
         return state
-    finally:
-        lock.unlink()
 
 
 def record_result(path, attempt_id, status, evidence, expected_revision, actual_cost=None):
     if status not in ('succeeded', 'failed', 'write_outcome_unknown') or not evidence:
         raise Blocked('ATTEMPT_RESULT_EVIDENCE_MISSING')
     path = Path(path)
-    lock = Path(str(path) + '.lock')
-    try:
-        fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as error:
-        raise Blocked('SPEND_WRITE_IN_PROGRESS') from error
-    try:
-        os.close(fd)
+    with write_lease(path, 'SPEND'):
         state = read(path)
         if state['revision'] != expected_revision:
             raise Blocked('SPEND_REVISION_CONFLICT')
@@ -90,5 +75,3 @@ def record_result(path, attempt_id, status, evidence, expected_revision, actual_
         state['revision'] += 1
         atomic_write(path, state)
         return state
-    finally:
-        lock.unlink()
