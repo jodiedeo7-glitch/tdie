@@ -1,0 +1,20 @@
+{
+  "name": "tdie-development",
+  "interface": {
+    "displayName": "TDIE Development — WYS release held"
+  },
+  "plugins": [
+    {
+      "name": "wys-storefront",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wys-storefront"
+      },
+      "policy": {
+        "installation": "NOT_AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
