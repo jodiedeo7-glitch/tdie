@@ -37,5 +37,6 @@ export const FOOTER = [
 
 export const SOCIAL = [
   { label: "Pinterest", href: "https://pinterest.com/TheDigitalIncomeEditTDIE" },
-  { label: "Instagram", href: "https://instagram.com/the.faceless.homestead.mama" },
+  // Points at @itstommykate until the main Instagram is refreshed (Jodie, 22 Oct 2026).
+  { label: "Instagram", href: "https://instagram.com/itstommykate" },
 ];

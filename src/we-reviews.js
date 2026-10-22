@@ -66,8 +66,9 @@ export const MEMBER_REVIEWS = [
   {
     id: "dee-free-tier",
     name: "Dee MamaswithMissions",
-    about: "free",
-    source: "free member",
+    about: "membership",
+    center: true,
+    source: "Standard Member",
     quote: "For a free community, there's a surprising amount of value here. ❤️",
   },
 ];
