@@ -206,3 +206,70 @@
 .home-v11 footer .fcopy a{padding:12px 0}
 @media (max-width:420px){.home-v11 .nav .r .btn,.home-v11 .nav .mnav summary{font-size:12px!important}.home-v11 .nav .logo{min-height:44px;justify-content:center}}
 @media (max-width:359px){.home-v11 .nav .r .btn,.home-v11 .nav .mnav summary{font-size:11px!important}}
+
+/* ---------- round 3: design re-review ---------- */
+/* hero review as a small glossy bubble (same look as every review) */
+.home-v11 .h11-proofrow{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 22px;margin-top:30px}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble){max-width:330px!important;margin:16px 0 34px 6px!important;padding:20px 24px 18px!important;border-radius:22px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) blockquote{font-size:18px!important;line-height:1.3!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-stars{margin:0 0 6px!important;font-size:13px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) figcaption{margin-top:8px!important;font-size:13px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q{width:42px!important;height:32px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q.o{left:-10px!important;top:-16px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-q.c{right:12px!important;bottom:-14px!important}
+.home-v11 figure.rv-bubble.h11-mini:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble)::after{left:36px!important;bottom:-30px!important;width:50px!important;height:36px!important}
+.home-v11 .h11-count{margin:0 0 34px;border-color:#E9A3C2}
+
+/* reviews: four bubbles, two by two */
+@media (min-width:900px){.home-v11 .mem .rv-row.h11-rv4{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;gap:0 40px}}
+
+/* lavender sections fade in and out instead of hard bands */
+.home-v11 .home-method{background:linear-gradient(180deg,#FFF7FA 0,var(--lav) 110px,var(--lav) calc(100% - 110px),#FFF7FA 100%)}
+.home-v11 .home-method::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 75% at 22% 45%,rgba(255,255,255,.85) 0%,rgba(255,255,255,0) 70%);pointer-events:none}
+.home-v11 .h11-help{background:linear-gradient(180deg,#FBE9F2 0,var(--lav) 110px,var(--lav) calc(100% - 110px),#FFF7FA 100%)}
+.home-v11 .h11-help::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(60% 70% at 50% 40%,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 72%);pointer-events:none}
+.home-v11 :is(.home-course-zone,.mem,.h11-help){border-top:0!important;border-bottom:0!important}
+.home-v11 .home-course-zone{background:linear-gradient(180deg,#FFE4EF 0%,#FBE9F2 100%)}
+
+/* one label style, one pink */
+.home-v11 .mem .head .h11-kick{margin-bottom:14px}
+.home-v11 .mem h2 em{color:var(--pink)!important}
+.home-v11 :is(.h11-kick,.home-kicker){text-wrap:balance;max-width:100%}
+.home-v11 .home-method-card h3{font-size:22px!important}
+.home-v11 .we .home-course-subhead{font-size:28px!important}
+.home-v11 .membership-trial{font-size:14px;color:#3E2A33}
+.home-v11 .offer-promise,.home-v11 .offer-benefits span{text-wrap:pretty}
+
+/* equal-height cards */
+.home-v11 .h11-also li,.home-v11 .h11-guides li{display:flex}
+.home-v11 .h11-also a,.home-v11 .h11-guides a{width:100%}
+
+/* sticky trial button on phones, only between sections that already show it */
+.home-v11 .h11-sticky{display:none}
+@media (max-width:900px){
+  .home-v11 .h11-sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,247,250,.96);border-top:1.5px solid #E9A3C2;box-shadow:0 -10px 24px -14px rgba(110,10,50,.4);transform:translateY(110%);transition:transform .25s ease}
+  .home-v11 .h11-sticky.on{transform:none}
+  .home-v11 .h11-sticky .h11-btn{width:100%;min-height:50px}
+  .home-v11 footer{padding-bottom:90px}
+  /* course: proof before the buy button */
+  .home-v11 .we .feature{display:flex!important;flex-direction:column}
+  .home-v11 .we .feature .pic{order:1;margin-bottom:8px}
+  .home-v11 .we .feature>div:not(.pic){order:2}
+  .home-v11 .h11-proofrow{margin-top:20px}
+}
+@media (prefers-reduced-motion:reduce){.home-v11 .h11-sticky{transition:none}}
+
+/* very small phones */
+@media (max-width:360px){
+  .home-v11 .h11-btn{padding:0 16px;gap:8px;font-size:16px!important;white-space:normal;text-align:center}
+  .home-v11 .membership-offer .offer-cta{padding:10px;font-size:15px;white-space:normal}
+  .home-v11 .home-fan{transform:scale(.88);transform-origin:center top}
+}
+.home-v11 .h11-hero .h11-kick{font-size:15px!important}
+.home-v11 p.membership-trial{font-size:14px!important;color:#3E2A33!important}
+@media (max-width:900px){.home-v11 .h11-hero .h11-kick{font-size:13px!important}}
+.home-v11 footer .logo .l2{color:var(--pink)!important}
+.home-v11 .h11-btn b{font-weight:inherit}
+.home-v11 .h11-short{display:none}
+@media (max-width:360px){.home-v11 .h11-full{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.home-v11 .h11-short{display:inline}.home-v11 footer .fcols a{overflow-wrap:anywhere}}
+.home-v11 .home-membership-fit{max-width:36em!important}

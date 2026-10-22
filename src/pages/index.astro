@@ -19,8 +19,6 @@ import MembershipPlans from "../components/MembershipPlans.astro";
 import { weekendEcosystem as WE, membership as MEM, SKOOL_PLANS } from "../data/facts.js";
 
 const BRITTANY = MEMBER_REVIEWS.find((r) => r.id === "brittany-miller-skool");
-const ROW_REVIEWS = MEMBER_REVIEWS.filter((r) => !r.center);
-const CENTER_REVIEWS = MEMBER_REVIEWS.filter((r) => r.center);
 
 // Everything else The Digital Income Edit™ makes, named, in one compact row.
 const alsoFrom = [
@@ -108,7 +106,7 @@ const jsonLd = {
   <ul class="lft">{NAV.slice(0,3).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
   <a class="logo" href="/" aria-label="The Digital Income Edit home"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>
   <div class="r"><ul><li><a href="/membership">Membership</a></li></ul><a class="btn" href={NAV_CTA.href}>7 days free</a>
-    <details class="mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href="/lifestyle">Lifestyle</a></nav></details>
+    <details class="mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href="/learn">Free Library</a><a href="/work-with-me">Work With Me</a><a href="/lifestyle">Lifestyle</a></nav></details>
   </div>
 </div><div class="hx-gborder" aria-hidden="true"></div></header>
 
@@ -125,12 +123,10 @@ const jsonLd = {
       <a class="h11-link" href="#blueprint">Or get the free Blueprint</a>
     </div>
     <p class="h11-terms">{MEM.standard.name} {MEM.standard.perMonth} · {MEM.premium.name} {MEM.premium.perMonth}. Cancel in Skool before the trial ends and you pay nothing.</p>
-    <figure class="h11-proof">
-      <span class="h11-stars" aria-label="5 out of 5">★★★★★</span>
-      <blockquote>“This is the best plan to follow BY FAR!”</blockquote>
-      <figcaption>{BRITTANY.name}, {BRITTANY.source}</figcaption>
+    <div class="h11-proofrow">
+      <figure class="rv-bubble h11-mini"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>This is the best plan to follow BY FAR!</blockquote><figcaption><b>{BRITTANY.name}</b>, {BRITTANY.source}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure>
       <span class="h11-count"><b>900<span class="h11-plus">+</span></b> members building inside</span>
-    </figure>
+    </div>
   </div>
   <div class="h11-photo">
     <img src="/images/brand/hero-tk-car.webp" alt="Tommy Kate, the AI face of The Digital Income Edit™, laughing in her pink car" width="1200" height="1500" fetchpriority="high" decoding="async">
@@ -157,7 +153,7 @@ const jsonLd = {
     <div class="home-method-copy">
       <span class="home-kicker">The Built Backwards Method</span>
       <h2 id="method-title">Built backwards. <em>The <i class="stress">order</i> is the method.</em></h2>
-      <p>The order to build a business, not a list of things to buy. Most people grow an audience first and hope it buys. You build the thing it buys first.</p>
+      <p>The order to build a business, not a list of things to buy. Most people grow an audience and hope it buys. You build what it will buy first.</p>
       <a class="h11-link" href="#blueprint">Start with step 1: the free Blueprint</a>
     </div>
     <ol class="home-pile">
@@ -182,7 +178,7 @@ const jsonLd = {
       <h2 id="machine-title">This whole business was built <em>faceless, with AI.</em></h2>
       <p>This site, the emails, the course and the Skool classroom. Every article here started as a Skool lesson, and the course is delivered on the very site it teaches you to build. No income screenshots. Open any of it and look.</p>
       <ul class="h11-ticks"><li>No filming</li><li>No audience first</li><li>No performing</li></ul>
-      <div class="h11-ctas"><a class="h11-btn h11-btn--sm" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside <span aria-hidden="true">→</span></a><a class="h11-link" href={WE.preview}>Or look inside the course</a></div>
+      <div class="h11-ctas"><a class="h11-btn h11-btn--sm" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside <span aria-hidden="true">→</span></a><a class="h11-link" href={WE.preview}>Or see inside the course, free</a></div>
     </div>
   </div>
 </section>
@@ -208,18 +204,16 @@ const jsonLd = {
 </section>
 
 <section class="mem" id="membership"><div class="wrap">
-  <div class="head"><span class="kick">The membership · on Skool</span><h2>Two ways in. <em>Both <i class="stress">free</i> for 7 days.</em></h2></div>
-  <p class="home-membership-fit">Standard teaches the build. Premium adds the sales training, every guide unlocked and content written for you every month. Starting from scratch? Either one works.</p>
+  <div class="head"><span class="h11-kick">The membership · on Skool</span><h2>Two ways in. <em>Both <i class="stress">free</i> for 7 days.</em></h2></div>
+  <p class="home-membership-fit">It lives on Skool, the community app where the classroom and the group are. Standard teaches the build. Premium adds the sales training, every guide unlocked and content written for you every month. Starting from scratch? Either one works.</p>
   <MembershipPlans />
   <p class="home-premium-note"><a href="/membership#compare">See the full membership comparison</a></p>
-  <div class="rv-row">{ROW_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-  {CENTER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} center />)}
+  <div class="rv-row h11-rv4">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
 </div></section>
 
 <section class="home-course-zone" id="owned-website" aria-labelledby="owned-title">
-<header class="home-course-heading home-inner"><span class="home-kicker">Already have lessons, guides or posts?</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Turn the material you already made into your own website and blog, with email sign-ups connected, in one weekend. No paid product needed. No material yet? <a href="#blueprint">Start with the free Blueprint.</a></p></header>
-<section class="fs sp r" aria-labelledby="weekend-build-title"><div class="wrap">
-  <div class="head"><span class="kick">Inside the course</span><h3 id="weekend-build-title">Your weekend <em>website build</em></h3></div>
+<header class="home-course-heading home-inner"><span class="home-kicker">Have lessons, guides or posts?</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Turn the material you already made into your own website and blog, with email sign&#8209;ups connected, in one weekend. No paid product needed. No material yet? <a href="#blueprint">Start with the free&nbsp;Blueprint.</a></p></header>
+<section class="fs sp r" aria-label="Your weekend website build"><div class="wrap">
   <div class="days">
     <div class="day fri"><h3>Friday</h3><ul><li><span>Material in different places</span></li><li><span>No website to send readers</span></li><li><span>No connected email sign-up</span></li></ul></div>
     <div class="arrow">→</div>
@@ -230,12 +224,12 @@ const jsonLd = {
 <section class="we sp"><div class="wrap feature">
   <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy" decoding="async"></div><figure class="rv-bubble"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>{FEATURED.pull}</blockquote><figcaption><b><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a></b>, {FEATURED.tenure}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
   <div>
-    <span class="kick">The course · {WE.price}</span>
+    <span class="h11-kick">The course · {WE.price}</span>
     <h3 class="home-course-subhead">Give your work <em>a home of its own.</em></h3>
     <p class="sub">Your website and blog, built in one weekend.</p>
     <div class="nums"><div><b>{WE.modules}</b>Modules</div><div><b>{WE.prompts}</b>Prompts</div><div><b>{WE.assetsPerArticle}</b>Posts per article</div></div>
     <ul class="res"><li>A live website on your own domain</li><li>Email sign-ups connected to your site</li><li>One prompt turns each article into {WE.assetsPerArticle} posts</li></ul>
-    <div class="buy"><a class="h11-btn" href={WE.url}>Get {WE.name} <span aria-hidden="true">→</span></a><small>{WE.price}, or {WE.plan}. Yours for good, every future update included.</small><a class="h11-link" href={WE.preview}>See inside first, free</a></div>
+    <div class="buy"><a class="h11-btn" href={WE.url}><b class="h11-full">Get {WE.name}</b><b class="h11-short" aria-hidden="true">Get the course · {WE.price}</b> <span aria-hidden="true">→</span></a><small>{WE.price}, or {WE.plan}. Yours for good, every future update included.</small><a class="h11-link" href={WE.preview}>See inside first, free</a></div>
   </div>
 </div></section>
 </section>
@@ -255,7 +249,7 @@ const jsonLd = {
         <span class="h11-label">Done with you</span>
         <h3>Work With Me</h3>
         <p>An offer, a funnel and a system, built to work together. See the engagements and what each one includes.</p>
-        <a class="h11-btn h11-btn--sm" href="/work-with-me">See the engagements <span aria-hidden="true">→</span></a>
+        <a class="h11-btn h11-btn--sm" href="/work-with-me">See how it works <span aria-hidden="true">→</span></a>
       </article>
     </div>
   </div>
@@ -281,6 +275,13 @@ const jsonLd = {
   </div>
 </section>
 </main>
+<div class="h11-sticky" aria-hidden="true" hidden><a class="h11-btn" href={SKOOL_PLANS} tabindex="-1">Start your 7 days free <span aria-hidden="true">→</span></a></div>
+<script is:inline>
+(function(){var bar=document.querySelector('.h11-sticky');if(!bar||!('IntersectionObserver' in window))return;bar.hidden=false;
+var hide=new Set(),targets=['.h11-hero','#blueprint','.membership-offers','.h11-close','footer'].map(function(s){return document.querySelector(s)}).filter(Boolean);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?hide.add(e.target):hide.delete(e.target)});bar.classList.toggle('on',hide.size===0)},{threshold:0});
+targets.forEach(function(t){io.observe(t)});})();
+</script>
 
 <footer><div class="wrap"><a class="logo" href="/"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>
 <div class="fcols">
