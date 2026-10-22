@@ -196,3 +196,13 @@
 @media (max-width:900px){.home-v11 footer .fcols a{padding:13px 0}}
 .home-v11 :is(.home-sheet,.home-method,.mem)::before{background-image:url(/images/brand/sparkle-scatter-900.webp)}
 .home-v11 .h11-plus{font:700 15px/1 Jost,sans-serif;margin-left:1px}
+/* re-audit round: stars contrast, 12px floor, tap targets */
+.home-v11 .h11-stars{color:var(--deep)}
+.home-v11 figure.rv-bubble:is(#rvf1,.rv-bubble):is(#rvf2,.rv-bubble) .rv-stars,.home-v11 .rv-bubble .rv-stars{color:#A11F52!important}
+.home-v11 :is(.home-kicker,.h11-kick,.kick){font-size:12px!important}
+.home-v11 .we .nums div{font-size:12px}
+.home-v11 .we .sticker span{font-size:12px}
+.home-v11 .rv-bubble figcaption a{display:inline-block;padding:12px 0;margin:-12px 0}
+.home-v11 footer .fcopy a{padding:12px 0}
+@media (max-width:420px){.home-v11 .nav .r .btn,.home-v11 .nav .mnav summary{font-size:12px!important}.home-v11 .nav .logo{min-height:44px;justify-content:center}}
+@media (max-width:359px){.home-v11 .nav .r .btn,.home-v11 .nav .mnav summary{font-size:11px!important}}
