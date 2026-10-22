@@ -1419,9 +1419,10 @@
     },
     "copy_limits": {
       "overlay_words": [
-        3,
-        5
+        6,
+        10
       ],
+      "overlay_note": "Jodie, 22 Oct 2026: the 3 to 5 word cap produced vague lesson-name headlines nobody understood. A headline is now 6 to 10 words and must be a specific promise a stranger understands in one second (see pin_render.headline_standard).",
       "title_chars": [
         60,
         100
@@ -1434,6 +1435,30 @@
         150,
         200
       ]
+    },
+    "headline_standard": {
+      "rule": "Every pin headline states who it is for or what it is about AND what the reader gets, in plain words a stranger understands without knowing TDIE, Skool or any lesson.",
+      "good_examples": [
+        "How To Pick A Niche For Your Digital Products",
+        "A Welcome Email Sequence You Can Set Up In One Evening",
+        "How To Write An Instagram Bio That Says What You Offer"
+      ],
+      "banned_patterns": [
+        "Verb-fragment lesson names such as Give Your Bio Direction, Keep Your Groups Useful, Make The Opening Specific, Cut The Extra Promises, Check The Fulfilment Route, Answer Useful",
+        "Any headline that is meaningless without the lesson it came from",
+        "Generic sticker or footer lines such as 03 USEFUL STEPS, Save the check, Keep this beside your next draft"
+      ],
+      "headline_min_px_at_1000w": 100,
+      "headline_max_lines": 4,
+      "step_cards": "No step cards with text under 40px. Either a real numbered list of specific items at 40px or larger, or no list at all.",
+      "photo": "One photo that matches the topic. No unrelated stock (a dog under a table is not a bio pin). Photo frame matches the photo's own shape.",
+      "cta_text": "Learn more on Skool",
+      "cta_never": "Never write free, free trial, a price or an income claim on a pin or its button.",
+      "brand_name": "THE DIGITAL INCOME EDIT\u2122 lockup large enough to read at stamp size.",
+      "pink_boxes": "No pink-filled box, pill, badge, circle or button. Pink is type, thin rules and photography only.",
+      "fonts": "Gloock headlines, Yellowtail only for the one stressed word, Jost for everything else (Jodie, Oct 2026). This replaces Newsreader and Inter for pins.",
+      "title": "Search phrase first, within the first 40 characters, 60 to 100 characters total.",
+      "contact_sheet": "Render every batch, open every pin at full size and at 200px wide, fix, then show Jodie a contact sheet before scheduling."
     },
     "pinterest_spam_risk_phrases": [
       "Make Money Online"

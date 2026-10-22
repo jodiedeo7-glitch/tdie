@@ -46,7 +46,7 @@ Before writing, create a topic-family map. Prevent close cousins from landing wi
 
 ### 3. Copy
 For every pin write:
-- 3 to 5 word overlay
+- 6 to 10 word headline overlay that passes the PIN HEADLINE AND DESIGN STANDARD in `ops/cloud-kit/TDIE_PIN_RULES.md` (22 Oct 2026)
 - 60 to 100 character title
 - 450 to 500 character description
 - 150 to 200 character alt text
@@ -59,7 +59,7 @@ Use the exact Skool destination from the Pinterest router. No prices. No income 
 ### 4. Visual production
 Assign all ten canon layouts once per 10-pin batch.
 
-For non-person pins, create the complete flat-layer pin in the coding/container environment. Use Newsreader and Inter, current palette, depth, real content, and the TDIE lockup.
+For non-person pins, create the complete flat-layer pin in the coding/container environment. Use Gloock, Yellowtail and Jost, current palette, the headline at 100px or larger, depth, real content, and the TDIE lockup.
 
 For persona layouts:
 - create the full layout with an explicit photo frame
@@ -74,7 +74,7 @@ Inspect every pin at feed thumbnail size. Check:
 - collisions
 - clipping
 - visual hierarchy
-- overlay length
+- overlay length (6 to 10 words) and whether a stranger understands the headline
 - copy limits
 - lockup
 - palette
