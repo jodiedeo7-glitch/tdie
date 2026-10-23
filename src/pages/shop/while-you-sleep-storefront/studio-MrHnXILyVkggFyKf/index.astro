@@ -2,7 +2,7 @@
 import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
 import {WYS_BUYER_ROOT, AFF, UPDATES} from '../../../../data/wys-buyer.js';
 import {Image} from 'astro:assets';
-import roundupExample from '../../../../lifestyle/pink-ghost-coffee-bar-roundup.jpg';
+import roundupExample from '../../../../lifestyle/wys-new-pins-poster.jpg';
 ---
 <WysBuyerFrame title="Start Here" current="start">
  <header class="wb2-hero">
@@ -30,14 +30,15 @@ import roundupExample from '../../../../lifestyle/pink-ghost-coffee-bar-roundup.
     <div style="flex:1 1 280px;min-width:0">
      <p class="wb2-kicker" style="margin:0 0 6px">New · 23 October 2026</p>
      <h2 style="margin:0 0 8px">Two new pins for every look: the Roundup and the Found It</h2>
-     <p style="margin:0 0 10px">Every piece of the look together in one styled scene, with a three-line headline across the top, like the "You'll Love This Year" roundup pins all over Pinterest. Plus the Found It: the look's most interesting piece on its own in a real, lived-in photo, with handwritten "I found this on Amazon" words over it. Both link straight to the look's Idea List. Your system now makes five photos and five pins per look. Already set up? It takes one minute:</p>
+     <p style="margin:0 0 10px">Every piece of the look together in one styled scene, with a three-line headline across the top, like the "You'll Love This Year" roundup pins all over Pinterest. Plus the Found It: the look's most interesting piece on its own in a real, lived-in photo, with handwritten "I found this on Amazon" words over it. Both link straight to the look's Idea List. Pick which ones you want: Set It Up now asks which pins to make for every look. Already set up? It takes two minutes:</p>
      <ol style="margin:0 0 14px;padding-left:22px">
       <li>Open Set It Up. If you set up on this computer, your answers are still filled in.</li>
+      <li>Under Pinterest, tick the pins you want for every look.</li>
       <li>Copy your new nightly run and tell Claude: "Replace my While-You-Sleep nightly run task's prompt with this."</li>
      </ol>
      <a class="wb2-btn" href={WYS_BUYER_ROOT + '/set-it-up'}>Get my new nightly run <span class="arr" aria-hidden="true">→</span></a>
     </div>
-    <Image src={roundupExample} alt="Example Roundup pin: a pink ghost coffee bar under the headline Pink Ghost, Coffee Bar Decor" widths={[180, 360]} sizes="150px" style="width:150px;height:auto;border-radius:12px;flex:none"/>
+    <Image src={roundupExample} alt="The Pink Gamer Girl Desk look: Basic, Styled and Lifestyle pins on top, and the newly added Roundup and Found It pins below" widths={[240, 480]} sizes="220px" style="width:220px;height:auto;border-radius:12px;flex:none"/>
    </div>
   </div>
  </section>
@@ -106,7 +107,7 @@ import roundupExample from '../../../../lifestyle/pink-ghost-coffee-bar-roundup.
    <p>The main path is fully automatic. Every one of these is a switch on the Set It Up page, and you can mix and match.</p>
    <div class="wb2-grid">
     <div class="wb2-card"><h3>Approvals</h3><p>On: every pin and carousel waits in Metricool for your OK. Off: fully automatic.</p></div>
-    <div class="wb2-card"><h3>One look a night</h3><p>Half the credits and half the Claude usage. Five pins a night instead of ten.</p></div>
+    <div class="wb2-card"><h3>One look a night</h3><p>Half the credits and half the Claude usage. Half the pins, half the photos.</p></div>
     <div class="wb2-card"><h3>No face</h3><p>No persona? Lifestyle photos show hands and the products in use.</p></div>
     <div class="wb2-card"><h3>Any step by hand</h3><p>Pick the products yourself, make the photos on the Higgsfield website, schedule pins in Pinterest, post the carousels or paste the blog posts yourself. It writes everything you need into your log.</p></div>
     <div class="wb2-card"><h3>Instagram on or off</h3><p>One carousel per look at the time you pick, in the photo order you pick.</p></div>
