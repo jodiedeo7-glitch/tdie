@@ -23,7 +23,7 @@ const {look, id} = Astro.props;
    <p class="wc-step-tag"><b>2</b> 4 Pinterest pins</p>
    <div class="wh-ex-wrap"><span class="wh-ex">Example</span>
     <div class="wh-pins">
-     {['basic', 'styled', 'lifestyle', 'roundup'].map((r) => <div class="wh-pin"><WysPin look={look} role={r} sizes="160px"/><span class="wh-save">Save</span><span class="wh-pin-t">{look.short} · {r === 'roundup' ? 'Roundup' : roles.find((x) => x.key === r).name}</span></div>)}
+     {['basic', 'styled', 'lifestyle'].map((r) => <div class="wh-pin"><WysPin look={look} role={r} sizes="160px"/><span class="wh-save">Save</span><span class="wh-pin-t">{look.short} · {roles.find((x) => x.key === r).name}</span></div>)}
     </div>
    </div>
    <p class="wh-out-note">Each pin links to the themed Amazon Idea List its products came from. The Roundup shows every piece together under one headline.</p>

@@ -2,7 +2,7 @@
 
 Sources checked: claude/TDIE_SKOOL_POSTING_SYSTEM.md (section 4 example posts, link and Meta rules), ops/canon/canon.json (The While-You-Sleep Storefront™ row, $37), claude/WYS_PROMO_FACTS.md (8 pins a night, "Built on Claude. ChatGPT version on the way."), claude/TDIE_JODIE_THREADS_VOICE.md, claude/WYS_FB_GROUP_ROTATION.md (Facebook post shape).
 
-Image for all three: ghost_roundup.jpg (the Pink Ghost Coffee Bar roundup pin), in ops/wys/roundup/.
+Image for all three: C_pink_gamer_girl_roundup.jpg (the Pink Gamer Girl roundup pin, a new photo of every piece together), in ops/wys/newpins/.
 
 Sales page (live): https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront
 

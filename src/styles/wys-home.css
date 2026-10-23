@@ -308,7 +308,7 @@ body:has(.wys-world) .e-page{background:transparent}
 
 /* ---------- example day: slots alternate above and below one line ---------- */
 @media (min-width:901px){
- .wh-bracket{grid-template-columns:repeat(13,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
+ .wh-bracket{grid-template-columns:repeat(11,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
  /* one timeline through the middle: no box around either row */
  .wh-bracket::before,.wh-bracket::after{display:none!important}
  .wh-bracket .wh-line{position:absolute;left:0;right:0;top:calc(50% + 10px);height:2px;background:#E85A9B;border-radius:2px;display:block}

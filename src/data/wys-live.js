@@ -7,8 +7,6 @@ import plaidLife from '../lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.pn
 import ghostBasic from '../lifestyle/pink-ghost-coffee-bar-basic.jpg';
 import ghostStyled from '../lifestyle/pink-ghost-coffee-bar-styled.jpg';
 import ghostLife from '../lifestyle/pink-ghost-coffee-bar-lifestyle.png';
-import ghostRoundup from '../lifestyle/pink-ghost-coffee-bar-roundup.jpg';
-import plaidRoundup from '../lifestyle/pink-plaid-pumpkin-patch-outfit-roundup.jpg';
 import plaidBlogPhone from '../assets/wys/convert/blog-pink-plaid-pumpkin-patch-outfit-phone.jpg';
 import plaidBlogDesk from '../assets/wys/convert/blog-pink-plaid-pumpkin-patch-outfit-desktop.jpg';
 import ghostBlogPhone from '../assets/wys/convert/blog-pink-ghost-coffee-bar-phone.jpg';
@@ -63,8 +61,7 @@ export const liveLooks = [
   photos: {
    basic: {src: ghostBasic, alt: 'Pink ghost figurines, printed flameless candles and pink and white jack-o-lanterns lined up on a wood sideboard against a plum wall with paper bats'},
    styled: {src: ghostStyled, alt: 'A pink Halloween coffee bar on a painted sideboard with ghosts, a BOO sign, pink gauze, candy jars and paper bats on the wall'},
-   lifestyle: {src: ghostLife, alt: 'Tommy Kate laughing as she sticks pink and black paper bats on her kitchen backsplash, pink ghosts and jack-o-lanterns on the counter'},
-   roundup: {src: ghostRoundup, alt: 'Roundup pin: the whole pink ghost coffee bar with the headline Pink Ghost, Coffee Bar Decor, You will love this year'}
+   lifestyle: {src: ghostLife, alt: 'Tommy Kate laughing as she sticks pink and black paper bats on her kitchen backsplash, pink ghosts and jack-o-lanterns on the counter'}
   }
  },
  {
@@ -80,8 +77,7 @@ export const liveLooks = [
   photos: {
    basic: {src: plaidBasic, alt: 'Flat lay on a wood floor of a pink plaid shacket, black crop top, light wash jeans, white sneakers, a purple tote and a green pom beanie'},
    styled: {src: plaidStyled, alt: 'The pink plaid shacket, jeans, purple tote and green beanie hanging on a peg rail above white sneakers, pumpkins and apples'},
-   lifestyle: {src: plaidLife, alt: 'Tommy Kate crouching at a muddy pumpkin patch holding a pumpkin, wearing the pink plaid shacket, jeans, white sneakers and green beanie'},
-   roundup: {src: plaidRoundup, alt: 'Roundup pin: the pink plaid outfit on a peg rail with the headline Pink Plaid, Fall Outfit, Pumpkin Patch Ready'}
+   lifestyle: {src: plaidLife, alt: 'Tommy Kate crouching at a muddy pumpkin patch holding a pumpkin, wearing the pink plaid shacket, jeans, white sneakers and green beanie'}
   }
  }
 ];
