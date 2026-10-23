@@ -1,7 +1,7 @@
 """Amazon-list roundup pin: headline lettering laid over a look photo, copied from Jodie's
 'Spooky Cute HALLOWEEN DECOR You'll Love This Year' example (pink script / heavy black caps /
 white script line with emoji). Usage:
-python3 make_roundup_pin.py in.jpg out.jpg "Pink Thanksgiving" "TABLE DECOR" "You'll Love This Year" "🥧💗"
+python3 make_roundup_pin.py in.jpg out.jpg "Pink Thanksgiving" "TABLE DECOR" "You'll Love This Year" "🥧💗" [#line1hex]
 """
 import sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -18,6 +18,8 @@ WHITE = (255, 255, 255)
 
 src, out, l1, l2, l3 = sys.argv[1:6]
 emo = sys.argv[6] if len(sys.argv) > 6 else ''
+if len(sys.argv) > 7:
+    PINK = tuple(int(sys.argv[7].lstrip('#')[i:i + 2], 16) for i in (0, 2, 4))
 
 img = Image.open(src).convert('RGB')
 W = 1000
