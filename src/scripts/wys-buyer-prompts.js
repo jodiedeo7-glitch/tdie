@@ -138,7 +138,7 @@ export const SECTIONS = [
  {
   id: 'run', title: 'How it runs', note: 'Defaults are the ones I run on my own storefront.',
   fields: [
-   {id: 'looks', label: 'Looks per night', type: 'radio', options: [['2', '2 looks (8 pins, 2 carousels, and 2 blog posts if you have a blog)'], ['1', '1 look (uses half the credits and Claude usage)']], def: '2'},
+   {id: 'looks', label: 'Looks per night', type: 'radio', options: [['2', '2 looks (10 pins, 2 carousels, and 2 blog posts if you have a blog)'], ['1', '1 look (uses half the credits and Claude usage)']], def: '2'},
    {id: 'time', label: 'Run time', type: 'select', options: [['01:05', '1:05 am'], ['02:05', '2:05 am'], ['03:05', '3:05 am'], ['23:05', '11:05 pm']], def: '01:05'},
    {id: 'igTime', label: 'Instagram posting time', type: 'select', show: 'ig=on', options: [['09:00', '9:00 am'], ['10:00', '10:00 am'], ['12:00', '12:00 pm'], ['19:00', '7:00 pm']], def: '10:00'},
    {id: 'order', label: 'Carousel photo order', type: 'radio', show: 'ig=on', options: [['Basic, Styled, Lifestyle', 'Basic, Styled, Lifestyle'], ['Lifestyle, Styled, Basic', 'Lifestyle first']], def: 'Basic, Styled, Lifestyle'},
