@@ -69,7 +69,10 @@ def line(font, text, y, fill, stroke, sw, shade):
 
 y = 26
 y = line(f1, l1, y, PINK, WHITE, 7, (120, 30, 70, 120)) - 4
-y = line(f2, l2, y, INK, WHITE, 6, (0, 0, 0, 90)) + 4
+y2 = y
+line(f2, l2, y2, INK, WHITE, 6, (0, 0, 0, 90))
+# line 3 starts below the real bottom of the capitals ink, never overlapping it
+y = y2 + f2.getbbox(l2, stroke_width=6)[3] + 10 - f3.getbbox(l3, stroke_width=2)[1]
 
 # subtitle + emoji measured together
 b3 = f3.getbbox(l3, stroke_width=2)
