@@ -267,8 +267,9 @@ body:has(.wys-world) .e-page{background:transparent}
 .wys-world .wh-trial-p{margin:0;font:400 15px/1.5 Jost,sans-serif;color:#4A3640}
 .wh-trial .wc-button{flex:none}
 @media (max-width:700px){.wh-trial{flex-direction:column;text-align:center;padding:24px 18px}.wys-world .wh-trial-h{font-size:23px}.wh-trial .wc-button{width:100%}}
-.wh-pins{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start}
-.wh-pins .wh-pin:nth-child(2){margin-top:22px}
+.wh-pins{columns:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start;max-width:230px;margin-inline:auto}
+.wh-pins .wh-pin:nth-child(2n){margin-top:18px}
+.wys-world .wh-six .wc-stop-six.wc-stop-eight{grid-template-columns:repeat(4,minmax(0,1fr));max-width:200px}
 .wh-pin-t{display:none}
 .wh-pins .wh-save{font-size:9px;padding:5px 7px;top:5px;right:5px}
 .wh-crop{aspect-ratio:16/11}
@@ -307,7 +308,7 @@ body:has(.wys-world) .e-page{background:transparent}
 
 /* ---------- example day: slots alternate above and below one line ---------- */
 @media (min-width:901px){
- .wh-bracket{grid-template-columns:repeat(11,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
+ .wh-bracket{grid-template-columns:repeat(13,minmax(0,1fr));grid-template-rows:1fr 1fr;column-gap:0;row-gap:44px;padding:22px 0 0;margin-top:26px}
  /* one timeline through the middle: no box around either row */
  .wh-bracket::before,.wh-bracket::after{display:none!important}
  .wh-bracket .wh-line{position:absolute;left:0;right:0;top:calc(50% + 10px);height:2px;background:#E85A9B;border-radius:2px;display:block}
