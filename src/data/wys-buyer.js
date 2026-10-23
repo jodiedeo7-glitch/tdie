@@ -10,6 +10,7 @@ export const WYS_BUYER_ROOT = `${WYS_ROOT}/studio-${WYS_BUYER_KEY}`;
 
 export const BUYER_PAGES = [
  {key: 'start', name: 'Start Here', href: WYS_BUYER_ROOT},
+ {key: 'approved', name: 'Get Approved', href: WYS_BUYER_ROOT + '/get-approved'},
  {key: 'setup', name: 'Set It Up', href: WYS_BUYER_ROOT + '/set-it-up'},
  {key: 'help', name: 'If Something Breaks', href: WYS_BUYER_ROOT + '/help'},
  {key: 'promote', name: 'Promote It', href: WYS_BUYER_ROOT + '/promote'}
@@ -24,6 +25,7 @@ export const AFF = {
 
 // Dated change notes shown on Start Here. Newest first.
 export const UPDATES = [
+ {date: '23 October 2026', text: 'New page: Get Approved. Not an Amazon Influencer yet? It walks you from no account to your own storefront: Associate vs Influencer, onsite vs offsite, what to fix on your accounts before you apply, how to apply, and everything to set up the day you are approved. Associates only? Your system already runs, with pins linking to your blog posts until your storefront is ready.'},
  {date: '23 October 2026', text: 'New: a fifth pin for every look, the Found It. It shows the look\u2019s single most interesting piece on its own in a real, lived-in photo with white handwritten words over it, \u201cI found this ___ on\u201d and an arrow to \u201cAmazon \u2661\u201d, like the handwritten \u201cI found this on Amazon\u201d pins that are pulling clicks on Pinterest right now. It links straight to the look\u2019s Idea List. Your system now makes five photos per look and schedules five pins, so 2 looks a night means 10 pins.'},
  {date: '23 October 2026', text: 'New: a fourth pin for every look, the Roundup. It shows every piece of the look together in one styled scene with a three-line headline across the top, like the "You\u2019ll Love This Year" roundup pins all over Pinterest, and it links straight to the look\u2019s Idea List. Your system now makes four photos per look (Basic, Styled, Lifestyle, Roundup) and schedules four pins, so 2 looks a night means 8 pins.'},
  {date: '19 October 2026', text: 'Instagram is now two carousels a day, one per look. Your system spaces them about five hours apart on the next day with room, instead of one carousel a day.'},

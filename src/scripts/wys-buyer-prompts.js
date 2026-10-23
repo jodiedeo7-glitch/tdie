@@ -19,7 +19,7 @@ export const SECTIONS = [
    {id: 'amazon', label: 'Your Amazon account', type: 'radio', options: [
     ['influencer', 'Amazon Influencer (I have a storefront and can make Idea Lists)'],
     ['associates', 'Amazon Associates only (no storefront yet)']], def: 'influencer',
-    help: 'Associates only? Each pin links to a blog post on your own site instead of an Idea List, so blog posts have to be on (automatic or by hand).'},
+    help: 'Associates only? Each pin links to a blog post on your own site instead of an Idea List, so blog posts have to be on (automatic or by hand). Not approved as an Influencer yet? The Get Approved page walks you through it; switch this answer when your storefront is ready.'},
    {id: 'storefront', label: 'Your Amazon storefront address', type: 'text', ph: 'https://www.amazon.com/shop/yourname', show: 'amazon=influencer', help: 'Or press Do it for me and it finds it for you.'},
    {id: 'tag', label: 'Your Amazon tracking ID', type: 'text', ph: 'yourname-20', help: 'It ends in -20 and shows in the SiteStripe bar at the top of any Amazon page while you are signed in. Or press Do it for me.'},
    {id: 'persona', label: 'Does your storefront have a face?', type: 'radio', options: [
