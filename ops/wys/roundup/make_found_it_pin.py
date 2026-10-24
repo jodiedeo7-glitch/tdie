@@ -3,6 +3,7 @@ copied from Jodie's 23 Oct 2026 example ("I found this lamp on" / arrow / "Amazo
 Usage:
 python3 make_found_it_pin.py in.jpg out.jpg "I found this mushroom lamp on" [arrow_side]
 arrow_side: left (default) or right, the side of the photo the arrow and "Amazon" sit on.
+Optional: [y_fraction, default 0.52] [up|down, default up] = how far down "Amazon" sits and which way the arrow curves (point it at the product).
 """
 import sys, os, math
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -14,6 +15,8 @@ SH = (0, 0, 0, 190)
 
 src, out, top = sys.argv[1:4]
 side = sys.argv[4] if len(sys.argv) > 4 else 'left'
+yfrac = float(sys.argv[5]) if len(sys.argv) > 5 else 0.52
+adir = sys.argv[6] if len(sys.argv) > 6 else 'up'
 
 img = Image.open(src).convert('RGB')
 W = 1000
@@ -68,7 +71,7 @@ for ln in lines:
 # "Amazon" + heart at the middle of one side, arrow curving up toward the centre
 fa = ImageFont.truetype(HAND, 92)
 ax = int(W * 0.06) if side == 'left' else int(W * 0.94)
-ay = int(H * 0.52)
+ay = int(H * yfrac)
 anchor = 'ls' if side == 'left' else 'rs'
 word = 'Amazon'
 text((ax, ay), word, fa, anchor)
@@ -87,12 +90,20 @@ d.polygon(heart, fill=WHITE)
 
 # hand-drawn arrow above the word, curving up and in toward the product (as in the example)
 dirn = 1 if side == 'left' else -1
-sx = ax + dirn * ww * 0.30
-sy = ay - 110
-ex = sx + dirn * 150
-ey = sy - 190
-cx = sx - dirn * 10
-cy = sy - 110
+if adir == 'down':
+    sx = ax + dirn * ww * 0.45
+    sy = ay + 40
+    ex = sx + dirn * 170
+    ey = sy + 190
+    cx = sx - dirn * 10
+    cy = sy + 120
+else:
+    sx = ax + dirn * ww * 0.30
+    sy = ay - 110
+    ex = sx + dirn * 150
+    ey = sy - 190
+    cx = sx - dirn * 10
+    cy = sy - 110
 pts = []
 for i in range(41):
     t = i / 40
