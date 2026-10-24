@@ -13,7 +13,11 @@ const faq = [
  ['I want to pause it', 'Ask Claude: "Pause my While-You-Sleep nightly run task." Ask it to turn it back on when you\'re ready. Nothing already scheduled in Metricool is touched.'],
  ['I want to change my answers', 'Change them on Set It Up, copy Your nightly run, and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this." Paste it underneath.'],
  ['I want approvals off now', 'Switch Approvals to Off on Set It Up and update the task the same way. Anything already waiting for review in Metricool still needs your OK.'],
- ['It uses too much of my Claude usage', 'Switch to one look a night on Set It Up and update the task. That halves the work.']
+ ['It uses too much of my Claude usage', 'Switch to one look a night on Set It Up and update the task. That halves the work.'],
+ ['My pins link to my blog, not my Idea Lists', 'Your Amazon answer on Set It Up is "Amazon Associates links only". Once you can make Idea Lists in your storefront, pick the first answer, add your storefront address and update the task.'],
+ ['Amazon declined my Influencer application', 'Amazon reviews the social account you connect, so build that account up: more real product posts, more real comments, public, and a business account on Instagram or Facebook. If you have Amazon Associates, your system can run on those links in the meantime. The Get Approved page has every requirement.'],
+ ['My storefront name is a random code', 'Open Associates Central, go to Contact Us, choose Amazon Influencer Program, and ask for your social handle as your storefront name. Amazon decides; it changed mine on request. When it changes, update your storefront address on Set It Up and update the task.'],
+ ['Amazon removed my sites from my account', 'In Associates Central, open Account Settings and check the question about traffic aimed at children under 13. If your sites are not aimed at children, it should be No. Then add your site, Pinterest and Instagram back to the list.']
 ];
 ---
 <WysBuyerFrame title="If Something Breaks" current="help">
@@ -27,7 +31,7 @@ const faq = [
  <section class="wb2-sec" style="padding-top:8px">
   <div class="wys-wrap wb2-faq">
    {faq.map(([q, a]) => <details><summary>{q}</summary><div>{a}</div></details>)}
-   <p class="wb2-note">Still stuck? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a> with what Claude said in its last report. <a href={WYS_BUYER_ROOT + '/set-it-up'}>Back to Set It Up</a>.</p>
+   <p class="wb2-note">Still stuck? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a> with what Claude said in its last report. <a href={WYS_BUYER_ROOT + '/set-it-up'}>Back to Set It Up</a>. Amazon account questions: <a href={WYS_BUYER_ROOT + '/get-approved'}>Get Approved</a>.</p>
   </div>
  </section>
 </WysBuyerFrame>

@@ -8,7 +8,7 @@ import {WYS_BUYER_ROOT} from '../../../../data/wys-buyer.js';
 // Lines marked as Jodie's own experience come from her account (Sep 2026). Anything Amazon does not publish is
 // labelled as not published. Re-check before changing any rule on this page.
 const faq = [
- ['Do I have to be approved before I can use The While-You-Sleep Storefront™?', 'No. If you only have Amazon Associates, pick "Amazon Associates only" on Set It Up and your pins link to blog posts on your own site instead of Idea Lists. When you have a storefront, switch that answer, add your storefront address, copy your new nightly run and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this."'],
+ ['Do I have to be approved before I can use The While-You-Sleep Storefront™?', 'No. If you only have Amazon Associates links, pick "Amazon Associates links only" on Set It Up and your pins link to blog posts on your own site instead of Idea Lists. When you can make Idea Lists in your storefront, switch that answer, add your storefront address, copy your new nightly run and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this."'],
  ['Can anyone promise I get approved?', 'No. Amazon makes every decision. These steps get you in prepared instead of guessing.'],
  ['How long does the Influencer review take?', 'Amazon does not publish a review time. Anyone quoting an exact number is guessing.'],
  ['I was declined for Influencer. Now what?', 'Amazon reviews the social account you connect, so the fix is a stronger account: more real product posts, more real comments, public, and a business account on Instagram or Facebook. Amazon does not publish a waiting period before you apply again.'],
@@ -30,7 +30,8 @@ const faq = [
 
  <section class="wb2-sec" style="padding-top:8px">
   <div class="wys-wrap">
-   <p class="wb2-note"><b>You can start tonight.</b> Approved as an Amazon Associate but no storefront yet? Your system still runs: pins link to blog posts on your site until your storefront is ready. Then you change one answer on Set It Up.</p>
+   <p class="wb2-note"><b>You can start tonight.</b> Approved as an Amazon Associate but can't make Idea Lists yet? Your system still runs: pins link to blog posts on your site until you can. Then you change one answer on Set It Up.</p>
+   <p class="wb2-note"><b>Where are you starting?</b> No Amazon account yet: start at <a href="#ready">Get your accounts ready</a>. Have a social account people engage with: <a href="#influencer">Apply to the Influencer Program</a>. Website or blog only: <a href="#associates">Apply to Amazon Associates</a>. Just approved: <a href="#approved">The day you're approved</a>.</p>
    <p class="wb2-note"><b>New in April 2026:</b> Amazon's 14 April 2026 update says completing registration now gives you a storefront and a unique creator link, not only Influencer Program members. Earning from Amazon showing your content on its own pages (onsite) is still for Influencers only.</p>
   </div>
  </section>
@@ -62,7 +63,7 @@ const faq = [
   </div>
  </section>
 
- <section class="wb2-sec" style="background:#fff">
+ <section class="wb2-sec" style="background:#fff" id="ready">
   <div class="wys-wrap">
    <h2>Get your accounts ready first</h2>
    <p>Do every one of these before you apply. Each comes from Amazon's own requirements.</p>
@@ -79,7 +80,7 @@ const faq = [
   </div>
  </section>
 
- <section class="wb2-sec">
+ <section class="wb2-sec" id="influencer">
   <div class="wys-wrap">
    <h2>Apply to the Influencer Program</h2>
    <ol class="wb2-steps">
@@ -98,7 +99,7 @@ const faq = [
   </div>
  </section>
 
- <section class="wb2-sec" style="background:#fff">
+ <section class="wb2-sec" style="background:#fff" id="associates">
   <div class="wys-wrap">
    <h2>Apply to Amazon Associates</h2>
    <ol class="wb2-steps">
@@ -106,12 +107,12 @@ const faq = [
     <li><b>List every website and social page where your links will appear.</b> Enter each page's exact address, like instagram.com/yourname, never just instagram.com. Amazon accepts Facebook pages and open groups, Instagram, Twitter, YouTube, TikTok and Twitch.</li>
     <li><b>Answer the profile questions honestly.</b> Amazon reviews every site you list.</li>
     <li><b>Use your new tracking ID right away.</b> It ends in -20. Make your links with Amazon's SiteStripe bar, which appears at the top of Amazon when you're signed in, and put them on the sites you listed. Amazon rejects applications whose sites don't use these tagged links.</li>
-    <li><b>Mind the clock.</b> From the day you apply, you have 180 days to refer three qualifying sales. Your own orders don't count. After the third, Amazon reviews your application within a day or two. If there aren't enough sales in 180 days, the application can be withdrawn.</li>
+    <li><b>Mind the clock.</b> From the day you apply, you have 180 days to refer three qualifying sales. Your own orders don't count. After the third, Amazon reviews your application within a day or two. If there aren't enough sales in 180 days, the application can be withdrawn. Your system can work on this while you wait: pick "Amazon Associates links only" on Set It Up and it publishes blog posts with your tagged links and pins that send people to them.</li>
    </ol>
   </div>
  </section>
 
- <section class="wb2-sec">
+ <section class="wb2-sec" id="approved">
   <div class="wys-wrap">
    <h2>The day you're approved</h2>
    <p>Do these in order. Everything here is from Amazon's help pages, plus two fixes I had to make on my own account.</p>
@@ -124,12 +125,12 @@ const faq = [
     <li><b>Add your disclosures.</b> Amazon requires two things:
      <ul>
       <li>A clear disclosure by every link or product post, such as <b>#ad</b>, <b>(paid link)</b> or <b>#CommissionsEarned</b>.</li>
-      <li>This exact sentence on your site, and tied to each social account (your bio works): <b>As an Amazon Associate I earn from qualifying purchases.</b></li>
+      <li>This exact sentence on your site, and tied to each social account: <b>As an Amazon Associate I earn from qualifying purchases.</b> Put it in your Instagram bio and in the About box of your Pinterest profile. Your system already adds it to every pin and caption that links to Amazon.</li>
      </ul>
     </li>
     <li><b>Set up your bio link.</b> Instagram allows one link. Amazon suggests a link page (it names Linktree as an example) so your storefront, blog and other links all fit.</li>
     <li><b>Find your tracking ID.</b> It ends in -20 and shows at the top of Associates Central. Set It Up asks for it, or press "Do it for me" and it finds it for you.</li>
-    <li><b>Make your first Idea List.</b> In your storefront's owner view, click <b>Create an Idea List</b>. Name it and add a short description. To add products, search in the list and click the <b>+</b>, or open any product on Amazon and use the <b>Add to List</b> dropdown under Add to Cart. Click the pencil next to a list to rename or delete it. Your system builds the rest every night.</li>
+    <li><b>Make your first Idea List.</b> In your storefront's owner view, click <b>Create an Idea List</b>. Name it and add a short description. To add products, search in the list and click the <b>+</b>, or open any product on Amazon and use the <b>Add to List</b> dropdown under Add to Cart. Click the pencil next to a list to rename or delete it. Your system builds the rest every night. Once you can make Idea Lists, pick the first Amazon answer on Set It Up and add your storefront address.</li>
    </ol>
    <p style="margin-top:18px"><a class="wb2-btn" href={WYS_BUYER_ROOT + '/set-it-up'}>Now set it up <span class="arr" aria-hidden="true">→</span></a></p>
   </div>
