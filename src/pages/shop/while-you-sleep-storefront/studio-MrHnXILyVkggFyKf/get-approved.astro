@@ -1,103 +1,178 @@
 ---
 import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
 import {WYS_BUYER_ROOT} from '../../../../data/wys-buyer.js';
-// Amazon rules on this page were checked on 23 October 2026 against Amazon's own Associates help pages
-// (application window, Onsite Store ID, tax per Store ID) and current creator guides (application platforms,
-// the separate three-video onsite review). Amazon changes these. Re-check before editing any rule here.
+// FACT-CHECKED 23 October 2026 against Amazon's own pages: affiliate-program.amazon.com/influencers (and its
+// SelectAccount sign-up screen), Associates Central help topics (Influencer Program FAQ, Application Review Process,
+// Earning Onsite Commissions, videos, Idea Lists, vanity URL, tax interview, identifying yourself as an Associate),
+// the Associates Program Policies (updated 14 April 2026) and Amazon's "What's Changed" notice for 14 April 2026.
+// Lines marked as Jodie's own experience come from her account (Sep 2026). Anything Amazon does not publish is
+// labelled as not published. Re-check before changing any rule on this page.
 const faq = [
- ['Do I have to be approved before I can use The While-You-Sleep Storefront™?', 'No. If you only have Amazon Associates, pick "Amazon Associates only" on Set It Up and your pins link to blog posts on your own site instead of Idea Lists. When your Influencer approval comes through, switch that answer to Amazon Influencer, add your storefront address, copy your new nightly run and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this."'],
- ['Can it promise I get approved?', 'No, and nobody honest can. Amazon makes the call. This page is the exact path I took, so you go in prepared instead of guessing.'],
- ['I got declined. Now what?', 'Keep posting real product content on the account you applied with, then apply again. Amazon reviews the account you connect, so the fix is a stronger account, not a different form.'],
- ['My storefront name is a random string of letters and numbers', 'That happens. Amazon support changed mine: in Associates Central open Help, then Contact Us, and ask for a new influencer handle. Say your current handle was randomly generated and give the one you want. There is no setting for it, so it has to go through support. Your Idea Lists keep working under the new name.'],
- ['My website vanished from my approved websites list', 'Check the question about traffic directed at children under 13. If it is set to Yes, Amazon removes sites from your list. Set it to No (if that is true for your sites) and add the sites back.'],
- ['Do I need the onsite videos?', 'Not for this system. The While-You-Sleep Storefront™ runs on offsite traffic: your pins send people to your Idea Lists. Onsite videos are a separate, extra way to earn that you can add whenever you want.']
+ ['Do I have to be approved before I can use The While-You-Sleep Storefront™?', 'No. If you only have Amazon Associates, pick "Amazon Associates only" on Set It Up and your pins link to blog posts on your own site instead of Idea Lists. When you have a storefront, switch that answer, add your storefront address, copy your new nightly run and tell Claude: "Replace my While-You-Sleep nightly run task\'s prompt with this."'],
+ ['Can anyone promise I get approved?', 'No. Amazon makes every decision. These steps get you in prepared instead of guessing.'],
+ ['How long does the Influencer review take?', 'Amazon does not publish a review time. Anyone quoting an exact number is guessing.'],
+ ['I was declined for Influencer. Now what?', 'Amazon reviews the social account you connect, so the fix is a stronger account: more real product posts, more real comments, public, and a business account on Instagram or Facebook. Amazon does not publish a waiting period before you apply again.'],
+ ['My Associates application was rejected. Can I get it back?', 'Not that one. Amazon says it cannot reinstate an account or Associates ID after rejection. You can apply again once you meet the requirements, and you must swap the links on your sites for the new tracking ID.'],
+ ['Is there a follower minimum?', 'For Influencer, Amazon publishes none: it looks at your followers plus other engagement. For an Associates application with a social page, Amazon says the page must have a substantive number of organic followers, in most cases at least 500.'],
+ ['Can I use my Pinterest account?', 'Not for the Influencer application: Amazon\'s sign-up page lists YouTube, Instagram, Facebook and TikTok only. Amazon\'s public page about creators does mention Pinterest, but the application page does not, so apply with one of the four. Your pins still send traffic to your storefront after you are in.'],
+ ['Can I use the program outside the US?', 'Amazon\'s help page lists the Influencer Program in the US, UK, India and Canada. A storefront earns only in its own country. This system is built for amazon.com.'],
+ ['Do I need the onsite videos?', 'Not for this system. The While-You-Sleep Storefront™ runs on traffic you send: your pins send people to your Idea Lists. Onsite videos are a separate, extra way to earn that only Influencers can add.']
 ];
 ---
 <WysBuyerFrame title="Get Approved" current="approved">
  <header class="wb2-hero">
   <div class="wys-wrap">
    <p class="wb2-kicker">Before you set up</p>
-   <h1>From no Amazon account to your own storefront</h1>
-   <p>Associate or Influencer, onsite or offsite, what to fix before you apply, how to apply, and what to set up the day you're approved. This is the exact path I took for my own storefront.</p>
+   <h1>Get approved on Amazon, step by step</h1>
+   <p>Every step from no Amazon account to your own storefront, checked against Amazon's own help pages on 23 October 2026. Where Amazon doesn't say something, this page tells you so instead of guessing.</p>
   </div>
  </header>
 
  <section class="wb2-sec" style="padding-top:8px">
   <div class="wys-wrap">
-   <p class="wb2-note"><b>You can start tonight.</b> Approved as an Amazon Associate but not an Influencer yet? Your system still runs: pins link to blog posts on your site until your storefront is ready. Then you flip one answer on Set It Up.</p>
+   <p class="wb2-note"><b>You can start tonight.</b> Approved as an Amazon Associate but no storefront yet? Your system still runs: pins link to blog posts on your site until your storefront is ready. Then you change one answer on Set It Up.</p>
+   <p class="wb2-note"><b>New in April 2026:</b> Amazon's 14 April 2026 update says completing registration now gives you a storefront and a unique creator link, not only Influencer Program members. Earning from Amazon showing your content on its own pages (onsite) is still for Influencers only.</p>
   </div>
  </section>
 
  <section class="wb2-sec" style="background:#fff">
   <div class="wys-wrap">
    <h2>Associate vs Influencer</h2>
-   <p>Same Amazon login, two different doors. Most people need both.</p>
+   <p>It's one Amazon program with an extra layer on top. Amazon calls the Influencer Program "an extension to the existing online Associates program." Same account, same rules, same commission on traffic you send. You can be both.</p>
    <div class="wb2-grid">
-    <div class="wb2-card"><span class="wb2-tag">Door 1</span><h3>Amazon Associate</h3><p>Amazon's affiliate program. You get tracking links for any product and earn when someone buys through them. You apply with a website or social account where the links will live. No storefront, no Idea Lists.</p></div>
-    <div class="wb2-card must"><span class="wb2-tag">Door 2</span><h3>Amazon Influencer</h3><p>Built on top of your Associates account. You apply with a public social account and, once approved, get your own storefront page on Amazon (amazon.com/shop/yourname) where you build Idea Lists. Idea Lists are what your pins link to.</p></div>
+    <div class="wb2-card"><span class="wb2-tag">The base</span><h3>Amazon Associate</h3><p>Amazon's affiliate program. You get a tracking ID (it ends in -20) and tagged links for any product, and earn on qualifying purchases from people you send. You apply with a website, blog, app or social page. Since 14 April 2026, registration also gives you a storefront and a creator link.</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">The extra layer</span><h3>Amazon Influencer</h3><p>For social creators. You apply with one social account, and Amazon judges it on followers and engagement. You get a storefront address made from your social handle (amazon.com/shop/yourname), Idea Lists, photos, videos, Amazon Live, and the only way to earn onsite.</p></div>
    </div>
   </div>
  </section>
 
  <section class="wb2-sec">
   <div class="wys-wrap">
-   <h2>Onsite vs offsite</h2>
-   <p>Two ways an Influencer earns. They're tracked separately.</p>
+   <h2>Which do I apply for first?</h2>
+   <p>Neither has to come first. They're separate sign-ups, and Amazon connects them:</p>
+   <ul>
+    <li><b>Already an Associate?</b> Amazon says you don't sign up again. On the Influencer sign-up you're offered your existing store ID.</li>
+    <li><b>Starting from zero?</b> The Influencer sign-up lets you use your Amazon shopping account or create a brand-new one. Influencers hold an Associates account underneath, under Amazon's Influencer Program Policy.</li>
+   </ul>
    <div class="wb2-grid">
-    <div class="wb2-card must"><span class="wb2-tag">What this system does</span><h3>Offsite</h3><p>You bring the shoppers. Your pins, posts and blog send people to your Idea Lists and links, and you earn on qualifying purchases. Tracked under your normal tracking ID (the one ending in -20).</p></div>
-    <div class="wb2-card"><span class="wb2-tag">Optional extra</span><h3>Onsite</h3><p>Amazon brings the shoppers. Your videos and photos can be shown on Amazon itself, on product pages and in search, and you earn onsite rates when a shopper clicks and buys. Tracked under a separate Onsite Store ID, which needs its own tax information to be paid.</p></div>
+    <div class="wb2-card must"><span class="wb2-tag">Start here if</span><h3>You have a social account people engage with</h3><p>Apply to Influencer first. Amazon decides it on your account, not on sales.</p></div>
+    <div class="wb2-card"><span class="wb2-tag">Start here if</span><h3>You only have a website or blog</h3><p>Apply to Associates. Your application is reviewed once you've made three qualifying sales.</p></div>
    </div>
-   <p class="wb2-note"><b>Heads up:</b> getting your storefront does not switch on onsite earnings. That's a second review: you submit three product videos showing the real product in use, and Amazon checks them before onsite earnings unlock.</p>
+   <p class="wb2-note" style="margin-top:16px"><b>What Amazon doesn't say:</b> whether the three-sales-in-180-days review also applies to someone who joins through the Influencer sign-up. Amazon publishes no answer either way. Start sharing your links from day one so it never matters.</p>
   </div>
  </section>
 
  <section class="wb2-sec" style="background:#fff">
   <div class="wys-wrap">
    <h2>Get your accounts ready first</h2>
-   <p>Amazon reviews the account you connect, not a sales pitch. Do these before you apply.</p>
+   <p>Do every one of these before you apply. Each comes from Amazon's own requirements.</p>
    <ol class="wb2-steps">
-    <li><b>Pick one social account to apply with.</b> Amazon currently takes public Instagram, TikTok, YouTube or Facebook accounts. Pick the one with the most real product posts and real comments, not just the biggest one.</li>
-    <li><b>Make it public and make it about products.</b> Switch it to public. Post product content regularly: finds, hauls, try-ons, "I found this on Amazon" posts. Amazon doesn't publish a follower minimum. It looks for an account that actually recommends products.</li>
-    <li><b>Clean up your profile.</b> One clear name, a bio that says what you recommend, and no misleading claims anywhere.</li>
-    <li><b>Disclose.</b> Anything sponsored or affiliate gets labeled, every time. On Pinterest and Instagram I use: #ad As an Amazon Influencer I earn from qualifying purchases.</li>
-    <li><b>Match your details.</b> Use the same legal name and tax details everywhere you sign up, so nothing gets held at payout.</li>
+    <li><b>Pick your social account.</b> For Influencer, Amazon takes YouTube, Instagram, Facebook or TikTok. Pick the one with the most real product posts and real comments, not just the biggest.</li>
+    <li><b>Instagram or Facebook? Switch it to a business account.</b> Amazon requires a business account for both. In the app's settings, change your account type to a professional or business account.</li>
+    <li><b>Make it public.</b> Amazon won't accept private or closed accounts, closed groups, or accounts that hide posts or follower counts from people who don't follow them. For Associates, a Facebook personal profile doesn't count. Use a Facebook page or an open group.</li>
+    <li><b>Post real, original content.</b> Amazon wants robust original content, with at least 10 posts as a rule of thumb. Since April 2026, "original" means your own commentary, analysis or changes, not reposted product photos.</li>
+    <li><b>Applying to Associates with a website?</b> You must own it, and it needs recent content, generally posted within the last 60 days.</li>
+    <li><b>Keep Amazon out of your names.</b> No Amazon trademarks in your handle or website name, and no Amazon logos or Amazon customer reviews on your site.</li>
+    <li><b>Not aimed at children.</b> Amazon doesn't allow sites directed at children under 13.</li>
+    <li><b>Have your details ready.</b> Your legal name, address and phone number, your tax ID (your Social Security number, or your business's EIN), and your bank details for payment.</li>
    </ol>
   </div>
  </section>
 
  <section class="wb2-sec">
   <div class="wys-wrap">
-   <h2>How to apply</h2>
+   <h2>Apply to the Influencer Program</h2>
    <ol class="wb2-steps">
-    <li><b>Apply to Amazon Associates</b> at <a href="https://affiliate-program.amazon.com" target="_blank" rel="noopener">affiliate-program.amazon.com</a>. List the website and social accounts where your links will appear, and answer the questions honestly.</li>
-    <li><b>Mind the clock.</b> From the day you apply, Amazon gives you 180 days to refer three qualifying sales. After the third, it reviews your account. Miss the window and the application is withdrawn, so start sharing links right away.</li>
-    <li><b>Apply to the Influencer Program</b> from the Influencer sign-up page in Associates Central. Connect the social account you prepared and choose your storefront name.</li>
-    <li><b>Wait for the review.</b> Amazon checks your connected account. Approved? Go to the next section. Declined? Keep posting on that account and apply again.</li>
+    <li><b>Open the sign-up page.</b> Go to <a href="https://affiliate-program.amazon.com/influencers" target="_blank" rel="noopener">affiliate-program.amazon.com/influencers</a> and click <b>Sign up</b>.</li>
+    <li><b>Choose which Amazon account to use.</b> Amazon shows three choices:
+     <ul>
+      <li><b>Use an existing customer account.</b> Your shopping history, product reviews and lists become part of your influencer account.</li>
+      <li><b>Use your existing Associates account,</b> if you already have one.</li>
+      <li><b>Create a new account.</b> None of your shopping history comes with it. Pick this if you don't want your personal lists and reviews tied to your storefront.</li>
+     </ul>
+    </li>
+    <li><b>Connect your social account.</b> Pick the account you prepared and allow Amazon to see its data. Amazon requires this to review you.</li>
+    <li><b>Finish every screen Amazon shows you.</b> Use your real legal name and details, the same ones you'll use for tax.</li>
+    <li><b>Wait for the decision.</b> Amazon doesn't publish how long it takes. Keep posting product content while you wait.</li>
    </ol>
   </div>
  </section>
 
  <section class="wb2-sec" style="background:#fff">
   <div class="wys-wrap">
-   <h2>The day you're approved</h2>
-   <p>Everything I had to fix on my own account, in order.</p>
+   <h2>Apply to Amazon Associates</h2>
    <ol class="wb2-steps">
-    <li><b>Check your storefront name.</b> Open your storefront. If the address ends in a random code, ask Amazon support for a new handle (how is in the questions below).</li>
-    <li><b>Fix your approved websites list.</b> In Associates Central, open your account settings and the list of your websites and apps. Add every place your links will live: your website, your blog, your Pinterest, your Instagram. Remove anything old you no longer use.</li>
-    <li><b>Answer the under-13 question correctly.</b> On the same page, the question about traffic directed at children under 13. Set it to Yes and Amazon strips sites from your list. If your sites aren't aimed at children, it's No.</li>
-    <li><b>Finish your tax interview and payment details.</b> Your payout waits until both are done. If you add onsite earnings later, that Store ID needs its own tax information too.</li>
-    <li><b>Find your tracking ID.</b> It ends in -20. Set It Up asks for it, or presses "Do it for me" and finds it for you.</li>
-    <li><b>Make your first Idea List.</b> On your storefront, Add to your storefront, then Idea List. Your system builds the rest every night.</li>
+    <li><b>Open the sign-up page.</b> Go to <a href="https://affiliate-program.amazon.com" target="_blank" rel="noopener">affiliate-program.amazon.com</a>, click <b>Sign up</b> and sign in with your Amazon account.</li>
+    <li><b>List every website and social page where your links will appear.</b> Enter each page's exact address, like instagram.com/yourname, never just instagram.com. Amazon accepts Facebook pages and open groups, Instagram, Twitter, YouTube, TikTok and Twitch.</li>
+    <li><b>Answer the profile questions honestly.</b> Amazon reviews every site you list.</li>
+    <li><b>Use your new tracking ID right away.</b> It ends in -20. Make your links with Amazon's SiteStripe bar, which appears at the top of Amazon when you're signed in, and put them on the sites you listed. Amazon rejects applications whose sites don't use these tagged links.</li>
+    <li><b>Mind the clock.</b> From the day you apply, you have 180 days to refer three qualifying sales. Your own orders don't count. After the third, Amazon reviews your application within a day or two. If there aren't enough sales in 180 days, the application can be withdrawn.</li>
+   </ol>
+  </div>
+ </section>
+
+ <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>The day you're approved</h2>
+   <p>Do these in order. Everything here is from Amazon's help pages, plus two fixes I had to make on my own account.</p>
+   <ol class="wb2-steps">
+    <li><b>Open your storefront.</b> Sign in to Amazon and go to amazon.com/shop/yourhandle. Signed in, you see the owner view, the version only you can edit.</li>
+    <li><b>Check your storefront name.</b> Amazon makes it from the social handle you qualified with. Its help page says it changes only if your YouTube channel name changes, or if you have a bigger following on another platform and want to match that name. To ask: open Associates Central, go to <b>Contact Us</b>, choose <b>Amazon Influencer Program</b>, and give your new handle and the reason. <i>My own experience:</i> mine came out as a random code, and Amazon support changed it on request in September 2026. My Idea Lists kept working under the new name.</li>
+    <li><b>Do your tax interview.</b> In Associates Central, hover over your email address at the top, click <b>Account Settings</b>, then <b>View/Provide Tax Information</b>, then <b>Take Interview</b>. Amazon won't pay you until it's done and checked with the IRS. Use your name exactly as it appears on your Social Security card, or your business name exactly as the IRS has it.</li>
+    <li><b>Choose how you get paid.</b> On the same Account Settings page, add your payment method: direct deposit, Amazon gift card or check. Amazon pays about 60 days after the end of the month you earned it, once you reach its payment minimum.</li>
+    <li><b>Keep your list of sites up to date.</b> In Account Settings, make sure every website and social account where your links appear is listed. That's your site, blog, Pinterest and Instagram. Amazon requires this list to stay complete and accurate. <i>My own experience:</i> on that same page, the question about traffic aimed at children under 13 was set to Yes, and Amazon removed my sites from the list. If your sites aren't aimed at children, the answer is No.</li>
+    <li><b>Add your disclosures.</b> Amazon requires two things:
+     <ul>
+      <li>A clear disclosure by every link or product post, such as <b>#ad</b>, <b>(paid link)</b> or <b>#CommissionsEarned</b>.</li>
+      <li>This exact sentence on your site, and tied to each social account (your bio works): <b>As an Amazon Associate I earn from qualifying purchases.</b></li>
+     </ul>
+    </li>
+    <li><b>Set up your bio link.</b> Instagram allows one link. Amazon suggests a link page (it names Linktree as an example) so your storefront, blog and other links all fit.</li>
+    <li><b>Find your tracking ID.</b> It ends in -20 and shows at the top of Associates Central. Set It Up asks for it, or press "Do it for me" and it finds it for you.</li>
+    <li><b>Make your first Idea List.</b> In your storefront's owner view, click <b>Create an Idea List</b>. Name it and add a short description. To add products, search in the list and click the <b>+</b>, or open any product on Amazon and use the <b>Add to List</b> dropdown under Add to Cart. Click the pencil next to a list to rename or delete it. Your system builds the rest every night.</li>
    </ol>
    <p style="margin-top:18px"><a class="wb2-btn" href={WYS_BUYER_ROOT + '/set-it-up'}>Now set it up <span class="arr" aria-hidden="true">→</span></a></p>
   </div>
  </section>
 
+ <section class="wb2-sec" style="background:#fff">
+  <div class="wys-wrap">
+   <h2>Onsite vs offsite</h2>
+   <p>Two ways an Influencer earns, tracked under two different IDs.</p>
+   <div class="wb2-grid">
+    <div class="wb2-card must"><span class="wb2-tag">What this system does</span><h3>Offsite</h3><p>You bring the shoppers. Your pins, posts and blog send people to your Idea Lists and links, and you earn your normal rate on qualifying purchases. This includes traffic you send to your own storefront. It's tracked under your normal tracking ID (the one ending in -20).</p></div>
+    <div class="wb2-card"><span class="wb2-tag">Optional extra, Influencers only</span><h3>Onsite</h3><p>Amazon brings the shoppers. Amazon may show your Idea Lists, photos, videos or livestreams to people already shopping on Amazon, and you earn onsite rates if they click and buy. Since April 2026, onsite pays only on the same product (the same variant) you featured. Onsite rates are listed in Associates Central.</p></div>
+   </div>
+   <ol class="wb2-steps">
+    <li><b>Your Onsite Store ID is made for you.</b> Amazon creates it automatically (it may start with "onamz"). Switch to it from the dropdown next to your store name at the top right of Associates Central.</li>
+    <li><b>Give it its own tax and payment details.</b> Amazon doesn't copy them from your main ID, and won't pay onsite earnings until you add them.</li>
+    <li><b>Upload videos (optional).</b> In your storefront's owner view, click <b>Add to your storefront</b>, then <b>Videos</b>. This opens Amazon's Creator Hub. Amazon says that once 10 of your videos pass moderation and you've completed onsite sign-up, your videos may also appear on the product pages they feature.</li>
+    <li><b>Check your content.</b> In owner view, open <b>Manage Content</b>. Published is live, Pending is being reviewed, and Needs Attention was not accepted.</li>
+   </ol>
+  </div>
+ </section>
+
  <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>The rules that get accounts closed</h2>
+   <p>All from Amazon's Associates Program Policies. One break can cost you your account and your commissions.</p>
+   <ol class="wb2-steps">
+    <li><b>Never buy through your own links,</b> and never ask friends, family or anyone you work with to.</li>
+    <li><b>No links in print.</b> No Amazon links in printed material, ebooks or mailings. Links in emails, texts or DMs are allowed only when the person asked for them.</li>
+    <li><b>Don't post Amazon prices yourself.</b> Prices change, and you may show them only through Amazon's own tools. Your system never shows prices.</li>
+    <li><b>Don't hide where a link goes.</b> No link shorteners or redirects that make it unclear the link goes to Amazon.</li>
+    <li><b>No rewards for using your links.</b> No money, discounts, points or donations in return for someone using your link.</li>
+    <li><b>Don't run paid ads straight to Amazon.</b> Since April 2026, purchases from people who came through a paid or boosted ad linking to Amazon don't earn commission, with limited exceptions.</li>
+    <li><b>Know how long a click counts.</b> You earn on qualifying purchases made within 24 hours of someone clicking your link. If they add an item to their cart in that time, that item still counts if they buy it within 89 days. The order must be shipped and paid for within 180 days.</li>
+   </ol>
+  </div>
+ </section>
+
+ <section class="wb2-sec" style="background:#fff">
   <div class="wys-wrap wb2-faq">
    <h2>Questions</h2>
    {faq.map(([q, a]) => <details><summary>{q}</summary><div>{a}</div></details>)}
-   <p class="wb2-note">Amazon changes its rules. Everything on this page was checked on 23 October 2026, and I update it when Amazon does. Approval is always Amazon's decision.</p>
+   <p class="wb2-note">Amazon changes its rules. Everything on this page was checked against Amazon's own pages on 23 October 2026, and I update it when Amazon does. Approval is always Amazon's decision.</p>
   </div>
  </section>
 </WysBuyerFrame>
