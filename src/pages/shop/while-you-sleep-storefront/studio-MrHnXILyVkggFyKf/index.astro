@@ -1,8 +1,6 @@
 ---
 import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
 import {WYS_BUYER_ROOT, AFF, UPDATES} from '../../../../data/wys-buyer.js';
-import {Image} from 'astro:assets';
-import roundupExample from '../../../../lifestyle/wys-example-roundup-gamer.jpg';
 ---
 <WysBuyerFrame title="Start Here" current="start">
  <header class="wb2-hero">
@@ -38,7 +36,6 @@ import roundupExample from '../../../../lifestyle/wys-example-roundup-gamer.jpg'
      </ol>
      <a class="wb2-btn" href={WYS_BUYER_ROOT + '/set-it-up'}>Get my new nightly run <span class="arr" aria-hidden="true">→</span></a>
     </div>
-    <Image src={roundupExample} alt="Example Roundup pin: a pink gamer girl desk under the headline Pink Gamer Girl, Desk Setup, Cute Enough to Stream" widths={[240, 480]} sizes="220px" style="width:220px;height:auto;border-radius:12px;flex:none"/>
    </div>
   </div>
  </section>
