@@ -209,8 +209,10 @@ def mk_end(sc):
             f2 = J6(40); lay = Image.new('RGBA', b.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
             tw = d.textlength(sc['button'], font=f2); hw = (tw / 2 + 60) * (1 + .03 * math.sin(max(0, t - 2.3) * 4))
             by = max(1350, y + 130)
-            d.rounded_rectangle((W / 2 - hw, by - 46, W / 2 + hw, by + 46), radius=46, fill=PINK + (int(255 * q3),))
-            b.alpha_composite(lay); text(b, sc['button'], f2, by, (255, 255, 255), q3)
+            a3 = int(255 * q3)  # white button, Muted Gold hairline, near-black text, pink arrow (no pink-filled buttons, CLAUDE.md 11 Oct 2026)
+            d.rounded_rectangle((W / 2 - hw - 30, by - 46, W / 2 + hw + 30, by + 46), radius=46, fill=(255, 255, 255, a3), outline=(200, 169, 106, a3), width=3)
+            b.alpha_composite(lay); aw = d.textlength('  →', font=f2)
+            text(b, sc['button'], f2, by, (26, 20, 23), q3, cx=W / 2 - aw / 2); text(b, '→', f2, by, PINK, q3, cx=W / 2 + tw / 2 + 10)
         return b
     return f
 
