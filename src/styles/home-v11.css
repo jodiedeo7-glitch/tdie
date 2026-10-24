@@ -273,3 +273,7 @@
 .home-v11 .h11-short{display:none}
 @media (max-width:360px){.home-v11 .h11-full{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.home-v11 .h11-short{display:inline}.home-v11 footer .fcols a{overflow-wrap:anywhere}}
 .home-v11 .home-membership-fit{max-width:36em!important}
+/* Hero alignment fix (24 Oct 2026): line the hero copy up with the page's content column instead of pushing it against the photo */
+.home-v11 .h11-copy{justify-self:stretch;width:auto;max-width:none;padding-left:max(clamp(24px,4vw,56px),calc((100vw - 1120px) / 2))}
+.home-v11 .h11-copy>*{max-width:480px}
+@media (max-width:900px){.home-v11 .h11-copy{padding-left:20px}.home-v11 .h11-copy>*{max-width:none}}
