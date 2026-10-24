@@ -90,7 +90,7 @@ Pick the ten with real research: what is being searched and argued about now, wh
 
 Verification is non-negotiable. Try every route to caption tracks and primary documents. Anything not verified word for word goes in the quarantine section marked "VERIFY ON HER PC BEFORE FILMING", never in the script. Both halves of every damning statistic. Never state guilt, innocence, motive or mental state. No photos of minors or private individuals. Where she lacks standing (forensic pathology, anaesthesia), she says so on camera.
 
-Where a published book genuinely fits a case, name it in the posting package for her Amazon storefront (https://www.amazon.com/shop/thedigitalincomeedit) with "#ad As an Amazon Influencer I earn from qualifying purchases." Never force one.
+Where a published book genuinely fits a case, name it in the posting package for her Amazon storefront (https://www.amazon.com/shop/thedigitalincomeedit) with "#ad As an Amazon Associate I earn from qualifying purchases." Never force one.
 
 Save each packet as `ops/cloud-output/maniacally-thorough/V0n-<case-slug>.md` plus an `INDEX.md` ranking the ten by how soon each should film. Push, and send Jodie the index and all ten packets. Each packet's Status section carries the download and clip-cutting steps for her PC exactly as the skill describes. Report in one line with the count.
 
