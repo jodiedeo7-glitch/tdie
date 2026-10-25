@@ -11,6 +11,10 @@ const monthsFor = (t) => {
   return Number.isInteger(r) ? word(r) : `${word(Math.floor(r))} and a half`;
 };
 
+// Beacons affiliate links (shared link for everyone; Beacons does the tracking).
+const WE = "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
+const WYS = "https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7";
+
 const groups = [
   {
     label: "Buying",
@@ -49,6 +53,21 @@ const groups = [
         a: "Anything marked Recommended · Not mine was built by someone else. I earn a commission if you buy through my link, at no extra cost to you. Those products carry their own prices set by their owners, which can change without notice, and their own delivery and support." },
       { q: "Do you recommend everything you've ever bought?",
         a: "No. Things I've bought and wouldn't recommend don't appear here, and if one turns out not to be worth it I take it down rather than leave it up earning." },
+    ],
+  },
+  {
+    label: "Become an affiliate",
+    qs: [
+      { q: "Can I earn a commission sharing your products?",
+        html: `Yes. Two of my products are open to affiliates, with no application and no codes. Everyone uses the same link below:<br><br><strong>The Weekend Ecosystem&trade;</strong>, 30% commission<br><a class="e-link" href="${WE}" rel="noopener" target="_blank" style="overflow-wrap:anywhere">${WE}</a><br><br><strong>The While-You-Sleep Storefront&trade;</strong>, commission shown in Beacons when you add it<br><a class="e-link" href="${WYS}" rel="noopener" target="_blank" style="overflow-wrap:anywhere">${WYS}</a>` },
+      { q: "How do I set my link up so I get paid?",
+        html: `Beacons tracks every sale, so you need a free Beacons account with a payment processor (Stripe or PayPal) connected. Then:<br><br>1. In Beacons, go to <strong>Products</strong> and tap <strong>+ New Product</strong>.<br>2. Choose <strong>External link</strong>. It has to be this one. Any other product type and the sale won't be credited to you.<br>3. Paste the product link from above and tap <strong>Add</strong>.<br>4. Go to your <strong>Link in Bio</strong>, open the store block you want, and add the product.<br>5. Share your own Beacons store or that product's Beacons link. That's the link that earns.` },
+      { q: "My link doesn't have a ref tag in it. Is it broken?",
+        a: "No, that's normal. Beacons doesn't use ref tags. Your link sends the buyer through your Beacons store first (you'll see your username flash for a second) and then on to the product page. That quick hop is how Beacons knows the sale was yours." },
+      { q: "Can I send people to the sales page on this website instead?",
+        a: "Not if you want the commission. Beacons can only credit you when the buyer goes through your Beacons link, and it can't follow anyone who lands on this website first. Always share your Beacons link. It opens the product page, where they can read about it and check out." },
+      { q: "What about the membership?",
+        a: "The Skool membership has its own affiliate program, separate from Beacons. If you're a member, open the group's three-dot menu and tap Invite people to get your link." },
     ],
   },
   {
@@ -104,7 +123,7 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)
           {g.qs.map((item) => (
             <div class="fq-q">
               <h3>{item.q}</h3>
-              <p>{item.a}</p>
+              {item.html ? <p set:html={item.html} /> : <p>{item.a}</p>}
             </div>
           ))}
         </div>
