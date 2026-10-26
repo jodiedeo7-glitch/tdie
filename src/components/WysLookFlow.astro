@@ -20,13 +20,13 @@ const {look, id} = Astro.props;
  <div class="wc-flow-arrow" aria-hidden="true">↓ becomes ↓</div>
  <div class="wh-outs">
   <div class="wh-out wh-out-pins">
-   <p class="wc-step-tag"><b>2</b> 4 Pinterest pins</p>
+   <p class="wc-step-tag"><b>2</b> 5 Pinterest pins</p>
    <div class="wh-ex-wrap"><span class="wh-ex">Example</span>
     <div class="wh-pins">
      {['basic', 'styled', 'lifestyle'].map((r) => <div class="wh-pin"><WysPin look={look} role={r} sizes="160px"/><span class="wh-save">Save</span><span class="wh-pin-t">{look.short} · {roles.find((x) => x.key === r).name}</span></div>)}
     </div>
    </div>
-   <p class="wh-out-note">Each pin links to the themed Amazon Idea List its products came from. The Roundup shows every piece together under one headline.</p>
+   <p class="wh-out-note">Each pin links to the themed Amazon Idea List its products came from. The Roundup shows every piece together under one headline, and the Found It pin shows the look’s most interesting piece.</p>
   </div>
   <div class="wh-out wh-out-blog">
    <p class="wc-step-tag"><b>3</b> 1 blog post</p>
