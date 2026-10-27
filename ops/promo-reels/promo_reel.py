@@ -212,7 +212,11 @@ def mk_end(sc):
             a3 = int(255 * q3)  # white button, Muted Gold hairline, near-black text, pink arrow (no pink-filled buttons, CLAUDE.md 11 Oct 2026)
             d.rounded_rectangle((W / 2 - hw - 30, by - 46, W / 2 + hw + 30, by + 46), radius=46, fill=(255, 255, 255, a3), outline=(200, 169, 106, a3), width=3)
             b.alpha_composite(lay); aw = d.textlength('  →', font=f2)
-            text(b, sc['button'], f2, by, (26, 20, 23), q3, cx=W / 2 - aw / 2); text(b, '→', f2, by, PINK, q3, cx=W / 2 + tw / 2 + 10)
+            text(b, sc['button'], f2, by, (26, 20, 23), q3, cx=W / 2 - aw / 2)
+            # pink arrow drawn as lines (the Jost fonts have no arrow glyph, so a text arrow rendered as nothing)
+            la = Image.new('RGBA', b.size, (0, 0, 0, 0)); da = ImageDraw.Draw(la); ax = W / 2 + tw / 2 - aw / 2 + 22; pc = PINK + (a3,)
+            da.line((ax, by + 2, ax + 34, by + 2), fill=pc, width=5); da.line((ax + 20, by - 12, ax + 35, by + 2, ax + 20, by + 16), fill=pc, width=5, joint='curve')
+            b.alpha_composite(la)
         return b
     return f
 
