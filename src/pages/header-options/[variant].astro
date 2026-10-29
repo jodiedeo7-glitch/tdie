@@ -1,6 +1,0 @@
----
-import PageLayout from '../../layouts/PageLayout.astro';
-export function getStaticPaths(){return [1,2,3,4,5,6].map(variant=>({params:{variant:String(variant)}}));}
-const variant=Number(Astro.params.variant);
----
-<PageLayout title={`Header preview ${variant}`} description="TDIE navigation preview" noindex={true} bare={true} visualRefresh={false} />
