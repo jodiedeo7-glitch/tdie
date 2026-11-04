@@ -1,0 +1,12 @@
+---
+import "../styles/review-bubble.css";
+export interface Props { quote: string; name: string; source?: string; stars?: number; url?: string; center?: boolean }
+const { quote, name, source, stars, url, center } = Astro.props;
+---
+<figure class={center ? "rv-bubble rv-center" : "rv-bubble"}>
+  <span class="rv-q o" aria-hidden="true"></span>
+  {stars && <span class="rv-stars" aria-label={`${stars} out of 5`}>{"★".repeat(stars)}</span>}
+  <blockquote>{quote}</blockquote>
+  <figcaption><b>{url ? <a href={url} target="_blank" rel="noopener">{name}</a> : name}</b>{source && <>, {source}</>}</figcaption>
+  <span class="rv-q c" aria-hidden="true"></span>
+</figure>

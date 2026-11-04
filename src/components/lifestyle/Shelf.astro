@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import Card from './Card.astro';
+import { categoryOf } from '../../data/lifestyle.js';
+const { id, title, kicker, description, looks, lookbook = false } = Astro.props;
+const portraits = looks.map(look => ({ look, image: look.images.find(image => image.role === 'lifestyle') || look.images.find(image => image.role === 'styled') || look.hero }));
+---
+<section class:list={['life-wrap', 'life-section', 'life-shelf', { 'life-lookbook': lookbook }]} aria-labelledby={`${id}-title`} data-life-shelf>
+  <div class="life-section-heading"><div><p class="life-kicker">{kicker}</p><h2 id={`${id}-title`}>{title}</h2></div><div class="life-shelf-tools"><p>{description}</p><div class="life-shelf-controls" hidden><button type="button" data-direction="-1" aria-label={`Previous ${title.toLowerCase()}`} aria-controls={id}>←</button><button type="button" data-direction="1" aria-label={`Next ${title.toLowerCase()}`} aria-controls={id}>→</button></div></div></div>
+  <ul class="life-shelf-track" id={id} tabindex="0" aria-label={`${title}; swipe or use the arrow buttons to browse`}>
+    {portraits.map(({ look, image }) => <li>{lookbook ? <a class="life-lookbook-card" href={`/lifestyle/${look.slug}`}><span class="life-lookbook-image"><Image src={image.src} alt={image.alt} widths={[320, 480, 720]} sizes="(max-width: 640px) 75vw, 280px" loading="lazy" /></span><span class="life-kicker">{categoryOf(look.category)?.name}</span><h3>{look.title}</h3><span class="life-button life-button-small">Open this look <span aria-hidden="true">→</span></span></a> : <Card look={look} />}</li>)}
+  </ul>
+  <p class="life-shelf-note">Swipe to browse. Open a look for its styling details and listed finds.</p>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-life-shelf]').forEach(shelf => {
+    const track = shelf.querySelector<HTMLElement>('.life-shelf-track');
+    const controls = shelf.querySelector<HTMLElement>('.life-shelf-controls');
+    if (!track || !controls) return;
+    controls.hidden = false;
+    const buttons = Array.from(controls.querySelectorAll<HTMLButtonElement>('button'));
+    const update = () => buttons.forEach(button => { const previous = button.dataset.direction === '-1'; button.disabled = previous ? track.scrollLeft < 2 : track.scrollLeft + track.clientWidth >= track.scrollWidth - 2; });
+    buttons.forEach(button => button.addEventListener('click', () => { const item = track.querySelector<HTMLElement>('li'); const distance = (item?.getBoundingClientRect().width || track.clientWidth) + 20; track.scrollBy({ left: Number(button.dataset.direction) * distance, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); }));
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(track);
+    update();
+  });
+</script>

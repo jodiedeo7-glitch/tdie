@@ -1,0 +1,9 @@
+---
+import { FOOTER, SOCIAL } from "../data/site.js";
+import "../styles/home-chrome.css";
+---
+<footer class="hc-foot"><div class="hc-wrap"><a class="hc-logo" href="/" aria-label="The Digital Income Edit home"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b></b><i></i></span></a>
+<div class="hc-fcols">{FOOTER.map((col) => <div><h4>{col.h}</h4>{col.links.map((l) => <a href={l.href}>{l.label}</a>)}</div>)}</div>
+<p class="hc-fsoc">{SOCIAL.map((s) => <a href={s.href} rel="noopener" target="_blank">{s.label}</a>)}</p>
+<p class="hc-fcopy">© 2026 The Digital Income Edit™ · <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
+</div></footer>

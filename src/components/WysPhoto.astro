@@ -1,0 +1,8 @@
+---
+import { Image } from 'astro:assets';
+const {photo,caption=photo.caption,treatment='pink',eager=false,label}=Astro.props;
+---
+<figure class:list={['wys-photo',`wys-photo-${treatment}`]}>
+ <div class="wys-photo-window"><Image src={photo.src} alt={photo.alt} widths={[320,480,720,1024]} sizes="(max-width: 700px) 88vw, (max-width: 1000px) 45vw, 480px" loading={eager?'eager':'lazy'} fetchpriority={eager?'high':'auto'} /></div>
+ {caption&&<figcaption>{label&&<span class="wys-photo-label">{label}</span>}{caption}</figcaption>}
+</figure>

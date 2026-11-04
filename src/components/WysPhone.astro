@@ -1,0 +1,12 @@
+---
+// A phone frame for showing what the system makes. Always labelled Example
+// unless it frames a screenshot of a live page.
+const {label = 'Example', app, class: cls = ''} = Astro.props;
+---
+<div class={`wc-phone ${cls}`}>
+ <span class="wc-example-tag">{label}</span>
+ <div class="wc-phone-screen">
+  {app && <div class="wc-phone-bar"><span>{app}</span></div>}
+  <slot/>
+ </div>
+</div>

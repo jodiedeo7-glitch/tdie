@@ -1,0 +1,26 @@
+name: Publish main to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: true
+
+jobs:
+  sync-production-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fast-forward Cloudflare production branch to main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git clone --filter=blob:none --no-checkout "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+          cd repo
+          git fetch origin main cloudflare-migration
+          git push origin "refs/remotes/origin/main:refs/heads/cloudflare-migration"

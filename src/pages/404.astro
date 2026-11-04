@@ -1,0 +1,33 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import "../styles/edit.css";
+import { library, cap } from "../data/facts.js";
+---
+<PageLayout bare noindex title="Page not found" description="This page has moved or never existed. Here is where to go instead.">
+  <section class="e-sec">
+    <div class="e-wrap nf">
+      <p class="e-kick">404 · this room doesn't exist</p>
+      <h1 class="e-d1">Wrong door. <em>The build is this way.</em></h1>
+      <p class="e-lede">The page you were looking for has moved, or the link was mistyped. Everything that was here still lives somewhere on the site.</p>
+      <div class="e-actions" style="margin-bottom:48px">
+        <a class="e-btn" href="/">Go to the homepage <span class="ar" aria-hidden="true">→</span></a>
+        <a class="e-link" href="/learn">Explore the Library</a>
+      </div>
+      <ul class="nf-list">
+        <li><a href="/learn"><b>The Library</b><span>{cap(library.guidesWord)} free pillar guides and the articles under them.</span></a></li>
+        <li><a href="/resources/find-your-door"><b>Find Your Door</b><span>Eleven questions, one next step. No email.</span></a></li>
+        <li><a href="/shop/weekend-ecosystem"><b>The Weekend Ecosystem™</b><span>Your website and blog, built in a weekend.</span></a></li>
+        <li><a href="/membership"><b>The Membership</b><span>Standard and Premium, on Skool.</span></a></li>
+      </ul>
+    </div>
+  </section>
+  <style>
+    .nf{max-width:900px}
+    .nf-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
+    .nf-list a{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--e-line);min-height:44px}
+    .nf-list b{font-family:var(--e-serif);font-weight:600;font-size:22px;color:var(--e-ink)}
+    .nf-list span{color:var(--e-ink-2)}
+    .nf-list a:hover b{color:var(--e-pink)}
+    @media(max-width:600px){.nf-list a{grid-template-columns:1fr;gap:4px}}
+  </style>
+</PageLayout>

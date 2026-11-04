@@ -1,0 +1,56 @@
+---
+import { membership, SKOOL_PLANS } from "../data/facts.js";
+const { standard: S, premium: P, trialDays } = membership;
+---
+<div class="membership-offers">
+  <article class="membership-offer" aria-labelledby="standard-offer-title">
+    <p class="offer-label">The training + the community</p>
+    <h3 id="standard-offer-title">{S.name}</h3>
+    <p class="offer-promise">Turn your ideas into a faceless business.</p>
+    <div class="offer-price"><b>{S.monthly}</b><span>/month</span><small>or {S.perYear}</small></div>
+    <ul class="offer-benefits">
+      <li><div><strong>Build a brand without filming yourself.</strong><span>AI Twin / Influencer Creation, Brand Building and The Tommy Kate Edit show you how.</span></div></li>
+      <li><div><strong>Know what to create and how to sell it.</strong><span>Learn with The Content Edit and The Monetization Edit.</span></div></li>
+      <li><div><strong>Help people find you, then stay in touch.</strong><span>The Email Edit, The Pinterest Edit and Pinterest Foundations™ teach the traffic and email side.</span></div></li>
+      <li><div><strong>Want a physical-product store?</strong><span>The Shopify Edit covers the store, supplier app and product-page build.</span></div></li>
+      <li><div><strong>Keep creating with support.</strong><span>A new AI photo prompt every day, plus the Skool community to learn alongside.</span></div></li>
+    </ul>
+    <p class="offer-work">You learn the process and create your own content. Value Vault guides are optional, bought separately.</p>
+    <a class="offer-cta" href={SKOOL_PLANS}>Try Standard free for {trialDays} days <span aria-hidden="true">→</span></a>
+  </article>
+  <article class="membership-offer membership-offer--premium" aria-labelledby="premium-offer-title">
+    <p class="offer-label">Everything in Standard + content every month</p>
+    <h3 id="premium-offer-title">{P.name}</h3>
+    <p class="offer-promise">Stop starting your content month from a blank page.</p>
+    <div class="offer-price"><b>{P.monthly}</b><span>/month</span><small>or {P.perYear}</small></div>
+    <ul class="offer-benefits">
+      <li><div><strong>Your content, written for you. Every month.</strong><span>Instagram content for every day and two Threads posts a day, with hooks, captions, carousel copy and Story frames.</span></div></li>
+      <li><div><strong>Make Reels without filming.</strong><span>Use the supplied start-frame and video prompts to generate your visuals.</span></div></li>
+      <li><div><strong>Build the sales side of your business.</strong><span>Shape your offer, build its funnel and learn paid traffic with The Offer Edit, The Funnel Edit and The Ads Edit™.</span></div></li>
+      <li><div><strong>Put repeat work into a system.</strong><span>Scaling &amp; Systems includes the 23-page AI CEO Planner™ to work through the training.</span></div></li>
+      <li><div><strong>Open the guide you need, without buying it separately.</strong><span>The Premium Vault unlocks every Value Vault guide, including The Operating Prompts™.</span></div></li>
+    </ul>
+    <p class="offer-work">Adapt the offer details, generate the visuals and publish. Calendar weeks roll out across month-end and the start of the new month.</p>
+    <a class="offer-cta" href={SKOOL_PLANS}>Try Premium free for {trialDays} days <span aria-hidden="true">→</span></a>
+  </article>
+</div>
+<p class="membership-trial">Both start with {trialDays} days free. Your selected monthly or annual plan renews after the trial. Cancel in Skool before it ends to avoid the charge.</p>
+<style>
+  .membership-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;max-width:1040px;margin:0 auto;font-family:Jost,sans-serif;color:#1A1417;text-align:left}
+  .membership-offer{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #DC72A0;border-radius:6px;padding:24px;box-shadow:0 20px 30px -27px #75284490}
+  .membership-offer--premium{border:3px solid #DC72A0;border-image:url(/images/brand/silver-glitter-tile.webp) 20 round;background:#fff;padding:22px}
+  .offer-label{margin:0 0 8px;font:700 10px/1.45 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#9D2154}
+  .membership-offer h3{margin:0 0 8px!important;font:400 20px/1.3 Gloock,serif!important;letter-spacing:-.02em}
+  .offer-promise{font:600 16px/1.4 Jost,sans-serif;margin:0 0 12px;min-height:45px;max-width:31ch}
+  .offer-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 5px;margin:0 0 14px}
+  .offer-price b{font:500 36px/1.1 Jost,sans-serif;letter-spacing:-.04em}.offer-price>span{font-size:13px}.offer-price small{width:100%;font-size:13px;margin-top:4px}
+  .offer-benefits{list-style:none;margin:0 0 16px;padding:15px 0 0;border-top:1px dashed #DFADC3;display:grid;gap:12px}
+  .offer-benefits li{display:flex;gap:9px;font:400 15px/1.45 Jost,sans-serif}
+  .offer-benefits li::before{content:"✦";color:#D62E73;flex:none;font-size:13px;margin-top:1px}
+  .offer-benefits strong{display:block;font-weight:650}.offer-benefits span{display:block;margin-top:2px}
+  .offer-work{font:400 12px/1.5 Jost,sans-serif;margin:0 0 18px;padding-top:12px;border-top:1px solid #F0D5E1}
+  .offer-cta{display:flex;justify-content:center;align-items:center;gap:9px;min-height:48px;margin-top:auto;padding:10px 12px;border:1px solid #D66898;border-radius:30px;background:#fff;color:#832047;text-decoration:none;font:700 12px/1.4 Jost,sans-serif;box-shadow:0 11px 19px -15px #B6206190;text-align:center}
+  .offer-cta:hover{background:#FFF2F8;border-color:#A91D55}.offer-cta:focus-visible{outline:3px solid #B22B65;outline-offset:4px}
+  .membership-trial{font:400 12px/1.5 Jost,sans-serif;text-align:center;max-width:730px;margin:20px auto 0;color:#49353D}
+  @media(max-width:700px){.membership-offers{grid-template-columns:minmax(0,1fr);gap:22px}.membership-offer{padding:21px}.membership-offer--premium{padding:19px}.offer-promise{min-height:0;max-width:29ch}.offer-benefits li{font-size:15px}.offer-benefits{gap:13px}.offer-cta{font-size:12px;min-height:48px}.membership-trial{text-align:left;font-size:12px}}
+</style>
