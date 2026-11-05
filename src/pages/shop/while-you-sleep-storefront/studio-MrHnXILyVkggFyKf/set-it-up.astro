@@ -38,11 +38,17 @@ import {SECTIONS, ASKS} from '../../../../scripts/wys-buyer-prompts.js';
     <ol class="wb2-steps">
      <li><b>Get the Claude desktop app</b> from <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a>, and open it on the computer that will stay on overnight.</li>
      <li><b>Connect your tools.</b> In Claude click <b>Settings</b>, then <b>Customize</b>, then <b>Connectors</b>, and connect <b>Google Drive</b>, <b>Metricool</b> (for automatic pins and carousels), <b>GitHub</b> (for automatic blog posts) and <b>Higgsfield</b> if it makes your photos. Using ChatGPT, Gemini, Midjourney or another image generator instead? It runs in the browser inside the Claude desktop app: sign in to it there once and stay signed in. Or let Claude walk you through it. <span class="wb2-btnrow"><a class="wb2-btn wb2-do" data-ask="connectAll" target="_blank" rel="noopener">Do it for me <span class="arr" aria-hidden="true">→</span></a></span></li>
-     <li><b>Sign in to Amazon.</b> Open the browser inside the Claude desktop app, go to amazon.com and sign in yourself. Stay signed in. <span class="wb2-btnrow"><a class="wb2-btn wb2-do" data-ask="okAmazon" target="_blank" rel="noopener">Check it for me <span class="arr" aria-hidden="true">→</span></a></span></li>
+     <li><b>Sign in to Amazon in Chrome.</b> Amazon blocks the browser inside the Claude app, so Amazon steps run in your own Google Chrome. Install the <b>Claude in Chrome</b> extension, then open amazon.com in Chrome and sign in yourself. Stay signed in. <span class="wb2-btnrow"><a class="wb2-btn wb2-do" data-ask="okAmazon" target="_blank" rel="noopener">Check it for me <span class="arr" aria-hidden="true">→</span></a></span></li>
      <li><b>Connect Pinterest inside Metricool.</b> Log in to Metricool, open your brand's Connections, and add your Pinterest business account (and Instagram, if it's on). <span class="wb2-btnrow"><a class="wb2-btn wb2-do" data-ask="okMetricool" target="_blank" rel="noopener">Check it for me <span class="arr" aria-hidden="true">→</span></a></span></li>
      <li><b>Fill in everything below.</b> The "Check your connections" section tells you exactly how to connect each tool and has a button to test it.</li>
      <li><b>Copy Your setup prompt</b>, start a new chat in Claude, paste it and send it. Stay with it for the first look.</li>
     </ol>
+   </div>
+
+   <div class="wb2-card" style="margin-bottom:22px" data-platform="claude">
+    <h3>Your one click: Idea Lists</h3>
+    <p>Amazon asks a real person to tick an "I am human" box when an Idea List is made, and Claude is never allowed to tick it for you. So each night Claude finds the products, makes the photos, the blog post and the carousel, and puts the look under <b>Waiting For My Click</b> in your log. Whenever you are at your computer, press the button below, tick Amazon's box when Claude asks, and Claude adds the products to your Idea Lists. The next nightly run schedules those pins. That one click is the only Amazon step that is yours.</p>
+    <span class="wb2-btnrow"><a class="wb2-btn wb2-do" data-ask="finishLists" target="_blank" rel="noopener">Finish my Idea Lists <span class="arr" aria-hidden="true">→</span></a></span>
    </div>
 
    <div class="wb2-build">
@@ -220,7 +226,7 @@ import {SECTIONS, ASKS} from '../../../../scripts/wys-buyer-prompts.js';
    const text = ASKS[el.dataset.ask](a, a.platform);
    el.href = (gpt ? 'https://chatgpt.com/?q=' : 'https://claude.ai/new?q=') + encodeURIComponent(text);
    const arrow = el.querySelector('.arr');
-   el.firstChild.textContent = (el.dataset.ask.startsWith('ok') || el.dataset.ask === 'okAmazon' ? 'Check it for me' : 'Do it for me') + ' in ' + (gpt ? 'ChatGPT' : 'Claude') + ' ';
+   el.firstChild.textContent = (el.dataset.ask === 'finishLists' ? 'Finish my Idea Lists' : el.dataset.ask.startsWith('ok') ? 'Check it for me' : 'Do it for me') + ' in ' + (gpt ? 'ChatGPT' : 'Claude') + ' ';
   });
   try {localStorage.setItem(KEY, JSON.stringify(a));} catch (e) {}
   texts = {setup: setup(a), nightly: nightly(a)};
