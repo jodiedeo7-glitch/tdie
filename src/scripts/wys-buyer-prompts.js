@@ -4,6 +4,32 @@
 // Every step also has a by-hand or cheaper option (Jodie, 28 Sep and 4 Oct 2026: "we cannot gatekeep a single thing").
 // Edit here to update every buyer's prompts.
 
+// Image generators a buyer can pick. Higgsfield connects straight to Claude; the rest run
+// automatically in the browser inside the Claude desktop app (signed in once by the buyer).
+export const GENS = {
+ higgsfield: {name: 'Higgsfield', connected: true},
+ chatgpt: {name: 'ChatGPT\u2019s image maker', url: 'chatgpt.com'},
+ gemini: {name: 'Google Gemini (Nano Banana)', url: 'gemini.google.com'},
+ midjourney: {name: 'Midjourney', url: 'midjourney.com'},
+ firefly: {name: 'Adobe Firefly', url: 'firefly.adobe.com'},
+ leonardo: {name: 'Leonardo.ai', url: 'app.leonardo.ai'},
+ ideogram: {name: 'Ideogram', url: 'ideogram.ai'},
+ other: {name: 'my other image generator', url: ''}
+};
+const GEN_OPTS = [
+ ['higgsfield', 'Higgsfield (connects straight to Claude, uses Higgsfield credits)'],
+ ['chatgpt', 'ChatGPT\u2019s image maker (runs in the browser, still automatic)'],
+ ['gemini', 'Google Gemini / Nano Banana (runs in the browser, still automatic)'],
+ ['midjourney', 'Midjourney (runs in the browser, still automatic)'],
+ ['firefly', 'Adobe Firefly (runs in the browser, still automatic)'],
+ ['leonardo', 'Leonardo.ai (runs in the browser, still automatic)'],
+ ['ideogram', 'Ideogram (runs in the browser, still automatic)'],
+ ['other', 'Something else (runs in the browser, still automatic)']];
+const BROWSER_GENS = GEN_OPTS.map((o) => o[0]).filter((g) => g !== 'higgsfield');
+const HIGGS_SHOW = 'photoMode=auto&platform=claude&noFaceGen=higgsfield|photoMode=auto&platform=claude&persona=yes&faceGen=higgsfield|photoMode=auto&platform=chatgpt&imgWhere=higgsfield';
+const IMG_SHOW = [...BROWSER_GENS.map((g) => `photoMode=auto&platform=claude&noFaceGen=${g}`), ...BROWSER_GENS.map((g) => `photoMode=auto&platform=claude&persona=yes&faceGen=${g}`)].join('|');
+const GEN_HELP = 'Higgsfield connects straight to Claude. The others run in the browser inside the Claude desktop app: you sign in there once, stay signed in, and it still makes your photos on its own every night.';
+
 export const SECTIONS = [
  {
   id: 'quick', title: 'Quick Start', note: 'Fill in these and you can start tonight. Everything else has a sensible default.', open: true,
@@ -14,10 +40,6 @@ export const SECTIONS = [
     ['chatgpt', 'Right in ChatGPT, with its own image maker (no Higgsfield needed)'],
     ['higgsfield', 'Connect Higgsfield and run them there (uses Higgsfield credits)']], def: 'chatgpt',
     help: 'ChatGPT\u2019s image maker comes with your ChatGPT plan, and your plan sets how many images you get. Higgsfield is its own paid plan with credits.'},
-   {id: 'noFaceWhere', label: 'Where do your photos WITHOUT a face get made?', type: 'radio', show: 'platform=claude', options: [
-    ['chatgpt', 'ChatGPT\u2019s own image maker, opened in your browser (saves Higgsfield credits)'],
-    ['higgsfield', 'Higgsfield, Seedream 5.0 Flash (uses Higgsfield credits)']], def: 'chatgpt',
-    help: 'This is for the Basic, Styled, Roundup and Found It photos. Photos with her face stay on Higgsfield (Nano Banana Pro). ChatGPT\u2019s image maker comes with your ChatGPT plan, and your plan sets how many images you get.'},
    {id: 'tz', label: 'Your time zone', type: 'select', options: [
     ['America/New_York', 'Eastern'], ['America/Chicago', 'Central'], ['America/Denver', 'Mountain'], ['America/Phoenix', 'Arizona'], ['America/Los_Angeles', 'Pacific'], ['America/Anchorage', 'Alaska'], ['Pacific/Honolulu', 'Hawaii']], def: 'America/New_York'},
    {id: 'amazon', label: 'Your Amazon account', type: 'radio', options: [
@@ -31,6 +53,12 @@ export const SECTIONS = [
     ['no', 'No face. Lifestyle photos show hands and the products in use']], def: 'yes'},
    {id: 'personaName', label: 'Her name', type: 'text', ph: 'e.g. Tommy Kate', show: 'persona=yes'},
    {id: 'personaRef', label: 'Link to her reference photo', type: 'text', ph: 'A public image link to one clear photo of her face', show: 'persona=yes', help: 'One clear, well-lit photo where her face is easy to see. This is the only place her look comes from.'},
+   {id: 'faceGen', label: 'Which image generator makes the photos WITH her face?', type: 'radio', show: 'platform=claude&persona=yes', options: GEN_OPTS, def: 'higgsfield',
+    help: 'This makes the Lifestyle photos, the ones she is in. It needs to keep her face the same every time from her reference photo. ' + GEN_HELP},
+   {id: 'faceOther', label: 'Its name and web address', type: 'text', ph: 'e.g. Krea, krea.ai', show: 'platform=claude&persona=yes&faceGen=other'},
+   {id: 'noFaceGen', label: 'Which image generator makes the photos WITHOUT a face?', type: 'radio', show: 'platform=claude', options: GEN_OPTS, def: 'higgsfield',
+    help: 'This makes the Basic, Styled, Roundup and Found It photos (and the Lifestyle photos too if your storefront has no face). It can be the same one or a different one. ' + GEN_HELP},
+   {id: 'noFaceOther', label: 'Its name and web address', type: 'text', ph: 'e.g. Krea, krea.ai', show: 'platform=claude&noFaceGen=other'},
    {id: 'ig', label: 'Instagram carousels', type: 'radio', options: [['on', 'On'], ['off', 'Off']], def: 'on'},
    {id: 'igAccount', label: 'Instagram account', type: 'text', ph: '@youraccount', show: 'ig=on'},
    {id: 'blog', label: 'Do you have a blog or website for your looks?', type: 'radio', options: [
@@ -63,12 +91,15 @@ export const SECTIONS = [
    {id: 'okMetricool', label: 'Metricool is connected, and your Pinterest business account (and Instagram, if it is on) is connected inside Metricool', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['yes', 'Yes, they are connected'], ['no', 'Not yet']], def: '',
     how: {claude: ['You need a Metricool account first (its free plan is fine to start). Sign up at metricool.com if you do not have one.', 'In Claude, click <b>Settings</b>, then <b>Customize</b>, then <b>Connectors</b>, search for <b>Metricool</b> and click <b>Connect</b>. Sign in to Metricool when it asks.', 'Now log in to Metricool itself, open your brand’s <b>Connections</b>, and connect your <b>Pinterest business account</b> (and <b>Instagram</b>, if carousels are on).', 'Press <b>Check it for me</b> below and pick Yes when it shows them.'],
      chatgpt: ['You need a Metricool account first (its free plan is fine to start). Sign up at metricool.com if you do not have one.', 'In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>Metricool</b> and click <b>Connect</b>. Sign in to Metricool when it asks.', 'Now log in to Metricool itself, open your brand’s <b>Connections</b>, and connect your <b>Pinterest business account</b> (and <b>Instagram</b>, if carousels are on).', 'Press <b>Check it for me</b> below and pick Yes when it shows them.']}},
-   {id: 'okHiggs', label: 'Higgsfield is connected and has credits', type: 'radio', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', options: [['yes', 'Yes, it is connected and has credits'], ['no', 'Not yet']], def: '',
+   {id: 'okHiggs', label: 'Higgsfield is connected and has credits', type: 'radio', show: HIGGS_SHOW, options: [['yes', 'Yes, it is connected and has credits'], ['no', 'Not yet']], def: '',
     how: {claude: ['Higgsfield is its own paid plan with credits. Sign up at higgsfield.ai and make sure you have credits.', 'In Claude, click <b>Settings</b>, then <b>Customize</b>, then <b>Connectors</b>, search for <b>Higgsfield</b> and click <b>Connect</b>. Sign in when it asks.', 'Press <b>Check it for me</b> below. It shows your credit balance. Pick Yes only if the balance is above zero.'],
      chatgpt: ['Higgsfield is its own paid plan with credits. Sign up at higgsfield.ai and make sure you have credits.', 'In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>Higgsfield</b> and click <b>Connect</b>. Sign in when it asks.', 'Press <b>Check it for me</b> below. It shows your credit balance. Pick Yes only if the balance is above zero.']}},
    {id: 'okGithub', label: 'GitHub is connected', type: 'radio', show: 'blog=on', options: [['yes', 'Yes, it is connected'], ['no', 'Not yet']], def: '',
     how: {claude: ['In Claude, click <b>Settings</b>, then <b>Customize</b>, then <b>Connectors</b>, search for <b>GitHub</b> and click <b>Connect</b>.', 'Sign in to GitHub. When it asks which sites (repositories) it may open, choose your website’s.', 'Press <b>Check it for me</b> below and pick Yes when it lists your site.'],
      chatgpt: ['In ChatGPT, click your name, then <b>Settings</b>, then <b>Apps</b>, find <b>GitHub</b> and click <b>Connect</b>.', 'Sign in to GitHub. When it asks which sites (repositories) it may open, choose your website’s.', 'Press <b>Check it for me</b> below and pick Yes when it lists your site.']}},
+   {id: 'okImg', label: 'You opened your image generator in the browser the AI will use and you are signed in', type: 'radio', show: IMG_SHOW, options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
+    how: {claude: ['In the Claude desktop app, open the browser inside it and go to your image generator (for example chatgpt.com, gemini.google.com or midjourney.com).', 'Sign in with your own account. Type your own password yourself. The AI never types it.', 'Stay signed in so it works overnight.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.'],
+     chatgpt: ['Open your image generator in the browser tool connected to ChatGPT and sign in with your own account.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.']}},
    {id: 'okAmazon', label: 'You opened amazon.com in the browser the AI will use, the page loaded normally, and you are signed in', type: 'radio', show: 'srcMode=auto|amazon=influencer&listMode=auto', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet, or Amazon refused the browser']], def: '',
     how: {claude: ['In the Claude desktop app, open the browser inside it and go to <b>amazon.com</b>.', 'Sign in with your own Amazon account. Type your own password yourself. The AI never types it.', 'Tick <b>Keep me signed in</b> so it stays signed in overnight.', 'Press <b>Check it for me</b> below. If Amazon says it does not support the browser, pick Not yet: Amazon steps must stay by hand until that works.'],
      chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>amazon.com</b> in it.', 'Sign in with your own Amazon account. Type your own password yourself. The AI never types it.', 'Tick <b>Keep me signed in</b>.', 'Press <b>Check it for me</b> below. If Amazon says it does not support the browser, pick Not yet: Amazon steps must stay by hand until that works.']}}
@@ -148,7 +179,7 @@ export const SECTIONS = [
    {id: 'time', label: 'Run time', type: 'select', options: [['01:05', '1:05 am'], ['02:05', '2:05 am'], ['03:05', '3:05 am'], ['23:05', '11:05 pm']], def: '01:05'},
    {id: 'igTime', label: 'Instagram posting time', type: 'select', show: 'ig=on', options: [['09:00', '9:00 am'], ['10:00', '10:00 am'], ['12:00', '12:00 pm'], ['19:00', '7:00 pm']], def: '10:00'},
    {id: 'order', label: 'Carousel photo order', type: 'radio', show: 'ig=on', options: [['Basic, Styled, Lifestyle', 'Basic, Styled, Lifestyle'], ['Lifestyle, Styled, Basic', 'Lifestyle first']], def: 'Basic, Styled, Lifestyle'},
-   {id: 'credits', label: 'Most image credits per month', type: 'text', def: '350', show: 'photoMode=auto&platform=claude|photoMode=auto&imgWhere=higgsfield', help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'},
+   {id: 'credits', label: 'Most Higgsfield credits per month', type: 'text', def: '350', show: HIGGS_SHOW, help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'},
    {id: 'approve', label: 'Approvals', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['on', 'On: every pin and carousel waits in Metricool for my OK'], ['off', 'Off: fully automatic']], def: 'on',
     help: 'I recommend approvals on for your first few days. Turn them off when you trust it.'}
   ]
@@ -162,7 +193,7 @@ const NC = ' Change nothing.';
 export const ASKS = {
  connectAll: (a, p) => {
   const m = modes(a);
-  const tools = ['Google Drive', ...(m.metricool ? ['Metricool'] : []), ...(m.credits ? ['Higgsfield'] : []), ...(m.blogAuto ? ['GitHub'] : [])];
+  const tools = ['Google Drive', ...(m.metricool ? ['Metricool'] : []), ...(m.credits ? ['Higgsfield'] : []), ...m.browserGens.map((g) => `${g.name} (in the built-in browser, signed in by me)`), ...(m.blogAuto ? ['GitHub'] : [])];
   const where = p === 'chatgpt' ? 'Tell me exactly where to click in ChatGPT (Settings, then Apps) to connect each one.' : 'Search the connector directory for each one that is not connected and show me its Connect button.';
   return `Help me connect the tools for my While-You-Sleep Storefront. I need: ${tools.join(', ')}. For each one, check whether it is already connected in ${who(p)}. ${where} After I connect each one, test it with one harmless read-only request and tell me in one line whether it worked. Do not create, change or delete anything.`;
  },
@@ -170,6 +201,7 @@ export const ASKS = {
  okMetricool: () => `Check that Metricool is connected: list my brands exactly as Metricool names them, and for each brand which networks are connected (Pinterest, Instagram and so on). Tell me which brand is mine for pins.${NC}`,
  okHiggs: () => `Check that Higgsfield is connected: show my credit balance and tell me in one line whether I have credits.${NC}`,
  okGithub: () => `Check that GitHub is connected: list the names of the repositories you can see (names only) and tell me in one line yes or no.${NC}`,
+ okImg: (a, p) => {const m = modes(a); return `Use ${browserOf(p)} to open ${m.browserGens.map((g) => g.url || g.name).join(' and ')} in a new tab. Tell me exactly what you see: did it load normally, and am I signed in? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`;},
  okAmazon: (a, p) => `Use ${browserOf(p)} to open https://www.amazon.com in a new tab. Tell me exactly what you see: did the page load normally, and am I signed in (my name shows near the top)? If Amazon says it does not support the browser, tell me those exact words. Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
  tag: (a, p) => `Use ${browserOf(p)} to open my Amazon Associates account (affiliate-program.amazon.com). Tell me my tracking IDs exactly as written (they end in -20), and which one my Amazon storefront uses. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
  storefront: (a, p) => `Use ${browserOf(p)} to find my Amazon storefront and tell me its exact web address (it looks like https://www.amazon.com/shop/name). Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
@@ -204,6 +236,11 @@ const v = (x, fb = '') => (Array.isArray(x) ? x.join(', ') : String(x ?? '').tri
 const tzName = (tz) => (SECTIONS[0].fields.find((f) => f.id === 'tz').options.find((o) => o[0] === tz) || [tz, tz])[1];
 const hm = (t) => {const [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'pm' : 'am'; return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${ap}`;};
 
+const genName = (g) => (g.connected ? `${g.name} (connected)` : `${g.name}${g.url ? ` (${g.url})` : ''}, in the built-in browser`);
+const genUse = (g, model) => (g.connected ? `${model} on the Higgsfield connector` : `${g.name} (${g.url ? g.url + ' ' : ''}in the built-in browser, signed in to my own account, attachments added with the browser\u2019s file upload)`);
+
+const andListG = (xs) => xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1];
+
 // What each mode works out to for this buyer.
 function modes(a) {
  const inf = a.amazon === 'influencer';
@@ -223,8 +260,13 @@ function modes(a) {
   blog: a.blog === 'on' || a.blog === 'hand'
  };
  m.imgGpt = m.gpt && m.photoAuto && a.imgWhere !== 'higgsfield';
- m.sdGpt = !m.gpt && m.photoAuto && a.noFaceWhere !== 'higgsfield';
- m.credits = m.photoAuto && !m.imgGpt;
+ const gen = (k, other) => {const g = GENS[k] || GENS.higgsfield; if (k !== 'other') return {key: k, ...g}; const t = v(other, 'my other image generator'); const url = (t.match(/[a-z0-9-]+\.[a-z.]{2,}[^\s,]*/i) || [''])[0]; const name = t.replace(url, '').replace(/[\s,()\-]+$/, '').trim() || t; return {key: k, name, url};};
+ m.face = a.persona === 'yes';
+ m.faceGen = !m.gpt && m.photoAuto && m.face ? gen(a.faceGen || 'higgsfield', a.faceOther) : null;
+ m.noFaceGen = !m.gpt && m.photoAuto ? gen(a.noFaceGen || 'higgsfield', a.noFaceOther) : null;
+ m.browserGens = [m.faceGen, m.noFaceGen].filter((g) => g && !g.connected).filter((g, i, xs) => xs.findIndex((x) => x.name === g.name) === i);
+ m.sdGpt = m.browserGens.length > 0;
+ m.credits = m.photoAuto && (m.gpt ? !m.imgGpt : [m.faceGen, m.noFaceGen].some((g) => g && g.connected));
  m.metricool = m.pinAuto || m.igAuto;
  m.approve = m.metricool && a.approve === 'on';
  m.anyHand = m.srcHand || m.listHand || !m.photoAuto || !m.pinAuto || m.igHand || m.blogHand;
@@ -238,6 +280,8 @@ export function missing(a) {
  if (m.metricool) need.push(['metricool', 'Metricool brand name']);
  if (m.inf) need.push(['storefront', 'Amazon storefront address']);
  if (a.persona === 'yes') need.push(['personaName', 'her name'], ['personaRef', 'her reference photo link']);
+ if (m.faceGen && a.faceGen === 'other') need.push(['faceOther', 'the name and web address of the generator for photos with her face']);
+ if (m.noFaceGen && a.noFaceGen === 'other') need.push(['noFaceOther', 'the name and web address of the generator for photos without a face']);
  if (m.ig) need.push(['igAccount', 'Instagram account']);
  if (m.blogAuto) need.push(['repo', 'GitHub site'], ['branch', 'which version of your site goes live (the branch)'], ['host', 'where your site is hosted']);
  if (m.blog) need.push(['siteUrl', 'website address']);
@@ -245,6 +289,7 @@ export function missing(a) {
  const conn = [['okDrive', 'connect Google Drive', true],
   ['okMetricool', 'connect Metricool', m.metricool],
   ['okHiggs', 'connect Higgsfield', m.credits],
+  ['okImg', 'sign in to your image generator in the AI\u2019s browser', m.browserGens.length > 0],
   ['okGithub', 'connect GitHub', m.blogAuto],
   ['okAmazon', 'sign in to Amazon in the AI\u2019s browser', !m.srcHand || m.listAuto]];
  for (const [k, n, on] of conn) if (on && a[k] !== 'yes') out.push(n);
@@ -261,7 +306,7 @@ export function recipe(a) {
  const how = (auto) => (auto ? 'automatic' : 'by hand');
  return `MY STOREFRONT RECIPE
 TIME ZONE: ${a.tz} (${tzName(a.tz)})
-${m.gpt ? `AI THAT RUNS IT: ChatGPT\n${m.photoAuto ? `PHOTOS MADE WITH: ${m.imgGpt ? 'ChatGPT\u2019s own image maker' : 'Higgsfield (connected)'}\n` : ''}` : ''}AMAZON: ${m.inf ? `Amazon storefront with Idea Lists. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates links only (no Idea Lists). Pins link to my blog posts.'}
+${m.gpt ? `AI THAT RUNS IT: ChatGPT\n${m.photoAuto ? `PHOTOS MADE WITH: ${m.imgGpt ? 'ChatGPT\u2019s own image maker' : 'Higgsfield (connected)'}\n` : ''}` : ''}${m.faceGen ? `PHOTOS WITH HER FACE MADE IN: ${genName(m.faceGen)}\n` : ''}${m.noFaceGen ? `PHOTOS WITHOUT A FACE MADE IN: ${genName(m.noFaceGen)}\n` : ''}AMAZON: ${m.inf ? `Amazon storefront with Idea Lists. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates links only (no Idea Lists). Pins link to my blog posts.'}
 TRACKING ID: ${v(a.tag, '[YOUR TRACKING ID]')}
 ${m.metricool ? `METRICOOL BRAND: ${v(a.metricool, '[YOUR METRICOOL BRAND]')}\n` : ''}${persona}
 HER WORLD: ${v(a.rooms).split('\n').map((x) => x.trim()).filter(Boolean).join('; ')}${v(a.props) ? `\nTHINGS IN HER WORLD: ${v(a.props)}` : ''}
@@ -298,8 +343,9 @@ export function nightly(a) {
  const m = modes(a);
  const n = v(a.looks, '2');
  const br = m.gpt ? 'the browser tool connected to this chat, signed in to amazon.com' : 'the built-in browser in the Claude desktop app';
- const nb = m.imgGpt ? 'ChatGPT\u2019s image maker' : 'Nano Banana Pro at 2K';
- const sd = m.imgGpt ? 'ChatGPT\u2019s image maker' : m.sdGpt ? 'ChatGPT\u2019s own image maker (chatgpt.com in the built-in browser, signed in to my ChatGPT account, attachments added with the browser\u2019s file upload)' : 'Seedream 5.0 Flash at 2K';
+ const nb = m.imgGpt ? 'ChatGPT\u2019s image maker' : m.faceGen ? genUse(m.faceGen, 'Nano Banana Pro at 2K') : 'Nano Banana Pro at 2K';
+ const sd = m.imgGpt ? 'ChatGPT\u2019s image maker' : m.noFaceGen ? genUse(m.noFaceGen, 'Seedream 5.0 Flash at 2K') : 'Seedream 5.0 Flash at 2K';
+ const bNames = andListG(m.browserGens.map((g) => g.name));
  const face = a.persona === 'yes';
  const PT = Array.isArray(a.pinTypes) && a.pinTypes.length ? a.pinTypes : ['Basic', 'Styled', 'Lifestyle', 'Roundup', 'Found It', 'Storefront promo'];
  const doR = PT.includes('Roundup'), doF = PT.includes('Found It'), doAd = PT.includes('Storefront promo');
@@ -325,7 +371,8 @@ FIRST
 1. Get today's date and time in ${a.tz}. Use that time zone for every date and time below.
 2. Open my Google Doc "While-You-Sleep Log" with the Google Drive connector. Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. My Corrections override everything in this prompt except the NEVER list.
    Under Runs: if an earlier run is marked "started" but not "finished", it stopped partway. Finish that run's missing steps first, using what the log already records, and never redo a step the log shows as done. Then write "Run [today's date] started" under Runs before you do anything else.${m.imgGpt ? `
-3. My photos are made with ChatGPT's own image maker, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named ${andList(photos)}. If the image maker stops or says I've hit my limit, make no more photos, write it in the log and tell me in one line.` : m.credits ? `
+3. My photos are made with ChatGPT's own image maker, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named ${andList(photos)}. If the image maker stops or says I've hit my limit, make no more photos, write it in the log and tell me in one line.` : m.photoAuto && !m.credits ? `
+3. My photos are made in ${bNames} in the built-in browser, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named ${andList(photos)}. If it stops, says I've hit my limit, or I'm signed out, make no more photos, write it in the log and tell me in one line.` : m.credits ? `
 3. Higgsfield connector: read my credit balance. Add up this month's credits in the log. Tonight needs about ${n === '1' ? '5' : '10'} credits plus fixes. If tonight would go past ${v(a.credits, '350')} credits for the month, make no images, write it in the log and tell me in one line.` : `
 3. Finish waiting looks first: for every look in the log marked "Waiting for photos", look in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>". If its ${andList(photos)} photos are all there, check them: right pieces in the right colors and the right size next to each other (hold each piece against its real size in PRODUCT NOTES; if one looks too big or too small, that photo fails), words spelled right and only on ${lettered}, ${face ? 'she matches her reference, ' : ''}nothing from PHOTOS I HATE (if one fails, tell me which and why, and leave that look waiting). Then do every step after PHOTOS for that look tonight and mark it done. Looks still missing photos stay waiting; don't remind me more than once a day.`}`);
 
@@ -355,8 +402,8 @@ SCALE CHECK, written at the end of every photo prompt: "Keep every object at its
 Look closely at each piece's Amazon photos in the exact color you chose and write one precise line per piece: what it is, exact color, material, pattern or print, shape and real size in inches next to the other pieces (for example: the lamp is 7.5 inches tall, the pillow is 18 inches square, so the pillow is more than twice the lamp's height). The words are for the size check only. The products must look exactly like the real listings, so every photo is made from the PRODUCT SHEET below, never from words alone.`);
   parts.push(`${step('PRODUCT SHEET')}
 For each look, open every piece's Amazon page and take its main product photo in the exact color you chose. Put all of them on ONE plain white reference sheet, two photos across, each with breathing room, nothing else on the sheet (no labels and no prices; never cover or crop a product's own logo, tag or details). If any product photo shows a person's face, cover the face with a white box. Make the sheet with whatever image or code tool you have connected, save it as "Product Sheet" in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>", and open it to confirm every piece is on it and looks like the listing. If you have no tool that can build the sheet, write under To Do By Hand: the look name, each piece's main photo link, and "put these on one plain white page and save it as Product Sheet", and make no photos for that look tonight. This sheet is the product reference for all ${W[photos.length]} photos.`);
-  parts.push(`${step(m.imgGpt ? `PHOTOS (ChatGPT\u2019s own image maker, ${W[photos.length]} per look, in this order)` : m.sdGpt ? `PHOTOS (${W[photos.length]} per look, in this order: photos without a face in ChatGPT\u2019s own image maker first, photos with her face on the Higgsfield connector at 2K)` : `PHOTOS (Higgsfield connector, 2K, ${W[photos.length]} per look, in this order)`)}
-${m.sdGpt ? 'CHATGPT PHOTOS: open chatgpt.com in a fresh tab of the built-in browser, start a new chat for each look, attach what the photo needs, paste the full prompt, and wait for the finished image. Save each finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>". If ChatGPT says I\u2019ve hit a limit, or the image can\u2019t be saved out of ChatGPT, make that photo with Seedream 5.0 Flash at 2K on the Higgsfield connector instead and write why in the log.\n' : ''}Basic: ${sd}, with the look's Product Sheet attached. The prompt says "Use the attached product sheet to identify each product's shape, colour, pattern and material" and lists every piece by name; the products must look exactly like the sheet.
+  parts.push(`${step(m.imgGpt ? `PHOTOS (ChatGPT\u2019s own image maker, ${W[photos.length]} per look, in this order)` : m.sdGpt ? `PHOTOS (${W[photos.length]} per look, in this order${m.face ? `: photos with her face in ${m.faceGen.name}, photos without a face in ${m.noFaceGen.name}` : `, all in ${m.noFaceGen.name}`})` : `PHOTOS (Higgsfield connector, 2K, ${W[photos.length]} per look, in this order)`)}
+${m.sdGpt ? `BROWSER PHOTOS (${bNames}): open ${m.browserGens.map((g) => g.url || g.name).join(' or ')} in a fresh tab of the built-in browser, start a new chat or creation for each photo, attach what the photo needs with the browser\u2019s file upload, paste the full prompt, and wait for the finished image. Download it and save it in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>". If it says I\u2019ve hit a limit, I\u2019m signed out, or the image can\u2019t be saved, ${m.credits ? 'make that photo on the Higgsfield connector instead (Seedream 5.0 Flash at 2K without a face, Nano Banana Pro at 2K with her face) and write why in the log' : 'make no more photos tonight, write why in the log and tell me in one line'}. Never switch to any other generator on your own.\n` : ''}Basic: ${sd}, with the look's Product Sheet attached. The prompt says "Use the attached product sheet to identify each product's shape, colour, pattern and material" and lists every piece by name; the products must look exactly like the sheet.
 Styled: ${sd} with the look's accepted Basic photo attached FIRST and the Product Sheet attached SECOND. The prompt says the Basic is for product continuity only and the sheet is for product details. A new scene, not the Basic re-shot.
 ${lifestyle}
 ${doR ? `Roundup: ${sd}, with the look's Product Sheet attached. A Pinterest roundup pin like "Spooky Cute HALLOWEEN DECOR You'll Love This Year": every piece of the look together in one fully styled scene in the lower two-thirds, and a headline across the top third in three centred lines: line 1 a short look name in a big bold rounded brush script, in a colour picked for this look, with a thick white outline; line 2 a short category in bold condensed capitals, near-black with a thin white outline (for example TABLE DECOR or FALL OUTFIT); line 3 a short white script line with a soft shadow followed by two emoji (for example You'll Love This Year). Every word spelled exactly as written.
@@ -407,7 +454,7 @@ export function setup(a) {
  const conn = [];
  if (m.credits) conn.push(`${c()}. Higgsfield: read my credit balance.`);
  else if (m.imgGpt) conn.push(`${c()}. ChatGPT image maker: make one small test image (a plain mug on a table) to confirm it works in this chat, and tell me if it says I've hit a limit.`);
- if (m.sdGpt) conn.push(`${c()}. ChatGPT image maker: open chatgpt.com in a new tab of the built-in browser and confirm I'm signed in to my ChatGPT account (I sign in myself; never type my password). Make one small test image (a plain mug on a table), save it in my Google Drive folder "While-You-Sleep Storefront", and tell me if it says I've hit a limit.`);
+ for (const g of m.browserGens) conn.push(`${c()}. ${g.name}: open ${g.url || 'it'} in a new tab of the built-in browser and confirm I'm signed in to my own account (I sign in myself; never type my password). Make one small test image (a plain mug on a table), download it, save it in my Google Drive folder "While-You-Sleep Storefront", and tell me if it says I've hit a limit.`);
  if (m.metricool) conn.push(`${c()}. Metricool: find my brand "${v(a.metricool, '[YOUR METRICOOL BRAND]')}". ${m.pinAuto ? 'Confirm Pinterest is connected and list my Pinterest boards. ' : ''}${m.igAuto ? `Confirm Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is connected.` : ''}`);
  conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and inside it a Google Doc "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
  if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built.${v(a.branch) ? ` Confirm the "${v(a.branch)}" branch exists.` : ''} Tell me in two lines.`);
@@ -420,6 +467,8 @@ export function setup(a) {
  const ref = a.persona === 'yes'
   ? (m.imgGpt
    ? `HER REFERENCE\nRecord her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) in the log. Make one test photo of her with ChatGPT\u2019s image maker, reference attached, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Show it to me and ask if she looks right.`
+   : m.photoAuto && m.faceGen && !m.faceGen.connected
+   ? `HER REFERENCE\nRecord her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) in the log. In ${genUse(m.faceGen, '')}, make one test photo of her with the reference attached, the prompt opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Show it to me and ask if she looks right.`
    : m.photoAuto
    ? `HER REFERENCE\nBring her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) into Higgsfield and record its media ID in the log. Make one test photo of her with Nano Banana Pro at 2K, reference attached, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Show it to me and ask if she looks right.`
    : `HER REFERENCE\nRecord her reference photo (${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}) in the log. Write me one test prompt for Nano Banana Pro, opening with exactly "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.", for me to try on the Higgsfield website with her reference attached.`)
