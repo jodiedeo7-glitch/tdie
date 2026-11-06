@@ -181,9 +181,7 @@ export const SECTIONS = [
    {id: 'time', label: 'Run time', type: 'select', options: [['01:05', '1:05 am'], ['02:05', '2:05 am'], ['03:05', '3:05 am'], ['23:05', '11:05 pm']], def: '01:05'},
    {id: 'igTime', label: 'Instagram posting time', type: 'select', show: 'ig=on', options: [['09:00', '9:00 am'], ['10:00', '10:00 am'], ['12:00', '12:00 pm'], ['19:00', '7:00 pm']], def: '10:00'},
    {id: 'order', label: 'Carousel photo order', type: 'radio', show: 'ig=on', options: [['Basic, Styled, Lifestyle', 'Basic, Styled, Lifestyle'], ['Lifestyle, Styled, Basic', 'Lifestyle first']], def: 'Basic, Styled, Lifestyle'},
-   {id: 'credits', label: 'Most Higgsfield credits per month', type: 'text', def: '350', show: HIGGS_SHOW, help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'},
-   {id: 'approve', label: 'Approvals', type: 'radio', show: 'pinMode=auto|igMode=auto', options: [['on', 'On: every pin and carousel waits in Metricool for my OK'], ['off', 'Off: fully automatic']], def: 'on',
-    help: 'I recommend approvals on for your first few days. Turn them off when you trust it.'}
+   {id: 'credits', label: 'Most Higgsfield credits per month', type: 'text', def: '350', show: HIGGS_SHOW, help: 'When it reaches this, it stops making images and tells you. It never switches models to save credits on its own.'}
   ]
  }
 ];
@@ -271,7 +269,7 @@ function modes(a) {
  m.sdGpt = m.browserGens.length > 0;
  m.credits = m.photoAuto && (m.gpt ? !m.imgGpt : [m.faceGen, m.noFaceGen].some((g) => g && g.connected));
  m.metricool = m.pinAuto || m.igAuto;
- m.approve = m.metricool && a.approve === 'on';
+ m.approve = false;
  m.anyHand = m.srcHand || m.listHand || !m.photoAuto || !m.pinAuto || m.igHand || m.blogHand;
  return m;
 }
@@ -339,7 +337,7 @@ PHOTOS: ${how(m.photoAuto)}
 PINS: ${how(m.pinAuto)}
 INSTAGRAM: ${m.ig ? `on (${how(m.igAuto)}), ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}, posts at ${hm(a.igTime)}, photo order ${a.order}` : 'off'}
 BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).length ? ` (${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).join(', ')})` : ''}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
-${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? `APPROVALS: ${m.approve ? 'on (every pin and carousel waits in Metricool for my OK)' : 'off (fully automatic)'}` : 'APPROVALS: not needed (I post by hand)'}`;
+${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? 'APPROVALS: off (everything schedules automatically; I check my Metricool calendar once a day)' : 'APPROVALS: not needed (I post by hand)'}`;
 }
 
 export function nightly(a) {
@@ -493,7 +491,7 @@ ${boards}
 STEP 3 · ${ref}${picks}
 
 STEP ${firstN} · FIRST LOOK, WITH ME WATCHING
-Make one look using the NIGHTLY RUN below exactly${m.metricool ? ', with one change: approvals are ON for this look whatever my recipe says, so every pin and carousel goes to Metricool for review' : ''}. Then show me ${m.photoAuto ? 'all the photos' : 'the photo prompts'}, ${m.inf ? 'the Idea List, ' : ''}${m.blog ? 'the blog post, ' : ''}the pin text${m.ig ? ' and the caption' : ''}${m.anyHand ? ' and my To Do By Hand list' : ''}, and ask what I'd change. Write every change I give you under My Corrections in the log, in my words. Redo anything I ask, then check it again.
+Make one look using the NIGHTLY RUN below exactly. Then show me ${m.photoAuto ? 'all the photos' : 'the photo prompts'}, ${m.inf ? 'the Idea List, ' : ''}${m.blog ? 'the blog post, ' : ''}the pin text${m.ig ? ' and the caption' : ''}${m.anyHand ? ' and my To Do By Hand list' : ''}, and ask what I'd change. Write every change I give you under My Corrections in the log, in my words. Redo anything I ask, then check it again.
 
 STEP ${firstN + 1} · TURN IT ON
 When I say it's right, create a scheduled task named "While-You-Sleep nightly run" that runs every day at ${hm(a.time)} ${tzName(a.tz)} with the full NIGHTLY RUN below as its prompt.${m.gpt ? ' ChatGPT can\'t create a task that starts paused, so create it only now.' : ''} Read the task back and tell me when it runs next. If you can't create scheduled tasks here, tell me in one line.
