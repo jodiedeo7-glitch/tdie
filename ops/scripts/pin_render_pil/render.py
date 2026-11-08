@@ -70,8 +70,8 @@ def render(p,out):
             else:
                 d.text((x,y*S),w,font=hf,fill=INK)
             x+=tw*S
-        y+=104
-    y+=6
+        y+=104+(12 if any(t[1] for t in ln) else 0)
+    y+=24
     d.line([M*S,y*S,(1000-M)*S,y*S],fill=GOLD,width=2*S); y+=18
     # measure body
     bf=jost(40,400); bb=jost(40,700)
@@ -89,7 +89,7 @@ def render(p,out):
             lab,txt=val
             ls=wrapl(d,lab,txt,bf,bb,CW); plan.append((kind,val,ls)); total+=len(ls)*lh+gap
         else:
-            ls=wrap(d,val,gl(44),CW); plan.append((kind,val,ls)); total+=len(ls)*54+gap+10
+            ls=wrap(d,val,gl(44),CW); plan.append((kind,val,ls)); total+=len(ls)*54+gap+24
     foot=150
     photo_h=1500-58-y-total-foot-30
     p['_photo_h']=photo_h; p['_y_after_head']=y
@@ -120,7 +120,7 @@ def render(p,out):
             for l_ in ls[1:]: d.text((M*S,y*S),l_,font=bf,fill=INK); y+=lh
             y+=gap
         else:
-            y+=10
+            y+=24
             d.line([M*S,(y-6)*S,(M+120)*S,(y-6)*S],fill=PINK,width=3*S)
             for l_ in ls: d.text((M*S,y*S),l_,font=gl(44),fill=INK); y+=54
     p['_y_end']=y
