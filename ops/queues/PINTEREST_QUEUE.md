@@ -154,3 +154,36 @@ Read the current router and reconciliation, then follow its Metricool procedure 
 | 2026-10-18 11:00 | core-w42-26-existing-content-inventory-v1 | 1122311238330664783 | 1hWGx72Eaq-E40UF_u2DIq1LZzXsEjH7R | 59271d986556f7f58f04b4f5dbdb1296108a6201e9cd1efb27be1c7e8c79bbcc |
 | 2026-10-18 14:00 | core-w42-27-welcome-email-planning-v1 | 1122311238330664770 | 1OqyncJrEHEQSz2DdiPGX1Jy07vW5uNLH | ddcfaa269558f5ec0ecabfe5442038a3b7372b01a573b08c6def23c14018b28f |
 | 2026-10-18 17:00 | core-w42-28-pinterest-keyword-writing-v1 | 1122311238330664773 | 1rKzRwEZhVdCPI1_IZnPtvP9XeFoOtYmT | 13c05db9cbd9c31e21f4e967e55b58ba010bcc789ccddff61d158388c87f45a4 |
+
+## 2026-11-08 02:3x ET No-packet fallback batch (Weekly Pinterest pin factory)
+27 core pins built and scheduled by Claude under the 5 Nov NO-PACKET FALLBACK (no READY Drive packet; 1 core pin existed for the next 7 days). All status SCHEDULED (Metricool PENDING), none PUBLISHED. Read back with getScheduledPosts for 8-14 Nov: 4 core pins per day, boards and pinLink verified, no duplicates. Contact sheet sent to Jodie. Note: all 27 share one layout; scheduled without prior contact-sheet approval per the fallback.
+
+| ET slot | id | board | title |
+|---|---|---|---|
+| 2026-11-08 11:00 | core-2026-11-08-1100-f01 | Faceless Digital Marketing for Beginners | Pinterest Pin Titles for Beginners: Put the Search Phrase First and Stay Specific |
+| 2026-11-08 14:00 | core-2026-11-08-1400-f02 | Beginner Online Business Ideas | How to Choose a Niche for Beginners: Describe One Reader and Her Problem First |
+| 2026-11-08 17:00 | core-2026-11-08-1700-f03 | Faceless Content Ideas | Faceless Content Ideas for Beginners: Three Reader Questions to Answer This Week |
+| 2026-11-09 08:00 | core-2026-11-09-0800-f04 | Passive Income Ideas for Beginners | Passive Income Ideas for Beginners: Start With One Small Digital Product and Finish It |
+| 2026-11-09 11:00 | core-2026-11-09-1100-f05 | Faceless Digital Marketing for Beginners | Pinterest Board Organization for Beginners: Name, Describe and Sort Every Board |
+| 2026-11-09 14:00 | core-2026-11-09-1400-f06 | Beginner Online Business Ideas | Digital Product Checklist for Beginners: Five Things to Test Before You Sell |
+| 2026-11-09 17:00 | core-2026-11-09-1700-f07 | Faceless Content Ideas | How to Turn a Lesson Into a Blog Post: Four Simple Steps for Content Beginners |
+| 2026-11-10 08:00 | core-2026-11-10-0800-f08 | Passive Income Ideas for Beginners | Daily Business Routine for Beginners: A Twenty Minute Block You Can Repeat |
+| 2026-11-10 11:00 | core-2026-11-10-1100-f09 | Faceless Digital Marketing for Beginners | How to Read Pinterest Analytics for Beginners: Three Numbers to Check Each Week |
+| 2026-11-10 14:00 | core-2026-11-10-1400-f10 | Beginner Online Business Ideas | Affiliate Disclosure for Beginners: A Simple Checklist for Posts, Pins and Emails |
+| 2026-11-10 17:00 | core-2026-11-10-1700-f11 | Faceless Content Ideas | Faceless Content Ideas: Five Ways to Show Up Online Without Showing Your Face |
+| 2026-11-11 08:00 | core-2026-11-11-0800-f12 | Passive Income Ideas for Beginners | Business Automation for Beginners: Three Boring Tasks to Automate First |
+| 2026-11-11 11:00 | core-2026-11-11-1100-f13 | Faceless Digital Marketing for Beginners | Pinterest Keywords for Beginners: Where to Put Them in a Pin Description |
+| 2026-11-11 14:00 | core-2026-11-11-1400-f14 | Beginner Online Business Ideas | How to Write Your First Offer in One Sentence: A Fill-in-the-Blank Formula |
+| 2026-11-11 17:00 | core-2026-11-11-1700-f15 | Faceless Content Ideas | Email Subject Lines for Beginners: Four Rules for Writing Ones Readers Open |
+| 2026-11-12 08:00 | core-2026-11-12-0800-f16 | Passive Income Ideas for Beginners | Print on Demand vs Dropshipping for Beginners: Compare Them Before You Pick One |
+| 2026-11-12 11:00 | core-2026-11-12-1100-f17 | Faceless Digital Marketing for Beginners | AI Prompt Structure for Online Business: Role, Task, Context and Format |
+| 2026-11-12 14:00 | core-2026-11-12-1400-f18 | Beginner Online Business Ideas | Brand Basics for Beginners: Pick Three Words to Keep Your Look Consistent |
+| 2026-11-12 17:00 | core-2026-11-12-1700-f19 | Faceless Content Ideas | Weekly Content System for Beginners: Plan, Create, Cut Up and Schedule in a Week |
+| 2026-11-13 08:00 | core-2026-11-13-0800-f20 | Passive Income Ideas for Beginners | Online Business Mindset for Beginners: Four Habits for Slow and Steady Weeks |
+| 2026-11-13 11:00 | core-2026-11-13-1100-f21 | Faceless Digital Marketing for Beginners | Weekly Business Review for Beginners: Track Reach, Action and Result Only |
+| 2026-11-13 14:00 | core-2026-11-13-1400-f22 | Beginner Online Business Ideas | How to Organize Business Files for Beginners: Folders, Names, Drafts and Backups |
+| 2026-11-13 17:00 | core-2026-11-13-1700-f23 | Faceless Content Ideas | Content Ideas From Reader Questions: Build a Simple Question Bank to Use Weekly |
+| 2026-11-14 08:00 | core-2026-11-14-0800-f24 | Passive Income Ideas for Beginners | Where to Host a Free Guide for Beginners: Four Checks Before You Promote It |
+| 2026-11-14 11:00 | core-2026-11-14-1100-f25 | Faceless Digital Marketing for Beginners | Plan a Week of Pinterest Pins in One Sitting: A Beginner Batching Routine |
+| 2026-11-14 14:00 | core-2026-11-14-1400-f26 | Beginner Online Business Ideas | How to Outline a Blog Post From One Reader Question in Ten Minutes |
+| 2026-11-14 17:00 | core-2026-11-14-1700-f27 | Faceless Content Ideas | Faceless Business for Beginners: Four Building Blocks to Start With |
