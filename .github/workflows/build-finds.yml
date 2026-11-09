@@ -1,0 +1,43 @@
+name: Build Tommy Kate's Finds list
+
+on:
+  push:
+    branches: [cloudflare-migration]
+    paths:
+      - "src/lifestyle/*.json"
+      - "ops/scripts/build_finds.py"
+  schedule:
+    - cron: "17 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-finds
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cloudflare-migration
+      - name: Build the finds list
+        run: python3 ops/scripts/build_finds.py
+      - name: Save it if it changed
+        run: |
+          if git diff --quiet -- public/finds/finds.json; then
+            echo "No change"
+            exit 0
+          fi
+          git config user.name "finds-bot"
+          git config user.email "finds-bot@users.noreply.github.com"
+          git add public/finds/finds.json
+          git commit -m "Update Tommy Kate's Finds list"
+          for i in 1 2 3; do
+            git pull --rebase origin cloudflare-migration && git push origin HEAD:cloudflare-migration && exit 0
+            sleep 10
+          done
+          exit 1
