@@ -10,7 +10,7 @@
 
 import { pillars, articles } from "./library.js";
 
-export const SKOOL_PLANS = "https://www.skool.com/thedigitalincomeedit/plans";
+export const SKOOL_PLANS = "https://www.skool.com/thedigitalincomeedit/about";
 
 export const membership = {
   trialDays: 7,
