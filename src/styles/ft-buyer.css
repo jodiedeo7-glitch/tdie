@@ -571,3 +571,29 @@
  .wys-world.ft .ft-step.ft-withart>div[aria-hidden]:not(.ft-mini){display:none}
  .wys-world.ft .ft-polwide{max-width:none}
 }
+
+
+/* Faceless Team visual reset — founder-directed redesign, 2026-11-11.
+   Scoped to buyer pages. Preserve downloads, routes and interactions. */
+.wys-world.ft{--ink:#1A1417;--hot:#D81B72;--deep:#B8245F;--line:#E6C7D3;--lav:#EEE7FA;background:#FBF8F5;color:var(--ink)}
+.wys-world.ft .ft-strip{display:none!important}
+.wys-world.ft .ft-top{background:#FBF8F5!important;border-bottom:1px solid #DCC5CE!important}
+.wys-world.ft .ft-top-in{padding-block:18px 4px!important}
+.wys-world.ft .ft-brand span{font-size:clamp(24px,3vw,32px)}
+.wys-world.ft .ft-hero{background:radial-gradient(ellipse 45% 65% at 93% 17%,#EAE5F8 0%,transparent 100%),radial-gradient(ellipse 34% 48% at 5% 85%,#FFE4F0 0%,transparent 100%),#FBF8F5!important;border-bottom:1px solid #E6C7D3;padding-block:58px 68px!important}
+.wys-world.ft .ft-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:url('/images/brand/sparkle-glow.webp');background-size:450px auto;background-position:calc(100% + 180px) -110px;background-repeat:no-repeat;opacity:.55}
+.wys-world.ft .ft-hero-in{position:relative;z-index:1}
+.wys-world.ft h1,.wys-world.ft h2,.wys-world.ft h3{font-family:Gloock,Georgia,serif!important;font-style:normal!important}
+.wys-world.ft :is(p,a,button,small,label,input,textarea,li){font-family:Jost,system-ui,sans-serif}
+.wys-world.ft h1{max-width:13ch;font-size:clamp(34px,4.3vw,52px)!important;line-height:1.12!important}
+.wys-world.ft .ft-kick{letter-spacing:.16em}
+.wys-world.ft .ft-btn{background:#fff!important;color:#1A1417!important;border:1.5px solid #C8A96A!important;border-radius:10px!important;box-shadow:0 5px 0 #E7D7DE!important}
+.wys-world.ft .ft-btn:hover{box-shadow:0 8px 0 #E7D7DE!important}
+.wys-world.ft .ft-btn.big{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(115deg,#C8A96A,#F0E5F9,#D81B72) border-box!important;border:2px solid transparent!important}
+.wys-world.ft .ft-sec{padding-block:clamp(36px,5vw,58px)}
+.wys-world.ft .ft-sec.glow,.wys-world.ft .ft-sec.white{background:#FBF8F5}
+.wys-world.ft .ft-sec.lav{background:linear-gradient(135deg,#F5EFFB,#FFF9FC)}
+.wys-world.ft .ft-head{border-bottom:1px dashed #D81B72;padding-bottom:18px}
+.wys-world.ft .ft-badge{border-radius:8px;box-shadow:0 9px 24px #6B2C4A20}
+.wys-world.ft .ft-sticker{background:var(--holo);border:1px solid #C8A96A}
+@media(max-width:760px){.wys-world.ft .ft-hero{padding-block:32px 40px!important}.wys-world.ft h1{max-width:none;font-size:clamp(30px,8vw,36px)!important}.wys-world.ft .ft-top-in{padding-top:10px!important}}
