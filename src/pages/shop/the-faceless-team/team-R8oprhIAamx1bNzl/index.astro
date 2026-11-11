@@ -1,0 +1,150 @@
+---
+import FtBuyerFrame from '../../../../components/FtBuyerFrame.astro';
+import FtBadge from '../../../../components/FtBadge.astro';
+import FtIcon from '../../../../components/FtIcon.astro';
+import FtArt from '../../../../components/FtArt.astro';
+import {FT_ROOT, FT_FILES, BOTS, DEPT, SETUP_FILE, UPDATES, pad, line} from '../../../../data/faceless-team.js';
+const files = [{name: 'Faceless Team Setup', file: SETUP_FILE}, ...BOTS.map((b) => ({name: b.name, file: b.file}))];
+const tilts = [-4, 3, -2, 4, 3, -3, 2, -4];
+---
+<FtBuyerFrame title="Start Here" current="start">
+ <header class="ft-hero ft-spark">
+  <div class="wys-wrap ft-hero-in">
+   <div>
+    <p class="ft-kick">You're in · Start here</p>
+    <h1>Your team of eight just <span class="ft-glit">clocked in</span></h1>
+    <p class="ft-lede">Eight bots that write your pins, build your product, run your Monday review, keep your persona the same woman, fill your community, write your emails and find what is working. All of them sound like you, because they all read one file about your brand first.</p>
+    <div class="ft-cta"><a class="ft-btn big" href="#steps">Set up my team <span aria-hidden="true">↓</span></a><p class="ft-sticker" aria-hidden="true"><span><b>8</b>bots on<br>your team</span></p></div>
+    <p class="ft-meta"><span>5 steps</span><span>About 10 minutes</span><span>Free Claude account is enough to start</span></p>
+   </div>
+   <div class="ft-wall-wrap">
+    <span class="ft-wall-tape" aria-hidden="true"></span>
+    <div class="ft-wall" role="list" aria-label="Your team roster">
+     {BOTS.map((b, i) => <div role="listitem"><FtBadge slug={b.slug} n={pad(i + 1)} name={b.name} dept={DEPT[b.slug]} tilt={tilts[i]} href={`${FT_ROOT}/your-team#${b.slug}`} /></div>)}
+    </div>
+    <p class="ft-swipe" aria-hidden="true">Swipe to meet all eight →</p>
+   </div>
+  </div>
+ </header>
+
+
+ <section class="ft-sec glow" aria-labelledby="h-how">
+  <div class="wys-wrap">
+   <div class="ft-head wide"><div><p class="ft-kick">How it works</p><h2 id="h-how">You ask. It asks back. <em>You get the finished thing.</em></h2></div></div>
+   <div class="ft-how">
+    <div class="ft-how-step"><small><b class="ft-glit">1</b>You type</small><p class="ft-bubble">Write 5 pins for this post.</p></div>
+    <i aria-hidden="true">→</i>
+    <div class="ft-how-step"><small><b class="ft-glit">2</b>Your bot asks</small><div class="ft-bubble bot">A few quick questions. You answer by typing a number.<ol><li><b>1</b>Pick-a-number choices</li><li><b>2</b>Never a blank page</li></ol></div></div>
+    <i aria-hidden="true">→</i>
+    <div class="ft-how-step"><small><b class="ft-glit">3</b>You get</small><FtArt slug="pin-writer-bot" /></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="ft-sec white" aria-labelledby="h-team">
+  <div class="wys-wrap">
+   <div class="ft-head"><div><p class="ft-kick">The roster</p><h2 id="h-team">Eight bots, <em>one job each</em></h2></div><hr class="ft-rule"><p>Every one of them asks you a few pick-a-number questions, then hands you something finished.</p></div>
+   <ol class="ft-dir">
+    {BOTS.map((b, i) => <li><a href={`${FT_ROOT}/your-team#${b.slug}`}><b class="ft-glit" aria-hidden="true">{pad(i + 1)}</b><span class="ft-icobox"><FtIcon slug={b.slug} size={30} /></span><h3>{b.name}<em>{DEPT[b.slug]}</em></h3><p>{line(b)}</p><i>Open →</i></a></li>)}
+   </ol>
+  </div>
+ </section>
+
+ <section class="ft-sec lav ft-spark" id="steps" aria-labelledby="h-steps">
+  <div class="wys-wrap">
+   <div class="ft-head"><div><p class="ft-kick">Set it up once</p><h2 id="h-steps">Five steps, <em>then it's yours</em></h2></div><hr class="ft-rule"><p>Do these in order. A free Claude account is enough to start.</p></div>
+   <ol class="ft-path">
+    <li>
+     <div class="ft-num" aria-hidden="true"><span class="ft-glit">1</span></div>
+     <div class="ft-step ft-withart">
+      <div>
+      <span class="ft-time">One time · 1 minute</span>
+      <h3>Turn on one setting</h3>
+      <ol class="ft-click"><li><span>Open Claude at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></span></li><li><span>Go to <b>Settings</b>, then <b>Capabilities</b></span></li><li><span>Turn on <b>Code execution and file creation</b></span></li></ol>
+      </div>
+      <div class="ft-mini" aria-hidden="true" style="--r:2deg"><small>Settings · Capabilities</small><p class="ft-toggle">Code execution and file creation<i></i></p><p class="ft-toggle off">Other settings<i></i></p></div>
+     </div>
+    </li>
+    <li>
+     <div class="ft-num" aria-hidden="true"><span class="ft-glit">2</span></div>
+     <div class="ft-step">
+      <span class="ft-time">One time · 4 minutes</span>
+      <h3>Add your bots</h3>
+      <p>Download all nine files. Then do this once for each file:</p>
+      <ol class="ft-click"><li><span>In Claude go to <b>Customize</b>, then <b>Skills</b></span></li><li><span>Click <b>+</b>, then <b>Create skill</b>, then <b>Upload a skill</b></span></li><li><span>Choose the file and check its switch is on</span></li></ol>
+      <div class="ft-tray">
+       <div class="ft-tray-head"><p>Your nine files</p><a class="ft-btn" href={`${FT_FILES}/The-Faceless-Team-Full-Kit.zip`} download>Download everything in one folder <span aria-hidden="true">↓</span></a></div>
+       <ul class="ft-files">{files.map((f) => <li><a href={`${FT_FILES}/${f.file}`} download>{f.name}<span aria-hidden="true">↓</span></a></li>)}</ul>
+      </div>
+     </div>
+    </li>
+    <li>
+     <div class="ft-num" aria-hidden="true"><span class="ft-glit">3</span></div>
+     <div class="ft-step ft-withart">
+      <div>
+      <span class="ft-time">One time · 1 minute</span>
+      <h3>Make one home for your team</h3>
+      <ol class="ft-click"><li><span>In Claude click <b>Projects</b>, then <b>New project</b></span></li><li><span>Name it <b>My Faceless Team</b></span></li><li><span>Paste the team instructions into the project's instructions box</span></li></ol>
+      <div class="ft-btns"><button class="ft-btn" type="button" data-copy-url={`${FT_FILES}/PROJECT-INSTRUCTIONS.txt`}>Copy the team instructions</button></div>
+      <p style="margin-top:12px">One project holds the whole team, so a free Claude account has room for it.</p>
+      </div>
+      <div class="ft-mini" aria-hidden="true" style="--r:-2deg"><small>Projects</small><p class="ft-proj"><span class="ft-icobox" style="width:42px;height:42px"><FtIcon slug="faceless-team-setup" size={24} /></span>My Faceless Team</p><p>Team instructions pasted · Brand File added</p></div>
+     </div>
+    </li>
+    <li>
+     <div class="ft-num" aria-hidden="true"><span class="ft-glit">4</span></div>
+     <div class="ft-step ft-withpic">
+      <div>
+       <span class="ft-time">One time · 5 minutes</span>
+       <h3>Build your Brand File</h3>
+       <p>This is the one file every bot reads before it writes a word. It is why they all sound like you. Tick the boxes on the Brand File page and your file writes itself. Then add it to your project's knowledge.</p>
+       <div class="ft-btns"><a class="ft-btn" href={`${FT_ROOT}/brand-file`}>Build my Brand File <span aria-hidden="true">→</span></a></div>
+       <p style="margin-top:12px">Rather talk it through? Start a chat inside My Faceless Team and type <span class="ft-say">set up my team</span></p>
+      </div>
+      <figure class="ft-pol"><img src="/images/library/detail-hands-writing-journal.jpg" alt="A hand writing in a journal on a styled desk" width="420" height="525" loading="lazy"><figcaption>your brand, on one page</figcaption></figure>
+     </div>
+    </li>
+    <li>
+     <div class="ft-num" aria-hidden="true"><span class="ft-glit">5</span></div>
+     <div class="ft-step ft-withart">
+      <div>
+      <span class="ft-time">Every day after</span>
+      <h3>Ask a bot for something</h3>
+      <p>Start a chat inside <b>My Faceless Team</b> and type what you want in plain words. Try <span class="ft-say">Write 5 pins for this post</span> and paste your post. Every bot's profile has five things to ask it, ready to copy.</p>
+      <div class="ft-btns"><a class="ft-btn" href={`${FT_ROOT}/your-team`}>Meet your team <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div aria-hidden="true"><p class="ft-bubble" style="transform:rotate(2deg)">Monday review.</p><p class="ft-bubble" style="margin-top:10px;transform:rotate(-2deg)">Write my six-email sales series for my offer.</p></div>
+     </div>
+    </li>
+   </ol>
+  </div>
+ </section>
+
+ <section class="ft-sec white" aria-labelledby="h-need">
+  <div class="wys-wrap">
+   <div class="ft-head"><div><p class="ft-kick">Before you start</p><h2 id="h-need">What <em>you need</em></h2></div><hr class="ft-rule"></div>
+   <ul class="ft-need">
+    <li><em>Runs your team</em><h3>A Claude account</h3><p>The free plan works. Paid plans let you do more in a day. Your bots live in your own account, and nobody else sees what you type.</p></li>
+    <li><em>One setting</em><h3>Code execution and file creation</h3><p>It is step 1. Without it your bots cannot check their own work or hand you a file.</p></li>
+    <li><em>Optional</em><h3>An image tool</h3><p>The Pin Writer Bot and the Persona Bot write the prompts. You make the pictures in whichever image tool you already use.</p></li>
+   </ul>
+   <div class="ft-photo-band" style="margin-top:36px"><figure class="ft-polwide"><img src="/images/library/detail-hand-on-desk-tumbler.jpg" alt="A hand on a desk beside a pink tumbler and an open notebook" width="640" height="400" loading="lazy"><figcaption>you're the boss here</figcaption></figure>
+   <blockquote class="ft-quote" style="margin-top:0"><p>Every bot gives you a draft. Read it before it goes anywhere with your name on it. You are the boss of this team.</p><cite>My advice</cite></blockquote></div>
+  </div>
+ </section>
+
+ <section class="ft-sec glow" aria-labelledby="h-new">
+  <div class="wys-wrap ft-log">
+   <div><p class="ft-kick">Updates</p><h2 id="h-new">What's <em>new</em></h2><p>When a bot gets better, the new file lands here with the date. Check back.</p></div>
+   <ul>{UPDATES.map((u) => <li><time>{u.date}</time><span>{u.text}</span></li>)}</ul>
+  </div>
+ </section>
+ <script>
+  document.querySelectorAll('[data-copy-url]').forEach((b) => b.addEventListener('click', async () => {
+   const was = b.textContent;
+   try { const t = await (await fetch(b.dataset.copyUrl)).text(); await navigator.clipboard.writeText(t); b.textContent = 'Copied. Paste it into your project'; }
+   catch { window.open(b.dataset.copyUrl, '_blank'); }
+   setTimeout(() => { b.textContent = was; }, 2600);
+  }));
+ </script>
+</FtBuyerFrame>

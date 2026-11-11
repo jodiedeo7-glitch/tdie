@@ -1,0 +1,15 @@
+---
+// A staff badge for one bot. Decorative roster piece; pass href to make it a labelled link.
+import FtIcon from './FtIcon.astro';
+const {n, name, dept, tilt = 0, href, slug} = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+<Tag class="ft-badge" href={href} style={`--r:${tilt}deg`}>
+ <span class="ft-badge-clip" aria-hidden="true"></span>
+ <span class="ft-badge-band" aria-hidden="true">The Faceless Team™</span>
+ {slug && <FtIcon slug={slug} size={30} />}
+ <b class="ft-glit" aria-hidden="true">{n}</b>
+ <strong>{name}</strong>
+ <em>{dept}</em>
+ <small>{href ? 'Open profile →' : 'Reports to: you'}</small>
+</Tag>

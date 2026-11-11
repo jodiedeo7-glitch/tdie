@@ -1,0 +1,34 @@
+---
+import FtBuyerFrame from '../../../../components/FtBuyerFrame.astro';
+import {FT_ROOT} from '../../../../data/faceless-team.js';
+import FtArt from '../../../../components/FtArt.astro';
+import {GUIDE} from '../../../../data/ft-guide.js';
+const intro = GUIDE[0], steps = GUIDE.filter((g) => g.step), check = GUIDE[GUIDE.length - 1];
+---
+<FtBuyerFrame title="Build Your Own Bot" current="build">
+ <header class="ft-hero solo ft-spark">
+  <div class="wys-wrap ft-hero-in">
+   <div>
+    <p class="ft-kick">The guide · 7 steps</p>
+    <h1>Build &amp; Sell <span class="ft-glit">Your Own Bot</span></h1>
+    <p class="ft-lede">If you can explain a task to a new assistant, you can build a bot. Seven steps from something you already do well to a file you can use yourself or sell. The Bot Builder Bot does the heavy lifting with you.</p>
+    <a class="ft-btn big" href={`${FT_ROOT}/your-team#bot-builder-bot`}>Open the Bot Builder Bot <span aria-hidden="true">→</span></a>
+   </div>
+  </div>
+ </header>
+ <section class="ft-sec white">
+  <div class="wys-wrap ft-guide">
+   <nav class="ft-toc" aria-label="In this guide">
+    <p>In this guide</p>
+    <a href={`#${intro.id}`}><b>✦</b>{intro.title}</a>
+    {steps.map((s) => <a href={`#${s.id}`}><b>{s.step}</b>{s.title}</a>)}
+    <a href="#checklist"><b>✓</b>The one-page checklist</a>
+   </nav>
+   <div>
+    <article class="ft-chap intro" id={intro.id}><h2>{intro.title}</h2><Fragment set:html={intro.html} /><div style="max-width:420px;margin-top:22px"><FtArt slug="bot-builder-bot" /></div></article>
+    {steps.map((s) => <article class="ft-chap" id={s.id}><b class="ft-glit" aria-hidden="true">{s.step}</b><p class="ft-kick">Step {s.step} of 7</p><h2>{s.title}</h2><Fragment set:html={s.html} /></article>)}
+    <aside class="ft-check" id="checklist" aria-labelledby="h-check"><h2 id="h-check">{check.title}</h2><ol>{check.items.map((c) => <li>{c.replace(/`/g, '')}</li>)}</ol></aside>
+   </div>
+  </div>
+ </section>
+</FtBuyerFrame>

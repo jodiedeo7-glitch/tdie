@@ -1,0 +1,40 @@
+---
+// Buyer website frame for The Faceless Team (working name).
+// Shares only the site header/footer and the WYS page chrome; every rule of its own lives in ft-buyer.css under .ft.
+import PageLayout from '../layouts/PageLayout.astro';
+import '../styles/wys.css';
+import '../styles/wys-fonts.css';
+import '../styles/wys-showcase.css';
+import '../styles/wys-boutique.css';
+import '../styles/wys-reference.css';
+import '../styles/wys-convert.css';
+import '../styles/wys-home.css';
+import {FT_PAGES, pad} from '../data/faceless-team.js';
+import FtFeedback from './FtFeedback.astro';
+import '../styles/wys-buyer.css';
+import '../styles/ft-buyer.css';
+const {title, current = 'start'} = Astro.props;
+const at = FT_PAGES.findIndex((p) => p.key === current);
+const next = FT_PAGES[at + 1];
+---
+<PageLayout bare visualRefresh={false} homeChrome noindex title={`${title} · The Faceless Team™`} description="Your private buyer website for The Faceless Team™: your setup, your eight bots and the Build & Sell Your Own Bot guide.">
+ <div class="wys-world ft">
+ <a class="wys-skip" href="#wys-content">Skip to content</a>
+ <div class="wb2-bar ft-top"><div class="wys-wrap ft-top-in">
+  <a class="ft-brand" href={FT_PAGES[0].href}><small>Your private team site</small><span>The <i class="ft-glit">Faceless</i> Team™</span></a>
+  <nav class="ft-tabs" aria-label="Your Faceless Team">{FT_PAGES.map((p, i) => <a href={p.href} aria-current={current === p.key ? 'page' : undefined}><sup>{pad(i + 1)}</sup><span>{p.name}</span></a>)}</nav>
+ </div></div>
+ <div class="ft-strip" aria-hidden="true"></div>
+ <div id="wys-content">
+ <slot />
+ {next && <nav class="ft-next" aria-label="Next page"><div class="wys-wrap"><a href={next.href}><small>Next up</small><b class="ft-glit" aria-hidden="true">{pad(at + 2)}</b><span>{next.name}</span><i aria-hidden="true">→</i></a></div></nav>}
+ <FtFeedback page={`The Faceless Team · ${title}`} />
+ <div class="wys-wrap ft-foot"><p>Questions? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a>. This page is just for buyers, so please don't share the link.</p></div>
+ </div>
+ </div>
+ <script>
+  // On a phone the tabs scroll sideways: bring the current page's tab into view.
+  const cur = document.querySelector('.ft-tabs a[aria-current]'), bar = document.querySelector('.ft-tabs');
+  if (cur && bar && bar.scrollWidth > bar.clientWidth) bar.scrollLeft = Math.max(0, cur.offsetLeft - bar.offsetLeft - 20);
+ </script>
+</PageLayout>

@@ -1,0 +1,31 @@
+---
+import FtBuyerFrame from '../../../../components/FtBuyerFrame.astro';
+import {FT_ROOT} from '../../../../data/faceless-team.js';
+---
+<FtBuyerFrame title="If Something Breaks" current="help">
+ <section class="ft-sec glow ft-spark">
+  <div class="wys-wrap ft-help">
+   <div class="ft-help-side">
+    <p class="ft-kick">Help</p>
+    <h1>If something <span class="ft-glit">breaks</span></h1>
+    <p class="ft-lede">Almost every problem is one of these. Find yours, do the fix, carry on. If it's none of them, the box at the bottom comes straight to me.</p>
+    <div class="ft-btns"><a class="ft-btn" href="#tell-jodie">Tell Jodie <span aria-hidden="true">↓</span></a></div>
+    <figure class="ft-pol"><img src="/images/library/detail-hand-on-desk-tumbler.jpg" alt="A hand resting on a desk beside a pink tumbler" width="420" height="525" loading="lazy"><figcaption>we'll sort it</figcaption></figure>
+   </div>
+   <div class="ft-faq">
+    <p class="ft-faq-group">Setting up</p>
+    <details open><summary>I can't find where to upload a bot</summary><div>In Claude go to <b>Customize</b>, then <b>Skills</b>. Click the <b>+</b> button, then <b>Create skill</b>, then <b>Upload a skill</b>. If you don't see Skills, do step 1 first: <b>Settings</b>, then <b>Capabilities</b>, and turn on <b>Code execution and file creation</b>.</div></details>
+    <details><summary>It says my Brand File is missing</summary><div>Build it on the <a href={`${FT_ROOT}/brand-file`}>Brand File page</a>, download it, then open your project and add the file to the project's knowledge. If it is there and the bot still can't see it, paste the file's words at the top of your chat.</div></details>
+    <details><summary>I ran out of messages for the day</summary><div>That is your Claude plan's daily limit, not your team. It resets on its own. To get more out of each chat, give the bot the whole job in one ask instead of several small ones.</div></details>
+    <p class="ft-faq-group">Using your bots</p>
+    <details><summary>My bot answered like plain Claude and didn't use its method</summary><div><ol><li>Check you are inside your project called <b>My Faceless Team</b>, not a loose chat.</li><li>Check the bot's switch is on under <b>Customize</b>, then <b>Skills</b>.</li><li>Name the bot in your ask: "Use the Pin Writer Bot. Write 5 pins for this post."</li></ol></div></details>
+    <details><summary>It doesn't sound like me</summary><div>The fix is nearly always the sample sentences. Go back to the <a href={`${FT_ROOT}/brand-file`}>Brand File page</a>, paste two or three sentences you really wrote into question 8, and replace the old file in your project. Then tell the bot what to change: "Too formal. Shorter lines." It will redo it.</div></details>
+    <details><summary>My persona looks different in every picture</summary><div>Attach the same reference image file to every prompt, and never describe her face, hair, skin, body or age in words. Paste the prompt that went wrong to the Persona Bot and say "She keeps looking different." It will fix the prompt.</div></details>
+    <details><summary>The AI CEO Bot forgot last week's numbers</summary><div>Keep it as one chat named <b>Monday CEO Review</b> and go back to that same chat every week. If you started a new chat, paste last week's numbers in and carry on from there.</div></details>
+    <details><summary>A bot made something up</summary><div>Tell it: "I didn't give you that. Take it out." Every bot is told to use only what you have given it, so this is a bug I want to know about. Send it to me in the box below with a screenshot.</div></details>
+    <p class="ft-faq-group">Changing things</p>
+    <details><summary>I want to change my brand, my offer or my link</summary><div>Rebuild your file on the <a href={`${FT_ROOT}/brand-file`}>Brand File page</a> (it remembers your answers on this device), or type "update my brand file" in your project. Replace the old file in your project's knowledge with the new one.</div></details>
+   </div>
+  </div>
+ </section>
+</FtBuyerFrame>

@@ -1,0 +1,146 @@
+---
+import FtBuyerFrame from '../../../../components/FtBuyerFrame.astro';
+import {FT_ROOT} from '../../../../data/faceless-team.js';
+const Q = [
+ {round: 'Round 1 · Who and what'},
+ {n: 1, id: 'brand', q: 'What should I call your brand?', type: 'text', ph: 'Type your brand name', skip: 'No name yet'},
+ {n: 2, id: 'who', q: 'Who do you help?', type: 'check', opts: ['Busy moms', 'Nurses or healthcare workers', 'Beginners starting online', 'Small business owners', 'Creators and coaches'], other: 'Someone else? Type it'},
+ {n: 3, id: 'sell', q: 'What do you sell or plan to sell?', type: 'check', opts: ['Digital guides or ebooks', 'Templates or printables', 'A course or membership', 'Affiliate products', 'A service', 'Physical products', 'Nothing yet, I need a product'], other: 'Something else? Type it'},
+ {n: 4, id: 'link', q: 'The one link you most want people to click', hint: 'Your shop, your product or your sign-up page.', type: 'text', ph: 'Paste your link', skip: 'None yet'},
+ {round: 'Round 2 · How you sound'},
+ {n: 5, id: 'voice', q: 'Pick up to three that sound like you', type: 'check', max: 3, opts: ['Warm and friendly', 'Blunt and to the point', 'Funny, a little snarky', 'Calm and reassuring', 'Hype and high energy', 'Polished and professional', 'A teacher who explains simply']},
+ {n: 6, id: 'emoji', q: 'Emojis?', type: 'radio', opts: ['Lots', 'A few', 'Never']},
+ {n: 7, id: 'never', q: 'Anything you never want said?', type: 'check', opts: ['No hype words like "game-changer"', 'No swearing', 'No "hustle" or "grind" talk', 'No income promises', 'Nothing is off limits'], other: 'Anything else? Type it'},
+ {n: 8, id: 'sample', q: 'Paste two or three sentences you wrote that sound like you', hint: 'A caption, an email, anything. This is the most useful answer on the page. You can skip it and add it later.', type: 'area', ph: 'Paste your own words here'},
+ {round: 'Round 3 · How you show up'},
+ {n: 9, id: 'person', q: 'Does a person appear in your content?', type: 'radio', opts: ['Never, no people at all', 'An AI persona, from my reference image', 'Me, my real face', 'Hands or back of head only']},
+ {n: 10, id: 'colors', q: 'Your colors, in plain words', hint: 'For example: hot pink, cream, gold.', type: 'text', ph: 'Type your colors', skip: 'Not decided'},
+ {n: 11, id: 'post', q: 'Where do you post?', type: 'check', opts: ['Pinterest', 'Instagram', 'Facebook', 'Threads', 'TikTok', 'Email list', 'A Skool or other community', 'Nowhere yet']},
+ {n: 12, id: 'boards', q: 'If you use Pinterest, type your board names', type: 'text', ph: 'Board one, board two, board three', skip: "I don't have boards yet"},
+ {n: 13, id: 'aff', q: 'Do any of your links earn you a commission?', type: 'radio', opts: ['Yes', 'No', 'Not sure']}
+];
+---
+<FtBuyerFrame title="Your Brand File" current="brand">
+ <header class="ft-hero solo ft-spark">
+  <div class="wys-wrap ft-hero-in">
+   <div>
+    <p class="ft-kick">Step 4 of 5 · Your Brand File</p>
+    <h1>Tick the boxes. <span class="ft-glit ft-nw">Your file writes itself.</span></h1>
+    <p class="ft-lede">Thirteen quick questions. Every bot reads this one file before it writes a word, which is why they all sound like you. Skip anything you haven't decided. This page remembers your answers on this device, and nothing is sent anywhere.</p>
+   </div>
+  </div>
+ </header>
+
+ <section class="ft-sec white">
+  <div class="wys-wrap">
+   <div class="ft-build">
+    <form class="ft-form" id="ft-form" novalidate>
+     {Q.map((x) => x.round ? <p class="ft-round">{x.round}</p> : (
+      <fieldset class="ft-q" data-id={x.id} data-type={x.type} data-max={x.max}>
+       <legend><b class="ft-glit">{x.n}</b>{x.q}</legend>
+       {x.hint && <p class="ft-hint">{x.hint}</p>}
+       {(x.type === 'check' || x.type === 'radio') && <div class="ft-opts">{x.opts.map((o) => <label><input type={x.type === 'check' ? 'checkbox' : 'radio'} name={x.id} value={o}><span>{o}</span></label>)}</div>}
+       {x.other && <input type="text" name={x.id + '_other'} placeholder={x.other} aria-label={x.other}>}
+       {x.type === 'text' && <input type="text" name={x.id} placeholder={x.ph} aria-label={x.q}>}
+       {x.type === 'area' && <textarea name={x.id} placeholder={x.ph} aria-label={x.q}></textarea>}
+       {x.skip && <div class="ft-opts" style="margin-top:8px"><label><input type="checkbox" name={x.id + '_skip'} value={x.skip}><span>{x.skip}</span></label></div>}
+      </fieldset>
+     ))}
+     <div class="ft-dock"><span id="ft-dock-t"></span><a class="ft-btn quiet" href="#my-file">See my file ↓</a></div>
+    </form>
+    <div class="ft-out" id="my-file">
+     <div class="ft-prog"><b class="ft-glit" id="ft-n">0</b><span>of 13 answered</span><span class="ft-meter" id="ft-meter" aria-hidden="true">{Array.from({length: 13}).map(() => <i></i>)}</span></div>
+     <p id="ft-prog" class="wbf-vh" role="status"></p>
+     <div class="ft-paper">
+      <h2>Your Brand File</h2>
+      <pre id="ft-pre" tabindex="0" aria-label="Your Brand File so far"></pre>
+     </div>
+     <div class="ft-btns" style="margin-top:22px">
+      <button class="ft-btn" type="button" id="ft-dl">Download my Brand File <span aria-hidden="true">↓</span></button>
+      <button class="ft-btn quiet" type="button" id="ft-cp">Copy it</button>
+     </div>
+     <ol class="ft-then">
+      <li>Download your Brand File.</li>
+      <li>In Claude, open your project called <b>My Faceless Team</b>.</li>
+      <li>Add the file to the project's knowledge.</li>
+      <li>Changed your mind later? Come back, change your answers, and replace the file.</li>
+     </ol>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <script>
+  const KEY = 'ft-brand-file';
+  const form = document.getElementById('ft-form'), pre = document.getElementById('ft-pre'), prog = document.getElementById('ft-prog');
+  const qs = [...form.querySelectorAll('.ft-q')];
+  const U = 'not decided yet';
+  const picks = (id) => [...form.querySelectorAll(`[name="${id}"]:checked`)].map((i) => i.value);
+  const txt = (id) => (form.elements[id] && form.elements[id].value || '').trim();
+  const skipped = (id) => { const s = form.querySelector(`[name="${id}_skip"]`); return !!(s && s.checked); };
+  const list = (id) => { const a = picks(id); const o = txt(id + '_other'); if (o) a.push(o); return a; };
+  const low = (a) => a.map((s) => s.charAt(0).toLowerCase() + s.slice(1));
+  function answered(q) {
+   const id = q.dataset.id, t = q.dataset.type;
+   if (t === 'check') return list(id).length > 0;
+   if (t === 'radio') return picks(id).length > 0;
+   return !!txt(id) || skipped(id);
+  }
+  function build() {
+   const d = new Date().toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
+   const who = list('who'), sell = list('sell'), voice = picks('voice'), never = list('never'), post = picks('post');
+   const sellLine = sell.length ? low(sell).join(', ').replace('nothing yet, I need a product', 'nothing yet') : U;
+   const person = {'Never, no people at all': 'never', 'An AI persona, from my reference image': 'AI persona from my reference image', 'Me, my real face': 'my real face', 'Hands or back of head only': 'hands only'}[picks('person')[0]] || U;
+   const aff = (picks('aff')[0] || U).toLowerCase();
+   const sample = txt('sample');
+   const boards = txt('boards') || 'none yet: suggest board names when writing pins';
+   return `# MY BRAND FILE
+
+Last updated: ${d}
+
+Every Faceless Team bot reads this before it writes anything. To change it, say "update my brand file".
+
+## Who I am
+- Brand name: ${txt('brand') || U}
+- Who I help: ${who.length ? low(who).join(', ') : U}
+- What I sell: ${sellLine}
+- My main link: ${txt('link') || (skipped('link') ? 'none yet' : U)}
+
+## How I sound
+- My voice: ${voice.length ? low(voice).join(', ') : U}
+- Emojis: ${(picks('emoji')[0] || U).toLowerCase()}
+- Never say: ${never.length ? low(never).map((s) => s.replace(/^no /, '')).join('; ').replace('nothing is off limits', 'nothing off limits') : U}
+- Sentences in my own words (match this rhythm and word choice):
+  > ${sample ? sample.replace(/\n+/g, '\n  > ') : 'none given: keep it plain and conversational'}
+
+## How I show up
+- People in my content: ${person}
+- My colors: ${txt('colors') || U}
+- Where I post: ${post.length ? low(post).join(', ').replace(/\b(pinterest|instagram|facebook|threads|tikTok|skool)\b/g, (m) => m.charAt(0).toUpperCase() + m.slice(1)) : U}
+- My Pinterest boards: ${boards}
+
+## Rules for my team
+- Commission links: ${aff}. If yes or not sure, add a clear disclosure wherever one of those links appears.
+- Use only facts, numbers and results I have actually given you. Never invent proof.
+- If a person appears from a reference image, say "this exact woman from the attached reference" and never describe her face, hair colour, skin, body or age in words. Describe only what changes: what she wears, how her hair is styled, what she is doing.
+- Never promise a result or how fast it will come.
+`;
+  }
+  function save() { const o = {}; [...form.elements].forEach((e) => { if (!e.name) return; if (e.type === 'checkbox' || e.type === 'radio') { if (e.checked) (o[e.name] = o[e.name] || []).push(e.value); } else if (e.value) o[e.name] = e.value; }); try { localStorage.setItem(KEY, JSON.stringify(o)); } catch {} }
+  function load() { try { const o = JSON.parse(localStorage.getItem(KEY) || '{}'); [...form.elements].forEach((e) => { if (!e.name || !(e.name in o)) return; if (e.type === 'checkbox' || e.type === 'radio') e.checked = o[e.name].includes(e.value); else e.value = o[e.name]; }); } catch {} }
+  function render() { pre.textContent = build(); const n = qs.filter(answered).length; prog.textContent = n === qs.length ? 'All 13 answered. Your Brand File is ready.' : `${n} of ${qs.length} answered. Skipped answers are written as "not decided yet".`; document.getElementById('ft-n').textContent = n; document.querySelectorAll('#ft-meter i').forEach((m, i) => m.classList.toggle('on', i < n)); document.getElementById('ft-dock-t').innerHTML = `<b>${n} of 13</b> answered`; }
+  form.addEventListener('change', (e) => {
+   const q = e.target.closest('.ft-q');
+   if (q && q.dataset.max && e.target.type === 'checkbox' && picks(q.dataset.id).length > +q.dataset.max) e.target.checked = false;
+   if (e.target.name === 'post' && e.target.checked) { const none = form.querySelector('[name="post"][value="Nowhere yet"]'); if (e.target === none) form.querySelectorAll('[name="post"]').forEach((i) => { if (i !== none) i.checked = false; }); else none.checked = false; }
+   if (e.target.name.endsWith('_skip') && e.target.checked) { const t = form.elements[e.target.name.replace('_skip', '')]; if (t) t.value = ''; }
+   save(); render();
+  });
+  form.addEventListener('input', (e) => { if (e.target.type === 'text' || e.target.tagName === 'TEXTAREA') { const s = form.querySelector(`[name="${e.target.name}_skip"]`); if (s && e.target.value) s.checked = false; save(); render(); } });
+  form.addEventListener('submit', (e) => e.preventDefault());
+  const flash = (b, t) => { const was = b.innerHTML; b.textContent = t; setTimeout(() => { b.innerHTML = was; }, 2400); };
+  document.getElementById('ft-cp').addEventListener('click', async (e) => { try { await navigator.clipboard.writeText(build()); flash(e.currentTarget, 'Copied'); } catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } });
+  document.getElementById('ft-dl').addEventListener('click', (e) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([build()], {type: 'text/markdown'})); a.download = 'MY_BRAND_FILE.md'; document.body.appendChild(a); a.click(); a.remove(); flash(e.currentTarget, 'Downloaded. Add it to your project'); });
+  load(); render();
+ </script>
+</FtBuyerFrame>

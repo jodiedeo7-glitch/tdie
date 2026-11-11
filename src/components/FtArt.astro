@@ -1,0 +1,74 @@
+---
+// A designed preview of what each bot hands over. Browser-drawn (HTML/CSS/SVG) with photos from the site's own library.
+// Sample words come from the kit's real test runs. Every preview is labelled as an example.
+const {slug} = Astro.props;
+const subjects = ['The house reset for women with no spare day', 'Big house, small flat, or somewhere between?', 'Yes, you could make your own cleaning list', 'Before you buy: there are no refunds', 'For the woman with three unused planners', "There's no deadline on this one"];
+const week = [['Mon', 'Teach'], ['Tue', 'Value'], ['Wed', 'Teach'], ['Thu', 'Sell'], ['Fri', 'Value'], ['Sat', 'Teach'], ['Sun', 'Teach']];
+const bars = [22, 30, 18, 26, 34, 20, 100, 28, 24, 16, 30, 22];
+---
+<figure class={`ft-art ft-art-${slug}`}>
+ {slug === 'pin-writer-bot' && (
+  <div class="a-pin">
+   <div class="a-pin-card"><div class="a-pin-img"><img src="/images/library/detail-hands-writing-journal.jpg" alt="" loading="lazy" width="320" height="400"><b>My 20-Minute<br>Sunday Reset</b></div><p>Sunday reset routine for a side business: the 20-minute digital planner page I use weekly</p></div>
+   <ul class="a-ticks"><li>Words on the image</li><li>Title</li><li>Description</li><li>Alt text</li><li>Board</li><li>Image prompt</li></ul>
+   <span class="a-note" style="--r:-6deg">every length checked</span>
+  </div>
+ )}
+ {slug === 'product-builder-bot' && (
+  <div class="a-prod">
+   <div class="a-sheets">{['Listing', 'Sales page', 'The product', 'Outline'].map((s, i) => <span style={`--i:${i}`}>{s}</span>)}
+    <div class="a-cover"><small>Your one-sentence offer</small><p>"Parents dreading potty training get a calm day-by-day plan to follow, so accidents stop feeling like failures."</p><i>4 checks passed ✓</i></div>
+   </div>
+   <span class="a-note" style="--r:5deg">idea → finished product</span>
+  </div>
+ )}
+ {slug === 'ai-ceo-bot' && (
+  <div class="a-ceo">
+   <p class="a-win-bar"><i></i><i></i><i></i>Monday CEO Review</p>
+   <table><thead><tr><th>Number</th><th>This week</th><th>Last week</th><th></th></tr></thead><tbody>
+    <tr><td>Pins published</td><td>2</td><td>5</td><td class="dn">↓</td></tr>
+    <tr><td>Free downloads</td><td>9</td><td>14</td><td class="dn">↓</td></tr>
+   </tbody></table>
+   <p class="a-call"><b>Biggest mover:</b> publishing, down from 5 to 2.</p>
+   <ol><li>Do all of this week's pins in one sitting.</li><li class="dim"></li><li class="dim"></li></ol>
+   <span class="a-note" style="--r:-5deg">3 priorities, sized to your hours</span>
+  </div>
+ )}
+ {slug === 'persona-bot' && (
+  <div class="a-per">
+   <div class="a-pols"><span><img src="/images/library/detail-velvet-chair.jpg" alt="" loading="lazy" width="200" height="200"><em>her chair</em></span><span><img src="/images/library/detail-shelf-styling-01.jpg" alt="" loading="lazy" width="200" height="200"><em>her shelf</em></span><span><img src="/images/library/detail-flowers-vase.jpg" alt="" loading="lazy" width="200" height="200"><em>her desk</em></span></div>
+   <p class="a-prompt"><small>Every photo prompt opens with</small>Photograph of this exact woman from the attached reference image. Identity is taken only from the reference.</p>
+   <span class="a-note" style="--r:4deg">same woman, same world</span>
+  </div>
+ )}
+ {slug === 'community-bot' && (
+  <div class="a-com">
+   <p class="a-win-bar"><i></i><i></i><i></i>Your week of posts</p>
+   <ol class="a-week">{week.map(([d, t]) => <li class={t.toLowerCase()}><b>{d}</b><span>{t}</span></li>)}</ol>
+   <p class="a-call"><b>Ritual thread:</b> "Little Wins Friday."</p>
+   <span class="a-note" style="--r:-4deg">only one selling post</span>
+  </div>
+ )}
+ {slug === 'email-bot' && (
+  <div class="a-mail">
+   <p class="a-win-bar"><i></i><i></i><i></i>Six-email sales series</p>
+   <ol>{subjects.map((s, i) => <li><b>{i + 1}</b><span>{s}</span></li>)}</ol>
+   <span class="a-note" style="--r:5deg">one honest answer per email</span>
+  </div>
+ )}
+ {slug === 'viral-research-bot' && (
+  <div class="a-viral">
+   <p class="a-win-bar"><i></i><i></i><i></i>Is this post an outlier?</p>
+   <div class="a-bars">{bars.map((h) => <i class={h === 100 ? 'hit' : ''} style={`--h:${h}%`}></i>)}<em>41 times<br>her usual</em><u></u></div>
+   <p class="a-call"><b>Her usual reel:</b> about 925 views. <b>This one:</b> 38,000.</p>
+   <span class="a-note" style="--r:-5deg">real counts, never a guess</span>
+  </div>
+ )}
+ {slug === 'bot-builder-bot' && (
+  <div class="a-build">
+   <div class="a-flow"><span class="a-folder"><b>what you know</b></span><i>→</i><span class="a-file"><b>.skill</b><em>your bot</em></span><i>→</i><span class="a-page"><b>Start Here</b><em>for your buyers</em></span></div>
+   <span class="a-note" style="--r:4deg">yours to use or sell</span>
+  </div>
+ )}
+ <figcaption>Example</figcaption>
+</figure>

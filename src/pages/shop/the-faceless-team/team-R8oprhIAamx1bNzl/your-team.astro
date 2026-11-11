@@ -1,0 +1,68 @@
+---
+import FtBuyerFrame from '../../../../components/FtBuyerFrame.astro';
+import FtBadge from '../../../../components/FtBadge.astro';
+import FtArt from '../../../../components/FtArt.astro';
+import {FT_ROOT, FT_FILES, BOTS, DEPT, pad, line} from '../../../../data/faceless-team.js';
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+<FtBuyerFrame title="Your Team" current="team">
+ <header class="ft-hero solo ft-spark">
+  <div class="wys-wrap ft-hero-in">
+   <p class="ft-sticker ft-sticker-hero" aria-hidden="true"><span><b>5</b>asks each,<br>ready to copy</span></p>
+   <div>
+    <p class="ft-kick">Step 5 · Use a bot</p>
+    <h1>Eight bots. <span class="ft-glit">One job each.</span></h1>
+    <p class="ft-lede">Start a chat inside your project called My Faceless Team, copy an ask from a profile, and paste it. Each bot asks you a few pick-a-number questions, then hands you something finished.</p>
+    <ol class="ft-roster" aria-label="Jump to a bot">{BOTS.map((b, i) => <li><a href={`#${b.slug}`}><b>{pad(i + 1)}</b>{b.name}</a></li>)}</ol>
+   </div>
+  </div>
+ </header>
+
+ <section class="ft-sec white" style="padding-block:0 20px">
+  <div class="wys-wrap">
+   {BOTS.map((b, i) => (
+    <article class="ft-pro" id={b.slug} aria-labelledby={`h-${b.slug}`}>
+     <div class="ft-pro-side">
+      <FtBadge slug={b.slug} n={pad(i + 1)} name={b.name} dept={DEPT[b.slug]} tilt={i % 2 ? 3 : -3} />
+      <div class="ft-pro-acts">
+       <a class="ft-btn quiet" href="https://claude.ai/projects" target="_blank" rel="noopener">Open Claude →</a>
+       <a class="ft-btn quiet" href={`${FT_FILES}/${b.file}`} download aria-label={`Download the ${b.name} file`}>Download file ↓</a>
+      </div>
+     </div>
+     <div class="ft-pro-main">
+      <p class="ft-kick">{pad(i + 1)} · {DEPT[b.slug]}</p>
+      <h2 id={`h-${b.slug}`}>{b.name}</h2>
+      <p class="ft-lede">{line(b)}</p>
+      <div class="ft-pro-grid">
+       <div>
+        <h3 class="ft-lab">Five things to ask it</h3>
+        <ul class="ft-asks">{b.asks.map((a) => <li><p>{a.say}{a.then && <small>{cap(a.then)}</small>}</p><button class="ft-copy" type="button" data-say={a.say} aria-label={`Copy: ${a.say}`}>Copy</button></li>)}</ul>
+       </div>
+       <div class="ft-pro-right">
+        <FtArt slug={b.slug} />
+        <h3 class="ft-lab">{b.listLabel || 'What it does'}</h3>
+        <ol class="ft-does">{b.does.map((d) => <li>{d}</li>)}</ol>
+        {b.after && <p class="ft-after">{b.after}</p>}
+        <details class="ft-more"><summary>Good to know</summary><ul>{b.know.map((k) => <li>{k}</li>)}</ul></details>
+       </div>
+      </div>
+      <div class="ft-pro-acts m">
+       <a class="ft-btn" href="https://claude.ai/projects" target="_blank" rel="noopener">Open Claude <span aria-hidden="true">→</span></a>
+       <a class="ft-btn quiet" href={`${FT_FILES}/${b.file}`} download>Download the {b.name} file ↓</a>
+      </div>
+     </div>
+    </article>
+   ))}
+  </div>
+ </section>
+ <section class="ft-sec glow">
+  <div class="wys-wrap"><blockquote class="ft-quote" style="margin-top:0"><p>Changed something about your brand? Rebuild your file on the <a href={`${FT_ROOT}/brand-file`}>Brand File page</a>, or type "update my brand file" in your project. Every bot picks up the change.</p><cite>Good to know</cite></blockquote></div>
+ </section>
+ <script>
+  document.querySelectorAll('.ft-copy').forEach((b) => b.addEventListener('click', async () => {
+   try { await navigator.clipboard.writeText(b.dataset.say); b.textContent = 'Copied'; b.classList.add('done'); }
+   catch { b.textContent = 'Hold the words'; }
+   setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('done'); }, 2200);
+  }));
+ </script>
+</FtBuyerFrame>
