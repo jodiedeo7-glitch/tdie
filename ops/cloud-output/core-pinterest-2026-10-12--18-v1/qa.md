@@ -2,7 +2,7 @@
 
 Period: October 12 through 18, 2026, America/New_York. Producer ChatGPT. Publisher Claude.
 
-28 finished PNGs at 1000 x 1500, four per day within the founder's accepted 4–6/day cadence. Every final image was inspected at full size and thumbnail. The final chronological contact sheet was inspected after slot reconciliation. Newsreader and Inter; cream, loud pink, thin gold accents and near-black copy. No brown fills. Six distinct existing persona images, with intentional pink tumblers preserved. Existing ten-layout system, each layout used once per ten-pin sequence; collage limited to one per ten. No new AI image generation or new visual system.
+28 finished PNGs at 1000 x 1500, four per day within the founder's accepted 4–6/day cadence. Every final image was inspected at full size and thumbnail. The final chronological contact sheet was inspected after slot reconciliation. Gloock and Jost; cream, loud pink, thin gold accents and near-black copy. No brown fills. Six distinct existing persona images, with intentional pink tumblers preserved. Existing ten-layout system, each layout used once per ten-pin sequence; collage limited to one per ten. No new AI image generation or new visual system.
 
 The current repository validator passes with zero errors. All overlays are 3–5 words, titles 60–100 characters, descriptions 450–500 characters and alt text 150–200 characters. Five boards are used, with no consecutive board repeats including the previous week boundary. Related topic families are at least 72 hours apart across the existing October 6–11 packet and this packet. Times in pins.csv are proposed future slots, not scheduled records.
 

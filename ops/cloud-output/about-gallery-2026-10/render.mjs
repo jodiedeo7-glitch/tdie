@@ -3,7 +3,7 @@
 // Copy: ops/cloud-output/SKOOL_ABOUT_CONVERSION_AUDIT.md (G9 Roadmap copy is Jodie's, word for word).
 //
 // Run from the repo root:  node ops/cloud-output/about-gallery-2026-10/render.mjs [name ...]
-// Needs Playwright (global install is fine). Fonts are Newsreader 600 + Inter, from @fontsource
+// Needs Playwright (global install is fine). Fonts are Gloock 600 + Jost, from @fontsource
 // on jsdelivr, cached in ./fonts (not committed). Photos live in ./photos (generated on
 // Higgsfield Nano Banana Pro 2K from the avatar seed, 11 Oct 2026).
 
@@ -24,12 +24,12 @@ mkdirSync(OUT, { recursive: true });
 mkdirSync(FONTS, { recursive: true });
 
 const FONT_FILES = {
-  "newsreader-600.woff2": "newsreader/files/newsreader-latin-600-normal.woff2",
-  "inter-400.woff2": "inter/files/inter-latin-400-normal.woff2",
-  "inter-500.woff2": "inter/files/inter-latin-500-normal.woff2",
-  "inter-600.woff2": "inter/files/inter-latin-600-normal.woff2",
-  "inter-700.woff2": "inter/files/inter-latin-700-normal.woff2",
-  "inter-800.woff2": "inter/files/inter-latin-800-normal.woff2",
+  "gloock-600.woff2": "gloock/files/gloock-latin-600-normal.woff2",
+  "jost-400.woff2": "jost/files/jost-latin-400-normal.woff2",
+  "jost-500.woff2": "jost/files/jost-latin-500-normal.woff2",
+  "jost-600.woff2": "jost/files/jost-latin-600-normal.woff2",
+  "jost-700.woff2": "jost/files/jost-latin-700-normal.woff2",
+  "jost-800.woff2": "jost/files/jost-latin-800-normal.woff2",
 };
 for (const [name, path] of Object.entries(FONT_FILES)) {
   const p = join(FONTS, name);
@@ -42,23 +42,23 @@ const f = (n) => "file://" + join(FONTS, n);
 const photo = (n) => "file://" + join(HERE, "photos", n);
 
 const CSS = `
-@font-face{font-family:Newsreader;font-weight:600;src:url(${f("newsreader-600.woff2")})}
-@font-face{font-family:Inter;font-weight:400;src:url(${f("inter-400.woff2")})}
-@font-face{font-family:Inter;font-weight:500;src:url(${f("inter-500.woff2")})}
-@font-face{font-family:Inter;font-weight:600;src:url(${f("inter-600.woff2")})}
-@font-face{font-family:Inter;font-weight:700;src:url(${f("inter-700.woff2")})}
-@font-face{font-family:Inter;font-weight:800;src:url(${f("inter-800.woff2")})}
+@font-face{font-family:Gloock;font-weight:600;src:url(${f("gloock-600.woff2")})}
+@font-face{font-family:Jost;font-weight:400;src:url(${f("jost-400.woff2")})}
+@font-face{font-family:Jost;font-weight:500;src:url(${f("jost-500.woff2")})}
+@font-face{font-family:Jost;font-weight:600;src:url(${f("jost-600.woff2")})}
+@font-face{font-family:Jost;font-weight:700;src:url(${f("jost-700.woff2")})}
+@font-face{font-family:Jost;font-weight:800;src:url(${f("jost-800.woff2")})}
 :root{--cream:#FBF8F5;--pink:#D62E73;--bubble:#FF8AC2;--gold:#C8A96A;--ink:#1A1417}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1600px;height:900px;overflow:hidden;background:var(--cream)}
-body{text-wrap:pretty;font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+body{text-wrap:pretty;font-family:Jost,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 .stage{position:relative;width:1600px;height:900px;overflow:hidden;background:var(--cream)}
 .photo{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
 .scrim{position:absolute;inset:0}
 .wrap{position:absolute;inset:0;padding:58px 0 0 76px}
 .kicker{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:#B8245F}
 .kicker:before{content:"";width:34px;height:1.5px;background:var(--gold)}
-h1{font-family:Newsreader,serif;font-weight:600;font-style:normal;color:var(--ink);letter-spacing:-2px;line-height:.98}
+h1{font-family:Gloock,serif;font-weight:600;font-style:normal;color:var(--ink);letter-spacing:-2px;line-height:.98}
 h1 .t,.gl{color:var(--pink);background-image:linear-gradient(rgba(236,64,140,.62),rgba(236,64,140,.62)),url(${photo("tex-glitter.jpg")});background-blend-mode:multiply;background-size:auto,620px auto;background-position:0 0,30% 40%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6)) drop-shadow(0 6px 10px rgba(214,46,115,.18))}
 .gl2{background-image:linear-gradient(rgba(236,64,140,.6),rgba(236,64,140,.6)),url(${photo("tex-glitter.jpg")});background-blend-mode:multiply;background-size:auto,420px auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--pink)}
 .sub{font-weight:600;color:var(--ink)}
@@ -70,7 +70,7 @@ h1 .t,.gl{color:var(--pink);background-image:linear-gradient(rgba(236,64,140,.62
   background:url(${photo("tex-foil.jpg")}) center/cover;color:var(--pink);border:1.5px solid rgba(255,255,255,.9);box-shadow:0 22px 40px -16px rgba(214,46,115,.5),inset 0 0 0 1px rgba(200,169,106,.6)}
 .sticker:after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed rgba(214,46,115,.75)}
 .sticker .big,.sticker .sm{position:relative;z-index:1;text-shadow:0 1px 0 rgba(255,255,255,.7)}
-.sticker .big{font-family:Inter;font-weight:800;line-height:1}
+.sticker .big{font-family:Jost;font-weight:800;line-height:1}
 .sticker .sm{font-weight:800;letter-spacing:2px;text-transform:uppercase}
 .cta{display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 34px;border-radius:14px;color:var(--ink);font-weight:800;font-size:18px;letter-spacing:2.6px;text-transform:uppercase;
   background:linear-gradient(#fff,#fff) padding-box,url(${photo("tex-foil.jpg")}) center/cover border-box;border:4px solid transparent;box-shadow:0 22px 40px -22px rgba(214,46,115,.55)}
@@ -117,14 +117,14 @@ G["02-same-effort"] = page(`
   <div style="display:flex;align-items:center;gap:0;margin-top:30px">
     <div class="glass" style="width:292px;padding:22px 22px 20px">
       <span class="tag" style="">The usual way</span>
-      <div style="font-family:Newsreader;font-weight:600;font-size:34px;margin:12px 0 8px;white-space:nowrap">Audience first</div>
+      <div style="font-family:Gloock;font-weight:600;font-size:34px;margin:12px 0 8px;white-space:nowrap">Audience first</div>
       ${["Post for months", "Chase followers", "Make an offer last", "Hope it sells"].map((t) => `<div style="display:flex;align-items:center;gap:14px;font-weight:700;font-size:21px;padding:7px 0">${cross}${t}</div>`).join("")}
       <div style="margin-top:14px;padding-top:16px;border-top:2px dashed rgba(214,46,115,.4);font-weight:800;font-size:19px;color:var(--pink);white-space:nowrap">Months in, nothing to sell.</div>
     </div>
     <div style="position:relative;z-index:2;width:64px;height:64px;margin:0 -14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:21px;color:var(--pink);background:#fff;border:1px solid rgba(200,169,106,.7);box-shadow:0 14px 28px -18px rgba(26,20,23,.5)">VS</div>
     <div class="hero" style="width:336px;padding:22px 18px 20px">
       <span class="tag" style="background:#fff;color:var(--pink)">The TDIE way</span>
-      <div style="font-family:Newsreader;font-weight:600;font-size:38px;margin:12px 0 4px">Offer first</div>
+      <div style="font-family:Gloock;font-weight:600;font-size:38px;margin:12px 0 4px">Offer first</div>
       ${[["Offer", "The thing people pay for"], ["Funnel", "The path from a click to a sale"], ["Automation", "Set up once, runs on its own"], ["Audience, last", "Lands on a business that's already built"]].map(([h, p], i) => `<div style="display:flex;gap:14px;align-items:flex-start;padding:6px 0"><span class="num" style="background:#fff;color:var(--pink);width:36px;height:36px;font-size:16px">${i + 1}</span><div><div style="font-weight:800;font-size:21px">${h}</div><div style="font-weight:600;font-size:16px;margin-top:1px">${p}</div></div></div>`).join("")}
     </div>
   </div>
@@ -144,11 +144,11 @@ G["03-roadmap"] = page(`
   <div style="display:grid;grid-template-columns:396px 396px;gap:20px;margin-top:34px">
     ${steps.map(([h, p], i) => `<div class="${i === 3 ? "hero" : "glass"}" style="padding:22px 22px 22px;display:flex;gap:14px;align-items:flex-start;min-height:${i < 2 ? 150 : 176}px">
       <span class="num" style="${i === 3 ? "background:#fff;color:var(--pink)" : ""}">${i + 1}</span>
-      <div style="flex:1;min-width:0"><div style="font-family:Newsreader;font-weight:600;font-size:31px;line-height:1.05;display:flex;align-items:center;gap:10px;white-space:nowrap">${h}${i === 0 ? `<span class="tag" style="font-family:Inter;font-size:10.5px;letter-spacing:2px;padding:5px 10px;white-space:nowrap">Start here</span>` : ""}</div>
+      <div style="flex:1;min-width:0"><div style="font-family:Gloock;font-weight:600;font-size:31px;line-height:1.05;display:flex;align-items:center;gap:10px;white-space:nowrap">${h}${i === 0 ? `<span class="tag" style="font-family:Jost;font-size:10.5px;letter-spacing:2px;padding:5px 10px;white-space:nowrap">Start here</span>` : ""}</div>
       <div style="font-weight:600;font-size:${i === 3 ? 16.5 : 18}px;line-height:1.42;margin-top:9px">${p.split(" · ").join("&nbsp;· ").replace(" / ", "&nbsp;/&nbsp;").replace("AI Twin", "AI&nbsp;Twin")}</div></div></div>`).join("")}
   </div>
   <div class="hero" style="display:flex;width:808px;margin-top:20px;padding:18px 10px">
-    ${[["20+", "courses"], ["31", "days of content monthly"], ["7", "days free"]].map(([n, l], i) => `<div style="flex:1;text-align:center;${i ? "border-left:1.5px dashed rgba(200,169,106,.9)" : ""}"><div style="font-family:Newsreader;font-weight:600;font-size:54px;line-height:1" class="gl2">${n}</div><div style="font-weight:800;font-size:13.5px;letter-spacing:1.8px;text-transform:uppercase;margin-top:6px">${l}</div></div>`).join("")}
+    ${[["20+", "courses"], ["31", "days of content monthly"], ["7", "days free"]].map(([n, l], i) => `<div style="flex:1;text-align:center;${i ? "border-left:1.5px dashed rgba(200,169,106,.9)" : ""}"><div style="font-family:Gloock;font-weight:600;font-size:54px;line-height:1" class="gl2">${n}</div><div style="font-weight:800;font-size:13.5px;letter-spacing:1.8px;text-transform:uppercase;margin-top:6px">${l}</div></div>`).join("")}
   </div>
   <div style="display:flex;align-items:center;gap:28px;margin-top:24px"><span class="cta" style="height:60px;font-size:17px">Start your 7 days free <span>→</span></span><span class="ctaline">Start at step 1. <span class="t">We go in order.</span></span></div>
 `, "03-roadmap.jpg", "60px 50%;background-size:105% auto", SCRIM(48, 58));
@@ -164,7 +164,7 @@ G["04-member-wins"] = page(`
   <h1 style="font-size:84px;margin-top:22px">Real members.<br><span class="t">Real wins.</span></h1>
   <p class="sub" style="font-size:24px;margin-top:16px">Straight from the community feed, <span class="t">word for word.</span></p>
   <div style="display:flex;flex-direction:column;gap:12px;width:660px;margin-top:22px">
-    ${quotes.map(([i, n, q, h]) => `<div class="${h ? "hero" : "glass"}" style="display:flex;gap:16px;padding:16px 22px;align-items:flex-start">${h ? `<span class="gl2" style="position:absolute;right:20px;top:-14px;font-family:Newsreader;font-weight:600;font-size:120px;line-height:1">”</span>` : ""}
+    ${quotes.map(([i, n, q, h]) => `<div class="${h ? "hero" : "glass"}" style="display:flex;gap:16px;padding:16px 22px;align-items:flex-start">${h ? `<span class="gl2" style="position:absolute;right:20px;top:-14px;font-family:Gloock;font-weight:600;font-size:120px;line-height:1">”</span>` : ""}
       <span class="num" style="width:46px;height:46px;font-size:16px;${h ? "background:#fff;color:var(--pink)" : "border:2px solid var(--pink)"}">${i}</span>
       <div><div style="font-weight:800;font-size:17px">${n} <span style="font-size:11.5px;letter-spacing:2.4px;margin-left:6px;color:#B8245F">MEMBER</span></div>
       <div style="font-weight:600;font-size:${h ? 21 : 18.5}px;line-height:1.36;margin-top:3px">${q}</div></div></div>`).join("")}

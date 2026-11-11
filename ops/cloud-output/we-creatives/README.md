@@ -1,7 +1,7 @@
 # The Weekend Ecosystem™ · cover, carousel, OG and Meta ad creatives
 
 Cloud Credit Job 10, 27 September 2026. The Weekend Ecosystem™ is $97 one-time, or 3 × $33.33 (canon.json).
-Everything is composed in code (`render.mjs`, HTML to PNG, Newsreader SemiBold + Inter pulled from raw.githubusercontent.com/google/fonts) over photos already in the repo. No new photo was generated here. One new photo is prompted in `PHOTO_PROMPTS.md`.
+Everything is composed in code (`render.mjs`, HTML to PNG, Gloock + Jost pulled from raw.githubusercontent.com/google/fonts) over photos already in the repo. No new photo was generated here. One new photo is prompted in `PHOTO_PROMPTS.md`.
 
 Re-render everything: `node ops/cloud-output/we-creatives/render.mjs` from the repo root (Node 22 + Playwright). Re-render some: add a name fragment, e.g. `ad-payplan`.
 
@@ -16,9 +16,9 @@ From the description in the job (Jodie's screenshot is not in the repo, so this 
 - Tommy Kate with a laptop and her glitter tumbler: her world, her prop.
 
 **Change**
-- Headline type: condensed pink sans breaks the type rule. Now Newsreader SemiBold in near-black, with "Ecosystem™" as the turn word in hot pink.
+- Headline type: condensed pink sans breaks the type rule. Now Gloock in near-black, with "Ecosystem™" as the turn word in hot pink.
 - All-pink headline reads as a pink wash. Now ink with one pink turn.
-- Script sign-off: moved to Newsreader SemiBold in hot pink, small, so no thin or script face carries any words.
+- Script sign-off: moved to Gloock in hot pink, small, so no thin or script face carries any words.
 - No depth: now a cream gradient scrim from the left into a sharp full-height photo, a frosted glass price card with a thin gold edge and pink-tinted shadow, and two tilted sticker badges ("No code no camera", "Every update free") kept off her body.
 - No price or callout on the cover: the frosted card now carries "$97 one-time · or 3 × $33.33" and "Every future update, free."
 - Photo: the sofa photo (`hook-blog-posts.jpg`) has lettering baked into its top quarter. It is now used only as a clean crop (`photos/sofa-tumbler-no-lettering.jpg`, top 568 px removed), on the review card, so the hero gets a different photo.

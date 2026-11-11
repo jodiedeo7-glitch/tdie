@@ -6,7 +6,7 @@
 
 ### 4 October 2026 · THE LOOK (founder instruction, Decision 128). This wins over anything softer below.
 
-**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Newsreader SemiBold, upright, never italic; everything else is Inter, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
+**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Gloock, upright, never italic; everything else is Jost, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
 
 Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. Loud, pink, sparkly, confident, girly. It has to read LUXURY, never cheap.
 
@@ -25,7 +25,7 @@ These override canon §8 "Type" and the Dark Chocolate palette row wherever they
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
-- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Newsreader SemiBold; everything else is Inter. No italic headlines.
+- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Gloock; everything else is Jost. No italic headlines.
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
 - Flat colour-block layouts ("plain, flat, boring").
 - Solid stone or single-colour backgrounds with no photo ("no depth, no visuals, nothing popping, plain, ugly, looks AI").
@@ -42,7 +42,7 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - **Layout:** cream gradient scrim from the left holding the copy; Tommy Kate on the right. Brand line top-left: small pink dot plus "THE DIGITAL INCOME EDIT™" in wide-tracked caps.
 - **Cards:** white or cream paper with a thin Muted Gold hairline and a soft neutral lift shadow. No glass, no glow. **No hot pink card of any kind** (the old "one glossy hot pink gradient hero card" line is dead, 11 Oct 2026). Emphasis comes from type size, a pink turn phrase or a thin pink rule, never a pink fill.
 - **Stickers:** round white badges only (never pink-filled), tilted, dashed inner ring, pink type ("7 DAYS FREE", "1,200+ MEMBERS BUILDING"). Never over her face or body.
-- **Type:** Newsreader SemiBold headlines in near-black with the turn phrase in hot pink; Inter for everything else; kickers Inter Bold uppercase, wide tracking, pink.
+- **Type:** Gloock headlines in near-black with the turn phrase in hot pink; Jost for everything else; kickers Jost Bold uppercase, wide tracking, pink.
 - **CTA:** white or cream button with near-black caps and a hairline border; a pink arrow at most. **Never a hot pink or pink gradient button** (11 Oct 2026).
 - Render at 1600x900 @2x, export JPG quality 93 for Skool.
 

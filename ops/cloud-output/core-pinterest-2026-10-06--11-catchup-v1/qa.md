@@ -6,7 +6,7 @@ Producer state: QA_PASSED. Queue state: READY. Account state: PREPARED_NOT_SCHED
 
 - Every final saved PNG decoded completely at1000x1500 and matched its SHA-256. Initial truncated exports were replaced, decoded and rechecked; none is included.
 - Every image inspected at full size and feed thumbnail. Final bottom regions rechecked after moving callouts away from panel boundaries. No clipping, collisions or unfinished placeholders remain.
-- Newsreader SemiBold upright and Inter only. Current pink/cream palette, near-black text, thin gold rules, visible name and Skool action, brand lockup and depth. Brown is confined to photography, never designed fills. Existing photographs are illustrative, not screenshots proving live dashboards or results.
+- Gloock upright and Jost only. Current pink/cream palette, near-black text, thin gold rules, visible name and Skool action, brand lockup and depth. Brown is confined to photography, never designed fills. Existing photographs are illustrative, not screenshots proving live dashboards or results.
 - Ten canonical layouts each used once in rows01–10 and11–20; rows21–24 use four distinct layouts. Four persona photographs are distinct and show the tumbler, comfortable clothing and current approved source material. No new paid or generated photos.
 - Current repository validator reports0 errors: overlay3–5 words, title60–100 characters, description450–500, alt150–200, required metadata and correct hashes. Copy rewritten where necessary and checked separately for claims.
 - 24 future slots, four/day Oct6–11. Five-board rotation, no consecutive board repeats including the preserved Monday final core row. All close-cousin pairs are at least72 hours apart; first email is75 hours after Monday freebie route.

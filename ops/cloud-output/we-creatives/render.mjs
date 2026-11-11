@@ -29,8 +29,8 @@ mkdirSync(FONTS, { recursive: true });
 
 // ---------- fonts ----------
 const FONT_SRC = {
-  "Newsreader.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf",
-  "Inter.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf",
+  "Gloock.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/gloock/Gloock-Regular.ttf",
+  "Jost.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/jost/Jost%5Bwght%5D.ttf",
 };
 for (const [name, url] of Object.entries(FONT_SRC)) {
   const p = join(FONTS, name);
@@ -68,14 +68,14 @@ const SIZES = {
 
 // ---------- shared CSS ----------
 const CSS = `
-@font-face{font-family:Newsreader;src:url("file://${FONTS}/Newsreader.ttf") format("truetype");font-weight:200 800;font-style:normal}
-@font-face{font-family:Inter;src:url("file://${FONTS}/Inter.ttf") format("truetype");font-weight:100 900;font-style:normal}
+@font-face{font-family:Gloock;src:url("file://${FONTS}/Gloock.ttf") format("truetype");font-weight:200 800;font-style:normal}
+@font-face{font-family:Jost;src:url("file://${FONTS}/Jost.ttf") format("truetype");font-weight:100 900;font-style:normal}
 :root{--ink:#1A1417;--ink-soft:#4A3F44;--hot:#D62E73;--hot-deep:#A81F57;--bub:#FF8AC2;--gold:#C8A96A;--cream:#FBF8F5;
   --glass:rgba(255,253,252,.84);--edge:rgba(200,169,106,.6);
   --shadow:0 40px 70px -34px rgba(214,46,115,.45),0 14px 30px -16px rgba(26,20,23,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:var(--W);height:var(--H);overflow:hidden}
-body{font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
+body{font-family:Jost,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
   background:
     radial-gradient(55% 40% at 0% 100%,rgba(255,138,194,.10),transparent 70%),
     linear-gradient(165deg,#FFFEFC 0%,#FBF8F5 55%,#F6EFEA 100%)}
@@ -89,20 +89,20 @@ body{font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antial
 .ph.round{border-radius:calc(28px*var(--u));border:1px solid var(--edge);box-shadow:var(--shadow)}
 .ph .pht{width:100%;height:100%;display:grid;place-items:center;align-content:var(--phAlign,center);text-align:center;padding:40px;
   background:repeating-linear-gradient(135deg,#F6ECE8 0 18px,#FBF3F0 18px 36px);border:3px dashed rgba(214,46,115,.45);
-  font:700 calc(20px*var(--u))/1.45 Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--hot)}
+  font:700 calc(20px*var(--u))/1.45 Jost,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--hot)}
 .ph .pht small{display:block;margin-top:10px;font-weight:600;letter-spacing:.5px;text-transform:none;color:var(--ink-soft);font-size:max(16px,calc(17px*var(--u)))}
 .goldline{position:absolute;height:1px;background:linear-gradient(90deg,var(--gold),rgba(200,169,106,0))}
 .copy{position:absolute;display:flex;flex-direction:column;z-index:3}
-.brand{display:inline-flex;align-items:center;gap:max(16px,calc(12px*var(--u)));font:700 max(16px,calc(15px*var(--u)))/1 Inter,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:max(16px,calc(12px*var(--u)));font:700 max(16px,calc(15px*var(--u)))/1 Jost,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
 .dot{width:max(16px,calc(11px*var(--u)));height:max(16px,calc(11px*var(--u)));border-radius:50%;background:var(--hot);box-shadow:0 0 0 calc(5px*var(--u)) rgba(214,46,115,.16)}
 .copy .kicker{margin-top:auto}.copy>.cta,.copy>.sign{margin-bottom:auto}
-.kicker{font:800 max(16px,calc(17px*var(--u)))/1.3 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-h1{font-family:Newsreader,serif;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.02;font-variation-settings:"opsz" 72}
+.kicker{font:800 max(16px,calc(17px*var(--u)))/1.3 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+h1{font-family:Gloock,serif;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.02;font-variation-settings:"opsz" 72}
 h1 em{font-style:normal;color:var(--hot)}
 h1,.stats span,.who{text-wrap:balance}
 p,li,.sub,.quote{text-wrap:pretty}
 .foot i,.foot span{white-space:nowrap}
-.sub{font:500 calc(24px*var(--u))/1.42 Inter,sans-serif;color:var(--ink-soft)}
+.sub{font:500 calc(24px*var(--u))/1.42 Jost,sans-serif;color:var(--ink-soft)}
 .sub strong{color:var(--ink);font-weight:700}
 .card{background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
   border:1px solid var(--edge);border-radius:calc(22px*var(--u));box-shadow:var(--shadow);padding:calc(26px*var(--u)) calc(30px*var(--u))}
@@ -110,50 +110,50 @@ p,li,.sub,.quote{text-wrap:pretty}
   background:linear-gradient(140deg,#F0589A 0%,var(--hot) 50%,var(--hot-deep) 100%);box-shadow:0 36px 60px -30px rgba(168,31,87,.65),0 12px 26px -14px rgba(26,20,23,.25)}
 .hotcard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 38%);pointer-events:none}
 .ticks{list-style:none;display:grid;gap:max(16px,calc(14px*var(--u)))}
-.ticks li{position:relative;padding-left:calc(44px*var(--u));font:600 calc(23px*var(--u))/1.3 Inter,sans-serif;color:var(--ink)}
+.ticks li{position:relative;padding-left:calc(44px*var(--u));font:600 calc(23px*var(--u))/1.3 Jost,sans-serif;color:var(--ink)}
 .ticks li span{display:block;font-weight:500;font-size:.8em;color:var(--ink-soft);margin-top:3px}
 .ticks li::before{content:"\\2713";position:absolute;left:0;top:-1px;width:calc(30px*var(--u));height:calc(30px*var(--u));border-radius:50%;display:grid;place-items:center;
-  background:var(--ink);color:#fff;font:800 max(16px,calc(16px*var(--u)))/1 Inter,sans-serif}
+  background:var(--ink);color:#fff;font:800 max(16px,calc(16px*var(--u)))/1 Jost,sans-serif}
 .cta{align-self:flex-start;display:inline-flex;align-items:center;gap:.6em;padding:calc(20px*var(--u)) calc(38px*var(--u));border-radius:999px;
   background:linear-gradient(135deg,#E8458A 0%,var(--hot) 55%,var(--hot-deep) 100%);color:#fff;
-  font:800 calc(19px*var(--u))/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 18px 34px -16px rgba(168,31,87,.7)}
+  font:800 calc(19px*var(--u))/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 18px 34px -16px rgba(168,31,87,.7)}
 .sticker{position:absolute;z-index:4;display:grid;place-items:center;width:calc(150px*var(--u));height:calc(150px*var(--u));border-radius:50%;
-  font:800 max(16px,calc(16px*var(--u)))/1.2 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--ink);background:#fff;
+  font:800 max(16px,calc(16px*var(--u)))/1.2 Jost,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--ink);background:#fff;
   box-shadow:0 22px 40px -18px rgba(168,31,87,.55),0 6px 14px -6px rgba(26,20,23,.2)}
 .sticker>span{display:grid;place-items:center;width:84%;height:84%;border-radius:50%;border:2px dashed currentColor;padding:6px}
 .sticker.bub{background:#fff;color:var(--ink)}
 
-.sign{font-family:Newsreader,serif;font-weight:600;color:var(--ink);font-size:calc(30px*var(--u))}
+.sign{font-family:Gloock,serif;font-weight:600;color:var(--ink);font-size:calc(30px*var(--u))}
 .price{display:flex;align-items:flex-end;gap:calc(18px*var(--u));flex-wrap:wrap}
-.price b{font-family:Newsreader,serif;font-weight:600;line-height:1}
-.price .or{font:700 max(16px,calc(15px*var(--u)))/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.85;padding-bottom:.5em}
+.price b{font-family:Gloock,serif;font-weight:600;line-height:1}
+.price .or{font:700 max(16px,calc(15px*var(--u)))/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.85;padding-bottom:.5em}
 .stars{color:var(--ink);letter-spacing:.14em;font-size:calc(26px*var(--u))}
-.quote{font-family:Newsreader,serif;font-weight:600;line-height:1.28;color:var(--ink)}
+.quote{font-family:Gloock,serif;font-weight:600;line-height:1.28;color:var(--ink)}
 .quote::before{content:"\\201C"}
 .quote::after{content:"\\201D"}
-.who{font:700 max(16px,calc(15px*var(--u)))/1.4 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.who{font:700 max(16px,calc(15px*var(--u)))/1.4 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .who b{color:var(--ink)}
 .two{display:grid;grid-template-columns:1.25fr 1fr;gap:max(16px,calc(16px*var(--u)))}
-.two h3{font:800 max(16px,calc(15px*var(--u)))/1.2 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:max(16px,calc(12px*var(--u)))}
-.two ul{list-style:none;display:grid;gap:calc(9px*var(--u));font:600 calc(19px*var(--u))/1.3 Inter,sans-serif}
+.two h3{font:800 max(16px,calc(15px*var(--u)))/1.2 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:max(16px,calc(12px*var(--u)))}
+.two ul{list-style:none;display:grid;gap:calc(9px*var(--u));font:600 calc(19px*var(--u))/1.3 Jost,sans-serif}
 .two .card h3{color:var(--ink-soft)}
 .two .card li::before{content:"+ ";color:var(--ink);font-weight:800}
 .two .hotcard li::before{content:"\\2192  ";font-weight:800}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:max(16px,calc(16px*var(--u)))}
 .stats .card{padding:calc(22px*var(--u)) calc(24px*var(--u))}
-.stats b{display:block;font-family:Newsreader,serif;font-weight:600;font-size:calc(66px*var(--u));line-height:1;color:var(--ink)}
-.stats span{display:block;margin-top:calc(8px*var(--u));font:700 max(16px,calc(15px*var(--u)))/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.stats b{display:block;font-family:Gloock,serif;font-weight:600;font-size:calc(66px*var(--u));line-height:1;color:var(--ink)}
+.stats span{display:block;margin-top:calc(8px*var(--u));font:700 max(16px,calc(15px*var(--u)))/1.3 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .stats .hotcard b{color:#fff;font-size:calc(40px*var(--u));line-height:1.05}
 .stats .hotcard span{color:#fff}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:max(16px,calc(16px*var(--u)));padding-top:max(16px,calc(16px*var(--u)));border-top:1px solid rgba(200,169,106,.55);
-  font:700 max(16px,calc(15px*var(--u)))/1.2 Inter,sans-serif;letter-spacing:.06em;color:var(--ink)}
+  font:700 max(16px,calc(15px*var(--u)))/1.2 Jost,sans-serif;letter-spacing:.06em;color:var(--ink)}
 .foot i{font-style:normal;font-weight:600;letter-spacing:.04em;color:var(--ink-soft)}
 .mid{display:flex;flex-direction:column;gap:inherit;margin:auto 0}
 .storycard{background:rgba(255,253,252,.9);position:absolute}
 .storycard .mid{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:max(16px,calc(10px*var(--u)))}
 .chips span{padding:max(16px,calc(10px*var(--u))) max(16px,calc(16px*var(--u)));border-radius:999px;background:var(--glass);border:1px solid var(--edge);
-  font:700 max(16px,calc(15px*var(--u)))/1 Inter,sans-serif;letter-spacing:.08em;color:var(--ink);box-shadow:0 10px 20px -14px rgba(214,46,115,.5)}
+  font:700 max(16px,calc(15px*var(--u)))/1 Jost,sans-serif;letter-spacing:.08em;color:var(--ink);box-shadow:0 10px 20px -14px rgba(214,46,115,.5)}
 `;
 
 // ---------- building blocks ----------
@@ -268,11 +268,11 @@ function heroHTML(kit) {
   const u = 1;
   const kitCard = kit
     ? `<div class="hotcard" style="padding:22px 28px">
-         <p style="font:800 15px/1.3 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.95">Free until 4 Oct, 11:59 pm Eastern</p>
-         <p style="font-family:Newsreader,serif;font-weight:600;font-size:34px;line-height:1.1;margin-top:8px">+ The Keep It Running Kit</p>
-         <p style="font:600 18px/1.35 Inter,sans-serif;margin-top:6px;opacity:.95">Six of my paid guides, in your access email.</p></div>`
+         <p style="font:800 15px/1.3 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.95">Free until 4 Oct, 11:59 pm Eastern</p>
+         <p style="font-family:Gloock,serif;font-weight:600;font-size:34px;line-height:1.1;margin-top:8px">+ The Keep It Running Kit</p>
+         <p style="font:600 18px/1.35 Jost,sans-serif;margin-top:6px;opacity:.95">Six of my paid guides, in your access email.</p></div>`
     : `<div class="card" style="padding:22px 28px"><div class="price" style="color:var(--ink)"><b style="font-size:58px">$97</b><span class="or" style="color:var(--ink-soft)">one-time &middot; or 3 &times; $33.33</span></div>
-         <p style="font:600 17px/1.35 Inter,sans-serif;color:var(--ink-soft);margin-top:10px">Every future update, free.</p></div>`;
+         <p style="font:600 17px/1.35 Jost,sans-serif;color:var(--ink-soft);margin-top:10px">Every future update, free.</p></div>`;
   const inner = `
     ${photo("loftCross", "right:0;top:0;width:470px;height:1080px", "fadeL", "78% 40%")}
     <div class="goldline" style="left:64px;top:118px;width:200px"></div>

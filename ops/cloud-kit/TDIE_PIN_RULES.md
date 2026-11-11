@@ -7,7 +7,7 @@
 > 5. **CTA button text: "Learn more on Skool".** Never "free", "free trial", a price or an income claim.
 > 6. **Brand name big.** THE DIGITAL INCOME EDIT\u2122 lockup readable at stamp size.
 > 7. **No pink boxes, pills, circles or buttons** (see CLAUDE.md). Pink is type, thin rules and photography.
-> 8. **Fonts: Gloock headlines, Yellowtail for the one stressed word, Jost for everything else.** Newsreader and Inter are retired for pins.
+> 8. **Fonts: Gloock headlines, Yellowtail for the one stressed word, Jost for everything else.**
 > 9. **Research first.** Before any batch, search what is currently performing for the niche (TinyFish search, Pinterest Trends language) and use the phrases people actually search in the headline, title, description and alt text.
 > 10. **Look before scheduling.** Render every pin, open each at full size and at 200px wide, fix every defect, then show Jodie a contact sheet before anything is scheduled.
 
@@ -21,7 +21,7 @@
 > **📌 PINTEREST GOES THROUGH METRICOOL (Jodie, 2 October 2026, standing rule, overrides every Pinterest-browser step below).** Never schedule, edit or delete a pin in the Pinterest browser. Schedule each pin with the Metricool connector: `createScheduledPost` on blogId 7142540, `providers: [{"network":"pinterest"}]`, `publicationDate` in America/New_York, `autoPublish: true`, `text` = the pin description, `mediaAltText` = the alt text, and `pinterestData: {boardId, pinTitle, pinLink, pinNewFormat:false}`. `boardId`: pass the exact board name (Metricool resolves it) or the numeric ID. Metricool needs a PUBLIC image URL: commit the PNG to the repo folder `pins-public/` and use `https://raw.githubusercontent.com/jodiedeo7-glitch/tdie/main/pins-public/<file>.png`. Before scheduling, run `getScheduledPosts` for the date range and skip any pin already there (no duplicates). Verify by reading the post back with `getScheduledPosts`, not by opening Pinterest. Pulls: `updateScheduledPost` with `draft:true`. Boards that exist: Beginner Online Business Ideas, Faceless Digital Marketing for Beginners, Passive Income Ideas for Beginners, Faceless Content Ideas, Legally Blonde Outfits | Pink Amazon Fashion, Pink Home, Dorm and Car Finds | Amazon, TK Outfits. The Pinterest browser is only for reading a public board check if Metricool cannot.
 
 
-Rules from the project doc `claude/TDIE_PIN_FACTORY.md` (21 Sep 2026) and canon.json `pin_render`, placed here 26 Sep 2026. The rendering code in the project doc uses Fraunces and Cormorant Garamond, which Jodie has since rejected (see `TDIE_DESIGN_RULES.md`); any renderer built from this must use Gloock for headlines, Yellowtail for the one stressed word and Jost for everything else (Jodie, Oct 2026; Newsreader and Inter are retired for pins). Brown (#2B161B) is never a fill or background; use near-black #1A1417 for text and hot pink for dark areas.
+Rules from the project doc `claude/TDIE_PIN_FACTORY.md` (21 Sep 2026) and canon.json `pin_render`, placed here 26 Sep 2026. The rendering code in the project doc uses Fraunces and Cormorant Garamond, which Jodie has since rejected (see `TDIE_DESIGN_RULES.md`); any renderer built from this must use Gloock for headlines, Yellowtail for the one stressed word and Jost for everything else (Jodie, Oct 2026). Brown (#2B161B) is never a fill or background; use near-black #1A1417 for text and hot pink for dark areas.
 
 ## Rules that never move
 - Destination for EVERY TDIE pin: `https://www.skool.com/thedigitalincomeedit/about` (founder instruction 21 Sep 2026, "that's how it tracks"). The owned domain and links.* (Beacons) are blocked on Pinterest.
@@ -33,13 +33,13 @@ Rules from the project doc `claude/TDIE_PIN_FACTORY.md` (21 Sep 2026) and canon.
 - First run of anything new: Jodie sees a contact sheet before scheduling.
 
 ## What won the research (her Pinterest, 21 Sep 2026)
-Top-ranked pins in the niche are content-dense reference cards: numbered phase lists with day ranges, checkbox rows with one box ticked, real list items on the pin, product-mockup shots of the actual PDF, and light airy lifestyle photography. Pretty-but-thin headline pins don't rank. About a third of a batch saturated scroll-stoppers (hot pink block, bubblegum panels), the rest light. List numerals set in Inter.
+Top-ranked pins in the niche are content-dense reference cards: numbered phase lists with day ranges, checkbox rows with one box ticked, real list items on the pin, product-mockup shots of the actual PDF, and light airy lifestyle photography. Pretty-but-thin headline pins don't rank. About a third of a batch saturated scroll-stoppers (hot pink block, bubblegum panels), the rest light. List numerals set in Jost.
 
 ## Material sources
 Skool community posts and the Daily Free Prompt · classroom module and lesson names · freebie PDFs and their step content · membership plan copy · pillar topics · the /learn articles.
 
 ## Rendering in a cloud container
-`pip install weasyprint fonttools pdf2image --break-system-packages`. Fonts download from `https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/` and `.../ofl/inter/` (fonts.googleapis.com is blocked from the container). Render each pin as HTML → PDF → PNG at 1000 × 1500, add light grain. The persona seed is `public/images/library/avatar-seed-omni-reference.png`; persona photos can't be generated in the cloud, so persona layouts get a placeholder and a full image prompt for the finish queue.
+`pip install weasyprint fonttools pdf2image --break-system-packages`. Fonts download from `https://raw.githubusercontent.com/google/fonts/main/ofl/gloock/` and `.../ofl/jost/` (fonts.googleapis.com is blocked from the container). Render each pin as HTML → PDF → PNG at 1000 × 1500, add light grain. The persona seed is `public/images/library/avatar-seed-omni-reference.png`; persona photos can't be generated in the cloud, so persona layouts get a placeholder and a full image prompt for the finish queue.
 
 ## Scheduling (desktop only)
 `https://www.pinterest.com/pin-creation-tool/`, a FRESH TAB for every pin, closed after. (SUPERSEDED 2 Oct 2026: use Metricool, see top.) Upload PNG, fill title, description, alt text, link (the /about URL), board, "Publish at a later date", then verify the count on the scheduled-pins page before reporting.

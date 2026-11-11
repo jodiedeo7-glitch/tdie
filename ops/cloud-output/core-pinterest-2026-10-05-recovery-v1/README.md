@@ -16,7 +16,7 @@ READY/APPROVED refers to the standing core weekly scheduling authorization in th
 
 These are new dated creative variants, not verbatim restorations of the historical approved launch copy. Recovered source documents remain private. POOL 3 uses the current DFY service menu and avoids historical claims that eleven systems already run the author's business. POOL 5 uses the current public freebie-delivery article. Both use the current router's Skool /about destination and identify the AI-generated photographs in copy and alt text.
 
-The existing September 27 desk photographs were recovered from completed Higgsfield jobs 66ae415a-f606-415c-a4d4-cbdacad5980b and ce908721-1a63-4395-aede-c864aafd278e. No new image generation was purchased. Photos were placed into current branded graphic layouts with Newsreader and Inter.
+The existing September 27 desk photographs were recovered from completed Higgsfield jobs 66ae415a-f606-415c-a4d4-cbdacad5980b and ce908721-1a63-4395-aede-c864aafd278e. No new image generation was purchased. Photos were placed into current branded graphic layouts with Gloock and Jost.
 
 ## QA
 

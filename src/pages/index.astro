@@ -2,14 +2,14 @@
 import "../styles/global.css";
 import "../styles/sales-typography.css";
 import "../styles/edit.css";
-// Homepage type, self-hosted: Newsreader SemiBold for display, Inter for everything else.
-import "@fontsource/newsreader/latin-600.css";
-import "@fontsource/inter/latin-400.css";
-import "@fontsource/inter/latin-500.css";
-import "@fontsource/inter/latin-600.css";
-import "@fontsource/inter/latin-700.css";
-import newsreader600 from "@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url";
-import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+// Homepage type, self-hosted: Gloock for display, Jost for everything else.
+import "@fontsource/gloock/latin-400.css";
+import "@fontsource/jost/latin-400.css";
+import "@fontsource/jost/latin-500.css";
+import "@fontsource/jost/latin-600.css";
+import "@fontsource/jost/latin-700.css";
+import gloock400 from "@fontsource/gloock/files/gloock-latin-400-normal.woff2?url";
+import inter400 from "@fontsource/jost/files/jost-latin-400-normal.woff2?url";
 
 import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -113,7 +113,7 @@ const jsonLd = {
   <meta name="twitter:title" content="Build the whole business before anyone knows your name." />
   <meta name="twitter:description" content="The AI-built faceless business, built backwards: offer first, funnel second, automation third, audience last." />
   <meta name="twitter:image" content={OG_IMAGE} />
-  <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href={gloock400} crossorigin />
   <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
   <link rel="preload" as="image" type="image/webp"
         imagesrcset="/images/home/hero-pink-knit-desk-480.webp 480w, /images/home/hero-pink-knit-desk-720.webp 720w, /images/home/hero-pink-knit-desk-960.webp 960w"
@@ -490,10 +490,10 @@ const jsonLd = {
     /* ============ HOMEPAGE CONVERSION PASS · 28 Sep 2026 ============ */
   .cover-copy .e-actions{gap:14px 20px}
   .recognition{position:relative}
-  .recognition::before{content:"YOU ARE NOT BEHIND";display:block;margin-bottom:22px;font:700 10px/1 Inter,sans-serif;letter-spacing:.2em;color:var(--e-pink-t)}
+  .recognition::before{content:"YOU ARE NOT BEHIND";display:block;margin-bottom:22px;font:700 10px/1 Jost,sans-serif;letter-spacing:.2em;color:var(--e-pink-t)}
   .recognition-list{border-top:1px solid rgba(26,20,23,.2)}
   .recognition-list li{display:flex;gap:18px;align-items:baseline}
-  .recognition-list li::before{content:"↳";font-family:Newsreader,Georgia,serif;font-size:28px;color:var(--e-pink);flex:none}
+  .recognition-list li::before{content:"↳";font-family:Gloock,Georgia,serif;font-size:28px;color:var(--e-pink);flex:none}
   .flag .e-actions{margin-top:28px}
   .fit{scroll-margin-top:90px}
   .mem-grid .std,.mem-grid .prm{transition:transform .25s ease}
@@ -503,8 +503,8 @@ const jsonLd = {
     .recognition-list li{gap:12px}
   }
   .tdie-manifesto{max-width:1180px;margin:0 auto;padding:clamp(72px,9vw,132px) 24px clamp(58px,7vw,96px);display:grid;grid-template-columns:1fr 2fr;border-top:1px solid rgba(26,20,23,.16)}
-  .tdie-manifesto-kicker{font:700 10px/1.35 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);max-width:170px}
-  .tdie-manifesto p{margin:0;font:600 clamp(42px,6vw,88px)/.9 Newsreader,Georgia,serif;letter-spacing:-.035em}
+  .tdie-manifesto-kicker{font:700 10px/1.35 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--e-pink-t);max-width:170px}
+  .tdie-manifesto p{margin:0;font:600 clamp(42px,6vw,88px)/.9 Gloock,Georgia,serif;letter-spacing:-.035em}
   .tdie-manifesto em{font-style:italic;color:var(--e-pink)}
   @media(max-width:700px){.tdie-manifesto{display:block;padding-top:72px}.tdie-manifesto-kicker{display:block;margin-bottom:28px}.tdie-manifesto p{font-size:clamp(48px,14vw,70px)}}
 </style>
