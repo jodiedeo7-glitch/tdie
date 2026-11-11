@@ -322,6 +322,8 @@ Founder with opinions. Tension, curiosity, specificity. Never *learn how*, *here
 
 ## 8 · DESIGN
 
+> **LOOK RULES (11 November 2026, Jodie: overwrite and delete every old rule).** The only current look rules are in `ops/cloud-kit/TDIE_DESIGN_RULES.md`. Every colour, font, background, glitter, texture or decoration line in this section is retired and must not be followed where it differs.
+
 **Latest founder clarification, 4 October 2026, 11:30 am Eastern.** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Gloock, upright, never italic; everything else is Jost, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
 
 **Palette.** Six colours. The hex is the authority for set type, Canva design work and rendered pins.
