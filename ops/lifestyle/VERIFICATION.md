@@ -4,7 +4,7 @@
 
 ## Implementation
 
-The existing Astro site now uses a Lifestyle-only shared frame, article layout, photo cards, categories and disclosures. `/lifestyle`, all ten category routes, all 22 existing article routes, and `/lifestyle/pink-finds` inherit the pink/cream/lavender design. Headlines are upright Newsreader, body/UI Inter. Category-specific introductions, explicit featured selection, date/slug ordering, readable product lists and one unchanged Pink Finds signup per page replace duplicated templates. The existing site navigation, footer, analytics and Cloudflare configuration are unchanged.
+The existing Astro site now uses a Lifestyle-only shared frame, article layout, photo cards, categories and disclosures. `/lifestyle`, all ten category routes, all 22 existing article routes, and `/lifestyle/pink-finds` inherit the pink/cream/lavender design. Headlines are upright Gloock, body/UI Jost. Category-specific introductions, explicit featured selection, date/slug ordering, readable product lists and one unchanged Pink Finds signup per page replace duplicated templates. The existing site navigation, footer, analytics and Cloudflare configuration are unchanged.
 
 All 22 legacy JSON records, introductions, photographs, shopping URLs and Idea List URLs are unchanged. Single-photo and two-photo articles render without empty slots. Image-role metadata is optional; neutral category-aware captions replace the clothing-only and every-piece-linked assumptions. New articles inherit the layout automatically through the existing JSON import system. `src/lifestyle/README.md` documents the schema and preview/release process; `ops/lifestyle/article.example.json` is a reusable draft example.
 

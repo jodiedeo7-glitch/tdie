@@ -11,7 +11,7 @@
 - `/lifestyle`: natural introduction, explicitly selected featured articles, populated categories first, then all articles sorted by record date with slug tie-break. No search widget needed for 22 articles.
 - Preserve all ten category routes, with breadcrumbs, category-specific introduction, counts and consistent cards; empty categories offer existing populated alternatives.
 - Existing `/lifestyle/[slug]` routes delegate to a reusable article component. Hero and shopping are adjacent on desktop; on mobile hero is followed by shopping and then editorial copy/gallery. No sticky shopping panel.
-- Scope design to Lifestyle: Newsreader upright headings (52px maximum, 36px mobile), Inter body, cream, lavender, pink accents, crisp outlines, occasional flower/badge details, complete proportional images. Preserve unrelated styles.
+- Scope design to Lifestyle: Gloock upright headings (52px maximum, 36px mobile), Jost body, cream, lavender, pink accents, crisp outlines, occasional flower/badge details, complete proportional images. Preserve unrelated styles.
 
 ## Components and content compatibility
 - Shared frame, card grid, category navigation, disclosure, article. Reuse existing PinkFindsSignup once per page and existing footer/navigation.

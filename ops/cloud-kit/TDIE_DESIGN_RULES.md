@@ -1,18 +1,18 @@
 ## CURRENT FOUNDER RULES (Jodie, 10 October 2026, 7:55 pm). THESE OVERRIDE EVERYTHING BELOW AND IN ANY OTHER FILE.
-- Fonts: **Gloock** for headlines, **Yellowtail** ONLY for the one stressed word in a headline (mark it class="stress"), never every pink word, **Jost** for everything else. Newsreader and Inter are retired. Never use them.
+- Fonts: **Gloock** for headlines, **Yellowtail** ONLY for the one stressed word in a headline (mark it class="stress"), never every pink word, **Jost** for everything else.
 - Backgrounds: NEVER flat or plain, and HARD STOP: NEVER a full glitter background (no glitter texture tiled behind a whole section). Use soft brand colour (blush #FFF7FA, pink #FFE4EF, lavender #EAE5F8) with a white glow and soft-edged sparkle accents in the corners (/images/brand/sparkle-glow.webp). Full glitter only on the drip and small accents (stickers, badges, thin strips).
 - Lavender (#EAE5F8) IS an allowed background colour.
-- Any older line below that says "flat backgrounds", "solid blush", "glitter only as accents", "no lavender", "Newsreader" or "Inter" is superseded.
+- Any older line below that says "flat backgrounds", "solid blush", "glitter only as accents" or "no lavender" is superseded.
 
 # TDIE Design Rules (standing)
 
-> **FONTS, 10 October 2026 (Jodie):** headlines Gloock, everything else Jost. This replaces every Newsreader and Inter line below. No script on website headlines. No white text box over WYS example pin photos.
+> **FONTS, 10 October 2026 (Jodie):** headlines Gloock, everything else Jost. No script on website headlines. No white text box over WYS example pin photos.
 
 > **🖼️ IMAGE RULES (Jodie, 25 September 2026; pink rule corrected 26 September 2026). Read before any image prompt or generation.** Every image prompt and every generated image follows `claude/TDIE_IMAGE_GENERATION_MASTER.md`, which wins over anything older in this document. Canon beats generic words like "luxury" or "editorial": Tommy Kate is photographed in her own world (farmhouse, pink attic gaming loft, porch, kitchen, living room, pasture, red barn, garden beds, golden retriever), never a Paris apartment, café, marble office, mansion or influencer set. Every prompt with her in it opens: "Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference." Her locked features are never written in words, not even as "same face" or "same freckles". **The pink rule:** any frame with her in it (full body, hands or boots) always includes her glitter-flecked pink iced coffee tumbler with a lavender straw, and the tumbler is never the only pink item: her clothes can be candy pink and other pink pieces can be in the frame with her. A frame without her carries pink is freely allowed throughout the scene. Real lens and real light language, photorealism language, no text or logos in the photo. **Tool order (standing rule):** any image with the avatar or a person goes to Google Gemini first, reference sheet attached, while Gemini has credits, then Nano Banana Pro at 2K on Higgsfield, reference sheet attached. Any image with no person goes to Seedream 4.5 on Higgsfield. Garbled text or an unsatisfactory image re-runs on Nano Banana Pro at 2K on Higgsfield. No other image generator besides Midjourney, which is also allowed whenever an image would come out better there (standing rule, Jodie, 3 October 2026, section M of claude/TDIE_IMAGE_GENERATION_MASTER.md); never Canva.
 
 ### 4 October 2026 · THE LOOK (founder instruction, Decision 128). This wins over anything softer below.
 
-**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Newsreader SemiBold, upright, never italic; everything else is Inter, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
+**Latest founder clarification, 4 October 2026, 11:30 am Eastern:** The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or "luxury editorial". Headlines are Gloock, upright, never italic; everything else is Jost, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.
 
 Jodie, in her words: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. Loud, pink, sparkly, confident, girly. It has to read LUXURY, never cheap.
 
@@ -31,7 +31,7 @@ These override canon §8 "Type" and the Dark Chocolate palette row wherever they
 Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft world, the brand pinks on cream, with depth and something that pops. Jodie rejected six approaches in two days for being plain, flat, "AI-looking," too pink, or off-brand. When she rejects a style, change the approach itself, not only the colours or fonts. Never hand her the same layout twice.
 
 ## 1. Rejected, never again
-- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Newsreader SemiBold; everything else is Inter. No italic headlines.
+- Fraunces, Cormorant Garamond and Montserrat anywhere. Headlines must be upright Gloock; everything else is Jost. No italic headlines.
 - Painted florals, roses, gold swirls, gold foil decoration ("GAG"). Real flowers in a photo (lilacs, wildflowers) are part of her world and are fine.
 - Flat colour-block layouts ("plain, flat, boring").
 - Solid stone or single-colour backgrounds with no photo ("no depth, no visuals, nothing popping, plain, ugly, looks AI").
@@ -47,7 +47,7 @@ Every graphic must look like TDIE and Tommy Kate: her farmhouse and pink-loft wo
 - **Layout:** cream gradient scrim from the left holding the copy; Tommy Kate on the right. Brand line top-left: small pink dot plus "THE DIGITAL INCOME EDIT™" in wide-tracked caps.
 - **Cards:** frosted white glass with a thin gold border and deep soft pink-tinted shadows. One glossy hot pink gradient hero card per image with a light sheen.
 - **Stickers:** round white or bubblegum badges, tilted, dashed inner ring, pink type ("7 DAYS FREE", "1,200+ MEMBERS BUILDING"). Never over her face or body.
-- **Type:** Newsreader SemiBold headlines in near-black with the turn phrase in hot pink; Inter for everything else; kickers Inter Bold uppercase, wide tracking, pink.
+- **Type:** Gloock headlines in near-black with the turn phrase in hot pink; Jost for everything else; kickers Jost Bold uppercase, wide tracking, pink.
 - **CTA:** hot pink gradient pill button, white caps.
 - Render at 1600x900 @2x, export JPG quality 93 for Skool.
 

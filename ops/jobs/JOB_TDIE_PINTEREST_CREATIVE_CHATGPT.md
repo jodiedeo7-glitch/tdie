@@ -57,7 +57,7 @@ Use the exact Skool destination from the Pinterest router. No prices. No income 
 ### 4. Visual production
 Assign all ten canon layouts once per 10-pin batch.
 
-For non-person pins, create the complete flat-layer pin in the coding/container environment. Use Newsreader and Inter, current palette, depth, real content, and the TDIE lockup.
+For non-person pins, create the complete flat-layer pin in the coding/container environment. Use Gloock and Jost, current palette, depth, real content, and the TDIE lockup.
 
 For persona layouts:
 - create the full layout with an explicit photo frame

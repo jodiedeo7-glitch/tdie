@@ -30,7 +30,7 @@ Public API payloads and endpoints are unchanged. Email automations, checkout des
 
 ## Current sources and unresolved authority
 
-Read current `main` canon.json before this task, blob `152d63f597867fe1b88d97e5fb6b557efac28074`, and refreshed production source. The governing canon still names Newsreader/Inter; production AGENTS.md and design rules explicitly record Jodie's Gloock/Jost direction with scoped Yellowtail. This design follows the explicit founder direction. This change does not rewrite either governing file.
+Read current `main` canon.json before this task, blob `152d63f597867fe1b88d97e5fb6b557efac28074`, and refreshed production source. Fonts: Gloock headlines, Jost everything else, with scoped Yellowtail.
 
 The WYS master release HOLD conflicts with existing live promotional and timed checkout states, as recorded in the journey mapping. This visual pass does not resolve that conflict, release the product, change its generation workflow or activate new WYS promotions or checkout behavior. Existing WYS-specific page implementation is unchanged; its shared header/footer receives the common chrome corrections.
 

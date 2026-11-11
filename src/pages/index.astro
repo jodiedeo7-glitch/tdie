@@ -7,7 +7,7 @@ import "../styles/review-bubble.css";
 import "../styles/home-v11.css";
 // Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
 import "../styles/brand-fonts.css";
-import newsreader600 from "../assets/fonts/gloock-latin-400-normal.woff2?url";
+import gloock400 from "../assets/fonts/gloock-latin-400-normal.woff2?url";
 import inter400 from "../assets/fonts/jost-latin-400-normal.woff2?url";
 
 import { NAV, NAV_CTA, FOOTER, SOCIAL } from "../data/site.js";
@@ -96,7 +96,7 @@ const jsonLd = {
   <meta name="twitter:title" content="Build the whole business before anyone knows your name." />
   <meta name="twitter:description" content="The AI-built faceless business, built backwards: offer first, funnel second, automation third, audience last." />
   <meta name="twitter:image" content={OG_IMAGE} />
-  <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href={gloock400} crossorigin />
   <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>

@@ -4,7 +4,7 @@ Jodie's latest instructions govern these changes and supersede conflicting older
 
 - The shared Lifestyle Article component places every product list in a horizontal scrolling shelf immediately below the article introduction, before the scene photograph. All products, disclosures, variants, notes and existing shopping destinations are preserved. Pending destinations remain pending. Shelves support touch swiping, native keyboard scrolling, visible horizontal scrollbars and previous/next controls with boundary states.
 - Lifestyle and WYS frames render a complete decorative TDIE masthead above navigation, with live brand text and existing approved website photographs. The icing trim is only one element of the masthead.
-- Article photos are compact complete frames; wallpaper, titles and section spacing are reduced. Polaroid captions use Fredoka with sufficient specificity to override the global Inter rule.
+- Article photos are compact complete frames; wallpaper, titles and section spacing are reduced. Polaroid captions use Fredoka with sufficient specificity to override the global Jost rule.
 - The WYS kit appears directly after the hero. Its heading and descriptions are simplified, photo mats and nested frames removed, and guide disclosures retained.
 - Flower and sticker overlays are removed from WYS photographs. Instagram examples use the actual three photographs per look with existing carousel controls and captions. Shelf previews use those same actual photographs.
 

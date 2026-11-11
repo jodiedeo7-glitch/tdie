@@ -18,11 +18,11 @@ The final Japanese shop reference is a special case: borrow **only its shopping 
 
 | Supplied reference | What to carry into TDIE | TDIE interpretation |
 | --- | --- | --- |
-| Pastel loungewear boutique | Photo and copy share the hero; products become part of the section composition; stripes frame a process | Existing pink farmhouse photography beside upright Newsreader copy; colored mat; a small labeled process strip |
+| Pastel loungewear boutique | Photo and copy share the hero; products become part of the section composition; stripes frame a process | Existing pink farmhouse photography beside upright Gloock copy; colored mat; a small labeled process strip |
 | Retro pink Wix shop | Image-led category navigation, framed shelves, scalloped edges, confident shopping labels | Lifestyle category thumbnails from matching articles; pink/lavender frames; native swipe shelves; glossy pill actions |
 | Pink icing and sprinkles | Dimensional decorative trim with a clear silhouette | Occasional curved or scalloped section trim. No screenshot assets or checkerboard transparency baked into the site |
 | Pink gelato boutique | Hero focal point, product rows, contrasting collection sections and asymmetric mission block | Framed hero photography, a curated article shelf, photo-and-copy splits and a distinct invitation section |
-| Miss Eyelashes studio | Strong hierarchy and small menu details arranged with personality | Inter labels, file tabs, numbered badges, compact useful callouts and clear actions |
+| Miss Eyelashes studio | Strong hierarchy and small menu details arranged with personality | Jost labels, file tabs, numbered badges, compact useful callouts and clear actions |
 | MiniMaisy collection | Layered snapshots, playful collection structure, pink/lavender alternation and decorative edges | Real TDIE images in polaroid, double-rim and scalloped mats; alternate collection bands; restrained pearl badge |
 | Purple candy shop | Clear shelf rhythm and section-to-section variety | Lavender frame variants and an occasional ribbon, without switching TDIE’s main pink identity |
 | Japanese shop and closet layout | News/features → new arrivals → selected picks → swipe lookbook → individual article | Lifestyle hero → image-led categories → New in the edit → A few favorites → The pink closet → all articles |
@@ -31,7 +31,7 @@ The final Japanese shop reference is a special case: borrow **only its shopping 
 
 Use these colors consistently: Signature Hot Pink `#D62E73`, Bubblegum `#FF8AC2`, readable small pink text and white-button fill `#B8245F`, Lavender `#F1EAFB`, Cream `#FBF8F5`, near-black text `#1A1417`. Supporting mat colors include `#FFD4E6` and `#DFD0F4`; matching rims include `#E891B6` and `#C4AFE4`. Gold `#C8A96A` can appear as a thin line, never as a large fill or ornate floral treatment.
 
-Headlines are upright Newsreader SemiBold. Body copy, labels, navigation, numbers, prices and buttons use Inter. Preserve the headline lock: desktop H1 at most 52px, H2 at most 40px; mobile H1 30–36px and H2 26–30px. Headline emphasis inherits its parent’s size. No narrow 9ch stacks, italic headings, oversized price type or compressed lines.
+Headlines are upright Gloock. Body copy, labels, navigation, numbers, prices and buttons use Jost. Preserve the headline lock: desktop H1 at most 52px, H2 at most 40px; mobile H1 30–36px and H2 26–30px. Headline emphasis inherits its parent’s size. No narrow 9ch stacks, italic headings, oversized price type or compressed lines.
 
 Do not introduce Fraunces, Cormorant Garamond or Montserrat. Do not use brown or dark chocolate fills. Do not describe or design TDIE as minimalist, neutral, beige or quiet. Avoid a full pink wash over photographs, fake tiled glitter, flat clip-art star wallpaper, gold roses, and identical hard offset shadows on every card.
 
@@ -138,7 +138,7 @@ Continue the TDIE reference-led website facelift in the existing repository. Tre
 
 Read AGENTS.md and the THE LOOK section of ops/cloud-kit/TDIE_DESIGN_RULES.md. Read claude/WYS_REFERENCE_PACK_2026-10-07.md in full before WYS work. Inspect the actual worktree, current branch, live Cloudflare production state, existing changes and assets before editing. Preserve other work and resume checkpoints.
 
-Prioritize the complete WYS section: landing page, Look Inside and updates signup. Carry forward the existing facelift’s pink/lavender tokens, upright Newsreader SemiBold headlines, Inter body/labels/prices, dimensional actions and authorized photography. Study the supplied references’ composition, mats, layered frames, decorative detail, hierarchy and section variety. Every photo and major block needs a cute intentional treatment. Vary scalloped portraits, double frames, colored mats, file tabs, note sheets, tickets and polaroids by purpose; do not repeat one rounded card everywhere. Do not strip images for speed.
+Prioritize the complete WYS section: landing page, Look Inside and updates signup. Carry forward the existing facelift’s pink/lavender tokens, upright Gloock headlines, Jost body/labels/prices, dimensional actions and authorized photography. Study the supplied references’ composition, mats, layered frames, decorative detail, hierarchy and section variety. Every photo and major block needs a cute intentional treatment. Vary scalloped portraits, double frames, colored mats, file tabs, note sheets, tickets and polaroids by purpose; do not repeat one rounded card everywhere. Do not strip images for speed.
 
 Use the approved Pretty Wicked and Ghoul Fuel photographs, including the porch-door replacement. Do not repaint, regenerate or overwrite them. Preserve the original PNGs and use Astro responsive optimization. Clearly label AI styling inspiration and separate styling extras from selected product types. Look Inside shows the actual approved three-image examples; do not fabricate a customer dashboard, delivered kit, retailer photo or automation proof. The WYS updates route uses the existing Weekly Edit signup, clearly labeled as a newsletter subscription that reserves no WYS place or launch date. Keep its existing form destination and privacy behavior.
 

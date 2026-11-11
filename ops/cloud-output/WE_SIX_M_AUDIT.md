@@ -48,7 +48,7 @@ Written before any edit. Pages audited as built from commit `5b373b7`: `/shop/we
 
 ### Design (TDIE_DESIGN_RULES.md)
 - Near-flat: almost every block is a white card with a hairline on cream. No frosted cards, no tilted sticker badge, no glossy hot-pink hero card, headline has no hot-pink turn phrase (rules 2 "Cards", "Stickers", "Type").
-- Headline weight 300 (rules call for Newsreader SemiBold with the turn phrase in hot pink).
+- Headline weight 300 (rules call for Gloock with the turn phrase in hot pink).
 - Mobile: hero is ~3 phone screens tall before the first image; 10px and 10.5px mono labels are below comfortable reading size; sticky bar button is 11px.
 
 ## Preview page `/weekend-ecosystem/preview`
@@ -87,7 +87,7 @@ Written before any edit. Pages audited as built from commit `5b373b7`: `/shop/we
 2. **Doc of record missing.** `claude/TDIE_ECOSYSTEM_OBJECTION_SERIES.md` (the six email bodies) is not in this repo. The objections section is built from the canon rows (subject lines, objections, rules) and facts already on the sales page, not from the email bodies.
 
 ## What changed (27 Sep 2026)
-Both pages rebuilt on the One-Sentence Offer tool's visual system (frosted cards, glossy hot pink card, tilted stickers, pill CTA, Newsreader SemiBold with the turn phrase in hot pink).
+Both pages rebuilt on the One-Sentence Offer tool's visual system (frosted cards, glossy hot pink card, tilted stickers, pill CTA, Gloock with the turn phrase in hot pink).
 
 - **Magnet + Message:** both heroes open on the ideal state from the framework ("A business that keeps selling on the Tuesday you're too tired to post."). Sales page second section is Friday vs Sunday plus time, control and no-face cards. Module list, stats and inclusions moved below.
 - **Ask:** one CTA label everywhere, "Get my Weekend Ecosystem™", straight to the canon checkout link. Sales page: hero, after inclusions, after objections, close, mobile bar. Preview: after the prompts, close, mobile bar.

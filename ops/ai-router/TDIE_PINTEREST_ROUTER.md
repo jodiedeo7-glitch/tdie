@@ -72,7 +72,7 @@ Valid status values:
 ## Hard production rules
 - Destination: `https://www.skool.com/thedigitalincomeedit/about`
 - Canvas: 1000x1500
-- Fonts: Newsreader and Inter only
+- Fonts: Gloock and Jost only
 - Overlay: 3 to 5 words
 - Title: 60 to 100 characters
 - Description: 450 to 500 characters
