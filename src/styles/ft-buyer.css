@@ -559,3 +559,15 @@
 @media (max-width:1040px){.wys-world.ft .ft-how>i{margin-top:0}}
 @media (max-width:760px){.wys-world.ft .ft-dir a{grid-template-columns:54px minmax(0,1fr)}}
 .wys-world.ft .ft-head.wide{display:block}
+
+/* fixes after live review */
+.wys-world.ft .ft-polwide{max-width:380px;justify-self:center}
+@media (max-width:1040px){
+ .wys-world.ft .ft-dir{grid-template-columns:minmax(0,1fr)}
+ .wys-world.ft .ft-dir li:nth-child(2){border-top:1px solid var(--line)}
+ .wys-world.ft .ft-polwide{max-width:360px;justify-self:start}
+}
+@media (max-width:760px){
+ .wys-world.ft .ft-step.ft-withart>div[aria-hidden]:not(.ft-mini){display:none}
+ .wys-world.ft .ft-polwide{max-width:none}
+}
