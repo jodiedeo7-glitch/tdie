@@ -36,6 +36,9 @@ def F(name, size, var=None):
 ANT = lambda s: F('Anton-Regular.ttf', s)
 GLO = lambda s: F('Gloock-Regular.ttf', s)
 JOST = lambda s, v='SemiBold': F('Jost.ttf', s, v)
+SCRIPT = lambda s: F('yellowtail-latin-400-normal.ttf', s)
+BLUSH = (255, 196, 222)      # script accent colour
+CHAMP = (246, 226, 206)      # champagne hairlines
 
 
 def ease(p):
@@ -74,8 +77,27 @@ def label(text, f, fg='white', bg=None, padx=26, pady=14, glow_it=True):
     return L if (bg or not glow_it) else glow(L)
 
 
+def sentence(text):
+    t = text.lower(); t = t[:1].upper() + t[1:]
+    t = t.replace(' i ', ' I ').replace(' am.', ' AM.')
+    if t.startswith('i '): t = 'I ' + t[2:]
+    return t
+
+
 def big(text, size, fg='white', bg=None, max_w=980):
-    return label(text, fit_text(text, ANT, size, max_w - 60), fg, bg)
+    """Premium type (Jodie, 12 Nov 2026: "more premium/luxury looking with premium text").
+    Plain lines: Gloock serif, white, soft dark glow. Accent lines (any bg): blush Yellowtail script with a soft
+    deep-rose glow and a thin champagne underline, never a solid colour box."""
+    if bg is not None:
+        t = sentence(text)
+        f = fit_text(t, SCRIPT, int(size * 1.15), max_w - 80)
+        L = label(t, f, BLUSH, None, padx=24, pady=18, glow_it=False)
+        L = glow(L, (90, 10, 45), 16, 1.6)
+        d = ImageDraw.Draw(L); y = L.height - 34
+        d.line((L.width * 0.22, y, L.width * 0.78, y), fill=CHAMP + (210,), width=3)
+        return L
+    f = fit_text(text, GLO, int(size * 0.82), max_w - 60)
+    return label(text, f, fg, None)
 
 
 def stack(lines, gap=12):
@@ -147,13 +169,21 @@ def shade():
 def rose_backdrop(src):
     """The look's own photo, blurred, under a deep rose wash with a soft glow: rich, never flat."""
     b = cover_fit(src, 1.15).filter(ImageFilter.GaussianBlur(38))
-    wash = Image.new('RGBA', (W, H), (120, 22, 66, 175)); b.alpha_composite(wash)
+    wash = Image.new('RGBA', (W, H), (96, 18, 56, 140)); b.alpha_composite(wash)
     m = Image.new('L', (W, H), 0); ImageDraw.Draw(m).ellipse((-250, 250, 1330, 1450), fill=120)
     g = Image.new('RGBA', (W, H), (232, 90, 155, 255)); g.putalpha(m.filter(ImageFilter.GaussianBlur(220)))
     b.alpha_composite(g)
     v = Image.new('L', (1, H))
     for y in range(H): v.putpixel((0, y), int(110 * abs(y / H - 0.5) * 2) ** 1)
     vv = Image.new('RGBA', (W, H), (25, 6, 15, 255)); vv.putalpha(v.resize((W, H))); b.alpha_composite(vv)
+    import random; r = random.Random(7); sp = Image.new('RGBA', (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(sp)
+    for _ in range(70):
+        x, y = r.uniform(0, W), r.uniform(0, H)
+        if 260 < x < 820 and 300 < y < 1650 and r.random() < 0.8: continue   # keep sparkle to the edges
+        L = r.uniform(3, 10); a = r.randint(90, 200)
+        sd.line((x - L, y, x + L, y), fill=(255, 255, 255, a), width=2); sd.line((x, y - L, x, y + L), fill=(255, 255, 255, a), width=2)
+        sd.ellipse((x - 2, y - 2, x + 2, y + 2), fill=(255, 255, 255, 230))
+    b.alpha_composite(sp.filter(ImageFilter.GaussianBlur(0.6)))
     return b
 
 
@@ -185,6 +215,7 @@ def build(slug, hook_no):
         d.rectangle((60, 70, W - 60, 78), fill=(255, 255, 255, 80))
         d.rectangle((60, 70, 60 + (W - 120) * p, 78), fill=(255, 255, 255, 255))
         c.alpha_composite(glow(TAG, radius=8, strength=1.2), ((W - TAG.width) // 2 - 40, 52))
+        d.rectangle((34, 34, W - 34, H - 34), outline=CHAMP + (150,), width=2)
 
     # 1 hook on the Lifestyle photo
     s1 = [El(big(h1, 140), W / 2, 1010, 0.15, 0.4, 'up', 90), El(big(h2, 150, bg=PINK), W / 2, 1200, 0.9, 0.45, 'pop')]
@@ -199,7 +230,7 @@ def build(slug, hook_no):
     for k, lab in (('basic', 'BASIC'), ('styled', 'STYLED'), ('lifestyle', 'LIFESTYLE'), ('roundup', 'ROUNDUP'), ('foundit', 'FOUND IT')):
         im = ph[k]; w = 540; p = im.resize((w, int(w * im.height / im.width)), Image.LANCZOS).convert('RGBA')
         card = Image.new('RGBA', (w + 20, p.height + 20), (255, 255, 255, 255)); card.paste(p, (10, 10))
-        tg = pill(lab, lf, PINK, (255, 255, 255), 30, 14); card.alpha_composite(tg, (30, card.height - tg.height - 30))
+        tg = pill(lab, lf, (255, 255, 255), (40, 14, 26, 215), 30, 14); card.alpha_composite(tg, (30, card.height - tg.height - 30))
         cards.append(shadow(card))
     name_line = label(title, fit_text(title, lambda s: JOST(s, 'Medium'), 40, 900), padx=0, pady=0)
     s2 = [El(big('ONE LOOK.', 165), W / 2, 270, 0.05, 0.35, 'pop'),
@@ -245,7 +276,7 @@ def build(slug, hook_no):
     s5 = [El(glow(name, (60, 10, 30), 18, 1.3), W / 2, 470, 0.1, 0.5, 'pop'),
           El(big('IT RUNS ITSELF.', 112, fg=PINK, bg=(255, 255, 255)), W / 2, 760, 0.6, 0.35, 'pop'),
           El(lst, W / 2, 1010, 1.0, 0.5, 'up', 40),
-          El(pill('DETAILS IN MY BIO', JOST(46, 'Bold'), PINK, (255, 255, 255)), W / 2, 1265, 1.5, 0.4, 'pop'),
+          El(pill('SEE HOW IT WORKS', JOST(44, 'SemiBold'), INK, (255, 244, 249)), W / 2, 1265, 1.5, 0.4, 'pop'),
           El(label('Built on Claude. ChatGPT version on the way.', JOST(30, 'Medium'), padx=0, pady=0), W / 2, 1395, 1.9, 0.5, 'up', 20)]
     def f5(t):
         c = B5.copy()
