@@ -1,5 +1,5 @@
 // Pure compatibility and publication rules for the existing Lifestyle JSON system.
-export const IMAGE_ROLES = new Set(['basic', 'styled', 'lifestyle']);
+export const IMAGE_ROLES = new Set(['basic', 'styled', 'lifestyle', 'roundup', 'foundit']);
 export const AFFILIATE_STATES = new Set(['verified', 'none', 'pending', 'legacy']);
 // Walmart Creator and Sam's Club Creator destinations (added 11 Nov 2026 for the Walmart + Sam's Club nightly build).
 export const OTHER_STORE_HOSTS = ['www.walmart.com', 'walmart.com', 'walmrt.us', 'www.samsclub.com', 'samsclub.com', 'samsclub.co'];
@@ -44,7 +44,7 @@ export function normalizeLook(record, imageFor, categories, { preview = false } 
     if (!image.alt?.trim()) fail(`image ${image.file} requires alt text`);
     if (image.order !== undefined && !Number.isFinite(image.order)) fail('image order must be numeric');
     const role = image.role || (/-flatlay\./i.test(image.file) ? 'basic' : /-lifestyle\./i.test(image.file) ? 'lifestyle' : 'styled');
-    const fallback = role === 'basic' ? 'The arrangement, with contextual styling extras. Shop the listed products below.' : role === 'styled' ? 'The finished styling, shown as generated inspiration.' : record.category === 'clothing' ? 'The outfit styled on Tommy Kate, our AI model.' : 'A lifestyle view of the setting, shown as generated inspiration.';
+    const fallback = role === 'roundup' ? 'Every find in one place.' : role === 'foundit' ? 'The standout find.' : role === 'basic' ? 'The arrangement, with contextual styling extras. Shop the listed products below.' : role === 'styled' ? 'The finished styling, shown as generated inspiration.' : record.category === 'clothing' ? 'The outfit styled on Tommy Kate, our AI model.' : 'A lifestyle view of the setting, shown as generated inspiration.';
     return { ...image, role, caption: image.caption || fallback, order: image.order ?? index, src };
   }).sort((a, b) => a.order - b.order);
   const images = declaredImages.filter(image => image.src);
