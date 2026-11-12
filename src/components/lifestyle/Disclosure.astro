@@ -1,7 +1,9 @@
 ---
 import { DISCLOSURE, IMAGE_NOTICE } from '../../data/lifestyle.js';
+// Walmart and Sam's Club posts pass their own store disclosure (12 Nov 2026); everything else keeps the Amazon line.
+const { text = '' } = Astro.props;
 ---
-<aside class="tdie-page-disclaimer" aria-label="Affiliate and image disclosure"><small>{DISCLOSURE} {IMAGE_NOTICE}</small></aside>
+<aside class="tdie-page-disclaimer" aria-label="Affiliate and image disclosure"><small>{text || DISCLOSURE} {IMAGE_NOTICE}</small></aside>
 <style>
 .tdie-page-disclaimer{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;margin:24px 0 0;box-shadow:none!important;text-align:left}
 .tdie-page-disclaimer small{display:block;font:400 12px/1.6 Jost,sans-serif!important;color:#65545e;max-width:100ch}
