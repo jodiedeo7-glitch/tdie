@@ -306,6 +306,11 @@ Instagram:
 - CTA points to the link in bio
 - Story link stickers are the exception
 
+Instagram trigger words (Jodie, 12 Nov 2026):
+- reuse one small fixed set of 5 to 6 trigger words across the month instead of a new word per Reel; each word always sends the same product, and a Reel only uses a word whose product fits what that Reel teaches
+- the line right after the trigger-word call to action always asks people to follow, so the DM can reach them, in the Reel's own caption voice, e.g. "Comment START and I'll send you my free Weekend Build Challenge. Make sure you're following me so I can send it to you 🤍"
+- the trigger word's auto-DM must be set up and live before the Reel posts
+
 Facebook adaptations:
 - no link in the post body
 - link goes in the first comment
@@ -341,6 +346,8 @@ Reject or rewrite any calendar entry where:
 - a static prompt assumes Jodie's private reference files
 - the creative decision lacks research support where research is claimed
 - an Instagram caption contains a link
+- a trigger-word call to action is not followed by a line asking people to follow so the DM can reach them
+- a trigger word is outside the month's fixed set, or its product does not fit the Reel
 - an illegal or invented claim is introduced
 - an offer violates spread rules
 - the monthly total or date coverage does not match one Instagram day and two member Threads posts per calendar day of the covered month
