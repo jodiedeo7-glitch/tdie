@@ -48,7 +48,7 @@ Reference images Jodie shares are for feel and layout only. Never take their col
 - No glitter triangles. No blurry "spray paint" glitter circles.
 
 ## Real textures, never drawn in code
-Glitter, torn paper, tape and Polaroid frames must be real image files. Never fake them with code-drawn shapes, gradients or sparkle. Real files already on the site: `public/images/brand/silver-glitter-tile.webp`, `sparkle-scatter.webp`, `sparkle-glow.webp`. If a texture is missing, get a real one (Canva elements first) and show Jodie before using it.
+Glitter, torn paper, tape and Polaroid frames must be real image files. Never fake them with code-drawn shapes, gradients or sparkle. Real files already on the site: `public/images/brand/silver-glitter-tile.webp`, `sparkle-scatter.webp`, `sparkle-glow.webp`. Real photographed pieces pulled from Canva on 11 November 2026, in the same folder, all with see-through backgrounds: `real-torn-paper-strip.webp` (torn paper strip), `real-torn-edge-pink.webp` (torn top edge, pink), `real-notebook-paper.webp` (lined notebook page), `real-polaroid-frame.webp` (real Polaroid, photo window see-through so a photo sits behind it). Use these instead of drawing paper or Polaroids in code. The glitter tape is not in this set because it stays exactly as it is. Source board in Canva: design DAHaqAbHxWI, "TDIE Real Textures". If a texture is missing, get a real one (Canva elements first) and show Jodie before using it.
 
 ## Photos and frames
 - Frames match the photo's shape. Never crop a portrait photo into a square.
