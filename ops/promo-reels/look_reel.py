@@ -1,7 +1,9 @@
 """One promo Reel for The While-You-Sleep Storefront, made from ONE look's full photo set.
 
 Usage: python3 look_reel.py <slug> <hook 1-4> <out_dir>
-Reads src/lifestyle/<slug>.json and <slug>-basic.jpg / -styled.jpg / -lifestyle.jpg from the repo.
+Reads src/lifestyle/<slug>.json and <slug>-basic.jpg / -styled.jpg / -lifestyle.jpg, plus the look's Roundup and Found It
+pins from public/wys-pins/<slug>/roundup.jpg and found-it.jpg (or ops/wys/newpins/*_<slug_with_underscores>_roundup.jpg / _foundit.jpg).
+All five are required (Jodie, 12 Nov 2026: every look has 5 photos; never show a partial set). Seasonal looks are not used.
 Writes <out_dir>/<slug>-reel.mp4 (1080x1920, 30 fps, about 23 s, silent) and <slug>-reel-cover.jpg.
 Approved design: Jodie picked the "bold" promo (12 Nov 2026). No flat pink backgrounds, lists stacked
 with dashes, product name big on the end card, text kept clear of the Instagram caption and buttons.
@@ -155,14 +157,28 @@ def rose_backdrop(src):
     return b
 
 
+def extra_photos(slug):
+    import glob
+    out = {}
+    for key, a, b in (('roundup', 'roundup.jpg', '_roundup.jpg'), ('foundit', 'found-it.jpg', '_foundit.jpg')):
+        p = os.path.join(REPO, 'public', 'wys-pins', slug, a)
+        if not os.path.exists(p):
+            g = glob.glob(os.path.join(REPO, 'ops', 'wys', 'newpins', '*_' + slug.replace('-', '_') + b))
+            if not g: raise SystemExit(f'MISSING {key} photo for {slug}: needs all 5 photos')
+            p = g[0]
+        out[key] = Image.open(p).convert('RGB')
+    return out
+
+
 def build(slug, hook_no):
     meta = json.load(open(os.path.join(REPO, 'src', 'lifestyle', slug + '.json')))
     title = meta.get('title') or slug.replace('-', ' ').title()
     ph = {k: Image.open(os.path.join(REPO, 'src', 'lifestyle', f'{slug}-{k}.jpg')).convert('RGB') for k in ('basic', 'styled', 'lifestyle')}
+    ph.update(extra_photos(slug))
     h1, h2 = HOOKS[hook_no]
     SH = shade()
     TAG = label('THE WHILE-YOU-SLEEP STOREFRONT™', JOST(30, 'Bold'), glow_it=False, padx=0, pady=0)
-    durs = [4.0, 5.4, 4.6, 3.8, 5.6]; total = sum(durs); starts = [sum(durs[:i]) for i in range(5)]
+    durs = [4.0, 7.6, 4.6, 3.8, 5.6]; total = sum(durs); starts = [sum(durs[:i]) for i in range(5)]
 
     def chrome(c, si, t):
         p = min(1, (starts[si] + t) / total); d = ImageDraw.Draw(c)
@@ -177,26 +193,26 @@ def build(slug, hook_no):
         for e in s1: e.draw(c, t)
         chrome(c, 0, t); return c
 
-    # 2 one look, three ways (full set), on the look's own blurred photo
+    # 2 one look, five ways (full set), on the look's own blurred photo
     B2 = rose_backdrop(ph['lifestyle'])
     lf = JOST(32, 'Bold'); cards = []
-    for k, lab in (('basic', 'BASIC'), ('styled', 'STYLED'), ('lifestyle', 'LIFESTYLE')):
+    for k, lab in (('basic', 'BASIC'), ('styled', 'STYLED'), ('lifestyle', 'LIFESTYLE'), ('roundup', 'ROUNDUP'), ('foundit', 'FOUND IT')):
         im = ph[k]; w = 540; p = im.resize((w, int(w * im.height / im.width)), Image.LANCZOS).convert('RGBA')
         card = Image.new('RGBA', (w + 20, p.height + 20), (255, 255, 255, 255)); card.paste(p, (10, 10))
         tg = pill(lab, lf, PINK, (255, 255, 255), 30, 14); card.alpha_composite(tg, (30, card.height - tg.height - 30))
         cards.append(shadow(card))
     name_line = label(title, fit_text(title, lambda s: JOST(s, 'Medium'), 40, 900), padx=0, pady=0)
     s2 = [El(big('ONE LOOK.', 165), W / 2, 270, 0.05, 0.35, 'pop'),
-          El(big('THREE WAYS.', 165, fg=PINK, bg=(255, 255, 255)), W / 2, 465, 0.4, 0.35, 'pop'),
+          El(big('FIVE WAYS.', 165, fg=PINK, bg=(255, 255, 255)), W / 2, 465, 0.4, 0.35, 'pop'),
           El(name_line, W / 2, 600, 0.7, 0.4, 'up', 30)]
     def f2(t):
         c = B2.copy()
         for e in s2: e.draw(c, t)
         for i, card in enumerate(cards):
-            st = 0.9 + i * 1.35
+            st = 0.9 + i * 1.3
             if t < st: continue
             x = W / 2 + (1 - ease((t - st) / 0.5)) * W
-            if i < 2 and t > st + 1.35: x = W / 2 - ease((t - st - 1.35) / 0.5) * W
+            if i < len(cards) - 1 and t > st + 1.3: x = W / 2 - ease((t - st - 1.3) / 0.5) * W
             c.alpha_composite(card, (int(x - card.width / 2), 1110 - card.height // 2))
         chrome(c, 1, t); return c
 
@@ -225,7 +241,7 @@ def build(slug, hook_no):
     B5 = rose_backdrop(ph['styled'])
     name = stack([('The While-You-Sleep', GLO(96), (255, 255, 255)), ('Storefront™', GLO(132), (255, 255, 255))], gap=8)
     lst = stack([(t, JOST(42, 'Medium'), (255, 255, 255)) for t in
-                 ('– 2 new looks a night', '– the Pinterest pins', '– 2 blog posts', '– 2 Instagram carousels')], gap=16)
+                 ('– 2 new looks a night', '– 5 photos per look', '– the Pinterest pins', '– 2 blog posts', '– 2 Instagram carousels')], gap=16)
     s5 = [El(glow(name, (60, 10, 30), 18, 1.3), W / 2, 470, 0.1, 0.5, 'pop'),
           El(big('IT RUNS ITSELF.', 112, fg=PINK, bg=(255, 255, 255)), W / 2, 760, 0.6, 0.35, 'pop'),
           El(lst, W / 2, 1010, 1.0, 0.5, 'up', 40),
