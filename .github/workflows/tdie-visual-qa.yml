@@ -1,0 +1,35 @@
+name: TDIE visual QA
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'ops/visual-qa/**'
+      - '.github/workflows/tdie-visual-qa.yml'
+permissions:
+  contents: read
+jobs:
+  website-screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Audit public site at desktop and mobile widths
+        run: node ops/visual-qa/audit.mjs --site https://www.thedigitalincomeedit.com --out visual-qa-output
+      - name: Upload screenshots and report even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tdie-visual-qa
+          path: visual-qa-output/
+          if-no-files-found: warn
