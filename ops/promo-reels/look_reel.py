@@ -5,7 +5,10 @@ Reads src/lifestyle/<slug>.json and <slug>-basic.jpg / -styled.jpg / -lifestyle.
 pins from public/wys-pins/<slug>/roundup.jpg and found-it.jpg (or ops/wys/newpins/*_<slug_with_underscores>_roundup.jpg / _foundit.jpg).
 All five are required (Jodie, 12 Nov 2026: every look has 5 photos; never show a partial set). Seasonal looks are not used.
 Writes <out_dir>/<slug>-reel.mp4 (1080x1920, 30 fps, about 23 s, silent) and <slug>-reel-cover.jpg.
-Approved design: Jodie picked the "bold" promo (12 Nov 2026). No flat pink backgrounds, lists stacked
+Approved design: the PREMIUM version (Jodie, 12 Nov 2026: "Love it!"), built on the "bold" promo she picked earlier that day:
+Gloock serif headlines, blush Yellowtail script accent lines with a centred champagne underline (no solid colour boxes),
+a lone capital I in a script line is set in Gloock, champagne hairline frame, soft silver sparkle at the edges,
+"See how it works" end button. No flat pink backgrounds, lists stacked
 with dashes, product name big on the end card, text kept clear of the Instagram caption and buttons.
 """
 import os, sys, json, math, subprocess
@@ -91,10 +94,26 @@ def big(text, size, fg='white', bg=None, max_w=980):
     if bg is not None:
         t = sentence(text)
         f = fit_text(t, SCRIPT, int(size * 1.15), max_w - 80)
-        L = label(t, f, BLUSH, None, padx=24, pady=18, glow_it=False)
-        L = glow(L, (90, 10, 45), 16, 1.6)
-        d = ImageDraw.Draw(L); y = L.height - 34
-        d.line((L.width * 0.22, y, L.width * 0.78, y), fill=CHAMP + (210,), width=3)
+        # centre on the ink itself (script glyphs overhang their box), then add the underline below the lowest stroke
+        d0 = ImageDraw.Draw(Image.new('RGBA', (5, 5))); b = d0.textbbox((0, 0), t, font=f)
+        tw, th = b[2] - b[0], b[3] - b[1]; gap, lh = 16, 3
+        T = Image.new('RGBA', (tw + 48, th + gap + lh + 36), (0, 0, 0, 0)); dt = ImageDraw.Draw(T)
+        # Yellowtail's capital I reads like a slash, so a lone "I" is set in Gloock on the same baseline
+        gi = GLO(int(f.size * 0.84)); base = 18 - b[1] + f.getmetrics()[0]; x = 24 - b[0]
+        for k, word in enumerate(t.split(' ')):
+            wf = gi if word == 'I' else f
+            dt.text((x, base), word, font=wf, fill=BLUSH, anchor='ls')
+            x += dt.textlength(word + ' ', font=wf) if wf is f else dt.textlength(word, font=wf) + dt.textlength(' ', font=f)
+        ink = T.getchannel('A').getbbox()
+        if ink:  # re-centre horizontally on the drawn ink
+            shift = int((T.width - (ink[0] + ink[2])) / 2)
+            if shift:
+                T2 = Image.new('RGBA', T.size, (0, 0, 0, 0)); T2.alpha_composite(T, (max(0, shift), 0) if shift > 0 else (0, 0), (0, 0) if shift > 0 else (-shift, 0, T.width, T.height)); T = T2
+            ink = T.getchannel('A').getbbox()
+        y = (ink[3] if ink else 18 + th) + gap
+        L = glow(T, (90, 10, 45), 16, 1.6)
+        d = ImageDraw.Draw(L); cx = L.width / 2; half = min(tw, 900) * 0.32; y += 40
+        d.line((cx - half, y, cx + half, y), fill=CHAMP + (220,), width=lh)
         return L
     f = fit_text(text, GLO, int(size * 0.82), max_w - 60)
     return label(text, f, fg, None)
@@ -235,7 +254,7 @@ def build(slug, hook_no):
     name_line = label(title, fit_text(title, lambda s: JOST(s, 'Medium'), 40, 900), padx=0, pady=0)
     s2 = [El(big('ONE LOOK.', 165), W / 2, 270, 0.05, 0.35, 'pop'),
           El(big('FIVE WAYS.', 165, fg=PINK, bg=(255, 255, 255)), W / 2, 465, 0.4, 0.35, 'pop'),
-          El(name_line, W / 2, 600, 0.7, 0.4, 'up', 30)]
+          El(name_line, W / 2, 628, 0.7, 0.4, 'up', 30)]
     def f2(t):
         c = B2.copy()
         for e in s2: e.draw(c, t)
