@@ -1,13 +1,16 @@
 // Pure compatibility and publication rules for the existing Lifestyle JSON system.
 export const IMAGE_ROLES = new Set(['basic', 'styled', 'lifestyle']);
 export const AFFILIATE_STATES = new Set(['verified', 'none', 'pending', 'legacy']);
+// Walmart Creator and Sam's Club Creator destinations (added 11 Nov 2026 for the Walmart + Sam's Club nightly build).
+export const OTHER_STORE_HOSTS = ['www.walmart.com', 'walmart.com', 'walmrt.us', 'www.samsclub.com', 'samsclub.com', 'samsclub.co'];
+export const storeOf = (link) => { try { const h = new URL(link).hostname; return /walmart|walmrt/.test(h) ? 'Walmart' : /samsclub/.test(h) ? "Sam's Club" : 'Amazon'; } catch { return 'Amazon'; } };
 export const isDraft = (record) => ['draft', 'STAGED_NOT_PUBLIC'].includes(record.status) || record.draft === true;
 
 export function shoppingUrl(value) {
   try {
     const url = new URL(value);
     return url.protocol === 'https:' && !url.username && !url.password &&
-      (['amzn.to', 'link.amazon', 'amazon.com', 'www.amazon.com'].includes(url.hostname)) ? url : null;
+      (['amzn.to', 'link.amazon', 'amazon.com', 'www.amazon.com', ...OTHER_STORE_HOSTS].includes(url.hostname)) ? url : null;
   } catch { return null; }
 }
 
@@ -57,6 +60,8 @@ export function normalizeLook(record, imageFor, categories, { preview = false } 
   if (images.filter(image => image.hero).length > 1) fail('only one hero image is allowed');
   if (record.ideaList && (!shoppingUrl(record.ideaList) || !/^\/shop\/[^/]+\/list\/[^/]+\/?$/.test(new URL(record.ideaList).pathname) || !['www.amazon.com', 'amazon.com'].includes(new URL(record.ideaList).hostname))) fail('invalid Idea List destination');
   if (record.ideaListStatus && !['verified', 'pending', 'legacy'].includes(record.ideaListStatus)) fail('invalid ideaListStatus');
+  if (record.storeCollection && (!shoppingUrl(record.storeCollection) || storeOf(record.storeCollection) === 'Amazon')) fail('invalid store collection destination');
+  if (record.storeDisclosure !== undefined && (typeof record.storeDisclosure !== 'string' || !record.storeDisclosure.trim())) fail('storeDisclosure must be text');
   if (!isDraft(record) && record.ideaListStatus === 'pending' && (record.shoppingStatus !== 'pending' || record.ideaList)) fail('pending Idea List; keep the article draft');
   if (record.sections && !record.sections.every(s => s.heading && Array.isArray(s.paragraphs) && s.paragraphs.every(p => typeof p === 'string' && p.trim()))) fail('sections require a heading and paragraphs');
   const hero = images.find(image => image.hero) || images.find(image => image.role === 'styled') || images.find(image => image.role === 'lifestyle') || images[0];
