@@ -9,7 +9,7 @@ Rewritten 11 November 2026 on Jodie's instruction to overwrite and delete every 
 - Photo and image-prompt rules (Tommy Kate, generators, the tumbler) are not here. They live in TDIE_IMAGE_GENERATION_MASTER.md.
 
 ## The look
-Scrapbook glam: loud, pink, sparkly, confident, girly, grown-up and premium. Layered and textured: torn paper, real Polaroids with glitter tape, notebook-paper cards, contrast borders, shadow boxes, detail. NOTHING CHILDISH. Never minimalist, beige, neutral or quiet.
+SCRAPBOOK IS OUT (Jodie, 11 November 2026: "Ugly. Forget the scrapbook, forget the notebook, forget all of it."). No scrapbook collage, notebook paper, torn paper or Polaroid layouts on flyers or pages. The new look is not decided yet. Do not invent one: ask Jodie before any new design work.
 
 Reference images Jodie shares are for feel and layout only. Never take their colours. Never copy them.
 
@@ -47,8 +47,8 @@ Reference images Jodie shares are for feel and layout only. Never take their col
 - The glitter tape stays exactly as it is. Do not lighten or restyle it.
 - No glitter triangles. No blurry "spray paint" glitter circles.
 
-## Real textures, never drawn in code
-Glitter, torn paper, tape and Polaroid frames must be real image files. Never fake them with code-drawn shapes, gradients or sparkle. Real files already on the site: `public/images/brand/silver-glitter-tile.webp`, `sparkle-scatter.webp`, `sparkle-glow.webp`. Real photographed pieces pulled from Canva on 11 November 2026, in the same folder, all with see-through backgrounds: `real-torn-paper-strip.webp` (torn paper strip), `real-torn-edge-pink.webp` (torn top edge, pink), `real-notebook-paper.webp` (lined notebook page), `real-polaroid-frame.webp` (real Polaroid, photo window see-through so a photo sits behind it). Use these instead of drawing paper or Polaroids in code. The glitter tape is not in this set because it stays exactly as it is. Source board in Canva: design DAHaqAbHxWI, "TDIE Real Textures". If a texture is missing, get a real one (Canva elements first) and show Jodie before using it.
+## Textures
+Glitter must be a real image file, never drawn in code. The torn paper, notebook and Polaroid files in public/images/brand (real-*.webp) are NOT to be used: the scrapbook look is out.
 
 ## Photos and frames
 - Frames match the photo's shape. Never crop a portrait photo into a square.
