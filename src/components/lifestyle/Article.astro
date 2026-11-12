@@ -20,11 +20,13 @@ const draft = look.status === 'draft';
 const completeExample = ['pretty-wicked-entryway','ghoul-fuel-coffee-bar'].includes(look.slug);
 const photoCaption = (image) => {
   if (completeExample) return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' ? look.slug === 'ghoul-fuel-coffee-bar' ? 'Coffee with Tommy Kate' : 'Tommy Kate at the door' : 'The styled scene';
+  if (image.role === 'roundup') return 'Every find in one place';
+  if (image.role === 'foundit') return 'The standout find';
   if (image.caption && !/generated inspiration|AI model|styling extras|contextual styling|shop the listed/i.test(image.caption)) return image.caption;
   return image.role === 'basic' ? `${look.items.length} selected finds` : image.role === 'lifestyle' && look.category === 'clothing' ? 'Tommy Kate wearing the look' : image.role === 'lifestyle' ? 'Tommy Kate at home' : 'The styled scene';
 };
-// Jodie's standing rule: photos always run Basic, then Styled, then Lifestyle.
-const roleOrder = ['basic', 'styled', 'lifestyle'];
+// Jodie's standing rule: photos always run Basic, then Styled, then Lifestyle; the Roundup and Found It pins follow (Jodie, 12 Nov 2026: every post carries all the images).
+const roleOrder = ['basic', 'styled', 'lifestyle', 'roundup', 'foundit'];
 const rank = (image) => { const i = roleOrder.indexOf(image.role); return i < 0 ? roleOrder.length : i; };
 const photos = look.images.map((image, i) => ({ image, i })).sort((a, b) => rank(a.image) - rank(b.image) || a.i - b.i).map(({ image }) => image);
 // Twinkle stars sit on the frame border and bottom strip only, never on the photo.
