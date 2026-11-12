@@ -15,7 +15,7 @@ It does NOT govern:
 Those systems remain separate.
 
 ## World (Jodie, 2 October 2026, Decision 124)
-Every calendar image and video prompt follows `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`: Tommy Kate's real life, every named object repeated, including the Hello Kitty and Kuromi plushies in her loft. The Daily Edits look (`ops/cloud-kit/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`) is never used here. Side-by-side: `ops/cloud-kit/TDIE_DFY_CALENDAR_VS_DAILY_EDITS.md`.
+Every calendar image and video prompt follows `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`: Tommy Kate's real life, every named object repeated, including the Hello Kitty and Kuromi plushies in her loft. The Daily Edits look (`ops/cloud-kit/TDIE_DAILY_EDITS_UNIVERSAL_LOOK.md`) is never used here. Side-by-side: `ops/cloud-kit/TDIE_DFY_CALENDAR_VS_DAILY_EDITS.md`. Every calendar image and video prompt also ends with the PHOTO LOOK block from section 3A of that World file (Jodie, 12 Nov 2026).
 
 ## Canon
 Follow `ops/canon/canon.json` → `content_calendar_rules` and Decisions 80, 111, 115, 117 in `ops/canon/TDIE_CANON.md`.

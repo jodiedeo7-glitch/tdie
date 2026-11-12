@@ -145,6 +145,8 @@ Do not add generator-specific syntax unless the calendar explicitly labels it as
 
 Do not request generated lettering in a photographic image unless the asset itself specifically requires in-image text.
 
+**Photo look, required (Jodie, 12 November 2026):** every static, start-frame, cover and Reel video prompt ends with the PHOTO LOOK block and the matching scene line from section 3A of `ops/cloud-kit/TDIE_DFY_CALENDAR_TOMMY_KATE_WORLD.md`, copied word for word. A prompt without it fails QA. It is model-agnostic plain language, not generator syntax.
+
 ## 6. Research gate and viral inspiration corpus
 
 The research phase has TWO distinct jobs. Do not confuse them.
@@ -367,6 +369,7 @@ Reject or rewrite any calendar entry where:
 - an illegal or invented claim is introduced
 - an offer violates spread rules
 - the monthly total or date coverage does not match one Instagram day and two member Threads posts per calendar day of the covered month
+- any image or video prompt is missing the PHOTO LOOK block or its scene line (World file section 3A)
 
 ## 13. Relationship to the general image master
 

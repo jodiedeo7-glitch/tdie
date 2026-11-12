@@ -68,6 +68,29 @@ Name these exactly as written. Never write one from memory and never swap one fo
 
 ---
 
+## 3A. The photo look: required in every calendar image and video prompt (Jodie, 12 November 2026)
+
+**Standing rule, not a one-off.** Every Premium DFY Content Calendar prompt that makes a photo or video (start frames, covers, static posts, carousel slides, story frames, Version A and Version B Reel video prompts) ends with the PHOTO LOOK block below, copied word for word. It goes after the scene and before the no-words / no-logos line. It does not change the scene, the Reel, the hook, the text or her world; it only makes the picture look like a real, beautiful photograph.
+
+Why (Jodie's grid, 12 Nov 2026): the images that look best (the pink-door porch, the wheelbarrow of leaves) have soft film colour, real texture and natural depth. The ones that look worst have airbrushed plastic skin, studio light on her face that does not match the scene so she looks pasted in, flat grey light that turns the blush kitchen muddy, everything equally sharp like a 3D render, and an oversaturated dollhouse farmhouse with plastic-looking flowers.
+
+**PHOTO LOOK block (copy exactly):**
+
+> Shot on a full-frame camera with a 35mm lens at f/2.0, soft natural depth of field so she separates gently from the background. Bright, warm, directional window or sun light with real falloff and soft shadows; the light on her face and body matches the scene exactly. Colour graded like Kodak Portra 400 film: creamy highlights, warm natural skin, blush pinks that glow warm rather than go grey or muddy, candy-pink pieces staying rich and true, gentle contrast, never oversaturated. Natural skin texture with visible pores and fine detail, no airbrushing, no beauty filter. Lived-in surfaces with real wear, subtle film grain, slight natural lens imperfection. An editorial lifestyle photograph, not a 3D render or an AI image.
+
+For frames without her, drop the two clauses about her ("so she separates gently from the background" becomes "so the main object separates gently from the background"; drop "the light on her face and body matches the scene exactly" and the skin sentence). For video prompts, keep the whole block and add: "Real handheld-steady camera, natural motion blur, no warping."
+
+**Add the matching scene line too** (one per prompt, placed with the scene description):
+- Farmhouse kitchen: bright morning sun streaming through the window, warm light pooling on the butcher block, blush cabinets glowing warm pink.
+- Farmhouse exterior or porch: weathered white paint, natural uneven garden, believable real roses, slight asymmetry, soft hazy daylight.
+- Close or face-forward frames of her: candid moment, natural expression, soft window light on her face, not looking into the lens.
+- Fields, pasture and outdoors: golden-hour backlight, soft haze, light glowing through her hair.
+- Pink attic loft at night: rich warm lamplight plus the soft pink PC glow, deep but clean shadows, never murky.
+
+This sits alongside section 1 (bright, high-key, confident self-made luxury, one sparkle moment). Where they seem to differ, both hold: bright and high-key, with the warm film colour above, and candy-pink named items stay saturated.
+
+---
+
 ## 4. The repetition rule
 
 Every characteristic above is remembered and repeated across the month. Nothing on the list may go missing for a whole month.
