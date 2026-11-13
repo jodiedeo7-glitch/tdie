@@ -48,6 +48,11 @@ export const SECTIONS = [
     help: 'Not sure? Sign in to Amazon, open your storefront and look for Create an Idea List. If it\u2019s there, pick the first answer. Links only? Each pin links to a blog post on your own site instead of an Idea List, so blog posts have to be on (automatic or by hand). Not approved yet? The Get Approved page walks you through it; switch this answer when you can make Idea Lists.'},
    {id: 'storefront', label: 'Your Amazon storefront address', type: 'text', ph: 'https://www.amazon.com/shop/yourname', show: 'amazon=influencer', help: 'Or press Do it for me and it finds it for you.'},
    {id: 'tag', label: 'Your Amazon tracking ID', type: 'text', ph: 'yourname-20', help: 'It ends in -20 and shows in the SiteStripe bar at the top of any Amazon page while you are signed in. Or press Do it for me.'},
+   {id: 'walmart', label: 'Walmart Creator looks', type: 'radio', options: [['off', 'Off'], ['on', 'On: I\u2019m approved for Walmart Creator']], def: 'off',
+    help: 'On adds one Walmart look every night, linked to collections on your Walmart Storefront. Not approved yet? The Get Approved page walks you through it.'},
+   {id: 'walmartStore', label: 'Your Walmart Storefront address', type: 'text', ph: 'https://www.walmart.com/creator/storefront/yourname', show: 'walmart=on', help: 'Or press Do it for me and it finds it for you.'},
+   {id: 'sams', label: 'Sam\u2019s Club Creator looks', type: 'radio', options: [['off', 'Off'], ['on', 'On: I\u2019m approved for Sam\u2019s Club Creator']], def: 'off',
+    help: 'On adds one Sam\u2019s Club look every night, linked with your Sam\u2019s Club Creator links.'},
    {id: 'persona', label: 'Does your storefront have a face?', type: 'radio', options: [
     ['yes', 'Yes, my AI persona (or me) is in the lifestyle photos'],
     ['no', 'No face. Lifestyle photos show hands and the products in use']], def: 'yes'},
@@ -103,6 +108,10 @@ export const SECTIONS = [
    {id: 'okImg', label: 'Your image generator is open where the AI will use it, and you are signed in', type: 'radio', show: IMG_SHOW, options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
     how: {claude: ['Using ChatGPT? Install the ChatGPT desktop app from chatgpt.com/download, sign in, and leave it open. In the Claude app, turn on computer use (Settings, then This computer, then Computer use) so Claude can use it.', 'Using another generator? In the Claude desktop app, open the browser inside it and go to it (for example gemini.google.com or midjourney.com).', 'Sign in with your own account. Type your own password yourself. The AI never types it.', 'Stay signed in so it works overnight.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.'],
      chatgpt: ['Open your image generator in the browser tool connected to ChatGPT and sign in with your own account.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.']}},
+   {id: 'okWalmart', label: 'creator.walmart.com loads signed in to your approved Walmart Creator account in your Chrome', type: 'radio', show: 'walmart=on', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
+    help: 'Open creator.walmart.com in the same Chrome and sign in yourself. Claude never types your password.'},
+   {id: 'okSams', label: 'creator.samsclub.com loads signed in to your approved Sam\u2019s Club Creator account in your Chrome', type: 'radio', show: 'sams=on', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
+    help: 'Open creator.samsclub.com in the same Chrome and sign in yourself. Claude never types your password.'},
    {id: 'okAmazon', label: 'Claude in Chrome is connected, and amazon.com loads signed in to your account in your Chrome', type: 'radio', show: 'srcMode=auto|amazon=influencer&listMode=auto', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet, or Amazon refused the browser']], def: '',
     how: {claude: ['Amazon blocks the browser inside the Claude app, so Amazon steps run in your own Google Chrome. Install the <b>Claude in Chrome</b> extension from the Chrome Web Store and sign in to it with your Claude account.', 'In Chrome, go to <b>amazon.com</b> and sign in with your own Amazon account. Type your own password yourself. The AI never types it. Tick <b>Keep me signed in</b>.', 'Leave Chrome open on the computer that stays on overnight.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.'],
      chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>amazon.com</b> in it.', 'Sign in with your own Amazon account. Type your own password yourself. The AI never types it.', 'Tick <b>Keep me signed in</b>.', 'Press <b>Check it for me</b> below. If Amazon says it does not support the browser, pick Not yet: Amazon steps must stay by hand until that works.']}}
@@ -170,6 +179,8 @@ export const SECTIONS = [
   id: 'pins', title: 'Pinterest', note: 'Make these boards in Pinterest first, or let setup make them for you.',
   fields: [
    {id: 'boards', label: 'Your Pinterest boards', type: 'pick', sep: '\n', options: ["Cute Amazon Finds for Women", "Women's Fashion and Outfit Ideas | Amazon Finds", "Cozy Home Decor Finds | Amazon Finds", "Cute Organization, Desk and Office Finds", "Beauty, Hair and Self Care Finds | Amazon Favorites", "Gift Ideas for Her, Kids and Family", "Seasonal and Holiday Amazon Finds", "Travel, Car and Everyday Essentials", "Kids, Family and Homeschool Finds", "Cozy Hobbies and Fun Finds"], def: ["Cute Amazon Finds for Women", "Women's Fashion and Outfit Ideas | Amazon Finds", "Cozy Home Decor Finds | Amazon Finds", "Cute Organization, Desk and Office Finds", "Beauty, Hair and Self Care Finds | Amazon Favorites", "Gift Ideas for Her, Kids and Family", "Seasonal and Holiday Amazon Finds", "Travel, Car and Everyday Essentials", "Kids, Family and Homeschool Finds", "Cozy Hobbies and Fun Finds"], help: 'Type any other board names in the box, separated with commas.'},
+   {id: 'walmartBoard', label: 'Board for your Walmart looks', type: 'text', def: 'Cute Walmart Finds', show: 'walmart=on'},
+   {id: 'samsBoard', label: 'Board for your Sam\u2019s Club looks', type: 'text', def: 'Sam\u2019s Club Finds for Family and Hosting', show: 'sams=on'},
    {id: 'pinTypes', label: 'Which pins to make for every look', type: 'checks', options: ['Basic', 'Styled', 'Lifestyle', 'Roundup', 'Found It', 'Storefront promo'], def: ['Basic', 'Styled', 'Lifestyle', 'Roundup', 'Found It', 'Storefront promo'],
     help: 'Tick as many as you want. Basic is the clean flat lay, Styled the full scene, Lifestyle the products in use. NEW: Roundup puts the whole set in one pin with a big headline; Found It is one piece with handwritten \u201cI found this on Amazon\u201d words. Storefront promo is the Lifestyle photo linking to your storefront home page. Fewer pins means fewer photos and fewer credits.'},
    {id: 'slots', label: 'Most pins in one day', type: 'select', options: [['6', '6'], ['8', '8'], ['10', '10']], def: '8'}
@@ -211,6 +222,9 @@ export const ASKS = {
  finishLists: (a, p) => `Open my Claude Doc "While-You-Sleep Log" and find every look under Waiting For My Click. Then use my own Chrome through the Claude in Chrome extension to open my Amazon storefront${a.storefront ? ' (' + a.storefront + ')' : ''}, Create content, Idea List. When Amazon shows its "I am human" box, stop and tell me to tick it myself, and wait. Once I have, add every listed product to its themed Idea List, open the public list page and confirm every piece shows, write the list address into the log next to the look, and tell me which looks are done. The nightly run schedules their pins. Never tick a check box yourself and never type a password.`,
  okAmazon: (a, p) => `Use ${browserOf(p)} to open https://www.amazon.com in a new tab. Tell me exactly what you see: did the page load normally, and am I signed in (my name shows near the top)? If Amazon says it does not support the browser, tell me those exact words. Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
  tag: (a, p) => `Use ${browserOf(p)} to open my Amazon Associates account (affiliate-program.amazon.com). Tell me my tracking IDs exactly as written (they end in -20), and which one my Amazon storefront uses. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
+ okWalmart: (a, p) => `Use ${browserOf(p)} to open https://creator.walmart.com in a new tab. Tell me exactly what you see: am I signed in, and does it show my approved Walmart Creator account? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
+ okSams: (a, p) => `Use ${browserOf(p)} to open https://creator.samsclub.com in a new tab. Tell me exactly what you see: am I signed in, and does it show my approved Sam's Club Creator account? Tell me whether it lets me make collections or only product links.${NC}`,
+ walmartStore: (a, p) => `Use ${browserOf(p)} to open https://creator.walmart.com, find my Walmart Storefront and tell me its exact public web address, and whether it is published yet. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
  storefront: (a, p) => `Use ${browserOf(p)} to find my Amazon storefront and tell me its exact web address (it looks like https://www.amazon.com/shop/name). Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
  metricool: () => `Using the Metricool connection, list my brands exactly as Metricool names them. For each, say which networks are connected (Pinterest, Instagram and so on). Tell me which brand name to type into my setup.${NC}`,
  igAccount: () => `Using the Metricool connection, tell me which Instagram account is connected to my brand, written like @name.${NC}`,
@@ -264,7 +278,9 @@ function modes(a) {
   igHand: ig && a.igMode === 'hand',
   blogAuto: a.blog === 'on',
   blogHand: a.blog === 'hand',
-  blog: a.blog === 'on' || a.blog === 'hand'
+  blog: a.blog === 'on' || a.blog === 'hand',
+  wm: a.walmart === 'on',
+  sc: a.sams === 'on'
  };
  m.imgGpt = m.gpt && m.photoAuto && a.imgWhere !== 'higgsfield';
  const gen = (k, other) => {const g = GENS[k] || GENS.higgsfield; if (k !== 'other') return {key: k, ...g}; const t = v(other, 'my other image generator'); const url = (t.match(/[a-z0-9-]+\.[a-z.]{2,}[^\s,]*/i) || [''])[0]; const name = t.replace(url, '').replace(/[\s,()\-]+$/, '').trim() || t; return {key: k, name, url};};
@@ -287,6 +303,7 @@ export function missing(a) {
 
  if (m.metricool) need.push(['metricool', 'Metricool brand name']);
  if (m.inf) need.push(['storefront', 'Amazon storefront address']);
+ if (m.wm) need.push(['walmartStore', 'Walmart Storefront address']);
  if (a.persona === 'yes') need.push(['personaName', 'her name'], ['personaRef', 'her reference photo link']);
  if (m.faceGen && a.faceGen === 'other') need.push(['faceOther', 'the name and web address of the generator for photos with her face']);
  if (m.noFaceGen && a.noFaceGen === 'other') need.push(['noFaceOther', 'the name and web address of the generator for photos without a face']);
@@ -299,7 +316,9 @@ export function missing(a) {
   ['okHiggs', 'connect Higgsfield', m.credits],
   ['okImg', 'sign in to your image generator in the AI\u2019s browser', m.browserGens.length > 0],
   ['okGithub', 'connect GitHub', m.blogAuto],
-  ['okAmazon', 'sign in to Amazon in the AI\u2019s browser', !m.srcHand || m.listAuto]];
+  ['okAmazon', 'sign in to Amazon in the AI\u2019s browser', !m.srcHand || m.listAuto],
+  ['okWalmart', 'sign in to Walmart Creator in your Chrome', m.wm],
+  ['okSams', 'sign in to Sam\u2019s Club Creator in your Chrome', m.sc]];
  for (const [k, n, on] of conn) if (on && a[k] !== 'yes') out.push(n);
  if (!a.blog) out.unshift('whether you have a blog');
  if (!m.inf && !m.blog) out.push('blog posts switched on, automatic or by hand (an account with links only needs them)');
@@ -316,6 +335,8 @@ export function recipe(a) {
 TIME ZONE: ${a.tz} (${tzName(a.tz)})
 ${m.gpt ? `AI THAT RUNS IT: ChatGPT\n${m.photoAuto ? `PHOTOS MADE WITH: ${m.imgGpt ? 'ChatGPT\u2019s own image maker' : 'Higgsfield (connected)'}\n` : ''}` : ''}${m.faceGen ? `PHOTOS WITH HER FACE MADE IN: ${genName(m.faceGen)}\n` : ''}${m.noFaceGen ? `PHOTOS WITHOUT A FACE MADE IN: ${genName(m.noFaceGen)}\n` : ''}AMAZON: ${m.inf ? `Amazon storefront with Idea Lists. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates links only (no Idea Lists). Pins link to my blog posts.'}
 TRACKING ID: ${v(a.tag, '[YOUR TRACKING ID]')}
+WALMART CREATOR: ${m.wm ? `on, 1 Walmart look a night. Walmart Storefront: ${v(a.walmartStore, '[YOUR WALMART STOREFRONT ADDRESS]')}. Board: ${v(a.walmartBoard, 'Cute Walmart Finds')}` : 'off'}
+SAM'S CLUB CREATOR: ${m.sc ? `on, 1 Sam's Club look a night. Board: ${v(a.samsBoard, "Sam's Club Finds for Family and Hosting")}` : 'off'}
 ${m.metricool ? `METRICOOL BRAND: ${v(a.metricool, '[YOUR METRICOOL BRAND]')}\n` : ''}${persona}
 HER WORLD: ${v(a.rooms).split('\n').map((x) => x.trim()).filter(Boolean).join('; ')}${v(a.props) ? `\nTHINGS IN HER WORLD: ${v(a.props)}` : ''}
 STYLE LEADS: ${v(a.leads)}
@@ -452,12 +473,28 @@ One carousel per look, two carousels a day: on the next day that has fewer than 
  else if (m.igHand) parts.push(`${step('INSTAGRAM · BY HAND')}
 Under To Do By Hand write one carousel per look for ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}: the photo order (${a.order}), the day to post it (two carousels a day, the first at ${hm(a.igTime)} and the second about five hours later), and the caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio", three to five hashtags, and then exactly: #ad As an Amazon Associate I earn from qualifying purchases. No links in the caption.`);
 
- const pinsWord = `${Number(n) * (lookPins.length + (doAd ? 1 : 0))} pins`;
+
+ if (m.wm || m.sc) {
+  const stores = [...(m.wm ? ['Walmart'] : []), ...(m.sc ? ["Sam's Club"] : [])];
+  const pName = v(a.personaName, '[HER NAME]');
+  const sbr = m.gpt ? 'the browser tool connected to this chat' : 'my own Chrome through the Claude in Chrome extension';
+  parts.push(`${step(`${stores.join(' AND ').toUpperCase()} LOOK${stores.length > 1 ? 'S' : ''}`)}
+Tonight also make ${andList(stores.map((x) => `1 ${x} look`))}, on top of the Amazon look${n === '1' ? '' : 's'}. Do every step above for ${stores.length > 1 ? 'each one' : 'it'}, from PLAN to the last step before this one, with these differences only:
+1. PRODUCTS: every piece comes from that one store, never mixed with another store. ${m.wm ? 'Walmart pieces are found on walmart.com' : ''}${m.wm && m.sc ? '; ' : ''}${m.sc ? "Sam's Club pieces on samsclub.com" : ''}, in ${sbr}, signed in. Record each piece's real product page, item number, exact color or variant, real size in inches and its main photo for the Product Sheet. Never repeat a look from any store.
+2. LISTS AND LINKS:${m.wm ? ` Walmart: Walmart Creator collections are your Idea Lists. In creator.walmart.com, use a themed collection that fits and holds fewer than 30 items, or create a new public one named for the theme. Add every piece before the look is written, then open the public collection page and confirm every piece shows. Record the collection address: the look's pins link to it. If my Walmart Storefront (${v(a.walmartStore, '[YOUR WALMART STOREFRONT ADDRESS]')}) is not published yet, publish it from the dashboard on the computer (Walmart only allows publishing from a computer), and read the public page back.` : ''}${m.sc ? ` Sam's Club: in creator.samsclub.com, if it offers collections, use them exactly like Walmart collections. If it does not, make a Sam's Club Creator link for every piece; each pin links to the creator link of the piece it shows (the Basic, Styled, Lifestyle and Roundup pins use the look's main piece).` : ''} Use only links the store's own creator tools make. Never shorten, hide or redirect them, and never put them in an email.
+3. DISCLOSURES, instead of the Amazon line (never both):${m.wm ? ' Every Walmart pin description and caption starts with "#WalmartPartner", and it is the first hashtag.' : ''}${m.sc ? ` Every Sam's Club pin description and caption starts with "#SamsPartner", and it is the first hashtag.` : ''} The tag always sits before Instagram's "more" cut-off.${face ? ` Every post that shows ${pName} also says in its first two lines: "${pName} is an AI-generated creator."` : ''} Every post says its photos are AI-generated, for example "AI-generated styling photos". ${m.blog ? `The blog post puts the store's disclosure at the top instead of the Amazon note at the end: "${m.wm ? '#WalmartPartner' : '#SamsPartner'} I earn a commission when you shop through my links. Photos are AI-generated styling ideas; check each listing for the exact item." (use #SamsPartner on Sam's Club posts).` : ''}
+4. NEVER ON THESE POSTS: a price; the words sale, % off or coupon next to the Walmart or Sam's Club name; a Walmart or Sam's Club logo on any photo or graphic; "dupe" or any comparison with another store; any line saying I own, tried or used a piece (talk about what it is and why I picked it); giveaways or contests; alcohol, tobacco, guns or adult products. Keep everything family-friendly.
+5. PHOTOS: the Found It photo says the store's name ("Walmart" or "Sam's Club") instead of "Amazon", and its pin title says it too. Every photo shows each product's true size, color and features (the store's own rule as well as mine).
+6. PINS: ${m.wm ? `Walmart looks go on ${v(a.walmartBoard, 'Cute Walmart Finds')}` : ''}${m.wm && m.sc ? '; ' : ''}${m.sc ? `Sam's Club looks go on ${v(a.samsBoard, "Sam's Club Finds for Family and Hosting")}` : ''}. No storefront promo pin for these looks. They count toward the same pins-a-day limit.
+7. LOG: write the store next to each look, with its collection or links.`);
+ }
+ const storeN = (m.wm ? 1 : 0) + (m.sc ? 1 : 0);
+ const pinsWord = `${Number(n) * (lookPins.length + (doAd ? 1 : 0)) + storeN * lookPins.length} pins`;
  parts.push(`LAST · LOG
 Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.credits ? 'the photo links, credits used tonight, ' : m.photoAuto ? 'the photo links, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Last, write "Run [today's date] finished" under Runs. Read the log back to confirm it saved.
 
 REPORT
-One line if everything worked: "Tonight: ${n} look${n === '1' ? '' : 's'}${m.closet ? ' plus 1 Brand Closet look' : ''}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.
+One line if everything worked: "Tonight: ${n} Amazon look${n === '1' ? '' : 's'}${m.wm ? ', 1 Walmart look' : ''}${m.sc ? ", 1 Sam's Club look" : ''}${m.closet ? ' plus 1 Brand Closet look' : ''}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.
 
 NEVER: type a password. Buy or add anything to a cart. Post to any account that isn't in my recipe. Do a step marked BY HAND. ${m.credits ? 'Go past my monthly credit limit. Switch image models without telling me. ' : ''}Make any claim about how much money anyone will make.
 
@@ -479,9 +516,13 @@ export function setup(a) {
  if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built.${v(a.branch) ? ` Confirm the "${v(a.branch)}" branch exists.` : ''} Tell me in two lines.`);
  conn.push(`${c()}. ${m.gpt ? 'Browser: use the browser tool connected to this chat and tell me exactly which one it is. Open amazon.com in a new tab.' : 'My Chrome (through the Claude in Chrome extension, not the browser inside the Claude app, which Amazon blocks): open amazon.com in a new tab.'} ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").${m.gpt ? ' Then open Create content, Idea List once to check it is there. Create nothing yet.' : ''}` : 'Confirm I\'m signed in (my name shows at the top).'} ${m.gpt ? 'If I\'m signed out, tell me exactly how to sign in to my own Amazon account in that tool and wait. Never use anyone else\'s saved sign-in.' : 'If I\'m signed out, tell me and wait while I sign in.'} Close the tab.`);
 
+ if (m.wm) conn.push(`${c()}. Walmart Creator: in ${m.gpt ? 'the browser tool connected to this chat' : 'my Chrome (Claude in Chrome extension)'}, open https://creator.walmart.com in a new tab and confirm I'm signed in and approved. Find my Walmart Storefront, confirm its public address is ${v(a.walmartStore, '[YOUR WALMART STOREFRONT ADDRESS]')} and tell me whether it is published. Check that my Instagram, my Pinterest profile${m.blog ? ' and my website' : ''} are on my list of sites where my links appear, and add any that are missing where the dashboard allows. Close the tab.`);
+ if (m.sc) conn.push(`${c()}. Sam's Club Creator: in the same browser, open https://creator.samsclub.com in a new tab and confirm I'm signed in and approved. Tell me whether it lets me make collections or only product links, and write the answer in the log. Check my list of sites the same way as Walmart. Close the tab.`);
+
+ const storeBoards = [...(m.wm ? [v(a.walmartBoard, 'Cute Walmart Finds')] : []), ...(m.sc ? [v(a.samsBoard, "Sam's Club Finds for Family and Hosting")] : [])];
  const boards = m.pinAuto
-  ? `Compare my PINTEREST BOARDS with the boards Metricool lists. If any are missing, list them and ask me whether to create them in Pinterest in ${m.gpt ? 'the connected browser' : 'the built-in browser'}. Boards are public, so create them only after I say yes. Then write every board's name in the log.`
-  : `List my PINTEREST BOARDS and ask me whether they all exist in Pinterest yet. If any are missing, tell me to create them in Pinterest (or offer to create them in ${m.gpt ? 'the connected browser' : 'the built-in browser'}, only after I say yes, because boards are public). Write every board's name in the log.`;
+  ? `Compare my PINTEREST BOARDS${storeBoards.length ? ` (plus ${storeBoards.join(' and ')})` : ''} with the boards Metricool lists. If any are missing, list them and ask me whether to create them in Pinterest in ${m.gpt ? 'the connected browser' : 'the built-in browser'}. Boards are public, so create them only after I say yes. Then write every board's name in the log.`
+  : `List my PINTEREST BOARDS${storeBoards.length ? ` (plus ${storeBoards.join(' and ')})` : ''} and ask me whether they all exist in Pinterest yet. If any are missing, tell me to create them in Pinterest (or offer to create them in ${m.gpt ? 'the connected browser' : 'the built-in browser'}, only after I say yes, because boards are public). Write every board's name in the log.`;
 
  const ref = a.persona === 'yes'
   ? (m.imgGpt
