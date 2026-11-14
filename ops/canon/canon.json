@@ -86,7 +86,8 @@
     "site_look_2026_10_04": "Decision 128. Founder instruction, 4 Oct 2026. The brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess, in a homestead mom package. It must read as LUXURY, never cheap: real-looking glitter, sequins, pearl, chrome and holographic foil with depth and light catching on them, used for the big moments rather than as wallpaper in every section; frosted glass cards with a thin gold border and deep soft pink-tinted shadows; one glossy hot pink hero card per section; round tilted stickers, callout boxes, numbered badges, pull quotes and annotated arrows that break up every block of words so no reader skims past a feature; every clickable card or image visibly labelled with its name and a button. Never minimalist, never clean-and-modern, never beige, never quiet editorial calm, never cookie-cutter, never a wall of words. Applies to the website, every sales page and every designed graphic. Persona photography follows the matching register in image_prompts.register (confident self-made luxury, lived in; replaces quiet wealth the same day), and a loud photo always sits on a calm part of the layout so the two never clash. Site register changed from 'luxury editorial' to the founder voice; typography brought into line with claude/TDIE_DESIGN_RULES.md; Dark Chocolate is never a fill.",
     "brand_clarification_2026_10_04_1130": "The Digital Income Edit™ brand is loud, pink, sparkly, confident and girly: a big pink glittery mashup of a self-made millionaire and a sparkly grown-up pop-star princess in a homestead mom package. It must read luxury, never cheap. Never describe or design the brand as minimalist, clean and modern, beige, neutral, quiet, editorial calm or \"luxury editorial\". Headlines are Gloock, upright, never italic; everything else is Jost, including prices, labels, body text and buttons. Never use Fraunces, Cormorant Garamond or Montserrat anywhere. Never use brown or dark chocolate as a fill or background, including cards, panels, footers and buttons. Break up text with stickers, callout boxes, badges and pull quotes. Every clickable card shows its name and a button.",
     "amazon_disclosure_wording_2026_10_23": "Decision 130. Founder approval, 23 Oct 2026. Amazon's own help topic 'Why do I have to identify myself as an Associate?' requires a clear disclosure by every affiliate link (examples '(paid link)', '#ad', '#CommissionsEarned') plus the exact sentence 'As an Amazon Associate I earn from qualifying purchases.' on the site and associated with each social account. Every pin description and Instagram caption that sends people to Amazon ends '#ad As an Amazon Associate I earn from qualifying purchases.'; the same sentence goes in the @itstommykate bio and the Pinterest profile; the site keeps its Associate line. The older '#ad As an Amazon Influencer I earn from qualifying purchases.' wording (Decision 101, pin factory recipes) is stale wherever it survives. Published pins are not edited.",
-    "earnings_rule_removed_2026_10_29": "Decision 131. Founder instruction, 29 Oct 2026, Jodie's words: 'REMOVE THE EARNING RULE FROM EVERYWHERE.' Income and earnings claims are allowed on every surface, Facebook and Instagram included. The Premium DFY Content Calendar copies a source Reel's money lines word for word."
+    "earnings_rule_removed_2026_10_29": "Decision 131. Founder instruction, 29 Oct 2026, Jodie's words: 'REMOVE THE EARNING RULE FROM EVERYWHERE.' Income and earnings claims are allowed on every surface, Facebook and Instagram included. The Premium DFY Content Calendar copies a source Reel's money lines word for word.",
+    "brand_deal_modules_2026_11_13": "Founder go, 13 Nov 2026, in Jodie's words: 'Add the rows.' Two classroom modules registered in products[]: The Brand Deal Edit™ (Membership Standard and Premium, 37 lessons) and The Brand Deal Desk™ (Membership Premium only, 17 lessons). Neither is sold standalone and neither has a price of its own; the price is the tier. Both built in Skool as drafts on 13 Nov 2026 and NOT published: no asset may link a lesson until Jodie says publish, and the promo in claude/TDIE_BRAND_DEAL_PROMO_DRAFTS.md stays held until she says release. Module record: claude/TDIE_BRAND_DEAL_EDIT_MODULE.md. Do not set a Buy Now amount on either course; standalone sale would be a new founder decision and a new row."
   },
   "hosts": {
     "canonical": "www.thedigitalincomeedit.com",
@@ -840,6 +841,32 @@
       "platform": "Higgsfield (affiliate)",
       "url": "https://higgsfield.ai?fpr=jodie-30b092",
       "note": "AFFILIATE, NOT OWNED. Added 3 Oct 2026 on founder instruction (Jodie supplied the link in chat). Used in The While-You-Sleep Storefront™ kit (01_REQUIREMENTS.txt and the Setup Guide PDF) where the kit tells buyers which Higgsfield plan to get. Referral terms from Higgsfield's affiliate page (read 3 Oct 2026): the person who signs up through the link gets up to 50% off for three hours after logging in through it; the affiliate earns up to 25% of the plan price for up to 12 months. It is NOT 50% off for the first 3 months. Link and disclosure ship together (Standing Rule 18). Prices are Higgsfield's and change; verify quarterly under affiliate_rule."
+    },
+    {
+      "name": "The Brand Deal Edit™",
+      "price": null,
+      "display": "Included in Membership Standard ($9/month · $99/year) and Membership Premium ($35/month · $297/year). Not sold standalone.",
+      "recurring": false,
+      "owned": true,
+      "platform": "Skool (classroom module)",
+      "url": "https://www.skool.com/thedigitalincomeedit/classroom/8e0e6938",
+      "skool_course_id": "2793c3fcd6b5475f8a7b324076d92ecf",
+      "access": "privacy 1, min_tier 1 (Standard and Premium)",
+      "status": "DRAFT in Skool, not published (13 Nov 2026). Link goes live only when Jodie says publish.",
+      "note": "Subheading: UGC & Affiliate Marketing. 37 lessons: how brands pay creators, UGC and affiliate paths, on camera and off camera side by side (on camera first, no faceless default), pricing and rate card, pitching, contracts, portfolio, platforms, affiliate niche, storefront, links and disclosure, first 30 days (UGC, affiliate, both), toolkit. Never sold in the Skool feed (Membership Standard is never sold there); announced to members as teaching. Distinct from 150 UGC Brand Contacts ($15) and The Anti-Influencer Method™ (affiliate). Founder go 13 Nov 2026."
+    },
+    {
+      "name": "The Brand Deal Desk™",
+      "price": null,
+      "display": "Included in Membership Premium ($35/month · $297/year) only. Not sold standalone.",
+      "recurring": false,
+      "owned": true,
+      "platform": "Skool (classroom module)",
+      "url": null,
+      "skool_course_id": "cfb76c56dc08465e9062a12c7807f10c",
+      "access": "privacy 1, min_tier 2 (Premium only)",
+      "status": "DRAFT in Skool, not published (13 Nov 2026). Classroom slug to be captured when published.",
+      "note": "17 lessons: AI UGC (what it is and who buys it, the legal line, building an AI UGC creator, making the videos, AI UGC services to sell, pitching AI UGC, Tommy Kate case study), a 7-bot AI brand deal team (Brand Scout, Pitch Writer, Brief Breaker, Rate Calculator, Contract Checker, Deal Tracker, Affiliate Content Planner), and the '📬 Current UGC Opportunities' lesson refreshed every Sunday by scheduled task trig_019RGfx666pHBx65s5N2cQWJ. The Premium upgrade hook for the Brand Deal promo. Founder go 13 Nov 2026."
     }
   ],
   "own_affiliate_programs": {
