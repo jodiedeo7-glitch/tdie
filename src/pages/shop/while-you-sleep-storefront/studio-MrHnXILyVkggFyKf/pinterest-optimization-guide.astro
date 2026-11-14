@@ -1,0 +1,148 @@
+---
+import WysBuyerFrame from '../../../../components/WysBuyerFrame.astro';
+// The Pinterest Optimization Guide: the step-by-step version of the done-for-you Pinterest Optimization.
+// Written 13 November 2026 from the real cleanup of Jodie's own account (514 pins, 22 public boards, 44 sections).
+// Free with any Black Friday 2026 purchase. Not in the buyer nav on purpose; the Black Friday delivery message links here.
+// No results are claimed on this page: the cleanup was finished after the 12 Oct to 11 Nov analytics window, so there is no before/after for it.
+const steps = [
+ {
+  n: 1, title: 'Check the views before you delete anything', time: 'About 30 minutes',
+  why: 'Some pins that look messy are quietly bringing people in. Check first, delete second.',
+  how: [
+   'Open Pinterest Analytics and set the date range as long as Pinterest lets you.',
+   'Sort your pins by impressions, highest first.',
+   'Write down every pin with more than 1,000 impressions. Those stay, whatever else is wrong with them. Fix them if you need to, but never delete them.'
+  ]
+ },
+ {
+  n: 2, title: 'Audit where your pins link', time: 'About 20 minutes',
+  why: 'A pin that sends people to a dead page wastes every click it earns.',
+  how: [
+   'Open a few pins from each period of your account, and any pin that came from an old website.',
+   'Click the link on each one. Does it open the right page?',
+   'Dead link and under 1,000 impressions: delete the pin. Dead link and over 1,000: edit the pin and point it at a page that works.'
+  ]
+ },
+ {
+  n: 3, title: 'Remove the duplicates', time: 'About 30 to 60 minutes',
+  why: 'If Instagram has been posting to Pinterest for you, you probably have copies of every post, and they only link back to Instagram. Pinterest rewards pins that send people somewhere useful, so a pile of copies drags the whole account down.',
+  how: [
+   'Scroll your boards and look for the same photo more than once.',
+   'Keep the copy with the most impressions. Delete the rest, as long as none of them is over your 1,000 line.',
+   'If a pin only links back to your own Instagram post, it is a copy, not a pin.'
+  ]
+ },
+ {
+  n: 4, title: 'Remove the off-brand pins', time: 'About 20 minutes',
+  why: 'Every pin tells Pinterest what your account is about. A few random ones blur the picture.',
+  how: [
+   'Look at the image of every pin that is not obviously on topic. Do not go by the title alone.',
+   'Off topic and under 1,000 impressions: delete it.',
+   'Off topic but your best performer: keep it and reword the title and description so it fits your topic.'
+  ]
+ },
+ {
+  n: 5, title: 'Fix the titles and descriptions', time: 'The longest step, so work in batches',
+  why: 'Pinterest is a search engine. Titles and descriptions are how a pin gets found.',
+  how: [
+   'Type your topic into Pinterest search and read the suggestions it offers. Those are real searches.',
+   'For each pin you are keeping, write a title that says plainly what the pin is, using a phrase people search.',
+   'Write a description of two or three sentences with that phrase near the start. Keep it matched to the board the pin lives on.',
+   'Skip anything that already reads well. Only fix what does not fit your niche.'
+  ]
+ },
+ {
+  n: 6, title: 'Organize pins into boards and sections', time: 'About 60 to 90 minutes for a big account',
+  why: 'Boards and sections are how Pinterest learns what each part of your account is about.',
+  how: [
+   'Give every board one clear topic. If a board is about two things, it is two boards.',
+   'Inside each board, make sections for the sub-topics. A section holds a handful of pins up to a few dozen.',
+   'Move pins in batches: use Organize on the board, tick the pins, choose Move, and pick the board and section.',
+   'Only make a new board when a pin truly needs one that does not exist yet.'
+  ]
+ },
+ {
+  n: 7, title: 'Clear the dead ends', time: 'About 10 minutes',
+  why: 'Empty sections and empty boards make your profile look abandoned.',
+  how: [
+   'Open each board and look for sections with no pins. Delete them.',
+   'Look for boards with no pins. Delete them.',
+   'Before you delete a board that still has pins, move the pins first. Pinterest will ask whether to move them or delete them. Never choose delete by accident.'
+  ]
+ },
+ {
+  n: 8, title: 'Write a keyword description for every board', time: 'About 30 minutes',
+  why: 'The board description is one of the first things Pinterest reads about a board.',
+  how: [
+   'Open each public board and choose Edit board.',
+   'Write two or three plain sentences about what is on the board, using the phrases people search for.',
+   'Read it out loud. If it sounds like a robot wrote it, say it the way you would say it to a friend.'
+  ]
+ },
+ {
+  n: 9, title: 'Put your best boards first', time: 'About 10 minutes',
+  why: 'The first boards on your profile get the most eyes. Lead with the ones that earn it.',
+  how: [
+   'In Analytics, find the boards whose pins get the most saves and outbound clicks.',
+   'Drag your best board to the first spot, then the rest in order of importance.',
+   'Careful: if a box appears asking to move pins and delete a board, you have dragged one board onto another. Press Cancel and drop it in the gap between boards instead.'
+  ]
+ },
+ {
+  n: 10, title: 'Fix what caused the mess', time: 'About 15 minutes',
+  why: 'If you skip this step, the mess comes back.',
+  how: [
+   'If Instagram was posting to Pinterest for you, find the setting that lets Pinterest or Instagram share automatically and switch it off. Pinterest moves its menus around, so look in your account settings for linked accounts or social permissions.',
+   'Decide the rule for every new pin before you post it: which board, which section, which title phrase.',
+   'If you use a scheduler, pick the board by name every time. Never leave it on the default.'
+  ]
+ }
+];
+---
+<WysBuyerFrame title="Pinterest Optimization Guide" current="pinterest-guide">
+ <header class="wb2-hero">
+  <div class="wys-wrap">
+   <p class="wb2-kicker">Step by step</p>
+   <h1>The Pinterest Optimization Guide</h1>
+   <p>This is the exact order I used to clean up my own Pinterest account: 514 pins, 22 public boards and 44 sections, with every pin checked one by one. Do it yourself with this guide, in the same order, and nothing gets deleted by mistake.</p>
+  </div>
+ </header>
+
+ <section class="wb2-sec" style="padding-top:8px">
+  <div class="wys-wrap">
+   <p class="wb2-note" style="max-width:none"><b>Before you start.</b> You need your Pinterest business account, a notes app or a spreadsheet, and two or three hours for a large account. Do it in two sittings if you need to. Work through the steps in order, because each one makes the next one easier.</p>
+   <div class="wb2-note" style="max-width:none;margin-top:16px"><b>Three rules.</b>
+    <ol style="margin:8px 0 0 20px;padding:0">
+     <li>Never delete a pin with more than 1,000 impressions. Fix it instead.</li>
+     <li>Never delete a board that still has pins. Move the pins first.</li>
+     <li>Change one thing at a time, so you always know what you changed.</li>
+    </ol>
+   </div>
+  </div>
+ </section>
+
+ {steps.map((s, i) => (
+  <section class="wb2-sec" style={i % 2 === 0 ? 'background:#fff' : ''}>
+   <div class="wys-wrap">
+    <p class="wb2-kicker">Step {s.n} of 10 · {s.time}</p>
+    <h2>{s.title}</h2>
+    <p>{s.why}</p>
+    <ol>{s.how.map((h) => <li>{h}</li>)}</ol>
+   </div>
+  </section>
+ ))}
+
+ <section class="wb2-sec">
+  <div class="wys-wrap">
+   <h2>Keep it clean</h2>
+   <p>Ten minutes once a week keeps all of this from coming back.</p>
+   <ul>
+    <li>Every new pin goes to a board and a section the day you make it.</li>
+    <li>Every new pin has a title with a phrase people search for.</li>
+    <li>Every month, check Analytics and see which boards and sections are earning.</li>
+   </ul>
+   <p class="wb2-note"><b>Give it time.</b> Pinterest has to read your account again after a cleanup, and that takes weeks, not days. Compare your numbers to the 30 days before you started, and look at the same stats each time.</p>
+   <p class="wb2-note">Would you rather skip the work? The Done-For-You Pinterest Optimization does all ten steps for you. Questions? Email <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a>.</p>
+  </div>
+ </section>
+</WysBuyerFrame>
