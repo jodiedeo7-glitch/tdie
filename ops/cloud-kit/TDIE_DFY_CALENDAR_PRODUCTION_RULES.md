@@ -292,14 +292,8 @@ The Premium Calendar must deliver:
 
 ## 10. Posting and offer constraints
 
-Use current canon spread rules:
-- at most one selling Instagram post per day
-- never two selling posts back to back
-- the same offer is not used two days running
-- outside a promo window, the same offer is not used more than twice in a week
-- affiliates are not used on the same or consecutive days
-- the same affiliate product is not used twice in one week
-- nothing repeats inside 14 days
+Promotion limits: see the Decision 132 note below.
+- (Decision 132, 13 Nov 2026) All promotion limits are retired: no cap on selling posts per day, no back-to-back rule, no offer-repeat or affiliate-spacing rule, no 14-day no-repeat window. Schedule offers from claude/TDIE_PROMOTION_MASTER_PLAN.md. Meta link rules still apply.
 
 Instagram:
 - no links in captions, comments or replies
@@ -349,7 +343,6 @@ Reject or rewrite any calendar entry where:
 - a trigger-word call to action is not followed by a line asking people to follow so the DM can reach them
 - a trigger word is outside the month's fixed set, or its product does not fit the Reel
 - an illegal or invented claim is introduced
-- an offer violates spread rules
 - the monthly total or date coverage does not match one Instagram day and two member Threads posts per calendar day of the covered month
 
 ## 13. Relationship to the general image master

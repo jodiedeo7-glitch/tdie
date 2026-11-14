@@ -112,14 +112,8 @@ For each day include:
 - Story adaptation when appropriate
 - offer/swap-in slot when appropriate
 
-Use current canon spread rules:
-- at most one selling Instagram post per day
-- no selling posts back to back
-- same offer not on two consecutive days
-- outside a promo window, same offer no more than twice in a week
-- affiliates not on same or consecutive days
-- same affiliate product not twice in one week
-- nothing repeats inside 14 days
+Promotion limits: see the Decision 132 note below.
+- (Decision 132, 13 Nov 2026) All promotion limits are retired: no cap on selling posts per day, no back-to-back rule, no offer-repeat or affiliate-spacing rule, no 14-day no-repeat window. Schedule offers from claude/TDIE_PROMOTION_MASTER_PLAN.md. Meta link rules still apply.
 
 Instagram rules:
 - no links in captions, comments or replies
@@ -347,8 +341,6 @@ Must pass:
 - no static prompt forces a vendor
 - no prompt assumes Jodie's private reference files
 - no Instagram link in captions/comments/replies
-- offer spread rules pass
-- affiliate spread rules pass
 - no invented product, price, link, testimonial, metric or proof
 - no Meta income/earnings claims
 - no faith content

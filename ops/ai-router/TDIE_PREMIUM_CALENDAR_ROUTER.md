@@ -53,11 +53,7 @@ Required canon:
 - Research begins at the start of the final week of the preceding month.
 - Release one week every 3–4 days across the final week of the preceding month and first week of the covered month.
 - Never promise the whole month before the 1st.
-- At most one selling post/day.
-- Never two selling posts back-to-back.
-- Same offer not two days running and not >2x/week outside a promo window.
-- Affiliates not same or consecutive days and not same affiliate product twice/week.
-- Nothing repeats inside 14 days.
+- (Decision 132, 13 Nov 2026) All promotion limits are retired: no cap on selling posts per day, no back-to-back rule, no offer-repeat or affiliate-spacing rule, no 14-day no-repeat window. Schedule offers from claude/TDIE_PROMOTION_MASTER_PLAN.md. Meta link rules still apply.
 - Instagram: no links anywhere; CTA points to link in bio. Story link stickers excepted.
 - Facebook: link goes in first comment 5 minutes after publishing.
 - Model-agnostic member production and two-path Reel QA per current production rules.

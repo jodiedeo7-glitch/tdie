@@ -73,11 +73,7 @@ For generated persona/photo/video needs, create exact production prompts and sen
 
 ## Phase F — QA
 Before routing to Claude, verify:
-- no duplicate concepts inside 14 days
-- at most one selling post/day
-- no back-to-back selling posts
-- offer-frequency rules
-- affiliate-spacing rules
+- (Decision 132, 13 Nov 2026) All promotion limits are retired: no cap on selling posts per day, no back-to-back rule, no offer-repeat or affiliate-spacing rule, no 14-day no-repeat window. Schedule offers from claude/TDIE_PROMOTION_MASTER_PLAN.md. Meta link rules still apply.
 - Instagram has no links anywhere
 - Facebook links only in first comment at +5 minutes
 - Skool links are hyperlinked CTA words where relevant
