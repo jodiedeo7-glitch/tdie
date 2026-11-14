@@ -648,6 +648,8 @@ Shipped the same day into the live *Weekend Ecosystem — Access Granted* email 
 
 **133.** (14 November 2026) **Skool replies are auto-approved.** Founder instruction, in Jodie's words: "Change my scheduled tasks to automatically approve SKOOL replies. I really haven't denied or skipped them recently. I think it's been a good test run to give it the go ahead." Skool reply drafts (comments on her own posts, member board posts, mentions in other groups, Skool message replies) go into the Command Centre as approved and the due-time dispatcher sends them with no tick. All Skool guards stay in force (directed-at-Jodie only, no member-to-member threads, scam flags get no draft, no newer message before a DM reply, links hyperlinked on words, no forced questions, no em dashes, no invented numbers). Extends the 12 October 2026 standing approval, so no surface waits for her tick. Recorded in `canon.json` (`meta.standing_approval_skool_2026_11_14`) and `ops/cloud-kit/TDIE_THREADS_SYSTEM.md`.
 
+**134.** (14 November 2026) **All replies everywhere are auto-approved.** Founder instruction, in Jodie's words: "All replies everywhere should be auto approved. Remove any instruction that says otherwise." Skool, Facebook, Threads and Instagram replies all go into the Command Centre as approved and the due-time dispatcher sends them with no tick. Guards and content rules are unchanged. Supersedes the "only Skool waits" and "Facebook stays as it is" wording in earlier entries.
+
 ---
 
 **The Digital Income Edit™ · Canon · 14 November 2026**
