@@ -2,7 +2,7 @@
 export const IMAGE_ROLES = new Set(['basic', 'styled', 'lifestyle', 'roundup', 'foundit']);
 export const AFFILIATE_STATES = new Set(['verified', 'none', 'pending', 'legacy']);
 // Walmart Creator and Sam's Club Creator destinations (added 11 Nov 2026 for the Walmart + Sam's Club nightly build).
-export const OTHER_STORE_HOSTS = ['www.walmart.com', 'walmart.com', 'walmrt.us', 'www.samsclub.com', 'samsclub.com', 'samsclub.co'];
+export const OTHER_STORE_HOSTS = ['www.walmart.com', 'walmart.com', 'walmrt.us', 'www.samsclub.com', 'samsclub.com', 'samsclub.co', 'goto.samsclub.com', 'goto.walmart.com'];
 export const storeOf = (link) => { try { const h = new URL(link).hostname; return /walmart|walmrt/.test(h) ? 'Walmart' : /samsclub/.test(h) ? "Sam's Club" : 'Amazon'; } catch { return 'Amazon'; } };
 export const isDraft = (record) => ['draft', 'STAGED_NOT_PUBLIC'].includes(record.status) || record.draft === true;
 
