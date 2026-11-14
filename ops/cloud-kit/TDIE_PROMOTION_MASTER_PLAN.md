@@ -209,7 +209,7 @@ These are not promotion limits. They are items that are retired, private, flagge
 
 1. **Site `/shop`:** add The While-You-Sleep Storefront™ price and buy button, the eleven DFY services, the three vault guides not shown, The 30-Day Faceless Launch Checklist, The First Product Cheat Sheet, and send the Standard button to `/about`. **Not done yet. Needs the repo, which this session could not open.**
 2. **WYS site:** 14 pins a night in the copy, trial link to `/about`. **Not done yet, same reason.**
-3. **5-email follow-up behind the free kits** in MailerLite. **Not done yet.** MailerLite's free plan allows 3 active automations and 4 are active, so a build needs one existing automation merged or paused first (`claude/mailerlite-merge-ecosystem-automations.md` has the plan).
+3. **5-email follow-up behind the free kits** in MailerLite. **Not done yet.** Jodie is on a paid MailerLite plan (confirmed 14 November 2026: five automations are active), so there is no automation limit to work around. Build it as a new automation.
 
 ---
 
