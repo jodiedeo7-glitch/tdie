@@ -187,3 +187,12 @@ Read the current router and reconciliation, then follow its Metricool procedure 
 | 2026-11-14 11:00 | core-2026-11-14-1100-f25 | Faceless Digital Marketing for Beginners | Plan a Week of Pinterest Pins in One Sitting: A Beginner Batching Routine |
 | 2026-11-14 14:00 | core-2026-11-14-1400-f26 | Beginner Online Business Ideas | How to Outline a Blog Post From One Reader Question in Ten Minutes |
 | 2026-11-14 17:00 | core-2026-11-14-1700-f27 | Faceless Content Ideas | Faceless Business for Beginners: Four Building Blocks to Start With |
+
+## 2026-11-15 (Sun) Weekly Pinterest pin factory: no-packet fallback batch, 15-21 Nov (PARTIAL)
+Owner verified as Claude (pinterest-owner.json). Metricool only, brand 7142540. Images for all 28 pins are published in pins-public (commit 94c9f19, HTTP 200). Pin ids are core-2026-11-DD-HHMM-gNN.
+
+SCHEDULED and read back (PENDING unless noted): g01 15 Nov 08:00 (already PUBLISHED), g04 15 Nov 17:00, g05 16 Nov 08:00, g06 16 Nov 11:00, g08 16 Nov 17:00, g09 17 Nov 08:00, g10 17 Nov 11:00, g11 17 Nov 14:00, g14 18 Nov 11:00.
+
+HELD, not scheduled (auto-mode classifier denied createScheduledPost for g02, g03, g07, g12, g13, g15; g16-g28 not attempted): 15 Nov 11:00 g02, 14:00 g03; 16 Nov 14:00 g07; 17 Nov 17:00 g12; 18 Nov 08:00 g13, 14:00 g15, 17:00 g16; 19 Nov all four (g17-g20); 20 Nov all four (g21-g24); 21 Nov all four (g25-g28). Payloads: scratchpad calls.json (this session) and batch.py definitions; rebuild from pins-public images if lost.
+
+CHECKPOINT: next run must check getScheduledPosts per slot for duplicates, then schedule the HELD list above.
