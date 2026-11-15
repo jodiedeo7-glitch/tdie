@@ -106,8 +106,8 @@ const recommended = [
 
 const index = [
   { id: "start-here", n: "01", t: "Free" },
-  { id: "flagship", n: "02", t: "The Weekend Ecosystem™" },
-  { id: "membership", n: "03", t: "The membership" },
+  { id: "membership", n: "02", t: "The membership" },
+  { id: "flagship", n: "03", t: "The Weekend Ecosystem™" },
   { id: "guides", n: "04", t: "Guides" },
   { id: "ai-creator", n: "05", t: "AI & creator" },
   { id: "plr-vault", n: "06", t: "Pretty & Paid PLR Vault™" },
@@ -119,9 +119,9 @@ const index = [
 const abs = (u) => (u.startsWith("http") ? u : `${SITE}${u}`);
 const owned = [
   ...free.map((f) => ({ name: f.sub ? `${f.name} ${f.sub}` : f.name, url: f.url })),
-  { name: we.name, url: we.url },
   { name: membership.standard.name, url: SKOOL_PLANS },
   { name: membership.premium.name, url: SKOOL_PLANS },
+  { name: we.name, url: we.url },
   ...vault, ...guides, ...suite, ...creator,
   { name: "Pretty & Paid PLR Vault™", url: "/shop/pretty-and-paid-plr-vault" },
   ...dfy,
@@ -136,7 +136,7 @@ const schema = [{
   bare
   homeChrome
   title="Shop"
-  description="The Digital Income Edit™ shop, in order: free guides first, then The Weekend Ecosystem™, the membership, single guides and done-for-you services."
+  description="The Digital Income Edit™ shop: free guides first, then the membership, then add-ons like The Weekend Ecosystem™, single guides and done-for-you services."
   schema={schema}
 >
     <!-- MASTHEAD -->
@@ -146,7 +146,7 @@ const schema = [{
     <WysAnnounce/>
         <p class="e-kick">The shop</p>
         <h1 class="mast-h">Something to sell. Somewhere to send them. <em>Less work to repeat.</em></h1>
-        <p class="e-lede">Every product here does one job in the same business: something to sell, a website that sells it, or the repeat work taken off your hands. Not sure what you need yet? Start with the free guides below. No card needed.</p>
+        <p class="e-lede">Start with the membership: the training, the community and fresh material every month, <a href={SKOOL_PLANS}>free for 7 days</a>. Everything else here is an add-on that does one job in the same business: something to sell, a website that sells it, or the repeat work taken off your hands.</p>
         <nav class="chips" aria-label="On this page">{index.map((x) => <a href={`#${x.id}`}><span>{x.n}</span>{x.t}</a>)}</nav>
       </div>
       <div class="mast-art" aria-hidden="true">
@@ -179,7 +179,32 @@ const schema = [{
     </div>
   </section>
 
-  <!-- 02 THE FLAGSHIP -->
+  <!-- 02 THE MEMBERSHIP: the main offer -->
+  <section class="e-sec-sm e-white sec" id="membership" aria-labelledby="h-mem">
+    <div class="e-wrap mem-grid">
+      <div class="head">
+        <p class="e-kick">02 · The membership · start here</p>
+        <h2 class="mem-h" id="h-mem">The whole package. <em>One membership.</em></h2>
+        <p class="note">The full classroom, something new every day, the community, and with Premium your content written every month. Everything else in this shop is an add-on. Both tiers open with a <span class="nw">{membership.trial}</span>.</p>
+        <div class="e-actions mem-actions">
+          <a class="e-btn e-btn--ghost" href="/membership">Compare Standard and Premium</a>
+          <a class="e-link" href={SKOOL_PLANS}>Start my {membership.trial} <span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="tiers">
+        {tiers.map((x) => (
+          <div class={`tier tier--${x.key}`}>
+            <h3>{x.t.name}</h3>
+            <p class="tier-price"><span class="e-price">{x.t.monthly}</span><span class="tier-per">/month</span> <span class="tier-alt">or {x.t.perYear}</span></p>
+            <p class="tier-buys">{x.buys}</p>
+            <ul class="e-list">{x.items.map((i) => <li>{i}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 THE FLAGSHIP -->
   <section class="e-dark flag" id="flagship" style="background-image:url(/images/brand/gl-tile.webp);background-size:360px 360px" aria-labelledby="h-flag">
     <div class="flag-grid">
       <figure class="flag-fig">
@@ -189,7 +214,7 @@ const schema = [{
         
       </figure>
       <div class="flag-body">
-        <p class="e-kick">02 · The course</p>
+        <p class="e-kick">03 · Add-on course</p>
         <p class="flag-name">{we.name}</p>
         <h2 class="flag-h" id="h-flag">Your website and blog, <em>built in one weekend.</em></h2>
         <p class="e-lede">A real site on a domain you own, built from the content you already have, with Claude doing the heavy lifting. No code, no designer, no starting from blank.</p>
@@ -216,31 +241,6 @@ const schema = [{
             <a class="e-btn e-btn--ghost" href={we.preview}>See inside first, no email</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 THE MEMBERSHIP -->
-  <section class="e-sec-sm e-white sec" id="membership" aria-labelledby="h-mem">
-    <div class="e-wrap mem-grid">
-      <div class="head">
-        <p class="e-kick">03 · The membership</p>
-        <h2 class="mem-h" id="h-mem">Training beside you. <em>Monthly content if you want it.</em></h2>
-        <p class="note">Two tiers of one Skool community. Both open with a <span class="nw">{membership.trial}</span>.</p>
-        <div class="e-actions mem-actions">
-          <a class="e-btn e-btn--ghost" href="/membership">Compare Standard and Premium</a>
-          <a class="e-link" href={SKOOL_PLANS}>Start my {membership.trial} <span class="ar" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <div class="tiers">
-        {tiers.map((x) => (
-          <div class={`tier tier--${x.key}`}>
-            <h3>{x.t.name}</h3>
-            <p class="tier-price"><span class="e-price">{x.t.monthly}</span><span class="tier-per">/month</span> <span class="tier-alt">or {x.t.perYear}</span></p>
-            <p class="tier-buys">{x.buys}</p>
-            <ul class="e-list">{x.items.map((i) => <li>{i}</li>)}</ul>
-          </div>
-        ))}
       </div>
     </div>
   </section>

@@ -106,7 +106,7 @@ const jsonLd = {
   <ul class="lft">{NAV.slice(0,3).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
   <a class="logo" href="/" aria-label="The Digital Income Edit home"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>
   <div class="r"><ul><li><a href="/membership">Membership</a></li></ul><a class="btn" href={NAV_CTA.href}>7 days free</a>
-    <details class="mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href="/learn">Free Library</a><a href="/work-with-me">Work With Me</a><a href="/lifestyle">Lifestyle</a></nav></details>
+    <details class="mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href="/learn">Free Library</a><a href="/work-with-me">Work With Me</a><a href="/lifestyle">Lifestyle</a></nav></details>
   </div>
 </div><div class="hx-gborder" aria-hidden="true"></div></header>
 
@@ -117,7 +117,7 @@ const jsonLd = {
   <div class="h11-copy">
     <span class="h11-kick">For women building without a personal brand</span>
     <h1 id="h11-title">Build a faceless business. <em>Keep your life <i class="stress">off camera.</i></em></h1>
-    <p class="h11-lede"><b>The Digital Income Edit™ membership</b> shows you how to build the whole business with AI, in the right order: offer, funnel, automation, then audience.</p>
+    <p class="h11-lede"><b>The Digital Income Edit™ membership</b> is the whole package: the training, the community and fresh material every month to build the whole business with AI, in the right order. Offer, funnel, automation, then audience.</p>
     <div class="h11-ctas">
       <a class="h11-btn" href={SKOOL_PLANS}>Start your 7 days free <span aria-hidden="true">→</span></a>
       <a class="h11-link" href="#blueprint">Or get the free Blueprint</a>
@@ -133,6 +133,19 @@ const jsonLd = {
     <span class="h11-sticker"><b>Meet Tommy Kate.</b> The AI face of this brand. Yours can have one too.</span>
   </div>
 </section>
+
+<section class="mem" id="membership"><div class="wrap">
+  <div class="head"><span class="h11-kick">The membership · the whole package</span><h2>One membership. <em>The <i class="stress">whole</i> business.</em></h2></div>
+  <p class="home-membership-fit">This is where everything here comes together. Not one course you finish and forget, but the full classroom, something new every day, the community beside you and, with Premium, your content written for you every month. Every course and kit on this site is an add-on. The membership is where you build.</p>
+  <ul class="home-mem-why">
+    <li><b>The whole build, in order</b><span>Brand, content, email, Pinterest and selling, in one classroom you keep coming back to.</span></li>
+    <li><b>New every day and every month</b><span>A fresh AI photo prompt daily, new lessons as they land, and with Premium a full content calendar each month.</span></li>
+    <li><b>Never building alone</b><span>900+ women in the Skool community, asking the same questions you are.</span></li>
+  </ul>
+  <MembershipPlans />
+  <p class="home-premium-note"><a href="/membership#compare">See the full membership comparison</a></p>
+  <div class="rv-row h11-rv4">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
+</div></section>
 
 <section class="home-honest" aria-labelledby="honest-title">
   <div class="home-sheet">
@@ -203,16 +216,10 @@ const jsonLd = {
   </div>
 </section>
 
-<section class="mem" id="membership"><div class="wrap">
-  <div class="head"><span class="h11-kick">The membership · on Skool</span><h2>Two ways in. <em>Both <i class="stress">free</i> for 7 days.</em></h2></div>
-  <p class="home-membership-fit">It lives on Skool, the community app where the classroom and the group are. Standard teaches the build. Premium adds the sales training, every guide unlocked and content written for you every month. Starting from scratch? Either one works.</p>
-  <MembershipPlans />
-  <p class="home-premium-note"><a href="/membership#compare">See the full membership comparison</a></p>
-  <div class="rv-row h11-rv4">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-</div></section>
+
 
 <section class="home-course-zone" id="owned-website" aria-labelledby="owned-title">
-<header class="home-course-heading home-inner"><span class="home-kicker">Have lessons, guides or posts?</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Turn the material you already made into your own website and blog, with email sign&#8209;ups connected, in one weekend. No paid product needed. No material yet? <a href="#blueprint">Start with the free&nbsp;Blueprint.</a></p></header>
+<header class="home-course-heading home-inner"><span class="home-kicker">Optional add-on course · one-time</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Turn the material you already made into your own website and blog, with email sign&#8209;ups connected, in one weekend. No paid product needed. No material yet? <a href="#blueprint">Start with the free&nbsp;Blueprint.</a></p></header>
 <section class="fs sp r" aria-label="Your weekend website build"><div class="wrap">
   <div class="days">
     <div class="day fri"><h3>Friday</h3><ul><li><span>Material in different places</span></li><li><span>No website to send readers</span></li><li><span>No connected email sign-up</span></li></ul></div>
