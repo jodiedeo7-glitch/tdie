@@ -35,7 +35,7 @@ Follow `ops/canon/canon.json` → `content_calendar_rules` and Decisions 80, 111
 
 ## Required sequence
 
-### Stage 1 — Research — CHATGPT
+### Stage 1 — Research — CLAUDE
 1. Collect >=75 qualifying examples using the authoritative evidence classes.
 2. Source >=40 same-niche, similar-creator, normally-not-viral accounts.
 3. Exclude celebrities, huge accounts, and brands.
@@ -58,7 +58,7 @@ OUTPUT:
 - `PREMIUM_CALENDAR_RESEARCH_<YYYY-MM>.md
 - `PREMIUM_CALENDAR_BUILD_RULES_<YYYY-MM>.md`
 
-### Stage 2 — Calendar architecture — CHATGPT
+### Stage 2 — Calendar architecture — CLAUDE
 Build the month around the evidence.
 
 Required canon:
@@ -74,7 +74,7 @@ Required canon:
 OUTPUT:
 - `PREMIUM_CALENDAR_PLAN_<YYYY-MM>.md`
 
-### Stage 3 — Copy + creative — CHATGPT
+### Stage 3 — Copy + creative — CLAUDE
 Create the finished weekly content packet.
 
 For each post include:
@@ -92,7 +92,7 @@ For each post include:
 - asset filename
 - status
 
-ChatGPT also performs:
+Claude also performs:
 - voice QA
 - repetition QA
 - selling-spread QA
@@ -128,14 +128,14 @@ Claude may NOT:
 - replace research-backed hooks with generic ones
 - merge Daily Prompts into the calendar
 - change offer rotation
-- invent new content to fill gaps without routing back to ChatGPT
+- invent new content to fill gaps without routing back to research
 
 OUTPUT:
 - `PREMIUM_CALENDAR_EXECUTION_LOG_<YYYY-MM>.md`
 
-### Stage 6 — Verification — CHATGPT + CLAUDE
+### Stage 6 — Verification — CLAUDE
 Claude verifies live platform state.
-ChatGPT verifies the completed log against the approved manifest and canon.
+Claude verifies the completed log against the approved manifest and canon.
 
 A week is COMPLETE only when:
 - all scheduled content exists

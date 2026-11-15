@@ -57,7 +57,7 @@ Publish/schedule an already-approved weekly Premium calendar packet exactly as s
 - filling missing copy yourself
 - merging Daily Prompts into this workflow
 
-If any required field/asset is missing, log BLOCKED and route the item back to ChatGPT.
+If any required field/asset is missing, log BLOCKED and send the item back to the research step.
 
 ## Verification
 After every scheduled item, confirm:
