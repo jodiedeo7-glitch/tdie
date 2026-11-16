@@ -25,6 +25,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 cfg = json.load(open(sys.argv[1])); OUT = sys.argv[2]; STILLS = '--stills' in sys.argv
 R = cfg['repo'].rstrip('/') + '/'; FD = cfg['fonts'].rstrip('/') + '/'
 W, H, FPS = 1080, 1920, 30
+# INSTAGRAM SAFE AREA (Jodie, 16 Nov 2026: cut-off text). Every word, photo and button stays inside rows
+# SAFE_TOP..SAFE_BOTTOM and nothing slides in from off-screen; check_safe() refuses to render otherwise.
+SAFE_TOP, SAFE_BOTTOM, SAFE_X = 300, 1480, 60
 BG = (255, 247, 250); INK = (42, 26, 34); PINK = (224, 69, 143); KICK = (214, 51, 132); SOFT = (138, 90, 112)
 
 def F(n, s): return ImageFont.truetype(FD + n, s)
@@ -80,6 +83,19 @@ def text(base, s, font, cy, fill, alpha=1.0, dy=0, cx=W / 2, spacing=0):
         d.text((cx, cy + dy), s, font=font, fill=fill + (int(255 * alpha),), anchor='mm')
     base.alpha_composite(lay)
 
+def script_text(base, s, font, cy, fill, alpha=1.0, dy=0):
+    # Yellowtail's capital I reads like a slash, so a lone "I" is set in Gloock (same rule as look_reel.py)
+    if ' I ' not in ' ' + s + ' ': return text(base, s, font, cy, fill, alpha, dy)
+    if alpha <= 0: return
+    gi = GL(int(font.size * 0.62)); lay = Image.new('RGBA', base.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    words = s.split(' '); sw = d.textlength(' ', font=font)
+    fonts = [gi if w == 'I' else font for w in words]
+    tw = sum(d.textlength(w, font=f) for w, f in zip(words, fonts)) + sw * (len(words) - 1)
+    x = W / 2 - tw / 2; base_y = cy + dy + font.getmetrics()[0] * 0.35
+    for w, f in zip(words, fonts):
+        d.text((x, base_y), w, font=f, fill=fill + (int(255 * alpha),), anchor='ls'); x += d.textlength(w, font=f) + sw
+    base.alpha_composite(lay)
+
 def wrap(s, font, maxw):
     d = ImageDraw.Draw(Image.new('L', (1, 1))); out, cur = [], ''
     for w in s.split():
@@ -116,59 +132,59 @@ def background(t):
     place(b, sp, 170 + dx, 140 + dy, a); place(b, sp_br, W - 170 - dx, H - 160 - dy, a); return b
 
 HEADER = cfg['header']
-def header(b): text(b, HEADER, fit(GL, 50, HEADER, W - 120), 128, PINK)
+def header(b): text(b, HEADER, fit(GL, 44, HEADER, W - 160), 335, PINK)
 
 # ---- scene builders: each returns fn(local_t, global_t) -> RGBA frame ----
 def mk_hook(sc, zoom=False):
-    l1 = fit(GL, 84, sc['line1'], W - 120); l2 = fit(YT, 170 if not zoom else 230, sc['line2'], W - 120)
-    c0 = None if zoom else card(photo(sc['photo']), 760, 1000, -1.5)
+    l1 = fit(GL, 84, sc['line1'], W - 120); l2 = fit(YT, 170 if not zoom else 190, sc['line2'], W - 160)
+    c0 = None if zoom else card(photo(sc['photo']), 760, 700, -1.5)
     def f(t, T):
         b = background(T); header(b)
-        p1 = prog(t, .1, .4); text(b, sc['line1'], l1, 300, INK, p1, dy=30 * (1 - p1))
-        p2 = prog(t, .45, .4); text(b, sc['line2'], l2, 450, PINK, p2, dy=30 * (1 - p2))
+        p1 = prog(t, .1, .4); text(b, sc['line1'], l1, 440, INK, p1, dy=30 * (1 - p1))
+        p2 = prog(t, .45, .4); script_text(b, sc['line2'], l2, 580 if zoom else 570, PINK, p2, dy=30 * (1 - p2))
         p = prog(t, .25, .6)
         if zoom:
-            c = card(photo(sc['photo']), 760, 1000, 1, zoom=1 + .07 * min(1, t / sc['dur']))
-            place(b, c, W / 2, 1140 + 120 * (1 - p), p)
+            c = card(photo(sc['photo']), 760, 700, 1, zoom=1 + .07 * min(1, t / sc['dur']))
+            place(b, c, W / 2, 1080 + 40 * (1 - p), p)
         else:
-            place(b, c0, W / 2, 1140 + 260 * (1 - p), p, .96 + .04 * min(1, t / sc['dur']))
+            place(b, c0, W / 2, 1080 + 40 * (1 - p), p, .96 + .04 * min(1, t / sc['dur']))
         return b
     return f
 
 def mk_triple(sc):
-    cs = [card(photo(p), 760, 1000, a) for p, a in zip(sc['photos'], (1.5, -1.5, 1))]
+    cs = [card(photo(p), 760, 640, a) for p, a in zip(sc['photos'], (1.5, -1.5, 1))]
     l1 = fit(GL, 100, sc['line1'], W - 120); l2 = fit(YT, 150, sc['line2'], W - 120)
     seg = (sc['dur'] - .2) / 3
     def f(t, T):
         b = background(T); header(b)
-        text(b, sc['line1'], l1, 290, INK, prog(t, 0, .35)); text(b, sc['line2'], l2, 430, PINK, prog(t, .25, .35))
+        text(b, sc['line1'], l1, 430, INK, prog(t, 0, .35)); text(b, sc['line2'], l2, 555, PINK, prog(t, .25, .35))
         for i in range(3):
             st = i * seg
             if t < st: break
             p = prog(t, st, .45); nxt = i < 2 and t >= st + seg
             if nxt:
                 q = prog(t, st + seg, .45)
-                if q < 1: place(b, cs[i], W / 2 - 160 * q, 1120, 1 - q, 1 - .08 * q)
+                if q < 1: place(b, cs[i], W / 2, 1030, 1 - q, 1 - .04 * q)
             else:
-                place(b, cs[i], W / 2 + 700 * (1 - p), 1120, p); chip(b, sc['labels'][i], 1680, prog(t, st + .2, .3))
+                place(b, cs[i], W / 2, 1030 + 30 * (1 - p), p); chip(b, sc['labels'][i], 1420, prog(t, st + .2, .3))
         return b
     return f
 
 def mk_pile(sc):
     n = len(sc['words']); angs = (-6, 4, -3, 5, -4, 3)
-    cs = [card(photo(p), 640, 860, angs[i % 6]) for i, p in enumerate(sc['photos'])]
-    seg = sc['dur'] / n; wf = [fit(GL, 150, w, W - 120) for w in sc['words']]
+    cs = [card(photo(p), 600, 640, angs[i % 6]) for i, p in enumerate(sc['photos'])]
+    seg = sc['dur'] / n; wf = [fit(GL, 130, w, W - 160) for w in sc['words']]
     def f(t, T):
         b = background(T); header(b)
-        text(b, sc.get('kicker', ''), J6(34), 230, KICK, prog(t, 0, .3), spacing=8)
+        text(b, sc.get('kicker', ''), J6(34), 400, KICK, prog(t, 0, .3), spacing=8)
         k = min(n - 1, int(t // seg))
         for i in range(k + 1):
             p = prog(t, i * seg, .35)
-            place(b, cs[i], W / 2 + (-30 if i % 2 else 30) * (k - i), 1060 + (i - k) * 26, p if i == k else 1, 1.12 - .12 * p)
-        pw = prog(t - k * seg, 0, .3); text(b, sc['words'][k], wf[k], 380, INK, pw, dy=40 * (1 - pw))
+            place(b, cs[i], W / 2 + (-30 if i % 2 else 30) * (k - i), 1060 + (i - k) * 26, p if i == k else 1, 1.04 - .04 * p)
+        pw = prog(t - k * seg, 0, .3); text(b, sc['words'][k], wf[k], 520, INK, pw, dy=20 * (1 - pw))
         d = ImageDraw.Draw(b)
         for i in range(n):
-            x = W / 2 + (i - (n - 1) / 2) * 44; d.ellipse((x - 9, 491, x + 9, 509), fill=PINK if i <= k else (240, 200, 220))
+            x = W / 2 + (i - (n - 1) / 2) * 44; d.ellipse((x - 9, 621, x + 9, 639), fill=PINK if i <= k else (240, 200, 220))
         return b
     return f
 
@@ -190,25 +206,25 @@ def mk_quote(sc):
     return f
 
 def mk_end(sc):
-    fan = [card(photo(p), 360, 480, a) for p, a in zip(sc['photos'], (9, -9, 0))]
-    n1 = fit(GL, 98, sc['name1'], W - 100); n2 = fit(GL, 98, sc['name2'], W - 100)
+    fan = [card(photo(p), 280, 330, a) for p, a in zip(sc['photos'], (9, -9, 0))]
+    n1 = fit(GL, 92, sc['name1'], W - 160); n2 = fit(GL, 92, sc['name2'], W - 160)
     def f(t, T):
         b = background(T)
-        text(b, sc.get('kicker', ''), J6(32), 190, KICK, prog(t, 0, .4), spacing=8)
-        p = prog(t, .1, .5); text(b, sc['name1'], n1, 300, INK, p, dy=24 * (1 - p)); text(b, sc['name2'], n2, 410, INK, p, dy=24 * (1 - p))
-        for i, (dx, dy) in enumerate(((-250, 760), (250, 760), (0, 735))):
-            if i < len(fan): q = prog(t, .35 + i * .15, .45); place(b, fan[i], W / 2 + dx * q, dy + 80 * (1 - q), q)
-        y = 1080
+        text(b, sc.get('kicker', ''), J6(32), 340, KICK, prog(t, 0, .4), spacing=8)
+        p = prog(t, .1, .5); text(b, sc['name1'], n1, 440, INK, p, dy=24 * (1 - p)); text(b, sc['name2'], n2, 540, INK, p, dy=24 * (1 - p))
+        for i, (dx, dy) in enumerate(((-230, 790), (230, 790), (0, 770))):
+            if i < len(fan): q = prog(t, .35 + i * .15, .45); place(b, fan[i], W / 2 + dx * q, dy + 30 * (1 - q), q)
+        y = 1000
         for j, ln in enumerate(sc.get('lines', [])):
             q = prog(t, 1.1 + j * .2, .4)
-            if j == 0 and ln.isupper(): text(b, ln, J6(32), y, KICK, q, spacing=8); y += 66
-            else: text(b, ln, fit(J5, 44, ln, W - 80), y, INK, q); y += 70
-        q = prog(t, 1.6, .4); text(b, sc.get('small', ''), fit(J5, 34, sc.get('small', ''), W - 80), y + 6, SOFT, q)
+            if j == 0 and ln.isupper(): text(b, ln, J6(30), y, KICK, q, spacing=8); y += 54
+            else: text(b, ln, fit(J5, 38, ln, W - 160), y, INK, q); y += 50
+        q = prog(t, 1.6, .4); text(b, sc.get('small', ''), fit(J5, 30, sc.get('small', ''), W - 160), y + 6, SOFT, q)
         q3 = prog(t, 1.9, .4)
         if q3 > 0 and sc.get('button'):
             f2 = J6(40); lay = Image.new('RGBA', b.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
             tw = d.textlength(sc['button'], font=f2); hw = (tw / 2 + 60) * (1 + .03 * math.sin(max(0, t - 2.3) * 4))
-            by = max(1350, y + 130)
+            by = y + 100
             a3 = int(255 * q3)  # white button, Muted Gold hairline, near-black text, pink arrow (no pink-filled buttons, CLAUDE.md 11 Oct 2026)
             d.rounded_rectangle((W / 2 - hw - 30, by - 46, W / 2 + hw + 30, by + 46), radius=46, fill=(255, 255, 255, a3), outline=(200, 169, 106, a3), width=3)
             b.alpha_composite(lay); aw = d.textlength('  →', font=f2)
@@ -233,6 +249,19 @@ def frame(T):
             if i > 0 and lt < XF:
                 pf, pd = SC[i - 1]; im = Image.blend(pf(pd - .001, T), im, lt / XF)
             return im
+
+def check_safe():
+    from PIL import ImageChops
+    bad = []
+    for i, (fn, d) in enumerate(SC):
+        for k in range(1, 9):
+            T = starts[i] + d * k / 9
+            a = frame(T).convert('RGB'); bg = background(T).convert('RGB')
+            bb = ImageChops.difference(a, bg).convert('L').point(lambda v: 255 if v > 40 else 0).getbbox()
+            if bb and (bb[1] < SAFE_TOP - 10 or bb[3] > SAFE_BOTTOM or bb[0] < SAFE_X - 30 or bb[2] > W - SAFE_X + 30):
+                bad.append((i + 1, round(T, 2), bb))
+    if bad: raise SystemExit(f'UNSAFE LAYOUT, not rendering: {bad}')
+check_safe()
 
 if STILLS:
     ts = []
