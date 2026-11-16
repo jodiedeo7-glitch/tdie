@@ -18,6 +18,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
 FD = os.path.join(HERE, 'fonts')
 W, H, FPS = 1080, 1920, 30
+# INSTAGRAM SAFE AREA (Jodie, 16 Nov 2026: she had to delete the Laundry Day Reel for cut-off text).
+# The feed shows a Reel cropped to 4:5 (rows 285-1635) and the Reels screen covers the top ~250 px (name/AI label)
+# and the bottom ~420 px (caption, buttons). Every word, card and line must sit inside SAFE_TOP..SAFE_BOTTOM,
+# and nothing may slide in from or out past the frame edges. check_safe() refuses to render if anything breaks this.
+SAFE_TOP, SAFE_BOTTOM, SAFE_X = 300, 1480, 60
 PINK = (214, 46, 115)
 INK = (26, 20, 23)
 LIGHT = (255, 240, 246)
@@ -212,6 +217,8 @@ def extra_photos(slug):
     for key, a, b in (('roundup', 'roundup.jpg', '_roundup.jpg'), ('foundit', 'found-it.jpg', '_foundit.jpg')):
         p = os.path.join(REPO, 'public', 'wys-pins', slug, a)
         if not os.path.exists(p):
+            p = os.path.join(REPO, 'src', 'lifestyle', f"{slug}-{key}.jpg")
+        if not os.path.exists(p):
             g = glob.glob(os.path.join(REPO, 'ops', 'wys', 'newpins', '*_' + slug.replace('-', '_') + b))
             if not g: raise SystemExit(f'MISSING {key} photo for {slug}: needs all 5 photos')
             p = g[0]
@@ -230,11 +237,9 @@ def build(slug, hook_no):
     durs = [4.0, 7.6, 4.6, 3.8, 5.6]; total = sum(durs); starts = [sum(durs[:i]) for i in range(5)]
 
     def chrome(c, si, t):
-        p = min(1, (starts[si] + t) / total); d = ImageDraw.Draw(c)
-        d.rectangle((60, 70, W - 60, 78), fill=(255, 255, 255, 80))
-        d.rectangle((60, 70, 60 + (W - 120) * p, 78), fill=(255, 255, 255, 255))
-        c.alpha_composite(glow(TAG, radius=8, strength=1.2), ((W - TAG.width) // 2 - 40, 52))
-        d.rectangle((34, 34, W - 34, H - 34), outline=CHAMP + (150,), width=2)
+        # brand tag inside the safe area (the old top progress bar and edge frame were cut off by Instagram)
+        if si == 4: return   # end card already shows the product name big
+        g = glow(TAG, radius=8, strength=1.2); c.alpha_composite(g, ((W - g.width) // 2, SAFE_TOP - 40))
 
     # 1 hook on the Lifestyle photo
     s1 = [El(big(h1, 140), W / 2, 1010, 0.15, 0.4, 'up', 90), El(big(h2, 150, bg=PINK), W / 2, 1200, 0.9, 0.45, 'pop')]
@@ -247,30 +252,32 @@ def build(slug, hook_no):
     B2 = rose_backdrop(ph['lifestyle'])
     lf = JOST(32, 'Bold'); cards = []
     for k, lab in (('basic', 'BASIC'), ('styled', 'STYLED'), ('lifestyle', 'LIFESTYLE'), ('roundup', 'ROUNDUP'), ('foundit', 'FOUND IT')):
-        im = ph[k]; w = 540; p = im.resize((w, int(w * im.height / im.width)), Image.LANCZOS).convert('RGBA')
+        im = ph[k]; w = 430; p = im.resize((w, int(w * im.height / im.width)), Image.LANCZOS).convert('RGBA')
         card = Image.new('RGBA', (w + 20, p.height + 20), (255, 255, 255, 255)); card.paste(p, (10, 10))
         tg = pill(lab, lf, (255, 255, 255), (40, 14, 26, 215), 30, 14); card.alpha_composite(tg, (30, card.height - tg.height - 30))
         cards.append(shadow(card))
+    CARD_CY = 1125
     name_line = label(title, fit_text(title, lambda s: JOST(s, 'Medium'), 40, 900), padx=0, pady=0)
-    s2 = [El(big('ONE LOOK.', 165), W / 2, 270, 0.05, 0.35, 'pop'),
-          El(big('FIVE WAYS.', 165, fg=PINK, bg=(255, 255, 255)), W / 2, 465, 0.4, 0.35, 'pop'),
-          El(name_line, W / 2, 628, 0.7, 0.4, 'up', 30)]
+    s2 = [El(big('ONE LOOK.', 150), W / 2, 445, 0.05, 0.35, 'pop'),
+          El(big('FIVE WAYS.', 150, fg=PINK, bg=(255, 255, 255)), W / 2, 600, 0.4, 0.35, 'pop'),
+          El(name_line, W / 2, 745, 0.7, 0.4, 'up', 30)]
     def f2(t):
         c = B2.copy()
         for e in s2: e.draw(c, t)
         for i, card in enumerate(cards):
             st = 0.9 + i * 1.3
             if t < st: continue
-            x = W / 2 + (1 - ease((t - st) / 0.5)) * W
-            if i < len(cards) - 1 and t > st + 1.3: x = W / 2 - ease((t - st - 1.3) / 0.5) * W
-            c.alpha_composite(card, (int(x - card.width / 2), 1110 - card.height // 2))
+            if i < len(cards) - 1 and t > st + 1.3 + 0.35: continue   # next card has fully covered it
+            a = ease((t - st) / 0.35); img = card
+            if a < 0.999: img = card.copy(); img.putalpha(img.getchannel('A').point(lambda v: int(v * a)))
+            c.alpha_composite(img, (int(W / 2 - card.width / 2), CARD_CY - card.height // 2))
         chrome(c, 1, t); return c
 
     # 3 then it makes... (Styled photo)
     lines3 = [('THE PINS.', None), ('THE BLOG POST.', PINK), ('THE CAROUSEL.', None), ('THE IDEA LIST.', PINK)]
     s3 = [El(big('THEN IT MAKES', 90), W / 2, 470, 0.1, 0.35, 'up', 60)]
     for i, (tx, bg) in enumerate(lines3):
-        s3.append(El(big(tx, 128, bg=bg), W / 2, 690 + i * 195, 0.5 + i * 0.55, 0.35, 'left', 260))
+        s3.append(El(big(tx, 128, bg=bg), W / 2, 690 + i * 195, 0.5 + i * 0.55, 0.35, 'up', 50))
     DARK = Image.new('RGBA', (W, H), (20, 8, 14, 95))
     def f3(t):
         c = kenburns(ph['styled'], t, durs[2], 1.04, 1.15); c.alpha_composite(SH); c.alpha_composite(DARK)
@@ -309,7 +316,31 @@ def build(slug, hook_no):
     for el in (El(big(h1, 132), W / 2, 830), El(big(h2, 140, bg=PINK), W / 2, 1010)):
         el.draw(cv, 9)
     t2 = label('THE WHILE-YOU-SLEEP STOREFRONT™', JOST(34, 'Bold'), padx=0, pady=0); cv.alpha_composite(t2, ((W - t2.width) // 2, 1130))
-    return [(durs[0], f1), (durs[1], f2), (durs[2], f3), (durs[3], f4), (durs[4], f5)], cv.convert('RGB')
+    def base(i, t):   # each scene's background with no text, cards or tag (used by check_safe)
+        if i == 0: c = kenburns(ph['lifestyle'], t, durs[0], 1.16, 1.03); c.alpha_composite(SH); return c
+        if i == 1: return B2.copy()
+        if i == 2: c = kenburns(ph['styled'], t, durs[2], 1.04, 1.15); c.alpha_composite(SH); c.alpha_composite(DARK); return c
+        if i == 3:
+            z = 1.30 + 0.05 * min(1, t / 0.4); c = cover_fit(ph['lifestyle'], z + 0.08 * t / durs[3], 0.5, 0.68)
+            c.alpha_composite(SH); c.alpha_composite(DARK4); return c
+        return B5.copy()
+    scenes = [(durs[0], f1), (durs[1], f2), (durs[2], f3), (durs[3], f4), (durs[4], f5)]
+    check_safe(scenes, base)
+    return scenes, cv.convert('RGB')
+
+
+def check_safe(scenes, base_fn):
+    """Render each scene's final frame over its bare background and confirm every added pixel sits in the safe area."""
+    bad = []
+    for i, (dur, fn) in enumerate(scenes):
+        for t in ([0.9 + k * 1.3 + 0.2 for k in range(5)] + [dur - 0.05] if i == 1 else (dur * 0.5, dur - 0.05)):
+            a = fn(t).convert('RGB'); b = base_fn(i, t).convert('RGB')
+            from PIL import ImageChops
+            diff = ImageChops.difference(a, b).convert('L').point(lambda v: 255 if v > 40 else 0)
+            bb = diff.getbbox()
+            if bb and (bb[1] < SAFE_TOP - 50 or bb[3] > SAFE_BOTTOM or bb[0] < SAFE_X - 30 or bb[2] > W - SAFE_X + 30):
+                bad.append((i + 1, round(t, 2), bb))
+    if bad: raise SystemExit(f'UNSAFE LAYOUT, not rendering: {bad}')
 
 
 def render(scenes, out_mp4, xfade=0.3):
