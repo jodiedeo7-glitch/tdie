@@ -315,7 +315,7 @@ export const BOTS = [
    }
   ],
   "know": [
-   "You collect the posts and it does the analysing. It cannot scroll the apps for you.",
+   "You collect the posts and it does the analyzing. It cannot scroll the apps for you.",
    "A screenshot of the post and one of the account's grid is enough.",
    "It needs about ten standout posts before a pattern means much.",
    "It borrows patterns, never another creator's words or video.",

@@ -1,6 +1,6 @@
 // The two looks the system built that are live on the Lifestyle blog.
 // Photos are the founder-approved Basic, Styled and Lifestyle images.
-// Pins, carousels and phone screens built from them are labelled "Example".
+// Pins, carousels and phone screens built from them are labeled "Example".
 import plaidBasic from '../lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg';
 import plaidStyled from '../lifestyle/pink-plaid-pumpkin-patch-outfit-styled.jpg';
 import plaidLife from '../lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.png';

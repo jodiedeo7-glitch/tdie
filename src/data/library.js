@@ -3,7 +3,7 @@
 // The pillar guides. Slugs of record: Corrections & Decisions Record v2.1, Decision 66.
 // `sub` is the outcome, not the topic. `freebie` is the live /resources kit that
 // belongs to that pillar.
-// `ac` is the spine colour: a ramp from Lavender to Signature Hot Pink.
+// `ac` is the spine color: a ramp from Lavender to Signature Hot Pink.
 export const pillars = [
   { n: "01", title: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", img: "/images/library-cards/hero-office-wide-01.webp", category: "Business Systems", readTime: "20 Min Read", ac: "#CBB7F7",
     sub: "Leave with a niche, an offer and a traffic source, not just a business name.",
@@ -81,7 +81,7 @@ export const articles = [
     sub: "Take a week off without anything breaking." },
   { title: "Your First Passive Stream Should Be Boring", slug: "boring-first-passive-stream", category: "Passive Income", readTime: "10 Min Read",
     sub: "The exciting idea is the one that stops paying." },
-  { title: "Would Anyone Recognise Your Brand With the Logo Covered?", slug: "logo-off-test", category: "Branding", readTime: "10 Min Read",
+  { title: "Would Anyone Recognize Your Brand With the Logo Covered?", slug: "logo-off-test", category: "Branding", readTime: "10 Min Read",
     sub: "If the words alone don't give you away, the brand isn't finished." },
   { title: "Stop Asking What to Post. Your Readers Already Told You.", slug: "content-from-questions", category: "Content Creation", readTime: "9 Min Read",
     sub: "Your best ideas are already sitting in your comments." },
