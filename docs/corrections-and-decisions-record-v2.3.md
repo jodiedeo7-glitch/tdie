@@ -11,7 +11,7 @@
 
 It also **resolves Decision 63** (email platform), which was previously open.
 
-Where this document and any prior record conflict, **this document wins.** Records v1.0 through v2.0 are superseded as governing documents; they are retained as historical artefacts.
+Where this document and any prior record conflict, **this document wins.** Records v1.0 through v2.0 are superseded as governing documents; they are retained as historical artifacts.
 
 **Scope declaration (Decision 31):** covers decisions, standing rules, brand policy, and process. Does not outrank Product Register v3.1 on product facts.
 

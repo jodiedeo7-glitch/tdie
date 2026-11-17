@@ -13,7 +13,7 @@ The quiz page shows every result on screen and keeps it there — no result is e
 4. **In Vercel, confirm `MAILERLITE_API_KEY` exists** (Production). That key alone is what the form needs.
 5. **Test** with your own email: the email arrives, the answers fill in, and you sit in one quiz group only.
 
-Merge tags below use MailerLite's `{$field}` format. **Unverified:** the first-name fallback syntax `{$name|default:'there'}` — replace it with the fallback inserted by the editor's own personalisation button.
+Merge tags below use MailerLite's `{$field}` format. **Unverified:** the first-name fallback syntax `{$name|default:'there'}` — replace it with the fallback inserted by the editor's own personalization button.
 
 ---
 

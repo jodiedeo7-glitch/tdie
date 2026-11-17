@@ -9,7 +9,7 @@
 
 **This is a full replacement record. It stands alone.** It carries forward every decision in force — Decisions 1 through 58 as recorded in Records v1.0 through v1.9 — and adds Decisions 59 through 65, taken 24 July 2026 during the AI pillar, Digital Products pillar, shop, navigation, verification, and RSS build sessions.
 
-Where this document and any prior record conflict, **this document wins.** Records v1.0 through v1.9 are superseded as governing documents; they are retained as historical artefacts.
+Where this document and any prior record conflict, **this document wins.** Records v1.0 through v1.9 are superseded as governing documents; they are retained as historical artifacts.
 
 **Scope declaration (Decision 31):** covers decisions, standing rules, brand policy, and process. Does not outrank Product Register v3.1 on product facts.
 
@@ -35,7 +35,7 @@ The live site, repo, and shop override any document, including this one.
 61. The AI pillar's paid rung is the $5 Value Vault prompt pack, not the Planner
 62. Three blocked pillars were unblocked by founder decision
 63. The site email platform is undecided — Kit vs MailerLite, flagged not decided
-64. The Value Vault ledger is three products totalling $21
+64. The Value Vault ledger is three products totaling $21
 65. The RSS feed and publish-date manifest are the article-distribution spine
 
 **Standing Rules 57–58** are added. Standing Rules 1–56 retain their numbers and remain in force.
@@ -141,7 +141,7 @@ MailerLite therefore does the requested automation for free where Kit charges. C
 
 ---
 
-# DECISION 64 — THE VALUE VAULT LEDGER IS THREE PRODUCTS TOTALLING $21
+# DECISION 64 — THE VALUE VAULT LEDGER IS THREE PRODUCTS TOTALING $21
 
 ## The decision
 

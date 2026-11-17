@@ -88,7 +88,7 @@ About the channel: "True crime. Medical mysteries. Rabbit holes." Signature line
 
 Pick the ten with real research: what is being searched and argued about now, where the public narrative and the public record visibly disagree, where a primary record exists (court filings, trial video, released autopsy summaries, official reports), and where a nurse's eye adds something. About half recent cases, a few medical mysteries, one or two broader rabbit holes. For each, one line on why it will perform and one line on what the record can establish.
 
-Verification is non-negotiable. Try every route to caption tracks and primary documents. Anything not verified word for word goes in the quarantine section marked "VERIFY ON HER PC BEFORE FILMING", never in the script. Both halves of every damning statistic. Never state guilt, innocence, motive or mental state. No photos of minors or private individuals. Where she lacks standing (forensic pathology, anaesthesia), she says so on camera.
+Verification is non-negotiable. Try every route to caption tracks and primary documents. Anything not verified word for word goes in the quarantine section marked "VERIFY ON HER PC BEFORE FILMING", never in the script. Both halves of every damning statistic. Never state guilt, innocence, motive or mental state. No photos of minors or private individuals. Where she lacks standing (forensic pathology, anesthesia), she says so on camera.
 
 Where a published book genuinely fits a case, name it in the posting package for her Amazon storefront (https://www.amazon.com/shop/thedigitalincomeedit) with "#ad As an Amazon Associate I earn from qualifying purchases." Never force one.
 

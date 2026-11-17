@@ -55,7 +55,7 @@ Sections 13–16 are mandatory. They were added as a standing requirement.
 - Never imply evidence was hidden, planted, or mishandled when a witness gave a normal professional reason.
 - No photographs of minors or of private individuals in these cases. Say on camera why not — it's the most on-brand moment available.
 - No logos of institutions — a logo reads as endorsement.
-- Where she lacks the professional standing to adjudicate (forensic pathology, anaesthesia), she says so ON CAMERA, not just in the caption.
+- Where she lacks the professional standing to adjudicate (forensic pathology, anesthesia), she says so ON CAMERA, not just in the caption.
 - Critique reasoning, never people. No remarks on a witness's manner or appearance.
 - Source footage from public proceedings: short excerpts inside original commentary with attribution. Keep clips under ~15s. Fair-use posture, not a guarantee.
 - Include the honesty beat — the caveat that weakens her own strongest point. It's what makes the rest credible, and it pre-empts the correcting commenter.

@@ -9,7 +9,7 @@
 
 **This is an amendment, not a full replacement.** Every decision in force under v2.3 remains in force except where this document contradicts it. On tier names, membership pricing, and the entry path, **this document wins.**
 
-v2.3 and every record beneath it are superseded on those three subjects only and retained as historical artefacts. Records v1.0–v2.3 remain governing on everything else.
+v2.3 and every record beneath it are superseded on those three subjects only and retained as historical artifacts. Records v1.0–v2.3 remain governing on everything else.
 
 ### Precedence stack
 

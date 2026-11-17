@@ -130,7 +130,7 @@ Title on image: 4 words (3 to 5 rule). Letter check at phone size before shippin
 | Starbucks | coffee chain | removed |
 | Tysons Corner Center | named mall, landmark | removed |
 | venti | chain-specific size word | removed |
-| Pink Drink (capitalised) | chain menu item | removed |
+| Pink Drink (capitalized) | chain menu item | removed |
 | green straw | chain signature, imitates a business | removed; "plain white straw" |
 | mall skylights | ties the scene to the named mall | removed |
 | Nordstrom storefront | store name, signage | removed |

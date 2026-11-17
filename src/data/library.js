@@ -12,7 +12,7 @@ export const pillars = [
     sub: "Finish the thing you keep restarting.",
     freebie: "The Creator to CEO Kit" },
   { n: "03", title: "The Branding Guide", slug: "branding-guide", img: "/images/library-cards/detail-shelf-styling-02.webp", category: "Branding", readTime: "16 Min Read", ac: "#C9A2E7",
-    sub: "A brand she recognises before she reads the name.",
+    sub: "A brand she recognizes before she reads the name.",
     freebie: "The Brand Clarity Kit" },
   { n: "04", title: "The Beginner’s Guide to Content Creation for Faceless Brands", slug: "content-creation-guide", img: "/images/library-cards/hero-office-wide-06.webp", category: "Content Creation", readTime: "13 Min Read", ac: "#CD97DD",
     sub: "One session that fills the whole week.",
