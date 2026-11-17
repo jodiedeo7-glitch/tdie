@@ -11,18 +11,18 @@ Rewritten 11 November 2026 on Jodie's instruction to overwrite and delete every 
 ## The look
 SCRAPBOOK IS OUT (Jodie, 11 November 2026: "Ugly. Forget the scrapbook, forget the notebook, forget all of it."). No scrapbook collage, notebook paper, torn paper or Polaroid layouts on flyers or pages. The new look is not decided yet. Do not invent one: ask Jodie before any new design work.
 
-Reference images Jodie shares are for feel and layout only. Never take their colours. Never copy them.
+Reference images Jodie shares are for feel and layout only. Never take their colors. Never copy them.
 
-## Colours
+## Colors
 - Hot pink #D62E73 (deep #B8245F)
 - Bubblegum #E85A9B
 - Lavender #E9DCFF (allowed as a background)
 - Pink #FFD3E6, light pink #FFF0F6
-- Text near-black #1A1417. Never grey body text.
+- Text near-black #1A1417. Never gray body text.
 - Cream is allowed, as long as it is not flat.
 - Gold appears ONLY as the quote marks on review speech bubbles. Nowhere else.
 - Never plum, magenta, chocolate, brown or black fills, boxes or buttons.
-- The colour variables already in the site's code stay as they are. Do not recolour existing pages to match this list.
+- The color variables already in the site's code stay as they are. Do not recolor existing pages to match this list.
 
 ## Fonts
 - Gloock for headlines, upright, never italic.
@@ -33,7 +33,7 @@ Reference images Jodie shares are for feel and layout only. Never take their col
 
 ## Backgrounds
 - Never flat, plain or boring.
-- Never one colour from the top of the page to the bottom.
+- Never one color from the top of the page to the bottom.
 - No flat cream, white or soft blush.
 - No grid paper.
 - No alternating flat pink and lavender sections.

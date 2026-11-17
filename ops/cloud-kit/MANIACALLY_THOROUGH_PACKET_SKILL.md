@@ -32,7 +32,7 @@ Every packet, in order:
 1. **What this video argues** — the one question, and explicitly what it does NOT argue.
 2. **Record these takes** — word-for-word scripts, one continuous clip each, named `V0n_TAKE_0n`, hook recorded twice.
 3. **The receipts** — per clip: file path, source URL, verified timestamp, speaker, type (attorney argument / question / expert opinion / witness testimony), EXACT WORDS, **PROVES**, and **DOES NOT PROVE**.
-4. **Assets / visuals** — sourced files with licence and required attribution; text cards where no safely-licensed image exists.
+4. **Assets / visuals** — sourced files with license and required attribution; text cards where no safely-licensed image exists.
 5. **Assembly order** — numbered, hard cuts, 9:16 1080×1920 canvas set before positioning.
 6. **Overlay sheet** — cream on dark, lower third, 250px clear bottom / 120px top, nothing over a face, every overlay clears before the next cut.
 7. **Audio** — voice and source audio only, no music, never speak over a witness.

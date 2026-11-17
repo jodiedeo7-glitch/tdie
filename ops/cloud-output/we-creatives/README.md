@@ -32,7 +32,7 @@ From the description in the job (Jodie's screenshot is not in the repo, so this 
 | beacons-3-review.png | 1080 × 1080 | living room floor, glitter tumbler (clean sofa crop) |
 | beacons-hero-keep-it-running-kit.png | 1080 × 1080 | as the hero, with the Kit card: free until 4 Oct, 11:59 pm Eastern. Swap back to beacons-1-hero on 5 Oct |
 | og-weekend-ecosystem-preview.png | 1200 × 630 | preview-hero + hub-header, preview page link image. Live copy: `public/og/weekend-ecosystem-preview.jpg` |
-| og-weekend-ecosystem-2026-09.png | 1200 × 630 | porch + loft. Every word sits inside the centre 600 px. Live copy: `public/og/weekend-ecosystem-2026-09.jpg` |
+| og-weekend-ecosystem-2026-09.png | 1200 × 630 | porch + loft. Every word sits inside the center 600 px. Live copy: `public/og/weekend-ecosystem-2026-09.jpg` |
 | ad-ideal-* | 4 sizes | porch at sunrise (`cover-sofa.jpg`) |
 | ad-preview-* | 4 sizes | loft, facing camera (`preview-hero.jpg`) |
 | ad-build-* | 4 sizes | loft, laptop on lap (`preview-working.jpg`); story and 1200 × 628 use `hub-header.jpg` |
@@ -48,7 +48,7 @@ Brief from Jodie: branded, premium, trustworthy, never a random scam ad. What ch
 - **The web address on every image** (`thedigitalincomeedit.com`) above a thin gold rule, with one true line beside it (e.g. "Every future update, free", "Both options at checkout", "Posted on Skool under her name"). A visible domain is the biggest single trust signal on a paid ad.
 - **Calm cream background.** The pink glows are gone; pink now lives only in the turn words, the one hero card and the button.
 - **Clean photo edges.** The photo is a crisp panel with a gold seam and a soft shadow instead of fading into pink.
-- **Bigger, better-spaced type.** Square headlines 58→64 px, 4:5 62→70 px, landscape 46→50 px. Copy is centred in its column with brand at the top and the address at the foot.
+- **Bigger, better-spaced type.** Square headlines 58→64 px, 4:5 62→70 px, landscape 46→50 px. Copy is centered in its column with brand at the top and the address at the foot.
 - **Stories rebuilt.** Full-bleed photo with her face in the top half and all copy on one frosted card between y 250 and 1580.
 - Toy check redone on every crop after the changes (the build ads were tightened to drop a Kuromi ear).
 
@@ -62,17 +62,17 @@ Brief from Jodie: branded, premium, trustworthy, never a random scam ad. What ch
 ## 4 · Final pass (27 Sep 2026)
 
 **Photos (source files, so every crop on the site and in this set is clean)**
-- Apple logos retouched off the laptop lids in `public/images/we/preview-hero.jpg`, `preview-working.jpg`, `cover-kitchen.jpg` and `photos/sofa-tumbler-no-lettering.jpg` (lid colour blended in from all four sides, grain matched). Same file names and sizes.
+- Apple logos retouched off the laptop lids in `public/images/we/preview-hero.jpg`, `preview-working.jpg`, `cover-kitchen.jpg` and `photos/sofa-tumbler-no-lettering.jpg` (lid color blended in from all four sides, grain matched). Same file names and sizes.
 
 **Preview page `/weekend-ecosystem/preview`**
 - Link image confirmed as `/og/weekend-ecosystem-preview.jpg`, re-rendered: brand line now THE DIGITAL INCOME EDIT™, web address and "Free preview · no email" at the foot, every word inside x 310 to 890.
 - `preview-hero.jpg` checked at desktop (392 × 484), tablet (288 × 410) and phone (278 × 340): no toy, character or logo.
 - Closing image (`cover-sofa.jpg`): reads well on desktop; on the 300 px phone strip her face was cut off at the top, so the crop is now `object-position:50% 8%` (face and mug in the strip).
 - Hero caption no longer leaves "01." alone on a line (non-breaking space; wording unchanged).
-- Desktop: section intros, screens and cards now sit in one centred 760 px column instead of hugging the left edge under full-width rules.
+- Desktop: section intros, screens and cards now sit in one centered 760 px column instead of hugging the left edge under full-width rules.
 - Sales page close (same issue, found while checking): `cover-kitchen.jpg` showed the Hello Kitty and Kuromi plush on tablet and phone; swapped to `hub-header.jpg` (no toys).
 
-**PHOTO_PROMPTS.md, both preview prompts rewritten against image master section 10.** Failed boxes: subject not in the right third (hero said "centre-right", working said "centre"); left side not kept as negative space (working); prop overload, about ten anchors each against section 8's 2 to 5; preview-working repeated the matrix HERO story (loft desk, typing, 35mm); both ended "Cinematic Tommy realism" plus an em dash (em dash, house rule 9). Rewritten in section 9 order (A to J), right third, calm left side, 3 to 4 anchors, working moved to the loft window seat with no desk in frame.
+**PHOTO_PROMPTS.md, both preview prompts rewritten against image master section 10.** Failed boxes: subject not in the right third (hero said "center-right", working said "center"); left side not kept as negative space (working); prop overload, about ten anchors each against section 8's 2 to 5; preview-working repeated the matrix HERO story (loft desk, typing, 35mm); both ended "Cinematic Tommy realism" plus an em dash (em dash, house rule 9). Rewritten in section 9 order (A to J), right third, calm left side, 3 to 4 anchors, working moved to the loft window seat with no desk in frame.
 
 **All 26 creatives (render.mjs)**
 - Pink only on the turn words, the one hero card and the button: kickers, stars, quote marks, stat numbers, tick circles, "Claude does" labels, sign-off and stickers moved to ink.

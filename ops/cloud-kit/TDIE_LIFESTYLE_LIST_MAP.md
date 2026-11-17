@@ -59,19 +59,19 @@ Angle: dressing soft and pink is not the opposite of being taken seriously. Copy
 39. Gifts for the Dog Mom Who Has Everything
 40. Pink Dog Bows, Collars and Charms
 
-## JEWELLERY AND ACCESSORIES (jewelry, accessories)
-41. The Everyday Gold and Pink Jewellery Stack
+## JEWELRY AND ACCESSORIES (jewelry, accessories)
+41. The Everyday Gold and Pink Jewelry Stack
 42. Pearl Everything: The Necklace, the Earrings, the Hair Clips
 43. Pink Hair Accessories: Bows, Claw Clips and Padded Headbands
 44. Pink Sunglasses Roundup for Every Face Shape
 45. The Pink Scarf That Makes a Plain Coat Look Deliberate
-46. Gold Jewellery That Doesn't Turn Your Skin Green
+46. Gold Jewelry That Doesn't Turn Your Skin Green
 47. Pink Watch and Bracelet Stack
 
 ## BEAUTY AND PERFUME (beauty, perfume)
 48. The Pink Manicure Kit: Press-Ons That Survive a Work Week
 49. Pink Lip Products That Last Through a Twelve-Hour Day
-50. The Pink Vanity Organisation List
+50. The Pink Vanity Organization List
 51. Pink Makeup Bags and Travel Cases
 52. Pink Hair Tools That Survive Daily Use
 53. Pink Bottle Perfumes That Smell More Expensive Than They Are

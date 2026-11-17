@@ -21,7 +21,7 @@ Setting: the pasture behind her farmhouse on a clear late-summer weekend morning
 
 Action: she sits cross-legged on the blanket with an open laptop on her knees, glancing down at it with a relaxed half smile, one hand on the trackpad, as if she has just decided something and it felt easy. Her golden retriever lies stretched out beside her on the blanket.
 
-Wardrobe: an oversized candy-pink knit sweater with the sleeves pushed up, soft grey sweatpants, white canvas sneakers, hair in a loose claw clip, small gold hoop earrings.
+Wardrobe: an oversized candy-pink knit sweater with the sleeves pushed up, soft gray sweatpants, white canvas sneakers, hair in a loose claw clip, small gold hoop earrings.
 
 Pink: her glitter-flecked pink iced coffee tumbler with a lavender straw sits on the blanket beside her knee, saturated candy pink, never pale. Her candy-pink sweater is in the frame with it.
 
@@ -52,13 +52,13 @@ Negative: no text, no lettering, no logos, no watermarks, no UI on the laptop sc
 
 **Save as:** `public/images/we/preview-hero.jpg`, 1400 × 1737 JPG. Shown top right in a polaroid frame with the caption "Friday night, the attic desk. Module 01.", cropped at 50% 30% (560 / 420 / 340 px tall). Her face must sit in the upper half; the top-left corner stays quiet.
 
-**Round 3 (27 Sep 2026), why the first results were wrong:** Jodie's first generations came back as wide, head-to-toe catalogue shots. Her face was tiny (unusable in a 340 px crop), her legs were pushed at the camera in an influencer pose, the rooms were evenly lit and empty, and the woman drifted from the reference because the prompt was long and busy (image master sections 11 to 13). Fixes: attach a second photo, one of her existing on-brand photos, for camera, light and colour only; frame from the knees up; a candid moment; a much shorter prompt with fewer things for the model to juggle.
+**Round 3 (27 Sep 2026), why the first results were wrong:** Jodie's first generations came back as wide, head-to-toe catalog shots. Her face was tiny (unusable in a 340 px crop), her legs were pushed at the camera in an influencer pose, the rooms were evenly lit and empty, and the woman drifted from the reference because the prompt was long and busy (image master sections 11 to 13). Fixes: attach a second photo, one of her existing on-brand photos, for camera, light and color only; frame from the knees up; a candid moment; a much shorter prompt with fewer things for the model to juggle.
 
-**Attach two images:** 1) `public/images/library/avatar-seed-omni-reference.png` (identity) 2) `public/images/we/hub-header.jpg` (camera, light and colour only).
+**Attach two images:** 1) `public/images/library/avatar-seed-omni-reference.png` (identity) 2) `public/images/we/hub-header.jpg` (camera, light and color only).
 
 **Prompt (paste as is):**
 
-Photograph of this exact woman from the first attached image, the reference sheet. Identity is taken only from the reference sheet. The second attached image is for camera style, lighting quality and colour only: match its natural, candid, photographed look, not its composition.
+Photograph of this exact woman from the first attached image, the reference sheet. Identity is taken only from the reference sheet. The second attached image is for camera style, lighting quality and color only: match its natural, candid, photographed look, not its composition.
 
 Setting: her pink attic gaming loft on a Friday night after dark, at her pastel pink desk. Behind her: sloped wooden beams with ivy and a warm plaster wall. No window in the frame.
 
@@ -84,17 +84,17 @@ Negative: no window, no daylight, no plush toys, no cartoon characters, no logos
 
 **Save as:** `public/images/we/preview-working.jpg`, 1400 × 1737 JPG. Shown in the closing card, cropped at 50% 40%: a tall box on desktop, a 300 px strip across the middle on phones. Her face and hands must both sit in the middle band.
 
-**Attach two images:** 1) `public/images/library/avatar-seed-omni-reference.png` (identity) 2) `public/images/we/cover-sofa.jpg` (camera, light and colour only).
+**Attach two images:** 1) `public/images/library/avatar-seed-omni-reference.png` (identity) 2) `public/images/we/cover-sofa.jpg` (camera, light and color only).
 
 **Prompt (paste as is):**
 
-Photograph of this exact woman from the first attached image, the reference sheet. Identity is taken only from the reference sheet. The second attached image is for camera style, lighting quality and colour only: match its warm, natural, photographed look, not its setting or pose.
+Photograph of this exact woman from the first attached image, the reference sheet. Identity is taken only from the reference sheet. The second attached image is for camera style, lighting quality and color only: match its warm, natural, photographed look, not its setting or pose.
 
 Setting: her farmhouse kitchen on a Saturday morning, at the old wooden kitchen table. A lived-in room: open shelves with stacked dishes and a crock of wooden spoons behind her, a gingham cloth on the table, a jar of lilacs.
 
 Action: a candid moment. She is typing on her open laptop, looking down at the screen with a small satisfied smile, one knee pulled up onto the chair, her golden retriever resting its chin on her other knee.
 
-Wardrobe: an oversized oatmeal hoodie with the cuffs pushed up, grey lounge shorts, candy-pink fuzzy socks, hair in a loose low braid over one shoulder.
+Wardrobe: an oversized oatmeal hoodie with the cuffs pushed up, gray lounge shorts, candy-pink fuzzy socks, hair in a loose low braid over one shoulder.
 
 Pink: her glitter-flecked pink iced coffee tumbler with a lavender straw on the table beside the laptop, saturated candy pink. Her pink socks are in the frame with it.
 

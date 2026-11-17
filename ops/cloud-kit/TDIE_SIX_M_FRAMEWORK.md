@@ -37,7 +37,7 @@ Link sits on the CTA words, never a raw URL (www.thedigitalincomeedit.com is the
 Owned before affiliate in any paid slot. Every asset routes to something TDIE owns (the MailerLite list or Skool). Pinterest routes to Skool only (domain block). Every push becomes an evergreen asset.
 
 ## 6. MAP
-Launch cadence: seed at 90 days, announce at 60, one in four posts at 45, every other post at 30, everything in the final 14. Signature hot pink is the activation colour (in generator prompts write "saturated signature hot pink, never pale", never a hex). Tommy Kate carries launches so Jodie never has to appear.
+Launch cadence: seed at 90 days, announce at 60, one in four posts at 45, every other post at 30, everything in the final 14. Signature hot pink is the activation color (in generator prompts write "saturated signature hot pink, never pale", never a hex). Tommy Kate carries launches so Jodie never has to appear.
 
 ## GUARDRAILS NEVER OVERRIDDEN
 No manufactured scarcity. No fabricated proof ("1,200+ women already inside" is true; invented figures are not). No promised timeline for results. No earnings figures on Facebook or Instagram. No third-party IP. Never misstate what a tier includes (The Value Vault is à la carte at Standard; Premium has every guide unlocked). Every product, price, link and CTA comes from canon.json products[] or key_pages.

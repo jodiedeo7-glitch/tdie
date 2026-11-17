@@ -23,7 +23,7 @@ Every prompt opens with exactly:
 
 > Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.
 
-Locked features are never written in words, anywhere, in any form: face, facial structure, freckles, skin tone, eye colour, hair colour, hair length and cut, body proportions, age. Not even "same face" or "unchanged". This is what keeps a member's brown eyes brown. Changeable style is written freely: how the hair is worn, nails, wardrobe, jewellery, footwear, what she is doing. Makeup minimal.
+Locked features are never written in words, anywhere, in any form: face, facial structure, freckles, skin tone, eye color, hair color, hair length and cut, body proportions, age. Not even "same face" or "unchanged". This is what keeps a member's brown eyes brown. Changeable style is written freely: how the hair is worn, nails, wardrobe, jewelry, footwear, what she is doing. Makeup minimal.
 
 ---
 
@@ -38,7 +38,7 @@ Rotate four lanes across the month:
 3. **Quiet millionaire girl boss.** Running her business from a beautiful, lived-in home, a calm café corner or a sunny window seat: laptop, notebook, planner, phone, coffee. Self-made and relaxed, not performing success.
 4. **Cozy evenings in** (about one day in seven). A reading nook, a couch with a blanket, a bath, a plain unbranded game controller or a book.
 
-**Wardrobe:** quality over trend. Fine-gauge knits, cashmere, linen sets, soft quality tees, tailored trousers, wide-leg denim, slip skirts, trench and wool coats, aprons, clean boots, simple gold jewellery. Neutral, warm and soft colours. No logos.
+**Wardrobe:** quality over trend. Fine-gauge knits, cashmere, linen sets, soft quality tees, tailored pants, wide-leg denim, slip skirts, trench and wool coats, aprons, clean boots, simple gold jewelry. Neutral, warm and soft colors. No logos.
 
 **Register:** quiet wealth, lived in. Nice, never showy. Real, never run-down. Clean and natural, never staged and never messy. Not AI-perfect.
 
@@ -48,7 +48,7 @@ Rotate four lanes across the month:
 
 ## 4. Never in a Daily Edit
 
-**Nothing that only Tommy Kate owns.** No Player Two? mug, no glitter tumbler with a lavender straw, no lavender controller with a strawberry charm, no GameBoys, no Hello Kitty or Kuromi plushies, no "pink attic gaming loft", no golden retriever or grey British Shorthair cat written as hers, no Tommy Kate name anywhere in the prompt. Those belong to the Premium DFY Content Calendar.
+**Nothing that only Tommy Kate owns.** No Player Two? mug, no glitter tumbler with a lavender straw, no lavender controller with a strawberry charm, no GameBoys, no Hello Kitty or Kuromi plushies, no "pink attic gaming loft", no golden retriever or gray British Shorthair cat written as hers, no Tommy Kate name anywhere in the prompt. Those belong to the Premium DFY Content Calendar.
 
 **Nothing from the cookie-cutter rich AI influencer:** supercars or Lamborghinis, private jets, yachts, penthouse skylines, Dubai, mansions, marble, hotel suites, champagne towers, designer logos or branded handbags, cash or credit-card props, nightclubs, pool parties, high-fashion editorial posing.
 

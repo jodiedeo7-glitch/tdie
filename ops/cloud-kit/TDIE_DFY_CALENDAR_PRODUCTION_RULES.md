@@ -27,7 +27,7 @@ The general image-generation master remains authoritative for:
 - photographic realism
 - identity and reference handling where an approved persona image is intentionally used
 - Tommy Kate's world
-- colour handling
+- color handling
 - prop variation
 - standalone prompt discipline
 - general image quality

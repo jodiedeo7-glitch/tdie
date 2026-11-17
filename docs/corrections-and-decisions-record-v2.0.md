@@ -191,7 +191,7 @@ For traceability. These are completed code changes on `main`, not decisions.
 
 - Desktop nav: `Join → /membership` corrected to `Community → /community`.
 - Footer: Learn column pointed at real pillar articles; two dead `href="#"` socials removed.
-- Shop: Value Vault section added (3 products, prices labelled one-time); PLR Vault card renamed to canonical `Pretty & Paid PLR Vault™`.
+- Shop: Value Vault section added (3 products, prices labeled one-time); PLR Vault card renamed to canonical `Pretty & Paid PLR Vault™`.
 - Shop: `/shop/plr-vault` renamed to `/shop/pretty-and-paid-plr-vault/`; 301 added in `astro.config.mjs`; old slug deleted.
 - Resources: Starter Map, Pinterest Keyword Planner, and Skool `/about` community surfaced.
 - Vault sales page: `VAULT_UNLOCK` wired to the live Skool classroom checkout; TODO removed.

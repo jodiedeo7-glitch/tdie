@@ -6,7 +6,7 @@ Written before any edit. Pages audited as built from commit `5b373b7`: `/shop/we
 
 ### 1. Magnet
 - Opens on a mechanism line ("Own a website, a blog, and an email list by Sunday afternoon"), not a self-reference ("If you're X"), a true exclusivity or a reciprocity device.
-- The free preview (the reciprocity gift canon names first) is buried as a ghost button and a small grey paragraph under a crowded hero.
+- The free preview (the reciprocity gift canon names first) is buried as a ghost button and a small gray paragraph under a crowded hero.
 
 ### 2. Message
 - Ideal state is missing from the first screen. The hero stacks 17 items (eyebrow, H1, twist, disarm, brand line, lede, four-box outcome grid, sub, frame, price, Kit banner, two buttons, testimonial strip, timing, peek note, access note, image) and ends with a strip of phase/module chips: a feature dump before she knows what her week looks like after.

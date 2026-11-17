@@ -13,7 +13,7 @@ Latest explicit user corrections win. No business canon or live account has been
 | Keep old writer running vs Threads cutover rule | Prepare outside account, then disable old writer before enabling replacement; reconcile partial effects on rollback |
 | Wrong Pinterest path and silent occupied-slot time changes | Canonical queue path; hold for an approved alternate time |
 | Browser stop-first instructions conflict with founder fallback | Exact fallback in account jobs, bounded by lock, account warning and ambiguous-write safeguards |
-| Hex proximity audit flags valid CSS and set-type instructions | Scope-aware extraction; definite prompt findings and explicitly labelled REVIEW uncertainty |
+| Hex proximity audit flags valid CSS and set-type instructions | Scope-aware extraction; definite prompt findings and explicitly labeled REVIEW uncertainty |
 | Friday 12 UTC called 8 AM Eastern all year | Check local timezone at 12/13 UTC; only the 8 AM run scans; delayed/missed cron is not guaranteed |
 | Threads job emits NEEDS_APPROVAL absent from enum | BLOCKED with pending approval |
 | Staged photographic tool flexibility conflicts with brand generator restrictions | Canon-approved imagery only; alternatives need an approved update and completed artifact/model evidence |

@@ -12,7 +12,7 @@ The two TEST Storefront sweep tasks remain visible on schedules and need attenti
 
 Storefront Oct 2 launch scheduling, Oct 5 presale check and Oct 9 launch morning; TEST OOTD/themed jobs; Premium post maker/test Instagram poster/test readout/corrected-day loader; site price-card edit; Pretty & Paid; Brand Closet OOTD; inactive sweep; approved reply poster; daily missed-run sweep; Etsy; Pinterest catch-up. A paused planned launch is not scheduled to happen. Each needs fresh source/launch readiness and scoped authorization before activation. No automatic resume, rerun or date extension.
 
-Inactive sweep and member watch differ: lapsed-member drafts were merged into member watch Pass 3, while inactive-account removal is a separate high-impact operation. Do not recreate retired Trial Day 6 or lapsed-nudge tasks. Trial Day 6 and cancelling checks remain passes in member watch.
+Inactive sweep and member watch differ: lapsed-member drafts were merged into member watch Pass 3, while inactive-account removal is a separate high-impact operation. Do not recreate retired Trial Day 6 or lapsed-nudge tasks. Trial Day 6 and canceling checks remain passes in member watch.
 
 ## Completed/expired tasks stay historical
 

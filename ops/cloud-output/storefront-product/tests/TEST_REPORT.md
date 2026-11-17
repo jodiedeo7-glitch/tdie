@@ -1,6 +1,6 @@
 # Buyer tests: The While-You-Sleep Storefront™ kit
 
-27 Sep 2026. Four realistic buyers, each run as two roles: Claude running `02_SETUP_PROMPT.txt` with the buyer's natural (sometimes vague) answers, then the scheduled task desk-running one look through the recipes. Nothing was browsed: ASINs, links and Idea Lists in the desk runs are marked simulated, and anything that depends on live Pinterest, Amazon or Claude app behaviour is marked unverified.
+27 Sep 2026. Four realistic buyers, each run as two roles: Claude running `02_SETUP_PROMPT.txt` with the buyer's natural (sometimes vague) answers, then the scheduled task desk-running one look through the recipes. Nothing was browsed: ASINs, links and Idea Lists in the desk runs are marked simulated, and anything that depends on live Pinterest, Amazon or Claude app behavior is marked unverified.
 
 The files in each buyer folder (INTERVIEW.md, MY_RECIPE.txt, logs, MY_SCHEDULED_TASKS.txt, DESK_RUN.md) were produced from the **first draft** of the kit. Every finding below was then fixed in the kit, and round 2 (bottom of this file) re-ran all four buyers against the revised kit.
 
@@ -52,7 +52,7 @@ See `ROUND_2.md` in this folder.
 
 ## Canon checks on this folder
 
-`run_checks.py` flags four review hits inside the buyer folders. Each is a simulated buyer's own words or a tester's note about the kit refusing them ("she's blonde", "barbie vibes", "hair color", a character-count note), kept as evidence that the kit's rules held. None appears in anything a buyer receives. One fail hit (a retired colour word in a simulated look idea) was reworded.
+`run_checks.py` flags four review hits inside the buyer folders. Each is a simulated buyer's own words or a tester's note about the kit refusing them ("she's blonde", "barbie vibes", "hair color", a character-count note), kept as evidence that the kit's rules held. None appears in anything a buyer receives. One fail hit (a retired color word in a simulated look idea) was reworded.
 
 ## After round 2: founder decisions (27 Sep 2026)
 

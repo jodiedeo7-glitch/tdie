@@ -25,7 +25,7 @@ This file was absent from the connected repository at the time of this recovery.
 ### Remaining verification — UNVERIFIED
 - Actual public HTTP responses, page contents, image loading, and desktop/mobile full-page visual QA. Web retrieval returned tool access errors for all seven URLs; these errors do not establish that the site returns 404. Local execution additionally failed with sandbox provisioning errors, and this session exposed no browser-control runtime.
 - Amazon item/Idea List destinations and authorized link behavior were not independently tested in this recovery.
-- Claude's reported 13 scheduled Metricool Pins, 13 Command Centre documents, and 21 igqueue items were not independently read back here. Future publication is UNVERIFIED. No schedule or publishing writer changes were made.
+- Claude's reported 13 scheduled Metricool Pins, 13 Command Center documents, and 21 igqueue items were not independently read back here. Future publication is UNVERIFIED. No schedule or publishing writer changes were made.
 
 ### Next verification
 Inspect each actual public URL on desktop and at mobile widths 320px and 390px, including all images, navigation, shopping links, forms, headings, buttons, and overflow. Verify the live content corresponds to the deployed look files. Inspect the existing queue records and publishing integration before claiming scheduled Instagram items will publish. Do not recreate existing Pins or Instagram queue items.

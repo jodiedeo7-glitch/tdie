@@ -185,7 +185,7 @@ Checked against canon §3, Decisions 110 and 114, and the date (Sunday 27 Sep 20
 | Hero headline | "Get Your First Online Income…" | Brief/approved: "Faceless income, built with AI." | ⚠ gallery version conflict |
 | CTA wording | "START YOUR FREE 7 DAY TRIAL NOW!" / "7 days FREE" | Brief: "Start Your 7 Days Free"; site: "Start your free 7-day trial" | ⚠ three versions |
 | Testimonial | Weekend Ecosystem™ review | membership proof | ⚠ off-product |
-| Tiers "$171" sticker | "$171 of modules included" | $37 + $37 + $97 (Dec 93) | ✔ maths correct; reads like a price (G11) |
+| Tiers "$171" sticker | "$171 of modules included" | $37 + $37 + $97 (Dec 93) | ✔ math correct; reads like a price (G11) |
 | Thumbnail 2 | shows "277" and "83" | not one of the five current graphics | ⚠ older image; take it out of the gallery |
 | Course count | Roadmap: "25 courses" | canon: 21 published; the plan keeps "25 courses" in slot 6 | ✔ settled: the Roadmap strip uses "20+ courses" (Jodie, 27 Sep) |
 | Pinterest module | Tiers: "Pinterest Foundations™" | description "The Pinterest Edit™" | ⚠ F12 |
@@ -218,7 +218,7 @@ Audited from the 1600×900 files Jodie shared on 27 Sep. These are copy findings
 
 **Tiers: "Two ways in. Both free for 7 days."**
 - **Keep:** the headline, the "START BUILDING" / "EVERYTHING + DONE FOR YOU" labels (the clearest tier use-case framing anywhere on the page), "Everything in Standard, plus:", the "$37 alone / $97 alone" tags, "The Value Vault, guides à la carte" (canon-correct, and marked + rather than ✓), and "Pick either one. Both start free."
-- **Factual:** every price matches canon ($9 · $99/yr; $35 · $297/yr; $37, $37, $97). The "$171" sticker is correct maths (F10) but reads like a price (G11). The Pinterest name differs from the description (F12).
+- **Factual:** every price matches canon ($9 · $99/yr; $35 · $297/yr; $37, $37, $97). The "$171" sticker is correct math (F10) but reads like a price (G11). The Pinterest name differs from the description (F12).
 - **Add:** the price-lock line from G2 belongs here too while the increase runs, because this is where people decide. Jodie removes it by hand with the description line.
 - **Resolves** most of §5: with this graphic up, the description's tier split (G5) can be shorter, but it still needs the tier names, because the description is what people read on mobile.
 
@@ -282,7 +282,7 @@ Audited from the 1600×900 files Jodie shared on 27 Sep. These are copy findings
 - **F7 · Tagline paraphrase carries ™** ("Build it backwards. Scale it forward.™").
 - **F8 · "The Pinterest Edit™"**: see F12. It's an unpublished draft, so the ™ question doesn't matter; the name comes out.
 - **F9 · Gallery version.** **Closed: the five graphics in §11 are current.** Open item: the older 90-day hero still shows as gallery image 1 on the phone screenshot. Remove it or move it out of slot 1.
-- **F10 · "$171".** **Closed:** it's the Premium sticker "$171 of modules included", which is $37 + $37 + $97 (The Offer Edit, The Funnel Edit, Scaling & Systems, Decision 93). The maths is correct. Thumbnail 2's "277 / 83" isn't in any of the five current graphics, so it's another older image. See §11.
+- **F10 · "$171".** **Closed:** it's the Premium sticker "$171 of modules included", which is $37 + $37 + $97 (The Offer Edit, The Funnel Edit, Scaling & Systems, Decision 93). The math is correct. Thumbnail 2's "277 / 83" isn't in any of the five current graphics, so it's another older image. See §11.
 - **F12 · The description names a course members can't open.** "The Pinterest Edit™" in the description is an **unpublished draft** in the classroom. Canon §10 lists it as an open item: "a tier promise nobody can open". The live Standard course is **Pinterest Foundations™** (Decision 94), which is what the Tiers graphic says. **Fix the description, not the graphic:** "✅ Pinterest Foundations™ + The Email Edit - traffic and a list you own". The site has the same problem: `/membership`, the homepage and Find Your Door all still list The Pinterest Edit. That's outside this audit, but it's the same defect.
 - **F13 · Course count. Settled (Jodie, 27 Sep).** Canon's list of published courses comes to 21 (the 22 in Decision 94, minus the Canva Crash Course, which went to Draft on 24 Sep under Decision 103). So the Roadmap graphic says **"20+ courses"**. "Over 20" in the description is accurate. The plan's "25 courses" in slot 6 is left as it is.
 - **F14 · Which course each step uses. Settled (Jodie, 27 Sep).** The four Roadmap steps are the build order from the Same effort graphic and the description. The courses under each step come from canon's tier split and course gates (Decisions 93 and 94). The exact Roadmap copy is in G9. Step 1 at Standard is The Monetization Edit. **Step 3 has no Standard course, on purpose: it is where a member naturally upgrades to Premium. It is not a finding.**
@@ -372,7 +372,7 @@ WHY: without context, a stranger can't tell it's a win. With it, the quote prove
 **G11 · Tiers sticker**
 CURRENT: $171 OF MODULES INCLUDED
 RECOMMENDED: $171 in modules, included
-WHY: the sticker is big and pink right beside $35, so at a glance it reads as a third price. Rewording it keeps the maths and removes the misreading.
+WHY: the sticker is big and pink right beside $35, so at a glance it reads as a third price. Rewording it keeps the math and removes the misreading.
 
 ---
 

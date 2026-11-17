@@ -77,7 +77,7 @@ Meta reports two warnings against the Purchase event, both originating at the ch
 1. Only **36%** of web Purchase events send a valid price in the correct format. Meta's target is 90%.
 2. Every web Purchase event carries the **same value**, which normally indicates a hardcoded or missing price parameter.
 
-Consequence: value-based optimisation and return-on-spend reporting are unreliable. Event match quality on the dataset sits at **6.1/10** with an update recommended.
+Consequence: value-based optimization and return-on-spend reporting are unreliable. Event match quality on the dataset sits at **6.1/10** with an update recommended.
 
 Neither is fixable by changing the Astro site. The fix belongs in the Beacons product configuration, and Advanced Matching is a separate decision that has not been taken because it sends hashed customer data to Meta and carries its own consent considerations.
 

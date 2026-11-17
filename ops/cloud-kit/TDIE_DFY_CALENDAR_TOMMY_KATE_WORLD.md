@@ -15,7 +15,7 @@
 
 Tommy Kate is a real-feeling member of The Digital Income Edit™. She runs the calendar on her own Instagram the way a member would. Her account has to read like a real woman whose life you follow: the same farmhouse, the same rooms, the same dog, the same mug, the same plushies on the same bed, month after month. That repetition is the product. A calendar that drifts into generic pretty rooms has failed, however good the pictures are.
 
-She is a homesteading gamer girl and mom building a faceless digital business from her farmhouse. She is extremely wealthy and self-made, and it shows in the best way. **Confident self-made luxury, lived in (Decision 128, 4 October 2026; replaces "quiet wealth, lived in" from Decision 89).** She is a loud, happy, self-made millionaire who chose the farm on purpose: a grown-up pop-star princess turned homestead mom, and the photo lets you see it. In daylight the frame is bright and high-key with true, saturated colour; at night it glows with rich, warm practical light, never murky. Her farmhouse and pink attic loft look their best, with good materials and a little real sparkle, and she looks glowing, confident and pleased with herself, never shy and never hiding. Premium, never gaudy: ONE sparkle moment per photo (glitter or rhinestone boots, a rhinestone claw clip, pearl and chrome jewellery, or the glitter tumbler catching the light), never glitter everywhere, never crowded, never a pile of props, never costume, never a mansion or a generic rich-girl set. Real, never run-down, never messy, never AI-perfect. No clashing: the photo is a loud element, so it sits in a calm, roomy part of the page or graphic, and a loud designed background gets a calmer photo. Loud plus loud is the one thing this register forbids. The evidence of kids, dogs and farm animals is in the room, never the mess of them.
+She is a homesteading gamer girl and mom building a faceless digital business from her farmhouse. She is extremely wealthy and self-made, and it shows in the best way. **Confident self-made luxury, lived in (Decision 128, 4 October 2026; replaces "quiet wealth, lived in" from Decision 89).** She is a loud, happy, self-made millionaire who chose the farm on purpose: a grown-up pop-star princess turned homestead mom, and the photo lets you see it. In daylight the frame is bright and high-key with true, saturated color; at night it glows with rich, warm practical light, never murky. Her farmhouse and pink attic loft look their best, with good materials and a little real sparkle, and she looks glowing, confident and pleased with herself, never shy and never hiding. Premium, never gaudy: ONE sparkle moment per photo (glitter or rhinestone boots, a rhinestone claw clip, pearl and chrome jewelry, or the glitter tumbler catching the light), never glitter everywhere, never crowded, never a pile of props, never costume, never a mansion or a generic rich-girl set. Real, never run-down, never messy, never AI-perfect. No clashing: the photo is a loud element, so it sits in a calm, roomy part of the page or graphic, and a loud designed background gets a calmer photo. Loud plus loud is the one thing this register forbids. The evidence of kids, dogs and farm animals is in the room, never the mess of them.
 
 Captions, on-screen words, Threads posts and story slides are written in Tommy Kate's voice (canon: the Premium member calendar and TDIE Instagram use Tommy Kate; Skool never does).
 
@@ -27,9 +27,9 @@ Every image or video prompt with her in it opens with exactly:
 
 > Photograph of this exact woman from the attached reference sheet. Identity is taken only from the reference.
 
-Her locked features are never written in words, anywhere, in any form: face, facial structure, freckles, skin tone, eye colour, hair colour, hair length and cut, body proportions, age. Not even "same face" or "unchanged". The reference sheet supplies all of it.
+Her locked features are never written in words, anywhere, in any form: face, facial structure, freckles, skin tone, eye color, hair color, hair length and cut, body proportions, age. Not even "same face" or "unchanged". The reference sheet supplies all of it.
 
-This is what makes the calendar work for a member. She attaches her own seed image and gets her own face, her own eye colour, her own hair. Nothing in the prompt can turn brown eyes blue, because the prompt never mentions eyes. What the prompt does carry is Tommy Kate's world. A member who wants her own world swaps it with the ChatGPT project in START HERE ("Make It Yours: Your ChatGPT Calendar Project"), choosing KEEP or SWAP for the props.
+This is what makes the calendar work for a member. She attaches her own seed image and gets her own face, her own eye color, her own hair. Nothing in the prompt can turn brown eyes blue, because the prompt never mentions eyes. What the prompt does carry is Tommy Kate's world. A member who wants her own world swaps it with the ChatGPT project in START HERE ("Make It Yours: Your ChatGPT Calendar Project"), choosing KEEP or SWAP for the props.
 
 Jodie generates every calendar image with Tommy Kate's seed (`public/images/library/avatar-seed-omni-reference.png`), so whenever a woman appears in a calendar image, it is Tommy Kate. Object-only frames in her world (her desk, her porch, her loft with nobody in it) stay allowed under Decision 111 and SOP 15.
 
@@ -44,7 +44,7 @@ Name these exactly as written. Never write one from memory and never swap one fo
 
 **Her named objects:**
 - Bubblegum pink ceramic mug printed Player Two? in black lettering. Saturated candy pink, never pale or white. A plain pink mug is never correct. When it is in the frame, the negative line says the only printed words in the frame are Player Two? on the mug.
-- Lavender Xbox controller with a small strawberry charm. Clearly purple-toned, never white or grey.
+- Lavender Xbox controller with a small strawberry charm. Clearly purple-toned, never white or gray.
 - Pink and lavender GameBoys, visibly worn.
 - **Hello Kitty and Kuromi plushies.** Required in her home. They live in the pink attic loft: on a shelf, on the shag rug, or propped at the end of the gaming desk. Whenever the loft is in the frame, the plushies are in the frame.
 - Mason jar of casually gathered wildflowers with irregular stems. When a bouquet is named, it is lilacs or peonies.
@@ -53,18 +53,18 @@ Name these exactly as written. Never write one from memory and never swap one fo
 - Pink gingham bedding, slightly rumpled.
 - Candy-pink over-ear headphones. Candy-pink gardening gloves. Candy-pink velvet throw pillow.
 - **Her golden retriever** (Jodie, 2 October 2026). In most of the calendar's photos, inside and outside: at her feet, on the porch, in the kitchen, in the pasture, in and out of the bedroom. In the gaming loft he is optional, in the background or not at all. His rope toy is left where a dog would leave it.
-- **Her grey British Shorthair cat** (Jodie, 2 October 2026). Lives in the gaming loft: curled on the shag rug, on the end of the gaming desk, on top of the PC, in a sunny window. She can wander in and out of the bedroom. She is never on the porch, in the kitchen or outside.
+- **Her gray British Shorthair cat** (Jodie, 2 October 2026). Lives in the gaming loft: curled on the shag rug, on the end of the gaming desk, on top of the PC, in a sunny window. She can wander in and out of the bedroom. She is never on the porch, in the kitchen or outside.
 - Her chickens and ducks, the chicken coop.
 
 **Her rooms and land:**
-- **Pink attic loft:** exposed wooden beams on the ceiling only, wrapped in ivy (Jodie, 4 Oct 2026: no wooden beams, posts or braces anywhere else, never running down the walls or to the floor), plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the grey British Shorthair cat, and sometimes the golden retriever in the background.
+- **Pink attic loft:** exposed wooden beams on the ceiling only, wrapped in ivy (Jodie, 4 Oct 2026: no wooden beams, posts or braces anywhere else, never running down the walls or to the floor), plush pink shag rug, pastel pink gaming desk, glass-panel PC glowing pink, the Hello Kitty and Kuromi plushies, the gray British Shorthair cat, and sometimes the golden retriever in the background.
 - **Bedroom:** the pink gingham bedding, slightly rumpled. The golden retriever and the cat can be in and out of it.
 - **Farmhouse kitchen:** blush cabinets, butcher-block island, copper pans with patina.
 - **Farmhouse porch:** weathered rail, chipped paint, folded quilt, potted herbs, rocking chair.
 - **Farmhouse living room:** the candy-pink velvet throw pillow, a quilt someone actually uses.
 - **Outside:** pasture, split rail fencing, red barn, wildflower fields, chicken coop, raised garden beds.
 
-**Her wardrobe:** oversized pink knits, soft tees, hoodies, sweatpants, leggings, fuzzy socks, ribbed tanks, high-waisted vintage denim, a barn coat, worn boots. Colours: blush, cream, sage, rust, lavender, oatmeal, and candy-pink pieces. Never blouses, never blazers, never costume cottagecore. Dress-up layer (Decision 128): one statement piece on top of the comfy base when the scene calls for it: glitter or rhinestone cowboy boots, pearl and chrome jewellery, a rhinestone claw clip, a glossy hot pink manicure. One statement piece per photo, never more. Blouses, blazers and sequin jackets stay out (Jodie, 4 Oct 2026: the sequin-jacket kitchen test was a no). Makeup minimal and the same every day. How her hair is worn, her nails, jewellery and footwear change day to day; that is what makes thirty-one posts read as thirty-one days.
+**Her wardrobe:** oversized pink knits, soft tees, hoodies, sweatpants, leggings, fuzzy socks, ribbed tanks, high-waisted vintage denim, a barn coat, worn boots. Colors: blush, cream, sage, rust, lavender, oatmeal, and candy-pink pieces. Never blouses, never blazers, never costume cottagecore. Dress-up layer (Decision 128): one statement piece on top of the comfy base when the scene calls for it: glitter or rhinestone cowboy boots, pearl and chrome jewelry, a rhinestone claw clip, a glossy hot pink manicure. One statement piece per photo, never more. Blouses, blazers and sequin jackets stay out (Jodie, 4 Oct 2026: the sequin-jacket kitchen test was a no). Makeup minimal and the same every day. How her hair is worn, her nails, jewelry and footwear change day to day; that is what makes thirty-one posts read as thirty-one days.
 
 ---
 
@@ -74,9 +74,9 @@ Every characteristic above is remembered and repeated across the month. Nothing 
 
 - Every frame with her carries the glitter tumbler plus two or three named items from section 3. Not the whole list: a prop inventory clutters the render (image master section 8).
 - Named items go in the first half of the prompt. Anything in the second half comes back missing or generic.
-- Every frame of the pink attic loft carries the Hello Kitty and Kuromi plushies and, in most loft frames, the grey British Shorthair cat.
+- Every frame of the pink attic loft carries the Hello Kitty and Kuromi plushies and, in most loft frames, the gray British Shorthair cat.
 - The golden retriever is in most of the calendar's photos (more than half of each week's images), indoors and out; in the loft he is optional and stays in the background.
-- Animals are written plainly by breed and colour ("a golden retriever", "a grey British Shorthair cat") and counted ("exactly one dog", "exactly one cat") so the model adds no extras.
+- Animals are written plainly by breed and color ("a golden retriever", "a gray British Shorthair cat") and counted ("exactly one dog", "exactly one cat") so the model adds no extras.
 - Across each week, every room in section 3 appears at least once, and each named object appears at least once in the month. The loft carries roughly one day in four.
 - In frames without her, exactly one saturated candy-pink object, rotated across the month (image master section 4).
 - Week files list which section 3 items each day used, so the next week can fill the gaps.

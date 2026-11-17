@@ -109,7 +109,7 @@ Your door is **Pretty & Paid PLR Vault™**. Your shop isn't struggling because 
 
 **Your first three moves**
 1. Pick the three products that fit your niche — not ten.
-2. Rebrand them in Canva: your colours, your fonts, your name.
+2. Rebrand them in Canva: your colors, your fonts, your name.
 3. Let PLR Glow Studio write the titles, descriptions and tags, then list all three.
 
 You told me you have {$quiz_time}. Three products is a realistic first week at that pace.

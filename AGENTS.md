@@ -1,5 +1,5 @@
 ## LOOK RULES (11 November 2026). Override every look line in this file.
-The only current look rules are in `ops/cloud-kit/TDIE_DESIGN_RULES.md`. Read it before any visual or page work. Any colour, font, background, glitter or decoration line further down this file that differs from it is retired.
+The only current look rules are in `ops/cloud-kit/TDIE_DESIGN_RULES.md`. Read it before any visual or page work. Any color, font, background, glitter or decoration line further down this file that differs from it is retired.
 
 ## NOTHING OVERSIZED (Jodie, 10 October 2026, HARD RULE, applies to every page, section, card, photo, graphic and button)
 Jodie has said this many times: stop making everything so big. Default to compact, in-proportion sizing, and when in doubt go smaller.
@@ -13,7 +13,7 @@ Jodie has said this many times: stop making everything so big. Default to compac
 ## LOOK BEFORE YOU SEND (Jodie, 10 October 2026, standing rule, applies to every visual)
 Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG, graphic, screenshot, banner, guide, website change):
 1. Render it and open EVERY page or screen at full size yourself. A contact sheet or thumbnail alone is not looking.
-2. Write down every defect you see: empty gaps, words alone on a line, cropped text or photos, overlaps, things touching or running into the footer or edges, wrong or missing photos, wrong fonts or colours, anything she has already banned.
+2. Write down every defect you see: empty gaps, words alone on a line, cropped text or photos, overlaps, things touching or running into the footer or edges, wrong or missing photos, wrong fonts or colors, anything she has already banned.
 3. Fix every defect, re-render, and look at every page at full size again. Repeat until nothing is wrong.
 4. Only then send. Never send unchecked files and never make Jodie point out what is wrong.
 5. When she asks to change or remove one thing, change only that thing. Do not redesign anything she did not ask to change.

@@ -4,7 +4,7 @@ Each operation uses a stable `task_id` and exactly one `workflow_id`. Required s
 
 ## States
 `DRAFT -> QA_PASSED -> APPROVED -> READY -> RUNNING -> APPLIED -> VERIFIED -> COMPLETE`.
-`BLOCKED` records a dependency or an explicit prohibition. `FAILED` means a known failed attempt. `UNKNOWN` means a write may have taken effect but read-back was lost. `CANCELLED` and `SUPERSEDED` require a reason. A ready item cannot run without approval and a complete packet. A generic `VERIFIED` operation records `observed_state` separately, such as SCHEDULED or PUBLISHED. Scheduled is never published.
+`BLOCKED` records a dependency or an explicit prohibition. `FAILED` means a known failed attempt. `UNKNOWN` means a write may have taken effect but read-back was lost. `CANCELED` and `SUPERSEDED` require a reason. A ready item cannot run without approval and a complete packet. A generic `VERIFIED` operation records `observed_state` separately, such as SCHEDULED or PUBLISHED. Scheduled is never published.
 
 Existing pin, Threads and Daily-specific statuses remain intact as adapter states; they are not silently converted. READY maps to ready, SCHEDULED/PUBLISHED maps to applied, VERIFIED maps to verified only with evidence. Replies have their own IDs and status. A customer manual action records `customer_scheduling_required` then `customer_scheduled`, with read-back still required; `pull_failed` remains a failure, not success.
 

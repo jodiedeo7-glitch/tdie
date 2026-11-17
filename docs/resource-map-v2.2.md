@@ -140,7 +140,7 @@ Issue №017 resolves at the correct route and functions as the pillar. Its titl
 - **A** — amend the live title to canon: *"How to Build a Faceless Digital Business From Scratch in 2026"*
 - **B** — amend canon to the live title, in MOM v3.0 Part 2 and every downstream reference
 
-**Requires approval gate.** The SEO argument favours B (the live title is tighter and already indexed); the canon-integrity argument favours A. Not decided here. Route is unaffected either way.
+**Requires approval gate.** The SEO argument favors B (the live title is tighter and already indexed); the canon-integrity argument favors A. Not decided here. Route is unaffected either way.
 
 ## Length — all eleven live articles fail the floor
 
@@ -149,7 +149,7 @@ Every live article measures between roughly **1,000 and 1,330 words**. MOM v3.0 
 - **Eleven of eleven** fall below the supporting-article floor.
 - **Issue №017**, the only article functioning as a pillar, measures ~1,330 against a 3,000 floor — **44% of minimum**.
 
-Word counts are the audit's stripped-tag approximation and are directional, not a publishing-tool count. The gap on Issue №017 is too large to be a measurement artefact.
+Word counts are the audit's stripped-tag approximation and are directional, not a publishing-tool count. The gap on Issue №017 is too large to be a measurement artifact.
 
 **Consequence for this document:** no pillar row below can be closed by an article at current length. Every "pillar guide live" answer in this map is **No** on title grounds; on length grounds it would be No regardless. Recorded as Part 3, Finding 2.
 
@@ -297,8 +297,8 @@ Word counts are the audit's stripped-tag approximation and are directional, not 
 | **Free resource** | Brand Bible Memory Chain template. ⚠️ **FLAG — build unconfirmed.** `/resources/brand-bible-memory-chain` — **does not exist.** |
 | **Paid resource** | ✅ **RESOLVED (Decision 62).** Brand Building & Brand Identity module, Skool **Membership Premium $9/month**, dual-door checkout (Decision 60). Classroom link on file. BAMI Curriculum remains UNRELEASED and retained-and-unrouted per Standing Rule 23 — it is NOT this CTA; the live module is. |
 | **Affiliate recommendation** | `None — not relevant to this pillar.` Branding is taught, not tooled. Canva is the nearest fit and belongs to Pillar 3. **Empty is correct and is a PASS.** |
-| **Related pillars** | **Content Creation** — the brand is what makes the content yours rather than output. · **Business Systems** — the Brand Bible is a system artefact before it is an aesthetic one. · **Mindset** — the Creator → CEO shift is a branding decision before it is a psychological one. |
-| **Newsletter CTA** | "A brand isn't a colour palette. Yours is probably three fonts and a feeling. Weekly, what it should be instead." |
+| **Related pillars** | **Content Creation** — the brand is what makes the content yours rather than output. · **Business Systems** — the Brand Bible is a system artifact before it is an aesthetic one. · **Mindset** — the Creator → CEO shift is a branding decision before it is a psychological one. |
+| **Newsletter CTA** | "A brand isn't a color palette. Yours is probably three fonts and a feeling. Weekly, what it should be instead." |
 | **Community CTA** | "Post your brand in one sentence. If it takes two, you don't have one yet — and the community will say so." |
 
 ---
@@ -328,7 +328,7 @@ Word counts are the audit's stripped-tag approximation and are directional, not 
 
 | Field | Value |
 |---|---|
-| **Free resource** | **Faceless Income Blueprint™** — shared with Pillars 4, 5, and 9. ⚠️ **FLAG — this is the load-bearing centre of open item 1.** Segmentation on entry pillar is required and **OPEN — no decision made, and none is made here.** Prompt 12 step 3, Prompt 13 item 5, Prompt 8 step 5, and SOP 4 Phase A step 5 all correctly instruct that it is open and must be recorded rather than written around. Those instructions stand. Page-4 placeholder also OPEN. |
+| **Free resource** | **Faceless Income Blueprint™** — shared with Pillars 4, 5, and 9. ⚠️ **FLAG — this is the load-bearing center of open item 1.** Segmentation on entry pillar is required and **OPEN — no decision made, and none is made here.** Prompt 12 step 3, Prompt 13 item 5, Prompt 8 step 5, and SOP 4 Phase A step 5 all correctly instruct that it is open and must be recorded rather than written around. Those instructions stand. Page-4 placeholder also OPEN. |
 | **Paid resource** | ✅ **RESOLVED (Decision 70).** Entry rung set to **Membership Premium $9/month** — NOT VIP. This supplies the entry rung the pillar was missing and resolves the ladder mismatch: beginners get the $9 door, not the $27 flagship. VIP remains the deeper tier but is not this pillar's CTA. Open item 2 resolved for this pillar. |
 | **Affiliate recommendation** | `None — not relevant to this pillar.` Passive income is an outcome, not a toolset. Any affiliate here would be a tool borrowed from another pillar to fill a field — the definition of the forced fit. **Empty is correct and is a PASS.** |
 | **Related pillars** | **Business Systems** — passive is what a system produces; the mechanism lives there. · **Digital Products** — the most common first passive asset. · **Affiliate Marketing** — the other one, and the faster one. |
@@ -398,7 +398,7 @@ Eleven of eleven measure ~1,000–1,330 words against a 1,500 supporting-article
 
 Combined with Part 1: no live article is a pillar by title *or* by length. The site has eleven supporting articles, all under-length, and zero pillars.
 
-**Consequence for Part 4's build order.** The audit proposes re-anchoring existing clusters ahead of opening new categories, on the reasoning that a pillar written into an existing cluster gets inbound links on day one. That reasoning holds. But "re-anchor" implies the clusters are sound and only the pillar is missing. They are not sound — every article in every cluster is below floor. Re-anchoring puts a correctly-titled 3,000-word pillar at the centre of a cluster of 1,100-word articles that are themselves rewrites waiting to happen.
+**Consequence for Part 4's build order.** The audit proposes re-anchoring existing clusters ahead of opening new categories, on the reasoning that a pillar written into an existing cluster gets inbound links on day one. That reasoning holds. But "re-anchor" implies the clusters are sound and only the pillar is missing. They are not sound — every article in every cluster is below floor. Re-anchoring puts a correctly-titled 3,000-word pillar at the center of a cluster of 1,100-word articles that are themselves rewrites waiting to happen.
 
 **Not resolved here.** Whether the eleven under-length articles are (a) expanded to floor, (b) accepted as a documented exception, or (c) the floor is amended — is a canon question. **Requires approval gate.** It is the largest single body of work implied by this document and it is not scoped in any SOP.
 
@@ -518,7 +518,7 @@ Both halves of the sentence are wrong. Recorded.
 | 7 | Email Marketing | **Tier conflict** — Welcome Email Templates are Premium content | No |
 | 8 | Branding | Mapped, build unconfirmed — Brand Bible Memory Chain | No |
 | 9 | Business Systems | Cross-reference, not a route — inherits the Blueprint | Via Pillar 4 |
-| 10 | Passive Income | Shared — Blueprint. Load-bearing centre of open item 1. | Via Pillar 4 |
+| 10 | Passive Income | Shared — Blueprint. Load-bearing center of open item 1. | Via Pillar 4 |
 | 11 | **Mindset** | 🔴 **GAP — needs creation.** Creator → CEO diagnostic. **Highest-value gap.** | No |
 | 12 | **Blogging** | 🔴 **GAP — needs creation.** Evergreen checklist. **Fastest to build.** | No |
 
@@ -713,4 +713,4 @@ Every pillar now has a dedicated lead-magnet page. This is the free-resource lay
 
 **Delivery:** page-is-the-freebie. No emailed asset yet (Decision 76).
 
-**Component:** `src/components/FreebieForm.astro` — shared capture form; change the action URL there to swap capture behaviour globally.
+**Component:** `src/components/FreebieForm.astro` — shared capture form; change the action URL there to swap capture behavior globally.

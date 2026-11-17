@@ -1,10 +1,10 @@
-// Read-only stats feed for the TDIE Business Command Centre.
+// Read-only stats feed for the TDIE Business Command Center.
 //
 // Returns MailerLite list sizes and the published article list so the dashboard
 // stops being typed in by hand. No subscriber data, no email addresses, no PII —
 // counts, titles and slugs only.
 //
-// Response shape is the contract the Command Centre reads:
+// Response shape is the contract the Command Center reads:
 //   { generated_at, mailerlite: { subscribers, groups: {...} }, articles: [ {slug,title,pub,url} ] }
 //
 // Environment (Vercel project settings, never committed):

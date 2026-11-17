@@ -22,7 +22,7 @@ Copy of the project doc `claude/TDIE_DFY_SERVICES.md` (25 Sep 2026), placed here
 | 🛍️ DFY Etsy Listing Pack | c1eea7188a34452599f0ac10eb9f2343 | $197 (5 listings) · $347 (10) | ETSY 5 / ETSY 10 | Title, 13 tags, description, 8 mockups and publishing per listing, from the client's own original designs only (no PLR, prompt packs, affiliate or third-party IP). |
 | 🛒 DFY Amazon Storefront Launch | 8ec7129809ce4a85a7e0607b8105deec | $297 (10 looks) | STOREFRONT | 10 themed looks, each an Idea List in the client's storefront plus 2 pins with #ad disclosure. Method: `WYS_REFERENCE_PACK_2026-10-07.md` in this folder. |
 | 📸 30 Days of AI Persona Photo Prompts | 97d70a3685ab4113b455961e106b870e | $197 | PERSONA PROMPTS | 30 copy-paste persona photo prompts plus 30 finished photos and the persona's written world. Method: `TDIE_IMAGE_GENERATION_MASTER.md` in this folder. |
-| 📊 DFY Custom Business Dashboard | d95e61de09e8476ebcb146b34cac4557 | $97 | DASHBOARD | Custom one-page business dashboard in the client's colours with the numbers she tracks. 48 to 72 hours. |
+| 📊 DFY Custom Business Dashboard | d95e61de09e8476ebcb146b34cac4557 | $97 | DASHBOARD | Custom one-page business dashboard in the client's colors with the numbers she tracks. 48 to 72 hours. |
 
 Beacons checkout URLs for each service are in `ops/canon/canon.json` on the matching product row (`beacons_checkout_url` / `beacons_checkout_urls`).
 
