@@ -1,0 +1,66 @@
+---
+import ResourceLayout from "../../layouts/ResourceLayout.astro";
+import FreebieForm from "../../components/FreebieForm.astro";
+// 18 Nov 2026: the Skool coupon list. Members who sign up land in the
+// MailerLite group "Coupon List (Skool)" through /api/coupon-list and get
+// The Pinterest Keyword Planner straight away.
+---
+<ResourceLayout
+  title="Exclusive Coupons + The Free Pinterest Keyword Planner"
+  description="Join The Digital Income Edit email list for exclusive coupons and goodies, and get The Pinterest Keyword Planner free the second you sign up."
+  eyebrow="Free · Email list"
+  heading="Exclusive coupons, straight to your inbox"
+  lede="Sign up and you'll get exclusive coupons and goodies by email. Plus The Pinterest Keyword Planner, free, the second you're in."
+  guideHref="/learn/complete-pinterest-marketing-guide"
+  guideLabel="The Complete Pinterest Marketing Guide"
+>
+  <p><strong>Your free gift: The Pinterest Keyword Planner</strong></p>
+  <p>It takes you from a few seed words to a bank of 30 to 50 real Pinterest searches, grouped into the topics that become your boards. Six printable pages:</p>
+  <ul>
+    <li>The four-step keyword method, start to finish</li>
+    <li>The autocomplete check that separates real searches from guesses</li>
+    <li>A ten-slot seed word page to start from</li>
+    <li>A 50-row keyword bank, grouped into your future boards</li>
+  </ul>
+
+  <FreebieForm
+    action="/api/coupon-list"
+    heading="Get my coupons and the free planner"
+    button="Sign me up"
+    sub="Exclusive coupons and goodies by email. Unsubscribe anytime."
+    done="You're in! Your planner is downloading."
+  />
+
+  <div id="cl-done" hidden>
+    <p>If the download didn't start, grab it here:</p>
+    <p><a class="kit-btn" href="/pinterest-keyword-planner.pdf" download>Download The Pinterest Keyword Planner →</a></p>
+  </div>
+</ResourceLayout>
+
+<script is:inline>
+  (function () {
+    var form = document.querySelector('.freebie-capture form[data-fc]');
+    if (!form) return;
+    var sink = document.getElementsByName(form.target)[0];
+    if (!sink) return;
+    var sent = false;
+    form.addEventListener('submit', function () { sent = true; });
+    sink.addEventListener('load', function () {
+      if (!sent) return;
+      var done = document.getElementById('cl-done');
+      if (done) done.hidden = false;
+      try {
+        var a = document.createElement('a');
+        a.href = '/pinterest-keyword-planner.pdf';
+        a.download = '';
+        document.body.appendChild(a); a.click(); a.remove();
+      } catch (e) {}
+    });
+  })();
+</script>
+
+<style>
+  .kit-btn { display:inline-block; padding:12px 22px; border:1px solid var(--pink); color:var(--pink); border-radius:2px; font-size:14px; font-weight:600; text-decoration:none; }
+  .kit-btn:hover { background:var(--pink); color:#fff; }
+  #cl-done { margin: 0 0 34px; }
+</style>
