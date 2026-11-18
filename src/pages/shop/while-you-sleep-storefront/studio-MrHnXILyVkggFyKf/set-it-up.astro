@@ -63,6 +63,7 @@ import {SECTIONS, ASKS} from '../../../../scripts/wys-buyer-prompts.js';
           <div class="wb2-upsell">
            <p class="wb2-upsell-t">{f.title}</p>
            <p>{f.text}</p>
+           {f.img && <a class="wb2-upsell-img" href={f.img} target="_blank" rel="noopener"><img src={f.img} alt={f.imgAlt} width="270" height="540" loading="lazy"/></a>}
            {f.link && <a href={f.link} target="_blank" rel="noopener">{f.linkText} <span aria-hidden="true">→</span></a>}
           </div>
          ) : f.type === 'pick' ? (
@@ -155,6 +156,8 @@ import {SECTIONS, ASKS} from '../../../../scripts/wys-buyer-prompts.js';
  .wb2-upsell p{margin:0 0 6px;font-size:15px;line-height:1.5}
  .wb2-upsell .wb2-upsell-t{font-weight:600;color:#B8245F}
  .wb2-upsell a{font-weight:600;font-size:15px;color:#B8245F}
+ .wb2-upsell .wb2-upsell-img{display:block;width:max-content;margin:6px 0 10px}
+ .wb2-upsell .wb2-upsell-img img{display:block;width:240px;height:auto;max-width:100%;border-radius:8px;box-shadow:0 4px 14px rgba(110,15,61,.18)}
 </style>
 
 <script>

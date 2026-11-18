@@ -183,7 +183,15 @@ export const SECTIONS = [
    {id: 'samsBoard', label: 'Board for your Sam\u2019s Club looks', type: 'text', def: 'Sam\u2019s Club Finds for Family and Hosting', show: 'sams=on'},
    {id: 'pinTypes', label: 'Which pins to make for every look', type: 'checks', options: ['Basic', 'Styled', 'Lifestyle', 'Roundup', 'Found It', 'Storefront promo'], def: ['Basic', 'Styled', 'Lifestyle', 'Roundup', 'Found It', 'Storefront promo'],
     help: 'Tick as many as you want. Basic is the clean flat lay, Styled the full scene, Lifestyle the products in use. NEW: Roundup puts the whole set in one pin with a big headline; Found It is one piece with handwritten \u201cI found this on Amazon\u201d words. Storefront promo is the Lifestyle photo linking to your storefront home page. Fewer pins means fewer photos and fewer credits.'},
-   {id: 'slots', label: 'Most pins in one day', type: 'select', options: [['6', '6'], ['8', '8'], ['10', '10']], def: '8'}
+   {id: 'slots', label: 'Most pins in one day', type: 'select', options: [['6', '6'], ['8', '8'], ['10', '10']], def: '8'},
+   {id: 'promoTip', type: 'note', show: 'platform=claude', title: 'Want a promo flyer posted every night too?',
+    text: 'This is the flyer my system makes from every look: all five photos of the look, plus what The While-You-Sleep Storefront\u2122 makes every night. Say yes below and your nightly run makes one for each new look and pins it with your own affiliate link, so your storefront promotes the Storefront for you and you earn 40% on every sale through your link. Download the flyer template and save it (still zipped) in your Google Drive folder \u201cWhile-You-Sleep Storefront\u201d.',
+    img: '/images/wys-promo/wys-nightly-flyer-example.jpg', imgAlt: 'Example promo flyer for The While-You-Sleep Storefront showing the five photos of one look',
+    link: '/downloads/wys-studio-MrHnXILyVkggFyKf/wys-flyer-template.zip', linkText: 'Download the flyer template'},
+   {id: 'promoFlyer', label: 'Post a promo affiliate flyer every night?', type: 'radio', show: 'platform=claude', options: [['on', 'Yes: make a flyer from every new look and pin it with my affiliate link'], ['off', 'No thanks']], def: '',
+    help: 'Your affiliate link comes from Beacons (see Promote It). The flyer pin goes to a make-money or side-hustle board, not your shopping boards, and never on the same day as another pin from that look.'},
+   {id: 'affLink', label: 'Your While-You-Sleep Storefront\u2122 affiliate link', type: 'text', show: 'platform=claude&promoFlyer=on', def: ''},
+   {id: 'promoBoard', label: 'Board for your promo flyers', type: 'text', show: 'platform=claude&promoFlyer=on', def: 'Make Money Online Ideas'}
   ]
  },
  {
@@ -273,6 +281,7 @@ function modes(a) {
   listAuto: inf && a.listMode !== 'hand' && a.platform !== 'chatgpt',
   listHand: inf && (a.listMode === 'hand' || a.platform === 'chatgpt'),
   photoAuto: a.photoMode !== 'hand',
+  flyer: a.platform !== 'chatgpt' && a.promoFlyer === 'on',
   pinAuto: a.pinMode !== 'hand',
   igAuto: ig && a.igMode !== 'hand',
   igHand: ig && a.igMode === 'hand',
@@ -310,6 +319,7 @@ export function missing(a) {
  if (m.ig) need.push(['igAccount', 'Instagram account']);
  if (m.blogAuto) need.push(['repo', 'GitHub site'], ['branch', 'which version of your site goes live (the branch)'], ['host', 'where your site is hosted']);
  if (m.blog) need.push(['siteUrl', 'website address']);
+ if (m.flyer) need.push(['affLink', 'your Storefront affiliate link']);
  const out = need.filter(([k]) => !String(a[k] ?? '').trim()).map(([, n]) => n);
  const conn = [['okDrive', 'connect Google Drive', true],
   ['okMetricool', 'connect Metricool', m.metricool],
@@ -321,6 +331,7 @@ export function missing(a) {
   ['okSams', 'sign in to Sam\u2019s Club Creator in your Chrome', m.sc]];
  for (const [k, n, on] of conn) if (on && a[k] !== 'yes') out.push(n);
  if (!a.blog) out.unshift('whether you have a blog');
+ if (a.platform !== 'chatgpt' && !a.promoFlyer) out.push('whether you want a promo affiliate flyer posted every night');
  if (!m.inf && !m.blog) out.push('blog posts switched on, automatic or by hand (an account with links only needs them)');
  return out;
 }
@@ -358,7 +369,7 @@ MIX: ${v(a.novelty)}
 PINTEREST BOARDS:
 ${v(a.boards).split('\n').map((x) => x.trim()).filter(Boolean).map((x) => `- ${x}`).join('\n')}
 MOST PINS IN ONE DAY: ${v(a.slots, '8')}
-LOOKS PER NIGHT: ${v(a.looks, '2')}${a.closet === 'on' && a.platform !== 'chatgpt' ? '\nBRAND CLOSET EXTRA LOOK: on (one extra look a night from the Outfit of the Day)' : ''}
+${a.platform !== 'chatgpt' && a.promoFlyer === 'on' ? `PROMO FLYER: on (one per new look, pinned to "${v(a.promoBoard, 'Make Money Online Ideas')}" with my affiliate link ${v(a.affLink, '[YOUR AFFILIATE LINK]')})\n` : ''}LOOKS PER NIGHT: ${v(a.looks, '2')}${a.closet === 'on' && a.platform !== 'chatgpt' ? '\nBRAND CLOSET EXTRA LOOK: on (one extra look a night from the Outfit of the Day)' : ''}
 RUN TIME: ${hm(a.time)} ${tzName(a.tz)}
 FINDING PRODUCTS: ${how(!m.srcHand)}${m.inf ? `\nIDEA LISTS: ${how(m.listAuto)}` : ''}
 PHOTOS: ${how(m.photoAuto)}
@@ -468,6 +479,13 @@ ${pinText} Read Metricool's schedule first and use open days. If Metricool alrea
  else parts.push(`${step('PINS · BY HAND')}
 ${pinText} Under To Do By Hand write each pin: which photo, board, title, description, link, alt text and the date to schedule it. I schedule them in Pinterest's own scheduler.`);
 
+ if (m.flyer) {
+  const fl = `For each new look that has all five photos (Basic, Styled, Lifestyle, Roundup and Found It) in its Drive folder: copy "wys-flyer-template.zip" from my Google Drive folder "While-You-Sleep Storefront" into your workspace and unzip it into a new folder. Put the look's five photos in its ph folder as basic.png, styled.png, lifestyle.png, roundup.png and foundit.png (convert JPGs to PNG), install playwright if it is missing (pip install playwright, then playwright install chromium), and run: python3 render.py <that folder>. It must print "fonts ok: True" and every photo with a size. Open flyer.png at full size and check_phone.png yourself: every photo shows, nothing cut off or covered, the numbers and words read clearly. If anything is wrong, fix it and render again. Never change the template's wording, numbers or look. Save it as Flyer.jpg in the look's Drive folder. A look without all five photos gets no flyer tonight: write that in the log.
+Pin text: title "The While-You-Sleep Storefront™:" then a search phrase about Pinterest automation or a faceless online business, under 100 characters. Description: two or three sentences in MY VOICE saying what the Storefront did with this look overnight (picked the products, made the five photos, pinned it), no income promises, ending with exactly: Affiliate link: I earn a commission if you buy through it. Photos are AI-generated. Link: ${v(a.affLink, '[YOUR AFFILIATE LINK]')}. Board: ${v(a.promoBoard, 'Make Money Online Ideas')}. Alt text: "The While-You-Sleep Storefront flyer showing the five photos of <look name>: Basic, Styled, Lifestyle, Roundup and Found It." Never on the same day as another pin from that look, and at most one flyer pin a day.`;
+  parts.push(m.pinAuto ? `${step(`PROMO FLYER (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
+${fl} Give Metricool the Flyer.jpg Drive link. If Metricool won't accept it, put the flyer pin under To Do By Hand with the file and say why. If Metricool already holds this look's flyer pin, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool and confirm the flyer photo, board and link.` : `${step('PROMO FLYER · PIN BY HAND')}
+${fl} Under To Do By Hand write the flyer pin: the file, board, title, description, link, alt text and the date to schedule it.`);
+ }
  if (m.igAuto) parts.push(`${step(`INSTAGRAM (Metricool connector, ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')})`)}
 One carousel per look, two carousels a day: on the next day that has fewer than two carousels, the first at ${hm(a.igTime)} and the second about five hours later, never two at the same time: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio", three to five hashtags, and then exactly: #ad As an Amazon Associate I earn from qualifying purchases. No links in the caption.${(m.imgGpt || m.sdGpt) ? ' The photos are files in my Drive folder: give Metricool each photo\'s link, and if it won\'t accept one, put the carousel under To Do By Hand and say why.' : ''} If Metricool already holds this look's carousel, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
  else if (m.igHand) parts.push(`${step('INSTAGRAM · BY HAND')}
@@ -505,7 +523,7 @@ ${recipe(a)}`);
 
 export function setup(a) {
  const m = modes(a);
- const L = 'abcdefgh'.split(''); let i = 0; const c = () => L[i++];
+ const L = 'abcdefghijklmn'.split(''); let i = 0; const c = () => L[i++];
  const conn = [];
  if (m.credits) conn.push(`${c()}. Higgsfield: read my credit balance.`);
  else if (m.imgGpt) conn.push(`${c()}. ChatGPT image maker: make one small test image (a plain mug on a table) to confirm it works in this chat, and tell me if it says I've hit a limit.`);
@@ -513,6 +531,7 @@ export function setup(a) {
  if (m.metricool) conn.push(`${c()}. Metricool: find my brand "${v(a.metricool, '[YOUR METRICOOL BRAND]')}". ${m.pinAuto ? 'Confirm Pinterest is connected and list my Pinterest boards. ' : ''}${m.igAuto ? `Confirm Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is connected.` : ''}`);
  conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and make a Claude Doc (Claude Docs) named "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, Waiting For My Click, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
  if (m.closet) conn.push(`${c()}. The Brand Closet\u2122: in my own Chrome (Claude in Chrome extension), open https://www.skool.com/the-brand-closet/classroom/272075b5 in a new tab and confirm I'm signed in to Skool and the Outfit of the Day course opens (it needs Premium or VIP). Copy nothing from it. Close the tab.`);
+ if (m.flyer) conn.push(`${c()}. Promo flyer: find "wys-flyer-template.zip" in my Google Drive folder "While-You-Sleep Storefront". If it isn't there, tell me to download it from the Set It Up page and save it there. Copy it into your workspace, unzip it and confirm render.py, flyer.html and the fonts folder are inside. Confirm my affiliate link (${v(a.affLink, '[YOUR AFFILIATE LINK]')}) opens The While-You-Sleep Storefront\u2122 page.`);
  if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built.${v(a.branch) ? ` Confirm the "${v(a.branch)}" branch exists.` : ''} Tell me in two lines.`);
  conn.push(`${c()}. ${m.gpt ? 'Browser: use the browser tool connected to this chat and tell me exactly which one it is. Open amazon.com in a new tab.' : 'My Chrome (through the Claude in Chrome extension, not the browser inside the Claude app, which Amazon blocks): open amazon.com in a new tab.'} ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").${m.gpt ? ' Then open Create content, Idea List once to check it is there. Create nothing yet.' : ''}` : 'Confirm I\'m signed in (my name shows at the top).'} ${m.gpt ? 'If I\'m signed out, tell me exactly how to sign in to my own Amazon account in that tool and wait. Never use anyone else\'s saved sign-in.' : 'If I\'m signed out, tell me and wait while I sign in.'} Close the tab.`);
 
