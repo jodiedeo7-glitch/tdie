@@ -1,180 +1,349 @@
 ---
-import WysFrame from '../../components/WysFrame.astro';
-import WysNightFeed from '../../components/WysNightFeed.astro';
-import FreebieForm from '../../components/FreebieForm.astro';
-import WysCta from '../../components/WysCta.astro';
-import WysOvernight from '../../components/WysOvernight.astro';
-import WysLinks from '../../components/WysLinks.astro';
-import WysWhen from '../../components/WysWhen.astro';
-import WysProof from '../../components/WysProof.astro';
-import WysYouDo from '../../components/WysYouDo.astro';
-import WysObjections from '../../components/WysObjections.astro';
-import WysOffer from '../../components/WysOffer.astro';
-import {liveLooks} from '../../data/wys-live.js';
-const [ghost] = liveLooks;
+// While-You-Sleep sales page, rebuilt from Jodie's approved design (18 Nov 2026).
+// Black Friday block shows 23 Nov 5:00 am UTC to 1 Dec 4:45 am UTC (same window as the old page).
+// Preview the Black Friday version with ?bf=1, the post-December version with ?after=1.
 ---
-<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, The While-You-Sleep Storefront™ plans and sources 3 looks across Amazon, Walmart and Sam's Club, then posts 15 Pinterest pins, 3 blog posts and 3 Instagram carousels." ogImage={ghost.photos.styled.src.src}>
- <header class="wc-hero">
-  <div class="wys-wrap wc-wait-grid">
-   <div class="wc-hero-copy">
-    <p class="wc-kicker">For Amazon, Walmart and Sam's Club creators</p>
-    <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
-    <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
-    <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>3&nbsp;looks</b>, one each from Amazon, Walmart and Sam's Club, makes 15 Pinterest pins, writes 3 blog posts and posts 3 Instagram carousels, while you sleep. (Walmart and Sam's Club looks need your Walmart Creator and Sam's Club Creator approval.)</p>
-    <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
-     <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
-     <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
-     <p class="wc-buy-price" data-wys-when="launch">$27 <s>$37</s></p>
-     <p class="wc-buy-price" data-wys-when="regular">$37</p>
-     <p class="wc-buy-p" data-wys-when="launch">Launch weekend price. $37 after launch weekend.</p>
-     <p class="wc-buy-p" data-wys-when="regular">One payment.</p>
-     <WysCta align="left"/>
-    </div>
-    <!-- BF-WYS-ADDON START -->
-    <div class="wc-buy-box" id="bf-wys" data-bf-from="1795410000000" data-bf-to="1796100300000" hidden style="margin-top:18px">
-     <p class="wc-kicker">Black Friday week · only 10 done-for-you spots</p>
-     <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
-     <p class="wc-buy-price">$27 <s>$37</s></p>
-     <!-- BF-WYS-PRICE-RISE --><p class="wc-buy-p">$27 with either add-on below. Goes to $47 on 1 December.</p>
-     <p class="wc-buy-p">3 new looks every night across 3 stores: Amazon, Walmart and Sam's Club. Each program needs its own approval (Amazon, Walmart Creator, Sam's Club Creator).</p>
-     <p class="wc-buy-p"><b>Storefront + done-for-you Pinterest Optimization: $97</b> (the optimization is $70 instead of $149). I clean up and sort your existing account.<br/><a style="display:inline-block;margin-top:8px;padding:10px 20px;border-radius:999px;background:#D62E73;color:#fff;font-weight:600;text-decoration:none" href="https://links.thedigitalincomeedit.com/shop/4bdd7c55-65a7-4596-bfb7-d22128cc9d9f">Get the $97 bundle</a></p>
-     <p class="wc-buy-p"><b>Storefront + New Pinterest Account Setup: $77</b> (the setup is $50 instead of $79). A brand-new account, built right from day one.<br/><a style="display:inline-block;margin-top:8px;padding:10px 20px;border-radius:999px;background:#D62E73;color:#fff;font-weight:600;text-decoration:none" href="https://links.thedigitalincomeedit.com/shop/45dc9f99-91b4-421f-97eb-3e6e018eb38e">Get the $77 bundle</a></p>
-     <p class="wc-buy-p">Every Black Friday order also gets the Pinterest Optimization Guide free ($7 value). Ends Monday 30 November, 11:45 pm Eastern.</p>
-     <p class="wc-buy-p" style="font-size:13px">Optimization covers accounts up to 1,000 pins; each extra 1,000 is +$25, confirmed before I start. My own 30-day Pinterest results came from my Amazon looks. My account, my results, not a promise of yours.</p>
-    </div>
-    <script is:inline>(function(){try{var e=document.getElementById('bf-wys');if(!e)return;var n=Date.now();if(n>=+e.dataset.bfFrom&&n<=+e.dataset.bfTo)e.hidden=false}catch(x){}})()</script>
-    <!-- BF-WYS-ADDON END -->
-    <WysLinks current="overview" buy/>
-    <div class="wc-wait-form" data-wys-when="wait presale" id="join-top">
-     <p class="wc-buy-h">Member presale is open now.</p>
-     <p class="wc-buy-p">TDIE Skool members get first access at the presale price, inside the community. Full launch is Friday 16 October at 12 pm ET.</p>
-     <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
-    </div>
-   </div>
-   <div class="wc-hero-phone"><WysNightFeed/></div>
-  </div>
- </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The While-You-Sleep Storefront™ | Your storefront, planned while you sleep</title>
+<meta name="description" content="Every night, The While-You-Sleep Storefront™ plans 3 looks across Amazon, Walmart and Sam's Club, then posts 15 Pinterest pins, 3 blog posts and 3 Instagram carousels." />
+<link rel="canonical" href="https://www.thedigitalincomeedit.com/shop/while-you-sleep-storefront" />
+<meta property="og:title" content="The While-You-Sleep Storefront™" />
+<meta property="og:description" content="Your storefront, planned and posted while you sleep." />
+<meta property="og:image" content="https://www.thedigitalincomeedit.com/wys-new/hero-storefront.jpg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<script is:inline>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1274879031402082');fbq('track','PageView');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Satisfy&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style is:global set:html={`*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;overflow-x:clip;font-family:'Jost',system-ui,sans-serif;color:#2A1A22;font-size:18px;line-height:1.45;background:#FBF4F2 url(/wys-new/bg.jpg) repeat;background-size:760px}
+img{max-width:100%;display:block}
+a{color:#C2185B}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1A1417;outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
 
- <div class="wc-tagband" style="background-image:url(/images/brand/gl-tile.webp)"><p class="wc-tagline">Planned. Pinned. Posted. Blogged. <span>You Slept.</span><small>The Digital Income Edit™ presents The While-You-Sleep Storefront™</small></p></div>
+/* header */
+.top{position:sticky;top:0;z-index:30;background:#fff;border-bottom:4px solid #F6C9DA;height:60px;display:flex;align-items:center;justify-content:center}
+.top a.brand{font-family:'Playfair Display',serif;font-weight:700;font-size:25px;color:#1A1417;text-decoration:none}
+.menubtn{position:absolute;right:14px;top:8px;width:44px;height:44px;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.menu{display:none;position:absolute;right:10px;top:60px;background:#fff;border:1px solid #F1BBD0;box-shadow:0 10px 24px rgba(26,20,23,.14);padding:6px 0;min-width:270px}
+.menu.open{display:block}
+.menu a{display:block;padding:13px 20px;color:#9E1C55;text-decoration:none;font-weight:600}
+.menu a:hover{background:#FCE7EF}
 
- <section class="wys-wrap wc-section">
-  <div class="wc-pain-grid">
-   <div class="wc-head">
-    <p class="wc-kicker">Sound familiar?</p>
-    <h2>You built the storefront.<br/><em>Then: crickets.</em></h2>
-    <p class="wc-body">You made the Idea Lists. You put your storefront link everywhere you could. And the clicks never came, because the clicks only come if you post. Every single day.</p>
-    <p class="wc-body">Pinterest wants fresh pins. The blog wants a post. Instagram wants a carousel. And every morning you wake up asking the same thing: what do I post today?</p>
-    <ul class="wc-checks">
-     <li>Making pins feels endless</li>
-     <li>The storefront sits there with zero clicks</li>
-     <li>You’re burned out, and you haven’t even started today’s post</li>
-    </ul>
-   </div>
-   <figure class="wc-pullquote">
-    <blockquote>Passive income isn’t passive.</blockquote>
-    <p>Not the way most of us were sold it. This is the truly hands-off version. Set it up once. Then no more building, selling or posting. No constantly building lists.</p>
-   </figure>
-  </div>
- </section>
+/* hero */
+.hero{position:relative;overflow:hidden;background:#F9E6EA}
+.hero>img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero .in{position:relative;max-width:1180px;margin:0 auto;padding:56px 28px 64px;min-height:560px;display:flex;align-items:center}
+.hero .copy{max-width:470px}
+h1.big{font-family:'Playfair Display',serif;font-weight:800;font-size:66px;line-height:1.02;margin:0;color:#C2185B;background:linear-gradient(180deg,#D62E73 0%,#A81652 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none}
+.name{display:inline-block;background:url(/wys-new/brush-hot.png) center/100% 100% no-repeat;padding:18px 54px 22px 40px;margin:18px 0 14px -18px;transform:rotate(-3deg)}
+.name span{display:block;font-family:'Satisfy',cursive;color:#fff;font-size:40px;line-height:1.02;text-align:center;text-shadow:0 1px 2px rgba(120,10,60,.25)}
+.hero p.sub{font-size:20px;font-weight:500;margin:0 0 26px;max-width:400px}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:58px;padding:0 34px;border-radius:12px;background:linear-gradient(180deg,#E0457F,#C2185B);color:#fff;font-weight:700;font-size:20px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 18px rgba(194,24,91,.32)}
+.btn:hover{background:#A81652;color:#fff}
+.btn svg{flex:0 0 auto}
 
- <section class="wc-section" style="background:#fff">
-  <div class="wys-wrap">
-   <div class="wc-head">
-    <p class="wc-kicker">Every night, while you sleep</p>
-    <h2>You go to bed.<br/><em>It goes to work.</em></h2>
-    <p>In the morning, 3 finished, shoppable looks are already out in the world: 15 pins, 3 blog posts and 3 carousels. Pinterest and Google are search engines, so a pin or a post keeps getting found long after the day it goes up. A feed forgets you by lunch.</p>
-   </div>
-   <WysOvernight/>
-  </div>
- </section>
+/* titles */
+.sec{padding:30px 0}
+.t{text-align:center;margin:0 0 22px}
+.t h2{display:inline-block;margin:0;padding:16px 70px 20px;background:url(/wys-new/brush-light.png) center/100% 100% no-repeat;font-family:'Satisfy',cursive;font-weight:400;font-size:52px;line-height:1;color:#9E1C55;transform:rotate(-1deg)}
+.paper{background:url(/wys-new/paper-pink.png) center/100% 100% no-repeat;padding:40px 40px 38px;position:relative}
+.paper.cream{background-image:url(/wys-new/paper-cream.png)}
+.tape{position:absolute;top:-16px;left:-30px;width:110px;transform:rotate(-36deg);z-index:2}
+.ttl{font-family:'Satisfy',cursive;font-weight:400;font-size:50px;color:#9E1C55;margin:0 0 14px;line-height:1}
+.ck{display:flex;gap:12px;align-items:flex-start;margin:0 0 10px;font-size:19px}
+.ck svg{flex:0 0 22px;margin-top:4px}
 
- <section class="wys-wrap wc-section">
-  <div class="wc-head">
-   <p class="wc-kicker">What it made this week</p>
-   <h2>Six looks. Three stores.<br/><em>I was asleep for all of them.</em></h2>
-   <p>Every photo here was made overnight by my own storefront: two Walmart looks, two Sam’s Club looks and two Amazon looks, each with all five of its pins.</p>
-  </div>
-  <a class="wys-lookbook" href="/images/wys-promo/wys-lookbook-nov-2026-full.jpg" target="_blank" rel="noopener"><picture><source media="(min-width: 760px)" srcset="/images/wys-promo/wys-lookbook-nov-2026-wide.jpg" width="2210" height="1166"/><img src="/images/wys-promo/wys-lookbook-nov-2026.jpg" alt="Six looks The While-You-Sleep Storefront made overnight: Cozy Blue Parka Holiday Errands Outfit and Retro Multicolor Christmas Kitchen Hutch from Walmart, Pink Perfume Gift Guide for Her and Grinch Christmas Morning PJ Party from Sam's Club, Sparkly Blue New Year's Eve Party Outfit and Pink and Silver New Year's Eve Party Decor from Amazon, each with Basic, Styled, Lifestyle, Roundup and Found It photos" width="1200" height="2583" loading="lazy"/></picture></a>
- </section>
+.ps{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:34px;align-items:start}
+.sol .sh{display:inline-block;background:url(/wys-new/brush-light.png) center/100% 100% no-repeat;padding:12px 44px 16px 26px;margin:6px 0 14px}
+.sol .sh h2{margin:0}
+.sol p{font-size:20px;margin:0}
+.heart{width:70px}
 
- <section class="wys-wrap wc-section">
-  <div class="wc-head">
-   <p class="wc-kicker">The proof</p>
-   <h2>Two blog posts it built.<br/><em>Both live right now.</em></h2>
-   <p>Open them. These are the real pages on The Digital Income Edit™ Lifestyle blog, with the finds linked and the photos in order.</p>
-  </div>
-  <WysProof/>
-  <p class="wc-flow-note wc-look-link"><a href="/shop/while-you-sleep-storefront/real-results">See my real results: every photo, pin and carousel it made for both looks →</a></p>
-  <WysCta href="#join" timedNote/>
- </section>
+/* before after */
+.ba{display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1fr);align-items:center;gap:8px;position:relative}
+.mon{background:#1F1A1D;border-radius:16px;padding:12px 12px 16px;box-shadow:0 14px 28px rgba(26,20,23,.26)}
+.mon .bar{display:flex;align-items:center;gap:7px;height:26px;background:#2E282B;border-radius:7px;padding:0 10px;margin-bottom:9px}
+.mon .bar i{width:8px;height:8px;border-radius:50%;background:#6E6468;display:block}
+.mon .bar b{flex:1;height:14px;background:#fff;border-radius:7px;margin-left:12px;font-size:9px;font-weight:400;color:#888;padding-left:8px;line-height:14px}
+.mon .scr{background:#fff;border-radius:5px;aspect-ratio:16/10;overflow:hidden}
+.mon .empty{height:100%;display:flex;align-items:center;justify-content:center;background:#F2EFF0}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:12px;align-content:center;height:100%}
+.grid4 img{width:100%;aspect-ratio:228/309;object-fit:cover}
+.grid4 i{display:block;height:5px;background:#E8DCE1;margin-top:5px}
+.lab{display:block;width:80%;margin:-34px auto 0;position:relative;text-align:center;color:#fff;padding:12px 10px 14px;background:center/100% 100% no-repeat}
+.lab.dark{background-image:url(/wys-new/brush-dark.png)}
+.lab.hot{background-image:url(/wys-new/brush-hot.png)}
+.lab b{display:block;font-size:26px;letter-spacing:.04em;text-transform:uppercase;line-height:1.1}
+.lab span{font-size:16px;font-weight:500}
+.arrow{width:110px;margin:0 auto}
 
- <section class="wys-wrap wc-section" style="padding-top:0">
-  <figure class="wc-founder">
-   <blockquote><span>I built this to run my own storefront.</span> <span>I refuse to gatekeep it.</span></blockquote>
-   <p>It’s the system behind the looks on my own Lifestyle blog. Now it can run yours.</p>
-   <cite>Jodie, founder of The Digital Income Edit™</cite>
-  </figure>
- </section>
+/* how it works */
+.hiw{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr 40px 1fr;align-items:start;text-align:center}
+.hiw .ic{width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FCDCE8,#F4B3CC);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.hiw .ar{padding-top:34px;color:#C2185B}
+.hiw p{margin:0;font-weight:700;font-size:19px;line-height:1.2}
 
- <section class="wc-section" style="background:#fff">
-  <div class="wys-wrap">
-   <div class="wc-head">
-    <p class="wc-kicker">You do / It does</p>
-    <h2>Set it up once.<br/><em>It does the rest.</em></h2>
-   </div>
-   <WysYouDo/>
-  </div>
- </section>
+/* deliverables */
+.del{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.dc{background:#fff;box-shadow:0 10px 22px rgba(26,20,23,.13);text-align:center;padding-bottom:16px;position:relative}
+.dc .im{height:170px;overflow:hidden;position:relative;background:#F9E3EB}
+.dc .im img.cover{width:100%;height:100%;object-fit:cover}
+.dc .pocket{position:relative;margin-top:-26px;background:#fff;padding-top:24px;border-top:1px solid #F3E5EA}
+.dc .n{font-weight:800;font-size:56px;line-height:1;color:#C2185B;margin:0}
+.dc .l{font-weight:700;font-size:21px;line-height:1.12;margin:4px 0 0}
+.dc .logo{position:absolute;left:50%;top:-30px;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.12);z-index:2}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:8px;height:100%}
+.three img{width:100%;height:100%;object-fit:cover}
+.blog{padding:12px 14px;text-align:left;height:100%;background:#fff}
+.blog .h{height:9px;width:72%;background:#2A1A22;margin-bottom:6px}
+.blog .s{height:6px;background:#E3D8DC;margin-bottom:5px}
+.blog .row{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;margin-top:8px}
+.blog .row img{width:100%;height:96px;object-fit:cover}
+.phone{width:96px;margin:14px auto 0;background:#1A1417;border-radius:16px 16px 0 0;padding:6px 6px 0}
+.phone img{width:100%;height:150px;object-fit:cover;border-radius:11px 11px 0 0}
 
- <section class="wys-wrap wc-section">
-  <div class="wc-head">
-   <p class="wc-kicker">Made for</p>
-   <h2>Storefront owners who are<br/><em>done posting every day.</em></h2>
-  </div>
-  <div class="wc-who">
-   <div><h3>Amazon, Walmart and Sam's Club creators</h3><p>You know you should be on Pinterest, a blog and Instagram. You don’t have the time or the energy to post every day.</p></div>
-   <div><h3>Owners of The Weekend Ecosystem™</h3><p>Your site is already built. This fills its blog with shoppable posts without adding another daily job.</p></div>
-   <div><h3>TDIE Skool members</h3><p><WysWhen wait="Members buy first, from Tuesday 13 October: $10 for Premium, $17 for Standard." launch="Members bought first at $10 and $17. Missed it? Members get a last-chance $17 code inside Skool, launch weekend only." regular="Members bought first, at $10 for Premium and $17 for Standard."/> <WysWhen wait="The affiliate program opens Friday 16 October." launch="The affiliate program is open now."/></p></div>
-  </div>
- </section>
+/* results */
+.res{display:grid;grid-template-columns:minmax(0,1.55fr) 90px minmax(0,.75fr);align-items:center;gap:8px}
+.dash{background:#fff;border-radius:8px;box-shadow:0 12px 26px rgba(26,20,23,.15);padding:22px 26px}
+.dash .sel{display:inline-flex;align-items:center;gap:12px;border:1px solid #CFC6CA;border-radius:7px;padding:7px 12px;font-weight:600;font-size:16px}
+.dash .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}
+.dash .row div{padding:0 18px;border-left:1px solid #E6DDE1}
+.dash .row div:first-child{padding-left:0;border-left:0}
+.dash small{font-size:15px;color:#55464C;display:block}
+.dash strong{display:block;font-size:34px;margin:6px 0 2px}
+.dash .up{color:#2E7D32;font-size:15px;font-weight:600}
+.note{background:url(/wys-new/paper-pink.png) center/100% 100% no-repeat;padding:30px 24px;transform:rotate(3deg);text-align:center}
+.note p{font-family:'Satisfy',cursive;color:#7A1745;font-size:34px;line-height:1.1;margin:0}
 
- <section class="wc-section" style="background:#fff">
-  <div class="wys-wrap">
-   <div class="wc-head">
-    <p class="wc-kicker">Questions</p>
-    <h2>Your questions,<br/><em>answered straight.</em></h2>
-   </div>
-   <WysObjections/>
-   <WysCta href="#offer" label="See the member price" timedNote/>
-  </div>
- </section>
+/* included */
+.inc2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:20px;align-items:center}
+.stack{position:relative;height:250px}
+.pola{position:absolute;background:#fff;padding:10px 10px 26px;box-shadow:0 10px 22px rgba(26,20,23,.18)}
+.card2{position:absolute;right:0;top:6px;width:64%;transform:rotate(6deg);background:url(/wys-new/paper-pink.png) center/100% 100% no-repeat;padding:42px 16px;text-align:center;box-shadow:0 10px 22px rgba(26,20,23,.12)}
+.card2 p{font-family:'Playfair Display',serif;font-weight:700;font-size:24px;line-height:1.12;margin:0;color:#7A1745}
 
- <section class="wys-wrap wc-section">
-  <div class="wc-head">
-   <p class="wc-kicker" id="offer">The offer</p>
-   <h2>Members first.<br/><em>Then everyone.</em></h2>
-   <p>It’s a website, not a PDF, so it never goes stale. Regular updates, with new affiliate brand automations on the way.</p>
-  </div>
-  <WysOffer/>
- </section>
+/* offer */
+.offer{text-align:center;position:relative;padding:44px 34px 80px}
+.bfbar{display:inline-block;background:linear-gradient(180deg,#C2185B,#A81652);color:#fff;font-weight:600;font-size:30px;letter-spacing:.06em;text-transform:uppercase;padding:9px 40px}
+.pr{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;margin-top:10px}
+.price{font-family:'Playfair Display',serif;font-weight:800;font-size:120px;line-height:1;margin:0;color:#C2185B}
+.pr .side{border-left:3px solid #2A1A22;padding-left:22px;text-align:left;font-family:'Playfair Display',serif;font-size:34px;line-height:1.15}
+.gift{position:absolute;left:-10px;bottom:-6px;width:210px}
+.coffee{position:absolute;left:10px;bottom:10px;width:120px}
+.offer .after{font-size:20px;margin:6px 0 24px}
 
- <div class="wc-final" style="background-image:url(/images/brand/gl-tile.webp)">
-  <div class="wc-final-card">
-   <p class="wc-kicker">The While-You-Sleep Storefront™</p>
-   <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
-   <div class="wc-wait-form" id="join" data-wys-when="wait presale">
-    <FreebieForm action="/api/wys-waitlist" heading="Get a notification when it opens" button="Notify me" sub="Pop in your email and we’ll email you the moment it opens, Friday 16 October at 12 pm ET. Unsubscribe anytime." done="You’re on the list. We’ll email you the moment it opens." emailLabel="Email address for the launch notification"/>
-   </div>
-   <div class="wc-cta" data-wys-when="launch regular"><WysCta timedNote/></div>
-  </div>
- </div>
-</WysFrame>
-<style is:global>
- .wys-world .wc-final-card .wc-wait-form .freebie-capture{border:0!important;box-shadow:none!important;padding:6px 0 0!important}
- .wys-world .wc-final-card .wc-wait-form .fc-h,.wys-world .wc-final-card .wc-wait-form .fc-sub{text-align:center;margin-left:auto;margin-right:auto}
- .wys-world .wc-look-link{text-align:center;margin:28px auto 0}
- .wys-world .wc-look-link a{font:700 16px/1.4 Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
-.wys-lookbook{display:block;max-width:560px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(110,15,61,.16)}
-.wys-lookbook img{display:block;width:100%;height:auto}
-@media (min-width:760px){.wys-lookbook{max-width:1080px}}
-</style>
+/* faq */
+.faq{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start}
+.faq h2{font-family:'Playfair Display',serif;font-weight:800;font-size:56px;color:#9E1C55;margin:0}
+details{background:#FCE7EF;border:1px solid #F1BBD0;border-radius:8px;margin:0 0 9px;padding:12px 18px}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:24px;line-height:1}
+details[open] summary::after{content:'−'}
+details p{margin:10px 0 2px;font-size:17px}
+.foot{text-align:center;font-size:13px;color:#6A5A61;padding:26px 18px 40px}
+
+/* weekend */
+.days{display:grid;grid-template-columns:minmax(0,1fr) 50px minmax(0,1fr) 50px minmax(0,1fr);align-items:center}
+.pol{background:#fff;padding:12px 12px 16px;box-shadow:0 12px 24px rgba(26,20,23,.17);position:relative}
+.pol .pin{position:absolute;top:-12px;left:50%;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F7A9C8,#C2185B);transform:translateX(-50%);box-shadow:0 2px 4px rgba(0,0,0,.25);z-index:2}
+.pol .day{position:absolute;top:24px;left:22px;font-family:'Satisfy',cursive;font-size:46px;color:#C2185B;text-shadow:0 0 10px #fff,0 0 4px #fff,0 0 2px #fff;margin:0}
+.pol img{width:100%;aspect-ratio:254/232;object-fit:cover}
+.pol .cks{padding:12px 6px 0}
+.icons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));text-align:center;background:url(/wys-new/paper-pink.png) center/100% 100% no-repeat;padding:26px 18px}
+.icons div{padding:6px 8px;border-left:1px solid #EFA9C4}
+.icons div:first-child{border-left:0}
+.icons p{margin:8px 0 0;font-weight:700;font-size:20px;line-height:1.15}
+.one{display:grid;grid-template-columns:minmax(0,.9fr) 90px minmax(0,1.1fr);align-items:center;gap:8px}
+.posts{position:relative;background:#fff;padding:12px;box-shadow:0 10px 22px rgba(26,20,23,.14)}
+.posts .g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.posts .g div{aspect-ratio:2/3;background:linear-gradient(160deg,#FDE8F0,#F6C3D6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:700;color:#7A1745}
+.star{position:absolute;right:-26px;top:-46px;width:130px;height:130px;background:url(/wys-new/star.png) center/contain no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;line-height:1}
+.star b{font-size:44px}.star span{font-size:22px}
+.laptop .base{height:15px;background:linear-gradient(#DAD2D6,#B9B0B5);border-radius:0 0 14px 14px;margin:0 -16px}
+.covers{position:relative;height:240px}
+.cover{position:absolute;right:0;top:0;width:66%;aspect-ratio:1;transform:rotate(6deg);background:url(/wys-new/paper-pink.png) center/100% 100% no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 22px rgba(26,20,23,.14)}
+.cover p{font-family:'Playfair Display',serif;font-weight:700;font-size:30px;line-height:1.05;color:#7A1745;margin:0}
+.wprice{font-family:'Playfair Display',serif;font-weight:800;font-size:38px;color:#9E1C55;margin:0 0 6px;text-transform:uppercase}
+
+
+@media (max-width:1279px) and (min-width:861px){
+  .hero>img.ph{position:relative;height:auto;inset:auto;aspect-ratio:1502/708;object-position:center}
+  .hero{display:flex;flex-direction:column-reverse}
+  .hero .in{min-height:0;padding:36px 28px 40px;justify-content:flex-start;width:100%}
+  .hero .copy{max-width:640px}
+}
+@media (max-width:860px){
+  body{font-size:17px}
+  .wrap{padding:0 18px}
+  .hero>img.ph{position:relative;height:auto;inset:auto;aspect-ratio:1502/708;object-position:center}
+  .hero .in{min-height:0;padding:28px 18px 30px}
+  .hero{display:flex;flex-direction:column-reverse}
+  h1.big{font-size:44px}
+  .name span{font-size:32px}
+  .ps,.faq,.inc2{grid-template-columns:minmax(0,1fr)}
+  .ba,.days,.one{grid-template-columns:minmax(0,1fr);row-gap:26px}
+  .ba .arrow,.days .ar,.one .arrow{display:none}
+  .hiw{grid-template-columns:1fr 1fr;row-gap:22px}.hiw .ar{display:none}
+  .del{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .res{grid-template-columns:minmax(0,1fr)}.res .arrow{display:none}
+  .dash .row div{padding:0 10px}.dash strong{font-size:26px}
+  .t h2{font-size:40px;padding:14px 40px 18px}
+  .ttl{font-size:42px}
+  .paper{padding:34px 26px 30px}
+  .paper.offer{padding-bottom:76px}
+  .price{font-size:92px}
+  .pr .side{font-size:26px}
+  .gift{position:relative;left:auto;bottom:auto;width:150px;margin:16px auto 0}
+  .coffee{display:none}
+  .bfbar{font-size:22px;padding:8px 20px}
+  .btn{font-size:17px;padding:0 22px}
+  .icons{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}
+  .icons div{border-left:0}
+  .star{right:0;top:-50px;width:104px;height:104px}.star b{font-size:34px}.star span{font-size:17px}
+  .covers{height:220px}
+  .top a.brand{font-size:19px;padding-right:40px}
+  .name{margin-left:0}
+  .pr .side{border-left:0;padding-left:0;text-align:center}
+}
+@media (max-width:420px){
+  .del{gap:10px}.dc .l{font-size:18px}.dc .n{font-size:46px}
+  .posts .g{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+.bundles{display:grid;gap:10px;justify-items:center;max-width:620px;margin:0 auto}
+.bnote{font-size:16px;margin:0 0 10px;max-width:560px}
+.bnote2{font-size:16px;margin:14px auto 0;max-width:600px}
+[hidden]{display:none!important}
+`}></style>
+</head>
+<body>
+<header class="top"><a class="brand" href="/">The Digital Income Edit™</a>
+<button class="menubtn" type="button" aria-label="Open page menu" aria-expanded="false" aria-controls="menu" onclick="var m=document.getElementById('menu');this.setAttribute('aria-expanded',m.classList.toggle('open'))"><svg width="24" height="20" viewBox="0 0 24 20" aria-hidden="true"><path d="M2 3h20M2 10h20M2 17h20" stroke="#1A1417" stroke-width="2.6"></path></svg></button>
+<nav class="menu" id="menu" aria-label="Site"><a href="/">Home</a><a href="/shop">Shop</a><a href="/shop/weekend-ecosystem">The Weekend Ecosystem™</a><a href="/lifestyle">Lifestyle</a><a href="/membership">Membership</a></nav>
+</header>
+<main>
+
+
+<section class="hero">
+<img class="ph" src="/wys-new/hero-storefront.jpg" alt="A laptop on a fluffy pink blanket showing an Amazon storefront full of looks, beside a sparkly mug of marshmallows">
+<div class="in"><div class="copy">
+<h1 class="big">Your Storefront. Planned While You Sleep.</h1>
+<div class="name"><span>The While-You-Sleep<br>Storefront™</span></div>
+<p class="sub">Your Amazon (and beyond) storefront, fully planned and posted for you every night.</p>
+<a class="btn" href="#offer">Get started now <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div></div>
+</section>
+
+<section class="sec" style="padding-top:46px"><div class="wrap ps">
+<div class="paper"><img class="tape" src="/wys-new/tape.png" alt="">
+<h2 class="ttl">The Problem</h2>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>You don&#39;t have time to plan and post consistently.</span></div>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>You&#39;re staring at a blank screen.</span></div>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Your storefront looks good, but the clicks never come.</span></div>
+</div>
+<div class="sol"><div class="sh"><h2 class="ttl" style="margin:0">The Solution</h2></div>
+<p>A content system that plans, creates and posts your storefront content every single night. Set it up once. It does the rest.</p>
+<img class="heart" src="/wys-new/heart.png" alt="" style="margin:12px 30px 0 auto">
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="t"><h2>Before &amp; After</h2></div>
+<div class="ba">
+<div><div class="mon"><div class="bar"><i></i><i></i><i></i><b>Search Amazon</b></div><div class="scr"><div class="empty"><svg width="96" height="78" viewBox="0 0 24 20" aria-hidden="true"><rect width="24" height="20" rx="2" fill="#CCC6C9"></rect><path d="M3 17l6-7 4 5 3-3 5 5z" fill="#fff"></path><circle cx="17" cy="6" r="2.2" fill="#fff"></circle></svg></div></div></div>
+<p class="lab dark"><b>Before</b><span>Empty &amp; Unplanned</span></p></div>
+<img class="arrow" src="/wys-new/arrow.png" alt="">
+<div><div class="mon"><div class="bar"><i></i><i></i><i></i><b>Search Amazon</b></div><div class="scr"><div class="grid4"><div><img src="/wys-new/r0c1.jpg" alt="A look from the storefront"><i></i></div><div><img src="/wys-new/r1c2.jpg" alt="A look from the storefront"><i></i></div><div><img src="/wys-new/r2c2.jpg" alt="A look from the storefront"><i></i></div><div><img src="/wys-new/r4c2.jpg" alt="A look from the storefront"><i></i></div></div></div></div>
+<p class="lab hot"><b>After</b><span>Branded, Organized &amp; Shoppable</span></p></div>
+</div></div></section>
+
+<section class="sec"><div class="wrap"><div class="paper" style="padding:34px 30px 40px">
+<div class="t"><h2 style="font-size:46px">How It Works</h2></div>
+<div class="hiw">
+<div><div class="ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 10.2a1 1 0 001 .8h8.8a1 1 0 001-.8L20 8H6.2"></path><circle cx="9" cy="19" r="1.4"></circle><circle cx="17" cy="19" r="1.4"></circle></svg></div><p>You Set<br>It Up</p></div><div class="ar"><svg width="36" height="20" viewBox="0 0 36 20" fill="none" stroke="#C2185B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h29M25 4l7 6-7 6"></path></svg></div>
+<div><div class="ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2"></path></svg></div><p>It Plans<br>Your Looks</p></div><div class="ar"><svg width="36" height="20" viewBox="0 0 36 20" fill="none" stroke="#C2185B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h29M25 4l7 6-7 6"></path></svg></div>
+<div><div class="ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="10" rx="1"></rect><path d="M2.5 18.5h19"></path></svg></div><p>It Creates<br>and Posts</p></div><div class="ar"><svg width="36" height="20" viewBox="0 0 36 20" fill="none" stroke="#C2185B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h29M25 4l7 6-7 6"></path></svg></div>
+<div><div class="ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15.5A7.5 7.5 0 018.5 6a7.5 7.5 0 109.5 9.5z"></path><path d="M15 4h3l-3 3h3M19.5 8.5h2l-2 2h2"></path></svg></div><p>It Runs<br>Nightly</p></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap">
+<div class="t"><h2>Your Nightly Deliverables</h2></div>
+<div class="del">
+<div class="dc"><div class="im"><img class="cover" src="/wys-new/r0c1.jpg" alt="The styled Cozy Errands look"></div><div class="pocket"><p class="n">3</p><p class="l">Shoppable<br>Looks</p></div></div>
+<div class="dc"><div class="im"><div class="three"><img src="/wys-new/r0c0.jpg" alt="Basic pin"><img src="/wys-new/r0c3.jpg" alt="Roundup pin"><img src="/wys-new/r0c4.jpg" alt="Found It pin"></div></div><div class="pocket"><span class="logo"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11.5" fill="#E60023"></circle><path d="M12.3 4.5c-4.2 0-6.3 3-6.3 5.5 0 1.5.6 2.8 1.8 3.3.2.1.4 0 .4-.2l.2-.7c0-.2 0-.3-.1-.4-.4-.4-.6-1-.6-1.7 0-2.3 1.7-4.3 4.4-4.3 2.4 0 3.7 1.5 3.7 3.4 0 2.5-1.1 4.6-2.8 4.6-.9 0-1.6-.8-1.4-1.7.3-1.1.8-2.3.8-3.1 0-.7-.4-1.3-1.2-1.3-.9 0-1.7 1-1.7 2.3 0 .8.3 1.4.3 1.4l-1.1 4.7c-.3 1.4 0 3.1 0 3.3 0 .1.1.1.2 0 .1-.1 1.2-1.5 1.6-2.9l.6-2.4c.3.6 1.2 1.1 2.2 1.1 2.9 0 4.8-2.6 4.8-6.1 0-2.7-2.2-5.2-5.8-5.2z" fill="#fff"></path></svg></span><p class="n">15</p><p class="l">Pinterest<br>Pins</p></div></div>
+<div class="dc"><div class="im"><div class="blog"><div class="h"></div><div class="s" style="width:90%"></div><div class="row"><div><div class="s"></div><div class="s"></div><div class="s" style="width:70%"></div><div class="s"></div><div class="s" style="width:60%"></div><div class="s"></div></div><img src="/wys-new/r1c2.jpg" alt="Blog post photo of the Retro Christmas Kitchen Hutch"></div></div></div><div class="pocket"><p class="n">3</p><p class="l">Blog<br>Posts</p></div></div>
+<div class="dc"><div class="im"><div class="phone"><img src="/wys-new/r4c2.jpg" alt="Instagram carousel of the Sparkly Blue NYE look"></div></div><div class="pocket"><span class="logo"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".8" fill="#C2185B"></circle></svg></span><p class="n">3</p><p class="l">Instagram<br>Carousels</p></div></div>
+</div></div></section>
+
+<section class="sec"><div class="wrap"><div class="paper" style="padding:34px 34px 44px">
+<div class="t"><h2 style="font-size:46px">Real Results</h2></div>
+<div class="res">
+<div class="dash"><span class="sel">November 2026 <svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true"><path d="M1 1l6 6 6-6" fill="none" stroke="#2A1A22" stroke-width="2"></path></svg></span>
+<div class="row"><div><small>Looks made overnight</small><strong>6</strong><span class="up">3 stores</span></div><div><small>Photos made</small><strong>30</strong><span class="up">5 per look</span></div><div><small>Pins a night</small><strong>15</strong><span class="up">while I slept</span></div></div></div>
+<img class="arrow" src="/wys-new/arrow.png" alt="" style="width:90px">
+<div class="note"><p>My overnight looks<br><span style="font-size:24px">(November 2026)</span></p></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="paper cream" style="padding:30px 40px 40px">
+<div class="inc2">
+<div><div class="t" style="text-align:left"><h2 style="font-size:44px">What&#39;s Included</h2></div>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>One payment. Runs every night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>3 New Looks Every Night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Works with Amazon, Walmart &amp; Sam&#39;s Club</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>The full WYS website, with regular updates</span></div><div data-wys-state="bf" hidden><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Free Pinterest Optimization Guide (Black Friday)</span></div></div></div>
+<div class="stack">
+<div class="pola" style="left:0;top:22px;width:48%;transform:rotate(-8deg)"><img src="/wys-new/r2c2.jpg" alt="The Pink Perfume Gift Guide look" style="width:100%;aspect-ratio:228/309;object-fit:cover"></div>
+<div class="card2"><p>Start Here<br>Get Approved<br>Set It Up<br>The Studio</p></div>
+</div></div></div></div></section>
+
+<section class="sec" id="offer"><div class="wrap"><div class="paper offer">
+<img class="gift" src="/wys-new/gift.png" alt="">
+<div data-wys-state="bf" hidden>
+<p class="bfbar">Black Friday Exclusive</p>
+<div class="pr"><p class="price">$27</p><div class="side">With a Pinterest<br>Add-On</div></div>
+<p class="after">(Goes to $47 on 1 December)</p>
+<div class="bundles">
+<a class="btn" href="https://links.thedigitalincomeedit.com/shop/4bdd7c55-65a7-4596-bfb7-d22128cc9d9f">Get the $97 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<p class="bnote">Storefront + done-for-you Pinterest Optimization (the optimization is $70 instead of $149). I clean up and sort your existing account.</p>
+<a class="btn" href="https://links.thedigitalincomeedit.com/shop/45dc9f99-91b4-421f-97eb-3e6e018eb38e">Get the $77 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<p class="bnote">Storefront + New Pinterest Account Setup (the setup is $50 instead of $79). A brand-new account, built right from day one.</p>
+</div>
+<p class="bnote2">Every Black Friday order also gets the Pinterest Optimization Guide free ($7 value). Only 10 done-for-you spots. Ends Monday 30 November, 11:45 pm Eastern.</p>
+<p class="bnote2">Just the Storefront? <a href="https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7">Get it for $37</a>.</p>
+</div>
+<div data-wys-state="regular">
+<p class="bfbar">The While-You-Sleep Storefront™</p>
+<div class="pr"><p class="price" data-wys-price>$37</p><div class="side">One Payment<br>Runs Nightly</div></div>
+<p class="after" data-wys-pre>(Black Friday week starts Monday 23 November)</p>
+<a class="btn" href="https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7">Get started now <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+</div></div></section>
+
+<section class="sec" style="padding-bottom:40px"><div class="wrap faq">
+<h2>FAQ</h2>
+<div>
+<details><summary>Do I need an existing Amazon storefront?</summary><p>No. The Get Approved page walks you through applying. If you&#39;re an Associate without a storefront yet, you can run it now with pins linking to your blog posts.</p></details>
+<details><summary>Can I use this with Walmart or Sam&#39;s Club?</summary><p>Yes. Walmart and Sam&#39;s Club looks need your Walmart Creator and Sam&#39;s Club Creator approval.</p></details>
+<details><summary>How often is new content added?</summary><p>Every night: 3 looks, 15 pins, 3 blog posts and 3 Instagram carousels.</p></details>
+<details><summary>Can I cancel anytime?</summary><p>There&#39;s nothing to cancel. It&#39;s one payment.</p></details>
+</div></div></section>
+<p class="foot">As an Amazon Associate I earn from qualifying purchases. AI-generated styling inspiration. Retail products may differ.</p>
+
+
+</main>
+<p class="foot">© 2026 The Digital Income Edit™ · <a href="/shop">Shop</a> · <a href="/shop/weekend-ecosystem">The Weekend Ecosystem™</a> · <a href="/privacy">Privacy</a></p>
+<script is:inline>(function(){try{var n=Date.now(),q=location.search;var bf=(n>=1795410000000&&n<=1796100300000)||/[?&]bf=1/.test(q);var after=n>1796100300000||/[?&]after=1/.test(q);
+document.querySelectorAll('[data-wys-state="bf"]').forEach(function(e){e.hidden=!bf});
+document.querySelectorAll('[data-wys-state="regular"]').forEach(function(e){e.hidden=bf});
+if(after){document.querySelectorAll('[data-wys-price]').forEach(function(e){e.textContent='$47'});document.querySelectorAll('[data-wys-pre]').forEach(function(e){e.hidden=true})}}catch(x){}})()</script>
+
+</body>
+</html>
