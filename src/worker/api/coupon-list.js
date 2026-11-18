@@ -13,11 +13,15 @@ export async function handle(request, env) {
   if (b.hp) return jsonResponse({ ok: true });
   const email = String(b.email || "").trim().toLowerCase().slice(0, 200);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return jsonResponse({ error: "Enter a valid email address." }, 400);
-  const r = await fetch("https://connect.mailerlite.com/api/subscribers", {
+  const post = (body) => fetch("https://connect.mailerlite.com/api/subscribers", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.MAILERLITE_API_KEY}`, "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ email, fields: { signup_source: "Skool coupons" } }),
+    body: JSON.stringify(body),
   }).catch(() => null);
+  // Two calls on purpose: the welcome automation starts when signup_source is
+  // UPDATED, and MailerLite doesn't count a field set at creation as an update.
+  const r = await post({ email });
+  if (r && r.ok) await post({ email, fields: { signup_source: "Skool coupons" } });
   if (!r || !r.ok) return fail(500);
   return jsonResponse({ ok: true });
 }
