@@ -13,14 +13,14 @@ import WysOffer from '../../components/WysOffer.astro';
 import {liveLooks} from '../../data/wys-live.js';
 const [ghost] = liveLooks;
 ---
-<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, The While-You-Sleep Storefront™ plans and sources 2 Amazon looks (plus Walmart and Sam's Club looks if you add them), posts 10 Pinterest pins, 2 blog posts and 2 Instagram carousels. Member presale is open now." ogImage={ghost.photos.styled.src.src}>
+<WysFrame focus title="The While-You-Sleep Storefront™ | Your Amazon storefront posts itself" description="Every night, The While-You-Sleep Storefront™ plans and sources 3 looks across Amazon, Walmart and Sam's Club, then posts 15 Pinterest pins, 3 blog posts and 3 Instagram carousels." ogImage={ghost.photos.styled.src.src}>
  <header class="wc-hero">
   <div class="wys-wrap wc-wait-grid">
    <div class="wc-hero-copy">
     <p class="wc-kicker">For Amazon, Walmart and Sam's Club creators</p>
     <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
     <p class="wh-sub">Your Amazon storefront <em>posts itself.</em></p>
-    <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>2&nbsp;looks</b>, makes 10 Pinterest pins, writes 2 blog posts and posts 2 Instagram carousels, while you sleep. Approved for Walmart Creator or Sam's Club Creator? It adds a look a night from each store too.</p>
+    <p class="wc-hero-line">It’s not a guide. It’s the system that runs my own storefront, set up once on your computer. Every night it plans and sources <b>3&nbsp;looks</b>, one each from Amazon, Walmart and Sam's Club, makes 15 Pinterest pins, writes 3 blog posts and posts 3 Instagram carousels, while you sleep. (Walmart and Sam's Club looks need your Walmart Creator and Sam's Club Creator approval.)</p>
     <div class="wc-wait-form wc-buy-box" id="buy" data-wys-when="launch regular">
      <span class="wc-example-tag" style="left:28px;transform:rotate(-2deg)" data-wys-when="launch">Launch weekend</span>
      <p class="wc-buy-h">The While-You-Sleep Storefront™</p>
@@ -82,10 +82,19 @@ const [ghost] = liveLooks;
    <div class="wc-head">
     <p class="wc-kicker">Every night, while you sleep</p>
     <h2>You go to bed.<br/><em>It goes to work.</em></h2>
-    <p>In the morning, 2 finished, shoppable looks are already out in the world: 10 pins, 2 blog posts and 2 carousels. Pinterest and Google are search engines, so a pin or a post keeps getting found long after the day it goes up. A feed forgets you by lunch.</p>
+    <p>In the morning, 3 finished, shoppable looks are already out in the world: 15 pins, 3 blog posts and 3 carousels. Pinterest and Google are search engines, so a pin or a post keeps getting found long after the day it goes up. A feed forgets you by lunch.</p>
    </div>
    <WysOvernight/>
   </div>
+ </section>
+
+ <section class="wys-wrap wc-section">
+  <div class="wc-head">
+   <p class="wc-kicker">What it made this week</p>
+   <h2>Six looks. Three stores.<br/><em>I was asleep for all of them.</em></h2>
+   <p>Every photo here was made overnight by my own storefront: two Walmart looks, two Sam’s Club looks and two Amazon looks, each with all five of its pins.</p>
+  </div>
+  <a class="wys-lookbook" href="/images/wys-promo/wys-lookbook-nov-2026-full.jpg" target="_blank" rel="noopener"><picture><source media="(min-width: 760px)" srcset="/images/wys-promo/wys-lookbook-nov-2026-wide.jpg" width="2210" height="1166"/><img src="/images/wys-promo/wys-lookbook-nov-2026.jpg" alt="Six looks The While-You-Sleep Storefront made overnight: Cozy Blue Parka Holiday Errands Outfit and Retro Multicolor Christmas Kitchen Hutch from Walmart, Pink Perfume Gift Guide for Her and Grinch Christmas Morning PJ Party from Sam's Club, Sparkly Blue New Year's Eve Party Outfit and Pink and Silver New Year's Eve Party Decor from Amazon, each with Basic, Styled, Lifestyle, Roundup and Found It photos" width="1200" height="2583" loading="lazy"/></picture></a>
  </section>
 
  <section class="wys-wrap wc-section">
@@ -165,4 +174,7 @@ const [ghost] = liveLooks;
  .wys-world .wc-final-card .wc-wait-form .fc-h,.wys-world .wc-final-card .wc-wait-form .fc-sub{text-align:center;margin-left:auto;margin-right:auto}
  .wys-world .wc-look-link{text-align:center;margin:28px auto 0}
  .wys-world .wc-look-link a{font:700 16px/1.4 Jost,sans-serif;color:#B8245F;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.wys-lookbook{display:block;max-width:560px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(110,15,61,.16)}
+.wys-lookbook img{display:block;width:100%;height:auto}
+@media (min-width:760px){.wys-lookbook{max-width:1080px}}
 </style>
