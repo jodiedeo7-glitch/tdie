@@ -1,7 +1,6 @@
-// 18 Nov 2026: Skool coupon list. Adds an opted-in email straight to the
-// MailerLite group "Coupon List (Skool)" (single opt-in, like the other forms).
+// 18 Nov 2026: coupon signup from the Skool post. Adds the email to the one
+// main MailerLite list (no separate group). Single opt-in, like the other forms.
 import { json, jsonResponse, methodNotAllowed } from "../http.js";
-const GROUP = "204500358568871639";
 export async function handle(request, env) {
   if (request.method === "GET") return jsonResponse({ live: Boolean(env.MAILERLITE_API_KEY) });
   if (request.method !== "POST") return methodNotAllowed();
@@ -17,7 +16,7 @@ export async function handle(request, env) {
   const r = await fetch("https://connect.mailerlite.com/api/subscribers", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.MAILERLITE_API_KEY}`, "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ email, groups: [GROUP] }),
+    body: JSON.stringify({ email }),
   }).catch(() => null);
   if (!r || !r.ok) return fail(500);
   return jsonResponse({ ok: true });
