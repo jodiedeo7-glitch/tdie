@@ -16,7 +16,7 @@ export async function handle(request, env) {
   const r = await fetch("https://connect.mailerlite.com/api/subscribers", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.MAILERLITE_API_KEY}`, "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email, fields: { signup_source: "Skool coupons" } }),
   }).catch(() => null);
   if (!r || !r.ok) return fail(500);
   return jsonResponse({ ok: true });
