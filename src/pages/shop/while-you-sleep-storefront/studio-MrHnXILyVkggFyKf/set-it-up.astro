@@ -25,9 +25,16 @@ import {SECTIONS, ASKS} from '../../../../scripts/wys-buyer-prompts.js';
    <div class="wb2-card wb2-video" style="margin-bottom:22px" data-platform="claude">
     <h3>Watch me set it up</h3>
     <p>The whole setup, start to finish, in under 6 minutes. Keep it open next to this page and fill yours in as you watch.</p>
-    <video controls preload="metadata" playsinline poster="/shop/while-you-sleep-storefront/studio-MrHnXILyVkggFyKf/media/setup-walkthrough-poster.jpg" width="1280" height="720">
-     <source src="/shop/while-you-sleep-storefront/studio-MrHnXILyVkggFyKf/media/setup-walkthrough.mp4" type="video/mp4"/>
-    </video>
+    <video id="wb2-walk" controls preload="none" playsinline poster="/shop/while-you-sleep-storefront/studio-MrHnXILyVkggFyKf/media/setup-walkthrough-poster.jpg" width="1280" height="720" data-src="/shop/while-you-sleep-storefront/studio-MrHnXILyVkggFyKf/media/hls/index.m3u8"></video>
+    <script is:inline src="/shop/while-you-sleep-storefront/studio-MrHnXILyVkggFyKf/media/hls.light.min.js" defer></script>
+    <script is:inline>
+     window.addEventListener('DOMContentLoaded', () => {
+      const v = document.getElementById('wb2-walk'); if (!v) return;
+      const src = v.dataset.src;
+      if (v.canPlayType('application/vnd.apple.mpegurl')) { v.src = src; return; }
+      if (window.Hls && window.Hls.isSupported()) { const h = new window.Hls({autoStartLoad: false}); h.loadSource(src); h.attachMedia(v); v.addEventListener('play', () => h.startLoad(), {once: true}); }
+     });
+    </script>
    </div>
    <div class="wb2-card" style="margin-bottom:22px" data-platform="chatgpt" hidden>
     <h3>Before you paste (ChatGPT, being tested)</h3>
