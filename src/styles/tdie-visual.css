@@ -3,7 +3,7 @@
    by their existing components. Explicit selectors avoid framing tracking pixels. */
 :root{--tdie-pink:#D62E73;--tdie-deep:#B8245F;--tdie-bubble:#FF8AC2;--tdie-lav:#F1EAFB;--tdie-rim:#E891B6;--tdie-lav-rim:#C4AFE4;--tdie-mat:#FFD7E9;--tdie-ink:#1A1417;--tdie-shadow:0 12px 30px #B8245F18;--choc:#1A1417;--choc-soft:#1A1417;--choc-mute:#3C3037;--choc-meta:#5B3E4D;--cream-deep:#FFF0F7;--r:18px;--e-paper:#FFF0F7}
 body{color:var(--tdie-ink)}
-body::before{background:var(--cream)!important}
+body::before{background:#FFF0F6 url('/images/brand/sh-blush.webp') repeat!important;background-size:480px 480px!important}
 :where(h1,h2,h3,h4){font-family:Gloock,Georgia,serif!important;font-style:normal!important;font-weight:600!important;line-height:1.18!important;letter-spacing:0!important}
 h1{font-size:clamp(36px,4.8vw,52px)!important;max-width:28ch!important}
 h2{font-size:clamp(28px,3.3vw,40px)!important;max-width:34ch!important}
@@ -21,9 +21,9 @@ h3{font-size:clamp(22px,2.2vw,28px)!important}
 :is(.sn,.we-nav){background:#FFF6FA!important;border-bottom:3px solid #EAA2C0!important}
 .sn-in{min-height:76px!important}
 :is(.sn-menu,.sn-close){border-radius:999px!important;border-color:#E891B6!important;background:#FFF0F7!important}
-.sn-drawer{background:#FFF5FA!important}
+.sn-drawer{background:#FFF5FA url('/images/brand/sh-blush.webp') repeat!important;background-size:480px 480px!important}
 .sn-logo{letter-spacing:-.02em}
-:is(.sf,footer){background:#FFF5FA!important;border-top:2px solid #E891B6!important;color:#1A1417!important}
+:is(.sf,footer){background:#FFF5FA url('/images/brand/sh-blush.webp') repeat!important;background-size:480px 480px!important;border-top:2px solid #E891B6!important;color:#1A1417!important}
 :is(.sf,footer) :is(p,a,span,li){color:#1A1417}
 /* Matted photographs and product artifacts. CSS preserves original pixels. */
 :is(.e-figure,.e-artifact,.hero-figure .img,.cover-figure .frame,.art-img,.ab-hero-img,.ab-bleed-img,.rs-hero-photo,.wm-hero-img,.flag-visual .photo,.letter .e-figure,.silence .img,.triptych .img,.plates .img,.overlap .big,.overlap .small){border:12px solid #FFD7E9!important;outline:1px solid #E891B6;outline-offset:0;border-radius:22px!important;background-color:#FFF0F7!important;box-shadow:var(--tdie-shadow)!important;overflow:hidden}
@@ -51,7 +51,7 @@ h3{font-size:clamp(22px,2.2vw,28px)!important}
 .rs-body>.freebie-next{border-color:#C4AFE4!important}
 .rs-kit-go,.rs-go,.ab-go,.room-body .go,.read-row .ra{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid #E891B6;border-radius:999px;background:#FFF0F7;color:#B8245F;font:600 12px/1.4 Jost,system-ui,sans-serif}
 :is(.e-sec,.e-sec-sm){padding-block:clamp(44px,6vw,80px)}
-:where(.e-paper,.e-blush){background:#FFF0F7!important}
+:where(.e-paper,.e-blush){background:#FFF0F7 url('/images/brand/sh-blush.webp') repeat!important;background-size:480px 480px!important}
 /* Homepage: boutique split cover, framed studio proof, lavender closet shelves. */
 .cover{background:radial-gradient(ellipse at 18% 5%,#FFC8E1,transparent 65%),linear-gradient(120deg,#FFF5FA,#F1EAFB)!important;min-height:0!important;border-bottom:6px solid #FF8AC2!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
 .cover .mast{background:#FFFCFE!important;border-bottom:1px solid #E891B6}
@@ -62,7 +62,7 @@ h3{font-size:clamp(22px,2.2vw,28px)!important}
 .cover-photo figcaption{left:0!important;right:0!important;top:auto!important;bottom:0;padding:10px 16px!important;background:#FFFCFE!important;text-align:center}
 .cover-meta{border-color:#E891B6!important}
 .cover-meta b{font-size:22px!important}
-:is(.recognition,.showroom,.shelf,.mem){background:#FFF5FA!important}
+:is(.recognition,.showroom,.shelf,.mem){background:#FFF5FA url('/images/brand/sh-blush.webp') repeat!important;background-size:480px 480px!important}
 :is(.room-body,.ab-rooms a,.shelf>a,.mem-grid>div){border:2px solid #E891B6!important;padding:22px!important;background:#FFFCFE!important;border-radius:20px;box-shadow:var(--tdie-shadow)}
 .shelf>a:nth-child(even),.mem-grid>div:nth-child(even){border-color:#C4AFE4!important;background:#F8F3FF!important}
 .step{margin-bottom:12px;padding:22px!important;border:2px solid #E891B6!important;border-radius:20px;background:#FFFCFE;box-shadow:0 7px 18px #B8245F10}
@@ -256,7 +256,7 @@ main p,main li{font-size:min(16px,1em)}
 body:not(:has(.life)),body:not(:has(.life)) main,body:not(:has(.life)) main *:not(img):not(svg):not([style*="background-image"]):not(.sn-drip),body footer,body footer *,body>section,body>section *:not([style*="background-image"]){background-image:none!important}
 body{background-color:#FFFBF8!important}
 /* buttons: cute white pill, thin pink outline, dark text, little sparkle */
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.r-btn,.fd-r-btn,.room-body .go,.mb-plan-cta,.rs-go,.rs-kit-go,.go-btn,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.lx-btn,.btn-primary){background:#FFFFFF!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important;text-shadow:none!important}
+body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.r-btn,.fd-r-btn,.room-body .go,.mb-plan-cta,.rs-go,.rs-kit-go,.go-btn,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.lx-btn,.btn-primary){background:#FFFFFF!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:12px!important;box-shadow:0 2px 0 #F6C9DD!important;text-shadow:none!important}
 body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn)::before{content:"✦";color:#D62E73;margin-right:7px;font-size:.95em}
 body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn) *{color:#1A1417!important}
 body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit]):hover{background:#FFF0F7!important;border-color:#D62E73!important}
