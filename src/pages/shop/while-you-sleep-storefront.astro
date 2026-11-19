@@ -201,7 +201,7 @@ details p{margin:10px 0 2px;font-size:17px}
   .t h2{font-size:40px;padding:14px 40px 18px}
   .ttl{font-size:42px}
   .paper{padding:34px 26px 30px}
-  .paper.offer{padding-bottom:76px}
+  .paper.offer{padding-bottom:100px}
   .price{font-size:92px}
   .pr .side{font-size:26px}
   .gift{position:relative;left:auto;bottom:auto;width:150px;margin:16px auto 0}
@@ -225,6 +225,26 @@ details p{margin:10px 0 2px;font-size:17px}
 .bnote{font-size:16px;margin:0 0 10px;max-width:560px}
 .bnote2{font-size:16px;margin:14px auto 0;max-width:600px}
 [hidden]{display:none!important}
+
+.sub2{font-size:17px;margin:-12px 0 24px;max-width:430px}
+.pl{font-weight:700;font-size:20px;margin:0 0 12px}
+.lead{text-align:center;font-size:19px;max-width:640px;margin:-6px auto 22px}
+.pages4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pg4{background:#fff;padding:22px 20px;box-shadow:0 10px 22px rgba(26,20,23,.12);border-top:4px solid #F2A9C6}
+.pg4 p{margin:0;font-size:16px}
+.pg4 .pn{font-weight:800;font-size:30px;color:#C2185B;line-height:1;margin-bottom:8px}
+.pg4 .ph4{font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin-bottom:6px}
+.need{max-width:760px;margin:0 auto}
+.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;text-align:left;margin:4px 0 0}
+.choice{background:#fff;padding:20px 18px 22px;box-shadow:0 10px 22px rgba(26,20,23,.13);display:flex;flex-direction:column}
+.choice .who{font-family:'Satisfy',cursive;font-size:30px;color:#9E1C55;margin:0;line-height:1.1}
+.choice .cp{font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#C2185B;margin:4px 0 6px;line-height:1}
+.choice .cw{font-size:16px;margin:0 0 16px;flex:1}
+.choice .btn{font-size:16px;padding:0 18px;min-height:52px;justify-content:center}
+.btn.btn2{background:#fff;color:#C2185B;border:2px solid #C2185B;box-shadow:none}
+.btn.btn2:hover{background:#FCE7EF;color:#A81652}
+@media (max-width:860px){.pages4{grid-template-columns:repeat(2,minmax(0,1fr))}.choices{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.pages4{grid-template-columns:minmax(0,1fr)}}
 `}></style>
 </head>
 <body>
@@ -248,12 +268,12 @@ details p{margin:10px 0 2px;font-size:17px}
 <section class="sec" style="padding-top:46px"><div class="wrap ps">
 <div class="paper"><img class="tape" src="/wys-new/tape.png" alt="">
 <h2 class="ttl">The Problem</h2>
-<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>You don&#39;t have time to plan and post consistently.</span></div>
-<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>You&#39;re staring at a blank screen.</span></div>
-<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Your storefront looks good, but the clicks never come.</span></div>
+<p class="pl">You wanted a storefront. Not another full-time job.</p>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Finding products is one thing.</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Turning them into looks, pins, blog posts and carousels eats your whole evening.</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>And tomorrow, you get to do it all over again.</span></div>
 </div>
 <div class="sol"><div class="sh"><h2 class="ttl" style="margin:0">The Solution</h2></div>
-<p>A content system that plans, creates and posts your storefront content every single night. Set it up once. It does the rest.</p>
+<p><b>What if it was already done when you woke up?</b></p>
+<p style="margin-top:10px">It&#39;s the system I run on my own storefront. It plans, creates and posts your storefront content every single night. Set it up once on your computer with your Claude account. It does the rest.</p>
 <img class="heart" src="/wys-new/heart.png" alt="" style="margin:12px 30px 0 auto">
 </div>
 </div></section>
@@ -287,7 +307,7 @@ details p{margin:10px 0 2px;font-size:17px}
 </div></div></section>
 
 <section class="sec"><div class="wrap"><div class="paper" style="padding:34px 34px 44px">
-<div class="t"><h2 style="font-size:46px">Real Results</h2></div>
+<div class="t"><h2 style="font-size:46px">What It Made Overnight</h2></div>
 <div class="res">
 <div class="dash"><span class="sel">November 2026 <svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true"><path d="M1 1l6 6 6-6" fill="none" stroke="#2A1A22" stroke-width="2"></path></svg></span>
 <div class="row"><div><small>Looks made overnight</small><strong>6</strong><span class="up">3 stores</span></div><div><small>Photos made</small><strong>30</strong><span class="up">5 per look</span></div><div><small>Pins a night</small><strong>15</strong><span class="up">while I slept</span></div></div></div>
@@ -298,26 +318,41 @@ details p{margin:10px 0 2px;font-size:17px}
 <section class="sec"><div class="wrap"><div class="paper cream" style="padding:30px 40px 40px">
 <div class="inc2">
 <div><div class="t" style="text-align:left"><h2 style="font-size:44px">What&#39;s Included</h2></div>
-<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>One payment. Runs every night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>3 New Looks Every Night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Works with Amazon, Walmart &amp; Sam&#39;s Club</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>The full WYS website, with regular updates</span></div><div data-wys-state="bf" hidden><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Free Pinterest Optimization Guide (Black Friday)</span></div></div></div>
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>One payment. Runs every night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>3 New Looks Every Night</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Works with Amazon, Walmart &amp; Sam&#39;s Club</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>The full WYS website, with regular updates</span></div><div data-wys-state="bf" hidden><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Free Pinterest Optimization Guide (Black Friday bundles)</span></div></div></div>
 <div class="stack">
 <div class="pola" style="left:0;top:22px;width:48%;transform:rotate(-8deg)"><img src="/wys-new/r2c2.jpg" alt="The Pink Perfume Gift Guide look" style="width:100%;aspect-ratio:228/309;object-fit:cover"></div>
 <div class="card2"><p>Start Here<br>Get Approved<br>Set It Up<br>The Studio</p></div>
 </div></div></div></div></section>
 
+<section class="sec"><div class="wrap">
+<div class="t"><h2>Inside Your Storefront Website</h2></div>
+<p class="lead">The second you buy, you get the link to your private Storefront website. Here&#39;s what&#39;s waiting.</p>
+<div class="pages4">
+<div class="pg4"><p class="pn">01</p><p class="ph4">Start Here</p><p>Your 15-minute Quick Start, plus every update note, dated, so you always know what changed.</p></div>
+<div class="pg4"><p class="pn">02</p><p class="ph4">Get Approved</p><p>Amazon Influencer vs Associate, how to apply, and what to set up the day you&#39;re approved.</p></div>
+<div class="pg4"><p class="pn">03</p><p class="ph4">Set It Up</p><p>Answer the questions and it writes your own setup prompt and nightly run.</p></div>
+<div class="pg4"><p class="pn">04</p><p class="ph4">The Studio</p><p>Every prompt your nightly run uses, kept current. When I improve mine, I update yours.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="wrap">
+<div class="paper cream" style="padding:34px 40px 46px">
+<div class="t" style="margin-bottom:14px"><h2 style="font-size:44px">What You Need</h2></div>
+<div class="need">
+<div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>A paid Claude plan and the Claude desktop app</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Amazon Influencer or Amazon Associates (Walmart Creator and Sam&#39;s Club Creator approval for those looks)</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>An image tool for the photos (ChatGPT or Higgsfield; setup asks which)</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Metricool to schedule your pins and posts (its free plan is fine to start)</span></div><div class="ck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"></path></svg><span>Your computer left on and signed in to Amazon overnight</span></div>
+</div></div></div></section>
+
 <section class="sec" id="offer"><div class="wrap"><div class="paper offer">
 <img class="gift" src="/wys-new/gift.png" alt="">
 <div data-wys-state="bf" hidden>
 <p class="bfbar">Black Friday Exclusive</p>
-<div class="pr"><p class="price">$27</p><div class="side">With a Pinterest<br>Add-On</div></div>
-<p class="after">(Goes to $47 on 1 December)</p>
-<div class="bundles">
-<a class="btn" href="https://links.thedigitalincomeedit.com/shop/4bdd7c55-65a7-4596-bfb7-d22128cc9d9f">Get the $97 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-<p class="bnote">Storefront + done-for-you Pinterest Optimization (the optimization is $70 instead of $149). I clean up and sort your existing account.</p>
-<a class="btn" href="https://links.thedigitalincomeedit.com/shop/45dc9f99-91b4-421f-97eb-3e6e018eb38e">Get the $77 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-<p class="bnote">Storefront + New Pinterest Account Setup (the setup is $50 instead of $79). A brand-new account, built right from day one.</p>
+<div class="pr"><p class="price">$27</p><div class="side">The Storefront<br>with a Pinterest Service</div></div>
+<p class="after">Goes to $47 on 1 December. Pick the one that fits you:</p>
+<div class="choices">
+<div class="choice"><p class="who">Already on Pinterest?</p><p class="cp">$97</p><p class="cw">Storefront ($27) + done-for-you Pinterest Optimization ($70, regular $149). I clean up and sort your existing account. Or 3 monthly payments.</p><a class="btn" href="https://links.thedigitalincomeedit.com/shop/4bdd7c55-65a7-4596-bfb7-d22128cc9d9f">Get the $97 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+<div class="choice"><p class="who">Starting from scratch?</p><p class="cp">$77</p><p class="cw">Storefront ($27) + New Pinterest Account Setup ($50, regular $79). A brand-new account, built right from day one.</p><a class="btn" href="https://links.thedigitalincomeedit.com/shop/45dc9f99-91b4-421f-97eb-3e6e018eb38e">Get the $77 bundle <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+<div class="choice"><p class="who">Doing Pinterest yourself?</p><p class="cp">$37</p><p class="cw">Just the Storefront. One payment.</p><a class="btn btn2" href="https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7">Get the Storefront <svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M3 3l8 8-8 8" fill="none" stroke="#C2185B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
 </div>
-<p class="bnote2">Every Black Friday order also gets the Pinterest Optimization Guide free ($7 value). Only 10 done-for-you spots. Ends Monday 30 November, 11:45 pm Eastern.</p>
-<p class="bnote2">Just the Storefront? <a href="https://links.thedigitalincomeedit.com/shop/66271fb0-fc54-4aae-ad9f-c826f4635ee7">Get it for $37</a>.</p>
+<p class="bnote2">Both bundles include the Pinterest Optimization Guide free ($7 value). Only 10 done-for-you spots. Ends Monday 30 November, 11:45 pm Eastern.</p>
 </div>
 <div data-wys-state="regular">
 <p class="bfbar">The While-You-Sleep Storefront™</p>
@@ -330,10 +365,15 @@ details p{margin:10px 0 2px;font-size:17px}
 <section class="sec" style="padding-bottom:40px"><div class="wrap faq">
 <h2>FAQ</h2>
 <div>
+<details><summary>What exactly am I buying?</summary><p>A private Storefront website. You get the link the second you pay. Answer the setup questions and it writes your own setup prompt and nightly run, which runs on your computer through your Claude account every night.</p></details>
+<details><summary>Is it automatic, or do I approve things?</summary><p>Automatic by default. You can switch on approvals to OK each look before it goes out. I recommend approvals on for your first few days.</p></details>
+<details><summary>What happens after I buy a bundle?</summary><p>You get your Storefront website link right away, plus instructions to invite me through Pinterest Business access. I never need your password.</p></details>
 <details><summary>Do I need an existing Amazon storefront?</summary><p>No. The Get Approved page walks you through applying. If you&#39;re an Associate without a storefront yet, you can run it now with pins linking to your blog posts.</p></details>
 <details><summary>Can I use this with Walmart or Sam&#39;s Club?</summary><p>Yes. Walmart and Sam&#39;s Club looks need your Walmart Creator and Sam&#39;s Club Creator approval.</p></details>
 <details><summary>How often is new content added?</summary><p>Every night: 3 looks, 15 pins, 3 blog posts and 3 Instagram carousels.</p></details>
 <details><summary>Can I cancel anytime?</summary><p>There&#39;s nothing to cancel. It&#39;s one payment.</p></details>
+<details><summary>Do I get updates?</summary><p>Yes. It&#39;s a website, not a PDF, so it gets updated regularly. New affiliate brand automations are on the way.</p></details>
+<details><summary>Can I get a refund?</summary><p>No refunds. You get everything the second you pay.</p></details>
 </div></div></section>
 <p class="foot">As an Amazon Associate I earn from qualifying purchases. AI-generated styling inspiration. Retail products may differ.</p>
 
