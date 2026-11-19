@@ -15,8 +15,8 @@
 
 /* The main button: white pearl pill, hot pink edge, pearl inner ring, near-black type, pink arrow.
    It is the only button style that leads to money or a sign-up. */
-.home-v11 .h11-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:linear-gradient(180deg,#fff 0%,#fff 55%,#FBF6F9 100%);border:2px solid var(--pink);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px #E9E2EA,0 14px 26px -14px rgba(184,36,95,.75);color:var(--ink)!important;font:600 17px/1.2 Jost,sans-serif!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none;white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease}
-.home-v11 .h11-btn::before{content:"";width:12px;height:12px;flex:none;background:var(--pink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.home-v11 .h11-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:12px;background:#fff;border:2px solid var(--pink);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px #E9E2EA,0 14px 26px -14px rgba(184,36,95,.75);color:var(--ink)!important;font:600 17px/1.2 Jost,sans-serif!important;letter-spacing:0!important;text-transform:none!important;text-decoration:none;white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease}
+.home-v11 .h11-btn::before{content:"";width:12px;height:12px;flex:none;background:var(--pink);border-radius:50%}
 .home-v11 .h11-btn>span{color:var(--pink);font-weight:700}
 .home-v11 .h11-btn:hover{transform:translateY(-1px);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px #E9E2EA,0 18px 30px -14px rgba(184,36,95,.85)}
 .home-v11 .h11-btn:focus-visible,.home-v11 .h11-link:focus-visible{outline:3px solid var(--deep);outline-offset:4px}
@@ -32,7 +32,7 @@
 .home-v11 .h11-hero::before{content:"";position:absolute;left:0;bottom:0;width:340px;height:230px;z-index:-1;background:url(/images/brand/sparkle-scatter-900.webp) left bottom/520px auto no-repeat;opacity:.55;pointer-events:none}
 .home-v11 .h11-copy{align-self:center;max-width:600px;justify-self:end;width:100%;padding:56px clamp(24px,4vw,64px) 56px clamp(24px,4vw,56px)}
 .home-v11 .h11-hero .h11-kick{font:600 15px/1.2 Jost,sans-serif;letter-spacing:0;text-transform:none;padding:8px 16px;margin-bottom:20px}
-.home-v11 .h11-hero h1{font:400 clamp(44px,4vw,58px)/1.02 Gloock,Georgia,serif;letter-spacing:-.01em;margin:0;color:var(--ink)}
+.home-v11 .h11-hero h1{font:400 clamp(34px,3.6vw,52px)/1.1 Gloock,Georgia,serif;letter-spacing:-.01em;margin:0;color:var(--ink)}
 .home-v11 .h11-hero h1 em{font-style:normal;color:var(--pink)}
 .home-v11 .h11-hero h1 .stress{font-size:1.12em;line-height:1;display:inline-block;margin-top:4px}
 .home-v11 .h11-lede{font:400 19px/1.55 Jost,sans-serif;color:var(--ink);max-width:31em;margin:20px 0 26px}
@@ -45,7 +45,7 @@
 .home-v11 .h11-photo{position:relative;min-height:100%;overflow:hidden}
 .home-v11 .h11-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 32%;display:block}
 .home-v11 .h11-photo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;z-index:2;background:#c9ccd2 url(/images/brand/silver-glitter-tile.webp) center/420px auto;box-shadow:4px 0 10px rgba(0,0,0,.15)}
-.home-v11 .h11-sticker{position:absolute;z-index:3;left:28px;bottom:26px;max-width:260px;background:#fff;border:1.5px solid var(--pink);border-radius:16px;padding:12px 16px;font:400 14px/1.4 Jost,sans-serif;color:var(--ink);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px #E9E2EA,0 16px 28px -16px rgba(90,0,40,.55);transform:rotate(-2deg)}
+.home-v11 .h11-sticker{position:absolute;z-index:3;left:28px;bottom:26px;max-width:260px;background:#fff;border:1.5px solid var(--pink);border-radius:12px;padding:12px 16px;font:400 14px/1.4 Jost,sans-serif;color:var(--ink);box-shadow:0 16px 28px -16px rgba(90,0,40,.35)}
 .home-v11 .h11-sticker b{display:block;font:400 19px/1.15 Gloock,Georgia,serif;color:var(--pink);margin-bottom:3px}
 
 /* ---------- pain card: the notebook now sits right under the hero ---------- */
