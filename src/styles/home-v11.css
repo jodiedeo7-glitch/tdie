@@ -54,7 +54,7 @@
 .home-v11 .home-next em{color:var(--pink)}
 
 /* ---------- method ---------- */
-.home-v11 .home-method{padding:56px 0;background:radial-gradient(55% 75% at 22% 40%,rgba(255,255,255,.85) 0%,rgba(255,255,255,0) 70%),var(--lav)}
+.home-v11 .home-method{padding:56px 0;background:#E9DCFF url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 .home-v11 .home-method-copy p{font-size:16px;line-height:1.6;max-width:30em;margin:14px 0 18px}
 
 /* ---------- proof: the machine ---------- */
@@ -86,7 +86,7 @@
 .home-v11 .rv-bubble figcaption b,.home-v11 .rv-bubble figcaption b a{color:#A11F52}
 
 /* ---------- weekend ecosystem ---------- */
-.home-v11 .home-course-zone{background:radial-gradient(55% 45% at 30% 10%,#fff 0%,rgba(255,255,255,0) 70%),linear-gradient(180deg,#FFE4EF 0%,#FBE9F2 100%)}
+.home-v11 .home-course-zone{background:#FFF0F6 url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 .home-v11 .home-course-heading>p{max-width:40em;margin-left:auto;margin-right:auto}
 .home-v11 #weekend-build-title em{color:var(--deep)}
 .home-v11 .we .buy{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
@@ -95,7 +95,7 @@
 .home-v11 .we .frame img{background:#FFF0F6}
 
 /* ---------- more help: BAMI + Work With Me ---------- */
-.home-v11 .h11-help{padding:56px 0;background:radial-gradient(60% 70% at 50% 40%,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 72%),var(--lav)}
+.home-v11 .h11-help{padding:56px 0;background:#E9DCFF url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 .home-v11 .h11-help .h11-inner{text-align:center}
 .home-v11 .h11-help-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:960px;margin:28px auto 0;text-align:left}
 .home-v11 .h11-card{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--gold);border-radius:10px;padding:24px;box-shadow:0 22px 36px -28px rgba(110,10,50,.55)}
@@ -224,12 +224,12 @@
 @media (min-width:900px){.home-v11 .mem .rv-row.h11-rv4{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;gap:0 40px}}
 
 /* lavender sections fade in and out instead of hard bands */
-.home-v11 .home-method{background:linear-gradient(180deg,#FFF7FA 0,var(--lav) 110px,var(--lav) calc(100% - 110px),#FFF7FA 100%)}
+.home-v11 .home-method{background:#E9DCFF url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 .home-v11 .home-method::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 75% at 22% 45%,rgba(255,255,255,.85) 0%,rgba(255,255,255,0) 70%);pointer-events:none}
-.home-v11 .h11-help{background:linear-gradient(180deg,#FBE9F2 0,var(--lav) 110px,var(--lav) calc(100% - 110px),#FFF7FA 100%)}
+.home-v11 .h11-help{background:#E9DCFF url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 .home-v11 .h11-help::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(60% 70% at 50% 40%,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 72%);pointer-events:none}
 .home-v11 :is(.home-course-zone,.mem,.h11-help){border-top:0!important;border-bottom:0!important}
-.home-v11 .home-course-zone{background:linear-gradient(180deg,#FFE4EF 0%,#FBE9F2 100%)}
+.home-v11 .home-course-zone{background:#FFF0F6 url('/images/brand/sh-blush.webp') repeat;background-size:480px 480px}
 
 /* one label style, one pink */
 .home-v11 .mem .head .h11-kick{margin-bottom:14px}
