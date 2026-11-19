@@ -8,6 +8,7 @@
 // automatically in the browser inside the Claude desktop app (signed in once by the buyer).
 export const GENS = {
  higgsfield: {name: 'Higgsfield', connected: true},
+ higgsweb: {name: 'Higgsfield website', url: 'higgsfield.ai'},
  chatgpt: {name: 'ChatGPT', url: 'chatgpt.com', app: true},
  gemini: {name: 'Google Gemini (Nano Banana)', url: 'gemini.google.com'},
  midjourney: {name: 'Midjourney', url: 'midjourney.com'},
@@ -18,6 +19,7 @@ export const GENS = {
 };
 const GEN_OPTS = [
  ['higgsfield', 'Higgsfield (connects straight to Claude, uses Higgsfield credits)'],
+ ['higgsweb', 'Higgsfield website (runs in the browser, still automatic; Unlimited models on your plan don\u2019t use credits)'],
  ['chatgpt', 'ChatGPT (runs in the ChatGPT app on your computer, still automatic)'],
  ['gemini', 'Google Gemini / Nano Banana (runs in the browser, still automatic)'],
  ['midjourney', 'Midjourney (runs in the browser, still automatic)'],
@@ -71,7 +73,8 @@ export const SECTIONS = [
    {id: 'igAccount', label: 'Instagram account', type: 'text', ph: '@youraccount', show: 'ig=on'},
    {id: 'blog', label: 'Do you have a blog or website for your looks?', type: 'radio', options: [
     ['on', 'Yes, and my site\u2019s files are kept on GitHub: it publishes each post itself'],
-    ['hand', 'Yes, on a website builder (WordPress, Shopify, Squarespace, Wix or similar): it writes each post, I paste it in'],
+    ['web', 'Yes, on a website builder (WordPress, Shopify, Squarespace, Wix or similar): it posts each one for me in my browser'],
+    ['hand', 'Yes, on a website builder: it writes each post, I paste it in'],
     ['off', 'No blog yet']], def: '',
     help: 'With a blog, every look also gets its own post, so people find your looks on Google as well as Pinterest. Sites hosted on Cloudflare, Vercel, Netlify or GitHub Pages almost always keep their files on GitHub, so pick the first one. Not sure? Pick the first one, then press Do it for me under the GitHub question.'},
    {id: 'blogUpsellOff', type: 'note', show: 'blog=off',
@@ -85,9 +88,10 @@ export const SECTIONS = [
    {id: 'repo', label: 'Your GitHub site (the place on GitHub where your website\u2019s files are kept)', type: 'text', ph: 'yourname/yoursite', show: 'blog=on'},
    {id: 'branch', label: 'Which version of your site goes live? (the branch name, usually main)', type: 'text', ph: 'main', show: 'blog=on', help: 'GitHub keeps versions of your site called branches. Your host publishes one of them. Posts have to go into that one or they never appear.'},
    {id: 'host', label: 'Where your site is hosted', type: 'select', show: 'blog=on', options: [['', 'Choose one'], ['Cloudflare', 'Cloudflare'], ['Vercel', 'Vercel'], ['Netlify', 'Netlify'], ['GitHub Pages', 'GitHub Pages'], ['other', 'Somewhere else'], ['unsure', 'I am not sure']], def: ''},
-   {id: 'siteUrl', label: 'Your website address', type: 'text', ph: 'https://www.yoursite.com', show: 'blog=on|blog=hand'},
+   {id: 'siteUrl', label: 'Your website address', type: 'text', ph: 'https://www.yoursite.com', show: 'blog=on|blog=web|blog=hand'},
+   {id: 'siteAdmin', label: 'Where you sign in to write a blog post', type: 'text', ph: 'https://www.yoursite.com/wp-admin', show: 'blog=web', help: 'The page you open to write a new post, for example yoursite.com/wp-admin on WordPress or your Shopify, Squarespace or Wix dashboard. Sign in there once in your Chrome and stay signed in.'},
    {id: 'metricool', label: 'Your Metricool brand name', type: 'text', ph: 'The brand name exactly as Metricool shows it', show: 'pinMode=auto|igMode=auto',
-    help: 'Metricool loads and schedules your pins and posts automatically. Its free plan is fine to start; you’ll want to upgrade once you scale up. Doing pins and posts by hand? You don’t need it. Connect it first (see Check your connections), then press Do it for me to read your brand name.'}
+    help: 'Metricool loads and schedules your pins and posts automatically. Its free plan is fine to start; you’ll want to upgrade once you scale up. Posting through your browser or by hand instead? You don’t need it. Connect it first (see Check your connections), then press Do it for me to read your brand name.'}
   ]
  },
  {
@@ -108,6 +112,15 @@ export const SECTIONS = [
    {id: 'okImg', label: 'Your image generator is open where the AI will use it, and you are signed in', type: 'radio', show: IMG_SHOW, options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
     how: {claude: ['Using ChatGPT? Install the ChatGPT desktop app from chatgpt.com/download, sign in, and leave it open. In the Claude app, turn on computer use (Settings, then This computer, then Computer use) so Claude can use it.', 'Using another generator? In the Claude desktop app, open the browser inside it and go to it (for example gemini.google.com or midjourney.com).', 'Sign in with your own account. Type your own password yourself. The AI never types it.', 'Stay signed in so it works overnight.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.'],
      chatgpt: ['Open your image generator in the browser tool connected to ChatGPT and sign in with your own account.', 'Press <b>Check it for me</b> below and pick Yes when it shows you are signed in.']}},
+   {id: 'okPinWeb', label: 'Your Pinterest business account is signed in in your Chrome', type: 'radio', show: 'pinMode=web', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
+    how: {claude: ['These run in your own Google Chrome. Install the <b>Claude in Chrome</b> extension from the Chrome Web Store and sign in to it with your Claude account (skip this if you already did it for Amazon).', 'Go to <b>pinterest.com</b> and sign in yourself. The AI never types your password. Not a business account yet? It is free: open <b>Settings</b>, then <b>Account management</b>, and convert it.', 'Leave Chrome open on the computer that stays on overnight.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.'],
+     chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>pinterest.com</b> in it.', 'Go to <b>pinterest.com</b> and sign in yourself. The AI never types your password. Not a business account yet? It is free: open <b>Settings</b>, then <b>Account management</b>, and convert it.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.']}},
+   {id: 'okMbs', label: 'Meta Business Suite opens signed in in your Chrome, with your Instagram in it', type: 'radio', show: 'ig=on&igMode=web', options: [['yes', 'Yes, it loaded and my Instagram is there'], ['no', 'Not yet']], def: '',
+    how: {claude: ['These run in your own Google Chrome. Install the <b>Claude in Chrome</b> extension from the Chrome Web Store and sign in to it with your Claude account (skip this if you already did it for Amazon).', 'Go to <b>business.facebook.com</b> and sign in yourself with the Facebook account that manages your Instagram. The AI never types your password. Your Instagram needs to be a free professional account (business or creator). If it is not listed, connect it in Business Suite <b>Settings</b>.', 'Leave Chrome open on the computer that stays on overnight.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.'],
+     chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>business.facebook.com</b> in it.', 'Go to <b>business.facebook.com</b> and sign in yourself with the Facebook account that manages your Instagram. The AI never types your password. Your Instagram needs to be a free professional account (business or creator). If it is not listed, connect it in Business Suite <b>Settings</b>.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.']}},
+   {id: 'okSiteWeb', label: 'Your website editor opens signed in in your Chrome', type: 'radio', show: 'blog=web', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
+    how: {claude: ['These run in your own Google Chrome. Install the <b>Claude in Chrome</b> extension from the Chrome Web Store and sign in to it with your Claude account (skip this if you already did it for Amazon).', 'Open the page where you write a new blog post (the address you typed above) and sign in yourself. The AI never types your password.', 'Leave Chrome open on the computer that stays on overnight.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.'],
+     chatgpt: ['Connect a browser tool in <b>Settings</b>, then <b>Apps</b>, then open <b>your website editor</b> in it.', 'Open the page where you write a new blog post (the address you typed above) and sign in yourself. The AI never types your password.', 'Press <b>Check it for me</b> below and pick Yes when it says you are signed in.']}},
    {id: 'okWalmart', label: 'creator.walmart.com loads signed in to your approved Walmart Creator account in your Chrome', type: 'radio', show: 'walmart=on', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
     help: 'Open creator.walmart.com in the same Chrome and sign in yourself. Claude never types your password.'},
    {id: 'okSams', label: 'creator.samsclub.com loads signed in to your approved Sam\u2019s Club Creator account in your Chrome', type: 'radio', show: 'sams=on', options: [['yes', 'Yes, it loaded and I am signed in'], ['no', 'Not yet']], def: '',
@@ -134,9 +147,12 @@ export const SECTIONS = [
     ['hand', 'By hand: it writes the 3 photo prompts, I make them on the Higgsfield website (on plans with Unlimited models, those don’t use credits) and drop them in my Drive folder. It finishes the look the next night']], def: 'auto'},
    {id: 'pinMode', label: 'Pinterest pins', type: 'radio', options: [
     ['auto', 'Automatic: it schedules them in Metricool'],
-    ['hand', 'By hand: it writes each pin’s title, description, board and link, I schedule them in Pinterest’s own free scheduler']], def: 'auto'},
+    ['web', 'Automatic in my browser: it schedules them in Pinterest’s own free scheduler, no Metricool needed'],
+    ['hand', 'By hand: it writes each pin’s title, description, board and link, I schedule them in Pinterest’s own free scheduler']], def: 'auto',
+    help: 'In your browser, Pinterest’s own scheduler holds 10 scheduled pins at a time, up to 30 days ahead. Extra pins wait in your log and go out on later nights, so it keeps up best at 1 look a night.'},
    {id: 'igMode', label: 'Instagram carousels', type: 'radio', show: 'ig=on', options: [
     ['auto', 'Automatic: it schedules them in Metricool'],
+    ['web', 'Automatic in my browser: it schedules them in Meta Business Suite (free), no Metricool needed'],
     ['hand', 'By hand: it writes the caption and photo order, I post them myself']], def: 'auto'}
   ]
  },
@@ -230,6 +246,9 @@ export const ASKS = {
  finishLists: (a, p) => `Open my Claude Doc "While-You-Sleep Log" and find every look under Waiting For My Click. Then use my own Chrome through the Claude in Chrome extension to open my Amazon storefront${a.storefront ? ' (' + a.storefront + ')' : ''}, Create content, Idea List. When Amazon shows its "I am human" box, stop and tell me to tick it myself, and wait. Once I have, add every listed product to its themed Idea List, open the public list page and confirm every piece shows, write the list address into the log next to the look, and tell me which looks are done. The nightly run schedules their pins. Never tick a check box yourself and never type a password.`,
  okAmazon: (a, p) => `Use ${browserOf(p)} to open https://www.amazon.com in a new tab. Tell me exactly what you see: did the page load normally, and am I signed in (my name shows near the top)? If Amazon says it does not support the browser, tell me those exact words. Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
  tag: (a, p) => `Use ${browserOf(p)} to open my Amazon Associates account (affiliate-program.amazon.com). Tell me my tracking IDs exactly as written (they end in -20), and which one my Amazon storefront uses. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
+ okPinWeb: (a, p) => `Use ${browserOf(p)} to open https://www.pinterest.com in a new tab. Tell me exactly what you see: am I signed in, is it a business account, and what are my boards called? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
+ okMbs: (a, p) => `Use ${browserOf(p)} to open https://business.facebook.com in a new tab. Tell me exactly what you see: am I signed in, which Instagram account is connected, and does Create post let me post to it? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
+ okSiteWeb: (a, p) => `Use ${browserOf(p)} to open ${a.siteAdmin || 'the page where I write blog posts on my website'} in a new tab. Tell me exactly what you see: am I signed in, which website builder is it, and can you see my newest blog post? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
  okWalmart: (a, p) => `Use ${browserOf(p)} to open https://creator.walmart.com in a new tab. Tell me exactly what you see: am I signed in, and does it show my approved Walmart Creator account? Never type a password: if I am signed out, stop and tell me to sign in myself.${NC}`,
  okSams: (a, p) => `Use ${browserOf(p)} to open https://creator.samsclub.com in a new tab. Tell me exactly what you see: am I signed in, and does it show my approved Sam's Club Creator account? Tell me whether it lets me make collections or only product links.${NC}`,
  walmartStore: (a, p) => `Use ${browserOf(p)} to open https://creator.walmart.com, find my Walmart Storefront and tell me its exact public web address, and whether it is published yet. Never type a password: if I am signed out, tell me to sign in myself.${NC}`,
@@ -282,12 +301,16 @@ function modes(a) {
   listHand: inf && (a.listMode === 'hand' || a.platform === 'chatgpt'),
   photoAuto: a.photoMode !== 'hand',
   flyer: a.platform !== 'chatgpt' && a.promoFlyer === 'on',
-  pinAuto: a.pinMode !== 'hand',
-  igAuto: ig && a.igMode !== 'hand',
+  pinAuto: a.pinMode !== 'hand' && a.pinMode !== 'web',
+  pinWeb: a.pinMode === 'web',
+  pinHand: a.pinMode === 'hand',
+  igAuto: ig && a.igMode !== 'hand' && a.igMode !== 'web',
+  igWeb: ig && a.igMode === 'web',
   igHand: ig && a.igMode === 'hand',
   blogAuto: a.blog === 'on',
+  blogWeb: a.blog === 'web',
   blogHand: a.blog === 'hand',
-  blog: a.blog === 'on' || a.blog === 'hand',
+  blog: a.blog === 'on' || a.blog === 'web' || a.blog === 'hand',
   wm: a.walmart === 'on',
   sc: a.sams === 'on'
  };
@@ -302,7 +325,7 @@ function modes(a) {
  m.metricool = m.pinAuto || m.igAuto;
  m.approve = false;
  m.closet = a.closet === 'on' && !m.gpt;
- m.anyHand = m.srcHand || m.listHand || !m.photoAuto || !m.pinAuto || m.igHand || m.blogHand;
+ m.anyHand = m.srcHand || m.listHand || !m.photoAuto || m.pinHand || m.igHand || m.blogHand;
  return m;
 }
 
@@ -319,6 +342,7 @@ export function missing(a) {
  if (m.ig) need.push(['igAccount', 'Instagram account']);
  if (m.blogAuto) need.push(['repo', 'GitHub site'], ['branch', 'which version of your site goes live (the branch)'], ['host', 'where your site is hosted']);
  if (m.blog) need.push(['siteUrl', 'website address']);
+ if (m.blogWeb) need.push(['siteAdmin', 'where you sign in to write a blog post']);
  if (m.flyer) need.push(['affLink', 'your Storefront affiliate link']);
  const out = need.filter(([k]) => !String(a[k] ?? '').trim()).map(([, n]) => n);
  const conn = [['okDrive', 'connect Google Drive', true],
@@ -326,6 +350,9 @@ export function missing(a) {
   ['okHiggs', 'connect Higgsfield', m.credits],
   ['okImg', 'sign in to your image generator in the AI\u2019s browser', m.browserGens.length > 0],
   ['okGithub', 'connect GitHub', m.blogAuto],
+  ['okPinWeb', 'sign in to Pinterest in your Chrome', m.pinWeb],
+  ['okMbs', 'sign in to Meta Business Suite in your Chrome', m.igWeb],
+  ['okSiteWeb', 'sign in to your website editor in your Chrome', m.blogWeb],
   ['okAmazon', 'sign in to Amazon in the AI\u2019s browser', !m.srcHand || m.listAuto],
   ['okWalmart', 'sign in to Walmart Creator in your Chrome', m.wm],
   ['okSams', 'sign in to Sam\u2019s Club Creator in your Chrome', m.sc]];
@@ -342,6 +369,7 @@ export function recipe(a) {
   ? `PERSONA: ${v(a.personaName, '[HER NAME]')}. Reference photo: ${v(a.personaRef, '[HER REFERENCE PHOTO LINK]')}. Her look comes only from that photo.`
   : 'PERSONA: none. Lifestyle photos show hands and the products in use, never a face.';
  const how = (auto) => (auto ? 'automatic' : 'by hand');
+ const how3 = (auto, web, where) => (auto ? 'automatic in Metricool' : web ? `automatic in my browser (${where})` : 'by hand');
  return `MY STOREFRONT RECIPE
 TIME ZONE: ${a.tz} (${tzName(a.tz)})
 ${m.gpt ? `AI THAT RUNS IT: ChatGPT\n${m.photoAuto ? `PHOTOS MADE WITH: ${m.imgGpt ? 'ChatGPT\u2019s own image maker' : 'Higgsfield (connected)'}\n` : ''}` : ''}${m.faceGen ? `PHOTOS WITH HER FACE MADE IN: ${genName(m.faceGen)}\n` : ''}${m.noFaceGen ? `PHOTOS WITHOUT A FACE MADE IN: ${genName(m.noFaceGen)}\n` : ''}AMAZON: ${m.inf ? `Amazon storefront with Idea Lists. Storefront: ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')}` : 'Amazon Associates links only (no Idea Lists). Pins link to my blog posts.'}
@@ -373,10 +401,10 @@ ${a.platform !== 'chatgpt' && a.promoFlyer === 'on' ? `PROMO FLYER: on (one per 
 RUN TIME: ${hm(a.time)} ${tzName(a.tz)}
 FINDING PRODUCTS: ${how(!m.srcHand)}${m.inf ? `\nIDEA LISTS: ${how(m.listAuto)}` : ''}
 PHOTOS: ${how(m.photoAuto)}
-PINS: ${how(m.pinAuto)}
-INSTAGRAM: ${m.ig ? `on (${how(m.igAuto)}), ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}, posts at ${hm(a.igTime)}, photo order ${a.order}` : 'off'}
-BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).length ? ` (${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).join(', ')})` : ''}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
-${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool ? 'APPROVALS: off (everything schedules automatically; I check my Metricool calendar once a day)' : 'APPROVALS: not needed (I post by hand)'}`;
+PINS: ${how3(m.pinAuto, m.pinWeb, 'Pinterest’s own scheduler')}
+INSTAGRAM: ${m.ig ? `on (${how3(m.igAuto, m.igWeb, 'Meta Business Suite')}), ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}, posts at ${hm(a.igTime)}, photo order ${a.order}` : 'off'}
+BLOG: ${m.blogAuto ? `automatic, GitHub site ${v(a.repo, '[YOUR GITHUB SITE]')}${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).length ? ` (${[v(a.branch) ? `publishes from the "${v(a.branch)}" branch` : '', hostOf(a) ? `hosted on ${hostOf(a)}` : ''].filter(Boolean).join(', ')})` : ''}, live at ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : m.blogWeb ? `automatic in my browser, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}, written at ${v(a.siteAdmin, '[WHERE I SIGN IN TO WRITE A POST]')}` : m.blogHand ? `by hand, my site ${v(a.siteUrl, '[YOUR WEBSITE ADDRESS]')}` : 'off'}
+${m.credits ? `MONTHLY IMAGE CREDIT LIMIT: ${v(a.credits, '350')}\n` : ''}${m.metricool || m.pinWeb || m.igWeb ? `APPROVALS: off (everything schedules automatically; I check my ${[...(m.metricool ? ['Metricool calendar'] : []), ...(m.pinWeb ? ['Pinterest scheduled pins'] : []), ...(m.igWeb ? ['Meta Business Suite planner'] : [])].join(' and ')} once a day)` : 'APPROVALS: not needed (I post by hand)'}`;
 }
 
 export function nightly(a) {
@@ -409,7 +437,7 @@ Make ${n} complete look${n === '1' ? '' : 's'} tonight. Follow every step in ord
 
 FIRST
 1. Get today's date and time in ${a.tz}. Use that time zone for every date and time below.
-2. Open my Claude Doc "While-You-Sleep Log" (Claude Docs). Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, Waiting For My Click, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. My Corrections override everything in this prompt except the NEVER list.
+2. Open my Claude Doc "While-You-Sleep Log" (Claude Docs). Read every section: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, Waiting For My Click, ' : ''}Products Used, Pins, ${m.pinWeb ? 'Pins Waiting, ' : ''}Instagram, Blog, Credits, To Do By Hand, Runs. My Corrections override everything in this prompt except the NEVER list.
    Under Runs: if an earlier run is marked "started" but not "finished", it stopped partway. Finish that run's missing steps first, using what the log already records, and never redo a step the log shows as done. Then write "Run [today's date] started" under Runs before you do anything else.${m.imgGpt ? `
 3. My photos are made with ChatGPT's own image maker, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named ${andList(photos)}. If the image maker stops or says I've hit my limit, make no more photos, write it in the log and tell me in one line.` : m.photoAuto && !m.credits ? `
 3. My photos are made in ${bNames}, so there are no credits to check. Save every finished photo in my Google Drive folder "While-You-Sleep Storefront/Photos/<look name>" as you make it, named ${andList(photos)}. If it stops, says I've hit my limit, or I'm signed out, make no more photos, write it in the log and tell me in one line.` : m.credits ? `
@@ -470,24 +498,31 @@ Tell me to save the ${W[photos.length]} finished photos as ${andList(photos)} in
 
  if (m.blogAuto) parts.push(`${step(`BLOG POST (GitHub connector, site ${v(a.repo, '[YOUR GITHUB SITE]')})`)}
 Find the newest blog post in the site and copy its format exactly. Add a post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and this note at the end: "As an Amazon Associate I earn from qualifying purchases. Photos are AI-generated styling ideas; check each listing for the exact item." ${(m.imgGpt || m.sdGpt) ? 'The photos are files in my Drive folder: add them to the site\'s images folder in the same change and use those paths. ' : ''}Publish it${v(a.branch) ? ` on the "${v(a.branch)}" branch` : ''}, wait for the site to update${hostOf(a) ? ` (${hostOf(a)} rebuilds it by itself)` : ''}, open the live page at ${site} and confirm all three photos and every link load. Record the address.`);
+ else if (m.blogWeb) parts.push(`${step('BLOG POST · IN MY BROWSER')}
+In ${m.gpt ? 'the browser tool connected to this chat' : 'my own Chrome through the Claude in Chrome extension'}, open ${v(a.siteAdmin, '[WHERE I SIGN IN TO WRITE A POST]')} signed in. Open my newest blog post first and copy its format exactly. Add a new post for the look: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), the three photos in the order Basic, Styled, Lifestyle with plain alt text (upload each one; download it from my Drive folder in that browser first if it isn't on the computer), every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and a button to the Idea List' : ''}, and this note at the end: "As an Amazon Associate I earn from qualifying purchases. Photos are AI-generated styling ideas; check each listing for the exact item." If a post for this look already exists (from a run that stopped partway), finish that one instead of making another. Publish it, open the live post on ${site} and confirm all three photos and every link load. Record the address. Never type a password: if I'm signed out, put the full post under To Do By Hand and tell me in the report.${!m.inf ? ' The pins for this look wait until the post is live and its address is in the log.' : ''}`);
  else if (m.blogHand) parts.push(`${step('BLOG POST · BY HAND')}
 Under To Do By Hand write the full post, ready to paste: the look's name as the title, a 60 to 100 word intro in MY VOICE (first person, one real specific moment), where each of the three photos goes (Basic, Styled, Lifestyle) with plain alt text, every piece with its Amazon link in the form https://www.amazon.com/dp/ASIN?tag=${v(a.tag, '[YOUR TRACKING ID]')}${m.inf ? ' and the Idea List link' : ''}, and this note at the end: "As an Amazon Associate I earn from qualifying purchases. Photos are AI-generated styling ideas; check each listing for the exact item." Ask me to paste the post's address under the look in the log once it's live on ${site}.${!m.inf ? ' The pins for this look wait until that address is in the log.' : ''}`);
 
  const pinText = `${W[lookPins.length].replace(/^./, (c) => c.toUpperCase())} pin${lookPins.length === 1 ? '' : 's'} per look, one per photo: ${andList(lookPins)}. Each goes to the most specific board in my PINTEREST BOARDS. Pin title: the search phrase first, under 100 characters. Description: two or three natural sentences with the words people search for, no hashtags${m.inf ? ', ending with exactly: #ad As an Amazon Associate I earn from qualifying purchases. (Amazon requires a disclosure by every affiliate link. Use this exact wording.)' : '.'} Link: ${dest}. Alt text: a plain description of the photo.${doR ? ' The Roundup pin\'s title is its three headline lines as one phrase.' : ''}${doF ? ' The Found It pin\'s title is "I Found This Exact [piece] On Amazon" followed by 😭.' : ''} A look's pins go on separate days that aren't next to each other, different looks are mixed together, and no day gets more than ${v(a.slots, '8')} pins.${doAd ? ` Plus one storefront promo pin per look: the look's Lifestyle photo, titled with the look's name and what my storefront is for, linking to ${m.inf ? `my storefront home page (${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')})` : 'my blog home page'} instead of the list, on a day with none of that look's other pins. Its description follows the same rules${m.inf ? ', disclosure line included' : ''}.` : ''}`;
  if (m.pinAuto) parts.push(`${step(`PINS (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
 ${pinText} Read Metricool's schedule first and use open days. If Metricool already holds a pin with the same photo and link (from a run that stopped partway), don't make it again. Set the date, time and time zone (${a.tz}) on every post.${m.gpt ? ' Write every date with its offset (for example 2026-10-20T12:00:00-04:00): Metricool rejects a date without one.' : ''}${(m.imgGpt || m.sdGpt) ? ' The photos are files in my Drive folder: give Metricool each photo\'s link. If Metricool won\'t accept a Drive link, don\'t invent another route: put that look\'s pins under To Do By Hand with the photos and say why.' : ''} ${m.approve ? 'APPROVALS ARE ON: send every pin to Metricool for review instead of scheduling it.' : 'Schedule them.'} Read each one back from Metricool and confirm it is there with the right photo, board and link.`);
+ else if (m.pinWeb) parts.push(`${step('PINS · IN MY BROWSER (Pinterest’s own scheduler)')}
+${pinText} In ${m.gpt ? 'the browser tool connected to this chat' : 'my own Chrome through the Claude in Chrome extension'}, open https://www.pinterest.com signed in to my business account. Pinterest's own scheduler holds at most 10 scheduled pins at a time, up to 30 days ahead. First open my scheduled pins, count them and note which days already have pins. Pins from Pins Waiting in the log go first, oldest first, then tonight's. Schedule only while fewer than 10 are waiting in Pinterest; every pin that doesn't fit goes under Pins Waiting in the log with its photo, board, title, description, link and alt text, and a later night schedules it. For each pin: Create, Create Pin, upload the photo (download it from my Drive folder in that browser first if it isn't on the computer), fill in the title, description, link, board and alt text, choose "Publish at a later date", set the date and time (${a.tz}) and finish. If Pinterest already holds a pin with the same photo and link (from a run that stopped partway), don't make it again. Never type a password: if I'm signed out, put every pin under Pins Waiting and tell me in the report. Afterwards open my scheduled pins and confirm each new one is there with the right photo, board, date and link, then remove it from Pins Waiting.`);
  else parts.push(`${step('PINS · BY HAND')}
 ${pinText} Under To Do By Hand write each pin: which photo, board, title, description, link, alt text and the date to schedule it. I schedule them in Pinterest's own scheduler.`);
 
  if (m.flyer) {
   const fl = `For each new look that has all five photos (Basic, Styled, Lifestyle, Roundup and Found It) in its Drive folder: copy "wys-flyer-template.zip" from my Google Drive folder "While-You-Sleep Storefront" into your workspace and unzip it into a new folder. Put the look's five photos in its ph folder as basic.png, styled.png, lifestyle.png, roundup.png and foundit.png (convert JPGs to PNG), install playwright if it is missing (pip install playwright, then playwright install chromium), and run: python3 render.py <that folder>. It must print "fonts ok: True" and every photo with a size. Open flyer.png at full size and check_phone.png yourself: every photo shows, nothing cut off or covered, the numbers and words read clearly. If anything is wrong, fix it and render again. Never change the template's wording, numbers or look. Save it as Flyer.jpg in the look's Drive folder. A look without all five photos gets no flyer tonight: write that in the log.
 Pin text: title "The While-You-Sleep Storefront™:" then a search phrase about Pinterest automation or a faceless online business, under 100 characters. Description: two or three sentences in MY VOICE saying what the Storefront did with this look overnight (picked the products, made the five photos, pinned it), no income promises, ending with exactly: Affiliate link: I earn a commission if you buy through it. Photos are AI-generated. Link: ${v(a.affLink, '[YOUR AFFILIATE LINK]')}. Board: ${v(a.promoBoard, 'Make Money Online Ideas')}. Alt text: "The While-You-Sleep Storefront flyer showing the five photos of <look name>: Basic, Styled, Lifestyle, Roundup and Found It." Never on the same day as another pin from that look, and at most one flyer pin a day.`;
-  parts.push(m.pinAuto ? `${step(`PROMO FLYER (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
+  parts.push(m.pinWeb ? `${step('PROMO FLYER · IN MY BROWSER')}
+${fl} Schedule the flyer pin in Pinterest exactly the way the pins above are scheduled, under the same 10-pin limit: if there's no room, put it under Pins Waiting. If Pinterest already holds this look's flyer pin, don't make it again. Confirm it in my scheduled pins.` : m.pinAuto ? `${step(`PROMO FLYER (Metricool connector, brand ${v(a.metricool, '[YOUR METRICOOL BRAND]')})`)}
 ${fl} Give Metricool the Flyer.jpg Drive link. If Metricool won't accept it, put the flyer pin under To Do By Hand with the file and say why. If Metricool already holds this look's flyer pin, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool and confirm the flyer photo, board and link.` : `${step('PROMO FLYER · PIN BY HAND')}
 ${fl} Under To Do By Hand write the flyer pin: the file, board, title, description, link, alt text and the date to schedule it.`);
  }
  if (m.igAuto) parts.push(`${step(`INSTAGRAM (Metricool connector, ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')})`)}
 One carousel per look, two carousels a day: on the next day that has fewer than two carousels, the first at ${hm(a.igTime)} and the second about five hours later, never two at the same time: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio", three to five hashtags, and then exactly: #ad As an Amazon Associate I earn from qualifying purchases. No links in the caption.${(m.imgGpt || m.sdGpt) ? ' The photos are files in my Drive folder: give Metricool each photo\'s link, and if it won\'t accept one, put the carousel under To Do By Hand and say why.' : ''} If Metricool already holds this look's carousel, don't make it again. ${m.approve ? 'APPROVALS ARE ON: send it for review instead of scheduling it.' : 'Schedule it.'} Read it back from Metricool.`);
+ else if (m.igWeb) parts.push(`${step(`INSTAGRAM · IN MY BROWSER (Meta Business Suite, ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')})`)}
+One carousel per look, two carousels a day: on the next day that has fewer than two carousels, the first at ${hm(a.igTime)} and the second about five hours later, never two at the same time: the three photos in the order ${a.order}. Caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio", three to five hashtags, and then exactly: #ad As an Amazon Associate I earn from qualifying purchases. No links in the caption. In ${m.gpt ? 'the browser tool connected to this chat' : 'my own Chrome through the Claude in Chrome extension'}, open https://business.facebook.com signed in, open the Planner and see which days already have carousels. Then Create post, post to my Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} only (untick Facebook), add the three photos in order (download it from my Drive folder in that browser first if it isn't on the computer), paste the caption, open Scheduling options, set the date and time (${a.tz}) and press Schedule. If Business Suite already holds this look's carousel, don't make it again. Never type a password: if I'm signed out, put the carousel under To Do By Hand and tell me in the report. Afterwards open the Planner and confirm it is there with all three photos in order.`);
  else if (m.igHand) parts.push(`${step('INSTAGRAM · BY HAND')}
 Under To Do By Hand write one carousel per look for ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')}: the photo order (${a.order}), the day to post it (two carousels a day, the first at ${hm(a.igTime)} and the second about five hours later), and the caption in MY VOICE, three to five short lines, ending with "Shop it: link in bio", three to five hashtags, and then exactly: #ad As an Amazon Associate I earn from qualifying purchases. No links in the caption.`);
 
@@ -512,7 +547,7 @@ Tonight also make ${andList(stores.map((x) => `1 ${x} look`))}, on top of the Am
 Add to the log: each look's name and theme, ${m.inf ? 'Idea List, ' : ''}every ASIN, ${m.credits ? 'the photo links, credits used tonight, ' : m.photoAuto ? 'the photo links, ' : ''}${m.blog ? 'the blog address (or that it is waiting for me), ' : ''}every pin and carousel with its date, what's waiting under To Do By Hand, and anything you skipped and why. Last, write "Run [today's date] finished" under Runs. Read the log back to confirm it saved.
 
 REPORT
-One line if everything worked: "Tonight: ${n} Amazon look${n === '1' ? '' : 's'}${m.wm ? ', 1 Walmart look' : ''}${m.sc ? ", 1 Sam's Club look" : ''}${m.closet ? ' plus 1 Brand Closet look' : ''}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.
+One line if everything worked: "Tonight: ${n} Amazon look${n === '1' ? '' : 's'}${m.wm ? ', 1 Walmart look' : ''}${m.sc ? ", 1 Sam's Club look" : ''}${m.closet ? ' plus 1 Brand Closet look' : ''}${m.photoAuto ? `, ${pinsWord}${m.pinAuto ? (m.approve ? ' waiting for your OK in Metricool' : ' scheduled') : m.pinWeb ? ' scheduled in Pinterest (any that didn’t fit are under Pins Waiting)' : ' ready for you'}` : ', photo prompts ready for you'}.${m.anyHand ? ' Your by-hand list is in the log.' : ''}" If something failed, say what in plain words and the exact fix.
 
 NEVER: type a password. Buy or add anything to a cart. Post to any account that isn't in my recipe. Do a step marked BY HAND. ${m.credits ? 'Go past my monthly credit limit. Switch image models without telling me. ' : ''}Make any claim about how much money anyone will make.
 
@@ -529,9 +564,13 @@ export function setup(a) {
  else if (m.imgGpt) conn.push(`${c()}. ChatGPT image maker: make one small test image (a plain mug on a table) to confirm it works in this chat, and tell me if it says I've hit a limit.`);
  for (const g of m.browserGens) conn.push(g.app ? `${c()}. ${g.name}: use computer use to open the ${g.name} desktop app on my computer and confirm I'm signed in to my own account (I sign in myself; never type my password). Make one small test image (a plain mug on a table), save it with the app's Save box in my Google Drive folder "While-You-Sleep Storefront", and tell me if it says I've hit a limit. Tell me the two things the nightly run needs: the ${g.name} app stays open (minimized is fine) and computer use stays on in the Claude app.` : `${c()}. ${g.name}: open ${g.url || 'it'} in a new tab of the built-in browser and confirm I'm signed in to my own account (I sign in myself; never type my password). Make one small test image (a plain mug on a table), download it, save it in my Google Drive folder "While-You-Sleep Storefront", and tell me if it says I've hit a limit.`);
  if (m.metricool) conn.push(`${c()}. Metricool: find my brand "${v(a.metricool, '[YOUR METRICOOL BRAND]')}". ${m.pinAuto ? 'Confirm Pinterest is connected and list my Pinterest boards. ' : ''}${m.igAuto ? `Confirm Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is connected.` : ''}`);
- conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and make a Claude Doc (Claude Docs) named "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, Waiting For My Click, ' : ''}Products Used, Pins, Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
+ conn.push(`${c()}. Google Drive: make a folder "While-You-Sleep Storefront"${m.photoAuto && !m.imgGpt ? '' : ' with a folder "Photos" inside it'}, and make a Claude Doc (Claude Docs) named "While-You-Sleep Log" with these headings: My Corrections, ${m.srcHand ? 'My Picks, ' : ''}Looks, ${m.inf ? 'Idea Lists, Waiting For My Click, ' : ''}Products Used, Pins, ${m.pinWeb ? 'Pins Waiting, ' : ''}Instagram, Blog, Credits, To Do By Hand, Runs. Put my recipe (below) at the top. Read it back.`);
  if (m.closet) conn.push(`${c()}. The Brand Closet\u2122: in my own Chrome (Claude in Chrome extension), open https://www.skool.com/the-brand-closet/classroom/272075b5 in a new tab and confirm I'm signed in to Skool and the Outfit of the Day course opens (it needs Premium or VIP). Copy nothing from it. Close the tab.`);
  if (m.flyer) conn.push(`${c()}. Promo flyer: find "wys-flyer-template.zip" in my Google Drive folder "While-You-Sleep Storefront". If it isn't there, tell me to download it from the Set It Up page and save it there. Copy it into your workspace, unzip it and confirm render.py, flyer.html and the fonts folder are inside. Confirm my affiliate link (${v(a.affLink, '[YOUR AFFILIATE LINK]')}) opens The While-You-Sleep Storefront\u2122 page.`);
+ const sbro = m.gpt ? 'the browser tool connected to this chat' : 'my Chrome (Claude in Chrome extension)';
+ if (m.pinWeb) conn.push(`${c()}. Pinterest: in ${sbro}, open https://www.pinterest.com in a new tab and confirm I'm signed in to my business account (I sign in myself; never type my password). List my boards and count my scheduled pins. Close the tab.`);
+ if (m.igWeb) conn.push(`${c()}. Meta Business Suite: in ${sbro}, open https://business.facebook.com in a new tab and confirm I'm signed in and my Instagram ${v(a.igAccount, '[YOUR INSTAGRAM ACCOUNT]')} is there, and that Create post can post to it. Create nothing. Close the tab.`);
+ if (m.blogWeb) conn.push(`${c()}. My website: in ${sbro}, open ${v(a.siteAdmin, '[WHERE I SIGN IN TO WRITE A POST]')} in a new tab and confirm I'm signed in. Tell me which website builder it is and find my newest blog post and how it is laid out. Create nothing. Close the tab.`);
  if (m.blogAuto) conn.push(`${c()}. GitHub: open ${v(a.repo, '[YOUR GITHUB SITE]')}. Find where the blog posts live and how a post is built.${v(a.branch) ? ` Confirm the "${v(a.branch)}" branch exists.` : ''} Tell me in two lines.`);
  conn.push(`${c()}. ${m.gpt ? 'Browser: use the browser tool connected to this chat and tell me exactly which one it is. Open amazon.com in a new tab.' : 'My Chrome (through the Claude in Chrome extension, not the browser inside the Claude app, which Amazon blocks): open amazon.com in a new tab.'} ${m.listAuto ? `Open my storefront ${v(a.storefront, '[YOUR STOREFRONT ADDRESS]')} and confirm I'm signed in (you can see "Create content").${m.gpt ? ' Then open Create content, Idea List once to check it is there. Create nothing yet.' : ''}` : 'Confirm I\'m signed in (my name shows at the top).'} ${m.gpt ? 'If I\'m signed out, tell me exactly how to sign in to my own Amazon account in that tool and wait. Never use anyone else\'s saved sign-in.' : 'If I\'m signed out, tell me and wait while I sign in.'} Close the tab.`);
 
@@ -539,7 +578,9 @@ export function setup(a) {
  if (m.sc) conn.push(`${c()}. Sam's Club Creator: in the same browser, open https://creator.samsclub.com in a new tab and confirm I'm signed in and approved. Tell me whether it lets me make collections or only product links, and write the answer in the log. Check my list of sites the same way as Walmart. Close the tab.`);
 
  const storeBoards = [...(m.wm ? [v(a.walmartBoard, 'Cute Walmart Finds')] : []), ...(m.sc ? [v(a.samsBoard, "Sam's Club Finds for Family and Hosting")] : [])];
- const boards = m.pinAuto
+ const boards = m.pinWeb
+  ? `Compare my PINTEREST BOARDS${storeBoards.length ? ` (plus ${storeBoards.join(' and ')})` : ''} with the boards on my Pinterest profile in ${sbro}. If any are missing, list them and ask me whether to create them there. Boards are public, so create them only after I say yes. Then write every board's name in the log.`
+  : m.pinAuto
   ? `Compare my PINTEREST BOARDS${storeBoards.length ? ` (plus ${storeBoards.join(' and ')})` : ''} with the boards Metricool lists. If any are missing, list them and ask me whether to create them in Pinterest in ${m.gpt ? 'the connected browser' : 'the built-in browser'}. Boards are public, so create them only after I say yes. Then write every board's name in the log.`
   : `List my PINTEREST BOARDS${storeBoards.length ? ` (plus ${storeBoards.join(' and ')})` : ''} and ask me whether they all exist in Pinterest yet. If any are missing, tell me to create them in Pinterest (or offer to create them in ${m.gpt ? 'the connected browser' : 'the built-in browser'}, only after I say yes, because boards are public). Write every board's name in the log.`;
 
