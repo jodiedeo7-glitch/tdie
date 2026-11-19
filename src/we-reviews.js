@@ -63,12 +63,4 @@ export const MEMBER_REVIEWS = [
     source: "on the daily prompts",
     quote: "Why do I love these so much?? Thank you for the prompts, Jodie.",
   },
-  {
-    id: "dee-free-tier",
-    name: "Dee MamaswithMissions",
-    about: "membership",
-    center: true,
-    source: "Standard Member",
-    quote: "For a free community, there's a surprising amount of value here. ❤️",
-  },
 ];

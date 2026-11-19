@@ -1,53 +1,38 @@
 ---
+// Homepage, rebuilt 19 Nov 2026 on Jodie's Etsy template layouts, in the approved WYS sales-page style.
 import {WYS_CTA} from "../data/wys-live.js";
-import "../styles/home.css";
-import "../styles/home-sections.css";
-import "../styles/home-finish.css";
 import "../styles/review-bubble.css";
-import "../styles/home-v11.css";
-// Homepage type, self-hosted: Gloock SemiBold for display, Jost for everything else.
-import "../styles/brand-fonts.css";
-import gloock400 from "../assets/fonts/gloock-latin-400-normal.woff2?url";
-import inter400 from "../assets/fonts/jost-latin-400-normal.woff2?url";
-
+import "../styles/tdie-template.css";
+import "../styles/tdie-home.css";
 import { NAV, NAV_CTA, FOOTER, SOCIAL } from "../data/site.js";
 import BlueprintForm from "../components/BlueprintForm.astro";
-// Tina's words come from the single verbatim source, unedited.
-import { FEATURED, MEMBER_REVIEWS } from "../we-reviews.js";
+import { MEMBER_REVIEWS } from "../we-reviews.js";
 import ReviewBubble from "../components/ReviewBubble.astro";
 import MembershipPlans from "../components/MembershipPlans.astro";
 import { weekendEcosystem as WE, membership as MEM, SKOOL_PLANS } from "../data/facts.js";
 
 const BRITTANY = MEMBER_REVIEWS.find((r) => r.id === "brittany-miller-skool");
-
-// Everything else The Digital Income Edit™ makes, named, in one compact row.
 const alsoFrom = [
   { label: "Shop the looks", title: "The Lifestyle Edit", href: "/lifestyle" },
   { label: "Amazon storefront system", title: "The While-You-Sleep Storefront™", href: WYS_CTA.href },
   { label: "Digital product stock", title: "Pretty & Paid PLR Vault™", href: "/shop/pretty-and-paid-plr-vault" },
   { label: "Physical products", title: "The Shopify Starter Kit", href: "/resources/shopify-starter-kit" },
 ];
-
 const SITE = "https://www.thedigitalincomeedit.com";
 const OG_IMAGE = `${SITE}/og/home-built-backwards-2026-09.jpg`;
-
 const title = "Faceless Digital Business Built With AI | The Digital Income Edit™";
 const description = `Build a faceless business with AI in the right order: offer, funnel, automation, then audience. Women are building it inside The Digital Income Edit™.`;
-
-// A curated few of the pillar guides. The full library lives at /learn.
 const guides = [
   { cat: "Business Systems", t: "How to Build a Faceless Digital Business", slug: "how-to-build-a-faceless-digital-business", read: "20 min" },
   { cat: "AI", t: "The Ultimate Beginner's Guide to AI", slug: "ultimate-guide-to-ai", read: "18 min" },
   { cat: "Blogging", t: "How to Turn Your Skool Content Into a Blog", slug: "turn-skool-content-into-a-blog", read: "14 min" },
   { cat: "Automation", t: "How to Automate Your Online Business", slug: "automating-your-online-business", read: "15 min" },
 ];
-
+const steps = [{name:'Offer',line:'Decide what you sell before you post a thing.'},{name:'Funnel',line:'Build the page and emails that sell it for you.'},{name:'Automation',line:'AI takes the daily repeat work off your plate.'},{name:'Audience',line:'Then send traffic somewhere already built to sell.'}];
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": `${SITE}/#org`, name: "The Digital Income Edit™", url: `${SITE}/`, slogan: "Build Your Business Backwards. Scale It Forward.™",
-      logo: `${SITE}/icon-512.png`,
-      sameAs: SOCIAL.map((s) => s.href) },
+    { "@type": "Organization", "@id": `${SITE}/#org`, name: "The Digital Income Edit™", url: `${SITE}/`, slogan: "Build Your Business Backwards. Scale It Forward.™", logo: `${SITE}/icon-512.png`, sameAs: SOCIAL.map((s) => s.href) },
     { "@type": "WebSite", "@id": `${SITE}/#site`, url: `${SITE}/`, name: "The Digital Income Edit™", publisher: { "@id": `${SITE}/#org` } },
     { "@type": "WebPage", "@id": `${SITE}/#page`, url: `${SITE}/`, name: title, description, isPartOf: { "@id": `${SITE}/#site` } },
   ],
@@ -96,207 +81,210 @@ const jsonLd = {
   <meta name="twitter:title" content="Build the whole business before anyone knows your name." />
   <meta name="twitter:description" content="The AI-built faceless business, built backwards: offer first, funnel second, automation third, audience last." />
   <meta name="twitter:image" content={OG_IMAGE} />
-  <link rel="preload" as="font" type="font/woff2" href={gloock400} crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/wys-sales/fonts/gilda.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/wys-sales/fonts/poppins-400.woff2" crossorigin />
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
-<body class="home-v9 home-v11">
+<body class="tdie-t">
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="spg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8ac2"/><stop offset=".5" stop-color="#D62E73"/><stop offset="1" stop-color="#c9a8ff"/></linearGradient></defs><symbol id="sp" viewBox="0 0 100 100"><path d="M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0Z"/></symbol></svg>
 
-<header class="nav"><div class="wrap">
-  <ul class="lft">{NAV.slice(0,3).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
-  <a class="logo" href="/" aria-label="The Digital Income Edit home"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>
-  <div class="r"><ul><li><a href="/membership">Membership</a></li></ul><a class="btn" href={NAV_CTA.href}>7 days free</a>
-    <details class="mnav"><summary aria-label="Menu">Menu</summary><nav>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href="/learn">Free Library</a><a href="/work-with-me">Work With Me</a><a href="/lifestyle">Lifestyle</a></nav></details>
-  </div>
-</div><div class="hx-gborder" aria-hidden="true"></div></header>
+<header class="tnav">
+ <div class="strip">The Digital Income Edit™</div>
+ <nav class="tnav-in" aria-label="Main">
+  <ul>{NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  <a class="btn tnav-cta" href={NAV_CTA.href}>7 days free <span class="ar">→</span></a>
+  <details class="tmenu"><summary>Menu</summary><div>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href={NAV_CTA.href}>Start 7 days free</a></div></details>
+ </nav>
+</header>
 
-<a class="home-skip" href="#home-content">Skip to content</a>
 <main id="home-content">
-
-<section class="h11-hero" aria-labelledby="h11-title">
-  <div class="h11-copy">
-    <span class="h11-kick">For women building without a personal brand</span>
-    <h1 id="h11-title">Build a faceless business. <em>Keep your life <i class="stress">off camera.</i></em></h1>
-    <p class="h11-lede"><b>The Digital Income Edit™ membership</b> is the whole package: the training, the community and fresh material every month to build the whole business with AI, in the right order. Offer, funnel, automation, then audience.</p>
-    <div class="h11-ctas">
-      <a class="h11-btn" href={SKOOL_PLANS}>Start your 7 days free <span aria-hidden="true">→</span></a>
-      <a class="h11-link" href="#blueprint">Or get the free Blueprint</a>
-    </div>
-    <p class="h11-terms">{MEM.standard.name} {MEM.standard.perMonth} · {MEM.premium.name} {MEM.premium.perMonth}. Cancel in Skool before the trial ends and you pay nothing.</p>
-    <div class="h11-proofrow">
-      <figure class="rv-bubble h11-mini"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>This is the best plan to follow BY FAR!</blockquote><figcaption><b>{BRITTANY.name}</b>, {BRITTANY.source}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure>
-      <span class="h11-count"><b>900<span class="h11-plus">+</span></b> members building inside</span>
-    </div>
+<!-- Template page 2: header card + photo -->
+<section class="hh">
+ <div class="wrap hh-grid">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">Inside<b class="big">900+</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">For women building without a personal brand</p>
+   <h1>Build a faceless business. <span class="scr">Keep your life off camera.</span></h1>
+   <p class="what"><b>The Digital Income Edit™ membership</b> is the whole package: the training, the community and fresh material every month to build the whole business with AI, in the right order. Offer, funnel, automation, then audience.</p>
+   <a class="btn buy" href={SKOOL_PLANS}>Start your 7 days free <span class="ar">→</span></a>
+   <p class="need">{MEM.standard.name} {MEM.standard.perMonth} · {MEM.premium.name} {MEM.premium.perMonth}. Cancel in Skool before the trial ends and you pay nothing.</p>
+   <p class="see"><a href="#blueprint">Or get the free Blueprint ↓</a></p>
   </div>
-  <div class="h11-photo">
-    <img src="/images/brand/hero-tk-car.webp" alt="Tommy Kate, the AI face of The Digital Income Edit™, laughing in her pink car" width="1200" height="1500" fetchpriority="high" decoding="async">
-    <span class="h11-sticker"><b>Meet Tommy Kate.</b> The AI face of this brand. Yours can have one too.</span>
+  <div class="hh-ph">
+   <img src="/images/brand/hero-tk-car.webp" alt="Tommy Kate, the AI face of The Digital Income Edit™, laughing in her pink car" width="1100" height="1639" fetchpriority="high" decoding="async">
+   <p class="hh-cap"><b>Meet Tommy Kate.</b> The AI face of this brand. <span>Yours can have one too.</span></p>
   </div>
+ </div>
 </section>
 
-<section class="mem" id="membership"><div class="wrap">
-  <div class="head"><span class="h11-kick">The membership · the whole package</span><h2>One membership. <em>The <i class="stress">whole</i> business.</em></h2></div>
-  <p class="home-membership-fit">This is where everything here comes together. Not one course you finish and forget, but the full classroom, something new every day, the community beside you and, with Premium, your content written for you every month. Every course and kit on this site is an add-on. The membership is where you build.</p>
-  <ul class="home-mem-why">
-    <li><b>The whole build, in order</b><span>Brand, content, email, Pinterest and selling, in one classroom you keep coming back to.</span></li>
-    <li><b>New every day and every month</b><span>A fresh AI photo prompt daily, new lessons as they land, and with Premium a full content calendar each month.</span></li>
-    <li><b>Never building alone</b><span>900+ women in the Skool community, asking the same questions you are.</span></li>
-  </ul>
-  <MembershipPlans />
-  <p class="home-premium-note"><a href="/membership#compare">See the full membership comparison</a></p>
-  <div class="rv-row h11-rv4">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-</div></section>
-
-<section class="home-honest" aria-labelledby="honest-title">
-  <div class="home-sheet">
-    <i class="home-tape" aria-hidden="true"></i>
-    <span class="home-kicker">Starting from scratch?</span>
-    <h2 id="honest-title">47 saved videos. <em><i class="stress">Zero</i> products.</em></h2>
-    <ul class="home-crossed">
-      <li>Prompts everywhere. Nothing built.</li>
-      <li>No interest in being an influencer.</li>
-      <li>Ideas everywhere. Nothing connected.</li>
-    </ul>
-    <p class="home-next">You don't need more ideas. <em>You need the right order.</em></p>
+<!-- Template pages 18 + 25: membership -->
+<section class="sec wash" id="membership">
+ <div class="wrap">
+  <svg class="spk sm" style="right:80px;top:10px"><use href="#sp"/></svg>
+  <p class="kick">The membership · the whole package</p>
+  <h2 class="h2">One membership. <span class="scr">The whole business.</span></h2>
+  <div class="lead"><p>This is where everything here comes together. Not one course you finish and forget, but the full classroom, something new every day, the community beside you and, with Premium, your content written for you every month.</p></div>
+  <div class="p18">
+   <div class="box"><div class="cb"></div><span class="step">01</span><h3>The whole build, in order</h3><p>Brand, content, email, Pinterest and selling, in one classroom you keep coming back to.</p></div>
+   <div class="box"><div class="cb"></div><span class="step">02</span><h3>New every day and every month</h3><p>A fresh AI photo prompt daily, new lessons as they land, and with Premium a full content calendar each month.</p></div>
+   <div class="box"><div class="cb"></div><span class="step">03</span><h3>Never building alone</h3><p>900+ women in the Skool community, asking the same questions you are.</p></div>
   </div>
+  <div class="hm-plans"><MembershipPlans /></div>
+  <p class="hm-compare"><a href="/membership#compare">See the full membership comparison</a></p>
+  <div class="hm-reviews">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
+ </div>
 </section>
 
-<section class="home-method" id="method" aria-labelledby="method-title">
-  <div class="home-inner home-method-layout">
-    <div class="home-method-copy">
-      <span class="home-kicker">The Built Backwards Method</span>
-      <h2 id="method-title">Built backwards. <em>The <i class="stress">order</i> is the method.</em></h2>
-      <p>The order to build a business, not a list of things to buy. Most people grow an audience and hope it buys. You build what it will buy first.</p>
-      <a class="h11-link" href="#blueprint">Start with step 1: the free Blueprint</a>
-    </div>
-    <ol class="home-pile">
-      {[{name:'Offer',line:'Decide what you sell before you post a thing.'},
-        {name:'Funnel',line:'Build the page and emails that sell it for you.'},
-        {name:'Automation',line:'AI takes the daily repeat work off your plate.'},
-        {name:'Audience',line:'Then send traffic somewhere already built to sell.'}].map((step,i) =>
-        <li class="home-method-card">
-          {i === 0 && <i class="home-tape" aria-hidden="true"></i>}
-          <span class="home-step-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
-          <div><h3>{step.name}</h3><p>{step.line}</p></div>
-        </li>)}
-    </ol>
-  </div>
-</section>
+<!-- Template page 9: band -->
+<div class="band"><svg class="spk" style="left:18%"><use href="#sp"/></svg><h2>Starting from scratch?</h2><svg class="spk sm" style="right:19%"><use href="#sp"/></svg></div>
 
-<section class="h11-machine" aria-labelledby="machine-title">
-  <div class="h11-inner h11-machine-grid">
-    <a class="h11-shot" href="https://www.skool.com/thedigitalincomeedit/about"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ Skool group, as it looks today" width="1440" height="979" loading="lazy" decoding="async"></a>
-    <div>
-      <span class="h11-kick">The proof is the build</span>
-      <h2 id="machine-title">This whole business was built <em>faceless, with AI.</em></h2>
-      <p>This site, the emails, the course and the Skool classroom. Every article here started as a Skool lesson, and the course is delivered on the very site it teaches you to build. No income screenshots. Open any of it and look.</p>
-      <ul class="h11-ticks"><li>No filming</li><li>No audience first</li><li>No performing</li></ul>
-      <div class="h11-ctas"><a class="h11-btn h11-btn--sm" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside <span aria-hidden="true">→</span></a><a class="h11-link" href={WE.preview}>Or see inside the course, free</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="home-blueprint" id="blueprint" aria-labelledby="blueprint-title">
-  <div class="home-inner">
-    <div class="home-blueprint-head">
-      <span class="home-kicker">Free download · 15 pages</span>
-      <h2 id="blueprint-title">Don't know what to <i class="stress">sell</i>? <em>Start with the Blueprint.</em></h2>
-      <p class="home-product-name">The Faceless Income Blueprint™</p>
-    </div>
-    <div class="home-fan" aria-label="The Blueprint cover and three inside pages">
-      <img class="home-page home-page-one" src="/images/brand/bp-page-3.webp" width="260" height="368" alt="A page from The Faceless Income Blueprint" decoding="async">
-      <img class="home-page home-page-two" src="/images/brand/bp-page-4.webp" width="260" height="368" alt="Another page from the Blueprint" decoding="async">
-      <img class="home-page home-page-three" src="/images/brand/bp-page-5.webp" width="260" height="368" alt="The Blueprint's third preview page" decoding="async">
-      <div class="home-cover"><i class="home-tape" aria-hidden="true"></i><img src="/images/brand/blueprint-cover.webp" width="300" height="424" alt="The Faceless Income Blueprint cover" decoding="async"></div>
-    </div>
-    <div class="home-signup-card">
-      <ul class="home-checklist"><li>Your whole business on one map</li><li>The one thing to build first</li><li>A seven-day plan to build it</li></ul>
-      <BlueprintForm heading="" sub="" button="Send me the Blueprint" />
-    </div>
-  </div>
-</section>
-
-
-
-<section class="home-course-zone" id="owned-website" aria-labelledby="owned-title">
-<header class="home-course-heading home-inner"><span class="home-kicker">Optional add-on course · one-time</span><h2 id="owned-title">The Weekend <em>Ecosystem™</em></h2><p>Turn the material you already made into your own website and blog, with email sign&#8209;ups connected, in one weekend. No paid product needed. No material yet? <a href="#blueprint">Start with the free&nbsp;Blueprint.</a></p></header>
-<section class="fs sp r" aria-label="Your weekend website build"><div class="wrap">
-  <div class="days">
-    <div class="day fri"><h3>Friday</h3><ul><li><span>Material in different places</span></li><li><span>No website to send readers</span></li><li><span>No connected email sign-up</span></li></ul></div>
-    <div class="arrow">→</div>
-    <div class="day sun"><h3>Sunday</h3><ul><li>Your own website</li><li>A blog ready to publish</li><li>Email sign-ups connected</li></ul></div>
-  </div>
-</div></section>
-
-<section class="we sp"><div class="wrap feature">
-  <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Inside {WE.name}</span></div><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy" decoding="async"></div><figure class="rv-bubble"><span class="rv-q o" aria-hidden="true">&ldquo;</span><span class="rv-stars" aria-label="5 out of 5">★★★★★</span><blockquote>{FEATURED.pull}</blockquote><figcaption><b><a href={FEATURED.url} rel="noopener" target="_blank">{FEATURED.name}</a></b>, {FEATURED.tenure}</figcaption><span class="rv-q c" aria-hidden="true">&rdquo;</span></figure><div class="sticker"><i class="in"></i><span>Built in one weekend</span></div></div>
+<!-- Template page 14: text card + photo + script line -->
+<section class="sec">
+ <div class="wrap p14">
   <div>
-    <span class="h11-kick">The course · {WE.price}</span>
-    <h3 class="home-course-subhead">Give your work <em>a home of its own.</em></h3>
-    <p class="sub">Your website and blog, built in one weekend.</p>
-    <div class="nums"><div><b>{WE.modules}</b>Modules</div><div><b>{WE.prompts}</b>Prompts</div><div><b>{WE.assetsPerArticle}</b>Posts per article</div></div>
-    <ul class="res"><li>A live website on your own domain</li><li>Email sign-ups connected to your site</li><li>One prompt turns each article into {WE.assetsPerArticle} posts</li></ul>
-    <div class="buy"><a class="h11-btn" href={WE.url}><b class="h11-full">Get {WE.name}</b><b class="h11-short" aria-hidden="true">Get the course · {WE.price}</b> <span aria-hidden="true">→</span></a><small>{WE.price}, or {WE.plan}. Yours for good, every future update included.</small><a class="h11-link" href={WE.preview}>See inside first, free</a></div>
+   <h2>47 saved videos. <span class="glit">Zero products.</span></h2>
+   <ul class="hm-crossed"><li>Prompts everywhere. Nothing built.</li><li>No interest in being an influencer.</li><li>Ideas everywhere. Nothing connected.</li></ul>
+   <p>You don't need more ideas.</p>
+   <span class="scr">You need the right order.</span>
   </div>
-</div></section>
+  <div class="ph"><img src="/images/pages/we-close-kitchen-1200.webp" alt="Tommy Kate working on her laptop at the kitchen table with her golden retriever" width="1200" height="1489" loading="lazy" decoding="async"></div>
+ </div>
 </section>
 
-<section class="h11-help" aria-labelledby="help-title">
-  <div class="h11-inner">
-    <span class="h11-kick">Want it built with you?</span>
-    <h2 id="help-title">More help, <em>when you're ready.</em></h2>
-    <div class="h11-help-grid">
-      <article class="h11-card">
-        <span class="h11-label">Mentorship · founding cohort</span>
-        <h3>Business Architect Mentorship Intensive™ <span class="h11-abbr">(BAMI)</span></h3>
-        <p>Twelve weeks to build your offer, sales page, welcome emails and content system, with written review of your work at each of six phase gates.</p>
-        <a class="h11-btn h11-btn--sm" href="/bami">Join the BAMI waitlist <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="h11-card">
-        <span class="h11-label">Done with you</span>
-        <h3>Work With Me</h3>
-        <p>An offer, a funnel and a system, built to work together. See the engagements and what each one includes.</p>
-        <a class="h11-btn h11-btn--sm" href="/work-with-me">See how it works <span aria-hidden="true">→</span></a>
-      </article>
-    </div>
-  </div>
+<!-- Template page 18: the method, four boxes -->
+<section class="sec wash" id="method">
+ <div class="wrap">
+  <span class="stk hs" style="left:30px;top:-10px">Step 1<b class="big">free</b></span>
+  <p class="kick">The Built Backwards Method</p>
+  <h2 class="h2">Built backwards. <span class="scr">The order is the method.</span></h2>
+  <div class="lead"><p>The order to build a business, not a list of things to buy. Most people grow an audience and hope it buys. You build what it will buy first.</p></div>
+  <div class="p18 hm-four">{steps.map((st,i) => <div class="box"><span class="num hm-num">{String(i+1).padStart(2,'0')}</span><h3>{st.name}</h3><p>{st.line}</p></div>)}</div>
+  <div class="btnwrap"><a class="btn" href="#blueprint">Start with step 1: the free Blueprint <span class="ar">↓</span></a></div>
+ </div>
 </section>
 
-<section class="h11-more" aria-labelledby="more-title">
-  <div class="h11-inner">
-    <div class="h11-more-head"><div><span class="h11-kick">The free library</span><h2 id="more-title">Free guides. <em>Start with these.</em></h2></div><a class="h11-link" href="/learn">See every guide</a></div>
-    <ul class="h11-guides">{guides.map((g) => <li><a href={`/learn/${g.slug}`}><span class="h11-label">{g.cat} · {g.read}</span><b>{g.t}</b><span class="h11-go" aria-hidden="true">→</span></a></li>)}</ul>
-    <div class="h11-also">
-      <span class="h11-kick">Also from The Digital Income Edit™</span>
-      <ul>{alsoFrom.map((a) => <li><a href={a.href}><span class="h11-label">{a.label}</span><b>{a.title}</b><span class="h11-go" aria-hidden="true">→</span></a></li>)}</ul>
-    </div>
+<!-- Template page 44: photo + card -->
+<section class="sec">
+ <div class="wrap">
+  <p class="kick">The proof is the build</p>
+  <h2 class="h2 hm-proof-h">This whole business was built <span class="scr">faceless, with AI.</span></h2>
+  <div class="p44 hm-proof">
+   <div class="ph"><a href="https://www.skool.com/thedigitalincomeedit/about"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ Skool group, as it looks today" width="1440" height="979" loading="lazy" decoding="async"></a></div>
+   <div class="card dash">
+    <span class="stk r" style="right:-40px;top:-56px">Open it<b>and look</b></span>
+    <p>This site, the emails, the course and the Skool classroom. Every article here started as a Skool lesson, and the course is delivered on the very site it teaches you to build. No income screenshots. Open any of it and look.</p>
+    <ul class="chk"><li>No filming</li><li>No audience first</li><li>No performing</li></ul>
+    <a class="btn" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside <span class="ar">→</span></a>
+    <p class="see"><a href={WE.preview}>Or see inside the course, free</a></p>
+   </div>
   </div>
+ </div>
 </section>
 
-<section class="h11-close" aria-labelledby="close-title">
-  <div class="h11-inner">
-    <span class="h11-kick">Build it backwards</span>
-    <h2 id="close-title">Stop saving videos. <em>Start <i class="stress">building.</i></em></h2>
+<!-- Template pages 24 + 25: the free Blueprint -->
+<section class="sec wash" id="blueprint">
+ <div class="wrap p25">
+  <div class="intro">
+   <span class="scr">free download...</span>
+   <h2>The Faceless Income Blueprint™</h2>
+   <div class="hm-fan" aria-label="The Blueprint cover and three inside pages">
+    <img class="hm-pg a" src="/images/brand/bp-page-3.webp" width="260" height="368" alt="A page from The Faceless Income Blueprint" loading="lazy" decoding="async">
+    <img class="hm-pg b" src="/images/brand/bp-page-4.webp" width="260" height="368" alt="Another page from the Blueprint" loading="lazy" decoding="async">
+    <img class="hm-pg c" src="/images/brand/blueprint-cover.webp" width="300" height="424" alt="The Faceless Income Blueprint cover" loading="lazy" decoding="async">
+   </div>
+  </div>
+  <div class="pc dash" style="position:relative">
+   <span class="stk r" style="right:-60px;top:-70px">15 pages<b class="big">free</b></span>
+   <div class="pn">Don't know what to sell?</div>
+   <h3 class="hm-bp-h">Start with the <span class="glit">Blueprint.</span></h3>
+   <ul class="chk"><li>Your whole business on one map</li><li>The one thing to build first</li><li>A seven-day plan to build it</li></ul>
+   <BlueprintForm heading="" sub="" button="Send me the Blueprint" />
+  </div>
+ </div>
+</section>
+
+<!-- Template page 20 + 21: Weekend Ecosystem, Friday to Sunday -->
+<div class="band"><svg class="spk sm" style="left:20%"><use href="#sp"/></svg><h2>Optional add-on course</h2><svg class="spk" style="right:20%"><use href="#sp"/></svg></div>
+<section class="sec" id="owned-website">
+ <div class="wrap">
+  <p class="kick">One-time · {WE.price}</p>
+  <h2 class="h2">The Weekend Ecosystem™ <span class="scr">give your work a home.</span></h2>
+  <div class="lead"><p>Turn the material you already made into your own website and blog, with email sign-ups connected.</p></div>
+  <div class="p21">
+   <div class="col"><span class="scr">Friday</span><div class="card dash"><ul class="chk hm-x"><li>Material in different places</li><li>No website to send readers</li><li>No connected email sign-up</li></ul></div></div>
+   <div class="col"><span class="scr">Sunday</span><div class="card dash"><ul class="chk"><li>Your own website</li><li>A blog ready to publish</li><li>Email sign-ups connected</li></ul></div></div>
+  </div>
+  <div class="p42 dash hm-we" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">{WE.modules}<b class="big">modules</b></span>
+   <div class="ph"><img src="/images/brand/we-inside.webp" alt="Inside The Weekend Ecosystem course" width="1080" height="480" loading="lazy" decoding="async"></div>
+   <div class="tx">
+    <h2>Your website and blog, <span class="scr">built in one weekend.</span></h2>
+    <ul class="chk"><li>A live website on your own domain</li><li>Email sign-ups connected to your site</li><li>One prompt turns each article into {WE.assetsPerArticle} posts</li><li>{WE.prompts} prompts</li></ul>
+    <a class="btn" href={WE.url}>Get {WE.name} · {WE.price} <span class="ar">→</span></a>
+    <p class="hm-small">{WE.price}, or {WE.plan}.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Template page 21: more help, two cards -->
+<section class="sec wash">
+ <div class="wrap">
+  <p class="kick">Want it built with you?</p>
+  <h2 class="h2">More help, <span class="scr">when you're ready.</span></h2>
+  <div class="p21">
+   <div class="col"><span class="scr">Mentorship</span><div class="card dash"><h3>Business Architect Mentorship Intensive™ (BAMI)</h3><p>Twelve weeks to build your offer, sales page, welcome emails and content system, with written review of your work at each of six phase gates.</p><a class="btn" href="/bami">Join the BAMI waitlist <span class="ar">→</span></a></div></div>
+   <div class="col"><span class="scr">Done with you</span><div class="card dash"><h3>Work With Me</h3><p>An offer, a funnel and a system, built to work together. See the engagements and what each one includes.</p><a class="btn" href="/work-with-me">See how it works <span class="ar">→</span></a></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- Template page 47: numbered list -->
+<section class="sec">
+ <div class="wrap">
+  <p style="text-align:center;margin:0 0 14px"><span class="tag">The free library</span></p>
+  <h2 class="h2">Free guides. <span class="scr">Start with these.</span></h2>
+  <div class="faq">{guides.map((g,i) => <a class="qa hm-link" href={`/learn/${g.slug}`}><span class="n">{String(i+1).padStart(2,'0')}</span><div><span class="hm-lab">{g.cat} · {g.read}</span><h3>{g.t}</h3></div><span class="hm-go">→</span></a>)}</div>
+  <div class="btnwrap"><a class="btn" href="/learn">See every guide <span class="ar">→</span></a></div>
+  <p class="kick" style="margin-top:70px">Also from The Digital Income Edit™</p>
+  <div class="faq hm-also">{alsoFrom.map((a) => <a class="qa hm-link" href={a.href}><span class="n">✦</span><div><span class="hm-lab">{a.label}</span><h3>{a.title}</h3></div><span class="hm-go">→</span></a>)}</div>
+ </div>
+</section>
+
+<!-- Template page 42: close -->
+<section class="sec wash">
+ <div class="wrap">
+  <div class="p42 dash" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">7 days<b class="big">free</b></span>
+   <div class="ph"><img src="/images/pages/about-porch-red-barn-1120.webp" alt="Tommy Kate on her farmhouse porch by the red barn" width="1120" height="1390" loading="lazy" decoding="async"></div>
+   <div class="tx">
+    <svg class="spk sm" style="right:30px;top:30px"><use href="#sp"/></svg>
+    <p class="kick">Build it backwards</p>
+    <h2>Stop saving videos.</h2>
+    <span class="scr">Start building.</span>
     <p>Seven days free inside the membership. Cancel in Skool before the trial ends and you pay nothing.</p>
-    <div class="h11-ctas h11-ctas--center"><a class="h11-btn" href={SKOOL_PLANS}>Start your 7 days free <span aria-hidden="true">→</span></a><a class="h11-link" href="#blueprint">Or get the free Blueprint</a></div>
+    <a class="btn buy" href={SKOOL_PLANS}>Start your 7 days free <span class="ar">→</span></a>
+    <p class="see"><a href="#blueprint">Or get the free Blueprint</a></p>
+   </div>
   </div>
+ </div>
 </section>
 </main>
-<div class="h11-sticky" aria-hidden="true" hidden><a class="h11-btn" href={SKOOL_PLANS} tabindex="-1">Start your 7 days free <span aria-hidden="true">→</span></a></div>
+
+<!-- Template pages 50 + 51 -->
+<footer class="tfoot">
+ <div class="touch"><h2>Get in touch <span class="scr">questions &amp; billing</span></h2><p><a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p></div>
+ <div class="wrap tf-cols">{FOOTER.map((col) => <div><h4>{col.h}</h4>{col.links.map((l) => <a href={l.href}>{l.label}</a>)}</div>)}</div>
+ <p class="tf-soc">{SOCIAL.map((s) => <a href={s.href} rel="noopener" target="_blank">{s.label}</a>)}</p>
+ <div class="foot">© 2026 The Digital Income Edit™</div>
+</footer>
+
+<a class="stick off" href={SKOOL_PLANS}>Start your 7 days free <span class="ar">→</span></a>
 <script is:inline>
-(function(){var bar=document.querySelector('.h11-sticky');if(!bar||!('IntersectionObserver' in window))return;bar.hidden=false;
-var hide=new Set(),targets=['.h11-hero','#blueprint','.membership-offers','.h11-close','footer'].map(function(s){return document.querySelector(s)}).filter(Boolean);
-var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?hide.add(e.target):hide.delete(e.target)});bar.classList.toggle('on',hide.size===0)},{threshold:0});
-targets.forEach(function(t){io.observe(t)});})();
+(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,hero=document.querySelector('.hh .buy');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});s.classList.toggle('off',!passed||vis.size>0)});
+document.querySelectorAll('.buy,#blueprint').forEach(function(b){io.observe(b)})})();
 </script>
-
-<footer><div class="wrap"><a class="logo" href="/"><span class="l1">The Digital Income</span><span class="l2">Edit<sup>™</sup><i class="spark"></i></span><span class="rule"><i></i><b class="dot"></b><i></i></span></a>
-<div class="fcols">
-{FOOTER.map((col) => <div><h4>{col.h}</h4>{col.links.map((l) => <a href={l.href}>{l.label}</a>)}</div>)}
-</div>
-<p class="fsoc">{SOCIAL.map((s) => <a href={s.href} rel="noopener" target="_blank">{s.label}</a>)}</p>
-<p class="fcopy">© 2026 The Digital Income Edit™ · <a href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
-</div></footer>
 </body>
-
 </html>
