@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><title>sending</title><body>sending…
+<script>
+(async()=>{const items=[['wys-skool-preview.mp4','video/mp4','While-You-Sleep-Storefront-setup.mp4'],['wys-pinterest-results.png','image/png','Pinterest-results-Oct19-Nov18.png']];
+const out=[];for(const [f,t,n] of items){const b=await (await fetch(f)).blob();out.push(new File([b],n,{type:t}));}
+if(!window.opener){document.body.textContent='no opener';return;}
+window.opener.postMessage({wysFiles:out},'https://www.skool.com');document.body.textContent='sent '+out.length;setTimeout(()=>window.close(),1500);})();
+</script>
