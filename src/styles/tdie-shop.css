@@ -1,0 +1,66 @@
+/* Shop page pieces on top of tdie-template.css */
+.sh-hh{align-items:center}
+.sh-fan{position:relative;height:520px}
+.sh-fan img{position:absolute;width:58%;height:auto;border:6px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/140px border-box;box-shadow:var(--shadow)}
+.sh-fan .a{left:4%;top:10px;aspect-ratio:1200/1490;transform:rotate(-5deg)}
+.sh-fan .b{right:2%;top:110px;aspect-ratio:900/1165;transform:rotate(6deg);width:50%}
+.sh-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:44px}
+.sh-chips a{display:inline-flex;gap:8px;align-items:center;padding:9px 16px;background:#fff;border:1px solid var(--gold);text-decoration:none;font:600 11px Montserrat;letter-spacing:.14em;text-transform:uppercase}
+.sh-chips a span{color:var(--hot)}
+.sh-chips a:hover{border-color:var(--hot)}
+.sh-cards .look{padding:0 0 26px}
+.sh-cards .ph{display:block;text-decoration:none}
+.sh-cards .ph>img{aspect-ratio:3/4!important;object-fit:cover;height:auto}
+.sh-type{display:flex;aspect-ratio:3/4;align-items:center;justify-content:center;padding:30px;text-align:center;background:url(/wys-sales/img/sparkle-scatter-900.webp) center/500px,#fff0f6;font:400 26px/1.3 Gilda;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.sh-cards h3 small{display:block;margin-top:6px;font:600 11px Montserrat;letter-spacing:.2em;color:var(--hot)}
+.sh-c{font-size:15px;margin:10px 20px 18px;flex:1}
+.sh-cards .look .btn{margin:0 20px;width:calc(100% - 40px);padding:12px 10px;font-size:11px;letter-spacing:.14em}
+.sh-tiers{max-width:900px}
+.sh-tiers .bd{text-align:left}
+.sh-tiers .amt{text-align:center}
+.sh-per{text-align:center;margin-top:6px!important;font:600 11px Montserrat!important;letter-spacing:.18em;text-transform:uppercase}
+.sh-tiers .chk{margin:18px 0 0}
+.sh-tiers .btn{width:100%}
+.sh-price{font:600 12px Montserrat!important;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 0!important}
+.sh-price b{font:400 44px/1 Gilda;letter-spacing:0;vertical-align:middle;margin-right:8px}
+.sh-ev{font:600 11px Montserrat!important;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);margin-top:14px!important}
+.sh-small{font-size:13px!important;color:var(--soft)}
+.p42 .tx .chk{text-align:left;max-width:440px;margin:18px auto 0}
+.sh-rv{max-width:520px;margin:60px auto}
+.sh-wys{margin-top:20px}
+.sh-wys .ph img{aspect-ratio:1502/708!important;height:auto}
+.sh-wys .tx h2{font-size:28px}
+.sh-plr{grid-template-columns:minmax(0,1fr)!important;max-width:760px}
+.sh-sub{text-align:center;font-size:22px;letter-spacing:.2em;text-transform:uppercase;margin:34px 0 0}
+.sh-rows{max-width:960px}
+.sh-row{grid-template-columns:52px minmax(0,1fr) 150px!important}
+.sh-row h3{font-size:19px}
+.sh-p{text-align:right}
+.sh-p b{display:block;font:400 34px/1 Gilda}
+.sh-p small{display:block;font:600 10px/1.4 Montserrat;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+.sh-box{text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.sh-box h3{font-size:18px!important}
+.sh-box .sh-price b{font-size:36px}
+.sh-go{margin-top:auto;padding-top:14px;font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--hot)}
+@media (max-width:980px){
+ .sh-fan{height:420px;max-width:440px;width:100%;margin:0 auto}
+}
+@media (max-width:600px){
+ .sh-fan{height:330px}
+ .sh-row{grid-template-columns:36px minmax(0,1fr)!important}
+ .sh-p{grid-column:2;text-align:left}
+ .sh-p b{display:inline;font-size:28px;margin-right:8px}
+ .sh-p small{display:inline}
+ .sh-chips a{font-size:10px;padding:8px 10px}
+ .sh-wys .tx h2{font-size:22px}
+}
+/* fixes round 1 */
+.faq .qa.hm-link.sh-row{grid-template-columns:52px minmax(0,1fr) 170px!important}
+.sh-chips{margin-top:60px}
+.p23.sh-tiers{margin-top:40px}
+.mb-note{text-align:center;max-width:720px;margin:28px auto 0;font-size:15px}
+.mb-note a{color:var(--hot)}
+.sh-wys .stk{top:-64px!important;right:-50px!important}
+@media (max-width:600px){.faq .qa.hm-link.sh-row{grid-template-columns:36px minmax(0,1fr)!important}}
+.sh-tiers .bd{display:flex;flex-direction:column}.sh-tiers .bd .btn{margin-top:auto}.sh-tiers .chk{margin-bottom:22px!important}
+@media (max-width:600px){.sh-tiers .stk{display:none}.sh-wys .stk{right:6px!important;top:-72px!important}}
