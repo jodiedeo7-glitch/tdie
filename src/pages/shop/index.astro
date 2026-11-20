@@ -43,10 +43,6 @@ const guides = [
     copy: "The full Pinterest system as a course. Also included with Membership Standard; buying it outright is for people who only want this one thing." },
   { name: "The One and Done Money Stream", price: "$27", terms: "one-time", url: "/go/one-and-done-money-stream",
     copy: "One digital product, built once and sold again and again. Includes resell rights." },
-  { name: "BONUS BUNDLE WITH RESELL RIGHTS", price: "$27", terms: "one-time", url: "/go/bonus-bundle-with-resell-rights",
-    copy: "A bundle of ready-made products you can put your own name on and sell." },
-  { name: "550+ BRILLIANT chatGPT prompts for your business", price: "$2", terms: "one-time", url: "/go/550-brilliant-chatgpt-prompts-for-your-business",
-    copy: "A wide prompt library to raid when you're staring at a blank box." },
 ];
 
 // 05 AI & CREATOR
@@ -152,7 +148,7 @@ const schema = [{
  <div class="wrap">
   <h2 class="h2">Start with what costs <span class="scr">nothing.</span></h2>
   <div class="lead"><p>Finished guides, not teasers. No card, no trial.</p></div>
-  <div class="looks sh-cards">{free.map((f, i) => <div class="look"><a class="ph" href={f.url}>{f.img ? <img src={f.img} alt={f.name} loading="lazy" decoding="async"> : <span class="sh-type">{f.name.replace(/^FREE GUIDE - /, "")}</span>}<span class="num">{String(i+1).padStart(2,'0')}</span></a><span class="tag">Free</span><h3>{f.name}{f.sub && <small>{f.sub}</small>}</h3><p class="sh-c">{f.copy}</p><a class="btn" href={f.url}>{f.go} <span class="ar">→</span></a></div>)}</div>
+  <div class="looks sh-cards">{free.map((f, i) => <div class="look"><a class="ph" href={f.url}>{f.img ? <img src={f.img} alt={f.name} loading="lazy" decoding="async"> : <span class="sh-type">{f.name}</span>}<span class="num">{String(i+1).padStart(2,'0')}</span></a><span class="tag">Free</span><h3>{f.name}{f.sub && <small>{f.sub}</small>}</h3><p class="sh-c">{f.copy}</p><a class="btn" href={f.url}>{f.go} <span class="ar">→</span></a></div>)}</div>
  </div>
 </section>
 
