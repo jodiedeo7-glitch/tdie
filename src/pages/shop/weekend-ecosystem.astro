@@ -1,18 +1,12 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+// The Weekend Ecosystem™ sales page, rebuilt 20 Nov 2026 on Jodie's Etsy template in the shared site style.
+import TemplateLayout from "../../layouts/TemplateLayout.astro";
 import { MODULES } from "../../we-manifest.js";
 import { S, HREF } from "../../we-stage.js";
+import { SALE } from "../../we-sale.js";
 import { OBJECTIONS } from "../../we-objections.js";
 import { KIT_DEADLINE, kitLive } from "../../we-kit.js";
-import SaleBanner from "../../components/SaleBanner.astro";
-import KitBanner from "../../components/KitBanner.astro";
 import Testimonial from "../../components/Testimonial.astro";
-import { REVIEWS } from "../../we-reviews.js";
-import WePrice from "../../components/WePrice.astro";
-import WeBundle from "../../components/WeBundle.astro";
-import WeRibbon from "../../components/WeRibbon.astro";
-import "../../styles/we.css";
-
 // Hours per phase, from the weekend timeline: 2 + 3 + 3 + 3 + 3 + 2 = 16.
 const HOURS = [2, 3, 3, 3, 3, 2];
 const phases = [...new Set(MODULES.map((m) => m.phase))].map((p, i) => {
@@ -113,252 +107,7 @@ const faqs = [
 ];
 
 const showKit = kitLive();
-const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-community");
----
-<PageLayout
-  ogImage="/og/weekend-ecosystem-2026-09.jpg"
-  wide
-  title="The Weekend Ecosystem™"
-  description="Your own website, blog and email list, built in one weekend from what you already wrote, with Claude doing the building. $97, or 3 × $33.33."
->
-<div class="wx wx-sales">
-
-  <!-- HERO: ideal state first, price and one CTA on the first screen -->
-  <section class="wx-hero">
-    <div>
-      <p class="wx-brand"><span class="wx-dot"></span><span>The Weekend Ecosystem™<span class="wx-brand-x"> · Standalone course</span></span></p>
-      <SaleBanner variant="bar" />
-      <h1>Your website, blog and email list. <em>Built around the life you already have.</em></h1>
-      <p class="wx-lede">Turn the posts and lessons you've already written into a live website on your own domain, with a blog, email capture and a path to your offers. <strong>A weekend build course with 22 modules and 37 copy-paste prompts. Claude helps build it. You review the work. No coding or filming yourself.</strong></p>
-      <WePrice id="get" preview />
-    </div>
-    <div class="wx-collage">
-      <figure class="wx-polaroid" style="background-image:var(--pol-images)">
-        <span class="wx-tape wx-tape-l" aria-hidden="true"></span>
-        <img src="/images/we/hook-blog-posts.jpg" alt="The Weekend Ecosystem™: you already wrote the blog posts. They're just sitting in your Skool group." loading="eager" width="1200" height="1490" />
-        <figcaption>You already wrote the blog posts.</figcaption>
-      </figure>
-      <div class="wx-collage-peek"><WeBundle variant="peek" /></div>
-      <span class="wx-sticker wx-sticker-a" aria-hidden="true"><span>No code<br />no camera</span></span>
-      <span class="wx-sticker wx-sticker-b" aria-hidden="true"><span>Every update<br />free</span></span>
-    </div>
-  </section>
-
-  <ul class="wx-cred-strip" aria-label="What's included">
-    <li><span class="wx-cred-ic" aria-hidden="true">♡</span><strong>22</strong><span>modules, in build order</span></li>
-    <li><span class="wx-cred-ic" aria-hidden="true">✦</span><strong>37</strong><span>build prompts, written in full</span></li>
-    <li><span class="wx-cred-ic" aria-hidden="true">♡</span><strong>3</strong><span>reference vaults</span></li>
-    <li class="wx-cred-hot"><span class="wx-cred-ic" aria-hidden="true">✦</span><strong>∞</strong><span>future updates, free</span></li>
-  </ul>
-
-  <WeRibbon />
-
-  {showKit && <KitBanner variant="hero" />}
-
-  <!-- IDEAL STATE: Friday to Sunday, before any module list -->
-  <section class="wx-sec">
-    <span class="wx-kicker" style="text-align:center">Friday night to Sunday afternoon</span>
-    <h2 class="wx-sec-h">Here's what's different <em>by Sunday.</em></h2>
-    <p class="wx-sub">Not a plan for a website. The website, live, with your work already on it.</p>
-    <div class="wx-fs">
-      <div class="wx-card wx-fri">
-        <h3>Friday</h3>
-        <ul>{friday.map((x) => <li>{x}</li>)}</ul>
-      </div>
-      <div class="wx-hot wx-sun">
-        <h3>Sunday</h3>
-        <ul>{sunday.map((x) => <li>{x}</li>)}</ul>
-      </div>
-    </div>
-    <p class="wx-fs-foot">And you didn't write anything new.</p>
-
-    <div class="wx-life">
-      {life.map((x) => (
-        <div class="wx-card">
-          <h3>{x.t}</h3>
-          <p>{x.p}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- SHOW THE MACHINE -->
-  <section class="wx-sec">
-    <span class="wx-kicker" style="text-align:center">Built with this system</span>
-    <h2 class="wx-sec-h">This site is <em>the proof.</em></h2>
-    <p class="wx-sub">I built this site faceless and solo with AI, wrote down every step as I went, and that record became the course. The pages you're on right now, the blog, the checkout and the members' area were all built with the twenty-two modules you'd be buying. Open an article and see what one of my Skool lessons looks like after a Saturday afternoon.</p>
-    <div class="wx-proof">
-      {proof.map((p) => (
-        <a class="wx-card" href={p.u}>
-          {p.img && <img class="wx-proof-img" src={p.img} alt="" decoding="async" />}<span class="wx-proof-n">{p.n}</span>
-          <span class="wx-proof-t">{p.t}</span>
-          <span class="wx-proof-go">Read it →</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-
-  <!-- WHAT'S IN THE BOX: the packaging, right after the ideal state -->
-  <section class="wx-sec" id="inside">
-    <span class="wx-kicker" style="text-align:center">Everything in the box</span>
-    <h2 class="wx-sec-h">Here's what you're <em>actually getting.</em></h2>
-    <p class="wx-sub">Not a PDF. A live site you log into, with every piece below waiting inside the minute your access opens.</p>
-    <WeBundle />
-    <ul class="wx-box-list">
-      {included.map((x) => (
-        <li><b>{x.t}</b><span>{x.p}</span></li>
-      ))}
-    </ul>
-
-    <div class="wx-card wx-mid">
-      <p class="wx-mid-l">All of it, for one payment or three.</p>
-      <WePrice preview />
-    </div>
-  </section>
-
-  <!-- A NOTE FROM JODIE -->
-  <section class="wx-sec">
-    <div class="wx-note">
-      <span class="wx-tape wx-tape-c" aria-hidden="true"></span>
-      <span class="wx-note-k">A note before you scroll</span>
-      <h2>You already <em>wrote it.</em></h2>
-      <p>Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
-      <p>You have the opposite problem: years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
-      <p class="wx-note-hit">This weekend you don't write anything new. You build the place it all lives, works, and compounds.</p>
-      <p class="wx-sign">xoxo, Jodie</p>
-    </div>
-  </section>
-
-  <!-- WHO DOES WHAT -->
-  <section class="wx-sec">
-    <h2 class="wx-sec-h">You're not building a website. <em>You're approving one.</em></h2>
-    <p class="wx-sub">This is the part people don't believe until they see the split.</p>
-    <div class="wx-who">
-      <div class="wx-card wx-who-ai">
-        <span class="wx-kicker" style="color:#6B4FA8">Claude does</span>
-        <ul>{claudeDoes.map((x) => <li>{x}</li>)}</ul>
-      </div>
-      <div class="wx-hot wx-who-you">
-        <span class="wx-kicker">You do</span>
-        <ul>{youDo.map((x) => <li>{x}</li>)}</ul>
-        <p class="wx-who-note">That's the whole job. Three moves, twenty-two times.</p>
-      </div>
-    </div>
-    <div class="wx-card">
-      <span class="wx-kicker">You never have to</span>
-      <div class="wx-never-grid">{neverDo.map((x) => <span>{x}</span>)}</div>
-    </div>
-  </section>
-
-  <!-- THE WEEKEND (resume copy sits here, below the ideal state) -->
-  <section class="wx-sec">
-    <h2 class="wx-sec-h">The weekend, <em>hour by hour.</em></h2>
-    <p class="wx-sub">Sixteen hours in six phases. Each builds a working piece, and each piece feeds the next: the website holds the blog, the blog fills the list, the list buys the product.</p>
-    <div class="wx-phases">
-      {phases.map((p) => (
-        <div class="wx-card wx-phase" style={`--ac:${p.accent}`}>
-          <div class="wx-phase-top">
-            <span class="wx-phase-when">{p.day}</span>
-            <span class="wx-phase-hrs">{p.hrs} hrs</span>
-          </div>
-          <h3>{p.title}</h3>
-          {p.sub && <p class="wx-phase-sub">{p.sub.charAt(0).toUpperCase() + p.sub.slice(1)}</p>}
-          <ol>
-            {p.mods.map((m) => (
-              <li><b>{String(m.num).padStart(2, "0")}</b>{m.title}</li>
-            ))}
-          </ol>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- OBJECTIONS -->
-  <section class="wx-sec" id="questions">
-    <span class="wx-kicker" style="text-align:center">Before you decide</span>
-    <h2 class="wx-sec-h">The six things <em>that stop people.</em></h2>
-    <p class="wx-sub">Straight answers to the six things that stop people.</p>
-    <div class="wx-obj">
-      {OBJECTIONS.map((o) => (
-        <>
-          <div class={`wx-card wx-obj-card${o.id === "no-refunds" ? " wx-obj-refund" : ""}`} id={o.id}>
-            <span class="wx-obj-n">{String(o.n).padStart(2, "0")}</span>
-            <p class="wx-obj-q">{o.q}</p>
-            {o.a.map((para) => <p>{para}</p>)}
-            {o.kit && showKit && (
-              <p data-kit-deadline={KIT_DEADLINE}><strong>One real deadline:</strong> buy by Sunday, October 4, 11:59 pm Eastern, on one payment or three, and The Keep It Running Kit comes with it. That's six of my paid guides. After that it's gone.</p>
-            )}
-          </div>
-        </>
-      ))}
-    </div>
-    <div class="wx-obj-proof">
-      <Testimonial variant="line" />
-    </div>
-
-    <div class="wx-card wx-mid">
-      <p class="wx-mid-l">If those were the only things in the way, here's the door.</p>
-      <WePrice preview />
-    </div>
-  </section>
-
-  <!-- FIT -->
-  <section class="wx-sec">
-    <h2 class="wx-sec-h">Is it <em>for you?</em></h2>
-    <div class="wx-fit">
-      <div class="wx-card">
-        <h3>This is for you if</h3>
-        <ul>{forYou.map((x) => <li>{x}</li>)}</ul>
-      </div>
-      <div class="wx-card wx-fit-no">
-        <h3>It isn't if</h3>
-        <ul>{notForYou.map((x) => <li>{x}</li>)}</ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="wx-sec">
-    <h2 class="wx-sec-h">Everything <em>else.</em></h2>
-    <div class="wx-faq">
-      {faqs.map((x) => (
-        <details>
-          <summary>{x.q}</summary>
-          <p>{x.a}</p>
-        </details>
-      ))}
-    </div>
-  </section>
-
-  <!-- CLOSE -->
-  <section class="wx-card wx-close">
-    <div class="wx-close-img">
-      <img src="/images/we/hook-blog-posts.jpg" width="1200" height="1490" loading="lazy" alt="The Weekend Ecosystem™: you already wrote the blog posts." />
-    </div>
-    <div class="wx-close-body">
-      <span class="wx-kicker">One weekend from here</span>
-      <h2>You were a digital product seller. <em>Now you own the infrastructure.</em></h2>
-      <p class="wx-close-l">A website, a blog and a list that keep working on the days you don't. You pay once and own the thing. It costs about a dollar a month to run, plus your domain.</p>
-      <SaleBanner variant="inline" />
-      <WePrice note="Both options are at checkout. Every future update included, free." preview />
-      <p class="wx-access">{S.access}</p>
-      <div class="wx-final-line"><Testimonial variant="line" /></div>
-    </div>
-  </section>
-
-  <div class="wx-sticky" id="wx-sticky">
-    <div class="wx-sticky-in">
-      <p class="wx-sticky-p"><b>$97</b>or 3 × $33.33</p>
-      <a class="wx-btn" href={HREF}>{S.cta} <span aria-hidden="true">→</span></a>
-    </div>
-  </div>
-
-</div>
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
+const schema = [
       {
         "@type": "Product",
         "name": "The Weekend Ecosystem™",
@@ -380,28 +129,152 @@ const tinaCommunity = REVIEWS.find((review) => review.id === "tina-alexander-com
           ...OBJECTIONS.map((o) => ({ "@type": "Question", "name": o.q, "acceptedAnswer": { "@type": "Answer", "text": o.a.join(" ") } })),
           ...faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
         ]
-      }
-    ]
-  })} />
-</PageLayout>
+      }];
+---
+<TemplateLayout title="The Weekend Ecosystem™" description="Your own website, blog and email list, built in one weekend from what you already wrote, with Claude doing the building. $97, or 3 × $33.33." ogImage="/og/weekend-ecosystem-2026-09.jpg" schema={schema} stickyHref={HREF} stickyLabel="Get it · $97">
 
-<script>
-  // Mobile buy bar: shows once the first price block has scrolled away,
-  // hides again whenever any price block is on screen.
-  const bar = document.getElementById("wx-sticky");
-  const blocks = [...document.querySelectorAll(".wp")];
-  if (bar && blocks.length) {
-    const seen = new Set();
-    const first = blocks[0];
-    const update = () => {
-      const past = first.getBoundingClientRect().bottom < 0;
-      bar.classList.toggle("on", past && seen.size === 0);
-    };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
-      update();
-    });
-    blocks.forEach((b) => io.observe(b));
-    window.addEventListener("scroll", update, { passive: true });
-  }
-</script>
+<section class="hh">
+ <div class="wrap hh-grid we-hh">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">Every update<b class="big">free</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">The Weekend Ecosystem™ · standalone course</p>
+   <h1>Your website, blog and email list. <span class="scr">Built around the life you already have.</span></h1>
+   <p class="what">Turn the posts and lessons you've already written into a live website on your own domain, with a blog, email capture and a path to your offers. <b>A weekend build course with 22 modules and 37 copy-paste prompts.</b> Claude helps build it.</p>
+   <div class="we-price">
+     <div class="we-opts"><div><span>Pay once</span><b class="glit">{SALE.ACTIVE ? SALE.price : "$97"}</b><small>one-time</small></div><em>or</em><div><span>Split it</span><b class="glit">3 × $33.33</b><small>three payments, $99.99 total</small></div></div>
+     <a class="btn buy" href={HREF}>{S.cta} <span class="ar">→</span></a>
+     <p class="we-pn">Both options are at checkout. Every future update included, free.</p>
+     <p class="see"><a href="/weekend-ecosystem/preview">Look inside first, free</a></p>
+    </div>
+  </div>
+  <div class="hh-ph we-ph">
+   <img src="/images/we/hook-blog-posts.jpg" width="1200" height="1490" fetchpriority="high" decoding="async" alt="The Weekend Ecosystem™: you already wrote the blog posts. They're just sitting in your Skool group.">
+   <p class="hh-cap"><b>No code. No camera.</b> Built from what <span>you already wrote.</span></p>
+  </div>
+ </div>
+ <ul class="wrap we-cred"><li><b class="glit">22</b>modules, in build order</li><li><b class="glit">37</b>build prompts, written in full</li><li><b class="glit">3</b>reference vaults</li><li><b class="glit">∞</b>future updates, free</li></ul>
+</section>
+
+<div class="band"><svg class="spk" style="left:18%"><use href="#sp"/></svg><h2>Friday to Sunday</h2><svg class="spk sm" style="right:19%"><use href="#sp"/></svg></div>
+<section class="sec wash">
+ <div class="wrap">
+  <h2 class="h2">Here's what's different <span class="scr">by Sunday.</span></h2>
+  <div class="lead"><p>Not a plan for a website. The website, live, with your work already on it.</p></div>
+  <div class="p21">
+   <div class="col"><span class="scr">Friday</span><div class="card dash"><ul class="chk hm-x">{friday.map((x) => <li>{x}</li>)}</ul></div></div>
+   <div class="col"><span class="scr">Sunday</span><div class="card dash"><ul class="chk">{sunday.map((x) => <li>{x}</li>)}</ul></div></div>
+  </div>
+  <p class="we-foot">And you didn't write anything new.</p>
+  <div class="p18">{life.map((x, i) => <div class="box"><div class="cb"></div><span class="step">0{i+1}</span><h3>{x.t}</h3><p>{x.p}</p></div>)}</div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <p class="kick">Built with this system</p>
+  <h2 class="h2">This site is <span class="scr">the proof.</span></h2>
+  <div class="lead"><p>I built this site faceless and solo with AI, wrote down every step as I went, and that record became the course. The pages you're on right now, the blog, the checkout and the members' area were all built with the twenty-two modules you'd get.</p></div>
+  <div class="looks we-proof">{proof.map((p, i) => <a class="look" href={p.u}><span class="ph"><img src={p.img} alt="" loading="lazy" decoding="async"><span class="num">{String(i+1).padStart(2,'0')}</span></span><span class="tag">{p.n}</span><h3>{p.t}</h3><span class="we-go">Read it →</span></a>)}</div>
+ </div>
+</section>
+
+<section class="sec wash" id="inside">
+ <div class="wrap">
+  <svg class="spk sm" style="right:80px;top:10px"><use href="#sp"/></svg>
+  <p class="kick">Everything in the box</p>
+  <h2 class="h2">Here's what you're <span class="scr">actually getting.</span></h2>
+  <div class="lead"><p>Not a PDF. A live site you log into, with every piece below waiting inside the minute your access opens.</p></div>
+  <div class="faq we-inc">{included.map((x, i) => <div class="qa"><span class="n">{String(i+1).padStart(2,'0')}</span><div><h3>{x.t}</h3><p>{x.p}</p></div></div>)}</div>
+  <div class="p25 we-mid"><div class="pc dash" style="position:relative"><span class="stk r" style="right:-50px;top:-60px">One payment<b class="big">or three</b></span><div class="pn">All of it, for one payment or three.</div><div class="we-price">
+       <div class="we-opts"><div><span>Pay once</span><b class="glit">{SALE.ACTIVE ? SALE.price : "$97"}</b><small>one-time</small></div><em>or</em><div><span>Split it</span><b class="glit">3 × $33.33</b><small>three payments, $99.99 total</small></div></div>
+       <a class="btn buy" href={HREF}>{S.cta} <span class="ar">→</span></a>
+       <p class="we-pn">Both options are at checkout. Every future update included, free.</p>
+       <p class="see"><a href="/weekend-ecosystem/preview">Look inside first, free</a></p>
+      </div></div></div>
+ </div>
+</section>
+
+<section class="quote holo">
+ <div class="q we-note"><span class="mk o">“</span>
+  <p class="we-nk">A note before you scroll</p>
+  <p class="we-nh">You already <span class="glit">wrote it.</span></p>
+  <p class="we-nb">Most people start a blog by opening a blank page and trying to think of something to say. Then they do it again Tuesday. Then they stop.</p>
+  <p class="we-nb">You have the opposite problem: years of writing sitting in a classroom nobody can search, on a platform you don't own. Lessons. Call recordings. Posts. The DM where you explained your entire method to one person, for free, at midnight.</p>
+  <p class="we-nb"><b>This weekend you don't write anything new. You build the place it all lives, works, and compounds.</b></p>
+  <span class="scr we-sig">xoxo, Jodie</span>
+ <span class="mk c">”</span></div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2 class="h2">You're not building a website. <span class="scr">You're approving one.</span></h2>
+  <div class="lead"><p>This is the part people don't believe until they see the split.</p></div>
+  <div class="p21 we-who">
+   <div class="col"><span class="scr">Claude does</span><div class="card dash"><ul class="chk">{claudeDoes.map((x) => <li>{x}</li>)}</ul></div></div>
+   <div class="col"><span class="scr">You do</span><div class="card dash"><ul class="chk">{youDo.map((x) => <li>{x}</li>)}</ul><p class="we-who-n">That's the whole job. Three moves, twenty-two times.</p></div></div>
+  </div>
+  <p class="kick" style="margin-top:56px">You never have to</p>
+  <ul class="we-never">{neverDo.map((x) => <li>{x}</li>)}</ul>
+ </div>
+</section>
+
+<div class="band"><svg class="spk sm" style="left:20%"><use href="#sp"/></svg><h2>Hour by hour</h2><svg class="spk" style="right:20%"><use href="#sp"/></svg></div>
+<section class="sec wash">
+ <div class="wrap">
+  <h2 class="h2">The weekend, <span class="scr">hour by hour.</span></h2>
+  <div class="lead"><p>Sixteen hours in six phases. Each builds a working piece, and each piece feeds the next: the website holds the blog, the blog fills the list, the list buys the product.</p></div>
+  <div class="p18 we-phases">{phases.map((p, i) => <div class="box"><span class="num hm-num">{String(i+1).padStart(2,'0')}</span><span class="step">{p.day} · {p.hrs} hrs</span><h3>{p.title}</h3>{p.sub && <p class="we-ps">{p.sub.charAt(0).toUpperCase() + p.sub.slice(1)}</p>}<ol>{p.mods.map((m) => <li><b>{String(m.num).padStart(2, "0")}</b>{m.title}</li>)}</ol></div>)}</div>
+ </div>
+</section>
+
+<section class="sec" id="questions">
+ <div class="wrap">
+  <p style="text-align:center;margin:0 0 14px"><span class="tag">Before you decide</span></p>
+  <h2 class="h2">The six things <span class="scr">that stop people.</span></h2>
+  <div class="faq">{OBJECTIONS.map((o) => <div class="qa" id={o.id}><span class="n">{String(o.n).padStart(2,'0')}</span><div><h3>{o.q}</h3>{o.a.map((para) => <p>{para}</p>)}{o.kit && showKit && <p data-kit-deadline={KIT_DEADLINE}>The Keep It Running Kit comes with orders before the deadline.</p>}</div></div>)}</div>
+  <div class="sh-rv"><Testimonial variant="pull" /></div>
+ </div>
+</section>
+
+<section class="sec wash">
+ <div class="wrap">
+  <h2 class="h2">Is it <span class="scr">for you?</span></h2>
+  <div class="p21">
+   <div class="col"><span class="scr">Yes</span><div class="card dash"><h3>This is for you if</h3><ul class="chk">{forYou.map((x) => <li>{x}</li>)}</ul></div></div>
+   <div class="col"><span class="scr">Not yet</span><div class="card dash"><h3>It isn't if</h3><ul class="chk hm-x">{notForYou.map((x) => <li>{x}</li>)}</ul></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <svg class="spk" style="left:8%;top:40px"><use href="#sp"/></svg>
+  <p style="text-align:center;margin:0 0 14px"><span class="tag">Everything else</span></p>
+  <h2 class="h2">Your questions, <span class="scr">answered.</span></h2>
+  <div class="faq">{faqs.map((x, i) => <div class="qa"><span class="n">{String(i+1).padStart(2,'0')}</span><div><h3>{x.q}</h3><p>{x.a}</p></div></div>)}</div>
+ </div>
+</section>
+
+<section class="sec wash">
+ <div class="wrap">
+  <div class="p42 dash we-close" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">One<b class="big">weekend</b></span>
+   <div class="ph"><img src="/images/pages/we-close-kitchen-1200.webp" width="1200" height="1489" loading="lazy" decoding="async" alt="Tommy Kate working on her laptop at the kitchen table with her golden retriever"></div>
+   <div class="tx">
+    <p class="kick">One weekend from here</p>
+    <h2>You were a digital product seller.</h2>
+    <span class="scr">Now you own the infrastructure.</span>
+    <p>A website, a blog and a list that keep working on the days you don't. You pay once and own the thing. It costs about a dollar a month to run, plus your domain.</p>
+    <div class="we-price">
+     <div class="we-opts"><div><span>Pay once</span><b class="glit">{SALE.ACTIVE ? SALE.price : "$97"}</b><small>one-time</small></div><em>or</em><div><span>Split it</span><b class="glit">3 × $33.33</b><small>three payments, $99.99 total</small></div></div>
+     <a class="btn buy" href={HREF}>{S.cta} <span class="ar">→</span></a>
+     <p class="we-pn">Both options are at checkout. Every future update included, free.</p>
+     <p class="see"><a href="/weekend-ecosystem/preview">Look inside first, free</a></p>
+    </div>
+    <p class="we-acc">{S.access}</p>
+   </div>
+  </div>
+ </div>
+</section>
+</TemplateLayout>

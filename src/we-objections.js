@@ -40,7 +40,7 @@ export const OBJECTIONS = [
     id: "no-refunds",
     q: "What if it isn't what I think?",
     a: [
-      "Then look first. The look inside shows the real interface, a real module, the prompt cards, the tracker and the certificate. No email, no card. Read it properly, decide properly, then buy.",
+      "There are no refunds. None.",
       "That's exactly why the look inside exists. The real interface, a real module, the prompt cards, the tracker and the certificate. No email, no card. Read it properly, decide properly, then buy.",
     ],
     short: "There are no refunds. None. That's why this page exists: read it properly, decide properly, then buy.",
