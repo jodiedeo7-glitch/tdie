@@ -135,3 +135,32 @@
 .tdie-t .nw2-form button{border:3px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;font-family:Montserrat,sans-serif!important;font-size:12px!important}
 @media (max-width:400px){.tdie-t .nw2-form button{letter-spacing:.12em}}
 @media (max-width:400px){.nw2-hh .see{letter-spacing:.08em;font-size:10.5px}.nw2-hh .btn{letter-spacing:.1em}}
+/* Link-in-bio product pages (/go/) */
+.go2 .go{max-width:720px;margin:0 auto;padding:54px 50px 44px;text-align:left;position:relative}
+.go2 .go .kick{text-align:center}
+.go2 .go h1{text-align:center;margin:6px 0 14px}
+.go2 .go-lede{font:400 30px/1.25 Allison,cursive;font-size:34px;color:var(--hot);text-align:center;margin:0 0 22px}
+.go2 .go-meta{display:flex;justify-content:center;align-items:baseline;gap:12px;padding-bottom:20px;margin-bottom:24px;border-bottom:1px dashed rgba(214,46,115,.45)}
+.go2 .go-price{font:400 40px/1 Gilda,serif;color:var(--hot);background:url(/wys-sales/img/gl-hot.webp) center/300px;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.go2 .go-note{font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase}
+.go2 .go-body p{font-size:15.5px;line-height:1.75;margin:0 0 14px}
+.go2 .go-good{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:26px 0}
+.go2 .go-good>div{padding:20px 22px;background:#fff;border:1px dashed rgba(214,46,115,.45)}
+.go2 .go-good-t{display:block;font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:8px}
+.go2 .go-good p{font-size:14.5px;line-height:1.65;margin:0}
+.go2 .go-mods{margin:26px 0;border-top:1px dashed rgba(214,46,115,.45)}
+.go2 .go-mods-t{display:block;font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin:18px 0 6px}
+.go2 .go-mod{display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px dashed rgba(214,46,115,.25)}
+.go2 .go-mod-n{font:400 24px Gilda,serif;color:var(--hot)}
+.go2 .go-mod-h{font:400 18px Gilda,serif}
+.go2 .go-mod p,.go2 .go-mods-extra{font-size:14.5px;margin:4px 0 0}
+.go2 .go-disc{font-size:13.5px;line-height:1.6;padding:14px 16px;border:1px dashed rgba(214,46,115,.45);background:#fff;margin:0 0 22px}
+.go2 .go-btn{display:flex;width:100%;justify-content:center;margin-top:8px}
+.go2 .go-back{text-align:center;margin:24px 0 0;font-size:14px}
+.go2 .go-back a{color:var(--ink)}
+@media (max-width:600px){.go2 .go{padding:40px 22px 34px}.go2 .go-good{grid-template-columns:minmax(0,1fr)}.go2 .go-lede{font-size:30px}}
+.go2 .go{background:#fff;box-shadow:0 18px 40px rgba(214,46,115,.12)}
+.tdie-t .go2 .go h1{font:400 38px/1.2 Gilda,serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.tdie-t .go2 .go-lede{font:400 20px/1.5 Gilda,serif;color:var(--hot)}
+@media (max-width:600px){.tdie-t .go2 .go h1{font-size:28px}.tdie-t .go2 .go-lede{font-size:18px}}
+@media (max-width:400px){.tdie-t .go2 .go h1{font-size:23px;letter-spacing:.06em}.go2 .go{padding:36px 18px 30px}}
