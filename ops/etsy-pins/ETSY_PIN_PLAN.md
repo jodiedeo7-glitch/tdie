@@ -7,7 +7,7 @@ Set up 21 Nov 2026 on Jodie's request: "make sure there's a regular Etsy Pintere
 - 7 listings a week, 2 pins each: pin A = the listing's cover photo (photo 1), pin B = the listing's "What's inside" photo (photo 2). If a listing has been pinned before, use photos 3 to 8 in turn instead, but only photos with a cream or light background (her listing photos with a full flat hot pink background are never used on a pin).
 - Never two pins from the same listing on the same day. The A and B pins of one listing are at least 3 days apart.
 - Rotation: listings pinned least recently go first. Seasonal listings follow the season: Christmas and holiday items from 1 Nov to 20 Dec, New Year, goal, planner, budget, vision board and Word of the Year items from 15 Nov to 31 Jan, fall and Thanksgiving items from 1 Sep to 25 Nov, Halloween items from 15 Aug to 25 Oct. Off-season and inactive listings are skipped.
-- Weekly run: Sundays 2:47 am Eastern (overnight, so it never delays her daytime client tasks). It schedules the coming Sunday to Saturday.
+- Weekly run: inside the existing Etsy shop task ("Etsy shop: publish the queue, fix held listings, Monday shop check"), on its Friday 12:41 am run (overnight, so it never delays her daytime client tasks). It schedules the coming Saturday to Friday.
 
 ## Destinations
 - pinLink = `https://www.etsy.com/listing/<listing id>` (no tracking parameters; Etsy stats already show Pinterest traffic).
@@ -32,7 +32,7 @@ Rendered by `ops/scripts/etsy_pin_render/render.py specs.json <outdir>` (fonts i
 Render, then open every pin at full size and a 200 px wide strip of the whole batch. Fix lone words on a line, text touching the photo frame, cut-off text and wrong photos, re-render, look again.
 
 ## Hosting and scheduling
-Commit PNGs to `pins-public/` as `etsy-<listing id>-<a|b|cN>-<YYYYMMDD>.png`, push to main, confirm the raw URL returns 200, then `createScheduledPost` on Metricool blogId 7142540 (autoPublish true, draft false). Before scheduling, `getScheduledPosts` one day per call for the week and skip anything already there. After scheduling, read each day back.
+Scheduled runs host each PNG on Google Drive (the same method the Facebook promo task uses): create_file in the TDIE Task Files folder (id 1aAqPKUW8-6kEyDLr1PuK2aHGpr225hJE), share_file anyoneWithLink reader, then `createScheduledPost` on Metricool blogId 7142540 with media `https://drive.google.com/file/d/<id>/view?usp=drivesdk` (autoPublish true, draft false). Metricool copies the image to static.metricool.com; once the read-back shows the static copy, trash the Drive file. (The 21 Nov 2026 batch was hosted in pins-public/ on GitHub instead.) Before scheduling, `getScheduledPosts` one day per call for the week and skip any slot already holding an Etsy pin (pinLink starts with https://www.etsy.com/listing/). After scheduling, read each day back.
 
 ## Log
-Append each run to `ops/etsy-pins/ETSY_PIN_LOG.md`: date, listings pinned (id, A/B photo used, slot), and the Etsy shop's Pinterest visits for the last 7 days from Stats.
+History: `ops/etsy-pins/ETSY_PIN_LOG.md` (first batch) plus every Drive file in TDIE Task Files whose title contains "etsy-pin-log". Each run creates its own `etsy-pin-log-YYYY-MM-DD.md` in that Drive folder with: date, listings pinned (id, A/B photo used, slot), and the Etsy shop's Pinterest visits for the last 7 days from Stats.
