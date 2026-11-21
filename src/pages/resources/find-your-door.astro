@@ -1,11 +1,11 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import TemplateLayout from "../../layouts/TemplateLayout.astro";
 import Testimonial from "../../components/Testimonial.astro";
 import { membership as M } from "../../data/facts.js";
 import { Image } from "astro:assets";
 import WysAnnounce from "../../components/WysAnnounce.astro";
 import WysWhen from "../../components/WysWhen.astro";
-import wysStyled from "../../lifestyle/pink-ghost-coffee-bar-styled.jpg";
+import wysStyled from "../../lifestyle/barbie-pink-grown-up-styled.jpg";
 
 // ─────────────────────────────────────────────────────────────
 // FIND YOUR DOOR — the central free routing guide.
@@ -43,24 +43,25 @@ const stats = [
   { n: "20", l: "New PLR products added every month" },
 ];
 ---
-<PageLayout
-  wide
-  title="Find Your Door: Free Three-Minute Quiz"
-  description="A free thirteen-question quiz. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed."
->
-  <div class="fd">
+<TemplateLayout title="Find Your Door: Free Three-Minute Quiz" description="A free thirteen-question quiz. Tell me where you are and where it stops, and I'll point you to the one next step built for it. No email needed." stickyHref="#quiz" stickyLabel="Find my door">
 
-  <!-- HERO -->
-  <section class="fd-hero">
-    <WysAnnounce />
-    <a class="page-eyebrow" href="/resources">Free quiz · The Digital Income Edit™</a>
-    <h1>You don't need another free guide.<br /><em>You need the right door.</em></h1>
-    <p class="fd-lede">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters <em>now</em>.</p>
-    <p class="fd-lede fd-lede-small">Answer thirteen questions about what you've built, what's stuck, and what you actually want. I'll point you to one next step, not five more things to buy. About three minutes, and you see the answer on screen.</p>
-    <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
-    <div class="fd-meta"><span>13 questions</span><span class="b"></span><span>Results on screen</span><span class="b"></span><span>One answer</span></div>
-  </section>
+<section class="hh">
+ <div class="wrap hh-grid fd2-hh">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">3<b class="big">minutes</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">Free quiz · Find Your Door</p>
+   <h1>You don't need another free guide. <span class="scr">You need the right door.</span></h1>
+   <p class="what">You've probably saved enough tutorials to build three businesses. The problem isn't information. It's knowing which move matters now. <b>Answer thirteen questions and I'll point you to one next step, not five more things to buy.</b></p>
+   <a class="btn buy" href="#quiz">Find my door <span class="ar">→</span></a>
+   <p class="see">13 questions · Results on screen · One answer</p>
+  </div>
+  <div class="fd2-wys"><WysAnnounce /></div>
+ </div>
+</section>
 
+<section class="sec wash">
+<div class="wrap fd">
   <!-- THESIS -->
   <section class="fd-block fd-thesis fd-rv">
     <div class="fd-thesis-grid">
@@ -70,7 +71,7 @@ const stats = [
       </figure>
       <div>
         <h2>I don't sell courses <em>about</em> a business. I sell the parts of mine.</h2>
-        <p>Every door on this page is a piece of the machine that is running this page. The site you're reading was built with the course I sell for building it. The articles in The Library started life as lessons in a Skool classroom. The content calendar Premium members get is the one I write and roll out a week at a time around the 1st.</p>
+        <p>Every door on this page is a piece of the machine that's running this page. The site you're reading was built with the course I sell for building it. The articles in The Library started life as lessons in a Skool classroom. The content calendar Premium members get is the one I write and roll out a week at a time around the 1st.</p>
         <p>And it's faceless the way I mean it: <strong>my real face is never required.</strong> Not that nobody appears. The brand's face is its AI persona. That's the New Faceless, and it's the only version I teach.</p>
         <p class="fd-hit">So when I tell you which door is yours, I'm not guessing. I've stood in every one of these rooms.</p>
       </div>
@@ -115,7 +116,7 @@ const stats = [
       <div class="fd-opts" id="fd-opts"></div>
       <div class="fd-q-nav">
         <button class="fd-back" id="fd-back" type="button" hidden>← Back</button>
-        <button class="btn fd-next" id="fd-next" type="button" hidden>Next <span class="a">→</span></button>
+        <button class="btn fd-next" id="fd-next" type="button" hidden>Next <span class="ar">→</span></button>
       </div>
     </div>
 
@@ -137,7 +138,7 @@ const stats = [
       <span class="fd-r-l">Your first three moves</span>
       <ol class="fd-r-list" id="fd-r-list"></ol>
       <p class="fd-r-time" id="fd-r-time"></p>
-      <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="a">→</span></a>
+      <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="ar">→</span></a>
       <p class="fd-r-alt" id="fd-r-alt" hidden></p>
       <p class="fd-r-tool">Working on an offer? <a href="/resources/one-sentence-offer">Get what you sell down to one sentence</a>: free, two minutes, results on screen.</p>
 
@@ -149,7 +150,7 @@ const stats = [
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" aria-label="First name" maxlength="60" />
           <input type="email" name="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required />
           <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="fd-hp" />
-          <button class="btn" type="submit">Send me the weekly email <span class="a">→</span></button>
+          <button class="btn" type="submit">Send me the weekly email <span class="ar">→</span></button>
         </div>
         <p class="fd-send-msg" id="fd-send-msg" role="status"></p>
       </form>
@@ -174,7 +175,7 @@ const stats = [
           <li>AI Twin / Influencer Creation</li><li>Brand Building</li><li>The Content Edit</li><li>The Monetization Edit</li><li>The Email Edit</li><li>The Pinterest Edit</li><li>Pinterest Foundations™</li><li>The Tommy Kate Edit</li><li>Canva Crash Course</li><li>Daily Prompts</li>
         </ul>
         <dl class="fd-fit"><dt>Yes if</dt><dd>you have the idea, not the order of operations.</dd><dt>Skip if</dt><dd>you just can't keep up with posting.</dd></dl>
-        <a class="btn" href={SKOOL}>Start Standard, 7 days free <span class="a">→</span></a>
+        <a class="btn" href={SKOOL}>Start Standard, 7 days free <span class="ar">→</span></a>
       </article>
       <article class="fd-tile fd-tile-p">
         <h3>Membership Premium</h3>
@@ -185,7 +186,7 @@ const stats = [
         </ul>
         <p class="fd-tn">Content for each day of the month, two Threads posts per day and prompts for the Reels, released a week at a time around the 1st.</p>
         <dl class="fd-fit"><dt>Yes if</dt><dd>you want added training, unlocked guides or help preparing content, at any stage.</dd><dt>Know before joining</dt><dd>Use the training and guides now. Adapt promotional calendar slots to your offer, generate the visuals and publish.</dd></dl>
-        <a class="btn" href={SKOOL}>Start Premium, 7 days free <span class="a">→</span></a>
+        <a class="btn" href={SKOOL}>Start Premium, 7 days free <span class="ar">→</span></a>
       </article>
     </div>
     <p class="fd-fine">Cancel from inside the Skool app whenever you like. Canceling stops the next payment.</p>
@@ -201,7 +202,7 @@ const stats = [
         <Testimonial variant="line" />
         <dl class="fd-fit"><dt>Yes if</dt><dd>you have reusable material and want to build an owned website around it.</dd><dt>Skip if</dt><dd>you need to create your starting material or do not need a website build.</dd></dl>
         <div class="fd-row fd-row-left">
-          <a class="btn" href={WE}>See The Weekend Ecosystem™ <span class="a">→</span></a>
+          <a class="btn" href={WE}>See The Weekend Ecosystem™ <span class="ar">→</span></a>
           <a class="fd-link" href="/weekend-ecosystem/preview">Look inside first →</a>
         </div>
       </div>
@@ -219,21 +220,21 @@ const stats = [
         </ul>
         <p class="fd-tn">Canva-editable, full PLR license, 20 new products every month. Your license survives if you cancel.</p>
         <dl class="fd-fit"><dt>Yes if</dt><dd>the empty shelf is your bottleneck.</dd><dt>Skip if</dt><dd>you only sell things you designed yourself.</dd></dl>
-        <a class="btn" href={VAULT}>Open Pretty &amp; Paid PLR Vault™ <span class="a">→</span></a>
+        <a class="btn" href={VAULT}>Open Pretty &amp; Paid PLR Vault™ <span class="ar">→</span></a>
       </div>
     </article>
 
     <article class="fd-tile fd-tile-img">
-      <Image src={wysStyled} alt="A pink Halloween coffee bar with ghosts, a BOO sign and paper bats, one of the looks the While-You-Sleep system built" widths={[320, 480]} sizes="240px" loading="lazy" />
+      <Image src={wysStyled} alt="Barbie Pink, Grown Up: one of the looks the While-You-Sleep system built" widths={[320, 480]} sizes="240px" loading="lazy" />
       <div>
         <span class="fd-door-k"><WysWhen wait="New · standalone product · member presale opens Tuesday" presale="New · standalone product · member presale open" launch="New · standalone product · open now"/></span>
         <h3>The While-You-Sleep Storefront™</h3>
         <p class="fd-tp"><WysWhen wait="<b>$27</b> launch weekend, then $37 · member presale opens Tuesday 13 October" presale="<b>$27</b> launch weekend from Friday 16 October, then $37 · member presale open now in Skool" launch="<b>$27</b> launch weekend, then $37 · open to everyone now" regular="<b>$37</b> · one payment"/></p>
         <p class="fd-tl">Your Amazon storefront posts itself, every night while you sleep.</p>
-        <p class="fd-tn">Tommy Kate's system: it plans the look, builds the Amazon list, makes the pins and writes the blog post. Set it up once. The Pink Ghost Coffee Bar in this photo is one of the looks it built.</p>
+        <p class="fd-tn">Tommy Kate's system: it plans the look, builds the Amazon list, makes the pins and writes the blog post. Set it up once. Barbie Pink, Grown Up in this photo is one of the looks it built.</p>
         <dl class="fd-fit"><dt>Yes if</dt><dd>you have an Amazon storefront and no time to keep feeding it.</dd><dt>Skip if</dt><dd>you're not an Amazon Associate or Influencer yet.</dd></dl>
         <div class="fd-row fd-row-left">
-          <a class="btn" href={WYS + "/waitlist"} data-wys-cta><span data-wys-cta-label>Join the waitlist</span> <span class="a">→</span></a>
+          <a class="btn" href={WYS + "/waitlist"} data-wys-cta><span data-wys-cta-label>Join the waitlist</span> <span class="ar">→</span></a>
           <a class="fd-link" href={WYS}>See how it works →</a>
         </div>
       </div>
@@ -246,7 +247,7 @@ const stats = [
       <p class="fd-tl">For the woman who keeps answering questions in other people's groups.</p>
       <p class="fd-tn">The course I point you to for building and earning from a Skool community of your own. You don't need to feel ready. Nobody who runs a room felt qualified the week they opened it.</p>
       <dl class="fd-fit"><dt>Yes if</dt><dd>you want your own group and keep talking yourself out of it.</dd><dt>Skip if</dt><dd>you'd rather learn in someone else's room.</dd></dl>
-      <a class="btn" href={SCC} rel="sponsored nofollow">See Earn With Skool (SCC) <span class="a">→</span></a>
+      <a class="btn" href={SCC} rel="sponsored nofollow">See Earn With Skool (SCC) <span class="ar">→</span></a>
     </article>
   </section>
 
@@ -254,13 +255,14 @@ const stats = [
   <section class="fd-block fd-close fd-rv">
     <h2>Pick one. <em>Not all six.</em></h2>
     <p class="fd-lede">The fastest way to stall is to buy the whole ecosystem on a Tuesday night and open none of it. Walk through the door that fixes this month's bottleneck. The next one will be obvious when you get there.</p>
-    <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="a">→</span></a></div>
+    <div class="fd-row"><a class="btn" href="#quiz">Find my door <span class="ar">→</span></a></div>
     <p class="fd-fine">Questions about billing or refunds? <a href="/faq">They're all answered in one place.</a></p>
-    <p class="fd-sign">xoxo, Jodie</p>
+    <p class="ab2-sign">xoxo, Jodie</p>
   </section>
 
   <p class="fd-backlink"><a href="/resources">← All free resources</a></p>
   </div>
+</section>
 
   <script is:inline>
   (function(){
@@ -578,231 +580,5 @@ const stats = [
   })();
   </script>
 
-  <!-- is:global — quiz options and results are built by script and carry no scope hash. Every selector is .fd- prefixed. -->
-  <style is:global>
-    .fd-r-tool{margin:18px 0 0;padding:14px 16px;border-left:2px solid var(--pink);background:rgba(255,138,194,.12);font-size:15.5px;line-height:1.6}
-    .fd-r-tool a{color:var(--pink-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-    .fd{--fd-line:rgba(43,22,27,.1)}
-    .fd-rv{opacity:1;transform:none}
-    .fd-rv.in{opacity:1;transform:none;animation:none}
-    @keyframes fd-fs{to{opacity:1;transform:none}}
-    @media(prefers-reduced-motion:reduce){.fd-rv{opacity:1;transform:none;transition:none;animation:none}}
-
-    .fd-hero{text-align:center;padding:10px 0 56px}
-    .fd-hero .page-eyebrow{color:var(--pink)!important;margin-bottom:26px}
-    .fd-hero h1{font-family:Gloock,serif;font-weight:300;font-size:clamp(38px,7vw,76px);line-height:1.02;letter-spacing:0;margin:0 auto 26px;max-width:16ch;color:var(--choc)}
-    .fd-hero h1 em,.fd h2 em{font-style:italic;color:var(--pink)}
-    .fd-lede{max-width:600px;margin:0 auto 32px;font-family:Gloock,serif;font-style:italic;font-size:clamp(20px,2.6vw,25px);line-height:1.5;color:var(--choc-mute)}
-    .fd-row{display:flex;justify-content:center;gap:22px;align-items:center;flex-wrap:wrap}
-    .fd-row-left{justify-content:flex-start}
-    .fd-meta{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:26px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--choc-meta)}
-    .fd-meta .b{width:3px;height:3px;border-radius:50%;background:var(--gold)}
-
-    .fd-block{padding:76px 0;border-top:1px solid var(--fd-line)}
-    .fd h2{font-family:Gloock,serif;font-weight:300;font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:0;margin:0 0 16px;color:var(--choc)}
-    .fd-sub{font-family:Gloock,serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--choc-mute);margin:0 0 34px;max-width:620px}
-    .fd-after{margin:28px 0 0}
-
-    .fd-thesis-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
-    .fd-fig img{width:100%;height:auto;border-radius:2px;box-shadow:0 40px 80px -50px rgba(43,22,27,.5)}
-    .fd-fig figcaption{margin-top:14px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--choc-meta)}
-    .fd-thesis p{font-size:17.5px;line-height:1.8;color:var(--choc-soft);margin:0 0 16px}
-    .fd-hit{font-family:Gloock,serif;font-style:italic;font-size:23px!important;line-height:1.45!important;color:var(--pink-deep)!important;margin-top:22px!important}
-    .fd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border-top:1px solid rgba(232,90,155,.5);border-bottom:1px solid rgba(232,90,155,.5)}
-    .fd-stat{padding:26px 18px;text-align:center;border-right:1px solid rgba(232,90,155,.3)}
-    .fd-stat:last-child{border-right:0}
-    .fd-stat-n{display:block;font-family:Gloock,serif;font-weight:300;font-size:46px;line-height:1;color:var(--pink);letter-spacing:-1px}
-    .fd-stat-l{display:block;margin-top:10px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;line-height:1.5;color:var(--choc-meta)}
-
-    .fd-stalls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-    .fd-stall{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:24px 22px;background:var(--white);border:1px solid rgba(43,22,27,.12);border-top:2px solid var(--gold);border-radius:2px;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
-    @media(hover:hover){.fd-stall:hover{transform:none;box-shadow:0 20px 40px -30px rgba(43,22,27,.4)}}
-    .fd-stall:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
-    .fd-stall-n{font-size:11px;letter-spacing:2px;color:var(--gold-deep)}
-    .fd-stall-t{font-family:Gloock,serif;font-size:24px;font-weight:400;color:var(--choc);line-height:1.15}
-    .fd-stall-p{font-size:15px;line-height:1.6;color:var(--choc-soft)}
-    .fd-stall-d{max-height:0;overflow:hidden;opacity:0;font-size:13.5px;line-height:1.5;color:var(--pink-deep);transition:max-height .35s var(--ease),opacity .35s,margin .35s}
-    .fd-stall.open{border-top-color:var(--pink)}
-    .fd-stall.open .fd-stall-d{max-height:80px;opacity:1;margin-top:6px}
-
-    .fd-quiz-wrap{scroll-margin-top:90px}
-    .fd-quiz,.fd-result{max-width:720px;margin:0 auto;background:var(--white);border:1px solid rgba(43,22,27,.12);border-top:3px solid var(--pink);border-radius:2px;padding:44px 44px 38px;box-shadow:0 50px 90px -60px rgba(43,22,27,.45);scroll-margin-top:90px}
-    .fd-q-top{display:flex;align-items:center;gap:18px;margin-bottom:26px}
-    .fd-q-count{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
-    .fd-q-bar{flex:1;height:3px;background:rgba(43,22,27,.08);border-radius:2px;overflow:hidden}
-    .fd-q-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--mauve));transition:width .4s var(--ease)}
-    .fd-q-h{font-size:clamp(26px,3.6vw,36px)!important;margin-bottom:24px!important}
-    .fd-opts{display:flex;flex-direction:column;gap:10px}
-    .fd-opt{all:unset;box-sizing:border-box;cursor:pointer;padding:17px 20px;border:1px solid rgba(43,22,27,.14);border-radius:2px;font-size:16.5px;line-height:1.45;color:var(--choc);background:var(--cream);transition:border-color .2s,background .2s,transform .2s}
-    @media(hover:hover){.fd-opt:hover{border-color:var(--pink);transform:translateX(3px)}}
-    .fd-opt:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
-    .fd-opt.on{border-color:var(--pink);background:rgba(255,138,194,.14)}
-    .fd-back{all:unset;cursor:pointer;margin-top:22px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--choc-meta)}
-    .fd-back:hover{color:var(--pink)}
-    .fd-back[hidden]{display:none}
-
-    .fd-result[hidden],.fd-quiz[hidden],.fd-r-disc[hidden]{display:none}
-    .fd-r-eye{display:block;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--pink)}
-    .fd-r-name{font-size:clamp(32px,5vw,50px)!important;margin:10px 0 8px!important}
-    .fd-r-price{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--choc-meta);padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--fd-line)}
-    .fd-r-why{font-family:Gloock,serif;font-style:italic;font-size:23px;line-height:1.5;color:var(--choc);margin:0 0 24px}
-    .fd-r-l{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
-    .fd-r-list{list-style:none;margin:0 0 28px;padding:0}
-    .fd-r-list li{position:relative;padding:9px 0 9px 26px;font-size:16.5px;line-height:1.55;border-bottom:1px dashed rgba(43,22,27,.1)}
-    .fd-r-list li::before{content:"✦";position:absolute;left:0;top:9px;color:var(--pink);font-size:13px}
-    .fd-r-alt{margin:18px 0 0;font-size:15px;line-height:1.6;color:var(--choc-soft)}
-    .fd-r-alt[hidden]{display:none}
-    .fd-r-alt a{color:var(--pink);text-decoration:underline;font-weight:500}
-
-
-    .fd-quiz-intro{text-align:center;max-width:680px;margin:0 auto 34px}
-    .fd-quiz-intro .fd-sub{margin:0 auto}
-    .fd-q-sec{display:block;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
-    .fd-q-sub{font-family:Gloock,serif;font-style:italic;font-size:19px;color:var(--choc-mute);margin:-12px 0 20px}
-    .fd-q-sub:empty{display:none}
-    .fd-multi{padding-left:48px!important;position:relative}
-    .fd-multi::before{content:"";position:absolute;left:18px;top:50%;width:16px;height:16px;margin-top:-8px;border:1.5px solid rgba(43,22,27,.35);border-radius:2px;background:var(--white)}
-    .fd-multi.on::before{background:var(--pink);border-color:var(--pink);box-shadow:inset 0 0 0 3px var(--white)}
-    .fd-q-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px}
-    .fd-q-nav .fd-back{margin-top:0}
-    .fd-next{margin-left:auto}
-    .fd-next[hidden]{display:none}
-    .fd-next:disabled{opacity:.4;cursor:not-allowed}
-    .fd-read{margin:0 0 20px;border-top:1px solid var(--fd-line)}
-    .fd-read div{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--fd-line)}
-    .fd-read dt{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--choc-meta);padding-top:3px}
-    .fd-read dd{margin:0;font-size:16.5px;line-height:1.5;color:var(--choc)}
-    .fd-reframe{margin:0 0 30px;padding:18px 20px;background:rgba(255,138,194,.1);border-left:3px solid var(--pink);font-family:Gloock,serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--choc)}
-    ol.fd-r-list{counter-reset:fdm}
-    ol.fd-r-list li{counter-increment:fdm}
-    ol.fd-r-list li::before{content:counter(fdm,decimal-leading-zero);font-size:11px;letter-spacing:1px;top:12px}
-    .fd-r-time{margin:-12px 0 28px;font-size:15px;line-height:1.6;color:var(--choc-mute)}
-    .fd-send{margin-top:34px;padding-top:28px;border-top:1px solid var(--fd-line)}
-    .fd-send[hidden]{display:none}
-    .fd-send h3{font-family:Gloock,serif;font-weight:400;font-size:26px;margin:0 0 8px;color:var(--choc)}
-    .fd-send p{font-size:15px;line-height:1.6;color:var(--choc-mute);margin:0 0 16px}
-    .fd-send-row{display:flex;flex-wrap:wrap;gap:10px}
-    .fd-send-row input{flex:1 1 180px;min-width:0;padding:15px 16px;font:inherit;font-size:16px;border:1px solid rgba(43,22,27,.2);border-radius:2px;background:var(--cream);color:var(--choc)}
-    .fd-send-row input:focus{outline:2px solid var(--pink);outline-offset:0;border-color:var(--pink)}
-    .fd-send-row .btn:disabled{opacity:.5}
-    .fd-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
-    .fd-send-msg{margin:12px 0 0!important;font-size:14.5px!important;color:var(--pink-deep)!important}
-    .fd-send-msg:empty{display:none}
-    @media(max-width:560px){.fd-read div{grid-template-columns:1fr;gap:4px}}
-    .fd-door{margin-top:40px}
-    .fd-door-k{display:block;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
-    .fd-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .fd-card{background:var(--white);border:1px solid rgba(43,22,27,.12);border-radius:2px;padding:34px 32px;display:flex;flex-direction:column}
-    .fd-card h3{font-family:Gloock,serif;font-weight:400;font-size:30px;line-height:1.1;margin:0 0 10px;color:var(--choc)}
-    .fd-card p{font-size:15.5px;line-height:1.7;color:var(--choc-soft);margin:0 0 14px}
-    .fd-card .btn{align-self:flex-start;margin-top:auto}
-    .fd-card .fd-row .btn{margin-top:0}
-    .fd-price{font-size:13px;letter-spacing:.4px;color:var(--choc-meta);margin-bottom:16px}
-    .fd-price b{font-family:Gloock,serif;font-weight:300;font-size:30px;color:var(--pink);letter-spacing:-.5px;margin-right:4px}
-    .fd-card-line{font-family:Gloock,serif;font-style:italic;font-size:21px!important;line-height:1.45!important;color:var(--choc)!important}
-    .fd-for,.fd-not{padding-left:14px;border-left:2px solid var(--pink)}
-    .fd-not{border-left-color:rgba(43,22,27,.2)}
-    .fd-card-dark{background:var(--choc);border-color:var(--choc)}
-    .fd-card-dark h3,.fd-card-dark .fd-card-line{color:var(--cream)!important}
-    .fd-card-dark p,.fd-card-dark .fd-price{color:rgba(251,248,245,.78)}
-    .fd-card-dark .fd-price b{color:var(--mauve)}
-    .fd-card-dark .fd-not{border-left-color:rgba(251,248,245,.3)}
-    .fd .btn-onmid{background:var(--mauve);color:var(--choc)!important;margin-top:auto}
-    .fd-fine{margin-top:14px;font-size:13.5px;color:var(--choc-meta)}
-    .fd-fine a{color:var(--pink);text-decoration:underline}
-    .fd-door-img{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:28px;align-items:stretch}
-    .fd-door-img img{width:100%;height:100%;object-fit:cover;border-radius:2px;max-height:620px}
-    .fd-door-flip{grid-template-columns:minmax(0,7fr) minmax(0,4fr)}
-    .fd-door-flip img{order:2}
-    .fd-link{font-size:13px;letter-spacing:.4px;color:var(--pink);font-weight:500}
-    .fd-card-aff{border-top:2px solid var(--gold);max-width:760px}
-    .fd-disc,.fd-r-disc{font-size:13.5px!important;line-height:1.6!important;color:var(--choc-mute)!important;padding:14px 16px;background:rgba(232,90,155,.12);border:1px solid rgba(232,90,155,.4);border-radius:2px;margin:6px 0 20px!important}
-
-    .fd-close{text-align:center}
-    .fd-close h2{font-size:clamp(34px,5.6vw,60px)}
-    .fd-close .fd-fine{margin-top:26px}
-    .fd-sign{font-family:Gloock,serif;font-style:italic;font-size:26px;color:var(--pink);margin-top:30px}
-    .fd-backlink{margin-top:10px;font-size:13px;letter-spacing:.4px}
-    .fd-backlink a{color:var(--choc-meta)}
-    .fd-backlink a:hover{color:var(--pink)}
-
-    @media(max-width:860px){
-      .fd-thesis-grid,.fd-duo,.fd-door-img,.fd-door-flip{grid-template-columns:1fr}
-      .fd-door-flip img{order:0}
-      .fd-door-img img{max-height:340px}
-      .fd-fig{max-width:340px}
-      .fd-stats{grid-template-columns:1fr 1fr}
-      .fd-stat:nth-child(2){border-right:0}
-      .fd-stat:nth-child(-n+2){border-bottom:1px solid rgba(232,90,155,.3)}
-    }
-    @media(max-width:560px){
-      .fd-quiz,.fd-result{padding:30px 22px 26px}
-      .fd-card{padding:28px 22px}
-      .fd-block{padding:58px 0}
-    }
-      /* ── Find Your Door · editorial routing pass ── */
-    .fd-hero h1{font-size:clamp(56px,8vw,112px);line-height:.86;letter-spacing:0;max-width:10ch}
-    .fd-hero{padding-top:clamp(80px,10vw,150px);padding-bottom:clamp(90px,11vw,160px)}
-    .fd-stalls{border-top:1px solid var(--e-ink)}
-    .fd-stall{border-radius:0!important;border-left:0!important;border-right:0!important}
-    .fd-door,.fd-card{border-radius:0!important}
-    .fd-card-dark{border-radius:0!important}
-    .fd-door-img{box-shadow:none!important}
-    .fd-stats{border-top:1px solid var(--e-ink);border-bottom:1px solid var(--e-ink)}
-    @media(max-width:640px){.fd-hero h1{font-size:clamp(48px,14vw,72px)}}
-  .fd-hero{position:relative}
-  .fd-hero::after{content:"01 / ROUTING";position:absolute;right:0;top:clamp(45px,7vw,105px);font:700 10px/1 Jost,sans-serif;letter-spacing:2px;color:var(--gold-deep);writing-mode:vertical-rl}
-  .fd-hero h1{font-size:clamp(52px,6.3vw,90px);line-height:.9;max-width:11ch}
-  .fd-lede{max-width:760px}
-  .fd-lede-small{font-size:16px!important;line-height:1.65!important;max-width:650px;color:var(--choc-mute)!important;margin-top:-6px!important}
-  .fd-section-kicker{display:block;font:700 10px/1.2 Jost,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
-  .fd-result{border-top-width:4px}
-  .fd-r-btn{min-height:52px;padding-inline:24px}
-  @media(max-width:640px){.fd-hero::after{display:none}.fd-hero h1{font-size:clamp(48px,12.5vw,68px)}}
-  /* ── 8 Oct 2026: compact stall strip + scannable door tiles ── */
-  .fd .fd-stalls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:2px solid #E891B6!important;border-radius:24px 8px 24px 8px;background:var(--white);overflow:hidden;box-shadow:var(--tdie-shadow)}
-  .fd .fd-stall{border:0!important;border-radius:0!important;box-shadow:none!important;border-left:1px solid rgba(232,145,182,.45)!important;padding:20px 18px;gap:6px;background:transparent}
-  .fd .fd-stall:first-child{border-left:0!important}
-  .fd .fd-stall-t{font-size:19px}
-  .fd .fd-stall-p{font-size:13.5px;line-height:1.5}
-  .fd .fd-stall.open{background:rgba(255,215,233,.35)}
-  .fd .fd-door-k{margin:34px 0 12px}
-  .fd .fd-duo{gap:16px}
-  .fd .fd-tile{display:flex;flex-direction:column;background:var(--white);border:2px solid #E891B6;border-radius:24px 8px 24px 8px;padding:24px 26px;box-shadow:var(--tdie-shadow)}
-  .fd .fd-tile-p{background:linear-gradient(125deg,#FFD7E9,#F1EAFB)}
-  .fd .fd-tile h3{font-family:Gloock,serif;font-weight:500;font-size:26px;line-height:1.1;margin:0 0 6px;color:var(--choc)}
-  .fd .fd-tp{font-size:13.5px;color:var(--choc-meta);margin:0 0 10px}
-  .fd .fd-tp b{font-family:Gloock,serif;font-size:30px;font-weight:400;color:var(--pink-deep,#C2185B);margin-right:2px}
-  .fd .fd-tl{font-size:17px;line-height:1.4;font-weight:500;color:var(--choc);margin:0 0 14px}
-  .fd .fd-tn{font-size:14.5px;line-height:1.6;color:var(--choc-soft);margin:0 0 14px}
-  .fd .fd-chips{list-style:none;padding:0;margin:0 0 14px;display:block;font-size:14.5px;line-height:1.6;color:var(--choc-soft)}
-  .fd .fd-chips li{display:inline;font-size:14.5px;padding:0;background:none!important;border:0;color:var(--choc-soft)}.fd .fd-chips li:not(:last-child)::after{content:" · "}
-  .fd .fd-tile-p .fd-chips li{background:rgba(255,255,255,.7)}
-  .fd .fd-chips li.hot{font-weight:700;color:var(--choc)}
-  .fd .fd-fit{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:0 0 18px;font-size:14px;line-height:1.45}
-  .fd .fd-fit dt{font-weight:700;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink);padding-top:2px}
-  .fd .fd-fit dt:nth-of-type(2){color:var(--choc-meta)}
-  .fd .fd-fit dd{margin:0;color:var(--choc-soft)}
-  .fd .fd-tile .btn{align-self:flex-start;margin-top:auto}
-  .fd .fd-tile .fd-row .btn{margin-top:0}
-  .fd .fd-hero .wys-ann{margin:0 auto 26px;text-align:left}
-  .fd .fd-tile-img{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start;margin-top:22px}
-  .fd .fd-tile-img img{width:100%;height:auto;border-radius:14px 4px 14px 4px;display:block}
-  .fd .fd-tile-img .fd-door-k{margin:0 0 8px}
-  .fd .fd-quote{font-family:Gloock,serif;font-style:italic;font-size:17px;line-height:1.4;color:var(--choc);border-left:2px solid var(--pink);padding-left:12px;margin:0 0 14px}
-  .fd .fd-quote span{display:block;font-family:Jost,sans-serif;font-style:normal;font-size:12px;color:var(--choc-meta);margin-top:4px}
-  .fd .fd-tile-aff{margin-top:22px;max-width:none}
-  .fd .fd-tile-aff .fd-door-k{margin:0 0 8px}
-  @media(max-width:980px){.fd .fd-stalls{grid-template-columns:repeat(3,minmax(0,1fr))}.fd .fd-stall:nth-child(4){border-left:0!important}.fd .fd-stall:nth-child(n+4){border-top:1px solid rgba(232,145,182,.45)!important}}
-  @media(max-width:860px){.fd .fd-duo{grid-template-columns:1fr}.fd .fd-tile-img{grid-template-columns:150px minmax(0,1fr);gap:18px}}
-  @media(max-width:600px){
-    .fd .fd-stalls{grid-template-columns:1fr}
-    .fd .fd-stall{border-left:0!important;border-top:1px solid rgba(232,145,182,.45)!important;padding:16px 18px}
-    .fd .fd-stall:first-child{border-top:0!important}
-    .fd .fd-tile{padding:20px 18px}
-    .fd .fd-tile-img{grid-template-columns:1fr}
-    .fd .fd-tile-img img{max-width:240px}
-    .fd .fd-tile .btn{align-self:stretch}
-  }
-</style>
-</PageLayout>
+  
+</TemplateLayout>
