@@ -1,6 +1,6 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-import "../styles/edit.css";
+// Questions, rebuilt 20 Nov 2026 on Jodie's Etsy template in the shared site style.
+import TemplateLayout from "../layouts/TemplateLayout.astro";
 import { membership as M, word } from "../data/facts.js";
 
 // Annual plans expressed as "months' price for twelve", computed from facts.js
@@ -24,7 +24,7 @@ const groups = [
       { q: "What about the membership?",
         a: `Different, because it's a subscription rather than a purchase. Both start with a ${M.trial} and you can cancel from inside the app at any time. Canceling stops the next payment; it doesn't refund one you've already made.` },
       { q: "Does BAMI have a guarantee?",
-        a: "Yes, and it's the one exception. If within 21 days of your cohort start date you've submitted your completed Phase I business asset and you decide BAMI isn't right for you, email me and your payment is refunded in full within 10 business days. No explanation needed, and it won't count against you if you apply for a later cohort. The Phase I submission is the condition, Phase I is where you settle your identity, your model and your customer, so if you've done that and it still isn't right, it genuinely isn't. Without a submission there's nothing to assess, and the refund comes out of a seat someone else wanted. On a payment plan, any instalment already taken is returned and the rest are canceled. If I cancel or move a cohort, you choose a full refund or a seat in the next one at the price you paid." },
+        a: "Yes, and it's the one exception. If within 21 days of your cohort start date you've submitted your completed Phase I business asset and you decide BAMI isn't right for you, email me and your payment is refunded in full within 10 business days. No explanation needed, and it won't count against you if you apply for a later cohort. The Phase I submission is the condition, Phase I is where you settle your identity, your model and your customer, so if you've done that and it still isn't right, it genuinely isn't. Without a submission there's nothing to assess, and the refund comes out of a seat someone else wanted. On a payment plan, any installment already taken is returned and the rest are canceled. If I cancel or move a cohort, you choose a full refund or a seat in the next one at the price you paid." },
       { q: "Can I split the cost of The Weekend Ecosystem™?",
         a: "Yes. It's $97 once or 3 payments of $33.33, both at checkout, with every future update included either way." },
       { q: "Where do I get what I bought?",
@@ -80,112 +80,55 @@ const groups = [
       { q: "How much time does this actually take?",
         a: "Depends what you're building. The Weekend Ecosystem™ is designed to be finished in two days. The membership moves at whatever pace you set. BAMI assumes four focused hours a week across twelve weeks." },
       { q: "Do I need to be technical?",
-        a: "No. AI does the heavy construction throughout. You make the decisions in plain English, and the courses assume you have never opened a code editor." },
+        a: "No. AI does the heavy construction throughout. You make the decisions in plain English, and the courses assume you've never opened a code editor." },
     ],
   },
 ];
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 ---
-<PageLayout
-  bare
-  title="Questions"
-  description="Refunds, delivery, membership tiers, affiliate links, and how the work actually runs at The Digital Income Edit™."
->
-  <!-- HERO -->
-  <section class="fq-hero" aria-labelledby="fq-h">
-    <div class="e-wrap fq-hero-grid">
-      <div class="e-rise">
-        <p class="e-kick">Questions</p>
-        <h1 class="e-d1" id="fq-h">The things worth <em>knowing first.</em></h1>
-      </div>
-      <div class="fq-hero-side e-rise e-rise-2">
-        <p class="e-lede">Buying, billing, what's included where, and how the affiliate side works. If yours isn't here, email me.</p>
-        <nav aria-label="Question topics">
-          <ol class="fq-toc">
-            {groups.map((g, i) => (
-              <li><a href={`#${slug(g.label)}`}><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>{g.label}</a></li>
-            ))}
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </section>
+<TemplateLayout title="Questions" description="Refunds, delivery, membership tiers, affiliate links, and how the work actually runs at The Digital Income Edit™." stickyHref="mailto:hello@thedigitalincomeedit.com" stickyLabel="Email me">
 
-  {groups.map((g, i) => (
-    <section class={`fq-block ${i % 2 === 0 ? "e-white" : ""}`} id={slug(g.label)} aria-labelledby={`${slug(g.label)}-h`}>
-      <div class="e-wrap fq-grid">
-        <div class="fq-label">
-          <p class="e-credit"><b>{String(i + 1).padStart(2, "0")}</b> · of {groups.length}</p>
-          <h2 class="e-d3" id={`${slug(g.label)}-h`}>{g.label}</h2>
-        </div>
-        <div class="fq-list">
-          {g.qs.map((item) => (
-            <div class="fq-q">
-              <h3>{item.q}</h3>
-              {item.html ? <p set:html={item.html} /> : <p>{item.a}</p>}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
+<section class="hh">
+ <div class="wrap hh-grid fq2-hh">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">Ask<b class="big">me</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">Questions &amp; billing</p>
+   <h1>The things worth <span class="scr">knowing first.</span></h1>
+   <p class="what">Buying, billing, what's included where, and how the affiliate side works. <b>If yours isn't here, email&nbsp;me.</b></p>
+   <a class="btn buy" href="mailto:hello@thedigitalincomeedit.com">Email me <span class="ar">→</span></a>
+   <p class="see">hello@thedigitalincomeedit.com</p>
+  </div>
+  <nav class="card dash fq2-toc" aria-label="Question topics">
+   <p class="pn">Jump to</p>
+   <ol>{groups.map((g, i) => <li><a href={`#${slug(g.label)}`}><span class="glit">{String(i + 1).padStart(2, "0")}</span>{g.label}<span class="ar">→</span></a></li>)}</ol>
+  </nav>
+ </div>
+</section>
 
-  <!-- CLOSE -->
-  <section class="e-sec fq-close" aria-labelledby="fq-close-h">
-    <div class="e-wrap fq-grid">
-      <div class="fq-label">
-        <p class="e-kick">Contact</p>
-      </div>
-      <div>
-        <h2 class="e-d2" id="fq-close-h">Still stuck?</h2>
-        <p class="fq-sublead">Email me and a person answers.</p>
-        <p class="fq-mail"><a class="e-link" href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
-        <div class="e-actions fq-next">
-          <a class="e-btn" href="/resources/find-your-door">Find Your Door <span aria-hidden="true">→</span></a>
-          <a class="e-link" href="/shop">See everything I sell, free things first →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</PageLayout>
+{groups.map((g, i) => (
+ <section class={`sec ${i % 2 === 0 ? "wash" : ""} fq2-sec`} id={slug(g.label)}>
+  <div class="wrap">
+   <p class="kick">{String(i + 1).padStart(2, "0")} of {groups.length}</p>
+   <h2 class="h2"><span class="scr">{g.label}</span></h2>
+   <div class="faq">{g.qs.map((item, k) => <div class="qa"><span class="n">{String(k+1).padStart(2,'0')}</span><div><h3>{item.q}</h3>{item.html ? <p set:html={item.html} /> : <p>{item.a}</p>}</div></div>)}</div>
+  </div>
+ </section>
+))}
 
-<style>
-  .fq-hero{padding:clamp(48px,7vw,104px) 0 clamp(56px,7vw,96px)}
-  .fq-hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,6vw,96px);align-items:end}
-  .fq-hero .e-d1{margin:0;max-width:9ch}
-  .fq-hero .e-d1 em{display:block}
-  .fq-hero .e-lede{margin:0 0 24px}
-  .fq-toc{list-style:none;margin:0;padding:0;border-top:1px solid var(--e-ink)}
-  .fq-toc li{border-bottom:1px solid var(--e-line)}
-  .fq-toc a{display:flex;align-items:center;gap:16px;min-height:48px;padding:6px 0;font-weight:600;font-size:15.5px;color:var(--e-ink);text-decoration:none;transition:color .2s}
-  .fq-toc a span{font-family:var(--e-serif);font-weight:600;font-size:15px;color:var(--e-pink-t);min-width:22px}
-  .fq-toc a:hover{color:var(--e-pink-t)}
-
-  .fq-block{padding:clamp(56px,7vw,104px) 0;border-top:1px solid var(--e-line);scroll-margin-top:72px}
-  .fq-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,6vw,96px);align-items:start}
-  .fq-label{position:sticky;top:112px}
-  .fq-label .e-credit{margin:0 0 12px}
-  .fq-label h2{margin:0}
-  .fq-list{border-top:1px solid var(--e-ink)}
-  .fq-q{padding:26px 0 28px;border-bottom:1px solid var(--e-line)}
-  .fq-q h3{font-size:clamp(21px,2vw,25px);line-height:1.22;margin:0 0 10px}
-  .fq-q p{font-size:16.5px;line-height:1.72;color:var(--e-ink-2);margin:0;max-width:40em}
-
-  .fq-close{border-top:1px solid var(--e-line)}
-  .fq-close .e-d2{margin-bottom:12px}
-  .fq-sublead{font-size:18px;color:var(--e-ink-2);margin:0 0 6px}
-  .fq-mail{margin:0 0 36px}
-  .fq-mail .e-link{font-size:clamp(18px,2vw,22px);overflow-wrap:anywhere}
-  .fq-back{margin:0;padding-top:20px;border-top:var(--e-hair)}
-
-  @media (max-width:900px){
-    .fq-hero-grid,.fq-grid{grid-template-columns:1fr}
-    .fq-hero-grid{align-items:start}
-    .fq-label{position:static}
-    .fq-close .fq-label{display:none}
-  }
-  @media (prefers-reduced-motion:reduce){.fq-toc a{transition:none}}
-  .fq-next{margin-top:22px;align-items:center;flex-wrap:wrap}
-  .fq-next .e-btn{min-height:52px}
-</style>
+<section class="sec wash">
+ <div class="wrap">
+  <div class="card dash fq2-close" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">Still<b class="big">stuck?</b></span>
+   <p class="kick">Contact</p>
+   <h2 class="h2">Email me and <span class="scr">a person answers.</span></h2>
+   <p><a class="fq2-mail" href="mailto:hello@thedigitalincomeedit.com">hello@thedigitalincomeedit.com</a></p>
+   <div class="fq2-acts">
+    <a class="btn buy" href="/resources/find-your-door">Find Your Door <span class="ar">→</span></a>
+    <a class="btn" href="/shop">See the shop <span class="ar">→</span></a>
+   </div>
+  </div>
+ </div>
+</section>
+</TemplateLayout>
