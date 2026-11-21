@@ -271,3 +271,28 @@
 .sm2-h{font:400 20px Gilda,serif;letter-spacing:.08em;text-transform:uppercase;margin:24px 0 4px!important}
 .sm2-btn{display:flex;width:100%;justify-content:center;margin-top:20px}
 .bp2-parts .qa p{margin:0}
+/* Weekend Build Challenge */
+.ml-sink{position:absolute;width:0;height:0;border:0;visibility:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wb2-hh{align-items:center}
+.wb2-form{background:#fff;max-width:520px;margin:18px auto 0;padding:24px 22px 18px;text-align:center}
+.tdie-t .wb2-form input[type=text],.tdie-t .wb2-form input[type=email]{width:100%;min-height:50px;padding:0 15px;margin:0 0 10px;border:1px solid rgba(214,46,115,.45)!important;border-radius:0!important;font:15px Poppins!important;box-sizing:border-box;background:#fff!important}
+.tdie-t .wb2-form button{width:100%;min-height:52px;background:#fff!important;color:var(--ink)!important;-webkit-text-fill-color:var(--ink);border:3px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;border-radius:0!important;font:600 12px Montserrat!important;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 16px rgba(214,46,115,.2)!important}
+.wb2-form .done{font:400 20px/1.4 Gilda,serif;color:var(--hot)}
+.wb2-fig{margin:0;position:relative}
+.wb2-fig .hh-ph img{aspect-ratio:1200/799!important;height:auto;transform:none!important}
+.wb2-note{background:#fff;display:flex;flex-direction:column;gap:4px;max-width:300px;padding:18px 20px;margin:-40px 0 0 auto;position:relative;font-size:14px}
+.wb2-nt{font:400 19px Gilda,serif}
+.wb2-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:30px}
+.wb2-days .box{background:#fff;padding:52px 16px 22px;text-align:center;position:relative;margin-top:30px}
+.wb2-days .num{position:absolute;top:-30px;left:50%;transform:translateX(-50%)}
+.wb2-days h3{font-size:19px;margin:6px 0 8px}
+.wb2-days p{font-size:14px}
+.wb2-q{font:400 22px/1.5 Gilda,serif}
+.wb2-rv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px;margin:28px auto 0}
+.wb2-stars{display:block;color:var(--hot);letter-spacing:.2em;margin:0 0 8px}
+@media (max-width:980px){.wb2-days{grid-template-columns:repeat(2,minmax(0,1fr))}.wb2-rv{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.wb2-days{grid-template-columns:minmax(0,1fr)}.wb2-note{margin:-30px 10px 0 auto}}
+.tdie-t .ww2-close .tx .wb2-q{font:400 24px/1.5 Gilda,serif!important;color:var(--ink)}
+.wb2-rv{align-items:start}
+@media (max-width:600px){.tdie-t .ww2-close .tx .wb2-q{font-size:20px!important}}
