@@ -494,3 +494,38 @@
 .fd-fit dt{line-height:1.4}
 @media(max-width:400px){.tdie-t .fd .btn{letter-spacing:.1em;font-size:10.5px}.fd-send{padding:18px 12px}.fd-tile-img>img{max-width:220px}}
 @media(max-width:600px){.fd-fit{grid-template-columns:minmax(0,1fr);gap:2px}.fd-fit dd{margin-bottom:8px}}
+/* WYS Real Results */
+.rr2-hh{align-items:center}
+.rr2-six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rr2-six figure{margin:0;text-align:center}
+.rr2-ph img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border:4px solid transparent;border-image:url(/wys-sales/img/gl-hot.webp) 30 round}
+.rr2-six figcaption{font:600 10px Montserrat;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);margin-top:6px}
+.rr2-step{display:flex;align-items:center;justify-content:center;gap:10px;font:600 12px Montserrat;letter-spacing:.18em;text-transform:uppercase;margin:30px 0 16px}
+.rr2-step .glit{font:400 30px Gilda,serif}
+.rr2-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:980px;margin:0 auto}
+.rr2-three figure{margin:0;background:#fff;padding:16px 16px 18px}
+.rr2-three figcaption{display:flex;flex-direction:column;gap:4px;margin-top:12px;text-align:center}
+.rr2-three figcaption b{font:400 20px Gilda,serif;letter-spacing:.08em;text-transform:uppercase}
+.rr2-three figcaption span{font-size:13.5px;line-height:1.5}
+.rr2-becomes{font:400 44px Allison,cursive;color:var(--hot);text-align:center;margin:20px 0 0}
+.rr2-outs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+.rr2-out{background:#fff;padding:22px 20px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center}
+.rr2-out .rr2-step{margin:0 0 10px}
+.rr2-ex{font:600 10px Montserrat;letter-spacing:.16em;text-transform:uppercase;color:var(--hot);border:1px solid var(--hot);padding:4px 8px;margin-bottom:12px}
+.rr2-pins,.rr2-ig{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
+.rr2-pin img,.rr2-ig img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.rr2-ig img{aspect-ratio:4/5}
+.rr2-pin span{display:block;font-size:10.5px;line-height:1.35;margin-top:4px}
+.rr2-blog img{display:block;width:100%;height:auto;border:1px solid rgba(214,46,115,.3)}
+.rr2-note{font-size:13.5px;line-height:1.55;margin:12px 0}
+.rr2-out .btn{width:100%;margin-top:auto}
+.rr2-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1040px;margin:28px auto 0}
+.rr2-facts .card{background:#fff;padding:26px 24px;text-align:left}
+.rr2-facts h3{font:400 20px Gilda,serif;margin:8px 0}
+.rr2-facts p{font-size:14.5px;margin:0}
+.rr2-price{font-size:16px;margin:10px 0 18px}
+.rr2-price b{font:400 40px Gilda,serif;margin-right:6px}
+@media(max-width:980px){.rr2-outs,.rr2-facts{grid-template-columns:minmax(0,1fr)}.rr2-three{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.rr2-three figure{padding:8px}.rr2-three figcaption span{display:none}.rr2-out{max-width:420px;margin:0 auto;width:100%;box-sizing:border-box}}
+@media(max-width:520px){.rr2-three figcaption b{font-size:14px}}
+.tdie-t .rr2-becomes{font:400 48px/1 Allison,cursive!important}
+@media(max-width:520px){.rr2-three figcaption b{font-size:11px!important;letter-spacing:.04em}.rr2-pin span{display:none}}

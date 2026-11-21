@@ -1,16 +1,16 @@
 // The two looks the system built that are live on the Lifestyle blog.
 // Photos are the founder-approved Basic, Styled and Lifestyle images.
 // Pins, carousels and phone screens built from them are labeled "Example".
-import plaidBasic from '../lifestyle/pink-plaid-pumpkin-patch-outfit-basic.jpg';
-import plaidStyled from '../lifestyle/pink-plaid-pumpkin-patch-outfit-styled.jpg';
-import plaidLife from '../lifestyle/pink-plaid-pumpkin-patch-outfit-lifestyle.png';
-import ghostBasic from '../lifestyle/pink-ghost-coffee-bar-basic.jpg';
-import ghostStyled from '../lifestyle/pink-ghost-coffee-bar-styled.jpg';
-import ghostLife from '../lifestyle/pink-ghost-coffee-bar-lifestyle.png';
-import plaidBlogPhone from '../assets/wys/convert/blog-pink-plaid-pumpkin-patch-outfit-phone.jpg';
-import plaidBlogDesk from '../assets/wys/convert/blog-pink-plaid-pumpkin-patch-outfit-desktop.jpg';
-import ghostBlogPhone from '../assets/wys/convert/blog-pink-ghost-coffee-bar-phone.jpg';
-import ghostBlogDesk from '../assets/wys/convert/blog-pink-ghost-coffee-bar-desktop.jpg';
+import walkBasic from '../lifestyle/pink-winter-walk-warm-up-basic.jpg';
+import walkStyled from '../lifestyle/pink-winter-walk-warm-up-styled.jpg';
+import walkLife from '../lifestyle/pink-winter-walk-warm-up-lifestyle.jpg';
+import mantelBasic from '../lifestyle/pink-christmas-mantel-basic.jpg';
+import mantelStyled from '../lifestyle/pink-christmas-mantel-styled.jpg';
+import mantelLife from '../lifestyle/pink-christmas-mantel-lifestyle.jpg';
+import walkBlogPhone from '../assets/wys/convert/blog-pink-winter-walk-warm-up-phone.jpg';
+import walkBlogDesk from '../assets/wys/convert/blog-pink-winter-walk-warm-up-desktop.jpg';
+import mantelBlogPhone from '../assets/wys/convert/blog-pink-christmas-mantel-phone.jpg';
+import mantelBlogDesk from '../assets/wys/convert/blog-pink-christmas-mantel-desktop.jpg';
 import {WYS_ROOT} from './wys.js';
 
 // One place to change the call to action. The waitlist is closed (Jodie, 13 Oct 2026): every
@@ -47,37 +47,39 @@ export const WYS_LINKS = [
 
 const SITE = 'https://www.thedigitalincomeedit.com';
 
+// Swapped 20 Nov 2026 from the October Halloween and pumpkin patch looks to two current
+// winter looks the system built and published on the Lifestyle blog.
 export const liveLooks = [
  {
-  slug: 'pink-ghost-coffee-bar',
-  name: 'The Pink Ghost Coffee Bar',
-  short: 'Pink Ghost Coffee Bar',
-  category: 'Home decor · Halloween',
-  url: `${SITE}/lifestyle/pink-ghost-coffee-bar`,
-  overlay: ['Pink Ghost', 'Coffee Bar'],
-  blogPhone: ghostBlogPhone,
-  blogDesk: ghostBlogDesk,
-  blogLine: 'Pink ghosts, a BOO sign, pink jack-o-lanterns and a flock of paper bats. 6 linked finds and how to style them.',
+  slug: 'pink-christmas-mantel',
+  name: 'The Pink Christmas Mantel',
+  short: 'Pink Christmas Mantel',
+  category: 'Home decor · Christmas',
+  url: `${SITE}/lifestyle/pink-christmas-mantel`,
+  overlay: ['Pink Christmas', 'Mantel'],
+  blogPhone: mantelBlogPhone,
+  blogDesk: mantelBlogDesk,
+  blogLine: 'A pink cedar garland, knitted stockings, a mini pink tree, pink ornaments and glass candlesticks. 5 linked finds and how to style them.',
   photos: {
-   basic: {src: ghostBasic, alt: 'Pink ghost figurines, printed flameless candles and pink and white jack-o-lanterns lined up on a wood sideboard against a plum wall with paper bats'},
-   styled: {src: ghostStyled, alt: 'A pink Halloween coffee bar on a painted sideboard with ghosts, a BOO sign, pink gauze, candy jars and paper bats on the wall'},
-   lifestyle: {src: ghostLife, alt: 'Tommy Kate laughing as she sticks pink and black paper bats on her kitchen backsplash, pink ghosts and jack-o-lanterns on the counter'}
+   basic: {src: mantelBasic, alt: 'A pink cedar garland, four pink knitted stockings, a pink mini Christmas tree, pink ornaments and pink glass candlestick holders on deep green painted floorboards'},
+   styled: {src: mantelStyled, alt: 'A white brick fireplace mantel dressed with a pink garland, pink knitted stockings, a mini pink tree, ornaments and glass candlesticks'},
+   lifestyle: {src: mantelLife, alt: 'Tommy Kate hanging a pink knitted stocking on a mantel decorated with a pink garland, with a golden retriever asleep by the fireplace'}
   }
  },
  {
-  slug: 'pink-plaid-pumpkin-patch-outfit',
-  name: 'The Pink Plaid Pumpkin Patch Outfit',
-  short: 'Pink Plaid Pumpkin Patch',
-  category: 'Clothing · Fall',
-  url: `${SITE}/lifestyle/pink-plaid-pumpkin-patch-outfit`,
-  overlay: ['Pink Plaid', 'Pumpkin Patch'],
-  blogPhone: plaidBlogPhone,
-  blogDesk: plaidBlogDesk,
-  blogLine: 'A pink plaid shacket, straight leg jeans, white platform sneakers, a purple tote and a green pom beanie. 6 linked finds.',
+  slug: 'pink-winter-walk-warm-up',
+  name: 'The Pink Winter Walk Warm-Up',
+  short: 'Pink Winter Walk',
+  category: 'Clothing · Winter',
+  url: `${SITE}/lifestyle/pink-winter-walk-warm-up`,
+  overlay: ['Pink Winter', 'Walk Warm-Up'],
+  blogPhone: walkBlogPhone,
+  blogDesk: walkBlogDesk,
+  blogLine: 'A hot pink puffer vest, a pink beanie and scarf set, furry pink boots, brown leggings, a lavender crossbody and a pink Stanley. 6 linked finds.',
   photos: {
-   basic: {src: plaidBasic, alt: 'Flat lay on a wood floor of a pink plaid shacket, black crop top, light wash jeans, white sneakers, a purple tote and a green pom beanie'},
-   styled: {src: plaidStyled, alt: 'The pink plaid shacket, jeans, purple tote and green beanie hanging on a peg rail above white sneakers, pumpkins and apples'},
-   lifestyle: {src: plaidLife, alt: 'Tommy Kate crouching at a muddy pumpkin patch holding a pumpkin, wearing the pink plaid shacket, jeans, white sneakers and green beanie'}
+   basic: {src: walkBasic, alt: 'Flat lay of a hot pink puffer vest, pink beanie, scarf, gloves, ear muffs and socks, pink furry boots, brown leggings, a lavender crossbody and a pink Stanley'},
+   styled: {src: walkStyled, alt: 'A mudroom entryway with a hot pink puffer vest on a hook, a lavender crossbody, pink beanie and scarf set, furry pink boots and a pink Stanley ready for a winter walk'},
+   lifestyle: {src: walkLife, alt: 'Tommy Kate walking a snowy lane with a golden retriever, wearing a hot pink puffer vest, pink beanie and scarf, brown leggings and furry pink boots'}
   }
  }
 ];

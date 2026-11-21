@@ -1,72 +1,93 @@
 ---
+// Jodie's Real Results for The While-You-Sleep Storefront™, rebuilt 20 Nov 2026 on
+// Jodie's Etsy template. Shows two current looks the system built (wys-live.js liveLooks).
 import {Image} from 'astro:assets';
-import WysFrame from '../../../components/WysFrame.astro';
-import WysLinks from '../../../components/WysLinks.astro';
-import WysCta from '../../../components/WysCta.astro';
-import WysPin from '../../../components/WysPin.astro';
-import WysLookFlow from '../../../components/WysLookFlow.astro';
-import WysOffer from '../../../components/WysOffer.astro';
-import {liveLooks, roles} from '../../../data/wys-live.js';
-const [ghost, plaid] = liveLooks;
+import TemplateLayout from '../../../layouts/TemplateLayout.astro';
+import WysClock from '../../../components/WysClock.astro';
+import {liveLooks, roles, WYS_CTA} from '../../../data/wys-live.js';
+const [mantel, walk] = liveLooks;
+const facts = [
+ ['A website, not a PDF', 'A website that gets regular updates and never goes stale, with new affiliate brand automations on the way.'],
+ ['15 minutes to start', 'The Quick Start takes about 15 minutes. Customizing it takes about an hour.'],
+ ['Built on Claude', 'Runs on your own Claude account. ChatGPT version on the way.'],
+ ['Fully automatic', 'Every pin and carousel schedules itself. I recommend checking your Metricool calendar once a day.'],
+ ['Themed Idea Lists', 'Each pin links to the themed Amazon Idea List its products came from. Many looks live in each list.'],
+ ['Your computer stays on', 'Your computer needs to be on and signed into Amazon while it works overnight.'],
+];
 ---
-<WysFrame focus current="inside" title="Jodie’s Real Results: The While-You-Sleep Storefront™ Running for Real | The Digital Income Edit™" description="Real results, not mockups. Every piece of two real looks The While-You-Sleep Storefront™ built on my own storefront: 3 photos, the Pinterest pins, a blog post and an Instagram carousel for each." ogImage={plaid.photos.styled.src.src}>
- <header class="wc-hero">
-  <div class="wys-wrap">
-   <div class="wc-head" style="margin-bottom:0">
-    <p class="wc-kicker">Free look inside the system · running for real</p>
-    <h1 class="wh-name">The <span class="wh-nb">While-You-Sleep</span> Storefront™</h1>
-    <p class="wh-sub">Jodie’s real results. <em>One real night’s work.</em></p>
-    <p class="wc-hero-line" style="margin-inline:auto;max-width:44ch">Not mockups. Two real looks it built on its own for my storefront, and every piece of each: 3 photos, the Pinterest pins, a blog post and an Instagram carousel.</p>
-    <WysLinks current="inside" align="center" besideCta/>
-    <WysCta timedNote/>
-   </div>
-   <div class="wc-six">{[ghost, plaid].flatMap((look) => roles.map((r) => <figure>{r.key === 'basic' ? <WysPin look={look} role="basic" sizes="(max-width:900px) 30vw, 180px" eager/> : <Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 180px" loading="eager"/>}<figcaption>{r.name}</figcaption></figure>))}</div>
+<TemplateLayout title="Jodie’s Real Results: The While-You-Sleep Storefront™ Running for Real" description="Real results, not mockups. Every piece of two real looks The While-You-Sleep Storefront™ built on my own storefront: 3 photos, the Pinterest pins, a blog post and an Instagram carousel for each." ogImage={walk.photos.styled.src.src} stickyHref={WYS_CTA.href} stickyLabel="See the storefront">
+<WysClock/>
+<section class="hh">
+ <div class="wrap hh-grid rr2-hh">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">Real<b class="big">results</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">Free look inside the system · running for real</p>
+   <h1>The While-You-Sleep Storefront™ <span class="scr">One real night's work.</span></h1>
+   <p class="what">Not mockups. <b>Two real looks it built on its own for my storefront, and every piece of each: 3 photos, the Pinterest pins, a blog post and an Instagram carousel.</b></p>
+   <a class="btn buy" href={WYS_CTA.href} data-wys-cta><span data-wys-cta-label>{WYS_CTA.label}</span> <span class="ar">→</span></a>
+   <p class="see"><a href="/lifestyle">See it live on the Lifestyle blog</a></p>
   </div>
- </header>
+  <div class="rr2-six">{[mantel, walk].flatMap((look) => roles.map((r) => <figure><div class="rr2-ph"><Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[200, 360]} sizes="(max-width:900px) 30vw, 170px" loading="eager"/></div><figcaption>{r.name}</figcaption></figure>))}</div>
+ </div>
+</section>
 
- {liveLooks.map((look, i) => <section class={`wc-section ${i ? '' : 'wc-flow-band'}`} id={look.slug}>
-  <div class="wys-wrap">
-   <div class="wc-look-head">
-    <p class="wc-kicker">Look {i + 1} of 2 · {look.category}</p>
-    <h2>{look.name}</h2>
-    <p>The blog post is live on The Digital Income Edit™. The pins and carousel are built from the same three photos and shown here as examples.</p>
-    <a class="wc-button wc-button-small" href={look.url} target="_blank" rel="noopener">Open the live blog post <span aria-hidden="true">↗</span></a>
+{liveLooks.map((look, i) => <>
+ <div class="band"><svg class="spk" style="left:18%"><use href="#sp"/></svg><h2>Look {i + 1} of 2</h2><svg class="spk sm" style="right:19%"><use href="#sp"/></svg></div>
+ <section class={`sec ${i ? '' : 'wash'}`} id={look.slug}>
+  <div class="wrap">
+   <p class="kick">{look.category}</p>
+   <h2 class="h2">{look.name.replace(/^The /, 'The ')} <span class="scr">start to finish.</span></h2>
+   <div class="lead"><p>The blog post is live on The Digital Income Edit™. The pins and carousel are built from the same three photos and shown here as examples.</p></div>
+   <p class="rr2-step"><span class="glit">1</span> Three photos, always in this order</p>
+   <div class="rr2-three">{roles.map((r) => <figure class="card dash"><div class="rr2-ph"><Image src={look.photos[r.key].src} alt={look.photos[r.key].alt} widths={[280, 440]} sizes="(max-width:700px) 80vw, 280px"/></div><figcaption><b>{r.name}</b><span>{r.note}</span></figcaption></figure>)}</div>
+   <p class="rr2-becomes">becomes</p>
+   <div class="rr2-outs">
+    <div class="card dash rr2-out">
+     <p class="rr2-step"><span class="glit">2</span> 5 Pinterest pins</p>
+     <span class="rr2-ex">Example</span>
+     <div class="rr2-pins">{roles.map((r) => <div class="rr2-pin"><Image src={look.photos[r.key].src} alt="" widths={[160, 260]} sizes="110px"/><span>{look.short} · {r.name}</span></div>)}</div>
+     <p class="rr2-note">Each pin links to the themed Amazon Idea List its products came from. The Roundup shows every piece together under one headline, and the Found It pin shows the look’s most interesting piece.</p>
+    </div>
+    <div class="card dash rr2-out">
+     <p class="rr2-step"><span class="glit">3</span> 1 blog post</p>
+     <span class="rr2-ex">Live page</span>
+     <a class="rr2-blog" href={look.url} target="_blank" rel="noopener"><Image src={look.blogDesk} alt={`Screenshot of the live blog post ${look.name}`} widths={[420, 760]} sizes="(max-width:800px) 80vw, 340px"/></a>
+     <p class="rr2-note">{look.blogLine}</p>
+     <a class="btn" href={look.url} target="_blank" rel="noopener">Open the live post <span class="ar">↗</span></a>
+    </div>
+    <div class="card dash rr2-out">
+     <p class="rr2-step"><span class="glit">4</span> 1 Instagram carousel</p>
+     <span class="rr2-ex">Example</span>
+     <div class="rr2-ig">{roles.map((r) => <Image src={look.photos[r.key].src} alt="" widths={[160, 260]} sizes="100px"/>)}</div>
+     <p class="rr2-note">Swipe order: Basic, Styled, Lifestyle.</p>
+    </div>
    </div>
-   <WysLookFlow look={look}/>
-  </div>
- </section>)}
-
- <section class="wys-wrap wc-section">
-  <div class="wc-head">
-   <p class="wc-kicker">What you’re getting</p>
-   <h2>Fifteen minutes tonight.<br/><em>Hands off after that.</em></h2>
-  </div>
-  <div class="wc-facts">
-   <div><h3>A website, not a PDF</h3><p>A website that gets regular updates and never goes stale, with new affiliate brand automations on the way.</p></div>
-   <div><h3>15 minutes to start</h3><p>The Quick Start takes about 15 minutes. Customizing it takes about an hour.</p></div>
-   <div><h3>Built on Claude</h3><p>Runs on your own Claude account. ChatGPT version on the way.</p></div>
-   <div><h3>Fully automatic</h3><p>Every pin and carousel schedules itself. I recommend checking your Metricool calendar once a day.</p></div>
-   <div><h3>Themed Idea Lists</h3><p>Each pin links to the themed Amazon Idea List its products came from. Many looks live in each list.</p></div>
-   <div class="wc-fact-must"><h3>Your computer stays on</h3><p>Your computer needs to be on and signed into Amazon while it works overnight.</p></div>
-  </div>
-  <WysCta timedNote/>
- </section>
-
- <section class="wc-section" style="background:#fff">
-  <div class="wys-wrap">
-   <div class="wc-head">
-    <p class="wc-kicker">The offer</p>
-    <h2>Members first.<br/><em>Then everyone.</em></h2>
-   </div>
-   <WysOffer/>
   </div>
  </section>
+</>)}
 
- <div class="wc-final" style="background-image:url(/images/brand/gl-tile.webp)">
-  <div class="wc-final-card">
-   <p class="wc-kicker">The While-You-Sleep Storefront™</p>
-   <h2>Go to bed.<br/><em>Wake up posted.</em></h2>
-   <WysCta note="Get the email the moment it opens."/>
+<section class="sec wash">
+ <div class="wrap">
+  <p class="kick">What you’re getting</p>
+  <h2 class="h2">Fifteen minutes tonight. <span class="scr">Hands off after that.</span></h2>
+  <div class="rr2-facts">{facts.map(([t, p], k) => <div class="card dash"><span class="hm-lab">{String(k + 1).padStart(2, '0')}</span><h3>{t}</h3><p>{p}</p></div>)}</div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <div class="p42 dash ww2-close" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">One<b class="big">payment</b></span>
+   <div class="ph"><Image src={walk.photos.lifestyle.src} alt={walk.photos.lifestyle.alt} widths={[320, 560]} sizes="(max-width:800px) 80vw, 360px"/></div>
+   <div class="tx">
+    <p class="kick">The While-You-Sleep Storefront™</p>
+    <h2>Go to bed.</h2>
+    <span class="scr">Wake up posted.</span>
+    <p class="rr2-price"><b class="glit">$37</b> one payment</p>
+    <a class="btn buy" href={WYS_CTA.href} data-wys-cta><span data-wys-cta-label>{WYS_CTA.label}</span> <span class="ar">→</span></a>
+   </div>
   </div>
  </div>
-</WysFrame>
+</section>
+</TemplateLayout>
