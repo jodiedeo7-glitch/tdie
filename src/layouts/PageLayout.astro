@@ -2,8 +2,8 @@
 import visualStyles from "../styles/tdie-visual.css?inline";
 import SiteNav from "../components/SiteNav.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import HomeChromeHeader from "../components/HomeChromeHeader.astro";
-import HomeChromeFooter from "../components/HomeChromeFooter.astro";
+import HomeChromeHeader from "../components/TemplateNav.astro";
+import HomeChromeFooter from "../components/TemplateFooter.astro";
 import "../styles/global.css";
 import "../styles/sales-typography.css";
 // Self-host brand fonts so external font requests cannot change the layout.
@@ -121,13 +121,13 @@ const jsonLd = {
   <style>.no-js .reveal{opacity:1;transform:none}</style>
 
   <slot name="before-nav" />
-  {homeChrome || (visualRefresh && !boutiqueHeader) ? <HomeChromeHeader /> : <SiteNav boutique={boutiqueHeader} />}
+  <HomeChromeHeader />
 
   <main class={bare ? "e-page" : wide ? "page-wrap wide" : "page-wrap"}>
     <slot />
   </main>
 
-  {homeChrome || visualRefresh ? <HomeChromeFooter /> : <SiteFooter />}
+  <HomeChromeFooter />
 
   <script>
     document.body.classList.remove('no-js');

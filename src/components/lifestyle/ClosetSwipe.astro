@@ -88,16 +88,16 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 <style is:global>
 .cs-band{padding:48px 0}
 .cs-picker{position:relative;grid-column:1;grid-row:3;min-width:0;margin:0 0 16px;padding:14px 16px 6px;border-radius:20px;border:4px solid transparent;background:url(/images/brand/sparkle-glow.webp) right -150px top -110px/420px 280px no-repeat padding-box,linear-gradient(#FFF1F7,#FFF1F7) padding-box,url(/images/brand/gl-hot.webp) 0 0/160px border-box;box-shadow:0 20px 34px -22px rgba(150,20,70,.7)}
-.life .cs-band .cs-picker-title{margin:0 0 10px;font:600 24px/1.1 Gloock,Georgia,serif;font-family:Gloock,Georgia,serif!important;font-size:24px!important;color:#1A1417}
+.life .cs-band .cs-picker-title{margin:0 0 10px;font:600 24px/1.1 Gilda,Georgia,serif;font-family:Gilda,Georgia,serif!important;font-size:24px!important;color:#1A1417}
 .cs-picker-title span{color:#D62E73}
 .life .cs-band .cs-picker-sticker{position:absolute;top:14px;right:14px;margin:0;padding:6px 12px;border-radius:999px;background:#fff;box-shadow:0 0 0 2px #D62E73,0 8px 14px -8px rgba(110,10,50,.6);color:#D62E73;font:700 11px/1.2 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;transform:rotate(4deg);animation:cs-bob 2.4s ease-in-out infinite}
 @keyframes cs-bob{50%{transform:rotate(4deg) translateY(-3px)}}
 .cs-head{grid-column:1;grid-row:2;align-self:start;margin-bottom:18px}
 .cs-dream{position:relative;margin:0 0 4px;padding:10px 16px 9px;background:#fff;border:2px solid #D62E73;border-radius:18px}
 .cs-dream::before{content:"";position:absolute;left:-10px;top:-10px;width:22px;height:22px;background:url(/images/brand/gl-hot.webp) 0 0/120px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
-.cs-dream blockquote{margin:0;font-family:Gloock,Georgia,serif!important;font-weight:400;font-size:19px!important;line-height:1.2;color:#1A1417;text-wrap:balance}
+.cs-dream blockquote{margin:0;font-family:Gilda,Georgia,serif!important;font-weight:400;font-size:19px!important;line-height:1.2;color:#1A1417;text-wrap:balance}
 .cs-dream blockquote span{color:#D62E73}
-.cs-dream blockquote .stress{font-family:Yellowtail,cursive!important;font-style:normal;font-size:1.15em;color:#D62E73}
+.cs-dream blockquote .stress{font-family:Allison,cursive!important;font-style:normal;font-size:1.15em;color:#D62E73}
 .cs-dream figcaption{text-wrap:balance;margin-top:4px;font:700 10px/1.4 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F}
 .cs-extra{grid-column:1;grid-row:4;align-self:start}
 .cs-stage{grid-column:2;grid-row:1/span 5}
@@ -109,7 +109,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 .cs-saved-empty{margin:0!important;font-size:14px;color:#1A1417!important}
 .cs-saved-empty[hidden],.cs-clear[hidden]{display:none}
 .cs-plate{position:relative;max-width:980px;margin:0 auto;background:linear-gradient(#fff,#fff) padding-box,url(/images/brand/gl-hot.webp) 0 0/220px border-box;border:5px solid transparent;border-radius:26px;box-shadow:0 40px 70px -36px rgba(110,10,50,.7);padding:36px clamp(20px,4vw,48px) 28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);grid-template-rows:1fr auto auto auto 1fr;column-gap:56px;row-gap:0;align-items:start}
-.life .cs-band .cs-intro h2{font:600 clamp(26px,2.6vw,34px)/1.15 Gloock,Georgia,serif;font-size:clamp(26px,2.6vw,32px)!important;margin:4px 0 8px;color:#1A1417;text-wrap:balance}
+.life .cs-band .cs-intro h2{font:600 clamp(26px,2.6vw,34px)/1.15 Gilda,Georgia,serif;font-size:clamp(26px,2.6vw,32px)!important;margin:4px 0 8px;color:#1A1417;text-wrap:balance}
 .cs-intro h2 span{color:#D62E73}
 .cs-how{text-wrap:pretty;font-size:15px;line-height:1.5;color:#1A1417;max-width:52ch}
 .cs-note{font-size:12px;color:#1A1417;margin-top:16px!important}
@@ -145,7 +145,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 .cs-stamp-skip{right:14px;color:#1A1417;border-color:#1A1417;transform:rotate(12deg)}
 .cs-info{padding:12px 16px 14px}
 .cs-kicker{margin:0 0 6px!important;font:700 11px/1.4 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F!important}
-.life .cs-band .cs-info h3{margin:0 0 2px!important;font:600 20px/1.2 Gloock,Georgia,serif;font-size:20px!important}
+.life .cs-band .cs-info h3{margin:0 0 2px!important;font:600 20px/1.2 Gilda,Georgia,serif;font-size:20px!important}
 .cs-info h3 a{color:#1A1417;text-decoration:none}
 .cs-items-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 4px}
 .cs-items-label{margin:0!important;white-space:nowrap;font:700 11px/1.4 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1A1417!important}
@@ -161,7 +161,7 @@ const saveData = JSON.stringify(Object.fromEntries(deck.map(d => [d.slug, { t: s
 .cs-open{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;font:700 11px/1.2 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#B8245F;text-decoration:underline;text-decoration-color:#FF8AC2;text-underline-offset:4px}
 .cs-end{z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:32px 20px;border-radius:20px;background:#FFF1F7;box-shadow:0 0 0 2px #D62E73;min-height:320px}
 .cs-end[hidden]{display:none}
-.life .cs-band .cs-end-big{font:600 24px/1.15 Gloock,Georgia,serif;font-size:24px!important;color:#1A1417!important}
+.life .cs-band .cs-end-big{font:600 24px/1.15 Gilda,Georgia,serif;font-size:24px!important;color:#1A1417!important}
 .cs-actions{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:16px}
 .cs-btn{display:grid;place-items:center;border-radius:50%;cursor:pointer;border:0;background:#fff;box-shadow:0 0 0 2px #E891B6,0 14px 24px -12px rgba(110,10,50,.6);transition:transform .15s}
 .cs-btn:hover:not(:disabled){transform:scale(1.07)}

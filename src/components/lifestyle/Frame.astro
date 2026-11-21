@@ -45,3 +45,11 @@ const icing = article ? await getImage({src:icingSource,format:"webp",quality:90
     update();
   });
 </script>
+<style is:global>
+/* Template fonts on Lifestyle (Jodie, 19-20 Nov 2026: she hates Gloock). Layout and colors unchanged. */
+html body .life :is(h1,h2,h3,h4,blockquote):not(#z1){font-family:Gilda,Georgia,serif!important;font-weight:400!important;letter-spacing:.01em}
+html body .life :is(p,li,a,span,button,label,input,figcaption,dd,dt,small,strong,b):not(.stress):not(#z1){font-family:Poppins,sans-serif}
+html body .life :is(h1,h2,h3,h4) :is(span,a,b,strong):not(.stress):not(#z1):not(#z2){font-family:Gilda,Georgia,serif!important}
+html body .life .stress:not(#z1),html body .life i.stress{font-family:Allison,cursive!important;font-style:normal!important;font-weight:400!important;font-size:1.25em}
+html body .life :is(.life-kicker,.life-button,.life-feature-label,[class*=kicker],[class*=-btn],[class*=button]):not(#z1){font-family:Montserrat,sans-serif!important}
+</style>

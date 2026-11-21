@@ -18,8 +18,9 @@ const libLd = {
   ],
 };
 import "../../styles/edit.css";
-import SiteNav from "../../components/HomeChromeHeader.astro";
-import SiteFooter from "../../components/HomeChromeFooter.astro";
+import SiteNav from "../../components/TemplateNav.astro";
+import "../../styles/tdie-article.css";
+import SiteFooter from "../../components/TemplateFooter.astro";
 import "../../styles/brand-finish.css";
 
 // Attach each supporting article to the pillar that carries its category.
@@ -214,6 +215,7 @@ const totalPieces = pillars.length + articles.length;
 </style>
   <script type="application/ld+json" set:html={JSON.stringify(libLd)} />
 <style is:inline set:html={visualStyles} />
+<style is:inline>html body.tdie-finished::before{display:none!important}html body.tdie-finished{background:radial-gradient(900px 520px at 4% 6%,#ffe6f1 0,rgba(255,230,241,0) 70%),#FFFBEB!important}</style>
 </head>
 <body class="e-page tdie-finished">
   <SiteNav />

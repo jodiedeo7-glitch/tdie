@@ -7,10 +7,11 @@ import Shelf from '../../components/lifestyle/Shelf.astro';
 import ClosetSwipe from '../../components/lifestyle/ClosetSwipe.astro';
 import { LOOKS } from '../../data/lifestyle.js';
 // Explicit editorial selection, independent of imported file order or future dates.
-const featured = ['pretty-wicked-entryway', 'ghoul-fuel-coffee-bar', 'pink-witch-halloween-costume'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
+// Swapped to the winter and Christmas looks 20 Nov 2026 (Halloween is over).
+const featured = ['pink-christmas-mantel', 'pink-gingerbread-hot-cocoa-bar', 'lilac-puffer-christmas-tree-farm-outfit'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
 // "A few favorites" row: the witch first (Jodie, 11 Oct 2026). The hero keeps featured[0].
-const favorites = ['pink-witch-halloween-costume', 'pretty-wicked-entryway', 'ghoul-fuel-coffee-bar'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
-const closet = ['pink-suit-law-student-halloween-costume', 'pink-witch-halloween-costume', 'pink-workwear-freezing-office', 'pink-cowgirl-halloween-costume', 'pink-fairy-halloween-costume', 'pink-ballerina-halloween-costume'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
+const favorites = ['lilac-puffer-christmas-tree-farm-outfit', 'pink-christmas-mantel', 'pink-gingerbread-hot-cocoa-bar'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
+const closet = ['pink-winter-walk-warm-up', 'lilac-puffer-christmas-tree-farm-outfit', 'emerald-velvet-christmas-party-outfit', 'hot-pink-sequin-blazer-nye-office-party-outfit', 'sparkly-blue-new-years-eve-party-outfit', 'black-and-white-polka-dot-new-years-eve-outfit'].map(slug => LOOKS.find(look => look.slug === slug)).filter(Boolean);
 ---
 <Frame title="Lifestyle · Pink Outfits, Home Decor & Everyday Finds" description="Browse pink outfit ideas, seasonal home decor and car accessories, with generated styling inspiration and clearly listed shopping finds.">
   <header class="life-hero">
@@ -18,7 +19,7 @@ const closet = ['pink-suit-law-student-halloween-costume', 'pink-witch-halloween
       <div class="life-hero-copy">
         <p class="life-kicker">The Lifestyle Edit</p>
         <h1>A little pink.<br /><span>A lot of <i class="stress">personality.</i></span></h1>
-        <p class="life-intro">Costumes you can wear again in November, porches that make trick or treaters stop, and a car that finally feels like yours. Every look comes with its pieces listed right underneath.</p>
+        <p class="life-intro">Pink Christmas mantels, cocoa bars, party outfits and gifts. Every look comes with its pieces listed right underneath.</p>
         <a class="life-button" href="#browse">See every look <span aria-hidden="true">↓</span></a>
         <p class="life-hero-note"><span class="life-sticker">Picked with personality</span> Generated inspiration. Clearly listed finds.</p>
       </div>
@@ -28,7 +29,7 @@ const closet = ['pink-suit-law-student-halloween-costume', 'pink-witch-halloween
   <section class="life-band" aria-labelledby="life-categories-title"><div class="life-wrap life-section"><p class="life-kicker">Your very own pretty corner</p><h2 id="life-categories-title">Step into the edit</h2><Categories /></div></section>
   <ClosetSwipe />
   <Shelf id="life-new" title="New in the edit" kicker="The latest looks" description="The newest looks, every piece listed inside." looks={LOOKS.slice(0, 8)} />
-  <section class="life-picks-band"><div class="life-wrap life-section" aria-labelledby="life-featured"><div class="life-section-heading"><div><p class="life-kicker">Handpicked for this season</p><h2 id="life-featured">A few favorites</h2></div><p>One for dressing up, one for your home, one for your coffee corner.</p></div><Cards looks={favorites} label="Favorites" /></div></section>
+  <section class="life-picks-band"><div class="life-wrap life-section" aria-labelledby="life-featured"><div class="life-section-heading"><div><p class="life-kicker">Handpicked for this season</p><h2 id="life-featured">A few favorites</h2></div><p>One to wear, one for your home, one for your cocoa corner.</p></div><Cards looks={favorites} label="Favorites" /></div></section>
   <Shelf id="life-closet" title="The pink closet" kicker="The TDIE lookbook" description="Swipe the outfits. Open the look. Make it yours." looks={closet} lookbook />
   <section class="life-wrap life-section" id="browse" aria-labelledby="life-browse">
     <div class="life-section-heading"><div><p class="life-kicker">Browse the edit</p><h2 id="life-browse">All the pretty possibilities</h2></div><p>{LOOKS.length} looks, newest first.</p></div>
