@@ -1,7 +1,8 @@
 ---
 import visualStyles from "../styles/tdie-visual.css?inline";
-import SiteNav from "../components/HomeChromeHeader.astro";
-import SiteFooter from "../components/HomeChromeFooter.astro";
+import SiteNav from "../components/TemplateNav.astro";
+import SiteFooter from "../components/TemplateFooter.astro";
+import "../styles/tdie-article.css";
 import "../styles/brand-finish.css";
 // ============================================================
 // THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
@@ -698,6 +699,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   @media (max-width:720px){.bp-band{padding:0 18px}.bp-band-in{grid-template-columns:64px minmax(0,1fr);gap:14px;padding:16px}.bp-band img{width:64px;height:80px}.bp-band-btn{grid-column:1 / -1;width:100%;justify-content:center;white-space:normal}.bp-band-h{font-size:20px}}
 </style>
 <style is:inline set:html={visualStyles} />
+<style is:inline>html body.tdie-finished{background:radial-gradient(900px 520px at 4% 6%,#ffe6f1 0,rgba(255,230,241,0) 70%),radial-gradient(900px 560px at 98% 40%,#ffe6f1 0,rgba(255,230,241,0) 70%),#FFFBEB!important}html body.tdie-finished::before{background:transparent!important;display:none!important}html body.tdie-finished :is(.hero-figure .img,.figure .img,.frame.photo){border:6px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;background-color:#fff!important}html body.tdie-finished .tcx-cta{border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/180px border-box!important;border-radius:0!important}html body.tdie-finished .tcx-menu summary{border:2px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;border-radius:0!important}</style>
 </head>
 <body class="no-js tdie-finished">
   <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>

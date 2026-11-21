@@ -1,0 +1,43 @@
+---
+// The template site header (Jodie's Etsy template), self-contained so older layouts
+// (articles, Lifestyle, PageLayout) can share it without loading the full template CSS.
+import { NAV, NAV_CTA } from "../data/site.js";
+import { WYS_CTA } from "../data/wys-live.js";
+import { weekendEcosystem as WE } from "../data/facts.js";
+---
+<header class="tcx-nav">
+ <div class="tcx-strip">The Digital Income Edit™</div>
+ <nav class="tcx-in" aria-label="Main">
+  <ul>{NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  <a class="tcx-cta" href={NAV_CTA.href}>7 days free <span>→</span></a>
+  <details class="tcx-menu"><summary>Menu</summary><div>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href={NAV_CTA.href}>Start 7 days free</a></div></details>
+ </nav>
+</header>
+<style is:global>
+@font-face{font-family:'Gilda';src:url(/wys-sales/fonts/gilda.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Allison';src:url(/wys-sales/fonts/allison.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:300;src:url(/wys-sales/fonts/poppins-300.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:400;src:url(/wys-sales/fonts/poppins-400.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:500;src:url(/wys-sales/fonts/poppins-500.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:600;src:url(/wys-sales/fonts/poppins-600.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Montserrat';font-weight:500;src:url(/wys-sales/fonts/montserrat-500.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Montserrat';font-weight:600;src:url(/wys-sales/fonts/montserrat-600.woff2) format('woff2');font-display:swap}
+.tcx-nav{position:relative;z-index:20;background:#fff;border-bottom:1px solid #C9A86A}
+.tcx-strip{text-align:center;padding:16px 20px;font:400 18px/1.3 Gilda,serif;letter-spacing:.34em;text-transform:uppercase;background:#FFFBEB;color:#1A1417}
+.tcx-in{max-width:1160px;margin:0 auto;padding:10px 40px 14px;display:flex;align-items:center;justify-content:center;gap:34px}
+.tcx-in ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+.tcx-in ul a{font:600 12px Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:#1A1417}
+.tcx-in ul a:hover{color:#D62E73}
+.tcx-cta{display:inline-flex;align-items:center;gap:10px;min-height:42px;padding:8px 20px;font:600 11px Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#1A1417;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/180px border-box;box-shadow:0 8px 20px rgba(214,46,115,.18)}
+.tcx-cta span{color:#D62E73;font-size:18px}
+.tcx-menu{display:none}
+@media (max-width:900px){
+ .tcx-in ul,.tcx-cta{display:none}
+ .tcx-menu{display:block;position:relative}
+ .tcx-menu summary{list-style:none;cursor:pointer;font:600 12px Montserrat,sans-serif;letter-spacing:.24em;text-transform:uppercase;padding:10px 22px;color:#1A1417;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box}
+ .tcx-menu summary::-webkit-details-marker{display:none}
+ .tcx-menu>div{position:absolute;left:50%;transform:translateX(-50%);top:52px;background:#fff;border:1px solid #C9A86A;box-shadow:0 10px 24px rgba(120,80,95,.16);padding:14px 22px;width:280px;z-index:30}
+ .tcx-menu>div a{display:block;padding:9px 0;text-decoration:none;border-bottom:1px dashed rgba(214,46,115,.3);font:400 15px Poppins,sans-serif;color:#1A1417}
+}
+@media (max-width:600px){.tcx-strip{font-size:13px;letter-spacing:.22em;padding:12px}}
+</style>
