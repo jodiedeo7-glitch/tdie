@@ -1,0 +1,29 @@
+/* Smaller pages on the shared template: Work With Me, BAMI, About, FAQ */
+.ww2-hh{align-items:center}
+.ww2-glance{background:#fff;padding:40px 36px;box-shadow:var(--shadow)}
+.ww2-glance .pn{font:600 12px Montserrat;letter-spacing:.24em;text-transform:uppercase;color:var(--hot);margin:0 0 18px;text-align:center}
+.ww2-glance dl{margin:0}
+.ww2-glance dl div{padding:14px 0;border-top:1px dashed rgba(214,46,115,.4)}
+.ww2-glance dt{font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:4px}
+.ww2-glance dd{margin:0;font-size:15px}
+.ww2-how{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;align-items:center}
+.ww2-how .ph img{aspect-ratio:1280/549!important;transform:none!important;height:auto}
+.ww2-how .card p{font-size:15px;margin:0 0 12px}
+.ww2-how .pn{font:600 11px/1.6 Montserrat;letter-spacing:.18em;text-transform:uppercase;color:var(--hot)}
+.ww2-svc{grid-template-columns:62px minmax(0,1fr) 90px!important}
+.ww2-svc p{font-size:15px}
+.ww2-go{font:600 11px Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);text-align:right}
+.ww2-alt{font-size:14px;margin:0 0 16px}
+.ww2-two{max-width:980px}
+.ww2-two .bd{text-align:left;display:flex;flex-direction:column}
+.ww2-two h3{font-size:21px;line-height:1.35;margin-bottom:10px}
+.ww2-two p{font-size:15px}
+.ww2-two .chk a{color:var(--ink);text-decoration-color:var(--hot)}
+.ww2-two .btn{margin-top:auto;width:100%}
+.ww2-close .ph img{aspect-ratio:640/426!important;height:auto}
+@media (max-width:980px){.ww2-how{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:600px){.ww2-svc{grid-template-columns:40px minmax(0,1fr)!important}.ww2-go{grid-column:2;text-align:left}.ww2-glance{padding:30px 20px}}
+.ww2-two .btn{margin-top:auto}
+.ww2-two .bd>p:last-of-type{margin-bottom:18px}
+@media (max-width:600px){.ww2-close .see a{letter-spacing:.04em;text-transform:none;font-size:14px;word-break:break-all}.ww2-how~*{}.tdie-t .ww2-how .h2{font-size:26px}}
+@media (max-width:400px){.ww2-close .see a{font-size:12.5px;letter-spacing:0;word-break:normal;overflow-wrap:normal}.ww2-how .pn{letter-spacing:.08em}}

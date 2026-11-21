@@ -43,3 +43,4 @@
 .quote .we-note{padding-left:80px!important;padding-right:80px!important}
 @media (max-width:600px){.quote .we-note{padding-left:26px!important;padding-right:26px!important}}
 @media (max-width:980px){.plr-close .ph{order:-1}}
+.plr-cred{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:900px}@media (max-width:600px){.plr-cred{grid-template-columns:minmax(0,1fr)!important}}
