@@ -34,7 +34,21 @@ def wrapl(d,lab,txt,bf,bb,maxw):
             lines.append(cur); cur=w; avail=maxw
     if cur: lines.append(cur)
     return lines
+def photo_block(im,d,p,y,ph,M,CW):
+    ph_im=Image.open(LIB+p['photo']).convert('RGB')
+    tw_,th_=CW*S,ph*S
+    r=max(tw_/ph_im.width,th_/ph_im.height)
+    ph_im=ph_im.resize((int(ph_im.width*r)+1,int(ph_im.height*r)+1),Image.LANCZOS)
+    fx,fy=p.get('focus',(.5,.5))
+    l=int((ph_im.width-tw_)*fx); t=int((ph_im.height-th_)*fy)
+    ph_im=ph_im.crop((l,t,l+tw_,t+th_))
+    im.paste(ph_im,(M*S,y*S))
+    d.rectangle([M*S,y*S,(M+CW)*S,(y+ph)*S],outline=GOLD,width=2*S)
+    sparkle(d,M+CW-60,y+48,22,WHITE); sparkle(d,M+CW-100,y+80,10,WHITE)
 def render(p,out):
+    if p.get('layout')=='top' and '_ph' not in p:
+        q=dict(p); q['layout']='std'; render(q,out); p['_ph']=q['_photo_h']
+    top=(p.get('layout')=='top')
     im=Image.new('RGB',(W,H),CREAM); d=ImageDraw.Draw(im)
     M=56; CW=1000-2*M
     # frame hairline
@@ -46,6 +60,8 @@ def render(p,out):
     for ch in k:
         d.text((x,y*S),ch,font=kf,fill=PINK); x+=d.textlength(ch,font=kf)+3*S
     y+=52
+    if top:
+        PH=int(p['_ph']); photo_block(im,d,p,y,PH,M,CW); y+=PH+26
     # headline with one stressed word, measured wrapping
     hf=gl(100); sf=yt(112)
     lines=[]
@@ -95,18 +111,9 @@ def render(p,out):
     p['_photo_h']=photo_h; p['_y_after_head']=y
     if photo_h<150: print(p['id'],'WARN photo_h',photo_h); 
     ph=max(photo_h,120)
-    # photo
-    ph_im=Image.open(LIB+p['photo']).convert('RGB')
-    tw_,th_=CW*S,ph*S
-    r=max(tw_/ph_im.width,th_/ph_im.height)
-    ph_im=ph_im.resize((int(ph_im.width*r)+1,int(ph_im.height*r)+1),Image.LANCZOS)
-    fx,fy=p.get('focus',(.5,.5))
-    l=int((ph_im.width-tw_)*fx); t=int((ph_im.height-th_)*fy)
-    ph_im=ph_im.crop((l,t,l+tw_,t+th_))
-    im.paste(ph_im,(M*S,y*S))
-    d.rectangle([M*S,y*S,(M+CW)*S,(y+ph)*S],outline=GOLD,width=2*S)
-    sparkle(d,M+CW-60,y+48,22,WHITE); sparkle(d,M+CW-100,y+80,10,WHITE)
-    y+=ph+22
+    if top: ph=0
+    else: photo_block(im,d,p,y,ph,M,CW)
+    y+=(ph+22) if not top else 0
     # body
     for kind,val,ls in plan:
         if kind=='sub':
