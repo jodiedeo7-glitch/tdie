@@ -196,3 +196,39 @@ SCHEDULED and read back (PENDING unless noted): g01 15 Nov 08:00 (already PUBLIS
 HELD, not scheduled (auto-mode classifier denied createScheduledPost for g02, g03, g07, g12, g13, g15; g16-g28 not attempted): 15 Nov 11:00 g02, 14:00 g03; 16 Nov 14:00 g07; 17 Nov 17:00 g12; 18 Nov 08:00 g13, 14:00 g15, 17:00 g16; 19 Nov all four (g17-g20); 20 Nov all four (g21-g24); 21 Nov all four (g25-g28). Payloads: scratchpad calls.json (this session) and batch.py definitions; rebuild from pins-public images if lost.
 
 CHECKPOINT: next run must check getScheduledPosts per slot for duplicates, then schedule the HELD list above.
+
+## 2026-11-22 (Sun) Weekly Pinterest pin factory: no-packet fallback batch, 22-28 Nov (COMPLETE)
+Owner Claude, Metricool only, brand 7142540. 28 new pins (4/day, 08:00/11:00/14:00/17:00 ET), pinLink https://www.skool.com/thedigitalincomeedit/about, isAiGenerated true. Images in pins-public (commit 3914110, all HTTP 200). Pin ids core-2026-11-DD-HHMM-hNN. All 28 createScheduledPost calls succeeded and echoed back pending with correct date, board, link and image; Metricool post ids 437336693-437337763. Also held-list from 15 Nov: not re-attempted this run (dates passed).
+
+| Slot | Pin id | Board | Title |
+|---|---|---|---|
+| 2026-11-22 08:00 | core-2026-11-22-0800-h01 | Faceless Digital Marketing for Beginners | Consistent AI Character: A Reference Checklist for Your Next Persona Photo |
+| 2026-11-22 11:00 | core-2026-11-22-1100-h02 | Beginner Online Business Ideas | Digital Product Ideas for Beginners: Match the Format to the Reader’s Problem |
+| 2026-11-22 14:00 | core-2026-11-22-1400-h03 | Faceless Content Ideas | Faceless Content Ideas: A Three-Shot Tutorial You Can Film Without Showing Your Face |
+| 2026-11-22 17:00 | core-2026-11-22-1700-h04 | Passive Income Ideas for Beginners | Online Business Ideas for Beginners: Compare Products, Services, Affiliate and Membership |
+| 2026-11-23 08:00 | core-2026-11-23-0800-h05 | Beginner Online Business Ideas | Free Guide Landing Page for Beginners: Four Things to Show Before the Scroll |
+| 2026-11-23 11:00 | core-2026-11-23-1100-h06 | Faceless Digital Marketing for Beginners | Pin Alt Text for Beginners: Describe the Image, Add the Topic and Keep It Short |
+| 2026-11-23 14:00 | core-2026-11-23-1400-h07 | Beginner Online Business Ideas | Audience Research for Beginners: Three Questions to Ask Your First Ten Readers |
+| 2026-11-23 17:00 | core-2026-11-23-1700-h08 | Passive Income Ideas for Beginners | Free Guide to First Offer: A Simple Path for Beginners Building an Online Business |
+| 2026-11-24 08:00 | core-2026-11-24-0800-h09 | Beginner Online Business Ideas | Digital Product Title Ideas: A Three-Part Formula With Who, Result and Format |
+| 2026-11-24 11:00 | core-2026-11-24-1100-h10 | Faceless Content Ideas | Caption Batching for Beginners: Write a Week of Captions in One Quiet Hour |
+| 2026-11-24 14:00 | core-2026-11-24-1400-h11 | Passive Income Ideas for Beginners | How to Ask for Feedback: A Three-Line Message for Your First Digital Product Buyers |
+| 2026-11-24 17:00 | core-2026-11-24-1700-h12 | Faceless Content Ideas | Faceless Voiceover Script for Beginners: A Four-Part Outline for Short Videos |
+| 2026-11-25 08:00 | core-2026-11-25-0800-h13 | Faceless Digital Marketing for Beginners | Weekly Reset Routine for Beginners: Four Fifteen Minute Steps Before Monday |
+| 2026-11-25 11:00 | core-2026-11-25-1100-h14 | Passive Income Ideas for Beginners | Bio Ideas for Beginners: A Three-Part Formula for Who You Help and What They Get |
+| 2026-11-25 14:00 | core-2026-11-25-1400-h15 | Faceless Digital Marketing for Beginners | AI Writing Prompt for Beginners: Turn Rough Notes Into a Draft You Can Edit |
+| 2026-11-25 17:00 | core-2026-11-25-1700-h16 | Faceless Content Ideas | Content Repurposing for Beginners: Turn One Tutorial Into Four Useful Posts |
+| 2026-11-26 08:00 | core-2026-11-26-0800-h17 | Beginner Online Business Ideas | Digital Product Proofreading Checklist: Quick Passes to Make Before You Publish |
+| 2026-11-26 11:00 | core-2026-11-26-1100-h18 | Faceless Digital Marketing for Beginners | Refresh Old Pinterest Pins: Four Small Edits to Make Before You Make More |
+| 2026-11-26 14:00 | core-2026-11-26-1400-h19 | Faceless Content Ideas | Blog Post Title Ideas for Beginners: Four Types That Match How People Search |
+| 2026-11-26 17:00 | core-2026-11-26-1700-h20 | Passive Income Ideas for Beginners | Weekly Business Tracking for Beginners: Four Simple Numbers to Write Down |
+| 2026-11-27 08:00 | core-2026-11-27-0800-h21 | Faceless Content Ideas | Hooks for Faceless Posts: Four Opening Line Types You Can Use This Week |
+| 2026-11-27 11:00 | core-2026-11-27-1100-h22 | Faceless Digital Marketing for Beginners | Business To-Do List for Beginners: Sort Tasks Into Must, Should and Later |
+| 2026-11-27 14:00 | core-2026-11-27-1400-h23 | Beginner Online Business Ideas | Email List Basics for Beginners: Five Places to Put Your Signup Link Today |
+| 2026-11-27 17:00 | core-2026-11-27-1700-h24 | Faceless Content Ideas | New Year Content Planning for Beginners: Map January in Four Simple Steps |
+| 2026-11-28 08:00 | core-2026-11-28-0800-h25 | Beginner Online Business Ideas | Digital Product Launch Checklist: Write Five Buyer Questions Before You Publish |
+| 2026-11-28 11:00 | core-2026-11-28-1100-h26 | Faceless Digital Marketing for Beginners | AI Image Checklist for Beginners: Four Things to Inspect Before You Post |
+| 2026-11-28 14:00 | core-2026-11-28-1400-h27 | Faceless Content Ideas | Content Pillars for Beginners: Choose Three Topics and Rotate Them Each Week |
+| 2026-11-28 17:00 | core-2026-11-28-1700-h28 | Faceless Digital Marketing for Beginners | Pinterest Board Description Ideas: Three Lines That Tell Readers What to Expect |
+
+CHECKPOINT: none outstanding. Next run (29 Nov) builds 29 Nov-5 Dec; check per-day counts first.
