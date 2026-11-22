@@ -1,0 +1,46 @@
+---
+import TemplateLayout from "../../layouts/TemplateLayout.astro";
+
+const NAME = "The 7-Day First Sale Kit";
+const PRICE = "$27";
+const NOTE = "one time · Beacons";
+const DEST = "BEACONS_CHECKOUT_URL";
+const AFF = false;
+---
+<TemplateLayout
+  title={NAME} stickyHref={DEST} stickyLabel={`Get it · ${PRICE}`} heroBuy=".go .go-btn"
+  description="A finished product you can sell as your own, seven days of posts written for it, and a tracker that shows what worked."
+>
+  <section class="sec wash go2"><div class="wrap"><div class="card dash go"><svg class="spk" style="position:absolute;right:-22px;top:-22px"><use href="#sp"/></svg>
+    <div class="kick">From the shop</div>
+    <h1>{NAME}</h1>
+    <p class="go-lede">A finished product you can sell as your own, seven days of posts written for it, and a tracker that shows what worked.</p>
+
+    <div class="go-meta">
+      <span class="go-price">{PRICE}</span>
+      <span class="go-note">{NOTE}</span>
+    </div>
+
+    <div class="go-body">
+      <p>You get The Faceless Content Calendar 2027 with private label rights, the Day 0 setup (rebrand, listing copy, DM scripts), seven days of posts and the click tracker.</p>
+      <p>$27, one time. Instant PDF download, no subscription.</p>
+    </div>
+
+    <div class="go-good">
+      <div>
+        <span class="go-good-t">Good fit if</span>
+        <p>You want something to sell and a plan for the first week of selling it.</p>
+      </div>
+      <div>
+        <span class="go-good-t">Not a fit if</span>
+        <p>You want a guaranteed sale or a product nobody else can sell.</p>
+      </div>
+    </div>
+
+    <a class="btn buy go-btn" href={DEST} rel="noopener">
+      Get {NAME}: {PRICE} <span class="ar">→</span>
+    </a>
+
+    <p class="go-back"><a href="/shop/7-day-first-sale-kit">← Back to the kit page</a></p>
+  </div></div></section>
+</TemplateLayout>

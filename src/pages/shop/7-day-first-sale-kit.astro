@@ -1,0 +1,175 @@
+---
+// The 7-Day First Sale Kit sales page (22 Nov 2026), built on the shared Etsy-template site style (same build as the Vault page).
+import TemplateLayout from "../../layouts/TemplateLayout.astro";
+const CHECKOUT = "/go/7-day-first-sale-kit";
+const IMG = "/images/first-sale-kit";
+
+const poll = [
+  { n: "11", t: "Content into income", p: "\"I don't know how to turn content into income.\" The top answer: the gap between posting and getting paid." },
+  { n: "7",  t: "Too much information", p: "\"I've consumed so much information that I'm overwhelmed.\" Too many tabs, no clear next step." },
+  { n: "3",  t: "Staying consistent", p: "\"I struggle to stay consistent because life is life.\" Especially mom life." },
+  { n: "0",  t: "What to post", p: "\"I have no idea what to post.\" Nobody picked it. The posts aren't the problem. Where they lead is." },
+];
+
+const steps = [
+  { n: "01", t: "Grab it",   p: "Open your Canva link and make your own copy of the product." },
+  { n: "02", t: "Rebrand it", p: "Your name, your colors. About 30 minutes, checklist included." },
+  { n: "03", t: "List it",   p: "Title and description written for you. Paste them in." },
+  { n: "04", t: "Post it",   p: "Seven days of posts, each one pointing to your link." },
+];
+
+const previews = [
+  { img: "kit-cover.jpg",         label: "The kit" },
+  { img: "kit-day-1.jpg",         label: "A day of posts" },
+  { img: "kit-tracker.jpg",       label: "The click tracker" },
+  { img: "calendar-cover.jpg",    label: "Your product" },
+  { img: "calendar-hooks.jpg",    label: "Its 100-hook bank" },
+  { img: "calendar-january.jpg",  label: "One month of ideas" },
+];
+
+const week = [
+  { w: "Day 0", t: "You set it up once.", p: "Grab the product, put your name on it, list it in one shop at $17, and put your link everywhere you post. About two hours, start to finish." },
+  { w: "Days 1 to 4", t: "You post to help, not to pitch.", p: "Teach something useful, show every page, name the 9 pm \"I said I'd post today\" feeling, and bust the myth that you need your face to sell. Every post still points to your link." },
+  { w: "Days 5 to 7", t: "You ask, clearly.", p: "Give January away free for anyone who comments PLAN, show the whole thing with the price, then the math: 365 ideas for under 5 cents a day." },
+  { w: "Day 8", t: "You read your numbers.", p: "The tracker shows where people stop. The leak guide tells you the one thing to fix first. Then you repeat what worked." },
+];
+---
+<TemplateLayout title="The 7-Day First Sale Kit" description="The 7-Day First Sale Kit: a finished digital product you can sell as your own, seven days of posts already written for it, and a tracker that shows what worked. $27, instant PDF." ogImage="/og/7-day-first-sale-kit.jpg" stickyHref={CHECKOUT} stickyLabel="Get the kit · $27">
+
+<section class="hh">
+ <div class="wrap hh-grid plr-hh">
+  <div class="box">
+   <span class="stk" style="right:-60px;top:-56px">Posts written<b class="big">21</b></span>
+   <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
+   <p class="kick">The 7-Day First Sale Kit · $27</p>
+   <h1>A product to sell, <span class="scr">and the week of posts to sell it.</span></h1>
+   <p class="what">Most of us aren't stuck on making a product. We're stuck between "I posted it" and "someone paid for it." <b>This kit hands you a finished product you're allowed to sell as your own, seven days of posts written for it, and a tracker that shows exactly where people stop.</b></p>
+   <p class="price plr-price"><b class="glit">$27</b>one time</p>
+   <a class="btn buy" href={CHECKOUT}>Get the 7-Day First Sale Kit <span class="ar">→</span></a>
+   <p class="need">Instant PDF · Product with PLR rights · 100% faceless</p>
+   <p class="see"><a href="#preview">See inside first ↓</a></p>
+  </div>
+  <div class="plr-stack fsk-stack" aria-hidden="true">
+   <img class="s0" src={`${IMG}/kit-cover.jpg`} alt="" decoding="async">
+   <img class="s1" src={`${IMG}/calendar-cover.jpg`} alt="" decoding="async">
+  </div>
+ </div>
+ <ul class="wrap we-cred plr-cred"><li><b class="glit">1</b>finished product</li><li><b class="glit">21</b>posts written for you</li><li><b class="glit">7</b>days, one job each</li></ul>
+</section>
+
+<div class="band"><svg class="spk" style="left:18%"><use href="#sp"/></svg><h2>Why I made this</h2><svg class="spk sm" style="right:19%"><use href="#sp"/></svg></div>
+<section class="sec wash">
+ <div class="wrap">
+  <h2 class="h2">I asked what's actually keeping you stuck. <span class="scr">Here's what you said.</span></h2>
+  <div class="p18 hm-four">{poll.map((g) => <div class="box"><span class="num hm-num">{g.n}</span><h3>{g.t}</h3><p>{g.p}</p></div>)}</div>
+  <p class="we-foot plr-foot">21 votes. So this kit fixes the middle: the posts between your product and your first sale.</p>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <p class="kick">What's inside</p>
+  <h2 class="h2">Four things, <span class="scr">one kit.</span></h2>
+  <div class="p21 plr-four">
+   <div class="col"><span class="scr">The product</span><div class="card dash"><p><b>The Faceless Content Calendar 2027.</b> 42 pages, editable in Canva: 365 post ideas, 12 monthly themes, a 100-hook bank, a batching system and a tracker.</p><p class="plr-sm">Comes with private label rights: put your name on it and sell it.</p></div></div>
+   <div class="col"><span class="scr">The setup</span><div class="card dash"><p>Day 0, done in about two hours.</p><ul class="chk"><li>A 30-minute rebrand checklist</li><li>Listing title and description, written</li><li>Your trigger word and DM scripts</li></ul></div></div>
+   <div class="col"><span class="scr">The posts</span><div class="card dash"><p>Seven days, written for this exact product. Every day you get:</p><ul class="plr-chips"><li>A Reel or carousel</li><li>A Pin</li><li>A Threads post</li><li>A Story</li></ul></div></div>
+   <div class="col"><span class="scr">The tracker</span><div class="card dash"><p>Views, clicks, comments, sales. Plus the "where am I leaking?" guide, so you know which one thing to fix first.</p></div></div>
+  </div>
+  <div class="p23 plr-two">
+   <div class="pc"><div class="hd">Every post points somewhere</div><div class="bd"><p>No dead ends. Each one asks for one thing: tap the link, or comment PLAN.</p></div></div>
+   <div class="pc"><div class="hd">Faceless, start to finish</div><div class="bd"><p>Hands, screens, voiceovers, flat lays. No camera pointed at you.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec wash">
+ <div class="wrap">
+  <svg class="spk sm" style="right:80px;top:10px"><use href="#sp"/></svg>
+  <p class="kick">How it works</p>
+  <h2 class="h2">Grab. Rebrand. <span class="scr">List. Post.</span></h2>
+  <div class="p18 hm-four">{steps.map((s) => <div class="box"><span class="num hm-num">{s.n}</span><h3>{s.t}</h3><p>{s.p}</p></div>)}</div>
+ </div>
+</section>
+
+<section class="sec" id="preview">
+ <div class="wrap">
+  <p class="kick">A real look</p>
+  <h2 class="h2">Not a description. <span class="scr">The actual pages.</span></h2>
+  <div class="plr-gal">{previews.map((p) => <figure><img src={`${IMG}/${p.img}`} alt={`${p.label}: a page from The 7-Day First Sale Kit`} loading="lazy" decoding="async"><figcaption>{p.label}</figcaption></figure>)}</div>
+ </div>
+</section>
+
+<div class="band"><svg class="spk sm" style="left:20%"><use href="#sp"/></svg><h2>Your week</h2><svg class="spk" style="right:20%"><use href="#sp"/></svg></div>
+<section class="sec wash">
+ <div class="wrap">
+  <h2 class="h2">One job a day. <span class="scr">About 30 minutes.</span></h2>
+  <div class="faq">{week.map((r, i) => <div class="qa"><span class="n">0{i+1}</span><div><span class="hm-lab">{r.w}</span><h3>{r.t}</h3><p>{r.p}</p></div></div>)}</div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2 class="h2">Who it's for, <span class="scr">and who it isn't.</span></h2>
+  <div class="p21">
+   <div class="col"><span class="scr">Yes</span><div class="card dash"><h3>For you if</h3><ul class="chk"><li>You want to sell something and don't have a product yet</li><li>You've got a product idea folder and no first sale</li><li>You'd rather post faceless</li><li>You can open Canva and change a color</li></ul></div></div>
+   <div class="col"><span class="scr">Not yet</span><div class="card dash"><h3>Not for you if</h3><ul class="chk hm-x"><li>You want a guaranteed sale. Nobody honest can promise one</li><li>You want an exclusive product. PLR means others can sell the same calendar. Your rebrand and your posts are what make it yours</li><li>You want one-on-one coaching. This is a do-it-yourself kit</li></ul></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec wash" id="price">
+ <div class="wrap">
+  <div class="p42 dash plr-close" style="position:relative">
+   <span class="stk" style="left:-44px;top:-44px">Instant<b class="big">PDF</b></span>
+   <div class="ph"><img src={`${IMG}/kit-and-calendar.jpg`} width="1000" height="470" loading="lazy" decoding="async" alt="The 7-Day First Sale Kit and The Faceless Content Calendar 2027"></div>
+   <div class="tx">
+    <p class="kick">The price</p>
+    <h2>$27, one time.</h2>
+    <span class="scr">No subscription.</span>
+    <p>One payment, one download. <b>You get the product, the setup, the posts and the tracker.</b></p>
+    <ul class="chk"><li>The Faceless Content Calendar 2027, with PLR rights</li><li>Day 0 setup: rebrand, listing copy, DM scripts</li><li>7 days of posts: 21 written for you, plus a Story a day</li><li>The click tracker and the leak guide</li><li>What to do on Day 8</li></ul>
+    <p class="price plr-price"><b class="glit">$27</b>one time</p>
+    <a class="btn buy" href={CHECKOUT}>Get the 7-Day First Sale Kit <span class="ar">→</span></a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="quote holo fsk-q">
+ <div class="q we-note"><span class="mk o">“</span>
+  <p class="we-nk">The honest part</p>
+  <p class="we-nb">I can't promise you a sale on Day 7. Nobody honest can. What this kit gives you is a real product, real posts, and a way to see exactly where people drop off, <b>so you know what to fix instead of guessing.</b></p>
+ <span class="mk c">”</span></div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <p style="text-align:center;margin:0 0 14px"><span class="tag">Questions</span></p>
+  <h2 class="h2">Frequently <span class="scr">asked.</span></h2>
+  <div class="faq">
+   <div class="qa"><span class="n">01</span><div><h3>Is the product really mine to sell?</h3><p>Yes. The Faceless Content Calendar 2027 comes with private label rights: edit it, brand it as your own and sell it. The one thing you can't do is resell or give away the Canva template link itself.</p></div></div>
+   <div class="qa"><span class="n">02</span><div><h3>Do I need followers?</h3><p>No. You can start with whatever audience you have, including none. Fewer views just means the tracker tells you to work on reach first, and the leak guide shows you how.</p></div></div>
+   <div class="qa"><span class="n">03</span><div><h3>What do I need to use it?</h3><p>A free Canva account and one place to sell (Stan Store, Beacons, Payhip or Etsy). The kit tells you how to pick.</p></div></div>
+   <div class="qa"><span class="n">04</span><div><h3>What if I don't get a sale in seven days?</h3><p>Then your tracker shows you where people stopped, and the leak guide tells you the one thing to fix first. Most first sales take longer than a week. Results vary and sales aren't guaranteed.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec wash">
+ <div class="wrap" style="text-align:center">
+  <h2 class="h2">Your first sale needs <span class="scr">a product and a plan.</span></h2>
+  <div class="btnwrap"><a class="btn buy" href={CHECKOUT}>Get the 7-Day First Sale Kit · $27 <span class="ar">→</span></a></div>
+  <p class="mb-note"><a href="#preview">Still deciding? Look through the pages</a><br><a href="/shop">Back to the Shop</a></p>
+ </div>
+</section>
+<style is:global>
+.fsk-stack{height:560px}
+.fsk-stack img{width:56%}
+.fsk-stack .s0{left:2%;top:80px;transform:rotate(-4deg)}
+.fsk-stack .s1{right:2%;top:110px;transform:rotate(4deg);z-index:2}
+.fsk-q .we-nb{padding-bottom:28px}
+@media (max-width:980px){.fsk-stack{height:440px}}
+@media (max-width:600px){.fsk-stack{height:300px}.fsk-stack .s0{top:10px}.fsk-stack .s1{top:30px}}
+</style>
+</TemplateLayout>
