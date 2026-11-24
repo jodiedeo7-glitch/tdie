@@ -61,9 +61,9 @@ export const OBJECTIONS = [
     id: "later",
     q: "I'll do it later.",
     a: [
-      "Later is another month of your best writing sitting where nobody can search it. $97 isn't a launch price you're waiting out. It's the permanent price.",
+      "Later is another month of your best writing sitting where nobody can search it. $97 is the regular price. Black Friday is the one time it drops: $67 until Monday 30 November at 11:45 pm Eastern.",
     ],
-    short: "Later is another month of your best writing sitting where nobody can search it. $97 is the permanent price, not a launch price to wait out.",
+    short: "Later is another month of your best writing sitting where nobody can search it. $97 is the regular price. Black Friday is the one time it drops: $67 until Monday 30 November at 11:45 pm Eastern.",
     kit: true,
   },
 ];

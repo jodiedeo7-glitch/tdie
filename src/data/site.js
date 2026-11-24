@@ -20,7 +20,7 @@ export const FOOTER = [
   ] },
   { h: "Build", links: [
     { label: "Membership", href: "/membership" },
-    { label: "The Weekend Ecosystem™ · $97", href: "/shop/weekend-ecosystem" },
+    { label: "The Weekend Ecosystem™ · $67 (regular $97)", href: "/shop/weekend-ecosystem" },
     { label: "The While-You-Sleep Storefront™", href: "/shop/while-you-sleep-storefront" },
       { label: "Shop", href: "/shop" },
     { label: "Lifestyle", href: "/lifestyle" },

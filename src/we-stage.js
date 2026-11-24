@@ -9,8 +9,8 @@ export const CHECKOUT =
   "https://links.thedigitalincomeedit.com/shop/f7b54195-6a0e-4e95-8b92-fc203770176c";
 
 const STAGES = {
-  full:      { cta: "Get my Weekend Ecosystem\u2122", href: "CHECKOUT", eyebrow: "Standalone Course \u00b7 $97 one-time or 3 \u00d7 $33.33",
-               note: "$97 one-time, or three payments of $33.33. Both options at checkout. Every future update included.",
+  full:      { cta: "Get my Weekend Ecosystem\u2122", href: "CHECKOUT", eyebrow: "Standalone Course \u00b7 $67 one-time (regular $97, Black Friday, until Mon 30 Nov 11:45 pm ET) or 3 \u00d7 $33.33",
+               note: "$67 one-time (regular $97, Black Friday, until Mon 30 Nov 11:45 pm ET), or three payments of $33.33. Both options at checkout. Every future update included.",
                access: "Access is tied to the email you buy with, so use one you check. Access is added automatically, usually within an hour of purchase. You'll get an email as soon as your course is ready." },
 };
 

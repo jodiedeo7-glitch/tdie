@@ -27,9 +27,9 @@ export const membership = {
     name: "Membership Premium",
     short: "Premium",
     monthly: "$35",
-    annual: "$297",
+    annual: "$197",
     perMonth: "$35/month",
-    perYear: "$297/year",
+    perYear: "$197/year (regular $297, Black Friday, until Mon 30 Nov 11:45 pm ET)",
   },
 };
 
