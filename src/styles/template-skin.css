@@ -80,3 +80,4 @@ body.tskin main .lib-head.lib-head{background:transparent!important}
 /* Library guides: no pink-to-lavender wash behind Recommended Reading */
 body.tskin-article.tskin-article section.journey{background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,#fff!important;border-top:4px solid transparent;border-bottom:4px solid transparent;border-image:url(/wys-sales/img/gl-hot.webp) 30 round}
 body.tskin :is([class*=wys-],.wys-k,.wys-new){font-family:Montserrat,Poppins,sans-serif}
+@media (max-width:700px){html body.tskin.tskin{background:url(/wys-sales/img/sparkle-scatter-900.webp) right 90px/240px no-repeat,radial-gradient(600px 400px at 4% 6%,#ffe0ee 0,rgba(255,224,238,0) 70%),#FFF0F6!important}}
