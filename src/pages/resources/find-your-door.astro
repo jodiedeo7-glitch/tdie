@@ -5,6 +5,7 @@ import { membership as M } from "../../data/facts.js";
 import { Image } from "astro:assets";
 import WysAnnounce from "../../components/WysAnnounce.astro";
 import WysWhen from "../../components/WysWhen.astro";
+import TrialNudge from "../../components/TrialNudge.astro";
 import wysStyled from "../../lifestyle/barbie-pink-grown-up-styled.jpg";
 
 // ─────────────────────────────────────────────────────────────
@@ -141,6 +142,7 @@ const stats = [
       <a class="btn fd-r-btn" id="fd-r-btn" href="#"><span id="fd-r-cta">Go</span> <span class="ar">→</span></a>
       <p class="fd-r-alt" id="fd-r-alt" hidden></p>
       <p class="fd-r-tool">Working on an offer? <a href="/resources/one-sentence-offer">Get what you sell down to one sentence</a>: free, two minutes, results on screen.</p>
+      <TrialNudge id="fd-trial" hidden={true} href={SKOOL} />
 
       <form class="fd-send" id="fd-send">
         <span class="fd-r-l">Before you go</span>
@@ -524,6 +526,7 @@ const stats = [
         alt.hidden = false;
       } else { alt.hidden = true; }
       $("fd-send-h").textContent = "Weekly emails, pointed at " + D.name;
+      $("fd-trial").hidden = (door === "S" || door === "P" || door === "V");
 
       window.__fdResult = { door: door, stage: stage, goal: goal, stuck: stuck, fear: fearOpt[1],
         reframe: reframe, first_move: D.moves[0], time: timeOpt[1] };

@@ -2,6 +2,7 @@
 // The free Blueprint sign-up. Posts to /api/blueprint, which adds the email to
 // the MailerLite group "Faceless Income Blueprint", then hands the guide over on
 // screen immediately (no waiting on an email, no second site).
+import TrialNudge from "./TrialNudge.astro";
 const {
   heading = "Get The Faceless Income Blueprint™ free",
   sub = "Fifteen pages: the whole machine on one page, the one engine holding you back, and a seven-day build order.",
@@ -29,19 +30,20 @@ const UID = Math.random().toString(36).slice(2, 9);
     <p class="bpf-h">It's yours.</p>
     <p class="bpf-sub">{doneSub}</p>
     <a class="btn bpf-dl" href={file} target="_blank" rel="noopener" download>{doneButton} <span aria-hidden="true">→</span></a>
+    <TrialNudge />
   </div>
 </div>
 <style>
   .bpf{max-width:560px}
-  .bpf-h{margin:0 0 8px;font-family:Gloock,Georgia,serif!important;font-weight:600;font-size:28px;line-height:1.15;color:#1A1417}
-  .bpf-sub{margin:0 0 16px;font:500 16px/1.5 Jost,system-ui,sans-serif;color:#4A3640}
+  .bpf-h{margin:0 0 8px;font-family:Gilda,Georgia,serif!important;font-weight:400;font-size:28px;line-height:1.15;color:#1A1417}
+  .bpf-sub{margin:0 0 16px;font:500 16px/1.5 Poppins,system-ui,sans-serif;color:#4A3640}
   .bpf-row{display:flex;gap:10px;flex-wrap:wrap}
   .bpf-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .bpf input{flex:1 1 220px;min-width:0;min-height:52px;border-radius:999px;border:1.5px solid #E891B6;padding:0 20px;font:500 16px Jost,system-ui,sans-serif;background:#fff;color:#1A1417}
+  .bpf input{flex:1 1 220px;min-width:0;min-height:52px;border-radius:999px;border:1.5px solid #E891B6;padding:0 20px;font:500 16px Poppins,system-ui,sans-serif;background:#fff;color:#1A1417}
   .bpf .btn{min-height:52px;cursor:pointer}
-  .bpf-err{margin:8px 0 0;font:600 14px Jost,system-ui,sans-serif;color:#B8245F;min-height:0}
+  .bpf-err{margin:8px 0 0;font:600 14px Poppins,system-ui,sans-serif;color:#B8245F;min-height:0}
   .bpf-err:empty{display:none}
-  .bpf-fine{margin:10px 0 0;font:500 13px/1.4 Jost,system-ui,sans-serif;color:#6B5560}
+  .bpf-fine{margin:10px 0 0;font:500 13px/1.4 Poppins,system-ui,sans-serif;color:#6B5560}
   .bpf-fine a{color:inherit}
   .bpf-done .bpf-h{font-size:30px}
   @media (max-width:600px){.bpf-h{font-size:24px}.bpf .btn{flex:1 1 100%;justify-content:center}}

@@ -1,0 +1,18 @@
+---
+// "Ready for the whole build?" box shown right after someone gets a free thing
+// (Blueprint and kit downloads, Find Your Door results). 27 Nov 2026.
+import { membership as M, SKOOL_PLANS } from "../data/facts.js";
+const { id, hidden = false, href = SKOOL_PLANS } = Astro.props;
+---
+<div class="tn" id={id} hidden={hidden}>
+  <p class="tn-h">Ready for the whole build?</p>
+  <p class="tn-p">The membership is the full classroom in order, a new AI photo prompt every day, and 900+ women building theirs right beside you in the Skool community. {M.standard.name} is {M.standard.perMonth} after a <span style="white-space:nowrap">{M.trial}</span>.</p>
+  <a class="btn tn-btn" href={href}>Start 7 days free <span aria-hidden="true">→</span></a>
+</div>
+<style>
+  .tn{margin:22px 0 0;padding:22px 24px;background:#fff;border:2px dashed #E891B6;text-align:left}
+  .tn-h{margin:0 0 8px;font:400 26px/1.15 Gilda,Georgia,serif!important;color:#1A1417}
+  .tn-p{margin:0 0 16px;font:400 16px/1.55 Poppins,system-ui,sans-serif;color:#3A2A32}
+  .tn-btn{min-height:50px}
+  @media (max-width:600px){.tn{padding:18px}.tn-h{font-size:23px}.tn-btn{width:100%;justify-content:center}}
+</style>
