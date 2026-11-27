@@ -23,7 +23,7 @@ const always = [
   <section class="ig-hero">
     <div class="page-eyebrow">@the.faceless.homestead.mama</div>
     <h1>From <em>my posts.</em></h1>
-    <p class="lede">Saw something today? It's right here — newest first, nothing to scroll for.</p>
+    <p class="lede">Saw something today? It's right here, newest first, nothing to scroll for.</p>
   </section>
 
   <section class="ig-list" id="ig-list">
@@ -82,10 +82,10 @@ const always = [
 
     .ig-card{
       display:block;position:relative;padding:30px 32px 28px;border-radius:var(--r);
-      background:var(--white);border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);
+      background:var(--white);border:1px solid rgba(43,22,27.10);border-top:2px solid var(--gold);
       transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
     }
-    .ig-card:hover{transform:translateY(-3px);box-shadow:0 30px 60px -34px rgba(43,22,27,.28)}
+    .ig-card:hover{transform:translateY(-3px);box-shadow:0 30px 60px -34px rgba(43,22,27.28)}
     .ig-card h2{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.24;margin:2px 0 10px;color:var(--choc)}
     .ig-card p{font-size:16px;line-height:1.7;margin:0 0 16px;color:var(--choc-mute)}
     .ig-when{display:block;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;font-weight:500;color:var(--gold-deep);margin-bottom:10px}
@@ -98,24 +98,24 @@ const always = [
     .ig-card.ig-latest{
       background:linear-gradient(155deg,var(--choc) 0%,#3a2229 100%);
       border-top-color:var(--pink);border-color:transparent;
-      box-shadow:0 40px 80px -44px rgba(43,22,27,.55);
+      box-shadow:0 40px 80px -44px rgba(43,22,27.55);
     }
     .ig-card.ig-latest .ig-when{color:var(--mauve)}
-    .ig-card.ig-latest h2,.ig-card.ig-latest p{color:var(--cream)}
-    .ig-card.ig-latest p{color:rgba(251,248,245,.78)}
+    .ig-card.ig-latest h2.ig-card.ig-latest p{color:var(--cream)}
+    .ig-card.ig-latest p{color:rgba(251,248,245.78)}
     .ig-card.ig-latest .ig-cta{color:var(--mauve)}
-    .ig-card.ig-latest .ig-disc{color:rgba(251,248,245,.55)}
-    .ig-card.ig-latest:hover{box-shadow:0 46px 90px -40px rgba(43,22,27,.6)}
+    .ig-card.ig-latest .ig-disc{color:rgba(251,248,245.55)}
+    .ig-card.ig-latest:hover{box-shadow:0 46px 90px -40px rgba(43,22,27.6)}
 
     .ig-divider{display:flex;align-items:center;gap:16px;margin:64px 0 30px;color:var(--taupe-deep)}
-    .ig-divider::before,.ig-divider::after{content:"";flex:1;height:1px;background:rgba(43,22,27,.12)}
+    .ig-divider::before.ig-divider::after{content:"";flex:1;height:1px;background:rgba(43,22,27.12)}
     .ig-divider span{font-size:11px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;color:var(--taupe-deep);white-space:nowrap}
 
     .ig-always-grid{display:grid;gap:16px}
     .ig-alt-card{display:block;padding:26px 28px;border-radius:var(--r);background:var(--white);
-      border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--ac);
+      border:1px solid rgba(43,22,27.10);border-top:2px solid var(--ac);
       transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-    .ig-alt-card:hover{transform:translateY(-2px);box-shadow:0 24px 46px -30px rgba(43,22,27,.24)}
+    .ig-alt-card:hover{transform:translateY(-2px);box-shadow:0 24px 46px -30px rgba(43,22,27.24)}
     .ig-alt-card h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0 0 8px;color:var(--choc)}
     .ig-alt-card p{font-size:14.5px;line-height:1.65;margin:0 0 14px;color:var(--choc-mute)}
     .ig-cta-alt{font-size:12px}

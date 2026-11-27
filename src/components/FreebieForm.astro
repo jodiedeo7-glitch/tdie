@@ -3,7 +3,7 @@
 // MailerLite embedded capture form, styled to the brand.
 // One form (account 2532349, form 193994333796435364) → all freebies capture
 // into one list for now (Option 1). To segment per-pillar later, swap the
-// action URL for a pillar-specific form ID — one line per page.
+// action URL for a pillar-specific form ID, one line per page.
 //
 // Props (all optional, all backwards compatible):
 //   heading  - the capture headline (e.g. "Get the AI Starter Kit")
@@ -151,10 +151,10 @@ const privacyLead = privacy === undefined ? (subSaysUnsubscribe ? "" : "No spam.
   .fc-done:focus{outline:none}
   .fc-done-link{display:inline-block;margin-top:10px;font-family:Jost,sans-serif;font-size:17px;font-weight:600;color:var(--pink);text-decoration:underline;text-underline-offset:4px}
   .fc-done:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
-  .fc-row[hidden],.fc-sub[hidden],.fc-privacy[hidden]{display:none}
+  .fc-row[hidden].fc-sub[hidden].fc-privacy[hidden]{display:none}
   .freebie-capture {
     background: var(--white);
-    border: 1px solid rgba(43,22,27,.13);
+    border: 1px solid rgba(43,22,27.13);
     border-top: 2px solid var(--pink);
     border-radius:2px;
     padding: 32px;
@@ -216,7 +216,7 @@ const privacyLead = privacy === undefined ? (subSaysUnsubscribe ? "" : "No spam.
 </style>
 
 <!-- Floors, not styles: zero-specificity (:where) so every page that restyles
-     the form (.letter-body, .rs-body, .nw-form, .news-form...) still wins. -->
+     the form (.letter-body.rs-body.nw-form.news-form...) still wins. -->
 <style is:global>
   :where(.freebie-capture .fc-row) input,:where(.freebie-capture .fc-row) button{min-height:48px}
   @media (max-width:480px){:where(.freebie-capture .fc-row) button{flex:1 1 100%}}

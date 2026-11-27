@@ -1,6 +1,6 @@
-// ── LAUNCH STAGE — change STAGE here and both the sales page and
+// ── LAUNCH STAGE, change STAGE here and both the sales page and
 // the preview page update together. Nothing else needs editing.
-// "full"   — launch ladder retired, settled price
+// "full"  , launch ladder retired, settled price
 import { SALE } from "./we-sale.js";
 
 export const STAGE = "full";

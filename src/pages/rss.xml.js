@@ -47,9 +47,9 @@ export async function GET(context) {
   items.sort((a, b) => b.pubDate - a.pubDate);
 
   return rss({
-    title: "The Digital Income Edit™ — The Library",
+    title: "The Digital Income Edit™, The Library",
     description:
-      "New guides on building faceless digital income — AI, Pinterest, digital products, and automation for a business of one.",
+      "New guides on building faceless digital income, AI, Pinterest, digital products, and automation for a business of one.",
     site: context.site || SITE,
     items,
     customData: `<language>en-us</language>`,

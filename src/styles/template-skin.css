@@ -32,7 +32,7 @@ body.tskin main :is(.e-kick,.lbl,.bl-cat,.bl-q-cat,.pil-cat,.pil-kit-k,.start-k,
 }
 
 /* ---------- backgrounds: light pink with sparkle, never flat ---------- */
-body.tskin{background:url(/wys-sales/img/sparkle-scatter-900.webp) right 120px/700px no-repeat,radial-gradient(900px 520px at 4% 6%,#ffe0ee 0,rgba(255,224,238,0) 70%),radial-gradient(900px 560px at 98% 60%,#ffe3f0 0,rgba(255,227,240,0) 70%),#FFF0F6!important}
+html body.tskin.tskin{background:url(/wys-sales/img/sparkle-scatter-900.webp) right 120px/700px no-repeat,radial-gradient(900px 520px at 4% 6%,#ffe0ee 0,rgba(255,224,238,0) 70%),radial-gradient(900px 560px at 98% 60%,#ffe3f0 0,rgba(255,227,240,0) 70%),#FFF0F6!important}
 body.tskin main :is(.lib-head,.start,.wrap,section){background-color:transparent!important}
 .life :is(.life-hero,.life-band,.life-picks-band,.life-section,.cs-band){background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,radial-gradient(800px 420px at 8% 10%,#ffe0ee 0,rgba(255,224,238,0) 70%),#FFF0F6!important}
 .life .life-band,.life .cs-band{background:url(/wys-sales/img/sparkle-scatter-900.webp) left top/560px no-repeat,#fff!important;border-top:4px solid transparent;border-bottom:4px solid transparent;border-image:url(/wys-sales/img/gl-hot.webp) 30 round}
@@ -77,3 +77,6 @@ body.tskin main .bl-kit.bl-kit span{background:#fff!important;border:1px solid #
 body.tskin main .lib-head.lib-head{background:transparent!important}
 .life .life-category-card.life-category-card,.life .life-band>.life-wrap,.life .life-band .life-section,.life .life-category-card img{border-radius:0!important}
 .life .life-category-card.life-category-card{background:#fff!important;border:0!important;box-shadow:0 10px 24px rgba(120,80,95,.16)!important;outline:1.5px dashed rgba(214,46,115,.75);outline-offset:-8px}
+/* Library guides: no pink-to-lavender wash behind Recommended Reading */
+body.tskin-article.tskin-article section.journey{background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,#fff!important;border-top:4px solid transparent;border-bottom:4px solid transparent;border-image:url(/wys-sales/img/gl-hot.webp) 30 round}
+body.tskin :is([class*=wys-],.wys-k,.wys-new){font-family:Montserrat,Poppins,sans-serif}

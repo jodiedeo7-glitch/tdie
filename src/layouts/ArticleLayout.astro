@@ -4,8 +4,9 @@ import SiteNav from "../components/TemplateNav.astro";
 import SiteFooter from "../components/TemplateFooter.astro";
 import "../styles/tdie-article.css";
 import "../styles/brand-finish.css";
+import "../styles/template-skin.css";
 // ============================================================
-// THE DIGITAL INCOME EDIT™ — MASTER ARTICLE LAYOUT
+// THE DIGITAL INCOME EDIT™, MASTER ARTICLE LAYOUT
 // Every article page wraps its content in this layout.
 // To publish a new article: create a new file in
 // src/pages/learn/ using this same layout, keep the frontmatter
@@ -27,15 +28,15 @@ import "../styles/brand-finish.css";
 //
 // FAQPage schema emits only when the optional `faqs` prop is
 // passed. Answers passed to `faqs` MUST match the visible FAQ
-// text in the article body verbatim — Google penalizes
+// text in the article body verbatim, Google penalizes
 // structured data that isn't present in the rendered page.
 //
 // ============================================================
 // NOTE ON MULTI-ELEMENT CONDITIONAL BRANCHES
 // ============================================================
-// Do NOT use `<>...</>` shorthand — Astro does not support it.
+// Do NOT use `<>...</>` shorthand, Astro does not support it.
 // Do NOT use `<Fragment>` without importing it from 'astro/jsx-runtime'
-// — an unimported capitalized tag is parsed as raw markup, the
+//, an unimported capitalized tag is parsed as raw markup, the
 // enclosing block's structure breaks, and the compiler reports an
 // orphaned closing tag SOMEWHERE DOWNSTREAM of the real cause.
 // Both mistakes were made in this file and both produced the same
@@ -47,7 +48,7 @@ import "../styles/brand-finish.css";
 // no import, nothing to forget.
 //
 // ============================================================
-// PER-PILLAR ROUTING — Resource Map v2.0, Part 2
+// PER-PILLAR ROUTING, Resource Map v2.0, Part 2
 // ============================================================
 // The journey block below is NO LONGER HARDCODED. It reads
 // `category` and routes to that pillar's row.
@@ -64,24 +65,24 @@ import "../styles/brand-finish.css";
 // This is why Digital Products has three slots and Mindset has
 // none. That asymmetry is the true state of the site, not a
 // defect in this file. As each route ships, populate its row
-// below — one edit, all articles in that pillar update.
+// below, one edit, all articles in that pillar update.
 //
 // LIVE ROUTES (verified against the repo, 6 Sept 2026):
 //   /resources/faceless-income-blueprint
 //   /resources/starter-map
-//   /resources/<pillar>-kit                — all twelve now live
-//   /shop/pretty-and-paid-plr-vault       — NOT /shop/plr-vault,
+//   /resources/<pillar>-kit               , all twelve now live
+//   /shop/pretty-and-paid-plr-vault      , NOT /shop/plr-vault,
 //     which never shipped; an earlier version of this comment
 //     named the wrong route. The code below is correct.
 //   /shop/weekend-ecosystem
 //   /membership                            (Membership CTAs)
 //
-// AFFILIATE MECHANICS — Standing Rule 18:
+// AFFILIATE MECHANICS, Standing Rule 18:
 // link + rel="sponsored" + disclosure travel as a set or not
 // at all. Canva (Pillar 3) is the ONLY affiliate with confirmed
-// terms and is the ONLY one that ships as a link — it carries
+// terms and is the ONLY one that ships as a link, it carries
 // all three. Make (Pillars 6, 9) and Beacons (Pillar 7) are
-// honest recommendations with no confirmed relationship — they
+// honest recommendations with no confirmed relationship, they
 // ship as UNLINKED TEXT with no sponsored rel and no affiliate
 // disclosure, because there is no affiliate relationship to
 // disclose. They DO carry a plain "not an affiliate link" note:
@@ -90,9 +91,9 @@ import "../styles/brand-finish.css";
 // of three; it does not forbid the note. Do not add hrefs to
 // Make or Beacons without a recorded decision.
 //
-// CATEGORY LABELS — Standing Rule 24: the pillar defines the
+// CATEGORY LABELS, Standing Rule 24: the pillar defines the
 // label. Keys below are canon. An article passing a non-canon
-// label falls through to DEFAULT — newsletter + community only,
+// label falls through to DEFAULT, newsletter + community only,
 // never a guessed route.
 // ============================================================
 import "../styles/global.css";
@@ -104,7 +105,7 @@ export interface Props {
   title: string;             // SEO title tag
   description: string;       // meta description
   slug: string;              // e.g. "how-to-build-a-faceless-digital-business"
-  category: string;          // e.g. "Business Systems" — canon label, drives routing
+  category: string;          // e.g. "Business Systems", canon label, drives routing
   issueNumber: string;       // e.g. "017"
   readTime: string;          // e.g. "20 Min Read"
   ogImage?: string;
@@ -139,10 +140,10 @@ const {
 const SITE = "https://www.thedigitalincomeedit.com";
 const canonical = `${SITE}/learn/${slug}`;
 
-// Absolute URL for schema and OG — ogImage may be passed as a relative path.
+// Absolute URL for schema and OG, ogImage may be passed as a relative path.
 const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
 
-// Dates are spread in only when present. An absent date emits no key at all —
+// Dates are spread in only when present. An absent date emits no key at all,
 // never an empty string, never a build-time guess.
 const articleDates = {
   ...(datePublished && { datePublished }),
@@ -177,7 +178,7 @@ const articleSchema = {
   },
 };
 
-// BreadcrumbList — Home → The Library → this article.
+// BreadcrumbList, Home → The Library → this article.
 // The category level is deliberately omitted: no pillar has its own URL, and a
 // breadcrumb item must point at a real page. Add it here if category pages ship.
 const breadcrumbSchema = {
@@ -205,40 +206,40 @@ const faqSchema = faqs?.length
   : null;
 
 // ============================================================
-// THE ROUTING TABLE — Resource Map v2.0, Part 2
+// THE ROUTING TABLE, Resource Map v2.0, Part 2
 // ============================================================
 // Shape of a pillar row. Every field is optional. An omitted
 // field renders no slot at all.
 //
-//   free      { label, blurb, href }   — href MUST be live
-//   paid      { label, blurb, href }   — href MUST be live
-//   affiliate { name, blurb, href? }   — href omitted = unlinked
-//   newsletter  string  — pillar's newsletter CTA line
-//   community   string  — pillar's community CTA line
+//   free      { label, blurb, href }  , href MUST be live
+//   paid      { label, blurb, href }  , href MUST be live
+//   affiliate { name, blurb, href? }  , href omitted = unlinked
+//   newsletter  string , pillar's newsletter CTA line
+//   community   string , pillar's community CTA line
 //
 // Newsletter and community lines are quoted verbatim from the
 // Resource Map. They are the only two fields populated for
 // every pillar, because they are the only two destinations
 // that exist for every pillar.
 //
-//   related     [{ href, title }]  — passed per-article, not per-pillar.
+//   related     [{ href, title }] , passed per-article, not per-pillar.
 //                                    The cluster is an editorial decision;
 //                                    the routes are not. Three minimum.
 
 const PILLARS = {
   // --- 1. AI --------------------------------------------------
-  // free:  Faceless Income Blueprint™ — /resources/faceless-income-blueprint — LIVE.
+  // free:  Faceless Income Blueprint™, /resources/faceless-income-blueprint, LIVE.
   //        Reassigned (session decision): AI CEO Planner™ excerpt page was never
   //        built; the Planner is module-delivered inside Premium (Scaling & Systems),
   //        not a standalone /resources or /shop page. Blueprint carries the free slot.
   // paid:  The Operating Prompts™ ($19, Value Vault). Replaced 8 Claude Prompts on
   //        24 Sep 2026 (canon Decision 102). Planner lives inside Premium.
-  // affiliate: None — no public programs. Empty is a PASS.
+  // affiliate: None, no public programs. Empty is a PASS.
   "AI": {
     free: {
       label: "The AI Starter Kit",
       blurb:
-        "The four jobs to hand AI first and the brief that makes it usable — one page, free.",
+        "The four jobs to hand AI first and the brief that makes it usable, one page, free.",
       href: "/resources/ai-starter-kit",
     },
 paid: {
@@ -250,28 +251,28 @@ paid: {
     newsletter:
       "Most women use AI like a vending machine. Once a week I'll show you how to use it like a hire.",
     community:
-      "There's a daily prompt waiting inside the community. Copy it, run it, post what you got — that's the whole assignment.",
+      "There's a daily prompt waiting inside the community. Copy it, run it, post what you got, that's the whole assignment.",
   },
 
   // --- 2. Pinterest -------------------------------------------
-  // free:  Pinterest Keyword Planner — /resources/pinterest-keyword-planner — DOES NOT EXIST. Omitted.
-  // paid:  Membership Standard ($9/mo · $99/yr), led by Pinterest Foundations™ — founder
+  // free:  Pinterest Keyword Planner, /resources/pinterest-keyword-planner, DOES NOT EXIST. Omitted.
+  // paid:  Membership Standard ($9/mo · $99/yr), led by Pinterest Foundations™, founder
   //        call 24 Sep 2026: the tier that includes the module, plus every other
   //        Standard module, is the upsell. (Foundations also sells alone at $27.)
   //        Changed 24 Sep 2026. The slot used to sell the batching guide at "$5",
   //        which is not its price (canon: $9), next to a "$9 monthly membership"
   //        comparison. Foundations got its $27 Buy Now on 21 Sep 2026, and it is the
   //        course the pillar guide already recommends in its own body.
-  // affiliate: None — Pinterest pays nothing; Tailwind isn't taught. Empty is a PASS.
+  // affiliate: None, Pinterest pays nothing; Tailwind isn't taught. Empty is a PASS.
 "Pinterest": {
     free: {
       label: "The Pinterest Traffic Kit",
       blurb:
-        "The anatomy of a pin that gets clicked, and the keyword trick behind it — free.",
+        "The anatomy of a pin that gets clicked, and the keyword trick behind it, free.",
       href: "/resources/pinterest-traffic-kit",
     },
 paid: {
-      label: "Membership Standard — Pinterest Foundations™ included",
+      label: "Membership Standard, Pinterest Foundations™ included",
       blurb:
         "Pinterest Foundations™ walks the whole setup, done properly the first time: boards, keywords, pin structure and claiming your site. Membership Standard includes it, plus every other Standard module, for $9/month or $99/year.",
       href: "/membership",
@@ -282,24 +283,24 @@ paid: {
       "Drop your Pinterest URL. Someone will tell you which of your boards is doing nothing.",
   },
   // --- 3. Content Creation ------------------------------------
-  // free:  Canva Crash Course — /resources/canva-crash-course — DOES NOT EXIST. Omitted.
-  //        (Cheapest gap on the map — PDF is built, only the page is missing. Action B.5.)
-  // paid:  The Content Edit — Membership Standard, $9/month. Changed 24 Sep 2026.
+  // free:  Canva Crash Course, /resources/canva-crash-course, DOES NOT EXIST. Omitted.
+  //        (Cheapest gap on the map, PDF is built, only the page is missing. Action B.5.)
+  // paid:  The Content Edit, Membership Standard, $9/month. Changed 24 Sep 2026.
   //        The slot used to sell The Tommy Kate Edit at "$17, inside the community",
   //        but the link went to a Skool course that is locked to Membership Standard
   //        with no $17 buy button (canon Decision 94), so the price it showed could
   //        not be paid. The Content Edit is the Standard module this pillar teaches.
-  // affiliate: Canva — the ONLY pillar where Canva is correct, and the only
+  // affiliate: Canva, the ONLY pillar where Canva is correct, and the only
   //            affiliate on the site that ships as a link.
   "Content Creation": {
     free: {
       label: "The Content Creation Kit",
       blurb:
-        "The one-to-many system that turns a single idea into a week of content — free.",
+        "The one-to-many system that turns a single idea into a week of content, free.",
       href: "/resources/content-creation-kit",
     },
 paid: {
-      label: "The Content Edit — Membership Standard",
+      label: "The Content Edit, Membership Standard",
       blurb:
         "The module for never starting from a blank screen again: your content pillars, and what to post from each one. $9/month.",
       href: "/membership",
@@ -312,7 +313,7 @@ paid: {
     newsletter:
       "Posting more isn't a content strategy. It's a treadmill with a schedule. Weekly, the difference.",
     community:
-      "Post the last thing you made. Not the best thing — the last thing. That's the one worth talking about.",
+      "Post the last thing you made. Not the best thing, the last thing. That's the one worth talking about.",
   },
 
   // --- 4. Digital Products ------------------------------------
@@ -320,12 +321,12 @@ paid: {
   //    page-4 [INSERT] placeholder). Route is live; flags are not fixed here.
   // Vault slug resolved: /shop/pretty-and-paid-plr-vault is LIVE, 301 from
   //    /shop/plr-vault shipped (action B.6). CTA links the canonical slug direct.
-  // affiliate: None — the product IS the recommendation. Empty is a PASS.
+  // affiliate: None, the product IS the recommendation. Empty is a PASS.
   "Digital Products": {
     free: {
       label: "The First Product Kit",
       blurb:
-        "The four product types to start with and the one-week build — free.",
+        "The four product types to start with and the one-week build, free.",
       href: "/resources/digital-products-kit",
     },
     paid: {
@@ -341,26 +342,26 @@ paid: {
   },
 
   // --- 5. Affiliate Marketing ---------------------------------
-  // free:  Lead²Engine Faceless Blueprint™ — DOES NOT EXIST. Live fallback:
+  // free:  Lead²Engine Faceless Blueprint™, DOES NOT EXIST. Live fallback:
   //        The Affiliate Starter Kit.
   // paid:  Membership Premium ($9/mo). Founder decision, 16 Aug 2026. No owned
   //        standalone product exists for this pillar; affiliate marketing is
   //        taught inside the membership. Same treatment as Email Marketing,
   //        Branding and Passive Income.
-  // affiliate: The Brand Closet™ — founder call 24 Sep 2026 (replaces Leni Loves).
+  // affiliate: The Brand Closet™, founder call 24 Sep 2026 (replaces Leni Loves).
   //        canon.json products[] row, AFFILIATE, NOT OWNED, 50% recurring. Free to
   //        join; its paid tiers are Rose Berry's prices, so no price on the card.
-  //        Previously: Leni Loves — $27 (closed 21 Sep 2026), AFFILIATE, NOT OWNED. Moved out of the paid
+  //        Previously: Leni Loves · $27 (closed 21 Sep 2026), AFFILIATE, NOT OWNED. Moved out of the paid
   //        slot, which an affiliate product can never occupy. Linked, so the
   //        layout ships rel="sponsored" and the disclosure as a set. Price is
-  //        deliberately absent from the blurb — $9 is already on this screen.
+  //        deliberately absent from the blurb · $9 is already on this screen.
   //        Prior copy claimed "$27, 70% resell rights kept by you." That was
   //        wrong on price, name and ownership. Corrected.
   "Affiliate Marketing": {
     free: {
       label: "The Affiliate Starter Kit",
       blurb:
-        "How affiliate links work and the honest filter for what to recommend — free.",
+        "How affiliate links work and the honest filter for what to recommend, free.",
       href: "/resources/affiliate-starter-kit",
     },
     affiliate: {
@@ -370,23 +371,23 @@ paid: {
       href: "https://www.skool.com/the-brand-closet/about?ref=97643519c9b448d0a683ab33b6cc68ce",
     },
     paid: {
-      label: "Affiliate Marketing — Membership Standard",
+      label: "Affiliate Marketing, Membership Standard",
       blurb:
         "The trainings, the templates, and a room that reads your first recommendation before you publish it. $9/month.",
       href: "/membership",
     },
     newsletter:
-      "Recommending things you don't own is the fastest money in this business — and the easiest to do badly. Weekly, how to do it well.",
+      "Recommending things you don't own is the fastest money in this business, and the easiest to do badly. Weekly, how to do it well.",
     community:
-      "Post the one tool you'd recommend even if nobody paid you. That's your first affiliate link — the community will tell you why.",
+      "Post the one tool you'd recommend even if nobody paid you. That's your first affiliate link, the community will tell you why.",
   },
 
   // --- 6. Automation & Paid Traffic ---------------------------
-  // free:  Starter Map — /resources/starter-map — LIVE as of this commit.
-  //        Landing page on-site, delivery via Beacons — the Blueprint pattern.
+  // free:  Starter Map, /resources/starter-map, LIVE as of this commit.
+  //        Landing page on-site, delivery via Beacons, the Blueprint pattern.
   //        A.1 CLOSED: PDF corrected; the Beacons listing carries no tier and
   //        no price, so the price defect does not apply to the listing.
-  // paid:  Membership Premium ($35/mo · $297/yr, shown site-wide from 24 Sep 2026), led by Scaling & Systems — founder
+  // paid:  Membership Premium ($35/mo · $297/yr, shown site-wide from 24 Sep 2026), led by Scaling & Systems, founder
   //        call 24 Sep 2026: the tier that includes the module and every other
   //        module is the upsell. (Scaling & Systems also sells alone at $97.)
   //        Changed 24 Sep 2026. Rebuilt 20 Sep 2026 on the real stack: the
@@ -401,11 +402,11 @@ paid: {
     free: {
       label: "The Automation Starter Kit",
       blurb:
-        "The first three things worth automating, in the right order — free.",
+        "The first three things worth automating, in the right order, free.",
       href: "/resources/automation-kit",
     },
     paid: {
-      label: "Membership Premium — Scaling & Systems included",
+      label: "Membership Premium, Scaling & Systems included",
       blurb:
         "Scaling & Systems builds the automations this business actually runs on, lesson by lesson: the post that publishes itself, the reply sweep, the Sunday batch. Membership Premium includes it, plus every other module and The Ads Edit™, for $35/month or $297/year.",
       href: "/membership",
@@ -417,19 +418,19 @@ paid: {
   },
 
   // --- 7. Email Marketing -------------------------------------
-  // free:  Welcome Email Templates — /resources/welcome-email-templates — DOES NOT EXIST.
-  //        ⚠️ Also a TIER CONFLICT — currently Premium bonus content inside
+  // free:  Welcome Email Templates, /resources/welcome-email-templates, DOES NOT EXIST.
+  //        ⚠️ Also a TIER CONFLICT, currently Premium bonus content inside
   //           The Email Edit™. Do not gate-swap without a decision. Omitted.
   // paid:  The Email Edit™ via Membership Premium ($9/mo). /membership is LIVE
   //        and the slot now ships. No standalone product; delivered via membership.
-  // affiliate: Beacons — recommended, UNLINKED. Referral terms UNCONFIRMED
-  //            (Part 5, item 5). Genuinely relevant — it's the brand's own
+  // affiliate: Beacons, recommended, UNLINKED. Referral terms UNCONFIRMED
+  //            (Part 5, item 5). Genuinely relevant, it's the brand's own
   //            link-in-bio layer. Unlinked until terms are confirmed.
   "Email Marketing": {
    free: {
       label: "The Email List Starter Kit",
       blurb:
-        "How to start a list at zero and the welcome sequence that builds trust — free.",
+        "How to start a list at zero and the welcome sequence that builds trust, free.",
       href: "/resources/email-starter-kit",
     },
     affiliate: {
@@ -440,7 +441,7 @@ paid: {
     paid: {
       label: "The Email Edit · Membership Standard",
       blurb:
-        "Welcome and nurture sequences, ready to adapt — the highest-leverage emails in your business, drafted. $9/month.",
+        "Welcome and nurture sequences, ready to adapt, the highest-leverage emails in your business, drafted. $9/month.",
       href: "/membership",
     },
     newsletter:
@@ -452,20 +453,20 @@ paid: {
   // --- 8. Branding --------------------------------------------
   // UNBLOCKED (Decision 62, 24 Jul): BAMI stays retained-and-unrouted per
   //    Standing Rule 23. The pillar's entry product is now the LIVE Brand
-  //    Building & Brand Identity module on Skool Premium ($9/mo) — a different
+  //    Building & Brand Identity module on Skool Premium ($9/mo), a different
   //    product, dual-door checkout (Decision 60). BAMI is NOT this CTA.
-  // free:  Brand Bible Memory Chain — no live page. Fallback: Faceless Income
+  // free:  Brand Bible Memory Chain, no live page. Fallback: Faceless Income
   //        Blueprint™ (live), consistent with prior pillars.
-  // affiliate: None — branding is taught, not tooled. Empty is a PASS.
+  // affiliate: None, branding is taught, not tooled. Empty is a PASS.
   "Branding": {
     free: {
       label: "The Brand Clarity Kit",
       blurb:
-        "The one-sentence promise that makes every design choice easy — free.",
+        "The one-sentence promise that makes every design choice easy, free.",
       href: "/resources/branding-kit",
     },
     paid: {
-      label: "Brand Building & Brand Identity — Membership Standard",
+      label: "Brand Building & Brand Identity, Membership Standard",
       blurb:
         "The module that takes you from a one-sentence promise to a finished, written brand identity, step by step. $9/month.",
       href: "https://www.skool.com/thedigitalincomeedit/classroom/81c6bb56?md=c19864e06b4d41db945a01ce66f806b2",
@@ -473,23 +474,23 @@ paid: {
     newsletter:
       "A brand isn't a color palette. Yours is probably three fonts and a feeling. Weekly, what it should be instead.",
     community:
-      "Post your brand in one sentence. If it takes two, you don't have one yet — and the community will say so.",
+      "Post your brand in one sentence. If it takes two, you don't have one yet, and the community will say so.",
   },
 
   // --- 9. Business Systems ------------------------------------
-  // free:  Inherits the Blueprint via Pillar 4 — a cross-reference, not its
+  // free:  Inherits the Blueprint via Pillar 4, a cross-reference, not its
   //        own route. The route IS live, so the slot ships. This is the
   //        fourth pillar the Blueprint is load-bearing for (open item 1,
   //        segmentation OPEN).
-  // paid:  Business Architecture Blueprint™ — /shop/business-architecture-blueprint
-  //        — DOES NOT EXIST. Omitted.
+  // paid:  Business Architecture Blueprint™, /shop/business-architecture-blueprint
+  //       , DOES NOT EXIST. Omitted.
   // affiliate: NONE. Make removed 24 Sep 2026 for the same reason as Pillar 6:
   //            not in the stack, and its lesson was retired. Empty is a PASS.
   "Business Systems": {
     free: {
       label: "The Systems Starter Kit",
       blurb:
-        "The handful of systems that turn tasks into a business — free.",
+        "The handful of systems that turn tasks into a business, free.",
       href: "/resources/business-systems-kit",
     },
     paid: {
@@ -499,7 +500,7 @@ paid: {
       href: "/shop/weekend-ecosystem",
     },
     newsletter:
-      "Most people don't have a business. They have a job they gave themselves. Weekly, the difference — and how to cross it.",
+      "Most people don't have a business. They have a job they gave themselves. Weekly, the difference, and how to cross it.",
     community:
       "Post the one thing your business can't do without you. That's not a task. That's the architecture problem.",
   },
@@ -510,13 +511,13 @@ paid: {
   // paid:  RESOLVED (Decision, 24 Jul): founder set the entry rung to
   //        Membership Standard ($9/mo), NOT Premium $35. This supplies the entry
   //        rung the pillar was missing and resolves open item 2 for this
-  //        pillar — beginners get the $9 door, not the $35 flagship.
-  // affiliate: None — passive income is an outcome, not a toolset. PASS.
+  //        pillar, beginners get the $9 door, not the $35 flagship.
+  // affiliate: None, passive income is an outcome, not a toolset. PASS.
   "Passive Income": {
     free: {
       label: "The Passive Income Starter Kit",
       blurb:
-        "What counts as passive, the first stream, and the front-load order — free.",
+        "What counts as passive, the first stream, and the front-load order, free.",
       href: "/resources/passive-income-kit",
     },
     paid: {
@@ -532,7 +533,7 @@ paid: {
   },
 
   // --- 11. Mindset --------------------------------------------
-  // free:  Creator → CEO diagnostic — GAP, needs creation. Fallback: Faceless
+  // free:  Creator → CEO diagnostic, GAP, needs creation. Fallback: Faceless
   //        Income Blueprint™ (live), consistent with prior pillars.
   // paid:  NONE BY DESIGN. Mindset is taught inside every module and is not
   //        sold standalone (MOM v3.0, Part 6). Founder decision (24 Jul):
@@ -543,7 +544,7 @@ paid: {
     free: {
       label: "The Creator to CEO Kit",
       blurb:
-        "The identity shift underneath every skill on this site — free.",
+        "The identity shift underneath every skill on this site, free.",
       href: "/resources/mindset-kit",
     },
     newsletter:
@@ -553,25 +554,25 @@ paid: {
   },
 
   // --- 12. Blogging -------------------------------------------
-  // free:  Evergreen article checklist — GAP, needs creation. Omitted.
-  //        (Fastest gap to build — it's a byproduct of SOP 1 and SOP 2.)
-  // paid:  GAP — no curriculum, no product. The CTA is a related pillar's
+  // free:  Evergreen article checklist, GAP, needs creation. Omitted.
+  //        (Fastest gap to build, it's a byproduct of SOP 1 and SOP 2.)
+  // paid:  GAP, no curriculum, no product. The CTA is a related pillar's
   //        product, chosen by article topic. That is an editorial decision
-  //        per article, not a template default — so nothing ships here.
-  // affiliate: None — the obvious pick is WordPress hosting, and this site
+  //        per article, not a template default, so nothing ships here.
+  // affiliate: None, the obvious pick is WordPress hosting, and this site
   //            runs on Astro/Vercel/GitHub. Recommending a stack you don't
   //            use, for commission, is the forced fit. PASS.
   "Blogging": {
     free: {
       label: "The Evergreen Blog Kit",
       blurb:
-        "How to write the article that keeps getting found for years — free.",
+        "How to write the article that keeps getting found for years, free.",
       href: "/resources/blogging-kit",
     },
     paid: {
       label: "The Weekend Ecosystem™",
       blurb:
-        "Your website and blog, built from the content you already have — in one weekend, with Claude doing the building. $97 one-time.",
+        "Your website and blog, built from the content you already have, in one weekend, with Claude doing the building. $97 one-time.",
       href: "/shop/weekend-ecosystem",
     },
     newsletter:
@@ -583,21 +584,21 @@ paid: {
   // --- 13. Physical Products ---------------------------------
   // Added 18 Sep 2026 (Decision 83). The physical-goods door: Shopify,
   // print on demand, dropshipping. Same machine, different offer slot.
-  // free:  The Shopify Starter Kit — /resources/shopify-starter-kit — LIVE.
-  // paid:  Membership Standard ($9/mo) — The Shopify Edit module lives there.
+  // free:  The Shopify Starter Kit, /resources/shopify-starter-kit, LIVE.
+  // paid:  Membership Standard ($9/mo), The Shopify Edit module lives there.
   //        No standalone product; same treatment as Email, Branding, Passive.
-  // affiliate: Shopify — LINKED with Jodie's DIRECT affiliate URL
+  // affiliate: Shopify, LINKED with Jodie's DIRECT affiliate URL
   //            (shopify.pxf.io/eK3xYz), founder decision 18 Sep 2026: every
   //            Shopify link is the direct affiliate link, no bridge. The
   //            journey card still ships rel="sponsored" + the disclosure as a
   //            set (Standing Rule 18), so the direct link is compliant.
   //            canon.json → products[] "Shopify" (owned: false). Price is
-  //            deliberately absent from the blurb — $9 is already on screen.
+  //            deliberately absent from the blurb · $9 is already on screen.
   "Physical Products": {
     free: {
       label: "The Shopify Starter Kit",
       blurb:
-        "The product filter, the weekend setup checklist and the supplier-app decision — free.",
+        "The product filter, the weekend setup checklist and the supplier-app decision, free.",
       href: "/resources/shopify-starter-kit",
     },
     affiliate: {
@@ -607,15 +608,15 @@ paid: {
       href: "https://shopify.pxf.io/eK3xYz",
     },
     paid: {
-      label: "The Shopify Edit — Membership Standard",
+      label: "The Shopify Edit, Membership Standard",
       blurb:
-        "The full build, lesson by lesson: the store, the app, the product page and the first ten sales — plus a room that will tell you whether they'd buy it. $9/month.",
+        "The full build, lesson by lesson: the store, the app, the product page and the first ten sales, plus a room that will tell you whether they'd buy it. $9/month.",
       href: "/membership",
     },
     newsletter:
       "A store doesn't need your face or a warehouse. It needs one product a specific woman already wants. Weekly, how to find it.",
     community:
-      "Post the product you're leaning toward before you build the store. Someone in the room has already sold it — or tried to.",
+      "Post the product you're leaning toward before you build the store. Someone in the room has already sold it, or tried to.",
   },
 } as const;
 
@@ -647,7 +648,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Meta Pixel — dataset 1274879031402082 -->
+  <!-- Meta Pixel, dataset 1274879031402082 -->
   <script is:inline>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -690,8 +691,8 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   />
 <style>
   .bp-band{padding:0 24px;margin:28px auto 8px;max-width:1080px}
-  .bp-band-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;background:#fff;border:2px solid #F3BFD5;border-radius:20px;padding:16px 22px;box-shadow:0 18px 34px -26px rgba(184,36,95,.55)}
-  .bp-band img{width:72px;height:90px;object-fit:cover;border-radius:6px;box-shadow:0 10px 18px -10px rgba(120,10,50,.5)}
+  .bp-band-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;background:#fff;border:2px solid #F3BFD5;border-radius:20px;padding:16px 22px;box-shadow:0 18px 34px -26px rgba(184,36,95.55)}
+  .bp-band img{width:72px;height:90px;object-fit:cover;border-radius:6px;box-shadow:0 10px 18px -10px rgba(120,10,50.5)}
   .bp-band-kick{margin:0 0 4px;font:800 11px/1 Jost,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B8245F}
   .bp-band-h{margin:0 0 4px;font:600 22px/1.15 Gloock,Georgia,serif;font-family:Gloock,Georgia,serif!important;color:#1A1417}
   .bp-band-p{margin:0;font:500 15px/1.45 Jost,system-ui,sans-serif;color:#4A3640}
@@ -699,9 +700,9 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   @media (max-width:720px){.bp-band{padding:0 18px}.bp-band-in{grid-template-columns:64px minmax(0,1fr);gap:14px;padding:16px}.bp-band img{width:64px;height:80px}.bp-band-btn{grid-column:1 / -1;width:100%;justify-content:center;white-space:normal}.bp-band-h{font-size:20px}}
 </style>
 <style is:inline set:html={visualStyles} />
-<style is:inline>html body.tdie-finished{background:radial-gradient(900px 520px at 4% 6%,#ffe6f1 0,rgba(255,230,241,0) 70%),radial-gradient(900px 560px at 98% 40%,#ffe6f1 0,rgba(255,230,241,0) 70%),#FFFBEB!important}html body.tdie-finished::before{background:transparent!important;display:none!important}html body.tdie-finished :is(.hero-figure .img,.figure .img,.frame.photo){border:6px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;background-color:#fff!important}html body.tdie-finished .tcx-cta{border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/180px border-box!important;border-radius:0!important}html body.tdie-finished .tcx-menu summary{border:2px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;border-radius:0!important}</style>
+<style is:inline>html body.tdie-finished{background:radial-gradient(900px 520px at 4% 6%,#ffe6f1 0,rgba(255,230,241,0) 70%),radial-gradient(900px 560px at 98% 40%,#ffe6f1 0,rgba(255,230,241,0) 70%),#FFF0F6!important}html body.tdie-finished::before{background:transparent!important;display:none!important}html body.tdie-finished :is(.hero-figure .img.figure .img.frame.photo){border:6px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;background-color:#fff!important}html body.tdie-finished .tcx-cta{border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/180px border-box!important;border-radius:0!important}html body.tdie-finished .tcx-menu summary{border:2px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;border-radius:0!important}</style>
 </head>
-<body class="no-js tdie-finished">
+<body class="no-js tdie-finished tskin tskin-article">
   <style>.no-js .mask{clip-path:none!important}.no-js .reveal{opacity:1;transform:none}</style>
 
   <div class="progress" id="progress"></div>
@@ -755,7 +756,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
   </section>
 
   {/*
-    THE JOURNEY BLOCK — routed by category, per Resource Map v2.0.
+    THE JOURNEY BLOCK, routed by category, per Resource Map v2.0.
     Each slot renders only when its pillar row populates it AND its
     destination is live. Pillars with no live routes render nothing here;
     their next step is the newsletter and community sections below, which
@@ -823,7 +824,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
 
   {/*
     Retained for pages with a bespoke close-out. Any page passing `related`
-    should NOT also fill this slot — that ships two journey blocks, which is
+    should NOT also fill this slot, that ships two journey blocks, which is
     the pre-B.1 defect wearing the new template as a hat.
   */}
   <slot name="journey" />
@@ -846,12 +847,12 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
     .news-form{max-width:560px;margin:0 auto}
     .news-form :global(.fc-form){display:block}
     .news-form :global(.freebie-capture){background:var(--white);
-      border:1px solid rgba(43,22,27,.10);border-top:2px solid var(--gold);border-radius:2px;padding:36px 34px;margin:0;box-shadow:none;text-align:left}
+      border:1px solid rgba(43,22,27.10);border-top:2px solid var(--gold);border-radius:2px;padding:36px 34px;margin:0;box-shadow:none;text-align:left}
     .news-form :global(.fc-h){font-family:Gloock,serif;font-weight:400;font-size:25px;color:var(--choc);margin:0 0 8px}
     .news-form :global(.fc-sub){font-size:14.5px;color:var(--choc-mute);margin:0 0 20px}
     .news-form :global(.fc-row){display:flex;gap:12px;flex-wrap:wrap}
     .news-form :global(.fc-row input){flex:1 1 240px;min-width:0;border-radius:2px;
-      border:1px solid rgba(43,22,27,.18);background:var(--white);padding:14px 16px;font-size:15px}
+      border:1px solid rgba(43,22,27.18);background:var(--white);padding:14px 16px;font-size:15px}
     .news-form :global(.fc-row button){border-radius:2px;background:var(--pink);padding:14px 30px;font-size:12.5px;
       font-weight:600;letter-spacing:1.6px;text-transform:uppercase;box-shadow:none}
     .news-form :global(.fc-done){font-family:Gloock,serif;font-size:22px;line-height:1.35;color:var(--pink);margin:6px 0 0}
@@ -904,7 +905,7 @@ const NEWSLETTER_URL = "https://links.thedigitalincomeedit.com/page2";
       // scale(1.08) parallax pushed it 3px past the viewport at tablet widths and
       // put a sideways scroll on every guide page. Parallax now runs only on the
       // full-bleed photography, which is clipped by its container.
-      const px = [...document.querySelectorAll('.plate-photo .img,.chapter-cover .photo,.photo-quote .photo')];
+      const px = [...document.querySelectorAll('.plate-photo .img.chapter-cover .photo.photo-quote .photo')];
       px.forEach(el => { el.style.transform = 'scale(1.08)'; el.style.transition = 'transform .1s linear'; });
       let ticking = false;
       const move = () => {

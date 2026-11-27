@@ -38,6 +38,11 @@ const isOn = (href) => href !== "/#method" && href !== "/" && (path === href || 
 (function(){if(!window.matchMedia||!matchMedia('(max-width:600px)').matches)return;
 function f(){var all=document.body.getElementsByTagName('*');for(var i=0;i<all.length;i++){var e=all[i];if(e.offsetWidth<3||e.closest('.stk,svg,.cs-items,.cs-deck,.life-product-carousel,.life-feature-label,.sr,.life-sr'))continue;var t=0,c=e.childNodes;for(var j=0;j<c.length;j++){if(c[j].nodeType===3&&c[j].textContent.trim().length>1){t=1;break}}if(!t)continue;if(parseFloat(getComputedStyle(e).fontSize)<13)e.style.setProperty('font-size','13px','important')}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f()})();
+/* Phone: swipe hints under card rows; question lists show the questions, tap to open each answer */
+(function(){if(!window.matchMedia||!matchMedia('(max-width:700px)').matches)return;
+function g(){document.querySelectorAll('.looks,.p18:not(.hm-four):not(.p18-stack)').forEach(function(r){if(r.children.length<2||r.nextElementSibling&&r.nextElementSibling.classList.contains('sw-hint'))return;var h=document.createElement('p');h.className='sw-hint';h.innerHTML='Swipe for more <span aria-hidden="true">→</span>';r.after(h)});
+document.querySelectorAll('.faq > div.qa').forEach(function(q){var d=q.querySelector(':scope>div'),h=d&&d.querySelector(':scope>h3');if(!h||d.children.length<2)return;q.classList.add('qa-fold');h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');function t(){var o=q.classList.toggle('open');h.setAttribute('aria-expanded',o)}h.addEventListener('click',t);h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',g);else g()})();
 </script>
 <style is:global>
 @font-face{font-family:'Gilda';src:url(/wys-sales/fonts/gilda.woff2) format('woff2');font-display:swap}
@@ -75,4 +80,18 @@ header.sh.sh.sh{position:relative;z-index:40;display:block;margin:0;padding:0;ba
 }
 @media (max-width:380px){.sh .sh-top.sh-top{font-size:11px!important;letter-spacing:.2em}.sh .sh-script.sh-script{font-size:36px}.sh-menu summary{padding:8px 12px;letter-spacing:.14em}}
 @media print{.sh-menu,.sh-cta{display:none}}
+/* Phone page length (Jodie's audit, 27 Nov 2026): card rows swipe side to side, long answer lists open on tap */
+@media (max-width:700px){
+ .looks.looks,.p18.p18:not(.hm-four):not(.p18-stack){display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px!important;padding:6px 4px 18px!important;margin-left:-4px;margin-right:-4px;scrollbar-width:thin;scrollbar-color:#D62E73 transparent}
+ .looks.looks>*,.p18.p18:not(.hm-four):not(.p18-stack)>*{flex:0 0 82%;scroll-snap-align:center;margin-top:0!important}
+ .sw-hint.sw-hint{display:block;margin:2px 0 0;text-align:center;font:600 13px Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1A1417}
+ .sw-hint span{color:#D62E73}
+ .qa.qa-fold>div>:not(h3){display:none}
+ .qa.qa-fold.open>div>:not(h3){display:block}
+ .qa.qa-fold>div>h3{cursor:pointer;position:relative;padding-right:30px}
+ .qa.qa-fold>div>h3::after{content:"+";position:absolute;right:0;top:-2px;font:400 26px/1 Gilda,serif;color:#D62E73}
+ .qa.qa-fold.open>div>h3::after{content:"–"}
+ .qa.qa-fold>div>h3:focus-visible{outline:3px solid #B22B65;outline-offset:3px}
+}
+.sw-hint{display:none}
 </style>

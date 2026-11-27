@@ -40,7 +40,7 @@ export const ARTICLE_DATES = {
   "content-from-questions": "2026-09-17",
   "measuring-the-wrong-thing": "2026-09-17",
 
-  // Physical Products track — Decision 83, 18 Sep 2026.
+  // Physical Products track, Decision 83, 18 Sep 2026.
   "shopify-store-guide": "2026-09-18",
   "print-on-demand-vs-dropshipping": "2026-09-18",
   "shopify-store-in-a-weekend": "2026-09-18",

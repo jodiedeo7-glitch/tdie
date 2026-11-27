@@ -24,13 +24,13 @@ const AFF = true;
 
     {AFF && (
       <p class="go-disc">
-        Affiliate link — I earn a commission if you buy through it, at no cost to you.
+        Affiliate link, I earn a commission if you buy through it, at no cost to you.
         I only recommend things I use. The price is set by the owner and can change without notice.
       </p>
     )}
 
     <a class="btn buy go-btn" href={DEST} rel={AFF ? "sponsored noopener" : "noopener"}>
-      {PRICE === "$0" ? `Get ${NAME} free` : `Get ${NAME} — ${PRICE}`} <span class="ar">→</span>
+      {PRICE === "$0" ? `Get ${NAME} free` : `Get ${NAME} · ${PRICE}`} <span class="ar">→</span>
     </a>
 
     <p class="go-back"><a href="/shop">← Everything in the shop</a></p>

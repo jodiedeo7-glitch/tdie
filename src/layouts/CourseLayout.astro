@@ -15,7 +15,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Meta Pixel — dataset 1274879031402082 -->
+  <!-- Meta Pixel, dataset 1274879031402082 -->
   <script is:inline>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -53,7 +53,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     .we-prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#CBB7F7,var(--ac,var(--pink)));z-index:60;transition:width .4s ease}
 
     /* ── chrome ── */
-    .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27,.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .we-nav{position:sticky;top:0;z-index:50;background:rgba(251,248,245.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,22,27.09);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
     .we-nav a.brand{font-family:Gloock,serif;font-weight:400;font-size:16px;color:var(--wd);text-decoration:none;letter-spacing:-.2px}
     .we-nav a.brand em{color:var(--wp);font-style:italic}
     .we-nav .navlinks a{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wd);text-decoration:none;margin-left:22px;opacity:.55;transition:opacity .2s,color .2s}
@@ -80,17 +80,17 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     .wb-h{font-family:Gloock,serif;font-weight:400;font-size:26px;line-height:1.2;letter-spacing:-.3px;margin:0 0 16px}
     .wb-tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 
-    /* lead — the opening idea, set apart by type not by box */
+    /* lead, the opening idea, set apart by type not by box */
     .wb-lead p{font-family:Gloock,serif;font-size:22px;line-height:1.62;margin-bottom:18px}
-    .wb-lead{margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(43,22,27,.13)}
+    .wb-lead{margin-bottom:48px;padding-bottom:44px;border-bottom:1px solid rgba(43,22,27.13)}
 
     .wb-sect{margin-bottom:46px}
 
     /* warn */
-    .wb-warn{background:linear-gradient(180deg,rgba(203,183,247,.22),rgba(203,183,247,.06));border-radius:2px;padding:30px 32px;margin-bottom:46px}
+    .wb-warn{background:linear-gradient(180deg,rgba(203,183,247.22),rgba(203,183,247.06));border-radius:2px;padding:30px 32px;margin-bottom:46px}
     .wb-tag-warn{color:#6B4FA8}
 
-    /* DO — the spine of every module */
+    /* DO, the spine of every module */
     .wb-do{position:relative;padding:0 0 0 62px;margin-bottom:52px}
     .wb-do:before{content:"";position:absolute;left:19px;top:34px;bottom:-52px;width:1px;background:color-mix(in srgb,var(--ac,var(--pink)) 32%,transparent)}
     .wb-do:last-of-type:before{display:none}
@@ -99,10 +99,10 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     .wb-h-do{margin:6px 0 0}
     .wb-do-body>*:last-child{margin-bottom:0}
 
-    /* roadblocks — collapsed by default so the page reads clean */
-    .wb-roads{background:rgba(255,138,194,.06);border:1px solid rgba(214,46,115,.18);border-radius:2px;padding:26px 30px 14px;margin-bottom:44px}
+    /* roadblocks, collapsed by default so the page reads clean */
+    .wb-roads{background:rgba(255,138,194.06);border:1px solid rgba(214,46,115.18);border-radius:2px;padding:26px 30px 14px;margin-bottom:44px}
     .wb-tag-road{color:var(--wp);display:block}
-    .wb-road{border-top:1px solid rgba(214,46,115,.14);padding:2px 0}
+    .wb-road{border-top:1px solid rgba(214,46,115.14);padding:2px 0}
     .wb-road:first-of-type{border-top:none}
     .wb-road summary{cursor:pointer;list-style:none;padding:14px 0;font-size:16px;font-weight:500;display:flex;gap:12px;align-items:baseline}
     .wb-road summary::-webkit-details-marker{display:none}
@@ -111,35 +111,35 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     .wb-road-body{padding:0 0 16px 24px;font-size:16px}
     .wb-road-body>*:last-child{margin-bottom:0}
 
-    /* deliverable — the end cap */
+    /* deliverable, the end cap */
     .wb-deliv{background:linear-gradient(180deg,color-mix(in srgb,var(--ac,var(--pink)) 18%,transparent),color-mix(in srgb,var(--ac,var(--pink)) 5%,transparent));border-top:2px solid var(--ac,var(--pink));border-radius:0 0 2px 2px;padding:30px 32px;margin-bottom:0}
     .wb-deliv p{margin:0;font-family:Gloock,serif;font-size:21px;line-height:1.55;color:var(--wd)}
     .wb-deliv strong{color:var(--wp);font-weight:600}
     .wb-tag-deliv{color:var(--wp)}
 
     /* prompts */
-    .wb-prompt{margin:0 0 26px;border-radius:2px;overflow:hidden;background:var(--wpaper);border:1px solid rgba(214,46,115,.22)}
-    .wb-prompt-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,138,194,.16);border-bottom:1px solid rgba(214,46,115,.16)}
+    .wb-prompt{margin:0 0 26px;border-radius:2px;overflow:hidden;background:var(--wpaper);border:1px solid rgba(214,46,115.22)}
+    .wb-prompt-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,138,194.16);border-bottom:1px solid rgba(214,46,115.16)}
     .wb-prompt-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--wp)}
     .wb-prompt pre{margin:0;padding:20px 22px;overflow-x:auto;background:none}
     .wb-prompt pre code{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.72;color:#4A2C34;white-space:pre;background:none;padding:0}
-    .copy-btn{background:#fff;border:1px solid rgba(214,46,115,.4);color:var(--wp);border-radius:2px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;cursor:pointer;transition:all .2s}
+    .copy-btn{background:#fff;border:1px solid rgba(214,46,115.4);color:var(--wp);border-radius:2px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;cursor:pointer;transition:all .2s}
     .copy-btn:hover{background:var(--wp);border-color:var(--wp);color:#fff}
     .copy-btn.done{background:var(--wp);border-color:var(--wp);color:#fff}
 
     /* inline code */
-    #we-body :not(pre)>code{background:rgba(214,46,115,.08);color:var(--wp);padding:2px 6px;border-radius:2px;font-family:"JetBrains Mono",monospace;font-size:13.5px}
+    #we-body :not(pre)>code{background:rgba(214,46,115.08);color:var(--wp);padding:2px 6px;border-radius:2px;font-family:"JetBrains Mono",monospace;font-size:13.5px}
 
     /* tables */
     #we-body table{width:100%;border-collapse:collapse;margin:0 0 26px;font-size:15px}
     #we-body th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--wg);border-bottom:1px solid var(--wd);padding:0 14px 9px 0}
-    #we-body td{border-bottom:1px solid rgba(43,22,27,.1);padding:12px 14px 12px 0;vertical-align:top;line-height:1.6}
+    #we-body td{border-bottom:1px solid rgba(43,22,27.1);padding:12px 14px 12px 0;vertical-align:top;line-height:1.6}
 
     /* blockquote */
     #we-body blockquote{border-left:2px solid var(--wb);margin:0 0 24px;padding:2px 0 2px 20px;font-family:Gloock,serif;font-style:italic;font-size:20px;line-height:1.6}
     #we-body blockquote p{margin:0}
 
-    .we-foot{border-top:1px solid rgba(43,22,27,.1);padding:32px 40px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27,.4);text-align:center}
+    .we-foot{border-top:1px solid rgba(43,22,27.1);padding:32px 40px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(43,22,27.4);text-align:center}
 
     @media(max-width:720px){
       .we-wrap{padding:52px 22px 100px}
@@ -149,7 +149,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
       .wb-do:before{display:none}
       .wb-step{position:static;margin-bottom:12px}
       .wb-do-head{flex-direction:column;align-items:flex-start}
-      .wb-warn,.wb-roads,.wb-deliv{padding:24px 20px}
+      .wb-warn.wb-roads.wb-deliv{padding:24px 20px}
       .wb-prompt pre{padding:16px 14px}
       .wb-prompt pre code{font-size:12px}
     }
@@ -158,7 +158,7 @@ const { title, eyebrow, progress = 0, accent = "#D62E73" } = Astro.props;
     body{overflow-wrap:break-word}
     #we-body h1,#we-body h2,#we-body h3,#we-body p,#we-body li,
     #we-body a,#we-body strong,#we-body em,#we-body blockquote,
-    .wb-h,.wb-tag,.wb-road summary,.we-jump-t{overflow-wrap:break-word}
+    .wb-h.wb-tag.wb-road summary.we-jump-t{overflow-wrap:break-word}
     #we-body a[href^="http"]{word-break:break-word}
     #we-body img,#we-body svg{max-width:100%;height:auto}
     #we-body table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}

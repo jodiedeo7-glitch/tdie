@@ -176,6 +176,10 @@ const schema = [
   <h2 class="h2">This site is <span class="scr">the proof.</span></h2>
   <div class="lead"><p>I built this site faceless and solo with AI, wrote down every step as I went, and that record became the course. The pages you're on right now, the blog, the checkout and the members' area were all built with the twenty-two modules you'd get.</p></div>
   <div class="looks we-proof">{proof.map((p, i) => <a class="look" href={p.u}><span class="ph"><img src={p.img} alt="" loading="lazy" decoding="async"><span class="num">{String(i+1).padStart(2,'0')}</span></span><span class="tag">{p.n}</span><h3>{p.t}</h3><span class="we-go">Read it →</span></a>)}</div>
+  <div class="pf-row" aria-label="Real sales from the Beacons dashboard">
+   <figure class="pf"><img src="/images/proof/beacons-lifetime-blurred.webp" width="1100" height="1420" loading="lazy" decoding="async" alt="Beacons lifetime sales by product, with The Weekend Ecosystem first, climbing since August. Totals blurred."><figcaption>Lifetime sales by product. Totals blurred.</figcaption></figure>
+   <figure class="pf"><img src="/images/proof/beacons-30-days-blurred.webp" width="1179" height="884" loading="lazy" decoding="async" alt="Beacons sales activity for the last 30 days: 469 views, 56 orders, 11.9% conversion. Earnings blurred."><figcaption>Last 30 days on Beacons. Earnings blurred.</figcaption></figure>
+  </div>
  </div>
 </section>
 

@@ -46,7 +46,7 @@ export const MODULES = [
     "phase": "Phase 1 \u00b7 Saturday Morning",
     "phaseLabel": "Phase 1 \u00b7 Saturday Morning",
     "phaseSub": "The Website \u2014 the site itself goes live",
-    "blurb": "Claude generates every file for your site \u2014 including the homepage. You paste and click.",
+    "blurb": "Claude generates every file for your site, including the homepage. You paste and click.",
     "accent": "#CD9CDD"
   },
   {
@@ -96,7 +96,7 @@ export const MODULES = [
     "phase": "Phase 2 \u00b7 Saturday Afternoon",
     "phaseLabel": "Phase 2 \u00b7 Saturday Afternoon",
     "phaseSub": "The Blog \u2014 your content becomes articles that rank",
-    "blurb": "The supporting articles around your pillar \u2014 this is what makes Google read you as an authority.",
+    "blurb": "The supporting articles around your pillar, this is what makes Google read you as an authority.",
     "accent": "#CF80C2"
   },
   {
@@ -176,7 +176,7 @@ export const MODULES = [
     "phase": "Phase 4 \u00b7 Sunday Morning",
     "phaseLabel": "Phase 4 \u00b7 Sunday Morning",
     "phaseSub": "Traffic \u2014 people start arriving",
-    "blurb": "Brand-consistent images with a face that isn't yours \u2014 plus where the files actually go.",
+    "blurb": "Brand-consistent images with a face that isn't yours, plus where the files actually go.",
     "accent": "#D4498D"
   },
   {
@@ -196,7 +196,7 @@ export const MODULES = [
     "phase": "Phase 5 \u00b7 Sunday Afternoon",
     "phaseLabel": "Phase 5 \u00b7 Sunday Afternoon",
     "phaseSub": "Running It \u2014 the system without you",
-    "blurb": "Skip the clicking. Claude commits straight to your repo \u2014 safely.",
+    "blurb": "Skip the clicking. Claude commits straight to your repo, safely.",
     "accent": "#D62E73"
   },
   {

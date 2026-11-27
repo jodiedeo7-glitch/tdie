@@ -35,19 +35,19 @@ const AFF = false;
       </div>
       <div>
         <span class="go-good-t">Not a fit if</span>
-        <p>You haven't made any UGC yet — build a small portfolio first, then buy the list.</p>
+        <p>You haven't made any UGC yet, build a small portfolio first, then buy the list.</p>
       </div>
     </div>
 
     {AFF && (
       <p class="go-disc">
-        Affiliate link — I earn a commission if you buy through it, at no cost to you.
+        Affiliate link, I earn a commission if you buy through it, at no cost to you.
         I only recommend things I use.
       </p>
     )}
 
     <a class="btn buy go-btn" href={DEST} rel={AFF ? "sponsored noopener" : "noopener"}>
-      Get {NAME} — {PRICE} <span class="ar">→</span>
+      Get {NAME}, {PRICE} <span class="ar">→</span>
     </a>
 
     <p class="go-back"><a href="/shop">← Everything in the shop</a></p>

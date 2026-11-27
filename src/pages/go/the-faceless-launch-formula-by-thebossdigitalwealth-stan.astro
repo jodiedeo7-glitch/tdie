@@ -11,19 +11,19 @@ const modules = [
   { n: "01", t: "Know Your Message", p: "What you're actually launching, why a small audience isn't a small launch, and messaging that converts." },
   { n: "02", t: "Target Your Audience", p: "Audience clarity, building a faceless persona, and storylines that make someone feel seen." },
   { n: "03", t: "The Launch Checklist", p: "What a real launch looks like start to finish, and a 30-day checklist so nothing gets missed." },
-  { n: "04", t: "The Breadcrumbing Phase", p: "Warming an audience before you ever pitch — including how to breadcrumb a product you didn't create." },
+  { n: "04", t: "The Breadcrumbing Phase", p: "Warming an audience before you ever pitch, including how to breadcrumb a product you didn't create." },
   { n: "05", t: "Time to Launch", p: "Your content game plan, the wrap-up phase, and what to do after the sale." },
-  { n: "06", t: "Bonus — launching from zero", p: "How to run a launch on a brand-new account with no followers yet." },
+  { n: "06", t: "Bonus, launching from zero", p: "How to run a launch on a brand-new account with no followers yet." },
 ];
 ---
 <TemplateLayout
   title={NAME} stickyHref={DEST} stickyLabel={PRICE === "$0" ? "Get it free" : `Get it · ${PRICE}`} heroBuy=".go .go-btn"
-  description="A messaging and launch framework for faceless brands — five modules on positioning a digital product so it actually sells. Not mine; affiliate."
+  description="A messaging and launch framework for faceless brands, five modules on positioning a digital product so it actually sells. Not mine; affiliate."
 >
   <section class="sec wash go2"><div class="wrap"><div class="card dash go"><svg class="spk" style="position:absolute;right:-22px;top:-22px"><use href="#sp"/></svg>
     <div class="kick">{AFF ? "Recommended · Not mine" : "From the shop"}</div>
     <h1>The Faceless Launch Formula</h1>
-    <p class="go-lede">For the product you already made that nobody is buying — because the problem was never the product.</p>
+    <p class="go-lede">For the product you already made that nobody is buying, because the problem was never the product.</p>
 
     <div class="go-meta">
       <span class="go-price">{PRICE}</span>
@@ -32,8 +32,8 @@ const modules = [
 
     <div class="go-body">
       <p>Most digital products don't fail on quality. They fail because the woman who made it never told anyone clearly enough who it was for, or what changes after they buy it. So it sits in a store, linked once, and goes quiet.</p>
-      <p>This is Nancy Ayala's framework for fixing that. Five modules and sixteen lessons on positioning and messaging, plus the launch structure she runs each time she releases something — warming an audience first, then launching into people who already understand why it's for them.</p>
-      <p>It works on something you built yourself and on something you're reselling as an affiliate, which is unusual — most launch training assumes the product is yours.</p>
+      <p>This is Nancy Ayala's framework for fixing that. Five modules and sixteen lessons on positioning and messaging, plus the launch structure she runs each time she releases something, warming an audience first, then launching into people who already understand why it's for them.</p>
+      <p>It works on something you built yourself and on something you're reselling as an affiliate, which is unusual, most launch training assumes the product is yours.</p>
       <p>It isn't mine. I earn a commission if you buy through this page, and the price is set by the owner and can change without notice.</p>
     </div>
 
@@ -54,7 +54,7 @@ const modules = [
     <div class="go-good">
       <div>
         <span class="go-good-t">Good fit if</span>
-        <p>You have something to sell — yours or an affiliate offer — and it isn't moving. You suspect the product is the problem. It usually isn't.</p>
+        <p>You have something to sell, yours or an affiliate offer, and it isn't moving. You suspect the product is the problem. It usually isn't.</p>
       </div>
       <div>
         <span class="go-good-t">Not a fit if</span>
@@ -64,13 +64,13 @@ const modules = [
 
     {AFF && (
       <p class="go-disc">
-        Affiliate link — I earn a commission if you buy through it, at no cost to you.
+        Affiliate link, I earn a commission if you buy through it, at no cost to you.
         I only recommend things I use. The price is set by the owner and can change without notice.
       </p>
     )}
 
     <a class="btn buy go-btn" href={DEST} rel={AFF ? "sponsored noopener" : "noopener"}>
-      Get The Faceless Launch Formula — {PRICE} <span class="ar">→</span>
+      Get The Faceless Launch Formula, {PRICE} <span class="ar">→</span>
     </a>
 
     <p class="go-back"><a href="/shop">← Everything in the shop</a></p>

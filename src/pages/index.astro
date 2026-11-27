@@ -98,9 +98,9 @@ const jsonLd = {
   <div class="box">
    <span class="stk" style="right:-60px;top:-56px">Inside<b class="big">900+</b></span>
    <svg class="spk" style="left:-26px;bottom:60px;position:absolute"><use href="#sp"/></svg>
-   <p class="kick">For women building without a personal brand</p>
+   <p class="kick">If you want the income without becoming the content</p>
    <h1>Build a faceless business. <span class="scr">Keep your life off camera.</span></h1>
-   <p class="what"><b>The Digital Income Edit™ membership</b> is the whole package: the training, the community and fresh material every month to build the whole business with AI, in the right order. Offer, funnel, automation, then audience.</p>
+   <p class="what"><b>The Digital Income Edit™ membership</b> gives you the training, the community and new material every month to build your offer, funnel, emails and content with AI, in the right order. Offer, funnel, automation, then audience.</p>
    <a class="btn buy" href={SKOOL_PLANS}>Start your 7 days free <span class="ar">→</span></a>
    <p class="need">{MEM.standard.name} {MEM.standard.perMonth} · {MEM.premium.name} {MEM.premium.perMonth}. Cancel in Skool before the trial ends and you pay nothing.</p>
    <p class="see"><a href="#blueprint">Or get the free Blueprint ↓</a></p>
@@ -109,25 +109,6 @@ const jsonLd = {
    <img src="/images/brand/hero-tk-car.webp" alt="Tommy Kate, the AI face of The Digital Income Edit™, laughing in her pink car" width="1100" height="1639" fetchpriority="high" decoding="async">
    <p class="hh-cap"><b>Meet Tommy Kate.</b> The AI face of this brand. <span>Yours can have one too.</span></p>
   </div>
- </div>
-</section>
-
-<!-- Template pages 18 + 25: membership -->
-<section class="sec wash" id="membership">
- <div class="wrap">
-  <svg class="spk sm" style="right:80px;top:10px"><use href="#sp"/></svg>
-  <p class="kick">The membership · the whole package</p>
-  <h2 class="h2">One membership. <span class="scr">The whole business.</span></h2>
-  <div class="lead"><p>This is where everything here comes together. Not one course you finish and forget, but the full classroom, something new every day, the community beside you and, with Premium, your content written for you every month.</p></div>
-  <div class="p18">
-   <div class="box"><div class="cb"></div><span class="step">01</span><h3>The whole build, in order</h3><p>Brand, content, email, Pinterest and selling, in one classroom you keep coming back to.</p></div>
-   <div class="box"><div class="cb"></div><span class="step">02</span><h3>New every day and every month</h3><p>A fresh AI photo prompt daily, new lessons as they land, and with Premium a full content calendar each month.</p></div>
-   <div class="box"><div class="cb"></div><span class="step">03</span><h3>Never building alone</h3><p>900+ women in the Skool community, asking the same questions you are.</p></div>
-  </div>
-  <div class="hm-plans"><MembershipPlans /></div>
-  <p class="hm-compare"><a href="/membership#compare">See the full membership comparison</a></p>
-  <div class="hm-reviews">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
-  <p class="hm-swipe-note">Swipe for more reviews <span aria-hidden="true">→</span></p>
  </div>
 </section>
 
@@ -159,8 +140,27 @@ const jsonLd = {
  </div>
 </section>
 
+<!-- Template pages 18 + 25: membership -->
+<section class="sec" id="membership">
+ <div class="wrap">
+  <svg class="spk sm" style="right:80px;top:10px"><use href="#sp"/></svg>
+  <p class="kick">The membership · the whole package</p>
+  <h2 class="h2">One membership. <span class="scr">The whole business.</span></h2>
+  <div class="lead"><p>This is where everything here comes together. Not one course you finish and forget, but the full classroom, something new every day, the community beside you and, with Premium, your content written for you every month.</p></div>
+  <div class="p18">
+   <div class="box"><div class="cb"></div><span class="step">01</span><h3>The whole build, in order</h3><p>Brand, content, email, Pinterest and selling, in one classroom you keep coming back to.</p></div>
+   <div class="box"><div class="cb"></div><span class="step">02</span><h3>New every day and every month</h3><p>A fresh AI photo prompt daily, new lessons as they land, and with Premium a full content calendar each month.</p></div>
+   <div class="box"><div class="cb"></div><span class="step">03</span><h3>Never building alone</h3><p>900+ women in the Skool community, asking the same questions you are.</p></div>
+  </div>
+  <div class="hm-plans"><MembershipPlans /></div>
+  <p class="hm-compare"><a href="/membership#compare">See the full membership comparison</a></p>
+  <div class="hm-reviews">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
+  <p class="hm-swipe-note">Swipe for more reviews <span aria-hidden="true">→</span></p>
+ </div>
+</section>
+
 <!-- Template page 44: photo + card -->
-<section class="sec">
+<section class="sec wash">
  <div class="wrap">
   <p class="kick">The proof is the build</p>
   <h2 class="h2 hm-proof-h">This whole business was built <span class="scr">faceless, with AI.</span></h2>
@@ -168,17 +168,21 @@ const jsonLd = {
    <div class="ph"><a href="https://www.skool.com/thedigitalincomeedit/about"><img src="/images/pages/skool-about-current.webp" alt="The Digital Income Edit™ Skool group, as it looks today" width="1440" height="979" loading="lazy" decoding="async"></a></div>
    <div class="card dash">
     <span class="stk r" style="right:-40px;top:-56px">Open it<b>and look</b></span>
-    <p>This site, the emails, the course and the Skool classroom. Every article here started as a Skool lesson, and the course is delivered on the very site it teaches you to build. No income screenshots. Open any of it and look.</p>
+    <p>This site, the emails, the course and the Skool classroom. Every article here started as a Skool lesson, and the course is delivered on the very site it teaches you to build. Open any of it and look. The sales are real too.</p>
     <ul class="chk"><li>No filming</li><li>No audience first</li><li>No performing</li></ul>
     <a class="btn" href="https://www.skool.com/thedigitalincomeedit/about">Take a free look inside <span class="ar">→</span></a>
     <p class="see"><a href={WE.preview}>Or see inside the course, free</a></p>
    </div>
+ </div>
+  <div class="pf-row" aria-label="Real sales from the Beacons dashboard">
+   <figure class="pf"><img src="/images/proof/beacons-30-days-blurred.webp" width="1179" height="884" loading="lazy" decoding="async" alt="Beacons sales activity for the last 30 days: 469 views, 56 orders, 11.9% conversion. Earnings blurred."><figcaption>Last 30 days on Beacons. Earnings blurred.</figcaption></figure>
+   <figure class="pf"><img src="/images/proof/beacons-lifetime-blurred.webp" width="1100" height="1420" loading="lazy" decoding="async" alt="Beacons lifetime sales by product: The Weekend Ecosystem, The While-You-Sleep Storefront, Pretty and Paid PLR Vault and others, climbing since August. Totals blurred."><figcaption>Lifetime sales by product. Totals blurred.</figcaption></figure>
   </div>
  </div>
 </section>
 
 <!-- Template pages 24 + 25: the free Blueprint -->
-<section class="sec wash" id="blueprint">
+<section class="sec" id="blueprint">
  <div class="wrap p25">
   <div class="intro">
    <span class="scr">free download...</span>
@@ -200,8 +204,8 @@ const jsonLd = {
 </section>
 
 <!-- Template page 20 + 21: Weekend Ecosystem, Friday to Sunday -->
-<div class="band"><svg class="spk sm" style="left:20%"><use href="#sp"/></svg><h2>Optional add-on course</h2><svg class="spk" style="right:20%"><use href="#sp"/></svg></div>
-<section class="sec" id="owned-website">
+<div class="band"><svg class="spk sm" style="left:20%"><use href="#sp"/></svg><h2>Want your own website too?</h2><svg class="spk" style="right:20%"><use href="#sp"/></svg></div>
+<section class="sec wash" id="owned-website">
  <div class="wrap">
   <p class="kick">One-time · $67 (regular {WE.price}, Black Friday)</p>
   <h2 class="h2">The Weekend Ecosystem™ <span class="scr">give your work a home.</span></h2>
@@ -224,7 +228,7 @@ const jsonLd = {
 </section>
 
 <!-- Template page 21: more help, two cards -->
-<section class="sec wash">
+<section class="sec">
  <div class="wrap">
   <p class="kick">Want it built with you?</p>
   <h2 class="h2">More help, <span class="scr">when you're ready.</span></h2>
@@ -236,7 +240,7 @@ const jsonLd = {
 </section>
 
 <!-- Template page 47: numbered list -->
-<section class="sec">
+<section class="sec wash">
  <div class="wrap">
   <p style="text-align:center;margin:0 0 14px"><span class="tag">The free library</span></p>
   <h2 class="h2">Free guides. <span class="scr">Start with these.</span></h2>
@@ -248,7 +252,7 @@ const jsonLd = {
 </section>
 
 <!-- Template page 42: close -->
-<section class="sec wash">
+<section class="sec">
  <div class="wrap">
   <div class="p42 dash" style="position:relative">
    <span class="stk" style="left:-44px;top:-44px">7 days<b class="big">free</b></span>

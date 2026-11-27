@@ -183,3 +183,10 @@
 }
 .hm-swipe-note{display:none;margin:-4px 0 0;text-align:center;font:600 13px Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .hm-swipe-note span{color:var(--hot)}
+
+/* Real sales proof (blurred Beacons screenshots), 27 Nov 2026 */
+.pf-row{display:flex;gap:28px;justify-content:center;align-items:flex-start;margin:44px auto 0;max-width:780px}
+.pf{margin:0;flex:0 1 340px}
+.pf img{display:block;width:100%;height:auto;border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/140px border-box;box-shadow:var(--shadow)}
+.pf figcaption{margin-top:10px;text-align:center;font:600 12px/1.4 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+@media (max-width:700px){.pf-row{flex-direction:column;align-items:center;gap:26px}.pf{flex:none;width:min(320px,100%)}.pf figcaption{font-size:13px}}
