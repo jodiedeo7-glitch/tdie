@@ -9,6 +9,7 @@ import "../styles/tdie-shop.css";
 import "../styles/tdie-we.css";
 import "../styles/tdie-plr.css";
 import "../styles/tdie-pages.css";
+import SiteHeader from "../components/SiteHeader.astro";
 import { NAV, NAV_CTA, FOOTER, SOCIAL } from "../data/site.js";
 import {WYS_CTA} from "../data/wys-live.js";
 import { weekendEcosystem as WE } from "../data/facts.js";
@@ -65,14 +66,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [ { "@type": "WebPa
 <body class="tdie-t">
 <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="spg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8ac2"/><stop offset=".5" stop-color="#D62E73"/><stop offset="1" stop-color="#c9a8ff"/></linearGradient></defs><symbol id="sp" viewBox="0 0 100 100"><path d="M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0Z"/></symbol></svg>
 
-<header class="tnav">
- <div class="strip">The Digital Income Edit™</div>
- <nav class="tnav-in" aria-label="Main">
-  <ul>{NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
-  <a class="btn tnav-cta" href={NAV_CTA.href}>7 days free <span class="ar">→</span></a>
-  <details class="tmenu"><summary>Menu</summary><div>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href={NAV_CTA.href}>Start 7 days free</a></div></details>
- </nav>
-</header>
+<SiteHeader />
 
 <main>
 <slot />
@@ -87,9 +81,11 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [ { "@type": "WebPa
 
 {stickyHref && <a class="stick off" href={stickyHref}>{stickyLabel} <span class="ar">→</span></a>}
 <script is:inline define:vars={{heroBuy}}>
-(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,hero=document.querySelector(heroBuy);
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});s.classList.toggle('off',!passed||vis.size>0)});
-document.querySelectorAll('.buy').forEach(function(b){io.observe(b)})})();
+(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,up=false,lastY=scrollY,hero=document.querySelector(heroBuy);
+function show(){s.classList.toggle('off',!passed||!up||vis.size>0)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});show()});
+document.querySelectorAll('.btn,.offer-cta,form,.tfoot,#blueprint').forEach(function(b){if(b!==s)io.observe(b)});
+addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-lastY)>6){up=y<lastY;lastY=y;show()}},{passive:true})})();
 </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import {WYS_CTA} from "../data/wys-live.js";
 import "../styles/review-bubble.css";
 import "../styles/tdie-template.css";
 import "../styles/tdie-home.css";
+import SiteHeader from "../components/SiteHeader.astro";
 import { NAV, NAV_CTA, FOOTER, SOCIAL } from "../data/site.js";
 import BlueprintForm from "../components/BlueprintForm.astro";
 import { MEMBER_REVIEWS } from "../we-reviews.js";
@@ -88,14 +89,7 @@ const jsonLd = {
 <body class="tdie-t">
 <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="spg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8ac2"/><stop offset=".5" stop-color="#D62E73"/><stop offset="1" stop-color="#c9a8ff"/></linearGradient></defs><symbol id="sp" viewBox="0 0 100 100"><path d="M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0Z"/></symbol></svg>
 
-<header class="tnav">
- <div class="strip">The Digital Income Edit™</div>
- <nav class="tnav-in" aria-label="Main">
-  <ul>{NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
-  <a class="btn tnav-cta" href={NAV_CTA.href}>7 days free <span class="ar">→</span></a>
-  <details class="tmenu"><summary>Menu</summary><div>{NAV.map((l) => <a href={l.href}>{l.label}</a>)}<a href="/resources/faceless-income-blueprint">The Free Blueprint</a><a href={WE.url}>The Weekend Ecosystem™</a><a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a><a href={NAV_CTA.href}>Start 7 days free</a></div></details>
- </nav>
-</header>
+<SiteHeader />
 
 <main id="home-content">
 <!-- Template page 2: header card + photo -->
@@ -133,6 +127,7 @@ const jsonLd = {
   <div class="hm-plans"><MembershipPlans /></div>
   <p class="hm-compare"><a href="/membership#compare">See the full membership comparison</a></p>
   <div class="hm-reviews">{MEMBER_REVIEWS.map((r) => <ReviewBubble quote={r.quote} name={r.name} source={r.source} stars={r.stars} />)}</div>
+  <p class="hm-swipe-note">Swipe for more reviews <span aria-hidden="true">→</span></p>
  </div>
 </section>
 
@@ -257,7 +252,7 @@ const jsonLd = {
  <div class="wrap">
   <div class="p42 dash" style="position:relative">
    <span class="stk" style="left:-44px;top:-44px">7 days<b class="big">free</b></span>
-   <div class="ph"><img src="/images/pages/about-porch-red-barn-1120.webp" alt="Tommy Kate on her farmhouse porch by the red barn" width="1120" height="1390" loading="lazy" decoding="async"></div>
+   <div class="ph"><img src="/images/pages/newsletter-journal-desk-900.webp" alt="Planning the build at the desk, a journal open beside a coffee and fresh peonies" width="900" height="1117" loading="lazy" decoding="async"></div>
    <div class="tx">
     <svg class="spk sm" style="right:30px;top:30px"><use href="#sp"/></svg>
     <p class="kick">Build it backwards</p>
@@ -282,9 +277,11 @@ const jsonLd = {
 
 <a class="stick off" href={SKOOL_PLANS}>Start your 7 days free <span class="ar">→</span></a>
 <script is:inline>
-(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,hero=document.querySelector('.hh .buy');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});s.classList.toggle('off',!passed||vis.size>0)});
-document.querySelectorAll('.buy,#blueprint').forEach(function(b){io.observe(b)})})();
+(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,up=false,lastY=scrollY,hero=document.querySelector('.hh .buy');
+function show(){s.classList.toggle('off',!passed||!up||vis.size>0)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});show()});
+document.querySelectorAll('.btn,.offer-cta,form,.tfoot,#blueprint').forEach(function(b){if(b!==s)io.observe(b)});
+addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-lastY)>6){up=y<lastY;lastY=y;show()}},{passive:true})})();
 </script>
 </body>
 </html>

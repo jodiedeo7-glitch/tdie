@@ -8,6 +8,7 @@ import WysPromo from '../WysPromo.astro';
 import '../../styles/edit.css';
 import '../../styles/wys-fonts.css';
 import '../../styles/lifestyle.css';
+import '../../styles/template-skin.css';
 const { title, description, ogImage, draft = false, schema = [], signup = true, disclosure = true, halloween = false, article = false, wys = true, storeDisclosure = '' } = Astro.props;
 const icing = article ? await getImage({src:icingSource,format:"webp",quality:90}) : null;
 ---

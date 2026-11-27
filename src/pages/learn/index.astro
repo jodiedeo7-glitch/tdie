@@ -22,6 +22,7 @@ import SiteNav from "../../components/TemplateNav.astro";
 import "../../styles/tdie-article.css";
 import SiteFooter from "../../components/TemplateFooter.astro";
 import "../../styles/brand-finish.css";
+import "../../styles/template-skin.css";
 
 // Attach each supporting article to the pillar that carries its category.
 const shelf = pillars.map((p) => ({
@@ -68,7 +69,6 @@ const totalPieces = pillars.length + articles.length;
   <meta name="p:domain_verify" content="6cee3a8fcd59239f253a242581e683ac" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body.e-page::before,body.e-page::after{display:none}
     /* ── EDITORIAL PUBLICATION PASS ── */
@@ -217,7 +217,7 @@ const totalPieces = pillars.length + articles.length;
 <style is:inline set:html={visualStyles} />
 <style is:inline>html body.tdie-finished::before{display:none!important}html body.tdie-finished{background:radial-gradient(900px 520px at 4% 6%,#ffe6f1 0,rgba(255,230,241,0) 70%),#FFFBEB!important}</style>
 </head>
-<body class="e-page tdie-finished">
+<body class="e-page tdie-finished tskin">
   <SiteNav />
   <main>
   <section class="lib-head">

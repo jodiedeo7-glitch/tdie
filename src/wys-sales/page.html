@@ -21,7 +21,7 @@
 @font-face{font-family:'Poppins';font-weight:600;src:url(/wys-sales/fonts/poppins-600.woff2) format('woff2');font-display:swap}
 @font-face{font-family:'Montserrat';font-weight:500;src:url(/wys-sales/fonts/montserrat-500.woff2) format('woff2');font-display:swap}
 @font-face{font-family:'Montserrat';font-weight:600;src:url(/wys-sales/fonts/montserrat-600.woff2) format('woff2');font-display:swap}
-:root{--hot:#D62E73;--cream:#FFFBEB;--ink:#1A1417;--soft:#4a3d43;--gold:#C9A86A;--shadow:0 10px 24px rgba(120,80,95,.16);
+:root{--hot:#D62E73;--cream:#FFF0F6;--ink:#1A1417;--soft:#4a3d43;--gold:#C9A86A;--shadow:0 10px 24px rgba(120,80,95,.16);
 --foil:linear-gradient(135deg,#ffe1f1 0%,#e6e1ff 28%,#d9f6f1 50%,#fff2d8 72%,#ffd6ec 100%)}
 *{box-sizing:border-box}
 html,body{margin:0;overflow-x:hidden}
@@ -403,20 +403,27 @@ header,section,.band,.touch,.foot{overflow-x:clip}
 .sec:not(.holo):not(.wash),.touch{background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)),url(/wys-sales/img/sparkle-scatter-900.webp) right top/700px no-repeat,url(/wys-sales/img/sh-blush.webp) center/380px!important}
 
 /* ===== BALANCE: glitter on the big moments only ===== */
-.holo,.wash,.sec:not(.holo):not(.wash),.touch{background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,radial-gradient(800px 420px at 8% 10%,#ffe0ee 0,rgba(255,224,238,0) 70%),radial-gradient(800px 460px at 95% 95%,#ffe3f0 0,rgba(255,227,240,0) 70%),#fffaf3!important;background-blend-mode:normal!important}
+.holo,.wash,.sec:not(.holo):not(.wash),.touch{background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,radial-gradient(800px 420px at 8% 10%,#ffe0ee 0,rgba(255,224,238,0) 70%),radial-gradient(800px 460px at 95% 95%,#ffe3f0 0,rgba(255,227,240,0) 70%),#FFF0F6!important;background-blend-mode:normal!important}
 .sec:nth-of-type(even):not(.holo):not(.wash){background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,#fff!important}
 .quote.holo{background:url(/wys-sales/img/sh-blush.webp) center/380px!important}
-.band{background:#fffaf3!important}
-.foot{background:#fffaf3!important;border-top:1px solid var(--gold)}
+.band{background:#FFF0F6!important}
+.foot{background:#FFF0F6!important;border-top:1px solid var(--gold)}
 .lead p,.bfnotes{background:transparent!important;padding:0!important}
 .p14>div:first-child{box-shadow:var(--shadow)}
 .p14 .ph img,.p19 .mat,.p44 .ph img,.col2 img,.p25 .intro img{border-width:4px!important}
+
+/* Audit fixes 27 Nov 2026: phone stickers stay on screen with readable words */
+@media (max-width:600px){
+ .stk.stk.stk.stk{left:auto!important;right:14px!important;width:100px!important;height:100px!important;font-size:11px!important;letter-spacing:.06em!important}
+ .stk b{font-size:16px!important}.stk b.big{font-size:20px!important}
+ .stk.stk.stk.stk.hs{right:auto!important;left:auto!important}
+}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="spg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8ac2"/><stop offset=".5" stop-color="#D62E73"/><stop offset="1" stop-color="#c9a8ff"/></linearGradient></defs><symbol id="sp" viewBox="0 0 100 100"><path d="M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0Z"/></symbol></svg>
 
-<div class="strip">The Digital Income Edit™</div>
+<!--SITE-HEADER-->
 
 <!-- Template page 2: header photo with centered card -->
 <header class="hero" role="img" aria-label="Laptop showing Tommy Kate's storefront on a fluffy pink blanket">
@@ -665,9 +672,11 @@ header,section,.band,.touch,.foot{overflow-x:clip}
 
 <script>
 (function(){try{var n=Date.now(),on=n>=1795410000000&&n<=1796100300000;if(/[?&]bf=1/.test(location.search))on=true;if(on)document.querySelectorAll('.bf').forEach(function(e){e.hidden=false})}catch(x){}})();
-(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,hero=document.querySelector('.hero .buy');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});s.classList.toggle('off',!passed||vis.size>0)});
-document.querySelectorAll('.buy').forEach(function(b){io.observe(b)})})();
+(function(){var s=document.querySelector('.stick');if(!s||!('IntersectionObserver'in window))return;var vis=new Set(),passed=false,up=false,lastY=scrollY,hero=document.querySelector('.hero .buy');
+function show(){s.classList.toggle('off',!passed||!up||vis.size>0)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);if(e.target===hero){passed=!e.isIntersecting&&e.boundingClientRect.top<0}});show()});
+document.querySelectorAll('.btn,form,.buy,footer,.foot').forEach(function(b){if(b!==s)io.observe(b)});
+addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-lastY)>6){up=y<lastY;lastY=y;show()}},{passive:true})})();
 </script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+/* Template skin, 27 Nov 2026 (Jodie: "do all of it", audit fix 1).
+   Puts the Library (/learn) and Lifestyle (/lifestyle and its look pages) into the same
+   look as the template pages: Gilda headlines, Poppins text, Montserrat labels and buttons,
+   square white cards with the dashed pink inner line, glitter-edged white buttons and
+   light pink sparkle backgrounds. No Polaroid frames. Content and photos are unchanged.
+   Scope: body.tskin (the Library) and .life (every Lifestyle page). */
+
+@font-face{font-family:'Gilda';src:url(/wys-sales/fonts/gilda.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Allison';src:url(/wys-sales/fonts/allison.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:400;src:url(/wys-sales/fonts/poppins-400.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:500;src:url(/wys-sales/fonts/poppins-500.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:600;src:url(/wys-sales/fonts/poppins-600.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Montserrat';font-weight:600;src:url(/wys-sales/fonts/montserrat-600.woff2) format('woff2');font-display:swap}
+
+/* ---------- type ---------- */
+body.tskin, body.tskin main, .life{font-family:Poppins,sans-serif!important;color:#1A1417!important}
+body.tskin main :is(p,li,dd,a,span,small,figcaption,button,input,label),
+.life :is(p,li,a,span,small,figcaption,button,input,label){font-family:Poppins,sans-serif!important}
+body.tskin main :is(h1,h2,h3,h4,.pil-t,.clus-t,.bl-t,.start-n,.pil-no,.bl-no,.lib-count dd),
+.life :is(h1,h2,h3,h4){font-family:Gilda,Georgia,serif!important;font-weight:400!important;font-style:normal!important;letter-spacing:.03em!important}
+body.tskin main h1, .life .life-hero h1{text-transform:uppercase;letter-spacing:.08em!important;line-height:1.15!important}
+body.tskin main h1 em, body.tskin main h1 :is(i,span), .life .life-hero h1 span{font-style:normal!important;color:#D62E73}
+/* script words keep the template script, used sparingly as before */
+.life .stress, body.tskin main .stress{font-family:Allison,cursive!important;font-style:normal!important;text-transform:none!important;letter-spacing:0!important;font-size:1.5em;line-height:.9;color:#D62E73}
+/* labels and kickers */
+body.tskin main :is(.e-kick,.lbl,.bl-cat,.bl-q-cat,.pil-cat,.pil-kit-k,.start-k,.bl-kit span,.lib-count dt,.bl-start),
+.life :is(.life-kicker,.life-card-count,.cs-kicker,.cs-items-label){font-family:Montserrat,sans-serif!important;font-weight:600!important;font-size:12px!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#D62E73!important}
+@media (max-width:600px){
+ body.tskin main :is(.e-kick,.lbl,.bl-cat,.bl-q-cat,.pil-cat,.pil-kit-k,.start-k,.bl-kit span,.lib-count dt,.bl-start),
+ .life :is(.life-kicker,.life-card-count,.cs-kicker,.cs-items-label){font-size:13px!important;letter-spacing:.14em!important}
+ body.tskin main :is(p,li,dd,small,figcaption), .life :is(p,small,figcaption){font-size:max(14px,1em)}
+}
+
+/* ---------- backgrounds: light pink with sparkle, never flat ---------- */
+body.tskin{background:url(/wys-sales/img/sparkle-scatter-900.webp) right 120px/700px no-repeat,radial-gradient(900px 520px at 4% 6%,#ffe0ee 0,rgba(255,224,238,0) 70%),radial-gradient(900px 560px at 98% 60%,#ffe3f0 0,rgba(255,227,240,0) 70%),#FFF0F6!important}
+body.tskin main :is(.lib-head,.start,.wrap,section){background-color:transparent!important}
+.life :is(.life-hero,.life-band,.life-picks-band,.life-section,.cs-band){background:url(/wys-sales/img/sparkle-scatter-900.webp) right top/620px no-repeat,radial-gradient(800px 420px at 8% 10%,#ffe0ee 0,rgba(255,224,238,0) 70%),#FFF0F6!important}
+.life .life-band,.life .cs-band{background:url(/wys-sales/img/sparkle-scatter-900.webp) left top/560px no-repeat,#fff!important;border-top:4px solid transparent;border-bottom:4px solid transparent;border-image:url(/wys-sales/img/gl-hot.webp) 30 round}
+
+/* ---------- cards: square white, soft shadow, dashed pink inner line ---------- */
+body.tskin main :is(.bl-card,.bl-q,.start),
+.life :is(.life-card,.cs-card,.life-feature>.life-card){border-radius:0!important;background:#fff!important;border:0!important;box-shadow:0 10px 24px rgba(120,80,95,.16)!important;outline:1.5px dashed rgba(214,46,115,.75);outline-offset:-10px}
+body.tskin main .bl-img img, .life .life-card-photo img, .life .life-card-photo{border-radius:0!important}
+body.tskin main .bl-card .bl-body{padding:22px 24px 26px!important}
+
+/* ---------- buttons: white, glitter edge, square, Montserrat caps ---------- */
+body.tskin main :is(.bl-btn,.start-go),
+.life :is(.life-button){display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:10px 20px!important;border-radius:0!important;border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;color:#1A1417!important;font-family:Montserrat,sans-serif!important;font-weight:600!important;font-size:12px!important;letter-spacing:.18em!important;text-transform:uppercase!important;text-decoration:none!important;box-shadow:0 8px 20px rgba(214,46,115,.18)!important}
+body.tskin main :is(.bl-btn,.start-go) span, .life .life-button span{color:#D62E73!important}
+.life .life-button-small{min-height:44px;padding:8px 16px!important}
+
+/* ---------- the Library hero photo: no Polaroid, a glitter-edged frame in its own square shape ---------- */
+body.tskin main .lib-hero-art{background:none!important;padding:0!important;box-shadow:none!important;transform:none!important;border:0!important}
+body.tskin main .lib-hero-art::before, body.tskin main .lib-hero-art::after{display:none!important}
+body.tskin main .lib-hero-art img{display:block;width:100%;height:auto;border:4px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/140px border-box!important;box-shadow:0 10px 24px rgba(120,80,95,.16)!important;border-radius:0!important}
+body.tskin main .lib-hero-art figcaption{display:none!important}
+
+/* ---------- small pieces ---------- */
+.life .life-sticker{border-radius:0!important}
+
+/* phone: nothing under 13px, fine print 14px */
+@media (max-width:600px){
+ .bl-btn.bl-btn.bl-btn,.bl-q-go.bl-q-go.bl-q-go,.lib-next-primary.lib-next-primary.lib-next-primary,.life-button.life-button.life-button,.life-kicker.life-kicker.life-kicker,.life-category-count.life-category-count.life-category-count,.life-category-go.life-category-go.life-category-go,.cs-tab.cs-tab.cs-tab,.cs-picker-sticker.cs-picker-sticker.cs-picker-sticker,.cs-saved-sticker.cs-saved-sticker.cs-saved-sticker,.wys-k.wys-k.wys-k,.wys-new.wys-new.wys-new,.wys-go.wys-go.wys-go,.pf-k.pf-k.pf-k,.life-card-count.life-card-count.life-card-count,.e-kick.e-kick.e-kick,.lbl.lbl.lbl,.bl-cat.bl-cat.bl-cat,.bl-start.bl-start.bl-start,.tcx-soc.tcx-soc.tcx-soc,.bl-meta.bl-meta span,.tcx-soc.tcx-soc a,.tdie-page-disclaimer.tdie-page-disclaimer small,.tdie-page-disclaimer.tdie-page-disclaimer,.tcx-foot.tcx-foot h4{font-size:13px!important}
+ .tcx-copy.tcx-copy.tcx-copy{font-size:13px!important;letter-spacing:.12em!important}
+}
+/* footer heading keeps the template font */
+.tcx-foot.tcx-foot :is(h2,h4){font-family:Gilda,Georgia,serif!important}
+.tcx-foot.tcx-foot h4{font-family:Montserrat,sans-serif!important}
+.tcx-foot.tcx-foot .tcx-touch h2 span{font-family:Allison,cursive!important;font-weight:400!important}
+
+/* Library buttons and tags: stronger than the older page rules */
+body.tskin main a.bl-btn.bl-btn.bl-btn{border-radius:0!important;border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;color:#1A1417!important}
+body.tskin main a.bl-btn.bl-btn.bl-btn::before, .life .life-button.life-button.life-button::before{display:none!important}
+body.tskin main .bl-kit.bl-kit span{background:#fff!important;border:1px solid #D62E73!important;border-radius:0!important;color:#D62E73!important;padding:5px 9px!important}
+.life a.life-button.life-button.life-button,.life span.life-button.life-button.life-button{border-radius:0!important;border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box!important;color:#1A1417!important}
+@media (max-width:600px){.tdie-page-disclaimer.tdie-page-disclaimer small.small, .tdie-page-disclaimer small{font-size:13px!important}}
+body.tskin main .lib-head.lib-head{background:transparent!important}
+.life .life-category-card.life-category-card,.life .life-band>.life-wrap,.life .life-band .life-section,.life .life-category-card img{border-radius:0!important}
+.life .life-category-card.life-category-card{background:#fff!important;border:0!important;box-shadow:0 10px 24px rgba(120,80,95,.16)!important;outline:1.5px dashed rgba(214,46,115,.75);outline-offset:-8px}

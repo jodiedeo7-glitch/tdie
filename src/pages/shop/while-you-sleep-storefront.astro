@@ -1,5 +1,8 @@
 ---
 // While-You-Sleep Storefront sales page, rebuilt on Jodie's Etsy 51-section template (19 Nov 2026).
+// The shared site header goes where the page marks <!--SITE-HEADER--> (27 Nov 2026).
 import html from '../../wys-sales/page.html?raw';
+import SiteHeader from '../../components/SiteHeader.astro';
+const [before, after] = html.split('<!--SITE-HEADER-->');
 ---
-<Fragment set:html={html} />
+<Fragment set:html={before} /><SiteHeader /><Fragment set:html={after} />

@@ -19,8 +19,8 @@ Before sending, exporting, committing or calling done ANY visual (page, PDF, PNG
 5. When she asks to change or remove one thing, change only that thing. Do not redesign anything she did not ask to change.
 6. Send Jodie the actual files (PDF, PNGs) directly, never just links.
 
-## BRAND FONTS (Jodie, 10 October 2026)
-Headlines are Gloock, upright. Everything else is Jost: body, prices, labels, buttons, kickers. These are the only brand fonts, on the site, in graphics and in posters. Fonts load from `src/styles/brand-fonts.css`. Yellowtail script only on the stressed word or words in a headline, never on every pink word. Caveat stays only as the scoped photograph-caption font. Never put a white text box/label over a WYS example pin photo (Jodie: "the text box is a HARD NO. If it doesn't LOOK GOOD, remove it.").
+## BRAND FONTS (Jodie, 19 November 2026; replaces the 10 October Gloock/Jost rule, she hates Gloock)
+Site pages use her Etsy template's fonts: Gilda Display headlines, Allison script words (sparingly), Poppins body text, Montserrat small labels and buttons. Files live in public/wys-sales/fonts. Gloock, Jost and Yellowtail are retired on site pages; any later line in this file that says otherwise is stale. Yellowtail script only on the stressed word or words in a headline, never on every pink word. Caveat stays only as the scoped photograph-caption font. Never put a white text box/label over a WYS example pin photo (Jodie: "the text box is a HARD NO. If it doesn't LOOK GOOD, remove it.").
 
 ## WYS authority (Jodie, 7 October 2026)
 

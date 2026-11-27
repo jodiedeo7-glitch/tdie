@@ -25,11 +25,8 @@ Reference images Jodie shares are for feel and layout only. Never take their col
 - The color variables already in the site's code stay as they are. Do not recolor existing pages to match this list.
 
 ## Fonts
-- Gloock for headlines, upright, never italic.
-- Jost for everything else: body, prices, labels, buttons.
-- Yellowtail script ONLY on the stressed word or words in a headline. Never on every pink word.
-- Caveat only as the photograph-caption font.
-- Never Newsreader, Inter, Fraunces, Cormorant Garamond or Montserrat.
+- Jodie, 19 November 2026 (she hates Gloock): pages use her Etsy template's fonts. Gilda Display for headlines, Allison for script words (used sparingly), Poppins for body text, Montserrat for small labels and buttons. Files live in public/wys-sales/fonts.
+- Never Gloock, Jost, Yellowtail, Newsreader, Inter, Fraunces or Cormorant Garamond on site pages.
 
 ## Backgrounds
 - Never flat, plain or boring.

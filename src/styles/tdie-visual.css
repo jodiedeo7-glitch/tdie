@@ -253,13 +253,13 @@ main p,main li{font-size:min(16px,1em)}
 .mb-choose .e-d2{font-size:30px!important}
 
 /* ===== 8 Oct 2026, founder standing rule: NO pink gradient/ombre anywhere, NO filled pink buttons. ===== */
-body:not(:has(.life)),body:not(:has(.life)) main,body:not(:has(.life)) main *:not(img):not(svg):not([style*="background-image"]):not(.sn-drip),body footer,body footer *,body>section,body>section *:not([style*="background-image"]){background-image:none!important}
-body{background-color:#FFFBF8!important}
+body:not(:has(.life)):not(.tskin),body:not(:has(.life)):not(.tskin) main,body:not(:has(.life)):not(.tskin) main *:not(img):not(svg):not([style*="background-image"]):not(.sn-drip):not(.sh):not(.sh *),body footer,body footer *,body>section,body>section *:not([style*="background-image"]){background-image:none!important}
+body{background-color:#FFF0F6!important}
 /* buttons: cute white pill, thin pink outline, dark text, little sparkle */
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.r-btn,.fd-r-btn,.room-body .go,.mb-plan-cta,.rs-go,.rs-kit-go,.go-btn,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.lx-btn,.btn-primary){background:#FFFFFF!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important;text-shadow:none!important}
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn)::before{content:"✦";color:#D62E73;margin-right:7px;font-size:.95em}
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn) *{color:#1A1417!important}
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit]):hover{background:#FFF0F7!important;border-color:#D62E73!important}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.r-btn,.fd-r-btn,.room-body .go,.mb-plan-cta,.rs-go,.rs-kit-go,.go-btn,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.lx-btn,.btn-primary){background:#FFFFFF!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important;text-shadow:none!important}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.fc-form button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn)::before{content:"✦";color:#D62E73;margin-right:7px;font-size:.95em}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.sn-d-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit],.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn) *{color:#1A1417!important}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-links a.sn-cta,.fc-row button,.room-body .go,.mb-plan-cta,button[type=submit]):hover{background:#FFF0F7!important;border-color:#D62E73!important}
 /* Weekend Ecosystem page: flat, cute, readable */
 .wr{transform:none!important;background:#FFF0F7!important;border-block:1.5px solid #E891B6!important;box-shadow:none!important}
 .wr span{color:#1A1417!important}.wr i{color:#D62E73!important}
@@ -285,8 +285,8 @@ body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-nex
 .wb-brand,.wb-t,.wb-s{color:#1A1417!important}
 @media(max-width:760px){.wx-fs,.wx-proof{grid-template-columns:minmax(0,1fr)!important}}
 .wx-sticker{color:#B8245F!important}
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4),body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4) *{color:#1A1417!important}
-body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4)::before{color:#D62E73!important}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4),body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4) *{color:#1A1417!important}
+body:not(:has(.life)):not(.tskin) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan-cta,.e-btn--light):not(.zq1):not(.zq2):not(.zq3):not(.zq4)::before{color:#D62E73!important}
 .wx-obj{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
 .wx-obj-card{margin:0!important;padding:18px 20px!important;transform:none!important}
 .wx-obj-q{font:600 18px/1.25 Jost,sans-serif!important;margin:8px 0 6px!important}
@@ -297,7 +297,7 @@ body:not(:has(.life)) :is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.mb-plan
 @media(max-width:760px){.wx-obj,.wx-obj-proof{grid-template-columns:minmax(0,1fr)!important}}
 .wx-obj{max-width:1080px!important}.wx-obj-proof{max-width:1080px!important;display:flex!important;justify-content:center!important}.wx-obj-proof .tm-line{width:min(560px,100%);margin:0 auto!important;text-align:center!important}
 /* no gradients, beats every older rule (id-level specificity) */
-body:not(:has(.life)) *:not(img):not(svg):not(video):not([style*="background-image"]):not(.sn-drip):not(.wz-page-top-icing):not(#zq),body:not(:has(.life)):not(#zq){background-image:none!important}
+body:not(:has(.life)):not(.tskin) *:not(img):not(svg):not(video):not([style*="background-image"]):not(.sn-drip):not(.wz-page-top-icing):not(.sh):not(.sh *):not(#zq),body:not(:has(.life)):not(.tskin):not(#zq){background-image:none!important}
 html body footer.sf:not(#zq){background-color:#FFF4F9!important}
 .wx-hot:not(#zq){background:#fff!important;color:#1A1417!important;border:2px solid #E891B6!important;box-shadow:none!important}
 .wx-hot:not(#zq) *{color:#1A1417!important}
@@ -383,14 +383,14 @@ body:has(.life) .sn-drip{display:none!important}
 .v-strip>*{grid-column:auto!important;grid-row:auto!important;margin:0!important;transform:none!important}
 .v-strip>:first-child:not(figure){grid-column:1 / -1!important}
 .v-strip::before{grid-column:1 / -1!important;width:auto!important;margin-bottom:4px}
-body:not(:has(.life))::before{background:#FFFBF8!important}
+body:not(:has(.life)):not(.tskin)::before{background:#FFFBF8!important}
 .rs-kit-img{display:block;width:100%;max-width:560px;margin:22px auto 0;border-radius:20px 6px 20px 6px;border:6px solid #FFE3F0;aspect-ratio:10/7;object-fit:cover}
 .rs-hero .page-eyebrow{margin-left:auto!important;margin-right:auto!important;display:table!important}.rs-hero{padding-top:28px!important}
 
-body:not(:has(.life)) :is(.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn):not(#zq){color:#1A1417!important;background:#fff!important;border:1.5px solid #E891B6!important;border-radius:999px!important}
+body:not(:has(.life)):not(.tskin) :is(.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn):not(#zq){color:#1A1417!important;background:#fff!important;border:1.5px solid #E891B6!important;border-radius:999px!important}
 /* challenge page: no solid hot-pink closing panel; no empty gray frame */
-body:not(:has(.life)) section.close:not(#zq){background:#FFF0F7!important;color:#1A1417!important;border-block:2px solid #E891B6}
-body:not(:has(.life)) section.close:not(#zq) *{color:#1A1417!important}
+body:not(:has(.life)):not(.tskin) section.close:not(#zq){background:#FFF0F7!important;color:#1A1417!important;border-block:2px solid #E891B6}
+body:not(:has(.life)):not(.tskin) section.close:not(#zq) *{color:#1A1417!important}
 /* full-site scan fixes */
 body.sales-page .tdie-manifesto p:not(#zq),.tdie-manifesto p:not(#zq) em{font-size:clamp(22px,2.4vw,30px)!important}
 .founder .q,.sm-pull,.article .pull p,.rs-door-t{font-size:clamp(22px,2.2vw,28px)!important;line-height:1.3!important}
@@ -409,10 +409,10 @@ h3 em{color:#B8245F!important;font-style:normal!important}
   .article h4{font-size:22px!important}
 }
 /* every button everywhere (beats page-level rules): white, thin pink outline, dark text */
-body:not(:has(.life)) :is(a,button):is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-cta,.sn-d-cta,.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.tk-cert-open,.tk-resume,.go):not(#zq):not(#zq2),
-body:not(:has(.life)) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,.freebie-capture,.v-capture,form) button:not(#zq):not(#zq2),
-body:not(:has(.life)) :is(.weekend-ecosystem,main) a[style*="background:#D62E73"]:not(#zq),body:not(:has(.life)) button[style*="background:#D62E73"]:not(#zq){background:#fff!important;background-image:none!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important}
-body:not(:has(.life)) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,form) button:not(#zq):not(#zq2) *{color:#1A1417!important}
+body:not(:has(.life)):not(.tskin) :is(a,button):is(.e-btn,.btn,.wx-btn,.pick-btn,.we-cta,.bl-btn,.lib-next-primary,.start-go,.wp-btn,.sn-cta,.sn-d-cta,.os-btn,.kit-btn,.scta-btn,.mk-btn,.cf-btn,.tk-cert-open,.tk-resume,.go):not(#zq):not(#zq2),
+body:not(:has(.life)):not(.tskin) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,.freebie-capture,.v-capture,form) button:not(#zq):not(#zq2),
+body:not(:has(.life)):not(.tskin) :is(.weekend-ecosystem,main) a[style*="background:#D62E73"]:not(#zq),body:not(:has(.life)):not(.tskin) button[style*="background:#D62E73"]:not(#zq){background:#fff!important;background-image:none!important;color:#1A1417!important;border:1.5px solid #E891B6!important;border-radius:999px!important;box-shadow:0 2px 0 #F6C9DD!important}
+body:not(:has(.life)):not(.tskin) :is(.fc-row,.fc-form,.bm-capture,.wbc-form,.nw-form,form) button:not(#zq):not(#zq2) *{color:#1A1417!important}
 .mb-feed-sticker{background:#fff!important;color:#B8245F!important;border:1.5px solid #E891B6;box-shadow:0 8px 16px -10px rgba(194,24,91,.5)!important}
 .bl-no{background:#fff!important;color:#B8245F!important;border:1.5px solid #E891B6}
 .pick-card--hot .pick-img{background:#FFF0F7!important}

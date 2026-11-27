@@ -1,0 +1,78 @@
+---
+// One site header for every page (Jodie, 27 Nov 2026: "I would like a header").
+// Used by the homepage, TemplateLayout and TemplateNav (articles, Library, Lifestyle),
+// so all pages carry the same header. Styles are global and prefixed .sh- so older
+// page CSS never reaches in. Fonts are the template's: Gilda, Allison, Montserrat, Poppins.
+import { NAV, NAV_CTA } from "../data/site.js";
+import { WYS_CTA } from "../data/wys-live.js";
+import { weekendEcosystem as WE } from "../data/facts.js";
+const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isOn = (href) => href !== "/#method" && href !== "/" && (path === href || path.startsWith(href + "/"));
+---
+<header class="sh">
+ <div class="sh-in">
+  <a class="sh-mark" href="/" aria-label="The Digital Income Edit™, home">
+   <span class="sh-top">The Digital Income</span>
+   <span class="sh-script">Edit<sup>™</sup></span>
+  </a>
+  <nav class="sh-nav" aria-label="Main">
+   <ul>{NAV.map((l) => <li><a href={l.href} aria-current={isOn(l.href) ? "page" : undefined}>{l.label}</a></li>)}</ul>
+  </nav>
+  <a class="sh-cta" href={NAV_CTA.href}>7 days free <span aria-hidden="true">→</span></a>
+  <details class="sh-menu">
+   <summary aria-label="Open the menu"><span class="sh-bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+   <div class="sh-drop">
+    {NAV.map((l) => <a href={l.href}>{l.label}</a>)}
+    <a href="/resources/faceless-income-blueprint">The Free Blueprint</a>
+    <a href={WE.url}>The Weekend Ecosystem™</a>
+    <a href={WYS_CTA.href}>The While-You-Sleep Storefront™</a>
+    <a class="sh-drop-cta" href={NAV_CTA.href}>Start 7 days free <span aria-hidden="true">→</span></a>
+   </div>
+  </details>
+ </div>
+</header>
+<script is:inline>
+/* Phone text floor (Jodie's audit, 27 Nov 2026): on phones no words smaller than 13px.
+   Only raises text that is under 13px; never shrinks anything. Round stickers and the
+   tight product strips keep their own sizes so nothing breaks out of its shape. */
+(function(){if(!window.matchMedia||!matchMedia('(max-width:600px)').matches)return;
+function f(){var all=document.body.getElementsByTagName('*');for(var i=0;i<all.length;i++){var e=all[i];if(e.offsetWidth<3||e.closest('.stk,svg,.cs-items,.cs-deck,.life-product-carousel,.life-feature-label,.sr,.life-sr'))continue;var t=0,c=e.childNodes;for(var j=0;j<c.length;j++){if(c[j].nodeType===3&&c[j].textContent.trim().length>1){t=1;break}}if(!t)continue;if(parseFloat(getComputedStyle(e).fontSize)<13)e.style.setProperty('font-size','13px','important')}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f()})();
+</script>
+<style is:global>
+@font-face{font-family:'Gilda';src:url(/wys-sales/fonts/gilda.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Allison';src:url(/wys-sales/fonts/allison.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Montserrat';font-weight:600;src:url(/wys-sales/fonts/montserrat-600.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Poppins';font-weight:400;src:url(/wys-sales/fonts/poppins-400.woff2) format('woff2');font-display:swap}
+header.sh.sh.sh{position:relative;z-index:40;display:block;margin:0;padding:0;background:url(/wys-sales/img/sparkle-scatter-900.webp) right -40px/260px no-repeat,linear-gradient(#fff,#fff6fa)!important;border:0!important;border-bottom:4px solid transparent!important;border-image:url(/wys-sales/img/gl-hot.webp) 30 round!important;box-shadow:none!important}
+.sh-in{max-width:1200px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;gap:34px}
+.sh-mark{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;color:#1A1417;line-height:1;flex:none}
+.sh .sh-top.sh-top{font:400 17px/1 Gilda,Georgia,serif!important;letter-spacing:.3em;text-transform:uppercase;color:#1A1417}
+.sh .sh-script.sh-script{font:400 52px/.7 Allison,cursive;margin:2px 0 -6px 46%;background:url(/wys-sales/img/gl-hot.webp) center/110px,linear-gradient(#d0186e,#d0186e)!important;background-blend-mode:overlay!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:#D62E73;filter:drop-shadow(0 0 1px rgba(150,10,70,.45));padding:0 .1em}
+.sh .sh-script sup{font:600 10px Montserrat,sans-serif;-webkit-text-fill-color:#1A1417;vertical-align:top;margin-left:2px;position:relative;top:10px}
+.sh-nav{margin-left:auto}
+.sh-nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+.sh-nav a{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#1A1417;padding:8px 0;border-bottom:2px solid transparent}
+.sh-nav a:hover,.sh-nav a[aria-current=page]{color:#D62E73;border-bottom-color:#D62E73}
+.sh-cta{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:8px 22px;font:600 12px Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#1A1417;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/140px border-box;box-shadow:0 8px 20px rgba(214,46,115,.18);flex:none}
+.sh-cta span{color:#D62E73;font-size:18px}
+.sh a:focus-visible,.sh summary:focus-visible{outline:3px solid #B22B65;outline-offset:4px}
+.sh-nav li::before,.sh-nav li::after,.sh-nav a::before,.sh-nav a::after,.sh-cta::before,.sh-cta::after{content:none!important;display:none!important}
+.sh-menu{display:none}
+@media (max-width:980px){
+ .sh-in{padding:12px 20px;gap:14px}
+ .sh-nav,.sh-cta{display:none}
+ .sh .sh-top.sh-top{font-size:13px!important;letter-spacing:.24em}
+ .sh .sh-script.sh-script{font-size:42px;margin-left:44%}
+ .sh-menu{display:block;margin-left:auto;position:relative}
+ .sh-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:46px;padding:8px 16px;font:600 13px Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#1A1417;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box}
+ .sh-menu summary::-webkit-details-marker{display:none}
+ .sh-bars{display:grid;gap:4px}.sh-bars i{display:block;width:18px;height:2px;background:#D62E73}
+ .sh-drop{position:absolute;right:0;top:56px;width:min(300px,calc(100vw - 40px));background:#fff;border:1px solid #D62E73;box-shadow:0 14px 30px rgba(120,80,95,.2);padding:10px 20px 16px;z-index:60}
+ .sh-drop a{display:block;padding:12px 0;border-bottom:1px dashed rgba(214,46,115,.35);font:400 16px/1.3 Poppins,sans-serif;color:#1A1417;text-decoration:none}
+ .sh-drop a.sh-drop-cta{border:0;margin-top:10px;text-align:center;font:600 13px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,url(/wys-sales/img/gl-hot.webp) center/120px border-box}
+ .sh-drop-cta span{color:#D62E73}
+}
+@media (max-width:380px){.sh .sh-top.sh-top{font-size:11px!important;letter-spacing:.2em}.sh .sh-script.sh-script{font-size:36px}.sh-menu summary{padding:8px 12px;letter-spacing:.14em}}
+@media print{.sh-menu,.sh-cta{display:none}}
+</style>
