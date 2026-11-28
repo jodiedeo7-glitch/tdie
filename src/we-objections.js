@@ -1,7 +1,7 @@
 // The six objections, in the order of the objection email series
 // (canon.json -> emails.weekend_ecosystem_objection_series). One source for the
 // sales page and the preview page. Every answer uses only facts already on the
-// sales page or in canon: no guarantee, no refund window, no income claim.
+// sales page or in canon: no guarantee, no income claim.
 // `short` is the preview page's one-paragraph version of the same answer.
 
 export const OBJECTIONS = [
@@ -40,10 +40,9 @@ export const OBJECTIONS = [
     id: "no-refunds",
     q: "What if it isn't what I think?",
     a: [
-      "There are no refunds. None.",
       "That's exactly why the look inside exists. The real interface, a real module, the prompt cards, the tracker and the certificate. No email, no card. Read it properly, decide properly, then buy.",
     ],
-    short: "There are no refunds. None. That's why this page exists: read it properly, decide properly, then buy.",
+    short: "That's why this page exists: read it properly, decide properly, then buy.",
     preview: true,
   },
   {
